@@ -1,5 +1,5 @@
-# Copyright (C).
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) 2009 The BibleTime Team, http://www.bibletime.info
+# This file is distributed under the same license as the BibleTime package.
 #
 # Roy E. Alvear <racl@gulix.cl>, 2009.
 msgid ""

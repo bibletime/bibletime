@@ -1,8 +1,6 @@
 # translation of howto-hu.po to Hungarian
-# SOME DESCRIPTIVE TITLE
-# Copyright (C) 2009 Free Software Foundation, Inc.
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Copyright (C) 2009 The BibleTime Team, http://www.bibletime.info
+# This file is distributed under the same license as the BibleTime package.
 #
 msgid ""
 msgstr ""

@@ -1,7 +1,8 @@
 # translation of howto-fi.po to Finnish
-# Copyright (C) 2005, 2009 Free Software Foundation, Inc.
-#
+# Copyright (C) 2009 The BibleTime Team, http://www.bibletime.info
+# This file is distributed under the same license as the BibleTime package.
 # Ilpo Kantonen <ilpo@iki.fi>, 2005, 2009.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: howto-fi\n"
@@ -13,24 +14,6 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"#-#-#-#-#  full.po (full)  #-#-#-#-#\n"
-"X-Generator: KBabel 1.11.4\n"
-"#-#-#-#-#  fi.po (full)  #-#-#-#-#\n"
-"#-#-#-#-#  full.po (full)  #-#-#-#-#\n"
-"X-Generator: KBabel 1.10.1\n"
-"#-#-#-#-#  fi.po (full)  #-#-#-#-#\n"
-"#-#-#-#-#  full.po (full)  #-#-#-#-#\n"
-"X-Generator: KBabel 1.10.1\n"
-"#-#-#-#-#  fi.po (full)  #-#-#-#-#\n"
-"#-#-#-#-#  full.po (full)  #-#-#-#-#\n"
-"X-Generator: KBabel 1.10.1\n"
-"#-#-#-#-#  fi.po (full)  #-#-#-#-#\n"
-"#-#-#-#-#  full.po (full)  #-#-#-#-#\n"
-"X-Generator: KBabel 1.10.1\n"
-"#-#-#-#-#  fi.po (full)  #-#-#-#-#\n"
-"#-#-#-#-#  full.po (full)  #-#-#-#-#\n"
-"X-Generator: KBabel 1.10.1\n"
-"#-#-#-#-#  fi.po (full)  #-#-#-#-#\n"
 "X-Generator: KBabel 1.10.1\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 

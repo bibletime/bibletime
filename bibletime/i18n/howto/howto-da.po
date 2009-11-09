@@ -1,6 +1,6 @@
 # translation of howto(2).po to Dansk
-# Copyright (C) 2008 Free Software Foundation, Inc.
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) 2008 The BibleTime Team, http://www.bibletime.info
+# This file is distributed under the same license as the BibleTime package.
 #
 # Henrik Sonesson <Hsonesson@gmail.com>, 2008, 2009.
 msgid ""

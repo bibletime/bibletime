@@ -1,4 +1,6 @@
 # translation of howto-de.po to Deutsch
+# Copyright (C) 2009 The BibleTime Team, http://www.bibletime.info
+# This file is distributed under the same license as the BibleTime package.
 # Martin Gruner <mg.pub@gmx.net>, 2006.
 # Joachim Ansorg <info@bibetime.info>, 2005.
 # Joachim Ansorg, 2003.
@@ -8,101 +10,7 @@
 # Martin Gruner <mg.pub@gmx.net>, 2004.
 # Martin Gruner <mg.pub@gmx.net>, 2004, 2005.
 # Roland Teschner <rolte@gmx.net>, 2009.
-# #-#-#-#-#  full.po (full)  #-#-#-#-#
-# #-#-#-#-#  full.po (full)  #-#-#-#-#
-# #-#-#-#-#  de.po (full)  #-#-#-#-#
-# #-#-#-#-#  full.po (full)  #-#-#-#-#
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# #-#-#-#-#  de.po (de)  #-#-#-#-#
-# #-#-#-#-#  full.po (full)  #-#-#-#-#
-# translation of full.po to
-# #-#-#-#-#  de.po (de)  #-#-#-#-#
-# #-#-#-#-#  full.po (full)  #-#-#-#-#
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# #-#-#-#-#  de.po (de)  #-#-#-#-#
-# translation of de.po to
-# #-#-#-#-#  full.po (full)  #-#-#-#-#
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# #-#-#-#-#  de.po (de)  #-#-#-#-#
-# #-#-#-#-#  full.po (full)  #-#-#-#-#
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# #-#-#-#-#  de.po (de)  #-#-#-#-#
-# #-#-#-#-#  full.po (full)  #-#-#-#-#
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# #-#-#-#-#  de.po (de)  #-#-#-#-#
-# #-#-#-#-#  full.po (full)  #-#-#-#-#
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# #-#-#-#-#  de.po (de)  #-#-#-#-#
-# #-#-#-#-#  full.po (full)  #-#-#-#-#
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# #-#-#-#-#  de.po (de)  #-#-#-#-#
-# #-#-#-#-#  full.po (full)  #-#-#-#-#
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# #-#-#-#-#  de.po (de)  #-#-#-#-#
-# translation of de.po to
-# #-#-#-#-#  full.po (full)  #-#-#-#-#
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# #-#-#-#-#  de.po (index)  #-#-#-#-#
-# #-#-#-#-#  full.po (full)  #-#-#-#-#
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# #-#-#-#-#  de.po (index)  #-#-#-#-#
-# #-#-#-#-#  full.po (full)  #-#-#-#-#
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
-# translation of full.po to
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: howto-de\n"
@@ -114,56 +22,29 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"#-#-#-#-#  full.po (full)  #-#-#-#-#\n"
-"#-#-#-#-#  full.po (full)  #-#-#-#-#\n"
 "X-Generator: KBabel 1.11.4\n"
-"#-#-#-#-#  de.po (full)  #-#-#-#-#\n"
-"#-#-#-#-#  full.po (full)  #-#-#-#-#\n"
 "X-Generator: KBabel 1.10.2\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
-"#-#-#-#-#  de.po (de)  #-#-#-#-#\n"
-"#-#-#-#-#  full.po (full)  #-#-#-#-#\n"
 "X-Generator: KBabel 1.10.2\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
-"#-#-#-#-#  de.po (de)  #-#-#-#-#\n"
-"#-#-#-#-#  full.po (full)  #-#-#-#-#\n"
 "X-Generator: KBabel 1.10.2\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
-"#-#-#-#-#  de.po (de)  #-#-#-#-#\n"
-"#-#-#-#-#  full.po (full)  #-#-#-#-#\n"
 "X-Generator: KBabel 1.10.2\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
-"#-#-#-#-#  de.po (de)  #-#-#-#-#\n"
-"#-#-#-#-#  full.po (full)  #-#-#-#-#\n"
 "X-Generator: KBabel 1.10.2\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
-"#-#-#-#-#  de.po (de)  #-#-#-#-#\n"
-"#-#-#-#-#  full.po (full)  #-#-#-#-#\n"
 "X-Generator: KBabel 1.10.2\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
-"#-#-#-#-#  de.po (de)  #-#-#-#-#\n"
-"#-#-#-#-#  full.po (full)  #-#-#-#-#\n"
 "X-Generator: KBabel 1.10.2\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
-"#-#-#-#-#  de.po (de)  #-#-#-#-#\n"
-"#-#-#-#-#  full.po (full)  #-#-#-#-#\n"
 "X-Generator: KBabel 1.10.2\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
-"#-#-#-#-#  de.po (de)  #-#-#-#-#\n"
-"#-#-#-#-#  full.po (full)  #-#-#-#-#\n"
 "X-Generator: KBabel 1.10.2\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
-"#-#-#-#-#  de.po (de)  #-#-#-#-#\n"
-"#-#-#-#-#  full.po (full)  #-#-#-#-#\n"
 "X-Generator: KBabel 1.10.2\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
-"#-#-#-#-#  de.po (index)  #-#-#-#-#\n"
-"#-#-#-#-#  full.po (full)  #-#-#-#-#\n"
 "X-Generator: KBabel 1.10.2\n"
-"#-#-#-#-#  de.po (index)  #-#-#-#-#\n"
-"#-#-#-#-#  full.po (full)  #-#-#-#-#\n"
 "X-Generator: KBabel 1.10.2\n"
-"#-#-#-#-#  de.po (index)  #-#-#-#-#\n"
 
 #: docs/howto/en/docbook/howto-basics.docbook:1
 msgid "Bible Study Basics"
