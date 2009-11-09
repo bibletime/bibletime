@@ -239,32 +239,33 @@ void CKeyReferenceWidget::slotUpdateUnlock() {
 }
 
 void CKeyReferenceWidget::slotStepBook(int n) {
-    CSwordVerseKey key = *m_key;
-    n > 0 ? key.next( CSwordVerseKey::UseBook ) : key.previous( CSwordVerseKey::UseBook );
+	emit beforeChange(m_key);
+    n > 0 ? m_key->next( CSwordVerseKey::UseBook ) : m_key->previous( CSwordVerseKey::UseBook );
     if (!updatelock)
-        emit changed(&key); // does *m_key = key
+        emit changed(m_key);
     updateText();
 }
 
 void CKeyReferenceWidget::slotStepChapter(int n) {
-    CSwordVerseKey key = *m_key;
-    n > 0 ? key.next( CSwordVerseKey::UseChapter ) : key.previous( CSwordVerseKey::UseChapter );
+	emit beforeChange(m_key);
+    n > 0 ? m_key->next( CSwordVerseKey::UseChapter ) : m_key->previous( CSwordVerseKey::UseChapter );
     if (!updatelock)
-        emit changed(&key); // does *m_key = key
+        emit changed(m_key);
     updateText();
 }
 
 void CKeyReferenceWidget::slotStepVerse(int n) {
-    CSwordVerseKey key = *m_key;
-    n > 0 ? key.next( CSwordVerseKey::UseVerse ) : key.previous( CSwordVerseKey::UseVerse );
+	emit beforeChange(m_key);
+    n > 0 ? m_key->next( CSwordVerseKey::UseVerse ) : m_key->previous( CSwordVerseKey::UseVerse );
     if (!updatelock)
-        emit changed(&key); // does *m_key = key
+        emit changed(m_key);
     updateText();
 }
 
 
 void CKeyReferenceWidget::slotChangeVerse(int n) {
     if (m_key->Verse() != n) {
+		emit beforeChange(m_key);
         m_key->Verse( n );
         setKey( m_key );
     }
@@ -274,6 +275,7 @@ void CKeyReferenceWidget::slotChangeVerse(int n) {
 
 void CKeyReferenceWidget::slotChangeChapter(int n) {
     if (m_key->Chapter() != n) {
+		emit beforeChange(m_key);
         m_key->Chapter( n );
         setKey( m_key );
     }
@@ -284,6 +286,7 @@ void CKeyReferenceWidget::slotChangeChapter(int n) {
 
 void CKeyReferenceWidget::slotChangeBook(QString bookname) {
     if (m_key->book() != bookname) {
+		emit beforeChange(m_key);
         m_key->book( bookname );
         setKey( m_key );
     }

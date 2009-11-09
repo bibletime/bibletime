@@ -39,6 +39,7 @@ CBibleKeyChooser::CBibleKeyChooser(QList<CSwordModuleInfo*> modules, CSwordKey *
     setFocusProxy(w_ref);
     layout->addWidget(w_ref);
 
+    connect(w_ref, SIGNAL(beforeChange(CSwordVerseKey *)), SLOT(beforeRefChange(CSwordVerseKey *)));
     connect(w_ref, SIGNAL(changed(CSwordVerseKey *)), SLOT(refChanged(CSwordVerseKey *)));
 
     setKey(m_key); //set the key without changing it, setKey(key()) would change it
@@ -60,28 +61,27 @@ void CBibleKeyChooser::setKey(CSwordKey* key) {
     emit keyChanged(m_key);
 }
 
+void CBibleKeyChooser::beforeRefChange(CSwordVerseKey* key) {
+    Q_ASSERT(m_key);
+
+	if (!updatesEnabled()) 
+		return;
+
+	if (m_key) 
+		emit beforeKeyChange(m_key->key());
+
+}
+
 void CBibleKeyChooser::refChanged(CSwordVerseKey* key) {
     Q_ASSERT(m_key);
     Q_ASSERT(key);
 
-    if (!updatesEnabled()) return;
+    if (!updatesEnabled()) 
+		return;
 
     setUpdatesEnabled(false);
-    if (m_key) 
-		emit beforeKeyChange(m_key->key());
-
-	// Must copy, the "key" pointer may be deleted without this class knowing about that.
-	CSwordVerseKey* tmpKey = m_key;
-    m_key = dynamic_cast<CSwordVerseKey*>(key->copy());
-    emit keyChanged(tmpKey);
-	
-    /**
-      \bug Memory leak. Because several widgets share the m_key pointer it is
-      currently impossible to delete it here. Doing so will cause crashes in
-      other classes such as the CKeyReferenceWidget. More investigation is
-      needed to make this safe.
-    */
-	// delete tmpKey;
+    m_key = key;
+    emit keyChanged(m_key);
 
     setUpdatesEnabled(true);
 }

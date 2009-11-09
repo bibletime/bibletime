@@ -55,8 +55,11 @@ class CBibleKeyChooser : public CKeyChooser  {
         */
         virtual void setModules(const QList<CSwordModuleInfo*>& modules, const bool refresh = true);
         /**
-        * used to react to changes
-        * @param index not used
+        * used to do actions before key changes
+        */
+        void beforeRefChange(CSwordVerseKey *key);
+        /**
+        * used to do actions after key changes
         */
         void refChanged(CSwordVerseKey *key);
 
