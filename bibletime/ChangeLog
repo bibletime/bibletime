@@ -3,6 +3,9 @@
     * Improved support for alternative versifications.
     * Release 2.4.rc1
 
+2009-11-06 Eeli Kaikkonen
+    * Added "get list of install sources from server" functionality.
+
 2009-11-05 Gary Holmlund
 	* Fix crash when canceling bookshelf install
 
