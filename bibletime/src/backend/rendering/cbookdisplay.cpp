@@ -10,6 +10,8 @@
 #include "backend/rendering/cbookdisplay.h"
 
 #include <boost/scoped_ptr.hpp>
+#include <QtAlgorithms>
+
 #include "backend/drivers/cswordbookmoduleinfo.h"
 #include "backend/keys/cswordtreekey.h"
 #include "backend/rendering/cdisplayrendering.h"
@@ -45,6 +47,8 @@ const QString Rendering::CBookDisplay::text( const QList<CSwordModuleInfo*>& mod
 
         const QString renderedText = render.renderKeyTree(tree);
         key->setOffset( offset );
+
+        qDeleteAll(tree);      // Dispose of the heap allocated objects pointed to in tree.
         return renderedText;
     };
 
@@ -74,6 +78,7 @@ const QString Rendering::CBookDisplay::text( const QList<CSwordModuleInfo*>& mod
 
         const QString renderedText = render.renderKeyTree(tree);
         key->setOffset( offset );
+        qDeleteAll(tree);      // Dispose of the heap allocated objects pointed to in tree.
         return renderedText;
     };
 
@@ -90,6 +95,7 @@ const QString Rendering::CBookDisplay::text( const QList<CSwordModuleInfo*>& mod
 
             const QString renderedText = render.renderKeyTree(tree);
             key->setOffset( offset );
+                     qDeleteAll(tree);      // Dispose of the heap allocated objects pointed to in tree.
             return renderedText;
         };
     };
@@ -108,6 +114,7 @@ const QString Rendering::CBookDisplay::text( const QList<CSwordModuleInfo*>& mod
 
     key->setOffset( offset ); //restore key
 
+    qDeleteAll(tree);      // Dispose of the heap allocated objects pointed to in tree.
     return renderedText;
 }
 

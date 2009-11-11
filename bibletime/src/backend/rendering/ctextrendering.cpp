@@ -10,7 +10,10 @@
 #include "backend/rendering/ctextrendering.h"
 
 #include <boost/scoped_ptr.hpp>
+
 #include <QRegExp>
+#include <QtAlgorithms>
+
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/keys/cswordkey.h"
 #include "backend/keys/cswordversekey.h"
@@ -236,12 +239,12 @@ const QString CTextRendering::renderKeyRange( const QString& start, const QStrin
                 vk_start->Chapter(1);
                 vk_start->Verse(0);
             }
-            /// \bug Valgrind reports memory leak with allocation:
             tree.append( new KeyTreeItem(vk_start->key(), modules, settings) );
             ok = vk_start->next(CSwordVerseKey::UseVerse);
         }
-
-        return renderKeyTree(tree);
+        const QString renderedText = renderKeyTree(tree);
+        qDeleteAll(tree);
+        return renderedText;
     }
 
     return QString::null;
@@ -251,7 +254,9 @@ const QString CTextRendering::renderSingleKey( const QString& key, const QList<C
     KeyTree tree;
     tree.append( new KeyTreeItem(key, moduleList, settings) );
 
-    return renderKeyTree(tree);
+    const QString renderedText = renderKeyTree(tree);
+    qDeleteAll(tree);
+    return renderedText;
 }
 
 
