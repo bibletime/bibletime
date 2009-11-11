@@ -10,6 +10,8 @@
 #include "backend/keys/cswordversekey.h"
 
 #include <QStringList>
+#include <QDebug>
+
 #include "backend/drivers/cswordbiblemoduleinfo.h"
 #include "backend/drivers/cswordcommentarymoduleinfo.h"
 
@@ -26,9 +28,12 @@ CSwordVerseKey::CSwordVerseKey( CSwordModuleInfo* const module ) :
 
         key( bible->lowerBound().key() );
     }
+    this->VerseKey::setAutoNormalize(true);
 }
 
-CSwordVerseKey::CSwordVerseKey( const CSwordVerseKey& k ) : CSwordKey(k), VerseKey(k) {}
+CSwordVerseKey::CSwordVerseKey( const CSwordVerseKey& k ) : CSwordKey(k), VerseKey(k) {
+	this->VerseKey::setAutoNormalize(true);
+}
 
 CSwordVerseKey::CSwordVerseKey( const VerseKey* const k, CSwordModuleInfo* const module ) : CSwordKey(module), VerseKey(*k) {}
 
