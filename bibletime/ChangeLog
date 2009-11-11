@@ -1,5 +1,7 @@
 2009-11-11 Martin Gruner <mgruner@crosswire.org>
     * Include patch by kbs that fixes a memory leak.
+    * Improved support for alternative versifications.
+    * Release 2.4.rc1
 
 2009-11-05 Gary Holmlund
 	* Fix crash when canceling bookshelf install
