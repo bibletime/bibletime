@@ -17,6 +17,8 @@
 #include <QRegExp>
 #include <QSize>
 #include <QVBoxLayout>
+#include <QtAlgorithms>
+
 #include "backend/config/cbtconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/keys/cswordkey.h"
@@ -283,13 +285,18 @@ const QString CInfoDisplay::decodeCrossReference( const QString& data ) {
     //  qWarning("rendered the tree: %s", renderer.renderKeyTree(tree).latin1());
     //spanns containing rtl text need dir=rtl on their parent tag to be aligned properly
     QString lang = "en";  // default english
-    if (module)
+    if (module) {
         lang = module->language()->abbrev();
+    }
+
+    QString RenderedText = renderer.renderKeyTree(tree);
+    qDeleteAll(tree);
+
     return QString("<div class=\"crossrefinfo\" lang=\"%1\"><h3>%2</h3><div class=\"para\" dir=\"%3\">%4</div></div>")
            .arg(lang)
            .arg(tr("Cross references"))
            .arg(module ? ((module->textDirection() == CSwordModuleInfo::LeftToRight) ? "ltr" : "rtl") : "")
-                   .arg(renderer.renderKeyTree(tree));
+           .arg(RenderedText);
 }
 
 /*!
