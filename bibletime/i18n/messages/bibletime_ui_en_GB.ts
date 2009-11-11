@@ -2341,7 +2341,9 @@ shortcut</source>
         <source>List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don&apos;t want to keep.
 
 Do you want to continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don&apos;t want to keep.
+
+Do you want to continue?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="156"/>
