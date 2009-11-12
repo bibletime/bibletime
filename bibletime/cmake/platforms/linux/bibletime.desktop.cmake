@@ -6,6 +6,7 @@ Comment[da]=Et letanvendeligt bibelstudieprogram
 Comment[de]=Ein einfach zu benutzendes Bibelprogramm
 Comment[fr]=Un outil d'éde biblique facile àtiliser
 Comment[it]=Un semplice strumento per studiare la Bibbia
+Comment[fi]=Helppokäyttöinen raamatunlukuohjelmisto
 Exec=bibletime
 Icon=bibletime
 MimeType=
