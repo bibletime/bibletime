@@ -119,6 +119,7 @@ void BtAboutDialog::init_contributors_tab() {
     content += "<li>Johan van der Lingen</li>";
     content += "<li>Jean Van Schaftingen</li>";
     content += "<li>Roland Teschner</li>";
+    content += "<li>Giovanni Tedaldi</li>";
     content += "<li>Dmitry Yurevich</li>";
     content += "<li>Esteban Zeller</li>";
     content += "</ul>";
