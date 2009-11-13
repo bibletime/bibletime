@@ -1,3 +1,6 @@
+2009-11-12 Gary Holmlund
+    * Fix defect: Cannot exit fullscreen mode - ID: 2895205
+
 2009-11-11 Martin Gruner <mgruner@crosswire.org>
     * Include patch by kbs that fixes a memory leak.
     * Improved support for alternative versifications.

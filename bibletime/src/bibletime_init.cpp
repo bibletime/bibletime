@@ -527,13 +527,9 @@ void BibleTime::applyProfileSettings( CProfile* p ) {
     if (!p) return;
 
     //first Main Window state
-    m_windowFullscreen_action->setChecked( p->fullscreen() );  //set the fullscreen button state
-    toggleFullscreen(); //either showFullscreen or showNormal
-    if (p->maximized()) QMainWindow::showMaximized(); //if maximized, then also call showMaximized
-    //Then Main Window geometry
-    QMainWindow::resize( p->geometry().size() ); //Don't use QMainWindowInterface::resize
-    QMainWindow::move( p->geometry().topLeft() );//Don't use QMainWindowInterface::move
     restoreState(p->getMainwindowState());
+	restoreGeometry(p->getMainwindowGeometry());
+	m_windowFullscreen_action->setChecked(isFullScreen());
 
     const CMDIArea::MDIArrangementMode newArrangementMode = p->getMDIArrangementMode();
     //make sure actions are updated by calling the slot functions
@@ -559,14 +555,7 @@ void BibleTime::storeProfileSettings( CProfile* p ) {
     if (!p || !m_windowFullscreen_action) return;
 
     p->setMainwindowState(saveState());
-    p->setFullscreen( m_windowFullscreen_action->isChecked() );
-    p->setMaximized( this->QMainWindow::isMaximized() );
-
-    QRect geometry;
-    geometry.setTopLeft(pos());
-    geometry.setSize(size());
-    p->setGeometry(geometry);
-
+	p->setMainwindowGeometry(saveGeometry());
     p->setMDIArrangementMode(m_mdi->getMDIArrangementMode());
 }
 

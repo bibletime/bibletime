@@ -23,8 +23,6 @@ namespace Profile {
 CProfile::CProfile( const QString& file, const QString& name )
         : m_name(name.isEmpty() ? QObject::tr("unknown") : name),
         m_filename(file),
-        m_fullscreen(false),
-        m_geometry(10, 20, 640, 480),
         m_mdiArrangementMode((CMDIArea::MDIArrangementMode)0) { //0 is not a valid enum entry, means "unknown"
     namespace DU = util::directory;
 
@@ -85,41 +83,23 @@ QList<CProfileWindow*> CProfile::load() {
             elem = elem.nextSibling().toElement();
         }
         if (!mainWindow.isNull()) { //was found
-            setFullscreen( (bool)mainWindow.attribute("fullscreen").toInt());
+
+            QByteArray bgeometry;
+            bgeometry += mainWindow.attribute("geometry");
+            setMainwindowGeometry(QByteArray::fromHex(bgeometry));
 
             QByteArray bstate;
             bstate += mainWindow.attribute("state");
             setMainwindowState(QByteArray::fromHex(bstate));
-
-            QDomElement geometry_element = mainWindow.namedItem("GEOMETRY").toElement();
-            QRect rect;
-            if (!geometry_element.isNull()) {
-                if (geometry_element.hasAttribute("x")) {
-                    rect.setX(geometry_element.attribute("x").toInt());
-                }
-                if (geometry_element.hasAttribute("y")) {
-                    rect.setY(geometry_element.attribute("y").toInt());
-                }
-                if (geometry_element.hasAttribute("width")) {
-                    rect.setWidth(geometry_element.attribute("width").toInt());
-                }
-                if (geometry_element.hasAttribute("height")) {
-                    rect.setHeight(geometry_element.attribute("height").toInt());
-                }
-                if (geometry_element.hasAttribute("isMaximized")) {
-                    this->setMaximized( static_cast<bool>(geometry_element.attribute("isMaximized").toInt()) );
-                }
-                setGeometry(rect);
-            }
 
             QDomElement mdi_element = mainWindow.namedItem("MDI").toElement();
             if (!mdi_element.isNull()) {
                 if (mdi_element.hasAttribute("ArrangementMode")) {
                     this->setMDIArrangementMode((CMDIArea::MDIArrangementMode)mdi_element.attribute("ArrangementMode").toInt());
                 }
-            }
-        }
-    }
+			}
+		}
+	}
 
     m_profileWindows.clear();
     QDomElement elem = document.firstChild().toElement();
@@ -221,19 +201,12 @@ bool CProfile::save(QList<CProfileWindow*> windows) {
     //save mainwindow settings
     {
         QDomElement mainWindow = doc.createElement("MAINWINDOW");
-        mainWindow.setAttribute("fullscreen", fullscreen());
+
+        QString sgeometry = QString(getMainwindowGeometry().toHex());
+        mainWindow.setAttribute("geometry", sgeometry);
 
         QString sstate = QString(getMainwindowState().toHex());
         mainWindow.setAttribute("state", sstate);
-
-        QDomElement geometry = doc.createElement("GEOMETRY");
-        mainWindow.appendChild(geometry);
-        const QRect r = this->geometry();
-        geometry.setAttribute("x", r.x());
-        geometry.setAttribute("y", r.y());
-        geometry.setAttribute("width", r.width());
-        geometry.setAttribute("height", r.height());
-        geometry.setAttribute("isMaximized", static_cast<int>(this->maximized()));
 
         QDomElement mdi = doc.createElement("MDI");
         mainWindow.appendChild(mdi);
@@ -379,42 +352,20 @@ void CProfile::saveBasics() {
     }
 }
 
-/** Returns true if the main window was in fullscreen mode as the profile was saved. */
-bool CProfile::fullscreen() const {
-    return m_fullscreen;
-}
-
-/** Set the parameter to true if the main window coveres the full screen size. */
-void CProfile::setFullscreen( const bool fullscreen ) {
-    m_fullscreen = fullscreen;
-}
-
-/** Returns true if the main window was maximized as the profile was saved. */
-bool CProfile::maximized() const {
-    return m_maximized;
-}
-
-/** Set the parameter to true if the main window is maximized. */
-void CProfile::setMaximized( const bool maximized ) {
-    m_maximized = maximized;
-}
-
-/** Returns the geometry of the main window */
-const QRect CProfile::geometry() {
-    return m_geometry;
-}
-
-/** Stes the geoemtry of the main window */
-void CProfile::setGeometry( const QRect rect ) {
-    m_geometry = rect;
-}
-
 void CProfile::setMDIArrangementMode(const CMDIArea::MDIArrangementMode newArrangementMode) {
     m_mdiArrangementMode = newArrangementMode;
 }
 
 CMDIArea::MDIArrangementMode CProfile::getMDIArrangementMode(void) {
     return m_mdiArrangementMode;
+}
+
+void CProfile::setMainwindowGeometry(const QByteArray& geometry) {
+    m_mainwindowGeometry = geometry;
+}
+
+QByteArray CProfile::getMainwindowGeometry() {
+    return m_mainwindowGeometry;
 }
 
 void CProfile::setMainwindowState(const QByteArray& state) {

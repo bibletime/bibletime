@@ -57,14 +57,6 @@ class CProfile {
         */
         void setName( const QString& );
         /**
-        * Returns true if the main window was in fullscreen mode as the profile was saved.
-        */
-        bool fullscreen() const;
-        /**
-        * Set the parameter to true if the main window coveres the full screen size.
-        */
-        void setFullscreen( const bool fullscreen );
-        /**
         * Returns true if the main window was maximized as the profile was saved.
         */
         bool maximized() const;
@@ -73,14 +65,6 @@ class CProfile {
         */
         void setMaximized( const bool maximized );
         /**
-        * Sets the geoemtry of the main window
-        */
-        void setGeometry( const QRect rect );
-        /**
-        * Returns the geometry of the main window
-        */
-        const QRect geometry();
-        /**
         * Sets the MDI arrangement mode
         */
         void setMDIArrangementMode(const CMDIArea::MDIArrangementMode);
@@ -88,6 +72,14 @@ class CProfile {
         * Returns mdi arrangement mode
         */
         CMDIArea::MDIArrangementMode getMDIArrangementMode(void);
+        /**
+        * set mainwindow saveGeometry - size and position of window
+        */
+        void setMainwindowGeometry(const QByteArray& geometry);
+        /**
+         * Return mainwindow saveGeometry - size and position of window
+        */
+        QByteArray getMainwindowGeometry();
         /**
         * set mainwindow saveState - position of docking windows and toolbar
         */
@@ -107,10 +99,8 @@ class CProfile {
         QList<CProfileWindow*> m_profileWindows;
         QString m_name;
         QString m_filename;
-        bool m_fullscreen;
-        bool m_maximized;
-        QRect m_geometry;
         CMDIArea::MDIArrangementMode m_mdiArrangementMode;
+        QByteArray m_mainwindowGeometry;
         QByteArray m_mainwindowState;
 };
 
