@@ -115,15 +115,17 @@ SET(bibletime_SOURCES
 	src/frontend/bookshelfmanager/removepage/btremovepage.cpp
 	src/frontend/bookshelfmanager/indexpage/btindexpage.cpp
 
-	#Search dialog
-	src/frontend/searchdialog/csearchdialog.cpp
-	src/frontend/searchdialog/csearchresultview.cpp
-	src/frontend/searchdialog/btsearchresultarea.cpp
+	# Search dialog
 	src/frontend/searchdialog/btsearchoptionsarea.cpp
+	src/frontend/searchdialog/btsearchresultarea.cpp
 	src/frontend/searchdialog/chistorycombobox.cpp
 	src/frontend/searchdialog/cmoduleresultview.cpp
-	src/frontend/searchdialog/csearchmodulechooserdialog.cpp
 	src/frontend/searchdialog/crangechooserdialog.cpp
+	src/frontend/searchdialog/csearchdialog.cpp
+	src/frontend/searchdialog/csearchmodulechooserdialog.cpp
+	src/frontend/searchdialog/csearchresultview.cpp
+
+	# Search analysis
 	src/frontend/searchdialog/analysis/csearchanalysisitem.cpp
 	src/frontend/searchdialog/analysis/csearchanalysislegenditem.cpp
 	src/frontend/searchdialog/analysis/csearchanalysisscene.cpp
