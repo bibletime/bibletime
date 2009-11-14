@@ -513,7 +513,7 @@ void CSwordBackend::reloadModules(SetupChangedReason reason) {
 }
 
 // Get one or more shared sword config (sword.conf) files
-QStringList CSwordBackend::getSharedSwordConfigFiles()
+QStringList CSwordBackend::getSharedSwordConfigFiles() const
 {
 	QStringList configPath;
 #ifdef Q_WS_WIN
@@ -523,73 +523,80 @@ QStringList CSwordBackend::getSharedSwordConfigFiles()
 	configPath << globalPath.append("/Sword/sword.conf");
 #else
 	// /etc/sword.conf, /usr/local/etc/sword.conf
-	QString globalPaths(globalConfPath); // from libsword
-	configPath = globalPaths.split(":");
+    configPath = QString(globalConfPath).split(":");
 #endif
 	return configPath;
 }
 
 // Get the private sword directory
-QString CSwordBackend::getPrivateSwordConfigPath()
+QString CSwordBackend::getPrivateSwordConfigPath() const
 {
-    const QString homeSwordPath = util::directory::getUserHomeSwordDir().absolutePath();
-	return homeSwordPath;
+    return util::directory::getUserHomeSwordDir().absolutePath();
 }
 
-QString CSwordBackend::getPrivateSwordConfigFile()
+QString CSwordBackend::getPrivateSwordConfigFile() const
 {
-	QString file = getPrivateSwordConfigPath() + "/sword.conf";
-	return util::directory::convertDirSeparators(file);
+    QString file(getPrivateSwordConfigPath() + "/sword.conf");
+    return util::directory::convertDirSeparators(file);
 }
 
-    
-//return a list of used Sword dirs. Useful for the installer
-const QStringList CSwordBackend::swordDirList() const {
+// Return a list of used Sword dirs. Useful for the installer.
+QStringList CSwordBackend::swordDirList() const {
     namespace DU = util::directory;
+    typedef QStringList::const_iterator SLCI;
+    typedef sword::ConfigEntMap::const_iterator CEMCI;
 
-	// Get the set of sword directories that could contain modules
+    // Get the set of sword directories that could contain modules:
     QSet<QString> swordDirSet;
+    QStringList configs;
 
-	QStringList configs;
-    if ( QFile( getPrivateSwordConfigFile() ).exists() ) {
-		// Use the private sword.conf file
-		configs << getPrivateSwordConfigFile();
-	} else {
-		// Did not find private sword.conf, will use shared sword.conf files 
-		// to build the private one. Once the private sword.conf exist, the
-		// shared ones will not be searched again.
+    if (QFile(getPrivateSwordConfigFile()).exists()) {
+        // Use the private sword.conf file:
+        configs << getPrivateSwordConfigFile();
+    } else {
+        /*
+          Did not find private sword.conf, will use shared sword.conf files to
+          build the private one. Once the private sword.conf exist, the shared
+          ones will not be searched again.
+        */
         configs = getSharedSwordConfigFiles();
 
-		// On Windows, add the shared sword directory to the set so the new
-		// private sword.conf will have it. The user could decide to delete
-		// this shared path and it will not automatically come back.
 #ifdef Q_WS_WIN
-		swordDirSet << DU::convertDirSeparators(QString(getenv("SWORD_PATH")));
+        /*
+          On Windows, add the shared sword directory to the set so the new
+          private sword.conf will have it. The user could decide to delete this
+          shared path and it will not automatically come back.
+        */
+        swordDirSet << DU::convertDirSeparators(QString(getenv("SWORD_PATH")));
 #endif
     }
 
-	// Search the sword.conf file(s) for sword directories that could contain modules
-    for (QStringList::const_iterator it = configs.begin(); it != configs.end(); ++it) {
-		QString path = *it;
+    // Search the sword.conf file(s) for sword directories that could contain modules
+    for (SLCI it(configs.begin()); it != configs.end(); it++) {
         if (!QFileInfo(*it).exists()) {
             continue;
         }
 
-        //get all DataPath and AugmentPath entries from the config file and add them to the list
-        sword::SWConfig conf( (*it).toUtf8().constData() );
-        swordDirSet << QDir((QTextCodec::codecForLocale()->toUnicode(conf["Install"]["DataPath"].c_str()))).absolutePath();
-        sword::ConfigEntMap group = conf["Install"];
-        sword::ConfigEntMap::iterator start = group.equal_range("AugmentPath").first;
-        sword::ConfigEntMap::iterator end = group.equal_range("AugmentPath").second;
+        /*
+          Get all DataPath and AugmentPath entries from the config file and add
+          them to the list:
+        */
+        sword::SWConfig conf((*it).toUtf8().constData());
+        swordDirSet << QDir(QTextCodec::codecForLocale()->toUnicode(conf["Install"]["DataPath"].c_str())).absolutePath();
 
-        for (sword::ConfigEntMap::const_iterator it = start; it != end; ++it) {
-            QDir((QTextCodec::codecForLocale()->toUnicode(it->second.c_str()))).absolutePath();
-            swordDirSet << QDir((QTextCodec::codecForLocale()->toUnicode(it->second.c_str()))).absolutePath(); //added augment path
+        sword::ConfigEntMap group(conf["Install"]);
+        const sword::ConfigEntMap::iterator start(group.equal_range("AugmentPath").first);
+        const sword::ConfigEntMap::iterator end(group.equal_range("AugmentPath").second);
+
+        for (CEMCI it(start); it != end; it++) {
+            QDir(QTextCodec::codecForLocale()->toUnicode(it->second.c_str())).absolutePath();
+            // Added augment path:
+            swordDirSet << QDir(QTextCodec::codecForLocale()->toUnicode(it->second.c_str())).absolutePath();
         }
     }
 
-	// Add the private sword path to the set if not there already. 
-		swordDirSet << getPrivateSwordConfigPath();
+    // Add the private sword path to the set if not there already:
+    swordDirSet << getPrivateSwordConfigPath();
 
     return swordDirSet.values();
 }

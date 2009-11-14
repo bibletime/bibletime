@@ -230,9 +230,9 @@ class CSwordBackend : public QObject, public sword::SWMgr {
         */
         void filterInit();
 
-		QStringList getSharedSwordConfigFiles();
-		QString getPrivateSwordConfigPath();
-		QString getPrivateSwordConfigFile();
+        QStringList getSharedSwordConfigFiles() const;
+        QString getPrivateSwordConfigPath() const;
+        QString getPrivateSwordConfigFile() const;
 
     private:
         // Filters
