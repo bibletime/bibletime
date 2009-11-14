@@ -1,6 +1,8 @@
 2009-11-14 Martin Gruner <mgruner@crosswire.org>
     * Bug-A-Thon II
     * Improve search dialog robustness (fix crash when entering a keyword only)
+    * Fixed a bug where strongs parsing of search results did not work when searching in
+        more than one module.
 
 2009-11-12 Gary Holmlund
     * Fix defect: Cannot exit fullscreen mode - ID: 2895205

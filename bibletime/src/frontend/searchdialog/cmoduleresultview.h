@@ -119,7 +119,7 @@ class CModuleResultView : public QTreeWidget {
 
         QMenu* m_popup;
 
-        StrongsResultClass* strongsResults;
+        QHash<CSwordModuleInfo*, StrongsResultClass*> strongsResults;
         QSize m_size;
 };
 
