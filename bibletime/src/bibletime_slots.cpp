@@ -540,3 +540,10 @@ void BibleTime::refreshProfileMenus() {
         m_windowDeleteProfileMenu->addAction(p->name());
     }
 }
+
+// Quit from BibleTime
+void BibleTime::quit()
+{
+	Search::CSearchDialog::closeDialog();
+	close();
+}

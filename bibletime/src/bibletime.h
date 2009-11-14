@@ -242,6 +242,7 @@ class BibleTime : public QMainWindow {
         void searchInModule(CSwordModuleInfo *module);
         void moduleUnlock(CSwordModuleInfo *module);
         void moduleAbout(CSwordModuleInfo *module);
+		void quit();
 
         /**
          * Is called when the window menu is about to show ;-)

@@ -256,7 +256,7 @@ void BibleTime::initActions() {
     fileMenu->addAction(tmp);
     m_mainToolBar->addAction(tmp);
     m_mainToolBar->addSeparator();
-    connect(tmp, SIGNAL(triggered()), this, SLOT(close()) );
+    connect(tmp, SIGNAL(triggered()), this, SLOT(quit()) );
 
     m_windowFullscreen_action = m_actionCollection->action("toggleFullscreen");
     m_windowFullscreen_action->setCheckable(true);
