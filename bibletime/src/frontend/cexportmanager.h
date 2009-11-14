@@ -66,7 +66,7 @@ class CExportManager : CPointers {
         const QString lineBreak( const Format format );
 
     private:
-        QString m_caption;
+        QString m_caption; ///< \todo Useless field
         QString m_progressLabel;
         bool m_showProgress;
         CSwordBackend::FilterOptions m_filterOptions;

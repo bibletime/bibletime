@@ -48,6 +48,7 @@ BtInstallPathDialog::BtInstallPathDialog() {
     mainLayout->addWidget(mainLabel);
 
     QString swordConfPath = instbackend::swordConfigFilename();
+    /// \todo After releasing 2.4, change the following line to: QLabel *confPathLabel = new QLabel(tr("Configuration file for the folders is: <b>%1</b>").arg(swordConfPath), this);
     QLabel* confPathLabel = new QLabel(tr("Configuration file for the folders is: ").append("<b>%1</b>").arg(swordConfPath), this);
     confPathLabel->setWordWrap(true);
     mainLayout->addWidget(confPathLabel);
