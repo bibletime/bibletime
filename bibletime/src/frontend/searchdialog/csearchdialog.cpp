@@ -91,10 +91,13 @@ void CSearchDialog::startSearch() {
     QString originalSearchText(m_searchOptionsArea->searchText());
     QString searchText("");
 
-    QString TestString(originalSearchText);
-	QRegExp ReservedWords("heading:|footnote:|morph:|strong:");
-    if (TestString.replace(ReservedWords, "").isEmpty()) {
-        return;
+    // first check the search string for errors
+    {
+		QString TestString(originalSearchText);
+		QRegExp ReservedWords("heading:|footnote:|morph:|strong:");
+		if (TestString.replace(ReservedWords, "").simplified().isEmpty()) {
+			return;
+		}
     }
 
     searchText = prepareSearchText(originalSearchText);
