@@ -214,12 +214,7 @@ class CSwordBackend : public QObject, public sword::SWMgr {
         /** Sword prefix list.
         * @return A list of all known Sword prefix dirs
         */
-        const QStringList swordDirList();
-
-        /** Emits the sigSwordSetupChanged signal.
-        * This can be called directly from outside if there is no need to reload the backend.
-        */
-        void notifyChange(SetupChangedReason reason);
+        QStringList swordDirList() const;
 
     signals:
         void sigSwordSetupChanged(CSwordBackend::SetupChangedReason reason);
