@@ -16,8 +16,10 @@
 #include <QSettings>
 #include <QSizePolicy>
 #include <QString>
+#include <QRegExp>
 #include <QVBoxLayout>
 #include <QWidget>
+
 #include "backend/config/cbtconfig.h"
 #include "backend/cswordmodulesearch.h"
 #include "backend/keys/cswordkey.h"
@@ -89,7 +91,9 @@ void CSearchDialog::startSearch() {
     QString originalSearchText(m_searchOptionsArea->searchText());
     QString searchText("");
 
-    if (originalSearchText.isEmpty()) {
+    QString TestString(originalSearchText);
+	QRegExp ReservedWords("heading:|footnote:|morph:|strong:");
+    if (TestString.replace(ReservedWords, "").isEmpty()) {
         return;
     }
 
