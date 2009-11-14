@@ -1,3 +1,6 @@
+2009-11-14 Kang Sun
+	* Fixed highlighting of search results with ? wildcard.
+
 2009-11-14 Gary Holmlund
     * Fix bug "Print->Reference wih text opens save dialog
     * Fix Search dialog to close when BibleTime closes
