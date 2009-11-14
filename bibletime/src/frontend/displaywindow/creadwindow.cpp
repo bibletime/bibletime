@@ -193,7 +193,9 @@ void CReadWindow::openSearchStrongsDialog() {
     QString searchText = QString::null;
 
     if (displayWidget()->getCurrentNodeInfo()[CDisplay::Lemma] != QString::null) {
-        searchText.append("strong:").append(displayWidget()->getCurrentNodeInfo() [CDisplay::Lemma]);
+    	Q_FOREACH(QString strongNumber, displayWidget()->getCurrentNodeInfo()[CDisplay::Lemma].split("|")) {
+    		searchText.append("strong:").append( strongNumber ).append(" ");
+    	}
     }
 
     Search::CSearchDialog::openDialog( modules(), searchText, 0 );
