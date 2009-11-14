@@ -40,6 +40,7 @@ BtInstallPathDialog::BtInstallPathDialog() {
     viewLayout = new QHBoxLayout();
 
     QString l1 = tr("Works can be installed in one or more folders. After setting up folders here you can choose one of them in Install page.");
+    /// \bug The following string has an extra space character:
     QString l2 = tr("BibleTime and the SWORD library find the works from  all of these folders. If a folder is removed here it still exists in the system with all the works in it.");
 
     QLabel* mainLabel = util::tool::explanationLabel(this,
