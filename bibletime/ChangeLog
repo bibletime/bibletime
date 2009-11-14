@@ -1,3 +1,7 @@
+2009-11-14 Gary Holmlund
+    * Fix bug "Print->Reference wih text opens save dialog
+    * Fix Search dialog to close when BibleTime closes
+    
 2009-11-14 Martin Gruner <mgruner@crosswire.org>
     * Bug-A-Thon II
     * Improve search dialog robustness (fix crash when entering a keyword only)

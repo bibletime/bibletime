@@ -133,6 +133,9 @@ void CBibleReadWindow::insertKeyboardActions( BtActionCollection* const a ) {
     a->addAction( "copyReferenceWithText", qaction);
 
     qaction = new QAction(tr("Reference with text"), a);
+    a->addAction("printReferenceWithText", qaction);
+
+	qaction = new QAction(tr("Reference with text"), a);
     a->addAction("saveReferenceWithText", qaction);
 }
 
@@ -212,7 +215,7 @@ void CBibleReadWindow::initActions() {
     QObject::connect(m_actions.save.chapterAsHTML, SIGNAL(triggered()), this, SLOT(saveChapterHTML()) );
     addAction(m_actions.save.chapterAsHTML);
 
-    m_actions.print.reference = m_actionCollection->action("saveReferenceWithText");
+    m_actions.print.reference = m_actionCollection->action("printReferenceWithText");
     QObject::connect(m_actions.print.reference, SIGNAL(triggered()), this, SLOT(printAnchorWithText()) );
     addAction(m_actions.print.reference);
 
