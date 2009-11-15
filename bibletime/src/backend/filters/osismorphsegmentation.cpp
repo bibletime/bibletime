@@ -26,7 +26,7 @@ Filters::OSISMorphSegmentation::OSISMorphSegmentation() : sword::SWOptionFilter(
 
 Filters::OSISMorphSegmentation::~OSISMorphSegmentation() {}
 
-char Filters::OSISMorphSegmentation::processText(sword::SWBuf &text, const sword::SWKey */*key*/, const sword::SWModule */*module*/) {
+char Filters::OSISMorphSegmentation::processText(sword::SWBuf &text, const sword::SWKey * /*key*/, const sword::SWModule * /*module*/) {
     sword::SWBuf token;
     bool intoken    = false;
     bool hide       = false;
