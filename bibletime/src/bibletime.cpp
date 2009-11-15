@@ -309,3 +309,8 @@ void BibleTime::processCommandline() {
     }
 }
 
+bool BibleTime::event(QEvent* event) {
+	if (event->type() == QEvent::Close)
+		Search::CSearchDialog::closeDialog();
+	return QMainWindow::event(event);
+}
