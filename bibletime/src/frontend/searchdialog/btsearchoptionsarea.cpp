@@ -246,7 +246,7 @@ void BtSearchOptionsArea::setModules( QList<CSwordModuleInfo*> modules ) {
         historyList.append(m_modulesCombo->itemText(i));
     }
     CBTConfig::set(CBTConfig::searchModulesHistory, historyList);
-    emit( sigSetSearchButtonStatus( (modules.count() != 0) ) );
+    emit sigSetSearchButtonStatus(modules.count() != 0);
 }
 
 // Catch activated signal of module selector combobox
