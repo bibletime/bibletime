@@ -158,11 +158,11 @@ void CMDIArea::myCascade() {
 }
 
 void CMDIArea::emitWindowCaptionChanged() {
-    QString appCaption;
     if (activeSubWindow()) {
-        appCaption = activeSubWindow()->windowTitle();
+        emit sigSetToplevelCaption(activeSubWindow()->windowTitle());
+    } else {
+        emit sigSetToplevelCaption(QString());
     }
-    emit sigSetToplevelCaption(appCaption);
 }
 
 QList<QMdiSubWindow*> CMDIArea::usableWindowList() {

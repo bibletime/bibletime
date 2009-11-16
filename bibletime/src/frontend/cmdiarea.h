@@ -94,10 +94,12 @@ class CMDIArea : public QMdiArea {
         * Reimplementation of QWidget::resizeEvent().
         */
         void resizeEvent(QResizeEvent *e);
+
         /**
-         * Used to handle Events of MDI windows
-         * */
-        bool eventFilter( QObject *o, QEvent *e );
+          Reimplementation of QObject::eventFilter() used to handle some MDI
+          subwindow events.
+        */
+        bool eventFilter(QObject *o, QEvent *e);
 
         void emitWindowCaptionChanged();
 
