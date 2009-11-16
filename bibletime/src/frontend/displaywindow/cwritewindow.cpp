@@ -109,7 +109,7 @@ void CWriteWindow::lookupSwordKey( CSwordKey* newKey ) {
     if ( modules().count() ) {
         displayWidget()->setText( key()->rawText() );
     }
-    setCaption( windowCaption() );
+    setWindowTitle(windowCaption());
 }
 
 bool CWriteWindow::queryClose() {

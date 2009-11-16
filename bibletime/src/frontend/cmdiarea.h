@@ -57,9 +57,6 @@ class CMDIArea : public QMdiArea {
         }
 
         /**
-        */
-        void emitWindowCaptionChanged();
-        /**
         * Forces an update of the currently chosen window arrangement.
         */
         void triggerWindowUpdate();
@@ -99,7 +96,7 @@ class CMDIArea : public QMdiArea {
          */
         void createReadDisplayWindow(QList<CSwordModuleInfo*> modules, const QString& keyName);
 
-    private:
+    protected:
         /**
         * Reimplementation of QWidget::resizeEvent().
         */
@@ -108,8 +105,10 @@ class CMDIArea : public QMdiArea {
          * Used to handle Events of MDI windows
          * */
         bool eventFilter( QObject *o, QEvent *e );
-        /**
-         */
+
+        void emitWindowCaptionChanged();
+
+    protected:
         MDIArrangementMode m_mdiArrangementMode;
 };
 

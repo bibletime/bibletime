@@ -190,28 +190,46 @@ void CMDIArea::resizeEvent(QResizeEvent* /*e*/) {
 
 //handle events of the client windows to update layout if necessary
 bool CMDIArea::eventFilter(QObject *o, QEvent *e) {
-    QMdiSubWindow* w = dynamic_cast<QMdiSubWindow*>(o);
-    if (!w) return false; //let the event be handled by other filters too
+    QMdiSubWindow *w(qobject_cast<QMdiSubWindow*>(o));
 
-    if (e->type() == QEvent::WindowStateChange) {
-        Qt::WindowStates newState =  w->windowState();
-        Qt::WindowStates oldState = ((QWindowStateChangeEvent*)e)->oldState();
+    // Let the event be handled by other filters:
+    if (w == 0) return QMdiArea::eventFilter(o, e);
 
-        //Do not handle window activation or deactivation here, it will produce wrong
-        //results because this event is handled too early. Let slotClientActivated() handle this.
+    switch (e->type()) {
+        case QEvent::WindowStateChange:
+        {
+            Qt::WindowStates newState(w->windowState());
+            Qt::WindowStates oldState(((QWindowStateChangeEvent*)e)->oldState());
 
-        bool needsLayoutUpdate = false;
-        //Window was maximized or un-maximized
-        if ((newState ^ oldState) & Qt::WindowMaximized) needsLayoutUpdate = true;
-        //Window was minimized or de-minimized
-        if ((newState ^ oldState) & Qt::WindowMinimized) needsLayoutUpdate = true;
-        //update Layout?
-        if (needsLayoutUpdate) triggerWindowUpdate();
+            /*
+              Do not handle window activation or deactivation here, it will
+              produce wrong results because this event is handled too early. Let
+              slotClientActivated() handle this.
+            */
+
+            // Check if subwindow was maximized or un-maximized:
+            if ((newState ^ oldState) & Qt::WindowMaximized) {
+                triggerWindowUpdate();
+                break;
+            }
+
+            // Check if subwindow was minimized or de-minimized:
+            if ((newState ^ oldState) & Qt::WindowMinimized) {
+                triggerWindowUpdate();
+            }
+            break;
+        }
+        case QEvent::Close:
+            triggerWindowUpdate();
+            break;
+        case QEvent::WindowTitleChange:
+            emitWindowCaptionChanged();
+            break;
+        default:
+            break;
     }
-    if (e->type() == QEvent::Close) {
-        triggerWindowUpdate();
-    }
-    return false; //let the event be handled by other filters too
+
+    return false; // Don't filter the event out
 }
 
 void CMDIArea::triggerWindowUpdate() {

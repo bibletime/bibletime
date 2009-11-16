@@ -59,9 +59,6 @@ class CDisplayWindow : public QMainWindow, public CPointers {
         // Store the settings of this window in the given profile window.
         virtual void applyProfileSettings( Profile::CProfileWindow* profileWindow ) = 0;
 
-        // Set the window caption.
-        virtual void setCaption( const QString& );
-
         // Sets the new filter options of this window.
         void setFilterOptions( CSwordBackend::FilterOptions& filterOptions );
 

@@ -87,12 +87,6 @@ QList<CSwordModuleInfo*> CDisplayWindow::modules() {
     return mods;
 }
 
-/** Set the window caption. */
-void CDisplayWindow::setCaption( const QString&  ) {
-    QWidget::setWindowTitle( windowCaption() );
-    m_mdi->emitWindowCaptionChanged();
-}
-
 void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
     namespace DU = util::directory;
 
@@ -337,7 +331,7 @@ bool CDisplayWindow::init() {
     initView();
     setMinimumSize( 100, 100 );
 
-    setCaption(windowCaption());
+    setWindowTitle(windowCaption());
     //setup focus stuff.
     setFocusPolicy(Qt::ClickFocus);
     parentWidget()->setFocusPolicy(Qt::ClickFocus);

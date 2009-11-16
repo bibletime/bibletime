@@ -104,7 +104,7 @@ void CReadWindow::lookupSwordKey( CSwordKey* newKey ) {
         );
     }
 
-    setCaption( windowCaption() );
+    setWindowTitle(windowCaption());
 
     // moving to anchor happens in slotMoveToAnchor which catches the completed() signal from KHTMLPart
 
