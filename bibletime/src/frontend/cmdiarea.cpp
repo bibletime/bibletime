@@ -7,6 +7,7 @@
 *
 **********/
 
+#include "bibletime.h"
 #include "frontend/cmdiarea.h"
 
 #include <QEvent>
@@ -15,8 +16,11 @@
 #include <QWindowStateChangeEvent>
 
 
-CMDIArea::CMDIArea(QWidget *parent) : QMdiArea(parent),
-        m_mdiArrangementMode(ArrangementModeManual) {
+CMDIArea::CMDIArea(BibleTime *parent)
+        : QMdiArea(parent), m_mdiArrangementMode(ArrangementModeManual)
+{
+    Q_ASSERT(parent != 0);
+
     setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
     setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
 

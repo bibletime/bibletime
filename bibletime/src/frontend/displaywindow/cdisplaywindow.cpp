@@ -16,6 +16,7 @@
 #include <QWidget>
 #include "backend/config/cbtconfig.h"
 #include "backend/keys/cswordkey.h"
+#include "bibletime.h"
 #include "frontend/cmdiarea.h"
 #include "frontend/display/cdisplay.h"
 #include "frontend/displaywindow/bttoolbarpopupaction.h"
@@ -410,7 +411,10 @@ void CDisplayWindow::lookupModKey( const QString& moduleName, const QString& key
         //create a new window for the given module
         QList<CSwordModuleInfo*> mList;
         mList.append(m);
-        mdi()->emitCreateDisplayWindow(mList, keyName);
+
+        Q_ASSERT(qobject_cast<BibleTime*>(mdi()->parent()) != 0);
+        BibleTime *mainWindow(static_cast<BibleTime*>(mdi()->parent()));
+        mainWindow->createReadDisplayWindow(mList, keyName);
     }
 }
 

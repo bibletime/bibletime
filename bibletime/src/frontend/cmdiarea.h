@@ -14,7 +14,7 @@
 
 #include <QList>
 
-
+class BibleTime;
 class CSwordModuleInfo;
 class QEvent;
 class QMdiSubWindow;
@@ -37,7 +37,7 @@ class CMDIArea : public QMdiArea {
             ArrangementModeCascade = 3,
             ArrangementModeManual = 4
         };
-        CMDIArea(QWidget *parent);
+        CMDIArea(BibleTime *parent);
         /**
           Reimplementation of QMdiArea::addSubWindow().
         */
@@ -82,19 +82,12 @@ class CMDIArea : public QMdiArea {
         * This function was taken from Qt's MDI example.
         */
         void myTileHorizontal();
-        /**
-         * Emits the signal to create a new display window in the MDI area.
-         */
-        inline void emitCreateDisplayWindow(QList<CSwordModuleInfo*> modules, const QString keyName);
 
     signals: // Signals
         /**
         * Emits a signal to set the acption of the toplevel widget.
         */
         void sigSetToplevelCaption(const QString&);
-        /**
-         */
-        void createReadDisplayWindow(QList<CSwordModuleInfo*> modules, const QString& keyName);
 
     protected:
         /**
@@ -111,11 +104,5 @@ class CMDIArea : public QMdiArea {
     protected:
         MDIArrangementMode m_mdiArrangementMode;
 };
-
-/** Emits the signal to create a new display window in the MDI area. */
-inline void CMDIArea::emitCreateDisplayWindow(QList<CSwordModuleInfo*> modules, const QString keyName) {
-    emit createReadDisplayWindow(modules, keyName);
-}
-
 
 #endif

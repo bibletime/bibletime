@@ -119,7 +119,7 @@ class QSignalMapper;
  * This is the general way of all BibleTime classes.
  */
 class BibleTime : public QMainWindow {
-        friend class CMDIArea;
+        friend class CDisplayWindow;
         friend class BibleTimeDBusAdaptor;
         Q_OBJECT
     public:
