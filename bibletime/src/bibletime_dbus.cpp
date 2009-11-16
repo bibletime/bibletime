@@ -34,7 +34,7 @@ void BibleTime::syncAllModulesByType(const CSwordModuleInfo::ModuleType type, co
 
 void BibleTime::closeAllModuleWindows() {
     qDebug() << "DBUS: close all windows now...";
-    m_mdi->deleteAll();
+    m_mdi->closeAllSubWindows();
 }
 
 void BibleTime::syncAllBibles(const QString& key) {

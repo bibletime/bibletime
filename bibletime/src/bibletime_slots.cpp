@@ -434,7 +434,7 @@ void BibleTime::loadProfile(QAction* action) {
     CProfile* p = m_profileMgr.profile( profileName );
     Q_ASSERT(p);
     if ( p ) {
-        m_mdi->deleteAll();
+        m_mdi->closeAllSubWindows();
         loadProfile(p);
     }
 }

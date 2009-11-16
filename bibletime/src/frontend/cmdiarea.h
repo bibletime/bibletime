@@ -42,11 +42,20 @@ class CMDIArea : public QMdiArea {
           Reimplementation of QMdiArea::addSubWindow().
         */
         QMdiSubWindow *addSubWindow(QWidget *widget, Qt::WindowFlags windowFlags = 0);
+
         /**
+          Resets the MDI arrangement mode and arranges the windows.
+          \param[in] mode new MDI arrangement mode.
          */
-        void setMDIArrangementMode( const MDIArrangementMode );
-        /** */
-        MDIArrangementMode getMDIArrangementMode(void) const;
+        void setMDIArrangementMode(const MDIArrangementMode mode);
+
+        /**
+          Returns the current MDI arrangement mode.
+        */
+        inline MDIArrangementMode getMDIArrangementMode() const {
+            return m_mdiArrangementMode;
+        }
+
         /**
         */
         void emitWindowCaptionChanged();
@@ -63,10 +72,7 @@ class CMDIArea : public QMdiArea {
         * Called whan a client window was activated
         */
         void slotClientActivated(QMdiSubWindow* client);
-        /**
-        * Deletes all the presenters in the MDI area.
-        */
-        void deleteAll();
+
         /** Our own cascade version which, if only one window is left, shows this maximized.
         * Also necessary for autoCasacde feature
         */

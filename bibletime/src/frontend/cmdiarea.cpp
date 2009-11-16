@@ -43,17 +43,9 @@ QMdiSubWindow* CMDIArea::addSubWindow(QWidget * widget, Qt::WindowFlags windowFl
     return subWindow;
 }
 
-void CMDIArea::deleteAll() {
-    closeAllSubWindows();
-}
-
 void CMDIArea::setMDIArrangementMode( const MDIArrangementMode newArrangementMode ) {
     m_mdiArrangementMode = newArrangementMode;
     triggerWindowUpdate();
-}
-
-CMDIArea::MDIArrangementMode CMDIArea::getMDIArrangementMode(void) const {
-    return m_mdiArrangementMode;
 }
 
 void CMDIArea::myTileVertical() {

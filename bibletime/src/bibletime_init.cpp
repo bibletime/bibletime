@@ -306,7 +306,7 @@ void BibleTime::initActions() {
 
     m_windowCloseAll_action = m_actionCollection->action("closeAllWindows");
     m_windowMenu->addAction(m_windowCloseAll_action);
-    connect(m_windowCloseAll_action, SIGNAL(triggered()), m_mdi, SLOT(deleteAll()));
+    connect(m_windowCloseAll_action, SIGNAL(triggered()), m_mdi, SLOT(closeAllSubWindows()));
 
     m_windowMenu->addSeparator();
 
