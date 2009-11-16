@@ -69,7 +69,19 @@ void CMDIArea::myTileVertical() {
     else {
         setUpdatesEnabled(false);
         QMdiSubWindow* active = activeSubWindow();
-        QMdiArea::tileSubWindows();
+
+        const int widthForEach = width() / windows.count();
+        unsigned int x = 0;
+        foreach (QMdiSubWindow *window, windows) {
+            window->showNormal();
+
+            const int preferredWidth = window->minimumWidth() + window->baseSize().width();
+            const int actWidth = qMax(widthForEach, preferredWidth);
+
+            window->setGeometry(x, 0, actWidth, height());
+            x += actWidth;
+        }
+
         if (active) active->setFocus();
         setUpdatesEnabled(true);
     }
@@ -93,7 +105,6 @@ void CMDIArea::myTileHorizontal() {
     }
     else {
         setUpdatesEnabled(false);
-
         QMdiSubWindow* active = activeSubWindow();
 
         const int heightForEach = height() / windows.count();
@@ -107,7 +118,7 @@ void CMDIArea::myTileHorizontal() {
             window->setGeometry( 0, y, width(), actHeight );
             y += actHeight;
         }
-        active->setFocus();
+        if (active) active->setFocus();
         setUpdatesEnabled(true);
     }
     emitWindowCaptionChanged();
