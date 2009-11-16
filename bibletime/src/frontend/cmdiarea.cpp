@@ -9,7 +9,6 @@
 
 #include "frontend/cmdiarea.h"
 
-#include <QDebug>
 #include <QEvent>
 #include <QMdiSubWindow>
 #include <QTimer>
