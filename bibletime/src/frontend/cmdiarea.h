@@ -40,9 +40,10 @@ class CMDIArea : public QMdiArea {
             MDIArrangementModeMAX = ArrangementModeManual
         };
         CMDIArea(QWidget *parent);
-        /** Reimplementation
+        /**
+          Reimplementation of QMdiArea::addSubWindow().
         */
-        virtual QMdiSubWindow* addSubWindow(QWidget* widget, Qt::WindowFlags windowFlags = 0);
+        QMdiSubWindow *addSubWindow(QWidget *widget, Qt::WindowFlags windowFlags = 0);
         /**
          */
         void setMDIArrangementMode( const MDIArrangementMode );
@@ -98,7 +99,7 @@ class CMDIArea : public QMdiArea {
         /**
         * Reimplementation
         */
-        virtual void resizeEvent(QResizeEvent* e);
+        void resizeEvent(QResizeEvent *e);
         /**
          * Used to handle Events of MDI windows
          * */
