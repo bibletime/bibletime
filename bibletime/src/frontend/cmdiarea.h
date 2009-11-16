@@ -35,9 +35,7 @@ class CMDIArea : public QMdiArea {
             ArrangementModeTileVertical = 1,
             ArrangementModeTileHorizontal = 2,
             ArrangementModeCascade = 3,
-            ArrangementModeManual = 4,
-            MDIArrangementModeMIN = ArrangementModeTileVertical,
-            MDIArrangementModeMAX = ArrangementModeManual
+            ArrangementModeManual = 4
         };
         CMDIArea(QWidget *parent);
         /**
@@ -97,7 +95,7 @@ class CMDIArea : public QMdiArea {
 
     private:
         /**
-        * Reimplementation
+        * Reimplementation of QWidget::resizeEvent().
         */
         void resizeEvent(QResizeEvent *e);
         /**
