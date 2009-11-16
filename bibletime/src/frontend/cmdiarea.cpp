@@ -24,7 +24,8 @@ CMDIArea::CMDIArea(BibleTime *parent)
     setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
     setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
 
-    connect(this, SIGNAL(subWindowActivated(QMdiSubWindow*)), this, SLOT(slotClientActivated(QMdiSubWindow*)));
+    connect(this, SIGNAL(subWindowActivated(QMdiSubWindow*)),
+            this, SLOT(slotSubWindowActivated(QMdiSubWindow*)));
 }
 
 QMdiSubWindow* CMDIArea::addSubWindow(QWidget * widget, Qt::WindowFlags windowFlags) {
@@ -178,7 +179,7 @@ QList<QMdiSubWindow*> CMDIArea::usableWindowList() {
     return ret;
 }
 
-void CMDIArea::slotClientActivated(QMdiSubWindow* client) {
+void CMDIArea::slotSubWindowActivated(QMdiSubWindow* client) {
     if (!client || !updatesEnabled()) {
         return;
     }
@@ -207,7 +208,7 @@ bool CMDIArea::eventFilter(QObject *o, QEvent *e) {
             /*
               Do not handle window activation or deactivation here, it will
               produce wrong results because this event is handled too early. Let
-              slotClientActivated() handle this.
+              slotSubWindowActivated() handle this.
             */
 
             // Check if subwindow was maximized or un-maximized:

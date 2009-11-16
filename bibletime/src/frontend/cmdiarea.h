@@ -16,20 +16,17 @@
 
 class BibleTime;
 class CSwordModuleInfo;
-class QEvent;
-class QMdiSubWindow;
-class QResizeEvent;
 
-/** The MDI widget we use in BibleTime.
- * Enhances QMdiArea.
- */
-class CMDIArea : public QMdiArea {
+/**
+  A custom MDI area widget.
+*/
+class CMDIArea: public QMdiArea {
         Q_OBJECT
         Q_PROPERTY(MDIArrangementMode m_mdiArrangementMode READ getMDIArrangementMode WRITE setMDIArrangementMode)
 
     public:
         /**
-        * The options you can set for this widget.
+          Possible MDI subwindow arrangement modes.
         */
         enum MDIArrangementMode {
             ArrangementModeTileVertical = 1,
@@ -37,7 +34,12 @@ class CMDIArea : public QMdiArea {
             ArrangementModeCascade = 3,
             ArrangementModeManual = 4
         };
+
+        /**
+          \param[in] parent BibleTime main window used for parent widget.
+        */
         CMDIArea(BibleTime *parent);
+
         /**
           Reimplementation of QMdiArea::addSubWindow().
         */
@@ -60,30 +62,32 @@ class CMDIArea : public QMdiArea {
         * Forces an update of the currently chosen window arrangement.
         */
         void triggerWindowUpdate();
-        /** Lists all subWindows which are not minimized or hidden
-         */
+
+        /**
+          Returns a lists of all subwindows which are not minimized or hidden.
+        */
         QList<QMdiSubWindow*> usableWindowList();
 
     public slots:
         /**
-        * Called whan a client window was activated
-        */
-        void slotClientActivated(QMdiSubWindow* client);
-
-        /** Our own cascade version which, if only one window is left, shows this maximized.
-        * Also necessary for autoCasacde feature
+          Our own cascade version which, if only one window is left, shows this
+          maximized. Also necessary for autoCascade feature.
         */
         void myCascade();
-        /** Our own cascade version which, if only one window is left, shows this maximized.
-        * Also necessary for autoTile feature
+
+        /**
+          Our own cascade version which, if only one window is left, shows this
+          maximized. Also necessary for autoTile feature.
         */
         void myTileVertical();
-        /** Horizontal tile function
-        * This function was taken from Qt's MDI example.
+
+        /**
+          Horizontal tile function. This function was taken from Qt's MDI
+          example.
         */
         void myTileHorizontal();
 
-    signals: // Signals
+    signals:
         /**
         * Emits a signal to set the acption of the toplevel widget.
         */
@@ -102,6 +106,12 @@ class CMDIArea : public QMdiArea {
         bool eventFilter(QObject *o, QEvent *e);
 
         void emitWindowCaptionChanged();
+
+    protected slots:
+        /**
+          Called whan a subwindow was activated.
+        */
+        void slotSubWindowActivated(QMdiSubWindow *client);
 
     protected:
         MDIArrangementMode m_mdiArrangementMode;
