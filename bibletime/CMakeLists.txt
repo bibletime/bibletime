@@ -259,6 +259,16 @@ IF (MSVC)
 	INSTALL(FILES ${INSTALL_SWORD_LOCALE_LIST}
 		DESTINATION "${BT_SHARE_PATH}share/sword/locales.d/"
 	)
+		
+	# install pdb file for debugging purposes
+	IF (CMAKE_BUILD_TYPE STREQUAL "Debug")
+		SET( bibletime_PDB ${bibletime_BINARY_DIR}/Debug/bibletime.pdb)
+		INSTALL (FILES "${bibletime_PDB}" 
+			DESTINATION "${BT_DESTINATION}"
+		)
+	ENDIF (CMAKE_BUILD_TYPE STREQUAL "Debug")
+
+
 ENDIF (MSVC)
 ######################################################
 
