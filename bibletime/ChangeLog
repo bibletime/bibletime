@@ -10,7 +10,7 @@
 2009-11-14 Gary Holmlund
     * Fix bug "Print->Reference wih text opens save dialog
     * Fix Search dialog to close when BibleTime closes
-    
+
 2009-11-14 Martin Gruner <mgruner@crosswire.org>
     * Bug-A-Thon II
     * Improve search dialog robustness (fix crash when entering a keyword only)
@@ -18,6 +18,8 @@
         more than one module.
     * Fixed a bug where searching for more than one Strongs number from the read window
         did not work correctly.
+    * Fixed a bug with rendering of single entries in Commentaries where the generated
+        HTML and JavaScript was broken (links firing several times, for example).
 
 2009-11-12 Gary Holmlund
     * Fix defect: Cannot exit fullscreen mode - ID: 2895205

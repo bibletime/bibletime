@@ -11,6 +11,7 @@
 
 #include <QApplication>
 #include <QRegExp>
+
 #include "backend/config/cbtconfig.h"
 #include "backend/drivers/cswordbookmoduleinfo.h"
 #include "backend/keys/cswordkey.h"
@@ -18,6 +19,7 @@
 #include "backend/managers/cdisplaytemplatemgr.h"
 #include "backend/managers/referencemanager.h"
 #include "backend/rendering/cdisplayrendering.h"
+#include "backend/rendering/ctextrendering.h"
 
 
 using namespace Rendering;
@@ -31,7 +33,8 @@ const QString CEntryDisplay::text( const QList<CSwordModuleInfo*>& modules, cons
     //no highlighted key and no extra key link in the text
     CTextRendering::KeyTreeItem::Settings normal_settings(false, CTextRendering::KeyTreeItem::Settings::CompleteShort);
     CSwordModuleInfo* module = modules.first();
-    QString result;
+
+    Rendering::CTextRendering::KeyTree tree;
 
     //in Bibles and Commentaries we need to check if 0:0 and X:0 contain something
     if (module->type() == CSwordModuleInfo::Bible || module->type() == CSwordModuleInfo::Commentary) {
@@ -48,12 +51,19 @@ const QString CEntryDisplay::text( const QList<CSwordModuleInfo*>& modules, cons
             if (k1.Chapter() == 1) { //1:1, also prepend 0:0 before that
                 k1.Chapter(0);
                 k1.Verse(0);
-                if ( k1.rawText().length() > 0 ) result.append( render.renderSingleKey(k1.key(), modules, preverse_settings ) );
+                if ( k1.rawText().length() > 0 ) {
+                    tree.append( new Rendering::CTextRendering::KeyTreeItem(k1.key(), modules, preverse_settings) );
+                }
                 k1.Chapter(1);
             }
             k1.Verse(0);
-            if ( k1.rawText().length() > 0 ) result.append( render.renderSingleKey(k1.key(), modules, preverse_settings ) );
+            if ( k1.rawText().length() > 0 ) {
+				tree.append( new Rendering::CTextRendering::KeyTreeItem(k1.key(), modules, preverse_settings) );
+            }
         }
     }
-    return result.append( render.renderSingleKey(keyName, modules, normal_settings) );
+	tree.append( new Rendering::CTextRendering::KeyTreeItem(keyName, modules, normal_settings) );
+    QString result(render.renderKeyTree(tree));
+    qDeleteAll(tree);
+	return result;
 }
