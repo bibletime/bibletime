@@ -64,7 +64,7 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="219"/>
         <source>Open the Bible study HowTo included with BibleTime.&lt;br/&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nyissa meg a BibleTime Bibliatanulmányozó segédletét. &lt;br/&gt; Ez a segédlet bevezeti a Biblia tanulmánsozásának alapelveibe.</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="224"/>
@@ -89,7 +89,7 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="300"/>
         <source>O&amp;pen Windows</source>
-        <translation type="unfinished"></translation>
+        <translation>A&amp;blakok megnyitása</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="354"/>
@@ -239,12 +239,12 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="182"/>
         <source>Close &amp;window</source>
-        <translation type="unfinished"></translation>
+        <translation>Ablakok be&amp;zárása</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="185"/>
         <source>Close the current open window</source>
-        <translation type="unfinished"></translation>
+        <translation>Jelenlegi nyitott ablak bezárása</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="196"/>
@@ -476,12 +476,12 @@
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="158"/>
         <source>This program uses Qt version %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ez a program a Qt %1 verzióját használja.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="160"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
-        <translation type="unfinished"></translation>
+        <translation>A Qt egy keresztplatformos alkalmazás és keretrendszer, C++ nyelven megírva, LGPL licensz alatt kiadva.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="174"/>
@@ -512,7 +512,7 @@
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="223"/>
         <source>Fi&amp;lter:</source>
-        <translation type="unfinished"></translation>
+        <translation>Szű&amp;rő:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="224"/>
@@ -744,17 +744,17 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="90"/>
         <source>Install folder:</source>
-        <translation type="unfinished"></translation>
+        <translation>Telepítési mappa:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="95"/>
         <source>The folder where the new works will be installed</source>
-        <translation type="unfinished"></translation>
+        <translation>Az új munkák ide lesznek telepítve</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="99"/>
         <source>Configure folders where works are installed and found</source>
-        <translation type="unfinished"></translation>
+        <translation>Mappák beállítása, ahová telepíthet, illetve megtalálhatóak a telepített munkák</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="115"/>
@@ -772,42 +772,42 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="34"/>
         <source>Bookshelf Folders</source>
-        <translation type="unfinished"></translation>
+        <translation>Könyvespolc mappái</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="42"/>
         <source>Works can be installed in one or more folders. After setting up folders here you can choose one of them in Install page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Több mappába is telepíthet munkákat. Beállítás után kiválaszthatja az aktuálisat a telepítési lapon.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="43"/>
         <source>BibleTime and the SWORD library find the works from  all of these folders. If a folder is removed here it still exists in the system with all the works in it.</source>
-        <translation type="unfinished"></translation>
+        <translation>A BibleTime és a SWORD rendszer megtalálja a telepített munkákat a megadott mappákban. Amennyiben töröl innen egy mappát, a mappa a továbbiakban is megtalálható marad teljes tartalmával a rendszerén.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="46"/>
         <source>Configure bookshelf folders</source>
-        <translation type="unfinished"></translation>
+        <translation>Könyvespolc mappáinak beállítása</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="50"/>
         <source>Configuration file for the folders is: </source>
-        <translation type="unfinished"></translation>
+        <translation>A mappák konfigurációs állomanya a következő:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="58"/>
         <source>Folders where new works can be installed</source>
-        <translation type="unfinished"></translation>
+        <translation>Ide telepíthetők az új munkák</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="61"/>
         <source>Read-only folders</source>
-        <translation type="unfinished"></translation>
+        <translation>Csak olvasható mappák</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="63"/>
         <source>Nonexistent folders</source>
-        <translation type="unfinished"></translation>
+        <translation>Nem létező mappák</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="77"/>
@@ -817,7 +817,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="78"/>
         <source>Add new folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Új mappa megadása</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="83"/>
@@ -827,7 +827,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="84"/>
         <source>Edit the selected folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiválasztott mappa megadása</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="89"/>
@@ -837,34 +837,34 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="90"/>
         <source>Remove the selected folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiválasztott mappa törlése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="160"/>
         <source>This default folder in your home directory can&apos;t be removed</source>
-        <translation type="unfinished"></translation>
+        <translation>Ez az alapértelmezett mappa a saját könyvtárában, nem törölhető</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="166"/>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="187"/>
         <source>Choose Folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Mappa kiválasztása</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="175"/>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="195"/>
         <source>Use Folder?</source>
-        <translation type="unfinished"></translation>
+        <translation>Használjuk a mappát?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="175"/>
         <source>This folder is not writable, so works can not be installed here using BibleTime. Do you want to use this folder instead of the previous value?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ez a mappa nem írható, így a BibleTime nem tud ide telepíteni. Akarja mégis ezt a mappát használni az előző helyett?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="195"/>
         <source>This folder is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of bookshelf folders?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ez a mappa nem írható, így a BibleTime nem tud ide telepíteni. Hozzá akarja adni ezt a mappát a könyvespolc mappáihoz?</translation>
     </message>
 </context>
 <context>
@@ -986,7 +986,7 @@
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutsdialog.cpp" line="36"/>
         <source>Select first or second shortcut and type the shortcut with keyboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Válassza ki az első, illetve a második billentyűkombinációt, majd adja meg a billentyűzete segítségével</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutsdialog.cpp" line="38"/>
@@ -1048,7 +1048,7 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="278"/>
         <source>Default key:</source>
-        <translation>Alapértelmezett kombináció</translation>
+        <translation>Alapértelmezett kulcs:</translation>
     </message>
 </context>
 <context>
@@ -2280,40 +2280,42 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="86"/>
         <source>Get list...</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista megszerzése...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="155"/>
         <source>List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don&apos;t want to keep.
 
 Do you want to continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>A források listáját egy távoli szerverről töltődik le. A források a jelenlegi listához hozzá lesznek adva. Az új források felülírják az azonos nevű régieket. A későbbiekben módjában áll törölni a nem kívánt forrásokat.
+
+Folytatja?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="156"/>
         <source>Get source list from remote server?</source>
-        <translation type="unfinished"></translation>
+        <translation>Letöltsük a források listáját?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="163"/>
         <source>Cancel</source>
-        <translation type="unfinished">Mégsem</translation>
+        <translation>Mégsem</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="164"/>
         <source>Downloading List</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista letöltése folyamatban</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="174"/>
         <source>Connecting...</source>
-        <translation type="unfinished">Kapcsolódás...</translation>
+        <translation>Kapcsolódás...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="197"/>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="198"/>
         <source>Refreshing...</source>
-        <translation type="unfinished">Frissítés...</translation>
+        <translation>Frissítés...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="99"/>
@@ -2327,7 +2329,7 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="87"/>
         <source>Download a list of sources from CrossWire server and add sources</source>
-        <translation type="unfinished"></translation>
+        <translation>Források listájának letöltése és hozzáadása a Crosswire szerveréről</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="99"/>
@@ -2337,7 +2339,7 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="108"/>
         <source>A source with this caption already exists.&lt;br/&gt;Please provide a different caption.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilyen nevű forrás már létezik. &lt;br/&gt; Kérjük adjon meg másik nevet.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="114"/>
