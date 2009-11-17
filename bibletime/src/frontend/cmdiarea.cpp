@@ -198,9 +198,12 @@ void CMDIArea::slotSubWindowActivated(QMdiSubWindow* client) {
 }
 
 //resize event of the MDI area itself, update layout if necessary
-void CMDIArea::resizeEvent(QResizeEvent* /*e*/) {
-    //do not call QMdiArea::resizeEvent(e), this would mess up our layout
+void CMDIArea::resizeEvent(QResizeEvent* e) {
+    // Do not call QMdiArea::resizeEvent(e), this would mess up our layout
+	// unless we are in manual mode
     if (updatesEnabled()) triggerWindowUpdate();
+	if (m_mdiArrangementMode == ArrangementModeManual)
+	    QMdiArea::resizeEvent(e);
 }
 
 //handle events of the client windows to update layout if necessary
