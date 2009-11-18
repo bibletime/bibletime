@@ -46,6 +46,10 @@ QVariant BtBookshelfModel::data(CSwordModuleInfo *module, int role) const {
             return module->isHidden();
         case ModuleInstallPathRole:
             return module->config(CSwordModuleInfo::AbsoluteDataPath);
+        case ModuleHasIndexRole:
+            return module->hasIndex();
+        case ModuleIndexSizeRole:
+            return (qulonglong) module->indexSize();
         default:
             return QVariant();
     }
