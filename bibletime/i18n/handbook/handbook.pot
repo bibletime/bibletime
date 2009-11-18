@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE
-# Copyright (C) YEAR Free Software Foundation, Inc.
+# Copyright (C) YEAR The BibleTime Team, http://www.bibletime.info
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -7,7 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2009-10-26 14:28-0400\n"
+"Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
+"POT-Creation-Date: 2009-11-18 13:23-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1674,30 +1675,30 @@ msgstr ""
 
 # type: Content of: <book><bookinfo><title>
 #: docs/handbook/en/docbook/index.docbook:23
-msgid "The &bibletime; handbook"
+msgid "The &bibletime; Handbook"
 msgstr ""
 
 # type: Content of: <book><bookinfo><copyright><holder>
-#: docs/handbook/en/docbook/index.docbook:45
-msgid "the &bibletime; team"
+#: docs/handbook/en/docbook/index.docbook:46
+msgid "The &bibletime; Team"
 msgstr ""
 
 # type: Content of: <book><bookinfo><legalnotice><para>
-#: docs/handbook/en/docbook/index.docbook:48
-msgid "The &bibletime; handbook is part of &bibletime;."
+#: docs/handbook/en/docbook/index.docbook:50
+msgid "The &bibletime; Handbook is part of the &bibletime; study aid."
 msgstr ""
 
 # type: Content of: <book><bookinfo><date>
-#: docs/handbook/en/docbook/index.docbook:51
-msgid "2009-10"
+#: docs/handbook/en/docbook/index.docbook:54
+msgid "$LastChangedDate$"
 msgstr ""
 
 # type: Content of: <book><bookinfo><releaseinfo>
-#: docs/handbook/en/docbook/index.docbook:52
-msgid "2.4"
+#: docs/handbook/en/docbook/index.docbook:56
+msgid "2.5"
 msgstr ""
 
 # type: Content of: <book><bookinfo><abstract><para>
-#: docs/handbook/en/docbook/index.docbook:54
+#: docs/handbook/en/docbook/index.docbook:59
 msgid "&bibletime; is a Bible study tool based on the &sword; framework."
 msgstr ""

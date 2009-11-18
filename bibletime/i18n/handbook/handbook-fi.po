@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: handbook-fi\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
-"POT-Creation-Date: 2009-10-26 14:28-0400\n"
+"POT-Creation-Date: 2009-11-18 13:23-0500\n"
 "PO-Revision-Date: 2009-03-06 16:56+0200\n"
 "Last-Translator: Ilpo Kantonen <ilpo@iki.fi>\n"
 "Language-Team: Finnish <fi@li.org>\n"
@@ -1851,34 +1851,41 @@ msgid "Alt"
 msgstr "Alt"
 
 #: docs/handbook/en/docbook/index.docbook:23
-msgid "The &bibletime; handbook"
+#, fuzzy
+msgid "The &bibletime; Handbook"
 msgstr "&bibletime;-käsikirja"
 
-#: docs/handbook/en/docbook/index.docbook:45
-msgid "the &bibletime; team"
+#: docs/handbook/en/docbook/index.docbook:46
+#, fuzzy
+msgid "The &bibletime; Team"
 msgstr "&bibletime;-työryhmä"
 
-#: docs/handbook/en/docbook/index.docbook:48
-msgid "The &bibletime; handbook is part of &bibletime;."
+#: docs/handbook/en/docbook/index.docbook:50
+#, fuzzy
+msgid "The &bibletime; Handbook is part of the &bibletime; study aid."
 msgstr "&bibletime;-käsikirja on osa &bibletime;-ohjelmaa."
 
 # type: Content of: <book><bookinfo><date>
-#: docs/handbook/en/docbook/index.docbook:51
-#, fuzzy
-msgid "2009-10"
-msgstr "elokuu 2005"
-
-# type: Content of: <book><bookinfo><releaseinfo>
-#: docs/handbook/en/docbook/index.docbook:52
-msgid "2.4"
+#: docs/handbook/en/docbook/index.docbook:54
+msgid "$LastChangedDate$"
 msgstr ""
 
-#: docs/handbook/en/docbook/index.docbook:54
+# type: Content of: <book><bookinfo><releaseinfo>
+#: docs/handbook/en/docbook/index.docbook:56
+msgid "2.5"
+msgstr ""
+
+#: docs/handbook/en/docbook/index.docbook:59
 #, fuzzy
 msgid "&bibletime; is a Bible study tool based on the &sword; framework."
 msgstr ""
 "&bibletime; on tehokas Raamatun tutkimisen työkalu, joka perustuu Sword-"
 "kehykseen."
+
+# type: Content of: <book><bookinfo><date>
+#, fuzzy
+#~ msgid "2009-10"
+#~ msgstr "elokuu 2005"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
 #~ msgid ""

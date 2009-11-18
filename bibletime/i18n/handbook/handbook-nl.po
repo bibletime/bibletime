@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
-"POT-Creation-Date: 2009-10-26 14:28-0400\n"
+"POT-Creation-Date: 2009-11-18 13:23-0500\n"
 "PO-Revision-Date: 2006-12-07 11:35+0100\n"
 "Last-Translator: Martin Gruner <mg.pub@gmx.net>\n"
 "Language-Team: Deutsch\n"
@@ -2047,28 +2047,31 @@ msgid "Alt"
 msgstr ""
 
 #: docs/handbook/en/docbook/index.docbook:23
-msgid "The &bibletime; handbook"
+#, fuzzy
+msgid "The &bibletime; Handbook"
 msgstr "Het &bibletime; handboek"
 
-#: docs/handbook/en/docbook/index.docbook:45
-msgid "the &bibletime; team"
+#: docs/handbook/en/docbook/index.docbook:46
+#, fuzzy
+msgid "The &bibletime; Team"
 msgstr "het &bibletime; team"
 
-#: docs/handbook/en/docbook/index.docbook:48
-msgid "The &bibletime; handbook is part of &bibletime;."
+#: docs/handbook/en/docbook/index.docbook:50
+#, fuzzy
+msgid "The &bibletime; Handbook is part of the &bibletime; study aid."
 msgstr "Het &bibletime; handboek is onderdeel van &bibletime;"
 
 # type: Content of: <book><bookinfo><date>
-#: docs/handbook/en/docbook/index.docbook:51
-msgid "2009-10"
+#: docs/handbook/en/docbook/index.docbook:54
+msgid "$LastChangedDate$"
 msgstr ""
 
 # type: Content of: <book><bookinfo><releaseinfo>
-#: docs/handbook/en/docbook/index.docbook:52
-msgid "2.4"
+#: docs/handbook/en/docbook/index.docbook:56
+msgid "2.5"
 msgstr ""
 
-#: docs/handbook/en/docbook/index.docbook:54
+#: docs/handbook/en/docbook/index.docbook:59
 #, fuzzy
 msgid "&bibletime; is a Bible study tool based on the &sword; framework."
 msgstr "&bibletime; is een krachtig bijbelstudieprogramma voor &kde;"

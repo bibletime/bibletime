@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: handbook-cs\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
-"POT-Creation-Date: 2009-10-26 14:28-0400\n"
+"POT-Creation-Date: 2009-11-18 13:23-0500\n"
 "PO-Revision-Date: 2009-06-17 21:09+0200\n"
 "Last-Translator: Jan Bělohoubek <j.bel@atlas.cz>\n"
 "Language-Team:  <cs@li.org>\n"
@@ -2101,36 +2101,43 @@ msgstr "Alt"
 
 # type: Content of: <book><bookinfo><title>
 #: docs/handbook/en/docbook/index.docbook:23
-msgid "The &bibletime; handbook"
+#, fuzzy
+msgid "The &bibletime; Handbook"
 msgstr "Příručka &bibletime;"
 
 # type: Content of: <book><bookinfo><copyright><holder>
-#: docs/handbook/en/docbook/index.docbook:45
-msgid "the &bibletime; team"
+#: docs/handbook/en/docbook/index.docbook:46
+#, fuzzy
+msgid "The &bibletime; Team"
 msgstr "tým &bibletime;"
 
 # type: Content of: <book><bookinfo><legalnotice><para>
-#: docs/handbook/en/docbook/index.docbook:48
-msgid "The &bibletime; handbook is part of &bibletime;."
+#: docs/handbook/en/docbook/index.docbook:50
+#, fuzzy
+msgid "The &bibletime; Handbook is part of the &bibletime; study aid."
 msgstr "Příručka &bibletime; je součástí &bibletime;."
 
 # type: Content of: <book><bookinfo><date>
-#: docs/handbook/en/docbook/index.docbook:51
-#, fuzzy
-msgid "2009-10"
-msgstr "2009-04"
+#: docs/handbook/en/docbook/index.docbook:54
+msgid "$LastChangedDate$"
+msgstr ""
 
 # type: Content of: <book><bookinfo><releaseinfo>
-#: docs/handbook/en/docbook/index.docbook:52
+#: docs/handbook/en/docbook/index.docbook:56
 #, fuzzy
-msgid "2.4"
+msgid "2.5"
 msgstr "2.0"
 
 # type: Content of: <book><bookinfo><abstract><para>
-#: docs/handbook/en/docbook/index.docbook:54
+#: docs/handbook/en/docbook/index.docbook:59
 #, fuzzy
 msgid "&bibletime; is a Bible study tool based on the &sword; framework."
 msgstr "&bibletime; je nástroj pro studium Bible založený na frameworku Sword."
+
+# type: Content of: <book><bookinfo><date>
+#, fuzzy
+#~ msgid "2009-10"
+#~ msgstr "2009-04"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
 #~ msgid ""

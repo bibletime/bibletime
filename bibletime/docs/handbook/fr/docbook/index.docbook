@@ -20,7 +20,8 @@
 ]>
 <book>
 <bookinfo>
-  <title>Le manuel de &bibletime;</title>
+  <title>The &bibletime; Handbook</title>
+
   <authorgroup>
     <author>
       <firstname>Fred</firstname>
@@ -43,16 +44,21 @@
   <!-- TRANS:ROLES_OF_TRANSLATORS -->
 <copyright>
     <year>1999-2009</year>
-    <holder>l'équipe &bibletime;</holder>
+    <holder>The &bibletime; Team</holder>
   </copyright>
+
   <legalnotice>
-    <para>Le manuel &bibletime; fait partie de &bibletime;.</para>
+    <para>The &bibletime; Handbook is part of the &bibletime; study aid.</para>
   </legalnotice>
-  <date>2009-10</date>
-  <releaseinfo>2.4</releaseinfo>
+
+  <date>$LastChangedDate$</date>
+
+  <releaseinfo>2.5</releaseinfo>
+
   <abstract>
     <para>&bibletime; is a Bible study tool based on the &sword; framework.</para>
   </abstract>
+
   <keywordset>
     <keyword>Qt4</keyword>
     <keyword>bibletime</keyword>

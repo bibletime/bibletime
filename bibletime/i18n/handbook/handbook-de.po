@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: handbook-de\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
-"POT-Creation-Date: 2009-10-26 14:28-0400\n"
+"POT-Creation-Date: 2009-11-18 13:23-0500\n"
 "PO-Revision-Date: 2009-11-02 01:58+0100\n"
 "Last-Translator: \n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -2046,29 +2046,37 @@ msgid "Alt"
 msgstr "Alt"
 
 #: docs/handbook/en/docbook/index.docbook:23
-msgid "The &bibletime; handbook"
+#, fuzzy
+msgid "The &bibletime; Handbook"
 msgstr "Das &bibletime;-Handbuch"
 
-#: docs/handbook/en/docbook/index.docbook:45
-msgid "the &bibletime; team"
+#: docs/handbook/en/docbook/index.docbook:46
+#, fuzzy
+msgid "The &bibletime; Team"
 msgstr "Das &bibletime;-Team"
 
-#: docs/handbook/en/docbook/index.docbook:48
-msgid "The &bibletime; handbook is part of &bibletime;."
+#: docs/handbook/en/docbook/index.docbook:50
+#, fuzzy
+msgid "The &bibletime; Handbook is part of the &bibletime; study aid."
 msgstr "Der &bibletime;-Hilfedialog ist ein Teil von &bibletime;."
 
 # type: Content of: <book><bookinfo><date>
-#: docs/handbook/en/docbook/index.docbook:51
-msgid "2009-10"
-msgstr "2009-10"
+#: docs/handbook/en/docbook/index.docbook:54
+msgid "$LastChangedDate$"
+msgstr ""
 
 # type: Content of: <book><bookinfo><releaseinfo>
-#: docs/handbook/en/docbook/index.docbook:52
-msgid "2.4"
+#: docs/handbook/en/docbook/index.docbook:56
+#, fuzzy
+msgid "2.5"
 msgstr "2.4"
 
-#: docs/handbook/en/docbook/index.docbook:54
+#: docs/handbook/en/docbook/index.docbook:59
 msgid "&bibletime; is a Bible study tool based on the &sword; framework."
 msgstr ""
 "&bibletime; ist ein Bibelstudien-Werkzeug, das auf dem &sword;-System "
 "basiert."
+
+# type: Content of: <book><bookinfo><date>
+#~ msgid "2009-10"
+#~ msgstr "2009-10"
