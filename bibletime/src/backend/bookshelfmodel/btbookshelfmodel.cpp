@@ -44,6 +44,8 @@ QVariant BtBookshelfModel::data(CSwordModuleInfo *module, int role) const {
             return QVariant(); /// \todo Unimplemented
         case ModuleHiddenRole:
             return module->isHidden();
+        case ModuleInstallPathRole:
+            return module->config(CSwordModuleInfo::AbsoluteDataPath);
         default:
             return QVariant();
     }

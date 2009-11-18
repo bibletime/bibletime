@@ -28,6 +28,7 @@ class BtBookshelfModel: public QAbstractListModel {
             ModuleCategoryRole = Qt::UserRole + 1,
             ModuleLanguageRole = Qt::UserRole + 2,
             ModuleHiddenRole = Qt::UserRole + 3,
+            ModuleInstallPathRole = Qt::UserRole + 4,
             UserRole = Qt::UserRole + 100
         };
 
