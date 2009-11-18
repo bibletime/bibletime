@@ -15,6 +15,7 @@
 #include <QSet>
 #include "backend/bookshelfmodel/categoryitem.h"
 #include "backend/bookshelfmodel/distributionitem.h"
+#include "backend/bookshelfmodel/indexingitem.h"
 #include "backend/bookshelfmodel/languageitem.h"
 #include "backend/bookshelfmodel/moduleitem.h"
 
@@ -236,6 +237,8 @@ void BtBookshelfTreeModel::setSourceModel(QAbstractItemModel *sourceModel) {
             typedef BtBookshelfModel::ModuleRole MRole;
             static const MRole HR(BtBookshelfModel::ModuleHiddenRole);
             static const MRole PR(BtBookshelfModel::ModulePointerRole);
+            static const MRole IR(BtBookshelfModel::ModuleHasIndexRole);
+
             QModelIndex moduleIndex(sourceModel->index(i, 0));
             CSwordModuleInfo *module(
                 static_cast<CSwordModuleInfo *>(
@@ -246,6 +249,8 @@ void BtBookshelfTreeModel::setSourceModel(QAbstractItemModel *sourceModel) {
             bool checked;
             if (m_defaultChecked == MODULE_HIDDEN) {
                 checked = !sourceModel->data(moduleIndex, HR).toBool();
+            } else if (m_defaultChecked == MODULE_INDEXED) {
+                checked = !sourceModel->data(moduleIndex, IR).toBool();
             } else {
                 checked = (m_defaultChecked == CHECKED);
             }
@@ -343,14 +348,17 @@ void BtBookshelfTreeModel::addModule(CSwordModuleInfo *module,
     if (!intermediateGrouping.empty()) {
         QModelIndex newIndex;
         switch (intermediateGrouping.front()) {
-            case GROUP_DISTRIBUTION:
-                newIndex = getGroup<DistributionItem>(module, parentIndex);
-                break;
             case GROUP_CATEGORY:
                 newIndex = getGroup<CategoryItem>(module, parentIndex);
                 break;
             case GROUP_LANGUAGE:
                 newIndex = getGroup<LanguageItem>(module, parentIndex);
+                break;
+            case GROUP_DISTRIBUTION:
+                newIndex = getGroup<DistributionItem>(module, parentIndex);
+                break;
+            case GROUP_INDEXING:
+                newIndex = getGroup<IndexingItem>(module, parentIndex);
                 break;
         }
         intermediateGrouping.pop_front();
@@ -513,6 +521,7 @@ void BtBookshelfTreeModel::moduleInserted(const QModelIndex &parent, int start,
     typedef BtBookshelfModel BM;
     static const BM::ModuleRole PR(BM::ModulePointerRole);
     static const BM::ModuleRole HR(BM::ModuleHiddenRole);
+    static const BM::ModuleRole IR(BM::ModuleHasIndexRole);
 
     for (int i(start); i <= end; i++) {
         QModelIndex moduleIndex(m_sourceModel->index(i, 0, parent));
@@ -522,6 +531,8 @@ void BtBookshelfTreeModel::moduleInserted(const QModelIndex &parent, int start,
         bool checked;
         if (m_defaultChecked == MODULE_HIDDEN) {
             checked = !m_sourceModel->data(moduleIndex, HR).toBool();
+        } else if (m_defaultChecked == MODULE_INDEXED) {
+            checked = !m_sourceModel->data(moduleIndex, IR).toBool();
         } else {
             checked = (m_defaultChecked == CHECKED);
         }

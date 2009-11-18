@@ -39,8 +39,18 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
             CheckStateRole = BtBookshelfModel::UserRole,
             UserRole = BtBookshelfModel::UserRole + 100
         };
-        enum Group { GROUP_CATEGORY = 0, GROUP_LANGUAGE, GROUP_DISTRIBUTION };
-        enum CheckedBehavior { CHECKED, UNCHECKED, MODULE_HIDDEN };
+        enum Group {
+            GROUP_CATEGORY = 0,
+            GROUP_LANGUAGE = 1,
+            GROUP_DISTRIBUTION,
+            GROUP_INDEXING
+        };
+        enum CheckedBehavior {
+            CHECKED,        /**< Check all added modules by default. */
+            UNCHECKED,      /**< Uncheck all added modules by default. */
+            MODULE_HIDDEN,  /**< By default, check only added modules that are not hidden. */
+            MODULE_INDEXED  /**< By default, check only added modules that are indexed. */
+        };
         typedef QList<Group> Grouping;
 
         BtBookshelfTreeModel(QObject *parent = 0);
