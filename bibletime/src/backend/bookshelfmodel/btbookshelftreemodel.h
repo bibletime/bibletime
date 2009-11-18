@@ -82,7 +82,9 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
             return m_defaultChecked;
         }
 
-        QList<CSwordModuleInfo*> checkedModules() const;
+        inline const QList<CSwordModuleInfo*> &checkedModules() const {
+            return m_checkedModulesCache;
+        }
 
     protected:
         QVariant parentData(BookshelfModel::ModuleItem *item, int role) const;
@@ -129,6 +131,8 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
         Grouping              m_groupingOrder;
         CheckedBehavior       m_defaultChecked;
         bool                  m_checkable;
+
+        QList<CSwordModuleInfo*> m_checkedModulesCache;
 };
 
 QDataStream &operator<<(QDataStream &os, const BtBookshelfTreeModel::Grouping &o);

@@ -148,8 +148,16 @@ bool BtBookshelfTreeModel::setData(const QModelIndex &itemIndex,
             item->setCheckState(newState);
             emit dataChanged(p.second, p.second);
             if (item->type() == Item::ITEM_MODULE) {
-                ModuleItem *mi(static_cast<ModuleItem*>(item));
-                emit moduleChecked(mi->moduleInfo(), newState == Qt::Checked);
+                ModuleItem *mItem(static_cast<ModuleItem*>(item));
+                CSwordModuleInfo *mInfo(mItem->moduleInfo());
+                if (newState == Qt::Checked) {
+                    m_checkedModulesCache.append(mInfo);
+                    emit moduleChecked(mInfo, true);
+                } else {
+                    m_checkedModulesCache.removeOne(mInfo);
+                    Q_ASSERT(!m_checkedModulesCache.contains(mInfo));
+                    emit moduleChecked(mInfo, false);
+                }
             } else {
                 const QList<Item*> &children(item->children());
                 for (int i(0); i < children.size(); i++) {
@@ -207,6 +215,7 @@ void BtBookshelfTreeModel::setSourceModel(QAbstractItemModel *sourceModel) {
         delete m_rootItem;
         m_modules.clear();
         m_sourceIndexMap.clear();
+        m_checkedModulesCache.clear();
         m_rootItem = new RootItem;
         endRemoveRows();
     }
@@ -301,18 +310,6 @@ void BtBookshelfTreeModel::setCheckable(bool checkable) {
     }
 }
 
-QList<CSwordModuleInfo*> BtBookshelfTreeModel::checkedModules() const {
-    typedef ModuleItemMap::const_iterator MMCI;
-
-    QList<CSwordModuleInfo*> modules;
-    for (MMCI it(m_modules.constBegin()); it != m_modules.constEnd(); it++) {
-        if (it.value()->checkState() == Qt::Checked) {
-            modules.append(it.key());
-        }
-    }
-    return modules;
-}
-
 QVariant BtBookshelfTreeModel::parentData(BookshelfModel::ModuleItem *item,
                                           int role) const
 {
@@ -362,10 +359,18 @@ void BtBookshelfTreeModel::addModule(CSwordModuleInfo *module,
         ModuleItem *newItem(new ModuleItem(module));
         newItem->setCheckState(checked ? Qt::Checked : Qt::Unchecked);
         const int newIndex(parentItem->indexFor(newItem));
+
+        // Actually do the insertion:
         beginInsertRows(parentIndex, newIndex, newIndex);
         parentItem->insertChild(newIndex, newItem);
         m_modules.insert(module, newItem);
+        if (checked) {
+            // Add to checked modules cache
+            m_checkedModulesCache.append(module);
+        }
         endInsertRows();
+
+        // Reset parent item check states, if needed:
         resetParentCheckStates(parentIndex);
     }
 }
@@ -383,13 +388,19 @@ void BtBookshelfTreeModel::removeModule(CSwordModuleInfo *module) {
     Q_ASSERT(i != 0);
     Q_ASSERT(i->parent() != 0);
 
-    // Remove item:
+    // Calculate item indexes:
     int index(i->childIndex());
     QModelIndex parentIndex(getIndex(i->parent()));
+
+    // Actually remove the item:
     beginRemoveRows(parentIndex, index, index);
     i->parent()->deleteChildAt(index);
     m_modules.remove(module);
+    m_checkedModulesCache.removeOne(module);
+    Q_ASSERT(!m_checkedModulesCache.contains(module));
     endRemoveRows();
+
+    // Reset parent item check states, if needed:
     resetParentCheckStates(parentIndex);
 }
 
