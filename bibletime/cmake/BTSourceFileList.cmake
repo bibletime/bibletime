@@ -113,6 +113,7 @@ SET(bibletime_SOURCES
 	src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp
 
 	src/frontend/bookshelfmanager/removepage/btremovepage.cpp
+	src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.cpp
 	src/frontend/bookshelfmanager/indexpage/btindexpage.cpp
 
 	# Search dialog
@@ -276,6 +277,7 @@ SET(bibletime_MOCABLE_HEADERS
 	src/frontend/displaywindow/cwritewindow.h
 	src/frontend/bookshelfmanager/btconfigdialog.h
 	src/frontend/bookshelfmanager/removepage/btremovepage.h
+	src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.h
 	src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.h
 	src/frontend/bookshelfmanager/installpage/btsourcewidget.h
 	src/frontend/bookshelfmanager/installpage/btinstallpage.h

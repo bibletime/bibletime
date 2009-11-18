@@ -1,9 +1,12 @@
 /*********
 *
+* In the name of the Father, and of the Son, and of the Holy Spirit.
+*
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2008 by the BibleTime developers.
-* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+* Copyright 1999-2009 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License
+* version 2.0.
 *
 **********/
 
@@ -15,49 +18,32 @@
 #include <QMultiMap>
 #include <QString>
 #include "backend/btmoduletreeitem.h"
+#include "frontend/bookshelfmanager/removepage/btremovepagetreemodel.h"
 
 
-class QTreeWidget;
-class QTreeWidgetItem;
 class QPushButton;
+class QTreeView;
 
-class BtRemovePage : public BtConfigPage {
+class BtRemovePage: public BtConfigPage {
         Q_OBJECT
 
     public:
         BtRemovePage();
 
-        ~BtRemovePage() {}
-
-        // BtConfigPage methods
+        // BtConfigPage methods:
         QString header();
         QString iconName();
         QString label();
 
-        void populateModuleList();
-
-//signals:
-        //void swordSetupChanged();
-
-    public slots:
-        void slotSwordSetupChanged();
-
-    private slots:
-
+    protected slots:
         void slotRemoveModules();
-        /** Handles activating the Remove button. */
-        void slotSelectionChanged(QTreeWidgetItem* item, int column);
-        void slotItemDoubleClicked(QTreeWidgetItem* item, int column);
+        void resetRemoveButton();
 
-    private: // methods
-        void addToTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem);
+    protected:
+        BtRemovePageTreeModel *m_model;
 
-    private: // data
-        QTreeWidget* m_view;
-        QPushButton* m_removeButton;
-        /** Map of module name and install path (absolute path from the moduleinfo config entry).*/
-        QList<CSwordModuleInfo*> m_selectedModules;
-
+        QTreeView   *m_view;
+        QPushButton *m_removeButton;
 };
 
 #endif
