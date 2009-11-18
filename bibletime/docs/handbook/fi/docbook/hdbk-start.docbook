@@ -1,0 +1,71 @@
+<chapter id="hdbk-term">
+  <title>&bibletime;n käynnistys</title>
+
+  <sect1 id="hdbk-start">
+    <title>Kuinka &bibletime; käynnistetään</title>
+
+    <sect2 id="hdbk-start">
+      <title>&bibletime;n käynnistys</title>
+      <para>&bibletime; is an executable file that is integrated with the desktop. You 
+can launch &bibletime; from the Start Menu with this icon: 
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="i_bibletime.png" format="PNG" />
+        </imageobject>
+        <textobject>
+          <phrase>&bibletime; käynnistyskuvake</phrase>
+        </textobject>
+      </mediaobject></para>
+
+      <para>&bibletime;-ohjelman voi käynnistää terminaali-ikkunan 
+komentoriviltä. Käynnistääksesi &bibletime;-ohjelman, avaa terminaali-ikkuna 
+ja kirjoita: 
+      <screen>bibletime</screen></para>
+    </sect2>
+
+    <sect2 id="hdbk-start-custom">
+      <title>Käynnistyksen säätäminen</title>
+      <para>Voit avata (oletus)Raamatun satunnaisen jakeen kohdalta konsolissa  
+&bibletime;n komennolla:
+	<screen>bibletime --open-default-bible "&lt;random&gt;"</screen>
+	Avataksesi Raamatun annetusta tekstikohdasta kuten Joh 3:16 käytä:
+	<screen>bibletime --open-default-bible "Joh 3:16"</screen>
+	Voit käyttää kirjanniminä tämänhetkistä kielivalintaa.</para>
+    </sect2>
+  </sect1>
+
+  <sect1 id="hdbk-startsequence">
+    <title>Käynnistyssarja</title>
+    <para>Kun &bibletime; käynnistyy, näet seuraavat ikkunat ennenkuin &bibletime;n 
+pääikkuna avautuu:</para>
+    <variablelist>
+      <varlistentry>
+        <term>
+          <interface>Bookshelf Manager</interface>
+        </term>
+        <listitem>
+          <para>
+          <action>Muokkaa kirjahyllyäsi.</action> Tällä ikkunalla voit muokata 
+kirjahyllyäsi, lisätä tai poistaa teoksia järjestelmässäsi. Se näytetään 
+vain, jos oletuskirjahyllyä ei löydy. Katso <link 
+linkend="hdbk-op-bookshelfmanager"> tämä osio</link> saadaksesi 
+yksityiskohtiaisia lisätietoja. On kannattavaa aloittaa ohjelman käyttö 
+asentamalla ainakin yksi Raamattu, kommentaari, sanasto ja yksi kirja 
+saadakseen selville &bibletime;n perusominaisuudet nopeasti.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <interface>Configure &bibletime; dialog</interface>
+        </term>
+        <listitem>
+          <para>
+          <action>Räätälöi &bibletime;n.</action>Tässä ikkunassa voit tehdä 
+&bibletime;:stä sellaisen kuin haluat. Katso linkistä <link 
+linkend="hdbk-config-bt">yksityiskohtainen kuvaus</link> lisää tietoa tästä 
+ikkunasta.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect1>
+</chapter>

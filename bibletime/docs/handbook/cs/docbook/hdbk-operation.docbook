@@ -1,0 +1,395 @@
+<chapter id="hdbk-op">
+  <title>Operace programu</title>
+  <sect1 id="hdbk-op-overview">
+    <title>Náhled programu</title>
+    <para>Takto vypadá typická relace &bibletime;: 
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="ss_mainterms.png" format="PNG" />
+      </imageobject>
+      <textobject>
+        <phrase>Okno aplikace &bibletime;</phrase>
+      </textobject>
+    </mediaobject>
+    Můžete si jednoduše prohlédnout různé části aplikace. Okno vlevo nahoře se 
+používá k otevírání instalovaných děl v kartě knihovny, na kartě záložek 
+můžete spravovat záložky. Malé okno "časopisu" pod knihovnou se používá pro 
+zobrazení dalších informací vložených do dokumentů. Když přemístíte myš 
+například nad značku poznámky, časopis zobrazí aktuální obsah 
+poznámky. Panel nástrojů vám umožňuje rychlý přístup k důležitým 
+funkcím. Plocha vpravo je místo kde skutečně pracujete.</para>
+
+    <para>Nyní se podívejme na vzhled různých částí aplikace individuálně.</para>
+  </sect1>
+  <sect1 id="hdbk-op-parts">
+    <title>Části okna aplikace &bibletime;</title>
+    <sect2 id="hdbk-op-parts-bookshelf">
+      <title>Knihovna</title>
+      <para>Knihovna obsahuje všechna nainstalovaná díla, setříděná podle kategorií a 
+jazyků. Obsahuje také kategorii "Záložky" To je místo, kam můžete uložit své 
+záložky a poté k nim přistupovat.</para>
+
+      <sect3 id="hdbk-op-parts-bookshelf-open">
+        <title>Čtení děl</title>
+        <para>Pro otevření díla z knihovny jednoduše klikněte 
+<mousebutton>levým</mousebutton> tlačítkem myši na požadovanou kategorii 
+(Bible, Komentáře, Lexikony, Knihy, Zamyšlení nebo Glosáře) pro zobrazení 
+jejího obsahu. Poté klikněte na jedno z děl k jeho otevření pro čtení. Okno 
+pro čtení díla se objeví na ploše.</para>
+
+        <tip>
+          <para>Chyť &amp; pust dílo</para>
+        </tip>
+
+        <para>Pokud čtete nějaké dílo a chcete otevřít stejnou pasáž v jiném díle, můžete 
+použít zkratku. jednoduše klikněte <mousebutton>levým</mousebutton> 
+tlačítkem myši na odkaz verše nebo kapitoly (kurzor se změní v ruku) a 
+přetáhněte ho do knihovny. Upusťte ho na dílo, které chcete otevřít ,a to 
+bude otevřeno na požadovaném místě. Můžete také přetáhnout odkaz verše na 
+existující okno, které se přesune na požadované umístění.</para>
+      </sect3>
+
+      <sect3 id="hdbk-op-parts-bookshelf-metainfo">
+        <title>Další informace o dílech</title>
+        <para>If you click with the <mousebutton>right</mousebutton> mouse button on the 
+symbol of a work, you will see a menu with additional entries that are 
+relevant for this work.  <guimenuitem>"About this work"</guimenuitem> opens 
+a window with lots of interesting information about the selected work.  
+<guimenuitem>"Unlock this work"</guimenuitem> opens a small dialog for 
+encrypted documents, where you can enter the unlock key to access the 
+work. For additional information on locked works, please see <ulink 
+url="http://www.crosswire.org/sword/modules/aboutlocked.jsp"> this 
+page</ulink> on the &cbs; web site.</para>
+      </sect3>
+
+      <sect3 id="hdbk-op-parts-bookshelf-search">
+        <title>Vyhledávání v dílech</title>
+        <para>Vyhledávat v díle můžete kliknutím <mousebutton>pravým</mousebutton> 
+tlačítkem myši na jeho symbol a vybráním položky<guimenuitem>"Hledat v 
+díle(ch)"</guimenuitem>. Stiskem klávesy &Shift; a kliknutím na další díla 
+můžete vybrat více než jedno. Poté následuje stejný proces s otevřením 
+vyhledávacího dialogu. Budete vyhledávat ve všech těchto 
+dokumentech. Kompletní popis obsluhy vyhledávacích funkcí naleznete <link 
+linkend="hdbk-op-search">zde</link>.</para>
+      </sect3>
+
+      <sect3 id="hdbk-op-parts-bookshelf-bookmarks">
+        <title>Práce se záložkami</title>
+        <para>
+
+        <tip>
+          <para>Chyť &amp; pust dílo</para>
+        </tip>
+
+	Klikněte <mousebutton>pravým</mousebutton>  tlačítkem myši na kategorii 
+záložek v knihovně a vyberte <guimenuitem>"Vytvořit novou 
+složku"</guimenuitem>, pokud chcete vytvořit novou podsložku záložek. Můžete 
+použít běžnou funkci "drag &amp; drop " k přetáhnutí odkazu verše z 
+otevřených oken, nebo výsledků vyhledávání do adresáře záložek, stejně tak 
+pro přesouvání záložek mezi složkami.</para>
+        <para>Můžete také importovat záložky od ostatních, nebo je exportovat a sdílet. K 
+tomu otevřete <guimenu>kontextové menu</guimenu> adresáře záložek jak bylo 
+popsáno předtím a vyberte <guimenuitem>"Exportovat 
+záložky"</guimenuitem>. Toto otevře dialog pro uložení vaší kolekce 
+záložek. Stejným způsobem můžete záložky importovat.</para>
+
+        <para>Klikněte <mousebutton>pravým tlačítkem myši</mousebutton> na adresáře a 
+záložky, pokud chcete změnit jejich jméno nebo popis.</para>
+      </sect3>
+    </sect2>
+
+    <sect2 id="hdbk-op-parts-mag">
+      <title>Časopis</title>
+
+      <para>Toto malé okno v levém spodním rohu okna &bibletime; pasivní. Kdykoli je váš 
+kurzor umístěn nad nějakým textem s dalšími informacemi (např. Strongova 
+čísla), potom budou tyto informace zobrazeny v okně časopisu, ne v textu 
+samotném. Prostě to vyzkoušejte.</para>
+    </sect2>
+
+    <sect2 id="hdbk-op-parts-desk">
+      <title>Plocha</title>
+      <para>Plocha je místo, kde probíhá skutečná práce s &bibletime;. Zde můžete 
+otvírat díla z knihovny, číst je, <link 
+linkend="hdbk-op-search">hledat</link> v nich a rovnou ukládat vaše poznámky 
+v modulu osobních komentářů (podívejte se <link 
+linkend="hdbk-op-parts-desk-write">dolů</link>).</para>
+
+      <sect3 id="hdbk-op-parts-desk-read">
+        <title>Čtení děl</title>
+        <para>Jak <link linkend="hdbk-op-parts-bookshelf-open">už jsme viděli</link>, 
+můžete jednoduše otevírat díla pro čtení kliknutím na jejich symbol v 
+knihovně. Okno díla se otevře na ploše. Každé okno díla má nástrojovou 
+lištu. Zde najdete nástroje k navigaci propojené s dílem, například tlačítka 
+historie jako ve vašem webovém prohlížeči.</para>
+      </sect3>
+
+      <sect3 id="hdbk-op-parts-desk-placement">
+        <title>Umístění aktivního okna</title>
+        <para>Samozřejmě můžete mít otevřeno více děl ve stejné době. Máte několik 
+možností jak umístit okna na ploše. Prosím podívejte se na položku 
+<guimenu>Okno</guimenu> v hlavním menu. Tam uvidíte, že umístění oken můžete 
+ovládat buď osobně, nebo zvolit automatické umístění &bibletime;. Toho 
+docílíte volbou jednoho z automatických módů umístění, které jsou přístupné 
+přes <menuchoice> <guimenu>Okno</guimenu> <guimenuitem>Mód 
+rozvržení</guimenuitem> </menuchoice>. Prostě to vyzkoušejte, je to snadné a 
+funguje to.</para>
+      </sect3>
+
+      <sect3 id="hdbk-op-parts-desk-write">
+        <title>Úpravy vašich vlastních komentářů</title>
+
+        <para>To be able to store your own comments about parts of the Bible, you have 
+install a certain work from the library of the <ulink 
+url="http://www.crosswire.org">&cbs;</ulink>.  This work is called "Personal 
+commentary".</para>
+
+        <para>Pokud otevřete osobní komentář kliknutím <mousebutton>levým</mousebutton>  
+tlačítkem myši na jeho symbol v knihovně, otevře se v módu pro čtení. V 
+tomto módu není možné komentář editovat. Pokud si přejete do něj zapsat 
+poznámku, musíte ho otevřít pomocí <mousebutton>pravého</mousebutton> 
+tlačítka myši a zvolit <guimenu>Editovat toto dílo</guimenu> a potom také 
+<guimenuitem>Prostý text</guimenuitem> (editor zdrojového kódu) nebo 
+<guimenuitem>HTML</guimenuitem>(jednoduchý GUI WYSIWYG editor).</para>
+
+        <tip>
+          <para>Pokud je položka <menuchoice> <guimenu>Upravit toto dílo</guimenu> 
+</menuchoice> deaktivována, prosím zkontrolujte zda máte oprávnění k zápisu 
+do souborů osobních komentářů.</para>
+        </tip>
+
+        <tip>
+          <para>Přetáhněte &amp; upusťte díla zde. Pusťte odkaz verše a bude vložen jeho 
+text.</para>
+        </tip>
+      </sect3>
+    </sect2>
+  </sect1>
+  <sect1 id="hdbk-op-search">
+    <title>Vyhledávání v dílech</title>
+
+    <sect2 id="hdbk-op-search-intext">
+      <title>Vyhledávání textu v aktivním okně</title>
+      <para>You can look for a word or phrase in the open read window (e.g. the chapter 
+of a bible that you're reading) just like you are used to from other 
+programs. This function can be reached either by clicking with the 
+<mousebutton>right</mousebutton> mouse button and selecting 
+<guimenuitem>Find...</guimenuitem>, or by using the shortcut <keycombo 
+action="simul"> <keycap>&Ctrl;F</keycap></keycombo>. Read on to learn how 
+you can search in entire works.</para>
+    </sect2>
+
+    <sect2 id="hdbk-op-search-access">
+      <title>Přístup k dialogu vyhledávání</title>
+      <para>V díle můžete hledat kliknutím <mousebutton>pravým</mousebutton> tlačítkem 
+myši na symbol v <guimenu>Knihovně</guimenu> a vybráním <guimenuitem>Hledat 
+ve vybraných dílech</guimenuitem>. Přidržením &Shift; nebo &Ctrl; a 
+kliknutím na jména dalších děl můžete vybrat více než jedno dílo. Poté 
+následuje stejný postup otevření dialogu hledání. Budete hledat ve všech 
+těchto dílech najednou.</para>
+
+      <para>Vyhledávací dialog spustíte kliknutím na <menuchoice> 
+<guimenu>Hledat</guimenu> </menuchoice> z hlavního menu a vybráním 
+odpovídající položky.</para>
+
+      <para>Třetí možnost jak spustit vyhledávání je kliknutím na symbol hledání v 
+aktuálním okně.</para>
+    </sect2>
+
+    <sect2 id="hdbk-op-search-config">
+      <title>Nastavení vyhledávání</title>
+      <screenshot>
+        <screeninfo>Nastavení dialogu hledání</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="ss_searchopts.png" format="PNG" />
+          </imageobject>
+        </mediaobject>
+      </screenshot>
+      <sect3 id="hdbk-op-search-config-works">
+        <title>Výběr děl</title>
+        <para>Nahoře v okně nastavení vyhledávání najdete tlačítko <guibutton>Vybrat (nebo 
+Choose)</guibutton> (díla). Pokud chcete vyhledávat ve více dílech, klikněte 
+na toto tlačítko, poté vám bude nabídnuto menu s možností výběru děl ve 
+kterých chcete vyhledávat.</para>
+      </sect3>
+      <sect3 id="hd-op-search-config-scope">
+        <title>Použití oblastí vyhledávání</title>
+        <para>Můžete použít rozsah hledání zvolením určitých částí Bible pomocí jedné z 
+definovaných oblastí v seznamu <guimenu>Rozsah hledání</guimenu> Můžete 
+definovat vlastní vyhledávací rozsahy kliknutím na tlačítko 
+<guibutton>Nastavit rozsah</guibutton>.></para>
+      </sect3>
+
+      <sect3 id="hd-op-search-config-syntax">
+        <title>Úvod do jednoduché vyhledávací syntaxe</title>
+
+        <para>Enter the search phrase separated by spaces.  By default the search function 
+will return results that match all the words.  If you want to find any of 
+the words entered, select the <guimenu>Some words</guimenu> button.  If you 
+want to perform a more complex search, select the <guimenu>Free</guimenu> 
+button.  You can see examples of searches by clicking on <guimenu>full 
+syntax</guimenu>.
+	  </para>
+
+        <para>You can use wildcards: '*' matches any number of characters, while '?' will 
+match any single character. The use of brackets allows you to group your 
+search terms, e.g. '(Jesus OR spirit) AND God'.</para>
+
+        <para>To search text other than the main text, enter the text type followed by 
+':', and then the search term.  Refer to the table below for examples.</para>
+
+        <para>Dostupné předpony: 
+        <table id="hd-op-search-config-syntax-table">
+	  <title>Typy vyhledávání</title>
+          <tgroup cols="3">
+            <thead>
+              <row>
+                <entry>Předpona</entry>
+                <entry>Význam</entry>
+		<entry>Example</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>heading:</entry>
+                <entry>hledá hlavičky</entry>
+		<entry>heading:Jesus</entry>
+              </row>
+              <row>
+                <entry>footnote:</entry>
+                <entry>hledá poznámky</entry>
+		<entry>footnote:Moses</entry>
+              </row>
+              <row>
+                <entry>strong:</entry>
+                <entry>hledání Strongových čísel</entry>
+		<entry>strong:G535</entry>
+              </row>
+              <row>
+                <entry>morph:</entry>
+                <entry>hledá morfologické kódy</entry>
+		<entry>morph:N-GSM</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table></para>
+
+	<tip>
+	  <para>You can right click on an installed work and select <guimenu>About</guimenu> 
+to find which of the above search criteria may work for you.  Not all works 
+have the built in features for performing this type of search.</para>
+	</tip>
+
+        <para>&bibletime; uses the Lucene search engine to perform your searches. It has 
+many advanced features, and you can read more about it here: <ulink 
+url="http://lucene.apache.org/java/docs/index.html"> 
+http://lucene.apache.org/java/docs/index.html</ulink>.</para>
+      </sect3>
+    </sect2>
+
+    <sect2 id="hdbk-op-search-results">
+      <title>Výsledky hledání</title>
+      <para>Zde vidíte kolik případů hledaného řetězce bylo nalezeno, setříděno podle 
+děl. Kliknutí na dílo <mousebutton>pravým</mousebutton> tlačítkem myši vám 
+umožní kopírovat, uložit, nebo tisknout všechny verše které byli v daném 
+díle nalezeny. Kliknutím na jeden nebo více odkazů ke kopírování, uložení 
+nebo tisku. Kliknutí na určitý odkaz otevře verš v jeho kontextu v okně 
+náhledu.</para>
+      <tip>
+        <para>Přetáhněte odkaz a upusťte ho na symbol díla v knihovně k otevření díla na 
+tomto verši v novém okně.</para>
+      </tip>
+      <tip>
+        <para>Přetáhněte odkaz a upusťte ho na otevřené okno, které se přesune na 
+požadovanou pozici.</para>
+      </tip>
+      <tip>
+        <para>K vytvoření záložek vyberte odkazy a přetáhněte je do knihovny.</para>
+      </tip>
+      <sect3 id="hdbk-op-search-analysis">
+        <title>Analýza výsledků hledání</title>
+        <para>Klikněte na <guibutton>Analýza vahledávání</guibutton> pro zobrazení analýzy 
+vyhledávání. Zobrazí jednoduchou grafickou analýzu množství nalezených 
+řetězců v každé knize Bible, analýzu můžete uložit.</para>
+        <screenshot>
+          <screeninfo>Dialog analýzy vyhledávání</screeninfo>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="ss_searchanal.png" format="PNG" />
+            </imageobject>
+          </mediaobject>
+        </screenshot>
+      </sect3>
+    </sect2>
+  </sect1>
+  <sect1 id="hdbk-op-bookshelfmanager">
+    <title><guimenuitem>Správa knih</guimenuitem></title>
+    <para><guimenuitem>Správa knih</guimenuitem> je nástroj pro správu 
+knihovny. Můžete do vaší knihovny nainstalovat nová díla, nebo aktualizovat 
+či odstranit ty existující. Přístupná pod <menuchoice> 
+<guimenu>Nastavení</guimenu> <guimenuitem>Správa knih</guimenuitem> 
+</menuchoice> v hlavním menu.</para>
+    <sect2 id="hdbk-op-bookshelfmanager-path">
+      <title>Nastavení cesty ke knihám</title>
+      <para>Zde lze nastavit, kam na disk má &bibletime; uložit knihovnu. Můžete použít 
+mnoho adresářů. Výchozí je "~/.sword/".</para>
+      <tip>
+        <para>Pokud máte CD sword, ale nechcete všechna díla instalovat na disk, ale 
+používat je přímo z CD, pak vložte cestu k CD jako jedno z umístění 
+knihovny. Když zapnete &bibletime;, zobrazí se všechna díla, pokud je CD 
+vloženo v mechanice.</para>
+      </tip>
+    </sect2>
+    <sect2 id="hdbk-op-bookshelfmanager-installupdate">
+      <title>Instalace/aktualizace děl</title>
+      <para>With this facility, you can connect to a repository of works (called 
+"library"), and transfer one or more works to your local Bookshelf. These 
+libraries may be local (e.g. a &sword; CD), or remote (e.g. Crosswire's 
+online repository of &sword; modules, or another site offering &sword; 
+modules). You can manage your libraries with <guibutton>Add 
+library</guibutton> and <guibutton>Delete library</guibutton>.</para>
+      <para>Pro zahájení procesu instalace nebo aktualizace vyberte knihovnu ke které se 
+chcete připojit a umístění lokální knihovny pro instalaci děl. Potom 
+klikněte na tlačítko <guibutton>Spojit s knihovnou</guibutton>. &bibletime; 
+prověří obsah knihovny a předloží vám seznam děl, které můžete do své 
+knihovny přidat, nebo děl, které jsou již nainstalované, ale jsou dostupné v 
+novější verzi, a tak mohou být aktualizovány. Poté můžete označit všechna 
+díla, která chcete nainstalovat nebo aktualizovat a kliknout na 
+<guibutton>Instalovat díla</guibutton>. Ty budou poté nahrány do vaší 
+knihovny.</para>
+    </sect2>
+    <sect2 id="hdbk-op-bookshelfmanager-remove">
+      <title>Odebrání děl</title>
+      <para>Tato možnost dovoluje smazat jedno nebo více děl z vaší knihovny, což uvolní 
+místo na disku. Jednoduše označte položky a klikněte na <guibutton>Odstranit 
+díla</guibutton>.</para>
+    </sect2>
+    <sect2 id="hdbk-op-bookshelfmanager-searchindexes">
+      <title>Vyhledávací indexy</title>
+      <para>Tyto možnosti vám umožní vytvářet nové vyhledávací indexy a vymazat opuštěné 
+indexy smazaných děl.</para>
+      <tip>
+	If you are having problems with your search function, visit
+	this feature.
+      </tip>
+    </sect2>
+  </sect1>
+  <sect1 id="hdbk-op-output">
+    <title>Export a tisk</title>
+    <para>Na mnoha místech můžete vyvolat kontextové menu kliknutím 
+<mousebutton>pravým</mousebutton> tlačítkem myši. V závislosti na kontextu 
+je možné <guimenuitem>Vybrat</guimenuitem>, 
+<guimenuitem>Kopírovat</guimenuitem> (do schránky), 
+<guimenuitem>Uložit</guimenuitem> nebo 
+<guimenuitem>Tisknout</guimenuitem>. to funguje např. v aktivním okně když 
+kliknete na běžný text nebo na odkaz verše, nebo na stránce výsledků hledání 
+při kliknutí na dílo nebo na jeden či více odkazů veršů. Je to velmi 
+přímočaré, prostě to vyzkoušejte.</para>
+
+    <para>Tisk z &bibletime; spíše základní a je zamýšlen jako pomůcka. Pokud 
+vytváříte dokument nebo prezentaci obsahující text děl z &bibletime;, 
+doporučujeme formátovat dokument za použití systémových nástrojů pro tvorbu 
+prezentací, nebo editaci textu, raději než tisknout přímo z &bibletime;.</para>
+  </sect1>
+</chapter>

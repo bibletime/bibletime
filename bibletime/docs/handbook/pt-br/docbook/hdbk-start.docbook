@@ -1,0 +1,69 @@
+<chapter id="hdbk-term">
+  <title>Iniciando &bibletime;</title>
+
+  <sect1 id="hdbk-start">
+    <title>Como iniciar o &bibletime;</title>
+
+    <sect2 id="hdbk-start">
+      <title>Iniciando &bibletime;</title>
+      <para>&bibletime;  um arquivo executvel integrado ao desktop. Voc pode iniciaro 
+&bibletime; do menu de incio com esse cone: 
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="i_bibletime.png" format="PNG" />
+        </imageobject>
+        <textobject>
+          <phrase>cone do &bibletime;</phrase>
+        </textobject>
+      </mediaobject></para>
+
+      <para>&bibletime; pode ser iniciado de um terminal de prompt de comando. Para 
+iniciar o &bibletime;, abra uma janela do terminal e digite: 
+      <screen>bibletime</screen></para>
+    </sect2>
+
+    <sect2 id="hdbk-start-custom">
+      <title>Personalizao de incio</title>
+      <para>De um terminal voc pode usar o &bibletime; para abrir um versculo aleatrio 
+na bblia padro:
+	<screen>bibletime --open-default-bible "&lt;random&gt;"</screen>
+	Para abrir numa passagem como Joo 3:16, use:
+	<screen>bibletime --open-default-bible "Joo 3:16"</screen>
+	Voc tambm pode usar os nomes dos livros em seu idioma de nomes atual.</para>
+    </sect2>
+  </sect1>
+
+  <sect1 id="hdbk-startsequence">
+    <title>Sequncia de incio</title>
+    <para>Ao iniciar o &bibletime;, voc pode ver as seguintes telas antes da janela 
+principal do &bibletime; abrir:</para>
+    <variablelist>
+      <varlistentry>
+        <term>
+          <interface>Bookshelf Manager</interface>
+        </term>
+        <listitem>
+          <para>
+          <action>Modifica sua Estante.</action> Esse dilogo permite a voc modificar 
+sua Estante, adicionar ou excluir obras do seu sistema. S ser exibido se 
+nenhuma Estante padro for encontrada. Por favor veja <link 
+linkend="hdbk-op-bookshelfmanager"> essa seo</link> para mais detalhes. Se 
+voc iniciar com uma Estante vazia, ser til para instalar pelo menos uma 
+Bblia, Comentrio, Lxico e um Livro para conhecer os recursos bsicos do 
+&bibletime; rapidamente.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <interface>Configure &bibletime; dialog</interface>
+        </term>
+        <listitem>
+          <para>
+          <action>Customiza &bibletime;.</action> Esse dilogo permite adaptar 
+o&bibletime; s suas necessidades. Veja <link linkend="hdbk-config-bt">a 
+descrio detalhada</link> desse dilogo.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect1>
+</chapter>
