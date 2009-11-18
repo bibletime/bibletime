@@ -2298,40 +2298,42 @@ raccourci</translation>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="86"/>
         <source>Get list...</source>
-        <translation type="unfinished"></translation>
+        <translation>Récupérer la liste...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="155"/>
         <source>List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don&apos;t want to keep.
 
 Do you want to continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>La liste des sources va être téléchargé depuis un serveur distant. Les sources vont être ajouté à votre liste actuelle. Les nouvelles sources vont remplacer les anciennes si elles portent le même nom. Plus tard vous pourrez retirer les sources que vous ne voulez plus.
+
+Voulez vous continuer ?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="156"/>
         <source>Get source list from remote server?</source>
-        <translation type="unfinished"></translation>
+        <translation>Récupérer la liste des sources depuis le serveur distant ?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="163"/>
         <source>Cancel</source>
-        <translation type="unfinished">Annuler</translation>
+        <translation>Annuler</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="164"/>
         <source>Downloading List</source>
-        <translation type="unfinished"></translation>
+        <translation>Téléchargement de la liste</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="174"/>
         <source>Connecting...</source>
-        <translation type="unfinished">Connection...</translation>
+        <translation>Connection...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="197"/>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="198"/>
         <source>Refreshing...</source>
-        <translation type="unfinished">Rafraîchissement...</translation>
+        <translation>Rafraîchissement...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="99"/>
@@ -2345,7 +2347,7 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="87"/>
         <source>Download a list of sources from CrossWire server and add sources</source>
-        <translation type="unfinished"></translation>
+        <translation>Télécharge une liste de source depuis le serveur CrossWire et ajoute les sources</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="99"/>
@@ -2524,7 +2526,7 @@ Do you want to continue?</source>
         <source>Names of languages</source>
         <comment>No need to translate - see the longer comment (If there is no longer comment, it doesn&apos;t work yet :)) ------ </comment>
         <extracomment>The string &quot;Names of languages&quot; doesn&apos;t actually need translation. It is put here to help translators notice this help text. ------- The names of the languages should follow the conventions of your language. You can write the names with a capital first letter even if your language uses non-capitalized language names (they look better with capital first letter when they are listed). ------- To find the names of all languages from internet try searching for &quot;names of languages in language_x&quot; but in your own language, e.g. &quot;kielten nimet suomeksi&quot; in Finnish or &quot;names of languages in english&quot; in English. ------- You can find the language codes and names by googling for the standards mentioned below. ------- Preference order for locale codes are: ------- ISO 639-1 ------- ISO 639-2 ------- ISO 639-3 ------- x-E-XXX form is deprecated and no modules in repositories use it. If you find a module with x-E-XXX language, update the module.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="161"/>
@@ -2536,7 +2538,7 @@ Do you want to continue?</source>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="164"/>
         <source>Amuzgo, Guerrero</source>
         <extracomment>Language name amu</extracomment>
-        <translation type="unfinished">Amuzgo, Guerrero</translation>
+        <translation>Amuzgo, Guerrero</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="166"/>
@@ -2560,7 +2562,7 @@ Do you want to continue?</source>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="173"/>
         <source>Azerbaijani, South</source>
         <extracomment>Language name azb</extracomment>
-        <translation type="unfinished">Azerbaijani, South</translation>
+        <translation>Azerbaijani, Sud</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="178"/>
@@ -2908,7 +2910,7 @@ Do you want to continue?</source>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="313"/>
         <source>Javanese, Caribbean</source>
         <extracomment>Language name jvn</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Javanais, Caraibes</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="315"/>
@@ -3076,7 +3078,7 @@ Do you want to continue?</source>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="424"/>
         <source>Persian (Dari)</source>
         <extracomment>Language name prs</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Perse (Dari)</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="428"/>
@@ -3618,7 +3620,7 @@ Language name ppk</extracomment>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="370"/>
         <source>(Multiple languages)</source>
         <extracomment>Language name mul (meaning that the work has multiple languages)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">(Langages multiples)</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="372"/>
@@ -3654,7 +3656,7 @@ Language name ppk</extracomment>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="383"/>
         <source>Norwegian Bokmu00e5l</source>
         <extracomment>Language name nb</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Norvégien</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="385"/>
@@ -3672,7 +3674,7 @@ Language name ppk</extracomment>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="481"/>
         <source>Klingon</source>
         <extracomment>Language name tlh</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Klingon</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="511"/>
@@ -3689,7 +3691,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/backend/filters/bt_osishtml.cpp" line="409"/>
         <source>Verb tense changed</source>
-        <translation type="unfinished"></translation>
+        <translation>Le temps du verbe a changé</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/instbackend.cpp" line="195"/>
@@ -3719,17 +3721,17 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="567"/>
         <source>Parsing Strong&apos;s Numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Analyse du nombre de Strong</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="145"/>
         <source>This shortcut conflicts with the shortcut for the following actions:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ce raccourci clavier est en conflit avec celui de l&apos;action suivante :</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="152"/>
         <source>Do you want to clear the conflicting shortcuts and continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Voulez vous effacer les raccourcis en conflit et continuer ?</translation>
     </message>
 </context>
 <context>
@@ -3865,7 +3867,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="138"/>
         <source> (&lt;a href=&apos;syntax_help&apos;&gt;full syntax&lt;/a&gt;)</source>
-        <translation type="unfinished"></translation>
+        <translation> (&lt;a href=&apos;syntax_help&apos;&gt;syntaxe complète&lt;/a&gt;)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="149"/>
@@ -3946,54 +3948,54 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="357"/>
         <source>&lt;p id=&apos;links&apos;&gt;&lt;A href=&apos;#allsome&apos;&gt;Which words to find&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#grouping&apos;&gt;Grouping and order&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#wildcards&apos;&gt;Wildcards (partial words)&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#fields&apos;&gt;Text fields (different parts of text)&lt;/A&gt;&lt;br/&gt;&lt;A href=&apos;#lucene&apos;&gt;Other syntax features&lt;/A&gt;&lt;br/&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p id=&apos;links&apos;&gt;&lt;A href=&apos;#allsome&apos;&gt;Quels mots chercher&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#grouping&apos;&gt;Groupage et ordre&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#wildcards&apos;&gt;Caractères génériques (mots partiels)&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#fields&apos;&gt;Champs textuels (différentes parties du texte)&lt;/A&gt;&lt;br/&gt;&lt;A href=&apos;#lucene&apos;&gt;Autres fonctions syntaxielles&lt;/A&gt;&lt;br/&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="367"/>
         <source>&lt;h1&gt;&lt;A name=&apos;allsome&apos;&gt;Which words to find&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Search terms are separated by spaces. &lt;strong&gt;AND&lt;/strong&gt; (all words), &lt;strong&gt;OR&lt;/strong&gt; (some words) and &lt;strong&gt;NOT&lt;/strong&gt; (not the following word) can be added between the words. If none is added explicitly OR is used automatically. &apos;&lt;strong&gt;+&lt;/strong&gt;word&apos; means the word must be in the results, &apos;&lt;strong&gt;-&lt;/strong&gt;word&apos; means it must not be in the results.&lt;/p&gt;</source>
         <extracomment>Syntax words (AND, OR...) must not be translated.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h1&gt;&lt;A name=&apos;allsome&apos;&gt;Quels mots chercher&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Séparer les mots clés par des espaces. &lt;strong&gt;AND&lt;/strong&gt; (Tous les mots), &lt;strong&gt;OR&lt;/strong&gt; (des mots) et &lt;strong&gt;NOT&lt;/strong&gt; (pas les mots suivants) peuvent être ajouter entre les mots. Si aucun n&apos;est écrit OR est utilisé automatiquement. &apos;&lt;strong&gt;+&lt;/strong&gt;mot&apos; veut dire que le mot doit être dans les résultats, &apos;&lt;strong&gt;-&lt;/strong&gt;mot&apos; veut dire qu&apos;il nedoit pas être dans les résultats.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="372"/>
         <source>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;jesus AND god&lt;/td&gt;&lt;td&gt;Finds verses with both &apos;Jesus&apos; and &apos;God&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;jesus OR god&lt;/td&gt;&lt;td&gt;Finds verses with &apos;Jesus&apos; or &apos;God&apos; or both&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;jesus NOT god&lt;/td&gt;&lt;td&gt;Finds verses with &apos;Jesus&apos; but with no &apos;God&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;+jesus -god&lt;/td&gt;&lt;td&gt;Finds verses with &apos;Jesus&apos; but with no &apos;God&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
         <extracomment>In examples words to be searched for may be translated, but syntax words (AND, OR...) must not be translated.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Jésus AND Dieu&lt;/td&gt;&lt;td&gt;Trouve les versets contenant à la fois &apos;Jésus&apos; et &apos;Dieu&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Jésus OR Dieu&lt;/td&gt;&lt;td&gt;Trouve les versets contenant &apos;Jésus&apos; ou &apos;Dieu&apos; ou les deux&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Jésus NOT Dieu&lt;/td&gt;&lt;td&gt;Trouve les versets contenant &apos;Jésus&apos; mais pas &apos;Dieu&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;+Jésus -Dieu&lt;/td&gt;&lt;td&gt;Trouve les versets contenant &apos;Jésus&apos; mais pas &apos;Dieu&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="383"/>
         <source>&lt;h1&gt;&lt;A name=&apos;grouping&apos;&gt;Grouping and order&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Words can be grouped with &lt;strong&gt;parenthesis&lt;/strong&gt;. Strict word order can be defined with &lt;strong&gt;quotes&lt;/strong&gt;.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h1&gt;&lt;A name=&apos;grouping&apos;&gt;Groupage et ordre&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Les mots peuvent être groupés avec des &lt;strong&gt;parenthèses&lt;/strong&gt;. Un groupe de mot ordonné peut être défini avec des &lt;strong&gt;guillemets&lt;/strong&gt;.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="388"/>
         <source>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;(a AND b) OR c&lt;/td&gt;&lt;td&gt;Finds verses with both &apos;a&apos; AND &apos;b&apos;, and verses with &apos;c&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;says lord&quot;&lt;/td&gt;&lt;td&gt;Finds e.g. &apos;...Isaiah says, &quot;Lord...&apos; but not &apos;...says the LORD&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;says the lord&quot;&lt;/td&gt;&lt;td&gt;Finds all verses with &apos;says the LORD&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;(a AND b) OR c&lt;/td&gt;&lt;td&gt;Trouve les versets contenant à la fois &apos;a&apos; et &apos;b&apos;, et les versets contenant &apos;c&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;dit seigneur&quot;&lt;/td&gt;&lt;td&gt;trouve par exemple. &apos;...Isaiah dit, &quot;Seigneur...&apos; mais pas &apos;...Dit le Seigneur&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;Dit le Seigneur&quot;&lt;/td&gt;&lt;tr&gt; Trouve tous les versets contenant &apos;dit le Seigneur&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="397"/>
         <source>&lt;h1&gt;&lt;A name=&apos;wildcards&apos;&gt;Wildcards (partial words)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;&apos;&lt;strong&gt;*&lt;/strong&gt;&apos; matches any sequence of 0 or more characters, while &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; matches any single character. A wildcard can not be used in the beginning of a word.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h1&gt;&lt;A name=&apos;wildcards&apos;&gt;Caractères génériques (mots partiels)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;&apos;&lt;strong&gt;*&lt;/strong&gt;&apos; remplace n&apos;importe quelle séquence de 0 ou plus caractères, alors que &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; n&apos;importe quel caractère. Un caractère générique ne peut être utilisé au début d&apos;un mot.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="401"/>
         <source>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;a*&lt;/td&gt;&lt;td&gt;All words beginning with &apos;a&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a*a&lt;/td&gt;&lt;td&gt;&apos;Assyria&apos;, &apos;aroma&apos;, &apos;abba&apos; etc.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a?&lt;/td&gt;&lt;td&gt;&apos;at&apos; and &apos;an&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a??a&lt;/td&gt;&lt;td&gt;&apos;abba&apos;, &apos;area&apos;, &apos;Asia&apos; etc.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;a*&lt;/td&gt;&lt;td&gt;Tout mot commençant par &apos;a&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a*a&lt;/td&gt;&lt;td&gt;&apos;Assyria&apos;, &apos;aroma&apos;, &apos;abba&apos; etc.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a?&lt;/td&gt;&lt;td&gt;&apos;at&apos; et &apos;an&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a??a&lt;/td&gt;&lt;td&gt;&apos;abba&apos;, &apos;area&apos;, &apos;Asia&apos; etc.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="412"/>
         <source>&lt;h1&gt;&lt;A name=&apos;fields&apos;&gt;Text fields (different parts of text)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Available text fields:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:&lt;/td&gt;&lt;td&gt;Searches headings&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:&lt;/td&gt;&lt;td&gt;Searches footnotes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;Searches Strong&apos;s numbers&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&lt;/td&gt;&lt;td&gt;Searches morphology codes&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h1&gt;&lt;A name=&apos;fields&apos;&gt;Champs de text (différentes parties du texte)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Champs disponibles :&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:&lt;/td&gt;&lt;td&gt;Cherche dans les en-têtes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:&lt;/td&gt;&lt;td&gt;Cherche dans les notes de bas de page&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;Cherche un nombre de Strong&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&lt;/td&gt;&lt;td&gt;Cherche les codes morphologiques&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="420"/>
         <source>&lt;p&gt;Examples:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:Jesus&lt;/td&gt;&lt;td&gt;Finds headings with &apos;Jesus&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:Jesus AND footnote:said&lt;/td&gt;&lt;td&gt;Finds footnotes with &apos;Jesus&apos; and &apos;said&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:G846&lt;/td&gt;&lt;td&gt;Finds verses with Strong&apos;s Greek number 846&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&quot;N-NSF&quot;&lt;/td&gt;&lt;td&gt;Finds verses with morphology code &apos;N-NSF&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Exemples:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:Jésus&lt;/td&gt;&lt;td&gt;Cherche les en-têtes contenant &apos;Jésus&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:Jésus AND footnote:dit&lt;/td&gt;&lt;td&gt;Trouve les notes de bas de page contenant &apos;Jésus&apos; et &apos;dit&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:G846&lt;/td&gt;&lt;td&gt;Trouve les versets avec le nombre grec de Strong 846&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&quot;N-NSF&quot;&lt;/td&gt;&lt;td&gt;Trouve les versets avec le code morphologique &apos;N-NSF&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="428"/>
         <source>&lt;h1&gt;&lt;A name=&apos;lucene&apos;&gt;Other syntax features&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;BibleTime uses the CLucene search engine. You can read more on the &lt;a href=&apos;http://lucene.apache.org/java/1_4_3/queryparsersyntax.html&apos;&gt;lucene syntax web page&lt;/a&gt; (in external browser).&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h1&gt;&lt;A name=&apos;lucene&apos;&gt;Autres fonctions syntaxielles&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;BibleTime utilise le moteur de recherche CLucene. Vous pouvez lire plus à ce sujet sur &lt;a href=&apos;http://lucene.apache.org/java/1_4_3/queryparsersyntax.html&apos;&gt;lucene syntax web page (en anglais)&lt;/a&gt; (dans un navigateur externe).&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="436"/>
