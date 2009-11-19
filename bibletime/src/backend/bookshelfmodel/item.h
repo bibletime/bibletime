@@ -125,7 +125,7 @@ class Item {
           \brief Returns whether this item is fit to contain the given module.
           \param[in] module The module to check with.
           \retval true If this item is a group and can contain the given module.
-          \retval false This item is not a group or a wrong group.
+          \retval false This item is not a group or is a wrong group.
         */
         inline virtual bool fitFor(CSwordModuleInfo *module) const {
             Q_UNUSED(module);
