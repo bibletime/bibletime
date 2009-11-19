@@ -59,7 +59,7 @@ QModelIndex BtBookshelfTreeModel::index(int row, int column,
     if (!hasIndex(row, column, parent)) return QModelIndex();
 
     Item *parentItem(getItem(parent));
-    Item *childItem(parentItem->childAt(row));
+    Item *childItem(parentItem->children().at(row));
     if (childItem != 0) {
         return createIndex(row, column, childItem);
     }
@@ -452,7 +452,7 @@ void BtBookshelfTreeModel::resetParentCheckStates(QModelIndex parentIndex) {
         bool haveCheckedChildren(false);
         bool haveUncheckedChildren(false);
         for (int i(0); i < parentItem->children().size(); i++) {
-            Qt::CheckState state(parentItem->childAt(i)->checkState());
+            Qt::CheckState state(parentItem->children().at(i)->checkState());
             if (state == Qt::PartiallyChecked) {
                 haveCheckedChildren = true;
                 haveUncheckedChildren = true;

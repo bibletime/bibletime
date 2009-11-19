@@ -60,16 +60,6 @@ class Item {
         }
 
         /**
-          \brief Returns a pointer to the child item at the given index.
-          \pre The given index is valid
-          \param[in] index Index of child item to return.
-        */
-        Item *childAt(int index) const {
-            Q_ASSERT(index >= 0 && index < m_children.size());
-            return m_children.at(index);
-        }
-
-        /**
           \brief Returns the index of this item under its parent.
           \retval -1 if this item has no parent.
         */
