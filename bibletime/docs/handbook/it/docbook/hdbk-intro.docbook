@@ -11,14 +11,14 @@ back-end per &bibletime;, come ad esempio la visualizzazione della Bibbia,
 le ricerche ecc.  &sword; è il prodotto principale di <ulink 
 url="http://www.crosswire.org">&cbs;</ulink>.</para>
 
-    <para>&bibletime; è fatto per essere usato con moduli codificati in uno dei 
+    <para>&bibletime; è fatto per essere usato con documenti codificati in uno dei 
 formati supportati dal progetto &sword;. Informazioni complete sui formati 
 supportati possono essere trovate nella <ulink 
 url="http://www.crosswire.org/sword/develop/index.jsp"> sezione per 
 sviluppatori</ulink> del Progetto &sword;, &cbs;.</para>
 
     <sect2 id="hdbk-intro-works">
-      <title>Moduli disponibili</title>
+      <title>Documenti disponibili</title>
       <para>Oltre 200 documenti in 50 lingue sono disponibili dal <ulink 
 url="http://www.crosswire.org">&cbs;</ulink>. Questi includono:
       <variablelist>
@@ -53,8 +53,8 @@ nelle sezioni della Bibbia.</para>
           <term>Letture di devozione giornaliere</term>
           <listitem>
             <para>Molte persone apprezzano queste porzioni giornaliere della Parola di Dio. I 
-moduli disponibili includono Daily Light sul Daily Path, e il Losungen. (in 
-inglese)</para>
+documenti disponibili includono Daily Light sul Daily Path, e il 
+Losungen. (in inglese)</para>
           </listitem>
         </varlistentry>
         <varlistentry>

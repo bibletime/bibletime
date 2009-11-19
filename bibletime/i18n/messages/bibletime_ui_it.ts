@@ -6,7 +6,7 @@
     <message>
         <location filename="../../src/frontend/btaboutmoduledialog.cpp" line="24"/>
         <source>Information About %1</source>
-        <translation>Informazioni %1</translation>
+        <translation>Informazioni Su %1</translation>
     </message>
 </context>
 <context>
@@ -184,7 +184,7 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="112"/>
         <source>Search in &amp;open works...</source>
-        <translation>Cerca nei moduli &amp;aperti...</translation>
+        <translation>Cerca nei documenti &amp;aperti...</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="119"/>
@@ -264,7 +264,7 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="205"/>
         <source>Configure your bookshelf and install/update/remove/index works</source>
-        <translation>Configura il tuo scaffale e installa/aggiorna/rimuovi/indicizza moduli</translation>
+        <translation>Configura il tuo scaffale e installa/aggiorna/rimuovi/indicizza documenti</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="212"/>
@@ -274,7 +274,7 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="115"/>
         <source>Search in all works that are currently open</source>
-        <translation>Cerca in tutti i moduli aperti</translation>
+        <translation>Cerca in tutti i documenti aperti</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="122"/>
@@ -304,12 +304,12 @@
     <message>
         <location filename="../../src/bibletime.cpp" line="206"/>
         <source>Unlock Work</source>
-        <translation>Sblocca Modulo</translation>
+        <translation>Sblocca Documento</translation>
     </message>
     <message>
         <location filename="../../src/bibletime.cpp" line="207"/>
         <source>Enter the unlock key for this work.</source>
-        <translation>Inserisci la chiave per sbloccare questo modulo.</translation>
+        <translation>Inserisci la chiave per sbloccare questo documento.</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="223"/>
@@ -553,7 +553,7 @@
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="233"/>
         <source>Show/hide works</source>
-        <translation>Mostra/nascondi moduli</translation>
+        <translation>Mostra/nascondi documenti</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="235"/>
@@ -657,7 +657,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="38"/>
         <source>If selected, those indexes which have no corresponding work will be deleted when BibleTime starts</source>
-        <translation>Se selezionato, quegli indici che non hanno corrispondenti moduli saranno disattivati all&apos;avvio di BibleTime</translation>
+        <translation>Se selezionato, quegli indici che non hanno corrispondenti documenti saranno disattivati all&apos;avvio di BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="39"/>
@@ -677,12 +677,12 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="56"/>
         <source>Create new indexes for the selected works</source>
-        <translation>Crea nuovi indici per i moduli selezionati</translation>
+        <translation>Crea nuovi indici per i documenti selezionati</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="63"/>
         <source>Work</source>
-        <translation>Modulo</translation>
+        <translation>Documento</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="63"/>
@@ -692,7 +692,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="88"/>
         <source>Create new search indexes and delete created indexes for the installed works.</source>
-        <translation>Crea un nuovo indice di ricerca ed elimina gli indici creati per i moduli installati.</translation>
+        <translation>Crea un nuovo indice di ricerca ed elimina gli indici creati per i documenti installati.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="94"/>
@@ -702,12 +702,12 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="106"/>
         <source>Indexed Works</source>
-        <translation>Moduli Indicizzati</translation>
+        <translation>Documenti Indicizzati</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="111"/>
         <source>Unindexed Works</source>
-        <translation>Moduli non indicizzati</translation>
+        <translation>Documenti non indicizzati</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="124"/>
@@ -739,7 +739,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="179"/>
         <source>Install and update works. Add remote or local sources, refresh them, select the works to be installed/updated and click Install.&lt;br/&gt;&lt;b&gt;WARNING:&lt;/b&gt; If you live in a persecuted country and don&apos;t want to risk detection don&apos;t use remote sources.</source>
-        <translation>Installa e aggiorna moduli. Aggiungi fonti remote o locali, aggiornale, seleziona le opere che devono essere installate/aggiornate e clicca Installa.&lt;br/&gt;&lt;b&gt;ATTENZIONE:&lt;/b&gt; Se vivi in un paese perseguitato e non vuoi rischiare di essere rilevato non usare origini remote.</translation>
+        <translation>Installa e aggiorna documenti. Aggiungi fonti remote o locali, aggiornale, seleziona i documenti che devono essere installati/aggiornati e clicca Installa.&lt;br/&gt;&lt;b&gt;ATTENZIONE:&lt;/b&gt; Se vivi in un paese perseguitato e non vuoi rischiare di essere rilevato non usare origini remote.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="90"/>
@@ -749,12 +749,12 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="95"/>
         <source>The folder where the new works will be installed</source>
-        <translation>La cartella dove i nuove moduli saranno installati</translation>
+        <translation>La cartella dove i nuovi documenti saranno installati</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="99"/>
         <source>Configure folders where works are installed and found</source>
-        <translation>Configura le cartelle dove i moduli sono installati e trovati</translation>
+        <translation>Configura le cartelle dove i documenti sono installati e trovati</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="115"/>
@@ -764,7 +764,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="116"/>
         <source>Install or update selected works</source>
-        <translation>Installa o aggiorna i moduli selezionati</translation>
+        <translation>Installa o aggiorna i documenti selezionati</translation>
     </message>
 </context>
 <context>
@@ -777,12 +777,12 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="42"/>
         <source>Works can be installed in one or more folders. After setting up folders here you can choose one of them in Install page.</source>
-        <translation>I moduli possono essere installati in una o più cartelle. Dopo aver impostato le cartelle qui ne puoi scegliere una nella pagina di installazione.</translation>
+        <translation>I documenti possono essere installati in una o più cartelle. Dopo aver impostato le cartelle qui ne puoi scegliere una nella pagina di installazione.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="43"/>
         <source>BibleTime and the SWORD library find the works from  all of these folders. If a folder is removed here it still exists in the system with all the works in it.</source>
-        <translation>BibleTime e la libreria SWORD hanno trovato moduli in tutte queste cartelle. Se una cartella è rimossa qui, esiste ancora nel sistema con tutti moduli dentro.</translation>
+        <translation>BibleTime e la libreria SWORD hanno trovato documenti in tutte queste cartelle. Se una cartella è rimossa qui, esiste ancora nel sistema con tutti documenti dentro.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="46"/>
@@ -797,7 +797,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="58"/>
         <source>Folders where new works can be installed</source>
-        <translation>Cartelle dove i nuovi moduli possono essere installati</translation>
+        <translation>Cartelle dove i nuovi documenti possono essere installati</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="61"/>
@@ -859,12 +859,12 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="175"/>
         <source>This folder is not writable, so works can not be installed here using BibleTime. Do you want to use this folder instead of the previous value?</source>
-        <translation>Questa cartella non è scrivibile, quindi i moduli non possono essere installati qui utilizzando BibleTime. Vuoi utilizzare questa cartella invece di quella precedente?</translation>
+        <translation>Questa cartella non è scrivibile, quindi i documenti non possono essere installati qui utilizzando BibleTime. Vuoi utilizzare questa cartella invece di quella precedente?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="195"/>
         <source>This folder is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of bookshelf folders?</source>
-        <translation>Questa cartella non è scrivibile, quindi i moduli non possono essere installati qui utilizzando BibleTime. Vuoi comunque aggiungerla alla lista delle cartelle dello scaffale?</translation>
+        <translation>Questa cartella non è scrivibile, quindi i documenti non possono essere installati qui utilizzando BibleTime. Vuoi comunque aggiungerla alla lista delle cartelle dello scaffale?</translation>
     </message>
 </context>
 <context>
@@ -872,7 +872,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="36"/>
         <source>Work</source>
-        <translation>Modulo</translation>
+        <translation>Documento</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="36"/>
@@ -933,7 +933,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="47"/>
         <source>Work</source>
-        <translation>Modulo</translation>
+        <translation>Documento</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="47"/>
@@ -948,12 +948,12 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="65"/>
         <source>Remove installed works. Select the works and click Remove button.</source>
-        <translation>Rimuovi i moduli installati. Seleziona le opere e clicca il tasto Rimuovi.</translation>
+        <translation>Rimuovi i documenti installati. Seleziona i documenti e clicca il tasto Rimuovi.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="134"/>
         <source>You selected the following work(s): </source>
-        <translation>Hai selezioni i seguenti moduli: </translation>
+        <translation>Hai selezioni i seguenti documenti: </translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="137"/>
@@ -968,12 +968,12 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="53"/>
         <source>Remove the selected works</source>
-        <translation>Rimuovi i moduli selezionati</translation>
+        <translation>Rimuovi i documenti selezionati</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="139"/>
         <source>Remove Works?</source>
-        <translation>Rimuovere i Moduli?</translation>
+        <translation>Rimuovere i Documenti?</translation>
     </message>
 </context>
 <context>
@@ -1059,7 +1059,7 @@ scorciatoia</translation>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="98"/>
         <source>Work</source>
-        <translation>Modulo</translation>
+        <translation>Documento</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="98"/>
@@ -1079,7 +1079,7 @@ scorciatoia</translation>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="75"/>
         <source>Refresh the list of works from this source</source>
-        <translation>Aggiorna la lista dei moduli da questa fonte</translation>
+        <translation>Aggiorna la lista dei documenti da questa fonte</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="81"/>
@@ -1148,17 +1148,17 @@ scorciatoia</translation>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="326"/>
         <source>Install/Update works?</source>
-        <translation>Installare/Aggiornare moduli?</translation>
+        <translation>Installare/Aggiornare documenti?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="327"/>
         <source>Do you really want to install these works?</source>
-        <translation>Vuoi davvero installare questi moduli?</translation>
+        <translation>Vuoi davvero installare questi documenti?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="329"/>
         <source>Only one version of a work can be installed at the same time. Select only one if there are items marked with red.</source>
-        <translation>Solo una versione di un modulo può essere installata nello stesso momento. Selezionane solo una se ci sono elementi marcati di rosso.</translation>
+        <translation>Solo una versione di un documento può essere installata nello stesso momento. Selezionane solo una se ci sono elementi marcati di rosso.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="255"/>
@@ -1383,7 +1383,7 @@ scorciatoia</translation>
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="784"/>
         <source>The work to which the bookmark points to is not installed.</source>
-        <translation>Il modulo a cui il segnalibro punta non è installata.</translation>
+        <translation>Il documento a cui il segnalibro punta non è installatos.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="95"/>
@@ -1499,7 +1499,7 @@ scorciatoia</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="121"/>
         <source>Synchronize the displayed entry of this work with the active Bible window</source>
-        <translation>Sincronizzare la voce visualizzata di questo modulo con la finestra della Bibbia attiva</translation>
+        <translation>Sincronizzare la voce visualizzata di questo documento con la finestra della Bibbia attiva</translation>
     </message>
 </context>
 <context>
@@ -1701,7 +1701,7 @@ scorciatoia</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="130"/>
         <source>Search with works of this window</source>
-        <translation>Cerca con i moduli di questa finestra</translation>
+        <translation>Cerca con i documenti di questa finestra</translation>
     </message>
 </context>
 <context>
@@ -1825,7 +1825,7 @@ scorciatoia</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="160"/>
         <source>Module is not writable.</source>
-        <translation>Modulo non è scrivibile.</translation>
+        <translation>Modulo non scrivibile.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="161"/>
@@ -1952,7 +1952,7 @@ scorciatoia</translation>
     <message>
         <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="46"/>
         <source>Entries of the current work</source>
-        <translation>Voci del modulo corrente</translation>
+        <translation>Voci del documento corrente</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="47"/>
@@ -2061,13 +2061,13 @@ scorciatoia</translation>
         <location filename="../../src/frontend/displaywindow/cmodulechooserbutton.cpp" line="112"/>
         <location filename="../../src/frontend/displaywindow/cmodulechooserbutton.cpp" line="128"/>
         <source>Select a work</source>
-        <translation>Seleziona un modulo</translation>
+        <translation>Seleziona un documento</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cmodulechooserbutton.cpp" line="115"/>
         <location filename="../../src/frontend/displaywindow/cmodulechooserbutton.cpp" line="131"/>
         <source>Select an additional work</source>
-        <translation>Seleziona un modulo addizionale</translation>
+        <translation>Seleziona un documento aggiuntivo</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cmodulechooserbutton.cpp" line="174"/>
@@ -2090,7 +2090,7 @@ scorciatoia</translation>
     <message>
         <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="52"/>
         <source>Creating index for work: %1</source>
-        <translation>Creazione indici per il modulo: %1</translation>
+        <translation>Creazione indici per il documento: %1</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="97"/>
@@ -2100,7 +2100,7 @@ scorciatoia</translation>
     <message>
         <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="97"/>
         <source>Indexing is cancelled because modules are removed.</source>
-        <translation>Indicizzazione annullato perchè le opere sono rimosse.</translation>
+        <translation>Indicizzazione annullato perchè i moduli sono rimossi.</translation>
     </message>
 </context>
 <context>
@@ -2134,7 +2134,7 @@ scorciatoia</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="146"/>
         <source>Module is not writable.</source>
-        <translation>Modulo non è scrivibile.</translation>
+        <translation>Modulo non scrivibile.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="147"/>
@@ -2173,7 +2173,6 @@ scorciatoia</translation>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="770"/>
         <source>Markup</source>
-        <translatorcomment>s</translatorcomment>
         <translation type="unfinished">Avvio</translation>
     </message>
     <message>
@@ -2224,7 +2223,7 @@ scorciatoia</translation>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="825"/>
         <source>Take care, this work contains cult / questionable material!</source>
-        <translation>Fai attenzione, questo modulo contiene materiale di culto discutibile!</translation>
+        <translation>Fai attenzione, questo documento contiene materiale di culto discutibile!</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="828"/>
@@ -2287,7 +2286,7 @@ scorciatoia</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="37"/>
         <source>Standard works</source>
-        <translation>Moduli standard</translation>
+        <translation>Documenti standard</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="38"/>
@@ -2417,8 +2416,7 @@ scorciatoia</translation>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="346"/>
         <source>Footnote</source>
-        <translatorcomment> a piè di pagina</translatorcomment>
-        <translation type="unfinished">Nota</translation>
+        <translation>Nota</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="377"/>
@@ -3553,7 +3551,7 @@ Language name ppk</extracomment>
         <location filename="../../src/util/tool.cpp" line="188"/>
         <location filename="../../src/util/tool.cpp" line="237"/>
         <source>Take care, this work contains cult / questionable material!</source>
-        <translation>Fai attenzione, questo modulo contiene materiale di culto discutibile!</translation>
+        <translation>Fai attenzione, questo documento contiene materiale di culto discutibile!</translation>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="192"/>
@@ -3850,7 +3848,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="107"/>
         <source>Start to search the text in the chosen works</source>
-        <translation>Inizia a cercare il testo nel modulo selezionato</translation>
+        <translation>Inizia a cercare il testo nel documento selezionato</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="110"/>
@@ -3860,7 +3858,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="112"/>
         <source>Choose works for the search</source>
-        <translation>Scegli moduli per la ricerca</translation>
+        <translation>Scegli documenti per la ricerca</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="115"/>
@@ -3890,17 +3888,17 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="174"/>
         <source>Works:</source>
-        <translation>Moduli:</translation>
+        <translation>Documenti:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="268"/>
         <source>Works to Search in</source>
-        <translation>Moduli in cui Cercare</translation>
+        <translation>Documenti in cui Cercare</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="269"/>
         <source>Select the works which should be searched.</source>
-        <translation>Seleziona i moduli che devono essere cercati.</translation>
+        <translation>Seleziona i documenti che devono essere cercati.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="444"/>
@@ -4024,7 +4022,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="49"/>
         <source>Work</source>
-        <translation>Modulo</translation>
+        <translation>Documento</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="49"/>
@@ -4096,7 +4094,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="48"/>
         <source>Works chosen for the search and the number of the hits in each work</source>
-        <translation>Moduli scelti per la ricerca e il numero di risultati in ogni modulo</translation>
+        <translation>Documenti scelti per la ricerca e il numero di risultati in ogni documento</translation>
     </message>
 </context>
 <context>
@@ -4231,7 +4229,7 @@ Language name ppk</extracomment>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="104"/>
         <source>One or more works need indexing before they can be searched.
 This could take a long time. Proceed with indexing?</source>
-        <translation>Uno o più moduli devono essere indicizzati prima che vi si possa effetture una ricerca.
+        <translation>Uno o più documenti devono essere indicizzati prima che vi si possa effetture una ricerca.
 Questo potrebbe richiedere parecchio tempo. Procedere all&apos;indicizzazione?</translation>
     </message>
     <message>
@@ -4322,7 +4320,7 @@ Questo potrebbe richiedere parecchio tempo. Procedere all&apos;indicizzazione?</
     <message>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="41"/>
         <source>Search result of the selected work</source>
-        <translation>Risultato della ricerca del modulo selezionato</translation>
+        <translation>Risultato della ricerca del documento selezionato</translation>
     </message>
 </context>
 <context>
@@ -4330,7 +4328,7 @@ Questo potrebbe richiedere parecchio tempo. Procedere all&apos;indicizzazione?</
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="55"/>
         <source>Standard works are used when no particular work is specified,   for example when a hyperlink into a Bible or lexicon was clicked .</source>
-        <translation>I moduli predefiniti vengono usati in caso non vengano specificati altri moduli, ad esempio quando un collegamento ipertestuale dentro una Bibbia od un lessico viene cliccato.</translation>
+        <translation>I documenti predefiniti vengono usati in caso non vengano specificati altri documenti, ad esempio quando un collegamento ipertestuale dentro una Bibbia od un lessico viene cliccato.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="63"/>
