@@ -63,7 +63,7 @@ void registerMetaTypes() {
 int main(int argc, char* argv[]) {
     namespace DU = util::directory;
 
-//    qInstallMsgHandler( myMessageOutput );
+    qInstallMsgHandler( myMessageOutput );
 
 #ifdef BT_ENABLE_TESTING
     if (QString(argv[1]) == QString("--run-tests")) {
