@@ -51,7 +51,9 @@ bool Item::operator<(const Item &other) const {
     if (m_type != other.type()) {
         return m_type < other.type();
     }
-    return name().localeAwareCompare(other.name()) < 0;
+    QString first(data(Qt::DisplayRole).toString());
+    QString second(other.data(Qt::DisplayRole).toString());
+    return first.localeAwareCompare(second) < 0;
 }
 
 bool Item::isHidden() const {

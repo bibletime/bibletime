@@ -17,6 +17,7 @@
 #include <QList>
 #include <QString>
 #include <QtGlobal>
+#include <QVariant>
 
 
 class CSwordModuleInfo;
@@ -102,17 +103,11 @@ class Item {
         }
 
         /**
-          \brief Returns the visible name of the item.
+          \brief Returns data for this item.
         */
-        inline virtual QString name() const {
-            return QString::null;
-        }
-
-        /**
-          \brief Returns the visible icon of the item.
-        */
-        inline virtual QIcon icon() const {
-            return QIcon();
+        inline virtual QVariant data(int role = Qt::DisplayRole) const {
+            if (role == Qt::CheckStateRole) return m_checkState;
+            return QVariant();
         }
 
         /**

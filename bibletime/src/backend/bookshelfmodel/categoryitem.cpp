@@ -20,6 +20,17 @@ CategoryItem::CategoryItem(CSwordModuleInfo *module)
     // Intentionally empty
 }
 
+QVariant CategoryItem::data(int role) const {
+    switch (role) {
+        case Qt::DisplayRole:
+            return BtBookshelfModel::categoryName(m_category);
+        case Qt::DecorationRole:
+            return BtBookshelfModel::categoryIcon(m_category);
+        default:
+            return Item::data(role);
+    }
+}
+
 bool CategoryItem::operator<(const Item &other) const {
     if (other.type() != ITEM_CATEGORY) {
         return ITEM_CATEGORY < other.type();

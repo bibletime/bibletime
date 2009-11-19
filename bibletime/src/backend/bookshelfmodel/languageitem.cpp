@@ -20,4 +20,15 @@ LanguageItem::LanguageItem(CSwordModuleInfo *module)
     // Intentionally empty
 }
 
+QVariant LanguageItem::data(int role) const {
+    switch (role) {
+        case Qt::DisplayRole:
+            return BtBookshelfModel::languageName(m_language);
+        case Qt::DecorationRole:
+            return util::directory::getIcon("flag.svg");
+        default:
+            return Item::data(role);
+    }
+}
+
 } // namespace BookshelfModel

@@ -21,11 +21,16 @@ IndexingItem::IndexingItem(CSwordModuleInfo *module)
     // Intentionally empty
 }
 
-QString IndexingItem::name() const {
-    if (m_indexed) {
-        return QObject::tr("Indexed works");
-    } else {
-        return QObject::tr("Unindexed works");
+QVariant IndexingItem::data(int role) const {
+    switch (role) {
+        case Qt::DisplayRole:
+            if (m_indexed) {
+                return QObject::tr("Indexed works");
+            } else {
+                return QObject::tr("Unindexed works");
+            }
+        default:
+            return Item::data(role);
     }
 }
 

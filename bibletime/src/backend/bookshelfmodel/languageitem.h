@@ -28,17 +28,7 @@ class LanguageItem: public Item {
 
         LanguageItem(CSwordModuleInfo *module);
 
-        inline const CLanguageMgr::Language *language() const {
-            return m_language;
-        }
-
-        inline QString name() const {
-            return BtBookshelfModel::languageName(m_language);
-        }
-
-        inline QIcon icon() const {
-            return util::directory::getIcon("flag.svg");
-        }
+        QVariant data(int role = Qt::DisplayRole) const;
 
         inline bool fitFor(CSwordModuleInfo *module) const {
             return module->language() == m_language;

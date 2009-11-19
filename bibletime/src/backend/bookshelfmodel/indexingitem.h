@@ -26,7 +26,7 @@ class IndexingItem: public Item {
 
         IndexingItem(CSwordModuleInfo *module);
 
-        QString name() const;
+        QVariant data(int role = Qt::DisplayRole) const;
 
         inline bool fitFor(CSwordModuleInfo *module) const {
             return module->hasIndex() == m_indexed;

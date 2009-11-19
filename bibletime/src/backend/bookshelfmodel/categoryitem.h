@@ -34,13 +34,7 @@ class CategoryItem: public Item {
             return m_category;
         }
 
-        inline QString name() const {
-            return BtBookshelfModel::categoryName(m_category);
-        }
-
-        inline QIcon icon() const {
-            return BtBookshelfModel::categoryIcon(m_category);
-        }
+        QVariant data(int role = Qt::DisplayRole) const;
 
         inline bool fitFor(CSwordModuleInfo *module) const {
             return module->category() == m_category;
