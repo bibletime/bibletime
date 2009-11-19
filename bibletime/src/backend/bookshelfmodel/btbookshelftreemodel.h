@@ -15,8 +15,10 @@
 
 #include <QAbstractItemModel>
 
+#include <QList>
 #include <QMap>
 #include <QPersistentModelIndex>
+#include <QSet>
 #include "backend/bookshelfmodel/btbookshelfmodel.h"
 #include "backend/bookshelfmodel/item.h"
 
@@ -92,7 +94,7 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
             return m_defaultChecked;
         }
 
-        inline const QList<CSwordModuleInfo*> &checkedModules() const {
+        inline const QSet<CSwordModuleInfo*> &checkedModules() const {
             return m_checkedModulesCache;
         }
 
@@ -142,7 +144,7 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
         CheckedBehavior       m_defaultChecked;
         bool                  m_checkable;
 
-        QList<CSwordModuleInfo*> m_checkedModulesCache;
+        QSet<CSwordModuleInfo*> m_checkedModulesCache;
 };
 
 QDataStream &operator<<(QDataStream &os, const BtBookshelfTreeModel::Grouping &o);

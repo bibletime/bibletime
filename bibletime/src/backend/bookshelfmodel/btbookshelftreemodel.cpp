@@ -149,11 +149,10 @@ bool BtBookshelfTreeModel::setData(const QModelIndex &itemIndex,
                 ModuleItem *mItem(static_cast<ModuleItem*>(item));
                 CSwordModuleInfo *mInfo(mItem->moduleInfo());
                 if (newState == Qt::Checked) {
-                    m_checkedModulesCache.append(mInfo);
+                    m_checkedModulesCache.insert(mInfo);
                     emit moduleChecked(mInfo, true);
                 } else {
-                    m_checkedModulesCache.removeOne(mInfo);
-                    Q_ASSERT(!m_checkedModulesCache.contains(mInfo));
+                    m_checkedModulesCache.remove(mInfo);
                     emit moduleChecked(mInfo, false);
                 }
             } else {
@@ -260,7 +259,9 @@ void BtBookshelfTreeModel::setGroupingOrder(const Grouping &groupingOrder) {
     m_groupingOrder = groupingOrder;
 
     if (m_sourceModel != 0) {
-        QSet<CSwordModuleInfo*> checked(checkedModules().toSet());
+        QSet<CSwordModuleInfo*> checked(m_checkedModulesCache);
+        m_checkedModulesCache.clear();
+
         beginRemoveRows(QModelIndex(), 0, m_rootItem->children().size() - 1);
         delete m_rootItem;
         m_modules.clear();
@@ -268,15 +269,17 @@ void BtBookshelfTreeModel::setGroupingOrder(const Grouping &groupingOrder) {
         endRemoveRows();
 
         for (int i(0); i < m_sourceModel->rowCount(); i++) {
+            QModelIndex sourceIndex(m_sourceModel->index(i, 0));
             CSwordModuleInfo *module(
                 static_cast<CSwordModuleInfo *>(
                     m_sourceModel->data(
-                        m_sourceModel->index(i, 0),
+                        sourceIndex,
                         BtBookshelfModel::ModulePointerRole
                     ).value<void*>()
                 )
             );
             Q_ASSERT(module != 0);
+            m_sourceIndexMap[module] = sourceIndex;
             addModule(module, checked.contains(module));
         }
     }
@@ -352,7 +355,7 @@ void BtBookshelfTreeModel::addModule(CSwordModuleInfo *module,
         m_modules.insert(module, newItem);
         if (checked) {
             // Add to checked modules cache
-            m_checkedModulesCache.append(module);
+            m_checkedModulesCache.insert(module);
         }
         endInsertRows();
 
@@ -382,8 +385,7 @@ void BtBookshelfTreeModel::removeModule(CSwordModuleInfo *module) {
     beginRemoveRows(parentIndex, index, index);
     delete i->parent()->children().takeAt(index);
     m_modules.remove(module);
-    m_checkedModulesCache.removeOne(module);
-    Q_ASSERT(!m_checkedModulesCache.contains(module));
+    m_checkedModulesCache.remove(module);
     endRemoveRows();
 
     // Reset parent item check states, if needed:
