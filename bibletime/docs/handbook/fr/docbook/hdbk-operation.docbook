@@ -332,13 +332,21 @@ analysis.</para>
       </sect3>
     </sect2>
   </sect1>
+
   <sect1 id="hdbk-op-bookshelfmanager">
     <title>Le <guimenuitem>Gestionnaire de Bibliothèque</guimenuitem></title>
+
     <para>The <guimenuitem>Bookshelf Manager</guimenuitem> is a tool to manage your 
 Bookshelf. You can install new works to your Bookshelf, and update or remove 
 existing works from your Bookshelf. Access it by clicking <menuchoice> 
 <guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem> 
 </menuchoice> in the main menu.</para>
+
+      <tip>
+	<para>If this is the first time you are starting &bibletime;, click on the Refresh 
+button to see a list of works provided by the &cbs;.</para>
+      </tip>
+
     <sect2 id="hdbk-op-bookshelfmanager-path">
       <title>Configurer les chemins vers les bibliothèques</title>
       <para>Here you can specify where &bibletime; may store your Bookshelf on the hard 

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: handbook-de\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
-"POT-Creation-Date: 2009-11-18 13:23-0500\n"
+"POT-Creation-Date: 2009-11-19 16:21-0500\n"
 "PO-Revision-Date: 2009-11-02 01:58+0100\n"
 "Last-Translator: \n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -1141,12 +1141,12 @@ msgstr ""
 msgid "Search Analysis Dialog Box"
 msgstr "Suchanalyse Dialogbox"
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:384
+#: docs/handbook/en/docbook/hdbk-operation.docbook:385
 msgid "The <guimenuitem>Bookshelf Manager</guimenuitem>"
 msgstr "Der <guimenuitem>Bücherregal Verwalter</guimenuitem>"
 
 # type: Content of: <chapter><sect1><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:386
+#: docs/handbook/en/docbook/hdbk-operation.docbook:387
 msgid ""
 "The <guimenuitem>Bookshelf Manager</guimenuitem> is a tool to manage your "
 "Bookshelf. You can install new works to your Bookshelf, and update or remove "
@@ -1161,12 +1161,19 @@ msgstr ""
 "<menuchoice> <guimenu>Einstellungen</guimenu> <guimenuitem>Bücherregal-"
 "Verwaltung</guimenuitem> </menuchoice> im Hauptmenü klicken."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:396
+# type: Content of: <chapter><sect1><tip><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:397
+msgid ""
+"If this is the first time you are starting &bibletime;, click on the Refresh "
+"button to see a list of works provided by the &cbs;."
+msgstr ""
+
+#: docs/handbook/en/docbook/hdbk-operation.docbook:403
 msgid "Bookshelf path(s) setup"
 msgstr "Bücherregal-Pfade einrichten"
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:397
+#: docs/handbook/en/docbook/hdbk-operation.docbook:404
 msgid ""
 "Here you can specify where &bibletime; may store your Bookshelf on the hard "
 "drive. You can even store it in multiple directories. Default is \"~/.sword/"
@@ -1177,7 +1184,7 @@ msgstr ""
 "speichern. Die Voreinstellung ist \"~/.sword/\"."
 
 # type: Content of: <chapter><sect1><sect2><tip><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:401
+#: docs/handbook/en/docbook/hdbk-operation.docbook:408
 msgid ""
 "If you have a sword CD, but do not want to install all the works on the hard "
 "disk, but use them directly from the CD, then you can add the path to the CD "
@@ -1190,12 +1197,12 @@ msgstr ""
 "&bibletime; starten, wird es alle Werke auf der CD anzeigen, wenn sie "
 "eingelegt ist."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:409
+#: docs/handbook/en/docbook/hdbk-operation.docbook:416
 msgid "Install/update work(s)"
 msgstr "Werke installieren/updaten"
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:410
+#: docs/handbook/en/docbook/hdbk-operation.docbook:417
 msgid ""
 "With this facility, you can connect to a repository of works (called "
 "\"library\"), and transfer one or more works to your local Bookshelf. These "
@@ -1213,7 +1220,7 @@ msgstr ""
 "<guibutton>Löschen...</guibutton> verwalten."
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:418
+#: docs/handbook/en/docbook/hdbk-operation.docbook:425
 msgid ""
 "To begin the installation or update process, select a library you want to "
 "connect to and a local Bookshelf path to install the work(s) to. Then click "
@@ -1237,12 +1244,12 @@ msgstr ""
 "<guibutton>Installieren...</guibutton> klicken. Sie werden dann zu Ihrem "
 "Bücherregal übertragen."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:431
+#: docs/handbook/en/docbook/hdbk-operation.docbook:438
 msgid "Remove work(s)"
 msgstr "Werk(e) entfernen"
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:432
+#: docs/handbook/en/docbook/hdbk-operation.docbook:439
 msgid ""
 "This facility allows you to delete one or more of the works from your "
 "Bookshelf too free up disk space. Simply mark the items and click on "
@@ -1252,12 +1259,12 @@ msgstr ""
 "Bücherregal zu entfernen, um Plattenspeicherplatz zu gewinnen. Markieren Sei "
 "einfach die Posten und klicken Sie auf <guibutton>Entfernen...</guibutton>."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:438
+#: docs/handbook/en/docbook/hdbk-operation.docbook:445
 msgid "Search Indexes"
 msgstr "Suchindizes"
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:439
+#: docs/handbook/en/docbook/hdbk-operation.docbook:446
 msgid ""
 "This option allows you to create new search indexes and cleanup orphaned "
 "index files for removed works."
@@ -1265,12 +1272,12 @@ msgstr ""
 "Diese Option erlaubt Ihnen, neue Suchindizes zu erstellen und verwaiste "
 "Suchindizes entfernter Werke aufzuräumen."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:448
+#: docs/handbook/en/docbook/hdbk-operation.docbook:455
 msgid "Exporting and Printing"
 msgstr "Exortieren und Drucken"
 
 # type: Content of: <chapter><sect1><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:449
+#: docs/handbook/en/docbook/hdbk-operation.docbook:456
 msgid ""
 "In many places, you can open a context menu by clicking with the "
 "<mousebutton>right</mousebutton> mouse button. Depending on context, it will "
@@ -1291,7 +1298,7 @@ msgstr ""
 "Seite, wenn Sie auf ein Werk oder einen oder mehrere Versreferenzen klicken. "
 "Es ist ziemlich unkompliziert, versuchen Sie's einfach mal."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:462
+#: docs/handbook/en/docbook/hdbk-operation.docbook:469
 msgid ""
 "Printing from &bibletime; is rather basic and is intended as a utility. If "
 "you are composing a document or presentation containing text from "
@@ -1965,7 +1972,7 @@ msgstr ""
 msgid "Startup sequence"
 msgstr "Start-Sequenz"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:40
+#: docs/handbook/en/docbook/hdbk-start.docbook:41
 msgid ""
 "As &bibletime; launches you may see the following screens before the main "
 "&bibletime; window opens:"
@@ -1974,15 +1981,18 @@ msgstr ""
 "des Hauptfensters sehen:"
 
 # type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:49
+#: docs/handbook/en/docbook/hdbk-start.docbook:50
+#, fuzzy
 msgid ""
-"<action>Modifies your Bookshelf.</action> This dialog lets you modify your "
+"<action>Modifies your Bookshelf</action>.  This dialog lets you modify your "
 "Bookshelf, add or delete works from your system.  It will only be shown if "
 "no default Bookshelf can be found.  Please see <link linkend=\"hdbk-op-"
-"bookshelfmanager\"> this section</link> for further details. If you start "
-"off with an empty Bookshelf, it will be helpful to install at least one "
-"Bible, Commentary, Lexicon and one Book to get to know &bibletime;'s basic "
-"features quickly."
+"bookshelfmanager\">The Bookshelf Manager section</link> for further details. "
+"If you start off with an empty Bookshelf, it will be helpful to install at "
+"least one Bible, Commentary, Lexicon and one Book to get to know "
+"&bibletime;'s basic features quickly.  You can do this by clicking on the "
+"Refresh button.  You will be presented with a list of works that are "
+"available from the &cbs;"
 msgstr ""
 "<action>Ihr Bücherregal modifizieren.</action> Dieser Dialog erlaubt Ihnen, "
 "Ihr Bücherregal zu modifizieren, Werke zu Ihrem System hinzuzufügen oder vom "
@@ -1995,7 +2005,7 @@ msgstr ""
 "&bibletime; kennen zu lernen."
 
 # type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:66
+#: docs/handbook/en/docbook/hdbk-start.docbook:70
 msgid ""
 "<action>Customizes &bibletime;.</action>This dialog lets you adapt "
 "&bibletime; to your needs. Please see <link linkend=\"hdbk-config-bt\">the "
@@ -2062,7 +2072,7 @@ msgstr "Der &bibletime;-Hilfedialog ist ein Teil von &bibletime;."
 
 # type: Content of: <book><bookinfo><date>
 #: docs/handbook/en/docbook/index.docbook:54
-msgid "$LastChangedDate$"
+msgid "$LastChangedDate: 2009-11-18 13:30:32 -0500 (Wed, 18 Nov 2009) $"
 msgstr ""
 
 # type: Content of: <book><bookinfo><releaseinfo>

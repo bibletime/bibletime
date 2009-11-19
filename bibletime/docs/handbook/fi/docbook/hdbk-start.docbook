@@ -36,24 +36,28 @@ ja kirjoita:
 
   <sect1 id="hdbk-startsequence">
     <title>Käynnistyssarja</title>
+
     <para>Kun &bibletime; käynnistyy, näet seuraavat ikkunat ennenkuin &bibletime;n 
 pääikkuna avautuu:</para>
+
     <variablelist>
       <varlistentry>
         <term>
           <interface>Bookshelf Manager</interface>
         </term>
         <listitem>
-          <para>
-          <action>Muokkaa kirjahyllyäsi.</action> Tällä ikkunalla voit muokata 
-kirjahyllyäsi, lisätä tai poistaa teoksia järjestelmässäsi. Se näytetään 
-vain, jos oletuskirjahyllyä ei löydy. Katso <link 
-linkend="hdbk-op-bookshelfmanager"> tämä osio</link> saadaksesi 
-yksityiskohtiaisia lisätietoja. On kannattavaa aloittaa ohjelman käyttö 
-asentamalla ainakin yksi Raamattu, kommentaari, sanasto ja yksi kirja 
-saadakseen selville &bibletime;n perusominaisuudet nopeasti.</para>
+          <para><action>Modifies your Bookshelf</action>.  This dialog lets you modify your 
+Bookshelf, add or delete works from your system.  It will only be shown if 
+no default Bookshelf can be found.  Please see <link 
+linkend="hdbk-op-bookshelfmanager">The Bookshelf Manager section</link> for 
+further details. If you start off with an empty Bookshelf, it will be 
+helpful to install at least one Bible, Commentary, Lexicon and one Book to 
+get to know &bibletime;'s basic features quickly.  You can do this by 
+clicking on the Refresh button.  You will be presented with a list of works 
+that are available from the &cbs;</para>
         </listitem>
       </varlistentry>
+
       <varlistentry>
         <term>
           <interface>Configure &bibletime; dialog</interface>

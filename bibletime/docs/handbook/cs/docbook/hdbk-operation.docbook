@@ -323,13 +323,21 @@ vyhledávání. Zobrazí jednoduchou grafickou analýzu množství nalezených
       </sect3>
     </sect2>
   </sect1>
+
   <sect1 id="hdbk-op-bookshelfmanager">
     <title><guimenuitem>Správa knih</guimenuitem></title>
+
     <para><guimenuitem>Správa knih</guimenuitem> je nástroj pro správu 
 knihovny. Můžete do vaší knihovny nainstalovat nová díla, nebo aktualizovat 
 či odstranit ty existující. Přístupná pod <menuchoice> 
 <guimenu>Nastavení</guimenu> <guimenuitem>Správa knih</guimenuitem> 
 </menuchoice> v hlavním menu.</para>
+
+      <tip>
+	<para>If this is the first time you are starting &bibletime;, click on the Refresh 
+button to see a list of works provided by the &cbs;.</para>
+      </tip>
+
     <sect2 id="hdbk-op-bookshelfmanager-path">
       <title>Nastavení cesty ke knihám</title>
       <para>Zde lze nastavit, kam na disk má &bibletime; uložit knihovnu. Můžete použít 

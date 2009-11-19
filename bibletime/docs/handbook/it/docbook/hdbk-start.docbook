@@ -35,24 +35,28 @@ default bible:
 
   <sect1 id="hdbk-startsequence">
     <title>Startup sequence</title>
+
     <para>As &bibletime; launches you may see the following screens before the main 
 &bibletime; window opens:</para>
+
     <variablelist>
       <varlistentry>
         <term>
           <interface>Bookshelf Manager</interface>
         </term>
         <listitem>
-          <para>
-          <action>Modifies your Bookshelf.</action> This dialog lets you modify your 
+          <para><action>Modifies your Bookshelf</action>.  This dialog lets you modify your 
 Bookshelf, add or delete works from your system.  It will only be shown if 
 no default Bookshelf can be found.  Please see <link 
-linkend="hdbk-op-bookshelfmanager"> this section</link> for further 
-details. If you start off with an empty Bookshelf, it will be helpful to 
-install at least one Bible, Commentary, Lexicon and one Book to get to know 
-&bibletime;'s basic features quickly.</para>
+linkend="hdbk-op-bookshelfmanager">The Bookshelf Manager section</link> for 
+further details. If you start off with an empty Bookshelf, it will be 
+helpful to install at least one Bible, Commentary, Lexicon and one Book to 
+get to know &bibletime;'s basic features quickly.  You can do this by 
+clicking on the Refresh button.  You will be presented with a list of works 
+that are available from the &cbs;</para>
         </listitem>
       </varlistentry>
+
       <varlistentry>
         <term>
           <interface>Configure &bibletime; dialog</interface>

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
-"POT-Creation-Date: 2009-11-18 13:23-0500\n"
+"POT-Creation-Date: 2009-11-19 16:21-0500\n"
 "PO-Revision-Date: 2006-12-07 11:35+0100\n"
 "Last-Translator: Martin Gruner <mg.pub@gmx.net>\n"
 "Language-Team: Deutsch\n"
@@ -1160,11 +1160,11 @@ msgstr ""
 msgid "Search Analysis Dialog Box"
 msgstr "Zoekanalyse Dialoog"
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:384
+#: docs/handbook/en/docbook/hdbk-operation.docbook:385
 msgid "The <guimenuitem>Bookshelf Manager</guimenuitem>"
 msgstr "De <guimenuitem>Boekenplank Manager</guimenuitem>"
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:386
+#: docs/handbook/en/docbook/hdbk-operation.docbook:387
 #, fuzzy
 msgid ""
 "The <guimenuitem>Bookshelf Manager</guimenuitem> is a tool to manage your "
@@ -1180,11 +1180,18 @@ msgstr ""
 "guimenu><guimenuitem>Boekenplank Manager</guimenuitem></menuchoice> in het "
 "hoofdmenu."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:396
+# type: Content of: <chapter><sect1><tip><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:397
+msgid ""
+"If this is the first time you are starting &bibletime;, click on the Refresh "
+"button to see a list of works provided by the &cbs;."
+msgstr ""
+
+#: docs/handbook/en/docbook/hdbk-operation.docbook:403
 msgid "Bookshelf path(s) setup"
 msgstr "Het instellen van Boekenplank bestandspad(en)"
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:397
+#: docs/handbook/en/docbook/hdbk-operation.docbook:404
 #, fuzzy
 msgid ""
 "Here you can specify where &bibletime; may store your Bookshelf on the hard "
@@ -1195,7 +1202,7 @@ msgstr ""
 "schijf. U kunt hem zelfs opslaan in meerdere directories. De standaard is "
 "\"~/.sword/\"."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:401
+#: docs/handbook/en/docbook/hdbk-operation.docbook:408
 #, fuzzy
 msgid ""
 "If you have a sword CD, but do not want to install all the works on the hard "
@@ -1209,11 +1216,11 @@ msgstr ""
 "u &bibletime; start zal het alle modules op de CD laten zien als die "
 "aanwezig is."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:409
+#: docs/handbook/en/docbook/hdbk-operation.docbook:416
 msgid "Install/update work(s)"
 msgstr "Modules installeren/bijwerken"
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:410
+#: docs/handbook/en/docbook/hdbk-operation.docbook:417
 #, fuzzy
 msgid ""
 "With this facility, you can connect to a repository of works (called "
@@ -1231,7 +1238,7 @@ msgstr ""
 "Sword modules aanbiedt). U kunt de bibliotheken beheren met <guibutton>Voeg "
 "bibliotheek toe</guibutton> en <guibutton>Verwijder bibliotheek</guibutton>."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:418
+#: docs/handbook/en/docbook/hdbk-operation.docbook:425
 msgid ""
 "To begin the installation or update process, select a library you want to "
 "connect to and a local Bookshelf path to install the work(s) to. Then click "
@@ -1254,11 +1261,11 @@ msgstr ""
 "bijwerken en dan klikken op <guibutton>Installeer modules</guibutton>. Ze "
 "zullen dan overgeheveld worden naar uw Boekenplank."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:431
+#: docs/handbook/en/docbook/hdbk-operation.docbook:438
 msgid "Remove work(s)"
 msgstr "Module(s) verwijderen"
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:432
+#: docs/handbook/en/docbook/hdbk-operation.docbook:439
 msgid ""
 "This facility allows you to delete one or more of the works from your "
 "Bookshelf too free up disk space. Simply mark the items and click on "
@@ -1269,23 +1276,23 @@ msgstr ""
 "simpelweg de items aan die u wilt verwijderen en klik op "
 "<guibutton>Verwijder modules</guibutton>."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:438
+#: docs/handbook/en/docbook/hdbk-operation.docbook:445
 #, fuzzy
 msgid "Search Indexes"
 msgstr "Zoekresultaten"
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:439
+#: docs/handbook/en/docbook/hdbk-operation.docbook:446
 msgid ""
 "This option allows you to create new search indexes and cleanup orphaned "
 "index files for removed works."
 msgstr ""
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:448
+#: docs/handbook/en/docbook/hdbk-operation.docbook:455
 msgid "Exporting and Printing"
 msgstr "Exporteren en Printen"
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:449
+#: docs/handbook/en/docbook/hdbk-operation.docbook:456
 #, fuzzy
 msgid ""
 "In many places, you can open a context menu by clicking with the "
@@ -1308,7 +1315,7 @@ msgstr ""
 "of meerdere verwijzingen naar verzen. Het is behoorlijke rechttoe rechtaan, "
 "dus probeer het maar gewoon uit."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:462
+#: docs/handbook/en/docbook/hdbk-operation.docbook:469
 msgid ""
 "Printing from &bibletime; is rather basic and is intended as a utility. If "
 "you are composing a document or presentation containing text from "
@@ -1966,7 +1973,7 @@ msgstr ""
 msgid "Startup sequence"
 msgstr "Volgorde van opstartschermen"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:40
+#: docs/handbook/en/docbook/hdbk-start.docbook:41
 msgid ""
 "As &bibletime; launches you may see the following screens before the main "
 "&bibletime; window opens:"
@@ -1974,16 +1981,18 @@ msgstr ""
 "Wanneer &bibletime; opstart kun je de volgende schermen zien, voordat het "
 "hoofdvenster van &bibletime; opent:"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:49
+#: docs/handbook/en/docbook/hdbk-start.docbook:50
 #, fuzzy
 msgid ""
-"<action>Modifies your Bookshelf.</action> This dialog lets you modify your "
+"<action>Modifies your Bookshelf</action>.  This dialog lets you modify your "
 "Bookshelf, add or delete works from your system.  It will only be shown if "
 "no default Bookshelf can be found.  Please see <link linkend=\"hdbk-op-"
-"bookshelfmanager\"> this section</link> for further details. If you start "
-"off with an empty Bookshelf, it will be helpful to install at least one "
-"Bible, Commentary, Lexicon and one Book to get to know &bibletime;'s basic "
-"features quickly."
+"bookshelfmanager\">The Bookshelf Manager section</link> for further details. "
+"If you start off with an empty Bookshelf, it will be helpful to install at "
+"least one Bible, Commentary, Lexicon and one Book to get to know "
+"&bibletime;'s basic features quickly.  You can do this by clicking on the "
+"Refresh button.  You will be presented with a list of works that are "
+"available from the &cbs;"
 msgstr ""
 "<action>Wijzigt uw boekenplank</action> Deze dialoog stelt u in staat om uw "
 "boekenplank te wijzigen en (Sword-)modules toe te voegen of te verwijderen "
@@ -1995,7 +2004,7 @@ msgstr ""
 "boek te installeren om de basisfuncties van &bibletime; snel onder de knie "
 "te krijgen."
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:66
+#: docs/handbook/en/docbook/hdbk-start.docbook:70
 #, fuzzy
 msgid ""
 "<action>Customizes &bibletime;.</action>This dialog lets you adapt "
@@ -2063,7 +2072,7 @@ msgstr "Het &bibletime; handboek is onderdeel van &bibletime;"
 
 # type: Content of: <book><bookinfo><date>
 #: docs/handbook/en/docbook/index.docbook:54
-msgid "$LastChangedDate$"
+msgid "$LastChangedDate: 2009-11-18 13:30:32 -0500 (Wed, 18 Nov 2009) $"
 msgstr ""
 
 # type: Content of: <book><bookinfo><releaseinfo>
