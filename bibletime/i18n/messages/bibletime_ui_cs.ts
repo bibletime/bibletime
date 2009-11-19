@@ -739,14 +739,6 @@
 <context>
     <name>BtRemovePage</name>
     <message>
-        <source>Work</source>
-        <translation>Dílo</translation>
-    </message>
-    <message>
-        <source>Install path</source>
-        <translation>Instalační umístění</translation>
-    </message>
-    <message>
         <source>Remove</source>
         <translation>Odebrat</translation>
     </message>
@@ -773,6 +765,17 @@
     <message>
         <source>Remove Works?</source>
         <translation>Odstranit díla?</translation>
+    </message>
+</context>
+<context>
+    <name>BtRemovePageTreeModel</name>
+    <message>
+        <source>Work</source>
+        <translation type="unfinished">Dílo</translation>
+    </message>
+    <message>
+        <source>Install path</source>
+        <translation type="unfinished">Instalační umístění</translation>
     </message>
 </context>
 <context>
@@ -2987,6 +2990,14 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Do you want to clear the conflicting shortcuts and continue?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Indexed works</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unindexed works</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

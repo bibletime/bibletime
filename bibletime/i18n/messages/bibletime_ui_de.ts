@@ -739,14 +739,6 @@
 <context>
     <name>BtRemovePage</name>
     <message>
-        <source>Work</source>
-        <translation>Werk</translation>
-    </message>
-    <message>
-        <source>Install path</source>
-        <translation>Installationspfad</translation>
-    </message>
-    <message>
         <source>Remove</source>
         <translation>Entfernen</translation>
     </message>
@@ -773,6 +765,17 @@
     <message>
         <source>Remove Works?</source>
         <translation>Werke entfernen?</translation>
+    </message>
+</context>
+<context>
+    <name>BtRemovePageTreeModel</name>
+    <message>
+        <source>Work</source>
+        <translation type="unfinished">Werk</translation>
+    </message>
+    <message>
+        <source>Install path</source>
+        <translation type="unfinished">Installationspfad</translation>
     </message>
 </context>
 <context>
@@ -2988,6 +2991,14 @@ Language name ppk</extracomment>
     <message>
         <source>Do you want to clear the conflicting shortcuts and continue?</source>
         <translation>Möchten Sie die kollidierenden Kurzbefehle löschen und fortfahren?</translation>
+    </message>
+    <message>
+        <source>Indexed works</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unindexed works</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

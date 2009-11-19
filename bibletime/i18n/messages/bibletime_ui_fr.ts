@@ -350,17 +350,17 @@
         <translation>(c)1999-2009, L&apos;équipe de BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="179"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="180"/>
         <source>You can download and use (but not distribute) the program for personal, private, public or commercial purposes without restrictions.</source>
         <translation>Vous pouvez télécharger et utiliser (mais ne pas distribuer) le programme des fins personnelles, privées, publiques ou commerciales sans restrictions.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="181"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="182"/>
         <source>You can give away or distribute the program if you also distribute the corresponding source code.</source>
         <translation>Vous pouvez donner ou distribuer le programme si vous distribuez aussi le code source correspondant.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="185"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="186"/>
         <source>The complete legally binding license is below.</source>
         <translation>La licence complète juridiquement contraignant est ci-dessous.</translation>
     </message>
@@ -454,42 +454,42 @@
         <translation>Les personnes suivantes bibletime traduit dans leur langue:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="126"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="127"/>
         <source>Some names may be missing, please email bibletime-translations@lists.sourceforge.net if you notice errors or omissions.</source>
         <translation>Certains noms de mai à manquer, s&apos;il vous plaît bibletime-translations@lists.sourceforge.net e-mail si vous constatez des erreurs ou des omissions.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="139"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="140"/>
         <source>SWORD library version %1</source>
         <translation>SWORD version de la bibliothèque %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="142"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="143"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools-- covered by the GNU General Public License-- that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
         <translation>Bibletime fait usage du projet SWORD. Le projet SWORD est le CrossWire Bible Society&apos;s Bible projet de logiciel libre. Son but est de créer des contre-outils à code source ouvert la plate-forme - couvert par la licence GNU General Public - qui permettent aux programmeurs et les sociétés bibliques pour écrire un nouveau logiciel Bible plus rapidement et facilement.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="144"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="145"/>
         <source>The SWORD Project</source>
         <translation>Le projet SWORD</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="158"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="159"/>
         <source>This program uses Qt version %1.</source>
         <translation>Ce programme utiliise la version%1&apos;de Qt.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="160"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="161"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
         <translation>Qt est une application multi-plateforme avec Interface-Graphique, développé avec le language de programmation C++. Elle est disponible sous la licence LGPL.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="174"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="175"/>
         <source>License</source>
         <translation>License</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="177"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="178"/>
         <source>BibleTime is released under the GPL license.</source>
         <translation>BibleTime est distribué sous la licence GPL.</translation>
     </message>
@@ -594,52 +594,52 @@
 <context>
     <name>BtBookshelfModel</name>
     <message>
-        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="66"/>
+        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="72"/>
         <source>Module</source>
         <translation>Module</translation>
     </message>
     <message>
-        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="161"/>
+        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="167"/>
         <source>Bibles</source>
         <translation>Bibles</translation>
     </message>
     <message>
-        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="163"/>
+        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="169"/>
         <source>Commentaries</source>
         <translation>Commentaires</translation>
     </message>
     <message>
-        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="165"/>
+        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="171"/>
         <source>Books</source>
         <translation>Livres</translation>
     </message>
     <message>
-        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="167"/>
+        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="173"/>
         <source>Cults/Unorthodox</source>
         <translation>Sectes/Non-orthodoxes</translation>
     </message>
     <message>
-        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="169"/>
+        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="175"/>
         <source>Maps and Images</source>
         <translation>Cartes et images</translation>
     </message>
     <message>
-        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="171"/>
+        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="177"/>
         <source>Daily Devotionals</source>
         <translation>Lectures quotidiennes</translation>
     </message>
     <message>
-        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="173"/>
+        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="179"/>
         <source>Lexicons and Dictionaries</source>
         <translation>Léxiques et dictionnaires</translation>
     </message>
     <message>
-        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="175"/>
+        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="181"/>
         <source>Glossaries</source>
         <translation>Glossaires</translation>
     </message>
     <message>
-        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="177"/>
+        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="183"/>
         <source>Unknown</source>
         <translation>Inconnu</translation>
     </message>
@@ -780,89 +780,89 @@
         <translation>Les modules peuvent être installés dans un ou plusieurs dossiers. Aprèrs création des dossiers, ici vous pouvez en choisir un sur la page d&apos;installation.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="43"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="44"/>
         <source>BibleTime and the SWORD library find the works from  all of these folders. If a folder is removed here it still exists in the system with all the works in it.</source>
         <translation>BibleTime et la bibliothèque de SWORD retrouvent les modules contenus dans tous ces dossiers là. Si un dossier venait à être supprimé,il système toujours garder une copie ici avec tous les modules intacts.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="46"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="47"/>
         <source>Configure bookshelf folders</source>
         <translation>Configurer les dossiers bilbliothèques</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="50"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="52"/>
         <source>Configuration file for the folders is: </source>
         <translation>Le fichier de configuration pour ce dossier est:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="58"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="60"/>
         <source>Folders where new works can be installed</source>
         <translation>Dossiers où les nouveaux modules peuvent être installés</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="61"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="63"/>
         <source>Read-only folders</source>
         <translation>Dossiers en lecture-seule</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="63"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="65"/>
         <source>Nonexistent folders</source>
         <translation>Dossiers inexistants</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="77"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="79"/>
         <source>Add...</source>
         <translation>Ajouter...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="78"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="80"/>
         <source>Add new folder</source>
         <translation>Créer un nouveau dossier</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="83"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="85"/>
         <source>Edit...</source>
         <translation>Modifier...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="84"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="86"/>
         <source>Edit the selected folder</source>
         <translation>Modifier le dossier sélectionné</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="89"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="91"/>
         <source>Remove</source>
         <translation>Supprimer</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="90"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="92"/>
         <source>Remove the selected folder</source>
         <translation>Supprimer le dossier sélectionné</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="160"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="162"/>
         <source>This default folder in your home directory can&apos;t be removed</source>
         <translation>Ce dossier par défaut ne pas peut être supprimé du dossier principal</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="166"/>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="187"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="168"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="189"/>
         <source>Choose Folder</source>
         <translation>Choisir le dossier</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="175"/>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="195"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="177"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="197"/>
         <source>Use Folder?</source>
         <translation>Utiliser le dossier ?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="175"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="177"/>
         <source>This folder is not writable, so works can not be installed here using BibleTime. Do you want to use this folder instead of the previous value?</source>
         <translation>Ce dossier ne peut pas être modifier, par conséquent les modules ne peuvent pas y être installés en utilisant BibleTime. Voulez-vous utiliser ce dossier au lieu du précédent ?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="195"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="197"/>
         <source>This folder is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of bookshelf folders?</source>
         <translation>Ce dossier ne peut pas être modifié, par conséquent les modules ne peuvent pas y être installés en utilisant BibleTime. Voulez-vous l&apos;ajouter aux dossiers de bibliothèques ?</translation>
     </message>
@@ -931,32 +931,22 @@
 <context>
     <name>BtRemovePage</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="47"/>
-        <source>Work</source>
-        <translation>Module</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="47"/>
-        <source>Install path</source>
-        <translation>Chemin d&apos;installation</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="71"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="75"/>
         <source>Remove</source>
         <translation>Supprimer</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="65"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="67"/>
         <source>Remove installed works. Select the works and click Remove button.</source>
         <translation>Supprimer les modules installés. Sélectionnez les modules et cliquez sur le bouton Supprimer.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="134"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="90"/>
         <source>You selected the following work(s): </source>
         <translation>Vous avez choisis le(s) modules(s) suivant(s): </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="137"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="93"/>
         <source>Do you really want to remove them from your system?</source>
         <translation>Voulez-vous vraiment les supprimer de votre système?</translation>
     </message>
@@ -971,9 +961,22 @@
         <translation>Supprimer les modules sélectionnés</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="139"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="95"/>
         <source>Remove Works?</source>
         <translation>Supprimer les modules?</translation>
+    </message>
+</context>
+<context>
+    <name>BtRemovePageTreeModel</name>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.cpp" line="52"/>
+        <source>Work</source>
+        <translation type="unfinished">Module</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.cpp" line="54"/>
+        <source>Install path</source>
+        <translation type="unfinished">Chemin d&apos;installation</translation>
     </message>
 </context>
 <context>
@@ -1298,48 +1301,49 @@ raccourci</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="132"/>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="135"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="138"/>
         <source>Reference with text</source>
         <translation>Références avec le texte</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="242"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="245"/>
         <source>Bible window</source>
         <translation>Fenêtre de Bible</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="252"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="255"/>
         <source>Copy...</source>
         <translation>Copie...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="263"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="266"/>
         <source>Save...</source>
         <translation>Sauvegarde...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="276"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="279"/>
         <source>Print...</source>
         <translation>Imprimer...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="360"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="363"/>
         <source>Copy chapter to clipboard ...</source>
         <translation>Copie le chapitre dans le presse papier ...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="360"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="363"/>
         <source>Copying</source>
         <translation>Copie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="381"/>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="399"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="384"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="402"/>
         <source>Saving chapter ...</source>
         <translation>Enregistrement du chapitre ...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="381"/>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="399"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="384"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="402"/>
         <source>Saving</source>
         <translation>Enregistrement</translation>
     </message>
@@ -1630,52 +1634,52 @@ raccourci</translation>
 <context>
     <name>CDisplayWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="136"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="131"/>
         <source>Back in history</source>
         <translation>Aller en arrière</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="144"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="139"/>
         <source>Forward in history</source>
         <translation>Avancer</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="101"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="96"/>
         <source>Zoom in</source>
         <translation>Zoomer avant</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="105"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="100"/>
         <source>Zoom out</source>
         <translation>Zoom arrière</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="109"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="104"/>
         <source>Close</source>
         <translation>Fermer</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="113"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="108"/>
         <source>Select all</source>
         <translation>Sélectionne tout</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="117"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="112"/>
         <source>Copy</source>
         <translation>Copier</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="121"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="116"/>
         <source>Find...</source>
         <translation>Rechercher...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="125"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="120"/>
         <source>Change location</source>
         <translation>Changer d&apos;emplacement</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="130"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="125"/>
         <source>Search with works of this window</source>
         <translation>Rechercher dans les modules de cette fenêtre</translation>
     </message>
@@ -2402,43 +2406,43 @@ Voulez vous continuer ?</translation>
 <context>
     <name>InfoDisplay::CInfoDisplay</name>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="184"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="186"/>
         <source>Abbreviation</source>
         <translation>Abréviation</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="195"/>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="290"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="197"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="297"/>
         <source>Cross references</source>
         <translation>Références croisées</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="346"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="353"/>
         <source>Footnote</source>
         <translation>Notes de pied de page</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="377"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="384"/>
         <source>Strongs</source>
         <translation>Numéros Strong</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="459"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="466"/>
         <source>Morphology</source>
         <translation>Marques morphologiques</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="483"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="490"/>
         <source>Word lookup</source>
         <translation>Recherche</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="48"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="50"/>
         <source>Copy</source>
         <translation>Copier</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="64"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="66"/>
         <source>&lt;small&gt;This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.&lt;/small&gt;</source>
         <translation>&lt;small&gt;Ici c&apos;est la zone d&apos;affichage Mag. Faites survoler la souris sur les liens et autres éléments qui contiennent des données et les contenus apparaissent dans le Mage au bout d&apos;un bref délai.&lt;/small&gt;</translation>
     </message>
@@ -3719,7 +3723,7 @@ Language name ppk</extracomment>
         <translation>Écraser le fichier ?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="567"/>
+        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="579"/>
         <source>Parsing Strong&apos;s Numbers</source>
         <translation>Analyse du nombre de Strong</translation>
     </message>
@@ -3732,6 +3736,16 @@ Language name ppk</extracomment>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="152"/>
         <source>Do you want to clear the conflicting shortcuts and continue?</source>
         <translation>Voulez vous effacer les raccourcis en conflit et continuer ?</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/bookshelfmodel/indexingitem.cpp" line="26"/>
+        <source>Indexed works</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/bookshelfmodel/indexingitem.cpp" line="28"/>
+        <source>Unindexed works</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4014,80 +4028,80 @@ Language name ppk</extracomment>
 <context>
     <name>Search::CModuleResultView</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="49"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="52"/>
         <source>Work</source>
         <translation>Module</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="49"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="52"/>
         <source>Hits</source>
         <translation>
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="63"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="66"/>
         <source>Copy...</source>
         <translation>Copier...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="65"/>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="75"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="68"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="78"/>
         <source>Reference only</source>
         <translation>Références seulement</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="68"/>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="78"/>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="85"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="71"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="81"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="88"/>
         <source>Reference with text</source>
         <translation>Références avec le texte</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="73"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="76"/>
         <source>Save...</source>
         <translation>Enregistrer...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="83"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="86"/>
         <source>Print...</source>
         <translation>Imprimer...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="238"/>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="247"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="241"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="250"/>
         <source>Copy search result...</source>
         <translation>Copier le résultat de la recherche ...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="238"/>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="247"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="241"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="250"/>
         <source>Copying search result</source>
         <translation>Copie du résultat de la recherche</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="256"/>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="265"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="259"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="268"/>
         <source>Save search result...</source>
         <translation>Enregistre le résultat de la recherche ...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="256"/>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="265"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="259"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="268"/>
         <source>Saving search result</source>
         <translation>Enregistrement du résultat de la recherche</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="274"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="277"/>
         <source>Print search result...</source>
         <translation>Imprimer les résultats de recherche ...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="274"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="277"/>
         <source>Printing search result</source>
         <translation>Impression des résultats de la recherche</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="48"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="51"/>
         <source>Works chosen for the search and the number of the hits in each work</source>
         <translation>Modules choisis pour la recherche et le nombre de résultats dans chaque module</translation>
     </message>
@@ -4211,34 +4225,34 @@ Language name ppk</extracomment>
 <context>
     <name>Search::CSearchDialog</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="103"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="116"/>
         <source>Missing indices</source>
         <translation>Indices manquants</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="75"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="83"/>
         <source>Search</source>
         <translation>Rechercher</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="104"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="117"/>
         <source>One or more works need indexing before they can be searched.
 This could take a long time. Proceed with indexing?</source>
         <translation>Un ou plusieurs modules ont besoin d&apos;être indexés avec d&apos;effectuer une recherche.
 Cette opération peut prendre du temps. Procéder à l&apos;indexation ?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="219"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="232"/>
         <source>&amp;Analyze results...</source>
         <translation>&amp;Analyser les résultats...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="220"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="233"/>
         <source>Show a graphical analyzis of the search result</source>
         <translation>Afficher une interprétation graphique du résultat de la recherche</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="226"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="239"/>
         <source>&amp;Close</source>
         <translation>&amp;Fermer</translation>
     </message>
