@@ -211,6 +211,11 @@ class CSwordBackend : public QObject, public sword::SWMgr {
         */
         QList<CSwordModuleInfo*> takeModulesFromList(QStringList names);
 
+        /**
+        * Returns a list of pointers to modules, created from a list of module names.
+        */
+        QList<CSwordModuleInfo*> getPointerList(QStringList names);
+
         /** Sword prefix list.
         * @return A list of all known Sword prefix dirs
         */

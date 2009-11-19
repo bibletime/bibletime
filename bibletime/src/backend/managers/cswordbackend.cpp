@@ -126,6 +126,18 @@ QList<CSwordModuleInfo*> CSwordBackend::takeModulesFromList(QStringList names) {
     return list;
 }
 
+QList<CSwordModuleInfo*> CSwordBackend::getPointerList(QStringList names) {
+    QList<CSwordModuleInfo*> list;
+    foreach(QString name, names) {
+        CSwordModuleInfo* mInfo = findModuleByName(name);
+        if (mInfo) {
+            list.append(mInfo);
+        }
+    }
+    return list;
+}
+
+
 /** Initializes the Sword modules. */
 CSwordBackend::LoadError CSwordBackend::initModules(SetupChangedReason reason) {
     //  qWarning("globalSwordConfigPath is %s", globalConfPath);
