@@ -267,25 +267,17 @@ void BtBookshelfTreeModel::setGroupingOrder(const Grouping &groupingOrder) {
         m_rootItem = new RootItem;
         endRemoveRows();
 
-        BtBookshelfModel *m(dynamic_cast<BtBookshelfModel*>(m_sourceModel));
-        if (m != 0) {
-            Q_FOREACH(CSwordModuleInfo *module, m->modules()) {
-                addModule(module, checked.contains(module));
-            }
-        }
-        else {
-            for (int i(0); i < m_sourceModel->rowCount(); i++) {
-                CSwordModuleInfo *module(
-                    static_cast<CSwordModuleInfo *>(
-                        m_sourceModel->data(
-                            m_sourceModel->index(i, 0),
-                            BtBookshelfModel::ModulePointerRole
-                        ).value<void*>()
-                    )
-                );
-                Q_ASSERT(module != 0);
-                addModule(module, checked.contains(module));
-            }
+        for (int i(0); i < m_sourceModel->rowCount(); i++) {
+            CSwordModuleInfo *module(
+                static_cast<CSwordModuleInfo *>(
+                    m_sourceModel->data(
+                        m_sourceModel->index(i, 0),
+                        BtBookshelfModel::ModulePointerRole
+                    ).value<void*>()
+                )
+            );
+            Q_ASSERT(module != 0);
+            addModule(module, checked.contains(module));
         }
     }
 }
