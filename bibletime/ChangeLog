@@ -1,3 +1,7 @@
+2009-11-19 Kang Sun <k486@digizip.com>
+    * Added compile flags to CMakeLists.txt to reduce debugging output in
+    * release builds.
+
 2009-11-11 Martin Gruner <mgruner@crosswire.org>
     * Include patch by kbs that fixes a memory leak.
     * Improved support for alternative versifications.
