@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
-"POT-Creation-Date: 2009-11-18 13:51-0500\n"
-"PO-Revision-Date: 2009-11-17 21:35+0100\n"
+"POT-Creation-Date: 2009-11-19 12:43-0500\n"
+"PO-Revision-Date: 2009-11-18 21:28+0100\n"
 "Last-Translator: Giovanni Tedaldi\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -85,13 +85,13 @@ msgid ""
 msgstr ""
 "Molte caratteristiche fornite dal &sword; backend possono essere "
 "personalizzate in &bibletime;. Queste caratteristiche sono documentate nella "
-"finestra. Hai anche la possibilità di specificare moduli standard che "
-"dovranno essere usati quando nessun modulo è specificato in un riferimento. "
-"Un esempio: La Bibbia standard è usata per visualizzare il contenuto dei "
-"riferimenti incrociati nella Bibbia. Quando ci passi il mouse sopra, la "
-"Lente mostrerà il contenuto dei versetti a cui si riferiscono, secondo la "
-"Bibbia standard specificata. Con l'uso di filtri del testo, puoi controllare "
-"l'aspetto del testo."
+"finestra. Hai anche la possibilità di specificare documenti standard che "
+"dovranno essere usati quando nessun documento è specificato in un "
+"riferimento. Un esempio: La Bibbia standard è usata per visualizzare il "
+"contenuto dei riferimenti incrociati nella Bibbia. Quando ci passi il mouse "
+"sopra, la Lente mostrerà il contenuto dei versetti a cui si riferiscono, "
+"secondo la Bibbia standard specificata. Con l'uso di filtri del testo, puoi "
+"controllare l'aspetto del testo."
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:52
@@ -135,11 +135,11 @@ msgid ""
 "you know that the standard display font does not contain the characters used "
 "in this work."
 msgstr ""
-"&bibletime; può usare tutti i caratteri supportati. Finchè i moduli che ti "
-"interessano sono visualizzati correttamente qui nulla deve essere fatto. Se "
-"un modulo è visualizzato solo come una serie di punti interrogativi (??????) "
-"o scatole vuote, allora sai che il carattere di visualizzazione standard non "
-"contiene i caratteri usati in questo modulo."
+"&bibletime; può usare tutti i caratteri supportati. Finché i documenti che "
+"ti interessano sono visualizzati correttamente, qui nulla deve essere fatto. "
+"Se un documento è visualizzato solo come una serie di punti interrogativi "
+"(??????) o scatole vuote, allora sai che il carattere di visualizzazione "
+"standard non contiene i caratteri usati in questo documento."
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:79
@@ -150,11 +150,11 @@ msgid ""
 "work you are interested in, try installing the localization package for that "
 "language."
 msgstr ""
-"Per correggere, scegli la lingua di questo modulo dal menu a tendina. "
+"Per correggere, scegli la lingua di questo documento dal menu a tendina. "
 "Seleziona l'uso di caratteri personalizzati nel checkbox. Poi seleziona un "
 "carattere. Per esempio, un carattere che supporta molte lingue è Code2000. "
-"Se nessun font installato può visualizzare il modulo che ti interessa, prova "
-"ad installare il pacchetto di localizzazione per quella lingua."
+"Se nessun font installato può visualizzare il documento che ti interessa, "
+"prova ad installare il pacchetto di localizzazione per quella lingua."
 
 # type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-config.docbook:86
@@ -366,7 +366,7 @@ msgid ""
 "sword/develop/index.jsp\"> developers section</ulink> of the &sword; "
 "Project, &cbs;."
 msgstr ""
-"&bibletime; è fatto per essere usato con moduli codificati in uno dei "
+"&bibletime; è fatto per essere usato con documenti codificati in uno dei "
 "formati supportati dal progetto &sword;. Informazioni complete sui formati "
 "supportati possono essere trovate nella <ulink url=\"http://www.crosswire."
 "org/sword/develop/index.jsp\"> sezione per sviluppatori</ulink> del Progetto "
@@ -375,7 +375,7 @@ msgstr ""
 # type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:21
 msgid "Available works"
-msgstr "Moduli disponibili"
+msgstr "Documenti disponibili"
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:22
@@ -452,8 +452,8 @@ msgid ""
 "include Daily Light on the Daily Path, and the Losungen."
 msgstr ""
 "Molte persone apprezzano queste porzioni giornaliere della Parola di Dio. I "
-"moduli disponibili includono Daily Light sul Daily Path, e il Losungen. (in "
-"inglese)"
+"documenti disponibili includono Daily Light sul Daily Path, e il Losungen. "
+"(in inglese)"
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:65
@@ -547,6 +547,15 @@ msgid ""
 "gives you quick access to important functions, and the Desk on the right "
 "side is where you do your real work."
 msgstr ""
+"Puoi vedere facilmente le diverse parti dell'applicazione. La Finestra in "
+"alto a sinistra è utilizzata per aprire i documenti installati nella scheda "
+"Libreria, e con la scheda Segnalibri è possibile gestire i segnalibri. La "
+"piccola finestra \"Lente\" sottostante la Libreria viene utilizzata per "
+"visualizzare le informazioni aggiuntive incorporate nei documenti. Quando "
+"sposti il mouse su una nota, per esempio, allora la Lente visualizzerà il "
+"contenuto effettivo della nota. La barra degli strumenti consente di "
+"accedere rapidamente alle funzioni importanti, e la Scrivania sulla destra è "
+"dove fai il tuo vero lavoro."
 
 # type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:25
@@ -554,6 +563,7 @@ msgid ""
 "Let us now proceed by looking at the different parts of the application "
 "individually."
 msgstr ""
+"Procediamo a guardare alle diverse parti dell'applicazione individualmente."
 
 # type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:29
@@ -572,12 +582,15 @@ msgid ""
 "also has a category called \"Bookmarks\". This is where you can store and "
 "access your own bookmarks."
 msgstr ""
+"La Libreria elenca tutti i documenti installati, ordinati per categoria e "
+"lingua. Ha anche una categoria chiamata \"Segnalibri\". Qui è dove puoi "
+"salvare e accedere ai tuoi segnalibri."
 
 # type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:37
 #: docs/handbook/en/docbook/hdbk-operation.docbook:142
 msgid "Reading works"
-msgstr ""
+msgstr "Lettura documenti"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:38
@@ -588,12 +601,17 @@ msgid ""
 "display its contents. Then just click on one of the works to open it for "
 "reading. A read window will appear in the Desk area."
 msgstr ""
+"Per aprire un documento dalla libreria per leggerla, clicca con il "
+"<mousebutton>pulsante sinistro del mouse</mousebutton> sulla categoria "
+"desiderata (Bibbie, Commenti, Lessici, Libri, Letture Devozionali o "
+"Glossari) per mostrarne il contenuto. Poi clicca su uno dei documenti per "
+"aprirlo per la lettura. Una finestra di lettura apparirà nella Scrivania."
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><tip><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:47
 #: docs/handbook/en/docbook/hdbk-operation.docbook:97
 msgid "Drag &amp; Drop Works Here"
-msgstr ""
+msgstr "Trascina e Rilascia Documenti Qui"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:50
@@ -606,14 +624,22 @@ msgid ""
 "location. You can also drag a verse reference into an existing read window, "
 "then it will jump to the specified location."
 msgstr ""
+"Se stai leggendo un certo documento, e vuoi aprire un altro documento al "
+"passaggio che stai leggendo, puoi usare una scorciatoia. Clicca con il "
+"<mousebutton>pulsante sinistro del mouse</mousebutton> sul versetto/"
+"passaggio di riferimento (il puntatore diventa una mano) e trascinalo nella "
+"Libreria. Rilascialo sul documento che vuoi aprire, e verrà aperto per la "
+"lettura nella posizione specificata. Puoi anche trascinare un versetto in "
+"una finestra di lettura già esistente, salterà al passaggio specificato."
 
 # type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:62
 msgid "Additional information about works"
-msgstr "Informazioni aggiuntive sui moduli"
+msgstr "Informazioni aggiuntive sui documenti"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:63
+#, fuzzy
 msgid ""
 "If you click with the <mousebutton>right</mousebutton> mouse button on the "
 "symbol of a work, you will see a menu with additional entries that are "
@@ -625,6 +651,15 @@ msgid ""
 "\"http://www.crosswire.org/sword/modules/aboutlocked.jsp\"> this page</"
 "ulink> on the &cbs; web site."
 msgstr ""
+"Se clicchi con il <mousebutton>pulsante destro del mouse</mousebutton> sul "
+"simbolo di un documento, vedrai un menu con ulteriori voci che sono "
+"rilevanti per questo documento. <guimenuitem>\"About documento\"</"
+"guimenuitem> apre una finestra con tante informazioni interessanti sul "
+"documento selezionato. <guimenuitem>\"Sblocca documento\"</guimenuitem> apre "
+"una piccola finestra di dialogo per documenti cifrati, dove puoi inserire la "
+"chiave di sblocco per accedere al documento. Per informazioni aggiuntive sui "
+"documenti bloccati, per favore guarda <ulink url=\"http://www.crosswire.org/"
+"sword/modules/aboutlocked.jsp\"> questa pagina</ulink> sul sito di &cbs;."
 
 # type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:79
