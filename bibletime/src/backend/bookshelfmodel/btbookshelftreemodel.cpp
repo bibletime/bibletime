@@ -404,7 +404,7 @@ void BtBookshelfTreeModel::removeModule(CSwordModuleInfo *module) {
 
     // Actually remove the item:
     beginRemoveRows(parentIndex, index, index);
-    i->parent()->deleteChildAt(index);
+    delete i->parent()->children().takeAt(index);
     m_modules.remove(module);
     m_checkedModulesCache.removeOne(module);
     Q_ASSERT(!m_checkedModulesCache.contains(module));

@@ -55,7 +55,7 @@ class Item {
         /**
           \brief Returns the list of child items of this node.
         */
-        inline const QList<Item*> &children() const {
+        inline QList<Item*> &children() {
             return m_children;
         }
 
@@ -86,11 +86,6 @@ class Item {
             Q_ASSERT(index >= 0 && index <= m_children.size());
             m_children.insert(index, newItem);
             newItem->setParent(this);
-        }
-
-        inline void deleteChildAt(int index) {
-            Q_ASSERT(index >= 0 && index <= m_children.size());
-            delete m_children.takeAt(index);
         }
 
         template <class T>
