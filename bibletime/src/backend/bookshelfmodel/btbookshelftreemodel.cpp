@@ -14,7 +14,6 @@
 
 #include <QSet>
 #include "backend/bookshelfmodel/categoryitem.h"
-#include "backend/bookshelfmodel/distributionitem.h"
 #include "backend/bookshelfmodel/indexingitem.h"
 #include "backend/bookshelfmodel/languageitem.h"
 #include "backend/bookshelfmodel/moduleitem.h"
@@ -339,9 +338,6 @@ void BtBookshelfTreeModel::addModule(CSwordModuleInfo *module,
                 break;
             case GROUP_LANGUAGE:
                 newIndex = getGroup<LanguageItem>(module, parentIndex);
-                break;
-            case GROUP_DISTRIBUTION:
-                newIndex = getGroup<DistributionItem>(module, parentIndex);
                 break;
             case GROUP_INDEXING:
                 newIndex = getGroup<IndexingItem>(module, parentIndex);

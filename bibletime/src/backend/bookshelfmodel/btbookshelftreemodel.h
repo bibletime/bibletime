@@ -42,7 +42,6 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
         enum Group {
             GROUP_CATEGORY = 0,
             GROUP_LANGUAGE = 1,
-            GROUP_DISTRIBUTION,
             GROUP_INDEXING
         };
         enum CheckedBehavior {

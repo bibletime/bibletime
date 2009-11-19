@@ -31,8 +31,7 @@ class Item {
             ITEM_CATEGORY     = 1,
             ITEM_LANGUAGE     = 2,
             ITEM_MODULE       = 3,
-            ITEM_DISTRIBUTION = 4,
-            ITEM_INDEXING     = 5
+            ITEM_INDEXING     = 4
         };
 
         Item(Type type);

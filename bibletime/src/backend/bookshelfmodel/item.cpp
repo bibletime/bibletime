@@ -13,7 +13,6 @@
 #include "backend/bookshelfmodel/item.h"
 
 #include "backend/bookshelfmodel/categoryitem.h"
-#include "backend/bookshelfmodel/distributionitem.h"
 #include "backend/bookshelfmodel/languageitem.h"
 
 
