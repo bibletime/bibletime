@@ -66,6 +66,7 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
         const;
         virtual QModelIndex parent(const QModelIndex &index) const;
         virtual QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
+        QVariant data(CSwordModuleInfo *module, int role = Qt::DisplayRole) const;
         virtual Qt::ItemFlags flags(const QModelIndex &index) const;
         virtual QVariant headerData(int section, Qt::Orientation orientation,
                                     int role = Qt::DisplayRole) const;

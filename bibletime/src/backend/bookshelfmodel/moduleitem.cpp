@@ -12,14 +12,23 @@
 
 #include "backend/bookshelfmodel/moduleitem.h"
 
+#include "backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "util/cresmgr.h"
 
 
 namespace BookshelfModel {
 
-ModuleItem::ModuleItem(CSwordModuleInfo *module)
-        : Item(ITEM_MODULE), m_moduleInfo(module) {
+ModuleItem::ModuleItem(CSwordModuleInfo *module,
+                       BtBookshelfTreeModel *parentModel)
+    : Item(ITEM_MODULE), m_moduleInfo(module), m_parentModel(parentModel)
+{
     Q_ASSERT(module != 0);
+    Q_ASSERT(parentModel != 0);
+}
+
+QVariant ModuleItem::data(int role) const {
+    // Dispatch request to tree model:
+    return m_parentModel->data(m_moduleInfo, role);
 }
 
 } // namespace BookshelfModel

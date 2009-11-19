@@ -104,10 +104,7 @@ class Item {
         /**
           \brief Returns data for this item.
         */
-        inline virtual QVariant data(int role = Qt::DisplayRole) const {
-            if (role == Qt::CheckStateRole) return m_checkState;
-            return QVariant();
-        }
+        virtual QVariant data(int role = Qt::DisplayRole) const;
 
         /**
           \brief Returns the check state of this item.
@@ -139,8 +136,6 @@ class Item {
           \brief Comparsion operator used sorting child items.
         */
         virtual bool operator<(const Item &other) const;
-
-        virtual bool isHidden() const;
 
     protected:
         inline void setParent(Item *parent) {

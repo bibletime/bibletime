@@ -94,26 +94,30 @@ QVariant BtBookshelfTreeModel::data(const QModelIndex &index, int role) const {
         case BtBookshelfTreeModel::CheckStateRole:
             return i->checkState();
         case BtBookshelfModel::ModulePointerRole:
+            /* This case is just an optimization. */
             if (i->type() == Item::ITEM_MODULE) {
                 ModuleItem *mi(static_cast<ModuleItem *>(i));
                 return qVariantFromValue((void*) mi->moduleInfo());
             }
             return 0;
-        case BtBookshelfModel::ModuleHiddenRole:
-            return i->isHidden();
         case Qt::DisplayRole:
         case Qt::DecorationRole:
+        case BtBookshelfModel::ModuleHiddenRole:
         default:
             if (i->type() == Item::ITEM_MODULE) {
                 ModuleItem *item(static_cast<ModuleItem *>(i));
                 CSwordModuleInfo* m(item->moduleInfo());
-                Q_ASSERT(m_sourceIndexMap.contains(m));
-                return m_sourceModel->data(m_sourceIndexMap.value(m), role);
+                return data(m, role);
             } else {
                 return i->data(role);
             }
     }
     return QVariant();
+}
+
+QVariant BtBookshelfTreeModel::data(CSwordModuleInfo *module, int role) const {
+    Q_ASSERT(m_sourceIndexMap.contains(module));
+    return m_sourceModel->data(m_sourceIndexMap.value(module), role);
 }
 
 bool BtBookshelfTreeModel::setData(const QModelIndex &itemIndex,
@@ -122,9 +126,7 @@ bool BtBookshelfTreeModel::setData(const QModelIndex &itemIndex,
     typedef QPair<Item *, QModelIndex> IP;
 
     Qt::CheckState newState;
-    if (role == BtBookshelfModel::ModuleHiddenRole) {
-        newState = value.toBool() ? Qt::Checked : Qt::Unchecked;
-    } else if (role == Qt::CheckStateRole) {
+    if (role == Qt::CheckStateRole) {
         bool ok;
         newState = (Qt::CheckState) value.toInt(&ok);
         if (!ok || newState == Qt::PartiallyChecked) return false;
@@ -348,7 +350,7 @@ void BtBookshelfTreeModel::addModule(CSwordModuleInfo *module,
     }
     else {
         Item *parentItem(getItem(parentIndex));
-        ModuleItem *newItem(new ModuleItem(module));
+        ModuleItem *newItem(new ModuleItem(module, this));
         newItem->setCheckState(checked ? Qt::Checked : Qt::Unchecked);
         const int newIndex(parentItem->indexFor(newItem));
 

@@ -19,22 +19,27 @@
 #include "backend/drivers/cswordmoduleinfo.h"
 
 
+class BtBookshelfTreeModel;
+
 namespace BookshelfModel {
 
 class ModuleItem: public Item {
     public:
-        ModuleItem(CSwordModuleInfo *module);
+        ModuleItem(CSwordModuleInfo *module, BtBookshelfTreeModel *parentModel);
 
-        CSwordModuleInfo *moduleInfo() const {
+        /**
+          Reimplementation of \ref Item::data which dispatches all requests to
+          the \ref BtBookshelfTreeModel parent model.
+        */
+        QVariant data(int role = Qt::DisplayRole) const;
+
+        inline CSwordModuleInfo *moduleInfo() const {
             return m_moduleInfo;
         }
 
-        inline bool isHidden() const {
-            return m_moduleInfo->isHidden();
-        }
-
     protected:
-        CSwordModuleInfo *m_moduleInfo;
+        CSwordModuleInfo     *m_moduleInfo;
+        BtBookshelfTreeModel *m_parentModel;
 };
 
 } // namespace BookshelfModel

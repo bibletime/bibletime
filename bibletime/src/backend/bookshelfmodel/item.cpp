@@ -12,8 +12,7 @@
 
 #include "backend/bookshelfmodel/item.h"
 
-#include "backend/bookshelfmodel/categoryitem.h"
-#include "backend/bookshelfmodel/languageitem.h"
+#include "backend/bookshelfmodel/btbookshelfmodel.h"
 
 
 namespace BookshelfModel {
@@ -46,21 +45,29 @@ int Item::indexFor(Item *newItem) {
     }
 }
 
+QVariant Item::data(int role) const {
+    switch (role) {
+        case Qt::CheckStateRole:
+            return m_checkState;
+        case BtBookshelfModel::ModuleHiddenRole:
+            if (m_children.empty()) return true;
+
+            foreach (Item *child, m_children) {
+                if (!child->data(role).toBool()) return false;
+            }
+            return true;
+        default:
+            return QVariant();
+    }
+}
+
 bool Item::operator<(const Item &other) const {
     if (m_type != other.type()) {
         return m_type < other.type();
     }
-    QString first(data(Qt::DisplayRole).toString());
-    QString second(other.data(Qt::DisplayRole).toString());
+    QString first(data(Qt::DisplayRole).toString().toLower());
+    QString second(other.data(Qt::DisplayRole).toString().toLower());
     return first.localeAwareCompare(second) < 0;
-}
-
-bool Item::isHidden() const {
-    if (m_children.empty()) return true;
-    Q_FOREACH(Item *child, m_children) {
-        if (!child->isHidden()) return false;
-    }
-    return true;
 }
 
 } // namespace BookshelfModel
