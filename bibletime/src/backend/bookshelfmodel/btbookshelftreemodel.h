@@ -114,7 +114,7 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
                              QModelIndex parentIndex) {
             BookshelfModel::Item *parentItem(getItem(parentIndex));
             int groupIndex;
-            T *groupItem(parentItem->getGroupItem<T>(module, &groupIndex));
+            T *groupItem(parentItem->getGroupItem<T>(module, groupIndex));
 
             if (groupItem == 0) {
                 groupItem = new T(module);

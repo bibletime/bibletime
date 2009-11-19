@@ -89,12 +89,12 @@ class Item {
         }
 
         template <class T>
-        T *getGroupItem(CSwordModuleInfo *module, int *index) {
+        T *getGroupItem(CSwordModuleInfo *module, int &outIndex) {
             for (int i(0); i < m_children.size(); i++) {
                 Q_ASSERT(m_children.at(i)->type() == T::GROUP_TYPE);
                 T *item(static_cast<T*>(m_children.at(i)));
                 if (item->fitFor(module)) {
-                    if (index != 0) *index = i;
+                    outIndex = i;
                     return item;
                 }
             }
