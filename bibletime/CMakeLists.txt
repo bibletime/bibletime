@@ -165,8 +165,6 @@ SOURCE_GROUP( "Generated Files"
 )
 
 
-######################################################
-
 IF (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
 	SET(CMAKE_INSTALL_PREFIX "install/") #install to ./build/install, allow override
 ENDIF (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
@@ -180,7 +178,6 @@ ELSE (MSVC)
 ENDIF (MSVC)
 
 
-######################################################
 # Install files
 #
 SET (BT_DESTINATION "bin/")
@@ -190,12 +187,6 @@ INSTALL(TARGETS "${EXECUTABLE_NAME}"
 	DESTINATION "${BT_DESTINATION}"
 )
 
-# compiled catalogs
-FOREACH(MESSAGE_LOCALE_LANG ${MESSAGE_LOCALE_LANGS})
-	INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/bibletime_ui_${MESSAGE_LOCALE_LANG}.qm"
-		DESTINATION "${BT_SHARE_PATH}share/bibletime/locale/"
-	)
-ENDFOREACH(MESSAGE_LOCALE_LANG ${MESSAGE_LOCALE_LANGS})
 # icons
 FILE(GLOB INSTALL_ICONS_LIST "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/*.svg")
 INSTALL(FILES ${INSTALL_ICONS_LIST}
@@ -223,24 +214,6 @@ INSTALL(FILES "docs/license.html"
 INSTALL(FILES "pics/startuplogo.png"
 	DESTINATION "${BT_SHARE_PATH}share/bibletime/pics/"
 )
-#handbook (install images from en/ to all languages)
-FILE(GLOB INSTALL_HANDBOOK_IMAGES "${CMAKE_CURRENT_SOURCE_DIR}/docs/handbook/en/html/*.png")
-FOREACH(HANDBOOK_LOCALE_LANG ${HANDBOOK_LOCALE_LANGS} "en")
-	FILE(GLOB INSTALL_HANDBOOK_HTML_FILES_${HANDBOOK_LOCALE_LANG} "${CMAKE_CURRENT_SOURCE_DIR}/docs/handbook/${HANDBOOK_LOCALE_LANG}/html/*.html")
-	INSTALL(FILES ${INSTALL_HANDBOOK_HTML_FILES_${HANDBOOK_LOCALE_LANG}}
-		DESTINATION "${BT_SHARE_PATH}share/bibletime/docs/handbook/${HANDBOOK_LOCALE_LANG}/"
-	)
-	INSTALL(FILES ${INSTALL_HANDBOOK_IMAGES}
-		DESTINATION "${BT_SHARE_PATH}share/bibletime/docs/handbook/${HANDBOOK_LOCALE_LANG}/"
-	)
-ENDFOREACH(HANDBOOK_LOCALE_LANG ${HANDBOOK_LOCALE_LANGS} "en")
-#howto (does not have images)
-FOREACH(HOWTO_LOCALE_LANG ${HOWTO_LOCALE_LANGS} "en")
-	FILE(GLOB INSTALL_HOWTO_HTML_FILES_${HOWTO_LOCALE_LANG} "${CMAKE_CURRENT_SOURCE_DIR}/docs/howto/${HOWTO_LOCALE_LANG}/html/*.html")
-	INSTALL(FILES ${INSTALL_HOWTO_HTML_FILES_${HOWTO_LOCALE_LANG}}
-		DESTINATION "${BT_SHARE_PATH}share/bibletime/docs/howto/${HOWTO_LOCALE_LANG}/"
-	)
-ENDFOREACH(HOWTO_LOCALE_LANG ${HOWTO_LOCALE_LANGS} "en")
 #
 # Platform specific installation
 #
@@ -267,17 +240,12 @@ IF (MSVC)
 			DESTINATION "${BT_DESTINATION}"
 		)
 	ENDIF (CMAKE_BUILD_TYPE STREQUAL "Debug")
-
-
 ENDIF (MSVC)
-######################################################
 
-######################################################
-# define helper targets for documentation management
+
+INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTUITranslation.cmake")
 INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTDocumentation.cmake")
-######################################################
 
-######################################################
 
 ######################################################
 # "make uninstall" target; see http://www.cmake.org/Wiki/CMake_FAQ#Can_I_do_.22make_uninstall.22_with_CMake.3F
@@ -290,13 +258,6 @@ CONFIGURE_FILE(
 ADD_CUSTOM_TARGET(uninstall "${CMAKE_COMMAND}" -P "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake")
 ######################################################
 
-######################################################
-# Developer section
 INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTDeveloper.cmake")
-######################################################
-
-######################################################
-# Cpack section
 INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTCpack.cmake")
-######################################################
 
