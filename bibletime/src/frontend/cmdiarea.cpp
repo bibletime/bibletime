@@ -241,7 +241,9 @@ bool CMDIArea::eventFilter(QObject *o, QEvent *e) {
             triggerWindowUpdate();
             break;
         case QEvent::WindowTitleChange:
-            emitWindowCaptionChanged();
+            if (o == activeSubWindow()) {
+                emit sigSetToplevelCaption(w->windowTitle());
+            }
             break;
         default:
             break;
