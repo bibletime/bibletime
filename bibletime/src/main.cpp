@@ -33,23 +33,71 @@
 #endif
 
 
-bool showDebugMessages;
+static bool showDebugMessages;
+
+// This class will open the file descriptor on demand.
+// It will automatically close the file descriptor if it is open when the program exits.
+class FileOpener
+{
+public:
+
+    // Constructor set file descriptor to zero
+    FileOpener() 
+        : m_fd(0) {
+    }
+
+    // Destructor closes file descriptor if it is non-zero (Windows only)
+    ~FileOpener() {
+#ifdef Q_WS_WIN
+        if (m_fd != 0)
+            fclose(m_fd);
+#endif
+    }
+
+    // function to open the file descriptor if it is called (Windows only)
+    // on non-windows just use "stderr"
+    FILE* getFd() {
+        if (m_fd == 0) {
+ #ifdef Q_WS_WIN
+           QString debugFile = QDir::homePath() + "/BibleTime Debug.txt";
+            m_fd=fopen(debugFile.toLocal8Bit().data(),"w");
+#else
+            m_fd = stderr;
+#endif
+        }
+        return m_fd;
+    }
+private:
+    FILE* m_fd; 
+
+};
+// When program exits, this will close the file
+static FileOpener fileOpener;
+
 
 void myMessageOutput( QtMsgType type, const char *msg ) {
     //we use this messagehandler to switch debugging off in final releases
+    FILE* outFd = 0;
     switch (type) {
         case QtDebugMsg:
             if (showDebugMessages) { //only show messages if they are enabled!
-                fprintf( stderr, "(BibleTime %s) Debug: %s\n", BT_VERSION, msg );
+                outFd = fileOpener.getFd();
+                if (outFd != 0)
+                    fprintf( outFd, "(BibleTime %s) Debug: %s\n", BT_VERSION, msg );
             }
             break;
         case QtWarningMsg:
-            //if (showDebugMessages) //comment out for releases so users don't get our debug warnings
-            fprintf( stderr, "(BibleTime %s) WARNING: %s\n", BT_VERSION, msg );
+#ifndef QT_NO_DEBUG  // don't show in release builds so users don't get our debug warnings
+            outFd = fileOpener.getFd();
+            if (outFd != 0)
+                fprintf( outFd, "(BibleTime %s) WARNING: %s\n", BT_VERSION, msg );
+#endif
             break;
         case QtFatalMsg:
         case QtCriticalMsg:
-            fprintf( stderr, "(BibleTime %s) _FATAL_: %s\nPlease report this bug! (http://www.bibletime.info/development_help.html)", BT_VERSION, msg );
+            outFd = fileOpener.getFd();
+            if (outFd != 0)
+                fprintf( outFd, "(BibleTime %s) _FATAL_: %s\nPlease report this bug! (http://www.bibletime.info/development_help.html)", BT_VERSION, msg );
             abort(); // dump core on purpose
     }
 }
@@ -63,7 +111,20 @@ void registerMetaTypes() {
 int main(int argc, char* argv[]) {
     namespace DU = util::directory;
 
+    BibleTimeApp app(argc, argv); //for QApplication
+    app.setApplicationName("bibletime");
+    app.setApplicationVersion(BT_VERSION);
+
+    showDebugMessages = QCoreApplication::arguments().contains("--debug");
+
+#ifdef Q_WS_WIN
+    // Use the default Qt message handler if --debug is not specified
+    // This works with Visual Studio debugger Output Window
+    if (showDebugMessages)
+	    qInstallMsgHandler( myMessageOutput );
+#else
     qInstallMsgHandler( myMessageOutput );
+#endif
 
 #ifdef BT_ENABLE_TESTING
     if (QString(argv[1]) == QString("--run-tests")) {
@@ -76,10 +137,6 @@ int main(int argc, char* argv[]) {
       \todo Reimplement "--ignore-session" and "--open-default-bible <key>"
             command line argument handling.
     */
-
-    BibleTimeApp app(argc, argv); //for QApplication
-    app.setApplicationName("bibletime");
-    app.setApplicationVersion(BT_VERSION);
 
 #ifdef Q_WS_WIN
 
@@ -118,9 +175,6 @@ int main(int argc, char* argv[]) {
     BibleTimeTranslator.load( QString("bibletime_ui_").append(QLocale::system().name()), DU::getLocaleDir().canonicalPath());
     app.installTranslator(&BibleTimeTranslator);
 
-    // This is the QT4 version, will only work if main App is QApplication
-    // A binary option (on / off)
-    showDebugMessages = QCoreApplication::arguments().contains("--debug");
     app.setProperty("--debug", QVariant(showDebugMessages));
 
     //Migrate configuration data, if neccessary
