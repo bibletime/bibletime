@@ -2,12 +2,14 @@
   <title>Referenz</title>
   <sect1 id="hdbk-reference-menus">
     <title>Hauptmenü-Referenz</title>
-    <para>In diesem Abschnitt finden Sie detaillierte Beschreibungen aller Einträge im 
-&bibletime;-Hauptmenü. Sie sind in der Reihenfolge angeordnet, wie Sie auch 
-in &bibletime; auftauchen und zwar mit allen Untereinträgen unterhalb ihrer 
-jeweiligen Obermenüs. Sie können auch alle Kurzbefehle der Einträge 
-nachschauen, ein komplettes Verzeichnis der Kurzbefehle finden Sie in <link 
-linkend="hdbk-reference-shortcuts">diesem Abschnitt</link>.</para>
+
+    <para>In this section you can find detailed descriptions of all entries in the 
+main menu of &bibletime;. They are ordered in just the way they appear in 
+&bibletime;, with all the sub-items listed under the major menu item they 
+belong to. You can also see the shortcut of each item;a complete listing of 
+all shortcuts can be found in the <link 
+linkend="hdbk-reference-shortcuts">shortcuts section</link>.</para>
+
     <sect2 id="hdbk-reference-menus-file">
       <title>
         <guimenu>File</guimenu>
@@ -155,13 +157,15 @@ Lupenfenster im linken Abschnitt oder verbirgt es.</para>
               <guimenuitem>Search in standard bible</guimenuitem>
             </menuchoice>
           </term>
+
           <listitem>
-            <para>
-            <action>In der Standard-Bibel suchen...</action>. Es können mehr Werke zum 
-Suchdialog hinzugefügt werden. Eine ausführlichere Such-Beschreibung können 
-Sie <link linkend="hdbk-op-search">hier</link> finden.</para>
+            <para><action>Opens the Search Dialog to search in the standard Bible 
+only</action>. More works can be added in the Search Dialog. A more detailed 
+search description can be found in the <link 
+linkend="hdbk-op-search">Searching in works</link> section.</para>
           </listitem>
         </varlistentry>
+
         <varlistentry id="hdbk-reference-menus-search-openworks">
           <term>
             <menuchoice>
@@ -178,12 +182,14 @@ Sie <link linkend="hdbk-op-search">hier</link> finden.</para>
               <guimenuitem>Search in open work(s)</guimenuitem>
             </menuchoice>
           </term>
+
           <listitem>
-            <para>
-            <action>In offenen Werken suchen...</action>. Werke können im Suchdialog 
-hinzugefügt oder entfernt werden. Eine ausführlichere Such-Beschreibung 
-können Sie <link linkend="hdbk-op-search">hier</link> finden.</para>
+            <para><action>Opens the Search Dialog to search in all open works</action>. Works 
+can be added or removed in the Search Dialog. A more detailed search 
+description can be found in the <link linkend="hdbk-op-search">Searching in 
+works</link> section.</para>
           </listitem>
+
         </varlistentry>
       </variablelist>
     </sect2>
@@ -393,15 +399,15 @@ kümmern soll (automatische Modi, probieren Sie's einfach aus!).</para>
               <guimenuitem>Configure &bibletime;</guimenuitem>
             </menuchoice>
           </term>
+
           <listitem>
-            <para>
-            <action>&bibletime; konfigurieren</action>. Dies öffnet den 
-Hauptkonfigurations-Dialog von &bibletime;. Sie können hier alle möglichen 
-Einstellungen von &bibletime; an Ihre Bedürfnisse anpassen. Bitte schauen 
-Sie in <link linkend="hdbk-config-bt">diesem Abschnitt</link> für Details 
-nach.</para>
+            <para> <action>Opens &bibletime;'s main configuration dialog</action>. You can 
+configure all kinds of nice settings there to adapt &bibletime; to your 
+needs.  Please see the <link linkend="hdbk-config-bt">Configuring 
+&bibletime; section</link> for details.</para>
           </listitem>
         </varlistentry>
+
         <varlistentry id="hdbk-reference-menus-settings-bookshelf_manager">
 
           <term>
@@ -421,11 +427,12 @@ nach.</para>
               <guimenuitem>Bookshelf Manager</guimenuitem>
             </menuchoice>
           </term>
+
           <listitem>
-            <para>
-            <action>Hiermit wird ein Dialog, zur &sword;-Konfiguration und Konfiguration 
-Ihrer Bücherregal-Verwaltung aufgerufen</action>. Schauen Sie bitte in <link 
-linkend="hdbk-op-bookshelfmanager">diesem Abschnitt</link> für Details nach.</para>
+            <para><action>Opens a dialog where you can change your &sword; configuration and 
+manage your bookshelf</action>. Please see the <link 
+linkend="hdbk-op-bookshelfmanager">Bookshelf Manager section</link> for 
+details.</para>
           </listitem>
         </varlistentry>
       </variablelist>
@@ -798,13 +805,14 @@ assoziierten Symbolzeichen.
 
   <sect1 id="hdbk-reference-shortcuts">
     <title>Tastenkürzel-Verzeichnis</title>
-    <para>Dies ist ein Verzeichnis aller Tastenkürzel und ihrer korrespondierenden 
-Beschreibung im Handbuch. Die Tastenkürzel sind (grob) alphabetisch 
-sortiert. Wenn Sie unmittelbar nachschauen möchten, welches Tastenkürzel 
-eine bestimmte Menüfunktion hat, so können Sie entweder den Menüeintrag in 
-&bibletime; ansehen (da grundsätzlich auch das entsprechende Tastenkürzel 
-mit angezeigt wird) oder die Tastenkürzel in <link 
-linkend="hdbk-reference-menus">diesem Abschnitt</link> nachsehen.</para>
+
+    <para>This is an index of all shortcuts and their corresponding description in the 
+handbook. The shortcuts are sorted (roughly)  alphabetical. If you want to 
+directly find out which shortcuts a certain menu item has, you can either 
+look at the entry itself in &bibletime; (as it always shows the shortcut), 
+or you can look it in the <link linkend="hdbk-reference-menus">Main Menu 
+reference</link>.</para>
+
     <informaltable>
       <tgroup cols="2">
         <colspec colname="shortcut" />

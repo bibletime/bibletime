@@ -52,25 +52,29 @@ ugrani.</para>
 
       <sect3 id="hdbk-op-parts-bookshelf-metainfo">
         <title>Kiegészítő információk egy adott dokumentumról</title>
-        <para>Amikor <mousebutton>jobb</mousebutton> egérgombbal rákattint egy dokumentum 
-szimbólumára, egy helyi menüt láthat olyan bejegyzésekkel, ami az adott 
-munkára érvényes. Az <guimenuitem>"Általános információk"</guimenuitem> egy 
-új ablakot nyit meg, a dokumentumra vonatkozó információkkal. A 
-<guimenuitem>"Feloldás"</guimenuitem> egy kis párbeszédablakot nyit meg, 
-ahol megadhatja a zárolt dokumentumok feloldó kulcsát. A zárolt 
-dokumentumokról kiegészítő információt olvashat <ulink 
-url="http://www.crosswire.org/sword/modules/aboutlocked.jsp"> ezen az 
-oldalon</ulink>, a &cbs; honlapján. </para>
+
+        <para>If you click with the <mousebutton>right</mousebutton> mouse button on the 
+symbol of a work, you will see a menu with additional entries that are 
+relevant for this work.  <guimenuitem>"About this work"</guimenuitem> opens 
+a window with lots of interesting information about the selected work.  
+<guimenuitem>"Unlock this work"</guimenuitem> opens a small dialog for 
+encrypted documents, where you can enter the unlock key to access the 
+work. For additional information on locked works, please see the <ulink 
+url="http://www.crosswire.org/sword/modules/aboutlocked.jsp"> Locked 
+Modules</ulink> page on the &cbs; web site.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-bookshelf-search">
         <title>Keresés a dokumentumokban</title>
-        <para>Kereshet a dokumentumokban, ha a <mousebutton>jobb</mousebutton> egérgombbal 
-kattint a  dokumentum ikonjára, és kiválasztja a <guimenuitem>"Keresés 
-itt:"</guimenuitem> menüpontot. A &Shift; segítségével másik ikonokra 
-kattintva hozzáadhat még dokumentumokat a kereséshez, ekkor az összes 
-kiválasztott munkában fog keresni. A keresés teljes leírását <link 
-linkend="hdbk-op-search">itt</link> találhatja.</para>
+
+        <para>You can search in a work by clicking with the 
+<mousebutton>right</mousebutton> mouse button on its symbol and selecting 
+<guimenuitem>"Search in work(s)"</guimenuitem>. By pressing &Shift; and 
+clicking on other works you can select more than one. Then follow the same 
+procedure to open the search dialog. You will be searching in all of these 
+documents. A complete description of the operation of the search features 
+can be found on the <link linkend="hdbk-op-search">Searching in Works 
+section</link>.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-bookshelf-bookmarks">

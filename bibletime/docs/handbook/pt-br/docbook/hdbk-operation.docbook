@@ -53,26 +53,29 @@ ele vai para o local desejado.</para>
 
       <sect3 id="hdbk-op-parts-bookshelf-metainfo">
         <title>Informao adicional sobre obras</title>
+
         <para>If you click with the <mousebutton>right</mousebutton> mouse button on the 
 symbol of a work, you will see a menu with additional entries that are 
 relevant for this work.  <guimenuitem>"About this work"</guimenuitem> opens 
 a window with lots of interesting information about the selected work.  
 <guimenuitem>"Unlock this work"</guimenuitem> opens a small dialog for 
 encrypted documents, where you can enter the unlock key to access the 
-work. For additional information on locked works, please see <ulink 
-url="http://www.crosswire.org/sword/modules/aboutlocked.jsp"> this 
-page</ulink> on the &cbs; web site.</para>
+work. For additional information on locked works, please see the <ulink 
+url="http://www.crosswire.org/sword/modules/aboutlocked.jsp"> Locked 
+Modules</ulink> page on the &cbs; web site.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-bookshelf-search">
         <title>Buscando em obras</title>
-        <para>Voc pode buscar numa obra clicando com o boto 
-<mousebutton>direito</mousebutton> do mouse no seu smbolo e selecionando 
-<guimenuitem>"Buscar em obra(s)"</guimenuitem>. Pressionando &Shift; 
-eclicando em outras obras, voc pode selecionar mais de uma. Ento siga o 
-mesmo procedimento para abrir o dilogo de busca. Voc estar buscando em todos 
-esses documentos. Uma descrio completa da operao e dos recursos de busca 
-podem ser encontrados <link linkend="hdbk-op-search">aqui</link>.</para>
+
+        <para>You can search in a work by clicking with the 
+<mousebutton>right</mousebutton> mouse button on its symbol and selecting 
+<guimenuitem>"Search in work(s)"</guimenuitem>. By pressing &Shift; and 
+clicking on other works you can select more than one. Then follow the same 
+procedure to open the search dialog. You will be searching in all of these 
+documents. A complete description of the operation of the search features 
+can be found on the <link linkend="hdbk-op-search">Searching in Works 
+section</link>.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-bookshelf-bookmarks">
