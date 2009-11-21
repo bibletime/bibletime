@@ -40,6 +40,8 @@
 #include "util/cresmgr.h"
 #include "util/directory.h"
 
+// Forwards
+char* bt_version();
 
 using namespace Profile;
 
@@ -267,7 +269,7 @@ void BibleTime::restoreWorkspace() {
 /** Sets the plain caption of the main window */
 void BibleTime::setPlainCaption(const QString &title) {
     QString newTitle("BibleTime ");
-    newTitle.append(BT_VERSION);
+    newTitle.append(bt_version());
     if (!title.isEmpty()) {
         newTitle.append(" - [");
         newTitle.append(title);

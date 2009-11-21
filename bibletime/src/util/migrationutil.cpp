@@ -17,12 +17,14 @@
 // Sword includes:
 #include "swversion.h"
 
+// Forwards
+char* bt_version();
 
 namespace util {
 namespace migration {
 
 void checkMigration() {
-    if (CBTConfig::get(CBTConfig::bibletimeVersion) != BT_VERSION) {
+    if (CBTConfig::get(CBTConfig::bibletimeVersion) != bt_version()) {
         sword::SWVersion lastVersion(CBTConfig::get(CBTConfig::bibletimeVersion).toUtf8());
         //lastVersion will be 0.0, if it was an old KDE install,
         //because the config could not be found yet

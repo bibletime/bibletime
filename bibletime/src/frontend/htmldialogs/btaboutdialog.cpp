@@ -24,7 +24,7 @@ static QString make_head(const QString& content);
 static QString make_html(const QString& content);
 static QString make_file_icon(const QString& icon);
 static QString make_link(const QString& link, const QString& text);
-static QString make_version();
+char* bt_version();
 
 
 // Implements the Help > About dialog box
@@ -48,7 +48,7 @@ void BtAboutDialog::init_bt_tab() {
     QString content;
     content = make_file_icon("bibletime");
     content += "&nbsp;&nbsp;";
-    content += make_bold("BibleTime " + make_version());
+    content += make_bold("BibleTime " + QString(bt_version()));
     content = make_center(content) + make_br();
     content += tr("BibleTime is an easy to use but powerful Bible study tool.");
     content += make_br() + make_br();
@@ -229,11 +229,6 @@ static QString make_body(const QString& content) {
 
 static QString make_link(const QString& link, const QString& text) {
     return "<a href=\"" + link + "\">" + text + "</a>";
-}
-
-static QString make_version() {
-//	return "";
-    return BT_VERSION;
 }
 
 static QString make_file_icon(const QString& icon) {

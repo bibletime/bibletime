@@ -35,6 +35,11 @@
 
 static bool showDebugMessages;
 
+char* bt_version()
+{
+    return BT_VERSION;
+}
+
 // This class will open the file descriptor on demand.
 // It will automatically close the file descriptor if it is open when the program exits.
 class FileOpener
@@ -83,21 +88,21 @@ void myMessageOutput( QtMsgType type, const char *msg ) {
             if (showDebugMessages) { //only show messages if they are enabled!
                 outFd = fileOpener.getFd();
                 if (outFd != 0)
-                    fprintf( outFd, "(BibleTime %s) Debug: %s\n", BT_VERSION, msg );
+                    fprintf( outFd, "(BibleTime %s) Debug: %s\n", bt_version(), msg );
             }
             break;
         case QtWarningMsg:
 #ifndef QT_NO_DEBUG  // don't show in release builds so users don't get our debug warnings
             outFd = fileOpener.getFd();
             if (outFd != 0)
-                fprintf( outFd, "(BibleTime %s) WARNING: %s\n", BT_VERSION, msg );
+                fprintf( outFd, "(BibleTime %s) WARNING: %s\n", bt_version(), msg );
 #endif
             break;
         case QtFatalMsg:
         case QtCriticalMsg:
             outFd = fileOpener.getFd();
             if (outFd != 0)
-                fprintf( outFd, "(BibleTime %s) _FATAL_: %s\nPlease report this bug! (http://www.bibletime.info/development_help.html)", BT_VERSION, msg );
+                fprintf( outFd, "(BibleTime %s) _FATAL_: %s\nPlease report this bug! (http://www.bibletime.info/development_help.html)", bt_version(), msg );
             abort(); // dump core on purpose
     }
 }
@@ -113,7 +118,7 @@ int main(int argc, char* argv[]) {
 
     BibleTimeApp app(argc, argv); //for QApplication
     app.setApplicationName("bibletime");
-    app.setApplicationVersion(BT_VERSION);
+    app.setApplicationVersion(bt_version());
 
     showDebugMessages = QCoreApplication::arguments().contains("--debug");
 
@@ -185,8 +190,8 @@ int main(int argc, char* argv[]) {
     BibleTime bibleTime;
 
     // a new BibleTime version was installed (maybe a completely new installation)
-    if (CBTConfig::get(CBTConfig::bibletimeVersion) != BT_VERSION) {
-        CBTConfig::set(CBTConfig::bibletimeVersion, BT_VERSION);
+    if (CBTConfig::get(CBTConfig::bibletimeVersion) != bt_version()) {
+        CBTConfig::set(CBTConfig::bibletimeVersion, bt_version());
         bibleTime.saveConfigSettings();
     }
 
