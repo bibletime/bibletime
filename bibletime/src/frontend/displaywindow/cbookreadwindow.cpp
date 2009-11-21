@@ -18,7 +18,7 @@
 #include "frontend/display/cdisplay.h"
 #include "frontend/displaywindow/bttoolbarpopupaction.h"
 #include "frontend/displaywindow/btactioncollection.h"
-#include "frontend/displaywindow/cmodulechooserbar.h"
+#include "frontend/displaywindow/btmodulechooserbar.h"
 #include "frontend/displaywindow/cbuttons.h"
 #include "frontend/keychooser/cbooktreechooser.h"
 #include "frontend/profile/cprofilewindow.h"
@@ -103,8 +103,7 @@ void CBookReadWindow::initView() {
 
     setKeyChooser( CKeyChooser::createInstance(modules(), key(), mainToolBar()) );
 
-    setModuleChooserBar( new CModuleChooserBar(modules(), modules().first()->type(), this) );
-    moduleChooserBar()->setButtonLimit(1);
+    setModuleChooserBar( new BtModuleChooserBar(getModuleList(), modules().first()->type(), this) );
     addToolBar(moduleChooserBar());
 
     setButtonsToolBar( new QToolBar(this) );

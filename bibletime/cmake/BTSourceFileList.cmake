@@ -182,6 +182,10 @@ SET(bibletime_SOURCES
 	src/frontend/displaywindow/ccommentaryreadwindow.cpp
 	src/frontend/displaywindow/cbookreadwindow.cpp
 	src/frontend/displaywindow/cdisplaywindowfactory.cpp
+    #src/frontend/displaywindow/bttextwindowheader.cpp
+    src/frontend/displaywindow/btmodulechooserbar.cpp
+    src/frontend/displaywindow/btmodulechooserbutton.cpp
+
 
 	# web based tab dialogs
 	src/frontend/htmldialogs/btaboutdialog.cpp
@@ -275,7 +279,9 @@ SET(bibletime_MOCABLE_HEADERS
 	src/frontend/displaywindow/cplainwritewindow.h
 	src/frontend/displaywindow/cdisplaywindow.h
 	src/frontend/displaywindow/cwritewindow.h
-	src/frontend/bookshelfmanager/btconfigdialog.h
+    src/frontend/displaywindow/btmodulechooserbar.h
+    src/frontend/displaywindow/btmodulechooserbutton.h
+    src/frontend/bookshelfmanager/btconfigdialog.h
 	src/frontend/bookshelfmanager/removepage/btremovepage.h
 	src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.h
 	src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.h

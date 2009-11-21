@@ -21,7 +21,8 @@
 #include "frontend/display/cdisplay.h"
 #include "frontend/displaywindow/bttoolbarpopupaction.h"
 #include "frontend/displaywindow/btactioncollection.h"
-#include "frontend/displaywindow/cmodulechooserbar.h"
+//#include "frontend/displaywindow/cmodulechooserbar.h"
+#include "frontend/displaywindow/btmodulechooserbar.h"
 #include "frontend/displaywindow/cbuttons.h"
 #include "frontend/keychooser/ckeychooser.h"
 #include "frontend/keychooser/bthistory.h"
@@ -76,16 +77,17 @@ const QString CDisplayWindow::windowCaption() {
 
 /** Returns the used modules as a QPtrList */
 QList<CSwordModuleInfo*> CDisplayWindow::modules() {
-    QList<CSwordModuleInfo*> mods;
+    qDebug() << "CDisplayWindow::modules";
+//     QList<CSwordModuleInfo*> mods;
+// 
+//     for (QStringList::iterator it = m_modules.begin(); it != m_modules.end(); ++it) {
+//         Q_ASSERT(backend()->findModuleByName(*it));
+//         if (CSwordModuleInfo* m = backend()->findModuleByName(*it)) {
+//             mods.append(m);
+//         }
+//     }
 
-    for (QStringList::iterator it = m_modules.begin(); it != m_modules.end(); ++it) {
-        Q_ASSERT(backend()->findModuleByName(*it));
-        if (CSwordModuleInfo* m = backend()->findModuleByName(*it)) {
-            mods.append(m);
-        }
-    }
-
-    return mods;
+    return CPointers::backend()->getPointerList(m_modules);
 }
 
 void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
@@ -198,6 +200,7 @@ void CDisplayWindow::initActions() {
 
 /** Refresh the settings of this window. */
 void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
+    qDebug()<<"CDisplayWindow::reload";
     //first make sure all used Sword modules are still present
     QMutableStringListIterator it(m_modules);
     while (it.hasNext()) {
@@ -213,14 +216,44 @@ void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
 
     if (keyChooser()) keyChooser()->setModules( modules(), false );
 
-    if (m_moduleChooserBar) { //necessary for edit windows which have now chooser bar
-        m_moduleChooserBar->setModules(modules());
-    }
-    modulesChanged();
+    //if (m_moduleChooserBar) { //necessary for edit windows which have now chooser bar
+        //m_moduleChooserBar->setModules(modules());
+    //}
+    //modulesChanged();
     lookup();
 
     CBTConfig::setupAccelSettings(CBTConfig::allWindows, actionCollection());
     CBTConfig::setupAccelSettings(CBTConfig::readWindow, actionCollection());
+    qDebug() << "CDisplayWindow::reload emits sigModuleListSet...";
+    emit sigModuleListSet(m_modules);
+}
+
+void CDisplayWindow::slotAddModule(int index, QString module) {
+    qDebug() << "CDisplayWindow::slotAddModule";
+    m_modules.insert(index, module);
+    lookup();
+    //emit sigModuleAdded(index, module);
+    modulesChanged();
+    emit sigModuleListChanged();
+}
+
+void CDisplayWindow::slotReplaceModule(int index, QString newModule) {
+    qDebug() << "CDisplayWindow::slotReplaceModule" << m_modules.at(index) << "with" << newModule;
+    m_modules.replace(index, newModule);
+    qDebug() << "window's new module list:" << m_modules;
+    lookup();
+    //emit sigModuleReplaced(index, newModule);
+    modulesChanged();
+    emit sigModuleListChanged();
+}
+
+void CDisplayWindow::slotRemoveModule(int index) {
+    qDebug() << "CDisplayWindow::slotRemoveModule";
+    m_modules.removeAt(index);
+    lookup();
+    //emit sigModuleRemoved(index);
+    modulesChanged();
+    emit sigModuleListChanged();
 }
 
 /** Returns the filter options used by this window. */
@@ -281,38 +314,52 @@ void CDisplayWindow::setKey( CSwordKey* key ) {
 }
 
 void CDisplayWindow::modulesChanged() {
-    if (moduleChooserBar()) { //necessary for write windows
-        setModules( m_moduleChooserBar->getModuleList() );
-    }
-
-    if (!modules().count()) {
-        close();
-    }
-    else {
-        if (displaySettingsButton()) {
-            displaySettingsButton()->reset(modules());
-        }
-
-        key()->module(modules().first());
-        keyChooser()->setModules(modules());
-    }
+    // this would only set the stringlist again 
+    //if (moduleChooserBar()) { //necessary for write windows
+         //setModules( m_moduleChooserBar->getModuleList() );
+     //}
+     if (!modules().count()) {
+         close();
+     }
+     else {
+         if (displaySettingsButton()) {
+             displaySettingsButton()->reset(modules());
+         }
+ 
+         key()->module(modules().first());
+         keyChooser()->setModules(modules());
+     }
 }
 
 /** Returns the module chooser bar. */
-CModuleChooserBar* CDisplayWindow::moduleChooserBar() const {
+BtModuleChooserBar* CDisplayWindow::moduleChooserBar() const {
     return m_moduleChooserBar;
 }
 
 /** Sets the module chooser bar. */
-void CDisplayWindow::setModuleChooserBar( CModuleChooserBar* bar ) {
+void CDisplayWindow::setModuleChooserBar( BtModuleChooserBar* bar ) {
+    qDebug() << "CDisplayWindow::setModuleChooserBar";
     if (m_moduleChooserBar) {
-        disconnect(m_moduleChooserBar, SIGNAL(sigChanged()), this, SLOT(modulesChanged()));
+        //disconnect(m_moduleChooserBar, SIGNAL(sigChanged()), this, SLOT(modulesChanged()));
+        //disconnect all signals
+        //how is this situation possible and why? When the old bar is deleted? Shouldn't it be
+        // deleted here? If it's deleted the connections are disconnected automatically by Qt.
+        m_moduleChooserBar->deleteLater();
     }
 
     //if a new bar should be set!
     if (bar) {
         m_moduleChooserBar = bar;
-        connect(bar, SIGNAL(sigChanged()), SLOT(modulesChanged()));
+        //connect(bar, SIGNAL(sigChanged()), SLOT(modulesChanged()));
+        //connect all signals
+        //connect(bar, SIGNAL(sigModuleAdd(int,QString)), SLOT(slotAddModule(int,QString)));
+        //connect(bar, SIGNAL(sigModuleRemove(int)), SLOT(slotRemoveModule(int)));
+        //connect(bar, SIGNAL(sigModuleReplace(int,QString)), SLOT(slotReplaceModule(int,QString)));
+        //connect(this, SIGNAL(sigModuleListSet(QStringList)), bar, SLOT(slotRecreate()));
+        
+        //connect(this, SIGNAL(sigModuleAdded(int, QString)), bar, SLOT(slotAddModule(int,QString)));
+        //connect(this, SIGNAL(sigModuleRemoved(int)), bar, SLOT(slotRemoveModule(int)));
+        //connect(this, SIGNAL(sigModuleReplaced(int, QString)), bar, SLOT(slotReplaceModule(int,QString)));
     }
 }
 

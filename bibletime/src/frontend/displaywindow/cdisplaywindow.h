@@ -23,7 +23,8 @@ class CDisplay;
 class CDisplaySettingsButton;
 class CKeyChooser;
 class CMDIArea;
-class CModuleChooserBar;
+//class CModuleChooserBar;
+class BtModuleChooserBar;
 class CReadWindow;
 class CSwordModuleInfo;
 class CWriteWindow;
@@ -47,11 +48,13 @@ class CDisplayWindow : public QMainWindow, public CPointers {
 
         CMDIArea* mdi() const;
 
-        // Returns the right window caption.
+        /** Returns the correct window caption.*/
         const QString windowCaption();
 
-        // Returns the used modules as a QPtrList
+        /** Returns the used modules as a pointer list.*/
         QList<CSwordModuleInfo*> modules();
+        /** Returns the used modules as a string list.*/
+        QStringList getModuleList() {return m_modules;}
 
         // Store the settings of this window in the given CProfileWindow object.
         virtual void storeProfileSettings( Profile::CProfileWindow* profileWindow ) = 0;
@@ -129,8 +132,19 @@ class CDisplayWindow : public QMainWindow, public CPointers {
 
         BtActionCollection* actionCollection();
 
+    signals:
+        void sigModuleListSet(QStringList modules);
+        void sigModuleAdded(int index, QString module);
+        void sigModuleReplaced(int index, QString newModule);
+        void sigModuleRemoved(int index);
+        /** The module list of window changed but backend list didn't.*/
+        void sigModuleListChanged();
     public slots:
 
+        void slotAddModule(int index, QString module);
+        void slotReplaceModule(int index, QString newModule);
+        void slotRemoveModule(int index);
+        
         // Lookup the specified key in the given module. If the module is not chosen withing
         // this display window create a new displaywindow with the right module in it.
         virtual void lookupModKey( const QString& module, const QString& key );
@@ -155,13 +169,13 @@ class CDisplayWindow : public QMainWindow, public CPointers {
         void setKeyChooser( CKeyChooser* ck );
 
         // Returns the module chooser bar.
-        CModuleChooserBar* moduleChooserBar() const;
+        BtModuleChooserBar* moduleChooserBar() const;
 
         // Lookup the given key.
         virtual void lookupSwordKey( CSwordKey* ) = 0;
 
         // Sets the module chooser bar.
-        void setModuleChooserBar( CModuleChooserBar* bar );
+        void setModuleChooserBar( BtModuleChooserBar* bar );
 
         // Sets the modules.
         void setModules( const QList<CSwordModuleInfo*>& modules );
@@ -207,7 +221,7 @@ class CDisplayWindow : public QMainWindow, public CPointers {
         CKeyChooser* m_keyChooser;
         CSwordKey* m_swordKey;
         bool m_isReady;
-        CModuleChooserBar* m_moduleChooserBar;
+        BtModuleChooserBar* m_moduleChooserBar;
         QToolBar* m_mainToolBar;
         QToolBar* m_buttonsToolBar;
         QMenu* m_popupMenu;

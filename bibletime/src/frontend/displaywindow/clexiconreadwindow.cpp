@@ -26,7 +26,7 @@
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/bttoolbarpopupaction.h"
 #include "frontend/displaywindow/cbuttons.h"
-#include "frontend/displaywindow/cmodulechooserbar.h"
+#include "frontend/displaywindow/btmodulechooserbar.h"
 #include "frontend/keychooser/bthistory.h"
 #include "frontend/keychooser/ckeychooser.h"
 #include "util/directory.h"
@@ -188,7 +188,7 @@ void CLexiconReadWindow::initView() {
     addToolBar(mainToolBar());
     setKeyChooser( CKeyChooser::createInstance(modules(), key(), mainToolBar()) );
     mainToolBar()->addWidget(keyChooser());
-    setModuleChooserBar( new CModuleChooserBar(modules(), modules().first()->type(), this) );
+    setModuleChooserBar( new BtModuleChooserBar(getModuleList(), modules().first()->type(), this) );
     moduleChooserBar()->adjustSize();
     addToolBar(moduleChooserBar());
     setButtonsToolBar( new QToolBar(this) );
