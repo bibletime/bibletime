@@ -24,7 +24,7 @@ static QString make_head(const QString& content);
 static QString make_html(const QString& content);
 static QString make_file_icon(const QString& icon);
 static QString make_link(const QString& link, const QString& text);
-char* bt_version();
+const char* bt_version();
 
 
 // Implements the Help > About dialog box

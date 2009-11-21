@@ -41,7 +41,7 @@
 #include "util/directory.h"
 
 // Forwards
-char* bt_version();
+const char* bt_version();
 
 using namespace Profile;
 

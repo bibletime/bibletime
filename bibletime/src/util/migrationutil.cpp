@@ -18,7 +18,7 @@
 #include "swversion.h"
 
 // Forwards
-char* bt_version();
+const char* bt_version();
 
 namespace util {
 namespace migration {
