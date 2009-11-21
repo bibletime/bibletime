@@ -175,9 +175,10 @@ class BibleTime : public QMainWindow {
         */
         void openOnlineHelp_Howto();
         /**
-        * Sets the plain caption of the main window
+          Sets the plain caption of the main window.
+          \param[in] caption Window caption to use.
         */
-        void setPlainCaption( const QString& );
+        void setPlainCaption(const QString &caption);
         /**
         * Processes the commandline options given to BibleTime.
         */

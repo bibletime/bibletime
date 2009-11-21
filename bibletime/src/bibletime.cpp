@@ -265,14 +265,15 @@ void BibleTime::restoreWorkspace() {
 }
 
 /** Sets the plain caption of the main window */
-void BibleTime::setPlainCaption(const QString& title) {
-    QString suffix;
-    //Watch out, subtitles must be appended with the form " - [%s]", otherwise
-    //QMdiSubWindow will mess up when it is maximized
+void BibleTime::setPlainCaption(const QString &title) {
+    QString newTitle("BibleTime ");
+    newTitle.append(BT_VERSION);
     if (!title.isEmpty()) {
-        suffix = QString(" - [").append(title).append("]");
+        newTitle.append(" - [");
+        newTitle.append(title);
+        newTitle.append("]");
     }
-    QMainWindow::setWindowTitle( QString("BibleTime ").append(BT_VERSION) + suffix );
+    setWindowTitle(newTitle);
 }
 
 /** Processes the commandline options given to BibleTime. */
