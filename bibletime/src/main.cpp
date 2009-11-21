@@ -35,9 +35,11 @@
 
 static bool showDebugMessages;
 
-char* bt_version()
+static const char* version = BT_VERSION;
+
+const char* bt_version()
 {
-    return BT_VERSION;
+    return version;
 }
 
 // This class will open the file descriptor on demand.
