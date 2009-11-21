@@ -971,12 +971,12 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.cpp" line="52"/>
         <source>Work</source>
-        <translation type="unfinished">Work</translation>
+        <translation>Work</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.cpp" line="54"/>
         <source>Install path</source>
-        <translation type="unfinished">Install path</translation>
+        <translation>Install path</translation>
     </message>
 </context>
 <context>
@@ -1008,50 +1008,53 @@
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="180"/>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="187"/>
         <source>Select to change key</source>
-        <translation></translation>
+        <translation>Select to change key</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="205"/>
         <source>Action
 name</source>
-        <translation></translation>
+        <translation>Action
+name</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="205"/>
         <source>First
 shortcut</source>
-        <translation></translation>
+        <translation>First
+shortcut</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="205"/>
         <source>Second
 shortcut</source>
-        <translation></translation>
+        <translation>Second
+shortcut</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="247"/>
         <source>Shortcut for selected action name</source>
-        <translation></translation>
+        <translation>Shortcut for selected action name</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="253"/>
         <source>None</source>
-        <translation></translation>
+        <translation>None</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="258"/>
         <source>Default</source>
-        <translation></translation>
+        <translation>Default</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="263"/>
         <source>Custom</source>
-        <translation></translation>
+        <translation>Custom</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="278"/>
         <source>Default key:</source>
-        <translation></translation>
+        <translation>Default key:</translation>
     </message>
 </context>
 <context>
@@ -1059,42 +1062,42 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="90"/>
         <source>Work</source>
-        <translation></translation>
+        <translation>Work</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="90"/>
         <source>Description</source>
-        <translation></translation>
+        <translation>Description</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="77"/>
         <source>Add...</source>
-        <translation></translation>
+        <translation>Add...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="65"/>
         <source>Refresh...</source>
-        <translation></translation>
+        <translation>Refresh...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="66"/>
         <source>Refresh the list of works from this source</source>
-        <translation></translation>
+        <translation>Refresh the list of works from this source</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="73"/>
         <source>Delete...</source>
-        <translation></translation>
+        <translation>Delete...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="74"/>
         <source>Delete this source</source>
-        <translation></translation>
+        <translation>Delete this source</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="78"/>
         <source>Add new source</source>
-        <translation></translation>
+        <translation>Add new source</translation>
     </message>
 </context>
 <context>
@@ -1686,17 +1689,17 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cfontchooser.cpp" line="95"/>
         <source>Size:</source>
-        <translation></translation>
+        <translation>Size:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cfontchooser.cpp" line="70"/>
         <source>Font name:</source>
-        <translation></translation>
+        <translation>Font name:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cfontchooser.cpp" line="82"/>
         <source>Font style:</source>
-        <translation></translation>
+        <translation>Font style:</translation>
     </message>
 </context>
 <context>
@@ -1924,22 +1927,22 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="48"/>
         <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
-        <translation></translation>
+        <translation>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="46"/>
         <source>Entries of the current work</source>
-        <translation></translation>
+        <translation>Entries of the current work</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="47"/>
         <source>Next entry</source>
-        <translation></translation>
+        <translation>Next entry</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="49"/>
         <source>Previous entry</source>
-        <translation></translation>
+        <translation>Previous entry</translation>
     </message>
 </context>
 <context>
@@ -2025,24 +2028,24 @@ shortcut</source>
         <location filename="../../src/frontend/displaywindow/cmodulechooserbutton.cpp" line="94"/>
         <location filename="../../src/frontend/displaywindow/cmodulechooserbutton.cpp" line="134"/>
         <source>NONE</source>
-        <translation></translation>
+        <translation>NONE</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cmodulechooserbutton.cpp" line="112"/>
         <location filename="../../src/frontend/displaywindow/cmodulechooserbutton.cpp" line="128"/>
         <source>Select a work</source>
-        <translation></translation>
+        <translation>Select a work</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cmodulechooserbutton.cpp" line="115"/>
         <location filename="../../src/frontend/displaywindow/cmodulechooserbutton.cpp" line="131"/>
         <source>Select an additional work</source>
-        <translation></translation>
+        <translation>Select an additional work</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cmodulechooserbutton.cpp" line="174"/>
         <source>[locked]</source>
-        <translation></translation>
+        <translation>[locked]</translation>
     </message>
 </context>
 <context>
@@ -2386,18 +2389,18 @@ Do you want to continue?</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/cwritewindow.cpp" line="118"/>
         <source>Save text before closing?</source>
-        <translation></translation>
+        <translation>Save text before closing?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cwritewindow.cpp" line="140"/>
         <source>Save changed text?</source>
-        <translation></translation>
+        <translation>Save changed text?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cwritewindow.cpp" line="118"/>
         <location filename="../../src/frontend/displaywindow/cwritewindow.cpp" line="140"/>
         <source>Save Text?</source>
-        <translation></translation>
+        <translation>Save Text?</translation>
     </message>
 </context>
 <context>
@@ -2449,22 +2452,22 @@ Do you want to continue?</translation>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="411"/>
         <source>Indexing aborted</source>
-        <translation></translation>
+        <translation>Indexing aborted</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="411"/>
         <source>An internal error occurred while building the index.</source>
-        <translation></translation>
+        <translation>An internal error occurred while building the index.</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="482"/>
         <source>Search aborted</source>
-        <translation></translation>
+        <translation>Search aborted</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="482"/>
         <source>An internal error occurred while executing your search.</source>
-        <translation></translation>
+        <translation>An internal error occurred while executing your search.</translation>
     </message>
 </context>
 <context>
@@ -3737,12 +3740,12 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/backend/bookshelfmodel/indexingitem.cpp" line="26"/>
         <source>Indexed works</source>
-        <translation type="unfinished"></translation>
+        <translation>Indexed works</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/indexingitem.cpp" line="28"/>
         <source>Unindexed works</source>
-        <translation type="unfinished"></translation>
+        <translation>Unindexed works</translation>
     </message>
 </context>
 <context>
