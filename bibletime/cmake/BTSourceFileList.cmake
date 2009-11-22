@@ -1,5 +1,3 @@
-
-
 SET(bibletime_UIS
      src/frontend/display/bthtmlfindtext.ui
 )
