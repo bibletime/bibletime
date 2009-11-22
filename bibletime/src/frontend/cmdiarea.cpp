@@ -74,6 +74,8 @@ void CMDIArea::setMDIArrangementMode( const MDIArrangementMode newArrangementMod
 }
 
 void CMDIArea::myTileVertical() {
+    Q_ASSERT(m_mdiArrangementMode == ArrangementModeTileVertical);
+
     if (!updatesEnabled() || !usableWindowList().count() ) {
         return;
     }
@@ -110,6 +112,8 @@ void CMDIArea::myTileVertical() {
 }
 
 void CMDIArea::myTileHorizontal() {
+    Q_ASSERT(m_mdiArrangementMode == ArrangementModeTileHorizontal);
+
     if (!updatesEnabled() || !usableWindowList().count() ) {
         return;
     }
@@ -146,6 +150,8 @@ void CMDIArea::myTileHorizontal() {
 }
 
 void CMDIArea::myCascade() {
+    Q_ASSERT(m_mdiArrangementMode == ArrangementModeCascade);
+
     if (!updatesEnabled() || !usableWindowList().count() ) {
         return;
     }
@@ -218,13 +224,17 @@ void CMDIArea::slotSubWindowActivated(QMdiSubWindow* client) {
     emit sigSetToplevelCaption( client->windowTitle().trimmed() );
 }
 
-//resize event of the MDI area itself, update layout if necessary
 void CMDIArea::resizeEvent(QResizeEvent* e) {
-    // Do not call QMdiArea::resizeEvent(e), this would mess up our layout
-	// unless we are in manual mode
-    if (updatesEnabled()) triggerWindowUpdate();
-	if (m_mdiArrangementMode == ArrangementModeManual)
-	    QMdiArea::resizeEvent(e);
+    /*
+      Do not call QMdiArea::resizeEvent(e) unless we are in manual arrangement
+      mode, since this would mess up our layout. The manual arrangement mode
+      should be handled exactly as in QMdiArea.
+    */
+    if (m_mdiArrangementMode == ArrangementModeManual) {
+        QMdiArea::resizeEvent(e);
+    } else if (updatesEnabled()) {
+        triggerWindowUpdate();
+    }
 }
 
 //handle events of the client windows to update layout if necessary

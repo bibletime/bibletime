@@ -95,7 +95,8 @@ class CMDIArea: public QMdiArea {
 
     protected:
         /**
-        * Reimplementation of QWidget::resizeEvent().
+          Reimplementation of QWidget::resizeEvent() to handle our automatic
+          tiling properly.
         */
         void resizeEvent(QResizeEvent *e);
 
