@@ -400,8 +400,6 @@ void BibleTime::initActions() {
 void BibleTime::initConnections() {
     QObject::connect(m_mdi, SIGNAL(sigSetToplevelCaption(const QString&)),
                      this, SLOT(setPlainCaption(const QString&)));
-    QObject::connect(m_mdi, SIGNAL(createReadDisplayWindow(QList<CSwordModuleInfo*>, const QString&)),
-                     this, SLOT(createReadDisplayWindow(QList<CSwordModuleInfo*>, const QString&)));
 
     if (m_windowMenu) {
         QObject::connect(m_windowMenu, SIGNAL(aboutToShow()), this, SLOT(slotWindowMenuAboutToShow()));
