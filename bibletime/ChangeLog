@@ -1,4 +1,7 @@
 2009-11-21 Gary Holmlund
+    * Improve window size and position when opening them in manual arrangement mode.
+
+2009-11-21 Gary Holmlund
     * Implement --debug option for Windows (Outputs to file)
 
 2009-11-20 Martin Gruner <mgruner@crosswire.org>

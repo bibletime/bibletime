@@ -28,20 +28,41 @@ CMDIArea::CMDIArea(BibleTime *parent)
             this, SLOT(slotSubWindowActivated(QMdiSubWindow*)));
 }
 
+static const int moveSize = 30;
+
 QMdiSubWindow* CMDIArea::addSubWindow(QWidget * widget, Qt::WindowFlags windowFlags) {
     QMdiSubWindow* subWindow = QMdiArea::addSubWindow(widget, windowFlags);
     subWindow->installEventFilter(this);
 
-    //If we do have a maximized Window, set it to normal so that the new window can be seen
-    if (activeSubWindow() && activeSubWindow()->isMaximized()) {
-        activeSubWindow()->showNormal();
-    }
-
+    // Manual arrangement mode
     if (m_mdiArrangementMode == ArrangementModeManual) {
-        subWindow->resize(400, 400); //set the window to be big enough
+        // Note that the window size/maximization may be changed later by a session restore.
+        // If we already have an active window, make the new one simular to it
+        if (activeSubWindow()) {
+            if (activeSubWindow()->isMaximized()) {
+                // Maximize the new window
+                subWindow->showMaximized();
+            }
+            else {
+                // Make new window the same size as the active window and move it slightly. 
+                subWindow->resize(activeSubWindow()->size());
+                QRect subWinGeom = activeSubWindow()->geometry();
+                subWinGeom.translate(moveSize,moveSize);
+                // If it goes off screen, move it almost to the top left
+                if ( ! frameRect().contains(subWinGeom)) {
+                    subWinGeom.moveTo(moveSize,moveSize);
+                }
+                subWindow->setGeometry(subWinGeom);
+            }
+        }
+        else {
+            //set the window to be big enough
+            subWindow->resize(400, 400); 
+        }
         subWindow->raise();
     }
     else {
+        // Automatic arrangement modes
         triggerWindowUpdate();
     }
     return subWindow;
