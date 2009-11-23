@@ -85,6 +85,7 @@ void BtModuleChooserButton::updateMenu(QStringList newModulesToUse, QString this
     else {
         setToolTip( tr("Select an additional work") );
     }
+    m_noneAction->setDisabled((newModulesToUse.count() == 1) ? true : false);
     //qDebug()<<"BtModuleChooserButton::modulesChanged end";
 }
 

@@ -108,6 +108,7 @@ void BtTextWindowHeaderWidget::updateWidget(QStringList newModulesToUse, QString
     } else {
         m_separator->show();
     }
+    m_removeAction->setDisabled((newModulesToUse.count() == 1) ? true : false);
 }
 
 /** Is called after a module was selected in the popup */
@@ -136,10 +137,10 @@ void BtTextWindowHeaderWidget::populateMenu() {
     connect(m_popup, SIGNAL(triggered(QAction*)), this, SLOT(moduleChosen(QAction*)));
     m_button->setMenu(m_popup);
 
-    QAction* removeItem = new QAction(tr("Remove"), m_popup);
-    removeItem->setProperty(ActionType, RemoveAction);
-    removeItem->setIcon(util::directory::getIcon(CResMgr::displaywindows::general::removemoduleicon));
-    m_popup->addAction(removeItem);
+    m_removeAction = new QAction(tr("Remove"), m_popup);
+    m_removeAction->setProperty(ActionType, RemoveAction);
+    m_removeAction->setIcon(util::directory::getIcon(CResMgr::displaywindows::general::removemoduleicon));
+    m_popup->addAction(m_removeAction);
     
     // Add Replace and Add menus, both have all modules in them
     QMenu* replaceItem = new QMenu(tr("Replace"), m_popup);
