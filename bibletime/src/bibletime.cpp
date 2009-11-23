@@ -45,7 +45,8 @@ const char* bt_version();
 
 using namespace Profile;
 
-BibleTime::BibleTime() {
+BibleTime::BibleTime()
+    : m_WindowWasMaximizedBeforeFullScreen(false) {
     namespace DU = util::directory;
 
     QPixmap pm;

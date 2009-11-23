@@ -349,7 +349,10 @@ class BibleTime : public QMainWindow {
         void slotOpenAboutDialog();
 
     private:
-        // Docking widgets and their respective content widgets:
+        //  True if window was maximized before last toggle to full screen. 
+         bool m_WindowWasMaximizedBeforeFullScreen;
+
+         // Docking widgets and their respective content widgets:
         BtBookshelfDockWidget* m_bookshelfDock;
         QDockWidget* m_bookmarksDock;
         CBookmarkIndex* m_bookmarksPage;
@@ -389,6 +392,7 @@ class BibleTime : public QMainWindow {
         CMDIArea* m_mdi;
 
         Profile::CProfileMgr m_profileMgr;
+
 
     protected: //DBUS interface implementation
         void closeAllModuleWindows();
