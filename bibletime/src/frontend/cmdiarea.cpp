@@ -74,8 +74,6 @@ void CMDIArea::setMDIArrangementMode( const MDIArrangementMode newArrangementMod
 }
 
 void CMDIArea::myTileVertical() {
-    Q_ASSERT(m_mdiArrangementMode == ArrangementModeTileVertical);
-
     if (!updatesEnabled() || !usableWindowList().count() ) {
         return;
     }
@@ -112,8 +110,6 @@ void CMDIArea::myTileVertical() {
 }
 
 void CMDIArea::myTileHorizontal() {
-    Q_ASSERT(m_mdiArrangementMode == ArrangementModeTileHorizontal);
-
     if (!updatesEnabled() || !usableWindowList().count() ) {
         return;
     }
@@ -150,8 +146,6 @@ void CMDIArea::myTileHorizontal() {
 }
 
 void CMDIArea::myCascade() {
-    Q_ASSERT(m_mdiArrangementMode == ArrangementModeCascade);
-
     if (!updatesEnabled() || !usableWindowList().count() ) {
         return;
     }

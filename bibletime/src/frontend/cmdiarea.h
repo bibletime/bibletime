@@ -70,20 +70,29 @@ class CMDIArea: public QMdiArea {
 
     public slots:
         /**
-          Our own cascade version which, if only one window is left, shows this
-          maximized. Also necessary for autoCascade feature.
+          Our own cascade version which, if only one subwindow is left, shows it
+          maximized.
+          \note This not set an automatic arrangement mode, it just arranges the
+                subwindows once. However, this method is also used when
+                arranging the subwindows into a cascade automatically.
         */
         void myCascade();
 
         /**
-          Our own cascade version which, if only one window is left, shows this
-          maximized. Also necessary for autoTile feature.
+          Our own vertical tile version which, if only one subwindow is left,
+          shows it maximized.
+          \note This not set an automatic arrangement mode, it just arranges the
+                subwindows once. However, this method is also used when
+                arranging the subwindows into a vertical tiling automatically.
         */
         void myTileVertical();
 
         /**
-          Horizontal tile function. This function was taken from Qt's MDI
-          example.
+          Our own horizontal tile version which, if only one subwindow is left,
+          shows it maximized.
+          \note This not set an automatic arrangement mode, it just arranges the
+                subwindows once. However, this method is also used when
+                arranging the subwindows into a horizontal tiling automatically.
         */
         void myTileHorizontal();
 
