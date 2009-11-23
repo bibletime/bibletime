@@ -48,7 +48,7 @@
   </copyright>
 
   <legalnotice>
-    <para>The &bibletime; Handbook is part of the &bibletime; study aid.</para>
+    <para>Il Manuale di &bibletime; è parte degli aiuti di &bibletime; allo studio.</para>
   </legalnotice>
 
   <date>$LastChangedDate: 2009-11-18 13:30:32 -0500 (Wed, 18 Nov 2009) $</date>
@@ -56,7 +56,8 @@
   <releaseinfo>2.5</releaseinfo>
 
   <abstract>
-    <para>&bibletime; is a Bible study tool based on the &sword; framework.</para>
+    <para>&bibletime; è uno strumento per studiare la Bibbia basato sul framework 
+&sword;.</para>
   </abstract>
 
   <keywordset>
