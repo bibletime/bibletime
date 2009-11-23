@@ -167,8 +167,6 @@ SET(bibletime_SOURCES
 	#display windows and their widgets
 	src/frontend/displaywindow/bttoolbarpopupaction.cpp
 	src/frontend/displaywindow/btactioncollection.cpp
-	src/frontend/displaywindow/cmodulechooserbutton.cpp
-	src/frontend/displaywindow/cmodulechooserbar.cpp
 	src/frontend/displaywindow/cbuttons.cpp
 	src/frontend/displaywindow/cdisplaywindow.cpp
 	src/frontend/displaywindow/creadwindow.cpp
@@ -180,7 +178,8 @@ SET(bibletime_SOURCES
 	src/frontend/displaywindow/ccommentaryreadwindow.cpp
 	src/frontend/displaywindow/cbookreadwindow.cpp
 	src/frontend/displaywindow/cdisplaywindowfactory.cpp
-    #src/frontend/displaywindow/bttextwindowheader.cpp
+    src/frontend/displaywindow/bttextwindowheader.cpp
+    src/frontend/displaywindow/bttextwindowheaderwidget.cpp
     src/frontend/displaywindow/btmodulechooserbar.cpp
     src/frontend/displaywindow/btmodulechooserbutton.cpp
 
@@ -265,13 +264,11 @@ SET(bibletime_MOCABLE_HEADERS
 	src/frontend/settingsdialogs/clanguagesettings.h
 	src/frontend/displaywindow/cbookreadwindow.h
 	src/frontend/displaywindow/ccommentaryreadwindow.h
-	src/frontend/displaywindow/cmodulechooserbar.h
 	src/frontend/displaywindow/clexiconreadwindow.h
 	src/frontend/displaywindow/chtmlwritewindow.h
 	src/frontend/displaywindow/bttoolbarpopupaction.h
 	src/frontend/displaywindow/btactioncollection.h
 	src/frontend/displaywindow/creadwindow.h
-	src/frontend/displaywindow/cmodulechooserbutton.h
 	src/frontend/displaywindow/cbuttons.h
 	src/frontend/displaywindow/cbiblereadwindow.h
 	src/frontend/displaywindow/cplainwritewindow.h
@@ -279,6 +276,8 @@ SET(bibletime_MOCABLE_HEADERS
 	src/frontend/displaywindow/cwritewindow.h
     src/frontend/displaywindow/btmodulechooserbar.h
     src/frontend/displaywindow/btmodulechooserbutton.h
+    src/frontend/displaywindow/bttextwindowheader.h
+    src/frontend/displaywindow/bttextwindowheaderwidget.h
     src/frontend/bookshelfmanager/btconfigdialog.h
 	src/frontend/bookshelfmanager/removepage/btremovepage.h
 	src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.h

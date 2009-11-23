@@ -23,7 +23,7 @@ class CDisplayWindow;
 * technical reasons. Add corresponding slots for the protected
 * modulesChanged methods and delegate the message.
 *
-* Add these signals to the subclass or some part of it:
+* Add these signals to the subclass or to some part of it:
 *    User selected a module from menu to replace another module:
 *    void sigModuleReplace ( int index, QString newModule );
 *    User selected a module from menu to add:
@@ -44,9 +44,11 @@ public:
 protected:
     /**
     * The backend module list was updated, module list and widgets must be updated.
-    * This expects that the window module list has already been updated.
+    * This expects that the window module list has already been updated, so
+    * the corresponding slot should be connected to the window, not to the backend.
     */
     virtual void backendModulesChanged() = 0;
+    /** Modules have been added, replaced or removed in the window without backend changing.*/
     virtual void windowModulesChanged() = 0;
 
     

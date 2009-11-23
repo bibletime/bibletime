@@ -26,6 +26,7 @@
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/bttoolbarpopupaction.h"
 #include "frontend/displaywindow/cbuttons.h"
+#include "frontend/displaywindow/bttextwindowheader.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"
 #include "frontend/keychooser/bthistory.h"
 #include "frontend/keychooser/ckeychooser.h"
@@ -183,18 +184,18 @@ void CLexiconReadWindow::initView() {
     qDebug() << "CLexiconReadWindow::initView";
     setDisplayWidget( CDisplay::createReadInstance(this) );
     setMainToolBar( new QToolBar(this) );
-    mainToolBar()->setAllowedAreas(Qt::TopToolBarArea);
-    mainToolBar()->setFloatable(false);
     addToolBar(mainToolBar());
     setKeyChooser( CKeyChooser::createInstance(modules(), key(), mainToolBar()) );
     mainToolBar()->addWidget(keyChooser());
     setModuleChooserBar( new BtModuleChooserBar(getModuleList(), modules().first()->type(), this) );
-    moduleChooserBar()->adjustSize();
     addToolBar(moduleChooserBar());
     setButtonsToolBar( new QToolBar(this) );
-    buttonsToolBar()->setAllowedAreas(Qt::TopToolBarArea);
-    buttonsToolBar()->setFloatable(false);
     addToolBar(buttonsToolBar());
+    addToolBarBreak();
+    setHeaderBar(new QToolBar(this));
+    addToolBar(headerBar());
+    BtTextWindowHeader* h = new BtTextWindowHeader(this,  modules().first()->type(), getModuleList());
+    headerBar()->addWidget(h);
     setWindowIcon(util::tool::getIconForModule(modules().first()));
     setCentralWidget( displayWidget()->view() );
 }

@@ -80,7 +80,7 @@ void BtModuleChooserButton::updateMenu(QStringList newModulesToUse, QString this
     setIcon(DU::getIcon(iconName()));
 
     if (m_hasModule) {
-        setToolTip( tr("Select a work") + " [" + m_module + "]" );
+        setToolTip( QString(tr("Select a work [%1]")).arg(m_module) );
     }
     else {
         setToolTip( tr("Select an additional work") );
@@ -119,13 +119,6 @@ void BtModuleChooserButton::populateMenu() {
     m_submenus.clear();
     delete m_popup;
     m_popup = new QMenu(this);
-
-    if (!m_module.isEmpty()) {
-        this->setToolTip( tr("Select a work") + " [" + m_module + "]" );
-    }
-    else {
-        this->setToolTip( tr("Select an additional work") );
-    }
 
     m_noneAction = m_popup->addAction(tr("NONE"));
     m_noneAction->setCheckable(true);

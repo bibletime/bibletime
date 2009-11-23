@@ -246,6 +246,9 @@ extern const QString icon;
 }
 
 namespace general {
+extern const QString removemoduleicon;
+extern const QString addmoduleicon;
+extern const QString replacemoduleicon;
 namespace search {
 extern const QString icon;
 extern const QKeySequence accel;

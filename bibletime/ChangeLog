@@ -1,3 +1,10 @@
+2009-11-23 Eeli Kaikkonen
+    * Added: text window header widget to Bible/commentary and dictionary windows
+    * Fixed: a layout problem, module chooser buttons were in different order than
+      modules when layout was RTL
+    * Added: names for text window toolbars (for toolbar RMB menu)
+    * Added: a quick and uncomplete fix for missing --help command line option
+    
 2009-11-22 Gary Holmlund
     * Fix bug ID 2898954, Fullscreen mode returns to wrong window state
 

@@ -236,6 +236,9 @@ const QString icon = "displayconfig.svg";
 }
 
 namespace general {
+const QString removemoduleicon = "fileclose";
+const QString addmoduleicon = "plus";
+const QString replacemoduleicon = "checkbox";
 namespace search {
 const QString icon        = "find.svg";
 const QKeySequence accel(Qt::CTRL + Qt::Key_N);

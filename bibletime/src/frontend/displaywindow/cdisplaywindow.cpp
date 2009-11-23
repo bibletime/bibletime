@@ -340,27 +340,26 @@ BtModuleChooserBar* CDisplayWindow::moduleChooserBar() const {
 void CDisplayWindow::setModuleChooserBar( BtModuleChooserBar* bar ) {
     qDebug() << "CDisplayWindow::setModuleChooserBar";
     if (m_moduleChooserBar) {
-        //disconnect(m_moduleChooserBar, SIGNAL(sigChanged()), this, SLOT(modulesChanged()));
-        //disconnect all signals
-        //how is this situation possible and why? When the old bar is deleted? Shouldn't it be
-        // deleted here? If it's deleted the connections are disconnected automatically by Qt.
         m_moduleChooserBar->deleteLater();
     }
 
     //if a new bar should be set!
     if (bar) {
         m_moduleChooserBar = bar;
-        //connect(bar, SIGNAL(sigChanged()), SLOT(modulesChanged()));
-        //connect all signals
-        //connect(bar, SIGNAL(sigModuleAdd(int,QString)), SLOT(slotAddModule(int,QString)));
-        //connect(bar, SIGNAL(sigModuleRemove(int)), SLOT(slotRemoveModule(int)));
-        //connect(bar, SIGNAL(sigModuleReplace(int,QString)), SLOT(slotReplaceModule(int,QString)));
-        //connect(this, SIGNAL(sigModuleListSet(QStringList)), bar, SLOT(slotRecreate()));
-        
-        //connect(this, SIGNAL(sigModuleAdded(int, QString)), bar, SLOT(slotAddModule(int,QString)));
-        //connect(this, SIGNAL(sigModuleRemoved(int)), bar, SLOT(slotRemoveModule(int)));
-        //connect(this, SIGNAL(sigModuleReplaced(int, QString)), bar, SLOT(slotReplaceModule(int,QString)));
+        bar->setWindowTitle(tr("Work chooser buttons"));
+        bar->setLayoutDirection(Qt::LeftToRight);
     }
+}
+
+/** Sets the module header of text area. */
+void CDisplayWindow::setHeaderBar( QToolBar* header ) {
+    m_headerBar = header;
+    header->setMovable(false);
+    header->setWindowTitle("Work headers");
+}
+
+QToolBar* CDisplayWindow::headerBar(){
+    return m_headerBar;
 }
 
 /** Sets the modules. */
@@ -411,11 +410,17 @@ QToolBar* CDisplayWindow::buttonsToolBar() const {
 /** Sets the main toolbar. */
 void CDisplayWindow::setMainToolBar( QToolBar* bar ) {
     m_mainToolBar = bar;
+    bar->setAllowedAreas(Qt::TopToolBarArea);
+    bar->setFloatable(false);
+    bar->setWindowTitle(tr("Navigation"));
 }
 
 /** Sets the main toolbar. */
 void CDisplayWindow::setButtonsToolBar( QToolBar* bar ) {
     m_buttonsToolBar = bar;
+    bar->setAllowedAreas(Qt::TopToolBarArea);
+    bar->setFloatable(false);
+    bar->setWindowTitle(tr("Tools"));
 }
 
 /** Returns the display settings button */
