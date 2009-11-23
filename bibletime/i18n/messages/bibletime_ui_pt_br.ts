@@ -972,12 +972,12 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.cpp" line="52"/>
         <source>Work</source>
-        <translation type="unfinished">Trabalho</translation>
+        <translation>Trabalho</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.cpp" line="54"/>
         <source>Install path</source>
-        <translation type="unfinished">Instalar Caminho</translation>
+        <translation>Instalar Caminho</translation>
     </message>
 </context>
 <context>
@@ -3744,12 +3744,12 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/backend/bookshelfmodel/indexingitem.cpp" line="26"/>
         <source>Indexed works</source>
-        <translation type="unfinished"></translation>
+        <translation>Trabalhos Indexados</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/indexingitem.cpp" line="28"/>
         <source>Unindexed works</source>
-        <translation type="unfinished"></translation>
+        <translation>Trabalhos não-indexados</translation>
     </message>
 </context>
 <context>
@@ -4003,12 +4003,12 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="412"/>
         <source>&lt;h1&gt;&lt;A name=&apos;fields&apos;&gt;Text fields (different parts of text)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Available text fields:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:&lt;/td&gt;&lt;td&gt;Searches headings&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:&lt;/td&gt;&lt;td&gt;Searches footnotes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;Searches Strong&apos;s numbers&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&lt;/td&gt;&lt;td&gt;Searches morphology codes&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h1&gt;&lt;A name=&apos;fields&apos;&gt;ampos de texto (diferentes partes do texto)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Campos de texto disponíveis:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;cabeçalho:&lt;/td&gt;&lt;td&gt;Cabeçalhos de busca&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;nota de rodapé:&lt;/td&gt;&lt;td&gt;Notas de rodapé das buscas&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;Busca de números Strong:&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morfologia:&lt;/td&gt;&lt;td&gt;Busca de códigos morfológcos&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="420"/>
         <source>&lt;p&gt;Examples:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:Jesus&lt;/td&gt;&lt;td&gt;Finds headings with &apos;Jesus&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:Jesus AND footnote:said&lt;/td&gt;&lt;td&gt;Finds footnotes with &apos;Jesus&apos; and &apos;said&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:G846&lt;/td&gt;&lt;td&gt;Finds verses with Strong&apos;s Greek number 846&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&quot;N-NSF&quot;&lt;/td&gt;&lt;td&gt;Finds verses with morphology code &apos;N-NSF&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Exemplos:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;cabeçalho:Jesus&lt;/td&gt;&lt;td&gt;Cabeçalhos de busca &apos;Jesus&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;nota de rodapé:Jesus AND rodapé:disse&lt;/td&gt;&lt;td&gt;Notas de rodapé com &apos;Jesus&apos; and &apos;disse&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:G846&lt;/td&gt;&lt;td&gt;Buscar  versículos com número Strong&apos;s grego 846&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morfológico:&quot;N-NSF&quot;&lt;/td&gt;&lt;td&gt;Encontra versículos com o código morfológico &apos;N-NSF&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="428"/>
