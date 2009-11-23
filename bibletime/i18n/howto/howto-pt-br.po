@@ -25,11 +25,11 @@ msgstr "Bases do Estudo Bíblico"
 
 #: docs/howto/en/docbook/howto-basics.docbook:4
 msgid "Our Purpose as we Approach the Bible"
-msgstr "Nosso prósito quando nos aproximamos da Bíblia"
+msgstr "Nosso propósito quando nos aproximamos da Bíblia"
 
 #: docs/howto/en/docbook/howto-basics.docbook:6
 msgid "Jn.5:39-40"
-msgstr ""
+msgstr "Jn.5:39-40"
 
 #: docs/howto/en/docbook/howto-basics.docbook:6
 msgid ""
@@ -262,7 +262,7 @@ msgstr ""
 #: docs/howto/en/docbook/howto-basics.docbook:107
 #: docs/howto/en/docbook/howto-interpretation.docbook:26
 msgid "Cross-reference"
-msgstr "Referencia Cruzada"
+msgstr "Referencia cruzada"
 
 #: docs/howto/en/docbook/howto-basics.docbook:108
 msgid ""
@@ -344,7 +344,7 @@ msgstr "etc."
 
 #: docs/howto/en/docbook/howto-basics.docbook:145
 msgid "Worksheet: How to Use a Concordance"
-msgstr "Como usar uma concordância"
+msgstr "Folha de trabalho: Como Usar uma Concordância"
 
 #: docs/howto/en/docbook/howto-basics.docbook:147
 msgid "To Find a Particular Verse"
@@ -423,7 +423,7 @@ msgid ""
 "Go down the column of entries to Mt.7:1.  To the right is a number, 2919.  "
 "This refers to the Greek word used.  Write it down."
 msgstr ""
-"Desca até a coluna das entradas de Mt 7.1. A direita existe um número, 2919. "
+"Desca até a coluna das entradas de Mt 7.1. À direita existe um número, 2919. "
 "Essa é a referencia para a palavra grega usada. Anote-a."
 
 #: docs/howto/en/docbook/howto-basics.docbook:178
@@ -555,13 +555,13 @@ msgstr "Herodotus"
 
 #: docs/howto/en/docbook/howto-importance.docbook:42
 msgid "448-428 B.C."
-msgstr "448-428 A.C."
+msgstr "448-428 a.C."
 
 #: docs/howto/en/docbook/howto-importance.docbook:42
 #: docs/howto/en/docbook/howto-importance.docbook:52
 #: docs/howto/en/docbook/howto-importance.docbook:57
 msgid "900 A.D."
-msgstr "900 D.C."
+msgstr "900 d.C."
 
 #: docs/howto/en/docbook/howto-importance.docbook:43
 msgid "1300 years"
@@ -570,7 +570,7 @@ msgstr "1300 anos"
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:43
 msgid "8"
-msgstr ""
+msgstr "8"
 
 #: docs/howto/en/docbook/howto-importance.docbook:46
 msgid "Tacitus"
@@ -578,11 +578,11 @@ msgstr "Tacitus"
 
 #: docs/howto/en/docbook/howto-importance.docbook:47
 msgid "100 A.D."
-msgstr "100 D.C."
+msgstr "100 d.C."
 
 #: docs/howto/en/docbook/howto-importance.docbook:47
 msgid "1100 A.D."
-msgstr "1100 D.C."
+msgstr "1100 d.C."
 
 #: docs/howto/en/docbook/howto-importance.docbook:48
 msgid "1000 years"
@@ -592,15 +592,15 @@ msgstr "1000 anos"
 #: docs/howto/en/docbook/howto-importance.docbook:48
 #: docs/howto/en/docbook/howto-importance.docbook:58
 msgid "20"
-msgstr ""
+msgstr "20"
 
 #: docs/howto/en/docbook/howto-importance.docbook:51
 msgid "Caesar's <emphasis>Gallic War</emphasis>"
-msgstr "Caesar's <emphasis>Gallic War</emphasis>"
+msgstr "<emphasis>Guerras da Gália</emphasis>de César"
 
 #: docs/howto/en/docbook/howto-importance.docbook:52
 msgid "50-58 B.C."
-msgstr "50-58 A.C."
+msgstr "50-58 a.C."
 
 #: docs/howto/en/docbook/howto-importance.docbook:53
 msgid "950 years"
@@ -609,15 +609,15 @@ msgstr "950 anos"
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:53
 msgid "10"
-msgstr ""
+msgstr "10"
 
 #: docs/howto/en/docbook/howto-importance.docbook:56
 msgid "Livy's <emphasis>Roman History</emphasis>"
-msgstr "Livy's <emphasis>História Romana</emphasis>"
+msgstr "<emphasis>História Romana</emphasis> de Lívio"
 
 #: docs/howto/en/docbook/howto-importance.docbook:57
 msgid "59 B.C. - 17 A.D."
-msgstr "59 A.C. - 17 D.C."
+msgstr "59 a.C. - 17 d.C."
 
 #: docs/howto/en/docbook/howto-importance.docbook:58
 msgid "900 years"
@@ -629,11 +629,11 @@ msgstr "Novo Testamento"
 
 #: docs/howto/en/docbook/howto-importance.docbook:62
 msgid "40 A.D. - 100 A.D."
-msgstr "40 D.C. - 100 D.C."
+msgstr "40 d.C. - 100 d.C."
 
 #: docs/howto/en/docbook/howto-importance.docbook:62
 msgid "130 A.D. Partial manuscripts 350 A.D. Full manuscripts"
-msgstr "130 D.C Manuscritos parciais - 350 D.C. Manuscritos completos"
+msgstr "130 d.C Manuscritos parciais - 350 d.C. Manuscritos completos"
 
 #: docs/howto/en/docbook/howto-importance.docbook:63
 msgid "30 - 310 years"
@@ -652,12 +652,12 @@ msgid ""
 "gospel from 130 A. D.  How many manuscripts do we have to compare to each "
 "other? 5,000 in Greek and 10,000 in Latin!"
 msgstr ""
-"Existem dez copias de Caesar's <emphasis>Gallaic War</emphasis>, a mais nova "
-"foi copiada 900 anos depois que Caesar escreveu o original, etc. Para o Novo "
-"Testamento nós temos manuscritos completos datando 350 D.C., papiro contendo "
-"a maior parte do Novo Testamento de 200 D.C. e fragmentos do evangelho de "
-"João de 130 D.C. Quantos manuscritos nós temos para comparar uns com os "
-"outros? 5.000 em grego e 10.000 em Latim!"
+"Existem dez copias das <emphasis>Guerras Gaulesas</emphasis> de César, a "
+"mais nova foi copiada 900 anos depois que Caesar escreveu o original, etc. "
+"Para o Novo Testamento nós temos manuscritos completos datando 350 d.C., "
+"papiro contendo a maior parte do Novo Testamento de 200 d.C. e fragmentos do "
+"evangelho de João de 130 d.C. Quantos manuscritos nós temos para comparar "
+"uns com os outros? 5.000 em grego e 10.000 em Latim!"
 
 #: docs/howto/en/docbook/howto-importance.docbook:72
 msgid ""
@@ -800,8 +800,9 @@ msgid "Action"
 msgstr "Ação"
 
 #: docs/howto/en/docbook/howto-importance.docbook:135
+#, fuzzy
 msgid "Eph. 5:26"
-msgstr "Ef 5.25"
+msgstr "Ef 5.26"
 
 #: docs/howto/en/docbook/howto-importance.docbook:137
 msgid ""
@@ -961,7 +962,7 @@ msgstr "Quantas das armas listas são para defesa?"
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:237
 msgid "5"
-msgstr ""
+msgstr "5"
 
 #: docs/howto/en/docbook/howto-importance.docbook:238
 msgid "How many are offensive?"
@@ -970,7 +971,7 @@ msgstr "Quantas são para atacar?"
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:238
 msgid "One"
-msgstr ""
+msgstr "Uma"
 
 #: docs/howto/en/docbook/howto-importance.docbook:239
 msgid "Which one(s)?"
@@ -1287,6 +1288,7 @@ msgstr ""
 "igreja, e estes orem sobre ele, ungido-o com óleo em nome do "
 "Senhor\"</emphasis>. Que unção é essa?"
 
+# Falta adaptação à gramática portuguesa
 #: docs/howto/en/docbook/howto-interpretation.docbook:55
 msgid ""
 "Definition of aleipho (218) - \"to oil\" (Strong's); but we also have "
