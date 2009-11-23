@@ -254,8 +254,6 @@ void BibleTime::initActions() {
 
     QAction* tmp = m_actionCollection->action("quit");
     fileMenu->addAction(tmp);
-    m_mainToolBar->addAction(tmp);
-    m_mainToolBar->addSeparator();
     connect(tmp, SIGNAL(triggered()), this, SLOT(quit()) );
 
     m_windowFullscreen_action = m_actionCollection->action("toggleFullscreen");
@@ -477,7 +475,7 @@ void BibleTime::initBackends() {
 
     if (errorCode != CSwordBackend::NoError) {
         //show error message that initBackend failed
-        /// \todo 
+        /// \todo
 // 		switch (errorCode) {
 // 			case CSwordBackend::NoSwordConfig: //mods.d or mods.conf missing
 // 			{
