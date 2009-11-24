@@ -62,6 +62,8 @@ void CBibleKeyChooser::setKey(CSwordKey* key) {
 }
 
 void CBibleKeyChooser::beforeRefChange(CSwordVerseKey* key) {
+    Q_UNUSED(key); /// \todo Is this correct?
+
     Q_ASSERT(m_key);
 
 	if (!updatesEnabled()) 

@@ -37,6 +37,8 @@ BtModuleChooserButton::~BtModuleChooserButton() {}
 
 void BtModuleChooserButton::recreateMenu(QStringList newModulesToUse, QString thisModule, int newIndex)
 {
+    Q_UNUSED(newIndex); /// \todo Is this correct?
+
     populateMenu();
     updateMenu(newModulesToUse, thisModule, m_id);
 }

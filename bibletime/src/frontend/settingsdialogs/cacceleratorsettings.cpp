@@ -239,6 +239,8 @@ void CAcceleratorSettingsPage::save() {
 }
 
 void CAcceleratorSettingsPage::slotKeyChooserTypeChanged(const QString& title) {
+    Q_UNUSED(title); /// \todo Is this correct?
+
     int index = m_typeChooser->currentIndex();
     m_keyChooserStack->setCurrentIndex(index);
 
