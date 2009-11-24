@@ -54,17 +54,18 @@ specificato.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-bookshelf-metainfo">
-        <title>Informazioni aggiuntive sui moduli</title>
+        <title>Informazioni aggiuntive sui documenti</title>
 
-        <para>If you click with the <mousebutton>right</mousebutton> mouse button on the 
-symbol of a work, you will see a menu with additional entries that are 
-relevant for this work.  <guimenuitem>"About this work"</guimenuitem> opens 
-a window with lots of interesting information about the selected work.  
-<guimenuitem>"Unlock this work"</guimenuitem> opens a small dialog for 
-encrypted documents, where you can enter the unlock key to access the 
-work. For additional information on locked works, please see the <ulink 
-url="http://www.crosswire.org/sword/modules/aboutlocked.jsp"> Locked 
-Modules</ulink> page on the &cbs; web site.</para>
+        <para>Se clicchi con il <mousebutton>pulsante destro del mouse</mousebutton> sul 
+simbolo di un documento, vedrai un menu con ulteriori voci che sono 
+rilevanti per questo documento. <guimenuitem>"About..."</guimenuitem> apre 
+una finestra con tante informazioni interessanti sul documento 
+selezionato. <guimenuitem>"Sblocca..."</guimenuitem> apre una piccola 
+finestra di dialogo per documenti cifrati, dove puoi inserire la chiave di 
+sblocco per accedere al documento. Per informazioni aggiuntive sui documenti 
+bloccati, per favore guarda <ulink 
+url="http://www.crosswire.org/sword/modules/aboutlocked.jsp"> questa 
+pagina</ulink> sul sito di &cbs;.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-bookshelf-search">
@@ -371,32 +372,34 @@ documenti presenti sul CD se è presente.</para>
     </sect2>
     <sect2 id="hdbk-op-bookshelfmanager-installupdate">
       <title>Installa/aggiorna documenti</title>
-      <para>With this facility, you can connect to a repository of works (called 
-"library"), and transfer one or more works to your local Bookshelf. These 
-libraries may be local (e.g. a &sword; CD), or remote (e.g. Crosswire's 
-online repository of &sword; modules, or another site offering &sword; 
-modules). You can manage your libraries with <guibutton>Add 
-library</guibutton> and <guibutton>Delete library</guibutton>.</para>
-      <para>To begin the installation or update process, select a library you want to 
-connect to and a local Bookshelf path to install the work(s) to. Then click 
-on <guibutton>Connect to library</guibutton>. &bibletime; will scan the 
-contents of the library and present you with a list of works that you can 
-add to your Bookshelf, or that you already have installed but are available 
-in a new version in the library, and thus can be updated. Then you can mark 
-all works that you want to install or update, and click on 
-<guibutton>Install works</guibutton>. They will then be transferred to your 
-Bookshelf.</para>
+      <para>Con questo strumento, è possibile connettersi a un archivio di documenti 
+(chiamato "biblioteca"), e trasferire uno o più documenti nella tua Libreria 
+locale. Queste biblioteche possono essere locali (es. un CD &sword;), o 
+remote (es. repository Crosswire online di documenti &sword;, o altri siti 
+che offrono documenti &sword;). Puoi gestire le biblioteche con 
+<guibutton>Aggiungi biblioteca</guibutton> e <guibutton>Rimuovi 
+biblioteca</guibutton>.</para>
+      <para>Per iniziare il processo d'installazione o d'aggiornamento, seleziona una 
+biblioteca a cui ti vuoi connettere e il percorso di una Libreria locale per 
+installarci i documenti. Poi clicca su <guibutton>Connetti alla 
+biblioteca</guibutton>. &bibletime; scansionerà il contenuto della 
+biblioteca e ti darà una lista dei documenti che puoi aggiungere alla tua 
+Libreria, o che hai già installato ma è disponibile una nuova versione nella 
+biblioteca, e quindi possono essere aggiornati. Poi puoi spuntare tutti i 
+documenti che vuoi installare o aggiornare, e cliccare su 
+<guibutton>Installa documenti</guibutton>. Saranno trasferiti nella tua 
+Libreria.</para>
     </sect2>
     <sect2 id="hdbk-op-bookshelfmanager-remove">
-      <title>Remove work(s)</title>
-      <para>This facility allows you to delete one or more of the works from your 
-Bookshelf too free up disk space. Simply mark the items and click on 
-<guibutton>Remove works</guibutton>.</para>
+      <title>Rimuovi documenti</title>
+      <para>Questo strumento ti permette di cancellare uno o più documenti dalla tua 
+Libreria per liberare spazio sul disco. Spunta gli elementi e clicca su 
+<guibutton>Rimuovi documenti</guibutton>.</para>
     </sect2>
     <sect2 id="hdbk-op-bookshelfmanager-searchindexes">
-      <title>Search Indexes</title>
-      <para>This option allows you to create new search indexes and cleanup orphaned 
-index files for removed works.</para>
+      <title>Indici di Ricerca</title>
+      <para>Questa opzione consente di creare nuovi indici di ricerca e pulire gli 
+indici orfani per i documenti rimossi.</para>
       <tip>
 	If you are having problems with your search function, visit
 	this feature.
@@ -404,7 +407,7 @@ index files for removed works.</para>
     </sect2>
   </sect1>
   <sect1 id="hdbk-op-output">
-    <title>Exporting and Printing</title>
+    <title>Esportazione e Stampa</title>
     <para>In many places, you can open a context menu by clicking with the 
 <mousebutton>right</mousebutton> mouse button. Depending on context, it will 
 allow you to <guimenuitem>Select</guimenuitem>, 

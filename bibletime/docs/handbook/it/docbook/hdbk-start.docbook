@@ -1,11 +1,11 @@
 <chapter id="hdbk-term">
-  <title>Starting &bibletime;</title>
+  <title>Avviando &bibletime;</title>
 
   <sect1 id="hdbk-start">
-    <title>How to start &bibletime;</title>
+    <title>Come avviare &bibletime;</title>
 
     <sect2 id="hdbk-start">
-      <title>Starting &bibletime;</title>
+      <title>Avviando &bibletime;</title>
       <para>&bibletime; is an executable file that is integrated with the desktop. You 
 can launch &bibletime; from the Start Menu with this icon: 
       <mediaobject>
@@ -34,7 +34,7 @@ default bible:
   </sect1>
 
   <sect1 id="hdbk-startsequence">
-    <title>Startup sequence</title>
+    <title>Sequenza di avvio</title>
 
     <para>As &bibletime; launches you may see the following screens before the main 
 &bibletime; window opens:</para>

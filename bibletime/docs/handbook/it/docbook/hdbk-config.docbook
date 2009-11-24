@@ -31,8 +31,8 @@ vedrai un'anteprima nel pannello di destra.</para>
       </title>
       <para>Molte caratteristiche fornite dal &sword; backend possono essere 
 personalizzate in &bibletime;. Queste caratteristiche sono documentate nella 
-finestra. Hai anche la possibilità di specificare moduli standard che 
-dovranno essere usati quando nessun modulo è specificato in un 
+finestra. Hai anche la possibilità di specificare documenti standard che 
+dovranno essere usati quando nessun documento è specificato in un 
 riferimento. Un esempio: La Bibbia standard è usata per visualizzare il 
 contenuto dei riferimenti incrociati nella Bibbia. Quando ci passi il mouse 
 sopra, la Lente mostrerà il contenuto dei versetti a cui si riferiscono, 
@@ -63,16 +63,16 @@ specificare un carattere personalizzato per ogni lingua.</para>
           <para>La Finestra Opzioni - Caratteri.</para>
         </caption>
       </mediaobject>
-      <para>&bibletime; può usare tutti i caratteri supportati. Finchè i moduli che ti 
-interessano sono visualizzati correttamente qui nulla deve essere fatto. Se 
-un modulo è visualizzato solo come una serie di punti interrogativi (??????) 
-o scatole vuote, allora sai che il carattere di visualizzazione standard non 
-contiene i caratteri usati in questo modulo.</para>
+      <para>&bibletime; può usare tutti i caratteri supportati. Finché i documenti che 
+ti interessano sono visualizzati correttamente qui nulla deve essere 
+fatto. Se un documento è visualizzato solo come una serie di punti 
+interrogativi (??????) o scatole vuote, allora sai che il carattere di 
+visualizzazione standard non contiene i caratteri usati in questo documento.</para>
 
-      <para>Per correggere, scegli la lingua di questo modulo dal menu a 
+      <para>Per correggere, scegli la lingua di questo documento dal menu a 
 tendina. Seleziona l'uso di caratteri personalizzati nel checkbox. Poi 
 seleziona un carattere. Per esempio, un carattere che supporta molte lingue 
-è Code2000. Se nessun font installato può visualizzare il modulo che ti 
+è Code2000. Se nessun font installato può visualizzare il documento che ti 
 interessa, prova ad installare il pacchetto di localizzazione per quella 
 lingua.</para>
       <sect3 id="hdbk-config-bt-addfont">
