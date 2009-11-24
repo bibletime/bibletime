@@ -1,5 +1,6 @@
 2009-11-24 Martin Gruner <mgruner@crosswire.org>
     * Fixed an error with displaying pre-chapter and pre-book material.
+    * Fixed heading display in OSIS modules like ESV.
 
 2009-11-23 Eeli Kaikkonen
     * Added: text window header widget to Bible/commentary and dictionary windows

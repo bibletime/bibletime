@@ -11,6 +11,8 @@
 
 #include <boost/scoped_ptr.hpp>
 #include <iostream>
+#include <QDebug>
+
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/keys/cswordkey.h"
 #include "backend/keys/cswordversekey.h"
@@ -132,7 +134,10 @@ const QString CHTMLExportRendering::renderEntry( const KeyTreeItem& i, CSwordKey
         key_renderedText = key->renderedText();
 
         if (m_filterOptions.headings) {
-            (*mod_Itr)->module()->RenderText();
+
+        	// only process EntryAttributes, do not render, this might destroy the EntryAttributes again
+            (*mod_Itr)->module()->RenderText(0, -1, 0);
+
             sword::AttributeValue::const_iterator it =
                 (*mod_Itr)->module()->getEntryAttributes()["Heading"]["Preverse"].begin();
             const sword::AttributeValue::const_iterator end =
