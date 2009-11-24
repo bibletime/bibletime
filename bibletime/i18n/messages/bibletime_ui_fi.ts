@@ -971,12 +971,12 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.cpp" line="52"/>
         <source>Work</source>
-        <translation type="unfinished">Teos</translation>
+        <translation>Teos</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.cpp" line="54"/>
         <source>Install path</source>
-        <translation type="unfinished">Asennuspolku</translation>
+        <translation>Asennuspolku</translation>
     </message>
 </context>
 <context>
@@ -2303,12 +2303,12 @@ pikanäppäin</translation>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="86"/>
         <source>Get list...</source>
-        <translation type="unfinished"></translation>
+        <translation>Hae lista...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="87"/>
         <source>Download a list of sources from CrossWire server and add sources</source>
-        <translation type="unfinished"></translation>
+        <translation>Lataa lähdelista CrossWiren palvelimelta ja lisää lähteet</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="99"/>
@@ -2349,33 +2349,35 @@ pikanäppäin</translation>
         <source>List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don&apos;t want to keep.
 
 Do you want to continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista lähteistä ladataan etäpalvelimelta. Lähteet lisätään nykyiseen listaan. Uusi lähde korvaa vanhan, jos niillä on sama nimi. Voit myöhemmin poistaa ne lähteet, joita et halua pitää listassa.
+
+Haluatko jatkaa?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="156"/>
         <source>Get source list from remote server?</source>
-        <translation type="unfinished"></translation>
+        <translation>Hae lähdelista etäpalvelimelta?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="163"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Peruuta</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="164"/>
         <source>Downloading List</source>
-        <translation type="unfinished"></translation>
+        <translation>Ladataan listaa</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="174"/>
         <source>Connecting...</source>
-        <translation type="unfinished">Yhdistetään...</translation>
+        <translation>Yhdistetään...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="197"/>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="198"/>
         <source>Refreshing...</source>
-        <translation type="unfinished">Virkistetään...</translation>
+        <translation>Virkistetään...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="37"/>
@@ -3739,12 +3741,12 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/backend/bookshelfmodel/indexingitem.cpp" line="26"/>
         <source>Indexed works</source>
-        <translation type="unfinished"></translation>
+        <translation>Indeksoidut teokset</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/indexingitem.cpp" line="28"/>
         <source>Unindexed works</source>
-        <translation type="unfinished"></translation>
+        <translation>Indeksoimattomat teokset</translation>
     </message>
 </context>
 <context>
