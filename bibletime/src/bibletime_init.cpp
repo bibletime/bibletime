@@ -541,7 +541,7 @@ void BibleTime::applyProfileSettings( CProfile* p ) {
             slotAutoCascade();
             break;
         default:
-            slotManualArrangementMode();
+            slotAutoTileVertical();
             break;
     }
 }
