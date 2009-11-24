@@ -163,7 +163,7 @@ bool CSwordVerseKey::next( const JumpType type ) {
                 m_module->module()->setSkipConsecutiveLinks(true);
 
                 //disable headings for next verse
-                const bool useHeaders = (Verse() == 0);
+                const bool useHeaders = 1; //(Verse() == 0);
                 const bool oldHeadingsStatus = ((VerseKey*)(m_module->module()->getKey()))->Headings( useHeaders );
                 //don't use setKey(), that would create a new key without Headings set
                 m_module->module()->getKey()->setText( key().toUtf8().constData() );
@@ -243,7 +243,7 @@ bool CSwordVerseKey::previous( const JumpType type ) {
 
         case UseVerse: {
             if (m_module && m_module->module()) {
-                const bool useHeaders = (Verse() == 0);
+                const bool useHeaders = 1; //(Verse() == 0);
                 const bool oldHeadingsStatus = ((VerseKey*)(m_module->module()->getKey()))->Headings( useHeaders );
 
                 m_module->module()->getKey()->setText( key().toUtf8().constData() );
