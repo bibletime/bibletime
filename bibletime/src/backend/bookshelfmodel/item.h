@@ -109,7 +109,7 @@ class Item {
         /**
           \brief Returns the check state of this item.
         */
-        inline const Qt::CheckState checkState() const {
+        inline Qt::CheckState checkState() const {
             return m_checkState;
         }
 
