@@ -62,7 +62,7 @@ BtTextWindowHeaderWidget::~BtTextWindowHeaderWidget() {}
 void BtTextWindowHeaderWidget::recreateWidget(QStringList newModulesToUse, QString thisModule, int newIndex)
 {
     populateMenu();
-    updateWidget(newModulesToUse, thisModule, m_id);
+    updateWidget(newModulesToUse, thisModule, newIndex);
 }
 
 // don't remove yet, maybe we'll add icons to buttons...
