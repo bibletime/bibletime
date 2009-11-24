@@ -730,6 +730,21 @@
     </message>
 </context>
 <context>
+    <name>BtModuleChooserButton</name>
+    <message>
+        <source>Select a work [%1]</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select an additional work</source>
+        <translation type="unfinished">Vyberte další dílo</translation>
+    </message>
+    <message>
+        <source>NONE</source>
+        <translation type="unfinished">Žádný modul</translation>
+    </message>
+</context>
+<context>
     <name>BtModuleManagerDialog</name>
     <message>
         <source>Bookshelf Manager</source>
@@ -939,6 +954,25 @@ shortcut</source>
     <message>
         <source>The destination directory is not writable or does not exist. Installation will fail unless this has first been fixed.</source>
         <translation>Do cílového adresáře nelze zapisovat nebo neexistuje. Instalace bude selhávat, dokud to nebude opraveno.</translation>
+    </message>
+</context>
+<context>
+    <name>BtTextWindowHeaderWidget</name>
+    <message>
+        <source>Add/remove/replace</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Replace</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1343,6 +1377,18 @@ shortcut</source>
         <source>Search with works of this window</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Work chooser buttons</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Navigation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tools</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CFontChooser</name>
@@ -1616,19 +1662,19 @@ shortcut</source>
     <name>CModuleChooserButton</name>
     <message>
         <source>NONE</source>
-        <translation>Žádný modul</translation>
+        <translation type="obsolete">Žádný modul</translation>
     </message>
     <message>
         <source>Select a work</source>
-        <translation>Vyberte dílo</translation>
+        <translation type="obsolete">Vyberte dílo</translation>
     </message>
     <message>
         <source>Select an additional work</source>
-        <translation>Vyberte další dílo</translation>
+        <translation type="obsolete">Vyberte další dílo</translation>
     </message>
     <message>
         <source>[locked]</source>
-        <translation>[zamčený]</translation>
+        <translation type="obsolete">[zamčený]</translation>
     </message>
 </context>
 <context>
@@ -1858,10 +1904,6 @@ shortcut</source>
         <translation>Nový instalační zdroj</translation>
     </message>
     <message>
-        <source>A source with this caption already exists.&lt;br/&gt;Please provide a different caption.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Get list...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1893,6 +1935,10 @@ shortcut</source>
         <source>List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don&apos;t want to keep.
 
 Do you want to continue?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A source with this caption already exists.  Please provide a different caption.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

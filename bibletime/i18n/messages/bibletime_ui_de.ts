@@ -730,6 +730,21 @@
     </message>
 </context>
 <context>
+    <name>BtModuleChooserButton</name>
+    <message>
+        <source>Select a work [%1]</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select an additional work</source>
+        <translation type="unfinished">Zusätzliches Werk auswählen</translation>
+    </message>
+    <message>
+        <source>NONE</source>
+        <translation type="unfinished">NICHTS</translation>
+    </message>
+</context>
+<context>
     <name>BtModuleManagerDialog</name>
     <message>
         <source>Bookshelf Manager</source>
@@ -939,6 +954,25 @@ shortcut</source>
     <message>
         <source>No sources were found in the SWORD configuration and BibleTime couldn&apos;t create a default source. Check your SWORD configuration and that the configuration path is writable. Then restart the Bookshelf Manager.</source>
         <translation>In der SWORD-Konfiguration wurden keine Quellen gefunden und BibleTime konnte keine Standard-Quelle erstellen. Überprüfen Sie Ihre SWORD-Konfiguration und dass der Konfigurations-Pfad beschreibbar ist. Dann starten Sie die Bücherregal-Verwaltung erneut.</translation>
+    </message>
+</context>
+<context>
+    <name>BtTextWindowHeaderWidget</name>
+    <message>
+        <source>Add/remove/replace</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation type="unfinished">Entfernen</translation>
+    </message>
+    <message>
+        <source>Replace</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1343,6 +1377,18 @@ shortcut</source>
         <source>Search with works of this window</source>
         <translation>In den Werken dieses Fensters suchen</translation>
     </message>
+    <message>
+        <source>Work chooser buttons</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Navigation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tools</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CFontChooser</name>
@@ -1616,19 +1662,19 @@ shortcut</source>
     <name>CModuleChooserButton</name>
     <message>
         <source>NONE</source>
-        <translation>NICHTS</translation>
+        <translation type="obsolete">NICHTS</translation>
     </message>
     <message>
         <source>Select a work</source>
-        <translation>Werk auswählen</translation>
+        <translation type="obsolete">Werk auswählen</translation>
     </message>
     <message>
         <source>Select an additional work</source>
-        <translation>Zusätzliches Werk auswählen</translation>
+        <translation type="obsolete">Zusätzliches Werk auswählen</translation>
     </message>
     <message>
         <source>[locked]</source>
-        <translation>[verschlüsselt]</translation>
+        <translation type="obsolete">[verschlüsselt]</translation>
     </message>
 </context>
 <context>
@@ -1859,7 +1905,7 @@ shortcut</source>
     </message>
     <message>
         <source>A source with this caption already exists.&lt;br/&gt;Please provide a different caption.</source>
-        <translation>Eine Quelle mit dieser Überschrift existiert bereits. &lt;br/&gt;Bitte geben Sie eine andere Überschrift ein.</translation>
+        <translation type="obsolete">Eine Quelle mit dieser Überschrift existiert bereits. &lt;br/&gt;Bitte geben Sie eine andere Überschrift ein.</translation>
     </message>
     <message>
         <source>Get list...</source>
@@ -1893,6 +1939,10 @@ shortcut</source>
         <source>List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don&apos;t want to keep.
 
 Do you want to continue?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A source with this caption already exists.  Please provide a different caption.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
