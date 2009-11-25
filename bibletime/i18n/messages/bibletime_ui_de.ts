@@ -1389,6 +1389,10 @@ shortcut</source>
         <source>Tools</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Text area header</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CFontChooser</name>
