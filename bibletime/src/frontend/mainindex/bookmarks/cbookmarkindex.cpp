@@ -115,7 +115,6 @@ void CBookmarkIndex::initView() {
     m_popup->addAction(separator);
     m_popup->addAction(m_actions.deleteEntries);
 
-    bookmarkSaveTimer.start(1500); // Test every 1.5 seconds.
     m_bookmarksModified = false;
     //qDebug() << "CBookmarkIndex::initView end";
 }
@@ -150,6 +149,7 @@ void CBookmarkIndex::initConnections() {
     connect(this, SIGNAL(itemChanged(QTreeWidgetItem*, int)), this, SLOT(needToSaveBookmarks(QTreeWidgetItem*)) );
 
     // Connect the bookmark saving timer.
+	bookmarkSaveTimer.setSingleShot(true);
     connect(&bookmarkSaveTimer, SIGNAL(timeout()), this, SLOT(considerSavingBookmarks()) );
 }
 
@@ -863,10 +863,14 @@ QList<QTreeWidgetItem*> CBookmarkIndex::addItemsToDropTree(
     return newList;
 }
 
-// Bookmark saving code.
+/// Bookmark saving code.  To avoid many saves during a short period of time,
+/// bookmark modification is first noted.  Then, after a wait (1.5s), if no more
+/// modifications are made, the bookmarks are saved.  The timer is reset when a
+/// new modification is made.  The timer bookmarkSaveTimer is set to be oneshot.
 void CBookmarkIndex::needToSaveBookmarks() {
     qDebug() << "Got signal to save bookmarks!";
     m_bookmarksModified = true;
+    bookmarkSaveTimer.start(1500); // Only save after 1.5s.
 }
 void CBookmarkIndex::needToSaveBookmarks(QTreeWidgetItem* treeItem) {
     // Need to test whether the item that changed is not just a display item,
@@ -875,12 +879,17 @@ void CBookmarkIndex::needToSaveBookmarks(QTreeWidgetItem* treeItem) {
     if (bookmark){
         qDebug() << "Got signal to save bookmarks!";
         m_bookmarksModified = true;
+        bookmarkSaveTimer.start(1500); // Only save after 1.5s.
     }
 }
 
+/// Considers saving bookmarks only if they have been modified.  This procedure
+/// should be called by the qtimer bookmarkTimer.
 void CBookmarkIndex::considerSavingBookmarks() {
+    qDebug() << "Considering to save bookmarks!";
     if (m_bookmarksModified){
         saveBookmarks();
         m_bookmarksModified = false;
     }
 }
+
