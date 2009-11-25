@@ -540,6 +540,9 @@ void BibleTime::applyProfileSettings( CProfile* p ) {
         case CMDIArea::ArrangementModeCascade:
             slotAutoCascade();
             break;
+        case CMDIArea::ArrangementModeManual:
+            slotManualArrangementMode();
+            break;
         default:
             slotAutoTileVertical();
             break;
