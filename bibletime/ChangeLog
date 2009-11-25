@@ -1,3 +1,6 @@
+2009-11-24 Kang Sun <k486@digizip.com>
+    * Fixed automatic bookmark saving.  Bug ID: 1602826.
+
 2009-11-24 Martin Gruner <mgruner@crosswire.org>
     * Fixed an error with displaying pre-chapter and pre-book material.
     * Fixed heading display in OSIS modules like ESV.

@@ -56,6 +56,19 @@ class CBookmarkIndex : public QTreeWidget {
         */
         void createReadDisplayWindow( QList<CSwordModuleInfo*>, const QString& );
 
+    public slots:
+
+        /** 
+         * Indicates a need to save the bookmarks.
+         * This is needed to provide a way for a bookmarkitem stored in the
+         * treeWidget to inform us that it has been modified, namely its
+         * description text.  It only sets a dirty-bit so we don't execute many
+         * consecutive saves.
+         */
+        void needToSaveBookmarks();
+        void needToSaveBookmarks(QTreeWidgetItem* treeItem);
+
+
     protected: // Protected methods
 
         /** A hack to get the modifiers. */
@@ -173,6 +186,22 @@ class CBookmarkIndex : public QTreeWidget {
         QPoint m_dragMovementPosition;
         QPoint m_dragStartPosition;
         QTreeWidgetItem* m_extraItem;
+
+        // The following is for managing saving bookmarks.  It uses a QTimer to
+        // determine whether the bookmarks should be saved.  This may seem like
+        // a hassle, but it is to prevent many saves from being executed at a
+        // time.
+       
+        /** Flag indicating that bookmarks have been modified. */
+        bool m_bookmarksModified;
+        QTimer bookmarkSaveTimer;
+
+    private slots:
+        /**
+         * Saves the bookmarks.
+         * It checks m_bookmarksModified and resets it at the end. It should be
+         * connected to a timer that periodically calls this. */
+        void considerSavingBookmarks();
 };
 
 #endif

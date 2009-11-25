@@ -115,6 +115,8 @@ void CBookmarkIndex::initView() {
     m_popup->addAction(separator);
     m_popup->addAction(m_actions.deleteEntries);
 
+    bookmarkSaveTimer.start(1500); // Test every 1.5 seconds.
+    m_bookmarksModified = false;
     //qDebug() << "CBookmarkIndex::initView end";
 }
 
@@ -142,6 +144,13 @@ void CBookmarkIndex::initConnections() {
     Q_ASSERT(ok);
     ok = connect(this, SIGNAL(itemEntered(QTreeWidgetItem*, int)), this, SLOT(slotItemEntered(QTreeWidgetItem*, int)) );
     Q_ASSERT(ok);
+
+    // Connection to detect changes in the items themselves (e.g. renames,
+    // description changes) so that we can consider saving the bookmarks.
+    connect(this, SIGNAL(itemChanged(QTreeWidgetItem*, int)), this, SLOT(needToSaveBookmarks(QTreeWidgetItem*)) );
+
+    // Connect the bookmark saving timer.
+    connect(&bookmarkSaveTimer, SIGNAL(timeout()), this, SLOT(considerSavingBookmarks()) );
 }
 
 
@@ -407,6 +416,9 @@ void CBookmarkIndex::dropEvent( QDropEvent* event ) {
         if (dropAction == copy) {
             qDebug() << "copy";
             parentItem->insertChildren(indexUnderParent, newItems);
+            // Need this here because the "move" case goes through
+            // "deleteEntries" which has a save call.
+            needToSaveBookmarks();
         }
         else {
             if (dropAction == move) {
@@ -415,11 +427,11 @@ void CBookmarkIndex::dropEvent( QDropEvent* event ) {
                 deleteEntries(false);
             }
             else {
-                QObject::disconnect(this, SIGNAL(itemCollapsed(QTreeWidgetItem*)), this, SLOT(expandAutoCollapsedItem(QTreeWidgetItem*)));
+                QObject::disconnect(this, SIGNAL(itemCollapsed(QTreeWidgetItem*)),
+                                    this, SLOT(expandAutoCollapsedItem(QTreeWidgetItem*)));
                 return; // user canceled
             }
         }
-
     }
     else {
         qDebug() << "the source was outside this";
@@ -442,7 +454,11 @@ void CBookmarkIndex::createBookmarkFromDrop(QDropEvent* event, QTreeWidgetItem* 
         CSwordModuleInfo* minfo = CPointers::backend()->findModuleByName(moduleName);
 
         QTreeWidgetItem* newItem = new BtBookmarkItem(minfo, keyText, description);
+      //  connect(newItem, SIGNAL(bookmarkModified()), this, SLOT(needToSaveBookmarks()) );
         parentItem->insertChild(indexInParent, newItem);
+
+        qDebug() << "Saving in...CBookmarkIndex::createBookmarkFromDrop";
+        needToSaveBookmarks();
     }
 }
 
@@ -582,6 +598,7 @@ void CBookmarkIndex::createNewFolder() {
         newFolder->update();
         newFolder->rename();
     }
+    needToSaveBookmarks();
 }
 
 /** Opens a dialog to change the current folder. */
@@ -621,6 +638,7 @@ void CBookmarkIndex::importBookmarks() {
     if (i) {
         i->importBookmarks();
     }
+    needToSaveBookmarks();
 }
 
 /** Prints the selected bookmarks. */
@@ -672,7 +690,10 @@ void CBookmarkIndex::deleteEntries(bool confirm) {
             }
         }
 
-        if (util::showQuestion(this, tr("Delete Items"), tr("Do you really want to delete the selected items and child-items?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No ) != QMessageBox::Yes) {
+        if (util::showQuestion(this, tr("Delete Items"),
+                               tr("Do you really want to delete the selected items and child-items?"),
+                               QMessageBox::Yes | QMessageBox::No, QMessageBox::No )
+                               != QMessageBox::Yes) {
             return;
         }
     }
@@ -680,7 +701,11 @@ void CBookmarkIndex::deleteEntries(bool confirm) {
     while (selectedItems().size() > 0) {
         delete selectedItems().at(0); // deleting all does not work because it may cause double deletion
     }
-
+    // Save the bookmarks.  One way would be to signal that the bookmarks have
+    // changed emit a signal so that a number of changes may be saved at once.
+    // Another way is to simply save the bookmarks after each change, which can
+    // be inefficient.
+    needToSaveBookmarks();
 }
 
 
@@ -737,7 +762,6 @@ void CBookmarkIndex::saveBookmarks() {
     qDebug() << "CBookmarkIndex::saveBookmarks()";
     BtBookmarkLoader loader;
     loader.saveTreeFromRootItem(invisibleRootItem());
-    //qDebug() << "CBookmarkIndex::saveBookmarks end";
 }
 
 void CBookmarkIndex::mouseMoveEvent(QMouseEvent* event) {
@@ -839,3 +863,24 @@ QList<QTreeWidgetItem*> CBookmarkIndex::addItemsToDropTree(
     return newList;
 }
 
+// Bookmark saving code.
+void CBookmarkIndex::needToSaveBookmarks() {
+    qDebug() << "Got signal to save bookmarks!";
+    m_bookmarksModified = true;
+}
+void CBookmarkIndex::needToSaveBookmarks(QTreeWidgetItem* treeItem) {
+    // Need to test whether the item that changed is not just a display item,
+    // but actually a folder or bookmark.
+    BtBookmarkItemBase* bookmark = dynamic_cast<BtBookmarkItemBase*>(treeItem);
+    if (bookmark){
+        qDebug() << "Got signal to save bookmarks!";
+        m_bookmarksModified = true;
+    }
+}
+
+void CBookmarkIndex::considerSavingBookmarks() {
+    if (m_bookmarksModified){
+        saveBookmarks();
+        m_bookmarksModified = false;
+    }
+}
