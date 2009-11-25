@@ -67,7 +67,7 @@ BibleTime::BibleTime()
     initActions();
     initConnections();
     readSettings();
-    setPlainCaption(QString());
+    setWindowTitle(QString("BibleTime") + bt_version());
     setWindowIcon(DU::getIcon(CResMgr::mainWindow::icon));
 }
 
@@ -266,18 +266,6 @@ void BibleTime::restoreWorkspace() {
     if (CProfile* p = m_profileMgr.startupProfile()) {
         loadProfile(p);
     }
-}
-
-/** Sets the plain caption of the main window */
-void BibleTime::setPlainCaption(const QString &title) {
-    QString newTitle("BibleTime ");
-    newTitle.append(bt_version());
-    if (!title.isEmpty()) {
-        newTitle.append(" - [");
-        newTitle.append(title);
-        newTitle.append("]");
-    }
-    setWindowTitle(newTitle);
 }
 
 /** Processes the commandline options given to BibleTime. */
