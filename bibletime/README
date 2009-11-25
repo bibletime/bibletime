@@ -38,6 +38,12 @@ have to install it to /usr/.
 For a real installation, run "build-release.sh". This will
 also build in ./build/, but then install to /usr/local.
 
+1.4 MORE INSTRUCTIONS
+
+There are detailed instructions in http://devel.bibletime.info
+for building on *nix and Windows.
+
+
 2. FEEDBACK
 
 Please report any bugs your find to bt-devel@crosswire.org or
