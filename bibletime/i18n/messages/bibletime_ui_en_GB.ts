@@ -925,18 +925,18 @@
     <message>
         <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="83"/>
         <source>Select a work [%1]</source>
-        <translation type="unfinished"></translation>
+        <translation>Select a work [%1]</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="86"/>
         <source>Select an additional work</source>
-        <translation type="unfinished">Select an additional work</translation>
+        <translation>Select an additional work</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="96"/>
         <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="124"/>
         <source>NONE</source>
-        <translation type="unfinished">NONE</translation>
+        <translation>NONE</translation>
     </message>
 </context>
 <context>
@@ -1124,83 +1124,83 @@ shortcut</translation>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="81"/>
         <source>Delete Source?</source>
-        <translation></translation>
+        <translation>Delete Source?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="82"/>
         <source>Do you really want to delete this source?</source>
-        <translation></translation>
+        <translation>Do you really want to delete this source?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="115"/>
         <source>Cancel</source>
-        <translation></translation>
+        <translation>Cancel</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="116"/>
         <source>Refreshing Source</source>
-        <translation></translation>
+        <translation>Refreshing Source</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="138"/>
         <source>Connecting...</source>
-        <translation></translation>
+        <translation>Connecting...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="181"/>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="182"/>
         <source>Refreshing...</source>
-        <translation></translation>
+        <translation>Refreshing...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="242"/>
         <source>No sources were found in the SWORD configuration and BibleTime couldn&apos;t create a default source. Check your SWORD configuration and that the configuration path is writable. Then restart the Bookshelf Manager.</source>
-        <translation></translation>
+        <translation>No sources were found in the SWORD configuration and BibleTime couldn&apos;t create a default source. Check your SWORD configuration and that the configuration path is writable. Then restart the Bookshelf Manager.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="257"/>
         <source>Remote:</source>
-        <translation></translation>
+        <translation>Remote:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="262"/>
         <source>Local:</source>
-        <translation></translation>
+        <translation>Local:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="337"/>
         <source>Install/Update works?</source>
-        <translation></translation>
+        <translation>Install/Update works?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="338"/>
         <source>Do you really want to install these works?</source>
-        <translation></translation>
+        <translation>Do you really want to install these works?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="340"/>
         <source>Only one version of a work can be installed at the same time. Select only one if there are items marked with red.</source>
-        <translation></translation>
+        <translation>Only one version of a work can be installed at the same time. Select only one if there are items marked with red.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="266"/>
         <source>Not a directory!</source>
-        <translation></translation>
+        <translation>Not a directory!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="269"/>
         <source>Not readable!</source>
-        <translation></translation>
+        <translation>Not readable!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="329"/>
         <source>Warning</source>
-        <translation></translation>
+        <translation>Warning</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="329"/>
         <source>The destination directory is not writable or does not exist. Installation will fail unless this has first been fixed.</source>
-        <translation></translation>
+        <translation>The destination directory is not writable or does not exist. Installation will fail unless this has first been fixed.</translation>
     </message>
 </context>
 <context>
@@ -1208,22 +1208,22 @@ shortcut</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="51"/>
         <source>Add/remove/replace</source>
-        <translation type="unfinished"></translation>
+        <translation>Add/remove/replace</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="140"/>
         <source>Remove</source>
-        <translation type="unfinished">Remove</translation>
+        <translation>Remove</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="146"/>
         <source>Replace</source>
-        <translation type="unfinished"></translation>
+        <translation>Replace</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="151"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Add</translation>
     </message>
 </context>
 <context>
@@ -1728,22 +1728,22 @@ shortcut</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="349"/>
         <source>Work chooser buttons</source>
-        <translation type="unfinished"></translation>
+        <translation>Work chooser buttons</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="358"/>
         <source>Text area header</source>
-        <translation type="unfinished"></translation>
+        <translation>Text area header</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="415"/>
         <source>Navigation</source>
-        <translation type="unfinished"></translation>
+        <translation>Navigation</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="423"/>
         <source>Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Tools</translation>
     </message>
 </context>
 <context>
@@ -2085,25 +2085,6 @@ shortcut</translation>
     </message>
 </context>
 <context>
-    <name>CModuleChooserButton</name>
-    <message>
-        <source>NONE</source>
-        <translation type="obsolete">NONE</translation>
-    </message>
-    <message>
-        <source>Select a work</source>
-        <translation type="obsolete">Select a work</translation>
-    </message>
-    <message>
-        <source>Select an additional work</source>
-        <translation type="obsolete">Select an additional work</translation>
-    </message>
-    <message>
-        <source>[locked]</source>
-        <translation type="obsolete">[locked]</translation>
-    </message>
-</context>
-<context>
     <name>CModuleIndexDialog</name>
     <message>
         <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="38"/>
@@ -2314,17 +2295,17 @@ shortcut</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="37"/>
         <source>Standard works</source>
-        <translation></translation>
+        <translation>Standard works</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="38"/>
         <source>Text filters</source>
-        <translation></translation>
+        <translation>Text filters</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="335"/>
         <source>Desk</source>
-        <translation></translation>
+        <translation>Desk</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="359"/>
@@ -2337,22 +2318,22 @@ shortcut</translation>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="45"/>
         <source>Caption</source>
-        <translation></translation>
+        <translation>Caption</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="60"/>
         <source>Type</source>
-        <translation></translation>
+        <translation>Type</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="63"/>
         <source>Server</source>
-        <translation></translation>
+        <translation>Server</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="66"/>
         <source>Path</source>
-        <translation></translation>
+        <translation>Path</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="86"/>
@@ -2371,32 +2352,32 @@ shortcut</translation>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="121"/>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="125"/>
         <source>Error</source>
-        <translation></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="99"/>
         <source>Please provide a caption.</source>
-        <translation></translation>
+        <translation>Please provide a caption.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="108"/>
         <source>A source with this caption already exists.  Please provide a different caption.</source>
-        <translation type="unfinished"></translation>
+        <translation>A source with this caption already exists.  Please provide a different caption.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="114"/>
         <source>Please provide a server name.</source>
-        <translation></translation>
+        <translation>Please provide a server name.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="121"/>
         <source>Please provide a valid, readable path.</source>
-        <translation></translation>
+        <translation>Please provide a valid, readable path.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="125"/>
         <source>Please provide a path.</source>
-        <translation></translation>
+        <translation>Please provide a path.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="155"/>
@@ -2436,7 +2417,7 @@ Do you want to continue?</translation>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="37"/>
         <source>New  Installation Source</source>
-        <translation></translation>
+        <translation>New  Installation Source</translation>
     </message>
 </context>
 <context>
