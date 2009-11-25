@@ -185,12 +185,12 @@ url="http://www.alanwood.net/unicode/fontsbyrange.html"> Unicode karakter
         <guimenu>Shortcuts</guimenu>
       </title>
 
-      <para>Shortcuts (previously known as HotKeys) are special key commands that can be 
-used in the place of the menu items and icons. A number of &bibletime;'s 
-commands have predefined Shortcuts (see the <link 
-linkend="hdbk-reference-shortcuts">Shortcuts section</link> for a complete 
-listing). Most of &bibletime;'s commands can be assigned Shortcuts.  This is 
-very helpful to quickly access the functions that you need the most.</para>
+      <para>A billentyűkombinációk (előzőleg gyorsbillentyűk) speciális 
+billentyűparancsok, melyeket a különböző menüelemeknél és ikonoknál 
+alkalmazhatunk. Számos &bibletime; parancshoz tartozik billentyűkombináció ( 
+<link linkend="hdbk-reference-shortcuts">itt található</link> a teljes 
+lista). A legtöbb &bibletime; parancs rendelkezik billentyűkombinációval, 
+ami nagyon hasznos a legtöbbet használt funkciók eléréséhez.</para>
 
       <imageobject>
 	<imagedata fileref="ss_shortcuts.png" format="PNG" />

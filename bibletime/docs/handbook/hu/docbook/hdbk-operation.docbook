@@ -53,28 +53,26 @@ ugrani.</para>
       <sect3 id="hdbk-op-parts-bookshelf-metainfo">
         <title>Kiegészítő információk egy adott dokumentumról</title>
 
-        <para>If you click with the <mousebutton>right</mousebutton> mouse button on the 
-symbol of a work, you will see a menu with additional entries that are 
-relevant for this work.  <guimenuitem>"About this work"</guimenuitem> opens 
-a window with lots of interesting information about the selected work.  
-<guimenuitem>"Unlock this work"</guimenuitem> opens a small dialog for 
-encrypted documents, where you can enter the unlock key to access the 
-work. For additional information on locked works, please see the <ulink 
-url="http://www.crosswire.org/sword/modules/aboutlocked.jsp"> Locked 
-Modules</ulink> page on the &cbs; web site.</para>
+        <para>Amikor <mousebutton>jobb</mousebutton> egérgombbal rákattint egy dokumentum 
+szimbólumára, egy helyi menüt láthat olyan bejegyzésekkel, ami az adott 
+munkára érvényes. Az <guimenuitem>"Névjegy"</guimenuitem> egy új ablakot 
+nyit meg, a dokumentumra vonatkozó információkkal. A 
+<guimenuitem>"Feloldás"</guimenuitem> egy kis párbeszédablakot nyit meg, 
+ahol megadhatja a zárolt dokumentumok feloldó kulcsát. A zárolt 
+dokumentumokról kiegészítő információt olvashat <ulink 
+url="http://www.crosswire.org/sword/modules/aboutlocked.jsp"> ezen az 
+oldalon</ulink>, a &cbs; honlapján. </para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-bookshelf-search">
         <title>Keresés a dokumentumokban</title>
 
-        <para>You can search in a work by clicking with the 
-<mousebutton>right</mousebutton> mouse button on its symbol and selecting 
-<guimenuitem>"Search in work(s)"</guimenuitem>. By pressing &Shift; and 
-clicking on other works you can select more than one. Then follow the same 
-procedure to open the search dialog. You will be searching in all of these 
-documents. A complete description of the operation of the search features 
-can be found on the <link linkend="hdbk-op-search">Searching in Works 
-section</link>.</para>
+        <para>Kereshet a dokumentumokban, ha a <mousebutton>jobb</mousebutton> egérgombbal 
+kattint a  dokumentum ikonjára, és kiválasztja a <guimenuitem>"Keresés 
+itt:"</guimenuitem> menüpontot. A &Shift; segítségével másik ikonokra 
+kattintva hozzáadhat még dokumentumokat a kereséshez, ekkor az összes 
+kiválasztott munkában fog keresni. A keresés teljes leírását <link 
+linkend="hdbk-op-search">itt</link> találhatja.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-bookshelf-bookmarks">
@@ -237,20 +235,23 @@ kattintva.</para>
       <sect3 id="hd-op-search-config-syntax">
         <title> Az alapvető keresési kifejezések bemutatása</title>
 
-        <para>Enter the search phrase separated by spaces.  By default the search function 
-will return results that match all the words.  If you want to find any of 
-the words entered, select the <guimenu>Some words</guimenu> button.  If you 
-want to perform a more complex search, select the <guimenu>Free</guimenu> 
-button.  You can see examples of searches by clicking on <guimenu>full 
-syntax</guimenu>.
+        <para>Billentyúzze be a keresési kifejezéseket szóközökkel 
+elválasztva. Alapértelmezetten a keresés eredménye az összes szót 
+tartalmazza. Amennyiben bármelyik szó megfelelő a begépeltek közül, válassza 
+a <guimenu>Bármely szó</guimenu> gombot. Amennyiben bonyolultabb keresési 
+szempontokat kíván megadni, válassza az <guimenu>Egyéni</guimenu> 
+gombot. Példákat találhat a <guimenu>teljes kifejezés</guimenu> lehetőségre 
+kattintva.
 	  </para>
 
-        <para>You can use wildcards: '*' matches any number of characters, while '?' will 
-match any single character. The use of brackets allows you to group your 
-search terms, e.g. '(Jesus OR spirit) AND God'.</para>
+        <para>Használhat helyettesítő karaktereket is: a '*' bármennyi betűt helyettesít, 
+míg a '?' csak egyet. Zárójelek használatával csoportosíthatja (mint 
+matematikában) a keresési kifejezéseket, például: '(Jézus OR lélek) ÉS 
+Isten'.</para>
 
-        <para>To search text other than the main text, enter the text type followed by 
-':', and then the search term.  Refer to the table below for examples.</para>
+        <para>Ha a fő szövegtől eltérő szövegrészt keres, akkor a szövegtípus megadása 
+után ':', és jöhet a keresési kifejezés. Például, ha a H8077-es Strong's 
+szám előfordulását keresi, így kell megadni: 'strong:H8077'.</para>
 
         <para>Lehetséges szövegtípusok:  
         <table id="hd-op-search-config-syntax-table">
@@ -260,19 +261,19 @@ search terms, e.g. '(Jesus OR spirit) AND God'.</para>
               <row>
                 <entry>Előtag</entry>
                 <entry>Jelentés</entry>
-		<entry>Example</entry>
+		<entry>Példa</entry>
               </row>
             </thead>
             <tbody>
               <row>
                 <entry>heading: (fejléc)</entry>
                 <entry>A fejlécekben keres</entry>
-		<entry>heading:Jesus</entry>
+		<entry>heading:Jézus</entry>
               </row>
               <row>
                 <entry>footnote: (lábjegyzet)</entry>
                 <entry>a lábjegyzetekben keres</entry>
-		<entry>footnote:Moses</entry>
+		<entry>footnote:Mózes</entry>
               </row>
               <row>
                 <entry>strong:</entry>
@@ -289,15 +290,16 @@ search terms, e.g. '(Jesus OR spirit) AND God'.</para>
         </table></para>
 
 	<tip>
-	  <para>You can right click on an installed work and select <guimenu>About</guimenu> 
-to find which of the above search criteria may work for you.  Not all works 
-have the built in features for performing this type of search.</para>
+	  <para>Jobb egérgombbal egy telepített munkára kattintva kiválaszthatja a 
+<guimenu>Névjegy</guimenu> menüpontot, hogy megnézze, milyen fent említett 
+keresési lehetőségei vannak. Nem minden dokumentum rendelkezik ilyen típusú 
+keresési lehetőségekkel.</para>
 	</tip>
 
-        <para>&bibletime; uses the Lucene search engine to perform your searches. It has 
-many advanced features, and you can read more about it here: <ulink 
+        <para>A &bibletime; a Lucene keresőmotorját alkalmazza, mely további fejlettebb 
+keresési lehetőséget ajánl. Többet megtudhat erről a <ulink 
 url="http://lucene.apache.org/java/docs/index.html"> 
-http://lucene.apache.org/java/docs/index.html</ulink>.</para>
+http://lucene.apache.org/java/docs/index.html</ulink> webcímen.</para>
       </sect3>
     </sect2>
 
@@ -354,8 +356,8 @@ a főmenü <menuchoice> <guimenu>Beállítások</guimenu>
 <guimenuitem>Könyvespolc menedzser</guimenuitem> </menuchoice> almenüjében.</para>
 
       <tip>
-	<para>If this is the first time you are starting &bibletime;, click on the Refresh 
-button to see a list of works provided by the &cbs;.</para>
+	<para>Ha ez az első alkalom, hogy elindította a &bibletime; -t, kattintson a 
+Frissítés gombra, hogy lássa a &cbs; által biztosított munkák listáját. </para>
       </tip>
 
     <sect2 id="hdbk-op-bookshelfmanager-path">

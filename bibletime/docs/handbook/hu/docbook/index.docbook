@@ -20,7 +20,7 @@
 ]>
 <book>
 <bookinfo>
-  <title>The &bibletime; Handbook</title>
+  <title>&bibletime; kézikönyv</title>
 
   <authorgroup>
     <author>
@@ -44,11 +44,11 @@
   <!-- TRANS:ROLES_OF_TRANSLATORS -->
 <copyright>
     <year>1999-2009</year>
-    <holder>The &bibletime; Team</holder>
+    <holder>A &bibletime; csapat</holder>
   </copyright>
 
   <legalnotice>
-    <para>The &bibletime; Handbook is part of the &bibletime; study aid.</para>
+    <para>A &bibletime; kézikönyv a &bibletime; segédlet része.</para>
   </legalnotice>
 
   <date>$LastChangedDate: 2009-11-18 13:30:32 -0500 (Wed, 18 Nov 2009) $</date>

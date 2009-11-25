@@ -583,12 +583,12 @@
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="240"/>
         <source>&amp;About...</source>
-        <translation>&amp;Névlegy...</translation>
+        <translation>&amp;Névjegy...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="290"/>
         <source>&amp;Search in %1...</source>
-        <translation>%1 -ben &amp;keresés...</translation>
+        <translation type="unfinished">&amp;Keresés itt: %1...</translation>
     </message>
 </context>
 <context>
@@ -925,18 +925,18 @@
     <message>
         <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="83"/>
         <source>Select a work [%1]</source>
-        <translation type="unfinished"></translation>
+        <translation>Válasszon egy munkát [%1]</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="86"/>
         <source>Select an additional work</source>
-        <translation type="unfinished">További dokumentum kiválasztása</translation>
+        <translation>További dokumentum kiválasztása</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="96"/>
         <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="124"/>
         <source>NONE</source>
-        <translation type="unfinished">SEMMI</translation>
+        <translation>SEMMI</translation>
     </message>
 </context>
 <context>
@@ -990,12 +990,12 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.cpp" line="52"/>
         <source>Work</source>
-        <translation type="unfinished">Dokumentum</translation>
+        <translation>Dokumentum</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.cpp" line="54"/>
         <source>Install path</source>
-        <translation type="unfinished">Telepítés helye</translation>
+        <translation>Telepítés helye</translation>
     </message>
 </context>
 <context>
@@ -1205,22 +1205,22 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="51"/>
         <source>Add/remove/replace</source>
-        <translation type="unfinished"></translation>
+        <translation>Hozzáadás/eltávolítás/áthelyezés</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="140"/>
         <source>Remove</source>
-        <translation type="unfinished">Törlés</translation>
+        <translation>Eltávolítás</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="146"/>
         <source>Replace</source>
-        <translation type="unfinished"></translation>
+        <translation>Áthelyezés</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="151"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Hozzáadás</translation>
     </message>
 </context>
 <context>
@@ -1720,17 +1720,17 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="349"/>
         <source>Work chooser buttons</source>
-        <translation type="unfinished"></translation>
+        <translation>Dokumentumválasztó gombok</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="415"/>
         <source>Navigation</source>
-        <translation type="unfinished"></translation>
+        <translation>Navigáció</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="423"/>
         <source>Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Eszközök</translation>
     </message>
 </context>
 <context>
@@ -2339,7 +2339,7 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="108"/>
         <source>A source with this caption already exists.  Please provide a different caption.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilyen nevű forrás már létezik. Kérjük adjon meg másik nevet.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="155"/>
@@ -3776,12 +3776,12 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/backend/bookshelfmodel/indexingitem.cpp" line="28"/>
         <source>Indexed works</source>
-        <translation type="unfinished"></translation>
+        <translation>Indexelt dokumentumok</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/indexingitem.cpp" line="30"/>
         <source>Unindexed works</source>
-        <translation type="unfinished"></translation>
+        <translation>Nem indexelt dokumentumok</translation>
     </message>
 </context>
 <context>
@@ -3952,7 +3952,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="129"/>
         <source>All words</source>
-        <translation>Összess szó</translation>
+        <translation>Összes szó</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="117"/>
