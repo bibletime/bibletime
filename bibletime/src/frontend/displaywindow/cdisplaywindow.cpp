@@ -355,7 +355,7 @@ void CDisplayWindow::setModuleChooserBar( BtModuleChooserBar* bar ) {
 void CDisplayWindow::setHeaderBar( QToolBar* header ) {
     m_headerBar = header;
     header->setMovable(false);
-    header->setWindowTitle("Work headers");
+    header->setWindowTitle(tr("Text area header"));
 }
 
 QToolBar* CDisplayWindow::headerBar(){
