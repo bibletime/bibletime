@@ -778,8 +778,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="42"/>
         <source>Works can be installed in one or more folders. After setting up folders here you can choose one of them in Install page.</source>
-        <translatorcomment>English text unclear?</translatorcomment>
-        <translation type="unfinished"></translation>
+        <translation>Modules kunnen in één map of verdeeld over meerdere mappen geïnstalleerd worden. Nadat u hier installatiemappen hebt gedefinieerd, kunt u één van deze mappen selecteren in het scherm Installeren/Updaten.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="44"/>
@@ -928,18 +927,18 @@
     <message>
         <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="83"/>
         <source>Select a work [%1]</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer een module [%1]</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="86"/>
         <source>Select an additional work</source>
-        <translation type="unfinished">Selecteer een additionele module</translation>
+        <translation>Selecteer een additionele module</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="96"/>
         <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="124"/>
         <source>NONE</source>
-        <translation type="unfinished">GEEN</translation>
+        <translation>GEEN</translation>
     </message>
 </context>
 <context>
@@ -1001,12 +1000,12 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.cpp" line="52"/>
         <source>Work</source>
-        <translation type="unfinished">Module</translation>
+        <translation>Module</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.cpp" line="54"/>
         <source>Install path</source>
-        <translation type="unfinished">Installatiepad</translation>
+        <translation>Installatiepad</translation>
     </message>
 </context>
 <context>
@@ -1220,22 +1219,22 @@ sneltoets</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="51"/>
         <source>Add/remove/replace</source>
-        <translation type="unfinished"></translation>
+        <translation>Toevoegen/verwijderen/vervangen</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="140"/>
         <source>Remove</source>
-        <translation type="unfinished">Verwijderen</translation>
+        <translation>Verwijderen</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="146"/>
         <source>Replace</source>
-        <translation type="unfinished"></translation>
+        <translation>Vervangen</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="151"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Toevoegen</translation>
     </message>
 </context>
 <context>
@@ -1288,9 +1287,9 @@ sneltoets</translation>
         <source>
    &quot;%1&quot; in the &quot;%2&quot; group</source>
         <translatorcomment>Translation depends on de exact output of %1 and %2.</translatorcomment>
-        <translation type="unfinished">Brontekst
+        <translation>Brontekst
 
-   &quot;%1&quot; in de &quot;%2&quot; groep</translation>
+   &quot;%1&quot; in groep &quot;%2&quot;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="257"/>
@@ -1743,17 +1742,18 @@ sneltoets</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="349"/>
         <source>Work chooser buttons</source>
-        <translation type="unfinished"></translation>
+        <translation>Module selectieknoppen</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="415"/>
         <source>Navigation</source>
-        <translation type="unfinished"></translation>
+        <translation>Navigatie</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="423"/>
         <source>Tools</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>In a menu, this is usually translated as &quot;Extra&quot;, but I guess this is really about a set of tools, not a menu item.</translatorcomment>
+        <translation>Hulpmiddelen</translation>
     </message>
 </context>
 <context>
@@ -2374,7 +2374,7 @@ sneltoets</translation>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="108"/>
         <source>A source with this caption already exists.  Please provide a different caption.</source>
-        <translation type="unfinished"></translation>
+        <translation>Er bestaat al een bron met deze titel. Geef een andere titel op a.u.b.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="155"/>
@@ -3823,12 +3823,12 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/backend/bookshelfmodel/indexingitem.cpp" line="28"/>
         <source>Indexed works</source>
-        <translation type="unfinished"></translation>
+        <translation>Geïndexeerde modules</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/indexingitem.cpp" line="30"/>
         <source>Unindexed works</source>
-        <translation type="unfinished"></translation>
+        <translation>Niet-geïndexeerde modules</translation>
     </message>
 </context>
 <context>
