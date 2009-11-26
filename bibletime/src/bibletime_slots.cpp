@@ -411,7 +411,7 @@ void BibleTime::saveProfile(CProfile* profile) {
     storeProfileSettings(profile);
 
     QList<CProfileWindow*> profileWindows;
-    foreach (QMdiSubWindow* w, m_mdi->subWindowList()) {
+    foreach (QMdiSubWindow* w, m_mdi->subWindowList(QMdiArea::StackingOrder)) {
         CDisplayWindow* displayWindow = dynamic_cast<CDisplayWindow*>(w->widget());
         if (!displayWindow) {
             continue;
