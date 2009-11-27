@@ -93,11 +93,9 @@ QWebView* BtTabHtmlDialog::webView() {
 
 void BtTabHtmlDialog::setHtml(const QString& html, const QUrl& baseUrl) {
     namespace DU = util::directory;
-
     QUrl url = baseUrl;
     if (url == QUrl()) {
-        QString dir("file://" + DU::getIconDir().path());
-        url.setUrl(dir);
+        QUrl url = QUrl::fromLocalFile(DU::getIconDir().path());
     }
     webView()->setHtml(html, url);
 }

@@ -234,8 +234,8 @@ static QString make_link(const QString& link, const QString& text) {
 
 static QString make_file_icon(const QString& icon) {
     namespace DU = util::directory;
-
-    QString dir("<img src=file://" + DU::getIconDir().path());
-    return dir + "/" + icon + ".png >";
+    QUrl url = QUrl::fromLocalFile(  DU::getIconDir().path()  + "/" + icon + ".svg");
+    QString html = "<img src=" + url.toString() + ">";
+    return html;
 }
 
