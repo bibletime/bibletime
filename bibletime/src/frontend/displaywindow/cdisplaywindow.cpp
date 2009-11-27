@@ -21,7 +21,6 @@
 #include "frontend/display/cdisplay.h"
 #include "frontend/displaywindow/bttoolbarpopupaction.h"
 #include "frontend/displaywindow/btactioncollection.h"
-//#include "frontend/displaywindow/cmodulechooserbar.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"
 #include "frontend/displaywindow/cbuttons.h"
 #include "frontend/keychooser/ckeychooser.h"
@@ -75,17 +74,9 @@ const QString CDisplayWindow::windowCaption() {
     return QString(key()->key()).append(" (").append(m_modules.join(" | ")).append(")");
 }
 
-/** Returns the used modules as a QPtrList */
+/** Returns the used modules as a pointer list */
 QList<CSwordModuleInfo*> CDisplayWindow::modules() {
-    qDebug() << "CDisplayWindow::modules";
-//     QList<CSwordModuleInfo*> mods;
-// 
-//     for (QStringList::iterator it = m_modules.begin(); it != m_modules.end(); ++it) {
-//         Q_ASSERT(backend()->findModuleByName(*it));
-//         if (CSwordModuleInfo* m = backend()->findModuleByName(*it)) {
-//             mods.append(m);
-//         }
-//     }
+    //qDebug() << "CDisplayWindow::modules";
 
     return CPointers::backend()->getPointerList(m_modules);
 }
@@ -216,10 +207,6 @@ void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
 
     if (keyChooser()) keyChooser()->setModules( modules(), false );
 
-    //if (m_moduleChooserBar) { //necessary for edit windows which have now chooser bar
-        //m_moduleChooserBar->setModules(modules());
-    //}
-    //modulesChanged();
     lookup();
 
     CBTConfig::setupAccelSettings(CBTConfig::allWindows, actionCollection());
@@ -232,7 +219,6 @@ void CDisplayWindow::slotAddModule(int index, QString module) {
     qDebug() << "CDisplayWindow::slotAddModule";
     m_modules.insert(index, module);
     lookup();
-    //emit sigModuleAdded(index, module);
     modulesChanged();
     emit sigModuleListChanged();
 }
@@ -242,7 +228,6 @@ void CDisplayWindow::slotReplaceModule(int index, QString newModule) {
     m_modules.replace(index, newModule);
     qDebug() << "window's new module list:" << m_modules;
     lookup();
-    //emit sigModuleReplaced(index, newModule);
     modulesChanged();
     emit sigModuleListChanged();
 }
@@ -251,7 +236,6 @@ void CDisplayWindow::slotRemoveModule(int index) {
     qDebug() << "CDisplayWindow::slotRemoveModule";
     m_modules.removeAt(index);
     lookup();
-    //emit sigModuleRemoved(index);
     modulesChanged();
     emit sigModuleListChanged();
 }
