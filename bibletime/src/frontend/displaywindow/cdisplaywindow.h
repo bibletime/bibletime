@@ -54,7 +54,9 @@ class CDisplayWindow : public QMainWindow, public CPointers {
         /** Returns the used modules as a pointer list.*/
         QList<CSwordModuleInfo*> modules();
         /** Returns the used modules as a string list.*/
-        QStringList getModuleList() {return m_modules;}
+        QStringList getModuleList() {
+            return m_modules;
+        }
 
         /** Store the settings of this window in the given CProfileWindow object.*/
         virtual void storeProfileSettings( Profile::CProfileWindow* profileWindow ) = 0;
@@ -151,7 +153,7 @@ class CDisplayWindow : public QMainWindow, public CPointers {
         void slotAddModule(int index, QString module);
         void slotReplaceModule(int index, QString newModule);
         void slotRemoveModule(int index);
-        
+
         /**
         * Lookup the specified key in the given module. If the module is not chosen withing
         * this display window create a new displaywindow with the right module in it.
@@ -188,7 +190,7 @@ class CDisplayWindow : public QMainWindow, public CPointers {
 
         void setHeaderBar(QToolBar* header);
         QToolBar* headerBar();
-        
+
         /** Sets the modules. */
         void setModules( const QList<CSwordModuleInfo*>& modules );
 

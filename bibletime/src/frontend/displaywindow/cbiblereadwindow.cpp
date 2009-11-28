@@ -135,7 +135,7 @@ void CBibleReadWindow::insertKeyboardActions( BtActionCollection* const a ) {
     qaction = new QAction(tr("Reference with text"), a);
     a->addAction("printReferenceWithText", qaction);
 
-	qaction = new QAction(tr("Reference with text"), a);
+    qaction = new QAction(tr("Reference with text"), a);
     a->addAction("saveReferenceWithText", qaction);
 }
 

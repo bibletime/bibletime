@@ -27,16 +27,14 @@ BtModuleChooserButton::BtModuleChooserButton(BtModuleChooserBar *parent, CSwordM
         : QToolButton(parent),
         m_moduleType(mtype),
         m_popup(0),
-        m_moduleChooserBar(parent)
-{
+        m_moduleChooserBar(parent) {
     //qDebug()<<"BtModuleChooserButton::BtModuleChooserButton";
     setPopupMode(QToolButton::InstantPopup);
 }
 
 BtModuleChooserButton::~BtModuleChooserButton() {}
 
-void BtModuleChooserButton::recreateMenu(QStringList newModulesToUse, QString thisModule, int newIndex)
-{
+void BtModuleChooserButton::recreateMenu(QStringList newModulesToUse, QString thisModule, int newIndex) {
     populateMenu();
     updateMenu(newModulesToUse, thisModule, newIndex);
 }
@@ -61,10 +59,10 @@ void BtModuleChooserButton::updateMenu(QStringList newModulesToUse, QString this
     //qDebug() << "BtModuleChooserButton::updateMenu" << newModulesToUse << thisModule << newIndex << this;
     // create the menu if it doesn't exist
     if (!m_popup) populateMenu();
-    
+
     m_id = newIndex;
     m_module = thisModule;
-    m_hasModule = thisModule.isEmpty()? false:true;
+    m_hasModule = thisModule.isEmpty() ? false : true;
     namespace DU = util::directory;
 
     //All items are iterated and the state is changed properly
@@ -95,10 +93,11 @@ void BtModuleChooserButton::moduleChosen( QAction* action ) {
 
     if (action->text() == tr("NONE")) { // note: this is for m_popup, the toplevel!
         if (m_hasModule) {
-            qDebug() <<"remove module" <<m_id;
+            qDebug() << "remove module" << m_id;
             emit sigModuleRemove(m_id);
             return;
-        } else {
+        }
+        else {
             // nothing else is done but the item must be set to checked
             // lest it change to unchecked
             action->setChecked(true);
@@ -106,7 +105,7 @@ void BtModuleChooserButton::moduleChosen( QAction* action ) {
     }
     else {
         if (!m_hasModule) {
-            emit sigModuleAdd(m_id+1, action->text());
+            emit sigModuleAdd(m_id + 1, action->text());
             return;
         }
         emit sigModuleReplace(m_id, action->text());
@@ -146,7 +145,7 @@ void BtModuleChooserButton::populateMenu() {
 }
 
 void BtModuleChooserButton::addItemToMenu(BTModuleTreeItem* item, QMenu* menu) {
-    qDebug()<<"BtModuleChooserButton::addItemToMenu";
+    qDebug() << "BtModuleChooserButton::addItemToMenu";
     foreach (BTModuleTreeItem* i, item->children()) {
 
         if (i->type() == BTModuleTreeItem::Language) {

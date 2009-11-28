@@ -20,8 +20,7 @@
 BtModuleChooserBar::BtModuleChooserBar(QStringList useModules, CSwordModuleInfo::ModuleType type, CReadWindow *parent)
         : QToolBar(parent),
         BtWindowModuleChooser(parent, type),
-        m_idCounter(0)
-{
+        m_idCounter(0) {
 
     qDebug() << "BtModuleChooserBar::BtModuleChooserBar";
     setAllowedAreas(Qt::TopToolBarArea);
@@ -31,16 +30,15 @@ BtModuleChooserBar::BtModuleChooserBar(QStringList useModules, CSwordModuleInfo:
     connect(parent, SIGNAL(sigModuleListChanged()), SLOT(slotWindowModulesChanged()));
 }
 
-void BtModuleChooserBar::slotBackendModulesChanged()
-{
+void BtModuleChooserBar::slotBackendModulesChanged() {
     backendModulesChanged();
 }
 
 void BtModuleChooserBar::backendModulesChanged() {
     m_modules = m_window->getModuleList();
-    
+
     adjustButtonCount();
-    
+
     //recreate all menus from scratch
     for (int i = 0; i < m_buttonList.count(); i++) {
         BtModuleChooserButton* button = m_buttonList.at(i);
@@ -50,8 +48,7 @@ void BtModuleChooserBar::backendModulesChanged() {
     }
 }
 
-void BtModuleChooserBar::slotWindowModulesChanged()
-{
+void BtModuleChooserBar::slotWindowModulesChanged() {
     windowModulesChanged();
 }
 
@@ -60,11 +57,12 @@ void BtModuleChooserBar::adjustButtonCount(bool adjustToZero) {
     int buttonCountDifference = 0;
     if (adjustToZero) {
         buttonCountDifference = m_buttonList.count();
-    } else {
-        buttonCountDifference = m_buttonList.count() - (m_modules.count() +1);
+    }
+    else {
+        buttonCountDifference = m_buttonList.count() - (m_modules.count() + 1);
     }
     if (m_moduleType == CSwordModuleInfo::GenericBook && !adjustToZero) {
-        buttonCountDifference = (1 - m_buttonList.count()) * -1;   
+        buttonCountDifference = (1 - m_buttonList.count()) * -1;
     }
     //if there are more buttons than modules, delete buttons
     if (buttonCountDifference > 0) {
@@ -78,7 +76,7 @@ void BtModuleChooserBar::adjustButtonCount(bool adjustToZero) {
     }
     // if there are more modules than buttons, add buttons
     if (buttonCountDifference < 0) {
-        for (int i = (buttonCountDifference*(-1)); i > 0; i--) {
+        for (int i = (buttonCountDifference * (-1)); i > 0; i--) {
             addButton();
         }
     }
@@ -99,10 +97,10 @@ BtModuleChooserButton* BtModuleChooserBar::addButton() {
 
     // the button sends signals directly to the window which then signals back when the module
     // list has changed
-    connect(b, SIGNAL(sigModuleAdd(int,QString)), m_window, SLOT(slotAddModule(int,QString)));
-    connect(b, SIGNAL(sigModuleReplace(int,QString)), m_window, SLOT(slotReplaceModule(int,QString)));
+    connect(b, SIGNAL(sigModuleAdd(int, QString)), m_window, SLOT(slotAddModule(int, QString)));
+    connect(b, SIGNAL(sigModuleReplace(int, QString)), m_window, SLOT(slotReplaceModule(int, QString)));
     connect(b, SIGNAL(sigModuleRemove(int)), m_window, SLOT(slotRemoveModule(int)));
-    
+
     a->setVisible(true);
     return b;
 }
@@ -126,7 +124,7 @@ void BtModuleChooserBar::setModules( QStringList useModules ) {
 
 void BtModuleChooserBar::updateButtonMenus() {
     //qDebug() << "BtModuleChooserBar::updateMenuItems";
-    
+
     for (int i = 0; i < m_buttonList.count(); i++) {
         BtModuleChooserButton* button = m_buttonList.at(i);
         QString moduleName = (i >= m_modules.count()) ? QString::null : m_modules.at(i);

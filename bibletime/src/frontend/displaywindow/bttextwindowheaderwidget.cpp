@@ -32,17 +32,16 @@ BtTextWindowHeaderWidget::BtTextWindowHeaderWidget(BtTextWindowHeader *parent, C
         : QWidget(parent),
         m_moduleType(mtype),
         m_popup(0),
-        m_header(parent)
-{
+        m_header(parent) {
     QHBoxLayout* layout = new QHBoxLayout(this);
-    layout->setContentsMargins(0,0,0,0);
-    
+    layout->setContentsMargins(0, 0, 0, 0);
+
     m_label = new QLabel("", this);
     QSizePolicy sizePolicy(QSizePolicy::Ignored, QSizePolicy::Fixed);
     m_label->setSizePolicy(sizePolicy);
     m_label->setStyleSheet("QLabel{font-weight:bold}");
     layout->addWidget(m_label, 0, Qt::AlignRight);
-    
+
     m_button = new QToolButton( this );
     m_button->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
     m_button->setPopupMode( QToolButton::InstantPopup );
@@ -51,7 +50,7 @@ BtTextWindowHeaderWidget::BtTextWindowHeaderWidget(BtTextWindowHeader *parent, C
     m_button->setToolTip( tr("Add/remove/replace") );
 
     layout->addWidget(m_button, 0, Qt::AlignLeft);
-    
+
     m_separator = new QFrame(this);
     m_separator->setFrameShape(QFrame::VLine);
     layout->addWidget(m_separator);
@@ -59,8 +58,7 @@ BtTextWindowHeaderWidget::BtTextWindowHeaderWidget(BtTextWindowHeader *parent, C
 
 BtTextWindowHeaderWidget::~BtTextWindowHeaderWidget() {}
 
-void BtTextWindowHeaderWidget::recreateWidget(QStringList newModulesToUse, QString thisModule, int newIndex)
-{
+void BtTextWindowHeaderWidget::recreateWidget(QStringList newModulesToUse, QString thisModule, int newIndex) {
     populateMenu();
     updateWidget(newModulesToUse, thisModule, newIndex);
 }
@@ -87,7 +85,7 @@ void BtTextWindowHeaderWidget::updateWidget(QStringList newModulesToUse, QString
     m_label->setText(thisModule);
     // create the menu if it doesn't exist
     if (!m_popup) populateMenu();
-    
+
     m_id = newIndex;
     m_module = thisModule;
     namespace DU = util::directory;
@@ -102,10 +100,11 @@ void BtTextWindowHeaderWidget::updateWidget(QStringList newModulesToUse, QString
         }
     }
 
-    if (m_id == newModulesToUse.count()-1) {
+    if (m_id == newModulesToUse.count() - 1) {
         // this is the rightmost module, hide the separator
         m_separator->hide();
-    } else {
+    }
+    else {
         m_separator->show();
     }
     m_removeAction->setDisabled((newModulesToUse.count() == 1) ? true : false);
@@ -120,7 +119,7 @@ void BtTextWindowHeaderWidget::moduleChosen( QAction* action ) {
         return;
     }
     if (action->property(ActionType).toInt() == AddAction) {
-        emit sigModuleAdd(m_id+1, action->text());
+        emit sigModuleAdd(m_id + 1, action->text());
         return;
     }
     if (action->property(ActionType).toInt() == ReplaceAction) {
@@ -141,7 +140,7 @@ void BtTextWindowHeaderWidget::populateMenu() {
     m_removeAction->setProperty(ActionType, RemoveAction);
     m_removeAction->setIcon(util::directory::getIcon(CResMgr::displaywindows::general::removemoduleicon));
     m_popup->addAction(m_removeAction);
-    
+
     // Add Replace and Add menus, both have all modules in them
     QMenu* replaceItem = new QMenu(tr("Replace"), m_popup);
     replaceItem->setIcon(util::directory::getIcon(CResMgr::displaywindows::general::replacemoduleicon));
@@ -156,11 +155,11 @@ void BtTextWindowHeaderWidget::populateMenu() {
     QList<QMenu*> toplevelMenus;
     toplevelMenus.append(replaceItem);
     toplevelMenus.append(addItem);
-    
+
     foreach(QMenu* menu, toplevelMenus) {
         // ******* Add languages and modules ********
         //m_popup->addSeparator();
-        
+
         // Filters: add only non-hidden, non-locked and correct type
         BTModuleTreeItem::HiddenOff hiddenFilter;
         TypeFilter typeFilter(m_moduleType);
@@ -176,7 +175,7 @@ void BtTextWindowHeaderWidget::populateMenu() {
 }
 
 void BtTextWindowHeaderWidget::addItemToMenu(BTModuleTreeItem* item, QMenu* menu, TypeOfAction actionType) {
-    qDebug()<<"BtTextWindowHeaderWidget::addItemToMenu";
+    qDebug() << "BtTextWindowHeaderWidget::addItemToMenu";
     foreach (BTModuleTreeItem* i, item->children()) {
 
         if (i->type() == BTModuleTreeItem::Language) {

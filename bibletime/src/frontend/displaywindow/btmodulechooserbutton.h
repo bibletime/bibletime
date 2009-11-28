@@ -65,7 +65,7 @@ class BtModuleChooserButton : public QToolButton  {
 
         /** Creates the menu from scratch and updates the items using updateMenu().*/
         void recreateMenu(QStringList newModulesToUse, QString thisModule, int newIndex);
-        
+
     signals:
         /** User selected a module from menu to replace another module*/
         void sigModuleReplace ( int index, QString newModule );
@@ -81,7 +81,7 @@ class BtModuleChooserButton : public QToolButton  {
     private:
         /** Returns the icon used for the current status.*/
         const QString iconName();
-        
+
         /**
         * Populates the menu with language submenus and module items without setting
         * their states.
@@ -89,7 +89,7 @@ class BtModuleChooserButton : public QToolButton  {
         void populateMenu();
         /** Adds items to the menu recursively. */
         void addItemToMenu(BTModuleTreeItem* item, QMenu* menu);
-        
+
     private:
         bool m_hasModule;
         int m_id;

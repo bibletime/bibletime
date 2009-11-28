@@ -24,19 +24,17 @@
 
 BtTextWindowHeader::BtTextWindowHeader ( CDisplayWindow* window, CSwordModuleInfo::ModuleType modtype, QStringList modules )
         : QWidget ( window ),
-        BtWindowModuleChooser(window, modtype)
-{
-   QHBoxLayout* layout = new QHBoxLayout ( this );
-   layout->setContentsMargins(0,0,0,0); 
-   setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
-   setLayoutDirection(Qt::LeftToRight);
+        BtWindowModuleChooser(window, modtype) {
+    QHBoxLayout* layout = new QHBoxLayout ( this );
+    layout->setContentsMargins(0, 0, 0, 0);
+    setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+    setLayoutDirection(Qt::LeftToRight);
     setModules(modules);
     connect(window, SIGNAL(sigModuleListSet(QStringList)), SLOT(slotBackendModulesChanged()));
     connect(window, SIGNAL(sigModuleListChanged()), SLOT(slotWindowModulesChanged()));
 }
 
-BtTextWindowHeader::~BtTextWindowHeader()
-{}
+BtTextWindowHeader::~BtTextWindowHeader() {}
 
 void BtTextWindowHeader::slotBackendModulesChanged() {
     backendModulesChanged();
@@ -44,9 +42,9 @@ void BtTextWindowHeader::slotBackendModulesChanged() {
 
 void BtTextWindowHeader::backendModulesChanged() {
     m_modules = m_window->getModuleList();
-    
+
     adjustWidgetCount();
-    
+
     //recreate all widgets from scratch
     for (int i = 0; i < m_widgetList.count(); i++) {
         BtTextWindowHeaderWidget* widgt = m_widgetList.at(i);
@@ -71,11 +69,12 @@ void BtTextWindowHeader::adjustWidgetCount(bool adjustToZero) {
     int widgetCountDifference = 0;
     if (adjustToZero) {
         widgetCountDifference = m_widgetList.count();
-    } else {
+    }
+    else {
         widgetCountDifference = m_widgetList.count() - (m_modules.count());
     }
     if (m_moduleType == CSwordModuleInfo::GenericBook && !adjustToZero) {
-        widgetCountDifference = (1 - m_widgetList.count()) * -1;   
+        widgetCountDifference = (1 - m_widgetList.count()) * -1;
     }
     //if there are more buttons than modules, delete buttons
     if (widgetCountDifference > 0) {
@@ -103,10 +102,10 @@ BtTextWindowHeaderWidget* BtTextWindowHeader::addWidget() {
 
     // the button sends signals directly to the window which then signals back when the module
     // list has changed
-    connect(w, SIGNAL(sigModuleAdd(int,QString)), m_window, SLOT(slotAddModule(int,QString)));
-    connect(w, SIGNAL(sigModuleReplace(int,QString)), m_window, SLOT(slotReplaceModule(int,QString)));
+    connect(w, SIGNAL(sigModuleAdd(int, QString)), m_window, SLOT(slotAddModule(int, QString)));
+    connect(w, SIGNAL(sigModuleReplace(int, QString)), m_window, SLOT(slotReplaceModule(int, QString)));
     connect(w, SIGNAL(sigModuleRemove(int)), m_window, SLOT(slotRemoveModule(int)));
-    
+
     return w;
 }
 
@@ -123,8 +122,7 @@ void BtTextWindowHeader::setModules( QStringList useModules ) {
     //qDebug() << "BtModuleChooserBar::setModules end";
 }
 
-void BtTextWindowHeader::updateWidgets()
-{
+void BtTextWindowHeader::updateWidgets() {
     for (int i = 0; i < m_widgetList.count(); i++) {
         BtTextWindowHeaderWidget* w = m_widgetList.at(i);
         //QString moduleName = m_modules.at(i);

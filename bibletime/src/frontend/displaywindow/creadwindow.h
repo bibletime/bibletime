@@ -25,7 +25,7 @@ class QResizeEvent;
 class CReadWindow : public CDisplayWindow  {
         Q_OBJECT
     public:
-       
+
         static void insertKeyboardActions( BtActionCollection* const a );
 
         CReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);

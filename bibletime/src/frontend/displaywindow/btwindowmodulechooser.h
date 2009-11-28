@@ -33,30 +33,29 @@ class CDisplayWindow;
 *
 * Connect slots and signals to the window's corresponding signals and slots.
 */
-class BtWindowModuleChooser
-{
-public:
-    BtWindowModuleChooser ( CDisplayWindow* parentWindow, CSwordModuleInfo::ModuleType moduleType )
-            : m_window ( parentWindow ), m_moduleType ( moduleType ) {}
+class BtWindowModuleChooser {
+    public:
+        BtWindowModuleChooser ( CDisplayWindow* parentWindow, CSwordModuleInfo::ModuleType moduleType )
+                : m_window ( parentWindow ), m_moduleType ( moduleType ) {}
 
-    virtual ~BtWindowModuleChooser() {}
+        virtual ~BtWindowModuleChooser() {}
 
-protected:
-    /**
-    * The backend module list was updated, module list and widgets must be updated.
-    * This expects that the window module list has already been updated, so
-    * the corresponding slot should be connected to the window, not to the backend.
-    */
-    virtual void backendModulesChanged() = 0;
-    /** Modules have been added, replaced or removed in the window without backend changing.*/
-    virtual void windowModulesChanged() = 0;
+    protected:
+        /**
+        * The backend module list was updated, module list and widgets must be updated.
+        * This expects that the window module list has already been updated, so
+        * the corresponding slot should be connected to the window, not to the backend.
+        */
+        virtual void backendModulesChanged() = 0;
+        /** Modules have been added, replaced or removed in the window without backend changing.*/
+        virtual void windowModulesChanged() = 0;
 
-    
-protected:
-    CDisplayWindow* m_window;
-    CSwordModuleInfo::ModuleType m_moduleType;
-    /** The cache of the window module list. Kept for convenience.*/
-    QStringList m_modules;
+
+    protected:
+        CDisplayWindow* m_window;
+        CSwordModuleInfo::ModuleType m_moduleType;
+        /** The cache of the window module list. Kept for convenience.*/
+        QStringList m_modules;
 };
 
 #endif

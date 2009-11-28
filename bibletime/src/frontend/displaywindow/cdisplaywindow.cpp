@@ -191,7 +191,7 @@ void CDisplayWindow::initActions() {
 
 /** Refresh the settings of this window. */
 void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
-    qDebug()<<"CDisplayWindow::reload";
+    qDebug() << "CDisplayWindow::reload";
     //first make sure all used Sword modules are still present
     QMutableStringListIterator it(m_modules);
     while (it.hasNext()) {
@@ -298,21 +298,21 @@ void CDisplayWindow::setKey( CSwordKey* key ) {
 }
 
 void CDisplayWindow::modulesChanged() {
-    // this would only set the stringlist again 
+    // this would only set the stringlist again
     //if (moduleChooserBar()) { //necessary for write windows
-         //setModules( m_moduleChooserBar->getModuleList() );
-     //}
-     if (!modules().count()) {
-         close();
-     }
-     else {
-         if (displaySettingsButton()) {
-             displaySettingsButton()->reset(modules());
-         }
- 
-         key()->module(modules().first());
-         keyChooser()->setModules(modules());
-     }
+    //setModules( m_moduleChooserBar->getModuleList() );
+    //}
+    if (!modules().count()) {
+        close();
+    }
+    else {
+        if (displaySettingsButton()) {
+            displaySettingsButton()->reset(modules());
+        }
+
+        key()->module(modules().first());
+        keyChooser()->setModules(modules());
+    }
 }
 
 /** Returns the module chooser bar. */
@@ -342,7 +342,7 @@ void CDisplayWindow::setHeaderBar( QToolBar* header ) {
     header->setWindowTitle(tr("Text area header"));
 }
 
-QToolBar* CDisplayWindow::headerBar(){
+QToolBar* CDisplayWindow::headerBar() {
     return m_headerBar;
 }
 

@@ -25,20 +25,19 @@ class QToolButton;
 class QFrame;
 
 /**
-* A widget for choosing a module in a window. Consists of a label and a button. 
+* A widget for choosing a module in a window. Consists of a label and a button.
 * When user selects a module,
 * button sends a signal. This widget needs to get a message back after a window
 * module list has been changed. Only then it will be updated.
 * See BtTextWindowHeader.
 */
-class BtTextWindowHeaderWidget : public QWidget
-{
-    Q_OBJECT
+class BtTextWindowHeaderWidget : public QWidget {
+        Q_OBJECT
 
     public:
         /** For internal use to mark the menu items */
         enum TypeOfAction {RemoveAction, AddAction, ReplaceAction};
-        
+
         /** Filter out modules of wrong type from buttons module list.
         * See populateMenu() and BTModuleTreeItem. */
         struct TypeFilter : public BTModuleTreeItem::Filter {
@@ -68,7 +67,7 @@ class BtTextWindowHeaderWidget : public QWidget
 
         /** Creates the menu from scratch and updates the items using updateMenu().*/
         void recreateWidget(QStringList newModulesToUse, QString thisModule, int newIndex);
-        
+
     signals:
         /** User selected a module from menu to replace an existing module.*/
         void sigModuleReplace ( int index, QString newModule );
@@ -82,7 +81,7 @@ class BtTextWindowHeaderWidget : public QWidget
         void moduleChosen(QAction* action );
 
     private:
-        
+
         /**
         * Populates the menu with language submenus and module items without setting
         * their states.
@@ -90,7 +89,7 @@ class BtTextWindowHeaderWidget : public QWidget
         void populateMenu();
         /** Adds items to the menu recursively. */
         void addItemToMenu(BTModuleTreeItem* item, QMenu* menu, TypeOfAction actionType);
-        
+
     private:
 
         int m_id;
