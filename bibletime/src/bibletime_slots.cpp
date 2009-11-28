@@ -556,6 +556,6 @@ void BibleTime::refreshProfileMenus() {
 
 // Quit from BibleTime
 void BibleTime::quit() {
-	Search::CSearchDialog::closeDialog();
-	close();
+    Search::CSearchDialog::closeDialog();
+    close();
 }

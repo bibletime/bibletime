@@ -145,7 +145,7 @@ void BtInstallPage::initPathCombo() {
         if (!dir.isReadable()) continue;
         QFileInfo fi( dir.canonicalPath());
         if (!fi.isWritable()) continue;
-		m_pathCombo->addItem(util::directory::convertDirSeparators(*it));
+        m_pathCombo->addItem(util::directory::convertDirSeparators(*it));
     }
 
     // choose the current value from config but check whether we have so many items

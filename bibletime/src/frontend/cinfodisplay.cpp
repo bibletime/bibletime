@@ -296,7 +296,7 @@ const QString CInfoDisplay::decodeCrossReference( const QString& data ) {
            .arg(lang)
            .arg(tr("Cross references"))
            .arg(module ? ((module->textDirection() == CSwordModuleInfo::LeftToRight) ? "ltr" : "rtl") : "")
-           .arg(RenderedText);
+                   .arg(RenderedText);
 }
 
 /*!

@@ -81,7 +81,7 @@ CSwordSetupInstallSourcesDialog::CSwordSetupInstallSourcesDialog(/*QWidget *pare
 
     mainLayout->addSpacing( 10 );
 
-    QDialogButtonBox* buttonBox = new QDialogButtonBox(QDialogButtonBox::Cancel|QDialogButtonBox::Save, Qt::Horizontal, this);
+    QDialogButtonBox* buttonBox = new QDialogButtonBox(QDialogButtonBox::Cancel | QDialogButtonBox::Save, Qt::Horizontal, this);
     util::prepareDialogBox(buttonBox);
     QPushButton* getListButton = new QPushButton(tr("Get list..."), this);
     getListButton->setToolTip(tr("Download a list of sources from CrossWire server and add sources"));
@@ -153,7 +153,7 @@ void CSwordSetupInstallSourcesDialog::slotProtocolChanged() {
 
 void CSwordSetupInstallSourcesDialog::slotGetListClicked() {
     QString message(tr("List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don't want to keep.\n\nDo you want to continue?"));
-    QMessageBox::StandardButton answer = util::showQuestion(this, tr("Get source list from remote server?"), message, QMessageBox::Yes|QMessageBox::No, QMessageBox::Yes);
+    QMessageBox::StandardButton answer = util::showQuestion(this, tr("Get source list from remote server?"), message, QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
     if (answer == QMessageBox::No) {
         return;
     }
@@ -181,7 +181,7 @@ void CSwordSetupInstallSourcesDialog::slotGetListClicked() {
         qDebug() << "download succeeded";
         success = true;
         m_progressDialog->setValue(100); //make sure the dialog closes
-        m_remoteListAdded = true; 
+        m_remoteListAdded = true;
         accept();
     }
     else {

@@ -16,7 +16,7 @@
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
 
 class BtRemovePageTreeModel: public BtBookshelfTreeModel {
-    Q_OBJECT
+        Q_OBJECT
 
     public:
         BtRemovePageTreeModel(QObject *parent = 0);

@@ -14,8 +14,7 @@
 
 
 BtRemovePageTreeModel::BtRemovePageTreeModel(QObject *parent)
-    : BtBookshelfTreeModel(parent)
-{
+        : BtBookshelfTreeModel(parent) {
     setCheckable(true);
     setDefaultChecked(BtBookshelfTreeModel::UNCHECKED);
 }
@@ -36,7 +35,8 @@ QVariant BtRemovePageTreeModel::data(const QModelIndex &i, int role) const {
             default:
                 break;
         }
-    } else {
+    }
+    else {
         return BtBookshelfTreeModel::data(i, role);
     }
 
@@ -44,13 +44,13 @@ QVariant BtRemovePageTreeModel::data(const QModelIndex &i, int role) const {
 }
 
 QVariant BtRemovePageTreeModel::headerData(int section,
-                                           Qt::Orientation orientation,
-                                           int role) const
-{
+        Qt::Orientation orientation,
+        int role) const {
     if (role == Qt::DisplayRole && orientation == Qt::Horizontal) {
         if (section == 0) {
             return tr("Work");
-        } else if (section == 1) {
+        }
+        else if (section == 1) {
             return tr("Install path");
         }
     }

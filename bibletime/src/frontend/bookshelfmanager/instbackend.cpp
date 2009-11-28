@@ -120,7 +120,7 @@ bool deleteSource(QString name) {
         sce = l.join("|").append("|");
         it = range.first;
         while (it != range.second) {
-           qDebug() << it->second;
+            qDebug() << it->second;
             if (it->second == sce) {
                 config["Sources"].erase(it);
                 break;
@@ -150,8 +150,8 @@ bool isRemote(const sword::InstallSource& source) {
 }
 
 const QString configPath() {
-	QString confPath = util::directory::getUserHomeSwordDir().absolutePath();
-	confPath.append("/InstallMgr");
+    QString confPath = util::directory::getUserHomeSwordDir().absolutePath();
+    confPath.append("/InstallMgr");
     return confPath;
 }
 
@@ -196,23 +196,23 @@ bool setTargetList( const QStringList& targets ) {
         return false;
     }
 
-	filename = util::directory::convertDirSeparators(filename);
+    filename = util::directory::convertDirSeparators(filename);
     SWConfig conf(filename.toLocal8Bit());
     conf.Sections.clear();
 
 #ifdef Q_WS_WIN
-	// On Windows, add the sword directory to the config file.
-	QString swordPath = DU::convertDirSeparators( DU::getApplicationSwordDir().absolutePath());
-	conf["Install"].insert( 
-		std::make_pair( SWBuf("LocalePath"), swordPath.toLocal8Bit().data() )
-	);
+    // On Windows, add the sword directory to the config file.
+    QString swordPath = DU::convertDirSeparators( DU::getApplicationSwordDir().absolutePath());
+    conf["Install"].insert(
+        std::make_pair( SWBuf("LocalePath"), swordPath.toLocal8Bit().data() )
+    );
 #endif
 
     bool setDataPath = false;
     for (QStringList::const_iterator it = targets.begin(); it != targets.end(); ++it) {
-		QString t = DU::convertDirSeparators(*it);
+        QString t = DU::convertDirSeparators(*it);
 #ifdef Q_WS_WIN
-		if (t.contains(DU::convertDirSeparators(DU::getUserHomeDir().canonicalPath().append("\\Sword")))) {
+        if (t.contains(DU::convertDirSeparators(DU::getUserHomeDir().canonicalPath().append("\\Sword")))) {
 #else
         if (t.contains(DU::getUserHomeDir().canonicalPath().append("/.sword"))) {
 #endif

@@ -192,12 +192,12 @@ void BtSourceWidget::initSources() {
 
     //first clear all sources
     //int i = count();
-    for (int i = count()-1; i >= 0; i--) {
+    for (int i = count() - 1; i >= 0; i--) {
         BtSourceArea* a = dynamic_cast<BtSourceArea*>(widget(i));
         a->prepareRemove();
     }
-    for (int i = count()-1; i >= 0; i--) {
-        qDebug() << "remove tab"<<tabText(i);
+    for (int i = count() - 1; i >= 0; i--) {
+        qDebug() << "remove tab" << tabText(i);
         QWidget* w = widget(i);
         removeTab(i);
         delete w;

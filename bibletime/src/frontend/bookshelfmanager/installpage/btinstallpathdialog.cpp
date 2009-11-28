@@ -125,19 +125,22 @@ void BtInstallPathDialog::updateTopLevelItems() {
     if (m_writableItem->childCount()) {
         m_writableItem->setHidden(false);
         m_swordPathListBox->expandItem(m_writableItem);
-    } else {
+    }
+    else {
         m_writableItem->setHidden(true);
     }
     if (m_readableItem->childCount()) {
         m_readableItem->setHidden(false);
         m_swordPathListBox->expandItem(m_readableItem);
-    } else {
+    }
+    else {
         m_readableItem->setHidden(true);
     }
     if (m_nonexistingItem->childCount()) {
         m_nonexistingItem->setHidden(false);
         m_swordPathListBox->expandItem(m_nonexistingItem);
-    } else {
+    }
+    else {
         m_nonexistingItem->setHidden(true);
     }
 }
@@ -145,22 +148,24 @@ void BtInstallPathDialog::updateTopLevelItems() {
 
 void BtInstallPathDialog::addPathToList(QString pathname) {
     if (pathname.isEmpty()) return;
-        QTreeWidgetItem* i = 0;
-        QDir dir(pathname);
-        if (!dir.exists()) {
-            i = new QTreeWidgetItem(m_nonexistingItem, QStringList(pathname) );
-        } else if (dir.isReadable()) {
-            const QFileInfo fi( dir.canonicalPath() );
-            if (fi.isWritable()) {
-                i = new QTreeWidgetItem(m_writableItem, QStringList(pathname) );
-            } else {
-                i = new QTreeWidgetItem(m_readableItem, QStringList(pathname) );
-            }
+    QTreeWidgetItem* i = 0;
+    QDir dir(pathname);
+    if (!dir.exists()) {
+        i = new QTreeWidgetItem(m_nonexistingItem, QStringList(pathname) );
+    }
+    else if (dir.isReadable()) {
+        const QFileInfo fi( dir.canonicalPath() );
+        if (fi.isWritable()) {
+            i = new QTreeWidgetItem(m_writableItem, QStringList(pathname) );
         }
-        if (i && QDir(pathname) == instbackend::swordDir()) {
-            i->setFlags(Qt::NoItemFlags);
-            i->setToolTip(0, tr("This default folder in your home directory can't be removed"));
+        else {
+            i = new QTreeWidgetItem(m_readableItem, QStringList(pathname) );
         }
+    }
+    if (i && QDir(pathname) == instbackend::swordDir()) {
+        i->setFlags(Qt::NoItemFlags);
+        i->setToolTip(0, tr("This default folder in your home directory can't be removed"));
+    }
 }
 
 void BtInstallPathDialog::slotEditClicked() {
@@ -218,7 +223,7 @@ void BtInstallPathDialog::slotRemoveClicked() {
 void BtInstallPathDialog::writeSwordConfig() {
     qDebug() << "BtInstallPathDialog::writeSwordConfig";
     QStringList targets;
-    QTreeWidgetItemIterator it(m_swordPathListBox, QTreeWidgetItemIterator::NoChildren|QTreeWidgetItemIterator::Enabled|QTreeWidgetItemIterator::NotHidden);
+    QTreeWidgetItemIterator it(m_swordPathListBox, QTreeWidgetItemIterator::NoChildren | QTreeWidgetItemIterator::Enabled | QTreeWidgetItemIterator::NotHidden);
     while (*it) {
         if (!(*it)->text(0).isEmpty()) {
             targets << (*it)->text(0);

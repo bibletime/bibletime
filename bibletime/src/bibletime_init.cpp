@@ -437,21 +437,21 @@ void BibleTime::initSwordConfigFile() {
 // If this is not done here, the sword locales.d won't be found
 #ifdef Q_WS_WIN
     namespace DU = util::directory;
-	QString configFile = util::directory::getUserHomeSwordDir().filePath("sword.conf");
-	QFile file(configFile);
-	if (file.exists()) {
-		return;
-	}
-	if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
-		return;
-	}
-	QTextStream out(&file);
-	out << "\n";
-	out << "[Install]\n";
-	out << "DataPath="   << DU::convertDirSeparators( DU::getSharedSwordDir().absolutePath()) << "\n";
-	out << "LocalePath=" << DU::convertDirSeparators(DU::getApplicationSwordDir().absolutePath()) << "\n";
-	out << "\n";
-	file.close();
+    QString configFile = util::directory::getUserHomeSwordDir().filePath("sword.conf");
+    QFile file(configFile);
+    if (file.exists()) {
+        return;
+    }
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        return;
+    }
+    QTextStream out(&file);
+    out << "\n";
+    out << "[Install]\n";
+    out << "DataPath="   << DU::convertDirSeparators( DU::getSharedSwordDir().absolutePath()) << "\n";
+    out << "LocalePath=" << DU::convertDirSeparators(DU::getApplicationSwordDir().absolutePath()) << "\n";
+    out << "\n";
+    file.close();
 #endif
 }
 
@@ -459,7 +459,7 @@ void BibleTime::initSwordConfigFile() {
 void BibleTime::initBackends() {
     qDebug() << "BibleTime::initBackends";
 
-	initSwordConfigFile();
+    initSwordConfigFile();
 
     sword::StringMgr::setSystemStringMgr( new BTStringMgr() );
     sword::SWLog::getSystemLog()->setLogLevel(1);
@@ -521,8 +521,8 @@ void BibleTime::applyProfileSettings( CProfile* p ) {
 
     //first Main Window state
     restoreState(p->getMainwindowState());
-	restoreGeometry(p->getMainwindowGeometry());
-	m_windowFullscreen_action->setChecked(isFullScreen());
+    restoreGeometry(p->getMainwindowGeometry());
+    m_windowFullscreen_action->setChecked(isFullScreen());
 
     const CMDIArea::MDIArrangementMode newArrangementMode = p->getMDIArrangementMode();
     //make sure actions are updated by calling the slot functions
@@ -551,7 +551,7 @@ void BibleTime::storeProfileSettings( CProfile* p ) {
     if (!p || !m_windowFullscreen_action) return;
 
     p->setMainwindowState(saveState());
-	p->setMainwindowGeometry(saveGeometry());
+    p->setMainwindowGeometry(saveGeometry());
     p->setMDIArrangementMode(m_mdi->getMDIArrangementMode());
 }
 

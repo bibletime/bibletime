@@ -47,7 +47,7 @@ const char* bt_version();
 using namespace Profile;
 
 BibleTime::BibleTime()
-    : m_WindowWasMaximizedBeforeFullScreen(false) {
+        : m_WindowWasMaximizedBeforeFullScreen(false) {
     namespace DU = util::directory;
 
     QPixmap pm;
@@ -272,13 +272,12 @@ void BibleTime::restoreWorkspace() {
 void BibleTime::processCommandline() {
     QStringList args = qApp->QCoreApplication::arguments();
 
-    if (args.contains("--help") || args.contains("-h") || args.contains("/h") || args.contains("/?"))
-    {
+    if (args.contains("--help") || args.contains("-h") || args.contains("/h") || args.contains("/?")) {
         std::cout << "BibleTime" << std::endl << "--help (-h, /h, /?): Show this help message and exit"
-        << std::endl << "--ignore-session: open a clean session" << std:: endl << "--open-default-bible <ref>: "
-        << "Open the default Bible with the reference <ref>" << std::endl;
+                  << std::endl << "--ignore-session: open a clean session" << std:: endl << "--open-default-bible <ref>: "
+                  << "Open the default Bible with the reference <ref>" << std::endl;
         std::cout << "Some Qt arguments:" << std::endl << "-reverse: reverse the UI layout direction"
-        << std::endl;
+                  << std::endl;
         exit(0);
         //printHelpAndExit();
     }
@@ -313,7 +312,7 @@ void BibleTime::processCommandline() {
 }
 
 bool BibleTime::event(QEvent* event) {
-	if (event->type() == QEvent::Close)
-		Search::CSearchDialog::closeDialog();
-	return QMainWindow::event(event);
+    if (event->type() == QEvent::Close)
+        Search::CSearchDialog::closeDialog();
+    return QMainWindow::event(event);
 }

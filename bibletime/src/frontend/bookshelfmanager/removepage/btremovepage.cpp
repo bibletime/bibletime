@@ -57,9 +57,9 @@ BtRemovePage::BtRemovePage()
 
     connect(m_removeButton, SIGNAL(clicked()),
             this, SLOT(slotRemoveModules()));
-    connect(m_model, SIGNAL(moduleChecked(CSwordModuleInfo*,bool)),
+    connect(m_model, SIGNAL(moduleChecked(CSwordModuleInfo*, bool)),
             this, SLOT(resetRemoveButton()));
-    connect(m_model, SIGNAL(rowsRemoved(const QModelIndex &,int,int)),
+    connect(m_model, SIGNAL(rowsRemoved(const QModelIndex &, int, int)),
             this, SLOT(resetRemoveButton()));
 }
 

@@ -37,45 +37,43 @@ static bool showDebugMessages;
 
 static const char* version = BT_VERSION;
 
-const char* bt_version()
-{
+const char* bt_version() {
     return version;
 }
 
 // This class will open the file descriptor on demand.
 // It will automatically close the file descriptor if it is open when the program exits.
-class FileOpener
-{
-public:
+class FileOpener {
+    public:
 
-    // Constructor set file descriptor to zero
-    FileOpener() 
-        : m_fd(0) {
-    }
+        // Constructor set file descriptor to zero
+        FileOpener()
+                : m_fd(0) {
+        }
 
-    // Destructor closes file descriptor if it is non-zero (Windows only)
-    ~FileOpener() {
+        // Destructor closes file descriptor if it is non-zero (Windows only)
+        ~FileOpener() {
 #ifdef Q_WS_WIN
-        if (m_fd != 0)
-            fclose(m_fd);
-#endif
-    }
-
-    // function to open the file descriptor if it is called (Windows only)
-    // on non-windows just use "stderr"
-    FILE* getFd() {
-        if (m_fd == 0) {
- #ifdef Q_WS_WIN
-           QString debugFile = QDir::homePath() + "/BibleTime Debug.txt";
-            m_fd=fopen(debugFile.toLocal8Bit().data(),"w");
-#else
-            m_fd = stderr;
+            if (m_fd != 0)
+                fclose(m_fd);
 #endif
         }
-        return m_fd;
-    }
-private:
-    FILE* m_fd; 
+
+        // function to open the file descriptor if it is called (Windows only)
+        // on non-windows just use "stderr"
+        FILE* getFd() {
+            if (m_fd == 0) {
+#ifdef Q_WS_WIN
+                QString debugFile = QDir::homePath() + "/BibleTime Debug.txt";
+                m_fd = fopen(debugFile.toLocal8Bit().data(), "w");
+#else
+                m_fd = stderr;
+#endif
+            }
+            return m_fd;
+        }
+    private:
+        FILE* m_fd;
 
 };
 // When program exits, this will close the file
@@ -128,7 +126,7 @@ int main(int argc, char* argv[]) {
     // Use the default Qt message handler if --debug is not specified
     // This works with Visual Studio debugger Output Window
     if (showDebugMessages)
-	    qInstallMsgHandler( myMessageOutput );
+        qInstallMsgHandler( myMessageOutput );
 #else
     qInstallMsgHandler( myMessageOutput );
 #endif
@@ -147,12 +145,12 @@ int main(int argc, char* argv[]) {
 
 #ifdef Q_WS_WIN
 
-	// On Windows, add a path for Qt plugins to be loaded from
+    // On Windows, add a path for Qt plugins to be loaded from
     app.addLibraryPath(app.applicationDirPath() + "/plugins");
 
-	// Must set HOME var on Windows
-	QString homeDir(getenv("APPDATA"));
-	_putenv_s("HOME", qPrintable(homeDir));
+    // Must set HOME var on Windows
+    QString homeDir(getenv("APPDATA"));
+    _putenv_s("HOME", qPrintable(homeDir));
 
 #endif
 
@@ -164,14 +162,14 @@ int main(int argc, char* argv[]) {
     }
 
 #ifdef Q_WS_WIN
-	// change directory to the Sword or .sword directory in the $HOME dir so that
-	// the sword.conf is found. It points to the sword/locales.d directory
-	QString homeSwordDir = util::directory::getUserHomeDir().absolutePath();
-	QDir dir;
-	dir.setCurrent(homeSwordDir);
+    // change directory to the Sword or .sword directory in the $HOME dir so that
+    // the sword.conf is found. It points to the sword/locales.d directory
+    QString homeSwordDir = util::directory::getUserHomeDir().absolutePath();
+    QDir dir;
+    dir.setCurrent(homeSwordDir);
 #endif
 
-	// This is needed for languagemgr language names to work, they use \uxxxx escape sequences in string literals
+    // This is needed for languagemgr language names to work, they use \uxxxx escape sequences in string literals
     QTextCodec::setCodecForTr(QTextCodec::codecForName("UTF-8"));
     //first install QT's own translations
     QTranslator qtTranslator;

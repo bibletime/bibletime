@@ -187,11 +187,11 @@ class BibleTime : public QMainWindow {
         /**
         * Catch QMainWindow events
         */
-		bool event(QEvent* event);
+        bool event(QEvent* event);
         /**
         * Initializes the sword.conf in the $HOME\Sword directory
         */
-		void initSwordConfigFile();
+        void initSwordConfigFile();
         /**
         * Initializes the view of this widget
         */
@@ -242,7 +242,7 @@ class BibleTime : public QMainWindow {
         void searchInModule(CSwordModuleInfo *module);
         void moduleUnlock(CSwordModuleInfo *module);
         void moduleAbout(CSwordModuleInfo *module);
-		void quit();
+        void quit();
 
         /**
          * Is called when the window menu is about to show ;-)
@@ -344,10 +344,10 @@ class BibleTime : public QMainWindow {
         void slotOpenAboutDialog();
 
     private:
-        //  True if window was maximized before last toggle to full screen. 
-         bool m_WindowWasMaximizedBeforeFullScreen;
+        //  True if window was maximized before last toggle to full screen.
+        bool m_WindowWasMaximizedBeforeFullScreen;
 
-         // Docking widgets and their respective content widgets:
+        // Docking widgets and their respective content widgets:
         BtBookshelfDockWidget* m_bookshelfDock;
         QDockWidget* m_bookmarksDock;
         CBookmarkIndex* m_bookmarksPage;

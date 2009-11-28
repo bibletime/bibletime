@@ -17,8 +17,7 @@
 
 
 CMDIArea::CMDIArea(BibleTime *parent)
-        : QMdiArea(parent), m_mdiArrangementMode(ArrangementModeManual)
-{
+        : QMdiArea(parent), m_mdiArrangementMode(ArrangementModeManual) {
     Q_ASSERT(parent != 0);
 
     setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
@@ -44,20 +43,20 @@ QMdiSubWindow* CMDIArea::addSubWindow(QWidget * widget, Qt::WindowFlags windowFl
                 subWindow->showMaximized();
             }
             else {
-                // Make new window the same size as the active window and move it slightly. 
+                // Make new window the same size as the active window and move it slightly.
                 subWindow->resize(activeSubWindow()->size());
                 QRect subWinGeom = activeSubWindow()->geometry();
-                subWinGeom.translate(moveSize,moveSize);
+                subWinGeom.translate(moveSize, moveSize);
                 // If it goes off screen, move it almost to the top left
                 if ( ! frameRect().contains(subWinGeom)) {
-                    subWinGeom.moveTo(moveSize,moveSize);
+                    subWinGeom.moveTo(moveSize, moveSize);
                 }
                 subWindow->setGeometry(subWinGeom);
             }
         }
         else {
             //set the window to be big enough
-            subWindow->resize(400, 400); 
+            subWindow->resize(400, 400);
         }
         subWindow->raise();
     }
@@ -178,7 +177,8 @@ void CMDIArea::myCascade() {
 void CMDIArea::emitWindowCaptionChanged() {
     if (activeSubWindow()) {
         emit sigSetToplevelCaption(activeSubWindow()->windowTitle());
-    } else {
+    }
+    else {
         emit sigSetToplevelCaption(QString());
     }
 }
@@ -211,7 +211,8 @@ void CMDIArea::resizeEvent(QResizeEvent* e) {
     */
     if (m_mdiArrangementMode == ArrangementModeManual) {
         QMdiArea::resizeEvent(e);
-    } else if (updatesEnabled()) {
+    }
+    else if (updatesEnabled()) {
         triggerWindowUpdate();
     }
 }
@@ -224,8 +225,7 @@ bool CMDIArea::eventFilter(QObject *o, QEvent *e) {
     if (w == 0) return QMdiArea::eventFilter(o, e);
 
     switch (e->type()) {
-        case QEvent::WindowStateChange:
-        {
+        case QEvent::WindowStateChange: {
             Qt::WindowStates newState(w->windowState());
             Qt::WindowStates oldState(((QWindowStateChangeEvent*)e)->oldState());
 

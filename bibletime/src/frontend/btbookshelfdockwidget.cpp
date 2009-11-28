@@ -73,7 +73,7 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
     layout->setContentsMargins(0, 0, 0, 0);
     QHBoxLayout *toolBar(new QHBoxLayout);
     // Add a small margin between the edge of the window and the label (looks better)
-    toolBar->setContentsMargins(3,0,0,0);
+    toolBar->setContentsMargins(3, 0, 0, 0);
     m_nameFilterLabel = new QLabel(this);
     toolBar->addWidget(m_nameFilterLabel);
 
@@ -110,8 +110,8 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
             this, SLOT(showItemContextMenu(CSwordModuleInfo*, QPoint)));
     connect(m_view, SIGNAL(moduleActivated(CSwordModuleInfo*)),
             this, SIGNAL(moduleOpenTriggered(CSwordModuleInfo*)));
-    connect(m_bookshelfTreeModel, SIGNAL(moduleChecked(CSwordModuleInfo*,bool)),
-            this, SLOT(moduleChecked(CSwordModuleInfo*,bool)));
+    connect(m_bookshelfTreeModel, SIGNAL(moduleChecked(CSwordModuleInfo*, bool)),
+            this, SLOT(moduleChecked(CSwordModuleInfo*, bool)));
 
     retranslateInterface();
 }

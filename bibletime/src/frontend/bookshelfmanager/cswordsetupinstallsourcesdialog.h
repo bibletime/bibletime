@@ -28,7 +28,9 @@ class CSwordSetupInstallSourcesDialog : public QDialog  {
 
     public:
         sword::InstallSource getSource();
-        bool wasRemoteListAdded() {return m_remoteListAdded;}
+        bool wasRemoteListAdded() {
+            return m_remoteListAdded;
+        }
         CSwordSetupInstallSourcesDialog();
 
     protected slots:
