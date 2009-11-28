@@ -48,7 +48,7 @@ QDir cachedSharedSwordDir;
 static const char* BIBLETIME = "Bibletime";
 static const char* SWORD_DIR = "Sword";
 #else
-static const char* BIBLETIME =".bibletime";
+static const char* BIBLETIME = ".bibletime";
 static const char* SWORD_DIR = ".sword";
 #endif
 } // anonymous namespace
@@ -70,16 +70,16 @@ bool initDirectoryCache() {
         return false;
     }
 
-	cachedSharedSwordDir = QDir(getenv("ALLUSERSPROFILE")); // sword dir for Windows only
+    cachedSharedSwordDir = QDir(getenv("ALLUSERSPROFILE")); // sword dir for Windows only
     if (!cachedSharedSwordDir.cd("Application Data")) {
         qWarning() << "Cannot find ALLUSERSPROFILE\\Application Data";
         return false;
-	}
+    }
     if (!cachedSharedSwordDir.cd(SWORD_DIR)) {
         if (!cachedSharedSwordDir.mkdir(SWORD_DIR) || !cachedSharedSwordDir.cd(SWORD_DIR)) {
-			qWarning() << "Cannot find ALLUSERSPROFILE\\Application Data\\Sword";
-			return false;
-		}
+            qWarning() << "Cannot find ALLUSERSPROFILE\\Application Data\\Sword";
+            return false;
+        }
     }
 #endif
 
@@ -277,15 +277,14 @@ void copyRecursive(const QString &src, const QString &dest) {
     }
 }
 
-QString convertDirSeparators(const QString& path)
-{
-	QString result = path;
+QString convertDirSeparators(const QString& path) {
+    QString result = path;
 #ifdef Q_WS_WIN
-	result.replace("/", "\\");
+    result.replace("/", "\\");
 #else
-	result.replace("\\", "/");
+    result.replace("\\", "/");
 #endif
-	return result;
+    return result;
 }
 
 #ifdef Q_WS_WIN

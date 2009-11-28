@@ -55,14 +55,14 @@ unsigned long getDirSizeRecursive(const QString &dir);
  */
 void copyRecursive(const QString &src, const QString &dest);
 
-/** Convert directory path separators to those for each platform 
+/** Convert directory path separators to those for each platform
  *  Windows = "\", Others = "/"
  */
 QString convertDirSeparators(const QString& path);
 
 #ifdef Q_WS_WIN  // Windows only directories
 
-/** Return the path to the sword dir., Windows only 
+/** Return the path to the sword dir., Windows only
     C:\Program Files\BibleTime\share\sword
  */
 QDir getApplicationSwordDir();
