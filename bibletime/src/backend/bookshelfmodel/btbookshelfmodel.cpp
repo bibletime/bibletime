@@ -81,8 +81,7 @@ bool BtBookshelfModel::setData(const QModelIndex &index, const QVariant &value,
                                int role) {
     int row(index.row());
     if (role == ModuleHiddenRole && row >= 0 && row < m_data.size()
-        && index.column() == 0)
-    {
+            && index.column() == 0) {
         /*
           Emitting dataChanged here is actually mandatory, but were not doing it
           directly. Since we're connected to the module, changing its hidden
@@ -105,25 +104,29 @@ QIcon BtBookshelfModel::moduleIcon(const CSwordModuleInfo *m) {
         case CSwordModuleInfo::Bibles:
             if (module->isLocked()) {
                 return DU::getIcon(CResMgr::modules::bible::icon_locked);
-            } else {
+            }
+            else {
                 return DU::getIcon(CResMgr::modules::bible::icon_unlocked);
             }
         case CSwordModuleInfo::Commentaries:
             if (module->isLocked()) {
                 return DU::getIcon(CResMgr::modules::commentary::icon_locked);
-            } else {
+            }
+            else {
                 return DU::getIcon(CResMgr::modules::commentary::icon_unlocked);
             }
         case CSwordModuleInfo::Lexicons:
             if (module->isLocked()) {
                 return DU::getIcon(CResMgr::modules::lexicon::icon_locked);
-            } else {
+            }
+            else {
                 return DU::getIcon(CResMgr::modules::lexicon::icon_unlocked);
             }
         case CSwordModuleInfo::Books:
             if (module->isLocked()) {
                 return DU::getIcon(CResMgr::modules::book::icon_locked);
-            } else {
+            }
+            else {
                 return DU::getIcon(CResMgr::modules::book::icon_unlocked);
             }
         case CSwordModuleInfo::Cult:
@@ -240,8 +243,7 @@ void BtBookshelfModel::addModules(const QSet<CSwordModuleInfo *> &modules) {
 }
 
 void BtBookshelfModel::removeModule(CSwordModuleInfo * const module,
-                                    bool destroy)
-{
+                                    bool destroy) {
     const int index(m_data.indexOf(module));
     if (index == -1) return;
 
@@ -254,14 +256,12 @@ void BtBookshelfModel::removeModule(CSwordModuleInfo * const module,
 }
 
 void BtBookshelfModel::removeModules(const QList<CSwordModuleInfo *> &modules,
-                                     bool destroy)
-{
+                                     bool destroy) {
     removeModules(modules.toSet(), destroy);
 }
 
 void BtBookshelfModel::removeModules(const QSet<CSwordModuleInfo *> &modules,
-                                     bool destroy)
-{
+                                     bool destroy) {
     // This is inefficient, since signals are emitted for each removed module:
     Q_FOREACH(CSwordModuleInfo *module, modules) {
         removeModule(module, destroy);

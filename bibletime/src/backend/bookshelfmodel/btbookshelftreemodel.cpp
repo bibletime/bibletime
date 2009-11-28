@@ -30,8 +30,7 @@ BtBookshelfTreeModel::BtBookshelfTreeModel(QObject *parent)
 
 BtBookshelfTreeModel::BtBookshelfTreeModel(const Grouping &g, QObject *parent)
         : QAbstractItemModel(parent), m_sourceModel(0), m_rootItem(new RootItem),
-        m_groupingOrder(g), m_defaultChecked(MODULE_HIDDEN), m_checkable(false)
-{
+        m_groupingOrder(g), m_defaultChecked(MODULE_HIDDEN), m_checkable(false) {
     // Intentionally empty
 }
 
@@ -108,7 +107,8 @@ QVariant BtBookshelfTreeModel::data(const QModelIndex &index, int role) const {
                 ModuleItem *item(static_cast<ModuleItem *>(i));
                 CSwordModuleInfo* m(item->moduleInfo());
                 return data(m, role);
-            } else {
+            }
+            else {
                 return i->data(role);
             }
     }
@@ -130,7 +130,8 @@ bool BtBookshelfTreeModel::setData(const QModelIndex &itemIndex,
         bool ok;
         newState = (Qt::CheckState) value.toInt(&ok);
         if (!ok || newState == Qt::PartiallyChecked) return false;
-    } else {
+    }
+    else {
         return false;
     }
 
@@ -151,11 +152,13 @@ bool BtBookshelfTreeModel::setData(const QModelIndex &itemIndex,
                 if (newState == Qt::Checked) {
                     m_checkedModulesCache.insert(mInfo);
                     emit moduleChecked(mInfo, true);
-                } else {
+                }
+                else {
                     m_checkedModulesCache.remove(mInfo);
                     emit moduleChecked(mInfo, false);
                 }
-            } else {
+            }
+            else {
                 const QList<Item*> &children(item->children());
                 for (int i(0); i < children.size(); i++) {
                     q.append(IP(children.at(i), index(i, 0, p.second)));
@@ -243,9 +246,11 @@ void BtBookshelfTreeModel::setSourceModel(QAbstractItemModel *sourceModel) {
             bool checked;
             if (m_defaultChecked == MODULE_HIDDEN) {
                 checked = !sourceModel->data(moduleIndex, HR).toBool();
-            } else if (m_defaultChecked == MODULE_INDEXED) {
+            }
+            else if (m_defaultChecked == MODULE_INDEXED) {
                 checked = !sourceModel->data(moduleIndex, IR).toBool();
-            } else {
+            }
+            else {
                 checked = (m_defaultChecked == CHECKED);
             }
             m_sourceIndexMap[module] = moduleIndex;
@@ -304,7 +309,8 @@ void BtBookshelfTreeModel::setCheckable(bool checkable) {
                 queue.append(childIndex);
             }
         }
-    } while (!queue.isEmpty());
+    }
+    while (!queue.isEmpty());
 }
 
 void BtBookshelfTreeModel::addModule(CSwordModuleInfo *module, bool checked) {
@@ -490,7 +496,8 @@ void BtBookshelfTreeModel::moduleDataChanged(const QModelIndex &topLeft,
         do {
             itemIndex = itemIndex.parent();
             emit dataChanged(itemIndex, itemIndex);
-        } while (itemIndex.isValid());
+        }
+        while (itemIndex.isValid());
     }
 }
 
@@ -509,9 +516,11 @@ void BtBookshelfTreeModel::moduleInserted(const QModelIndex &parent, int start,
         bool checked;
         if (m_defaultChecked == MODULE_HIDDEN) {
             checked = !m_sourceModel->data(moduleIndex, HR).toBool();
-        } else if (m_defaultChecked == MODULE_INDEXED) {
+        }
+        else if (m_defaultChecked == MODULE_INDEXED) {
             checked = !m_sourceModel->data(moduleIndex, IR).toBool();
-        } else {
+        }
+        else {
             checked = (m_defaultChecked == CHECKED);
         }
         m_sourceIndexMap[module] = moduleIndex;

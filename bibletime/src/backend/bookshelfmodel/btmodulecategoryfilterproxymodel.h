@@ -19,7 +19,7 @@
 
 
 class BtModuleCategoryFilterProxyModel: public QSortFilterProxyModel {
-    Q_OBJECT
+        Q_OBJECT
     public:
         BtModuleCategoryFilterProxyModel(QObject *parent = 0);
         virtual ~BtModuleCategoryFilterProxyModel();

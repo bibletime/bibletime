@@ -20,8 +20,7 @@ namespace BookshelfModel {
 
 ModuleItem::ModuleItem(CSwordModuleInfo *module,
                        BtBookshelfTreeModel *parentModel)
-    : Item(ITEM_MODULE), m_moduleInfo(module), m_parentModel(parentModel)
-{
+        : Item(ITEM_MODULE), m_moduleInfo(module), m_parentModel(parentModel) {
     Q_ASSERT(module != 0);
     Q_ASSERT(parentModel != 0);
 }

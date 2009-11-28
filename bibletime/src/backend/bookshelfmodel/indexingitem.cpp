@@ -16,8 +16,7 @@
 namespace BookshelfModel {
 
 IndexingItem::IndexingItem(CSwordModuleInfo *module)
-    : Item(Item::ITEM_INDEXING), m_indexed(module->hasIndex())
-{
+        : Item(Item::ITEM_INDEXING), m_indexed(module->hasIndex()) {
     // Intentionally empty
 }
 
@@ -26,7 +25,8 @@ QVariant IndexingItem::data(int role) const {
         case Qt::DisplayRole:
             if (m_indexed) {
                 return QObject::tr("Indexed works");
-            } else {
+            }
+            else {
                 return QObject::tr("Unindexed works");
             }
         default:

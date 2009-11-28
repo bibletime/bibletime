@@ -18,10 +18,9 @@
 typedef CSwordModuleInfo::Categories CS;
 
 BtModuleCategoryFilterProxyModel::BtModuleCategoryFilterProxyModel(
-        QObject *parent)
-    : QSortFilterProxyModel(parent), m_filter(CSwordModuleInfo::AllCategories),
-      m_enabled(true)
-{
+    QObject *parent)
+        : QSortFilterProxyModel(parent), m_filter(CSwordModuleInfo::AllCategories),
+        m_enabled(true) {
     setFilterRole(BtBookshelfModel::ModuleCategoryRole);
 }
 
@@ -48,8 +47,7 @@ void BtModuleCategoryFilterProxyModel::setHiddenCategories(CS cs) {
 }
 
 bool BtModuleCategoryFilterProxyModel::filterAcceptsRow(int row,
-        const QModelIndex &parent) const
-{
+        const QModelIndex &parent) const {
     typedef CSwordModuleInfo::Category C;
 
     if (!m_enabled) return true;
