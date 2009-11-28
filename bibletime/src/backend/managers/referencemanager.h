@@ -19,15 +19,15 @@
  */
 namespace ReferenceManager {
 enum Type {
-	Bible, /**< Bibles */
-	Commentary, /**< Commentary */
-	Lexicon, /**< Lexicon */
-	GenericBook, /**< Generic Book */
-	MorphHebrew, /**< Module for hebrew morphology*/
-	MorphGreek, /**< Module for greek morphology */
-	StrongsHebrew, /**< Module for hebrew strongs */
-	StrongsGreek, /**< Module for greek strongs */
-	Unknown /**< Unknown */
+    Bible, /**< Bibles */
+    Commentary, /**< Commentary */
+    Lexicon, /**< Lexicon */
+    GenericBook, /**< Generic Book */
+    MorphHebrew, /**< Module for hebrew morphology*/
+    MorphGreek, /**< Module for greek morphology */
+    StrongsHebrew, /**< Module for hebrew strongs */
+    StrongsGreek, /**< Module for greek strongs */
+    Unknown /**< Unknown */
 };
 
 /** Turn a hyperlink into module, key and type.
@@ -82,14 +82,14 @@ ReferenceManager::Type typeFromModule( const CSwordModuleInfo::ModuleType type )
 
 
 struct ParseOptions {
-	QString refDestinationModule;
-	QString refBase; /* only valid for verse based destination modules*/
-	QString sourceLanguage; /* only valid for verse based destination modules*/
-	QString destinationLanguage; /* only valid for verse based destination modules*/
+    QString refDestinationModule;
+    QString refBase; /* only valid for verse based destination modules*/
+    QString sourceLanguage; /* only valid for verse based destination modules*/
+    QString destinationLanguage; /* only valid for verse based destination modules*/
 
-	ParseOptions() {
-		destinationLanguage = "en";
-	};
+    ParseOptions() {
+        destinationLanguage = "en";
+    };
 };
 
 /** Parses the given verse references using the given language and the module.

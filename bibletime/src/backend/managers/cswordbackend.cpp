@@ -47,8 +47,7 @@ using namespace Rendering;
 
 CSwordBackend::CSwordBackend()
         : sword::SWMgr(0, 0, false, new sword::EncodingFilterMgr( sword::ENC_UTF8 ), true),
-          m_dataModel(this)
-{
+        m_dataModel(this) {
     m_filters.gbf = new BT_GBFHTML();
     m_filters.plain = new BT_PLAINHTML();
     m_filters.thml = new BT_ThMLHTML();
@@ -525,29 +524,26 @@ void CSwordBackend::reloadModules(SetupChangedReason reason) {
 }
 
 // Get one or more shared sword config (sword.conf) files
-QStringList CSwordBackend::getSharedSwordConfigFiles() const
-{
-	QStringList configPath;
+QStringList CSwordBackend::getSharedSwordConfigFiles() const {
+    QStringList configPath;
 #ifdef Q_WS_WIN
-	//  %ALLUSERSPROFILE%\Sword\sword.conf
-	QString tmp = util::directory::getSharedSwordDir().filePath("sword.conf");
-	QString globalPath = util::directory::convertDirSeparators(QString(getenv("SWORD_PATH")));
-	configPath << globalPath.append("/Sword/sword.conf");
+    //  %ALLUSERSPROFILE%\Sword\sword.conf
+    QString tmp = util::directory::getSharedSwordDir().filePath("sword.conf");
+    QString globalPath = util::directory::convertDirSeparators(QString(getenv("SWORD_PATH")));
+    configPath << globalPath.append("/Sword/sword.conf");
 #else
-	// /etc/sword.conf, /usr/local/etc/sword.conf
+    // /etc/sword.conf, /usr/local/etc/sword.conf
     configPath = QString(globalConfPath).split(":");
 #endif
-	return configPath;
+    return configPath;
 }
 
 // Get the private sword directory
-QString CSwordBackend::getPrivateSwordConfigPath() const
-{
+QString CSwordBackend::getPrivateSwordConfigPath() const {
     return util::directory::getUserHomeSwordDir().absolutePath();
 }
 
-QString CSwordBackend::getPrivateSwordConfigFile() const
-{
+QString CSwordBackend::getPrivateSwordConfigFile() const {
     QString file(getPrivateSwordConfigPath() + "/sword.conf");
     return util::directory::convertDirSeparators(file);
 }
@@ -565,7 +561,8 @@ QStringList CSwordBackend::swordDirList() const {
     if (QFile(getPrivateSwordConfigFile()).exists()) {
         // Use the private sword.conf file:
         configs << getPrivateSwordConfigFile();
-    } else {
+    }
+    else {
         /*
           Did not find private sword.conf, will use shared sword.conf files to
           build the private one. Once the private sword.conf exist, the shared
