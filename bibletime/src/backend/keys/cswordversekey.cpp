@@ -32,7 +32,7 @@ CSwordVerseKey::CSwordVerseKey( CSwordModuleInfo* const module ) :
 }
 
 CSwordVerseKey::CSwordVerseKey( const CSwordVerseKey& k ) : CSwordKey(k), VerseKey(k) {
-	this->VerseKey::setAutoNormalize(true);
+    this->VerseKey::setAutoNormalize(true);
 }
 
 CSwordVerseKey::CSwordVerseKey( const VerseKey* const k, CSwordModuleInfo* const module ) : CSwordKey(module), VerseKey(*k) {}
