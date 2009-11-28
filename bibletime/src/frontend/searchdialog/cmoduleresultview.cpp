@@ -38,8 +38,8 @@ CModuleResultView::CModuleResultView(QWidget* parent)
 }
 
 CModuleResultView::~CModuleResultView() {
-	qDeleteAll(strongsResults);
-	strongsResults.clear();
+    qDeleteAll(strongsResults);
+    strongsResults.clear();
 }
 
 
@@ -109,7 +109,7 @@ void CModuleResultView::setupTree( QList<CSwordModuleInfo*> modules, const QStri
 
     sword::ListKey result;
 
-  	qDeleteAll(strongsResults);
+    qDeleteAll(strongsResults);
     strongsResults.clear();
 
     bool strongsAvailable = false;
@@ -187,7 +187,7 @@ void CModuleResultView::executed( QTreeWidgetItem* i, QTreeWidgetItem*) {
         return;
     }
 
-	StrongsResultClass* strongsResult = strongsResults[activeModule()];
+    StrongsResultClass* strongsResult = strongsResults[activeModule()];
 
     if (!strongsResult) {
         return;

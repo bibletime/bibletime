@@ -63,10 +63,9 @@ void CSearchDialog::openDialog(const QList<CSwordModuleInfo*> modules, const QSt
     m_staticDialog->activateWindow();
 }
 
-void CSearchDialog::closeDialog()
-{
-	if (m_staticDialog != 0)
-		m_staticDialog->closeButtonClicked();
+void CSearchDialog::closeDialog() {
+    if (m_staticDialog != 0)
+        m_staticDialog->closeButtonClicked();
 }
 
 CSearchDialog* CSearchDialog::getSearchDialog() {
@@ -99,11 +98,11 @@ void CSearchDialog::startSearch() {
 
     // first check the search string for errors
     {
-		QString TestString(originalSearchText);
-		QRegExp ReservedWords("heading:|footnote:|morph:|strong:");
-		if (TestString.replace(ReservedWords, "").simplified().isEmpty()) {
-			return;
-		}
+        QString TestString(originalSearchText);
+        QRegExp ReservedWords("heading:|footnote:|morph:|strong:");
+        if (TestString.replace(ReservedWords, "").simplified().isEmpty()) {
+            return;
+        }
     }
 
     searchText = prepareSearchText(originalSearchText);

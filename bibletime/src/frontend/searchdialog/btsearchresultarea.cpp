@@ -206,7 +206,7 @@ QStringList BtSearchResultArea::QueryParser(const QString& queryString) {
             token = token + queryString[cnt];
             cnt++;
         }
-		else if ((queryString[cnt]).isLetterOrNumber() || (queryString[cnt] == '?')) {
+        else if ((queryString[cnt]).isLetterOrNumber() || (queryString[cnt] == '?')) {
             token = token + queryString[cnt];
             cnt++;
         }
@@ -437,7 +437,7 @@ QString BtSearchResultArea::highlightSearchedText(const QString& content, const 
     // made a simple parser.
     //===========================================================
     QStringList words = QueryParser(newSearchText);
-	qDebug() << "btsearchresultarea.cpp: " << __LINE__ << ": " <<  words << '\n';
+    qDebug() << "btsearchresultarea.cpp: " << __LINE__ << ": " <<  words << '\n';
     foreach (QString word, words) { //search for every word in the list
         QRegExp findExp;
         if (word.contains("*")) {
@@ -446,7 +446,7 @@ QString BtSearchResultArea::highlightSearchedText(const QString& content, const 
             findExp = QRegExp(word);
             findExp.setMinimal(TRUE);
         }
-		else if (word.contains("?")) {
+        else if (word.contains("?")) {
             length = word.length() - 1;
             word.replace('?', "\\S?"); //match within a word
             findExp = QRegExp(word);
@@ -472,7 +472,7 @@ QString BtSearchResultArea::highlightSearchedText(const QString& content, const 
             index += length;
         }
     }
-	qDebug() << "btsearchresultarea.cpp: " << __LINE__ << ": " <<  words << '\n';
+    qDebug() << "btsearchresultarea.cpp: " << __LINE__ << ": " <<  words << '\n';
     //qWarning("\n\n\n%s", ret.latin1());
     return ret;
 }
