@@ -24,7 +24,7 @@
 
 
 Filters::BT_TEIHTML::BT_TEIHTML() : sword::TEIHTMLHREF() {
-	setPassThruUnknownEscapeString(true); //the HTML widget will render the HTML escape codes
+    setPassThruUnknownEscapeString(true); //the HTML widget will render the HTML escape codes
 }
 
 bool Filters::BT_TEIHTML::handleToken(sword::SWBuf &buf, const char *token, sword::BasicFilterUserData *userData) {
@@ -32,59 +32,59 @@ bool Filters::BT_TEIHTML::handleToken(sword::SWBuf &buf, const char *token, swor
 
     if (!substituteToken(buf, token)) {
 
-    	sword::XMLTag tag(token);
+        sword::XMLTag tag(token);
 
-    	if (0) {
+        if (0) {
 
-    	}
-		else if (!strcmp(tag.getName(), "ref")) {
+        }
+        else if (!strcmp(tag.getName(), "ref")) {
 
-			if (!tag.isEndTag() && !tag.isEmpty()) {
+            if (!tag.isEndTag() && !tag.isEmpty()) {
 
-				renderReference(tag.getAttribute("osisRef"), buf, userData);
+                renderReference(tag.getAttribute("osisRef"), buf, userData);
 
-			}
-			else if (tag.isEndTag()) {
-				buf.append("</a>");
-			}
-			else { // empty reference marker
-				// -- what should we do?  nothing for now.
-			}
-		}
-    	// <hi> highlighted text
-		else if (!strcmp(tag.getName(), "hi")) {
-			const sword::SWBuf type = tag.getAttribute("rend");
+            }
+            else if (tag.isEndTag()) {
+                buf.append("</a>");
+            }
+            else { // empty reference marker
+                // -- what should we do?  nothing for now.
+            }
+        }
+        // <hi> highlighted text
+        else if (!strcmp(tag.getName(), "hi")) {
+            const sword::SWBuf type = tag.getAttribute("rend");
 
-			if ((!tag.isEndTag()) && (!tag.isEmpty())) {
-				if (type == "bold") {
-					buf.append("<span class=\"bold\">");
-				}
-				else if (type == "illuminated") {
-					buf.append("<span class=\"illuminated\">");
-				}
-				else if (type == "italic") {
-					buf.append("<span class=\"italic\">");
-				}
-				else if (type == "line-through") {
-					buf.append("<span class=\"line-through\">");
-				}
-				else if (type == "normal") {
-					buf.append("<span class=\"normal\">");
-				}
-				else if (type == "small-caps") {
-					buf.append("<span class=\"small-caps\">");
-				}
-				else if (type == "underline") {
-					buf.append("<span class=\"underline\">");
-				}
-				else {
-					buf.append("<span>"); //don't break markup, </span> is inserted later
-				}
-			}
-			else if (tag.isEndTag()) { //all hi replacements are html spans
-				buf.append("</span>");
-			}
-		}
+            if ((!tag.isEndTag()) && (!tag.isEmpty())) {
+                if (type == "bold") {
+                    buf.append("<span class=\"bold\">");
+                }
+                else if (type == "illuminated") {
+                    buf.append("<span class=\"illuminated\">");
+                }
+                else if (type == "italic") {
+                    buf.append("<span class=\"italic\">");
+                }
+                else if (type == "line-through") {
+                    buf.append("<span class=\"line-through\">");
+                }
+                else if (type == "normal") {
+                    buf.append("<span class=\"normal\">");
+                }
+                else if (type == "small-caps") {
+                    buf.append("<span class=\"small-caps\">");
+                }
+                else if (type == "underline") {
+                    buf.append("<span class=\"underline\">");
+                }
+                else {
+                    buf.append("<span>"); //don't break markup, </span> is inserted later
+                }
+            }
+            else if (tag.isEndTag()) { //all hi replacements are html spans
+                buf.append("</span>");
+            }
+        }
         else { //all tokens handled by OSISHTMLHref will run through the filter now
             return sword::TEIHTMLHREF::handleToken(buf, token, userData);
         }
