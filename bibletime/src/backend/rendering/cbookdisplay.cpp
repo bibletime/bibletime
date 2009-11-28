@@ -95,7 +95,7 @@ const QString Rendering::CBookDisplay::text( const QList<CSwordModuleInfo*>& mod
 
             const QString renderedText = render.renderKeyTree(tree);
             key->setOffset( offset );
-                     qDeleteAll(tree);      // Dispose of the heap allocated objects pointed to in tree.
+            qDeleteAll(tree);      // Dispose of the heap allocated objects pointed to in tree.
             return renderedText;
         };
     };

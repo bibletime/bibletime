@@ -58,12 +58,12 @@ const QString CEntryDisplay::text( const QList<CSwordModuleInfo*>& modules, cons
             }
             k1.Verse(0);
             if ( k1.rawText().length() > 0 ) {
-				tree.append( new Rendering::CTextRendering::KeyTreeItem(k1.key(), modules, preverse_settings) );
+                tree.append( new Rendering::CTextRendering::KeyTreeItem(k1.key(), modules, preverse_settings) );
             }
         }
     }
-	tree.append( new Rendering::CTextRendering::KeyTreeItem(keyName, modules, normal_settings) );
+    tree.append( new Rendering::CTextRendering::KeyTreeItem(keyName, modules, normal_settings) );
     QString result(render.renderKeyTree(tree));
     qDeleteAll(tree);
-	return result;
+    return result;
 }

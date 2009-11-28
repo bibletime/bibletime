@@ -135,7 +135,7 @@ const QString CHTMLExportRendering::renderEntry( const KeyTreeItem& i, CSwordKey
 
         if (m_filterOptions.headings) {
 
-        	// only process EntryAttributes, do not render, this might destroy the EntryAttributes again
+            // only process EntryAttributes, do not render, this might destroy the EntryAttributes again
             (*mod_Itr)->module()->RenderText(0, -1, 0);
 
             sword::AttributeValue::const_iterator it =
