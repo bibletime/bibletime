@@ -149,7 +149,7 @@ void CBookmarkIndex::initConnections() {
     connect(this, SIGNAL(itemChanged(QTreeWidgetItem*, int)), this, SLOT(needToSaveBookmarks(QTreeWidgetItem*)) );
 
     // Connect the bookmark saving timer.
-	bookmarkSaveTimer.setSingleShot(true);
+    bookmarkSaveTimer.setSingleShot(true);
     connect(&bookmarkSaveTimer, SIGNAL(timeout()), this, SLOT(considerSavingBookmarks()) );
 }
 
@@ -454,7 +454,7 @@ void CBookmarkIndex::createBookmarkFromDrop(QDropEvent* event, QTreeWidgetItem* 
         CSwordModuleInfo* minfo = CPointers::backend()->findModuleByName(moduleName);
 
         QTreeWidgetItem* newItem = new BtBookmarkItem(minfo, keyText, description);
-      //  connect(newItem, SIGNAL(bookmarkModified()), this, SLOT(needToSaveBookmarks()) );
+        //  connect(newItem, SIGNAL(bookmarkModified()), this, SLOT(needToSaveBookmarks()) );
         parentItem->insertChild(indexInParent, newItem);
 
         qDebug() << "Saving in...CBookmarkIndex::createBookmarkFromDrop";
@@ -693,7 +693,7 @@ void CBookmarkIndex::deleteEntries(bool confirm) {
         if (util::showQuestion(this, tr("Delete Items"),
                                tr("Do you really want to delete the selected items and child-items?"),
                                QMessageBox::Yes | QMessageBox::No, QMessageBox::No )
-                               != QMessageBox::Yes) {
+                != QMessageBox::Yes) {
             return;
         }
     }
@@ -876,7 +876,7 @@ void CBookmarkIndex::needToSaveBookmarks(QTreeWidgetItem* treeItem) {
     // Need to test whether the item that changed is not just a display item,
     // but actually a folder or bookmark.
     BtBookmarkItemBase* bookmark = dynamic_cast<BtBookmarkItemBase*>(treeItem);
-    if (bookmark){
+    if (bookmark) {
         qDebug() << "Got signal to save bookmarks!";
         m_bookmarksModified = true;
         bookmarkSaveTimer.start(1500); // Only save after 1.5s.
@@ -887,7 +887,7 @@ void CBookmarkIndex::needToSaveBookmarks(QTreeWidgetItem* treeItem) {
 /// should be called by the qtimer bookmarkTimer.
 void CBookmarkIndex::considerSavingBookmarks() {
     qDebug() << "Considering to save bookmarks!";
-    if (m_bookmarksModified){
+    if (m_bookmarksModified) {
         saveBookmarks();
         m_bookmarksModified = false;
     }

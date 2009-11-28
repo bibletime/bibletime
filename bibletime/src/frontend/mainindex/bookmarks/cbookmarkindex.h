@@ -58,7 +58,7 @@ class CBookmarkIndex : public QTreeWidget {
 
     public slots:
 
-        /** 
+        /**
          * Indicates a need to save the bookmarks.
          * This is needed to provide a way for a bookmarkitem stored in the
          * treeWidget to inform us that it has been modified, namely its
@@ -191,7 +191,7 @@ class CBookmarkIndex : public QTreeWidget {
         // determine whether the bookmarks should be saved.  This may seem like
         // a hassle, but it is to prevent many saves from being executed at a
         // time.
-       
+
         /** Flag indicating that bookmarks have been modified. */
         bool m_bookmarksModified;
         QTimer bookmarkSaveTimer;
