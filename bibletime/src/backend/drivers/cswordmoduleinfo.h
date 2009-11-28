@@ -289,7 +289,9 @@ class CSwordModuleInfo: public QObject {
         /**
         * Returns true if this module is hidden (not to be shown with other modules in certain views).
         */
-        inline bool isHidden() const { return m_hidden; }
+        inline bool isHidden() const {
+            return m_hidden;
+        }
 
         /**
           Shows or hides the module.

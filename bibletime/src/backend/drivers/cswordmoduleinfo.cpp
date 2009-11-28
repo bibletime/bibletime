@@ -927,7 +927,8 @@ bool CSwordModuleInfo::setHidden(bool hide) {
     if (hide) {
         Q_ASSERT(!hiddenModules.contains(name()));
         hiddenModules.append(name());
-    } else {
+    }
+    else {
         Q_ASSERT(hiddenModules.contains(name()));
         hiddenModules.removeOne(name());
     }
