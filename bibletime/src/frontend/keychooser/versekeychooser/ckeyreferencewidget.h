@@ -35,8 +35,8 @@ class CKeyReferenceWidget : public QWidget  {
         void setModule(CSwordBibleModuleInfo *m = 0);
         bool eventFilter(QObject *o, QEvent *e);
 
-signals:        
-		void beforeChange(CSwordVerseKey* key);
+    signals:
+        void beforeChange(CSwordVerseKey* key);
         void changed(CSwordVerseKey* key);
 
     protected:

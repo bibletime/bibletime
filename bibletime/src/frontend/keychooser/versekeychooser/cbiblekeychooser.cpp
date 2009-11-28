@@ -66,11 +66,11 @@ void CBibleKeyChooser::beforeRefChange(CSwordVerseKey* key) {
 
     Q_ASSERT(m_key);
 
-	if (!updatesEnabled()) 
-		return;
+    if (!updatesEnabled())
+        return;
 
-	if (m_key) 
-		emit beforeKeyChange(m_key->key());
+    if (m_key)
+        emit beforeKeyChange(m_key->key());
 
 }
 
@@ -78,8 +78,8 @@ void CBibleKeyChooser::refChanged(CSwordVerseKey* key) {
     Q_ASSERT(m_key);
     Q_ASSERT(key);
 
-    if (!updatesEnabled()) 
-		return;
+    if (!updatesEnabled())
+        return;
 
     setUpdatesEnabled(false);
     m_key = key;
