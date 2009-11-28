@@ -97,9 +97,9 @@ QList<CProfileWindow*> CProfile::load() {
                 if (mdi_element.hasAttribute("ArrangementMode")) {
                     this->setMDIArrangementMode((CMDIArea::MDIArrangementMode)mdi_element.attribute("ArrangementMode").toInt());
                 }
-			}
-		}
-	}
+            }
+        }
+    }
 
     m_profileWindows.clear();
     QDomElement elem = document.firstChild().toElement();
@@ -181,18 +181,18 @@ QList<CProfileWindow*> CProfile::load() {
         }
         elem = elem.nextSibling().toElement();
     }
-    
+
     // Are any windows maximized?
     bool maximized = false;
     for (int i = 0; i < m_profileWindows.count(); i++) {
         if (m_profileWindows.at(i)->maximized())
-          maximized = true;
+            maximized = true;
     }
     // Set all windows the same for maximized
     for (int i = 0; i < m_profileWindows.count(); i++) {
         m_profileWindows.at(i)->setMaximized(maximized);
     }
-    
+
     return m_profileWindows;
 }
 
