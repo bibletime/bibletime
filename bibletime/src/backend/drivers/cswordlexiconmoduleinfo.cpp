@@ -13,6 +13,8 @@
 #include <QFile>
 #include <QDataStream>
 #include <QTextCodec>
+#include <QDebug>
+
 #include "util/directory.h"
 
 // Sword includes:
@@ -20,7 +22,7 @@
 
 
 //Change it once the format changed to make all systems rebuild their caches
-#define CACHE_FORMAT "2"
+#define CACHE_FORMAT "3"
 
 CSwordLexiconModuleInfo::CSwordLexiconModuleInfo( sword::SWModule* module, CSwordBackend* const backend ) : CSwordModuleInfo(module, backend) {
     m_entryList = 0;
@@ -49,113 +51,105 @@ QStringList* CSwordLexiconModuleInfo::entries() {
         return 0;
     }
 
-    sword::SWModule* my_module = module();
-    bool is_unicode = isUnicode();
+    if (m_entryList) return m_entryList;
 
-    if (!m_entryList) {
-        m_entryList = new QStringList();
-        bool read = false;
+	m_entryList = new QStringList();
 
-        //Check for buggy modules! They will not be loaded any more.
+	//Check for buggy modules! They will not be loaded any more.
+	if ( name() == QString("ZhEnglish")) {
+		qWarning() << "Module ZhEnglish is buggy and will not be loaded.";
+		return m_entryList;
+	}
+	if ( name() == QString("EReo_en")) {
+		qWarning() << "Module EReo_en is buggy and will not be loaded.";
+		return m_entryList;
+	}
 
-        if ( name() == QString("ZhEnglish")) {
-            qWarning("Module ZhEnglish is buggy and will not be loaded.");
-            return m_entryList;
-        }
+	QString dir(DU::getUserCacheDir().absolutePath());
+	QFile f1( QString(dir).append("/").append(name()));
 
-        if ( name() == QString("EReo_en")) {
-            qWarning("Module EReo_en is buggy and will not be loaded.");
-            return m_entryList;
-        }
+	/*
+	 * Try the module's cache
+	 */
+	if ( f1.open( QIODevice::ReadOnly ) ) {
+		QDataStream s( &f1 );
+		QString ModuleVersion, CacheVersion, QDataStreamVersion;
+		s >> ModuleVersion;
+		s >> CacheVersion;
+		s >> QDataStreamVersion;
 
-        QString dir(DU::getUserCacheDir().absolutePath());
-        QFile f1(
-            QString(dir)
-            .append("/")
-            .append(name())
-        );
+		qDebug() << "Lexicon cache metadata"
+				<< "Name" << name()
+				<< "ModuleVersion" << ModuleVersion
+				<< "CacheVersion" << CacheVersion
+				<< "QDataStreamVersion" << QDataStreamVersion;
 
-        if ( f1.open( QIODevice::ReadOnly ) ) {
-            QDataStream s( &f1 );
-            QString mod_ver, prog_ver;
-            s >> mod_ver;
-            s >> prog_ver;
+		// Check if cache is valid
+		if (ModuleVersion == config(CSwordModuleInfo::ModuleVersion)
+				&& CacheVersion == CACHE_FORMAT
+				&& QDataStreamVersion == QString::number(s.version())) {
+			s >> *m_entryList;
 
-            if ((mod_ver == config(ModuleVersion)) && (prog_ver == CACHE_FORMAT)) {
-                s >> *m_entryList;
-                read = true;
-            }
+			f1.close();
+			qDebug() << "Read" << m_entryList->count() << "entries from lexicon cache for module" << name();
+			return m_entryList;
+		}
 
-            f1.close();
-            //    qWarning("read entries %d",m_entryList->count());
-        }
+		f1.close();
+	}
 
-        //   Q_ASSERT(read);
-        //   Q_ASSERT(m_entryList->count());
-        if (!read || !m_entryList->count()) {
-            my_module->setSkipConsecutiveLinks(true);
-            (*my_module) = sword::TOP;
-            snap(); //snap to top entry
+	/*
+	 * Ok, no cache or invalid.
+	 */
+	qDebug() << "Read all entries of lexicon" << name();
 
-            //    qWarning("Reading in module" );
-            int i = 0;
+	sword::SWModule* my_module = module();
+	my_module->setSkipConsecutiveLinks(true);
+	(*my_module) = sword::TOP;
+	snap(); //snap to top entry
 
-            do {
-                if ( is_unicode ) {
-                    m_entryList->append(QString::fromUtf8(my_module->KeyText()));
-                    //      qWarning("Entry: %s", my_module->KeyText() );
-                }
-                else { //for latin1 modules use fromLatin1 because of speed
-                    //           m_entryList->append(QString::fromLatin1(my_module->KeyText()));
-                    QTextCodec* codec = QTextCodec::codecForName("Windows-1252");
-                    m_entryList->append(codec->toUnicode(my_module->KeyText()));
-                }
+	do {
+		if ( isUnicode() ) {
+			m_entryList->append(QString::fromUtf8(my_module->KeyText()));
+		}
+		else {
+			//for latin1 modules use fromLatin1 because of speed
+			QTextCodec* codec = QTextCodec::codecForName("Windows-1252");
+			m_entryList->append(codec->toUnicode(my_module->KeyText()));
+		}
 
-                (*my_module)++;
-                i++;
-            }
-            while ( !my_module->Error() );
+		(*my_module)++;
+	}
+	while ( !my_module->Error() );
 
-            //     qWarning("Reading finished. Module has %d entries.", i );
+	(*my_module) = sword::TOP; //back to the first entry
 
-            (*my_module) = sword::TOP; //back to the first entry
+	my_module->setSkipConsecutiveLinks(false);
 
-            my_module->setSkipConsecutiveLinks(false);
+	if (m_entryList->count()) {
+		m_entryList->first().simplified();
 
-            if (m_entryList->count()) {
-                m_entryList->first().simplified();
+		if (m_entryList->first().trimmed().isEmpty()) {
+			m_entryList->erase( m_entryList->begin() );
+		}
+	}
 
-                if (m_entryList->first().trimmed().isEmpty()) {
-                    m_entryList->erase( m_entryList->begin() );
-                }
+	qDebug() << "Writing cache file for lexicon module" << name();
 
-                //now sort the list, this is necesssary because Sword doesn't do Unicode ordering
-                //     qWarning("sorting");
-                //      QStringList::iterator start(m_entryList->begin());
-                //      QStringList::iterator end(m_entryList->end());
-                //      std::sort( start, end, myLocaleAwareCompare() ); //stl sort
-                //      m_entryList->sort(); //make sure the module is sorted by utf-8
-            }
+	if (m_entryList->count()) {
+		//create cache
+		QString dir(DU::getUserCacheDir().absolutePath());
+		QFile f2( QString(dir).append("/").append(name()) );
 
-            qWarning("Writing cache file.");
-
-            if (m_entryList->count()) {
-                //create cache
-                QString dir(DU::getUserCacheDir().absolutePath());
-                //QFile f2( QString::fromLatin1("%1/%2").arg(dir).arg( name() ) );
-                QFile f2( QString(dir).append("/").append(name()) );
-
-
-                if (f2.open( QIODevice::WriteOnly )) {
-                    QDataStream s( &f2 );
-                    s << config(CSwordModuleInfo::ModuleVersion); //store module version
-                    s << QString(CACHE_FORMAT); //store BT version -- format may change
-                    s << *m_entryList;
-                    f2.close();
-                }
-            }
-        }
-    }
+		if (f2.open( QIODevice::WriteOnly )) {
+			QDataStream s( &f2 );
+			s << config(CSwordModuleInfo::ModuleVersion) //store module version
+				<< QString(CACHE_FORMAT) //store BT version -- format may change
+				<< QString::number(s.version()) //store QDataStream version -- format may change
+				<< *m_entryList;
+			f2.close();
+		}
+	}
 
     return m_entryList;
 }

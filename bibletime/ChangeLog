@@ -1,3 +1,6 @@
+2009-11-28 Martin Gruner <mgruner@crosswire.org>
+    * Fixed lexicon cache file validation.
+
 2009-11-24 Kang Sun <k486@digizip.com>
     * Fixed automatic bookmark saving.  Bug ID: 1602826.
 
