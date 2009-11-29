@@ -19,8 +19,7 @@
 class CSwordModuleInfo;
 class BtBookshelfView;
 class BtBookshelfTreeModel;
-class BtModuleHiddenFilterProxyModel;
-class BtModuleNameFilterProxyModel;
+class BtBookshelfFilterModel;
 class QAction;
 class QActionGroup;
 class QLabel;
@@ -57,12 +56,11 @@ class BtBookshelfDockWidget: public QDockWidget {
 
     protected:
         // Models:
-        BtBookshelfTreeModel           *m_bookshelfTreeModel;
-        BtModuleHiddenFilterProxyModel *m_filterProxyModel;
-        BtModuleNameFilterProxyModel   *m_nameFilterProxyModel;
+        BtBookshelfTreeModel   *m_bookshelfTreeModel;
+        BtBookshelfFilterModel *m_filterProxyModel;
 
         // Widgets:
-        QWidget *m_widget;
+        QWidget         *m_widget;
         BtBookshelfView *m_view;
         QLabel          *m_nameFilterLabel;
         QLineEdit       *m_nameFilterEdit;

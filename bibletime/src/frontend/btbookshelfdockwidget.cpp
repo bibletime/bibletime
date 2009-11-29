@@ -26,8 +26,7 @@
 #include <QVBoxLayout>
 #include "backend/bookshelfmodel/btbookshelfmodel.h"
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
-#include "backend/bookshelfmodel/btmodulehiddenfilterproxymodel.h"
-#include "backend/bookshelfmodel/btmodulenamefilterproxymodel.h"
+#include "backend/bookshelfmodel/btbookshelffiltermodel.h"
 #include "backend/config/cbtconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
@@ -59,10 +58,8 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
     m_bookshelfTreeModel->setDefaultChecked(BtBookshelfTreeModel::MODULE_HIDDEN);
     m_bookshelfTreeModel->setSourceModel(CPointers::backend()->model());
 
-    m_filterProxyModel = new BtModuleHiddenFilterProxyModel(this);
+    m_filterProxyModel = new BtBookshelfFilterModel(this);
     m_filterProxyModel->setSourceModel(m_bookshelfTreeModel);
-    m_nameFilterProxyModel = new BtModuleNameFilterProxyModel(this);
-    m_nameFilterProxyModel->setSourceModel(m_filterProxyModel);
 
     // Setup actions and menus:
     initMenus();
@@ -96,13 +93,13 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
     layout->addLayout(toolBar);
 
     m_view = new BtBookshelfView(this);
-    m_view->setModel(m_nameFilterProxyModel);
+    m_view->setModel(m_filterProxyModel);
     layout->addWidget(m_view);
     m_widget->setLayout(layout);
     setWidget(m_widget);
 
     connect(m_nameFilterEdit, SIGNAL(textEdited(QString)),
-            m_nameFilterProxyModel, SLOT(setFilterFixedString(QString)));
+            m_filterProxyModel, SLOT(setNameFilterFixedString(QString)));
     connect(m_view, SIGNAL(contextMenuActivated(QPoint)),
             this, SLOT(showContextMenu(QPoint)));
     connect(m_view,
@@ -276,10 +273,10 @@ void BtBookshelfDockWidget::groupingActionTriggered(QAction *action) {
 void BtBookshelfDockWidget::showHideEnabled(bool enable) {
     if (enable) {
         m_bookshelfTreeModel->setCheckable(true);
-        m_filterProxyModel->setEnabled(false);
+        m_filterProxyModel->setShowHidden(true);
     }
     else {
-        m_filterProxyModel->setEnabled(true);
+        m_filterProxyModel->setShowHidden(false);
         m_bookshelfTreeModel->setCheckable(false);
     }
 }
