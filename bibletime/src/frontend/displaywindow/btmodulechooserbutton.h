@@ -99,8 +99,6 @@ class BtModuleChooserButton : public QToolButton  {
 
         QMenu* m_popup;
         QList<QMenu*> m_submenus;
-
-        BtModuleChooserBar* m_moduleChooserBar;
 };
 
 #endif

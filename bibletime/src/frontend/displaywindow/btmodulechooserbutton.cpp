@@ -26,8 +26,7 @@
 BtModuleChooserButton::BtModuleChooserButton(BtModuleChooserBar *parent, CSwordModuleInfo::ModuleType mtype)
         : QToolButton(parent),
         m_moduleType(mtype),
-        m_popup(0),
-        m_moduleChooserBar(parent) {
+        m_popup(0) {
     //qDebug()<<"BtModuleChooserButton::BtModuleChooserButton";
     setPopupMode(QToolButton::InstantPopup);
 }
