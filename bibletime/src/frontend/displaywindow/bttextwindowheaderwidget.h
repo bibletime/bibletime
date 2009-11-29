@@ -101,8 +101,6 @@ class BtTextWindowHeaderWidget : public QWidget {
         QFrame* m_separator;
         QMenu* m_popup;
         QList<QMenu*> m_submenus;
-
-        BtTextWindowHeader* m_header;
 };
 
 #endif

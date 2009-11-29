@@ -31,8 +31,7 @@ const char* ActionType = "ActionType";
 BtTextWindowHeaderWidget::BtTextWindowHeaderWidget(BtTextWindowHeader *parent, CSwordModuleInfo::ModuleType mtype)
         : QWidget(parent),
         m_moduleType(mtype),
-        m_popup(0),
-        m_header(parent) {
+        m_popup(0) {
     QHBoxLayout* layout = new QHBoxLayout(this);
     layout->setContentsMargins(0, 0, 0, 0);
 
