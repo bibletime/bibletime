@@ -39,28 +39,6 @@
 
 using namespace Profile;
 
-// /* An action which stores a user defined pointer to a widget.
-//  * @author Joachim Ansorg
-//  */
-// class KUserDataAction : public KToggleAction {
-// public:
-// 	KUserDataAction( QString caption, const KShortcut& shortcut, const QObject* receiver, const char* slot, KActionCollection* actionCollection)
-// 		: KToggleAction(caption, actionCollection), m_userData(0)
-// 	{
-// 		setShortcut(shortcut);
-// 		QObject::connect(this, SIGNAL(triggered()), receiver, slot);
-// 	};
-//
-// 	void setUserData(QWidget* const data) {
-// 		m_userData = data;
-// 	};
-// 	QWidget* const getUserData() const {
-// 		return m_userData;
-// 	};
-//
-// private:
-// 	QWidget* m_userData;
-// };
 
 /** Opens the optionsdialog of BibleTime. */
 void BibleTime::slotSettingsOptions() {
@@ -102,12 +80,7 @@ void BibleTime::slotSettingsChanged() {
 
 /** Opens the sword setup dialog of BibleTime. */
 void BibleTime::slotSwordSetupDialog() {
-    /// \todo nonmodal dialog, memory management (one instance only!
-    //BtModuleManagerDialog *dlg = new BtModuleManagerDialog(this);
-    BtModuleManagerDialog* dlg = BtModuleManagerDialog::getInstance(this);
-    //disconnect first because it may be connected already
-    //QObject::disconnect(dlg, SIGNAL(swordSetupChanged()), this, SLOT(slotSwordSetupChanged()) );
-    //connect(dlg, SIGNAL(swordSetupChanged()), SLOT(slotSwordSetupChanged()) );
+    BtModuleManagerDialog *dlg = BtModuleManagerDialog::getInstance(this);
 
     dlg->showNormal();
     dlg->show();
@@ -115,37 +88,9 @@ void BibleTime::slotSwordSetupDialog() {
     dlg->activateWindow();
 }
 
-/** Is called when settings in the sword setup dialog were changed (ok or apply) */
-void BibleTime::slotSwordSetupChanged() {
-    /*
-      Refresh everything here what might have changed
-      these are the mainindex, the searchdialog, the displaywindows
-      But at first we have to reset the Sword backend to reload the modules
-
-    \todo should bookshelf manager be updated?
-    Should there be different signals/slots for visual changes,
-    i.e. grouping/hiding?
-
-    */
-
-
-    //CPointers::deleteBackend();
-    //m_backend = new CSwordBackend();
-    //CPointers::setBackend(new CSwordBackend());
-    //CPointers::backend()->reloadModules();
-
-    //m_mainIndex->reloadSword();
-
-    //  refresh display windows
-    //refreshDisplayWindows();
-}
-
 /** Is called just before the window menu is ahown. */
 void BibleTime::slotWindowMenuAboutToShow() {
     Q_ASSERT(m_windowMenu);
-    if (!m_windowMenu) {
-        return;
-    }
 
     if ( m_mdi->subWindowList().isEmpty() ) {
         m_windowCascade_action->setEnabled(false);
@@ -170,47 +115,12 @@ void BibleTime::slotWindowMenuAboutToShow() {
         m_windowCloseAll_action->setEnabled(true);
         m_openWindowsMenu->setEnabled(true);
     }
-
-    // QList<QAction*>::iterator end = m_windowOpenWindowsList.end();
-    // for (QList<QAction*>::iterator it = m_windowOpenWindowsList.begin(); it != end; ++it )
-    // {
-    //(*it)->unplugAll(); //see kde porting doc
-    // foreach (QWidget *w, (*it)->associatedWidgets() )
-    // {
-    // 	w->removeAction(*it);
-    // }
-    // }
-
-    //m_windowOpenWindowsList.setAutoDelete(true);
-    // qDeleteAll(m_windowOpenWindowsList);
-    // m_windowOpenWindowsList.clear();
-
-// 	if (!m_windowActionCollection) {
-// 		m_windowActionCollection = new KActionCollection(this, KComponentData());
-// 	}
-
-// 	QList<QWidget*> windows = m_mdi->windowList();
-// 	const int count = windows.count();
-// 	for ( int i = 0; i < count; ++i ) {
-// 		QWidget* w = windows.at(i);
-// 		Q_ASSERT(w);
-//
-// 		KUserDataAction* action = new KUserDataAction(w->windowTitle(), KShortcut(), this, SLOT(slotWindowMenuActivated()), m_windowActionCollection);
-// 		Q_ASSERT(action);
-// 		action->setUserData(w);
-//
-// 		m_windowOpenWindowsList.append(action);
-// 		action->setChecked( w == m_mdi->activeWindow() );
-// 		m_windowMenu->addAction(action);
-// 	}
 }
 
 /** Is called just before the open windows menu is ahown. */
 void BibleTime::slotOpenWindowsMenuAboutToShow() {
     Q_ASSERT(m_openWindowsMenu);
-    if (!m_openWindowsMenu) {
-        return;
-    }
+
     QList<QMdiSubWindow*> windows = m_mdi->usableWindowList();
     m_openWindowsMenu->clear();
     foreach (QMdiSubWindow *window, windows) {
@@ -314,22 +224,6 @@ void BibleTime::slotTileHorizontal() {
 /** This slot is connected with the windowAutoCascade_action object */
 void BibleTime::slotAutoCascade() {
     slotUpdateWindowArrangementActions( m_windowAutoCascade_action );
-}
-
-void BibleTime::slotWindowMenuActivated() {
-    if (!m_windowMenu) {
-        return;
-    }
-
-    /*	const KUserDataAction* action = dynamic_cast<const KUserDataAction*>(sender());
-    	Q_ASSERT(action);
-    	if (action) {
-    		QWidget* const window = action->getUserData();
-    		Q_ASSERT(window);
-    		if ( window ) {
-    			window->setFocus();
-    		}
-    	}*/
 }
 
 /** Shows/hides the toolbar */

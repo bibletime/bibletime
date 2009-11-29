@@ -273,10 +273,6 @@ class BibleTime : public QMainWindow {
         void slotManualArrangementMode();
 
         /**
-        * Is called when a client was selected in the window menu
-        */
-        void slotWindowMenuActivated();
-        /**
          * Shows/hides the toolbar
          */
         void slotToggleToolbar();
@@ -313,11 +309,7 @@ class BibleTime : public QMainWindow {
         * changed (ok or apply)
         */
         void slotSettingsChanged();
-        /**
-        * Is called when settings in the sword setup dialog have been
-        * changed (ok or apply)
-        */
-        void slotSwordSetupChanged();
+
         /**
          * Called when search button is pressed
          **/
@@ -402,8 +394,8 @@ class BibleTime : public QMainWindow {
         QStringList searchInOpenModules(const QString& searchText);
         QStringList searchInDefaultBible(const QString& searchText);
         QStringList getModulesOfType(const QString& type);
-        void reloadModules();
-        //helper function
+
+        // Helper function
         void syncAllModulesByType(const CSwordModuleInfo::ModuleType type, const QString& key);
 };
 

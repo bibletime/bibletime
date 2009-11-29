@@ -32,10 +32,6 @@ void BibleTimeDBusAdaptor::syncAllVerseBasedModules(const QString& key) {
     m_bibletime->syncAllVerseBasedModules(key);
 }
 
-void BibleTimeDBusAdaptor::reloadModules() {
-    m_bibletime->reloadModules();
-}
-
 void BibleTimeDBusAdaptor::openWindow(const QString& moduleName, const QString& key) {
     m_bibletime->openWindow(moduleName, key);
 }

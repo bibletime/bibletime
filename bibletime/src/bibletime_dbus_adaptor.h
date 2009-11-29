@@ -48,9 +48,7 @@ class BibleTimeDBusAdaptor : QDBusAbstractAdaptor {
         * @param key The key which is set to all Bible and Commentary windows.
         */
         void syncAllVerseBasedModules(const QString& key);
-        /** Reload all modules
-        */
-        void reloadModules();
+
         /** Open a new read window for the module moduleName using the given key
         * @param moduleName The name of the module which is opened in a new module window.
         * @param key The key to set to the newly opened window.
