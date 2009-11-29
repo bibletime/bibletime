@@ -61,6 +61,7 @@ SET(bibletime_SOURCES
 
 	# frontend top level
 	src/frontend/btbookshelfdockwidget.cpp
+	src/frontend/btmenuview.cpp
 	src/frontend/cdragdrop.cpp
 	src/frontend/crossrefrendering.cpp
 	src/frontend/cprinter.cpp
@@ -205,6 +206,7 @@ SET(bibletime_MOCABLE_HEADERS
 	src/backend/cswordmodulesearch.h
 	src/bibletime.h
 	src/bibletime_dbus_adaptor.h
+	src/frontend/btmenuview.h
 	src/frontend/btbookshelfdockwidget.h
 	src/frontend/searchdialog/csearchmodulechooserdialog.h
 	src/frontend/searchdialog/crangechooserdialog.h
