@@ -15,6 +15,8 @@
 
 #include <QSortFilterProxyModel>
 
+#include "backend/drivers/cswordmoduleinfo.h"
+
 
 class BtBookshelfFilterModel: public QSortFilterProxyModel {
     Q_OBJECT
@@ -63,6 +65,18 @@ class BtBookshelfFilterModel: public QSortFilterProxyModel {
             return m_showShown;
         }
 
+        // Category filter:
+        int categoryFilterRole() const {
+            return m_categoryFilterRole;
+        }
+
+        int categoryFilterKeyColumn() const {
+            return m_categoryFilterColumn;
+        }
+
+        inline CSwordModuleInfo::Categories shownCategories() const {
+            return m_categoryFilter;
+        }
 
     public slots:
         void setEnabled(bool enable);
@@ -79,9 +93,15 @@ class BtBookshelfFilterModel: public QSortFilterProxyModel {
         void setShowHidden(bool show);
         void setShowShown(bool show);
 
+        // Category filter:
+        void setCategoryFilterRole(int role);
+        void setCategoryFilterKeyColumn(int column);
+        void setShownCategories(const CSwordModuleInfo::Categories &categories);
+
     protected:
         bool nameFilterAcceptsRow(int row, const QModelIndex &parent) const;
         bool hiddenFilterAcceptsRow(int row, const QModelIndex &parent) const;
+        bool categoryFilterAcceptsRow(int row, const QModelIndex &parent) const;
 
     protected:
         bool m_enabled;
@@ -97,6 +117,11 @@ class BtBookshelfFilterModel: public QSortFilterProxyModel {
         int m_hiddenFilterColumn;
         bool m_showHidden;
         bool m_showShown;
+
+        // Categories filter:
+        CSwordModuleInfo::Categories m_categoryFilter;
+        int m_categoryFilterRole;
+        int m_categoryFilterColumn;
 };
 
 #endif // BTBOOKSHELFFILTERMODEL_H

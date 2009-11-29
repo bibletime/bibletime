@@ -20,7 +20,10 @@ BtBookshelfFilterModel::BtBookshelfFilterModel(QObject *parent)
       m_nameFilterRole(BtBookshelfModel::ModuleNameRole), m_nameFilterColumn(0),
       m_nameFilterCase(Qt::CaseInsensitive),
       m_hiddenFilterRole(BtBookshelfModel::ModuleHiddenRole),
-      m_hiddenFilterColumn(0), m_showHidden(false), m_showShown(true)
+      m_hiddenFilterColumn(0), m_showHidden(false), m_showShown(true),
+      m_categoryFilter(CSwordModuleInfo::AllCategories),
+      m_categoryFilterRole(BtBookshelfModel::ModuleCategoryRole),
+      m_categoryFilterColumn(0)
 {
     // Intentionally empty
 }
@@ -34,6 +37,8 @@ void BtBookshelfFilterModel::setEnabled(bool enable) {
     m_enabled = enable;
     invalidateFilter();
 }
+
+// Name filter:
 
 void BtBookshelfFilterModel::setNameFilterRole(int role) {
     if (m_nameFilterRole == role) return;
@@ -59,6 +64,8 @@ void BtBookshelfFilterModel::setNameFilterCase(Qt::CaseSensitivity value) {
     invalidateFilter();
 }
 
+// Hidden filter:
+
 void BtBookshelfFilterModel::setHiddenFilterRole(int role) {
     if (m_hiddenFilterRole == role) return;
     m_hiddenFilterRole = role;
@@ -83,6 +90,30 @@ void BtBookshelfFilterModel::setShowShown(bool show) {
     invalidateFilter();
 }
 
+// Category filter:
+
+void BtBookshelfFilterModel::setCategoryFilterRole(int role) {
+    if (m_categoryFilterRole == role) return;
+    m_categoryFilterRole = role;
+    invalidateFilter();
+}
+
+void BtBookshelfFilterModel::setCategoryFilterKeyColumn(int column) {
+    if (m_categoryFilterColumn == column) return;
+    m_categoryFilterColumn = column;
+    invalidateFilter();
+}
+
+void BtBookshelfFilterModel::setShownCategories(
+        const CSwordModuleInfo::Categories &categories)
+{
+    if (m_categoryFilter == categories) return;
+    m_categoryFilter = categories;
+    invalidateFilter();
+}
+
+// Filtering:
+
 bool BtBookshelfFilterModel::filterAcceptsRow(int row,
         const QModelIndex &parent) const
 {
@@ -90,6 +121,7 @@ bool BtBookshelfFilterModel::filterAcceptsRow(int row,
 
     if (!hiddenFilterAcceptsRow(row, parent)) return false;
     if (!nameFilterAcceptsRow(row, parent)) return false;
+    if (!categoryFilterAcceptsRow(row, parent)) return false;
     return true;
 }
 
@@ -143,3 +175,28 @@ bool BtBookshelfFilterModel::hiddenFilterAcceptsRow(int row,
     }
 }
 
+bool BtBookshelfFilterModel::categoryFilterAcceptsRow(int row,
+        const QModelIndex &parent) const
+{
+    if (m_categoryFilter == CSwordModuleInfo::AllCategories) return true;
+
+    QAbstractItemModel *m(sourceModel());
+
+    QModelIndex itemIndex(m->index(row, m_categoryFilterColumn, parent));
+    int numChildren(m->rowCount(itemIndex));
+    if (numChildren == 0) {
+        int cat = m->data(itemIndex, m_categoryFilterRole).toInt();
+        if (m_categoryFilter.testFlag((CSwordModuleInfo::Category) cat)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    else {
+        for (int i(0); i < numChildren; i++) {
+            if (filterAcceptsRow(i, itemIndex)) return true;
+        }
+        return false;
+    }
+}
