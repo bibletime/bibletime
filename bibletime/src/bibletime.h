@@ -156,6 +156,10 @@ class BibleTime : public QMainWindow {
         *  Save the configuration dialog settings, don't open dialog
         */
         void saveConfigSettings();
+        /**
+        *  Get QAction from actionCollection
+        */
+        QAction* getAction(const QString& actionName);
 
     public slots:
         /**

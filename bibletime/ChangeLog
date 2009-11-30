@@ -1,3 +1,6 @@
+2009-11-29 Gary Holmlund
+    * Fix bug ID 2905233, CTRL+W does not close child windows
+
 2009-11-28 Martin Gruner <mgruner@crosswire.org>
     * Fixed lexicon cache file validation.
 

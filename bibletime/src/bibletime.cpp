@@ -316,3 +316,9 @@ bool BibleTime::event(QEvent* event) {
         Search::CSearchDialog::closeDialog();
     return QMainWindow::event(event);
 }
+
+QAction* BibleTime::getAction(const QString& actionName)
+{
+    return m_actionCollection->action(actionName);
+}
+
