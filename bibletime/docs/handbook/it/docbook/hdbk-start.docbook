@@ -6,8 +6,8 @@
 
     <sect2 id="hdbk-start">
       <title>Avviando &bibletime;</title>
-      <para>&bibletime; is an executable file that is integrated with the desktop. You 
-can launch &bibletime; from the Start Menu with this icon: 
+      <para>&bibletime; è un file eseguibile integrato con il desktop. Puoi lanciare 
+&bibletime; dal menu di avvio con questa icona: 
       <mediaobject>
         <imageobject>
           <imagedata fileref="i_bibletime.png" format="PNG" />
@@ -17,27 +17,28 @@ can launch &bibletime; from the Start Menu with this icon:
         </textobject>
       </mediaobject></para>
 
-      <para>&bibletime; can also be launched from a terminal command prompt. To launch 
-&bibletime;, open a terminal window and type: 
+      <para>&bibletime; può essere avviato da un prompt dei comandi. Per 
+lanciare&bibletime;, apri una finestra di terminale e digita: 
       <screen>bibletime</screen></para>
     </sect2>
 
     <sect2 id="hdbk-start-custom">
-      <title>Startup customization</title>
-      <para>From a terminal you can use &bibletime; to open a random verse in the 
-default bible:
+      <title>Personalizzazione avvio</title>
+      <para>Da un terminale puoi usare &bibletime; per aprire un versetto casuale nella 
+Bibbia di default:
 	<screen>bibletime --open-default-bible "&lt;random&gt;"</screen>
-	To open at a given passage like John 3:16, use:
-	<screen>bibletime --open-default-bible "John 3:16"</screen>
-	You can also use booknames in your current bookname language.</para>
+	Per aprire ad un certo passaggio come Giovanni 3:16, usa:
+	<screen>bibletime --open-default-bible "Giovanni 3:16"</screen>
+	Puoi anche usare i nomi dei libri della Bibbia nella corrente per i nomi dei 
+libri della Bibbia.</para>
     </sect2>
   </sect1>
 
   <sect1 id="hdbk-startsequence">
     <title>Sequenza di avvio</title>
 
-    <para>As &bibletime; launches you may see the following screens before the main 
-&bibletime; window opens:</para>
+    <para>Come &bibletime; parte puoi vedere le seguenti schermate prima che la 
+finestra principale di &bibletime; si apra:</para>
 
     <variablelist>
       <varlistentry>
@@ -45,15 +46,15 @@ default bible:
           <interface>Bookshelf Manager</interface>
         </term>
         <listitem>
-          <para><action>Modifies your Bookshelf</action>.  This dialog lets you modify your 
-Bookshelf, add or delete works from your system.  It will only be shown if 
-no default Bookshelf can be found.  Please see <link 
-linkend="hdbk-op-bookshelfmanager">The Bookshelf Manager section</link> for 
-further details. If you start off with an empty Bookshelf, it will be 
-helpful to install at least one Bible, Commentary, Lexicon and one Book to 
-get to know &bibletime;'s basic features quickly.  You can do this by 
-clicking on the Refresh button.  You will be presented with a list of works 
-that are available from the &cbs;</para>
+          <para><action>Modifica Libreria</action>. Questa finestra ti permette di 
+modificare la tua Libreria, aggiungere o cancellare documenti dal tuo 
+sistema. Sarà visualizzato solo se non è trovata una Libreria di 
+default. Guarda la sezione <link linkend="hdbk-op-bookshelfmanager">Il 
+Gestore Libreria</link> per maggiori dettagli. Se inizi con una Libreria 
+vuota, sarà utile per installare almeno una Bibbia, Commenti, Lessico e un 
+Libro per conoscere le funzioni di base di &bibletime; velocemente. Puoi 
+fare questo cliccando sul pulsante Aggiorna. Si presenterà con una lista di 
+documenti disponibili da &cbs;</para>
         </listitem>
       </varlistentry>
 
@@ -63,9 +64,10 @@ that are available from the &cbs;</para>
         </term>
         <listitem>
           <para>
-          <action>Customizes &bibletime;.</action>This dialog lets you adapt 
-&bibletime; to your needs. Please see <link linkend="hdbk-config-bt">the 
-detailed description</link> of this dialog.</para>
+          <action>Personalizza &bibletime;.</action> Questa finestra ti permette di 
+adattare &bibletime; alle tue esigenze. Guarda <link 
+linkend="hdbk-config-bt">la descrizione dettagliata</link> di questa 
+finestra.</para>
         </listitem>
       </varlistentry>
     </variablelist>

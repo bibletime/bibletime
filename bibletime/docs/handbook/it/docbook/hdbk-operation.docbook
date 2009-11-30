@@ -71,14 +71,14 @@ pagina</ulink> sul sito di &cbs;.</para>
       <sect3 id="hdbk-op-parts-bookshelf-search">
         <title>Cercare nei documenti</title>
 
-        <para>You can search in a work by clicking with the 
-<mousebutton>right</mousebutton> mouse button on its symbol and selecting 
-<guimenuitem>"Search in work(s)"</guimenuitem>. By pressing &Shift; and 
-clicking on other works you can select more than one. Then follow the same 
-procedure to open the search dialog. You will be searching in all of these 
-documents. A complete description of the operation of the search features 
-can be found on the <link linkend="hdbk-op-search">Searching in Works 
-section</link>.</para>
+        <para>Puoi fare una ricerca in un documento cliccando con il pulsante 
+<mousebutton>destro</mousebutton> del mouse sul suo simbolo e selezionando 
+<guimenuitem>"Cerca nei documenti"</guimenuitem>. Premendo &Shift; e 
+cliccando su altri documenti puoi selezionarne più di uno. Poi segui la 
+stessa procedura per aprire la finestra di ricerca. Cercherai in tutti quei 
+documenti. Una descrizione completa dell'operazione di ricerca può essere 
+trovata nella sezione <link linkend="hdbk-op-search">Cercare nei 
+documenti</link>.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-bookshelf-bookmarks">
@@ -355,8 +355,8 @@ cliccando <menuchoice><guimenu>Impostazioni</guimenu><guimenuitem>Gestore
 Libreria</guimenuitem></menuchoice> nel menu principale.</para>
 
       <tip>
-	<para>If this is the first time you are starting &bibletime;, click on the Refresh 
-button to see a list of works provided by the &cbs;.</para>
+	<para>Se è la prima volta che avvii &bibletime;, clicca sul pulsante Aggiorna per 
+vedere una lista di documenti forniti da &cbs;.</para>
       </tip>
 
     <sect2 id="hdbk-op-bookshelfmanager-path">
@@ -381,14 +381,13 @@ che offrono documenti &sword;). Puoi gestire le biblioteche con
 biblioteca</guibutton>.</para>
       <para>Per iniziare il processo d'installazione o d'aggiornamento, seleziona una 
 biblioteca a cui ti vuoi connettere e il percorso di una Libreria locale per 
-installarci i documenti. Poi clicca su <guibutton>Connetti alla 
-biblioteca</guibutton>. &bibletime; scansionerà il contenuto della 
-biblioteca e ti darà una lista dei documenti che puoi aggiungere alla tua 
-Libreria, o che hai già installato ma è disponibile una nuova versione nella 
-biblioteca, e quindi possono essere aggiornati. Poi puoi spuntare tutti i 
-documenti che vuoi installare o aggiornare, e cliccare su 
-<guibutton>Installa documenti</guibutton>. Saranno trasferiti nella tua 
-Libreria.</para>
+installarci i documenti. Poi clicca su <guibutton>Connetti alla biblioteca 
+</guibutton>. &bibletime; scansionerà il contenuto della biblioteca e ti 
+darà una lista dei documenti che puoi aggiungere alla tua Libreria, o che 
+hai già installato ma è disponibile una nuova versione nella biblioteca, e 
+quindi possono essere aggiornati. Poi puoi spuntare tutti i documenti che 
+vuoi installare o aggiornare, e cliccare su <guibutton> Installa 
+documenti</guibutton>. Saranno trasferiti nella tua Libreria.</para>
     </sect2>
     <sect2 id="hdbk-op-bookshelfmanager-remove">
       <title>Rimuovi documenti</title>
@@ -408,20 +407,19 @@ indici orfani per i documenti rimossi.</para>
   </sect1>
   <sect1 id="hdbk-op-output">
     <title>Esportazione e Stampa</title>
-    <para>In many places, you can open a context menu by clicking with the 
-<mousebutton>right</mousebutton> mouse button. Depending on context, it will 
-allow you to <guimenuitem>Select</guimenuitem>, 
-<guimenuitem>Copy</guimenuitem> (to clipboard), 
-<guimenuitem>Save</guimenuitem> or <guimenuitem>Print</guimenuitem> 
-text. This works for example in the read windows, when you click on the 
-normal text or the verse reference, or in the search result page when you 
-click on a work or one or more verse references. It is pretty 
-straightforward, so just try it out.</para>
+    <para>In molti posti, puoi aprire un menu contestuale cliccando con il pulsante 
+<mousebutton>destro</mousebutton> del mouse. A seconda del contesto potrai 
+scegliere <guimenuitem>Seleziona</guimenuitem>, <guimenuitem>Copia 
+</guimenuitem> (negli appunti), <guimenuitem>Salva</guimenuitem> o 
+<guimenuitem>Stampa</guimenuitem> testo. Questo funziona per esempio nella 
+finestra di lettura, quando clicchi sul testo o sul riferimento al versetto, 
+o nella pagina dei risultati di ricerca quando clicchi su un documento o uno 
+o più riferimenti ai versetti. È piuttosto semplice, quindi basta provarlo.</para>
 
-    <para>Printing from &bibletime; is rather basic and is intended as a utility. If 
-you are composing a document or presentation containing text from 
-&bibletime; works, we suggest that you use one of the presentation or 
-editing tools on your system to format your document, rather than printing 
-from &bibletime; directly.</para>
+    <para>Stampare da &bibletime; è abbastanza basilare ed è una utility. Se stai 
+componendo un documento o una presentazione contenente testo di documenti di 
+&bibletime;, ti suggeriamo di usare uno degli editor di presentazioni sul 
+tuo sistema per formattare i tuoi documenti, piuttosto che stamparli 
+direttamente da &bibletime;.</para>
   </sect1>
 </chapter>
