@@ -307,6 +307,30 @@ tak je vyzkoušejte!)</para>
           </listitem>
         </varlistentry>
 
+        <varlistentry id="hdbk-reference-menus-window-tile">
+          <term>
+            <menuchoice>
+              <shortcut>
+                <keycombo action="simul">
+                <keycap>&Ctrl;I</keycap></keycombo>
+              </shortcut>
+              <guimenu>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="i_tile.png" format="PNG" />
+                </imageobject>
+              </inlinemediaobject>Window</guimenu>
+              <guimenuitem>Tile</guimenuitem>
+            </menuchoice>
+          </term>
+
+          <listitem>
+            <para>
+	      <action>Tiles all open windows</action>.
+	    </para>
+          </listitem>
+        </varlistentry>
+
         <varlistentry id="hdbk-reference-menus-window-tilevertically">
           <term>
             <menuchoice>
@@ -866,6 +890,19 @@ vertikálně</guimenuitem> </menuchoice> zapnout automatické skládání oken.
 rozvržení</guimenuitem> <guimenuitem>Automaticky dlaždice 
 horizontálně</guimenuitem> </menuchoice> zapne automatické skládání oken.</entry>
           </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;&Alt;I</keycap></keycombo>
+            </entry>
+
+            <entry>
+	      <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement 
+mode</guimenuitem> <guimenuitem>Auto-tile</guimenuitem> </menuchoice> 
+equivalent; toggle automatic window tiling.</entry>
+          </row>
+
           <row>
             <entry>
               <keycombo action="simul">
@@ -876,6 +913,7 @@ horizontálně</guimenuitem> </menuchoice> zapne automatické skládání oken.<
 rozvržení</guimenuitem> <guimenuitem>Automaticky kaskádovat</guimenuitem> 
 </menuchoice> zapne automatické skládání oken do kaskády.</entry>
           </row>
+
           <row>
             <entry>
               <keycombo action="simul">
@@ -966,6 +1004,19 @@ zapne manuální skládání oken.</entry>
 	      <link linkend="hdbk-reference-menus-window-closeall"> <menuchoice> 
 <guimenu>Okno</guimenu> <guimenuitem>Dlaždice horizontálně</guimenuitem> 
 </menuchoice> </link>.
+            </entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;I</keycap></keycombo>
+            </entry>
+
+            <entry>
+	      <link linkend="hdbk-reference-menus-window-tile"> <menuchoice> 
+<guimenu>Window</guimenu> <guimenuitem>Tile</guimenuitem> </menuchoice> 
+</link> windows equivalent.
             </entry>
           </row>
 

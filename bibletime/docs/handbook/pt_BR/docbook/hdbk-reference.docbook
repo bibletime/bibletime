@@ -308,6 +308,30 @@ para voc (modos Automticos, experimente).</para>
           </listitem>
         </varlistentry>
 
+        <varlistentry id="hdbk-reference-menus-window-tile">
+          <term>
+            <menuchoice>
+              <shortcut>
+                <keycombo action="simul">
+                <keycap>&Ctrl;I</keycap></keycombo>
+              </shortcut>
+              <guimenu>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="i_tile.png" format="PNG" />
+                </imageobject>
+              </inlinemediaobject>Window</guimenu>
+              <guimenuitem>Tile</guimenuitem>
+            </menuchoice>
+          </term>
+
+          <listitem>
+            <para>
+	      <action>Tiles all open windows</action>.
+	    </para>
+          </listitem>
+        </varlistentry>
+
         <varlistentry id="hdbk-reference-menus-window-tilevertically">
           <term>
             <menuchoice>
@@ -873,6 +897,19 @@ posicionamento</guimenuitem> <guimenuitem>Auto-dividir
 horizontalmente</guimenuitem> </menuchoice> equivalente; alterna diviso 
 automtica de janelas.</entry>
           </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;&Alt;I</keycap></keycombo>
+            </entry>
+
+            <entry>
+	      <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement 
+mode</guimenuitem> <guimenuitem>Auto-tile</guimenuitem> </menuchoice> 
+equivalent; toggle automatic window tiling.</entry>
+          </row>
+
           <row>
             <entry>
               <keycombo action="simul">
@@ -883,6 +920,7 @@ automtica de janelas.</entry>
 </guimenuitem> <guimenuitem>Auto-cascata</guimenuitem> </menuchoice> 
 equivalente; alterna cascateamento automtico de janelas.</entry>
           </row>
+
           <row>
             <entry>
               <keycombo action="simul">
@@ -973,6 +1011,19 @@ posicionamento</guimenuitem> <guimenuitem>Modo manual</guimenuitem>
 	      <link linkend="hdbk-reference-menus-window-tilehorizontally"> <menuchoice> 
 <guimenu>Janela</guimenu> <guimenuitem>Dividir horizontalmente</guimenuitem> 
 </menuchoice> </link> equivalente.
+            </entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;I</keycap></keycombo>
+            </entry>
+
+            <entry>
+	      <link linkend="hdbk-reference-menus-window-tile"> <menuchoice> 
+<guimenu>Window</guimenu> <guimenuitem>Tile</guimenuitem> </menuchoice> 
+</link> windows equivalent.
             </entry>
           </row>
 

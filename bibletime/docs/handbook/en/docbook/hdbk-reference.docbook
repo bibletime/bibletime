@@ -318,6 +318,30 @@
           </listitem>
         </varlistentry>
 
+        <varlistentry id="hdbk-reference-menus-window-tile">
+          <term>
+            <menuchoice>
+              <shortcut>
+                <keycombo action="simul">
+                <keycap>&Ctrl;I</keycap></keycombo>
+              </shortcut>
+              <guimenu>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="i_tile.png" format="PNG" />
+                </imageobject>
+              </inlinemediaobject>Window</guimenu>
+              <guimenuitem>Tile</guimenuitem>
+            </menuchoice>
+          </term>
+
+          <listitem>
+            <para>
+	      <action>Tiles all open windows</action>.
+	    </para>
+          </listitem>
+        </varlistentry>
+
         <varlistentry id="hdbk-reference-menus-window-tilevertically">
           <term>
             <menuchoice>
@@ -896,6 +920,22 @@
             </menuchoice> equivalent; toggle automatic window
             tiling.</entry>
           </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;&Alt;I</keycap></keycombo>
+            </entry>
+
+            <entry>
+	      <menuchoice>
+	       <guimenu>Window</guimenu>
+	       <guimenuitem>Arrangement mode</guimenuitem>
+	       <guimenuitem>Auto-tile</guimenuitem>
+	      </menuchoice> equivalent; toggle automatic window
+	      tiling.</entry>
+          </row>
+
           <row>
             <entry>
               <keycombo action="simul">
@@ -909,6 +949,7 @@
             </menuchoice> equivalent; toggle automatic window
             cascading.</entry>
           </row>
+
           <row>
             <entry>
               <keycombo action="simul">
@@ -1020,6 +1061,22 @@
 		  <guimenuitem>Tile horizontally</guimenuitem>
 		</menuchoice>
 	      </link> equivalent.
+            </entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;I</keycap></keycombo>
+            </entry>
+
+            <entry>
+	      <link linkend="hdbk-reference-menus-window-tile">
+		<menuchoice>
+		  <guimenu>Window</guimenu>
+		  <guimenuitem>Tile</guimenuitem>
+		</menuchoice>
+	      </link> windows equivalent.
             </entry>
           </row>
 
