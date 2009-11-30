@@ -140,6 +140,11 @@ extern const QString icon;
 extern const QKeySequence accel;
 extern const char* actionName;
 }
+namespace autoTile {
+extern const QString icon;
+extern const QKeySequence accel;
+extern const char* actionName;
+}
 namespace autoCascade {
 extern const QString icon;
 extern const QKeySequence accel;
@@ -152,6 +157,11 @@ extern const QKeySequence accel;
 extern const char* actionName;
 }
 namespace tileHorizontal {
+extern const QString icon;
+extern const QKeySequence accel;
+extern const char* actionName;
+}
+namespace tile {
 extern const QString icon;
 extern const QKeySequence accel;
 extern const char* actionName;

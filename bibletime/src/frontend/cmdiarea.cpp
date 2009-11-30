@@ -150,6 +150,14 @@ void CMDIArea::myTileHorizontal() {
     emitWindowCaptionChanged();
 }
 
+void CMDIArea::myTile() {
+    if (!updatesEnabled() || !usableWindowList().count() ) {
+        return;
+    }
+    tileSubWindows();
+    emitWindowCaptionChanged();
+}
+
 void CMDIArea::myCascade() {
     if (!updatesEnabled() || !usableWindowList().count() ) {
         return;
@@ -289,6 +297,9 @@ void CMDIArea::triggerWindowUpdate() {
                 break;
             case ArrangementModeCascade:
                 QTimer::singleShot(0, this, SLOT(myCascade()));
+                break;
+            case ArrangementModeTile:
+                QTimer::singleShot(0, this, SLOT(myTile()));
                 break;
             default:
                 break;

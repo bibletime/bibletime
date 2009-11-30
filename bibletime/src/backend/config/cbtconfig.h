@@ -55,6 +55,7 @@ enum bools {
 
     autoTileVertical,
     autoTileHorizontal,
+    autoTile,
     autoCascade,
 
     lineBreaks,

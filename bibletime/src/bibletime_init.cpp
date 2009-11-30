@@ -151,6 +151,13 @@ void BibleTime::insertKeyboardActions( BtActionCollection* const a ) {
     a->addAction("autoHorizontal", action);
 
     action = new QAction(a);
+    action->setText(tr("Auto-&tile"));
+    action->setIcon(DU::getIcon(CResMgr::mainMenu::window::arrangementMode::autoTile::icon));
+    action->setShortcut(QKeySequence(CResMgr::mainMenu::window::arrangementMode::autoTile::accel));
+    action->setToolTip(tr("Automatically tile the open windows"));
+    a->addAction("autoTile", action);
+
+    action = new QAction(a);
     action->setText(tr("Auto-&cascade"));
     action->setIcon(DU::getIcon(CResMgr::mainMenu::window::arrangementMode::autoCascade::icon));
     action->setShortcut(QKeySequence(CResMgr::mainMenu::window::arrangementMode::autoCascade::accel));
@@ -163,6 +170,13 @@ void BibleTime::insertKeyboardActions( BtActionCollection* const a ) {
     action->setShortcut(QKeySequence(CResMgr::mainMenu::window::cascade::accel));
     action->setToolTip(tr("Cascade the open windows"));
     a->addAction("cascade", action);
+
+    action = new QAction(a);
+    action->setText(tr("&Tile"));
+    action->setIcon(DU::getIcon(CResMgr::mainMenu::window::tile::icon));
+    action->setShortcut(QKeySequence(CResMgr::mainMenu::window::tile::accel));
+    action->setToolTip(tr("Tile the open windows"));
+    a->addAction("tile", action);
 
     action = new QAction(a);
     action->setText(tr("Tile &vertically"));
@@ -314,6 +328,10 @@ void BibleTime::initActions() {
     m_windowMenu->addAction(m_windowCascade_action);
     connect(m_windowCascade_action, SIGNAL(triggered()), this, SLOT(slotCascade()) );
 
+    m_windowTile_action = m_actionCollection->action("tile");
+    m_windowMenu->addAction(m_windowTile_action);
+    connect(m_windowTile_action, SIGNAL(triggered()), this, SLOT(slotTile()) );
+
     m_windowTileVertical_action = m_actionCollection->action("tileVertically");
     m_windowMenu->addAction(m_windowTileVertical_action);
     connect(m_windowTileVertical_action, SIGNAL(triggered()), this, SLOT(slotTileVertical()) );
@@ -341,6 +359,11 @@ void BibleTime::initActions() {
     m_windowAutoTileHorizontal_action->setCheckable(true);
     arrangementMenu->addAction(m_windowAutoTileHorizontal_action);
     connect(m_windowAutoTileHorizontal_action, SIGNAL(triggered()), this, SLOT(slotAutoTileHorizontal()) );
+
+    m_windowAutoTile_action = m_actionCollection->action("autoTile");
+    m_windowAutoTile_action->setCheckable(true);
+    arrangementMenu->addAction(m_windowAutoTile_action);
+    connect(m_windowAutoTile_action, SIGNAL(triggered()), this, SLOT(slotAutoTile()) );
 
     m_windowAutoCascade_action = m_actionCollection->action("autoCascade");
     m_windowAutoCascade_action->setCheckable(true);
@@ -536,6 +559,9 @@ void BibleTime::applyProfileSettings( CProfile* p ) {
             break;
         case CMDIArea::ArrangementModeCascade:
             slotAutoCascade();
+            break;
+        case CMDIArea::ArrangementModeTile:
+            slotAutoTile();
             break;
         case CMDIArea::ArrangementModeManual:
             slotManualArrangementMode();

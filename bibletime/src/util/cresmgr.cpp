@@ -136,6 +136,11 @@ const QString icon        = "tile_vert.svg";
 const QKeySequence accel(Qt::CTRL + Qt::ALT + Qt::Key_G);
 const char* actionName    = "windowAutoTileVertical_action";
 }
+namespace autoTile {
+const QString icon        = "tile_auto.svg";
+const QKeySequence accel(Qt::CTRL + Qt::ALT + Qt::Key_I);
+const char* actionName    = "windowAutoTile_action";
+}
 namespace autoCascade {
 const QString icon        = "cascade_auto.svg";
 const QKeySequence accel(Qt::CTRL + Qt::ALT + Qt::Key_J);
@@ -151,6 +156,11 @@ namespace tileVertical {
 const QString icon        = "tile_vert.svg";
 const QKeySequence accel(Qt::CTRL + Qt::Key_G);
 const char* actionName    = "windowTileVertical_action";
+}
+namespace tile {
+const QString icon        = "tile.svg";
+const QKeySequence accel(Qt::CTRL + Qt::Key_I);
+const char* actionName    = "windowTile_action";
 }
 namespace cascade {
 const QString icon        = "cascade.svg";

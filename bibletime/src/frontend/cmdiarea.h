@@ -32,7 +32,8 @@ class CMDIArea: public QMdiArea {
             ArrangementModeTileVertical = 1,
             ArrangementModeTileHorizontal = 2,
             ArrangementModeCascade = 3,
-            ArrangementModeManual = 4
+            ArrangementModeManual = 4,
+            ArrangementModeTile = 5
         };
 
         /**
@@ -69,6 +70,13 @@ class CMDIArea: public QMdiArea {
         QList<QMdiSubWindow*> usableWindowList();
 
     public slots:
+        /**
+          Uses Qt's tileSubWindows function.
+          \note This not set an automatic arrangement mode, it just arranges the
+                subwindows once. However, this method is also used when
+                arranging the subwindows into a tile automatically.
+        */
+        void myTile();
         /**
           Our own cascade version which, if only one subwindow is left, shows it
           maximized.

@@ -140,6 +140,7 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
     m_windowTileVertical_action->setEnabled( m_windowManualMode_action->isChecked() );
     m_windowTileHorizontal_action->setEnabled( m_windowManualMode_action->isChecked() );
     m_windowCascade_action->setEnabled( m_windowManualMode_action->isChecked() );
+    m_windowTile_action->setEnabled( m_windowManualMode_action->isChecked() );
 
     if (clickedAction) {
         m_windowManualMode_action->setEnabled(
@@ -147,16 +148,19 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
             && m_windowTileHorizontal_action != clickedAction
             && m_windowTileVertical_action != clickedAction
             && m_windowCascade_action != clickedAction
+            && m_windowTile_action != clickedAction
         );
         m_windowAutoTileVertical_action->setEnabled( m_windowAutoTileVertical_action != clickedAction );
         m_windowAutoTileHorizontal_action->setEnabled( m_windowAutoTileHorizontal_action != clickedAction );
         m_windowAutoCascade_action->setEnabled( m_windowAutoCascade_action != clickedAction );
+        m_windowAutoTile_action->setEnabled( m_windowAutoTile_action != clickedAction );
     }
 
     if (clickedAction == m_windowManualMode_action) {
         m_windowAutoTileVertical_action->setChecked(false);
         m_windowAutoTileHorizontal_action->setChecked(false);
         m_windowAutoCascade_action->setChecked(false);
+        m_windowAutoTile_action->setChecked(false);
 
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeManual );
     }
@@ -164,6 +168,7 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
         m_windowManualMode_action->setChecked(false);
         m_windowAutoTileHorizontal_action->setChecked(false);
         m_windowAutoCascade_action->setChecked(false);
+        m_windowAutoTile_action->setChecked(false);
 
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTileVertical );
     }
@@ -171,15 +176,29 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
         m_windowManualMode_action->setChecked(false);
         m_windowAutoTileVertical_action->setChecked(false);
         m_windowAutoCascade_action->setChecked(false);
+        m_windowAutoTile_action->setChecked(false);
 
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTileHorizontal );
+    }
+    else if (clickedAction == m_windowAutoTile_action) {
+        m_windowManualMode_action->setChecked(false);
+        m_windowAutoTileHorizontal_action->setChecked(false);
+        m_windowAutoTileVertical_action->setChecked(false);
+        m_windowAutoCascade_action->setChecked(false);
+
+        m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTile );
     }
     else if (clickedAction == m_windowAutoCascade_action) {
         m_windowManualMode_action->setChecked(false);
         m_windowAutoTileHorizontal_action->setChecked(false);
         m_windowAutoTileVertical_action->setChecked(false);
+        m_windowAutoTile_action->setChecked(false);
 
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeCascade );
+    }
+    else if (clickedAction == m_windowTile_action) {
+        m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeManual );
+        m_mdi->myTile();
     }
     else if (clickedAction == m_windowCascade_action) {
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeManual );
@@ -207,6 +226,15 @@ void BibleTime::slotAutoTileHorizontal() {
 /** This slot is connected with the windowAutoTile_action object */
 void BibleTime::slotAutoTileVertical() {
     slotUpdateWindowArrangementActions( m_windowAutoTileVertical_action );
+}
+
+/** This slot is connected with the windowAutoTile_action object */
+void BibleTime::slotAutoTile() {
+    slotUpdateWindowArrangementActions( m_windowAutoTile_action );
+}
+
+void BibleTime::slotTile() {
+    slotUpdateWindowArrangementActions( m_windowTile_action );
 }
 
 void BibleTime::slotCascade() {
