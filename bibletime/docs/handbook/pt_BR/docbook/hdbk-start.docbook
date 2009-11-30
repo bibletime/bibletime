@@ -1,43 +1,43 @@
 <chapter id="hdbk-term">
-  <title>Iniciando &bibletime;</title>
+  <title>Starting &bibletime;</title>
 
   <sect1 id="hdbk-start">
-    <title>Como iniciar o &bibletime;</title>
+    <title>How to start &bibletime;</title>
 
     <sect2 id="hdbk-start">
-      <title>Iniciando &bibletime;</title>
-      <para>&bibletime;  um arquivo executvel integrado ao desktop. Voc pode iniciaro 
-&bibletime; do menu de incio com esse cone: 
+      <title>Starting &bibletime;</title>
+      <para>&bibletime; is an executable file that is integrated with the desktop. You 
+can launch &bibletime; from the Start Menu with this icon: 
       <mediaobject>
         <imageobject>
           <imagedata fileref="i_bibletime.png" format="PNG" />
         </imageobject>
         <textobject>
-          <phrase>cone do &bibletime;</phrase>
+          <phrase>&bibletime; start icon</phrase>
         </textobject>
       </mediaobject></para>
 
-      <para>&bibletime; pode ser iniciado de um terminal de prompt de comando. Para 
-iniciar o &bibletime;, abra uma janela do terminal e digite: 
+      <para>&bibletime; can also be launched from a terminal command prompt. To launch 
+&bibletime;, open a terminal window and type: 
       <screen>bibletime</screen></para>
     </sect2>
 
     <sect2 id="hdbk-start-custom">
-      <title>Personalizao de incio</title>
-      <para>De um terminal voc pode usar o &bibletime; para abrir um versculo aleatrio 
-na bblia padro:
+      <title>Startup customization</title>
+      <para>From a terminal you can use &bibletime; to open a random verse in the 
+default bible:
 	<screen>bibletime --open-default-bible "&lt;random&gt;"</screen>
-	Para abrir numa passagem como Joo 3:16, use:
-	<screen>bibletime --open-default-bible "Joo 3:16"</screen>
-	Voc tambm pode usar os nomes dos livros em seu idioma de nomes atual.</para>
+	To open at a given passage like John 3:16, use:
+	<screen>bibletime --open-default-bible "John 3:16"</screen>
+	You can also use booknames in your current bookname language.</para>
     </sect2>
   </sect1>
 
   <sect1 id="hdbk-startsequence">
-    <title>Sequncia de incio</title>
+    <title>Startup sequence</title>
 
-    <para>Ao iniciar o &bibletime;, voc pode ver as seguintes telas antes da janela 
-principal do &bibletime; abrir:</para>
+    <para>As &bibletime; launches you may see the following screens before the main 
+&bibletime; window opens:</para>
 
     <variablelist>
       <varlistentry>
@@ -63,9 +63,9 @@ that are available from the &cbs;</para>
         </term>
         <listitem>
           <para>
-          <action>Customiza &bibletime;.</action> Esse dilogo permite adaptar 
-o&bibletime; s suas necessidades. Veja <link linkend="hdbk-config-bt">a 
-descrio detalhada</link> desse dilogo.</para>
+          <action>Customizes &bibletime;.</action>This dialog lets you adapt 
+&bibletime; to your needs. Please see <link linkend="hdbk-config-bt">the 
+detailed description</link> of this dialog.</para>
         </listitem>
       </varlistentry>
     </variablelist>

@@ -1,5 +1,5 @@
 <chapter id="hdbk-intro">
-  <title>Introduo</title>
+  <title>Introdução</title>
   <sect1 id="hdbk-intro-about">
     <title>Sobre &bibletime;</title>
 
@@ -18,12 +18,12 @@ url="http://www.crosswire.org/sword/develop/index.jsp"> developers
 section</ulink> of the &sword; Project, &cbs;.</para>
 
     <sect2 id="hdbk-intro-works">
-      <title>Obras disponveis</title>
+      <title>Obras disponíveis</title>
       <para>Over 200 documents in 50 languages are available from the <ulink 
 url="http://www.crosswire.org">&cbs;</ulink>.  These include:
       <variablelist>
         <varlistentry>
-          <term>Bblias</term>
+          <term>Bíblias</term>
           <listitem>
             <para>The full Bible text, with optional things like Strong's Numbers, headings 
 and/or footnotes in the text.  Bibles are available in many languages, and 
@@ -35,52 +35,52 @@ the most advanced section in the library of the &sword; project.</para>
         <varlistentry>
           <term>Livros</term>
           <listitem>
-            <para>Livros disponveis incluindo "Imitation of Christ", "Enuma Elish", e 
-"Josephus: The Complete Works" (em ingls)</para>
+            <para>Livros disponíveis incluindo "Imitation of Christ", "Enuma Elish", e 
+"Josephus: The Complete Works" (em inglês)</para>
           </listitem>
         </varlistentry>
         <varlistentry>
-          <term>Comentrios</term>
+          <term>Comentários</term>
           <listitem>
-            <para>Comentrios disponveis incluindo clssicos como "Notas sobre a Bblia" de John 
-Wesley, o comentrio de Matthew Henry e o "Comentrio sobre Glatas" de 
-Lutero. Com o comentrio <emphasis>pessoal</emphasis> voc pode <link 
-linkend="hdbk-op-parts-desk-write"> gravar suas prprias notas pessoas</link> 
-nas sees da Bblia.</para>
+            <para>Comentários disponíveis incluindo clássicos como "Notas sobre a Bíblia" de 
+John Wesley, o comentário de Matthew Henry e o "comentário sobre Glatas" de 
+Lutero. Com o comentário <emphasis>pessoal</emphasis> você pode <link 
+linkend="hdbk-op-parts-desk-write"> gravar suas próprias notas 
+pessoas</link> nas seções da Bíblia.</para>
           </listitem>
         </varlistentry>
         <varlistentry>
-          <term>Devocionais dirios</term>
+          <term>Devocionais diários</term>
           <listitem>
-            <para>Muitas pessoas apreciam essas pores dirias da palavra de Deus. Obras 
-disponveis incluem Daily Light on the Daily Path, e o Losungen (ingls).</para>
+            <para>Muitas pessoas apreciam essas porções diárias da palavra de Deus. Obras 
+disponíveis incluem Daily Light on the Daily Path, e o Losungen (ingls).</para>
           </listitem>
         </varlistentry>
         <varlistentry>
-          <term>Lxicos/Dicionrios</term>
+          <term>Léxicos/Dicionários</term>
           <listitem>
-            <para>Lxicos disponveis incluem: Cdigos de Anlise Morfolgicos de Robinson, Lxico 
-Hebraico de Brown-Driver-Briggs e a Enciclopdia da International Standard 
-Bible. Dicionrios disponveis incluem o Dicionrio Bblico Hebraico de Strong, 
-o Dicionrio Bblico Grego de Strong, Dicionrio Revisado da lngua Inglesa de 
-Webster 1913, Bblia em Tpicos de Nave.</para>
+            <para>Léxicos disponíveis incluem: Códigos de Análise Morfológicos de Robinson, 
+Léxico Hebraico de Brown-Driver-Briggs e a Enciclopédia da International 
+Standard Bible. Dicionários disponíveis incluem o Dicionário bíblico 
+Hebraico de Strong, o Dicionário bíblico Grego de Strong, Dicionário 
+Revisado da língua Inglesa de Webster 1913, Bíblia em Tópicos de Nave.</para>
           </listitem>
         </varlistentry>
       </variablelist></para>
     </sect2>
     <sect2 id="hdbk-intro-motivation">
-      <title>Motivao</title>
-      <para>Nosso desejo  servir a Deus, e fazer nossa parte em ajudar outros a crescer 
-no seu relacionamento com Ele. Ns batalhamos para tornar isso um programa 
-poderoso e de qualidade, e ainda assim faz-lo simples e de operao 
-intuitiva.  nosso desejo que Deus seja louvado, pois ele  a origem de todas 
+      <title>Motivação</title>
+      <para>Nosso desejo é servir a Deus, e fazer nossa parte em ajudar outros a crescer 
+no seu relacionamento com Ele. Nós batalhamos para tornar isso um programa 
+poderoso e de qualidade, e ainda assim fazê-lo simples e de operação 
+intuitiva.  nosso desejo que Deus seja louvado, pois ele é a origem de todas 
 as coisas boas.</para>
       <blockquote>
         <attribution>Tiago 1:17, ACF</attribution>
-        <para>Toda a boa ddiva e todo o dom perfeito vem do alto, descendo do Pai das 
-luzes, em quem no h mudana nem sombra de variao.</para>
+        <para>Toda a boa dádiva e todo o dom perfeito vem do alto, descendo do Pai das 
+luzes, em quem no há mudana nem sombra de variação.</para>
       </blockquote>
-      <para>Deus o abenoe enquanto usa esse programa.</para>
+      <para>Deus o abençoe enquanto usa esse programa.</para>
     </sect2>
   </sect1>
 </chapter>

@@ -1,115 +1,117 @@
 <chapter id="hdbk-config">
   <title>Configurando &bibletime;</title>
-  <para>Nessa seo voc vai encontrar uma viso geral de como configurar o &bibletime;, 
-que pode ser encontrado em <guimenu>Configuraes</guimenu> no menu principal.</para>
+  <para>Nessa seção você vai encontrar uma visão geral de como configurar o 
+&bibletime;, que pode ser encontrado em <guimenu>Configurações</guimenu> no 
+menu principal.</para>
   <sect1 id="hdbk-config-bt">
-    <title>Dilogo de configurao do &bibletime;</title>
-    <para>A interface de usurio do &bibletime; pode ser personalizada de vrias 
-maneiras, dependendo das suas necessidades. Voc pode acessar o dilogo de 
-configurao selecionando <menuchoice><guimenu>Configuraes</guimenu> 
+    <title>Diálogo de configuração do &bibletime;</title>
+    <para>A interface de usuário do &bibletime; pode ser personalizada de várias 
+maneiras, dependendo das suas necessidades. Você pode acessar o diálogo de 
+configuração selecionando <menuchoice><guimenu>Configurações</guimenu> 
 </menuchoice> <guimenuitem>Configurar &bibletime;</guimenuitem>.</para>
 
     <sect2 id="hdbk-config-bt-display">
       <title>
         <guimenu>Display</guimenu>
       </title>
-      <para>O comportamento de inicializao pode ser personalizado. Selecione uma dessas 
-opes: 
+      <para>O comportamento de inicialização pode ser personalizado. Selecione uma 
+dessas opções: 
       <itemizedlist>
         <listitem>
-          <para>Mostrar logo de inicializao</para>
+          <para>Mostrar logo de inicialização</para>
         </listitem>
       </itemizedlist></para>
-      <para>Modelos de exibio definem o estilo do texto (cores, tamanho, etc.). H vrios 
-modelos internos disponveis. Se voc escolher um, ir ver uma pr-visualizao no 
-painel direito.</para>
+      <para>Modelos de exibição definem o estilo do texto (cores, tamanho, etc.). Há 
+vários modelos internos disponíveis. Se você escolher um, irá ver uma 
+pré-visualização no painel direito.</para>
     </sect2>
 
     <sect2 id="hdbk-config-bt-desk">
       <title>
         <guimenu>Desk</guimenu>
       </title>
-      <para>Many features provided by the &sword; backend can now be customized in 
-&bibletime;.  These features are documented right in the dialog.  You also 
-have the possibility to specify standard works that should be used when no 
-specific work is specified in a reference.  An example: The standard Bible 
-is used to display the content of cross references in the Bible.  When you 
-hover over them, the Mag will show the content of the verses referred to, 
-according to the standard Bible you specified.  With the use of text 
-filters, you can control the appearance of the text.</para>
+      <para>Muitos recursos providos pelo backend do Sword podem agora ser 
+personalizados no &bibletime;. Esses recursos estão documentados no próprio 
+diálogo. Você também tem a possibilidade de especificar obras padrões que 
+devem ser usadas quando nenhuma obra em particular  especificada numa 
+referência. Um exemplo: a Bíblia padrão  usada para mostrar o conteudo de 
+referências cruzadas na Bíblia. Quando você passar por cima delas, a lupa 
+vai mostrar o conteúdo dos versículos referidos, de acordo com a Bíblia 
+padrão que você especificou. Com a utilização de filtros de texto, você pode 
+controlar a aparência do texto.</para>
     </sect2>
 
     <sect2 id="hdbk-config-bt-languages">
       <title>
         <guimenu>Languages</guimenu>
       </title>
-      <para>Aqui voc pode especificar que idioma deve ser usado para os livros 
-bblicos. Deixe-o no seu idioma nativo, se disponvel, e voc se sentir em 
+      <para>Aqui você pode especificar que idioma deve ser usado para os livros 
+bíblicos. Deixe-o no seu idioma nativo, se disponível, e você se sentirá em 
 casa.</para>
 
-      <para>Por padro, &bibletime; usa a fonte padro do sistema. Voc pode sobrescrever 
-essa fonte se necessrio. Alguns idiomas requerem fontes especiais para serem 
-exibidos corretamente, e esse dilogo permite a voc especificar uma fonte 
-personalizada para cada idioma.</para>
+      <para>Por padrão, &bibletime; usa a fonte padrão do sistema. Você pode 
+sobrescrever essa fonte se necessário. Alguns idiomas requerem fontes 
+especiais para serem exibidos corretamente, e esse diálogo permite a você 
+especificar uma fonte personalizada para cada idioma.</para>
       <mediaobject>
         <imageobject>
           <imagedata fileref="ss_configfonts.png" format="PNG" />
         </imageobject>
         <textobject>
-          <phrase>Dilogo de Opes - fontes</phrase>
+          <phrase>Diálogo de Opções - fontes</phrase>
         </textobject>
         <caption>
-          <para>O dilogo de Opes - Fontes.</para>
+          <para>O diálogo de Opções - Fontes.</para>
         </caption>
       </mediaobject>
-      <para>&bibletime; pode agora usar todas as fontes suportadas. Se as obras que voc 
+      <para>&bibletime; pode agora usar todas as fontes suportadas. Se as obras que você 
 deseja ver forem exibidas corretamente, nada precisa ser feito aqui. Se uma 
-obra somente mostra uma srie de pontos de interrogao (??????) or caixas 
-vazias, ento a fonte de exibio padro no contm os caracteres usados nessa 
-obra.</para>
+obra somente mostra uma série de pontos de interrogação (??????) or caixas 
+vazias, então a fonte de exibição padrão não contém os caracteres usados 
+nessa obra.</para>
 
-      <para>Para corrigir isso, escolha o idioma dessa obra no menu de seleo. Marque a 
+      <para>Para corrigir isso, escolha o idioma dessa obra no menu de seleção. Marque a 
 caixa Usar fonte personalizada. Ento selecione uma fonte. Por exemplo, uma 
 fonte que suporta muitos idiomas  Code2000. Se nenhuma fonte instalada pode 
-exibir a obra em que voc est interessado, tente instalar o pacote de 
-localizao para esse idioma.</para>
+exibir a obra em que você está interessado, tente instalar o pacote de 
+localização para esse idioma.</para>
       <sect3 id="hdbk-config-bt-addfont">
         <title>Instalando fontes</title>
-        <para>Instrues detalhadas de instalao de fontes esto fora do escopo desse livro de 
-mo. Para mais informaes, por favor verifique em <ulink 
+        <para>Instruções detalhadas de instalação de fontes estão fora do escopo desse 
+livro de mão. Para mais informações, por favor verifique em <ulink 
 url="http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html"> Unicode 
 HOWTO</ulink>.</para>
         <tip>
-          <para>Se voc usar uma fonte pequena como Clearlyu (em torno de 22kb), &bibletime; 
-ir rodar mais rpido do que com uma fonte como <trademark 
+          <para>Se você usar uma fonte pequena como Clearlyu (em torno de 22kb), &bibletime; 
+irá rodar mais rápido do que com uma fonte como <trademark 
 class="registered">Bitstream Cyberbit</trademark> (em torno de 12Mb).</para>
         </tip>
       </sect3>
       <sect3 id="hdbk-config-bt-ob-font">
         <title>Obtendo fontes</title>
-        <para>Fontes podem ser obtidas de vrios lugares:</para>
+        <para>Fontes podem ser obtidas de vários lugares:</para>
         <itemizedlist>
           <listitem>
-            <para>Sua distribuio *nix.</para>
+            <para>Sua distribuição *nix.</para>
           </listitem>
           <listitem>
-            <para>Pacotes de localizao da sua distribuio.</para>
+            <para>Pacotes de localização da sua distribuição.</para>
           </listitem>
           <listitem>
-            <para>Uma instalao existente do <trademark class="registered">Microsoft 
+            <para>Uma instalação existente do <trademark class="registered">Microsoft 
 Windows</trademark> no mesmo computador.</para>
           </listitem>
           <listitem>
-            <para>Uma coleo de fontes, tais como as disponveis da Adobe ou Bitstream.</para>
+            <para>Uma coleção de fontes, tais como as disponíveis da Adobe ou Bitstream.</para>
           </listitem>
           <listitem>
-            <para>Colees de fontes online.</para>
+            <para>Coleções de fontes online.</para>
           </listitem>
         </itemizedlist>
         <para>Fontes Unicode suportam mais caracteres que outras fontes, e algumas dessas 
-fontes esto disponveis gratuitamente. Nenhuma da fontes disponveis incluem 
-todos os caracteres definidos no padro Unicode, ento voc pode querer usar 
-diferentes fontes para diferentes idiomas.</para>
+fontes estão disponíveis gratuitamente. Nenhuma da fontes disponíveis 
+incluem todos os caracteres definidos no padrão Unicode, então você pode 
+querer usar diferentes fontes para diferentes idiomas.</para>
         <table id="hdbk-config-unicode-fonts-table">
           <title>Fontes Unicode</title>
           <tgroup cols="2">
@@ -127,7 +129,7 @@ caracteres.</entry>
                   <ulink url="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;cat_id=FontDownloads">
                   SIL unicode fonts</ulink>
                 </entry>
-                <entry>Excelentes fontes Unicode do Instituto de Lingustica Summer.</entry>
+                <entry>Excelentes fontes Unicode do Instituto de Linguística Summer.</entry>
               </row>
               <row>
                 <entry>
@@ -142,26 +144,27 @@ caracteres.</entry>
                   Crosswire's font directory</ulink>
                 </entry>
 
-                <entry>Several fonts available from the &cbs; FTP site.</entry>
+                <entry>Várias fontes disponíveis do site Ftp da Crosswire Bible Society.</entry>
               </row>
               <row>
                 <entry>
                   <ulink url="ftp://ftp.netscape.com/pub/communicator/extras/fonts/windows/">
                   Bitstream CyberBit</ulink>
                 </entry>
-                <entry>Cobre quase toda a gama do Unicode, mas pode fazer o &bibletime; ficar lento 
-por causa do seu tamanho.</entry>
+                <entry>Cobre quase toda a gama do Unicode, mas pode fazer o &bibletime; ficar muito 
+lento por causa do seu tamanho.</entry>
               </row>
               <row>
                 <entry>Clearlyu</entry>
-                <entry>Includa em algumas distribuies. Contm Europeu, Grego, Hebreu e Tailands.</entry>
+                <entry>Incluída em algumas distribuições. Contém Europeu, Grego, Hebreu e 
+Tailandês.</entry>
               </row>
               <row>
                 <entry>
                   <ulink url="http://fontforge.sourceforge.net/sfds/">
                   Caslon, Monospace, Cupola, Caliban</ulink>
                 </entry>
-                <entry>Cobertura parcial, ver informaes no site linkado.</entry>
+                <entry>Cobertura parcial, ver informações no site linkado.</entry>
               </row>
             </tbody>
           </tgroup>
@@ -179,12 +182,12 @@ Unicode e fontes Unicodes que as suportam</ulink>).</para>
         <guimenu>Shortcuts</guimenu>
       </title>
 
-      <para>Shortcuts (previously known as HotKeys) are special key commands that can be 
-used in the place of the menu items and icons. A number of &bibletime;'s 
-commands have predefined Shortcuts (see the <link 
-linkend="hdbk-reference-shortcuts">Shortcuts section</link> for a complete 
-listing). Most of &bibletime;'s commands can be assigned Shortcuts.  This is 
-very helpful to quickly access the functions that you need the most.</para>
+      <para>Teclas de atalho são comandos de tecla especiais que podem ser usados no 
+lugar de itens de menu e ícones. Vários comandos do &bibletime; têm teclas 
+de atalho pré-definidas (veja <link linkend="hdbk-reference-hotkeys">esta 
+seção</link> para uma listagem completa). A maior parte dos comandos do 
+&bibletime; pode ser associado a teclas de atalho aqui. Isso  muito útil 
+para acessar rapidamente as funções que você mais usa.</para>
 
       <imageobject>
 	<imagedata fileref="ss_shortcuts.png" format="PNG" />

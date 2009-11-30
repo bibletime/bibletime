@@ -1,7 +1,7 @@
 <chapter id="hdbk-reference">
-  <title>Referncia</title>
+  <title>Reference</title>
   <sect1 id="hdbk-reference-menus">
-    <title>Referncia do menu principal</title>
+    <title>Main menu reference</title>
 
     <para>In this section you can find detailed descriptions of all entries in the 
 main menu of &bibletime;. They are ordered in just the way they appear in 
@@ -34,8 +34,8 @@ linkend="hdbk-reference-shortcuts">shortcuts section</link>.</para>
             </term>
             <listitem>
               <para>
-              <action>Fecha o &bibletime;.</action> &bibletime; ir perguntar se voc deseja 
-salvar mudanas no-salvas para o disco.</para>
+              <action>Closes &bibletime;.</action> &bibletime; will ask you if you want to 
+write unsaved changes to disk.</para>
             </listitem>
           </varlistentry>
         </variablelist>
@@ -67,8 +67,8 @@ salvar mudanas no-salvas para o disco.</para>
           </term>
           <listitem>
             <para>
-            <action>Alterna exibio em tela inteira.</action> Alterne essa chave para 
-maximizar a janela do &bibletime;.</para>
+            <action>Toggles full screen display.</action> Toggle this setting to 
+maximize the &bibletime; window.</para>
           </listitem>
         </varlistentry>
 
@@ -86,8 +86,8 @@ maximizar a janela do &bibletime;.</para>
           </term>
           <listitem>
             <para>
-            <action>Alterna exibio da barra de ferramentas.</action> Alterne essa chave 
-para exibir ou ocultar a barra de ferramentas.</para>
+            <action>Toggles Toolbar display.</action> Toggle this setting to turn the 
+main toolbar on or off.</para>
           </listitem>
         </varlistentry>
 
@@ -100,9 +100,9 @@ para exibir ou ocultar a barra de ferramentas.</para>
           </term>
           <listitem>
             <para>
-            <action>Alterna exibio da Estante.</action> Alterne essa chave para exibir 
-ou ocultar a Estante no painel esquerdo. Isso pode ser til quando voc 
-precisa de mais espao para a Lupa.</para>
+            <action>Toggles display of the Bookshelf.</action> Toggle this setting to 
+turn the Bookshelf on the left pane on or off. This can be handy if you need 
+more space for the Mag.</para>
           </listitem>
         </varlistentry>
 
@@ -115,9 +115,9 @@ precisa de mais espao para a Lupa.</para>
           </term>
           <listitem>
             <para>
-            <action>Alterna exibio dos Marcadores.</action> Alterne essa chave para 
-exibir ou ocultar os Marcadores no painel esquerdo. Isso pode ser til quando 
-voc precisa de mais espao para a Lupa.</para>
+            <action>Toggles display of the Bookmarks.</action> Toggle this setting to 
+turn the Bookmarks on the left pane on or off. This can be handy if you need 
+more space for the Mag.</para>
           </listitem>
         </varlistentry>
 
@@ -130,8 +130,8 @@ voc precisa de mais espao para a Lupa.</para>
           </term>
           <listitem>
             <para>
-            <action>Alterna exibio da Lupa.</action> Alterne essa chave para exibir ou 
-ocultar a Lupa no painel esquerdo.</para>
+            <action>Toggles display of the Mag(nifying glass).</action> Toggle this 
+setting to turn the Mag on the left pane on or off.</para>
           </listitem>
         </varlistentry>
       </variablelist>
@@ -210,10 +210,10 @@ works</link> section.</para>
 
           <listitem>
             <para>
-            <action>Diretamente salva a sesso atual</action>. Essa ao ir abrir um menu 
-de contexto onde voc pode selecionar uma sesso existente para salvar. Ela 
-ser sobrescrita com sua sesso atual. Veja o prximo item sobre como salvar 
-para uma nova sesso.</para>
+            <action>Directly saves the current session</action>. This will open a 
+context menu where you can select an existing session to save to. It will be 
+overwritten with your current session. See the next item on how to save to a 
+new session.</para>
           </listitem>
         </varlistentry>
 
@@ -231,8 +231,8 @@ para uma nova sesso.</para>
 
           <listitem>
             <para>
-            <action>Salva a sesso atual sob um novo nome</action>. Essa ao ir perguntar 
-por um novo nome para salvar a sesso.</para>
+            <action>Saves the current session under a new name</action>. This will ask 
+for a new name to save the session to.</para>
           </listitem>
         </varlistentry>
 
@@ -246,8 +246,8 @@ por um novo nome para salvar a sesso.</para>
 
           <listitem>
             <para>
-            <action>Carrega uma sesso existente</action>. Essa ao ir abrir um menu de 
-contexto onde voc pode selecionar uma sesso existente para carregar.</para>
+            <action>Loads an existing session</action>. This will open a context menu 
+where you can select an existing session to load.</para>
           </listitem>
         </varlistentry>
 
@@ -261,8 +261,8 @@ contexto onde voc pode selecionar uma sesso existente para carregar.</para>
 
           <listitem>
             <para>
-            <action>Exclui uma sesso existente</action>. Essa ao ir abrir um menu de 
-contexto onde voc pode selecionar uma sesso existente para excluir.</para>
+            <action>Deletes an existing session</action>. This will open a context menu 
+where you can select an existing session that should be deleted.</para>
           </listitem>
         </varlistentry>
 
@@ -276,10 +276,10 @@ contexto onde voc pode selecionar uma sesso existente para excluir.</para>
 
           <listitem>
             <para>
-            <action>Controla o comportamento de posicionamento das janelas</action>. No 
-menu de contexto que se abre, voc pode especificar se quer cuidar do 
-posicionamento voc mesmo (modo Manual) ou deixar que o &bibletime; cuide 
-para voc (modos Automticos, experimente).</para>
+            <action>Controls the basic window arrangement behaviour</action>. In the 
+opening context menu, you can either specify that you want to take care of 
+the window arrangement yourself (Manual mode) or have &bibletime; handle it 
+for you (Automatic modes, just try them out!).</para>
           </listitem>
         </varlistentry>
 
@@ -303,7 +303,7 @@ para voc (modos Automticos, experimente).</para>
 
           <listitem>
             <para>
-	      <action>Organiza em cascata todas as janelas abertas</action>.
+	      <action>Cascades all open windows</action>.
 	    </para>
           </listitem>
         </varlistentry>
@@ -351,8 +351,7 @@ para voc (modos Automticos, experimente).</para>
 
           <listitem>
             <para>
-	      <action>Automaticamente divide verticalmente todas as janelas 
-abertas</action>.
+	      <action>Automatically tiles all open windows vertically</action>.
 	    </para>
           </listitem>
         </varlistentry>
@@ -376,8 +375,7 @@ abertas</action>.
 
           <listitem>
             <para>
-	      <action>Automaticamente divide horizontalmente todas as janelas 
-abertas</action>.
+	      <action>Automatically tiles all open windows horizontally</action>.
 	    </para>
           </listitem>
         </varlistentry>
@@ -401,7 +399,7 @@ abertas</action>.
 
           <listitem>
             <para>
-            <action>Fecha todas as janelas abertas</action>.</para>
+            <action>Closes all open windows</action>.</para>
           </listitem>
         </varlistentry>
       </variablelist>
@@ -487,7 +485,7 @@ details.</para>
           </term>
           <listitem>
             <para>
-            <action>Abre o guia de usurio &bibletime;</action> que voc est lendo agora.</para>
+            <action>Opens &bibletime;'s user guide</action> You are reading it now.</para>
           </listitem>
         </varlistentry>
 
@@ -511,13 +509,13 @@ details.</para>
           </term>
           <listitem>
             <para>
-            <action>Abre um guia sobre como estudar a Bblia</action> A equipe do 
-&bibletime; espera que esse HowTo ir incentivar os leitores a estudar as 
-escrituras para ver o que elas dizem. Esse guia de estudo em particular foi 
-escolhido por no advocar por nenhuma doutrina denominacional em 
-particular. Ns esperamos que voc leia e estude as escrituras para entender o 
-que elas dizem. Se voc comear com a inteno de que deseja que o Senhor semeie 
-sua palavra em seu corao, Ele no ir desapont-lo.</para>
+            <action>Opens a guide on how to study the Bible</action> It is the hope of 
+the &bibletime; team that this HowTo will provoke the readers to study the 
+scriptures to see what they say. This particular study guide has been chosen 
+as it takes care not to advocate any particular denominational doctrine. We 
+expect you to read and study the scriptures to understand what they say. If 
+you start with the attitude that you want to have the Lord sow his word in 
+your heart He will not disappoint you.</para>
           </listitem>
         </varlistentry>
 
@@ -530,9 +528,10 @@ sua palavra em seu corao, Ele no ir desapont-lo.</para>
           </term>
           <listitem>
             <para>
-            <action>Abre uma janela com informaes do projeto &bibletime;</action> contm 
-informaes sobre a verso do software &bibletime;, contribuidores do projeto, 
-verso do software &sword;, verso do software &qt; e o contrato de licena.</para>
+            <action>Opens a window about &bibletime; project information</action> 
+contains information about &bibletime; software version, project 
+contributors, &sword; software version, &qt; software version and the 
+license agreement.</para>
           </listitem>
         </varlistentry>
       </variablelist>
@@ -842,7 +841,7 @@ reference</link>.</para>
         <thead>
           <row>
             <entry>Shortcut</entry>
-            <entry>Descrio</entry>
+            <entry>Description</entry>
           </row>
         </thead>
         <tbody>
@@ -851,14 +850,14 @@ reference</link>.</para>
               <keycombo action="simul">
               <keycap>&Alt;Left</keycap></keycombo>
             </entry>
-            <entry>Volta no histrico das janelas de leitura.</entry>
+            <entry>Moves back in the history of read windows.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">
               <keycap>&Alt;Right</keycap></keycombo>
             </entry>
-            <entry>Avana no histrico das janelas de leitura.</entry>
+            <entry>Moves forward in the history of read windows.</entry>
           </row>
           <row>
             <entry>
@@ -867,9 +866,9 @@ reference</link>.</para>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-search-defaultbible"> <menuchoice> 
-<guimenu>Procurar</guimenu> <guimenuitem>Procurar na bblia 
-padro</guimenuitem> </menuchoice> </link> equivalente; abre o dilogo de 
-busca para procurar na bblia padro.</entry>
+<guimenu>Search</guimenu> <guimenuitem>Search in default bible</guimenuitem> 
+</menuchoice> </link> equivalent; opens the search dialog to search in the 
+default bible.</entry>
           </row>
 
           <row>
@@ -879,10 +878,9 @@ busca para procurar na bblia padro.</entry>
             </entry>
 
             <entry>
-	      <menuchoice> <guimenu>Janela</guimenu> <guimenuitem>Modo de 
-posicionamento</guimenuitem> <guimenuitem>Auto-dividir 
-verticalmente</guimenuitem> </menuchoice> equivalente; alterna diviso 
-automtica de janelas.
+	      <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement 
+mode</guimenuitem> <guimenuitem>Auto-tile vertically</guimenuitem> 
+</menuchoice> equivalent; toggle automatic window tiling.
 	    </entry>
           </row>
 
@@ -892,10 +890,9 @@ automtica de janelas.
               <keycap>&Ctrl;&Alt;H</keycap></keycombo>
             </entry>
             <entry>
-            <menuchoice> <guimenu>Janela</guimenu> <guimenuitem>Modo de 
-posicionamento</guimenuitem> <guimenuitem>Auto-dividir 
-horizontalmente</guimenuitem> </menuchoice> equivalente; alterna diviso 
-automtica de janelas.</entry>
+            <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement 
+mode</guimenuitem> <guimenuitem>Auto-tile horizontally</guimenuitem> 
+</menuchoice> equivalent; toggle automatic window tiling.</entry>
           </row>
 
           <row>
@@ -916,9 +913,9 @@ equivalent; toggle automatic window tiling.</entry>
               <keycap>&Ctrl;&Alt;J</keycap></keycombo>
             </entry>
             <entry>
-            <menuchoice> <guimenu>Janela</guimenu> <guimenuitem>Modo de posicionamento 
-</guimenuitem> <guimenuitem>Auto-cascata</guimenuitem> </menuchoice> 
-equivalente; alterna cascateamento automtico de janelas.</entry>
+            <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement 
+mode</guimenuitem> <guimenuitem>Auto-cascade</guimenuitem> </menuchoice> 
+equivalent; toggle automatic window cascading.</entry>
           </row>
 
           <row>
@@ -927,9 +924,9 @@ equivalente; alterna cascateamento automtico de janelas.</entry>
               <keycap>&Ctrl;&Alt;M</keycap></keycombo>
             </entry>
             <entry>
-            <menuchoice> <guimenu>Janela</guimenu> <guimenuitem>Modo de 
-posicionamento</guimenuitem> <guimenuitem>Modo manual</guimenuitem> 
-</menuchoice> equivalente; alterna posicionamento manual das janelas.</entry>
+            <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement 
+mode</guimenuitem> <guimenuitem>Manual mode</guimenuitem> </menuchoice> 
+equivalent; toggle manual window placement.</entry>
           </row>
           <row>
             <entry>
@@ -938,8 +935,8 @@ posicionamento</guimenuitem> <guimenuitem>Modo manual</guimenuitem>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-window-savenewsession"> <menuchoice> 
-<guimenu>Janela</guimenu> <guimenuitem>Salvar como nova sesso</guimenuitem> 
-</menuchoice> </link> equivalente; salva layout atual como nova sesso.</entry>
+<guimenu>Window</guimenu> <guimenuitem>Save as new session</guimenuitem> 
+</menuchoice> </link> equivalent; saves current layout as new session.</entry>
           </row>
           <row>
             <entry>
@@ -948,36 +945,36 @@ posicionamento</guimenuitem> <guimenuitem>Modo manual</guimenuitem>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-window-closeall"> <menuchoice> 
-<guimenu>Janela</guimenu> <guimenuitem>Fechar tudo</guimenuitem> 
-</menuchoice> </link> equivalente; fecha todas as janelas abertas.</entry>
+<guimenu>Window</guimenu> <guimenuitem>Close all</guimenuitem> </menuchoice> 
+</link> equivalent; closes all open windows.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">
               <keycap>&Ctrl;-</keycap></keycombo>
             </entry>
-            <entry>Diminuir zoom. Diminui o tamanho da fonte das janelas de leitura.</entry>
+            <entry>Zoom out. This decreases the font size of read windows.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">
               <keycap>&Ctrl;+</keycap></keycombo>
             </entry>
-            <entry>Aumentar zoom. Aumenta o tamanho da fonte das janelas de leitura.</entry>
+            <entry>Zoom in. This increases the font size of read windows.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">
               <keycap>&Ctrl;A</keycap></keycombo>
             </entry>
-            <entry>Selecionar tudo. Seleciona todo o texto na janela de leitura.</entry>
+            <entry>Select all. This selects all text in read windows.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">
               <keycap>&Ctrl;C</keycap></keycombo>
             </entry>
-            <entry>Copiar. Copia o texto selecionado para a rea de transferncia.</entry>
+            <entry>Copy. This copies the selected text to the clipboard.</entry>
           </row>
 
           <row>
@@ -985,7 +982,7 @@ posicionamento</guimenuitem> <guimenuitem>Modo manual</guimenuitem>
               <keycombo action="simul">
               <keycap>&Ctrl;F</keycap></keycombo>
             </entry>
-            <entry>Procurar. Permite a voc buscar no texto de uma janela de leitura.</entry>
+            <entry>Search. This lets you search within the text of a read window.</entry>
           </row>
 
           <row>
@@ -996,8 +993,8 @@ posicionamento</guimenuitem> <guimenuitem>Modo manual</guimenuitem>
 
             <entry>
 	      <link linkend="hdbk-reference-menus-window-tilevertically"> <menuchoice> 
-<guimenu>Janela</guimenu> <guimenuitem>Dividir verticalmente</guimenuitem> 
-</menuchoice> </link> equivalente.
+<guimenu>Window</guimenu> <guimenuitem>Tile vertically</guimenuitem> 
+</menuchoice> </link> equivalent.
             </entry>
           </row>
 
@@ -1009,8 +1006,8 @@ posicionamento</guimenuitem> <guimenuitem>Modo manual</guimenuitem>
 
             <entry>
 	      <link linkend="hdbk-reference-menus-window-tilehorizontally"> <menuchoice> 
-<guimenu>Janela</guimenu> <guimenuitem>Dividir horizontalmente</guimenuitem> 
-</menuchoice> </link> equivalente.
+<guimenu>Window</guimenu> <guimenuitem>Tile horizontally</guimenuitem> 
+</menuchoice> </link> equivalent.
             </entry>
           </row>
 
@@ -1035,8 +1032,8 @@ posicionamento</guimenuitem> <guimenuitem>Modo manual</guimenuitem>
 
             <entry>
 	      <link linkend="hdbk-reference-menus-window-cascade"> <menuchoice> 
-<guimenu>Janela</guimenu> <guimenuitem>Cascata</guimenuitem> </menuchoice> 
-</link> equivalente a janelas.
+<guimenu>Window</guimenu> <guimenuitem>Cascade</guimenuitem> </menuchoice> 
+</link> windows equivalent.
             </entry>
           </row>
 
@@ -1063,9 +1060,9 @@ posicionamento</guimenuitem> <guimenuitem>Modo manual</guimenuitem>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-search-openworks"> <menuchoice> 
-<guimenu>Procurar</guimenu> <guimenuitem>Procurar nas obras 
-abertas</guimenuitem> </menuchoice> </link> equivalente; abre o dilogo de 
-busca para procurar em todas as obras abertas.</entry>
+<guimenu>Search</guimenu> <guimenuitem>Search in open work(s)</guimenuitem> 
+</menuchoice> </link> equivalent; opens the search dialog to search in all 
+currently opened works.</entry>
           </row>
 
           <row>
@@ -1075,15 +1072,15 @@ busca para procurar em todas as obras abertas.</entry>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-file-quit"> <menuchoice> 
-<guimenu>Arquivo</guimenu> <guimenuitem>Sair</guimenuitem> </menuchoice> 
-</link> equivalente; fecha o &bibletime;.</entry>
+<guimenu>File</guimenu> <guimenuitem>Quit</guimenuitem> </menuchoice> 
+</link> equivalent; closes &bibletime;.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">
               <keycap>&Ctrl;W</keycap></keycombo>
             </entry>
-            <entry>Fecha a janela atual.</entry>
+            <entry>Closes the current window.</entry>
           </row>
           <row>
             <entry>
@@ -1092,8 +1089,8 @@ busca para procurar em todas as obras abertas.</entry>
               </keycombo>
             </entry>
             <entry>
-            <menuchoice> <guimenu>Ajuda</guimenu> <guimenuitem>Livro de mo</guimenuitem> 
-</menuchoice> equivalente; abre o livro de mo.</entry>
+            <menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> 
+</menuchoice> equivalent; opens the handbook.</entry>
           </row>
           <row>
             <entry>
@@ -1102,9 +1099,8 @@ busca para procurar em todas as obras abertas.</entry>
               </keycombo>
             </entry>
             <entry>
-            <menuchoice> <guimenu>Ajuda</guimenu> <guimenuitem>BibleStudy 
-Howto</guimenuitem> </menuchoice> equivalente; abre o Howto do Estudo 
-Bblico.</entry>
+            <menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy 
+Howto</guimenuitem> </menuchoice> equivalent; opens the BibleStudy Howto.</entry>
           </row>
           <row>
             <entry>
@@ -1114,9 +1110,9 @@ Bblico.</entry>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-settings-bookshelf_manager"> 
-<menuchoice> <guimenu>Configuraes</guimenu> <guimenuitem>Gerenciador da 
-Estante</guimenuitem> </menuchoice> </link> equivalente; abre o Gerenciador 
-da Estante.</entry>
+<menuchoice> <guimenu>Settings</guimenu> <guimenuitem>Bookshelf 
+Manager</guimenuitem> </menuchoice> </link> equivalent; opens the Bookshelf 
+Manager.</entry>
           </row>
           <row>
             <entry>
@@ -1126,8 +1122,8 @@ da Estante.</entry>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-view-showbookshelf"> <menuchoice> 
-<guimenu>Exibir</guimenu> <guimenuitem>Mostrar Estante</guimenuitem> 
-</menuchoice> </link> equivalente; alterna exibio da Estante.</entry>
+<guimenu>View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem> 
+</menuchoice> </link> equivalent; toggles display of the Bookshelf.</entry>
           </row>
           <row>
             <entry>
@@ -1137,8 +1133,8 @@ da Estante.</entry>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-view-showmag"> <menuchoice> 
-<guimenu>Exibir</guimenu> <guimenuitem>Mostrar lupa</guimenuitem> 
-</menuchoice> </link> equivalente; alterna exibio da lupa.</entry>
+<guimenu>View</guimenu> <guimenuitem>Show mag</guimenuitem> </menuchoice> 
+</link> equivalent; toggles display of the mag(nifying glass).</entry>
           </row>
         </tbody>
       </tgroup>

@@ -1,58 +1,59 @@
 <chapter id="hdbk-op">
-  <title>Operao do programa</title>
+  <title>Operação do programa</title>
   <sect1 id="hdbk-op-overview">
-    <title>Viso geral do programa</title>
-    <para> assim que parece uma tpica sesso do &bibletime;: 
+    <title>Visão geral do programa</title>
+    <para>É assim que parece uma típica sessão do &bibletime;: 
     <mediaobject>
       <imageobject>
         <imagedata fileref="ss_mainterms.png" format="PNG" />
       </imageobject>
       <textobject>
-        <phrase>A janela de aplicao do &bibletime;</phrase>
+        <phrase>A janela do aplicativo &bibletime;</phrase>
       </textobject>
     </mediaobject>
-    Voc pode facilmente ver diferentes partes da aplicao. A janela superior 
-esquerda  usada para abrir obras instaladas na aba Estante de Livros, e com 
-a aba Marcadores, voc pode gerenciar seus marcadores. A pequena janela 
-"Lupa" embaixo da Estante de Livros  usada para mostrar informaes extras que 
-esto incorporadas nos documentos. Quando voc move o cursor sobre um marcador 
-de rodap, por exemplo, a Lupa vai mostrar o contedo real da nota de rodap. A 
-barra de ferramentas lhe d acesso rpido a importantes funes, e a mesa no 
-lado direito  onde voc faz seu trabalho de verdade.</para>
+    You can easily see the different parts of the application. The top left 
+window is used to open installed works in the Bookshelf tab, and with the 
+Bookmarks tab you can manage your bookmarks. The little "Mag" window below 
+the Bookshelf is used to display extra information that is embedded in 
+documents. When you move your mouse over a footnote marker, for example, 
+then the Mag will display the actual content of the footnote. The toolbar 
+gives you quick access to important functions, and the Desk on the right 
+side is where you do your real work.</para>
 
-    <para>Vamos agora proceder olhando diferentes partes da aplicao individualmente.</para>
+    <para>Vamos agora proceder olhando diferentes partes do aplicativo 
+individualmente.</para>
   </sect1>
   <sect1 id="hdbk-op-parts">
-    <title>Partes da janela de aplicao do &bibletime;</title>
+    <title>Partes da janela do aplicativo &bibletime;</title>
     <sect2 id="hdbk-op-parts-bookshelf">
       <title>A Estante de Livros</title>
       <para>A Estante de Livros lista todas as obras instaladas, classificadas por 
-categoria e idioma. Ela tambm tem uma categoria chamada "Marcadores". Aqui  
-onde voc pode armazenar e acessar seus prprios marcadores.</para>
+categoria e idioma. Ela também tem uma categoria chamada "Marcadores". Aqui  
+onde você pode armazenar e acessar seus próprios marcadores.</para>
 
       <sect3 id="hdbk-op-parts-bookshelf-open">
         <title>Lendo obras</title>
         <para>Para abrir uma obra da estante para leitura, simplesmente clique com o 
-<mousebutton>boto esquerdo do mouse</mousebutton> na categoria desejada 
-(Bblias, Comentrios, Lxicos, Livros, Devocionais ou Glossrios) para mostrar 
-seu contedo. Ento clique em uma das obras para abri-la para leitura. Uma 
-janela de leitura ir aparecer na rea da Mesa.</para>
+<mousebutton>botão esquerdo do mouse</mousebutton> na categoria desejada 
+(Bíblias, Comentários, Léxicos, Livros, Devocionais ou Glossários) para 
+mostrar seu conteúdo. Então clique em uma das obras para abri-la para 
+leitura. Uma janela de leitura irá aparecer na área da Mesa.</para>
 
         <tip>
           <para>Arraste e solte obras aqui</para>
         </tip>
 
-        <para>Se voc est lendo uma certa obra, e quer abrir outra obra na passagem que est 
-lendo, voc pode usar um atalho. Simplesmente clique com o <mousebutton>boto 
-esquerdo do mouse</mousebutton> na referncia do versculo/passagem (o cursor 
-muda para uma mo) e arraste-o para a Estante. Solte-o na obra que voc quer 
-abrir, e ele ser aberto pra leitura no local especificado. Voc tambm pode 
-arrastar uma referncia de versculo para uma janela de leitura j existente, e 
-ele vai para o local desejado.</para>
+        <para>Se você está lendo uma certa obra, e quer abrir outra obra na passagem que 
+está lendo, você pode usar um atalho. Simplesmente clique com o 
+<mousebutton>botão esquerdo do mouse</mousebutton> na referência do 
+versículo/passagem (o cursor muda para uma mão) e arraste-o para a 
+Estante. Solte-o na obra que você quer abrir, e ele ser aberto pra leitura 
+no local especificado. Você também pode arrastar uma referência de versículo 
+para uma janela de leitura j existente, e ele vai para o local desejado.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-bookshelf-metainfo">
-        <title>Informao adicional sobre obras</title>
+        <title>Additional information about works</title>
 
         <para>If you click with the <mousebutton>right</mousebutton> mouse button on the 
 symbol of a work, you will see a menu with additional entries that are 
@@ -66,7 +67,7 @@ Modules</ulink> page on the &cbs; web site.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-bookshelf-search">
-        <title>Buscando em obras</title>
+        <title>Searching in works</title>
 
         <para>You can search in a work by clicking with the 
 <mousebutton>right</mousebutton> mouse button on its symbol and selecting 
@@ -79,104 +80,105 @@ section</link>.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-bookshelf-bookmarks">
-        <title>Trabalhando com marcadores</title>
+        <title>Working with bookmarks</title>
         <para>
 
         <tip>
           <para>Arraste e solte obras aqui</para>
         </tip>
 
-	Clique com o boto <mousebutton>direito</mousebutton> do mouse na categoria 
+	Clique com o botão <mousebutton>direito</mousebutton> do mouse na categoria 
 de marcadores da estante e selecione <guimenuitem>"Criar nova 
-pasta"</guimenuitem> para criar uma nova subpasta de marcadores. Voc pode 
-usar funes "arrastar e soltar" para arrastar referncias de versculos de 
+pasta"</guimenuitem> para criar uma nova subpasta de marcadores. Você pode 
+usar funções "arrastar e soltar" para arrastar referências de versículos de 
 janelas de leitura ou de resultados de buscas, e para rearranjar os 
-marcadores entre pginas.</para>
-        <para>Voc tambm pode importar marcadores de outras pessoas ou exportar marcadores 
-para compartilh-los. Para fazer isso, abra o <guimenu>menu de 
-contexto</guimenu> da pasta do marcador como descrito acima, e selecione 
-<guimenuitem>"Exportar marcadores"</guimenuitem>. Isso ir trazer uma caixa 
-de dilogo para voc salvar a coleo de marcadores. Voc pode importar 
-marcadores de uma maneira similar.</para>
+marcadores entre páginas.</para>
+        <para>You can also import bookmarks from other people or export bookmarks to share 
+them. To do this, open the <guimenu>context menu</guimenu> of the bookmark 
+folder as described above, and select <guimenuitem>"Export 
+bookmarks"</guimenuitem>. This will bring up a dialog box for you to save 
+the bookmark collection. You can import bookmarks in a similar way.</para>
 
-        <para>Voc tambm pode clicar com o boto <mousebutton>direito</mousebutton> em 
-pastas e marcadores para mudar seus nomes e descries.</para>
+        <para>You can also click with the <mousebutton>right</mousebutton> on folders and 
+bookmarks to change their names and descriptions.</para>
       </sect3>
     </sect2>
 
     <sect2 id="hdbk-op-parts-mag">
-      <title>A Lupa</title>
+      <title>The Mag(nifying glass)</title>
 
-      <para>Essa pequena janela no canto inferior esquerdo do &bibletime;  puramente 
-passiva. Quando seu cursor do mouse est localizado sobre algum texto com 
-informaes adicionais (ex. nmeros Strong), ento essa informao adicional  
-exibida na lupa, e no no texto em si. Experimente.</para>
+      <para>This little window in the lower left corner of the &bibletime; window is 
+purely passive. Whenever your mouse cursor is located over some text with 
+additional information (e.g., Strong's numbers), then this additional 
+information will be displayed in the Mag, and not in the text itself. Just 
+try it out.</para>
     </sect2>
 
     <sect2 id="hdbk-op-parts-desk">
-      <title>A Mesa</title>
-      <para>A Mesa  onde o trabalho real com &bibletime; acontece. Aqui voc pode abrir 
-obras da Estante, l-las, <link linkend="hdbk-op-search">procurar</link> 
-nelas, e at salvar suas anotaes no mdulo de comentrios pessoais (veja <link 
-linkend="hdbk-op-parts-desk-write">abaixo</link>).</para>
+      <title>The Desk</title>
+      <para>The Desk is where the real work with &bibletime; takes place. Here you can 
+open works from the Bookshelf, read them, <link 
+linkend="hdbk-op-search">search</link> in them, and even save your 
+annotations in the personal commentary module (see <link 
+linkend="hdbk-op-parts-desk-write">below</link>).</para>
 
       <sect3 id="hdbk-op-parts-desk-read">
         <title>Lendo obras</title>
-        <para>Como ns <link linkend="hdbk-op-parts-bookshelf-open">j vimos</link>, voc 
-pode abrir obras para simples leitura clicando sobre seu smbolo na Estante.  
-Uma janela de leitura ir abrir na rea da Mesa. Cada janela de leitura tem 
-uma barra de ferramentas. Ali voc pode encontrar ferramentas para navegar na 
-obra em que essa janela de leitura est conectada, assim como botes de 
-histrico como os que voc conhece no seu navegador.</para>
+        <para>As we have <link linkend="hdbk-op-parts-bookshelf-open">already seen</link>, 
+you can open works for reading simply by clicking on their symbol in the 
+Bookshelf. A read window will open in the Desk's area. Every read window has 
+a toolbar. There you can find tools to navigate in the work that this read 
+window is connected to, as well as history buttons like the ones that you 
+know from your browser.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-desk-placement">
-        <title>Posicionamento da janela de leitura</title>
-        <para> claro, voc pode abrir vrias obras ao mesmo tempo. H muitas possibilidades 
-de posicionar as janelas de leitura na mesa. Por favor, veja o item 
-<guimenu>Janela</guimenu> no menu principal. Ali voc pode ver que voc pode 
-tanto controlar o posicionamento das janelas de leitura voc mesmo, ou fazer 
-com que o &bibletime; faa isso por voc. Para fazer isso, voc deve selecionar 
-um dos modos de posicionamento automtico disponveis em<menuchoice> 
-<guimenu>Janela</guimenu> <guimenuitem>Modo de posicionamento</guimenuitem> 
-</menuchoice>. Experimente,  simples e funciona.</para>
+        <title>Read window placement</title>
+        <para>Of course, you can open multiple works at the same time.  There are several 
+possibilities for arranging the read windows on the desk. Please have a look 
+at the entry <guimenu>Window</guimenu> in the main menu. There you can see 
+that you can either control the placement of the read windows completely 
+yourself, or have &bibletime; handle the placement automatically. To achieve 
+this, you have to select one of the automatic placement modes available at 
+<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement 
+mode</guimenuitem> </menuchoice>. Just try it out, it's simple and works.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-desk-write">
-        <title>Editando seu prprio comentrio</title>
+        <title>Editing your own commentary</title>
 
         <para>To be able to store your own comments about parts of the Bible, you have 
 install a certain work from the library of the <ulink 
 url="http://www.crosswire.org">&cbs;</ulink>.  This work is called "Personal 
 commentary".</para>
 
-        <para>Se voc abrir o comentrio pessoal clicando no seu smbolo na Estante com o 
-boto <mousebutton>esquerdo</mousebutton> do mouse, ele abre em modo de 
-leitura. Voc no poder edit-lo nesse modo. Se deseja escrever anotaes no 
-comentrio pessoal, voc deve abri-lo com o boto 
-<mousebutton>direito</mousebutton> do mouse e ento selecionar 
-<guimenu>Editar essa obra</guimenu> e ento ou <guimenuitem>Texto 
-simples</guimenuitem> (editor de cdigo fonte) ou 
-<guimenuitem>HTML</guimenuitem> (editor gui wysiwyg bsico).</para>
+        <para>If you open the personal commentary by clicking on its symbol in the 
+Bookshelf with a <mousebutton>left</mousebutton> mouse button, it opens in 
+read mode. You will not be able to edit it in this mode. Should you wish to 
+write annotations into the personal commentary, you have to open it with the 
+<mousebutton>right</mousebutton> mouse button and then select <guimenu>Edit 
+this work</guimenu> and then either <guimenuitem>Plain 
+text</guimenuitem>(source code editor) or 
+<guimenuitem>HTML</guimenuitem>(basic gui wysiwyg editor).</para>
 
         <tip>
-          <para>Se <menuchoice> <guimenu>Editar essa obra</guimenu> </menuchoice> est 
-desativado, por favor, verifique se voc tem permisses de escrita para os 
-arquivos do comentrio pessoal.</para>
+          <para>If <menuchoice> <guimenu>Edit this work</guimenu> </menuchoice> is 
+deactivated, please check if you have write permission for the files of the 
+personal commentary.</para>
         </tip>
 
         <tip>
-          <para>Arraste e solte obras aqui. Solte uma referncia de versculo e o texto do 
-versculo ser inserido.</para>
+          <para>Arraste e solte obras aqui. Solte uma referência de versículo e o texto do 
+versículo ser inserido.</para>
         </tip>
       </sect3>
     </sect2>
   </sect1>
   <sect1 id="hdbk-op-search">
-    <title>Buscando em obras</title>
+    <title>Searching in works</title>
 
     <sect2 id="hdbk-op-search-intext">
-      <title>Procurando texto em uma janela de leitura aberta</title>
+      <title>Searching text in an open read window</title>
       <para>You can look for a word or phrase in the open read window (e.g. the chapter 
 of a bible that you're reading) just like you are used to from other 
 programs. This function can be reached either by clicking with the 
@@ -187,27 +189,27 @@ you can search in entire works.</para>
     </sect2>
 
     <sect2 id="hdbk-op-search-access">
-      <title>Acessando o dilogo de busca</title>
-      <para>Voc pode buscar numa obra clicando com o boto 
-<mousebutton>direito</mousebutton> do mouse em seu smbolo na 
-<guimenu>Estante</guimenu> e selecionando <guimenuitem>Buscar 
-na(s)obra(s)</guimenuitem>. Segurando &Shift; ou &Ctrl; e clicando em outros 
-nomes de obra, voc pode selecionar mais de uma. Ento siga os mesmos 
-procedimentos para abrir o dilogo de busca. Voc estar buscando em todas 
-essas obras ao mesmo tempo.</para>
+      <title>Accessing the search dialog</title>
+      <para>You can search in a work by clicking with the 
+<mousebutton>right</mousebutton> mouse button on its symbol in the 
+<guimenu>Bookshelf</guimenu> and selecting <guimenuitem>Search in 
+work(s)</guimenuitem>. By holding &Shift; or &Ctrl; and clicking on other 
+work's names you can select more than one. Then follow the same procedure to 
+open the search dialog. You will be searching in all of these works at the 
+same time.</para>
 
-      <para>Voc tambm pode acessar o dilogo de busca clicando em <menuchoice> 
-<guimenu>Procurar</guimenu> </menuchoice> no menu principal, e selecionando 
-a entrada apropriada.</para>
+      <para>You can also access the search dialog by clicking on <menuchoice> 
+<guimenu>Search</guimenu> </menuchoice> from the main menu, and selecting 
+the appropriate entry.</para>
 
-      <para>Uma terceira possibilidade para comear buscar  clicar no smbolo de busca 
-numa janela de leitura aberta.</para>
+      <para>A third possibility to start searches is to click on the search symbol in an 
+open read window.</para>
     </sect2>
 
     <sect2 id="hdbk-op-search-config">
-      <title>Configurao de pesquisa</title>
+      <title>Search configuration</title>
       <screenshot>
-        <screeninfo>Aba de Opes do dilogo de busca de texto</screeninfo>
+        <screeninfo>Search Text Dialog Options Tab</screeninfo>
         <mediaobject>
           <imageobject>
             <imagedata fileref="ss_searchopts.png" format="PNG" />
@@ -215,22 +217,22 @@ numa janela de leitura aberta.</para>
         </mediaobject>
       </screenshot>
       <sect3 id="hdbk-op-search-config-works">
-        <title>Selecionando obras</title>
-        <para>No topo da aba de opes voc vai encontrar <guibutton>Escolher</guibutton> 
-(obras). Se voc gostaria de buscar em vrias obras, clique nesse boto e ser 
-oferecido um menu onde voc pode selecionar as obras nas quais deseja 
-procurar.</para>
+        <title>Selecting works</title>
+        <para>At the top of the options tab you will find 
+<guibutton>Choose</guibutton>(works). If you would like to search in 
+multiple works, click on this button and you will be offered a menu where 
+you can select the works you want to search in.</para>
       </sect3>
       <sect3 id="hd-op-search-config-scope">
-        <title>Usando Escopos de Busca</title>
-        <para>Voc pode restringir o escopo da sua busca a certas partes da Bblia 
-selecionando um dos escopos pr-definidos da lista em <guimenu>Escopo de 
-busca</guimenu>. Voc pode definir suas prprias faixas de busca clicando no 
-boto <guibutton>Configurar faixas</guibutton>.</para>
+        <title>Using Search Scopes</title>
+        <para>You can narrow the scope of your search to certain parts of the Bible by 
+selecting one of the predefined scopes from the list in <guimenu>Search 
+scope</guimenu>. You can define your own search ranges by clicking the 
+<guibutton>Setup ranges</guibutton> button.</para>
       </sect3>
 
       <sect3 id="hd-op-search-config-syntax">
-        <title>Introduo  Sintaxe Bsica de Busca</title>
+        <title>Basic Search Syntax Introduction</title>
 
         <para>Enter the search phrase separated by spaces.  By default the search function 
 will return results that match all the words.  If you want to find any of 
@@ -247,36 +249,36 @@ search terms, e.g. '(Jesus OR spirit) AND God'.</para>
         <para>To search text other than the main text, enter the text type followed by 
 ':', and then the search term.  Refer to the table below for examples.</para>
 
-        <para>Tipos de texto disponveis: 
+        <para>Available text types: 
         <table id="hd-op-search-config-syntax-table">
-	  <title>Tipos de Busca</title>
+	  <title>Search Types</title>
           <tgroup cols="3">
             <thead>
               <row>
-                <entry>Prefixo</entry>
-                <entry>Significado</entry>
+                <entry>Prefix</entry>
+                <entry>Meaning</entry>
 		<entry>Example</entry>
               </row>
             </thead>
             <tbody>
               <row>
                 <entry>heading:</entry>
-                <entry>busca em cabealhos</entry>
+                <entry>searches headings</entry>
 		<entry>heading:Jesus</entry>
               </row>
               <row>
                 <entry>footnote:</entry>
-                <entry>busca em rodaps</entry>
+                <entry>searches footnotes</entry>
 		<entry>footnote:Moses</entry>
               </row>
               <row>
                 <entry>strong:</entry>
-                <entry>busca em Nmeros Strong</entry>
+                <entry>searches Strong's Numbers</entry>
 		<entry>strong:G535</entry>
               </row>
               <row>
                 <entry>morph:</entry>
-                <entry>busca em cdigos morfolgicos</entry>
+                <entry>searches morphology codes</entry>
 		<entry>morph:N-GSM</entry>
               </row>
             </tbody>
@@ -297,33 +299,32 @@ http://lucene.apache.org/java/docs/index.html</ulink>.</para>
     </sect2>
 
     <sect2 id="hdbk-op-search-results">
-      <title>Resultados de busca</title>
-      <para>Aqui voc pode ver quantas instncias do termo de busca foram encontradas, 
-classificadas por obras. Clicando numa obra com o boto 
-<mousebutton>direito</mousebutton> do mouse permite voc copiar, salvar ou 
-imprimir todos os versculos encontrados numa obra de uma vez s. Isso tambm 
-funciona quando voc clica em uma ou mais referncias para copiar, salvar ou 
-imprimi-las. Clicando numa referncia em particular abre o versculo em 
-contexto na janela de visualizao abaixo.</para>
+      <title>Search results</title>
+      <para>Here you can see how many instances of the search string were found, sorted 
+by works. Clicking on a work with the <mousebutton>right</mousebutton> mouse 
+button allows you to copy, save, or print all verses that were found in a 
+certain work at once. This also works when you click on one or more of the 
+references to copy, save or print them. Clicking on a particular reference 
+opens that verse up in context in the preview window below.</para>
       <tip>
-        <para>Arraste uma referncia e solte-a no smbolo de uma obra na Estante para abrir 
-a obra naquele versculo numa nova janela de leitura.</para>
+        <para>Drag a reference and drop it on a work symbol on the Bookshelf to open the 
+work at that verse in a new read window.</para>
       </tip>
       <tip>
-        <para>Arraste uma referncia e solte-a numa janela de leitura aberta, e ela ir 
-pular para aquele versculo.</para>
+        <para>Drag a reference and drop it on an open read window, and it will jump to 
+that verse.</para>
       </tip>
       <tip>
-        <para>Selecione referncias e arraste-as pela Estante para criar marcadores.</para>
+        <para>Select references and drag them to the Bookshelf to create bookmarks.</para>
       </tip>
       <sect3 id="hdbk-op-search-analysis">
-        <title>Anlise do resultado de busca</title>
-        <para>Clique em <guibutton>Anlise de busca</guibutton> para abrir a anlise da 
-busca. Isso d uma simples anlise grfica do nmero de instncias onde o termo 
-de busca foi encontrado em cada livro da Bblia, e voc tambm pode salvar a 
-anlise.</para>
+        <title>Search result analysis</title>
+        <para>Click on <guibutton>Search analysis</guibutton> to open the search analysis 
+display. This gives a simple graphic analysis of the number of instances the 
+search string was found in each book of the Bible, and you can also save the 
+analysis.</para>
         <screenshot>
-          <screeninfo>Caixa de dilogo Anlise de Busca</screeninfo>
+          <screeninfo>Search Analysis Dialog Box</screeninfo>
           <mediaobject>
             <imageobject>
               <imagedata fileref="ss_searchanal.png" format="PNG" />
@@ -335,13 +336,13 @@ anlise.</para>
   </sect1>
 
   <sect1 id="hdbk-op-bookshelfmanager">
-    <title>O <guimenuitem>Gerenciador da Estante</guimenuitem></title>
+    <title>The <guimenuitem>Bookshelf Manager</guimenuitem></title>
 
-    <para>O <guimenuitem>Gerenciador da Estante</guimenuitem>  uma ferramenta para 
-gerenciar sua Estante. Voc pode instalar novas obras em sua Estante, e 
-atualizar ou remover obras existentes da sua Estante. Acesse-o clicando em 
-<menuchoice> <guimenu>Configuraes</guimenu> <guimenuitem>Gerenciador da 
-Estante</guimenuitem> </menuchoice> no menu principal.</para>
+    <para>The <guimenuitem>Bookshelf Manager</guimenuitem> is a tool to manage your 
+Bookshelf. You can install new works to your Bookshelf, and update or remove 
+existing works from your Bookshelf. Access it by clicking <menuchoice> 
+<guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem> 
+</menuchoice> in the main menu.</para>
 
       <tip>
 	<para>If this is the first time you are starting &bibletime;, click on the Refresh 
@@ -349,45 +350,45 @@ button to see a list of works provided by the &cbs;.</para>
       </tip>
 
     <sect2 id="hdbk-op-bookshelfmanager-path">
-      <title>Configurao do(s) caminho(s) da Estante</title>
-      <para>Aqui voc pode especificar onde o &bibletime; pode armazenar sua Estante do 
-disco rdigo. Voc pode at armazenar em mltiplos diretrios. O padro  
+      <title>Bookshelf path(s) setup</title>
+      <para>Here you can specify where &bibletime; may store your Bookshelf on the hard 
+drive. You can even store it in multiple directories. Default is 
 "~/.sword/".</para>
       <tip>
-        <para>Se voc tem um CD do Sword, mas no quer instalar todas as obras no disco 
-rgido, e sim us-las diretamente do CD, ento voc pode adicionar o caminho 
-para o CD como um dos caminhos da sua estante. Quando voc iniciar o 
-&bibletime;, ele mostrar todas as obras no CD se estiver presente.</para>
+        <para>If you have a sword CD, but do not want to install all the works on the hard 
+disk, but use them directly from the CD, then you can add the path to the CD 
+as one of your bookshelf paths. When you start &bibletime;, it will show all 
+works on the CD if it is present.</para>
       </tip>
     </sect2>
     <sect2 id="hdbk-op-bookshelfmanager-installupdate">
-      <title>Instalar/atualizar obra(s)</title>
+      <title>Install/update work(s)</title>
       <para>With this facility, you can connect to a repository of works (called 
 "library"), and transfer one or more works to your local Bookshelf. These 
 libraries may be local (e.g. a &sword; CD), or remote (e.g. Crosswire's 
 online repository of &sword; modules, or another site offering &sword; 
 modules). You can manage your libraries with <guibutton>Add 
 library</guibutton> and <guibutton>Delete library</guibutton>.</para>
-      <para>Para comear o processo de instalao ou atualizao, selecione uma biblioteca  
-qual voc queira conectar e um caminho de Estante local para instalar a(s) 
-obra(s). Ento clique em <guibutton>Conectar  
-biblioteca</guibutton>. &bibletime; ir varrer o contedo da biblioteca e 
-mostrar uma lista de obras que voc pode adicionar  sua Estante, ou que voc j 
-tenha instalado, mas esto disponveis em uma nova verso na biblioteca, e 
-assim podem ser atualizadas. Ento voc pode marcar todas as obras que quiser 
-instalar ou atualizar, e clicar em<guibutton>Instalar 
-obras</guibutton>. Elas sero ento transferidas para a sua Estante.</para>
+      <para>To begin the installation or update process, select a library you want to 
+connect to and a local Bookshelf path to install the work(s) to. Then click 
+on <guibutton>Connect to library</guibutton>. &bibletime; will scan the 
+contents of the library and present you with a list of works that you can 
+add to your Bookshelf, or that you already have installed but are available 
+in a new version in the library, and thus can be updated. Then you can mark 
+all works that you want to install or update, and click on 
+<guibutton>Install works</guibutton>. They will then be transferred to your 
+Bookshelf.</para>
     </sect2>
     <sect2 id="hdbk-op-bookshelfmanager-remove">
-      <title>Remover obra(s)</title>
-      <para>Esse recurso permite a voc excluir uma ou mais obras da sua Estante para 
-liberar espao em disco. Simplesmente marque os itens e clique em 
-<guibutton>Remover obras</guibutton>.</para>
+      <title>Remove work(s)</title>
+      <para>This facility allows you to delete one or more of the works from your 
+Bookshelf too free up disk space. Simply mark the items and click on 
+<guibutton>Remove works</guibutton>.</para>
     </sect2>
     <sect2 id="hdbk-op-bookshelfmanager-searchindexes">
-      <title>ndices de pesquisa</title>
-      <para>Essa opo permite a voc criar novos ndices de pesquisa e limpar arquivos de 
-ndice rfos de obras removidas.</para>
+      <title>Search Indexes</title>
+      <para>This option allows you to create new search indexes and cleanup orphaned 
+index files for removed works.</para>
       <tip>
 	If you are having problems with your search function, visit
 	this feature.
@@ -395,21 +396,21 @@ ndice rfos de obras removidas.</para>
     </sect2>
   </sect1>
   <sect1 id="hdbk-op-output">
-    <title>Exportando e Imprimindo</title>
-    <para>Em muitos lugares, voc pode abrir um menu de contexto clicando com o boto 
-<mousebutton>direito</mousebutton> do mouse. Dependendo do contexto, ele 
-permitir a voc <guimenuitem>Selecionar</guimenuitem>, 
-<guimenuitem>Copiar</guimenuitem> (para a rea de transferncia), 
-<guimenuitem>Salvar</guimenuitem> ou <guimenuitem>Imprimir</guimenuitem> 
-texto. Isso funciona por exemplo, em janelas de leitura, quando voc clica no 
-texto normal ou na referncia de versculo, ou na pgina de resultado de 
-pesquisa quando voc clica sobre uma obra ou uma ou mais referncias de 
-versculo.  bem simples, experimente.</para>
+    <title>Exporting and Printing</title>
+    <para>In many places, you can open a context menu by clicking with the 
+<mousebutton>right</mousebutton> mouse button. Depending on context, it will 
+allow you to <guimenuitem>Select</guimenuitem>, 
+<guimenuitem>Copy</guimenuitem> (to clipboard), 
+<guimenuitem>Save</guimenuitem> or <guimenuitem>Print</guimenuitem> 
+text. This works for example in the read windows, when you click on the 
+normal text or the verse reference, or in the search result page when you 
+click on a work or one or more verse references. It is pretty 
+straightforward, so just try it out.</para>
 
-    <para>A impresso no &bibletime;  bem bsica e includa somente como uma 
-utilidade. Se voc est compondo um documento ou apresentao contendo texto das 
-obras do &bibletime;, sugerimos que voc use uma das ferramentas de edio no 
-seu sistema para formatar seu documento, ao invs de imprimir do &bibletime; 
-diretamente.</para>
+    <para>Printing from &bibletime; is rather basic and is intended as a utility. If 
+you are composing a document or presentation containing text from 
+&bibletime; works, we suggest that you use one of the presentation or 
+editing tools on your system to format your document, rather than printing 
+from &bibletime; directly.</para>
   </sect1>
 </chapter>
