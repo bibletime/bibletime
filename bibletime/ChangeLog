@@ -1,3 +1,6 @@
+2009-11-20 Thomas Abthorpe <tabthorpe@FreeBSD.org>
+    * Link Italian Handook to the build
+
 2009-11-29 Gary Holmlund
     * Fix bug ID 2905233, CTRL+W does not close child windows
 

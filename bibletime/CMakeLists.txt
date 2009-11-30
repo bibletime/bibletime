@@ -25,7 +25,7 @@ MESSAGE(STATUS "Setting up build environment for BibleTime version ${BT_VERSION_
 LIST(APPEND MESSAGE_LOCALE_LANGS af bg cs da de en_GB es et fi fr hu it ko nl nn_NO no pl pt_BR ro ru sk sv uk vi zh_CN zh_TW)
 #WARNING: If you modify HANDBOOK_LOCALE_LANGS or HOWTO_LOCALE_LANGS,
 #also modify the po4a conf files in cmake/docs/ to make sure all languages are processed.
-LIST(APPEND HANDBOOK_LOCALE_LANGS cs de fi fr hu nl pt_BR)
+LIST(APPEND HANDBOOK_LOCALE_LANGS cs de fi fr hu it nl pt_BR)
 LIST(APPEND HOWTO_LOCALE_LANGS bg cs da de es fi fr it hu ko nl pt_BR ru)
 
 # Find required packages
