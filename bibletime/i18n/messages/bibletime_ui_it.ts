@@ -164,7 +164,7 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="216"/>
         <source>&amp;Bible Study Howto</source>
-        <translation>HowTo per lo studio della &amp;Bibbia</translation>
+        <translation>HowTo Studio &amp;Bibbia</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_slots.cpp" line="527"/>
@@ -1765,7 +1765,7 @@ scorciatoia</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="358"/>
         <source>Text area header</source>
-        <translation type="unfinished"></translation>
+        <translation>Intestazione area testo</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="415"/>
@@ -2240,7 +2240,7 @@ scorciatoia</translation>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="770"/>
         <source>Markup</source>
-        <translation type="unfinished">Avvio</translation>
+        <translation type="unfinished">Marcatura</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="775"/>
@@ -2260,7 +2260,7 @@ scorciatoia</translation>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="789"/>
         <source>LCSH</source>
-        <translation type="unfinished"></translation>
+        <translation>LCSH</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="793"/>
@@ -3856,12 +3856,12 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/backend/bookshelfmodel/indexingitem.cpp" line="28"/>
         <source>Indexed works</source>
-        <translation type="unfinished"></translation>
+        <translation>Documenti indicizzati</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/indexingitem.cpp" line="30"/>
         <source>Unindexed works</source>
-        <translation type="unfinished"></translation>
+        <translation>Documenti non indicizzati</translation>
     </message>
 </context>
 <context>
