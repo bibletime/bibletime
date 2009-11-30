@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: full\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-04-21 12:33-0400\n"
-"PO-Revision-Date: 2009-10-17 20:08-0500\n"
+"PO-Revision-Date: 2009-11-30 16:06-0500\n"
 "Last-Translator: Rafael Fagundes Rosa Campos <rafaelfrc@yahoo.com>\n"
 "Language-Team: Portugues Brasil <pt_BR@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -800,9 +800,8 @@ msgid "Action"
 msgstr "Ação"
 
 #: docs/howto/en/docbook/howto-importance.docbook:135
-#, fuzzy
 msgid "Eph. 5:26"
-msgstr "Ef 5.26"
+msgstr "Ef. 5:26"
 
 #: docs/howto/en/docbook/howto-importance.docbook:137
 msgid ""
