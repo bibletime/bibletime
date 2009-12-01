@@ -181,11 +181,13 @@ void CMDIArea::myCascade() {
             if (window == active) { //leave out the active window which should be the top window
                 continue;
             }
+            window->showNormal();
             window->raise(); //make it the on-top-of-window-stack window to make sure they're in the right order
             window->setGeometry(x, y, windowWidth, windowHeight);
             x += offsetX;
             y += offsetY;
         }
+        active->showNormal();
         active->setGeometry(x, y, windowWidth, windowHeight);
         active->raise();
         active->activateWindow();
