@@ -14,7 +14,6 @@
 #include <QMdiSubWindow>
 #include <QTimer>
 #include <QWindowStateChangeEvent>
-#include <QMenu>
 
 
 CMDIArea::CMDIArea(BibleTime *parent)
@@ -33,21 +32,6 @@ static const int moveSize = 30;
 QMdiSubWindow* CMDIArea::addSubWindow(QWidget * widget, Qt::WindowFlags windowFlags) {
     QMdiSubWindow* subWindow = QMdiArea::addSubWindow(widget, windowFlags);
     subWindow->installEventFilter(this);
-
-    // Use main window "closeWindow" action on child window system menu
-    BibleTime* bt = qobject_cast<BibleTime*>(parent());
-    QAction* closeWindowAction = bt->getAction("closeWindow");
-    QMenu* systemMenu = subWindow->systemMenu();
-    QList<QAction*> actions = systemMenu->actions();
-    for (int i=0; i<actions.count(); i++) {
-        QAction* action = actions.at(i);
-        QString text = action->text();
-        if (text.contains("Close")) {
-            systemMenu->removeAction(action);
-            break;
-        }
-    }
-    systemMenu->addAction(closeWindowAction);
 
     // Manual arrangement mode
     if (m_mdiArrangementMode == ArrangementModeManual) {
