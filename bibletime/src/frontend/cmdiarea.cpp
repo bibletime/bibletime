@@ -14,6 +14,7 @@
 #include <QMdiSubWindow>
 #include <QTimer>
 #include <QWindowStateChangeEvent>
+#include <QMenu>
 
 
 CMDIArea::CMDIArea(BibleTime *parent)
@@ -32,6 +33,18 @@ static const int moveSize = 30;
 QMdiSubWindow* CMDIArea::addSubWindow(QWidget * widget, Qt::WindowFlags windowFlags) {
     QMdiSubWindow* subWindow = QMdiArea::addSubWindow(widget, windowFlags);
     subWindow->installEventFilter(this);
+
+    // Change Qt QMdiSubWindow Close action to have no shortcut
+    // This makes our closeWindow actions with Ctrl-W work correctly
+    QList<QAction*> actions = subWindow->systemMenu()->actions();
+    for (int i=0; i<actions.count(); i++) {
+        QAction* action = actions.at(i);
+        QString text = action->text();
+        if (text.contains("Close")) {
+            action->setShortcut(QKeySequence());
+            break;
+        }
+    }
 
     // Manual arrangement mode
     if (m_mdiArrangementMode == ArrangementModeManual) {
