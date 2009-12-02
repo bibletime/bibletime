@@ -89,27 +89,27 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="301"/>
         <source>Text windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Teksti-ikkunat</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="304"/>
         <source>Show text area headers</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä tekstialueen otsakkeet</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="310"/>
         <source>Show navigation</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä kohdan valinta</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="316"/>
         <source>Show work chooser buttons</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä teosten valintapainikkeet</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="322"/>
         <source>Show tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä työkalut</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="407"/>
@@ -239,12 +239,12 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="154"/>
         <source>Auto-&amp;tile</source>
-        <translation type="unfinished"></translation>
+        <translation>Järjestä &amp;ruudukkoon</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="157"/>
         <source>Automatically tile the open windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Järjestä ikkunat automaattisesti ruudukkoon</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="164"/>
@@ -259,12 +259,12 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="175"/>
         <source>&amp;Tile</source>
-        <translation type="unfinished"></translation>
+        <translation>Järjestä &amp;ruudukkoon</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="178"/>
         <source>Tile the open windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Järjestä avoimet ikkunat ruudukkoon</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="185"/>
