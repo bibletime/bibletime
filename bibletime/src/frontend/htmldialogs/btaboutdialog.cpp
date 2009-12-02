@@ -85,6 +85,7 @@ void BtAboutDialog::init_contributors_tab() {
     content += "<li>Gary Holmlund (" + tr("developer") + ")</li>";
     content += "<li>Nikolay Igotti (" + tr("developer") + ")</li>";
     content += "<li>Eeli Kaikkonnen (" + tr("developer") + ")</li>";
+    content += "<li>Jaak Ristioja (" + tr("developer") + ")</li>";
     content += "<li>Chris Kujawa (" + tr("developer") + ")</li>";
     content += "<li>Mark Lybarger (" + tr("developer") + ")</li>";
     content += "<li>Luke Mauldin (" + tr("developer") + ")</li>";
