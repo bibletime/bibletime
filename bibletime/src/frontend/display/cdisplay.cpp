@@ -22,8 +22,6 @@
 #include "util/tool.h"
 
 
-typedef BtHtmlReadDisplay HTMLREADDISPLAY;
-
 CDisplayConnections::CDisplayConnections( CDisplay* display ) : m_display(display) {}
 
 void CDisplayConnections::selectAll() {
@@ -109,7 +107,7 @@ void CDisplayConnections::openFindTextDialog() {
 /*----------------------*/
 
 CReadDisplay* CDisplay::createReadInstance( CReadWindow* readWindow, QWidget* parent ) {
-    return new HTMLREADDISPLAY(readWindow, parent);
+    return new BtHtmlReadDisplay(readWindow, parent);
 }
 
 CWriteDisplay* CDisplay::createWriteInstance( CWriteWindow* writeWindow, const CWriteDisplay::WriteDisplayType& type, QWidget* parent ) {
