@@ -91,29 +91,24 @@ void CMDIArea::myTileVertical() {
     }
 
     QList<QMdiSubWindow*> windows = usableWindowList();
-    if (windows.count() == 1) {
-        windows.at(0)->showMaximized();
+    setUpdatesEnabled(false);
+    QMdiSubWindow* active = activeSubWindow();
+
+    const int widthForEach = width() / windows.count();
+    unsigned int x = 0;
+    foreach (QMdiSubWindow *window, windows) {
+        window->showNormal();
+
+        const int preferredWidth = window->minimumWidth() + window->baseSize().width();
+        const int actWidth = qMax(widthForEach, preferredWidth);
+
+        window->setGeometry(x, 0, actWidth, height());
+        x += actWidth;
     }
-    else {
-        setUpdatesEnabled(false);
-        QMdiSubWindow* active = activeSubWindow();
 
-        const int widthForEach = width() / windows.count();
-        unsigned int x = 0;
-        foreach (QMdiSubWindow *window, windows) {
-            window->showNormal();
-
-            const int preferredWidth = window->minimumWidth() + window->baseSize().width();
-            const int actWidth = qMax(widthForEach, preferredWidth);
-
-            window->setGeometry(x, 0, actWidth, height());
-            x += actWidth;
-        }
-
-        if (active) active->setFocus();
-        setUpdatesEnabled(true);
-    }
-    emitWindowCaptionChanged();
+    if (active) active->setFocus();
+    setUpdatesEnabled(true);
+emitWindowCaptionChanged();
 }
 
 void CMDIArea::myTileHorizontal() {
@@ -122,28 +117,22 @@ void CMDIArea::myTileHorizontal() {
     }
 
     QList<QMdiSubWindow*> windows = usableWindowList();
+    setUpdatesEnabled(false);
+    QMdiSubWindow* active = activeSubWindow();
 
-    if (windows.count() == 1) {
-        windows.at(0)->showMaximized();
+    const int heightForEach = height() / windows.count();
+    unsigned int y = 0;
+    foreach (QMdiSubWindow *window, windows) {
+        window->showNormal();
+
+        const int preferredHeight = window->minimumHeight() + window->baseSize().height();
+        const int actHeight = qMax(heightForEach, preferredHeight);
+
+        window->setGeometry( 0, y, width(), actHeight );
+        y += actHeight;
     }
-    else {
-        setUpdatesEnabled(false);
-        QMdiSubWindow* active = activeSubWindow();
-
-        const int heightForEach = height() / windows.count();
-        unsigned int y = 0;
-        foreach (QMdiSubWindow *window, windows) {
-            window->showNormal();
-
-            const int preferredHeight = window->minimumHeight() + window->baseSize().height();
-            const int actHeight = qMax(heightForEach, preferredHeight);
-
-            window->setGeometry( 0, y, width(), actHeight );
-            y += actHeight;
-        }
-        if (active) active->setFocus();
-        setUpdatesEnabled(true);
-    }
+    if (active) active->setFocus();
+    setUpdatesEnabled(true);
     emitWindowCaptionChanged();
 }
 
@@ -211,7 +200,7 @@ QList<QMdiSubWindow*> CMDIArea::usableWindowList() {
     //in subWindowList() when their ChildAdded-Event is triggered
     QList<QMdiSubWindow*> ret;
     foreach(QMdiSubWindow* w, subWindowList()) {
-        if (w->isMinimized() || w->isHidden()) { //not usable for us
+        if (w->isHidden()) { //not usable for us
             continue;
         }
         ret.append( w );
