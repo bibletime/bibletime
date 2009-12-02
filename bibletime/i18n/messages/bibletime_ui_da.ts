@@ -72,42 +72,67 @@
         <translation>Information om programmet BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="286"/>
+        <location filename="../../src/bibletime_init.cpp" line="289"/>
         <source>Show Bookshelf</source>
         <translation>Vis boghylde</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="290"/>
+        <location filename="../../src/bibletime_init.cpp" line="293"/>
         <source>Show Bookmarks</source>
         <translation>Vis bogmærker</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="294"/>
+        <location filename="../../src/bibletime_init.cpp" line="297"/>
         <source>Show Mag</source>
         <translation>Vis lup</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="312"/>
+        <location filename="../../src/bibletime_init.cpp" line="301"/>
+        <source>Text windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="304"/>
+        <source>Show text area headers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="310"/>
+        <source>Show navigation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="316"/>
+        <source>Show work chooser buttons</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="322"/>
+        <source>Show tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="344"/>
         <source>O&amp;pen Windows</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="375"/>
+        <location filename="../../src/bibletime_init.cpp" line="407"/>
         <source>&amp;Save session</source>
         <translation>&amp;Gem session</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="382"/>
+        <location filename="../../src/bibletime_init.cpp" line="414"/>
         <source>&amp;Load session</source>
         <translation>&amp;Indlæs session</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="385"/>
+        <location filename="../../src/bibletime_init.cpp" line="417"/>
         <source>&amp;Delete session</source>
         <translation>&amp;Slet session</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="343"/>
+        <location filename="../../src/bibletime_init.cpp" line="375"/>
         <source>&amp;Arrangement mode</source>
         <translation>&amp;Placerings Mode</translation>
     </message>
@@ -167,7 +192,7 @@
         <translation>&amp;Bibelstudie vejledning</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="449"/>
+        <location filename="../../src/bibletime_slots.cpp" line="473"/>
         <source>Please enter a name for the new session.</source>
         <translation>Vælg venligst et navn til den nye session.</translation>
     </message>
@@ -302,7 +327,7 @@
         <translation>Søg i standard Bibelen</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="448"/>
+        <location filename="../../src/bibletime_slots.cpp" line="472"/>
         <source>New Session</source>
         <translation>Ny session</translation>
     </message>
@@ -370,17 +395,17 @@
         <translation>(c)1999-2006, BibleTime Teamet</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="181"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="183"/>
         <source>You can download and use (but not distribute) the program for personal, private, public or commercial purposes without restrictions.</source>
         <translation>Du kan hente og bruge (men ikke udgive) programmet til personlige, private, offentlige eller kommercielle formål uden restriktioner.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="183"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="185"/>
         <source>You can give away or distribute the program if you also distribute the corresponding source code.</source>
         <translation>Du kan give eller distributere programmet, hvis du også distributerer den tilsvarende kilde-kode.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="187"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="189"/>
         <source>The complete legally binding license is below.</source>
         <translation>Den komplette bindende licens er her under.</translation>
     </message>
@@ -412,7 +437,7 @@
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="75"/>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="77"/>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="91"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="92"/>
         <source>designer</source>
         <translation>designer</translation>
     </message>
@@ -426,10 +451,12 @@
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="88"/>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="89"/>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="90"/>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="93"/>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="95"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="91"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="94"/>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="96"/>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="97"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="98"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="99"/>
         <source>developer</source>
         <translation>udvikler</translation>
     </message>
@@ -459,57 +486,57 @@
         <translation>studie vejledningen</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="92"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="93"/>
         <source>documentation</source>
         <translation>dokumentation</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="94"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="95"/>
         <source>tester, usability expert</source>
         <translation>tester, brugvenligheds-ekspert</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="100"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="102"/>
         <source>The following people translated BibleTime into their language:</source>
         <translation>De følgende personer har oversat BibleTime til deres sprog:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="128"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="130"/>
         <source>Some names may be missing, please email bibletime-translations@lists.sourceforge.net if you notice errors or omissions.</source>
         <translation>Nogle navne mangler muligvis, email bibletime-translations@lists.sourceforge.net hvis du bemærker fejl eller mangler.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="141"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="143"/>
         <source>SWORD library version %1</source>
         <translation>SWORD bibliotk version %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="144"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="146"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools-- covered by the GNU General Public License-- that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
         <translation>BibleTime gør brug af SWORD projektet. SWORD projektet er Crosswire Bible Societys gratis bibelsoftware projekt. Dets formål er at oprette krydsplaform open-source værktøjer-- under GNU General Puplic Licence-- som tillader udviklere og bibelselskaber at skrive ny bibelsoftware hurtigere og nemmere.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="146"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="148"/>
         <source>The SWORD Project</source>
         <translation>SWORD projektet</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="160"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="162"/>
         <source>This program uses Qt version %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="162"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="164"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="176"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="178"/>
         <source>License</source>
         <translation>Licens</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="179"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="181"/>
         <source>BibleTime is released under the GPL license.</source>
         <translation>BibleTime er udgivet under GPL licensen.</translation>
     </message>
@@ -1696,22 +1723,22 @@ genvej</translation>
 <context>
     <name>CDisplayWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="120"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="127"/>
         <source>Back in history</source>
         <translation>Tilbage</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="128"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="135"/>
         <source>Forward in history</source>
         <translation>Frem</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="89"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="96"/>
         <source>Zoom in</source>
         <translation>Zoom ind</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="93"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="100"/>
         <source>Zoom out</source>
         <translation>Zoom ud</translation>
     </message>
@@ -1720,47 +1747,47 @@ genvej</translation>
         <translation type="obsolete">Luk</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="97"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="104"/>
         <source>Select all</source>
         <translation>Vælg alle</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="101"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="108"/>
         <source>Copy</source>
         <translation>Kopiér</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="105"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="112"/>
         <source>Find...</source>
         <translation>Find...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="109"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="116"/>
         <source>Change location</source>
         <translation>Ændr lokation</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="114"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="121"/>
         <source>Search with works of this window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="325"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="332"/>
         <source>Work chooser buttons</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="334"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="342"/>
         <source>Text area header</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="391"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="400"/>
         <source>Navigation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="399"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="409"/>
         <source>Tools</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2207,123 +2234,123 @@ genvej</translation>
 <context>
     <name>CSwordModuleInfo</name>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="766"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="763"/>
         <source>Version</source>
         <translation>Version</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="767"/>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="772"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="764"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="769"/>
         <source>unknown</source>
         <translation>ukendt</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="770"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="767"/>
         <source>Markup</source>
         <translation>Markup</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="775"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="772"/>
         <source>Location</source>
         <translation>Placering</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="779"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="776"/>
         <source>Language</source>
         <translation>Sprog</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="784"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="781"/>
         <source>Category</source>
         <translation>Kategori</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="789"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="786"/>
         <source>LCSH</source>
         <translation>LSCH</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="793"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="790"/>
         <source>Writable</source>
         <translation>Skrivbar</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="794"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="791"/>
         <source>yes</source>
         <translation>ja</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="794"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="791"/>
         <source>no</source>
         <translation>nej</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="798"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="795"/>
         <source>Unlock key</source>
         <translation>Nøgle</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="817"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="814"/>
         <source>Features</source>
         <translation>Understøtter</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="825"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="822"/>
         <source>Take care, this work contains cult / questionable material!</source>
         <translation>Advarsel: dette værk indeholder kult/ diskutabelt materiale!</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="828"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="825"/>
         <source>About</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="850"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="847"/>
         <source>Distribution license</source>
         <translation>Distributions licens</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="851"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="848"/>
         <source>Distribution source</source>
         <translation>Distributions kilde</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="852"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="849"/>
         <source>Distribution notes</source>
         <translation>Dsitributions noter</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="853"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="850"/>
         <source>Text source</source>
         <translation>Tekst kilde</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="854"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="851"/>
         <source>Copyright notes</source>
         <translation>Copyright noter</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="855"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="852"/>
         <source>Copyright holder</source>
         <translation>Copyright haver</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="856"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="853"/>
         <source>Copyright date</source>
         <translation>Copyright dato</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="857"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="854"/>
         <source>Copyright contact name</source>
         <translation>Copyright kontakt navn</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="858"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="855"/>
         <source>Copyright contact address</source>
         <translation>Copyright kontakt adresse</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="859"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="856"/>
         <source>Copyright contact email</source>
         <translation>Copyright kontakt email</translation>
     </message>
@@ -2522,22 +2549,22 @@ Do you want to continue?</source>
 <context>
     <name>QCoreApplication</name>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="411"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="403"/>
         <source>Indexing aborted</source>
         <translation>Indeksering afbrudt</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="411"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="403"/>
         <source>An internal error occurred while building the index.</source>
         <translation>En intern fejl opstod under opbygning af indekset.</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="482"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="479"/>
         <source>Search aborted</source>
         <translation>Søgning afbrudt</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="482"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="479"/>
         <source>An internal error occurred while executing your search.</source>
         <translation>En intern fejl opstod under afvikling af din søgning.</translation>
     </message>
@@ -3487,48 +3514,48 @@ Language name ppk</extracomment>
         <translation>Online</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="435"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="453"/>
         <source>Old testament</source>
         <translation>Gamle testamente</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="436"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="454"/>
         <source>Moses/Pentateuch/Torah</source>
         <translation>Moses/Pentateuch/Torah</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="437"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="455"/>
         <source>History</source>
         <translation>Historie</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="438"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="456"/>
         <source>Prophets</source>
         <translation>Profeter</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="439"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="457"/>
         <source>New testament</source>
         <translation>Nye Testamente</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="440"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="458"/>
         <source>Gospels</source>
         <translation>Evangelier</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="441"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="459"/>
         <source>Letters/Epistles</source>
         <translation>Breve</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="442"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="460"/>
         <source>Paul&apos;s Epistles</source>
         <translation>Paulus&apos; Breve</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cexportmanager.cpp" line="465"/>
-        <location filename="../../src/frontend/display/cdisplay.cpp" line="147"/>
+        <location filename="../../src/frontend/display/cdisplay.cpp" line="145"/>
         <source>HTML files</source>
         <translation>HTML filer</translation>
     </message>
@@ -3536,8 +3563,8 @@ Language name ppk</extracomment>
         <location filename="../../src/frontend/cexportmanager.cpp" line="465"/>
         <location filename="../../src/frontend/cexportmanager.cpp" line="467"/>
         <location filename="../../src/frontend/cexportmanager.cpp" line="469"/>
-        <location filename="../../src/frontend/display/cdisplay.cpp" line="147"/>
-        <location filename="../../src/frontend/display/cdisplay.cpp" line="150"/>
+        <location filename="../../src/frontend/display/cdisplay.cpp" line="145"/>
+        <location filename="../../src/frontend/display/cdisplay.cpp" line="148"/>
         <location filename="../../src/frontend/mainindex/bookmarks/btbookmarkfolder.cpp" line="38"/>
         <location filename="../../src/frontend/mainindex/bookmarks/btbookmarkfolder.cpp" line="50"/>
         <source>All files</source>
@@ -3545,7 +3572,7 @@ Language name ppk</extracomment>
     </message>
     <message>
         <location filename="../../src/frontend/cexportmanager.cpp" line="467"/>
-        <location filename="../../src/frontend/display/cdisplay.cpp" line="150"/>
+        <location filename="../../src/frontend/display/cdisplay.cpp" line="148"/>
         <source>Text files</source>
         <translation>Tekst filer</translation>
     </message>
@@ -3555,7 +3582,7 @@ Language name ppk</extracomment>
         <translation>Gem fil</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/cdisplay.cpp" line="154"/>
+        <location filename="../../src/frontend/display/cdisplay.cpp" line="152"/>
         <source>Save document ...</source>
         <translation>Gem dokument ...</translation>
     </message>

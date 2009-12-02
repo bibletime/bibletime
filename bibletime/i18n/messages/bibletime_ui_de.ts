@@ -278,6 +278,26 @@
         <source>Tile the open windows</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Text windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show text area headers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show navigation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show work chooser buttons</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show tools</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BtAboutDialog</name>
