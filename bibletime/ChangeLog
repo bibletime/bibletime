@@ -1,3 +1,9 @@
+﻿2009-12-1  Gary Holmlund
+    * Fix bugs in cascade, vertical tile, and horizontal tile
+
+2009-11-29 Gary Holmlund
+    * Add new window arrangement modes, Auto-Tile, and Tile
+
 2009-11-20 Thomas Abthorpe <tabthorpe@FreeBSD.org>
     * Link Italian Handook to the build
 
