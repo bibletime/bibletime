@@ -109,13 +109,7 @@ bool CSwordModuleInfo::isLocked() {
     //still works, but the cipherkey is stored in CBTConfig.
     //Works because it is set in sword on program startup.
 
-    if (isEncrypted()) {
-        if (unlockKeyIsValid()) {
-            return false;
-        }
-        return true;
-    }
-    return false;
+    return isEncrypted() && !unlockKeyIsValid();
 }
 
 /** This functions returns true if this module is encrypted (locked or unlocked). */
@@ -129,11 +123,7 @@ bool CSwordModuleInfo::isEncrypted() const {
     sword::ConfigEntMap config = backend()->getConfig()->Sections.find(name().toUtf8().constData())->second;
     sword::ConfigEntMap::iterator it = config.find("CipherKey");
 
-    if (it != config.end()) {
-        return true;
-    }
-
-    return false;
+    return it != config.end();
 }
 
 /** This function makes an estimate if a module was properly unlocked.
@@ -194,12 +184,13 @@ bool CSwordModuleInfo::hasIndex() {
     //first check if the index version and module version are ok
     QSettings module_config(getModuleBaseIndexLocation() + QString("/bibletime-index.conf"), QSettings::IniFormat);
 
-    if (hasVersion()) {
-        if (module_config.value("module-version") != QString(config(CSwordModuleInfo::ModuleVersion)) ) {
-            return false;
-        }
+    if (hasVersion() &&
+        module_config.value("module-version").toString() != config(CSwordModuleInfo::ModuleVersion))
+    {
+        return false;
     }
-    if (module_config.value("index-version") != QString::number( INDEX_VERSION )) {
+
+    if (module_config.value("index-version").toUInt() != INDEX_VERSION) {
         qDebug("%s: INDEX_VERSION is not compatible with this version of BibleTime.", name().toUtf8().constData());
         return false;
     }
@@ -403,7 +394,7 @@ void CSwordModuleInfo::buildIndex() {
         else {
             QSettings module_config(getModuleBaseIndexLocation() + QString("/bibletime-index.conf"), QSettings::IniFormat);
             if (hasVersion()) module_config.setValue("module-version", config(CSwordModuleInfo::ModuleVersion) );
-            module_config.setValue("index-version", INDEX_VERSION );
+            module_config.setValue("index-version", INDEX_VERSION);
             emit hasIndexChanged(true);
         }
     }
