@@ -407,7 +407,7 @@ void CDisplayWindow::setButtonsToolBar( QToolBar* bar ) {
     bar->setAllowedAreas(Qt::TopToolBarArea);
     bar->setFloatable(false);
     bar->setWindowTitle(tr("Tools"));
-    bar->setVisible( CBTConfig::get(CBTConfig::showTextWindowModuleSelectorButtons) );
+    bar->setVisible( CBTConfig::get(CBTConfig::showTextWindowToolButtons) );
 }
 
 /** Returns the display settings button */
