@@ -56,7 +56,6 @@ void CReadWindow::setDisplayWidget( CDisplay* newDisplay ) {
 
     }
 
-    m_displayWidget = static_cast<CReadDisplay*>(newDisplay);
     connect(
         m_displayWidget->connectionsProxy(),
         SIGNAL(referenceClicked(const QString&, const QString&)),
