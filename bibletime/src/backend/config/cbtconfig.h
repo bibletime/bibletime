@@ -68,7 +68,12 @@ enum bools {
 
     bookshelfShowHidden,
 
-    allowNetworkConnection
+    allowNetworkConnection,
+
+    showTextWindowHeaders,
+    showTextWindowNavigator,
+    showTextWindowToolButtons,
+    showTextWindowModuleSelectorButtons
 };
 enum ints {
     footnotes,

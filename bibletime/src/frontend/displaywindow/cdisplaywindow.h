@@ -166,6 +166,11 @@ class CDisplayWindow : public QMainWindow, public CPointers {
         /** Refresh the settings of this window.*/
         virtual void reload(CSwordBackend::SetupChangedReason reason);
 
+        void slotShowNavigator(bool show);
+        void slotShowToolButtons(bool show);
+        void slotShowModuleChooser(bool show);
+        void slotShowHeader(bool show);
+
     protected:
         friend class CMDIArea;
         friend class CBibleReadWindow;

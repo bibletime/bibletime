@@ -265,6 +265,30 @@ void BibleTime::slotToggleToolbar() {
     }
 }
 
+void BibleTime::slotToggleTextWindowHeader() {
+    bool currentState = CBTConfig::get(CBTConfig::showTextWindowHeaders);
+    CBTConfig::set(CBTConfig::showTextWindowHeaders, !currentState);
+    emit toggledTextWindowHeader(!currentState);
+}
+
+void BibleTime::slotToggleTextWindowNavigator() {
+    bool currentState = CBTConfig::get(CBTConfig::showTextWindowNavigator);
+    CBTConfig::set(CBTConfig::showTextWindowNavigator, !currentState);
+    emit toggledTextWindowNavigator(!currentState);
+}
+
+void BibleTime::slotToggleTextWindowToolButtons() {
+    bool currentState = CBTConfig::get(CBTConfig::showTextWindowToolButtons);
+    CBTConfig::set(CBTConfig::showTextWindowToolButtons, !currentState);
+    emit toggledTextWindowToolButtons(!currentState);
+}
+
+void BibleTime::slotToggleTextWindowModuleChooser() {
+    bool currentState = CBTConfig::get(CBTConfig::showTextWindowModuleSelectorButtons);
+    CBTConfig::set(CBTConfig::showTextWindowModuleSelectorButtons, !currentState);
+    emit toggledTextWindowModuleChooser(!currentState);
+}
+
 /** Sets the active window. */
 void BibleTime::slotSetActiveSubWindow(QWidget* window) {
     if (!window)

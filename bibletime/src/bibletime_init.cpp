@@ -270,6 +270,9 @@ void BibleTime::initActions() {
     fileMenu->addAction(tmp);
     connect(tmp, SIGNAL(triggered()), this, SLOT(quit()) );
 
+    
+    // ********** View menu *********************
+    
     m_windowFullscreen_action = m_actionCollection->action("toggleFullscreen");
     m_windowFullscreen_action->setCheckable(true);
     viewMenu->addAction(m_windowFullscreen_action);
@@ -294,6 +297,17 @@ void BibleTime::initActions() {
     action->setText(tr("Show Mag"));
     viewMenu->addAction(action);
 
+    viewMenu->addSeparator();
+    QMenu* textWindowsMenu = new QMenu(tr("Text windows"));
+    viewMenu->addMenu(textWindowsMenu);
+    
+    action = new QAction(tr("Show text area headers"), this);
+    action->setCheckable(true);
+    action->setChecked(CBTConfig::get(CBTConfig::showTextWindowHeaders));
+    connect(action, SIGNAL(toggled(bool)), SLOT(slotToggleTextWindowHeader()));
+    textWindowsMenu->addAction(action);
+    
+    // *************************************
     m_mainToolBar->addSeparator();
 
     tmp = m_actionCollection->action("searchOpenWorks");

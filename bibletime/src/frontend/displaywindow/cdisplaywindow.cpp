@@ -53,7 +53,14 @@ CDisplayWindow::CDisplayWindow(QList<CSwordModuleInfo*> modules, CMDIArea *paren
     setModules(modules);
 
     // Connect this to the backend module list changes
-    connect(CPointers::backend(), SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)), SLOT(reload(CSwordBackend::SetupChangedReason)));
+    connect(CPointers::backend(),
+            SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)),
+            SLOT(reload(CSwordBackend::SetupChangedReason)));
+    BibleTime* mainwindow = dynamic_cast<BibleTime*>(m_mdi->parent());
+    connect(mainwindow, SIGNAL(toggledTextWindowHeader(bool)), SLOT(slotShowHeader(bool)) );
+    connect(mainwindow, SIGNAL(toggledTextWindowNavigator(bool)), SLOT(slotShowNavigator(bool)) );
+    connect(mainwindow, SIGNAL(toggledTextWindowToolButtons(bool)), SLOT(slotShowToolButtons(bool)) );
+    connect(mainwindow, SIGNAL(toggledTextWindowModuleChooser(bool)), SLOT(slotShowModuleChooser(bool)) );
 }
 
 CDisplayWindow::~CDisplayWindow() {
@@ -324,6 +331,7 @@ void CDisplayWindow::setModuleChooserBar( BtModuleChooserBar* bar ) {
         m_moduleChooserBar = bar;
         bar->setWindowTitle(tr("Work chooser buttons"));
         bar->setLayoutDirection(Qt::LeftToRight);
+        bar->setVisible(CBTConfig::get(CBTConfig::showTextWindowModuleSelectorButtons));
     }
 }
 
@@ -332,6 +340,7 @@ void CDisplayWindow::setHeaderBar( QToolBar* header ) {
     m_headerBar = header;
     header->setMovable(false);
     header->setWindowTitle(tr("Text area header"));
+    header->setVisible(CBTConfig::get(CBTConfig::showTextWindowHeaders));
 }
 
 QToolBar* CDisplayWindow::headerBar() {
@@ -389,6 +398,7 @@ void CDisplayWindow::setMainToolBar( QToolBar* bar ) {
     bar->setAllowedAreas(Qt::TopToolBarArea);
     bar->setFloatable(false);
     bar->setWindowTitle(tr("Navigation"));
+    bar->setVisible(CBTConfig::get(CBTConfig::showTextWindowNavigator));
 }
 
 /** Sets the main toolbar. */
@@ -397,6 +407,7 @@ void CDisplayWindow::setButtonsToolBar( QToolBar* bar ) {
     bar->setAllowedAreas(Qt::TopToolBarArea);
     bar->setFloatable(false);
     bar->setWindowTitle(tr("Tools"));
+    bar->setVisible( CBTConfig::get(CBTConfig::showTextWindowModuleSelectorButtons) );
 }
 
 /** Returns the display settings button */
@@ -411,6 +422,22 @@ void CDisplayWindow::setDisplaySettingsButton( CDisplaySettingsButton* button ) 
 
     m_displaySettingsButton = button;
     connect(m_displaySettingsButton, SIGNAL(sigChanged()), this, SLOT(lookup()));
+}
+
+void CDisplayWindow::slotShowHeader(bool show) {
+    headerBar()->setVisible(show);
+}
+
+void CDisplayWindow::slotShowNavigator(bool show) {
+    mainToolBar()->setVisible(show);
+}
+
+void CDisplayWindow::slotShowToolButtons(bool show) {
+    buttonsToolBar()->setVisible(show);
+}
+
+void CDisplayWindow::slotShowModuleChooser(bool show) {
+    moduleChooserBar()->setVisible(show);
 }
 
 /** Lookup the current key. Used to refresh the display. */

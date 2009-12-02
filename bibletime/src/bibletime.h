@@ -285,6 +285,17 @@ class BibleTime : public QMainWindow {
          * Shows/hides the toolbar
          */
         void slotToggleToolbar();
+        
+        /**
+        * Shows/hides the text window text area headers and sets
+        * configuration that newly opened windows don't user headers.
+        */
+        void slotToggleTextWindowHeader();
+        
+        void slotToggleTextWindowToolButtons();
+        void slotToggleTextWindowNavigator();
+        void slotToggleTextWindowModuleChooser();
+        
         /**
          * Used to set the active menu
          */
@@ -343,6 +354,12 @@ class BibleTime : public QMainWindow {
         * Open the About Dialog
         */
         void slotOpenAboutDialog();
+
+    signals:
+        void toggledTextWindowHeader(bool newState);
+        void toggledTextWindowNavigator(bool newState);
+        void toggledTextWindowToolButtons(bool newState);
+        void toggledTextWindowModuleChooser(bool newState);
 
     private:
         //  True if window was maximized before last toggle to full screen.

@@ -112,6 +112,15 @@ QString getKey(const bools ID) {
             return "bookshelfShowHidden";
         case allowNetworkConnection:
             return "allowNetworkConnection";
+            
+        case showTextWindowHeaders:
+            return "showTextWindowHeaders";
+        case showTextWindowNavigator:
+            return "showTextWindowNavigator";
+        case showTextWindowModuleSelectorButtons:
+            return "showTextWindowModuleSelectorButtons";
+        case showTextWindowToolButtons:
+            return "showTextWindowToolButtons";
     }
     Q_ASSERT(false);
     return false;
@@ -329,6 +338,15 @@ bool getDefault(const bools ID) {
             return false;
         case allowNetworkConnection:
             return false;
+            
+        case showTextWindowHeaders:
+            return true;
+        case showTextWindowNavigator:
+            return true;
+        case showTextWindowModuleSelectorButtons:
+            return true;
+        case showTextWindowToolButtons:
+            return true;
     }
     return false;
 }
