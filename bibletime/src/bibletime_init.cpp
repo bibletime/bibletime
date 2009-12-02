@@ -307,6 +307,24 @@ void BibleTime::initActions() {
     connect(action, SIGNAL(toggled(bool)), SLOT(slotToggleTextWindowHeader()));
     textWindowsMenu->addAction(action);
     
+    action = new QAction(tr("Show navigation"), this);
+    action->setCheckable(true);
+    action->setChecked(CBTConfig::get(CBTConfig::showTextWindowNavigator));
+    connect(action, SIGNAL(toggled(bool)), SLOT(slotToggleTextWindowNavigator()));
+    textWindowsMenu->addAction(action);
+    
+    action = new QAction(tr("Show work chooser buttons"), this);
+    action->setCheckable(true);
+    action->setChecked(CBTConfig::get(CBTConfig::showTextWindowModuleSelectorButtons));
+    connect(action, SIGNAL(toggled(bool)), SLOT(slotToggleTextWindowModuleChooser()));
+    textWindowsMenu->addAction(action);
+    
+    action = new QAction(tr("Show tools"), this);
+    action->setCheckable(true);
+    action->setChecked(CBTConfig::get(CBTConfig::showTextWindowToolButtons));
+    connect(action, SIGNAL(toggled(bool)), SLOT(slotToggleTextWindowToolButtons()));
+    textWindowsMenu->addAction(action);
+    
     // *************************************
     m_mainToolBar->addSeparator();
 
