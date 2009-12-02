@@ -144,10 +144,17 @@ class CSwordModuleInfo: public QObject {
         * Returns the base directory for search indices
         */
         static QString getGlobalBaseIndexLocation();
+
         /**
-        * Removes search index for this module, even if the module is not there any more
+          Removes the search index for this module (rm -rf).
         */
-        static void deleteIndexForModule( QString name );
+        void deleteIndex();
+
+        /**
+          Removes search index for a module, even if the module is not there any more.
+          \param[in] name name of the module.
+        */
+        static void deleteIndexForModule(const QString &name);
 
 
         /**
@@ -338,6 +345,7 @@ class CSwordModuleInfo: public QObject {
         QString getFormattedConfigEntry(const QString& name) const;
 
     signals:
+        void hasIndexChanged(bool);
         void hiddenChanged(bool);
         void indexingFinished();
         void indexingProgress(int);

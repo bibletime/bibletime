@@ -165,7 +165,7 @@ void BtIndexPage::deleteIndices() {
         if (m_modsWithIndices->child(i)->checkState(0) == Qt::Checked) {
             CSwordModuleInfo* module = CPointers::backend()->findModuleByName(m_modsWithIndices->child(i)->text(0).toUtf8());
             if (module) {
-                CSwordModuleInfo::deleteIndexForModule( module->name() );
+                module->deleteIndex();
                 indicesDeleted = true;
             }
         }

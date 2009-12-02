@@ -397,24 +397,30 @@ void CSwordModuleInfo::buildIndex() {
         writer->close();
 
         if (m_cancelIndexing) {
-            deleteIndexForModule(name());
+            deleteIndex();
             m_cancelIndexing = false;
         }
         else {
             QSettings module_config(getModuleBaseIndexLocation() + QString("/bibletime-index.conf"), QSettings::IniFormat);
             if (hasVersion()) module_config.setValue("module-version", config(CSwordModuleInfo::ModuleVersion) );
             module_config.setValue("index-version", INDEX_VERSION );
+            emit hasIndexChanged(true);
         }
     }
     catch (...) {
         qWarning("CLucene exception occurred while indexing");
         util::showWarning(0, QCoreApplication::tr("Indexing aborted"), QCoreApplication::tr("An internal error occurred while building the index."));
-        deleteIndexForModule(name());
+        deleteIndex();
         m_cancelIndexing = false;
     }
 }
 
-void CSwordModuleInfo::deleteIndexForModule( QString name ) {
+void CSwordModuleInfo::deleteIndex() {
+    deleteIndexForModule(name());
+    emit hasIndexChanged(false);
+}
+
+void CSwordModuleInfo::deleteIndexForModule(const QString &name) {
     util::directory::removeRecursive( getGlobalBaseIndexLocation() + "/" + name );
 }
 
