@@ -92,6 +92,7 @@ void BtAboutDialog::init_contributors_tab() {
     content += "<li>Fred Saalbach (" + tr("documentation") + ")</li>";
     content += "<li>Gary Sims (" + tr("developer") + ")</li>";
     content += "<li>Wolfgang Stradner (" + tr("tester, usability expert") + ")</li>";
+    content += "<li>Kang Sun (" + tr("developer") + ")</li>";
     content += "<li>Thorsten Uhlmann (" + tr("developer") + ")</li>";
     content += "<li>David White (" + tr("developer") + ")</li>";
     content += "<li>Mark Zealey (" + tr("developer") + ")</li>";

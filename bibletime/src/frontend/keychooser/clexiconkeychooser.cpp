@@ -117,8 +117,11 @@ void CLexiconKeyChooser::refreshContent() {
         QStringList refEntries = *(it->second); //copy the items for the first time
         QStringList* cmpEntries = ( ++it )->second; //list for comparision, starts with the second module in the map
 
-        while (it != entryMap.end()) {
-            std::set_intersection(
+        // Testing for refEntries being empty is not needed for the set union
+        // of all keys, but is a good idea since it is being updated in the
+        // loop.  It is necessary for set intersection and prevents a crash.
+        while (it != entryMap.end() && (refEntries.begin() != refEntries.end())) {
+            std::set_union(
                 refEntries.begin(), --(refEntries.end()), //--end() is the last valid entry
                 cmpEntries->begin(), --(cmpEntries->end()),
                 std::back_inserter(goodEntries), //append valid entries to the end of goodEntries

@@ -44,8 +44,10 @@ void CReadWindow::setDisplayWidget( CDisplay* newDisplay ) {
     Q_ASSERT(dynamic_cast<CReadDisplay*>(newDisplay));
     CDisplayWindow::setDisplayWidget(newDisplay);
     if (m_displayWidget) {
-        disconnect(m_displayWidget->connectionsProxy(), SIGNAL(referenceClicked(const QString&, const QString&)), this, SLOT(lookupModKey(const QString&, const QString&)));
-        disconnect(m_displayWidget->connectionsProxy(), SIGNAL(referenceDropped(const QString&)), this, SLOT(lookupKey(const QString&)));
+        disconnect(m_displayWidget->connectionsProxy(), SIGNAL(referenceClicked(const QString&, const QString&)),
+                   this, SLOT(lookupModKey(const QString&, const QString&)));
+        disconnect(m_displayWidget->connectionsProxy(), SIGNAL(referenceDropped(const QString&)),
+                   this, SLOT(lookupKey(const QString&)));
 
         HTMLREADDISPLAY* v = dynamic_cast<HTMLREADDISPLAY*>(m_displayWidget);
         if (v) {
@@ -54,7 +56,7 @@ void CReadWindow::setDisplayWidget( CDisplay* newDisplay ) {
 
     }
 
-    m_displayWidget = (CReadDisplay*)newDisplay;
+    m_displayWidget = dynamic_cast<CReadDisplay*>(newDisplay);
     connect(
         m_displayWidget->connectionsProxy(),
         SIGNAL(referenceClicked(const QString&, const QString&)),

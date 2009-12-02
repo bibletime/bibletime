@@ -478,7 +478,7 @@ void CDisplayWindow::lookupKey( const QString& keyName ) {
     */
     Q_ASSERT(modules().first());
 
-    //qDebug("CDisplayWindow::lookup: %s", keyName.latin1());
+    qDebug() << "CDisplayWindow::lookupKey: " << keyName;
     lookupModKey(modules().first()->name(), keyName);
 }
 

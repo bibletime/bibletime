@@ -35,7 +35,9 @@ class CDisplay : public CPointers {
         };
 
         static CReadDisplay* createReadInstance(CReadWindow* readWindow, QWidget* parent = 0);
-        static CWriteDisplay* createWriteInstance( CWriteWindow* writeWindow, const WriteDisplayType& type = PlainTextDisplay, QWidget* parent = 0 );
+        static CWriteDisplay* createWriteInstance( CWriteWindow* writeWindow,
+                                                   const WriteDisplayType& type = PlainTextDisplay,
+                                                   QWidget* parent = 0 );
 
         enum TextType {
             HTMLText, /* Used for HTML markup */
@@ -63,7 +65,8 @@ class CDisplay : public CPointers {
         /** Returns the text in the given format.
         *
         */
-        virtual const QString text( const CDisplay::TextType format = CDisplay::HTMLText, const CDisplay::TextPart part = CDisplay::Document ) = 0;
+        virtual const QString text( const CDisplay::TextType format = CDisplay::HTMLText,
+                                    const CDisplay::TextPart part = CDisplay::Document ) = 0;
         /**
         * Sets the new text for this display widget.
         */
@@ -88,7 +91,8 @@ class CDisplay : public CPointers {
         * Returns the parent window used for this display widget.
         */
         CDisplayWindow* parentWindow() const;
-        virtual void print( const CDisplay::TextPart, CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions) = 0;
+        virtual void print( const CDisplay::TextPart, CSwordBackend::DisplayOptions displayOptions,
+                            CSwordBackend::FilterOptions filterOptions) = 0;
         /**
         * Installs the popup which should be opened when the right mouse button was pressed.
         */
@@ -148,7 +152,8 @@ class CDisplayConnections : public QObject {
         void saveAnchorWithText();
 
         void printAll(CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions);
-        void printAnchorWithText(CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions);
+        void printAnchorWithText(CSwordBackend::DisplayOptions displayOptions,
+                                 CSwordBackend::FilterOptions filterOptions);
 
         void copySelection();
         void copyAll();

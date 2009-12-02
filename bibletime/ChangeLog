@@ -1,4 +1,10 @@
-﻿2009-12-1  Gary Holmlund
+﻿2009-12-2 Kang Sun
+    * Fixed bug ID 2901627 and hopefully ID 2901633.
+    * Fixed potential bug in CReadWindow::setDisplayWidget.
+    * Some code clean-up.
+    * Added self to about dialog.
+
+2009-12-1  Gary Holmlund
     * Fix bugs in cascade, vertical tile, and horizontal tile
 
 2009-11-29 Gary Holmlund

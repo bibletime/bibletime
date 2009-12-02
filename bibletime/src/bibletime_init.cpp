@@ -441,15 +441,18 @@ void BibleTime::initConnections() {
     }
 
     if (m_openWindowsMenu) {
-        QObject::connect(m_openWindowsMenu, SIGNAL(aboutToShow()), this, SLOT(slotOpenWindowsMenuAboutToShow()));
+        QObject::connect(m_openWindowsMenu, SIGNAL(aboutToShow()),
+                         this, SLOT(slotOpenWindowsMenuAboutToShow()));
     }
     else {
         qWarning() << "Main window: can't find open windows menu";
     }
 
     bool ok;
-    ok = connect(m_bookmarksPage, SIGNAL(createReadDisplayWindow(QList<CSwordModuleInfo*>, const QString&)),
-                 this, SLOT(createReadDisplayWindow(QList<CSwordModuleInfo*>, const QString&)));
+    ok = connect(m_bookmarksPage,
+                 SIGNAL(createReadDisplayWindow(QList<CSwordModuleInfo*>, const QString&)),
+                 this,
+                 SLOT(createReadDisplayWindow(QList<CSwordModuleInfo*>, const QString&)));
     Q_ASSERT(ok);
     connect(m_bookshelfDock, SIGNAL(moduleOpenTriggered(CSwordModuleInfo*)),
             this, SLOT(createReadDisplayWindow(CSwordModuleInfo*)));
