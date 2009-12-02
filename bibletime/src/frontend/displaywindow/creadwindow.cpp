@@ -41,7 +41,7 @@ CReadWindow::~CReadWindow() {
 
 /** Sets the display widget of this display window. */
 void CReadWindow::setDisplayWidget( CDisplay* newDisplay ) {
-    // Lets be Orwellianny paranoid here:
+    // Lets be orwellianly paranoid here:
     Q_ASSERT(dynamic_cast<CReadDisplay*>(newDisplay) != 0);
 
     CDisplayWindow::setDisplayWidget(newDisplay);
