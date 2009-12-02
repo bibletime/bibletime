@@ -219,12 +219,12 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="154"/>
         <source>Auto-&amp;tile</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="157"/>
         <source>Automatically tile the open windows</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="164"/>
@@ -239,12 +239,12 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="175"/>
         <source>&amp;Tile</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="178"/>
         <source>Tile the open windows</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="185"/>
@@ -1259,48 +1259,49 @@ shortcut</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="39"/>
         <source>Choose action group:</source>
-        <translation></translation>
+        <translation>Choose action group:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="51"/>
         <source>Main Window</source>
-        <translation></translation>
+        <translation>Main Window</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="52"/>
         <source>All text windows</source>
-        <translation></translation>
+        <translation>All text windows</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="53"/>
         <source>Bible windows</source>
-        <translation></translation>
+        <translation>Bible windows</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="54"/>
         <source>Commentary windows</source>
-        <translation></translation>
+        <translation>Commentary windows</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="55"/>
         <source>Lexicon windows</source>
-        <translation></translation>
+        <translation>Lexicon windows</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="56"/>
         <source>Book windows</source>
-        <translation></translation>
+        <translation>Book windows</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="178"/>
         <source>
    &quot;%1&quot; in the &quot;%2&quot; group</source>
-        <translation></translation>
+        <translation>
+   &quot;%1&quot; in the &quot;%2&quot; group</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="259"/>
         <source>Shortcuts</source>
-        <translation></translation>
+        <translation>Shortcuts</translation>
     </message>
 </context>
 <context>
@@ -4239,37 +4240,37 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="221"/>
         <source>Save Search Analysis</source>
-        <translation></translation>
+        <translation>Save Search Analysis</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="221"/>
         <source>HTML files (*.html;*.HTML;*.HTM;*.htm)</source>
-        <translation></translation>
+        <translation>HTML files (*.html;*.HTML;*.HTM;*.htm)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="239"/>
         <source>BibleTime Search Analysis</source>
-        <translation></translation>
+        <translation>BibleTime Search Analysis</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="240"/>
         <source>Search text :</source>
-        <translation></translation>
+        <translation>Search text :</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="242"/>
         <source>Book</source>
-        <translation></translation>
+        <translation>Book</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="243"/>
         <source>Total hits</source>
-        <translation></translation>
+        <translation>Total hits</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="275"/>
         <source>Created by &lt;a href=&quot;http://www.bibletime.info/&quot;&gt;BibleTime&lt;/a&gt;</source>
-        <translation></translation>
+        <translation>Created by &lt;a href=&quot;http://www.bibletime.info/&quot;&gt;BibleTime&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
@@ -4277,33 +4278,34 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="115"/>
         <source>Missing indices</source>
-        <translation></translation>
+        <translation>Missing indices</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="82"/>
         <source>Search</source>
-        <translation></translation>
+        <translation>Search</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="116"/>
         <source>One or more works need indexing before they can be searched.
 This could take a long time. Proceed with indexing?</source>
-        <translation></translation>
+        <translation>One or more works need indexing before they can be searched.
+This could take a long time. Proceed with indexing?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="231"/>
         <source>&amp;Analyze results...</source>
-        <translation></translation>
+        <translation>&amp;Analyze results...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="232"/>
         <source>Show a graphical analyzis of the search result</source>
-        <translation></translation>
+        <translation>Show a graphical analyzis of the search result</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="238"/>
         <source>&amp;Close</source>
-        <translation></translation>
+        <translation>&amp;Close</translation>
     </message>
 </context>
 <context>
