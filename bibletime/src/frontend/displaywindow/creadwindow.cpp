@@ -26,8 +26,6 @@
 
 using namespace Profile;
 
-typedef BtHtmlReadDisplay HTMLREADDISPLAY;
-
 CReadWindow::CReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent)
         : CDisplayWindow(modules, parent),
         m_displayWidget(0) {
@@ -51,7 +49,7 @@ void CReadWindow::setDisplayWidget( CDisplay* newDisplay ) {
         disconnect(m_displayWidget->connectionsProxy(), SIGNAL(referenceDropped(const QString&)),
                    this, SLOT(lookupKey(const QString&)));
 
-        HTMLREADDISPLAY* v = dynamic_cast<HTMLREADDISPLAY*>(m_displayWidget);
+        BtHtmlReadDisplay* v = dynamic_cast<BtHtmlReadDisplay*>(m_displayWidget);
         if (v) {
             QObject::disconnect(v, SIGNAL(completed()), this, SLOT(slotMoveToAnchor()) );
         }
@@ -72,7 +70,7 @@ void CReadWindow::setDisplayWidget( CDisplay* newDisplay ) {
         this,
         SLOT(lookupKey(const QString&))
     );
-    HTMLREADDISPLAY* v = dynamic_cast<HTMLREADDISPLAY*>(m_displayWidget);
+    BtHtmlReadDisplay* v = dynamic_cast<BtHtmlReadDisplay*>(m_displayWidget);
     if (v) {
         QObject::connect(v, SIGNAL(completed()), this, SLOT(slotMoveToAnchor()) );
     }
