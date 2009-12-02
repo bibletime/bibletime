@@ -12,32 +12,32 @@
 <context>
     <name>BibleTime</name>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="242"/>
+        <location filename="../../src/bibletime_init.cpp" line="256"/>
         <source>&amp;File</source>
         <translation>&amp;Bestand</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="243"/>
+        <location filename="../../src/bibletime_init.cpp" line="257"/>
         <source>&amp;View</source>
         <translation>Beel&amp;d</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="244"/>
+        <location filename="../../src/bibletime_init.cpp" line="258"/>
         <source>&amp;Search</source>
         <translation>&amp;Zoeken</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="245"/>
+        <location filename="../../src/bibletime_init.cpp" line="259"/>
         <source>&amp;Window</source>
         <translation>&amp;Venster</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="246"/>
+        <location filename="../../src/bibletime_init.cpp" line="260"/>
         <source>Se&amp;ttings</source>
         <translation>&amp;Instellingen</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="247"/>
+        <location filename="../../src/bibletime_init.cpp" line="261"/>
         <source>&amp;Help</source>
         <translation>&amp;Help</translation>
     </message>
@@ -52,7 +52,7 @@
         <translation>&amp;Volledig scherm</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="250"/>
+        <location filename="../../src/bibletime_init.cpp" line="264"/>
         <source>Main Toolbar</source>
         <translation>Hoofdwerkbalk</translation>
     </message>
@@ -62,52 +62,52 @@
         <translation>&amp;Afsluiten</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="219"/>
+        <location filename="../../src/bibletime_init.cpp" line="233"/>
         <source>Open the Bible study HowTo included with BibleTime.&lt;br/&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
         <translation>Open de Bijbelstudie HowTo van BibleTime. &lt;br/&gt;Deze HowTo is een introductie op hoe u de Bijbel doeltreffend kunt bestuderen.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="224"/>
+        <location filename="../../src/bibletime_init.cpp" line="238"/>
         <source>Information about the BibleTime program</source>
         <translation>Informatie over het programma BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="272"/>
+        <location filename="../../src/bibletime_init.cpp" line="286"/>
         <source>Show Bookshelf</source>
         <translation>Toon Boekenplank</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="276"/>
+        <location filename="../../src/bibletime_init.cpp" line="290"/>
         <source>Show Bookmarks</source>
         <translation>Toon Bladwijzers</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="280"/>
+        <location filename="../../src/bibletime_init.cpp" line="294"/>
         <source>Show Mag</source>
         <translation>Toon Vergrootglas</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="298"/>
+        <location filename="../../src/bibletime_init.cpp" line="312"/>
         <source>O&amp;pen Windows</source>
         <translation>O&amp;pen Vensters</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="352"/>
+        <location filename="../../src/bibletime_init.cpp" line="375"/>
         <source>&amp;Save session</source>
         <translation>&amp;Sessie opslaan</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="359"/>
+        <location filename="../../src/bibletime_init.cpp" line="382"/>
         <source>&amp;Load session</source>
         <translation>&amp;Laad sessie</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="362"/>
+        <location filename="../../src/bibletime_init.cpp" line="385"/>
         <source>&amp;Delete session</source>
         <translation>Verwij&amp;der sessie</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="325"/>
+        <location filename="../../src/bibletime_init.cpp" line="343"/>
         <source>&amp;Arrangement mode</source>
         <translation>R&amp;angschikking van vensters</translation>
     </message>
@@ -127,47 +127,47 @@
         <translation>Automatisch &amp;horizontaal stapelen</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="154"/>
+        <location filename="../../src/bibletime_init.cpp" line="161"/>
         <source>Auto-&amp;cascade</source>
         <translation>Automatisch trapsgewijs (&amp;cascade)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="161"/>
+        <location filename="../../src/bibletime_init.cpp" line="168"/>
         <source>&amp;Cascade</source>
         <translation>Trapsgewijs (&amp;cascade)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="168"/>
+        <location filename="../../src/bibletime_init.cpp" line="182"/>
         <source>Tile &amp;vertically</source>
         <translation>&amp;Verticaal stapelen</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="175"/>
+        <location filename="../../src/bibletime_init.cpp" line="189"/>
         <source>Tile &amp;horizontally</source>
         <translation>&amp;Horizontaal stapelen</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="189"/>
+        <location filename="../../src/bibletime_init.cpp" line="203"/>
         <source>Cl&amp;ose all windows</source>
         <translation>Alle vensters &amp;sluiten</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="192"/>
+        <location filename="../../src/bibletime_init.cpp" line="206"/>
         <source>Close all open windows inside BibleTime</source>
         <translation>Sluit alle open vensters in BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="209"/>
+        <location filename="../../src/bibletime_init.cpp" line="223"/>
         <source>&amp;Handbook</source>
         <translation>&amp;Handboek</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="216"/>
+        <location filename="../../src/bibletime_init.cpp" line="230"/>
         <source>&amp;Bible Study Howto</source>
         <translation>&amp;Bijbelstudie HowTo</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="527"/>
+        <location filename="../../src/bibletime_slots.cpp" line="449"/>
         <source>Please enter a name for the new session.</source>
         <translation>Voer een naam voor de nieuwe sessie in.</translation>
     </message>
@@ -217,57 +217,77 @@
         <translation>Automatisch de geopende vensters horizontaal stapelen (boven op elkaar rangschikken)</translation>
     </message>
     <message>
+        <location filename="../../src/bibletime_init.cpp" line="154"/>
+        <source>Auto-&amp;tile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../src/bibletime_init.cpp" line="157"/>
+        <source>Automatically tile the open windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="164"/>
         <source>Automatically cascade the open windows</source>
         <translation>Automatisch de geopende vensters trapsgewijs rangschikken (cascade)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="164"/>
+        <location filename="../../src/bibletime_init.cpp" line="171"/>
         <source>Cascade the open windows</source>
         <translation>De geopende vensters trapsgewijs rangschikken</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="171"/>
+        <location filename="../../src/bibletime_init.cpp" line="175"/>
+        <source>&amp;Tile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="178"/>
+        <source>Tile the open windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="185"/>
         <source>Vertically tile (arrange side by side) the open windows</source>
         <translation>De geopende vensters verticaal stapelen (zij-aan-zij rangschikken)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="178"/>
+        <location filename="../../src/bibletime_init.cpp" line="192"/>
         <source>Horizontally tile (arrange on top of each other) the open windows</source>
         <translation>De geopende vensters horizontaal stapelen (boven op elkaar rangschikken)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="182"/>
+        <location filename="../../src/bibletime_init.cpp" line="196"/>
         <source>Close &amp;window</source>
         <translation>Venster &amp;sluiten</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="185"/>
+        <location filename="../../src/bibletime_init.cpp" line="199"/>
         <source>Close the current open window</source>
         <translation>Sluit het huidige geopende venster</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="196"/>
+        <location filename="../../src/bibletime_init.cpp" line="210"/>
         <source>&amp;Configure BibleTime...</source>
         <translation>BibleTime &amp;instellen...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="198"/>
+        <location filename="../../src/bibletime_init.cpp" line="212"/>
         <source>Set BibleTime&apos;s preferences</source>
         <translation>BibleTime&apos;s instellingen wijzigen</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="202"/>
+        <location filename="../../src/bibletime_init.cpp" line="216"/>
         <source>Bookshelf &amp;Manager...</source>
         <translation>Boekenplank &amp;Manager...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="205"/>
+        <location filename="../../src/bibletime_init.cpp" line="219"/>
         <source>Configure your bookshelf and install/update/remove/index works</source>
         <translation>Uw boekenplank instellen en modules installeren/updaten/verwijderen/indexeren</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="212"/>
+        <location filename="../../src/bibletime_init.cpp" line="226"/>
         <source>Open BibleTime&apos;s handbook</source>
         <translation>Open BibleTime&apos;s handboek</translation>
     </message>
@@ -282,7 +302,7 @@
         <translation>Zoek in de standaardbijbel</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="526"/>
+        <location filename="../../src/bibletime_slots.cpp" line="448"/>
         <source>New Session</source>
         <translation>Nieuwe Sessie</translation>
     </message>
@@ -302,17 +322,17 @@
         <translation>Bezig met initialiseren van menu- en werkbalken...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="210"/>
+        <location filename="../../src/bibletime.cpp" line="216"/>
         <source>Unlock Work</source>
         <translation>Module Ontgrendelen</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="211"/>
+        <location filename="../../src/bibletime.cpp" line="217"/>
         <source>Enter the unlock key for this work.</source>
         <translation>Voer de sleutel voor ontgrendeling van deze module in.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="223"/>
+        <location filename="../../src/bibletime_init.cpp" line="237"/>
         <source>&amp;About BibleTime</source>
         <translation>&amp;Over BibleTime</translation>
     </message>
@@ -350,17 +370,17 @@
         <translation>(c)1999-2009, Het BibleTime-team</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="182"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="181"/>
         <source>You can download and use (but not distribute) the program for personal, private, public or commercial purposes without restrictions.</source>
         <translation>U kunt dit programma zonder beperking downloaden en gebruiken (maar niet distribueren) voor persoonlijke, publieke of commerciële doeleinden.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="184"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="183"/>
         <source>You can give away or distribute the program if you also distribute the corresponding source code.</source>
         <translation>U kunt het programma weggeven of distribueren als u tevens de corresponderende broncode distribueert.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="188"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="187"/>
         <source>The complete legally binding license is below.</source>
         <translation>De volledige, wettelijk bindende licentie staat hieronder.</translation>
     </message>
@@ -454,42 +474,42 @@
         <translation>De volgende personen hebben BibleTime vertaald naar hun taal:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="129"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="128"/>
         <source>Some names may be missing, please email bibletime-translations@lists.sourceforge.net if you notice errors or omissions.</source>
         <translation>Sommige namen kunnen ontbreken, e-mail naar bibletime-translations@lists.sourceforge.net als u fouten of omissies opmerkt.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="142"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="141"/>
         <source>SWORD library version %1</source>
         <translation>SWORD bibliotheek versie %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="145"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="144"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools-- covered by the GNU General Public License-- that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
         <translation>BibleTime maakt gebruikt van het SWORD Project. Het SWORD Project is het open bijbelsoftwareproject van de CrossWire Bible Society. Haar doel is om cross-platform open-source hulpmiddelen --onder de GNU General Public licentie-- te maken, welke programmeurs en bijbelgenootschappen in staat stellen om nieuwe bijbelsoftware sneller en gemakkelijker te vervaardigen.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="147"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="146"/>
         <source>The SWORD Project</source>
         <translation>Het SWORD Project</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="161"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="160"/>
         <source>This program uses Qt version %1.</source>
         <translation>Dit programma gebruikt Qt versie %1.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="163"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="162"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
         <translation>Qt is een cross-platform applicatie en raamwerk voor gebruikersinterfaces, gemaakt in de programmeertaal C++. Het is uitgegeven onder de LGPL licentie.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="177"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="176"/>
         <source>License</source>
         <translation>Licentie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="180"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="179"/>
         <source>BibleTime is released under the GPL license.</source>
         <translation>BibleTime is uitgegeven onder de GPL licentie.</translation>
     </message>
@@ -505,88 +525,88 @@
 <context>
     <name>BtBookshelfDockWidget</name>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="221"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="218"/>
         <source>Bookshelf</source>
         <translation>Boekenplank</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="223"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="220"/>
         <source>Fi&amp;lter:</source>
         <translation>Fi&amp;lter:</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="221"/>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="224"/>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="227"/>
         <source>Grouping</source>
         <translation>Groepering</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="225"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="222"/>
         <source>Change the grouping of items in the bookshelf.</source>
         <translation>Wijzig de groepering van items in de boekenplank.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="228"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="225"/>
         <source>Category/Language</source>
         <translation>Categorie/Taal</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="229"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="226"/>
         <source>Category</source>
         <translation>Categorie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="230"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="227"/>
         <source>Language/Category</source>
         <translation>Taal/Categorie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="231"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="228"/>
         <source>Language</source>
         <translation>Taal</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="232"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="229"/>
         <source>No grouping</source>
         <translation>Geen groepering</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="233"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="230"/>
         <source>Show/hide works</source>
         <translation>Toon/verberg modules</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="235"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="232"/>
         <source>&amp;Open</source>
         <translation>&amp;Open</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="236"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="233"/>
         <source>&amp;Edit</source>
         <translation>&amp;Bewerken</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="237"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="234"/>
         <source>&amp;Plain text</source>
         <translation>&amp;Platte tekst</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="238"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="235"/>
         <source>&amp;HTML</source>
         <translation>&amp;HTML</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="239"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="236"/>
         <source>&amp;Unlock...</source>
         <translation>Ont&amp;grendelen...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="240"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="237"/>
         <source>&amp;About...</source>
         <translation>O&amp;ver...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="290"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="287"/>
         <source>&amp;Search in %1...</source>
         <translation>&amp;Zoeken in %1...</translation>
     </message>
@@ -599,48 +619,48 @@
         <translation>Module</translation>
     </message>
     <message>
-        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="169"/>
+        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="172"/>
         <source>Bibles</source>
         <translation>Bijbels</translation>
     </message>
     <message>
-        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="171"/>
+        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="174"/>
         <source>Commentaries</source>
         <translation>Kanttekeningen</translation>
     </message>
     <message>
-        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="173"/>
+        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="176"/>
         <source>Books</source>
         <translation>Boeken</translation>
     </message>
     <message>
-        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="175"/>
+        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="178"/>
         <source>Cults/Unorthodox</source>
         <translatorcomment>vertaling van Cults is onzeker</translatorcomment>
         <translation>Cults/Onorthodox</translation>
     </message>
     <message>
-        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="177"/>
+        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="180"/>
         <source>Maps and Images</source>
         <translation>Kaarten en Afbeeldingen</translation>
     </message>
     <message>
-        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="179"/>
+        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="182"/>
         <source>Daily Devotionals</source>
         <translation>Dagelijkse overdenkingen</translation>
     </message>
     <message>
-        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="181"/>
+        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="184"/>
         <source>Lexicons and Dictionaries</source>
         <translation>Lexicons en Woordenboeken</translation>
     </message>
     <message>
-        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="183"/>
+        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="186"/>
         <source>Glossaries</source>
         <translation>Woordenlijsten</translation>
     </message>
     <message>
-        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="185"/>
+        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="188"/>
         <source>Unknown</source>
         <translation>Onbekend</translation>
     </message>
@@ -841,29 +861,29 @@
         <translation>Verwijder de geselecteerde map</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="162"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="167"/>
         <source>This default folder in your home directory can&apos;t be removed</source>
         <translation>Deze standaardmap in uw home directory kan niet verwijderd worden</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="168"/>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="189"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="173"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="194"/>
         <source>Choose Folder</source>
         <translation>Kies map</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="177"/>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="197"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="182"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="202"/>
         <source>Use Folder?</source>
         <translation>Map gebruiken?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="177"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="182"/>
         <source>This folder is not writable, so works can not be installed here using BibleTime. Do you want to use this folder instead of the previous value?</source>
         <translation>Deze map is niet beschrijfbaar, dus modules kunnen hier niet geïnstalleerd worden met BibleTime. Wilt u deze map gebruiken in plaats van de vorige waarde?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="197"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="202"/>
         <source>This folder is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of bookshelf folders?</source>
         <translation>Deze map is niet beschrijfbaar, dus modules kunnen hier niet geïnstalleerd worden met BibleTime. Wilt u deze map desondanks toevoegen aan de lijst met mappen voor de boekenplank?</translation>
     </message>
@@ -925,18 +945,18 @@
 <context>
     <name>BtModuleChooserButton</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="83"/>
+        <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="80"/>
         <source>Select a work [%1]</source>
         <translation>Selecteer een module [%1]</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="86"/>
+        <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="83"/>
         <source>Select an additional work</source>
         <translation>Selecteer een additionele module</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="96"/>
-        <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="124"/>
+        <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="93"/>
+        <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="122"/>
         <source>NONE</source>
         <translation>GEEN</translation>
     </message>
@@ -998,7 +1018,7 @@
 <context>
     <name>BtRemovePageTreeModel</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.cpp" line="52"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.cpp" line="51"/>
         <source>Work</source>
         <translation>Module</translation>
     </message>
@@ -1217,22 +1237,22 @@ sneltoets</translation>
 <context>
     <name>BtTextWindowHeaderWidget</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="51"/>
+        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="49"/>
         <source>Add/remove/replace</source>
         <translation>Toevoegen/verwijderen/vervangen</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="140"/>
+        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="138"/>
         <source>Remove</source>
         <translation>Verwijderen</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="146"/>
+        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="144"/>
         <source>Replace</source>
         <translation>Vervangen</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="151"/>
+        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="149"/>
         <source>Add</source>
         <translation>Toevoegen</translation>
     </message>
@@ -1690,72 +1710,71 @@ sneltoets</translation>
 <context>
     <name>CDisplayWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="133"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="120"/>
         <source>Back in history</source>
         <translation>Terug in de historie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="141"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="128"/>
         <source>Forward in history</source>
         <translation>Vooruit in de historie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="98"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="89"/>
         <source>Zoom in</source>
         <translation>Zoom in</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="102"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="93"/>
         <source>Zoom out</source>
         <translation>Zoom uit</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="106"/>
         <source>Close</source>
-        <translation>Sluiten</translation>
+        <translation type="obsolete">Sluiten</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="110"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="97"/>
         <source>Select all</source>
         <translation>Selecteer alles</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="114"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="101"/>
         <source>Copy</source>
         <translation>Kopiëren</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="118"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="105"/>
         <source>Find...</source>
         <translation>Zoeken...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="122"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="109"/>
         <source>Change location</source>
         <translation>Wijzig locatie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="127"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="114"/>
         <source>Search with works of this window</source>
         <translation>Zoeken in modules van dit venster</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="349"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="325"/>
         <source>Work chooser buttons</source>
         <translation>Module selectieknoppen</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="358"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="334"/>
         <source>Text area header</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="415"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="391"/>
         <source>Navigation</source>
         <translation>Navigatie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="423"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="399"/>
         <source>Tools</source>
         <translatorcomment>In a menu, this is usually translated as &quot;Extra&quot;, but I guess this is really about a set of tools, not a menu item.</translatorcomment>
         <translation>Hulpmiddelen</translation>
@@ -3424,62 +3443,62 @@ Language name ppk</extracomment>
         <translation>Zoeloe</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="428"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="427"/>
         <source>Footnotes</source>
         <translation>Voetnoten</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="430"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="429"/>
         <source>Strong&apos;s numbers</source>
         <translation>Strong-nummering</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="432"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="431"/>
         <source>Headings</source>
         <translation>Kopteksten</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="434"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="433"/>
         <source>Morphological tags</source>
         <translation>Morfologische aanduidingen</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="436"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="435"/>
         <source>Lemmas</source>
         <translation>Trefwoorden</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="438"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="437"/>
         <source>Hebrew vowel points</source>
         <translation>Hebreeuwse klinkerpunten</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="440"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="439"/>
         <source>Hebrew cantillation marks</source>
         <translation>Hebreeuwse intonatietekens</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="442"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="441"/>
         <source>Greek accents</source>
         <translation>Griekse accenten</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="444"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="443"/>
         <source>Red letter words</source>
         <translation>Roodgekleurde woorden</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="446"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="445"/>
         <source>Textual variants</source>
         <translation>Tekstuele variaties</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="448"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="447"/>
         <source>Scripture cross-references</source>
         <translation>Bijbelse kruisverwijzingen</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="450"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="449"/>
         <source>Morph segmentation</source>
         <translation>Morfologische segmentatie</translation>
     </message>
@@ -3499,42 +3518,42 @@ Language name ppk</extracomment>
         <translation>Extern</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="431"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="435"/>
         <source>Old testament</source>
         <translation>Eerste testament</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="432"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="436"/>
         <source>Moses/Pentateuch/Torah</source>
         <translation>Mozes/Pentateuch/Tora</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="433"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="437"/>
         <source>History</source>
         <translation>Geschiedenis</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="434"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="438"/>
         <source>Prophets</source>
         <translation>Profeten</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="435"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="439"/>
         <source>New testament</source>
         <translation>Nieuwe testament</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="436"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="440"/>
         <source>Gospels</source>
         <translation>Evangeliën</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="437"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="441"/>
         <source>Letters/Epistles</source>
         <translation>Brieven</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="438"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="442"/>
         <source>Paul&apos;s Epistles</source>
         <translation>Brieven van Paulus</translation>
     </message>
@@ -3826,7 +3845,7 @@ Language name ppk</extracomment>
         <translation>Wilt u de conflicterende sneltoetsen verwijderen en doorgaan?</translation>
     </message>
     <message>
-        <location filename="../../src/backend/bookshelfmodel/indexingitem.cpp" line="28"/>
+        <location filename="../../src/backend/bookshelfmodel/indexingitem.cpp" line="27"/>
         <source>Indexed works</source>
         <translation>Geïndexeerde modules</translation>
     </message>
@@ -4312,35 +4331,35 @@ Language name ppk</extracomment>
 <context>
     <name>Search::CSearchDialog</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="116"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="115"/>
         <source>Missing indices</source>
         <translation>Ontbrekende indices</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="83"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="82"/>
         <source>Search</source>
         <translation>Zoeken</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="117"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="116"/>
         <source>One or more works need indexing before they can be searched.
 This could take a long time. Proceed with indexing?</source>
         <translation>Eén of meerdere modules moeten geïndexeerd worden, voordat ze doorzocht kunnen worden.
 Dit kan enige tijd duren. Doorgaan met indexeren?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="232"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="231"/>
         <source>&amp;Analyze results...</source>
         <translation>&amp;Analyseer resultaten...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="233"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="232"/>
         <source>Show a graphical analyzis of the search result</source>
         <translatorcomment>Dutch is correct, but English should read &quot;analysis&quot; instead of &quot;analyzis&quot;</translatorcomment>
         <translation>Toon een grafische analyse van de zoekresultaten</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="239"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="238"/>
         <source>&amp;Close</source>
         <translation>&amp;Sluiten</translation>
     </message>

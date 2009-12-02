@@ -262,6 +262,22 @@
         <source>Open the Bible study HowTo included with BibleTime.&lt;br/&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
         <translation>Das mit BibleTime mitgelieferte Bibelstudien-HowTo öffnen. &lt;br/&gt;Dieses HowTo ist eine Einführung in effizientes Bibelstudium.</translation>
     </message>
+    <message>
+        <source>Auto-&amp;tile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Automatically tile the open windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Tile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tile the open windows</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BtAboutDialog</name>
@@ -1355,7 +1371,7 @@ shortcut</source>
     </message>
     <message>
         <source>Close</source>
-        <translation>Schließen</translation>
+        <translation type="obsolete">Schließen</translation>
     </message>
     <message>
         <source>Select all</source>
