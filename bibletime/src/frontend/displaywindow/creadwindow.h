@@ -68,7 +68,7 @@ class CReadWindow : public CDisplayWindow  {
         void openSearchStrongsDialog();
 
     private:
-        CReadDisplay* m_displayWidget;
+        CReadDisplay* m_readDisplayWidget;
 };
 
 #endif

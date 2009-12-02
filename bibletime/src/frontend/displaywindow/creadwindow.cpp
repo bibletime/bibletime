@@ -28,7 +28,7 @@ using namespace Profile;
 
 CReadWindow::CReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent)
         : CDisplayWindow(modules, parent),
-        m_displayWidget(0) {
+        m_readDisplayWidget(0) {
     qDebug() << "CReadWindow::CReadWindow";
     //   installEventFilter(this);
 }
@@ -43,33 +43,34 @@ void CReadWindow::setDisplayWidget( CDisplay* newDisplay ) {
     Q_ASSERT(dynamic_cast<CReadDisplay*>(newDisplay) != 0);
 
     CDisplayWindow::setDisplayWidget(newDisplay);
-    if (m_displayWidget) {
-        disconnect(m_displayWidget->connectionsProxy(), SIGNAL(referenceClicked(const QString&, const QString&)),
+    if (m_readDisplayWidget) {
+        disconnect(m_readDisplayWidget->connectionsProxy(), SIGNAL(referenceClicked(const QString&, const QString&)),
                    this, SLOT(lookupModKey(const QString&, const QString&)));
-        disconnect(m_displayWidget->connectionsProxy(), SIGNAL(referenceDropped(const QString&)),
+        disconnect(m_readDisplayWidget->connectionsProxy(), SIGNAL(referenceDropped(const QString&)),
                    this, SLOT(lookupKey(const QString&)));
 
-        BtHtmlReadDisplay* v = dynamic_cast<BtHtmlReadDisplay*>(m_displayWidget);
+        BtHtmlReadDisplay* v = dynamic_cast<BtHtmlReadDisplay*>(m_readDisplayWidget);
         if (v) {
             QObject::disconnect(v, SIGNAL(completed()), this, SLOT(slotMoveToAnchor()) );
         }
 
     }
 
+    m_readDisplayWidget = static_cast<CReadDisplay*>(newDisplay);
     connect(
-        m_displayWidget->connectionsProxy(),
+        m_readDisplayWidget->connectionsProxy(),
         SIGNAL(referenceClicked(const QString&, const QString&)),
         this,
         SLOT(lookupModKey(const QString&, const QString&))
     );
 
     connect(
-        m_displayWidget->connectionsProxy(),
+        m_readDisplayWidget->connectionsProxy(),
         SIGNAL(referenceDropped(const QString&)),
         this,
         SLOT(lookupKey(const QString&))
     );
-    BtHtmlReadDisplay* v = dynamic_cast<BtHtmlReadDisplay*>(m_displayWidget);
+    BtHtmlReadDisplay* v = dynamic_cast<BtHtmlReadDisplay*>(m_readDisplayWidget);
     if (v) {
         QObject::connect(v, SIGNAL(completed()), this, SLOT(slotMoveToAnchor()) );
     }
