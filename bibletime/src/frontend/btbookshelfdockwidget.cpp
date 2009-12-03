@@ -170,7 +170,7 @@ void BtBookshelfDockWidget::initMenus() {
     m_groupingMenu->addAction(m_groupingNoneAction);
 
     m_showHideAction = new QAction(this);
-    m_showHideAction->setIcon(DU::getIcon(RM::search::icon));
+    m_showHideAction->setIcon(DU::getIcon("layer-visible-on.svg"));
     m_showHideAction->setCheckable(true);
     connect(m_showHideAction, SIGNAL(toggled(bool)),
             this, SLOT(showHideEnabled(bool)));
