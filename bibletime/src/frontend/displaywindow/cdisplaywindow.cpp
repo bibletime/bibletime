@@ -68,10 +68,6 @@ CDisplayWindow::~CDisplayWindow() {
     m_swordKey = 0;
 }
 
-CMDIArea* CDisplayWindow::mdi() const {
-    return m_mdi;
-}
-
 /** Returns the right window caption. */
 const QString CDisplayWindow::windowCaption() {
     if (!m_modules.count()) {
@@ -239,16 +235,6 @@ void CDisplayWindow::slotRemoveModule(int index) {
     emit sigModuleListChanged();
 }
 
-/** Returns the filter options used by this window. */
-CSwordBackend::FilterOptions& CDisplayWindow::filterOptions() {
-    return m_filterOptions;
-}
-
-/** Returns the display options used by this display window. */
-CSwordBackend::DisplayOptions& CDisplayWindow::displayOptions() {
-    return m_displayOptions;
-}
-
 /** Sets the new display options for this window. */
 void CDisplayWindow::setDisplayOptions( const CSwordBackend::DisplayOptions& displayOptions ) {
     m_displayOptions = displayOptions;
@@ -259,13 +245,8 @@ void CDisplayWindow::setFilterOptions( CSwordBackend::FilterOptions& filterOptio
     m_filterOptions = filterOptions;
 }
 
-/** Returns true if the widget is ready for use. */
-bool CDisplayWindow::isReady() const {
-    return m_isReady;
-}
-
 /** Set the ready status */
-void CDisplayWindow::setReady( const bool& ready ) {
+void CDisplayWindow::setReady(bool ready) {
     m_isReady = ready;
 }
 
@@ -274,20 +255,9 @@ bool CDisplayWindow::queryClose() {
     return true;
 }
 
-/** Returns the keychooser widget of this display window. */
-CKeyChooser* CDisplayWindow::keyChooser() const {
-    return m_keyChooser;
-}
-
 /** Sets the keychooser widget for this display window. */
 void CDisplayWindow::setKeyChooser( CKeyChooser* ck ) {
     m_keyChooser = ck;
-}
-
-/** Returns the key of this display window. */
-CSwordKey* CDisplayWindow::key() const {
-    Q_ASSERT( m_swordKey );
-    return m_swordKey;
 }
 
 /** Sets the new sword key. */
@@ -314,11 +284,6 @@ void CDisplayWindow::modulesChanged() {
     }
 }
 
-/** Returns the module chooser bar. */
-BtModuleChooserBar* CDisplayWindow::moduleChooserBar() const {
-    return m_moduleChooserBar;
-}
-
 /** Sets the module chooser bar. */
 void CDisplayWindow::setModuleChooserBar( BtModuleChooserBar* bar ) {
     qDebug() << "CDisplayWindow::setModuleChooserBar";
@@ -341,10 +306,6 @@ void CDisplayWindow::setHeaderBar( QToolBar* header ) {
     header->setMovable(false);
     header->setWindowTitle(tr("Text area header"));
     header->setVisible(CBTConfig::get(CBTConfig::showTextWindowHeaders));
-}
-
-QToolBar* CDisplayWindow::headerBar() {
-    return m_headerBar;
 }
 
 /** Sets the modules. */
@@ -382,16 +343,6 @@ bool CDisplayWindow::init() {
     return true;
 }
 
-/** Returns the main toolbar. */
-QToolBar* CDisplayWindow::mainToolBar() const {
-    return m_mainToolBar;
-}
-
-/** Returns the main toolbar. */
-QToolBar* CDisplayWindow::buttonsToolBar() const {
-    return m_buttonsToolBar;
-}
-
 /** Sets the main toolbar. */
 void CDisplayWindow::setMainToolBar( QToolBar* bar ) {
     m_mainToolBar = bar;
@@ -408,11 +359,6 @@ void CDisplayWindow::setButtonsToolBar( QToolBar* bar ) {
     bar->setFloatable(false);
     bar->setWindowTitle(tr("Tools"));
     bar->setVisible( CBTConfig::get(CBTConfig::showTextWindowToolButtons) );
-}
-
-/** Returns the display settings button */
-CDisplaySettingsButton* CDisplayWindow::displaySettingsButton() const {
-    return m_displaySettingsButton;
 }
 
 /** Sets the display settings button. */
@@ -484,6 +430,7 @@ void CDisplayWindow::lookupKey( const QString& keyName ) {
 
 /** Update the status of the popup menu entries. */
 void CDisplayWindow::updatePopupMenu() {
+    /// \todo Verify this should be empty and comment.
 }
 
 
@@ -501,12 +448,6 @@ QMenu* CDisplayWindow::popup() {
             }*/
     }
     return m_popupMenu;
-}
-
-/** Returns the display widget used by this implementation of CDisplayWindow. */
-CDisplay* CDisplayWindow::displayWidget() const {
-    Q_ASSERT(m_displayWidget);
-    return m_displayWidget;
 }
 
 /** Sets the display widget used by this display window. */
@@ -533,10 +474,6 @@ void CDisplayWindow::printAll() {
 
 void CDisplayWindow::printAnchorWithText() {
     m_displayWidget->connectionsProxy()->printAnchorWithText( m_displayOptions, m_filterOptions);
-}
-
-BtActionCollection* CDisplayWindow::actionCollection() {
-    return m_actionCollection;
 }
 
 void CDisplayWindow::setFocusKeyChooser() {

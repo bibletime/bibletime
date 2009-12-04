@@ -46,15 +46,18 @@ class CDisplayWindow : public QMainWindow, public CPointers {
         /** Insert the keyboard accelerators of this window into the given actioncollection.*/
         static void insertKeyboardActions( BtActionCollection* const a );
 
-        CMDIArea* mdi() const;
+        inline CMDIArea *mdi() const {
+            return m_mdi;
+        }
 
         /** Returns the correct window caption.*/
         const QString windowCaption();
 
         /** Returns the used modules as a pointer list.*/
         QList<CSwordModuleInfo*> modules();
-        /** Returns the used modules as a string list.*/
-        QStringList getModuleList() {
+
+        /** Returns the used modules as a string list. */
+        inline const QStringList &getModuleList() const {
             return m_modules;
         }
 
@@ -70,29 +73,40 @@ class CDisplayWindow : public QMainWindow, public CPointers {
         /** Sets the new display options for this window.*/
         void setDisplayOptions( const CSwordBackend::DisplayOptions& displayOptions );
 
-        /** Returns the display options used by this display window.*/
-        CSwordBackend::DisplayOptions& displayOptions();
+        /** Returns the display options used by this display window. */
+        inline const CSwordBackend::DisplayOptions &displayOptions() const {
+            return m_displayOptions;
+        }
 
-        /** Returns the filter options used by this window.*/
-        CSwordBackend::FilterOptions& filterOptions();
+        /** Returns the filter options used by this window. */
+        inline const CSwordBackend::FilterOptions &filterOptions() const {
+            return m_filterOptions;
+        }
 
-        /** Set the ready status*/
-        void setReady( const bool& ready );
+        /** Set the ready status. */
+        void setReady(bool ready);
 
-        /** Returns true if the widget is ready for use.*/
-        bool isReady() const;
+        /** Returns true if the widget is ready for use. */
+        inline bool isReady() const {
+            return m_isReady;
+        }
 
         /** Returns true if the window may be closed.*/
         virtual bool queryClose();
 
-        /** Returns the keychooser widget of this display window.*/
-        CKeyChooser* keyChooser() const;
+        /** Returns the keychooser widget of this display window. */
+        inline CKeyChooser *keyChooser() const {
+            return m_keyChooser;
+        }
 
         /** Sets the new sword key.*/
         void setKey( CSwordKey* key );
 
-        /** Returns the key of this display window.*/
-        CSwordKey* key() const;
+        /** Returns the key of this display window. */
+        inline CSwordKey *key() const {
+            Q_ASSERT(m_swordKey != 0);
+            return m_swordKey;
+        }
 
         /**
         * Initialize the window. Call this method from the outside,
@@ -106,25 +120,34 @@ class CDisplayWindow : public QMainWindow, public CPointers {
         /** Sets and inits the properties of the tool buttons toolbar.*/
         void setButtonsToolBar( QToolBar* bar );
 
-        /** Returns the main navigation toolbar.*/
-        QToolBar* mainToolBar() const;
+        /** Returns the main navigation toolbar. */
+        inline QToolBar *mainToolBar() const {
+            return m_mainToolBar;
+        }
 
-        /** Returns the tool buttons toolbar.*/
-        QToolBar* buttonsToolBar() const;
+        /** Returns the tool buttons toolbar. */
+        inline QToolBar *buttonsToolBar() const {
+            return m_buttonsToolBar;
+        }
 
         /** Initialize the toolbars.*/
         virtual void initToolbars() = 0;
 
         /** Returns the display settings button. */
-        CDisplaySettingsButton* displaySettingsButton() const;
+        inline CDisplaySettingsButton *displaySettingsButton() const {
+            return m_displaySettingsButton;
+        }
 
         /** Sets the display settings button.*/
         void setDisplaySettingsButton( CDisplaySettingsButton* button );
 
         virtual void setupPopupMenu() = 0;
 
-        /** Returns the display widget used by this implementation of CDisplayWindow.*/
-        virtual CDisplay* displayWidget() const;
+        /** Returns the display widget used by this implementation of CDisplayWindow. */
+        virtual inline CDisplay *displayWidget() const {
+            Q_ASSERT(m_displayWidget != 0);
+            return m_displayWidget;
+        }
 
         /** Sets the display widget used by this display window.*/
         virtual void setDisplayWidget( CDisplay* newDisplay );
@@ -137,7 +160,9 @@ class CDisplayWindow : public QMainWindow, public CPointers {
             return false;
         };
 
-        BtActionCollection* actionCollection();
+        inline BtActionCollection *actionCollection() const {
+            return m_actionCollection;
+        }
 
     signals:
         /** The module list was set because backend was reloaded.*/
@@ -184,8 +209,10 @@ class CDisplayWindow : public QMainWindow, public CPointers {
         /** Sets the keychooser widget for this display window.*/
         void setKeyChooser( CKeyChooser* ck );
 
-        /** Returns the module chooser bar.*/
-        BtModuleChooserBar* moduleChooserBar() const;
+        /** Returns the module chooser bar. */
+        inline BtModuleChooserBar *moduleChooserBar() const {
+            return m_moduleChooserBar;
+        }
 
         /** Lookup the given key.*/
         virtual void lookupSwordKey( CSwordKey* ) = 0;
@@ -194,7 +221,10 @@ class CDisplayWindow : public QMainWindow, public CPointers {
         void setModuleChooserBar( BtModuleChooserBar* bar );
 
         void setHeaderBar(QToolBar* header);
-        QToolBar* headerBar();
+
+        inline QToolBar *headerBar() const {
+            return m_headerBar;
+        }
 
         /** Sets the modules. */
         void setModules( const QList<CSwordModuleInfo*>& modules );
@@ -226,7 +256,7 @@ class CDisplayWindow : public QMainWindow, public CPointers {
 
         void setFocusKeyChooser();
 
-    private:
+    protected:
         BtActionCollection* m_actionCollection;
         CMDIArea* m_mdi;
 
