@@ -51,8 +51,8 @@ void CReadDisplay::print(const CDisplay::TextPart type, CSwordBackend::DisplayOp
     CSwordKey* const key = window->key();
     CSwordModuleInfo* module = key->module();
 
-
-    CExportManager mgr(QObject::tr("Print keys"), false, QString::null, parentWindow()->filterOptions(), parentWindow()->displayOptions());
+    const CDisplayWindow *displayWindow = parentWindow();
+    CExportManager mgr(QObject::tr("Print keys"), false, QString::null, displayWindow->filterOptions(), displayWindow->displayOptions());
 
     switch (type) {
         case Document: {

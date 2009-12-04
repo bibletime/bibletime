@@ -203,6 +203,16 @@ class CDisplayWindow : public QMainWindow, public CPointers {
         CDisplayWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
         virtual ~CDisplayWindow();
 
+        /** Returns the display options used by this display window. */
+        inline CSwordBackend::DisplayOptions &displayOptions() {
+            return m_displayOptions;
+        }
+
+        /** Returns the filter options used by this window. */
+        inline CSwordBackend::FilterOptions &filterOptions() {
+            return m_filterOptions;
+        }
+
         /** Initializes the internel keyboard actions.*/
         virtual void initActions();
 
@@ -256,7 +266,7 @@ class CDisplayWindow : public QMainWindow, public CPointers {
 
         void setFocusKeyChooser();
 
-    protected:
+    private:
         BtActionCollection* m_actionCollection;
         CMDIArea* m_mdi;
 
