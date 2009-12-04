@@ -89,27 +89,27 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="301"/>
         <source>Text windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Text windows</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="304"/>
         <source>Show text area headers</source>
-        <translation type="unfinished"></translation>
+        <translation>Show text area headers</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="310"/>
         <source>Show navigation</source>
-        <translation type="unfinished"></translation>
+        <translation>Show navigation</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="316"/>
         <source>Show work chooser buttons</source>
-        <translation type="unfinished"></translation>
+        <translation>Show work chooser buttons</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="322"/>
         <source>Show tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Show tools</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="344"/>
@@ -2487,43 +2487,43 @@ Do you want to continue?</translation>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="186"/>
         <source>Abbreviation</source>
-        <translation></translation>
+        <translation>Abbreviation</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="197"/>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="297"/>
         <source>Cross references</source>
-        <translation></translation>
+        <translation>Cross references</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="353"/>
         <source>Footnote</source>
-        <translation></translation>
+        <translation>Footnote</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="384"/>
         <source>Strongs</source>
-        <translation></translation>
+        <translation>Strongs</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="466"/>
         <source>Morphology</source>
-        <translation></translation>
+        <translation>Morphology</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="490"/>
         <source>Word lookup</source>
-        <translation></translation>
+        <translation>Word lookup</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="50"/>
         <source>Copy</source>
-        <translation></translation>
+        <translation>Copy</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="66"/>
         <source>&lt;small&gt;This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.&lt;/small&gt;</source>
-        <translation></translation>
+        <translation>&lt;small&gt;This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
