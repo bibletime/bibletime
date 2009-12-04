@@ -20,27 +20,30 @@ IF(WIN32 AND NOT UNIX)
   # We need the libraries, and they're not pulled in automatically
   INCLUDE(${QT_USE_FILE})
   SET(CMAKE_INSTALL_DEBUG_LIBRARIES TRUE)
+  SET(QT_BINARY_DIR "${QT_LIBRARY_DIR}/../bin")
   INSTALL(FILES
-			"${QT_LIBRARY_DIR}/QtWebKitd4.dll"
-			"${QT_LIBRARY_DIR}/QtGuid4.dll"
-			"${QT_LIBRARY_DIR}/QtXmld4.dll"
-			"${QT_LIBRARY_DIR}/QtTestd4.dll"
-			"${QT_LIBRARY_DIR}/QtNetworkd4.dll"
-			"${QT_LIBRARY_DIR}/QtCored4.dll"
-			"${QT_LIBRARY_DIR}/phonond4.dll"
-			"${QT_LIBRARY_DIR}/QtSvgd4.dll"
+			"${QT_BINARY_DIR}/QtWebKitd4.dll"
+			"${QT_BINARY_DIR}/QtGuid4.dll"
+			"${QT_BINARY_DIR}/QtXmld4.dll"
+			"${QT_BINARY_DIR}/QtTestd4.dll"
+			"${QT_BINARY_DIR}/QtNetworkd4.dll"
+			"${QT_BINARY_DIR}/QtCored4.dll"
+			"${QT_BINARY_DIR}/phonond4.dll"
+			"${QT_BINARY_DIR}/QtSvgd4.dll"
+			"${QT_BINARY_DIR}/QtXmlPatternsd4.dll"
 			DESTINATION "${BT_DESTINATION}"
 			CONFIGURATIONS "Debug"
   )
   INSTALL(FILES
-			"${QT_LIBRARY_DIR}/QtWebKit4.dll"
-			"${QT_LIBRARY_DIR}/QtGui4.dll"
-			"${QT_LIBRARY_DIR}/QtXml4.dll"
-			"${QT_LIBRARY_DIR}/QtTest4.dll"
-			"${QT_LIBRARY_DIR}/QtNetwork4.dll"
-			"${QT_LIBRARY_DIR}/QtCore4.dll"
-			"${QT_LIBRARY_DIR}/phonon4.dll"
-			"${QT_LIBRARY_DIR}/QtSvg4.dll"
+			"${QT_BINARY_DIR}/QtWebKit4.dll"
+			"${QT_BINARY_DIR}/QtGui4.dll"
+			"${QT_BINARY_DIR}/QtXml4.dll"
+			"${QT_BINARY_DIR}/QtTest4.dll"
+			"${QT_BINARY_DIR}/QtNetwork4.dll"
+			"${QT_BINARY_DIR}/QtCore4.dll"
+			"${QT_BINARY_DIR}/phonon4.dll"
+			"${QT_BINARY_DIR}/QtSvg4.dll"
+			"${QT_BINARY_DIR}/QtXmlPatterns4.dll"
 			DESTINATION "${BT_DESTINATION}"
 			CONFIGURATIONS "Release"
   )
