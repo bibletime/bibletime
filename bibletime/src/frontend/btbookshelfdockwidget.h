@@ -44,7 +44,7 @@ class BtBookshelfDockWidget: public QDockWidget {
     protected:
         bool eventFilter(QObject *object, QEvent *event);
         void initMenus();
-        void retranslateInterface();
+        void retranslateUi();
 
     protected slots:
         void moduleChecked(CSwordModuleInfo *module, bool checked);

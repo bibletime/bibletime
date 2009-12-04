@@ -110,7 +110,7 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
     connect(m_bookshelfTreeModel, SIGNAL(moduleChecked(CSwordModuleInfo*, bool)),
             this, SLOT(moduleChecked(CSwordModuleInfo*, bool)));
 
-    retranslateInterface();
+    retranslateUi();
 }
 
 bool BtBookshelfDockWidget::eventFilter(QObject *object, QEvent *event) {
@@ -214,7 +214,7 @@ void BtBookshelfDockWidget::initMenus() {
     m_itemContextMenu->addAction(m_itemAboutAction);
 }
 
-void BtBookshelfDockWidget::retranslateInterface() {
+void BtBookshelfDockWidget::retranslateUi() {
     setWindowTitle(tr("Bookshelf"));
 
     m_nameFilterLabel->setText(tr("Fi&lter:"));
