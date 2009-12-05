@@ -26,7 +26,7 @@
 #include "frontend/display/creaddisplay.h"
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/ccommentaryreadwindow.h"
-#include "frontend/displaywindow/cbuttons.h"
+#include "frontend/displaywindow/btdisplaysettingsbutton.h"
 #include "frontend/keychooser/ckeychooser.h"
 #include "frontend/profile/cprofilewindow.h"
 #include "util/directory.h"

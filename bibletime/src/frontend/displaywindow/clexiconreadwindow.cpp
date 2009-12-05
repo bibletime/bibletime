@@ -25,7 +25,7 @@
 #include "frontend/display/creaddisplay.h"
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/bttoolbarpopupaction.h"
-#include "frontend/displaywindow/cbuttons.h"
+#include "frontend/displaywindow/btdisplaysettingsbutton.h"
 #include "frontend/displaywindow/bttextwindowheader.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"
 #include "frontend/keychooser/bthistory.h"
@@ -214,7 +214,7 @@ void CLexiconReadWindow::initToolbars() {
         buttonsToolBar()->addAction(action);
     }
 
-    setDisplaySettingsButton(new CDisplaySettingsButton(buttonsToolBar()));
+    setDisplaySettingsButton(new BtDisplaySettingsButton(buttonsToolBar()));
 
     /// \todo find the right place for the button
     buttonsToolBar()->addWidget(displaySettingsButton());

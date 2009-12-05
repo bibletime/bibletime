@@ -7,7 +7,7 @@
 *
 **********/
 
-#include "frontend/displaywindow/cbuttons.h"
+#include "frontend/displaywindow/btdisplaysettingsbutton.h"
 
 #include <QHash>
 #include <QMenu>
@@ -19,7 +19,7 @@
 #include "util/cresmgr.h"
 
 
-CDisplaySettingsButton::CDisplaySettingsButton(QWidget *parent)
+BtDisplaySettingsButton::BtDisplaySettingsButton(QWidget *parent)
         : QToolButton(parent) {
     namespace DU = util::directory;
 
@@ -36,7 +36,7 @@ CDisplaySettingsButton::CDisplaySettingsButton(QWidget *parent)
             this, SLOT(slotOptionToggled(QAction*)));
 }
 
-void CDisplaySettingsButton::setDisplayOptions(
+void BtDisplaySettingsButton::setDisplayOptions(
         const CSwordBackend::DisplayOptions &displaySettings, bool repopulate)
 {
     m_displayOptions = displaySettings;
@@ -45,7 +45,7 @@ void CDisplaySettingsButton::setDisplayOptions(
     }
 }
 
-void CDisplaySettingsButton::setFilterOptions(
+void BtDisplaySettingsButton::setFilterOptions(
         const CSwordBackend::FilterOptions &moduleSettings,
         bool repopulate)
 {
@@ -55,12 +55,12 @@ void CDisplaySettingsButton::setFilterOptions(
     }
 }
 
-void CDisplaySettingsButton::setModules(const QList<CSwordModuleInfo*> &modules) {
+void BtDisplaySettingsButton::setModules(const QList<CSwordModuleInfo*> &modules) {
     m_modules = modules;
     repopulateMenu();
 }
 
-void CDisplaySettingsButton::initMenu() {
+void BtDisplaySettingsButton::initMenu() {
     m_popup = new QMenu(this);
     setMenu(m_popup);
 
@@ -95,7 +95,7 @@ void CDisplaySettingsButton::initMenu() {
     m_morphSegmentationAction->setCheckable(true);
 }
 
-void CDisplaySettingsButton::retranslateUi() {
+void BtDisplaySettingsButton::retranslateUi() {
     m_lineBreakAction->setText(tr("Use linebreaks after each verse"));
     m_verseNumbersAction->setText(tr("Show verse numbers"));
     m_headingsAction->setText(tr("Show headings"));
@@ -110,7 +110,7 @@ void CDisplaySettingsButton::retranslateUi() {
     retranslateToolTip();
 }
 
-void CDisplaySettingsButton::retranslateToolTip() {
+void BtDisplaySettingsButton::retranslateToolTip() {
     if (isEnabled()) {
         setToolTip(tr("Display settings"));
     }
@@ -119,7 +119,7 @@ void CDisplaySettingsButton::retranslateToolTip() {
     }
 }
 
-void CDisplaySettingsButton::slotOptionToggled(QAction *action) {
+void BtDisplaySettingsButton::slotOptionToggled(QAction *action) {
     bool checked = action->isChecked();
 
     if (action == m_lineBreakAction) {
@@ -161,7 +161,7 @@ void CDisplaySettingsButton::slotOptionToggled(QAction *action) {
 }
 
 /** No descriptions */
-void CDisplaySettingsButton::repopulateMenu() {
+void BtDisplaySettingsButton::repopulateMenu() {
     bool enable = false;
 
     m_popup->clear();
@@ -219,12 +219,12 @@ void CDisplaySettingsButton::repopulateMenu() {
 }
 
 /** Adds an entry to m_popup. */
-void CDisplaySettingsButton::addMenuEntry(QAction *action, bool checked) {
+void BtDisplaySettingsButton::addMenuEntry(QAction *action, bool checked) {
     action->setChecked(checked);
     m_popup->addAction(action);
 }
 
-bool CDisplaySettingsButton::isOptionAvailable(const CSwordModuleInfo::FilterTypes option) {
+bool BtDisplaySettingsButton::isOptionAvailable(const CSwordModuleInfo::FilterTypes option) {
     foreach (CSwordModuleInfo *module, m_modules) {
         if (module->has(option)) return true;
     }

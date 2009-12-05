@@ -7,8 +7,8 @@
 *
 **********/
 
-#ifndef CBUTTONS_H
-#define CBUTTONS_H
+#ifndef BTDISPLAYSETTINGSBUTTON_H
+#define BTDISPLAYSETTINGSBUTTON_H
 
 #include <QToolButton>
 
@@ -21,11 +21,11 @@ class QMenu;
 /** This class manages the display options of the selected modules.
   * @author The BibleTime team
   */
-class CDisplaySettingsButton: public QToolButton {
+class BtDisplaySettingsButton: public QToolButton {
         Q_OBJECT
 
     public:
-        CDisplaySettingsButton(QWidget *parent = 0);
+        BtDisplaySettingsButton(QWidget *parent = 0);
 
         void setDisplayOptions(const CSwordBackend::DisplayOptions &displaySettings,
                                bool repopulate = true);

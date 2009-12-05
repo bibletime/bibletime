@@ -20,7 +20,7 @@
 
 class BtActionCollection;
 class CDisplay;
-class CDisplaySettingsButton;
+class BtDisplaySettingsButton;
 class CKeyChooser;
 class CMDIArea;
 //class CModuleChooserBar;
@@ -128,12 +128,12 @@ class CDisplayWindow : public QMainWindow, public CPointers {
         virtual void initToolbars() = 0;
 
         /** Returns the display settings button. */
-        inline CDisplaySettingsButton *displaySettingsButton() const {
+        inline BtDisplaySettingsButton *displaySettingsButton() const {
             return m_displaySettingsButton;
         }
 
         /** Sets the display settings button.*/
-        void setDisplaySettingsButton( CDisplaySettingsButton* button );
+        void setDisplaySettingsButton( BtDisplaySettingsButton* button );
 
         virtual void setupPopupMenu() = 0;
 
@@ -276,7 +276,7 @@ class CDisplayWindow : public QMainWindow, public CPointers {
         CSwordBackend::FilterOptions m_filterOptions;
         CSwordBackend::DisplayOptions m_displayOptions;
 
-        CDisplaySettingsButton* m_displaySettingsButton;
+        BtDisplaySettingsButton* m_displaySettingsButton;
         CKeyChooser* m_keyChooser;
         CSwordKey* m_swordKey;
         bool m_isReady;

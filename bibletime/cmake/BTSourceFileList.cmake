@@ -165,7 +165,7 @@ SET(bibletime_SOURCES
 	#display windows and their widgets
 	src/frontend/displaywindow/bttoolbarpopupaction.cpp
 	src/frontend/displaywindow/btactioncollection.cpp
-	src/frontend/displaywindow/cbuttons.cpp
+	src/frontend/displaywindow/btdisplaysettingsbutton.cpp
 	src/frontend/displaywindow/cdisplaywindow.cpp
 	src/frontend/displaywindow/creadwindow.cpp
 	src/frontend/displaywindow/cwritewindow.cpp
@@ -265,7 +265,7 @@ SET(bibletime_MOCABLE_HEADERS
 	src/frontend/displaywindow/bttoolbarpopupaction.h
 	src/frontend/displaywindow/btactioncollection.h
 	src/frontend/displaywindow/creadwindow.h
-	src/frontend/displaywindow/cbuttons.h
+	src/frontend/displaywindow/btdisplaysettingsbutton.h
 	src/frontend/displaywindow/cbiblereadwindow.h
 	src/frontend/displaywindow/cplainwritewindow.h
 	src/frontend/displaywindow/cdisplaywindow.h

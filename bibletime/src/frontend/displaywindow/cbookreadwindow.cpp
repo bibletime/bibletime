@@ -19,7 +19,7 @@
 #include "frontend/displaywindow/bttoolbarpopupaction.h"
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"
-#include "frontend/displaywindow/cbuttons.h"
+#include "frontend/displaywindow/btdisplaysettingsbutton.h"
 #include "frontend/keychooser/cbooktreechooser.h"
 #include "frontend/profile/cprofilewindow.h"
 #include "util/cresmgr.h"
@@ -110,7 +110,7 @@ void CBookReadWindow::initView() {
     buttonsToolBar()->setAllowedAreas(Qt::TopToolBarArea);
     buttonsToolBar()->setFloatable(false);
 
-    setDisplaySettingsButton(new CDisplaySettingsButton(buttonsToolBar()));
+    setDisplaySettingsButton(new BtDisplaySettingsButton(buttonsToolBar()));
 
     addToolBar(buttonsToolBar());
     m_treeChooser->hide();

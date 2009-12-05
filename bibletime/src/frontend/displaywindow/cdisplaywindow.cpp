@@ -22,7 +22,7 @@
 #include "frontend/displaywindow/bttoolbarpopupaction.h"
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"
-#include "frontend/displaywindow/cbuttons.h"
+#include "frontend/displaywindow/btdisplaysettingsbutton.h"
 #include "frontend/keychooser/ckeychooser.h"
 #include "frontend/keychooser/bthistory.h"
 #include "frontend/profile/cprofilewindow.h"
@@ -362,7 +362,7 @@ void CDisplayWindow::setButtonsToolBar( QToolBar* bar ) {
 }
 
 /** Sets the display settings button. */
-void CDisplayWindow::setDisplaySettingsButton( CDisplaySettingsButton* button ) {
+void CDisplayWindow::setDisplaySettingsButton( BtDisplaySettingsButton* button ) {
     if (m_displaySettingsButton) {
         m_displaySettingsButton->disconnect(this);
     }
