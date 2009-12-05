@@ -9,7 +9,6 @@
 
 #include "frontend/displaywindow/cbiblereadwindow.h"
 
-#include <cmath>
 #include <QAction>
 #include <QApplication>
 #include <QEvent>
@@ -45,34 +44,59 @@ CBibleReadWindow::CBibleReadWindow(QList<CSwordModuleInfo*> moduleList, CMDIArea
 CBibleReadWindow::~CBibleReadWindow() {
 }
 
-void CBibleReadWindow::applyProfileSettings( CProfileWindow* const settings ) {
+void CBibleReadWindow::applyProfileSettings(CProfileWindow* const settings) {
+    /**
+      \todo Make \ref CProfileWindow properly handle these things so we wouldn't have to mess
+            around with bits.
+    */
     CLexiconReadWindow::applyProfileSettings(settings);
 
-    const int count = displaySettingsButton()->menuItemCount();
     int result = settings->windowSettings();
-    for (int i = count - 1; i >= 1; i--) {
-        if (result - (int)pow((double)2, i - 1) >= 0) { //2^i was added before, so item with index i is set
-            result -= (int)pow((double)2, i - 1);
-            displaySettingsButton()->setItemStatus(i, true);
-        }
-        else {
-            displaySettingsButton()->setItemStatus(i, false);
-        }
-    }
-    displaySettingsButton()->setChanged();
+
+    filterOptions().footnotes           = (result & 0x0001) != 0;
+    filterOptions().strongNumbers       = (result & 0x0002) != 0;
+    filterOptions().headings            = (result & 0x0004) != 0;
+    filterOptions().morphTags           = (result & 0x0008) != 0;
+    filterOptions().lemmas              = (result & 0x0010) != 0;
+    filterOptions().hebrewPoints        = (result & 0x0020) != 0;
+    filterOptions().hebrewCantillation  = (result & 0x0040) != 0;
+    filterOptions().greekAccents        = (result & 0x0080) != 0;
+    filterOptions().textualVariants     = (result & 0x0100) != 0;
+    filterOptions().redLetterWords      = (result & 0x0200) != 0;
+    filterOptions().scriptureReferences = (result & 0x0400) != 0;
+    filterOptions().morphSegmentation   = (result & 0x0800) != 0;
+    displayOptions().lineBreaks         = (result & 0x1000) != 0;
+    displayOptions().verseNumbers       = (result & 0x2000) != 0;
+
+    displaySettingsButton()->setFilterOptions(filterOptions(), false);
+    displaySettingsButton()->setDisplayOptions(displayOptions());
 }
 
-void CBibleReadWindow::storeProfileSettings( CProfileWindow* const settings ) {
-    CLexiconReadWindow::storeProfileSettings(settings);
+void CBibleReadWindow::storeProfileSettings( CProfileWindow * const settings) {
+    /**
+      \todo Make \ref CProfileWindow properly handle these things so we wouldn't have to mess
+            around with bits.
+    */
 
-    const int count = displaySettingsButton()->menuItemCount();
-    int result = 0;
-    //now check every item
-    for (int i = 1; i < count; i++) { //first item is a title
-        if (displaySettingsButton()->itemStatus(i)) //item is checked
-            result += (int)pow((double)2, i - 1);//add 2^i (the i. digit in binary)
-    }
+    int result = 0x0000;
+    if (filterOptions().footnotes)           result |= 0x0001;
+    if (filterOptions().strongNumbers)       result |= 0x0002;
+    if (filterOptions().headings)            result |= 0x0004;
+    if (filterOptions().morphTags)           result |= 0x0008;
+    if (filterOptions().lemmas)              result |= 0x0010;
+    if (filterOptions().hebrewPoints)        result |= 0x0020;
+    if (filterOptions().hebrewCantillation)  result |= 0x0040;
+    if (filterOptions().greekAccents)        result |= 0x0080;
+    if (filterOptions().textualVariants)     result |= 0x0100;
+    if (filterOptions().redLetterWords)      result |= 0x0200;
+    if (filterOptions().scriptureReferences) result |= 0x0400;
+    if (filterOptions().morphSegmentation)   result |= 0x0800;
+    if (displayOptions().lineBreaks)         result |= 0x1000;
+    if (displayOptions().verseNumbers)       result |= 0x2000;
+
     settings->setWindowSettings(result);
+
+    CLexiconReadWindow::storeProfileSettings(settings);
 }
 
 

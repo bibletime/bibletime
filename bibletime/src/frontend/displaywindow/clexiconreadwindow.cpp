@@ -213,7 +213,8 @@ void CLexiconReadWindow::initToolbars() {
     if (action) {
         buttonsToolBar()->addAction(action);
     }
-    setDisplaySettingsButton( new CDisplaySettingsButton(&displayOptions(), &filterOptions(), modules(), buttonsToolBar()) );
+
+    setDisplaySettingsButton(new CDisplaySettingsButton(buttonsToolBar()));
 
     /// \todo find the right place for the button
     buttonsToolBar()->addWidget(displaySettingsButton());

@@ -36,8 +36,6 @@ using namespace Profile;
 CDisplayWindow::CDisplayWindow(QList<CSwordModuleInfo*> modules, CMDIArea *parent)
         : QMainWindow(parent),
         m_mdi(parent),
-        m_filterOptions(),
-        m_displayOptions(),
         m_displaySettingsButton(0),
         m_keyChooser(0),
         m_swordKey(0),
@@ -236,12 +234,12 @@ void CDisplayWindow::slotRemoveModule(int index) {
 }
 
 /** Sets the new display options for this window. */
-void CDisplayWindow::setDisplayOptions( const CSwordBackend::DisplayOptions& displayOptions ) {
+void CDisplayWindow::setDisplayOptions(const CSwordBackend::DisplayOptions &displayOptions) {
     m_displayOptions = displayOptions;
 }
 
 /** Sets the new filter options of this window. */
-void CDisplayWindow::setFilterOptions( CSwordBackend::FilterOptions& filterOptions ) {
+void CDisplayWindow::setFilterOptions(const CSwordBackend::FilterOptions &filterOptions) {
     m_filterOptions = filterOptions;
 }
 
@@ -271,12 +269,12 @@ void CDisplayWindow::modulesChanged() {
     //if (moduleChooserBar()) { //necessary for write windows
     //setModules( m_moduleChooserBar->getModuleList() );
     //}
-    if (!modules().count()) {
+    if (modules().isEmpty()) {
         close();
     }
     else {
         if (displaySettingsButton()) {
-            displaySettingsButton()->reset(modules());
+            displaySettingsButton()->setModules(modules());
         }
 
         key()->module(modules().first());
@@ -336,7 +334,9 @@ bool CDisplayWindow::init() {
     m_filterOptions = CBTConfig::getFilterOptionDefaults();
     m_displayOptions = CBTConfig::getDisplayOptionDefaults();
     if (displaySettingsButton()) {
-        displaySettingsButton()->reset(modules());
+        displaySettingsButton()->setFilterOptions(m_filterOptions, false);
+        displaySettingsButton()->setDisplayOptions(m_displayOptions, false);
+        displaySettingsButton()->setModules(modules());
     }
 
     setReady(true);
@@ -363,11 +363,22 @@ void CDisplayWindow::setButtonsToolBar( QToolBar* bar ) {
 
 /** Sets the display settings button. */
 void CDisplayWindow::setDisplaySettingsButton( CDisplaySettingsButton* button ) {
-    if (m_displaySettingsButton)
-        disconnect(m_displaySettingsButton, SIGNAL( sigChanged() ), this, SLOT(lookup() ));
+    if (m_displaySettingsButton) {
+        m_displaySettingsButton->disconnect(this);
+    }
 
     m_displaySettingsButton = button;
-    connect(m_displaySettingsButton, SIGNAL(sigChanged()), this, SLOT(lookup()));
+
+    button->setDisplayOptions(displayOptions(), false);
+    button->setFilterOptions(filterOptions(), false);
+    button->setModules(modules());
+
+    connect(button, SIGNAL(sigFilterOptionsChanged(CSwordBackend::FilterOptions)),
+            this, SLOT(setFilterOptions(CSwordBackend::FilterOptions)));
+    connect(button, SIGNAL(sigDisplayOptionsChanged(CSwordBackend::DisplayOptions)),
+            this, SLOT(setDisplayOptions(CSwordBackend::DisplayOptions)));
+    connect(button, SIGNAL(sigChanged()),
+            this, SLOT(lookup()));
 }
 
 void CDisplayWindow::slotShowHeader(bool show) {

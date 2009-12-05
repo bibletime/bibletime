@@ -259,6 +259,9 @@ class CSwordBackend : public QObject, public sword::SWMgr {
         QMap<QString, QString> m_moduleDescriptionMap;
 };
 
+Q_DECLARE_METATYPE(CSwordBackend::FilterOptions)
+Q_DECLARE_METATYPE(CSwordBackend::DisplayOptions)
+
 /**Returns The list of modules managed by this backend*/
 inline const QList<CSwordModuleInfo*> &CSwordBackend::moduleList() const {
     return m_dataModel.modules();

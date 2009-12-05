@@ -67,12 +67,6 @@ class CDisplayWindow : public QMainWindow, public CPointers {
         /** Store the settings of this window in the given profile window.*/
         virtual void applyProfileSettings( Profile::CProfileWindow* profileWindow ) = 0;
 
-        /** Sets the new filter options of this window.*/
-        void setFilterOptions( CSwordBackend::FilterOptions& filterOptions );
-
-        /** Sets the new display options for this window.*/
-        void setDisplayOptions( const CSwordBackend::DisplayOptions& displayOptions );
-
         /** Returns the display options used by this display window. */
         inline const CSwordBackend::DisplayOptions &displayOptions() const {
             return m_displayOptions;
@@ -251,6 +245,12 @@ class CDisplayWindow : public QMainWindow, public CPointers {
         virtual void closeEvent(QCloseEvent* e);
 
     protected slots:
+        /** Sets the new filter options of this window.*/
+        void setFilterOptions(const CSwordBackend::FilterOptions &filterOptions);
+
+        /** Sets the new display options for this window.*/
+        void setDisplayOptions(const CSwordBackend::DisplayOptions &displayOptions);
+
         virtual void modulesChanged();
 
         /** Lookup the current key. Used to refresh the display.*/

@@ -12,7 +12,6 @@
 
 #include <QToolButton>
 
-#include <QHash>
 #include "backend/managers/cswordbackend.h"
 
 
@@ -22,54 +21,51 @@ class QMenu;
 /** This class manages the display options of the selected modules.
   * @author The BibleTime team
   */
-class CDisplaySettingsButton : public QToolButton  {
+class CDisplaySettingsButton: public QToolButton {
         Q_OBJECT
-    public:
 
-        CDisplaySettingsButton(CSwordBackend::DisplayOptions *displaySettings, CSwordBackend::FilterOptions *settings, const QList<CSwordModuleInfo*>& useModules, QWidget *parent = 0);
-        void reset(const QList<CSwordModuleInfo*>& useModules);
-        /**
-        * Sets the item at position pos to the satet given as 2nd paramter.
-        */
-        void setItemStatus( const int pos, const bool checked );
-        /**
-        * Returns the number of usable menu items in the setttings menu.
-        */
-        int menuItemCount();
-        /**
-        * Returns the status of the item at position "index"
-        */
-        bool itemStatus( const int index );
-        /**
-        * Sets the status to changed. The signal changed will be emitted.
-        */
-        void setChanged();
+    public:
+        CDisplaySettingsButton(QWidget *parent = 0);
+
+        void setDisplayOptions(const CSwordBackend::DisplayOptions &displaySettings,
+                               bool repopulate = true);
+        void setFilterOptions(const CSwordBackend::FilterOptions &moduleSettings,
+                              bool repopulate = true);
+        void setModules(const QList<CSwordModuleInfo*> &modules);
 
     signals:
+        void sigFilterOptionsChanged(CSwordBackend::FilterOptions filterOptions);
+        void sigDisplayOptionsChanged(CSwordBackend::DisplayOptions displayOptions);
         void sigChanged(void);
 
     protected slots:
-        void optionToggled(QAction* action);
+        void slotOptionToggled(QAction *action);
 
     protected:
+        void initMenu();
+        void retranslateUi();
+        void retranslateToolTip();
+        void repopulateMenu();
 
-        /** This enum marks the option types for a display. Used internally.*/
-        enum OptionType {Linebreak, Versenum, Headings, WordsofJ, Vowel, Cantillation, Accents,
-                         Variant, Xref, Morphseg
-                    };
+        bool isOptionAvailable(const CSwordModuleInfo::FilterTypes option);
+        void addMenuEntry(QAction *action, bool checked);
 
-        CSwordBackend::FilterOptions*  m_moduleSettings;
-        CSwordBackend::DisplayOptions* m_displaySettings;
-        CSwordBackend::FilterOptions m_available;
+    private:
+        CSwordBackend::FilterOptions  m_filterOptions;
+        CSwordBackend::DisplayOptions m_displayOptions;
         QList<CSwordModuleInfo*> m_modules;
 
-        QHash<QString, int> m_dict;
-
-        QMenu* m_popup;
-
-        int populateMenu();
-        bool isOptionAvailable( const CSwordModuleInfo::FilterTypes option);
-        int addMenuEntry( const QString name, OptionType type, const int* option, const bool available);
+        QMenu *m_popup;
+        QAction *m_lineBreakAction;
+        QAction *m_verseNumbersAction;
+        QAction *m_headingsAction;
+        QAction *m_redWordsAction;
+        QAction *m_hebrewPointsAction;
+        QAction *m_hebrewCantillationAction;
+        QAction *m_greekAccentsAction;
+        QAction *m_variantAction;
+        QAction *m_scriptureReferencesAction;
+        QAction *m_morphSegmentationAction;
 };
 
 #endif

@@ -20,6 +20,7 @@
 #include <QVariant>
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "backend/config/cbtconfig.h"
+#include "backend/managers/cswordbackend.h"
 #include "bibletime.h"
 #include "bibletime_dbus_adaptor.h"
 #include "bibletimeapp.h"
@@ -108,6 +109,8 @@ void myMessageOutput( QtMsgType type, const char *msg ) {
 }
 
 void registerMetaTypes() {
+    qRegisterMetaType<CSwordBackend::FilterOptions>();
+    qRegisterMetaType<CSwordBackend::DisplayOptions>();
     qRegisterMetaTypeStreamOperators<BtBookshelfTreeModel::Grouping>("BtBookshelfTreeModel::Grouping");
 }
 

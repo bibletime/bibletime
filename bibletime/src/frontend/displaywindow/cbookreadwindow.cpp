@@ -109,7 +109,9 @@ void CBookReadWindow::initView() {
     setButtonsToolBar( new QToolBar(this) );
     buttonsToolBar()->setAllowedAreas(Qt::TopToolBarArea);
     buttonsToolBar()->setFloatable(false);
-    setDisplaySettingsButton( new CDisplaySettingsButton(&displayOptions(), &filterOptions(), modules(), buttonsToolBar()) );
+
+    setDisplaySettingsButton(new CDisplaySettingsButton(buttonsToolBar()));
+
     addToolBar(buttonsToolBar());
     m_treeChooser->hide();
 

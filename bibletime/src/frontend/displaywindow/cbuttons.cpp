@@ -19,167 +19,214 @@
 #include "util/cresmgr.h"
 
 
-CDisplaySettingsButton::CDisplaySettingsButton(CSwordBackend::DisplayOptions *displaySettings, CSwordBackend::FilterOptions *moduleSettings, const QList<CSwordModuleInfo*>& useModules, QWidget *parent )
+CDisplaySettingsButton::CDisplaySettingsButton(QWidget *parent)
         : QToolButton(parent) {
     namespace DU = util::directory;
 
-    //  qWarning("CDisplaySettingsButton::CDisplaySettingsButton");
-    QToolButton::setIcon(DU::getIcon(CResMgr::displaywindows::displaySettings::icon));
+    initMenu();
 
-    m_displaySettings = displaySettings;
-    m_moduleSettings = moduleSettings;
-    m_modules = useModules;
+    setIcon(DU::getIcon(CResMgr::displaywindows::displaySettings::icon));
+    setPopupMode(QToolButton::InstantPopup);
+    setEnabled(false);
 
+    initMenu();
+    retranslateUi();
+
+    connect(m_popup, SIGNAL(triggered(QAction*)),
+            this, SLOT(slotOptionToggled(QAction*)));
+}
+
+void CDisplaySettingsButton::setDisplayOptions(
+        const CSwordBackend::DisplayOptions &displaySettings, bool repopulate)
+{
+    m_displayOptions = displaySettings;
+    if (repopulate) {
+        repopulateMenu();
+    }
+}
+
+void CDisplaySettingsButton::setFilterOptions(
+        const CSwordBackend::FilterOptions &moduleSettings,
+        bool repopulate)
+{
+    m_filterOptions = moduleSettings;
+    if (repopulate) {
+        repopulateMenu();
+    }
+}
+
+void CDisplaySettingsButton::setModules(const QList<CSwordModuleInfo*> &modules) {
+    m_modules = modules;
+    repopulateMenu();
+}
+
+void CDisplaySettingsButton::initMenu() {
     m_popup = new QMenu(this);
     setMenu(m_popup);
-    setPopupMode(QToolButton::InstantPopup);
-    setToolTip(tr("Display options"));
 
-    connect(m_popup, SIGNAL(triggered(QAction*)), this, SLOT(optionToggled(QAction*)));
-    populateMenu();
+    m_lineBreakAction = new QAction(this);
+    m_lineBreakAction->setCheckable(true);
+
+    m_verseNumbersAction = new QAction(this);
+    m_verseNumbersAction->setCheckable(true);
+
+    m_headingsAction = new QAction(this);
+    m_headingsAction->setCheckable(true);
+
+    m_redWordsAction = new QAction(this);
+    m_redWordsAction->setCheckable(true);
+
+    m_hebrewPointsAction = new QAction(this);
+    m_hebrewPointsAction->setCheckable(true);
+
+    m_hebrewCantillationAction = new QAction(this);
+    m_hebrewCantillationAction->setCheckable(true);
+
+    m_greekAccentsAction = new QAction(this);
+    m_greekAccentsAction->setCheckable(true);
+
+    m_variantAction = new QAction(this);
+    m_variantAction->setCheckable(true);
+
+    m_scriptureReferencesAction = new QAction(this);
+    m_scriptureReferencesAction->setCheckable(true);
+
+    m_morphSegmentationAction = new QAction(this);
+    m_morphSegmentationAction->setCheckable(true);
 }
 
-void CDisplaySettingsButton::reset(const QList<CSwordModuleInfo*>& useModules) {
-    m_modules = useModules;
-    populateMenu();
-    //disable the settings button if no options are available
-    if (!populateMenu()) {
-        setEnabled(false);
-        setToolTip(tr("Display settings: No options available"));
-    }
-    else {
-        setEnabled(true);
+void CDisplaySettingsButton::retranslateUi() {
+    m_lineBreakAction->setText(tr("Use linebreaks after each verse"));
+    m_verseNumbersAction->setText(tr("Show verse numbers"));
+    m_headingsAction->setText(tr("Show headings"));
+    m_redWordsAction->setText(tr("Highlight words of Jesus"));
+    m_hebrewPointsAction->setText(tr("Show Hebrew vowel points"));
+    m_hebrewCantillationAction->setText(tr("Show Hebrew cantillation marks"));
+    m_greekAccentsAction->setText(tr("Show Greek accents"));
+    m_variantAction->setText(tr("Use alternative textual variant"));
+    m_scriptureReferencesAction->setText(tr("Show scripture cross-references"));
+    m_morphSegmentationAction->setText(tr("Show morph segmentation"));
+
+    retranslateToolTip();
+}
+
+void CDisplaySettingsButton::retranslateToolTip() {
+    if (isEnabled()) {
         setToolTip(tr("Display settings"));
     }
+    else {
+        setToolTip(tr("Display settings: No options available"));
+    }
 }
 
+void CDisplaySettingsButton::slotOptionToggled(QAction *action) {
+    bool checked = action->isChecked();
 
-void CDisplaySettingsButton::optionToggled(QAction* /*action*/) {
-    //Take each Action and set the corresponding setting.
-    //Using QAction (QObject) property and OptionType enum is a dirty way to do this.
-    //See populateMenu().
-    foreach (QAction* act, m_popup->actions()) {
-        int optionType = act->property("OptionType").toInt();
-        bool checked = act->isChecked();
-        switch (optionType) {
-            case Linebreak:
-                m_displaySettings->lineBreaks = checked;
-                break;
-            case Versenum:
-                m_displaySettings->verseNumbers = checked;
-                break;
-            case Variant:
-                m_moduleSettings->textualVariants = checked;
-                break;
-            case Vowel:
-                m_moduleSettings->hebrewPoints = checked;
-                break;
-            case Accents:
-                m_moduleSettings->greekAccents = checked;
-                break;
-            case Cantillation:
-                m_moduleSettings->hebrewCantillation = checked;
-                break;
-            case Headings:
-                m_moduleSettings->headings = checked;
-                break;
-            case Morphseg:
-                m_moduleSettings->morphSegmentation = checked;
-                break;
-            case Xref:
-                m_moduleSettings->scriptureReferences = checked;
-                break;
-            case WordsofJ:
-                m_moduleSettings->redLetterWords = checked;
-                break;
-        }
+    if (action == m_lineBreakAction) {
+        m_displayOptions.lineBreaks = checked;
+        emit sigDisplayOptionsChanged(m_displayOptions);
+    } else if (action == m_verseNumbersAction) {
+        m_displayOptions.verseNumbers = checked;
+        emit sigDisplayOptionsChanged(m_displayOptions);
+    } else if (action == m_variantAction) {
+        m_filterOptions.textualVariants = checked;
+        emit sigFilterOptionsChanged(m_filterOptions);
+    } else if (action == m_hebrewPointsAction) {
+        m_filterOptions.hebrewPoints = checked;
+        emit sigFilterOptionsChanged(m_filterOptions);
+    } else if (action == m_greekAccentsAction) {
+        m_filterOptions.greekAccents = checked;
+        emit sigFilterOptionsChanged(m_filterOptions);
+    } else if (action == m_hebrewCantillationAction) {
+        m_filterOptions.hebrewCantillation = checked;
+        emit sigFilterOptionsChanged(m_filterOptions);
+    } else if (action == m_headingsAction) {
+        m_filterOptions.headings = checked;
+        emit sigFilterOptionsChanged(m_filterOptions);
+    } else if (action == m_morphSegmentationAction) {
+        m_filterOptions.morphSegmentation = checked;
+        emit sigFilterOptionsChanged(m_filterOptions);
+    } else if (action == m_scriptureReferencesAction) {
+        m_filterOptions.scriptureReferences = checked;
+        emit sigFilterOptionsChanged(m_filterOptions);
+    } else if (action == m_redWordsAction) {
+        m_filterOptions.redLetterWords = checked;
+        emit sigFilterOptionsChanged(m_filterOptions);
+    } else {
+        Q_ASSERT(false);
+        return;
     }
 
     emit sigChanged();
 }
 
 /** No descriptions */
-int CDisplaySettingsButton::populateMenu() {
-    int ret = 0;
+void CDisplaySettingsButton::repopulateMenu() {
+    bool enable = false;
 
     m_popup->clear();
+    if (!m_modules.isEmpty()) {
+        if (m_modules.first()->type() == CSwordModuleInfo::Bible) {
+            addMenuEntry(m_lineBreakAction, m_displayOptions.lineBreaks);
+            addMenuEntry(m_verseNumbersAction, m_displayOptions.verseNumbers);
+            enable = true;
+        }
 
-    // See also optionToggled()
+        if (isOptionAvailable(CSwordModuleInfo::headings)) {
+            addMenuEntry(m_headingsAction, m_filterOptions.headings);
+            enable = true;
+        }
 
-    ret += addMenuEntry(tr("Use linebreaks after each verse"), Linebreak, &m_displaySettings->lineBreaks, (m_modules.first()->type() == CSwordModuleInfo::Bible));
+        if (isOptionAvailable(CSwordModuleInfo::redLetterWords)) {
+            addMenuEntry(m_redWordsAction, m_filterOptions.redLetterWords);
+            enable = true;
+        }
 
-    //show the verse numbers option only for bible modules
-    ret += addMenuEntry(tr("Show verse numbers"), Versenum, &m_displaySettings->verseNumbers, (m_modules.first()->type() == CSwordModuleInfo::Bible));
+        if (isOptionAvailable(CSwordModuleInfo::hebrewPoints)) {
+            addMenuEntry(m_hebrewPointsAction, m_filterOptions.hebrewPoints);
+            enable = true;
+        }
 
-    ret += addMenuEntry(tr("Show headings"), Headings, &m_moduleSettings->headings,
-                        isOptionAvailable(CSwordModuleInfo::headings));
+        if (isOptionAvailable(CSwordModuleInfo::hebrewCantillation)) {
+            addMenuEntry(m_hebrewCantillationAction, m_filterOptions.hebrewCantillation);
+            enable = true;
+        }
 
-    ret += addMenuEntry(tr("Highlight words of Jesus"), WordsofJ, &m_moduleSettings->redLetterWords,
-                        isOptionAvailable(CSwordModuleInfo::redLetterWords ));
+        if (isOptionAvailable(CSwordModuleInfo::greekAccents)) {
+            addMenuEntry(m_greekAccentsAction, m_filterOptions.greekAccents);
+            enable = true;
+        }
 
-    ret += addMenuEntry(tr("Show Hebrew vowel points"), Vowel, &m_moduleSettings->hebrewPoints,
-                        isOptionAvailable(CSwordModuleInfo::hebrewPoints ));
+        if (isOptionAvailable(CSwordModuleInfo::textualVariants)) {
+            addMenuEntry(m_variantAction, m_filterOptions.textualVariants);
+            enable = true;
+        }
 
-    ret += addMenuEntry(tr("Show Hebrew cantillation marks"), Cantillation, &m_moduleSettings->hebrewCantillation,
-                        isOptionAvailable(CSwordModuleInfo::hebrewCantillation ));
+        if (isOptionAvailable(CSwordModuleInfo::scriptureReferences)) {
+            addMenuEntry(m_scriptureReferencesAction, m_filterOptions.scriptureReferences);
+            enable = true;
+        }
 
-    ret += addMenuEntry(tr("Show Greek accents"), Accents, &m_moduleSettings->greekAccents,
-                        isOptionAvailable(CSwordModuleInfo::greekAccents ));
+        if (isOptionAvailable(CSwordModuleInfo::morphSegmentation)) {
+            addMenuEntry(m_morphSegmentationAction, m_filterOptions.morphSegmentation);
+            enable = true;
+        }
+    }
 
-    ret += addMenuEntry(tr("Use alternative textual variant"), Variant, &m_moduleSettings->textualVariants,
-                        isOptionAvailable(CSwordModuleInfo::textualVariants ));
-
-    ret += addMenuEntry(tr("Show scripture cross-references"), Xref, &m_moduleSettings->scriptureReferences,
-                        isOptionAvailable(CSwordModuleInfo::scriptureReferences ));
-
-    ret += addMenuEntry(tr("Show morph segmentation"), Morphseg, &m_moduleSettings->morphSegmentation,
-                        isOptionAvailable(CSwordModuleInfo::morphSegmentation ));
-
-    return ret;
+    // Disable the settings button if no options are available:
+    setEnabled(enable);
+    retranslateToolTip();
 }
 
 /** Adds an entry to m_popup. */
-int CDisplaySettingsButton::addMenuEntry( const QString name, OptionType type, const int* option, const bool available) {
-    int ret = 0;
-
-    if (available) {
-        QAction* a = m_popup->addAction(name);
-        //see optionToggled()
-        a->setProperty("OptionType", type);
-        a->setCheckable(true);
-        a->setChecked(*option);
-        ret = 1;
-    }
-
-    return ret;
-}
-
-bool CDisplaySettingsButton::isOptionAvailable( const CSwordModuleInfo::FilterTypes option ) {
-    bool ret = false;
-    QList<CSwordModuleInfo*>::iterator end_it = m_modules.end();
-    for (QList<CSwordModuleInfo*>::iterator it(m_modules.begin()); it != end_it; ++it) {
-        ret = ret || (*it)->has(option);
-    }
-    return ret;
-}
-
-/** Returns the number of usable menu items in the settings menu. */
-int CDisplaySettingsButton::menuItemCount() {
-    return m_popup->actions().count();
-}
-
-/** Sets the item at position pos to the state given as 2nd paramter. */
-void CDisplaySettingsButton::setItemStatus( const int index, const bool checked ) {
-    QAction* action = m_popup->actions().at(index);
+void CDisplaySettingsButton::addMenuEntry(QAction *action, bool checked) {
     action->setChecked(checked);
+    m_popup->addAction(action);
 }
 
-/** Returns the status of the item at position "index" */
-bool CDisplaySettingsButton::itemStatus( const int index ) {
-    return m_popup->actions().at(index)->isChecked();
-}
-
-/** Sets the status to changed. The signal changed will be emitted. */
-void CDisplaySettingsButton::setChanged() {
-    optionToggled(0);
+bool CDisplaySettingsButton::isOptionAvailable(const CSwordModuleInfo::FilterTypes option) {
+    foreach (CSwordModuleInfo *module, m_modules) {
+        if (module->has(option)) return true;
+    }
+    return false;
 }
