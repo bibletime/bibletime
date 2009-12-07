@@ -47,6 +47,7 @@ QMdiSubWindow* CMDIArea::addSubWindow(QWidget * widget, Qt::WindowFlags windowFl
     }
 
     // Manual arrangement mode
+    enableWindowMinMaxFlags(true);
     if (m_mdiArrangementMode == ArrangementModeManual) {
         // Note that the window size/maximization may be changed later by a session restore.
         // If we already have an active window, make the new one simular to it
@@ -75,6 +76,7 @@ QMdiSubWindow* CMDIArea::addSubWindow(QWidget * widget, Qt::WindowFlags windowFl
     }
     else {
         // Automatic arrangement modes
+        enableWindowMinMaxFlags(false);
         triggerWindowUpdate();
     }
     return subWindow;
@@ -294,3 +296,22 @@ void CMDIArea::triggerWindowUpdate() {
         }
     }
 }
+
+void CMDIArea::enableWindowMinMaxFlags(bool enable)
+{
+    foreach(QMdiSubWindow* subWindow, subWindowList()) {
+        Qt::WindowFlags flags = subWindow->windowFlags();
+        if (enable) {
+            flags |= Qt::WindowMinimizeButtonHint;
+            flags |= Qt::WindowMaximizeButtonHint;
+        }
+        else {
+            flags &= ~Qt::WindowMinimizeButtonHint;
+            flags &= ~Qt::WindowMaximizeButtonHint;
+        }
+        subWindow->setWindowFlags(flags);
+        subWindow->hide();
+        subWindow->show();
+    }
+}
+

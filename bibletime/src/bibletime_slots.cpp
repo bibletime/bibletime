@@ -161,7 +161,7 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
         m_windowAutoTileHorizontal_action->setChecked(false);
         m_windowAutoCascade_action->setChecked(false);
         m_windowAutoTile_action->setChecked(false);
-
+        m_mdi->enableWindowMinMaxFlags(true);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeManual );
     }
     else if (clickedAction == m_windowAutoTileVertical_action) {
@@ -169,7 +169,7 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
         m_windowAutoTileHorizontal_action->setChecked(false);
         m_windowAutoCascade_action->setChecked(false);
         m_windowAutoTile_action->setChecked(false);
-
+        m_mdi->enableWindowMinMaxFlags(false);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTileVertical );
     }
     else if (clickedAction == m_windowAutoTileHorizontal_action) {
@@ -177,7 +177,7 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
         m_windowAutoTileVertical_action->setChecked(false);
         m_windowAutoCascade_action->setChecked(false);
         m_windowAutoTile_action->setChecked(false);
-
+        m_mdi->enableWindowMinMaxFlags(false);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTileHorizontal );
     }
     else if (clickedAction == m_windowAutoTile_action) {
@@ -185,7 +185,7 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
         m_windowAutoTileHorizontal_action->setChecked(false);
         m_windowAutoTileVertical_action->setChecked(false);
         m_windowAutoCascade_action->setChecked(false);
-
+        m_mdi->enableWindowMinMaxFlags(false);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTile );
     }
     else if (clickedAction == m_windowAutoCascade_action) {
@@ -193,7 +193,7 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
         m_windowAutoTileHorizontal_action->setChecked(false);
         m_windowAutoTileVertical_action->setChecked(false);
         m_windowAutoTile_action->setChecked(false);
-
+        m_mdi->enableWindowMinMaxFlags(false);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeCascade );
     }
     else if (clickedAction == m_windowTile_action) {

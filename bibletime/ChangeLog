@@ -1,3 +1,6 @@
+2009-12-06  Gary Holmlund
+    * Don't display min/max buttons in auto arrangement modes
+
 2009-12-03 Eeli Kaikkonen
     * Added: View->Text windows menu to switch text window
       toolbars on/off.
