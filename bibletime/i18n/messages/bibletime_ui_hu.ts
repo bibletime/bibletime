@@ -89,27 +89,27 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="301"/>
         <source>Text windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Szövegablakok</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="304"/>
         <source>Show text area headers</source>
-        <translation type="unfinished"></translation>
+        <translation>Szövegterület fejrészének mutatása</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="310"/>
         <source>Show navigation</source>
-        <translation type="unfinished"></translation>
+        <translation>Navigáció mutatása</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="316"/>
         <source>Show work chooser buttons</source>
-        <translation type="unfinished"></translation>
+        <translation>Dokumentumválasztó gombok mutatása</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="322"/>
         <source>Show tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Eszköztár mutatása</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="344"/>
@@ -244,12 +244,12 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="154"/>
         <source>Auto-&amp;tile</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatikus &amp;mozaik elrendezés</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="157"/>
         <source>Automatically tile the open windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatikusan mozaik elrendezésre váltja a megnyitott ablakokat</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="164"/>
@@ -264,12 +264,12 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="175"/>
         <source>&amp;Tile</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Mozaik</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="178"/>
         <source>Tile the open windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Mozaik elrendezésre váltja a megnyitott ablakokat</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="185"/>
@@ -635,7 +635,7 @@
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="287"/>
         <source>&amp;Search in %1...</source>
-        <translation type="unfinished">&amp;Keresés itt: %1...</translation>
+        <translation>&amp;Keresés itt: %1...</translation>
     </message>
 </context>
 <context>
@@ -1771,7 +1771,7 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="342"/>
         <source>Text area header</source>
-        <translation type="unfinished"></translation>
+        <translation>Szövegterület fejrésze</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="400"/>
@@ -1984,7 +1984,7 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="44"/>
         <source>Language for names of Bible books:</source>
-        <translation>A Biblia könyvímeinek nyelve:</translation>
+        <translation>A Biblia könyvcímeinek nyelve:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="46"/>

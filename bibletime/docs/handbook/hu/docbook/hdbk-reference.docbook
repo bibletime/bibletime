@@ -334,7 +334,7 @@ segítségével eldöntheti, hogy az ablakokat ön rendezze, vagy a &bibletime;
 
           <listitem>
             <para>
-	      <action>Tiles all open windows</action>.
+	      <action>Az összes ablakot mozaik elrendezésre váltja</action>
 	    </para>
           </listitem>
         </varlistentry>
@@ -920,9 +920,10 @@ elrendezést.</entry>
             </entry>
 
             <entry>
-	      <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement 
-mode</guimenuitem> <guimenuitem>Auto-tile</guimenuitem> </menuchoice> 
-equivalent; toggle automatic window tiling.</entry>
+	      Megegyezik az <menuchoice><guimenu>Ablak</guimenu> <guimenuitem>Ablakok 
+igazítása</guimenuitem><guimenuitem> Automatikus mozaik 
+elrendezés</guimenuitem></menuchoice> ugyanaz; aktiválja az automatikus 
+mozaik elrendezést.</entry>
           </row>
 
           <row>
@@ -1043,9 +1044,9 @@ linkend="hdbk-reference-menus-window-closeall"><menuchoice><guimenu>Ablak</guime
             </entry>
 
             <entry>
-	      <link linkend="hdbk-reference-menus-window-tile"> <menuchoice> 
-<guimenu>Window</guimenu> <guimenuitem>Tile</guimenuitem> </menuchoice> 
-</link> windows equivalent.
+	      Megegyezik az <link 
+linkend="hdbk-reference-menus-window-tilel"><menuchoice><guimenu>Ablak</guimenu><guimenuitem>Mozaik</guimenuitem></menuchoice></link> 
+menüponttal.
             </entry>
           </row>
 
