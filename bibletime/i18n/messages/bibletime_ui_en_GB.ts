@@ -704,62 +704,62 @@
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="99"/>
         <source>Use linebreaks after each verse</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="100"/>
         <source>Show verse numbers</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="101"/>
         <source>Show headings</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="102"/>
         <source>Highlight words of Jesus</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="103"/>
         <source>Show Hebrew vowel points</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="104"/>
         <source>Show Hebrew cantillation marks</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="105"/>
         <source>Show Greek accents</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="106"/>
         <source>Use alternative textual variant</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="107"/>
         <source>Show scripture cross-references</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="108"/>
         <source>Show morph segmentation</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="115"/>
         <source>Display settings</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="118"/>
         <source>Display settings: No options available</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1399,106 +1399,106 @@ shortcut</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="107"/>
         <source>Next book</source>
-        <translation></translation>
+        <translation>Next book</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="111"/>
         <source>Previous book</source>
-        <translation></translation>
+        <translation>Previous book</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="115"/>
         <source>Next chapter</source>
-        <translation></translation>
+        <translation>Next chapter</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="119"/>
         <source>Previous chapter</source>
-        <translation></translation>
+        <translation>Previous chapter</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="123"/>
         <source>Next verse</source>
-        <translation></translation>
+        <translation>Next verse</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="127"/>
         <source>Previous verse</source>
-        <translation></translation>
+        <translation>Previous verse</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="132"/>
         <source>Copy chapter</source>
-        <translation></translation>
+        <translation>Copy chapter</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="135"/>
         <source>Save chapter as plain text</source>
-        <translation></translation>
+        <translation>Save chapter as plain text</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="138"/>
         <source>Save chapter as HTML</source>
-        <translation></translation>
+        <translation>Save chapter as HTML</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="141"/>
         <source>Print chapter</source>
-        <translation></translation>
+        <translation>Print chapter</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="153"/>
         <source>Text of reference</source>
-        <translation></translation>
+        <translation>Text of reference</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="156"/>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="159"/>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="162"/>
         <source>Reference with text</source>
-        <translation></translation>
+        <translation>Reference with text</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="269"/>
         <source>Bible window</source>
-        <translation></translation>
+        <translation>Bible window</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="279"/>
         <source>Copy...</source>
-        <translation></translation>
+        <translation>Copy...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="290"/>
         <source>Save...</source>
-        <translation></translation>
+        <translation>Save...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="303"/>
         <source>Print...</source>
-        <translation></translation>
+        <translation>Print...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="387"/>
         <source>Copy chapter to clipboard ...</source>
-        <translation></translation>
+        <translation>Copy chapter to clipboard ...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="387"/>
         <source>Copying</source>
-        <translation></translation>
+        <translation>Copying</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="408"/>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="426"/>
         <source>Saving chapter ...</source>
-        <translation></translation>
+        <translation>Saving chapter ...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="408"/>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="426"/>
         <source>Saving</source>
-        <translation></translation>
+        <translation>Saving</translation>
     </message>
 </context>
 <context>
