@@ -1,0 +1,439 @@
+<chapter id="hdbk-op">
+  <title>Programmbedienung</title>
+  <sect1 id="hdbk-op-overview">
+    <title>Programmüberblick</title>
+    <para>So sieht eine typische &bibletime;-Sitzung aus: 
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="ss_mainterms.png" format="PNG" />
+      </imageobject>
+      <textobject>
+        <phrase>Das &bibletime;-Applikations-Fenster</phrase>
+      </textobject>
+    </mediaobject>
+    Sie können leicht die verschiedenen Abschnitte des Applikations-Fensters 
+erkennen. Das Fenster oben links erlaubt das Öffnen installierter Werke im 
+Bücherregal-Reiter. Mit dem Lesezeichen-Reiter können Sie Ihre Lesezeichen 
+verwalten. Das kleine "Lupen"-Fenster unterhalb des Bücherregals zeigt in 
+Dokumenten eingebettete Extra-Informationen an. Wenn Sie beispielsweise Ihre 
+Maus über Fußnoten-Markierungen bewegen, wird das Lupenfenster den 
+tatsächlichen Inhalt der Fußnote anzeigen. Die Werkzeugleiste erlaubt Ihnen 
+den schnellen Zugriff auf wichtige Funktionen und auf dem Pult auf der 
+rechten Seite verrichten Sie Ihre eigentliche Arbeit.</para>
+
+    <para>Wir fahren fort, indem wir nun die verschiedenen Teile der Anwendung einzeln 
+betrachten.</para>
+  </sect1>
+  <sect1 id="hdbk-op-parts">
+    <title>Elemente des &bibletime; Fensters</title>
+    <sect2 id="hdbk-op-parts-bookshelf">
+      <title>Das Bücherregal</title>
+      <para>Das Bücherregal enthält alle installierten Werke, nach Kategorie und Sprache 
+sortiert. Es enthält auch einen Abschnitt namens "Lesezeichen". Hier können 
+sie ihre eigenen Lesezeichen ablegen und darauf zugreifen.</para>
+
+      <sect3 id="hdbk-op-parts-bookshelf-open">
+        <title>Werke lesen</title>
+        <para>Wenn Sie Dokument auswählen wollen, klicken Sie einfach auf die gewünschte 
+Dokumentengruppe (Bibeln, Kommentare, Lexika, Bücher, Andachten oder 
+Wörterbücher) um den Inhalt der Dokumentengruppe anzuzeigen. Um ein Dokument 
+zu öffnen klicken Sie auf dessen Symbol.</para>
+
+        <tip>
+          <para>Hier funktioniert Drag&amp;Drop</para>
+        </tip>
+
+        <para>Wenn Sie ein bestimmtes Werk lesen und ein anderes Werk bezüglich des 
+aktuellen Textabschnittes öffnen möchten, können Sie einen Kurzbefehl 
+verwenden. Klicken Sie einfach mit der <mousebutton>linken 
+Maustaste</mousebutton> auf den Vers-/Abschnitts-Verweis (der Zeiger wird 
+zur Hand) und ziehen Sie ihn zum Bücherregal. Lassen Sie auf dem zu 
+öffnenden Werk los und es wird zum Lesen an der spezifizierten Stelle 
+geöffnet. Außerdem können Sie einen Versverweis in ein bereits existierendes 
+Lesefenster ziehen, es wird dann zur gewünschten Stelle gesprungen.</para>
+      </sect3>
+
+      <sect3 id="hdbk-op-parts-bookshelf-metainfo">
+        <title>Weitere Informationen über Werke</title>
+
+        <para>If you click with the <mousebutton>right</mousebutton> mouse button on the 
+symbol of a work, you will see a menu with additional entries that are 
+relevant for this work.  <guimenuitem>"About this work"</guimenuitem> opens 
+a window with lots of interesting information about the selected work.  
+<guimenuitem>"Unlock this work"</guimenuitem> opens a small dialog for 
+encrypted documents, where you can enter the unlock key to access the 
+work. For additional information on locked works, please see the <ulink 
+url="http://www.crosswire.org/sword/modules/aboutlocked.jsp"> Locked 
+Modules</ulink> page on the &cbs; web site.</para>
+      </sect3>
+
+      <sect3 id="hdbk-op-parts-bookshelf-search">
+        <title>In Werken suchen</title>
+
+        <para>You can search in a work by clicking with the 
+<mousebutton>right</mousebutton> mouse button on its symbol and selecting 
+<guimenuitem>"Search in work(s)"</guimenuitem>. By pressing &Shift; and 
+clicking on other works you can select more than one. Then follow the same 
+procedure to open the search dialog. You will be searching in all of these 
+documents. A complete description of the operation of the search features 
+can be found on the <link linkend="hdbk-op-search">Searching in Works 
+section</link>.</para>
+      </sect3>
+
+      <sect3 id="hdbk-op-parts-bookshelf-bookmarks">
+        <title>Mit Lesezeichen arbeiten</title>
+        <para>
+
+        <tip>
+          <para>Hier funktioniert Drag&amp;Drop</para>
+        </tip>
+
+	Klicken Sie mit der <mousebutton>rechten Maustaste</mousebutton> auf den 
+Lesezeichen-Reiter im Bücherregal und wählen Sie <guimenuitem>"Neuer 
+Ordner"</guimenuitem> aus, um ein neues Unterverzeichnis zu erstellen. Sie 
+können normale Drag&amp;Drop-Funktionen nutzen, um Versverweise aus 
+Lesefenstern oder Suchergebnissen zum Lesezeichen-Ordner zu ziehen und um 
+Lesezeichen zwischen Verzeichnissen neu anzuordnen.</para>
+        <para>Außerdem ist es Ihnen möglich, Lesezeichen anderer Personen zu importieren 
+sowie eigene Lesezeichen zu exportieren, um sie mit anderen zu teilen. Um 
+dies zu tun, öffnen Sie das <guimenuitem>Kontextmenü</guimenuitem> des 
+Lesezeichen-Ordners wie oben beschrieben und wählen Sie <guimenuitem>"Aus 
+Verzeichnis exportieren..."</guimenuitem>. Dies wird ein Dialogfenster 
+öffnen, mit dem Sie die Lesezeichen-Sammlung abspeichern können. Das 
+Importieren von Lesezeichen funktioniert in der gleichen Weise.</para>
+
+        <para>Auch können Sie mit der <mousebutton>rechten Maustaste</mousebutton> auf 
+Ordner und Lesezeichen klicken, um ihre Namen und Beschreibungen zu ändern.</para>
+      </sect3>
+    </sect2>
+
+    <sect2 id="hdbk-op-parts-mag">
+      <title>Die Lupe</title>
+
+      <para>Diese kleine Fenster in der linken unteren Ecke von &bibletime; ist rein 
+passiv. Wann immer der Mauspfeil über Text positioniert ist, welcher 
+zusätzliche Informationen (z.B. Strongnummern) enthält, dann werden eben 
+diese in der Lupe dargestellt, nicht jedoch der Text selbst. Probieren sie 
+es einfach aus.</para>
+    </sect2>
+
+    <sect2 id="hdbk-op-parts-desk">
+      <title>Die Arbeitsfläche</title>
+      <para>Auf der Arbeitsfläche findet die eigentliche Arbeit mit &bibletime; 
+statt. Hier können Sie Werke aus dem Bücherregal öffnen, sie lesen, darin 
+<link linkend="hdbk-op-search">suchen</link> und sogar ihre persönlichen 
+Anmerkungen im persönlichen Kommentar speichern (siehe <link 
+linkend="hdbk-op-parts-desk-write">unten</link>).</para>
+
+      <sect3 id="hdbk-op-parts-desk-read">
+        <title>Werke lesen</title>
+        <para>Wie wir <link linkend="hdbk-op-parts-bookshelf-open">bereits gesehen</link> 
+haben, können Sie Werke zum Lesen leicht duch Klicken auf ihr Symbol im 
+Bücherregal öffnen. Ein Lesefenster wird sich auf der Arbeitsfläche 
+öffnen. Jedes Lesefenster hat seine eigene Werkzeugleiste. Dort finden Sie 
+Werkzeuge, um innerhalb des Werkes, auf das sich das Lesefenster bezieht, zu 
+navigieren. Außerdem finden sich dort Verlaufsknöpfe in der Art, wie Sie sie 
+von Ihrem Browser her gewohnt sind.</para>
+      </sect3>
+
+      <sect3 id="hdbk-op-parts-desk-placement">
+        <title>Lese-Fenster Anordnung</title>
+        <para>Selbstverständlich können Sie mehrere Werke gleichzeitig öffnen. Es gibt 
+verschiedene Möglichkeiten, die Lesefenster auf der Arbeitsfläche 
+anzuordnen. Schauen Sie sich ruhig mal das <guimenu>Fenster</guimenu>-Menü 
+im Hauptmenü an. Dort sehen Sie, dass Sie entweder die Fensteranordnung 
+vollständig selbst kontrollieren oder &bibletime; die automatische Anordnung 
+überlassen können. Um letzteres zu erreichen, wählen Sie eines der 
+verfügbaren automatischen Anordnungsarten in <menuchoice> 
+<guimenu>Fenster</guimenu> <guimenuitem>Anordnungs-Art</guimenuitem> 
+</menuchoice> aus. Probieren Sie's einfach aus, es ist leicht und 
+funktioniert.</para>
+      </sect3>
+
+      <sect3 id="hdbk-op-parts-desk-write">
+        <title>Bearbeiten Sie ihren eigenen Kommentar</title>
+
+        <para>Um Ihre eigenen Kommentare über Bibelabschnitte zu speichern, müssen Sie ein 
+bestimmtes Werk von der Bibliothek der <ulink 
+url="http://www.crosswire.org">&cbs;</ulink> installieren. Dieses Werk heißt 
+"Persönlicher Kommentar".</para>
+
+        <para>Wenn Sie den persönlichen Kommentar durch Klicken auf sein Symbol im 
+Bücherregal mit der <mousebutton>linken Maustaste</mousebutton> öffnen, wird 
+dieser im Nur-Lese-Modus geöffnet. Es wird Ihnen nicht möglich sein, ihn in 
+diesem Modus zu editieren. Falls Sie Anmerkungen zu Ihrem persönlichen 
+Kommentar hinzufügen möchten, müssen Sie diesen mit der <mousebutton>rechten 
+Maustaste</mousebutton> öffnen und dann <guimenu>Bearbeiten</guimenu> und 
+dann entweder <guimenuitem>Reintext</guimenuitem> (Quellcode-Editor) oder 
+<guimenuitem>HTML</guimenuitem> (simpler WYSIWYG-GUI-Editor) auswählen.</para>
+
+        <tip>
+          <para>Falls <menuchoice> <guimenu>Bearbeiten</guimenu> </menuchoice> deaktiviert 
+ist, überprüfen Sie, ob sie Schreibberechtigung für diese Dateien des 
+persönlichen Kommentars besitzen.</para>
+        </tip>
+
+        <tip>
+          <para>Hier funktioniert Drag&amp;Drop. Lassen Sie hier einen Versverweis fallen, 
+um den Text des Verses einzufügen.</para>
+        </tip>
+      </sect3>
+    </sect2>
+  </sect1>
+  <sect1 id="hdbk-op-search">
+    <title>In Werken suchen</title>
+
+    <sect2 id="hdbk-op-search-intext">
+      <title>Nach Text in einem geöffneten Lesefenster suchen</title>
+      <para>Sie können nach einem Wort oder Ausdruck im offenen Lesefenster (z.B. in dem 
+Bibel-Kapitel, das Sie gerade lesen) suchen, ganz wie Sie es von anderen 
+Programmen her gewohnt sind. Diese Funktion kann entweder durch Klicken mit 
+der <mousebutton>rechten Maustaste</mousebutton> und Auswahl von 
+<guimenuitem>Finden...</guimenuitem>, oder durch Anwenden des Kurzbefehls 
+<keycombo action="simul"> <keycap>&Ctrl;F</keycap></keycombo> erreicht 
+werden. Lesen Sie weiter, um zu erfahren, wie Sie in ganzen Werken suchen 
+können.</para>
+    </sect2>
+
+    <sect2 id="hdbk-op-search-access">
+      <title>Auf den Suchdialog zugreifen</title>
+      <para>Sie können in einem Werk suchen, indem Sie mit der <mousebutton>rechten 
+Maustaste</mousebutton> auf das Symbol im <guimenu>Bücherregal</guimenu> 
+klicken und <guimenuitem>Suche in...</guimenuitem> auswählen. Indem Sie 
+&Shift; oder &Ctrl; gedrückt halten und auf Namen anderer Werke klicken, ist 
+eine Auswahl mehrerer Werke möglich. Befolgen Sie denselben Ablauf, um den 
+Suchdialog zu öffnen. Sie werden dann in jedem dieser Werke gleichzeitig 
+suchen.</para>
+
+      <para>Sie erreichen den Suchdialog außerdem, indem Sie auf <menuchoice> 
+<guimenu>Suche</guimenu> </menuchoice> im Hauptmenü klicken und den 
+entsprechenden Eintrag auswählen.</para>
+
+      <para>Eine dritte Möglichkeit, Suchen zu starten, ist, auf das Suchsymbol in einem 
+offenen Lesefenster zu klicken.</para>
+    </sect2>
+
+    <sect2 id="hdbk-op-search-config">
+      <title>Such-Konfiguration</title>
+      <screenshot>
+        <screeninfo>Suchtext Einstellungen	</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="ss_searchopts.png" format="PNG" />
+          </imageobject>
+        </mediaobject>
+      </screenshot>
+      <sect3 id="hdbk-op-search-config-works">
+        <title>Werke auswählen</title>
+        <para>Oben im Optionen-Reiter finden Sie 
+<guibutton>Auswählen...</guibutton>. Falls Sie in mehreren Werken suchen 
+möchten, klicken Sie auf diesen Knopf und es wird sich Ihnen ein Menü 
+auftun, in dem Sie die zu durchsuchenden Werke wählen können.</para>
+      </sect3>
+      <sect3 id="hd-op-search-config-scope">
+        <title>Suchbereiche verwenden</title>
+        <para>Sie können nun den Suchbereich auf bestimmte Bibelabschnitte eingrenzen, 
+indem Sie einen der vordefinierten Suchbereiche aus der Liste 
+<guimenu>Bereich:</guimenu> auswählen. Desweiteren können Sie Ihre eigenen 
+Suchbereiche festlegen, indem Sie auf <guibutton>Einrichten...</guibutton> 
+klicken.</para>
+      </sect3>
+
+      <sect3 id="hd-op-search-config-syntax">
+        <title>Grundlegende Einführung in die Suchsyntax</title>
+
+        <para>Geben Sie den zu suchenden Text separiert mit Leerzeichen ein. Standardmäßig 
+wird die Suchfunktion Ergebnisse zurückliefern, die auf alle Wörter 
+zutreffen. Wenn Sie irgend eines der eingegebenen Wörter finden möchten, 
+wählen Sie den <guimenu>Einige Wörter</guimenu>-Knopf aus. Falls Sie eine 
+komplexere Suche beabsichtigen, selektieren Sie den 
+<guimenu>Frei</guimenu>-Knopf. Sie können Syntax-Beispiele von Suchanfragen 
+durch Klicken auf <guimenu>Vollständige Syntax</guimenu> sehen.
+	  </para>
+
+        <para>Sie können Platzhalter verwenden. '*' steht für jede Anzahl von Zeichen, 
+während '?' auf jedes einzelne Zeichen zutrifft. Das Benutzen von Klammern 
+erlaubt Ihnen das Gruppieren der Suchbegriffe, z.B. '(Jesus OR Geist) AND 
+Gott'.</para>
+
+        <para>Um Text außerhalb des Haupttextes zu finden, geben Sie die Textart gefolgt 
+von einem ':' und dem Suchbegriff ein. Beispiele sind in der unteren Tabelle 
+aufgeführt.</para>
+
+        <para>Verfügbare Textarten: 
+        <table id="hd-op-search-config-syntax-table">
+	  <title>Sucharten</title>
+          <tgroup cols="3">
+            <thead>
+              <row>
+                <entry>Präfix</entry>
+                <entry>Bedeutung</entry>
+		<entry>Beispiel</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>heading:</entry>
+                <entry>durchsucht Kopfzeilen</entry>
+		<entry>heading:Jesus</entry>
+              </row>
+              <row>
+                <entry>footnote:</entry>
+                <entry>durchsucht Fußnoten</entry>
+		<entry>footnote:Moses</entry>
+              </row>
+              <row>
+                <entry>strong:</entry>
+                <entry>durchsucht Strong-Nummern</entry>
+		<entry>strong:G535</entry>
+              </row>
+              <row>
+                <entry>morph:</entry>
+                <entry>durchsucht Morphologie-Codes</entry>
+		<entry>morph:N-GSM</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table></para>
+
+	<tip>
+	  <para>Sie können mit der rechten Maustaste auf ein installiertes Werk klicken und 
+<guimenu>Über...</guimenu> auswählen, um zu sehen, welche der oben genannten 
+Suchkriterien für Sie zutreffen. Nicht alle Werke haben die eingebauten 
+Eigenschaften um diese Art von Suche durchzuführen.</para>
+	</tip>
+
+        <para>&bibletime; benutzt die Lucene Suchmaschine, um Ihre Suchanfragen 
+auszuführen. Sie hat viele erweiterte Funktionen, Sie können hier mehr über 
+Sie lesen: <ulink url="http://lucene.apache.org/java/docs/index.html"> 
+http://lucene.apache.org/java/docs/index.html</ulink>.</para>
+      </sect3>
+    </sect2>
+
+    <sect2 id="hdbk-op-search-results">
+      <title>Suchergebnisse</title>
+      <para>Hier können Sie erkennen, wieviele Instanzen des Suchstrings gefunden 
+wurden, nach Werken sortiert. Das Klicken mit der <mousebutton>rechten 
+Maustaste</mousebutton> erlaubt Ihnen alle in einem bestimmten Werk 
+gefundenen Verse auf einmal zu kopieren, zu speichern oder zu drucken. Dies 
+funktioniert auch, wenn Sie auf einen oder mehrere der Verweise klicken, um 
+sie zu kopieren, zu speichern oder zu drucken. Das Klicken auf einen 
+bestimmten Verweis öffnet ihn mit Kontext unterhalb im Vorschaufenster.</para>
+      <tip>
+        <para>Ziehen Sie einen Versverweis zum Bücherregal und lassen Sie ihn auf einem 
+Werkssymbol los, so öffnet sich das Werk an der Stelle in einem neuen 
+Lesefenster, auf die der Verweis zeigt.</para>
+      </tip>
+      <tip>
+        <para>Ziehen Sie einen Versverweis auf ein offenes Lesefenster und lassen Sie ihn 
+dann los, wird zu dieser Stelle gesprungen.</para>
+      </tip>
+      <tip>
+        <para>Wählen Sie Verweise und ziehen Sie sie zum Bücherregal, um Lesezeichen zu 
+erstellen.</para>
+      </tip>
+      <sect3 id="hdbk-op-search-analysis">
+        <title>Suchergebnisse analysieren</title>
+        <para>Klicken Sie auf <guibutton>Ergebnisse analysieren...</guibutton>, um die 
+Anzeige der Suchergebnis-Analyse zu öffnen. Sie zeigt eine einfache 
+graphische Analyse des Auftretens in jedem Buch der Bibel. Auch können Sie 
+die Analyse abspeichern.</para>
+        <screenshot>
+          <screeninfo>Suchanalyse Dialogbox</screeninfo>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="ss_searchanal.png" format="PNG" />
+            </imageobject>
+          </mediaobject>
+        </screenshot>
+      </sect3>
+    </sect2>
+  </sect1>
+
+  <sect1 id="hdbk-op-bookshelfmanager">
+    <title>Der <guimenuitem>Bücherregal Verwalter</guimenuitem></title>
+
+    <para>Die <guimenuitem>Bücherregal-Verwaltung</guimenuitem> ist ein Werkzeug, das 
+Ihnen die Verwaltung des Bücherregals ermöglicht. Sie können neue Werke zu 
+Ihrem Bücherregal hinzufügen oder existierende Werke aktualisieren oder Sie 
+aus dem Bücherregal entfernen. Greifen Sie darauf zu, indem Sie auf 
+<menuchoice> <guimenu>Einstellungen</guimenu> 
+<guimenuitem>Bücherregal-Verwaltung</guimenuitem> </menuchoice> im Hauptmenü 
+klicken.</para>
+
+      <tip>
+	<para>If this is the first time you are starting &bibletime;, click on the Refresh 
+button to see a list of works provided by the &cbs;.</para>
+      </tip>
+
+    <sect2 id="hdbk-op-bookshelfmanager-path">
+      <title>Bücherregal-Pfade einrichten</title>
+      <para>Hier können Sie festlegen, wo &bibletime; Ihr Bücherregal auf der Festplatte 
+abspeichern soll. Sie können es sogar in verschiedenen Verzeichnissen 
+speichern. Die Voreinstellung ist "~/.sword/".</para>
+      <tip>
+        <para>Wenn Sie eine Sword-CD besitzen aber nicht alle Werke auf die Festplatte 
+installieren wollen und sie direkt von der CD nutzen wollen, so können Sie 
+den Pfad der CD als einen Ihrer Bücherregal-Pfade hinzufügen. Wenn Sie 
+&bibletime; starten, wird es alle Werke auf der CD anzeigen, wenn sie 
+eingelegt ist.</para>
+      </tip>
+    </sect2>
+    <sect2 id="hdbk-op-bookshelfmanager-installupdate">
+      <title>Werke installieren/updaten</title>
+      <para>Mit dieser Einrichtung können Sie sich mit einer Quelle von Werken (genannt 
+"Bibliothek") in Verbindung setzen und ein oder mehrere Werke zu Ihrem 
+lokalen Bücherregal übertragen. Diese Bibliotheken können lokal sein 
+(z.B. eine &sword;-CD) oder entfernt-gelegen (z.B. Crosswires 
+Online-Repository der &sword;-Module, oder eine andere Site, die 
+&sword;-Module anbietet). Sie können Ihre Bibliotheken mit 
+<guibutton>Hinzufügen...</guibutton> und <guibutton>Löschen...</guibutton> 
+verwalten.</para>
+      <para>Um den Installations- oder Aktualisierungsvorgang zu starten, suchen Sie 
+eine Bibliothek aus, mit der Sie sich verbinden wollen und einen lokalen 
+Bücherregal-Pfad, wohin die Werke installiert werden sollen. Dann klicken 
+Sie auf <guibutton>Auffrischen...</guibutton>. &bibletime; wird den Inhalt 
+der Bibliothek scannen und Ihnen eine Liste mit Werken anzeigen, die Sie 
+Ihrem Bücherregal hinzufügen können oder die Sie schon installiert haben, 
+die aber in einer aktuelleren Version in der Bibliothek vorliegen und 
+aktualisiert werden können. Sie können dann alle Werke, die Sie installieren 
+oder aktualisieren wollen markieren und anschließend auf 
+<guibutton>Installieren...</guibutton> klicken. Sie werden dann zu Ihrem 
+Bücherregal übertragen.</para>
+    </sect2>
+    <sect2 id="hdbk-op-bookshelfmanager-remove">
+      <title>Werk(e) entfernen</title>
+      <para>Diese Einrichtung erlaubt Ihnen, eines oder mehrere Werke aus Ihrem 
+Bücherregal zu entfernen, um Plattenspeicherplatz zu gewinnen. Markieren Sei 
+einfach die Posten und klicken Sie auf <guibutton>Entfernen...</guibutton>.</para>
+    </sect2>
+    <sect2 id="hdbk-op-bookshelfmanager-searchindexes">
+      <title>Suchindizes</title>
+      <para>Diese Option erlaubt Ihnen, neue Suchindizes zu erstellen und verwaiste 
+Suchindizes entfernter Werke aufzuräumen.</para>
+      <tip>
+	If you are having problems with your search function, visit
+	this feature.
+      </tip>
+    </sect2>
+  </sect1>
+  <sect1 id="hdbk-op-output">
+    <title>Exortieren und Drucken</title>
+    <para>An vielen Stellen können Sie ein Kontextmenü durch Klicken mit der 
+<mousebutton>rechten Maustaste</mousebutton> öffnen. Abhängig vom Kontext 
+wird es Ihnen ermöglichen, Text mit <guimenuitem>Auswählen</guimenuitem>, 
+<guimenuitem>Kopieren</guimenuitem> (zur Zwischenablage), 
+<guimenuitem>Speichern</guimenuitem> oder <guimenuitem>Drucken</guimenuitem> 
+zu verarbeiten. Dies funktioniert beispielsweise in den Lesefenstern, wenn 
+Sie auf normalen Text oder Versverweise klicken, oder auf der 
+Suchergebnis-Seite, wenn Sie auf ein Werk oder einen oder mehrere 
+Versreferenzen klicken. Es ist ziemlich unkompliziert, versuchen Sie's 
+einfach mal.</para>
+
+    <para>Das Drucken in &bibletime; ist relativ primitiv und als Hilfsmittel 
+gedacht. Wenn Sie ein Dokument oder eine Präsentation erstellen, die Text 
+aus &bibletime;-Werken enthält, empfehlen wir Ihnen, eines der Programme für 
+Präsentationen oder zum Editieren auf Ihrem System zu verwenden, um Ihr 
+Dokument zu formatieren, anstatt von &bibletime; aus direkt zu drucken.</para>
+  </sect1>
+</chapter>

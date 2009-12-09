@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY bibletime '<application>BibleTime</application>'>
+  <!ENTITY kapp "&bibletimehandbook;">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY howto-chap1 SYSTEM "howto-importance.docbook">
+  <!ENTITY howto-chap2 SYSTEM "howto-basics.docbook">
+  <!ENTITY howto-chap3 SYSTEM "howto-interpretation.docbook">
+]>
+
+<book>
+
+<bookinfo>
+	<title>Die Anleitung zum Bibelstudium</title>
+	
+	<authorgroup>
+		<author>
+			<firstname>Bob</firstname>
+			<surname>Harman</surname>
+		</author>
+		<author>
+			<firstname></firstname>
+			<surname>The BibleTime team</surname>
+		</author>
+	</authorgroup>
+	
+	
+	
+	<!-- TRANS:ROLES_OF_TRANSLATORS -->
+<copyright>
+		<year>2001-2009</year>
+		<holder>Das &bibletime;-Team (info@bibletime.info)</holder>
+	</copyright>
+	
+	<legalnotice>
+		<para>
+			Dieses Dokument wurde ursprünglich von Herrn Bob Harman erstellt und ist 
+unter die Bestimmungen der <link 
+url="http://creativecommons.org/licenses/by-sa/3.0/"> "Creative Commons 
+Attribution-Share Alike"</link> Lizenz gestellt.
+		</para>
+		<para>
+			<emphasis>Anm. des Übersetzers:</emphasis> Der deutsche Text der 
+Bibelstellen ist meistens der deutschen revidierten Lutherbibel von 1984 
+entnommen. Die Originalfassung in Englisch wird mit BibleTime mitgeliefert.
+		</para>
+	</legalnotice>
+	
+	<abstract>
+		<title>Zusammenfassung</title>
+		
+		<para>
+			Die <application>Anleitung zum Bibelstudium (Das Biblestudy 
+HowTo)</application> ist ein Handbuch zum Studieren der Bibel.
+		</para>
+		<para>
+			Es ist die Hoffnung des &bibletime; Teams, dass diese Anleitung die Leser 
+zum Studieren der Bibel bewegt, um zu sehen, was die Bibel zu sagen 
+hat. Diese spezielle Anleitung wurde ausgewählt, da sie darauf achtet, keine 
+bestimmte Bekenntnisgruppe zu fördern. Wir möchten von ihnen, dass Sie die 
+Bibel studieren um zu verstehen, was darin steht. Wenn Sie mit der Erwartung 
+herangehen, dass Gott sein Wort in ihr Herz sät, wird Er Sie nicht 
+enttäuschen.
+		</para>
+	</abstract>
+	
+	<keywordset>
+		<keyword>Bible</keyword>
+		<keyword>Study</keyword>
+		<keyword>HowTo</keyword>
+	</keywordset>
+
+</bookinfo>
+
+&howto-chap1;
+&howto-chap2;
+&howto-chap3;
+
+</book>
