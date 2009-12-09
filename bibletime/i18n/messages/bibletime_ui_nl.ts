@@ -701,6 +701,69 @@
     </message>
 </context>
 <context>
+    <name>BtDisplaySettingsButton</name>
+    <message>
+        <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="99"/>
+        <source>Use linebreaks after each verse</source>
+        <translation type="unfinished">Ieder vers op nieuwe regel</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="100"/>
+        <source>Show verse numbers</source>
+        <translation type="unfinished">Toon versnummers</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="101"/>
+        <source>Show headings</source>
+        <translation type="unfinished">Toon kopteksten</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="102"/>
+        <source>Highlight words of Jesus</source>
+        <translation type="unfinished">Woorden van Jezus benadrukken</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="103"/>
+        <source>Show Hebrew vowel points</source>
+        <translation type="unfinished">Toon Hebreeuwse klinkerpunten</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="104"/>
+        <source>Show Hebrew cantillation marks</source>
+        <translation type="unfinished">Toon Hebreeuwse intonatietekens</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="105"/>
+        <source>Show Greek accents</source>
+        <translation type="unfinished">Toon Griekse accenten</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="106"/>
+        <source>Use alternative textual variant</source>
+        <translation type="unfinished">Alternatieve tekstuele variant gebruiken</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="107"/>
+        <source>Show scripture cross-references</source>
+        <translation type="unfinished">Toon bijbelse kruisverwijzingen</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="108"/>
+        <source>Show morph segmentation</source>
+        <translation type="unfinished">Toon morfologische segmentatie</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="115"/>
+        <source>Display settings</source>
+        <translation type="unfinished">Beeldinstellingen</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="118"/>
+        <source>Display settings: No options available</source>
+        <translation type="unfinished">Beeldinstellingen: Geen opties beschikbaar</translation>
+    </message>
+</context>
+<context>
     <name>BtIndexPage</name>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="38"/>
@@ -1347,106 +1410,106 @@ sneltoets</translation>
 <context>
     <name>CBibleReadWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="83"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="107"/>
         <source>Next book</source>
         <translation>Volgend boek</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="87"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="111"/>
         <source>Previous book</source>
         <translation>Vorig boek</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="91"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="115"/>
         <source>Next chapter</source>
         <translation>Volgend hoofdstuk</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="95"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="119"/>
         <source>Previous chapter</source>
         <translation>Vorig hoofdstuk</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="99"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="123"/>
         <source>Next verse</source>
         <translation>Volgend vers</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="103"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="127"/>
         <source>Previous verse</source>
         <translation>Vorig vers</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="108"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="132"/>
         <source>Copy chapter</source>
         <translation>Kopieer hoofdstuk</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="111"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="135"/>
         <source>Save chapter as plain text</source>
         <translation>Sla hoofdstuk op als platte tekst</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="114"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="138"/>
         <source>Save chapter as HTML</source>
         <translation>Sla hoofdstuk op als HTML</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="117"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="141"/>
         <source>Print chapter</source>
         <translation>Print hoofdstuk</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="129"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="153"/>
         <source>Text of reference</source>
         <translation>Referentietekst</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="132"/>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="135"/>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="138"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="156"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="159"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="162"/>
         <source>Reference with text</source>
         <translation>Referentie met tekst</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="245"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="269"/>
         <source>Bible window</source>
         <translation>Bijbelvenster</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="255"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="279"/>
         <source>Copy...</source>
         <translation>Kopiëren...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="266"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="290"/>
         <source>Save...</source>
         <translation>Opslaan...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="279"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="303"/>
         <source>Print...</source>
         <translation>Afdrukken...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="363"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="387"/>
         <source>Copy chapter to clipboard ...</source>
         <translation>Hoofdstuk kopiëren naar klembord...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="363"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="387"/>
         <source>Copying</source>
         <translation>Bezig met kopiëren</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="384"/>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="402"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="408"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="426"/>
         <source>Saving chapter ...</source>
         <translation>Bezig met opslaan van het hoofdstuk ...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="384"/>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="402"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="408"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="426"/>
         <source>Saving</source>
         <translation>Bezig met opslaan</translation>
     </message>
@@ -1596,69 +1659,56 @@ sneltoets</translation>
 <context>
     <name>CDisplaySettingsButton</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="48"/>
         <source>Display settings: No options available</source>
-        <translation>Beeldinstellingen: Geen opties beschikbaar</translation>
+        <translation type="obsolete">Beeldinstellingen: Geen opties beschikbaar</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="52"/>
         <source>Display settings</source>
-        <translation>Beeldinstellingen</translation>
+        <translation type="obsolete">Beeldinstellingen</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="36"/>
         <source>Display options</source>
-        <translation>Beeldopties</translation>
+        <translation type="obsolete">Beeldopties</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="109"/>
         <source>Use linebreaks after each verse</source>
-        <translation>Ieder vers op nieuwe regel</translation>
+        <translation type="obsolete">Ieder vers op nieuwe regel</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="114"/>
         <source>Show headings</source>
-        <translation>Toon kopteksten</translation>
+        <translation type="obsolete">Toon kopteksten</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="117"/>
         <source>Highlight words of Jesus</source>
-        <translation>Woorden van Jezus benadrukken</translation>
+        <translation type="obsolete">Woorden van Jezus benadrukken</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="120"/>
         <source>Show Hebrew vowel points</source>
-        <translation>Toon Hebreeuwse klinkerpunten</translation>
+        <translation type="obsolete">Toon Hebreeuwse klinkerpunten</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="123"/>
         <source>Show Hebrew cantillation marks</source>
-        <translation>Toon Hebreeuwse intonatietekens</translation>
+        <translation type="obsolete">Toon Hebreeuwse intonatietekens</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="126"/>
         <source>Show Greek accents</source>
-        <translation>Toon Griekse accenten</translation>
+        <translation type="obsolete">Toon Griekse accenten</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="129"/>
         <source>Use alternative textual variant</source>
-        <translation>Alternatieve tekstuele variant gebruiken</translation>
+        <translation type="obsolete">Alternatieve tekstuele variant gebruiken</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="132"/>
         <source>Show scripture cross-references</source>
-        <translation>Toon bijbelse kruisverwijzingen</translation>
+        <translation type="obsolete">Toon bijbelse kruisverwijzingen</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="135"/>
         <source>Show morph segmentation</source>
-        <translation>Toon morfologische segmentatie</translation>
+        <translation type="obsolete">Toon morfologische segmentatie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="112"/>
         <source>Show verse numbers</source>
-        <translation>Toon versnummers</translation>
+        <translation type="obsolete">Toon versnummers</translation>
     </message>
 </context>
 <context>
@@ -1737,22 +1787,22 @@ sneltoets</translation>
 <context>
     <name>CDisplayWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="127"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="121"/>
         <source>Back in history</source>
         <translation>Terug in de historie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="135"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="129"/>
         <source>Forward in history</source>
         <translation>Vooruit in de historie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="96"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="90"/>
         <source>Zoom in</source>
         <translation>Zoom in</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="100"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="94"/>
         <source>Zoom out</source>
         <translation>Zoom uit</translation>
     </message>
@@ -1761,47 +1811,47 @@ sneltoets</translation>
         <translation type="obsolete">Sluiten</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="104"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="98"/>
         <source>Select all</source>
         <translation>Selecteer alles</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="108"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="102"/>
         <source>Copy</source>
         <translation>Kopiëren</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="112"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="106"/>
         <source>Find...</source>
         <translation>Zoeken...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="116"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="110"/>
         <source>Change location</source>
         <translation>Wijzig locatie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="121"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="115"/>
         <source>Search with works of this window</source>
         <translation>Zoeken in modules van dit venster</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="332"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="295"/>
         <source>Work chooser buttons</source>
         <translation>Module selectieknoppen</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="342"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="305"/>
         <source>Text area header</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="400"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="351"/>
         <source>Navigation</source>
         <translation>Navigatie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="409"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="360"/>
         <source>Tools</source>
         <translatorcomment>In a menu, this is usually translated as &quot;Extra&quot;, but I guess this is really about a set of tools, not a menu item.</translatorcomment>
         <translation>Hulpmiddelen</translation>
@@ -2114,34 +2164,34 @@ sneltoets</translation>
         <translation>Invoer als platte tekst</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="223"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="224"/>
         <source>Lexicon window</source>
         <translation>Lexicon-venster</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="230"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="231"/>
         <source>Copy...</source>
         <translation>Kopiëren...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="239"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="240"/>
         <source>Save...</source>
         <translation>Opslaan...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="255"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="256"/>
         <source>Print...</source>
         <translation>Afdrukken...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="298"/>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="328"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="299"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="329"/>
         <source>Saving entry ...</source>
         <translation>Bezig met opslaan van invoer ...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="298"/>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="328"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="299"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="329"/>
         <source>Saving</source>
         <translation>Bezig met opslaan</translation>
     </message>

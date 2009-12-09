@@ -551,6 +551,57 @@
     </message>
 </context>
 <context>
+    <name>BtDisplaySettingsButton</name>
+    <message>
+        <source>Use linebreaks after each verse</source>
+        <translation type="unfinished">Zeilenumbruch nach jedem Vers</translation>
+    </message>
+    <message>
+        <source>Show verse numbers</source>
+        <translation type="unfinished">Versnummern anzeigen</translation>
+    </message>
+    <message>
+        <source>Show headings</source>
+        <translation type="unfinished">Überschriften anzeigen</translation>
+    </message>
+    <message>
+        <source>Highlight words of Jesus</source>
+        <translation type="unfinished">Worte Jesu hervorheben</translation>
+    </message>
+    <message>
+        <source>Show Hebrew vowel points</source>
+        <translation type="unfinished">Hebräische Vokalzeichen anzeigen</translation>
+    </message>
+    <message>
+        <source>Show Hebrew cantillation marks</source>
+        <translation type="unfinished">Hebräische Kantillationszeichen anzeigen</translation>
+    </message>
+    <message>
+        <source>Show Greek accents</source>
+        <translation type="unfinished">Griechische Akzente anzeigen</translation>
+    </message>
+    <message>
+        <source>Use alternative textual variant</source>
+        <translation type="unfinished">Alternative Textvarianten verwenden</translation>
+    </message>
+    <message>
+        <source>Show scripture cross-references</source>
+        <translation type="unfinished">Querverweise auf Bibelstellen anzeigen</translation>
+    </message>
+    <message>
+        <source>Show morph segmentation</source>
+        <translation type="unfinished">Morphologische Segmentierung anzeigen</translation>
+    </message>
+    <message>
+        <source>Display settings</source>
+        <translation type="unfinished">Anzeigeeinstellungen</translation>
+    </message>
+    <message>
+        <source>Display settings: No options available</source>
+        <translation type="unfinished">Anzeigeeinstellungen. Keine Einstellungen verfügbar</translation>
+    </message>
+</context>
+<context>
     <name>BtIndexPage</name>
     <message>
         <source>If selected, those indexes which have no corresponding work will be deleted when BibleTime starts</source>
@@ -1261,55 +1312,55 @@ shortcut</source>
     <name>CDisplaySettingsButton</name>
     <message>
         <source>Display settings: No options available</source>
-        <translation>Anzeigeeinstellungen. Keine Einstellungen verfügbar</translation>
+        <translation type="obsolete">Anzeigeeinstellungen. Keine Einstellungen verfügbar</translation>
     </message>
     <message>
         <source>Display settings</source>
-        <translation>Anzeigeeinstellungen</translation>
+        <translation type="obsolete">Anzeigeeinstellungen</translation>
     </message>
     <message>
         <source>Display options</source>
-        <translation>Anzeigeeinstellungen</translation>
+        <translation type="obsolete">Anzeigeeinstellungen</translation>
     </message>
     <message>
         <source>Use linebreaks after each verse</source>
-        <translation>Zeilenumbruch nach jedem Vers</translation>
+        <translation type="obsolete">Zeilenumbruch nach jedem Vers</translation>
     </message>
     <message>
         <source>Show headings</source>
-        <translation>Überschriften anzeigen</translation>
+        <translation type="obsolete">Überschriften anzeigen</translation>
     </message>
     <message>
         <source>Highlight words of Jesus</source>
-        <translation>Worte Jesu hervorheben</translation>
+        <translation type="obsolete">Worte Jesu hervorheben</translation>
     </message>
     <message>
         <source>Show Hebrew vowel points</source>
-        <translation>Hebräische Vokalzeichen anzeigen</translation>
+        <translation type="obsolete">Hebräische Vokalzeichen anzeigen</translation>
     </message>
     <message>
         <source>Show Hebrew cantillation marks</source>
-        <translation>Hebräische Kantillationszeichen anzeigen</translation>
+        <translation type="obsolete">Hebräische Kantillationszeichen anzeigen</translation>
     </message>
     <message>
         <source>Show Greek accents</source>
-        <translation>Griechische Akzente anzeigen</translation>
+        <translation type="obsolete">Griechische Akzente anzeigen</translation>
     </message>
     <message>
         <source>Use alternative textual variant</source>
-        <translation>Alternative Textvarianten verwenden</translation>
+        <translation type="obsolete">Alternative Textvarianten verwenden</translation>
     </message>
     <message>
         <source>Show scripture cross-references</source>
-        <translation>Querverweise auf Bibelstellen anzeigen</translation>
+        <translation type="obsolete">Querverweise auf Bibelstellen anzeigen</translation>
     </message>
     <message>
         <source>Show morph segmentation</source>
-        <translation>Morphologische Segmentierung anzeigen</translation>
+        <translation type="obsolete">Morphologische Segmentierung anzeigen</translation>
     </message>
     <message>
         <source>Show verse numbers</source>
-        <translation>Versnummern anzeigen</translation>
+        <translation type="obsolete">Versnummern anzeigen</translation>
     </message>
 </context>
 <context>

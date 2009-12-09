@@ -551,6 +551,57 @@
     </message>
 </context>
 <context>
+    <name>BtDisplaySettingsButton</name>
+    <message>
+        <source>Use linebreaks after each verse</source>
+        <translation type="unfinished">Zalomit řádek po každém verši</translation>
+    </message>
+    <message>
+        <source>Show verse numbers</source>
+        <translation type="unfinished">Zobrazit čísla veršů</translation>
+    </message>
+    <message>
+        <source>Show headings</source>
+        <translation type="unfinished">Zobrazit nadpisy</translation>
+    </message>
+    <message>
+        <source>Highlight words of Jesus</source>
+        <translation type="unfinished">Zvýraznit Ježíšova slova</translation>
+    </message>
+    <message>
+        <source>Show Hebrew vowel points</source>
+        <translation type="unfinished">Zobrazit hebrejské značky samohlásek</translation>
+    </message>
+    <message>
+        <source>Show Hebrew cantillation marks</source>
+        <translation type="unfinished">Zobrazit hebrejské značky přízvuku</translation>
+    </message>
+    <message>
+        <source>Show Greek accents</source>
+        <translation type="unfinished">Zobrazit řecké značky přízvuku</translation>
+    </message>
+    <message>
+        <source>Use alternative textual variant</source>
+        <translation type="unfinished">Použít alternativní varianty textu</translation>
+    </message>
+    <message>
+        <source>Show scripture cross-references</source>
+        <translation type="unfinished">Ukázat odkaz v Bibli</translation>
+    </message>
+    <message>
+        <source>Show morph segmentation</source>
+        <translation type="unfinished">Ukázat morfologické dělení</translation>
+    </message>
+    <message>
+        <source>Display settings</source>
+        <translation type="unfinished">Nastavení zobrazení</translation>
+    </message>
+    <message>
+        <source>Display settings: No options available</source>
+        <translation type="unfinished">Zobrazit nastavení: Žádné volby k dispozici</translation>
+    </message>
+</context>
+<context>
     <name>BtIndexPage</name>
     <message>
         <source>If selected, those indexes which have no corresponding work will be deleted when BibleTime starts</source>
@@ -1261,55 +1312,55 @@ shortcut</source>
     <name>CDisplaySettingsButton</name>
     <message>
         <source>Display settings: No options available</source>
-        <translation>Zobrazit nastavení: Žádné volby k dispozici</translation>
+        <translation type="obsolete">Zobrazit nastavení: Žádné volby k dispozici</translation>
     </message>
     <message>
         <source>Display settings</source>
-        <translation>Nastavení zobrazení</translation>
+        <translation type="obsolete">Nastavení zobrazení</translation>
     </message>
     <message>
         <source>Display options</source>
-        <translation>Volby zobrazení</translation>
+        <translation type="obsolete">Volby zobrazení</translation>
     </message>
     <message>
         <source>Use linebreaks after each verse</source>
-        <translation>Zalomit řádek po každém verši</translation>
+        <translation type="obsolete">Zalomit řádek po každém verši</translation>
     </message>
     <message>
         <source>Show headings</source>
-        <translation>Zobrazit nadpisy</translation>
+        <translation type="obsolete">Zobrazit nadpisy</translation>
     </message>
     <message>
         <source>Highlight words of Jesus</source>
-        <translation>Zvýraznit Ježíšova slova</translation>
+        <translation type="obsolete">Zvýraznit Ježíšova slova</translation>
     </message>
     <message>
         <source>Show Hebrew vowel points</source>
-        <translation>Zobrazit hebrejské značky samohlásek</translation>
+        <translation type="obsolete">Zobrazit hebrejské značky samohlásek</translation>
     </message>
     <message>
         <source>Show Hebrew cantillation marks</source>
-        <translation>Zobrazit hebrejské značky přízvuku</translation>
+        <translation type="obsolete">Zobrazit hebrejské značky přízvuku</translation>
     </message>
     <message>
         <source>Show Greek accents</source>
-        <translation>Zobrazit řecké značky přízvuku</translation>
+        <translation type="obsolete">Zobrazit řecké značky přízvuku</translation>
     </message>
     <message>
         <source>Use alternative textual variant</source>
-        <translation>Použít alternativní varianty textu</translation>
+        <translation type="obsolete">Použít alternativní varianty textu</translation>
     </message>
     <message>
         <source>Show scripture cross-references</source>
-        <translation>Ukázat odkaz v Bibli</translation>
+        <translation type="obsolete">Ukázat odkaz v Bibli</translation>
     </message>
     <message>
         <source>Show morph segmentation</source>
-        <translation>Ukázat morfologické dělení</translation>
+        <translation type="obsolete">Ukázat morfologické dělení</translation>
     </message>
     <message>
         <source>Show verse numbers</source>
-        <translation>Zobrazit čísla veršů</translation>
+        <translation type="obsolete">Zobrazit čísla veršů</translation>
     </message>
 </context>
 <context>
