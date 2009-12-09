@@ -7,6 +7,7 @@
 if [ ! -d build ]; then mkdir build; fi
 cd build
 cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=/usr/local ..  || exit 1
+make clean
 make -j4 install || exit 1
 cd ..
 
