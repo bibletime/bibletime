@@ -1024,9 +1024,9 @@ orizzontalmente</guimenuitem> </menuchoice> </link> equivalent.
             </entry>
 
             <entry>
-	      <link linkend="hdbk-reference-menus-window-tile"> <menuchoice> 
-<guimenu>Window</guimenu> <guimenuitem>Tile</guimenuitem> </menuchoice> 
-</link> windows equivalent.
+	      <link linkend="hdbk-reference-menus-window-cascade"> <menuchoice> 
+<guimenu>Finestra</guimenu> <guimenuitem>Cascata</guimenuitem> </menuchoice> 
+</link> finestre equivalent.
             </entry>
           </row>
 

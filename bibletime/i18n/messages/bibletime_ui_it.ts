@@ -34,7 +34,7 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="260"/>
         <source>Se&amp;ttings</source>
-        <translation>Im&amp;postazioni</translation>
+        <translation>&amp;Impostazioni</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="261"/>
@@ -89,27 +89,27 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="301"/>
         <source>Text windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Finestre testo</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="304"/>
         <source>Show text area headers</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra intestazioni area testo</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="310"/>
         <source>Show navigation</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra navigazione</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="316"/>
         <source>Show work chooser buttons</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra pulsanti scelta documento</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="322"/>
         <source>Show tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra strumenti</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="344"/>
@@ -244,12 +244,12 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="154"/>
         <source>Auto-&amp;tile</source>
-        <translation type="unfinished"></translation>
+        <translation>Au&amp;to-affianca</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="157"/>
         <source>Automatically tile the open windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Affianca automaticamente le finestre aperte</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="164"/>
@@ -264,12 +264,12 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="175"/>
         <source>&amp;Tile</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Affianca</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="178"/>
         <source>Tile the open windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Affianca le finestre aperte</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="185"/>
@@ -704,62 +704,62 @@
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="99"/>
         <source>Use linebreaks after each verse</source>
-        <translation type="unfinished">Usa interruzione di riga dopo ciascun versetto</translation>
+        <translation>Usa interruzione di riga dopo ciascun versetto</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="100"/>
         <source>Show verse numbers</source>
-        <translation type="unfinished">Mostra i numeri dei versetti</translation>
+        <translation>Mostra i numeri dei versetti</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="101"/>
         <source>Show headings</source>
-        <translation type="unfinished">Mostra le intestazioni</translation>
+        <translation>Mostra le intestazioni</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="102"/>
         <source>Highlight words of Jesus</source>
-        <translation type="unfinished">Parole di Gesú evidenziate</translation>
+        <translation>Parole di Gesú evidenziate</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="103"/>
         <source>Show Hebrew vowel points</source>
-        <translation type="unfinished">Mostra la punteggiatura vocale ebrea</translation>
+        <translation>Mostra la punteggiatura vocale Ebraica</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="104"/>
         <source>Show Hebrew cantillation marks</source>
-        <translation type="unfinished">Mostra i segni di cantillazione ebraica</translation>
+        <translation>Mostra i segni di cantillazione Ebraica</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="105"/>
         <source>Show Greek accents</source>
-        <translation type="unfinished">Mostra gli accenti greci</translation>
+        <translation>Mostra gli accenti Greci</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="106"/>
         <source>Use alternative textual variant</source>
-        <translation type="unfinished">Usa le varianti di testo alternative</translation>
+        <translation>Usa le varianti di testo alternative</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="107"/>
         <source>Show scripture cross-references</source>
-        <translation type="unfinished">Mostra i riferimenti incrociati</translation>
+        <translation>Mostra i riferimenti incrociati</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="108"/>
         <source>Show morph segmentation</source>
-        <translation type="unfinished">Mostra la segmentazione morfologica</translation>
+        <translation>Mostra la segmentazione morfologica</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="115"/>
         <source>Display settings</source>
-        <translation type="unfinished">Impostazioni di visualizzazione</translation>
+        <translation>Impostazioni di visualizzazione</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="118"/>
         <source>Display settings: No options available</source>
-        <translation type="unfinished">Impostazioni di visualizzazione: Nessuna opzione disponibile</translation>
+        <translation>Impostazioni di visualizzazione: Nessuna opzione disponibile</translation>
     </message>
 </context>
 <context>
