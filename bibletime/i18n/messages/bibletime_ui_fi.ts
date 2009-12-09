@@ -704,62 +704,62 @@
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="99"/>
         <source>Use linebreaks after each verse</source>
-        <translation type="unfinished">Käytä rivinvaihtoja jakeiden perässä</translation>
+        <translation>Käytä rivinvaihtoja jakeiden perässä</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="100"/>
         <source>Show verse numbers</source>
-        <translation type="unfinished">Näytä jaenumerot</translation>
+        <translation>Näytä jaenumerot</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="101"/>
         <source>Show headings</source>
-        <translation type="unfinished">Näytä otsikot</translation>
+        <translation>Näytä otsikot</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="102"/>
         <source>Highlight words of Jesus</source>
-        <translation type="unfinished">Korosta Jeesuksen sanat</translation>
+        <translation>Korosta Jeesuksen sanat</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="103"/>
         <source>Show Hebrew vowel points</source>
-        <translation type="unfinished">Näytä heprean vokaalipisteet</translation>
+        <translation>Näytä heprean vokaalipisteet</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="104"/>
         <source>Show Hebrew cantillation marks</source>
-        <translation type="unfinished">Näytä heprean kantillaatiomerkit</translation>
+        <translation>Näytä heprean kantillaatiomerkit</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="105"/>
         <source>Show Greek accents</source>
-        <translation type="unfinished">Näytä kreikan korkomerkit</translation>
+        <translation>Näytä kreikan korkomerkit</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="106"/>
         <source>Use alternative textual variant</source>
-        <translation type="unfinished">Käytä vaihtoehtoisia tekstivariantteja</translation>
+        <translation>Käytä vaihtoehtoisia tekstivariantteja</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="107"/>
         <source>Show scripture cross-references</source>
-        <translation type="unfinished">Näytä kirjoitusten ristiviitteet</translation>
+        <translation>Näytä kirjoitusten ristiviitteet</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="108"/>
         <source>Show morph segmentation</source>
-        <translation type="unfinished">Näytä morfologinen segmentointi</translation>
+        <translation>Näytä morfologinen segmentointi</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="115"/>
         <source>Display settings</source>
-        <translation type="unfinished">Näyttöasetukset</translation>
+        <translation>Näyttöasetukset</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="118"/>
         <source>Display settings: No options available</source>
-        <translation type="unfinished">Näyttöasetukset: Ei määrityksiä saatavilla</translation>
+        <translation>Näyttöasetukset: Ei määrityksiä saatavilla</translation>
     </message>
 </context>
 <context>
