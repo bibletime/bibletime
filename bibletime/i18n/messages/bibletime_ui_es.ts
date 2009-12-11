@@ -802,7 +802,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="88"/>
         <source>Create new search indexes and delete created indexes for the installed works.</source>
-        <translation>Crear nuevos índices de busqueda y eliminar índices creados para los trabajos instalados</translation>
+        <translation>Crear nuevos índices de búsqueda y eliminar índices creados para los trabajos instalados</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="94"/>
@@ -1758,7 +1758,7 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="145"/>
         <source>For everyone who does evil hates the light, and doesn&apos;t come to the light, lest his works would be exposed.</source>
-        <translation>Porque todo aquel que hace lo malo, aborrece la luz y no viene á la luz, porque sus obras no sean redargìŒidas.</translation>
+        <translation>Porque todo aquel que hace lo malo, aborrece la luz y no viene á la luz, porque sus obras no sean redargìidas.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="150"/>
@@ -2154,7 +2154,7 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="77"/>
         <source>Strong&apos;s Search</source>
-        <translation>Busqueda en Strong</translation>
+        <translation>búsqueda en Strong</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="68"/>
@@ -2800,7 +2800,7 @@ Deseas continuar?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="199"/>
         <source>Chontal, Highland Oaxaca</source>
         <extracomment>Language name chd</extracomment>
-        <translation></translation>
+        <translation>Chontal, Altas Oaxaca</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="201"/>
@@ -4056,7 +4056,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="112"/>
         <source>Choose works for the search</source>
-        <translation>Escoja</translation>
+        <translation>Selecciona trabajos para la búsqueda</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="115"/>
@@ -4071,7 +4071,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="138"/>
         <source> (&lt;a href=&apos;syntax_help&apos;&gt;full syntax&lt;/a&gt;)</source>
-        <translation></translation>
+        <translation> (&lt;a href=&apos;syntax_help&apos;&gt;full syntax&lt;/a&gt;)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="149"/>
@@ -4121,27 +4121,27 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="132"/>
         <source>Free</source>
-        <translation>L</translation>
+        <translation>Libre</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="135"/>
         <source>Some of the words (OR is added between the words)</source>
-        <translation></translation>
+        <translation>Algunas de las palabras (O es agregado entre las palabras)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="136"/>
         <source>Full lucene syntax</source>
-        <translation></translation>
+        <translation>Sintaxis Lucena Completa</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="139"/>
         <source>Click the link to get help for search syntax</source>
-        <translation></translation>
+        <translation>Haz Click en el enlace para obtener ayuda para la sintaxis de búsqueda</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="160"/>
         <source>Choose the scope (books/chapters/verses to search in).&lt;br /&gt;Applicable for Bibles and commentaries.</source>
-        <translation></translation>
+        <translation>Selecciona el criterio (libros/capitulos/versiculos donde buscar).&lt;br /&gt;Aplicable en biblias y comentarios.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="352"/>
@@ -4204,7 +4204,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="436"/>
         <source>Search Syntax Help</source>
-        <translation></translation>
+        <translation>Buscar ayuda con sintaxis</translation>
     </message>
 </context>
 <context>
@@ -4212,7 +4212,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="87"/>
         <source>Text of the selected search result item</source>
-        <translation></translation>
+        <translation>Texto del elemento de la búsqueda seleccionada</translation>
     </message>
 </context>
 <context>
@@ -4220,7 +4220,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="52"/>
         <source>Work</source>
-        <translation>trabajo</translation>
+        <translation>Trabajo</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="52"/>
@@ -4271,7 +4271,7 @@ Language name ppk</extracomment>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="259"/>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="268"/>
         <source>Save search result...</source>
-        <translation>Guardar resulto de búsqueda</translation>
+        <translation>Guardar resultado de búsqueda</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="259"/>
@@ -4282,17 +4282,17 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="277"/>
         <source>Print search result...</source>
-        <translation>Imprimir resultos de las búsqueda...</translation>
+        <translation>Imprimir resultados de la búsqueda...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="277"/>
         <source>Printing search result</source>
-        <translation>Imprimiendo resultos de búsqueda</translation>
+        <translation>Imprimiendo resultados de búsqueda</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="51"/>
         <source>Works chosen for the search and the number of the hits in each work</source>
-        <translation></translation>
+        <translation>Trabajos escogidos para la búsqueda y el numero de coincidencias en cada trabajo</translation>
     </message>
 </context>
 <context>
@@ -4300,47 +4300,47 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="92"/>
         <source>S&amp;earch range:</source>
-        <translation></translation>
+        <translation>Rango de B&amp;úsqueda:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="112"/>
         <source>&amp;Name:</source>
-        <translation></translation>
+        <translation>Nombre</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="120"/>
         <source>Edi&amp;t current range:</source>
-        <translation></translation>
+        <translation>Edi&amp;tar rango actual:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="128"/>
         <source>Parsed search range:</source>
-        <translation>Gama de búsqueda procesada</translation>
+        <translation>Rango de búsqueda procesada</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="184"/>
         <source>New range</source>
-        <translation>Gama nueva</translation>
+        <translation>Rango nuevo</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="257"/>
         <source>&lt;invalid name of search range&gt;</source>
-        <translation>&lt;nombre invalido de gama de búsqueda&gt;</translation>
+        <translation>&lt;nombre invalido de rango de búsqueda&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="96"/>
         <source>Select a scope from the list to edit the search ranges</source>
-        <translation></translation>
+        <translation>Selecciona un criterio de la lista para editar los rangos de búsqueda</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="100"/>
         <source>&amp;Add new scope</source>
-        <translation></translation>
+        <translation>&gt;&amp;Agregar nuevo criterio</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="101"/>
         <source>Add a new search scope. First enter an appropriate name, then edit the search ranges.</source>
-        <translation>Agragar un nuevo criterio de búsqueda.  Primero introduce un nombre apropriado, luego edita los rangos de búsqueda.</translation>
+        <translation>Agregar un nuevo criterio de búsqueda.  Primero gresa un nombre apropiado, luego edita los rangos de búsqueda.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="103"/>
