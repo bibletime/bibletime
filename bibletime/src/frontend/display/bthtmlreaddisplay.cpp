@@ -198,6 +198,8 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType format, const CD
 
 // Puts html text and javascript into QWebView
 void BtHtmlReadDisplay::setText( const QString& newText ) {
+	this->currentSource = newText;
+
     QString jsText = newText;
 
     jsText.replace(body, jsBegin + javascript + jsEnd + body);
@@ -210,6 +212,10 @@ void BtHtmlReadDisplay::setText( const QString& newText ) {
 
     // Send text to the html viewer
     m_view->setHtml(jsText);
+}
+
+QString BtHtmlReadDisplay::getCurrentSource( ) {
+	return this->currentSource;
 }
 
 // See if any text is selected

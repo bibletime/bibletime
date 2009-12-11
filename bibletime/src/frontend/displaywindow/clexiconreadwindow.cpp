@@ -312,7 +312,7 @@ void CLexiconReadWindow::saveRawHTML() {
             qDebug() << "could not open file";
             return;
         }
-        QString source = disp->text();
+        QString source = disp->getCurrentSource();
         file.write(source.toUtf8());
         //qDebug() << "wrote" << bytes << "bytes";
         file.close();

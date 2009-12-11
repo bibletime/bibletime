@@ -45,6 +45,9 @@ class BtHtmlReadDisplay : public QWebPage, public CReadDisplay {
 
         // Sets the new text for this display widget.
         virtual void setText( const QString& newText );
+        // Get the current source
+        virtual QString getCurrentSource();
+
         virtual bool hasSelection();
 
         // Reimplementation.
@@ -80,6 +83,8 @@ class BtHtmlReadDisplay : public QWebPage, public CReadDisplay {
             } dragType;
         }
         m_dndData;
+
+        QString currentSource;
 
         QMap<NodeInfoType, QString> m_nodeInfo;
         int m_magTimerId;
