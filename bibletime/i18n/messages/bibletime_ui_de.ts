@@ -264,39 +264,39 @@
     </message>
     <message>
         <source>Auto-&amp;tile</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatisch &amp;kacheln</translation>
     </message>
     <message>
         <source>Automatically tile the open windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Die offenen Fenster automatisch kacheln</translation>
     </message>
     <message>
         <source>&amp;Tile</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Kacheln</translation>
     </message>
     <message>
         <source>Tile the open windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Die offenen Fenster kacheln</translation>
     </message>
     <message>
         <source>Text windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Textfenster</translation>
     </message>
     <message>
         <source>Show text area headers</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopfzeile für Textbereich anzeigen</translation>
     </message>
     <message>
         <source>Show navigation</source>
-        <translation type="unfinished"></translation>
+        <translation>Navigation anzeigen</translation>
     </message>
     <message>
         <source>Show work chooser buttons</source>
-        <translation type="unfinished"></translation>
+        <translation>Knöpfe zum Auswählen von Werken anzeigen</translation>
     </message>
     <message>
         <source>Show tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Werkzeuge anzeigen</translation>
     </message>
 </context>
 <context>
@@ -554,51 +554,51 @@
     <name>BtDisplaySettingsButton</name>
     <message>
         <source>Use linebreaks after each verse</source>
-        <translation type="unfinished">Zeilenumbruch nach jedem Vers</translation>
+        <translation>Zeilenumbruch nach jedem Vers verwenden</translation>
     </message>
     <message>
         <source>Show verse numbers</source>
-        <translation type="unfinished">Versnummern anzeigen</translation>
+        <translation>Versnummern anzeigen</translation>
     </message>
     <message>
         <source>Show headings</source>
-        <translation type="unfinished">Überschriften anzeigen</translation>
+        <translation>Überschriften anzeigen</translation>
     </message>
     <message>
         <source>Highlight words of Jesus</source>
-        <translation type="unfinished">Worte Jesu hervorheben</translation>
+        <translation>Worte Jesu hervorheben</translation>
     </message>
     <message>
         <source>Show Hebrew vowel points</source>
-        <translation type="unfinished">Hebräische Vokalzeichen anzeigen</translation>
+        <translation>Hebräische Vokalzeichen anzeigen</translation>
     </message>
     <message>
         <source>Show Hebrew cantillation marks</source>
-        <translation type="unfinished">Hebräische Kantillationszeichen anzeigen</translation>
+        <translation>Hebräische Kantillationszeichen anzeigen</translation>
     </message>
     <message>
         <source>Show Greek accents</source>
-        <translation type="unfinished">Griechische Akzente anzeigen</translation>
+        <translation>Griechische Akzente anzeigen</translation>
     </message>
     <message>
         <source>Use alternative textual variant</source>
-        <translation type="unfinished">Alternative Textvarianten verwenden</translation>
+        <translation>Alternative Textvarianten verwenden</translation>
     </message>
     <message>
         <source>Show scripture cross-references</source>
-        <translation type="unfinished">Querverweise auf Bibelstellen anzeigen</translation>
+        <translation>Querverweise auf Bibelstellen anzeigen</translation>
     </message>
     <message>
         <source>Show morph segmentation</source>
-        <translation type="unfinished">Morphologische Segmentierung anzeigen</translation>
+        <translation>Morphologische Segmentierung anzeigen</translation>
     </message>
     <message>
         <source>Display settings</source>
-        <translation type="unfinished">Anzeigeeinstellungen</translation>
+        <translation>Anzeigeeinstellungen</translation>
     </message>
     <message>
         <source>Display settings: No options available</source>
-        <translation type="unfinished">Anzeigeeinstellungen. Keine Einstellungen verfügbar</translation>
+        <translation>Anzeigeeinstellungen: keine Einstellungen verfügbar</translation>
     </message>
 </context>
 <context>
@@ -820,15 +820,15 @@
     <name>BtModuleChooserButton</name>
     <message>
         <source>Select a work [%1]</source>
-        <translation type="unfinished"></translation>
+        <translation>Ein Werk auswählen [%1]</translation>
     </message>
     <message>
         <source>Select an additional work</source>
-        <translation type="unfinished">Zusätzliches Werk auswählen</translation>
+        <translation>Ein zusätzliches Werk auswählen</translation>
     </message>
     <message>
         <source>NONE</source>
-        <translation type="unfinished">NICHTS</translation>
+        <translation>NICHTS</translation>
     </message>
 </context>
 <context>
@@ -873,11 +873,11 @@
     <name>BtRemovePageTreeModel</name>
     <message>
         <source>Work</source>
-        <translation type="unfinished">Werk</translation>
+        <translation>Werk</translation>
     </message>
     <message>
         <source>Install path</source>
-        <translation type="unfinished">Installationspfad</translation>
+        <translation>Installationspfad</translation>
     </message>
 </context>
 <context>
@@ -1047,19 +1047,19 @@ shortcut</source>
     <name>BtTextWindowHeaderWidget</name>
     <message>
         <source>Add/remove/replace</source>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen/entfernen/ersetzen</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished">Entfernen</translation>
+        <translation>Entfernen</translation>
     </message>
     <message>
         <source>Replace</source>
-        <translation type="unfinished"></translation>
+        <translation>Ersetzen</translation>
     </message>
     <message>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen</translation>
     </message>
 </context>
 <context>
@@ -1466,19 +1466,19 @@ shortcut</source>
     </message>
     <message>
         <source>Work chooser buttons</source>
-        <translation type="unfinished"></translation>
+        <translation>Knopf für Werkauswahl</translation>
     </message>
     <message>
         <source>Navigation</source>
-        <translation type="unfinished"></translation>
+        <translation>Navigation</translation>
     </message>
     <message>
         <source>Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Werkzeuge</translation>
     </message>
     <message>
         <source>Text area header</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopfleiste für Textbereich</translation>
     </message>
 </context>
 <context>
@@ -2000,41 +2000,43 @@ shortcut</source>
     </message>
     <message>
         <source>Get list...</source>
-        <translation type="unfinished"></translation>
+        <translation>Liste holen...</translation>
     </message>
     <message>
         <source>Get source list from remote server?</source>
-        <translation type="unfinished"></translation>
+        <translation>Quellenliste vom Server holen?</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Abbrechen</translation>
+        <translation>Abbrechen</translation>
     </message>
     <message>
         <source>Downloading List</source>
-        <translation type="unfinished"></translation>
+        <translation>Liste wird heruntergeladen</translation>
     </message>
     <message>
         <source>Connecting...</source>
-        <translation type="unfinished">Verbinde...</translation>
+        <translation>Verbinde...</translation>
     </message>
     <message>
         <source>Refreshing...</source>
-        <translation type="unfinished">Aktualisiere...</translation>
+        <translation>Aktualisiere...</translation>
     </message>
     <message>
         <source>Download a list of sources from CrossWire server and add sources</source>
-        <translation type="unfinished"></translation>
+        <translation>Eine Liste von Quellen von Crosswire herunterladen und weitere Quellen hinzufügen</translation>
     </message>
     <message>
         <source>List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don&apos;t want to keep.
 
 Do you want to continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Quellenliste wird von einem entfernten Server heruntergeladen. Die Quellen werden zur aktuellen Liste hinzugefügt. Eine neue Quelle wird eine alte ersetzen, wenn sie die gleiche Bezeichnung hat. Anschließend können sie nicht benötigte Quellen entfernen.
+
+Möchten Sie fortfahren?</translation>
     </message>
     <message>
         <source>A source with this caption already exists.  Please provide a different caption.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eine neue Quelle mit dieser Bezeichnung existiert bereits. Bitte geben Sie eine andere Bezeichnung ein.</translation>
     </message>
 </context>
 <context>
@@ -3135,11 +3137,11 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Indexed works</source>
-        <translation type="unfinished"></translation>
+        <translation>Werke mit Indexen</translation>
     </message>
     <message>
         <source>Unindexed works</source>
-        <translation type="unfinished"></translation>
+        <translation>Nicht indizierte Werke</translation>
     </message>
 </context>
 <context>
