@@ -20,7 +20,7 @@
 ]>
 <book>
 <bookinfo>
-  <title>The &bibletime; Handbook</title>
+  <title>Příručka &bibletime;</title>
 
   <authorgroup>
     <author>
@@ -44,11 +44,11 @@
   <!-- TRANS:ROLES_OF_TRANSLATORS -->
 <copyright>
     <year>1999-2009</year>
-    <holder>The &bibletime; Team</holder>
+    <holder>Tým &bibletime;</holder>
   </copyright>
 
   <legalnotice>
-    <para>The &bibletime; Handbook is part of the &bibletime; study aid.</para>
+    <para>Příručka &bibletime; je součástí &bibletime; studijní nápovědy.</para>
   </legalnotice>
 
   <date>$LastChangedDate: 2009-11-18 13:30:32 -0500 (Wed, 18 Nov 2009) $</date>
@@ -56,7 +56,7 @@
   <releaseinfo>2.5</releaseinfo>
 
   <abstract>
-    <para>&bibletime; is a Bible study tool based on the &sword; framework.</para>
+    <para>&bibletime; je nástroj pro studium Bible založený na frameworku &sword;.</para>
   </abstract>
 
   <keywordset>

@@ -52,28 +52,27 @@ existující okno, které se přesune na požadované umístění.</para>
       <sect3 id="hdbk-op-parts-bookshelf-metainfo">
         <title>Další informace o dílech</title>
 
-        <para>If you click with the <mousebutton>right</mousebutton> mouse button on the 
-symbol of a work, you will see a menu with additional entries that are 
-relevant for this work.  <guimenuitem>"About this work"</guimenuitem> opens 
-a window with lots of interesting information about the selected work.  
-<guimenuitem>"Unlock this work"</guimenuitem> opens a small dialog for 
-encrypted documents, where you can enter the unlock key to access the 
-work. For additional information on locked works, please see the <ulink 
-url="http://www.crosswire.org/sword/modules/aboutlocked.jsp"> Locked 
-Modules</ulink> page on the &cbs; web site.</para>
+        <para>Pokud kliknete <mousebutton>pravým</mousebutton> tlačítkem myši na symbol 
+díla, objeví se nabídka s dalšími možnostmi, které jsou relevantní pro toto 
+dílo. <guimenuitem>"O tomto díle"</guimenuitem>otevře okno s mnoha 
+zajímavými informacemi o zvoleném díle. <guimenuitem>"Odemknout toto 
+dílo"</guimenuitem> otevře malý dialog pro zašifrované dokumenty, kde můžete 
+vložit přístupový kód k otevření díla. Pro další informace o zamčených 
+dílech se podívejte na <ulink 
+url="http://www.crosswire.org/sword/modules/aboutlocked.jsp"> Zamčené 
+moduly</ulink> na webu &cbs;.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-bookshelf-search">
         <title>Vyhledávání v dílech</title>
 
-        <para>You can search in a work by clicking with the 
-<mousebutton>right</mousebutton> mouse button on its symbol and selecting 
-<guimenuitem>"Search in work(s)"</guimenuitem>. By pressing &Shift; and 
-clicking on other works you can select more than one. Then follow the same 
-procedure to open the search dialog. You will be searching in all of these 
-documents. A complete description of the operation of the search features 
-can be found on the <link linkend="hdbk-op-search">Searching in Works 
-section</link>.</para>
+        <para>Vyhledávat v díle můžete kliknutím <mousebutton>pravým</mousebutton> 
+tlačítkem myši na jeho symbol a vybráním položky<guimenuitem>"Hledat v 
+díle(ch)"</guimenuitem>. Stiskem klávesy &Shift; a kliknutím na další díla 
+můžete vybrat více než jedno. Poté následuje stejný proces s otevřením 
+vyhledávacího dialogu. Budete vyhledávat ve všech těchto 
+dokumentech. Kompletní popis obsluhy vyhledávacích funkcí naleznete v sekci 
+<link linkend="hdbk-op-search">Vyhledávání v dílech</link>.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-bookshelf-bookmarks">
@@ -142,10 +141,9 @@ funguje to.</para>
       <sect3 id="hdbk-op-parts-desk-write">
         <title>Úpravy vašich vlastních komentářů</title>
 
-        <para>To be able to store your own comments about parts of the Bible, you have 
-install a certain work from the library of the <ulink 
-url="http://www.crosswire.org">&cbs;</ulink>.  This work is called "Personal 
-commentary".</para>
+        <para>Aby jste mohli ukládat vlastní komentáře částí Bible, musíte nainstalovat 
+dílo z knihovny  <ulink url="http://www.crosswire.org">&cbs;</ulink>, které 
+se jmenuje "Personal commentary" ("Osobní komentář").</para>
 
         <para>Pokud otevřete osobní komentář kliknutím <mousebutton>levým</mousebutton>  
 tlačítkem myši na jeho symbol v knihovně, otevře se v módu pro čtení. V 
@@ -173,13 +171,13 @@ text.</para>
 
     <sect2 id="hdbk-op-search-intext">
       <title>Vyhledávání textu v aktivním okně</title>
-      <para>You can look for a word or phrase in the open read window (e.g. the chapter 
-of a bible that you're reading) just like you are used to from other 
-programs. This function can be reached either by clicking with the 
-<mousebutton>right</mousebutton> mouse button and selecting 
-<guimenuitem>Find...</guimenuitem>, or by using the shortcut <keycombo 
-action="simul"> <keycap>&Ctrl;F</keycap></keycombo>. Read on to learn how 
-you can search in entire works.</para>
+      <para>Když chcete hledat slovo nebo frázi v otevřeném aktivním okně 
+(např. kapitolu bible, kterou čtete), je to stejné jako v jiných 
+programech. Tuto funkci můžete vyvolat kliknutím 
+<mousebutton>pravým</mousebutton> tlačítkem myši a zvolením 
+<guimenuitem>Najít...</guimenuitem>, nebo použitím horké klávesy <keycombo 
+action="simul"> <keycap>&Ctrl;F</keycap></keycombo>. Přečtěte si jak hledat 
+v celých dílech.</para>
     </sect2>
 
     <sect2 id="hdbk-op-search-access">
@@ -227,20 +225,21 @@ definovat vlastní vyhledávací rozsahy kliknutím na tlačítko
       <sect3 id="hd-op-search-config-syntax">
         <title>Úvod do jednoduché vyhledávací syntaxe</title>
 
-        <para>Enter the search phrase separated by spaces.  By default the search function 
-will return results that match all the words.  If you want to find any of 
-the words entered, select the <guimenu>Some words</guimenu> button.  If you 
-want to perform a more complex search, select the <guimenu>Free</guimenu> 
-button.  You can see examples of searches by clicking on <guimenu>full 
-syntax</guimenu>.
+        <para>Vložte vyhledávané fráze oddělené mezerami. Ve výchozím nastavení vrátí 
+funkce vyhledávání výsledky obsahující všechna slova. Pokud chcete vyhledat 
+pouze některá z vložených slov, zvolte <guimenu>Některá 
+slova</guimenu>. Pokud si přejete provést komplexnější vyhledávání, zvolte 
+<guimenu>Svobodný</guimenu> . Příklady vyhledávání uvidíte po kliknutí na 
+<guimenu>plná sklatba</guimenu>.
 	  </para>
 
-        <para>You can use wildcards: '*' matches any number of characters, while '?' will 
-match any single character. The use of brackets allows you to group your 
-search terms, e.g. '(Jesus OR spirit) AND God'.</para>
+        <para>Můžete využít znaky: '*' odpovídající libovolné posloupnosti znaků, '?' 
+zastupující libovolný jeden znak. Použití závorek vám dovoluje seskupovat 
+hledané výrazy, např. '(Ježíš OR duch) AND Bůh'</para>
 
-        <para>To search text other than the main text, enter the text type followed by 
-':', and then the search term.  Refer to the table below for examples.</para>
+        <para>Pro vyhledávání jiného než hlavního textu vložte určitou předponu 
+následovanou'dvojtečkou ':' a hledaným výrazem. Podívejte se na následující 
+tabulku příkladů.</para>
 
         <para>Dostupné předpony: 
         <table id="hd-op-search-config-syntax-table">
@@ -250,19 +249,19 @@ search terms, e.g. '(Jesus OR spirit) AND God'.</para>
               <row>
                 <entry>Předpona</entry>
                 <entry>Význam</entry>
-		<entry>Example</entry>
+		<entry>Příklad</entry>
               </row>
             </thead>
             <tbody>
               <row>
                 <entry>heading:</entry>
                 <entry>hledá hlavičky</entry>
-		<entry>heading:Jesus</entry>
+		<entry>heading:Ježíš</entry>
               </row>
               <row>
                 <entry>footnote:</entry>
                 <entry>hledá poznámky</entry>
-		<entry>footnote:Moses</entry>
+		<entry>footnote:Mojžíš</entry>
               </row>
               <row>
                 <entry>strong:</entry>
@@ -279,15 +278,15 @@ search terms, e.g. '(Jesus OR spirit) AND God'.</para>
         </table></para>
 
 	<tip>
-	  <para>You can right click on an installed work and select <guimenu>About</guimenu> 
-to find which of the above search criteria may work for you.  Not all works 
-have the built in features for performing this type of search.</para>
+	  <para>Můžete kliknout na nainstalované dílo a vybrat <guimenu>O...</guimenu> pro 
+nalzení nejvhodnějších z výše uvedených kritérií. Ne všechna díla mají 
+zabudovány vlastnosti odpovídající tomuto typu vyhledávání.</para>
 	</tip>
 
-        <para>&bibletime; uses the Lucene search engine to perform your searches. It has 
-many advanced features, and you can read more about it here: <ulink 
+        <para>&bibletime; používá pro hledání vyhledávací engine Lucene, který má mnoho 
+pokročilých vlastností. Více si o něm můžete přečíst zde: <ulink 
 url="http://lucene.apache.org/java/docs/index.html"> 
-http://lucene.apache.org/java/docs/index.html</ulink>.</para>
+http://lucene.apache.org/java/docs/index.html</ulink></para>
       </sect3>
     </sect2>
 
@@ -337,8 +336,8 @@ knihovny. Můžete do vaší knihovny nainstalovat nová díla, nebo aktualizova
 </menuchoice> v hlavním menu.</para>
 
       <tip>
-	<para>If this is the first time you are starting &bibletime;, click on the Refresh 
-button to see a list of works provided by the &cbs;.</para>
+	<para>Pokud je toto poprvé co spouštíte &bibletime;, klikněte na tlačítko Obnovit 
+pro zobrazení seznamu děl nabízených &cbs;.</para>
       </tip>
 
     <sect2 id="hdbk-op-bookshelfmanager-path">
@@ -354,12 +353,12 @@ vloženo v mechanice.</para>
     </sect2>
     <sect2 id="hdbk-op-bookshelfmanager-installupdate">
       <title>Instalace/aktualizace děl</title>
-      <para>With this facility, you can connect to a repository of works (called 
-"library"), and transfer one or more works to your local Bookshelf. These 
-libraries may be local (e.g. a &sword; CD), or remote (e.g. Crosswire's 
-online repository of &sword; modules, or another site offering &sword; 
-modules). You can manage your libraries with <guibutton>Add 
-library</guibutton> and <guibutton>Delete library</guibutton>.</para>
+      <para>Tímto nástrojem se můžete připojit k repositáři děl (je zvaný "knihovna", 
+"library") a nahrát jedno nebo více děl do své lokální knihovny. Tyto 
+knihovny mohou být lokální (např. &sword; CD) nebo vzdálené (např. Crosswire 
+online repositář modulů &sword; nebo jiné stránky nabízející moduly 
+&sword;). Své knihovny můžete spravovat pomocí <guibutton>Přidat 
+knihovnu</guibutton> a <guibutton>Smazat knihovnu</guibutton>.</para>
       <para>Pro zahájení procesu instalace nebo aktualizace vyberte knihovnu ke které se 
 chcete připojit a umístění lokální knihovny pro instalaci děl. Potom 
 klikněte na tlačítko <guibutton>Spojit s knihovnou</guibutton>. &bibletime; 

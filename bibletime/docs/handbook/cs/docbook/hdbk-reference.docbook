@@ -3,12 +3,12 @@
   <sect1 id="hdbk-reference-menus">
     <title>Odkazy Hlavního menu</title>
 
-    <para>In this section you can find detailed descriptions of all entries in the 
-main menu of &bibletime;. They are ordered in just the way they appear in 
-&bibletime;, with all the sub-items listed under the major menu item they 
-belong to. You can also see the shortcut of each item;a complete listing of 
-all shortcuts can be found in the <link 
-linkend="hdbk-reference-shortcuts">shortcuts section</link>.</para>
+    <para>V této sekci najdete detailní popis všech položek základního menu 
+&bibletime;. Jsou roztříděné stejně, jak se objevují v &bibletime;, včetně 
+podřízených položek zaznamenaných pod hlavní položkou menu ke které 
+náleží. Horké klávesy můžete vidět u každé položky; kompletní seznam všech 
+horkých kláves naleznete v <link linkend="hdbk-reference-hotkeys">sekce 
+horkých kláves</link>.</para>
 
     <sect2 id="hdbk-reference-menus-file">
       <title>
@@ -159,10 +159,10 @@ nebo vypnutí zobrazení časopisu na levé straně.</para>
           </term>
 
           <listitem>
-            <para><action>Opens the Search Dialog to search in the standard Bible 
-only</action>. More works can be added in the Search Dialog. A more detailed 
-search description can be found in the <link 
-linkend="hdbk-op-search">Searching in works</link> section.</para>
+            <para><action>Otevírá dialog vyhledávání pouze pro vyhledávání ve výchozí 
+Bibli</action>. Do vyhledávacího dialogu mohou být přídána další 
+díla. Detailnější popis vyhledávání najdete v sekci <link 
+linkend="hdbk-op-search">Vyhledávání v dílech</link>.</para>
           </listitem>
         </varlistentry>
 
@@ -184,10 +184,10 @@ linkend="hdbk-op-search">Searching in works</link> section.</para>
           </term>
 
           <listitem>
-            <para><action>Opens the Search Dialog to search in all open works</action>. Works 
-can be added or removed in the Search Dialog. A more detailed search 
-description can be found in the <link linkend="hdbk-op-search">Searching in 
-works</link> section.</para>
+            <para><action>Otevírá dialog vyhledávání ve všech dílech</action>. Do 
+vyhledávacího dialogu mohou být přídána, či z něj odebrána, další 
+díla. Detailnější popis vyhledávání naleznete v sekci <link 
+linkend="hdbk-op-search">Vyhledávání v dílech</link>.</para>
           </listitem>
 
         </varlistentry>
@@ -326,7 +326,7 @@ tak je vyzkoušejte!)</para>
 
           <listitem>
             <para>
-	      <action>Tiles all open windows</action>.
+	      <action>Rozmístit všechna otevřená okna jako dlaždice</action>.
 	    </para>
           </listitem>
         </varlistentry>
@@ -423,10 +423,10 @@ tak je vyzkoušejte!)</para>
           </term>
 
           <listitem>
-            <para> <action>Opens &bibletime;'s main configuration dialog</action>. You can 
-configure all kinds of nice settings there to adapt &bibletime; to your 
-needs.  Please see the <link linkend="hdbk-config-bt">Configuring 
-&bibletime; section</link> for details.</para>
+            <para> <action>Otevře hlavní konfigurační dialog &bibletime;</action>. Můžete 
+nastavit všechny vlastnosti &bibletime;, podle vašich potřeb. Prosím 
+navštivte sekci <link linkend="hdbk-config-bt">Nastavení &bibletime;</link> 
+pro více informací.</para>
           </listitem>
         </varlistentry>
 
@@ -451,10 +451,9 @@ needs.  Please see the <link linkend="hdbk-config-bt">Configuring
           </term>
 
           <listitem>
-            <para><action>Opens a dialog where you can change your &sword; configuration and 
-manage your bookshelf</action>. Please see the <link 
-linkend="hdbk-op-bookshelfmanager">Bookshelf Manager section</link> for 
-details.</para>
+            <para><action>Otevře dialog kde můžete změnit vaše nastavení &sword; a spravovat 
+svou knihovnu</action>. Další inormace naleznete v sekci <link 
+linkend="hdbk-op-bookshelfmanager">Správce knihovny</link>.</para>
           </listitem>
         </varlistentry>
       </variablelist>
@@ -821,14 +820,14 @@ informace o verzi &bibletime;, přispěvatelích projektu, verzi &sword;, verzi
   </sect1>
 
   <sect1 id="hdbk-reference-shortcuts">
-    <title>Shortcuts index</title>
+    <title>Seznam horkých kláves</title>
 
-    <para>This is an index of all shortcuts and their corresponding description in the 
-handbook. The shortcuts are sorted (roughly)  alphabetical. If you want to 
-directly find out which shortcuts a certain menu item has, you can either 
-look at the entry itself in &bibletime; (as it always shows the shortcut), 
-or you can look it in the <link linkend="hdbk-reference-menus">Main Menu 
-reference</link>.</para>
+    <para>Toto je seznam všech horkých kláves a s nimi souvisejícího popisu v 
+příručce. Horké klávesy jsou setříděny (přibližně) abecedně. Pokud chcete 
+přesně vědět která z horkých kláves odpovídá té které položce menu, můžete 
+se podívat přímo do nabídek &bibletime; (vždy se zde zobrazují horké 
+klávesy), nebo si prohlédněte <link linkend="hdbk-reference-menus">Přehled 
+hlavního menu</link>.</para>
 
     <informaltable>
       <tgroup cols="2">
@@ -836,7 +835,7 @@ reference</link>.</para>
         <colspec colname="desc" />
         <thead>
           <row>
-            <entry>Shortcut</entry>
+            <entry>Horká klávesa</entry>
             <entry>Popis</entry>
           </row>
         </thead>
@@ -898,9 +897,10 @@ horizontálně</guimenuitem> </menuchoice> zapne automatické skládání oken.<
             </entry>
 
             <entry>
-	      <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement 
-mode</guimenuitem> <guimenuitem>Auto-tile</guimenuitem> </menuchoice> 
-equivalent; toggle automatic window tiling.</entry>
+	      <menuchoice> <guimenu>Okno</guimenu> <guimenuitem>Mód 
+rozvržení</guimenuitem> <guimenuitem>Automaticky dlaždice 
+vertikálně</guimenuitem> </menuchoice> ekvivalent k zapnout automatické 
+skládání oken.</entry>
           </row>
 
           <row>
@@ -1015,8 +1015,8 @@ zapne manuální skládání oken.</entry>
 
             <entry>
 	      <link linkend="hdbk-reference-menus-window-tile"> <menuchoice> 
-<guimenu>Window</guimenu> <guimenuitem>Tile</guimenuitem> </menuchoice> 
-</link> windows equivalent.
+<guimenu>Okno</guimenu> <guimenuitem>Kaskádovat</guimenuitem> </menuchoice> 
+</link> ekvivalent oken.
             </entry>
           </row>
 
@@ -1038,7 +1038,7 @@ zapne manuální skládání oken.</entry>
               <keycombo action="simul">
               <keycap>&Ctrl;L</keycap></keycombo>
             </entry>
-            <entry>Change location. Changes focus to the toolbar field for the selected work.</entry>
+            <entry>Změnit umístění. Pro vybrané dílo změní zaměření na nástrojovou lištu.</entry>
           </row>
 
           <row>
@@ -1046,7 +1046,7 @@ zapne manuální skládání oken.</entry>
               <keycombo action="simul">
               <keycap>&Ctrl;N</keycap></keycombo>
             </entry>
-            <entry>Search with works of this window.</entry>
+            <entry>Vyhledávat s díly tohoto okna.</entry>
           </row>
 
           <row>
