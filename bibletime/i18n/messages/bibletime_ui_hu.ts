@@ -704,62 +704,62 @@
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="99"/>
         <source>Use linebreaks after each verse</source>
-        <translation type="unfinished">Sotrörés minden vers után</translation>
+        <translation>Sotrörés minden vers után</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="100"/>
         <source>Show verse numbers</source>
-        <translation type="unfinished">Vers számok mutatása</translation>
+        <translation>Vers számok mutatása</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="101"/>
         <source>Show headings</source>
-        <translation type="unfinished">Fejléc mutatása</translation>
+        <translation>Fejléc mutatása</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="102"/>
         <source>Highlight words of Jesus</source>
-        <translation type="unfinished">Jézus szavainak kiemelése</translation>
+        <translation>Jézus szavainak kiemelése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="103"/>
         <source>Show Hebrew vowel points</source>
-        <translation type="unfinished">Héber magánhangzó pontok mutatása</translation>
+        <translation>Héber magánhangzó pontok mutatása</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="104"/>
         <source>Show Hebrew cantillation marks</source>
-        <translation type="unfinished">Héber hangsúlyozás jelzése</translation>
+        <translation>Héber hangsúlyozás jelzése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="105"/>
         <source>Show Greek accents</source>
-        <translation type="unfinished">Görög kiejtés mutatása</translation>
+        <translation>Görög kiejtés mutatása</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="106"/>
         <source>Use alternative textual variant</source>
-        <translation type="unfinished">Alternatív szöveges változat használata</translation>
+        <translation>Alternatív szöveges változat használata</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="107"/>
         <source>Show scripture cross-references</source>
-        <translation type="unfinished">Kereszthivatkozások mutatása</translation>
+        <translation>Kereszthivatkozások mutatása</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="108"/>
         <source>Show morph segmentation</source>
-        <translation type="unfinished">Szótő elválasztás mutatása</translation>
+        <translation>Szótő elválasztás mutatása</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="115"/>
         <source>Display settings</source>
-        <translation type="unfinished">Megjelenítés beállítása</translation>
+        <translation>Megjelenítés beállítása</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="118"/>
         <source>Display settings: No options available</source>
-        <translation type="unfinished">Megjelenítés beállításai: Nincs elérhető opció</translation>
+        <translation>Megjelenítés beállításai: Nincs elérhető opció</translation>
     </message>
 </context>
 <context>
