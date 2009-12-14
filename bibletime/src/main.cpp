@@ -34,51 +34,25 @@
 #endif
 
 
-static bool showDebugMessages;
+namespace {
 
-static const char* version = BT_VERSION;
+bool showDebugMessages;
 
-const char* bt_version() {
-    return version;
-}
-
-// This class will open the file descriptor on demand.
-// It will automatically close the file descriptor if it is open when the program exits.
-class FileOpener {
-    public:
-
-        // Constructor set file descriptor to zero
-        FileOpener()
-                : m_fd(0) {
-        }
-
-        // Destructor closes file descriptor if it is non-zero (Windows only)
-        ~FileOpener() {
 #ifdef Q_WS_WIN
-            if (m_fd != 0)
-                fclose(m_fd);
-#endif
-        }
 
-        // function to open the file descriptor if it is called (Windows only)
-        // on non-windows just use "stderr"
-        FILE* getFd() {
-            if (m_fd == 0) {
-#ifdef Q_WS_WIN
-                QString debugFile = QDir::homePath() + "/BibleTime Debug.txt";
-                m_fd = fopen(debugFile.toLocal8Bit().data(), "w");
+FILE *out_fd = 0;
+#define DEBUG_STREAM (out_fd != 0 ? out_fd :\
+    out_fd = fopen(QDir::homePath().append("/BibleTime Debug.txt").toLocal8Bit().data(),"w"))
+#define CLOSE_DEBUG_STREAM { if (out_fd != 0) fclose(out_fd); }
+
 #else
-                m_fd = stderr;
-#endif
-            }
-            return m_fd;
-        }
-    private:
-        FILE* m_fd;
 
-};
-// When program exits, this will close the file
-static FileOpener fileOpener;
+#define DEBUG_STREAM (stderr)
+#define CLOSE_DEBUG_STREAM
+
+#endif
+
+} // anonymous namespace
 
 
 void myMessageOutput( QtMsgType type, const char *msg ) {
@@ -87,23 +61,26 @@ void myMessageOutput( QtMsgType type, const char *msg ) {
     switch (type) {
         case QtDebugMsg:
             if (showDebugMessages) { //only show messages if they are enabled!
-                outFd = fileOpener.getFd();
+                outFd = DEBUG_STREAM;
                 if (outFd != 0)
-                    fprintf( outFd, "(BibleTime %s) Debug: %s\n", bt_version(), msg );
+                    fprintf(outFd, "(BibleTime " BT_VERSION ") Debug: %s\n", msg);
             }
             break;
         case QtWarningMsg:
 #ifndef QT_NO_DEBUG  // don't show in release builds so users don't get our debug warnings
-            outFd = fileOpener.getFd();
+            outFd = DEBUG_STREAM;
             if (outFd != 0)
-                fprintf( outFd, "(BibleTime %s) WARNING: %s\n", bt_version(), msg );
+                fprintf(outFd, "(BibleTime " BT_VERSION ") WARNING: %s\n", msg);
 #endif
             break;
         case QtFatalMsg:
         case QtCriticalMsg:
-            outFd = fileOpener.getFd();
+            outFd = DEBUG_STREAM;
             if (outFd != 0)
-                fprintf( outFd, "(BibleTime %s) _FATAL_: %s\nPlease report this bug! (http://www.bibletime.info/development_help.html)", bt_version(), msg );
+                fprintf(outFd,
+                        "(BibleTime " BT_VERSION ") _FATAL_: %s\nPlease report this bug! "
+                            "(http://www.bibletime.info/development_help.html)",
+                        msg);
             abort(); // dump core on purpose
     }
 }
@@ -121,7 +98,7 @@ int main(int argc, char* argv[]) {
 
     BibleTimeApp app(argc, argv); //for QApplication
     app.setApplicationName("bibletime");
-    app.setApplicationVersion(bt_version());
+    app.setApplicationVersion(BT_VERSION);
 
     showDebugMessages = QCoreApplication::arguments().contains("--debug");
 
@@ -193,8 +170,8 @@ int main(int argc, char* argv[]) {
     BibleTime bibleTime;
 
     // a new BibleTime version was installed (maybe a completely new installation)
-    if (CBTConfig::get(CBTConfig::bibletimeVersion) != bt_version()) {
-        CBTConfig::set(CBTConfig::bibletimeVersion, bt_version());
+    if (CBTConfig::get(CBTConfig::bibletimeVersion) != BT_VERSION) {
+        CBTConfig::set(CBTConfig::bibletimeVersion, BT_VERSION);
         bibleTime.saveConfigSettings();
     }
 
@@ -210,6 +187,8 @@ int main(int argc, char* argv[]) {
     QDBusConnection::sessionBus().registerObject("/BibleTime", &bibleTime);
 #endif
 
-    return app.exec();
+    int r = app.exec();
+    CLOSE_DEBUG_STREAM;
+    return r;
 }
 

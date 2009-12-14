@@ -41,8 +41,6 @@
 #include "util/cresmgr.h"
 #include "util/directory.h"
 
-// Forwards
-const char* bt_version();
 
 using namespace Profile;
 
@@ -67,7 +65,7 @@ BibleTime::BibleTime()
     initActions();
     initConnections();
     readSettings();
-    setWindowTitle(QString("BibleTime") + bt_version());
+    setWindowTitle("BibleTime " BT_VERSION);
     setWindowIcon(DU::getIcon(CResMgr::mainWindow::icon));
 }
 
