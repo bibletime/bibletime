@@ -28,11 +28,7 @@ using namespace InfoDisplay;
 
 void showBtHtmlFindText(CMDIArea*);
 
-static const QString body = "</body>";
-static const QString jsBegin = "<script  type=\"text/javascript\">";
-static const QString jsEnd = "</script>";
 static QString javascript; // Initialized from file bthtml.js
-
 
 BtHtmlReadDisplay::BtHtmlReadDisplay(CReadWindow* readWindow, QWidget* parentWidget)
         : QWebPage(parentWidget), CReadDisplay(readWindow), m_magTimerId(0), m_view(0), m_jsObject(0)
@@ -198,11 +194,13 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType format, const CD
 
 // Puts html text and javascript into QWebView
 void BtHtmlReadDisplay::setText( const QString& newText ) {
-	this->currentSource = newText;
 
     QString jsText = newText;
 
-    jsText.replace(body, jsBegin + javascript + jsEnd + body);
+    jsText.replace(
+		QString("</body>"),
+		QString("<script  type=\"text/javascript\">").append(javascript).append("</script></body>")
+	);
 
     // Disconnect any previous connect and connect to slot that loads the javascript object
     QWebFrame* frame = mainFrame();
@@ -212,6 +210,8 @@ void BtHtmlReadDisplay::setText( const QString& newText ) {
 
     // Send text to the html viewer
     m_view->setHtml(jsText);
+
+	this->currentSource = jsText;
 }
 
 QString BtHtmlReadDisplay::getCurrentSource( ) {
