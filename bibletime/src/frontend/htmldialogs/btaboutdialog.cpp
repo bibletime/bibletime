@@ -67,7 +67,10 @@ void BtAboutDialog::init_contributors_tab() {
     setTabText(tr("Contributors"));
     QString content;
     content += make_bold(tr("The following people contributed to BibleTime:")) + make_br();
-    // sorted alphabetically (last name)
+
+    /****************************************************************************************
+    ***               NB!!! Credits are sorted alphabetically by last name!               ***
+    ****************************************************************************************/
     content += "<ul>";
     content += "<li>Thomas Abthorpe (" + tr("documentation and translation manager") + ")</li>";
     content += "<li>Joachim Ansorg (" + tr("project founder, developer") + ")</li>";
@@ -84,11 +87,13 @@ void BtAboutDialog::init_contributors_tab() {
     content += "<li>Gary Holmlund (" + tr("developer") + ")</li>";
     content += "<li>Nikolay Igotti (" + tr("developer") + ")</li>";
     content += "<li>Eeli Kaikkonnen (" + tr("developer") + ")</li>";
-    content += "<li>Jaak Ristioja (" + tr("developer") + ")</li>";
     content += "<li>Chris Kujawa (" + tr("developer") + ")</li>";
     content += "<li>Mark Lybarger (" + tr("developer") + ")</li>";
     content += "<li>Luke Mauldin (" + tr("developer") + ")</li>";
     content += "<li>James Ots (" + tr("designer") + ")</li>";
+    /** \todo BibleTime 2.6: Add tr("artist"): */
+    content += "<li>Andrus Raag</li>";
+    content += "<li>Jaak Ristioja (" + tr("developer") + ")</li>";
     content += "<li>Fred Saalbach (" + tr("documentation") + ")</li>";
     content += "<li>Gary Sims (" + tr("developer") + ")</li>";
     content += "<li>Wolfgang Stradner (" + tr("tester, usability expert") + ")</li>";
@@ -99,7 +104,10 @@ void BtAboutDialog::init_contributors_tab() {
     content += "</ul>";
 
     content += make_bold(tr("The following people translated BibleTime into their language:")) + make_br();
-    // sorted alphabetically (last name)
+
+    /****************************************************************************************
+    ***               NB!!! Credits are sorted alphabetically by last name!               ***
+    ****************************************************************************************/
     content += "<ul>";
     content += "<li>Horatiu Alexe</li>";
     content += "<li>Luis Barron</li>";
