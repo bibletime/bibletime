@@ -3,12 +3,12 @@
   <sect1 id="hdbk-reference-menus">
     <title>Hauptmenü-Referenz</title>
 
-    <para>In this section you can find detailed descriptions of all entries in the 
-main menu of &bibletime;. They are ordered in just the way they appear in 
-&bibletime;, with all the sub-items listed under the major menu item they 
-belong to. You can also see the shortcut of each item;a complete listing of 
-all shortcuts can be found in the <link 
-linkend="hdbk-reference-shortcuts">shortcuts section</link>.</para>
+    <para>In diesem Abschnitt finden Sie detaillierte Beschreibungen aller Einträge im 
+&bibletime;-Hauptmenü. Sie sind in der Reihenfolge angeordnet, wie Sie auch 
+in &bibletime; auftauchen und zwar mit allen Untereinträgen unterhalb ihrer 
+jeweiligen Obermenüs. Sie können auch den Kurzbefehl des jeweiligen Eintrags 
+sehen, ein komplettes Verzeichnis aller Kurzbefehle finden Sie im <link 
+linkend="hdbk-reference-shortcuts">Tastenkürzel-Verzeichnis</link>.</para>
 
     <sect2 id="hdbk-reference-menus-file">
       <title>
@@ -159,10 +159,9 @@ Lupenfenster im linken Abschnitt oder verbirgt es.</para>
           </term>
 
           <listitem>
-            <para><action>Opens the Search Dialog to search in the standard Bible 
-only</action>. More works can be added in the Search Dialog. A more detailed 
-search description can be found in the <link 
-linkend="hdbk-op-search">Searching in works</link> section.</para>
+            <para><action>In Standard-Bibel suchen...</action>. Es können zusätzliche Werke 
+zum Suchdialog hinzugefügt werden. Eine ausführlichere Such-Beschreibung 
+können Sie unter <link linkend="hdbk-op-search">Sucharten</link> finden.</para>
           </listitem>
         </varlistentry>
 
@@ -184,10 +183,10 @@ linkend="hdbk-op-search">Searching in works</link> section.</para>
           </term>
 
           <listitem>
-            <para><action>Opens the Search Dialog to search in all open works</action>. Works 
-can be added or removed in the Search Dialog. A more detailed search 
-description can be found in the <link linkend="hdbk-op-search">Searching in 
-works</link> section.</para>
+            <para><action>In allen gegenwärtig geöffneten Werken suchen...</action>. Werke 
+können im Suchdialog hinzugefügt oder entfernt werden. Eine ausführlichere 
+Such-Beschreibung können Sie im Abschnitt <link linkend="hdbk-op-search">In 
+Werken suchen</link> finden.</para>
           </listitem>
 
         </varlistentry>
@@ -328,7 +327,7 @@ kümmern soll (automatische Modi, probieren Sie's einfach aus!).</para>
 
           <listitem>
             <para>
-	      <action>Tiles all open windows</action>.
+	      <action>Alle geöffneten Fenster kacheln</action>.
 	    </para>
           </listitem>
         </varlistentry>
@@ -425,10 +424,10 @@ kümmern soll (automatische Modi, probieren Sie's einfach aus!).</para>
           </term>
 
           <listitem>
-            <para> <action>Opens &bibletime;'s main configuration dialog</action>. You can 
-configure all kinds of nice settings there to adapt &bibletime; to your 
-needs.  Please see the <link linkend="hdbk-config-bt">Configuring 
-&bibletime; section</link> for details.</para>
+            <para> <action>&bibletime;s Hauptkonfigurationsdialog öffnen</action>. Sie können 
+hier alle möglichen Einstellungen von &bibletime; an Ihre Bedürfnisse 
+anpassen. Bitte schauen Sie im Abschnitt <link 
+linkend="hdbk-config-bt">&bibletime; einrichten</link> für Details nach.</para>
           </listitem>
         </varlistentry>
 
@@ -453,10 +452,10 @@ needs.  Please see the <link linkend="hdbk-config-bt">Configuring
           </term>
 
           <listitem>
-            <para><action>Opens a dialog where you can change your &sword; configuration and 
-manage your bookshelf</action>. Please see the <link 
-linkend="hdbk-op-bookshelfmanager">Bookshelf Manager section</link> for 
-details.</para>
+            <para><action>Öffnen eines Dialogs zur &sword;-Konfiguration und Konfiguration 
+Ihrer Bücherregal-Verwaltung</action>. Schauen Sie bitte im Abschnitt <link 
+linkend="hdbk-op-bookshelfmanager">Der Bücherregal-Verwalter</link> für 
+Details nach.</para>
           </listitem>
         </varlistentry>
       </variablelist>
@@ -830,12 +829,13 @@ assoziierten Symbolzeichen.
   <sect1 id="hdbk-reference-shortcuts">
     <title>Tastenkürzel-Verzeichnis</title>
 
-    <para>This is an index of all shortcuts and their corresponding description in the 
-handbook. The shortcuts are sorted (roughly)  alphabetical. If you want to 
-directly find out which shortcuts a certain menu item has, you can either 
-look at the entry itself in &bibletime; (as it always shows the shortcut), 
-or you can look it in the <link linkend="hdbk-reference-menus">Main Menu 
-reference</link>.</para>
+    <para>Dies ist ein Verzeichnis aller Tastenkürzel und ihrer korrespondierenden 
+Beschreibung im Handbuch. Die Tastenkürzel sind (grob) alphabetisch 
+sortiert. Wenn Sie unmittelbar nachschauen möchten, welches Tastenkürzel 
+eine bestimmte Menüfunktion hat, so können Sie entweder den Menüeintrag in 
+&bibletime; ansehen (da grundsätzlich auch das entsprechende Tastenkürzel 
+mit angezeigt wird) oder die Tastenkürzel in der <link 
+linkend="hdbk-reference-menus">Hauptmenü-Referenz</link> nachsehen.</para>
 
     <informaltable>
       <tgroup cols="2">
@@ -907,9 +907,10 @@ Fensteranordnung auf horizontalen Kachelmodus.</entry>
             </entry>
 
             <entry>
-	      <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement 
-mode</guimenuitem> <guimenuitem>Auto-tile</guimenuitem> </menuchoice> 
-equivalent; toggle automatic window tiling.</entry>
+	      <menuchoice> <guimenu>Fenster</guimenu> 
+<guimenuitem>Anordnungs-Art</guimenuitem> <guimenuitem>Automatisches 
+Staffeln</guimenuitem> </menuchoice> schaltet die automatische 
+Fensteranordnung auf automatisches Staffeln um.</entry>
           </row>
 
           <row>
@@ -1029,8 +1030,8 @@ Kacheln.
 
             <entry>
 	      <link linkend="hdbk-reference-menus-window-tile"> <menuchoice> 
-<guimenu>Window</guimenu> <guimenuitem>Tile</guimenuitem> </menuchoice> 
-</link> windows equivalent.
+<guimenu>Fenster</guimenu> <guimenuitem>Staffeln</guimenuitem> </menuchoice> 
+</link> Fenster äquivalent.
             </entry>
           </row>
 

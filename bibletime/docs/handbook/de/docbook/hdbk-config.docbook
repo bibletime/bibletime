@@ -1,5 +1,5 @@
 <chapter id="hdbk-config">
-  <title>&bibletime; einrichten</title>
+  <title>&bibletime; konfigurieren</title>
   <para>In diesem Abschnitt finden Sie eine Übersicht, wie &bibletime; zu 
 konfigurieren ist. Sie können das Menü <guimenu>Einstellungen</guimenu> im 
 Hauptmenü finden.</para>
@@ -188,12 +188,13 @@ ranges and the Unicode fonts that support them</ulink>).</para>
         <guimenu>Shortcuts</guimenu>
       </title>
 
-      <para>Shortcuts (previously known as HotKeys) are special key commands that can be 
-used in the place of the menu items and icons. A number of &bibletime;'s 
-commands have predefined Shortcuts (see the <link 
-linkend="hdbk-reference-shortcuts">Shortcuts section</link> for a complete 
-listing). Most of &bibletime;'s commands can be assigned Shortcuts.  This is 
-very helpful to quickly access the functions that you need the most.</para>
+      <para>Tastenkürzel (ehemals HotKeys) sind spezielle Tastenbefehle, die an Stelle 
+der Menüeinträge oder Symbole verwendet werden können. Eine Anzahl von 
+&bibletime;s Befehlen hat bereits vordefinierte Tastenkürzel (siehe hierzu 
+den <link linkend="hdbk-reference-shortcuts">Abschnitt über die 
+Tastenkürzel</link> für eine komplette Auflistung). Den meisten Befehlen von 
+&bibletime; kann hier ein Tastenkürzel zugewiesen werden. Dies ist sehr 
+hilfreich, um die meistbenutzten Funktionen schnell zu erreichen.</para>
 
       <imageobject>
 	<imagedata fileref="ss_shortcuts.png" format="PNG" />

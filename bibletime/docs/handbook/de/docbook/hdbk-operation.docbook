@@ -56,28 +56,29 @@ Lesefenster ziehen, es wird dann zur gewünschten Stelle gesprungen.</para>
       <sect3 id="hdbk-op-parts-bookshelf-metainfo">
         <title>Weitere Informationen über Werke</title>
 
-        <para>If you click with the <mousebutton>right</mousebutton> mouse button on the 
-symbol of a work, you will see a menu with additional entries that are 
-relevant for this work.  <guimenuitem>"About this work"</guimenuitem> opens 
-a window with lots of interesting information about the selected work.  
-<guimenuitem>"Unlock this work"</guimenuitem> opens a small dialog for 
-encrypted documents, where you can enter the unlock key to access the 
-work. For additional information on locked works, please see the <ulink 
-url="http://www.crosswire.org/sword/modules/aboutlocked.jsp"> Locked 
-Modules</ulink> page on the &cbs; web site.</para>
+        <para>Wenn Sie mit der <mousebutton>rechten</mousebutton> Maustaste auf das Symbol 
+eines Werkes klicken, öffnet sich Ihnen ein Menü mit weiteren für das Werk 
+relevanten Einträgen. <guimenuitem>"Über..."</guimenuitem> öffnet ein 
+Fenster mit einer Vielzahl an interessanten Informationen über das gewählte 
+Werk. <guimenuitem>"Entschlüsseln..."</guimenuitem> öffnet ein kleines 
+Dialogfenster für verschlüsselte Dokumente, in dem Sie den 
+Entschlüsselungs-Schlüssel für den Zugriff eingeben können. Für weitere 
+Informationen über gesperrte Werke, lesen Sie bitte die Seite über <ulink 
+url="http://www.crosswire.org/sword/modules/aboutlocked.jsp">gesperrte 
+Module</ulink> auf der Website der &cbs;.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-bookshelf-search">
         <title>In Werken suchen</title>
 
-        <para>You can search in a work by clicking with the 
-<mousebutton>right</mousebutton> mouse button on its symbol and selecting 
-<guimenuitem>"Search in work(s)"</guimenuitem>. By pressing &Shift; and 
-clicking on other works you can select more than one. Then follow the same 
-procedure to open the search dialog. You will be searching in all of these 
-documents. A complete description of the operation of the search features 
-can be found on the <link linkend="hdbk-op-search">Searching in Works 
-section</link>.</para>
+        <para>Sie können ein Werk durchsuchen, indem Sie mit der 
+<mousebutton>rechten</mousebutton> Maustaste auf sein Symbol klicken und 
+<guimenuitem>"Suche in..."</guimenuitem> auswählen. Indem Sie &Shift; und 
+auf andere Werke klicken, können Sie mehr als ein Werk auswählen. Dann 
+folgen Sie demselben Ablauf, um ein Such-Dialogfenster zu öffnen. Sie werden 
+so in jedem dieser Dokumente suchen. Eine vollständige Beschreibung der 
+Arbeitsweise der Suchfunktionenkönnen Sie im Abschnitt<link 
+linkend="hdbk-op-search">In Werken suchen</link> finden.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-bookshelf-bookmarks">
@@ -362,8 +363,9 @@ aus dem Bücherregal entfernen. Greifen Sie darauf zu, indem Sie auf
 klicken.</para>
 
       <tip>
-	<para>If this is the first time you are starting &bibletime;, click on the Refresh 
-button to see a list of works provided by the &cbs;.</para>
+	<para>Wenn Sie &bibletime; zum ersten Mal starten, klicken Sie auf die 
+Schaltfläche Auffrischen..., um eine Liste der von der &cbs; zur Verfügung 
+gestellten Werke einzusehen.</para>
       </tip>
 
     <sect2 id="hdbk-op-bookshelfmanager-path">
