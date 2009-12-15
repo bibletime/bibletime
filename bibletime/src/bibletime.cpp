@@ -15,6 +15,7 @@
 #include <QAction>
 #include <QApplication>
 #include <QCloseEvent>
+#include <QDate>
 #include <QDebug>
 #include <QInputDialog>
 #include <QMdiSubWindow>
@@ -48,23 +49,50 @@ BibleTime::BibleTime()
         : m_WindowWasMaximizedBeforeFullScreen(false) {
     namespace DU = util::directory;
 
-    QPixmap pm;
-    if (!pm.load(DU::getPicsDir().canonicalPath().append( "/startuplogo.png"))) {
-        qWarning("Can't load startuplogo! Check your installation.");
-    }
-    QSplashScreen splash(pm);
-    QString splashHtml("<div style='background:transparent;color:white;font-weight:bold'>%1</div>");
-    if (CBTConfig::get(CBTConfig::logo)) {
+    QSplashScreen splash;
+    bool showSplash = CBTConfig::get(CBTConfig::logo);
+    QString splashHtml;
+
+    if (showSplash) {
+        splashHtml = "<div style='background:transparent;color:white;font-weight:bold'>%1"
+                     "</div>";
+        const QDate date(QDate::currentDate());
+        const int day = date.day();
+        const int month = date.month();
+        QString splashImage(DU::getPicsDir().canonicalPath().append("/"));
+
+        if ((month >= 12 && day >= 24) || (month <= 1 && day < 6)) {
+            splashImage.append("startuplogo_christmas.png");
+        } else {
+            splashImage.append("startuplogo.png");
+        }
+
+        QPixmap pm;
+        if (!pm.load(splashImage)) {
+            qWarning("Can't load startuplogo! Check your installation.");
+        }
+        splash.setPixmap(pm);
         splash.show();
+
+        splash.showMessage(splashHtml.arg(tr("Initializing the SWORD engine...")),
+                           Qt::AlignCenter);
     }
-    splash.showMessage(splashHtml.arg(tr("Initializing the SWORD engine...")), Qt::AlignCenter);
     initBackends();
-    splash.showMessage(splashHtml.arg(tr("Creating BibleTime's user interface...")), Qt::AlignCenter);
+
+    if (showSplash) {
+        splash.showMessage(splashHtml.arg(tr("Creating BibleTime's user interface...")),
+                           Qt::AlignCenter);
+    }
     initView();
-    splash.showMessage(splashHtml.arg(tr("Initializing menu- and toolbars...")), Qt::AlignCenter);
+
+    if (showSplash) {
+        splash.showMessage(splashHtml.arg(tr("Initializing menu- and toolbars...")),
+                           Qt::AlignCenter);
+    }
     initActions();
     initConnections();
     readSettings();
+
     setWindowTitle("BibleTime " BT_VERSION);
     setWindowIcon(DU::getIcon(CResMgr::mainWindow::icon));
 }
