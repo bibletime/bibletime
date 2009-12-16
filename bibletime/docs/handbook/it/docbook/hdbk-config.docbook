@@ -54,7 +54,7 @@ essere visualizzate correttamente, e questa finestra ti permette di
 specificare un carattere personalizzato per ogni lingua.</para>
       <mediaobject>
         <imageobject>
-          <imagedata fileref="ss_configfonts.png" width="600" depth="472" format="PNG" />
+          <imagedata fileref="ss_configfonts.png" width="600" depth="472" scale="75" format="PNG" />
         </imageobject>
         <textobject>
           <phrase>Finestra Opzioni - caratteri</phrase>
@@ -189,7 +189,7 @@ assegnata una scorciatoia. Molto utile per accedere alle funzioni che usi
 maggiormente.</para>
 
       <imageobject>
-	<imagedata fileref="ss_shortcuts.png" width="600" depth="441" format="PNG" />
+	<imagedata fileref="ss_shortcuts.png" width="600" depth="441" scale="75" format="PNG" />
       </imageobject>
 
       <para>Nell'esempio precedente, F2, l'HowTo per lo studio della Bibbia ha una 

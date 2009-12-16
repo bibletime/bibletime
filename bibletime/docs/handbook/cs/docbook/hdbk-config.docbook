@@ -50,7 +50,7 @@ speciální písma, tento dialog vám umožní nastavit vlastní písmo pro kaž
 jazyk.</para>
       <mediaobject>
         <imageobject>
-          <imagedata fileref="ss_configfonts.png" width="600" depth="472" format="PNG" />
+          <imagedata fileref="ss_configfonts.png" width="600" depth="472" scale="75" format="PNG" />
         </imageobject>
         <textobject>
           <phrase>Dialog nastavení - písma</phrase>
@@ -181,7 +181,7 @@ linkend="hdbk-reference-hotkeys">Horké klávesy</link>). Většině příkazů
 přístup k funkcím, které nejvíce potřebujete.</para>
 
       <imageobject>
-	<imagedata fileref="ss_shortcuts.png" width="600" depth="441" format="PNG" />
+	<imagedata fileref="ss_shortcuts.png" width="600" depth="441" scale="75" format="PNG" />
       </imageobject>
 
       <para>V předchazejícím případě, F2, má Návod, jak studovat Bibli má definovanou 

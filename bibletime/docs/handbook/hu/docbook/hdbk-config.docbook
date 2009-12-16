@@ -52,7 +52,7 @@ lehetőséget nyújt önnek, hogy egyedi betűkészletet határozzon meg minden
 nyelvhez.</para>
       <mediaobject>
         <imageobject>
-          <imagedata fileref="ss_configfonts.png" width="600" depth="472" format="PNG" />
+          <imagedata fileref="ss_configfonts.png" width="600" depth="472" scale="75" format="PNG" />
         </imageobject>
         <textobject>
           <phrase>A betűkészletek beállítása</phrase>
@@ -193,7 +193,7 @@ lista). A legtöbb &bibletime; parancs rendelkezik billentyűkombinációval,
 ami nagyon hasznos a legtöbbet használt funkciók eléréséhez.</para>
 
       <imageobject>
-	<imagedata fileref="ss_shortcuts.png" width="600" depth="441" format="PNG" />
+	<imagedata fileref="ss_shortcuts.png" width="600" depth="441" scale="75" format="PNG" />
       </imageobject>
 
       <para>Az előző példában látható, hogy az F2, a "hogyan tanulmányozza a 
