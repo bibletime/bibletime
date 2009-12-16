@@ -19,11 +19,11 @@ class BtAboutDialog : public BtTabHtmlDialog {
         BtAboutDialog(QWidget *parent = 0, Qt::WindowFlags wflags = Qt::Dialog);
         ~BtAboutDialog();
 
-        void init_bt_tab();
-        void init_contributors_tab();
-        void init_sword_tab();
-        void init_qt_tab();
-        void init_lic_tab();
+        void initBtTab();
+        void initContributorsTab();
+        void initSwordTab();
+        void initQtTab();
+        void initLicenceTab();
 };
 
 #endif
