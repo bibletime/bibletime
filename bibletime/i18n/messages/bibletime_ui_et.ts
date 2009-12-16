@@ -89,27 +89,27 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="301"/>
         <source>Text windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Tekstiaknad</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="304"/>
         <source>Show text area headers</source>
-        <translation type="unfinished"></translation>
+        <translation>Näita tekstiala päiseid</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="310"/>
         <source>Show navigation</source>
-        <translation type="unfinished"></translation>
+        <translation>Näita navigeerimisvidinaid</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="316"/>
         <source>Show work chooser buttons</source>
-        <translation type="unfinished"></translation>
+        <translation>Näita teoste valimise nuppe</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="322"/>
         <source>Show tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Näita tööriistu</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="344"/>
@@ -244,12 +244,12 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="154"/>
         <source>Auto-&amp;tile</source>
-        <translation type="unfinished"></translation>
+        <translation>Automaatne asetus &amp;ruudustikku</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="157"/>
         <source>Automatically tile the open windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Aseta avatud aknad automaatselt ruudustikku</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="164"/>
@@ -264,12 +264,12 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="175"/>
         <source>&amp;Tile</source>
-        <translation type="unfinished"></translation>
+        <translation>Aseta &amp;ruudustikku</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="178"/>
         <source>Tile the open windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Aseta avatud aknad ruudustikku</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="185"/>
@@ -704,62 +704,62 @@
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="99"/>
         <source>Use linebreaks after each verse</source>
-        <translation type="unfinished">Alusta iga salmi uuelt realt</translation>
+        <translation>Alusta iga salmi uuelt realt</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="100"/>
         <source>Show verse numbers</source>
-        <translation type="unfinished">Kuva salmide numbreid</translation>
+        <translation>Kuva salmide numbreid</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="101"/>
         <source>Show headings</source>
-        <translation type="unfinished">Kuva pealkirju</translation>
+        <translation>Kuva pealkirju</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="102"/>
         <source>Highlight words of Jesus</source>
-        <translation type="unfinished">Tõsta esile Jeesuse sõnad</translation>
+        <translation>Tõsta esile Jeesuse sõnad</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="103"/>
         <source>Show Hebrew vowel points</source>
-        <translation type="unfinished">Kuva heebrea keele vokaalimärke</translation>
+        <translation>Kuva heebrea keele vokaalimärke</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="104"/>
         <source>Show Hebrew cantillation marks</source>
-        <translation type="unfinished">Kuva heebrea keele laulumärke</translation>
+        <translation>Kuva heebrea keele laulumärke</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="105"/>
         <source>Show Greek accents</source>
-        <translation type="unfinished">Kuva kreeka keele rõhumärke</translation>
+        <translation>Kuva kreeka keele rõhumärke</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="106"/>
         <source>Use alternative textual variant</source>
-        <translation type="unfinished">Kasuta alternatiivseid tekstivariante</translation>
+        <translation>Kasuta alternatiivseid tekstivariante</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="107"/>
         <source>Show scripture cross-references</source>
-        <translation type="unfinished">Kuva pühakirjade ristviiteid</translation>
+        <translation>Kuva pühakirjade ristviiteid</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="108"/>
         <source>Show morph segmentation</source>
-        <translation type="unfinished">Kuva morfoloogilist segmentatsiooni</translation>
+        <translation>Kuva morfoloogilist segmentatsiooni</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="115"/>
         <source>Display settings</source>
-        <translation type="unfinished">Kuva seaded</translation>
+        <translation>Kuva seaded</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="118"/>
         <source>Display settings: No options available</source>
-        <translation type="unfinished">Kuva seaded: sätteid ei ole</translation>
+        <translation>Kuva seaded: sätteid ei ole</translation>
     </message>
 </context>
 <context>
@@ -903,7 +903,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="52"/>
         <source>Configuration file for the folders is: </source>
-        <translation>Selle kataloogi seadistuse fail on </translation>
+        <translation>Selle kataloogi seadistuse fail on: </translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="60"/>
@@ -1036,18 +1036,18 @@
     <message>
         <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="80"/>
         <source>Select a work [%1]</source>
-        <translation type="unfinished"></translation>
+        <translation>Vali teos [%1]</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="83"/>
         <source>Select an additional work</source>
-        <translation type="unfinished">Vali täiendav teos</translation>
+        <translation>Vali täiendav teos</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="93"/>
         <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="122"/>
         <source>NONE</source>
-        <translation type="unfinished">PUUDUB</translation>
+        <translation>PUUDUB</translation>
     </message>
 </context>
 <context>
@@ -1101,12 +1101,12 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.cpp" line="51"/>
         <source>Work</source>
-        <translation type="unfinished">Teos</translation>
+        <translation>Teos</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.cpp" line="54"/>
         <source>Install path</source>
-        <translation type="unfinished">Paigalduskoht</translation>
+        <translation>Paigalduskoht</translation>
     </message>
 </context>
 <context>
@@ -1319,22 +1319,22 @@ kiirklahv</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="49"/>
         <source>Add/remove/replace</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisa/eemalda/asenda</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="138"/>
         <source>Remove</source>
-        <translation type="unfinished">Eemalda</translation>
+        <translation>Eemalda</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="144"/>
         <source>Replace</source>
-        <translation type="unfinished"></translation>
+        <translation>Asenda</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="149"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisa</translation>
     </message>
 </context>
 <context>
@@ -1830,22 +1830,22 @@ kiirklahv</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="295"/>
         <source>Work chooser buttons</source>
-        <translation type="unfinished"></translation>
+        <translation>Teose valimise nupud</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="305"/>
         <source>Text area header</source>
-        <translation type="unfinished"></translation>
+        <translation>Tekstiala päis</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="351"/>
         <source>Navigation</source>
-        <translation type="unfinished"></translation>
+        <translation>Navigeerimine</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="360"/>
         <source>Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Tööriistad</translation>
     </message>
 </context>
 <context>
@@ -2467,7 +2467,7 @@ kiirklahv</translation>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="108"/>
         <source>A source with this caption already exists.  Please provide a different caption.</source>
-        <translation type="unfinished"></translation>
+        <translation>Selle nimega allikas juba eksisteerib. Palun sisestage erinev nimi.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="155"/>
@@ -3904,12 +3904,12 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/backend/bookshelfmodel/indexingitem.cpp" line="27"/>
         <source>Indexed works</source>
-        <translation type="unfinished"></translation>
+        <translation>Indekseeritud teosed</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/indexingitem.cpp" line="30"/>
         <source>Unindexed works</source>
-        <translation type="unfinished"></translation>
+        <translation>Indekseerimata teosed</translation>
     </message>
 </context>
 <context>
