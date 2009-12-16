@@ -1,0 +1,86 @@
+<chapter id="hdbk-intro">
+  <title>Introdução</title>
+  <sect1 id="hdbk-intro-about">
+    <title>Sobre &bibletime;</title>
+
+    <para>&bibletime; is a Bible study tool with support for different types of texts 
+and languages. Even large amounts of works modules are easy to install and 
+manage. It is built on the <ulink 
+url="http://www.crosswire.org/sword">&sword;</ulink> library, which provides 
+the back-end functionality for &bibletime;, such as viewing Bible text, 
+searching etc. &sword; is the flagship product of the <ulink 
+url="http://www.crosswire.org">&cbs;</ulink>.</para>
+
+    <para>&bibletime; is designed to be used with works encoded in one of the formats 
+supported by the &sword; project. Complete information on the supported 
+document formats can be found in the <ulink 
+url="http://www.crosswire.org/sword/develop/index.jsp"> developers 
+section</ulink> of the &sword; Project, &cbs;.</para>
+
+    <sect2 id="hdbk-intro-works">
+      <title>Obras disponíveis</title>
+      <para>Over 200 documents in 50 languages are available from the <ulink 
+url="http://www.crosswire.org">&cbs;</ulink>.  These include:
+      <variablelist>
+        <varlistentry>
+          <term>Bíblias</term>
+          <listitem>
+            <para>The full Bible text, with optional things like Strong's Numbers, headings 
+and/or footnotes in the text.  Bibles are available in many languages, and 
+include not only modern versions, but also ancient texts like the Codex 
+Leningradensis ("WLC", Hebrew), and the Septuagint ("LXX", Greek). This is 
+the most advanced section in the library of the &sword; project.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Livros</term>
+          <listitem>
+            <para>Livros disponíveis incluindo "Imitation of Christ", "Enuma Elish", e 
+"Josephus: The Complete Works" (em inglês)</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Comentários</term>
+          <listitem>
+            <para>Comentários disponíveis incluindo clássicos como "Notas sobre a Bíblia" de 
+John Wesley, o comentário de Matthew Henry e o "comentário sobre Glatas" de 
+Lutero. Com o comentário <emphasis>pessoal</emphasis> você pode <link 
+linkend="hdbk-op-parts-desk-write"> gravar suas próprias notas 
+pessoas</link> nas seções da Bíblia.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Devocionais diários</term>
+          <listitem>
+            <para>Muitas pessoas apreciam essas porções diárias da palavra de Deus. Obras 
+disponíveis incluem Daily Light on the Daily Path, e o Losungen (ingls).</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Léxicos/Dicionários</term>
+          <listitem>
+            <para>Léxicos disponíveis incluem: Códigos de Análise Morfológicos de Robinson, 
+Léxico Hebraico de Brown-Driver-Briggs e a Enciclopédia da International 
+Standard Bible. Dicionários disponíveis incluem o Dicionário bíblico 
+Hebraico de Strong, o Dicionário bíblico Grego de Strong, Dicionário 
+Revisado da língua Inglesa de Webster 1913, Bíblia em Tópicos de Nave.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist></para>
+    </sect2>
+    <sect2 id="hdbk-intro-motivation">
+      <title>Motivação</title>
+      <para>Nosso desejo é servir a Deus, e fazer nossa parte em ajudar outros a crescer 
+no seu relacionamento com Ele. Nós batalhamos para tornar isso um programa 
+poderoso e de qualidade, e ainda assim fazê-lo simples e de operação 
+intuitiva.  nosso desejo que Deus seja louvado, pois ele é a origem de todas 
+as coisas boas.</para>
+      <blockquote>
+        <attribution>Tiago 1:17, ACF</attribution>
+        <para>Toda a boa dádiva e todo o dom perfeito vem do alto, descendo do Pai das 
+luzes, em quem no há mudana nem sombra de variação.</para>
+      </blockquote>
+      <para>Deus o abençoe enquanto usa esse programa.</para>
+    </sect2>
+  </sect1>
+</chapter>

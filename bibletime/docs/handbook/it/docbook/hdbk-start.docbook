@@ -1,0 +1,75 @@
+<chapter id="hdbk-term">
+  <title>Avviando &bibletime;</title>
+
+  <sect1 id="hdbk-start">
+    <title>Come avviare &bibletime;</title>
+
+    <sect2 id="hdbk-start-starting">
+      <title>Avviando &bibletime;</title>
+      <para>&bibletime; è un file eseguibile integrato con il desktop. Puoi lanciare 
+&bibletime; dal menu di avvio con questa icona: 
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="i_bibletime.png" width="32" depth="32" format="PNG" />
+        </imageobject>
+        <textobject>
+          <phrase>&bibletime; start icon</phrase>
+        </textobject>
+      </mediaobject></para>
+
+      <para>&bibletime; può essere avviato da un prompt dei comandi. Per 
+lanciare&bibletime;, apri una finestra di terminale e digita: 
+      <screen>bibletime</screen></para>
+    </sect2>
+
+    <sect2 id="hdbk-start-custom">
+      <title>Personalizzazione avvio</title>
+      <para>Da un terminale puoi usare &bibletime; per aprire un versetto casuale nella 
+Bibbia di default:
+	<screen>bibletime --open-default-bible "&lt;random&gt;"</screen>
+	Per aprire ad un certo passaggio come Giovanni 3:16, usa:
+	<screen>bibletime --open-default-bible "Giovanni 3:16"</screen>
+	Puoi anche usare i nomi dei libri della Bibbia nella corrente per i nomi dei 
+libri della Bibbia.</para>
+    </sect2>
+  </sect1>
+
+  <sect1 id="hdbk-startsequence">
+    <title>Sequenza di avvio</title>
+
+    <para>Come &bibletime; parte puoi vedere le seguenti schermate prima che la 
+finestra principale di &bibletime; si apra:</para>
+
+    <variablelist>
+      <varlistentry>
+        <term>
+          <interface>Bookshelf Manager</interface>
+        </term>
+        <listitem>
+          <para><action>Modifica Libreria</action>. Questa finestra ti permette di 
+modificare la tua Libreria, aggiungere o cancellare documenti dal tuo 
+sistema. Sarà visualizzato solo se non è trovata una Libreria di 
+default. Guarda la sezione <link linkend="hdbk-op-bookshelfmanager">Il 
+Gestore Libreria</link> per maggiori dettagli. Se inizi con una Libreria 
+vuota, sarà utile per installare almeno una Bibbia, Commenti, Lessico e un 
+Libro per conoscere le funzioni di base di &bibletime; velocemente. Puoi 
+fare questo cliccando sul pulsante Aggiorna. Si presenterà con una lista di 
+documenti disponibili da &cbs;</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>
+          <interface>Configure &bibletime; dialog</interface>
+        </term>
+        <listitem>
+          <para>
+          <action>Personalizza &bibletime;.</action> Questa finestra ti permette di 
+adattare &bibletime; alle tue esigenze. Guarda <link 
+linkend="hdbk-config-bt">la descrizione dettagliata</link> di questa 
+finestra.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect1>
+</chapter>
