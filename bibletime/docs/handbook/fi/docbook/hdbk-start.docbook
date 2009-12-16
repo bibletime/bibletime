@@ -10,7 +10,7 @@
 can launch &bibletime; from the Start Menu with this icon: 
       <mediaobject>
         <imageobject>
-          <imagedata fileref="i_bibletime.png" format="PNG" />
+          <imagedata fileref="i_bibletime.png" width="32" depth="32" format="PNG" />
         </imageobject>
         <textobject>
           <phrase>&bibletime; käynnistyskuvake</phrase>

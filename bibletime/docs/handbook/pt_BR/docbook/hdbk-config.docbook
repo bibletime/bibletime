@@ -55,7 +55,7 @@ especiais para serem exibidos corretamente, e esse diálogo permite a você
 especificar uma fonte personalizada para cada idioma.</para>
       <mediaobject>
         <imageobject>
-          <imagedata fileref="ss_configfonts.png" format="PNG" />
+          <imagedata fileref="ss_configfonts.png" width="600" depth="472" format="PNG" />
         </imageobject>
         <textobject>
           <phrase>Diálogo de Opções - fontes</phrase>
@@ -190,7 +190,7 @@ seção</link> para uma listagem completa). A maior parte dos comandos do
 para acessar rapidamente as funções que você mais usa.</para>
 
       <imageobject>
-	<imagedata fileref="ss_shortcuts.png" format="PNG" />
+	<imagedata fileref="ss_shortcuts.png" width="600" depth="441" format="PNG" />
       </imageobject>
 
       <para>In the preceding example, F2, Bible Study Howto has a secondary shortcut 

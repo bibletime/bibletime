@@ -26,7 +26,7 @@ linkend="hdbk-reference-shortcuts">shortcuts section</link>.</para>
                 <guimenu>
                 <inlinemediaobject>
                   <imageobject>
-                    <imagedata fileref="i_exit.png" format="PNG" />
+                    <imagedata fileref="i_exit.png" width="32" depth="32" format="PNG" />
                   </imageobject>
                 </inlinemediaobject>File</guimenu>
                 <guimenuitem>Quit</guimenuitem>
@@ -59,7 +59,7 @@ write unsaved changes to disk.</para>
               <guimenu>
               <inlinemediaobject>
                 <imageobject>
-                  <imagedata fileref="i_window_fullscreen.png" format="PNG" />
+                  <imagedata fileref="i_window_fullscreen.png" width="32" depth="32" format="PNG" />
                 </imageobject>
               </inlinemediaobject>View</guimenu>
               <guimenuitem>Fullscreen mode</guimenuitem>
@@ -151,7 +151,7 @@ setting to turn the Mag on the left pane on or off.</para>
               <guimenu>
               <inlinemediaobject>
                 <imageobject>
-                  <imagedata fileref="i_find.png" format="PNG" />
+                  <imagedata fileref="i_find.png" width="32" depth="32" format="PNG" />
                 </imageobject>
               </inlinemediaobject>Search</guimenu>
               <guimenuitem>Search in standard bible</guimenuitem>
@@ -176,7 +176,7 @@ linkend="hdbk-op-search">Searching in works</link> section.</para>
               <guimenu>
               <inlinemediaobject>
                 <imageobject>
-                  <imagedata fileref="i_find.png" format="PNG" />
+                  <imagedata fileref="i_find.png" width="32" depth="32" format="PNG" />
                 </imageobject>
               </inlinemediaobject>Search</guimenu>
               <guimenuitem>Search in open work(s)</guimenuitem>
@@ -294,7 +294,7 @@ for you (Automatic modes, just try them out!).</para>
               <guimenu>
               <inlinemediaobject>
                 <imageobject>
-                  <imagedata fileref="i_cascade.png" format="PNG" />
+                  <imagedata fileref="i_cascade.png" width="32" depth="32" format="PNG" />
                 </imageobject>
               </inlinemediaobject>Window</guimenu>
               <guimenuitem>Cascade</guimenuitem>
@@ -318,7 +318,7 @@ for you (Automatic modes, just try them out!).</para>
               <guimenu>
               <inlinemediaobject>
                 <imageobject>
-                  <imagedata fileref="i_tile.png" format="PNG" />
+                  <imagedata fileref="i_tile.png" width="32" depth="32" format="PNG" />
                 </imageobject>
               </inlinemediaobject>Window</guimenu>
               <guimenuitem>Tile</guimenuitem>
@@ -342,7 +342,7 @@ for you (Automatic modes, just try them out!).</para>
               <guimenu>
               <inlinemediaobject>
                 <imageobject>
-                  <imagedata fileref="i_tile_vert.png" format="PNG" />
+                  <imagedata fileref="i_tile_vert.png" width="32" depth="32" format="PNG" />
                 </imageobject>
               </inlinemediaobject>Window</guimenu>
               <guimenuitem>Tile vertically</guimenuitem>
@@ -366,7 +366,7 @@ for you (Automatic modes, just try them out!).</para>
               <guimenu>
               <inlinemediaobject>
                 <imageobject>
-                  <imagedata fileref="i_tile_horiz.png" format="PNG" />
+                  <imagedata fileref="i_tile_horiz.png" width="32" depth="32" format="PNG" />
                 </imageobject>
               </inlinemediaobject>Window</guimenu>
               <guimenuitem>Tile horizontally</guimenuitem>
@@ -390,7 +390,7 @@ for you (Automatic modes, just try them out!).</para>
               <guimenu>
               <inlinemediaobject>
                 <imageobject>
-                  <imagedata fileref="i_fileclose.png" format="PNG" />
+                  <imagedata fileref="i_fileclose.png" width="32" depth="32" format="PNG" />
                 </imageobject>
               </inlinemediaobject>Window</guimenu>
               <guimenuitem>Close all</guimenuitem>
@@ -416,7 +416,7 @@ for you (Automatic modes, just try them out!).</para>
               <guimenu>
               <inlinemediaobject>
                 <imageobject>
-                  <imagedata fileref="i_configure.png" format="PNG" />
+                  <imagedata fileref="i_configure.png" width="32" depth="32" format="PNG" />
                 </imageobject>
               </inlinemediaobject>Settings</guimenu>
               <guimenuitem>Configure &bibletime;</guimenuitem>
@@ -443,8 +443,7 @@ needs.  Please see the <link linkend="hdbk-config-bt">Configuring
               <guimenu>
               <inlinemediaobject>
                 <imageobject>
-                  <imagedata fileref="i_configuresword.png"
-                  format="PNG" />
+                  <imagedata fileref="i_configuresword.png" width="32" depth="32" format="PNG" />
                 </imageobject>
               </inlinemediaobject>Settings</guimenu>
               <guimenuitem>Bookshelf Manager</guimenuitem>
@@ -477,7 +476,7 @@ details.</para>
               <guimenu>
               <inlinemediaobject>
                 <imageobject>
-                  <imagedata fileref="i_contents2.png" format="PNG" />
+                  <imagedata fileref="i_contents2.png" width="32" depth="32" format="PNG" />
                 </imageobject>
               </inlinemediaobject>Help</guimenu>
               <guimenuitem>Handbook</guimenuitem>
@@ -500,8 +499,7 @@ details.</para>
               <guimenu>
               <inlinemediaobject>
                 <imageobject>
-                  <imagedata fileref="i_contents2.png"
-                  format="PNG" />
+                  <imagedata fileref="i_contents2.png" width="32" depth="32" format="PNG" />
                 </imageobject>
               </inlinemediaobject>Help</guimenu>
               <guimenuitem>Bible Study Howto</guimenuitem>
@@ -554,7 +552,7 @@ works.
                 <guimenu>
                 <inlinemediaobject>
                   <imageobject>
-                    <imagedata fileref="i_forward.png" format="PNG" />
+                    <imagedata fileref="i_forward.png" width="32" depth="32" format="PNG" />
                   </imageobject>
                 </inlinemediaobject></guimenu>
               </menuchoice>
@@ -577,7 +575,7 @@ works.
                 <guimenu>
                 <inlinemediaobject>
                   <imageobject>
-                    <imagedata fileref="i_back.png" format="PNG" />
+                    <imagedata fileref="i_back.png" width="32" depth="32" format="PNG" />
                   </imageobject>
                 </inlinemediaobject></guimenu>
               </menuchoice>
@@ -600,7 +598,7 @@ works.
                 <guimenu>
                 <inlinemediaobject>
                   <imageobject>
-                    <imagedata fileref="i_bible.png" format="PNG" />
+                    <imagedata fileref="i_bible.png" width="32" depth="32" format="PNG" />
                   </imageobject>
                 </inlinemediaobject></guimenu>
               </menuchoice>
@@ -623,7 +621,7 @@ works.
                 <guimenu>
                 <inlinemediaobject>
                   <imageobject>
-                    <imagedata fileref="i_bible_add.png" format="PNG" />
+                    <imagedata fileref="i_bible_add.png" width="32" depth="32" format="PNG" />
                   </imageobject>
                 </inlinemediaobject></guimenu>
               </menuchoice>
@@ -646,7 +644,7 @@ works.
                 <guimenu>
                 <inlinemediaobject>
                   <imageobject>
-                    <imagedata fileref="i_find.png" format="PNG" />
+                    <imagedata fileref="i_find.png" width="32" depth="32" format="PNG" />
                   </imageobject>
                 </inlinemediaobject></guimenu>
               </menuchoice>
@@ -669,7 +667,7 @@ works.
                 <guimenu>
                 <inlinemediaobject>
                   <imageobject>
-                    <imagedata fileref="i_displayconfig.png" format="PNG" />
+                    <imagedata fileref="i_displayconfig.png" width="32" depth="32" format="PNG" />
                   </imageobject>
                 </inlinemediaobject></guimenu>
               </menuchoice>
@@ -692,7 +690,7 @@ works.
                 <guimenu>
                 <inlinemediaobject>
                   <imageobject>
-                    <imagedata fileref="i_commentary.png" format="PNG" />
+                    <imagedata fileref="i_commentary.png" width="32" depth="32" format="PNG" />
                   </imageobject>
                 </inlinemediaobject></guimenu>
               </menuchoice>
@@ -715,7 +713,7 @@ works.
                 <guimenu>
                 <inlinemediaobject>
                   <imageobject>
-                    <imagedata fileref="i_commentary_add.png" format="PNG" />
+                    <imagedata fileref="i_commentary_add.png" width="32" depth="32" format="PNG" />
                   </imageobject>
                 </inlinemediaobject></guimenu>
               </menuchoice>
@@ -738,7 +736,7 @@ works.
                 <guimenu>
                 <inlinemediaobject>
                   <imageobject>
-                    <imagedata fileref="i_sync.png" format="PNG" />
+                    <imagedata fileref="i_sync.png" width="32" depth="32" format="PNG" />
                   </imageobject>
                 </inlinemediaobject></guimenu>
               </menuchoice>
@@ -761,7 +759,7 @@ works.
                 <guimenu>
                 <inlinemediaobject>
                   <imageobject>
-                    <imagedata fileref="i_book.png" format="PNG" />
+                    <imagedata fileref="i_book.png" width="32" depth="32" format="PNG" />
                   </imageobject>
                 </inlinemediaobject></guimenu>
               </menuchoice>
@@ -784,7 +782,7 @@ works.
                 <guimenu>
                 <inlinemediaobject>
                   <imageobject>
-                    <imagedata fileref="i_lexicon.png" format="PNG" />
+                    <imagedata fileref="i_lexicon.png" width="32" depth="32" format="PNG" />
                   </imageobject>
                 </inlinemediaobject></guimenu>
               </menuchoice>
@@ -807,7 +805,7 @@ works.
                 <guimenu>
                 <inlinemediaobject>
                   <imageobject>
-                    <imagedata fileref="i_lexicon_add.png" format="PNG" />
+                    <imagedata fileref="i_lexicon_add.png" width="32" depth="32" format="PNG" />
                   </imageobject>
                 </inlinemediaobject></guimenu>
               </menuchoice>

@@ -10,7 +10,7 @@
 &bibletime; dal menu di avvio con questa icona: 
       <mediaobject>
         <imageobject>
-          <imagedata fileref="i_bibletime.png" format="PNG" />
+          <imagedata fileref="i_bibletime.png" width="32" depth="32" format="PNG" />
         </imageobject>
         <textobject>
           <phrase>&bibletime; start icon</phrase>

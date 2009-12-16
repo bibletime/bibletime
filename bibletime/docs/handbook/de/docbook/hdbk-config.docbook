@@ -56,7 +56,7 @@ und dieser Dialog erlaubt Ihnen, spezielle Schriftarten für jede Sprache zu
 spezifizieren.</para>
       <mediaobject>
         <imageobject>
-          <imagedata fileref="ss_configfonts.png" format="PNG" />
+          <imagedata fileref="ss_configfonts.png" width="600" depth="472" format="PNG" />
         </imageobject>
         <textobject>
           <phrase>Optionendialog - Schriften</phrase>
@@ -197,7 +197,7 @@ Tastenkürzel</link> für eine komplette Auflistung). Den meisten Befehlen von
 hilfreich, um die meistbenutzten Funktionen schnell zu erreichen.</para>
 
       <imageobject>
-	<imagedata fileref="ss_shortcuts.png" format="PNG" />
+	<imagedata fileref="ss_shortcuts.png" width="600" depth="441" format="PNG" />
       </imageobject>
 
       <para>Im vorherigen Beispiel, F2, wurde dem Bibelstudien-HowTo ein sekundäres 

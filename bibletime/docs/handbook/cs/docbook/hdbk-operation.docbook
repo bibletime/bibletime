@@ -5,7 +5,7 @@
     <para>Takto vypadá typická relace &bibletime;: 
     <mediaobject>
       <imageobject>
-        <imagedata fileref="ss_mainterms.png" format="PNG" />
+        <imagedata fileref="ss_mainterms.png" width="600" depth="466" format="PNG" />
       </imageobject>
       <textobject>
         <phrase>Okno aplikace &bibletime;</phrase>
@@ -203,7 +203,7 @@ aktuálním okně.</para>
         <screeninfo>Nastavení dialogu hledání</screeninfo>
         <mediaobject>
           <imageobject>
-            <imagedata fileref="ss_searchopts.png" format="PNG" />
+            <imagedata fileref="ss_searchopts.png" width="600" depth="463" format="PNG" />
           </imageobject>
         </mediaobject>
       </screenshot>
@@ -318,7 +318,7 @@ vyhledávání. Zobrazí jednoduchou grafickou analýzu množství nalezených
           <screeninfo>Dialog analýzy vyhledávání</screeninfo>
           <mediaobject>
             <imageobject>
-              <imagedata fileref="ss_searchanal.png" format="PNG" />
+              <imagedata fileref="ss_searchanal.png" width="600" depth="470" format="PNG" />
             </imageobject>
           </mediaobject>
         </screenshot>

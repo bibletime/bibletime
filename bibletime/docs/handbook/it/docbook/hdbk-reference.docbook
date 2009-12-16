@@ -26,7 +26,7 @@ ogni elemento, una lista completa di tutte le scorciatoie la trovi nella
                 <guimenu>
                 <inlinemediaobject>
                   <imageobject>
-                    <imagedata fileref="i_exit.png" format="PNG" />
+                    <imagedata fileref="i_exit.png" width="32" depth="32" format="PNG" />
                   </imageobject>
                 </inlinemediaobject>File</guimenu>
                 <guimenuitem>Quit</guimenuitem>
@@ -59,7 +59,7 @@ scrivere i cambiamenti non salvati sul disco.</para>
               <guimenu>
               <inlinemediaobject>
                 <imageobject>
-                  <imagedata fileref="i_window_fullscreen.png" format="PNG" />
+                  <imagedata fileref="i_window_fullscreen.png" width="32" depth="32" format="PNG" />
                 </imageobject>
               </inlinemediaobject>View</guimenu>
               <guimenuitem>Fullscreen mode</guimenuitem>
@@ -151,7 +151,7 @@ mostrare o nascodere la Lente nel pannello di sinistra.</para>
               <guimenu>
               <inlinemediaobject>
                 <imageobject>
-                  <imagedata fileref="i_find.png" format="PNG" />
+                  <imagedata fileref="i_find.png" width="32" depth="32" format="PNG" />
                 </imageobject>
               </inlinemediaobject>Search</guimenu>
               <guimenuitem>Search in standard bible</guimenuitem>
@@ -176,7 +176,7 @@ sezione <link linkend="hdbk-op-search">Cercare nei documenti</link>.</para>
               <guimenu>
               <inlinemediaobject>
                 <imageobject>
-                  <imagedata fileref="i_find.png" format="PNG" />
+                  <imagedata fileref="i_find.png" width="32" depth="32" format="PNG" />
                 </imageobject>
               </inlinemediaobject>Search</guimenu>
               <guimenuitem>Search in open work(s)</guimenuitem>
@@ -294,7 +294,7 @@ disposizione delle finestre (modalità manuale) o lasciare che sia
               <guimenu>
               <inlinemediaobject>
                 <imageobject>
-                  <imagedata fileref="i_cascade.png" format="PNG" />
+                  <imagedata fileref="i_cascade.png" width="32" depth="32" format="PNG" />
                 </imageobject>
               </inlinemediaobject>Window</guimenu>
               <guimenuitem>Cascade</guimenuitem>
@@ -318,7 +318,7 @@ disposizione delle finestre (modalità manuale) o lasciare che sia
               <guimenu>
               <inlinemediaobject>
                 <imageobject>
-                  <imagedata fileref="i_tile.png" format="PNG" />
+                  <imagedata fileref="i_tile.png" width="32" depth="32" format="PNG" />
                 </imageobject>
               </inlinemediaobject>Window</guimenu>
               <guimenuitem>Tile</guimenuitem>
@@ -342,7 +342,7 @@ disposizione delle finestre (modalità manuale) o lasciare che sia
               <guimenu>
               <inlinemediaobject>
                 <imageobject>
-                  <imagedata fileref="i_tile_vert.png" format="PNG" />
+                  <imagedata fileref="i_tile_vert.png" width="32" depth="32" format="PNG" />
                 </imageobject>
               </inlinemediaobject>Window</guimenu>
               <guimenuitem>Tile vertically</guimenuitem>
@@ -366,7 +366,7 @@ disposizione delle finestre (modalità manuale) o lasciare che sia
               <guimenu>
               <inlinemediaobject>
                 <imageobject>
-                  <imagedata fileref="i_tile_horiz.png" format="PNG" />
+                  <imagedata fileref="i_tile_horiz.png" width="32" depth="32" format="PNG" />
                 </imageobject>
               </inlinemediaobject>Window</guimenu>
               <guimenuitem>Tile horizontally</guimenuitem>
@@ -390,7 +390,7 @@ disposizione delle finestre (modalità manuale) o lasciare che sia
               <guimenu>
               <inlinemediaobject>
                 <imageobject>
-                  <imagedata fileref="i_fileclose.png" format="PNG" />
+                  <imagedata fileref="i_fileclose.png" width="32" depth="32" format="PNG" />
                 </imageobject>
               </inlinemediaobject>Window</guimenu>
               <guimenuitem>Close all</guimenuitem>
@@ -416,7 +416,7 @@ disposizione delle finestre (modalità manuale) o lasciare che sia
               <guimenu>
               <inlinemediaobject>
                 <imageobject>
-                  <imagedata fileref="i_configure.png" format="PNG" />
+                  <imagedata fileref="i_configure.png" width="32" depth="32" format="PNG" />
                 </imageobject>
               </inlinemediaobject>Settings</guimenu>
               <guimenuitem>Configure &bibletime;</guimenuitem>
@@ -443,8 +443,7 @@ esigenze. Guarda la sezione <link linkend="hdbk-config-bt">Configurare
               <guimenu>
               <inlinemediaobject>
                 <imageobject>
-                  <imagedata fileref="i_configuresword.png"
-                  format="PNG" />
+                  <imagedata fileref="i_configuresword.png" width="32" depth="32" format="PNG" />
                 </imageobject>
               </inlinemediaobject>Settings</guimenu>
               <guimenuitem>Bookshelf Manager</guimenuitem>
@@ -477,7 +476,7 @@ dettagli.</para>
               <guimenu>
               <inlinemediaobject>
                 <imageobject>
-                  <imagedata fileref="i_contents2.png" format="PNG" />
+                  <imagedata fileref="i_contents2.png" width="32" depth="32" format="PNG" />
                 </imageobject>
               </inlinemediaobject>Help</guimenu>
               <guimenuitem>Handbook</guimenuitem>
@@ -501,8 +500,7 @@ adesso.</para>
               <guimenu>
               <inlinemediaobject>
                 <imageobject>
-                  <imagedata fileref="i_contents2.png"
-                  format="PNG" />
+                  <imagedata fileref="i_contents2.png" width="32" depth="32" format="PNG" />
                 </imageobject>
               </inlinemediaobject>Help</guimenu>
               <guimenuitem>Bible Study Howto</guimenuitem>
@@ -555,7 +553,7 @@ documenti aperti.
                 <guimenu>
                 <inlinemediaobject>
                   <imageobject>
-                    <imagedata fileref="i_forward.png" format="PNG" />
+                    <imagedata fileref="i_forward.png" width="32" depth="32" format="PNG" />
                   </imageobject>
                 </inlinemediaobject></guimenu>
               </menuchoice>
@@ -578,7 +576,7 @@ documenti aperti.
                 <guimenu>
                 <inlinemediaobject>
                   <imageobject>
-                    <imagedata fileref="i_back.png" format="PNG" />
+                    <imagedata fileref="i_back.png" width="32" depth="32" format="PNG" />
                   </imageobject>
                 </inlinemediaobject></guimenu>
               </menuchoice>
@@ -601,7 +599,7 @@ documenti aperti.
                 <guimenu>
                 <inlinemediaobject>
                   <imageobject>
-                    <imagedata fileref="i_bible.png" format="PNG" />
+                    <imagedata fileref="i_bible.png" width="32" depth="32" format="PNG" />
                   </imageobject>
                 </inlinemediaobject></guimenu>
               </menuchoice>
@@ -624,7 +622,7 @@ documenti aperti.
                 <guimenu>
                 <inlinemediaobject>
                   <imageobject>
-                    <imagedata fileref="i_bible_add.png" format="PNG" />
+                    <imagedata fileref="i_bible_add.png" width="32" depth="32" format="PNG" />
                   </imageobject>
                 </inlinemediaobject></guimenu>
               </menuchoice>
@@ -647,7 +645,7 @@ documenti aperti.
                 <guimenu>
                 <inlinemediaobject>
                   <imageobject>
-                    <imagedata fileref="i_find.png" format="PNG" />
+                    <imagedata fileref="i_find.png" width="32" depth="32" format="PNG" />
                   </imageobject>
                 </inlinemediaobject></guimenu>
               </menuchoice>
@@ -670,7 +668,7 @@ documenti aperti.
                 <guimenu>
                 <inlinemediaobject>
                   <imageobject>
-                    <imagedata fileref="i_displayconfig.png" format="PNG" />
+                    <imagedata fileref="i_displayconfig.png" width="32" depth="32" format="PNG" />
                   </imageobject>
                 </inlinemediaobject></guimenu>
               </menuchoice>
@@ -693,7 +691,7 @@ documenti aperti.
                 <guimenu>
                 <inlinemediaobject>
                   <imageobject>
-                    <imagedata fileref="i_commentary.png" format="PNG" />
+                    <imagedata fileref="i_commentary.png" width="32" depth="32" format="PNG" />
                   </imageobject>
                 </inlinemediaobject></guimenu>
               </menuchoice>
@@ -716,7 +714,7 @@ documenti aperti.
                 <guimenu>
                 <inlinemediaobject>
                   <imageobject>
-                    <imagedata fileref="i_commentary_add.png" format="PNG" />
+                    <imagedata fileref="i_commentary_add.png" width="32" depth="32" format="PNG" />
                   </imageobject>
                 </inlinemediaobject></guimenu>
               </menuchoice>
@@ -739,7 +737,7 @@ documenti aperti.
                 <guimenu>
                 <inlinemediaobject>
                   <imageobject>
-                    <imagedata fileref="i_sync.png" format="PNG" />
+                    <imagedata fileref="i_sync.png" width="32" depth="32" format="PNG" />
                   </imageobject>
                 </inlinemediaobject></guimenu>
               </menuchoice>
@@ -762,7 +760,7 @@ documenti aperti.
                 <guimenu>
                 <inlinemediaobject>
                   <imageobject>
-                    <imagedata fileref="i_book.png" format="PNG" />
+                    <imagedata fileref="i_book.png" width="32" depth="32" format="PNG" />
                   </imageobject>
                 </inlinemediaobject></guimenu>
               </menuchoice>
@@ -785,7 +783,7 @@ documenti aperti.
                 <guimenu>
                 <inlinemediaobject>
                   <imageobject>
-                    <imagedata fileref="i_lexicon.png" format="PNG" />
+                    <imagedata fileref="i_lexicon.png" width="32" depth="32" format="PNG" />
                   </imageobject>
                 </inlinemediaobject></guimenu>
               </menuchoice>
@@ -808,7 +806,7 @@ documenti aperti.
                 <guimenu>
                 <inlinemediaobject>
                   <imageobject>
-                    <imagedata fileref="i_lexicon_add.png" format="PNG" />
+                    <imagedata fileref="i_lexicon_add.png" width="32" depth="32" format="PNG" />
                   </imageobject>
                 </inlinemediaobject></guimenu>
               </menuchoice>

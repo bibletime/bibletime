@@ -5,7 +5,7 @@
     <para>É assim que parece uma típica sessão do &bibletime;: 
     <mediaobject>
       <imageobject>
-        <imagedata fileref="ss_mainterms.png" format="PNG" />
+        <imagedata fileref="ss_mainterms.png" width="600" depth="466" format="PNG" />
       </imageobject>
       <textobject>
         <phrase>A janela do aplicativo &bibletime;</phrase>
@@ -212,7 +212,7 @@ open read window.</para>
         <screeninfo>Search Text Dialog Options Tab</screeninfo>
         <mediaobject>
           <imageobject>
-            <imagedata fileref="ss_searchopts.png" format="PNG" />
+            <imagedata fileref="ss_searchopts.png" width="600" depth="463" format="PNG" />
           </imageobject>
         </mediaobject>
       </screenshot>
@@ -327,7 +327,7 @@ analysis.</para>
           <screeninfo>Search Analysis Dialog Box</screeninfo>
           <mediaobject>
             <imageobject>
-              <imagedata fileref="ss_searchanal.png" format="PNG" />
+              <imagedata fileref="ss_searchanal.png" width="600" depth="470" format="PNG" />
             </imageobject>
           </mediaobject>
         </screenshot>

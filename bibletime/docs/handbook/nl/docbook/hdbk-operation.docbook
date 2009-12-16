@@ -5,7 +5,7 @@
     <para>This is what a typical &bibletime; session looks like: 
     <mediaobject>
       <imageobject>
-        <imagedata fileref="ss_mainterms.png" format="PNG" />
+        <imagedata fileref="ss_mainterms.png" width="600" depth="466" format="PNG" />
       </imageobject>
       <textobject>
         <phrase>The &bibletime; application window</phrase>
@@ -213,7 +213,7 @@ zoeksymbool in een geopend leesvenster te klikken.</para>
         <screeninfo>Het tabblad Opties in de dialoog Tekst Zoeken</screeninfo>
         <mediaobject>
           <imageobject>
-            <imagedata fileref="ss_searchopts.png" format="PNG" />
+            <imagedata fileref="ss_searchopts.png" width="600" depth="463" format="PNG" />
           </imageobject>
         </mediaobject>
       </screenshot>
@@ -329,7 +329,7 @@ analysis.</para>
           <screeninfo>Zoekanalyse Dialoog</screeninfo>
           <mediaobject>
             <imageobject>
-              <imagedata fileref="ss_searchanal.png" format="PNG" />
+              <imagedata fileref="ss_searchanal.png" width="600" depth="470" format="PNG" />
             </imageobject>
           </mediaobject>
         </screenshot>

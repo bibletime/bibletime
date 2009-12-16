@@ -60,7 +60,7 @@
       you to specify a custom font for each language.</para>
       <mediaobject>
         <imageobject>
-          <imagedata fileref="ss_configfonts.png" format="PNG" />
+          <imagedata fileref="ss_configfonts.png" width="600" depth="472" format="PNG" />
         </imageobject>
         <textobject>
           <phrase>Options Dialog - fonts</phrase>
@@ -212,7 +212,7 @@
 	functions that you need the most.</para>
 
       <imageobject>
-	<imagedata fileref="ss_shortcuts.png" format="PNG" />
+	<imagedata fileref="ss_shortcuts.png" width="600" depth="441" format="PNG" />
       </imageobject>
 
       <para>In the preceding example, F2, Bible Study Howto has a

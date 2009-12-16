@@ -10,7 +10,7 @@
 prostředí. &bibletime; můžete spustit z menu Start touto ikonou: 
       <mediaobject>
         <imageobject>
-          <imagedata fileref="i_bibletime.png" format="PNG" />
+          <imagedata fileref="i_bibletime.png" width="32" depth="32" format="PNG" />
         </imageobject>
         <textobject>
           <phrase>&bibletime; spouštěcí ikona</phrase>

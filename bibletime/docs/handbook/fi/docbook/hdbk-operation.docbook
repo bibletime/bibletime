@@ -5,7 +5,7 @@
     <para>Tyypillinen &bibletime;-istunto näyttää tällaiselta: 
     <mediaobject>
       <imageobject>
-        <imagedata fileref="ss_mainterms.png" format="PNG" />
+        <imagedata fileref="ss_mainterms.png" width="600" depth="466" format="PNG" />
       </imageobject>
       <textobject>
         <phrase>The &bibletime;-sovelluksen ikkuna</phrase>
@@ -210,7 +210,7 @@ avoimessa lukuikkunassa.</para>
         <screeninfo>Hakuikkunan ominaisuuspalkki</screeninfo>
         <mediaobject>
           <imageobject>
-            <imagedata fileref="ss_searchopts.png" format="PNG" />
+            <imagedata fileref="ss_searchopts.png" width="600" depth="463" format="PNG" />
           </imageobject>
         </mediaobject>
       </screenshot>
@@ -325,7 +325,7 @@ analysis.</para>
           <screeninfo>Hakuanalyysi-ikkuna</screeninfo>
           <mediaobject>
             <imageobject>
-              <imagedata fileref="ss_searchanal.png" format="PNG" />
+              <imagedata fileref="ss_searchanal.png" width="600" depth="470" format="PNG" />
             </imageobject>
           </mediaobject>
         </screenshot>
