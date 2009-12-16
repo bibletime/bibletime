@@ -91,8 +91,7 @@ void BtAboutDialog::init_contributors_tab() {
     content += "<li>Mark Lybarger (" + tr("developer") + ")</li>";
     content += "<li>Luke Mauldin (" + tr("developer") + ")</li>";
     content += "<li>James Ots (" + tr("designer") + ")</li>";
-    /** \todo BibleTime 2.6: Add tr("artist"): */
-    content += "<li>Andrus Raag</li>";
+    content += "<li>Andrus Raag (" + tr("artist") + ")</li>";
     content += "<li>Jaak Ristioja (" + tr("developer") + ")</li>";
     content += "<li>Fred Saalbach (" + tr("documentation") + ")</li>";
     content += "<li>Gary Sims (" + tr("developer") + ")</li>";
