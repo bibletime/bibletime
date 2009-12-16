@@ -4,7 +4,7 @@
   <sect1 id="hdbk-start">
     <title>How to start &bibletime;</title>
 
-    <sect2 id="hdbk-start">
+    <sect2 id="hdbk-start-starting">
       <title>Starting &bibletime;</title>
       <para>&bibletime; is an executable file that is integrated
       with the desktop. You can launch &bibletime; from

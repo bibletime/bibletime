@@ -4,7 +4,7 @@
   <sect1 id="hdbk-start">
     <title>Jak spustit &bibletime;</title>
 
-    <sect2 id="hdbk-start">
+    <sect2 id="hdbk-start-starting">
       <title>Spuštění &bibletime;</title>
       <para>&bibletime; je spustitelný soubor integrovaný do pracovního 
 prostředí. &bibletime; můžete spustit z menu Start touto ikonou: 

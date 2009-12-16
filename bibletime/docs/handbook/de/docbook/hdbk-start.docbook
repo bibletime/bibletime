@@ -4,7 +4,7 @@
   <sect1 id="hdbk-start">
     <title>Wie &bibletime; zu starten ist</title>
 
-    <sect2 id="hdbk-start">
+    <sect2 id="hdbk-start-starting">
       <title> &bibletime; starten</title>
       <para>&bibletime; ist eine ausführbare Datei, die in Ihrem Desktop integriert 
 ist. Sie können &bibletime; aus dem Startmenü mit folgendem Symbol starten: 

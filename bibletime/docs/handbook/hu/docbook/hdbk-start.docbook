@@ -4,7 +4,7 @@
   <sect1 id="hdbk-start">
     <title>Hogyan indítsuk a &bibletime; programot</title>
 
-    <sect2 id="hdbk-start">
+    <sect2 id="hdbk-start-starting">
       <title>&bibletime; indítása</title>
       <para>A &bibletime; egy végrehajtható fájl, amit a Start menüből indíthat, evvel 
 az ikonnal: 
