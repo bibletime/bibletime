@@ -75,7 +75,7 @@ class BibleTimeDBusAdaptor : QDBusAbstractAdaptor {
         * @return The reference displayed in the currently active module window. Empty if none is active.
         */
         QString getCurrentReference();
-        /** Seach the searchText in the specified module.
+        /** Search the searchText in the specified module.
         * @param moduleName The module to search in
         * @param searchText Search for this in the modules
         * @return The search result. It's in the format [modulename] osis_ref_of_the_found_key. For example "[KJV] Gen.1.1".

@@ -229,7 +229,7 @@ void CSearchDialog::initView() {
     QHBoxLayout* horizontalLayout = new QHBoxLayout();
 
     m_analyseButton = new QPushButton(tr("&Analyze results..."), 0);
-    m_analyseButton->setToolTip(tr("Show a graphical analyzis of the search result"));
+    m_analyseButton->setToolTip(tr("Show a graphical analysis of the search result"));
     QSpacerItem* spacerItem = new QSpacerItem(1, 1, QSizePolicy::Expanding, QSizePolicy::Minimum);
     horizontalLayout->addWidget(m_analyseButton);
     horizontalLayout->addItem(spacerItem);

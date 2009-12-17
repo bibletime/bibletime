@@ -137,7 +137,7 @@ void CDisplaySettingsPage::updateStylePreview() {
 
     tree.append( new CTextRendering::KeyTreeItem(
                      QString("\n<span class=\"entryname\"><a name=\"John319\" href=\"sword://Bible/WEB/John 3:19\">19</a></span>%1")
-                     .arg(tr("This is the judgment, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.")),
+                     .arg(tr("This is the judgement, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.")),
                      settings));
 
     tree.append( new CTextRendering::KeyTreeItem(

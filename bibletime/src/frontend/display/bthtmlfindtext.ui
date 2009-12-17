@@ -48,7 +48,7 @@
       <item>
        <widget class="QCheckBox" name="caseBox" >
         <property name="toolTip" >
-         <string>Seach with case sensitivity</string>
+         <string>Search with case sensitivity</string>
         </property>
         <property name="text" >
          <string>Case &amp;sensitive</string>
