@@ -240,7 +240,7 @@ void BtAboutDialog::retranslateLicenceTab() {
     QFile licFile(util::directory::getLicenseDir().path() + "/license.html");
     if (licFile.open(QFile::ReadOnly)) {
 
-        QString text;
+        QString text("<p>");
         text += tr("BibleTime is released under the GPL license.");
         text += " ";
         text += tr("You can download and use (but not distribute) the program for personal, "
@@ -250,9 +250,10 @@ void BtAboutDialog::retranslateLicenceTab() {
                    "corresponding source code.");
         text += BR BR;
         text += tr("The complete legally binding license is below.");
+        text += "<hr/></p>";
 
-        QString content(QTextStream(&licFile).readAll().replace("TRANSLATED TEXT", text));
-        content.replace("<head>", "<head>" MAKE_STYLE(m_licenceTab), Qt::CaseInsensitive);
+        QString content(QTextStream(&licFile).readAll().replace("<!-- TR TEXT -->", text));
+        content.replace("<!-- HEADER -->", MAKE_STYLE(m_licenceTab), Qt::CaseInsensitive);
         m_licenceTab->setHtml(content);
         licFile.close();
     }
