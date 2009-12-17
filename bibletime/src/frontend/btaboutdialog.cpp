@@ -7,9 +7,20 @@
 *
 **********/
 
-#include "frontend/htmldialogs/btaboutdialog.h"
+#include "frontend/btaboutdialog.h"
 
+#include <QDesktopServices>
+#include <QDialogButtonBox>
+#include <QLabel>
+#include <QTabWidget>
 #include <QTextStream>
+#include <QVBoxLayout>
+#if QT_VERSION >= 0x040600
+#include <QWebElement>
+#include <QWebFrame>
+#endif
+#include <QWebView>
+#include "util/dialogutil.h"
 #include "util/directory.h"
 
 // Sword includes:
@@ -19,38 +30,86 @@
 #define BR "<br/>"
 #define MAKE_CENTER(x) "<center>" + (x) + "</center>"
 #define MAKE_CENTER_STATIC(x) "<center>" x "</center>"
-#define MAKE_HTML(x) "<html><head></head><body>" + (x) + "</body></html>"
+#define MAKE_STYLE(t) "<style type=\"text/css\">"\
+    "body{"\
+        "background-color:" + (t)->palette().color(QPalette::Window).name() + ";"\
+        "color:" + (t)->palette().color(QPalette::WindowText).name() +\
+    "}"\
+    "a{text-decoration:underline}"\
+    "a:link{color:" + (t)->palette().color(QPalette::Link).name() + "}"\
+    "a:visited{color:" + (t)->palette().color(QPalette::LinkVisited).name() + "}"\
+    "</style>"
+#define MAKE_HTML(t,x) "<html><head>" MAKE_STYLE(t) "</head><body>" + (x) + "</body></html>"
 #define MAKE_BOLD(x) "<b>" + (x) + "</b>"
 #define MAKE_BOLD_STATIC(x) "<b>" x "</b>"
 #define MAKE_LINK(u,t) "<a href=\"" u "\">" + (t) + "</a>"
 #define MAKE_LINK_STATIC(u,t) "<a href=\"" u "\">" t "</a>"
-#define MAKE_ICON(i) "<img src=\"" + \
-    QUrl::fromLocalFile(util::directory::getIconDir().path() + "/" i ".svg").toString() + \
-    "\">"
 
 BtAboutDialog::BtAboutDialog(QWidget *parent, Qt::WindowFlags wflags)
-        : BtTabHtmlDialog(tr("About BibleTime"), 5, parent, wflags) {
+        : QDialog(parent, wflags)
+{
+    setAttribute(Qt::WA_DeleteOnClose);
     resize(550, 340);
-    initLicenceTab();
-    initSwordTab();
-    initQtTab();
-    initContributorsTab();
-    initBtTab();
+
+    m_layout = new QVBoxLayout(this);
+
+    QWidget *top = new QWidget(this);
+    QHBoxLayout *topLayout = new QHBoxLayout;
+    QLabel *iconLabel = new QLabel(this);
+    iconLabel->setPixmap(QIcon(util::directory::getIconDir().path() + "/bibletime.svg").pixmap(48));
+    topLayout->addWidget(iconLabel);
+    topLayout->addWidget(new QLabel("<h1><b>BibleTime " BT_VERSION "</b></h1>"), 1);
+    top->setLayout(topLayout);
+    m_layout->addWidget(top, 0, Qt::AlignCenter);
+
+    m_tabWidget = new QTabWidget(this);
+    m_layout->addWidget(m_tabWidget);
+
+    initTab(m_bibletimeTab);
+    initTab(m_contributorsTab);
+    initTab(m_swordTab);
+    initTab(m_qtTab);
+    initTab(m_licenceTab);
+
+    m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, Qt::Horizontal, this);
+    m_layout->addWidget(m_buttonBox);
+    setLayout(m_layout);
+
+    connect(m_buttonBox, SIGNAL(accepted()),
+            this,        SLOT(accept()));
+    connect(m_buttonBox, SIGNAL(rejected()),
+            this,        SLOT(reject()));
+
+    retranslateUi();
 }
 
 BtAboutDialog::~BtAboutDialog() {
     // Intentionally empty
 }
 
-void BtAboutDialog::initBtTab() {
-    selectTab(0);
-    setTabText("BibleTime" );
+void BtAboutDialog::initTab(QWebView *&tab) {
+    tab = new QWebView(this);
+    m_tabWidget->addTab(tab, "");
+    tab->page()->setLinkDelegationPolicy(QWebPage::DelegateAllLinks);
+    connect(tab, SIGNAL(linkClicked(QUrl)), this, SLOT(linkClicked(QUrl)));
+}
 
-    QString content(MAKE_ICON("bibletime"));
-    content += "&nbsp;&nbsp;" MAKE_BOLD_STATIC("BibleTime " BT_VERSION);
-    content = MAKE_CENTER(content);
-    content += BR;
-    content += tr("BibleTime is an easy to use but powerful Bible study tool.");
+void BtAboutDialog::retranslateUi() {
+    setWindowTitle(tr("About BibleTime"));
+
+    retranslateBtTab();
+    retranslateContributorsTab();
+    retranslateSwordTab();
+    retranslateQtTab();
+    retranslateLicenceTab();
+
+    util::prepareDialogBox(m_buttonBox);
+}
+
+void BtAboutDialog::retranslateBtTab() {
+    m_tabWidget->setTabText(0, tr("&BibleTime"));
+
+    QString content(tr("BibleTime is an easy to use but powerful Bible study tool."));
     content += BR BR;
     content += tr("We are looking for developers and translators.");
     content += " ";
@@ -59,21 +118,19 @@ void BtAboutDialog::initBtTab() {
     content += BR BR;
     content += tr("(c)1999-2009, The BibleTime Team");
     content += BR MAKE_LINK_STATIC("http://www.bibletime.info", "http://www.bibletime.info");
-    setHtml(MAKE_HTML(content));
+    m_bibletimeTab->setHtml(MAKE_HTML(m_bibletimeTab, content));
 }
 
-void BtAboutDialog::initContributorsTab() {
-    selectTab(1);
-    setTabText(tr("Contributors"));
+void BtAboutDialog::retranslateContributorsTab() {
+    m_tabWidget->setTabText(1, tr("&Contributors"));
 
     const QString developer(tr("developer"));
     const QString designer(tr("designer"));
-    QString content;
 
     /****************************************************************************************
     ***               NB!!! Credits are sorted alphabetically by last name!               ***
     ****************************************************************************************/
-    content += MAKE_BOLD(tr("The following people contributed to BibleTime:"));
+    QString content(MAKE_BOLD(tr("The following people contributed to BibleTime:")));
     content += BR "<ul>";
     content += "<li>Thomas Abthorpe (" + tr("documentation and translation manager") +
                ")</li>";
@@ -142,17 +199,15 @@ void BtAboutDialog::initContributorsTab() {
                   "bibletime-translations@lists.sourceforge.net if you notice errors or "
                   "omissions.");
 
-    setHtml(MAKE_HTML(content));
+    m_contributorsTab->setHtml(MAKE_HTML(m_contributorsTab, content));
 }
 
 
-void BtAboutDialog::initSwordTab() {
-    selectTab(2);
-    setTabText("Sword");
+void BtAboutDialog::retranslateSwordTab() {
+    m_tabWidget->setTabText(2, tr("&Sword"));
 
     QString version(sword::SWVersion::currentVersion.getText());
-    QString content(BR BR);
-    content += MAKE_CENTER(MAKE_BOLD(tr("SWORD library version %1").arg(version)));
+    QString content(MAKE_CENTER(MAKE_BOLD(tr("SWORD library version %1").arg(version))));
     content += BR;
     content += tr("BibleTime makes use of the SWORD Project. The SWORD Project is the "
                   "CrossWire Bible Society's free Bible software project. Its purpose is to "
@@ -164,27 +219,26 @@ void BtAboutDialog::initSwordTab() {
     content += BR MAKE_LINK_STATIC("http://www.crosswire.org/sword/index.jsp",
                                    "www.crosswire.org/sword/index.jsp");
 
-    setHtml(content);
+    m_swordTab->setHtml(MAKE_HTML(m_swordTab, content));
 }
 
-void BtAboutDialog::initQtTab() {
-    selectTab(3);
-    setTabText("Qt");
+void BtAboutDialog::retranslateQtTab() {
+    m_tabWidget->setTabText(3, tr("&Qt"));
 
-    QString content(BR BR MAKE_CENTER_STATIC(MAKE_BOLD_STATIC("Qt")) BR);
+    QString content(MAKE_CENTER_STATIC(MAKE_BOLD_STATIC("Qt")) BR);
     content += tr("This program uses Qt version %1.").arg(qVersion());
     content += BR BR;
     content += tr("Qt is a cross-platform application and UI framework, created with C++ "
                   "language. It has been released under the LGPL license.");
     content += BR BR MAKE_LINK_STATIC("http://qt.nokia.com/", "http://qt.nokia.com/");
-    setHtml(MAKE_HTML(content));
+    m_qtTab->setHtml(MAKE_HTML(m_qtTab, content));
 }
 
-void BtAboutDialog::initLicenceTab() {
+void BtAboutDialog::retranslateLicenceTab() {
+    m_tabWidget->setTabText(4, tr("&License"));
+
     QFile licFile(util::directory::getLicenseDir().path() + "/license.html");
     if (licFile.open(QFile::ReadOnly)) {
-        selectTab(4);
-        setTabText(tr("License"));
 
         QString text;
         text += tr("BibleTime is released under the GPL license.");
@@ -197,7 +251,13 @@ void BtAboutDialog::initLicenceTab() {
         text += BR BR;
         text += tr("The complete legally binding license is below.");
 
-        setHtml(QTextStream(&licFile).readAll().replace("TRANSLATED TEXT", text));
+        QString content(QTextStream(&licFile).readAll().replace("TRANSLATED TEXT", text));
+        content.replace("<head>", "<head>" MAKE_STYLE(m_licenceTab), Qt::CaseInsensitive);
+        m_licenceTab->setHtml(content);
         licFile.close();
     }
+}
+
+void BtAboutDialog::linkClicked(const QUrl &url) {
+    QDesktopServices::openUrl(url);
 }

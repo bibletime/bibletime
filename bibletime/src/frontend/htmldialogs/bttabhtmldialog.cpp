@@ -100,10 +100,6 @@ void BtTabHtmlDialog::setHtml(const QString& html, const QUrl& baseUrl) {
     webView()->setHtml(html, url);
 }
 
-void BtTabHtmlDialog::setUrl(const QUrl& url) {
-    webView()->setUrl(url);
-}
-
 void BtTabHtmlDialog::setTabText(const QString& tabName) {
     Q_ASSERT(m_tabs != 0); // There are no tabs to name
     int index = m_tabWidget->currentIndex();

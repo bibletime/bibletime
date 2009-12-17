@@ -57,9 +57,6 @@ class BtTabHtmlDialog : public QDialog {
 // See QWebView::setHtml()
         void setHtml(const QString& html, const QUrl& baseUrl = QUrl());
 
-// See QWebView::setUrl()
-        void setUrl(const QUrl& url);
-
     private slots:
         void linkClicked(const QUrl url);
 

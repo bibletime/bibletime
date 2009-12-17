@@ -60,6 +60,7 @@ SET(bibletime_SOURCES
 	src/util/migrationutil.cpp
 
 	# frontend top level
+	src/frontend/btaboutdialog.cpp
 	src/frontend/btbookshelfdockwidget.cpp
 	src/frontend/btmenuview.cpp
 	src/frontend/cdragdrop.cpp
@@ -181,9 +182,6 @@ SET(bibletime_SOURCES
     src/frontend/displaywindow/btmodulechooserbar.cpp
     src/frontend/displaywindow/btmodulechooserbutton.cpp
 
-
-	# web based tab dialogs
-	src/frontend/htmldialogs/btaboutdialog.cpp
 	src/frontend/htmldialogs/bttabhtmldialog.cpp
 
 	#toplevel files
@@ -238,9 +236,9 @@ SET(bibletime_MOCABLE_HEADERS
 	src/frontend/keychooser/ckeychooser.h
 	src/frontend/keychooser/clexiconkeychooser.h
 	src/frontend/cprinter.h
+	src/frontend/btaboutdialog.h
 	src/frontend/btaboutmoduledialog.h
 	src/frontend/htmldialogs/bttabhtmldialog.h
-	src/frontend/htmldialogs/btaboutdialog.h
 	src/frontend/display/cdisplay.h
 	src/frontend/display/bthtmlreaddisplay.h
 	src/frontend/display/btfontsizewidget.h
