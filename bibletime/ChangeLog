@@ -1,3 +1,6 @@
+2009-12-18 Jaak Ristioja <ristioja@gmail.com>
+    * Refactored about dialog
+
 2009-12-09 Martin Gruner <mgruner@crosswire.org>
     * Release 2.5.rc1
 
@@ -64,7 +67,7 @@
 2009-11-19 Gary Holmlund
     * Fix debug verbosity
 
-2009-11-19 Jaak Ristioja
+2009-11-19 Jaak Ristioja <ristioja@gmail.com>
     * Made the remove page of the bookshelf manager prettier.
 
 2009-11-18 Martin Gruner <mgruner@crosswire.org>
@@ -73,7 +76,7 @@
 2009-11-16 Gary Holmlund
     * Fix window redraw errors in manual arrangement mode - ID: 2898356
 
-2009-11-16 Jaak Ristioja
+2009-11-16 Jaak Ristioja <ristioja@gmail.com>
     * Fixed vertical tiling.
 
 2009-11-14 Kang Sun
@@ -213,17 +216,17 @@
 2009-08-19 Martin Gruner <mgruner@crosswire.org>
 	* Release 2.2.rc1
 
-2009-08-17 Jaak Ristioja
+2009-08-17 Jaak Ristioja <ristioja@gmail.com>
 	* Made the verse key chooser dropdown buttons appear on hover for better toolbar layout
 	* Fixed template display problems on dark color schemes.
 
-2009-08-15 Jaak Ristioja
+2009-08-15 Jaak Ristioja <ristioja@gmail.com>
 	* Fixed mouse cursor vanishing problem when using the verse key chooser scroll buttons
 
 2009-08-12 Martin Gruner <mgruner@crosswire.org>
 	* Release 2.2.beta1
 
-2009-08-09 Jaak Ristioja
+2009-08-09 Jaak Ristioja <ristioja@gmail.com>
 	* Fixed install manager performance issue on installing many works at once
 
 2009-08-03 Gary Holmlund

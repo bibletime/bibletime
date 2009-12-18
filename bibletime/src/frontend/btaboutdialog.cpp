@@ -24,23 +24,27 @@
 #include <swversion.h>
 
 
-#define BR "<br/>"
-#define MAKE_CENTER(x) "<center>" + (x) + "</center>"
-#define MAKE_CENTER_STATIC(x) "<center>" x "</center>"
 #define MAKE_STYLE(t) "<style type=\"text/css\">"\
     "body{"\
         "background-color:" + (t)->palette().color(QPalette::Window).name() + ";"\
         "color:" + (t)->palette().color(QPalette::WindowText).name() +\
     "}"\
+    "h3{font-weight:bold;text-align:center}"\
     "a{text-decoration:underline}"\
     "a:link{color:" + (t)->palette().color(QPalette::Link).name() + "}"\
     "a:visited{color:" + (t)->palette().color(QPalette::LinkVisited).name() + "}"\
     "</style>"
 #define MAKE_HTML(t,x) "<html><head>" MAKE_STYLE(t) "</head><body>" + (x) + "</body></html>"
-#define MAKE_BOLD(x) "<b>" + (x) + "</b>"
-#define MAKE_BOLD_STATIC(x) "<b>" x "</b>"
-#define MAKE_LINK(u,t) "<a href=\"" u "\">" + (t) + "</a>"
+#define MAKE_LINK(c,u,t) "<a href=\"" u "\">"; (c) += (t); (c) += "</a>"
 #define MAKE_LINK_STATIC(u,t) "<a href=\"" u "\">" t "</a>"
+#define MAKE_CONTR(c,n,r) "<li>" n " (";\
+    (c) += (r);\
+    (c) += ")</li>"
+#define MAKE_CONTR2(c,n,r,r2) "<li>" n " (";\
+    (c) += (r);\
+    (c) += ", ";\
+    (c) += (r2);\
+    (c) += ")</li>"
 
 BtAboutDialog::BtAboutDialog(QWidget *parent, Qt::WindowFlags wflags)
         : QDialog(parent, wflags)
@@ -55,7 +59,7 @@ BtAboutDialog::BtAboutDialog(QWidget *parent, Qt::WindowFlags wflags)
     QLabel *iconLabel = new QLabel(this);
     iconLabel->setPixmap(QIcon(util::directory::getIconDir().path() + "/bibletime.svg").pixmap(48));
     topLayout->addWidget(iconLabel);
-    topLayout->addWidget(new QLabel("<h1><b>BibleTime " BT_VERSION "</b></h1>"), 1);
+    topLayout->addWidget(new QLabel("<h1>BibleTime " BT_VERSION "</h1>"), 1);
     top->setLayout(topLayout);
     m_layout->addWidget(top, 0, Qt::AlignCenter);
 
@@ -106,15 +110,16 @@ void BtAboutDialog::retranslateUi() {
 void BtAboutDialog::retranslateBtTab() {
     m_tabWidget->setTabText(0, tr("&BibleTime"));
 
-    QString content(tr("BibleTime is an easy to use but powerful Bible study tool."));
-    content += BR BR;
-    content += tr("We are looking for developers and translators.");
-    content += " ";
-    content += tr("If you would like to join our team, please send an email to "
-                  "info@bibletime.info.");
-    content += BR BR;
+    QString content("<p>");
+    content += tr("BibleTime is an easy to use but powerful Bible study tool.");
+    content += "</p><p>";
+    content += tr("We are looking for developers and translators. If you would like to join "
+                  "our team, please send an email to %1.")
+               .arg(MAKE_LINK_STATIC("mailto:info@bibletime.info", "info@bibletime.info"));
+    content += "</p><p>";
     content += tr("(c)1999-2009, The BibleTime Team");
-    content += BR MAKE_LINK_STATIC("http://www.bibletime.info", "http://www.bibletime.info");
+    content += "</p><p>" MAKE_LINK_STATIC("http://www.bibletime.info", "www.bibletime.info")
+               "</p>";
     m_bibletimeTab->setHtml(MAKE_HTML(m_bibletimeTab, content));
 }
 
@@ -127,47 +132,46 @@ void BtAboutDialog::retranslateContributorsTab() {
     /****************************************************************************************
     ***               NB!!! Credits are sorted alphabetically by last name!               ***
     ****************************************************************************************/
-    QString content(MAKE_BOLD(tr("The following people contributed to BibleTime:")));
-    content += BR "<ul>";
-    content += "<li>Thomas Abthorpe (" + tr("documentation and translation manager") +
-               ")</li>";
-    content += "<li>Joachim Ansorg (" + tr("project founder") + ", " + developer + ")</li>";
-    content += "<li>David Blue (" + designer + ")</li>";
-    content += "<li>Tim Brodie (" + developer + ")</li>";
-    content += "<li>Timothy R. Butler (" + designer + ")</li>";
-    content += "<li>Jim Campbell (" + developer + ")</li>";
-    content += "<li>Lee Carpenter (" + developer + ")</li>";
-    content += "<li>Jeremy Erickson (" + tr("packager") + ")</li>";
-    content += "<li>Troy A. Griffitts (" + tr("creator of The Sword Project") + ")</li>";
-    content += "<li>Martin Gruner (" + tr("project manager") + ", " + developer + ")</li>";
-    content += "<li>Thomas Hagedorn (" + tr("domain sponsor") + ")</li>";
-    content += "<li>Bob Harman (" + tr("howto") + ")</li>";
-    content += "<li>Gary Holmlund (" + developer + ")</li>";
-    content += "<li>Nikolay Igotti (" + developer + ")</li>";
-    content += "<li>Eeli Kaikkonnen (" + developer + ")</li>";
-    content += "<li>Chris Kujawa (" + developer + ")</li>";
-    content += "<li>Mark Lybarger (" + developer + ")</li>";
-    content += "<li>Luke Mauldin (" + developer + ")</li>";
-    content += "<li>James Ots (" + designer + ")</li>";
-    content += "<li>Andrus Raag (" + tr("artist") + ")</li>";
-    content += "<li>Jaak Ristioja (" + developer + ")</li>";
-    content += "<li>Fred Saalbach (" + tr("documentation") + ")</li>";
-    content += "<li>Gary Sims (" + developer + ")</li>";
-    content += "<li>Wolfgang Stradner (" + tr("tester") + ", " + tr("usability expert") +
-               ")</li>";
-    content += "<li>Kang Sun (" + developer + ")</li>";
-    content += "<li>Thorsten Uhlmann (" + developer + ")</li>";
-    content += "<li>David White (" + developer + ")</li>";
-    content += "<li>Mark Zealey (" + developer + ")</li>";
-    content += "</ul>";
+
+    QString content("<p><b>");
+    content += tr("The following people contributed to BibleTime:");
+    content += "</b></p><ul>"
+        MAKE_CONTR(content, "Thomas Abthorpe", tr("documentation and translation manager"))
+        MAKE_CONTR2(content, "Joachim Ansorg", tr("project founder"), developer)
+        MAKE_CONTR(content, "David Blue", designer)
+        MAKE_CONTR(content, "Tim Brodie", developer)
+        MAKE_CONTR(content, "Timothy R. Butler", designer)
+        MAKE_CONTR(content, "Jim Campbell", developer)
+        MAKE_CONTR(content, "Lee Carpenter", developer)
+        MAKE_CONTR(content, "Jeremy Erickson", tr("packager"))
+        MAKE_CONTR(content, "Troy A. Griffitts", tr("creator of The Sword Project"))
+        MAKE_CONTR2(content, "Martin Gruner", tr("project manager"), developer)
+        MAKE_CONTR(content, "Thomas Hagedorn", tr("domain sponsor"))
+        MAKE_CONTR(content, "Bob Harman", tr("howto"))
+        MAKE_CONTR(content, "Gary Holmlund", developer)
+        MAKE_CONTR(content, "Nikolay Igotti", developer)
+        MAKE_CONTR(content, "Eeli Kaikkonnen", developer)
+        MAKE_CONTR(content, "Chris Kujawa", developer)
+        MAKE_CONTR(content, "Mark Lybarger", developer)
+        MAKE_CONTR(content, "Luke Mauldin", developer)
+        MAKE_CONTR(content, "James Ots", designer)
+        MAKE_CONTR(content, "Andrus Raag", tr("artist"))
+        MAKE_CONTR(content, "Jaak Ristioja", developer)
+        MAKE_CONTR(content, "Fred Saalbach", tr("documentation"))
+        MAKE_CONTR(content, "Gary Sims", developer)
+        MAKE_CONTR2(content, "Wolfgang Stradner", tr("tester"), tr("usability expert"))
+        MAKE_CONTR(content, "Kang Sun", developer)
+        MAKE_CONTR(content, "Thorsten Uhlmann", developer)
+        MAKE_CONTR(content, "David White", developer)
+        MAKE_CONTR(content, "Mark Zealey", developer)
+    "</ul><p><b>";
 
 
     /****************************************************************************************
     ***               NB!!! Credits are sorted alphabetically by last name!               ***
     ****************************************************************************************/
-    content += MAKE_BOLD(tr("The following people translated BibleTime into their "
-                            "language:"));
-    content += BR "<ul>"
+    content += tr("The following people translated BibleTime into their language:");
+    content += "</b></p><ul>"
                    "<li>Horatiu Alexe</li>"
                    "<li>Luis Barron</li>"
                    "<li>Jan B&#x11B;lohoubek</li>"
@@ -191,10 +195,12 @@ void BtAboutDialog::retranslateContributorsTab() {
                    "<li>Giovanni Tedaldi</li>"
                    "<li>Dmitry Yurevich</li>"
                    "<li>Esteban Zeller</li>"
-               "</ul>" BR;
-    content += tr("Some names may be missing, please email "
-                  "bibletime-translations@lists.sourceforge.net if you notice errors or "
-                  "omissions.");
+               "</ul><p>";
+    content += tr("Some names may be missing, please email %1 if you notice errors or "
+                  "omissions.").arg(MAKE_LINK_STATIC(
+                          "mailto:bibletime-translations@lists.sourceforge.net",
+                          "bibletime-translations@lists.sourceforge.net"));
+    content += "</p>";
 
     m_contributorsTab->setHtml(MAKE_HTML(m_contributorsTab, content));
 }
@@ -204,17 +210,18 @@ void BtAboutDialog::retranslateSwordTab() {
     m_tabWidget->setTabText(2, tr("&Sword"));
 
     QString version(sword::SWVersion::currentVersion.getText());
-    QString content(MAKE_CENTER(MAKE_BOLD(tr("SWORD library version %1").arg(version))));
-    content += BR;
+    QString content("<h3>");
+    content += tr("SWORD library version %1").arg(version);
+    content += "</h3><p>";
     content += tr("BibleTime makes use of the SWORD Project. The SWORD Project is the "
                   "CrossWire Bible Society's free Bible software project. Its purpose is to "
-                  "create cross-platform open-source tools-- covered by the GNU General "
-                  "Public License-- that allow programmers and Bible societies to write new "
-                  "Bible software more quickly and easily.");
-    content += BR BR;
-    content += tr("The SWORD Project");
-    content += BR MAKE_LINK_STATIC("http://www.crosswire.org/sword/index.jsp",
-                                   "www.crosswire.org/sword/index.jsp");
+                  "create cross-platform open-source tools &mdash; covered by the GNU "
+                  "General Public License &mdash; that allow programmers and Bible "
+                  "societies to write new Bible software more quickly and easily.");
+    content += "</p><p>";
+    content += tr("The SWORD Project: ");
+    content += MAKE_LINK_STATIC("http://www.crosswire.org/sword/",
+                                "www.crosswire.org/sword") "</p>";
 
     m_swordTab->setHtml(MAKE_HTML(m_swordTab, content));
 }
@@ -222,13 +229,14 @@ void BtAboutDialog::retranslateSwordTab() {
 void BtAboutDialog::retranslateQtTab() {
     m_tabWidget->setTabText(3, tr("&Qt"));
 
-    QString content(MAKE_CENTER_STATIC(MAKE_BOLD_STATIC("Qt")) BR);
+    QString content("<h3>");
+    content += tr("Qt toolkit version %1").arg(qVersion());
+    content += "</h3><p>";
     content += tr("This program uses Qt version %1.").arg(qVersion());
-    content += BR BR;
+    content += "</p><p>";
     content += tr("Qt is a cross-platform application and UI framework, created with C++ "
                   "language. It has been released under the LGPL license.");
-    content += " ";
-    content += MAKE_LINK("about:qt", tr("More info..."));
+    content += " " MAKE_LINK(content, "about:qt", tr("More info...")) "</p>";
     m_qtTab->setHtml(MAKE_HTML(m_qtTab, content));
 }
 
@@ -239,16 +247,14 @@ void BtAboutDialog::retranslateLicenceTab() {
     if (licFile.open(QFile::ReadOnly)) {
 
         QString text("<p>");
-        text += tr("BibleTime is released under the GPL license.");
-        text += " ";
-        text += tr("You can download and use (but not distribute) the program for personal, "
-                   "private, public or commercial purposes without restrictions.");
-        text += " ";
-        text += tr("You can give away or distribute the program if you also distribute the "
-                   "corresponding source code.");
-        text += BR BR;
+        text += tr("BibleTime is released under the GPL license. You can download and use "
+                   "(but not distribute) the program for personal, private, public or "
+                   "commercial purposes without restrictions. You can give away or "
+                   "distribute the program if you also distribute the corresponding source "
+                   "code.");
+        text += "</p><p>";
         text += tr("The complete legally binding license is below.");
-        text += "<hr/></p>";
+        text += "</p><hr/>";
 
         QString content(QTextStream(&licFile).readAll().replace("<!-- TR TEXT -->", text));
         content.replace("<!-- HEADER -->", MAKE_STYLE(m_licenceTab), Qt::CaseInsensitive);
