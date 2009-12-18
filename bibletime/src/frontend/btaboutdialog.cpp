@@ -15,10 +15,6 @@
 #include <QTabWidget>
 #include <QTextStream>
 #include <QVBoxLayout>
-#if QT_VERSION >= 0x040600
-#include <QWebElement>
-#include <QWebFrame>
-#endif
 #include <QWebView>
 #include "util/dialogutil.h"
 #include "util/directory.h"
