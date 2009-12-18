@@ -9,6 +9,7 @@
 
 #include "frontend/btaboutdialog.h"
 
+#include <QApplication>
 #include <QDesktopServices>
 #include <QDialogButtonBox>
 #include <QLabel>
@@ -226,7 +227,8 @@ void BtAboutDialog::retranslateQtTab() {
     content += BR BR;
     content += tr("Qt is a cross-platform application and UI framework, created with C++ "
                   "language. It has been released under the LGPL license.");
-    content += BR BR MAKE_LINK_STATIC("http://qt.nokia.com/", "http://qt.nokia.com/");
+    content += " ";
+    content += MAKE_LINK("about:qt", tr("More info..."));
     m_qtTab->setHtml(MAKE_HTML(m_qtTab, content));
 }
 
@@ -256,5 +258,11 @@ void BtAboutDialog::retranslateLicenceTab() {
 }
 
 void BtAboutDialog::linkClicked(const QUrl &url) {
-    QDesktopServices::openUrl(url);
+    if (url.scheme() == "about") {
+        if (url.path() == "qt") {
+            qApp->aboutQt();
+        }
+    } else {
+        QDesktopServices::openUrl(url);
+    }
 }
