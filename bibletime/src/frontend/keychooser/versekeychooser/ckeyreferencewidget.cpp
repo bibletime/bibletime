@@ -187,7 +187,8 @@ void CKeyReferenceWidget::resizeEvent(QResizeEvent *event) {
 void CKeyReferenceWidget::resetDropDownButtons() {
     m_dropDownButtons->setParent(window());
     int h(m_dropDownButtons->layout()->minimumSize().height());
-    QPoint topLeft(mapTo(window(), QPoint(m_textbox->x(), height())));
+    QPoint topLeft(mapTo(window(),
+                         QPoint(m_textbox->x(), m_textbox->y() + m_textbox->height())));
     m_dropDownButtons->setGeometry(topLeft.x(), topLeft.y(),
                                    m_textbox->width(), h);
 }
