@@ -1,7 +1,7 @@
 <chapter id="hdbk-reference">
-  <title>Reference</title>
+  <title>referência</title>
   <sect1 id="hdbk-reference-menus">
-    <title>Main menu reference</title>
+    <title>referência do menu principal</title>
 
     <para>In this section you can find detailed descriptions of all entries in the 
 main menu of &bibletime;. They are ordered in just the way they appear in 
@@ -303,7 +303,7 @@ for you (Automatic modes, just try them out!).</para>
 
           <listitem>
             <para>
-	      <action>Cascades all open windows</action>.
+	      <action>Organiza em cascata todas as janelas abertas</action>.
 	    </para>
           </listitem>
         </varlistentry>
@@ -327,7 +327,7 @@ for you (Automatic modes, just try them out!).</para>
 
           <listitem>
             <para>
-	      <action>Tiles all open windows</action>.
+	      <action>Fecha todas as janelas abertas</action>.
 	    </para>
           </listitem>
         </varlistentry>
@@ -399,7 +399,7 @@ for you (Automatic modes, just try them out!).</para>
 
           <listitem>
             <para>
-            <action>Closes all open windows</action>.</para>
+            <action>Fecha todas as janelas abertas</action>.</para>
           </listitem>
         </varlistentry>
       </variablelist>
@@ -484,7 +484,8 @@ details.</para>
           </term>
           <listitem>
             <para>
-            <action>Opens &bibletime;'s user guide</action> You are reading it now.</para>
+            <action>Abre o guia de usuário &bibletime;</action> que você está lendo 
+agora.</para>
           </listitem>
         </varlistentry>
 
