@@ -504,8 +504,7 @@ void BtBookshelfTreeModel::moduleDataChanged(const QModelIndex &topLeft,
     }
 }
 
-void BtBookshelfTreeModel::moduleInserted(const QModelIndex &parent, int start,
-        int end) {
+void BtBookshelfTreeModel::moduleInserted(const QModelIndex &parent, int start, int end) {
     typedef BtBookshelfModel BM;
     static const BM::ModuleRole PR(BM::ModulePointerRole);
     static const BM::ModuleRole HR(BM::ModuleHiddenRole);
@@ -531,8 +530,7 @@ void BtBookshelfTreeModel::moduleInserted(const QModelIndex &parent, int start,
     }
 }
 
-void BtBookshelfTreeModel::moduleRemoved(const QModelIndex &parent, int start,
-        int end) {
+void BtBookshelfTreeModel::moduleRemoved(const QModelIndex &parent, int start, int end) {
     typedef BtBookshelfModel BM;
     static const BM::ModuleRole PR(BM::ModulePointerRole);
 
