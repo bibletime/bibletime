@@ -129,11 +129,14 @@ bool BtBookshelfTreeModel::setData(const QModelIndex &itemIndex,
     if (role == Qt::CheckStateRole) {
         bool ok;
         newState = (Qt::CheckState) value.toInt(&ok);
-        if (!ok || newState == Qt::PartiallyChecked) return false;
+        if (!ok) return false;
     }
     else {
         return false;
     }
+
+    // Handle partially checked as checked here in setData():
+    if (newState == Qt::PartiallyChecked) newState = Qt::Checked;
 
     Item *item(static_cast<Item*>(itemIndex.internalPointer()));
     Q_ASSERT(item != 0);
