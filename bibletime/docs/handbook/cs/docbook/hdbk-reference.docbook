@@ -833,6 +833,8 @@ hlavního menu</link>.</para>
         <colspec colname="desc" />
         <thead>
           <row>
+	    <?dbhtml bgcolor="#EEEEEE" ?>
+	    <?dbfo bgcolor="#EEEEEE" ?>
             <entry>Horká klávesa</entry>
             <entry>Popis</entry>
           </row>

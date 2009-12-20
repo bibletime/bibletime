@@ -841,6 +841,8 @@ linkend="hdbk-reference-menus">Hauptmenü-Referenz</link> nachsehen.</para>
         <colspec colname="desc" />
         <thead>
           <row>
+	    <?dbhtml bgcolor="#EEEEEE" ?>
+	    <?dbfo bgcolor="#EEEEEE" ?>
             <entry>Tastenkürzel</entry>
             <entry>Beschreibung</entry>
           </row>

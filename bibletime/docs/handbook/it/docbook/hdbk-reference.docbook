@@ -839,6 +839,8 @@ linkend="hdbk-reference-menus">Riferimento Menu Principale</link>.</para>
         <colspec colname="desc" />
         <thead>
           <row>
+	    <?dbhtml bgcolor="#EEEEEE" ?>
+	    <?dbfo bgcolor="#EEEEEE" ?>
             <entry>Scorciatoia</entry>
             <entry>Descrizione</entry>
           </row>

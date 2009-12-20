@@ -854,6 +854,8 @@ linkend="hdbk-reference-menus">ebben a részben</link>.</para>
         <colspec colname="desc" />
         <thead>
           <row>
+	    <?dbhtml bgcolor="#EEEEEE" ?>
+	    <?dbfo bgcolor="#EEEEEE" ?>
             <entry>Billentyűkombináció</entry>
             <entry>Leírás</entry>
           </row>

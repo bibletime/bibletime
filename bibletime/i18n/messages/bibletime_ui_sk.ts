@@ -332,27 +332,27 @@
         <translation>Nová relácia</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="62"/>
+        <location filename="../../src/bibletime.cpp" line="77"/>
         <source>Initializing the SWORD engine...</source>
         <translation>Spúšťanie systému SWORD...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="64"/>
+        <location filename="../../src/bibletime.cpp" line="83"/>
         <source>Creating BibleTime&apos;s user interface...</source>
         <translation>Vytváranie BibleTime rozhrania...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="66"/>
+        <location filename="../../src/bibletime.cpp" line="89"/>
         <source>Initializing menu- and toolbars...</source>
         <translation>Inicializácia ponuky a panelov...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="216"/>
+        <location filename="../../src/bibletime.cpp" line="242"/>
         <source>Unlock Work</source>
         <translation>Odomknúť dielo</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="217"/>
+        <location filename="../../src/bibletime.cpp" line="243"/>
         <source>Enter the unlock key for this work.</source>
         <translation>Zadajte kľúč k odomknutiu diela.</translation>
     </message>
@@ -375,170 +375,226 @@
 <context>
     <name>BtAboutDialog</name>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="53"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="114"/>
         <source>BibleTime is an easy to use but powerful Bible study tool.</source>
         <translation>BibleTime sa ľahko používa, ale je mocný nástroj na štúdium Biblie.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="55"/>
         <source>We are looking for developers and translators.</source>
-        <translation>Hľadáme vývojárov a prekladateľov.</translation>
+        <translation type="obsolete">Hľadáme vývojárov a prekladateľov.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="57"/>
         <source>If you would like to join our team, please send an email to info@bibletime.info.</source>
-        <translation>Ak sa chcete pripojiť k nášmu tímu, pošlite e-mail na info@bibletime.info.</translation>
+        <translation type="obsolete">Ak sa chcete pripojiť k nášmu tímu, pošlite e-mail na info@bibletime.info.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="59"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="120"/>
         <source>(c)1999-2009, The BibleTime Team</source>
         <translation>(c)1999-2009, BibleTime Tím</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="183"/>
         <source>You can download and use (but not distribute) the program for personal, private, public or commercial purposes without restrictions.</source>
-        <translation>Program si môžete stiahnuť a používať (ale nie distribuovať) pre osobné, verejné alebo komerčné ciele bez reštrikcií.</translation>
+        <translation type="obsolete">Program si môžete stiahnuť a používať (ale nie distribuovať) pre osobné, verejné alebo komerčné ciele bez reštrikcií.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="185"/>
         <source>You can give away or distribute the program if you also distribute the corresponding source code.</source>
-        <translation>Môžete rozdávať alebo distribuovať program, ak s ním budete distribuovať aj jeho zdrojový kód.</translation>
+        <translation type="obsolete">Môžete rozdávať alebo distribuovať program, ak s ním budete distribuovať aj jeho zdrojový kód.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="189"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="256"/>
         <source>The complete legally binding license is below.</source>
         <translation>Nižšie je možné dokončiť právne obmedzenia.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="68"/>
         <source>Contributors</source>
-        <translation>Prispievatelia</translation>
+        <translation type="obsolete">Prispievatelia</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="33"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="99"/>
         <source>About BibleTime</source>
         <translation>O Bibletime</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="70"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="111"/>
+        <source>&amp;BibleTime</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="116"/>
+        <source>We are looking for developers and translators. If you would like to join our team, please send an email to %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="127"/>
+        <source>&amp;Contributors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="137"/>
         <source>The following people contributed to BibleTime:</source>
         <translation>Nasledujúci ľudia prispeli do BibleTime:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="73"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="139"/>
         <source>documentation and translation manager</source>
         <translation>správca dokumentácie a prekladov</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="74"/>
-        <source>project founder, developer</source>
-        <translation>zakladateľ projektu, vývojár</translation>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="148"/>
+        <source>project manager</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="75"/>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="77"/>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="92"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="162"/>
+        <source>tester</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="162"/>
+        <source>usability expert</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="199"/>
+        <source>Some names may be missing, please email %1 if you notice errors or omissions.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="210"/>
+        <source>&amp;Sword</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="216"/>
+        <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="222"/>
+        <source>The SWORD Project: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="230"/>
+        <source>&amp;Qt</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="233"/>
+        <source>Qt toolkit version %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="239"/>
+        <source>More info...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="244"/>
+        <source>&amp;License</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="250"/>
+        <source>BibleTime is released under the GPL license. You can download and use (but not distribute) the program for personal, private, public or commercial purposes without restrictions. You can give away or distribute the program if you also distribute the corresponding source code.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>project founder, developer</source>
+        <translation type="obsolete">zakladateľ projektu, vývojár</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="130"/>
         <source>designer</source>
         <translation>dizajnér</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="76"/>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="78"/>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="79"/>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="85"/>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="86"/>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="87"/>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="88"/>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="89"/>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="90"/>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="91"/>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="94"/>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="96"/>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="97"/>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="98"/>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="99"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="129"/>
         <source>developer</source>
         <translation>vývojár</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="80"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="140"/>
+        <source>project founder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="146"/>
         <source>packager</source>
         <translation>tvorca balíčka</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="81"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="147"/>
         <source>creator of The Sword Project</source>
         <translation>tvorca projektu Sword</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="82"/>
         <source>project manager, developer</source>
-        <translation>správca projektu, vývojár</translation>
+        <translation type="obsolete">správca projektu, vývojár</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="83"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="149"/>
         <source>domain sponsor</source>
         <translation>sponzor domény</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="84"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="150"/>
         <source>howto</source>
         <translation>ako</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="93"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="158"/>
+        <source>artist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="160"/>
         <source>documentation</source>
         <translation>dokumentácia</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="95"/>
         <source>tester, usability expert</source>
-        <translation>teste, expert na použiteľnosť</translation>
+        <translation type="obsolete">teste, expert na použiteľnosť</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="102"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="173"/>
         <source>The following people translated BibleTime into their language:</source>
         <translation>Nasledujúci ľudia preložili BibleTime do svojho jazyka:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="130"/>
         <source>Some names may be missing, please email bibletime-translations@lists.sourceforge.net if you notice errors or omissions.</source>
-        <translation>Niektoré názvy môžu chýbať. Pošlite e-mail na bibletime-translations@lists.sourceforge.net, ak si všimnete chyba alebo niečo vynechané.</translation>
+        <translation type="obsolete">Niektoré názvy môžu chýbať. Pošlite e-mail na bibletime-translations@lists.sourceforge.net, ak si všimnete chyba alebo niečo vynechané.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="143"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="214"/>
         <source>SWORD library version %1</source>
         <translation>Verzia  %1 knižnice SWORD</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="146"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools-- covered by the GNU General Public License-- that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
-        <translation>BibleTime používa The SWORD Project. The SWORD Project je slobodný biblický softvér spoločnosti CrossWire Bible Society. Jeho cieľom je vytvoriť platformovo nezávislé nástroje s otvoreným zdrojovým kódom vydaným pod licenciou GNU General Public, ktorá umožňuje programátorom a biblickým spoločnostiam napísať nový biblický softvér rýchlejšie a jednoduchšie.</translation>
+        <translation type="obsolete">BibleTime používa The SWORD Project. The SWORD Project je slobodný biblický softvér spoločnosti CrossWire Bible Society. Jeho cieľom je vytvoriť platformovo nezávislé nástroje s otvoreným zdrojovým kódom vydaným pod licenciou GNU General Public, ktorá umožňuje programátorom a biblickým spoločnostiam napísať nový biblický softvér rýchlejšie a jednoduchšie.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="148"/>
         <source>The SWORD Project</source>
-        <translation>The SWORD Project</translation>
+        <translation type="obsolete">The SWORD Project</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="162"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="235"/>
         <source>This program uses Qt version %1.</source>
         <translation type="unfinished">Tento program pouzíva Qt verziu %1.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="164"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="237"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
         <translation type="unfinished">QT je multiplatformová aplikácia a UI rámec, vytvorený v jazyku C++. Qt bolo vydané pod licenciou LGPL.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="178"/>
         <source>License</source>
-        <translation>Licencia</translation>
+        <translation type="obsolete">Licencia</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="181"/>
         <source>BibleTime is released under the GPL license.</source>
-        <translation>BibleTime je vydaný pod liceniou GPL.</translation>
+        <translation type="obsolete">BibleTime je vydaný pod liceniou GPL.</translation>
     </message>
 </context>
 <context>
@@ -1732,9 +1788,8 @@ skratka</translation>
         <translation>Kto verí v Neho, nebude odsúdený, ale ten, kto neverí, už je odsúdený. lebo neuveril v meno jednorodeného Syna Božieho.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="140"/>
         <source>This is the judgment, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.</source>
-        <translation>A to je ten súd, že svetlo prišlo na svet, ale ľudia viacej milovali tmu ako svetlo, lebo ich skutky boli zlé.</translation>
+        <translation type="obsolete">A to je ten súd, že svetlo prišlo na svet, ale ľudia viacej milovali tmu ako svetlo, lebo ich skutky boli zlé.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="145"/>
@@ -1760,6 +1815,11 @@ skratka</translation>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="53"/>
         <source>Show startup logo</source>
         <translation>Zobraziť logo pri spustení</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="140"/>
+        <source>This is the judgement, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="184"/>
@@ -2459,7 +2519,7 @@ skratka</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="108"/>
-        <source>A source with this caption already exists.  Please provide a different caption.</source>
+        <source>A source with this caption already exists. Please provide a different caption.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3733,12 +3793,12 @@ Language name ppk</extracomment>
         <translation>Voľby</translation>
     </message>
     <message>
-        <location filename="../../src/util/migrationutil.cpp" line="57"/>
+        <location filename="../../src/util/migrationutil.cpp" line="55"/>
         <source>Settings Migration</source>
         <translation>Nastavenia migrácie</translation>
     </message>
     <message>
-        <location filename="../../src/util/migrationutil.cpp" line="58"/>
+        <location filename="../../src/util/migrationutil.cpp" line="56"/>
         <source>It appears you have a BibleTime configuration from KDE 3 stored in %1, and you have not migrated it to this version.  Would you like to import it?</source>
         <translation>Zdá sa, že vaša BibleTime konfigurácia z KDE 3 je uložená v %1, a nebola premigrovaná do tejto verzie. Chcete ju naimportovať?</translation>
     </message>
@@ -4402,8 +4462,12 @@ Toto môže dlho trvať. Pokračovať s indexovaním?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="232"/>
+        <source>Show a graphical analysis of the search result</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Show a graphical analyzis of the search result</source>
-        <translation>Zobraziť grafickú analýzu výsledkov hľadania</translation>
+        <translation type="obsolete">Zobraziť grafickú analýzu výsledkov hľadania</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="238"/>
@@ -4650,9 +4714,13 @@ Toto môže dlho trvať. Pokračovať s indexovaním?</translation>
         <translation>Text, ktorý chcete vyhľadať</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="51"/>
         <source>Seach with case sensitivity</source>
-        <translation>Vyhľadávanie nech rozlišuje veľkosť písmen</translation>
+        <translation type="obsolete">Vyhľadávanie nech rozlišuje veľkosť písmen</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="51"/>
+        <source>Search with case sensitivity</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="54"/>

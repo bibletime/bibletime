@@ -311,11 +311,11 @@
     </message>
     <message>
         <source>We are looking for developers and translators.</source>
-        <translation>Wir suchen nach Entwicklern und Übersetzern.</translation>
+        <translation type="obsolete">Wir suchen nach Entwicklern und Übersetzern.</translation>
     </message>
     <message>
         <source>If you would like to join our team, please send an email to info@bibletime.info.</source>
-        <translation>Wenn Sie unserem Team beitreten möchten, senden Sie bitte eine E-Mail an info@bibletime.info.</translation>
+        <translation type="obsolete">Wenn Sie unserem Team beitreten möchten, senden Sie bitte eine E-Mail an info@bibletime.info.</translation>
     </message>
     <message>
         <source>(c)1999-2009, The BibleTime Team</source>
@@ -323,7 +323,7 @@
     </message>
     <message>
         <source>Contributors</source>
-        <translation>Beitragende</translation>
+        <translation type="obsolete">Beitragende</translation>
     </message>
     <message>
         <source>The following people contributed to BibleTime:</source>
@@ -335,7 +335,7 @@
     </message>
     <message>
         <source>project founder, developer</source>
-        <translation>Projektgründer, Entwickler</translation>
+        <translation type="obsolete">Projektgründer, Entwickler</translation>
     </message>
     <message>
         <source>designer</source>
@@ -355,7 +355,7 @@
     </message>
     <message>
         <source>project manager, developer</source>
-        <translation>Projektleiter, Entwickler</translation>
+        <translation type="obsolete">Projektleiter, Entwickler</translation>
     </message>
     <message>
         <source>domain sponsor</source>
@@ -371,7 +371,7 @@
     </message>
     <message>
         <source>tester, usability expert</source>
-        <translation>Tester, Experte für Gebrauchstauglichkeit</translation>
+        <translation type="obsolete">Tester, Experte für Gebrauchstauglichkeit</translation>
     </message>
     <message>
         <source>The following people translated BibleTime into their language:</source>
@@ -379,7 +379,7 @@
     </message>
     <message>
         <source>Some names may be missing, please email bibletime-translations@lists.sourceforge.net if you notice errors or omissions.</source>
-        <translation>Einige Namen mögen fehlen, bitte schicken Sie eine E-Mail an bibletime-translations@lists.sourceforge.net, wenn Sie Fehler oder Auslassungen bemerken.</translation>
+        <translation type="obsolete">Einige Namen mögen fehlen, bitte schicken Sie eine E-Mail an bibletime-translations@lists.sourceforge.net, wenn Sie Fehler oder Auslassungen bemerken.</translation>
     </message>
     <message>
         <source>SWORD library version %1</source>
@@ -387,27 +387,27 @@
     </message>
     <message>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools-- covered by the GNU General Public License-- that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
-        <translation>BibleTime verwendet das SWORD-Projekt. Das SWORD-Projekt ist das freie Bibelsoftware-Projekt der CrossWire Bible Society. Seine Zielsetzung ist das Kreieren plattformübergreifender Open-Source Werkzeuge, die der GNU General Public License unterstellt sind und die Programmierern und Bibelgesellschaften erlauben, neue Bibelsoftware schneller und einfacher zu schreiben.</translation>
+        <translation type="obsolete">BibleTime verwendet das SWORD-Projekt. Das SWORD-Projekt ist das freie Bibelsoftware-Projekt der CrossWire Bible Society. Seine Zielsetzung ist das Kreieren plattformübergreifender Open-Source Werkzeuge, die der GNU General Public License unterstellt sind und die Programmierern und Bibelgesellschaften erlauben, neue Bibelsoftware schneller und einfacher zu schreiben.</translation>
     </message>
     <message>
         <source>The SWORD Project</source>
-        <translation>Das SWORD-Projekt</translation>
+        <translation type="obsolete">Das SWORD-Projekt</translation>
     </message>
     <message>
         <source>License</source>
-        <translation>Lizenz</translation>
+        <translation type="obsolete">Lizenz</translation>
     </message>
     <message>
         <source>BibleTime is released under the GPL license.</source>
-        <translation>BibleTime wird unter der GPL-Lizenz veröffentlicht.</translation>
+        <translation type="obsolete">BibleTime wird unter der GPL-Lizenz veröffentlicht.</translation>
     </message>
     <message>
         <source>You can download and use (but not distribute) the program for personal, private, public or commercial purposes without restrictions.</source>
-        <translation>Sie können das Programm ohne Beschränkungen herunterladen und benutzen (aber nicht verbreiten) für den persönlichen, privaten, öffentlichen oder kommerziellen Zweck.</translation>
+        <translation type="obsolete">Sie können das Programm ohne Beschränkungen herunterladen und benutzen (aber nicht verbreiten) für den persönlichen, privaten, öffentlichen oder kommerziellen Zweck.</translation>
     </message>
     <message>
         <source>You can give away or distribute the program if you also distribute the corresponding source code.</source>
-        <translation>Sie dürfen das Programm weitergeben oder verbreiten, wenn Sie gleichzeitig den korrespondierenden Quellcode mitgeben.</translation>
+        <translation type="obsolete">Sie dürfen das Programm weitergeben oder verbreiten, wenn Sie gleichzeitig den korrespondierenden Quellcode mitgeben.</translation>
     </message>
     <message>
         <source>The complete legally binding license is below.</source>
@@ -420,6 +420,74 @@
     <message>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
         <translation>Qt ist ein plattformübergreifendes Applikations- und UI-Rahmensystem, das mit der C++-Sprache erstellt wurde. Es wurde unter der LGPL-Lizenz veröffentlicht.</translation>
+    </message>
+    <message>
+        <source>&amp;BibleTime</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>We are looking for developers and translators. If you would like to join our team, please send an email to %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Contributors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>project founder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>project manager</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>artist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>tester</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>usability expert</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Some names may be missing, please email %1 if you notice errors or omissions.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Sword</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The SWORD Project: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Qt</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Qt toolkit version %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>More info...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;License</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>BibleTime is released under the GPL license. You can download and use (but not distribute) the program for personal, private, public or commercial purposes without restrictions. You can give away or distribute the program if you also distribute the corresponding source code.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1391,7 +1459,7 @@ shortcut</source>
     </message>
     <message>
         <source>This is the judgment, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.</source>
-        <translation>Und so vollzieht sich das Urteil: Das Licht ist in die Welt gekommen, aber die Menschen lieben die Finsternis mehr als das Licht. Denn alles, was sie tun, ist böse.</translation>
+        <translation type="obsolete">Und so vollzieht sich das Urteil: Das Licht ist in die Welt gekommen, aber die Menschen lieben die Finsternis mehr als das Licht. Denn alles, was sie tun, ist böse.</translation>
     </message>
     <message>
         <source>For everyone who does evil hates the light, and doesn&apos;t come to the light, lest his works would be exposed.</source>
@@ -1420,6 +1488,10 @@ shortcut</source>
     <message>
         <source></source>
         <translation></translation>
+    </message>
+    <message>
+        <source>This is the judgement, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2036,7 +2108,11 @@ Möchten Sie fortfahren?</translation>
     </message>
     <message>
         <source>A source with this caption already exists.  Please provide a different caption.</source>
-        <translation>Eine neue Quelle mit dieser Bezeichnung existiert bereits. Bitte geben Sie eine andere Bezeichnung ein.</translation>
+        <translation type="obsolete">Eine neue Quelle mit dieser Bezeichnung existiert bereits. Bitte geben Sie eine andere Bezeichnung ein.</translation>
+    </message>
+    <message>
+        <source>A source with this caption already exists. Please provide a different caption.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3546,11 +3622,15 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     </message>
     <message>
         <source>Show a graphical analyzis of the search result</source>
-        <translation>Eine grafische Analyse des Suchergebnisses anzeigen</translation>
+        <translation type="obsolete">Eine grafische Analyse des Suchergebnisses anzeigen</translation>
     </message>
     <message>
         <source>&amp;Close</source>
         <translation>&amp;Schließen</translation>
+    </message>
+    <message>
+        <source>Show a graphical analysis of the search result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3742,7 +3822,7 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     </message>
     <message>
         <source>Seach with case sensitivity</source>
-        <translation>Bei der Suche Groß-/Kleinschreibung beachten</translation>
+        <translation type="obsolete">Bei der Suche Groß-/Kleinschreibung beachten</translation>
     </message>
     <message>
         <source>Case &amp;sensitive</source>
@@ -3771,6 +3851,10 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     <message>
         <source>&amp;Close</source>
         <translation>&amp;Schließen</translation>
+    </message>
+    <message>
+        <source>Search with case sensitivity</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

@@ -855,6 +855,8 @@
         <colspec colname="desc" />
         <thead>
           <row>
+	    <?dbhtml bgcolor="#EEEEEE" ?>
+	    <?dbfo bgcolor="#EEEEEE" ?>
             <entry>Shortcut</entry>
             <entry>Description</entry>
           </row>

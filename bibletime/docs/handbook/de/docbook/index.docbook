@@ -53,7 +53,7 @@
 
   <date>$LastChangedDate: 2009-11-18 13:30:32 -0500 (Wed, 18 Nov 2009) $</date>
 
-  <releaseinfo>2.5</releaseinfo>
+  <releaseinfo>2.6</releaseinfo>
 
   <abstract>
     <para>&bibletime; ist ein Bibelstudien-Werkzeug, das auf dem &sword;-System 

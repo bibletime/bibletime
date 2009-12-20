@@ -839,6 +839,8 @@ reference</link>.</para>
         <colspec colname="desc" />
         <thead>
           <row>
+	    <?dbhtml bgcolor="#EEEEEE" ?>
+	    <?dbfo bgcolor="#EEEEEE" ?>
             <entry>Shortcut</entry>
             <entry>Kuvaus</entry>
           </row>

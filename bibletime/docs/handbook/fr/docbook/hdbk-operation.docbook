@@ -5,7 +5,7 @@
     <para>This is what a typical &bibletime; session looks like: 
     <mediaobject>
       <imageobject>
-        <imagedata fileref="ss_mainterms.png" width="600" depth="466" scale="75" format="PNG" />
+        <imagedata fileref="ss_mainterms.png" width="100%" contentdepth="100%" scalefit="1" format="PNG" />
       </imageobject>
       <textobject>
         <phrase>The &bibletime; application window</phrase>
@@ -211,7 +211,7 @@ de recherche dans une fenêtre de lecture ouverte.</para>
         <screeninfo>Onglets du dialogue rechercher</screeninfo>
         <mediaobject>
           <imageobject>
-            <imagedata fileref="ss_searchopts.png" width="600" depth="463" scale="75" format="PNG" />
+            <imagedata fileref="ss_searchopts.png" width="100%" contentdepth="100%" scalefit="1" format="PNG" />
           </imageobject>
         </mediaobject>
       </screenshot>
@@ -254,6 +254,8 @@ search terms, e.g. '(Jesus OR spirit) AND God'.</para>
           <tgroup cols="3">
             <thead>
               <row>
+		<?dbhtml bgcolor="#EEEEEE" ?>
+		<?dbfo bgcolor="#EEEEEE" ?>
                 <entry>Prefix</entry>
                 <entry>Meaning</entry>
 		<entry>Example</entry>
@@ -328,7 +330,7 @@ analysis.</para>
           <screeninfo>La boîte de dialogue d'analyse de la recherche</screeninfo>
           <mediaobject>
             <imageobject>
-              <imagedata fileref="ss_searchanal.png" width="600" depth="470" scale="75" format="PNG" />
+              <imagedata fileref="ss_searchanal.png" width="100%" contentdepth="100%" scalefit="1" format="PNG" />
             </imageobject>
           </mediaobject>
         </screenshot>
