@@ -1,0 +1,87 @@
+<chapter id="hdbk-intro">
+  <title>Introdução</title>
+  <sect1 id="hdbk-intro-about">
+    <title>Sobre &bibletime;</title>
+
+    <para>&bibletime;  uma ferramenta de estudo bíblico com suporte para diferentes 
+tipos de textos e idiomas. Mesmo grandes quantidades de obras são simples de 
+instalar e gerenciar. Ele foi feito sobre a biblioteca <ulink 
+url="http://www.crosswire.org/sword">Sword</ulink>, que provê a 
+funcionalidade de back-end para o &bibletime;, tal como visualizar texto 
+bíblico, pesquisar, etc. Sword é o carro-chefe da <ulink 
+url="http://www.crosswire.org">Crosswire Bible Society</ulink>.</para>
+
+    <para>&bibletime; foi desenhado para ser usado com obras codificadas em um dos 
+formatos suportados pelo projeto Sword. Informações completas sobre os 
+formatos de documentos suportados podem ser encontradas na <ulink 
+url="http://www.crosswire.org/sword/develop/index.jsp"> seção 
+desenvolvimento</ulink> do Projeto Sword, Crosswire Bible Society.</para>
+
+    <sect2 id="hdbk-intro-works">
+      <title>Obras disponíveis</title>
+      <para>Mais de 200 documentos em 50 idiomas estão disponíveis da <ulink 
+url="http://www.crosswire.org">Crosswire Bible Society&cbs;</ulink>. Estão 
+inclusos:
+      <variablelist>
+        <varlistentry>
+          <term>Bíblias</term>
+          <listitem>
+            <para>O texto completo da Bíblia, com itens opcionais como os números Strong, 
+cabeçalhos e/ou rodapés no texto. Bíblias estão disponíveis em muitos 
+idiomas, e incluem no somente versões modernas, mas também textos antigos 
+como o Codex Leningradensis ("WLC", hebraico), e a Septuaginta ("LXX", 
+grego). Essa  a seção mais avançada na biblioteca do projeto &sword;.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Livros</term>
+          <listitem>
+            <para>Livros disponíveis incluindo "Imitation of Christ", "Enuma Elish", e 
+"Josephus: The Complete Works" (em inglês)</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Comentários</term>
+          <listitem>
+            <para>Comentários disponíveis incluindo clássicos como "Notas sobre a Bíblia" de 
+John Wesley, o comentário de Matthew Henry e o "comentário sobre Glatas" de 
+Lutero. Com o comentário <emphasis>pessoal</emphasis> você pode <link 
+linkend="hdbk-op-parts-desk-write"> gravar suas próprias notas 
+pessoas</link> nas seções da Bíblia.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Devocionais diários</term>
+          <listitem>
+            <para>Muitas pessoas apreciam essas porções diárias da palavra de Deus. Obras 
+disponíveis incluem Daily Light on the Daily Path, e o Losungen (ingls).</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Léxicos/Dicionários</term>
+          <listitem>
+            <para>Léxicos disponíveis incluem: Códigos de Análise Morfológicos de Robinson, 
+Léxico Hebraico de Brown-Driver-Briggs e a Enciclopédia da International 
+Standard Bible. Dicionários disponíveis incluem o Dicionário bíblico 
+Hebraico de Strong, o Dicionário bíblico Grego de Strong, Dicionário 
+Revisado da língua Inglesa de Webster 1913, Bíblia em Tópicos de Nave.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist></para>
+    </sect2>
+    <sect2 id="hdbk-intro-motivation">
+      <title>Motivação</title>
+      <para>Nosso desejo é servir a Deus, e fazer nossa parte em ajudar outros a crescer 
+no seu relacionamento com Ele. Nós batalhamos para tornar isso um programa 
+poderoso e de qualidade, e ainda assim fazê-lo simples e de operação 
+intuitiva.  nosso desejo que Deus seja louvado, pois ele é a origem de todas 
+as coisas boas.</para>
+      <blockquote>
+        <attribution>Tiago 1:17, ACF</attribution>
+        <para>Toda a boa dádiva e todo o dom perfeito vem do alto, descendo do Pai das 
+luzes, em quem no há mudana nem sombra de variação.</para>
+      </blockquote>
+      <para>Deus o abençoe enquanto usa esse programa.</para>
+    </sect2>
+  </sect1>
+</chapter>

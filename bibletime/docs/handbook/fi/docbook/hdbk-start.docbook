@@ -1,0 +1,75 @@
+<chapter id="hdbk-term">
+  <title>&bibletime;n käynnistys</title>
+
+  <sect1 id="hdbk-start">
+    <title>Kuinka &bibletime; käynnistetään</title>
+
+    <sect2 id="hdbk-start-starting">
+      <title>&bibletime;n käynnistys</title>
+      <para>&bibletime; is an executable file that is integrated with the desktop. You 
+can launch &bibletime; from the Start Menu with this icon: 
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="i_bibletime.png" width="32" depth="32" format="PNG" />
+        </imageobject>
+        <textobject>
+          <phrase>&bibletime; käynnistyskuvake</phrase>
+        </textobject>
+      </mediaobject></para>
+
+      <para>&bibletime;-ohjelman voi käynnistää terminaali-ikkunan 
+komentoriviltä. Käynnistääksesi &bibletime;-ohjelman, avaa terminaali-ikkuna 
+ja kirjoita: 
+      <screen>bibletime</screen></para>
+    </sect2>
+
+    <sect2 id="hdbk-start-custom">
+      <title>Käynnistyksen säätäminen</title>
+      <para>Voit avata (oletus)Raamatun satunnaisen jakeen kohdalta konsolissa  
+&bibletime;n komennolla:
+	<screen>bibletime --open-default-bible "&lt;random&gt;"</screen>
+	Avataksesi Raamatun annetusta tekstikohdasta kuten Joh 3:16 käytä:
+	<screen>bibletime --open-default-bible "Joh 3:16"</screen>
+	Voit käyttää kirjanniminä tämänhetkistä kielivalintaa.</para>
+    </sect2>
+  </sect1>
+
+  <sect1 id="hdbk-startsequence">
+    <title>Käynnistyssarja</title>
+
+    <para>Kun &bibletime; käynnistyy, näet seuraavat ikkunat ennenkuin &bibletime;n 
+pääikkuna avautuu:</para>
+
+    <variablelist>
+      <varlistentry>
+        <term>
+          <interface>Bookshelf Manager</interface>
+        </term>
+        <listitem>
+          <para><action>Modifies your Bookshelf</action>.  This dialog lets you modify your 
+Bookshelf, add or delete works from your system.  It will only be shown if 
+no default Bookshelf can be found.  Please see <link 
+linkend="hdbk-op-bookshelfmanager">The Bookshelf Manager section</link> for 
+further details. If you start off with an empty Bookshelf, it will be 
+helpful to install at least one Bible, Commentary, Lexicon and one Book to 
+get to know &bibletime;'s basic features quickly.  You can do this by 
+clicking on the Refresh button.  You will be presented with a list of works 
+that are available from the &cbs;</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>
+          <interface>Configure &bibletime; dialog</interface>
+        </term>
+        <listitem>
+          <para>
+          <action>Räätälöi &bibletime;n.</action>Tässä ikkunassa voit tehdä 
+&bibletime;:stä sellaisen kuin haluat. Katso linkistä <link 
+linkend="hdbk-config-bt">yksityiskohtainen kuvaus</link> lisää tietoa tästä 
+ikkunasta.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect1>
+</chapter>
