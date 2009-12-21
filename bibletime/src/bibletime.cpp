@@ -254,7 +254,8 @@ void BibleTime::moduleUnlock(CSwordModuleInfo *module) {
 }
 
 void BibleTime::moduleAbout(CSwordModuleInfo *module) {
-    BTAboutModuleDialog *dialog(new BTAboutModuleDialog(this, module));
+    BTAboutModuleDialog *dialog = new BTAboutModuleDialog(module, this);
+    dialog->setAttribute(Qt::WA_DeleteOnClose); // Destroy dialog when closed
     dialog->show();
     dialog->raise();
 }

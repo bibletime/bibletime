@@ -25,7 +25,8 @@ class QTextEdit;
 class BTAboutModuleDialog: public QDialog {
         Q_OBJECT
     public:
-        BTAboutModuleDialog(QWidget *parent, CSwordModuleInfo *info);
+        BTAboutModuleDialog(CSwordModuleInfo *moduleInfo, QWidget *parent = 0,
+                            Qt::WindowFlags flags = 0);
 
     protected:
         void retranslateUi();

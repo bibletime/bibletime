@@ -248,7 +248,8 @@ void BtSourceArea::slotSelectionChanged(QTreeWidgetItem* item, int column) {
 void BtSourceArea::slotItemDoubleClicked(QTreeWidgetItem* item, int /*column*/) {
     CSwordModuleInfo* mInfo = m_remoteBackend->findModuleByName(item->text(0));
     if (mInfo) {
-        BTAboutModuleDialog* dialog = new BTAboutModuleDialog(this, mInfo);
+        BTAboutModuleDialog *dialog = new BTAboutModuleDialog(mInfo, this);
+        dialog->setAttribute(Qt::WA_DeleteOnClose); // Destroy dialog when closed
         dialog->show();
         dialog->raise();
     }

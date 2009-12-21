@@ -17,11 +17,10 @@
 #include "util/dialogutil.h"
 
 
-BTAboutModuleDialog::BTAboutModuleDialog(QWidget* parent, CSwordModuleInfo* info)
-        : QDialog(parent), m_moduleInfo(info)
+BTAboutModuleDialog::BTAboutModuleDialog(CSwordModuleInfo *moduleInfo, QWidget *parent,
+                                         Qt::WindowFlags flags)
+        : QDialog(parent, flags), m_moduleInfo(moduleInfo)
 {
-    //Set the flag to destroy when closed - otherwise eats memory
-    setAttribute(Qt::WA_DeleteOnClose);
     resize(650, 400);
     QVBoxLayout* vboxLayout = new QVBoxLayout(this);
 
