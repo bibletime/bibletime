@@ -141,17 +141,21 @@ QString util::tool::getIconNameForModule( CSwordModuleInfo* module_info ) {
     return CResMgr::modules::book::icon_unlocked;
 }
 
-QLabel* util::tool::explanationLabel(QWidget* parent, const QString& heading, const QString& text ) {
+QLabel* util::tool::explanationLabel(QWidget *parent, const QString &heading, const QString &text) {
+    QLabel *label = new QLabel(parent);
+    initExplanationLabel(label, heading, text);
+    return label;
+}
+
+void util::tool::initExplanationLabel(QLabel *label, const QString &heading, const QString &text) {
     QString br;
     if (!heading.isEmpty() && !text.isEmpty()) {
         br = QString::fromLatin1("<span style='white-space:pre'>  -  </span>");
     }
-    QLabel* label = new QLabel( QString::fromLatin1("<b>%1</b>%2<small>%3</small>").arg(heading).arg(br).arg(text), parent );
-
+    label->setText(QString::fromLatin1("<b>%1</b>%2<small>%3</small>").arg(heading).arg(br).arg(text));
     label->setWordWrap(true);
     label->setMargin(1);
     label->setFrameStyle(QFrame::Box | QFrame::Sunken);
-    return label;
 }
 
 /** No descriptions */

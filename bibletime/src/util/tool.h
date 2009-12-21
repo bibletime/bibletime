@@ -47,11 +47,20 @@ QIcon getIconForModule( CSwordModuleInfo* );
 */
 QString getIconNameForModule( CSwordModuleInfo* );
 
-/** Returns a label to explain difficult things of dialogs.
-* This function returns a label with heading "heading" and explanation "text". This label should be used to
-* explain difficult things of the GUI, e.g. in the optionsdialog.
+/**
+  Returns a new QLabel initialized by \ref initExplanationLabel().
 */
-QLabel* explanationLabel(QWidget* parent, const QString& heading, const QString& text );
+QLabel *explanationLabel(QWidget *parent, const QString &heading, const QString &text);
+
+/**
+  Initializes a QLabel to explain difficult things of dialogs. The label should be used to
+  explain difficult things of the GUI, e.g. in the options dialog pages.
+  \param[in] label The label to initialize
+  \param[in] heading The heading for the label.
+  \param[in] text The text for the label.
+*/
+void initExplanationLabel(QLabel *label, const QString &heading, const QString &text);
+
 /**
 * Returns true if the character at position "pos" of text is inside an HTML tag. Returns false if it's not inside an HTML tag.
 */
