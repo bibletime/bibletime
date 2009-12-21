@@ -28,6 +28,7 @@ BtSearchSyntaxHelpDialog::BtSearchSyntaxHelpDialog(QWidget *parent, Qt::WindowFl
     QVBoxLayout *l = new QVBoxLayout;
 
     m_webView = new QWebView(this);
+    m_webView->page()->setLinkDelegationPolicy(QWebPage::DelegateExternalLinks);
     connect(m_webView, SIGNAL(linkClicked(QUrl)),
             this,      SLOT(linkClicked(QUrl)));
     l->addWidget(m_webView);
