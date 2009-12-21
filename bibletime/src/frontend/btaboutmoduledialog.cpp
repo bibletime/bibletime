@@ -18,27 +18,27 @@
 
 
 BTAboutModuleDialog::BTAboutModuleDialog(QWidget* parent, CSwordModuleInfo* info)
-        : QDialog(parent) {
+        : QDialog(parent), m_moduleInfo(info)
+{
     //Set the flag to destroy when closed - otherwise eats memory
     setAttribute(Qt::WA_DeleteOnClose);
-    setWindowTitle(tr("Information About %1").arg(info->name()));
     resize(650, 400);
     QVBoxLayout* vboxLayout = new QVBoxLayout(this);
 
-    QTextEdit* textEdit = new QTextEdit(this);
-    textEdit->setReadOnly(true);
-    textEdit->setTextInteractionFlags(Qt::TextSelectableByMouse);
-    vboxLayout->addWidget(textEdit);
-    textEdit->setHtml(info->aboutText());
+    m_textEdit = new QTextEdit(this);
+    m_textEdit->setReadOnly(true);
+    m_textEdit->setTextInteractionFlags(Qt::TextSelectableByMouse);
+    vboxLayout->addWidget(m_textEdit);
 
-    QDialogButtonBox* buttonBox = new QDialogButtonBox(this);
-    buttonBox->setOrientation(Qt::Horizontal);
-    buttonBox->setStandardButtons(QDialogButtonBox::Close);
-    util::prepareDialogBox(buttonBox);
-    vboxLayout->addWidget(buttonBox);
+    m_buttons = new QDialogButtonBox(QDialogButtonBox::Close, Qt::Horizontal, this);
+    QObject::connect(m_buttons, SIGNAL(rejected()), this, SLOT(reject()));
+    vboxLayout->addWidget(m_buttons);
 
+    retranslateUi();
+}
 
-    QObject::connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
-    QObject::connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
-
+void BTAboutModuleDialog::retranslateUi() {
+    setWindowTitle(tr("Information About %1").arg(m_moduleInfo->name()));
+    m_textEdit->setHtml(m_moduleInfo->aboutText());
+    util::prepareDialogBox(m_buttons);
 }

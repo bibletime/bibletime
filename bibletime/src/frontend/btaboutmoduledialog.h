@@ -14,17 +14,26 @@
 
 
 class CSwordModuleInfo;
-class QWidget;
+class QDialogButtonBox;
+class QTextEdit;
 
 /**
     Dialog to show the information about a module.
 
     @author The BibleTime team <info@bibletime.info>
 */
-class BTAboutModuleDialog : public QDialog {
+class BTAboutModuleDialog: public QDialog {
         Q_OBJECT
     public:
-        BTAboutModuleDialog(QWidget* parent, CSwordModuleInfo* info);
+        BTAboutModuleDialog(QWidget *parent, CSwordModuleInfo *info);
+
+    protected:
+        void retranslateUi();
+
+    private:
+        CSwordModuleInfo *m_moduleInfo;
+        QTextEdit        *m_textEdit;
+        QDialogButtonBox *m_buttons;
 };
 
 #endif
