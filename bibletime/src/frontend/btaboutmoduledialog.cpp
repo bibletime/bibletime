@@ -34,6 +34,9 @@ BTAboutModuleDialog::BTAboutModuleDialog(CSwordModuleInfo *moduleInfo, QWidget *
     vboxLayout->addWidget(m_buttons);
 
     retranslateUi();
+
+    connect(moduleInfo, SIGNAL(destroyed()),
+            this,       SLOT(close()));
 }
 
 void BTAboutModuleDialog::retranslateUi() {
