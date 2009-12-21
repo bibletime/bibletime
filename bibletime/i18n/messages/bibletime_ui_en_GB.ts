@@ -2,23 +2,6 @@
 <!DOCTYPE TS>
 <TS version="2.0" language="en_GB">
 <context>
-    <name></name>
-    <message>
-        <source></source>
-        <translation>Project-Id-Version: BibleTime
-POT-Creation-Date: 
-PO-Revision-Date: 
-Last-Translator: Thomas Abthorpe &lt;tabthorpe@FreeBSD.org&gt;
-Language-Team: en_GB &lt;bibletime-translations@lists.sourceforge.net&gt;
-MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
-Content-Transfer-Encoding: 8bit
-X-Poedit-Language: English
-X-Poedit-Country: UNITED KINGDOM
-</translation>
-    </message>
-</context>
-<context>
     <name>BTAboutModuleDialog</name>
     <message>
         <location filename="../../src/frontend/btaboutmoduledialog.cpp" line="24"/>
@@ -397,34 +380,14 @@ X-Poedit-Country: UNITED KINGDOM
         <translation>BibleTime is an easy to use but powerful Bible study tool.</translation>
     </message>
     <message>
-        <source>We are looking for developers and translators.</source>
-        <translation type="obsolete">We are looking for developers and translators.</translation>
-    </message>
-    <message>
-        <source>If you would like to join our team, please send an email to info@bibletime.info.</source>
-        <translation type="obsolete">If you would like to join our team, please send an email to info@bibletime.info.</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="120"/>
         <source>(c)1999-2009, The BibleTime Team</source>
         <translation>(c)1999-2009, The BibleTime Team</translation>
     </message>
     <message>
-        <source>You can download and use (but not distribute) the program for personal, private, public or commercial purposes without restrictions.</source>
-        <translation type="obsolete">You can download and use (but not distribute) the program for personal, private, public or commercial purposes without restrictions.</translation>
-    </message>
-    <message>
-        <source>You can give away or distribute the program if you also distribute the corresponding source code.</source>
-        <translation type="obsolete">You can give away or distribute the program if you also distribute the corresponding source code.</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="256"/>
         <source>The complete legally binding license is below.</source>
         <translation>The complete legally binding license is below.</translation>
-    </message>
-    <message>
-        <source>Contributors</source>
-        <translation type="obsolete">Contributors</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="99"/>
@@ -434,17 +397,17 @@ X-Poedit-Country: UNITED KINGDOM
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="111"/>
         <source>&amp;BibleTime</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="116"/>
         <source>We are looking for developers and translators. If you would like to join our team, please send an email to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>We are looking for developers and translators. If you would like to join our team, please send an email to %1.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="127"/>
         <source>&amp;Contributors</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Contributors</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="137"/>
@@ -459,66 +422,62 @@ X-Poedit-Country: UNITED KINGDOM
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="148"/>
         <source>project manager</source>
-        <translation type="unfinished"></translation>
+        <translation>project manager</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="162"/>
         <source>tester</source>
-        <translation type="unfinished"></translation>
+        <translation>tester</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="162"/>
         <source>usability expert</source>
-        <translation type="unfinished"></translation>
+        <translation>usability expert</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="199"/>
         <source>Some names may be missing, please email %1 if you notice errors or omissions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Some names may be missing, please email %1 if you notice errors or omissions.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="210"/>
         <source>&amp;Sword</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Sword</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="216"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
-        <translation type="unfinished"></translation>
+        <translation>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="222"/>
         <source>The SWORD Project: </source>
-        <translation type="unfinished"></translation>
+        <translation>The SWORD Project: </translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="230"/>
         <source>&amp;Qt</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Qt</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="233"/>
         <source>Qt toolkit version %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Qt toolkit version %1</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="239"/>
         <source>More info...</source>
-        <translation type="unfinished"></translation>
+        <translation>More info...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="244"/>
         <source>&amp;License</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;License</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="250"/>
         <source>BibleTime is released under the GPL license. You can download and use (but not distribute) the program for personal, private, public or commercial purposes without restrictions. You can give away or distribute the program if you also distribute the corresponding source code.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>project founder, developer</source>
-        <translation type="obsolete">project founder, developer</translation>
+        <translation>BibleTime is released under the GPL license. You can download and use (but not distribute) the program for personal, private, public or commercial purposes without restrictions. You can give away or distribute the program if you also distribute the corresponding source code.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="130"/>
@@ -533,7 +492,7 @@ X-Poedit-Country: UNITED KINGDOM
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="140"/>
         <source>project founder</source>
-        <translation type="unfinished"></translation>
+        <translation>project founder</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="146"/>
@@ -544,10 +503,6 @@ X-Poedit-Country: UNITED KINGDOM
         <location filename="../../src/frontend/btaboutdialog.cpp" line="147"/>
         <source>creator of The Sword Project</source>
         <translation>creator of The Sword Project</translation>
-    </message>
-    <message>
-        <source>project manager, developer</source>
-        <translation type="obsolete">project manager, developer</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="149"/>
@@ -562,7 +517,7 @@ X-Poedit-Country: UNITED KINGDOM
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="158"/>
         <source>artist</source>
-        <translation type="unfinished"></translation>
+        <translation>artist</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="160"/>
@@ -570,30 +525,14 @@ X-Poedit-Country: UNITED KINGDOM
         <translation>documentation</translation>
     </message>
     <message>
-        <source>tester, usability expert</source>
-        <translation type="obsolete">tester, usability expert</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="173"/>
         <source>The following people translated BibleTime into their language:</source>
         <translation>The following people translated BibleTime into their language:</translation>
     </message>
     <message>
-        <source>Some names may be missing, please email bibletime-translations@lists.sourceforge.net if you notice errors or omissions.</source>
-        <translation type="obsolete">Some names may be missing, please email bibletime-translations@lists.sourceforge.net if you notice errors or omissions.</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="214"/>
         <source>SWORD library version %1</source>
         <translation>SWORD library version %1</translation>
-    </message>
-    <message>
-        <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools-- covered by the GNU General Public License-- that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
-        <translation type="obsolete">BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools-- covered by the GNU General Public License-- that allow programmers and Bible societies to write new Bible software more quickly and easily.</translation>
-    </message>
-    <message>
-        <source>The SWORD Project</source>
-        <translation type="obsolete">The SWORD Project</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="235"/>
@@ -604,14 +543,6 @@ X-Poedit-Country: UNITED KINGDOM
         <location filename="../../src/frontend/btaboutdialog.cpp" line="237"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
         <translation>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</translation>
-    </message>
-    <message>
-        <source>License</source>
-        <translation type="obsolete">License</translation>
-    </message>
-    <message>
-        <source>BibleTime is released under the GPL license.</source>
-        <translation type="obsolete">BibleTime is released under the GPL license.</translation>
     </message>
 </context>
 <context>
@@ -1749,10 +1680,6 @@ shortcut</translation>
         <translation>He who believes in him is not judged. He who doesn&apos;t believe has been judged already, because he has not believed in the name of the one and only Son of God.</translation>
     </message>
     <message>
-        <source>This is the judgment, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.</source>
-        <translation type="obsolete">This is the judgement, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="145"/>
         <source>For everyone who does evil hates the light, and doesn&apos;t come to the light, lest his works would be exposed.</source>
         <translation>For everyone who does evil hates the light, and doesn&apos;t come to the light, lest his works would be exposed.</translation>
@@ -1780,7 +1707,7 @@ shortcut</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="140"/>
         <source>This is the judgement, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.</source>
-        <translation type="unfinished"></translation>
+        <translation>This is the judgement, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="184"/>
@@ -2460,13 +2387,9 @@ shortcut</translation>
         <translation>Please provide a caption.</translation>
     </message>
     <message>
-        <source>A source with this caption already exists.  Please provide a different caption.</source>
-        <translation type="obsolete">A source with this caption already exists.  Please provide a different caption.</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="108"/>
         <source>A source with this caption already exists. Please provide a different caption.</source>
-        <translation type="unfinished"></translation>
+        <translation>A source with this caption already exists. Please provide a different caption.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="114"/>
@@ -4388,11 +4311,7 @@ This could take a long time. Proceed with indexing?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="232"/>
         <source>Show a graphical analysis of the search result</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show a graphical analyzis of the search result</source>
-        <translation type="obsolete">Show a graphical analysis of the search result</translation>
+        <translation>Show a graphical analysis of the search result</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="238"/>
@@ -4629,13 +4548,9 @@ This could take a long time. Proceed with indexing?</translation>
         <translation>The text you want to search for</translation>
     </message>
     <message>
-        <source>Seach with case sensitivity</source>
-        <translation type="obsolete">Search with case sensitivity</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="51"/>
         <source>Search with case sensitivity</source>
-        <translation type="unfinished"></translation>
+        <translation>Search with case sensitivity</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="54"/>
