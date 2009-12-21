@@ -32,13 +32,26 @@ egy terminál ablakba ezt:
     </sect2>
   </sect1>
 
-  <sect1 id="hdbk-startsequence">
-    <title>Indítási folyamat</title>
+  <sect1 id="hdbk-start-firstrun">
+    <title>Starting &bibletime; for the first time</title>
 
-    <para>Mikor a &bibletime; indul, a következő képet láthatja a fő &bibletime; ablak 
-betöltése előtt:</para>
+    <para>If you are starting &bibletime; for the first time, you will want to 
+configure the following options, available under the <link 
+linkend="hdbk-reference-menus-settings">Settings menu bar</link>.</para>
 
     <variablelist>
+      <varlistentry>
+        <term>
+          <interface>Configure &bibletime; dialog</interface>
+        </term>
+        <listitem>
+          <para>
+          <action> &bibletime; testreszabása</action> Ez az ablak teszi lehetővé, hogy 
+a &bibletime; a szükségeinek megfelelő legyen. Tekintse meg a <link 
+linkend="hdbk-config-bt">lehetőségek</link> részletes leírását.</para>
+        </listitem>
+      </varlistentry>
+
       <varlistentry>
         <term>
           <interface>Bookshelf Manager</interface>
@@ -53,18 +66,6 @@ információkért. Ha üres könyvespolccal indulnak, hasznos lehet legalább eg
 Biblia, kommentár, lexikon vagy egy könyv telepítése, hogy gyorsan 
 megismerje a &bibletime; alap lehetőségeit. A frissítés gombra kattintva 
 megtekintheti a &cbs; által biztosított dokumentumok listáját.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term>
-          <interface>Configure &bibletime; dialog</interface>
-        </term>
-        <listitem>
-          <para>
-          <action> &bibletime; testreszabása</action> Ez az ablak teszi lehetővé, hogy 
-a &bibletime; a szükségeinek megfelelő legyen. Tekintse meg a <link 
-linkend="hdbk-config-bt">lehetőségek</link> részletes leírását.</para>
         </listitem>
       </varlistentry>
     </variablelist>

@@ -57,19 +57,20 @@ documenti disponibili includono Daily Light sul Daily Path, e il
 Losungen. (in inglese)</para>
           </listitem>
         </varlistentry>
+
         <varlistentry>
           <term>Lessici/Dizionari</term>
           <listitem>
-            <para>I lessici disponibili includono Codici di Analisi Morfologica di Robinson, 
-Lessico Ebraico di Brown-Driver-Briggs e l'Enciclopedia della Bibbia 
-Internazionale Standard. I dizionari disponibili includono il Dizionario 
-Strong della Bibbia Ebraica, il Dizionario Strong della Bibbia Greca, il 
-Dizionario Rivisto e Non Abbreviato di Webster della lingua inglese 1913, 
-Bibbia Attuale di Nave.</para>
+            <para>Lexicons available include: Robinson's Morphological Analysis Codes, and the 
+International Standard Bible Encyclopaedia. Dictionaries available include 
+Strong's Hebrew Bible Dictionary, Strong's Greek Bible Dictionary, Webster's 
+Revised Unabridged Dictionary of the English Language 1913, Nave's Topical 
+Bible.</para>
           </listitem>
         </varlistentry>
       </variablelist></para>
     </sect2>
+
     <sect2 id="hdbk-intro-motivation">
       <title>Motivazione</title>
       <para>Il nostro desiderio è servire Dio, e fare la nostra parte per aiutare gli 

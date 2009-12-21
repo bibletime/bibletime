@@ -57,18 +57,20 @@ beschikbare modules bevinden zich Daily Light on the Daily Path (Dagelijks
 Licht op het Dagelijkse Pad) en de Losungen.</para>
           </listitem>
         </varlistentry>
+
         <varlistentry>
           <term>Lexicons/Woordenboeken</term>
           <listitem>
-            <para>Lexicons available include: Robinson's Morphological Analysis Codes, 
-Brown-Driver-Briggs Hebrew Lexicon and the International Standard Bible 
-Encyclopaedia. Dictionaries available include Strong's Hebrew Bible 
-Dictionary, Strong's Greek Bible Dictionary, Webster's Revised Unabridged 
-Dictionary of the English Language 1913, Nave's Topical Bible.</para>
+            <para>Lexicons available include: Robinson's Morphological Analysis Codes, and the 
+International Standard Bible Encyclopaedia. Dictionaries available include 
+Strong's Hebrew Bible Dictionary, Strong's Greek Bible Dictionary, Webster's 
+Revised Unabridged Dictionary of the English Language 1913, Nave's Topical 
+Bible.</para>
           </listitem>
         </varlistentry>
       </variablelist></para>
     </sect2>
+
     <sect2 id="hdbk-intro-motivation">
       <title>Motivatie</title>
       <para>Our desire is to serve God, and to do our part to help others grow in their 

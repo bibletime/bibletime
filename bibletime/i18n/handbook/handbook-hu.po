@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: handbook-hu\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
-"POT-Creation-Date: 2009-12-20 14:00-0500\n"
+"POT-Creation-Date: 2009-12-21 11:18-0500\n"
 "PO-Revision-Date: 2009-12-07 22:50+0100\n"
 "Last-Translator: Geza Novak <geza.novak@gmail.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -463,18 +463,19 @@ msgid ""
 msgstr "Sok ember hálás ezekért a napi adagokért Isten igéjéből."
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-intro.docbook:65
+#: docs/handbook/en/docbook/hdbk-intro.docbook:66
 msgid "Lexicons/Dictionaries"
 msgstr "Lexikonok/szótárak"
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-intro.docbook:67
+#: docs/handbook/en/docbook/hdbk-intro.docbook:68
+#, fuzzy
 msgid ""
-"Lexicons available include: Robinson's Morphological Analysis Codes, Brown-"
-"Driver-Briggs Hebrew Lexicon and the International Standard Bible "
-"Encyclopaedia. Dictionaries available include Strong's Hebrew Bible "
-"Dictionary, Strong's Greek Bible Dictionary, Webster's Revised Unabridged "
-"Dictionary of the English Language 1913, Nave's Topical Bible."
+"Lexicons available include: Robinson's Morphological Analysis Codes, and the "
+"International Standard Bible Encyclopaedia. Dictionaries available include "
+"Strong's Hebrew Bible Dictionary, Strong's Greek Bible Dictionary, Webster's "
+"Revised Unabridged Dictionary of the English Language 1913, Nave's Topical "
+"Bible."
 msgstr ""
 "Itt találhatja például: Robinson Morfológiai Elemzési Kódokat, Brown-Driver-"
 "Briggs Héber Lexikonát és a Nemzetközi Standard Biblia Enciklopédiát. "
@@ -482,12 +483,12 @@ msgstr ""
 "elérhető..."
 
 # type: Content of: <chapter><sect1><sect2><title>
-#: docs/handbook/en/docbook/hdbk-intro.docbook:79
+#: docs/handbook/en/docbook/hdbk-intro.docbook:81
 msgid "Motivation"
 msgstr "Motivációnk"
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-intro.docbook:80
+#: docs/handbook/en/docbook/hdbk-intro.docbook:82
 msgid ""
 "Our desire is to serve God, and to do our part to help others grow in their "
 "relationship with Him. We have striven to make this a powerful, quality "
@@ -501,12 +502,12 @@ msgstr ""
 "minden jó."
 
 # type: Content of: <chapter><sect1><sect2><blockquote><attribution>
-#: docs/handbook/en/docbook/hdbk-intro.docbook:86
+#: docs/handbook/en/docbook/hdbk-intro.docbook:88
 msgid "James 1:17, NASB"
 msgstr "Jakab 1:17, Károli"
 
 # type: Content of: <chapter><sect1><sect2><blockquote><para>
-#: docs/handbook/en/docbook/hdbk-intro.docbook:87
+#: docs/handbook/en/docbook/hdbk-intro.docbook:89
 msgid ""
 "Every good thing given and every perfect gift is from above, coming down "
 "from the Father of lights, with whom there is no variation or shifting "
@@ -517,7 +518,7 @@ msgstr ""
 "árnyéka."
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-intro.docbook:91
+#: docs/handbook/en/docbook/hdbk-intro.docbook:93
 msgid "God bless you as you use this program."
 msgstr "Az Úr áldja önt, miközben a programot használja."
 
@@ -591,12 +592,12 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:37
-#: docs/handbook/en/docbook/hdbk-operation.docbook:143
+#: docs/handbook/en/docbook/hdbk-operation.docbook:140
 msgid "Reading works"
 msgstr "Dokumentumok olvasása"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:38
+#: docs/handbook/en/docbook/hdbk-operation.docbook:39
 msgid ""
 "To open a work from the bookshelf for reading, simply click with the "
 "<mousebutton>left mouse button</mousebutton> on the desired category "
@@ -610,14 +611,8 @@ msgstr ""
 "munkára a megnyitásához. A kívánt dokumentum a Munkaasztal részen lesz "
 "látható."
 
-# type: Content of: <chapter><sect1><sect2><sect3><para><tip><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:47
-#: docs/handbook/en/docbook/hdbk-operation.docbook:98
-msgid "Drag &amp; Drop Works Here"
-msgstr "A Fogd &amp; Vidd működése"
-
 # type: Content of: <chapter><sect1><sect2><sect3><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:50
+#: docs/handbook/en/docbook/hdbk-operation.docbook:47
 msgid ""
 "If you are reading a certain work, and want to open another work at the "
 "passage you are reading, you can use a shortcut. Simply click with the "
@@ -636,12 +631,12 @@ msgstr ""
 "ugrani."
 
 # type: Content of: <chapter><sect1><sect2><sect3><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:62
+#: docs/handbook/en/docbook/hdbk-operation.docbook:59
 msgid "Additional information about works"
 msgstr "Kiegészítő információk egy adott dokumentumról"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:64
+#: docs/handbook/en/docbook/hdbk-operation.docbook:61
 msgid ""
 "If you click with the <mousebutton>right</mousebutton> mouse button on the "
 "symbol of a work, you will see a menu with additional entries that are "
@@ -663,13 +658,13 @@ msgstr ""
 "aboutlocked.jsp\"> ezen az oldalon</ulink>, a &cbs; honlapján. "
 
 # type: Content of: <chapter><sect1><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:79
-#: docs/handbook/en/docbook/hdbk-operation.docbook:206
+#: docs/handbook/en/docbook/hdbk-operation.docbook:76
+#: docs/handbook/en/docbook/hdbk-operation.docbook:203
 msgid "Searching in works"
 msgstr "Keresés a dokumentumokban"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:81
+#: docs/handbook/en/docbook/hdbk-operation.docbook:78
 msgid ""
 "You can search in a work by clicking with the <mousebutton>right</"
 "mousebutton> mouse button on its symbol and selecting <guimenuitem>\"Search "
@@ -687,12 +682,17 @@ msgstr ""
 "search\">itt</link> találhatja."
 
 # type: Content of: <chapter><sect1><sect2><sect3><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:94
+#: docs/handbook/en/docbook/hdbk-operation.docbook:91
 msgid "Working with bookmarks"
 msgstr "Munka a könyvjelzőkkel"
 
+# type: Content of: <chapter><sect1><sect2><sect3><para><tip><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:95
+msgid "Drag &amp; Drop Works Here"
+msgstr "A Fogd &amp; Vidd működése"
+
 # type: Content of: <chapter><sect1><sect2><sect3><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:101
+#: docs/handbook/en/docbook/hdbk-operation.docbook:98
 msgid ""
 "Click with the <mousebutton>right</mousebutton> mouse button on the bookmark "
 "category of the bookshelf and select <guimenuitem>\"Create new folder\"</"
@@ -708,7 +708,7 @@ msgstr ""
 "illetve, hogy újrarendezze a meglévő könyvjelzőit."
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:109
+#: docs/handbook/en/docbook/hdbk-operation.docbook:106
 msgid ""
 "You can also import bookmarks from other people or export bookmarks to share "
 "them. To do this, open the <guimenu>context menu</guimenu> of the bookmark "
@@ -724,7 +724,7 @@ msgstr ""
 "hasonlóképpen történik."
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:117
+#: docs/handbook/en/docbook/hdbk-operation.docbook:114
 msgid ""
 "You can also click with the <mousebutton>right</mousebutton> on folders and "
 "bookmarks to change their names and descriptions."
@@ -734,12 +734,12 @@ msgstr ""
 "megváltoztatására is."
 
 # type: Content of: <chapter><sect1><sect2><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:124
+#: docs/handbook/en/docbook/hdbk-operation.docbook:121
 msgid "The Mag(nifying glass)"
 msgstr "A Nagyító"
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:126
+#: docs/handbook/en/docbook/hdbk-operation.docbook:123
 msgid ""
 "This little window in the lower left corner of the &bibletime; window is "
 "purely passive. Whenever your mouse cursor is located over some text with "
@@ -753,12 +753,12 @@ msgstr ""
 "részben látható. Tegyen egy próbát..."
 
 # type: Content of: <chapter><sect1><sect2><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:135
+#: docs/handbook/en/docbook/hdbk-operation.docbook:132
 msgid "The Desk"
 msgstr "A Munkaasztal"
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:136
+#: docs/handbook/en/docbook/hdbk-operation.docbook:133
 msgid ""
 "The Desk is where the real work with &bibletime; takes place. Here you can "
 "open works from the Bookshelf, read them, <link linkend=\"hdbk-op-search"
@@ -773,7 +773,7 @@ msgstr ""
 "itt látható</link>)."
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:144
+#: docs/handbook/en/docbook/hdbk-operation.docbook:141
 msgid ""
 "As we have <link linkend=\"hdbk-op-parts-bookshelf-open\">already seen</"
 "link>, you can open works for reading simply by clicking on their symbol in "
@@ -789,12 +789,12 @@ msgstr ""
 "megnyitott munkában."
 
 # type: Content of: <chapter><sect1><sect2><sect3><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:155
+#: docs/handbook/en/docbook/hdbk-operation.docbook:152
 msgid "Read window placement"
 msgstr "Megnyitott ablakok elhelyezése"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:156
+#: docs/handbook/en/docbook/hdbk-operation.docbook:153
 msgid ""
 "Of course, you can open multiple works at the same time.  There are several "
 "possibilities for arranging the read windows on the desk. Please have a look "
@@ -814,12 +814,12 @@ msgstr ""
 "menuchoice> menüpontot. Csak próbálja ki, egyszerű, és működik."
 
 # type: Content of: <chapter><sect1><sect2><sect3><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:171
+#: docs/handbook/en/docbook/hdbk-operation.docbook:168
 msgid "Editing your own commentary"
 msgstr "Saját kommentár szerkesztése"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:173
+#: docs/handbook/en/docbook/hdbk-operation.docbook:170
 msgid ""
 "To be able to store your own comments about parts of the Bible, you have "
 "install a certain work from the library of the <ulink url=\"http://www."
@@ -831,7 +831,7 @@ msgstr ""
 "találja Personal Commentary néven."
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:178
+#: docs/handbook/en/docbook/hdbk-operation.docbook:175
 msgid ""
 "If you open the personal commentary by clicking on its symbol in the "
 "Bookshelf with a <mousebutton>left</mousebutton> mouse button, it opens in "
@@ -851,7 +851,7 @@ msgstr ""
 "wysiwyg szerkesztő) lehetőséget."
 
 # type: Content of: <chapter><sect1><sect2><sect3><tip><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:191
+#: docs/handbook/en/docbook/hdbk-operation.docbook:188
 msgid ""
 "If <menuchoice> <guimenu>Edit this work</guimenu> </menuchoice> is "
 "deactivated, please check if you have write permission for the files of the "
@@ -861,7 +861,7 @@ msgstr ""
 "inaktív, lehetséges, hogy nincs írási joga a személyes kommentárhoz."
 
 # type: Content of: <chapter><sect1><sect2><sect3><tip><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:199
+#: docs/handbook/en/docbook/hdbk-operation.docbook:196
 msgid ""
 "Drag &amp; drop works here. Drop a verse reference and the text of the verse "
 "will be inserted."
@@ -870,12 +870,12 @@ msgstr ""
 "dokumentumra, és a vers szövege beszúrásra kerül. "
 
 # type: Content of: <chapter><sect1><sect2><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:209
+#: docs/handbook/en/docbook/hdbk-operation.docbook:206
 msgid "Searching text in an open read window"
 msgstr "Keresés egy megnyitott ablakban "
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:210
+#: docs/handbook/en/docbook/hdbk-operation.docbook:207
 msgid ""
 "You can look for a word or phrase in the open read window (e.g. the chapter "
 "of a bible that you're reading) just like you are used to from other "
@@ -893,12 +893,12 @@ msgstr ""
 "Olvasson tovább, hogy megtudja, hogyan kereshet a teljes dokumentumokban is. "
 
 # type: Content of: <chapter><sect1><sect2><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:222
+#: docs/handbook/en/docbook/hdbk-operation.docbook:219
 msgid "Accessing the search dialog"
 msgstr "Keresési párbeszédablak elérése "
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:223
+#: docs/handbook/en/docbook/hdbk-operation.docbook:220
 msgid ""
 "You can search in a work by clicking with the <mousebutton>right</"
 "mousebutton> mouse button on its symbol in the <guimenu>Bookshelf</guimenu> "
@@ -916,7 +916,7 @@ msgstr ""
 "keresni egyszerre."
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:233
+#: docs/handbook/en/docbook/hdbk-operation.docbook:230
 msgid ""
 "You can also access the search dialog by clicking on <menuchoice> "
 "<guimenu>Search</guimenu> </menuchoice> from the main menu, and selecting "
@@ -927,7 +927,7 @@ msgstr ""
 "bejegyzést."
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:239
+#: docs/handbook/en/docbook/hdbk-operation.docbook:236
 msgid ""
 "A third possibility to start searches is to click on the search symbol in an "
 "open read window."
@@ -937,22 +937,22 @@ msgstr ""
 "ikonra kattintással érhető el egy megnyitott olvasási ablakban."
 
 # type: Content of: <chapter><sect1><sect2><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:244
+#: docs/handbook/en/docbook/hdbk-operation.docbook:241
 msgid "Search configuration"
 msgstr "A keresés testreszabása "
 
 # type: Content of: <chapter><sect1><sect2><screenshot><screeninfo>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:246
+#: docs/handbook/en/docbook/hdbk-operation.docbook:243
 msgid "Search Text Dialog Options Tab"
 msgstr "Szöveg keresése ablak lehetőségei "
 
 # type: Content of: <chapter><sect1><sect2><sect3><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:254
+#: docs/handbook/en/docbook/hdbk-operation.docbook:251
 msgid "Selecting works"
 msgstr "Dokumentumok kiválasztása"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:255
+#: docs/handbook/en/docbook/hdbk-operation.docbook:252
 msgid ""
 "At the top of the options tab you will find <guibutton>Choose</guibutton>"
 "(works). If you would like to search in multiple works, click on this button "
@@ -968,12 +968,12 @@ msgstr ""
 "kiválaszthatja a keresésbe bevonandó munkákat."
 
 # type: Content of: <chapter><sect1><sect2><sect3><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:262
+#: docs/handbook/en/docbook/hdbk-operation.docbook:259
 msgid "Using Search Scopes"
 msgstr "Keresési hatókörök használata"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:263
+#: docs/handbook/en/docbook/hdbk-operation.docbook:260
 msgid ""
 "You can narrow the scope of your search to certain parts of the Bible by "
 "selecting one of the predefined scopes from the list in <guimenu>Search "
@@ -988,12 +988,12 @@ msgstr ""
 "meghatározhat hatókört a <guibutton>Telepítés</guibutton> gombra kattintva."
 
 # type: Content of: <chapter><sect1><sect2><sect3><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:272
+#: docs/handbook/en/docbook/hdbk-operation.docbook:269
 msgid "Basic Search Syntax Introduction"
 msgstr " Az alapvető keresési kifejezések bemutatása"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:274
+#: docs/handbook/en/docbook/hdbk-operation.docbook:271
 msgid ""
 "Enter the search phrase separated by spaces.  By default the search function "
 "will return results that match all the words.  If you want to find any of "
@@ -1010,7 +1010,7 @@ msgstr ""
 "<guimenu>teljes kifejezés</guimenu> lehetőségre kattintva."
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:283
+#: docs/handbook/en/docbook/hdbk-operation.docbook:280
 msgid ""
 "You can use wildcards: '*' matches any number of characters, while '?' will "
 "match any single character. The use of brackets allows you to group your "
@@ -1022,7 +1022,7 @@ msgstr ""
 "Isten'."
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:288
+#: docs/handbook/en/docbook/hdbk-operation.docbook:285
 msgid ""
 "To search text other than the main text, enter the text type followed by "
 "':', and then the search term.  Refer to the table below for examples."
@@ -1032,92 +1032,92 @@ msgstr ""
 "szám előfordulását keresi, így kell megadni: 'strong:H8077'."
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:292
+#: docs/handbook/en/docbook/hdbk-operation.docbook:289
 msgid "Available text types:"
 msgstr "Lehetséges szövegtípusok: "
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:294
+#: docs/handbook/en/docbook/hdbk-operation.docbook:291
 msgid "Search Types"
 msgstr "Keresési típusok"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:300
+#: docs/handbook/en/docbook/hdbk-operation.docbook:297
 msgid "Prefix"
 msgstr "Előtag"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:301
+#: docs/handbook/en/docbook/hdbk-operation.docbook:298
 msgid "Meaning"
 msgstr "Jelentés"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:302
+#: docs/handbook/en/docbook/hdbk-operation.docbook:299
 msgid "Example"
 msgstr "Példa"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:307
+#: docs/handbook/en/docbook/hdbk-operation.docbook:304
 msgid "heading:"
 msgstr "heading: (fejléc)"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:308
+#: docs/handbook/en/docbook/hdbk-operation.docbook:305
 msgid "searches headings"
 msgstr "A fejlécekben keres"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:309
+#: docs/handbook/en/docbook/hdbk-operation.docbook:306
 msgid "heading:Jesus"
 msgstr "heading:Jézus"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:312
+#: docs/handbook/en/docbook/hdbk-operation.docbook:309
 msgid "footnote:"
 msgstr "footnote: (lábjegyzet)"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:313
+#: docs/handbook/en/docbook/hdbk-operation.docbook:310
 msgid "searches footnotes"
 msgstr "a lábjegyzetekben keres"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:314
+#: docs/handbook/en/docbook/hdbk-operation.docbook:311
 msgid "footnote:Moses"
 msgstr "footnote:Mózes"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:317
+#: docs/handbook/en/docbook/hdbk-operation.docbook:314
 msgid "strong:"
 msgstr "strong:"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:318
+#: docs/handbook/en/docbook/hdbk-operation.docbook:315
 msgid "searches Strong's Numbers"
 msgstr "a Strong's számok előfordulásait keresi"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:319
+#: docs/handbook/en/docbook/hdbk-operation.docbook:316
 msgid "strong:G535"
 msgstr "strong:G535"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:322
+#: docs/handbook/en/docbook/hdbk-operation.docbook:319
 msgid "morph:"
 msgstr "morph: (alak)"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:323
+#: docs/handbook/en/docbook/hdbk-operation.docbook:320
 msgid "searches morphology codes"
 msgstr "alaktani kódokra keres"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:324
+#: docs/handbook/en/docbook/hdbk-operation.docbook:321
 msgid "morph:N-GSM"
 msgstr "morph:N-GSM"
 
 # type: Content of: <chapter><sect1><sect2><sect3><tip><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:331
+#: docs/handbook/en/docbook/hdbk-operation.docbook:328
 msgid ""
 "You can right click on an installed work and select <guimenu>About</guimenu> "
 "to find which of the above search criteria may work for you.  Not all works "
@@ -1129,7 +1129,7 @@ msgstr ""
 "keresési lehetőségekkel."
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:337
+#: docs/handbook/en/docbook/hdbk-operation.docbook:334
 msgid ""
 "&bibletime; uses the Lucene search engine to perform your searches. It has "
 "many advanced features, and you can read more about it here: <ulink url="
@@ -1142,12 +1142,12 @@ msgstr ""
 "index.html</ulink> webcímen."
 
 # type: Content of: <chapter><sect1><sect2><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:346
+#: docs/handbook/en/docbook/hdbk-operation.docbook:343
 msgid "Search results"
 msgstr "Keresési találatok"
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:347
+#: docs/handbook/en/docbook/hdbk-operation.docbook:344
 msgid ""
 "Here you can see how many instances of the search string were found, sorted "
 "by works. Clicking on a work with the <mousebutton>right</mousebutton> mouse "
@@ -1164,7 +1164,7 @@ msgstr ""
 "kattintva az előnézeti ablakban láthatóvá válik a vers a szövegkörnyezetében."
 
 # type: Content of: <chapter><sect1><sect2><tip><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:356
+#: docs/handbook/en/docbook/hdbk-operation.docbook:353
 msgid ""
 "Drag a reference and drop it on a work symbol on the Bookshelf to open the "
 "work at that verse in a new read window."
@@ -1175,7 +1175,7 @@ msgstr ""
 "dokumentum megnyílik a hivatkozott versnél."
 
 # type: Content of: <chapter><sect1><sect2><tip><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:361
+#: docs/handbook/en/docbook/hdbk-operation.docbook:358
 msgid ""
 "Drag a reference and drop it on an open read window, and it will jump to "
 "that verse."
@@ -1185,7 +1185,7 @@ msgstr ""
 "megnyitott ablakra, a dokumentum a hivatkozott helyre ugrik."
 
 # type: Content of: <chapter><sect1><sect2><tip><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:365
+#: docs/handbook/en/docbook/hdbk-operation.docbook:362
 msgid "Select references and drag them to the Bookshelf to create bookmarks."
 msgstr ""
 "Válasszon ki hivatkozásokat, és húzza a könyvespolcra könyvjelzők "
@@ -1193,12 +1193,12 @@ msgstr ""
 "könyvjelzők készítéséhez."
 
 # type: Content of: <chapter><sect1><sect2><sect3><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:369
+#: docs/handbook/en/docbook/hdbk-operation.docbook:366
 msgid "Search result analysis"
 msgstr "Keresési találatok elemzése"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:370
+#: docs/handbook/en/docbook/hdbk-operation.docbook:367
 msgid ""
 "Click on <guibutton>Search analysis</guibutton> to open the search analysis "
 "display. This gives a simple graphic analysis of the number of instances the "
@@ -1211,17 +1211,17 @@ msgstr ""
 "az elemzést is el tudja menteni."
 
 # type: Content of: <chapter><sect1><sect2><sect3><screenshot><screeninfo>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:376
+#: docs/handbook/en/docbook/hdbk-operation.docbook:373
 msgid "Search Analysis Dialog Box"
 msgstr "Találatok elemzése ablak"
 
 # type: Content of: <chapter><sect1><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:388
+#: docs/handbook/en/docbook/hdbk-operation.docbook:385
 msgid "The <guimenuitem>Bookshelf Manager</guimenuitem>"
 msgstr "A <guimenuitem>Könyvespolc menedzser</guimenuitem>"
 
 # type: Content of: <chapter><sect1><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:390
+#: docs/handbook/en/docbook/hdbk-operation.docbook:387
 msgid ""
 "The <guimenuitem>Bookshelf Manager</guimenuitem> is a tool to manage your "
 "Bookshelf. You can install new works to your Bookshelf, and update or remove "
@@ -1236,7 +1236,7 @@ msgstr ""
 "<guimenuitem>Könyvespolc menedzser</guimenuitem> </menuchoice> almenüjében."
 
 # type: Content of: <chapter><sect1><tip><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:400
+#: docs/handbook/en/docbook/hdbk-operation.docbook:397
 msgid ""
 "If this is the first time you are starting &bibletime;, click on the Refresh "
 "button to see a list of works provided by the &cbs;."
@@ -1245,12 +1245,12 @@ msgstr ""
 "Frissítés gombra, hogy lássa a &cbs; által biztosított munkák listáját. "
 
 # type: Content of: <chapter><sect1><sect2><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:406
+#: docs/handbook/en/docbook/hdbk-operation.docbook:403
 msgid "Bookshelf path(s) setup"
 msgstr "Telepítési útvonal(ak) beállítása"
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:407
+#: docs/handbook/en/docbook/hdbk-operation.docbook:404
 msgid ""
 "Here you can specify where &bibletime; may store your Bookshelf on the hard "
 "drive. You can even store it in multiple directories. Default is \"~/.sword/"
@@ -1263,7 +1263,7 @@ msgstr ""
 "könyvtárat is, de az alapértelmezett a \".sword\" mappa a saját mappájában."
 
 # type: Content of: <chapter><sect1><sect2><tip><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:411
+#: docs/handbook/en/docbook/hdbk-operation.docbook:408
 msgid ""
 "If you have a sword CD, but do not want to install all the works on the hard "
 "disk, but use them directly from the CD, then you can add the path to the CD "
@@ -1279,12 +1279,12 @@ msgstr ""
 "dokumentum látható lesz, ha a CD a gépben van."
 
 # type: Content of: <chapter><sect1><sect2><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:419
+#: docs/handbook/en/docbook/hdbk-operation.docbook:416
 msgid "Install/update work(s)"
 msgstr "Dokumentum(ok) telepítése/frissítése"
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:420
+#: docs/handbook/en/docbook/hdbk-operation.docbook:417
 msgid ""
 "With this facility, you can connect to a repository of works (called "
 "\"library\"), and transfer one or more works to your local Bookshelf. These "
@@ -1302,7 +1302,7 @@ msgstr ""
 "segítségével."
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:428
+#: docs/handbook/en/docbook/hdbk-operation.docbook:425
 msgid ""
 "To begin the installation or update process, select a library you want to "
 "connect to and a local Bookshelf path to install the work(s) to. Then click "
@@ -1330,12 +1330,12 @@ msgstr ""
 "kerülnek."
 
 # type: Content of: <chapter><sect1><sect2><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:441
+#: docs/handbook/en/docbook/hdbk-operation.docbook:438
 msgid "Remove work(s)"
 msgstr "Dokumentum(ok) törlése"
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:442
+#: docs/handbook/en/docbook/hdbk-operation.docbook:439
 msgid ""
 "This facility allows you to delete one or more of the works from your "
 "Bookshelf too free up disk space. Simply mark the items and click on "
@@ -1350,12 +1350,12 @@ msgstr ""
 "<guibutton>Törlés...</guibutton> gombra."
 
 # type: Content of: <chapter><sect1><sect2><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:448
+#: docs/handbook/en/docbook/hdbk-operation.docbook:445
 msgid "Search Indexes"
 msgstr "Keresési indexek"
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:449
+#: docs/handbook/en/docbook/hdbk-operation.docbook:446
 msgid ""
 "This option allows you to create new search indexes and cleanup orphaned "
 "index files for removed works."
@@ -1366,12 +1366,12 @@ msgstr ""
 "indexeit."
 
 # type: Content of: <chapter><sect1><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:458
+#: docs/handbook/en/docbook/hdbk-operation.docbook:455
 msgid "Exporting and Printing"
 msgstr "Exportálás és Nyomtatás"
 
 # type: Content of: <chapter><sect1><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:459
+#: docs/handbook/en/docbook/hdbk-operation.docbook:456
 msgid ""
 "In many places, you can open a context menu by clicking with the "
 "<mousebutton>right</mousebutton> mouse button. Depending on context, it will "
@@ -1391,7 +1391,7 @@ msgstr ""
 "próbálja ki."
 
 # type: Content of: <chapter><sect1><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:472
+#: docs/handbook/en/docbook/hdbk-operation.docbook:469
 msgid ""
 "Printing from &bibletime; is rather basic and is intended as a utility. If "
 "you are composing a document or presentation containing text from "
@@ -2132,22 +2132,33 @@ msgstr "bibletime --open-default-bible \"John 3:16\""
 msgid "You can also use booknames in your current bookname language."
 msgstr "Használhatja a könyvek neveit saját nyelvén is."
 
-# type: Content of: <chapter><sect1><title>
+# type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-start.docbook:39
-msgid "Startup sequence"
-msgstr "Indítási folyamat"
+#, fuzzy
+msgid "Starting &bibletime; for the first time"
+msgstr "&bibletime; indítása"
 
 # type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-start.docbook:41
 msgid ""
-"As &bibletime; launches you may see the following screens before the main "
-"&bibletime; window opens:"
+"If you are starting &bibletime; for the first time, you will want to "
+"configure the following options, available under the <link linkend=\"hdbk-"
+"reference-menus-settings\">Settings menu bar</link>."
 msgstr ""
-"Mikor a &bibletime; indul, a következő képet láthatja a fő &bibletime; ablak "
-"betöltése előtt:"
 
 # type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:50
+#: docs/handbook/en/docbook/hdbk-start.docbook:53
+msgid ""
+"<action>Customizes &bibletime;.</action>This dialog lets you adapt "
+"&bibletime; to your needs. Please see <link linkend=\"hdbk-config-bt\">the "
+"detailed description</link> of this dialog."
+msgstr ""
+"<action> &bibletime; testreszabása</action> Ez az ablak teszi lehetővé, hogy "
+"a &bibletime; a szükségeinek megfelelő legyen. Tekintse meg a <link linkend="
+"\"hdbk-config-bt\">lehetőségek</link> részletes leírását."
+
+# type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-start.docbook:65
 msgid ""
 "<action>Modifies your Bookshelf</action>.  This dialog lets you modify your "
 "Bookshelf, add or delete works from your system.  It will only be shown if "
@@ -2168,17 +2179,6 @@ msgstr ""
 "telepítése, hogy gyorsan megismerje a &bibletime; alap lehetőségeit. A "
 "frissítés gombra kattintva megtekintheti a &cbs; által biztosított "
 "dokumentumok listáját."
-
-# type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:70
-msgid ""
-"<action>Customizes &bibletime;.</action>This dialog lets you adapt "
-"&bibletime; to your needs. Please see <link linkend=\"hdbk-config-bt\">the "
-"detailed description</link> of this dialog."
-msgstr ""
-"<action> &bibletime; testreszabása</action> Ez az ablak teszi lehetővé, hogy "
-"a &bibletime; a szükségeinek megfelelő legyen. Tekintse meg a <link linkend="
-"\"hdbk-config-bt\">lehetőségek</link> részletes leírását."
 
 # type: Content of the bibletime entity
 #: docs/handbook/en/docbook/index.docbook:5
@@ -2232,12 +2232,15 @@ msgstr "A &bibletime; csapat"
 
 # type: Content of: <book><bookinfo><legalnotice><para>
 #: docs/handbook/en/docbook/index.docbook:50
-msgid "The &bibletime; Handbook is part of the &bibletime; study aid."
+#, fuzzy
+msgid ""
+"The &bibletime; Handbook is distributed with the &bibletime; study program."
 msgstr "A &bibletime; kézikönyv a &bibletime; segédlet része."
 
 # type: Content of: <book><bookinfo><date>
 #: docs/handbook/en/docbook/index.docbook:54
-msgid "$LastChangedDate: 2009-11-18 13:30:32 -0500 (Wed, 18 Nov 2009) $"
+#, fuzzy
+msgid "$LastChangedDate: 2009-12-20 14:08:36 -0500 (Sun, 20 Dec 2009) $"
 msgstr "$LastChangedDate: 2009-11-18 13:30:32 -0500 (Wed, 18 Nov 2009) $"
 
 # type: Content of: <book><bookinfo><releaseinfo>
@@ -2248,7 +2251,28 @@ msgstr "2.5"
 
 # type: Content of: <book><bookinfo><abstract><para>
 #: docs/handbook/en/docbook/index.docbook:59
-msgid "&bibletime; is a Bible study tool based on the &sword; framework."
+msgid ""
+"&bibletime; is a completely free Bible study program. The program's user "
+"interface is built with &qt; framework, which makes it run on several "
+"operating systems including Linux, Windows, FreeBSD and Mac OS X. The "
+"software uses the &sword; programming library to work with over 200 free "
+"Bible texts, commentaries, dictionaries and books provided by the &cbs;."
 msgstr ""
-"&bibletime; egy, a &sword; keretrendszerre alapozott Biblia tanulmányozó "
-"szoftver."
+
+# type: Content of: <chapter><sect1><title>
+#~ msgid "Startup sequence"
+#~ msgstr "Indítási folyamat"
+
+# type: Content of: <chapter><sect1><para>
+#~ msgid ""
+#~ "As &bibletime; launches you may see the following screens before the main "
+#~ "&bibletime; window opens:"
+#~ msgstr ""
+#~ "Mikor a &bibletime; indul, a következő képet láthatja a fő &bibletime; "
+#~ "ablak betöltése előtt:"
+
+# type: Content of: <book><bookinfo><abstract><para>
+#~ msgid "&bibletime; is a Bible study tool based on the &sword; framework."
+#~ msgstr ""
+#~ "&bibletime; egy, a &sword; keretrendszerre alapozott Biblia tanulmányozó "
+#~ "szoftver."

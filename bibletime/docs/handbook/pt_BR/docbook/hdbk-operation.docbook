@@ -33,15 +33,12 @@ onde você pode armazenar e acessar seus próprios marcadores.</para>
 
       <sect3 id="hdbk-op-parts-bookshelf-open">
         <title>Lendo obras</title>
+
         <para>Para abrir uma obra da estante para leitura, simplesmente clique com o 
 <mousebutton>botão esquerdo do mouse</mousebutton> na categoria desejada 
 (Bíblias, Comentários, Léxicos, Livros, Devocionais ou Glossários) para 
 mostrar seu conteúdo. Então clique em uma das obras para abri-la para 
 leitura. Uma janela de leitura irá aparecer na área da Mesa.</para>
-
-        <tip>
-          <para>Arraste&amp; e solte obras aqui</para>
-        </tip>
 
         <para>Se você está lendo uma certa obra, e quer abrir outra obra na passagem que 
 está lendo, você pode usar um atalho. Simplesmente clique com o 

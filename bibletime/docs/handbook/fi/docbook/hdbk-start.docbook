@@ -34,13 +34,27 @@ ja kirjoita:
     </sect2>
   </sect1>
 
-  <sect1 id="hdbk-startsequence">
-    <title>Käynnistyssarja</title>
+  <sect1 id="hdbk-start-firstrun">
+    <title>Starting &bibletime; for the first time</title>
 
-    <para>Kun &bibletime; käynnistyy, näet seuraavat ikkunat ennenkuin &bibletime;n 
-pääikkuna avautuu:</para>
+    <para>If you are starting &bibletime; for the first time, you will want to 
+configure the following options, available under the <link 
+linkend="hdbk-reference-menus-settings">Settings menu bar</link>.</para>
 
     <variablelist>
+      <varlistentry>
+        <term>
+          <interface>Configure &bibletime; dialog</interface>
+        </term>
+        <listitem>
+          <para>
+          <action>Räätälöi &bibletime;n.</action>Tässä ikkunassa voit tehdä 
+&bibletime;:stä sellaisen kuin haluat. Katso linkistä <link 
+linkend="hdbk-config-bt">yksityiskohtainen kuvaus</link> lisää tietoa tästä 
+ikkunasta.</para>
+        </listitem>
+      </varlistentry>
+
       <varlistentry>
         <term>
           <interface>Bookshelf Manager</interface>
@@ -55,19 +69,6 @@ helpful to install at least one Bible, Commentary, Lexicon and one Book to
 get to know &bibletime;'s basic features quickly.  You can do this by 
 clicking on the Refresh button.  You will be presented with a list of works 
 that are available from the &cbs;</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term>
-          <interface>Configure &bibletime; dialog</interface>
-        </term>
-        <listitem>
-          <para>
-          <action>Räätälöi &bibletime;n.</action>Tässä ikkunassa voit tehdä 
-&bibletime;:stä sellaisen kuin haluat. Katso linkistä <link 
-linkend="hdbk-config-bt">yksityiskohtainen kuvaus</link> lisää tietoa tästä 
-ikkunasta.</para>
         </listitem>
       </varlistentry>
     </variablelist>

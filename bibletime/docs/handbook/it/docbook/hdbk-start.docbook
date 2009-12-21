@@ -34,13 +34,27 @@ libri della Bibbia.</para>
     </sect2>
   </sect1>
 
-  <sect1 id="hdbk-startsequence">
-    <title>Sequenza di avvio</title>
+  <sect1 id="hdbk-start-firstrun">
+    <title>Starting &bibletime; for the first time</title>
 
-    <para>Come &bibletime; parte puoi vedere le seguenti schermate prima che la 
-finestra principale di &bibletime; si apra:</para>
+    <para>If you are starting &bibletime; for the first time, you will want to 
+configure the following options, available under the <link 
+linkend="hdbk-reference-menus-settings">Settings menu bar</link>.</para>
 
     <variablelist>
+      <varlistentry>
+        <term>
+          <interface>Configure &bibletime; dialog</interface>
+        </term>
+        <listitem>
+          <para>
+          <action>Personalizza &bibletime;.</action> Questa finestra ti permette di 
+adattare &bibletime; alle tue esigenze. Guarda <link 
+linkend="hdbk-config-bt">la descrizione dettagliata</link> di questa 
+finestra.</para>
+        </listitem>
+      </varlistentry>
+
       <varlistentry>
         <term>
           <interface>Bookshelf Manager</interface>
@@ -55,19 +69,6 @@ vuota, sarà utile per installare almeno una Bibbia, Commenti, Lessico e un
 Libro per conoscere le funzioni di base di &bibletime; velocemente. Puoi 
 fare questo cliccando sul pulsante Aggiorna. Si presenterà con una lista di 
 documenti disponibili da &cbs;</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term>
-          <interface>Configure &bibletime; dialog</interface>
-        </term>
-        <listitem>
-          <para>
-          <action>Personalizza &bibletime;.</action> Questa finestra ti permette di 
-adattare &bibletime; alle tue esigenze. Guarda <link 
-linkend="hdbk-config-bt">la descrizione dettagliata</link> di questa 
-finestra.</para>
         </listitem>
       </varlistentry>
     </variablelist>

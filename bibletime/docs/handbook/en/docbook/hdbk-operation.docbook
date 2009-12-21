@@ -35,27 +35,24 @@
 
       <sect3 id="hdbk-op-parts-bookshelf-open">
         <title>Reading works</title>
-        <para>To open a work from the bookshelf for reading, simply
-        click with the 
-        <mousebutton>left mouse button</mousebutton> on the desired
-        category (Bibles, Commentaries, Lexicons, Books, Devotionals or
-        Glossaries) to display its contents. Then just click on one of
-        the works to open it for reading. A read window will appear in
-        the Desk area.</para>
 
-        <tip>
-          <para>Drag &amp; Drop Works Here</para>
-        </tip>
+        <para>To open a work from the bookshelf for reading, simply
+	  click with the <mousebutton>left mouse button</mousebutton> on
+	  the desired category (Bibles, Commentaries, Lexicons, Books,
+
+	  Devotionals or Glossaries) to display its contents. Then just
+	  click on one of the works to open it for reading. A read window
+	  will appear in the Desk area.</para>
 
         <para>If you are reading a certain work, and want to open
-        another work at the passage you are reading, you can use a
-        shortcut. Simply click with the 
-        <mousebutton>left mouse button</mousebutton> on the
-        verse/passage reference (pointer changes to hand) and drag it
-        to the Bookshelf. Drop it on the work you want to open, and it
-        will be opened for reading at the specified location. You can
-        also drag a verse reference into an existing read window, then
-        it will jump to the specified location.</para>
+	  another work at the passage you are reading, you can use a
+	  shortcut. Simply click with the 
+	  <mousebutton>left mouse button</mousebutton> on the
+	  verse/passage reference (pointer changes to hand) and drag it
+	  to the Bookshelf. Drop it on the work you want to open, and it
+	  will be opened for reading at the specified location. You can
+	  also drag a verse reference into an existing read window, then
+	  it will jump to the specified location.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-bookshelf-metainfo">

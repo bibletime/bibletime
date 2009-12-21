@@ -31,15 +31,12 @@ elérheti a saját könyvjelzőit.</para>
 
       <sect3 id="hdbk-op-parts-bookshelf-open">
         <title>Dokumentumok olvasása</title>
+
         <para>Dokumentum olvasásra megnyitásához egyszerűen kattintson a <mousebutton>bal 
 egérgombbal</mousebutton> a kívánt kategóriára (Bibliák, Kommentárok, 
 Lexikonok...) a tartalmuk kijelzéséhez, majd kattintson a kiválasztott 
 munkára a megnyitásához. A kívánt dokumentum a Munkaasztal részen lesz 
 látható.</para>
-
-        <tip>
-          <para>A Fogd &amp; Vidd működése</para>
-        </tip>
 
         <para>Amikor olvas egy dokumentumot, és meg szeretne nyitni egy másik munkát 
 ugyanannál a résznél, ahol éppen tart, egyszerűen megteheti. Csak kattintson 

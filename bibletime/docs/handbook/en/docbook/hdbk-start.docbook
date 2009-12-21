@@ -35,13 +35,28 @@
     </sect2>
   </sect1>
 
-  <sect1 id="hdbk-startsequence">
-    <title>Startup sequence</title>
+  <sect1 id="hdbk-start-firstrun">
+    <title>Starting &bibletime; for the first time</title>
 
-    <para>As &bibletime; launches you may see the following screens
-      before the main &bibletime; window opens:</para>
+    <para>If you are starting &bibletime; for the first time, you will
+      want to configure the following options, available under the
+      <link linkend="hdbk-reference-menus-settings">Settings menu
+      bar</link>.</para>
 
     <variablelist>
+      <varlistentry>
+        <term>
+          <interface>Configure &bibletime; dialog</interface>
+        </term>
+        <listitem>
+          <para>
+          <action>Customizes &bibletime;.</action>This dialog lets
+          you adapt &bibletime; to your needs. Please see 
+          <link linkend="hdbk-config-bt">the detailed
+          description</link> of this dialog.</para>
+        </listitem>
+      </varlistentry>
+
       <varlistentry>
         <term>
           <interface>Bookshelf Manager</interface>
@@ -58,19 +73,6 @@
 	    this by clicking on the Refresh button.  You will be
 	    presented with a list of works that are available from the
 	    &cbs;</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term>
-          <interface>Configure &bibletime; dialog</interface>
-        </term>
-        <listitem>
-          <para>
-          <action>Customizes &bibletime;.</action>This dialog lets
-          you adapt &bibletime; to your needs. Please see 
-          <link linkend="hdbk-config-bt">the detailed
-          description</link> of this dialog.</para>
         </listitem>
       </varlistentry>
     </variablelist>

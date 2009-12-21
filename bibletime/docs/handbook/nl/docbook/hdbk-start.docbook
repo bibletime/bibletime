@@ -33,13 +33,26 @@ default bible:
     </sect2>
   </sect1>
 
-  <sect1 id="hdbk-startsequence">
-    <title>Volgorde van opstartschermen</title>
+  <sect1 id="hdbk-start-firstrun">
+    <title>Starting &bibletime; for the first time</title>
 
-    <para>Wanneer &bibletime; opstart kun je de volgende schermen zien, voordat het 
-hoofdvenster van &bibletime; opent:</para>
+    <para>If you are starting &bibletime; for the first time, you will want to 
+configure the following options, available under the <link 
+linkend="hdbk-reference-menus-settings">Settings menu bar</link>.</para>
 
     <variablelist>
+      <varlistentry>
+        <term>
+          <interface>Configure &bibletime; dialog</interface>
+        </term>
+        <listitem>
+          <para>
+          <action>Customizes &bibletime;.</action>This dialog lets you adapt 
+&bibletime; to your needs. Please see <link linkend="hdbk-config-bt">the 
+detailed description</link> of this dialog.</para>
+        </listitem>
+      </varlistentry>
+
       <varlistentry>
         <term>
           <interface>Bookshelf Manager</interface>
@@ -54,18 +67,6 @@ helpful to install at least one Bible, Commentary, Lexicon and one Book to
 get to know &bibletime;'s basic features quickly.  You can do this by 
 clicking on the Refresh button.  You will be presented with a list of works 
 that are available from the &cbs;</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term>
-          <interface>Configure &bibletime; dialog</interface>
-        </term>
-        <listitem>
-          <para>
-          <action>Customizes &bibletime;.</action>This dialog lets you adapt 
-&bibletime; to your needs. Please see <link linkend="hdbk-config-bt">the 
-detailed description</link> of this dialog.</para>
         </listitem>
       </varlistentry>
     </variablelist>

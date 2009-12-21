@@ -57,18 +57,20 @@ Dieu. Parmi les modules disponibles, Daily Light on the Daily Path, et les
 Losungen.</para>
           </listitem>
         </varlistentry>
+
         <varlistentry>
           <term>Lexiques et dictionnaires</term>
           <listitem>
-            <para>Lexicons available include: Robinson's Morphological Analysis Codes, 
-Brown-Driver-Briggs Hebrew Lexicon and the International Standard Bible 
-Encyclopaedia. Dictionaries available include Strong's Hebrew Bible 
-Dictionary, Strong's Greek Bible Dictionary, Webster's Revised Unabridged 
-Dictionary of the English Language 1913, Nave's Topical Bible.</para>
+            <para>Lexicons available include: Robinson's Morphological Analysis Codes, and the 
+International Standard Bible Encyclopaedia. Dictionaries available include 
+Strong's Hebrew Bible Dictionary, Strong's Greek Bible Dictionary, Webster's 
+Revised Unabridged Dictionary of the English Language 1913, Nave's Topical 
+Bible.</para>
           </listitem>
         </varlistentry>
       </variablelist></para>
     </sect2>
+
     <sect2 id="hdbk-intro-motivation">
       <title>Motivation</title>
       <para>Our desire is to serve God, and to do our part to help others grow in their 

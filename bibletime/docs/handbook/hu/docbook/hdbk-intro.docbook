@@ -55,17 +55,20 @@ Biblia fejezeteihez.</para>
             <para>Sok ember hálás ezekért a napi adagokért Isten igéjéből.</para>
           </listitem>
         </varlistentry>
+
         <varlistentry>
           <term>Lexikonok/szótárak</term>
           <listitem>
-            <para>Itt találhatja például: Robinson Morfológiai Elemzési Kódokat, 
-Brown-Driver-Briggs Héber Lexikonát és a Nemzetközi Standard Biblia 
-Enciklopédiát. Szótárak közül: Strong's Héber Bibliai Szótár, Strong's Görög 
-Bibliai Szótár elérhető...</para>
+            <para>Lexicons available include: Robinson's Morphological Analysis Codes, and the 
+International Standard Bible Encyclopaedia. Dictionaries available include 
+Strong's Hebrew Bible Dictionary, Strong's Greek Bible Dictionary, Webster's 
+Revised Unabridged Dictionary of the English Language 1913, Nave's Topical 
+Bible.</para>
           </listitem>
         </varlistentry>
       </variablelist></para>
     </sect2>
+
     <sect2 id="hdbk-intro-motivation">
       <title>Motivációnk</title>
       <para>Elhatározásunk, hogy szolgáljuk Istent, és megtegyünk mindent a részünkről, 

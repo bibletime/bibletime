@@ -33,13 +33,26 @@ výchozí bibli:
     </sect2>
   </sect1>
 
-  <sect1 id="hdbk-startsequence">
-    <title>Spouštěcí sekvence.</title>
+  <sect1 id="hdbk-start-firstrun">
+    <title>Starting &bibletime; for the first time</title>
 
-    <para>Když se &bibletime; spouští, můžete vidět následující obrazovky předtím, než 
-se otevře hlavní okno &bibletime;:</para>
+    <para>If you are starting &bibletime; for the first time, you will want to 
+configure the following options, available under the <link 
+linkend="hdbk-reference-menus-settings">Settings menu bar</link>.</para>
 
     <variablelist>
+      <varlistentry>
+        <term>
+          <interface>Configure &bibletime; dialog</interface>
+        </term>
+        <listitem>
+          <para>
+          <action>Přizpůsobí &bibletime;.</action>Tento dialog vám dovolí přizpůsobit 
+&bibletime; vašim potřebám. Prosím podívejte se na <link 
+linkend="hdbk-config-bt">detailní popis</link> tohoto dialogu.</para>
+        </listitem>
+      </varlistentry>
+
       <varlistentry>
         <term>
           <interface>Bookshelf Manager</interface>
@@ -54,18 +67,6 @@ užitečné  nainstalovat alespoň jednu Bibli, Komentář, Lexikon a knihu,
 abyste se rychle seznámili se základními vlastnostmi &bibletime;. To můžete 
 udělat kliknutím na tlačítko obnovit. Bude vám předložen seznam děl, které 
 jsou dostupné z &cbs;</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term>
-          <interface>Configure &bibletime; dialog</interface>
-        </term>
-        <listitem>
-          <para>
-          <action>Přizpůsobí &bibletime;.</action>Tento dialog vám dovolí přizpůsobit 
-&bibletime; vašim potřebám. Prosím podívejte se na <link 
-linkend="hdbk-config-bt">detailní popis</link> tohoto dialogu.</para>
         </listitem>
       </varlistentry>
     </variablelist>

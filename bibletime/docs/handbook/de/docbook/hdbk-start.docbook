@@ -34,13 +34,27 @@ einen Zufallsvers aus der Standardbibel anzeigen zu lassen:
     </sect2>
   </sect1>
 
-  <sect1 id="hdbk-startsequence">
-    <title>Start-Sequenz</title>
+  <sect1 id="hdbk-start-firstrun">
+    <title>Starting &bibletime; for the first time</title>
 
-    <para>Wenn &bibletime; startet, könnten Sie folgende Meldungen vor dem Erscheinen 
-des Hauptfensters sehen:</para>
+    <para>If you are starting &bibletime; for the first time, you will want to 
+configure the following options, available under the <link 
+linkend="hdbk-reference-menus-settings">Settings menu bar</link>.</para>
 
     <variablelist>
+      <varlistentry>
+        <term>
+          <interface>Configure &bibletime; dialog</interface>
+        </term>
+        <listitem>
+          <para>
+          <action>&bibletime; anpassen.</action>Dieser Dialog erlaubt Ihnen 
+&bibletime; an Ihre Bedürfnisse anzupassen. Bitte schlagen Sie <link 
+linkend="hdbk-config-bt">die detaillierte Beschreibung</link> dieses Dialogs 
+nach.</para>
+        </listitem>
+      </varlistentry>
+
       <varlistentry>
         <term>
           <interface>Bookshelf Manager</interface>
@@ -57,19 +71,6 @@ Buch zu installieren, um rasch die grundlegenden Funktionseigenschaften von
 &bibletime; kennen zu lernen. Sie erreichen dies, indem Sie auf die 
 Schaltfläche Auffrischen... klicken. Ihnen wird eine Liste der von der &cbs; 
 verfügbaren Werke angezeigt.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term>
-          <interface>Configure &bibletime; dialog</interface>
-        </term>
-        <listitem>
-          <para>
-          <action>&bibletime; anpassen.</action>Dieser Dialog erlaubt Ihnen 
-&bibletime; an Ihre Bedürfnisse anzupassen. Bitte schlagen Sie <link 
-linkend="hdbk-config-bt">die detaillierte Beschreibung</link> dieses Dialogs 
-nach.</para>
         </listitem>
       </varlistentry>
     </variablelist>
