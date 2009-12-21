@@ -76,8 +76,6 @@ BtAboutDialog::BtAboutDialog(QWidget *parent, Qt::WindowFlags wflags)
     mainLayout->addWidget(m_buttonBox);
     setLayout(mainLayout);
 
-    connect(m_buttonBox, SIGNAL(accepted()),
-            this,        SLOT(accept()));
     connect(m_buttonBox, SIGNAL(rejected()),
             this,        SLOT(reject()));
 

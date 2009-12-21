@@ -33,8 +33,6 @@ BtSearchSyntaxHelpDialog::BtSearchSyntaxHelpDialog(QWidget *parent, Qt::WindowFl
     l->addWidget(m_webView);
 
     m_buttons = new QDialogButtonBox(QDialogButtonBox::Close, Qt::Horizontal, this);
-    util::prepareDialogBox(m_buttons);
-    connect(m_buttons, SIGNAL(accepted()), this, SLOT(accept()));
     connect(m_buttons, SIGNAL(rejected()), this, SLOT(reject()));
     l->addWidget(m_buttons);
 
@@ -219,6 +217,8 @@ void BtSearchSyntaxHelpDialog::retranslateUi() {
     html += "</p></body></html>";
 
     m_webView->setHtml(html, QUrl::fromLocalFile(DU::getIconDir().path()));
+
+    util::prepareDialogBox(m_buttons);
 }
 
 void BtSearchSyntaxHelpDialog::linkClicked(const QUrl &url) {
