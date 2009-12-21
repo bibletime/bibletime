@@ -116,6 +116,7 @@ SET(bibletime_SOURCES
 	# Search dialog
 	src/frontend/searchdialog/btsearchoptionsarea.cpp
 	src/frontend/searchdialog/btsearchresultarea.cpp
+	src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp
 	src/frontend/searchdialog/chistorycombobox.cpp
 	src/frontend/searchdialog/cmoduleresultview.cpp
 	src/frontend/searchdialog/crangechooserdialog.cpp
@@ -182,8 +183,6 @@ SET(bibletime_SOURCES
     src/frontend/displaywindow/btmodulechooserbar.cpp
     src/frontend/displaywindow/btmodulechooserbutton.cpp
 
-	src/frontend/htmldialogs/bttabhtmldialog.cpp
-
 	#toplevel files
 	src/bibletime_init.cpp
 	src/bibletime_slots.cpp
@@ -210,6 +209,7 @@ SET(bibletime_MOCABLE_HEADERS
 	src/frontend/searchdialog/crangechooserdialog.h
 	src/frontend/searchdialog/btsearchresultarea.h
 	src/frontend/searchdialog/btsearchoptionsarea.h
+	src/frontend/searchdialog/btsearchsyntaxhelpdialog.h
 	src/frontend/searchdialog/cmoduleresultview.h
 	src/frontend/searchdialog/csearchdialog.h
 	src/frontend/searchdialog/analysis/csearchanalysisdialog.h
@@ -238,7 +238,6 @@ SET(bibletime_MOCABLE_HEADERS
 	src/frontend/cprinter.h
 	src/frontend/btaboutdialog.h
 	src/frontend/btaboutmoduledialog.h
-	src/frontend/htmldialogs/bttabhtmldialog.h
 	src/frontend/display/cdisplay.h
 	src/frontend/display/bthtmlreaddisplay.h
 	src/frontend/display/btfontsizewidget.h

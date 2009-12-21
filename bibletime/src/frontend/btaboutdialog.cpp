@@ -52,7 +52,7 @@ BtAboutDialog::BtAboutDialog(QWidget *parent, Qt::WindowFlags wflags)
     setAttribute(Qt::WA_DeleteOnClose);
     resize(550, 340);
 
-    m_layout = new QVBoxLayout(this);
+    QVBoxLayout *mainLayout = new QVBoxLayout;
 
     QWidget *top = new QWidget(this);
     QHBoxLayout *topLayout = new QHBoxLayout;
@@ -61,10 +61,10 @@ BtAboutDialog::BtAboutDialog(QWidget *parent, Qt::WindowFlags wflags)
     topLayout->addWidget(iconLabel);
     topLayout->addWidget(new QLabel("<h1>BibleTime " BT_VERSION "</h1>"), 1);
     top->setLayout(topLayout);
-    m_layout->addWidget(top, 0, Qt::AlignCenter);
+    mainLayout->addWidget(top, 0, Qt::AlignCenter);
 
     m_tabWidget = new QTabWidget(this);
-    m_layout->addWidget(m_tabWidget);
+    mainLayout->addWidget(m_tabWidget);
 
     initTab(m_bibletimeTab);
     initTab(m_contributorsTab);
@@ -73,8 +73,8 @@ BtAboutDialog::BtAboutDialog(QWidget *parent, Qt::WindowFlags wflags)
     initTab(m_licenceTab);
 
     m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, Qt::Horizontal, this);
-    m_layout->addWidget(m_buttonBox);
-    setLayout(m_layout);
+    mainLayout->addWidget(m_buttonBox);
+    setLayout(mainLayout);
 
     connect(m_buttonBox, SIGNAL(accepted()),
             this,        SLOT(accept()));

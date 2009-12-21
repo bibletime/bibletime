@@ -20,6 +20,7 @@
 #include <QProcess>
 #include <QtGlobal>
 #include <QToolBar>
+#include <QUrl>
 #include "backend/config/cbtconfig.h"
 #include "backend/keys/cswordversekey.h"
 #include "frontend/btaboutdialog.h"

@@ -21,7 +21,7 @@
 #include <QRadioButton>
 #include "backend/config/cbtconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
-#include "frontend/htmldialogs/bttabhtmldialog.h"
+#include "frontend/searchdialog/btsearchsyntaxhelpdialog.h"
 #include "frontend/searchdialog/crangechooserdialog.h"
 #include "frontend/searchdialog/csearchmodulechooserdialog.h"
 #include "util/cpointers.h"
@@ -333,108 +333,8 @@ void BtSearchOptionsArea::setupRanges() {
 }
 
 void BtSearchOptionsArea::syntaxHelp() {
-
-    QString style = QString(
-                        "<style type='text/css'>"
-                        "h1 a {font-size: medium}"
-                        "table {margin-left: 20px}"
-                        "td {"
-                        "	border-width: 3px 3px 3px 3px;"
-                        "	border-style: solid solid solid solid;"
-                        "	border-color: white white white white;"
-                        "	background-color: #faf0e6;"
-                        "}"
-                        "p#links {margin-left: 20px}"
-                        "</style>");
-
-    //: Don't translate words inside <> tags!
-    //: Translate 'All words' etc. indentically to the Search dialog options.
-    QString intro = tr(
-                        "<p>"
-                        "This help is mainly for 'Full syntax' option. 'All words' and 'Some words' options " "have more limited syntax; <a href='#wildcards'>wildcards</a> and <a " "href='#fields'>text fields</a> are supported for them. Some other syntax features " "may give strange or wrong results with All words/Some words."
-                        "</p>");
-
-    QString links = tr(
-                        "<p id='links'>"
-                        "<A href='#allsome'>Which words to find</A><br />"
-                        "<A href='#grouping'>Grouping and order</A><br />"
-                        "<A href='#wildcards'>Wildcards (partial words)</A><br />"
-                        "<A href='#fields'>Text fields (different parts of text)</A><br/>"
-                        "<A href='#lucene'>Other syntax features</A><br/>"
-                        "</p>");
-
-    //: Syntax words (AND, OR...) must not be translated.
-    QString whichwords = tr(
-                             "<h1><A name='allsome'>Which words to find</A></h1>"
-                             "<p>Search terms are separated by spaces. <strong>AND</strong> (all words), " "<strong>OR</strong> (some words) and <strong>NOT</strong> (not the following word) " "can be added between the words. If none is added explicitly OR is used " "automatically. '<strong>+</strong>word' means the word must be in the results, " "'<strong>-</strong>word' means it must not be in the results.</p>");
-
-    //: In examples words to be searched for may be translated, but syntax words (AND, OR...) must not be translated.
-    QString whichwordstable = tr(
-                                  "<p><table><tr>"
-                                  "<td>jesus AND god</td><td>Finds verses with both 'Jesus' and 'God'</td>"
-                                  "</tr><tr>"
-                                  "<td>jesus OR god</td><td>Finds verses with 'Jesus' or 'God' or both</td>"
-                                  "</tr><tr>"
-                                  "<td>jesus NOT god</td><td>Finds verses with 'Jesus' but with no 'God'</td>"
-                                  "</tr><tr>"
-                                  "<td>+jesus -god</td><td>Finds verses with 'Jesus' but with no 'God'</td>"
-                                  "</tr></table></p>");
-
-    QString grouping = tr(
-                           "<h1><A name='grouping'>Grouping and order</A></h1>"
-                           "<p>Words can be grouped with <strong>parenthesis</strong>. "
-                           "Strict word order can be defined with <strong>quotes</strong>.</p>");
-
-    QString groupingtable = tr(
-                                "<p><table><tr>"
-                                "<td>(a AND b) OR c</td><td>Finds verses with both 'a' AND 'b', and verses with 'c'</td>"
-                                "</tr><tr>"
-                                "<td>\"says lord\"</td><td>Finds e.g. '...Isaiah says, \"Lord...' but not '...says the LORD'</td>"
-                                "</tr><tr>"
-                                "<td>\"says the lord\"</td><td>Finds all verses with 'says the LORD'</td>"
-                                "</tr></table></p>");
-
-    QString wildcards = tr(
-                            "<h1><A name='wildcards'>Wildcards (partial words)</A></h1>"
-                            "<p>'<strong>*</strong>' matches any sequence of 0 or more characters, while '<strong>?</strong>' matches any single character. A wildcard can not be used in the beginning of a word.</p>");
-
-    QString wildcardstable = tr(
-                                 "<p><table><tr>"
-                                 "<td>a*</td><td>All words beginning with 'a'</td>"
-                                 "</tr><tr>"
-                                 "<td>a*a</td><td>'Assyria', 'aroma', 'abba' etc.</td>"
-                                 "</tr><tr>"
-                                 "<td>a?</td><td>'at' and 'an'</td>"
-                                 "</tr><tr>"
-                                 "<td>a??a</td><td>'abba', 'area', 'Asia' etc.</td>"
-                                 "</tr></table></p>");
-
-    QString fields = tr(
-                         "<h1><A name='fields'>Text fields (different parts of text)</A></h1>"
-                         "<p>Available text fields:<br /><table>"
-                         "<tr><td>heading:</td><td>Searches headings</td></tr>"
-                         "<tr><td>footnote:</td><td>Searches footnotes</td></tr>"
-                         "<tr><td>strong:</td><td>Searches Strong's numbers</td></tr>"
-                         "<tr><td>morph:</td><td>Searches morphology codes</td></tr></table></p>");
-
-    QString fieldstable = tr(
-                              "<p>Examples:<br /><table>"
-                              "<tr><td>heading:Jesus</td><td>Finds headings with 'Jesus'</td></tr>"
-                              "<tr><td>footnote:Jesus AND footnote:said</td><td>Finds footnotes with 'Jesus' and 'said'</td></tr>"
-                              "<tr><td>strong:G846</td><td>Finds verses with Strong's Greek number 846</td></tr>"
-                              "<tr><td>morph:\"N-NSF\"</td><td>Finds verses with morphology code 'N-NSF'</td>"
-                              "</tr></table></p>");
-
-    QString lucene = tr(
-                         "<h1><A name='lucene'>Other syntax features</A></h1>"
-                         "<p>BibleTime uses the CLucene search engine. You can read more on the <a href='http://lucene.apache.org/java/1_4_3/queryparsersyntax.html'>lucene syntax web page</a> (in external browser).</p>");
-
-    QString syntax = style + intro + links + whichwords + whichwordstable +
-                     grouping + groupingtable + wildcards + wildcardstable +
-                     fields + fieldstable + lucene;
-
-    BtTabHtmlDialog* dlg = new BtTabHtmlDialog(tr("Search Syntax Help"), 0, this);
-    dlg->setHtml(syntax);
+    // The dialog is deleted on close:
+    BtSearchSyntaxHelpDialog *dlg = new BtSearchSyntaxHelpDialog(this);
     dlg->show();
 }
 

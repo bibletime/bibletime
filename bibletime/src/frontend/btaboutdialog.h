@@ -10,12 +10,11 @@
 #ifndef BTABOUTDIALOG_H
 #define BTABOUTDIALOG_H
 
-#include "frontend/htmldialogs/bttabhtmldialog.h"
-
+#include <QDialog>
 
 class QDialogButtonBox;
 class QTabWidget;
-class QVBoxLayout;
+class QUrl;
 class QWebView;
 
 class BtAboutDialog: public QDialog {
@@ -38,14 +37,13 @@ class BtAboutDialog: public QDialog {
         void linkClicked(const QUrl &url);
 
     private:
-        QVBoxLayout *m_layout;
-            QTabWidget *m_tabWidget;
-                QWebView *m_bibletimeTab;
-                QWebView *m_contributorsTab;
-                QWebView *m_swordTab;
-                QWebView *m_qtTab;
-                QWebView *m_licenceTab;
-            QDialogButtonBox *m_buttonBox;
+        QTabWidget *m_tabWidget;
+            QWebView *m_bibletimeTab;
+            QWebView *m_contributorsTab;
+            QWebView *m_swordTab;
+            QWebView *m_qtTab;
+            QWebView *m_licenceTab;
+        QDialogButtonBox *m_buttonBox;
 };
 
 #endif
