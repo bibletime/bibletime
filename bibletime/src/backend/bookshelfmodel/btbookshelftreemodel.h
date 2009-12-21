@@ -94,6 +94,7 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
             return m_defaultChecked;
         }
 
+        void setCheckedModules(const QSet<CSwordModuleInfo*> &modules);
         inline const QSet<CSwordModuleInfo*> &checkedModules() const {
             return m_checkedModulesCache;
         }

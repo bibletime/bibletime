@@ -316,6 +316,18 @@ void BtBookshelfTreeModel::setCheckable(bool checkable) {
     while (!queue.isEmpty());
 }
 
+void BtBookshelfTreeModel::setCheckedModules(const QSet<CSwordModuleInfo*> &modules) {
+    typedef SourceIndexMap::const_iterator MIMCI;
+
+    for (MIMCI it(m_sourceIndexMap.constBegin()); it != m_sourceIndexMap.constEnd(); it++) {
+        if (modules.contains(it.key())) {
+            setData(it.value(), Qt::Checked, Qt::CheckStateRole);
+        } else {
+            setData(it.value(), Qt::Unchecked, Qt::CheckStateRole);
+        }
+    }
+}
+
 void BtBookshelfTreeModel::addModule(CSwordModuleInfo *module, bool checked) {
     if (m_modules.contains(module)) return;
     Grouping g(m_groupingOrder);
