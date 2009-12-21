@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: handbook-fi\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
-"POT-Creation-Date: 2009-12-21 11:18-0500\n"
+"POT-Creation-Date: 2009-12-21 16:08-0500\n"
 "PO-Revision-Date: 2009-03-06 16:56+0200\n"
 "Last-Translator: Ilpo Kantonen <ilpo@iki.fi>\n"
 "Language-Team: Finnish <fi@li.org>\n"
@@ -1913,7 +1913,7 @@ msgstr "&bibletime;-käsikirja on osa &bibletime;-ohjelmaa."
 
 # type: Content of: <book><bookinfo><date>
 #: docs/handbook/en/docbook/index.docbook:54
-msgid "$LastChangedDate: 2009-12-20 14:08:36 -0500 (Sun, 20 Dec 2009) $"
+msgid "$LastChangedDate: 2009-12-21 11:36:46 -0500 (Mon, 21 Dec 2009) $"
 msgstr ""
 
 # type: Content of: <book><bookinfo><releaseinfo>

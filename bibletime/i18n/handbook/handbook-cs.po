@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: handbook-cs\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
-"POT-Creation-Date: 2009-12-21 11:18-0500\n"
+"POT-Creation-Date: 2009-12-21 16:08-0500\n"
 "PO-Revision-Date: 2009-12-11 21:06+0100\n"
 "Last-Translator: Jan Belohoubek <j.bel@atlas.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -314,7 +314,7 @@ msgstr ""
 "Horké klávesy jsou speciální klávesové příkazy, které můžete použít namísto "
 "položek v menu, nebo ikon. Mnoho příkazů v &bibletime; má definovány horké "
 "klávesy (kompletní seznam naleznete v sekci <link linkend=\"hdbk-reference-"
-"hotkeys\">Horké klávesy</link>). Většině příkazů &bibletime; zde může "
+"shortcuts\">Horké klávesy</link>). Většině příkazů &bibletime; zde může "
 "přiřadit horké klávesy. To je velmi užitečné pro rychlý přístup k funkcím, "
 "které nejvíce potřebujete."
 
@@ -1376,7 +1376,7 @@ msgstr ""
 "&bibletime;. Jsou roztříděné stejně, jak se objevují v &bibletime;, včetně "
 "podřízených položek zaznamenaných pod hlavní položkou menu ke které náleží. "
 "Horké klávesy můžete vidět u každé položky; kompletní seznam všech horkých "
-"kláves naleznete v <link linkend=\"hdbk-reference-hotkeys\">sekce horkých "
+"kláves naleznete v <link linkend=\"hdbk-reference-shortcuts\">sekce horkých "
 "kláves</link>."
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
@@ -2148,7 +2148,7 @@ msgstr "Příručka &bibletime; je součástí &bibletime; studijní nápovědy.
 
 # type: Content of: <book><bookinfo><date>
 #: docs/handbook/en/docbook/index.docbook:54
-msgid "$LastChangedDate: 2009-12-20 14:08:36 -0500 (Sun, 20 Dec 2009) $"
+msgid "$LastChangedDate: 2009-12-21 11:36:46 -0500 (Mon, 21 Dec 2009) $"
 msgstr ""
 
 # type: Content of: <book><bookinfo><releaseinfo>

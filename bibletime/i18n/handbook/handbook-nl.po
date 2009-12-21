@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
-"POT-Creation-Date: 2009-12-21 11:18-0500\n"
+"POT-Creation-Date: 2009-12-21 16:08-0500\n"
 "PO-Revision-Date: 2006-12-07 11:35+0100\n"
 "Last-Translator: Martin Gruner <mg.pub@gmx.net>\n"
 "Language-Team: Deutsch\n"
@@ -319,7 +319,7 @@ msgstr ""
 "Sneltoetsen zijn speciale toetsencombinaties die gebruikt kunnen worden in "
 "plaats van menu items en iconen. Een aantal van &bibletime;'s commando's "
 "hebben voorgeprogrammeerde sneltoetsen (zie <link linkend=\"hdbk-reference-"
-"hotkeys\">deze sectie</link> voor een volledige lijst). Aan de meeste van "
+"shortcuts\">deze sectie</link> voor een volledige lijst). Aan de meeste van "
 "&bibletime;'s commando's kunnen hier sneltoetsen worden toegewezen. Dit is "
 "erg handig om snel toegang te hebben tot de functies die u het meest nodig "
 "heeft."
@@ -1351,7 +1351,7 @@ msgstr ""
 "gerangschikt als ze voorkomen in &bibletime;, met alle sub-items genoemd "
 "onder het hoofd-item waartoe ze behoren. U kunt ook de sneltoets voor elk "
 "item zien; een complete lijst van alle sneltoetsen kunt u vinden in <link "
-"linkend=\"hdbk-reference-hotkeys\">deze sectie</link>."
+"linkend=\"hdbk-reference-shortcuts\">deze sectie</link>."
 
 #: docs/handbook/en/docbook/hdbk-reference.docbook:37
 #, fuzzy
@@ -2103,7 +2103,7 @@ msgstr "Het &bibletime; handboek is onderdeel van &bibletime;"
 
 # type: Content of: <book><bookinfo><date>
 #: docs/handbook/en/docbook/index.docbook:54
-msgid "$LastChangedDate: 2009-12-20 14:08:36 -0500 (Sun, 20 Dec 2009) $"
+msgid "$LastChangedDate: 2009-12-21 11:36:46 -0500 (Mon, 21 Dec 2009) $"
 msgstr ""
 
 # type: Content of: <book><bookinfo><releaseinfo>

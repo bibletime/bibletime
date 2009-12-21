@@ -7,7 +7,7 @@
 bejegyzéséről, elérésük szerint csoportosítva, az összes 
 albejegyzéseikkel. Szintén ismertetjük a gyorsbillentyűket, melyek hozzájuk 
 tartoznak. Az elérhető gyorsbillentyűk teljes listáját <link 
-linkend="hdbk-reference-hotkeys">ebben a részben</link> találja.</para>
+linkend="hdbk-reference-shortcuts">ebben a részben</link> találja.</para>
 
     <sect2 id="hdbk-reference-menus-file">
       <title>
@@ -1045,7 +1045,7 @@ linkend="hdbk-reference-menus-window-closeall"><menuchoice><guimenu>Ablak</guime
 
             <entry>
 	      Megegyezik az <link 
-linkend="hdbk-reference-menus-window-tilel"><menuchoice><guimenu>Ablak</guimenu><guimenuitem>Mozaik</guimenuitem></menuchoice></link> 
+linkend="hdbk-reference-menus-window-tile"><menuchoice><guimenu>Ablak</guimenu><guimenuitem>Mozaik</guimenuitem></menuchoice></link> 
 menüponttal.
             </entry>
           </row>

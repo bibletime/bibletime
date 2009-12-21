@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: handbook\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
-"POT-Creation-Date: 2009-12-21 11:18-0500\n"
+"POT-Creation-Date: 2009-12-21 16:08-0500\n"
 "PO-Revision-Date: 2009-06-26 14:32-0300\n"
 "Last-Translator: \n"
 "Language-Team: Portugus do Brasil <kde-i18n-doc@kde.org>\n"
@@ -320,9 +320,9 @@ msgid ""
 msgstr ""
 "Teclas de atalho são comandos de tecla especiais que podem ser usados no "
 "lugar de itens de menu e ícones. Vários comandos do &bibletime; têm teclas "
-"de atalho pré-definidas (veja <link linkend=\"hdbk-reference-hotkeys\">esta "
-"seção</link> para uma listagem completa). A maior parte dos comandos do "
-"&bibletime; pode ser associado a teclas de atalho aqui. Isso  muito útil "
+"de atalho pré-definidas (veja <link linkend=\"hdbk-reference-shortcuts"
+"\">esta seção</link> para uma listagem completa). A maior parte dos comandos "
+"do &bibletime; pode ser associado a teclas de atalho aqui. Isso  muito útil "
 "para acessar rapidamente as funções que você mais usa."
 
 # type: Content of: <chapter><sect1><sect2><para>
@@ -1418,7 +1418,7 @@ msgstr ""
 "aparecem no &bibletime;, com todos os sub-itens listados sob o item ao qual "
 "eles pertencem. Você também pode ver a tecla de atalho para cada item; uma "
 "listagem completa de todas as teclas de atalho pode ser encontrada <link "
-"linkend=\"hdbk-reference-hotkeys\">nessa seção</link>."
+"linkend=\"hdbk-reference-shortcuts\">nessa seção</link>."
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:37
@@ -2266,7 +2266,7 @@ msgstr "O livro de mão do &bibletime; é parte do &bibletime;."
 
 # type: Content of: <book><bookinfo><date>
 #: docs/handbook/en/docbook/index.docbook:54
-msgid "$LastChangedDate: 2009-12-20 14:08:36 -0500 (Sun, 20 Dec 2009) $"
+msgid "$LastChangedDate: 2009-12-21 11:36:46 -0500 (Mon, 21 Dec 2009) $"
 msgstr ""
 
 # type: Content of: <book><bookinfo><releaseinfo>
