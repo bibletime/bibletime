@@ -31,7 +31,7 @@
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
 #include "frontend/btaboutmoduledialog.h"
-#include "frontend/mainindex/btbookshelfview.h"
+#include "frontend/btbookshelfview.h"
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"

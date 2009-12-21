@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "frontend/mainindex/btbookshelfview.h"
+#include "frontend/btbookshelfview.h"
 
 #include <QApplication>
 #include <QHeaderView>

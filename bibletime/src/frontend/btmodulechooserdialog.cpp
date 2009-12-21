@@ -16,7 +16,7 @@
 #include <QLabel>
 #include <QVBoxLayout>
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
-#include "frontend/mainindex/btbookshelfview.h"
+#include "frontend/btbookshelfview.h"
 #include "util/dialogutil.h"
 #include "util/tool.h"
 

@@ -16,7 +16,7 @@ b* version 2.0.
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "backend/bookshelfmodel/btbookshelffiltermodel.h"
 #include "backend/config/cbtconfig.h"
-#include "frontend/mainindex/btbookshelfview.h"
+#include "frontend/btbookshelfview.h"
 #include "util/cpointers.h"
 #include "util/tool.h"
 

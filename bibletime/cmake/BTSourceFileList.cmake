@@ -79,6 +79,7 @@ SET(bibletime_SOURCES
 	src/frontend/btaboutdialog.cpp
 	src/frontend/btaboutmoduledialog.cpp
 	src/frontend/btbookshelfdockwidget.cpp
+	src/frontend/btbookshelfview.cpp
 	src/frontend/btmenuview.cpp
 	src/frontend/btmodulechooserdialog.cpp
 	src/frontend/cdragdrop.cpp
@@ -115,7 +116,6 @@ SET(bibletime_SOURCES
 	src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.cpp
 
 	# Bookshelf/Bookmarks widget in main window:
-	src/frontend/mainindex/btbookshelfview.cpp
 	src/frontend/mainindex/bookmarks/btbookmarkfolder.cpp
 	src/frontend/mainindex/bookmarks/btbookmarkitem.cpp
 	src/frontend/mainindex/bookmarks/btbookmarkitembase.cpp
@@ -231,6 +231,7 @@ SET(bibletime_MOCABLE_HEADERS
 	src/frontend/btaboutdialog.h
 	src/frontend/btaboutmoduledialog.h
 	src/frontend/btbookshelfdockwidget.h
+	src/frontend/btbookshelfview.h
 	src/frontend/btmenuview.h
 	src/frontend/btmodulechooserdialog.h
 	src/frontend/cdragdrop.h
@@ -276,7 +277,6 @@ SET(bibletime_MOCABLE_HEADERS
 	src/frontend/keychooser/versekeychooser/cbiblekeychooser.h
 	src/frontend/keychooser/versekeychooser/ckeyreferencewidget.h
 	src/frontend/mainindex/bookmarks/cbookmarkindex.h
-	src/frontend/mainindex/btbookshelfview.h
 	src/frontend/searchdialog/analysis/csearchanalysisdialog.h
 	src/frontend/searchdialog/analysis/csearchanalysisscene.h
 	src/frontend/searchdialog/btsearchmodulechooserdialog.h
