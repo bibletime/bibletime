@@ -63,6 +63,7 @@ SET(bibletime_SOURCES
 	src/frontend/btaboutdialog.cpp
 	src/frontend/btbookshelfdockwidget.cpp
 	src/frontend/btmenuview.cpp
+	src/frontend/btmodulechooserdialog.cpp
 	src/frontend/cdragdrop.cpp
 	src/frontend/crossrefrendering.cpp
 	src/frontend/cprinter.cpp
@@ -114,6 +115,7 @@ SET(bibletime_SOURCES
 	src/frontend/bookshelfmanager/indexpage/btindexpage.cpp
 
 	# Search dialog
+	src/frontend/searchdialog/btsearchmodulechooserdialog.cpp
 	src/frontend/searchdialog/btsearchoptionsarea.cpp
 	src/frontend/searchdialog/btsearchresultarea.cpp
 	src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp
@@ -121,7 +123,6 @@ SET(bibletime_SOURCES
 	src/frontend/searchdialog/cmoduleresultview.cpp
 	src/frontend/searchdialog/crangechooserdialog.cpp
 	src/frontend/searchdialog/csearchdialog.cpp
-	src/frontend/searchdialog/csearchmodulechooserdialog.cpp
 	src/frontend/searchdialog/csearchresultview.cpp
 
 	# Search analysis
@@ -203,9 +204,10 @@ SET(bibletime_MOCABLE_HEADERS
 	src/backend/cswordmodulesearch.h
 	src/bibletime.h
 	src/bibletime_dbus_adaptor.h
-	src/frontend/btmenuview.h
 	src/frontend/btbookshelfdockwidget.h
-	src/frontend/searchdialog/csearchmodulechooserdialog.h
+	src/frontend/btmenuview.h
+	src/frontend/btmodulechooserdialog.h
+	src/frontend/searchdialog/btsearchmodulechooserdialog.h
 	src/frontend/searchdialog/crangechooserdialog.h
 	src/frontend/searchdialog/btsearchresultarea.h
 	src/frontend/searchdialog/btsearchoptionsarea.h

@@ -19,11 +19,12 @@
 #include <QMessageBox>
 #include <QPushButton>
 #include <QRadioButton>
+#include "backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "backend/config/cbtconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
+#include "frontend/searchdialog/btsearchmodulechooserdialog.h"
 #include "frontend/searchdialog/btsearchsyntaxhelpdialog.h"
 #include "frontend/searchdialog/crangechooserdialog.h"
-#include "frontend/searchdialog/csearchmodulechooserdialog.h"
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
 #include "util/tool.h"
@@ -265,11 +266,12 @@ void BtSearchOptionsArea::moduleListTextSelected(int index) {
 }
 
 void BtSearchOptionsArea::chooseModules() {
-    QString title(tr("Works to Search in"));
-    QString label(tr("Select the works which should be searched."));
-    CSearchModuleChooserDialog* dlg = new CSearchModuleChooserDialog(this, title, label, modules());
-    connect(dlg, SIGNAL(modulesChanged(QList<CSwordModuleInfo*>, QTreeWidget*)), this, SLOT(setModules(QList<CSwordModuleInfo*>)));
-    dlg->exec();
+    BtSearchModuleChooserDialog* dlg = new BtSearchModuleChooserDialog(this);
+    dlg->setCheckedModules(modules().toSet());
+    if (dlg->exec() == QDialog::Accepted) {
+        setModules(dlg->checkedModules().toList());
+    }
+    delete dlg;
 }
 
 QList<CSwordModuleInfo*> BtSearchOptionsArea::modules() const {
