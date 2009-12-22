@@ -99,6 +99,10 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
             return m_checkedModulesCache;
         }
 
+        inline QList<CSwordModuleInfo*> modules() const {
+            return m_modules.keys();
+        }
+
     protected:
         QVariant parentData(BookshelfModel::ModuleItem *item, int role) const;
         void addModule(CSwordModuleInfo *module, bool checked);
