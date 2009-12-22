@@ -12,6 +12,7 @@
 
 #include "frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.h"
 
+#include <QHeaderView>
 #include <QSettings>
 #include "backend/bookshelfmodel/btbookshelfmodel.h"
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
@@ -26,8 +27,10 @@
 
 BtInstallModuleChooserDialog::BtInstallModuleChooserDialog(QWidget *parent,
                                                            Qt::WindowFlags flags)
-    : BtModuleChooserDialog(parent, flags)
+    : BtModuleChooserDialog(parent, flags), m_shown(false)
 {
+    resize(550, 340);
+
     m_bookshelfModel = new BtBookshelfModel(this);
 
     // Setup tree model on top of the regular model:
@@ -54,9 +57,9 @@ BtInstallModuleChooserDialog::BtInstallModuleChooserDialog(QWidget *parent,
         }
 
         if (ISGROUPING(v)) {
-            m_bookshelfTreeModel = new BtBookshelfTreeModel(TOGROUPING(v), this);
+            m_bookshelfTreeModel = new BtInstallModuleChooserDialogModel(TOGROUPING(v), this);
         } else {
-            m_bookshelfTreeModel = new BtBookshelfTreeModel(this);
+            m_bookshelfTreeModel = new BtInstallModuleChooserDialogModel(this);
         }
     }
     settings->endGroup();
@@ -66,6 +69,7 @@ BtInstallModuleChooserDialog::BtInstallModuleChooserDialog(QWidget *parent,
 
     // Setup view:
     treeView()->setModel(m_bookshelfTreeModel);
+    treeView()->header()->show();
 
     retranslateUi();
 }
@@ -88,4 +92,13 @@ void BtInstallModuleChooserDialog::retranslateUi() {
             tr("Do you really want to install these works?") + "<br/><br/><small>" +
             tr("Only one version of a work can be installed at the same time. Select only "
                "one if there are items marked with red.") + "</small>");
+}
+
+void BtInstallModuleChooserDialog::showEvent(QShowEvent *event) {
+    Q_UNUSED(event);
+
+    if (m_shown) return;
+    treeView()->expandAll();
+    treeView()->header()->resizeSections(QHeaderView::ResizeToContents);
+    m_shown = true;
 }

@@ -103,6 +103,7 @@ SET(bibletime_SOURCES
 
 	# Bookshelf manager frontend install page:
 	src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.cpp
+	src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialogmodel.cpp
 	src/frontend/bookshelfmanager/installpage/btinstallpage.cpp
 	src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp
 	src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp
@@ -219,6 +220,7 @@ SET(bibletime_MOCABLE_HEADERS
 	src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.h
 	src/frontend/bookshelfmanager/indexpage/btindexpage.h
 	src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.h
+	src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialogmodel.h
 	src/frontend/bookshelfmanager/installpage/btinstallpage.h
 	src/frontend/bookshelfmanager/installpage/btinstallpathdialog.h
 	src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.h

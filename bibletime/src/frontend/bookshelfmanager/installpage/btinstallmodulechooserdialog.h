@@ -15,11 +15,11 @@
 
 #include "frontend/btmodulechooserdialog.h"
 
-#include "backend/bookshelfmodel/btbookshelftreemodel.h"
+#include "frontend/bookshelfmanager/installpage/btinstallmodulechooserdialogmodel.h"
 
 
 class BtBookshelfModel;
-class BtBookshelfTreeModel;
+class BtInstallModuleChooserDialogModel;
 class CSwordModuleInfo;
 
 /**
@@ -41,10 +41,14 @@ class BtInstallModuleChooserDialog: public BtModuleChooserDialog {
 
     protected:
         void retranslateUi();
+        void showEvent(QShowEvent *event);
 
     private:
-        BtBookshelfModel     *m_bookshelfModel;
-        BtBookshelfTreeModel *m_bookshelfTreeModel;
+        // Models:
+        BtBookshelfModel                  *m_bookshelfModel;
+        BtInstallModuleChooserDialogModel *m_bookshelfTreeModel;
+
+        bool m_shown;
 };
 
 #endif // BTINSTALLMODULECHOOSERDIALOG_H

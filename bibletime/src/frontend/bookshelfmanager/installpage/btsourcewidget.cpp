@@ -333,7 +333,7 @@ void BtSourceWidget::slotInstall() {
     }
 
     // create the confirmation dialog
-    BtInstallModuleChooserDialog* dlg = new BtInstallModuleChooserDialog(this);
+    BtInstallModuleChooserDialog *dlg = new BtInstallModuleChooserDialog(this);
 
     // Add all checked modules from all tabs:
     for (int tab = 0; tab < count(); tab++) {
@@ -346,6 +346,7 @@ void BtSourceWidget::slotInstall() {
     if (dlg->exec() == QDialog::Accepted) {
         slotInstallAccepted(dlg->checkedModules());
     }
+    delete dlg;
 }
 
 void BtSourceWidget::slotStopInstall(QTreeWidget* /*treeWidget*/) {
