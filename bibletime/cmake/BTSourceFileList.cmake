@@ -87,7 +87,6 @@ SET(bibletime_SOURCES
 	src/frontend/cinfodisplay.cpp
 	src/frontend/cinputdialog.cpp
 	src/frontend/cmdiarea.cpp
-	src/frontend/cmodulechooserdialog.cpp
 	src/frontend/cmoduleindexdialog.cpp
 	src/frontend/cprinter.cpp
 	src/frontend/crossrefrendering.cpp
@@ -238,7 +237,6 @@ SET(bibletime_MOCABLE_HEADERS
 	src/frontend/cinfodisplay.h
 	src/frontend/cinputdialog.h
 	src/frontend/cmdiarea.h
-	src/frontend/cmodulechooserdialog.h
 	src/frontend/cmoduleindexdialog.h
 	src/frontend/cprinter.h
 	src/frontend/display/btcolorwidget.h
