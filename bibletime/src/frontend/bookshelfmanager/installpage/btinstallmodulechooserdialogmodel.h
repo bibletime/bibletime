@@ -23,11 +23,19 @@ class BtInstallModuleChooserDialogModel: public BtBookshelfTreeModel {
     public:
         BtInstallModuleChooserDialogModel(QObject *parent = 0);
         BtInstallModuleChooserDialogModel(const Grouping &grouping, QObject *parent = 0);
+        ~BtInstallModuleChooserDialogModel();
 
         QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
         int columnCount(const QModelIndex &parent = QModelIndex()) const;
         QVariant headerData(int section, Qt::Orientation orientation,
                             int role = Qt::DisplayRole) const;
+
+    private slots:
+        void parentDataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight);
+        
+    private:
+        bool isMulti(CSwordModuleInfo *module) const;
+        bool isMulti(const QModelIndex &index) const;
 
     private:
         QMap<QString, int> m_nameCounts;
