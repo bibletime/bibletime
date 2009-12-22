@@ -1,51 +1,50 @@
 /*********
 *
+* In the name of the Father, and of the Son, and of the Holy Spirit.
+*
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2008 by the BibleTime developers.
-* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+* Copyright 1999-2009 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License
+* version 2.0.
 *
 **********/
 
 #ifndef BTINSTALLMODULECHOOSERDIALOG_H
 #define BTINSTALLMODULECHOOSERDIALOG_H
 
-#include "frontend/cmodulechooserdialog.h"
+#include "frontend/btmodulechooserdialog.h"
 
-#include <QList>
-#include <QMap>
-#include <QObject>
-#include <QString>
+#include "backend/bookshelfmodel/btbookshelftreemodel.h"
 
 
-class BTModuleTreeItem;
-class QWidget;
-class QTreeWidgetItem;
+class BtBookshelfModel;
+class BtBookshelfTreeModel;
+class CSwordModuleInfo;
 
 /**
 * Confirmation dialog for installation. Lets the user
 * uncheck modules from the list.
 */
-class BtInstallModuleChooserDialog : public CModuleChooserDialog {
-        Q_OBJECT
-
+class BtInstallModuleChooserDialog: public BtModuleChooserDialog {
+    Q_OBJECT
     public:
-        BtInstallModuleChooserDialog(QWidget* parent, QString title, QString label, QList<CSwordModuleInfo*>* empty);
+        explicit BtInstallModuleChooserDialog(QWidget *parent = 0,
+                                              Qt::WindowFlags flags = 0);
+        ~BtInstallModuleChooserDialog();
 
-        void initModuleItem(QString name, QTreeWidgetItem* sourceItem);
-        void enableOk(bool enabled);
+        inline const QSet<CSwordModuleInfo*> &checkedModules() const {
+            return m_bookshelfTreeModel->checkedModules();
+        }
 
-    public slots:
-        void slotItemChecked(QTreeWidgetItem* item, int column);
+        void addModuleItem(CSwordModuleInfo *module, const QString &sourceName);
 
     protected:
-        virtual void initModuleItem(BTModuleTreeItem*, QTreeWidgetItem*);
+        void retranslateUi();
 
-        QList<QTreeWidgetItem*> findModuleItemsByName(QString name);
     private:
-        QStringList m_nameList;
-        QMap<QString, bool> m_doubleCheckedModules;
-
+        BtBookshelfModel     *m_bookshelfModel;
+        BtBookshelfTreeModel *m_bookshelfTreeModel;
 };
 
-#endif
+#endif // BTINSTALLMODULECHOOSERDIALOG_H

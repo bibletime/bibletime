@@ -54,7 +54,8 @@ temporary files manually.
 class BtInstallThread : public QThread {
         Q_OBJECT
     public:
-        BtInstallThread(QObject* parent, QString moduleName, QString sourceName, QString destinationName);
+        BtInstallThread(const QString &moduleName, const QString &sourceName,
+                        const QString &destinationName, QObject *parent = 0);
 
         ~BtInstallThread();
 

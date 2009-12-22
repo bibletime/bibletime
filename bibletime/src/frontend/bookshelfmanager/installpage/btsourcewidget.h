@@ -32,7 +32,7 @@ class BtSourceWidget : public QTabWidget {
     public:
         friend class BtInstallPage;
 
-        BtSourceWidget(BtInstallPage* parent);
+        BtSourceWidget(BtInstallPage *parent = 0);
         virtual ~BtSourceWidget() {}
 
         BtSourceArea* area();
@@ -70,14 +70,14 @@ class BtSourceWidget : public QTabWidget {
         void slotModuleSelectionChanged(QString sourceName, int selectedCount);
 
         void slotTabSelected(int index);
-        void slotInstallAccepted(QList<CSwordModuleInfo*> mi, QTreeWidget* treeWidget);
+        void slotInstallAccepted(const QSet<CSwordModuleInfo*> &mi);
 
     signals:
         void sigInitSources();
 
     private:
-        QStringList m_sourceNameList;
         BtInstallPage* m_page;
+        QStringList m_sourceNameList;
         QProgressDialog* m_progressDialog; // for refreshing
         BtInstallMgr* m_currentInstallMgr; // for refreshing
         QMap<QString, int> m_selectedModulesCountMap;

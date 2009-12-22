@@ -35,9 +35,9 @@
 /**
 * Tab Widget that holds source widgets
 */
-BtSourceWidget::BtSourceWidget(BtInstallPage* parent)
-        : QTabWidget(parent),
-        m_page(parent) {
+BtSourceWidget::BtSourceWidget(BtInstallPage *parent)
+        : QTabWidget(parent), m_page(parent)
+{
     qDebug() << "BtSourceWidget::BtSourceWidget start";
     initSources();
     // send queued event because "Delete" is initiated from tab which should be deleted
@@ -333,45 +333,19 @@ void BtSourceWidget::slotInstall() {
     }
 
     // create the confirmation dialog
-    // (module tree dialog, modules taken from all sources)
-    QString dlgTitle(tr("Install/Update works?"));
-    QString dlgLabel(tr("Do you really want to install these works?") +
-                     QString("<br/><br/><small>") +
-                     tr("Only one version of a work can be installed at the same time. Select only one if there are items marked with red.") +
-                     QString("</small>"));
+    BtInstallModuleChooserDialog* dlg = new BtInstallModuleChooserDialog(this);
 
-    // with empty list we avoid creating the module tree inside the dialog code
-    QList<CSwordModuleInfo*> emptyList;
-    BtInstallModuleChooserDialog* dlg = new BtInstallModuleChooserDialog(this, dlgTitle, dlgLabel, &emptyList);
-    //dlg->setGrouping(BTModuleTreeItem::Mod);
-    QTreeWidget* treeWidget = dlg->treeWidget();
-    QTreeWidgetItem* rootItem = treeWidget->invisibleRootItem();
-
-    QStringList nameList;
-
-    // loop through each tab
-    for (int tab = 0; tab < count(); ++tab) {
-        BtSourceArea* sArea = dynamic_cast<BtSourceArea*>(widget(tab));
-        if (sArea && sArea->selectedModules()->count() > 0) {
-            // there are selected modules in the source, create items for these
-            /// \todo Use new bookshelf model instead
-            /// \bug Valgrind reports memory leak:
-            QTreeWidgetItem* sourceItem = new QTreeWidgetItem(rootItem);
-            sourceItem->setText(0, m_sourceNameList.at(tab));
-            sourceItem->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsTristate | Qt::ItemIsEnabled);
-            foreach (QString mName, sArea->selectedModules()->keys()) {
-                dlg->initModuleItem(mName, sourceItem);
-            }
-            sourceItem->setExpanded(true);
+    // Add all checked modules from all tabs:
+    for (int tab = 0; tab < count(); tab++) {
+        BtSourceArea *sArea = static_cast<BtSourceArea*>(widget(tab));
+        foreach (CSwordModuleInfo *module, sArea->selectedModules()) {
+            dlg->addModuleItem(module, m_sourceNameList.at(tab));
         }
     }
 
-    //user accepts the dialog
-    connect(dlg, SIGNAL(modulesChanged(QList<CSwordModuleInfo*>, QTreeWidget*)), SLOT(slotInstallAccepted(QList<CSwordModuleInfo*>, QTreeWidget*)) );
-    // user checks/unchecks an item, needed for preventing double items
-    QObject::connect(treeWidget, SIGNAL(itemChanged(QTreeWidgetItem*, int)), dlg, SLOT(slotItemChecked(QTreeWidgetItem*, int)));
-    dlg->exec();
-    // The OK signal sent by the dialog is catched with slotInstallAccepted.
+    if (dlg->exec() == QDialog::Accepted) {
+        slotInstallAccepted(dlg->checkedModules());
+    }
 }
 
 void BtSourceWidget::slotStopInstall(QTreeWidget* /*treeWidget*/) {
@@ -379,15 +353,17 @@ void BtSourceWidget::slotStopInstall(QTreeWidget* /*treeWidget*/) {
     // not needed?
 }
 
-void BtSourceWidget::slotInstallAccepted(QList<CSwordModuleInfo*> /*modules*/, QTreeWidget* treeWidget) {
+void BtSourceWidget::slotInstallAccepted(const QSet<CSwordModuleInfo*> &mi) {
     qDebug() << "BtSourceWidget::slotInstallAccepted";
+
+    if (mi.empty()) return;
 
     /// \todo first remove all modules which will be updated from the module list
     // but what modules? all with the same real name? (there may be _n modules...)
 
-    BtModuleManagerDialog* parentDialog = dynamic_cast<BtModuleManagerDialog*>(dynamic_cast<BtInstallPage*>(parent())->parentDialog());
+    BtModuleManagerDialog *parentDialog = dynamic_cast<BtModuleManagerDialog*>(m_page->parentDialog());
 
-    BtInstallProgressDialog* dlg = new BtInstallProgressDialog(parentDialog, treeWidget, dynamic_cast<BtInstallPage*>(parent())->selectedInstallPath());
+    BtInstallProgressDialog *dlg = new BtInstallProgressDialog(mi, m_page->selectedInstallPath(), parentDialog);
 
     if (!parentDialog) qDebug() << "error, wrong parent!";
 

@@ -17,13 +17,16 @@
 
 
 class BtInstallThread;
+class CSwordModuleInfo;
 class QTreeWidget;
 class QTreeWidgetItem;
 
 class BtInstallProgressDialog : public QDialog {
         Q_OBJECT
     public:
-        BtInstallProgressDialog(QWidget* parent, QTreeWidget* selectedModulesTreeWidget, QString destination);
+        BtInstallProgressDialog(const QSet<CSwordModuleInfo*> &modules,
+                                const QString &destination, QWidget *parent = 0,
+                                Qt::WindowFlags flags = 0);
 
         ~BtInstallProgressDialog();
 

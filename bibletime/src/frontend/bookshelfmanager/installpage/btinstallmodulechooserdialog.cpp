@@ -1,127 +1,91 @@
 /*********
 *
+* In the name of the Father, and of the Son, and of the Holy Spirit.
+*
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
 * Copyright 1999-2009 by the BibleTime developers.
-* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+* The BibleTime source code is licensed under the GNU General Public License
+* version 2.0.
 *
 **********/
 
 #include "frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.h"
 
-#include <QBrush>
-#include <QDebug>
-#include <QList>
-#include <QPushButton>
-#include <QString>
-#include <QTreeWidgetItem>
-#include <QWidget>
-#include "backend/btmoduletreeitem.h"
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "frontend/cmodulechooserdialog.h"
+#include <QSettings>
+#include "backend/bookshelfmodel/btbookshelfmodel.h"
+#include "backend/bookshelfmodel/btbookshelftreemodel.h"
+#include "backend/config/cbtconfig.h"
+#include "frontend/btbookshelfview.h"
+#include "util/cpointers.h"
+#include "util/tool.h"
 
 
-BtInstallModuleChooserDialog::BtInstallModuleChooserDialog(QWidget* parent, QString title, QString label, QList<CSwordModuleInfo*>* empty)
-        : CModuleChooserDialog(parent, title, label, empty) {
-    qDebug() << "BtInstallModuleChooserDialog::BtInstallModuleChooserDialog start";
-    init();
-    okButton()->setText(tr("Install"));
-    m_nameList = QStringList();
-}
+#define ISGROUPING(v) (v).canConvert<BtBookshelfTreeModel::Grouping>()
+#define TOGROUPING(v) (v).value<BtBookshelfTreeModel::Grouping>()
 
-// Do nothing, the tree is initialized outside this class.
-void BtInstallModuleChooserDialog::initModuleItem(BTModuleTreeItem*, QTreeWidgetItem*) {}
+BtInstallModuleChooserDialog::BtInstallModuleChooserDialog(QWidget *parent,
+                                                           Qt::WindowFlags flags)
+    : BtModuleChooserDialog(parent, flags)
+{
+    m_bookshelfModel = new BtBookshelfModel(this);
 
-void BtInstallModuleChooserDialog::initModuleItem(QString name, QTreeWidgetItem* sourceItem) {
-    /// \todo Use new bookshelf model instead
-    /// \bug Valgrind reports memory leak:
-    QTreeWidgetItem* moduleItem = new QTreeWidgetItem(sourceItem);
-    moduleItem->setText(0, name);
-    moduleItem->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled);
-    moduleItem->setCheckState(0, Qt::Checked);
+    // Setup tree model on top of the regular model:
+    /**
+      \todo Subclass bookshelf tree model to a multi-column one which would highlight
+            conflicting modules.
+    */
+    QSettings *settings(CBTConfig::getConfig());
+    settings->beginGroup("GUI");
+    {
+        /*
+          If BtInstallModuleChooserDialog does not have its own grouping, we read the grouping
+          from the main window bookshelf dock.
+        */
+        QVariant v;
 
-    // prevent double items
-    if (m_nameList.contains(name)) {
-        qDebug() << "item already in list:" << name;
-        //moduleItem->setCheckState(0, Qt::Unchecked);
-        QBrush bg(Qt::red);
-        moduleItem->setBackground(0, bg);
-        //find and change the other offending items
-        foreach (QTreeWidgetItem* doubleItem, treeWidget()->findItems(name, Qt::MatchFixedString | Qt::MatchCaseSensitive | Qt::MatchRecursive, 0)) {
-            //doubleItem->setCheckState(0, Qt::Unchecked);
-            //qDebug() << "CInstallModuleChooserDialog::initModuleItem" << doubleItem;
-            doubleItem->setBackground(0, bg);
-        }
-        m_doubleCheckedModules[name] = true;
-        enableOk(false);
-    }
-    m_nameList << name;
-}
-
-void BtInstallModuleChooserDialog::slotItemChecked(QTreeWidgetItem* item, int column) {
-    QString moduleName = item->text(0);
-    qDebug() << "BtInstallModuleChooserDialog::slotItemChecked start";
-    // handle only non-toplevel items which has duplicates and where the first column was changed
-    if (item->parent() && column == 0 && (findModuleItemsByName(moduleName).count() > 1))  {
-        //prevent handling when the color is changed
-        if (item->data(1, Qt::UserRole).toBool() == false) {
-            qDebug() << "was not updating";
-            item->setData(1, Qt::UserRole, true);
-        }
-        else {
-            qDebug() << "was updating";
-            item->setData(1, Qt::UserRole, false);
-            return;
-        }
-
-        QList<QTreeWidgetItem*> doubleNameItems = findModuleItemsByName(moduleName);
-        QList<QTreeWidgetItem*> doubleCheckedItems;
-        foreach (QTreeWidgetItem* nItem, doubleNameItems) {
-            if (nItem->checkState(0) == Qt::Checked) {
-                doubleCheckedItems << nItem;
+        if (settings->value("BookshelfManager/InstallPage/ConfirmDialog/hasOwnGrouping", false).toBool()) {
+            v = settings->value("BookshelfManager/InstallPage/ConfirmDialog/grouping");
+            if (ISGROUPING(v)) {
+                v = settings->value("MainWindow/Docks/Bookshelf/grouping");
             }
+        } else {
+            v = settings->value("MainWindow/Docks/Bookshelf/grouping");
         }
 
-        if (doubleCheckedItems.count() > 1) {
-            enableOk(false);
-            // color the items
-            qDebug() << "there were more than 1 item of the name" << moduleName;
-            foreach (QTreeWidgetItem* i, doubleNameItems) {
-                QBrush bg(Qt::red);
-                i->setBackground(0, bg);
-            }
-            m_doubleCheckedModules[moduleName] = true;
-        }
-        else if (doubleCheckedItems.count() == 1) {
-            qDebug() << "there were 1 checked items of the name" << moduleName;
-            // uncolor the items
-            foreach (QTreeWidgetItem* i, doubleNameItems) {
-                i->setBackground(0, i->parent()->background(0));
-            }
-            m_doubleCheckedModules.remove(moduleName);
-            if (m_doubleCheckedModules.count() == 0) {
-                enableOk(true);
-            }
+        if (ISGROUPING(v)) {
+            m_bookshelfTreeModel = new BtBookshelfTreeModel(TOGROUPING(v), this);
+        } else {
+            m_bookshelfTreeModel = new BtBookshelfTreeModel(this);
         }
     }
+    settings->endGroup();
+    m_bookshelfTreeModel->setDefaultChecked(BtBookshelfTreeModel::CHECKED);
+    m_bookshelfTreeModel->setCheckable(true);
+    m_bookshelfTreeModel->setSourceModel(m_bookshelfModel);
+
+    // Setup view:
+    treeView()->setModel(m_bookshelfTreeModel);
+
+    retranslateUi();
 }
 
-QList<QTreeWidgetItem*> BtInstallModuleChooserDialog::findModuleItemsByName(QString name) {
-    qDebug() << "BtInstallModuleChooserDialog::findModuleItemsByName:" << name << treeWidget()->topLevelItemCount();
-    QList<QTreeWidgetItem*> doubleNamedAllItems = treeWidget()->findItems(name, Qt::MatchFixedString | Qt::MatchCaseSensitive | Qt::MatchRecursive);
-    //qDebug() << "doubleNamedAllItems: " << doubleNamedAllItems.count();
-    QList<QTreeWidgetItem*> doubleNamedModuleItems;
-    foreach (QTreeWidgetItem* item, doubleNamedAllItems) {
-        //qDebug() << "item:" << item;
-        if (item->parent()) {
-            doubleNamedModuleItems << item;
-        }
-    }
-    //qDebug() << "module items:" << doubleNamedModuleItems.count();
-    return doubleNamedModuleItems;
+BtInstallModuleChooserDialog::~BtInstallModuleChooserDialog() {
+    // Intentionally empty
 }
 
-void BtInstallModuleChooserDialog::enableOk(bool enabled) {
-    qDebug() << "BtInstallModuleChooserDialog::enableOk" << enabled;
-    okButton()->setEnabled(enabled);
+void BtInstallModuleChooserDialog::addModuleItem(CSwordModuleInfo *module,
+                                                 const QString &sourceName)
+{
+    module->setProperty("installSourceName", sourceName);
+    m_bookshelfModel->addModule(module);
+}
+
+void BtInstallModuleChooserDialog::retranslateUi() {
+    setWindowTitle(tr("Install/Update works?"));
+    util::tool::initExplanationLabel(
+            label(), QString::null,
+            tr("Do you really want to install these works?") + "<br/><br/><small>" +
+            tr("Only one version of a work can be installed at the same time. Select only "
+               "one if there are items marked with red.") + "</small>");
 }

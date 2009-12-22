@@ -25,8 +25,11 @@
 #include "util/cpointers.h"
 
 
-BtInstallProgressDialog::BtInstallProgressDialog(QWidget* parent, QTreeWidget* selectedModulesTreeWidget, QString destination)
-        : QDialog(parent) {
+BtInstallProgressDialog::BtInstallProgressDialog(const QSet<CSwordModuleInfo*> &modules,
+                                                 const QString &destination, QWidget *parent,
+                                                 Qt::WindowFlags flags)
+        : QDialog(parent, flags)
+{
     // we want this dialog to be deleted when user closes it or the downloads are completed
     setAttribute(Qt::WA_DeleteOnClose, true);
     setWindowTitle(tr("Install Progress"));
@@ -39,39 +42,34 @@ BtInstallProgressDialog::BtInstallProgressDialog(QWidget* parent, QTreeWidget* s
     m_statusWidget->header()->setMovable(false);
     //m_statusWidget->setColumnWidth(1, util::tool::mWidth(m_statusWidget, 2));
 
-    foreach (QTreeWidgetItem* sourceItem, selectedModulesTreeWidget->invisibleRootItem()->takeChildren()) {
-        // create items and threads for modules under this source
-        foreach (QTreeWidgetItem* moduleItem, sourceItem->takeChildren()) {
-            if (moduleItem->checkState(0) == Qt::Checked) {
-                // create a thread for this module
-                BtInstallThread* thread = new BtInstallThread(this, moduleItem->text(0), sourceItem->text(0), destination);
-                m_waitingThreads.insert(sourceItem->text(0), thread);
-                m_threadsByModule.insert(moduleItem->text(0), thread);
-                // progress widget/item
-                QPushButton* stopButton = new QPushButton(tr("Stop"), m_statusWidget);
-                stopButton->setFixedSize(stopButton->sizeHint());
+    foreach (CSwordModuleInfo *module, modules) {
+        const QString sourceName(module->property("installSourceName").toString());
+        // create a thread for this module
+        BtInstallThread* thread = new BtInstallThread(module->name(), sourceName, destination);
+        m_waitingThreads.insert(sourceName, thread);
+        m_threadsByModule.insert(module->name(), thread);
+        // progress widget/item
+        QPushButton* stopButton = new QPushButton(tr("Stop"), m_statusWidget);
+        stopButton->setFixedSize(stopButton->sizeHint());
 
-                // the item
-                QTreeWidgetItem* progressItem = new QTreeWidgetItem(m_statusWidget);
-                m_statusWidget->setColumnWidth(2, stopButton->sizeHint().width());
-                progressItem->setSizeHint(2, stopButton->sizeHint());
-                progressItem->setText(0, moduleItem->text(0));
-                progressItem->setFlags(Qt::ItemIsEnabled);
-                m_statusWidget->setItemWidget(progressItem, 2, stopButton);
-                progressItem->setText(1, tr("Waiting for turn..."));
+        // the item
+        QTreeWidgetItem* progressItem = new QTreeWidgetItem(m_statusWidget);
+        m_statusWidget->setColumnWidth(2, stopButton->sizeHint().width());
+        progressItem->setSizeHint(2, stopButton->sizeHint());
+        progressItem->setText(0, module->name());
+        progressItem->setFlags(Qt::ItemIsEnabled);
+        m_statusWidget->setItemWidget(progressItem, 2, stopButton);
+        progressItem->setText(1, tr("Waiting for turn..."));
 
-                //connect the signals between the dialog, items and threads
-                QObject::connect(stopButton, SIGNAL(clicked()), thread, SLOT(slotStopInstall()), Qt::QueuedConnection);
-                QObject::connect(thread, SIGNAL(installStopped(QString, QString)), this, SLOT(slotOneItemStopped(QString, QString)), Qt::QueuedConnection);
-                //is this needed or is statusUpdated enough?
-                QObject::connect(thread, SIGNAL(installCompleted(QString, QString, int)), this, SLOT(slotOneItemCompleted(QString, QString, int)), Qt::QueuedConnection);
-                QObject::connect(thread, SIGNAL(statusUpdated(QString, int)), this, SLOT(slotStatusUpdated(QString, int)), Qt::QueuedConnection);
-                QObject::connect(thread, SIGNAL(downloadStarted(QString)), this, SLOT(slotDownloadStarted(QString)), Qt::QueuedConnection);
+        //connect the signals between the dialog, items and threads
+        QObject::connect(stopButton, SIGNAL(clicked()), thread, SLOT(slotStopInstall()), Qt::QueuedConnection);
+        QObject::connect(thread, SIGNAL(installStopped(QString, QString)), this, SLOT(slotOneItemStopped(QString, QString)), Qt::QueuedConnection);
+        //is this needed or is statusUpdated enough?
+        QObject::connect(thread, SIGNAL(installCompleted(QString, QString, int)), this, SLOT(slotOneItemCompleted(QString, QString, int)), Qt::QueuedConnection);
+        QObject::connect(thread, SIGNAL(statusUpdated(QString, int)), this, SLOT(slotStatusUpdated(QString, int)), Qt::QueuedConnection);
+        QObject::connect(thread, SIGNAL(downloadStarted(QString)), this, SLOT(slotDownloadStarted(QString)), Qt::QueuedConnection);
 
-                QObject::connect(thread, SIGNAL(preparingInstall(QString, QString)), this, SLOT(slotInstallStarted(QString, QString)), Qt::QueuedConnection);
-
-            }
-        }
+        QObject::connect(thread, SIGNAL(preparingInstall(QString, QString)), this, SLOT(slotInstallStarted(QString, QString)), Qt::QueuedConnection);
     }
 
     m_statusWidget->setMinimumWidth(m_statusWidget->size().width());
