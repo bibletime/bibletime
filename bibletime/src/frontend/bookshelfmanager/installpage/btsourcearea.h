@@ -14,7 +14,7 @@
 
 #include <boost/scoped_ptr.hpp>
 #include <QApplication>
-#include <QMap>
+#include <QSet>
 #include "backend/btmoduletreeitem.h"
 
 // Sword includes:
@@ -61,7 +61,7 @@ class BtSourceArea : public QWidget {
         void initTreeFirstTime();
         QTreeWidget* treeWidget();
 
-        QMap<QString, bool>* selectedModules();
+        const QSet<CSwordModuleInfo*> &selectedModules() const;
 
     public slots:
         void slotSwordSetupChanged();
@@ -81,7 +81,7 @@ class BtSourceArea : public QWidget {
 
         QString m_sourceName;
         bool m_treeAlreadyInitialized;
-        QMap<QString, bool> m_checkedModules;
+        QSet<CSwordModuleInfo*> m_checkedModules;
         CSwordBackend* m_remoteBackend; // needed for the module list
         QList<CSwordModuleInfo*> m_moduleList;
 

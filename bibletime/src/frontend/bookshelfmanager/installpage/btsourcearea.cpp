@@ -44,7 +44,6 @@ BtSourceArea::BtSourceArea(const QString& sourceName)
         m_treeAlreadyInitialized(false),
         m_remoteBackend(0) { //important!
     setObjectName(sourceName);
-    m_checkedModules = QMap<QString, bool>();
     qDebug() << "BtSourceArea::BtSourceArea, " << m_sourceName;
     initView();
 }
@@ -218,8 +217,8 @@ QTreeWidget* BtSourceArea::treeWidget() {
 }
 
 // return the selected modules
-QMap<QString, bool>* BtSourceArea::selectedModules() {
-    return &m_checkedModules;
+const QSet<CSwordModuleInfo*> &BtSourceArea::selectedModules() const {
+    return m_checkedModules;
 }
 
 // when a module is checked/unchecked
@@ -232,11 +231,11 @@ void BtSourceArea::slotSelectionChanged(QTreeWidgetItem* item, int column) {
             if (module->name() == item->text(0)) {
                 if (item->checkState(0) == Qt::Checked) {
                     qDebug() << module->name() << "was checked";
-                    m_checkedModules.insert(module->name(), true);
+                    m_checkedModules.insert(module);
                 }
                 else {
                     qDebug() << module->name() << "was unchecked";
-                    m_checkedModules.remove(module->name());
+                    m_checkedModules.remove(module);
                 }
                 emit signalSelectionChanged(m_sourceName, m_checkedModules.count());
                 break;
