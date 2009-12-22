@@ -16,6 +16,7 @@
 #include <QDialog>
 
 
+class CSwordModuleInfo;
 class BtBookshelfTreeModel;
 class BtBookshelfView;
 class QAbstractItemModel;
@@ -35,6 +36,9 @@ class BtModuleChooserDialog : public QDialog {
         inline QLabel *label() const { return m_captionLabel; }
         inline BtBookshelfView *treeView() const { return m_treeView; }
         inline QDialogButtonBox *buttonBox() const { return m_buttonBox; }
+
+    protected slots:
+        void moduleAbout(CSwordModuleInfo *module);
 
     private:
         QLabel           *m_captionLabel;

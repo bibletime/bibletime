@@ -16,6 +16,7 @@
 #include <QLabel>
 #include <QVBoxLayout>
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
+#include "frontend/btaboutmoduledialog.h"
 #include "frontend/btbookshelfview.h"
 #include "util/dialogutil.h"
 #include "util/tool.h"
@@ -30,6 +31,8 @@ BtModuleChooserDialog::BtModuleChooserDialog(QWidget *parent, Qt::WindowFlags fl
     mainLayout->addWidget(m_captionLabel);
 
     m_treeView = new BtBookshelfView(this);
+    connect(m_treeView, SIGNAL(moduleActivated(CSwordModuleInfo*)),
+            this,       SLOT(moduleAbout(CSwordModuleInfo*)));
     mainLayout->addWidget(m_treeView);
 
     m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Cancel | QDialogButtonBox::Ok,
@@ -51,4 +54,11 @@ BtModuleChooserDialog::~BtModuleChooserDialog() {
 
 void BtModuleChooserDialog::retranslateUi() {
     util::prepareDialogBox(m_buttonBox);
+}
+
+void BtModuleChooserDialog::moduleAbout(CSwordModuleInfo *module) {
+    BTAboutModuleDialog *dialog = new BTAboutModuleDialog(module, this);
+    dialog->setAttribute(Qt::WA_DeleteOnClose); // Destroy dialog when closed
+    dialog->show();
+    dialog->raise();
 }
