@@ -262,7 +262,7 @@ class CSwordModuleInfo: public QObject {
         * Returns the name of the module.
         * @return The name of this module.
         */
-        QString name() const;
+        const QString &name() const;
         /**
         * Snaps to the closest entry in the module if the current key is
         * not present in the data files.
@@ -395,7 +395,7 @@ inline bool CSwordModuleInfo::hasVersion() const {
 * Returns the name of the module.
 * The Sword library takes care of the duplicate names: _n is added after each duplicate.
 */
-inline QString CSwordModuleInfo::name() const {
+inline const QString &CSwordModuleInfo::name() const {
     return m_dataCache.name;
 }
 
