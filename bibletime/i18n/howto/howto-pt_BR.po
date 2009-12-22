@@ -2,20 +2,20 @@
 # Copyright (C) 2004, 2005 The BibleTime Team, http://www.bibletime.info
 # Joachim Ansorg, 2004.
 # Samuel Lucas Vaz de Mello <samuelm@estadao.com.br>, 2004.
-# Saulo Rodrigues e Silva <saulors@yahoo.com>, 2005.
-# Rafael Fagundes Rosa Campos<rafaelfrc@yahoo.com.br>, 2009
+# Saulo Rodrigues e Silva <saulors@yahoo.com>, 2005, 2009.
+# Rafael Fagundes Rosa Campos<rafaelfrc@yahoo.com.br>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: full\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-04-21 12:33-0400\n"
-"PO-Revision-Date: 2009-11-30 16:06-0500\n"
-"Last-Translator: Rafael Fagundes Rosa Campos <rafaelfrc@yahoo.com>\n"
-"Language-Team: Portugues Brasil <pt_BR@li.org>\n"
+"PO-Revision-Date: 2009-12-20 12:18-0200\n"
+"Last-Translator: Saulo\n"
+"Language-Team: Português do Brasil <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: QT Linguist 4.5\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms:  nplurals=2; plural=(n > 1);\n"
 "X-Language: pt_BR\n"
 
@@ -801,7 +801,7 @@ msgstr "Ação"
 
 #: docs/howto/en/docbook/howto-importance.docbook:135
 msgid "Eph. 5:26"
-msgstr "Ef. 5:26"
+msgstr "Ef 5.26"
 
 #: docs/howto/en/docbook/howto-importance.docbook:137
 msgid ""
@@ -1745,12 +1745,12 @@ msgstr ""
 # type: Content of the bibletime entity
 #: docs/howto/en/docbook/index.docbook:3
 msgid "<application>BibleTime</application>"
-msgstr ""
+msgstr "<application>BibleTime</application>"
 
 # type: Content of the kapp entity
 #: docs/howto/en/docbook/index.docbook:4
 msgid "&bibletimehandbook;"
-msgstr ""
+msgstr "&bibletimehandbook;"
 
 #: docs/howto/en/docbook/index.docbook:14
 msgid "The Biblestudy HowTo"
@@ -1768,6 +1768,11 @@ msgid ""
 "url=\"http://creativecommons.org/licenses/by-sa/3.0/\"> \"Creative Commons "
 "Attribution-Share Alike\"</link>."
 msgstr ""
+"Este documento foi originalmente criado pelo Sr. Bob Harman e é licenciado "
+"pelos "
+"termos da licença <link "
+"url=\"http://creativecommons.org/licenses/by-sa/3.0/\"> \"Creative Commons "
+"Attribution-Share Alike\"</link>."
 
 #: docs/howto/en/docbook/index.docbook:42
 msgid ""
@@ -1805,3 +1810,4 @@ msgstr ""
 "particular. Nós esperamos que você leia e estude as escrituras para entender "
 "o que elas dizem. Se você começar com a atitude de querer que o Senhor "
 "mostre sua Palavra em seu coração ele não desapontará você."
+

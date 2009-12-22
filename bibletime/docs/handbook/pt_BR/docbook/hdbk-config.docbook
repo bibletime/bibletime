@@ -34,11 +34,10 @@ pré-visualização no painel direito.</para>
 personalizados no &bibletime;. Esses recursos estão documentados no próprio 
 diálogo. Você também tem a possibilidade de especificar obras padrões que 
 devem ser usadas quando nenhuma obra em particular  especificada numa 
-referência. Um exemplo: a Bíblia padrão  usada para mostrar o conteudo de 
+referência. Um exemplo: a Bíblia padrão  usada para mostrar o conteúdo de 
 referências cruzadas na Bíblia. Quando você passar por cima delas, a lupa 
 vai mostrar o conteúdo dos versículos referidos, de acordo com a Bíblia 
-padrão que você especificou. Com a utilização de filtros de texto, você pode 
-controlar a aparência do texto.</para>
+padro que você especificou.</para>
     </sect2>
 
     <sect2 id="hdbk-config-bt-languages">
@@ -49,10 +48,10 @@ controlar a aparência do texto.</para>
 bíblicos. Deixe-o no seu idioma nativo, se disponível, e você se sentirá em 
 casa.</para>
 
-      <para>Por padrão, &bibletime; usa a fonte padrão do sistema. Você pode 
-sobrescrever essa fonte se necessário. Alguns idiomas requerem fontes 
-especiais para serem exibidos corretamente, e esse diálogo permite a você 
-especificar uma fonte personalizada para cada idioma.</para>
+      <para>Por padrão, &bibletime; usa a fonte padro do sistema. Você pode sobrescrever 
+essa fonte se necessário. Alguns idiomas requerem fontes especiais para 
+serem exibidos corretamente, e esse diálogo permite a você especificar uma 
+fonte personalizada para cada idioma.</para>
       <mediaobject>
         <imageobject>
           <imagedata fileref="ss_configfonts.png" width="100%" contentdepth="100%" scalefit="1" format="PNG" />
@@ -66,14 +65,14 @@ especificar uma fonte personalizada para cada idioma.</para>
       </mediaobject>
       <para>&bibletime; pode agora usar todas as fontes suportadas. Se as obras que você 
 deseja ver forem exibidas corretamente, nada precisa ser feito aqui. Se uma 
-obra somente mostra uma série de pontos de interrogação (??????) or caixas 
+obra somente mostra uma série de pontos de interrogação (??????) ou caixas 
 vazias, então a fonte de exibição padrão não contém os caracteres usados 
 nessa obra.</para>
 
       <para>Para corrigir isso, escolha o idioma dessa obra no menu de seleção. Marque a 
-caixa Usar fonte personalizada. Ento selecione uma fonte. Por exemplo, uma 
-fonte que suporta muitos idiomas  Code2000. Se nenhuma fonte instalada pode 
-exibir a obra em que você está interessado, tente instalar o pacote de 
+caixa Usar fonte personalizada. Então selecione uma fonte. Por exemplo, uma 
+fonte que suporta muitos idiomas  é Code2000. Se nenhuma fonte instalada 
+pode exibir a obra em que você está interessado, tente instalar o pacote de 
 localização para esse idioma.</para>
       <sect3 id="hdbk-config-bt-addfont">
         <title>Instalando fontes</title>
@@ -83,7 +82,7 @@ url="http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html"> Unicode
 HOWTO</ulink>.</para>
         <tip>
           <para>Se você usar uma fonte pequena como Clearlyu (em torno de 22kb), &bibletime; 
-irá rodar mais rápido do que com uma fonte como <trademark 
+ir rodar mais rápido do que com uma fonte como <trademark 
 class="registered">Bitstream Cyberbit</trademark> (em torno de 12Mb).</para>
         </tip>
       </sect3>
@@ -109,9 +108,9 @@ Windows</trademark> no mesmo computador.</para>
           </listitem>
         </itemizedlist>
         <para>Fontes Unicode suportam mais caracteres que outras fontes, e algumas dessas 
-fontes estão disponíveis gratuitamente. Nenhuma da fontes disponíveis 
-incluem todos os caracteres definidos no padrão Unicode, então você pode 
-querer usar diferentes fontes para diferentes idiomas.</para>
+fontes esto disponíveis gratuitamente. Nenhuma da fontes disponíveis incluem 
+todos os caracteres definidos no padro Unicode, então você pode querer usar 
+diferentes fontes para diferentes idiomas.</para>
         <table id="hdbk-config-unicode-fonts-table">
           <title>Fontes Unicode</title>
           <tgroup cols="2">
@@ -144,15 +143,15 @@ caracteres.</entry>
                   Crosswire's font directory</ulink>
                 </entry>
 
-                <entry>Várias fontes disponíveis do &cbs; site FTP.</entry>
+                <entry>Várias fontes disponíveis do site Ftp da Crosswire Bible Society.</entry>
               </row>
               <row>
                 <entry>
                   <ulink url="ftp://ftp.netscape.com/pub/communicator/extras/fonts/windows/">
                   Bitstream CyberBit</ulink>
                 </entry>
-                <entry>Cobre quase toda a gama do Unicode, mas pode fazer o &bibletime; ficar muito 
-lento por causa do seu tamanho.</entry>
+                <entry>Cobre quase toda a gama do Unicode, mas pode fazer o &bibletime; ficar lento 
+por causa do seu tamanho.</entry>
               </row>
               <row>
                 <entry>Clearlyu</entry>
@@ -183,18 +182,18 @@ Unicode e fontes Unicodes que as suportam</ulink>).</para>
       </title>
 
       <para>Teclas de atalho são comandos de tecla especiais que podem ser usados no 
-lugar de itens de menu e ícones. Vários comandos do &bibletime; têm teclas 
-de atalho pré-definidas (veja <link linkend="hdbk-reference-shortcuts">esta 
+lugar de itens de menu e cones. Vários comandos do &bibletime; têm teclas de 
+atalho pré-definidas (veja <link linkend="hdbk-reference-shortcuts">esta 
 seção</link> para uma listagem completa). A maior parte dos comandos do 
-&bibletime; pode ser associado a teclas de atalho aqui. Isso  muito útil 
-para acessar rapidamente as funções que você mais usa.</para>
+&bibletime; pode ser associado a teclas de atalho aqui. Isso  muito til para 
+acessar rapidamente as funes que você mais usa.</para>
 
       <imageobject>
 	<imagedata fileref="ss_shortcuts.png" width="100%" contentdepth="100%" scalefit="1" format="PNG" />
       </imageobject>
 
-      <para>In the preceding example, F2, Bible Study Howto has a secondary shortcut 
-defined, CTRL+2.</para>
+      <para>No exemplo anterior, F2, o Howto de Estudos Bíblicos tem um atalho 
+secundário definido, CTRL+2.</para>
     </sect2>
   </sect1>
 </chapter>

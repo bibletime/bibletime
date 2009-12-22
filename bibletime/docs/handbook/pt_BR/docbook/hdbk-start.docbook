@@ -1,35 +1,35 @@
 <chapter id="hdbk-term">
-  <title>Starting &bibletime;</title>
+  <title>Iniciando &bibletime;</title>
 
   <sect1 id="hdbk-start">
-    <title>How to start &bibletime;</title>
+    <title>Como iniciar o &bibletime;</title>
 
     <sect2 id="hdbk-start-starting">
-      <title>Starting &bibletime;</title>
-      <para>&bibletime; is an executable file that is integrated with the desktop. You 
-can launch &bibletime; from the Start Menu with this icon: 
+      <title>Iniciando &bibletime;</title>
+      <para>&bibletime;  um arquivo executável que é integrado ao desktop. Você pode 
+iniciar o &bibletime; do menu de início com esse ícone: 
       <mediaobject>
         <imageobject>
           <imagedata fileref="i_bibletime.png" width="32" depth="32" format="PNG" />
         </imageobject>
         <textobject>
-          <phrase>&bibletime; start icon</phrase>
+          <phrase>Ícone do &bibletime;</phrase>
         </textobject>
       </mediaobject></para>
 
-      <para>&bibletime; can also be launched from a terminal command prompt. To launch 
-&bibletime;, open a terminal window and type: 
+      <para>&bibletime; pode ser iniciado de um terminal de prompt de comando. Para 
+iniciar o &bibletime;, abra uma janela do terminal e digite: 
       <screen>bibletime</screen></para>
     </sect2>
 
     <sect2 id="hdbk-start-custom">
-      <title>Startup customization</title>
-      <para>From a terminal you can use &bibletime; to open a random verse in the 
-default bible:
+      <title>Personalização de início</title>
+      <para>De um terminal você pode usar o &bibletime; para abrir um versículo 
+aleatório na bíblia padrão:
 	<screen>bibletime --open-default-bible "&lt;random&gt;"</screen>
-	To open at a given passage like John 3:16, use:
-	<screen>bibletime --open-default-bible "John 3:16"</screen>
-	You can also use booknames in your current bookname language.</para>
+	Para abrir numa passagem como João 3:16, use:
+	<screen>bibletime --open-default-bible "João 3:16"</screen>
+	Você também pode usar os nomes dos livros em seu idioma de nomes atual.</para>
     </sect2>
   </sect1>
 
@@ -47,9 +47,9 @@ linkend="hdbk-reference-menus-settings">Settings menu bar</link>.</para>
         </term>
         <listitem>
           <para>
-          <action>Customizes &bibletime;.</action>This dialog lets you adapt 
-&bibletime; to your needs. Please see <link linkend="hdbk-config-bt">the 
-detailed description</link> of this dialog.</para>
+          <action>Customiza &bibletime;.</action> Esse diálogo permite adaptar o 
+&bibletime; s suas necessidades. Veja <link linkend="hdbk-config-bt">a 
+descrição detalhada</link> desse diálogo.</para>
         </listitem>
       </varlistentry>
 
@@ -58,15 +58,13 @@ detailed description</link> of this dialog.</para>
           <interface>Bookshelf Manager</interface>
         </term>
         <listitem>
-          <para><action>Modifies your Bookshelf</action>.  This dialog lets you modify your 
-Bookshelf, add or delete works from your system.  It will only be shown if 
-no default Bookshelf can be found.  Please see <link 
-linkend="hdbk-op-bookshelfmanager">The Bookshelf Manager section</link> for 
-further details. If you start off with an empty Bookshelf, it will be 
-helpful to install at least one Bible, Commentary, Lexicon and one Book to 
-get to know &bibletime;'s basic features quickly.  You can do this by 
-clicking on the Refresh button.  You will be presented with a list of works 
-that are available from the &cbs;</para>
+          <para><action>Modifica sua Estante.</action> Esse diálogo permite a você modificar 
+sua Estante, adicionar ou excluir obras do seu sistema. S ser exibido se 
+nenhuma Estante padro for encontrada. Por favor veja <link 
+linkend="hdbk-op-bookshelfmanager"> essa seção</link> para mais detalhes. Se 
+você iniciar com uma Estante vazia, ser til para instalar pelo menos uma 
+Bíblia, Comentário, Léxico e um Livro para conhecer os recursos básicos do 
+&bibletime; rapidamente.</para>
         </listitem>
       </varlistentry>
     </variablelist>

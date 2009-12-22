@@ -6,21 +6,21 @@
     <para>&bibletime;  uma ferramenta de estudo bíblico com suporte para diferentes 
 tipos de textos e idiomas. Mesmo grandes quantidades de obras são simples de 
 instalar e gerenciar. Ele foi feito sobre a biblioteca <ulink 
-url="http://www.crosswire.org/sword">Sword</ulink>, que provê a 
+url="http://www.crosswire.org/sword">Sword</ulink>, que prov a 
 funcionalidade de back-end para o &bibletime;, tal como visualizar texto 
-bíblico, pesquisar, etc. Sword é o carro-chefe da <ulink 
+bíblico, pesquisar, etc. Sword  o carro-chefe da <ulink 
 url="http://www.crosswire.org">Crosswire Bible Society</ulink>.</para>
 
     <para>&bibletime; foi desenhado para ser usado com obras codificadas em um dos 
 formatos suportados pelo projeto Sword. Informações completas sobre os 
 formatos de documentos suportados podem ser encontradas na <ulink 
-url="http://www.crosswire.org/sword/develop/index.jsp"> seção 
+url="http://www.crosswire.org/sword/develop/index.jsp"> seção de 
 desenvolvimento</ulink> do Projeto Sword, Crosswire Bible Society.</para>
 
     <sect2 id="hdbk-intro-works">
       <title>Obras disponíveis</title>
-      <para>Mais de 200 documentos em 50 idiomas estão disponíveis da <ulink 
-url="http://www.crosswire.org">Crosswire Bible Society&cbs;</ulink>. Estão 
+      <para>Mais de 200 documentos em 50 idiomas esto disponíveis da <ulink 
+url="http://www.crosswire.org">Crosswire Bible Society</ulink>. Esto 
 inclusos:
       <variablelist>
         <varlistentry>
@@ -28,9 +28,9 @@ inclusos:
           <listitem>
             <para>O texto completo da Bíblia, com itens opcionais como os números Strong, 
 cabeçalhos e/ou rodapés no texto. Bíblias estão disponíveis em muitos 
-idiomas, e incluem no somente versões modernas, mas também textos antigos 
+idiomas, e incluem no somente verses modernas, mas também textos antigos 
 como o Codex Leningradensis ("WLC", hebraico), e a Septuaginta ("LXX", 
-grego). Essa  a seção mais avançada na biblioteca do projeto &sword;.</para>
+grego). Essa  a seção mais avançada na biblioteca do projeto Sword.</para>
           </listitem>
         </varlistentry>
         <varlistentry>
@@ -44,7 +44,7 @@ grego). Essa  a seção mais avançada na biblioteca do projeto &sword;.</para>
           <term>Comentários</term>
           <listitem>
             <para>Comentários disponíveis incluindo clássicos como "Notas sobre a Bíblia" de 
-John Wesley, o comentário de Matthew Henry e o "comentário sobre Glatas" de 
+John Wesley, o comentário de Matthew Henry e o "Comentário sobre Gálatas" de 
 Lutero. Com o comentário <emphasis>pessoal</emphasis> você pode <link 
 linkend="hdbk-op-parts-desk-write"> gravar suas próprias notas 
 pessoas</link> nas seções da Bíblia.</para>
@@ -53,8 +53,8 @@ pessoas</link> nas seções da Bíblia.</para>
         <varlistentry>
           <term>Devocionais diários</term>
           <listitem>
-            <para>Muitas pessoas apreciam essas porções diárias da palavra de Deus. Obras 
-disponíveis incluem Daily Light on the Daily Path, e o Losungen (ingls).</para>
+            <para>Muitas pessoas apreciam essas pores dirias da palavra de Deus. Obras 
+disponíveis incluem Daily Light on the Daily Path, e o Losungen (inglês).</para>
           </listitem>
         </varlistentry>
 
@@ -73,17 +73,17 @@ Bible.</para>
 
     <sect2 id="hdbk-intro-motivation">
       <title>Motivação</title>
-      <para>Nosso desejo é servir a Deus, e fazer nossa parte em ajudar outros a crescer 
+      <para>Nosso desejo  servir a Deus, e fazer nossa parte em ajudar outros a crescer 
 no seu relacionamento com Ele. Nós batalhamos para tornar isso um programa 
-poderoso e de qualidade, e ainda assim fazê-lo simples e de operação 
-intuitiva.  nosso desejo que Deus seja louvado, pois ele é a origem de todas 
+poderoso e de qualidade, e ainda assim faz-lo simples e de operação 
+intuitiva.  nosso desejo que Deus seja louvado, pois ele  a origem de todas 
 as coisas boas.</para>
       <blockquote>
         <attribution>Tiago 1:17, ACF</attribution>
         <para>Toda a boa dádiva e todo o dom perfeito vem do alto, descendo do Pai das 
-luzes, em quem no há mudana nem sombra de variação.</para>
+luzes, em quem não há mudança nem sombra de variação.</para>
       </blockquote>
-      <para>Deus o abençoe enquanto usa esse programa.</para>
+      <para>Deus o abendiçoe enquanto usa esse programa.</para>
     </sect2>
   </sect1>
 </chapter>
