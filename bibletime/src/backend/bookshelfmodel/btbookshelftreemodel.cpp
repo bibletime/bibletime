@@ -299,21 +299,7 @@ void BtBookshelfTreeModel::setCheckable(bool checkable) {
     if (m_sourceModel == 0) return;
 
     // Notify views that flags changed for all items:
-    QModelIndexList queue;
-    queue.append(QModelIndex());
-    do {
-        QModelIndex parent(queue.takeFirst());
-        int numChildren(rowCount(parent));
-        emit dataChanged(index(0, 0, parent),
-                         index(numChildren - 1, 0, parent));
-        for (int i(0); i < numChildren; i++) {
-            QModelIndex childIndex(index(i, 0, parent));
-            if (rowCount(childIndex) > 0) {
-                queue.append(childIndex);
-            }
-        }
-    }
-    while (!queue.isEmpty());
+    resetData();
 }
 
 void BtBookshelfTreeModel::setCheckedModules(const QSet<CSwordModuleInfo*> &modules) {
@@ -326,6 +312,23 @@ void BtBookshelfTreeModel::setCheckedModules(const QSet<CSwordModuleInfo*> &modu
             setData(it.value(), Qt::Unchecked, Qt::CheckStateRole);
         }
     }
+}
+
+void BtBookshelfTreeModel::resetData() {
+    QModelIndexList queue;
+    queue.append(QModelIndex());
+    do {
+        QModelIndex parent(queue.takeFirst());
+        emit dataChanged(index(0, 0, parent),
+                         index(rowCount(parent) - 1, columnCount() - 1, parent));
+        for (int i(0); i < rowCount(parent); i++) {
+            QModelIndex childIndex(index(i, 0, parent));
+            if (rowCount(childIndex) > 0) {
+                queue.append(childIndex);
+            }
+        }
+    }
+    while (!queue.isEmpty());
 }
 
 void BtBookshelfTreeModel::addModule(CSwordModuleInfo *module, bool checked) {

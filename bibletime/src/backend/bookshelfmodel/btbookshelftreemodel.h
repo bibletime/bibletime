@@ -104,6 +104,7 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
         }
 
     protected:
+        void resetData();
         QVariant parentData(BookshelfModel::ModuleItem *item, int role) const;
         void addModule(CSwordModuleInfo *module, bool checked);
         void addModule(CSwordModuleInfo *module, QModelIndex parentIndex,
