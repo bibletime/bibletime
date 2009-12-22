@@ -32,7 +32,7 @@ class BtInstallModuleChooserDialogModel: public BtBookshelfTreeModel {
 
     private slots:
         void parentDataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight);
-        
+
     private:
         bool isMulti(CSwordModuleInfo *module) const;
         bool isMulti(const QModelIndex &index) const;
