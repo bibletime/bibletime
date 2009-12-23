@@ -15,11 +15,10 @@
 
 #include <QDialog>
 
+#include "frontend/btbookshelfwidget.h"
+
 
 class CSwordModuleInfo;
-class BtBookshelfTreeModel;
-class BtBookshelfView;
-class QAbstractItemModel;
 class QDialogButtonBox;
 class QLabel;
 
@@ -29,21 +28,22 @@ class BtModuleChooserDialog : public QDialog {
         virtual ~BtModuleChooserDialog();
 
     protected:
-        explicit BtModuleChooserDialog(QWidget *parent = 0, Qt::WindowFlags flags = 0);
+        explicit BtModuleChooserDialog(BtBookshelfWidget::WidgetTypeHint typeHint,
+                                       QWidget *parent = 0, Qt::WindowFlags flags = 0);
 
         void retranslateUi();
 
         inline QLabel *label() const { return m_captionLabel; }
-        inline BtBookshelfView *treeView() const { return m_treeView; }
+        inline BtBookshelfWidget *bookshelfWidget() const { return m_bookshelfWidget; }
         inline QDialogButtonBox *buttonBox() const { return m_buttonBox; }
 
     protected slots:
-        void moduleAbout(CSwordModuleInfo *module);
+        void slotModuleAbout(CSwordModuleInfo *module);
 
     private:
-        QLabel           *m_captionLabel;
-        BtBookshelfView  *m_treeView;
-        QDialogButtonBox *m_buttonBox;
+        QLabel            *m_captionLabel;
+        BtBookshelfWidget *m_bookshelfWidget;
+        QDialogButtonBox  *m_buttonBox;
 };
 
 #endif // BTMODULECHOOSERDIALOG_H

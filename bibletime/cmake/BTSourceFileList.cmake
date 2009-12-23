@@ -80,6 +80,7 @@ SET(bibletime_SOURCES
 	src/frontend/btaboutmoduledialog.cpp
 	src/frontend/btbookshelfdockwidget.cpp
 	src/frontend/btbookshelfview.cpp
+	src/frontend/btbookshelfwidget.cpp
 	src/frontend/btmenuview.cpp
 	src/frontend/btmodulechooserdialog.cpp
 	src/frontend/cdragdrop.cpp
@@ -233,6 +234,7 @@ SET(bibletime_MOCABLE_HEADERS
 	src/frontend/btaboutmoduledialog.h
 	src/frontend/btbookshelfdockwidget.h
 	src/frontend/btbookshelfview.h
+	src/frontend/btbookshelfwidget.h
 	src/frontend/btmenuview.h
 	src/frontend/btmodulechooserdialog.h
 	src/frontend/cdragdrop.h

@@ -13,8 +13,9 @@
 #include "frontend/bookshelfmanager/removepage/btremovepagetreemodel.h"
 
 
-BtRemovePageTreeModel::BtRemovePageTreeModel(QObject *parent)
-        : BtBookshelfTreeModel(parent) {
+BtRemovePageTreeModel::BtRemovePageTreeModel(const Grouping &grouping, QObject *parent)
+    : BtBookshelfTreeModel(grouping, parent)
+{
     setCheckable(true);
     setDefaultChecked(BtBookshelfTreeModel::UNCHECKED);
 }

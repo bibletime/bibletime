@@ -12,7 +12,9 @@
 
 #include "frontend/searchdialog/btsearchmodulechooserdialog.h"
 
+#include <QAction>
 #include <QSettings>
+#include <QToolButton>
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "backend/bookshelfmodel/btbookshelffiltermodel.h"
 #include "backend/config/cbtconfig.h"
@@ -21,49 +23,15 @@
 #include "util/tool.h"
 
 
-#define ISGROUPING(v) (v).canConvert<BtBookshelfTreeModel::Grouping>()
-#define TOGROUPING(v) (v).value<BtBookshelfTreeModel::Grouping>()
+#define HINT BtBookshelfWidget::HintSearchModuleChooserDialog
 
 BtSearchModuleChooserDialog::BtSearchModuleChooserDialog(QWidget *parent,
                                                          Qt::WindowFlags flags)
-    : BtModuleChooserDialog(parent, flags)
+    : BtModuleChooserDialog(HINT, parent, flags)
 {
-    // Setup filter model to filter out hidden modules:
-    BtBookshelfFilterModel *fm = new BtBookshelfFilterModel(this);
-    fm->setSourceModel(CPointers::backend()->model());
-
-    // Setup tree model on top of the filter model:
-    QSettings *settings(CBTConfig::getConfig());
-    settings->beginGroup("GUI");
-    {
-        /*
-          If BtSearchModuleChooserDialog does not have its own grouping, we read the grouping
-          from the main window bookshelf dock.
-        */
-        QVariant v;
-
-        if (settings->value("SearchDialog/ModuleChooserDialog/hasOwnGrouping", false).toBool()) {
-            v = settings->value("SearchDialog/ModuleChooserDialog/grouping");
-            if (ISGROUPING(v)) {
-                v = settings->value("MainWindow/Docks/Bookshelf/grouping");
-            }
-        } else {
-            v = settings->value("MainWindow/Docks/Bookshelf/grouping");
-        }
-
-        if (ISGROUPING(v)) {
-            m_bookshelfTreeModel = new BtBookshelfTreeModel(TOGROUPING(v), this);
-        } else {
-            m_bookshelfTreeModel = new BtBookshelfTreeModel(this);
-        }
-    }
-    settings->endGroup();
-    m_bookshelfTreeModel->setDefaultChecked(BtBookshelfTreeModel::UNCHECKED);
-    m_bookshelfTreeModel->setCheckable(true);
-    m_bookshelfTreeModel->setSourceModel(fm);
-
-    // Setup view:
-    treeView()->setModel(m_bookshelfTreeModel);
+    bookshelfWidget()->showHideAction()->setVisible(false);
+    bookshelfWidget()->showHideButton()->hide();
+    bookshelfWidget()->setSourceModel(CPointers::backend()->model());
 
     retranslateUi();
 }

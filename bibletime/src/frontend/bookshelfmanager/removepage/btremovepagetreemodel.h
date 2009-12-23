@@ -19,7 +19,7 @@ class BtRemovePageTreeModel: public BtBookshelfTreeModel {
         Q_OBJECT
 
     public:
-        BtRemovePageTreeModel(QObject *parent = 0);
+        BtRemovePageTreeModel(const Grouping &grouping, QObject *parent = 0);
 
         int columnCount(const QModelIndex &parent = QModelIndex()) const;
         QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;

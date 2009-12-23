@@ -14,172 +14,47 @@
 
 #include <QAction>
 #include <QActionGroup>
-#include <QApplication>
-#include <QHBoxLayout>
-#include <QKeyEvent>
-#include <QLabel>
-#include <QLineEdit>
 #include <QMenu>
-#include <QSettings>
-#include <QToolBar>
-#include <QToolButton>
-#include <QVBoxLayout>
-#include "backend/bookshelfmodel/btbookshelfmodel.h"
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
-#include "backend/bookshelfmodel/btbookshelffiltermodel.h"
-#include "backend/config/cbtconfig.h"
-#include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
-#include "frontend/btaboutmoduledialog.h"
 #include "frontend/btbookshelfview.h"
+#include "frontend/btbookshelfwidget.h"
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
 
-
 BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
         : QDockWidget(parent, f) {
-    QSettings *settings(CBTConfig::getConfig());
-
     setObjectName("BookshelfDock");
-
-    // Setup models:
-    settings->beginGroup("GUI/MainWindow/Docks/Bookshelf");
-    {
-        QVariant v(settings->value("grouping"));
-        if (v.canConvert<BtBookshelfTreeModel::Grouping>()) {
-            m_bookshelfTreeModel = new BtBookshelfTreeModel(v.value<BtBookshelfTreeModel::Grouping>(), this);
-        }
-        else {
-            m_bookshelfTreeModel = new BtBookshelfTreeModel(this);
-        }
-    }
-    settings->endGroup();
-    m_bookshelfTreeModel->setDefaultChecked(BtBookshelfTreeModel::MODULE_HIDDEN);
-    m_bookshelfTreeModel->setSourceModel(CPointers::backend()->model());
-
-    m_filterProxyModel = new BtBookshelfFilterModel(this);
-    m_filterProxyModel->setSourceModel(m_bookshelfTreeModel);
 
     // Setup actions and menus:
     initMenus();
 
     // Setup widgets:
-    m_widget = new QWidget(this);
-    QVBoxLayout *layout(new QVBoxLayout);
-    layout->setContentsMargins(0, 0, 0, 0);
-    QHBoxLayout *toolBar(new QHBoxLayout);
-    // Add a small margin between the edge of the window and the label (looks better)
-    toolBar->setContentsMargins(3, 0, 0, 0);
-    m_nameFilterLabel = new QLabel(this);
-    toolBar->addWidget(m_nameFilterLabel);
+    m_bookshelfWidget = new BtBookshelfWidget(BtBookshelfWidget::HintBookshelfDock, this);
+    m_bookshelfWidget->setSourceModel(CPointers::backend()->model());
+    m_bookshelfWidget->setItemContextMenu(m_itemContextMenu);
+    setWidget(m_bookshelfWidget);
 
-    m_nameFilterEdit = new QLineEdit(this);
-    m_nameFilterEdit->installEventFilter(this);
-    m_nameFilterLabel->setBuddy(m_nameFilterEdit);
-    toolBar->addWidget(m_nameFilterEdit);
 
-    m_groupingButton = new QToolButton(this);
-    m_groupingButton->setPopupMode(QToolButton::InstantPopup);
-    m_groupingButton->setMenu(m_groupingMenu);
-    m_groupingButton->setIcon(m_groupingMenu->icon());
-    m_groupingButton->setAutoRaise(true);
-    toolBar->addWidget(m_groupingButton);
-
-    m_showHideButton = new QToolButton(this);
-    m_showHideButton->setDefaultAction(m_showHideAction);
-    m_showHideButton->setAutoRaise(true);
-    toolBar->addWidget(m_showHideButton);
-    layout->addLayout(toolBar);
-
-    m_view = new BtBookshelfView(this);
-    m_view->setModel(m_filterProxyModel);
-    layout->addWidget(m_view);
-    m_widget->setLayout(layout);
-    setWidget(m_widget);
-
-    connect(m_nameFilterEdit, SIGNAL(textEdited(QString)),
-            m_filterProxyModel, SLOT(setNameFilterFixedString(QString)));
-    connect(m_view, SIGNAL(contextMenuActivated(QPoint)),
-            this, SLOT(showContextMenu(QPoint)));
-    connect(m_view,
-            SIGNAL(moduleContextMenuActivated(CSwordModuleInfo*, QPoint)),
-            this, SLOT(showItemContextMenu(CSwordModuleInfo*, QPoint)));
-    connect(m_view, SIGNAL(moduleActivated(CSwordModuleInfo*)),
-            this, SIGNAL(moduleOpenTriggered(CSwordModuleInfo*)));
-    connect(m_bookshelfTreeModel, SIGNAL(moduleChecked(CSwordModuleInfo*, bool)),
-            this, SLOT(moduleChecked(CSwordModuleInfo*, bool)));
+    connect(m_bookshelfWidget->treeView(), SIGNAL(moduleActivated(CSwordModuleInfo*)),
+            this,                 SIGNAL(moduleOpenTriggered(CSwordModuleInfo*)));
+    connect(m_bookshelfWidget->treeModel(), SIGNAL(moduleChecked(CSwordModuleInfo*, bool)),
+            this,                  SLOT(slotModuleChecked(CSwordModuleInfo*, bool)));
+    connect(m_bookshelfWidget->showHideAction(), SIGNAL(toggled(bool)),
+            this,                       SLOT(slotEditHiddenModules(bool)));
 
     retranslateUi();
-}
-
-bool BtBookshelfDockWidget::eventFilter(QObject *object, QEvent *event) {
-    Q_ASSERT(object == m_nameFilterEdit);
-    if (event->type() == QEvent::KeyPress) {
-        QKeyEvent *e = static_cast<QKeyEvent*>(event);
-        switch (e->key()) {
-            case Qt::Key_Up:
-            case Qt::Key_Down:
-            case Qt::Key_Enter:
-            case Qt::Key_Return:
-                QApplication::sendEvent(m_view, event);
-                return true;
-            default:
-                break;
-        }
-    }
-    return false;
 }
 
 void BtBookshelfDockWidget::initMenus() {
     namespace DU = util::directory;
     namespace RM = CResMgr::mainIndex;
 
-    m_contextMenu = new QMenu(this);
-    m_groupingMenu = new QMenu(this);
-    m_contextMenu->addMenu(m_groupingMenu);
-    m_groupingMenu->setIcon(DU::getIcon(RM::grouping::icon));
-    m_groupingActionGroup = new QActionGroup(this);
-    connect(m_groupingActionGroup, SIGNAL(triggered(QAction*)),
-            this, SLOT(groupingActionTriggered(QAction*)));
-
-    m_groupingCatLangAction = new QAction(this);
-    m_groupingCatLangAction->setIcon(DU::getIcon(RM::grouping::icon));
-    m_groupingCatLangAction->setChecked(true);
-    m_groupingActionGroup->addAction(m_groupingCatLangAction);
-    m_groupingMenu->addAction(m_groupingCatLangAction);
-
-    m_groupingCatAction = new QAction(this);
-    m_groupingCatAction->setIcon(DU::getIcon(RM::grouping::icon));
-    m_groupingActionGroup->addAction(m_groupingCatAction);
-    m_groupingMenu->addAction(m_groupingCatAction);
-
-    m_groupingLangCatAction = new QAction(this);
-    m_groupingLangCatAction->setIcon(DU::getIcon(RM::grouping::icon));
-    m_groupingActionGroup->addAction(m_groupingLangCatAction);
-    m_groupingMenu->addAction(m_groupingLangCatAction);
-
-    m_groupingLangAction = new QAction(this);
-    m_groupingLangAction->setIcon(DU::getIcon(RM::grouping::icon));
-    m_groupingActionGroup->addAction(m_groupingLangAction);
-    m_groupingMenu->addAction(m_groupingLangAction);
-
-    m_groupingNoneAction = new QAction(this);
-    m_groupingNoneAction->setIcon(DU::getIcon(RM::grouping::icon));
-    m_groupingActionGroup->addAction(m_groupingNoneAction);
-    m_groupingMenu->addAction(m_groupingNoneAction);
-
-    m_showHideAction = new QAction(this);
-    m_showHideAction->setIcon(DU::getIcon("layer-visible-on.svg"));
-    m_showHideAction->setCheckable(true);
-    connect(m_showHideAction, SIGNAL(toggled(bool)),
-            this, SLOT(showHideEnabled(bool)));
-    m_contextMenu->addAction(m_showHideAction);
-
     m_itemContextMenu = new QMenu(this);
     m_itemActionGroup = new QActionGroup(this);
     connect(m_itemActionGroup, SIGNAL(triggered(QAction*)),
-            this,              SLOT(itemActionTriggered(QAction*)));
+            this,              SLOT(slotItemActionTriggered(QAction*)));
 
     m_itemOpenAction = new QAction(this);
     m_itemActionGroup->addAction(m_itemOpenAction);
@@ -212,22 +87,13 @@ void BtBookshelfDockWidget::initMenus() {
     m_itemAboutAction->setIcon(DU::getIcon(RM::aboutModule::icon));
     m_itemActionGroup->addAction(m_itemAboutAction);
     m_itemContextMenu->addAction(m_itemAboutAction);
+
+    connect(m_itemContextMenu, SIGNAL(aboutToShow()),
+            this,              SLOT(slotPrepareItemContextMenu()));
 }
 
 void BtBookshelfDockWidget::retranslateUi() {
     setWindowTitle(tr("Bookshelf"));
-
-    m_nameFilterLabel->setText(tr("Fi&lter:"));
-    m_groupingButton->setText(tr("Grouping"));
-    m_groupingButton->setToolTip(tr("Change the grouping of items in the bookshelf."));
-
-    m_groupingMenu->setTitle(tr("Grouping"));
-    m_groupingCatLangAction->setText(tr("Category/Language"));
-    m_groupingCatAction->setText(tr("Category"));
-    m_groupingLangCatAction->setText(tr("Language/Category"));
-    m_groupingLangAction->setText(tr("Language"));
-    m_groupingNoneAction->setText(tr("No grouping"));
-    m_showHideAction->setText(tr("Show/hide works"));
 
     m_itemOpenAction->setText(tr("&Open"));
     m_itemEditMenu->setTitle(tr("&Edit"));
@@ -237,62 +103,11 @@ void BtBookshelfDockWidget::retranslateUi() {
     m_itemAboutAction->setText(tr("&About..."));
 }
 
-void BtBookshelfDockWidget::moduleChecked(CSwordModuleInfo *module, bool c) {
+void BtBookshelfDockWidget::slotModuleChecked(CSwordModuleInfo *module, bool c) {
     module->setHidden(!c);
 }
 
-void BtBookshelfDockWidget::showContextMenu(QPoint pos) {
-    m_contextMenu->popup(pos);
-}
-
-void BtBookshelfDockWidget::groupingActionTriggered(QAction *action) {
-    BtBookshelfTreeModel::Grouping g;
-    if (action == m_groupingCatAction) {
-        g.append(BtBookshelfTreeModel::GROUP_CATEGORY);
-    }
-    else if (action == m_groupingCatLangAction) {
-        g.append(BtBookshelfTreeModel::GROUP_CATEGORY);
-        g.append(BtBookshelfTreeModel::GROUP_LANGUAGE);
-    }
-    else if (action == m_groupingLangAction) {
-        g.append(BtBookshelfTreeModel::GROUP_LANGUAGE);
-    }
-    else if (action == m_groupingLangCatAction) {
-        g.append(BtBookshelfTreeModel::GROUP_LANGUAGE);
-        g.append(BtBookshelfTreeModel::GROUP_CATEGORY);
-    }
-    m_bookshelfTreeModel->setGroupingOrder(g);
-    m_view->setRootIsDecorated(!g.isEmpty());
-
-    QSettings *settings(CBTConfig::getConfig());
-    settings->beginGroup("GUI/MainWindow/Docks/Bookshelf");
-    settings->setValue("grouping", QVariant::fromValue(g));
-    settings->endGroup();
-}
-
-void BtBookshelfDockWidget::showHideEnabled(bool enable) {
-    if (enable) {
-        m_bookshelfTreeModel->setCheckable(true);
-        m_filterProxyModel->setShowHidden(true);
-    }
-    else {
-        m_filterProxyModel->setShowHidden(false);
-        m_bookshelfTreeModel->setCheckable(false);
-    }
-}
-
-void BtBookshelfDockWidget::showItemContextMenu(CSwordModuleInfo *module,
-        QPoint pos) {
-    m_itemContextMenu->setProperty("BtModule", qVariantFromValue((void*) module));
-    m_itemSearchAction->setText(tr("&Search in %1...").arg(module->name()));
-    m_itemOpenAction->setEnabled(!module->isLocked());
-    m_itemEditMenu->setEnabled(module->isWritable());
-    m_itemUnlockAction->setEnabled(module->isLocked());
-
-    m_itemContextMenu->popup(pos);
-}
-
-void BtBookshelfDockWidget::itemActionTriggered(QAction *action) {
+void BtBookshelfDockWidget::slotItemActionTriggered(QAction *action) {
     CSwordModuleInfo *module((CSwordModuleInfo*) m_itemContextMenu->property("BtModule").value<void*>());
     if (module == 0) return;
 
@@ -313,5 +128,23 @@ void BtBookshelfDockWidget::itemActionTriggered(QAction *action) {
     }
     else if (action == m_itemAboutAction) {
         emit moduleAboutTriggered(module);
+    }
+}
+
+void BtBookshelfDockWidget::slotPrepareItemContextMenu() {
+    void *v = m_itemContextMenu->property("BtModule").value<void*>();
+    CSwordModuleInfo *module = static_cast<CSwordModuleInfo*>(v);
+    m_itemSearchAction->setText(tr("&Search in %1...").arg(module->name()));
+    m_itemOpenAction->setEnabled(!module->isLocked());
+    m_itemEditMenu->setEnabled(module->isWritable());
+    m_itemUnlockAction->setEnabled(module->isLocked());
+}
+
+void BtBookshelfDockWidget::slotEditHiddenModules(bool enable) {
+    if (enable) {
+        m_bookshelfWidget->treeModel()->setCheckable(true);
+    }
+    else {
+        m_bookshelfWidget->treeModel()->setCheckable(false);
     }
 }

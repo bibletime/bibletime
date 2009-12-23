@@ -21,13 +21,6 @@
 
 using namespace BookshelfModel;
 
-BtBookshelfTreeModel::BtBookshelfTreeModel(QObject *parent)
-        : QAbstractItemModel(parent), m_sourceModel(0), m_rootItem(new RootItem),
-        m_defaultChecked(MODULE_HIDDEN), m_checkable(false) {
-    m_groupingOrder.push_back(GROUP_CATEGORY);
-    m_groupingOrder.push_back(GROUP_LANGUAGE);
-}
-
 BtBookshelfTreeModel::BtBookshelfTreeModel(const Grouping &g, QObject *parent)
         : QAbstractItemModel(parent), m_sourceModel(0), m_rootItem(new RootItem),
         m_groupingOrder(g), m_defaultChecked(MODULE_HIDDEN), m_checkable(false) {
@@ -36,6 +29,13 @@ BtBookshelfTreeModel::BtBookshelfTreeModel(const Grouping &g, QObject *parent)
 
 BtBookshelfTreeModel::~BtBookshelfTreeModel() {
     delete m_rootItem;
+}
+
+BtBookshelfTreeModel::Grouping BtBookshelfTreeModel::defaultGrouping() {
+    Grouping g;
+    g.push_back(GROUP_CATEGORY);
+    g.push_back(GROUP_LANGUAGE);
+    return g;
 }
 
 int BtBookshelfTreeModel::rowCount(const QModelIndex &parent) const {
@@ -123,6 +123,7 @@ QVariant BtBookshelfTreeModel::data(CSwordModuleInfo *module, int role) const {
 bool BtBookshelfTreeModel::setData(const QModelIndex &itemIndex,
                                    const QVariant &value,
                                    int role) {
+    Q_ASSERT(itemIndex.isValid());
     typedef QPair<Item *, QModelIndex> IP;
 
     Qt::CheckState newState;
@@ -291,6 +292,7 @@ void BtBookshelfTreeModel::setGroupingOrder(const Grouping &groupingOrder) {
             addModule(module, checked.contains(module));
         }
     }
+    emit groupingOrderChanged();
 }
 
 void BtBookshelfTreeModel::setCheckable(bool checkable) {
@@ -303,13 +305,13 @@ void BtBookshelfTreeModel::setCheckable(bool checkable) {
 }
 
 void BtBookshelfTreeModel::setCheckedModules(const QSet<CSwordModuleInfo*> &modules) {
-    typedef SourceIndexMap::const_iterator MIMCI;
+    typedef ModuleItemMap::const_iterator MIMCI;
 
-    for (MIMCI it(m_sourceIndexMap.constBegin()); it != m_sourceIndexMap.constEnd(); it++) {
+    for (MIMCI it(m_modules.constBegin()); it != m_modules.constEnd(); it++) {
         if (modules.contains(it.key())) {
-            setData(it.value(), Qt::Checked, Qt::CheckStateRole);
+            setData(getIndex(it.value()), Qt::Checked, Qt::CheckStateRole);
         } else {
-            setData(it.value(), Qt::Unchecked, Qt::CheckStateRole);
+            setData(getIndex(it.value()), Qt::Unchecked, Qt::CheckStateRole);
         }
     }
 }

@@ -21,7 +21,6 @@
 class BtInstallModuleChooserDialogModel: public BtBookshelfTreeModel {
     Q_OBJECT
     public:
-        BtInstallModuleChooserDialogModel(QObject *parent = 0);
         BtInstallModuleChooserDialogModel(const Grouping &grouping, QObject *parent = 0);
         ~BtInstallModuleChooserDialogModel();
 

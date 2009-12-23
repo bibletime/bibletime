@@ -54,9 +54,10 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
         };
         typedef QList<Group> Grouping;
 
-        BtBookshelfTreeModel(QObject *parent = 0);
         BtBookshelfTreeModel(const Grouping &grouping, QObject *parent = 0);
         virtual ~BtBookshelfTreeModel();
+
+        static Grouping defaultGrouping();
 
         virtual int rowCount(const QModelIndex &parent = QModelIndex()) const;
         virtual int columnCount(const QModelIndex &parent = QModelIndex())
@@ -139,6 +140,7 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
         void moduleRemoved(const QModelIndex &parent, int start, int end);
 
     signals:
+        void groupingOrderChanged();
         void moduleChecked(CSwordModuleInfo *module, bool checked);
 
     protected:

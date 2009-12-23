@@ -17,16 +17,10 @@
 
 
 class CSwordModuleInfo;
-class BtBookshelfView;
-class BtBookshelfTreeModel;
-class BtBookshelfFilterModel;
+class BtBookshelfWidget;
 class QAction;
 class QActionGroup;
-class QLabel;
-class QLineEdit;
 class QMenu;
-class QToolBar;
-class QToolButton;
 
 class BtBookshelfDockWidget: public QDockWidget {
         Q_OBJECT
@@ -42,41 +36,19 @@ class BtBookshelfDockWidget: public QDockWidget {
         void moduleAboutTriggered(CSwordModuleInfo *module);
 
     protected:
-        bool eventFilter(QObject *object, QEvent *event);
         void initMenus();
         void retranslateUi();
 
     protected slots:
-        void moduleChecked(CSwordModuleInfo *module, bool checked);
-        void showContextMenu(QPoint pos);
-        void groupingActionTriggered(QAction *action);
-        void showHideEnabled(bool enable);
-        void showItemContextMenu(CSwordModuleInfo *module, QPoint pos);
-        void itemActionTriggered(QAction *action);
+        void slotModuleChecked(CSwordModuleInfo *module, bool checked);
+        void slotItemActionTriggered(QAction *action);
+        void slotPrepareItemContextMenu();
+        void slotEditHiddenModules(bool enable);
 
     protected:
-        // Models:
-        BtBookshelfTreeModel   *m_bookshelfTreeModel;
-        BtBookshelfFilterModel *m_filterProxyModel;
+        BtBookshelfWidget *m_bookshelfWidget;
 
-        // Widgets:
-        QWidget         *m_widget;
-        BtBookshelfView *m_view;
-        QLabel          *m_nameFilterLabel;
-        QLineEdit       *m_nameFilterEdit;
-        QToolButton     *m_groupingButton;
-        QToolButton     *m_showHideButton;
-
-        // Popup menus:
-        QMenu *m_contextMenu;
-        QMenu *m_groupingMenu;
-        QActionGroup *m_groupingActionGroup;
-        QAction *m_groupingCatLangAction;
-        QAction *m_groupingCatAction;
-        QAction *m_groupingLangCatAction;
-        QAction *m_groupingLangAction;
-        QAction *m_groupingNoneAction;
-        QAction *m_showHideAction;
+        // Item context menu:
         QMenu *m_itemContextMenu;
         QActionGroup *m_itemActionGroup;
         QAction *m_itemOpenAction;

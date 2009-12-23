@@ -12,13 +12,17 @@
 
 #include "frontend/bookshelfmanager/removepage/btremovepage.h"
 
+#include <QAction>
 #include <QGridLayout>
 #include <QHeaderView>
 #include <QList>
 #include <QPushButton>
-#include <QTreeView>
+#include <QToolButton>
+#include "backend/bookshelfmodel/btbookshelffiltermodel.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
+#include "frontend/btbookshelfwidget.h"
+#include "frontend/btbookshelfview.h"
 #include "util/directory.h"
 #include "util/dialogutil.h"
 #include "util/cpointers.h"
@@ -40,14 +44,16 @@ BtRemovePage::BtRemovePage()
     layout->setColumnStretch(1, 1);
     layout->setRowStretch(2, 1);
 
-    m_model = new BtRemovePageTreeModel(this);
-    m_model->setSourceModel(CPointers::backend()->model());
 
-    m_view = new QTreeView(this);
-    m_view->header()->setResizeMode(QHeaderView::ResizeToContents);
-    m_view->setModel(m_model);
+    m_bookshelfWidget = new BtBookshelfWidget(BtBookshelfWidget::HintBookshelfManagerRemovePage, this);
+    m_bookshelfWidget->postFilterModel()->setShowHidden(true);
+    m_bookshelfWidget->setSourceModel(CPointers::backend()->model());
+    m_bookshelfWidget->showHideAction()->setVisible(false);
+    m_bookshelfWidget->showHideButton()->hide();
+    m_bookshelfWidget->treeView()->header()->show();
+    m_bookshelfWidget->treeView()->header()->setResizeMode(QHeaderView::ResizeToContents);
 
-    layout->addWidget(m_view, 2, 0, 1, 2);
+    layout->addWidget(m_bookshelfWidget, 2, 0, 1, 2);
 
     m_removeButton = new QPushButton(tr("Remove..."), this);
     m_removeButton->setToolTip(tr("Remove the selected works"));
@@ -57,10 +63,10 @@ BtRemovePage::BtRemovePage()
 
     connect(m_removeButton, SIGNAL(clicked()),
             this, SLOT(slotRemoveModules()));
-    connect(m_model, SIGNAL(moduleChecked(CSwordModuleInfo*, bool)),
-            this, SLOT(resetRemoveButton()));
-    connect(m_model, SIGNAL(rowsRemoved(const QModelIndex &, int, int)),
-            this, SLOT(resetRemoveButton()));
+    connect(m_bookshelfWidget->treeModel(), SIGNAL(moduleChecked(CSwordModuleInfo*,bool)),
+            this,                           SLOT(resetRemoveButton()));
+    connect(m_bookshelfWidget->treeModel(), SIGNAL(rowsRemoved(const QModelIndex&,int,int)),
+            this,                           SLOT(resetRemoveButton()));
 }
 
 QString BtRemovePage::label() {
@@ -76,15 +82,15 @@ QString BtRemovePage::header() {
 }
 
 void BtRemovePage::resetRemoveButton() {
-    m_removeButton->setEnabled(!m_model->checkedModules().empty());
+    m_removeButton->setEnabled(!m_bookshelfWidget->treeModel()->checkedModules().empty());
 }
 
 void BtRemovePage::slotRemoveModules() {
     // Do nothing when this signal fires without anything selected to remove:
-    if (m_model->checkedModules().empty()) return;
+    if (m_bookshelfWidget->treeModel()->checkedModules().empty()) return;
 
     QStringList moduleNames;
-    foreach (CSwordModuleInfo *m, m_model->checkedModules()) {
+    foreach (CSwordModuleInfo *m, m_bookshelfWidget->treeModel()->checkedModules()) {
         moduleNames.append(m->name());
     }
     const QString message = tr("You selected the following work(s): ")

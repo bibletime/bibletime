@@ -18,11 +18,13 @@
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "frontend/btaboutmoduledialog.h"
 #include "frontend/btbookshelfview.h"
+#include "frontend/btbookshelfwidget.h"
 #include "util/dialogutil.h"
 #include "util/tool.h"
 
 
-BtModuleChooserDialog::BtModuleChooserDialog(QWidget *parent, Qt::WindowFlags flags)
+BtModuleChooserDialog::BtModuleChooserDialog(BtBookshelfWidget::WidgetTypeHint typeHint,
+                                             QWidget *parent, Qt::WindowFlags flags)
     : QDialog(parent, flags)
 {
     QVBoxLayout *mainLayout = new QVBoxLayout;
@@ -30,10 +32,10 @@ BtModuleChooserDialog::BtModuleChooserDialog(QWidget *parent, Qt::WindowFlags fl
     m_captionLabel = new QLabel(this);
     mainLayout->addWidget(m_captionLabel);
 
-    m_treeView = new BtBookshelfView(this);
-    connect(m_treeView, SIGNAL(moduleActivated(CSwordModuleInfo*)),
-            this,       SLOT(moduleAbout(CSwordModuleInfo*)));
-    mainLayout->addWidget(m_treeView);
+    m_bookshelfWidget = new BtBookshelfWidget(typeHint, this);
+    connect(m_bookshelfWidget->treeView(), SIGNAL(moduleActivated(CSwordModuleInfo*)),
+            this,                          SLOT(slotModuleAbout(CSwordModuleInfo*)));
+    mainLayout->addWidget(m_bookshelfWidget);
 
     m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Cancel | QDialogButtonBox::Ok,
                                        Qt::Horizontal, this);
@@ -56,7 +58,7 @@ void BtModuleChooserDialog::retranslateUi() {
     util::prepareDialogBox(m_buttonBox);
 }
 
-void BtModuleChooserDialog::moduleAbout(CSwordModuleInfo *module) {
+void BtModuleChooserDialog::slotModuleAbout(CSwordModuleInfo *module) {
     BTAboutModuleDialog *dialog = new BTAboutModuleDialog(module, this);
     dialog->setAttribute(Qt::WA_DeleteOnClose); // Destroy dialog when closed
     dialog->show();

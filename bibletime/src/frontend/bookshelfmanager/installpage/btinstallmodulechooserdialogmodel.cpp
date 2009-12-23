@@ -27,18 +27,13 @@ bool dataChangedFired = false;
 #define MODULEPOINTERFORINDEX(i) static_cast<CSwordModuleInfo *>(\
     BtBookshelfTreeModel::data((i), BtBookshelfModel::ModulePointerRole).value<void*>())
 
-BtInstallModuleChooserDialogModel::BtInstallModuleChooserDialogModel(QObject *parent)
-    : BtBookshelfTreeModel(parent)
-{
-    connect(this, SIGNAL(dataChanged(QModelIndex,QModelIndex)),
-            this, SLOT(parentDataChanged(QModelIndex,QModelIndex)));
-}
-
 BtInstallModuleChooserDialogModel::BtInstallModuleChooserDialogModel(
         const Grouping &grouping,
         QObject *parent)
     : BtBookshelfTreeModel(grouping, parent)
 {
+    setDefaultChecked(BtBookshelfTreeModel::CHECKED);
+    setCheckable(true);
     connect(this, SIGNAL(dataChanged(QModelIndex,QModelIndex)),
             this, SLOT(parentDataChanged(QModelIndex,QModelIndex)));
 }

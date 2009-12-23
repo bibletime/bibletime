@@ -12,9 +12,12 @@
 
 #include "frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.h"
 
+#include <QAction>
 #include <QHeaderView>
 #include <QSettings>
+#include <QToolButton>
 #include "backend/bookshelfmodel/btbookshelfmodel.h"
+#include "backend/bookshelfmodel/btbookshelffiltermodel.h"
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "backend/config/cbtconfig.h"
 #include "frontend/btbookshelfview.h"
@@ -22,54 +25,20 @@
 #include "util/tool.h"
 
 
-#define ISGROUPING(v) (v).canConvert<BtBookshelfTreeModel::Grouping>()
-#define TOGROUPING(v) (v).value<BtBookshelfTreeModel::Grouping>()
+#define HINT BtBookshelfWidget::HintInstallModuleChooserDialog
 
 BtInstallModuleChooserDialog::BtInstallModuleChooserDialog(QWidget *parent,
                                                            Qt::WindowFlags flags)
-    : BtModuleChooserDialog(parent, flags), m_shown(false)
+    : BtModuleChooserDialog(HINT, parent, flags), m_shown(false)
 {
     resize(550, 340);
 
     m_bookshelfModel = new BtBookshelfModel(this);
-
-    // Setup tree model on top of the regular model:
-    /**
-      \todo Subclass bookshelf tree model to a multi-column one which would highlight
-            conflicting modules.
-    */
-    QSettings *settings(CBTConfig::getConfig());
-    settings->beginGroup("GUI");
-    {
-        /*
-          If BtInstallModuleChooserDialog does not have its own grouping, we read the grouping
-          from the main window bookshelf dock.
-        */
-        QVariant v;
-
-        if (settings->value("BookshelfManager/InstallPage/ConfirmDialog/hasOwnGrouping", false).toBool()) {
-            v = settings->value("BookshelfManager/InstallPage/ConfirmDialog/grouping");
-            if (ISGROUPING(v)) {
-                v = settings->value("MainWindow/Docks/Bookshelf/grouping");
-            }
-        } else {
-            v = settings->value("MainWindow/Docks/Bookshelf/grouping");
-        }
-
-        if (ISGROUPING(v)) {
-            m_bookshelfTreeModel = new BtInstallModuleChooserDialogModel(TOGROUPING(v), this);
-        } else {
-            m_bookshelfTreeModel = new BtInstallModuleChooserDialogModel(this);
-        }
-    }
-    settings->endGroup();
-    m_bookshelfTreeModel->setDefaultChecked(BtBookshelfTreeModel::CHECKED);
-    m_bookshelfTreeModel->setCheckable(true);
-    m_bookshelfTreeModel->setSourceModel(m_bookshelfModel);
-
-    // Setup view:
-    treeView()->setModel(m_bookshelfTreeModel);
-    treeView()->header()->show();
+    bookshelfWidget()->postFilterModel()->setShowShown(true);
+    bookshelfWidget()->setSourceModel(m_bookshelfModel);
+    bookshelfWidget()->showHideAction()->setVisible(false);
+    bookshelfWidget()->showHideButton()->hide();
+    bookshelfWidget()->treeView()->header()->show();
 
     retranslateUi();
 }
@@ -98,7 +67,7 @@ void BtInstallModuleChooserDialog::showEvent(QShowEvent *event) {
     Q_UNUSED(event);
 
     if (m_shown) return;
-    treeView()->expandAll();
-    treeView()->header()->resizeSections(QHeaderView::ResizeToContents);
+    bookshelfWidget()->treeView()->expandAll();
+    bookshelfWidget()->treeView()->header()->resizeSections(QHeaderView::ResizeToContents);
     m_shown = true;
 }

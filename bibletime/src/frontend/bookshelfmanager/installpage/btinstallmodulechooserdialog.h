@@ -34,7 +34,7 @@ class BtInstallModuleChooserDialog: public BtModuleChooserDialog {
         ~BtInstallModuleChooserDialog();
 
         inline const QSet<CSwordModuleInfo*> &checkedModules() const {
-            return m_bookshelfTreeModel->checkedModules();
+            return bookshelfWidget()->treeModel()->checkedModules();
         }
 
         void addModuleItem(CSwordModuleInfo *module, const QString &sourceName);
@@ -44,9 +44,7 @@ class BtInstallModuleChooserDialog: public BtModuleChooserDialog {
         void showEvent(QShowEvent *event);
 
     private:
-        // Models:
         BtBookshelfModel                  *m_bookshelfModel;
-        BtInstallModuleChooserDialogModel *m_bookshelfTreeModel;
 
         bool m_shown;
 };

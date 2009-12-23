@@ -21,8 +21,8 @@
 #include "frontend/bookshelfmanager/removepage/btremovepagetreemodel.h"
 
 
+class BtBookshelfWidget;
 class QPushButton;
-class QTreeView;
 
 class BtRemovePage: public BtConfigPage {
         Q_OBJECT
@@ -40,10 +40,8 @@ class BtRemovePage: public BtConfigPage {
         void resetRemoveButton();
 
     protected:
-        BtRemovePageTreeModel *m_model;
-
-        QTreeView   *m_view;
-        QPushButton *m_removeButton;
+        BtBookshelfWidget *m_bookshelfWidget;
+        QPushButton       *m_removeButton;
 };
 
 #endif

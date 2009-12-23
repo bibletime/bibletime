@@ -28,17 +28,14 @@ class BtSearchModuleChooserDialog: public BtModuleChooserDialog {
         ~BtSearchModuleChooserDialog();
 
         inline void setCheckedModules(const QSet<CSwordModuleInfo*> &modules) {
-            m_bookshelfTreeModel->setCheckedModules(modules);
+            bookshelfWidget()->treeModel()->setCheckedModules(modules);
         }
         inline const QSet<CSwordModuleInfo*> &checkedModules() const {
-            return m_bookshelfTreeModel->checkedModules();
+            return bookshelfWidget()->treeModel()->checkedModules();
         }
 
     protected:
         void retranslateUi();
-
-    private:
-        BtBookshelfTreeModel *m_bookshelfTreeModel;
 };
 
 #endif // BTSEARCHMODULECHOOSERDIALOG_H
