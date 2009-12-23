@@ -43,7 +43,6 @@
 #include "frontend/bookshelfmanager/installpage/btsourcewidget.h"
 #include "frontend/bookshelfmanager/installpage/btsourcearea.h"
 #include "frontend/bookshelfmanager/instbackend.h"
-#include "frontend/cmodulechooserdialog.h"
 #include "util/directory.h"
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
