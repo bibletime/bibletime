@@ -125,16 +125,13 @@ bool BtBookshelfFilterModel::filterAcceptsRow(int row,
     return true;
 }
 
-bool BtBookshelfFilterModel::nameFilterAcceptsRow(int row, const QModelIndex &p)
-        const
-{
-    if (!m_enabled) return true;
+bool BtBookshelfFilterModel::nameFilterAcceptsRow(int row, const QModelIndex &parent) const {
     if (m_nameFilter.isEmpty()) return true;
 
     const QAbstractItemModel *m(sourceModel());
     Q_ASSERT(m != 0);
 
-    QModelIndex itemIndex(m->index(row, m_nameFilterColumn, p));
+    QModelIndex itemIndex(m->index(row, m_nameFilterColumn, parent));
     int numChildren(m->rowCount(itemIndex));
     if (numChildren == 0) {
         QVariant data(m->data(itemIndex, m_nameFilterRole));
@@ -148,14 +145,14 @@ bool BtBookshelfFilterModel::nameFilterAcceptsRow(int row, const QModelIndex &p)
     }
 }
 
-bool BtBookshelfFilterModel::hiddenFilterAcceptsRow(int row,
-        const QModelIndex &parent) const
+bool BtBookshelfFilterModel::hiddenFilterAcceptsRow(int row, const QModelIndex &parent) const
 {
     if (m_showHidden && m_showShown) return true;
 
     typedef Qt::CheckState CS;
 
     QAbstractItemModel *m(sourceModel());
+    Q_ASSERT(m != 0);
 
     QModelIndex itemIndex(m->index(row, m_hiddenFilterColumn, parent));
     int numChildren(m->rowCount(itemIndex));
@@ -181,6 +178,7 @@ bool BtBookshelfFilterModel::categoryFilterAcceptsRow(int row,
     if (m_categoryFilter == CSwordModuleInfo::AllCategories) return true;
 
     QAbstractItemModel *m(sourceModel());
+    Q_ASSERT(m != 0);
 
     QModelIndex itemIndex(m->index(row, m_categoryFilterColumn, parent));
     int numChildren(m->rowCount(itemIndex));
