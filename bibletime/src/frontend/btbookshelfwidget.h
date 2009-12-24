@@ -32,16 +32,7 @@ class QToolButton;
 class BtBookshelfWidget: public QWidget {
     Q_OBJECT
     public:
-        enum WidgetTypeHint {
-            HintBookshelfDock,
-            HintInstallModuleChooserDialog,
-            HintSearchModuleChooserDialog,
-            HintBookshelfManagerRemovePage
-        };
-
-    public:
-        explicit BtBookshelfWidget(WidgetTypeHint typeHint, QWidget *parent = 0,
-                                   Qt::WindowFlags flags = 0);
+        explicit BtBookshelfWidget(QWidget *parent = 0, Qt::WindowFlags flags = 0);
         ~BtBookshelfWidget();
 
         void setSourceModel(QAbstractItemModel *model);
@@ -49,6 +40,9 @@ class BtBookshelfWidget: public QWidget {
         // Getters for models:
         inline BtBookshelfTreeModel *treeModel() const { return m_treeModel; }
         inline BtBookshelfFilterModel *postFilterModel() const { return m_postFilterModel; }
+
+        // Setters for models:
+        void setTreeModel(BtBookshelfTreeModel *model);
 
         // Getters for widgets:
         inline QLabel *nameFilterLabel() const { return m_nameFilterLabel; }
@@ -62,6 +56,7 @@ class BtBookshelfWidget: public QWidget {
 
         // Getters for actions:
         inline QAction *showHideAction() const { return m_showHideAction; }
+        inline QAction *groupingBookshelfAction() const { return m_groupingBookshelfAction; }
 
         // Setters for context menus:
         inline void setContextMenu(QMenu *newMenu) { m_contextMenu = newMenu; }
@@ -69,31 +64,19 @@ class BtBookshelfWidget: public QWidget {
 
         bool eventFilter(QObject *object, QEvent *event);
 
-    signals:
-        void groupingOrderChanged();
-
     protected:
         void initActions();
         void initMenus();
         void initWidgets();
         void retranslateUi();
 
-        BtBookshelfTreeModel::Grouping loadGroupingSetting();
-        void saveGroupingSetting(BtBookshelfTreeModel::Grouping grouping);
-
     protected slots:
         void slotGroupingActionTriggered(QAction *action);
-        void slotPrimaryGroupingOrderChanged();
         void slotShowHideModules(bool enable);
         void slotShowContextMenu(const QPoint &pos);
         void slotShowItemContextMenu(CSwordModuleInfo *module, const QPoint &pos);
 
     private:
-        static BtBookshelfWidget *m_primaryWidget;
-
-        // Type of widget:
-        WidgetTypeHint m_typeHint;
-
         // Models:
         QAbstractItemModel     *m_sourceModel;
         BtBookshelfTreeModel   *m_treeModel;
@@ -110,6 +93,7 @@ class BtBookshelfWidget: public QWidget {
         QMenu *m_contextMenu;
         QMenu *m_groupingMenu;
         QActionGroup *m_groupingActionGroup;
+        QAction *m_groupingBookshelfAction;
         QAction *m_groupingCatLangAction;
         QAction *m_groupingCatAction;
         QAction *m_groupingLangCatAction;
@@ -125,8 +109,6 @@ class BtBookshelfWidget: public QWidget {
         QAction *m_itemEditHtmlAction;
         QAction *m_itemUnlockAction;
         QAction *m_itemAboutAction;
-
-        bool m_ownGrouping;
 };
 
 #endif // BTBOOKSHELFWIDGET_H

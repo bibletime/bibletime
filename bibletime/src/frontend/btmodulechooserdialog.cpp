@@ -23,8 +23,7 @@
 #include "util/tool.h"
 
 
-BtModuleChooserDialog::BtModuleChooserDialog(BtBookshelfWidget::WidgetTypeHint typeHint,
-                                             QWidget *parent, Qt::WindowFlags flags)
+BtModuleChooserDialog::BtModuleChooserDialog(QWidget *parent, Qt::WindowFlags flags)
     : QDialog(parent, flags)
 {
     QVBoxLayout *mainLayout = new QVBoxLayout;
@@ -32,7 +31,7 @@ BtModuleChooserDialog::BtModuleChooserDialog(BtBookshelfWidget::WidgetTypeHint t
     m_captionLabel = new QLabel(this);
     mainLayout->addWidget(m_captionLabel);
 
-    m_bookshelfWidget = new BtBookshelfWidget(typeHint, this);
+    m_bookshelfWidget = new BtBookshelfWidget(this);
     connect(m_bookshelfWidget->treeView(), SIGNAL(moduleActivated(CSwordModuleInfo*)),
             this,                          SLOT(slotModuleAbout(CSwordModuleInfo*)));
     mainLayout->addWidget(m_bookshelfWidget);

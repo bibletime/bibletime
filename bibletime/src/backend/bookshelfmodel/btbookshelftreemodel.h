@@ -87,12 +87,16 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
 
     public slots:
         void setSourceModel(QAbstractItemModel *sourceModel);
-        void setGroupingOrder(const Grouping &groupingOrder);
+        void setGroupingOrder(const BtBookshelfTreeModel::Grouping &groupingOrder);
         void setCheckable(bool checkable);
         inline void setDefaultChecked(CheckedBehavior b) {
             m_defaultChecked = b;
         }
         void setCheckedModules(const QSet<CSwordModuleInfo*> &modules);
+
+    signals:
+        void groupingOrderChanged(BtBookshelfTreeModel::Grouping newGrouping);
+        void moduleChecked(CSwordModuleInfo *module, bool checked);
 
     protected:
         void resetData();
@@ -128,10 +132,6 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
                                const QModelIndex &bottomRight);
         void moduleInserted(const QModelIndex &parent, int start, int end);
         void moduleRemoved(const QModelIndex &parent, int start, int end);
-
-    signals:
-        void groupingOrderChanged(const Grouping &newGrouping);
-        void moduleChecked(CSwordModuleInfo *module, bool checked);
 
     protected:
         QAbstractItemModel   *m_sourceModel;

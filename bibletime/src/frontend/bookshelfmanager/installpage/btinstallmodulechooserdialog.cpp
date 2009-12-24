@@ -14,27 +14,24 @@
 
 #include <QAction>
 #include <QHeaderView>
-#include <QSettings>
 #include <QToolButton>
-#include "backend/bookshelfmodel/btbookshelfmodel.h"
 #include "backend/bookshelfmodel/btbookshelffiltermodel.h"
-#include "backend/bookshelfmodel/btbookshelftreemodel.h"
-#include "backend/config/cbtconfig.h"
+#include "frontend/btbookshelfdockwidget.h"
 #include "frontend/btbookshelfview.h"
 #include "util/cpointers.h"
 #include "util/tool.h"
 
 
-#define HINT BtBookshelfWidget::HintInstallModuleChooserDialog
-
 BtInstallModuleChooserDialog::BtInstallModuleChooserDialog(QWidget *parent,
                                                            Qt::WindowFlags flags)
-    : BtModuleChooserDialog(HINT, parent, flags), m_shown(false)
+    : BtModuleChooserDialog(parent, flags), m_shown(false)
 {
     resize(550, 340);
 
     m_bookshelfModel = new BtBookshelfModel(this);
     bookshelfWidget()->postFilterModel()->setShowShown(true);
+    const BtBookshelfDockWidget *dw(BtBookshelfDockWidget::getInstance());
+    bookshelfWidget()->setTreeModel(new BtInstallModuleChooserDialogModel(dw->groupingOrder(), this));
     bookshelfWidget()->setSourceModel(m_bookshelfModel);
     bookshelfWidget()->showHideAction()->setVisible(false);
     bookshelfWidget()->showHideButton()->hide();

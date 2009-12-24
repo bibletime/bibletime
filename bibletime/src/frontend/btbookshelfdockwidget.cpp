@@ -15,7 +15,8 @@
 #include <QAction>
 #include <QActionGroup>
 #include <QMenu>
-#include "backend/bookshelfmodel/btbookshelftreemodel.h"
+#include <QSettings>
+#include "backend/config/cbtconfig.h"
 #include "backend/managers/cswordbackend.h"
 #include "frontend/btbookshelfview.h"
 #include "frontend/btbookshelfwidget.h"
@@ -23,28 +24,49 @@
 #include "util/cresmgr.h"
 #include "util/directory.h"
 
+
+#define ISGROUPING(v) (v).canConvert<BtBookshelfTreeModel::Grouping>()
+#define TOGROUPING(v) (v).value<BtBookshelfTreeModel::Grouping>()
+
+BtBookshelfDockWidget *BtBookshelfDockWidget::m_instance = 0;
+
 BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
         : QDockWidget(parent, f) {
+    Q_ASSERT(m_instance == 0);
+    m_instance = this;
+
     setObjectName("BookshelfDock");
+
+    // Setup tree model:
+    BtBookshelfTreeModel *treeModel = new BtBookshelfTreeModel(loadGroupingSetting(), this);
 
     // Setup actions and menus:
     initMenus();
 
     // Setup widgets:
-    m_bookshelfWidget = new BtBookshelfWidget(BtBookshelfWidget::HintBookshelfDock, this);
+    m_bookshelfWidget = new BtBookshelfWidget(this);
+    m_bookshelfWidget->setTreeModel(treeModel);
     m_bookshelfWidget->setSourceModel(CPointers::backend()->model());
     m_bookshelfWidget->setItemContextMenu(m_itemContextMenu);
+    m_bookshelfWidget->groupingBookshelfAction()->setVisible(false);
+    /// \bug The correct grouping action is not selected on startup.
     setWidget(m_bookshelfWidget);
 
 
     connect(m_bookshelfWidget->treeView(), SIGNAL(moduleActivated(CSwordModuleInfo*)),
             this,                 SIGNAL(moduleOpenTriggered(CSwordModuleInfo*)));
-    connect(m_bookshelfWidget->treeModel(), SIGNAL(moduleChecked(CSwordModuleInfo*, bool)),
-            this,                  SLOT(slotModuleChecked(CSwordModuleInfo*, bool)));
+    connect(treeModel, SIGNAL(moduleChecked(CSwordModuleInfo*, bool)),
+            this,      SLOT(slotModuleChecked(CSwordModuleInfo*, bool)));
+    connect(treeModel, SIGNAL(groupingOrderChanged(BtBookshelfTreeModel::Grouping)),
+            this,      SIGNAL(groupingOrderChanged(BtBookshelfTreeModel::Grouping)));
     connect(m_bookshelfWidget->showHideAction(), SIGNAL(toggled(bool)),
             this,                       SLOT(slotEditHiddenModules(bool)));
 
     retranslateUi();
+}
+
+const BtBookshelfTreeModel::Grouping &BtBookshelfDockWidget::groupingOrder() const {
+    return m_bookshelfWidget->treeModel()->groupingOrder();
 }
 
 void BtBookshelfDockWidget::initMenus() {
@@ -101,6 +123,19 @@ void BtBookshelfDockWidget::retranslateUi() {
     m_itemEditHtmlAction->setText(tr("&HTML"));
     m_itemUnlockAction->setText(tr("&Unlock..."));
     m_itemAboutAction->setText(tr("&About..."));
+}
+
+BtBookshelfTreeModel::Grouping BtBookshelfDockWidget::loadGroupingSetting() const {
+    QSettings *settings(CBTConfig::getConfig());
+    settings->beginGroup("GUI/MainWindow/Docks/Bookshelf");
+    QVariant v = settings->value("grouping");
+    settings->endGroup();
+
+    if (ISGROUPING(v)) {
+        return TOGROUPING(v);
+    } else {
+        return BtBookshelfTreeModel::defaultGrouping();
+    }
 }
 
 void BtBookshelfDockWidget::slotModuleChecked(CSwordModuleInfo *module, bool c) {

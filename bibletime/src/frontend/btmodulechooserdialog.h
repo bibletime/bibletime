@@ -28,8 +28,7 @@ class BtModuleChooserDialog : public QDialog {
         virtual ~BtModuleChooserDialog();
 
     protected:
-        explicit BtModuleChooserDialog(BtBookshelfWidget::WidgetTypeHint typeHint,
-                                       QWidget *parent = 0, Qt::WindowFlags flags = 0);
+        explicit BtModuleChooserDialog(QWidget *parent = 0, Qt::WindowFlags flags = 0);
 
         void retranslateUi();
 

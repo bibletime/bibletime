@@ -15,18 +15,18 @@
 #include <QAction>
 #include <QGridLayout>
 #include <QHeaderView>
-#include <QList>
+#include <QMessageBox>
 #include <QPushButton>
 #include <QToolButton>
 #include "backend/bookshelfmodel/btbookshelffiltermodel.h"
-#include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
-#include "frontend/btbookshelfwidget.h"
+#include "frontend/btbookshelfdockwidget.h"
 #include "frontend/btbookshelfview.h"
-#include "util/directory.h"
-#include "util/dialogutil.h"
+#include "frontend/btbookshelfwidget.h"
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
+#include "util/dialogutil.h"
+#include "util/directory.h"
 
 // Sword includes:
 #include <swmgr.h>
@@ -45,8 +45,10 @@ BtRemovePage::BtRemovePage()
     layout->setRowStretch(2, 1);
 
 
-    m_bookshelfWidget = new BtBookshelfWidget(BtBookshelfWidget::HintBookshelfManagerRemovePage, this);
+    m_bookshelfWidget = new BtBookshelfWidget(this);
     m_bookshelfWidget->postFilterModel()->setShowHidden(true);
+    const BtBookshelfDockWidget *dw(BtBookshelfDockWidget::getInstance());
+    m_bookshelfWidget->setTreeModel(new BtRemovePageTreeModel(dw->groupingOrder(), this));
     m_bookshelfWidget->setSourceModel(CPointers::backend()->model());
     m_bookshelfWidget->showHideAction()->setVisible(false);
     m_bookshelfWidget->showHideButton()->hide();

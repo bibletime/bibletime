@@ -13,24 +13,22 @@
 #include "frontend/searchdialog/btsearchmodulechooserdialog.h"
 
 #include <QAction>
-#include <QSettings>
 #include <QToolButton>
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
-#include "backend/bookshelfmodel/btbookshelffiltermodel.h"
-#include "backend/config/cbtconfig.h"
-#include "frontend/btbookshelfview.h"
+#include "backend/managers/cswordbackend.h"
+#include "frontend/btbookshelfdockwidget.h"
 #include "util/cpointers.h"
 #include "util/tool.h"
 
 
-#define HINT BtBookshelfWidget::HintSearchModuleChooserDialog
-
 BtSearchModuleChooserDialog::BtSearchModuleChooserDialog(QWidget *parent,
                                                          Qt::WindowFlags flags)
-    : BtModuleChooserDialog(HINT, parent, flags)
+    : BtModuleChooserDialog(parent, flags)
 {
     bookshelfWidget()->showHideAction()->setVisible(false);
     bookshelfWidget()->showHideButton()->hide();
+    const BtBookshelfDockWidget *dw(BtBookshelfDockWidget::getInstance());
+    bookshelfWidget()->setTreeModel(new BtBookshelfTreeModel(dw->groupingOrder(), this));
     bookshelfWidget()->setSourceModel(CPointers::backend()->model());
 
     retranslateUi();
