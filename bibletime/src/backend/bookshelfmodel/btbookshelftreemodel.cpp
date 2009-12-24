@@ -292,7 +292,7 @@ void BtBookshelfTreeModel::setGroupingOrder(const Grouping &groupingOrder) {
             addModule(module, checked.contains(module));
         }
     }
-    emit groupingOrderChanged();
+    emit groupingOrderChanged(groupingOrder);
 }
 
 void BtBookshelfTreeModel::setCheckable(bool checkable) {

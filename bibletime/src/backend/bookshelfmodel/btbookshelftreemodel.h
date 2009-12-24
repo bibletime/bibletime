@@ -76,33 +76,23 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
         virtual bool setData(const QModelIndex &index, const QVariant &value,
                              int role);
 
-        void setSourceModel(QAbstractItemModel *sourceModel);
-        inline QAbstractItemModel *sourceModel() const {
-            return m_sourceModel;
-        }
-        void setGroupingOrder(const Grouping &groupingOrder);
-        inline Grouping groupingOrder() const {
-            return m_groupingOrder;
-        }
-        void setCheckable(bool checkable);
-        inline bool checkable() const {
-            return m_checkable;
-        }
-        inline void setDefaultChecked(CheckedBehavior b) {
-            m_defaultChecked = b;
-        }
-        inline CheckedBehavior defaultChecked() const {
-            return m_defaultChecked;
-        }
-
-        void setCheckedModules(const QSet<CSwordModuleInfo*> &modules);
+        inline QAbstractItemModel *sourceModel() const { return m_sourceModel; }
+        inline const Grouping &groupingOrder() const { return m_groupingOrder; }
+        inline bool checkable() const { return m_checkable; }
+        inline CheckedBehavior defaultChecked() const { return m_defaultChecked; }
+        inline QList<CSwordModuleInfo*> modules() const { return m_modules.keys(); }
         inline const QSet<CSwordModuleInfo*> &checkedModules() const {
             return m_checkedModulesCache;
         }
 
-        inline QList<CSwordModuleInfo*> modules() const {
-            return m_modules.keys();
+    public slots:
+        void setSourceModel(QAbstractItemModel *sourceModel);
+        void setGroupingOrder(const Grouping &groupingOrder);
+        void setCheckable(bool checkable);
+        inline void setDefaultChecked(CheckedBehavior b) {
+            m_defaultChecked = b;
         }
+        void setCheckedModules(const QSet<CSwordModuleInfo*> &modules);
 
     protected:
         void resetData();
@@ -140,7 +130,7 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
         void moduleRemoved(const QModelIndex &parent, int start, int end);
 
     signals:
-        void groupingOrderChanged();
+        void groupingOrderChanged(const Grouping &newGrouping);
         void moduleChecked(CSwordModuleInfo *module, bool checked);
 
     protected:
