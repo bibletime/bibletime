@@ -87,6 +87,8 @@ SOURCE_GROUP( "Generated Files"
     FILES ${bibletime_UIS} ${bibletime_MOC_SOURCES}
 )
 
+SOURCE_GROUP("QM Files" REGULAR_EXPRESSION ".*\\.qm")
+
 #This must come before the target definition!
 LINK_DIRECTORIES(
     ${CLUCENE_LIBRARY_DIR}
