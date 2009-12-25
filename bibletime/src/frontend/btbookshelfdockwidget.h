@@ -50,7 +50,6 @@ class BtBookshelfDockWidget: public QDockWidget {
         void slotModuleChecked(CSwordModuleInfo *module, bool checked);
         void slotItemActionTriggered(QAction *action);
         void slotPrepareItemContextMenu();
-        void slotEditHiddenModules(bool enable);
 
     protected:
         BtBookshelfWidget *m_bookshelfWidget;

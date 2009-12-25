@@ -60,7 +60,7 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
     connect(treeModel, SIGNAL(groupingOrderChanged(BtBookshelfTreeModel::Grouping)),
             this,      SIGNAL(groupingOrderChanged(BtBookshelfTreeModel::Grouping)));
     connect(m_bookshelfWidget->showHideAction(), SIGNAL(toggled(bool)),
-            this,                       SLOT(slotEditHiddenModules(bool)));
+            treeModel,                           SLOT(setCheckable(bool)));
 
     retranslateUi();
 }
@@ -173,13 +173,4 @@ void BtBookshelfDockWidget::slotPrepareItemContextMenu() {
     m_itemOpenAction->setEnabled(!module->isLocked());
     m_itemEditMenu->setEnabled(module->isWritable());
     m_itemUnlockAction->setEnabled(module->isLocked());
-}
-
-void BtBookshelfDockWidget::slotEditHiddenModules(bool enable) {
-    if (enable) {
-        m_bookshelfWidget->treeModel()->setCheckable(true);
-    }
-    else {
-        m_bookshelfWidget->treeModel()->setCheckable(false);
-    }
 }
