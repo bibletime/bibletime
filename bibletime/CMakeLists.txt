@@ -83,10 +83,6 @@ QT4_WRAP_UI(bibletime_UIS_H ${bibletime_UIS})
 # this will run moc on source files
 QT4_WRAP_CPP(bibletime_MOC_SOURCES ${bibletime_MOCABLE_HEADERS})
 
-SOURCE_GROUP( "Generated Files"
-    FILES ${bibletime_UIS} ${bibletime_MOC_SOURCES}
-)
-
 SOURCE_GROUP("QM Files" REGULAR_EXPRESSION ".*\\.qm")
 
 #This must come before the target definition!
@@ -113,6 +109,10 @@ IF (NOT CMAKE_BUILD_TYPE STREQUAL "Release")
 	# this will run moc on test source files
 	QT4_WRAP_CPP(bibletime_test_MOC_SOURCES ${bibletime_test_MOCABLE_HEADERS})
 
+SOURCE_GROUP( "Generated Files"
+    FILES ${bibletime_UIS} ${bibletime_MOC_SOURCES} ${bibletime_test_MOC_SOURCES}
+)
+
 	SET(common_bibletime_SOURCES
         ${common_bibletime_SOURCES}
         ${bibletime_test_SOURCES}
@@ -126,6 +126,11 @@ IF (MSVC)
 	    ${common_bibletime_SOURCES}
 	    "cmake/BTWinIcon.rc"
 	)
+	
+SOURCE_GROUP( "Icon Files"
+    FILES "cmake/BTWinIcon.rc" }
+)
+
 ENDIF (MSVC)
 
 #Link to QtTest only in debug builds

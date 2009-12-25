@@ -2,7 +2,7 @@ SET(bibletime_UIS
 	src/frontend/display/bthtmlfindtext.ui
 )
 
-SET(bibletime_SOURCES
+SET(bibletime_SRC
 	# Toplevel files:
 	src/bibletime.cpp
 	src/bibletime_dbus.cpp
@@ -11,11 +11,19 @@ SET(bibletime_SOURCES
 	src/bibletime_slots.cpp
 	src/bibletimeapp.cpp
 	src/main.cpp
+)
 
+SOURCE_GROUP("src" FILES ${bibletime_SRC})
+
+SET(bibletime_SRC_BACKEND
 	# Backend top level:
 	src/backend/btmoduletreeitem.cpp
 	src/backend/cswordmodulesearch.cpp
+)
 
+SOURCE_GROUP("src\\backend" FILES ${bibletime_SRC_BACKEND})
+
+SET(bibletime_SRC_BACKEND_BOOKSHELFMODEL
 	# Bookshelf model:
 	src/backend/bookshelfmodel/btbookshelffiltermodel.cpp
 	src/backend/bookshelfmodel/btbookshelfmodel.cpp
@@ -25,17 +33,29 @@ SET(bibletime_SOURCES
 	src/backend/bookshelfmodel/item.cpp
 	src/backend/bookshelfmodel/languageitem.cpp
 	src/backend/bookshelfmodel/moduleitem.cpp
+)
 
+SOURCE_GROUP("src\\backend\\bookshelfmodel" FILES ${bibletime_SRC_BACKEND_BOOKSHELFMODEL})
+
+SET(bibletime_SRC_BACKEND_CONFIG
 	# Backend config:
 	src/backend/config/cbtconfig.cpp
+)
 
+SOURCE_GROUP("src\\backend\\config" FILES ${bibletime_SRC_BACKEND_CONFIG})
+
+SET(bibletime_SRC_BACKEND_DRIVERS
 	# Backend drivers:
 	src/backend/drivers/cswordbiblemoduleinfo.cpp
 	src/backend/drivers/cswordbookmoduleinfo.cpp
 	src/backend/drivers/cswordcommentarymoduleinfo.cpp
 	src/backend/drivers/cswordlexiconmoduleinfo.cpp
 	src/backend/drivers/cswordmoduleinfo.cpp
+)
 
+SOURCE_GROUP("src\\backend\\drivers" FILES ${bibletime_SRC_BACKEND_DRIVERS})
+
+SET(bibletime_SRC_BACKEND_FILTERS
 	# Backend filters:
 	src/backend/filters/bt_gbfhtml.cpp
 	src/backend/filters/bt_osishtml.cpp
@@ -44,13 +64,21 @@ SET(bibletime_SOURCES
 	src/backend/filters/bt_thmlhtml.cpp
 	src/backend/filters/bt_thmlplain.cpp
 	src/backend/filters/osismorphsegmentation.cpp
+)
 
+SOURCE_GROUP("src\\backend\\filters" FILES ${bibletime_SRC_BACKEND_FILTERS})
+
+SET(bibletime_SRC_BACKEND_KEYS
 	# Backend keys:
 	src/backend/keys/cswordkey.cpp
 	src/backend/keys/cswordldkey.cpp
 	src/backend/keys/cswordtreekey.cpp
 	src/backend/keys/cswordversekey.cpp
+)
 
+SOURCE_GROUP("src\\backend\\keys" FILES ${bibletime_SRC_BACKEND_KEYS})
+
+SET(bibletime_SRC_BACKEND_RENDERING
 	# Backend rendering:
 	src/backend/rendering/cbookdisplay.cpp
 	src/backend/rendering/cchapterdisplay.cpp
@@ -59,14 +87,22 @@ SET(bibletime_SOURCES
 	src/backend/rendering/chtmlexportrendering.cpp
 	src/backend/rendering/cplaintextexportrendering.cpp
 	src/backend/rendering/ctextrendering.cpp
+)
 
+SOURCE_GROUP("src\\backend\\rendering" FILES ${bibletime_SRC_BACKEND_RENDERING})
+
+SET(bibletime_SRC_BACKEND_MANAGERS
 	# Backend managers:
 	src/backend/managers/btstringmgr.cpp
 	src/backend/managers/cdisplaytemplatemgr.cpp
 	src/backend/managers/clanguagemgr.cpp
 	src/backend/managers/cswordbackend.cpp
 	src/backend/managers/referencemanager.cpp
+)
 
+SOURCE_GROUP("src\\backend\\managers" FILES ${bibletime_SRC_BACKEND_MANAGERS})
+
+SET(bibletime_SRC_UTIL
 	# Utilities:
 	src/util/cpointers.cpp
 	src/util/cresmgr.cpp
@@ -74,7 +110,11 @@ SET(bibletime_SOURCES
 	src/util/directory.cpp
 	src/util/migrationutil.cpp
 	src/util/tool.cpp
+)
 
+SOURCE_GROUP("src\\util" FILES ${bibletime_SRC_UTIL})
+
+SET(bibletime_SRC_FRONTEND
 	# Frontend top level:
 	src/frontend/btaboutdialog.cpp
 	src/frontend/btaboutmoduledialog.cpp
@@ -91,17 +131,29 @@ SET(bibletime_SOURCES
 	src/frontend/cmoduleindexdialog.cpp
 	src/frontend/cprinter.cpp
 	src/frontend/crossrefrendering.cpp
+)
 
+SOURCE_GROUP("src\\frontend" FILES ${bibletime_SRC_FRONTEND})
+
+SET(bibletime_SRC_FRONTEND_BOOKSHELFMANAGER
 	# Bookshelf manager frontend:
 	src/frontend/bookshelfmanager/btconfigdialog.cpp
 	src/frontend/bookshelfmanager/btinstallmgr.cpp
 	src/frontend/bookshelfmanager/btmodulemanagerdialog.cpp
 	src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp
 	src/frontend/bookshelfmanager/instbackend.cpp
+)
 
+SOURCE_GROUP("src\\frontend\\bookshelfmanager" FILES ${bibletime_SRC_FRONTEND_BOOKSHELFMANAGER})
+
+SET(bibletime_SRC_FRONTEND_BOOKSHELFMANAGER_INDEXPAGE
 	# Bookshelf manager frontend index page:
 	src/frontend/bookshelfmanager/indexpage/btindexpage.cpp
+)
 
+SOURCE_GROUP("src\\frontend\\bookshelfmanager\\indexpage" FILES ${bibletime_SRC_FRONTEND_BOOKSHELFMANAGER_INDEXPAGE})
+
+SET(bibletime_SRC_FRONTEND_BOOKSHELFMANAGER_INSTALLPAGE
 	# Bookshelf manager frontend install page:
 	src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.cpp
 	src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialogmodel.cpp
@@ -111,18 +163,30 @@ SET(bibletime_SOURCES
 	src/frontend/bookshelfmanager/installpage/btinstallthread.cpp
 	src/frontend/bookshelfmanager/installpage/btsourcearea.cpp
 	src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp
+)
 
+SOURCE_GROUP("src\\frontend\\bookshelfmanager\\installpage" FILES ${bibletime_SRC_FRONTEND_BOOKSHELFMANAGER_INSTALLPAGE})
+
+SET(bibletime_SRC_FRONTEND_BOOKSHELFMANAGER_REMOVEPAGE
 	# Bookshelf manager frontend remove page:
 	src/frontend/bookshelfmanager/removepage/btremovepage.cpp
 	src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.cpp
+)
 
+SOURCE_GROUP("src\\frontend\\bookshelfmanager\\removepage" FILES ${bibletime_SRC_FRONTEND_BOOKSHELFMANAGER_REMOVEPAGE})
+
+SET(bibletime_SRC_FRONTEND_MAININDEX_BOOKMARKS
 	# Bookshelf/Bookmarks widget in main window:
 	src/frontend/mainindex/bookmarks/btbookmarkfolder.cpp
 	src/frontend/mainindex/bookmarks/btbookmarkitem.cpp
 	src/frontend/mainindex/bookmarks/btbookmarkitembase.cpp
 	src/frontend/mainindex/bookmarks/btbookmarkloader.cpp
 	src/frontend/mainindex/bookmarks/cbookmarkindex.cpp
+)
 
+SOURCE_GROUP("src\\frontend\\mainindex\\bookmarks" FILES ${bibletime_SRC_FRONTEND_MAININDEX_BOOKMARKS})
+
+SET(bibletime_SRC_FRONTEND_SEARCHDIALOG
 	# Search dialog:
 	src/frontend/searchdialog/btsearchmodulechooserdialog.cpp
 	src/frontend/searchdialog/btsearchoptionsarea.cpp
@@ -133,14 +197,22 @@ SET(bibletime_SOURCES
 	src/frontend/searchdialog/crangechooserdialog.cpp
 	src/frontend/searchdialog/csearchdialog.cpp
 	src/frontend/searchdialog/csearchresultview.cpp
+)
 
+SOURCE_GROUP("src\\frontend\\searchdialog" FILES ${bibletime_SRC_FRONTEND_SEARCHDIALOG})
+
+SET(bibletime_SRC_FRONTEND_SEARCHDIALOG_ANALYSIS
 	# Search analysis:
 	src/frontend/searchdialog/analysis/csearchanalysisdialog.cpp
 	src/frontend/searchdialog/analysis/csearchanalysisitem.cpp
 	src/frontend/searchdialog/analysis/csearchanalysislegenditem.cpp
 	src/frontend/searchdialog/analysis/csearchanalysisscene.cpp
 	src/frontend/searchdialog/analysis/csearchanalysisview.cpp
+)
 
+SOURCE_GROUP("src\\frontend\\searchdialog\\analysis" FILES ${bibletime_SRC_FRONTEND_SEARCHDIALOG_ANALYSIS})
+
+SET(bibletime_SRC_FRONTEND_SETTINGSDIALOG
 	# Settings dialog (configuration):
 	src/frontend/settingsdialogs/btshortcutsdialog.cpp
 	src/frontend/settingsdialogs/btshortcutseditor.cpp
@@ -151,12 +223,20 @@ SET(bibletime_SOURCES
 	src/frontend/settingsdialogs/clanguagesettings.cpp
 	src/frontend/settingsdialogs/clistwidget.cpp
 	src/frontend/settingsdialogs/cswordsettings.cpp
+)
 
+SOURCE_GROUP("src\\frontend\\settingsdialog" FILES ${bibletime_SRC_FRONTEND_SETTINGSDIALOG})
+
+SET(bibletime_SRC_FRONTEND_PROFILE
 	# Profile manager frontend:
 	src/frontend/profile/cprofile.cpp
 	src/frontend/profile/cprofilemgr.cpp
 	src/frontend/profile/cprofilewindow.cpp
+)
 
+SOURCE_GROUP("src\\frontend\\profile" FILES ${bibletime_SRC_FRONTEND_PROFILE})
+
+SET(bibletime_SRC_FRONTEND_KEYCHOOSER
 	# Frontend keychooser widgets:
 	src/frontend/keychooser/bthistory.cpp
 	src/frontend/keychooser/cbookkeychooser.cpp
@@ -166,13 +246,21 @@ SET(bibletime_SOURCES
 	src/frontend/keychooser/clexiconkeychooser.cpp
 	src/frontend/keychooser/cscrollbutton.cpp
 	src/frontend/keychooser/cscrollerwidgetset.cpp
+)
 
+SOURCE_GROUP("src\\frontend\\keychooser" FILES ${bibletime_SRC_FRONTEND_KEYCHOOSER})
+
+SET(bibletime_SRC_FRONTEND_KEYCHOOSER_VERSEKEYCHOOSER
 	# Frontent verse key chooser widgets:
 	src/frontend/keychooser/versekeychooser/btdropdownchooserbutton.cpp
 	src/frontend/keychooser/versekeychooser/btversekeymenu.cpp
 	src/frontend/keychooser/versekeychooser/cbiblekeychooser.cpp
 	src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp
+)
 
+SOURCE_GROUP("src\\frontend\\keychooser" FILES ${bibletime_SRC_FRONTEND_KEYCHOOSER_VERSEKEYCHOOSER})
+
+SET(bibletime_SRC_FRONTEND_DISPLAY
 	# Behaviour for display areas:
 	src/frontend/display/btcolorwidget.cpp
 	src/frontend/display/btfontsizewidget.cpp
@@ -184,7 +272,11 @@ SET(bibletime_SOURCES
 	src/frontend/display/cplainwritedisplay.cpp
 	src/frontend/display/creaddisplay.cpp
 	src/frontend/display/cwritedisplay.cpp
+)
 
+SOURCE_GROUP("src\\frontend\\display" FILES ${bibletime_SRC_FRONTEND_DISPLAY})
+
+SET(bibletime_SRC_FRONTEND_DISPLAYWINDOW
 	# Display windows and their widgets:
 	src/frontend/displaywindow/btactioncollection.cpp
 	src/frontend/displaywindow/btdisplaysettingsbutton.cpp
@@ -204,6 +296,8 @@ SET(bibletime_SOURCES
 	src/frontend/displaywindow/creadwindow.cpp
 	src/frontend/displaywindow/cwritewindow.cpp
 )
+
+SOURCE_GROUP("src\\frontend\\displaywindow" FILES ${bibletime_SRC_FRONTEND_DISPLAYWINDOW})
 
 # Mocable headers:
 SET(bibletime_MOCABLE_HEADERS
@@ -301,6 +395,34 @@ SET(bibletime_MOCABLE_HEADERS
 	src/frontend/settingsdialogs/cswordsettings.h
 )
 
+SET(bibletime_SOURCES
+    ${bibletime_SRC}
+    ${bibletime_SRC_BACKEND}
+    ${bibletime_SRC_BACKEND_BOOKSHELFMODEL}
+    ${bibletime_SRC_BACKEND_CONFIG}
+    ${bibletime_SRC_BACKEND_DRIVERS}
+    ${bibletime_SRC_BACKEND_FILTERS}
+    ${bibletime_SRC_BACKEND_KEYS}
+    ${bibletime_SRC_BACKEND_RENDERING}
+    ${bibletime_SRC_BACKEND_MANAGERS}
+    ${bibletime_SRC_UTIL}
+    ${bibletime_SRC_FRONTEND}
+    ${bibletime_SRC_FRONTEND_BOOKSHELFMANAGER}
+    ${bibletime_SRC_FRONTEND_BOOKSHELFMANAGER_INDEXPAGE}
+    ${bibletime_SRC_FRONTEND_BOOKSHELFMANAGER_INSTALLPAGE}
+    ${bibletime_SRC_FRONTEND_BOOKSHELFMANAGER_REMOVEPAGE}
+    ${bibletime_SRC_FRONTEND_MAININDEX_BOOKMARKS}
+    ${bibletime_SRC_FRONTEND_SEARCHDIALOG}
+    ${bibletime_SRC_FRONTEND_SEARCHDIALOG_ANALYSIS}
+    ${bibletime_SRC_FRONTEND_SETTINGSDIALOG}
+    ${bibletime_SRC_FRONTEND_PROFILE}
+    ${bibletime_SRC_FRONTEND_KEYCHOOSER}
+    ${bibletime_SRC_FRONTEND_KEYCHOOSER_VERSEKEYCHOOSER}
+    ${bibletime_SRC_FRONTEND_DISPLAY}
+    ${bibletime_SRC_FRONTEND_DISPLAYWINDOW}
+)
+
+
 # Unit tests:
 SET(bibletime_test_SOURCES
 	#main file
@@ -308,6 +430,8 @@ SET(bibletime_test_SOURCES
 	#frontend
 	src/tests/backend/config/cbtconfig_test.cpp
 )
+
+SOURCE_GROUP("src\\tests" FILES ${bibletime_test_SOURCES})
 
 SET(bibletime_test_MOCABLE_HEADERS
 	src/tests/bibletime_test.h
