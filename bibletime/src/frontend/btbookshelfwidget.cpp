@@ -117,7 +117,7 @@ void BtBookshelfWidget::initActions() {
     m_showHideAction->setIcon(DU::getIcon("layer-visible-on.svg"));
     m_showHideAction->setCheckable(true);
     connect(m_showHideAction, SIGNAL(toggled(bool)),
-            this, SLOT(slotShowHideModules(bool)));
+            m_postFilterModel, SLOT(setShowHidden(bool)));
 }
 
 void BtBookshelfWidget::initMenus() {
@@ -239,15 +239,6 @@ void BtBookshelfWidget::slotGroupingActionTriggered(QAction *action) {
     }
     m_treeModel->setGroupingOrder(grouping);
     m_treeView->setRootIsDecorated(!grouping.isEmpty());
-}
-
-void BtBookshelfWidget::slotShowHideModules(bool enable) {
-    if (enable) {
-        m_postFilterModel->setShowHidden(true);
-    }
-    else {
-        m_postFilterModel->setShowHidden(false);
-    }
 }
 
 void BtBookshelfWidget::slotShowContextMenu(const QPoint &pos) {

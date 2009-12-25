@@ -72,7 +72,6 @@ class BtBookshelfWidget: public QWidget {
 
     protected slots:
         void slotGroupingActionTriggered(QAction *action);
-        void slotShowHideModules(bool enable);
         void slotShowContextMenu(const QPoint &pos);
         void slotShowItemContextMenu(CSwordModuleInfo *module, const QPoint &pos);
 
