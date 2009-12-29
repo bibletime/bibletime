@@ -501,35 +501,23 @@
     </message>
     <message>
         <source>Grouping</source>
-        <translation type="unfinished">Seskupování</translation>
-    </message>
-    <message>
-        <source>Change the grouping of items in the bookshelf.</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Seskupování</translation>
     </message>
     <message>
         <source>Category/Language</source>
-        <translation type="unfinished">Kategorie/Jazyk</translation>
+        <translation type="obsolete">Kategorie/Jazyk</translation>
     </message>
     <message>
         <source>Category</source>
-        <translation type="unfinished">Kategorie</translation>
+        <translation type="obsolete">Kategorie</translation>
     </message>
     <message>
         <source>Language/Category</source>
-        <translation type="unfinished">Jazyk/kategorie</translation>
+        <translation type="obsolete">Jazyk/kategorie</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation type="unfinished">Jazyk</translation>
-    </message>
-    <message>
-        <source>No grouping</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show/hide works</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Jazyk</translation>
     </message>
     <message>
         <source>&amp;Open</source>
@@ -557,10 +545,6 @@
     </message>
     <message>
         <source>&amp;Search in %1...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fi&amp;lter:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -604,6 +588,49 @@
     </message>
     <message>
         <source>Unknown</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>BtBookshelfWidget</name>
+    <message>
+        <source>Fi&amp;lter:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grouping</source>
+        <translation type="unfinished">Seskupování</translation>
+    </message>
+    <message>
+        <source>Change the grouping of items in the bookshelf.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use grouping from bookshelf dock</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Category/Language</source>
+        <translation type="unfinished">Kategorie/Jazyk</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation type="unfinished">Kategorie</translation>
+    </message>
+    <message>
+        <source>Language/Category</source>
+        <translation type="unfinished">Jazyk/kategorie</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished">Jazyk</translation>
+    </message>
+    <message>
+        <source>No grouping</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show/hide works</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -724,7 +751,30 @@
     <name>BtInstallModuleChooserDialog</name>
     <message>
         <source>Install</source>
-        <translation>Instalovat</translation>
+        <translation type="obsolete">Instalovat</translation>
+    </message>
+    <message>
+        <source>Install/Update works?</source>
+        <translation type="unfinished">Instalovat/Aktualizovat díla?</translation>
+    </message>
+    <message>
+        <source>Do you really want to install these works?</source>
+        <translation type="unfinished">Opravdu si přejete nainstalovat tato díla?</translation>
+    </message>
+    <message>
+        <source>Only one version of a work can be installed at the same time. Select only one if there are items marked with red.</source>
+        <translation type="unfinished">Zároveň může být nainstalována pouze jedna verze daného díla. Vyberte pouze jednu položku, pokud jsou některé označené červeně.</translation>
+    </message>
+</context>
+<context>
+    <name>BtInstallModuleChooserDialogModel</name>
+    <message>
+        <source>Work</source>
+        <translation type="unfinished">Dílo</translation>
+    </message>
+    <message>
+        <source>Installation source</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -945,6 +995,17 @@
     </message>
 </context>
 <context>
+    <name>BtSearchModuleChooserDialog</name>
+    <message>
+        <source>Works to Search in</source>
+        <translation type="unfinished">Díla k prohledání</translation>
+    </message>
+    <message>
+        <source>Select the works which should be searched.</source>
+        <translation type="unfinished">Vyberte díla která mají být prohledána.</translation>
+    </message>
+</context>
+<context>
     <name>BtShortcutsDialog</name>
     <message>
         <source>Configure shortcuts</source>
@@ -1080,15 +1141,15 @@ shortcut</source>
     </message>
     <message>
         <source>Install/Update works?</source>
-        <translation>Instalovat/Aktualizovat díla?</translation>
+        <translation type="obsolete">Instalovat/Aktualizovat díla?</translation>
     </message>
     <message>
         <source>Do you really want to install these works?</source>
-        <translation>Opravdu si přejete nainstalovat tato díla?</translation>
+        <translation type="obsolete">Opravdu si přejete nainstalovat tato díla?</translation>
     </message>
     <message>
         <source>Only one version of a work can be installed at the same time. Select only one if there are items marked with red.</source>
-        <translation>Zároveň může být nainstalována pouze jedna verze daného díla. Vyberte pouze jednu položku, pokud jsou některé označené červeně.</translation>
+        <translation type="obsolete">Zároveň může být nainstalována pouze jedna verze daného díla. Vyberte pouze jednu položku, pokud jsou některé označené červeně.</translation>
     </message>
     <message>
         <source>Not a directory!</source>
@@ -3332,11 +3393,11 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Works to Search in</source>
-        <translation>Díla k prohledání</translation>
+        <translation type="obsolete">Díla k prohledání</translation>
     </message>
     <message>
         <source>Select the works which should be searched.</source>
-        <translation>Vyberte díla která mají být prohledána.</translation>
+        <translation type="obsolete">Vyberte díla která mají být prohledána.</translation>
     </message>
     <message>
         <source>No search scope</source>
@@ -3375,61 +3436,210 @@ Language name ppk</extracomment>
         <translation>Vyberte rozsah (knihy/kapitoly/verše k prohledání).&lt;/br&gt;Aplikovatelné na Bible a komentáře.</translation>
     </message>
     <message>
-        <source>&lt;p&gt;This help is mainly for &apos;Full syntax&apos; option. &apos;All words&apos; and &apos;Some words&apos; options have more limited syntax; &lt;a href=&apos;#wildcards&apos;&gt;wildcards&lt;/a&gt; and &lt;a href=&apos;#fields&apos;&gt;text fields&lt;/a&gt; are supported for them. Some other syntax features may give strange or wrong results with All words/Some words.&lt;/p&gt;</source>
-        <extracomment>Don&apos;t translate words inside &lt;&gt; tags! Translate &apos;All words&apos; etc. indentically to the Search dialog options.</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;p id=&apos;links&apos;&gt;&lt;A href=&apos;#allsome&apos;&gt;Which words to find&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#grouping&apos;&gt;Grouping and order&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#wildcards&apos;&gt;Wildcards (partial words)&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#fields&apos;&gt;Text fields (different parts of text)&lt;/A&gt;&lt;br/&gt;&lt;A href=&apos;#lucene&apos;&gt;Other syntax features&lt;/A&gt;&lt;br/&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;h1&gt;&lt;A name=&apos;allsome&apos;&gt;Which words to find&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Search terms are separated by spaces. &lt;strong&gt;AND&lt;/strong&gt; (all words), &lt;strong&gt;OR&lt;/strong&gt; (some words) and &lt;strong&gt;NOT&lt;/strong&gt; (not the following word) can be added between the words. If none is added explicitly OR is used automatically. &apos;&lt;strong&gt;+&lt;/strong&gt;word&apos; means the word must be in the results, &apos;&lt;strong&gt;-&lt;/strong&gt;word&apos; means it must not be in the results.&lt;/p&gt;</source>
-        <extracomment>Syntax words (AND, OR...) must not be translated.</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;jesus AND god&lt;/td&gt;&lt;td&gt;Finds verses with both &apos;Jesus&apos; and &apos;God&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;jesus OR god&lt;/td&gt;&lt;td&gt;Finds verses with &apos;Jesus&apos; or &apos;God&apos; or both&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;jesus NOT god&lt;/td&gt;&lt;td&gt;Finds verses with &apos;Jesus&apos; but with no &apos;God&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;+jesus -god&lt;/td&gt;&lt;td&gt;Finds verses with &apos;Jesus&apos; but with no &apos;God&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <extracomment>In examples words to be searched for may be translated, but syntax words (AND, OR...) must not be translated.</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;h1&gt;&lt;A name=&apos;grouping&apos;&gt;Grouping and order&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Words can be grouped with &lt;strong&gt;parenthesis&lt;/strong&gt;. Strict word order can be defined with &lt;strong&gt;quotes&lt;/strong&gt;.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;(a AND b) OR c&lt;/td&gt;&lt;td&gt;Finds verses with both &apos;a&apos; AND &apos;b&apos;, and verses with &apos;c&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;says lord&quot;&lt;/td&gt;&lt;td&gt;Finds e.g. &apos;...Isaiah says, &quot;Lord...&apos; but not &apos;...says the LORD&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;says the lord&quot;&lt;/td&gt;&lt;td&gt;Finds all verses with &apos;says the LORD&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;h1&gt;&lt;A name=&apos;wildcards&apos;&gt;Wildcards (partial words)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;&apos;&lt;strong&gt;*&lt;/strong&gt;&apos; matches any sequence of 0 or more characters, while &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; matches any single character. A wildcard can not be used in the beginning of a word.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;a*&lt;/td&gt;&lt;td&gt;All words beginning with &apos;a&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a*a&lt;/td&gt;&lt;td&gt;&apos;Assyria&apos;, &apos;aroma&apos;, &apos;abba&apos; etc.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a?&lt;/td&gt;&lt;td&gt;&apos;at&apos; and &apos;an&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a??a&lt;/td&gt;&lt;td&gt;&apos;abba&apos;, &apos;area&apos;, &apos;Asia&apos; etc.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;h1&gt;&lt;A name=&apos;fields&apos;&gt;Text fields (different parts of text)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Available text fields:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:&lt;/td&gt;&lt;td&gt;Searches headings&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:&lt;/td&gt;&lt;td&gt;Searches footnotes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;Searches Strong&apos;s numbers&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&lt;/td&gt;&lt;td&gt;Searches morphology codes&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;Examples:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:Jesus&lt;/td&gt;&lt;td&gt;Finds headings with &apos;Jesus&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:Jesus AND footnote:said&lt;/td&gt;&lt;td&gt;Finds footnotes with &apos;Jesus&apos; and &apos;said&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:G846&lt;/td&gt;&lt;td&gt;Finds verses with Strong&apos;s Greek number 846&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&quot;N-NSF&quot;&lt;/td&gt;&lt;td&gt;Finds verses with morphology code &apos;N-NSF&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&lt;h1&gt;&lt;A name=&apos;lucene&apos;&gt;Other syntax features&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;BibleTime uses the CLucene search engine. You can read more on the &lt;a href=&apos;http://lucene.apache.org/java/1_4_3/queryparsersyntax.html&apos;&gt;lucene syntax web page&lt;/a&gt; (in external browser).&lt;/p&gt;</source>
-        <translation>&lt;h1&gt;&lt;A name=&apos;lucene&apos;&gt;Další rysy syntaxe&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;BibleTime používá vyhledávací engineCLucene. Více se dočtete na &lt;a href=&apos;http://lucene.apache.org/java/1_4_3/queryparsersyntax.html&apos;&gt;webová stránka syntaxe lucene&lt;/a&gt; (v externím prohlížeči).&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;h1&gt;&lt;A name=&apos;lucene&apos;&gt;Další rysy syntaxe&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;BibleTime používá vyhledávací engineCLucene. Více se dočtete na &lt;a href=&apos;http://lucene.apache.org/java/1_4_3/queryparsersyntax.html&apos;&gt;webová stránka syntaxe lucene&lt;/a&gt; (v externím prohlížeči).&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Search Syntax Help</source>
-        <translation>Nápověda k syntaxi vyhledávání</translation>
+        <translation type="obsolete">Nápověda k syntaxi vyhledávání</translation>
     </message>
 </context>
 <context>
     <name>Search::BtSearchResultArea</name>
     <message>
         <source>Text of the selected search result item</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Search::BtSearchSyntaxHelpDialog</name>
+    <message>
+        <source>Search Syntax Help</source>
+        <translation type="unfinished">Nápověda k syntaxi vyhledávání</translation>
+    </message>
+    <message>
+        <source>This help is mainly for &apos;Full syntax&apos; option. &apos;All words&apos; and &apos;Some words&apos; options have more limited syntax; &lt;a href=&apos;#wildcards&apos;&gt;wildcards&lt;/a&gt; and &lt;a href=&apos;#fields&apos;&gt;text fields&lt;/a&gt; are supported for them. Some other syntax features may give strange or wrong results with All words/Some words.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Which words to find</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grouping and order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wildcards (partial words)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Text fields (different parts of text)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Other syntax features</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search terms are separated by spaces. &lt;strong&gt;AND&lt;/strong&gt; (all words), &lt;strong&gt;OR&lt;/strong&gt; (some words) and &lt;strong&gt;NOT&lt;/strong&gt; (not the following word) can be added between the words. If none is added explicitly OR is used automatically. &apos;&lt;strong&gt;+&lt;/strong&gt;word&apos; means the word must be in the results, &apos;&lt;strong&gt;-&lt;/strong&gt;word&apos; means it must not be in the results.</source>
+        <comment>Do not translate &quot;AND&quot;, &quot;OR&quot; or &quot;NOT&quot;.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>jesus AND god</source>
+        <comment>Do not translate &quot;AND&quot;.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Finds verses with both &apos;Jesus&apos; and &apos;God&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>jesus OR god</source>
+        <comment>Do not translate &quot;OR&quot;.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Finds verses with &apos;Jesus&apos; or &apos;God&apos; or both</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>jesus NOT god</source>
+        <comment>Do not translate &quot;NOT&quot;.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Finds verses with &apos;Jesus&apos; but with no &apos;God&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>+jesus -god</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Words can be grouped with &lt;strong&gt;parenthesis&lt;/strong&gt;. Strict word order can be defined with &lt;strong&gt;quotes&lt;/strong&gt;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(a AND b) OR c</source>
+        <comment>Do not translate &quot;AND&quot; or &quot;OR&quot;.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Finds verses with both &apos;a&apos; AND &apos;b&apos;, and verses with &apos;c&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&quot;says lord&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&quot;says the lord&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Finds all verses with &apos;says the LORD&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&apos;&lt;strong&gt;*&lt;/strong&gt;&apos; matches any sequence of 0 or more characters, while &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; matches any single character. A wildcard can not be used in the beginning of a word.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>a*</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All words beginning with &apos;a&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>a*a</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&apos;Assyria&apos;, &apos;aroma&apos;, &apos;abba&apos; etc.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>a?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&apos;at&apos; and &apos;an&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>a??a</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&apos;abba&apos;, &apos;area&apos;, &apos;Asia&apos; etc.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Available text fields:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Searches headings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Searches footnotes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Searches Strong&apos;s numbers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Searches morphology codes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Examples:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>heading:Jesus</source>
+        <comment>Do not translate &quot;heading:&quot;.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Finds headings with &apos;Jesus&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>footnote:Jesus AND footnote:said</source>
+        <comment>Do not translate &quot;footnote:&quot; or &quot;AND&quot;.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Finds footnotes with &apos;Jesus&apos; and &apos;said&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>strong:G846</source>
+        <comment>Do not translate &quot;strong:&quot;.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Finds verses with Strong&apos;s Greek number 846</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>morph:&quot;N-NSF&quot;</source>
+        <comment>Do not translate &quot;morph:&quot;.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Finds verses with morphology code &apos;N-NSF&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>BibleTime uses the CLucene search engine. You can read more on the &lt;a href=&apos;%1&apos;&gt;lucene syntax web page&lt;/a&gt; (in external browser).</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

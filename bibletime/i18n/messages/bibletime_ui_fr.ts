@@ -4,7 +4,7 @@
 <context>
     <name>BTAboutModuleDialog</name>
     <message>
-        <location filename="../../src/frontend/btaboutmoduledialog.cpp" line="24"/>
+        <location filename="../../src/frontend/btaboutmoduledialog.cpp" line="43"/>
         <source>Information About %1</source>
         <translation>Informations sur %1</translation>
     </message>
@@ -192,7 +192,7 @@
         <translation>Tutoriel d&apos;étude &amp;Biblique</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="473"/>
+        <location filename="../../src/bibletime_slots.cpp" line="474"/>
         <source>Please enter a name for the new session.</source>
         <translation>Entrez un nom pour la nouvelle session.</translation>
     </message>
@@ -327,7 +327,7 @@
         <translation>Rechercher dans la Bible par défaut</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="472"/>
+        <location filename="../../src/bibletime_slots.cpp" line="473"/>
         <source>New Session</source>
         <translation>Nouveau profil</translation>
     </message>
@@ -375,7 +375,7 @@
 <context>
     <name>BtAboutDialog</name>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="114"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="112"/>
         <source>BibleTime is an easy to use but powerful Bible study tool.</source>
         <translation>BibleTime est un outil facile à utiliser mais puissant outil d&apos;étude biblique.</translation>
     </message>
@@ -388,7 +388,7 @@
         <translation type="obsolete">Si vous désirez vous joindre à notre équipe, s&apos;il vous plaît envoyez un courriel à info@bibletime.info.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="120"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="118"/>
         <source>(c)1999-2009, The BibleTime Team</source>
         <translation>(c)1999-2009, L&apos;équipe de BibleTime</translation>
     </message>
@@ -401,7 +401,7 @@
         <translation type="obsolete">Vous pouvez donner ou distribuer le programme si vous distribuez aussi le code source correspondant.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="256"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="254"/>
         <source>The complete legally binding license is below.</source>
         <translation>La licence complète juridiquement contraignant est ci-dessous.</translation>
     </message>
@@ -410,92 +410,92 @@
         <translation type="obsolete">Contributeurs</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="99"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="97"/>
         <source>About BibleTime</source>
         <translation>À propos de BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="111"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="109"/>
         <source>&amp;BibleTime</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="116"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="114"/>
         <source>We are looking for developers and translators. If you would like to join our team, please send an email to %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="127"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="125"/>
         <source>&amp;Contributors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="137"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="135"/>
         <source>The following people contributed to BibleTime:</source>
         <translation>Les personnes suivantes ont contribué à BibleTime:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="139"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="137"/>
         <source>documentation and translation manager</source>
         <translation>documentation et gestionnaire de traduction</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="148"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="146"/>
         <source>project manager</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="162"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="160"/>
         <source>tester</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="162"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="160"/>
         <source>usability expert</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="199"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="197"/>
         <source>Some names may be missing, please email %1 if you notice errors or omissions.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="210"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="208"/>
         <source>&amp;Sword</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="216"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="214"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="222"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="220"/>
         <source>The SWORD Project: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="230"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="228"/>
         <source>&amp;Qt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="233"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="231"/>
         <source>Qt toolkit version %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="239"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="237"/>
         <source>More info...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="244"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="242"/>
         <source>&amp;License</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="250"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="248"/>
         <source>BibleTime is released under the GPL license. You can download and use (but not distribute) the program for personal, private, public or commercial purposes without restrictions. You can give away or distribute the program if you also distribute the corresponding source code.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -504,27 +504,27 @@
         <translation type="obsolete">Fondateur du projet, développeur</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="130"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="128"/>
         <source>designer</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="129"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="127"/>
         <source>developer</source>
         <translation>développeur</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="140"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="138"/>
         <source>project founder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="146"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="144"/>
         <source>packager</source>
         <translation>maintaineur</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="147"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="145"/>
         <source>creator of The Sword Project</source>
         <translation>créateur du projet Sword</translation>
     </message>
@@ -533,22 +533,22 @@
         <translation type="obsolete">Gestionnaire de projet, développeur</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="149"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="147"/>
         <source>domain sponsor</source>
         <translation>Commanditaire de domaine</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="150"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="148"/>
         <source>howto</source>
         <translation>guide</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="158"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="156"/>
         <source>artist</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="160"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="158"/>
         <source>documentation</source>
         <translation>documentation</translation>
     </message>
@@ -557,7 +557,7 @@
         <translation type="obsolete">testeur, expert en ergonomie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="173"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="171"/>
         <source>The following people translated BibleTime into their language:</source>
         <translation>Les personnes suivantes bibletime traduit dans leur langue:</translation>
     </message>
@@ -566,7 +566,7 @@
         <translation type="obsolete">Certains noms de mai à manquer, s&apos;il vous plaît bibletime-translations@lists.sourceforge.net e-mail si vous constatez des erreurs ou des omissions.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="214"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="212"/>
         <source>SWORD library version %1</source>
         <translation>SWORD version de la bibliothèque %1</translation>
     </message>
@@ -579,12 +579,12 @@
         <translation type="obsolete">Le projet SWORD</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="235"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="233"/>
         <source>This program uses Qt version %1.</source>
         <translation>Ce programme utiliise la version%1&apos;de Qt.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="237"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="235"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
         <translation>Qt est une application multi-plateforme avec Interface-Graphique, développé avec le language de programmation C++. Elle est disponible sous la licence LGPL.</translation>
     </message>
@@ -608,88 +608,78 @@
 <context>
     <name>BtBookshelfDockWidget</name>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="218"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="118"/>
         <source>Bookshelf</source>
         <translation>Bibliothèque</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="220"/>
         <source>Fi&amp;lter:</source>
-        <translation>Fi&amp;ltrer</translation>
+        <translation type="obsolete">Fi&amp;ltrer</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="221"/>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="224"/>
         <source>Grouping</source>
-        <translation>Groupement</translation>
+        <translation type="obsolete">Groupement</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="222"/>
         <source>Change the grouping of items in the bookshelf.</source>
-        <translation>Changer le groupement d&apos;éléments dans la bibliothèque.</translation>
+        <translation type="obsolete">Changer le groupement d&apos;éléments dans la bibliothèque.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="225"/>
         <source>Category/Language</source>
-        <translation>Catégorie/Langue</translation>
+        <translation type="obsolete">Catégorie/Langue</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="226"/>
         <source>Category</source>
-        <translation>Catégorie</translation>
+        <translation type="obsolete">Catégorie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="227"/>
         <source>Language/Category</source>
-        <translation>Catégorie/Langue</translation>
+        <translation type="obsolete">Catégorie/Langue</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="228"/>
         <source>Language</source>
-        <translation>Langue</translation>
+        <translation type="obsolete">Langue</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="229"/>
         <source>No grouping</source>
-        <translation>Le groupement ne</translation>
+        <translation type="obsolete">Le groupement ne</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="230"/>
         <source>Show/hide works</source>
-        <translation>Afficher/Masquer les œuvres</translation>
+        <translation type="obsolete">Afficher/Masquer les œuvres</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="232"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="120"/>
         <source>&amp;Open</source>
         <translation>&amp;Ouvert</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="233"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="121"/>
         <source>&amp;Edit</source>
         <translation>Modifi&amp;er</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="234"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="122"/>
         <source>&amp;Plain text</source>
         <translation>&amp;Texte brut</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="235"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="123"/>
         <source>&amp;HTML</source>
         <translation>&amp;HTML</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="236"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="124"/>
         <source>&amp;Unlock...</source>
         <translation>déverro&amp;uiller...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="237"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="125"/>
         <source>&amp;About...</source>
         <translation>&amp;A propos...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="287"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="172"/>
         <source>&amp;Search in %1...</source>
         <translation>Recherche en cour&amp;s%1...</translation>
     </message>
@@ -745,6 +735,60 @@
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="188"/>
         <source>Unknown</source>
         <translation>Inconnu</translation>
+    </message>
+</context>
+<context>
+    <name>BtBookshelfWidget</name>
+    <message>
+        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="180"/>
+        <source>Fi&amp;lter:</source>
+        <translation type="unfinished">Fi&amp;ltrer</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="181"/>
+        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="184"/>
+        <source>Grouping</source>
+        <translation type="unfinished">Groupement</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="182"/>
+        <source>Change the grouping of items in the bookshelf.</source>
+        <translation type="unfinished">Changer le groupement d&apos;éléments dans la bibliothèque.</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="185"/>
+        <source>Use grouping from bookshelf dock</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="186"/>
+        <source>Category/Language</source>
+        <translation type="unfinished">Catégorie/Langue</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="187"/>
+        <source>Category</source>
+        <translation type="unfinished">Catégorie</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="188"/>
+        <source>Language/Category</source>
+        <translation type="unfinished">Catégorie/Langue</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="189"/>
+        <source>Language</source>
+        <translation type="unfinished">Langue</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="190"/>
+        <source>No grouping</source>
+        <translation type="unfinished">Le groupement ne</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="191"/>
+        <source>Show/hide works</source>
+        <translation type="unfinished">Afficher/Masquer les œuvres</translation>
     </message>
 </context>
 <context>
@@ -890,45 +934,72 @@
 <context>
     <name>BtInstallModuleChooserDialog</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.cpp" line="28"/>
         <source>Install</source>
-        <translation>Installer</translation>
+        <translation type="obsolete">Installer</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.cpp" line="55"/>
+        <source>Install/Update works?</source>
+        <translation type="unfinished">Installation/MàJ de modules?</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.cpp" line="58"/>
+        <source>Do you really want to install these works?</source>
+        <translation type="unfinished">Voulez-vous vraiment installer ces modules ?</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.cpp" line="59"/>
+        <source>Only one version of a work can be installed at the same time. Select only one if there are items marked with red.</source>
+        <translation type="unfinished">Seulement une version d&apos;un module peut-être installée à la fois. Ne sélectionner qu&apos;un seul des éléments marqués en rouge.</translation>
+    </message>
+</context>
+<context>
+    <name>BtInstallModuleChooserDialogModel</name>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialogmodel.cpp" line="78"/>
+        <source>Work</source>
+        <translation type="unfinished">Module</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialogmodel.cpp" line="81"/>
+        <source>Installation source</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>BtInstallPage</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="182"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="181"/>
         <source>Install/Update</source>
         <translation>Installer/Mettre à jour</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="179"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="178"/>
         <source>Install and update works. Add remote or local sources, refresh them, select the works to be installed/updated and click Install.&lt;br/&gt;&lt;b&gt;WARNING:&lt;/b&gt; If you live in a persecuted country and don&apos;t want to risk detection don&apos;t use remote sources.</source>
         <translation>Installer et mettre à jour les modules. Ajoutez des sources locales ou distantes, actualisez-les, choisissez les modules à installer/mettre à jour et cliquez sur Installer.&lt;br/&gt;&lt;b&gt;ATTENTION:&lt;/b&gt; Si vous habitez dans un pays persecutté et ne voulez pas prendre le risque d&apos;être détectés, n&apos;utilisez pas les sources distantes.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="90"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="89"/>
         <source>Install folder:</source>
         <translation>Dossier d&apos;installation:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="95"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="94"/>
         <source>The folder where the new works will be installed</source>
         <translation>Dossier où les nouveaux modules seront installés</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="99"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="98"/>
         <source>Configure folders where works are installed and found</source>
         <translation>Selectionnez le dossier où les modules sont installés</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="115"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="114"/>
         <source>Install...</source>
         <translation>Installer...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="116"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="115"/>
         <source>Install or update selected works</source>
         <translation>Installer ou mettre à jour les modules sélectionnés</translation>
     </message>
@@ -1036,52 +1107,52 @@
 <context>
     <name>BtInstallProgressDialog</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="36"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="39"/>
         <source>Work</source>
         <translation>Module</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="36"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="39"/>
         <source>Progress</source>
         <translation>Avancement</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="51"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="52"/>
         <source>Stop</source>
         <translation>Arrêter</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="78"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="76"/>
         <source>Stop All</source>
         <translation>Arrêter tout</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="138"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="136"/>
         <source>Completed</source>
         <translation>Terminé</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="144"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="142"/>
         <source>Cancelled</source>
         <translation>Annulé</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="61"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="62"/>
         <source>Waiting for turn...</source>
         <translation>Attendre son tour...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="214"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="212"/>
         <source>Preparing install...</source>
         <translation>Préparation à l&apos;installation...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="32"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="35"/>
         <source>Install Progress</source>
         <translation>Avancement de l&apos;installation</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="135"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="133"/>
         <source>Failed</source>
         <translation>Échec</translation>
     </message>
@@ -1116,37 +1187,37 @@
 <context>
     <name>BtRemovePage</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="75"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="83"/>
         <source>Remove</source>
         <translation>Supprimer</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="67"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="75"/>
         <source>Remove installed works. Select the works and click Remove button.</source>
         <translation>Supprimer les modules installés. Sélectionnez les modules et cliquez sur le bouton Supprimer.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="90"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="98"/>
         <source>You selected the following work(s): </source>
         <translation>Vous avez choisis le(s) modules(s) suivant(s): </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="93"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="101"/>
         <source>Do you really want to remove them from your system?</source>
         <translation>Voulez-vous vraiment les supprimer de votre système?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="52"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="60"/>
         <source>Remove...</source>
         <translation>Supprimer...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="53"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="61"/>
         <source>Remove the selected works</source>
         <translation>Supprimer les modules sélectionnés</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="95"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="103"/>
         <source>Remove Works?</source>
         <translation>Supprimer les modules?</translation>
     </message>
@@ -1154,14 +1225,27 @@
 <context>
     <name>BtRemovePageTreeModel</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.cpp" line="51"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.cpp" line="52"/>
         <source>Work</source>
         <translation type="unfinished">Module</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.cpp" line="54"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.cpp" line="55"/>
         <source>Install path</source>
         <translation type="unfinished">Chemin d&apos;installation</translation>
+    </message>
+</context>
+<context>
+    <name>BtSearchModuleChooserDialog</name>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchmodulechooserdialog.cpp" line="42"/>
+        <source>Works to Search in</source>
+        <translation type="unfinished">Modules dans lesquels effectuer la recherche</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchmodulechooserdialog.cpp" line="44"/>
+        <source>Select the works which should be searched.</source>
+        <translation type="unfinished">Sélectionnez les modules qui doivent être recherchés.</translation>
     </message>
 </context>
 <context>
@@ -1245,42 +1329,42 @@ raccourci</translation>
 <context>
     <name>BtSourceArea</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="90"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="89"/>
         <source>Work</source>
         <translation>Module</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="90"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="89"/>
         <source>Description</source>
         <translation>Déscription</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="77"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="76"/>
         <source>Add...</source>
         <translation>Ajouter...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="65"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="64"/>
         <source>Refresh...</source>
         <translation>Rafraîchir...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="66"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="65"/>
         <source>Refresh the list of works from this source</source>
         <translation>Rafraîchir la liste de modules à partir de cette source</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="73"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="72"/>
         <source>Delete...</source>
         <translation>Supprimer...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="74"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="73"/>
         <source>Delete this source</source>
         <translation>Supprimer cette source</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="78"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="77"/>
         <source>Add new source</source>
         <translation>Ajouter une nouvelle source</translation>
     </message>
@@ -1334,19 +1418,16 @@ raccourci</translation>
         <translation>Local:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="337"/>
         <source>Install/Update works?</source>
-        <translation>Installation/MàJ de modules?</translation>
+        <translation type="obsolete">Installation/MàJ de modules?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="338"/>
         <source>Do you really want to install these works?</source>
-        <translation>Voulez-vous vraiment installer ces modules ?</translation>
+        <translation type="obsolete">Voulez-vous vraiment installer ces modules ?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="340"/>
         <source>Only one version of a work can be installed at the same time. Select only one if there are items marked with red.</source>
-        <translation>Seulement une version d&apos;un module peut-être installée à la fois. Ne sélectionner qu&apos;un seul des éléments marqués en rouge.</translation>
+        <translation type="obsolete">Seulement une version d&apos;un module peut-être installée à la fois. Ne sélectionner qu&apos;un seul des éléments marqués en rouge.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="266"/>
@@ -3761,34 +3842,34 @@ Language name ppk</extracomment>
         <translation>Vérifiez les permissions, etc.</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="188"/>
-        <location filename="../../src/util/tool.cpp" line="237"/>
+        <location filename="../../src/util/tool.cpp" line="192"/>
+        <location filename="../../src/util/tool.cpp" line="241"/>
         <source>Take care, this work contains cult / questionable material!</source>
         <translation>Attention, ce module contient des éléments polémiques !</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="192"/>
+        <location filename="../../src/util/tool.cpp" line="196"/>
         <source>Language</source>
         <translation>Langue</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="195"/>
+        <location filename="../../src/util/tool.cpp" line="199"/>
         <source>Unlock key</source>
         <translation>Clef de déverrouillage</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="196"/>
+        <location filename="../../src/util/tool.cpp" line="200"/>
         <source>not set</source>
         <translation>non activé</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="200"/>
-        <location filename="../../src/util/tool.cpp" line="250"/>
+        <location filename="../../src/util/tool.cpp" line="204"/>
+        <location filename="../../src/util/tool.cpp" line="254"/>
         <source>Version</source>
         <translation>Version</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="218"/>
+        <location filename="../../src/util/tool.cpp" line="222"/>
         <source>Options</source>
         <translation>Options</translation>
     </message>
@@ -3803,22 +3884,22 @@ Language name ppk</extracomment>
         <translation>Il semble que vous avez une configuration BibleTime de KDE 3 stocké ici : %1, et que vous ne l&apos;ayez pas migré vers cette version. Voulez-vous l&apos;importer ?</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="242"/>
+        <location filename="../../src/util/tool.cpp" line="246"/>
         <source>Encrypted - needs unlock key</source>
         <translation>Crypté - nécessite une clé de déverrouillage</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="258"/>
+        <location filename="../../src/util/tool.cpp" line="262"/>
         <source>Double click for more information</source>
         <translation>Double clic pour plus d&apos;informations</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="246"/>
+        <location filename="../../src/util/tool.cpp" line="250"/>
         <source>Updated version available!</source>
         <translation>Version mise-à-jour disponible!</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="254"/>
+        <location filename="../../src/util/tool.cpp" line="258"/>
         <source>Installed version</source>
         <translation>Version installée</translation>
     </message>
@@ -4059,177 +4140,163 @@ Language name ppk</extracomment>
 <context>
     <name>Search::BtSearchOptionsArea</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="98"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="99"/>
         <source>Search for:</source>
         <translation>Rechercher:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="105"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="106"/>
         <source>&amp;Search</source>
         <translation>&amp;Rechercher</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="107"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="108"/>
         <source>Start to search the text in the chosen works</source>
         <translation>Commencer à rechercher le texte dans les modules sélectionnés</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="110"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="111"/>
         <source>Ch&amp;oose...</source>
         <translation>Ch&amp;oisir...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="112"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="113"/>
         <source>Choose works for the search</source>
         <translation>Choisir des modules pour la recherche</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="115"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="116"/>
         <source>S&amp;etup...</source>
         <translation>&amp;Configuration...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="134"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="135"/>
         <source>All of the words (AND is added between the words)</source>
         <translation>Tous les mots y compris (ET est ajouté entre les mots)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="138"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="139"/>
         <source> (&lt;a href=&apos;syntax_help&apos;&gt;full syntax&lt;/a&gt;)</source>
         <translation> (&lt;a href=&apos;syntax_help&apos;&gt;syntaxe complète&lt;/a&gt;)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="149"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="150"/>
         <source>Scope:</source>
         <translation>Plage de recherche:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="170"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="171"/>
         <source>The text you want to search for</source>
         <translation>Le texte à rechercher</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="174"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="175"/>
         <source>Works:</source>
         <translation>Modules:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="268"/>
         <source>Works to Search in</source>
-        <translation>Modules dans lesquels effectuer la recherche</translation>
+        <translation type="obsolete">Modules dans lesquels effectuer la recherche</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="269"/>
         <source>Select the works which should be searched.</source>
-        <translation>Sélectionnez les modules qui doivent être recherchés.</translation>
+        <translation type="obsolete">Sélectionnez les modules qui doivent être recherchés.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="444"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="346"/>
         <source>No search scope</source>
         <translation>Pas de plage de recherche</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="129"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="130"/>
         <source>All words</source>
         <translation>Tous les mots</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="117"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="118"/>
         <source>Configure predefined scopes for search</source>
         <translation>Etablir un domaine prédéfini pour la recherche</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="131"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="132"/>
         <source>Some words</source>
         <translation>Quelques mots</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="132"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="133"/>
         <source>Free</source>
         <translation>Libérer</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="135"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="136"/>
         <source>Some of the words (OR is added between the words)</source>
         <translation>Certains des mots (OU est ajouté entre les mots)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="136"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="137"/>
         <source>Full lucene syntax</source>
         <translation>Syntaxe lucene complète</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="139"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="140"/>
         <source>Click the link to get help for search syntax</source>
         <translation>Cliquer sur le lien pour avoir l&apos;aide sur la syntaxe de recherche</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="160"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="161"/>
         <source>Choose the scope (books/chapters/verses to search in).&lt;br /&gt;Applicable for Bibles and commentaries.</source>
         <translation>Choisir le domaine (livres/chapitres/verstes dans lequelles éffectuer la recherche).&lt;br /&gt; Applicable pour les Bibles et Commentaires.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="352"/>
         <source>&lt;p&gt;This help is mainly for &apos;Full syntax&apos; option. &apos;All words&apos; and &apos;Some words&apos; options have more limited syntax; &lt;a href=&apos;#wildcards&apos;&gt;wildcards&lt;/a&gt; and &lt;a href=&apos;#fields&apos;&gt;text fields&lt;/a&gt; are supported for them. Some other syntax features may give strange or wrong results with All words/Some words.&lt;/p&gt;</source>
         <extracomment>Don&apos;t translate words inside &lt;&gt; tags! Translate &apos;All words&apos; etc. indentically to the Search dialog options.</extracomment>
-        <translation>&lt;p&gt;Cette aide est principalement pour l&apos;option de &apos;Syntaxe complète&apos;. Les options  &apos;Tous les mots&apos; et  &apos;Certains mots&apos; ont des syntaxes plus limitées ; &lt;a href=&apos;#wildcards&apos;&gt;wildcards&lt;/a&gt; et &lt;a href=&apos;#fields&apos;&gt;text fields&lt;/a&gt; sont supportés. D&apos;autres fonctionnalités de syntaxes peuvent donner des résultats étranges ou erronés avec les options &apos;Tous les mots&apos;/&apos;Certains mots&apos;.&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;p&gt;Cette aide est principalement pour l&apos;option de &apos;Syntaxe complète&apos;. Les options  &apos;Tous les mots&apos; et  &apos;Certains mots&apos; ont des syntaxes plus limitées ; &lt;a href=&apos;#wildcards&apos;&gt;wildcards&lt;/a&gt; et &lt;a href=&apos;#fields&apos;&gt;text fields&lt;/a&gt; sont supportés. D&apos;autres fonctionnalités de syntaxes peuvent donner des résultats étranges ou erronés avec les options &apos;Tous les mots&apos;/&apos;Certains mots&apos;.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="357"/>
         <source>&lt;p id=&apos;links&apos;&gt;&lt;A href=&apos;#allsome&apos;&gt;Which words to find&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#grouping&apos;&gt;Grouping and order&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#wildcards&apos;&gt;Wildcards (partial words)&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#fields&apos;&gt;Text fields (different parts of text)&lt;/A&gt;&lt;br/&gt;&lt;A href=&apos;#lucene&apos;&gt;Other syntax features&lt;/A&gt;&lt;br/&gt;&lt;/p&gt;</source>
-        <translation>&lt;p id=&apos;links&apos;&gt;&lt;A href=&apos;#allsome&apos;&gt;Quels mots chercher&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#grouping&apos;&gt;Groupage et ordre&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#wildcards&apos;&gt;Caractères génériques (mots partiels)&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#fields&apos;&gt;Champs textuels (différentes parties du texte)&lt;/A&gt;&lt;br/&gt;&lt;A href=&apos;#lucene&apos;&gt;Autres fonctions syntaxielles&lt;/A&gt;&lt;br/&gt;&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;p id=&apos;links&apos;&gt;&lt;A href=&apos;#allsome&apos;&gt;Quels mots chercher&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#grouping&apos;&gt;Groupage et ordre&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#wildcards&apos;&gt;Caractères génériques (mots partiels)&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#fields&apos;&gt;Champs textuels (différentes parties du texte)&lt;/A&gt;&lt;br/&gt;&lt;A href=&apos;#lucene&apos;&gt;Autres fonctions syntaxielles&lt;/A&gt;&lt;br/&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="367"/>
         <source>&lt;h1&gt;&lt;A name=&apos;allsome&apos;&gt;Which words to find&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Search terms are separated by spaces. &lt;strong&gt;AND&lt;/strong&gt; (all words), &lt;strong&gt;OR&lt;/strong&gt; (some words) and &lt;strong&gt;NOT&lt;/strong&gt; (not the following word) can be added between the words. If none is added explicitly OR is used automatically. &apos;&lt;strong&gt;+&lt;/strong&gt;word&apos; means the word must be in the results, &apos;&lt;strong&gt;-&lt;/strong&gt;word&apos; means it must not be in the results.&lt;/p&gt;</source>
         <extracomment>Syntax words (AND, OR...) must not be translated.</extracomment>
-        <translation>&lt;h1&gt;&lt;A name=&apos;allsome&apos;&gt;Quels mots chercher&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Séparer les mots clés par des espaces. &lt;strong&gt;AND&lt;/strong&gt; (Tous les mots), &lt;strong&gt;OR&lt;/strong&gt; (des mots) et &lt;strong&gt;NOT&lt;/strong&gt; (pas les mots suivants) peuvent être ajouter entre les mots. Si aucun n&apos;est écrit OR est utilisé automatiquement. &apos;&lt;strong&gt;+&lt;/strong&gt;mot&apos; veut dire que le mot doit être dans les résultats, &apos;&lt;strong&gt;-&lt;/strong&gt;mot&apos; veut dire qu&apos;il nedoit pas être dans les résultats.&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;h1&gt;&lt;A name=&apos;allsome&apos;&gt;Quels mots chercher&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Séparer les mots clés par des espaces. &lt;strong&gt;AND&lt;/strong&gt; (Tous les mots), &lt;strong&gt;OR&lt;/strong&gt; (des mots) et &lt;strong&gt;NOT&lt;/strong&gt; (pas les mots suivants) peuvent être ajouter entre les mots. Si aucun n&apos;est écrit OR est utilisé automatiquement. &apos;&lt;strong&gt;+&lt;/strong&gt;mot&apos; veut dire que le mot doit être dans les résultats, &apos;&lt;strong&gt;-&lt;/strong&gt;mot&apos; veut dire qu&apos;il nedoit pas être dans les résultats.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="372"/>
         <source>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;jesus AND god&lt;/td&gt;&lt;td&gt;Finds verses with both &apos;Jesus&apos; and &apos;God&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;jesus OR god&lt;/td&gt;&lt;td&gt;Finds verses with &apos;Jesus&apos; or &apos;God&apos; or both&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;jesus NOT god&lt;/td&gt;&lt;td&gt;Finds verses with &apos;Jesus&apos; but with no &apos;God&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;+jesus -god&lt;/td&gt;&lt;td&gt;Finds verses with &apos;Jesus&apos; but with no &apos;God&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
         <extracomment>In examples words to be searched for may be translated, but syntax words (AND, OR...) must not be translated.</extracomment>
-        <translation>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Jésus AND Dieu&lt;/td&gt;&lt;td&gt;Trouve les versets contenant à la fois &apos;Jésus&apos; et &apos;Dieu&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Jésus OR Dieu&lt;/td&gt;&lt;td&gt;Trouve les versets contenant &apos;Jésus&apos; ou &apos;Dieu&apos; ou les deux&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Jésus NOT Dieu&lt;/td&gt;&lt;td&gt;Trouve les versets contenant &apos;Jésus&apos; mais pas &apos;Dieu&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;+Jésus -Dieu&lt;/td&gt;&lt;td&gt;Trouve les versets contenant &apos;Jésus&apos; mais pas &apos;Dieu&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Jésus AND Dieu&lt;/td&gt;&lt;td&gt;Trouve les versets contenant à la fois &apos;Jésus&apos; et &apos;Dieu&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Jésus OR Dieu&lt;/td&gt;&lt;td&gt;Trouve les versets contenant &apos;Jésus&apos; ou &apos;Dieu&apos; ou les deux&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Jésus NOT Dieu&lt;/td&gt;&lt;td&gt;Trouve les versets contenant &apos;Jésus&apos; mais pas &apos;Dieu&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;+Jésus -Dieu&lt;/td&gt;&lt;td&gt;Trouve les versets contenant &apos;Jésus&apos; mais pas &apos;Dieu&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="383"/>
         <source>&lt;h1&gt;&lt;A name=&apos;grouping&apos;&gt;Grouping and order&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Words can be grouped with &lt;strong&gt;parenthesis&lt;/strong&gt;. Strict word order can be defined with &lt;strong&gt;quotes&lt;/strong&gt;.&lt;/p&gt;</source>
-        <translation>&lt;h1&gt;&lt;A name=&apos;grouping&apos;&gt;Groupage et ordre&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Les mots peuvent être groupés avec des &lt;strong&gt;parenthèses&lt;/strong&gt;. Un groupe de mot ordonné peut être défini avec des &lt;strong&gt;guillemets&lt;/strong&gt;.&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;h1&gt;&lt;A name=&apos;grouping&apos;&gt;Groupage et ordre&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Les mots peuvent être groupés avec des &lt;strong&gt;parenthèses&lt;/strong&gt;. Un groupe de mot ordonné peut être défini avec des &lt;strong&gt;guillemets&lt;/strong&gt;.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="388"/>
         <source>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;(a AND b) OR c&lt;/td&gt;&lt;td&gt;Finds verses with both &apos;a&apos; AND &apos;b&apos;, and verses with &apos;c&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;says lord&quot;&lt;/td&gt;&lt;td&gt;Finds e.g. &apos;...Isaiah says, &quot;Lord...&apos; but not &apos;...says the LORD&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;says the lord&quot;&lt;/td&gt;&lt;td&gt;Finds all verses with &apos;says the LORD&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;(a AND b) OR c&lt;/td&gt;&lt;td&gt;Trouve les versets contenant à la fois &apos;a&apos; et &apos;b&apos;, et les versets contenant &apos;c&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;dit seigneur&quot;&lt;/td&gt;&lt;td&gt;trouve par exemple. &apos;...Isaiah dit, &quot;Seigneur...&apos; mais pas &apos;...Dit le Seigneur&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;Dit le Seigneur&quot;&lt;/td&gt;&lt;tr&gt; Trouve tous les versets contenant &apos;dit le Seigneur&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;(a AND b) OR c&lt;/td&gt;&lt;td&gt;Trouve les versets contenant à la fois &apos;a&apos; et &apos;b&apos;, et les versets contenant &apos;c&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;dit seigneur&quot;&lt;/td&gt;&lt;td&gt;trouve par exemple. &apos;...Isaiah dit, &quot;Seigneur...&apos; mais pas &apos;...Dit le Seigneur&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;Dit le Seigneur&quot;&lt;/td&gt;&lt;tr&gt; Trouve tous les versets contenant &apos;dit le Seigneur&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="397"/>
         <source>&lt;h1&gt;&lt;A name=&apos;wildcards&apos;&gt;Wildcards (partial words)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;&apos;&lt;strong&gt;*&lt;/strong&gt;&apos; matches any sequence of 0 or more characters, while &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; matches any single character. A wildcard can not be used in the beginning of a word.&lt;/p&gt;</source>
-        <translation>&lt;h1&gt;&lt;A name=&apos;wildcards&apos;&gt;Caractères génériques (mots partiels)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;&apos;&lt;strong&gt;*&lt;/strong&gt;&apos; remplace n&apos;importe quelle séquence de 0 ou plus caractères, alors que &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; n&apos;importe quel caractère. Un caractère générique ne peut être utilisé au début d&apos;un mot.&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;h1&gt;&lt;A name=&apos;wildcards&apos;&gt;Caractères génériques (mots partiels)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;&apos;&lt;strong&gt;*&lt;/strong&gt;&apos; remplace n&apos;importe quelle séquence de 0 ou plus caractères, alors que &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; n&apos;importe quel caractère. Un caractère générique ne peut être utilisé au début d&apos;un mot.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="401"/>
         <source>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;a*&lt;/td&gt;&lt;td&gt;All words beginning with &apos;a&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a*a&lt;/td&gt;&lt;td&gt;&apos;Assyria&apos;, &apos;aroma&apos;, &apos;abba&apos; etc.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a?&lt;/td&gt;&lt;td&gt;&apos;at&apos; and &apos;an&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a??a&lt;/td&gt;&lt;td&gt;&apos;abba&apos;, &apos;area&apos;, &apos;Asia&apos; etc.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;a*&lt;/td&gt;&lt;td&gt;Tout mot commençant par &apos;a&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a*a&lt;/td&gt;&lt;td&gt;&apos;Assyria&apos;, &apos;aroma&apos;, &apos;abba&apos; etc.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a?&lt;/td&gt;&lt;td&gt;&apos;at&apos; et &apos;an&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a??a&lt;/td&gt;&lt;td&gt;&apos;abba&apos;, &apos;area&apos;, &apos;Asia&apos; etc.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;a*&lt;/td&gt;&lt;td&gt;Tout mot commençant par &apos;a&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a*a&lt;/td&gt;&lt;td&gt;&apos;Assyria&apos;, &apos;aroma&apos;, &apos;abba&apos; etc.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a?&lt;/td&gt;&lt;td&gt;&apos;at&apos; et &apos;an&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a??a&lt;/td&gt;&lt;td&gt;&apos;abba&apos;, &apos;area&apos;, &apos;Asia&apos; etc.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="412"/>
         <source>&lt;h1&gt;&lt;A name=&apos;fields&apos;&gt;Text fields (different parts of text)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Available text fields:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:&lt;/td&gt;&lt;td&gt;Searches headings&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:&lt;/td&gt;&lt;td&gt;Searches footnotes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;Searches Strong&apos;s numbers&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&lt;/td&gt;&lt;td&gt;Searches morphology codes&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation>&lt;h1&gt;&lt;A name=&apos;fields&apos;&gt;Champs de text (différentes parties du texte)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Champs disponibles :&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:&lt;/td&gt;&lt;td&gt;Cherche dans les en-têtes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:&lt;/td&gt;&lt;td&gt;Cherche dans les notes de bas de page&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;Cherche un nombre de Strong&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&lt;/td&gt;&lt;td&gt;Cherche les codes morphologiques&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;h1&gt;&lt;A name=&apos;fields&apos;&gt;Champs de text (différentes parties du texte)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Champs disponibles :&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:&lt;/td&gt;&lt;td&gt;Cherche dans les en-têtes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:&lt;/td&gt;&lt;td&gt;Cherche dans les notes de bas de page&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;Cherche un nombre de Strong&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&lt;/td&gt;&lt;td&gt;Cherche les codes morphologiques&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="420"/>
         <source>&lt;p&gt;Examples:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:Jesus&lt;/td&gt;&lt;td&gt;Finds headings with &apos;Jesus&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:Jesus AND footnote:said&lt;/td&gt;&lt;td&gt;Finds footnotes with &apos;Jesus&apos; and &apos;said&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:G846&lt;/td&gt;&lt;td&gt;Finds verses with Strong&apos;s Greek number 846&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&quot;N-NSF&quot;&lt;/td&gt;&lt;td&gt;Finds verses with morphology code &apos;N-NSF&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Exemples:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:Jésus&lt;/td&gt;&lt;td&gt;Cherche les en-têtes contenant &apos;Jésus&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:Jésus AND footnote:dit&lt;/td&gt;&lt;td&gt;Trouve les notes de bas de page contenant &apos;Jésus&apos; et &apos;dit&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:G846&lt;/td&gt;&lt;td&gt;Trouve les versets avec le nombre grec de Strong 846&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&quot;N-NSF&quot;&lt;/td&gt;&lt;td&gt;Trouve les versets avec le code morphologique &apos;N-NSF&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;p&gt;Exemples:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:Jésus&lt;/td&gt;&lt;td&gt;Cherche les en-têtes contenant &apos;Jésus&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:Jésus AND footnote:dit&lt;/td&gt;&lt;td&gt;Trouve les notes de bas de page contenant &apos;Jésus&apos; et &apos;dit&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:G846&lt;/td&gt;&lt;td&gt;Trouve les versets avec le nombre grec de Strong 846&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&quot;N-NSF&quot;&lt;/td&gt;&lt;td&gt;Trouve les versets avec le code morphologique &apos;N-NSF&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="428"/>
         <source>&lt;h1&gt;&lt;A name=&apos;lucene&apos;&gt;Other syntax features&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;BibleTime uses the CLucene search engine. You can read more on the &lt;a href=&apos;http://lucene.apache.org/java/1_4_3/queryparsersyntax.html&apos;&gt;lucene syntax web page&lt;/a&gt; (in external browser).&lt;/p&gt;</source>
-        <translation>&lt;h1&gt;&lt;A name=&apos;lucene&apos;&gt;Autres fonctions syntaxielles&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;BibleTime utilise le moteur de recherche CLucene. Vous pouvez lire plus à ce sujet sur &lt;a href=&apos;http://lucene.apache.org/java/1_4_3/queryparsersyntax.html&apos;&gt;lucene syntax web page (en anglais)&lt;/a&gt; (dans un navigateur externe).&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;h1&gt;&lt;A name=&apos;lucene&apos;&gt;Autres fonctions syntaxielles&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;BibleTime utilise le moteur de recherche CLucene. Vous pouvez lire plus à ce sujet sur &lt;a href=&apos;http://lucene.apache.org/java/1_4_3/queryparsersyntax.html&apos;&gt;lucene syntax web page (en anglais)&lt;/a&gt; (dans un navigateur externe).&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="436"/>
         <source>Search Syntax Help</source>
-        <translation>Aide sur la syntaxe de recherche</translation>
+        <translation type="obsolete">Aide sur la syntaxe de recherche</translation>
     </message>
 </context>
 <context>
@@ -4238,6 +4305,249 @@ Language name ppk</extracomment>
         <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="87"/>
         <source>Text of the selected search result item</source>
         <translation>Texte de l&apos;élément sélectionné parmis les résultats de recherche</translation>
+    </message>
+</context>
+<context>
+    <name>Search::BtSearchSyntaxHelpDialog</name>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="52"/>
+        <source>Search Syntax Help</source>
+        <translation type="unfinished">Aide sur la syntaxe de recherche</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="99"/>
+        <source>This help is mainly for &apos;Full syntax&apos; option. &apos;All words&apos; and &apos;Some words&apos; options have more limited syntax; &lt;a href=&apos;#wildcards&apos;&gt;wildcards&lt;/a&gt; and &lt;a href=&apos;#fields&apos;&gt;text fields&lt;/a&gt; are supported for them. Some other syntax features may give strange or wrong results with All words/Some words.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="104"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="115"/>
+        <source>Which words to find</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="106"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="141"/>
+        <source>Grouping and order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="108"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="159"/>
+        <source>Wildcards (partial words)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="110"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="182"/>
+        <source>Text fields (different parts of text)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="112"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="213"/>
+        <source>Other syntax features</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="117"/>
+        <source>Search terms are separated by spaces. &lt;strong&gt;AND&lt;/strong&gt; (all words), &lt;strong&gt;OR&lt;/strong&gt; (some words) and &lt;strong&gt;NOT&lt;/strong&gt; (not the following word) can be added between the words. If none is added explicitly OR is used automatically. &apos;&lt;strong&gt;+&lt;/strong&gt;word&apos; means the word must be in the results, &apos;&lt;strong&gt;-&lt;/strong&gt;word&apos; means it must not be in the results.</source>
+        <comment>Do not translate &quot;AND&quot;, &quot;OR&quot; or &quot;NOT&quot;.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="124"/>
+        <source>jesus AND god</source>
+        <comment>Do not translate &quot;AND&quot;.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="126"/>
+        <source>Finds verses with both &apos;Jesus&apos; and &apos;God&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="128"/>
+        <source>jesus OR god</source>
+        <comment>Do not translate &quot;OR&quot;.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="130"/>
+        <source>Finds verses with &apos;Jesus&apos; or &apos;God&apos; or both</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="132"/>
+        <source>jesus NOT god</source>
+        <comment>Do not translate &quot;NOT&quot;.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="134"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="138"/>
+        <source>Finds verses with &apos;Jesus&apos; but with no &apos;God&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="136"/>
+        <source>+jesus -god</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="143"/>
+        <source>Words can be grouped with &lt;strong&gt;parenthesis&lt;/strong&gt;. Strict word order can be defined with &lt;strong&gt;quotes&lt;/strong&gt;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="146"/>
+        <source>(a AND b) OR c</source>
+        <comment>Do not translate &quot;AND&quot; or &quot;OR&quot;.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="148"/>
+        <source>Finds verses with both &apos;a&apos; AND &apos;b&apos;, and verses with &apos;c&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="150"/>
+        <source>&quot;says lord&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="154"/>
+        <source>&quot;says the lord&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="156"/>
+        <source>Finds all verses with &apos;says the LORD&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="161"/>
+        <source>&apos;&lt;strong&gt;*&lt;/strong&gt;&apos; matches any sequence of 0 or more characters, while &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; matches any single character. A wildcard can not be used in the beginning of a word.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="165"/>
+        <source>a*</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="167"/>
+        <source>All words beginning with &apos;a&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="169"/>
+        <source>a*a</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="171"/>
+        <source>&apos;Assyria&apos;, &apos;aroma&apos;, &apos;abba&apos; etc.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="173"/>
+        <source>a?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="175"/>
+        <source>&apos;at&apos; and &apos;an&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="177"/>
+        <source>a??a</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="179"/>
+        <source>&apos;abba&apos;, &apos;area&apos;, &apos;Asia&apos; etc.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="184"/>
+        <source>Available text fields:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="186"/>
+        <source>Searches headings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="188"/>
+        <source>Searches footnotes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="190"/>
+        <source>Searches Strong&apos;s numbers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="192"/>
+        <source>Searches morphology codes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="194"/>
+        <source>Examples:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="196"/>
+        <source>heading:Jesus</source>
+        <comment>Do not translate &quot;heading:&quot;.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="198"/>
+        <source>Finds headings with &apos;Jesus&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="200"/>
+        <source>footnote:Jesus AND footnote:said</source>
+        <comment>Do not translate &quot;footnote:&quot; or &quot;AND&quot;.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="203"/>
+        <source>Finds footnotes with &apos;Jesus&apos; and &apos;said&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="205"/>
+        <source>strong:G846</source>
+        <comment>Do not translate &quot;strong:&quot;.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="207"/>
+        <source>Finds verses with Strong&apos;s Greek number 846</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="209"/>
+        <source>morph:&quot;N-NSF&quot;</source>
+        <comment>Do not translate &quot;morph:&quot;.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="211"/>
+        <source>Finds verses with morphology code &apos;N-NSF&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="215"/>
+        <source>BibleTime uses the CLucene search engine. You can read more on the &lt;a href=&apos;%1&apos;&gt;lucene syntax web page&lt;/a&gt; (in external browser).</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

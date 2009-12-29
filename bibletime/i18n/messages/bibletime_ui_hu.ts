@@ -4,7 +4,7 @@
 <context>
     <name>BTAboutModuleDialog</name>
     <message>
-        <location filename="../../src/frontend/btaboutmoduledialog.cpp" line="24"/>
+        <location filename="../../src/frontend/btaboutmoduledialog.cpp" line="43"/>
         <source>Information About %1</source>
         <translation>%1 Információk</translation>
     </message>
@@ -192,7 +192,7 @@
         <translation>Hogyan tanulmányozza a &amp;Bibliát</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="473"/>
+        <location filename="../../src/bibletime_slots.cpp" line="474"/>
         <source>Please enter a name for the new session.</source>
         <translation>Adjon nevet az új folyamatnak.</translation>
     </message>
@@ -327,7 +327,7 @@
         <translation>Keresés az alapértelmezett Bibliában</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="472"/>
+        <location filename="../../src/bibletime_slots.cpp" line="473"/>
         <source>New Session</source>
         <translation>Új folyamat</translation>
     </message>
@@ -375,7 +375,7 @@
 <context>
     <name>BtAboutDialog</name>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="114"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="112"/>
         <source>BibleTime is an easy to use but powerful Bible study tool.</source>
         <translation>BibleTime egy könnyen használható Bibliatanulmányozó eszköz.</translation>
     </message>
@@ -388,7 +388,7 @@
         <translation type="obsolete">Ha szeretne csatlakozni csapatunkhoz, küldjön egy emailt az info@bibletime.info címre.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="120"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="118"/>
         <source>(c)1999-2009, The BibleTime Team</source>
         <translation>(c) 1999-2009, BibleTime csapat</translation>
     </message>
@@ -409,7 +409,7 @@
         <translation type="obsolete">Értékesítheti és terjesztheti a programot, ha a hozzá tartozó forráskódot is terjeszti. </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="256"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="254"/>
         <source>The complete legally binding license is below.</source>
         <translation>A teljes jogilag érvényes licensz lentebb található. </translation>
     </message>
@@ -418,72 +418,72 @@
         <translation type="obsolete">Közreműködők</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="99"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="97"/>
         <source>About BibleTime</source>
         <translation>Információk a BibleTimeról</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="111"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="109"/>
         <source>&amp;BibleTime</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="116"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="114"/>
         <source>We are looking for developers and translators. If you would like to join our team, please send an email to %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="127"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="125"/>
         <source>&amp;Contributors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="137"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="135"/>
         <source>The following people contributed to BibleTime:</source>
         <translation>A következő emberek működtek közre a BibleTime létrehozásában:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="139"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="137"/>
         <source>documentation and translation manager</source>
         <translation>dokumentációs és fordítási menedzser</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="148"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="146"/>
         <source>project manager</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="162"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="160"/>
         <source>tester</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="162"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="160"/>
         <source>usability expert</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="199"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="197"/>
         <source>Some names may be missing, please email %1 if you notice errors or omissions.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="210"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="208"/>
         <source>&amp;Sword</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="239"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="237"/>
         <source>More info...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="244"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="242"/>
         <source>&amp;License</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="250"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="248"/>
         <source>BibleTime is released under the GPL license. You can download and use (but not distribute) the program for personal, private, public or commercial purposes without restrictions. You can give away or distribute the program if you also distribute the corresponding source code.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -492,27 +492,27 @@
         <translation type="obsolete">projektalapító, fejlesztő</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="130"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="128"/>
         <source>designer</source>
         <translation>tervező</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="129"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="127"/>
         <source>developer</source>
         <translation>fejlesztő</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="140"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="138"/>
         <source>project founder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="146"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="144"/>
         <source>packager</source>
         <translation>csomagkészítő</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="147"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="145"/>
         <source>creator of The Sword Project</source>
         <translation>a Sword Projekt alapítója</translation>
     </message>
@@ -521,22 +521,22 @@
         <translation type="obsolete">projektmenedzser, fejlesztő</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="149"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="147"/>
         <source>domain sponsor</source>
         <translation>domain szponzor</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="150"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="148"/>
         <source>howto</source>
         <translation>hogyan</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="158"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="156"/>
         <source>artist</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="160"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="158"/>
         <source>documentation</source>
         <translation>dokumentáció</translation>
     </message>
@@ -545,7 +545,7 @@
         <translation type="obsolete">tesztelő, használhatósági ellenőr</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="173"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="171"/>
         <source>The following people translated BibleTime into their language:</source>
         <translation>A következő emberek vettek részt a BibleTime fordításában:</translation>
     </message>
@@ -554,37 +554,37 @@
         <translation type="obsolete">Néhány név hiányozhat, kéjük küldjön emailt a bibletime-translations@lists.sourceforge.net -címre, amennyiben hibásan jeleztük, vagy kihagytuk.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="214"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="212"/>
         <source>SWORD library version %1</source>
         <translation>Sword verzió: %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="216"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="214"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="222"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="220"/>
         <source>The SWORD Project: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="230"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="228"/>
         <source>&amp;Qt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="233"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="231"/>
         <source>Qt toolkit version %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="235"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="233"/>
         <source>This program uses Qt version %1.</source>
         <translation>Ez a program a Qt %1 verzióját használja.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="237"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="235"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
         <translation>A Qt egy keresztplatformos alkalmazás és keretrendszer, C++ nyelven megírva, LGPL licensz alatt kiadva.</translation>
     </message>
@@ -608,88 +608,78 @@
 <context>
     <name>BtBookshelfDockWidget</name>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="218"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="118"/>
         <source>Bookshelf</source>
         <translation>Könyvespolc</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="220"/>
         <source>Fi&amp;lter:</source>
-        <translation>Szű&amp;rő:</translation>
+        <translation type="obsolete">Szű&amp;rő:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="221"/>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="224"/>
         <source>Grouping</source>
-        <translation>Csoportosítás</translation>
+        <translation type="obsolete">Csoportosítás</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="222"/>
         <source>Change the grouping of items in the bookshelf.</source>
-        <translation>A könyvespolc eleminek újracsoportosítása.</translation>
+        <translation type="obsolete">A könyvespolc eleminek újracsoportosítása.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="225"/>
         <source>Category/Language</source>
-        <translation>Kategória/Nyelv</translation>
+        <translation type="obsolete">Kategória/Nyelv</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="226"/>
         <source>Category</source>
-        <translation>Kategória</translation>
+        <translation type="obsolete">Kategória</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="227"/>
         <source>Language/Category</source>
-        <translation>Nyelv/Kategória</translation>
+        <translation type="obsolete">Nyelv/Kategória</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="228"/>
         <source>Language</source>
-        <translation>Nyelv</translation>
+        <translation type="obsolete">Nyelv</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="229"/>
         <source>No grouping</source>
-        <translation>Nincs csoportosítás</translation>
+        <translation type="obsolete">Nincs csoportosítás</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="230"/>
         <source>Show/hide works</source>
-        <translation>Munkák megjelenítése/elrejtése</translation>
+        <translation type="obsolete">Munkák megjelenítése/elrejtése</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="232"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="120"/>
         <source>&amp;Open</source>
         <translation>&amp;Megnyitás</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="233"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="121"/>
         <source>&amp;Edit</source>
         <translation>Sz&amp;erkesztés</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="234"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="122"/>
         <source>&amp;Plain text</source>
         <translation>&amp;Egyszerű szöveg</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="235"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="123"/>
         <source>&amp;HTML</source>
         <translation>&amp;HTML</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="236"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="124"/>
         <source>&amp;Unlock...</source>
         <translation>&amp;Feloldás...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="237"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="125"/>
         <source>&amp;About...</source>
         <translation>&amp;Névjegy...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="287"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="172"/>
         <source>&amp;Search in %1...</source>
         <translation>&amp;Keresés itt: %1...</translation>
     </message>
@@ -745,6 +735,60 @@
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="188"/>
         <source>Unknown</source>
         <translation>Egyéb</translation>
+    </message>
+</context>
+<context>
+    <name>BtBookshelfWidget</name>
+    <message>
+        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="180"/>
+        <source>Fi&amp;lter:</source>
+        <translation type="unfinished">Szű&amp;rő:</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="181"/>
+        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="184"/>
+        <source>Grouping</source>
+        <translation type="unfinished">Csoportosítás</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="182"/>
+        <source>Change the grouping of items in the bookshelf.</source>
+        <translation type="unfinished">A könyvespolc eleminek újracsoportosítása.</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="185"/>
+        <source>Use grouping from bookshelf dock</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="186"/>
+        <source>Category/Language</source>
+        <translation type="unfinished">Kategória/Nyelv</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="187"/>
+        <source>Category</source>
+        <translation type="unfinished">Kategória</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="188"/>
+        <source>Language/Category</source>
+        <translation type="unfinished">Nyelv/Kategória</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="189"/>
+        <source>Language</source>
+        <translation type="unfinished">Nyelv</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="190"/>
+        <source>No grouping</source>
+        <translation type="unfinished">Nincs csoportosítás</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="191"/>
+        <source>Show/hide works</source>
+        <translation type="unfinished">Munkák megjelenítése/elrejtése</translation>
     </message>
 </context>
 <context>
@@ -890,45 +934,72 @@
 <context>
     <name>BtInstallModuleChooserDialog</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.cpp" line="28"/>
         <source>Install</source>
-        <translation>Telepítés</translation>
+        <translation type="obsolete">Telepítés</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.cpp" line="55"/>
+        <source>Install/Update works?</source>
+        <translation type="unfinished">Telepíti/frissíti a dokumentumot?</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.cpp" line="58"/>
+        <source>Do you really want to install these works?</source>
+        <translation type="unfinished">Tényleg telepíti a dokumentumot?</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.cpp" line="59"/>
+        <source>Only one version of a work can be installed at the same time. Select only one if there are items marked with red.</source>
+        <translation type="unfinished">A dokumentum egy verziója lehet csak egyszerre telepítve. Csak egyet válasszon ki, ha piros jelzést lát.</translation>
+    </message>
+</context>
+<context>
+    <name>BtInstallModuleChooserDialogModel</name>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialogmodel.cpp" line="78"/>
+        <source>Work</source>
+        <translation type="unfinished">Dokumentum</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialogmodel.cpp" line="81"/>
+        <source>Installation source</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>BtInstallPage</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="182"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="181"/>
         <source>Install/Update</source>
         <translation>Telepítés/frissítés</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="179"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="178"/>
         <source>Install and update works. Add remote or local sources, refresh them, select the works to be installed/updated and click Install.&lt;br/&gt;&lt;b&gt;WARNING:&lt;/b&gt; If you live in a persecuted country and don&apos;t want to risk detection don&apos;t use remote sources.</source>
         <translation>Dokumentumok telepítése és frissítése. Adjon hozzá helyi vagy távoli telepítési forrást, válassza ki a telepíteni/frissíteni kívánt dokumentumot és kattintson a telepítésre. &lt;br/&gt;&lt;b&gt;FIGYELEM:&lt;/b&gt; ha ön egy üldözött országban él, és tart a felderítés kockázatától, ne használjon távoli forrásokat.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="90"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="89"/>
         <source>Install folder:</source>
         <translation>Telepítési mappa:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="95"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="94"/>
         <source>The folder where the new works will be installed</source>
         <translation>Az új munkák ide lesznek telepítve</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="99"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="98"/>
         <source>Configure folders where works are installed and found</source>
         <translation>Mappák beállítása, ahová telepíthet, illetve megtalálhatóak a telepített munkák</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="115"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="114"/>
         <source>Install...</source>
         <translation>Telepítés...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="116"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="115"/>
         <source>Install or update selected works</source>
         <translation>A kiválasztott dokumentumok telepítése vagy frissítése</translation>
     </message>
@@ -1036,52 +1107,52 @@
 <context>
     <name>BtInstallProgressDialog</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="36"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="39"/>
         <source>Work</source>
         <translation>Dokumentum</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="36"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="39"/>
         <source>Progress</source>
         <translation>Folyamat</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="51"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="52"/>
         <source>Stop</source>
         <translation>Megállítás</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="78"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="76"/>
         <source>Stop All</source>
         <translation>Minden folyamat leállítása</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="138"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="136"/>
         <source>Completed</source>
         <translation>Kész</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="144"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="142"/>
         <source>Cancelled</source>
         <translation>Törölve</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="61"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="62"/>
         <source>Waiting for turn...</source>
         <translation>Válaszra vár...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="214"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="212"/>
         <source>Preparing install...</source>
         <translation>Telepítés előkészítése...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="32"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="35"/>
         <source>Install Progress</source>
         <translation>Telepítési folyamat</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="135"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="133"/>
         <source>Failed</source>
         <translation>Sikertelen</translation>
     </message>
@@ -1116,37 +1187,37 @@
 <context>
     <name>BtRemovePage</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="75"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="83"/>
         <source>Remove</source>
         <translation>Törlés</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="67"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="75"/>
         <source>Remove installed works. Select the works and click Remove button.</source>
         <translation>Telepített dokumentumok törlése. Válassza ki, majd kattintson a törlés gombra.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="90"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="98"/>
         <source>You selected the following work(s): </source>
         <translation>A következő dokumentumo(ka)t választotta ki:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="93"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="101"/>
         <source>Do you really want to remove them from your system?</source>
         <translation>Tényleg törölni szeretné a rendszeréből?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="52"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="60"/>
         <source>Remove...</source>
         <translation>Törlés...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="53"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="61"/>
         <source>Remove the selected works</source>
         <translation>Kiválasztott elemek törlése</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="95"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="103"/>
         <source>Remove Works?</source>
         <translation>Töröljük?</translation>
     </message>
@@ -1154,14 +1225,27 @@
 <context>
     <name>BtRemovePageTreeModel</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.cpp" line="51"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.cpp" line="52"/>
         <source>Work</source>
         <translation>Dokumentum</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.cpp" line="54"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.cpp" line="55"/>
         <source>Install path</source>
         <translation>Telepítés helye</translation>
+    </message>
+</context>
+<context>
+    <name>BtSearchModuleChooserDialog</name>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchmodulechooserdialog.cpp" line="42"/>
+        <source>Works to Search in</source>
+        <translation type="unfinished">Dokumentumok a kereséshez</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchmodulechooserdialog.cpp" line="44"/>
+        <source>Select the works which should be searched.</source>
+        <translation type="unfinished">Válassza ki a dokumentumokat, amelyekben keresni akar.</translation>
     </message>
 </context>
 <context>
@@ -1242,42 +1326,42 @@ shortcut</source>
 <context>
     <name>BtSourceArea</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="90"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="89"/>
         <source>Work</source>
         <translation>Dokumentum</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="90"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="89"/>
         <source>Description</source>
         <translation>Leírás</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="77"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="76"/>
         <source>Add...</source>
         <translation>Hozzáadás...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="65"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="64"/>
         <source>Refresh...</source>
         <translation>Frissítés...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="66"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="65"/>
         <source>Refresh the list of works from this source</source>
         <translation>Dokumentumok listájának frissítése ebből a forrásból</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="73"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="72"/>
         <source>Delete...</source>
         <translation>Törlés...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="74"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="73"/>
         <source>Delete this source</source>
         <translation>Forrás törlése</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="78"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="77"/>
         <source>Add new source</source>
         <translation>Új forrás hozzáadása</translation>
     </message>
@@ -1331,19 +1415,16 @@ shortcut</source>
         <translation>Helyi:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="337"/>
         <source>Install/Update works?</source>
-        <translation>Telepíti/frissíti a dokumentumot?</translation>
+        <translation type="obsolete">Telepíti/frissíti a dokumentumot?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="338"/>
         <source>Do you really want to install these works?</source>
-        <translation>Tényleg telepíti a dokumentumot?</translation>
+        <translation type="obsolete">Tényleg telepíti a dokumentumot?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="340"/>
         <source>Only one version of a work can be installed at the same time. Select only one if there are items marked with red.</source>
-        <translation>A dokumentum egy verziója lehet csak egyszerre telepítve. Csak egyet válasszon ki, ha piros jelzést lát.</translation>
+        <translation type="obsolete">A dokumentum egy verziója lehet csak egyszerre telepítve. Csak egyet válasszon ki, ha piros jelzést lát.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="266"/>
@@ -3747,34 +3828,34 @@ Language name ppk</extracomment>
         <translation>Kérem ellenőrizze a jogosultságokat.</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="188"/>
-        <location filename="../../src/util/tool.cpp" line="237"/>
+        <location filename="../../src/util/tool.cpp" line="192"/>
+        <location filename="../../src/util/tool.cpp" line="241"/>
         <source>Take care, this work contains cult / questionable material!</source>
         <translation>Legyen óvatos, a dokumentum kultikus / megkérdőjelezhető anyagot tartalmaz!</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="192"/>
+        <location filename="../../src/util/tool.cpp" line="196"/>
         <source>Language</source>
         <translation>Nyelv</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="195"/>
+        <location filename="../../src/util/tool.cpp" line="199"/>
         <source>Unlock key</source>
         <translation>Feloldó kulcs</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="196"/>
+        <location filename="../../src/util/tool.cpp" line="200"/>
         <source>not set</source>
         <translation>nincs beállítva</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="200"/>
-        <location filename="../../src/util/tool.cpp" line="250"/>
+        <location filename="../../src/util/tool.cpp" line="204"/>
+        <location filename="../../src/util/tool.cpp" line="254"/>
         <source>Version</source>
         <translation>Verzió</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="218"/>
+        <location filename="../../src/util/tool.cpp" line="222"/>
         <source>Options</source>
         <translation>Lehetőségek</translation>
     </message>
@@ -3789,22 +3870,22 @@ Language name ppk</extracomment>
         <translation>Úgy tűnik, van egy BibleTime beállítás KDE 3 alapján, %1 ben tárolva, és nem emelte át ebbe a verzióba. Kívánja importálni?</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="242"/>
+        <location filename="../../src/util/tool.cpp" line="246"/>
         <source>Encrypted - needs unlock key</source>
         <translation>Titkosított - szükség van egy feloldó kulcsra</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="258"/>
+        <location filename="../../src/util/tool.cpp" line="262"/>
         <source>Double click for more information</source>
         <translation>kattintson kettőt bővebb információért</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="246"/>
+        <location filename="../../src/util/tool.cpp" line="250"/>
         <source>Updated version available!</source>
         <translation>Frissített verzió elérhető!</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="254"/>
+        <location filename="../../src/util/tool.cpp" line="258"/>
         <source>Installed version</source>
         <translation>Telepített változat</translation>
     </message>
@@ -4045,177 +4126,163 @@ Language name ppk</extracomment>
 <context>
     <name>Search::BtSearchOptionsArea</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="98"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="99"/>
         <source>Search for:</source>
         <translation>Ezt keresse:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="105"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="106"/>
         <source>&amp;Search</source>
         <translation>&amp;Keresés</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="107"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="108"/>
         <source>Start to search the text in the chosen works</source>
         <translation>szöveg keresésének megkezdése a választott dokumentumban</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="110"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="111"/>
         <source>Ch&amp;oose...</source>
         <translation>V&amp;álasztás...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="112"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="113"/>
         <source>Choose works for the search</source>
         <translation>Dokumentumok kijelölése a kereséshez</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="115"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="116"/>
         <source>S&amp;etup...</source>
         <translation>T&amp;elepítés...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="134"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="135"/>
         <source>All of the words (AND is added between the words)</source>
         <translation>Az összes szót (ÉS kifejezés a szavak közé lesz adva)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="138"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="139"/>
         <source> (&lt;a href=&apos;syntax_help&apos;&gt;full syntax&lt;/a&gt;)</source>
         <translation> (&lt;a href=&apos;syntax_help&apos;&gt;teljes kifejezés&lt;/a&gt;)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="149"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="150"/>
         <source>Scope:</source>
         <translation>Hatókör:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="170"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="171"/>
         <source>The text you want to search for</source>
         <translation>A szöveg, amir keres</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="174"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="175"/>
         <source>Works:</source>
         <translation>Dokumentumok:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="268"/>
         <source>Works to Search in</source>
-        <translation>Dokumentumok a kereséshez</translation>
+        <translation type="obsolete">Dokumentumok a kereséshez</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="269"/>
         <source>Select the works which should be searched.</source>
-        <translation>Válassza ki a dokumentumokat, amelyekben keresni akar.</translation>
+        <translation type="obsolete">Válassza ki a dokumentumokat, amelyekben keresni akar.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="444"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="346"/>
         <source>No search scope</source>
         <translation>Nincs keresési hatókör</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="129"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="130"/>
         <source>All words</source>
         <translation>Összes szó</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="117"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="118"/>
         <source>Configure predefined scopes for search</source>
         <translation>Előre meghatározott keresési hatókörök beállítása</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="131"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="132"/>
         <source>Some words</source>
         <translation>Bármely szó</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="132"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="133"/>
         <source>Free</source>
         <translation>Egyéni</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="135"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="136"/>
         <source>Some of the words (OR is added between the words)</source>
         <translation>Bármelyik szót (OR kifejezés a szavak közé lesz adva)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="136"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="137"/>
         <source>Full lucene syntax</source>
         <translation>Teljes lucene kifejezés</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="139"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="140"/>
         <source>Click the link to get help for search syntax</source>
         <translation>A keresési kifejezésekhez segítségért kattintson a hivatkozásra </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="160"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="161"/>
         <source>Choose the scope (books/chapters/verses to search in).&lt;br /&gt;Applicable for Bibles and commentaries.</source>
         <translation>Adja meg a hatókört (Könyvek/fejezetek/versek, amiben keressen) &lt;br /&gt; A bibliák és a kommentároknál használható.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="352"/>
         <source>&lt;p&gt;This help is mainly for &apos;Full syntax&apos; option. &apos;All words&apos; and &apos;Some words&apos; options have more limited syntax; &lt;a href=&apos;#wildcards&apos;&gt;wildcards&lt;/a&gt; and &lt;a href=&apos;#fields&apos;&gt;text fields&lt;/a&gt; are supported for them. Some other syntax features may give strange or wrong results with All words/Some words.&lt;/p&gt;</source>
         <extracomment>Don&apos;t translate words inside &lt;&gt; tags! Translate &apos;All words&apos; etc. indentically to the Search dialog options.</extracomment>
-        <translation>&lt;p&gt;Ez a segítség főként a &quot;teljes kifejezés&quot; opcióhoz tartozik. Az &apos;összes szó&apos; és &apos;bármelyik szó&apos; opciónak jobban behatározott lehetőségei vannak; &lt;a href=&apos;#wildcards&apos;&gt;helyettesítők&lt;/a&gt; és a &lt;a href=&apos;#fields&apos;&gt;szövegmezők&lt;/a&gt; használják legfőképpen. Néhány egyéb kifejezési lehetőség értelmetlen, vagy rossz eredményt adhat az összes szó/bűrmely szó választása esetén.&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;p&gt;Ez a segítség főként a &quot;teljes kifejezés&quot; opcióhoz tartozik. Az &apos;összes szó&apos; és &apos;bármelyik szó&apos; opciónak jobban behatározott lehetőségei vannak; &lt;a href=&apos;#wildcards&apos;&gt;helyettesítők&lt;/a&gt; és a &lt;a href=&apos;#fields&apos;&gt;szövegmezők&lt;/a&gt; használják legfőképpen. Néhány egyéb kifejezési lehetőség értelmetlen, vagy rossz eredményt adhat az összes szó/bűrmely szó választása esetén.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="357"/>
         <source>&lt;p id=&apos;links&apos;&gt;&lt;A href=&apos;#allsome&apos;&gt;Which words to find&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#grouping&apos;&gt;Grouping and order&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#wildcards&apos;&gt;Wildcards (partial words)&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#fields&apos;&gt;Text fields (different parts of text)&lt;/A&gt;&lt;br/&gt;&lt;A href=&apos;#lucene&apos;&gt;Other syntax features&lt;/A&gt;&lt;br/&gt;&lt;/p&gt;</source>
-        <translation>&lt;p id=&apos;links&apos;&gt;&lt;A href=&apos;#allsome&apos;&gt;Mely szavakat keressük&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#grouping&apos;&gt;Csoportosítás és rendezés&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#wildcards&apos;&gt;Helyettesítők (nem teljes szavaknál)&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#fields&apos;&gt;Szövegmezők (a szöveg különböző részei)&lt;/A&gt;&lt;br/&gt;&lt;A href=&apos;#lucene&apos;&gt;Egyéb kifejezési lehetőségek&lt;/A&gt;&lt;br/&gt;&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;p id=&apos;links&apos;&gt;&lt;A href=&apos;#allsome&apos;&gt;Mely szavakat keressük&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#grouping&apos;&gt;Csoportosítás és rendezés&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#wildcards&apos;&gt;Helyettesítők (nem teljes szavaknál)&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#fields&apos;&gt;Szövegmezők (a szöveg különböző részei)&lt;/A&gt;&lt;br/&gt;&lt;A href=&apos;#lucene&apos;&gt;Egyéb kifejezési lehetőségek&lt;/A&gt;&lt;br/&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="367"/>
         <source>&lt;h1&gt;&lt;A name=&apos;allsome&apos;&gt;Which words to find&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Search terms are separated by spaces. &lt;strong&gt;AND&lt;/strong&gt; (all words), &lt;strong&gt;OR&lt;/strong&gt; (some words) and &lt;strong&gt;NOT&lt;/strong&gt; (not the following word) can be added between the words. If none is added explicitly OR is used automatically. &apos;&lt;strong&gt;+&lt;/strong&gt;word&apos; means the word must be in the results, &apos;&lt;strong&gt;-&lt;/strong&gt;word&apos; means it must not be in the results.&lt;/p&gt;</source>
         <extracomment>Syntax words (AND, OR...) must not be translated.</extracomment>
-        <translation>&lt;h1&gt;&lt;A name=&apos;allsome&apos;&gt;Kersett szavak&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;A keresési kefejezések szóközökkel elválasztva. &lt;strong&gt;AND&lt;/strong&gt; (összes szó), &lt;strong&gt;OR&lt;/strong&gt; (bármely szó) és &lt;strong&gt;NOT&lt;/strong&gt; (a következő szó kivételével) adható a szavak közé. Amennyiben semmit nem adunk meg, akkor az OR kifejezést hasznájuk automatikusan.&apos;&lt;strong&gt;+&lt;/strong&gt;szó&apos; jelenti , hogy akövetkező szónak szerepelnie kell az eredményben, &apos;&lt;strong&gt;-&lt;/strong&gt;szó&apos; esetén a szó nem szerepelhet az eredményben.&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;h1&gt;&lt;A name=&apos;allsome&apos;&gt;Kersett szavak&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;A keresési kefejezések szóközökkel elválasztva. &lt;strong&gt;AND&lt;/strong&gt; (összes szó), &lt;strong&gt;OR&lt;/strong&gt; (bármely szó) és &lt;strong&gt;NOT&lt;/strong&gt; (a következő szó kivételével) adható a szavak közé. Amennyiben semmit nem adunk meg, akkor az OR kifejezést hasznájuk automatikusan.&apos;&lt;strong&gt;+&lt;/strong&gt;szó&apos; jelenti , hogy akövetkező szónak szerepelnie kell az eredményben, &apos;&lt;strong&gt;-&lt;/strong&gt;szó&apos; esetén a szó nem szerepelhet az eredményben.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="372"/>
         <source>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;jesus AND god&lt;/td&gt;&lt;td&gt;Finds verses with both &apos;Jesus&apos; and &apos;God&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;jesus OR god&lt;/td&gt;&lt;td&gt;Finds verses with &apos;Jesus&apos; or &apos;God&apos; or both&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;jesus NOT god&lt;/td&gt;&lt;td&gt;Finds verses with &apos;Jesus&apos; but with no &apos;God&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;+jesus -god&lt;/td&gt;&lt;td&gt;Finds verses with &apos;Jesus&apos; but with no &apos;God&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
         <extracomment>In examples words to be searched for may be translated, but syntax words (AND, OR...) must not be translated.</extracomment>
-        <translation>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Jézus AND Isten&lt;/td&gt;&lt;td&gt;megkeresi azokat a verseket, ahol a &apos;Jézus&apos; és &apos;Isten&apos; együtt található,&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Jézus OR Isten &lt;/td&gt;&lt;td&gt;találatai vagy &apos;Jézus&apos; vagy &apos;Isten&apos; vagy mindkét szót tartalmazó igeversek,&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Jézus NOT Isten&lt;/td&gt;&lt;td&gt;eredménye &apos;Jézus&apos; szót igen, de &apos;Isten&apos; szót nem tartalmazó versek.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;+Jézus-Isten&lt;/td&gt;&lt;td&gt;szintén ez utóbbit eredményezi.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Jézus AND Isten&lt;/td&gt;&lt;td&gt;megkeresi azokat a verseket, ahol a &apos;Jézus&apos; és &apos;Isten&apos; együtt található,&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Jézus OR Isten &lt;/td&gt;&lt;td&gt;találatai vagy &apos;Jézus&apos; vagy &apos;Isten&apos; vagy mindkét szót tartalmazó igeversek,&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Jézus NOT Isten&lt;/td&gt;&lt;td&gt;eredménye &apos;Jézus&apos; szót igen, de &apos;Isten&apos; szót nem tartalmazó versek.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;+Jézus-Isten&lt;/td&gt;&lt;td&gt;szintén ez utóbbit eredményezi.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="383"/>
         <source>&lt;h1&gt;&lt;A name=&apos;grouping&apos;&gt;Grouping and order&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Words can be grouped with &lt;strong&gt;parenthesis&lt;/strong&gt;. Strict word order can be defined with &lt;strong&gt;quotes&lt;/strong&gt;.&lt;/p&gt;</source>
-        <translation>&lt;h1&gt;&lt;A name=&apos;grouping&apos;&gt;Csoportosítás és rendezés&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;A szavak &lt;strong&gt;zárójelekkel&lt;/strong&gt;csoportosíthatók. Pontos kifejezést (szósorrendet)&lt;strong&gt;idézőjelek&lt;/strong&gt; alkalmazásával adhatunk meg.&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;h1&gt;&lt;A name=&apos;grouping&apos;&gt;Csoportosítás és rendezés&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;A szavak &lt;strong&gt;zárójelekkel&lt;/strong&gt;csoportosíthatók. Pontos kifejezést (szósorrendet)&lt;strong&gt;idézőjelek&lt;/strong&gt; alkalmazásával adhatunk meg.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="388"/>
         <source>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;(a AND b) OR c&lt;/td&gt;&lt;td&gt;Finds verses with both &apos;a&apos; AND &apos;b&apos;, and verses with &apos;c&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;says lord&quot;&lt;/td&gt;&lt;td&gt;Finds e.g. &apos;...Isaiah says, &quot;Lord...&apos; but not &apos;...says the LORD&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;says the lord&quot;&lt;/td&gt;&lt;td&gt;Finds all verses with &apos;says the LORD&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;(a AND b) OR c&lt;/td&gt;&lt;td&gt;Eredményezi az  &apos;a&apos; és &apos;b&apos; verseket, és azokat a verseket is, ami még a &apos;c&apos;-t is tartalmazhatják,&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;mondta Isten&quot;&lt;/td&gt;&lt;td&gt; eredménye pl. &apos;...Ézsaiás mondta, &quot;Isten...&apos; de nem  &apos;...mondta az Isten&apos; (vagyis nem lehet közbevetett szó)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;mondta az úr&quot;&lt;/td&gt;&lt;td&gt;találatai az össze olyan vers, amiben a &apos;mondta az Úr&apos; kifejezés szerepel.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;(a AND b) OR c&lt;/td&gt;&lt;td&gt;Eredményezi az  &apos;a&apos; és &apos;b&apos; verseket, és azokat a verseket is, ami még a &apos;c&apos;-t is tartalmazhatják,&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;mondta Isten&quot;&lt;/td&gt;&lt;td&gt; eredménye pl. &apos;...Ézsaiás mondta, &quot;Isten...&apos; de nem  &apos;...mondta az Isten&apos; (vagyis nem lehet közbevetett szó)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;mondta az úr&quot;&lt;/td&gt;&lt;td&gt;találatai az össze olyan vers, amiben a &apos;mondta az Úr&apos; kifejezés szerepel.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="397"/>
         <source>&lt;h1&gt;&lt;A name=&apos;wildcards&apos;&gt;Wildcards (partial words)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;&apos;&lt;strong&gt;*&lt;/strong&gt;&apos; matches any sequence of 0 or more characters, while &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; matches any single character. A wildcard can not be used in the beginning of a word.&lt;/p&gt;</source>
-        <translation>&lt;h1&gt;&lt;A name=&apos;wildcards&apos;&gt;Helyettesítők (szótöredékek)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;&apos;&lt;strong&gt;*&lt;/strong&gt;&apos; találatai 0 vagy több betűvel kiegészített szavak, míg a &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; csak egy betűt helyettesít. Helyettesítőt nem használhatunk a szavak elején.&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;h1&gt;&lt;A name=&apos;wildcards&apos;&gt;Helyettesítők (szótöredékek)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;&apos;&lt;strong&gt;*&lt;/strong&gt;&apos; találatai 0 vagy több betűvel kiegészített szavak, míg a &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; csak egy betűt helyettesít. Helyettesítőt nem használhatunk a szavak elején.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="401"/>
         <source>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;a*&lt;/td&gt;&lt;td&gt;All words beginning with &apos;a&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a*a&lt;/td&gt;&lt;td&gt;&apos;Assyria&apos;, &apos;aroma&apos;, &apos;abba&apos; etc.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a?&lt;/td&gt;&lt;td&gt;&apos;at&apos; and &apos;an&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a??a&lt;/td&gt;&lt;td&gt;&apos;abba&apos;, &apos;area&apos;, &apos;Asia&apos; etc.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;a*&lt;/td&gt;&lt;td&gt; például az összes a-val kezdődő szóra keres,&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a*a&lt;/td&gt;&lt;td&gt;&apos;Asszíria&apos;, &apos;alma&apos;, &apos;abba&apos; stb. ,&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;é?&lt;/td&gt;&lt;td&gt;&apos;és&apos; vagy &apos;én&apos;...&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a??a&lt;/td&gt;&lt;td&gt;&apos;abba&apos;, &apos;alma&apos; stb.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;a*&lt;/td&gt;&lt;td&gt; például az összes a-val kezdődő szóra keres,&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a*a&lt;/td&gt;&lt;td&gt;&apos;Asszíria&apos;, &apos;alma&apos;, &apos;abba&apos; stb. ,&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;é?&lt;/td&gt;&lt;td&gt;&apos;és&apos; vagy &apos;én&apos;...&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a??a&lt;/td&gt;&lt;td&gt;&apos;abba&apos;, &apos;alma&apos; stb.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="412"/>
         <source>&lt;h1&gt;&lt;A name=&apos;fields&apos;&gt;Text fields (different parts of text)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Available text fields:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:&lt;/td&gt;&lt;td&gt;Searches headings&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:&lt;/td&gt;&lt;td&gt;Searches footnotes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;Searches Strong&apos;s numbers&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&lt;/td&gt;&lt;td&gt;Searches morphology codes&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation>&lt;h1&gt;&lt;A name=&apos;fields&apos;&gt;Szövegmezők (a szöveg különböző részei)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Lehetséges szövegmezők:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Fejléc:&lt;/td&gt;&lt;td&gt;fejlécekben keres&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;lábjegyzet:&lt;/td&gt;&lt;td&gt;lábjegyzetekben keres&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;Strong&apos;s számokban keres&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&lt;/td&gt;&lt;td&gt;morfológiai kódokban keres&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;h1&gt;&lt;A name=&apos;fields&apos;&gt;Szövegmezők (a szöveg különböző részei)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Lehetséges szövegmezők:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Fejléc:&lt;/td&gt;&lt;td&gt;fejlécekben keres&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;lábjegyzet:&lt;/td&gt;&lt;td&gt;lábjegyzetekben keres&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;Strong&apos;s számokban keres&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&lt;/td&gt;&lt;td&gt;morfológiai kódokban keres&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="420"/>
         <source>&lt;p&gt;Examples:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:Jesus&lt;/td&gt;&lt;td&gt;Finds headings with &apos;Jesus&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:Jesus AND footnote:said&lt;/td&gt;&lt;td&gt;Finds footnotes with &apos;Jesus&apos; and &apos;said&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:G846&lt;/td&gt;&lt;td&gt;Finds verses with Strong&apos;s Greek number 846&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&quot;N-NSF&quot;&lt;/td&gt;&lt;td&gt;Finds verses with morphology code &apos;N-NSF&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Példák:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:Jézus&lt;/td&gt;&lt;td&gt;Fejléceket talál &apos;Jézus&apos; kifejezéssel&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:JézusAND footnote:mondta&lt;/td&gt;&lt;td&gt;találatai &apos;Jézus&apos; és &apos;mondta&apos; a lábjegyzetekben&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:G846&lt;/td&gt;&lt;td&gt;Strong&apos;s görög 846 számú kifekjezést tartalmazó verseket hoz,&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&quot;N-NSF&quot;&lt;/td&gt;&lt;td&gt;a &apos;N-NSF&apos; morfológiai kódokat tartalmazó verseket találja meg&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;p&gt;Példák:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:Jézus&lt;/td&gt;&lt;td&gt;Fejléceket talál &apos;Jézus&apos; kifejezéssel&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:JézusAND footnote:mondta&lt;/td&gt;&lt;td&gt;találatai &apos;Jézus&apos; és &apos;mondta&apos; a lábjegyzetekben&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:G846&lt;/td&gt;&lt;td&gt;Strong&apos;s görög 846 számú kifekjezést tartalmazó verseket hoz,&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&quot;N-NSF&quot;&lt;/td&gt;&lt;td&gt;a &apos;N-NSF&apos; morfológiai kódokat tartalmazó verseket találja meg&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="428"/>
         <source>&lt;h1&gt;&lt;A name=&apos;lucene&apos;&gt;Other syntax features&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;BibleTime uses the CLucene search engine. You can read more on the &lt;a href=&apos;http://lucene.apache.org/java/1_4_3/queryparsersyntax.html&apos;&gt;lucene syntax web page&lt;/a&gt; (in external browser).&lt;/p&gt;</source>
-        <translation>&lt;h1&gt;&lt;A name=&apos;lucene&apos;&gt;Egyéb keresési lehetőségek&lt;/A&gt;&lt;/h1&gt;&lt;p&gt; A BibleTime a CLucene keresőmotort használja. Többet megtudhat erről a &lt;a href=&apos;http://lucene.apache.org/java/1_4_3/queryparsersyntax.html&apos;&gt;lucene kifejezések weboldalán&lt;/a&gt; (külső böngészőben).&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;h1&gt;&lt;A name=&apos;lucene&apos;&gt;Egyéb keresési lehetőségek&lt;/A&gt;&lt;/h1&gt;&lt;p&gt; A BibleTime a CLucene keresőmotort használja. Többet megtudhat erről a &lt;a href=&apos;http://lucene.apache.org/java/1_4_3/queryparsersyntax.html&apos;&gt;lucene kifejezések weboldalán&lt;/a&gt; (külső böngészőben).&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="436"/>
         <source>Search Syntax Help</source>
-        <translation>Keresési kifejezések súgó</translation>
+        <translation type="obsolete">Keresési kifejezések súgó</translation>
     </message>
 </context>
 <context>
@@ -4224,6 +4291,249 @@ Language name ppk</extracomment>
         <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="87"/>
         <source>Text of the selected search result item</source>
         <translation>A választott keresési eredmény szövege</translation>
+    </message>
+</context>
+<context>
+    <name>Search::BtSearchSyntaxHelpDialog</name>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="52"/>
+        <source>Search Syntax Help</source>
+        <translation type="unfinished">Keresési kifejezések súgó</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="99"/>
+        <source>This help is mainly for &apos;Full syntax&apos; option. &apos;All words&apos; and &apos;Some words&apos; options have more limited syntax; &lt;a href=&apos;#wildcards&apos;&gt;wildcards&lt;/a&gt; and &lt;a href=&apos;#fields&apos;&gt;text fields&lt;/a&gt; are supported for them. Some other syntax features may give strange or wrong results with All words/Some words.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="104"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="115"/>
+        <source>Which words to find</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="106"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="141"/>
+        <source>Grouping and order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="108"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="159"/>
+        <source>Wildcards (partial words)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="110"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="182"/>
+        <source>Text fields (different parts of text)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="112"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="213"/>
+        <source>Other syntax features</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="117"/>
+        <source>Search terms are separated by spaces. &lt;strong&gt;AND&lt;/strong&gt; (all words), &lt;strong&gt;OR&lt;/strong&gt; (some words) and &lt;strong&gt;NOT&lt;/strong&gt; (not the following word) can be added between the words. If none is added explicitly OR is used automatically. &apos;&lt;strong&gt;+&lt;/strong&gt;word&apos; means the word must be in the results, &apos;&lt;strong&gt;-&lt;/strong&gt;word&apos; means it must not be in the results.</source>
+        <comment>Do not translate &quot;AND&quot;, &quot;OR&quot; or &quot;NOT&quot;.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="124"/>
+        <source>jesus AND god</source>
+        <comment>Do not translate &quot;AND&quot;.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="126"/>
+        <source>Finds verses with both &apos;Jesus&apos; and &apos;God&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="128"/>
+        <source>jesus OR god</source>
+        <comment>Do not translate &quot;OR&quot;.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="130"/>
+        <source>Finds verses with &apos;Jesus&apos; or &apos;God&apos; or both</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="132"/>
+        <source>jesus NOT god</source>
+        <comment>Do not translate &quot;NOT&quot;.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="134"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="138"/>
+        <source>Finds verses with &apos;Jesus&apos; but with no &apos;God&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="136"/>
+        <source>+jesus -god</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="143"/>
+        <source>Words can be grouped with &lt;strong&gt;parenthesis&lt;/strong&gt;. Strict word order can be defined with &lt;strong&gt;quotes&lt;/strong&gt;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="146"/>
+        <source>(a AND b) OR c</source>
+        <comment>Do not translate &quot;AND&quot; or &quot;OR&quot;.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="148"/>
+        <source>Finds verses with both &apos;a&apos; AND &apos;b&apos;, and verses with &apos;c&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="150"/>
+        <source>&quot;says lord&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="154"/>
+        <source>&quot;says the lord&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="156"/>
+        <source>Finds all verses with &apos;says the LORD&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="161"/>
+        <source>&apos;&lt;strong&gt;*&lt;/strong&gt;&apos; matches any sequence of 0 or more characters, while &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; matches any single character. A wildcard can not be used in the beginning of a word.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="165"/>
+        <source>a*</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="167"/>
+        <source>All words beginning with &apos;a&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="169"/>
+        <source>a*a</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="171"/>
+        <source>&apos;Assyria&apos;, &apos;aroma&apos;, &apos;abba&apos; etc.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="173"/>
+        <source>a?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="175"/>
+        <source>&apos;at&apos; and &apos;an&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="177"/>
+        <source>a??a</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="179"/>
+        <source>&apos;abba&apos;, &apos;area&apos;, &apos;Asia&apos; etc.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="184"/>
+        <source>Available text fields:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="186"/>
+        <source>Searches headings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="188"/>
+        <source>Searches footnotes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="190"/>
+        <source>Searches Strong&apos;s numbers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="192"/>
+        <source>Searches morphology codes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="194"/>
+        <source>Examples:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="196"/>
+        <source>heading:Jesus</source>
+        <comment>Do not translate &quot;heading:&quot;.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="198"/>
+        <source>Finds headings with &apos;Jesus&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="200"/>
+        <source>footnote:Jesus AND footnote:said</source>
+        <comment>Do not translate &quot;footnote:&quot; or &quot;AND&quot;.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="203"/>
+        <source>Finds footnotes with &apos;Jesus&apos; and &apos;said&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="205"/>
+        <source>strong:G846</source>
+        <comment>Do not translate &quot;strong:&quot;.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="207"/>
+        <source>Finds verses with Strong&apos;s Greek number 846</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="209"/>
+        <source>morph:&quot;N-NSF&quot;</source>
+        <comment>Do not translate &quot;morph:&quot;.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="211"/>
+        <source>Finds verses with morphology code &apos;N-NSF&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="215"/>
+        <source>BibleTime uses the CLucene search engine. You can read more on the &lt;a href=&apos;%1&apos;&gt;lucene syntax web page&lt;/a&gt; (in external browser).</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

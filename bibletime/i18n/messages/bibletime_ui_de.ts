@@ -505,35 +505,35 @@
     </message>
     <message>
         <source>Grouping</source>
-        <translation>Gruppierung</translation>
+        <translation type="obsolete">Gruppierung</translation>
     </message>
     <message>
         <source>Change the grouping of items in the bookshelf.</source>
-        <translation>Die Anordnung von Einträgen im Bücherregal verändern.</translation>
+        <translation type="obsolete">Die Anordnung von Einträgen im Bücherregal verändern.</translation>
     </message>
     <message>
         <source>Category/Language</source>
-        <translation>Kategorie/Sprache</translation>
+        <translation type="obsolete">Kategorie/Sprache</translation>
     </message>
     <message>
         <source>Category</source>
-        <translation>Kategorie</translation>
+        <translation type="obsolete">Kategorie</translation>
     </message>
     <message>
         <source>Language/Category</source>
-        <translation>Sprache/Kategorie</translation>
+        <translation type="obsolete">Sprache/Kategorie</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>Sprache</translation>
+        <translation type="obsolete">Sprache</translation>
     </message>
     <message>
         <source>No grouping</source>
-        <translation>Ungruppiert</translation>
+        <translation type="obsolete">Ungruppiert</translation>
     </message>
     <message>
         <source>Show/hide works</source>
-        <translation>Werke anzeigen/verstecken</translation>
+        <translation type="obsolete">Werke anzeigen/verstecken</translation>
     </message>
     <message>
         <source>&amp;Open</source>
@@ -565,7 +565,7 @@
     </message>
     <message>
         <source>Fi&amp;lter:</source>
-        <translation>Fi&amp;lter:</translation>
+        <translation type="obsolete">Fi&amp;lter:</translation>
     </message>
 </context>
 <context>
@@ -609,6 +609,49 @@
     <message>
         <source>Unknown</source>
         <translation>Unbekannt</translation>
+    </message>
+</context>
+<context>
+    <name>BtBookshelfWidget</name>
+    <message>
+        <source>Fi&amp;lter:</source>
+        <translation type="unfinished">Fi&amp;lter:</translation>
+    </message>
+    <message>
+        <source>Grouping</source>
+        <translation type="unfinished">Gruppierung</translation>
+    </message>
+    <message>
+        <source>Change the grouping of items in the bookshelf.</source>
+        <translation type="unfinished">Die Anordnung von Einträgen im Bücherregal verändern.</translation>
+    </message>
+    <message>
+        <source>Use grouping from bookshelf dock</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Category/Language</source>
+        <translation type="unfinished">Kategorie/Sprache</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation type="unfinished">Kategorie</translation>
+    </message>
+    <message>
+        <source>Language/Category</source>
+        <translation type="unfinished">Sprache/Kategorie</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished">Sprache</translation>
+    </message>
+    <message>
+        <source>No grouping</source>
+        <translation type="unfinished">Ungruppiert</translation>
+    </message>
+    <message>
+        <source>Show/hide works</source>
+        <translation type="unfinished">Werke anzeigen/verstecken</translation>
     </message>
 </context>
 <context>
@@ -728,7 +771,30 @@
     <name>BtInstallModuleChooserDialog</name>
     <message>
         <source>Install</source>
-        <translation>Installieren</translation>
+        <translation type="obsolete">Installieren</translation>
+    </message>
+    <message>
+        <source>Install/Update works?</source>
+        <translation type="unfinished">Werke installieren/aktualisieren?</translation>
+    </message>
+    <message>
+        <source>Do you really want to install these works?</source>
+        <translation type="unfinished">Möchten Sie diese Werke wirklich installieren?</translation>
+    </message>
+    <message>
+        <source>Only one version of a work can be installed at the same time. Select only one if there are items marked with red.</source>
+        <translation type="unfinished">Nur eine Version eines Werkes kann installiert werden. Wählen Sie eine aus, wenn rot markierte Einträge vorliegen.</translation>
+    </message>
+</context>
+<context>
+    <name>BtInstallModuleChooserDialogModel</name>
+    <message>
+        <source>Work</source>
+        <translation type="unfinished">Werk</translation>
+    </message>
+    <message>
+        <source>Installation source</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -949,6 +1015,17 @@
     </message>
 </context>
 <context>
+    <name>BtSearchModuleChooserDialog</name>
+    <message>
+        <source>Works to Search in</source>
+        <translation type="unfinished">Zu durchsuchende Werke</translation>
+    </message>
+    <message>
+        <source>Select the works which should be searched.</source>
+        <translation type="unfinished">Wählen Sie die Werke aus, in denen gesucht werden soll.</translation>
+    </message>
+</context>
+<context>
     <name>BtShortcutsDialog</name>
     <message>
         <source>Configure shortcuts</source>
@@ -1080,15 +1157,15 @@ shortcut</source>
     </message>
     <message>
         <source>Install/Update works?</source>
-        <translation>Werke installieren/aktualisieren?</translation>
+        <translation type="obsolete">Werke installieren/aktualisieren?</translation>
     </message>
     <message>
         <source>Do you really want to install these works?</source>
-        <translation>Möchten Sie diese Werke wirklich installieren?</translation>
+        <translation type="obsolete">Möchten Sie diese Werke wirklich installieren?</translation>
     </message>
     <message>
         <source>Only one version of a work can be installed at the same time. Select only one if there are items marked with red.</source>
-        <translation>Nur eine Version eines Werkes kann installiert werden. Wählen Sie eine aus, wenn rot markierte Einträge vorliegen.</translation>
+        <translation type="obsolete">Nur eine Version eines Werkes kann installiert werden. Wählen Sie eine aus, wenn rot markierte Einträge vorliegen.</translation>
     </message>
     <message>
         <source>Not a directory!</source>
@@ -3346,11 +3423,11 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Works to Search in</source>
-        <translation>Zu durchsuchende Werke</translation>
+        <translation type="obsolete">Zu durchsuchende Werke</translation>
     </message>
     <message>
         <source>Select the works which should be searched.</source>
-        <translation>Wählen Sie die Werke aus, in denen gesucht werden soll.</translation>
+        <translation type="obsolete">Wählen Sie die Werke aus, in denen gesucht werden soll.</translation>
     </message>
     <message>
         <source>No search scope</source>
@@ -3391,53 +3468,53 @@ Language name ppk</extracomment>
     <message>
         <source>&lt;p&gt;This help is mainly for &apos;Full syntax&apos; option. &apos;All words&apos; and &apos;Some words&apos; options have more limited syntax; &lt;a href=&apos;#wildcards&apos;&gt;wildcards&lt;/a&gt; and &lt;a href=&apos;#fields&apos;&gt;text fields&lt;/a&gt; are supported for them. Some other syntax features may give strange or wrong results with All words/Some words.&lt;/p&gt;</source>
         <extracomment>Don&apos;t translate words inside &lt;&gt; tags! Translate &apos;All words&apos; etc. indentically to the Search dialog options.</extracomment>
-        <translation>&lt;p&gt; Diese Hilfe ist hauptsächlich für die Option &apos;Vollständige Syntax&apos;. &apos;Alle Wörter&apos; und &apos;Einige Wörter&apos; haben eine begrenztere Syntax;&lt;a href=&apos;#wildcards&apos;&gt;Platzhalter&lt;/a&gt; und &lt;a href=&apos;#fields&apos;&gt;Textfelder&lt;/a&gt; werden für sie unterstützt. Einige andere Syntax-Funktionen können seltsame oder falsche Resultate für &apos;Alle Wörter&apos; / &apos;Einige Wörter&apos; liefern.&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;p&gt; Diese Hilfe ist hauptsächlich für die Option &apos;Vollständige Syntax&apos;. &apos;Alle Wörter&apos; und &apos;Einige Wörter&apos; haben eine begrenztere Syntax;&lt;a href=&apos;#wildcards&apos;&gt;Platzhalter&lt;/a&gt; und &lt;a href=&apos;#fields&apos;&gt;Textfelder&lt;/a&gt; werden für sie unterstützt. Einige andere Syntax-Funktionen können seltsame oder falsche Resultate für &apos;Alle Wörter&apos; / &apos;Einige Wörter&apos; liefern.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p id=&apos;links&apos;&gt;&lt;A href=&apos;#allsome&apos;&gt;Which words to find&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#grouping&apos;&gt;Grouping and order&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#wildcards&apos;&gt;Wildcards (partial words)&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#fields&apos;&gt;Text fields (different parts of text)&lt;/A&gt;&lt;br/&gt;&lt;A href=&apos;#lucene&apos;&gt;Other syntax features&lt;/A&gt;&lt;br/&gt;&lt;/p&gt;</source>
-        <translation>&lt;p id=&apos;links&apos;&gt;&lt;A href=&apos;#allsome&apos;&gt;Welche Wörter zu finden&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#grouping&apos;&gt;Gruppierung und Reihenfolge&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#wildcards&apos;&gt;Platzhalter (partielle Wörter)&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#fields&apos;&gt;Textfelder (verschiedene Textabschnitte)&lt;/A&gt;&lt;br/&gt;&lt;A href=&apos;#lucene&apos;&gt;Andere Syntaxfunktionen&lt;/A&gt;&lt;br/&gt;&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;p id=&apos;links&apos;&gt;&lt;A href=&apos;#allsome&apos;&gt;Welche Wörter zu finden&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#grouping&apos;&gt;Gruppierung und Reihenfolge&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#wildcards&apos;&gt;Platzhalter (partielle Wörter)&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#fields&apos;&gt;Textfelder (verschiedene Textabschnitte)&lt;/A&gt;&lt;br/&gt;&lt;A href=&apos;#lucene&apos;&gt;Andere Syntaxfunktionen&lt;/A&gt;&lt;br/&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;h1&gt;&lt;A name=&apos;allsome&apos;&gt;Which words to find&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Search terms are separated by spaces. &lt;strong&gt;AND&lt;/strong&gt; (all words), &lt;strong&gt;OR&lt;/strong&gt; (some words) and &lt;strong&gt;NOT&lt;/strong&gt; (not the following word) can be added between the words. If none is added explicitly OR is used automatically. &apos;&lt;strong&gt;+&lt;/strong&gt;word&apos; means the word must be in the results, &apos;&lt;strong&gt;-&lt;/strong&gt;word&apos; means it must not be in the results.&lt;/p&gt;</source>
         <extracomment>Syntax words (AND, OR...) must not be translated.</extracomment>
-        <translation>&lt;h1&gt;&lt;A name=&apos;allsome&apos;&gt;Zu findende Wörter&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Die Suchtermini werden durch Leerzeichen getrennt. &lt;strong&gt;AND&lt;/strong&gt; (alle Wörter), &lt;strong&gt;OR&lt;/strong&gt; (einige Wörter) und &lt;strong&gt;NOT&lt;/strong&gt; (nicht das folgende Wort) können zwischen den Wörtern hinzugefügt werden. Wenn diese Wörter nicht explicit dazwischen gesetzt werden, wird automatisch OR benutzt . &apos;&lt;strong&gt;+&lt;/strong&gt;bedeutet, dass das Wort im Ergebnis enthalten sein muss, &apos;&lt;strong&gt;-&lt;/strong&gt;bedeutet, dass das Wort nicht im Ergebnis enthalten sein darf.&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;h1&gt;&lt;A name=&apos;allsome&apos;&gt;Zu findende Wörter&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Die Suchtermini werden durch Leerzeichen getrennt. &lt;strong&gt;AND&lt;/strong&gt; (alle Wörter), &lt;strong&gt;OR&lt;/strong&gt; (einige Wörter) und &lt;strong&gt;NOT&lt;/strong&gt; (nicht das folgende Wort) können zwischen den Wörtern hinzugefügt werden. Wenn diese Wörter nicht explicit dazwischen gesetzt werden, wird automatisch OR benutzt . &apos;&lt;strong&gt;+&lt;/strong&gt;bedeutet, dass das Wort im Ergebnis enthalten sein muss, &apos;&lt;strong&gt;-&lt;/strong&gt;bedeutet, dass das Wort nicht im Ergebnis enthalten sein darf.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;jesus AND god&lt;/td&gt;&lt;td&gt;Finds verses with both &apos;Jesus&apos; and &apos;God&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;jesus OR god&lt;/td&gt;&lt;td&gt;Finds verses with &apos;Jesus&apos; or &apos;God&apos; or both&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;jesus NOT god&lt;/td&gt;&lt;td&gt;Finds verses with &apos;Jesus&apos; but with no &apos;God&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;+jesus -god&lt;/td&gt;&lt;td&gt;Finds verses with &apos;Jesus&apos; but with no &apos;God&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
         <extracomment>In examples words to be searched for may be translated, but syntax words (AND, OR...) must not be translated.</extracomment>
-        <translation>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;jesus AND gott&lt;/td&gt;&lt;td&gt;Findet Verse mit &apos;Jesus&apos; und &apos;Gott&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;jesus OR gott&lt;/td&gt;&lt;td&gt;Findet Verse mit &apos;Jesus&apos; oder &apos;Gott&apos; or beidem&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;jesus NOT gott&lt;/td&gt;&lt;td&gt;Findet Verse mit &apos;Jesus&apos; aber ohne &apos;Gott&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;+jesus -gott&lt;/td&gt;&lt;td&gt;Findet ebenfalls Verse mit &apos;Jesus&apos; aber ohne &apos;Gott&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;jesus AND gott&lt;/td&gt;&lt;td&gt;Findet Verse mit &apos;Jesus&apos; und &apos;Gott&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;jesus OR gott&lt;/td&gt;&lt;td&gt;Findet Verse mit &apos;Jesus&apos; oder &apos;Gott&apos; or beidem&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;jesus NOT gott&lt;/td&gt;&lt;td&gt;Findet Verse mit &apos;Jesus&apos; aber ohne &apos;Gott&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;+jesus -gott&lt;/td&gt;&lt;td&gt;Findet ebenfalls Verse mit &apos;Jesus&apos; aber ohne &apos;Gott&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;h1&gt;&lt;A name=&apos;grouping&apos;&gt;Grouping and order&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Words can be grouped with &lt;strong&gt;parenthesis&lt;/strong&gt;. Strict word order can be defined with &lt;strong&gt;quotes&lt;/strong&gt;.&lt;/p&gt;</source>
-        <translation>&lt;h1&gt;&lt;A name=&apos;grouping&apos;&gt;Gruppierung und Reihenfolge&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Wörter können mit &lt;strong&gt;runden Klammern&lt;/strong&gt; gruppiert werden. Eine strikte Wortreihenfolge kann mit &lt;strong&gt;Anführungszeichen&lt;/strong&gt; definiert werden.&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;h1&gt;&lt;A name=&apos;grouping&apos;&gt;Gruppierung und Reihenfolge&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Wörter können mit &lt;strong&gt;runden Klammern&lt;/strong&gt; gruppiert werden. Eine strikte Wortreihenfolge kann mit &lt;strong&gt;Anführungszeichen&lt;/strong&gt; definiert werden.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;(a AND b) OR c&lt;/td&gt;&lt;td&gt;Finds verses with both &apos;a&apos; AND &apos;b&apos;, and verses with &apos;c&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;says lord&quot;&lt;/td&gt;&lt;td&gt;Finds e.g. &apos;...Isaiah says, &quot;Lord...&apos; but not &apos;...says the LORD&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;says the lord&quot;&lt;/td&gt;&lt;td&gt;Finds all verses with &apos;says the LORD&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;(a AND b) OR c&lt;/td&gt;&lt;td&gt;Findet Verse mit &apos;a&apos; UND &apos;b&apos; und Verse mit &apos;c&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;spricht HERR&quot;&lt;/td&gt;&lt;td&gt;Findet z.B. &apos;...Jesaja spricht: &quot;HERR...&apos; aber nicht &apos;...spricht der HERR&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;spricht der HERR&quot;&lt;/td&gt;&lt;td&gt;Findet alle Verse mit &apos;spricht der HERR&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;(a AND b) OR c&lt;/td&gt;&lt;td&gt;Findet Verse mit &apos;a&apos; UND &apos;b&apos; und Verse mit &apos;c&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;spricht HERR&quot;&lt;/td&gt;&lt;td&gt;Findet z.B. &apos;...Jesaja spricht: &quot;HERR...&apos; aber nicht &apos;...spricht der HERR&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;spricht der HERR&quot;&lt;/td&gt;&lt;td&gt;Findet alle Verse mit &apos;spricht der HERR&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;h1&gt;&lt;A name=&apos;wildcards&apos;&gt;Wildcards (partial words)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;&apos;&lt;strong&gt;*&lt;/strong&gt;&apos; matches any sequence of 0 or more characters, while &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; matches any single character. A wildcard can not be used in the beginning of a word.&lt;/p&gt;</source>
-        <translation>&lt;h1&gt;&lt;A name=&apos;wildcards&apos;&gt;Platzhalter (Wortteile)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;&apos;&lt;strong&gt;*&lt;/strong&gt;&apos; trifft auf jede Sequenz mit 0 oder mehr Zeichen zu, während &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; auf jedes einzelne Zeichen zutrifft. Ein Jokerzeichen darf nicht am Wortanfang benutzt werden.&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;h1&gt;&lt;A name=&apos;wildcards&apos;&gt;Platzhalter (Wortteile)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;&apos;&lt;strong&gt;*&lt;/strong&gt;&apos; trifft auf jede Sequenz mit 0 oder mehr Zeichen zu, während &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; auf jedes einzelne Zeichen zutrifft. Ein Jokerzeichen darf nicht am Wortanfang benutzt werden.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;a*&lt;/td&gt;&lt;td&gt;All words beginning with &apos;a&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a*a&lt;/td&gt;&lt;td&gt;&apos;Assyria&apos;, &apos;aroma&apos;, &apos;abba&apos; etc.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a?&lt;/td&gt;&lt;td&gt;&apos;at&apos; and &apos;an&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a??a&lt;/td&gt;&lt;td&gt;&apos;abba&apos;, &apos;area&apos;, &apos;Asia&apos; etc.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;a*&lt;/td&gt;&lt;td&gt;Alle Wörter, die mit &apos;a&apos; beginnen&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a*a&lt;/td&gt;&lt;td&gt;&apos;Antiochia&apos;, &apos;Aroma&apos;, &apos;Abba&apos; usw.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a?&lt;/td&gt;&lt;td&gt;&apos;aß&apos; und &apos;an&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a??a&lt;/td&gt;&lt;td&gt;&apos;Abba&apos;, &apos;Abia&apos;, &apos;Alva&apos; usw.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;a*&lt;/td&gt;&lt;td&gt;Alle Wörter, die mit &apos;a&apos; beginnen&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a*a&lt;/td&gt;&lt;td&gt;&apos;Antiochia&apos;, &apos;Aroma&apos;, &apos;Abba&apos; usw.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a?&lt;/td&gt;&lt;td&gt;&apos;aß&apos; und &apos;an&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a??a&lt;/td&gt;&lt;td&gt;&apos;Abba&apos;, &apos;Abia&apos;, &apos;Alva&apos; usw.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;h1&gt;&lt;A name=&apos;fields&apos;&gt;Text fields (different parts of text)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Available text fields:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:&lt;/td&gt;&lt;td&gt;Searches headings&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:&lt;/td&gt;&lt;td&gt;Searches footnotes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;Searches Strong&apos;s numbers&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&lt;/td&gt;&lt;td&gt;Searches morphology codes&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation>&lt;h1&gt;&lt;A name=&apos;fields&apos;&gt;Textfelder (verschiedene Textabschnitte)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Verfügbare Textfelder:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:&lt;/td&gt;&lt;td&gt;Durchsucht Kopfzeilen&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:&lt;/td&gt;&lt;td&gt;Durchsucht Fußnoten&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;Durchsucht Strong-Nummern&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&lt;/td&gt;&lt;td&gt;Durchsucht Morphologie- Codes&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;h1&gt;&lt;A name=&apos;fields&apos;&gt;Textfelder (verschiedene Textabschnitte)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Verfügbare Textfelder:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:&lt;/td&gt;&lt;td&gt;Durchsucht Kopfzeilen&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:&lt;/td&gt;&lt;td&gt;Durchsucht Fußnoten&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;Durchsucht Strong-Nummern&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&lt;/td&gt;&lt;td&gt;Durchsucht Morphologie- Codes&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p&gt;Examples:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:Jesus&lt;/td&gt;&lt;td&gt;Finds headings with &apos;Jesus&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:Jesus AND footnote:said&lt;/td&gt;&lt;td&gt;Finds footnotes with &apos;Jesus&apos; and &apos;said&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:G846&lt;/td&gt;&lt;td&gt;Finds verses with Strong&apos;s Greek number 846&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&quot;N-NSF&quot;&lt;/td&gt;&lt;td&gt;Finds verses with morphology code &apos;N-NSF&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Beispiele:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:Jesus&lt;/td&gt;&lt;td&gt;Findet Kopfzeilen mit &apos;Jesus&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:Jesus AND footnote:sagte&lt;/td&gt;&lt;td&gt;Findet Fußzeilen mit &apos;Jesus&apos; und &apos;sagte&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:G846&lt;/td&gt;&lt;td&gt;Findet Verse mit Strongs Griechisch Nummer 846&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&quot;N-NSF&quot;&lt;/td&gt;&lt;td&gt;Findet Verse mit dem Morphologie-Code &apos;N-NSF&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;p&gt;Beispiele:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:Jesus&lt;/td&gt;&lt;td&gt;Findet Kopfzeilen mit &apos;Jesus&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:Jesus AND footnote:sagte&lt;/td&gt;&lt;td&gt;Findet Fußzeilen mit &apos;Jesus&apos; und &apos;sagte&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:G846&lt;/td&gt;&lt;td&gt;Findet Verse mit Strongs Griechisch Nummer 846&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&quot;N-NSF&quot;&lt;/td&gt;&lt;td&gt;Findet Verse mit dem Morphologie-Code &apos;N-NSF&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;h1&gt;&lt;A name=&apos;lucene&apos;&gt;Other syntax features&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;BibleTime uses the CLucene search engine. You can read more on the &lt;a href=&apos;http://lucene.apache.org/java/1_4_3/queryparsersyntax.html&apos;&gt;lucene syntax web page&lt;/a&gt; (in external browser).&lt;/p&gt;</source>
-        <translation>&lt;h1&gt;&lt;A name=&apos;lucene&apos;&gt;Andere Syntax-Funktionen&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;BibleTime benutzt die CLucene-Suchmaschine. Sie können darüber mehr auf der &lt;a href=&apos;http://lucene.apache.org/java/1_4_3/queryparsersyntax.html&apos;&gt;lucene syntax web page&lt;/a&gt; lesen (im externen Browser).&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;h1&gt;&lt;A name=&apos;lucene&apos;&gt;Andere Syntax-Funktionen&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;BibleTime benutzt die CLucene-Suchmaschine. Sie können darüber mehr auf der &lt;a href=&apos;http://lucene.apache.org/java/1_4_3/queryparsersyntax.html&apos;&gt;lucene syntax web page&lt;/a&gt; lesen (im externen Browser).&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Search Syntax Help</source>
-        <translation>Syntaxhilfe suchen</translation>
+        <translation type="obsolete">Syntaxhilfe suchen</translation>
     </message>
 </context>
 <context>
@@ -3445,6 +3522,198 @@ Language name ppk</extracomment>
     <message>
         <source>Text of the selected search result item</source>
         <translation>Text des ausgewählten Suchergebnis-Eintrags</translation>
+    </message>
+</context>
+<context>
+    <name>Search::BtSearchSyntaxHelpDialog</name>
+    <message>
+        <source>Search Syntax Help</source>
+        <translation type="unfinished">Syntaxhilfe suchen</translation>
+    </message>
+    <message>
+        <source>This help is mainly for &apos;Full syntax&apos; option. &apos;All words&apos; and &apos;Some words&apos; options have more limited syntax; &lt;a href=&apos;#wildcards&apos;&gt;wildcards&lt;/a&gt; and &lt;a href=&apos;#fields&apos;&gt;text fields&lt;/a&gt; are supported for them. Some other syntax features may give strange or wrong results with All words/Some words.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Which words to find</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grouping and order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wildcards (partial words)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Text fields (different parts of text)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Other syntax features</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search terms are separated by spaces. &lt;strong&gt;AND&lt;/strong&gt; (all words), &lt;strong&gt;OR&lt;/strong&gt; (some words) and &lt;strong&gt;NOT&lt;/strong&gt; (not the following word) can be added between the words. If none is added explicitly OR is used automatically. &apos;&lt;strong&gt;+&lt;/strong&gt;word&apos; means the word must be in the results, &apos;&lt;strong&gt;-&lt;/strong&gt;word&apos; means it must not be in the results.</source>
+        <comment>Do not translate &quot;AND&quot;, &quot;OR&quot; or &quot;NOT&quot;.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>jesus AND god</source>
+        <comment>Do not translate &quot;AND&quot;.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Finds verses with both &apos;Jesus&apos; and &apos;God&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>jesus OR god</source>
+        <comment>Do not translate &quot;OR&quot;.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Finds verses with &apos;Jesus&apos; or &apos;God&apos; or both</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>jesus NOT god</source>
+        <comment>Do not translate &quot;NOT&quot;.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Finds verses with &apos;Jesus&apos; but with no &apos;God&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>+jesus -god</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Words can be grouped with &lt;strong&gt;parenthesis&lt;/strong&gt;. Strict word order can be defined with &lt;strong&gt;quotes&lt;/strong&gt;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(a AND b) OR c</source>
+        <comment>Do not translate &quot;AND&quot; or &quot;OR&quot;.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Finds verses with both &apos;a&apos; AND &apos;b&apos;, and verses with &apos;c&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&quot;says lord&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&quot;says the lord&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Finds all verses with &apos;says the LORD&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&apos;&lt;strong&gt;*&lt;/strong&gt;&apos; matches any sequence of 0 or more characters, while &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; matches any single character. A wildcard can not be used in the beginning of a word.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>a*</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All words beginning with &apos;a&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>a*a</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&apos;Assyria&apos;, &apos;aroma&apos;, &apos;abba&apos; etc.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>a?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&apos;at&apos; and &apos;an&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>a??a</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&apos;abba&apos;, &apos;area&apos;, &apos;Asia&apos; etc.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Available text fields:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Searches headings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Searches footnotes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Searches Strong&apos;s numbers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Searches morphology codes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Examples:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>heading:Jesus</source>
+        <comment>Do not translate &quot;heading:&quot;.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Finds headings with &apos;Jesus&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>footnote:Jesus AND footnote:said</source>
+        <comment>Do not translate &quot;footnote:&quot; or &quot;AND&quot;.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Finds footnotes with &apos;Jesus&apos; and &apos;said&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>strong:G846</source>
+        <comment>Do not translate &quot;strong:&quot;.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Finds verses with Strong&apos;s Greek number 846</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>morph:&quot;N-NSF&quot;</source>
+        <comment>Do not translate &quot;morph:&quot;.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Finds verses with morphology code &apos;N-NSF&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>BibleTime uses the CLucene search engine. You can read more on the &lt;a href=&apos;%1&apos;&gt;lucene syntax web page&lt;/a&gt; (in external browser).</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
