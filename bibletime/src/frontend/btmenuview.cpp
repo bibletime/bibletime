@@ -52,98 +52,124 @@ void BtMenuView::postBuildMenu() {
     // Intentionally empty. Reimplement in subclass if needed.
 }
 
-void BtMenuView::buildMenu(QMenu *parentMenu, const QModelIndex &parent) {
+QAction *BtMenuView::newAction(QMenu *parentMenu, const QModelIndex &itemIndex) {
+    QVariant displayData(m_model->data(itemIndex, Qt::DisplayRole));
+    QVariant iconData(m_model->data(itemIndex, Qt::DecorationRole));
+    QVariant toolTipData(m_model->data(itemIndex, Qt::ToolTipRole));
+    QVariant statusTipData(m_model->data(itemIndex, Qt::StatusTipRole));
+    QVariant whatsThisData(m_model->data(itemIndex, Qt::WhatsThisRole));
+
+    QAction *childAction = new QAction(parentMenu);
+
+    // Set text:
+    if (qVariantCanConvert<QString>(displayData)) {
+        childAction->setText(displayData.toString());
+    }
+
+    // Set icon:
+    if (qVariantCanConvert<QIcon>(iconData)) {
+        childAction->setIcon(iconData.value<QIcon>());
+    }
+
+    // Set tooltip:
+    if (qVariantCanConvert<QString>(toolTipData)) {
+        childAction->setToolTip(toolTipData.toString());
+    }
+
+    // Set status tip:
+    if (qVariantCanConvert<QString>(statusTipData)) {
+        childAction->setStatusTip(statusTipData.toString());
+    }
+
+    // Set whatsthis:
+    if (qVariantCanConvert<QString>(whatsThisData)) {
+        childAction->setWhatsThis(whatsThisData.toString());
+    }
+
+    // Set checkable:
+    if (m_model->flags(itemIndex).testFlag(Qt::ItemIsUserCheckable)) {
+        childAction->setCheckable(true);
+    }
+
+    // Set checked:
+    QVariant checkData(m_model->data(itemIndex, Qt::CheckStateRole));
+    bool ok;
+    Qt::CheckState state = (Qt::CheckState) checkData.toInt(&ok);
+    if (ok) {
+        childAction->setChecked(state == Qt::Checked);
+    }
+
+    return childAction;
+}
+
+QMenu *BtMenuView::newMenu(QMenu *parentMenu, const QModelIndex &itemIndex) {
+    QVariant displayData(m_model->data(itemIndex, Qt::DisplayRole));
+    QVariant iconData(m_model->data(itemIndex, Qt::DecorationRole));
+    QVariant toolTipData(m_model->data(itemIndex, Qt::ToolTipRole));
+    QVariant statusTipData(m_model->data(itemIndex, Qt::StatusTipRole));
+    QVariant whatsThisData(m_model->data(itemIndex, Qt::WhatsThisRole));
+
+    QMenu *childMenu = new QMenu(parentMenu);
+
+    // Set text:
+    if (qVariantCanConvert<QString>(displayData)) {
+        childMenu->setTitle(displayData.toString());
+    }
+
+    // Set icon:
+    if (qVariantCanConvert<QIcon>(iconData)) {
+        childMenu->setIcon(iconData.value<QIcon>());
+    }
+
+    // Set tooltip:
+    if (qVariantCanConvert<QString>(toolTipData)) {
+        childMenu->setToolTip(toolTipData.toString());
+    }
+
+    // Set status tip:
+    if (qVariantCanConvert<QString>(statusTipData)) {
+        childMenu->setStatusTip(statusTipData.toString());
+    }
+
+    // Set whatsthis:
+    if (qVariantCanConvert<QString>(whatsThisData)) {
+        childMenu->setWhatsThis(whatsThisData.toString());
+    }
+
+    return childMenu;
+}
+
+void BtMenuView::buildMenu(QMenu *parentMenu, const QModelIndex &parentIndex) {
     Q_ASSERT(m_model != 0);
 
-    int children = m_model->rowCount(parent);
+    int children = m_model->rowCount(parentIndex);
     for (int i = 0; i < children; i++) {
-        QModelIndex child(m_model->index(i, 0, parent));
-        QVariant displayData(m_model->data(child, Qt::DisplayRole));
-        QVariant iconData(m_model->data(child, Qt::DecorationRole));
-        QVariant toolTipData(m_model->data(child, Qt::ToolTipRole));
-        QVariant statusTipData(m_model->data(child, Qt::StatusTipRole));
-        QVariant whatsThisData(m_model->data(child, Qt::WhatsThisRole));
+        QModelIndex childIndex(m_model->index(i, 0, parentIndex));
 
-        if (m_model->rowCount(child) > 0) {
-            QMenu *childMenu = new QMenu(parentMenu);
+        if (m_model->rowCount(childIndex) > 0) {
+            QMenu *childMenu = newMenu(parentMenu, childIndex);
 
-            // Set text:
-            if (qVariantCanConvert<QString>(displayData)) {
-                childMenu->setTitle(displayData.toString());
+            if (childMenu != 0) {
+                parentMenu->addMenu(childMenu);
+
+                QVariant populate(childMenu->property("BtMenuView_NoPopulate"));
+                if (!populate.isValid() || populate.toBool()) {
+                    buildMenu(childMenu, childIndex);
+                }
             }
-
-            // Set icon:
-            if (qVariantCanConvert<QIcon>(iconData)) {
-                childMenu->setIcon(iconData.value<QIcon>());
-            }
-
-            // Set tooltip:
-            if (qVariantCanConvert<QString>(toolTipData)) {
-                childMenu->setToolTip(toolTipData.toString());
-            }
-
-            // Set status tip:
-            if (qVariantCanConvert<QString>(statusTipData)) {
-                childMenu->setStatusTip(statusTipData.toString());
-            }
-
-            // Set whatsthis:
-            if (qVariantCanConvert<QString>(whatsThisData)) {
-                childMenu->setWhatsThis(whatsThisData.toString());
-            }
-
-            parentMenu->addMenu(childMenu);
-            buildMenu(childMenu, child);
         } else {
-            QAction *childAction = new QAction(m_actions);
+            QAction *childAction = newAction(parentMenu, childIndex);
 
-            // Set text:
-            if (qVariantCanConvert<QString>(displayData)) {
-                childAction->setText(displayData.toString());
+            if (childAction != 0) {
+                // Map index
+                m_indexMap[childAction] = QPersistentModelIndex(childIndex);
+
+                // Add action to action group:
+                m_actions->addAction(childAction);
+
+                // Add action to menu:
+                parentMenu->addAction(childAction);
             }
-
-            // Set icon:
-            if (qVariantCanConvert<QIcon>(iconData)) {
-                childAction->setIcon(iconData.value<QIcon>());
-            }
-
-            // Set tooltip:
-            if (qVariantCanConvert<QString>(toolTipData)) {
-                childAction->setToolTip(toolTipData.toString());
-            }
-
-            // Set status tip:
-            if (qVariantCanConvert<QString>(statusTipData)) {
-                childAction->setStatusTip(statusTipData.toString());
-            }
-
-            // Set whatsthis:
-            if (qVariantCanConvert<QString>(whatsThisData)) {
-                childAction->setWhatsThis(whatsThisData.toString());
-            }
-
-            // Set checkable:
-            if (m_model->flags(child).testFlag(Qt::ItemIsUserCheckable)) {
-                childAction->setCheckable(true);
-            }
-
-            // Set checked:
-            QVariant checkData(m_model->data(child, Qt::CheckStateRole));
-            bool ok;
-            Qt::CheckState state = (Qt::CheckState) checkData.toInt(&ok);
-            if (ok) {
-                childAction->setChecked(state == Qt::Checked);
-            }
-
-
-            // Map index
-            m_indexMap[childAction] = QPersistentModelIndex(child);
-
-            // Add action to action group:
-            m_actions->addAction(childAction);
-
-            // Add action to menu:
-            parentMenu->addAction(childAction);
         }
     }
 }

@@ -34,7 +34,9 @@ class QActionGroup;
   QAction which may be triggered by the user.
 
   When subclassing this menu, reimplement preBuildMenu() and postBuildMenu() to add new menu
-  items before or after the menu is populated with data from the associated item model.
+  items before or after the menu is populated with data from the associated item model. You
+  can also reimplement newAction() and newMenu() if you further want to tune the appearance
+  or behaviour of this menu.
 
   \warning This menu might not properly handle changes in the source model while being shown,
            so beware to check whether the index emitted by triggered() is valid.
@@ -100,8 +102,28 @@ class BtMenuView: public QMenu {
         */
         virtual void postBuildMenu();
 
+        /**
+          This method is called by BtMenuView to initialize an action to add to this menu. If
+          the action corresponding to the given index is not to be added to this menu, please
+          return 0.
+          \param[in] parentMenu the parent menu under which the new action is to be added.
+          \param[in] itemIndex the index of the item corresponding to the action.
+        */
+        virtual QAction *newAction(QMenu *parentMenu, const QModelIndex &itemIndex);
+
+        /**
+          This method is called by BtMenuView to initialize a menu to add to this menu. If
+          the menu corresponding to the given index is not to be added to this menu, please
+          return 0. If the menu should not be populated by BtMenuView itself, please use
+          setProperty("BtMenuView_NoPopulate", true) on the menu to be returned by this
+          method.
+          \param[in] parentMenu the parent menu under which the new menu is to be added.
+          \param[in] itemIndex the index of the item corresponding to the menu.
+        */
+        virtual QMenu *newMenu(QMenu *parentMenu, const QModelIndex &itemIndex);
+
     private:
-        void buildMenu(QMenu *parentMenu, const QModelIndex &parent);
+        void buildMenu(QMenu *parentMenu, const QModelIndex &parentIndex);
 
     private slots:
         void slotAboutToShow();
