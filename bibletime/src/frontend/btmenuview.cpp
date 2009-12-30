@@ -16,7 +16,7 @@
 
 
 BtMenuView::BtMenuView(QWidget *parent)
-    : QMenu(parent), m_model(0), m_actions(0)
+    : QMenu(parent), m_model(0), m_parentIndex(QModelIndex()), m_actions(0)
 {
     connect(this, SIGNAL(aboutToShow()),
             this, SLOT(slotAboutToShow()));
@@ -32,6 +32,24 @@ BtMenuView::~BtMenuView() {
 
 void BtMenuView::setModel(QAbstractItemModel *model) {
     m_model = model;
+    if (m_actions != 0) {
+        delete m_actions;
+    }
+    m_indexMap.clear();
+    m_parentIndex = QModelIndex();
+}
+
+void BtMenuView::setParentIndex(const QModelIndex &parentIndex) {
+    if (parentIndex.isValid() && parentIndex.model() != m_model) return;
+    m_parentIndex = parentIndex;
+}
+
+void BtMenuView::preBuildMenu() {
+    // Intentionally empty. Reimplement in subclass if needed.
+}
+
+void BtMenuView::postBuildMenu() {
+    // Intentionally empty. Reimplement in subclass if needed.
 }
 
 void BtMenuView::buildMenu(QMenu *parentMenu, const QModelIndex &parent) {
@@ -131,20 +149,20 @@ void BtMenuView::buildMenu(QMenu *parentMenu, const QModelIndex &parent) {
 }
 
 void BtMenuView::slotAboutToShow() {
+    if (m_model == 0) return;
+
     if (m_actions != 0) {
         delete m_actions;
-        m_actions = 0;
     }
     m_indexMap.clear();
-
-    if (m_model == 0) return;
 
     m_actions = new QActionGroup(this);
     connect(m_actions, SIGNAL(triggered(QAction*)),
             this, SLOT(slotActionTriggered(QAction*)));
 
-    QModelIndex parentIndex;
-    buildMenu(this, parentIndex);
+    preBuildMenu();
+    buildMenu(this, m_parentIndex);
+    postBuildMenu();
 }
 
 void BtMenuView::slotAboutToHide() {
@@ -158,4 +176,3 @@ void BtMenuView::slotActionTriggered(QAction *action) {
         emit triggered(itemIndex);
     }
 }
-
