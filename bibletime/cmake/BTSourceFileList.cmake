@@ -258,7 +258,7 @@ SET(bibletime_SRC_FRONTEND_KEYCHOOSER_VERSEKEYCHOOSER
 	src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp
 )
 
-SOURCE_GROUP("src\\frontend\\keychooser" FILES ${bibletime_SRC_FRONTEND_KEYCHOOSER_VERSEKEYCHOOSER})
+SOURCE_GROUP("src\\frontend\\keychooser\\versekeychooser" FILES ${bibletime_SRC_FRONTEND_KEYCHOOSER_VERSEKEYCHOOSER})
 
 SET(bibletime_SRC_FRONTEND_DISPLAY
 	# Behaviour for display areas:
