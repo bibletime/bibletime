@@ -92,13 +92,19 @@ class BtMenuView: public QMenu {
           This method is called by BtMenuView before populating itself with data from the
           model. Reimplement this method to add any menus/actions to this menu before the
           items of the menu. The default implementation does nothing.
+
+          The model might be unset before this method is called. When the menu is about to be
+          shown, this allows for this method to initialize the model on request. If the model
+          is unset after this method returns, the menu is not populated with data from the
+          item model.
         */
         virtual void preBuildMenu();
 
         /**
           This method is called by BtMenuView after populating itself with data from the
-          model. Reimplement this method to add any menus/actions to this menu after the
-          items of the menu. The default implementation does nothing.
+          model. If there was no model set, this method is still called after preBuildMenu().
+          Reimplement this method to add any menus/actions to this menu after the items of
+          the menu. The default implementation does nothing.
         */
         virtual void postBuildMenu();
 

@@ -175,8 +175,6 @@ void BtMenuView::buildMenu(QMenu *parentMenu, const QModelIndex &parentIndex) {
 }
 
 void BtMenuView::slotAboutToShow() {
-    if (m_model == 0) return;
-
     if (m_actions != 0) {
         delete m_actions;
     }
@@ -187,7 +185,9 @@ void BtMenuView::slotAboutToShow() {
             this, SLOT(slotActionTriggered(QAction*)));
 
     preBuildMenu();
-    buildMenu(this, m_parentIndex);
+    if (m_model != 0) {
+        buildMenu(this, m_parentIndex);
+    }
     postBuildMenu();
 }
 
