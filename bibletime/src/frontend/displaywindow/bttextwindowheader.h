@@ -26,15 +26,16 @@ class BtTextWindowHeader: public QWidget, public BtWindowModuleChooser {
         virtual ~BtTextWindowHeader();
 
     public slots:
+        /**
+          The backend module list was updated, module list and widgets must be updated from
+          scratch.
+        */
         void slotBackendModulesChanged();
+
+        /**
+          The window module list was updated, module list and widgets must be updated.
+        */
         void slotWindowModulesChanged();
-
-
-    protected:
-        /** The backend module list was updated, module list and widgets must be updated from scratch.*/
-        void backendModulesChanged();
-        /** The window module list was updated, module list and widgets must be updated.*/
-        void windowModulesChanged();
 
     signals:
         /** User selected a module from menu to replace another module*/

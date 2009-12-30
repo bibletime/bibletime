@@ -40,15 +40,14 @@ class BtWindowModuleChooser {
 
         virtual ~BtWindowModuleChooser() {}
 
-    protected:
         /**
         * The backend module list was updated, module list and widgets must be updated.
         * This expects that the window module list has already been updated, so
         * the corresponding slot should be connected to the window, not to the backend.
         */
-        virtual void backendModulesChanged() = 0;
+        virtual void slotBackendModulesChanged() = 0;
         /** Modules have been added, replaced or removed in the window without backend changing.*/
-        virtual void windowModulesChanged() = 0;
+        virtual void slotWindowModulesChanged() = 0;
 
 
     protected:

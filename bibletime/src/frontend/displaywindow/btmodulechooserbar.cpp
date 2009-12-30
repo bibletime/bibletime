@@ -31,10 +31,6 @@ BtModuleChooserBar::BtModuleChooserBar(QStringList useModules, CSwordModuleInfo:
 }
 
 void BtModuleChooserBar::slotBackendModulesChanged() {
-    backendModulesChanged();
-}
-
-void BtModuleChooserBar::backendModulesChanged() {
     m_modules = m_window->getModuleList();
 
     adjustButtonCount();
@@ -46,10 +42,6 @@ void BtModuleChooserBar::backendModulesChanged() {
         qDebug() << "refresh button's menu:" << moduleName << i;
         button->recreateMenu(m_modules, moduleName, i);
     }
-}
-
-void BtModuleChooserBar::slotWindowModulesChanged() {
-    windowModulesChanged();
 }
 
 void BtModuleChooserBar::adjustButtonCount(bool adjustToZero) {
@@ -82,7 +74,7 @@ void BtModuleChooserBar::adjustButtonCount(bool adjustToZero) {
     }
 }
 
-void BtModuleChooserBar::windowModulesChanged() {
+void BtModuleChooserBar::slotWindowModulesChanged() {
     //qDebug() << "BtModuleChooserBar::windowModulesChanged";
     m_modules = m_window->getModuleList();
     adjustButtonCount();

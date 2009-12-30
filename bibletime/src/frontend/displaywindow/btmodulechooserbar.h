@@ -24,21 +24,17 @@ class BtModuleChooserBar: public QToolBar, public BtWindowModuleChooser {
         BtModuleChooserBar(QStringList useModules, CSwordModuleInfo::ModuleType type,  CReadWindow* parent);
 
     public slots:
-        /** The backend module list was updated, module list and widgets must be updated*/
-        void slotBackendModulesChanged();
-        void slotWindowModulesChanged();
-
-    protected:
         /**
         * The backend module list was updated, module list and widgets must be updated.
         * The signal comes from the window, not from the backend. The new list can
         * be shorter but not longer than the old list.
         */
-        virtual void backendModulesChanged();
+        void slotBackendModulesChanged();
+
         /**
         * The window module list was changed, i.e. 1 module added, removed or replaced.
         */
-        virtual void windowModulesChanged();
+        void slotWindowModulesChanged();
 
     private:
         /** Adds an empty button to the toolbar.*/

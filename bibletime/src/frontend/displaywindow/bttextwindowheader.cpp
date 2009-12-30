@@ -37,10 +37,6 @@ BtTextWindowHeader::BtTextWindowHeader ( CDisplayWindow* window, CSwordModuleInf
 BtTextWindowHeader::~BtTextWindowHeader() {}
 
 void BtTextWindowHeader::slotBackendModulesChanged() {
-    backendModulesChanged();
-}
-
-void BtTextWindowHeader::backendModulesChanged() {
     m_modules = m_window->getModuleList();
 
     adjustWidgetCount();
@@ -55,10 +51,6 @@ void BtTextWindowHeader::backendModulesChanged() {
 }
 
 void BtTextWindowHeader::slotWindowModulesChanged() {
-    windowModulesChanged();
-}
-
-void BtTextWindowHeader::windowModulesChanged() {
     m_modules = m_window->getModuleList();
     adjustWidgetCount();
     updateWidgets();
