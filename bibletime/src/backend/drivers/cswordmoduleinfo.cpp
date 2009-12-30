@@ -146,18 +146,15 @@ bool CSwordModuleInfo::unlockKeyIsValid() const {
                    : QString::fromLatin1( m_module->getRawEntryBuf().c_str() );
 
     if (test.isEmpty()) {
-        qWarning() << "Unlock key of module" << name() << "is NOT valid!";
         return false;
     }
 
     for (int i = 0; i <= test.length() && i < 100; i++) {
         if ( !test[i].isPrint() && !test[i].isNull() ) {
-            qWarning() << "Unlock key of module" << name() << "is NOT valid!";
             return false;
         }
     }
 
-    qDebug() << "Unlock key of module" << name() << "is valid";
     return true;
 }
 
