@@ -105,7 +105,7 @@ bool CSwordModuleInfo::unlock(const QString & unlockKey) {
 }
 
 /** This function returns true if this module is locked, otherwise return false. */
-bool CSwordModuleInfo::isLocked() {
+bool CSwordModuleInfo::isLocked() const {
     //still works, but the cipherkey is stored in CBTConfig.
     //Works because it is set in sword on program startup.
 
@@ -133,7 +133,7 @@ bool CSwordModuleInfo::isEncrypted() const {
 * unlocked and b) no buffer overflows will occur, which can happen when
 * Sword filters process garbage text which was not properly decrypted.
 */
-bool CSwordModuleInfo::unlockKeyIsValid() {
+bool CSwordModuleInfo::unlockKeyIsValid() const {
 
     (*m_module) = sword::TOP;
 

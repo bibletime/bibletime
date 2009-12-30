@@ -203,9 +203,9 @@ class CSwordModuleInfo: public QObject {
         * \todo Make CSwordModuleInfo::isLocked() const.
         * @return True if this module is locked, i.e. encrypted but without a key set
         */
-        bool isLocked();
+        bool isLocked() const;
 
-        bool unlockKeyIsValid();
+        bool unlockKeyIsValid() const;
 
         /** The module version.
         * @return true if this module has a version number and false if it doesn't have one.

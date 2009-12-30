@@ -93,11 +93,8 @@ bool BtBookshelfModel::setData(const QModelIndex &index, const QVariant &value,
     return false;
 }
 
-QIcon BtBookshelfModel::moduleIcon(const CSwordModuleInfo *m) {
+QIcon BtBookshelfModel::moduleIcon(const CSwordModuleInfo *module) {
     namespace DU = util::directory;
-
-    /// \todo Make CSwordModuleInfo::isLocked() const and remove const_cast:
-    CSwordModuleInfo *module(const_cast<CSwordModuleInfo*>(m));
 
     CSwordModuleInfo::Category cat(module->category());
     switch (cat) {
