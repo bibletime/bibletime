@@ -28,7 +28,6 @@
 #include "frontend/cinputdialog.h"
 #include "frontend/cmdiarea.h"
 #include "frontend/bookshelfmanager/btmodulemanagerdialog.h"
-#include "frontend/displaywindow/cbiblereadwindow.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
 #include "frontend/profile/cprofilemgr.h"
 #include "frontend/profile/cprofile.h"
