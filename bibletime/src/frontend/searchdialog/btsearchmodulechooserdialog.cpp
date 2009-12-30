@@ -25,10 +25,15 @@ BtSearchModuleChooserDialog::BtSearchModuleChooserDialog(QWidget *parent,
                                                          Qt::WindowFlags flags)
     : BtModuleChooserDialog(parent, flags)
 {
+    // Initialize the tree model:
+    const BtBookshelfDockWidget *dw(BtBookshelfDockWidget::getInstance());
+    BtBookshelfTreeModel *treeModel = new BtBookshelfTreeModel(dw->groupingOrder(), this);
+    treeModel->setCheckable(true);
+
+    // Initialize the bookshelf widget:
     bookshelfWidget()->showHideAction()->setVisible(false);
     bookshelfWidget()->showHideButton()->hide();
-    const BtBookshelfDockWidget *dw(BtBookshelfDockWidget::getInstance());
-    bookshelfWidget()->setTreeModel(new BtBookshelfTreeModel(dw->groupingOrder(), this));
+    bookshelfWidget()->setTreeModel(treeModel);
     bookshelfWidget()->setSourceModel(CPointers::backend()->model());
 
     retranslateUi();
