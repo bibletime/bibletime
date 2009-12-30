@@ -19,6 +19,7 @@
 #include "frontend/cinfodisplay.h"
 #include "frontend/display/bthtmljsobject.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
+#include "frontend/displaywindow/cdisplaywindowfactory.h"
 #include "frontend/displaywindow/creadwindow.h"
 #include "util/directory.h"
 #include "util/cpointers.h"
@@ -35,7 +36,7 @@ BtHtmlReadDisplay::BtHtmlReadDisplay(CReadWindow* readWindow, QWidget* parentWid
 
 {
     settings()->setAttribute(QWebSettings::JavascriptEnabled, true);
-    m_view = new BtHtmlReadDisplayView(this, parentWidget ? parentWidget : readWindow);
+    m_view = new BtHtmlReadDisplayView(this, parentWidget ? parentWidget : readWindow, readWindow);
     m_view->setAcceptDrops(true);
     m_view->setPage(this);
     setParent(m_view);
@@ -276,8 +277,8 @@ void BtHtmlReadDisplay::javaScriptConsoleMessage (const QString& message, int li
 
 // ----------------- BtHtmlReadDisplayView -------------------------------------
 
-BtHtmlReadDisplayView::BtHtmlReadDisplayView(BtHtmlReadDisplay* displayWidget, QWidget* parent)
-        : QWebView(parent), m_display(displayWidget) {
+BtHtmlReadDisplayView::BtHtmlReadDisplayView(BtHtmlReadDisplay* displayWidget, QWidget* parent, CReadWindow* readWindow)
+        : QWebView(parent), m_display(displayWidget), m_readWindow(readWindow) {
 }
 
 BtHtmlReadDisplayView::~BtHtmlReadDisplayView() {
@@ -307,17 +308,48 @@ void BtHtmlReadDisplayView::dropEvent( QDropEvent* e ) {
         }
     };
     //don't accept the action!
-    e->ignore();
+//    e->ignore();
 }
 
 // Reimplementation from QWebView
 void BtHtmlReadDisplayView::dragEnterEvent( QDragEnterEvent* e ) {
-    if (e->mimeData()->hasFormat("BibleTime/Bookmark")) {
-        e->acceptProposedAction();
+    if ( ! e->mimeData()->hasFormat("BibleTime/Bookmark")) 
         return;
+
+    const QMimeData* mimedata = e->mimeData();
+    if (mimedata == 0) 
+        return;
+
+    const BTMimeData* btmimedata = qobject_cast<const BTMimeData*>(mimedata);
+    if (btmimedata == 0)
+        return;
+
+    BookmarkItem item = (qobject_cast<const BTMimeData*>(e->mimeData()))->bookmark();
+    QString moduleName = item.module();
+    CSwordModuleInfo* m = backend()->findModuleByName(moduleName);
+    Q_ASSERT(m);
+    if (m == 0) 
+        return;
+
+    CSwordModuleInfo::ModuleType bookmarkType = m->type();
+    CSwordModuleInfo::ModuleType windowType = CDisplayWindowFactory::getModuleType(m_readWindow);
+
+    // Is bible reference bookmark compatible with the window type?
+    if ((bookmarkType == CSwordModuleInfo::Bible || 
+        bookmarkType == CSwordModuleInfo::Commentary)) {
+            if (windowType == CSwordModuleInfo::Bible || 
+                windowType == CSwordModuleInfo::Commentary) 
+                e->acceptProposedAction();
+            return;
     }
-    //don't accept the action!
-    e->ignore();
+
+    // Is reference type compatible with window type
+    if (bookmarkType == windowType) {
+            e->acceptProposedAction();
+            return;
+    }
+
+    return;
 }
 
 // Reimplementation from QWebView

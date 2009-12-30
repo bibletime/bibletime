@@ -109,12 +109,13 @@ class BtHtmlReadDisplayView : public QWebView, public CPointers {
     protected:
         friend class BtHtmlReadDisplay;
         void contextMenuEvent(QContextMenuEvent* event);
-        BtHtmlReadDisplayView(BtHtmlReadDisplay* display, QWidget* parent);
+        BtHtmlReadDisplayView(BtHtmlReadDisplay* display, QWidget* parent, CReadWindow* readWindow);
         ~BtHtmlReadDisplayView();
         bool event(QEvent* e);
 
     private:
         BtHtmlReadDisplay* m_display;
+        CReadWindow* m_readWindow;
         void dropEvent( QDropEvent* e );
         void dragEnterEvent( QDragEnterEvent* e );
         void dragMoveEvent( QDragMoveEvent* e );

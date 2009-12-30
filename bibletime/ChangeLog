@@ -1,3 +1,6 @@
+2009-12-30 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fixed bug ID: 1337338 "lexicon display window accepts illegal keys by drag&drop"
+
 2009-12-21 Jaak Ristioja <ristioja@gmail.com>
     * Refactored search dialog module chooser dialog.
 

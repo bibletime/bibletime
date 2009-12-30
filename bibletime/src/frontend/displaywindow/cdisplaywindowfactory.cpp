@@ -50,3 +50,15 @@ CWriteWindow* CDisplayWindowFactory::createWriteInstance(QList<CSwordModuleInfo*
     }
     return 0;
 }
+
+const CSwordModuleInfo::ModuleType CDisplayWindowFactory::getModuleType(QObject* widget) {
+    if (qobject_cast<CBibleReadWindow*>(widget) != 0 )
+        return CSwordModuleInfo::Bible;
+    if (qobject_cast<CCommentaryReadWindow*>(widget) != 0 )
+        return CSwordModuleInfo::Commentary;
+    if (qobject_cast<CBookReadWindow*>(widget) != 0 )
+        return CSwordModuleInfo::GenericBook;
+    if (qobject_cast<CLexiconReadWindow*>(widget) != 0 )
+        return CSwordModuleInfo::Lexicon;
+    return CSwordModuleInfo::Unknown;
+}
