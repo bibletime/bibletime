@@ -25,7 +25,7 @@ BtBookshelfFilterModel::BtBookshelfFilterModel(QObject *parent)
       m_categoryFilterRole(BtBookshelfModel::ModuleCategoryRole),
       m_categoryFilterColumn(0)
 {
-    // Intentionally empty
+    setDynamicSortFilter(true);
 }
 
 BtBookshelfFilterModel::~BtBookshelfFilterModel() {
