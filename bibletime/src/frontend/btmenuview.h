@@ -45,7 +45,7 @@ class BtMenuView: public QMenu {
     Q_OBJECT
     public:
         BtMenuView(QWidget *parent = 0);
-        ~BtMenuView();
+        virtual ~BtMenuView();
 
         /**
           Sets or resets the data model for this menu and resets the parent index to an

@@ -22,6 +22,8 @@ BtMenuView::BtMenuView(QWidget *parent)
             this, SLOT(slotAboutToShow()));
     connect(this, SIGNAL(aboutToHide()),
             this, SLOT(slotAboutToHide()));
+    connect(this, SIGNAL(triggered(QAction*)),
+            this, SLOT(slotActionTriggered(QAction*)));
 }
 
 BtMenuView::~BtMenuView() {
@@ -34,6 +36,7 @@ void BtMenuView::setModel(QAbstractItemModel *model) {
     m_model = model;
     if (m_actions != 0) {
         delete m_actions;
+        m_actions = 0;
     }
     m_indexMap.clear();
     m_parentIndex = QModelIndex();
@@ -141,6 +144,7 @@ QMenu *BtMenuView::newMenu(QMenu *parentMenu, const QModelIndex &itemIndex) {
 
 void BtMenuView::buildMenu(QMenu *parentMenu, const QModelIndex &parentIndex) {
     Q_ASSERT(m_model != 0);
+    Q_ASSERT(m_actions != 0);
 
     int children = m_model->rowCount(parentIndex);
     for (int i = 0; i < children; i++) {
@@ -150,8 +154,10 @@ void BtMenuView::buildMenu(QMenu *parentMenu, const QModelIndex &parentIndex) {
             QMenu *childMenu = newMenu(parentMenu, childIndex);
 
             if (childMenu != 0) {
+                // Add to menu:
                 parentMenu->addMenu(childMenu);
 
+                // Populate the menu if not prohibited:
                 QVariant populate(childMenu->property("BtMenuView_NoPopulate"));
                 if (!populate.isValid() || populate.toBool()) {
                     buildMenu(childMenu, childIndex);
@@ -162,10 +168,10 @@ void BtMenuView::buildMenu(QMenu *parentMenu, const QModelIndex &parentIndex) {
 
             if (childAction != 0) {
                 // Map index
-                m_indexMap[childAction] = QPersistentModelIndex(childIndex);
+                m_indexMap.insert(childAction, childIndex);
 
                 // Add action to action group:
-                m_actions->addAction(childAction);
+                childAction->setActionGroup(m_actions);
 
                 // Add action to menu:
                 parentMenu->addAction(childAction);
@@ -177,15 +183,15 @@ void BtMenuView::buildMenu(QMenu *parentMenu, const QModelIndex &parentIndex) {
 void BtMenuView::slotAboutToShow() {
     if (m_actions != 0) {
         delete m_actions;
+        m_actions = 0;
     }
     m_indexMap.clear();
 
-    m_actions = new QActionGroup(this);
-    connect(m_actions, SIGNAL(triggered(QAction*)),
-            this, SLOT(slotActionTriggered(QAction*)));
-
     preBuildMenu();
+
     if (m_model != 0) {
+        m_actions = new QActionGroup(this);
+
         buildMenu(this, m_parentIndex);
     }
     postBuildMenu();
