@@ -24,6 +24,7 @@
 #include "backend/managers/clanguagemgr.h"
 #include "backend/managers/cswordbackend.h"
 #include "frontend/btbookshelfdockwidget.h"
+#include "frontend/btopenworkaction.h"
 #include "frontend/cinfodisplay.h"
 #include "frontend/cmdiarea.h"
 #include "frontend/cprinter.h"
@@ -266,6 +267,16 @@ void BibleTime::initActions() {
     m_mainToolBar->setFloatable(false);
     m_mainToolBar->setMovable(false);
 
+    // ********** File menu *********************
+
+    /// \todo Implement and attach a proper module opening dialog to m_openWorkAction
+    m_openWorkAction = new BtOpenWorkAction(this);
+    connect(m_openWorkAction, SIGNAL(triggered(CSwordModuleInfo*)),
+            this,             SLOT(createReadDisplayWindow(CSwordModuleInfo*)));
+    m_mainToolBar->addAction(m_openWorkAction);
+    fileMenu->addAction(m_openWorkAction);
+    fileMenu->addSeparator();
+
     QAction* tmp = m_actionCollection->action("quit");
     fileMenu->addAction(tmp);
     connect(tmp, SIGNAL(triggered()), this, SLOT(quit()) );
@@ -276,6 +287,7 @@ void BibleTime::initActions() {
     m_windowFullscreen_action = m_actionCollection->action("toggleFullscreen");
     m_windowFullscreen_action->setCheckable(true);
     viewMenu->addAction(m_windowFullscreen_action);
+    m_mainToolBar->addSeparator();
     m_mainToolBar->addAction(m_windowFullscreen_action);
     connect(m_windowFullscreen_action, SIGNAL(triggered()), this, SLOT(toggleFullscreen()) );
 

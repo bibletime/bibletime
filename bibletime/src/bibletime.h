@@ -24,6 +24,7 @@ class CInfoDisplay;
 }
 class BtActionClass;
 class BtBookshelfDockWidget;
+class BtOpenWorkAction;
 class CBookmarkIndex;
 class CDisplayWindow;
 class CMDIArea;
@@ -373,6 +374,8 @@ class BibleTime : public QMainWindow {
         InfoDisplay::CInfoDisplay* m_infoDisplay;
 
         QToolBar* m_mainToolBar;
+        // FILE menu actions
+        BtOpenWorkAction *m_openWorkAction;
         // VIEW menu actions
         QAction* m_viewToolbar_action;
         QMenu* m_windowMenu;
