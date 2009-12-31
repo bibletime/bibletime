@@ -34,17 +34,17 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="260"/>
         <source>Se&amp;ttings</source>
-        <translation>Preferencias</translation>
+        <translation>Pre&amp;ferencias</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="261"/>
         <source>&amp;Help</source>
-        <translation>Ayuda</translation>
+        <translation>&amp;Ayuda</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="107"/>
         <source>&amp;Show toolbar</source>
-        <translation>Mostrar Barra de Herramientas</translation>
+        <translation>&amp;Mostrar Barra de Herramientas</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="100"/>
@@ -89,27 +89,27 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="301"/>
         <source>Text windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Ventanas de texto</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="304"/>
         <source>Show text area headers</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar cabeceras de area de texto</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="310"/>
         <source>Show navigation</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar navegacion</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="316"/>
         <source>Show work chooser buttons</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar botones del seleccionador de trabajos</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="322"/>
         <source>Show tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar herramientas</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="344"/>
@@ -129,12 +129,12 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="417"/>
         <source>&amp;Delete session</source>
-        <translation>Eliminar sésion</translation>
+        <translation>&amp;Eliminar sésion</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="375"/>
         <source>&amp;Arrangement mode</source>
-        <translation>Metodo de arreglo:</translation>
+        <translation>Metodo de arre&amp;glo</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="133"/>
@@ -154,7 +154,7 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="161"/>
         <source>Auto-&amp;cascade</source>
-        <translation>Cascada Automatica</translation>
+        <translation>&amp;Cascada Automatica</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="168"/>
@@ -209,17 +209,17 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="112"/>
         <source>Search in &amp;open works...</source>
-        <translation>Buscar en Abrir Trabajos</translation>
+        <translation>Buscar en A&amp;brir Trabajos...</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="119"/>
         <source>Search in standard &amp;Bible...</source>
-        <translation>Buscar en Biblia Estandar</translation>
+        <translation>Buscar en &amp;Biblia Estandar...</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="126"/>
         <source>Save as &amp;new session...</source>
-        <translation>Guardar como Nueva Sesion</translation>
+        <translation>Guardar como&amp; Nueva Sesion...</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="129"/>
@@ -244,12 +244,12 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="154"/>
         <source>Auto-&amp;tile</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto-&amp;acomodar</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="157"/>
         <source>Automatically tile the open windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Acomodar automaticamente las ventanas abiertas</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="164"/>
@@ -264,12 +264,12 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="175"/>
         <source>&amp;Tile</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Acomodar</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="178"/>
         <source>Tile the open windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Acomodar las ventanas abiertas</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="185"/>
@@ -294,7 +294,7 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="210"/>
         <source>&amp;Configure BibleTime...</source>
-        <translation>Configurar BibleTime</translation>
+        <translation>&amp;Configurar BibleTime...</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="212"/>
@@ -304,7 +304,7 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="216"/>
         <source>Bookshelf &amp;Manager...</source>
-        <translation>Administrador de librero</translation>
+        <translation>Ad&amp;ministrador de &amp;librero...</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="219"/>
@@ -344,7 +344,7 @@
     <message>
         <location filename="../../src/bibletime.cpp" line="89"/>
         <source>Initializing menu- and toolbars...</source>
-        <translation>Inicializando menu y barras de herramientas</translation>
+        <translation>Inicializando menu y barras de herramientas...</translation>
     </message>
     <message>
         <location filename="../../src/bibletime.cpp" line="242"/>
@@ -377,7 +377,7 @@
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="112"/>
         <source>BibleTime is an easy to use but powerful Bible study tool.</source>
-        <translation>BibleTime es una facil de usar pero poderosa herramienta de estudio de la Biblia</translation>
+        <translation>BibleTime es una facil de usar pero poderosa herramienta de estudio de la Biblia.</translation>
     </message>
     <message>
         <source>We are looking for developers and translators.</source>
@@ -403,7 +403,7 @@
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="254"/>
         <source>The complete legally binding license is below.</source>
-        <translation>La</translation>
+        <translation>La licencia legalmente vinculada esta debajo.</translation>
     </message>
     <message>
         <source>Contributors</source>
@@ -417,22 +417,22 @@
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="109"/>
         <source>&amp;BibleTime</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="114"/>
         <source>We are looking for developers and translators. If you would like to join our team, please send an email to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Estamos buscando desarrolladores y traductores. Si deseas unirte a nuestro equipo, por favor manda un email a %1.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="125"/>
         <source>&amp;Contributors</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Contribuyentes</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="135"/>
         <source>The following people contributed to BibleTime:</source>
-        <translation>Las siguientes personas contribuyeron con BibleTime</translation>
+        <translation>Las siguientes personas contribuyeron con BibleTime:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="137"/>
@@ -442,62 +442,62 @@
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="146"/>
         <source>project manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Administrador de proyecto</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="160"/>
         <source>tester</source>
-        <translation type="unfinished"></translation>
+        <translation>Probador</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="160"/>
         <source>usability expert</source>
-        <translation type="unfinished"></translation>
+        <translation>Experto de usabilidad</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="197"/>
         <source>Some names may be missing, please email %1 if you notice errors or omissions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Algunos nombres pueden no encontrarse, mandanos un email a %1 si notas errores u omisiones.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="208"/>
         <source>&amp;Sword</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Sword</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="214"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
-        <translation type="unfinished"></translation>
+        <translation>BibleTime hace uso del proyecto SWORD. El proyecto SWORD es un proyecto de software libre de CrossWire Bible Society. Su proposito es crear herramientas multiplataforma de codigo abierto &amp;mdash; cubiertas por la licencia GNU General Public License &amp;mdash; que permite a los programadores y sociedades biblicas escribir software biblico mas rapida y facilmente.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="220"/>
         <source>The SWORD Project: </source>
-        <translation type="unfinished"></translation>
+        <translation>El proyecto SWORD: </translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="228"/>
         <source>&amp;Qt</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Qt</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="231"/>
         <source>Qt toolkit version %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Qt toolkit version %1</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="237"/>
         <source>More info...</source>
-        <translation type="unfinished"></translation>
+        <translation>Mas informacion...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="242"/>
         <source>&amp;License</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;License</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="248"/>
         <source>BibleTime is released under the GPL license. You can download and use (but not distribute) the program for personal, private, public or commercial purposes without restrictions. You can give away or distribute the program if you also distribute the corresponding source code.</source>
-        <translation type="unfinished"></translation>
+        <translation>BibleTime es liberado bajo la licencia GPL. Puedes descargar y usar (pero no distribuir) el programa para propositos personales, privados, publicos o comerciales sin restricciones. Puedes dar o distribuir el programa si tambien distribuyes el codigo fuente correspondiente.</translation>
     </message>
     <message>
         <source>project founder, developer</source>
@@ -516,7 +516,7 @@
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="138"/>
         <source>project founder</source>
-        <translation type="unfinished"></translation>
+        <translation>Fundador del proyecto</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="144"/>
@@ -545,7 +545,7 @@
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="156"/>
         <source>artist</source>
-        <translation type="unfinished"></translation>
+        <translation>Artista</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="158"/>
@@ -559,7 +559,7 @@
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="171"/>
         <source>The following people translated BibleTime into their language:</source>
-        <translation>Las siguientes personas tradujeron BibleTime a su idioma</translation>
+        <translation>Las siguientes personas tradujeron BibleTime a su idioma:</translation>
     </message>
     <message>
         <source>Some names may be missing, please email bibletime-translations@lists.sourceforge.net if you notice errors or omissions.</source>
@@ -568,7 +568,7 @@
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="212"/>
         <source>SWORD library version %1</source>
-        <translation>version de biblioteca SWORD</translation>
+        <translation>version de biblioteca SWORD %1</translation>
     </message>
     <message>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools-- covered by the GNU General Public License-- that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
@@ -586,7 +586,7 @@
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="235"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
-        <translation>Qt es una aplicacion multiplataforma y un framework de interfaz de usuario, creado con el lenguaje C++, Ha sido liberado bajo la licencia LGPL</translation>
+        <translation>Qt es una aplicacion multiplataforma y un framework de interfaz de usuario, creado con el lenguaje C++, Ha sido liberado bajo la licencia LGPL.</translation>
     </message>
     <message>
         <source>License</source>
@@ -610,7 +610,7 @@
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="118"/>
         <source>Bookshelf</source>
-        <translation>Biblioteca</translation>
+        <translation>librero</translation>
     </message>
     <message>
         <source>Fi&amp;lter:</source>
@@ -671,7 +671,7 @@
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="124"/>
         <source>&amp;Unlock...</source>
-        <translation>&amp;Desbloquear</translation>
+        <translation>&amp;Desbloquear...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="125"/>
@@ -742,53 +742,53 @@
     <message>
         <location filename="../../src/frontend/btbookshelfwidget.cpp" line="180"/>
         <source>Fi&amp;lter:</source>
-        <translation type="unfinished">Fi&amp;ltro</translation>
+        <translation>Fi&amp;ltro:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfwidget.cpp" line="181"/>
         <location filename="../../src/frontend/btbookshelfwidget.cpp" line="184"/>
         <source>Grouping</source>
-        <translation type="unfinished">Agrupando</translation>
+        <translation>Agrupacion</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfwidget.cpp" line="182"/>
         <source>Change the grouping of items in the bookshelf.</source>
-        <translation type="unfinished">Cambiar la agrupacion de los elementos en el librero</translation>
+        <translation>Cambiar la agrupacion de los elementos en el librero.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfwidget.cpp" line="185"/>
         <source>Use grouping from bookshelf dock</source>
-        <translation type="unfinished"></translation>
+        <translation>Usar agrupacion del librero</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfwidget.cpp" line="186"/>
         <source>Category/Language</source>
-        <translation type="unfinished">Categoria/Idioma</translation>
+        <translation>Categoria/Idioma</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfwidget.cpp" line="187"/>
         <source>Category</source>
-        <translation type="unfinished"></translation>
+        <translation>Categoria</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfwidget.cpp" line="188"/>
         <source>Language/Category</source>
-        <translation type="unfinished">Idioma/Categoria</translation>
+        <translation>Idioma/Categoria</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfwidget.cpp" line="189"/>
         <source>Language</source>
-        <translation type="unfinished">Idioma</translation>
+        <translation>Idioma</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfwidget.cpp" line="190"/>
         <source>No grouping</source>
-        <translation type="unfinished">Sin agrupacion</translation>
+        <translation>Sin agrupacion</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfwidget.cpp" line="191"/>
         <source>Show/hide works</source>
-        <translation type="unfinished">Mostrar/Esconder trabajos</translation>
+        <translation>Mostrar/Esconder trabajos</translation>
     </message>
 </context>
 <context>
@@ -804,62 +804,62 @@
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="99"/>
         <source>Use linebreaks after each verse</source>
-        <translation type="unfinished">Usar saltos de lì­nea después de cada versículo</translation>
+        <translation>Usar saltos de lì­nea después de cada versículo</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="100"/>
         <source>Show verse numbers</source>
-        <translation type="unfinished">Mostrar números de versículos</translation>
+        <translation>Mostrar números de versículos</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="101"/>
         <source>Show headings</source>
-        <translation type="unfinished">Mostrar encabeceras</translation>
+        <translation>Mostrar cabeceras</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="102"/>
         <source>Highlight words of Jesus</source>
-        <translation type="unfinished">Marcar las palabras de Cristo</translation>
+        <translation>Marcar las palabras de Jesús</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="103"/>
         <source>Show Hebrew vowel points</source>
-        <translation type="unfinished">Mostrar puntos de vocales hebreas</translation>
+        <translation>Mostrar puntos de vocales hebreas</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="104"/>
         <source>Show Hebrew cantillation marks</source>
-        <translation type="unfinished">Mostrar los accentos de &quot;cantilación&quot; hebreas</translation>
+        <translation>Mostrar los acentos de &quot;cantilación&quot; hebreas</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="105"/>
         <source>Show Greek accents</source>
-        <translation type="unfinished">Mostrar acentos griegos</translation>
+        <translation>Mostrar acentos griegos</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="106"/>
         <source>Use alternative textual variant</source>
-        <translation type="unfinished">Usar variente textual alternative</translation>
+        <translation>Usar variante textual alternativa</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="107"/>
         <source>Show scripture cross-references</source>
-        <translation type="unfinished">Mostrar las referencias cruzadas de las escrituras</translation>
+        <translation>Mostrar referencias cruzadas de las escrituras</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="108"/>
         <source>Show morph segmentation</source>
-        <translation type="unfinished">Mostrar segmentacion de morfologia</translation>
+        <translation>Mostrar segmentacion de morfologia</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="115"/>
         <source>Display settings</source>
-        <translation type="unfinished">Preferencias de pantalla</translation>
+        <translation>Configuracion de pantalla</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="118"/>
         <source>Display settings: No options available</source>
-        <translation type="unfinished">Mostrar Opciones: No hay opciones disponibles.</translation>
+        <translation>Mostrar configuracion: No hay opciones disponibles</translation>
     </message>
 </context>
 <context>
@@ -902,7 +902,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="88"/>
         <source>Create new search indexes and delete created indexes for the installed works.</source>
-        <translation>Crear nuevos índices de búsqueda y eliminar índices creados para los trabajos instalados</translation>
+        <translation>Crear nuevos índices de búsqueda y eliminar índices creados para los trabajos instalados.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="94"/>
@@ -935,22 +935,22 @@
     <name>BtInstallModuleChooserDialog</name>
     <message>
         <source>Install</source>
-        <translation type="obsolete">Intalar</translation>
+        <translation type="obsolete">Instalar</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.cpp" line="55"/>
         <source>Install/Update works?</source>
-        <translation type="unfinished">Instalar/Actualizar trabajos?</translation>
+        <translation>Instalar/Actualizar trabajos?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.cpp" line="58"/>
         <source>Do you really want to install these works?</source>
-        <translation type="unfinished">Deseas realmente instalar estos trabajos?</translation>
+        <translation>Deseas realmente instalar estos trabajos?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.cpp" line="59"/>
         <source>Only one version of a work can be installed at the same time. Select only one if there are items marked with red.</source>
-        <translation type="unfinished">Solo una version de un trabajo puede ser instalado al mismo tiempo. Seleccione solamente uno si hay elementos marcados con rojo.</translation>
+        <translation>Solo una version de un trabajo puede ser instalada al mismo tiempo. Seleccione solamente uno si hay elementos marcados con rojo.</translation>
     </message>
 </context>
 <context>
@@ -958,12 +958,12 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialogmodel.cpp" line="78"/>
         <source>Work</source>
-        <translation type="unfinished"></translation>
+        <translation>Trabajo</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialogmodel.cpp" line="81"/>
         <source>Installation source</source>
-        <translation type="unfinished"></translation>
+        <translation>Fuente de instalacion</translation>
     </message>
 </context>
 <context>
@@ -981,7 +981,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="89"/>
         <source>Install folder:</source>
-        <translation>Instalar carpeta</translation>
+        <translation>Carpeta de instalacion:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="94"/>
@@ -1162,18 +1162,18 @@
     <message>
         <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="80"/>
         <source>Select a work [%1]</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecciona un trabajo [%1]</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="83"/>
         <source>Select an additional work</source>
-        <translation type="unfinished">Seleccionar un trabajo adicional</translation>
+        <translation>Selecciona un trabajo adicional</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="93"/>
         <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="122"/>
         <source>NONE</source>
-        <translation type="unfinished">NINGUNO</translation>
+        <translation>NINGUNO</translation>
     </message>
 </context>
 <context>
@@ -1235,12 +1235,12 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.cpp" line="52"/>
         <source>Work</source>
-        <translation type="unfinished"></translation>
+        <translation>Trabajo</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.cpp" line="55"/>
         <source>Install path</source>
-        <translation type="unfinished">Ruta de instalacion</translation>
+        <translation>Ruta de instalacion</translation>
     </message>
 </context>
 <context>
@@ -1248,12 +1248,12 @@
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchmodulechooserdialog.cpp" line="42"/>
         <source>Works to Search in</source>
-        <translation type="unfinished">Trabajos donde buscar</translation>
+        <translation>Trabajos donde buscar</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchmodulechooserdialog.cpp" line="44"/>
         <source>Select the works which should be searched.</source>
-        <translation type="unfinished">Selecciona los trabajos que deberian ser buscados</translation>
+        <translation>Selecciona los trabajos que deberian ser buscados.</translation>
     </message>
 </context>
 <context>
@@ -1303,19 +1303,22 @@
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="207"/>
         <source>Action
 name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre de
+accion</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="207"/>
         <source>First
 shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation>Primer
+atajo</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="207"/>
         <source>Second
 shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation>Segundo
+atajo</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="251"/>
@@ -1472,22 +1475,22 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="49"/>
         <source>Add/remove/replace</source>
-        <translation type="unfinished"></translation>
+        <translation>Agregar/eliminar/reemplazar</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="138"/>
         <source>Remove</source>
-        <translation type="unfinished">Eliminar</translation>
+        <translation>Eliminar</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="144"/>
         <source>Replace</source>
-        <translation type="unfinished"></translation>
+        <translation>Reemplazar</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="149"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Agregar</translation>
     </message>
 </context>
 <context>
@@ -1539,7 +1542,8 @@ shortcut</source>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="178"/>
         <source>
    &quot;%1&quot; in the &quot;%2&quot; group</source>
-        <translation type="unfinished"></translation>
+        <translation>
+   &quot;%1&quot; en el &quot;%2&quot; grupo</translation>
     </message>
     <message>
         <source>&quot;%1&quot; in the &quot;%2&quot; group</source>
@@ -1638,7 +1642,7 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="387"/>
         <source>Copy chapter to clipboard ...</source>
-        <translation>Copiar el capí­tulo al portapapeles</translation>
+        <translation>Copiar el capí­tulo al portapapeles...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="387"/>
@@ -1706,12 +1710,12 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="98"/>
         <source>Print bookmarks...</source>
-        <translation>Imprimir favoritos</translation>
+        <translation>Imprimir favoritos...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="100"/>
         <source>Remove selected items...</source>
-        <translation>Eliminar objetos seleccionados</translation>
+        <translation>Eliminar objetos seleccionados...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="96"/>
@@ -1865,7 +1869,7 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="75"/>
         <source>Available display styles:</source>
-        <translation>Estilos disponibles</translation>
+        <translation>Estilos de visualizacion disponibles:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="85"/>
@@ -1919,7 +1923,7 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="140"/>
         <source>This is the judgement, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.</source>
-        <translation type="unfinished"></translation>
+        <translation>Este es el juicio, que la luz ha venido al mundo, y los hombres amaron mas la oscuridad que la luz; porque sus obras eran malas.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="184"/>
@@ -1986,22 +1990,22 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="295"/>
         <source>Work chooser buttons</source>
-        <translation type="unfinished"></translation>
+        <translation>Botones del seleccionador de trabajos</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="305"/>
         <source>Text area header</source>
-        <translation type="unfinished"></translation>
+        <translation>Encabezado del area de texto</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="351"/>
         <source>Navigation</source>
-        <translation type="unfinished"></translation>
+        <translation>Navegacion</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="360"/>
         <source>Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Herramientas</translation>
     </message>
 </context>
 <context>
@@ -2019,7 +2023,7 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cfontchooser.cpp" line="82"/>
         <source>Font style:</source>
-        <translation>Estilo de fuente</translation>
+        <translation>Estilo de fuente:</translation>
     </message>
 </context>
 <context>
@@ -2219,7 +2223,7 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="40"/>
         <source>Select the language in which the Biblical book names are displayed.</source>
-        <translation>Selecciona el idioma en los cuales los nombres de los libros biblicos seran visualizados</translation>
+        <translation>Selecciona el idioma en los cuales los nombres de los libros biblicos seran visualizados.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="112"/>
@@ -2229,7 +2233,7 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="113"/>
         <source>You can specify a custom font for each language.</source>
-        <translation>Puedes especificar una fuente personalizada para cada lenguaje</translation>
+        <translation>Puedes especificar una fuente personalizada para cada lenguaje.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="265"/>
@@ -2375,7 +2379,7 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="40"/>
         <source>Creating indices</source>
-        <translation type="unfinished"></translation>
+        <translation>Creando indices</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="52"/>
@@ -2624,7 +2628,7 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="108"/>
         <source>A source with this caption already exists. Please provide a different caption.</source>
-        <translation type="unfinished"></translation>
+        <translation>Una fuente con este titulo ya existe. Por favor introduce un titulo diferente.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="155"/>
@@ -2678,7 +2682,7 @@ Deseas continuar?</translation>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="99"/>
         <source>Please provide a caption.</source>
-        <translation>Por favor introduce un titulo</translation>
+        <translation>Por favor introduce un titulo.</translation>
     </message>
     <message>
         <source>A source with this caption already exists.&lt;br/&gt;Please provide a different caption.</source>
@@ -2687,7 +2691,7 @@ Deseas continuar?</translation>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="114"/>
         <source>Please provide a server name.</source>
-        <translation>Por favor introduce un nombre de servidor</translation>
+        <translation>Por favor introduce un nombre de servidor.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="121"/>
@@ -2773,12 +2777,12 @@ Deseas continuar?</translation>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="403"/>
         <source>Indexing aborted</source>
-        <translation>Indezado abortado</translation>
+        <translation>Indexado abortado</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="403"/>
         <source>An internal error occurred while building the index.</source>
-        <translation>Ocurrio un error interno mientras se construia el índice</translation>
+        <translation>Ocurrio un error interno mientras se construia el índice.</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="479"/>
@@ -2788,7 +2792,7 @@ Deseas continuar?</translation>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="479"/>
         <source>An internal error occurred while executing your search.</source>
-        <translation>Ocurrio un error interno mientras se ejecutaba tu búsqueda</translation>
+        <translation>Ocurrio un error interno mientras se ejecutaba tu búsqueda.</translation>
     </message>
 </context>
 <context>
@@ -3575,7 +3579,8 @@ Deseas continuar?</translation>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="410"/>
         <source>Otomi, Queru00e9taro</source>
         <extracomment>Language name otq</extracomment>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Querétaro is a state of Mexico</translatorcomment>
+        <translation>Otomi, Querétaro</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="416"/>
@@ -3596,7 +3601,7 @@ Language name ppk</extracomment>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="494"/>
         <source>Tzotzil, Zinacantu00e1n</source>
         <extracomment>Language name tzz</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Tzotzil, Zinacantuen</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="513"/>
@@ -3838,7 +3843,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/btbookmarkitem.cpp" line="128"/>
         <source>Change description ...</source>
-        <translation>Cambiar descripción.</translation>
+        <translation>Cambiar descripción...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/btbookmarkitem.cpp" line="128"/>
@@ -3854,7 +3859,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/util/tool.cpp" line="58"/>
         <source>The file already exists.</source>
-        <translation>Â¡El archivo ya existe!</translation>
+        <translation>Â¡El archivo ya existe!.</translation>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="59"/>
@@ -3874,7 +3879,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/util/tool.cpp" line="81"/>
         <source>Please check permissions etc.</source>
-        <translation>¡Por favor, comprueba los permisos, etc.!</translation>
+        <translation>Por favor, comprueba los permisos, etc.</translation>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="192"/>
@@ -3916,7 +3921,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/util/migrationutil.cpp" line="56"/>
         <source>It appears you have a BibleTime configuration from KDE 3 stored in %1, and you have not migrated it to this version.  Would you like to import it?</source>
-        <translation>Parece que tienes una configuracion de BibleTime de KDE3 almacenada en %1 y no has migrado a esta version, Deseas importarla</translation>
+        <translation>Parece que tienes una configuracion de BibleTime de KDE3 almacenada en %1 y no has migrado a esta version, Deseas importarla?</translation>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="246"/>
@@ -4036,7 +4041,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/instbackend.cpp" line="195"/>
         <source>The Sword config file can&apos;t be written!</source>
-        <translation>El archivo de configuracion de Sword no puede ser escrito</translation>
+        <translation>El archivo de configuracion de Sword no puede ser escrito!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/btbookmarkfolder.cpp" line="39"/>
@@ -4071,12 +4076,12 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/backend/bookshelfmodel/indexingitem.cpp" line="27"/>
         <source>Indexed works</source>
-        <translation type="unfinished"></translation>
+        <translation>Trabajos indexados</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/indexingitem.cpp" line="30"/>
         <source>Unindexed works</source>
-        <translation type="unfinished"></translation>
+        <translation>Trabajos no indexados</translation>
     </message>
 </context>
 <context>
@@ -4192,7 +4197,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="111"/>
         <source>Ch&amp;oose...</source>
-        <translation>Es&amp;coger</translation>
+        <translation>Es&amp;coger...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="113"/>
@@ -4202,7 +4207,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="116"/>
         <source>S&amp;etup...</source>
-        <translation>C&amp;onfigurar</translation>
+        <translation>C&amp;onfigurar...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="135"/>
@@ -4217,7 +4222,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="150"/>
         <source>Scope:</source>
-        <translation>criterio</translation>
+        <translation>Criterio:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="171"/>
@@ -4300,242 +4305,242 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="52"/>
         <source>Search Syntax Help</source>
-        <translation type="unfinished">Buscar ayuda con sintaxis</translation>
+        <translation>Buscar Ayuda con Sintaxis</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="99"/>
         <source>This help is mainly for &apos;Full syntax&apos; option. &apos;All words&apos; and &apos;Some words&apos; options have more limited syntax; &lt;a href=&apos;#wildcards&apos;&gt;wildcards&lt;/a&gt; and &lt;a href=&apos;#fields&apos;&gt;text fields&lt;/a&gt; are supported for them. Some other syntax features may give strange or wrong results with All words/Some words.</source>
-        <translation type="unfinished"></translation>
+        <translation>Esta ayuda es principalmente para la opcion de sintaxis Completa. Las opciones de &apos;Todas las palabras&apos; y &apos;Algunas palabras&apos; tienen una sintaxis mas limitada;&lt;a href=&apos;#wildcards&apos;&gt;comodines&lt;/a&gt; y &lt;a href=&apos;#fields&apos;&gt;campos de texto&lt;/a&gt;son soportados. Algunas otras caracteristicas de sintaxis pueden arrojar resultados extraños o equivocados con Todas las palabras/algunas palabras.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="104"/>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="115"/>
         <source>Which words to find</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuales palabras para encontrar</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="106"/>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="141"/>
         <source>Grouping and order</source>
-        <translation type="unfinished"></translation>
+        <translation>Agrupacion y orden</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="108"/>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="159"/>
         <source>Wildcards (partial words)</source>
-        <translation type="unfinished"></translation>
+        <translation>Comodines (palabras parciales)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="110"/>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="182"/>
         <source>Text fields (different parts of text)</source>
-        <translation type="unfinished"></translation>
+        <translation>Campos de texto (partes diferentes de texto)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="112"/>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="213"/>
         <source>Other syntax features</source>
-        <translation type="unfinished"></translation>
+        <translation>Otras caracteristicas de sintaxis</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="117"/>
         <source>Search terms are separated by spaces. &lt;strong&gt;AND&lt;/strong&gt; (all words), &lt;strong&gt;OR&lt;/strong&gt; (some words) and &lt;strong&gt;NOT&lt;/strong&gt; (not the following word) can be added between the words. If none is added explicitly OR is used automatically. &apos;&lt;strong&gt;+&lt;/strong&gt;word&apos; means the word must be in the results, &apos;&lt;strong&gt;-&lt;/strong&gt;word&apos; means it must not be in the results.</source>
         <comment>Do not translate &quot;AND&quot;, &quot;OR&quot; or &quot;NOT&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Las condiciones de busqueda estan separadas con espacios. &lt;strong&gt;AND&lt;/strong&gt; (todas las palabras), &lt;strong&gt;OR&lt;/strong&gt; (algunas palabras) y &lt;strong&gt;NOT&lt;/strong&gt; (no la siguiente palabra)pueden ser agregadas entre las palabras. Si nunguna se agrega explicitamente OR es usada automaticamente. &apos;&lt;strong&gt;+&lt;/strong&gt;Significa que la palabra tiene que estar en los resultados, &apos;&lt;strong&gt;-&lt;/strong&gt;Significa que la palabra no tiene que estar en los resultados.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="124"/>
         <source>jesus AND god</source>
         <comment>Do not translate &quot;AND&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Jesus AND Dios</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="126"/>
         <source>Finds verses with both &apos;Jesus&apos; and &apos;God&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Encontrar versiculos con ambos &apos;Jesús&apos; y &apos;Dios&apos;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="128"/>
         <source>jesus OR god</source>
         <comment>Do not translate &quot;OR&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Jesus OR Dios</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="130"/>
         <source>Finds verses with &apos;Jesus&apos; or &apos;God&apos; or both</source>
-        <translation type="unfinished"></translation>
+        <translation>Encontrar versículos con &apos;Jesús&apos; ó &apos;Dios&apos; o ambas</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="132"/>
         <source>jesus NOT god</source>
         <comment>Do not translate &quot;NOT&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Jesus NOT Dios</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="134"/>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="138"/>
         <source>Finds verses with &apos;Jesus&apos; but with no &apos;God&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Encontrar versículos con &apos;Jesus&apos; pero sin &apos;Dios&apos;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="136"/>
         <source>+jesus -god</source>
-        <translation type="unfinished"></translation>
+        <translation>+Jesus -Dios</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="143"/>
         <source>Words can be grouped with &lt;strong&gt;parenthesis&lt;/strong&gt;. Strict word order can be defined with &lt;strong&gt;quotes&lt;/strong&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Las palabras pueden agruparse con &lt;strong&gt;paréntesis&lt;/strong&gt;. El orden estricto de las palabras puede ser definido con &lt;strong&gt;comillas&lt;/strong&gt;.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="146"/>
         <source>(a AND b) OR c</source>
         <comment>Do not translate &quot;AND&quot; or &quot;OR&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation>(a AND b) OR c</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="148"/>
         <source>Finds verses with both &apos;a&apos; AND &apos;b&apos;, and verses with &apos;c&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Encontrar versículos con ambas &apos;a&apos; AND &apos;b&apos;,y versículos con &apos;c&apos;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="150"/>
         <source>&quot;says lord&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;dice señor&quot;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="154"/>
         <source>&quot;says the lord&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;dice el señor&quot;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="156"/>
         <source>Finds all verses with &apos;says the LORD&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Encontrar todos los versiculos con &apos;dice el SEÑOR&apos;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="161"/>
         <source>&apos;&lt;strong&gt;*&lt;/strong&gt;&apos; matches any sequence of 0 or more characters, while &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; matches any single character. A wildcard can not be used in the beginning of a word.</source>
-        <translation type="unfinished"></translation>
+        <translation>&apos;&lt;strong&gt;*&lt;/strong&gt;hace que coincida cualquier secuencia con 0 o mas caracteres, mientras que &apos;&lt;strong&gt;?&lt;/strong&gt;&apos;hace que coincida cualquier caracter sencillo. Un comodin no puede ser usado al comienzo de una palabra.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="165"/>
         <source>a*</source>
-        <translation type="unfinished"></translation>
+        <translation>a*</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="167"/>
         <source>All words beginning with &apos;a&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Todas las palabras que comienzan con &apos;a&apos;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="169"/>
         <source>a*a</source>
-        <translation type="unfinished"></translation>
+        <translation>a*a</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="171"/>
         <source>&apos;Assyria&apos;, &apos;aroma&apos;, &apos;abba&apos; etc.</source>
-        <translation type="unfinished"></translation>
+        <translation>&apos;Asiria&apos;, &apos;aroma&apos;,&apos;abba&apos; etc.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="173"/>
         <source>a?</source>
-        <translation type="unfinished"></translation>
+        <translation>a?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="175"/>
         <source>&apos;at&apos; and &apos;an&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>&apos;al&apos; y &apos;as&apos;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="177"/>
         <source>a??a</source>
-        <translation type="unfinished"></translation>
+        <translation>a??a</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="179"/>
         <source>&apos;abba&apos;, &apos;area&apos;, &apos;Asia&apos; etc.</source>
-        <translation type="unfinished"></translation>
+        <translation>&apos;abba&apos;, &apos;area&apos;, &apos;Asia&apos; etc.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="184"/>
         <source>Available text fields:</source>
-        <translation type="unfinished"></translation>
+        <translation>Campos de texto disponibles:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="186"/>
         <source>Searches headings</source>
-        <translation type="unfinished"></translation>
+        <translation>Busca cabeceras</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="188"/>
         <source>Searches footnotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Busca notas al pie</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="190"/>
         <source>Searches Strong&apos;s numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Busca Numeros de Strong</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="192"/>
         <source>Searches morphology codes</source>
-        <translation type="unfinished"></translation>
+        <translation>Busca codigos de morfologia</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="194"/>
         <source>Examples:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ejemplos:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="196"/>
         <source>heading:Jesus</source>
         <comment>Do not translate &quot;heading:&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation>heading:Jesús</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="198"/>
         <source>Finds headings with &apos;Jesus&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Encuentra cabeceras con &apos;Jesús&apos;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="200"/>
         <source>footnote:Jesus AND footnote:said</source>
         <comment>Do not translate &quot;footnote:&quot; or &quot;AND&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation>footnote:Jesús AND footnote:dijo</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="203"/>
         <source>Finds footnotes with &apos;Jesus&apos; and &apos;said&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Encuentra notas al pie con &apos;Jesús&apos; y &apos;dijo&apos;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="205"/>
         <source>strong:G846</source>
         <comment>Do not translate &quot;strong:&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation>strong:G846</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="207"/>
         <source>Finds verses with Strong&apos;s Greek number 846</source>
-        <translation type="unfinished"></translation>
+        <translation>Encuentra versículos con el numero Strong Griego 846</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="209"/>
         <source>morph:&quot;N-NSF&quot;</source>
         <comment>Do not translate &quot;morph:&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation>morph:&quot;N-NSF&quot;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="211"/>
         <source>Finds verses with morphology code &apos;N-NSF&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Encuentra versículos con código de morfologia &apos;N-NSF&apos;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="215"/>
         <source>BibleTime uses the CLucene search engine. You can read more on the &lt;a href=&apos;%1&apos;&gt;lucene syntax web page&lt;/a&gt; (in external browser).</source>
-        <translation type="unfinished"></translation>
+        <translation>BibleTime usa el motor de busqueda CLucene. Puedes leer mas en &lt;a href=&apos;%1&apos;&gt;Pagina web de sintaxis lucene&lt;/a&gt; (en navegador externo).</translation>
     </message>
 </context>
 <context>
@@ -4594,7 +4599,7 @@ Language name ppk</extracomment>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="259"/>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="268"/>
         <source>Save search result...</source>
-        <translation>Guardar resultado de búsqueda</translation>
+        <translation>Guardar resultado de búsqueda...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="259"/>
@@ -4628,7 +4633,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="112"/>
         <source>&amp;Name:</source>
-        <translation>Nombre</translation>
+        <translation>&amp;Nombre:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="120"/>
@@ -4638,7 +4643,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="128"/>
         <source>Parsed search range:</source>
-        <translation>Rango de búsqueda procesada</translation>
+        <translation>Rango de búsqueda procesada:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="184"/>
@@ -4748,7 +4753,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="115"/>
         <source>Missing indices</source>
-        <translation type="unfinished"></translation>
+        <translation>Indices perdidos</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="116"/>
@@ -4760,12 +4765,12 @@ Esto puede tomar bastante tiempo. Proceder con indexado?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="231"/>
         <source>&amp;Analyze results...</source>
-        <translation>&amp;Analizar resultados</translation>
+        <translation>&amp;Analizar resultados...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="232"/>
         <source>Show a graphical analysis of the search result</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar un analisis grafico de un resultado de búsqueda</translation>
     </message>
     <message>
         <source>Show a graphical analyzis of the search result</source>
@@ -4826,7 +4831,7 @@ Esto puede tomar bastante tiempo. Proceder con indexado?</translation>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="181"/>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="199"/>
         <source>Save search result...</source>
-        <translation>Guardar resultado de búsqueda</translation>
+        <translation>Guardar resultado de búsqueda...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="181"/>
@@ -4902,7 +4907,7 @@ Esto puede tomar bastante tiempo. Proceder con indexado?</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="103"/>
         <source>Hebrew Strong&apos;s lexicon:</source>
-        <translation>Lexico Hebreo de Strong</translation>
+        <translation>Lexico Hebreo de Strong:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="107"/>
@@ -4912,7 +4917,7 @@ Esto puede tomar bastante tiempo. Proceder con indexado?</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="113"/>
         <source>Greek Strong&apos;s lexicon:</source>
-        <translation>Lexico Griego de Strong</translation>
+        <translation>Lexico Griego de Strong:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="117"/>
@@ -4922,7 +4927,7 @@ Esto puede tomar bastante tiempo. Proceder con indexado?</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="123"/>
         <source>Hebrew morphological lexicon:</source>
-        <translation>Lexico Hebreo morfológico</translation>
+        <translation>Lexico Hebreo morfológico:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="127"/>
@@ -4932,7 +4937,7 @@ Esto puede tomar bastante tiempo. Proceder con indexado?</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="133"/>
         <source>Greek morphological lexicon:</source>
-        <translation>Diccionario lexico griego morfologico</translation>
+        <translation>Diccionario lexico griego morfologico:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="137"/>
@@ -4950,7 +4955,7 @@ Esto puede tomar bastante tiempo. Proceder con indexado?</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="274"/>
         <source>Insert line break after each verse</source>
-        <translation>Insertar salto de lí­nea después de cada versiculo.</translation>
+        <translation>Insertar salto de lí­nea después de cada versiculo</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="279"/>
@@ -5022,12 +5027,12 @@ Esto puede tomar bastante tiempo. Proceder con indexado?</translation>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="51"/>
         <source>Search with case sensitivity</source>
-        <translation type="unfinished"></translation>
+        <translation>Buscar sensible a mayusculas</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="54"/>
         <source>Case &amp;sensitive</source>
-        <translation>Detectar Mayúsculas</translation>
+        <translation>Sensible a &amp;mayusculas</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="92"/>
