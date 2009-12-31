@@ -341,8 +341,12 @@ pro zobrazení seznamu děl nabízených &cbs;.</para>
 
     <sect2 id="hdbk-op-bookshelfmanager-path">
       <title>Nastavení cesty ke knihám</title>
-      <para>Zde lze nastavit, kam na disk má &bibletime; uložit knihovnu. Můžete použít 
-mnoho adresářů. Výchozí je "~/.sword/".</para>
+
+      <para>Here you can specify where &bibletime; may store your Bookshelf on the hard 
+drive.  You can even store it in multiple directories. The default is 
+"~/.sword/" on *nix and "C:\Documents and Settings\All Users\Application 
+Data\Sword" for Windows.</para>
+
       <tip>
         <para>Pokud máte CD sword, ale nechcete všechna díla instalovat na disk, ale 
 používat je přímo z CD, pak vložte cestu k CD jako jedno z umístění 
@@ -350,14 +354,20 @@ knihovny. Když zapnete &bibletime;, zobrazí se všechna díla, pokud je CD
 vloženo v mechanice.</para>
       </tip>
     </sect2>
+
     <sect2 id="hdbk-op-bookshelfmanager-installupdate">
       <title>Instalace/aktualizace děl</title>
-      <para>Tímto nástrojem se můžete připojit k repositáři děl (je zvaný "knihovna", 
-"library") a nahrát jedno nebo více děl do své lokální knihovny. Tyto 
-knihovny mohou být lokální (např. &sword; CD) nebo vzdálené (např. Crosswire 
-online repositář modulů &sword; nebo jiné stránky nabízející moduly 
-&sword;). Své knihovny můžete spravovat pomocí <guibutton>Přidat 
-knihovnu</guibutton> a <guibutton>Smazat knihovnu</guibutton>.</para>
+
+      <para>With this facility, you can connect to a repository of works (called 
+"library"), and transfer one or more works to your local Bookshelf. These 
+libraries may be local (e.g. a &sword; CD), or remote (e.g. Crosswire's 
+online repository of &sword; modules, or another site offering &sword; 
+modules).  You can install other sources by clicking on <guibutton>Get 
+list...</guibutton> when you have <guibutton>New Installation 
+Source</guibutton> dialog open.  You can manage your libraries with 
+<guibutton>Add library</guibutton> and <guibutton>Delete 
+library</guibutton>.</para>
+
       <para>Pro zahájení procesu instalace nebo aktualizace vyberte knihovnu ke které se 
 chcete připojit a umístění lokální knihovny pro instalaci děl. Potom 
 klikněte na tlačítko <guibutton>Spojit s knihovnou</guibutton>. &bibletime; 
@@ -368,6 +378,7 @@ díla, která chcete nainstalovat nebo aktualizovat a kliknout na
 <guibutton>Instalovat díla</guibutton>. Ty budou poté nahrány do vaší 
 knihovny.</para>
     </sect2>
+
     <sect2 id="hdbk-op-bookshelfmanager-remove">
       <title>Odebrání děl</title>
       <para>Tato možnost dovoluje smazat jedno nebo více děl z vaší knihovny, což uvolní 

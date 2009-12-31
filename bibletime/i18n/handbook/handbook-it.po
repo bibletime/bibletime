@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
-"POT-Creation-Date: 2009-12-21 16:08-0500\n"
+"POT-Creation-Date: 2009-12-31 14:58-0500\n"
 "PO-Revision-Date: 2009-12-09 21:55+0100\n"
 "Last-Translator: \n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -1245,17 +1245,19 @@ msgid "Bookshelf path(s) setup"
 msgstr "Setup percorsi Libreria"
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:404
+#: docs/handbook/en/docbook/hdbk-operation.docbook:405
+#, fuzzy
 msgid ""
 "Here you can specify where &bibletime; may store your Bookshelf on the hard "
-"drive. You can even store it in multiple directories. Default is \"~/.sword/"
-"\"."
+"drive.  You can even store it in multiple directories. The default is \"~/."
+"sword/\" on *nix and \"C:\\Documents and Settings\\All Users\\Application "
+"Data\\Sword\" for Windows."
 msgstr ""
 "Qui puoi specificare dove &bibletime; può salvare la Libreria sul hard disk. "
 "Puoi anche salvarla in più cartelle. Di default è \"~/.sword/\"."
 
 # type: Content of: <chapter><sect1><sect2><tip><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:408
+#: docs/handbook/en/docbook/hdbk-operation.docbook:412
 msgid ""
 "If you have a sword CD, but do not want to install all the works on the hard "
 "disk, but use them directly from the CD, then you can add the path to the CD "
@@ -1268,19 +1270,22 @@ msgstr ""
 "documenti presenti sul CD se è presente."
 
 # type: Content of: <chapter><sect1><sect2><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:416
+#: docs/handbook/en/docbook/hdbk-operation.docbook:421
 msgid "Install/update work(s)"
 msgstr "Installa/aggiorna documenti"
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:417
+#: docs/handbook/en/docbook/hdbk-operation.docbook:423
+#, fuzzy
 msgid ""
 "With this facility, you can connect to a repository of works (called "
 "\"library\"), and transfer one or more works to your local Bookshelf. These "
 "libraries may be local (e.g. a &sword; CD), or remote (e.g. Crosswire's "
 "online repository of &sword; modules, or another site offering &sword; "
-"modules). You can manage your libraries with <guibutton>Add library</"
-"guibutton> and <guibutton>Delete library</guibutton>."
+"modules).  You can install other sources by clicking on <guibutton>Get "
+"list...</guibutton> when you have <guibutton>New Installation Source</"
+"guibutton> dialog open.  You can manage your libraries with <guibutton>Add "
+"library</guibutton> and <guibutton>Delete library</guibutton>."
 msgstr ""
 "Con questo strumento, è possibile connettersi a un archivio di documenti "
 "(chiamato \"biblioteca\"), e trasferire uno o più documenti nella tua "
@@ -1291,7 +1296,7 @@ msgstr ""
 "guibutton>."
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:425
+#: docs/handbook/en/docbook/hdbk-operation.docbook:434
 msgid ""
 "To begin the installation or update process, select a library you want to "
 "connect to and a local Bookshelf path to install the work(s) to. Then click "
@@ -1314,12 +1319,12 @@ msgstr ""
 "guibutton>. Saranno trasferiti nella tua Libreria."
 
 # type: Content of: <chapter><sect1><sect2><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:438
+#: docs/handbook/en/docbook/hdbk-operation.docbook:448
 msgid "Remove work(s)"
 msgstr "Rimuovi documenti"
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:439
+#: docs/handbook/en/docbook/hdbk-operation.docbook:449
 msgid ""
 "This facility allows you to delete one or more of the works from your "
 "Bookshelf too free up disk space. Simply mark the items and click on "
@@ -1330,12 +1335,12 @@ msgstr ""
 "<guibutton>Rimuovi documenti</guibutton>."
 
 # type: Content of: <chapter><sect1><sect2><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:445
+#: docs/handbook/en/docbook/hdbk-operation.docbook:455
 msgid "Search Indexes"
 msgstr "Indici di Ricerca"
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:446
+#: docs/handbook/en/docbook/hdbk-operation.docbook:456
 msgid ""
 "This option allows you to create new search indexes and cleanup orphaned "
 "index files for removed works."
@@ -1344,12 +1349,12 @@ msgstr ""
 "indici orfani per i documenti rimossi."
 
 # type: Content of: <chapter><sect1><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:455
+#: docs/handbook/en/docbook/hdbk-operation.docbook:465
 msgid "Exporting and Printing"
 msgstr "Esportazione e Stampa"
 
 # type: Content of: <chapter><sect1><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:456
+#: docs/handbook/en/docbook/hdbk-operation.docbook:466
 msgid ""
 "In many places, you can open a context menu by clicking with the "
 "<mousebutton>right</mousebutton> mouse button. Depending on context, it will "
@@ -1370,7 +1375,7 @@ msgstr ""
 "o più riferimenti ai versetti. È piuttosto semplice, quindi basta provarlo."
 
 # type: Content of: <chapter><sect1><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:469
+#: docs/handbook/en/docbook/hdbk-operation.docbook:479
 msgid ""
 "Printing from &bibletime; is rather basic and is intended as a utility. If "
 "you are composing a document or presentation containing text from "

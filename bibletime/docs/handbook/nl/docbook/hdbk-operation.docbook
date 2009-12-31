@@ -352,9 +352,12 @@ button to see a list of works provided by the &cbs;.</para>
 
     <sect2 id="hdbk-op-bookshelfmanager-path">
       <title>Het instellen van Boekenplank bestandspad(en)</title>
+
       <para>Here you can specify where &bibletime; may store your Bookshelf on the hard 
-drive. You can even store it in multiple directories. Default is 
-"~/.sword/".</para>
+drive.  You can even store it in multiple directories. The default is 
+"~/.sword/" on *nix and "C:\Documents and Settings\All Users\Application 
+Data\Sword" for Windows.</para>
+
       <tip>
         <para>If you have a sword CD, but do not want to install all the works on the hard 
 disk, but use them directly from the CD, then you can add the path to the CD 
@@ -362,14 +365,20 @@ as one of your bookshelf paths. When you start &bibletime;, it will show all
 works on the CD if it is present.</para>
       </tip>
     </sect2>
+
     <sect2 id="hdbk-op-bookshelfmanager-installupdate">
       <title>Modules installeren/bijwerken</title>
+
       <para>With this facility, you can connect to a repository of works (called 
 "library"), and transfer one or more works to your local Bookshelf. These 
 libraries may be local (e.g. a &sword; CD), or remote (e.g. Crosswire's 
 online repository of &sword; modules, or another site offering &sword; 
-modules). You can manage your libraries with <guibutton>Add 
-library</guibutton> and <guibutton>Delete library</guibutton>.</para>
+modules).  You can install other sources by clicking on <guibutton>Get 
+list...</guibutton> when you have <guibutton>New Installation 
+Source</guibutton> dialog open.  You can manage your libraries with 
+<guibutton>Add library</guibutton> and <guibutton>Delete 
+library</guibutton>.</para>
+
       <para>Om het proces van installeren of bijwerken te starten kiest u een 
 bibliotheek waarmee u verbinding wilt zoeken en een lokaal bestandspad naar 
 een Boekenplank om de module(s) naar toe te installeren. Klik dan op 
@@ -381,6 +390,7 @@ bibliotheek. U kunt dan alle modules aanvinken die u wilt installeren of
 bijwerken en dan klikken op <guibutton>Installeer modules</guibutton>. Ze 
 zullen dan overgeheveld worden naar uw Boekenplank.</para>
     </sect2>
+
     <sect2 id="hdbk-op-bookshelfmanager-remove">
       <title>Module(s) verwijderen</title>
       <para>Deze voorziening stelt u in staat om &eacute;&eacute;n of meerdere modules 

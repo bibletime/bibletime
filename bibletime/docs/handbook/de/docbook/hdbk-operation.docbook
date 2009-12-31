@@ -369,9 +369,12 @@ gestellten Werke einzusehen.</para>
 
     <sect2 id="hdbk-op-bookshelfmanager-path">
       <title>Bücherregal-Pfade einrichten</title>
-      <para>Hier können Sie festlegen, wo &bibletime; Ihr Bücherregal auf der Festplatte 
-abspeichern soll. Sie können es sogar in verschiedenen Verzeichnissen 
-speichern. Die Voreinstellung ist "~/.sword/".</para>
+
+      <para>Here you can specify where &bibletime; may store your Bookshelf on the hard 
+drive.  You can even store it in multiple directories. The default is 
+"~/.sword/" on *nix and "C:\Documents and Settings\All Users\Application 
+Data\Sword" for Windows.</para>
+
       <tip>
         <para>Wenn Sie eine Sword-CD besitzen aber nicht alle Werke auf die Festplatte 
 installieren wollen und sie direkt von der CD nutzen wollen, so können Sie 
@@ -380,16 +383,20 @@ den Pfad der CD als einen Ihrer Bücherregal-Pfade hinzufügen. Wenn Sie
 eingelegt ist.</para>
       </tip>
     </sect2>
+
     <sect2 id="hdbk-op-bookshelfmanager-installupdate">
       <title>Werke installieren/updaten</title>
-      <para>Mit dieser Einrichtung können Sie sich mit einer Quelle von Werken (genannt 
-"Bibliothek") in Verbindung setzen und ein oder mehrere Werke zu Ihrem 
-lokalen Bücherregal übertragen. Diese Bibliotheken können lokal sein 
-(z.B. eine &sword;-CD) oder entfernt-gelegen (z.B. Crosswires 
-Online-Repository der &sword;-Module, oder eine andere Site, die 
-&sword;-Module anbietet). Sie können Ihre Bibliotheken mit 
-<guibutton>Hinzufügen...</guibutton> und <guibutton>Löschen...</guibutton> 
-verwalten.</para>
+
+      <para>With this facility, you can connect to a repository of works (called 
+"library"), and transfer one or more works to your local Bookshelf. These 
+libraries may be local (e.g. a &sword; CD), or remote (e.g. Crosswire's 
+online repository of &sword; modules, or another site offering &sword; 
+modules).  You can install other sources by clicking on <guibutton>Get 
+list...</guibutton> when you have <guibutton>New Installation 
+Source</guibutton> dialog open.  You can manage your libraries with 
+<guibutton>Add library</guibutton> and <guibutton>Delete 
+library</guibutton>.</para>
+
       <para>Um den Installations- oder Aktualisierungsvorgang zu starten, suchen Sie 
 eine Bibliothek aus, mit der Sie sich verbinden wollen und einen lokalen 
 Bücherregal-Pfad, wohin die Werke installiert werden sollen. Dann klicken 
@@ -402,6 +409,7 @@ oder aktualisieren wollen markieren und anschließend auf
 <guibutton>Installieren...</guibutton> klicken. Sie werden dann zu Ihrem 
 Bücherregal übertragen.</para>
     </sect2>
+
     <sect2 id="hdbk-op-bookshelfmanager-remove">
       <title>Werk(e) entfernen</title>
       <para>Diese Einrichtung erlaubt Ihnen, eines oder mehrere Werke aus Ihrem 

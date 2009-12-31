@@ -360,8 +360,12 @@ vedere una lista di documenti forniti da &cbs;.</para>
 
     <sect2 id="hdbk-op-bookshelfmanager-path">
       <title>Setup percorsi Libreria</title>
-      <para>Qui puoi specificare dove &bibletime; può salvare la Libreria sul hard 
-disk. Puoi anche salvarla in più cartelle. Di default è "~/.sword/".</para>
+
+      <para>Here you can specify where &bibletime; may store your Bookshelf on the hard 
+drive.  You can even store it in multiple directories. The default is 
+"~/.sword/" on *nix and "C:\Documents and Settings\All Users\Application 
+Data\Sword" for Windows.</para>
+
       <tip>
         <para>Se hai un CD di sword, ma non vuoi installare tutti i documenti sul hard 
 disk, e usarli direttamente dal CD, allora puoi aggiungere il percorso del 
@@ -369,15 +373,20 @@ CD come uno dei percorsi di libreria. Quando avvii &bibletime;, mostrerà i
 documenti presenti sul CD se è presente.</para>
       </tip>
     </sect2>
+
     <sect2 id="hdbk-op-bookshelfmanager-installupdate">
       <title>Installa/aggiorna documenti</title>
-      <para>Con questo strumento, è possibile connettersi a un archivio di documenti 
-(chiamato "biblioteca"), e trasferire uno o più documenti nella tua Libreria 
-locale. Queste biblioteche possono essere locali (es. un CD &sword;), o 
-remote (es. repository Crosswire online di documenti &sword;, o altri siti 
-che offrono documenti &sword;). Puoi gestire le biblioteche con 
-<guibutton>Aggiungi biblioteca</guibutton> e <guibutton>Rimuovi 
-biblioteca</guibutton>.</para>
+
+      <para>With this facility, you can connect to a repository of works (called 
+"library"), and transfer one or more works to your local Bookshelf. These 
+libraries may be local (e.g. a &sword; CD), or remote (e.g. Crosswire's 
+online repository of &sword; modules, or another site offering &sword; 
+modules).  You can install other sources by clicking on <guibutton>Get 
+list...</guibutton> when you have <guibutton>New Installation 
+Source</guibutton> dialog open.  You can manage your libraries with 
+<guibutton>Add library</guibutton> and <guibutton>Delete 
+library</guibutton>.</para>
+
       <para>Per iniziare il processo d'installazione o d'aggiornamento, seleziona una 
 biblioteca a cui ti vuoi connettere e il percorso di una Libreria locale per 
 installarci i documenti. Poi clicca su <guibutton>Connetti alla biblioteca 
@@ -388,6 +397,7 @@ quindi possono essere aggiornati. Poi puoi spuntare tutti i documenti che
 vuoi installare o aggiornare, e cliccare su <guibutton> Installa 
 documenti</guibutton>. Saranno trasferiti nella tua Libreria.</para>
     </sect2>
+
     <sect2 id="hdbk-op-bookshelfmanager-remove">
       <title>Rimuovi documenti</title>
       <para>Questo strumento ti permette di cancellare uno o più documenti dalla tua 

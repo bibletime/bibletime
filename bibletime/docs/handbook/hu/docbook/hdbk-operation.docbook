@@ -361,11 +361,12 @@ Frissítés gombra, hogy lássa a &cbs; által biztosított munkák listáját. 
 
     <sect2 id="hdbk-op-bookshelfmanager-path">
       <title>Telepítési útvonal(ak) beállítása</title>
-      <para>Itt adható meg, hogy a &bibletime; hol tárolhatja a "Könyvespolcát" a 
-merevlemezen. Megadhat egyszerre több könyvtárat is, de az alapértelmezett a 
-".sword" mappa a saját mappájában.Itt adható meg, hogy a &bibletime; hol 
-tárolhatja a "Könyvespolcát" a merevlemezen. Megadhat egyszerre több 
-könyvtárat is, de az alapértelmezett a ".sword" mappa a saját mappájában.</para>
+
+      <para>Here you can specify where &bibletime; may store your Bookshelf on the hard 
+drive.  You can even store it in multiple directories. The default is 
+"~/.sword/" on *nix and "C:\Documents and Settings\All Users\Application 
+Data\Sword" for Windows.</para>
+
       <tip>
         <para>Ha rendelkezésére áll egy Sword CD, és nem akarja azt feltelepíteni, 
 lehetősége van a CD elérési útját megadni, mintha "könyvespolc" lenne, ebben 
@@ -376,15 +377,20 @@ feltelepíteni, lehetősége van a CD elérési útját megadni, mintha
 dokumentum látható lesz, ha a CD a gépben van.</para>
       </tip>
     </sect2>
+
     <sect2 id="hdbk-op-bookshelfmanager-installupdate">
       <title>Dokumentum(ok) telepítése/frissítése</title>
-      <para>Evvel a lehetőséggel élve csatlakozhat egy dokumentum tárolóhelyhez 
-("könyvtárhoz"), és letölthet egy, vagy akár több munkát a saját helyi 
-könyvespolcára. Ezek a könyvtárak lehetnek helyiek is (pl. &sword; CD), vagy 
-távoliak is (pl. a Crosswire online &sword; tárolóhelye, vagy más oldalak, 
-ahol &sword; modulok találhatók). Egyszerűen kezelheti ezeket a lelőhelyeket 
-a <guibutton>Hozzáadás</guibutton> és a <guibutton>Törlés</guibutton> gomb 
-segítségével.</para>
+
+      <para>With this facility, you can connect to a repository of works (called 
+"library"), and transfer one or more works to your local Bookshelf. These 
+libraries may be local (e.g. a &sword; CD), or remote (e.g. Crosswire's 
+online repository of &sword; modules, or another site offering &sword; 
+modules).  You can install other sources by clicking on <guibutton>Get 
+list...</guibutton> when you have <guibutton>New Installation 
+Source</guibutton> dialog open.  You can manage your libraries with 
+<guibutton>Add library</guibutton> and <guibutton>Delete 
+library</guibutton>.</para>
+
       <para>A telepítési vagy frissítési folyamat elkezdéséhez válassza ki a forrást, 
 melyhez csatlakozni kíván, és a helyi könyvespolcot, ahova telepíteni 
 szeretne. Ezek után kattintson a <guibutton> Frissítés...</guibutton> 
@@ -400,6 +406,7 @@ frissíthető dokumentumokról. Már csak ki kell jelölnie a telepítendőeket,
 majd <guibutton>Telepítés...</guibutton> és a kívánt munkák a könyvespolcára 
 kerülnek.</para>
     </sect2>
+
     <sect2 id="hdbk-op-bookshelfmanager-remove">
       <title>Dokumentum(ok) törlése</title>
       <para>Ez a lehetőség biztosítja önnek, hogy a nem kívánt munkákat eltávolítsa, 

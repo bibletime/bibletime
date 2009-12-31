@@ -352,9 +352,12 @@ botão Atualizar para ver uma lista de livros providos pela &cbs;</para>
 
     <sect2 id="hdbk-op-bookshelfmanager-path">
       <title>Configuração do(s) caminho(s) da Estante</title>
-      <para>Aqui você pode especificar onde o &bibletime; pode armazenar sua Estante do 
-disco rígido. Você pode até armazenar em múltiplos diretórios. O padrão é 
-"~/.sword/".</para>
+
+      <para>Here you can specify where &bibletime; may store your Bookshelf on the hard 
+drive.  You can even store it in multiple directories. The default is 
+"~/.sword/" on *nix and "C:\Documents and Settings\All Users\Application 
+Data\Sword" for Windows.</para>
+
       <tip>
         <para>Se você tem um CD do Sword, mas não quer instalar todas as obras no disco 
 rígido, e sim us-las diretamente do CD, então você pode adicionar o caminho 
@@ -362,15 +365,20 @@ para o CD como um dos caminhos da sua estante. Quando você iniciar o
 &bibletime;, ele mostrará todas as obras no CD se estiver presente.</para>
       </tip>
     </sect2>
+
     <sect2 id="hdbk-op-bookshelfmanager-installupdate">
       <title>Instalar/atualizar obra(s)</title>
-      <para>Com esse recurso, você pode conectar a um repositório de obras (chamado 
-"biblioteca"), e transferir uma ou mais obras para sua Estante local. Essas 
-bibliotecas podem ser locais (e.g. um CD do Sword), ou remota (e.g. o 
-repositório online da Crosswire de módulos Sword, ou outro site oferecendo 
-módulos Sword). Você pode gerenciar suas bibliotecas com 
-<guibutton>Adicionar biblioteca</guibutton> e <guibutton>Excluir 
-biblioteca</guibutton>.</para>
+
+      <para>With this facility, you can connect to a repository of works (called 
+"library"), and transfer one or more works to your local Bookshelf. These 
+libraries may be local (e.g. a &sword; CD), or remote (e.g. Crosswire's 
+online repository of &sword; modules, or another site offering &sword; 
+modules).  You can install other sources by clicking on <guibutton>Get 
+list...</guibutton> when you have <guibutton>New Installation 
+Source</guibutton> dialog open.  You can manage your libraries with 
+<guibutton>Add library</guibutton> and <guibutton>Delete 
+library</guibutton>.</para>
+
       <para>Para começar o processo de instalação ou atualização, selecione uma 
 biblioteca  qual você queira conectar e um caminho de Estante local para 
 instalar a(s) obra(s). Então clique em <guibutton>Conectar  
@@ -381,6 +389,7 @@ biblioteca, e assim podem ser atualizadas. Então você pode marcar todas as
 obras que quiser instalar ou atualizar, e clicar em<guibutton>Instalar 
 obras</guibutton>. Elas serão então transferidas para a sua Estante.</para>
     </sect2>
+
     <sect2 id="hdbk-op-bookshelfmanager-remove">
       <title>Remover obra(s)</title>
       <para>Esse recurso permite a você excluir uma ou mais obras da sua Estante para 

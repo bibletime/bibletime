@@ -348,9 +348,12 @@ button to see a list of works provided by the &cbs;.</para>
 
     <sect2 id="hdbk-op-bookshelfmanager-path">
       <title>Kirjahyllyn polun/polkujen asetus</title>
+
       <para>Here you can specify where &bibletime; may store your Bookshelf on the hard 
-drive. You can even store it in multiple directories. Default is 
-"~/.sword/".</para>
+drive.  You can even store it in multiple directories. The default is 
+"~/.sword/" on *nix and "C:\Documents and Settings\All Users\Application 
+Data\Sword" for Windows.</para>
+
       <tip>
         <para>If you have a sword CD, but do not want to install all the works on the hard 
 disk, but use them directly from the CD, then you can add the path to the CD 
@@ -358,14 +361,20 @@ as one of your bookshelf paths. When you start &bibletime;, it will show all
 works on the CD if it is present.</para>
       </tip>
     </sect2>
+
     <sect2 id="hdbk-op-bookshelfmanager-installupdate">
       <title>Asenna/päivitä teos/teoksia</title>
+
       <para>With this facility, you can connect to a repository of works (called 
 "library"), and transfer one or more works to your local Bookshelf. These 
 libraries may be local (e.g. a &sword; CD), or remote (e.g. Crosswire's 
 online repository of &sword; modules, or another site offering &sword; 
-modules). You can manage your libraries with <guibutton>Add 
-library</guibutton> and <guibutton>Delete library</guibutton>.</para>
+modules).  You can install other sources by clicking on <guibutton>Get 
+list...</guibutton> when you have <guibutton>New Installation 
+Source</guibutton> dialog open.  You can manage your libraries with 
+<guibutton>Add library</guibutton> and <guibutton>Delete 
+library</guibutton>.</para>
+
       <para>To begin the installation or update process, select a library you want to 
 connect to and a local Bookshelf path to install the work(s) to. Then click 
 on <guibutton>Connect to library</guibutton>. &bibletime; will scan the 
@@ -376,6 +385,7 @@ all works that you want to install or update, and click on
 <guibutton>Install works</guibutton>. They will then be transferred to your 
 Bookshelf.</para>
     </sect2>
+
     <sect2 id="hdbk-op-bookshelfmanager-remove">
       <title>Poista teos/teoksia</title>
       <para>Tämä valmius mahdollistaa yhden tai useamman teoksen poiston kirjahyllystä 

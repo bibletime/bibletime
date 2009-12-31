@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: handbook-fi\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
-"POT-Creation-Date: 2009-12-21 16:08-0500\n"
+"POT-Creation-Date: 2009-12-31 14:58-0500\n"
 "PO-Revision-Date: 2009-03-06 16:56+0200\n"
 "Last-Translator: Ilpo Kantonen <ilpo@iki.fi>\n"
 "Language-Team: Finnish <fi@li.org>\n"
@@ -1040,18 +1040,19 @@ msgstr ""
 msgid "Bookshelf path(s) setup"
 msgstr "Kirjahyllyn polun/polkujen asetus"
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:404
+#: docs/handbook/en/docbook/hdbk-operation.docbook:405
 #, fuzzy
 msgid ""
 "Here you can specify where &bibletime; may store your Bookshelf on the hard "
-"drive. You can even store it in multiple directories. Default is \"~/.sword/"
-"\"."
+"drive.  You can even store it in multiple directories. The default is \"~/."
+"sword/\" on *nix and \"C:\\Documents and Settings\\All Users\\Application "
+"Data\\Sword\" for Windows."
 msgstr ""
 "Tässä voit määritellä, minne &bibletime; tallettaa kirjahyllysi levyllä. "
 "Voit tallentaa sen jopa useampiin kansioihin. Oletus on \"~/.sword/\"."
 
 # type: Content of: <chapter><sect1><sect2><tip><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:408
+#: docs/handbook/en/docbook/hdbk-operation.docbook:412
 #, fuzzy
 msgid ""
 "If you have a sword CD, but do not want to install all the works on the hard "
@@ -1064,23 +1065,25 @@ msgstr ""
 "yhtenä kirjahyllyn polkuna. Kun aloitat &bibletime;-ohjelman, se näyttää "
 "sinulle kaikki CD:llä olevat teokset, jos CD on asemassa."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:416
+#: docs/handbook/en/docbook/hdbk-operation.docbook:421
 msgid "Install/update work(s)"
 msgstr "Asenna/päivitä teos/teoksia"
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:417
+#: docs/handbook/en/docbook/hdbk-operation.docbook:423
 msgid ""
 "With this facility, you can connect to a repository of works (called "
 "\"library\"), and transfer one or more works to your local Bookshelf. These "
 "libraries may be local (e.g. a &sword; CD), or remote (e.g. Crosswire's "
 "online repository of &sword; modules, or another site offering &sword; "
-"modules). You can manage your libraries with <guibutton>Add library</"
-"guibutton> and <guibutton>Delete library</guibutton>."
+"modules).  You can install other sources by clicking on <guibutton>Get "
+"list...</guibutton> when you have <guibutton>New Installation Source</"
+"guibutton> dialog open.  You can manage your libraries with <guibutton>Add "
+"library</guibutton> and <guibutton>Delete library</guibutton>."
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:425
+#: docs/handbook/en/docbook/hdbk-operation.docbook:434
 msgid ""
 "To begin the installation or update process, select a library you want to "
 "connect to and a local Bookshelf path to install the work(s) to. Then click "
@@ -1093,12 +1096,12 @@ msgid ""
 "Bookshelf."
 msgstr ""
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:438
+#: docs/handbook/en/docbook/hdbk-operation.docbook:448
 msgid "Remove work(s)"
 msgstr "Poista teos/teoksia"
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:439
+#: docs/handbook/en/docbook/hdbk-operation.docbook:449
 msgid ""
 "This facility allows you to delete one or more of the works from your "
 "Bookshelf too free up disk space. Simply mark the items and click on "
@@ -1108,12 +1111,12 @@ msgstr ""
 "lisätäksesi vapaata levytilan määrää. Yksinkertaisesti merkitse teokset ja "
 "napsauta <guibutton>Poista teokset</guibutton>."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:445
+#: docs/handbook/en/docbook/hdbk-operation.docbook:455
 msgid "Search Indexes"
 msgstr "Etsii indeksejä"
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:446
+#: docs/handbook/en/docbook/hdbk-operation.docbook:456
 msgid ""
 "This option allows you to create new search indexes and cleanup orphaned "
 "index files for removed works."
@@ -1121,12 +1124,12 @@ msgstr ""
 "Tämä mahdollistaa uusien hakuindeksien luonnin ja poistettujen teosten "
 "orvoiksi tulleet indeksitiedostostojen siivoamisen."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:455
+#: docs/handbook/en/docbook/hdbk-operation.docbook:465
 msgid "Exporting and Printing"
 msgstr "Vienti ja tulostus"
 
 # type: Content of: <chapter><sect1><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:456
+#: docs/handbook/en/docbook/hdbk-operation.docbook:466
 msgid ""
 "In many places, you can open a context menu by clicking with the "
 "<mousebutton>right</mousebutton> mouse button. Depending on context, it will "
@@ -1139,7 +1142,7 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><sect1><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:469
+#: docs/handbook/en/docbook/hdbk-operation.docbook:479
 msgid ""
 "Printing from &bibletime; is rather basic and is intended as a utility. If "
 "you are composing a document or presentation containing text from "
