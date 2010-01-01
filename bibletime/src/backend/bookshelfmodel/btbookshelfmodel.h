@@ -37,7 +37,7 @@ class BtBookshelfModel: public QAbstractListModel {
         BtBookshelfModel(QObject *parent = 0);
         virtual ~BtBookshelfModel();
 
-        virtual int rowCount(const QModelIndex &parent) const;
+        virtual int rowCount(const QModelIndex &parent = QModelIndex()) const;
         virtual QVariant data(CSwordModuleInfo *module, int role) const;
         virtual QVariant data(const QModelIndex &index, int role) const;
         virtual QVariant headerData(int section, Qt::Orientation orientation,
