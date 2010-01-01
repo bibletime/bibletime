@@ -27,6 +27,8 @@ class BtOpenWorkActionMenu: public BtMenuView {
         BtOpenWorkActionMenu(QWidget *parent = 0);
         ~BtOpenWorkActionMenu();
 
+        void setSourceModel(QAbstractItemModel *model);
+
     signals:
         void triggered(CSwordModuleInfo *module);
 

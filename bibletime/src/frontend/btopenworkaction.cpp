@@ -26,7 +26,6 @@ BtOpenWorkActionMenu::BtOpenWorkActionMenu(QWidget *parent)
     // Setup models:
     const BtBookshelfDockWidget *bookshelfDock(BtBookshelfDockWidget::getInstance());
     m_treeModel = new BtBookshelfTreeModel(bookshelfDock->groupingOrder(), this);
-    m_treeModel->setSourceModel(CPointers::backend()->model());
     m_postFilterModel = new BtBookshelfFilterModel(this);
     m_postFilterModel->setSourceModel(m_treeModel);
     setModel(m_postFilterModel);
@@ -35,10 +34,15 @@ BtOpenWorkActionMenu::BtOpenWorkActionMenu(QWidget *parent)
             this, SLOT(slotIndexTriggered(QModelIndex)));
     connect(bookshelfDock, SIGNAL(groupingOrderChanged(BtBookshelfTreeModel::Grouping)),
             m_treeModel,   SLOT(setGroupingOrder(BtBookshelfTreeModel::Grouping)));
+
 }
 
 BtOpenWorkActionMenu::~BtOpenWorkActionMenu() {
     // Intentionally empty
+}
+
+void BtOpenWorkActionMenu::setSourceModel(QAbstractItemModel *model) {
+    m_treeModel->setSourceModel(model);
 }
 
 void BtOpenWorkActionMenu::slotIndexTriggered(const QModelIndex &index) {
@@ -55,6 +59,7 @@ BtOpenWorkAction::BtOpenWorkAction(QObject *parent)
     : QAction(parent)
 {
     m_menu = new BtOpenWorkActionMenu();
+    m_menu->setSourceModel(CPointers::backend()->model());
     connect(m_menu, SIGNAL(triggered(CSwordModuleInfo*)),
             this,   SIGNAL(triggered(CSwordModuleInfo*)));
 
