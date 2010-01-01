@@ -13,7 +13,6 @@
 #include "frontend/btopenworkaction.h"
 
 #include "backend/bookshelfmodel/btbookshelffiltermodel.h"
-#include "backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "backend/managers/cswordbackend.h"
 #include "frontend/btbookshelfdockwidget.h"
 #include "util/cpointers.h"
@@ -60,12 +59,23 @@ BtOpenWorkAction::BtOpenWorkAction(QObject *parent)
 {
     m_menu = new BtOpenWorkActionMenu();
     m_menu->setSourceModel(CPointers::backend()->model());
-    connect(m_menu, SIGNAL(triggered(CSwordModuleInfo*)),
-            this,   SIGNAL(triggered(CSwordModuleInfo*)));
 
     setMenu(m_menu);
     setIcon(util::directory::getIcon("folder-open.svg"));
     retranslateUi();
+    slotModelChanged();
+
+    BtBookshelfFilterModel *filterModel = m_menu->postFilterModel();
+    connect(m_menu, SIGNAL(triggered(CSwordModuleInfo*)),
+            this,   SIGNAL(triggered(CSwordModuleInfo*)));
+    connect(filterModel, SIGNAL(layoutChanged()),
+            this,        SLOT(slotModelChanged()));
+    connect(filterModel, SIGNAL(modelReset()),
+            this,        SLOT(slotModelChanged()));
+    connect(filterModel, SIGNAL(rowsInserted(QModelIndex, int, int)),
+            this,        SLOT(slotModelChanged()));
+    connect(filterModel, SIGNAL(rowsRemoved(QModelIndex, int, int)),
+            this,        SLOT(slotModelChanged()));
 }
 
 BtOpenWorkAction::~BtOpenWorkAction() {
@@ -74,4 +84,8 @@ BtOpenWorkAction::~BtOpenWorkAction() {
 
 void BtOpenWorkAction::retranslateUi() {
     setText(tr("&Open work"));
+}
+
+void BtOpenWorkAction::slotModelChanged() {
+    setEnabled(m_menu->postFilterModel()->rowCount() > 0);
 }

@@ -16,6 +16,8 @@
 #include <QAction>
 #include "frontend/btmenuview.h"
 
+#include "backend/bookshelfmodel/btbookshelftreemodel.h"
+
 
 class BtBookshelfTreeModel;
 class BtBookshelfFilterModel;
@@ -28,6 +30,9 @@ class BtOpenWorkActionMenu: public BtMenuView {
         ~BtOpenWorkActionMenu();
 
         void setSourceModel(QAbstractItemModel *model);
+        inline QAbstractItemModel *sourceModel() const { return m_treeModel->sourceModel(); }
+        inline BtBookshelfTreeModel *treeModel() const { return m_treeModel; }
+        inline BtBookshelfFilterModel *postFilterModel() const { return m_postFilterModel; }
 
     signals:
         void triggered(CSwordModuleInfo *module);
@@ -52,6 +57,9 @@ class BtOpenWorkAction: public QAction {
 
     protected:
         void retranslateUi();
+
+    private slots:
+        void slotModelChanged();
 
     private:
         BtOpenWorkActionMenu *m_menu;
