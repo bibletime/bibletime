@@ -21,6 +21,11 @@ ADD_DEFINITIONS(-DBT_VERSION="${BT_VERSION_MAJOR}.${BT_VERSION_MINOR}${BT_REVISI
 
 MESSAGE(STATUS "Setting up build environment for BibleTime version ${BT_VERSION_MAJOR}.${BT_VERSION_MINOR}${BT_REVISION_PATCH}")
 
+# Define debug flags
+IF (NOT CMAKE_BUILD_TYPE STREQUAL "Release")
+    ADD_DEFINITIONS(-DBT_DEBUG)
+ENDIF (NOT CMAKE_BUILD_TYPE STREQUAL "Release")
+
 #Non-English locales to be processed and installed for UI, handbook and howto
 LIST(APPEND MESSAGE_LOCALE_LANGS cs da de en_GB es et fi fr hu it nl nn_NO pl pt_BR ro ru sk)
 #WARNING: If you modify HANDBOOK_LOCALE_LANGS or HOWTO_LOCALE_LANGS,
