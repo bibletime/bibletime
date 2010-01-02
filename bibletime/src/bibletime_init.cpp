@@ -709,7 +709,7 @@ void BibleTime::slotDebugTimeout() {
         } while (w != 0);
         m_debugWindow->setText(objectHierarchy);
     } else {
-        m_debugWindow->setText(tr("No widget"));
+        m_debugWindow->setText("No widget");
     }
     m_debugWindow->resize(m_debugWindow->minimumSizeHint());
 }
