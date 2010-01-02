@@ -100,6 +100,9 @@ BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
 BibleTime::~BibleTime() {
     //  delete m_dcopInterface;
     // The backend is deleted by the BibleTimeApp instance
+#ifdef BT_DEBUG
+    deleteDebugWindow();
+#endif
 }
 
 /** Saves the properties of BibleTime to the application wide configfile  */

@@ -39,6 +39,13 @@
 // Sword includes:
 #include <swlog.h>
 
+#ifdef BT_DEBUG
+#include <QLabel>
+#include <QMetaObject>
+#include <QMutexLocker>
+#include <QTimer>
+#endif
+
 
 using namespace InfoDisplay;
 using namespace Profile;
@@ -459,6 +466,15 @@ void BibleTime::initActions() {
     tmp = m_actionCollection->action("aboutBibleTime");
     helpMenu->addAction(tmp);
     connect(tmp, SIGNAL(triggered()), this, SLOT(slotOpenAboutDialog()) );
+
+    #ifdef BT_DEBUG
+    helpMenu->addSeparator();
+    m_debugWidget_action = new QAction(tr("Show \"Whats this widget\" dialog"), this);
+    m_debugWidget_action->setCheckable(true);
+    connect(m_debugWidget_action, SIGNAL(toggled(bool)),
+            this,                 SLOT(slotShowDebugWindow(bool)));
+    helpMenu->addAction(m_debugWidget_action);
+    #endif
 }
 
 /** Initializes the SIGNAL / SLOT connections */
@@ -628,3 +644,74 @@ void BibleTime::storeProfileSettings( CProfile* p ) {
     p->setMDIArrangementMode(m_mdi->getMDIArrangementMode());
 }
 
+#if BT_DEBUG
+
+QLabel *BibleTime::m_debugWindow = 0;
+QMutex BibleTime::m_debugWindowLock;
+
+void BibleTime::slotShowDebugWindow(bool show) {
+    if (show) {
+        QMutexLocker lock(&m_debugWindowLock);
+        if (m_debugWindow == 0) {
+            m_debugWindow = new QLabel(0, Qt::Dialog);
+            m_debugWindow->setAttribute(Qt::WA_DeleteOnClose);
+            m_debugWindow->setTextFormat(Qt::RichText);
+            m_debugWindow->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+            m_debugWindow->setWindowTitle(tr("Whats this widget?"));
+        }
+        m_debugWindow->show();
+        connect(m_debugWindow, SIGNAL(destroyed()),
+                this,          SLOT(slotDebugWindowClosing()), Qt::DirectConnection);
+        QTimer::singleShot(0, this, SLOT(slotDebugTimeout()));
+    } else {
+        deleteDebugWindow();
+    }
+}
+
+void BibleTime::deleteDebugWindow() {
+    QMutexLocker lock(&m_debugWindowLock);
+    if (m_debugWindow != 0) {
+        m_debugWindow->disconnect(SIGNAL(destroyed()), this, SLOT(slotDebugWindowClosing()));
+        delete m_debugWindow;
+        m_debugWindow = 0;
+    }
+}
+
+void BibleTime::slotDebugWindowClosing() {
+    QMutexLocker lock(&m_debugWindowLock);
+    m_debugWindow = 0;
+}
+
+void BibleTime::slotDebugTimeout() {
+    QMutexLocker lock(&m_debugWindowLock);
+    if (m_debugWindow == 0 || m_debugWindow->isVisible() == false) return;
+
+    QTimer::singleShot(0, this, SLOT(slotDebugTimeout()));
+    QObject *w = QApplication::widgetAt(QCursor::pos());
+    if (w != 0) {
+        QString objectHierarchy;
+        do {
+            const QMetaObject *m = w->metaObject();
+            QString classHierarchy;
+            do {
+                if (!classHierarchy.isEmpty()) classHierarchy += ": ";
+                classHierarchy += m->className();
+
+                m = m->superClass();
+            } while (m != 0);
+            if (!objectHierarchy.isEmpty()) {
+                objectHierarchy += "<br/><b>child of:</b> ";
+            } else {
+                objectHierarchy += "<b>This widget is:</b> ";
+            }
+            objectHierarchy += classHierarchy;
+            w = w->parent();
+        } while (w != 0);
+        m_debugWindow->setText(objectHierarchy);
+    } else {
+        m_debugWindow->setText(tr("No widget"));
+    }
+    m_debugWindow->resize(m_debugWindow->minimumSizeHint());
+}
+
+#endif

@@ -17,6 +17,9 @@
 #include "frontend/profile/cprofile.h"
 #include "frontend/profile/cprofilemgr.h"
 #include <QSignalMapper>
+#ifdef BT_DEBUG
+#include <QMutex>
+#endif
 
 
 namespace InfoDisplay {
@@ -30,6 +33,7 @@ class CDisplayWindow;
 class CMDIArea;
 class CSwordModuleInfo;
 class QAction;
+class QLabel;
 class QMenu;
 class QToolBar;
 class QSplitter;
@@ -428,6 +432,19 @@ class BibleTime : public QMainWindow {
 
         // Helper function
         void syncAllModulesByType(const CSwordModuleInfo::ModuleType type, const QString& key);
+
+#ifdef BT_DEBUG
+    private:
+        void deleteDebugWindow();
+    private slots:
+        void slotDebugWindowClosing();
+        void slotDebugTimeout();
+        void slotShowDebugWindow(bool);
+    private:
+        QAction *m_debugWidget_action;
+        static QLabel *m_debugWindow;
+        static QMutex m_debugWindowLock;
+#endif
 };
 
 #endif
