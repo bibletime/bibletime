@@ -167,24 +167,25 @@ int main(int argc, char* argv[]) {
 
 //	setSignalHandler(signalHandler);
 
-    BibleTime bibleTime;
+    BibleTime *mainWindow = new BibleTime();
+    mainWindow->setAttribute(Qt::WA_DeleteOnClose);
 
     // a new BibleTime version was installed (maybe a completely new installation)
     if (CBTConfig::get(CBTConfig::bibletimeVersion) != BT_VERSION) {
         CBTConfig::set(CBTConfig::bibletimeVersion, BT_VERSION);
-        bibleTime.saveConfigSettings();
+        mainWindow->saveConfigSettings();
     }
 
     // restore the workspace and process command line options
     //app.setMainWidget(bibletime_ptr); //no longer used in qt4 (QApplication)
-    bibleTime.show();
-    bibleTime.processCommandline(); //must be done after the bibletime window is visible
+    mainWindow->show();
+    mainWindow->processCommandline(); //must be done after the bibletime window is visible
 
 #ifndef NO_DBUS
-    new BibleTimeDBusAdaptor(&bibleTime);
+    new BibleTimeDBusAdaptor(mainWindow);
     // connect to D-Bus and register as an object:
     QDBusConnection::sessionBus().registerService("info.bibletime.BibleTime");
-    QDBusConnection::sessionBus().registerObject("/BibleTime", &bibleTime);
+    QDBusConnection::sessionBus().registerObject("/BibleTime", mainWindow);
 #endif
 
     int r = app.exec();
