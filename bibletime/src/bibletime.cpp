@@ -45,8 +45,8 @@
 
 using namespace Profile;
 
-BibleTime::BibleTime()
-        : m_WindowWasMaximizedBeforeFullScreen(false) {
+BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
+        : QMainWindow(parent, flags), m_WindowWasMaximizedBeforeFullScreen(false) {
     namespace DU = util::directory;
 
     QSplashScreen splash;

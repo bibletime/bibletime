@@ -127,7 +127,7 @@ class BibleTime : public QMainWindow {
         /**
          * construtor of BibleTime
          */
-        BibleTime();
+        BibleTime(QWidget *parent = 0, Qt::WindowFlags flags = 0);
         /**
          * destructor of BibleTime
          */
