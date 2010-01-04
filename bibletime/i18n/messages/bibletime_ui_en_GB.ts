@@ -402,7 +402,7 @@
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="118"/>
         <source>(c)1999-2010, The BibleTime Team</source>
-        <translation type="unfinished"></translation>
+        <translation>(c)1999-2010, The BibleTime Team</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="125"/>
@@ -1097,7 +1097,7 @@
     <message>
         <location filename="../../src/frontend/btopenworkaction.cpp" line="71"/>
         <source>&amp;Open work</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Open work</translation>
     </message>
 </context>
 <context>
