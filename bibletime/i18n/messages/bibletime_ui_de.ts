@@ -319,7 +319,7 @@
     </message>
     <message>
         <source>(c)1999-2009, The BibleTime Team</source>
-        <translation>(c)1999-2009, Das BibleTime-Team</translation>
+        <translation type="obsolete">(c)1999-2009, Das BibleTime-Team</translation>
     </message>
     <message>
         <source>Contributors</source>
@@ -487,6 +487,10 @@
     </message>
     <message>
         <source>BibleTime is released under the GPL license. You can download and use (but not distribute) the program for personal, private, public or commercial purposes without restrictions. You can give away or distribute the program if you also distribute the corresponding source code.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(c)1999-2010, The BibleTime Team</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -970,6 +974,13 @@
     <message>
         <source>Bookshelf Manager</source>
         <translation>Bücherregal-Verwaltung</translation>
+    </message>
+</context>
+<context>
+    <name>BtOpenWorkAction</name>
+    <message>
+        <source>&amp;Open work</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
