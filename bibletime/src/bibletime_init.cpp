@@ -471,7 +471,7 @@ void BibleTime::initActions() {
     helpMenu->addSeparator();
     m_debugWidget_action = new QAction(tr("Show \"Whats this widget\" dialog"), this);
     m_debugWidget_action->setCheckable(true);
-    connect(m_debugWidget_action, SIGNAL(toggled(bool)),
+    connect(m_debugWidget_action, SIGNAL(triggered(bool)),
             this,                 SLOT(slotShowDebugWindow(bool)));
     helpMenu->addAction(m_debugWidget_action);
     #endif
@@ -680,6 +680,7 @@ void BibleTime::deleteDebugWindow() {
 void BibleTime::slotDebugWindowClosing() {
     QMutexLocker lock(&m_debugWindowLock);
     m_debugWindow = 0;
+    m_debugWidget_action->setChecked(false);
 }
 
 void BibleTime::slotDebugTimeout() {
