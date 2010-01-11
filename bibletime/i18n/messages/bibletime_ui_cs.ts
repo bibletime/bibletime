@@ -298,6 +298,14 @@
         <source>Show tools</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Show &quot;Whats this widget&quot; dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Whats this widget?</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BtAboutDialog</name>
@@ -306,32 +314,8 @@
         <translation>BibleTime je jednoduše použitelný nástroj pro studium Bible.</translation>
     </message>
     <message>
-        <source>We are looking for developers and translators.</source>
-        <translation type="obsolete">Hledáme vývojáře a překladatele.</translation>
-    </message>
-    <message>
-        <source>If you would like to join our team, please send an email to info@bibletime.info.</source>
-        <translation type="obsolete">Pokud se chcete připojit k našemu támu, prosím pošlete email na info@bibletime.info.</translation>
-    </message>
-    <message>
-        <source>(c)1999-2009, The BibleTime Team</source>
-        <translation type="obsolete">(c)1999-2006, The BibleTime Team</translation>
-    </message>
-    <message>
-        <source>You can download and use (but not distribute) the program for personal, private, public or commercial purposes without restrictions.</source>
-        <translation type="obsolete">Program můžete stáhnout a užívat (ale ne distribuovat) pro osobní , soukromé, nebo komerční účely bez omezení.</translation>
-    </message>
-    <message>
-        <source>You can give away or distribute the program if you also distribute the corresponding source code.</source>
-        <translation type="obsolete">Program můžete šířit, pokud šíříte také odpovídající zdrojový kód.</translation>
-    </message>
-    <message>
         <source>The complete legally binding license is below.</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Contributors</source>
-        <translation type="obsolete">Přispěvatelé</translation>
     </message>
     <message>
         <source>About BibleTime</source>
@@ -344,10 +328,6 @@
     <message>
         <source>documentation and translation manager</source>
         <translation>správce dokumentace a překladu</translation>
-    </message>
-    <message>
-        <source>project founder, developer</source>
-        <translation type="obsolete">zakladatel projektu, vývojář</translation>
     </message>
     <message>
         <source>designer</source>
@@ -366,10 +346,6 @@
         <translation>tvůrce projektu Sword</translation>
     </message>
     <message>
-        <source>project manager, developer</source>
-        <translation type="obsolete">vedoucí projektu, vývojář</translation>
-    </message>
-    <message>
         <source>domain sponsor</source>
         <translation>sponzor domény</translation>
     </message>
@@ -382,32 +358,12 @@
         <translation>dokumentace</translation>
     </message>
     <message>
-        <source>tester, usability expert</source>
-        <translation type="obsolete">tester, expert na použitelnost</translation>
-    </message>
-    <message>
         <source>The following people translated BibleTime into their language:</source>
         <translation>Následující lidé překládají BibleTime do svého jazyka:</translation>
     </message>
     <message>
-        <source>Some names may be missing, please email bibletime-translations@lists.sourceforge.net if you notice errors or omissions.</source>
-        <translation type="obsolete">Některá jména mohou chybět, prosím napište na bibletime-translations@lists.sourceforge.net, pokud jste našli chyby nebo \&quot;bílá místa\&quot;.</translation>
-    </message>
-    <message>
         <source>SWORD library version %1</source>
         <translation>Knihovna SWORD verze %1</translation>
-    </message>
-    <message>
-        <source>The SWORD Project</source>
-        <translation type="obsolete">Projekt SWORD</translation>
-    </message>
-    <message>
-        <source>License</source>
-        <translation type="obsolete">Licence</translation>
-    </message>
-    <message>
-        <source>BibleTime is released under the GPL license.</source>
-        <translation type="obsolete">BibleTime je uvolněna pod licencí GLP</translation>
     </message>
     <message>
         <source>This program uses Qt version %1.</source>
@@ -502,26 +458,6 @@
     <message>
         <source>Bookshelf</source>
         <translation type="unfinished">Knihovna</translation>
-    </message>
-    <message>
-        <source>Grouping</source>
-        <translation type="obsolete">Seskupování</translation>
-    </message>
-    <message>
-        <source>Category/Language</source>
-        <translation type="obsolete">Kategorie/Jazyk</translation>
-    </message>
-    <message>
-        <source>Category</source>
-        <translation type="obsolete">Kategorie</translation>
-    </message>
-    <message>
-        <source>Language/Category</source>
-        <translation type="obsolete">Jazyk/kategorie</translation>
-    </message>
-    <message>
-        <source>Language</source>
-        <translation type="obsolete">Jazyk</translation>
     </message>
     <message>
         <source>&amp;Open</source>
@@ -753,10 +689,6 @@
 </context>
 <context>
     <name>BtInstallModuleChooserDialog</name>
-    <message>
-        <source>Install</source>
-        <translation type="obsolete">Instalovat</translation>
-    </message>
     <message>
         <source>Install/Update works?</source>
         <translation type="unfinished">Instalovat/Aktualizovat díla?</translation>
@@ -1151,18 +1083,6 @@ shortcut</source>
         <translation>Místní:</translation>
     </message>
     <message>
-        <source>Install/Update works?</source>
-        <translation type="obsolete">Instalovat/Aktualizovat díla?</translation>
-    </message>
-    <message>
-        <source>Do you really want to install these works?</source>
-        <translation type="obsolete">Opravdu si přejete nainstalovat tato díla?</translation>
-    </message>
-    <message>
-        <source>Only one version of a work can be installed at the same time. Select only one if there are items marked with red.</source>
-        <translation type="obsolete">Zároveň může být nainstalována pouze jedna verze daného díla. Vyberte pouze jednu položku, pokud jsou některé označené červeně.</translation>
-    </message>
-    <message>
         <source>Not a directory!</source>
         <translation>Není adresářem!</translation>
     </message>
@@ -1445,61 +1365,6 @@ shortcut</source>
     </message>
 </context>
 <context>
-    <name>CDisplaySettingsButton</name>
-    <message>
-        <source>Display settings: No options available</source>
-        <translation type="obsolete">Zobrazit nastavení: Žádné volby k dispozici</translation>
-    </message>
-    <message>
-        <source>Display settings</source>
-        <translation type="obsolete">Nastavení zobrazení</translation>
-    </message>
-    <message>
-        <source>Display options</source>
-        <translation type="obsolete">Volby zobrazení</translation>
-    </message>
-    <message>
-        <source>Use linebreaks after each verse</source>
-        <translation type="obsolete">Zalomit řádek po každém verši</translation>
-    </message>
-    <message>
-        <source>Show headings</source>
-        <translation type="obsolete">Zobrazit nadpisy</translation>
-    </message>
-    <message>
-        <source>Highlight words of Jesus</source>
-        <translation type="obsolete">Zvýraznit Ježíšova slova</translation>
-    </message>
-    <message>
-        <source>Show Hebrew vowel points</source>
-        <translation type="obsolete">Zobrazit hebrejské značky samohlásek</translation>
-    </message>
-    <message>
-        <source>Show Hebrew cantillation marks</source>
-        <translation type="obsolete">Zobrazit hebrejské značky přízvuku</translation>
-    </message>
-    <message>
-        <source>Show Greek accents</source>
-        <translation type="obsolete">Zobrazit řecké značky přízvuku</translation>
-    </message>
-    <message>
-        <source>Use alternative textual variant</source>
-        <translation type="obsolete">Použít alternativní varianty textu</translation>
-    </message>
-    <message>
-        <source>Show scripture cross-references</source>
-        <translation type="obsolete">Ukázat odkaz v Bibli</translation>
-    </message>
-    <message>
-        <source>Show morph segmentation</source>
-        <translation type="obsolete">Ukázat morfologické dělení</translation>
-    </message>
-    <message>
-        <source>Show verse numbers</source>
-        <translation type="obsolete">Zobrazit čísla veršů</translation>
-    </message>
-</context>
-<context>
     <name>CDisplaySettingsPage</name>
     <message>
         <source>Display templates</source>
@@ -1524,10 +1389,6 @@ shortcut</source>
     <message>
         <source>He who believes in him is not judged. He who doesn&apos;t believe has been judged already, because he has not believed in the name of the one and only Son of God.</source>
         <translation>Kdo v něj věří, není souzen, ale kdo nevěří, je již odsouzen; neboť neuvěřil ve jméno jednorozeného Božího Syna.</translation>
-    </message>
-    <message>
-        <source>This is the judgment, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.</source>
-        <translation type="obsolete">A toto je ten soud, že světlo přišlo na svět, ale lidé si více oblíbili tmu nežli světlo, protože jejich skutky byly zlé.</translation>
     </message>
     <message>
         <source>For everyone who does evil hates the light, and doesn&apos;t come to the light, lest his works would be exposed.</source>
@@ -1579,10 +1440,6 @@ shortcut</source>
     <message>
         <source>Zoom out</source>
         <translation>Oddálit</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation type="obsolete">Zavřít</translation>
     </message>
     <message>
         <source>Select all</source>
@@ -1890,25 +1747,6 @@ shortcut</source>
     </message>
 </context>
 <context>
-    <name>CModuleChooserButton</name>
-    <message>
-        <source>NONE</source>
-        <translation type="obsolete">Žádný modul</translation>
-    </message>
-    <message>
-        <source>Select a work</source>
-        <translation type="obsolete">Vyberte dílo</translation>
-    </message>
-    <message>
-        <source>Select an additional work</source>
-        <translation type="obsolete">Vyberte další dílo</translation>
-    </message>
-    <message>
-        <source>[locked]</source>
-        <translation type="obsolete">[zamčený]</translation>
-    </message>
-</context>
-<context>
     <name>CModuleIndexDialog</name>
     <message>
         <source>Cancel</source>
@@ -1972,6 +1810,37 @@ shortcut</source>
     <message>
         <source>Restore original text, new text will be lost</source>
         <translation>Obnovit originální text, nový text bude ztracen</translation>
+    </message>
+</context>
+<context>
+    <name>CSearchAnalysisScene</name>
+    <message>
+        <source>Save Search Analysis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>HTML files (*.html;*.HTML;*.HTM;*.htm)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>BibleTime Search Analysis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search text :</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Book</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Total hits</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Created by &lt;a href=&quot;http://www.bibletime.info/&quot;&gt;BibleTime&lt;/a&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3403,14 +3272,6 @@ Language name ppk</extracomment>
         <translation>Díla:</translation>
     </message>
     <message>
-        <source>Works to Search in</source>
-        <translation type="obsolete">Díla k prohledání</translation>
-    </message>
-    <message>
-        <source>Select the works which should be searched.</source>
-        <translation type="obsolete">Vyberte díla která mají být prohledána.</translation>
-    </message>
-    <message>
         <source>No search scope</source>
         <translation>Bez omezení</translation>
     </message>
@@ -3445,14 +3306,6 @@ Language name ppk</extracomment>
     <message>
         <source>Choose the scope (books/chapters/verses to search in).&lt;br /&gt;Applicable for Bibles and commentaries.</source>
         <translation>Vyberte rozsah (knihy/kapitoly/verše k prohledání).&lt;/br&gt;Aplikovatelné na Bible a komentáře.</translation>
-    </message>
-    <message>
-        <source>&lt;h1&gt;&lt;A name=&apos;lucene&apos;&gt;Other syntax features&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;BibleTime uses the CLucene search engine. You can read more on the &lt;a href=&apos;http://lucene.apache.org/java/1_4_3/queryparsersyntax.html&apos;&gt;lucene syntax web page&lt;/a&gt; (in external browser).&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;h1&gt;&lt;A name=&apos;lucene&apos;&gt;Další rysy syntaxe&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;BibleTime používá vyhledávací engineCLucene. Více se dočtete na &lt;a href=&apos;http://lucene.apache.org/java/1_4_3/queryparsersyntax.html&apos;&gt;webová stránka syntaxe lucene&lt;/a&gt; (v externím prohlížeči).&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>Search Syntax Help</source>
-        <translation type="obsolete">Nápověda k syntaxi vyhledávání</translation>
     </message>
 </context>
 <context>
@@ -3777,37 +3630,6 @@ Language name ppk</extracomment>
     </message>
 </context>
 <context>
-    <name>Search::CSearchAnalysisScene</name>
-    <message>
-        <source>Save Search Analysis</source>
-        <translation>Uložit analýzu hledání</translation>
-    </message>
-    <message>
-        <source>HTML files (*.html;*.HTML;*.HTM;*.htm)</source>
-        <translation>soubory HTML (*.html;*.HTML;*.HTM;*.htm)</translation>
-    </message>
-    <message>
-        <source>BibleTime Search Analysis</source>
-        <translation>Analýza hledání</translation>
-    </message>
-    <message>
-        <source>Search text :</source>
-        <translation>Hledat text:</translation>
-    </message>
-    <message>
-        <source>Book</source>
-        <translation>Kniha</translation>
-    </message>
-    <message>
-        <source>Total hits</source>
-        <translation>Celkem</translation>
-    </message>
-    <message>
-        <source>Created by &lt;a href=&quot;http://www.bibletime.info/&quot;&gt;BibleTime&lt;/a&gt;</source>
-        <translation>Vytvořil &lt;a href=&quot;http://www.bibletime.info/&quot;&gt;BibleTime&lt;/a&gt;</translation>
-    </message>
-</context>
-<context>
     <name>Search::CSearchDialog</name>
     <message>
         <source>Missing indices</source>
@@ -3826,10 +3648,6 @@ To může trvat dlouhou dobu. Pokračovat v indexování?</translation>
     <message>
         <source>&amp;Analyze results...</source>
         <translation>&amp;Analyzovat výsledky...</translation>
-    </message>
-    <message>
-        <source>Show a graphical analyzis of the search result</source>
-        <translation type="obsolete">Ukázat grafickou analýzu výsledků hledání</translation>
     </message>
     <message>
         <source>&amp;Close</source>

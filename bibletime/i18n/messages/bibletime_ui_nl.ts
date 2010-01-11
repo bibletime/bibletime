@@ -12,182 +12,182 @@
 <context>
     <name>BibleTime</name>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="257"/>
+        <location filename="../../src/bibletime_init.cpp" line="264"/>
         <source>&amp;File</source>
         <translation>&amp;Bestand</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="258"/>
+        <location filename="../../src/bibletime_init.cpp" line="265"/>
         <source>&amp;View</source>
         <translation>Beel&amp;d</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="259"/>
+        <location filename="../../src/bibletime_init.cpp" line="266"/>
         <source>&amp;Search</source>
         <translation>&amp;Zoeken</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="260"/>
+        <location filename="../../src/bibletime_init.cpp" line="267"/>
         <source>&amp;Window</source>
         <translation>&amp;Venster</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="261"/>
+        <location filename="../../src/bibletime_init.cpp" line="268"/>
         <source>Se&amp;ttings</source>
         <translation>&amp;Instellingen</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="262"/>
+        <location filename="../../src/bibletime_init.cpp" line="269"/>
         <source>&amp;Help</source>
         <translation>&amp;Help</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="108"/>
+        <location filename="../../src/bibletime_init.cpp" line="115"/>
         <source>&amp;Show toolbar</source>
         <translation>Toon &amp;werkbalk</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="101"/>
+        <location filename="../../src/bibletime_init.cpp" line="108"/>
         <source>&amp;Fullscreen mode</source>
         <translation>&amp;Volledig scherm</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="265"/>
+        <location filename="../../src/bibletime_init.cpp" line="272"/>
         <source>Main Toolbar</source>
         <translation>Hoofdwerkbalk</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="94"/>
+        <location filename="../../src/bibletime_init.cpp" line="101"/>
         <source>&amp;Quit</source>
         <translation>&amp;Afsluiten</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="234"/>
+        <location filename="../../src/bibletime_init.cpp" line="241"/>
         <source>Open the Bible study HowTo included with BibleTime.&lt;br/&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
         <translation>Open de Bijbelstudie HowTo van BibleTime. &lt;br/&gt;Deze HowTo is een introductie op hoe u de Bijbel doeltreffend kunt bestuderen.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="239"/>
+        <location filename="../../src/bibletime_init.cpp" line="246"/>
         <source>Information about the BibleTime program</source>
         <translation>Informatie over het programma BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="301"/>
+        <location filename="../../src/bibletime_init.cpp" line="308"/>
         <source>Show Bookshelf</source>
         <translation>Toon Boekenplank</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="305"/>
+        <location filename="../../src/bibletime_init.cpp" line="312"/>
         <source>Show Bookmarks</source>
         <translation>Toon Bladwijzers</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="309"/>
+        <location filename="../../src/bibletime_init.cpp" line="316"/>
         <source>Show Mag</source>
         <translation>Toon Vergrootglas</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="313"/>
+        <location filename="../../src/bibletime_init.cpp" line="320"/>
         <source>Text windows</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="316"/>
+        <location filename="../../src/bibletime_init.cpp" line="323"/>
         <source>Show text area headers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="322"/>
+        <location filename="../../src/bibletime_init.cpp" line="329"/>
         <source>Show navigation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="328"/>
+        <location filename="../../src/bibletime_init.cpp" line="335"/>
         <source>Show work chooser buttons</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="334"/>
+        <location filename="../../src/bibletime_init.cpp" line="341"/>
         <source>Show tools</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="356"/>
+        <location filename="../../src/bibletime_init.cpp" line="363"/>
         <source>O&amp;pen Windows</source>
         <translation>O&amp;pen Vensters</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="419"/>
+        <location filename="../../src/bibletime_init.cpp" line="426"/>
         <source>&amp;Save session</source>
         <translation>&amp;Sessie opslaan</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="426"/>
+        <location filename="../../src/bibletime_init.cpp" line="433"/>
         <source>&amp;Load session</source>
         <translation>&amp;Laad sessie</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="429"/>
+        <location filename="../../src/bibletime_init.cpp" line="436"/>
         <source>&amp;Delete session</source>
         <translation>Verwij&amp;der sessie</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="387"/>
+        <location filename="../../src/bibletime_init.cpp" line="394"/>
         <source>&amp;Arrangement mode</source>
         <translation>R&amp;angschikking van vensters</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="134"/>
+        <location filename="../../src/bibletime_init.cpp" line="141"/>
         <source>&amp;Manual mode</source>
         <translation>Handmatige &amp;modus</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="141"/>
+        <location filename="../../src/bibletime_init.cpp" line="148"/>
         <source>Auto-tile &amp;vertically</source>
         <translation>Automatisch &amp;verticaal stapelen</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="148"/>
+        <location filename="../../src/bibletime_init.cpp" line="155"/>
         <source>Auto-tile &amp;horizontally</source>
         <translation>Automatisch &amp;horizontaal stapelen</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="162"/>
+        <location filename="../../src/bibletime_init.cpp" line="169"/>
         <source>Auto-&amp;cascade</source>
         <translation>Automatisch trapsgewijs (&amp;cascade)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="169"/>
+        <location filename="../../src/bibletime_init.cpp" line="176"/>
         <source>&amp;Cascade</source>
         <translation>Trapsgewijs (&amp;cascade)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="183"/>
+        <location filename="../../src/bibletime_init.cpp" line="190"/>
         <source>Tile &amp;vertically</source>
         <translation>&amp;Verticaal stapelen</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="190"/>
+        <location filename="../../src/bibletime_init.cpp" line="197"/>
         <source>Tile &amp;horizontally</source>
         <translation>&amp;Horizontaal stapelen</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="204"/>
+        <location filename="../../src/bibletime_init.cpp" line="211"/>
         <source>Cl&amp;ose all windows</source>
         <translation>Alle vensters &amp;sluiten</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="207"/>
+        <location filename="../../src/bibletime_init.cpp" line="214"/>
         <source>Close all open windows inside BibleTime</source>
         <translation>Sluit alle open vensters in BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="224"/>
+        <location filename="../../src/bibletime_init.cpp" line="231"/>
         <source>&amp;Handbook</source>
         <translation>&amp;Handboek</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="231"/>
+        <location filename="../../src/bibletime_init.cpp" line="238"/>
         <source>&amp;Bible Study Howto</source>
         <translation>&amp;Bijbelstudie HowTo</translation>
     </message>
@@ -197,132 +197,142 @@
         <translation>Voer een naam voor de nieuwe sessie in.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="97"/>
+        <location filename="../../src/bibletime_init.cpp" line="104"/>
         <source>Quit BibleTime</source>
         <translation>BibleTime afsluiten</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="104"/>
+        <location filename="../../src/bibletime_init.cpp" line="111"/>
         <source>Toggle fullscreen mode of the main window</source>
         <translation>Volledige scherm van hoofdvenster aan/uit</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="113"/>
+        <location filename="../../src/bibletime_init.cpp" line="120"/>
         <source>Search in &amp;open works...</source>
         <translation>Zoek in ge&amp;opende modules...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="120"/>
+        <location filename="../../src/bibletime_init.cpp" line="127"/>
         <source>Search in standard &amp;Bible...</source>
         <translation>Zoek in standaard&amp;bijbel...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="127"/>
+        <location filename="../../src/bibletime_init.cpp" line="134"/>
         <source>Save as &amp;new session...</source>
         <translation>Als &amp;nieuwe sessie opslaan...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="130"/>
+        <location filename="../../src/bibletime_init.cpp" line="137"/>
         <source>Create and save a new session</source>
         <translation>Een nieuwe sessie aanmaken en opslaan</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="137"/>
+        <location filename="../../src/bibletime_init.cpp" line="144"/>
         <source>Manually arrange the open windows</source>
         <translation>Handmatig de geopende vensters rangschikken</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="144"/>
+        <location filename="../../src/bibletime_init.cpp" line="151"/>
         <source>Automatically tile the open windows vertically (arrange side by side)</source>
         <translation>Automatisch de geopende vensters verticaal stapelen (zij-aan-zij rangschikken)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="151"/>
+        <location filename="../../src/bibletime_init.cpp" line="158"/>
         <source>Automatically tile the open windows horizontally (arrange on top of each other)</source>
         <translation>Automatisch de geopende vensters horizontaal stapelen (boven op elkaar rangschikken)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="155"/>
+        <location filename="../../src/bibletime_init.cpp" line="162"/>
         <source>Auto-&amp;tile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="158"/>
+        <location filename="../../src/bibletime_init.cpp" line="165"/>
         <source>Automatically tile the open windows</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="165"/>
+        <location filename="../../src/bibletime_init.cpp" line="172"/>
         <source>Automatically cascade the open windows</source>
         <translation>Automatisch de geopende vensters trapsgewijs rangschikken (cascade)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="172"/>
+        <location filename="../../src/bibletime_init.cpp" line="179"/>
         <source>Cascade the open windows</source>
         <translation>De geopende vensters trapsgewijs rangschikken</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="176"/>
+        <location filename="../../src/bibletime_init.cpp" line="183"/>
         <source>&amp;Tile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="179"/>
+        <location filename="../../src/bibletime_init.cpp" line="186"/>
         <source>Tile the open windows</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="186"/>
+        <location filename="../../src/bibletime_init.cpp" line="193"/>
         <source>Vertically tile (arrange side by side) the open windows</source>
         <translation>De geopende vensters verticaal stapelen (zij-aan-zij rangschikken)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="193"/>
+        <location filename="../../src/bibletime_init.cpp" line="200"/>
         <source>Horizontally tile (arrange on top of each other) the open windows</source>
         <translation>De geopende vensters horizontaal stapelen (boven op elkaar rangschikken)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="197"/>
+        <location filename="../../src/bibletime_init.cpp" line="204"/>
         <source>Close &amp;window</source>
         <translation>Venster &amp;sluiten</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="200"/>
+        <location filename="../../src/bibletime_init.cpp" line="207"/>
         <source>Close the current open window</source>
         <translation>Sluit het huidige geopende venster</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="211"/>
+        <location filename="../../src/bibletime_init.cpp" line="218"/>
         <source>&amp;Configure BibleTime...</source>
         <translation>BibleTime &amp;instellen...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="213"/>
+        <location filename="../../src/bibletime_init.cpp" line="220"/>
         <source>Set BibleTime&apos;s preferences</source>
         <translation>BibleTime&apos;s instellingen wijzigen</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="217"/>
+        <location filename="../../src/bibletime_init.cpp" line="224"/>
         <source>Bookshelf &amp;Manager...</source>
         <translation>Boekenplank &amp;Manager...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="220"/>
+        <location filename="../../src/bibletime_init.cpp" line="227"/>
         <source>Configure your bookshelf and install/update/remove/index works</source>
         <translation>Uw boekenplank instellen en modules installeren/updaten/verwijderen/indexeren</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="227"/>
+        <location filename="../../src/bibletime_init.cpp" line="234"/>
         <source>Open BibleTime&apos;s handbook</source>
         <translation>Open BibleTime&apos;s handboek</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="116"/>
+        <location filename="../../src/bibletime_init.cpp" line="472"/>
+        <source>Show &quot;Whats this widget&quot; dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="660"/>
+        <source>Whats this widget?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="123"/>
         <source>Search in all works that are currently open</source>
         <translation>Zoek in alle modules die momenteel geopend zijn</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="123"/>
+        <location filename="../../src/bibletime_init.cpp" line="130"/>
         <source>Search in the standard Bible</source>
         <translation>Zoek in de standaardbijbel</translation>
     </message>
@@ -347,27 +357,27 @@
         <translation>Bezig met initialiseren van menu- en werkbalken...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="242"/>
+        <location filename="../../src/bibletime.cpp" line="245"/>
         <source>Unlock Work</source>
         <translation>Module Ontgrendelen</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="243"/>
+        <location filename="../../src/bibletime.cpp" line="246"/>
         <source>Enter the unlock key for this work.</source>
         <translation>Voer de sleutel voor ontgrendeling van deze module in.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="238"/>
+        <location filename="../../src/bibletime_init.cpp" line="245"/>
         <source>&amp;About BibleTime</source>
         <translation>&amp;Over BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="54"/>
+        <location filename="../../src/bibletime_init.cpp" line="61"/>
         <source>Bookmarks</source>
         <translation>Bladwijzers</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="61"/>
+        <location filename="../../src/bibletime_init.cpp" line="68"/>
         <source>Mag</source>
         <translation>Vergrootglas</translation>
     </message>
@@ -380,33 +390,9 @@
         <translation>BibleTime is een makkelijk te gebruiken, maar krachtig hulpmiddel voor bijbelstudie.</translation>
     </message>
     <message>
-        <source>We are looking for developers and translators.</source>
-        <translation type="obsolete">We zijn op zoek naar ontwikkelaars en vertalers.</translation>
-    </message>
-    <message>
-        <source>If you would like to join our team, please send an email to info@bibletime.info.</source>
-        <translation type="obsolete">Als u ons team wilt versterken, stuur dan a.u.b. een e-mail naar info@bibletime.info.</translation>
-    </message>
-    <message>
-        <source>(c)1999-2009, The BibleTime Team</source>
-        <translation type="obsolete">(c)1999-2009, Het BibleTime-team</translation>
-    </message>
-    <message>
-        <source>You can download and use (but not distribute) the program for personal, private, public or commercial purposes without restrictions.</source>
-        <translation type="obsolete">U kunt dit programma zonder beperking downloaden en gebruiken (maar niet distribueren) voor persoonlijke, publieke of commerciële doeleinden.</translation>
-    </message>
-    <message>
-        <source>You can give away or distribute the program if you also distribute the corresponding source code.</source>
-        <translation type="obsolete">U kunt het programma weggeven of distribueren als u tevens de corresponderende broncode distribueert.</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="254"/>
         <source>The complete legally binding license is below.</source>
         <translation>De volledige, wettelijk bindende licentie staat hieronder.</translation>
-    </message>
-    <message>
-        <source>Contributors</source>
-        <translation type="obsolete">Medewerkers</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="97"/>
@@ -504,10 +490,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>project founder, developer</source>
-        <translation type="obsolete">grondlegger, ontwikkelaar</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="128"/>
         <source>designer</source>
         <translation>ontwerper</translation>
@@ -533,10 +515,6 @@
         <translation>grondlegger van het Sword Project</translation>
     </message>
     <message>
-        <source>project manager, developer</source>
-        <translation type="obsolete">projectmanager, ontwikkelaar</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="147"/>
         <source>domain sponsor</source>
         <translation>sponsor van het domein</translation>
@@ -557,30 +535,14 @@
         <translation>documentatie</translation>
     </message>
     <message>
-        <source>tester, usability expert</source>
-        <translation type="obsolete">tester, expert op het gebied van gebruiksvriendelijkheid</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="171"/>
         <source>The following people translated BibleTime into their language:</source>
         <translation>De volgende personen hebben BibleTime vertaald naar hun taal:</translation>
     </message>
     <message>
-        <source>Some names may be missing, please email bibletime-translations@lists.sourceforge.net if you notice errors or omissions.</source>
-        <translation type="obsolete">Sommige namen kunnen ontbreken, e-mail naar bibletime-translations@lists.sourceforge.net als u fouten of omissies opmerkt.</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="212"/>
         <source>SWORD library version %1</source>
         <translation>SWORD bibliotheek versie %1</translation>
-    </message>
-    <message>
-        <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools-- covered by the GNU General Public License-- that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
-        <translation type="obsolete">BibleTime maakt gebruikt van het SWORD Project. Het SWORD Project is het open bijbelsoftwareproject van de CrossWire Bible Society. Haar doel is om cross-platform open-source hulpmiddelen --onder de GNU General Public licentie-- te maken, welke programmeurs en bijbelgenootschappen in staat stellen om nieuwe bijbelsoftware sneller en gemakkelijker te vervaardigen.</translation>
-    </message>
-    <message>
-        <source>The SWORD Project</source>
-        <translation type="obsolete">Het SWORD Project</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="233"/>
@@ -591,14 +553,6 @@
         <location filename="../../src/frontend/btaboutdialog.cpp" line="235"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
         <translation>Qt is een cross-platform applicatie en raamwerk voor gebruikersinterfaces, gemaakt in de programmeertaal C++. Het is uitgegeven onder de LGPL licentie.</translation>
-    </message>
-    <message>
-        <source>License</source>
-        <translation type="obsolete">Licentie</translation>
-    </message>
-    <message>
-        <source>BibleTime is released under the GPL license.</source>
-        <translation type="obsolete">BibleTime is uitgegeven onder de GPL licentie.</translation>
     </message>
 </context>
 <context>
@@ -615,42 +569,6 @@
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="118"/>
         <source>Bookshelf</source>
         <translation>Boekenplank</translation>
-    </message>
-    <message>
-        <source>Fi&amp;lter:</source>
-        <translation type="obsolete">Fi&amp;lter:</translation>
-    </message>
-    <message>
-        <source>Grouping</source>
-        <translation type="obsolete">Groepering</translation>
-    </message>
-    <message>
-        <source>Change the grouping of items in the bookshelf.</source>
-        <translation type="obsolete">Wijzig de groepering van items in de boekenplank.</translation>
-    </message>
-    <message>
-        <source>Category/Language</source>
-        <translation type="obsolete">Categorie/Taal</translation>
-    </message>
-    <message>
-        <source>Category</source>
-        <translation type="obsolete">Categorie</translation>
-    </message>
-    <message>
-        <source>Language/Category</source>
-        <translation type="obsolete">Taal/Categorie</translation>
-    </message>
-    <message>
-        <source>Language</source>
-        <translation type="obsolete">Taal</translation>
-    </message>
-    <message>
-        <source>No grouping</source>
-        <translation type="obsolete">Geen groepering</translation>
-    </message>
-    <message>
-        <source>Show/hide works</source>
-        <translation type="obsolete">Toon/verberg modules</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="120"/>
@@ -939,10 +857,6 @@
 <context>
     <name>BtInstallModuleChooserDialog</name>
     <message>
-        <source>Install</source>
-        <translation type="obsolete">Installeren</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.cpp" line="55"/>
         <source>Install/Update works?</source>
         <translation type="unfinished">Modules installeren/updaten?</translation>
@@ -1193,21 +1107,13 @@
 <context>
     <name>BtOpenWorkAction</name>
     <message>
-        <location filename="../../src/frontend/btopenworkaction.cpp" line="71"/>
+        <location filename="../../src/frontend/btopenworkaction.cpp" line="86"/>
         <source>&amp;Open work</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>BtRemovePage</name>
-    <message>
-        <source>Work</source>
-        <translation type="obsolete">Module</translation>
-    </message>
-    <message>
-        <source>Install path</source>
-        <translation type="obsolete">Installatiepad</translation>
-    </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="83"/>
         <source>Remove</source>
@@ -1439,18 +1345,6 @@ sneltoets</translation>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="262"/>
         <source>Local:</source>
         <translation>Lokaal:</translation>
-    </message>
-    <message>
-        <source>Install/Update works?</source>
-        <translation type="obsolete">Modules installeren/updaten?</translation>
-    </message>
-    <message>
-        <source>Do you really want to install these works?</source>
-        <translation type="obsolete">Wilt u deze modules werkelijk installeren?</translation>
-    </message>
-    <message>
-        <source>Only one version of a work can be installed at the same time. Select only one if there are items marked with red.</source>
-        <translation type="obsolete">Er kan slechts één versie van een module tegelijk geïnstalleerd zijn. Selecteer één module indien er items in rood zijn aangegeven.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="266"/>
@@ -1806,61 +1700,6 @@ sneltoets</translation>
     </message>
 </context>
 <context>
-    <name>CDisplaySettingsButton</name>
-    <message>
-        <source>Display settings: No options available</source>
-        <translation type="obsolete">Beeldinstellingen: Geen opties beschikbaar</translation>
-    </message>
-    <message>
-        <source>Display settings</source>
-        <translation type="obsolete">Beeldinstellingen</translation>
-    </message>
-    <message>
-        <source>Display options</source>
-        <translation type="obsolete">Beeldopties</translation>
-    </message>
-    <message>
-        <source>Use linebreaks after each verse</source>
-        <translation type="obsolete">Ieder vers op nieuwe regel</translation>
-    </message>
-    <message>
-        <source>Show headings</source>
-        <translation type="obsolete">Toon kopteksten</translation>
-    </message>
-    <message>
-        <source>Highlight words of Jesus</source>
-        <translation type="obsolete">Woorden van Jezus benadrukken</translation>
-    </message>
-    <message>
-        <source>Show Hebrew vowel points</source>
-        <translation type="obsolete">Toon Hebreeuwse klinkerpunten</translation>
-    </message>
-    <message>
-        <source>Show Hebrew cantillation marks</source>
-        <translation type="obsolete">Toon Hebreeuwse intonatietekens</translation>
-    </message>
-    <message>
-        <source>Show Greek accents</source>
-        <translation type="obsolete">Toon Griekse accenten</translation>
-    </message>
-    <message>
-        <source>Use alternative textual variant</source>
-        <translation type="obsolete">Alternatieve tekstuele variant gebruiken</translation>
-    </message>
-    <message>
-        <source>Show scripture cross-references</source>
-        <translation type="obsolete">Toon bijbelse kruisverwijzingen</translation>
-    </message>
-    <message>
-        <source>Show morph segmentation</source>
-        <translation type="obsolete">Toon morfologische segmentatie</translation>
-    </message>
-    <message>
-        <source>Show verse numbers</source>
-        <translation type="obsolete">Toon versnummers</translation>
-    </message>
-</context>
-<context>
     <name>CDisplaySettingsPage</name>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="64"/>
@@ -1891,10 +1730,6 @@ sneltoets</translation>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="135"/>
         <source>He who believes in him is not judged. He who doesn&apos;t believe has been judged already, because he has not believed in the name of the one and only Son of God.</source>
         <translation>Wie in Hem gelooft, wordt niet veroordeeld; wie niet gelooft, is reeds veroordeeld, omdat hij niet heeft geloofd in de naam van de eniggeboren Zoon van God.</translation>
-    </message>
-    <message>
-        <source>This is the judgment, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.</source>
-        <translation type="obsolete">Dit is het oordeel, dat het licht in de wereld gekomen is en de mensen de duisternis liever gehad hebben dan het licht, want hun werken waren boos.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="145"/>
@@ -1958,10 +1793,6 @@ sneltoets</translation>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="94"/>
         <source>Zoom out</source>
         <translation>Zoom uit</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation type="obsolete">Sluiten</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="98"/>
@@ -2350,25 +2181,6 @@ sneltoets</translation>
     </message>
 </context>
 <context>
-    <name>CModuleChooserButton</name>
-    <message>
-        <source>NONE</source>
-        <translation type="obsolete">GEEN</translation>
-    </message>
-    <message>
-        <source>Select a work</source>
-        <translation type="obsolete">Selecteer een module</translation>
-    </message>
-    <message>
-        <source>Select an additional work</source>
-        <translation type="obsolete">Selecteer een additionele module</translation>
-    </message>
-    <message>
-        <source>[locked]</source>
-        <translation type="obsolete">[Vergrendeld]</translation>
-    </message>
-</context>
-<context>
     <name>CModuleIndexDialog</name>
     <message>
         <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="38"/>
@@ -2448,6 +2260,44 @@ sneltoets</translation>
         <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="103"/>
         <source>Restore original text, new text will be lost</source>
         <translation>Herstel originele tekst; nieuwe tekst gaat verloren</translation>
+    </message>
+</context>
+<context>
+    <name>CSearchAnalysisScene</name>
+    <message>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="221"/>
+        <source>Save Search Analysis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="221"/>
+        <source>HTML files (*.html;*.HTML;*.HTM;*.htm)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="239"/>
+        <source>BibleTime Search Analysis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="240"/>
+        <source>Search text :</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="242"/>
+        <source>Book</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="243"/>
+        <source>Total hits</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="275"/>
+        <source>Created by &lt;a href=&quot;http://www.bibletime.info/&quot;&gt;BibleTime&lt;/a&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2626,10 +2476,6 @@ sneltoets</translation>
         <translation>Lijst ophalen...</translation>
     </message>
     <message>
-        <source>A source with this caption already exists.  Please provide a different caption.</source>
-        <translation type="obsolete">Er bestaat al een bron met deze titel. Geef een andere titel op a.u.b.</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="108"/>
         <source>A source with this caption already exists. Please provide a different caption.</source>
         <translation type="unfinished"></translation>
@@ -2687,10 +2533,6 @@ Wilt u doorgaan?</translation>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="99"/>
         <source>Please provide a caption.</source>
         <translation>Geef een titel op.</translation>
-    </message>
-    <message>
-        <source>A source with this caption already exists.&lt;br/&gt;Please provide a different caption.</source>
-        <translation type="obsolete">Een bron met deze titel bestaat al.&lt;br/&gt;Geef een andere titel op.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="114"/>
@@ -4240,14 +4082,6 @@ Language name ppk</extracomment>
         <translation>Modules:</translation>
     </message>
     <message>
-        <source>Works to Search in</source>
-        <translation type="obsolete">Modules om te doorzoeken</translation>
-    </message>
-    <message>
-        <source>Select the works which should be searched.</source>
-        <translation type="obsolete">Selecteer de modules die doorzocht moeten worden.</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="346"/>
         <source>No search scope</source>
         <translation>Geen zoekbereik</translation>
@@ -4291,57 +4125,6 @@ Language name ppk</extracomment>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="161"/>
         <source>Choose the scope (books/chapters/verses to search in).&lt;br /&gt;Applicable for Bibles and commentaries.</source>
         <translation>Kies het bereik (boeken/hoofdstukken/verzen om te doorzoeken).&lt;br /&gt;Toepasbaar op bijbels en kanttekeningen.</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;This help is mainly for &apos;Full syntax&apos; option. &apos;All words&apos; and &apos;Some words&apos; options have more limited syntax; &lt;a href=&apos;#wildcards&apos;&gt;wildcards&lt;/a&gt; and &lt;a href=&apos;#fields&apos;&gt;text fields&lt;/a&gt; are supported for them. Some other syntax features may give strange or wrong results with All words/Some words.&lt;/p&gt;</source>
-        <extracomment>Don&apos;t translate words inside &lt;&gt; tags! Translate &apos;All words&apos; etc. indentically to the Search dialog options.</extracomment>
-        <translation type="obsolete">&lt;p&gt;Deze helpfunctie is hoofdzakelijk voor de optie &apos;Volledige syntax&apos;. De opties &apos;Alle woorden&apos; en &apos;Enkele woorden&apos; hebben een meer gelimiteerde syntax; &lt;a href=&apos;#wildcards&apos;&gt;wildcards&lt;/a&gt; en &lt;a href=&apos;#fields&apos;&gt;tekstvelden&lt;/a&gt; worden ondersteund voor deze zoekopties. Enkele andere syntaxmogelijkheden kunnen vreemde of verkeerde resultaten geven met de optie Alle woorden/Enkele woorden.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;p id=&apos;links&apos;&gt;&lt;A href=&apos;#allsome&apos;&gt;Which words to find&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#grouping&apos;&gt;Grouping and order&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#wildcards&apos;&gt;Wildcards (partial words)&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#fields&apos;&gt;Text fields (different parts of text)&lt;/A&gt;&lt;br/&gt;&lt;A href=&apos;#lucene&apos;&gt;Other syntax features&lt;/A&gt;&lt;br/&gt;&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p id=&apos;links&apos;&gt;&lt;A href=&apos;#allsome&apos;&gt;Zoekwoorden&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#grouping&apos;&gt;Groeperen en rangschikken&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#wildcards&apos;&gt;Wildcards (gedeeltelijke woorden)&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#fields&apos;&gt;Tekstvelden (verschillende delen van een tekst)&lt;/A&gt;&lt;br/&gt;&lt;A href=&apos;#lucene&apos;&gt;Overige syntaxmogelijkheden&lt;/A&gt;&lt;br/&gt;&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;h1&gt;&lt;A name=&apos;allsome&apos;&gt;Which words to find&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Search terms are separated by spaces. &lt;strong&gt;AND&lt;/strong&gt; (all words), &lt;strong&gt;OR&lt;/strong&gt; (some words) and &lt;strong&gt;NOT&lt;/strong&gt; (not the following word) can be added between the words. If none is added explicitly OR is used automatically. &apos;&lt;strong&gt;+&lt;/strong&gt;word&apos; means the word must be in the results, &apos;&lt;strong&gt;-&lt;/strong&gt;word&apos; means it must not be in the results.&lt;/p&gt;</source>
-        <extracomment>Syntax words (AND, OR...) must not be translated.</extracomment>
-        <translation type="obsolete">&lt;h1&gt;&lt;A name=&apos;allsome&apos;&gt;Zoekwoorden&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Zoektermen worden gescheiden door spaties. &lt;strong&gt;AND&lt;/strong&gt; (alle woorden), &lt;strong&gt;OR&lt;/strong&gt; (enkele woorden) en &lt;strong&gt;NOT&lt;/strong&gt; (niet het volgende woord) kunnen worden toegevoegd tussen de zoektermen. Als er niets expliciet wordt aangegeven, zal automatisch OR worden gebruikt. &apos;&lt;strong&gt;+&lt;/strong&gt;woord&apos; betekent dat het woord in de zoekresultaten moet zitten, &apos;&lt;strong&gt;-&lt;/strong&gt;woord&apos; betekent dat het niet in de zoekresultaten mag zitten.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;jesus AND god&lt;/td&gt;&lt;td&gt;Finds verses with both &apos;Jesus&apos; and &apos;God&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;jesus OR god&lt;/td&gt;&lt;td&gt;Finds verses with &apos;Jesus&apos; or &apos;God&apos; or both&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;jesus NOT god&lt;/td&gt;&lt;td&gt;Finds verses with &apos;Jesus&apos; but with no &apos;God&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;+jesus -god&lt;/td&gt;&lt;td&gt;Finds verses with &apos;Jesus&apos; but with no &apos;God&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <extracomment>In examples words to be searched for may be translated, but syntax words (AND, OR...) must not be translated.</extracomment>
-        <translation type="obsolete">&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;jezus AND god&lt;/td&gt;&lt;td&gt;Vindt verzen met zowel &apos;Jezus&apos; als &apos;God&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;jesus OR god&lt;/td&gt;&lt;td&gt;Vindt verzen met &apos;Jezus&apos; of &apos;God&apos; of beide&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;jezus NOT god&lt;/td&gt;&lt;td&gt;Vindt verzen met &apos;Jezus&apos; maar zonder &apos;God&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;+jezus -god&lt;/td&gt;&lt;td&gt;Vindt verzen met &apos;Jezus&apos; maar zonder &apos;God&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;h1&gt;&lt;A name=&apos;grouping&apos;&gt;Grouping and order&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Words can be grouped with &lt;strong&gt;parenthesis&lt;/strong&gt;. Strict word order can be defined with &lt;strong&gt;quotes&lt;/strong&gt;.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;h1&gt;&lt;A name=&apos;grouping&apos;&gt;Groeperen en rangschikken&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Woorden kunnen gegroepeerd worden met &lt;strong&gt;haakjes&lt;/strong&gt;. Strikte woordvolgorde kan gedefinieerd worden met &lt;strong&gt;aanhalingstekens&lt;/strong&gt;.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;(a AND b) OR c&lt;/td&gt;&lt;td&gt;Finds verses with both &apos;a&apos; AND &apos;b&apos;, and verses with &apos;c&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;says lord&quot;&lt;/td&gt;&lt;td&gt;Finds e.g. &apos;...Isaiah says, &quot;Lord...&apos; but not &apos;...says the LORD&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;says the lord&quot;&lt;/td&gt;&lt;td&gt;Finds all verses with &apos;says the LORD&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;(a AND b) OR c&lt;/td&gt;&lt;td&gt;Vindt verzen met zowel &apos;a&apos; EN &apos;b&apos;, als verzen met &apos;c&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;zegt heer&quot;&lt;/td&gt;&lt;td&gt;Vindt b.v. &apos;...Jesaja zegt, &quot;Heer...&apos; maar niet &apos;...zegt de LORD&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;zegt heer&quot;&lt;/td&gt;&lt;td&gt;Vindt alle verzen met &apos;zegt de HEER&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;h1&gt;&lt;A name=&apos;wildcards&apos;&gt;Wildcards (partial words)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;&apos;&lt;strong&gt;*&lt;/strong&gt;&apos; matches any sequence of 0 or more characters, while &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; matches any single character. A wildcard can not be used in the beginning of a word.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;h1&gt;&lt;A name=&apos;wildcards&apos;&gt;Wildcards (gedeeltelijke woorden)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;&apos;&lt;strong&gt;*&lt;/strong&gt;&apos; komt overeen met elke reeks van 0 of meer karakters, terwijl &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; overeenkomt met één karakter. Een wildcard kan niet gebruikt worden aan het begin van een woord.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;a*&lt;/td&gt;&lt;td&gt;All words beginning with &apos;a&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a*a&lt;/td&gt;&lt;td&gt;&apos;Assyria&apos;, &apos;aroma&apos;, &apos;abba&apos; etc.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a?&lt;/td&gt;&lt;td&gt;&apos;at&apos; and &apos;an&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a??a&lt;/td&gt;&lt;td&gt;&apos;abba&apos;, &apos;area&apos;, &apos;Asia&apos; etc.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;a*&lt;/td&gt;&lt;td&gt;Alle woorden die beginnen met &apos;a&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a*a&lt;/td&gt;&lt;td&gt;&apos;Anna&apos;, &apos;aroma&apos;, &apos;abba&apos; etc.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a?&lt;/td&gt;&lt;td&gt;&apos;af&apos; and &apos;al&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a??a&lt;/td&gt;&lt;td&gt;&apos;abba&apos;, &apos;Anna&apos;, &apos;Arba&apos; etc.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;h1&gt;&lt;A name=&apos;fields&apos;&gt;Text fields (different parts of text)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Available text fields:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:&lt;/td&gt;&lt;td&gt;Searches headings&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:&lt;/td&gt;&lt;td&gt;Searches footnotes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;Searches Strong&apos;s numbers&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&lt;/td&gt;&lt;td&gt;Searches morphology codes&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;h1&gt;&lt;A name=&apos;fields&apos;&gt;Tekstvelden (verschillende delen van een tekst)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Beschikbare tekstvelden:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;titel:&lt;/td&gt;&lt;td&gt;doorzoekt titels&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;voetnoot:&lt;/td&gt;&lt;td&gt;doorzoekt voetnoten&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;doorzoekt Strong-nummers&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morf:&lt;/td&gt;&lt;td&gt;doorzoekt morfologische codes&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;Examples:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:Jesus&lt;/td&gt;&lt;td&gt;Finds headings with &apos;Jesus&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:Jesus AND footnote:said&lt;/td&gt;&lt;td&gt;Finds footnotes with &apos;Jesus&apos; and &apos;said&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:G846&lt;/td&gt;&lt;td&gt;Finds verses with Strong&apos;s Greek number 846&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&quot;N-NSF&quot;&lt;/td&gt;&lt;td&gt;Finds verses with morphology code &apos;N-NSF&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;Voorbeelden:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;titel:Jezus&lt;/td&gt;&lt;td&gt;Vindt titels met &apos;Jezus&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;voetnoot:Jezus AND voetnoot:zei&lt;/td&gt;&lt;td&gt;Vindt voetnoten met &apos;Jezus&apos; en &apos;zei&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:G846&lt;/td&gt;&lt;td&gt;Vindt verzen met het Griekse Strong-nummer 846&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morf:&quot;N-NSF&quot;&lt;/td&gt;&lt;td&gt;Vindt verzen met morfologische code &apos;N-NSF&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;h1&gt;&lt;A name=&apos;lucene&apos;&gt;Other syntax features&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;BibleTime uses the CLucene search engine. You can read more on the &lt;a href=&apos;http://lucene.apache.org/java/1_4_3/queryparsersyntax.html&apos;&gt;lucene syntax web page&lt;/a&gt; (in external browser).&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;h1&gt;&lt;A name=&apos;lucene&apos;&gt;Overige syntaxmogelijkheden&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;BibleTime gebruikt de CLucene zoekmachine. U kunt hierover meer lezen op de &lt;a href=&apos;http://lucene.apache.org/java/1_4_3/queryparsersyntax.html&apos;&gt;lucene syntax webpagina&lt;/a&gt; (in externe browser).&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>Search Syntax Help</source>
-        <translation type="obsolete">Zoeksyntax Help</translation>
     </message>
 </context>
 <context>
@@ -4754,44 +4537,6 @@ Language name ppk</extracomment>
     </message>
 </context>
 <context>
-    <name>Search::CSearchAnalysisScene</name>
-    <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="221"/>
-        <source>Save Search Analysis</source>
-        <translation>Zoekanalyse opslaan</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="221"/>
-        <source>HTML files (*.html;*.HTML;*.HTM;*.htm)</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="239"/>
-        <source>BibleTime Search Analysis</source>
-        <translation>BibleTime-zoekanalyses</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="240"/>
-        <source>Search text :</source>
-        <translation>Zoektekst:</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="242"/>
-        <source>Book</source>
-        <translation>Boek</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="243"/>
-        <source>Total hits</source>
-        <translation>Totaal aantal overeenkomsten</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="275"/>
-        <source>Created by &lt;a href=&quot;http://www.bibletime.info/&quot;&gt;BibleTime&lt;/a&gt;</source>
-        <translation>Gemaakt door &lt;a href=&quot;http://www.bibletime.info/&quot;&gt;BibleTime&lt;/a&gt;</translation>
-    </message>
-</context>
-<context>
     <name>Search::CSearchDialog</name>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="115"/>
@@ -4819,11 +4564,6 @@ Dit kan enige tijd duren. Doorgaan met indexeren?</translation>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="232"/>
         <source>Show a graphical analysis of the search result</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show a graphical analyzis of the search result</source>
-        <translatorcomment>Dutch is correct, but English should read &quot;analysis&quot; instead of &quot;analyzis&quot;</translatorcomment>
-        <translation type="obsolete">Toon een grafische analyse van de zoekresultaten</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="238"/>
@@ -5068,11 +4808,6 @@ Dit kan enige tijd duren. Doorgaan met indexeren?</translation>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="41"/>
         <source>The text you want to search for</source>
         <translation>De tekst waarnaar u wilt zoeken</translation>
-    </message>
-    <message>
-        <source>Seach with case sensitivity</source>
-        <translatorcomment>English wrong: &quot;seach&quot; should be &quot;search&quot; (&quot;r&quot; is missing)</translatorcomment>
-        <translation type="obsolete">Zoek met hoofdlettergevoeligheid</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="51"/>

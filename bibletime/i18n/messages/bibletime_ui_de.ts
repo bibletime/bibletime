@@ -298,6 +298,14 @@
         <source>Show tools</source>
         <translation>Werkzeuge anzeigen</translation>
     </message>
+    <message>
+        <source>Show &quot;Whats this widget&quot; dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Whats this widget?</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BtAboutDialog</name>
@@ -310,32 +318,12 @@
         <translation>BibleTime ist ein einfach zu bedienendes aber mächtiges Bibelstudien-Werkzeug.</translation>
     </message>
     <message>
-        <source>We are looking for developers and translators.</source>
-        <translation type="obsolete">Wir suchen nach Entwicklern und Übersetzern.</translation>
-    </message>
-    <message>
-        <source>If you would like to join our team, please send an email to info@bibletime.info.</source>
-        <translation type="obsolete">Wenn Sie unserem Team beitreten möchten, senden Sie bitte eine E-Mail an info@bibletime.info.</translation>
-    </message>
-    <message>
-        <source>(c)1999-2009, The BibleTime Team</source>
-        <translation type="obsolete">(c)1999-2009, Das BibleTime-Team</translation>
-    </message>
-    <message>
-        <source>Contributors</source>
-        <translation type="obsolete">Beitragende</translation>
-    </message>
-    <message>
         <source>The following people contributed to BibleTime:</source>
         <translation>Die folgenden Personen trugen zu BibleTime bei:</translation>
     </message>
     <message>
         <source>documentation and translation manager</source>
         <translation>Leiter der Dokumentation und Übersetzung</translation>
-    </message>
-    <message>
-        <source>project founder, developer</source>
-        <translation type="obsolete">Projektgründer, Entwickler</translation>
     </message>
     <message>
         <source>designer</source>
@@ -354,10 +342,6 @@
         <translation>Urheber des Sword-Projektes</translation>
     </message>
     <message>
-        <source>project manager, developer</source>
-        <translation type="obsolete">Projektleiter, Entwickler</translation>
-    </message>
-    <message>
         <source>domain sponsor</source>
         <translation>Domain-Träger</translation>
     </message>
@@ -370,44 +354,12 @@
         <translation>Dokumentation</translation>
     </message>
     <message>
-        <source>tester, usability expert</source>
-        <translation type="obsolete">Tester, Experte für Gebrauchstauglichkeit</translation>
-    </message>
-    <message>
         <source>The following people translated BibleTime into their language:</source>
         <translation>Die folgenden Personen übersetzten BibleTime in ihre Sprachen:</translation>
     </message>
     <message>
-        <source>Some names may be missing, please email bibletime-translations@lists.sourceforge.net if you notice errors or omissions.</source>
-        <translation type="obsolete">Einige Namen mögen fehlen, bitte schicken Sie eine E-Mail an bibletime-translations@lists.sourceforge.net, wenn Sie Fehler oder Auslassungen bemerken.</translation>
-    </message>
-    <message>
         <source>SWORD library version %1</source>
         <translation>SWORD-Bibliotheksversion %1</translation>
-    </message>
-    <message>
-        <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools-- covered by the GNU General Public License-- that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
-        <translation type="obsolete">BibleTime verwendet das SWORD-Projekt. Das SWORD-Projekt ist das freie Bibelsoftware-Projekt der CrossWire Bible Society. Seine Zielsetzung ist das Kreieren plattformübergreifender Open-Source Werkzeuge, die der GNU General Public License unterstellt sind und die Programmierern und Bibelgesellschaften erlauben, neue Bibelsoftware schneller und einfacher zu schreiben.</translation>
-    </message>
-    <message>
-        <source>The SWORD Project</source>
-        <translation type="obsolete">Das SWORD-Projekt</translation>
-    </message>
-    <message>
-        <source>License</source>
-        <translation type="obsolete">Lizenz</translation>
-    </message>
-    <message>
-        <source>BibleTime is released under the GPL license.</source>
-        <translation type="obsolete">BibleTime wird unter der GPL-Lizenz veröffentlicht.</translation>
-    </message>
-    <message>
-        <source>You can download and use (but not distribute) the program for personal, private, public or commercial purposes without restrictions.</source>
-        <translation type="obsolete">Sie können das Programm ohne Beschränkungen herunterladen und benutzen (aber nicht verbreiten) für den persönlichen, privaten, öffentlichen oder kommerziellen Zweck.</translation>
-    </message>
-    <message>
-        <source>You can give away or distribute the program if you also distribute the corresponding source code.</source>
-        <translation type="obsolete">Sie dürfen das Programm weitergeben oder verbreiten, wenn Sie gleichzeitig den korrespondierenden Quellcode mitgeben.</translation>
     </message>
     <message>
         <source>The complete legally binding license is below.</source>
@@ -508,38 +460,6 @@
         <translation>Bücherregal</translation>
     </message>
     <message>
-        <source>Grouping</source>
-        <translation type="obsolete">Gruppierung</translation>
-    </message>
-    <message>
-        <source>Change the grouping of items in the bookshelf.</source>
-        <translation type="obsolete">Die Anordnung von Einträgen im Bücherregal verändern.</translation>
-    </message>
-    <message>
-        <source>Category/Language</source>
-        <translation type="obsolete">Kategorie/Sprache</translation>
-    </message>
-    <message>
-        <source>Category</source>
-        <translation type="obsolete">Kategorie</translation>
-    </message>
-    <message>
-        <source>Language/Category</source>
-        <translation type="obsolete">Sprache/Kategorie</translation>
-    </message>
-    <message>
-        <source>Language</source>
-        <translation type="obsolete">Sprache</translation>
-    </message>
-    <message>
-        <source>No grouping</source>
-        <translation type="obsolete">Ungruppiert</translation>
-    </message>
-    <message>
-        <source>Show/hide works</source>
-        <translation type="obsolete">Werke anzeigen/verstecken</translation>
-    </message>
-    <message>
         <source>&amp;Open</source>
         <translation>Ö&amp;ffnen</translation>
     </message>
@@ -566,10 +486,6 @@
     <message>
         <source>&amp;Search in %1...</source>
         <translation>In %1 &amp;suchen...</translation>
-    </message>
-    <message>
-        <source>Fi&amp;lter:</source>
-        <translation type="obsolete">Fi&amp;lter:</translation>
     </message>
 </context>
 <context>
@@ -773,10 +689,6 @@
 </context>
 <context>
     <name>BtInstallModuleChooserDialog</name>
-    <message>
-        <source>Install</source>
-        <translation type="obsolete">Installieren</translation>
-    </message>
     <message>
         <source>Install/Update works?</source>
         <translation type="unfinished">Werke installieren/aktualisieren?</translation>
@@ -1167,18 +1079,6 @@ shortcut</source>
         <translation>Lokal:</translation>
     </message>
     <message>
-        <source>Install/Update works?</source>
-        <translation type="obsolete">Werke installieren/aktualisieren?</translation>
-    </message>
-    <message>
-        <source>Do you really want to install these works?</source>
-        <translation type="obsolete">Möchten Sie diese Werke wirklich installieren?</translation>
-    </message>
-    <message>
-        <source>Only one version of a work can be installed at the same time. Select only one if there are items marked with red.</source>
-        <translation type="obsolete">Nur eine Version eines Werkes kann installiert werden. Wählen Sie eine aus, wenn rot markierte Einträge vorliegen.</translation>
-    </message>
-    <message>
         <source>Not a directory!</source>
         <translation>Kein Verzeichnis!</translation>
     </message>
@@ -1465,61 +1365,6 @@ shortcut</source>
     </message>
 </context>
 <context>
-    <name>CDisplaySettingsButton</name>
-    <message>
-        <source>Display settings: No options available</source>
-        <translation type="obsolete">Anzeigeeinstellungen. Keine Einstellungen verfügbar</translation>
-    </message>
-    <message>
-        <source>Display settings</source>
-        <translation type="obsolete">Anzeigeeinstellungen</translation>
-    </message>
-    <message>
-        <source>Display options</source>
-        <translation type="obsolete">Anzeigeeinstellungen</translation>
-    </message>
-    <message>
-        <source>Use linebreaks after each verse</source>
-        <translation type="obsolete">Zeilenumbruch nach jedem Vers</translation>
-    </message>
-    <message>
-        <source>Show headings</source>
-        <translation type="obsolete">Überschriften anzeigen</translation>
-    </message>
-    <message>
-        <source>Highlight words of Jesus</source>
-        <translation type="obsolete">Worte Jesu hervorheben</translation>
-    </message>
-    <message>
-        <source>Show Hebrew vowel points</source>
-        <translation type="obsolete">Hebräische Vokalzeichen anzeigen</translation>
-    </message>
-    <message>
-        <source>Show Hebrew cantillation marks</source>
-        <translation type="obsolete">Hebräische Kantillationszeichen anzeigen</translation>
-    </message>
-    <message>
-        <source>Show Greek accents</source>
-        <translation type="obsolete">Griechische Akzente anzeigen</translation>
-    </message>
-    <message>
-        <source>Use alternative textual variant</source>
-        <translation type="obsolete">Alternative Textvarianten verwenden</translation>
-    </message>
-    <message>
-        <source>Show scripture cross-references</source>
-        <translation type="obsolete">Querverweise auf Bibelstellen anzeigen</translation>
-    </message>
-    <message>
-        <source>Show morph segmentation</source>
-        <translation type="obsolete">Morphologische Segmentierung anzeigen</translation>
-    </message>
-    <message>
-        <source>Show verse numbers</source>
-        <translation type="obsolete">Versnummern anzeigen</translation>
-    </message>
-</context>
-<context>
     <name>CDisplaySettingsPage</name>
     <message>
         <source>Display templates</source>
@@ -1544,10 +1389,6 @@ shortcut</source>
     <message>
         <source>He who believes in him is not judged. He who doesn&apos;t believe has been judged already, because he has not believed in the name of the one and only Son of God.</source>
         <translation>Wer an ihn glaubt, der wird nicht verurteilt werden. Wer aber nicht an den einzigen Sohn Gottes glaubt, über den ist wegen seines Unglaubens das Urteil schon gesprochen.</translation>
-    </message>
-    <message>
-        <source>This is the judgment, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.</source>
-        <translation type="obsolete">Und so vollzieht sich das Urteil: Das Licht ist in die Welt gekommen, aber die Menschen lieben die Finsternis mehr als das Licht. Denn alles, was sie tun, ist böse.</translation>
     </message>
     <message>
         <source>For everyone who does evil hates the light, and doesn&apos;t come to the light, lest his works would be exposed.</source>
@@ -1599,10 +1440,6 @@ shortcut</source>
     <message>
         <source>Zoom out</source>
         <translation>Verkleinern</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation type="obsolete">Schließen</translation>
     </message>
     <message>
         <source>Select all</source>
@@ -1910,25 +1747,6 @@ shortcut</source>
     </message>
 </context>
 <context>
-    <name>CModuleChooserButton</name>
-    <message>
-        <source>NONE</source>
-        <translation type="obsolete">NICHTS</translation>
-    </message>
-    <message>
-        <source>Select a work</source>
-        <translation type="obsolete">Werk auswählen</translation>
-    </message>
-    <message>
-        <source>Select an additional work</source>
-        <translation type="obsolete">Zusätzliches Werk auswählen</translation>
-    </message>
-    <message>
-        <source>[locked]</source>
-        <translation type="obsolete">[verschlüsselt]</translation>
-    </message>
-</context>
-<context>
     <name>CModuleIndexDialog</name>
     <message>
         <source>Cancel</source>
@@ -1992,6 +1810,37 @@ shortcut</source>
     <message>
         <source>Restore original text, new text will be lost</source>
         <translation>Original-Text wiederherstellen, neuer Text geht verloren</translation>
+    </message>
+</context>
+<context>
+    <name>CSearchAnalysisScene</name>
+    <message>
+        <source>Save Search Analysis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>HTML files (*.html;*.HTML;*.HTM;*.htm)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>BibleTime Search Analysis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search text :</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Book</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Total hits</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Created by &lt;a href=&quot;http://www.bibletime.info/&quot;&gt;BibleTime&lt;/a&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2155,10 +2004,6 @@ shortcut</source>
         <translation>Neue Installationsquelle</translation>
     </message>
     <message>
-        <source>A source with this caption already exists.&lt;br/&gt;Please provide a different caption.</source>
-        <translation type="obsolete">Eine Quelle mit dieser Überschrift existiert bereits. &lt;br/&gt;Bitte geben Sie eine andere Überschrift ein.</translation>
-    </message>
-    <message>
         <source>Get list...</source>
         <translation>Liste holen...</translation>
     </message>
@@ -2193,10 +2038,6 @@ Do you want to continue?</source>
         <translation>Quellenliste wird von einem entfernten Server heruntergeladen. Die Quellen werden zur aktuellen Liste hinzugefügt. Eine neue Quelle wird eine alte ersetzen, wenn sie die gleiche Bezeichnung hat. Anschließend können sie nicht benötigte Quellen entfernen.
 
 Möchten Sie fortfahren?</translation>
-    </message>
-    <message>
-        <source>A source with this caption already exists.  Please provide a different caption.</source>
-        <translation type="obsolete">Eine neue Quelle mit dieser Bezeichnung existiert bereits. Bitte geben Sie eine andere Bezeichnung ein.</translation>
     </message>
     <message>
         <source>A source with this caption already exists. Please provide a different caption.</source>
@@ -3433,14 +3274,6 @@ Language name ppk</extracomment>
         <translation>Werke:</translation>
     </message>
     <message>
-        <source>Works to Search in</source>
-        <translation type="obsolete">Zu durchsuchende Werke</translation>
-    </message>
-    <message>
-        <source>Select the works which should be searched.</source>
-        <translation type="obsolete">Wählen Sie die Werke aus, in denen gesucht werden soll.</translation>
-    </message>
-    <message>
         <source>No search scope</source>
         <translation>Kein Suchbereich</translation>
     </message>
@@ -3475,57 +3308,6 @@ Language name ppk</extracomment>
     <message>
         <source>Click the link to get help for search syntax</source>
         <translation>Klicken Sie auf den Verweis um Hilfe zur Suchsyntax zu erhalten</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;This help is mainly for &apos;Full syntax&apos; option. &apos;All words&apos; and &apos;Some words&apos; options have more limited syntax; &lt;a href=&apos;#wildcards&apos;&gt;wildcards&lt;/a&gt; and &lt;a href=&apos;#fields&apos;&gt;text fields&lt;/a&gt; are supported for them. Some other syntax features may give strange or wrong results with All words/Some words.&lt;/p&gt;</source>
-        <extracomment>Don&apos;t translate words inside &lt;&gt; tags! Translate &apos;All words&apos; etc. indentically to the Search dialog options.</extracomment>
-        <translation type="obsolete">&lt;p&gt; Diese Hilfe ist hauptsächlich für die Option &apos;Vollständige Syntax&apos;. &apos;Alle Wörter&apos; und &apos;Einige Wörter&apos; haben eine begrenztere Syntax;&lt;a href=&apos;#wildcards&apos;&gt;Platzhalter&lt;/a&gt; und &lt;a href=&apos;#fields&apos;&gt;Textfelder&lt;/a&gt; werden für sie unterstützt. Einige andere Syntax-Funktionen können seltsame oder falsche Resultate für &apos;Alle Wörter&apos; / &apos;Einige Wörter&apos; liefern.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;p id=&apos;links&apos;&gt;&lt;A href=&apos;#allsome&apos;&gt;Which words to find&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#grouping&apos;&gt;Grouping and order&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#wildcards&apos;&gt;Wildcards (partial words)&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#fields&apos;&gt;Text fields (different parts of text)&lt;/A&gt;&lt;br/&gt;&lt;A href=&apos;#lucene&apos;&gt;Other syntax features&lt;/A&gt;&lt;br/&gt;&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p id=&apos;links&apos;&gt;&lt;A href=&apos;#allsome&apos;&gt;Welche Wörter zu finden&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#grouping&apos;&gt;Gruppierung und Reihenfolge&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#wildcards&apos;&gt;Platzhalter (partielle Wörter)&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#fields&apos;&gt;Textfelder (verschiedene Textabschnitte)&lt;/A&gt;&lt;br/&gt;&lt;A href=&apos;#lucene&apos;&gt;Andere Syntaxfunktionen&lt;/A&gt;&lt;br/&gt;&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;h1&gt;&lt;A name=&apos;allsome&apos;&gt;Which words to find&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Search terms are separated by spaces. &lt;strong&gt;AND&lt;/strong&gt; (all words), &lt;strong&gt;OR&lt;/strong&gt; (some words) and &lt;strong&gt;NOT&lt;/strong&gt; (not the following word) can be added between the words. If none is added explicitly OR is used automatically. &apos;&lt;strong&gt;+&lt;/strong&gt;word&apos; means the word must be in the results, &apos;&lt;strong&gt;-&lt;/strong&gt;word&apos; means it must not be in the results.&lt;/p&gt;</source>
-        <extracomment>Syntax words (AND, OR...) must not be translated.</extracomment>
-        <translation type="obsolete">&lt;h1&gt;&lt;A name=&apos;allsome&apos;&gt;Zu findende Wörter&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Die Suchtermini werden durch Leerzeichen getrennt. &lt;strong&gt;AND&lt;/strong&gt; (alle Wörter), &lt;strong&gt;OR&lt;/strong&gt; (einige Wörter) und &lt;strong&gt;NOT&lt;/strong&gt; (nicht das folgende Wort) können zwischen den Wörtern hinzugefügt werden. Wenn diese Wörter nicht explicit dazwischen gesetzt werden, wird automatisch OR benutzt . &apos;&lt;strong&gt;+&lt;/strong&gt;bedeutet, dass das Wort im Ergebnis enthalten sein muss, &apos;&lt;strong&gt;-&lt;/strong&gt;bedeutet, dass das Wort nicht im Ergebnis enthalten sein darf.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;jesus AND god&lt;/td&gt;&lt;td&gt;Finds verses with both &apos;Jesus&apos; and &apos;God&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;jesus OR god&lt;/td&gt;&lt;td&gt;Finds verses with &apos;Jesus&apos; or &apos;God&apos; or both&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;jesus NOT god&lt;/td&gt;&lt;td&gt;Finds verses with &apos;Jesus&apos; but with no &apos;God&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;+jesus -god&lt;/td&gt;&lt;td&gt;Finds verses with &apos;Jesus&apos; but with no &apos;God&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <extracomment>In examples words to be searched for may be translated, but syntax words (AND, OR...) must not be translated.</extracomment>
-        <translation type="obsolete">&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;jesus AND gott&lt;/td&gt;&lt;td&gt;Findet Verse mit &apos;Jesus&apos; und &apos;Gott&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;jesus OR gott&lt;/td&gt;&lt;td&gt;Findet Verse mit &apos;Jesus&apos; oder &apos;Gott&apos; or beidem&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;jesus NOT gott&lt;/td&gt;&lt;td&gt;Findet Verse mit &apos;Jesus&apos; aber ohne &apos;Gott&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;+jesus -gott&lt;/td&gt;&lt;td&gt;Findet ebenfalls Verse mit &apos;Jesus&apos; aber ohne &apos;Gott&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;h1&gt;&lt;A name=&apos;grouping&apos;&gt;Grouping and order&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Words can be grouped with &lt;strong&gt;parenthesis&lt;/strong&gt;. Strict word order can be defined with &lt;strong&gt;quotes&lt;/strong&gt;.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;h1&gt;&lt;A name=&apos;grouping&apos;&gt;Gruppierung und Reihenfolge&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Wörter können mit &lt;strong&gt;runden Klammern&lt;/strong&gt; gruppiert werden. Eine strikte Wortreihenfolge kann mit &lt;strong&gt;Anführungszeichen&lt;/strong&gt; definiert werden.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;(a AND b) OR c&lt;/td&gt;&lt;td&gt;Finds verses with both &apos;a&apos; AND &apos;b&apos;, and verses with &apos;c&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;says lord&quot;&lt;/td&gt;&lt;td&gt;Finds e.g. &apos;...Isaiah says, &quot;Lord...&apos; but not &apos;...says the LORD&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;says the lord&quot;&lt;/td&gt;&lt;td&gt;Finds all verses with &apos;says the LORD&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;(a AND b) OR c&lt;/td&gt;&lt;td&gt;Findet Verse mit &apos;a&apos; UND &apos;b&apos; und Verse mit &apos;c&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;spricht HERR&quot;&lt;/td&gt;&lt;td&gt;Findet z.B. &apos;...Jesaja spricht: &quot;HERR...&apos; aber nicht &apos;...spricht der HERR&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;spricht der HERR&quot;&lt;/td&gt;&lt;td&gt;Findet alle Verse mit &apos;spricht der HERR&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;h1&gt;&lt;A name=&apos;wildcards&apos;&gt;Wildcards (partial words)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;&apos;&lt;strong&gt;*&lt;/strong&gt;&apos; matches any sequence of 0 or more characters, while &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; matches any single character. A wildcard can not be used in the beginning of a word.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;h1&gt;&lt;A name=&apos;wildcards&apos;&gt;Platzhalter (Wortteile)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;&apos;&lt;strong&gt;*&lt;/strong&gt;&apos; trifft auf jede Sequenz mit 0 oder mehr Zeichen zu, während &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; auf jedes einzelne Zeichen zutrifft. Ein Jokerzeichen darf nicht am Wortanfang benutzt werden.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;a*&lt;/td&gt;&lt;td&gt;All words beginning with &apos;a&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a*a&lt;/td&gt;&lt;td&gt;&apos;Assyria&apos;, &apos;aroma&apos;, &apos;abba&apos; etc.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a?&lt;/td&gt;&lt;td&gt;&apos;at&apos; and &apos;an&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a??a&lt;/td&gt;&lt;td&gt;&apos;abba&apos;, &apos;area&apos;, &apos;Asia&apos; etc.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;a*&lt;/td&gt;&lt;td&gt;Alle Wörter, die mit &apos;a&apos; beginnen&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a*a&lt;/td&gt;&lt;td&gt;&apos;Antiochia&apos;, &apos;Aroma&apos;, &apos;Abba&apos; usw.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a?&lt;/td&gt;&lt;td&gt;&apos;aß&apos; und &apos;an&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a??a&lt;/td&gt;&lt;td&gt;&apos;Abba&apos;, &apos;Abia&apos;, &apos;Alva&apos; usw.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;h1&gt;&lt;A name=&apos;fields&apos;&gt;Text fields (different parts of text)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Available text fields:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:&lt;/td&gt;&lt;td&gt;Searches headings&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:&lt;/td&gt;&lt;td&gt;Searches footnotes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;Searches Strong&apos;s numbers&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&lt;/td&gt;&lt;td&gt;Searches morphology codes&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;h1&gt;&lt;A name=&apos;fields&apos;&gt;Textfelder (verschiedene Textabschnitte)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Verfügbare Textfelder:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:&lt;/td&gt;&lt;td&gt;Durchsucht Kopfzeilen&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:&lt;/td&gt;&lt;td&gt;Durchsucht Fußnoten&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;Durchsucht Strong-Nummern&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&lt;/td&gt;&lt;td&gt;Durchsucht Morphologie- Codes&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;Examples:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:Jesus&lt;/td&gt;&lt;td&gt;Finds headings with &apos;Jesus&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:Jesus AND footnote:said&lt;/td&gt;&lt;td&gt;Finds footnotes with &apos;Jesus&apos; and &apos;said&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:G846&lt;/td&gt;&lt;td&gt;Finds verses with Strong&apos;s Greek number 846&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&quot;N-NSF&quot;&lt;/td&gt;&lt;td&gt;Finds verses with morphology code &apos;N-NSF&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;Beispiele:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:Jesus&lt;/td&gt;&lt;td&gt;Findet Kopfzeilen mit &apos;Jesus&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:Jesus AND footnote:sagte&lt;/td&gt;&lt;td&gt;Findet Fußzeilen mit &apos;Jesus&apos; und &apos;sagte&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:G846&lt;/td&gt;&lt;td&gt;Findet Verse mit Strongs Griechisch Nummer 846&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&quot;N-NSF&quot;&lt;/td&gt;&lt;td&gt;Findet Verse mit dem Morphologie-Code &apos;N-NSF&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;h1&gt;&lt;A name=&apos;lucene&apos;&gt;Other syntax features&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;BibleTime uses the CLucene search engine. You can read more on the &lt;a href=&apos;http://lucene.apache.org/java/1_4_3/queryparsersyntax.html&apos;&gt;lucene syntax web page&lt;/a&gt; (in external browser).&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;h1&gt;&lt;A name=&apos;lucene&apos;&gt;Andere Syntax-Funktionen&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;BibleTime benutzt die CLucene-Suchmaschine. Sie können darüber mehr auf der &lt;a href=&apos;http://lucene.apache.org/java/1_4_3/queryparsersyntax.html&apos;&gt;lucene syntax web page&lt;/a&gt; lesen (im externen Browser).&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>Search Syntax Help</source>
-        <translation type="obsolete">Syntaxhilfe suchen</translation>
     </message>
 </context>
 <context>
@@ -3850,37 +3632,6 @@ Language name ppk</extracomment>
     </message>
 </context>
 <context>
-    <name>Search::CSearchAnalysisScene</name>
-    <message>
-        <source>Save Search Analysis</source>
-        <translation>Suchanalyse speichern</translation>
-    </message>
-    <message>
-        <source>HTML files (*.html;*.HTML;*.HTM;*.htm)</source>
-        <translation>HTML-Dateien (*.html;*.HTML;*.HTM;*.htm)</translation>
-    </message>
-    <message>
-        <source>BibleTime Search Analysis</source>
-        <translation>BibleTime-Suchanalyse BibleTime</translation>
-    </message>
-    <message>
-        <source>Search text :</source>
-        <translation>Suchtext:</translation>
-    </message>
-    <message>
-        <source>Book</source>
-        <translation>Buch</translation>
-    </message>
-    <message>
-        <source>Total hits</source>
-        <translation>Gesamte Treffer</translation>
-    </message>
-    <message>
-        <source>Created by &lt;a href=&quot;http://www.bibletime.info/&quot;&gt;BibleTime&lt;/a&gt;</source>
-        <translation>Erstellt durch &lt;a href=&quot;http://www.bibletime.info/&quot;&gt;BibleTime&lt;/a&gt;</translation>
-    </message>
-</context>
-<context>
     <name>Search::CSearchDialog</name>
     <message>
         <source>Missing indices</source>
@@ -3899,10 +3650,6 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     <message>
         <source>&amp;Analyze results...</source>
         <translation>Ergebnisse &amp;analysieren...</translation>
-    </message>
-    <message>
-        <source>Show a graphical analyzis of the search result</source>
-        <translation type="obsolete">Eine grafische Analyse des Suchergebnisses anzeigen</translation>
     </message>
     <message>
         <source>&amp;Close</source>
@@ -4099,10 +3846,6 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     <message>
         <source>The text you want to search for</source>
         <translation>Der zu suchende Text</translation>
-    </message>
-    <message>
-        <source>Seach with case sensitivity</source>
-        <translation type="obsolete">Bei der Suche Groß-/Kleinschreibung beachten</translation>
     </message>
     <message>
         <source>Case &amp;sensitive</source>
