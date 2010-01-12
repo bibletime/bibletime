@@ -1,6 +1,7 @@
-# Translation of howto to Korean
-# Copyright (C) 2009 The BibleTime Team, http://www.bibletime.info
-# This file is distributed under the same license as the BibleTime package.
+# Bibletime Howto translation
+# Copyright (C) 2010 The Bibletime Team, http://www.bibletime.info
+# This file is distributed under the same license as the Bibetime package.
+#
 # Joachim Ansorg, 2003.
 # Seunghyun. Cho <s970501@ku.edu.np>, 2003
 msgid ""

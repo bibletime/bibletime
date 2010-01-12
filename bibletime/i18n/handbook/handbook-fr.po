@@ -1,5 +1,7 @@
-# translation of handbook.po to Français
-# Copyright (C) 2009 The BibleTime Team, http://www.bibletime.info
+# Bibletime Handbook translation
+# Copyright (C) 2010 The Bibletime Team, http://www.bibletime.info
+# This file is distributed under the same license as the Bibetime package.
+#
 # Jean Van Schaftingen <vanschaf@yahoo.fr>, 2006.
 #
 msgid ""

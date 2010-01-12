@@ -1,6 +1,7 @@
-# translation of howto-fi.po to Finnish
-# Copyright (C) 2009 The BibleTime Team, http://www.bibletime.info
-# This file is distributed under the same license as the BibleTime package.
+# Bibletime Howto translation
+# Copyright (C) 2010 The Bibletime Team, http://www.bibletime.info
+# This file is distributed under the same license as the Bibetime package.
+#
 # Ilpo Kantonen <ilpo@iki.fi>, 2005, 2009.
 #
 msgid ""

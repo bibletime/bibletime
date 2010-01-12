@@ -1,4 +1,7 @@
-# Copyright (C) 2003 The BibleTime Team, http://www.bibletime.info
+# Bibletime Howto translation
+# Copyright (C) 2010 The Bibletime Team, http://www.bibletime.info
+# This file is distributed under the same license as the Bibetime package.
+#
 # Harry Vennik <htvennik@zonnet.nl>, 2003
 #, fuzzy
 msgid ""

@@ -1,6 +1,7 @@
-# SOME DESCRIPTIVE TITLE
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# This file is distributed under the same license as the PACKAGE package.
+# Bibletime Howto translation
+# Copyright (C) 2010 The Bibletime Team, http://www.bibletime.info
+# This file is distributed under the same license as the Bibetime package.
+#
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 #, fuzzy

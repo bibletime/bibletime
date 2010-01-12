@@ -1,5 +1,6 @@
-# Copyright (C) 2009 Free Software Foundation, Inc.
-# This file is distributed under the same license as the PACKAGE package.
+# Bibletime Handbook translation
+# Copyright (C) 2010 The Bibletime Team, http://www.bibletime.info
+# This file is distributed under the same license as the Bibetime package.
 #
 # Giovanni Tedaldi, 2009.
 msgid ""

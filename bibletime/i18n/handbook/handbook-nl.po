@@ -1,6 +1,6 @@
-# translation of nl.po to Deutsch
-# translation of 06-12-06 handbook.po to
-# translation of 06-11-29 handbook.po to
+# Bibletime Handbook translation
+# Copyright (C) 2010 The Bibletime Team, http://www.bibletime.info
+# This file is distributed under the same license as the Bibetime package.
 #
 # Johan van der Lingen <johanlingen@gmail.com>, 2006.
 # Johan van der Lingen <johanlingen@hotmail.com>, 2006.

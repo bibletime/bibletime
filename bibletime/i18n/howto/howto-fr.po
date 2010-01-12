@@ -1,6 +1,7 @@
-# translation of full.po to Français
-# Copyright (C) 2009 The BibleTime Team, http://www.bibletime.info
-# This file is distributed under the same license as the BibleTime package.
+# Bibletime Howto translation
+# Copyright (C) 2010 The Bibletime Team, http://www.bibletime.info
+# This file is distributed under the same license as the Bibetime package.
+#
 # Sebastien Forestier <forestie _-AT-_ caramail -_DOT_- com>, 2004.
 # Delalande Cédric, 2005.
 # Cedric Delalande <lauryced@yahoo.fr>, 2004.

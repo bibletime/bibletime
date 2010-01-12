@@ -1,5 +1,7 @@
-# translation of full.po to Portugues do Brasil
-# Copyright (C) 2004, 2005 The BibleTime Team, http://www.bibletime.info
+# Bibletime Howto translation
+# Copyright (C) 2010 The Bibletime Team, http://www.bibletime.info
+# This file is distributed under the same license as the Bibetime package.
+#
 # Joachim Ansorg, 2004.
 # Samuel Lucas Vaz de Mello <samuelm@estadao.com.br>, 2004.
 # Saulo Rodrigues e Silva <saulors@yahoo.com>, 2005, 2009.
