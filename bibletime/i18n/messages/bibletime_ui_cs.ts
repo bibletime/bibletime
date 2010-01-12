@@ -2,6 +2,16 @@
 <!DOCTYPE TS>
 <TS version="2.0">
 <context>
+    <name></name>
+    <message>
+        <source></source>
+        <translatorcomment>Bibletime User Interface translation
+Copyright (C) 2010 The Bibletime Team, http://www.bibletime.info
+This file is distributed under the same license as the Bibetime package.</translatorcomment>
+        <translation></translation>
+    </message>
+</context>
+<context>
     <name>BTAboutModuleDialog</name>
     <message>
         <source>Information About %1</source>
