@@ -37,9 +37,9 @@ libri della Bibbia.</para>
   <sect1 id="hdbk-start-firstrun">
     <title>Starting &bibletime; for the first time</title>
 
-    <para>If you are starting &bibletime; for the first time, you will want to 
-configure the following options, available under the <link 
-linkend="hdbk-reference-menus-settings">Settings menu bar</link>.</para>
+    <para>Se è la prima volta che avvii &bibletime;, vorrai configurare le seguenti 
+opzioni, disponibili tra le <link linkend="hdbk-reference- 
+menus-settings">Impostazioni barra dei menu</link>.</para>
 
     <variablelist>
       <varlistentry>

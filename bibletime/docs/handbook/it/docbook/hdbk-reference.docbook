@@ -327,7 +327,7 @@ disposizione delle finestre (modalità manuale) o lasciare che sia
 
           <listitem>
             <para>
-	      <action>Tiles all open windows</action>.
+	      <action>Dispone tutte le finestre aperte</action>.
 	    </para>
           </listitem>
         </varlistentry>
@@ -905,9 +905,10 @@ disposizione automatica delle finestre.</entry>
             </entry>
 
             <entry>
-	      <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement 
-mode</guimenuitem> <guimenuitem>Auto-tile</guimenuitem> </menuchoice> 
-equivalent; toggle automatic window tiling.</entry>
+	      <menuchoice> <guimenu>Finestra</guimenu> 
+<guimenuitem>Arrangiamento</guimenuitem> <guimenuitem>Disponi verticalmente 
+automaticamente</guimenuitem> </menuchoice> equivalent; attiva/disattiva la 
+disposizione automatica delle finestre.</entry>
           </row>
 
           <row>

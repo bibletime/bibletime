@@ -2,13 +2,13 @@
 # Copyright (C) 2010 The Bibletime Team, http://www.bibletime.info
 # This file is distributed under the same license as the Bibetime package.
 #
-# Giovanni Tedaldi, 2009.
+# Giovanni Tedaldi, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
 "POT-Creation-Date: 2009-12-31 14:58-0500\n"
-"PO-Revision-Date: 2009-12-09 21:55+0100\n"
+"PO-Revision-Date: 2010-01-15 12:50+0100\n"
 "Last-Translator: \n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -464,7 +464,6 @@ msgstr "Lessici/Dizionari"
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:68
-#, fuzzy
 msgid ""
 "Lexicons available include: Robinson's Morphological Analysis Codes, and the "
 "International Standard Bible Encyclopaedia. Dictionaries available include "
@@ -472,12 +471,12 @@ msgid ""
 "Revised Unabridged Dictionary of the English Language 1913, Nave's Topical "
 "Bible."
 msgstr ""
-"I lessici disponibili includono Codici di Analisi Morfologica di Robinson, "
-"Lessico Ebraico di Brown-Driver-Briggs e l'Enciclopedia della Bibbia "
-"Internazionale Standard. I dizionari disponibili includono il Dizionario "
-"Strong della Bibbia Ebraica, il Dizionario Strong della Bibbia Greca, il "
-"Dizionario Rivisto e Non Abbreviato di Webster della lingua inglese 1913, "
-"Bibbia Attuale di Nave."
+"I lessici disponibili includono Codici di Analisi Morfologica di Robinson,e "
+"l'Enciclopedia della Bibbia Internazionale Standard. I dizionari disponibili "
+"includono il Dizionario Strong della Bibbia Ebraica, il Dizionario Strong "
+"della "
+"Bibbia Greca, il Dizionario Rivisto e Non Abbreviato di Webster della lingua "
+"inglese 1913, Bibbia Attuale di Nave."
 
 # type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:81
@@ -1247,7 +1246,6 @@ msgstr "Setup percorsi Libreria"
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:405
-#, fuzzy
 msgid ""
 "Here you can specify where &bibletime; may store your Bookshelf on the hard "
 "drive.  You can even store it in multiple directories. The default is \"~/."
@@ -1255,7 +1253,9 @@ msgid ""
 "Data\\Sword\" for Windows."
 msgstr ""
 "Qui puoi specificare dove &bibletime; può salvare la Libreria sul hard disk. "
-"Puoi anche salvarla in più cartelle. Di default è \"~/.sword/\"."
+"Puoi anche salvarla in più cartelle. Di default è \"~/.sword/\" su *nix e "
+"\"C:\\Documents and Settings\\All Users\\Application Data\\Sword\" per "
+"Windows."
 
 # type: Content of: <chapter><sect1><sect2><tip><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:412
@@ -1277,7 +1277,6 @@ msgstr "Installa/aggiorna documenti"
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:423
-#, fuzzy
 msgid ""
 "With this facility, you can connect to a repository of works (called "
 "\"library\"), and transfer one or more works to your local Bookshelf. These "
@@ -1292,9 +1291,12 @@ msgstr ""
 "(chiamato \"biblioteca\"), e trasferire uno o più documenti nella tua "
 "Libreria locale. Queste biblioteche possono essere locali (es. un CD "
 "&sword;), o remote (es. repository Crosswire online di documenti &sword;, o "
-"altri siti che offrono documenti &sword;). Puoi gestire le biblioteche con "
-"<guibutton>Aggiungi biblioteca</guibutton> e <guibutton>Rimuovi biblioteca</"
-"guibutton>."
+"altri siti che offrono documenti &sword;). Puoi installare altre fonti "
+"cliccando "
+"su <guibutton>Prendi lista...</guibutton> quando hai la finestra di dialogo "
+"<guibutton>Installazione Nuova Fonte</guibutton> aperta. Puoi gestire le "
+"biblioteche con <guibutton>Aggiungi biblioteca</guibutton> e <guibutton> "
+"Rimuovi biblioteca</guibutton>."
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:434
@@ -1561,9 +1563,8 @@ msgstr "<action>Metti in cascata tutte le finestre aperte</action>."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:340
-#, fuzzy
 msgid "<action>Tiles all open windows</action>."
-msgstr "<action>Chiudi tutte le finestre aperte</action>."
+msgstr "<action>Dispone tutte le finestre aperte</action>."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:364
@@ -1799,7 +1800,6 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:931
-#, fuzzy
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> <guimenuitem>Auto-tile</guimenuitem> </menuchoice> equivalent; "
@@ -2114,6 +2114,9 @@ msgid ""
 "configure the following options, available under the <link linkend=\"hdbk-"
 "reference-menus-settings\">Settings menu bar</link>."
 msgstr ""
+"Se è la prima volta che avvii &bibletime;, vorrai configurare le "
+"seguenti opzioni, disponibili tra le <link linkend=\"hdbk-reference- "
+"menus-settings\">Impostazioni barra dei menu</link>."
 
 # type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-start.docbook:53
@@ -2229,6 +2232,13 @@ msgid ""
 "software uses the &sword; programming library to work with over 200 free "
 "Bible texts, commentaries, dictionaries and books provided by the &cbs;."
 msgstr ""
+"&bibletime; è un programma di studio della Bibbia completamente gratuito. "
+"L'interfaccia del programma è costruita con il framework &qt;, che lo fa "
+"funzionare "
+"su diversi sistemi operativi inclusi Linux, Windows, FreeBSD e Mac OS X. Il "
+"software usa la libreria &sword; per lavorare con oltre 200 testi della "
+"Bibbia, "
+"commenti, dizionari e libri gratuiti forniti da &cbs;."
 
 # type: Content of: <chapter><sect1><title>
 #~ msgid "Startup sequence"
