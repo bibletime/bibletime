@@ -168,7 +168,6 @@ int main(int argc, char* argv[]) {
 //	setSignalHandler(signalHandler);
 
     BibleTime *mainWindow = new BibleTime();
-    mainWindow->setAttribute(Qt::WA_DeleteOnClose);
 
     // a new BibleTime version was installed (maybe a completely new installation)
     if (CBTConfig::get(CBTConfig::bibletimeVersion) != BT_VERSION) {
