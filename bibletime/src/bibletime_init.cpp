@@ -512,8 +512,6 @@ void BibleTime::initConnections() {
             this, SLOT(moduleUnlock(CSwordModuleInfo*)));
     connect(m_bookshelfDock, SIGNAL(moduleAboutTriggered(CSwordModuleInfo*)),
             this, SLOT(moduleAbout(CSwordModuleInfo*)));
-
-    connect(qApp, SIGNAL(aboutToQuit()), this, SLOT(slot_aboutToQuit()));
 }
 
 void BibleTime::initSwordConfigFile() {

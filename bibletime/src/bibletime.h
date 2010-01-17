@@ -351,10 +351,7 @@ class BibleTime : public QMainWindow {
         * Slot to refresh the save profile and load profile menus.
         */
         void refreshProfileMenus();
-        /**
-        * Called before quit.
-        */
-        void slot_aboutToQuit();
+
         /**
         * Open the About Dialog
         */

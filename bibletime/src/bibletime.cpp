@@ -103,6 +103,7 @@ BibleTime::~BibleTime() {
 #ifdef BT_DEBUG
     deleteDebugWindow();
 #endif
+    saveSettings();
 }
 
 /** Saves the properties of BibleTime to the application wide configfile  */
@@ -275,11 +276,6 @@ void BibleTime::refreshDisplayWindows() {
 /** Refresh main window accelerators */
 void::BibleTime::refreshBibleTimeAccel() {
     CBTConfig::setupAccelSettings(CBTConfig::application, m_actionCollection);
-}
-
-/** Called before quit. */
-void BibleTime::slot_aboutToQuit() {
-    saveSettings();
 }
 
 /** Called before a window is closed */
