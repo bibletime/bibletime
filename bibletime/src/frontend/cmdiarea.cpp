@@ -174,8 +174,6 @@ void CMDIArea::myTabbed() {
         return;
     }
     setViewMode(QMdiArea::TabbedView);
-    foreach(QMdiSubWindow* w, subWindowList()) {
-    }
     emitWindowCaptionChanged();
 }
 
