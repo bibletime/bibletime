@@ -262,19 +262,23 @@ class BibleTime : public QMainWindow {
          */
         void slotOpenWindowsMenuAboutToShow();
         /**
-         * This slot is connected with the windowAutoTile_action object
+         * This slot is connected with the windowAutoTileVertical_action object
          */
         void slotAutoTileVertical();
         /**
-         * This slot is connected with the windowAutoTile_action object
+         * This slot is connected with the windowAutoTileHorizontal_action object
          */
         void slotAutoTileHorizontal();
         /**
-         * This slot is connected with the windowAutoCascade_action object
+         * This slot is connected with the windowAutoTile_action object
          */
         void slotAutoTile();
         /**
-         * This slot is connected with the windowAutoTile_action object
+         * This slot is connected with the windowAutoTabbed_action object
+         */
+        void slotAutoTabbed();
+        /**
+         * This slot is connected with the windowAutoCascade_action object
          */
         void slotAutoCascade();
         void slotUpdateWindowArrangementActions( QAction* );
@@ -389,6 +393,7 @@ class BibleTime : public QMainWindow {
         QAction* m_windowManualMode_action;
         QAction* m_windowAutoCascade_action;
         QAction* m_windowAutoTile_action;
+        QAction* m_windowAutoTabbed_action;
         QAction* m_windowAutoTileVertical_action;
         QAction* m_windowAutoTileHorizontal_action;
         QAction* m_windowClose_action;

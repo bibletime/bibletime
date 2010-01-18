@@ -141,6 +141,11 @@ const QString icon        = "tile_auto.svg";
 const QKeySequence accel(Qt::CTRL + Qt::ALT + Qt::Key_I);
 const char* actionName    = "windowAutoTile_action";
 }
+namespace autoTabbed {
+const QString icon        = "tabbed.svg";
+const QKeySequence accel(Qt::CTRL + Qt::ALT + Qt::Key_T);
+const char* actionName    = "windowAutoTabbed_action";
+}
 namespace autoCascade {
 const QString icon        = "cascade_auto.svg";
 const QKeySequence accel(Qt::CTRL + Qt::ALT + Qt::Key_J);

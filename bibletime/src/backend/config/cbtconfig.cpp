@@ -91,6 +91,8 @@ QString getKey(const bools ID) {
             return "autoTileHorizontal";
         case autoTile:
             return "autoTile";
+        case autoTabbed:
+            return "autoTabbed";
         case autoCascade:
             return "autoCascade";
 
@@ -317,6 +319,8 @@ bool getDefault(const bools ID) {
         case autoTileHorizontal:
             return false;
         case autoTile:
+            return false;
+        case autoTabbed:
             return false;
         case autoCascade:
             return false;

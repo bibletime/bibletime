@@ -145,6 +145,11 @@ extern const QString icon;
 extern const QKeySequence accel;
 extern const char* actionName;
 }
+namespace autoTabbed {
+extern const QString icon;
+extern const QKeySequence accel;
+extern const char* actionName;
+}
 namespace autoCascade {
 extern const QString icon;
 extern const QKeySequence accel;

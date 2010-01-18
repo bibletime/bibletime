@@ -30,21 +30,24 @@ CMDIArea::CMDIArea(BibleTime *parent)
 
 static const int moveSize = 30;
 
-QMdiSubWindow* CMDIArea::addSubWindow(QWidget * widget, Qt::WindowFlags windowFlags) {
-    QMdiSubWindow* subWindow = QMdiArea::addSubWindow(widget, windowFlags);
-    subWindow->installEventFilter(this);
-
-    // Change Qt QMdiSubWindow Close action to have no shortcut
+void CMDIArea::fixSystemMenu(QMdiSubWindow* subWindow) {
+    // Change Qt QMdiSubWindow Close action to have no shortcuts
     // This makes our closeWindow actions with Ctrl-W work correctly
     QList<QAction*> actions = subWindow->systemMenu()->actions();
     for (int i=0; i<actions.count(); i++) {
         QAction* action = actions.at(i);
         QString text = action->text();
         if (text.contains("Close")) {
-            action->setShortcut(QKeySequence());
+            action->setShortcuts(QList<QKeySequence>());
             break;
         }
     }
+}
+
+QMdiSubWindow* CMDIArea::addSubWindow(QWidget * widget, Qt::WindowFlags windowFlags) {
+    QMdiSubWindow* subWindow = QMdiArea::addSubWindow(widget, windowFlags);
+    subWindow->installEventFilter(this);
+    fixSystemMenu(subWindow);
 
     // Manual arrangement mode
     enableWindowMinMaxFlags(true);
@@ -84,13 +87,29 @@ QMdiSubWindow* CMDIArea::addSubWindow(QWidget * widget, Qt::WindowFlags windowFl
 
 void CMDIArea::setMDIArrangementMode( const MDIArrangementMode newArrangementMode ) {
     m_mdiArrangementMode = newArrangementMode;
-    triggerWindowUpdate();
+    switch (m_mdiArrangementMode) {
+        case ArrangementModeManual:
+            setViewMode(QMdiArea::SubWindowView);
+            break;
+        case ArrangementModeTile:
+            setViewMode(QMdiArea::SubWindowView);
+            tileSubWindows();
+            break;
+        case ArrangementModeTabbed:
+            setViewMode(QMdiArea::TabbedView);
+            break;
+        default:
+            setViewMode(QMdiArea::SubWindowView);
+            triggerWindowUpdate();
+            break;
+    }
 }
 
 void CMDIArea::myTileVertical() {
     if (!updatesEnabled() || !usableWindowList().count() ) {
         return;
     }
+    setViewMode(QMdiArea::SubWindowView);
 
     QList<QMdiSubWindow*> windows = usableWindowList();
     setUpdatesEnabled(false);
@@ -117,6 +136,7 @@ void CMDIArea::myTileHorizontal() {
     if (!updatesEnabled() || !usableWindowList().count() ) {
         return;
     }
+    setViewMode(QMdiArea::SubWindowView);
 
     QList<QMdiSubWindow*> windows = usableWindowList();
     setUpdatesEnabled(false);
@@ -138,11 +158,24 @@ void CMDIArea::myTileHorizontal() {
     emitWindowCaptionChanged();
 }
 
+// Tile the windows, tiling implemented by Qt
 void CMDIArea::myTile() {
     if (!updatesEnabled() || !usableWindowList().count() ) {
         return;
     }
+    setViewMode(QMdiArea::SubWindowView);
     tileSubWindows();
+    emitWindowCaptionChanged();
+}
+
+// Tab the windows, tabbing implemented by Qt
+void CMDIArea::myTabbed() {
+    if (!updatesEnabled() || !usableWindowList().count() ) {
+        return;
+    }
+    setViewMode(QMdiArea::TabbedView);
+    foreach(QMdiSubWindow* w, subWindowList()) {
+    }
     emitWindowCaptionChanged();
 }
 
@@ -150,6 +183,7 @@ void CMDIArea::myCascade() {
     if (!updatesEnabled() || !usableWindowList().count() ) {
         return;
     }
+    setViewMode(QMdiArea::SubWindowView);
 
     QList<QMdiSubWindow*> windows = usableWindowList();
 
@@ -219,14 +253,17 @@ void CMDIArea::slotSubWindowActivated(QMdiSubWindow* client) {
 
 void CMDIArea::resizeEvent(QResizeEvent* e) {
     /*
-      Do not call QMdiArea::resizeEvent(e) unless we are in manual arrangement
-      mode, since this would mess up our layout. The manual arrangement mode
-      should be handled exactly as in QMdiArea.
+      Do not call QMdiArea::resizeEvent(e) if we are in manual arrangement
+      mode, since this would mess up our layout. Also, don't call it for the
+      automatic arrangement modes that we implement. Call it only for those
+      modes implemented by Qt
     */
-    if (m_mdiArrangementMode == ArrangementModeManual) {
+    if (m_mdiArrangementMode == ArrangementModeTabbed  ||
+        m_mdiArrangementMode == ArrangementModeTile) {
         QMdiArea::resizeEvent(e);
     }
     else if (updatesEnabled()) {
+        // Handle resize for automatic modes that we implement
         triggerWindowUpdate();
     }
 }
@@ -267,6 +304,7 @@ bool CMDIArea::eventFilter(QObject *o, QEvent *e) {
         case QEvent::WindowTitleChange:
             if (o == activeSubWindow()) {
                 emit sigSetToplevelCaption(w->windowTitle());
+                return QMdiArea::eventFilter(o, e);
             }
             break;
         default:
@@ -287,9 +325,6 @@ void CMDIArea::triggerWindowUpdate() {
                 break;
             case ArrangementModeCascade:
                 QTimer::singleShot(0, this, SLOT(myCascade()));
-                break;
-            case ArrangementModeTile:
-                QTimer::singleShot(0, this, SLOT(myTile()));
                 break;
             default:
                 break;

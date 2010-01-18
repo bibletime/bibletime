@@ -134,7 +134,7 @@ void BibleTime::slotOpenWindowsMenuAboutToShow() {
 
 /** This slot is connected with the windowAutoTile_action object */
 void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
-    /* If a toggle action was clicked we see if it checked ot unchecked and
+    /* If a toggle action was clicked we see if it is checked or unchecked and
     * enable/disable the simple cascade and tile options accordingly
     */
     m_windowTileVertical_action->setEnabled( m_windowManualMode_action->isChecked() );
@@ -154,6 +154,7 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
         m_windowAutoTileHorizontal_action->setEnabled( m_windowAutoTileHorizontal_action != clickedAction );
         m_windowAutoCascade_action->setEnabled( m_windowAutoCascade_action != clickedAction );
         m_windowAutoTile_action->setEnabled( m_windowAutoTile_action != clickedAction );
+        m_windowAutoTabbed_action->setEnabled( m_windowAutoTabbed_action != clickedAction );
     }
 
     if (clickedAction == m_windowManualMode_action) {
@@ -161,6 +162,7 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
         m_windowAutoTileHorizontal_action->setChecked(false);
         m_windowAutoCascade_action->setChecked(false);
         m_windowAutoTile_action->setChecked(false);
+        m_windowAutoTabbed_action->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(true);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeManual );
     }
@@ -169,6 +171,7 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
         m_windowAutoTileHorizontal_action->setChecked(false);
         m_windowAutoCascade_action->setChecked(false);
         m_windowAutoTile_action->setChecked(false);
+        m_windowAutoTabbed_action->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(false);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTileVertical );
     }
@@ -177,6 +180,7 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
         m_windowAutoTileVertical_action->setChecked(false);
         m_windowAutoCascade_action->setChecked(false);
         m_windowAutoTile_action->setChecked(false);
+        m_windowAutoTabbed_action->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(false);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTileHorizontal );
     }
@@ -184,15 +188,26 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
         m_windowManualMode_action->setChecked(false);
         m_windowAutoTileHorizontal_action->setChecked(false);
         m_windowAutoTileVertical_action->setChecked(false);
+        m_windowAutoTabbed_action->setChecked(false);
         m_windowAutoCascade_action->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(false);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTile );
+    }
+    else if (clickedAction == m_windowAutoTabbed_action) {
+        m_windowManualMode_action->setChecked(false);
+        m_windowAutoTileHorizontal_action->setChecked(false);
+        m_windowAutoTileVertical_action->setChecked(false);
+        m_windowAutoTile_action->setChecked(false);
+        m_windowAutoCascade_action->setChecked(false);
+        m_mdi->enableWindowMinMaxFlags(false);
+        m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTabbed );
     }
     else if (clickedAction == m_windowAutoCascade_action) {
         m_windowManualMode_action->setChecked(false);
         m_windowAutoTileHorizontal_action->setChecked(false);
         m_windowAutoTileVertical_action->setChecked(false);
         m_windowAutoTile_action->setChecked(false);
+        m_windowAutoTabbed_action->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(false);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeCascade );
     }
@@ -231,6 +246,11 @@ void BibleTime::slotAutoTileVertical() {
 /** This slot is connected with the windowAutoTile_action object */
 void BibleTime::slotAutoTile() {
     slotUpdateWindowArrangementActions( m_windowAutoTile_action );
+}
+
+/** This slot is connected with the windowAutoTabbed_action object */
+void BibleTime::slotAutoTabbed() {
+    slotUpdateWindowArrangementActions( m_windowAutoTabbed_action );
 }
 
 void BibleTime::slotTile() {

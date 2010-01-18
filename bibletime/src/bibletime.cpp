@@ -121,6 +121,7 @@ void BibleTime::saveSettings() {
     CBTConfig::set(CBTConfig::autoTileVertical, m_windowAutoTileVertical_action->isChecked());
     CBTConfig::set(CBTConfig::autoTileHorizontal, m_windowAutoTileHorizontal_action->isChecked());
     CBTConfig::set(CBTConfig::autoTile, m_windowAutoTile_action->isChecked());
+    CBTConfig::set(CBTConfig::autoTabbed, m_windowAutoTabbed_action->isChecked());
     CBTConfig::set(CBTConfig::autoCascade, m_windowAutoCascade_action->isChecked());
 
     CProfile* p = m_profileMgr.startupProfile();
@@ -152,6 +153,11 @@ void BibleTime::readSettings() {
         m_windowAutoTile_action->setChecked(true);
         m_windowManualMode_action->setChecked(false);
         slotAutoTile();
+    }
+    else if ( CBTConfig::get(CBTConfig::autoTabbed) ) {
+        m_windowAutoTabbed_action->setChecked(true);
+        m_windowManualMode_action->setChecked(false);
+        slotAutoTabbed();
     }
     else if ( CBTConfig::get(CBTConfig::autoCascade) ) {
         m_windowAutoCascade_action->setChecked(true);

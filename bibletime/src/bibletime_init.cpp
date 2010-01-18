@@ -166,6 +166,13 @@ void BibleTime::insertKeyboardActions( BtActionCollection* const a ) {
     a->addAction("autoTile", action);
 
     action = new QAction(a);
+    action->setText(tr("Ta&bbed"));
+    action->setIcon(DU::getIcon(CResMgr::mainMenu::window::arrangementMode::autoTabbed::icon));
+    action->setShortcut(QKeySequence(CResMgr::mainMenu::window::arrangementMode::autoTabbed::accel));
+    action->setToolTip(tr("Automatically tab the open windows"));
+    a->addAction("autoTabbed", action);
+
+    action = new QAction(a);
     action->setText(tr("Auto-&cascade"));
     action->setIcon(DU::getIcon(CResMgr::mainMenu::window::arrangementMode::autoCascade::icon));
     action->setShortcut(QKeySequence(CResMgr::mainMenu::window::arrangementMode::autoCascade::accel));
@@ -399,6 +406,11 @@ void BibleTime::initActions() {
     arrangementMenu->addAction(m_windowManualMode_action);
     connect(m_windowManualMode_action, SIGNAL(triggered()), this, SLOT(slotManualArrangementMode()) );
 
+    m_windowAutoTabbed_action = m_actionCollection->action("autoTabbed");
+    m_windowAutoTabbed_action->setCheckable(true);
+    arrangementMenu->addAction(m_windowAutoTabbed_action);
+    connect(m_windowAutoTabbed_action, SIGNAL(triggered()), this, SLOT(slotAutoTabbed()) );
+
     //: Vertical tiling means that windows are vertical, placed side by side
     m_windowAutoTileVertical_action = m_actionCollection->action("autoVertical");
     m_windowAutoTileVertical_action->setCheckable(true);
@@ -623,6 +635,9 @@ void BibleTime::applyProfileSettings( CProfile* p ) {
             break;
         case CMDIArea::ArrangementModeTile:
             slotAutoTile();
+            break;
+        case CMDIArea::ArrangementModeTabbed:
+            slotAutoTabbed();
             break;
         case CMDIArea::ArrangementModeManual:
             slotManualArrangementMode();

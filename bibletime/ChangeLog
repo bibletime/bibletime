@@ -1,3 +1,7 @@
+2010-01-18 Gary Holmlund <gary.holmlund@gmail.com>
+    * Add tabbed window arrangement mode
+    * Fix problems with manual arrangement mode
+    
 2009-12-31 Jaak Ristioja <ristioja@gmail.com>
     * Implemented a menu item and tool button for opening installed works.
 

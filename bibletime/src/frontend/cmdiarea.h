@@ -33,7 +33,8 @@ class CMDIArea: public QMdiArea {
             ArrangementModeTileHorizontal = 2,
             ArrangementModeCascade = 3,
             ArrangementModeManual = 4,
-            ArrangementModeTile = 5
+            ArrangementModeTile = 5,
+            ArrangementModeTabbed = 6
         };
 
         /**
@@ -83,6 +84,10 @@ class CMDIArea: public QMdiArea {
         */
         void myTile();
         /**
+          Uses Qt's setViewMode function to turn on the tabbed mode.
+        */
+        void myTabbed();
+        /**
           Our own cascade version which, if only one subwindow is left, shows it
           maximized.
           \note This not set an automatic arrangement mode, it just arranges the
@@ -129,6 +134,7 @@ class CMDIArea: public QMdiArea {
         bool eventFilter(QObject *o, QEvent *e);
 
         void emitWindowCaptionChanged();
+        void fixSystemMenu(QMdiSubWindow* subWindow);
 
     protected slots:
         /**
