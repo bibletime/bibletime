@@ -176,6 +176,7 @@ void BtAboutDialog::retranslateContributorsTab() {
                    "<li>Chun-shek Chan</li>"
                    "<li>Nouhoun Y. Diarra</li>"
                    "<li>Rafael Fagundes</li>"
+                   "<li>Eeli Kaikkonen</li>"
                    "<li>Ilpo Kantonen</li>"
                    "<li>Pavel Laukko</li>"
                    "<li>Piotr Markiewicz</li>"
@@ -205,7 +206,7 @@ void BtAboutDialog::retranslateContributorsTab() {
 
 
 void BtAboutDialog::retranslateSwordTab() {
-    m_tabWidget->setTabText(2, tr("&Sword"));
+    m_tabWidget->setTabText(2, tr("&SWORD"));
 
     QString version(sword::SWVersion::currentVersion.getText());
     QString content("<h3>");
@@ -246,9 +247,9 @@ void BtAboutDialog::retranslateLicenceTab() {
 
         QString text("<p>");
         text += tr("BibleTime is released under the GPL license. You can download and use "
-                   "(but not distribute) the program for personal, private, public or "
-                   "commercial purposes without restrictions. You can give away or "
-                   "distribute the program if you also distribute the corresponding source "
+                   "the program for personal, private, public or "
+                   "commercial purposes without restrictions, but can give away or "
+                   "distribute the program only if you also distribute the corresponding source "
                    "code.");
         text += "</p><p>";
         text += tr("The complete legally binding license is below.");
