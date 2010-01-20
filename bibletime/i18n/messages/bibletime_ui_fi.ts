@@ -44,7 +44,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="275"/>
         <source>Se&amp;ttings</source>
-        <translation>Ase&amp;tukset</translation>
+        <translation>&amp;Asetukset</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="276"/>
@@ -324,12 +324,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="484"/>
         <source>Show &quot;Whats this widget&quot; dialog</source>
-        <translation>Näytä &quot;Mikä tämä widgetti on&quot; -dialogi</translation>
+        <translation>Näytä &quot;Mikä tämä käyttöliittymäelementti on&quot;-dialogi</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="673"/>
         <source>Whats this widget?</source>
-        <translation>Mikä tämä widgetti on?</translation>
+        <translation>Mikä tämä käyttöliittymäelementti on?</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="123"/>
