@@ -3,7 +3,7 @@
  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd"
 [
   <!ENTITY bibletime '<application>BibleTime</application>'>
-  <!ENTITY sword '<application>Sword</application>'>
+  <!ENTITY sword '<application>SWORD</application>'>
   <!ENTITY cbs '<application>Crosswire Bible Society</application>'>
   <!ENTITY kde '<application>KDE</application>'>
   <!ENTITY qt '<application>Qt</application>'>
@@ -51,7 +51,7 @@
     <para>The &bibletime; Handbook is distributed with the &bibletime; study program.</para>
   </legalnotice>
 
-  <date>$LastChangedDate: 2009-12-21 11:36:46 -0500 (Mon, 21 Dec 2009) $</date>
+  <date>$LastChangedDate: 2009-12-31 15:05:52 -0500 (Thu, 31 Dec 2009) $</date>
 
   <releaseinfo>2.6</releaseinfo>
 
@@ -65,13 +65,14 @@ Bible texts, commentaries, dictionaries and books provided by the &cbs;.</para>
 
   <keywordset>
     <keyword>Qt4</keyword>
-    <keyword>bibletime</keyword>
-    <keyword>sword</keyword>
-    <keyword>crosswire</keyword>
-    <keyword>help dialog</keyword>
+    <keyword>BibleTime</keyword>
+    <keyword>SWORD</keyword>
+    <keyword>Crosswire</keyword>
+    <keyword>Help dialog</keyword>
   </keywordset>
-</bookinfo>&hdbkchap1; &hdbkchap2; &hdbkchap3;
-&hdbkchap4; &hdbkchap5;</book>
+</bookinfo>
+&hdbkchap1; &hdbkchap2; &hdbkchap3; &hdbkchap4; &hdbkchap5;
+</book>
 
 <!--
 

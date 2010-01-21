@@ -930,11 +930,24 @@ automatisches Staffeln.</entry>
               <keycombo action="simul">
               <keycap>&Ctrl;&Alt;M</keycap></keycombo>
             </entry>
+
             <entry>
-            <menuchoice> <guimenu>Fenster</guimenu> 
+	      <menuchoice> <guimenu>Fenster</guimenu> 
 <guimenuitem>Anordnungs-Art</guimenuitem> <guimenuitem>Manuell</guimenuitem> 
 </menuchoice> schaltet die Fensteranordnung auf den manuellen Modus.</entry>
           </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;&Alt;T</keycap></keycombo>
+            </entry>
+            <entry>
+	      <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement 
+mode</guimenuitem> <guimenuitem>Tabbed</guimenuitem> </menuchoice> 
+equivalent; organizes windows with tabs across the top.</entry>
+          </row>
+
           <row>
             <entry>
               <keycombo action="simul">

@@ -943,11 +943,24 @@ elrendezést.</entry>
               <keycombo action="simul">
               <keycap>&Ctrl;&Alt;M</keycap></keycombo>
             </entry>
+
             <entry>
-            Megegyezik az <menuchoice><guimenu>Ablak</guimenu> <guimenuitem>Ablakok 
+	      Megegyezik az <menuchoice><guimenu>Ablak</guimenu> <guimenuitem>Ablakok 
 automatikus igazítása</guimenuitem><guimenuitem> Kézi 
 elrendezéssel</guimenuitem></menuchoice>, aktiválja az kézi  elrendezést.</entry>
           </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;&Alt;T</keycap></keycombo>
+            </entry>
+            <entry>
+	      <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement 
+mode</guimenuitem> <guimenuitem>Tabbed</guimenuitem> </menuchoice> 
+equivalent; organizes windows with tabs across the top.</entry>
+          </row>
+
           <row>
             <entry>
               <keycombo action="simul">

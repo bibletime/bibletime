@@ -919,11 +919,24 @@ rozvržení</guimenuitem> <guimenuitem>Automaticky kaskádovat</guimenuitem>
               <keycombo action="simul">
               <keycap>&Ctrl;&Alt;M</keycap></keycombo>
             </entry>
+
             <entry>
-            <menuchoice> <guimenu>Okno</guimenu> <guimenuitem>Mód 
+	      <menuchoice> <guimenu>Okno</guimenu> <guimenuitem>Mód 
 rozvržení</guimenuitem> <guimenuitem>Ruční mód</guimenuitem> </menuchoice> 
 zapne manuální skládání oken.</entry>
           </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;&Alt;T</keycap></keycombo>
+            </entry>
+            <entry>
+	      <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement 
+mode</guimenuitem> <guimenuitem>Tabbed</guimenuitem> </menuchoice> 
+equivalent; organizes windows with tabs across the top.</entry>
+          </row>
+
           <row>
             <entry>
               <keycombo action="simul">

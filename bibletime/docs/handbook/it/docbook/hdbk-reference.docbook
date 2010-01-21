@@ -928,12 +928,25 @@ cascata automatica delle finestre.</entry>
               <keycombo action="simul">
               <keycap>&Ctrl;&Alt;M</keycap></keycombo>
             </entry>
+
             <entry>
-            <menuchoice> <guimenu>Finestra</guimenu> 
+	      <menuchoice> <guimenu>Finestra</guimenu> 
 <guimenuitem>Arrangiamento</guimenuitem> <guimenuitem>Modalità 
 manuale</guimenuitem> </menuchoice> equivalent; attiva/disattiva la modalità 
 manuale del piazzamento delle finestre.</entry>
           </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;&Alt;T</keycap></keycombo>
+            </entry>
+            <entry>
+	      <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement 
+mode</guimenuitem> <guimenuitem>Tabbed</guimenuitem> </menuchoice> 
+equivalent; organizes windows with tabs across the top.</entry>
+          </row>
+
           <row>
             <entry>
               <keycombo action="simul">

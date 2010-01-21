@@ -927,11 +927,24 @@ equivalente; alterna cascateamento automático de janelas.</entry>
               <keycombo action="simul">
               <keycap>&Ctrl;&Alt;M</keycap></keycombo>
             </entry>
+
             <entry>
-            <menuchoice> <guimenu>Janela</guimenu> <guimenuitem>Modo de 
+	      <menuchoice> <guimenu>Janela</guimenu> <guimenuitem>Modo de 
 posicionamento</guimenuitem> <guimenuitem>Modo manual</guimenuitem> 
 </menuchoice> equivalente; alterna posicionamento manual das janelas.</entry>
           </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;&Alt;T</keycap></keycombo>
+            </entry>
+            <entry>
+	      <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement 
+mode</guimenuitem> <guimenuitem>Tabbed</guimenuitem> </menuchoice> 
+equivalent; organizes windows with tabs across the top.</entry>
+          </row>
+
           <row>
             <entry>
               <keycombo action="simul">
