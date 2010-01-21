@@ -316,6 +316,14 @@ This file is distributed under the same license as the Bibetime package.</transl
         <source>Whats this widget?</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Ta&amp;bbed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Automatically tab the open windows</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BtAboutDialog</name>
@@ -420,10 +428,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&amp;Sword</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -448,11 +452,15 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>BibleTime is released under the GPL license. You can download and use (but not distribute) the program for personal, private, public or commercial purposes without restrictions. You can give away or distribute the program if you also distribute the corresponding source code.</source>
+        <source>(c)1999-2010, The BibleTime Team</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>(c)1999-2010, The BibleTime Team</source>
+        <source>&amp;SWORD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
