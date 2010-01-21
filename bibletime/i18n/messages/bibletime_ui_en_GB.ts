@@ -264,12 +264,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="169"/>
         <source>Ta&amp;bbed</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta&amp;bbed</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="172"/>
         <source>Automatically tab the open windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatically tab the open windows</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="179"/>
@@ -412,7 +412,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="249"/>
         <source>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</source>
-        <translation type="unfinished"></translation>
+        <translation>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="255"/>
@@ -557,7 +557,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="209"/>
         <source>&amp;SWORD</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;SWORD</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="213"/>
