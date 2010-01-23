@@ -256,8 +256,7 @@ void CMDIArea::resizeEvent(QResizeEvent* e) {
       automatic arrangement modes that we implement. Call it only for those
       modes implemented by Qt
     */
-    if (m_mdiArrangementMode == ArrangementModeTabbed  ||
-        m_mdiArrangementMode == ArrangementModeTile) {
+    if (m_mdiArrangementMode == ArrangementModeTabbed) {
         QMdiArea::resizeEvent(e);
     }
     else if (updatesEnabled()) {
@@ -320,6 +319,9 @@ void CMDIArea::triggerWindowUpdate() {
                 break;
             case ArrangementModeTileHorizontal:
                 QTimer::singleShot(0, this, SLOT(myTileHorizontal()));
+                break;
+            case ArrangementModeTile:
+                QTimer::singleShot(0, this, SLOT(myTile()));
                 break;
             case ArrangementModeCascade:
                 QTimer::singleShot(0, this, SLOT(myCascade()));
