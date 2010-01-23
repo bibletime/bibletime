@@ -656,6 +656,7 @@ void BibleTime::applyProfileSettings( CProfile* p ) {
             slotAutoTileVertical();
             break;
     }
+    layout()->invalidate();
 }
 
 void BibleTime::storeProfileSettings( CProfile* p ) {
