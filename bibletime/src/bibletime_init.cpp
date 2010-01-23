@@ -52,6 +52,10 @@ using namespace Profile;
 
 /**Initializes the view of this widget*/
 void BibleTime::initView() {
+
+    // Create menu and toolbar before the mdi area
+    createMenuAndToolBar();
+
     m_mdi = new CMDIArea(this);
     setCentralWidget(m_mdi);
 
@@ -254,6 +258,18 @@ void BibleTime::insertKeyboardActions( BtActionCollection* const a ) {
     a->addAction("aboutBibleTime", action);
 }
 
+void BibleTime::createMenuAndToolBar()
+{
+    // Create menubar
+    menuBar();
+
+    // Create main toolbar
+    m_mainToolBar = addToolBar(tr("Main Toolbar"));
+    m_mainToolBar->setObjectName("MainToolBar");
+    m_mainToolBar->setFloatable(false);
+    m_mainToolBar->setMovable(false);
+}
+
 /** Initializes the action objects of the GUI */
 void BibleTime::initActions() {
     m_actionCollection = new BtActionCollection(this);
@@ -274,12 +290,6 @@ void BibleTime::initActions() {
     m_windowMenu = menuBar()->addMenu(tr("&Window"));
     QMenu* settingsMenu = menuBar()->addMenu(tr("Se&ttings"));
     QMenu* helpMenu = menuBar()->addMenu(tr("&Help"));
-
-    // Name of the main toolbar
-    m_mainToolBar = addToolBar(tr("Main Toolbar"));
-    m_mainToolBar->setObjectName("MainToolBar");
-    m_mainToolBar->setFloatable(false);
-    m_mainToolBar->setMovable(false);
 
     // ********** File menu *********************
 

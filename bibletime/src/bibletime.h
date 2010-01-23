@@ -198,6 +198,10 @@ class BibleTime : public QMainWindow {
         */
         bool event(QEvent* event);
         /**
+        * Create the main window menu and toolbar
+        */
+        void createMenuAndToolBar();
+        /**
         * Initializes the sword.conf in the $HOME\Sword directory
         */
         void initSwordConfigFile();
