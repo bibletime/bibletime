@@ -43,7 +43,7 @@ using namespace Profile;
 /** Opens the optionsdialog of BibleTime. */
 void BibleTime::slotSettingsOptions() {
     qDebug() << "BibleTime::slotSettingsOptions";
-    CConfigurationDialog *dlg = new CConfigurationDialog(this, m_actionCollection);
+    CConfigurationDialog *dlg = new CConfigurationDialog(this, mActionCollection);
     QObject::connect(dlg, SIGNAL(signalSettingsChanged()), this, SLOT(slotSettingsChanged()) );
 
     dlg->show();
@@ -93,26 +93,26 @@ void BibleTime::slotWindowMenuAboutToShow() {
     Q_ASSERT(m_windowMenu);
 
     if ( m_mdi->subWindowList().isEmpty() ) {
-        m_windowCascade_action->setEnabled(false);
-        m_windowTileVertical_action->setEnabled(false);
-        m_windowTileHorizontal_action->setEnabled(false);
-        m_windowClose_action->setEnabled(false);
-        m_windowCloseAll_action->setEnabled(false);
+        m_windowCascadeAction->setEnabled(false);
+        m_windowTileVerticalAction->setEnabled(false);
+        m_windowTileHorizontalAction->setEnabled(false);
+        m_windowCloseAction->setEnabled(false);
+        m_windowCloseAllAction->setEnabled(false);
         m_openWindowsMenu->setEnabled(false);
     }
     else if (m_mdi->subWindowList().count() == 1) {
-        m_windowTileVertical_action->setEnabled(false);
-        m_windowTileHorizontal_action->setEnabled(false);
-        m_windowCascade_action->setEnabled(false);
-        m_windowClose_action->setEnabled(true);
-        m_windowCloseAll_action->setEnabled(true);
+        m_windowTileVerticalAction->setEnabled(false);
+        m_windowTileHorizontalAction->setEnabled(false);
+        m_windowCascadeAction->setEnabled(false);
+        m_windowCloseAction->setEnabled(true);
+        m_windowCloseAllAction->setEnabled(true);
         m_openWindowsMenu->setEnabled(true);
         //   m_windowMenu->insertSeparator();
     }
     else {
         slotUpdateWindowArrangementActions(0); //update the window tile/cascade states
-        m_windowClose_action->setEnabled(true);
-        m_windowCloseAll_action->setEnabled(true);
+        m_windowCloseAction->setEnabled(true);
+        m_windowCloseAllAction->setEnabled(true);
         m_openWindowsMenu->setEnabled(true);
     }
 }
@@ -132,152 +132,152 @@ void BibleTime::slotOpenWindowsMenuAboutToShow() {
     }
 }
 
-/** This slot is connected with the windowAutoTile_action object */
+/** This slot is connected with the windowAutoTileAction object */
 void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
     /* If a toggle action was clicked we see if it is checked or unchecked and
     * enable/disable the simple cascade and tile options accordingly
     */
-    m_windowTileVertical_action->setEnabled( m_windowManualMode_action->isChecked() );
-    m_windowTileHorizontal_action->setEnabled( m_windowManualMode_action->isChecked() );
-    m_windowCascade_action->setEnabled( m_windowManualMode_action->isChecked() );
-    m_windowTile_action->setEnabled( m_windowManualMode_action->isChecked() );
+    m_windowTileVerticalAction->setEnabled( m_windowManualModeAction->isChecked() );
+    m_windowTileHorizontalAction->setEnabled( m_windowManualModeAction->isChecked() );
+    m_windowCascadeAction->setEnabled( m_windowManualModeAction->isChecked() );
+    m_windowTileAction->setEnabled( m_windowManualModeAction->isChecked() );
 
     if (clickedAction) {
-        m_windowManualMode_action->setEnabled(
-            m_windowManualMode_action != clickedAction
-            && m_windowTileHorizontal_action != clickedAction
-            && m_windowTileVertical_action != clickedAction
-            && m_windowCascade_action != clickedAction
-            && m_windowTile_action != clickedAction
+        m_windowManualModeAction->setEnabled(
+            m_windowManualModeAction != clickedAction
+            && m_windowTileHorizontalAction != clickedAction
+            && m_windowTileVerticalAction != clickedAction
+            && m_windowCascadeAction != clickedAction
+            && m_windowTileAction != clickedAction
         );
-        m_windowAutoTileVertical_action->setEnabled( m_windowAutoTileVertical_action != clickedAction );
-        m_windowAutoTileHorizontal_action->setEnabled( m_windowAutoTileHorizontal_action != clickedAction );
-        m_windowAutoCascade_action->setEnabled( m_windowAutoCascade_action != clickedAction );
-        m_windowAutoTile_action->setEnabled( m_windowAutoTile_action != clickedAction );
-        m_windowAutoTabbed_action->setEnabled( m_windowAutoTabbed_action != clickedAction );
+        m_windowAutoTileVerticalAction->setEnabled( m_windowAutoTileVerticalAction != clickedAction );
+        m_windowAutoTileHorizontalAction->setEnabled( m_windowAutoTileHorizontalAction != clickedAction );
+        m_windowAutoCascadeAction->setEnabled( m_windowAutoCascadeAction != clickedAction );
+        m_windowAutoTileAction->setEnabled( m_windowAutoTileAction != clickedAction );
+        m_windowAutoTabbedAction->setEnabled( m_windowAutoTabbedAction != clickedAction );
     }
 
-    if (clickedAction == m_windowManualMode_action) {
-        m_windowAutoTileVertical_action->setChecked(false);
-        m_windowAutoTileHorizontal_action->setChecked(false);
-        m_windowAutoCascade_action->setChecked(false);
-        m_windowAutoTile_action->setChecked(false);
-        m_windowAutoTabbed_action->setChecked(false);
+    if (clickedAction == m_windowManualModeAction) {
+        m_windowAutoTileVerticalAction->setChecked(false);
+        m_windowAutoTileHorizontalAction->setChecked(false);
+        m_windowAutoCascadeAction->setChecked(false);
+        m_windowAutoTileAction->setChecked(false);
+        m_windowAutoTabbedAction->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(true);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeManual );
     }
-    else if (clickedAction == m_windowAutoTileVertical_action) {
-        m_windowManualMode_action->setChecked(false);
-        m_windowAutoTileHorizontal_action->setChecked(false);
-        m_windowAutoCascade_action->setChecked(false);
-        m_windowAutoTile_action->setChecked(false);
-        m_windowAutoTabbed_action->setChecked(false);
+    else if (clickedAction == m_windowAutoTileVerticalAction) {
+        m_windowManualModeAction->setChecked(false);
+        m_windowAutoTileHorizontalAction->setChecked(false);
+        m_windowAutoCascadeAction->setChecked(false);
+        m_windowAutoTileAction->setChecked(false);
+        m_windowAutoTabbedAction->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(false);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTileVertical );
     }
-    else if (clickedAction == m_windowAutoTileHorizontal_action) {
-        m_windowManualMode_action->setChecked(false);
-        m_windowAutoTileVertical_action->setChecked(false);
-        m_windowAutoCascade_action->setChecked(false);
-        m_windowAutoTile_action->setChecked(false);
-        m_windowAutoTabbed_action->setChecked(false);
+    else if (clickedAction == m_windowAutoTileHorizontalAction) {
+        m_windowManualModeAction->setChecked(false);
+        m_windowAutoTileVerticalAction->setChecked(false);
+        m_windowAutoCascadeAction->setChecked(false);
+        m_windowAutoTileAction->setChecked(false);
+        m_windowAutoTabbedAction->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(false);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTileHorizontal );
     }
-    else if (clickedAction == m_windowAutoTile_action) {
-        m_windowManualMode_action->setChecked(false);
-        m_windowAutoTileHorizontal_action->setChecked(false);
-        m_windowAutoTileVertical_action->setChecked(false);
-        m_windowAutoTabbed_action->setChecked(false);
-        m_windowAutoCascade_action->setChecked(false);
+    else if (clickedAction == m_windowAutoTileAction) {
+        m_windowManualModeAction->setChecked(false);
+        m_windowAutoTileHorizontalAction->setChecked(false);
+        m_windowAutoTileVerticalAction->setChecked(false);
+        m_windowAutoTabbedAction->setChecked(false);
+        m_windowAutoCascadeAction->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(false);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTile );
     }
-    else if (clickedAction == m_windowAutoTabbed_action) {
-        m_windowManualMode_action->setChecked(false);
-        m_windowAutoTileHorizontal_action->setChecked(false);
-        m_windowAutoTileVertical_action->setChecked(false);
-        m_windowAutoTile_action->setChecked(false);
-        m_windowAutoCascade_action->setChecked(false);
+    else if (clickedAction == m_windowAutoTabbedAction) {
+        m_windowManualModeAction->setChecked(false);
+        m_windowAutoTileHorizontalAction->setChecked(false);
+        m_windowAutoTileVerticalAction->setChecked(false);
+        m_windowAutoTileAction->setChecked(false);
+        m_windowAutoCascadeAction->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(false);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTabbed );
     }
-    else if (clickedAction == m_windowAutoCascade_action) {
-        m_windowManualMode_action->setChecked(false);
-        m_windowAutoTileHorizontal_action->setChecked(false);
-        m_windowAutoTileVertical_action->setChecked(false);
-        m_windowAutoTile_action->setChecked(false);
-        m_windowAutoTabbed_action->setChecked(false);
+    else if (clickedAction == m_windowAutoCascadeAction) {
+        m_windowManualModeAction->setChecked(false);
+        m_windowAutoTileHorizontalAction->setChecked(false);
+        m_windowAutoTileVerticalAction->setChecked(false);
+        m_windowAutoTileAction->setChecked(false);
+        m_windowAutoTabbedAction->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(false);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeCascade );
     }
-    else if (clickedAction == m_windowTile_action) {
+    else if (clickedAction == m_windowTileAction) {
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeManual );
         m_mdi->myTile();
     }
-    else if (clickedAction == m_windowCascade_action) {
+    else if (clickedAction == m_windowCascadeAction) {
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeManual );
         m_mdi->myCascade();
     }
-    else if (clickedAction == m_windowTileVertical_action) {
+    else if (clickedAction == m_windowTileVerticalAction) {
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeManual );
         m_mdi->myTileVertical();
     }
-    else if (clickedAction == m_windowTileHorizontal_action) {
+    else if (clickedAction == m_windowTileHorizontalAction) {
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeManual );
         m_mdi->myTileHorizontal();
     }
 }
 
 void BibleTime::slotManualArrangementMode() {
-    slotUpdateWindowArrangementActions( m_windowManualMode_action );
+    slotUpdateWindowArrangementActions( m_windowManualModeAction );
 }
 
-/** This slot is connected with the windowAutoTile_action object */
+/** This slot is connected with the windowAutoTileAction object */
 void BibleTime::slotAutoTileHorizontal() {
-    slotUpdateWindowArrangementActions( m_windowAutoTileHorizontal_action );
+    slotUpdateWindowArrangementActions( m_windowAutoTileHorizontalAction );
 }
 
-/** This slot is connected with the windowAutoTile_action object */
+/** This slot is connected with the windowAutoTileAction object */
 void BibleTime::slotAutoTileVertical() {
-    slotUpdateWindowArrangementActions( m_windowAutoTileVertical_action );
+    slotUpdateWindowArrangementActions( m_windowAutoTileVerticalAction );
 }
 
-/** This slot is connected with the windowAutoTile_action object */
+/** This slot is connected with the windowAutoTileAction object */
 void BibleTime::slotAutoTile() {
-    slotUpdateWindowArrangementActions( m_windowAutoTile_action );
+    slotUpdateWindowArrangementActions( m_windowAutoTileAction );
 }
 
-/** This slot is connected with the windowAutoTabbed_action object */
+/** This slot is connected with the windowAutoTabbedAction object */
 void BibleTime::slotAutoTabbed() {
-    slotUpdateWindowArrangementActions( m_windowAutoTabbed_action );
+    slotUpdateWindowArrangementActions( m_windowAutoTabbedAction );
 }
 
 void BibleTime::slotTile() {
-    slotUpdateWindowArrangementActions( m_windowTile_action );
+    slotUpdateWindowArrangementActions( m_windowTileAction );
 }
 
 void BibleTime::slotCascade() {
-    slotUpdateWindowArrangementActions( m_windowCascade_action );
+    slotUpdateWindowArrangementActions( m_windowCascadeAction );
 }
 
 void BibleTime::slotTileVertical() {
-    slotUpdateWindowArrangementActions( m_windowTileVertical_action );
+    slotUpdateWindowArrangementActions( m_windowTileVerticalAction );
 }
 
 void BibleTime::slotTileHorizontal() {
-    slotUpdateWindowArrangementActions( m_windowTileHorizontal_action );
+    slotUpdateWindowArrangementActions( m_windowTileHorizontalAction );
 }
 
-/** This slot is connected with the windowAutoCascade_action object */
+/** This slot is connected with the windowAutoCascadeAction object */
 void BibleTime::slotAutoCascade() {
-    slotUpdateWindowArrangementActions( m_windowAutoCascade_action );
+    slotUpdateWindowArrangementActions( m_windowAutoCascadeAction );
 }
 
 /** Shows/hides the toolbar */
 void BibleTime::slotToggleToolbar() {
     Q_ASSERT(m_mainToolBar);
-    if (m_viewToolbar_action->isChecked()) {
+    if (m_viewToolbarAction->isChecked()) {
         m_mainToolBar->show();
     }
     else {
@@ -469,7 +469,7 @@ void BibleTime::deleteProfile(QAction* action) {
 }
 
 void BibleTime::toggleFullscreen() {
-    if (m_windowFullscreen_action->isChecked()) {
+    if (m_windowFullscreenAction->isChecked()) {
         // set full screen mode
         m_WindowWasMaximizedBeforeFullScreen = isMaximized();
         showFullScreen();

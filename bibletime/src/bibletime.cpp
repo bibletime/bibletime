@@ -90,6 +90,8 @@ BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
                            Qt::AlignCenter);
     }
     initActions();
+    initMenubar();
+    initToolbars();
     initConnections();
     readSettings();
 
@@ -111,18 +113,18 @@ void BibleTime::saveSettings() {
     /// \todo how to write settings?
     //accel()->writeSettings(CBTConfig::getConfig());
 
-    CBTConfig::set(CBTConfig::toolbar, m_viewToolbar_action->isChecked());
+    CBTConfig::set(CBTConfig::toolbar, m_viewToolbarAction->isChecked());
 
     // set the default to false
     /* CBTConfig::set(CBTConfig::autoTileVertical, false);
      CBTConfig::set(CBTConfig::autoTileHorizontal, false);
      CBTConfig::set(CBTConfig::autoCascade, false);
     */
-    CBTConfig::set(CBTConfig::autoTileVertical, m_windowAutoTileVertical_action->isChecked());
-    CBTConfig::set(CBTConfig::autoTileHorizontal, m_windowAutoTileHorizontal_action->isChecked());
-    CBTConfig::set(CBTConfig::autoTile, m_windowAutoTile_action->isChecked());
-    CBTConfig::set(CBTConfig::autoTabbed, m_windowAutoTabbed_action->isChecked());
-    CBTConfig::set(CBTConfig::autoCascade, m_windowAutoCascade_action->isChecked());
+    CBTConfig::set(CBTConfig::autoTileVertical, m_windowAutoTileVerticalAction->isChecked());
+    CBTConfig::set(CBTConfig::autoTileHorizontal, m_windowAutoTileHorizontalAction->isChecked());
+    CBTConfig::set(CBTConfig::autoTile, m_windowAutoTileAction->isChecked());
+    CBTConfig::set(CBTConfig::autoTabbed, m_windowAutoTabbedAction->isChecked());
+    CBTConfig::set(CBTConfig::autoCascade, m_windowAutoCascadeAction->isChecked());
 
     CProfile* p = m_profileMgr.startupProfile();
     if (p) {
@@ -134,38 +136,38 @@ void BibleTime::saveSettings() {
 void BibleTime::readSettings() {
     qDebug() << "******************BibleTime::readSettings******************************";
     //  accel()->readSettings(CBTConfig::getConfig());
-    CBTConfig::setupAccelSettings(CBTConfig::application, m_actionCollection);
+    CBTConfig::setupAccelSettings(CBTConfig::application, mActionCollection);
 
-    m_viewToolbar_action->setChecked( CBTConfig::get(CBTConfig::toolbar) );
+    m_viewToolbarAction->setChecked( CBTConfig::get(CBTConfig::toolbar) );
     slotToggleToolbar();
 
     if ( CBTConfig::get(CBTConfig::autoTileVertical) ) {
-        m_windowAutoTileVertical_action->setChecked( true );
-        m_windowManualMode_action->setChecked(false);
+        m_windowAutoTileVerticalAction->setChecked( true );
+        m_windowManualModeAction->setChecked(false);
         slotAutoTileVertical();
     }
     else if ( CBTConfig::get(CBTConfig::autoTileHorizontal) ) {
-        m_windowAutoTileHorizontal_action->setChecked( true );
-        m_windowManualMode_action->setChecked(false);
+        m_windowAutoTileHorizontalAction->setChecked( true );
+        m_windowManualModeAction->setChecked(false);
         slotAutoTileHorizontal();
     }
     else if ( CBTConfig::get(CBTConfig::autoTile) ) {
-        m_windowAutoTile_action->setChecked(true);
-        m_windowManualMode_action->setChecked(false);
+        m_windowAutoTileAction->setChecked(true);
+        m_windowManualModeAction->setChecked(false);
         slotAutoTile();
     }
     else if ( CBTConfig::get(CBTConfig::autoTabbed) ) {
-        m_windowAutoTabbed_action->setChecked(true);
-        m_windowManualMode_action->setChecked(false);
+        m_windowAutoTabbedAction->setChecked(true);
+        m_windowManualModeAction->setChecked(false);
         slotAutoTabbed();
     }
     else if ( CBTConfig::get(CBTConfig::autoCascade) ) {
-        m_windowAutoCascade_action->setChecked(true);
-        m_windowManualMode_action->setChecked(false);
+        m_windowAutoCascadeAction->setChecked(true);
+        m_windowManualModeAction->setChecked(false);
         slotAutoCascade();
     }
     else {
-        m_windowManualMode_action->setChecked(true);
+        m_windowManualModeAction->setChecked(true);
         slotManualArrangementMode();
     }
 }
@@ -281,7 +283,7 @@ void BibleTime::refreshDisplayWindows() {
 
 /** Refresh main window accelerators */
 void::BibleTime::refreshBibleTimeAccel() {
-    CBTConfig::setupAccelSettings(CBTConfig::application, m_actionCollection);
+    CBTConfig::setupAccelSettings(CBTConfig::application, mActionCollection);
 }
 
 /** Called before a window is closed */
@@ -357,6 +359,6 @@ bool BibleTime::event(QEvent* event) {
 
 QAction* BibleTime::getAction(const QString& actionName)
 {
-    return m_actionCollection->action(actionName);
+    return mActionCollection->action(actionName);
 }
 

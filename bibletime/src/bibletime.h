@@ -226,6 +226,10 @@ class BibleTime : public QMainWindow {
         */
         void initActions();
         /**
+          Initializes the toolbars.
+        */
+        void initToolbars();
+        /**
         * Initializes one action object
         */
         QAction* initAction(QAction* action, QString text, QString icon, QKeySequence accel,
@@ -266,23 +270,23 @@ class BibleTime : public QMainWindow {
          */
         void slotOpenWindowsMenuAboutToShow();
         /**
-         * This slot is connected with the windowAutoTileVertical_action object
+         * This slot is connected with the windowAutoTileVerticalAction object
          */
         void slotAutoTileVertical();
         /**
-         * This slot is connected with the windowAutoTileHorizontal_action object
+         * This slot is connected with the windowAutoTileHorizontalAction object
          */
         void slotAutoTileHorizontal();
         /**
-         * This slot is connected with the windowAutoTile_action object
+         * This slot is connected with the windowAutoTileAction object
          */
         void slotAutoTile();
         /**
-         * This slot is connected with the windowAutoTabbed_action object
+         * This slot is connected with the windowAutoTabbedAction object
          */
         void slotAutoTabbed();
         /**
-         * This slot is connected with the windowAutoCascade_action object
+         * This slot is connected with the windowAutoCascadeAction object
          */
         void slotAutoCascade();
         void slotUpdateWindowArrangementActions( QAction* );
@@ -384,38 +388,63 @@ class BibleTime : public QMainWindow {
 
         QToolBar* m_mainToolBar;
 
+        // File menu:
         QMenu *m_fileMenu;
-        QMenu *m_viewMenu;
-        QMenu *m_searchMenu;
-        QMenu *m_windowMenu;
-        QMenu *m_settingsMenu;
-        QMenu *m_helpMenu;
-
-        // FILE menu actions
         BtOpenWorkAction *m_openWorkAction;
-        // VIEW menu actions
-        QAction* m_viewToolbar_action;
-        QMenu* m_openWindowsMenu;
-        /** WINDOW menu actions */
-        QAction* m_windowCascade_action;
-        QAction* m_windowTile_action;
-        QAction* m_windowTileHorizontal_action;
-        QAction* m_windowTileVertical_action;
-        QAction* m_windowManualMode_action;
-        QAction* m_windowAutoCascade_action;
-        QAction* m_windowAutoTile_action;
-        QAction* m_windowAutoTabbed_action;
-        QAction* m_windowAutoTileVertical_action;
-        QAction* m_windowAutoTileHorizontal_action;
-        QAction* m_windowClose_action;
-        QAction* m_windowCloseAll_action;
-        BtActionCollection* m_actionCollection;
+        QAction *m_quitAction;
+
+        // View menu:
+        QMenu *m_viewMenu;
+        QAction* m_viewToolbarAction;
+        QAction *m_showBookshelfAction;
+        QAction *m_showBookmarksAction;
+        QAction *m_showMagAction;
+        QMenu *m_textWindowsMenu;
+        QAction *m_showTextAreaHeadersAction;
+        QAction *m_showTextWindowNavigationAction;
+        QAction *m_showTextWindowModuleChooserAction;
+        QAction *m_showTextWindowToolButtonsAction;
+
+        // Search menu:
+        QMenu *m_searchMenu;
+        QAction *m_searchOpenWorksAction;
+        QAction *m_searchStandardBibleAction;
+
+        // Window menu:
+        QMenu *m_windowMenu;
+        QMenu *m_openWindowsMenu;
+        QAction *m_windowCascadeAction;
+        QAction *m_windowTileAction;
+        QAction *m_windowTileHorizontalAction;
+        QAction *m_windowTileVerticalAction;
+        QAction *m_windowManualModeAction;
+        QMenu *m_windowArrangementMenu;
+        QAction *m_windowAutoCascadeAction;
+        QAction *m_windowAutoTileAction;
+        QAction *m_windowAutoTabbedAction;
+        QAction *m_windowAutoTileVerticalAction;
+        QAction *m_windowAutoTileHorizontalAction;
+        QAction *m_windowCloseAction;
+        QAction *m_windowCloseAllAction;
+
+        // Settings menu:
+        QMenu *m_settingsMenu;
+        QAction *m_setPreferencesAction;
+        QAction *m_bookshelfManagerAction;
+
+        // Help menu:
+        QMenu *m_helpMenu;
+        QAction *m_openHandbookAction;
+        QAction *m_bibleStudyHowtoAction;
+        QAction *m_aboutBibleTimeAction;
+
+        BtActionCollection* mActionCollection;
 
         QMenu* m_windowSaveProfileMenu;
-        QAction* m_windowSaveToNewProfile_action;
+        QAction* m_windowSaveToNewProfileAction;
         QMenu* m_windowLoadProfileMenu;
         QMenu* m_windowDeleteProfileMenu;
-        QAction* m_windowFullscreen_action;
+        QAction* m_windowFullscreenAction;
 
         /**
          * Signal mapper to map windows to menu items.
@@ -454,7 +483,7 @@ class BibleTime : public QMainWindow {
         void slotDebugTimeout();
         void slotShowDebugWindow(bool);
     private:
-        QAction *m_debugWidget_action;
+        QAction *m_debugWidgetAction;
         static QLabel *m_debugWindow;
         static QMutex m_debugWindowLock;
 #endif

@@ -92,7 +92,7 @@ QAction* BibleTime::initAction(QAction* action, QString text, QString icon,
         action->setIcon(DU::getIcon(icon));
     action->setShortcut(accel);
     if (tooltip != QString::null) action->setToolTip(tooltip);
-    m_actionCollection->addAction(actionName, action);
+    mActionCollection->addAction(actionName, action);
     if (slot) QObject::connect( action, SIGNAL(triggered()), this, slot );
     return action;
 }
@@ -273,233 +273,259 @@ void BibleTime::createMenuAndToolBar()
 
 /** Initializes the action objects of the GUI */
 void BibleTime::initActions() {
-    m_actionCollection = new BtActionCollection(this);
+    mActionCollection = new BtActionCollection(this);
+    insertKeyboardActions(mActionCollection);
 
-    /**
-     * Create the window to signal mapper and connect it up.
-     */
+    // Create the window to signal mapper and connect it up:
     m_windowMapper = new QSignalMapper(this);
     connect(m_windowMapper, SIGNAL(mapped(QWidget*)),
-            this, SLOT(slotSetActiveSubWindow(QWidget*)));
+            this,           SLOT(slotSetActiveSubWindow(QWidget*)));
 
-    insertKeyboardActions(m_actionCollection);
-
-    // Main menus
-    m_fileMenu = menuBar()->addMenu(tr("&File"));
-    m_viewMenu = menuBar()->addMenu(tr("&View"));
-    m_searchMenu = menuBar()->addMenu(tr("&Search"));
-    m_windowMenu = menuBar()->addMenu(tr("&Window"));
-    m_settingsMenu = menuBar()->addMenu(tr("Se&ttings"));
-    m_helpMenu = menuBar()->addMenu(tr("&Help"));
-
-    // ********** File menu *********************
-
+    // File menu actions:
     m_openWorkAction = new BtOpenWorkAction(this);
     connect(m_openWorkAction, SIGNAL(triggered(CSwordModuleInfo*)),
             this,             SLOT(createReadDisplayWindow(CSwordModuleInfo*)));
+
+    m_quitAction = mActionCollection->action("quit");
+    connect(m_quitAction, SIGNAL(triggered()),
+            this,         SLOT(quit()));
+
+    
+    // View menu actions:
+    m_windowFullscreenAction = mActionCollection->action("toggleFullscreen");
+    m_windowFullscreenAction->setCheckable(true);
+    connect(m_windowFullscreenAction, SIGNAL(triggered()),
+            this,                     SLOT(toggleFullscreen()));
+
+    m_viewToolbarAction = mActionCollection->action("showToolbar");
+    m_viewToolbarAction->setCheckable(true);
+    m_viewToolbarAction->setChecked(true);
+    connect(m_viewToolbarAction, SIGNAL(triggered()),
+            this,                SLOT(slotToggleToolbar()));
+
+    m_showBookshelfAction = m_bookshelfDock->toggleViewAction();
+    m_showBookshelfAction->setText(tr("Show Bookshelf"));
+
+    m_showBookmarksAction = m_bookmarksDock->toggleViewAction();
+    m_showBookmarksAction->setText(tr("Show Bookmarks"));
+
+    m_showMagAction = m_magDock->toggleViewAction();
+    m_showMagAction->setText(tr("Show Mag"));
+    
+    m_showTextAreaHeadersAction = new QAction(tr("Show text area headers"), this);
+    m_showTextAreaHeadersAction->setCheckable(true);
+    m_showTextAreaHeadersAction->setChecked(CBTConfig::get(CBTConfig::showTextWindowHeaders));
+    connect(m_showTextAreaHeadersAction, SIGNAL(toggled(bool)),
+            this,                        SLOT(slotToggleTextWindowHeader()));
+    
+    m_showTextWindowNavigationAction = new QAction(tr("Show navigation"), this);
+    m_showTextWindowNavigationAction->setCheckable(true);
+    m_showTextWindowNavigationAction->setChecked(CBTConfig::get(CBTConfig::showTextWindowNavigator));
+    connect(m_showTextWindowNavigationAction, SIGNAL(toggled(bool)),
+            this,                             SLOT(slotToggleTextWindowNavigator()));
+    
+    m_showTextWindowModuleChooserAction = new QAction(tr("Show work chooser buttons"), this);
+    m_showTextWindowModuleChooserAction->setCheckable(true);
+    m_showTextWindowModuleChooserAction->setChecked(CBTConfig::get(CBTConfig::showTextWindowModuleSelectorButtons));
+    connect(m_showTextWindowModuleChooserAction, SIGNAL(toggled(bool)),
+            this,                                SLOT(slotToggleTextWindowModuleChooser()));
+    
+    m_showTextWindowToolButtonsAction = new QAction(tr("Show tools"), this);
+    m_showTextWindowToolButtonsAction->setCheckable(true);
+    m_showTextWindowToolButtonsAction->setChecked(CBTConfig::get(CBTConfig::showTextWindowToolButtons));
+    connect(m_showTextWindowToolButtonsAction, SIGNAL(toggled(bool)),
+            this,                              SLOT(slotToggleTextWindowToolButtons()));
+
+    // Search menu actions:
+    m_searchOpenWorksAction = mActionCollection->action("searchOpenWorks");
+    connect(m_searchOpenWorksAction, SIGNAL(triggered()),
+            this,                    SLOT(slotSearchModules()));
+
+    m_searchStandardBibleAction = mActionCollection->action("searchStdBible");
+    connect(m_searchStandardBibleAction, SIGNAL(triggered()),
+            this,                        SLOT(slotSearchDefaultBible()));
+
+    // Window menu actions:
+    m_windowCloseAction = mActionCollection->action("closeWindow");
+    connect(m_windowCloseAction, SIGNAL(triggered()),
+            m_mdi,                SLOT(closeActiveSubWindow()));
+
+    m_windowCloseAllAction = mActionCollection->action("closeAllWindows");
+    connect(m_windowCloseAllAction, SIGNAL(triggered()),
+            m_mdi,                   SLOT(closeAllSubWindows()));
+
+    m_windowCascadeAction = mActionCollection->action("cascade");
+    connect(m_windowCascadeAction, SIGNAL(triggered()),
+            this,                   SLOT(slotCascade()));
+
+    m_windowTileAction = mActionCollection->action("tile");
+    connect(m_windowTileAction, SIGNAL(triggered()),
+            this,                SLOT(slotTile()));
+
+    m_windowTileVerticalAction = mActionCollection->action("tileVertically");
+    connect(m_windowTileVerticalAction, SIGNAL(triggered()),
+            this,                        SLOT(slotTileVertical()));
+
+    m_windowTileHorizontalAction = mActionCollection->action("tileHorizontally");
+    connect(m_windowTileHorizontalAction, SIGNAL(triggered()),
+            this,                          SLOT(slotTileHorizontal()));
+
+    m_windowManualModeAction = mActionCollection->action("manualArrangement");
+    m_windowManualModeAction->setCheckable(true);
+    connect(m_windowManualModeAction, SIGNAL(triggered()),
+            this,                      SLOT(slotManualArrangementMode()));
+
+    m_windowAutoTabbedAction = mActionCollection->action("autoTabbed");
+    m_windowAutoTabbedAction->setCheckable(true);
+    connect(m_windowAutoTabbedAction, SIGNAL(triggered()),
+            this,                      SLOT(slotAutoTabbed()));
+
+    //: Vertical tiling means that windows are vertical, placed side by side
+    m_windowAutoTileVerticalAction = mActionCollection->action("autoVertical");
+    m_windowAutoTileVerticalAction->setCheckable(true);
+    connect(m_windowAutoTileVerticalAction, SIGNAL(triggered()),
+            this,                            SLOT(slotAutoTileVertical()));
+
+    //: Horizontal tiling means that windows are horizontal, placed on top of each other
+    m_windowAutoTileHorizontalAction = mActionCollection->action("autoHorizontal");
+    m_windowAutoTileHorizontalAction->setCheckable(true);
+    connect(m_windowAutoTileHorizontalAction, SIGNAL(triggered()),
+            this,                              SLOT(slotAutoTileHorizontal()));
+
+    m_windowAutoTileAction = mActionCollection->action("autoTile");
+    m_windowAutoTileAction->setCheckable(true);
+    connect(m_windowAutoTileAction, SIGNAL(triggered()),
+            this,                    SLOT(slotAutoTile()));
+
+    m_windowAutoCascadeAction = mActionCollection->action("autoCascade");
+    m_windowAutoCascadeAction->setCheckable(true);
+    connect(m_windowAutoCascadeAction, SIGNAL(triggered()),
+            this,                       SLOT(slotAutoCascade()));
+
+    m_windowSaveToNewProfileAction = mActionCollection->action("saveNewSession");
+    connect(m_windowSaveToNewProfileAction, SIGNAL(triggered()),
+            this,                            SLOT(saveToNewProfile()));
+
+    m_setPreferencesAction = mActionCollection->action("setPreferences");
+    connect(m_setPreferencesAction, SIGNAL(triggered()),
+            this,                   SLOT(slotSettingsOptions()));
+
+    m_bookshelfManagerAction = mActionCollection->action("bookshelfManager");
+    connect(m_bookshelfManagerAction, SIGNAL(triggered()),
+            this,                     SLOT(slotSwordSetupDialog()));
+
+    m_openHandbookAction = mActionCollection->action("openHandbook");
+    connect(m_openHandbookAction, SIGNAL(triggered()),
+            this,                 SLOT(openOnlineHelp_Handbook()));
+
+    m_bibleStudyHowtoAction = mActionCollection->action("bibleStudyHowto");
+    connect(m_bibleStudyHowtoAction, SIGNAL(triggered()),
+            this,                    SLOT(openOnlineHelp_Howto()));
+
+    m_aboutBibleTimeAction = mActionCollection->action("aboutBibleTime");
+    connect(m_aboutBibleTimeAction,  SIGNAL(triggered()),
+            this,                    SLOT(slotOpenAboutDialog()) );
+
+    #ifdef BT_DEBUG
+    m_debugWidgetAction = new QAction(tr("Show \"Whats this widget\" dialog"), this);
+    m_debugWidgetAction->setCheckable(true);
+    connect(m_debugWidgetAction, SIGNAL(triggered(bool)),
+            this,                 SLOT(slotShowDebugWindow(bool)));
+    #endif
+}
+
+void BibleTime::initMenubar() {
+    // File menu:
+    m_fileMenu = menuBar()->addMenu(tr("&File"));
+    m_fileMenu->addAction(m_openWorkAction);
+    m_fileMenu->addSeparator();
+    m_fileMenu->addAction(m_quitAction);
+
+    // View menu:
+    m_viewMenu = menuBar()->addMenu(tr("&View"));
+    m_viewMenu->addAction(m_windowFullscreenAction);
+    m_viewMenu->addAction(m_viewToolbarAction);
+    m_viewMenu->addAction(m_showBookshelfAction);
+    m_viewMenu->addAction(m_showBookmarksAction);
+    m_viewMenu->addAction(m_showMagAction);
+    m_viewMenu->addSeparator();
+    m_textWindowsMenu = new QMenu(tr("Text windows"));
+    m_textWindowsMenu->addAction(m_showTextAreaHeadersAction);
+    m_textWindowsMenu->addAction(m_showTextWindowNavigationAction);
+    m_textWindowsMenu->addAction(m_showTextWindowModuleChooserAction);
+    m_textWindowsMenu->addAction(m_showTextWindowToolButtonsAction);
+    m_viewMenu->addMenu(m_textWindowsMenu);
+
+    // Search menu:
+    m_searchMenu = menuBar()->addMenu(tr("&Search"));
+    m_searchMenu->addAction(m_searchOpenWorksAction);
+    m_searchMenu->addAction(m_searchStandardBibleAction);
+
+    // Window menu:
+    m_windowMenu = menuBar()->addMenu(tr("&Window"));
+    m_openWindowsMenu = new QMenu(tr("O&pen Windows"));
+    m_windowMenu->addMenu(m_openWindowsMenu);
+    m_windowMenu->addAction(m_windowCloseAction);
+    m_windowMenu->addAction(m_windowCloseAllAction);
+    m_windowMenu->addSeparator();
+    m_windowMenu->addAction(m_windowCascadeAction);
+    m_windowMenu->addAction(m_windowTileAction);
+    m_windowMenu->addAction(m_windowTileVerticalAction);
+    m_windowMenu->addAction(m_windowTileHorizontalAction);
+    m_windowArrangementMenu = new QMenu(tr("&Arrangement mode"));
+    m_windowArrangementMenu->addAction(m_windowManualModeAction);
+    m_windowArrangementMenu->addAction(m_windowAutoTabbedAction);
+    m_windowArrangementMenu->addAction(m_windowAutoTileVerticalAction);
+    m_windowArrangementMenu->addAction(m_windowAutoTileHorizontalAction);
+    m_windowArrangementMenu->addAction(m_windowAutoTileAction);
+    m_windowArrangementMenu->addAction(m_windowAutoCascadeAction);
+    m_windowMenu->addMenu(m_windowArrangementMenu);
+    m_windowMenu->addSeparator();
+    m_windowSaveProfileMenu = new QMenu(tr("&Save session"));
+    m_windowMenu->addMenu(m_windowSaveProfileMenu);
+    m_windowMenu->addAction(m_windowSaveToNewProfileAction);
+    m_windowLoadProfileMenu = new QMenu(tr("&Load session"));
+    m_windowMenu->addMenu(m_windowLoadProfileMenu);
+    m_windowDeleteProfileMenu = new QMenu(tr("&Delete session"));
+    m_windowMenu->addMenu(m_windowDeleteProfileMenu);
+    connect(m_windowLoadProfileMenu, SIGNAL(triggered(QAction*)),
+            this,                    SLOT(loadProfile(QAction*)));
+    connect(m_windowSaveProfileMenu, SIGNAL(triggered(QAction*)),
+            this,                    SLOT(saveProfile(QAction*)));
+    connect(m_windowDeleteProfileMenu, SIGNAL(triggered(QAction*)),
+            this,                      SLOT(deleteProfile(QAction*)));
+    refreshProfileMenus();
+
+    // Settings menu:
+    m_settingsMenu = menuBar()->addMenu(tr("Se&ttings"));
+    m_settingsMenu->addAction(m_setPreferencesAction);
+    m_settingsMenu->addSeparator();
+    m_settingsMenu->addAction(m_bookshelfManagerAction);
+
+    // Help menu:
+    m_helpMenu = menuBar()->addMenu(tr("&Help"));
+    m_helpMenu->addAction(m_openHandbookAction);
+    m_helpMenu->addAction(m_bibleStudyHowtoAction);
+    m_helpMenu->addSeparator();
+    m_helpMenu->addAction(m_aboutBibleTimeAction);
+    #ifdef BT_DEBUG
+    m_helpMenu->addSeparator();
+    m_helpMenu->addAction(m_debugWidgetAction);
+    #endif
+}
+
+void BibleTime::initToolbars() {
     QToolButton *openWorkButton = new QToolButton(this);
     openWorkButton->setDefaultAction(m_openWorkAction);
     openWorkButton->setPopupMode(QToolButton::InstantPopup);
     m_mainToolBar->addWidget(openWorkButton);
-    m_fileMenu->addAction(m_openWorkAction);
-    m_fileMenu->addSeparator();
 
-    QAction* tmp = m_actionCollection->action("quit");
-    m_fileMenu->addAction(tmp);
-    connect(tmp, SIGNAL(triggered()), this, SLOT(quit()) );
-
-    
-    // ********** View menu *********************
-    
-    m_windowFullscreen_action = m_actionCollection->action("toggleFullscreen");
-    m_windowFullscreen_action->setCheckable(true);
-    m_viewMenu->addAction(m_windowFullscreen_action);
     m_mainToolBar->addSeparator();
-    m_mainToolBar->addAction(m_windowFullscreen_action);
-    connect(m_windowFullscreen_action, SIGNAL(triggered()), this, SLOT(toggleFullscreen()) );
-
-    m_viewToolbar_action = m_actionCollection->action("showToolbar");
-    m_viewToolbar_action->setCheckable(true);
-    m_viewToolbar_action->setChecked(true);
-    m_viewMenu->addAction(m_viewToolbar_action);
-    connect(m_viewToolbar_action, SIGNAL(triggered()), this, SLOT(slotToggleToolbar()) );
-
-    QAction* action = m_bookshelfDock->toggleViewAction();
-    action->setText(tr("Show Bookshelf"));
-    m_viewMenu->addAction(action);
-
-    action = m_bookmarksDock->toggleViewAction();
-    action->setText(tr("Show Bookmarks"));
-    m_viewMenu->addAction(action);
-
-    action = m_magDock->toggleViewAction();
-    action->setText(tr("Show Mag"));
-    m_viewMenu->addAction(action);
-
-    m_viewMenu->addSeparator();
-    QMenu* textWindowsMenu = new QMenu(tr("Text windows"));
-    m_viewMenu->addMenu(textWindowsMenu);
-    
-    action = new QAction(tr("Show text area headers"), this);
-    action->setCheckable(true);
-    action->setChecked(CBTConfig::get(CBTConfig::showTextWindowHeaders));
-    connect(action, SIGNAL(toggled(bool)), SLOT(slotToggleTextWindowHeader()));
-    textWindowsMenu->addAction(action);
-    
-    action = new QAction(tr("Show navigation"), this);
-    action->setCheckable(true);
-    action->setChecked(CBTConfig::get(CBTConfig::showTextWindowNavigator));
-    connect(action, SIGNAL(toggled(bool)), SLOT(slotToggleTextWindowNavigator()));
-    textWindowsMenu->addAction(action);
-    
-    action = new QAction(tr("Show work chooser buttons"), this);
-    action->setCheckable(true);
-    action->setChecked(CBTConfig::get(CBTConfig::showTextWindowModuleSelectorButtons));
-    connect(action, SIGNAL(toggled(bool)), SLOT(slotToggleTextWindowModuleChooser()));
-    textWindowsMenu->addAction(action);
-    
-    action = new QAction(tr("Show tools"), this);
-    action->setCheckable(true);
-    action->setChecked(CBTConfig::get(CBTConfig::showTextWindowToolButtons));
-    connect(action, SIGNAL(toggled(bool)), SLOT(slotToggleTextWindowToolButtons()));
-    textWindowsMenu->addAction(action);
-    
-    // *************************************
+    m_mainToolBar->addAction(m_windowFullscreenAction);
     m_mainToolBar->addSeparator();
-
-    tmp = m_actionCollection->action("searchOpenWorks");
-    m_searchMenu->addAction(tmp);
-    m_mainToolBar->addAction(tmp);
+    m_mainToolBar->addAction(m_searchOpenWorksAction);
     m_mainToolBar->addSeparator();
-    connect(tmp, SIGNAL(triggered()), this, SLOT(slotSearchModules()) );
-
-    tmp = m_actionCollection->action("searchStdBible");
-    m_searchMenu->addAction(tmp);
-    connect(tmp, SIGNAL(triggered()), this, SLOT(slotSearchDefaultBible()) );
-
-    /**
-     * Window Menu
-     */
-    m_openWindowsMenu = new QMenu(tr("O&pen Windows"), m_windowMenu);
-    m_windowMenu->addMenu(m_openWindowsMenu);
-
-    m_windowClose_action = m_actionCollection->action("closeWindow");
-    m_windowMenu->addAction(m_windowClose_action);
-    connect(m_windowClose_action, SIGNAL(triggered()), m_mdi, SLOT(closeActiveSubWindow()));
-
-    m_windowCloseAll_action = m_actionCollection->action("closeAllWindows");
-    m_windowMenu->addAction(m_windowCloseAll_action);
-    connect(m_windowCloseAll_action, SIGNAL(triggered()), m_mdi, SLOT(closeAllSubWindows()));
-
-    m_windowMenu->addSeparator();
-
-    // *** Window arrangement actions ***
-
-    m_windowCascade_action = m_actionCollection->action("cascade");
-    m_windowMenu->addAction(m_windowCascade_action);
-    connect(m_windowCascade_action, SIGNAL(triggered()), this, SLOT(slotCascade()) );
-
-    m_windowTile_action = m_actionCollection->action("tile");
-    m_windowMenu->addAction(m_windowTile_action);
-    connect(m_windowTile_action, SIGNAL(triggered()), this, SLOT(slotTile()) );
-
-    m_windowTileVertical_action = m_actionCollection->action("tileVertically");
-    m_windowMenu->addAction(m_windowTileVertical_action);
-    connect(m_windowTileVertical_action, SIGNAL(triggered()), this, SLOT(slotTileVertical()) );
-
-    m_windowTileHorizontal_action = m_actionCollection->action("tileHorizontally");
-    m_windowMenu->addAction(m_windowTileHorizontal_action);
-    connect(m_windowTileHorizontal_action, SIGNAL(triggered()), this, SLOT(slotTileHorizontal()) );
-
-    QMenu* arrangementMenu = new QMenu(tr("&Arrangement mode"));
-    m_windowMenu->addMenu(arrangementMenu);
-
-    m_windowManualMode_action = m_actionCollection->action("manualArrangement");
-    m_windowManualMode_action->setCheckable(true);
-    arrangementMenu->addAction(m_windowManualMode_action);
-    connect(m_windowManualMode_action, SIGNAL(triggered()), this, SLOT(slotManualArrangementMode()) );
-
-    m_windowAutoTabbed_action = m_actionCollection->action("autoTabbed");
-    m_windowAutoTabbed_action->setCheckable(true);
-    arrangementMenu->addAction(m_windowAutoTabbed_action);
-    connect(m_windowAutoTabbed_action, SIGNAL(triggered()), this, SLOT(slotAutoTabbed()) );
-
-    //: Vertical tiling means that windows are vertical, placed side by side
-    m_windowAutoTileVertical_action = m_actionCollection->action("autoVertical");
-    m_windowAutoTileVertical_action->setCheckable(true);
-    arrangementMenu->addAction(m_windowAutoTileVertical_action);
-    connect(m_windowAutoTileVertical_action, SIGNAL(triggered()), this, SLOT(slotAutoTileVertical()) );
-
-    //: Horizontal tiling means that windows are horizontal, placed on top of each other
-    m_windowAutoTileHorizontal_action = m_actionCollection->action("autoHorizontal");
-    m_windowAutoTileHorizontal_action->setCheckable(true);
-    arrangementMenu->addAction(m_windowAutoTileHorizontal_action);
-    connect(m_windowAutoTileHorizontal_action, SIGNAL(triggered()), this, SLOT(slotAutoTileHorizontal()) );
-
-    m_windowAutoTile_action = m_actionCollection->action("autoTile");
-    m_windowAutoTile_action->setCheckable(true);
-    arrangementMenu->addAction(m_windowAutoTile_action);
-    connect(m_windowAutoTile_action, SIGNAL(triggered()), this, SLOT(slotAutoTile()) );
-
-    m_windowAutoCascade_action = m_actionCollection->action("autoCascade");
-    m_windowAutoCascade_action->setCheckable(true);
-    arrangementMenu->addAction(m_windowAutoCascade_action);
-    connect(m_windowAutoCascade_action, SIGNAL(triggered()), this, SLOT(slotAutoCascade()) );
-
-    m_windowMenu->addSeparator();
-
-    m_windowSaveProfileMenu = new QMenu(tr("&Save session"));
-    m_windowMenu->addMenu(m_windowSaveProfileMenu);
-
-    m_windowSaveToNewProfile_action = m_actionCollection->action("saveNewSession");
-    m_windowMenu->addAction(m_windowSaveToNewProfile_action);
-    connect(m_windowSaveToNewProfile_action, SIGNAL(triggered()), this, SLOT(saveToNewProfile()) );
-
-    m_windowLoadProfileMenu = new QMenu(tr("&Load session"));
-    m_windowMenu->addMenu(m_windowLoadProfileMenu);
-
-    m_windowDeleteProfileMenu = new QMenu(tr("&Delete session"));
-    m_windowMenu->addMenu(m_windowDeleteProfileMenu);
-
-    QObject::connect(m_windowLoadProfileMenu, SIGNAL(triggered(QAction*)), SLOT(loadProfile(QAction*)));
-    QObject::connect(m_windowSaveProfileMenu, SIGNAL(triggered(QAction*)), SLOT(saveProfile(QAction*)));
-    QObject::connect(m_windowDeleteProfileMenu, SIGNAL(triggered(QAction*)), SLOT(deleteProfile(QAction*)));
-
-    refreshProfileMenus();
-
-    tmp = m_actionCollection->action("setPreferences");
-    m_settingsMenu->addAction(tmp);
-    connect(tmp, SIGNAL(triggered()), this, SLOT(slotSettingsOptions()) );
-
-    m_settingsMenu->addSeparator();
-
-    tmp = m_actionCollection->action("bookshelfManager");
-    m_settingsMenu->addAction(tmp);
-    connect(tmp, SIGNAL(triggered()), this, SLOT(slotSwordSetupDialog()) );
-
-    tmp = m_actionCollection->action("openHandbook");
-    m_helpMenu->addAction(tmp);
-    m_mainToolBar->addAction(tmp);
-    connect(tmp, SIGNAL(triggered()), this, SLOT(openOnlineHelp_Handbook()) );
-
-    tmp = m_actionCollection->action("bibleStudyHowto");
-    m_helpMenu->addAction(tmp);
-    connect(tmp, SIGNAL(triggered()), this, SLOT(openOnlineHelp_Howto()) );
-
-    m_helpMenu->addSeparator();
-
-    tmp = m_actionCollection->action("aboutBibleTime");
-    m_helpMenu->addAction(tmp);
-    connect(tmp, SIGNAL(triggered()), this, SLOT(slotOpenAboutDialog()) );
-
-    #ifdef BT_DEBUG
-    m_helpMenu->addSeparator();
-    m_debugWidget_action = new QAction(tr("Show \"Whats this widget\" dialog"), this);
-    m_debugWidget_action->setCheckable(true);
-    connect(m_debugWidget_action, SIGNAL(triggered(bool)),
-            this,                 SLOT(slotShowDebugWindow(bool)));
-    m_helpMenu->addAction(m_debugWidget_action);
-    #endif
+    m_mainToolBar->addAction(m_openHandbookAction);
 }
 
 /** Initializes the SIGNAL / SLOT connections */
@@ -631,7 +657,7 @@ void BibleTime::applyProfileSettings( CProfile* p ) {
     //first Main Window state
     restoreState(p->getMainwindowState());
     restoreGeometry(p->getMainwindowGeometry());
-    m_windowFullscreen_action->setChecked(isFullScreen());
+    m_windowFullscreenAction->setChecked(isFullScreen());
 
     const CMDIArea::MDIArrangementMode newArrangementMode = p->getMDIArrangementMode();
     //make sure actions are updated by calling the slot functions
@@ -663,8 +689,8 @@ void BibleTime::applyProfileSettings( CProfile* p ) {
 }
 
 void BibleTime::storeProfileSettings( CProfile* p ) {
-    Q_ASSERT(p && m_windowFullscreen_action);
-    if (!p || !m_windowFullscreen_action) return;
+    Q_ASSERT(p && m_windowFullscreenAction);
+    if (!p || !m_windowFullscreenAction) return;
 
     p->setMainwindowState(saveState());
     p->setMainwindowGeometry(saveGeometry());
@@ -707,7 +733,7 @@ void BibleTime::deleteDebugWindow() {
 void BibleTime::slotDebugWindowClosing() {
     QMutexLocker lock(&m_debugWindowLock);
     m_debugWindow = 0;
-    m_debugWidget_action->setChecked(false);
+    m_debugWidgetAction->setChecked(false);
 }
 
 void BibleTime::slotDebugTimeout() {
