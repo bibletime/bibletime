@@ -285,12 +285,12 @@ void BibleTime::initActions() {
     insertKeyboardActions(m_actionCollection);
 
     // Main menus
-    QMenu* fileMenu = menuBar()->addMenu(tr("&File"));
-    QMenu* viewMenu = menuBar()->addMenu(tr("&View"));
-    QMenu* searchMenu = menuBar()->addMenu(tr("&Search"));
+    m_fileMenu = menuBar()->addMenu(tr("&File"));
+    m_viewMenu = menuBar()->addMenu(tr("&View"));
+    m_searchMenu = menuBar()->addMenu(tr("&Search"));
     m_windowMenu = menuBar()->addMenu(tr("&Window"));
-    QMenu* settingsMenu = menuBar()->addMenu(tr("Se&ttings"));
-    QMenu* helpMenu = menuBar()->addMenu(tr("&Help"));
+    m_settingsMenu = menuBar()->addMenu(tr("Se&ttings"));
+    m_helpMenu = menuBar()->addMenu(tr("&Help"));
 
     // ********** File menu *********************
 
@@ -301,11 +301,11 @@ void BibleTime::initActions() {
     openWorkButton->setDefaultAction(m_openWorkAction);
     openWorkButton->setPopupMode(QToolButton::InstantPopup);
     m_mainToolBar->addWidget(openWorkButton);
-    fileMenu->addAction(m_openWorkAction);
-    fileMenu->addSeparator();
+    m_fileMenu->addAction(m_openWorkAction);
+    m_fileMenu->addSeparator();
 
     QAction* tmp = m_actionCollection->action("quit");
-    fileMenu->addAction(tmp);
+    m_fileMenu->addAction(tmp);
     connect(tmp, SIGNAL(triggered()), this, SLOT(quit()) );
 
     
@@ -313,7 +313,7 @@ void BibleTime::initActions() {
     
     m_windowFullscreen_action = m_actionCollection->action("toggleFullscreen");
     m_windowFullscreen_action->setCheckable(true);
-    viewMenu->addAction(m_windowFullscreen_action);
+    m_viewMenu->addAction(m_windowFullscreen_action);
     m_mainToolBar->addSeparator();
     m_mainToolBar->addAction(m_windowFullscreen_action);
     connect(m_windowFullscreen_action, SIGNAL(triggered()), this, SLOT(toggleFullscreen()) );
@@ -321,24 +321,24 @@ void BibleTime::initActions() {
     m_viewToolbar_action = m_actionCollection->action("showToolbar");
     m_viewToolbar_action->setCheckable(true);
     m_viewToolbar_action->setChecked(true);
-    viewMenu->addAction(m_viewToolbar_action);
+    m_viewMenu->addAction(m_viewToolbar_action);
     connect(m_viewToolbar_action, SIGNAL(triggered()), this, SLOT(slotToggleToolbar()) );
 
     QAction* action = m_bookshelfDock->toggleViewAction();
     action->setText(tr("Show Bookshelf"));
-    viewMenu->addAction(action);
+    m_viewMenu->addAction(action);
 
     action = m_bookmarksDock->toggleViewAction();
     action->setText(tr("Show Bookmarks"));
-    viewMenu->addAction(action);
+    m_viewMenu->addAction(action);
 
     action = m_magDock->toggleViewAction();
     action->setText(tr("Show Mag"));
-    viewMenu->addAction(action);
+    m_viewMenu->addAction(action);
 
-    viewMenu->addSeparator();
+    m_viewMenu->addSeparator();
     QMenu* textWindowsMenu = new QMenu(tr("Text windows"));
-    viewMenu->addMenu(textWindowsMenu);
+    m_viewMenu->addMenu(textWindowsMenu);
     
     action = new QAction(tr("Show text area headers"), this);
     action->setCheckable(true);
@@ -368,13 +368,13 @@ void BibleTime::initActions() {
     m_mainToolBar->addSeparator();
 
     tmp = m_actionCollection->action("searchOpenWorks");
-    searchMenu->addAction(tmp);
+    m_searchMenu->addAction(tmp);
     m_mainToolBar->addAction(tmp);
     m_mainToolBar->addSeparator();
     connect(tmp, SIGNAL(triggered()), this, SLOT(slotSearchModules()) );
 
     tmp = m_actionCollection->action("searchStdBible");
-    searchMenu->addAction(tmp);
+    m_searchMenu->addAction(tmp);
     connect(tmp, SIGNAL(triggered()), this, SLOT(slotSearchDefaultBible()) );
 
     /**
@@ -468,37 +468,37 @@ void BibleTime::initActions() {
     refreshProfileMenus();
 
     tmp = m_actionCollection->action("setPreferences");
-    settingsMenu->addAction(tmp);
+    m_settingsMenu->addAction(tmp);
     connect(tmp, SIGNAL(triggered()), this, SLOT(slotSettingsOptions()) );
 
-    settingsMenu->addSeparator();
+    m_settingsMenu->addSeparator();
 
     tmp = m_actionCollection->action("bookshelfManager");
-    settingsMenu->addAction(tmp);
+    m_settingsMenu->addAction(tmp);
     connect(tmp, SIGNAL(triggered()), this, SLOT(slotSwordSetupDialog()) );
 
     tmp = m_actionCollection->action("openHandbook");
-    helpMenu->addAction(tmp);
+    m_helpMenu->addAction(tmp);
     m_mainToolBar->addAction(tmp);
     connect(tmp, SIGNAL(triggered()), this, SLOT(openOnlineHelp_Handbook()) );
 
     tmp = m_actionCollection->action("bibleStudyHowto");
-    helpMenu->addAction(tmp);
+    m_helpMenu->addAction(tmp);
     connect(tmp, SIGNAL(triggered()), this, SLOT(openOnlineHelp_Howto()) );
 
-    helpMenu->addSeparator();
+    m_helpMenu->addSeparator();
 
     tmp = m_actionCollection->action("aboutBibleTime");
-    helpMenu->addAction(tmp);
+    m_helpMenu->addAction(tmp);
     connect(tmp, SIGNAL(triggered()), this, SLOT(slotOpenAboutDialog()) );
 
     #ifdef BT_DEBUG
-    helpMenu->addSeparator();
+    m_helpMenu->addSeparator();
     m_debugWidget_action = new QAction(tr("Show \"Whats this widget\" dialog"), this);
     m_debugWidget_action->setCheckable(true);
     connect(m_debugWidget_action, SIGNAL(triggered(bool)),
             this,                 SLOT(slotShowDebugWindow(bool)));
-    helpMenu->addAction(m_debugWidget_action);
+    m_helpMenu->addAction(m_debugWidget_action);
     #endif
 }
 

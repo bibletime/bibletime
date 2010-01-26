@@ -383,11 +383,18 @@ class BibleTime : public QMainWindow {
         InfoDisplay::CInfoDisplay* m_infoDisplay;
 
         QToolBar* m_mainToolBar;
+
+        QMenu *m_fileMenu;
+        QMenu *m_viewMenu;
+        QMenu *m_searchMenu;
+        QMenu *m_windowMenu;
+        QMenu *m_settingsMenu;
+        QMenu *m_helpMenu;
+
         // FILE menu actions
         BtOpenWorkAction *m_openWorkAction;
         // VIEW menu actions
         QAction* m_viewToolbar_action;
-        QMenu* m_windowMenu;
         QMenu* m_openWindowsMenu;
         /** WINDOW menu actions */
         QAction* m_windowCascade_action;
