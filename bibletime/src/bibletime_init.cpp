@@ -63,14 +63,14 @@ void BibleTime::initView() {
     m_bookshelfDock = new BtBookshelfDockWidget(this);
     addDockWidget(Qt::LeftDockWidgetArea, m_bookshelfDock);
 
-    m_bookmarksDock = new QDockWidget(tr("Bookmarks"), this);
+    m_bookmarksDock = new QDockWidget(this);
     m_bookmarksDock->setObjectName("BookmarksDock");
     m_bookmarksPage = new CBookmarkIndex(0);
     m_bookmarksDock->setWidget(m_bookmarksPage);
     addDockWidget(Qt::LeftDockWidgetArea, m_bookmarksDock);
     tabifyDockWidget(m_bookmarksDock, m_bookshelfDock);
 
-    m_magDock = new QDockWidget(tr("Mag"), this);
+    m_magDock = new QDockWidget(this);
     m_magDock->setObjectName("MagDock");
     m_infoDisplay = new CInfoDisplay(this);
     m_infoDisplay->resize(150, 150);
@@ -265,10 +265,11 @@ void BibleTime::createMenuAndToolBar()
     menuBar();
 
     // Create main toolbar
-    m_mainToolBar = addToolBar(tr("Main Toolbar"));
+    m_mainToolBar = new QToolBar(this);
     m_mainToolBar->setObjectName("MainToolBar");
     m_mainToolBar->setFloatable(false);
     m_mainToolBar->setMovable(false);
+    addToolBar(m_mainToolBar);
 }
 
 /** Initializes the action objects of the GUI */
@@ -304,33 +305,28 @@ void BibleTime::initActions() {
             this,                SLOT(slotToggleToolbar()));
 
     m_showBookshelfAction = m_bookshelfDock->toggleViewAction();
-    m_showBookshelfAction->setText(tr("Show Bookshelf"));
-
     m_showBookmarksAction = m_bookmarksDock->toggleViewAction();
-    m_showBookmarksAction->setText(tr("Show Bookmarks"));
-
     m_showMagAction = m_magDock->toggleViewAction();
-    m_showMagAction->setText(tr("Show Mag"));
     
-    m_showTextAreaHeadersAction = new QAction(tr("Show text area headers"), this);
+    m_showTextAreaHeadersAction = new QAction(this);
     m_showTextAreaHeadersAction->setCheckable(true);
     m_showTextAreaHeadersAction->setChecked(CBTConfig::get(CBTConfig::showTextWindowHeaders));
     connect(m_showTextAreaHeadersAction, SIGNAL(toggled(bool)),
             this,                        SLOT(slotToggleTextWindowHeader()));
     
-    m_showTextWindowNavigationAction = new QAction(tr("Show navigation"), this);
+    m_showTextWindowNavigationAction = new QAction(this);
     m_showTextWindowNavigationAction->setCheckable(true);
     m_showTextWindowNavigationAction->setChecked(CBTConfig::get(CBTConfig::showTextWindowNavigator));
     connect(m_showTextWindowNavigationAction, SIGNAL(toggled(bool)),
             this,                             SLOT(slotToggleTextWindowNavigator()));
     
-    m_showTextWindowModuleChooserAction = new QAction(tr("Show work chooser buttons"), this);
+    m_showTextWindowModuleChooserAction = new QAction(this);
     m_showTextWindowModuleChooserAction->setCheckable(true);
     m_showTextWindowModuleChooserAction->setChecked(CBTConfig::get(CBTConfig::showTextWindowModuleSelectorButtons));
     connect(m_showTextWindowModuleChooserAction, SIGNAL(toggled(bool)),
             this,                                SLOT(slotToggleTextWindowModuleChooser()));
     
-    m_showTextWindowToolButtonsAction = new QAction(tr("Show tools"), this);
+    m_showTextWindowToolButtonsAction = new QAction(this);
     m_showTextWindowToolButtonsAction->setCheckable(true);
     m_showTextWindowToolButtonsAction->setChecked(CBTConfig::get(CBTConfig::showTextWindowToolButtons));
     connect(m_showTextWindowToolButtonsAction, SIGNAL(toggled(bool)),
@@ -427,7 +423,7 @@ void BibleTime::initActions() {
             this,                    SLOT(slotOpenAboutDialog()) );
 
     #ifdef BT_DEBUG
-    m_debugWidgetAction = new QAction(tr("Show \"Whats this widget\" dialog"), this);
+    m_debugWidgetAction = new QAction(this);
     m_debugWidgetAction->setCheckable(true);
     connect(m_debugWidgetAction, SIGNAL(triggered(bool)),
             this,                 SLOT(slotShowDebugWindow(bool)));
@@ -436,34 +432,37 @@ void BibleTime::initActions() {
 
 void BibleTime::initMenubar() {
     // File menu:
-    m_fileMenu = menuBar()->addMenu(tr("&File"));
+    m_fileMenu = new QMenu(this);
     m_fileMenu->addAction(m_openWorkAction);
     m_fileMenu->addSeparator();
     m_fileMenu->addAction(m_quitAction);
+    menuBar()->addMenu(m_fileMenu);
 
     // View menu:
-    m_viewMenu = menuBar()->addMenu(tr("&View"));
+    m_viewMenu = new QMenu(this);
     m_viewMenu->addAction(m_windowFullscreenAction);
     m_viewMenu->addAction(m_viewToolbarAction);
     m_viewMenu->addAction(m_showBookshelfAction);
     m_viewMenu->addAction(m_showBookmarksAction);
     m_viewMenu->addAction(m_showMagAction);
     m_viewMenu->addSeparator();
-    m_textWindowsMenu = new QMenu(tr("Text windows"));
+    m_textWindowsMenu = new QMenu(this);
     m_textWindowsMenu->addAction(m_showTextAreaHeadersAction);
     m_textWindowsMenu->addAction(m_showTextWindowNavigationAction);
     m_textWindowsMenu->addAction(m_showTextWindowModuleChooserAction);
     m_textWindowsMenu->addAction(m_showTextWindowToolButtonsAction);
     m_viewMenu->addMenu(m_textWindowsMenu);
+    menuBar()->addMenu(m_viewMenu);
 
     // Search menu:
-    m_searchMenu = menuBar()->addMenu(tr("&Search"));
+    m_searchMenu = new QMenu(this);
     m_searchMenu->addAction(m_searchOpenWorksAction);
     m_searchMenu->addAction(m_searchStandardBibleAction);
+    menuBar()->addMenu(m_searchMenu);
 
     // Window menu:
-    m_windowMenu = menuBar()->addMenu(tr("&Window"));
-    m_openWindowsMenu = new QMenu(tr("O&pen Windows"));
+    m_windowMenu = new QMenu(this);
+    m_openWindowsMenu = new QMenu(this);
     QObject::connect(m_openWindowsMenu, SIGNAL(aboutToShow()),
                      this,              SLOT(slotOpenWindowsMenuAboutToShow()));
     m_windowMenu->addMenu(m_openWindowsMenu);
@@ -474,7 +473,7 @@ void BibleTime::initMenubar() {
     m_windowMenu->addAction(m_windowTileAction);
     m_windowMenu->addAction(m_windowTileVerticalAction);
     m_windowMenu->addAction(m_windowTileHorizontalAction);
-    m_windowArrangementMenu = new QMenu(tr("&Arrangement mode"));
+    m_windowArrangementMenu = new QMenu(this);
     m_windowArrangementMenu->addAction(m_windowManualModeAction);
     m_windowArrangementMenu->addAction(m_windowAutoTabbedAction);
     m_windowArrangementMenu->addAction(m_windowAutoTileVerticalAction);
@@ -483,12 +482,12 @@ void BibleTime::initMenubar() {
     m_windowArrangementMenu->addAction(m_windowAutoCascadeAction);
     m_windowMenu->addMenu(m_windowArrangementMenu);
     m_windowMenu->addSeparator();
-    m_windowSaveProfileMenu = new QMenu(tr("&Save session"));
+    m_windowSaveProfileMenu = new QMenu(this);
     m_windowMenu->addMenu(m_windowSaveProfileMenu);
     m_windowMenu->addAction(m_windowSaveToNewProfileAction);
-    m_windowLoadProfileMenu = new QMenu(tr("&Load session"));
+    m_windowLoadProfileMenu = new QMenu(this);
     m_windowMenu->addMenu(m_windowLoadProfileMenu);
-    m_windowDeleteProfileMenu = new QMenu(tr("&Delete session"));
+    m_windowDeleteProfileMenu = new QMenu(this);
     m_windowMenu->addMenu(m_windowDeleteProfileMenu);
     connect(m_windowLoadProfileMenu, SIGNAL(triggered(QAction*)),
             this,                    SLOT(loadProfile(QAction*)));
@@ -497,17 +496,19 @@ void BibleTime::initMenubar() {
     connect(m_windowDeleteProfileMenu, SIGNAL(triggered(QAction*)),
             this,                      SLOT(deleteProfile(QAction*)));
     refreshProfileMenus();
+    menuBar()->addMenu(m_windowMenu);
     connect(m_windowMenu, SIGNAL(aboutToShow()),
             this,         SLOT(slotWindowMenuAboutToShow()));
 
     // Settings menu:
-    m_settingsMenu = menuBar()->addMenu(tr("Se&ttings"));
+    m_settingsMenu = new QMenu(this);
     m_settingsMenu->addAction(m_setPreferencesAction);
     m_settingsMenu->addSeparator();
     m_settingsMenu->addAction(m_bookshelfManagerAction);
+    menuBar()->addMenu(m_settingsMenu);
 
     // Help menu:
-    m_helpMenu = menuBar()->addMenu(tr("&Help"));
+    m_helpMenu = new QMenu(this);
     m_helpMenu->addAction(m_openHandbookAction);
     m_helpMenu->addAction(m_bibleStudyHowtoAction);
     m_helpMenu->addSeparator();
@@ -516,6 +517,7 @@ void BibleTime::initMenubar() {
     m_helpMenu->addSeparator();
     m_helpMenu->addAction(m_debugWidgetAction);
     #endif
+    menuBar()->addMenu(m_helpMenu);
 }
 
 void BibleTime::initToolbars() {
@@ -530,6 +532,36 @@ void BibleTime::initToolbars() {
     m_mainToolBar->addAction(m_searchOpenWorksAction);
     m_mainToolBar->addSeparator();
     m_mainToolBar->addAction(m_openHandbookAction);
+}
+
+void BibleTime::retranslateUi() {
+    m_bookmarksDock->setWindowTitle(tr("Bookmarks"));
+    m_magDock->setWindowTitle(tr("Mag"));
+    m_mainToolBar->setWindowTitle(tr("Main Toolbar"));
+
+    m_fileMenu->setTitle(tr("&File"));
+    m_viewMenu->setTitle(tr("&View"));
+        m_showBookshelfAction->setText(tr("Show Bookshelf"));
+        m_showBookmarksAction->setText(tr("Show Bookmarks"));
+        m_showMagAction->setText(tr("Show Mag"));
+        m_textWindowsMenu->setTitle(tr("Text windows"));
+            m_showTextAreaHeadersAction->setText(tr("Show text area headers"));
+            m_showTextWindowNavigationAction->setText(tr("Show navigation"));
+            m_showTextWindowModuleChooserAction->setText(tr("Show work chooser buttons"));
+            m_showTextWindowToolButtonsAction->setText(tr("Show tools"));
+    m_searchMenu->setTitle(tr("&Search"));
+    m_windowMenu->setTitle(tr("&Window"));
+        m_openWindowsMenu->setTitle(tr("O&pen Windows"));
+        m_windowArrangementMenu->setTitle(tr("&Arrangement mode"));
+        m_windowSaveProfileMenu->setTitle(tr("&Save session"));
+        m_windowLoadProfileMenu->setTitle(tr("&Load session"));
+        m_windowDeleteProfileMenu->setTitle(tr("&Delete session"));
+    m_settingsMenu->setTitle(tr("Se&ttings"));
+    m_helpMenu->setTitle(tr("&Help"));
+
+    #ifdef BT_DEBUG
+    m_debugWidgetAction->setText(tr("Show \"Whats this widget\" dialog"));
+    #endif
 }
 
 /** Initializes the SIGNAL / SLOT connections */

@@ -97,6 +97,7 @@ BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
 
     setWindowTitle("BibleTime " BT_VERSION);
     setWindowIcon(DU::getIcon(CResMgr::mainWindow::icon));
+    retranslateUi();
 }
 
 BibleTime::~BibleTime() {
