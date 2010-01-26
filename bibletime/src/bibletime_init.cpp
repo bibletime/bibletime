@@ -464,6 +464,8 @@ void BibleTime::initMenubar() {
     // Window menu:
     m_windowMenu = menuBar()->addMenu(tr("&Window"));
     m_openWindowsMenu = new QMenu(tr("O&pen Windows"));
+    QObject::connect(m_openWindowsMenu, SIGNAL(aboutToShow()),
+                     this,              SLOT(slotOpenWindowsMenuAboutToShow()));
     m_windowMenu->addMenu(m_openWindowsMenu);
     m_windowMenu->addAction(m_windowCloseAction);
     m_windowMenu->addAction(m_windowCloseAllAction);
@@ -495,6 +497,8 @@ void BibleTime::initMenubar() {
     connect(m_windowDeleteProfileMenu, SIGNAL(triggered(QAction*)),
             this,                      SLOT(deleteProfile(QAction*)));
     refreshProfileMenus();
+    connect(m_windowMenu, SIGNAL(aboutToShow()),
+            this,         SLOT(slotWindowMenuAboutToShow()));
 
     // Settings menu:
     m_settingsMenu = menuBar()->addMenu(tr("Se&ttings"));
@@ -530,27 +534,11 @@ void BibleTime::initToolbars() {
 
 /** Initializes the SIGNAL / SLOT connections */
 void BibleTime::initConnections() {
-    if (m_windowMenu) {
-        QObject::connect(m_windowMenu, SIGNAL(aboutToShow()), this, SLOT(slotWindowMenuAboutToShow()));
-    }
-    else {
-        qWarning() << "Main window: can't find window menu";
-    }
+    // Bookmarks page connections:
+    connect(m_bookmarksPage, SIGNAL(createReadDisplayWindow(QList<CSwordModuleInfo*>, const QString&)),
+            this,            SLOT(createReadDisplayWindow(QList<CSwordModuleInfo*>, const QString&)));
 
-    if (m_openWindowsMenu) {
-        QObject::connect(m_openWindowsMenu, SIGNAL(aboutToShow()),
-                         this, SLOT(slotOpenWindowsMenuAboutToShow()));
-    }
-    else {
-        qWarning() << "Main window: can't find open windows menu";
-    }
-
-    bool ok;
-    ok = connect(m_bookmarksPage,
-                 SIGNAL(createReadDisplayWindow(QList<CSwordModuleInfo*>, const QString&)),
-                 this,
-                 SLOT(createReadDisplayWindow(QList<CSwordModuleInfo*>, const QString&)));
-    Q_ASSERT(ok);
+    // Bookshelf dock connections:
     connect(m_bookshelfDock, SIGNAL(moduleOpenTriggered(CSwordModuleInfo*)),
             this, SLOT(createReadDisplayWindow(CSwordModuleInfo*)));
     connect(m_bookshelfDock, SIGNAL(moduleSearchTriggered(CSwordModuleInfo*)),
