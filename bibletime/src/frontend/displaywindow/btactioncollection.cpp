@@ -56,9 +56,7 @@ QAction* BtActionCollection::action(const QString& name) {
 
 QAction* BtActionCollection::addAction(const QString& name, QAction* action) {
     Q_ASSERT(action != 0);
-    Q_ASSERT(m_actions[name] == 0);   /// \todo replacing actions is ok???
-    int count;
-    count = m_actions.count();
+    Q_ASSERT(!m_actions.contains(name));   /// \todo replacing actions is ok???
     BtActionItem* item = new BtActionItem(this);
     item->action = action;
     item->defaultKeys = action->shortcut();
