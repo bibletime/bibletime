@@ -91,29 +91,27 @@ void CBookReadWindow::initConnections() {
 /** Init the view */
 void CBookReadWindow::initView() {
     QSplitter* splitter = new QSplitter(this);
+    m_treeChooser = new CBookTreeChooser(modules(), key(), splitter);
+    setDisplayWidget( CDisplay::createReadInstance(this, splitter) );
+    m_treeChooser->hide();
 
+    // Create Navigation toolbar
     setMainToolBar( new QToolBar(this) );
     mainToolBar()->setAllowedAreas(Qt::TopToolBarArea);
     mainToolBar()->setFloatable(false);
-
     addToolBar(mainToolBar());
-
-    m_treeChooser = new CBookTreeChooser(modules(), key(), splitter);
-    setDisplayWidget( CDisplay::createReadInstance(this, splitter) );
-
     setKeyChooser( CKeyChooser::createInstance(modules(), key(), mainToolBar()) );
 
+    // Create the Works toolbar
     setModuleChooserBar( new BtModuleChooserBar(getModuleList(), modules().first()->type(), this) );
     addToolBar(moduleChooserBar());
 
+    // Create the Tools toolbar
     setButtonsToolBar( new QToolBar(this) );
     buttonsToolBar()->setAllowedAreas(Qt::TopToolBarArea);
     buttonsToolBar()->setFloatable(false);
-
     setDisplaySettingsButton(new BtDisplaySettingsButton(buttonsToolBar()));
-
     addToolBar(buttonsToolBar());
-    m_treeChooser->hide();
 
     setCentralWidget( splitter );
     setWindowIcon(util::tool::getIconForModule(modules().first()));

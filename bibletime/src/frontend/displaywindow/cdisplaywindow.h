@@ -114,6 +114,9 @@ class CDisplayWindow : public QMainWindow, public CPointers {
         /** Sets and inits the properties of the tool buttons toolbar.*/
         void setButtonsToolBar( QToolBar* bar );
 
+        /** Sets and inits the properties of the format toolbar.*/
+        void setFormatToolBar( QToolBar* bar );
+
         /** Returns the main navigation toolbar. */
         inline QToolBar *mainToolBar() const {
             return m_mainToolBar;
@@ -122,6 +125,11 @@ class CDisplayWindow : public QMainWindow, public CPointers {
         /** Returns the tool buttons toolbar. */
         inline QToolBar *buttonsToolBar() const {
             return m_buttonsToolBar;
+        }
+
+        /** Returns the format toolbar. */
+        inline QToolBar *formatToolBar() const {
+            return m_formatToolBar;
         }
 
         /** Initialize the toolbars.*/
@@ -283,6 +291,7 @@ class CDisplayWindow : public QMainWindow, public CPointers {
         BtModuleChooserBar* m_moduleChooserBar;
         QToolBar* m_mainToolBar;
         QToolBar* m_buttonsToolBar;
+        QToolBar* m_formatToolBar;
         QToolBar* m_headerBar;
         QMenu* m_popupMenu;
         CDisplay* m_displayWidget;

@@ -311,7 +311,7 @@ const QString icon = "print.svg";
 namespace commentaryWindow {
 namespace syncWindow {
 const QString icon   = "sync.svg";
-const QKeySequence accel;
+const QKeySequence accel(Qt::SHIFT + Qt::Key_S);
 const char* actionName = "commentary_syncWindow";
 }
 }

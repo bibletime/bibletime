@@ -35,6 +35,7 @@ using namespace Profile;
 
 CDisplayWindow::CDisplayWindow(QList<CSwordModuleInfo*> modules, CMDIArea *parent)
         : QMainWindow(parent),
+        m_actionCollection(0),
         m_mdi(parent),
         m_displaySettingsButton(0),
         m_keyChooser(0),
@@ -42,6 +43,9 @@ CDisplayWindow::CDisplayWindow(QList<CSwordModuleInfo*> modules, CMDIArea *paren
         m_isReady(false),
         m_moduleChooserBar(0),
         m_mainToolBar(0),
+        m_buttonsToolBar(0),
+        m_formatToolBar(0),
+        m_headerBar(0),
         m_popupMenu(0),
         m_displayWidget(0) {
     qDebug() << "CDisplayWindow::CDisplayWindow";
@@ -298,7 +302,7 @@ void CDisplayWindow::setModuleChooserBar( BtModuleChooserBar* bar ) {
     }
 }
 
-/** Sets the module header of text area. */
+/** Setup the module header of text area. */
 void CDisplayWindow::setHeaderBar( QToolBar* header ) {
     m_headerBar = header;
     header->setMovable(false);
@@ -343,22 +347,29 @@ bool CDisplayWindow::init() {
     return true;
 }
 
-/** Sets the main toolbar. */
-void CDisplayWindow::setMainToolBar( QToolBar* bar ) {
-    m_mainToolBar = bar;
+static void prepareToolBar(QToolBar* bar, const QString& title, bool visible) {
     bar->setAllowedAreas(Qt::TopToolBarArea);
     bar->setFloatable(false);
-    bar->setWindowTitle(tr("Navigation"));
-    bar->setVisible(CBTConfig::get(CBTConfig::showTextWindowNavigator));
+    bar->setWindowTitle(title);
+    bar->setVisible(visible);
 }
 
-/** Sets the main toolbar. */
+/** Setup the Navigation toolbar. */
+void CDisplayWindow::setMainToolBar( QToolBar* bar ) {
+    prepareToolBar(bar, tr("Navigation"), CBTConfig::get(CBTConfig::showTextWindowNavigator) );
+    m_mainToolBar = bar;
+}
+
+/** Setup the Tools toolbar. */
 void CDisplayWindow::setButtonsToolBar( QToolBar* bar ) {
+    prepareToolBar(bar, tr("Tool"), CBTConfig::get(CBTConfig::showTextWindowToolButtons) );
     m_buttonsToolBar = bar;
-    bar->setAllowedAreas(Qt::TopToolBarArea);
-    bar->setFloatable(false);
-    bar->setWindowTitle(tr("Tools"));
-    bar->setVisible( CBTConfig::get(CBTConfig::showTextWindowToolButtons) );
+}
+
+/** Setup the Format toolbar. */
+void CDisplayWindow::setFormatToolBar( QToolBar* bar ) {
+    prepareToolBar(bar, tr("Format"), true );
+    m_formatToolBar = bar;
 }
 
 /** Sets the display settings button. */

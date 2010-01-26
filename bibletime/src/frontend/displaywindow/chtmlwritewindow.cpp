@@ -35,13 +35,20 @@ void CHTMLWriteWindow::initView() {
     setDisplayWidget( writeDisplay );
     setCentralWidget( displayWidget()->view() );
 
+    // Create Navigation toolbar
     setMainToolBar( new QToolBar(this) );
-    mainToolBar()->setAllowedAreas(Qt::TopToolBarArea);
-    mainToolBar()->setFloatable(false);
     addToolBar(mainToolBar());
 
     setKeyChooser( CKeyChooser::createInstance(modules(), key(), mainToolBar()) );
     mainToolBar()->addWidget(keyChooser());
+
+    // Create the Tools toolbar
+    setButtonsToolBar( new QToolBar(this) );
+    addToolBar(buttonsToolBar());
+
+    // Create the Format toolbar
+    setFormatToolBar( new QToolBar(this) );
+    addToolBar(formatToolBar());
 }
 
 void CHTMLWriteWindow::initConnections() {
@@ -54,7 +61,7 @@ void CHTMLWriteWindow::initConnections() {
 void CHTMLWriteWindow::initToolbars() {
     namespace DU = util::directory;
 
-    //setup the main toolbar
+    //setup the Tools toolbar
     m_actions.syncWindow = new QAction(
         DU::getIcon(CResMgr::displaywindows::commentaryWindow::syncWindow::icon),
         tr("Sync with active Bible"),
@@ -64,7 +71,7 @@ void CHTMLWriteWindow::initToolbars() {
     m_actions.syncWindow->setShortcut(CResMgr::displaywindows::commentaryWindow::syncWindow::accel);
     m_actions.syncWindow->setToolTip(tr("Synchronize (show the same verse) with the active Bible window"));
     actionCollection()->addAction(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName, m_actions.syncWindow);
-    mainToolBar()->addAction(m_actions.syncWindow);
+    buttonsToolBar()->addAction(m_actions.syncWindow);
 
     m_actions.saveText = new QAction(
         DU::getIcon(CResMgr::displaywindows::writeWindow::saveText::icon),
@@ -75,8 +82,7 @@ void CHTMLWriteWindow::initToolbars() {
     m_actions.saveText->setToolTip( tr("Save text") );
     QObject::connect(m_actions.saveText, SIGNAL(triggered()), this, SLOT( saveCurrentText() ) );
     actionCollection()->addAction(CResMgr::displaywindows::writeWindow::saveText::actionName, m_actions.saveText);
-    mainToolBar()->addAction(m_actions.saveText);
-
+    buttonsToolBar()->addAction(m_actions.saveText);
 
     m_actions.deleteEntry = new QAction(
         DU::getIcon(CResMgr::displaywindows::writeWindow::deleteEntry::icon),
@@ -87,7 +93,7 @@ void CHTMLWriteWindow::initToolbars() {
     m_actions.deleteEntry->setToolTip( tr("Delete current entry (no undo)") );
     QObject::connect(m_actions.deleteEntry, SIGNAL(triggered()), this, SLOT( deleteEntry() ) );
     actionCollection()->addAction(CResMgr::displaywindows::writeWindow::deleteEntry::actionName, m_actions.deleteEntry);
-    mainToolBar()->addAction(m_actions.deleteEntry);
+    buttonsToolBar()->addAction(m_actions.deleteEntry);
 
     m_actions.restoreText = new QAction(
         DU::getIcon(CResMgr::displaywindows::writeWindow::restoreText::icon),
@@ -98,14 +104,10 @@ void CHTMLWriteWindow::initToolbars() {
     m_actions.restoreText->setToolTip( tr("Restore original text, new text will be lost") );
     QObject::connect(m_actions.restoreText, SIGNAL(triggered()), this, SLOT( restoreText() ) );
     actionCollection()->addAction(CResMgr::displaywindows::writeWindow::restoreText::actionName, m_actions.restoreText);
-    mainToolBar()->addAction(m_actions.restoreText);
+    buttonsToolBar()->addAction(m_actions.restoreText);
 
-    //html formatting toolbar
-    QToolBar* bar = new QToolBar(this);
-    bar->setAllowedAreas(Qt::TopToolBarArea);
-    bar->setFloatable(false);
-    ((CWriteDisplay*)displayWidget())->setupToolbar( bar, actionCollection() );
-    addToolBar(bar);
+    //setup html formatting toolbar
+    ((CWriteDisplay*)displayWidget())->setupToolbar( formatToolBar(), actionCollection() );
 }
 
 void CHTMLWriteWindow::storeProfileSettings( CProfileWindow* profileWindow ) {

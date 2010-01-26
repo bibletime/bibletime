@@ -40,14 +40,16 @@ void CPlainWriteWindow::initView() {
     setDisplayWidget( CDisplay::createWriteInstance(this) );
     setCentralWidget( displayWidget()->view() );
 
+    // Create Navigation toolbar
     setMainToolBar( new QToolBar(this) );
-    mainToolBar()->setAllowedAreas(Qt::TopToolBarArea);
-    mainToolBar()->setFloatable(false);
     addToolBar(mainToolBar());
-    addToolBarBreak();
 
     setKeyChooser( CKeyChooser::createInstance(modules(), key(), mainToolBar()) );
     mainToolBar()->addWidget(keyChooser());
+
+    // Create the Tools toolbar
+    setButtonsToolBar( new QToolBar(this) );
+    addToolBar(buttonsToolBar());
 }
 
 void CPlainWriteWindow::initToolbars() {
@@ -62,7 +64,7 @@ void CPlainWriteWindow::initToolbars() {
     m_actions.syncWindow->setCheckable(true);
     m_actions.syncWindow->setShortcut(CResMgr::displaywindows::commentaryWindow::syncWindow::accel);
     m_actions.syncWindow->setToolTip(tr("Synchronize (show the same verse) with the active Bible window"));
-    mainToolBar()->addAction(m_actions.syncWindow);
+    buttonsToolBar()->addAction(m_actions.syncWindow);
     actionCollection()->addAction(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName, m_actions.syncWindow);
 
 
@@ -76,7 +78,7 @@ void CPlainWriteWindow::initToolbars() {
     QObject::connect(m_actions.saveText, SIGNAL(triggered()), this, SLOT(saveCurrentText()));
     m_actions.saveText->setToolTip( tr("Save text") );
     actionCollection()->addAction(CResMgr::displaywindows::writeWindow::saveText::actionName, m_actions.saveText);
-    mainToolBar()->addAction(m_actions.saveText);
+    buttonsToolBar()->addAction(m_actions.saveText);
 
 
     m_actions.deleteEntry = new QAction(
@@ -89,7 +91,7 @@ void CPlainWriteWindow::initToolbars() {
     QObject::connect(m_actions.deleteEntry, SIGNAL(triggered()), this, SLOT(deleteEntry()) );
     m_actions.deleteEntry->setToolTip( tr("Delete current entry (no undo)") );
     actionCollection()->addAction(CResMgr::displaywindows::writeWindow::deleteEntry::actionName, m_actions.deleteEntry);
-    mainToolBar()->addAction(m_actions.deleteEntry);
+    buttonsToolBar()->addAction(m_actions.deleteEntry);
 
 
     m_actions.restoreText = new QAction(
@@ -102,7 +104,7 @@ void CPlainWriteWindow::initToolbars() {
     QObject::connect(m_actions.restoreText, SIGNAL(triggered()), this, SLOT(restoreText()) );
     m_actions.restoreText->setToolTip( tr("Restore original text, new text will be lost") );
     actionCollection()->addAction(CResMgr::displaywindows::writeWindow::restoreText::actionName, m_actions.restoreText);
-    mainToolBar()->addAction(m_actions.restoreText);
+    buttonsToolBar()->addAction(m_actions.restoreText);
 }
 
 void CPlainWriteWindow::initConnections() {

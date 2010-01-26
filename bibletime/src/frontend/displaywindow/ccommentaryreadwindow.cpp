@@ -29,6 +29,7 @@ CCommentaryReadWindow::CCommentaryReadWindow(QList<CSwordModuleInfo*> modules, C
 }
 
 void CCommentaryReadWindow::insertKeyboardActions(BtActionCollection* const a) {
+    namespace DU = util::directory;
     QAction* qaction;
 
     qaction = new QAction(tr("Next book"), a);
@@ -54,6 +55,13 @@ void CCommentaryReadWindow::insertKeyboardActions(BtActionCollection* const a) {
     qaction = new QAction(tr("Previous verse"), a);
     qaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousVerse::accel);
     a->addAction("previousVerse", qaction);
+
+    qaction = new QAction(QIcon(DU::getIcon(CResMgr::displaywindows::commentaryWindow::syncWindow::icon)),
+        tr("Synchronize"), a);
+    qaction->setCheckable(true);
+    qaction->setShortcut(CResMgr::displaywindows::commentaryWindow::syncWindow::accel);
+    qaction->setToolTip(tr("Synchronize the displayed entry of this work with the active Bible window"));
+    a->addAction(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName, qaction);
 }
 
 void CCommentaryReadWindow::initActions() {
@@ -91,6 +99,10 @@ void CCommentaryReadWindow::initActions() {
     QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(previousVerse()) );
     addAction(qaction);
 
+    qaction = ac->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
+    m_syncButton = qaction;
+    addAction(qaction);
+
     CBTConfig::setupAccelSettings(CBTConfig::commentaryWindow, actionCollection());
 }
 
@@ -107,19 +119,7 @@ void CCommentaryReadWindow::storeProfileSettings( CProfileWindow* profileWindow 
 }
 
 void CCommentaryReadWindow::initToolbars() {
-    namespace DU = util::directory;
-
     CLexiconReadWindow::initToolbars();
-
-    m_syncButton = new QAction(
-        QIcon(DU::getIcon(CResMgr::displaywindows::commentaryWindow::syncWindow::icon)),
-        tr("Synchronize"),
-        actionCollection()
-    );
-    m_syncButton->setCheckable(true);
-    m_syncButton->setShortcut(CResMgr::displaywindows::commentaryWindow::syncWindow::accel);
-    m_syncButton->setToolTip(tr("Synchronize the displayed entry of this work with the active Bible window"));
-    actionCollection()->addAction(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName, m_syncButton);
     buttonsToolBar()->addAction(m_syncButton);
 }
 

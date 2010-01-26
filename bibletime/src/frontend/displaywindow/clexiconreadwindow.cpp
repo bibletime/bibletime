@@ -182,42 +182,54 @@ void CLexiconReadWindow::initConnections() {
 
 void CLexiconReadWindow::initView() {
     qDebug() << "CLexiconReadWindow::initView";
+
+    // Create display widget for this window
     setDisplayWidget( CDisplay::createReadInstance(this) );
+    setCentralWidget( displayWidget()->view() );
+    setWindowIcon(util::tool::getIconForModule(modules().first()));
+
+    // Create the Navigation toolbar
     setMainToolBar( new QToolBar(this) );
     addToolBar(mainToolBar());
+
+    // Create keychooser
     setKeyChooser( CKeyChooser::createInstance(modules(), key(), mainToolBar()) );
-    mainToolBar()->addWidget(keyChooser());
+
+    // Create the Works toolbar
     setModuleChooserBar( new BtModuleChooserBar(getModuleList(), modules().first()->type(), this) );
     addToolBar(moduleChooserBar());
+
+    // Create the Tools toolbar
     setButtonsToolBar( new QToolBar(this) );
     addToolBar(buttonsToolBar());
+
+    // Create the Text Header toolbar
     addToolBarBreak();
     setHeaderBar(new QToolBar(this));
     addToolBar(headerBar());
-    BtTextWindowHeader* h = new BtTextWindowHeader(this,  modules().first()->type(), getModuleList());
-    headerBar()->addWidget(h);
-    setWindowIcon(util::tool::getIconForModule(modules().first()));
-    setCentralWidget( displayWidget()->view() );
 }
 
 void CLexiconReadWindow::initToolbars() {
-    //main toolbar
+    //Navigation toolbar
     Q_ASSERT(m_actions.backInHistory);
+    mainToolBar()->addWidget(keyChooser());
     mainToolBar()->addAction(m_actions.backInHistory); //1st button
     mainToolBar()->addAction(m_actions.forwardInHistory); //2nd button
 
-    //buttons toolbar
+    //Tools toolbar
     QAction* action = qobject_cast<QAction*>(actionCollection()->action(
                           CResMgr::displaywindows::general::search::actionName));
     Q_ASSERT( action );
     if (action) {
         buttonsToolBar()->addAction(action);
     }
-
     setDisplaySettingsButton(new BtDisplaySettingsButton(buttonsToolBar()));
-
     /// \todo find the right place for the button
     buttonsToolBar()->addWidget(displaySettingsButton());
+
+    // Text Header toolbar
+    BtTextWindowHeader* h = new BtTextWindowHeader(this,  modules().first()->type(), getModuleList());
+    headerBar()->addWidget(h);
 }
 
 void CLexiconReadWindow::setupPopupMenu() {
