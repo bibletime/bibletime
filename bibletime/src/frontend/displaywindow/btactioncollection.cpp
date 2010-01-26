@@ -60,7 +60,7 @@ QAction* BtActionCollection::addAction(const QString& name, QAction* action) {
     BtActionItem* item = new BtActionItem(this);
     item->action = action;
     item->defaultKeys = action->shortcut();
-    m_actions[name] = item;
+    m_actions.insert(name, item);
     return action;
 }
 
