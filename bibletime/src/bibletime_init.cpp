@@ -294,7 +294,6 @@ void BibleTime::initActions() {
 
     // ********** File menu *********************
 
-    /// \todo Implement and attach a proper module opening dialog to m_openWorkAction
     m_openWorkAction = new BtOpenWorkAction(this);
     connect(m_openWorkAction, SIGNAL(triggered(CSwordModuleInfo*)),
             this,             SLOT(createReadDisplayWindow(CSwordModuleInfo*)));
