@@ -393,7 +393,8 @@ void CDisplayWindow::setDisplaySettingsButton( BtDisplaySettingsButton* button )
 }
 
 void CDisplayWindow::slotShowHeader(bool show) {
-    headerBar()->setVisible(show);
+    if (headerBar())
+        headerBar()->setVisible(show);
 }
 
 void CDisplayWindow::slotShowNavigator(bool show) {
