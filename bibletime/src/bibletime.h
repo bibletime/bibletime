@@ -438,7 +438,7 @@ class BibleTime : public QMainWindow {
         QAction *m_bibleStudyHowtoAction;
         QAction *m_aboutBibleTimeAction;
 
-        BtActionCollection* mActionCollection;
+        BtActionCollection* m_actionCollection;
 
         QMenu* m_windowSaveProfileMenu;
         QAction* m_windowSaveToNewProfileAction;

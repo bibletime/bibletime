@@ -92,7 +92,7 @@ QAction* BibleTime::initAction(QAction* action, QString text, QString icon,
         action->setIcon(DU::getIcon(icon));
     action->setShortcut(accel);
     if (tooltip != QString::null) action->setToolTip(tooltip);
-    mActionCollection->addAction(actionName, action);
+    m_actionCollection->addAction(actionName, action);
     if (slot) QObject::connect( action, SIGNAL(triggered()), this, slot );
     return action;
 }
@@ -273,8 +273,8 @@ void BibleTime::createMenuAndToolBar()
 
 /** Initializes the action objects of the GUI */
 void BibleTime::initActions() {
-    mActionCollection = new BtActionCollection(this);
-    insertKeyboardActions(mActionCollection);
+    m_actionCollection = new BtActionCollection(this);
+    insertKeyboardActions(m_actionCollection);
 
     // Create the window to signal mapper and connect it up:
     m_windowMapper = new QSignalMapper(this);
@@ -286,18 +286,18 @@ void BibleTime::initActions() {
     connect(m_openWorkAction, SIGNAL(triggered(CSwordModuleInfo*)),
             this,             SLOT(createReadDisplayWindow(CSwordModuleInfo*)));
 
-    m_quitAction = mActionCollection->action("quit");
+    m_quitAction = m_actionCollection->action("quit");
     connect(m_quitAction, SIGNAL(triggered()),
             this,         SLOT(quit()));
 
     
     // View menu actions:
-    m_windowFullscreenAction = mActionCollection->action("toggleFullscreen");
+    m_windowFullscreenAction = m_actionCollection->action("toggleFullscreen");
     m_windowFullscreenAction->setCheckable(true);
     connect(m_windowFullscreenAction, SIGNAL(triggered()),
             this,                     SLOT(toggleFullscreen()));
 
-    m_viewToolbarAction = mActionCollection->action("showToolbar");
+    m_viewToolbarAction = m_actionCollection->action("showToolbar");
     m_viewToolbarAction->setCheckable(true);
     m_viewToolbarAction->setChecked(true);
     connect(m_viewToolbarAction, SIGNAL(triggered()),
@@ -337,92 +337,92 @@ void BibleTime::initActions() {
             this,                              SLOT(slotToggleTextWindowToolButtons()));
 
     // Search menu actions:
-    m_searchOpenWorksAction = mActionCollection->action("searchOpenWorks");
+    m_searchOpenWorksAction = m_actionCollection->action("searchOpenWorks");
     connect(m_searchOpenWorksAction, SIGNAL(triggered()),
             this,                    SLOT(slotSearchModules()));
 
-    m_searchStandardBibleAction = mActionCollection->action("searchStdBible");
+    m_searchStandardBibleAction = m_actionCollection->action("searchStdBible");
     connect(m_searchStandardBibleAction, SIGNAL(triggered()),
             this,                        SLOT(slotSearchDefaultBible()));
 
     // Window menu actions:
-    m_windowCloseAction = mActionCollection->action("closeWindow");
+    m_windowCloseAction = m_actionCollection->action("closeWindow");
     connect(m_windowCloseAction, SIGNAL(triggered()),
             m_mdi,                SLOT(closeActiveSubWindow()));
 
-    m_windowCloseAllAction = mActionCollection->action("closeAllWindows");
+    m_windowCloseAllAction = m_actionCollection->action("closeAllWindows");
     connect(m_windowCloseAllAction, SIGNAL(triggered()),
             m_mdi,                   SLOT(closeAllSubWindows()));
 
-    m_windowCascadeAction = mActionCollection->action("cascade");
+    m_windowCascadeAction = m_actionCollection->action("cascade");
     connect(m_windowCascadeAction, SIGNAL(triggered()),
             this,                   SLOT(slotCascade()));
 
-    m_windowTileAction = mActionCollection->action("tile");
+    m_windowTileAction = m_actionCollection->action("tile");
     connect(m_windowTileAction, SIGNAL(triggered()),
             this,                SLOT(slotTile()));
 
-    m_windowTileVerticalAction = mActionCollection->action("tileVertically");
+    m_windowTileVerticalAction = m_actionCollection->action("tileVertically");
     connect(m_windowTileVerticalAction, SIGNAL(triggered()),
             this,                        SLOT(slotTileVertical()));
 
-    m_windowTileHorizontalAction = mActionCollection->action("tileHorizontally");
+    m_windowTileHorizontalAction = m_actionCollection->action("tileHorizontally");
     connect(m_windowTileHorizontalAction, SIGNAL(triggered()),
             this,                          SLOT(slotTileHorizontal()));
 
-    m_windowManualModeAction = mActionCollection->action("manualArrangement");
+    m_windowManualModeAction = m_actionCollection->action("manualArrangement");
     m_windowManualModeAction->setCheckable(true);
     connect(m_windowManualModeAction, SIGNAL(triggered()),
             this,                      SLOT(slotManualArrangementMode()));
 
-    m_windowAutoTabbedAction = mActionCollection->action("autoTabbed");
+    m_windowAutoTabbedAction = m_actionCollection->action("autoTabbed");
     m_windowAutoTabbedAction->setCheckable(true);
     connect(m_windowAutoTabbedAction, SIGNAL(triggered()),
             this,                      SLOT(slotAutoTabbed()));
 
     //: Vertical tiling means that windows are vertical, placed side by side
-    m_windowAutoTileVerticalAction = mActionCollection->action("autoVertical");
+    m_windowAutoTileVerticalAction = m_actionCollection->action("autoVertical");
     m_windowAutoTileVerticalAction->setCheckable(true);
     connect(m_windowAutoTileVerticalAction, SIGNAL(triggered()),
             this,                            SLOT(slotAutoTileVertical()));
 
     //: Horizontal tiling means that windows are horizontal, placed on top of each other
-    m_windowAutoTileHorizontalAction = mActionCollection->action("autoHorizontal");
+    m_windowAutoTileHorizontalAction = m_actionCollection->action("autoHorizontal");
     m_windowAutoTileHorizontalAction->setCheckable(true);
     connect(m_windowAutoTileHorizontalAction, SIGNAL(triggered()),
             this,                              SLOT(slotAutoTileHorizontal()));
 
-    m_windowAutoTileAction = mActionCollection->action("autoTile");
+    m_windowAutoTileAction = m_actionCollection->action("autoTile");
     m_windowAutoTileAction->setCheckable(true);
     connect(m_windowAutoTileAction, SIGNAL(triggered()),
             this,                    SLOT(slotAutoTile()));
 
-    m_windowAutoCascadeAction = mActionCollection->action("autoCascade");
+    m_windowAutoCascadeAction = m_actionCollection->action("autoCascade");
     m_windowAutoCascadeAction->setCheckable(true);
     connect(m_windowAutoCascadeAction, SIGNAL(triggered()),
             this,                       SLOT(slotAutoCascade()));
 
-    m_windowSaveToNewProfileAction = mActionCollection->action("saveNewSession");
+    m_windowSaveToNewProfileAction = m_actionCollection->action("saveNewSession");
     connect(m_windowSaveToNewProfileAction, SIGNAL(triggered()),
             this,                            SLOT(saveToNewProfile()));
 
-    m_setPreferencesAction = mActionCollection->action("setPreferences");
+    m_setPreferencesAction = m_actionCollection->action("setPreferences");
     connect(m_setPreferencesAction, SIGNAL(triggered()),
             this,                   SLOT(slotSettingsOptions()));
 
-    m_bookshelfManagerAction = mActionCollection->action("bookshelfManager");
+    m_bookshelfManagerAction = m_actionCollection->action("bookshelfManager");
     connect(m_bookshelfManagerAction, SIGNAL(triggered()),
             this,                     SLOT(slotSwordSetupDialog()));
 
-    m_openHandbookAction = mActionCollection->action("openHandbook");
+    m_openHandbookAction = m_actionCollection->action("openHandbook");
     connect(m_openHandbookAction, SIGNAL(triggered()),
             this,                 SLOT(openOnlineHelp_Handbook()));
 
-    m_bibleStudyHowtoAction = mActionCollection->action("bibleStudyHowto");
+    m_bibleStudyHowtoAction = m_actionCollection->action("bibleStudyHowto");
     connect(m_bibleStudyHowtoAction, SIGNAL(triggered()),
             this,                    SLOT(openOnlineHelp_Howto()));
 
-    m_aboutBibleTimeAction = mActionCollection->action("aboutBibleTime");
+    m_aboutBibleTimeAction = m_actionCollection->action("aboutBibleTime");
     connect(m_aboutBibleTimeAction,  SIGNAL(triggered()),
             this,                    SLOT(slotOpenAboutDialog()) );
 
