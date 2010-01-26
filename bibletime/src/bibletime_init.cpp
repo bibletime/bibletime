@@ -18,6 +18,7 @@
 #include <QPointer>
 #include <QSplitter>
 #include <QToolBar>
+#include <QToolButton>
 #include <QVBoxLayout>
 #include "backend/config/cbtconfig.h"
 #include "backend/managers/btstringmgr.h"
@@ -297,7 +298,10 @@ void BibleTime::initActions() {
     m_openWorkAction = new BtOpenWorkAction(this);
     connect(m_openWorkAction, SIGNAL(triggered(CSwordModuleInfo*)),
             this,             SLOT(createReadDisplayWindow(CSwordModuleInfo*)));
-    m_mainToolBar->addAction(m_openWorkAction);
+    QToolButton *openWorkButton = new QToolButton(this);
+    openWorkButton->setDefaultAction(m_openWorkAction);
+    openWorkButton->setPopupMode(QToolButton::InstantPopup);
+    m_mainToolBar->addWidget(openWorkButton);
     fileMenu->addAction(m_openWorkAction);
     fileMenu->addSeparator();
 
