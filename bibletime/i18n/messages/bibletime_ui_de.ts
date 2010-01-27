@@ -651,6 +651,25 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
 </context>
 <context>
+    <name>BtFontSettingsPage</name>
+    <message>
+        <source>You can specify a custom font for each language.</source>
+        <translation type="unfinished">Sie können eine angepasste Schrift für jede Sprache spezifizieren.</translation>
+    </message>
+    <message>
+        <source>The font selection below will apply to all texts in this language</source>
+        <translation type="unfinished">Die untenstehende Schriftauswahl wird für alle Texte in dieser Sprache gelten</translation>
+    </message>
+    <message>
+        <source>Use custom font</source>
+        <translation type="unfinished">Benutzerdefinierte Schrift verwenden</translation>
+    </message>
+    <message>
+        <source>Fonts</source>
+        <translation type="unfinished">Schriften</translation>
+    </message>
+</context>
+<context>
     <name>BtIndexPage</name>
     <message>
         <source>If selected, those indexes which have no corresponding work will be deleted when BibleTime starts</source>
@@ -882,6 +901,25 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <source>Failed</source>
         <translation>Fehler</translation>
+    </message>
+</context>
+<context>
+    <name>BtLanguageSettingsPage</name>
+    <message>
+        <source>Select the language in which the Biblical book names are displayed.</source>
+        <translation type="unfinished">Wählen Sie die Sprache in der die BIbelbücher-Namen angezeigt werden.</translation>
+    </message>
+    <message>
+        <source>Language for names of Bible books:</source>
+        <translation type="unfinished">Sprache der Bibelbücher-Namen:</translation>
+    </message>
+    <message>
+        <source>The languages which can be used for the biblical booknames</source>
+        <translation type="unfinished">Die Sprachen die für die Bibelbücher-Namen verwendet werden können</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation type="unfinished">Sprachen</translation>
     </message>
 </context>
 <context>
@@ -1489,11 +1527,19 @@ shortcut</source>
     </message>
     <message>
         <source>Tools</source>
-        <translation>Werkzeuge</translation>
+        <translation type="obsolete">Werkzeuge</translation>
     </message>
     <message>
         <source>Text area header</source>
         <translation>Kopfleiste für Textbereich</translation>
+    </message>
+    <message>
+        <source>Tool</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1651,35 +1697,35 @@ shortcut</source>
     <name>CLanguageSettingsPage</name>
     <message>
         <source>Use custom font</source>
-        <translation>Benutzerdefinierte Schrift verwenden</translation>
+        <translation type="obsolete">Benutzerdefinierte Schrift verwenden</translation>
     </message>
     <message>
         <source>Language for names of Bible books:</source>
-        <translation>Sprache der Bibelbücher-Namen:</translation>
+        <translation type="obsolete">Sprache der Bibelbücher-Namen:</translation>
     </message>
     <message>
         <source>The languages which can be used for the biblical booknames</source>
-        <translation>Die Sprachen die für die Bibelbücher-Namen verwendet werden können</translation>
+        <translation type="obsolete">Die Sprachen die für die Bibelbücher-Namen verwendet werden können</translation>
     </message>
     <message>
         <source>The font selection below will apply to all texts in this language</source>
-        <translation>Die untenstehende Schriftauswahl wird für alle Texte in dieser Sprache gelten</translation>
+        <translation type="obsolete">Die untenstehende Schriftauswahl wird für alle Texte in dieser Sprache gelten</translation>
     </message>
     <message>
         <source>Select the language in which the Biblical book names are displayed.</source>
-        <translation>Wählen Sie die Sprache in der die BIbelbücher-Namen angezeigt werden.</translation>
+        <translation type="obsolete">Wählen Sie die Sprache in der die BIbelbücher-Namen angezeigt werden.</translation>
     </message>
     <message>
         <source>Fonts</source>
-        <translation>Schriften</translation>
+        <translation type="obsolete">Schriften</translation>
     </message>
     <message>
         <source>You can specify a custom font for each language.</source>
-        <translation>Sie können eine angepasste Schrift für jede Sprache spezifizieren.</translation>
+        <translation type="obsolete">Sie können eine angepasste Schrift für jede Sprache spezifizieren.</translation>
     </message>
     <message>
         <source>Languages</source>
-        <translation>Sprachen</translation>
+        <translation type="obsolete">Sprachen</translation>
     </message>
     <message>
         <source></source>

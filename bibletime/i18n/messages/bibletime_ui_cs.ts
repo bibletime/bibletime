@@ -651,6 +651,25 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
 </context>
 <context>
+    <name>BtFontSettingsPage</name>
+    <message>
+        <source>You can specify a custom font for each language.</source>
+        <translation type="unfinished">Můžete vybrat vlastní písmo pro každý jazyk.</translation>
+    </message>
+    <message>
+        <source>The font selection below will apply to all texts in this language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use custom font</source>
+        <translation type="unfinished">Použít vlastní písmo</translation>
+    </message>
+    <message>
+        <source>Fonts</source>
+        <translation type="unfinished">Písma</translation>
+    </message>
+</context>
+<context>
     <name>BtIndexPage</name>
     <message>
         <source>If selected, those indexes which have no corresponding work will be deleted when BibleTime starts</source>
@@ -882,6 +901,25 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <source>Failed</source>
         <translation>Selhalo</translation>
+    </message>
+</context>
+<context>
+    <name>BtLanguageSettingsPage</name>
+    <message>
+        <source>Select the language in which the Biblical book names are displayed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language for names of Bible books:</source>
+        <translation type="unfinished">Jazyk jmen biblických knih:</translation>
+    </message>
+    <message>
+        <source>The languages which can be used for the biblical booknames</source>
+        <translation type="unfinished">Jazyky, které je možno použít pro jména biblických knih</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation type="unfinished">Jazyky</translation>
     </message>
 </context>
 <context>
@@ -1488,11 +1526,15 @@ shortcut</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Tools</source>
+        <source>Text area header</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Text area header</source>
+        <source>Tool</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Format</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1651,35 +1693,27 @@ shortcut</source>
     <name>CLanguageSettingsPage</name>
     <message>
         <source>Use custom font</source>
-        <translation>Použít vlastní písmo</translation>
+        <translation type="obsolete">Použít vlastní písmo</translation>
     </message>
     <message>
         <source>Language for names of Bible books:</source>
-        <translation>Jazyk jmen biblických knih:</translation>
+        <translation type="obsolete">Jazyk jmen biblických knih:</translation>
     </message>
     <message>
         <source>The languages which can be used for the biblical booknames</source>
-        <translation>Jazyky, které je možno použít pro jména biblických knih</translation>
-    </message>
-    <message>
-        <source>The font selection below will apply to all texts in this language</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Select the language in which the Biblical book names are displayed.</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Jazyky, které je možno použít pro jména biblických knih</translation>
     </message>
     <message>
         <source>Fonts</source>
-        <translation>Písma</translation>
+        <translation type="obsolete">Písma</translation>
     </message>
     <message>
         <source>You can specify a custom font for each language.</source>
-        <translation>Můžete vybrat vlastní písmo pro každý jazyk.</translation>
+        <translation type="obsolete">Můžete vybrat vlastní písmo pro každý jazyk.</translation>
     </message>
     <message>
         <source>Languages</source>
-        <translation>Jazyky</translation>
+        <translation type="obsolete">Jazyky</translation>
     </message>
     <message>
         <source></source>
