@@ -7,7 +7,7 @@
 *
 **********/
 
-#include "frontend/settingsdialogs/clanguagesettings.h"
+#include "frontend/settingsdialogs/btfontsettings.h"
 
 #include <QCheckBox>
 #include <QComboBox>
@@ -24,92 +24,22 @@
 // Sword includes:
 #include <localemgr.h>
 #include <swlocale.h>
+#include "btfontsettings.h"
 
 
-CLanguageSettingsPage::CLanguageSettingsPage(QWidget* /*parent*/)
+BtFontSettingsPage::BtFontSettingsPage(QWidget* /*parent*/)
         : BtConfigPage() {
     namespace DU = util::directory;
 
     QVBoxLayout* layout = new QVBoxLayout(this);
 
-    //Sword locales
-    layout->addWidget(
-        util::tool::explanationLabel(
-            this,
-            tr(""),
-            tr("Select the language in which the Biblical book names are displayed.")
-        ));
-
-    m_swordLocaleCombo = new QComboBox(this);
-    QLabel* label = new QLabel( tr("Language for names of Bible books:"), this);
-    label->setBuddy(m_swordLocaleCombo);
-    m_swordLocaleCombo->setToolTip(tr("The languages which can be used for the biblical booknames"));
-
-
-    QHBoxLayout* hBoxLayout = new QHBoxLayout();
-    hBoxLayout->addWidget(label);
-    hBoxLayout->addWidget(m_swordLocaleCombo);
-    hBoxLayout->addStretch();
-    layout->addLayout(hBoxLayout);
-
-    QStringList languageNames;
-    languageNames.append( languageMgr()->languageForAbbrev("en_US")->translatedName() );
-
-    std::list<sword::SWBuf> locales = sword::LocaleMgr::getSystemLocaleMgr()->getAvailableLocales();
-    for (std::list<sword::SWBuf>::const_iterator it = locales.begin(); it != locales.end(); it++) {
-        //    qWarning("working on %s", (*it).c_str());
-        const CLanguageMgr::Language* const l =
-            CPointers::languageMgr()->languageForAbbrev( sword::LocaleMgr::getSystemLocaleMgr()->getLocale((*it).c_str())->getName() );
-
-        if (l->isValid()) {
-            languageNames.append( l->translatedName() );
-        }
-        else {
-            languageNames.append(
-                sword::LocaleMgr::getSystemLocaleMgr()->getLocale((*it).c_str())->getDescription()
-            );
-        }
-    } //for
-
-    languageNames.sort();
-    m_swordLocaleCombo->addItems( languageNames );
-
-    const CLanguageMgr::Language* const l =
-        CPointers::languageMgr()->languageForAbbrev( CBTConfig::get(CBTConfig::language) );
-
-    QString currentLanguageName;
-    if ( l->isValid() && languageNames.contains(l->translatedName()) ) { 	//tranlated language name is in the box
-        currentLanguageName = l->translatedName();
-    }
-    else { 	//a language like "German Abbrevs" might be the language to set
-        sword::SWLocale* locale =
-            sword::LocaleMgr::getSystemLocaleMgr()->getLocale( CBTConfig::get(CBTConfig::language).toLocal8Bit() );
-        if (locale) {
-            currentLanguageName = QString::fromLatin1(locale->getDescription());
-        }
-    }
-
-    if (currentLanguageName.isEmpty()) { 	// set english as default if nothing was chosen
-        Q_ASSERT(languageMgr()->languageForAbbrev("en_US"));
-        currentLanguageName = languageMgr()->languageForAbbrev("en_US")->translatedName();
-    }
-
-    //now set the item with the right name as current item
-    for (int i = 0; i < m_swordLocaleCombo->count(); ++i) {
-        if (currentLanguageName == m_swordLocaleCombo->itemText(i)) {
-            m_swordLocaleCombo->setCurrentIndex(i);
-            break; //item found, finish the loop
-        }
-    }
-
-    layout->addSpacing(20);
-
+ 
     //Font settings
 
     layout->addWidget(
         util::tool::explanationLabel(
             this,
-            tr("Fonts"),
+            "",
             tr("You can specify a custom font for each language.")
         )
     );
@@ -170,10 +100,10 @@ CLanguageSettingsPage::CLanguageSettingsPage(QWidget* /*parent*/)
 }
 
 
-CLanguageSettingsPage::~CLanguageSettingsPage() {
+BtFontSettingsPage::~BtFontSettingsPage() {
 }
 
-void CLanguageSettingsPage::save() {
+void BtFontSettingsPage::save() {
     for (QMap<QString, CBTConfig::FontSettingsPair>::Iterator it = m_fontMap.begin(); it != m_fontMap.end(); ++it ) {
         const CLanguageMgr::Language* const lang = languageMgr()->languageForTranslatedName(it.key());
         if (!lang->isValid()) { 	//we possibly use a language, for which we have only the abbrev
@@ -186,48 +116,17 @@ void CLanguageSettingsPage::save() {
             CBTConfig::set(lang, it.value());
         }
     }
-
-
-    QString languageAbbrev;
-
-    const QString currentLanguageName = m_swordLocaleCombo->currentText();
-    const CLanguageMgr::Language* const l = CPointers::languageMgr()->languageForTranslatedName( currentLanguageName );
-
-    if (l && l->isValid()) {
-        languageAbbrev = l->abbrev();
-    }
-    else { 	//it can be the lang abbrev like de_abbrev or the Sword description
-        std::list <sword::SWBuf> locales = sword::LocaleMgr::getSystemLocaleMgr()->getAvailableLocales();
-
-        for (std::list <sword::SWBuf>::iterator it = locales.begin(); it != locales.end(); it++) {
-            sword::SWLocale* locale = sword::LocaleMgr::getSystemLocaleMgr()->getLocale((*it).c_str());
-            Q_ASSERT(locale);
-
-            if ( locale && (QString::fromLatin1(locale->getDescription()) == currentLanguageName) ) {
-                languageAbbrev = QString::fromLatin1(locale->getName()); //we found the abbrevation for the current language
-                break;
-            }
-        }
-
-        if (languageAbbrev.isEmpty()) {
-            languageAbbrev = currentLanguageName; //probably a non-standard locale name like de_abbrev
-        }
-    }
-
-    if (!languageAbbrev.isEmpty()) {
-        CBTConfig::set(CBTConfig::language, languageAbbrev);
-    }
 }
 
 /**  */
-void CLanguageSettingsPage::newDisplayWindowFontSelected(const QFont &newFont) {
+void BtFontSettingsPage::newDisplayWindowFontSelected(const QFont &newFont) {
     //belongs to the languages/fonts page
     CBTConfig::FontSettingsPair oldSettings = m_fontMap[ m_usageCombo->currentText() ];
     m_fontMap.insert( m_usageCombo->currentText(), CBTConfig::FontSettingsPair(oldSettings.first, newFont) );
 }
 
 /** Called when the combobox contents is changed */
-void CLanguageSettingsPage::newDisplayWindowFontAreaSelected(const QString& usage) {
+void BtFontSettingsPage::newDisplayWindowFontAreaSelected(const QString& usage) {
     //belongs to fonts/languages
     useOwnFontClicked( m_fontMap[usage].first );
     m_useOwnFontCheck->setChecked( m_fontMap[usage].first );
@@ -237,7 +136,7 @@ void CLanguageSettingsPage::newDisplayWindowFontAreaSelected(const QString& usag
 
 
 /** This slot is called when the "Use own font for language" bo was clicked. */
-void CLanguageSettingsPage::useOwnFontClicked(bool isOn) {
+void BtFontSettingsPage::useOwnFontClicked(bool isOn) {
     namespace DU = util::directory;
 
     //belongs to fonts/languages
@@ -254,13 +153,13 @@ void CLanguageSettingsPage::useOwnFontClicked(bool isOn) {
 }
 
 
-QString CLanguageSettingsPage::iconName() {
+QString BtFontSettingsPage::iconName() {
     return CResMgr::settings::fonts::icon;
 }
-QString CLanguageSettingsPage::label() {
+QString BtFontSettingsPage::label() {
     //: Empty string, don't translate
     return tr("");
 }
-QString CLanguageSettingsPage::header() {
-    return tr("Languages");
+QString BtFontSettingsPage::header() {
+    return tr("Fonts");
 }

@@ -221,7 +221,8 @@ SET(bibletime_SRC_FRONTEND_SETTINGSDIALOG
 	src/frontend/settingsdialogs/cconfigurationdialog.cpp
 	src/frontend/settingsdialogs/cdisplaysettings.cpp
 	src/frontend/settingsdialogs/cfontchooser.cpp
-	src/frontend/settingsdialogs/clanguagesettings.cpp
+	src/frontend/settingsdialogs/btfontsettings.cpp
+    src/frontend/settingsdialogs/btlanguagesettings.cpp
 	src/frontend/settingsdialogs/clistwidget.cpp
 	src/frontend/settingsdialogs/cswordsettings.cpp
 )
@@ -392,7 +393,8 @@ SET(bibletime_MOCABLE_HEADERS
 	src/frontend/settingsdialogs/cconfigurationdialog.h
 	src/frontend/settingsdialogs/cdisplaysettings.h
 	src/frontend/settingsdialogs/cfontchooser.h
-	src/frontend/settingsdialogs/clanguagesettings.h
+	src/frontend/settingsdialogs/btfontsettings.h
+    src/frontend/settingsdialogs/btlanguagesettings.h
 	src/frontend/settingsdialogs/clistwidget.h
 	src/frontend/settingsdialogs/cswordsettings.h
 )

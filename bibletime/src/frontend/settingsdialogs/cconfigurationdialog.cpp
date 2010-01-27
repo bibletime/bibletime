@@ -16,7 +16,8 @@
 #include <QWidget>
 #include "frontend/settingsdialogs/cacceleratorsettings.h"
 #include "frontend/settingsdialogs/cdisplaysettings.h"
-#include "frontend/settingsdialogs/clanguagesettings.h"
+#include "frontend/settingsdialogs/btfontsettings.h"
+#include "frontend/settingsdialogs/btlanguagesettings.h"
 #include "frontend/settingsdialogs/cswordsettings.h"
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
@@ -30,6 +31,7 @@ CConfigurationDialog::CConfigurationDialog(QWidget * parent, BtActionCollection*
         m_displayPage(0),
         m_swordPage(0),
         m_acceleratorsPage(0),
+        m_fontsPage(0),
         m_languagesPage(0),
         m_bbox(0) {
     setWindowTitle(tr("Configure BibleTime"));
@@ -43,10 +45,14 @@ CConfigurationDialog::CConfigurationDialog(QWidget * parent, BtActionCollection*
     m_swordPage = new CSwordSettingsPage(this);
     addPage(m_swordPage);
 
-    // Add "Languages" (fonts) page
-    m_languagesPage = new CLanguageSettingsPage(this);
+    // Add "Languages" page
+    m_languagesPage = new BtLanguageSettingsPage(this);
     addPage(m_languagesPage);
 
+    // Add "Fonts" page
+    m_fontsPage = new BtFontSettingsPage(this);
+    addPage(m_fontsPage);
+    
     // Add "Keyboard" (accelerators) page
     m_acceleratorsPage = new CAcceleratorSettingsPage(this);
     addPage(m_acceleratorsPage);
@@ -74,6 +80,7 @@ CConfigurationDialog::~CConfigurationDialog() {
 void CConfigurationDialog::save() {
     m_acceleratorsPage->save();
     m_languagesPage->save();
+    m_fontsPage->save();
     m_swordPage->save();
     m_displayPage->save();
     emit signalSettingsChanged( );

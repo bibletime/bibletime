@@ -16,7 +16,8 @@
 class BtActionCollection;
 class CAcceleratorSettingsPage;
 class CDisplaySettingsPage;
-class CLanguageSettingsPage;
+class BtFontSettingsPage;
+class BtLanguageSettingsPage;
 class CSwordSettingsPage;
 class QAbstractButton;
 class QDialogButtonBox;
@@ -37,7 +38,8 @@ class CConfigurationDialog : public BtConfigDialog {
         CDisplaySettingsPage* m_displayPage;
         CSwordSettingsPage* m_swordPage;
         CAcceleratorSettingsPage* m_acceleratorsPage;
-        CLanguageSettingsPage* m_languagesPage;
+        BtFontSettingsPage* m_fontsPage;
+        BtLanguageSettingsPage* m_languagesPage;
         QDialogButtonBox* m_bbox;
 
         // Load the settings from the resource file

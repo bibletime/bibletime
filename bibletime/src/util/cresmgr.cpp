@@ -416,6 +416,9 @@ const QString icon = "startconfig.svg";
 namespace fonts {
 const QString icon = "fonts.svg";
 }
+namespace languages {
+const QString icon = "flag.svg";
+}
 namespace profiles {
 const QString icon = "view_profile.svg";
 }

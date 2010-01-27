@@ -431,6 +431,9 @@ extern const QString icon;
 namespace fonts {
 extern const QString icon;
 }
+namespace languages {
+extern const QString icon;
+}
 namespace profiles {
 extern const QString icon;
 }

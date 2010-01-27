@@ -7,8 +7,8 @@
 *
 **********/
 
-#ifndef CLANGUAGESETTINGS_H
-#define CLANGUAGESETTINGS_H
+#ifndef BTFONTSETTINGS_H
+#define BTFONTSETTINGS_H
 
 #include "frontend/bookshelfmanager/btconfigdialog.h"
 #include "util/cpointers.h"
@@ -25,11 +25,11 @@ class QComboBox;
 /**
     @author The BibleTime team <info@bibletime.info>
 */
-class CLanguageSettingsPage : public BtConfigPage, CPointers {
+class BtFontSettingsPage : public BtConfigPage, CPointers {
         Q_OBJECT
     public:
-        CLanguageSettingsPage(QWidget *parent);
-        ~CLanguageSettingsPage();
+        BtFontSettingsPage(QWidget *parent);
+        ~BtFontSettingsPage();
         void save();
         QString iconName();
         QString label();
@@ -47,7 +47,7 @@ class CLanguageSettingsPage : public BtConfigPage, CPointers {
         void newDisplayWindowFontAreaSelected(const QString&);
 
     private:
-        QComboBox* m_swordLocaleCombo;
+        //QComboBox* m_swordLocaleCombo;
         QComboBox* m_usageCombo;
         QCheckBox* m_useOwnFontCheck;
         CFontChooser* m_fontChooser;
