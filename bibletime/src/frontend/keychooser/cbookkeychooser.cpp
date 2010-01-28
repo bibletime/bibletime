@@ -21,8 +21,9 @@
 
 QMap<QObject*, int> boxes;
 
-CBookKeyChooser::CBookKeyChooser(QList<CSwordModuleInfo*> modules, CSwordKey *key, QWidget *parent)
-        : CKeyChooser(modules, key, parent), m_layout(0) {
+CBookKeyChooser::CBookKeyChooser(QList<CSwordModuleInfo*> modules, 
+            BTHistory* historyPtr, CSwordKey *key, QWidget *parent)
+        : CKeyChooser(modules, historyPtr, key, parent), m_layout(0) {
 
     setModules(modules, false);
     m_key = dynamic_cast<CSwordTreeKey*>(key);

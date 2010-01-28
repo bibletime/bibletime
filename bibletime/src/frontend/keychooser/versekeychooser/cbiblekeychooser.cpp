@@ -20,8 +20,11 @@
 #include "util/cresmgr.h"
 
 
-CBibleKeyChooser::CBibleKeyChooser(QList<CSwordModuleInfo*> modules, CSwordKey *key, QWidget *parent) :
-        CKeyChooser(modules, key, parent),
+CBibleKeyChooser::CBibleKeyChooser(QList<CSwordModuleInfo*> modules, 
+                                   BTHistory* historyPtr, 
+                                   CSwordKey *key, 
+                                   QWidget *parent)
+        : CKeyChooser(modules, historyPtr, key, parent),
         m_key(dynamic_cast<CSwordVerseKey*>(key)) {
     w_ref = 0;
     setModules(modules, false);

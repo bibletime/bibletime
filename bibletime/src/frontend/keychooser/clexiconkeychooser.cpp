@@ -23,8 +23,11 @@
 #include "util/cresmgr.h"
 
 
-CLexiconKeyChooser::CLexiconKeyChooser(QList<CSwordModuleInfo*> modules, CSwordKey *key, QWidget *parent)
-        : CKeyChooser(modules, key, parent),
+CLexiconKeyChooser::CLexiconKeyChooser(QList<CSwordModuleInfo*> modules, 
+                                       BTHistory* historyPtr,
+                                       CSwordKey *key, 
+                                       QWidget *parent)
+        : CKeyChooser(modules, historyPtr, key, parent),
         m_key(dynamic_cast<CSwordLDKey*>(key)) {
     setModules(modules, false);
 

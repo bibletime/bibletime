@@ -23,6 +23,7 @@ class CSwordKey;
 class CSwordTreeKey;
 class QTreeWidget;
 class QTreeWidgetItem;
+class BTHistory;
 
 /** The keychooser implementation for books.
   * @author The BibleTime team
@@ -30,7 +31,8 @@ class QTreeWidgetItem;
 class CBookTreeChooser : public CKeyChooser {
         Q_OBJECT
     public:
-        CBookTreeChooser(QList<CSwordModuleInfo*> modules, CSwordKey *key = 0, QWidget *parent = 0);
+        CBookTreeChooser(QList<CSwordModuleInfo*> modules, 
+            BTHistory* history, CSwordKey *key = 0, QWidget *parent = 0);
         ~CBookTreeChooser();
         /**
         * Refreshes the content.

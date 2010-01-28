@@ -47,7 +47,8 @@ CDisplayWindow::CDisplayWindow(QList<CSwordModuleInfo*> modules, CMDIArea *paren
         m_formatToolBar(0),
         m_headerBar(0),
         m_popupMenu(0),
-        m_displayWidget(0) {
+        m_displayWidget(0),
+        m_history(0) {
     qDebug() << "CDisplayWindow::CDisplayWindow";
     setAttribute(Qt::WA_DeleteOnClose); //we want to destroy this window when it is closed
     parent->addSubWindow(this);
@@ -266,6 +267,12 @@ void CDisplayWindow::setKeyChooser( CKeyChooser* ck ) {
 void CDisplayWindow::setKey( CSwordKey* key ) {
     Q_ASSERT( key );
     m_swordKey = key;
+}
+
+BTHistory* CDisplayWindow::history() {
+    if (m_history == 0) 
+        m_history = new BTHistory(this);
+    return m_history;
 }
 
 void CDisplayWindow::modulesChanged() {

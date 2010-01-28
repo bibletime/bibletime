@@ -193,7 +193,7 @@ void CLexiconReadWindow::initView() {
     addToolBar(mainToolBar());
 
     // Create keychooser
-    setKeyChooser( CKeyChooser::createInstance(modules(), key(), mainToolBar()) );
+    setKeyChooser( CKeyChooser::createInstance(modules(), history(), key(), mainToolBar()) );
 
     // Create the Works toolbar
     setModuleChooserBar( new BtModuleChooserBar(getModuleList(), modules().first()->type(), this) );

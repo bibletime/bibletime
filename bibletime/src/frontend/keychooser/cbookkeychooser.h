@@ -30,7 +30,8 @@ class TreeKeyIdx;
 class CBookKeyChooser : public CKeyChooser {
         Q_OBJECT
     public:
-        CBookKeyChooser(QList<CSwordModuleInfo*> modules, CSwordKey *key = 0, QWidget *parent = 0);
+        CBookKeyChooser(QList<CSwordModuleInfo*> modules, 
+            BTHistory* history, CSwordKey *key = 0, QWidget *parent = 0);
         ~CBookKeyChooser();
         /**
         * Refreshes the content.

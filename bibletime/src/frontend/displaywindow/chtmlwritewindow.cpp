@@ -39,7 +39,7 @@ void CHTMLWriteWindow::initView() {
     setMainToolBar( new QToolBar(this) );
     addToolBar(mainToolBar());
 
-    setKeyChooser( CKeyChooser::createInstance(modules(), key(), mainToolBar()) );
+    setKeyChooser( CKeyChooser::createInstance(modules(), history(), key(), mainToolBar()) );
     mainToolBar()->addWidget(keyChooser());
 
     // Create the Tools toolbar

@@ -31,6 +31,7 @@ class CWriteWindow;
 class QCloseEvent;
 class QMenu;
 class QToolBar;
+class BTHistory;
 
 /** The base class for all display windows of BibleTime.
   * @author The BibleTime team
@@ -87,6 +88,9 @@ class CDisplayWindow : public QMainWindow, public CPointers {
 
         /** Returns true if the window may be closed.*/
         virtual bool queryClose();
+
+        /** Returns history for this window */
+        BTHistory* history();
 
         /** Returns the keychooser widget of this display window. */
         inline CKeyChooser *keyChooser() const {
@@ -295,6 +299,7 @@ class CDisplayWindow : public QMainWindow, public CPointers {
         QToolBar* m_headerBar;
         QMenu* m_popupMenu;
         CDisplay* m_displayWidget;
+        BTHistory* m_history;
 };
 
 #endif

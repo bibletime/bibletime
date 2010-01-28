@@ -22,17 +22,18 @@
 #include "frontend/keychooser/versekeychooser/cbiblekeychooser.h"
 
 
-CKeyChooser::CKeyChooser(QList<CSwordModuleInfo*>, CSwordKey *, QWidget *parent)
+CKeyChooser::CKeyChooser(QList<CSwordModuleInfo*>, BTHistory* historyPtr,
+                         CSwordKey *, QWidget *parent)
         : QWidget(parent),
-        m_history(0) {
+        m_history(historyPtr) {
     //qDebug() << "CKeyChooser::CKeyChooser";
-    m_history = new BTHistory(this);
     QObject::connect(history(), SIGNAL(historyMoved(QString&)), this, SLOT(setKey(QString&)));
 }
 
 CKeyChooser::~CKeyChooser() {}
 
-CKeyChooser* CKeyChooser::createInstance(QList<CSwordModuleInfo*> modules, CSwordKey *key, QWidget *parent) {
+CKeyChooser* CKeyChooser::createInstance(QList<CSwordModuleInfo*> modules, 
+        BTHistory* historyPtr, CSwordKey *key, QWidget *parent) {
     if (!modules.count()) {
         return 0;
     }
@@ -40,12 +41,12 @@ CKeyChooser* CKeyChooser::createInstance(QList<CSwordModuleInfo*> modules, CSwor
     switch ( modules.first()->type() ) {
         case CSwordModuleInfo::Commentary:  //Bibles and commentaries use the same key chooser
         case CSwordModuleInfo::Bible:
-            return new CBibleKeyChooser(modules, key, parent);
+            return new CBibleKeyChooser(modules, historyPtr, key, parent);
             break;
         case CSwordModuleInfo::Lexicon:
-            return new CLexiconKeyChooser(modules, key, parent);
+            return new CLexiconKeyChooser(modules, historyPtr, key, parent);
         case CSwordModuleInfo::GenericBook:
-            return new CBookKeyChooser(modules, key, parent);
+            return new CBookKeyChooser(modules, historyPtr, key, parent);
         default:
             return 0;
     }

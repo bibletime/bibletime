@@ -21,8 +21,9 @@
 #include "frontend/keychooser/bthistory.h"
 
 
-CBookTreeChooser::CBookTreeChooser(QList<CSwordModuleInfo*> modules, CSwordKey *key, QWidget *parent)
-        : CKeyChooser(modules, key, parent),
+CBookTreeChooser::CBookTreeChooser(QList<CSwordModuleInfo*> modules, 
+                                   BTHistory* historyPtr, CSwordKey *key, QWidget *parent)
+        : CKeyChooser(modules, historyPtr, key, parent),
         m_key( dynamic_cast<CSwordTreeKey*>(key) ) {
 
     setModules(modules, false);

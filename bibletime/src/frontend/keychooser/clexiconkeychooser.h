@@ -36,7 +36,11 @@ class CLexiconKeyChooser : public CKeyChooser {
         *
         * you should not need to use this, use @ref CKeyChooser::createInstance instead
         */
-        CLexiconKeyChooser(QList<CSwordModuleInfo*> modules, CSwordKey *key = 0, QWidget *parent = 0);
+        CLexiconKeyChooser(
+            QList<CSwordModuleInfo*> modules, 
+            BTHistory* history, 
+            CSwordKey *key = 0, 
+            QWidget *parent = 0);
 
     public slots:
         /**

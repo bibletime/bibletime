@@ -39,7 +39,10 @@ class CBibleKeyChooser : public CKeyChooser  {
         * the constructor
         * you should not need to use this, use @ref CKeyChooser::createInstance instead
         */
-        CBibleKeyChooser(QList<CSwordModuleInfo*> modules, CSwordKey *key = 0, QWidget *parent = 0);
+        CBibleKeyChooser(QList<CSwordModuleInfo*> modules,
+            BTHistory* history,
+            CSwordKey *key = 0, 
+            QWidget *parent = 0);
 
     public slots:
         /**

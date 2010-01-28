@@ -39,7 +39,8 @@ class CKeyChooser : public QWidget {
         * @param key if not NULL, the @ref CKey the KeyChooser should be set to
         * @param parent the parent of the widget to create
         */
-        static CKeyChooser* createInstance(QList<CSwordModuleInfo*> modules, CSwordKey *key, QWidget *parent);
+        static CKeyChooser* createInstance(QList<CSwordModuleInfo*> modules, 
+            BTHistory* history, CSwordKey *key, QWidget *parent);
 
 
     public slots:
@@ -89,7 +90,7 @@ class CKeyChooser : public QWidget {
         /**
         * the constructor - DO NOT USE! -- use @ref #createInstance instead!
         */
-        CKeyChooser(QList<CSwordModuleInfo*> info, CSwordKey *key = 0, QWidget *parent = 0);
+        CKeyChooser(QList<CSwordModuleInfo*> info, BTHistory* history, CSwordKey *key = 0, QWidget *parent = 0);
         virtual ~CKeyChooser();
         /**
         * Set the appropriate font do display the modules

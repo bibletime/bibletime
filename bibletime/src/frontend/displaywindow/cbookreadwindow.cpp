@@ -91,7 +91,7 @@ void CBookReadWindow::initConnections() {
 /** Init the view */
 void CBookReadWindow::initView() {
     QSplitter* splitter = new QSplitter(this);
-    m_treeChooser = new CBookTreeChooser(modules(), key(), splitter);
+    m_treeChooser = new CBookTreeChooser(modules(), history(), key(), splitter);
     setDisplayWidget( CDisplay::createReadInstance(this, splitter) );
     m_treeChooser->hide();
 
@@ -100,7 +100,7 @@ void CBookReadWindow::initView() {
     mainToolBar()->setAllowedAreas(Qt::TopToolBarArea);
     mainToolBar()->setFloatable(false);
     addToolBar(mainToolBar());
-    setKeyChooser( CKeyChooser::createInstance(modules(), key(), mainToolBar()) );
+    setKeyChooser( CKeyChooser::createInstance(modules(), history(), key(), mainToolBar()) );
 
     // Create the Works toolbar
     setModuleChooserBar( new BtModuleChooserBar(getModuleList(), modules().first()->type(), this) );
