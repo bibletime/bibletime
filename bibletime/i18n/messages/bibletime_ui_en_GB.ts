@@ -809,22 +809,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="43"/>
         <source>You can specify a custom font for each language.</source>
-        <translation type="unfinished">You can specify a custom font for each language.</translation>
+        <translation>You can specify a custom font for each language.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="49"/>
         <source>The font selection below will apply to all texts in this language</source>
-        <translation type="unfinished">The font selection below will apply to all texts in this language</translation>
+        <translation>The font selection below will apply to all texts in this language</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="73"/>
         <source>Use custom font</source>
-        <translation type="unfinished">Use custom font</translation>
+        <translation>Use custom font</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="164"/>
         <source>Fonts</source>
-        <translation type="unfinished">Fonts</translation>
+        <translation>Fonts</translation>
     </message>
 </context>
 <context>
@@ -1123,22 +1123,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="39"/>
         <source>Select the language in which the Biblical book names are displayed.</source>
-        <translation type="unfinished">Select the language in which the Biblical book names are displayed.</translation>
+        <translation>Select the language in which the Biblical book names are displayed.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="43"/>
         <source>Language for names of Bible books:</source>
-        <translation type="unfinished">Language for names of Bible books:</translation>
+        <translation>Language for names of Bible books:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="45"/>
         <source>The languages which can be used for the biblical booknames</source>
-        <translation type="unfinished">The languages which can be used for the biblical booknames</translation>
+        <translation>The languages which can be used for the biblical booknames</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="153"/>
         <source>Languages</source>
-        <translation type="unfinished">Languages</translation>
+        <translation>Languages</translation>
     </message>
 </context>
 <context>
@@ -1893,16 +1893,12 @@ shortcut</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="365"/>
         <source>Tool</source>
-        <translation type="unfinished"></translation>
+        <translation>Tool</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="371"/>
         <source>Format</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tools</source>
-        <translation type="obsolete">Tools</translation>
+        <translation>Format</translation>
     </message>
 </context>
 <context>
@@ -2093,41 +2089,6 @@ shortcut</translation>
         <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="125"/>
         <source>Previous verse</source>
         <translation>Previous verse</translation>
-    </message>
-</context>
-<context>
-    <name>CLanguageSettingsPage</name>
-    <message>
-        <source>Use custom font</source>
-        <translation type="obsolete">Use custom font</translation>
-    </message>
-    <message>
-        <source>Language for names of Bible books:</source>
-        <translation type="obsolete">Language for names of Bible books:</translation>
-    </message>
-    <message>
-        <source>The languages which can be used for the biblical booknames</source>
-        <translation type="obsolete">The languages which can be used for the biblical booknames</translation>
-    </message>
-    <message>
-        <source>The font selection below will apply to all texts in this language</source>
-        <translation type="obsolete">The font selection below will apply to all texts in this language</translation>
-    </message>
-    <message>
-        <source>Select the language in which the Biblical book names are displayed.</source>
-        <translation type="obsolete">Select the language in which the Biblical book names are displayed.</translation>
-    </message>
-    <message>
-        <source>Fonts</source>
-        <translation type="obsolete">Fonts</translation>
-    </message>
-    <message>
-        <source>You can specify a custom font for each language.</source>
-        <translation type="obsolete">You can specify a custom font for each language.</translation>
-    </message>
-    <message>
-        <source>Languages</source>
-        <translation type="obsolete">Languages</translation>
     </message>
 </context>
 <context>
