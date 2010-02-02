@@ -99,10 +99,6 @@ void BtConfigDialog::addButtonBox(QDialogButtonBox* box) {
     m_pageLayout->addWidget(box);
 }
 
-BtConfigPage* BtConfigDialog::currentPage() {
-    return dynamic_cast<BtConfigPage*>(m_pageWidget->currentWidget());
-}
-
 void BtConfigDialog::slotChangePage(int newIndex) {
     if (m_previousPageIndex != newIndex) {
         m_previousPageIndex = newIndex;

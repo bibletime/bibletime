@@ -42,9 +42,6 @@ class BtConfigDialog : public QDialog {
         /** Adds a button box to the lower edge of the dialog. */
         void addButtonBox(QDialogButtonBox* buttonBox);
 
-        /** Returns the currently selected page. */
-        BtConfigPage* currentPage();
-
     public slots:
         /** Changes the current page using the given index number. */
         void slotChangePage(int newIndex);
