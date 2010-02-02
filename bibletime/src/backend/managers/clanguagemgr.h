@@ -111,11 +111,7 @@ class CLanguageMgr {
         * @return Pointer to a language for the given string abbreviation.
         */
         const CLanguageMgr::Language* languageForAbbrev( const QString& abbrev ) const;
-        /** Language for english name.
-        * @param abbrev The english language name.
-        * @return Pointer to a language for the given name
-        */
-        const CLanguageMgr::Language* languageForName( const QString& language ) const;
+
         /** Language for translated language name.
         * @param abbrev The translated language name
         * @return Pointer to a language for the given translated language name

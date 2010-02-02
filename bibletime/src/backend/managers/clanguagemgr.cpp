@@ -98,13 +98,6 @@ const CLanguageMgr::Language* CLanguageMgr::languageForAbbrev( const QString& ab
     return newLang;
 }
 
-const CLanguageMgr::Language* CLanguageMgr::languageForName( const QString& name ) const {
-    foreach ( const Language* lang, m_langList ) {
-        if (lang->name() == name) return lang;
-    }
-    return &m_defaultLanguage;//invalid language
-}
-
 const CLanguageMgr::Language* CLanguageMgr::languageForTranslatedName( const QString& name ) const {
     foreach ( const Language* lang, m_langList ) {
         if (lang->translatedName() == name) return lang;
