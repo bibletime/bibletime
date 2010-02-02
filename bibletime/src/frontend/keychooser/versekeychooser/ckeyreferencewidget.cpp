@@ -217,10 +217,6 @@ bool CKeyReferenceWidget::setKey(CSwordVerseKey *key) {
     return true;
 }
 
-QLineEdit* CKeyReferenceWidget::textbox() {
-    return m_textbox;
-}
-
 void CKeyReferenceWidget::slotReturnPressed() {
     m_key->key(m_textbox->text());
     updateText();

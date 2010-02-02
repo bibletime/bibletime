@@ -31,7 +31,6 @@ class CKeyReferenceWidget : public QWidget  {
         CKeyReferenceWidget(CSwordBibleModuleInfo *, CSwordVerseKey*, QWidget *parent = 0, const char *name = 0);
         ~CKeyReferenceWidget();
         bool setKey(CSwordVerseKey* key);
-        QLineEdit* textbox();
         void setModule(CSwordBibleModuleInfo *m = 0);
         bool eventFilter(QObject *o, QEvent *e);
 
