@@ -48,11 +48,6 @@ class CHTMLWriteDisplay : public CPlainWriteDisplay {
         friend class CDisplay;
         CHTMLWriteDisplay(CWriteWindow* parentWindow, QWidget* parent);
         ~CHTMLWriteDisplay();
-        /**
-        * Reimplementation to show a popup menu if the right mouse button was clicked.
-        * (CPlainWriteDisplay)
-        */
-        virtual QMenu* createPopupMenu( const QPoint& pos );
 
     protected slots:
         void toggleBold(bool);

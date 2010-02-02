@@ -244,16 +244,3 @@ void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, BtActionCollection * action
     slotAlignmentChanged( alignment() );
     slotColorChanged( textColor() );
 }
-
-/** Reimplementation to show a popup menu if the right mouse button was clicked. */
-QMenu* CHTMLWriteDisplay::createPopupMenu( const QPoint& ) {
-    if (!m_actions.selectAll) {
-        m_actions.selectAll = new QAction(tr("Select all"), this);
-        connect(m_actions.selectAll, SIGNAL(triggered(bool)), SLOT(selectAll()));
-    }
-
-    QMenu* popup = new QMenu(this);
-    popup->setTitle(tr("HTML editor window"));
-    popup->addAction(m_actions.selectAll);
-    return popup;
-}

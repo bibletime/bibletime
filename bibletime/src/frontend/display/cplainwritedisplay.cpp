@@ -86,16 +86,6 @@ const QString CPlainWriteDisplay::plainText() {
     return ret;
 }
 
-/** Reimplementation from QTextEdit. Provides an popup menu for the given position. */
-QMenu* CPlainWriteDisplay::createPopupMenu( const QPoint& /*pos*/ ) {
-    return installedPopup();
-}
-//
-///** Reimplementation from QTextEdit. Provides an popup menu for the given position. */
-//QMenu* CPlainWriteDisplay::createPopupMenu( ) {
-//	return installedPopup();
-//}
-
 /** Creates the necessary action objects and puts them on the toolbar. */
 void CPlainWriteDisplay::setupToolbar(QToolBar*, BtActionCollection*) {}
 
