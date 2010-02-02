@@ -26,7 +26,6 @@ class BtHtmlFindText : public QDialog {
     public slots:
         void findNext();
         void findPrevious();
-        void doHide();
     private:
         QWebView* getActiveWindowWebView();
         Ui_findTextDialog ui;

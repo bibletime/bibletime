@@ -49,10 +49,6 @@ void BtHtmlFindText::findNext() {
     }
 }
 
-void BtHtmlFindText::doHide() {
-    hide();
-}
-
 void BtHtmlFindText::findPrevious() {
     QWebView* webView = getActiveWindowWebView();
     if (webView != 0) {
