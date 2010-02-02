@@ -9,31 +9,13 @@
 
 #include "frontend/mainindex/bookmarks/btbookmarkitembase.h"
 
-#include <QDropEvent>
-#include <QTreeWidgetItem>
-#include "frontend/mainindex/bookmarks/cbookmarkindex.h"
 
-
-BtBookmarkItemBase::BtBookmarkItemBase() {}
-
-BtBookmarkItemBase::BtBookmarkItemBase(QTreeWidgetItem* parent)
-        : QTreeWidgetItem(parent) {}
-
-CBookmarkIndex* BtBookmarkItemBase::bookmarkWidget() const {
-    return dynamic_cast<CBookmarkIndex*>(treeWidget());
+BtBookmarkItemBase::BtBookmarkItemBase() {
+    // Intentionally empty
 }
 
-// void BtBookmarkItemBase::dropped(QDropEvent* e)
-// {
-//
-// }
-//
-// void BtBookmarkItemBase::addPreviousSibling(BtBookmarkItemBase* item)
-// {
-//
-// }
-//
-// void BtBookmarkItemBase::addNextSibling(BtBookmarkItemBase* item)
-// {
-//
-// }
+BtBookmarkItemBase::BtBookmarkItemBase(QTreeWidgetItem *parent)
+        : QTreeWidgetItem(parent)
+{
+    // Intentionally empty
+}
