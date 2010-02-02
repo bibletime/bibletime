@@ -31,9 +31,6 @@ sword::InstallSource source(QString name);
 /** Deletes the source. */
 bool deleteSource(QString name);
 
-/** Refreshes the remote source module list. */
-bool refreshSource(QString name);
-
 /** Returns the moduleinfo list for the source. */
 QList<CSwordModuleInfo*> moduleList(QString name);
 
