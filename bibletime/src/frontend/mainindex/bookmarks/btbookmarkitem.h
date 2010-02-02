@@ -25,7 +25,8 @@ class BtBookmarkItem : public BtBookmarkItemBase {
         BtBookmarkItem(QTreeWidgetItem* parent);
 
         /** Creates a bookmark with module, key and description. */
-        BtBookmarkItem(CSwordModuleInfo* module, QString key, QString& description);
+        BtBookmarkItem(const CSwordModuleInfo *module, const QString &key,
+                       const QString &description);
 
         /** Creates a copy. */
         BtBookmarkItem(const BtBookmarkItem& other);

@@ -21,7 +21,8 @@
 #include "util/directory.h"
 
 
-BtBookmarkItem::BtBookmarkItem(CSwordModuleInfo* module, QString key, QString& description)
+BtBookmarkItem::BtBookmarkItem(const CSwordModuleInfo *module, const QString &key,
+                               const QString &description)
         : m_description(description),
         m_moduleName(module ? module->name() : QString::null) {
     if (((module && (module->type() == CSwordModuleInfo::Bible)) || (module->type() == CSwordModuleInfo::Commentary))  ) {
