@@ -48,12 +48,11 @@ BtBookmarkItem::BtBookmarkItem(const BtBookmarkItem& other)
     update();
 }
 
-CSwordModuleInfo* BtBookmarkItem::module() {
-    CSwordModuleInfo* const m = CPointers::backend()->findModuleByName(m_moduleName);
-    return m;
+CSwordModuleInfo *BtBookmarkItem::module() const {
+    return CPointers::backend()->findModuleByName(m_moduleName);
 }
 
-QString BtBookmarkItem::key() {
+QString BtBookmarkItem::key() const {
     const QString englishKeyName = englishKey();
     if (!module()) {
         return englishKeyName;
@@ -71,11 +70,7 @@ QString BtBookmarkItem::key() {
     return returnKeyName;
 }
 
-const QString& BtBookmarkItem::description() {
-    return m_description;
-}
-
-QString BtBookmarkItem::toolTip() {
+QString BtBookmarkItem::toolTip() const {
     if (!module()) {
         return QString::null;
     }
@@ -127,10 +122,6 @@ void BtBookmarkItem::rename() {
         m_description = newDescription;
         update();
     }
-}
-
-QString BtBookmarkItem::englishKey() const {
-    return m_key;
 }
 
 void BtBookmarkItem::update() {

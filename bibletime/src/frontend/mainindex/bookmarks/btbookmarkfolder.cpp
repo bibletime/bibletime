@@ -57,8 +57,8 @@ void BtBookmarkFolder::importBookmarks() {
     };
 }
 
-QString BtBookmarkFolder::toolTip() {
-    return QString();
+QString BtBookmarkFolder::toolTip() const {
+    return QString::null;
 }
 
 void BtBookmarkFolder::newSubFolder() {

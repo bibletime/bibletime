@@ -33,16 +33,18 @@ class BtBookmarkItem : public BtBookmarkItemBase {
         ~BtBookmarkItem() {}
 
         /** Returns the used module, 0 if there is no such module. */
-        CSwordModuleInfo* module();
+        CSwordModuleInfo *module() const;
 
         /** Returns the used key. */
-        QString key();
+        QString key() const;
 
         /** Returns the used description. */
-        const QString& description();
+        inline const QString &description() const {
+            return m_description;
+        }
 
         /** Returns a tooltip for this bookmark. */
-        virtual QString toolTip();
+        virtual QString toolTip() const;
 
         /** Returns whether the action is supported by this item. */
         virtual bool enableAction(MenuAction action);
@@ -54,8 +56,11 @@ class BtBookmarkItem : public BtBookmarkItemBase {
 
     private:
         /** Returns the english key.*/
-        QString englishKey() const;
+        inline const QString &englishKey() const {
+            return m_key;
+        }
 
+    private:
         QString m_key;
         QString m_description;
         QString m_moduleName;

@@ -44,7 +44,7 @@ class BtBookmarkFolder : public BtBookmarkItemBase {
         void rename();
         void update();
 
-        QString toolTip();
+        QString toolTip() const;
 };
 
 #endif

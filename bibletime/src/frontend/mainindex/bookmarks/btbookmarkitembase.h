@@ -43,7 +43,7 @@ class BtBookmarkItemBase : public QTreeWidgetItem {
         BtBookmarkItemBase(QTreeWidgetItem* parent);
         virtual ~BtBookmarkItemBase() {}
 
-        virtual QString toolTip() = 0;
+        virtual QString toolTip() const = 0;
 
         /** Returns true if the given action should be enabled in the popup menu. */
         virtual bool enableAction( MenuAction action ) = 0;
