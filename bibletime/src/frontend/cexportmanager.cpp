@@ -475,14 +475,6 @@ const QString CExportManager::getSaveFileName(const Format format) {
     return QFileDialog::getSaveFileName(0, QObject::tr("Save file"), "", filterString(format), 0);
 }
 
-/** Returns a string containing the linebreak for the current format. */
-const QString CExportManager::lineBreak(const Format format) {
-    if (static_cast<bool>(m_displayOptions.lineBreaks))
-        return (format == HTML) ? QString::fromLatin1("<br/>\n") : QString::fromLatin1("\n");
-
-    return QString::null;
-}
-
 /** No descriptions */
 void CExportManager::setProgressRange( const int items ) {
     if (QProgressDialog* dlg = progressDialog()) {

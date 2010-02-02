@@ -60,10 +60,6 @@ class CExportManager : CPointers {
         * Returns a filename to save a file.
         */
         const QString getSaveFileName(const Format format);
-        /**
-        * Returns a string containing the linebreak for the current format.
-        */
-        const QString lineBreak( const Format format );
 
     private:
         QString m_caption; ///< \todo Useless field
