@@ -47,20 +47,7 @@ bool decodeHyperlink( const QString& hyperlink, QString& module, QString& key, T
 * @return The encoded hyperlink
 */
 const QString encodeHyperlink( const QString module, const QString key, const Type type);
-/**
-* Puts a module Name and a Reference together in the 'draggable' form
-* (module)reference
-* @param module The name of the module
-* @param reference The key reference as text
-* @return The encoded reference using module and reference
-* @author Martin Gruner
-*/
-const QString encodeReference(const QString &module, const QString &reference);
-/**
-* decodes a 'draggable' reference into a modulename and a reference
-* @author Martin Gruner
-*/
-void decodeReference(QString &dragreference, QString &module, QString &reference);
+
 /**
 * Returns true if the parameter is a hyperlink.
 * @param hyperlink The string which is tested

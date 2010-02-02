@@ -237,20 +237,6 @@ bool ReferenceManager::decodeHyperlink( const QString& hyperlink, QString& modul
     return true;
 }
 
-const QString ReferenceManager::encodeReference(const QString &module, const QString &reference) {
-    //return QString("(%1)%2").arg(module).arg(reference);
-    return QString("(").append(module).append(")").append(reference);
-}
-
-void ReferenceManager::decodeReference(QString &dragreference, QString &module, QString &reference) {
-    const int pos = dragreference.indexOf(")");
-    const QString fallbackModule = dragreference.mid( 1, pos - 1);
-    dragreference = dragreference.mid(pos + 1);
-
-    module = fallbackModule;
-    reference = dragreference;
-}
-
 /** Returns true if the parameter is a hyperlink. */
 bool ReferenceManager::isHyperlink( const QString& hyperlink ) {
     return (    hyperlink.left(8)  == "sword://")
