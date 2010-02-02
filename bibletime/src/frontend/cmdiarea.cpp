@@ -168,15 +168,6 @@ void CMDIArea::myTile() {
     emitWindowCaptionChanged();
 }
 
-// Tab the windows, tabbing implemented by Qt
-void CMDIArea::myTabbed() {
-    if (!updatesEnabled() || !usableWindowList().count() ) {
-        return;
-    }
-    setViewMode(QMdiArea::TabbedView);
-    emitWindowCaptionChanged();
-}
-
 void CMDIArea::myCascade() {
     if (!updatesEnabled() || !usableWindowList().count() ) {
         return;

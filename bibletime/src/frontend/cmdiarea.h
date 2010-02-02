@@ -83,10 +83,7 @@ class CMDIArea: public QMdiArea {
                 arranging the subwindows into a tile automatically.
         */
         void myTile();
-        /**
-          Uses Qt's setViewMode function to turn on the tabbed mode.
-        */
-        void myTabbed();
+
         /**
           Our own cascade version which, if only one subwindow is left, shows it
           maximized.
