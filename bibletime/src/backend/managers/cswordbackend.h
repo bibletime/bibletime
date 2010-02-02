@@ -147,12 +147,7 @@ class CSwordBackend : public QObject, public sword::SWMgr {
         * @return pointer to the desired module; null if no module has the specified description
         */
         CSwordModuleInfo* findModuleByDescription(const QString& description);
-        /**
-        * This function searches for a module with the specified description
-        * @param description The description of the desired module
-        * @return pointer to the desired module; null if no module has the specified description
-        */
-        const QString findModuleNameByDescription(const QString& description);
+
         /**
         * This function searches for a module with the specified name
         * @param name The name of the desired module
@@ -165,21 +160,12 @@ class CSwordBackend : public QObject, public sword::SWMgr {
         * @return pointer to the desired module; null if no module has the specified name
         */
         CSwordModuleInfo* findSwordModuleByPointer(const sword::SWModule* const swmodule);
-        /**
-        * This function searches for a module which is the same as the passed module.
-        * @param module The module which should be used for searching the new one. May be child of a different backend.
-        * @return Pointer to the desired module; null if no module has the specified name
-        */
-        CSwordModuleInfo* findModuleByPointer(const CSwordModuleInfo* const module);
+
         /**
         * @return Our global config object which contains the configs of all modules merged together.
         */
         inline sword::SWConfig* getConfig() const;
-        /**
-        * Tries to find the config object for the module. The second paramter will be the found config.
-        * @return True if the config was found, false if not. If false is returned the moduleConfig object is in undefined/unknwon state.
-        */
-        bool moduleConfig(const QString& module, sword::SWConfig& moduleConfig );
+
         /**
         * Returns the text used for the option given as parameter.
         * @param The paramter enum
@@ -195,11 +181,7 @@ class CSwordBackend : public QObject, public sword::SWMgr {
         * @param The translated option name
         */
         static const QString translatedOptionName(const CSwordModuleInfo::FilterTypes option );
-        /**
-        * Returns the version of the Sword library.
-        * @return The version used by this backend
-        */
-        inline const sword::SWVersion Version();
+
         /**
         * Reload all Sword modules.
         */
@@ -226,11 +208,6 @@ class CSwordBackend : public QObject, public sword::SWMgr {
 
     protected:
         /**
-        * Adds a render filter to the module.
-        * This is used to apply our own render filters to our modules instead of the sword filters
-        */
-        void AddRenderFilters(sword::SWModule *module, sword::ConfigEntMap &section);
-        /**
         * Overrides Sword filters which appear to be buggy.
         */
         void filterInit();
@@ -256,7 +233,6 @@ class CSwordBackend : public QObject, public sword::SWMgr {
         }	m_displays;
 
         BtBookshelfModel m_dataModel;
-        QMap<QString, QString> m_moduleDescriptionMap;
 };
 
 Q_DECLARE_METATYPE(CSwordBackend::FilterOptions)
@@ -274,11 +250,6 @@ inline BtBookshelfModel *CSwordBackend::model() {
 /** Returns our local config object to store the cipher keys etc. locally for each user. The values of the config are merged with the global config. */
 inline sword::SWConfig* CSwordBackend::getConfig() const {
     return config;
-}
-
-/** Returns the version of the Sword library. */
-inline const sword::SWVersion CSwordBackend::Version() {
-    return sword::SWVersion::currentVersion;
 }
 
 #endif

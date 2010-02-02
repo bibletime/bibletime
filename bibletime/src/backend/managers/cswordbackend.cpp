@@ -182,7 +182,6 @@ CSwordBackend::LoadError CSwordBackend::initModules(SetupChangedReason reason) {
     }
 
     Q_FOREACH(CSwordModuleInfo* mod, m_dataModel.modules()) {
-        m_moduleDescriptionMap.insert( mod->config(CSwordModuleInfo::Description), mod->name() );
         //unlock modules if keys are present
         if ( mod->isEncrypted() ) {
             const QString unlockKey = CBTConfig::getModuleEncryptionKey( mod->name() );
@@ -194,44 +193,6 @@ CSwordBackend::LoadError CSwordBackend::initModules(SetupChangedReason reason) {
 
     emit sigSwordSetupChanged(reason);
     return ret;
-}
-
-void CSwordBackend::AddRenderFilters(sword::SWModule *module, sword::ConfigEntMap &section) {
-    sword::SWBuf moduleDriver;
-    sword::SWBuf sourceformat;
-    sword::ConfigEntMap::iterator entry;
-    bool noDriver = true;
-
-    sourceformat = ((entry = section.find("SourceType")) != section.end()) ? (*entry).second : (sword::SWBuf) "";
-    moduleDriver = ((entry = section.find("ModDrv")) != section.end()) ? (*entry).second : (sword::SWBuf) "";
-
-    if (sourceformat == "OSIS") {
-        module->AddRenderFilter(m_filters.osis);
-        noDriver = false;
-    }
-    else if (sourceformat == "ThML") {
-        module->AddRenderFilter(m_filters.thml);
-        noDriver = false;
-    }
-    else if (sourceformat == "TEI") {
-        module->AddRenderFilter(m_filters.tei);
-        noDriver = false;
-    }
-    else if (sourceformat == "GBF") {
-        module->AddRenderFilter(m_filters.gbf);
-        noDriver = false;
-    }
-    else if (sourceformat == "PLAIN") {
-        module->AddRenderFilter(m_filters.plain);
-        noDriver = false;
-    }
-
-    if (noDriver) { //no driver found
-        if ( (moduleDriver == "RawCom") || (moduleDriver == "RawLD") ) {
-            module->AddRenderFilter(m_filters.plain);
-            noDriver = false;
-        }
-    }
 }
 
 /** This function deinitializes the modules and deletes them. */
@@ -308,14 +269,6 @@ CSwordModuleInfo* CSwordBackend::findModuleByDescription(const QString& descript
     return 0;
 }
 
-/** This function searches for a module with the specified description */
-const QString CSwordBackend::findModuleNameByDescription(const QString& description) {
-    if (m_moduleDescriptionMap.contains(description)) {
-        return m_moduleDescriptionMap[description];
-    }
-    return QString::null;
-}
-
 /** This function searches for a module with the specified name */
 CSwordModuleInfo* CSwordBackend::findModuleByName(const QString& name) {
     Q_FOREACH (CSwordModuleInfo *mod, m_dataModel.modules()) {
@@ -329,64 +282,6 @@ CSwordModuleInfo* CSwordBackend::findSwordModuleByPointer(const sword::SWModule*
         if (mod->module() == swmodule ) return mod;
     }
     return 0;
-}
-
-CSwordModuleInfo* CSwordBackend::findModuleByPointer(const CSwordModuleInfo* const module) {
-    Q_FOREACH (CSwordModuleInfo *mod, m_dataModel.modules()) {
-        if (mod  == module) return mod;
-    }
-    return 0;
-}
-
-/** Returns our local config object to store the cipher keys etc. locally for each user. The values of the config are merged with the global config. */
-bool CSwordBackend::moduleConfig(const QString& module, sword::SWConfig& moduleConfig) {
-
-    sword::SectionMap::iterator section;
-    QDir dir(QString::fromUtf8(configPath));
-    bool foundConfig = false;
-
-    QFileInfoList list = dir.entryInfoList();
-    if (dir.isReadable()) {
-        for (int i = 0; i < list.size(); ++i) {
-            QFileInfo fileInfo = list.at(i);
-
-            moduleConfig = sword::SWConfig( fileInfo.absoluteFilePath().toLocal8Bit().constData() );
-            section = moduleConfig.Sections.find( module.toLocal8Bit().constData() );
-            foundConfig = ( section != moduleConfig.Sections.end() );
-        }
-    }
-    else { //try to read mods.conf
-        moduleConfig = sword::SWConfig("");//global config
-        section = config->Sections.find( module.toLocal8Bit().constData() );
-        foundConfig = ( section != config->Sections.end() );
-
-        sword::ConfigEntMap::iterator entry;
-
-        if (foundConfig) { //copy module section
-
-            for (entry = section->second.begin(); entry != section->second.end(); entry++) {
-                moduleConfig.Sections[section->first].insert(sword::ConfigEntMap::value_type(entry->first, entry->second));
-            }
-        }
-    }
-
-    if (!foundConfig && configType != 2) { //search in $HOME/.sword/
-
-        QString myPath = util::directory::getUserHomeSwordModsDir().absolutePath();
-        dir.setPath(myPath);
-
-        QFileInfoList list = dir.entryInfoList();
-        if (dir.isReadable()) {
-            for (int i = 0; i < list.size(); ++i) {
-                QFileInfo fileInfo = list.at(i);
-                moduleConfig = sword::SWConfig( fileInfo.absoluteFilePath().toLocal8Bit().constData() );
-                section = moduleConfig.Sections.find( module.toLocal8Bit().constData() );
-                foundConfig = ( section != moduleConfig.Sections.end() );
-            }
-        }
-    }
-
-    return foundConfig;
 }
 
 /** Returns the text used for the option given as parameter. */
