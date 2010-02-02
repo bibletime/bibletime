@@ -64,7 +64,7 @@ QTreeWidgetItem* BtBookmarkLoader::handleXmlElement(QDomElement& element, QTreeW
     QTreeWidgetItem* newItem = 0;
     if (element.tagName() == "Folder") {
         qDebug() << "BtBookmarkLoader::handleXmlElement: found folder";
-        BtBookmarkFolder* newFolder = new BtBookmarkFolder(parent, QString());
+        BtBookmarkFolder* newFolder = new BtBookmarkFolder(QString::null, parent);
         if (element.hasAttribute("caption")) {
             newFolder->setText(0, element.attribute("caption"));
         }

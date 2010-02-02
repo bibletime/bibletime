@@ -592,7 +592,7 @@ void CBookmarkIndex::createNewFolder() {
     }
     else {
         // create a top level folder
-        BtBookmarkFolder* newFolder = new BtBookmarkFolder(0, QObject::tr("New folder"));
+        BtBookmarkFolder* newFolder = new BtBookmarkFolder(tr("New folder"));
         //parentFolder->addChild(newFolder);
         insertTopLevelItem(topLevelItemCount() - 1, newFolder);
         newFolder->update();

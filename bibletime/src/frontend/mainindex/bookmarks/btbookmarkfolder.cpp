@@ -18,7 +18,7 @@
 #include "util/directory.h"
 
 
-BtBookmarkFolder::BtBookmarkFolder(QTreeWidgetItem* parent, QString name)
+BtBookmarkFolder::BtBookmarkFolder(const QString &name, QTreeWidgetItem *parent)
         : BtBookmarkItemBase(parent) {
     setText(0, name);
     setFlags(Qt::ItemIsEditable | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled | Qt::ItemIsEnabled);
@@ -63,7 +63,7 @@ QString BtBookmarkFolder::toolTip() const {
 
 void BtBookmarkFolder::newSubFolder() {
     if (dynamic_cast<BtBookmarkFolder*>(this)) {
-        BtBookmarkFolder* f = new BtBookmarkFolder(this, QObject::tr("New folder"));
+        BtBookmarkFolder* f = new BtBookmarkFolder(QObject::tr("New folder"), this);
 
         treeWidget()->setCurrentItem(f);
         f->update();
@@ -123,7 +123,7 @@ bool BtBookmarkFolder::hasDescendant(QTreeWidgetItem* item) const {
 
 BtBookmarkFolder* BtBookmarkFolder::deepCopy() {
     qDebug() << "BtBookmarkFolder::deepCopy";
-    BtBookmarkFolder* newFolder = new BtBookmarkFolder(0, this->text(0));
+    BtBookmarkFolder* newFolder = new BtBookmarkFolder(this->text(0));
     foreach(QTreeWidgetItem* subitem, getChildList()) {
         if (BtBookmarkItem* bmItem = dynamic_cast<BtBookmarkItem*>(subitem)) {
             newFolder->addChild(new BtBookmarkItem(*bmItem));
