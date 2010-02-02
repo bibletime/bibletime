@@ -242,12 +242,7 @@ class CSwordModuleInfo: public QObject {
         * The last result is cleared by @ref search
         */
         virtual sword::ListKey& searchResult( const sword::ListKey* newResult = 0 );
-        /**
-        * Clears the last search result.
-        * This does immediately clean the last search result,
-        * no matter if search is in progress or not.
-        */
-        void clearSearchResult();
+
         /**
         * Returns the type of the module.
         */

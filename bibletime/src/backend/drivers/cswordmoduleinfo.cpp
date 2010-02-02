@@ -492,11 +492,6 @@ sword::ListKey & CSwordModuleInfo::searchResult(const sword::ListKey * newResult
     return m_searchResult;
 }
 
-/** Clears the last search result. */
-void CSwordModuleInfo::clearSearchResult() {
-    m_searchResult.ClearList();
-}
-
 /** Returns the required Sword version for this module. Returns -1 if no special Sword version is required. */
 sword::SWVersion CSwordModuleInfo::minimumSwordVersion() {
     return sword::SWVersion(config(CSwordModuleInfo::MinimumSwordVersion).toUtf8().constData());
