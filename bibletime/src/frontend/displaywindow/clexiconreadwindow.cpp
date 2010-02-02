@@ -228,7 +228,7 @@ void CLexiconReadWindow::initToolbars() {
     buttonsToolBar()->addWidget(displaySettingsButton());
 
     // Text Header toolbar
-    BtTextWindowHeader* h = new BtTextWindowHeader(this,  modules().first()->type(), getModuleList());
+    BtTextWindowHeader *h = new BtTextWindowHeader(modules().first()->type(), getModuleList(), this);
     headerBar()->addWidget(h);
 }
 

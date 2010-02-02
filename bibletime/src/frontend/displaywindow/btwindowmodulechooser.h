@@ -35,8 +35,9 @@ class CDisplayWindow;
 */
 class BtWindowModuleChooser {
     public:
-        BtWindowModuleChooser ( CDisplayWindow* parentWindow, CSwordModuleInfo::ModuleType moduleType )
-                : m_window ( parentWindow ), m_moduleType ( moduleType ) {}
+        BtWindowModuleChooser(CSwordModuleInfo::ModuleType moduleType,
+                              CDisplayWindow *parentWindow)
+                : m_window(parentWindow), m_moduleType (moduleType) {}
 
         virtual ~BtWindowModuleChooser() {}
 

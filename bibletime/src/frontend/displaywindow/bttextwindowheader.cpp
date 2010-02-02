@@ -22,9 +22,12 @@
 #include <QAction>
 #include <QDebug>
 
-BtTextWindowHeader::BtTextWindowHeader ( CDisplayWindow* window, CSwordModuleInfo::ModuleType modtype, QStringList modules )
-        : QWidget ( window ),
-        BtWindowModuleChooser(window, modtype) {
+BtTextWindowHeader::BtTextWindowHeader(CSwordModuleInfo::ModuleType modtype,
+                                       QStringList modules,
+                                       CDisplayWindow *window)
+        : QWidget(window),
+        BtWindowModuleChooser(modtype, window)
+{
     QHBoxLayout* layout = new QHBoxLayout ( this );
     layout->setContentsMargins(0, 0, 0, 0);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);

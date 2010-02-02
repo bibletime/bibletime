@@ -19,7 +19,7 @@
 
 BtModuleChooserBar::BtModuleChooserBar(QStringList useModules, CSwordModuleInfo::ModuleType type, CReadWindow *parent)
         : QToolBar(parent),
-        BtWindowModuleChooser(parent, type),
+        BtWindowModuleChooser(type, parent),
         m_idCounter(0) {
 
     qDebug() << "BtModuleChooserBar::BtModuleChooserBar";
