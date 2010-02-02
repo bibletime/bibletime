@@ -40,8 +40,6 @@ class BtBookmarkItem : public BtBookmarkItemBase {
 
         /** Returns the used description. */
         const QString& description();
-        /** Sets the description text for this bookmark. */
-        virtual void setDescription(QString text);
 
         /** Returns a tooltip for this bookmark. */
         virtual QString toolTip();

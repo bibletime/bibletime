@@ -75,10 +75,6 @@ const QString& BtBookmarkItem::description() {
     return m_description;
 }
 
-void BtBookmarkItem::setDescription(QString text) {
-    m_description = text;
-}
-
 QString BtBookmarkItem::toolTip() {
     if (!module()) {
         return QString::null;
