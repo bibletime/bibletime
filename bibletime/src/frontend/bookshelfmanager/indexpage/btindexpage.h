@@ -63,13 +63,6 @@ class BtIndexPage : public BtConfigPage {
         */
         void deleteIndices();
 
-    public:
-        /**
-        * Deletes orphaned indices if the autoDeleteOrphanedIndices is true
-        * Always deletes indices of existing modules where hasIndex() returns false
-        */
-        static void deleteOrphanedIndices();
-
     private:
 
         QCheckBox *m_autoDeleteOrphanedIndicesBox;

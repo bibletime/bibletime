@@ -177,27 +177,6 @@ void BtIndexPage::deleteIndices() {
     }
 }
 
-void BtIndexPage::deleteOrphanedIndices() {
-    QDir dir(CSwordModuleInfo::getGlobalBaseIndexLocation());
-    dir.setFilter(QDir::Dirs);
-    CSwordModuleInfo* module;
-
-    for (unsigned int i = 0; i < dir.count(); i++) {
-        if (dir[i] != "." && dir[i] != "..") {
-            if ( (module = CPointers::backend()->findModuleByName(dir[i])) ) { //mod exists
-                if (!module->hasIndex()) { //index files found, but wrong version etc.
-                    CSwordModuleInfo::deleteIndexForModule( dir[i] );
-                }
-            }
-            else { //no module exists
-                if (CBTConfig::get( CBTConfig::autoDeleteOrphanedIndices ) ) {
-                    CSwordModuleInfo::deleteIndexForModule( dir[i] );
-                }
-            }
-        }
-    }
-}
-
 void BtIndexPage::slotSwordSetupChanged() {
     populateModuleList();
 }
