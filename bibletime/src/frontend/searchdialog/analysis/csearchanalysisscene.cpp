@@ -51,12 +51,6 @@ CSearchAnalysisScene::CSearchAnalysisScene(QObject *parent )
     setSceneRect(0, 0, 1, 1);
 }
 
-
-QHash<QString, CSearchAnalysisItem*>* CSearchAnalysisScene::getSearchAnalysisItemList() {
-    // Returns pointer to the search analysis items
-    return &m_itemList;
-}
-
 /** Starts the analysis of the search result. This should be called only once because QCanvas handles the updates automatically. */
 void CSearchAnalysisScene::analyse(QList<CSwordModuleInfo*> modules) {
     /**

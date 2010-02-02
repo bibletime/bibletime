@@ -45,10 +45,7 @@ class CSearchAnalysisScene : public QGraphicsScene {
         * @return The color at position index in the list
         */
         static QColor getColor(int index);
-        /**
-        * This function returns a pointer to the list of AnalysisItems
-        */
-        QHash<QString, CSearchAnalysisItem*>* getSearchAnalysisItemList();
+
         void reset();
         /**
          * resize the height of the scene
