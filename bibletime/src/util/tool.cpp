@@ -23,29 +23,6 @@
 #include "util/dialogutil.h"
 
 
-/** Converts HTML text to plain text */
-QString util::tool::htmlToText(const QString& html) {
-    QString newText = html;
-    // convert some tags we need in code
-    newText.replace( QRegExp(" "), "#SPACE#" );
-    newText.replace( QRegExp("<br\\s*/?>\\s*"), "<br/>\n" );
-    newText.replace( QRegExp("#SPACE#"), " " );
-
-    QRegExp re("<.+>");
-    re.setMinimal(true);
-    newText.replace( re, "" );
-    return newText;
-}
-
-/** Converts text to HTML (\n to <br/>) */
-QString util::tool::textToHTML(const QString& text) {
-    QString newText = text;
-    newText.replace( QRegExp("<br\\s*/?>\n"), "#NEWLINE#" );
-    newText.replace( QRegExp("\n"), "<br/>\n" );
-    newText.replace( QRegExp("#NEWLINE#"), "<br/>\n");
-    return newText;
-}
-
 /** Creates the file filename and put text into the file.
  */
 bool util::tool::savePlainFile( const QString& filename, const QString& text, const bool& forceOverwrite, QTextCodec* fileCodec) {
@@ -178,55 +155,6 @@ bool util::tool::inHTMLTag(int pos, QString & text) {
         return true; //yes, we're in a tag
 
     return false;
-}
-
-QString util::tool::moduleToolTip(CSwordModuleInfo* module) {
-    Q_ASSERT(module);
-    if (!module) {
-        return QString::null;
-    }
-
-    QString text;
-
-    text = QString("<b>%1</b> ").arg( module->name() )
-           + ((module->category() == CSwordModuleInfo::Cult) ? QString::fromLatin1("<small><b>%1</b></small><br/>").arg(QObject::tr("Take care, this work contains cult / questionable material!")) : QString::null);
-
-    text += QString("<small>(") + module->config(CSwordModuleInfo::Description) + QString(")</small><hr>");
-
-    text += QObject::tr("Language") + QString(": %1<br/>").arg( module->language()->translatedName() );
-
-    if (module->isEncrypted()) {
-        text += QObject::tr("Unlock key") + QString(": %1<br/>")
-                .arg(!module->config(CSwordModuleInfo::CipherKey).isEmpty() ? module->config(CSwordModuleInfo::CipherKey) : QString("<font COLOR=\"red\">%1</font>").arg(QObject::tr("not set")));
-    }
-
-    if (module->hasVersion()) {
-        text += QObject::tr("Version") + QString(": %1<br/>").arg( module->config(CSwordModuleInfo::ModuleVersion) );
-    }
-
-    QString options;
-    unsigned int opts;
-    for (opts = CSwordModuleInfo::filterTypesMIN; opts <= CSwordModuleInfo::filterTypesMAX; ++opts) {
-        if (module->has( static_cast<CSwordModuleInfo::FilterTypes>(opts) )) {
-            if (!options.isEmpty()) {
-                options += QString::fromLatin1(", ");
-            }
-
-            options += CSwordBackend::translatedOptionName(
-                           static_cast<CSwordModuleInfo::FilterTypes>(opts)
-                       );
-        }
-    }
-
-    if (!options.isEmpty()) {
-        text += QObject::tr("Options") + QString::fromLatin1(": <small>") + options + QString("</small>");
-    }
-
-    if (text.right(4) == QString::fromLatin1("<br/>")) {
-        text = text.left(text.length() - 4);
-    }
-
-    return text;
 }
 
 QString util::tool::remoteModuleToolTip(CSwordModuleInfo* module, QString localVer) {
