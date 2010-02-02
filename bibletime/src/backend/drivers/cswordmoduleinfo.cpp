@@ -196,25 +196,6 @@ bool CSwordModuleInfo::hasIndex() {
     return lucene::index::IndexReader::indexExists(getModuleStandardIndexLocation().toAscii().constData());
 }
 
-// HELPER Method: this dumps all current EntryAttributes of a module
-//#include <iostream>
-//void dumpEntryAttributes(sword::SWModule *module) {
-//	std::cout << "Attributes for key: " << module->getKeyText() << std::endl;
-//	sword::AttributeTypeList::iterator i1;
-//	sword::AttributeList::iterator i2;
-//	sword::AttributeValue::iterator i3;
-//	for (i1 = module->getEntryAttributes().begin(); i1 != module->getEntryAttributes().end(); i1++) {
-//		std::cout << "[ " << i1->first << " ]\n";
-//		for (i2 = i1->second.begin(); i2 != i1->second.end(); i2++) {
-//			std::cout << "\t[ " << i2->first << " ]\n";
-//			for (i3 = i2->second.begin(); i3 != i2->second.end(); i3++) {
-//				std::cout << "\t\t" << i3->first << " = " << i3->second << "\n";
-//			}
-//		}
-//	}
-//	std::cout << std::endl;
-//}
-
 void CSwordModuleInfo::buildIndex() {
 
     m_cancelIndexing = false;
