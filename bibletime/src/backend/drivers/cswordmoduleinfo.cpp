@@ -42,6 +42,32 @@
 #include <versekey.h>
 
 
+#ifdef BT_DEBUG
+#include <iostream>
+
+namespace {
+
+/** HELPER Method to dump all current EntryAttributes of a module. */
+void dumpEntryAttributes(sword::SWModule *m) {
+    std::cout << "Attributes for key: " << m->getKeyText() << std::endl;
+    sword::AttributeTypeList::iterator i1;
+    sword::AttributeList::iterator i2;
+    sword::AttributeValue::iterator i3;
+    for (i1 = m->getEntryAttributes().begin(); i1 != m->getEntryAttributes().end(); i1++) {
+        std::cout << "[ " << i1->first << " ]\n";
+        for (i2 = i1->second.begin(); i2 != i1->second.end(); i2++) {
+            std::cout << "\t[ " << i2->first << " ]\n";
+            for (i3 = i2->second.begin(); i3 != i2->second.end(); i3++) {
+                std::cout << "\t\t" << i3->first << " = " << i3->second << "\n";
+            }
+        }
+    }
+    std::cout << std::endl;
+}
+
+} // anonymous namespace
+#endif
+
 //Increment this, if the index format changes
 //Then indices on the user's systems will be rebuilt
 const unsigned int INDEX_VERSION = 7;
@@ -906,3 +932,4 @@ bool CSwordModuleInfo::setHidden(bool hide) {
     emit hiddenChanged(hide);
     return true;
 }
+
