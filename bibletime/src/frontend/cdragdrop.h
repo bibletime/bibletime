@@ -15,30 +15,36 @@
 #include <QStringList>
 
 
-/** Class which represents a bookmark.
-* Includes key, module name and description, all QStrings which have getter methods.
-* Can be created only through BTMimeData object.
+/**
+  Class which represents a bookmark. Includes key, module name and description,
+  all QStrings which have getter methods. Can be created only through
+  BTMimeData object.
 */
 class BookmarkItem {
+    friend class BTMimeData;
     public:
         /** Returns the key */
-        const QString& key() const {
+        inline const QString &key() const {
             return m_key;
         }
         /** Returns the module name */
-        const QString& module() const {
+        inline const QString &module() const {
             return m_moduleName;
-        } ;
+        }
         /** Returns the bookmark description */
-        const QString& description() const {
+        inline const QString &description() const {
             return m_description;
-        };
+        }
+
     protected:
-        friend class BTMimeData;
-        BookmarkItem(QString, QString, QString);
-        QString m_moduleName; //the module which is used by this item
-        QString m_key; //the key of a bookmark
-        QString m_description; //the description of a bookmark
+        /** Creates a new bookmark item. */
+        BookmarkItem(const QString &module, const QString &key,
+                     const QString &description);
+
+    protected:
+        QString m_moduleName;  /**< The module which is used by this item. */
+        QString m_key;         /**< The key of a bookmark. */
+        QString m_description; /**< The description of a bookmark. */
 };
 
 

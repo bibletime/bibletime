@@ -44,6 +44,9 @@ const BookmarkItem& BTMimeData::bookmark() const {
     return m_bookmarkList.first();
 }
 
-/** Creates a new bookmark item. */
-BookmarkItem::BookmarkItem(QString module, QString key, QString description)
-        : m_moduleName(module), m_key(key), m_description(description) {}
+BookmarkItem::BookmarkItem(const QString &module, const QString &key,
+                           const QString &description)
+        : m_moduleName(module), m_key(key), m_description(description)
+{
+    // Intentionally empty
+}
