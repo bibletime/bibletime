@@ -175,8 +175,9 @@ void BtBookshelfDockWidget::slotItemActionTriggered(QAction *action) {
 void BtBookshelfDockWidget::slotPrepareItemContextMenu() {
     void *v = m_itemContextMenu->property("BtModule").value<void*>();
     CSwordModuleInfo *module = static_cast<CSwordModuleInfo*>(v);
-    m_itemSearchAction->setText(tr("&Search in %1...").arg(module->name()));
     m_itemOpenAction->setEnabled(!module->isLocked());
+    m_itemSearchAction->setText(tr("&Search in %1...").arg(module->name()));
+    m_itemSearchAction->setEnabled(!module->isLocked());
     m_itemEditMenu->setEnabled(module->isWritable());
     m_itemUnlockAction->setEnabled(module->isLocked());
 }
