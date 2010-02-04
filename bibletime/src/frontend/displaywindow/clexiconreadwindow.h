@@ -30,18 +30,10 @@ class CLexiconReadWindow : public CReadWindow  {
     public:
         CLexiconReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
         virtual ~CLexiconReadWindow();
+
         /**
-        * Store the settings of this window in the given CProfileWindow object.
+        * Reimplementation of CReadWindow::insertKeyboardActions();
         */
-        //   virtual void storeProfileSettings( CProfileWindow* profileWindow );
-        /**
-        * Store the settings of this window in the given profile window.
-        */
-        //   virtual void applyProfileSettings( CProfileWindow* profileWindow );
-        /**
-        * Reimplementation.
-        */
-        //   static void insertKeyboardActions( KAccel* a );
         static void insertKeyboardActions( BtActionCollection* const a );
 
     public slots:
