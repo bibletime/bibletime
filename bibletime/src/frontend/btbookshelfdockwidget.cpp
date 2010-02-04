@@ -52,9 +52,9 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
     /// \bug The correct grouping action is not selected on startup.
     setWidget(m_bookshelfWidget);
 
-
+    // Connect signals:
     connect(m_bookshelfWidget->treeView(), SIGNAL(moduleActivated(CSwordModuleInfo*)),
-            this,                 SIGNAL(moduleOpenTriggered(CSwordModuleInfo*)));
+            this,                          SLOT(slotModuleActivated(CSwordModuleInfo*)));
     connect(treeModel, SIGNAL(moduleChecked(CSwordModuleInfo*, bool)),
             this,      SLOT(slotModuleChecked(CSwordModuleInfo*, bool)));
     connect(treeModel, SIGNAL(groupingOrderChanged(BtBookshelfTreeModel::Grouping)),
@@ -135,6 +135,12 @@ BtBookshelfTreeModel::Grouping BtBookshelfDockWidget::loadGroupingSetting() cons
         return TOGROUPING(v);
     } else {
         return BtBookshelfTreeModel::defaultGrouping();
+    }
+}
+
+void BtBookshelfDockWidget::slotModuleActivated(CSwordModuleInfo *module) {
+    if (!module->isLocked()) {
+        emit moduleOpenTriggered(module);
     }
 }
 

@@ -47,6 +47,7 @@ class BtBookshelfDockWidget: public QDockWidget {
         BtBookshelfTreeModel::Grouping loadGroupingSetting() const;
 
     protected slots:
+        void slotModuleActivated(CSwordModuleInfo *module);
         void slotModuleChecked(CSwordModuleInfo *module, bool checked);
         void slotItemActionTriggered(QAction *action);
         void slotPrepareItemContextMenu();
