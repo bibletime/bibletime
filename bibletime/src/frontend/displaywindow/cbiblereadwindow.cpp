@@ -70,6 +70,9 @@ void CBibleReadWindow::applyProfileSettings(CProfileWindow* const settings) {
 
     displaySettingsButton()->setFilterOptions(filterOptions(), false);
     displaySettingsButton()->setDisplayOptions(displayOptions());
+
+    // Apply settings to display:
+    lookup();
 }
 
 void CBibleReadWindow::storeProfileSettings( CProfileWindow * const settings) {

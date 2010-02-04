@@ -265,7 +265,10 @@ class CDisplayWindow : public QMainWindow, public CPointers {
 
         virtual void modulesChanged();
 
-        /** Lookup the current key. Used to refresh the display.*/
+        /**
+          Lookup the current key. Used to refresh the display. This also needs to be called
+          after programmatically changing filter/display options.
+        */
         void lookup();
 
         virtual void updatePopupMenu();
