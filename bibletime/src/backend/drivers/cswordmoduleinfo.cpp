@@ -123,10 +123,15 @@ bool CSwordModuleInfo::unlock(const QString & unlockKey) {
         return false;
     }
 
+    bool unlocked = unlockKeyIsValid();
+
     CBTConfig::setModuleEncryptionKey(name(), unlockKey);
     backend()->setCipherKey(m_module->Name(), unlockKey.toUtf8().constData());
     /// \todo write to Sword config as well
 
+    if (unlockKeyIsValid() != unlocked) {
+        emit unlockedChanged(!unlocked);
+    }
     return true;
 }
 

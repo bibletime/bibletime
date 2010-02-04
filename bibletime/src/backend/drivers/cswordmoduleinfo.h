@@ -339,8 +339,9 @@ class CSwordModuleInfo: public QObject {
         QString getFormattedConfigEntry(const QString& name) const;
 
     signals:
-        void hasIndexChanged(bool);
-        void hiddenChanged(bool);
+        void hasIndexChanged(bool hasIndex);
+        void hiddenChanged(bool hidden);
+        void unlockedChanged(bool unlocked);
         void indexingFinished();
         void indexingProgress(int);
 

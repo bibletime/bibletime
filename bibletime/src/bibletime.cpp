@@ -259,10 +259,7 @@ void BibleTime::moduleUnlock(CSwordModuleInfo *module) {
             &ok
         );
     if (ok) {
-        /// \todo Refactor. Unlock the module via a global modules model.
-        if (module->unlock(unlockKey)) {
-            CPointers::backend()->reloadModules(CSwordBackend::OtherChange);
-        }
+        module->unlock(unlockKey);
     }
 }
 

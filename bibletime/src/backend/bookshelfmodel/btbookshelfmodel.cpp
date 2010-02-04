@@ -214,6 +214,8 @@ void BtBookshelfModel::addModule(CSwordModuleInfo * const module) {
             this, SLOT(moduleHidden(bool)));
     connect(module, SIGNAL(hasIndexChanged(bool)),
             this,   SLOT(moduleIndexed(bool)));
+    connect(module, SIGNAL(unlockedChanged(bool)),
+            this,   SLOT(moduleUnlocked(bool)));
     endInsertRows();
 }
 
@@ -239,6 +241,8 @@ void BtBookshelfModel::addModules(const QSet<CSwordModuleInfo *> &modules) {
                 this, SLOT(moduleHidden(bool)));
         connect(module, SIGNAL(hasIndexChanged(bool)),
                 this,   SLOT(moduleIndexed(bool)));
+        connect(module, SIGNAL(unlockedChanged(bool)),
+                this,   SLOT(moduleUnlocked(bool)));
     }
     endInsertRows();
 }
@@ -253,6 +257,8 @@ void BtBookshelfModel::removeModule(CSwordModuleInfo * const module,
                this, SLOT(moduleHidden(bool)));
     disconnect(module, SIGNAL(hasIndexChanged(bool)),
                this,   SLOT(moduleIndexed(bool)));
+    disconnect(module, SIGNAL(unlockedChanged(bool)),
+               this,   SLOT(moduleUnlocked(bool)));
     m_data.removeAt(index);
     endRemoveRows();
     if (destroy) delete module;
@@ -285,6 +291,12 @@ void BtBookshelfModel::moduleHidden(bool) {
 }
 
 void BtBookshelfModel::moduleIndexed(bool) {
+    Q_ASSERT(qobject_cast<CSwordModuleInfo*>(sender()) != 0);
+
+    moduleDataChanged(static_cast<CSwordModuleInfo*>(sender()));
+}
+
+void BtBookshelfModel::moduleUnlocked(bool) {
     Q_ASSERT(qobject_cast<CSwordModuleInfo*>(sender()) != 0);
 
     moduleDataChanged(static_cast<CSwordModuleInfo*>(sender()));

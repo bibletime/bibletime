@@ -75,6 +75,7 @@ class BtBookshelfModel: public QAbstractListModel {
     protected slots:
         void moduleHidden(bool hidden);
         void moduleIndexed(bool indexed);
+        void moduleUnlocked(bool unlocked);
 
     protected:
         void moduleDataChanged(CSwordModuleInfo *module);
