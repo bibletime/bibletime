@@ -23,7 +23,7 @@ LanguageItem::LanguageItem(CSwordModuleInfo *module)
 QVariant LanguageItem::data(int role) const {
     switch (role) {
         case Qt::DisplayRole:
-            return BtBookshelfModel::languageName(m_language);
+            return m_language->translatedName();
         case Qt::DecorationRole:
             return util::directory::getIcon("flag.svg");
         default:

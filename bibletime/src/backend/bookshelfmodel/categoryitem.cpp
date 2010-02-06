@@ -23,9 +23,9 @@ CategoryItem::CategoryItem(CSwordModuleInfo *module)
 QVariant CategoryItem::data(int role) const {
     switch (role) {
         case Qt::DisplayRole:
-            return BtBookshelfModel::categoryName(m_category);
+            return CSwordModuleInfo::categoryName(m_category);
         case Qt::DecorationRole:
-            return BtBookshelfModel::categoryIcon(m_category);
+            return CSwordModuleInfo::categoryIcon(m_category);
         default:
             return Item::data(role);
     }

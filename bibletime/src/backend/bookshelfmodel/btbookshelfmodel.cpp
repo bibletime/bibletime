@@ -12,9 +12,8 @@
 
 #include "backend/bookshelfmodel/btbookshelfmodel.h"
 
+#include <QIcon>
 #include <QSet>
-#include "util/cresmgr.h"
-#include "util/directory.h"
 
 
 BtBookshelfModel::BtBookshelfModel(QObject *parent)
@@ -37,7 +36,7 @@ QVariant BtBookshelfModel::data(CSwordModuleInfo *module, int role) const {
         case ModuleNameRole: // Qt::DisplayRole
             return module->name();
         case ModuleIconRole: // Qt::DecorationRole
-            return moduleIcon(module);
+            return CSwordModuleInfo::moduleIcon(module);
         case ModulePointerRole:
             return qVariantFromValue((void*) module);
         case ModuleCategoryRole:
@@ -91,104 +90,6 @@ bool BtBookshelfModel::setData(const QModelIndex &index, const QVariant &value,
         return m_data.at(row)->setHidden(value.toBool());
     }
     return false;
-}
-
-QIcon BtBookshelfModel::moduleIcon(const CSwordModuleInfo *module) {
-    namespace DU = util::directory;
-
-    CSwordModuleInfo::Category cat(module->category());
-    switch (cat) {
-        case CSwordModuleInfo::Bibles:
-            if (module->isLocked()) {
-                return DU::getIcon(CResMgr::modules::bible::icon_locked);
-            }
-            else {
-                return DU::getIcon(CResMgr::modules::bible::icon_unlocked);
-            }
-        case CSwordModuleInfo::Commentaries:
-            if (module->isLocked()) {
-                return DU::getIcon(CResMgr::modules::commentary::icon_locked);
-            }
-            else {
-                return DU::getIcon(CResMgr::modules::commentary::icon_unlocked);
-            }
-        case CSwordModuleInfo::Lexicons:
-            if (module->isLocked()) {
-                return DU::getIcon(CResMgr::modules::lexicon::icon_locked);
-            }
-            else {
-                return DU::getIcon(CResMgr::modules::lexicon::icon_unlocked);
-            }
-        case CSwordModuleInfo::Books:
-            if (module->isLocked()) {
-                return DU::getIcon(CResMgr::modules::book::icon_locked);
-            }
-            else {
-                return DU::getIcon(CResMgr::modules::book::icon_unlocked);
-            }
-        case CSwordModuleInfo::Cult:
-        case CSwordModuleInfo::Images:
-        case CSwordModuleInfo::DailyDevotional:
-        case CSwordModuleInfo::Glossary:
-        case CSwordModuleInfo::UnknownCategory:
-        default:
-            return categoryIcon(cat);
-    }
-}
-
-QIcon BtBookshelfModel::categoryIcon(const CSwordModuleInfo::Category &category) {
-    namespace DU = util::directory;
-
-    switch (category) {
-        case CSwordModuleInfo::Bibles:
-            return DU::getIcon(CResMgr::categories::bibles::icon);
-        case CSwordModuleInfo::Commentaries:
-            return DU::getIcon(CResMgr::categories::commentaries::icon);
-        case CSwordModuleInfo::Books:
-            return DU::getIcon(CResMgr::categories::books::icon);
-        case CSwordModuleInfo::Cult:
-            return DU::getIcon(CResMgr::categories::cults::icon);
-        case CSwordModuleInfo::Images:
-            return DU::getIcon(CResMgr::categories::images::icon);
-        case CSwordModuleInfo::DailyDevotional:
-            return DU::getIcon(CResMgr::categories::dailydevotional::icon);
-        case CSwordModuleInfo::Lexicons:
-            return DU::getIcon(CResMgr::categories::lexicons::icon);
-        case CSwordModuleInfo::Glossary:
-            return DU::getIcon(CResMgr::categories::glossary::icon);
-        case CSwordModuleInfo::UnknownCategory:
-        default:
-            return QIcon();
-    }
-}
-
-QString BtBookshelfModel::categoryName(
-    const CSwordModuleInfo::Category &category) {
-    switch (category) {
-        case CSwordModuleInfo::Bibles:
-            return tr("Bibles");
-        case CSwordModuleInfo::Commentaries:
-            return tr("Commentaries");
-        case CSwordModuleInfo::Books:
-            return tr("Books");
-        case CSwordModuleInfo::Cult:
-            return tr("Cults/Unorthodox");
-        case CSwordModuleInfo::Images:
-            return tr("Maps and Images");
-        case CSwordModuleInfo::DailyDevotional:
-            return tr("Daily Devotionals");
-        case CSwordModuleInfo::Lexicons:
-            return  tr("Lexicons and Dictionaries");
-        case CSwordModuleInfo::Glossary:
-            return tr("Glossaries");
-        default:
-            return tr("Unknown");
-    }
-}
-
-QString BtBookshelfModel::languageName(
-    const CLanguageMgr::Language *language) {
-    return language->translatedName();
 }
 
 void BtBookshelfModel::clear(bool destroy) {

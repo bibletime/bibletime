@@ -65,30 +65,6 @@ class BtBookshelfModel: public QAbstractListModel {
         }
 
         /**
-          Returns an icon for the given module.
-          \param[in] module The module whose icon to return.
-        */
-        static QIcon moduleIcon(const CSwordModuleInfo *module);
-
-        /**
-          Returns an icon for the category of given module.
-          \param[in] module The module whose category icon to return.
-        */
-        static QIcon categoryIcon(const CSwordModuleInfo::Category &category);
-
-        /**
-          Returns a translated name for the given category.
-          \param[in] module The category whose translated name to return.
-        */
-        static QString categoryName(const CSwordModuleInfo::Category &category);
-
-        /**
-          Returns a translated name for the given language.
-          \param[in] module The language whose translated name to return.
-        */
-        static QString languageName(const CLanguageMgr::Language *language);
-
-        /**
           Clears the data of the whole model by removing all items.
           \param[in] destroy If true, all CSwordModuleInfo instances in this model are also
                              destroyed.
