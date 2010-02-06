@@ -17,6 +17,7 @@
 
 
 class BtInstallProgressDialog;
+class CSwordBackend;
 
 /**
 * Thread for installing a module.

@@ -26,7 +26,8 @@ using namespace sword;
 
 BtInstallMgr::BtInstallMgr()
         : InstallMgr(instbackend::configPath().toLatin1(), this),
-        m_firstCallOfPreStatus(true) { //use this class also as status reporter
+        m_totalBytes(1), m_completedBytes(0), m_firstCallOfPreStatus(true)
+{ //use this class also as status reporter
     qDebug() << "BtInstallMgr::BtInstallMgr";
     this->setFTPPassive(true);
 }

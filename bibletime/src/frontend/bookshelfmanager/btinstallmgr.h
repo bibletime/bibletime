@@ -21,19 +21,14 @@
 #include <ftptrans.h>
 
 
-class CSwordBackend;
-
-typedef QList<sword::InstallSource*> InstallSourceList;
-
 /**
 * Our own reimplementation to provide installation and status bar updates.
 */
 class BtInstallMgr : public QObject, public sword::InstallMgr, public sword::StatusReporter {
         Q_OBJECT
     public:
-
         BtInstallMgr();
-        virtual ~BtInstallMgr();
+        ~BtInstallMgr();
 
         /**
         * Refreshing the source should be cancellable (othewise it might freeze the app if there is
@@ -42,20 +37,21 @@ class BtInstallMgr : public QObject, public sword::InstallMgr, public sword::Sta
         void slotRefreshCanceled();
 
         /** Re-implemented from sword::InstallMgr. */
-        virtual bool isUserDisclaimerConfirmed() const;
+        bool isUserDisclaimerConfirmed() const;
 
     protected:
         /* Reimplementations of methods in StatusReporter */
         /**
         * Gets the total and current file status, emits the signal with those values as percents.
         */
-        virtual void statusUpdate(double dltotal, double dlnow);
+        void statusUpdate(double dltotal, double dlnow);
         /**
+        * \warning This method is not always called before statusUpdate().
         * Called before starting to download each file of the module package.
         * The sword message is not i18n'ed, it's in the form "Downloading (1 of 6): nt.bzs".
         * This function is not utilized in the UI ATM.
         */
-        virtual void preStatus(long totalBytes, long completedBytes, const char *message);
+        void preStatus(long totalBytes, long completedBytes, const char *message);
 
         long m_totalBytes;
         long m_completedBytes;
