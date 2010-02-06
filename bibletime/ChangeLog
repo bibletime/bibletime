@@ -1,3 +1,6 @@
+2009-02-06 Martin Gruner <mgruner@crosswire.org>
+    * Re-added (configurable) removal of orphaned indices, code relocated
+
 2010-02-04 Jaak Ristioja <ristioja@gmail.com>
     * Fixed a bug that some display/filter settings were not applied on startup.
 

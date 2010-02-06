@@ -504,3 +504,26 @@ QStringList CSwordBackend::swordDirList() const {
 
     return swordDirSet.values();
 }
+
+void CSwordBackend::deleteOrphanedIndices() {
+    QDir dir(CSwordModuleInfo::getGlobalBaseIndexLocation());
+    dir.setFilter(QDir::Dirs);
+    CSwordModuleInfo* module;
+
+    for (unsigned int i = 0; i < dir.count(); i++) {
+        if (dir[i] != "." && dir[i] != "..") {
+            if ( (module = this->findModuleByName(dir[i])) ) { //mod exists
+                if (!module->hasIndex()) { //index files found, but wrong version etc.
+					qDebug() << "deleting outdated index for module" << dir[i];
+                    CSwordModuleInfo::deleteIndexForModule( dir[i] );
+                }
+            }
+            else { //no module exists
+                if (CBTConfig::get( CBTConfig::autoDeleteOrphanedIndices ) ) {
+					qDebug() << "deleting orphaned index in directory" << dir[i];
+                    CSwordModuleInfo::deleteIndexForModule( dir[i] );
+                }
+            }
+        }
+    }
+}

@@ -291,7 +291,7 @@ void BibleTime::initActions() {
     connect(m_quitAction, SIGNAL(triggered()),
             this,         SLOT(quit()));
 
-    
+
     // View menu actions:
     m_windowFullscreenAction = m_actionCollection->action("toggleFullscreen");
     m_windowFullscreenAction->setCheckable(true);
@@ -307,25 +307,25 @@ void BibleTime::initActions() {
     m_showBookshelfAction = m_bookshelfDock->toggleViewAction();
     m_showBookmarksAction = m_bookmarksDock->toggleViewAction();
     m_showMagAction = m_magDock->toggleViewAction();
-    
+
     m_showTextAreaHeadersAction = new QAction(this);
     m_showTextAreaHeadersAction->setCheckable(true);
     m_showTextAreaHeadersAction->setChecked(CBTConfig::get(CBTConfig::showTextWindowHeaders));
     connect(m_showTextAreaHeadersAction, SIGNAL(toggled(bool)),
             this,                        SLOT(slotToggleTextWindowHeader()));
-    
+
     m_showTextWindowNavigationAction = new QAction(this);
     m_showTextWindowNavigationAction->setCheckable(true);
     m_showTextWindowNavigationAction->setChecked(CBTConfig::get(CBTConfig::showTextWindowNavigator));
     connect(m_showTextWindowNavigationAction, SIGNAL(toggled(bool)),
             this,                             SLOT(slotToggleTextWindowNavigator()));
-    
+
     m_showTextWindowModuleChooserAction = new QAction(this);
     m_showTextWindowModuleChooserAction->setCheckable(true);
     m_showTextWindowModuleChooserAction->setChecked(CBTConfig::get(CBTConfig::showTextWindowModuleSelectorButtons));
     connect(m_showTextWindowModuleChooserAction, SIGNAL(toggled(bool)),
             this,                                SLOT(slotToggleTextWindowModuleChooser()));
-    
+
     m_showTextWindowToolButtonsAction = new QAction(this);
     m_showTextWindowToolButtonsAction->setCheckable(true);
     m_showTextWindowToolButtonsAction->setChecked(CBTConfig::get(CBTConfig::showTextWindowToolButtons));
@@ -661,11 +661,10 @@ void BibleTime::initBackends() {
 // 		}
     }
 
-    //This function will
+    // This function will
     // - delete all orphaned indexes (no module present) if autoDeleteOrphanedIndices is true
     // - delete all indices of modules where hasIndex() returns false
-    //BookshelfManager::CManageIndicesWidget::deleteOrphanedIndices();
-    /// \todo //backend::deleteOrphanedIndices();
+    backend->deleteOrphanedIndices();
 
 }
 
