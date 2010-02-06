@@ -28,8 +28,9 @@
 #include "util/cresmgr.h"
 
 
-CAcceleratorSettingsPage::CAcceleratorSettingsPage(QWidget* /* parent */ )
-        : BtConfigPage() {
+CAcceleratorSettingsPage::CAcceleratorSettingsPage(QWidget *parent)
+        : BtConfigPage(parent)
+{
     QVBoxLayout* mainLayout = new QVBoxLayout(this);
     this->setLayout(mainLayout);
 

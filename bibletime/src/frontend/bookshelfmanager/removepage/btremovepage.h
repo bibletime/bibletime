@@ -28,7 +28,7 @@ class BtRemovePage: public BtConfigPage {
         Q_OBJECT
 
     public:
-        BtRemovePage();
+        BtRemovePage(QWidget *parent = 0);
 
         // BtConfigPage methods:
         QString header();

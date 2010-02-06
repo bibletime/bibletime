@@ -23,7 +23,8 @@ class TextFiltersTab;
 class CSwordSettingsPage : public BtConfigPage {
         Q_OBJECT
     public:
-        CSwordSettingsPage(QWidget* parent);
+        CSwordSettingsPage(QWidget *parent = 0);
+
         void save();
         QString iconName();
         QString label();

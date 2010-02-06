@@ -109,6 +109,12 @@ void BtConfigDialog::slotChangePage(int newIndex) {
 
 
 
-BtConfigPage::BtConfigPage() {}
+BtConfigPage::BtConfigPage(QWidget *parent)
+    : QWidget(parent)
+{
+    // Intentionally empty
+}
 
-BtConfigPage::~BtConfigPage() {}
+BtConfigPage::~BtConfigPage() {
+    // Intentionally empty
+}

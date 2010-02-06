@@ -25,8 +25,9 @@
 #include "util/cpointers.h"
 
 
-CSwordSettingsPage::CSwordSettingsPage(QWidget* /*parent*/)
-        : BtConfigPage() {
+CSwordSettingsPage::CSwordSettingsPage(QWidget *parent)
+        : BtConfigPage(parent)
+{
     QVBoxLayout* vbox = new QVBoxLayout(this);
     QTabWidget* tabWidget = new QTabWidget();
     vbox->addWidget(tabWidget);

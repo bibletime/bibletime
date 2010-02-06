@@ -25,8 +25,9 @@
 #include <swlocale.h>
 
 
-BtLanguageSettingsPage::BtLanguageSettingsPage(QWidget* /*parent*/)
-        : BtConfigPage() {
+BtLanguageSettingsPage::BtLanguageSettingsPage(QWidget *parent)
+        : BtConfigPage(parent)
+{
     namespace DU = util::directory;
 
     QVBoxLayout* layout = new QVBoxLayout(this);

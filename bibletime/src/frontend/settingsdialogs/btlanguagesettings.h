@@ -28,7 +28,7 @@ class QComboBox;
 class BtLanguageSettingsPage : public BtConfigPage, CPointers {
         Q_OBJECT
     public:
-        BtLanguageSettingsPage(QWidget *parent);
+        BtLanguageSettingsPage(QWidget *parent = 0);
         ~BtLanguageSettingsPage();
         void save();
         QString iconName();

@@ -55,8 +55,9 @@
 // *********** Config dialog page: Install/Update **********
 // *********************************************************
 
-BtInstallPage::BtInstallPage()
-        : BtConfigPage() {
+BtInstallPage::BtInstallPage(QWidget *parent)
+        : BtConfigPage(parent)
+{
     qDebug() << "BtInstallPage::BtInstallPage() start";
     initView();
     initConnections();

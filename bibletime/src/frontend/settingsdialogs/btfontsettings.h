@@ -28,7 +28,7 @@ class QComboBox;
 class BtFontSettingsPage : public BtConfigPage, CPointers {
         Q_OBJECT
     public:
-        BtFontSettingsPage(QWidget *parent);
+        BtFontSettingsPage(QWidget *parent = 0);
         ~BtFontSettingsPage();
         void save();
         QString iconName();

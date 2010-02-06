@@ -22,7 +22,7 @@ class QWebView;
 class CDisplaySettingsPage : public BtConfigPage {
         Q_OBJECT
     public:
-        CDisplaySettingsPage(QWidget* parent);
+        CDisplaySettingsPage(QWidget *parent = 0);
         void save();
         QString iconName();
         QString label();

@@ -29,7 +29,7 @@ class QStackedWidget;
 class CAcceleratorSettingsPage : public BtConfigPage, CPointers {
         Q_OBJECT
     public:
-        CAcceleratorSettingsPage(QWidget *parent);
+        CAcceleratorSettingsPage(QWidget *parent = 0);
         ~CAcceleratorSettingsPage();
         void save();
         QString iconName();

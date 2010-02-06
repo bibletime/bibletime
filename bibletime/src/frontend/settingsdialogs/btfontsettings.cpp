@@ -27,8 +27,9 @@
 #include "btfontsettings.h"
 
 
-BtFontSettingsPage::BtFontSettingsPage(QWidget* /*parent*/)
-        : BtConfigPage() {
+BtFontSettingsPage::BtFontSettingsPage(QWidget *parent)
+        : BtConfigPage(parent)
+{
     namespace DU = util::directory;
 
     QVBoxLayout* layout = new QVBoxLayout(this);

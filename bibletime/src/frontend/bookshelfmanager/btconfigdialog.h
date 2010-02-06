@@ -62,7 +62,7 @@ class BtConfigDialog : public QDialog {
 class BtConfigPage : public QWidget {
         Q_OBJECT
     public:
-        BtConfigPage();
+        BtConfigPage(QWidget *parent = 0);
         virtual ~BtConfigPage();
 
         /** Implement these to return the correct values.

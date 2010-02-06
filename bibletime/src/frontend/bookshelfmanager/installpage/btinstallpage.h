@@ -29,7 +29,7 @@ class QToolButton;
 class BtInstallPage : public BtConfigPage {
         Q_OBJECT
     public:
-        BtInstallPage();
+        BtInstallPage(QWidget *parent = 0);
 
         // reimplemented from btinstallpage
         QString iconName();

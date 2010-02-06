@@ -26,8 +26,9 @@
 #include "util/tool.h"
 
 
-BtIndexPage::BtIndexPage()
-        : BtConfigPage() {
+BtIndexPage::BtIndexPage(QWidget *parent)
+        : BtConfigPage(parent)
+{
     namespace DU = util::directory;
 
     QVBoxLayout *vboxLayout;

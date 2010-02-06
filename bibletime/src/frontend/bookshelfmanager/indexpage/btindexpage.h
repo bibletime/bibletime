@@ -26,14 +26,7 @@ class BtIndexPage : public BtConfigPage {
         Q_OBJECT
 
     public:
-        /**
-        * Constructor
-        */
-        BtIndexPage();
-
-        /**
-        * Destructor
-        */
+        BtIndexPage(QWidget *parent = 0);
         ~BtIndexPage();
 
         // BtConfigPage methods

@@ -33,8 +33,9 @@
 #include <installmgr.h>
 
 
-BtRemovePage::BtRemovePage()
-        : BtConfigPage() {
+BtRemovePage::BtRemovePage(QWidget *parent)
+        : BtConfigPage(parent)
+{
     namespace DU = util::directory;
 
     QGridLayout* layout = new QGridLayout(this);

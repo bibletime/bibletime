@@ -44,8 +44,9 @@ QSize CWebViewerWidget::sizeHint () const {
 // ************************
 
 /** Initializes the startup section of the OD. */
-CDisplaySettingsPage::CDisplaySettingsPage(QWidget* /*parent*/)
-        : BtConfigPage() {
+CDisplaySettingsPage::CDisplaySettingsPage(QWidget *parent)
+        : BtConfigPage(parent)
+{
     QVBoxLayout* layout = new QVBoxLayout(this);
 
     { //startup logo
