@@ -32,9 +32,6 @@ class BtToolBarPopupAction : public QWidgetAction {
 // Function to catch the Shortcut event and emit the triggered signal
         virtual bool event(QEvent* e);
 
-    signals:
-        void triggered();
-
     protected:
         QWidget* createWidget(QWidget* parent);
 
