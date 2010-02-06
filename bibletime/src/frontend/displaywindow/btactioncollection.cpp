@@ -21,8 +21,10 @@
 
 class BtActionItem : public QObject {
     public:
-        BtActionItem(QObject* parent)
-                : QObject(parent) {
+        BtActionItem(QAction *action, QObject *parent = 0)
+                : QObject(parent), defaultKeys(action->shortcut()), action(action)
+        {
+            // Intentionally empty
         }
         QKeySequence defaultKeys;
         QAction* action;
@@ -57,9 +59,7 @@ QAction* BtActionCollection::action(const QString& name) {
 QAction* BtActionCollection::addAction(const QString& name, QAction* action) {
     Q_ASSERT(action != 0);
     Q_ASSERT(!m_actions.contains(name));   /// \todo replacing actions is ok???
-    BtActionItem* item = new BtActionItem(this);
-    item->action = action;
-    item->defaultKeys = action->shortcut();
+    BtActionItem* item = new BtActionItem(action, this);
     m_actions.insert(name, item);
     return action;
 }
