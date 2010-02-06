@@ -251,7 +251,7 @@ QString IntListToString(const QList<int> intList) {
     return intStrings.join(",");
 }
 
-QList<int> StringToIntList(const QString intListString) {
+QList<int> StringToIntList(const QString &intListString) {
     QList<int> intList;
     if (!intListString.isEmpty() && intListString.contains(',')) {
         foreach(QString intString, intListString.split(',')) {
@@ -607,7 +607,7 @@ FontSettingsPair get(const CLanguageMgr::Language * const language) {
     return settings;
 }
 
-void set(const strings ID, const QString value) {
+void set(const strings ID, const QString &value) {
 //     KConfigGroup cg = getConfig()->group("strings");
 //     cg.writeEntry(getKey(ID), value);
     getConfig()->beginGroup("strings");

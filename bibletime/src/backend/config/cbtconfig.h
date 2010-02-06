@@ -141,7 +141,7 @@ enum stringMaps {
 };
 
 QString    IntListToString(const QList<int> intList);
-QList<int> StringToIntList(const QString    intListString);
+QList<int> StringToIntList(const QString   &intListString);
 
 QString     getDefault(const strings);
 QString     getDefault(const modules);
@@ -161,7 +161,7 @@ QStringList       get(const stringLists);
 StringMap         get(const stringMaps);
 FontSettingsPair  get(const CLanguageMgr::Language * const);
 
-void set(const strings,     const QString            value);
+void set(const strings,     const QString           &value);
 void set(const modules,     CSwordModuleInfo * const module);
 void set(const modules,     const QString&           moduleName);
 void set(const bools,       const bool               value);

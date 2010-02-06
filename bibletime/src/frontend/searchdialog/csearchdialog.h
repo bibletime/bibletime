@@ -76,7 +76,7 @@ class CSearchDialog : public QDialog {
         /**
         * Sets the search text which is used for the search.
         */
-        void setSearchText( const QString searchText );
+        void setSearchText( const QString &searchText );
         /**
         * Returns the search text which is set currently.
         */

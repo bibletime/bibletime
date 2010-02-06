@@ -209,7 +209,7 @@ sword::ListKey CSearchDialog::searchScope() {
 }
 
 /** Sets the search text which is used for the search. */
-void CSearchDialog::setSearchText( const QString searchText ) {
+void CSearchDialog::setSearchText( const QString &searchText ) {
     m_searchOptionsArea->setSearchText(searchText);
 }
 

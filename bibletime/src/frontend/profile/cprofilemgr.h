@@ -28,7 +28,7 @@ class CProfileMgr {
         /** Creates a new profile with the name "name" (first parameter).
         * @return The profile object
         */
-        CProfile* create( const QString name );
+        CProfile *create(const QString &name);
         /**
         * @return a list of available profiles
         */

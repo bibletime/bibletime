@@ -48,7 +48,7 @@ const QList<CProfile*>& CProfileMgr::profiles() {
 }
 
 /** Creates a new profile with the name "name" (first parameter).  @return The profile object */
-CProfile* CProfileMgr::create( const QString name ) {
+CProfile *CProfileMgr::create(const QString &name) {
     CProfile* p = new CProfile(QString::null, name);
     m_profiles.append(p);
 
