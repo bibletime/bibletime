@@ -9,7 +9,6 @@
 
 #include "frontend/bookshelfmanager/installpage/btsourcearea.h"
 
-#include <boost/scoped_ptr.hpp>
 #include <QApplication>
 #include <QDebug>
 #include <QHBoxLayout>
@@ -40,16 +39,8 @@
 namespace {
 
 struct InstalledFilter: BTModuleTreeItem::Filter {
-    InstalledFilter(QString sourceName)
-            : BTModuleTreeItem::Filter(),
-            m_source(instbackend::source(sourceName)),
-            m_swordBackend(instbackend::backend(m_source)) {
-        // these are set once to optimize away repeated calls
-        // m_source, m_swordBackend
-
-    }
     //filter out already installed, not updateable modules
-    bool filter(CSwordModuleInfo* mInfo) {
+    bool filter(CSwordModuleInfo *mInfo) {
         typedef CSwordModuleInfo CSMI;
         typedef sword::SWVersion SV;
 
@@ -64,8 +55,6 @@ struct InstalledFilter: BTModuleTreeItem::Filter {
         }
         return true;
     }
-    sword::InstallSource m_source;
-    boost::scoped_ptr<CSwordBackend> m_swordBackend;
 };
 
 }
@@ -176,7 +165,7 @@ void BtSourceArea::slotCreateTree() {
 
     // give the list to BTModuleTreeItem, create filter to remove
     // those modules which are installed already
-    InstalledFilter alreadyInstalledFilter(m_sourceName);
+    InstalledFilter alreadyInstalledFilter;
     QList<BTModuleTreeItem::Filter*> filterList;
     filterList.append(&alreadyInstalledFilter);
     BTModuleTreeItem rootItem(filterList, BTModuleTreeItem::CatLangMod, &m_moduleList);
