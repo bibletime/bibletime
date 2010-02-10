@@ -11,19 +11,19 @@
 
 #include <boost/scoped_ptr.hpp>
 #include <QApplication>
-#include <QString>
-#include <QWidget>
-#include <QMap>
-#include <QVBoxLayout>
+#include <QDebug>
 #include <QHBoxLayout>
-#include <QSpacerItem>
+#include <QHeaderView>
 #include <QLabel>
+#include <QMap>
 #include <QPushButton>
+#include <QSpacerItem>
+#include <QString>
+#include <QTime>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
-#include <QHeaderView>
-#include <QDebug>
-#include <QTime>
+#include <QVBoxLayout>
+#include <QWidget>
 #include "backend/btmoduletreeitem.h"
 #include "backend/managers/cswordbackend.h"
 #include "frontend/bookshelfmanager/instbackend.h"
