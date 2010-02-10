@@ -69,12 +69,10 @@ BtSourceArea::BtSourceArea(const QString& sourceName)
         m_treeAlreadyInitialized(false),
         m_remoteBackend(0) { //important!
     setObjectName(sourceName);
-    qDebug() << "BtSourceArea::BtSourceArea, " << m_sourceName;
     initView();
 }
 
 BtSourceArea::~BtSourceArea() {
-    qDebug() << "BtSourceArea::~BtSourceArea" << m_sourceName;
     delete m_remoteBackend;
 }
 
