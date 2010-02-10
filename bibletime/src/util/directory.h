@@ -72,6 +72,9 @@ QDir getSharedSwordDir();
 
 #endif
 
+/** Return the path to the SWORD_PATH env var directory */
+QDir getSwordPathDir();
+
 /** Return the path to the icons. */
 QDir getIconDir();
 

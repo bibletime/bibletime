@@ -39,6 +39,7 @@ QDir cachedUserHomeSwordModsDir;
 QDir cachedUserSessionsDir;
 QDir cachedUserCacheDir;
 QDir cachedUserIndexDir;
+QDir cachedSwordPathDir;
 #ifdef Q_WS_WIN
 QDir cachedApplicationSwordDir; // Only Windows installs the sword directory which contains locales.d
 QDir cachedSharedSwordDir;
@@ -51,6 +52,8 @@ static const char* SWORD_DIR = "Sword";
 static const char* BIBLETIME = ".bibletime";
 static const char* SWORD_DIR = ".sword";
 #endif
+static const char* SWORD_PATH = "SWORD_PATH";
+static const char* UNSET_SWORD_PATH = "SWORD_PATH=";
 } // anonymous namespace
 
 bool initDirectoryCache() {
@@ -82,6 +85,14 @@ bool initDirectoryCache() {
         }
     }
 #endif
+
+    cachedSwordPathDir = QDir();
+    char* swordPath = getenv(SWORD_PATH);
+    if (swordPath != 0) {
+        cachedSwordPathDir = QDir(swordPath);
+        // We unset the SWORD_PATH so libsword finds paths correctly
+        putenv((char*)UNSET_SWORD_PATH);
+    }
 
     cachedIconDir = wDir; // Icon dir
     if (!cachedIconDir.cd("share/bibletime/icons") || !cachedIconDir.isReadable()) {
@@ -297,6 +308,10 @@ QDir getSharedSwordDir() {
 }
 
 #endif
+
+QDir getSwordPathDir() {
+    return cachedSwordPathDir;
+}
 
 QDir getIconDir() {
     return cachedIconDir;
