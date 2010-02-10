@@ -38,8 +38,8 @@
 
 namespace {
 
+/** Filters out already installed modules which can't be updated right now. */
 struct InstalledFilter: BTModuleTreeItem::Filter {
-    //filter out already installed, not updateable modules
     bool filter(CSwordModuleInfo *mInfo) {
         typedef CSwordModuleInfo CSMI;
         typedef sword::SWVersion SV;
@@ -57,7 +57,7 @@ struct InstalledFilter: BTModuleTreeItem::Filter {
     }
 };
 
-}
+} // anonymous namespace
 
 // ****************************************************************
 // ******** Installation source and module list widget ************
