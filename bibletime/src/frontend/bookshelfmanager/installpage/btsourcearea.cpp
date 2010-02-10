@@ -9,6 +9,8 @@
 
 #include "frontend/bookshelfmanager/installpage/btsourcearea.h"
 
+#include <boost/scoped_ptr.hpp>
+#include <QApplication>
 #include <QString>
 #include <QWidget>
 #include <QMap>
@@ -22,6 +24,7 @@
 #include <QHeaderView>
 #include <QDebug>
 #include <QTime>
+#include "backend/btmoduletreeitem.h"
 #include "backend/managers/cswordbackend.h"
 #include "frontend/bookshelfmanager/instbackend.h"
 #include "frontend/btaboutmoduledialog.h"
@@ -33,6 +36,39 @@
 // Sword includes:
 #include <installmgr.h>
 
+
+namespace {
+
+struct InstalledFilter: BTModuleTreeItem::Filter {
+    InstalledFilter(QString sourceName)
+            : BTModuleTreeItem::Filter(),
+            m_source(instbackend::source(sourceName)),
+            m_swordBackend(instbackend::backend(m_source)) {
+        // these are set once to optimize away repeated calls
+        // m_source, m_swordBackend
+
+    }
+    //filter out already installed, not updateable modules
+    bool filter(CSwordModuleInfo* mInfo) {
+        typedef CSwordModuleInfo CSMI;
+        typedef sword::SWVersion SV;
+
+        const CSMI *installedModule = CPointers::backend()->findModuleByName(mInfo->name());
+        if (installedModule) {
+            // Already installed, check if it's an update:
+            const SV curVersion(installedModule->config(CSMI::ModuleVersion).toLatin1());
+            const SV newVersion(mInfo->config(CSMI::ModuleVersion).toLatin1());
+            if (curVersion >= newVersion) {
+                return false;
+            }
+        }
+        return true;
+    }
+    sword::InstallSource m_source;
+    boost::scoped_ptr<CSwordBackend> m_swordBackend;
+};
+
+}
 
 // ****************************************************************
 // ******** Installation source and module list widget ************
@@ -252,29 +288,6 @@ void BtSourceArea::slotItemDoubleClicked(QTreeWidgetItem* item, int /*column*/) 
         dialog->show();
         dialog->raise();
     }
-}
-
-BtSourceArea::InstalledFilter::InstalledFilter(QString sourceName)
-        : BTModuleTreeItem::Filter(),
-        m_source(instbackend::source(sourceName)),
-        m_swordBackend(instbackend::backend(m_source)) {
-    // these are set once to optimize away repeated calls
-    // m_source, m_swordBackend
-
-}
-//filter out already installed, not updateable modules
-bool BtSourceArea::InstalledFilter::filter(CSwordModuleInfo* mInfo) {
-    //qDebug() << "BtSourceArea::InstalledFilter::filter, module " << mInfo->name();
-    CSwordModuleInfo* const installedModule = CPointers::backend()->findModuleByName(mInfo->name());
-    if (installedModule) {
-        //qDebug() << "already installed, check if it's an update...";
-        const sword::SWVersion installedVersion(installedModule->config(CSwordModuleInfo::ModuleVersion).toLatin1());
-        const sword::SWVersion newVersion(mInfo->config(CSwordModuleInfo::ModuleVersion).toLatin1());
-        if (installedVersion >= newVersion) {
-            return false;
-        }
-    }
-    return true;
 }
 
 void BtSourceArea::slotSwordSetupChanged() {

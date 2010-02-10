@@ -12,15 +12,15 @@
 
 #include <QWidget>
 
-#include <boost/scoped_ptr.hpp>
-#include <QApplication>
 #include <QSet>
-#include "backend/btmoduletreeitem.h"
 
 // Sword includes:
 #include <installmgr.h>
 
 
+class BTModuleTreeItem;
+class CSwordBackend;
+class CSwordModuleInfo;
 class QTreeWidget;
 class QTreeWidgetItem;
 class QLabel;
@@ -43,13 +43,6 @@ class BtSourceArea : public QWidget {
 
         friend class BtSourceWidget;
     public:
-
-        struct InstalledFilter : BTModuleTreeItem::Filter {
-            InstalledFilter(QString sourceName);
-            bool filter(CSwordModuleInfo*);
-            sword::InstallSource m_source;
-            boost::scoped_ptr<CSwordBackend> m_swordBackend;
-        };
 
         BtSourceArea(const QString& sourceName);
         ~BtSourceArea();

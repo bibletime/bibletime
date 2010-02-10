@@ -9,6 +9,7 @@
 
 #include "frontend/bookshelfmanager/installpage/btsourcewidget.h"
 
+#include <boost/scoped_ptr.hpp>
 #include <QApplication>
 #include <QFileInfo>
 #include <QHBoxLayout>
