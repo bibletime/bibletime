@@ -942,9 +942,9 @@ manuale del piazzamento delle finestre.</entry>
               <keycap>&Ctrl;&Alt;T</keycap></keycombo>
             </entry>
             <entry>
-	      <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement 
-mode</guimenuitem> <guimenuitem>Tabbed</guimenuitem> </menuchoice> 
-equivalent; organizes windows with tabs across the top.</entry>
+	      <menuchoice> <guimenu>Finestra</guimenu> 
+<guimenuitem>Arrangiamento</guimenuitem> <guimenuitem>Schede</guimenuitem> 
+</menuchoice> equivalent; organizza le finestra in schede in alto.</entry>
           </row>
 
           <row>

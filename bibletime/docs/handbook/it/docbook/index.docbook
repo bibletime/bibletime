@@ -20,7 +20,7 @@
 ]>
 <book>
 <bookinfo>
-  <title>The &bibletime; Handbook</title>
+  <title>Il Manuale di &bibletime;</title>
 
   <authorgroup>
     <author>
@@ -44,14 +44,15 @@
   <!-- TRANS:ROLES_OF_TRANSLATORS -->
 <copyright>
     <year>1999-2010</year>
-    <holder>The &bibletime; Team</holder>
+    <holder>Il Team di &bibletime;</holder>
   </copyright>
 
   <legalnotice>
-    <para>The &bibletime; Handbook is distributed with the &bibletime; study program.</para>
+    <para>Il Manuale di &bibletime; è distribuito con il programma di studio di 
+&bibletime;.</para>
   </legalnotice>
 
-  <date>$LastChangedDate: 2009-12-31 15:05:52 -0500 (Thu, 31 Dec 2009) $</date>
+  <date>$LastChangedDate: 2010-01-21 00:14:01 -0500 (Thu, 21 Jan 2010) $</date>
 
   <releaseinfo>2.6</releaseinfo>
 

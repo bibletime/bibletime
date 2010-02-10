@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
-"POT-Creation-Date: 2010-01-21 00:03-0500\n"
-"PO-Revision-Date: 2010-01-15 12:50+0100\n"
+"POT-Creation-Date: 2010-02-10 14:35-0500\n"
+"PO-Revision-Date: 2010-02-09 17:10+0100\n"
 "Last-Translator: \n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -1834,16 +1834,14 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:974
-#, fuzzy
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> <guimenuitem>Tabbed</guimenuitem> </menuchoice> equivalent; "
 "organizes windows with tabs across the top."
 msgstr ""
 "<menuchoice> <guimenu>Finestra</guimenu> <guimenuitem>Arrangiamento</"
-"guimenuitem> <guimenuitem>Modalità manuale</guimenuitem> </menuchoice> "
-"equivalent; attiva/disattiva la modalità manuale del piazzamento delle "
-"finestre."
+"guimenuitem> <guimenuitem>Schede</guimenuitem> </menuchoice> equivalent; "
+"organizza le finestra in schede in alto."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:988
@@ -2114,9 +2112,8 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-start.docbook:39
-#, fuzzy
 msgid "Starting &bibletime; for the first time"
-msgstr "Avviando &bibletime;"
+msgstr "Avviando &bibletime; per la prima volta"
 
 # type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-start.docbook:41
@@ -2170,9 +2167,8 @@ msgstr "<application>BibleTime</application>"
 
 # type: Content of the kde entity
 #: docs/handbook/en/docbook/index.docbook:6
-#, fuzzy
 msgid "<application>SWORD</application>"
-msgstr "<application>KDE</application>"
+msgstr "<application>SWORD</application>"
 
 # type: Content of the cbs entity
 #: docs/handbook/en/docbook/index.docbook:7
@@ -2206,34 +2202,32 @@ msgstr "Alt"
 
 # type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/index.docbook:23
-#, fuzzy
 msgid "The &bibletime; Handbook"
-msgstr "Configura &bibletime;"
+msgstr "Il Manuale di &bibletime;"
 
 # type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/index.docbook:46
-#, fuzzy
 msgid "The &bibletime; Team"
-msgstr "About &bibletime;"
+msgstr "Il Team di &bibletime;"
 
 # type: Content of: <book><bookinfo><legalnotice><para>
 #: docs/handbook/en/docbook/index.docbook:50
-#, fuzzy
 msgid ""
 "The &bibletime; Handbook is distributed with the &bibletime; study program."
 msgstr ""
-"Il Manuale di &bibletime; è parte degli aiuti di &bibletime; allo studio."
+"Il Manuale di &bibletime; è distribuito con il programma di studio di "
+"&bibletime;."
 
 # type: Content of: <book><bookinfo><date>
 #: docs/handbook/en/docbook/index.docbook:54
-msgid "$LastChangedDate: 2009-12-31 15:05:52 -0500 (Thu, 31 Dec 2009) $"
-msgstr ""
+#, fuzzy
+msgid "$LastChangedDate: 2010-01-21 00:14:01 -0500 (Thu, 21 Jan 2010) $"
+msgstr "$LastChangedDate: 2009-12-31 15:05:52 -0500 (Thu, 31 Dec 2009) $"
 
 # type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:56
-#, fuzzy
 msgid "2.6"
-msgstr "2.5"
+msgstr "2.6"
 
 # type: Content of: <book><bookinfo><abstract><para>
 #: docs/handbook/en/docbook/index.docbook:59

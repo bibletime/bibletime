@@ -264,12 +264,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="174"/>
         <source>Ta&amp;bbed</source>
-        <translation type="unfinished"></translation>
+        <translation>Sc&amp;hede</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="177"/>
         <source>Automatically tab the open windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Automaticamente metti in schede le finestre aperte</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="184"/>
@@ -412,7 +412,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="249"/>
         <source>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</source>
-        <translation type="unfinished"></translation>
+        <translation>BibleTime è rilasciato sotto la licenza GPL. Puoi scaricare e utilizzare il programma a scopo personale, privato, pubblico o commerciale senza restrizioni, ma puoi regalare o distribuire il programma solo se distribuisci anche il corrispondente codice sorgente.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="255"/>
@@ -557,7 +557,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="209"/>
         <source>&amp;SWORD</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;SWORD</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="213"/>
@@ -809,22 +809,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="43"/>
         <source>You can specify a custom font for each language.</source>
-        <translation type="unfinished">Puoi specificare un carattere personalizzato per ogni lingua.</translation>
+        <translation>Puoi specificare un carattere personalizzato per ogni lingua.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="49"/>
         <source>The font selection below will apply to all texts in this language</source>
-        <translation type="unfinished">Il carattere selezionatto sotto sarà applicato a tutto il testo in questa lingua</translation>
+        <translation>Il carattere selezionatto sotto sarà applicato a tutto il testo in questa lingua</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="73"/>
         <source>Use custom font</source>
-        <translation type="unfinished">Usa carattere personalizzato</translation>
+        <translation>Usa carattere personalizzato</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="164"/>
         <source>Fonts</source>
-        <translation type="unfinished">Caratteri</translation>
+        <translation>Caratteri</translation>
     </message>
 </context>
 <context>
@@ -1123,22 +1123,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="39"/>
         <source>Select the language in which the Biblical book names are displayed.</source>
-        <translation type="unfinished">Seleziona la lingua in cui i nomi dei libri della Bibbia sono visualizzati.</translation>
+        <translation>Seleziona la lingua in cui i nomi dei libri della Bibbia sono visualizzati.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="43"/>
         <source>Language for names of Bible books:</source>
-        <translation type="unfinished">Lingua per i nomi dei libri della Bibbia:</translation>
+        <translation>Lingua per i nomi dei libri della Bibbia:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="45"/>
         <source>The languages which can be used for the biblical booknames</source>
-        <translation type="unfinished">Lingue che possono essere utilizzate per i nomi dei libri della Bibbia</translation>
+        <translation>Lingue che possono essere utilizzate per i nomi dei libri della Bibbia</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="153"/>
         <source>Languages</source>
-        <translation type="unfinished">Lingue</translation>
+        <translation>Lingue</translation>
     </message>
 </context>
 <context>
@@ -1898,12 +1898,12 @@ scorciatoia</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="365"/>
         <source>Tool</source>
-        <translation type="unfinished"></translation>
+        <translation>Strumento</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="371"/>
         <source>Format</source>
-        <translation type="unfinished"></translation>
+        <translation>Formato</translation>
     </message>
     <message>
         <source>Tools</source>
