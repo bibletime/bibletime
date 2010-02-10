@@ -53,18 +53,6 @@ QString BtSourceWidget::currentSourceName() {
     return m_sourceNameList.at(currentIndex());
 }
 
-void BtSourceWidget::initSourceConnections() {
-    qDebug() << "void BtSourceWidget::initSourceConnections() start";
-    if (area()) {
-        connect(area()->m_refreshButton, SIGNAL(clicked()), SLOT(slotRefresh()));
-        //connect(area()->m_editButton, SIGNAL(clicked()), SLOT(slotEdit()));
-        connect(area()->m_deleteButton, SIGNAL(clicked()), SLOT(slotDelete()), Qt::QueuedConnection);
-        connect(area()->m_addButton, SIGNAL(clicked()), SLOT(slotAdd()));
-        connect(area(), SIGNAL(signalSelectionChanged(QString, int)), SLOT(slotModuleSelectionChanged(QString, int)) );
-    }
-    qDebug() << "void BtSourceWidget::initSourceConnections() end";
-}
-
 void BtSourceWidget::slotEdit() {
     qDebug() << "BtSourceWidget::slotEdit";
     /// \todo open the source editor dialog
@@ -279,7 +267,14 @@ void BtSourceWidget::addSource(const QString& sourceName) {
     //select the new tab
     setCurrentIndex(tabNumber);
     m_sourceNameList.append(sourceName);
-    initSourceConnections();
+
+    // Initialize source tab connections:
+    connect(area->m_refreshButton, SIGNAL(clicked()), SLOT(slotRefresh()));
+    //connect(area->m_editButton, SIGNAL(clicked()), SLOT(slotEdit()));
+    connect(area->m_deleteButton, SIGNAL(clicked()), SLOT(slotDelete()), Qt::QueuedConnection);
+    connect(area->m_addButton, SIGNAL(clicked()), SLOT(slotAdd()));
+    connect(area, SIGNAL(signalSelectionChanged(QString, int)), SLOT(slotModuleSelectionChanged(QString, int)) );
+
     qDebug() << "BtSourceWidget::addSource end";
 }
 

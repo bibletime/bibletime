@@ -45,8 +45,6 @@ class BtSourceWidget : public QTabWidget {
         void slotStopInstall(QTreeWidget* treeWidget);
 
     private:
-        void initSourceConnections();
-
         /** Add one source to tabs/stack. */
         void addSource(const QString& sourceName);
 
