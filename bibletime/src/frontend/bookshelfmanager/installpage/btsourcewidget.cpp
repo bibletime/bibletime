@@ -40,10 +40,8 @@ BtSourceWidget::BtSourceWidget(BtInstallPage *parent)
 {
     qDebug() << "BtSourceWidget::BtSourceWidget start";
     initSources();
-    // send queued event because "Delete" is initiated from tab which should be deleted
-    connect(this, SIGNAL(sigInitSources()), SLOT(initSources()), Qt::QueuedConnection);
-    /// \todo choose the page from config
 
+    /// \todo choose the active tab from config
 }
 
 BtSourceArea* BtSourceWidget::area() {

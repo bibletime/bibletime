@@ -72,9 +72,6 @@ class BtSourceWidget : public QTabWidget {
         void slotTabSelected(int index);
         void slotInstallAccepted(const QSet<CSwordModuleInfo*> &mi);
 
-    signals:
-        void sigInitSources();
-
     private:
         BtInstallPage* m_page;
         QStringList m_sourceNameList;
