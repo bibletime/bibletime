@@ -334,11 +334,6 @@ void BtSourceWidget::slotInstall() {
     delete dlg;
 }
 
-void BtSourceWidget::slotStopInstall(QTreeWidget* /*treeWidget*/) {
-    qDebug() << "BtSourceWidget::slotStopInstall";
-    // not needed?
-}
-
 void BtSourceWidget::slotInstallAccepted(const QSet<CSwordModuleInfo*> &mi) {
     qDebug() << "BtSourceWidget::slotInstallAccepted";
 

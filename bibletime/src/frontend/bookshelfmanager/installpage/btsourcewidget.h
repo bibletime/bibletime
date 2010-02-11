@@ -41,8 +41,6 @@ class BtSourceWidget : public QTabWidget {
     public slots:
         /** Install button has been clicked. */
         void slotInstall();
-        /** "Stop All" button clicked */
-        void slotStopInstall(QTreeWidget* treeWidget);
 
     private:
         /** Add one source to tabs/stack. */
