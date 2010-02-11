@@ -52,7 +52,7 @@ bool addSource(sword::InstallSource& source) {
 }
 
 /** Returns the Source struct. */
-sword::InstallSource source(QString name) {
+sword::InstallSource source(const QString &name) {
     qDebug() << "backend::source";
     BtInstallMgr mgr;
     InstallSourceMap::iterator source = mgr.sources.find(name.toLatin1().data());
@@ -87,7 +87,7 @@ sword::InstallSource source(QString name) {
 }
 
 /** Deletes the source. */
-bool deleteSource(QString name) {
+bool deleteSource(const QString &name) {
     qDebug() << "backend::deleteSource";
     sword::InstallSource is = source(name );
 
@@ -143,14 +143,12 @@ bool isRemote(const sword::InstallSource& source) {
     return !strcmp(source.type, "FTP");
 }
 
-const QString configPath() {
-    QString confPath = util::directory::getUserHomeSwordDir().absolutePath();
-    confPath.append("/InstallMgr");
-    return confPath;
+QString configPath() {
+    return util::directory::getUserHomeSwordDir().absolutePath().append("/InstallMgr");
 }
 
-const QString configFilename() {
-    return (configPath() + "/InstallMgr.conf");
+QString configFilename() {
+    return configPath().append("/InstallMgr.conf");
 }
 
 QStringList targetList() {
@@ -262,7 +260,7 @@ void initPassiveFtpMode() {
     config["General"]["PassiveFTP"] = "true";
     config.Save();
 }
-const QString swordConfigFilename() {
+QString swordConfigFilename() {
     namespace DU = util::directory;
 
     qDebug() << "backend::swordConfigFilename";
@@ -276,7 +274,7 @@ const QString swordConfigFilename() {
 #endif
 }
 
-const QDir swordDir() {
+QDir swordDir() {
     namespace DU = util::directory;
 
 #ifdef Q_WS_WIN

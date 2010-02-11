@@ -26,13 +26,13 @@ namespace instbackend {
 bool addSource(sword::InstallSource& source);
 
 /** Returns the source struct. */
-sword::InstallSource source(QString name);
+sword::InstallSource source(const QString &name);
 
 /** Deletes the source. */
-bool deleteSource(QString name);
+bool deleteSource(const QString &name);
 
 /** Returns the moduleinfo list for the source. */
-QList<CSwordModuleInfo*> moduleList(QString name);
+QList<CSwordModuleInfo*> moduleList(const QString &name);
 
 /** Tells if the source is remote or local. */
 bool isRemote(const sword::InstallSource& source);
@@ -46,10 +46,10 @@ bool setTargetList( const QStringList& targets );
 QStringList sourceList();
 
 /** Returns the path of the sword installer configuration file. */
-const QString configPath();
+QString configPath();
 
 /** Returns the name of the sword installer configuration file. */
-const QString configFilename();
+QString configFilename();
 
 /** Sets the passive mode for as default.
 * \todo see if we can en/disable this per source.
@@ -57,11 +57,11 @@ const QString configFilename();
 void initPassiveFtpMode();
 
 /** Returns the file name for the Sword config file. */
-const QString swordConfigFilename();
+QString swordConfigFilename();
 
 /** Returns the Sword directory ($HOME/.sword/) as a QDir, created with absolute path (not canonical).
 */
-const QDir swordDir();
+QDir swordDir();
 
 /** Returns backend Sword manager for the source. */
 CSwordBackend* backend( const sword::InstallSource& is);
