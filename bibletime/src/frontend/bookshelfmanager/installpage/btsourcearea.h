@@ -52,7 +52,6 @@ class BtSourceArea : public QWidget {
         /** Reimplemented from QWidget. */
         virtual QSize sizeHint() const;
         void initTreeFirstTime();
-        QTreeWidget* treeWidget();
 
         const QSet<CSwordModuleInfo*> &selectedModules() const;
 

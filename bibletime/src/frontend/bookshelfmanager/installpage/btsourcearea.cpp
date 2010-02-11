@@ -235,10 +235,6 @@ void BtSourceArea::addToTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem
     }
 }
 
-QTreeWidget* BtSourceArea::treeWidget() {
-    return m_view;
-}
-
 // return the selected modules
 const QSet<CSwordModuleInfo*> &BtSourceArea::selectedModules() const {
     return m_checkedModules;
