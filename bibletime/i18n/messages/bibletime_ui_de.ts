@@ -514,39 +514,39 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Bibles</source>
-        <translation>Bibeln</translation>
+        <translation type="obsolete">Bibeln</translation>
     </message>
     <message>
         <source>Commentaries</source>
-        <translation>Kommentare</translation>
+        <translation type="obsolete">Kommentare</translation>
     </message>
     <message>
         <source>Books</source>
-        <translation>Bücher</translation>
+        <translation type="obsolete">Bücher</translation>
     </message>
     <message>
         <source>Cults/Unorthodox</source>
-        <translation>Sekten/Unorthodox</translation>
+        <translation type="obsolete">Sekten/Unorthodox</translation>
     </message>
     <message>
         <source>Maps and Images</source>
-        <translation>Karten und Bilder</translation>
+        <translation type="obsolete">Karten und Bilder</translation>
     </message>
     <message>
         <source>Daily Devotionals</source>
-        <translation>Andachtsbücher</translation>
+        <translation type="obsolete">Andachtsbücher</translation>
     </message>
     <message>
         <source>Lexicons and Dictionaries</source>
-        <translation>Lexika und Wörterbücher</translation>
+        <translation type="obsolete">Lexika und Wörterbücher</translation>
     </message>
     <message>
         <source>Glossaries</source>
-        <translation>Wörterbücher</translation>
+        <translation type="obsolete">Wörterbücher</translation>
     </message>
     <message>
         <source>Unknown</source>
-        <translation>Unbekannt</translation>
+        <translation type="obsolete">Unbekannt</translation>
     </message>
 </context>
 <context>
@@ -1585,11 +1585,11 @@ shortcut</source>
     </message>
     <message>
         <source>Select all</source>
-        <translation>Alle auswählen</translation>
+        <translation type="obsolete">Alle auswählen</translation>
     </message>
     <message>
         <source>HTML editor window</source>
-        <translation>HTML-Editor-Fenster</translation>
+        <translation type="obsolete">HTML-Editor-Fenster</translation>
     </message>
     <message>
         <source>Font</source>
@@ -2004,6 +2004,42 @@ shortcut</source>
     <message>
         <source>Copyright contact email</source>
         <translation>Copyright-Kontakt-eMail</translation>
+    </message>
+    <message>
+        <source>Bibles</source>
+        <translation type="unfinished">Bibeln</translation>
+    </message>
+    <message>
+        <source>Commentaries</source>
+        <translation type="unfinished">Kommentare</translation>
+    </message>
+    <message>
+        <source>Books</source>
+        <translation type="unfinished">Bücher</translation>
+    </message>
+    <message>
+        <source>Cults/Unorthodox</source>
+        <translation type="unfinished">Sekten/Unorthodox</translation>
+    </message>
+    <message>
+        <source>Maps and Images</source>
+        <translation type="unfinished">Karten und Bilder</translation>
+    </message>
+    <message>
+        <source>Daily Devotionals</source>
+        <translation type="unfinished">Andachtsbücher</translation>
+    </message>
+    <message>
+        <source>Lexicons and Dictionaries</source>
+        <translation type="unfinished">Lexika und Wörterbücher</translation>
+    </message>
+    <message>
+        <source>Glossaries</source>
+        <translation type="unfinished">Wörterbücher</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation type="unfinished">Unbekannt</translation>
     </message>
 </context>
 <context>
@@ -2839,15 +2875,15 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Language</source>
-        <translation>Sprache</translation>
+        <translation type="obsolete">Sprache</translation>
     </message>
     <message>
         <source>Unlock key</source>
-        <translation>Schlüssel</translation>
+        <translation type="obsolete">Schlüssel</translation>
     </message>
     <message>
         <source>not set</source>
-        <translation>nicht gesetzt</translation>
+        <translation type="obsolete">nicht gesetzt</translation>
     </message>
     <message>
         <source>Version</source>
@@ -2855,7 +2891,7 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Options</source>
-        <translation>Optionen</translation>
+        <translation type="obsolete">Optionen</translation>
     </message>
     <message>
         <source>Settings Migration</source>

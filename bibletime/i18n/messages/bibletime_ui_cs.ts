@@ -514,39 +514,31 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Bibles</source>
-        <translation type="unfinished">Bible</translation>
+        <translation type="obsolete">Bible</translation>
     </message>
     <message>
         <source>Commentaries</source>
-        <translation type="unfinished">Komentáře</translation>
+        <translation type="obsolete">Komentáře</translation>
     </message>
     <message>
         <source>Books</source>
-        <translation type="unfinished">Knihy</translation>
-    </message>
-    <message>
-        <source>Cults/Unorthodox</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Knihy</translation>
     </message>
     <message>
         <source>Maps and Images</source>
-        <translation type="unfinished">Mapy a obrázky</translation>
+        <translation type="obsolete">Mapy a obrázky</translation>
     </message>
     <message>
         <source>Daily Devotionals</source>
-        <translation type="unfinished">Ranní zamyšlení</translation>
+        <translation type="obsolete">Ranní zamyšlení</translation>
     </message>
     <message>
         <source>Lexicons and Dictionaries</source>
-        <translation type="unfinished">Lexikony a slovníky</translation>
+        <translation type="obsolete">Lexikony a slovníky</translation>
     </message>
     <message>
         <source>Glossaries</source>
-        <translation type="unfinished">Glosáře</translation>
-    </message>
-    <message>
-        <source>Unknown</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Glosáře</translation>
     </message>
 </context>
 <context>
@@ -1581,11 +1573,11 @@ shortcut</source>
     </message>
     <message>
         <source>Select all</source>
-        <translation>Vybrat vše</translation>
+        <translation type="obsolete">Vybrat vše</translation>
     </message>
     <message>
         <source>HTML editor window</source>
-        <translation>Okno HTML editoru</translation>
+        <translation type="obsolete">Okno HTML editoru</translation>
     </message>
     <message>
         <source>Font</source>
@@ -1992,6 +1984,42 @@ shortcut</source>
     <message>
         <source>Copyright contact email</source>
         <translation>Kontaktní email na autorská práva</translation>
+    </message>
+    <message>
+        <source>Bibles</source>
+        <translation type="unfinished">Bible</translation>
+    </message>
+    <message>
+        <source>Commentaries</source>
+        <translation type="unfinished">Komentáře</translation>
+    </message>
+    <message>
+        <source>Books</source>
+        <translation type="unfinished">Knihy</translation>
+    </message>
+    <message>
+        <source>Cults/Unorthodox</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Maps and Images</source>
+        <translation type="unfinished">Mapy a obrázky</translation>
+    </message>
+    <message>
+        <source>Daily Devotionals</source>
+        <translation type="unfinished">Ranní zamyšlení</translation>
+    </message>
+    <message>
+        <source>Lexicons and Dictionaries</source>
+        <translation type="unfinished">Lexikony a slovníky</translation>
+    </message>
+    <message>
+        <source>Glossaries</source>
+        <translation type="unfinished">Glosáře</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3041,15 +3069,15 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Language</source>
-        <translation>Jazyk</translation>
+        <translation type="obsolete">Jazyk</translation>
     </message>
     <message>
         <source>Unlock key</source>
-        <translation>Odemykací klíč</translation>
+        <translation type="obsolete">Odemykací klíč</translation>
     </message>
     <message>
         <source>not set</source>
-        <translation>není nastaveno</translation>
+        <translation type="obsolete">není nastaveno</translation>
     </message>
     <message>
         <source>Version</source>
@@ -3057,7 +3085,7 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Options</source>
-        <translation>Nastavení</translation>
+        <translation type="obsolete">Nastavení</translation>
     </message>
     <message>
         <source>Settings Migration</source>
