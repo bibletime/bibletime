@@ -89,9 +89,6 @@ void BtSourceArea::initView() {
     m_refreshButton->setIcon(DU::getIcon(CResMgr::bookshelfmgr::installpage::refresh_icon));
     //m_refreshButton->setEnabled(false);
     QSpacerItem *sourceSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-    //m_editButton = new QPushButton(tr("Edit..."));
-    /// \todo after writing the edit widget:
-    //m_editButton->setEnabled(false);
     m_deleteButton = new QPushButton(tr("Delete..."));
     m_deleteButton->setToolTip(tr("Delete this source"));
     m_deleteButton->setIcon(DU::getIcon(CResMgr::bookshelfmgr::installpage::delete_icon));
@@ -102,7 +99,6 @@ void BtSourceArea::initView() {
 
     sourceLayout->addWidget(m_refreshButton);
     sourceLayout->addItem(sourceSpacer);
-    //sourceLayout->addWidget(m_editButton);
     sourceLayout->addWidget(m_deleteButton);
     sourceLayout->addWidget(m_addButton);
 

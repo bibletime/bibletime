@@ -58,8 +58,6 @@ class BtSourceWidget : public QTabWidget {
 
         void slotRefreshCompleted(int, int);
 
-        /** Edit button clicked. */
-        void slotEdit();
         /** Delete button clicked. */
         void slotDelete();
         /** Add button clicked. */

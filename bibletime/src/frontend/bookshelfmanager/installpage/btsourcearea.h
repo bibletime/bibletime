@@ -30,7 +30,7 @@ class QPushButton;
 * Area for one install source.
 *
 * - Tree widget for modules
-* - Buttons for handling the source(s): refresh, edit, remove, add
+* - Buttons for handling the source(s): refresh, remove, add
 *
 * Each source has
 * QTreeWidget, populated with the module tree if the source
@@ -80,7 +80,6 @@ class BtSourceArea : public QWidget {
         QTreeWidget* m_view;
         QLabel* m_refreshTimeLabel;
         QPushButton* m_refreshButton;
-        QPushButton* m_editButton;
         QPushButton* m_deleteButton;
         QPushButton* m_addButton;
 };
