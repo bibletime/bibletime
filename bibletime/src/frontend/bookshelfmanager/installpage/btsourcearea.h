@@ -50,7 +50,7 @@ class BtSourceArea : public QWidget {
         void initView();
         void prepareRemove();
         /** Reimplemented from QWidget. */
-        virtual QSize sizeHint() const;
+        QSize sizeHint() const;
         void initTreeFirstTime();
 
         const QSet<CSwordModuleInfo*> &selectedModules() const;
