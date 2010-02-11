@@ -195,6 +195,44 @@ CSwordBackend::LoadError CSwordBackend::initModules(SetupChangedReason reason) {
     return ret;
 }
 
+void CSwordBackend::AddRenderFilters(sword::SWModule *module, sword::ConfigEntMap &section) {
+    sword::SWBuf moduleDriver;
+    sword::SWBuf sourceformat;
+    sword::ConfigEntMap::iterator entry;
+    bool noDriver = true;
+
+    sourceformat = ((entry = section.find("SourceType")) != section.end()) ? (*entry).second : (sword::SWBuf) "";
+    moduleDriver = ((entry = section.find("ModDrv")) != section.end()) ? (*entry).second : (sword::SWBuf) "";
+
+    if (sourceformat == "OSIS") {
+        module->AddRenderFilter(m_filters.osis);
+        noDriver = false;
+    }
+    else if (sourceformat == "ThML") {
+        module->AddRenderFilter(m_filters.thml);
+        noDriver = false;
+    }
+    else if (sourceformat == "TEI") {
+        module->AddRenderFilter(m_filters.tei);
+        noDriver = false;
+    }
+    else if (sourceformat == "GBF") {
+        module->AddRenderFilter(m_filters.gbf);
+        noDriver = false;
+    }
+    else if (sourceformat == "PLAIN") {
+        module->AddRenderFilter(m_filters.plain);
+        noDriver = false;
+    }
+
+    if (noDriver) { //no driver found
+        if ( (moduleDriver == "RawCom") || (moduleDriver == "RawLD") ) {
+            module->AddRenderFilter(m_filters.plain);
+            noDriver = false;
+        }
+    }
+}
+
 /** This function deinitializes the modules and deletes them. */
 bool CSwordBackend::shutdownModules() {
     m_dataModel.clear(true);

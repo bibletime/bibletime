@@ -213,6 +213,10 @@ class CSwordBackend : public QObject, public sword::SWMgr {
 
     protected:
         /**
+        * Reimplemented from sword::SWMgr.
+        */
+        void AddRenderFilters(sword::SWModule *module, sword::ConfigEntMap &section);
+        /**
         * Overrides Sword filters which appear to be buggy.
         */
         void filterInit();
