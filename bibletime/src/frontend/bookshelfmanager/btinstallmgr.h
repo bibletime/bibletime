@@ -30,22 +30,22 @@ class BtInstallMgr : public QObject, public sword::InstallMgr, public sword::Sta
         BtInstallMgr();
         ~BtInstallMgr();
 
-        /**
-        * Refreshing the source should be cancellable (othewise it might freeze the app if there is
-        * for example something wrong with the network).
-        */
-        void slotRefreshCanceled();
-
         /** Re-implemented from sword::InstallMgr. */
         bool isUserDisclaimerConfirmed() const;
 
+    signals:
+        /** Download status. Percent of total and file.*/
+        void percentCompleted(const int total, const int file);
+        void downloadStarted();
+
     protected:
-        /* Reimplementations of methods in StatusReporter */
         /**
-        * Gets the total and current file status, emits the signal with those values as percents.
+          Reimplementation of sword::StatusReporter::statusUpdate().
         */
         void statusUpdate(double dltotal, double dlnow);
+
         /**
+        * Reimplementation of sword::StatusReporter::preStatus().
         * \warning This method is not always called before statusUpdate().
         * Called before starting to download each file of the module package.
         * The sword message is not i18n'ed, it's in the form "Downloading (1 of 6): nt.bzs".
@@ -53,17 +53,10 @@ class BtInstallMgr : public QObject, public sword::InstallMgr, public sword::Sta
         */
         void preStatus(long totalBytes, long completedBytes, const char *message);
 
+    private:
         long m_totalBytes;
         long m_completedBytes;
-
-    private:
         bool m_firstCallOfPreStatus;
-
-    signals:
-        /** Download status. Percent of total and file.*/
-        void percentCompleted( const int, const int);
-        void downloadStarted();
 };
-
 
 #endif
