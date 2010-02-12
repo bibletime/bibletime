@@ -2476,47 +2476,47 @@ pikanäppäin</translation>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="974"/>
         <source>Bibles</source>
-        <translation type="unfinished">Raamatut</translation>
+        <translation>Raamatut</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="976"/>
         <source>Commentaries</source>
-        <translation type="unfinished">Kommentaarit</translation>
+        <translation>Kommentaarit</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="978"/>
         <source>Books</source>
-        <translation type="unfinished">Kirjat</translation>
+        <translation>Kirjat</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="980"/>
         <source>Cults/Unorthodox</source>
-        <translation type="unfinished">Kultit/Väärät opit</translation>
+        <translation>Kultit/Väärät opit</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="982"/>
         <source>Maps and Images</source>
-        <translation type="unfinished">Kartat ja kuvat</translation>
+        <translation>Kartat ja kuvat</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="984"/>
         <source>Daily Devotionals</source>
-        <translation type="unfinished">Hartauskirjallisuus</translation>
+        <translation>Hartauskirjallisuus</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="986"/>
         <source>Lexicons and Dictionaries</source>
-        <translation type="unfinished">Sanakirjat</translation>
+        <translation>Sanakirjat</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="988"/>
         <source>Glossaries</source>
-        <translation type="unfinished">Sanastot</translation>
+        <translation>Sanastot</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="990"/>
         <source>Unknown</source>
-        <translation type="unfinished">Tuntematon</translation>
+        <translation>Tuntematon</translation>
     </message>
 </context>
 <context>
