@@ -943,9 +943,9 @@ automatisches Staffeln.</entry>
               <keycap>&Ctrl;&Alt;T</keycap></keycombo>
             </entry>
             <entry>
-	      <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement 
-mode</guimenuitem> <guimenuitem>Tabbed</guimenuitem> </menuchoice> 
-equivalent; organizes windows with tabs across the top.</entry>
+	      <menuchoice> <guimenu>Fenster</guimenu> 
+<guimenuitem>Anordnungs-Art</guimenuitem> <guimenuitem>Getabt</guimenuitem> 
+</menuchoice> ordnet die Fenster mit Tabs entlang des oberen Bereichs an.</entry>
           </row>
 
           <row>

@@ -35,11 +35,11 @@ einen Zufallsvers aus der Standardbibel anzeigen zu lassen:
   </sect1>
 
   <sect1 id="hdbk-start-firstrun">
-    <title>Starting &bibletime; for the first time</title>
+    <title>&bibletime; erstmalig starten</title>
 
-    <para>If you are starting &bibletime; for the first time, you will want to 
-configure the following options, available under the <link 
-linkend="hdbk-reference-menus-settings">Settings menu bar</link>.</para>
+    <para>Wenn Sie &bibletime; zum ersten Mal ausführen, möchten Sie bestimmt die 
+folgenden Optionen einstellen, die unter dem Menüpunkt <link 
+linkend="hdbk-reference-menus-settings">Einstellungen</link> verfügbar sind.</para>
 
     <variablelist>
       <varlistentry>

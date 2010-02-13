@@ -8,14 +8,14 @@
 # Joachim Ansorg <info@bibetime.info>, 2005.
 # Joachim Ansorg <info@bibletime.info>, 2005.
 # Martin Gruner <mg.pub@gmx.net>, 2004, 2005.
-# Roland Teschner <rolte@gmx.net>, 2009.
+# Roland Teschner <rolte@gmx.net>, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: handbook-de\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
-"POT-Creation-Date: 2010-01-21 00:03-0500\n"
-"PO-Revision-Date: 2009-12-15 18:46+0100\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2010-02-13 00:28-0500\n"
+"PO-Revision-Date: 2010-02-13 00:54+0100\n"
+"Last-Translator: Roland Teschner <rolte@gmx.net>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -437,7 +437,6 @@ msgid "Lexicons/Dictionaries"
 msgstr "Lexika / Wörterbücher"
 
 #: docs/handbook/en/docbook/hdbk-intro.docbook:68
-#, fuzzy
 msgid ""
 "Lexicons available include: Robinson's Morphological Analysis Codes, and the "
 "International Standard Bible Encyclopaedia. Dictionaries available include "
@@ -445,12 +444,11 @@ msgid ""
 "Revised Unabridged Dictionary of the English Language 1913, Nave's Topical "
 "Bible."
 msgstr ""
-"Zu den verfügbaren Wörterbüchern gehören: Robinsons \"Morphological Analysis "
-"Codes\", Brown-Driver-Briggs Hebräisch-Lexikon und die Enzyklopädie der "
-"International Standard Bible. Zu den erhältlichen Wörterbüchern gehören u.a. "
-"Strongs \"Hebrew Bible Dictionary\", Strongs \"Greek Bible Dictionary\", "
-"Websters \"Revised Unabridged Dictionary of the English Language 1913\" und "
-"Naves \"Topical Bible\"."
+"Zu den verfügbaren Lexika gehören: Robinson's Morphological Analysis Codes, "
+"und die International Standard Bible Encyclopaedia. Verfügbare Wörterbücher "
+"umfassen Strong's Hebrew Bible Dictionary, Strong's Greek Bible Dictionary, "
+"Webster's Revised Unabridged Dictionary of the English Language 1913 und "
+"Nave's Topical Bible."
 
 #: docs/handbook/en/docbook/hdbk-intro.docbook:81
 msgid "Motivation"
@@ -1181,7 +1179,6 @@ msgstr "Bücherregal-Pfade einrichten"
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:405
-#, fuzzy
 msgid ""
 "Here you can specify where &bibletime; may store your Bookshelf on the hard "
 "drive.  You can even store it in multiple directories. The default is \"~/."
@@ -1190,7 +1187,8 @@ msgid ""
 msgstr ""
 "Hier können Sie festlegen, wo &bibletime; Ihr Bücherregal auf der Festplatte "
 "abspeichern soll. Sie können es sogar in verschiedenen Verzeichnissen "
-"speichern. Die Voreinstellung ist \"~/.sword/\"."
+"speichern. Die Voreinstellung ist \"~/.sword/\" auf *nix und \"C:\\Dokumente "
+"und Einstellungen\\Alle Benutzer\\Anwendungsdaten\\Sword\" für Windows."
 
 # type: Content of: <chapter><sect1><sect2><tip><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:412
@@ -1212,7 +1210,6 @@ msgstr "Werke installieren/updaten"
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:423
-#, fuzzy
 msgid ""
 "With this facility, you can connect to a repository of works (called "
 "\"library\"), and transfer one or more works to your local Bookshelf. These "
@@ -1223,13 +1220,16 @@ msgid ""
 "guibutton> dialog open.  You can manage your libraries with <guibutton>Add "
 "library</guibutton> and <guibutton>Delete library</guibutton>."
 msgstr ""
-"Mit dieser Einrichtung können Sie sich mit einer Quelle von Werken (genannt "
-"\"Bibliothek\") in Verbindung setzen und ein oder mehrere Werke zu Ihrem "
-"lokalen Bücherregal übertragen. Diese Bibliotheken können lokal sein (z.B. "
-"eine &sword;-CD) oder entfernt-gelegen (z.B. Crosswires Online-Repository "
-"der &sword;-Module, oder eine andere Site, die &sword;-Module anbietet). Sie "
-"können Ihre Bibliotheken mit <guibutton>Hinzufügen...</guibutton> und "
-"<guibutton>Löschen...</guibutton> verwalten."
+"Mit dieser Einrichtung können Sie sich mit einer Sammlung von Werken "
+"(genannt \"Bibliothek\") in Verbindung setzen und ein oder mehrere Werke zu "
+"Ihrem lokalen Bücherregal übertragen. Diese Bibliotheken können lokal sein "
+"(z.B. eine &sword;-CD) oder ferngelegen (z.B. Crosswire's Online-Repository "
+"der &sword;-Module, oder eine andere Site, die &sword;-Module anbietet). "
+"Installieren Sie andere Quellen durch Betätigen des Knopfes <guibutton>Liste "
+"holen...</guibutton> im geöffneten Dialog <guibutton>Neue "
+"Installationsquelle</guibutton>. Sie können Ihre Bibliotheken mit "
+"<guibutton>Hinzufügen...</guibutton> und <guibutton>Löschen...</guibutton> "
+"verwalten."
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:434
@@ -1750,15 +1750,14 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:974
-#, fuzzy
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> <guimenuitem>Tabbed</guimenuitem> </menuchoice> equivalent; "
 "organizes windows with tabs across the top."
 msgstr ""
 "<menuchoice> <guimenu>Fenster</guimenu> <guimenuitem>Anordnungs-Art</"
-"guimenuitem> <guimenuitem>Manuell</guimenuitem> </menuchoice> schaltet die "
-"Fensteranordnung auf den manuellen Modus."
+"guimenuitem> <guimenuitem>Getabt</guimenuitem> </menuchoice> ordnet die "
+"Fenster mit Tabs entlang des oberen Bereichs an."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:988
@@ -2021,9 +2020,8 @@ msgstr ""
 "Sie können auch Buchnamen in Ihrer gegenwärtigen Buchnamen-Sprache benutzen."
 
 #: docs/handbook/en/docbook/hdbk-start.docbook:39
-#, fuzzy
 msgid "Starting &bibletime; for the first time"
-msgstr " &bibletime; starten"
+msgstr "&bibletime; erstmalig starten"
 
 # type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-start.docbook:41
@@ -2032,6 +2030,9 @@ msgid ""
 "configure the following options, available under the <link linkend=\"hdbk-"
 "reference-menus-settings\">Settings menu bar</link>."
 msgstr ""
+"Wenn Sie &bibletime; zum ersten Mal ausführen, möchten Sie bestimmt die "
+"folgenden Optionen einstellen, die unter dem Menüpunkt <link linkend=\"hdbk-"
+"reference-menus-settings\">Einstellungen</link> verfügbar sind."
 
 # type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-start.docbook:53
@@ -2076,9 +2077,8 @@ msgstr "<application>BibleTime</application>"
 
 # type: Content of the kde entity
 #: docs/handbook/en/docbook/index.docbook:6
-#, fuzzy
 msgid "<application>SWORD</application>"
-msgstr "<application>KDE</application>"
+msgstr "<application>SWORD</application>"
 
 # type: Content of the bibletime entity
 #: docs/handbook/en/docbook/index.docbook:7
@@ -2119,22 +2119,22 @@ msgid "The &bibletime; Team"
 msgstr "Das &bibletime;-Team"
 
 #: docs/handbook/en/docbook/index.docbook:50
-#, fuzzy
 msgid ""
 "The &bibletime; Handbook is distributed with the &bibletime; study program."
-msgstr "Das &bibletime;-Handbuch ist Teil der &bibletime;-Studienhilfe."
+msgstr ""
+"Das &bibletime;-Handbuch wird zusammen mit der &bibletime;-Studienhilfe "
+"ausgeliefert."
 
 # type: Content of: <book><bookinfo><date>
 #: docs/handbook/en/docbook/index.docbook:54
 #, fuzzy
-msgid "$LastChangedDate: 2009-12-31 15:05:52 -0500 (Thu, 31 Dec 2009) $"
-msgstr "$LastChangedDate: 2009-11-18 13:30:32 -0500 (Wed, 18 Nov 2009) $"
+msgid "$LastChangedDate: 2010-01-21 00:14:01 -0500 (Thu, 21 Jan 2010) $"
+msgstr "$LastChangedDate: 2009-12-31 15:05:52 -0500 (Thu, 31 Dec 2009) $"
 
 # type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:56
-#, fuzzy
 msgid "2.6"
-msgstr "2.5"
+msgstr "2.6"
 
 # type: Content of: <book><bookinfo><abstract><para>
 #: docs/handbook/en/docbook/index.docbook:59
@@ -2145,6 +2145,12 @@ msgid ""
 "software uses the &sword; programming library to work with over 200 free "
 "Bible texts, commentaries, dictionaries and books provided by the &cbs;."
 msgstr ""
+"&bibletime; ist ein absolut freies Bibelarbeits-Programm. Seine "
+"Benutzeroberfläche ist mit dem &qt;-Rahmenwerk erstellt, das es auf mehreren "
+"Betriebssystemen lauffähig macht, darunter Linux, Windows, FreeBSD und Mac "
+"OS X. Die Software nutzt die &sword;-Programmierbibliothek, um mit über 200 "
+"freien Bibeltexten, Kommentaren, Wörterbüchern und Büchern zu laufen, die "
+"von der &cbs; zur Verfügung gestellt werden."
 
 # type: Content of the sword entity
 #~ msgid "<application>Sword</application>"
