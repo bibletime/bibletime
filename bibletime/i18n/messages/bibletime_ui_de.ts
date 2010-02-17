@@ -310,19 +310,19 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Show &quot;Whats this widget&quot; dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeige Dialog &quot;Was ist dieses Widget&quot;</translation>
     </message>
     <message>
         <source>Whats this widget?</source>
-        <translation type="unfinished"></translation>
+        <translation>Was ist dieses Widget?</translation>
     </message>
     <message>
         <source>Ta&amp;bbed</source>
-        <translation type="unfinished"></translation>
+        <translation>Mit Ta&amp;bs</translation>
     </message>
     <message>
         <source>Automatically tab the open windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Offene Fenster automatisch auf Tabs verteilen</translation>
     </message>
 </context>
 <context>
@@ -393,75 +393,75 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>&amp;BibleTime</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;BibleTime</translation>
     </message>
     <message>
         <source>We are looking for developers and translators. If you would like to join our team, please send an email to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wir sind auf der Suche nach Entwicklern und Übersetzern. Wenn du unser Team bereichern willst, sende bitte eine E-Mail an %1.</translation>
     </message>
     <message>
         <source>&amp;Contributors</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Beitragende</translation>
     </message>
     <message>
         <source>project founder</source>
-        <translation type="unfinished"></translation>
+        <translation>Projektgründer</translation>
     </message>
     <message>
         <source>project manager</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>artist</source>
-        <translation type="unfinished"></translation>
+        <translation>Künstler</translation>
     </message>
     <message>
         <source>tester</source>
-        <translation type="unfinished"></translation>
+        <translation>Tester</translation>
     </message>
     <message>
         <source>usability expert</source>
-        <translation type="unfinished"></translation>
+        <translation>Usability-Experte</translation>
     </message>
     <message>
         <source>Some names may be missing, please email %1 if you notice errors or omissions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Es kann sein, dass Namen fehlen, bitte senden Sie dann eine Mail an %1.</translation>
     </message>
     <message>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
-        <translation type="unfinished"></translation>
+        <translation>BibleTime verwendet das SWORD Projekt, das freie Bibelsoftwareprojekt der Crosswire Bibelgesellschaft. Sein Zweck ist es, plattformübergreifende Open-Source-Werkzeuge zu erstellen (unter der GNU GPL), mit denen Programmierer neue Bibelsoftware schnell erstellen können.</translation>
     </message>
     <message>
         <source>The SWORD Project: </source>
-        <translation type="unfinished"></translation>
+        <translation>Das SWORD-Projekt:</translation>
     </message>
     <message>
         <source>&amp;Qt</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Qt</translation>
     </message>
     <message>
         <source>Qt toolkit version %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Qt Bibliothek Version %1</translation>
     </message>
     <message>
         <source>More info...</source>
-        <translation type="unfinished"></translation>
+        <translation>Mehr Informationen...</translation>
     </message>
     <message>
         <source>&amp;License</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Lizenz</translation>
     </message>
     <message>
         <source>(c)1999-2010, The BibleTime Team</source>
-        <translation type="unfinished"></translation>
+        <translation>(c)1999-2010, das BibleTime Team</translation>
     </message>
     <message>
         <source>&amp;SWORD</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;SWORD</translation>
     </message>
     <message>
         <source>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</source>
-        <translation type="unfinished"></translation>
+        <translation>BibleTime ist unter der GPL-Lizenz verfügbar. Sie können das Programm für persönliche, private, öffentliche oder kommerzielle Zwecke ohne Beschränkungen einsetzen, aber Sie können es nur weitergeben, wenn Sie auch den dazugehörigen Quellcode mit weitergeben.</translation>
     </message>
 </context>
 <context>
@@ -553,43 +553,43 @@ This file is distributed under the same license as the Bibetime package.</transl
     <name>BtBookshelfWidget</name>
     <message>
         <source>Fi&amp;lter:</source>
-        <translation type="unfinished">Fi&amp;lter:</translation>
+        <translation>Fi&amp;lter:</translation>
     </message>
     <message>
         <source>Grouping</source>
-        <translation type="unfinished">Gruppierung</translation>
+        <translation>Gruppierung</translation>
     </message>
     <message>
         <source>Change the grouping of items in the bookshelf.</source>
-        <translation type="unfinished">Die Anordnung von Einträgen im Bücherregal verändern.</translation>
+        <translation>Die Anordnung von Einträgen im Bücherregal verändern.</translation>
     </message>
     <message>
         <source>Use grouping from bookshelf dock</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppierung aus dem Bücherregal verwenden</translation>
     </message>
     <message>
         <source>Category/Language</source>
-        <translation type="unfinished">Kategorie/Sprache</translation>
+        <translation>Kategorie/Sprache</translation>
     </message>
     <message>
         <source>Category</source>
-        <translation type="unfinished">Kategorie</translation>
+        <translation>Kategorie</translation>
     </message>
     <message>
         <source>Language/Category</source>
-        <translation type="unfinished">Sprache/Kategorie</translation>
+        <translation>Sprache/Kategorie</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation type="unfinished">Sprache</translation>
+        <translation>Sprache</translation>
     </message>
     <message>
         <source>No grouping</source>
-        <translation type="unfinished">Ungruppiert</translation>
+        <translation>Nicht gruppiert</translation>
     </message>
     <message>
         <source>Show/hide works</source>
-        <translation type="unfinished">Werke anzeigen/verstecken</translation>
+        <translation>Werke anzeigen/verstecken</translation>
     </message>
 </context>
 <context>
@@ -654,19 +654,19 @@ This file is distributed under the same license as the Bibetime package.</transl
     <name>BtFontSettingsPage</name>
     <message>
         <source>You can specify a custom font for each language.</source>
-        <translation type="unfinished">Sie können eine angepasste Schrift für jede Sprache spezifizieren.</translation>
+        <translation>Sie können eine angepasste Schrift für jede Sprache angeben.</translation>
     </message>
     <message>
         <source>The font selection below will apply to all texts in this language</source>
-        <translation type="unfinished">Die untenstehende Schriftauswahl wird für alle Texte in dieser Sprache gelten</translation>
+        <translation>Die untenstehende Schriftauswahl wird für alle Texte in dieser Sprache gelten</translation>
     </message>
     <message>
         <source>Use custom font</source>
-        <translation type="unfinished">Benutzerdefinierte Schrift verwenden</translation>
+        <translation>Benutzerdefinierte Schrift verwenden</translation>
     </message>
     <message>
         <source>Fonts</source>
-        <translation type="unfinished">Schriften</translation>
+        <translation>Schriften</translation>
     </message>
 </context>
 <context>
@@ -728,26 +728,26 @@ This file is distributed under the same license as the Bibetime package.</transl
     <name>BtInstallModuleChooserDialog</name>
     <message>
         <source>Install/Update works?</source>
-        <translation type="unfinished">Werke installieren/aktualisieren?</translation>
+        <translation>Werke installieren/aktualisieren?</translation>
     </message>
     <message>
         <source>Do you really want to install these works?</source>
-        <translation type="unfinished">Möchten Sie diese Werke wirklich installieren?</translation>
+        <translation>Möchten Sie diese Werke wirklich installieren?</translation>
     </message>
     <message>
         <source>Only one version of a work can be installed at the same time. Select only one if there are items marked with red.</source>
-        <translation type="unfinished">Nur eine Version eines Werkes kann installiert werden. Wählen Sie eine aus, wenn rot markierte Einträge vorliegen.</translation>
+        <translation>Nur eine Version eines Werkes kann installiert werden. Wählen Sie eine aus, wenn rot markierte Einträge vorliegen.</translation>
     </message>
 </context>
 <context>
     <name>BtInstallModuleChooserDialogModel</name>
     <message>
         <source>Work</source>
-        <translation type="unfinished">Werk</translation>
+        <translation>Werk</translation>
     </message>
     <message>
         <source>Installation source</source>
-        <translation type="unfinished"></translation>
+        <translation>Installationsquelle</translation>
     </message>
 </context>
 <context>
@@ -907,19 +907,19 @@ This file is distributed under the same license as the Bibetime package.</transl
     <name>BtLanguageSettingsPage</name>
     <message>
         <source>Select the language in which the Biblical book names are displayed.</source>
-        <translation type="unfinished">Wählen Sie die Sprache in der die BIbelbücher-Namen angezeigt werden.</translation>
+        <translation>Wählen Sie die Sprache in der die BIbelbücher-Namen angezeigt werden.</translation>
     </message>
     <message>
         <source>Language for names of Bible books:</source>
-        <translation type="unfinished">Sprache der Bibelbücher-Namen:</translation>
+        <translation>Sprache der Bibelbücher-Namen:</translation>
     </message>
     <message>
         <source>The languages which can be used for the biblical booknames</source>
-        <translation type="unfinished">Die Sprachen die für die Bibelbücher-Namen verwendet werden können</translation>
+        <translation>Sprachen, die für die Bibelbücher-Namen verwendet werden können</translation>
     </message>
     <message>
         <source>Languages</source>
-        <translation type="unfinished">Sprachen</translation>
+        <translation>Sprachen</translation>
     </message>
 </context>
 <context>
@@ -948,7 +948,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <name>BtOpenWorkAction</name>
     <message>
         <source>&amp;Open work</source>
-        <translation type="unfinished"></translation>
+        <translation>Werk &amp;öffnen</translation>
     </message>
 </context>
 <context>
@@ -997,11 +997,11 @@ This file is distributed under the same license as the Bibetime package.</transl
     <name>BtSearchModuleChooserDialog</name>
     <message>
         <source>Works to Search in</source>
-        <translation type="unfinished">Zu durchsuchende Werke</translation>
+        <translation>Zu durchsuchende Werke</translation>
     </message>
     <message>
         <source>Select the works which should be searched.</source>
-        <translation type="unfinished">Wählen Sie die Werke aus, in denen gesucht werden soll.</translation>
+        <translation>Wählen Sie die Werke aus, in denen gesucht werden soll.</translation>
     </message>
 </context>
 <context>
@@ -1476,7 +1476,7 @@ shortcut</source>
     </message>
     <message>
         <source>This is the judgement, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.</source>
-        <translation type="unfinished"></translation>
+        <translation>Und so vollzieht sich das Gericht: Das Licht ist in die Welt gekommen, aber die Menschen liebten die Finsternis mehr als das Licht, denn ihre Taten waren schlecht.</translation>
     </message>
 </context>
 <context>
@@ -1535,11 +1535,11 @@ shortcut</source>
     </message>
     <message>
         <source>Tool</source>
-        <translation type="unfinished"></translation>
+        <translation>Werkzeug</translation>
     </message>
     <message>
         <source>Format</source>
-        <translation type="unfinished"></translation>
+        <translation>Format</translation>
     </message>
 </context>
 <context>
@@ -1880,31 +1880,31 @@ shortcut</source>
     <name>CSearchAnalysisScene</name>
     <message>
         <source>Save Search Analysis</source>
-        <translation type="unfinished"></translation>
+        <translation>Suchanalyse speichern</translation>
     </message>
     <message>
         <source>HTML files (*.html;*.HTML;*.HTM;*.htm)</source>
-        <translation type="unfinished"></translation>
+        <translation>HTML-Dateien (*.html;*.HTML;*.HTM;*.htm)</translation>
     </message>
     <message>
         <source>BibleTime Search Analysis</source>
-        <translation type="unfinished"></translation>
+        <translation>BibleTime Suchanalyse</translation>
     </message>
     <message>
         <source>Search text :</source>
-        <translation type="unfinished"></translation>
+        <translation>Suchtext:</translation>
     </message>
     <message>
         <source>Book</source>
-        <translation type="unfinished"></translation>
+        <translation>Buch</translation>
     </message>
     <message>
         <source>Total hits</source>
-        <translation type="unfinished"></translation>
+        <translation>Treffer gesamt</translation>
     </message>
     <message>
         <source>Created by &lt;a href=&quot;http://www.bibletime.info/&quot;&gt;BibleTime&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Erstellt von &lt;a href=&quot;http://www.bibletime.info/&quot;&gt;BibleTime&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
@@ -2007,39 +2007,39 @@ shortcut</source>
     </message>
     <message>
         <source>Bibles</source>
-        <translation type="unfinished">Bibeln</translation>
+        <translation>Bibeln</translation>
     </message>
     <message>
         <source>Commentaries</source>
-        <translation type="unfinished">Kommentare</translation>
+        <translation>Kommentare</translation>
     </message>
     <message>
         <source>Books</source>
-        <translation type="unfinished">Bücher</translation>
+        <translation>Bücher</translation>
     </message>
     <message>
         <source>Cults/Unorthodox</source>
-        <translation type="unfinished">Sekten/Unorthodox</translation>
+        <translation>Sekten/Unorthodox</translation>
     </message>
     <message>
         <source>Maps and Images</source>
-        <translation type="unfinished">Karten und Bilder</translation>
+        <translation>Karten und Bilder</translation>
     </message>
     <message>
         <source>Daily Devotionals</source>
-        <translation type="unfinished">Andachtsbücher</translation>
+        <translation>Andachtsbücher</translation>
     </message>
     <message>
         <source>Lexicons and Dictionaries</source>
-        <translation type="unfinished">Lexika und Wörterbücher</translation>
+        <translation>Lexika und Wörterbücher</translation>
     </message>
     <message>
         <source>Glossaries</source>
-        <translation type="unfinished">Wörterbücher</translation>
+        <translation>Wörterbücher</translation>
     </message>
     <message>
         <source>Unknown</source>
-        <translation type="unfinished">Unbekannt</translation>
+        <translation>Unbekannt</translation>
     </message>
 </context>
 <context>
@@ -2141,7 +2141,7 @@ Möchten Sie fortfahren?</translation>
     </message>
     <message>
         <source>A source with this caption already exists. Please provide a different caption.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eine Quelle mit dieser Bezeichnung existiert bereits. Bitte geben Sie eine andere Bezeichnung ein.</translation>
     </message>
 </context>
 <context>
@@ -3421,7 +3421,7 @@ Language name ppk</extracomment>
     <name>Search::BtSearchSyntaxHelpDialog</name>
     <message>
         <source>Search Syntax Help</source>
-        <translation type="unfinished">Syntaxhilfe suchen</translation>
+        <translation>Hilfe zur Such-Syntax</translation>
     </message>
     <message>
         <source>This help is mainly for &apos;Full syntax&apos; option. &apos;All words&apos; and &apos;Some words&apos; options have more limited syntax; &lt;a href=&apos;#wildcards&apos;&gt;wildcards&lt;/a&gt; and &lt;a href=&apos;#fields&apos;&gt;text fields&lt;/a&gt; are supported for them. Some other syntax features may give strange or wrong results with All words/Some words.</source>
@@ -3757,7 +3757,7 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     </message>
     <message>
         <source>Show a graphical analysis of the search result</source>
-        <translation type="unfinished"></translation>
+        <translation>Eine grafische Analyse des Suchergebnisses anzeigen</translation>
     </message>
 </context>
 <context>
@@ -3977,7 +3977,7 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     </message>
     <message>
         <source>Search with case sensitivity</source>
-        <translation type="unfinished"></translation>
+        <translation>Suche mit Unterscheidung von Klein- und Großbuchstaben</translation>
     </message>
 </context>
 </TS>
