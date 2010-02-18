@@ -37,6 +37,7 @@ class BtBookshelfModel: public QAbstractListModel {
             ModuleInstallPathRole = Qt::UserRole + 4,
             ModuleHasIndexRole = Qt::UserRole + 5,
             ModuleIndexSizeRole = Qt::UserRole + 6,
+            ModuleDescriptionRole = Qt::UserRole + 7,
             UserRole = Qt::UserRole + 100
         };
 
