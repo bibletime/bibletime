@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: handbook-hu\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
-"POT-Creation-Date: 2010-01-21 00:03-0500\n"
-"PO-Revision-Date: 2009-12-07 22:50+0100\n"
-"Last-Translator: Geza Novak <geza.novak@gmail.com>\n"
+"POT-Creation-Date: 2010-02-19 08:37-0500\n"
+"PO-Revision-Date: 2010-02-18 21:16+0100\n"
+"Last-Translator: Novak Geza <gza@gza.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -469,7 +469,6 @@ msgstr "Lexikonok/szótárak"
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:68
-#, fuzzy
 msgid ""
 "Lexicons available include: Robinson's Morphological Analysis Codes, and the "
 "International Standard Bible Encyclopaedia. Dictionaries available include "
@@ -477,10 +476,9 @@ msgid ""
 "Revised Unabridged Dictionary of the English Language 1913, Nave's Topical "
 "Bible."
 msgstr ""
-"Itt találhatja például: Robinson Morfológiai Elemzési Kódokat, Brown-Driver-"
-"Briggs Héber Lexikonát és a Nemzetközi Standard Biblia Enciklopédiát. "
-"Szótárak közül: Strong's Héber Bibliai Szótár, Strong's Görög Bibliai Szótár "
-"elérhető..."
+"Elérhető lexikonok: Robinson Morfológiai Elemzési Kódok, Brown-Driver-Briggs "
+"Héber Lexikonés a Nemzetközi Standard Biblia Enciklopédia. Szótárak: "
+"Strong's Héber Bibliai Szótár, Strong's Görög Bibliai Szótár elérhető..."
 
 # type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:81
@@ -1251,7 +1249,6 @@ msgstr "Telepítési útvonal(ak) beállítása"
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:405
-#, fuzzy
 msgid ""
 "Here you can specify where &bibletime; may store your Bookshelf on the hard "
 "drive.  You can even store it in multiple directories. The default is \"~/."
@@ -1260,9 +1257,8 @@ msgid ""
 msgstr ""
 "Itt adható meg, hogy a &bibletime; hol tárolhatja a \"Könyvespolcát\" a "
 "merevlemezen. Megadhat egyszerre több könyvtárat is, de az alapértelmezett a "
-"\".sword\" mappa a saját mappájában.Itt adható meg, hogy a &bibletime; hol "
-"tárolhatja a \"Könyvespolcát\" a merevlemezen. Megadhat egyszerre több "
-"könyvtárat is, de az alapértelmezett a \".sword\" mappa a saját mappájában."
+"\"~/.sword/\" *nixokon, és \"C:\\Documents and Settings\\All Users"
+"\\Application Data\\Sword\"  Windowson. "
 
 # type: Content of: <chapter><sect1><sect2><tip><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:412
@@ -1287,7 +1283,6 @@ msgstr "Dokumentum(ok) telepítése/frissítése"
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:423
-#, fuzzy
 msgid ""
 "With this facility, you can connect to a repository of works (called "
 "\"library\"), and transfer one or more works to your local Bookshelf. These "
@@ -1302,9 +1297,11 @@ msgstr ""
 "(\"könyvtárhoz\"), és letölthet egy, vagy akár több munkát a saját helyi "
 "könyvespolcára. Ezek a könyvtárak lehetnek helyiek is (pl. &sword; CD), vagy "
 "távoliak is (pl. a Crosswire online &sword; tárolóhelye, vagy más oldalak, "
-"ahol &sword; modulok találhatók). Egyszerűen kezelheti ezeket a lelőhelyeket "
-"a <guibutton>Hozzáadás</guibutton> és a <guibutton>Törlés</guibutton> gomb "
-"segítségével."
+"ahol &sword; modulok találhatók). További forrásokat adhat hozzá a "
+"<guibutton>Lista letöltése...</guibutton> gombra kattintva, ha az "
+"<guibutton>Új telepítési forrás</guibutton> ablak látható. Egyszerűen "
+"kezelheti ezeket a lelőhelyeket a <guibutton>Hozzáadás</guibutton> és a "
+"<guibutton>Törlés</guibutton> gomb segítségével."
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:434
@@ -1872,15 +1869,14 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:974
-#, fuzzy
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> <guimenuitem>Tabbed</guimenuitem> </menuchoice> equivalent; "
 "organizes windows with tabs across the top."
 msgstr ""
 "Megegyezik az <menuchoice><guimenu>Ablak</guimenu> <guimenuitem>Ablakok "
-"automatikus igazítása</guimenuitem><guimenuitem> Kézi elrendezéssel</"
-"guimenuitem></menuchoice>, aktiválja az kézi  elrendezést."
+"automatikus igazítása</guimenuitem> <guimenuitem>Laponkénti</guimenuitem></"
+"menuchoice>, az ablakokat lapokban jeleníti meg."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:988
@@ -2151,9 +2147,8 @@ msgstr "Használhatja a könyvek neveit saját nyelvén is."
 
 # type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-start.docbook:39
-#, fuzzy
 msgid "Starting &bibletime; for the first time"
-msgstr "&bibletime; indítása"
+msgstr "&bibletime; első indítása "
 
 # type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-start.docbook:41
@@ -2162,6 +2157,9 @@ msgid ""
 "configure the following options, available under the <link linkend=\"hdbk-"
 "reference-menus-settings\">Settings menu bar</link>."
 msgstr ""
+"Amennyiben először indította el a  &bibletime; -t, be kell állítania a <link "
+"linkend=\"hdbk-reference-menus-settings\">Beállítások </link> menü alatti "
+"opciókat."
 
 # type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-start.docbook:53
@@ -2204,9 +2202,8 @@ msgstr "<application>BibleTime</application>"
 
 # type: Content of the kde entity
 #: docs/handbook/en/docbook/index.docbook:6
-#, fuzzy
 msgid "<application>SWORD</application>"
-msgstr "<application>KDE</application>"
+msgstr "<application>SWORD</application>"
 
 # type: Content of the bibletime entity
 #: docs/handbook/en/docbook/index.docbook:7
@@ -2250,22 +2247,20 @@ msgstr "A &bibletime; csapat"
 
 # type: Content of: <book><bookinfo><legalnotice><para>
 #: docs/handbook/en/docbook/index.docbook:50
-#, fuzzy
 msgid ""
 "The &bibletime; Handbook is distributed with the &bibletime; study program."
-msgstr "A &bibletime; kézikönyv a &bibletime; segédlet része."
+msgstr "A &bibletime; kézikönyv a &bibletime; programmal együtt terjesztve."
 
 # type: Content of: <book><bookinfo><date>
 #: docs/handbook/en/docbook/index.docbook:54
 #, fuzzy
-msgid "$LastChangedDate: 2009-12-31 15:05:52 -0500 (Thu, 31 Dec 2009) $"
-msgstr "$LastChangedDate: 2009-11-18 13:30:32 -0500 (Wed, 18 Nov 2009) $"
+msgid "$LastChangedDate: 2010-01-21 00:14:01 -0500 (Thu, 21 Jan 2010) $"
+msgstr "$LastChangedDate: 2009-12-31 15:05:52 -0500 (Thu, 31 Dec 2009) $"
 
 # type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:56
-#, fuzzy
 msgid "2.6"
-msgstr "2.5"
+msgstr "2.6"
 
 # type: Content of: <book><bookinfo><abstract><para>
 #: docs/handbook/en/docbook/index.docbook:59
@@ -2276,25 +2271,9 @@ msgid ""
 "software uses the &sword; programming library to work with over 200 free "
 "Bible texts, commentaries, dictionaries and books provided by the &cbs;."
 msgstr ""
-
-# type: Content of the sword entity
-#~ msgid "<application>Sword</application>"
-#~ msgstr "<application>Sword</application>"
-
-# type: Content of: <chapter><sect1><title>
-#~ msgid "Startup sequence"
-#~ msgstr "Indítási folyamat"
-
-# type: Content of: <chapter><sect1><para>
-#~ msgid ""
-#~ "As &bibletime; launches you may see the following screens before the main "
-#~ "&bibletime; window opens:"
-#~ msgstr ""
-#~ "Mikor a &bibletime; indul, a következő képet láthatja a fő &bibletime; "
-#~ "ablak betöltése előtt:"
-
-# type: Content of: <book><bookinfo><abstract><para>
-#~ msgid "&bibletime; is a Bible study tool based on the &sword; framework."
-#~ msgstr ""
-#~ "&bibletime; egy, a &sword; keretrendszerre alapozott Biblia tanulmányozó "
-#~ "szoftver."
+"A &bibletime; egy teljesen ingyenes és szabad Biblia tanulmányozó program. A "
+"program kezelőfelülete a &qt; keretrendszerre épült, ami lehetővé teszi "
+"többféle operációs rendszeren való futtatását, mint Linux, Windows, FreeBSD "
+"és Mac OS X rendszeren. A szoftver a &sword; programozási könyvtárat "
+"használja, több, mint 200 ingyenes Bibliaváltozattal, kommentárokkal, "
+"szótárakkal és könyvekkel, amit a &cbs; biztosít."

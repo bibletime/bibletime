@@ -1309,17 +1309,17 @@ shortcut</source>
 <context>
     <name>BtSourceArea</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="108"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="112"/>
         <source>Work</source>
         <translation>Dokumentum</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="108"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="112"/>
         <source>Description</source>
         <translation>Leírás</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="96"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="99"/>
         <source>Add...</source>
         <translation>Hozzáadás...</translation>
     </message>
@@ -1334,17 +1334,17 @@ shortcut</source>
         <translation>Dokumentumok listájának frissítése ebből a forrásból</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="92"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="95"/>
         <source>Delete...</source>
         <translation>Törlés...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="93"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="96"/>
         <source>Delete this source</source>
         <translation>Forrás törlése</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="97"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="100"/>
         <source>Add new source</source>
         <translation>Új forrás hozzáadása</translation>
     </message>
@@ -1352,68 +1352,68 @@ shortcut</source>
 <context>
     <name>BtSourceWidget</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="60"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="68"/>
         <source>Delete Source?</source>
         <translation>Forrás törlése?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="61"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="69"/>
         <source>Do you really want to delete this source?</source>
         <translation>Tényleg törli a forrást?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="94"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="102"/>
         <source>Cancel</source>
         <translation>Mégsem</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="95"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="103"/>
         <source>Refreshing Source</source>
         <translation>Forrás frissítése</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="117"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="125"/>
         <source>Connecting...</source>
         <translation>Kapcsolódás...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="160"/>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="161"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="168"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="169"/>
         <source>Refreshing...</source>
         <translation>Frissítés...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="221"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="229"/>
         <source>No sources were found in the SWORD configuration and BibleTime couldn&apos;t create a default source. Check your SWORD configuration and that the configuration path is writable. Then restart the Bookshelf Manager.</source>
         <translation>Nem található telepítési forrás a SWORD beállításaiban, a BibleTime nem tud alapértelmezett forrást hozzáadni. Ellenőrizze a SWORD beállításait, továbbá, hogy írható -e a beállítási útvonal, majd indítsa újra a Könyvespolc menedzsert.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="236"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="244"/>
         <source>Remote:</source>
         <translation>Távoli:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="241"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="249"/>
         <source>Local:</source>
         <translation>Helyi:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="245"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="253"/>
         <source>Not a directory!</source>
         <translation>Nem könyvtár!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="248"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="256"/>
         <source>Not readable!</source>
         <translation>Nem olvasható!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="314"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="323"/>
         <source>Warning</source>
         <translation>Figyelmeztetés</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="314"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="323"/>
         <source>The destination directory is not writable or does not exist. Installation will fail unless this has first been fixed.</source>
         <translation>A célkonyvtár nem írható, vagy nem létezik. A telepítés nem lehetséges, míg ki nem javítja a hibát.</translation>
     </message>
@@ -3937,12 +3937,12 @@ Language name ppk</extracomment>
         <translation>Igeidő változtatva</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/instbackend.cpp" line="187"/>
+        <location filename="../../src/frontend/bookshelfmanager/instbackend.cpp" line="189"/>
         <source>Can&apos;t write file</source>
         <translation>Nem írható fájl</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/instbackend.cpp" line="187"/>
+        <location filename="../../src/frontend/bookshelfmanager/instbackend.cpp" line="189"/>
         <source>The Sword config file can&apos;t be written!</source>
         <translation>A Sword beállítási fájlja nem írható!</translation>
     </message>
@@ -4201,7 +4201,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="99"/>
         <source>This help is mainly for &apos;Full syntax&apos; option. &apos;All words&apos; and &apos;Some words&apos; options have more limited syntax; &lt;a href=&apos;#wildcards&apos;&gt;wildcards&lt;/a&gt; and &lt;a href=&apos;#fields&apos;&gt;text fields&lt;/a&gt; are supported for them. Some other syntax features may give strange or wrong results with All words/Some words.</source>
-        <translation>Ez a segédlet főként a &apos;teljes kifejezés&apos; opcióhoz van. az &apos;Összes szó&apos; és a &apos;Bármely szó&apos; opciónak sokkal korlátozottabb leheőségei vannak; &lt;a href=&apos;#wildcards&apos;&gt;helyettesítő karakterek&lt;/a&gt; és &lt;a href=&apos;#fields&apos;&gt; szövegmezők&lt;/a&gt; támogatottak ott. Néhány egyéb szintaxis furcsa, vagy hibás eredményt okozhat az Összes szó/Bármely szó opciónál.</translation>
+        <translation type="unfinished">Ez a segédlet főként a &apos;teljes kifejezés&apos; opcióhoz van. az &apos;Összes szó&apos; és a &apos;Bármely szó&apos; opciónak sokkal korlátozottabb lehetőségei vannak; &lt;a href=&apos;#wildcards&apos;&gt;helyettesítő karakterek&lt;/a&gt; és &lt;a href=&apos;#fields&apos;&gt; szövegmezők&lt;/a&gt; támogatottak ott. Néhány egyéb szintaxis furcsa, vagy hibás eredményt okozhat az Összes szó/Bármely szó opciónál.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="104"/>

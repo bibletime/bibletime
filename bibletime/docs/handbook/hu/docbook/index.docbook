@@ -48,19 +48,20 @@
   </copyright>
 
   <legalnotice>
-    <para>The &bibletime; Handbook is distributed with the &bibletime; study program.</para>
+    <para>A &bibletime; kézikönyv a &bibletime; programmal együtt terjesztve.</para>
   </legalnotice>
 
-  <date>$LastChangedDate: 2009-12-31 15:05:52 -0500 (Thu, 31 Dec 2009) $</date>
+  <date>$LastChangedDate: 2010-01-21 00:14:01 -0500 (Thu, 21 Jan 2010) $</date>
 
   <releaseinfo>2.6</releaseinfo>
 
   <abstract>
-    <para>&bibletime; is a completely free Bible study program. The program's user 
-interface is built with &qt; framework, which makes it run on several 
-operating systems including Linux, Windows, FreeBSD and Mac OS X. The 
-software uses the &sword; programming library to work with over 200 free 
-Bible texts, commentaries, dictionaries and books provided by the &cbs;.</para>
+    <para>A &bibletime; egy teljesen ingyenes és szabad Biblia tanulmányozó program. A 
+program kezelőfelülete a &qt; keretrendszerre épült, ami lehetővé teszi 
+többféle operációs rendszeren való futtatását, mint Linux, Windows, FreeBSD 
+és Mac OS X rendszeren. A szoftver a &sword; programozási könyvtárat 
+használja, több, mint 200 ingyenes Bibliaváltozattal, kommentárokkal, 
+szótárakkal és könyvekkel, amit a &cbs; biztosít.</para>
   </abstract>
 
   <keywordset>
