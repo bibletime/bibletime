@@ -956,9 +956,10 @@ elrendezéssel</guimenuitem></menuchoice>, aktiválja az kézi  elrendezést.</e
               <keycap>&Ctrl;&Alt;T</keycap></keycombo>
             </entry>
             <entry>
-	      <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement 
-mode</guimenuitem> <guimenuitem>Tabbed</guimenuitem> </menuchoice> 
-equivalent; organizes windows with tabs across the top.</entry>
+	      Megegyezik az <menuchoice><guimenu>Ablak</guimenu> <guimenuitem>Ablakok 
+automatikus igazítása</guimenuitem> 
+<guimenuitem>Laponkénti</guimenuitem></menuchoice>, az ablakokat lapokban 
+jeleníti meg.</entry>
           </row>
 
           <row>

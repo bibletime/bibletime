@@ -2476,47 +2476,47 @@ scorciatoia</translation>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="974"/>
         <source>Bibles</source>
-        <translation type="unfinished">Bibbie</translation>
+        <translation>Bibbie</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="976"/>
         <source>Commentaries</source>
-        <translation type="unfinished">Commenti</translation>
+        <translation>Commenti</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="978"/>
         <source>Books</source>
-        <translation type="unfinished">Libri</translation>
+        <translation>Libri</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="980"/>
         <source>Cults/Unorthodox</source>
-        <translation type="unfinished">Culti/Non ortodossi</translation>
+        <translation>Culti/Non ortodossi</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="982"/>
         <source>Maps and Images</source>
-        <translation type="unfinished">Mappe e Immagini</translation>
+        <translation>Mappe e Immagini</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="984"/>
         <source>Daily Devotionals</source>
-        <translation type="unfinished">Letture di devozione giornaliere</translation>
+        <translation>Letture di devozione giornaliere</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="986"/>
         <source>Lexicons and Dictionaries</source>
-        <translation type="unfinished">Lessici e Dizionari</translation>
+        <translation>Lessici e Dizionari</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="988"/>
         <source>Glossaries</source>
-        <translation type="unfinished"></translation>
+        <translation>Glossari</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="990"/>
         <source>Unknown</source>
-        <translation type="unfinished">Sconosciuto</translation>
+        <translation>Sconosciuto</translation>
     </message>
 </context>
 <context>

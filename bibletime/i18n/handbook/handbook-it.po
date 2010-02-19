@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
 "POT-Creation-Date: 2010-02-10 14:35-0500\n"
-"PO-Revision-Date: 2010-02-09 17:10+0100\n"
+"PO-Revision-Date: 2010-02-18 09:37+0100\n"
 "Last-Translator: \n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -2220,9 +2220,8 @@ msgstr ""
 
 # type: Content of: <book><bookinfo><date>
 #: docs/handbook/en/docbook/index.docbook:54
-#, fuzzy
 msgid "$LastChangedDate: 2010-01-21 00:14:01 -0500 (Thu, 21 Jan 2010) $"
-msgstr "$LastChangedDate: 2009-12-31 15:05:52 -0500 (Thu, 31 Dec 2009) $"
+msgstr "$LastChangedDate: 2010-01-21 00:14:01 -0500 (Thu, 21 Jan 2010) $"
 
 # type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:56
