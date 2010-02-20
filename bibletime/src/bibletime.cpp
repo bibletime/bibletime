@@ -19,6 +19,7 @@
 #include <QDebug>
 #include <QInputDialog>
 #include <QMdiSubWindow>
+#include <QMessageBox>
 #include <QSplashScreen>
 #include <QSplitter>
 #include "backend/config/cbtconfig.h"
@@ -247,20 +248,27 @@ void BibleTime::searchInModule(CSwordModuleInfo *module) {
     Search::CSearchDialog::openDialog(modules, QString::null);
 }
 
-void BibleTime::moduleUnlock(CSwordModuleInfo *module) {
+bool BibleTime::moduleUnlock(CSwordModuleInfo *module, QWidget *parent) {
+    /// \todo Write a proper unlocking dialog with integrated error messages.
+    QString unlockKey;
     bool ok;
-    const QString unlockKey =
-        QInputDialog::getText(
-            this,
-            tr("Unlock Work"),
-            tr("Enter the unlock key for this work."),
-            QLineEdit::Normal,
-            module->config(CSwordModuleInfo::CipherKey),
-            &ok
+    for (;;) {
+        unlockKey = QInputDialog::getText(
+            parent, tr("Unlock Work"), tr("Enter the unlock key for %1.").arg(module->name()),
+            QLineEdit::Normal, module->config(CSwordModuleInfo::CipherKey), &ok
         );
-    if (ok) {
+        if (!ok) return false;
         module->unlock(unlockKey);
+        if (!module->isLocked()) break;
+        QMessageBox::warning(parent, tr("Warning: Invalid unlock key!"),
+                             tr("The unlock key you provided did not properly unlock this "
+                                "module. Please try again."));
     }
+    return true;
+}
+
+void BibleTime::slotModuleUnlock(CSwordModuleInfo *module) {
+    moduleUnlock(module, this);
 }
 
 void BibleTime::moduleAbout(CSwordModuleInfo *module) {

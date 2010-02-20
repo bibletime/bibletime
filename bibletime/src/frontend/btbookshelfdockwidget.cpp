@@ -15,9 +15,11 @@
 #include <QAction>
 #include <QActionGroup>
 #include <QMenu>
+#include <QMessageBox>
 #include <QSettings>
 #include "backend/config/cbtconfig.h"
 #include "backend/managers/cswordbackend.h"
+#include "bibletime.h"
 #include "frontend/btbookshelfview.h"
 #include "frontend/btbookshelfwidget.h"
 #include "util/cpointers.h"
@@ -141,6 +143,19 @@ BtBookshelfTreeModel::Grouping BtBookshelfDockWidget::loadGroupingSetting() cons
 void BtBookshelfDockWidget::slotModuleActivated(CSwordModuleInfo *module) {
     if (!module->isLocked()) {
         emit moduleOpenTriggered(module);
+    } else {
+        /**
+          \todo Implement a better unlock dialog, which could incorporate the following
+                warning message. Actually the whole case when the user tries to open a locked
+                module needs to be rethought and refactored.
+        */
+        QMessageBox::warning(this, tr("Warning: Module locked!"),
+                             tr("You are trying to access an encrypted module. Please "
+                                "provide an unlock key in the following dialog to open the "
+                                "module."));
+        if (BibleTime::moduleUnlock(module)) {
+            emit moduleOpenTriggered(module);
+        }
     }
 }
 
