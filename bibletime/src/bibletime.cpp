@@ -259,6 +259,16 @@ bool BibleTime::moduleUnlock(CSwordModuleInfo *module, QWidget *parent) {
         );
         if (!ok) return false;
         module->unlock(unlockKey);
+
+        /// \todo refactor this module reload (currently a deficiency in sword 1.6.1):
+        {
+            const QString moduleName(module->name());
+            CSwordBackend *backend = CPointers::backend();
+            backend->reloadModules(CSwordBackend::OtherChange);
+            module = backend->findModuleByName(moduleName);
+            Q_ASSERT(module != 0);
+        }
+
         if (!module->isLocked()) break;
         QMessageBox::warning(parent, tr("Warning: Invalid unlock key!"),
                              tr("The unlock key you provided did not properly unlock this "
