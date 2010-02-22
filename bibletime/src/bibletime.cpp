@@ -302,6 +302,23 @@ void::BibleTime::refreshBibleTimeAccel() {
     CBTConfig::setupAccelSettings(CBTConfig::application, m_actionCollection);
 }
 
+void BibleTime::closeEvent(QCloseEvent *event) {
+    /*
+      Sequentially queries all open subwindows whether its fine to close them. If some sub-
+      window returns false, the querying is stopped and the close event is ignored. If all
+      subwindows return true, the close event is accepted.
+    */
+    Q_FOREACH(QMdiSubWindow *subWindow, m_mdi->subWindowList()) {
+        if (CDisplayWindow* window = dynamic_cast<CDisplayWindow*>(subWindow->widget())) {
+            if (!window->queryClose()) {
+                event->ignore();
+                return;
+            }
+        }
+    }
+    event->accept();
+}
+
 /** Restores the workspace if the flag for this is set in the config. */
 void BibleTime::restoreWorkspace() {
     if (CProfile* p = m_profileMgr.startupProfile()) {

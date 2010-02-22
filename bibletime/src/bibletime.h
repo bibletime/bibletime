@@ -253,6 +253,11 @@ class BibleTime : public QMainWindow {
         */
         void refreshBibleTimeAccel();
 
+        /**
+        * Reimplemented from QWidget.
+        */
+        void closeEvent(QCloseEvent *event);
+
     protected slots:
         /**
          * Creates a new presenter in the MDI area according to the type of the module.
