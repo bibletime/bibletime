@@ -166,6 +166,16 @@ class BibleTime : public QMainWindow {
         */
         QAction* getAction(const QString& actionName);
 
+        /**
+          Displays a dialog which asks the user an unlock key for the given module and tries
+          to unlock the module. If an invalid unlock key is given, a warning message is
+          issued and the user is again asked for the key.
+          \param[in] module The module to unlock.
+          \param[in] parent The parent widget for the unlock dialogs.
+          \returns whether the module was successfully unlocked.
+        */
+        static bool moduleUnlock(CSwordModuleInfo *module, QWidget *parent = 0);
+
     public slots:
         /**
         * Opens the optionsdialog of BibleTime.
@@ -266,7 +276,7 @@ class BibleTime : public QMainWindow {
         CDisplayWindow* moduleEditPlain(CSwordModuleInfo *module);
         CDisplayWindow* moduleEditHtml(CSwordModuleInfo *module);
         void searchInModule(CSwordModuleInfo *module);
-        void moduleUnlock(CSwordModuleInfo *module);
+        void slotModuleUnlock(CSwordModuleInfo *module);
         void moduleAbout(CSwordModuleInfo *module);
         void quit();
 

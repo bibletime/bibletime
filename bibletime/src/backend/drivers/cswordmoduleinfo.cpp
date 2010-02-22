@@ -127,7 +127,14 @@ bool CSwordModuleInfo::unlock(const QString & unlockKey) {
     bool unlocked = unlockKeyIsValid();
 
     CBTConfig::setModuleEncryptionKey(name(), unlockKey);
+
+    /// \todo remove this comment once it is no longer needed
+    /* There is currently a deficiency in sword 1.6.1 in that backend->setCipherKey() does
+     * not work correctly for modules from which data was already fetched. Therefore we have to
+     * reload the modules in bibletime.cpp
+     */
     backend()->setCipherKey(m_module->Name(), unlockKey.toUtf8().constData());
+
     /// \todo write to Sword config as well
 
     if (unlockKeyIsValid() != unlocked) {

@@ -3,6 +3,10 @@
       open sub-windows were not properly queried for unsaved changes. Thanks
       Martin!
 
+2010-02-20 Jaak Ristioja <ristioja@gmail.com>
+    * Refactored the module unlocking GUI to provide more info on failures and
+      made opening a locked module also initiate the unlocking procedure.
+
 2010-02-17 Martin Gruner <mgruner@crosswire.org>
     * Released 2.6.rc1
 
