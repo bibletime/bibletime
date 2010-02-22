@@ -153,7 +153,15 @@ void BtBookshelfDockWidget::slotModuleActivated(CSwordModuleInfo *module) {
                              tr("You are trying to access an encrypted module. Please "
                                 "provide an unlock key in the following dialog to open the "
                                 "module."));
+
+        /// \todo We need to keep the module name because unlocking currently reloads sword.
+        const QString moduleName(module->name());
+
         if (BibleTime::moduleUnlock(module)) {
+            // Re-initialize module pointer:
+            module = CPointers::backend()->findModuleByName(moduleName);
+            Q_ASSERT(module != 0);
+
             emit moduleOpenTriggered(module);
         }
     }
