@@ -298,7 +298,7 @@ void BibleTime::refreshDisplayWindows() {
 }
 
 /** Refresh main window accelerators */
-void::BibleTime::refreshBibleTimeAccel() {
+void BibleTime::refreshBibleTimeAccel() {
     CBTConfig::setupAccelSettings(CBTConfig::application, m_actionCollection);
 }
 
