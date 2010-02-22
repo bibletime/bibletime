@@ -284,19 +284,21 @@ void::BibleTime::refreshBibleTimeAccel() {
     CBTConfig::setupAccelSettings(CBTConfig::application, m_actionCollection);
 }
 
-/** Called before a window is closed */
-bool BibleTime::queryClose() {
-    qDebug() << "BibleTime::queryClose";
-    bool ret = true;
-
-    foreach(QMdiSubWindow* subWindow, m_mdi->subWindowList()) {
+void BibleTime::closeEvent(QCloseEvent *event) {
+    /*
+      Sequentially queries all open subwindows whether its fine to close them. If some sub-
+      window returns false, the querying is stopped and the close event is ignored. If all
+      subwindows return true, the close event is accepted.
+    */
+    Q_FOREACH(QMdiSubWindow *subWindow, m_mdi->subWindowList()) {
         if (CDisplayWindow* window = dynamic_cast<CDisplayWindow*>(subWindow->widget())) {
-            ret = ret && window->queryClose();
+            if (!window->queryClose()) {
+                event->ignore();
+                return;
+            }
         }
-        qDebug() << "return value:" << ret;
     }
-    qDebug() << "final return value:" << ret;
-    return ret;
+    event->accept();
 }
 
 /** Restores the workspace if the flag for this is set in the config. */

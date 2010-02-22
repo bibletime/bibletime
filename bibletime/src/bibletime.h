@@ -251,6 +251,11 @@ class BibleTime : public QMainWindow {
         */
         bool queryClose();
 
+        /**
+        * Reimplemented from QWidget.
+        */
+        void closeEvent(QCloseEvent *event);
+
     protected slots:
         /**
          * Creates a new presenter in the MDI area according to the type of the module.
