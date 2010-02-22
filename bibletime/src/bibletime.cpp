@@ -302,21 +302,6 @@ void::BibleTime::refreshBibleTimeAccel() {
     CBTConfig::setupAccelSettings(CBTConfig::application, m_actionCollection);
 }
 
-/** Called before a window is closed */
-bool BibleTime::queryClose() {
-    qDebug() << "BibleTime::queryClose";
-    bool ret = true;
-
-    foreach(QMdiSubWindow* subWindow, m_mdi->subWindowList()) {
-        if (CDisplayWindow* window = dynamic_cast<CDisplayWindow*>(subWindow->widget())) {
-            ret = ret && window->queryClose();
-        }
-        qDebug() << "return value:" << ret;
-    }
-    qDebug() << "final return value:" << ret;
-    return ret;
-}
-
 /** Restores the workspace if the flag for this is set in the config. */
 void BibleTime::restoreWorkspace() {
     if (CProfile* p = m_profileMgr.startupProfile()) {
@@ -372,9 +357,3 @@ bool BibleTime::event(QEvent* event) {
         Search::CSearchDialog::closeDialog();
     return QMainWindow::event(event);
 }
-
-QAction* BibleTime::getAction(const QString& actionName)
-{
-    return m_actionCollection->action(actionName);
-}
-

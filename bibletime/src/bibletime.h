@@ -161,10 +161,6 @@ class BibleTime : public QMainWindow {
         *  Save the configuration dialog settings, don't open dialog
         */
         void saveConfigSettings();
-        /**
-        *  Get QAction from actionCollection
-        */
-        QAction* getAction(const QString& actionName);
 
         /**
           Displays a dialog which asks the user an unlock key for the given module and tries
@@ -256,10 +252,6 @@ class BibleTime : public QMainWindow {
         * Refresh main window accelerators
         */
         void refreshBibleTimeAccel();
-        /**
-        * Called before a window is closed
-        */
-        bool queryClose();
 
     protected slots:
         /**
