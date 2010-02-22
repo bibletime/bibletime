@@ -1,3 +1,6 @@
+2010-02-22 Martin Gruner <mgruner@crosswire.org>
+    * Released 2.6.rc2
+
 2010-02-22 Jaak Ristioja <ristioja@gmail.com>
     * Fixed an issue causing data loss when closing the main window, because
       open sub-windows were not properly queried for unsaved changes. Thanks
