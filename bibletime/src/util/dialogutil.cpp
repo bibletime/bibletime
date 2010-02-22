@@ -1,0 +1,77 @@
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2010 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
+
+#include "util/dialogutil.h"
+
+#include <QMessageBox>
+#include <QDialogButtonBox>
+#include <QPushButton>
+#include <QDebug>
+
+namespace util {
+
+namespace {
+
+void replaceText(QDialogButtonBox *box, QDialogButtonBox::StandardButton flag,
+                 const QString &text) {
+    QPushButton *button(box->button(flag));
+    if (button != 0) {
+        button->setText(text);
+    }
+}
+
+QMessageBox::StandardButton bt_messageBox(QMessageBox::Icon icon, QWidget * parent, const QString & title, const QString & text, QMessageBox::StandardButtons buttons, QMessageBox::StandardButton defaultButton) {
+    qDebug() << "BT message box warning/information/critical";
+    QMessageBox messageBox(icon, title, text, QMessageBox::Ok, parent);
+    //We need the button box to translate the strings (the idea of this whole function)
+    QDialogButtonBox* box = dynamic_cast<QDialogButtonBox*>(messageBox.button(QMessageBox::Ok)->parent());
+    Q_ASSERT(box);
+    messageBox.setStandardButtons(buttons);
+    messageBox.setDefaultButton(defaultButton);
+    prepareDialogBox(box);
+    return (QMessageBox::StandardButton)messageBox.exec();
+}
+
+} // anonymous namespace
+
+void prepareDialogBox(QDialogButtonBox *box) {
+    replaceText(box, QDialogButtonBox::Ok      , QPushButton::tr("OK"        , "Dialog Button"));
+    replaceText(box, QDialogButtonBox::Open    , QPushButton::tr("Open"      , "Dialog Button"));
+    replaceText(box, QDialogButtonBox::Save    , QPushButton::tr("Save"      , "Dialog Button"));
+    replaceText(box, QDialogButtonBox::Cancel  , QPushButton::tr("Cancel"    , "Dialog Button"));
+    replaceText(box, QDialogButtonBox::Close   , QPushButton::tr("Close"     , "Dialog Button"));
+    replaceText(box, QDialogButtonBox::Discard , QPushButton::tr("Discard"   , "Dialog Button"));
+    replaceText(box, QDialogButtonBox::Apply   , QPushButton::tr("Apply"     , "Dialog Button"));
+    replaceText(box, QDialogButtonBox::Reset   , QPushButton::tr("Reset"     , "Dialog Button"));
+    replaceText(box, QDialogButtonBox::RestoreDefaults, QPushButton::tr("Restore defaults", "Dialog Button"));
+    replaceText(box, QDialogButtonBox::Help    , QPushButton::tr("Help"      , "Dialog Button"));
+    replaceText(box, QDialogButtonBox::SaveAll , QPushButton::tr("Save All"  , "Dialog Button"));
+    replaceText(box, QDialogButtonBox::Yes     , QPushButton::tr("Yes"       , "Dialog Button"));
+    replaceText(box, QDialogButtonBox::YesToAll, QPushButton::tr("Yes to all", "Dialog Button"));
+    replaceText(box, QDialogButtonBox::No      , QPushButton::tr("No"        , "Dialog Button"));
+    replaceText(box, QDialogButtonBox::NoToAll , QPushButton::tr("No to all" , "Dialog Button"));
+}
+
+QMessageBox::StandardButton showWarning(QWidget * parent, const QString & title, const QString & text, QMessageBox::StandardButtons buttons, QMessageBox::StandardButton defaultButton) {
+    return bt_messageBox(QMessageBox::Warning, parent, title, text, buttons, defaultButton);
+}
+
+QMessageBox::StandardButton showInformation(QWidget * parent, const QString & title, const QString & text, QMessageBox::StandardButtons buttons, QMessageBox::StandardButton defaultButton) {
+    return bt_messageBox(QMessageBox::Information, parent, title, text, buttons, defaultButton);
+}
+
+QMessageBox::StandardButton showCritical(QWidget * parent, const QString & title, const QString & text, QMessageBox::StandardButtons buttons, QMessageBox::StandardButton defaultButton) {
+    return bt_messageBox(QMessageBox::Critical, parent, title, text, buttons, defaultButton);
+}
+
+QMessageBox::StandardButton showQuestion(QWidget * parent, const QString & title, const QString & text, QMessageBox::StandardButtons buttons, QMessageBox::StandardButton defaultButton) {
+    return bt_messageBox(QMessageBox::Question, parent, title, text, buttons, defaultButton);
+}
+
+} // namespace util

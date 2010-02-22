@@ -1,0 +1,99 @@
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2010 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
+
+#ifndef CHTMLWRITEDISPLAY_H
+#define CHTMLWRITEDISPLAY_H
+
+#include "frontend/display/cplainwritedisplay.h"
+
+
+class BtActionCollection;
+class BtColorWidget;
+class BtFontSizeWidget;
+class CWriteWindow;
+class QAction;
+class QFontComboBox;
+class QMenu;
+class QToolBar;
+class QWidget;
+
+/** The WYSIWYG implementation of the write display interface.
+  * @author The BibleTime team
+  */
+class CHTMLWriteDisplay : public CPlainWriteDisplay {
+        Q_OBJECT
+    public:
+        /**
+        * Sets the new text for this display widget. (CPlainWriteDisplay).
+        */
+        virtual void setText( const QString& newText );
+        /**
+        * Returns the text of this edit widget. (CPlainWriteDisplay).
+        */
+        virtual const QString plainText();
+
+        /**
+        * Creates the necessary action objects and puts them on the toolbar.
+        * (CPlainWriteDisplay)
+        */
+        virtual void setupToolbar(QToolBar * bar, BtActionCollection * actionCollection);
+
+    protected:
+        friend class CDisplay;
+        CHTMLWriteDisplay(CWriteWindow* parentWindow, QWidget* parent);
+        ~CHTMLWriteDisplay();
+
+    protected slots:
+        void toggleBold(bool);
+        void toggleItalic(bool);
+        void toggleUnderline(bool);
+
+        void alignLeft(bool);
+        void alignCenter(bool);
+        void alignRight(bool);
+
+        void changeFontSize(int);
+
+        void slotFontChanged( const QFont& );
+        void slotFontFamilyChoosen(const QFont&);
+
+        /**
+        * The text's alignment changed. Enable the right buttons.
+        */
+        void slotAlignmentChanged( int );
+        /**
+        * Is called when a new color was selected.
+        */
+        void slotColorSelected( const QColor& );
+        /**
+        * Is called when a text with another color was selected.
+        */
+        void slotColorChanged( const QColor& );
+
+    private:
+        struct {
+            QAction* bold;
+            QAction* italic;
+            QAction* underline;
+
+            QAction* alignLeft;
+            QAction* alignCenter;
+            QAction* alignRight;
+
+            //popup menu
+            QAction* selectAll;
+        }
+        m_actions;
+
+        QFontComboBox* m_fontFamilyChooser;
+        BtFontSizeWidget*   m_fontSizeChooser;
+        BtColorWidget*      m_colorChooser;
+};
+
+#endif
