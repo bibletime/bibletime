@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+ "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd"
+[
+  <!ENTITY bibletime '<application>BibleTime</application>'>
+  <!ENTITY sword '<application>SWORD</application>'>
+  <!ENTITY cbs '<application>Crosswire Bible Society</application>'>
+  <!ENTITY kde '<application>KDE</application>'>
+  <!ENTITY qt '<application>Qt</application>'>
+
+  <!ENTITY Shift 'Umschalt'>
+  <!ENTITY Ctrl 'Strg'>
+  <!ENTITY Alt 'Alt'>
+
+  <!ENTITY hdbkchap1 SYSTEM "hdbk-intro.docbook">
+  <!ENTITY hdbkchap2 SYSTEM "hdbk-start.docbook">
+  <!ENTITY hdbkchap3 SYSTEM "hdbk-operation.docbook">
+  <!ENTITY hdbkchap4 SYSTEM "hdbk-config.docbook">
+  <!ENTITY hdbkchap5 SYSTEM "hdbk-reference.docbook">
+]>
+<book>
+<bookinfo>
+  <title>Das &bibletime;-Handbuch</title>
+
+  <authorgroup>
+    <author>
+      <firstname>Fred</firstname>
+      <surname>Saalbach</surname>
+    </author>
+    <author>
+      <firstname>Jeffrey</firstname>
+      <surname>Hoyt</surname>
+    </author>
+    <author>
+      <firstname>Martin</firstname>
+      <surname>Gruner</surname>
+    </author>
+    <author>
+      <firstname>Thomas</firstname>
+      <surname>Abthorpe</surname>
+    </author>
+  </authorgroup>
+  
+  <!-- TRANS:ROLES_OF_TRANSLATORS -->
+<copyright>
+    <year>1999-2010</year>
+    <holder>Das &bibletime;-Team</holder>
+  </copyright>
+
+  <legalnotice>
+    <para>Das &bibletime;-Handbuch wird zusammen mit der &bibletime;-Studienhilfe 
+ausgeliefert.</para>
+  </legalnotice>
+
+  <date>$LastChangedDate: 2010-01-21 00:14:01 -0500 (Thu, 21 Jan 2010) $</date>
+
+  <releaseinfo>2.6</releaseinfo>
+
+  <abstract>
+    <para>&bibletime; ist ein absolut freies Bibelarbeits-Programm. Seine 
+Benutzeroberfläche ist mit dem &qt;-Rahmenwerk erstellt, das es auf mehreren 
+Betriebssystemen lauffähig macht, darunter Linux, Windows, FreeBSD und Mac 
+OS X. Die Software nutzt die &sword;-Programmierbibliothek, um mit über 200 
+freien Bibeltexten, Kommentaren, Wörterbüchern und Büchern zu laufen, die 
+von der &cbs; zur Verfügung gestellt werden.</para>
+  </abstract>
+
+  <keywordset>
+    <keyword>Qt4</keyword>
+    <keyword>BibleTime</keyword>
+    <keyword>SWORD</keyword>
+    <keyword>Crosswire</keyword>
+    <keyword>Help dialog</keyword>
+  </keywordset>
+</bookinfo>
+&hdbkchap1; &hdbkchap2; &hdbkchap3; &hdbkchap4; &hdbkchap5;
+</book>
+
+<!--
+
+Local Variables:
+
+mode: sgml
+
+sgml-minimize-attributes:nil
+
+sgml-general-insert-case:lower
+
+sgml-indent-step:0
+
+sgml-indent-data:nil
+
+End:
+
+-->

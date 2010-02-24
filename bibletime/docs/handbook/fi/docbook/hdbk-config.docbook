@@ -1,0 +1,196 @@
+<chapter id="hdbk-config">
+  <title>&bibletime;:n asetukset</title>
+  <para>Tässä osiossa on yleiskuvaus, kuinka &bibletime;:n asetuksia 
+asetetaan. Ohjelmassa tämä löytyy päävalikon <guimenu>Asetukset</guimenu> 
+-kohdasta.</para>
+  <sect1 id="hdbk-config-bt">
+    <title>Configure &bibletime; Dialog</title>
+    <para>&bibletime; käyttöliittymä voidaan muokata monella tavalla tarpeittesi 
+mukaan. Pääset asetusikkunaan valitsemalla 
+<menuchoice><guimenu>Asetukset</guimenu></menuchoice> <guimenuitem>Aseta 
+&bibletime;</guimenuitem>.</para>
+
+    <sect2 id="hdbk-config-bt-display">
+      <title>
+        <guimenu>Display</guimenu>
+      </title>
+      <para>Käynnistyskäyttäytymistä voidaan säätää. Valitse seuraavista valinnoista: 
+      <itemizedlist>
+        <listitem>
+          <para>Näytä aloituskuva</para>
+        </listitem>
+      </itemizedlist></para>
+      <para>Näyttömallit määrittelevät tekstin renderöinnin (värit, koko 
+jne.). Saatavana on erilaisia sisäänrakennettuja mallipohjia. Jos valitset 
+yhden sellaisen, näet esikatselukuvan oikealla paneelissa.</para>
+    </sect2>
+
+    <sect2 id="hdbk-config-bt-desk">
+      <title>
+        <guimenu>Desk</guimenu>
+      </title>
+      <para>Many features provided by the &sword; backend can now be customized in 
+&bibletime;.  These features are documented right in the dialog.  You also 
+have the possibility to specify standard works that should be used when no 
+specific work is specified in a reference.  An example: The standard Bible 
+is used to display the content of cross references in the Bible.  When you 
+hover over them, the Mag will show the content of the verses referred to, 
+according to the standard Bible you specified.  With the use of text 
+filters, you can control the appearance of the text.</para>
+    </sect2>
+
+    <sect2 id="hdbk-config-bt-languages">
+      <title>
+        <guimenu>Languages</guimenu>
+      </title>
+      <para>Tässä voit määritellä, mitä kieltä käytetään kirjojen nimissä. Aseta tämä 
+äidinkieleksesi, jos se on saatavilla. Silloin tunnet olosi kotoisaksi.</para>
+
+      <para>By default, &bibletime; uses the default system display font. You can 
+override this font if necessary. Some languages require special fonts to be 
+displayed correctly, and this dialog allows you to specify a custom font for 
+each language.</para>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="ss_configfonts.png" width="100%" contentdepth="100%" scalefit="1" format="PNG" />
+        </imageobject>
+        <textobject>
+          <phrase>Valintavaihtoehtoikkunan kirjasimet</phrase>
+        </textobject>
+        <caption>
+          <para>Valintaikkuna - Kirjasimet.</para>
+        </caption>
+      </mediaobject>
+      <para>&bibletime; can now use all supported fonts.  As long as the works you are 
+interested in display correctly nothing needs to be done here. If a work 
+only displays as a series of question marks (??????) or empty boxes, then 
+you know that the standard display font does not contain the characters used 
+in this work.</para>
+
+      <para>To correct this, choose this work's language from the drop down menu. Select 
+the use custom font checkbox. Now select a font. For example, a font that 
+supports many languages is Code2000. If no installed font can display the 
+work you are interested in, try installing the localization package for that 
+language.</para>
+      <sect3 id="hdbk-config-bt-addfont">
+        <title>Kirjasimien asennus</title>
+        <para>Detailed font installation instructions are outside the scope of this 
+handbook. For further information you might want to refer to the <ulink 
+url="http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html"> Unicode 
+HOWTO</ulink>.</para>
+        <tip>
+          <para>Jos käytät pientä kirjasinta kuten Clearlyu (noin 22kb), &bibletime; on 
+nopeampi kuin suurilla kirjasimilla kuten <trademark class="registered"> 
+Bitstream Cyberbit</trademark> (noin 12Mb).</para>
+        </tip>
+      </sect3>
+      <sect3 id="hdbk-config-bt-ob-font">
+        <title>Kirjasimien hankinta</title>
+        <para>Kirjasimia voi hankkia lukuisasta joukosta lähteitä:</para>
+        <itemizedlist>
+          <listitem>
+            <para>Your *nix distribution.</para>
+          </listitem>
+          <listitem>
+            <para>Distribuutiosi lokalisointipaketit.</para>
+          </listitem>
+          <listitem>
+            <para>An existing <trademark class="registered">Microsoft Windows</trademark> 
+installation on the same computer.</para>
+          </listitem>
+          <listitem>
+            <para>Kirjasinkokoelma, sellainen kuin on saatavilla Adobella tai Bitstreamilla.</para>
+          </listitem>
+          <listitem>
+            <para>Online kirjasinkokoelmat.</para>
+          </listitem>
+        </itemizedlist>
+        <para>Unicode-kirjasimet tarjoavat enemmän merkkejä kuin muut kirjasimet, ja osa 
+niistä kirjasimista on saatavilla ilmaiseksi. Mikään saatavillaoleva 
+kirjasin ei sisällä kaikkia Unicode-standardin määrittelemiä merkkejä. Sinun 
+tulee siis käyttää eri kirjasimia eri kielille.</para>
+        <table id="hdbk-config-unicode-fonts-table">
+          <title>Unicode-kirjasimet</title>
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry>
+                  <ulink url="http://code2000.net/CODE2000.ZIP">
+                  Code2000</ulink>
+                </entry>
+                <entry>Ehkä paras ilmainen Unicode-kirjasin, käsittää laajan joukon merkkejä.</entry>
+              </row>
+              <row>
+                <entry>
+                  <ulink url="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;cat_id=FontDownloads">
+                  SIL unicode fonts</ulink>
+                </entry>
+                <entry>Excellent Unicode fonts from the Summer Institute of Linguistics.</entry>
+              </row>
+              <row>
+                <entry>
+                  <ulink url="http://www.nongnu.org/freefont/">
+                  FreeFont</ulink>
+                </entry>
+                <entry>A new free Unicode font initiative.</entry>
+              </row>
+              <row>
+                <entry>
+                  <ulink url="ftp://ftp.crosswire.org/pub/sword/iso/latest/FONTS">
+                  Crosswire's font directory</ulink>
+                </entry>
+
+                <entry>Several fonts available from the &cbs; FTP site.</entry>
+              </row>
+              <row>
+                <entry>
+                  <ulink url="ftp://ftp.netscape.com/pub/communicator/extras/fonts/windows/">
+                  Bitstream CyberBit</ulink>
+                </entry>
+                <entry>Käsittää melkein koko Unicode-merkistön, mutta hidastuttaa &bibletime;ä 
+merkittävästi koon vuoksi.</entry>
+              </row>
+              <row>
+                <entry>Clearlyu</entry>
+                <entry>Sisältyy muutamiin jakeludistribuutioihin. Sisältää euroopan, kreikan, 
+heprean ja Thai-kielen.</entry>
+              </row>
+              <row>
+                <entry>
+                  <ulink url="http://fontforge.sourceforge.net/sfds/">
+                  Caslon, Monospace, Cupola, Caliban</ulink>
+                </entry>
+                <entry>Osittainen peittävyys, katso tietoja linkitetyltä sivulta.</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+        <para>Netissä on hyviä Unicode-kirjasinluetteloja, kuten Christoph Singerin ( 
+<ulink url="http://www.slovo.info/unifonts.htm">Multilingual Unicode 
+TrueType Fonts in the Internet</ulink>), tai Alan Woodin (<ulink 
+url="http://www.alanwood.net/unicode/fontsbyrange.html"> Unicode character 
+ranges and the Unicode fonts that support them</ulink>).</para>
+      </sect3>
+    </sect2>
+
+    <sect2 id="hdbk-config-bt-shortcuts">
+      <title>
+        <guimenu>Shortcuts</guimenu>
+      </title>
+
+      <para>Shortcuts (previously known as HotKeys) are special key commands that can be 
+used in the place of the menu items and icons. A number of &bibletime;'s 
+commands have predefined Shortcuts (see the <link 
+linkend="hdbk-reference-shortcuts">Shortcuts section</link> for a complete 
+listing). Most of &bibletime;'s commands can be assigned Shortcuts.  This is 
+very helpful to quickly access the functions that you need the most.</para>
+
+      <imageobject>
+	<imagedata fileref="ss_shortcuts.png" width="100%" contentdepth="100%" scalefit="1" format="PNG" />
+      </imageobject>
+
+      <para>In the preceding example, F2, Bible Study Howto has a secondary shortcut 
+defined, CTRL+2.</para>
+    </sect2>
+  </sect1>
+</chapter>

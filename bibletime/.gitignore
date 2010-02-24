@@ -1,0 +1,20 @@
+# /
+/.cdtproject
+/.cproject
+/.externalToolBuilders
+/.project
+/.settings
+/bibletime.kdevelop
+/BibleTime.kdevelop
+/bibletime.kdevelop.filelist
+/BibleTime.kdevelop.filelist
+/bibletime.kdevelop.pcs
+/BibleTime.kdevelop.pcs
+/bibletime.kdevses
+/BibleTime.kdevses
+/build
+/CMakeLists.txt.user
+/dirlist
+/log
+/mine
+/qtcreator-build

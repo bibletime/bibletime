@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY bibletime '<application>BibleTime</application>'>
+  <!ENTITY kapp "&bibletimehandbook;">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY howto-chap1 SYSTEM "howto-importance.docbook">
+  <!ENTITY howto-chap2 SYSTEM "howto-basics.docbook">
+  <!ENTITY howto-chap3 SYSTEM "howto-interpretation.docbook">
+]>
+
+<book>
+
+<bookinfo>
+	<title>El Cómo Estudiar la Biblia</title>
+	
+	<authorgroup>
+		<author>
+			<firstname>Bob</firstname>
+			<surname>Harman</surname>
+		</author>
+		<author>
+			<firstname></firstname>
+			<surname>The BibleTime team</surname>
+		</author>
+	</authorgroup>
+	
+	
+	
+	<!-- TRANS:ROLES_OF_TRANSLATORS -->
+<copyright>
+		<year>2001-2009</year>
+		<holder>El equipo de &bibletime; (info@bibletime.info)</holder>
+	</copyright>
+	
+	<legalnotice>
+		<para>
+			Este documento fue creado originalmente por el Sr. Bob Harman y está 
+disponible bajo los términos de la licencia <link 
+url="http://creativecommons.org/licenses/by-sa/3.0/">"Creative Commons 
+Reconocimiento-Compartir Igual".</link>.
+		</para>
+		<para>
+			Citas bíblicas son de la New American Standard Bible menos que se indique lo 
+contrario. [Nota del traductor: En la mayor parte de las citas usé 
+SpaRVG2004]
+		</para>
+	</legalnotice>
+	
+	<abstract>
+		<title>Resumen</title>
+		
+		<para>
+			El <application>Cómo Estudiar la Biblia</application> es una guía para el 
+estudio de la Biblia.
+		</para>
+		<para>
+			Es la esperanza del equipo &bibletime; que este Cómo provoque a los lectores 
+a estudiar las Escrituras para ver lo que dicen. Esta guía de estudio en 
+particular ha sido elegido, ya que se cuida de no apoyar ninguna doctrina 
+confesional particular. Le recomendamos leer y estudiar las Escrituras para 
+entender lo que dicen. Si usted inicia con la actitud de querer tener la 
+palabra del Señor sembrada en su corazón, Él no lo defraudará.
+		</para>
+	</abstract>
+	
+	<keywordset>
+		<keyword>Bible</keyword>
+		<keyword>Study</keyword>
+		<keyword>HowTo</keyword>
+	</keywordset>
+
+</bookinfo>
+
+&howto-chap1;
+&howto-chap2;
+&howto-chap3;
+
+</book>
