@@ -254,7 +254,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Enter the unlock key for this work.</source>
-        <translation type="unfinished">Vložte klíč k odemknutí modulu.</translation>
+        <translation type="obsolete">Vložte klíč k odemknutí modulu.</translation>
     </message>
     <message>
         <source>Close &amp;window</source>
@@ -322,6 +322,18 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Automatically tab the open windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter the unlock key for %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning: Invalid unlock key!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The unlock key you provided did not properly unlock this module. Please try again.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -503,6 +515,14 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>&amp;Search in %1...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning: Module locked!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You are trying to access an encrypted module. Please provide an unlock key in the following dialog to open the module.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
