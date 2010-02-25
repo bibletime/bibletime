@@ -384,21 +384,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime.cpp" line="257"/>
         <source>Enter the unlock key for %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Enter the unlock key for %1.</translation>
     </message>
     <message>
         <location filename="../../src/bibletime.cpp" line="277"/>
         <source>Warning: Invalid unlock key!</source>
-        <translation type="unfinished"></translation>
+        <translation>Warning: Invalid unlock key!</translation>
     </message>
     <message>
         <location filename="../../src/bibletime.cpp" line="278"/>
         <source>The unlock key you provided did not properly unlock this module. Please try again.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Enter the unlock key for this work.</source>
-        <translation type="obsolete">Enter the unlock key for this work.</translation>
+        <translation>The unlock key you provided did not properly unlock this module. Please try again.</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="257"/>
@@ -637,12 +633,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="152"/>
         <source>Warning: Module locked!</source>
-        <translation type="unfinished"></translation>
+        <translation>Warning: Module locked!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="153"/>
         <source>You are trying to access an encrypted module. Please provide an unlock key in the following dialog to open the module.</source>
-        <translation type="unfinished"></translation>
+        <translation>You are trying to access an encrypted module. Please provide an unlock key in the following dialogue to open the module.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="202"/>
@@ -656,42 +652,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="75"/>
         <source>Module</source>
         <translation>Module</translation>
-    </message>
-    <message>
-        <source>Bibles</source>
-        <translation type="obsolete">Bibles</translation>
-    </message>
-    <message>
-        <source>Commentaries</source>
-        <translation type="obsolete">Commentaries</translation>
-    </message>
-    <message>
-        <source>Books</source>
-        <translation type="obsolete">Books</translation>
-    </message>
-    <message>
-        <source>Cults/Unorthodox</source>
-        <translation type="obsolete">Cults/Unorthodox</translation>
-    </message>
-    <message>
-        <source>Maps and Images</source>
-        <translation type="obsolete">Maps and Images</translation>
-    </message>
-    <message>
-        <source>Daily Devotionals</source>
-        <translation type="obsolete">Daily Devotionals</translation>
-    </message>
-    <message>
-        <source>Lexicons and Dictionaries</source>
-        <translation type="obsolete">Lexicons and Dictionaries</translation>
-    </message>
-    <message>
-        <source>Glossaries</source>
-        <translation type="obsolete">Glossaries</translation>
-    </message>
-    <message>
-        <source>Unknown</source>
-        <translation type="obsolete">Unknown</translation>
     </message>
 </context>
 <context>
@@ -1970,14 +1930,6 @@ shortcut</translation>
         <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="230"/>
         <source>Right</source>
         <translation>Right</translation>
-    </message>
-    <message>
-        <source>Select all</source>
-        <translation type="obsolete">Select all</translation>
-    </message>
-    <message>
-        <source>HTML editor window</source>
-        <translation type="obsolete">HTML editor window</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="143"/>
@@ -3785,25 +3737,9 @@ Language name ppk</extracomment>
         <translation>Take care, this work contains cult / questionable material!</translation>
     </message>
     <message>
-        <source>Language</source>
-        <translation type="obsolete">Language</translation>
-    </message>
-    <message>
-        <source>Unlock key</source>
-        <translation type="obsolete">Unlock key</translation>
-    </message>
-    <message>
-        <source>not set</source>
-        <translation type="obsolete">not set</translation>
-    </message>
-    <message>
         <location filename="../../src/util/tool.cpp" line="182"/>
         <source>Version</source>
         <translation>Version</translation>
-    </message>
-    <message>
-        <source>Options</source>
-        <translation type="obsolete">Options</translation>
     </message>
     <message>
         <location filename="../../src/util/migrationutil.cpp" line="55"/>
