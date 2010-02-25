@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: handbook-de\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
-"POT-Creation-Date: 2010-02-13 00:28-0500\n"
+"POT-Creation-Date: 2010-02-25 12:15-0500\n"
 "PO-Revision-Date: 2010-02-13 00:54+0100\n"
 "Last-Translator: Roland Teschner <rolte@gmx.net>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -2133,7 +2133,8 @@ msgstr "$LastChangedDate: 2009-12-31 15:05:52 -0500 (Thu, 31 Dec 2009) $"
 
 # type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:56
-msgid "2.6"
+#, fuzzy
+msgid "2.7"
 msgstr "2.6"
 
 # type: Content of: <book><bookinfo><abstract><para>
