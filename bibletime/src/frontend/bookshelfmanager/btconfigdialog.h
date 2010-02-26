@@ -34,7 +34,7 @@ class QVBoxLayout;
 class BtConfigDialog : public QDialog {
         Q_OBJECT
     public:
-        BtConfigDialog(QWidget* parent);
+        BtConfigDialog(QWidget *parent = 0);
         virtual ~BtConfigDialog();
 
         /** Adds a BtConfigPage to the paged widget stack. The new page will be the current page.*/
