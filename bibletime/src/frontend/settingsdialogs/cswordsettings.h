@@ -26,9 +26,15 @@ class CSwordSettingsPage : public BtConfigPage {
         CSwordSettingsPage(QWidget *parent = 0);
 
         void save();
-        QString iconName();
-        QString label();
-        QString header();
+
+        /** Reimplemented from BtConfigPage. */
+        virtual QString iconName() const;
+
+        /** Reimplemented from BtConfigPage. */
+        virtual QString label() const;
+
+        /** Reimplemented from BtConfigPage. */
+        virtual QString header() const;
 
     private:
         StandardWorksTab* m_worksTab;

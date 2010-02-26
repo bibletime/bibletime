@@ -143,13 +143,15 @@ void BtLanguageSettingsPage::save() {
     }
 }
 
-QString BtLanguageSettingsPage::iconName() {
+QString BtLanguageSettingsPage::iconName() const {
     return CResMgr::settings::languages::icon;
 }
-QString BtLanguageSettingsPage::label() {
+
+QString BtLanguageSettingsPage::label() const {
     //: Empty string, don't translate
     return tr("");
 }
-QString BtLanguageSettingsPage::header() {
+
+QString BtLanguageSettingsPage::header() const {
     return tr("Languages");
 }

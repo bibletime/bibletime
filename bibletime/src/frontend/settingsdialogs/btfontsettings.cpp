@@ -154,13 +154,15 @@ void BtFontSettingsPage::useOwnFontClicked(bool isOn) {
 }
 
 
-QString BtFontSettingsPage::iconName() {
+QString BtFontSettingsPage::iconName() const {
     return CResMgr::settings::fonts::icon;
 }
-QString BtFontSettingsPage::label() {
+
+QString BtFontSettingsPage::label() const {
     //: Empty string, don't translate
     return tr("");
 }
-QString BtFontSettingsPage::header() {
+
+QString BtFontSettingsPage::header() const {
     return tr("Fonts");
 }

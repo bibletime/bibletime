@@ -247,15 +247,15 @@ void CAcceleratorSettingsPage::slotKeyChooserTypeChanged(const QString& title) {
 
 }
 
-QString CAcceleratorSettingsPage::iconName() {
+QString CAcceleratorSettingsPage::iconName() const {
     return CResMgr::settings::keys::icon;
 }
 
-QString CAcceleratorSettingsPage::label() {
+QString CAcceleratorSettingsPage::label() const {
     //: Empty string, don't translate
     return tr("");
 }
 
-QString CAcceleratorSettingsPage::header() {
+QString CAcceleratorSettingsPage::header() const {
     return tr("Shortcuts");
 }

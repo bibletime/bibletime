@@ -174,14 +174,16 @@ void CDisplaySettingsPage::save() {
 
 // implement the BtConfigPage methods
 
-QString CDisplaySettingsPage::iconName() {
+QString CDisplaySettingsPage::iconName() const {
     return CResMgr::settings::startup::icon;
 }
-QString CDisplaySettingsPage::label() {
+
+QString CDisplaySettingsPage::label() const {
     //: Empty string, don't translate
     return tr("");
 }
-QString CDisplaySettingsPage::header() {
+
+QString CDisplaySettingsPage::header() const {
     return tr("Display");
 }
 

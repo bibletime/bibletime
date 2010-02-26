@@ -325,14 +325,16 @@ void CSwordSettingsPage::save() {
     m_filtersTab->save();
 }
 
-QString CSwordSettingsPage::iconName() {
+QString CSwordSettingsPage::iconName() const {
     return CResMgr::settings::sword::icon;
 }
-QString CSwordSettingsPage::label() {
+
+QString CSwordSettingsPage::label() const {
     //: Empty string, don't translate
     return tr("");
 }
-QString CSwordSettingsPage::header() {
+
+QString CSwordSettingsPage::header() const {
     return tr("Desk");
 }
 

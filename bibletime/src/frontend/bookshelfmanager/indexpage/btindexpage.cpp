@@ -83,15 +83,17 @@ BtIndexPage::BtIndexPage(QWidget *parent)
 
 BtIndexPage::~BtIndexPage() {
     CBTConfig::set( CBTConfig::autoDeleteOrphanedIndices, m_autoDeleteOrphanedIndicesBox->isChecked() );
-
 }
-QString BtIndexPage::label() {
+
+QString BtIndexPage::label() const{
     return tr("Create new search indexes and delete created indexes for the installed works.");
 }
-QString BtIndexPage::iconName() {
+
+QString BtIndexPage::iconName() const {
     return CResMgr::bookshelfmgr::indexpage::icon;
 }
-QString BtIndexPage::header() {
+
+QString BtIndexPage::header() const {
     return tr("Search Indexes");
 }
 

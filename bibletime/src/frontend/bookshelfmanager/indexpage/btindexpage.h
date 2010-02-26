@@ -29,10 +29,14 @@ class BtIndexPage : public BtConfigPage {
         BtIndexPage(QWidget *parent = 0);
         ~BtIndexPage();
 
-        // BtConfigPage methods
-        QString header();
-        QString iconName();
-        QString label();
+        /** Reimplemented from BtConfigPage. */
+        virtual QString header() const;
+
+        /** Reimplemented from BtConfigPage. */
+        virtual QString iconName() const;
+
+        /** Reimplemented from BtConfigPage. */
+        virtual QString label() const;
 
     public slots:
         void slotSwordSetupChanged();

@@ -70,9 +70,9 @@ class BtConfigPage : public QWidget {
         /** Implement these to return the correct values.
         * For example: header(){return tr("General");}
         */
-        virtual QString iconName() = 0;
-        virtual QString label() = 0;
-        virtual QString header() = 0;
+        virtual QString iconName() const = 0;
+        virtual QString label() const = 0;
+        virtual QString header() const = 0;
 
         inline BtConfigDialog *parentDialog() const {
             return m_parentDialog;

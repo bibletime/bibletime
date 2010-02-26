@@ -31,9 +31,15 @@ class BtLanguageSettingsPage : public BtConfigPage, CPointers {
         BtLanguageSettingsPage(QWidget *parent = 0);
         ~BtLanguageSettingsPage();
         void save();
-        QString iconName();
-        QString label();
-        QString header();
+
+        /** Reimplemented from BtConfigPage. */
+        virtual QString iconName() const;
+
+        /** Reimplemented from BtConfigPage. */
+        virtual QString label() const;
+
+        /** Reimplemented from BtConfigPage. */
+        virtual QString header() const;
 
     protected slots:
 

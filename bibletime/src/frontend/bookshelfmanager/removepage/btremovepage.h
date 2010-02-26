@@ -30,10 +30,14 @@ class BtRemovePage: public BtConfigPage {
     public:
         BtRemovePage(QWidget *parent = 0);
 
-        // BtConfigPage methods:
-        QString header();
-        QString iconName();
-        QString label();
+        /** Reimplemented from BtConfigPage. */
+        virtual QString header() const;
+
+        /** Reimplemented from BtConfigPage. */
+        virtual QString iconName() const;
+
+        /** Reimplemented from BtConfigPage. */
+        virtual QString label() const;
 
     protected slots:
         void slotRemoveModules();

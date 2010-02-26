@@ -31,9 +31,15 @@ class BtFontSettingsPage : public BtConfigPage, CPointers {
         BtFontSettingsPage(QWidget *parent = 0);
         ~BtFontSettingsPage();
         void save();
-        QString iconName();
-        QString label();
-        QString header();
+
+        /** Reimplemented from BtConfigPage. */
+        virtual QString iconName() const;
+
+        /** Reimplemented from BtConfigPage. */
+        virtual QString label() const;
+
+        /** Reimplemented from BtConfigPage. */
+        virtual QString header() const;
 
     protected slots:
 

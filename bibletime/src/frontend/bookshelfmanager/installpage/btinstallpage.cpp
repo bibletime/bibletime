@@ -171,14 +171,16 @@ void BtInstallPage::slotEditPaths() {
 
 // implement the BtConfigPage methods
 
-QString BtInstallPage::iconName() {
+QString BtInstallPage::iconName() const {
     return CResMgr::bookshelfmgr::installpage::icon;
 }
-QString BtInstallPage::label() {
+
+QString BtInstallPage::label() const {
     // \todo move the warning to a dialog which is shown when adding a source.
     return tr("Install and update works. Add remote or local sources, refresh them, select the works to be installed/updated and click Install.<br/><b>WARNING:</b> If you live in a persecuted country and don't want to risk detection don't use remote sources.");
 }
-QString BtInstallPage::header() {
+
+QString BtInstallPage::header() const {
     return tr("Install/Update");
 }
 

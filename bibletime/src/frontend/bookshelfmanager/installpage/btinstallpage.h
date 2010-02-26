@@ -31,10 +31,14 @@ class BtInstallPage : public BtConfigPage {
     public:
         BtInstallPage(QWidget *parent = 0);
 
-        // reimplemented from btinstallpage
-        QString iconName();
-        QString label();
-        QString header();
+        /** Reimplemented from BtConfigPage. */
+        virtual QString iconName() const;
+
+        /** Reimplemented from BtConfigPage. */
+        virtual QString label() const;
+
+        /** Reimplemented from BtConfigPage. */
+        virtual QString header() const;
 
         void setInstallEnabled(bool b);
 
