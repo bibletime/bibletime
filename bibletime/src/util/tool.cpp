@@ -125,11 +125,21 @@ QLabel* util::tool::explanationLabel(QWidget *parent, const QString &heading, co
 }
 
 void util::tool::initExplanationLabel(QLabel *label, const QString &heading, const QString &text) {
-    QString br;
-    if (!heading.isEmpty() && !text.isEmpty()) {
-        br = QString::fromLatin1("<span style='white-space:pre'>  -  </span>");
+    QString labelText;
+    if (!heading.isEmpty()) {
+        labelText += "<b>";
+        labelText += heading;
+        labelText += "</b>";
     }
-    label->setText(QString::fromLatin1("<b>%1</b>%2<small>%3</small>").arg(heading).arg(br).arg(text));
+    if (!heading.isEmpty() && !text.isEmpty()) {
+        labelText += "<span style=\"white-space:pre\">  -  </span>";
+    }
+    if (!text.isEmpty()) {
+        labelText += "<small>";
+        labelText += text;
+        labelText += "</small>";
+    }
+    label->setText(labelText);
     label->setWordWrap(true);
     label->setMargin(1);
     label->setFrameStyle(QFrame::Box | QFrame::Sunken);
