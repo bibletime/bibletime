@@ -53,10 +53,9 @@ StandardWorksTab::StandardWorksTab()
 
     gridLayout->addWidget(
         util::tool::explanationLabel(
-            this,
-            tr(""),
-            tr("Standard works are used when no particular work is specified, \
-  for example when a hyperlink into a Bible or lexicon was clicked .")),
+            this, "",
+            tr("Standard works are used when no particular work is specified, for example "
+               "when a hyperlink into a Bible or lexicon was clicked .")),
         0, 0, 1, 2 /*fill the horizontal space*/
     );
 
@@ -261,11 +260,10 @@ TextFiltersTab::TextFiltersTab() {
     QVBoxLayout* layout = new QVBoxLayout(this);
     layout->setMargin(5);
     QWidget* eLabel = util::tool::explanationLabel(
-                          this,
-                          tr(""),
-                          tr("Filters control the appearance of text. \
-Here you can specify default settings for all filters. \
-You can override these settings in each display window.")
+                          this, "",
+                          tr("Filters control the appearance of text. Here you can specify "
+                             "default settings for all filters. You can override these "
+                             "settings in each display window.")
                       );
     eLabel->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Preferred);
     eLabel->setMaximumHeight(50);
