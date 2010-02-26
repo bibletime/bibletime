@@ -61,6 +61,8 @@ class BtConfigDialog : public QDialog {
 */
 class BtConfigPage : public QWidget {
         Q_OBJECT
+        friend class BtConfigDialog;
+
     public:
         BtConfigPage(QWidget *parent = 0);
         virtual ~BtConfigPage();
@@ -71,14 +73,13 @@ class BtConfigPage : public QWidget {
         virtual QString iconName() = 0;
         virtual QString label() = 0;
         virtual QString header() = 0;
-        BtConfigDialog* parentDialog() {
+
+        inline BtConfigDialog *parentDialog() const {
             return m_parentDialog;
         }
 
     private:
-        friend class BtConfigDialog;
-        BtConfigDialog* m_parentDialog;
-
+        BtConfigDialog *m_parentDialog;
 };
 
 
