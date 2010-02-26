@@ -325,37 +325,39 @@ QDir getLicenseDir() {
     return cachedLicenseDir;
 }
 
-QIcon getIcon(const QString &name) {
+const QIcon &getIcon(const QString &name) {
     static QMap<QString, QIcon> iconCache;
-    //error if trying to use name directly...
-    QString name2(name);
-    QString plainName = name2.remove(".svg", Qt::CaseInsensitive);
-    if (iconCache.contains(plainName)) {
-        return iconCache.value(plainName);
+    static QIcon nullIcon;
+
+    QString plainName = name;
+    if (plainName.endsWith(".svg", Qt::CaseInsensitive)) {
+        plainName.chop(4);
+    }
+
+    QMap<QString, QIcon>::const_iterator i = iconCache.find(plainName);
+    if (i != iconCache.end()) {
+        return *i;
     }
 
     QString iconDir = getIconDir().canonicalPath();
     QString iconFileName = iconDir + "/" + plainName + ".svg";
     if (QFile(iconFileName).exists()) {
-        QIcon ic = QIcon(iconFileName);
-        iconCache.insert(plainName, ic);
-        return ic;
+        return *iconCache.insert(plainName, QIcon(iconFileName));
     }
     else {
         iconFileName = iconDir + "/" + plainName + ".png";
         if (QFile(iconFileName).exists()) {
-            QIcon ic = QIcon(iconFileName);
-            iconCache.insert(plainName, ic);
-            return ic;
+            return *iconCache.insert(plainName, QIcon(iconFileName));
         }
         else {
-            qWarning() << "Cannot find icon file" << iconFileName << ", using default icon.";
-            iconFileName = iconDir + "/" + "/default.svg";
-            if (QFile(iconFileName).exists()) {
-                return QIcon(iconDir + "/default.svg");
-            }
-            else {
-                return QIcon(iconDir + "default.png");
+            if (plainName != "default") {
+                qWarning() << "Cannot find icon file" << iconFileName
+                           << ", using default icon.";
+                return getIcon("default");
+            } else {
+                qWarning() << "Cannot find default icon" << iconFileName
+                           << ", using null icon.";
+                return nullIcon;
             }
         }
     }

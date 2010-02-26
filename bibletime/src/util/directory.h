@@ -85,7 +85,7 @@ QDir getJavascriptDir();
 QDir getLicenseDir();
 
 /** Returns an icon with the given name */
-QIcon getIcon(const QString &name);
+const QIcon &getIcon(const QString &name);
 
 /** Return the path to the pictures. */
 QDir getPicsDir();
