@@ -33,7 +33,7 @@ class BtFontSettingsPage : public BtConfigPage, CPointers {
         void save();
 
         /** Reimplemented from BtConfigPage. */
-        virtual QString iconName() const;
+        virtual const QIcon &icon() const;
 
         /** Reimplemented from BtConfigPage. */
         virtual QString label() const;

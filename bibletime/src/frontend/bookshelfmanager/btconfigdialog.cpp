@@ -20,7 +20,6 @@
 #include <QListWidgetItem>
 #include <QStackedWidget>
 #include <QVBoxLayout>
-#include "util/directory.h"
 #include "util/tool.h"
 
 
@@ -62,8 +61,6 @@ BtConfigDialog::BtConfigDialog(QWidget* parent)
 BtConfigDialog::~BtConfigDialog() {}
 
 void BtConfigDialog::addPage(BtConfigPage* pageWidget) {
-    namespace DU = util::directory;
-
     // this is a friend
     pageWidget->m_parentDialog = this;
 
@@ -77,7 +74,7 @@ void BtConfigDialog::addPage(BtConfigPage* pageWidget) {
 
 
     QListWidgetItem* item = new QListWidgetItem(m_contentsList);
-    item->setIcon(DU::getIcon(pageWidget->iconName()));
+    item->setIcon(pageWidget->icon());
     item->setText(pageWidget->header());
     item->setTextAlignment(Qt::AlignHCenter);
     item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);

@@ -20,9 +20,10 @@
 #include <QVBoxLayout>
 #include <QWidget>
 #include "backend/config/cbtconfig.h"
-#include "util/cresmgr.h"
-#include "util/tool.h"
 #include "util/cpointers.h"
+#include "util/cresmgr.h"
+#include "util/directory.h"
+#include "util/tool.h"
 
 
 CSwordSettingsPage::CSwordSettingsPage(QWidget *parent)
@@ -325,8 +326,8 @@ void CSwordSettingsPage::save() {
     m_filtersTab->save();
 }
 
-QString CSwordSettingsPage::iconName() const {
-    return CResMgr::settings::sword::icon;
+const QIcon &CSwordSettingsPage::icon() const {
+    return util::directory::getIcon(CResMgr::settings::sword::icon);
 }
 
 QString CSwordSettingsPage::label() const {

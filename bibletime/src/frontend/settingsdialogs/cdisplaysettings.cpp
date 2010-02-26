@@ -19,6 +19,7 @@
 #include "backend/rendering/cdisplayrendering.h"
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
+#include "util/directory.h"
 #include "util/tool.h"
 
 
@@ -174,8 +175,8 @@ void CDisplaySettingsPage::save() {
 
 // implement the BtConfigPage methods
 
-QString CDisplaySettingsPage::iconName() const {
-    return CResMgr::settings::startup::icon;
+const QIcon &CDisplaySettingsPage::icon() const {
+    return util::directory::getIcon(CResMgr::settings::startup::icon);
 }
 
 QString CDisplaySettingsPage::label() const {

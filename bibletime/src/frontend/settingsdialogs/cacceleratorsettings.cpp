@@ -26,6 +26,7 @@
 #include "frontend/displaywindow/clexiconreadwindow.h"
 #include "frontend/displaywindow/creadwindow.h"
 #include "util/cresmgr.h"
+#include "util/directory.h"
 
 
 CAcceleratorSettingsPage::CAcceleratorSettingsPage(QWidget *parent)
@@ -247,8 +248,8 @@ void CAcceleratorSettingsPage::slotKeyChooserTypeChanged(const QString& title) {
 
 }
 
-QString CAcceleratorSettingsPage::iconName() const {
-    return CResMgr::settings::keys::icon;
+const QIcon &CAcceleratorSettingsPage::icon() const {
+    return util::directory::getIcon(CResMgr::settings::keys::icon);
 }
 
 QString CAcceleratorSettingsPage::label() const {

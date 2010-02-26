@@ -154,8 +154,8 @@ void BtFontSettingsPage::useOwnFontClicked(bool isOn) {
 }
 
 
-QString BtFontSettingsPage::iconName() const {
-    return CResMgr::settings::fonts::icon;
+const QIcon &BtFontSettingsPage::icon() const {
+    return util::directory::getIcon(CResMgr::settings::fonts::icon);
 }
 
 QString BtFontSettingsPage::label() const {

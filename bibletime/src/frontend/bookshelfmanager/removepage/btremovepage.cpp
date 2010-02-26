@@ -76,8 +76,8 @@ QString BtRemovePage::label() const {
     return tr("Remove installed works. Select the works and click Remove button.");
 }
 
-QString BtRemovePage::iconName() const {
-    return CResMgr::bookshelfmgr::removepage::icon;
+const QIcon &BtRemovePage::icon() const {
+    return util::directory::getIcon(CResMgr::bookshelfmgr::removepage::icon);
 }
 
 QString BtRemovePage::header() const {

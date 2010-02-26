@@ -70,7 +70,7 @@ class BtConfigPage : public QWidget {
         /** Implement these to return the correct values.
         * For example: header(){return tr("General");}
         */
-        virtual QString iconName() const = 0;
+        virtual const QIcon &icon() const = 0;
         virtual QString label() const = 0;
         virtual QString header() const = 0;
 

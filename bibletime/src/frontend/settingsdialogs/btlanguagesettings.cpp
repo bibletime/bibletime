@@ -143,8 +143,8 @@ void BtLanguageSettingsPage::save() {
     }
 }
 
-QString BtLanguageSettingsPage::iconName() const {
-    return CResMgr::settings::languages::icon;
+const QIcon &BtLanguageSettingsPage::icon() const {
+    return util::directory::getIcon(CResMgr::settings::languages::icon);
 }
 
 QString BtLanguageSettingsPage::label() const {

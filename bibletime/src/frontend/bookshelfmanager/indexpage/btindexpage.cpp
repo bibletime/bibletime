@@ -89,8 +89,8 @@ QString BtIndexPage::label() const{
     return tr("Create new search indexes and delete created indexes for the installed works.");
 }
 
-QString BtIndexPage::iconName() const {
-    return CResMgr::bookshelfmgr::indexpage::icon;
+const QIcon &BtIndexPage::icon() const {
+    return util::directory::getIcon(CResMgr::bookshelfmgr::indexpage::icon);
 }
 
 QString BtIndexPage::header() const {

@@ -32,7 +32,7 @@ class BtInstallPage : public BtConfigPage {
         BtInstallPage(QWidget *parent = 0);
 
         /** Reimplemented from BtConfigPage. */
-        virtual QString iconName() const;
+        virtual const QIcon &icon() const;
 
         /** Reimplemented from BtConfigPage. */
         virtual QString label() const;

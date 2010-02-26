@@ -171,8 +171,8 @@ void BtInstallPage::slotEditPaths() {
 
 // implement the BtConfigPage methods
 
-QString BtInstallPage::iconName() const {
-    return CResMgr::bookshelfmgr::installpage::icon;
+const QIcon &BtInstallPage::icon() const {
+    return util::directory::getIcon(CResMgr::bookshelfmgr::installpage::icon);
 }
 
 QString BtInstallPage::label() const {
