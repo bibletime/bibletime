@@ -299,29 +299,29 @@ QString convertDirSeparators(const QString& path) {
 }
 
 #ifdef Q_WS_WIN
-QDir getApplicationSwordDir() {
+const QDir &getApplicationSwordDir() {
     return cachedApplicationSwordDir;
 }
 
-QDir getSharedSwordDir() {
+const QDir &getSharedSwordDir() {
     return cachedSharedSwordDir;
 }
 
 #endif
 
-QDir getSwordPathDir() {
+const QDir &getSwordPathDir() {
     return cachedSwordPathDir;
 }
 
-QDir getIconDir() {
+const QDir &getIconDir() {
     return cachedIconDir;
 }
 
-QDir getJavascriptDir() {
+const QDir &getJavascriptDir() {
     return cachedJavascriptDir;
 }
 
-QDir getLicenseDir() {
+const QDir &getLicenseDir() {
     return cachedLicenseDir;
 }
 
@@ -363,55 +363,55 @@ const QIcon &getIcon(const QString &name) {
     }
 }
 
-QDir getPicsDir() {
+const QDir &getPicsDir() {
     return cachedPicsDir;
 }
 
-QDir getLocaleDir() {
+const QDir &getLocaleDir() {
     return cachedLocaleDir;
 }
 
-QDir getHandbookDir() {
+const QDir &getHandbookDir() {
     return cachedHandbookDir;
 }
 
-QDir getHowtoDir() {
+const QDir &getHowtoDir() {
     return cachedHowtoDir;
 }
 
-QDir getDisplayTemplatesDir() {
+const QDir &getDisplayTemplatesDir() {
     return cachedDisplayTemplatesDir;
 }
 
-QDir getUserBaseDir() {
+const QDir &getUserBaseDir() {
     return cachedUserBaseDir;
 }
 
-QDir getUserHomeDir() {
+const QDir &getUserHomeDir() {
     return cachedUserHomeDir;
 }
 
-QDir getUserHomeSwordDir() {
+const QDir &getUserHomeSwordDir() {
     return cachedUserHomeSwordDir;
 }
 
-QDir getUserHomeSwordModsDir() {
+const QDir &getUserHomeSwordModsDir() {
     return cachedUserHomeSwordModsDir;
 }
 
-QDir getUserSessionsDir() {
+const QDir &getUserSessionsDir() {
     return cachedUserSessionsDir;
 }
 
-QDir getUserCacheDir() {
+const QDir &getUserCacheDir() {
     return cachedUserCacheDir;
 }
 
-QDir getUserIndexDir() {
+const QDir &getUserIndexDir() {
     return cachedUserIndexDir;
 }
 
-QDir getUserDisplayTemplatesDir() {
+const QDir &getUserDisplayTemplatesDir() {
     return cachedUserDisplayTemplatesDir;
 }
 
