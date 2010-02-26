@@ -330,8 +330,7 @@ QString CSwordSettingsPage::iconName() const {
 }
 
 QString CSwordSettingsPage::label() const {
-    //: Empty string, don't translate
-    return tr("");
+    return QString::null;
 }
 
 QString CSwordSettingsPage::header() const {

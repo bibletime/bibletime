@@ -179,8 +179,7 @@ QString CDisplaySettingsPage::iconName() const {
 }
 
 QString CDisplaySettingsPage::label() const {
-    //: Empty string, don't translate
-    return tr("");
+    return QString::null;
 }
 
 QString CDisplaySettingsPage::header() const {

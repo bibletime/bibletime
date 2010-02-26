@@ -159,8 +159,7 @@ QString BtFontSettingsPage::iconName() const {
 }
 
 QString BtFontSettingsPage::label() const {
-    //: Empty string, don't translate
-    return tr("");
+    return QString::null;
 }
 
 QString BtFontSettingsPage::header() const {

@@ -252,8 +252,7 @@ QString CAcceleratorSettingsPage::iconName() const {
 }
 
 QString CAcceleratorSettingsPage::label() const {
-    //: Empty string, don't translate
-    return tr("");
+    return QString::null;
 }
 
 QString CAcceleratorSettingsPage::header() const {
