@@ -64,13 +64,7 @@ void BtConfigDialog::addPage(BtConfigPage* pageWidget) {
     // this is a friend
     pageWidget->m_parentDialog = this;
 
-    QVBoxLayout* containerLayout = new QVBoxLayout;
-    QLabel* headerLabel = util::tool::explanationLabel(pageWidget, pageWidget->header(), pageWidget->label());
-    containerLayout->addWidget(headerLabel);
-    containerLayout->addWidget(pageWidget);
-    QWidget* containerWidget = new QWidget(m_pageWidget);
-    containerWidget->setLayout(containerLayout);
-    m_pageWidget->addWidget(containerWidget);
+    m_pageWidget->addWidget(pageWidget);
 
 
     QListWidgetItem* item = new QListWidgetItem(m_contentsList);
@@ -107,11 +101,27 @@ void BtConfigDialog::slotChangePage(int newIndex) {
 
 
 BtConfigPage::BtConfigPage(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent), m_labelInitialized(false)
 {
-    // Intentionally empty
+    QVBoxLayout *containerLayout = new QVBoxLayout(this);
+    m_headerLabel = new QLabel(this);
+    containerLayout->addWidget(m_headerLabel);
+    setLayout(containerLayout);
 }
 
 BtConfigPage::~BtConfigPage() {
     // Intentionally empty
+}
+
+void BtConfigPage::showEvent(QShowEvent *event) {
+    if (!m_labelInitialized) {
+        initializeLabel();
+    }
+
+    QWidget::showEvent(event);
+}
+
+void BtConfigPage::initializeLabel() {
+    util::tool::initExplanationLabel(m_headerLabel, header(), label());
+    m_labelInitialized = true;
 }

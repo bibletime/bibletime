@@ -30,16 +30,10 @@ BtLanguageSettingsPage::BtLanguageSettingsPage(QWidget *parent)
 {
     namespace DU = util::directory;
 
-    QVBoxLayout* layout = new QVBoxLayout(this);
+    Q_ASSERT(qobject_cast<QVBoxLayout*>(layout()) != 0);
+    QVBoxLayout *mainLayout = static_cast<QVBoxLayout*>(layout());
 
     //Sword locales
-    layout->addWidget(
-        util::tool::explanationLabel(
-            this,
-            tr(""),
-            tr("Select the language in which the Biblical book names are displayed.")
-        ));
-
     m_swordLocaleCombo = new QComboBox(this);
     QLabel* label = new QLabel( tr("Language for names of Bible books:"), this);
     label->setBuddy(m_swordLocaleCombo);
@@ -50,9 +44,9 @@ BtLanguageSettingsPage::BtLanguageSettingsPage(QWidget *parent)
     hBoxLayout->addWidget(label);
     hBoxLayout->addWidget(m_swordLocaleCombo);
     hBoxLayout->addStretch();
-    layout->addLayout(hBoxLayout);
+    mainLayout->addLayout(hBoxLayout);
 
-    layout->addSpacerItem(new QSpacerItem(1,1, QSizePolicy::Fixed, QSizePolicy::Expanding));
+    mainLayout->addSpacerItem(new QSpacerItem(1,1, QSizePolicy::Fixed, QSizePolicy::Expanding));
 
     QStringList languageNames;
     languageNames.append( languageMgr()->languageForAbbrev("en_US")->translatedName() );
@@ -148,7 +142,7 @@ const QIcon &BtLanguageSettingsPage::icon() const {
 }
 
 QString BtLanguageSettingsPage::label() const {
-    return QString::null;
+    return tr("Select the language in which the Biblical book names are displayed.");
 }
 
 QString BtLanguageSettingsPage::header() const {

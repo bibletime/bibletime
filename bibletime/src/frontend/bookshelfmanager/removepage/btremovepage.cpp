@@ -38,12 +38,12 @@ BtRemovePage::BtRemovePage(QWidget *parent)
 {
     namespace DU = util::directory;
 
-    QGridLayout* layout = new QGridLayout(this);
-    layout->setMargin(5);
+    QGridLayout *gridLayout = new QGridLayout;
+    gridLayout->setMargin(5);
 
-    layout->setSpacing(10);
-    layout->setColumnStretch(1, 1);
-    layout->setRowStretch(2, 1);
+    gridLayout->setSpacing(10);
+    gridLayout->setColumnStretch(1, 1);
+    gridLayout->setRowStretch(2, 1);
 
 
     m_bookshelfWidget = new BtBookshelfWidget(this);
@@ -56,13 +56,16 @@ BtRemovePage::BtRemovePage(QWidget *parent)
     m_bookshelfWidget->treeView()->header()->show();
     m_bookshelfWidget->treeView()->header()->setResizeMode(QHeaderView::ResizeToContents);
 
-    layout->addWidget(m_bookshelfWidget, 2, 0, 1, 2);
+    gridLayout->addWidget(m_bookshelfWidget, 2, 0, 1, 2);
 
     m_removeButton = new QPushButton(tr("Remove..."), this);
     m_removeButton->setToolTip(tr("Remove the selected works"));
     m_removeButton->setIcon(DU::getIcon(CResMgr::bookshelfmgr::removepage::remove_icon));
     m_removeButton->setEnabled(false);
-    layout->addWidget(m_removeButton, 3, 1, Qt::AlignRight);
+    gridLayout->addWidget(m_removeButton, 3, 1, Qt::AlignRight);
+
+    Q_ASSERT(qobject_cast<QVBoxLayout*>(layout()) != 0);
+    static_cast<QVBoxLayout*>(layout())->addLayout(gridLayout);
 
     connect(m_removeButton, SIGNAL(clicked()),
             this, SLOT(slotRemoveModules()));

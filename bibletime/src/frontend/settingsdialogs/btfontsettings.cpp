@@ -32,18 +32,11 @@ BtFontSettingsPage::BtFontSettingsPage(QWidget *parent)
 {
     namespace DU = util::directory;
 
-    QVBoxLayout* layout = new QVBoxLayout(this);
-
+    Q_ASSERT(qobject_cast<QVBoxLayout*>(layout()) != 0);
+    QVBoxLayout *mainLayout = static_cast<QVBoxLayout*>(layout());
  
     //Font settings
 
-    layout->addWidget(
-        util::tool::explanationLabel(
-            this,
-            "",
-            tr("You can specify a custom font for each language.")
-        )
-    );
     QHBoxLayout* hLayout = new QHBoxLayout();
 
     m_usageCombo = new QComboBox(this);
@@ -76,7 +69,7 @@ BtFontSettingsPage::BtFontSettingsPage(QWidget *parent)
     connect(m_useOwnFontCheck, SIGNAL(toggled(bool)), SLOT(useOwnFontClicked(bool)) );
     hLayout->addWidget(m_useOwnFontCheck);
 
-    layout->addLayout(hLayout);
+    mainLayout->addLayout(hLayout);
     hLayout->setContentsMargins(0, 0, 0, 0);
     /// \todo remember the last selected font and jump there.
 
@@ -89,7 +82,7 @@ BtFontSettingsPage::BtFontSettingsPage(QWidget *parent)
     sampleText.append(" And the Spirit of God moved on the face of the waters.");
 
     m_fontChooser->setSampleText(sampleText);
-    layout->addWidget(m_fontChooser);
+    mainLayout->addWidget(m_fontChooser);
 
     connect(m_fontChooser, SIGNAL(fontSelected(const QFont&)), SLOT(newDisplayWindowFontSelected(const QFont&)));
     connect(m_usageCombo, SIGNAL(activated(const QString&)), SLOT(newDisplayWindowFontAreaSelected(const QString&)));
@@ -159,7 +152,7 @@ const QIcon &BtFontSettingsPage::icon() const {
 }
 
 QString BtFontSettingsPage::label() const {
-    return QString::null;
+    return tr("You can specify a custom font for each language.");
 }
 
 QString BtFontSettingsPage::header() const {

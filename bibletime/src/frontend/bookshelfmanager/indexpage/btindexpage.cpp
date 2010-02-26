@@ -31,9 +31,9 @@ BtIndexPage::BtIndexPage(QWidget *parent)
 {
     namespace DU = util::directory;
 
-    QVBoxLayout *vboxLayout;
+    Q_ASSERT(qobject_cast<QVBoxLayout*>(layout()) != 0);
+    QVBoxLayout *vboxLayout = static_cast<QVBoxLayout*>(layout());
     QHBoxLayout *hboxLayout;
-    vboxLayout = new QVBoxLayout(this);
 
     m_autoDeleteOrphanedIndicesBox = new QCheckBox(this);
     m_autoDeleteOrphanedIndicesBox->setToolTip(tr("If selected, those indexes which have no corresponding work will be deleted when BibleTime starts"));

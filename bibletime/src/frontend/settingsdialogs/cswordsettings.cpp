@@ -29,10 +29,11 @@
 CSwordSettingsPage::CSwordSettingsPage(QWidget *parent)
         : BtConfigPage(parent)
 {
-    QVBoxLayout* vbox = new QVBoxLayout(this);
+    Q_ASSERT(qobject_cast<QVBoxLayout*>(layout()) != 0);
+    QVBoxLayout *vbox = static_cast<QVBoxLayout*>(layout());
+
     QTabWidget* tabWidget = new QTabWidget();
     vbox->addWidget(tabWidget);
-    setLayout(vbox);
 
     m_worksTab = new StandardWorksTab();
     m_filtersTab = new TextFiltersTab();

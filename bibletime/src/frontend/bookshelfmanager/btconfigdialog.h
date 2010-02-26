@@ -17,10 +17,11 @@
 
 
 class BtConfigPage;
-class QListWidgetItem;
-class QListWidget;
-class QStackedWidget;
 class QDialogButtonBox;
+class QLabel;
+class QListWidget;
+class QListWidgetItem;
+class QStackedWidget;
 class QVBoxLayout;
 
 /**
@@ -64,6 +65,11 @@ class BtConfigPage : public QWidget {
         friend class BtConfigDialog;
 
     public:
+        /**
+          Constructs a configuration dialog base, with QVBoxLayout as layout() and a header
+          label as the first widget in this layout.
+          \param[in] parent The parent widget.
+        */
         BtConfigPage(QWidget *parent = 0);
         virtual ~BtConfigPage();
 
@@ -78,8 +84,17 @@ class BtConfigPage : public QWidget {
             return m_parentDialog;
         }
 
+    protected:
+        /** Reimplemented from QWidget. */
+        virtual void showEvent(QShowEvent *event);
+
+    private:
+        void initializeLabel();
+
     private:
         BtConfigDialog *m_parentDialog;
+        QLabel *m_headerLabel;
+        bool m_labelInitialized;
 };
 
 

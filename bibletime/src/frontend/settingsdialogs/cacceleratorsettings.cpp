@@ -32,8 +32,8 @@
 CAcceleratorSettingsPage::CAcceleratorSettingsPage(QWidget *parent)
         : BtConfigPage(parent)
 {
-    QVBoxLayout* mainLayout = new QVBoxLayout(this);
-    this->setLayout(mainLayout);
+    Q_ASSERT(qobject_cast<QVBoxLayout*>(layout()) != 0);
+    QVBoxLayout *mainLayout = static_cast<QVBoxLayout*>(layout());
 
     QHBoxLayout* layoutForWindowTypeChooser = new QHBoxLayout();
     mainLayout->addLayout(layoutForWindowTypeChooser);

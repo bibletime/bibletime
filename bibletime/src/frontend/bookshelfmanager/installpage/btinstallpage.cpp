@@ -76,7 +76,8 @@ void BtInstallPage::initView() {
     namespace DU = util::directory;
 
     qDebug() << "void BtInstallPage::initView() start";
-    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+    Q_ASSERT(qobject_cast<QVBoxLayout*>(layout()) != 0);
+    QVBoxLayout *mainLayout = static_cast<QVBoxLayout*>(layout());
 
     // installation path chooser
     QHBoxLayout* pathLayout = new QHBoxLayout();

@@ -48,7 +48,8 @@ QSize CWebViewerWidget::sizeHint () const {
 CDisplaySettingsPage::CDisplaySettingsPage(QWidget *parent)
         : BtConfigPage(parent)
 {
-    QVBoxLayout* layout = new QVBoxLayout(this);
+    Q_ASSERT(qobject_cast<QVBoxLayout*>(layout()) != 0);
+    QVBoxLayout *mainLayout = static_cast<QVBoxLayout*>(layout());
 
     { //startup logo
         m_showLogoCheck = new QCheckBox(this);
@@ -56,11 +57,11 @@ CDisplaySettingsPage::CDisplaySettingsPage(QWidget *parent)
         m_showLogoCheck->setToolTip(tr("Show the BibleTime logo on startup"));
 
         m_showLogoCheck->setChecked(CBTConfig::get(CBTConfig::logo));
-        layout->addWidget(m_showLogoCheck);
+        mainLayout->addWidget(m_showLogoCheck);
     }
-    layout->addSpacing(20);
+    mainLayout->addSpacing(20);
 
-    layout->addWidget(
+    mainLayout->addWidget(
         util::tool::explanationLabel(
             this,
             tr("Display templates"),
@@ -79,7 +80,7 @@ CDisplaySettingsPage::CDisplaySettingsPage(QWidget *parent)
     hboxlayout->addWidget(availableLabel);
     hboxlayout->addWidget( m_styleChooserCombo );
     hboxlayout->addStretch();
-    layout->addLayout( hboxlayout );
+    mainLayout->addLayout( hboxlayout );
 
     QWidget* webViewWidget = new CWebViewerWidget(this);
     QLayout* webViewLayout = new QVBoxLayout(webViewWidget);
@@ -89,7 +90,7 @@ CDisplaySettingsPage::CDisplaySettingsPage(QWidget *parent)
     webViewLayout->addWidget(previewLabel);
     webViewLayout->addWidget(m_stylePreviewViewer);
     webViewWidget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
-    layout->addWidget(webViewWidget);
+    mainLayout->addWidget(webViewWidget);
 
     m_styleChooserCombo->addItems(
         CPointers::displayTemplateManager()->availableTemplates()
