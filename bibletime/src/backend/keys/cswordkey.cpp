@@ -158,7 +158,7 @@ const QTextCodec* CSwordKey::cp1252Codec() {
 }
 
 void CSwordKey::emitChanged() {
-    if (!m_signal.isNull()) return;
+    if (m_signal.isNull()) return;
     m_signal->emitChanged();
 }
 
