@@ -36,6 +36,10 @@ CSwordKey::CSwordKey(const CSwordKey& k)
     m_module = k.m_module;
 }
 
+CSwordKey::~CSwordKey() {
+    delete m_signal;
+}
+
 QString CSwordKey::rawText() {
     if (!m_module) return QString::null;
 

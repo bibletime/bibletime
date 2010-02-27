@@ -10,6 +10,7 @@
 #ifndef CSWORDKEY_H
 #define CSWORDKEY_H
 
+#include <QPointer>
 #include <QString>
 
 
@@ -43,7 +44,7 @@ class CSwordKey {
         /** Destructor.
         * Public, not protected like the constructor, because CSwordKey pointers may be deleted by all others.
         */
-        virtual ~CSwordKey() {};
+        virtual ~CSwordKey();
 
         //pure virtual functions
         /** Returns the current key.
@@ -98,7 +99,7 @@ class CSwordKey {
         virtual const char * rawKey() const = 0;
         static const QTextCodec* cp1252Codec();
         CSwordModuleInfo* m_module; //module pointer used by all keys
-        BtSignal* m_signal;
+        QPointer<BtSignal> m_signal;
 
     private:
         /**
