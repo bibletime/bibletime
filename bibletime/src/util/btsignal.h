@@ -12,15 +12,29 @@
 
 #include <QObject>
 
+
+/**
+* BtSignal
+* The purpose of this class is to emit Qt signals for other classes
+* that are not derived from QObject. It can be used as a member
+* variable of those classes.
+*
+* There are some classes it is not possible to derive from QObject and
+* have the signals work. Certain multiple inheritance classes which cannot
+* have QObject as the first derived class, cannot use Qt signals.
+*/
 class BtSignal : public QObject {
         Q_OBJECT
+
     public:
-        /**
-        * the constructor
-        */
         BtSignal(QObject *parent = 0);
         ~BtSignal();
+
+        /**
+          Immediately emits the changed() signal.
+        */
         void emitChanged();
+
     signals:
         void changed();
 };

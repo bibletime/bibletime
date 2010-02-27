@@ -9,20 +9,15 @@
 
 #include "util/btsignal.h"
 
-    /**
-    * BtSignal
-    * The purpose of this class is to emit Qt signals for other classes
-    * that are not derived from QObject. It can be used as a member
-    * variable of those classes. 
-    *
-    * There are some classes it is not possible to derive from QObject and
-    * have the signals work. Certain multiple inheritance classes which cannot
-    * have QObject as the first derived class, cannot use Qt signals. 
-    */
-BtSignal::BtSignal(QObject* parent) {
+
+BtSignal::BtSignal(QObject *parent)
+    : QObject(parent)
+{
+    // Intentionally empty
 }
 
 BtSignal::~BtSignal() {
+    // Intentionally empty
 }
 
 void BtSignal::emitChanged() {
