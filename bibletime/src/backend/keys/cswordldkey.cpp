@@ -61,7 +61,7 @@ QString CSwordLDKey::key() const {
 }
 
 const char * CSwordLDKey::rawKey() const {
-    return (const char*)*this;
+    return getText();
 }
 
 bool CSwordLDKey::key( const QString& newKey ) {
