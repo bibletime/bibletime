@@ -23,6 +23,11 @@ CMDIArea::CMDIArea(BibleTime *parent)
         : QMdiArea(parent), m_mdiArrangementMode(ArrangementModeManual), m_activeWindow(0), m_bibleTime(parent) {
     Q_ASSERT(parent != 0);
 
+    #if QT_VERSION >= 0x040500
+    // Set document-style tabs (for Mac):
+    setDocumentMode(true);
+    #endif
+
     setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
     setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
 
