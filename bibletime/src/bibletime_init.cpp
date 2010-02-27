@@ -285,7 +285,7 @@ void BibleTime::createMenuAndToolBar()
     m_mainToolBar = createToolBar("MainToolBar", this, true);
     addToolBar(m_mainToolBar);
 
-    // Set visibility of main window toolbars baaed on config
+    // Set visibility of main window toolbars based on config
     bool visible = ! CBTConfig::get(CBTConfig::showToolbarsInEachWindow);
 
     m_navToolBar = createToolBar("NavToolBar", this, visible);
