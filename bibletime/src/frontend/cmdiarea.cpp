@@ -9,16 +9,18 @@
 
 #include "bibletime.h"
 #include "frontend/cmdiarea.h"
+#include "frontend/displaywindow/btmodulechooserbar.h"
 
 #include <QEvent>
 #include <QMdiSubWindow>
 #include <QTimer>
+#include <QToolBar>
 #include <QWindowStateChangeEvent>
 #include <QMenu>
 
 
 CMDIArea::CMDIArea(BibleTime *parent)
-        : QMdiArea(parent), m_mdiArrangementMode(ArrangementModeManual) {
+        : QMdiArea(parent), m_mdiArrangementMode(ArrangementModeManual), m_activeWindow(0), m_bibleTime(parent) {
     Q_ASSERT(parent != 0);
 
     setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
@@ -234,10 +236,20 @@ QList<QMdiSubWindow*> CMDIArea::usableWindowList() {
 }
 
 void CMDIArea::slotSubWindowActivated(QMdiSubWindow* client) {
-    if (!client || !updatesEnabled()) {
+    if (subWindowList().count() == 0)
+        m_bibleTime->clearMdiToolBars();
+
+    if (!client) {
         return;
     }
     emit sigSetToplevelCaption( client->windowTitle().trimmed() );
+
+    // Notify child window it is active
+    CDisplayWindow* activeWindow = qobject_cast<CDisplayWindow*>(client->widget());
+    if (activeWindow != 0 && activeWindow != m_activeWindow) {
+        m_activeWindow = activeWindow;
+        activeWindow->windowActivated();
+    }
 }
 
 void CMDIArea::resizeEvent(QResizeEvent* e) {
@@ -261,7 +273,8 @@ bool CMDIArea::eventFilter(QObject *o, QEvent *e) {
     QMdiSubWindow *w(qobject_cast<QMdiSubWindow*>(o));
 
     // Let the event be handled by other filters:
-    if (w == 0) return QMdiArea::eventFilter(o, e);
+    if (w == 0) 
+        return QMdiArea::eventFilter(o, e);
 
     switch (e->type()) {
         case QEvent::WindowStateChange: {
@@ -292,8 +305,8 @@ bool CMDIArea::eventFilter(QObject *o, QEvent *e) {
         case QEvent::WindowTitleChange:
             if (o == activeSubWindow()) {
                 emit sigSetToplevelCaption(w->windowTitle());
-                return QMdiArea::eventFilter(o, e);
             }
+            return QMdiArea::eventFilter(o, e);
             break;
         default:
             break;
@@ -336,8 +349,6 @@ void CMDIArea::enableWindowMinMaxFlags(bool enable)
             flags &= ~Qt::WindowMaximizeButtonHint;
         }
         subWindow->setWindowFlags(flags);
-        subWindow->hide();
-        subWindow->show();
     }
 }
 

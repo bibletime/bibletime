@@ -30,6 +30,7 @@
 #include "frontend/cmdiarea.h"
 #include "frontend/cprinter.h"
 #include "frontend/displaywindow/btactioncollection.h"
+#include "frontend/displaywindow/btmodulechooserbar.h"
 #include "frontend/mainindex/bookmarks/cbookmarkindex.h"
 #include "frontend/profile/cprofile.h"
 #include "frontend/profile/cprofilemgr.h"
@@ -259,17 +260,47 @@ void BibleTime::insertKeyboardActions( BtActionCollection* const a ) {
     a->addAction("aboutBibleTime", action);
 }
 
+static QToolBar* createToolBar(const QString& name, QWidget* parent, bool visible) {
+    QToolBar* bar = new QToolBar(parent);
+    bar->setObjectName(name);
+    bar->setFloatable(false);
+    bar->setMovable(true);
+    bar->setVisible(visible);
+    return bar;
+}
+
+void BibleTime::clearMdiToolBars() {
+    // Clear main window toolbars
+    navToolBar()->clear();
+    worksToolBar()->clear();
+    toolsToolBar()->clear();
+    formatToolBar()->clear();
+}
+
 void BibleTime::createMenuAndToolBar()
 {
     // Create menubar
     menuBar();
 
-    // Create main toolbar
-    m_mainToolBar = new QToolBar(this);
-    m_mainToolBar->setObjectName("MainToolBar");
-    m_mainToolBar->setFloatable(false);
-    m_mainToolBar->setMovable(false);
+    m_mainToolBar = createToolBar("MainToolBar", this, true);
     addToolBar(m_mainToolBar);
+
+    // Set visibility of main window toolbars baaed on config
+    bool visible = ! CBTConfig::get(CBTConfig::showToolbarsInEachWindow);
+
+    m_navToolBar = createToolBar("NavToolBar", this, visible);
+    addToolBar(m_navToolBar);
+
+    m_worksToolBar = new BtModuleChooserBar(this);
+    worksToolBar()->setObjectName("WorksToolBar");
+    worksToolBar()->setVisible(visible);
+    addToolBar(worksToolBar());
+
+    m_toolsToolBar = createToolBar("ToolsToolBar", this, visible);
+    addToolBar(m_toolsToolBar);
+
+    m_formatToolBar = createToolBar("FormatToolBar", this, visible);
+    addToolBar(m_formatToolBar);
 }
 
 /** Initializes the action objects of the GUI */
@@ -302,7 +333,7 @@ void BibleTime::initActions() {
     m_viewToolbarAction->setCheckable(true);
     m_viewToolbarAction->setChecked(true);
     connect(m_viewToolbarAction, SIGNAL(triggered()),
-            this,                SLOT(slotToggleToolbar()));
+            this,                SLOT(slotToggleMainToolbar()));
 
     m_showBookshelfAction = m_bookshelfDock->toggleViewAction();
     m_showBookmarksAction = m_bookmarksDock->toggleViewAction();
@@ -318,19 +349,32 @@ void BibleTime::initActions() {
     m_showTextWindowNavigationAction->setCheckable(true);
     m_showTextWindowNavigationAction->setChecked(CBTConfig::get(CBTConfig::showTextWindowNavigator));
     connect(m_showTextWindowNavigationAction, SIGNAL(toggled(bool)),
-            this,                             SLOT(slotToggleTextWindowNavigator()));
+            this,                             SLOT(slotToggleNavigatorToolbar()));
 
     m_showTextWindowModuleChooserAction = new QAction(this);
     m_showTextWindowModuleChooserAction->setCheckable(true);
     m_showTextWindowModuleChooserAction->setChecked(CBTConfig::get(CBTConfig::showTextWindowModuleSelectorButtons));
     connect(m_showTextWindowModuleChooserAction, SIGNAL(toggled(bool)),
-            this,                                SLOT(slotToggleTextWindowModuleChooser()));
+            this,                                SLOT(slotToggleWorksToolbar()));
 
     m_showTextWindowToolButtonsAction = new QAction(this);
     m_showTextWindowToolButtonsAction->setCheckable(true);
     m_showTextWindowToolButtonsAction->setChecked(CBTConfig::get(CBTConfig::showTextWindowToolButtons));
     connect(m_showTextWindowToolButtonsAction, SIGNAL(toggled(bool)),
-            this,                              SLOT(slotToggleTextWindowToolButtons()));
+            this,                              SLOT(slotToggleToolsToolbar()));
+
+    m_showFormatToolbarAction = new QAction(this);
+    m_showFormatToolbarAction->setCheckable(true);
+    m_showFormatToolbarAction->setChecked(CBTConfig::get(CBTConfig::showFormatToolbarButtons));
+    bool ok = connect(m_showFormatToolbarAction, SIGNAL(toggled(bool)),
+                      this,                      SLOT(slotToggleFormatToolbar()));
+
+    m_toolbarsInEachWindow = new QAction(this);
+    m_toolbarsInEachWindow->setCheckable(true);
+    m_toolbarsInEachWindow->setChecked(CBTConfig::get(CBTConfig::showToolbarsInEachWindow));
+    ok = connect(m_toolbarsInEachWindow, SIGNAL(toggled(bool)),
+                      this,                   SLOT(slotToggleToolBarsInEachWindow()));
+    Q_ASSERT(ok);
 
     // Search menu actions:
     m_searchOpenWorksAction = m_actionCollection->action("searchOpenWorks");
@@ -441,17 +485,20 @@ void BibleTime::initMenubar() {
     // View menu:
     m_viewMenu = new QMenu(this);
     m_viewMenu->addAction(m_windowFullscreenAction);
-    m_viewMenu->addAction(m_viewToolbarAction);
     m_viewMenu->addAction(m_showBookshelfAction);
     m_viewMenu->addAction(m_showBookmarksAction);
     m_viewMenu->addAction(m_showMagAction);
+    m_viewMenu->addAction(m_showTextAreaHeadersAction);
     m_viewMenu->addSeparator();
-    m_textWindowsMenu = new QMenu(this);
-    m_textWindowsMenu->addAction(m_showTextAreaHeadersAction);
-    m_textWindowsMenu->addAction(m_showTextWindowNavigationAction);
-    m_textWindowsMenu->addAction(m_showTextWindowModuleChooserAction);
-    m_textWindowsMenu->addAction(m_showTextWindowToolButtonsAction);
-    m_viewMenu->addMenu(m_textWindowsMenu);
+    m_toolBarsMenu = new QMenu(this);
+    m_toolBarsMenu->addAction(m_viewToolbarAction);
+    m_toolBarsMenu->addAction(m_showTextWindowNavigationAction);
+    m_toolBarsMenu->addAction(m_showTextWindowModuleChooserAction);
+    m_toolBarsMenu->addAction(m_showTextWindowToolButtonsAction);
+    m_toolBarsMenu->addAction(m_showFormatToolbarAction);
+    m_toolBarsMenu->addSeparator();
+    m_toolBarsMenu->addAction(m_toolbarsInEachWindow);
+    m_viewMenu->addMenu(m_toolBarsMenu);
     menuBar()->addMenu(m_viewMenu);
 
     // Search menu:
@@ -537,21 +584,29 @@ void BibleTime::initToolbars() {
 void BibleTime::retranslateUi() {
     m_bookmarksDock->setWindowTitle(tr("Bookmarks"));
     m_magDock->setWindowTitle(tr("Mag"));
-    m_mainToolBar->setWindowTitle(tr("Main Toolbar"));
+    m_mainToolBar->setWindowTitle(tr("Main toolbar"));
+    m_navToolBar->setWindowTitle(tr("Navigation toolbar"));
+    m_worksToolBar->setWindowTitle(tr("Works toolbar"));
+    m_toolsToolBar->setWindowTitle(tr("Tools toolbar"));
+    m_formatToolBar->setWindowTitle(tr("Format toolbar"));
 
     m_fileMenu->setTitle(tr("&File"));
     m_viewMenu->setTitle(tr("&View"));
-        m_showBookshelfAction->setText(tr("Show Bookshelf"));
-        m_showBookmarksAction->setText(tr("Show Bookmarks"));
-        m_showMagAction->setText(tr("Show Mag"));
-        m_textWindowsMenu->setTitle(tr("Text windows"));
-            m_showTextAreaHeadersAction->setText(tr("Show text area headers"));
+        m_showBookshelfAction->setText(tr("Show bookshelf"));
+        m_showBookmarksAction->setText(tr("Show bookmarks"));
+        m_showMagAction->setText(tr("Show mag"));
+        m_toolBarsMenu->setTitle(tr("Toolbars"));
+            m_viewToolbarAction->setText(tr("Show main"));
             m_showTextWindowNavigationAction->setText(tr("Show navigation"));
-            m_showTextWindowModuleChooserAction->setText(tr("Show work chooser buttons"));
+            m_showTextWindowModuleChooserAction->setText(tr("Show works"));
             m_showTextWindowToolButtonsAction->setText(tr("Show tools"));
+            m_showFormatToolbarAction->setText(tr("Show format"));
+            m_toolbarsInEachWindow->setText(tr("Show toolbars in text windows"));
+
+            m_showTextAreaHeadersAction->setText(tr("Show parallel text headers"));
     m_searchMenu->setTitle(tr("&Search"));
     m_windowMenu->setTitle(tr("&Window"));
-        m_openWindowsMenu->setTitle(tr("O&pen Windows"));
+        m_openWindowsMenu->setTitle(tr("O&pen windows"));
         m_windowArrangementMenu->setTitle(tr("&Arrangement mode"));
         m_windowSaveProfileMenu->setTitle(tr("&Save session"));
         m_windowLoadProfileMenu->setTitle(tr("&Load session"));

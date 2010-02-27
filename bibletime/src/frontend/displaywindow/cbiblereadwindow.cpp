@@ -68,8 +68,8 @@ void CBibleReadWindow::applyProfileSettings(CProfileWindow* const settings) {
     displayOptions().lineBreaks         = (result & 0x1000) != 0;
     displayOptions().verseNumbers       = (result & 0x2000) != 0;
 
-    displaySettingsButton()->setFilterOptions(filterOptions(), false);
-    displaySettingsButton()->setDisplayOptions(displayOptions());
+    emit sigFilterOptionsChanged(filterOptions());
+    emit sigDisplayOptionsChanged(displayOptions());
 
     // Apply settings to display:
     lookup();
@@ -479,4 +479,8 @@ void CBibleReadWindow::syncWindows() {
             w->lookupKey( key()->key() );
         }
     }
+}
+
+void CBibleReadWindow::setupMainWindowToolBars() {
+    CLexiconReadWindow::setupMainWindowToolBars();
 }

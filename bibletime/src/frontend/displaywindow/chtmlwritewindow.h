@@ -42,9 +42,13 @@ class CHTMLWriteWindow : public CPlainWriteWindow  {
         virtual void initView();
         virtual void initConnections();
         virtual void initToolbars();
+        virtual void initActions();
+        static void insertKeyboardActions( BtActionCollection* const a );
         virtual CDisplayWindow::WriteWindowType writeWindowType() {
             return CDisplayWindow::HTMLWindow;
         }
+        /** Called to add actions to mainWindow toolbars */
+        virtual void setupMainWindowToolBars();
 
     protected slots:
         /**
@@ -59,14 +63,6 @@ class CHTMLWriteWindow : public CPlainWriteWindow  {
         * Saves the text for the current key. Directly writes the changed text into the module.
         */
         virtual void saveCurrentText( const QString& );
-    private:
-        struct {
-            QAction* saveText;
-            QAction* restoreText;
-            QAction* deleteEntry;
-            QAction* syncWindow;
-        }
-        m_actions;
 };
 
 #endif

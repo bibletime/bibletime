@@ -161,6 +161,35 @@ class BibleTime : public QMainWindow {
         *  Save the configuration dialog settings, don't open dialog
         */
         void saveConfigSettings();
+        /**
+        * Get pointer to Navigation toolbar
+        */
+        inline QToolBar* navToolBar() {
+            return m_navToolBar;
+        }
+        /**
+        * Get pointer to Works toolbar
+        */
+        inline BtModuleChooserBar* worksToolBar() {
+            return m_worksToolBar;
+        }
+        /**
+        * Get pointer to Tools toolbar
+        */
+        inline QToolBar* toolsToolBar() {
+            return m_toolsToolBar;
+        }
+        /**
+        * Get pointer to Format toolbar
+        */
+        inline QToolBar* formatToolBar() {
+            return m_formatToolBar;
+        }
+
+        /**
+        * Clears the actions of the MDI related toolbars
+        */
+        void clearMdiToolBars();
 
         /**
           Displays a dialog which asks the user an unlock key for the given module and tries
@@ -310,20 +339,22 @@ class BibleTime : public QMainWindow {
         void slotManualArrangementMode();
 
         /**
-         * Shows/hides the toolbar
+         * Shows/hides the main toolbar
          */
-        void slotToggleToolbar();
+        void slotToggleMainToolbar();
+        void slotToggleToolsToolbar();
+        void slotToggleNavigatorToolbar();
+        void slotToggleWorksToolbar();
+        void slotToggleFormatToolbar();
+
+        void slotToggleToolBarsInEachWindow();
         
         /**
         * Shows/hides the text window text area headers and sets
         * configuration that newly opened windows don't user headers.
         */
         void slotToggleTextWindowHeader();
-        
-        void slotToggleTextWindowToolButtons();
-        void slotToggleTextWindowNavigator();
-        void slotToggleTextWindowModuleChooser();
-        
+
         /**
          * Used to set the active menu
          */
@@ -385,6 +416,7 @@ class BibleTime : public QMainWindow {
         void toggledTextWindowNavigator(bool newState);
         void toggledTextWindowToolButtons(bool newState);
         void toggledTextWindowModuleChooser(bool newState);
+        void toggledTextWindowFormatToolbar(bool newState);
 
     private:
         //  True if window was maximized before last toggle to full screen.
@@ -398,6 +430,10 @@ class BibleTime : public QMainWindow {
         InfoDisplay::CInfoDisplay* m_infoDisplay;
 
         QToolBar* m_mainToolBar;
+        QToolBar* m_navToolBar;
+        BtModuleChooserBar* m_worksToolBar;
+        QToolBar* m_toolsToolBar;
+        QToolBar* m_formatToolBar;
 
         // File menu:
         QMenu *m_fileMenu;
@@ -410,11 +446,13 @@ class BibleTime : public QMainWindow {
         QAction *m_showBookshelfAction;
         QAction *m_showBookmarksAction;
         QAction *m_showMagAction;
-        QMenu *m_textWindowsMenu;
+        QMenu *m_toolBarsMenu;
         QAction *m_showTextAreaHeadersAction;
         QAction *m_showTextWindowNavigationAction;
         QAction *m_showTextWindowModuleChooserAction;
         QAction *m_showTextWindowToolButtonsAction;
+        QAction *m_showFormatToolbarAction;
+        QAction *m_toolbarsInEachWindow;
 
         // Search menu:
         QMenu *m_searchMenu;
@@ -486,8 +524,9 @@ class BibleTime : public QMainWindow {
         // Helper function
         void syncAllModulesByType(const CSwordModuleInfo::ModuleType type, const QString& key);
 
-#ifdef BT_DEBUG
     private:
+        void showOrHideToolBars();
+#ifdef BT_DEBUG
         void deleteDebugWindow();
     private slots:
         void slotDebugWindowClosing();

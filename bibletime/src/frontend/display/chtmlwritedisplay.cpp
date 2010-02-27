@@ -25,12 +25,69 @@
 class BtActionCollection;
 
 CHTMLWriteDisplay::CHTMLWriteDisplay(CWriteWindow* parentWindow, QWidget* parent)
-        : CPlainWriteDisplay(parentWindow, parent), m_fontFamilyChooser(0),
-        m_fontSizeChooser(0), m_colorChooser(0) {
+: CPlainWriteDisplay(parentWindow, parent) {
     m_actions.bold = 0;
     m_actions.italic = 0;
     m_actions.underline = 0;
     m_actions.selectAll = 0;
+
+    //--------------------bold toggle-------------------------
+    namespace DU = util::directory;
+    m_actions.bold = new QAction(
+        DU::getIcon(CResMgr::displaywindows::writeWindow::boldText::icon),
+        tr("Bold"),
+        this);
+    m_actions.bold->setCheckable(true);
+    m_actions.bold->setShortcut(CResMgr::displaywindows::writeWindow::boldText::accel);
+    m_actions.bold->setToolTip( tr("Bold") );
+    connect(m_actions.bold, SIGNAL(toggled(bool)), this, SLOT(toggleBold(bool)));
+
+    //--------------------italic toggle-------------------------
+    m_actions.italic = new QAction(
+        DU::getIcon(CResMgr::displaywindows::writeWindow::italicText::icon),
+        tr("Italic"),
+        this );
+    m_actions.italic->setCheckable(true);
+    m_actions.bold->setShortcut(CResMgr::displaywindows::writeWindow::italicText::accel);
+    connect(m_actions.italic, SIGNAL(toggled(bool)), this, SLOT(toggleItalic(bool)));
+    m_actions.italic->setToolTip( tr("Italic") );
+
+    //--------------------underline toggle-------------------------
+    m_actions.underline = new QAction(
+        DU::getIcon(CResMgr::displaywindows::writeWindow::underlinedText::icon),
+        tr("Underline"),
+        this );
+    m_actions.underline->setCheckable(true);
+    m_actions.underline->setShortcut(CResMgr::displaywindows::writeWindow::underlinedText::accel);
+    connect(m_actions.underline, SIGNAL(toggled(bool)), this, SLOT(toggleUnderline(bool)));
+    m_actions.underline->setToolTip( tr("Underline") );
+
+    //--------------------align left toggle-------------------------
+    m_actions.alignLeft = new QAction(
+        DU::getIcon(CResMgr::displaywindows::writeWindow::alignLeft::icon),
+        tr("Left"), this);
+    m_actions.alignLeft->setCheckable(true);
+    m_actions.alignLeft->setShortcut(CResMgr::displaywindows::writeWindow::alignLeft::accel);
+    connect(m_actions.alignLeft, SIGNAL(toggled(bool)), this, SLOT(alignLeft(bool)));
+    m_actions.alignLeft->setToolTip( tr("Align left") );
+
+    //--------------------align center toggle-------------------------
+    m_actions.alignCenter = new QAction(
+        DU::getIcon(CResMgr::displaywindows::writeWindow::alignCenter::icon),
+        tr("Center"), this);
+    m_actions.alignCenter->setCheckable(true);
+    m_actions.alignCenter->setShortcut(CResMgr::displaywindows::writeWindow::alignCenter::accel);
+    connect(m_actions.alignCenter, SIGNAL(toggled(bool)), this, SLOT(alignCenter(bool)));
+    m_actions.alignCenter->setToolTip( tr("Center") );
+
+    //--------------------align right toggle-------------------------
+    m_actions.alignRight = new QAction(
+        DU::getIcon(CResMgr::displaywindows::writeWindow::alignRight::icon),
+        tr("Right"), this);
+    m_actions.alignRight->setCheckable(true);
+    m_actions.alignRight->setShortcut(CResMgr::displaywindows::writeWindow::alignRight::accel);
+    connect(m_actions.alignRight, SIGNAL(toggled(bool)), this, SLOT(alignRight(bool)));
+    m_actions.alignRight->setToolTip( tr("Align right") );
 
     setAcceptRichText(true);
     setAcceptDrops(true);
@@ -118,12 +175,12 @@ void CHTMLWriteDisplay::slotColorSelected( const QColor& c) {
 
 /** Is called when a text with another color was selected. */
 void CHTMLWriteDisplay::slotColorChanged(const QColor& c) {
-    m_colorChooser->setColor(c);
+    emit setColor(c);
 }
 
 void CHTMLWriteDisplay::slotFontChanged( const QFont& font ) {
-    m_fontFamilyChooser->setCurrentFont(font);
-    m_fontSizeChooser->setFontSize( font.pointSize() );
+    emit fontChanged(font);
+    emit fontSizeChanged(font.pointSize());
 
     m_actions.bold->setChecked( font.bold() );
     m_actions.italic->setChecked( font.italic() );
@@ -135,104 +192,46 @@ void CHTMLWriteDisplay::slotFontFamilyChoosen(const QFont& font) {
 }
 
 void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, BtActionCollection * actions) {
-    namespace DU = util::directory;
 
     //--------------------font chooser-------------------------
-    m_fontFamilyChooser = new QFontComboBox(this);
-    actions->addAction(CResMgr::displaywindows::writeWindow::fontFamily::actionName, m_fontFamilyChooser);
-    m_fontFamilyChooser->setToolTip( tr("Font") );
-    bar->addWidget(m_fontFamilyChooser);
-    bool ok = connect(m_fontFamilyChooser, SIGNAL(currentFontChanged(const QFont&)),
+    QFontComboBox* fontFamilyCombo = new QFontComboBox(this);
+    fontFamilyCombo->setToolTip( tr("Font") );
+    bar->addWidget(fontFamilyCombo);
+    bool ok = connect(fontFamilyCombo, SIGNAL(currentFontChanged(const QFont&)),
                       this, SLOT(slotFontFamilyChoosen(const QFont&)));
+    Q_ASSERT(ok);
+    ok = connect(this, SIGNAL(fontChanged(const QFont&)), fontFamilyCombo, SLOT(setCurrentFont(const QFont&)));
     Q_ASSERT(ok);
 
     //--------------------font size chooser-------------------------
-    m_fontSizeChooser = new BtFontSizeWidget(this);
-    m_fontSizeChooser->setToolTip( tr("Font size") );
-    bar->addWidget(m_fontSizeChooser);
-    ok = connect(m_fontSizeChooser, SIGNAL(fontSizeChanged(int)), this, SLOT(changeFontSize(int)));
+    BtFontSizeWidget* fontSizeChooser = new BtFontSizeWidget(this);
+    fontSizeChooser->setToolTip( tr("Font size") );
+    bar->addWidget(fontSizeChooser);
+    ok = connect(fontSizeChooser, SIGNAL(fontSizeChanged(int)), this, SLOT(changeFontSize(int)));
+    Q_ASSERT(ok);
+    ok = connect(this, SIGNAL(fontSizeChanged(int)), fontSizeChooser, SLOT(setFontSize(int)));
     Q_ASSERT(ok);
 
     //--------------------color button-------------------------
-    m_colorChooser = new BtColorWidget();
-    m_colorChooser->setToolTip(tr("Font color"));
-    bar->addWidget(m_colorChooser);
-    ok = connect(m_colorChooser, SIGNAL(changed(const QColor&)), this, SLOT(slotColorSelected(const QColor&)));
+    BtColorWidget* colorChooser = new BtColorWidget();
+    colorChooser->setToolTip(tr("Font color"));
+    bar->addWidget(colorChooser);
+    ok = connect(colorChooser, SIGNAL(changed(const QColor&)), this, SLOT(slotColorSelected(const QColor&)));
+    Q_ASSERT(ok);
+    ok = connect(this, SIGNAL(setColor(const QColor&)), colorChooser, SLOT(setColor(const QColor&)));
     Q_ASSERT(ok);
 
     bar->addSeparator();
 
-    //--------------------bold toggle-------------------------
-    m_actions.bold = new QAction(
-        DU::getIcon(CResMgr::displaywindows::writeWindow::boldText::icon),
-        tr("Bold"),
-        actions);
-    m_actions.bold->setCheckable(true);
-    m_actions.bold->setShortcut(CResMgr::displaywindows::writeWindow::boldText::accel);
-    actions->addAction(CResMgr::displaywindows::writeWindow::boldText::actionName, m_actions.bold);
-    m_actions.bold->setToolTip( tr("Bold") );
-    connect(m_actions.bold, SIGNAL(toggled(bool)), this, SLOT(toggleBold(bool)));
-
     bar->addAction(m_actions.bold);
-
-    //--------------------italic toggle-------------------------
-    m_actions.italic = new QAction(
-        DU::getIcon(CResMgr::displaywindows::writeWindow::italicText::icon),
-        tr("Italic"),
-        actions );
-    m_actions.italic->setCheckable(true);
-    m_actions.bold->setShortcut(CResMgr::displaywindows::writeWindow::italicText::accel);
-    actions->addAction(CResMgr::displaywindows::writeWindow::italicText::actionName, m_actions.italic);
-    connect(m_actions.italic, SIGNAL(toggled(bool)), this, SLOT(toggleItalic(bool)));
-    m_actions.italic->setToolTip( tr("Italic") );
     bar->addAction(m_actions.italic);
-
-    //--------------------underline toggle-------------------------
-    m_actions.underline = new QAction(
-        DU::getIcon(CResMgr::displaywindows::writeWindow::underlinedText::icon),
-        tr("Underline"),
-        actions );
-    m_actions.underline->setCheckable(true);
-    m_actions.underline->setShortcut(CResMgr::displaywindows::writeWindow::underlinedText::accel);
-    actions->addAction(CResMgr::displaywindows::writeWindow::underlinedText::actionName, m_actions.underline);
-    connect(m_actions.underline, SIGNAL(toggled(bool)), this, SLOT(toggleUnderline(bool)));
-    m_actions.underline->setToolTip( tr("Underline") );
     bar->addAction(m_actions.underline);
 
     //seperate formatting from alignment buttons
     bar->addSeparator();
 
-    //--------------------align left toggle-------------------------
-    m_actions.alignLeft = new QAction(
-        DU::getIcon(CResMgr::displaywindows::writeWindow::alignLeft::icon),
-        tr("Left"), actions);
-    m_actions.alignLeft->setCheckable(true);
-    m_actions.alignLeft->setShortcut(CResMgr::displaywindows::writeWindow::alignLeft::accel);
-    actions->addAction(CResMgr::displaywindows::writeWindow::alignLeft::actionName, m_actions.alignLeft);
-    connect(m_actions.alignLeft, SIGNAL(toggled(bool)), this, SLOT(alignLeft(bool)));
-    m_actions.alignLeft->setToolTip( tr("Align left") );
     bar->addAction(m_actions.alignLeft);
-
-    //--------------------align center toggle-------------------------
-    m_actions.alignCenter = new QAction(
-        DU::getIcon(CResMgr::displaywindows::writeWindow::alignCenter::icon),
-        tr("Center"), actions);
-    m_actions.alignCenter->setCheckable(true);
-    m_actions.alignCenter->setShortcut(CResMgr::displaywindows::writeWindow::alignCenter::accel);
-    actions->addAction(CResMgr::displaywindows::writeWindow::alignCenter::actionName, m_actions.alignCenter);
-    connect(m_actions.alignCenter, SIGNAL(toggled(bool)), this, SLOT(alignCenter(bool)));
-    m_actions.alignCenter->setToolTip( tr("Center") );
     bar->addAction(m_actions.alignCenter);
-
-    //--------------------align right toggle-------------------------
-    m_actions.alignRight = new QAction(
-        DU::getIcon(CResMgr::displaywindows::writeWindow::alignRight::icon),
-        tr("Right"), actions);
-    m_actions.alignRight->setCheckable(true);
-    m_actions.alignRight->setShortcut(CResMgr::displaywindows::writeWindow::alignRight::accel);
-    actions->addAction(CResMgr::displaywindows::writeWindow::alignRight::actionName, m_actions.alignRight);
-    connect(m_actions.alignRight, SIGNAL(toggled(bool)), this, SLOT(alignRight(bool)));
-    m_actions.alignRight->setToolTip( tr("Align right") );
     bar->addAction(m_actions.alignRight);
 
     connect(this, SIGNAL(currentFontChanged(const QFont&)), SLOT(slotFontChanged(const QFont&)));

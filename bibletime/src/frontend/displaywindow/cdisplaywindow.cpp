@@ -37,7 +37,6 @@ CDisplayWindow::CDisplayWindow(QList<CSwordModuleInfo*> modules, CMDIArea *paren
         : QMainWindow(parent),
         m_actionCollection(0),
         m_mdi(parent),
-        m_displaySettingsButton(0),
         m_keyChooser(0),
         m_swordKey(0),
         m_isReady(false),
@@ -59,16 +58,44 @@ CDisplayWindow::CDisplayWindow(QList<CSwordModuleInfo*> modules, CMDIArea *paren
     connect(CPointers::backend(),
             SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)),
             SLOT(reload(CSwordBackend::SetupChangedReason)));
-    BibleTime* mainwindow = dynamic_cast<BibleTime*>(m_mdi->parent());
+    BibleTime* mainwindow = btMainWindow();
     connect(mainwindow, SIGNAL(toggledTextWindowHeader(bool)), SLOT(slotShowHeader(bool)) );
     connect(mainwindow, SIGNAL(toggledTextWindowNavigator(bool)), SLOT(slotShowNavigator(bool)) );
     connect(mainwindow, SIGNAL(toggledTextWindowToolButtons(bool)), SLOT(slotShowToolButtons(bool)) );
     connect(mainwindow, SIGNAL(toggledTextWindowModuleChooser(bool)), SLOT(slotShowModuleChooser(bool)) );
+    connect(mainwindow, SIGNAL(toggledTextWindowFormatToolbar(bool)), SLOT(slotShowFormatToolBar(bool)) );
 }
 
 CDisplayWindow::~CDisplayWindow() {
     delete m_swordKey;
     m_swordKey = 0;
+}
+
+BibleTime* CDisplayWindow::btMainWindow() {
+    return dynamic_cast<BibleTime*>(m_mdi->parent());
+}
+
+void CDisplayWindow::setToolBarsHidden() {
+    // Hide current window toolbars
+    if (mainToolBar())
+        mainToolBar()->setHidden(true);
+    if (buttonsToolBar())
+        buttonsToolBar()->setHidden(true);
+    if (moduleChooserBar())
+        moduleChooserBar()->setHidden(true);
+    if (formatToolBar())
+        formatToolBar()->setHidden(true);
+}
+void CDisplayWindow::clearMainWindowToolBars() {
+    // Clear main window toolbars, except for works toolbar
+    btMainWindow()->navToolBar()->clear();
+    btMainWindow()->toolsToolBar()->clear();
+    btMainWindow()->formatToolBar()->clear();
+}
+
+void CDisplayWindow::windowActivated() {
+    clearMainWindowToolBars();
+    setupMainWindowToolBars();
 }
 
 /** Returns the right window caption. */
@@ -241,11 +268,13 @@ void CDisplayWindow::slotRemoveModule(int index) {
 /** Sets the new display options for this window. */
 void CDisplayWindow::setDisplayOptions(const CSwordBackend::DisplayOptions &displayOptions) {
     m_displayOptions = displayOptions;
+    emit sigDisplayOptionsChanged(m_displayOptions);
 }
 
 /** Sets the new filter options of this window. */
 void CDisplayWindow::setFilterOptions(const CSwordBackend::FilterOptions &filterOptions) {
     m_filterOptions = filterOptions;
+    emit sigFilterOptionsChanged(m_filterOptions);
 }
 
 /** Set the ready status */
@@ -284,10 +313,7 @@ void CDisplayWindow::modulesChanged() {
         close();
     }
     else {
-        if (displaySettingsButton()) {
-            displaySettingsButton()->setModules(modules());
-        }
-
+        emit sigModulesChanged(modules());
         key()->module(modules().first());
         keyChooser()->setModules(modules());
     }
@@ -339,16 +365,18 @@ bool CDisplayWindow::init() {
     parentWidget()->setFocusPolicy(Qt::ClickFocus);
     initActions();
     initToolbars();
+    if ( ! CBTConfig::get(CBTConfig::showToolbarsInEachWindow))
+        setToolBarsHidden();
+    btMainWindow()->clearMdiToolBars();
+    clearMainWindowToolBars();
     initConnections();
     setupPopupMenu();
 
     m_filterOptions = CBTConfig::getFilterOptionDefaults();
     m_displayOptions = CBTConfig::getDisplayOptionDefaults();
-    if (displaySettingsButton()) {
-        displaySettingsButton()->setFilterOptions(m_filterOptions, false);
-        displaySettingsButton()->setDisplayOptions(m_displayOptions, false);
-        displaySettingsButton()->setModules(modules());
-    }
+    emit sigDisplayOptionsChanged(m_displayOptions);
+    emit sigFilterOptionsChanged(m_filterOptions);
+    emit sigModulesChanged(modules());
 
     setReady(true);
     return true;
@@ -381,12 +409,16 @@ void CDisplayWindow::setFormatToolBar( QToolBar* bar ) {
 
 /** Sets the display settings button. */
 void CDisplayWindow::setDisplaySettingsButton( BtDisplaySettingsButton* button ) {
-    if (m_displaySettingsButton) {
-        m_displaySettingsButton->disconnect(this);
-    }
 
-    m_displaySettingsButton = button;
-
+    bool ok = connect(this, SIGNAL(sigDisplayOptionsChanged(CSwordBackend::DisplayOptions)),
+        button, SLOT(setDisplayOptions(CSwordBackend::DisplayOptions)));
+    Q_ASSERT(ok);
+    ok = connect(this, SIGNAL(sigFilterOptionsChanged(CSwordBackend::FilterOptions)),
+        button, SLOT(setFilterOptions(CSwordBackend::FilterOptions)));
+    Q_ASSERT(ok);
+    ok = connect(this, SIGNAL(sigModulesChanged(const QList<CSwordModuleInfo*>&)),
+        button, SLOT(setModules(const QList<CSwordModuleInfo*>&)));
+    Q_ASSERT(ok);
     button->setDisplayOptions(displayOptions(), false);
     button->setFilterOptions(filterOptions(), false);
     button->setModules(modules());
@@ -405,15 +437,23 @@ void CDisplayWindow::slotShowHeader(bool show) {
 }
 
 void CDisplayWindow::slotShowNavigator(bool show) {
-    mainToolBar()->setVisible(show);
+    if (mainToolBar())
+        mainToolBar()->setVisible(show);
 }
 
 void CDisplayWindow::slotShowToolButtons(bool show) {
-    buttonsToolBar()->setVisible(show);
+    if (buttonsToolBar())
+        buttonsToolBar()->setVisible(show);
 }
 
 void CDisplayWindow::slotShowModuleChooser(bool show) {
-    moduleChooserBar()->setVisible(show);
+    if (moduleChooserBar())
+        moduleChooserBar()->setVisible(show);
+}
+
+void CDisplayWindow::slotShowFormatToolBar(bool show) {
+    if (formatToolBar())
+        formatToolBar()->setVisible(show);
 }
 
 /** Lookup the current key. Used to refresh the display. */
@@ -443,8 +483,8 @@ void CDisplayWindow::lookupModKey( const QString& moduleName, const QString& key
         QList<CSwordModuleInfo*> mList;
         mList.append(m);
 
-        Q_ASSERT(qobject_cast<BibleTime*>(mdi()->parent()) != 0);
-        BibleTime *mainWindow(static_cast<BibleTime*>(mdi()->parent()));
+        BibleTime *mainWindow = btMainWindow();
+        Q_ASSERT(mainWindow != 0);
         mainWindow->createReadDisplayWindow(mList, keyName);
     }
 }

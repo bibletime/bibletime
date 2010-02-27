@@ -15,6 +15,7 @@
 
 class CSwordModuleInfo;
 class QTextCodec;
+class BtSignal;
 
 /** Base class for all keys.
  * The base class for all Sword based keys.
@@ -79,6 +80,10 @@ class CSwordKey {
          */
         virtual QString strippedText();
         /**
+        *
+        */
+        const BtSignal* signaler();
+        /**
          * This returns a new object of the right CSwordKey* implementation
          * (e.g. CSwordVerseKey or CSwordLDKey)
          * The type is determined by the type of the module.
@@ -93,6 +98,7 @@ class CSwordKey {
         virtual const char * rawKey() const = 0;
         static const QTextCodec* cp1252Codec();
         CSwordModuleInfo* m_module; //module pointer used by all keys
+        BtSignal* m_signal;
 
     private:
         /**

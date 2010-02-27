@@ -22,10 +22,11 @@ class BtColorWidget : public QFrame {
         BtColorWidget(QWidget* parent = 0);
         ~BtColorWidget();
         QSize sizeHint() const;
+
+    public slots:
         void setColor(const QColor& color);
 
     protected:
-//	void paintEvent( QPaintEvent* );
         void mouseReleaseEvent(QMouseEvent* event);
 
     private:

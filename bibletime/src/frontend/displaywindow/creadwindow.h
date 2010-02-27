@@ -47,6 +47,8 @@ class CReadWindow : public CDisplayWindow  {
         /**
          */
         virtual void resizeEvent(QResizeEvent* e);
+        ///** Called to add actions to mainWindow toolbars */
+        virtual void setupMainWindowToolBars() = 0;
 
     protected slots:
         /**

@@ -27,7 +27,8 @@ CKeyChooser::CKeyChooser(QList<CSwordModuleInfo*>, BTHistory* historyPtr,
         : QWidget(parent),
         m_history(historyPtr) {
     //qDebug() << "CKeyChooser::CKeyChooser";
-    QObject::connect(history(), SIGNAL(historyMoved(QString&)), this, SLOT(setKey(QString&)));
+    bool ok = QObject::connect(history(), SIGNAL(historyMoved(QString&)), this, SLOT(setKey(QString&)));
+    Q_ASSERT(ok);
 }
 
 CKeyChooser::~CKeyChooser() {}

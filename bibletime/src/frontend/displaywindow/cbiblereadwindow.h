@@ -48,6 +48,8 @@ class CBibleReadWindow : public CLexiconReadWindow  {
         virtual void initToolbars();
         virtual void initConnections();
         virtual void initView();
+        /** Called to add actions to mainWindow toolbars */
+        virtual void setupMainWindowToolBars();
         /**
         * Reimplementation.
         */

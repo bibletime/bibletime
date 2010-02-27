@@ -24,6 +24,7 @@
 #include "backend/keys/cswordversekey.h"
 #include "frontend/keychooser/cscrollerwidgetset.h"
 #include "frontend/keychooser/versekeychooser/btdropdownchooserbutton.h"
+#include "util/btsignal.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
 
@@ -137,6 +138,8 @@ CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVers
     connect(m_verseScroller, SIGNAL(change(int)), SLOT(slotStepVerse(int)));
     connect(m_verseScroller, SIGNAL(scroller_pressed()), SLOT(slotUpdateLock()));
     connect(m_verseScroller, SIGNAL(scroller_released()), SLOT(slotUpdateUnlock()));
+    bool ok = connect(m_key->signaler(), SIGNAL(changed()), this, SLOT(updateText()));
+    Q_ASSERT(ok);
 }
 
 CKeyReferenceWidget::~CKeyReferenceWidget() {
@@ -213,13 +216,11 @@ bool CKeyReferenceWidget::setKey(CSwordVerseKey *key) {
     if (!key) return false;
 
     m_key->key(key->key());
-    updateText();
     return true;
 }
 
 void CKeyReferenceWidget::slotReturnPressed() {
     m_key->key(m_textbox->text());
-    updateText();
     emit changed(m_key);
 }
 
@@ -240,7 +241,6 @@ void CKeyReferenceWidget::slotStepBook(int n) {
     n > 0 ? m_key->next( CSwordVerseKey::UseBook ) : m_key->previous( CSwordVerseKey::UseBook );
     if (!updatelock)
         emit changed(m_key);
-    updateText();
 }
 
 void CKeyReferenceWidget::slotStepChapter(int n) {
@@ -248,7 +248,6 @@ void CKeyReferenceWidget::slotStepChapter(int n) {
     n > 0 ? m_key->next( CSwordVerseKey::UseChapter ) : m_key->previous( CSwordVerseKey::UseChapter );
     if (!updatelock)
         emit changed(m_key);
-    updateText();
 }
 
 void CKeyReferenceWidget::slotStepVerse(int n) {
@@ -256,7 +255,6 @@ void CKeyReferenceWidget::slotStepVerse(int n) {
     n > 0 ? m_key->next( CSwordVerseKey::UseVerse ) : m_key->previous( CSwordVerseKey::UseVerse );
     if (!updatelock)
         emit changed(m_key);
-    updateText();
 }
 
 
@@ -266,7 +264,6 @@ void CKeyReferenceWidget::slotChangeVerse(int n) {
         m_key->Verse( n );
         setKey( m_key );
     }
-    updateText();
     if (!updatelock) emit changed(m_key);
 }
 
@@ -276,7 +273,6 @@ void CKeyReferenceWidget::slotChangeChapter(int n) {
         m_key->Chapter( n );
         setKey( m_key );
     }
-    updateText();
     if (!updatelock)
         emit changed(m_key);
 }
@@ -287,7 +283,6 @@ void CKeyReferenceWidget::slotChangeBook(QString bookname) {
         m_key->book( bookname );
         setKey( m_key );
     }
-    updateText();
     if (!updatelock)
         emit changed(m_key);
 }

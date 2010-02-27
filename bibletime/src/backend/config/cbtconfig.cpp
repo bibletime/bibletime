@@ -121,8 +121,12 @@ QString getKey(const bools ID) {
             return "showTextWindowNavigator";
         case showTextWindowModuleSelectorButtons:
             return "showTextWindowModuleSelectorButtons";
+        case showFormatToolbarButtons:
+            return "showFormatToolbarButtons";
         case showTextWindowToolButtons:
             return "showTextWindowToolButtons";
+        case showToolbarsInEachWindow:
+            return "showToolbarsInEachWindow";
     }
     Q_ASSERT(false);
     return false;
@@ -350,6 +354,10 @@ bool getDefault(const bools ID) {
         case showTextWindowModuleSelectorButtons:
             return true;
         case showTextWindowToolButtons:
+            return true;
+        case showFormatToolbarButtons:
+            return true;
+        case showToolbarsInEachWindow:
             return true;
     }
     return false;

@@ -76,6 +76,11 @@ class CHTMLWriteDisplay : public CPlainWriteDisplay {
         */
         void slotColorChanged( const QColor& );
 
+    signals:
+        void fontChanged(const QFont& font);
+        void fontSizeChanged(int);
+        void setColor(const QColor&);
+
     private:
         struct {
             QAction* bold;
@@ -90,10 +95,6 @@ class CHTMLWriteDisplay : public CPlainWriteDisplay {
             QAction* selectAll;
         }
         m_actions;
-
-        QFontComboBox* m_fontFamilyChooser;
-        BtFontSizeWidget*   m_fontSizeChooser;
-        BtColorWidget*      m_colorChooser;
 };
 
 #endif

@@ -19,8 +19,10 @@ class BtFontSizeWidget : public QComboBox {
     public:
         BtFontSizeWidget(QWidget* parent = 0);
         ~BtFontSizeWidget();
-        void setFontSize(int size);
         int fontSize() const;
+
+    public slots:
+        void setFontSize(int size);
 
     private slots:
         virtual void changed(const QString& text);

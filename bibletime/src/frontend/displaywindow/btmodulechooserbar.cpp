@@ -17,17 +17,15 @@
 #include <QToolBar>
 
 
-BtModuleChooserBar::BtModuleChooserBar(QStringList useModules, CSwordModuleInfo::ModuleType type, CReadWindow *parent)
+BtModuleChooserBar::BtModuleChooserBar(QWidget *parent)
         : QToolBar(parent),
-        BtWindowModuleChooser(type, parent),
-        m_idCounter(0) {
+        BtWindowModuleChooser(CSwordModuleInfo::Unknown, 0),
+        m_idCounter(0),
+        m_window(0) {
 
     qDebug() << "BtModuleChooserBar::BtModuleChooserBar";
     setAllowedAreas(Qt::TopToolBarArea);
     setFloatable(false);
-    setModules(useModules);
-    connect(parent, SIGNAL(sigModuleListSet(QStringList)), SLOT(slotBackendModulesChanged()));
-    connect(parent, SIGNAL(sigModuleListChanged()), SLOT(slotWindowModulesChanged()));
 }
 
 void BtModuleChooserBar::slotBackendModulesChanged() {
@@ -97,10 +95,16 @@ BtModuleChooserButton* BtModuleChooserBar::addButton() {
     return b;
 }
 
+
 /** Sets the modules which are chosen in this module chooser bar. */
-void BtModuleChooserBar::setModules( QStringList useModules ) {
+void BtModuleChooserBar::setModules( QStringList useModules,CSwordModuleInfo::ModuleType type, CReadWindow* window) {
     qDebug() << "BtModuleChooserBar::setModules";
     m_modules = useModules;
+    m_window = window;
+    m_moduleType = type;
+
+    clear();
+
     adjustButtonCount(true);
 
     //if (!useModules.count()) return;
@@ -112,6 +116,9 @@ void BtModuleChooserBar::setModules( QStringList useModules ) {
     }
     updateButtonMenus();
     qDebug() << "BtModuleChooserBar::setModules end";
+
+    connect(m_window, SIGNAL(sigModuleListSet(QStringList)), SLOT(slotBackendModulesChanged()));
+    connect(m_window, SIGNAL(sigModuleListChanged()), SLOT(slotWindowModulesChanged()));
 }
 
 void BtModuleChooserBar::updateButtonMenus() {

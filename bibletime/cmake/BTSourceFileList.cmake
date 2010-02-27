@@ -104,6 +104,7 @@ SOURCE_GROUP("src\\backend\\managers" FILES ${bibletime_SRC_BACKEND_MANAGERS})
 
 SET(bibletime_SRC_UTIL
 	# Utilities:
+	src/util/btsignal.cpp
 	src/util/cpointers.cpp
 	src/util/cresmgr.cpp
 	src/util/dialogutil.cpp
@@ -310,6 +311,7 @@ SET(bibletime_MOCABLE_HEADERS
 	src/backend/bookshelfmodel/btbookshelftreemodel.h
 	src/backend/cswordmodulesearch.h
 	src/backend/drivers/cswordmoduleinfo.h
+	src/backend/keys/cswordkey.h
 	src/backend/managers/cswordbackend.h
 	src/frontend/bookshelfmanager/btconfigdialog.h
 	src/frontend/bookshelfmanager/btinstallmgr.h
@@ -397,6 +399,7 @@ SET(bibletime_MOCABLE_HEADERS
     src/frontend/settingsdialogs/btlanguagesettings.h
 	src/frontend/settingsdialogs/clistwidget.h
 	src/frontend/settingsdialogs/cswordsettings.h
+	src/util/btsignal.h
 )
 
 SET(bibletime_SOURCES

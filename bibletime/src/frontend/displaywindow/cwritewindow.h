@@ -54,6 +54,8 @@ class CWriteWindow : public CDisplayWindow  {
         virtual CDisplayWindow::WriteWindowType writeWindowType() = 0;
         virtual bool queryClose();
         virtual void saveCurrentText( const QString& key ) = 0;
+        /** Called to add actions to mainWindow toolbars */
+        virtual void setupMainWindowToolBars() = 0;
 
     protected slots:
         /** Save text to the module

@@ -16,6 +16,7 @@
 
 class BibleTime;
 class CSwordModuleInfo;
+class CDisplayWindow;
 
 /**
   A custom MDI area widget.
@@ -113,7 +114,7 @@ class CMDIArea: public QMdiArea {
 
     signals:
         /**
-        * Emits a signal to set the acption of the toplevel widget.
+        * Emits a signal to set the caption of the toplevel widget.
         */
         void sigSetToplevelCaption(const QString&);
 
@@ -141,6 +142,10 @@ class CMDIArea: public QMdiArea {
 
     protected:
         MDIArrangementMode m_mdiArrangementMode;
+
+    private:
+        CDisplayWindow* m_activeWindow;
+        BibleTime* m_bibleTime;
 };
 
 #endif

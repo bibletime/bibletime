@@ -16,6 +16,7 @@
 #include "backend/keys/cswordldkey.h"
 #include "backend/keys/cswordtreekey.h"
 #include "backend/keys/cswordversekey.h"
+#include "util/btsignal.h"
 
 // Sword includes:
 #include <swkey.h>
@@ -26,9 +27,12 @@
 #include <versekey.h>
 
 
-CSwordKey::CSwordKey(CSwordModuleInfo* const module) : m_module(module) {}
+CSwordKey::CSwordKey(CSwordModuleInfo* const module) 
+    : m_module(module),
+    m_signal(0) {}
 
-CSwordKey::CSwordKey(const CSwordKey& k) {
+CSwordKey::CSwordKey(const CSwordKey& k)
+    : m_signal(0) {
     m_module = k.m_module;
 }
 
@@ -172,4 +176,10 @@ CSwordKey* CSwordKey::createInstance( CSwordModuleInfo* const module ) {
         default:
             return 0;
     }
+}
+
+const BtSignal* CSwordKey::signaler() {
+    if (m_signal == 0)
+        m_signal = new BtSignal();
+    return m_signal;
 }

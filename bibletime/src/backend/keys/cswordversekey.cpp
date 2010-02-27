@@ -14,6 +14,7 @@
 
 #include "backend/drivers/cswordbiblemoduleinfo.h"
 #include "backend/drivers/cswordcommentarymoduleinfo.h"
+#include "util/btsignal.h"
 
 // Sword includes:
 #include <swmodule.h>
@@ -126,6 +127,9 @@ bool CSwordVerseKey::key( const char* newKey ) {
         }
     }
 
+    if (m_signal != 0)
+        m_signal->emitChanged();
+
     return !Error();
 }
 
@@ -207,12 +211,16 @@ bool CSwordVerseKey::next( const JumpType type ) {
             ret = false;
         }
 
+        if (m_signal != 0)
+            m_signal->emitChanged();
         return ret;
     }
     else if (Error()) { //we have no module, so take care of VerseKey::Error()
         return false;
     }
 
+    if (m_signal != 0)
+        m_signal->emitChanged();
     return ret;
 }
 
@@ -286,11 +294,15 @@ bool CSwordVerseKey::previous( const JumpType type ) {
             ret = false;
         }
 
+        if (m_signal != 0)
+            m_signal->emitChanged();
         return ret;
     }
     else if (Error()) {
         return false;
     }
 
+    if (m_signal != 0)
+        m_signal->emitChanged();
     return ret;
 }

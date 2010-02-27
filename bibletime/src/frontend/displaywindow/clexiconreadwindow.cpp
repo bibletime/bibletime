@@ -16,6 +16,7 @@
 #include <QMenu>
 #include <QDebug>
 
+#include "bibletime.h"
 #include "backend/config/cbtconfig.h"
 #include "backend/keys/cswordldkey.h"
 #include "backend/keys/cswordkey.h"
@@ -154,7 +155,7 @@ void CLexiconReadWindow::initConnections() {
     Q_ASSERT(keyChooser());
 
     connect(keyChooser(), SIGNAL(keyChanged(CSwordKey*)), this, SLOT(lookupSwordKey(CSwordKey*)));
-    connect(keyChooser()->history(), SIGNAL(historyChanged(bool, bool)), this, SLOT(slotUpdateHistoryButtons(bool, bool)));
+    connect(history(), SIGNAL(historyChanged(bool, bool)), this, SLOT(slotUpdateHistoryButtons(bool, bool)));
 
     //connect the history actions to the right slots
     bool ok = connect(
@@ -196,7 +197,8 @@ void CLexiconReadWindow::initView() {
     setKeyChooser( CKeyChooser::createInstance(modules(), history(), key(), mainToolBar()) );
 
     // Create the Works toolbar
-    setModuleChooserBar( new BtModuleChooserBar(getModuleList(), modules().first()->type(), this) );
+    setModuleChooserBar( new BtModuleChooserBar(this));
+    moduleChooserBar()->setModules(getModuleList(), modules().first()->type(), this);
     addToolBar(moduleChooserBar());
 
     // Create the Tools toolbar
@@ -223,13 +225,37 @@ void CLexiconReadWindow::initToolbars() {
     if (action) {
         buttonsToolBar()->addAction(action);
     }
-    setDisplaySettingsButton(new BtDisplaySettingsButton(buttonsToolBar()));
-    /// \todo find the right place for the button
-    buttonsToolBar()->addWidget(displaySettingsButton());
+    BtDisplaySettingsButton* button = new BtDisplaySettingsButton(buttonsToolBar());
+    setDisplaySettingsButton(button);
+    buttonsToolBar()->addWidget(button);
 
     // Text Header toolbar
     BtTextWindowHeader *h = new BtTextWindowHeader(modules().first()->type(), getModuleList(), this);
     headerBar()->addWidget(h);
+}
+
+void CLexiconReadWindow::setupMainWindowToolBars() {
+    // Navigation toolbar
+    CKeyChooser* keyChooser = CKeyChooser::createInstance(modules(), history(), key(), btMainWindow()->navToolBar() );
+    btMainWindow()->navToolBar()->addWidget(keyChooser);
+    bool ok = connect(keyChooser, SIGNAL(keyChanged(CSwordKey*)), this, SLOT(lookupSwordKey(CSwordKey*)));
+    Q_ASSERT(ok);
+    btMainWindow()->navToolBar()->addAction(m_actions.backInHistory); //1st button
+    btMainWindow()->navToolBar()->addAction(m_actions.forwardInHistory); //2nd button
+
+    // Works toolbar
+    btMainWindow()->worksToolBar()->setModules(getModuleList(), modules().first()->type(), this);
+
+    // Tools toolbar
+    QAction* action = actionCollection()->action(
+                          CResMgr::displaywindows::general::search::actionName);
+    Q_ASSERT( action );
+    if (action) {
+        btMainWindow()->toolsToolBar()->addAction(action);
+    }
+    BtDisplaySettingsButton* button = new BtDisplaySettingsButton(buttonsToolBar());
+    setDisplaySettingsButton(button);
+    btMainWindow()->toolsToolBar()->addWidget(button);
 }
 
 void CLexiconReadWindow::setupPopupMenu() {

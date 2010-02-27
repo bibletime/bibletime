@@ -42,12 +42,14 @@ CBibleKeyChooser::CBibleKeyChooser(QList<CSwordModuleInfo*> modules,
     setFocusProxy(w_ref);
     layout->addWidget(w_ref);
 
-    connect(w_ref, SIGNAL(beforeChange(CSwordVerseKey *)), SLOT(beforeRefChange(CSwordVerseKey *)));
+    bool ok = connect(w_ref, SIGNAL(beforeChange(CSwordVerseKey *)), SLOT(beforeRefChange(CSwordVerseKey *)));
     connect(w_ref, SIGNAL(changed(CSwordVerseKey *)), SLOT(refChanged(CSwordVerseKey *)));
+    Q_ASSERT(ok);
 
     setKey(m_key); //set the key without changing it, setKey(key()) would change it
 
-    connect(this, SIGNAL(keyChanged(CSwordKey*)), history(), SLOT(add(CSwordKey*)) );
+    ok = connect(this, SIGNAL(keyChanged(CSwordKey*)), history(), SLOT(add(CSwordKey*)) );
+    Q_ASSERT(ok);
 }
 
 CSwordKey* CBibleKeyChooser::key() {
@@ -65,7 +67,7 @@ void CBibleKeyChooser::setKey(CSwordKey* key) {
 }
 
 void CBibleKeyChooser::beforeRefChange(CSwordVerseKey* key) {
-    Q_UNUSED(key); /// \todo Is this correct?
+    Q_UNUSED(key);
 
     Q_ASSERT(m_key);
 

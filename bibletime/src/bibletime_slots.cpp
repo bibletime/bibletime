@@ -28,6 +28,7 @@
 #include "frontend/cinputdialog.h"
 #include "frontend/cmdiarea.h"
 #include "frontend/bookshelfmanager/btmodulemanagerdialog.h"
+#include "frontend/displaywindow/btmodulechooserbar.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
 #include "frontend/profile/cprofilemgr.h"
 #include "frontend/profile/cprofile.h"
@@ -275,7 +276,7 @@ void BibleTime::slotAutoCascade() {
 }
 
 /** Shows/hides the toolbar */
-void BibleTime::slotToggleToolbar() {
+void BibleTime::slotToggleMainToolbar() {
     Q_ASSERT(m_mainToolBar);
     if (m_viewToolbarAction->isChecked()) {
         m_mainToolBar->show();
@@ -291,22 +292,80 @@ void BibleTime::slotToggleTextWindowHeader() {
     emit toggledTextWindowHeader(!currentState);
 }
 
-void BibleTime::slotToggleTextWindowNavigator() {
+void BibleTime::slotToggleNavigatorToolbar() {
     bool currentState = CBTConfig::get(CBTConfig::showTextWindowNavigator);
     CBTConfig::set(CBTConfig::showTextWindowNavigator, !currentState);
-    emit toggledTextWindowNavigator(!currentState);
+    showOrHideToolBars();
+    if (CBTConfig::get(CBTConfig::showToolbarsInEachWindow))
+        emit toggledTextWindowNavigator(!currentState);
+    else
+        emit toggledTextWindowNavigator(false);
 }
 
-void BibleTime::slotToggleTextWindowToolButtons() {
+void BibleTime::slotToggleToolsToolbar() {
     bool currentState = CBTConfig::get(CBTConfig::showTextWindowToolButtons);
     CBTConfig::set(CBTConfig::showTextWindowToolButtons, !currentState);
-    emit toggledTextWindowToolButtons(!currentState);
+    showOrHideToolBars();
+    if (CBTConfig::get(CBTConfig::showToolbarsInEachWindow))
+        emit toggledTextWindowToolButtons(!currentState);
+    else
+        emit toggledTextWindowToolButtons(false);
 }
 
-void BibleTime::slotToggleTextWindowModuleChooser() {
+void BibleTime::slotToggleWorksToolbar() {
     bool currentState = CBTConfig::get(CBTConfig::showTextWindowModuleSelectorButtons);
     CBTConfig::set(CBTConfig::showTextWindowModuleSelectorButtons, !currentState);
-    emit toggledTextWindowModuleChooser(!currentState);
+    showOrHideToolBars();
+    if (CBTConfig::get(CBTConfig::showToolbarsInEachWindow))
+        emit toggledTextWindowModuleChooser(!currentState);
+    else
+        emit toggledTextWindowModuleChooser(false);
+}
+
+void BibleTime::slotToggleFormatToolbar() {
+    bool currentState = CBTConfig::get(CBTConfig::showFormatToolbarButtons);
+    CBTConfig::set(CBTConfig::showFormatToolbarButtons, !currentState);
+    showOrHideToolBars();
+    if (CBTConfig::get(CBTConfig::showToolbarsInEachWindow))
+        emit toggledTextWindowFormatToolbar(!currentState);
+    else
+        emit toggledTextWindowFormatToolbar(false);
+}
+
+void BibleTime::slotToggleToolBarsInEachWindow() {
+    bool currentState = CBTConfig::get(CBTConfig::showToolbarsInEachWindow);
+    CBTConfig::set(CBTConfig::showToolbarsInEachWindow, !currentState);
+    showOrHideToolBars();
+
+    if (!currentState) {
+        emit toggledTextWindowNavigator(CBTConfig::get(CBTConfig::showTextWindowNavigator));
+        emit toggledTextWindowToolButtons(CBTConfig::get(CBTConfig::showTextWindowToolButtons));
+        emit toggledTextWindowModuleChooser(CBTConfig::get(CBTConfig::showTextWindowModuleSelectorButtons));
+        emit toggledTextWindowFormatToolbar(CBTConfig::get(CBTConfig::showFormatToolbarButtons));
+    }
+    else {
+        emit toggledTextWindowNavigator(false);
+        emit toggledTextWindowToolButtons(false);
+        emit toggledTextWindowModuleChooser(false);
+        emit toggledTextWindowFormatToolbar(false);
+    }
+
+
+}
+
+void BibleTime::showOrHideToolBars() {
+    if (CBTConfig::get(CBTConfig::showToolbarsInEachWindow)) {
+        m_navToolBar->setVisible(false);
+        m_worksToolBar->setVisible(false);
+        m_toolsToolBar->setVisible(false);
+        m_formatToolBar->setVisible(false);
+    }
+    else {
+        m_navToolBar->setVisible(CBTConfig::get(CBTConfig::showTextWindowNavigator));
+        m_worksToolBar->setVisible(CBTConfig::get(CBTConfig::showTextWindowModuleSelectorButtons));
+        m_toolsToolBar->setVisible(CBTConfig::get(CBTConfig::showTextWindowToolButtons));
+        m_formatToolBar->setVisible(CBTConfig::get(CBTConfig::showFormatToolbarButtons));
+    }
 }
 
 /** Sets the active window. */

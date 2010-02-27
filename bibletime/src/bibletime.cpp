@@ -141,7 +141,7 @@ void BibleTime::readSettings() {
     CBTConfig::setupAccelSettings(CBTConfig::application, m_actionCollection);
 
     m_viewToolbarAction->setChecked( CBTConfig::get(CBTConfig::toolbar) );
-    slotToggleToolbar();
+    slotToggleMainToolbar();
 
     if ( CBTConfig::get(CBTConfig::autoTileVertical) ) {
         m_windowAutoTileVerticalAction->setChecked( true );

@@ -43,7 +43,6 @@ class CKeyReferenceWidget : public QWidget  {
         void leaveEvent(QEvent *event);
         void resizeEvent(QResizeEvent *event);
         void resetDropDownButtons();
-        void updateText();
 
     protected slots: // Protected slots
         /**
@@ -61,6 +60,7 @@ class CKeyReferenceWidget : public QWidget  {
         void slotChangeBook(QString bookname);
         void slotChangeChapter(int chapter);
         void slotChangeVerse(int verse);
+        void updateText();
 
     private:
         friend class CLexiconKeyChooser;

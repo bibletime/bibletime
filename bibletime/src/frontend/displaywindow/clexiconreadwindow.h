@@ -50,6 +50,8 @@ class CLexiconReadWindow : public CReadWindow  {
         virtual void updatePopupMenu();
         virtual void setupPopupMenu();
 
+        /** Called to add actions to mainWindow toolbars */
+        virtual void setupMainWindowToolBars();
 
         struct ActionsStruct {
             BtToolBarPopupAction* backInHistory;

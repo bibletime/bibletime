@@ -74,7 +74,9 @@ enum bools {
     showTextWindowHeaders,
     showTextWindowNavigator,
     showTextWindowToolButtons,
-    showTextWindowModuleSelectorButtons
+    showTextWindowModuleSelectorButtons,
+    showFormatToolbarButtons,
+    showToolbarsInEachWindow
 };
 enum ints {
     footnotes,

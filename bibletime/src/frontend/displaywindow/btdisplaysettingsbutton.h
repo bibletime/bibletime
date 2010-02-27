@@ -27,6 +27,7 @@ class BtDisplaySettingsButton: public QToolButton {
     public:
         BtDisplaySettingsButton(QWidget *parent = 0);
 
+    public slots:
         void setDisplayOptions(const CSwordBackend::DisplayOptions &displaySettings,
                                bool repopulate = true);
         void setFilterOptions(const CSwordBackend::FilterOptions &moduleSettings,
@@ -36,6 +37,7 @@ class BtDisplaySettingsButton: public QToolButton {
     signals:
         void sigFilterOptionsChanged(CSwordBackend::FilterOptions filterOptions);
         void sigDisplayOptionsChanged(CSwordBackend::DisplayOptions displayOptions);
+        void sigModulesChanged(const QList<CSwordModuleInfo*> &modules);
         void sigChanged(void);
 
     protected slots:

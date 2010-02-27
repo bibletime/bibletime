@@ -54,6 +54,8 @@ class CCommentaryReadWindow : public CLexiconReadWindow  {
     protected:
         virtual void initActions();
         virtual void initToolbars();
+        /** Called to add actions to mainWindow toolbars */
+        virtual void setupMainWindowToolBars();
 
     private:
         QAction* m_syncButton;

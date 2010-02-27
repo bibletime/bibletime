@@ -52,6 +52,8 @@ class CPlainWriteWindow : public CWriteWindow  {
             return CDisplayWindow::PlainTextWindow;
         };
 
+        /** Called to add actions to mainWindow toolbars */
+        virtual void setupMainWindowToolBars();
         /**
          * Initializes the intern keyboard actions.
          */
@@ -60,15 +62,6 @@ class CPlainWriteWindow : public CWriteWindow  {
         * Insert the keyboard accelerators of this window into the given KAccel object.
         */
         static void insertKeyboardActions( BtActionCollection* const a );
-
-    private:
-        struct {
-            QAction* saveText;
-            QAction* deleteEntry;
-            QAction* restoreText;
-            QAction* syncWindow;
-        }
-        m_actions;
 
     protected slots: // Protected slots
         /**

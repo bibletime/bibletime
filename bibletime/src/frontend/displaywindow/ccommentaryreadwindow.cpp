@@ -15,9 +15,11 @@
 #include <QToolBar>
 #include "backend/config/cbtconfig.h"
 #include "backend/keys/cswordversekey.h"
+#include "bibletime.h"
 #include "frontend/display/cdisplay.h"
 #include "frontend/display/creaddisplay.h"
 #include "frontend/displaywindow/btactioncollection.h"
+#include "frontend/displaywindow/btmodulechooserbar.h"
 #include "frontend/keychooser/ckeychooser.h"
 #include "frontend/profile/cprofilewindow.h"
 #include "util/directory.h"
@@ -121,6 +123,11 @@ void CCommentaryReadWindow::storeProfileSettings( CProfileWindow* profileWindow 
 void CCommentaryReadWindow::initToolbars() {
     CLexiconReadWindow::initToolbars();
     buttonsToolBar()->addAction(m_syncButton);
+}
+
+void CCommentaryReadWindow::setupMainWindowToolBars() {
+    CLexiconReadWindow::setupMainWindowToolBars();
+    btMainWindow()->toolsToolBar()->addAction(m_syncButton);
 }
 
 /** Reimplementation to handle the keychooser refresh. */

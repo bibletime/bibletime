@@ -13,6 +13,7 @@
 #include <QMenu>
 #include <QSplitter>
 #include <QToolBar>
+#include "bibletime.h"
 #include "backend/config/cbtconfig.h"
 #include "backend/keys/cswordtreekey.h"
 #include "frontend/display/cdisplay.h"
@@ -103,14 +104,14 @@ void CBookReadWindow::initView() {
     setKeyChooser( CKeyChooser::createInstance(modules(), history(), key(), mainToolBar()) );
 
     // Create the Works toolbar
-    setModuleChooserBar( new BtModuleChooserBar(getModuleList(), modules().first()->type(), this) );
+    setModuleChooserBar( new BtModuleChooserBar(this));
+    moduleChooserBar()->setModules(getModuleList(), modules().first()->type(), this);
     addToolBar(moduleChooserBar());
 
     // Create the Tools toolbar
     setButtonsToolBar( new QToolBar(this) );
     buttonsToolBar()->setAllowedAreas(Qt::TopToolBarArea);
     buttonsToolBar()->setFloatable(false);
-    setDisplaySettingsButton(new BtDisplaySettingsButton(buttonsToolBar()));
     addToolBar(buttonsToolBar());
 
     setCentralWidget( splitter );
@@ -123,18 +124,42 @@ void CBookReadWindow::initToolbars() {
 
     mainToolBar()->addAction(m_actions.backInHistory);
     mainToolBar()->addAction(m_actions.forwardInHistory);
-
     mainToolBar()->addWidget(keyChooser());
 
-    buttonsToolBar()->addAction(m_treeAction);
+    // Tools toolbar
+    buttonsToolBar()->addAction(m_treeAction);  // Tree
     m_treeAction->setChecked(false);
-
-    buttonsToolBar()->addWidget(displaySettingsButton());
-
+    BtDisplaySettingsButton* button = new BtDisplaySettingsButton(buttonsToolBar());
+    setDisplaySettingsButton(button);
+    buttonsToolBar()->addWidget(button);  // Display settings
     QAction* action = qobject_cast<QAction*>(actionCollection()->action(
                           CResMgr::displaywindows::general::search::actionName ));
     if (action) {
-        buttonsToolBar()->addAction(action);
+        buttonsToolBar()->addAction(action);  // Search
+    }
+}
+
+void CBookReadWindow::setupMainWindowToolBars() {
+    // Navigation toolbar
+    btMainWindow()->navToolBar()->addAction(m_actions.backInHistory); //1st button
+    btMainWindow()->navToolBar()->addAction(m_actions.forwardInHistory); //2nd button
+    CKeyChooser* keyChooser = CKeyChooser::createInstance(modules(), history(), key(), btMainWindow()->navToolBar() );
+    btMainWindow()->navToolBar()->addWidget(keyChooser);
+    bool ok = connect(keyChooser, SIGNAL(keyChanged(CSwordKey*)), this, SLOT(lookupSwordKey(CSwordKey*)));
+    Q_ASSERT(ok);
+
+    // Works toolbar
+    btMainWindow()->worksToolBar()->setModules(getModuleList(), modules().first()->type(), this);
+
+    // Tools toolbar
+    btMainWindow()->toolsToolBar()->addAction(m_treeAction);  // Tree
+    BtDisplaySettingsButton* button = new BtDisplaySettingsButton(buttonsToolBar());
+    setDisplaySettingsButton(button);
+    btMainWindow()->toolsToolBar()->addWidget(button);  // Display settings
+    QAction* action = qobject_cast<QAction*>(actionCollection()->action(
+                          CResMgr::displaywindows::general::search::actionName ));
+    if (action) {
+        btMainWindow()->toolsToolBar()->addAction(action);  // Search 
     }
 }
 

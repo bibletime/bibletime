@@ -32,6 +32,7 @@ class QCloseEvent;
 class QMenu;
 class QToolBar;
 class BTHistory;
+class BibleTime;
 
 /** The base class for all display windows of BibleTime.
   * @author The BibleTime team
@@ -139,11 +140,6 @@ class CDisplayWindow : public QMainWindow, public CPointers {
         /** Initialize the toolbars.*/
         virtual void initToolbars() = 0;
 
-        /** Returns the display settings button. */
-        inline BtDisplaySettingsButton *displaySettingsButton() const {
-            return m_displaySettingsButton;
-        }
-
         /** Sets the display settings button.*/
         void setDisplaySettingsButton( BtDisplaySettingsButton* button );
 
@@ -166,6 +162,15 @@ class CDisplayWindow : public QMainWindow, public CPointers {
             return false;
         };
 
+        /**
+        * Return pointer to the BibleTime main window
+        */
+        BibleTime* btMainWindow();
+        /**
+        * Called when this window is activated
+        */
+        void windowActivated();
+
         inline BtActionCollection *actionCollection() const {
             return m_actionCollection;
         }
@@ -179,6 +184,13 @@ class CDisplayWindow : public QMainWindow, public CPointers {
         void sigModuleRemoved(int index);
         /** The module list of window changed but backend list didn't.*/
         void sigModuleListChanged();
+        /**  signal for change of display options */
+        void sigDisplayOptionsChanged(const CSwordBackend::DisplayOptions &displayOptions);
+        /**  signal for change of filter options */
+        void sigFilterOptionsChanged(const CSwordBackend::FilterOptions &filterOptions);
+        /**  signal for change of modules */
+        void sigModulesChanged(const QList<CSwordModuleInfo*> &modules);
+
     public slots:
         /** Receives a signal telling that a module should be added.*/
         void slotAddModule(int index, QString module);
@@ -200,6 +212,7 @@ class CDisplayWindow : public QMainWindow, public CPointers {
         void slotShowNavigator(bool show);
         void slotShowToolButtons(bool show);
         void slotShowModuleChooser(bool show);
+        void slotShowFormatToolBar(bool show);
         void slotShowHeader(bool show);
 
     protected:
@@ -254,7 +267,13 @@ class CDisplayWindow : public QMainWindow, public CPointers {
         /** Returns the installed RMB popup menu.*/
         QMenu* popup();
 
+        /** Called to add actions to mainWindow toolbars */
+        virtual void setupMainWindowToolBars() = 0;
+
         virtual void closeEvent(QCloseEvent* e);
+
+        void setToolBarsHidden();
+        void clearMainWindowToolBars();
 
     protected slots:
         /** Sets the new filter options of this window.*/
@@ -291,7 +310,6 @@ class CDisplayWindow : public QMainWindow, public CPointers {
         CSwordBackend::FilterOptions m_filterOptions;
         CSwordBackend::DisplayOptions m_displayOptions;
 
-        BtDisplaySettingsButton* m_displaySettingsButton;
         CKeyChooser* m_keyChooser;
         CSwordKey* m_swordKey;
         bool m_isReady;

@@ -21,8 +21,10 @@ class BtModuleChooserButton;
 class BtModuleChooserBar: public QToolBar, public BtWindowModuleChooser {
         Q_OBJECT
     public:
-        BtModuleChooserBar(QStringList useModules, CSwordModuleInfo::ModuleType type,  CReadWindow* parent);
-
+        BtModuleChooserBar(QWidget* parent);
+        /** Initialize with module list.*/
+        void setModules( QStringList useModules,CSwordModuleInfo::ModuleType type, CReadWindow* window);
+    
     public slots:
         /**
         * The backend module list was updated, module list and widgets must be updated.
@@ -39,9 +41,6 @@ class BtModuleChooserBar: public QToolBar, public BtWindowModuleChooser {
     private:
         /** Adds an empty button to the toolbar.*/
         BtModuleChooserButton* addButton();
-        /** Initialize with module list.*/
-        void setModules( QStringList useModules );
-
         /** Updates every button's menu without recreating it.*/
         void updateButtonMenus();
         /**
@@ -52,6 +51,8 @@ class BtModuleChooserBar: public QToolBar, public BtWindowModuleChooser {
 
     private:
         int m_idCounter;
+        CReadWindow* m_window;
+        CSwordModuleInfo::ModuleType m_moduleType;
         QList<BtModuleChooserButton*> m_buttonList;
 };
 
