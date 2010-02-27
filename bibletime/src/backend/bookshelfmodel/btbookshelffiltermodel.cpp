@@ -184,12 +184,7 @@ bool BtBookshelfFilterModel::categoryFilterAcceptsRow(int row,
     int numChildren(m->rowCount(itemIndex));
     if (numChildren == 0) {
         int cat = m->data(itemIndex, m_categoryFilterRole).toInt();
-        if (m_categoryFilter.testFlag((CSwordModuleInfo::Category) cat)) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return m_categoryFilter.testFlag((CSwordModuleInfo::Category) cat);
     }
     else {
         for (int i(0); i < numChildren; i++) {
