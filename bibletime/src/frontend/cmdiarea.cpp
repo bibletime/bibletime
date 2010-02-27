@@ -28,6 +28,13 @@ CMDIArea::CMDIArea(BibleTime *parent)
     setDocumentMode(true);
     #endif
 
+    /*
+      Activate windows based on the history of activation, e.g. when one has window A
+      activated, and activates window B and then closes window B, then window A is activated.
+    */
+    setActivationOrder(QMdiArea::ActivationHistoryOrder);
+
+    // Show scrollbars only when needed:
     setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
     setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
 
