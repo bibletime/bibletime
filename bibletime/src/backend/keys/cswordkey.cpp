@@ -157,6 +157,10 @@ const QTextCodec* CSwordKey::cp1252Codec() {
     return codec;
 }
 
+void CSwordKey::emitChanged() {
+    if (!m_signal.isNull()) return;
+    m_signal->emitChanged();
+}
 
 /** This will create a proper key object from a given module */
 CSwordKey* CSwordKey::createInstance( CSwordModuleInfo* const module ) {
