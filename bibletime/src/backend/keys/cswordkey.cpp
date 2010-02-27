@@ -187,7 +187,7 @@ CSwordKey* CSwordKey::createInstance( CSwordModuleInfo* const module ) {
 }
 
 const BtSignal* CSwordKey::signaler() {
-    if (m_signal == 0)
+    if (m_signal.isNull())
         m_signal = new BtSignal();
     return m_signal;
 }
