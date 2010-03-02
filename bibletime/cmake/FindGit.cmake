@@ -9,8 +9,7 @@
 
 SET(Git_FOUND FALSE)
 
-FIND_PROGRAM(Git_EXECUTABLE git
-  DOC "git command line client")
+FIND_PROGRAM(Git_EXECUTABLE git DOC "git command line client")
 MARK_AS_ADVANCED(Git_EXECUTABLE)
 
 IF(Git_EXECUTABLE)
@@ -18,32 +17,38 @@ IF(Git_EXECUTABLE)
   MACRO(Git_WC_INFO dir prefix)
     EXECUTE_PROCESS(COMMAND ${Git_EXECUTABLE} rev-list -n 1 HEAD
        WORKING_DIRECTORY ${dir}
-        ERROR_VARIABLE Git_error
+       RESULT_VARIABLE Git_result
        OUTPUT_VARIABLE ${prefix}_WC_REVISION_HASH
-        OUTPUT_STRIP_TRAILING_WHITESPACE)
-    if(NOT ${Git_error} EQUAL 0)
-      MESSAGE(SEND_ERROR "Command \"${Git_EXECUTABLE} rev-list -n 1 HEAD\" in directory ${dir} failed with output:\n${Git_error}")
-    ELSE(NOT ${Git_error} EQUAL 0)
-      EXECUTE_PROCESS(COMMAND ${Git_EXECUTABLE} name-rev ${${prefix}_WC_REVISION_HASH}
-         WORKING_DIRECTORY ${dir}
-         OUTPUT_VARIABLE ${prefix}_WC_REVISION_NAME
-          OUTPUT_STRIP_TRAILING_WHITESPACE)
+       OUTPUT_STRIP_TRAILING_WHITESPACE
+       ERROR_QUIET)
+    IF(NOT ((${Git_result} EQUAL 0) AND (NOT ${${prefix}_WC_REVISION_HASH} MATCHES "^$")))
+      # MESSAGE(STATUS "Unable to find a git setup.")
+      UNSET(${prefix}_WC_REVISION_HASH)
+    ELSE(NOT ((${Git_result} EQUAL 0) AND (NOT ${${prefix}_WC_REVISION_HASH} MATCHES "^$")))
+      # MESSAGE(STATUS "Found git HEAD: ${${prefix}_WC_REVISION_HASH}")
       EXECUTE_PROCESS(COMMAND ${Git_EXECUTABLE} rev-list --grep=git-svn-id: -n 1 HEAD
          WORKING_DIRECTORY ${dir}
-          ERROR_VARIABLE Git_svn_error
+         RESULT_VARIABLE Git_result2
          OUTPUT_VARIABLE ${prefix}_WC_SVN_REVISION_HASH
-          OUTPUT_STRIP_TRAILING_WHITESPACE)
-      IF(Git_svn_error STREQUAL "")
+         OUTPUT_STRIP_TRAILING_WHITESPACE)
+      IF(NOT ((${Git_result2} EQUAL 0) AND (NOT ${${prefix}_WC_SVN_REVISION_HASH} MATCHES "^$")))
+        # MESSAGE(STATUS "Unable to find a git-svn setup.")
+        UNSET(${prefix}_WC_SVN_REVISION_HASH)
+      ELSE(NOT ((${Git_result2} EQUAL 0) AND (NOT ${${prefix}_WC_SVN_REVISION_HASH} MATCHES "^$")))
+        # MESSAGE(STATUS "Latest commit also in SVN is ${${prefix}_WC_REVISION_HASH}")
         EXECUTE_PROCESS(COMMAND ${Git_EXECUTABLE} svn find-rev ${${prefix}_WC_SVN_REVISION_HASH}
            WORKING_DIRECTORY ${dir}
-            ERROR_VARIABLE Git_svn_error
+           RESULT_VARIABLE Git_result3
            OUTPUT_VARIABLE ${prefix}_WC_SVN_REVISION
-            OUTPUT_STRIP_TRAILING_WHITESPACE)
-        IF(NOT ${Git_svn_error} EQUAL 0)
-          MESSAGE(SEND_ERROR "Command \"${Git_EXECUTABLE} svn find-rev ${${prefix}_WC_SVN_REVISION_HASH}\" in directory ${dir} failed with output:\n${Git_error}")
-        ENDIF(NOT ${Git_svn_error} EQUAL 0)
-      ENDIF(Git_svn_error STREQUAL "")
-    ENDIF(NOT ${Git_error} EQUAL 0)
+           OUTPUT_STRIP_TRAILING_WHITESPACE)
+        IF((${Git_result3} EQUAL 0) AND (NOT ${${prefix}_WC_SVN_REVISION} MATCHES "^$"))
+          # MESSAGE(STATUS " which is in SVN as revision ${${prefix}_WC_SVN_REVISION}")
+        ELSE((${Git_result3} EQUAL 0) AND (NOT ${${prefix}_WC_SVN_REVISION} MATCHES "^$"))
+          # MESSAGE(WARNING "Unable to determine the SVN revision number!")
+          UNSET(${prefix}_WC_SVN_REVISION)
+        ENDIF((${Git_result3} EQUAL 0) AND (NOT ${${prefix}_WC_SVN_REVISION} MATCHES "^$"))
+      ENDIF(NOT ((${Git_result2} EQUAL 0) AND (NOT ${${prefix}_WC_SVN_REVISION_HASH} MATCHES "^$")))
+    ENDIF(NOT ((${Git_result} EQUAL 0) AND (NOT ${${prefix}_WC_REVISION_HASH} MATCHES "^$")))
   ENDMACRO(Git_WC_INFO)
 ENDIF(Git_EXECUTABLE)
 

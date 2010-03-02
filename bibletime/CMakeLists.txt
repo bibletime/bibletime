@@ -1,39 +1,48 @@
 PROJECT(bibletime CXX C)
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6.0)
+SET(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
-SET(BT_WC_REVISION "0")
-IF (EXISTS ${PROJECT_SOURCE_DIR}/.svn)
-    # Probably a SVN workspace, determine revision level
-    FIND_PACKAGE(Subversion)
-    IF (Subversion_FOUND)
-        Subversion_WC_INFO(${PROJECT_SOURCE_DIR} BT)
-        MESSAGE(STATUS "Current SVN revision is ${BT_WC_REVISION}")
-    ENDIF (Subversion_FOUND)
-ELSE (EXISTS ${PROJECT_SOURCE_DIR}/.svn)
-    # Check for git-svn workspace, determine revision level
-    SET(CMAKE_MODULE_PATH_OLD ${CMAKE_MODULE_PATH})
-    SET(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
-    FIND_PACKAGE(Git)
-    IF (Git_FOUND)
-        Git_WC_INFO(${PROJECT_SOURCE_DIR} BT)
-        IF (Git_error STREQUAL "" AND Git_svn_error STREQUAL "")
-            SET(BT_WC_REVISION ${BT_WC_SVN_REVISION})
-            MESSAGE(STATUS "Current SVN revision is ${BT_WC_REVISION}")
-        ENDIF (Git_error STREQUAL "" AND Git_svn_error STREQUAL "")
-    ENDIF (Git_FOUND)
-    SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH_OLD})
-    UNSET(CMAKE_MODULE_PATH_OLD)
-ENDIF (EXISTS ${PROJECT_SOURCE_DIR}/.svn)
-
-#Version
+# BibleTime version
 SET(BT_VERSION_MAJOR "2")
 SET(BT_VERSION_MINOR "7")
-SET(BT_REVISION_PATCH "+svn${BT_WC_REVISION}")
 #SET(BT_REVISION_PATCH ".rc1")
-ADD_DEFINITIONS(-DBT_SVN_REVISION="${SVN_REVISION}")
-ADD_DEFINITIONS(-DBT_VERSION="${BT_VERSION_MAJOR}.${BT_VERSION_MINOR}${BT_REVISION_PATCH}")
 
-MESSAGE(STATUS "Setting up build environment for BibleTime version ${BT_VERSION_MAJOR}.${BT_VERSION_MINOR}${BT_REVISION_PATCH}")
+# Determine SVN patch version, if needed:
+IF (NOT (DEFINED BT_REVISION_PATCH))
+  IF (EXISTS ${PROJECT_SOURCE_DIR}/.svn)
+      # Probably a SVN workspace, determine revision level
+      FIND_PACKAGE(Subversion)
+      IF (Subversion_FOUND)
+          Subversion_WC_INFO(${PROJECT_SOURCE_DIR} BT)
+          IF (DEFINED BT_WC_REVISION)
+            SET(BT_SVN_REVISION ${BT_WC_REVISION})
+          ENDIF (DEFINED BT_WC_REVISION)
+      ENDIF (Subversion_FOUND)
+  ELSE (EXISTS ${PROJECT_SOURCE_DIR}/.svn)
+      # Check for git-svn workspace, determine revision level
+      SET(Git_FIND_QUIETLY TRUE)
+      FIND_PACKAGE(Git)
+      IF (Git_FOUND)
+          Git_WC_INFO(${PROJECT_SOURCE_DIR} BT)
+          IF (DEFINED BT_WC_SVN_REVISION)
+            SET(BT_SVN_REVISION ${BT_WC_SVN_REVISION})
+          ENDIF (DEFINED BT_WC_SVN_REVISION)
+      ENDIF (Git_FOUND)
+  ENDIF (EXISTS ${PROJECT_SOURCE_DIR}/.svn)
+
+  IF (DEFINED BT_SVN_REVISION)
+    MESSAGE(STATUS "Found SVN revision ${BT_SVN_REVISION}")
+    SET(BT_REVISION_PATCH "+svn${BT_SVN_REVISION}")
+  ENDIF (DEFINED BT_SVN_REVISION)
+ENDIF (NOT (DEFINED BT_REVISION_PATCH))
+
+SET(BT_VERSION_FULL "${BT_VERSION_MAJOR}.${BT_VERSION_MINOR}${BT_REVISION_PATCH}")
+MESSAGE(STATUS "Setting up build environment for BibleTime version ${BT_VERSION_FULL}")
+
+ADD_DEFINITIONS(-DBT_VERSION="${BT_VERSION_FULL}")
+IF (DEFINED BT_SVN_REVISION)
+    ADD_DEFINITIONS(-DBT_SVN_REVISION="${BT_SVN_REVISION}")
+ENDIF (DEFINED BT_SVN_REVISION)
 
 # Define debug flags
 IF (NOT CMAKE_BUILD_TYPE STREQUAL "Release")
@@ -67,7 +76,6 @@ FIND_PACKAGE(Boost REQUIRED)
 #
 #custom includes
 #
-SET(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 FIND_PACKAGE(CLucene REQUIRED)
 
 # optional: Try to detect CURL, ICU and ZLib and add it to the linker flags if found, maybe Sword needs it
