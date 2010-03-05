@@ -22,342 +22,409 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BibleTime</name>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="542"/>
+        <location filename="../../src/bibletime_init.cpp" line="593"/>
         <source>&amp;File</source>
         <translation>&amp;Fail</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="543"/>
+        <location filename="../../src/bibletime_init.cpp" line="594"/>
         <source>&amp;View</source>
         <translation>&amp;Vaade</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="552"/>
+        <location filename="../../src/bibletime_init.cpp" line="607"/>
         <source>&amp;Search</source>
         <translation>&amp;Otsing</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="553"/>
+        <location filename="../../src/bibletime_init.cpp" line="608"/>
         <source>&amp;Window</source>
         <translation>A&amp;ken</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="559"/>
+        <location filename="../../src/bibletime_init.cpp" line="614"/>
         <source>Se&amp;ttings</source>
         <translation>&amp;Seaded</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="560"/>
+        <location filename="../../src/bibletime_init.cpp" line="615"/>
         <source>&amp;Help</source>
         <translation>&amp;Abi</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="120"/>
+        <location filename="../../src/bibletime_init.cpp" line="121"/>
         <source>&amp;Show toolbar</source>
         <translation>Näita &amp;tööriistariba</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="113"/>
+        <location filename="../../src/bibletime_init.cpp" line="114"/>
         <source>&amp;Fullscreen mode</source>
         <translation>Täis&amp;ekraanvaade</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="540"/>
         <source>Main Toolbar</source>
-        <translation>Peamine tööriistariba</translation>
+        <translation type="obsolete">Peamine tööriistariba</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="106"/>
+        <location filename="../../src/bibletime_init.cpp" line="107"/>
         <source>&amp;Quit</source>
         <translation>&amp;Välju</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="253"/>
+        <location filename="../../src/bibletime_init.cpp" line="254"/>
         <source>Open the Bible study HowTo included with BibleTime.&lt;br/&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
         <translation>Ava BibleTime-ga kaasasolev Piibli uurimise õpetus.&lt;br/&gt;See õpetus on sissejuhatus Piibli efektiivseks uurimiseks.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="258"/>
+        <location filename="../../src/bibletime_init.cpp" line="259"/>
         <source>Information about the BibleTime program</source>
         <translation>Informatsioon BibleTime kohta</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="544"/>
         <source>Show Bookshelf</source>
-        <translation>Näita raamaturiiulit</translation>
+        <translation type="obsolete">Näita raamaturiiulit</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="545"/>
         <source>Show Bookmarks</source>
-        <translation>Näita järjehoidjaid</translation>
+        <translation type="obsolete">Näita järjehoidjaid</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="546"/>
         <source>Show Mag</source>
-        <translation>Näita infopaneeli</translation>
+        <translation type="obsolete">Näita infopaneeli</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="547"/>
         <source>Text windows</source>
-        <translation>Tekstiaknad</translation>
+        <translation type="obsolete">Tekstiaknad</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="548"/>
         <source>Show text area headers</source>
-        <translation>Näita tekstiala päiseid</translation>
+        <translation type="obsolete">Näita tekstiala päiseid</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="549"/>
+        <location filename="../../src/bibletime_init.cpp" line="600"/>
         <source>Show navigation</source>
         <translation>Näita navigeerimisvidinaid</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="550"/>
         <source>Show work chooser buttons</source>
-        <translation>Näita teoste valimise nuppe</translation>
+        <translation type="obsolete">Näita teoste valimise nuppe</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="551"/>
+        <location filename="../../src/bibletime_init.cpp" line="602"/>
         <source>Show tools</source>
         <translation>Näita tööriistu</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="554"/>
         <source>O&amp;pen Windows</source>
-        <translation>Ava&amp;tud aknad</translation>
+        <translation type="obsolete">Ava&amp;tud aknad</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="556"/>
+        <location filename="../../src/bibletime_init.cpp" line="611"/>
         <source>&amp;Save session</source>
         <translation>&amp;Salvesta sessioon</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="557"/>
+        <location filename="../../src/bibletime_init.cpp" line="612"/>
         <source>&amp;Load session</source>
         <translation>&amp;Lae sessioon</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="558"/>
+        <location filename="../../src/bibletime_init.cpp" line="613"/>
         <source>&amp;Delete session</source>
         <translation>&amp;Kustuta sessioon</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="555"/>
+        <location filename="../../src/bibletime_init.cpp" line="610"/>
         <source>&amp;Arrangement mode</source>
         <translation>&amp;Asetusviis</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="146"/>
+        <location filename="../../src/bibletime_init.cpp" line="147"/>
         <source>&amp;Manual mode</source>
         <translation>&amp;Käsitiasetus</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="153"/>
+        <location filename="../../src/bibletime_init.cpp" line="154"/>
         <source>Auto-tile &amp;vertically</source>
         <translation>Automaatne &amp;vertikaalasetus</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="160"/>
+        <location filename="../../src/bibletime_init.cpp" line="161"/>
         <source>Auto-tile &amp;horizontally</source>
         <translation>Automaatne &amp;horisontaalasetus</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="181"/>
+        <location filename="../../src/bibletime_init.cpp" line="182"/>
         <source>Auto-&amp;cascade</source>
         <translation>Automaatne k&amp;askaadasetus</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="188"/>
+        <location filename="../../src/bibletime_init.cpp" line="189"/>
         <source>&amp;Cascade</source>
         <translation>Aseta &amp;kaskaadi</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="202"/>
+        <location filename="../../src/bibletime_init.cpp" line="203"/>
         <source>Tile &amp;vertically</source>
         <translation>Aseta &amp;vertikaalselt </translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="209"/>
+        <location filename="../../src/bibletime_init.cpp" line="210"/>
         <source>Tile &amp;horizontally</source>
         <translation>Aseta &amp;horisontaalselt</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="223"/>
+        <location filename="../../src/bibletime_init.cpp" line="224"/>
         <source>Cl&amp;ose all windows</source>
         <translation>Sulge &amp;kõik aknad</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="226"/>
+        <location filename="../../src/bibletime_init.cpp" line="227"/>
         <source>Close all open windows inside BibleTime</source>
         <translation>Sulge kõik BibleTime sees avatud aknad</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="243"/>
+        <location filename="../../src/bibletime_init.cpp" line="244"/>
         <source>&amp;Handbook</source>
         <translation>&amp;Käsiraamat</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="250"/>
+        <location filename="../../src/bibletime_init.cpp" line="251"/>
         <source>&amp;Bible Study Howto</source>
         <translation>&amp;Piibli uurimise õpetus</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="493"/>
+        <location filename="../../src/bibletime_slots.cpp" line="552"/>
         <source>Please enter a name for the new session.</source>
         <translation>Palun sisestage nimetus uue sessiooni jaoks.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="109"/>
+        <location filename="../../src/bibletime_init.cpp" line="110"/>
         <source>Quit BibleTime</source>
         <translation>Välju BibleTime&apos;st</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="116"/>
+        <location filename="../../src/bibletime_init.cpp" line="117"/>
         <source>Toggle fullscreen mode of the main window</source>
         <translation>Kasuta täisekraanvaadet peaakna jaoks</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="125"/>
+        <location filename="../../src/bibletime_init.cpp" line="126"/>
         <source>Search in &amp;open works...</source>
         <translation>&amp;Otsi avatud teostest...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="132"/>
+        <location filename="../../src/bibletime_init.cpp" line="133"/>
         <source>Search in standard &amp;Bible...</source>
         <translation>Otsi &amp;eelistatud Piiblist...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="139"/>
+        <location filename="../../src/bibletime_init.cpp" line="140"/>
         <source>Save as &amp;new session...</source>
         <translation>Salvesta &amp;uue sessioonina...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="142"/>
+        <location filename="../../src/bibletime_init.cpp" line="143"/>
         <source>Create and save a new session</source>
         <translation>Loo ja salvesta uus sessioon</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="149"/>
+        <location filename="../../src/bibletime_init.cpp" line="150"/>
         <source>Manually arrange the open windows</source>
         <translation>Paiguta avatud aknad käsitsi</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="156"/>
+        <location filename="../../src/bibletime_init.cpp" line="157"/>
         <source>Automatically tile the open windows vertically (arrange side by side)</source>
         <translation>Aseta avatud aknad automaatselt vertikaalselt (üksteise kõrvale)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="163"/>
+        <location filename="../../src/bibletime_init.cpp" line="164"/>
         <source>Automatically tile the open windows horizontally (arrange on top of each other)</source>
         <translation>Aseta avatud aknad automaatselt horisontaalselt (üksteise kohale)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="167"/>
+        <location filename="../../src/bibletime_init.cpp" line="168"/>
         <source>Auto-&amp;tile</source>
         <translation>Automaatne asetus &amp;ruudustikku</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="170"/>
+        <location filename="../../src/bibletime_init.cpp" line="171"/>
         <source>Automatically tile the open windows</source>
         <translation>Aseta avatud aknad automaatselt ruudustikku</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="174"/>
+        <location filename="../../src/bibletime_init.cpp" line="175"/>
         <source>Ta&amp;bbed</source>
         <translation>&amp;Sakkidesse</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="177"/>
+        <location filename="../../src/bibletime_init.cpp" line="178"/>
         <source>Automatically tab the open windows</source>
         <translation>Aseta avatud aknad automaatselt sakkidesse</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="184"/>
+        <location filename="../../src/bibletime_init.cpp" line="185"/>
         <source>Automatically cascade the open windows</source>
         <translation>Aseta avatud aknad automaatselt kaskaadi</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="191"/>
+        <location filename="../../src/bibletime_init.cpp" line="192"/>
         <source>Cascade the open windows</source>
         <translation>Aseta avatud aknad kaskaadi</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="195"/>
+        <location filename="../../src/bibletime_init.cpp" line="196"/>
         <source>&amp;Tile</source>
         <translation>Aseta &amp;ruudustikku</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="198"/>
+        <location filename="../../src/bibletime_init.cpp" line="199"/>
         <source>Tile the open windows</source>
         <translation>Aseta avatud aknad ruudustikku</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="205"/>
+        <location filename="../../src/bibletime_init.cpp" line="206"/>
         <source>Vertically tile (arrange side by side) the open windows</source>
         <translation>Aseta avatud aknad vertikaalselt (üksteise kõrvale)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="212"/>
+        <location filename="../../src/bibletime_init.cpp" line="213"/>
         <source>Horizontally tile (arrange on top of each other) the open windows</source>
         <translation>Aseta avatud aknad horisontaalselt (üksteise kohale)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="216"/>
+        <location filename="../../src/bibletime_init.cpp" line="217"/>
         <source>Close &amp;window</source>
         <translation>Sul&amp;ge aken</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="219"/>
+        <location filename="../../src/bibletime_init.cpp" line="220"/>
         <source>Close the current open window</source>
         <translation>Sulge aktiivne aken</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="230"/>
+        <location filename="../../src/bibletime_init.cpp" line="231"/>
         <source>&amp;Configure BibleTime...</source>
         <translation>&amp;Seadista BibleTime...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="232"/>
+        <location filename="../../src/bibletime_init.cpp" line="233"/>
         <source>Set BibleTime&apos;s preferences</source>
         <translation>Muuda BibleTime seadistusi</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="236"/>
+        <location filename="../../src/bibletime_init.cpp" line="237"/>
         <source>Bookshelf &amp;Manager...</source>
         <translation>Raamaturiiuli &amp;haldamine...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="239"/>
+        <location filename="../../src/bibletime_init.cpp" line="240"/>
         <source>Configure your bookshelf and install/update/remove/index works</source>
         <translation>Seadista oma raamaturiiul ning paigalda/uuenda/eemalda/indekseeri teoseid</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="246"/>
+        <location filename="../../src/bibletime_init.cpp" line="247"/>
         <source>Open BibleTime&apos;s handbook</source>
         <translation>Ava BibleTime&apos; käsiraamat</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="563"/>
+        <location filename="../../src/bibletime_init.cpp" line="587"/>
+        <source>Main toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="588"/>
+        <source>Navigation toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="589"/>
+        <source>Works toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="590"/>
+        <source>Tools toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="591"/>
+        <source>Format toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="595"/>
+        <source>Show bookshelf</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="596"/>
+        <source>Show bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="597"/>
+        <source>Show mag</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="598"/>
+        <source>Toolbars</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="599"/>
+        <source>Show main</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="601"/>
+        <source>Show works</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="603"/>
+        <source>Show format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="604"/>
+        <source>Show toolbars in text windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="606"/>
+        <source>Show parallel text headers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="609"/>
+        <source>O&amp;pen windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="618"/>
         <source>Show &quot;Whats this widget&quot; dialog</source>
         <translation>Näita &quot;Mis vidin see on?&quot; akent</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="732"/>
+        <location filename="../../src/bibletime_init.cpp" line="787"/>
         <source>Whats this widget?</source>
         <translation>Mis vidin see on?</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="128"/>
+        <location filename="../../src/bibletime_init.cpp" line="129"/>
         <source>Search in all works that are currently open</source>
         <translation>Otsi kõikidest hetkel avatud teostest</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="135"/>
+        <location filename="../../src/bibletime_init.cpp" line="136"/>
         <source>Search in the standard Bible</source>
         <translation>Otsi eelistatud Piiblist</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="492"/>
+        <location filename="../../src/bibletime_slots.cpp" line="551"/>
         <source>New Session</source>
         <translation>Uus sessioon</translation>
     </message>
@@ -401,17 +468,17 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="obsolete">Sisestage võti selle teose avamiseks.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="257"/>
+        <location filename="../../src/bibletime_init.cpp" line="258"/>
         <source>&amp;About BibleTime</source>
         <translation>&amp;Info BibleTime kohta</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="538"/>
+        <location filename="../../src/bibletime_init.cpp" line="585"/>
         <source>Bookmarks</source>
         <translation>Järjehoidjad</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="539"/>
+        <location filename="../../src/bibletime_init.cpp" line="586"/>
         <source>Mag</source>
         <translation>Info</translation>
     </message>
@@ -822,22 +889,22 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtFontSettingsPage</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="44"/>
+        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="155"/>
         <source>You can specify a custom font for each language.</source>
         <translation>Te võite määrata iga keele jaoks kohandatud kirjatüübi.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="50"/>
+        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="43"/>
         <source>The font selection below will apply to all texts in this language</source>
         <translation>Allpoololev kirjatüübi valik rakendub kõikidele selle keele tekstidele</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="74"/>
+        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="67"/>
         <source>Use custom font</source>
         <translation>Kasuta kohandatud kirjatüüpi</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="165"/>
+        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="159"/>
         <source>Fonts</source>
         <translation>Kirjatüübid</translation>
     </message>
@@ -885,23 +952,23 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Paigaldatud teoste indeksite haldamine.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="95"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="97"/>
         <source>Search Indexes</source>
         <translation>Otsinguindeksid</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="107"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="109"/>
         <source>Indexed Works</source>
         <translation>Indekseeritud teosed</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="112"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="114"/>
         <source>Unindexed Works</source>
         <translation>Indekseerimata teosed</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="125"/>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="132"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="127"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="134"/>
         <source>KiB</source>
         <translation>kiB</translation>
     </message>
@@ -945,38 +1012,38 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtInstallPage</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="90"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="91"/>
         <source>Install folder:</source>
         <translation>Paigalduskataloog:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="95"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="96"/>
         <source>The folder where the new works will be installed</source>
         <translation>Kataloog, kuhu paigaldatakse uued teosed</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="99"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="100"/>
         <source>Configure folders where works are installed and found</source>
         <translation>Seadista kataloogid kuhu teoseid paigaldatakse ja kust neid leitakse</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="179"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="181"/>
         <source>Install and update works. Add remote or local sources, refresh them, select the works to be installed/updated and click Install.&lt;br/&gt;&lt;b&gt;WARNING:&lt;/b&gt; If you live in a persecuted country and don&apos;t want to risk detection don&apos;t use remote sources.</source>
         <translatorcomment>&quot;remote&quot; -&gt; &quot;kaug-&quot; is fuzzy</translatorcomment>
         <translation>Paigalda ja uuenda teoseid. Lisa kaug- ja kohalikke allikaid, värskenda neid, vali teosed paigaldamiseks/uuendamiseks ning vajuta Paigalda.&lt;br/&gt;&lt;b&gt;HOIATUS:&lt;/b&gt; Kui Te elate riigis, kus Teid võidakse taga kiusata, ning Te ei soovi riskeerida Teie avastamisega, ärge kasutage kaug-allikaid.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="182"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="185"/>
         <source>Install/Update</source>
         <translation>Paigalda/uuenda</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="115"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="116"/>
         <source>Install...</source>
         <translation>Paigalda...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="116"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="117"/>
         <source>Install or update selected works</source>
         <translation>Paigalda või uuenda valitud teosed</translation>
     </message>
@@ -1137,22 +1204,22 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtLanguageSettingsPage</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="40"/>
+        <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="145"/>
         <source>Select the language in which the Biblical book names are displayed.</source>
         <translation>Valige keel, milles kuvatakse Piibli raamatute nimed.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="44"/>
+        <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="38"/>
         <source>Language for names of Bible books:</source>
         <translation>Piibli raamatute nimede keel:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="46"/>
+        <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="40"/>
         <source>The languages which can be used for the biblical booknames</source>
         <translation>Keeled, mida saab kasutada Piibli raamatute nimede jaoks</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="154"/>
+        <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="149"/>
         <source>Languages</source>
         <translation>Keeled</translation>
     </message>
@@ -1195,22 +1262,22 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtRemovePage</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="84"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="87"/>
         <source>Remove</source>
         <translation>Eemalda</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="76"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="79"/>
         <source>Remove installed works. Select the works and click Remove button.</source>
         <translation>Paigaldatud teoste eemaldamine. Valige teosed ja vajutage eemaldamisnupul.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="99"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="102"/>
         <source>You selected the following work(s): </source>
         <translation>Valisite järgmised teos(ed):</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="102"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="105"/>
         <source>Do you really want to remove them from your system?</source>
         <translation>Kas soovite need tõesti enda süsteemist eemaldada?</translation>
     </message>
@@ -1225,7 +1292,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Eemalda valitud teosed</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="104"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="107"/>
         <source>Remove Works?</source>
         <translation>Eemaldada teosed?</translation>
     </message>
@@ -1480,42 +1547,42 @@ kiirklahv</translation>
 <context>
     <name>CAcceleratorSettingsPage</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="40"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="41"/>
         <source>Choose action group:</source>
         <translation>Valige tegevuste rühm:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="52"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="53"/>
         <source>Main Window</source>
         <translation>Peaaken</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="53"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="54"/>
         <source>All text windows</source>
         <translation>Kõik tekstiaknad</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="54"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="55"/>
         <source>Bible windows</source>
         <translation>Piibliaknad</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="55"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="56"/>
         <source>Commentary windows</source>
         <translation>Kommentaaride aknad</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="56"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="57"/>
         <source>Lexicon windows</source>
         <translation>Leksikonide aknad</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="57"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="58"/>
         <source>Book windows</source>
         <translation>Raamatute aknad</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="179"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="180"/>
         <source>
    &quot;%1&quot; in the &quot;%2&quot; group</source>
         <translation>
@@ -1637,7 +1704,7 @@ kiirklahv</translation>
 <context>
     <name>CBookReadWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="76"/>
+        <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="77"/>
         <source>Toggle tree view</source>
         <translation>Kuva sisukord</translation>
     </message>
@@ -1729,42 +1796,42 @@ kiirklahv</translation>
 <context>
     <name>CCommentaryReadWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="35"/>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="37"/>
         <source>Next book</source>
         <translation>Järgmine raamat</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="39"/>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="41"/>
         <source>Previous book</source>
         <translation>Eelmine raamat</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="43"/>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="45"/>
         <source>Next chapter</source>
         <translation>Järgmine peatükk</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="47"/>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="49"/>
         <source>Previous chapter</source>
         <translation>Eelmine peatükk</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="51"/>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="53"/>
         <source>Next verse</source>
         <translation>Järgmine salm</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="55"/>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="57"/>
         <source>Previous verse</source>
         <translation>Eelmine salm</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="60"/>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="62"/>
         <source>Synchronize</source>
         <translation>Sünkroniseeri</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="63"/>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="65"/>
         <source>Synchronize the displayed entry of this work with the active Bible window</source>
         <translation>Sünkroniseeri selle teose kuvatud kirje aktiivse piibliaknaga</translation>
     </message>
@@ -1780,67 +1847,67 @@ kiirklahv</translation>
 <context>
     <name>CDisplaySettingsPage</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="65"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="67"/>
         <source>Display templates</source>
         <translation>Kuvamallid</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="76"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="78"/>
         <source>Available display styles:</source>
         <translation>Saadaval olevad mallid:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="86"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="88"/>
         <source>Style preview</source>
         <translation>Malli eelvaade</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="122"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="124"/>
         <source>For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.</source>
         <translation>Sest nõnda on Jumal maailma armastanud, et ta oma ainusündinud Poja on andnud, et ükski, kes temasse usub, ei hukkuks, vaid et tal oleks igavene elu.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="129"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="131"/>
         <source>For God didn&apos;t send his Son into the world to judge the world, but that the world should be saved through him.</source>
         <translation>Jumal ei ole ju läkitanud oma Poega maailma, et ta kohut mõistaks maailma üle, vaid et maailm tema läbi päästetaks.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="136"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="138"/>
         <source>He who believes in him is not judged. He who doesn&apos;t believe has been judged already, because he has not believed in the name of the one and only Son of God.</source>
         <translation>Kes temasse usub, selle üle ei mõisteta kohut, ja kes ei usu, selle üle on kohus juba mõistetud, sest ta ei ole uskunud Jumala ainusündinud Poja nimesse.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="146"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="148"/>
         <source>For everyone who does evil hates the light, and doesn&apos;t come to the light, lest his works would be exposed.</source>
         <translation>Igaüks, kes teeb halba, vihkab valgust ega tule valguse juurde, et ta tegusid ei paljastataks.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="151"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="153"/>
         <source>But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.</source>
         <translation>Aga kes teeb tõtt, see tuleb valguse juurde, et ta teod saaksid avalikuks, sest need on tehtud Jumalas.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="66"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="68"/>
         <source>Display templates define how text is displayed.</source>
         <translation>Kuvamallid määravad, kuidas teksti kuvatakse.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="55"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="57"/>
         <source>Show the BibleTime logo on startup</source>
         <translation>Kuva käivitamisel BibleTime logo</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="54"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="56"/>
         <source>Show startup logo</source>
         <translation>Kuva käivituslogo</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="141"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="143"/>
         <source>This is the judgement, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.</source>
         <translation>Ent kohus on see, et valgus on tulnud maailma, aga inimesed on armastanud pimedust enam kui valgust, sest nende teod on kurjad.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="185"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="188"/>
         <source>Display</source>
         <translation>Kuva</translation>
     </message>
@@ -1853,76 +1920,76 @@ kiirklahv</translation>
 <context>
     <name>CDisplayWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="126"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="153"/>
         <source>Back in history</source>
         <translatorcomment>fuzzy; maybe just &quot;Tagasi&quot; (&quot;Back&quot;)</translatorcomment>
         <translation>Tagasi ajaloos</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="134"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="161"/>
         <source>Forward in history</source>
         <translatorcomment>fuzzy; maybe just &quot;Edasi&quot; (&quot;Forward&quot;)</translatorcomment>
         <translation>Edasi ajaloos</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="95"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="122"/>
         <source>Zoom in</source>
         <translatorcomment>&quot;Suurenda kirjasuurust&quot; would probably be better for zooming text</translatorcomment>
         <translation>Suumi sisse</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="99"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="126"/>
         <source>Zoom out</source>
         <translatorcomment>&quot;Vähenda kirjasuurust&quot; would probably be better for zooming text</translatorcomment>
         <translation>Suumi välja</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="103"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="130"/>
         <source>Select all</source>
         <translation>Vali kõik</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="107"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="134"/>
         <source>Copy</source>
         <translation>Kopeeri</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="111"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="138"/>
         <source>Find...</source>
         <translation>Otsi...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="115"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="142"/>
         <source>Change location</source>
         <translation>Muuda asukohta</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="120"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="147"/>
         <source>Search with works of this window</source>
         <translation>Otsi selle akna teoste seast</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="306"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="332"/>
         <source>Work chooser buttons</source>
         <translation>Teose valimise nupud</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="316"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="342"/>
         <source>Text area header</source>
         <translation>Tekstiala päis</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="366"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="394"/>
         <source>Navigation</source>
         <translation>Navigeerimine</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="372"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="400"/>
         <source>Tool</source>
         <translation>Tööriistad</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="378"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="406"/>
         <source>Format</source>
         <translation>Vormindus</translation>
     </message>
@@ -1952,38 +2019,38 @@ kiirklahv</translation>
 <context>
     <name>CHTMLWriteDisplay</name>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="168"/>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="173"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="38"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="42"/>
         <source>Bold</source>
         <translation>Rasvane</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="181"/>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="187"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="48"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="53"/>
         <source>Italic</source>
         <translation>Kursiiv</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="193"/>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="199"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="58"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="63"/>
         <source>Underline</source>
         <translation>Allajoonitud</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="208"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="68"/>
         <source>Left</source>
         <translatorcomment>fuzzy</translatorcomment>
         <translation>Vasakule</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="219"/>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="224"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="77"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="81"/>
         <source>Center</source>
         <translatorcomment>fuzzy</translatorcomment>
         <translation>Keskele</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="230"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="86"/>
         <source>Right</source>
         <translatorcomment>fuzzy</translatorcomment>
         <translation>Paremale</translation>
@@ -1997,27 +2064,27 @@ kiirklahv</translation>
         <translation type="obsolete">HTML&apos;i redaktoraken</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="143"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="198"/>
         <source>Font</source>
         <translation>Kirjatüüp</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="151"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="208"/>
         <source>Font size</source>
         <translation>Kirja suurus</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="158"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="217"/>
         <source>Font color</source>
         <translation>Kirja värv</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="213"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="72"/>
         <source>Align left</source>
         <translation>Joonda vasakule</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="235"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="90"/>
         <source>Align right</source>
         <translation>Joonda paremale</translation>
     </message>
@@ -2025,55 +2092,47 @@ kiirklahv</translation>
 <context>
     <name>CHTMLWriteWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="67"/>
         <source>Sync with active Bible</source>
-        <translation>Sünkroniseeri aktiivse Piibliga</translation>
+        <translation type="obsolete">Sünkroniseeri aktiivse Piibliga</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="78"/>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="82"/>
         <source>Save text</source>
-        <translation>Salvesta tekst</translation>
+        <translation type="obsolete">Salvesta tekst</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="89"/>
         <source>Delete current entry</source>
-        <translation>Kustuta see kirje</translation>
+        <translation type="obsolete">Kustuta see kirje</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="100"/>
         <source>Restore original text</source>
-        <translation>Taasta esialgne tekst</translation>
+        <translation type="obsolete">Taasta esialgne tekst</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="160"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="129"/>
         <source>Module not writable</source>
         <translation>Moodul pole kirjutatav</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="162"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="131"/>
         <source>Module is not writable.</source>
         <translation>Moodul ei ole kirjutatav.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="163"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="132"/>
         <source>Either the module may not be edited, or you do not have write permission.</source>
         <translation>Moodulit ei või redigeerida, või Teil puuduvad kirjutusõigused.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="72"/>
         <source>Synchronize (show the same verse) with the active Bible window</source>
-        <translation>Sünkroniseeri (näita sama salmi) aktiivse piibliaknaga</translation>
+        <translation type="obsolete">Sünkroniseeri (näita sama salmi) aktiivse piibliaknaga</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="93"/>
         <source>Delete current entry (no undo)</source>
-        <translation>Kustuta see kirje (kustutamist ei saa tagasi võtta)</translation>
+        <translation type="obsolete">Kustuta see kirje (kustutamist ei saa tagasi võtta)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="104"/>
         <source>Restore original text, new text will be lost</source>
-        <translation>Taasta originaaltekst, uus tekst kaotatakse</translation>
+        <translation type="obsolete">Taasta originaaltekst, uus tekst kaotatakse</translation>
     </message>
 </context>
 <context>
@@ -2087,37 +2146,37 @@ kiirklahv</translation>
 <context>
     <name>CKeyReferenceWidget</name>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="111"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="112"/>
         <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
         <translation>Elemendi valimiseks vajutage seda nuppu ja liigutage hiirekursorit üles või alla.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="113"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="114"/>
         <source>Next book</source>
         <translation>Järgmine raamat</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="115"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="116"/>
         <source>Previous book</source>
         <translation>Eelmine raamat</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="118"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="119"/>
         <source>Next chapter</source>
         <translation>Järgmine peatükk</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="120"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="121"/>
         <source>Previous chapter</source>
         <translation>Eelmine peatükk</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="123"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="124"/>
         <source>Next verse</source>
         <translation>Järgmine salm</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="125"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="126"/>
         <source>Previous verse</source>
         <translation>Eelmine salm</translation>
     </message>
@@ -2188,76 +2247,76 @@ kiirklahv</translation>
 <context>
     <name>CLexiconReadWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="51"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="52"/>
         <source>Next entry</source>
         <translation>Järgmine kirje</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="55"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="56"/>
         <source>Previous entry</source>
         <translation>Eelmine kirje</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="59"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="60"/>
         <source>Copy reference only</source>
         <translation>Kopeeri ainult viide</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="62"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="63"/>
         <source>Save entry as HTML</source>
         <translation>Salvesta kirje HTML&apos;ina</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="65"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="66"/>
         <source>Print reference only</source>
         <translation>Trüki ainult viide</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="77"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="78"/>
         <source>Strong&apos;s Search</source>
         <translation>Strongi numbrite otsing</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="68"/>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="74"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="69"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="75"/>
         <source>Entry with text</source>
         <translation>Kirje tekstiga</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="71"/>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="130"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="72"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="131"/>
         <source>Entry as plain text</source>
         <translation>Kirje tavalise tekstina</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="236"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="262"/>
         <source>Lexicon window</source>
         <translation>Leksikoni aken</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="243"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="269"/>
         <source>Copy...</source>
         <translation>Kopeeri...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="252"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="278"/>
         <source>Save...</source>
         <translation>Salvesta...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="268"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="294"/>
         <source>Print...</source>
         <translation>Trüki...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="311"/>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="341"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="337"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="367"/>
         <source>Saving entry ...</source>
         <translation>Kirje salvestamine...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="311"/>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="341"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="337"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="367"/>
         <source>Saving</source>
         <translation>Salvestamine</translation>
     </message>
@@ -2293,53 +2352,53 @@ kiirklahv</translation>
 <context>
     <name>CPlainWriteWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="62"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="193"/>
         <source>Sync with active Bible</source>
         <translation>Sünkroniseeri aktiivse Piibliga</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="75"/>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="80"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="203"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="207"/>
         <source>Save text</source>
         <translation>Salvesta tekst</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="88"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="212"/>
         <source>Delete current entry</source>
         <translation>Kustuta see kirje</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="101"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="221"/>
         <source>Restore original text</source>
         <translation>Taasta esialgne tekst</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="147"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="129"/>
         <source>Module not writable</source>
         <translation>Moodul pole kirjutatav</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="149"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="131"/>
         <source>Module is not writable.</source>
         <translation>Moodul ei ole kirjutatav.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="150"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="132"/>
         <source>Either the module may not be edited, or you do not have write permission.</source>
         <translation>Moodulit ei või redigeerida, või Teil puuduvad kirjutusõigused.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="67"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="198"/>
         <source>Synchronize (show the same verse) with the active Bible window</source>
         <translation>Sünkroniseeri (näita sama salmi) aktiivse piibliaknaga</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="93"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="216"/>
         <source>Delete current entry (no undo)</source>
         <translation>Kustuta see kirje (kustutamist ei saa tagasi võtta)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="106"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="225"/>
         <source>Restore original text, new text will be lost</source>
         <translation>Taasta originaaltekst, uus tekst kaotatakse</translation>
     </message>
@@ -2554,17 +2613,17 @@ kiirklahv</translation>
 <context>
     <name>CSwordSettingsPage</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="38"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="40"/>
         <source>Standard works</source>
         <translation>Eelistatud teosed</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="39"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="41"/>
         <source>Text filters</source>
         <translation>Tekstifiltrid</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="336"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="337"/>
         <source>Desk</source>
         <translation>Kirjutuslaud</translation>
     </message>
@@ -3712,42 +3771,42 @@ Language name ppk</extracomment>
         <translation>Võrgusolev</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="457"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="465"/>
         <source>Old testament</source>
         <translation>Vana Testament</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="458"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="466"/>
         <source>Moses/Pentateuch/Torah</source>
         <translation>Viis Moosese raamatut/Pentateuh/Toora</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="459"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="467"/>
         <source>History</source>
         <translation>Ajalugu</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="460"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="468"/>
         <source>Prophets</source>
         <translation>Prohvetid</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="461"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="469"/>
         <source>New testament</source>
         <translation>Uus Testament</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="462"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="470"/>
         <source>Gospels</source>
         <translation>Evangeeliumid</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="463"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="471"/>
         <source>Letters/Epistles</source>
         <translation>Kirjad/epistlid</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="464"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="472"/>
         <source>Paul&apos;s Epistles</source>
         <translation>Pauluse kirjad</translation>
     </message>
@@ -3842,7 +3901,7 @@ Language name ppk</extracomment>
         <translation>Palun kontrollige failiõigusi jms.</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="169"/>
+        <location filename="../../src/util/tool.cpp" line="179"/>
         <source>Take care, this work contains cult / questionable material!</source>
         <translation>Hoiatus, see teos sisaldab kultuslikku või küsitavat materjali!</translation>
     </message>
@@ -3859,7 +3918,7 @@ Language name ppk</extracomment>
         <translation type="obsolete">määramata</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="182"/>
+        <location filename="../../src/util/tool.cpp" line="192"/>
         <source>Version</source>
         <translation>Versioon</translation>
     </message>
@@ -3868,17 +3927,17 @@ Language name ppk</extracomment>
         <translation type="obsolete">Valikud</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="174"/>
+        <location filename="../../src/util/tool.cpp" line="184"/>
         <source>Encrypted - needs unlock key</source>
         <translation>Krüpteeritud - vajab võtit</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="178"/>
+        <location filename="../../src/util/tool.cpp" line="188"/>
         <source>Updated version available!</source>
         <translation>Uuendatud versioon on saadaval!</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="190"/>
+        <location filename="../../src/util/tool.cpp" line="200"/>
         <source>Double click for more information</source>
         <translation>Lisainformatsiooni jaoks tehke siin topeltklikk</translation>
     </message>
@@ -3893,7 +3952,7 @@ Language name ppk</extracomment>
         <translation>Näib, et Teil on kataloogi %1 salvestatud BibleTime konfiguratsioon KDE versioon 3-st, ja Te pole veel uuele versioonile üle läinud. Kas Te soovite selle konfiguratsiooni importida?</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="186"/>
+        <location filename="../../src/util/tool.cpp" line="196"/>
         <source>Installed version</source>
         <translation>Paigaldatud versioon</translation>
     </message>
@@ -4018,12 +4077,12 @@ Language name ppk</extracomment>
         <translation>Strongi numbrite parsimine</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="146"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="147"/>
         <source>This shortcut conflicts with the shortcut for the following actions:</source>
         <translation>See kiirklahv on vastuolus järgnevate tegevuste kiirklahvidega:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="153"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="154"/>
         <source>Do you want to clear the conflicting shortcuts and continue?</source>
         <translation>Kas tühistada vastuolulised kiirklahvide seadistused ja jätkata?</translation>
     </message>
@@ -4757,87 +4816,91 @@ See võib võtta kaua aega. Kas jätkata indekseerimisega?</translation>
 <context>
     <name>StandardWorksTab</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="56"/>
         <source>Standard works are used when no particular work is specified,   for example when a hyperlink into a Bible or lexicon was clicked .</source>
-        <translation>Eelistatud teoseid kasutatake kui ei ole määratud konkreetset teost, näiteks kui kasutatakse hüperlinki, mis viitab Piiblisse või mõnda leksikoni.</translation>
+        <translation type="obsolete">Eelistatud teoseid kasutatake kui ei ole määratud konkreetset teost, näiteks kui kasutatakse hüperlinki, mis viitab Piiblisse või mõnda leksikoni.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="64"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="57"/>
+        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked .</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="65"/>
         <source>Bible:</source>
         <translation>Piibel:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="68"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="69"/>
         <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
         <translation>Eelistatud Piiblit kasutatakse siis kui vajutatakse mõnele Piibli kirjakohale viitavale hüperlingile</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="74"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="75"/>
         <source>Commentary:</source>
         <translation>Kommentaarid:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="78"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="79"/>
         <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
         <translation>Eelistatud kommentaare kasutatakse siis kui vajutatakse mõnele kommentaaridele viitavale hüperlingile</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="84"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="85"/>
         <source>Lexicon:</source>
         <translation>Leksikon:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="88"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="89"/>
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
         <translation>Eelistatud leksikoni kasutatakse siis kui vajutatakse mõnele leksikoni viitavale hüperlingile</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="94"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="95"/>
         <source>Daily devotional:</source>
         <translation>Igapäevane harduskirjandus:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="98"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="99"/>
         <source>The standard devotional will be used to display a short start up devotional</source>
         <translation>Eelistatud igapäevast harduskirjanduse teost kasutatakse sellest lühikeste lõikude kuvamiseks BibleTime käivitamisel</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="104"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="105"/>
         <source>Hebrew Strong&apos;s lexicon:</source>
         <translation>Heebreakeelne Strongi leksikon:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="108"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="109"/>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
         <translation>Eelistatud heebreakeelset leksikoni kasutatakse, kui klikitakse hüperlingil, mis viitab heebreakeelsesse leksikoni</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="114"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="115"/>
         <source>Greek Strong&apos;s lexicon:</source>
         <translation>Kreekakeelne Strongi leksikon:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="118"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="119"/>
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
         <translation>Eelistatud kreekakeelset leksikoni kasutatakse, kui klikitakse hüperlingil, mis viitab kreekakeelsesse leksikoni</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="124"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="125"/>
         <source>Hebrew morphological lexicon:</source>
         <translation>Heebreakeelne morfoloogiline leksikon:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="128"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="129"/>
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
         <translation>Eelistatud heebreakeelset morfoloogilist leksikoni kasutatakse, kui klikitakse morfoloogilise märgendi hüperlingil heebreakeelses tekstis</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="134"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="135"/>
         <source>Greek morphological lexicon:</source>
         <translation>Kreekakeelne morfoloogiline leksikon:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="138"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="139"/>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
         <translation>Eelistatud kreekakeelset morfoloogilist leksikoni kasutatakse, kui klikitakse morfoloogilise märgendi hüperlingil kreekakeelses tekstis</translation>
     </message>

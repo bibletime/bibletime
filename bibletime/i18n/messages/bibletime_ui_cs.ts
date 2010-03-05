@@ -118,15 +118,15 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Show Bookshelf</source>
-        <translation>Zobrazit knihovnu</translation>
+        <translation type="obsolete">Zobrazit knihovnu</translation>
     </message>
     <message>
         <source>Show Bookmarks</source>
-        <translation>Zobrazit záložky</translation>
+        <translation type="obsolete">Zobrazit záložky</translation>
     </message>
     <message>
         <source>Show Mag</source>
-        <translation>Zobrazit časopis</translation>
+        <translation type="obsolete">Zobrazit časopis</translation>
     </message>
     <message>
         <source>Search in &amp;open works...</source>
@@ -202,7 +202,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Main Toolbar</source>
-        <translation>Hlavní Panel nástrojů</translation>
+        <translation type="obsolete">Hlavní Panel nástrojů</translation>
     </message>
     <message>
         <source>&amp;Quit</source>
@@ -265,10 +265,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>O&amp;pen Windows</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Open the Bible study HowTo included with BibleTime.&lt;br/&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -289,19 +285,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Text windows</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show text area headers</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Show navigation</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show work chooser buttons</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -334,6 +318,66 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>The unlock key you provided did not properly unlock this module. Please try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Main toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Navigation toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Works toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tools toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Format toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show bookshelf</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show mag</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toolbars</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show main</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show works</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show toolbars in text windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show parallel text headers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>O&amp;pen windows</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1624,19 +1668,19 @@ shortcut</source>
     <name>CHTMLWriteWindow</name>
     <message>
         <source>Sync with active Bible</source>
-        <translation>Synchronizovat s aktivní Biblí</translation>
+        <translation type="obsolete">Synchronizovat s aktivní Biblí</translation>
     </message>
     <message>
         <source>Save text</source>
-        <translation>Uložit text</translation>
+        <translation type="obsolete">Uložit text</translation>
     </message>
     <message>
         <source>Delete current entry</source>
-        <translation>Smazat tuto položku</translation>
+        <translation type="obsolete">Smazat tuto položku</translation>
     </message>
     <message>
         <source>Restore original text</source>
-        <translation>Obnovit původní text</translation>
+        <translation type="obsolete">Obnovit původní text</translation>
     </message>
     <message>
         <source>Module not writable</source>
@@ -1652,15 +1696,11 @@ shortcut</source>
     </message>
     <message>
         <source>Synchronize (show the same verse) with the active Bible window</source>
-        <translation>Synchronizovat (zobrazit stejný verš) s aktivním oknem Bible</translation>
-    </message>
-    <message>
-        <source>Delete current entry (no undo)</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Synchronizovat (zobrazit stejný verš) s aktivním oknem Bible</translation>
     </message>
     <message>
         <source>Restore original text, new text will be lost</source>
-        <translation>Obnovit originální text, nový text bude ztracen</translation>
+        <translation type="obsolete">Obnovit originální text, nový text bude ztracen</translation>
     </message>
 </context>
 <context>
@@ -3817,7 +3857,7 @@ To může trvat dlouhou dobu. Pokračovat v indexování?</translation>
     <name>StandardWorksTab</name>
     <message>
         <source>Standard works are used when no particular work is specified,   for example when a hyperlink into a Bible or lexicon was clicked .</source>
-        <translation>Standardní díla se použijí, pokud není zvoleno konkrétní dílo. K tomu může dojít při kliknutí na odkaz do textu Bible nebo slovníku.</translation>
+        <translation type="obsolete">Standardní díla se použijí, pokud není zvoleno konkrétní dílo. K tomu může dojít při kliknutí na odkaz do textu Bible nebo slovníku.</translation>
     </message>
     <message>
         <source>Bible:</source>
@@ -3886,6 +3926,10 @@ To může trvat dlouhou dobu. Pokračovat v indexování?</translation>
     <message>
         <source></source>
         <translation></translation>
+    </message>
+    <message>
+        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked .</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

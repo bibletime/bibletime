@@ -210,7 +210,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Main Toolbar</source>
-        <translation>Haupt-Werkzeugleiste</translation>
+        <translation type="obsolete">Haupt-Werkzeugleiste</translation>
     </message>
     <message>
         <source>&amp;Quit</source>
@@ -218,15 +218,15 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Show Bookshelf</source>
-        <translation>Bücherregal anzeigen</translation>
+        <translation type="obsolete">Bücherregal anzeigen</translation>
     </message>
     <message>
         <source>Show Bookmarks</source>
-        <translation>Lesezeichen anzeigen</translation>
+        <translation type="obsolete">Lesezeichen anzeigen</translation>
     </message>
     <message>
         <source>Show Mag</source>
-        <translation>Lupe anzeigen</translation>
+        <translation type="obsolete">Lupe anzeigen</translation>
     </message>
     <message>
         <source>Cl&amp;ose all windows</source>
@@ -266,7 +266,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>O&amp;pen Windows</source>
-        <translation>Fenster ö&amp;ffnen</translation>
+        <translation type="obsolete">Fenster ö&amp;ffnen</translation>
     </message>
     <message>
         <source>Open the Bible study HowTo included with BibleTime.&lt;br/&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
@@ -290,11 +290,11 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Text windows</source>
-        <translation>Textfenster</translation>
+        <translation type="obsolete">Textfenster</translation>
     </message>
     <message>
         <source>Show text area headers</source>
-        <translation>Kopfzeile für Textbereich anzeigen</translation>
+        <translation type="obsolete">Kopfzeile für Textbereich anzeigen</translation>
     </message>
     <message>
         <source>Show navigation</source>
@@ -302,7 +302,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Show work chooser buttons</source>
-        <translation>Knöpfe zum Auswählen von Werken anzeigen</translation>
+        <translation type="obsolete">Knöpfe zum Auswählen von Werken anzeigen</translation>
     </message>
     <message>
         <source>Show tools</source>
@@ -334,6 +334,66 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>The unlock key you provided did not properly unlock this module. Please try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Main toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Navigation toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Works toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tools toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Format toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show bookshelf</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show mag</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toolbars</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show main</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show works</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show toolbars in text windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show parallel text headers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>O&amp;pen windows</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1636,19 +1696,19 @@ shortcut</source>
     <name>CHTMLWriteWindow</name>
     <message>
         <source>Sync with active Bible</source>
-        <translation>Mit aktiver Bibel abgleichen</translation>
+        <translation type="obsolete">Mit aktiver Bibel abgleichen</translation>
     </message>
     <message>
         <source>Save text</source>
-        <translation>Text speichern</translation>
+        <translation type="obsolete">Text speichern</translation>
     </message>
     <message>
         <source>Delete current entry</source>
-        <translation>Ausgewählten Eintrag löschen</translation>
+        <translation type="obsolete">Ausgewählten Eintrag löschen</translation>
     </message>
     <message>
         <source>Restore original text</source>
-        <translation>Den ursprünglichen Text wiederherstellen</translation>
+        <translation type="obsolete">Den ursprünglichen Text wiederherstellen</translation>
     </message>
     <message>
         <source>Module not writable</source>
@@ -1664,15 +1724,15 @@ shortcut</source>
     </message>
     <message>
         <source>Synchronize (show the same verse) with the active Bible window</source>
-        <translation>Synchronisiere (zeige denselben Vers) mit dem aktiven Bibelfenster</translation>
+        <translation type="obsolete">Synchronisiere (zeige denselben Vers) mit dem aktiven Bibelfenster</translation>
     </message>
     <message>
         <source>Delete current entry (no undo)</source>
-        <translation>Aktuellen Eintrag löschen (ohne Rückgängig-Funktion)</translation>
+        <translation type="obsolete">Aktuellen Eintrag löschen (ohne Rückgängig-Funktion)</translation>
     </message>
     <message>
         <source>Restore original text, new text will be lost</source>
-        <translation>Original-Text wiederherstellen, neue Texte gehen verloren</translation>
+        <translation type="obsolete">Original-Text wiederherstellen, neue Texte gehen verloren</translation>
     </message>
 </context>
 <context>
@@ -3839,7 +3899,7 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     <name>StandardWorksTab</name>
     <message>
         <source>Standard works are used when no particular work is specified,   for example when a hyperlink into a Bible or lexicon was clicked .</source>
-        <translation>Standardmodule werden benutzt, wenn kein konkretes Modul angegeben wurde. Dies kann z.B. bei Querverweisen in Bibeln oder Lexika auftreten.</translation>
+        <translation type="obsolete">Standardmodule werden benutzt, wenn kein konkretes Modul angegeben wurde. Dies kann z.B. bei Querverweisen in Bibeln oder Lexika auftreten.</translation>
     </message>
     <message>
         <source>Bible:</source>
@@ -3908,6 +3968,10 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     <message>
         <source></source>
         <translation></translation>
+    </message>
+    <message>
+        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked .</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
