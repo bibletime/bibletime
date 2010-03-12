@@ -60,6 +60,8 @@ class CKeyReferenceWidget : public QWidget  {
         void slotChangeBook(QString bookname);
         void slotChangeChapter(int chapter);
         void slotChangeVerse(int verse);
+
+    public slots:
         void updateText();
 
     private:

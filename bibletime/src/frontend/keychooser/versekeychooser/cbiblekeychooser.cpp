@@ -111,7 +111,9 @@ void CBibleKeyChooser::refreshContent() {
     setKey(m_key);
 }
 
-void CBibleKeyChooser::updateKey(CSwordKey* /*key*/) {}
+void CBibleKeyChooser::updateKey(CSwordKey* /*key*/) {
+    w_ref->updateText();
+}
 
 void CBibleKeyChooser::adjustFont() {}
 

@@ -476,6 +476,7 @@ void CDisplayWindow::lookupModKey( const QString& moduleName, const QString& key
     if (m && modules().contains(m)) {
         key()->key(keyName);
         keyChooser()->setKey(key()); //the key chooser does send an update signal
+        emit sigKeyChanged(key());
     }
     else { 	//given module not displayed in this window
         //if the module is displayed in another display window we assume a wrong drop

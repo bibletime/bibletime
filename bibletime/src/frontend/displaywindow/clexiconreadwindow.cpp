@@ -240,6 +240,8 @@ void CLexiconReadWindow::setupMainWindowToolBars() {
     btMainWindow()->navToolBar()->addWidget(keyChooser);
     bool ok = connect(keyChooser, SIGNAL(keyChanged(CSwordKey*)), this, SLOT(lookupSwordKey(CSwordKey*)));
     Q_ASSERT(ok);
+    ok = connect(this, SIGNAL(sigKeyChanged(CSwordKey*)), keyChooser, SLOT(updateKey(CSwordKey*)) );
+    Q_ASSERT(ok);
     btMainWindow()->navToolBar()->addAction(m_actions.backInHistory); //1st button
     btMainWindow()->navToolBar()->addAction(m_actions.forwardInHistory); //2nd button
 

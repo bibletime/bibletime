@@ -67,9 +67,8 @@ CSwordKey* CLexiconKeyChooser::key() {
     return m_key;
 }
 
-void CLexiconKeyChooser::setKey(CSwordKey* key) {
-    qDebug() << "CLexiconKeyChooser::setKey";
-
+/** Update key display without emiting a signal */
+void CLexiconKeyChooser::updateKey(CSwordKey* key) {
     if (!(m_key = dynamic_cast<CSwordLDKey*>(key))) {
         return;
     }
@@ -77,6 +76,16 @@ void CLexiconKeyChooser::setKey(CSwordKey* key) {
     QString newKey = m_key->key();
     const int index = m_widget->comboBox()->findText(newKey);
     m_widget->comboBox()->setCurrentIndex(index);
+}
+
+void CLexiconKeyChooser::setKey(CSwordKey* key) {
+    qDebug() << "CLexiconKeyChooser::setKey";
+
+    if (!(m_key = dynamic_cast<CSwordLDKey*>(key))) {
+        return;
+    }
+
+    updateKey(key);
 
     //   qWarning("setKey end");
     emit keyChanged( m_key);
@@ -169,9 +178,6 @@ void CLexiconKeyChooser::setModules( const QList<CSwordModuleInfo*>& modules, co
         //   adjustFont();
     }
 }
-
-/** No descriptions */
-void CLexiconKeyChooser::updateKey(CSwordKey*) {}
 
 void CLexiconKeyChooser::setKey(QString& newKey) {
     m_key->key(newKey);

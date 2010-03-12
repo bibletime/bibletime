@@ -190,6 +190,8 @@ class CDisplayWindow : public QMainWindow, public CPointers {
         void sigFilterOptionsChanged(const CSwordBackend::FilterOptions &filterOptions);
         /**  signal for change of modules */
         void sigModulesChanged(const QList<CSwordModuleInfo*> &modules);
+        /**  signal for sword key change */
+        void sigKeyChanged(CSwordKey* key);
 
     public slots:
         /** Receives a signal telling that a module should be added.*/

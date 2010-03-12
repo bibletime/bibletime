@@ -147,6 +147,8 @@ void CBookReadWindow::setupMainWindowToolBars() {
     btMainWindow()->navToolBar()->addWidget(keyChooser);
     bool ok = connect(keyChooser, SIGNAL(keyChanged(CSwordKey*)), this, SLOT(lookupSwordKey(CSwordKey*)));
     Q_ASSERT(ok);
+    ok = connect(this, SIGNAL(sigKeyChanged(CSwordKey*)), keyChooser, SLOT(updateKey(CSwordKey*)) );
+    Q_ASSERT(ok);
 
     // Works toolbar
     btMainWindow()->worksToolBar()->setModules(getModuleList(), modules().first()->type(), this);
