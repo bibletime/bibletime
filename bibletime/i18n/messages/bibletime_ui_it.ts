@@ -331,77 +331,77 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="587"/>
         <source>Main toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barra degli strumenti principale</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="588"/>
         <source>Navigation toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barra degli strumenti di navigazione</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="589"/>
         <source>Works toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barra degli strumenti dei documenti</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="590"/>
         <source>Tools toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barra degli strumenti</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="591"/>
         <source>Format toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barra degli strumenti del formato</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="595"/>
         <source>Show bookshelf</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra libreria</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="596"/>
         <source>Show bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra segnalibri</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="597"/>
         <source>Show mag</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra lente</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="598"/>
         <source>Toolbars</source>
-        <translation type="unfinished"></translation>
+        <translation>Barre degli strumenti</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="599"/>
         <source>Show main</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra principale</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="601"/>
         <source>Show works</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra documenti</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="603"/>
         <source>Show format</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra formato</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="604"/>
         <source>Show toolbars in text windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra barre degli strumenti nelle finestre di testo</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="606"/>
         <source>Show parallel text headers</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra testo intestazioni parallelo</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="609"/>
         <source>O&amp;pen windows</source>
-        <translation type="unfinished"></translation>
+        <translation>A&amp;pri Finestre</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="618"/>
@@ -4818,7 +4818,7 @@ Questo potrebbe richiedere parecchio tempo. Procedere all&apos;indicizzazione?</
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="57"/>
         <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked .</source>
-        <translation type="unfinished"></translation>
+        <translation>I documenti standard sono utilizzati quando nessun documento particolare viene specificato, per esempio quando un collegamento ipertestuale in una Bibbia o lessico viene cliccato.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="65"/>
