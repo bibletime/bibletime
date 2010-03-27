@@ -58,7 +58,9 @@ QAction* BtActionCollection::action(const QString& name) {
 
 QAction* BtActionCollection::addAction(const QString& name, QAction* action) {
     Q_ASSERT(action != 0);
-    Q_ASSERT(!m_actions.contains(name));   /// \todo replacing actions is ok???
+    if (m_actions.contains(name)) {
+        delete m_actions[name];
+    }
     BtActionItem* item = new BtActionItem(action, this);
     m_actions.insert(name, item);
     return action;

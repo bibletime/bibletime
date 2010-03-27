@@ -268,6 +268,10 @@ class BibleTime : public QMainWindow {
         */
         void retranslateUi();
         /**
+          Retranslates the UI actions.
+        */
+        static void retranslateUiActions(BtActionCollection* ac);
+        /**
         * Initializes one action object
         */
         QAction* initAction(QAction* action, QString text, QString icon, QKeySequence accel,

@@ -258,6 +258,35 @@ void BibleTime::insertKeyboardActions( BtActionCollection* const a ) {
     action->setText(tr("&About BibleTime"));
     action->setToolTip(tr("Information about the BibleTime program"));
     a->addAction("aboutBibleTime", action);
+
+    action = new QAction(a);
+    a->addAction("showToolbarsInTextWindows", action);
+
+    action = new QAction(a);
+    a->addAction("showNavigation", action);
+
+    action = new QAction(a);
+    a->addAction("showWorks", action);
+
+    action = new QAction(a);
+    a->addAction("showTools", action);
+
+    action = new QAction(a);
+    a->addAction("showFormat", action);
+
+    action = new QAction(a);
+    a->addAction("showParallelTextHeaders", action);
+
+    action = new QAction(a);
+    a->addAction("showBookshelf", action);
+
+    action = new QAction(a);
+    a->addAction("showBookmarks", action);
+
+    action = new QAction(a);
+    a->addAction("showMag", action);
+
+    retranslateUiActions(a);
 }
 
 static QToolBar* createToolBar(const QString& name, QWidget* parent, bool visible) {
@@ -335,41 +364,45 @@ void BibleTime::initActions() {
     connect(m_viewToolbarAction, SIGNAL(triggered()),
             this,                SLOT(slotToggleMainToolbar()));
 
+    // Special case these actions, overwrite those already in collection
     m_showBookshelfAction = m_bookshelfDock->toggleViewAction();
+    m_actionCollection->addAction("showBookshelf", m_showBookshelfAction);
     m_showBookmarksAction = m_bookmarksDock->toggleViewAction();
+    m_actionCollection->addAction("showBookmarks", m_showBookmarksAction);
     m_showMagAction = m_magDock->toggleViewAction();
+    m_actionCollection->addAction("showMag", m_showMagAction);
 
-    m_showTextAreaHeadersAction = new QAction(this);
+    m_showTextAreaHeadersAction = m_actionCollection->action("showParallelTextHeaders");
     m_showTextAreaHeadersAction->setCheckable(true);
     m_showTextAreaHeadersAction->setChecked(CBTConfig::get(CBTConfig::showTextWindowHeaders));
     connect(m_showTextAreaHeadersAction, SIGNAL(toggled(bool)),
             this,                        SLOT(slotToggleTextWindowHeader()));
 
-    m_showTextWindowNavigationAction = new QAction(this);
+    m_showTextWindowNavigationAction = m_actionCollection->action("showNavigation");
     m_showTextWindowNavigationAction->setCheckable(true);
     m_showTextWindowNavigationAction->setChecked(CBTConfig::get(CBTConfig::showTextWindowNavigator));
     connect(m_showTextWindowNavigationAction, SIGNAL(toggled(bool)),
             this,                             SLOT(slotToggleNavigatorToolbar()));
 
-    m_showTextWindowModuleChooserAction = new QAction(this);
+    m_showTextWindowModuleChooserAction = m_actionCollection->action("showWorks");
     m_showTextWindowModuleChooserAction->setCheckable(true);
     m_showTextWindowModuleChooserAction->setChecked(CBTConfig::get(CBTConfig::showTextWindowModuleSelectorButtons));
     connect(m_showTextWindowModuleChooserAction, SIGNAL(toggled(bool)),
             this,                                SLOT(slotToggleWorksToolbar()));
 
-    m_showTextWindowToolButtonsAction = new QAction(this);
+    m_showTextWindowToolButtonsAction = m_actionCollection->action("showTools");
     m_showTextWindowToolButtonsAction->setCheckable(true);
     m_showTextWindowToolButtonsAction->setChecked(CBTConfig::get(CBTConfig::showTextWindowToolButtons));
     connect(m_showTextWindowToolButtonsAction, SIGNAL(toggled(bool)),
             this,                              SLOT(slotToggleToolsToolbar()));
 
-    m_showFormatToolbarAction = new QAction(this);
+    m_showFormatToolbarAction = m_actionCollection->action("showFormat");
     m_showFormatToolbarAction->setCheckable(true);
     m_showFormatToolbarAction->setChecked(CBTConfig::get(CBTConfig::showFormatToolbarButtons));
     bool ok = connect(m_showFormatToolbarAction, SIGNAL(toggled(bool)),
                       this,                      SLOT(slotToggleFormatToolbar()));
 
-    m_toolbarsInEachWindow = new QAction(this);
+    m_toolbarsInEachWindow = m_actionCollection->action("showToolbarsInTextWindows");
     m_toolbarsInEachWindow->setCheckable(true);
     m_toolbarsInEachWindow->setChecked(CBTConfig::get(CBTConfig::showToolbarsInEachWindow));
     ok = connect(m_toolbarsInEachWindow, SIGNAL(toggled(bool)),
@@ -472,6 +505,8 @@ void BibleTime::initActions() {
     connect(m_debugWidgetAction, SIGNAL(triggered(bool)),
             this,                 SLOT(slotShowDebugWindow(bool)));
     #endif
+
+    retranslateUiActions(m_actionCollection);
 }
 
 void BibleTime::initMenubar() {
@@ -592,18 +627,8 @@ void BibleTime::retranslateUi() {
 
     m_fileMenu->setTitle(tr("&File"));
     m_viewMenu->setTitle(tr("&View"));
-        m_showBookshelfAction->setText(tr("Show bookshelf"));
-        m_showBookmarksAction->setText(tr("Show bookmarks"));
-        m_showMagAction->setText(tr("Show mag"));
         m_toolBarsMenu->setTitle(tr("Toolbars"));
-            m_viewToolbarAction->setText(tr("Show main"));
-            m_showTextWindowNavigationAction->setText(tr("Show navigation"));
-            m_showTextWindowModuleChooserAction->setText(tr("Show works"));
-            m_showTextWindowToolButtonsAction->setText(tr("Show tools"));
-            m_showFormatToolbarAction->setText(tr("Show format"));
-            m_toolbarsInEachWindow->setText(tr("Show toolbars in text windows"));
 
-            m_showTextAreaHeadersAction->setText(tr("Show parallel text headers"));
     m_searchMenu->setTitle(tr("&Search"));
     m_windowMenu->setTitle(tr("&Window"));
         m_openWindowsMenu->setTitle(tr("O&pen windows"));
@@ -617,6 +642,26 @@ void BibleTime::retranslateUi() {
     #ifdef BT_DEBUG
     m_debugWidgetAction->setText(tr("Show \"Whats this widget\" dialog"));
     #endif
+
+    retranslateUiActions(m_actionCollection);
+}
+
+/** retranslation for actions used in this class
+*   This is called for two different collections of actions
+*   One set is for the actual use in the menus, etc
+*   The second is used during the use of the configuration shortcut editor
+*/
+void BibleTime::retranslateUiActions(BtActionCollection* ac) {
+    ac->action("showToolbarsInTextWindows")->setText(tr("Show toolbars in text windows"));
+    ac->action("showToolbar")->setText(tr("Show main"));
+    ac->action("showNavigation")->setText(tr("Show navigation"));
+    ac->action("showWorks")->setText(tr("Show works"));
+    ac->action("showTools")->setText(tr("Show tools"));
+    ac->action("showFormat")->setText(tr("Show format"));
+    ac->action("showBookshelf")->setText(tr("Show bookshelf"));
+    ac->action("showBookmarks")->setText(tr("Show bookmarks"));
+    ac->action("showMag")->setText(tr("Show mag"));
+    ac->action("showParallelTextHeaders")->setText(tr("Show parallel text headers"));
 }
 
 /** Initializes the SIGNAL / SLOT connections */
