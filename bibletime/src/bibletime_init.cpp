@@ -773,9 +773,9 @@ void BibleTime::applyProfileSettings( CProfile* p ) {
     Q_ASSERT(p);
     if (!p) return;
 
-    //first Main Window state
-    restoreState(p->getMainwindowState());
+    //first Main Window geometry
     restoreGeometry(p->getMainwindowGeometry());
+    restoreState(p->getMainwindowState());
     m_windowFullscreenAction->setChecked(isFullScreen());
 
     const CMDIArea::MDIArrangementMode newArrangementMode = p->getMDIArrangementMode();

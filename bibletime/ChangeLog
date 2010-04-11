@@ -1,3 +1,6 @@
+2010-04-10 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix bug #2969498       Resize bug in magnification area
+
 2010-03-27 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix main window view menu so that shortcuts can be assigned to them.
     * Modified retranslateUi to work correctly with the shortcut editor
