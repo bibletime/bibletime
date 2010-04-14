@@ -505,7 +505,7 @@ details.</para>
                   <imagedata fileref="i_contents2.png" width="32" depth="32" format="PNG" />
                 </imageobject>
               </inlinemediaobject>Help</guimenu>
-              <guimenuitem>Bible Study Howto</guimenuitem>
+              <guimenuitem>Bible Study HowTo</guimenuitem>
             </menuchoice>
           </term>
           <listitem>
@@ -1116,7 +1116,7 @@ currently opened works.</entry>
             </entry>
             <entry>
             <menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy 
-Howto</guimenuitem> </menuchoice> equivalent; opens the BibleStudy Howto.</entry>
+HowTo</guimenuitem> </menuchoice> equivalent; opens the BibleStudy HowTo.</entry>
           </row>
           <row>
             <entry>

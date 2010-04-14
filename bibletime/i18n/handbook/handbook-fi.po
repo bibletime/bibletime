@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: handbook-fi\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
-"POT-Creation-Date: 2010-02-25 12:15-0500\n"
+"POT-Creation-Date: 2010-04-14 02:06-0400\n"
 "PO-Revision-Date: 2009-03-06 16:56+0200\n"
 "Last-Translator: Ilpo Kantonen <ilpo@iki.fi>\n"
 "Language-Team: Finnish <fi@li.org>\n"
@@ -298,7 +298,7 @@ msgstr ""
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:218
 msgid ""
-"In the preceding example, F2, Bible Study Howto has a secondary shortcut "
+"In the preceding example, F2, Bible Study HowTo has a secondary shortcut "
 "defined, CTRL+2."
 msgstr ""
 
@@ -1708,8 +1708,8 @@ msgstr ""
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1186
 #, fuzzy
 msgid ""
-"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy Howto</"
-"guimenuitem> </menuchoice> equivalent; opens the BibleStudy Howto."
+"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy HowTo</"
+"guimenuitem> </menuchoice> equivalent; opens the BibleStudy HowTo."
 msgstr ""
 "<menuchoice> <guimenu>Ohje</guimenu> <guimenuitem>Raamatun tutkimisen Howto</"
 "guimenuitem> </menuchoice> avaa Raamatun tutkimisen Howto-ikkunan."
@@ -1930,7 +1930,7 @@ msgstr "&bibletime;-käsikirja on osa &bibletime;-ohjelmaa."
 
 # type: Content of: <book><bookinfo><date>
 #: docs/handbook/en/docbook/index.docbook:54
-msgid "$LastChangedDate: 2010-01-21 00:14:01 -0500 (Thu, 21 Jan 2010) $"
+msgid "$LastChangedDate: 2010-02-25 12:20:19 -0500 (Thu, 25 Feb 2010) $"
 msgstr ""
 
 # type: Content of: <book><bookinfo><releaseinfo>

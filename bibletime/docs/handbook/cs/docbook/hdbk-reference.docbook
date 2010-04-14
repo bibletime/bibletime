@@ -500,7 +500,7 @@ linkend="hdbk-op-bookshelfmanager">Správce knihovny</link>.</para>
                   <imagedata fileref="i_contents2.png" width="32" depth="32" format="PNG" />
                 </imageobject>
               </inlinemediaobject>Help</guimenu>
-              <guimenuitem>Bible Study Howto</guimenuitem>
+              <guimenuitem>Bible Study HowTo</guimenuitem>
             </menuchoice>
           </term>
           <listitem>
@@ -1108,8 +1108,8 @@ všech otevřených dílech.</entry>
               </keycombo>
             </entry>
             <entry>
-            <menuchoice> <guimenu>Nápověda</guimenu> <guimenuitem>Návod, jak studovat 
-Bibli</guimenuitem> </menuchoice> otevře Návod, jak studovat Bibli.</entry>
+            <menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy 
+HowTo</guimenuitem> </menuchoice> equivalent; opens the BibleStudy HowTo.</entry>
           </row>
           <row>
             <entry>

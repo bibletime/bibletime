@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: handbook-hu\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
-"POT-Creation-Date: 2010-02-25 12:15-0500\n"
+"POT-Creation-Date: 2010-04-14 02:06-0400\n"
 "PO-Revision-Date: 2010-02-18 21:16+0100\n"
 "Last-Translator: Novak Geza <gza@gza.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -332,8 +332,9 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:218
+#, fuzzy
 msgid ""
-"In the preceding example, F2, Bible Study Howto has a secondary shortcut "
+"In the preceding example, F2, Bible Study HowTo has a secondary shortcut "
 "defined, CTRL+2."
 msgstr ""
 "Az előző példában látható, hogy az F2, a \"hogyan tanulmányozza a Bibliát\"-"
@@ -2027,9 +2028,10 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1186
+#, fuzzy
 msgid ""
-"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy Howto</"
-"guimenuitem> </menuchoice> equivalent; opens the BibleStudy Howto."
+"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy HowTo</"
+"guimenuitem> </menuchoice> equivalent; opens the BibleStudy HowTo."
 msgstr ""
 "Megegyezik a <menuchoice><guimenu>Segítség</guimenu><guimenuitem> Biblia "
 "tanulmányozás \"hogyan\"</guimenuitem></menuchoice> menüponttal, megnyitja a "
@@ -2254,7 +2256,7 @@ msgstr "A &bibletime; kézikönyv a &bibletime; programmal együtt terjesztve."
 # type: Content of: <book><bookinfo><date>
 #: docs/handbook/en/docbook/index.docbook:54
 #, fuzzy
-msgid "$LastChangedDate: 2010-01-21 00:14:01 -0500 (Thu, 21 Jan 2010) $"
+msgid "$LastChangedDate: 2010-02-25 12:20:19 -0500 (Thu, 25 Feb 2010) $"
 msgstr "$LastChangedDate: 2009-12-31 15:05:52 -0500 (Thu, 31 Dec 2009) $"
 
 # type: Content of: <book><bookinfo><releaseinfo>

@@ -163,7 +163,7 @@
               </row>
               <row>
                 <entry>
-                  <ulink url="ftp://ftp.netscape.com/pub/communicator/extras/fonts/windows/">
+                  <ulink url="http://aol-4.vo.llnwd.net/pub/communicator/extras/fonts/windows/">
                   Bitstream CyberBit</ulink>
                 </entry>
                 <entry>Covers almost the entire range of Unicode, but
@@ -215,7 +215,7 @@
 	<imagedata fileref="ss_shortcuts.png" width="100%" contentdepth="100%" scalefit="1" format="PNG" />
       </imageobject>
 
-      <para>In the preceding example, F2, Bible Study Howto has a
+      <para>In the preceding example, F2, Bible Study HowTo has a
 	 secondary shortcut defined, CTRL+2.</para>
     </sect2>
   </sect1>

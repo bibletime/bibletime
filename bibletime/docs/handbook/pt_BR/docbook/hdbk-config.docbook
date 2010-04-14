@@ -147,7 +147,7 @@ caracteres.</entry>
               </row>
               <row>
                 <entry>
-                  <ulink url="ftp://ftp.netscape.com/pub/communicator/extras/fonts/windows/">
+                  <ulink url="http://aol-4.vo.llnwd.net/pub/communicator/extras/fonts/windows/">
                   Bitstream CyberBit</ulink>
                 </entry>
                 <entry>Cobre quase toda a gama do Unicode, mas pode fazer o &bibletime; ficar lento 
@@ -192,8 +192,8 @@ acessar rapidamente as funes que você mais usa.</para>
 	<imagedata fileref="ss_shortcuts.png" width="100%" contentdepth="100%" scalefit="1" format="PNG" />
       </imageobject>
 
-      <para>No exemplo anterior, F2, o Howto de Estudos Bíblicos tem um atalho 
-secundário definido, CTRL+2.</para>
+      <para>In the preceding example, F2, Bible Study HowTo has a secondary shortcut 
+defined, CTRL+2.</para>
     </sect2>
   </sect1>
 </chapter>

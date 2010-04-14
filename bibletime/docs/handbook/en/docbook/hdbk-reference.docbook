@@ -516,7 +516,7 @@
                   <imagedata fileref="i_contents2.png" width="32" depth="32" format="PNG" />
                 </imageobject>
               </inlinemediaobject>Help</guimenu>
-              <guimenuitem>Bible Study Howto</guimenuitem>
+              <guimenuitem>Bible Study HowTo</guimenuitem>
             </menuchoice>
           </term>
           <listitem>
@@ -1185,9 +1185,9 @@
             <entry>
             <menuchoice>
               <guimenu>Help</guimenu>
-              <guimenuitem>BibleStudy Howto</guimenuitem>
+              <guimenuitem>BibleStudy HowTo</guimenuitem>
             </menuchoice> equivalent; opens the BibleStudy
-            Howto.</entry>
+            HowTo.</entry>
           </row>
           <row>
             <entry>

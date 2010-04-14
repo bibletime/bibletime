@@ -503,7 +503,7 @@ adesso.</para>
                   <imagedata fileref="i_contents2.png" width="32" depth="32" format="PNG" />
                 </imageobject>
               </inlinemediaobject>Help</guimenu>
-              <guimenuitem>Bible Study Howto</guimenuitem>
+              <guimenuitem>Bible Study HowTo</guimenuitem>
             </menuchoice>
           </term>
           <listitem>
@@ -1120,9 +1120,8 @@ ricerca per cercare in tutti i documenti aperti.</entry>
               </keycombo>
             </entry>
             <entry>
-            <menuchoice> <guimenu>Aiuto</guimenu> <guimenuitem>HowTo Studio 
-Bibbia</guimenuitem> </menuchoice> equivalent; apre l'Howto per lo studio 
-della Bibbia.</entry>
+            <menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy 
+HowTo</guimenuitem> </menuchoice> equivalent; opens the BibleStudy HowTo.</entry>
           </row>
           <row>
             <entry>
