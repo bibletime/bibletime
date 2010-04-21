@@ -3,12 +3,13 @@
   <sect1 id="hdbk-intro-about">
     <title>Mi a &bibletime;</title>
 
-    <para>A &bibletime; egy könnyen telepíthető és kezelhető Biblia tanulmányozó 
-eszköz, különféle szövegtípussal, nyelvvel, továbbá rengeteg telepíthető 
-dokumentummal, modullal. Ez a program a <ulink 
-url="http://www.crosswire.org/sword">&sword;</ulink> keretrendszerre épül, 
-mely lehetővé teszi a szövegek megjelenítését, keresését stb. A &sword; a 
-<ulink url="http://www.crosswire.org">&cbs;</ulink> zászlóshajója.</para>
+    <para>&bibletime; is a Bible study tool with support for different types of texts 
+and languages. Even large amounts of works modules are easy to install and 
+manage. It is built on the <ulink 
+url="http://www.crosswire.org/sword/">&sword;</ulink> library, which 
+provides the back-end functionality for &bibletime;, such as viewing Bible 
+text, searching etc. &sword; is the flagship product of the <ulink 
+url="http://www.crosswire.org">&cbs;</ulink>.</para>
 
     <para>A &bibletime; arra lett tervezve, hogy a &sword; projekt által értelmezhető 
 formátumú dokumentumokat alkalmazza. Teljeskörű információt a támogatott 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: handbook\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
-"POT-Creation-Date: 2010-04-14 02:06-0400\n"
+"POT-Creation-Date: 2010-04-21 14:40-0400\n"
 "PO-Revision-Date: 2009-12-20 17:40-0200\n"
 "Last-Translator: Saulo\n"
 "Language-Team: Português do Brasil <kde-i18n-doc@kde.org>\n"
@@ -346,10 +346,11 @@ msgstr "Sobre &bibletime;"
 
 # type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:6
+#, fuzzy
 msgid ""
 "&bibletime; is a Bible study tool with support for different types of texts "
 "and languages. Even large amounts of works modules are easy to install and "
-"manage. It is built on the <ulink url=\"http://www.crosswire.org/sword"
+"manage. It is built on the <ulink url=\"http://www.crosswire.org/sword/"
 "\">&sword;</ulink> library, which provides the back-end functionality for "
 "&bibletime;, such as viewing Bible text, searching etc. &sword; is the "
 "flagship product of the <ulink url=\"http://www.crosswire.org\">&cbs;</"
