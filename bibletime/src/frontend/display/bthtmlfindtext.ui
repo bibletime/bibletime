@@ -1,0 +1,145 @@
+<ui version="4.0" >
+ <class>findTextDialog</class>
+ <widget class="QDialog" name="findTextDialog" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>227</width>
+    <height>115</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Find Text</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout" >
+   <item>
+    <widget class="QFrame" name="findFrame" >
+     <property name="frameShape" >
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow" >
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2" >
+      <item>
+       <spacer name="verticalSpacer" >
+        <property name="orientation" >
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0" >
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QComboBox" name="findTextComboBox" >
+        <property name="toolTip" >
+         <string>The text you want to search for</string>
+        </property>
+        <property name="editable" >
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="caseBox" >
+        <property name="toolTip" >
+         <string>Search with case sensitivity</string>
+        </property>
+        <property name="text" >
+         <string>Case &amp;sensitive</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer_2" >
+        <property name="orientation" >
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0" >
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_6" >
+     <item>
+      <spacer name="horizontalSpacer_6" >
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0" >
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="previousButton" >
+       <property name="toolTip" >
+        <string>Find the previous location of the text</string>
+       </property>
+       <property name="text" >
+        <string>&amp;Previous</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="nextButton" >
+       <property name="toolTip" >
+        <string>Find the next location of the text</string>
+       </property>
+       <property name="text" >
+        <string>&amp;Next</string>
+       </property>
+       <property name="default" >
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="closeButton" >
+       <property name="toolTip" >
+        <string>Close the dialog</string>
+       </property>
+       <property name="text" >
+        <string>&amp;Close</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>closeButton</sender>
+   <signal>clicked()</signal>
+   <receiver>findTextDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>200</x>
+     <y>124</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>224</x>
+     <y>106</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
