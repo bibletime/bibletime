@@ -8,6 +8,9 @@
     * Fix main window view menu so that shortcuts can be assigned to them.
     * Modified retranslateUi to work correctly with the shortcut editor
 
+2010-03-11 Gary Holmlund <gary.holmlund@gmail.com>
+    * Add option to show toolbar on main window instead of text windows
+
 2010-02-24 Martin Gruner <mgruner@crosswire.org>
     * Released 2.6
 
