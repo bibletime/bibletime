@@ -29,6 +29,8 @@ SET(TRIAL_INCLUDE_PATHS
 	${CMAKE_INSTALL_PREFIX}/include
 	/usr/local/include/sword
 	/usr/local/include
+	/opt/local/include/sword
+	/opt/local/include
 	/usr/include/sword
 	/usr/include
 	/sw/include/sword
