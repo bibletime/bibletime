@@ -1,14 +1,14 @@
 <chapter id="hdbk-reference">
   <title>Referenz</title>
   <sect1 id="hdbk-reference-menus">
-    <title>Hauptmenü-Referenz</title>
+    <title>Hauptmen??-Referenz</title>
 
-    <para>In diesem Abschnitt finden Sie detaillierte Beschreibungen aller Einträge im 
-&bibletime;-Hauptmenü. Sie sind in der Reihenfolge angeordnet, wie Sie auch 
-in &bibletime; auftauchen und zwar mit allen Untereinträgen unterhalb ihrer 
-jeweiligen Obermenüs. Sie können auch den Kurzbefehl des jeweiligen Eintrags 
-sehen, ein komplettes Verzeichnis aller Kurzbefehle finden Sie im <link 
-linkend="hdbk-reference-shortcuts">Tastenkürzel-Verzeichnis</link>.</para>
+    <para>In diesem Abschnitt finden Sie detaillierte Beschreibungen aller Eintr??ge 
+im &bibletime;-Hauptmen??. Sie sind in der Reihenfolge angeordnet, wie Sie 
+auch in &bibletime; auftauchen und zwar mit allen Untereintr??gen unterhalb 
+ihrer jeweiligen Obermen??s. Sie k??nnen auch den Kurzbefehl des jeweiligen 
+Eintrags sehen, ein komplettes Verzeichnis aller Kurzbefehle finden Sie im 
+<link linkend="hdbk-reference-shortcuts">Tastenk??rzel-Verzeichnis</link>.</para>
 
     <sect2 id="hdbk-reference-menus-file">
       <title>
@@ -34,8 +34,8 @@ linkend="hdbk-reference-shortcuts">Tastenkürzel-Verzeichnis</link>.</para>
             </term>
             <listitem>
               <para>
-              <action>&bibletime; schließen.</action> &bibletime; wird Sie fragen, ob Sie 
-ungesicherte Änderungen abspeichern möchten.</para>
+              <action>&bibletime; schlie??en.</action> &bibletime; wird Sie fragen, ob Sie 
+ungesicherte ??nderungen abspeichern m??chten.</para>
             </listitem>
           </varlistentry>
         </variablelist>
@@ -100,9 +100,10 @@ der Haupt-Werkzeugleiste an oder aus.</para>
           </term>
           <listitem>
             <para>
-            <action>Bücherregal anzeigen.</action> Mit diesem Umschalter können Sie die 
-Ansicht des Bücherregals auf dem linken Abschnitt an- oder ausschalten. Dies 
-kann nützlich sein, wenn Sie mehr Platz für das Lupenfenster benötigen.</para>
+            <action>B??cherregal anzeigen.</action> Mit diesem Umschalter k??nnen Sie 
+die Ansicht des B??cherregals auf dem linken Abschnitt an- oder 
+ausschalten. Dies kann n??tzlich sein, wenn Sie mehr Platz f??r das 
+Lupenfenster ben??tigen.</para>
           </listitem>
         </varlistentry>
 
@@ -116,8 +117,8 @@ kann nützlich sein, wenn Sie mehr Platz für das Lupenfenster benötigen.</para
           <listitem>
             <para>
             <action>Lesezeichen anzeigen.</action> Mit diesem Umschalter schalten Sie 
-die Lesezeichen-Anzeige am linken Abschnitt an oder aus. Dies kann nützlich 
-sein, wenn Sie mehr Platz für das Lupenfenster benötigen.</para>
+die Lesezeichen-Anzeige am linken Abschnitt an oder aus. Dies kann n??tzlich 
+sein, wenn Sie mehr Platz f??r das Lupenfenster ben??tigen.</para>
           </listitem>
         </varlistentry>
 
@@ -159,9 +160,9 @@ Lupenfenster im linken Abschnitt oder verbirgt es.</para>
           </term>
 
           <listitem>
-            <para><action>In Standard-Bibel suchen...</action>. Es können zusätzliche Werke 
-zum Suchdialog hinzugefügt werden. Eine ausführlichere Such-Beschreibung 
-können Sie unter <link linkend="hdbk-op-search">Sucharten</link> finden.</para>
+            <para><action>In Standard-Bibel suchen...</action>. Es k??nnen zus??tzliche Werke 
+zum Suchdialog hinzugef??gt werden. Eine ausf??hrlichere Such-Beschreibung 
+k??nnen Sie unter <link linkend="hdbk-op-search">Sucharten</link> finden.</para>
           </listitem>
         </varlistentry>
 
@@ -183,10 +184,10 @@ können Sie unter <link linkend="hdbk-op-search">Sucharten</link> finden.</para>
           </term>
 
           <listitem>
-            <para><action>In allen gegenwärtig geöffneten Werken suchen...</action>. Werke 
-können im Suchdialog hinzugefügt oder entfernt werden. Eine ausführlichere 
-Such-Beschreibung können Sie im Abschnitt <link linkend="hdbk-op-search">In 
-Werken suchen</link> finden.</para>
+            <para><action>In allen gegenw??rtig ge??ffneten Werken suchen...</action>. Werke 
+k??nnen im Suchdialog hinzugef??gt oder entfernt werden. Eine 
+ausf??hrlichere Such-Beschreibung k??nnen Sie im Abschnitt <link 
+linkend="hdbk-op-search">In Werken suchen</link> finden.</para>
           </listitem>
 
         </varlistentry>
@@ -209,11 +210,11 @@ Werken suchen</link> finden.</para>
 
           <listitem>
             <para>
-            <action>Sitzung speichern</action>. Dies wird ein Kontextmenü öffnen, in dem 
-Sie eine bereits existierende Sitzung als Ziel zur Abspeicherung auswählen 
-können. Die aktuelle Sitzung wird diese überschreiben. Schauen Sie sich den 
-nächsten Abschnitt an, wie Sie eine neue Sitzung anlegen und abspeichern 
-können.</para>
+            <action>Sitzung speichern</action>. Dies wird ein Kontextmen?? ??ffnen, in 
+dem Sie eine bereits existierende Sitzung als Ziel zur Abspeicherung 
+ausw??hlen k??nnen. Die aktuelle Sitzung wird diese ??berschreiben. Schauen 
+Sie sich den n??chsten Abschnitt an, wie Sie eine neue Sitzung anlegen und 
+abspeichern k??nnen.</para>
           </listitem>
         </varlistentry>
 
@@ -232,7 +233,7 @@ können.</para>
           <listitem>
             <para>
             <action>Als neue Sitzung speichern</action>. Diese Funktion wird Sie nach 
-einem neuen Namen für die zu speichernde Sitzung fragen.</para>
+einem neuen Namen f??r die zu speichernde Sitzung fragen.</para>
           </listitem>
         </varlistentry>
 
@@ -246,8 +247,8 @@ einem neuen Namen für die zu speichernde Sitzung fragen.</para>
 
           <listitem>
             <para>
-            <action>Sitzung laden</action>. Hiermit wird ein Kontextmenü geöffnet, wo 
-Sie eine existierende Sitzung zum Laden auswählen können.</para>
+            <action>Sitzung laden</action>. Hiermit wird ein Kontextmen?? ge??ffnet, wo 
+Sie eine existierende Sitzung zum Laden ausw??hlen k??nnen.</para>
           </listitem>
         </varlistentry>
 
@@ -261,8 +262,8 @@ Sie eine existierende Sitzung zum Laden auswählen können.</para>
 
           <listitem>
             <para>
-            <action>Sitzung löschen</action>. Hiermit öffnen Sie ein Kontextmenü, das 
-Ihnen erlaubt, eine existierende Sitzung zum Löschen auszuwählen.</para>
+            <action>Sitzung l??schen</action>. Hiermit ??ffnen Sie ein Kontextmen??, das 
+Ihnen erlaubt, eine existierende Sitzung zum L??schen auszuw??hlen.</para>
           </listitem>
         </varlistentry>
 
@@ -276,10 +277,10 @@ Ihnen erlaubt, eine existierende Sitzung zum Löschen auszuwählen.</para>
 
           <listitem>
             <para>
-            <action>Anordnungs-Art</action>. Im sich öffnenden Kontextmenü können Sie 
-bestimmen, dass Sie entweder die Fensteranordnung selbst bestimmen möchten 
+            <action>Anordnungs-Art</action>. Im sich ??ffnenden Kontextmen?? k??nnen Sie 
+bestimmen, dass Sie entweder die Fensteranordnung selbst bestimmen m??chten 
 (manueller Modus), oder dass &bibletime; sich um die Fensteranordnung 
-kümmern soll (automatische Modi, probieren Sie's einfach aus!).</para>
+k??mmern soll (automatische Modi, probieren Sie's einfach aus!).</para>
           </listitem>
         </varlistentry>
 
@@ -303,7 +304,7 @@ kümmern soll (automatische Modi, probieren Sie's einfach aus!).</para>
 
           <listitem>
             <para>
-	      <action>Geöffnete Fenster staffeln</action>.
+	      <action>Ge??ffnete Fenster staffeln</action>.
 	    </para>
           </listitem>
         </varlistentry>
@@ -327,7 +328,7 @@ kümmern soll (automatische Modi, probieren Sie's einfach aus!).</para>
 
           <listitem>
             <para>
-	      <action>Alle geöffneten Fenster kacheln</action>.
+	      <action>Alle ge??ffneten Fenster kacheln</action>.
 	    </para>
           </listitem>
         </varlistentry>
@@ -399,7 +400,7 @@ kümmern soll (automatische Modi, probieren Sie's einfach aus!).</para>
 
           <listitem>
             <para>
-            <action>Alle geöffneten Fenster schließen</action>.</para>
+            <action>Alle ge??ffneten Fenster schlie??en</action>.</para>
           </listitem>
         </varlistentry>
       </variablelist>
@@ -424,10 +425,10 @@ kümmern soll (automatische Modi, probieren Sie's einfach aus!).</para>
           </term>
 
           <listitem>
-            <para> <action>&bibletime;s Hauptkonfigurationsdialog öffnen</action>. Sie können 
-hier alle möglichen Einstellungen von &bibletime; an Ihre Bedürfnisse 
+            <para> <action>&bibletime;s Hauptkonfigurationsdialog ??ffnen</action>. Sie k??nnen 
+hier alle m??glichen Einstellungen von &bibletime; an Ihre Bed??rfnisse 
 anpassen. Bitte schauen Sie im Abschnitt <link 
-linkend="hdbk-config-bt">&bibletime; einrichten</link> für Details nach.</para>
+linkend="hdbk-config-bt">&bibletime; einrichten</link> f??r Details nach.</para>
           </listitem>
         </varlistentry>
 
@@ -451,9 +452,9 @@ linkend="hdbk-config-bt">&bibletime; einrichten</link> für Details nach.</para>
           </term>
 
           <listitem>
-            <para><action>Öffnen eines Dialogs zur &sword;-Konfiguration und Konfiguration 
-Ihrer Bücherregal-Verwaltung</action>. Schauen Sie bitte im Abschnitt <link 
-linkend="hdbk-op-bookshelfmanager">Der Bücherregal-Verwalter</link> für 
+            <para><action>??ffnen eines Dialogs zur &sword;-Konfiguration und Konfiguration 
+Ihrer B??cherregal-Verwaltung</action>. Schauen Sie bitte im Abschnitt <link 
+linkend="hdbk-op-bookshelfmanager">Der B??cherregal-Verwalter</link> f??r 
 Details nach.</para>
           </listitem>
         </varlistentry>
@@ -484,7 +485,7 @@ Details nach.</para>
           </term>
           <listitem>
             <para>
-            <action>Handbuch</action>. Dies öffnet das Handbuch von &bibletime;. Sie 
+            <action>Handbuch</action>. Dies ??ffnet das Handbuch von &bibletime;. Sie 
 lesen es gerade.</para>
           </listitem>
         </varlistentry>
@@ -508,15 +509,15 @@ lesen es gerade.</para>
           </term>
           <listitem>
             <para>
-            <action>Anleitung zum Bibelstudium</action>. Dies öffnet eine Anleitung, wie 
-man die Bibel studieren sollte. Es ist die Hoffnung des &bibletime;-Teams, 
-dass dieses HowTo die Leser veranlasst, die Bibel zu lesen und 
-nachzuschauen, was sie aussagt. Dieser Studienführer wurde ausgewählt, weil 
-er sich davor hütet, eine bestimmte Lehrmeinung einer Denomination zu 
-fördern. Wir hoffen, dass Sie die Bibel lesen und studieren, um zu 
-verstehen, was sie aussagt. Wenn Sie mit der Einstellung herangehen, dass 
-Sie wünschen, der HERR möge Sein Wort in Ihr Herz säen, wird Er sie nicht 
-enttäuschen.</para>
+            <action>Anleitung zum Bibelstudium</action>. Dies ??ffnet eine Anleitung, 
+wie man die Bibel studieren sollte. Es ist die Hoffnung des 
+&bibletime;-Teams, dass dieses HowTo die Leser veranlasst, die Bibel zu 
+lesen und nachzuschauen, was sie aussagt. Dieser Studienf??hrer wurde 
+ausgew??hlt, weil er sich davor h??tet, eine bestimmte Lehrmeinung einer 
+Denomination zu f??rdern. Wir hoffen, dass Sie die Bibel lesen und 
+studieren, um zu verstehen, was sie aussagt. Wenn Sie mit der Einstellung 
+herangehen, dass Sie w??nschen, der HERR m??ge Sein Wort in Ihr Herz s??en, 
+wird Er sie nicht entt??uschen.</para>
           </listitem>
         </varlistentry>
 
@@ -529,9 +530,10 @@ enttäuschen.</para>
           </term>
           <listitem>
             <para>
-            <action>Über &bibletime;</action>. Dies öffnet ein Fenster mit 
-Projekt-Informationen über &bibletime; und enthält die &bibletime;-Version, 
-Projekt-Beitragende, &sword;-Version, &qt;-Version und das Lizenzabkommen.</para>
+            <action>??ber &bibletime;</action>. Dies ??ffnet ein Fenster mit 
+Projekt-Informationen ??ber &bibletime; und enth??lt die 
+&bibletime;-Version, Projekt-Beitragende, &sword;-Version, &qt;-Version und 
+das Lizenzabkommen.</para>
           </listitem>
         </varlistentry>
       </variablelist>
@@ -541,7 +543,7 @@ Projekt-Beitragende, &sword;-Version, &qt;-Version und das Lizenzabkommen.</para
   <sect1 id="hdbk-reference-works">
     <title>Werksreferenz</title>
     <para>
-      In diesem Abschnitt finden Sie Beschreibungen der mit geöffneten Werken 
+      In diesem Abschnitt finden Sie Beschreibungen der mit ge??ffneten Werken 
 assoziierten Symbolzeichen.
     </para> 
 
@@ -562,7 +564,7 @@ assoziierten Symbolzeichen.
 
             <listitem>
               <para>
-		Blättert vorwärts im Verlauf.
+		Bl??ttert vorw??rts im Verlauf.
               </para>
             </listitem>
           </varlistentry>
@@ -585,7 +587,7 @@ assoziierten Symbolzeichen.
 
             <listitem>
               <para>
-		Blättert rückwärts im Verlauf.
+		Bl??ttert r??ckw??rts im Verlauf.
               </para>
             </listitem>
           </varlistentry>
@@ -608,7 +610,7 @@ assoziierten Symbolzeichen.
 
             <listitem>
               <para>
-		Wählt eine installierte Bibel aus.
+		W??hlt eine installierte Bibel aus.
               </para>
             </listitem>
           </varlistentry>
@@ -631,7 +633,7 @@ assoziierten Symbolzeichen.
 
             <listitem>
               <para>
-		Wählt eine zusätzliche Bibel aus.
+		W??hlt eine zus??tzliche Bibel aus.
               </para>
             </listitem>
           </varlistentry>
@@ -654,7 +656,7 @@ assoziierten Symbolzeichen.
 
             <listitem>
               <para>
-		In ausgewählten Werken suchen.
+		In ausgew??hlten Werken suchen.
               </para>
             </listitem>
           </varlistentry>
@@ -700,7 +702,7 @@ assoziierten Symbolzeichen.
 
             <listitem>
               <para>
-		Wählt ein installiertes Kommentar aus.
+		W??hlt ein installiertes Kommentar aus.
               </para>
             </listitem>
           </varlistentry>
@@ -723,7 +725,7 @@ assoziierten Symbolzeichen.
 
             <listitem>
               <para>
-		Wählt ein zusätzliches Kommentar aus.
+		W??hlt ein zus??tzliches Kommentar aus.
               </para>
             </listitem>
           </varlistentry>
@@ -769,7 +771,7 @@ assoziierten Symbolzeichen.
 
             <listitem>
               <para>
-		Wählt ein Buch aus.
+		W??hlt ein Buch aus.
               </para>
             </listitem>
           </varlistentry>
@@ -792,7 +794,7 @@ assoziierten Symbolzeichen.
 
             <listitem>
               <para>
-		Wählt ein installiertes Glossar oder eine installierte Andacht aus.
+		W??hlt ein installiertes Glossar oder eine installierte Andacht aus.
               </para>
             </listitem>
           </varlistentry>
@@ -815,7 +817,7 @@ assoziierten Symbolzeichen.
 
             <listitem>
               <para>
-		Wählt ein zusätzliches Glossar oder eine zusätzliche Andacht aus.
+		W??hlt ein zus??tzliches Glossar oder eine zus??tzliche Andacht aus.
               </para>
             </listitem>
           </varlistentry>
@@ -825,15 +827,15 @@ assoziierten Symbolzeichen.
   </sect1>
 
   <sect1 id="hdbk-reference-shortcuts">
-    <title>Tastenkürzel-Verzeichnis</title>
+    <title>Tastenk??rzel-Verzeichnis</title>
 
-    <para>Dies ist ein Verzeichnis aller Tastenkürzel und ihrer korrespondierenden 
-Beschreibung im Handbuch. Die Tastenkürzel sind (grob) alphabetisch 
-sortiert. Wenn Sie unmittelbar nachschauen möchten, welches Tastenkürzel 
-eine bestimmte Menüfunktion hat, so können Sie entweder den Menüeintrag in 
-&bibletime; ansehen (da grundsätzlich auch das entsprechende Tastenkürzel 
-mit angezeigt wird) oder die Tastenkürzel in der <link 
-linkend="hdbk-reference-menus">Hauptmenü-Referenz</link> nachsehen.</para>
+    <para>Dies ist ein Verzeichnis aller Tastenk??rzel und ihrer korrespondierenden 
+Beschreibung im Handbuch. Die Tastenk??rzel sind (grob) alphabetisch 
+sortiert. Wenn Sie unmittelbar nachschauen m??chten, welches Tastenk??rzel 
+eine bestimmte Men??funktion hat, so k??nnen Sie entweder den Men??eintrag 
+in &bibletime; ansehen (da grunds??tzlich auch das entsprechende 
+Tastenk??rzel mit angezeigt wird) oder die Tastenk??rzel in der <link 
+linkend="hdbk-reference-menus">Hauptmen??-Referenz</link> nachsehen.</para>
 
     <informaltable>
       <tgroup cols="2">
@@ -843,7 +845,7 @@ linkend="hdbk-reference-menus">Hauptmenü-Referenz</link> nachsehen.</para>
           <row>
 	    <?dbhtml bgcolor="#EEEEEE" ?>
 	    <?dbfo bgcolor="#EEEEEE" ?>
-            <entry>Tastenkürzel</entry>
+            <entry>Tastenk??rzel</entry>
             <entry>Beschreibung</entry>
           </row>
         </thead>
@@ -853,14 +855,14 @@ linkend="hdbk-reference-menus">Hauptmenü-Referenz</link> nachsehen.</para>
               <keycombo action="simul">
               <keycap>&Alt;Left</keycap></keycombo>
             </entry>
-            <entry>Im Lesefenster-Verlauf zurückblättern.</entry>
+            <entry>Im Lesefenster-Verlauf zur??ckbl??ttern.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">
               <keycap>&Alt;Right</keycap></keycombo>
             </entry>
-            <entry>Im Lesefenster-Verlauf vorwärtsblättern.</entry>
+            <entry>Im Lesefenster-Verlauf vorw??rtsbl??ttern.</entry>
           </row>
           <row>
             <entry>
@@ -870,7 +872,7 @@ linkend="hdbk-reference-menus">Hauptmenü-Referenz</link> nachsehen.</para>
             <entry>
             <link linkend="hdbk-reference-menus-search-defaultbible"> <menuchoice> 
 <guimenu>Suche</guimenu> <guimenuitem>In Standardbibel 
-suchen...</guimenuitem> </menuchoice> </link> öffnet den Suchdialog, um in 
+suchen...</guimenuitem> </menuchoice> </link> ??ffnet den Suchdialog, um in 
 der Standardbibel zu suchen.</entry>
           </row>
 
@@ -966,36 +968,37 @@ als neue Sitzung ab.</entry>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-window-closeall"> <menuchoice> 
-<guimenu>Fenster</guimenu> <guimenuitem>Alle Fenster schließen</guimenuitem> 
-</menuchoice> </link> schließt alle geöffneten Fenster.</entry>
+<guimenu>Fenster</guimenu> <guimenuitem>Alle Fenster 
+schlie??en</guimenuitem> </menuchoice> </link> schlie??t alle ge??ffneten 
+Fenster.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">
               <keycap>&Ctrl;-</keycap></keycombo>
             </entry>
-            <entry>Verkleinern. Dies verkleinert die Schriftgröße von Lesefenstern.</entry>
+            <entry>Verkleinern. Dies verkleinert die Schriftgr????e von Lesefenstern.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">
               <keycap>&Ctrl;+</keycap></keycombo>
             </entry>
-            <entry>Vergrößern. Dies vergrößert die Schriftgröße von Lesefenstern.</entry>
+            <entry>Vergr????ern. Dies vergr????ert die Schriftgr????e von Lesefenstern.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">
               <keycap>&Ctrl;A</keycap></keycombo>
             </entry>
-            <entry>Alles auswählen. Dies wählt den gesamten Text in Lesefenstern aus.</entry>
+            <entry>Alles ausw??hlen. Dies w??hlt den gesamten Text in Lesefenstern aus.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">
               <keycap>&Ctrl;C</keycap></keycombo>
             </entry>
-            <entry>Kopieren. Dies kopiert ausgewählten Text in die Zwischenablage.</entry>
+            <entry>Kopieren. Dies kopiert ausgew??hlten Text in die Zwischenablage.</entry>
           </row>
 
           <row>
@@ -1044,7 +1047,7 @@ Kacheln.
             <entry>
 	      <link linkend="hdbk-reference-menus-window-tile"> <menuchoice> 
 <guimenu>Fenster</guimenu> <guimenuitem>Staffeln</guimenuitem> </menuchoice> 
-</link> Fenster äquivalent.
+</link> Fenster ??quivalent.
             </entry>
           </row>
 
@@ -1057,7 +1060,7 @@ Kacheln.
             <entry>
 	      <link linkend="hdbk-reference-menus-window-cascade"> <menuchoice> 
 <guimenu>Fenster</guimenu> <guimenuitem>Staffeln</guimenuitem> </menuchoice> 
-</link> setzt den Staffelmodus für die Fensteranordnung.
+</link> setzt den Staffelmodus f??r die Fensteranordnung.
             </entry>
           </row>
 
@@ -1066,7 +1069,7 @@ Kacheln.
               <keycombo action="simul">
               <keycap>&Ctrl;L</keycap></keycombo>
             </entry>
-            <entry>Ort ändern. Wechselt den Fokus zur Werkzeugleiste des selektierten Werkes.</entry>
+            <entry>Ort ??ndern. Wechselt den Fokus zur Werkzeugleiste des selektierten Werkes.</entry>
           </row>
 
           <row>
@@ -1074,7 +1077,7 @@ Kacheln.
               <keycombo action="simul">
               <keycap>&Ctrl;N</keycap></keycombo>
             </entry>
-            <entry>Das Suchfenster mit den Werken dieses Fensters öffnen.</entry>
+            <entry>Das Suchfenster mit den Werken dieses Fensters ??ffnen.</entry>
           </row>
 
           <row>
@@ -1085,8 +1088,8 @@ Kacheln.
             <entry>
             <link linkend="hdbk-reference-menus-search-openworks"> <menuchoice> 
 <guimenu>Suche</guimenu> <guimenuitem>In offenen Werken 
-suchen...</guimenuitem> </menuchoice> </link> öffnet den Suchdialog, um in 
-allen gegenwärtig geöffneten Werken zu suchen.</entry>
+suchen...</guimenuitem> </menuchoice> </link> ??ffnet den Suchdialog, um in 
+allen gegenw??rtig ge??ffneten Werken zu suchen.</entry>
           </row>
 
           <row>
@@ -1097,14 +1100,14 @@ allen gegenwärtig geöffneten Werken zu suchen.</entry>
             <entry>
             <link linkend="hdbk-reference-menus-file-quit"> <menuchoice> 
 <guimenu>Datei</guimenu> <guimenuitem>Beenden</guimenuitem> </menuchoice> 
-</link> schließt &bibletime;.</entry>
+</link> schlie??t &bibletime;.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">
               <keycap>&Ctrl;W</keycap></keycombo>
             </entry>
-            <entry>Schließt das aktuelle Fenster.</entry>
+            <entry>Schlie??t das aktuelle Fenster.</entry>
           </row>
           <row>
             <entry>
@@ -1114,7 +1117,7 @@ allen gegenwärtig geöffneten Werken zu suchen.</entry>
             </entry>
             <entry>
             <menuchoice> <guimenu>Hilfe</guimenu> <guimenuitem>Handbuch</guimenuitem> 
-</menuchoice> öffnet das Handbuch.</entry>
+</menuchoice> ??ffnet das Handbuch.</entry>
           </row>
           <row>
             <entry>
@@ -1123,8 +1126,9 @@ allen gegenwärtig geöffneten Werken zu suchen.</entry>
               </keycombo>
             </entry>
             <entry>
-            <menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy 
-HowTo</guimenuitem> </menuchoice> equivalent; opens the BibleStudy HowTo.</entry>
+            <menuchoice> <guimenu>Hilfe</guimenu> <guimenuitem>Anleitung zum 
+Bibelstudium</guimenuitem> </menuchoice> equivalent; ??ffnet die Anleitung 
+zum Bibelstudium.</entry>
           </row>
           <row>
             <entry>
@@ -1135,8 +1139,8 @@ HowTo</guimenuitem> </menuchoice> equivalent; opens the BibleStudy HowTo.</entry
             <entry>
             <link linkend="hdbk-reference-menus-settings-bookshelf_manager"> 
 <menuchoice> <guimenu>Einstellungen</guimenu> 
-<guimenuitem>Bücherregal-Verwaltung</guimenuitem> </menuchoice> </link> 
-öffnet die Bücherregal-Verwaltung.</entry>
+<guimenuitem>B??cherregal-Verwaltung</guimenuitem> </menuchoice> </link> 
+??ffnet die B??cherregal-Verwaltung.</entry>
           </row>
           <row>
             <entry>
@@ -1146,8 +1150,8 @@ HowTo</guimenuitem> </menuchoice> equivalent; opens the BibleStudy HowTo.</entry
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-view-showbookshelf"> <menuchoice> 
-<guimenu>Ansicht</guimenu> <guimenuitem>Bücherregal anzeigen</guimenuitem> 
-</menuchoice> </link> aktiviert die Anzeige des Bücherregals.</entry>
+<guimenu>Ansicht</guimenu> <guimenuitem>B??cherregal anzeigen</guimenuitem> 
+</menuchoice> </link> aktiviert die Anzeige des B??cherregals.</entry>
           </row>
           <row>
             <entry>
