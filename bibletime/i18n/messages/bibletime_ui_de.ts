@@ -15,7 +15,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <name>BTAboutModuleDialog</name>
     <message>
         <source>Information About %1</source>
-        <translation>Informationen über %1</translation>
+        <translation>Informationen ??ber %1</translation>
     </message>
 </context>
 <context>
@@ -62,7 +62,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>&amp;Delete session</source>
-        <translation>Sitzung &amp;löschen</translation>
+        <translation>Sitzung &amp;l??schen</translation>
     </message>
     <message>
         <source>&amp;Arrangement mode</source>
@@ -106,7 +106,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Please enter a name for the new session.</source>
-        <translation>Bitte geben Sie einen Namen für die neue Sitzung ein.</translation>
+        <translation>Bitte geben Sie einen Namen f??r die neue Sitzung ein.</translation>
     </message>
     <message>
         <source>Quit BibleTime</source>
@@ -134,27 +134,27 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Automatically tile the open windows vertically (arrange side by side)</source>
-        <translation>Geöffnete Fenster automatisch vertikal (nebeneinander) anordnen</translation>
+        <translation>Ge??ffnete Fenster automatisch vertikal (nebeneinander) anordnen</translation>
     </message>
     <message>
         <source>Automatically tile the open windows horizontally (arrange on top of each other)</source>
-        <translation>Geöffnete Fenster automatisch horizontal (übereinander) anordnen</translation>
+        <translation>Ge??ffnete Fenster automatisch horizontal (??bereinander) anordnen</translation>
     </message>
     <message>
         <source>Automatically cascade the open windows</source>
-        <translation>Geöffnete Fenster automatisch hintereinander anordnen</translation>
+        <translation>Ge??ffnete Fenster automatisch hintereinander anordnen</translation>
     </message>
     <message>
         <source>Cascade the open windows</source>
-        <translation>Geöffnete Fenster hintereinander anordnen</translation>
+        <translation>Ge??ffnete Fenster hintereinander anordnen</translation>
     </message>
     <message>
         <source>Vertically tile (arrange side by side) the open windows</source>
-        <translation>Geöffnete Fenster vertikal (nebeneinander) anordnen</translation>
+        <translation>Ge??ffnete Fenster vertikal (nebeneinander) anordnen</translation>
     </message>
     <message>
         <source>Horizontally tile (arrange on top of each other) the open windows</source>
-        <translation>Geöffnete Fenster horizontal (übereinander) anordnen)</translation>
+        <translation>Ge??ffnete Fenster horizontal (??bereinander) anordnen)</translation>
     </message>
     <message>
         <source>&amp;Configure BibleTime...</source>
@@ -166,19 +166,19 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Bookshelf &amp;Manager...</source>
-        <translation>Bücherregal-&amp;Verwaltung...</translation>
+        <translation>B??cherregal-&amp;Verwaltung...</translation>
     </message>
     <message>
         <source>Configure your bookshelf and install/update/remove/index works</source>
-        <translation>Bücherregal konfigurieren und Werke installieren/aktualisieren/entfernen/indizieren</translation>
+        <translation>B??cherregal konfigurieren und Werke installieren/aktualisieren/entfernen/indizieren</translation>
     </message>
     <message>
         <source>Open BibleTime&apos;s handbook</source>
-        <translation>BibleTimes Handbuch öffnen</translation>
+        <translation>BibleTimes Handbuch ??ffnen</translation>
     </message>
     <message>
         <source>Search in all works that are currently open</source>
-        <translation>In allen gegenwärtig geöffneten Werken suchen</translation>
+        <translation>In allen gegenw??rtig ge??ffneten Werken suchen</translation>
     </message>
     <message>
         <source>Search in the standard Bible</source>
@@ -190,11 +190,11 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Creating BibleTime&apos;s user interface...</source>
-        <translation>Erstellen der BibleTime-Benutzeroberfläche...</translation>
+        <translation>Erstellen der BibleTime-Benutzeroberfl??che...</translation>
     </message>
     <message>
         <source>Initializing menu- and toolbars...</source>
-        <translation>Initialisieren der Menü- und Werkzeugleiste...</translation>
+        <translation>Initialisieren der Men??- und Werkzeugleiste...</translation>
     </message>
     <message>
         <source>Initializing the SWORD engine...</source>
@@ -218,7 +218,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Show Bookshelf</source>
-        <translation type="obsolete">Bücherregal anzeigen</translation>
+        <translation type="obsolete">B??cherregal anzeigen</translation>
     </message>
     <message>
         <source>Show Bookmarks</source>
@@ -230,15 +230,15 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Cl&amp;ose all windows</source>
-        <translation>Alle &amp;Fenster schließen</translation>
+        <translation>Alle &amp;Fenster schlie??en</translation>
     </message>
     <message>
         <source>Close all open windows inside BibleTime</source>
-        <translation>Alle in BibleTime geöffneten Fenster schließen</translation>
+        <translation>Alle in BibleTime ge??ffneten Fenster schlie??en</translation>
     </message>
     <message>
         <source>&amp;About BibleTime</source>
-        <translation>&amp;Über BibleTime</translation>
+        <translation>&amp;??ber BibleTime</translation>
     </message>
     <message>
         <source>Manually arrange the open windows</source>
@@ -246,7 +246,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Information about the BibleTime program</source>
-        <translation>Informationen über das BibleTime-Programm</translation>
+        <translation>Informationen ??ber das BibleTime-Programm</translation>
     </message>
     <message>
         <source>Unlock Work</source>
@@ -254,23 +254,23 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Enter the unlock key for this work.</source>
-        <translation type="obsolete">Geben Sie den Freischalt-Schlüssel für dieses Werk ein.</translation>
+        <translation type="obsolete">Geben Sie den Freischalt-Schl??ssel f??r dieses Werk ein.</translation>
     </message>
     <message>
         <source>Close &amp;window</source>
-        <translation>&amp;Fenster schließen</translation>
+        <translation>&amp;Fenster schlie??en</translation>
     </message>
     <message>
         <source>Close the current open window</source>
-        <translation>Das gegenwärtig geöffnete Fenster schließen</translation>
+        <translation>Das gegenw??rtig ge??ffnete Fenster schlie??en</translation>
     </message>
     <message>
         <source>O&amp;pen Windows</source>
-        <translation type="obsolete">Fenster ö&amp;ffnen</translation>
+        <translation type="obsolete">Fenster ??&amp;ffnen</translation>
     </message>
     <message>
         <source>Open the Bible study HowTo included with BibleTime.&lt;br/&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
-        <translation>Das mit BibleTime mitgelieferte Bibelstudien-HowTo öffnen. &lt;br/&gt;Dieses HowTo ist eine Einführung in effizientes Bibelstudium.</translation>
+        <translation>Das mit BibleTime mitgelieferte Bibelstudien-HowTo ??ffnen. &lt;br/&gt;Dieses HowTo ist eine Einf??hrung in effizientes Bibelstudium.</translation>
     </message>
     <message>
         <source>Auto-&amp;tile</source>
@@ -294,7 +294,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Show text area headers</source>
-        <translation type="obsolete">Kopfzeile für Textbereich anzeigen</translation>
+        <translation type="obsolete">Kopfzeile f??r Textbereich anzeigen</translation>
     </message>
     <message>
         <source>Show navigation</source>
@@ -302,7 +302,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Show work chooser buttons</source>
-        <translation type="obsolete">Knöpfe zum Auswählen von Werken anzeigen</translation>
+        <translation type="obsolete">Kn??pfe zum Ausw??hlen von Werken anzeigen</translation>
     </message>
     <message>
         <source>Show tools</source>
@@ -326,86 +326,86 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Enter the unlock key for %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Geben Sie den Freischaltschl??ssel f??r %1 ein.</translation>
     </message>
     <message>
         <source>Warning: Invalid unlock key!</source>
-        <translation type="unfinished"></translation>
+        <translation>Warnung: Ung??ltiger Freischaltschl??ssel!</translation>
     </message>
     <message>
         <source>The unlock key you provided did not properly unlock this module. Please try again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der von Ihnen eingegebene Freischaltschl??ssel hat dieses Modul nicht richtig freigeschaltet. Bitte versuchen Sie es erneut.</translation>
     </message>
     <message>
         <source>Main toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Haupt-Symbolleiste</translation>
     </message>
     <message>
         <source>Navigation toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Navigations-Symbolleiste</translation>
     </message>
     <message>
         <source>Works toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Werke-Symbolleiste</translation>
     </message>
     <message>
         <source>Tools toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Werkzeug-Symbolleiste</translation>
     </message>
     <message>
         <source>Format toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Format-Symbolleiste</translation>
     </message>
     <message>
         <source>Show bookshelf</source>
-        <translation type="unfinished"></translation>
+        <translation>B??cherregal anzeigen</translation>
     </message>
     <message>
         <source>Show bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Lesezeichen anzeigen</translation>
     </message>
     <message>
         <source>Show mag</source>
-        <translation type="unfinished"></translation>
+        <translation>Lupe anzeigen</translation>
     </message>
     <message>
         <source>Toolbars</source>
-        <translation type="unfinished"></translation>
+        <translation>Symbolleisten</translation>
     </message>
     <message>
         <source>Show main</source>
-        <translation type="unfinished"></translation>
+        <translation>Hauptfenster anzeigen</translation>
     </message>
     <message>
         <source>Show works</source>
-        <translation type="unfinished"></translation>
+        <translation>Werke anzeigen</translation>
     </message>
     <message>
         <source>Show format</source>
-        <translation type="unfinished"></translation>
+        <translation>Format anzeigen</translation>
     </message>
     <message>
         <source>Show toolbars in text windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Symbolleisten in Textfenstern anzeigen</translation>
     </message>
     <message>
         <source>Show parallel text headers</source>
-        <translation type="unfinished"></translation>
+        <translation>Parallele Text-Header anzeigen</translation>
     </message>
     <message>
         <source>O&amp;pen windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Fenster ??&amp;ffnen</translation>
     </message>
 </context>
 <context>
     <name>BtAboutDialog</name>
     <message>
         <source>About BibleTime</source>
-        <translation>Über BibleTime</translation>
+        <translation>??ber BibleTime</translation>
     </message>
     <message>
         <source>BibleTime is an easy to use but powerful Bible study tool.</source>
-        <translation>BibleTime ist ein einfach zu bedienendes aber mächtiges Bibelstudien-Werkzeug.</translation>
+        <translation>BibleTime ist ein einfach zu bedienendes aber m??chtiges Bibelstudien-Werkzeug.</translation>
     </message>
     <message>
         <source>The following people contributed to BibleTime:</source>
@@ -413,7 +413,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>documentation and translation manager</source>
-        <translation>Leiter der Dokumentation und Übersetzung</translation>
+        <translation>Leiter der Dokumentation und ??bersetzung</translation>
     </message>
     <message>
         <source>designer</source>
@@ -433,7 +433,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>domain sponsor</source>
-        <translation>Domain-Träger</translation>
+        <translation>Domain-Tr??ger</translation>
     </message>
     <message>
         <source>howto</source>
@@ -445,7 +445,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>The following people translated BibleTime into their language:</source>
-        <translation>Die folgenden Personen übersetzten BibleTime in ihre Sprachen:</translation>
+        <translation>Die folgenden Personen ??bersetzten BibleTime in ihre Sprachen:</translation>
     </message>
     <message>
         <source>SWORD library version %1</source>
@@ -453,7 +453,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>The complete legally binding license is below.</source>
-        <translation>Die vollständige, rechtlich bindende Lizenz findet sich unten.</translation>
+        <translation>Die vollst??ndige, rechtlich bindende Lizenz findet sich unten.</translation>
     </message>
     <message>
         <source>This program uses Qt version %1.</source>
@@ -461,7 +461,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
-        <translation>Qt ist ein plattformübergreifendes Applikations- und UI-Rahmensystem, das mit der C++-Sprache erstellt wurde. Es wurde unter der LGPL-Lizenz veröffentlicht.</translation>
+        <translation>Qt ist ein plattform??bergreifendes Applikations- und UI-Rahmensystem, das mit der C++-Sprache erstellt wurde. Es wurde unter der LGPL-Lizenz ver??ffentlicht.</translation>
     </message>
     <message>
         <source>&amp;BibleTime</source>
@@ -469,7 +469,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>We are looking for developers and translators. If you would like to join our team, please send an email to %1.</source>
-        <translation>Wir sind auf der Suche nach Entwicklern und Übersetzern. Wenn du unser Team bereichern willst, sende bitte eine E-Mail an %1.</translation>
+        <translation>Wir sind auf der Suche nach Entwicklern und ??bersetzern. Wenn du unser Team bereichern willst, sende bitte eine E-Mail an %1.</translation>
     </message>
     <message>
         <source>&amp;Contributors</source>
@@ -477,7 +477,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>project founder</source>
-        <translation>Projektgründer</translation>
+        <translation>Projektgr??nder</translation>
     </message>
     <message>
         <source>project manager</source>
@@ -485,7 +485,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>artist</source>
-        <translation>Künstler</translation>
+        <translation>K??nstler</translation>
     </message>
     <message>
         <source>tester</source>
@@ -501,7 +501,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
-        <translation>BibleTime verwendet das SWORD Projekt, das freie Bibelsoftwareprojekt der Crosswire Bibelgesellschaft. Sein Zweck ist es, plattformübergreifende Open-Source-Werkzeuge zu erstellen (unter der GNU GPL), mit denen Programmierer neue Bibelsoftware schnell erstellen können.</translation>
+        <translation>BibleTime verwendet das SWORD-Projekt, das freie Bibelsoftwareprojekt der Crosswire Bibelgesellschaft. Sein Zweck ist es, plattform??bergreifende Open-Source-Werkzeuge zu erstellen &amp;mdash; der GNU General Public License unterstellt &amp;mdash;, mit denen Programmierer und Bibelgesellschaften neue Bibelsoftware schneller und einfacher erstellen k??nnen.</translation>
     </message>
     <message>
         <source>The SWORD Project: </source>
@@ -533,25 +533,25 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</source>
-        <translation>BibleTime ist unter der GPL-Lizenz verfügbar. Sie können das Programm für persönliche, private, öffentliche oder kommerzielle Zwecke ohne Beschränkungen einsetzen, aber Sie können es nur weitergeben, wenn Sie auch den dazugehörigen Quellcode mit weitergeben.</translation>
+        <translation>BibleTime ist unter der GPL-Lizenz verf??gbar. Sie k??nnen das Programm f??r pers??nliche, private, ??ffentliche oder kommerzielle Zwecke ohne Beschr??nkungen einsetzen, aber Sie k??nnen es nur weitergeben, wenn Sie auch den dazugeh??rigen Quellcode mit weitergeben.</translation>
     </message>
 </context>
 <context>
     <name>BtBookDropdownChooserButton</name>
     <message>
         <source>Select book</source>
-        <translation>Buch auswählen</translation>
+        <translation>Buch ausw??hlen</translation>
     </message>
 </context>
 <context>
     <name>BtBookshelfDockWidget</name>
     <message>
         <source>Bookshelf</source>
-        <translation>Bücherregal</translation>
+        <translation>B??cherregal</translation>
     </message>
     <message>
         <source>&amp;Open</source>
-        <translation>Ö&amp;ffnen</translation>
+        <translation>??&amp;ffnen</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
@@ -571,7 +571,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>&amp;About...</source>
-        <translation>Ü&amp;ber...</translation>
+        <translation>??&amp;ber...</translation>
     </message>
     <message>
         <source>&amp;Search in %1...</source>
@@ -579,11 +579,11 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Warning: Module locked!</source>
-        <translation type="unfinished"></translation>
+        <translation>Warnung: Modul gesperrt!</translation>
     </message>
     <message>
         <source>You are trying to access an encrypted module. Please provide an unlock key in the following dialog to open the module.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie versuchen, auf ein verschl??sseltes Modul zuzugreifen. Bitte geben Sie einen Freischaltsch??ssel im folgenden Dialogfenster ein, um das Modul zu ??ffnen.</translation>
     </message>
 </context>
 <context>
@@ -602,7 +602,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Books</source>
-        <translation type="obsolete">Bücher</translation>
+        <translation type="obsolete">B??cher</translation>
     </message>
     <message>
         <source>Cults/Unorthodox</source>
@@ -614,15 +614,15 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Daily Devotionals</source>
-        <translation type="obsolete">Andachtsbücher</translation>
+        <translation type="obsolete">Andachtsb??cher</translation>
     </message>
     <message>
         <source>Lexicons and Dictionaries</source>
-        <translation type="obsolete">Lexika und Wörterbücher</translation>
+        <translation type="obsolete">Lexika und W??rterb??cher</translation>
     </message>
     <message>
         <source>Glossaries</source>
-        <translation type="obsolete">Wörterbücher</translation>
+        <translation type="obsolete">W??rterb??cher</translation>
     </message>
     <message>
         <source>Unknown</source>
@@ -641,11 +641,11 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Change the grouping of items in the bookshelf.</source>
-        <translation>Die Anordnung von Einträgen im Bücherregal verändern.</translation>
+        <translation>Die Anordnung von Eintr??gen im B??cherregal ver??ndern.</translation>
     </message>
     <message>
         <source>Use grouping from bookshelf dock</source>
-        <translation>Gruppierung aus dem Bücherregal verwenden</translation>
+        <translation>Gruppierung aus dem B??cherregal verwenden</translation>
     </message>
     <message>
         <source>Category/Language</source>
@@ -676,7 +676,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <name>BtChapterDropdownChooserButton</name>
     <message>
         <source>Select chapter</source>
-        <translation>Kapitel auswählen</translation>
+        <translation>Kapitel ausw??hlen</translation>
     </message>
 </context>
 <context>
@@ -691,7 +691,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Show headings</source>
-        <translation>Überschriften anzeigen</translation>
+        <translation>??berschriften anzeigen</translation>
     </message>
     <message>
         <source>Highlight words of Jesus</source>
@@ -699,11 +699,11 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Show Hebrew vowel points</source>
-        <translation>Hebräische Vokalzeichen anzeigen</translation>
+        <translation>Hebr??ische Vokalzeichen anzeigen</translation>
     </message>
     <message>
         <source>Show Hebrew cantillation marks</source>
-        <translation>Hebräische Kantillationszeichen anzeigen</translation>
+        <translation>Hebr??ische Kantillationszeichen anzeigen</translation>
     </message>
     <message>
         <source>Show Greek accents</source>
@@ -727,18 +727,18 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Display settings: No options available</source>
-        <translation>Anzeigeeinstellungen: keine Einstellungen verfügbar</translation>
+        <translation>Anzeigeeinstellungen: keine Einstellungen verf??gbar</translation>
     </message>
 </context>
 <context>
     <name>BtFontSettingsPage</name>
     <message>
         <source>You can specify a custom font for each language.</source>
-        <translation>Sie können eine angepasste Schrift für jede Sprache angeben.</translation>
+        <translation>Sie k??nnen eine angepasste Schrift f??r jede Sprache angeben.</translation>
     </message>
     <message>
         <source>The font selection below will apply to all texts in this language</source>
-        <translation>Die untenstehende Schriftauswahl wird für alle Texte in dieser Sprache gelten</translation>
+        <translation>Die untenstehende Schriftauswahl wird f??r alle Texte in dieser Sprache gelten</translation>
     </message>
     <message>
         <source>Use custom font</source>
@@ -753,23 +753,23 @@ This file is distributed under the same license as the Bibetime package.</transl
     <name>BtIndexPage</name>
     <message>
         <source>If selected, those indexes which have no corresponding work will be deleted when BibleTime starts</source>
-        <translation>Wenn ausgewählt, werden keinem Werk zugeordnete Indizes gelöscht, wenn BibleTime startet</translation>
+        <translation>Wenn ausgew??hlt, werden keinem Werk zugeordnete Indizes gel??scht, wenn BibleTime startet</translation>
     </message>
     <message>
         <source>Automatically delete orphaned indexes when BibleTime starts</source>
-        <translation>Verwaiste Indizes automatisch beim Start von BibleTime löschen</translation>
+        <translation>Verwaiste Indizes automatisch beim Start von BibleTime l??schen</translation>
     </message>
     <message>
         <source>Delete the selected indexes</source>
-        <translation>Die ausgewählten Indizes löschen</translation>
+        <translation>Die ausgew??hlten Indizes l??schen</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Löschen</translation>
+        <translation>L??schen</translation>
     </message>
     <message>
         <source>Create new indexes for the selected works</source>
-        <translation>Neue Indizes für ausgewählte Werke erstellen</translation>
+        <translation>Neue Indizes f??r ausgew??hlte Werke erstellen</translation>
     </message>
     <message>
         <source>Work</source>
@@ -777,11 +777,11 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Index size</source>
-        <translation>Indexgröße</translation>
+        <translation>Indexgr????e</translation>
     </message>
     <message>
         <source>Create new search indexes and delete created indexes for the installed works.</source>
-        <translation>Erstellung neuer Such-Indizes und Löschen erstellter Indizes für installierte Werke.</translation>
+        <translation>Erstellung neuer Such-Indizes und L??schen erstellter Indizes f??r installierte Werke.</translation>
     </message>
     <message>
         <source>Search Indexes</source>
@@ -812,11 +812,11 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Do you really want to install these works?</source>
-        <translation>Möchten Sie diese Werke wirklich installieren?</translation>
+        <translation>M??chten Sie diese Werke wirklich installieren?</translation>
     </message>
     <message>
         <source>Only one version of a work can be installed at the same time. Select only one if there are items marked with red.</source>
-        <translation>Nur eine Version eines Werkes kann installiert werden. Wählen Sie eine aus, wenn rot markierte Einträge vorliegen.</translation>
+        <translation>Nur eine Version eines Werkes kann installiert werden. W??hlen Sie eine aus, wenn rot markierte Eintr??ge vorliegen.</translation>
     </message>
 </context>
 <context>
@@ -838,7 +838,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Install and update works. Add remote or local sources, refresh them, select the works to be installed/updated and click Install.&lt;br/&gt;&lt;b&gt;WARNING:&lt;/b&gt; If you live in a persecuted country and don&apos;t want to risk detection don&apos;t use remote sources.</source>
-        <translation>Werke installieren und aktualisieren. Fügen Sie entfernte oder lokale Quellen hinzu, aktualisieren Sie diese, wählen Sie die Werke aus, die installiert/aktualisiert werden sollen und klicken Sie Installieren.&lt;br/&gt;&lt;b&gt;WARNUNG:&lt;/b&gt;Wenn Sie in einem Land mit religiöser Verfolgung leben und es nicht riskieren wollen, entdeckt zu werden, sollten Sie keine entfernten Quellen verwenden.</translation>
+        <translation>Werke installieren und aktualisieren. F??gen Sie entfernte oder lokale Quellen hinzu, aktualisieren Sie diese, w??hlen Sie die Werke aus, die installiert/aktualisiert werden sollen und klicken Sie Installieren.&lt;br/&gt;&lt;b&gt;WARNUNG:&lt;/b&gt;Wenn Sie in einem Land mit religi??ser Verfolgung leben und es nicht riskieren wollen, entdeckt zu werden, sollten Sie keine entfernten Quellen verwenden.</translation>
     </message>
     <message>
         <source>Install...</source>
@@ -846,7 +846,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Install or update selected works</source>
-        <translation>Installation oder Aktualisierung ausgewählter Werke</translation>
+        <translation>Installation oder Aktualisierung ausgew??hlter Werke</translation>
     </message>
     <message>
         <source>Install folder:</source>
@@ -865,7 +865,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <name>BtInstallPathDialog</name>
     <message>
         <source>Add...</source>
-        <translation>Hinzufügen...</translation>
+        <translation>Hinzuf??gen...</translation>
     </message>
     <message>
         <source>Edit...</source>
@@ -877,11 +877,11 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Bookshelf Folders</source>
-        <translation>Bücherregal-Verzeichnisse</translation>
+        <translation>B??cherregal-Verzeichnisse</translation>
     </message>
     <message>
         <source>Works can be installed in one or more folders. After setting up folders here you can choose one of them in Install page.</source>
-        <translation>Werke können in einem oder mehreren Ordnern installiert werden. Nach der Einrichtung von Ordnern können Sie hier einen von ihnen in der Installationsseite wählen.</translation>
+        <translation>Werke k??nnen in einem oder mehreren Ordnern installiert werden. Nach der Einrichtung von Ordnern k??nnen Sie hier einen von ihnen in der Installationsseite w??hlen.</translation>
     </message>
     <message>
         <source>BibleTime and the SWORD library find the works from  all of these folders. If a folder is removed here it still exists in the system with all the works in it.</source>
@@ -889,15 +889,15 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Configure bookshelf folders</source>
-        <translation>Bücherregal-Ordner einrichten</translation>
+        <translation>B??cherregal-Ordner einrichten</translation>
     </message>
     <message>
         <source>Configuration file for the folders is: </source>
-        <translation>Konfigurationsdatei für den Ordner ist:</translation>
+        <translation>Konfigurationsdatei f??r den Ordner ist:</translation>
     </message>
     <message>
         <source>Folders where new works can be installed</source>
-        <translation>Ordner in denen neue Werke installiert werden können</translation>
+        <translation>Ordner in denen neue Werke installiert werden k??nnen</translation>
     </message>
     <message>
         <source>Read-only folders</source>
@@ -905,15 +905,15 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Add new folder</source>
-        <translation>Neuen Ordner hinzufügen</translation>
+        <translation>Neuen Ordner hinzuf??gen</translation>
     </message>
     <message>
         <source>Edit the selected folder</source>
-        <translation>Ausgewählten Ordner editieren</translation>
+        <translation>Ausgew??hlten Ordner editieren</translation>
     </message>
     <message>
         <source>Remove the selected folder</source>
-        <translation>Ausgewählten Ordner entfernen</translation>
+        <translation>Ausgew??hlten Ordner entfernen</translation>
     </message>
     <message>
         <source>This default folder in your home directory can&apos;t be removed</source>
@@ -921,7 +921,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Choose Folder</source>
-        <translation>Ordner auswählen</translation>
+        <translation>Ordner ausw??hlen</translation>
     </message>
     <message>
         <source>Use Folder?</source>
@@ -929,11 +929,11 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>This folder is not writable, so works can not be installed here using BibleTime. Do you want to use this folder instead of the previous value?</source>
-        <translation>Dieser Ordner ist nicht beschreibbar, sodass Werke hier nicht durch BibleTime installiert werden können. Möchten Sie diesen Ordner anstelle des vorherigen Eintrags nutzen?</translation>
+        <translation>Dieser Ordner ist nicht beschreibbar, sodass Werke hier nicht durch BibleTime installiert werden k??nnen. M??chten Sie diesen Ordner anstelle des vorherigen Eintrags nutzen?</translation>
     </message>
     <message>
         <source>This folder is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of bookshelf folders?</source>
-        <translation>Dieser Ordner ist nicht beschreibbar, sodass Werke hier nicht durch BibleTime installiert werden können. Möchten Sie ihn dennoch der Liste von Bücherregal-Ordnern hinzufügen?</translation>
+        <translation>Dieser Ordner ist nicht beschreibbar, sodass Werke hier nicht durch BibleTime installiert werden k??nnen. M??chten Sie ihn dennoch der Liste von B??cherregal-Ordnern hinzuf??gen?</translation>
     </message>
     <message>
         <source>Nonexistent folders</source>
@@ -987,15 +987,15 @@ This file is distributed under the same license as the Bibetime package.</transl
     <name>BtLanguageSettingsPage</name>
     <message>
         <source>Select the language in which the Biblical book names are displayed.</source>
-        <translation>Wählen Sie die Sprache in der die BIbelbücher-Namen angezeigt werden.</translation>
+        <translation>W??hlen Sie die Sprache in der die BIbelb??cher-Namen angezeigt werden.</translation>
     </message>
     <message>
         <source>Language for names of Bible books:</source>
-        <translation>Sprache der Bibelbücher-Namen:</translation>
+        <translation>Sprache der Bibelb??cher-Namen:</translation>
     </message>
     <message>
         <source>The languages which can be used for the biblical booknames</source>
-        <translation>Sprachen, die für die Bibelbücher-Namen verwendet werden können</translation>
+        <translation>Sprachen, die f??r die Bibelb??cher-Namen verwendet werden k??nnen</translation>
     </message>
     <message>
         <source>Languages</source>
@@ -1006,11 +1006,11 @@ This file is distributed under the same license as the Bibetime package.</transl
     <name>BtModuleChooserButton</name>
     <message>
         <source>Select a work [%1]</source>
-        <translation>Ein Werk auswählen [%1]</translation>
+        <translation>Ein Werk ausw??hlen [%1]</translation>
     </message>
     <message>
         <source>Select an additional work</source>
-        <translation>Ein zusätzliches Werk auswählen</translation>
+        <translation>Ein zus??tzliches Werk ausw??hlen</translation>
     </message>
     <message>
         <source>NONE</source>
@@ -1021,14 +1021,14 @@ This file is distributed under the same license as the Bibetime package.</transl
     <name>BtModuleManagerDialog</name>
     <message>
         <source>Bookshelf Manager</source>
-        <translation>Bücherregal-Verwaltung</translation>
+        <translation>B??cherregal-Verwaltung</translation>
     </message>
 </context>
 <context>
     <name>BtOpenWorkAction</name>
     <message>
         <source>&amp;Open work</source>
-        <translation>Werk &amp;öffnen</translation>
+        <translation>Werk &amp;??ffnen</translation>
     </message>
 </context>
 <context>
@@ -1039,15 +1039,15 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Remove installed works. Select the works and click Remove button.</source>
-        <translation>Entfernen installierter Werke. Wählen Sie die Werke aus und betätigen Sie die \&quot;Entfernen\&quot;-Schaltfläche.</translation>
+        <translation>Entfernen installierter Werke. W??hlen Sie die Werke aus und bet??tigen Sie die \&quot;Entfernen\&quot;-Schaltfl??che.</translation>
     </message>
     <message>
         <source>You selected the following work(s): </source>
-        <translation>Sie haben folgende Werke ausgewählt:</translation>
+        <translation>Sie haben folgende Werke ausgew??hlt:</translation>
     </message>
     <message>
         <source>Do you really want to remove them from your system?</source>
-        <translation>Möchten Sie diese wirklich von Ihrem System entfernen?</translation>
+        <translation>M??chten Sie diese wirklich von Ihrem System entfernen?</translation>
     </message>
     <message>
         <source>Remove...</source>
@@ -1055,7 +1055,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Remove the selected works</source>
-        <translation>Entfernen der ausgewählten Werke</translation>
+        <translation>Entfernen der ausgew??hlten Werke</translation>
     </message>
     <message>
         <source>Remove Works?</source>
@@ -1081,7 +1081,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Select the works which should be searched.</source>
-        <translation>Wählen Sie die Werke aus, in denen gesucht werden soll.</translation>
+        <translation>W??hlen Sie die Werke aus, in denen gesucht werden soll.</translation>
     </message>
 </context>
 <context>
@@ -1100,14 +1100,14 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Select first or second shortcut and type the shortcut with keyboard</source>
-        <translation>Wählen Sie zwischen primärem oder sekundärem Tastenkürzel und geben Sie es mit der Tastatur ein</translation>
+        <translation>W??hlen Sie zwischen prim??rem oder sekund??rem Tastenk??rzel und geben Sie es mit der Tastatur ein</translation>
     </message>
 </context>
 <context>
     <name>BtShortcutsEditor</name>
     <message>
         <source>Select to change key</source>
-        <translation>Auswählen um Taste zu ändern</translation>
+        <translation>Ausw??hlen um Taste zu ??ndern</translation>
     </message>
     <message>
         <source>Action
@@ -1126,7 +1126,7 @@ shortcut</source>
     </message>
     <message>
         <source>Shortcut for selected action name</source>
-        <translation>Kurzbefehl für ausgewählten Aktionsnamen</translation>
+        <translation>Kurzbefehl f??r ausgew??hlten Aktionsnamen</translation>
     </message>
     <message>
         <source>None</source>
@@ -1157,7 +1157,7 @@ shortcut</source>
     </message>
     <message>
         <source>Add...</source>
-        <translation>Hinzufügen...</translation>
+        <translation>Hinzuf??gen...</translation>
     </message>
     <message>
         <source>Refresh...</source>
@@ -1169,26 +1169,26 @@ shortcut</source>
     </message>
     <message>
         <source>Delete...</source>
-        <translation>Löschen...</translation>
+        <translation>L??schen...</translation>
     </message>
     <message>
         <source>Delete this source</source>
-        <translation>Diese Quelle löschen</translation>
+        <translation>Diese Quelle l??schen</translation>
     </message>
     <message>
         <source>Add new source</source>
-        <translation>Neue Quelle hinzufügen</translation>
+        <translation>Neue Quelle hinzuf??gen</translation>
     </message>
 </context>
 <context>
     <name>BtSourceWidget</name>
     <message>
         <source>Delete Source?</source>
-        <translation>Quelle löschen?</translation>
+        <translation>Quelle l??schen?</translation>
     </message>
     <message>
         <source>Do you really want to delete this source?</source>
-        <translation>Möchten Sie diese Quelle wirklich löschen?</translation>
+        <translation>M??chten Sie diese Quelle wirklich l??schen?</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -1232,14 +1232,14 @@ shortcut</source>
     </message>
     <message>
         <source>No sources were found in the SWORD configuration and BibleTime couldn&apos;t create a default source. Check your SWORD configuration and that the configuration path is writable. Then restart the Bookshelf Manager.</source>
-        <translation>In der SWORD-Konfiguration wurden keine Quellen gefunden und BibleTime konnte keine Standard-Quelle erstellen. Überprüfen Sie Ihre SWORD-Konfiguration und dass der Konfigurations-Pfad beschreibbar ist. Dann starten Sie die Bücherregal-Verwaltung erneut.</translation>
+        <translation>In der SWORD-Konfiguration wurden keine Quellen gefunden und BibleTime konnte keine Standard-Quelle erstellen. ??berpr??fen Sie Ihre SWORD-Konfiguration und dass der Konfigurations-Pfad beschreibbar ist. Dann starten Sie die B??cherregal-Verwaltung erneut.</translation>
     </message>
 </context>
 <context>
     <name>BtTextWindowHeaderWidget</name>
     <message>
         <source>Add/remove/replace</source>
-        <translation>Hinzufügen/entfernen/ersetzen</translation>
+        <translation>Hinzuf??gen/entfernen/ersetzen</translation>
     </message>
     <message>
         <source>Remove</source>
@@ -1251,14 +1251,14 @@ shortcut</source>
     </message>
     <message>
         <source>Add</source>
-        <translation>Hinzufügen</translation>
+        <translation>Hinzuf??gen</translation>
     </message>
 </context>
 <context>
     <name>BtVerseDropdownChooserButton</name>
     <message>
         <source>Select verse</source>
-        <translation>Vers auswählen</translation>
+        <translation>Vers ausw??hlen</translation>
     </message>
 </context>
 <context>
@@ -1293,7 +1293,7 @@ shortcut</source>
     </message>
     <message>
         <source>Choose action group:</source>
-        <translation>Aktionsgruppe auswählen:</translation>
+        <translation>Aktionsgruppe ausw??hlen:</translation>
     </message>
     <message>
         <source>
@@ -1305,7 +1305,7 @@ shortcut</source>
     <name>CBibleReadWindow</name>
     <message>
         <source>Next book</source>
-        <translation>Nächstes Buch</translation>
+        <translation>N??chstes Buch</translation>
     </message>
     <message>
         <source>Previous book</source>
@@ -1313,7 +1313,7 @@ shortcut</source>
     </message>
     <message>
         <source>Next chapter</source>
-        <translation>Nächstes Kapitel</translation>
+        <translation>N??chstes Kapitel</translation>
     </message>
     <message>
         <source>Previous chapter</source>
@@ -1321,7 +1321,7 @@ shortcut</source>
     </message>
     <message>
         <source>Next verse</source>
-        <translation>Nächster Vers</translation>
+        <translation>N??chster Vers</translation>
     </message>
     <message>
         <source>Previous verse</source>
@@ -1407,11 +1407,11 @@ shortcut</source>
     </message>
     <message>
         <source>Delete Items</source>
-        <translation>Einträge löschen</translation>
+        <translation>Eintr??ge l??schen</translation>
     </message>
     <message>
         <source>Do you really want to delete the selected items and child-items?</source>
-        <translation>Möchten Sie wirklich diesen Eintrag und eventuelle Untereinträge löschen?</translation>
+        <translation>M??chten Sie wirklich diesen Eintrag und eventuelle Untereintr??ge l??schen?</translation>
     </message>
     <message>
         <source>The work to which the bookmark points to is not installed.</source>
@@ -1419,7 +1419,7 @@ shortcut</source>
     </message>
     <message>
         <source>Change bookmark description...</source>
-        <translation>Die Lesezeichen-Beschreibung verändern...</translation>
+        <translation>Die Lesezeichen-Beschreibung ver??ndern...</translation>
     </message>
     <message>
         <source>Print bookmarks...</source>
@@ -1427,7 +1427,7 @@ shortcut</source>
     </message>
     <message>
         <source>Remove selected items...</source>
-        <translation>Ausgewählte Elemente entfernen...</translation>
+        <translation>Ausgew??hlte Elemente entfernen...</translation>
     </message>
     <message>
         <source>Import to folder...</source>
@@ -1455,14 +1455,14 @@ shortcut</source>
     </message>
     <message>
         <source>Drag references from text views to this view</source>
-        <translation>Referenzen von der Textansicht in diese Ansicht mitführen</translation>
+        <translation>Referenzen von der Textansicht in diese Ansicht mitf??hren</translation>
     </message>
 </context>
 <context>
     <name>CCommentaryReadWindow</name>
     <message>
         <source>Next book</source>
-        <translation>Nächstes Buch</translation>
+        <translation>N??chstes Buch</translation>
     </message>
     <message>
         <source>Previous book</source>
@@ -1470,7 +1470,7 @@ shortcut</source>
     </message>
     <message>
         <source>Next chapter</source>
-        <translation>Nächstes Kapitel</translation>
+        <translation>N??chstes Kapitel</translation>
     </message>
     <message>
         <source>Previous chapter</source>
@@ -1478,7 +1478,7 @@ shortcut</source>
     </message>
     <message>
         <source>Next verse</source>
-        <translation>Nächster Vers</translation>
+        <translation>N??chster Vers</translation>
     </message>
     <message>
         <source>Previous verse</source>
@@ -1508,7 +1508,7 @@ shortcut</source>
     </message>
     <message>
         <source>Available display styles:</source>
-        <translation>Verfügbare Anzeigestile:</translation>
+        <translation>Verf??gbare Anzeigestile:</translation>
     </message>
     <message>
         <source>Style preview</source>
@@ -1524,11 +1524,11 @@ shortcut</source>
     </message>
     <message>
         <source>He who believes in him is not judged. He who doesn&apos;t believe has been judged already, because he has not believed in the name of the one and only Son of God.</source>
-        <translation>Wer an ihn glaubt, der wird nicht verurteilt werden. Wer aber nicht an den einzigen Sohn Gottes glaubt, über den ist wegen seines Unglaubens das Urteil schon gesprochen.</translation>
+        <translation>Wer an ihn glaubt, der wird nicht verurteilt werden. Wer aber nicht an den einzigen Sohn Gottes glaubt, ??ber den ist wegen seines Unglaubens das Urteil schon gesprochen.</translation>
     </message>
     <message>
         <source>For everyone who does evil hates the light, and doesn&apos;t come to the light, lest his works would be exposed.</source>
-        <translation>Wer Böses tut, scheut das Licht und bleibt lieber im Dunkeln, damit niemand seine Taten sehen kann.</translation>
+        <translation>Wer B??ses tut, scheut das Licht und bleibt lieber im Dunkeln, damit niemand seine Taten sehen kann.</translation>
     </message>
     <message>
         <source>But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.</source>
@@ -1563,15 +1563,15 @@ shortcut</source>
     <name>CDisplayWindow</name>
     <message>
         <source>Back in history</source>
-        <translation>Zurück im Verlauf</translation>
+        <translation>Zur??ck im Verlauf</translation>
     </message>
     <message>
         <source>Forward in history</source>
-        <translation>Vorwärts im Verlauf</translation>
+        <translation>Vorw??rts im Verlauf</translation>
     </message>
     <message>
         <source>Zoom in</source>
-        <translation>Vergrößern</translation>
+        <translation>Vergr????ern</translation>
     </message>
     <message>
         <source>Zoom out</source>
@@ -1579,7 +1579,7 @@ shortcut</source>
     </message>
     <message>
         <source>Select all</source>
-        <translation>Alles auswählen</translation>
+        <translation>Alles ausw??hlen</translation>
     </message>
     <message>
         <source>Copy</source>
@@ -1591,7 +1591,7 @@ shortcut</source>
     </message>
     <message>
         <source>Change location</source>
-        <translation>Adresse ändern</translation>
+        <translation>Adresse ??ndern</translation>
     </message>
     <message>
         <source>Search with works of this window</source>
@@ -1599,7 +1599,7 @@ shortcut</source>
     </message>
     <message>
         <source>Work chooser buttons</source>
-        <translation>Knopf für Werkauswahl</translation>
+        <translation>Knopf f??r Werkauswahl</translation>
     </message>
     <message>
         <source>Navigation</source>
@@ -1611,7 +1611,7 @@ shortcut</source>
     </message>
     <message>
         <source>Text area header</source>
-        <translation>Kopfleiste für Textbereich</translation>
+        <translation>Kopfleiste f??r Textbereich</translation>
     </message>
     <message>
         <source>Tool</source>
@@ -1626,7 +1626,7 @@ shortcut</source>
     <name>CFontChooser</name>
     <message>
         <source>Size:</source>
-        <translation>Größe:</translation>
+        <translation>Gr????e:</translation>
     </message>
     <message>
         <source>Font name:</source>
@@ -1665,7 +1665,7 @@ shortcut</source>
     </message>
     <message>
         <source>Select all</source>
-        <translation type="obsolete">Alle auswählen</translation>
+        <translation type="obsolete">Alle ausw??hlen</translation>
     </message>
     <message>
         <source>HTML editor window</source>
@@ -1677,7 +1677,7 @@ shortcut</source>
     </message>
     <message>
         <source>Font size</source>
-        <translation>Schriftgröße</translation>
+        <translation>Schriftgr????e</translation>
     </message>
     <message>
         <source>Font color</source>
@@ -1704,11 +1704,11 @@ shortcut</source>
     </message>
     <message>
         <source>Delete current entry</source>
-        <translation type="obsolete">Ausgewählten Eintrag löschen</translation>
+        <translation type="obsolete">Ausgew??hlten Eintrag l??schen</translation>
     </message>
     <message>
         <source>Restore original text</source>
-        <translation type="obsolete">Den ursprünglichen Text wiederherstellen</translation>
+        <translation type="obsolete">Den urspr??nglichen Text wiederherstellen</translation>
     </message>
     <message>
         <source>Module not writable</source>
@@ -1728,7 +1728,7 @@ shortcut</source>
     </message>
     <message>
         <source>Delete current entry (no undo)</source>
-        <translation type="obsolete">Aktuellen Eintrag löschen (ohne Rückgängig-Funktion)</translation>
+        <translation type="obsolete">Aktuellen Eintrag l??schen (ohne R??ckg??ngig-Funktion)</translation>
     </message>
     <message>
         <source>Restore original text, new text will be lost</source>
@@ -1739,18 +1739,18 @@ shortcut</source>
     <name>CInputDialog</name>
     <message>
         <source>Clear</source>
-        <translation>Löschen</translation>
+        <translation>L??schen</translation>
     </message>
 </context>
 <context>
     <name>CKeyReferenceWidget</name>
     <message>
         <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
-        <translation>Durchlaufen Sie die Listeneinträge. Drücken Sie die Taste und bewegen Sie die Maus um nach vorn oder hinten durch die Liste zu laufen.</translation>
+        <translation>Durchlaufen Sie die Listeneintr??ge. Dr??cken Sie die Taste und bewegen Sie die Maus um nach vorn oder hinten durch die Liste zu laufen.</translation>
     </message>
     <message>
         <source>Next book</source>
-        <translation>Nächstes Buch</translation>
+        <translation>N??chstes Buch</translation>
     </message>
     <message>
         <source>Previous book</source>
@@ -1758,7 +1758,7 @@ shortcut</source>
     </message>
     <message>
         <source>Next chapter</source>
-        <translation>Nächstes Kapitel</translation>
+        <translation>N??chstes Kapitel</translation>
     </message>
     <message>
         <source>Previous chapter</source>
@@ -1766,7 +1766,7 @@ shortcut</source>
     </message>
     <message>
         <source>Next verse</source>
-        <translation>Nächster Vers</translation>
+        <translation>N??chster Vers</translation>
     </message>
     <message>
         <source>Previous verse</source>
@@ -1781,19 +1781,19 @@ shortcut</source>
     </message>
     <message>
         <source>Language for names of Bible books:</source>
-        <translation type="obsolete">Sprache der Bibelbücher-Namen:</translation>
+        <translation type="obsolete">Sprache der Bibelb??cher-Namen:</translation>
     </message>
     <message>
         <source>The languages which can be used for the biblical booknames</source>
-        <translation type="obsolete">Die Sprachen die für die Bibelbücher-Namen verwendet werden können</translation>
+        <translation type="obsolete">Die Sprachen die f??r die Bibelb??cher-Namen verwendet werden k??nnen</translation>
     </message>
     <message>
         <source>The font selection below will apply to all texts in this language</source>
-        <translation type="obsolete">Die untenstehende Schriftauswahl wird für alle Texte in dieser Sprache gelten</translation>
+        <translation type="obsolete">Die untenstehende Schriftauswahl wird f??r alle Texte in dieser Sprache gelten</translation>
     </message>
     <message>
         <source>Select the language in which the Biblical book names are displayed.</source>
-        <translation type="obsolete">Wählen Sie die Sprache in der die BIbelbücher-Namen angezeigt werden.</translation>
+        <translation type="obsolete">W??hlen Sie die Sprache in der die BIbelb??cher-Namen angezeigt werden.</translation>
     </message>
     <message>
         <source>Fonts</source>
@@ -1801,7 +1801,7 @@ shortcut</source>
     </message>
     <message>
         <source>You can specify a custom font for each language.</source>
-        <translation type="obsolete">Sie können eine angepasste Schrift für jede Sprache spezifizieren.</translation>
+        <translation type="obsolete">Sie k??nnen eine angepasste Schrift f??r jede Sprache spezifizieren.</translation>
     </message>
     <message>
         <source>Languages</source>
@@ -1816,15 +1816,15 @@ shortcut</source>
     <name>CLexiconKeyChooser</name>
     <message>
         <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
-        <translation>Durchlaufen Sie die Listeneinträge. Drücken Sie die Taste und bewegen Sie die Maus um nach vorn oder hinten durch die Liste zu laufen.</translation>
+        <translation>Durchlaufen Sie die Listeneintr??ge. Dr??cken Sie die Taste und bewegen Sie die Maus um nach vorn oder hinten durch die Liste zu laufen.</translation>
     </message>
     <message>
         <source>Entries of the current work</source>
-        <translation>Einträge des aktuellen Werks</translation>
+        <translation>Eintr??ge des aktuellen Werks</translation>
     </message>
     <message>
         <source>Next entry</source>
-        <translation>Nächster Eintrag</translation>
+        <translation>N??chster Eintrag</translation>
     </message>
     <message>
         <source>Previous entry</source>
@@ -1835,7 +1835,7 @@ shortcut</source>
     <name>CLexiconReadWindow</name>
     <message>
         <source>Next entry</source>
-        <translation>Nächster Eintrag</translation>
+        <translation>N??chster Eintrag</translation>
     </message>
     <message>
         <source>Previous entry</source>
@@ -1910,7 +1910,7 @@ shortcut</source>
     </message>
     <message>
         <source>Creating index for work: %1</source>
-        <translation>Erstelle Index für Werk: %1</translation>
+        <translation>Erstelle Index f??r Werk: %1</translation>
     </message>
 </context>
 <context>
@@ -1925,11 +1925,11 @@ shortcut</source>
     </message>
     <message>
         <source>Delete current entry</source>
-        <translation>Ausgewählten Eintrag löschen</translation>
+        <translation>Ausgew??hlten Eintrag l??schen</translation>
     </message>
     <message>
         <source>Restore original text</source>
-        <translation>Den ursprünglichen Text wiederherstellen</translation>
+        <translation>Den urspr??nglichen Text wiederherstellen</translation>
     </message>
     <message>
         <source>Module not writable</source>
@@ -1949,7 +1949,7 @@ shortcut</source>
     </message>
     <message>
         <source>Delete current entry (no undo)</source>
-        <translation>Aktuellen Eintrag löschen (ohne Rückgängig-Funktion)</translation>
+        <translation>Aktuellen Eintrag l??schen (ohne R??ckg??ngig-Funktion)</translation>
     </message>
     <message>
         <source>Restore original text, new text will be lost</source>
@@ -2031,7 +2031,7 @@ shortcut</source>
     </message>
     <message>
         <source>Unlock key</source>
-        <translation>Schlüssel</translation>
+        <translation>Schl??ssel</translation>
     </message>
     <message>
         <source>Features</source>
@@ -2039,11 +2039,11 @@ shortcut</source>
     </message>
     <message>
         <source>Take care, this work contains cult / questionable material!</source>
-        <translation>Achtung. dieses Modul enthält sektiererisches / fragwürdiges Material!</translation>
+        <translation>Achtung. dieses Modul enth??lt sektiererisches / fragw??rdiges Material!</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>Über</translation>
+        <translation>??ber</translation>
     </message>
     <message>
         <source>Distribution license</source>
@@ -2095,7 +2095,7 @@ shortcut</source>
     </message>
     <message>
         <source>Books</source>
-        <translation>Bücher</translation>
+        <translation>B??cher</translation>
     </message>
     <message>
         <source>Cults/Unorthodox</source>
@@ -2107,15 +2107,15 @@ shortcut</source>
     </message>
     <message>
         <source>Daily Devotionals</source>
-        <translation>Andachtsbücher</translation>
+        <translation>Andachtsb??cher</translation>
     </message>
     <message>
         <source>Lexicons and Dictionaries</source>
-        <translation>Lexika und Wörterbücher</translation>
+        <translation>Lexika und W??rterb??cher</translation>
     </message>
     <message>
         <source>Glossaries</source>
-        <translation>Wörterbücher</translation>
+        <translation>W??rterb??cher</translation>
     </message>
     <message>
         <source>Unknown</source>
@@ -2173,7 +2173,7 @@ shortcut</source>
     </message>
     <message>
         <source>Please provide a valid, readable path.</source>
-        <translation>Bitte geben Sie einen gültigen, lesbaren Pfad an.</translation>
+        <translation>Bitte geben Sie einen g??ltigen, lesbaren Pfad an.</translation>
     </message>
     <message>
         <source>Please provide a path.</source>
@@ -2209,15 +2209,15 @@ shortcut</source>
     </message>
     <message>
         <source>Download a list of sources from CrossWire server and add sources</source>
-        <translation>Eine Liste von Quellen von Crosswire herunterladen und weitere Quellen hinzufügen</translation>
+        <translation>Eine Liste von Quellen von Crosswire herunterladen und weitere Quellen hinzuf??gen</translation>
     </message>
     <message>
         <source>List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don&apos;t want to keep.
 
 Do you want to continue?</source>
-        <translation>Quellenliste wird von einem entfernten Server heruntergeladen. Die Quellen werden zur aktuellen Liste hinzugefügt. Eine neue Quelle wird eine alte ersetzen, wenn sie die gleiche Bezeichnung hat. Anschließend können sie nicht benötigte Quellen entfernen.
+        <translation>Quellenliste wird von einem entfernten Server heruntergeladen. Die Quellen werden zur aktuellen Liste hinzugef??gt. Eine neue Quelle wird eine alte ersetzen, wenn sie die gleiche Bezeichnung hat. Anschlie??end k??nnen sie nicht ben??tigte Quellen entfernen.
 
-Möchten Sie fortfahren?</translation>
+M??chten Sie fortfahren?</translation>
     </message>
     <message>
         <source>A source with this caption already exists. Please provide a different caption.</source>
@@ -2228,11 +2228,11 @@ Möchten Sie fortfahren?</translation>
     <name>CWriteWindow</name>
     <message>
         <source>Save text before closing?</source>
-        <translation>Den Text vor dem Schließen speichern?</translation>
+        <translation>Den Text vor dem Schlie??en speichern?</translation>
     </message>
     <message>
         <source>Save changed text?</source>
-        <translation>Geänderten Text speichern?</translation>
+        <translation>Ge??nderten Text speichern?</translation>
     </message>
     <message>
         <source>Save Text?</source>
@@ -2243,7 +2243,7 @@ Möchten Sie fortfahren?</translation>
     <name>InfoDisplay::CInfoDisplay</name>
     <message>
         <source>Abbreviation</source>
-        <translation>Abkürzung</translation>
+        <translation>Abk??rzung</translation>
     </message>
     <message>
         <source>Cross references</source>
@@ -2251,7 +2251,7 @@ Möchten Sie fortfahren?</translation>
     </message>
     <message>
         <source>Footnote</source>
-        <translation>Fußnote</translation>
+        <translation>Fu??note</translation>
     </message>
     <message>
         <source>Strongs</source>
@@ -2271,7 +2271,7 @@ Möchten Sie fortfahren?</translation>
     </message>
     <message>
         <source>&lt;small&gt;This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.&lt;/small&gt;</source>
-        <translation>&lt;small&gt;Das ist die Lupe. Bewegen Sie die Maus über Links oder andere Einträge, die zusätzliche Informationen enthalten, und die Inhalte werden mit kurzer Verzögerung im Lupenbereich erscheinen. Bewegen Sie die Maus zügig in den Lupenbereich oder frieren Sie den Lupenbereich durch Drücken und Halten von Shift ein, während Sie die Maus bewegen.&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;Das ist die Lupe. Bewegen Sie die Maus ??ber Links oder andere Eintr??ge, die zus??tzliche Informationen enthalten, und die Inhalte werden mit kurzer Verz??gerung im Lupenbereich erscheinen. Bewegen Sie die Maus z??gig in den Lupenbereich oder frieren Sie den Lupenbereich durch Dr??cken und Halten von Shift ein, w??hrend Sie die Maus bewegen.&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -2282,7 +2282,7 @@ Möchten Sie fortfahren?</translation>
     </message>
     <message>
         <source>An internal error occurred while building the index.</source>
-        <translation>Ein interner Fehler trat während der Indizierung auf.</translation>
+        <translation>Ein interner Fehler trat w??hrend der Indizierung auf.</translation>
     </message>
     <message>
         <source>Search aborted</source>
@@ -2290,7 +2290,7 @@ Möchten Sie fortfahren?</translation>
     </message>
     <message>
         <source>An internal error occurred while executing your search.</source>
-        <translation>Ein interner Fehler trat während der Suche auf.</translation>
+        <translation>Ein interner Fehler trat w??hrend der Suche auf.</translation>
     </message>
 </context>
 <context>
@@ -2309,11 +2309,11 @@ Möchten Sie fortfahren?</translation>
     </message>
     <message>
         <source>Daily Devotionals</source>
-        <translation>Andachtsbücher</translation>
+        <translation>Andachtsb??cher</translation>
     </message>
     <message>
         <source>Lexicons and Dictionaries</source>
-        <translation>Lexika und Wörterbücher</translation>
+        <translation>Lexika und W??rterb??cher</translation>
     </message>
     <message>
         <source>Bibles</source>
@@ -2321,15 +2321,15 @@ Möchten Sie fortfahren?</translation>
     </message>
     <message>
         <source>Glossaries</source>
-        <translation>Wörterbücher</translation>
+        <translation>W??rterb??cher</translation>
     </message>
     <message>
         <source>Books</source>
-        <translation>Bücher</translation>
+        <translation>B??cher</translation>
     </message>
     <message>
         <source>Added text</source>
-        <translation>Zusätzlicher Text</translation>
+        <translation>Zus??tzlicher Text</translation>
     </message>
     <message>
         <source>Afrikaans</source>
@@ -2354,7 +2354,7 @@ Möchten Sie fortfahren?</translation>
     <message>
         <source>Belarusian</source>
         <extracomment>Language name be</extracomment>
-        <translation>Weißrussisch</translation>
+        <translation>Wei??russisch</translation>
     </message>
     <message>
         <source>Bulgarian</source>
@@ -2409,7 +2409,7 @@ Möchten Sie fortfahren?</translation>
     <message>
         <source>Danish</source>
         <extracomment>Language name da</extracomment>
-        <translation>Dänisch</translation>
+        <translation>D??nisch</translation>
     </message>
     <message>
         <source>German</source>
@@ -2469,7 +2469,7 @@ Möchten Sie fortfahren?</translation>
     <message>
         <source>French</source>
         <extracomment>Language name fr</extracomment>
-        <translation>Französisch</translation>
+        <translation>Franz??sisch</translation>
     </message>
     <message>
         <source>Frisian</source>
@@ -2484,7 +2484,7 @@ Möchten Sie fortfahren?</translation>
     <message>
         <source>Gaelic (Scots)</source>
         <extracomment>Language name gd</extracomment>
-        <translation>Gälisch (Schottland)</translation>
+        <translation>G??lisch (Schottland)</translation>
     </message>
     <message>
         <source>Gothic</source>
@@ -2494,7 +2494,7 @@ Möchten Sie fortfahren?</translation>
     <message>
         <source>Manx</source>
         <extracomment>Language name gv</extracomment>
-        <translation>Gälisch der Isle of Man</translation>
+        <translation>G??lisch der Isle of Man</translation>
     </message>
     <message>
         <source>Greek, Ancient (to 1453)</source>
@@ -2504,7 +2504,7 @@ Möchten Sie fortfahren?</translation>
     <message>
         <source>Hebrew</source>
         <extracomment>Language name he</extracomment>
-        <translation>Hebräisch</translation>
+        <translation>Hebr??isch</translation>
     </message>
     <message>
         <source>Hausa</source>
@@ -2544,7 +2544,7 @@ Möchten Sie fortfahren?</translation>
     <message>
         <source>Icelandic</source>
         <extracomment>Language name is</extracomment>
-        <translation>Isländisch</translation>
+        <translation>Isl??ndisch</translation>
     </message>
     <message>
         <source>Italian</source>
@@ -2589,7 +2589,7 @@ Möchten Sie fortfahren?</translation>
     <message>
         <source>Latvian</source>
         <extracomment>Language name lv</extracomment>
-        <translation>Lettländisch</translation>
+        <translation>Lettl??ndisch</translation>
     </message>
     <message>
         <source>Maori</source>
@@ -2629,7 +2629,7 @@ Möchten Sie fortfahren?</translation>
     <message>
         <source>Dutch</source>
         <extracomment>Language name nl</extracomment>
-        <translation>Niederländisch</translation>
+        <translation>Niederl??ndisch</translation>
     </message>
     <message>
         <source>Norwegian Nynorsk</source>
@@ -2664,7 +2664,7 @@ Möchten Sie fortfahren?</translation>
     <message>
         <source>Romanian</source>
         <extracomment>Language name ro</extracomment>
-        <translation>Rumänisch</translation>
+        <translation>Rum??nisch</translation>
     </message>
     <message>
         <source>Russian</source>
@@ -2719,7 +2719,7 @@ Möchten Sie fortfahren?</translation>
     <message>
         <source>Thai</source>
         <extracomment>Language name th</extracomment>
-        <translation>Thailändisch</translation>
+        <translation>Thail??ndisch</translation>
     </message>
     <message>
         <source>Tagalog</source>
@@ -2734,7 +2734,7 @@ Möchten Sie fortfahren?</translation>
     <message>
         <source>Turkish</source>
         <extracomment>Language name tr</extracomment>
-        <translation>Türkisch</translation>
+        <translation>T??rkisch</translation>
     </message>
     <message>
         <source>Tahitian</source>
@@ -2795,7 +2795,7 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Footnotes</source>
-        <translation>Fußnoten</translation>
+        <translation>Fu??noten</translation>
     </message>
     <message>
         <source>Strong&apos;s numbers</source>
@@ -2803,7 +2803,7 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Headings</source>
-        <translation>Überschriften</translation>
+        <translation>??berschriften</translation>
     </message>
     <message>
         <source>Morphological tags</source>
@@ -2815,11 +2815,11 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Hebrew vowel points</source>
-        <translation>Hebräische Vokalzeichen</translation>
+        <translation>Hebr??ische Vokalzeichen</translation>
     </message>
     <message>
         <source>Hebrew cantillation marks</source>
-        <translation>Hebräische Kantillationszeichen</translation>
+        <translation>Hebr??ische Kantillationszeichen</translation>
     </message>
     <message>
         <source>Greek accents</source>
@@ -2907,7 +2907,7 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Print keys</source>
-        <translation>Einträge drucken</translation>
+        <translation>Eintr??ge drucken</translation>
     </message>
     <message>
         <source>BibleTime bookmark files</source>
@@ -2919,7 +2919,7 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Change description ...</source>
-        <translation>Beschreibung ändern...</translation>
+        <translation>Beschreibung ??ndern...</translation>
     </message>
     <message>
         <source>Enter a new description for the chosen bookmark.</source>
@@ -2935,7 +2935,7 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Do you want to overwrite it?</source>
-        <translation>Möchten Sie die Datei überschreiben?</translation>
+        <translation>M??chten Sie die Datei ??berschreiben?</translation>
     </message>
     <message>
         <source>Error</source>
@@ -2947,11 +2947,11 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Please check permissions etc.</source>
-        <translation>Bitte überprüfen Sie die Zugriffsrechte usw.</translation>
+        <translation>Bitte ??berpr??fen Sie die Zugriffsrechte usw.</translation>
     </message>
     <message>
         <source>Take care, this work contains cult / questionable material!</source>
-        <translation>Achtung. dieses Modul enthält sektiererisches / fragwürdiges Material!</translation>
+        <translation>Achtung. dieses Modul enth??lt sektiererisches / fragw??rdiges Material!</translation>
     </message>
     <message>
         <source>Language</source>
@@ -2959,7 +2959,7 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Unlock key</source>
-        <translation type="obsolete">Schlüssel</translation>
+        <translation type="obsolete">Schl??ssel</translation>
     </message>
     <message>
         <source>not set</source>
@@ -2975,23 +2975,23 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Settings Migration</source>
-        <translation>Übernahme von Einstellungen</translation>
+        <translation>??bernahme von Einstellungen</translation>
     </message>
     <message>
         <source>It appears you have a BibleTime configuration from KDE 3 stored in %1, and you have not migrated it to this version.  Would you like to import it?</source>
-        <translation>Sie haben eine BibleTime-Konfiguration aus KDE3 in %1, und sie haben sie noch nicht in diese Version migriert. Möchten sie diese Konfiguration jetzt importieren?</translation>
+        <translation>Sie haben eine BibleTime-Konfiguration aus KDE3 in %1, und sie haben sie noch nicht in diese Version migriert. M??chten sie diese Konfiguration jetzt importieren?</translation>
     </message>
     <message>
         <source>Encrypted - needs unlock key</source>
-        <translation>Verschlüsselt - benötigt Schlüssel</translation>
+        <translation>Verschl??sselt - ben??tigt Schl??ssel</translation>
     </message>
     <message>
         <source>Double click for more information</source>
-        <translation>Klicken Sie doppelt für weitere Informationen</translation>
+        <translation>Klicken Sie doppelt f??r weitere Informationen</translation>
     </message>
     <message>
         <source>Updated version available!</source>
-        <translation>Aktualisierte Version verfügbar!</translation>
+        <translation>Aktualisierte Version verf??gbar!</translation>
     </message>
     <message>
         <source>Installed version</source>
@@ -3024,7 +3024,7 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Verb tense changed</source>
-        <translation>Tempus geändert</translation>
+        <translation>Tempus ge??ndert</translation>
     </message>
     <message>
         <source>Can&apos;t write file</source>
@@ -3044,7 +3044,7 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Overwrite File?</source>
-        <translation>Datei überschreiben?</translation>
+        <translation>Datei ??berschreiben?</translation>
     </message>
     <message>
         <source>Parsing Strong&apos;s Numbers</source>
@@ -3064,7 +3064,7 @@ Language name ppk</extracomment>
     <message>
         <source>Azerbaijani, South</source>
         <extracomment>Language name azb</extracomment>
-        <translation>Aserbaidschanisch, Süden</translation>
+        <translation>Aserbaidschanisch, S??den</translation>
     </message>
     <message>
         <source>Chinantec, Comaltepec</source>
@@ -3144,7 +3144,7 @@ Language name ppk</extracomment>
     <message>
         <source>Jacalteco, Eastern</source>
         <extracomment>Language name jac</extracomment>
-        <translation>Jacalteco, Östlich</translation>
+        <translation>Jacalteco, ??stlich</translation>
     </message>
     <message>
         <source>Javanese, Caribbean</source>
@@ -3225,7 +3225,7 @@ Language name ppk</extracomment>
     <message>
         <source>Nahuatl, Northern Oaxaca</source>
         <extracomment>Language name nhy</extracomment>
-        <translation>Nahuatl, Nördliches Oaxaca</translation>
+        <translation>Nahuatl, N??rdliches Oaxaca</translation>
     </message>
     <message>
         <source>Otomi, Queru00e9taro</source>
@@ -3300,7 +3300,7 @@ Language name ppk</extracomment>
     <message>
         <source>Zapotec, Southern Rincon</source>
         <extracomment>Language name zsr</extracomment>
-        <translation>Zapotec, Südliches Rincon</translation>
+        <translation>Zapotec, S??dliches Rincon</translation>
     </message>
     <message>
         <source>Zapotec, Quioquitani-Quieru00ed</source>
@@ -3314,11 +3314,11 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>This shortcut conflicts with the shortcut for the following actions:</source>
-        <translation>Dieser Kurzbefehl steht im Konflikt mit dem Kurzbefehl für folgende Aktionen:</translation>
+        <translation>Dieser Kurzbefehl steht im Konflikt mit dem Kurzbefehl f??r folgende Aktionen:</translation>
     </message>
     <message>
         <source>Do you want to clear the conflicting shortcuts and continue?</source>
-        <translation>Möchten Sie die kollidierenden Kurzbefehle löschen und fortfahren?</translation>
+        <translation>M??chten Sie die kollidierenden Kurzbefehle l??schen und fortfahren?</translation>
     </message>
     <message>
         <source>Indexed works</source>
@@ -3339,7 +3339,7 @@ Language name ppk</extracomment>
     <message>
         <source>Open</source>
         <comment>Dialog Button</comment>
-        <translation>Öffnen</translation>
+        <translation>??ffnen</translation>
     </message>
     <message>
         <source>Save</source>
@@ -3354,7 +3354,7 @@ Language name ppk</extracomment>
     <message>
         <source>Close</source>
         <comment>Dialog Button</comment>
-        <translation>Schließen</translation>
+        <translation>Schlie??en</translation>
     </message>
     <message>
         <source>Discard</source>
@@ -3369,7 +3369,7 @@ Language name ppk</extracomment>
     <message>
         <source>Reset</source>
         <comment>Dialog Button</comment>
-        <translation>Zurücksetzen</translation>
+        <translation>Zur??cksetzen</translation>
     </message>
     <message>
         <source>Restore defaults</source>
@@ -3419,15 +3419,15 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Start to search the text in the chosen works</source>
-        <translation>Den Text in den ausgewählten Werken suchen</translation>
+        <translation>Den Text in den ausgew??hlten Werken suchen</translation>
     </message>
     <message>
         <source>Ch&amp;oose...</source>
-        <translation>A&amp;uswählen...</translation>
+        <translation>A&amp;usw??hlen...</translation>
     </message>
     <message>
         <source>Choose works for the search</source>
-        <translation>Werke für die Suche auswählen</translation>
+        <translation>Werke f??r die Suche ausw??hlen</translation>
     </message>
     <message>
         <source>S&amp;etup...</source>
@@ -3435,11 +3435,11 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>All of the words (AND is added between the words)</source>
-        <translation>Jedes der Worte (AND wird zwischen die Wörter hinzugefügt)</translation>
+        <translation>Jedes der Worte (AND wird zwischen die W??rter hinzugef??gt)</translation>
     </message>
     <message>
         <source> (&lt;a href=&apos;syntax_help&apos;&gt;full syntax&lt;/a&gt;)</source>
-        <translation> (&lt;a href=&apos;syntax_help&apos;&gt;Vollständige Syntax&lt;/a&gt;)</translation>
+        <translation> (&lt;a href=&apos;syntax_help&apos;&gt;Vollst??ndige Syntax&lt;/a&gt;)</translation>
     </message>
     <message>
         <source>Scope:</source>
@@ -3459,11 +3459,11 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>All words</source>
-        <translation>Alle Wörter</translation>
+        <translation>Alle W??rter</translation>
     </message>
     <message>
         <source>Some words</source>
-        <translation>Einige Wörter</translation>
+        <translation>Einige W??rter</translation>
     </message>
     <message>
         <source>Free</source>
@@ -3471,15 +3471,15 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Some of the words (OR is added between the words)</source>
-        <translation>Einige der Wörter(OR wird zwischen die Wörter hinzugefügt)</translation>
+        <translation>Einige der W??rter(OR wird zwischen die W??rter hinzugef??gt)</translation>
     </message>
     <message>
         <source>Full lucene syntax</source>
-        <translation>Vollständige lucene-Syntax</translation>
+        <translation>Vollst??ndige lucene-Syntax</translation>
     </message>
     <message>
         <source>Choose the scope (books/chapters/verses to search in).&lt;br /&gt;Applicable for Bibles and commentaries.</source>
-        <translation>Wählen Sie den Suchbereich (Bücher/Kapitel/Verse zum Durchsuchen).&lt;br /&gt;Anwendbar auf Bibeln und Kommentaren.</translation>
+        <translation>W??hlen Sie den Suchbereich (B??cher/Kapitel/Verse zum Durchsuchen).&lt;br /&gt;Anwendbar auf Bibeln und Kommentaren.</translation>
     </message>
     <message>
         <source>Configure predefined scopes for search</source>
@@ -3494,7 +3494,7 @@ Language name ppk</extracomment>
     <name>Search::BtSearchResultArea</name>
     <message>
         <source>Text of the selected search result item</source>
-        <translation>Text des ausgewählten Suchergebnis-Eintrags</translation>
+        <translation>Text des ausgew??hlten Suchergebnis-Eintrags</translation>
     </message>
 </context>
 <context>
@@ -3505,188 +3505,191 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>This help is mainly for &apos;Full syntax&apos; option. &apos;All words&apos; and &apos;Some words&apos; options have more limited syntax; &lt;a href=&apos;#wildcards&apos;&gt;wildcards&lt;/a&gt; and &lt;a href=&apos;#fields&apos;&gt;text fields&lt;/a&gt; are supported for them. Some other syntax features may give strange or wrong results with All words/Some words.</source>
-        <translation type="unfinished"></translation>
+        <translation>Diese Hilfe ist in erster Linie f??r die &apos;Vollst??ndige Syntax&apos;-Option. Die Optionen &apos;Alle W??rter&apos; und &apos;Einige W??rter&apos; weisen eine begrenztere Syntax auf; &lt;a href=&apos;#wildcards&apos;&gt;Platzhalter&lt;/a&gt; und &lt;a href=&apos;#fields&apos;&gt;Textfelder&lt;/a&gt; werden f??r diese unterst??tzt. Einige andere Syntax-Funktionen k??nnen mit &apos;Alle W??rter&apos; / &apos;Einige W??rter&apos; zu seltsamen oder falschen Ergebnissen f??hren.</translation>
     </message>
     <message>
         <source>Which words to find</source>
-        <translation type="unfinished"></translation>
+        <translation>Zu findende W??rter</translation>
     </message>
     <message>
         <source>Grouping and order</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppierung und Reihenfolge</translation>
     </message>
     <message>
         <source>Wildcards (partial words)</source>
-        <translation type="unfinished"></translation>
+        <translation>Platzhalter (Wortteile)</translation>
     </message>
     <message>
         <source>Text fields (different parts of text)</source>
-        <translation type="unfinished"></translation>
+        <translation>Textfelder (verschiedene Textabschnitte)</translation>
     </message>
     <message>
         <source>Other syntax features</source>
-        <translation type="unfinished"></translation>
+        <translation>Andere Syntax-Funktionen</translation>
     </message>
     <message>
         <source>Search terms are separated by spaces. &lt;strong&gt;AND&lt;/strong&gt; (all words), &lt;strong&gt;OR&lt;/strong&gt; (some words) and &lt;strong&gt;NOT&lt;/strong&gt; (not the following word) can be added between the words. If none is added explicitly OR is used automatically. &apos;&lt;strong&gt;+&lt;/strong&gt;word&apos; means the word must be in the results, &apos;&lt;strong&gt;-&lt;/strong&gt;word&apos; means it must not be in the results.</source>
         <comment>Do not translate &quot;AND&quot;, &quot;OR&quot; or &quot;NOT&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Suchbegriffe werden durch Leerzeichen getrennt. &lt;strong&gt;AND&lt;/strong&gt; (Alle W??rter), &lt;strong&gt;OR&lt;/strong&gt; (Einige W??rter) und &lt;strong&gt;NOT&lt;/strong&gt; (Nicht das folgende Wort) k??nnen zwischen die Begriffe eingef??gt werden. Ist nichts dergleichen explizit angegeben, wird automatisch OR angewandt. &apos;&lt;strong&gt;+&lt;/strong&gt;Wort&apos; bedeutet, dass das Wort im Suchergebnis auftauchen muss, &apos;&lt;strong&gt;-&lt;/strong&gt;Wort&apos; bedeutet, dass es im Suchergebnis nicht vorkommen darf.</translation>
     </message>
     <message>
         <source>jesus AND god</source>
         <comment>Do not translate &quot;AND&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation>jesus AND gott</translation>
     </message>
     <message>
         <source>Finds verses with both &apos;Jesus&apos; and &apos;God&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Findet Verse mit beiden W??rtern &apos;Jesus&apos; und &apos;Gott&apos;</translation>
     </message>
     <message>
         <source>jesus OR god</source>
         <comment>Do not translate &quot;OR&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation>jesus OR gott</translation>
     </message>
     <message>
         <source>Finds verses with &apos;Jesus&apos; or &apos;God&apos; or both</source>
-        <translation type="unfinished"></translation>
+        <translation>Findet Verse mit &apos;Jesus&apos; oder &apos;Gott&apos; oder beidem</translation>
     </message>
     <message>
         <source>jesus NOT god</source>
         <comment>Do not translate &quot;NOT&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation>jesus NOT gott</translation>
     </message>
     <message>
         <source>Finds verses with &apos;Jesus&apos; but with no &apos;God&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Findet Verse mit &apos;Jesus&apos; aber ohne &apos;Gott&apos;</translation>
     </message>
     <message>
         <source>+jesus -god</source>
-        <translation type="unfinished"></translation>
+        <translation>+jesus -gott</translation>
     </message>
     <message>
         <source>Words can be grouped with &lt;strong&gt;parenthesis&lt;/strong&gt;. Strict word order can be defined with &lt;strong&gt;quotes&lt;/strong&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>W??rter k??nnen mit &lt;strong&gt;runden Klammern&lt;/strong&gt; gruppiert werden. Eine strikte Wortreihenfolge kann mit &lt;strong&gt;Anf??hrungszeichen&lt;/strong&gt; definiert werden.</translation>
     </message>
     <message>
         <source>(a AND b) OR c</source>
         <comment>Do not translate &quot;AND&quot; or &quot;OR&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation>(a AND b) OR c</translation>
     </message>
     <message>
         <source>Finds verses with both &apos;a&apos; AND &apos;b&apos;, and verses with &apos;c&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Findet Verse mit beidem &apos;a&apos; UND &apos;b&apos;, und Verse mit &apos;c&apos;</translation>
     </message>
     <message>
         <source>&quot;says lord&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;spricht HERR&quot;</translation>
     </message>
     <message>
         <source>&quot;says the lord&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;spricht der HERR&quot;</translation>
     </message>
     <message>
         <source>Finds all verses with &apos;says the LORD&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Findet alle Verse mit &apos;spricht der HERR&apos;</translation>
     </message>
     <message>
         <source>&apos;&lt;strong&gt;*&lt;/strong&gt;&apos; matches any sequence of 0 or more characters, while &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; matches any single character. A wildcard can not be used in the beginning of a word.</source>
-        <translation type="unfinished"></translation>
+        <translation>&apos;&lt;strong&gt;*&lt;/strong&gt;&apos; trifft auf alle Buchstabenreihenfolgen mit 0 oder mehr Buchstaben zu, w??hrend &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; nur f??r ein Zeichen steht. Ein Platzhalter darf nicht am Wortanfang benutzt werden.</translation>
     </message>
     <message>
         <source>a*</source>
-        <translation type="unfinished"></translation>
+        <translation>a*</translation>
     </message>
     <message>
         <source>All words beginning with &apos;a&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle W??rter, die mit &apos;a&apos; beginnen</translation>
     </message>
     <message>
         <source>a*a</source>
-        <translation type="unfinished"></translation>
+        <translation>a*a</translation>
     </message>
     <message>
         <source>&apos;Assyria&apos;, &apos;aroma&apos;, &apos;abba&apos; etc.</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>&apos;Adama&apos; als tats??chliches Ergebnisbeispiel, weil &apos;Assysria&apos; in der deutschen ??bersetzung nicht auftaucht.</translatorcomment>
+        <translation>&apos;Adama&apos;, &apos;Aroma&apos;, &apos;Abba&apos; usw.</translation>
     </message>
     <message>
         <source>a?</source>
-        <translation type="unfinished"></translation>
+        <translation>a?</translation>
     </message>
     <message>
         <source>&apos;at&apos; and &apos;an&apos;</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>&apos;a??&apos; als tats??chliches Ergebnisbeispiel, weil &apos;at&apos; in der deutschen Bibel nicht auftaucht.</translatorcomment>
+        <translation>&apos;a??&apos; und &apos;an&apos;</translation>
     </message>
     <message>
         <source>a??a</source>
-        <translation type="unfinished"></translation>
+        <translation>a??a</translation>
     </message>
     <message>
         <source>&apos;abba&apos;, &apos;area&apos;, &apos;Asia&apos; etc.</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>auch hier &apos;Abia&apos;, &apos;Adma&apos; als reale Suchergebnisse in der deutschen Bibel anstelle der nicht vorkommenden W??rter &apos;area&apos; und &apos;Asia&apos;</translatorcomment>
+        <translation>&apos;Abba&apos;, &apos;Abia&apos;, &apos;Adma&apos; usw.</translation>
     </message>
     <message>
         <source>Available text fields:</source>
-        <translation type="unfinished"></translation>
+        <translation>Verf??gbare Textfelder:</translation>
     </message>
     <message>
         <source>Searches headings</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopfzeilen durchsuchen</translation>
     </message>
     <message>
         <source>Searches footnotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Fu??zeilen durchsuchen</translation>
     </message>
     <message>
         <source>Searches Strong&apos;s numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Strong-Nummern durchsuchen</translation>
     </message>
     <message>
         <source>Searches morphology codes</source>
-        <translation type="unfinished"></translation>
+        <translation>Morphologie-Codes durchsuchen</translation>
     </message>
     <message>
         <source>Examples:</source>
-        <translation type="unfinished"></translation>
+        <translation>Beispiele:</translation>
     </message>
     <message>
         <source>heading:Jesus</source>
         <comment>Do not translate &quot;heading:&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation>heading:Jesus</translation>
     </message>
     <message>
         <source>Finds headings with &apos;Jesus&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Findet Kopfzeilen mit &apos;Jesus&apos;</translation>
     </message>
     <message>
         <source>footnote:Jesus AND footnote:said</source>
         <comment>Do not translate &quot;footnote:&quot; or &quot;AND&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation>footnote:Jesus AND footnote:sprach</translation>
     </message>
     <message>
         <source>Finds footnotes with &apos;Jesus&apos; and &apos;said&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Findet Fu??zeilen mit &apos;Jesus&apos; und &apos;sprach&apos;</translation>
     </message>
     <message>
         <source>strong:G846</source>
         <comment>Do not translate &quot;strong:&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation>strong:G846</translation>
     </message>
     <message>
         <source>Finds verses with Strong&apos;s Greek number 846</source>
-        <translation type="unfinished"></translation>
+        <translation>Findet Verse mit Strongs Griechisch Nummer 846</translation>
     </message>
     <message>
         <source>morph:&quot;N-NSF&quot;</source>
         <comment>Do not translate &quot;morph:&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation>morph:&quot;N-NSF&quot;</translation>
     </message>
     <message>
         <source>Finds verses with morphology code &apos;N-NSF&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Findet Verse mit dem Morphologie-Code &apos;N-NSF&apos;</translation>
     </message>
     <message>
         <source>BibleTime uses the CLucene search engine. You can read more on the &lt;a href=&apos;%1&apos;&gt;lucene syntax web page&lt;/a&gt; (in external browser).</source>
-        <translation type="unfinished"></translation>
+        <translation>BibleTime nutzt die CLucene Suchmaschine. Sie k??nnen mehr dar??ber lesen auf der&lt;a href=&apos;%1&apos;&gt;lucene Syntax-Webseite&lt;/a&gt; (in einem externen Browser).</translation>
     </message>
 </context>
 <context>
@@ -3745,7 +3748,7 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Works chosen for the search and the number of the hits in each work</source>
-        <translation>Für die Suche ausgewählte Werke und die Trefferanzahl in jedem Werk</translation>
+        <translation>F??r die Suche ausgew??hlte Werke und die Trefferanzahl in jedem Werk</translation>
     </message>
 </context>
 <context>
@@ -3772,31 +3775,31 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>&lt;invalid name of search range&gt;</source>
-        <translation>&lt;ungültiger Name des Suchbereiches&gt;</translation>
+        <translation>&lt;ung??ltiger Name des Suchbereiches&gt;</translation>
     </message>
     <message>
         <source>Select a scope from the list to edit the search ranges</source>
-        <translation>Wählen Sie einen Bereich aus der Liste um die Suchgrenzen zu editieren</translation>
+        <translation>W??hlen Sie einen Bereich aus der Liste um die Suchgrenzen zu editieren</translation>
     </message>
     <message>
         <source>&amp;Add new scope</source>
-        <translation>&amp;Neuen Suchbereich hinzufügen</translation>
+        <translation>&amp;Neuen Suchbereich hinzuf??gen</translation>
     </message>
     <message>
         <source>Add a new search scope. First enter an appropriate name, then edit the search ranges.</source>
-        <translation>Einen neuen Suchbereich hinzufügen. Geben Sie einen geeigneten Namen ein und bearbeiten Sie dann den Suchbereich.</translation>
+        <translation>Einen neuen Suchbereich hinzuf??gen. Geben Sie einen geeigneten Namen ein und bearbeiten Sie dann den Suchbereich.</translation>
     </message>
     <message>
         <source>Delete current &amp;scope</source>
-        <translation>Aktuellen &amp;Suchbereich löschen</translation>
+        <translation>Aktuellen &amp;Suchbereich l??schen</translation>
     </message>
     <message>
         <source>Delete the selected search scope</source>
-        <translation>Ausgewählten Suchbereich löschen</translation>
+        <translation>Ausgew??hlten Suchbereich l??schen</translation>
     </message>
     <message>
         <source>Change the name of the selected search scope</source>
-        <translation>Den Namen des ausgewählten Suchbereichs verändern</translation>
+        <translation>Den Namen des ausgew??hlten Suchbereichs ver??ndern</translation>
     </message>
     <message>
         <source>Change the search ranges of the selected search scope item. Have a look at the predefined search scopes to see how search ranges are constructed.</source>
@@ -3804,7 +3807,7 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>The search ranges which will be used for the search, parsed to the canonical form</source>
-        <translation>Die Suchgrenzen werden für die Suche genutzt, übertragen auf die kanonische Form</translation>
+        <translation>Die Suchgrenzen werden f??r die Suche genutzt, ??bertragen auf die kanonische Form</translation>
     </message>
     <message>
         <source>Setup Search Scopes</source>
@@ -3824,7 +3827,7 @@ Language name ppk</extracomment>
     <message>
         <source>One or more works need indexing before they can be searched.
 This could take a long time. Proceed with indexing?</source>
-        <translation>Für ein oder mehrere Werke müssen Indices erstellt werden, bevor darin gesucht werden kann. 
+        <translation>F??r ein oder mehrere Werke m??ssen Indices erstellt werden, bevor darin gesucht werden kann. 
 Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     </message>
     <message>
@@ -3833,7 +3836,7 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     </message>
     <message>
         <source>&amp;Close</source>
-        <translation>&amp;Schließen</translation>
+        <translation>&amp;Schlie??en</translation>
     </message>
     <message>
         <source>Show a graphical analysis of the search result</source>
@@ -3892,7 +3895,7 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     </message>
     <message>
         <source>Search result of the selected work</source>
-        <translation>Suchergebnis des ausgewählten Werks</translation>
+        <translation>Suchergebnis des ausgew??hlten Werks</translation>
     </message>
 </context>
 <context>
@@ -3907,7 +3910,7 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     </message>
     <message>
         <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
-        <translation>Die Standard-Bibel wird genutzt, wenn ein Verweis auf eine Bibel betätigt wird</translation>
+        <translation>Die Standard-Bibel wird genutzt, wenn ein Verweis auf eine Bibel bet??tigt wird</translation>
     </message>
     <message>
         <source>Commentary:</source>
@@ -3915,7 +3918,7 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     </message>
     <message>
         <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
-        <translation>Der Standard-Kommentar wird genutzt, wenn ein Verweis auf einen Kommentar betätigt wird</translation>
+        <translation>Der Standard-Kommentar wird genutzt, wenn ein Verweis auf einen Kommentar bet??tigt wird</translation>
     </message>
     <message>
         <source>Lexicon:</source>
@@ -3923,7 +3926,7 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     </message>
     <message>
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
-        <translation>Das Standard-Lexikon wird genutzt, wenn ein Verweis auf ein Lexikon betätigt wird</translation>
+        <translation>Das Standard-Lexikon wird genutzt, wenn ein Verweis auf ein Lexikon bet??tigt wird</translation>
     </message>
     <message>
         <source>Daily devotional:</source>
@@ -3931,15 +3934,15 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     </message>
     <message>
         <source>The standard devotional will be used to display a short start up devotional</source>
-        <translation>Die Standard-Andacht wird für die Anzeige einer kurzen Start-Andacht genutzt</translation>
+        <translation>Die Standard-Andacht wird f??r die Anzeige einer kurzen Start-Andacht genutzt</translation>
     </message>
     <message>
         <source>Hebrew Strong&apos;s lexicon:</source>
-        <translation>Hebräisches Strong-Lexikon:</translation>
+        <translation>Hebr??isches Strong-Lexikon:</translation>
     </message>
     <message>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
-        <translation>Das Standard-Hebräisch-Lexikon wird genutzt, wenn ein Verweis auf ein Hebräisch-Lexikon betätigt wird</translation>
+        <translation>Das Standard-Hebr??isch-Lexikon wird genutzt, wenn ein Verweis auf ein Hebr??isch-Lexikon bet??tigt wird</translation>
     </message>
     <message>
         <source>Greek Strong&apos;s lexicon:</source>
@@ -3947,15 +3950,15 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     </message>
     <message>
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
-        <translation>Das Standard-Griechisch-Lexikon wird genutzt, wenn ein Verweis auf ein Griechisch-Lexikon betätigt wird</translation>
+        <translation>Das Standard-Griechisch-Lexikon wird genutzt, wenn ein Verweis auf ein Griechisch-Lexikon bet??tigt wird</translation>
     </message>
     <message>
         <source>Hebrew morphological lexicon:</source>
-        <translation>Hebräisches Morphologie-Lexikon:</translation>
+        <translation>Hebr??isches Morphologie-Lexikon:</translation>
     </message>
     <message>
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
-        <translation>Das Standard-Morphologie-Lexikon für hebräische Texte wird genutzt, wenn ein Verweis auf eine morphologische Markierung in einem Hebräisch-Text betätigt wird</translation>
+        <translation>Das Standard-Morphologie-Lexikon f??r hebr??ische Texte wird genutzt, wenn ein Verweis auf eine morphologische Markierung in einem Hebr??isch-Text bet??tigt wird</translation>
     </message>
     <message>
         <source>Greek morphological lexicon:</source>
@@ -3963,7 +3966,7 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     </message>
     <message>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
-        <translation>Das Standard-Morphologie-Lexikon für griechische Texte wird genutzt, wenn ein Verweis auf eine morphologische Markierung in einem Griechisch-Text betätigt wird</translation>
+        <translation>Das Standard-Morphologie-Lexikon f??r griechische Texte wird genutzt, wenn ein Verweis auf eine morphologische Markierung in einem Griechisch-Text bet??tigt wird</translation>
     </message>
     <message>
         <source></source>
@@ -3971,14 +3974,14 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     </message>
     <message>
         <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked .</source>
-        <translation type="unfinished"></translation>
+        <translation>Standardwerke werden genutzt, wenn kein bestimmtes Werk spezifiziert ist, z.B. wenn ein Verweis auf eine Bibel oder ein Lexikon angeklickt wurde.</translation>
     </message>
 </context>
 <context>
     <name>TextFiltersTab</name>
     <message>
         <source>Insert line break after each verse</source>
-        <translation>Zeilenumbruch nach jedem Vers einfügen</translation>
+        <translation>Zeilenumbruch nach jedem Vers einf??gen</translation>
     </message>
     <message>
         <source>Show verse numbers</source>
@@ -3986,7 +3989,7 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     </message>
     <message>
         <source>Show section headings</source>
-        <translation>Abschnittsüberschriften anzeigen</translation>
+        <translation>Abschnitts??berschriften anzeigen</translation>
     </message>
     <message>
         <source>Show scripture cross-references</source>
@@ -3998,11 +4001,11 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     </message>
     <message>
         <source>Show Hebrew vowel points</source>
-        <translation>Hebräische Vokalzeichen anzeigen</translation>
+        <translation>Hebr??ische Vokalzeichen anzeigen</translation>
     </message>
     <message>
         <source>Show Hebrew cantillation marks</source>
-        <translation>Hebräische Kantillationszeichen anzeigen</translation>
+        <translation>Hebr??ische Kantillationszeichen anzeigen</translation>
     </message>
     <message>
         <source>Show morph segmentation</source>
@@ -4014,7 +4017,7 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     </message>
     <message>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
-        <translation>Filter kontrollieren die Text-Erscheinung. Hier können Sie Standard-Einstellungen für alle Filter spezifizieren. Sie können diese Einstellungen in jedem Anzeige-Fenster übergehen.</translation>
+        <translation>Filter kontrollieren die Text-Erscheinung. Hier k??nnen Sie Standard-Einstellungen f??r alle Filter spezifizieren. Sie k??nnen diese Einstellungen in jedem Anzeige-Fenster ??bergehen.</translation>
     </message>
     <message>
         <source></source>
@@ -4033,7 +4036,7 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     </message>
     <message>
         <source>Case &amp;sensitive</source>
-        <translation>Groß-/Kleinschreibung berück&amp;sichtigen</translation>
+        <translation>Gro??-/Kleinschreibung ber??ck&amp;sichtigen</translation>
     </message>
     <message>
         <source>Find the previous location of the text</source>
@@ -4053,15 +4056,15 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     </message>
     <message>
         <source>Close the dialog</source>
-        <translation>Dialog schließen</translation>
+        <translation>Dialog schlie??en</translation>
     </message>
     <message>
         <source>&amp;Close</source>
-        <translation>&amp;Schließen</translation>
+        <translation>&amp;Schlie??en</translation>
     </message>
     <message>
         <source>Search with case sensitivity</source>
-        <translation>Suche mit Unterscheidung von Klein- und Großbuchstaben</translation>
+        <translation>Suche mit Unterscheidung von Klein- und Gro??buchstaben</translation>
     </message>
 </context>
 </TS>
