@@ -55,7 +55,7 @@ StandardWorksTab::StandardWorksTab()
         util::tool::explanationLabel(
             this, "",
             tr("Standard works are used when no particular work is specified, for example "
-               "when a hyperlink into a Bible or lexicon was clicked .")),
+               "when a hyperlink into a Bible or lexicon was clicked.")),
         0, 0, 1, 2 /*fill the horizontal space*/
     );
 

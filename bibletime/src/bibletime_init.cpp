@@ -653,11 +653,11 @@ void BibleTime::retranslateUi() {
 */
 void BibleTime::retranslateUiActions(BtActionCollection* ac) {
     ac->action("showToolbarsInTextWindows")->setText(tr("Show toolbars in text windows"));
-    ac->action("showToolbar")->setText(tr("Show main"));
-    ac->action("showNavigation")->setText(tr("Show navigation"));
-    ac->action("showWorks")->setText(tr("Show works"));
-    ac->action("showTools")->setText(tr("Show tools"));
-    ac->action("showFormat")->setText(tr("Show format"));
+    ac->action("showToolbar")->setText(tr("Show main toolbar"));
+    ac->action("showNavigation")->setText(tr("Show navigation bar"));
+    ac->action("showWorks")->setText(tr("Show works toolbar"));
+    ac->action("showTools")->setText(tr("Show tools toolbar"));
+    ac->action("showFormat")->setText(tr("Show formatting toolbar"));
     ac->action("showBookshelf")->setText(tr("Show bookshelf"));
     ac->action("showBookmarks")->setText(tr("Show bookmarks"));
     ac->action("showMag")->setText(tr("Show mag"));
