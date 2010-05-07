@@ -136,7 +136,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="610"/>
         <source>&amp;Arrangement mode</source>
-        <translation>&amp;Asetusviis</translation>
+        <translation>Asetus&amp;viis</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="147"/>
@@ -331,77 +331,77 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="587"/>
         <source>Main toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Peamine tööriistariba</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="588"/>
         <source>Navigation toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Navigeerimisriba</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="589"/>
         <source>Works toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Teoste riba</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="590"/>
         <source>Tools toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Vahendite riba</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="591"/>
         <source>Format toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Vormistamistööriistade riba</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="595"/>
         <source>Show bookshelf</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuva raamaturiiulit</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="596"/>
         <source>Show bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuva järjehoidjaid</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="597"/>
         <source>Show mag</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuva infokuva</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="598"/>
         <source>Toolbars</source>
-        <translation type="unfinished"></translation>
+        <translation>Tööriistaribad</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="599"/>
         <source>Show main</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuva peamist tööriistariba</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="601"/>
         <source>Show works</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuva teoseid</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="603"/>
         <source>Show format</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuva vormistamistööriistade riba</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="604"/>
         <source>Show toolbars in text windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuva tööriistaribasid tekstiakendes</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="606"/>
         <source>Show parallel text headers</source>
-        <translation type="unfinished"></translation>
+        <translation>Näita paralleeltekstide päiseid</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="609"/>
         <source>O&amp;pen windows</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Avatud aknad</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="618"/>
@@ -451,17 +451,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime.cpp" line="257"/>
         <source>Enter the unlock key for %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sisestage võti selle teose avamiseks.</translation>
     </message>
     <message>
         <location filename="../../src/bibletime.cpp" line="277"/>
         <source>Warning: Invalid unlock key!</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoiatus: Vale võti!</translation>
     </message>
     <message>
         <location filename="../../src/bibletime.cpp" line="278"/>
         <source>The unlock key you provided did not properly unlock this module. Please try again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Teie poolt sisestatud võti ei avanud seda moodulit. Palun proovige uuesti.</translation>
     </message>
     <message>
         <source>Enter the unlock key for this work.</source>
@@ -704,12 +704,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="152"/>
         <source>Warning: Module locked!</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoiatus: Moodul on lukustatud!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="153"/>
         <source>You are trying to access an encrypted module. Please provide an unlock key in the following dialog to open the module.</source>
-        <translation type="unfinished"></translation>
+        <translation>Te üritade ligi pääseda krüpteeritud moodulile. Palun sisetage järgnevas dialoogaknas mooduli avamiseks võti.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="202"/>
@@ -4822,7 +4822,7 @@ See võib võtta kaua aega. Kas jätkata indekseerimisega?</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="57"/>
         <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked .</source>
-        <translation type="unfinished"></translation>
+        <translation>Eelistatud teoseid kasutatake kui ei ole määratud konkreetset teost, näiteks kui kasutatakse hüperlinki, mis viitab Piiblisse või mõnda leksikoni.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="65"/>
