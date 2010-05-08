@@ -290,8 +290,13 @@ ENDIF (MSVC)
 
 INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTDocumentation.cmake")
 INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTDeveloper.cmake")
-INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTCpack.cmake")
 
+IF (WIN32 AND NOT UNIX)
+    INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTBinaryPackageWindows.cmake")
+ENDIF (WIN32 AND NOT UNIX)
+IF (APPLE)
+    INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTBinaryPackageWindows.cmake")
+ENDIF (APPLE)
 
 ######################################################
 # "make uninstall" target; see http://www.cmake.org/Wiki/CMake_FAQ#Can_I_do_.22make_uninstall.22_with_CMake.3F
