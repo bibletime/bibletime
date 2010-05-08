@@ -295,7 +295,7 @@ IF (WIN32 AND NOT UNIX)
     INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTBinaryPackageWindows.cmake")
 ENDIF (WIN32 AND NOT UNIX)
 IF (APPLE)
-    INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTBinaryPackageWindows.cmake")
+    INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTBinaryPackageMacOS.cmake")
 ENDIF (APPLE)
 
 ######################################################
