@@ -3,12 +3,12 @@
   <sect1 id="hdbk-intro-about">
     <title>About &bibletime;</title>
 
-    <para>&bibletime; is a Bible study tool with support for different types of texts 
-and languages. Even large amounts of works modules are easy to install and 
-manage. It is built on the <ulink 
-url="http://www.crosswire.org/sword/">&sword;</ulink> library, which 
-provides the back-end functionality for &bibletime;, such as viewing Bible 
-text, searching etc. &sword; is the flagship product of the <ulink 
+    <para>&bibletime; è uno strumento di studio della Bibbia che supporta diversi tipi 
+di testi e lingue. Anche gradi quantità di documenti sono facili da 
+installare e gestire. È costruito sulla libreria <ulink 
+url="http://www.crosswire.org/sword/">&sword;</ulink>, che fornisce un 
+back-end per &bibletime;, come ad esempio la visualizzazione della Bibbia, 
+le ricerche ecc.  &sword; è il prodotto principale di <ulink 
 url="http://www.crosswire.org">&cbs;</ulink>.</para>
 
     <para>&bibletime; è fatto per essere usato con documenti codificati in uno dei 
