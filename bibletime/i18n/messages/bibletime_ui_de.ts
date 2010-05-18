@@ -326,75 +326,75 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Enter the unlock key for %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Geben Sie den Freischaltschlüssel für %1 ein.</translation>
     </message>
     <message>
         <source>Warning: Invalid unlock key!</source>
-        <translation type="unfinished"></translation>
+        <translation>Warnung: Ungültiger Freischaltschlüssel!</translation>
     </message>
     <message>
         <source>The unlock key you provided did not properly unlock this module. Please try again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der von Ihnen eingegebene Freischaltschlüssel hat dieses Modul nicht richtig freigeschaltet. Bitte versuchen Sie es erneut.</translation>
     </message>
     <message>
         <source>Main toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Haupt-Symbolleiste</translation>
     </message>
     <message>
         <source>Navigation toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Navigations-Symbolleiste</translation>
     </message>
     <message>
         <source>Works toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Werke-Symbolleiste</translation>
     </message>
     <message>
         <source>Tools toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Werkzeug-Symbolleiste</translation>
     </message>
     <message>
         <source>Format toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Format-Symbolleiste</translation>
     </message>
     <message>
         <source>Show bookshelf</source>
-        <translation type="unfinished"></translation>
+        <translation>Bücherregal anzeigen</translation>
     </message>
     <message>
         <source>Show bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Lesezeichen anzeigen</translation>
     </message>
     <message>
         <source>Show mag</source>
-        <translation type="unfinished"></translation>
+        <translation>Lupe anzeigen</translation>
     </message>
     <message>
         <source>Toolbars</source>
-        <translation type="unfinished"></translation>
+        <translation>Symbolleisten</translation>
     </message>
     <message>
         <source>Show main</source>
-        <translation type="unfinished"></translation>
+        <translation>Hauptfenster anzeigen</translation>
     </message>
     <message>
         <source>Show works</source>
-        <translation type="unfinished"></translation>
+        <translation>Werke anzeigen</translation>
     </message>
     <message>
         <source>Show format</source>
-        <translation type="unfinished"></translation>
+        <translation>Format anzeigen</translation>
     </message>
     <message>
         <source>Show toolbars in text windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Symbolleisten in Textfenstern anzeigen</translation>
     </message>
     <message>
         <source>Show parallel text headers</source>
-        <translation type="unfinished"></translation>
+        <translation>Parallele Text-Header anzeigen</translation>
     </message>
     <message>
         <source>O&amp;pen windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Fenster ö&amp;ffnen</translation>
     </message>
 </context>
 <context>
@@ -501,7 +501,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
-        <translation>BibleTime verwendet das SWORD Projekt, das freie Bibelsoftwareprojekt der Crosswire Bibelgesellschaft. Sein Zweck ist es, plattformübergreifende Open-Source-Werkzeuge zu erstellen (unter der GNU GPL), mit denen Programmierer neue Bibelsoftware schnell erstellen können.</translation>
+        <translation>BibleTime verwendet das SWORD-Projekt, das freie Bibelsoftwareprojekt der Crosswire Bibelgesellschaft. Sein Zweck ist es, plattformübergreifende Open-Source-Werkzeuge zu erstellen &amp;mdash; der GNU General Public License unterstellt &amp;mdash;, mit denen Programmierer und Bibelgesellschaften neue Bibelsoftware schneller und einfacher erstellen können.</translation>
     </message>
     <message>
         <source>The SWORD Project: </source>
@@ -579,11 +579,11 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Warning: Module locked!</source>
-        <translation type="unfinished"></translation>
+        <translation>Warnung: Modul gesperrt!</translation>
     </message>
     <message>
         <source>You are trying to access an encrypted module. Please provide an unlock key in the following dialog to open the module.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie versuchen, auf ein verschlüsseltes Modul zuzugreifen. Bitte geben Sie einen Freischaltschüssel im folgenden Dialogfenster ein, um das Modul zu öffnen.</translation>
     </message>
 </context>
 <context>
@@ -3505,188 +3505,191 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>This help is mainly for &apos;Full syntax&apos; option. &apos;All words&apos; and &apos;Some words&apos; options have more limited syntax; &lt;a href=&apos;#wildcards&apos;&gt;wildcards&lt;/a&gt; and &lt;a href=&apos;#fields&apos;&gt;text fields&lt;/a&gt; are supported for them. Some other syntax features may give strange or wrong results with All words/Some words.</source>
-        <translation type="unfinished"></translation>
+        <translation>Diese Hilfe ist in erster Linie für die &apos;Vollständige Syntax&apos;-Option. Die Optionen &apos;Alle Wörter&apos; und &apos;Einige Wörter&apos; weisen eine begrenztere Syntax auf; &lt;a href=&apos;#wildcards&apos;&gt;Platzhalter&lt;/a&gt; und &lt;a href=&apos;#fields&apos;&gt;Textfelder&lt;/a&gt; werden für diese unterstützt. Einige andere Syntax-Funktionen können mit &apos;Alle Wörter&apos; / &apos;Einige Wörter&apos; zu seltsamen oder falschen Ergebnissen führen.</translation>
     </message>
     <message>
         <source>Which words to find</source>
-        <translation type="unfinished"></translation>
+        <translation>Zu findende Wörter</translation>
     </message>
     <message>
         <source>Grouping and order</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppierung und Reihenfolge</translation>
     </message>
     <message>
         <source>Wildcards (partial words)</source>
-        <translation type="unfinished"></translation>
+        <translation>Platzhalter (Wortteile)</translation>
     </message>
     <message>
         <source>Text fields (different parts of text)</source>
-        <translation type="unfinished"></translation>
+        <translation>Textfelder (verschiedene Textabschnitte)</translation>
     </message>
     <message>
         <source>Other syntax features</source>
-        <translation type="unfinished"></translation>
+        <translation>Andere Syntax-Funktionen</translation>
     </message>
     <message>
         <source>Search terms are separated by spaces. &lt;strong&gt;AND&lt;/strong&gt; (all words), &lt;strong&gt;OR&lt;/strong&gt; (some words) and &lt;strong&gt;NOT&lt;/strong&gt; (not the following word) can be added between the words. If none is added explicitly OR is used automatically. &apos;&lt;strong&gt;+&lt;/strong&gt;word&apos; means the word must be in the results, &apos;&lt;strong&gt;-&lt;/strong&gt;word&apos; means it must not be in the results.</source>
         <comment>Do not translate &quot;AND&quot;, &quot;OR&quot; or &quot;NOT&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Suchbegriffe werden durch Leerzeichen getrennt. &lt;strong&gt;AND&lt;/strong&gt; (Alle Wörter), &lt;strong&gt;OR&lt;/strong&gt; (Einige Wörter) und &lt;strong&gt;NOT&lt;/strong&gt; (Nicht das folgende Wort) können zwischen die Begriffe eingefügt werden. Ist nichts dergleichen explizit angegeben, wird automatisch OR angewandt. &apos;&lt;strong&gt;+&lt;/strong&gt;Wort&apos; bedeutet, dass das Wort im Suchergebnis auftauchen muss, &apos;&lt;strong&gt;-&lt;/strong&gt;Wort&apos; bedeutet, dass es im Suchergebnis nicht vorkommen darf.</translation>
     </message>
     <message>
         <source>jesus AND god</source>
         <comment>Do not translate &quot;AND&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation>jesus AND gott</translation>
     </message>
     <message>
         <source>Finds verses with both &apos;Jesus&apos; and &apos;God&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Findet Verse mit beiden Wörtern &apos;Jesus&apos; und &apos;Gott&apos;</translation>
     </message>
     <message>
         <source>jesus OR god</source>
         <comment>Do not translate &quot;OR&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation>jesus OR gott</translation>
     </message>
     <message>
         <source>Finds verses with &apos;Jesus&apos; or &apos;God&apos; or both</source>
-        <translation type="unfinished"></translation>
+        <translation>Findet Verse mit &apos;Jesus&apos; oder &apos;Gott&apos; oder beidem</translation>
     </message>
     <message>
         <source>jesus NOT god</source>
         <comment>Do not translate &quot;NOT&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation>jesus NOT gott</translation>
     </message>
     <message>
         <source>Finds verses with &apos;Jesus&apos; but with no &apos;God&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Findet Verse mit &apos;Jesus&apos; aber ohne &apos;Gott&apos;</translation>
     </message>
     <message>
         <source>+jesus -god</source>
-        <translation type="unfinished"></translation>
+        <translation>+jesus -gott</translation>
     </message>
     <message>
         <source>Words can be grouped with &lt;strong&gt;parenthesis&lt;/strong&gt;. Strict word order can be defined with &lt;strong&gt;quotes&lt;/strong&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wörter können mit &lt;strong&gt;runden Klammern&lt;/strong&gt; gruppiert werden. Eine strikte Wortreihenfolge kann mit &lt;strong&gt;Anführungszeichen&lt;/strong&gt; definiert werden.</translation>
     </message>
     <message>
         <source>(a AND b) OR c</source>
         <comment>Do not translate &quot;AND&quot; or &quot;OR&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation>(a AND b) OR c</translation>
     </message>
     <message>
         <source>Finds verses with both &apos;a&apos; AND &apos;b&apos;, and verses with &apos;c&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Findet Verse mit beidem &apos;a&apos; UND &apos;b&apos;, und Verse mit &apos;c&apos;</translation>
     </message>
     <message>
         <source>&quot;says lord&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;spricht HERR&quot;</translation>
     </message>
     <message>
         <source>&quot;says the lord&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;spricht der HERR&quot;</translation>
     </message>
     <message>
         <source>Finds all verses with &apos;says the LORD&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Findet alle Verse mit &apos;spricht der HERR&apos;</translation>
     </message>
     <message>
         <source>&apos;&lt;strong&gt;*&lt;/strong&gt;&apos; matches any sequence of 0 or more characters, while &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; matches any single character. A wildcard can not be used in the beginning of a word.</source>
-        <translation type="unfinished"></translation>
+        <translation>&apos;&lt;strong&gt;*&lt;/strong&gt;&apos; trifft auf alle Buchstabenreihenfolgen mit 0 oder mehr Buchstaben zu, während &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; nur für ein Zeichen steht. Ein Platzhalter darf nicht am Wortanfang benutzt werden.</translation>
     </message>
     <message>
         <source>a*</source>
-        <translation type="unfinished"></translation>
+        <translation>a*</translation>
     </message>
     <message>
         <source>All words beginning with &apos;a&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle Wörter, die mit &apos;a&apos; beginnen</translation>
     </message>
     <message>
         <source>a*a</source>
-        <translation type="unfinished"></translation>
+        <translation>a*a</translation>
     </message>
     <message>
         <source>&apos;Assyria&apos;, &apos;aroma&apos;, &apos;abba&apos; etc.</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>&apos;Adama&apos; als tatsächliches Ergebnisbeispiel, weil &apos;Assysria&apos; in der deutschen Übersetzung nicht auftaucht.</translatorcomment>
+        <translation>&apos;Adama&apos;, &apos;Aroma&apos;, &apos;Abba&apos; usw.</translation>
     </message>
     <message>
         <source>a?</source>
-        <translation type="unfinished"></translation>
+        <translation>a?</translation>
     </message>
     <message>
         <source>&apos;at&apos; and &apos;an&apos;</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>&apos;aß&apos; als tatsächliches Ergebnisbeispiel, weil &apos;at&apos; in der deutschen Bibel nicht auftaucht.</translatorcomment>
+        <translation>&apos;aß&apos; und &apos;an&apos;</translation>
     </message>
     <message>
         <source>a??a</source>
-        <translation type="unfinished"></translation>
+        <translation>a??a</translation>
     </message>
     <message>
         <source>&apos;abba&apos;, &apos;area&apos;, &apos;Asia&apos; etc.</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>auch hier &apos;Abia&apos;, &apos;Adma&apos; als reale Suchergebnisse in der deutschen Bibel anstelle der nicht vorkommenden Wörter &apos;area&apos; und &apos;Asia&apos;</translatorcomment>
+        <translation>&apos;Abba&apos;, &apos;Abia&apos;, &apos;Adma&apos; usw.</translation>
     </message>
     <message>
         <source>Available text fields:</source>
-        <translation type="unfinished"></translation>
+        <translation>Verfügbare Textfelder:</translation>
     </message>
     <message>
         <source>Searches headings</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopfzeilen durchsuchen</translation>
     </message>
     <message>
         <source>Searches footnotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Fußzeilen durchsuchen</translation>
     </message>
     <message>
         <source>Searches Strong&apos;s numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Strong-Nummern durchsuchen</translation>
     </message>
     <message>
         <source>Searches morphology codes</source>
-        <translation type="unfinished"></translation>
+        <translation>Morphologie-Codes durchsuchen</translation>
     </message>
     <message>
         <source>Examples:</source>
-        <translation type="unfinished"></translation>
+        <translation>Beispiele:</translation>
     </message>
     <message>
         <source>heading:Jesus</source>
         <comment>Do not translate &quot;heading:&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation>heading:Jesus</translation>
     </message>
     <message>
         <source>Finds headings with &apos;Jesus&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Findet Kopfzeilen mit &apos;Jesus&apos;</translation>
     </message>
     <message>
         <source>footnote:Jesus AND footnote:said</source>
         <comment>Do not translate &quot;footnote:&quot; or &quot;AND&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation>footnote:Jesus AND footnote:sprach</translation>
     </message>
     <message>
         <source>Finds footnotes with &apos;Jesus&apos; and &apos;said&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Findet Fußzeilen mit &apos;Jesus&apos; und &apos;sprach&apos;</translation>
     </message>
     <message>
         <source>strong:G846</source>
         <comment>Do not translate &quot;strong:&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation>strong:G846</translation>
     </message>
     <message>
         <source>Finds verses with Strong&apos;s Greek number 846</source>
-        <translation type="unfinished"></translation>
+        <translation>Findet Verse mit Strongs Griechisch Nummer 846</translation>
     </message>
     <message>
         <source>morph:&quot;N-NSF&quot;</source>
         <comment>Do not translate &quot;morph:&quot;.</comment>
-        <translation type="unfinished"></translation>
+        <translation>morph:&quot;N-NSF&quot;</translation>
     </message>
     <message>
         <source>Finds verses with morphology code &apos;N-NSF&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Findet Verse mit dem Morphologie-Code &apos;N-NSF&apos;</translation>
     </message>
     <message>
         <source>BibleTime uses the CLucene search engine. You can read more on the &lt;a href=&apos;%1&apos;&gt;lucene syntax web page&lt;/a&gt; (in external browser).</source>
-        <translation type="unfinished"></translation>
+        <translation>BibleTime nutzt die CLucene Suchmaschine. Sie können mehr darüber lesen auf der&lt;a href=&apos;%1&apos;&gt;lucene Syntax-Webseite&lt;/a&gt; (in einem externen Browser).</translation>
     </message>
 </context>
 <context>
@@ -3971,7 +3974,7 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     </message>
     <message>
         <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked .</source>
-        <translation type="unfinished"></translation>
+        <translation>Standardwerke werden genutzt, wenn kein bestimmtes Werk spezifiziert ist, z.B. wenn ein Verweis auf eine Bibel oder ein Lexikon angeklickt wurde.</translation>
     </message>
 </context>
 <context>
