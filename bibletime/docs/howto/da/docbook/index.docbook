@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY bibletime '<application>BibleTime</application>'>
+  <!ENTITY kapp "&bibletimehandbook;">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY howto-chap1 SYSTEM "howto-importance.docbook">
+  <!ENTITY howto-chap2 SYSTEM "howto-basics.docbook">
+  <!ENTITY howto-chap3 SYSTEM "howto-interpretation.docbook">
+]>
+
+<book>
+
+<bookinfo>
+	<title>Guiden til Bibelstudie</title>
+	
+	<authorgroup>
+		<author>
+			<firstname>Bob</firstname>
+			<surname>Harman</surname>
+		</author>
+		<author>
+			<firstname></firstname>
+			<surname>The BibleTime team</surname>
+		</author>
+	</authorgroup>
+	
+	
+	
+	<!-- TRANS:ROLES_OF_TRANSLATORS -->
+<copyright>
+		<year>2001-2009</year>
+		<holder>&bibletime; teamet (info@bibletime.info)</holder>
+	</copyright>
+	
+	<legalnotice>
+		<para>
+			Dette dokument var oprindeligt lavet af Hr. Bob Harman og er licenseret 
+under vilkårene af denne licens <link 
+url="http://creativecommons.org/licenses/by-sa/3.0/"> "Creative Commons 
+Attribution-Share Alike"</link>.
+		</para>
+		<para>
+			Skriftsteder er fra Bibelselskabets Autoriserede Bibel fra 1992, med mindre 
+andet er indikeret.
+		</para>
+	</legalnotice>
+	
+	<abstract>
+		<title>Abstrakt</title>
+		
+		<para>
+			<application>Biblestudie vejledningen</application> er en guide til at 
+studere Bibelen.
+		</para>
+		<para>
+			Det er &bibletime; holdets håb, at denne vejledning vil provokere  læserne 
+til at studere skrifterne for at se hvad de siger. Denne studieguide er 
+blevet valgt, fordi den ikke prøver at fremhæve nogen bestemt kirkeretnings 
+doktrin. vi anbefaler dig at læse og studere skriften for at forstå hvad den 
+siger. Hvis du starter med den indstilling at du vil have Herren til at så 
+hans ord i dit hjerte, så vil han ikke skuffe dig.
+		</para>
+	</abstract>
+	
+	<keywordset>
+		<keyword>Bible</keyword>
+		<keyword>Study</keyword>
+		<keyword>HowTo</keyword>
+	</keywordset>
+
+</bookinfo>
+
+&howto-chap1;
+&howto-chap2;
+&howto-chap3;
+
+</book>
