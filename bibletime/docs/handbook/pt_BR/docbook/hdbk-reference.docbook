@@ -21,7 +21,7 @@ linkend="hdbk-reference-shortcuts">nessa seção</link>.</para>
               <menuchoice>
                 <shortcut>
                   <keycombo action="simul">
-                  <keycap>&Ctrl;Q</keycap></keycombo>
+                  <keycap>&Ctrl;+Q</keycap></keycombo>
                 </shortcut>
                 <guimenu>
                 <inlinemediaobject>
@@ -146,7 +146,7 @@ ocultar a Lupa no painel esquerdo.</para>
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;&Alt;F</keycap></keycombo>
+                <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -171,7 +171,7 @@ linkend="hdbk-op-search">aqui</link>.</para>
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;O</keycap></keycombo>
+                <keycap>&Ctrl;+O</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -222,7 +222,7 @@ salvar para uma nova sessão.</para>
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;&Alt;S</keycap></keycombo>
+                <keycap>&Ctrl;+&Alt;+S</keycap></keycombo>
               </shortcut>
               <guimenu>Window</guimenu>
               <guimenuitem>Save as new session</guimenuitem>
@@ -289,7 +289,7 @@ para você (modos Automáticos, experimente).</para>
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;J</keycap></keycombo>
+                <keycap>&Ctrl;+J</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -313,7 +313,7 @@ para você (modos Automáticos, experimente).</para>
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;I</keycap></keycombo>
+                <keycap>&Ctrl;+I</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -337,7 +337,7 @@ para você (modos Automáticos, experimente).</para>
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;G</keycap></keycombo>
+                <keycap>&Ctrl;+G</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -362,7 +362,7 @@ abertas</action>.
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;H</keycap></keycombo>
+                <keycap>&Ctrl;+H</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -387,7 +387,7 @@ abertas</action>.
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;&Alt;W</keycap></keycombo>
+                <keycap>&Ctrl;+&Alt;+W</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -850,21 +850,21 @@ linkend="hdbk-reference-menus">nessa seção</link>.</para>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Alt;Left</keycap></keycombo>
+              <keycap>&Alt;+Left</keycap></keycombo>
             </entry>
             <entry>Volta no histórico das janelas de leitura.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Alt;Right</keycap></keycombo>
+              <keycap>&Alt;+Right</keycap></keycombo>
             </entry>
             <entry>Avança no histórico das janelas de leitura.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;F</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-search-defaultbible"> <menuchoice> 
@@ -876,7 +876,7 @@ busca para procurar na bíblia padrão.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;G</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+G</keycap></keycombo>
             </entry>
 
             <entry>
@@ -890,7 +890,7 @@ automática de janelas.
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;H</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+H</keycap></keycombo>
             </entry>
             <entry>
             <menuchoice> <guimenu>Janela</guimenu> <guimenuitem>Modo de 
@@ -902,7 +902,7 @@ automática de janelas.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;I</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+I</keycap></keycombo>
             </entry>
 
             <entry>
@@ -914,7 +914,7 @@ equivalent; toggle automatic window tiling.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;J</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+J</keycap></keycombo>
             </entry>
             <entry>
             <menuchoice> <guimenu>Janela</guimenu> <guimenuitem>Modo de posicionamento 
@@ -925,7 +925,7 @@ equivalente; alterna cascateamento automático de janelas.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;M</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+M</keycap></keycombo>
             </entry>
 
             <entry>
@@ -937,7 +937,7 @@ posicionamento</guimenuitem> <guimenuitem>Modo manual</guimenuitem>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;T</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+T</keycap></keycombo>
             </entry>
             <entry>
 	      <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement 
@@ -948,7 +948,7 @@ equivalent; organizes windows with tabs across the top.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;S</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+S</keycap></keycombo>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-window-savenewsession"> <menuchoice> 
@@ -958,7 +958,7 @@ equivalent; organizes windows with tabs across the top.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;W</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+W</keycap></keycombo>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-window-closeall"> <menuchoice> 
@@ -968,28 +968,28 @@ equivalent; organizes windows with tabs across the top.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;-</keycap></keycombo>
+              <keycap>&Ctrl;+-</keycap></keycombo>
             </entry>
             <entry>Diminuir zoom. Diminui o tamanho da fonte das janelas de leitura.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;+</keycap></keycombo>
+              <keycap>&Ctrl;++</keycap></keycombo>
             </entry>
             <entry>Aumentar zoom. Aumenta o tamanho da fonte das janelas de leitura.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;A</keycap></keycombo>
+              <keycap>&Ctrl;+A</keycap></keycombo>
             </entry>
             <entry>Selecionar tudo. Seleciona todo o texto na janela de leitura.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;C</keycap></keycombo>
+              <keycap>&Ctrl;+C</keycap></keycombo>
             </entry>
             <entry>Copiar. Copia o texto selecionado para a rea de transferência.</entry>
           </row>
@@ -997,7 +997,7 @@ equivalent; organizes windows with tabs across the top.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;F</keycap></keycombo>
+              <keycap>&Ctrl;+F</keycap></keycombo>
             </entry>
             <entry>Procurar. Permite a você buscar no texto de uma janela de leitura.</entry>
           </row>
@@ -1005,7 +1005,7 @@ equivalent; organizes windows with tabs across the top.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;G</keycap></keycombo>
+              <keycap>&Ctrl;+G</keycap></keycombo>
             </entry>
 
             <entry>
@@ -1018,7 +1018,7 @@ equivalent; organizes windows with tabs across the top.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;H</keycap></keycombo>
+              <keycap>&Ctrl;+H</keycap></keycombo>
             </entry>
 
             <entry>
@@ -1031,7 +1031,7 @@ equivalent; organizes windows with tabs across the top.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;I</keycap></keycombo>
+              <keycap>&Ctrl;+I</keycap></keycombo>
             </entry>
 
             <entry>
@@ -1044,7 +1044,7 @@ equivalent; organizes windows with tabs across the top.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;J</keycap></keycombo>
+              <keycap>&Ctrl;+J</keycap></keycombo>
             </entry>
 
             <entry>
@@ -1057,7 +1057,7 @@ equivalent; organizes windows with tabs across the top.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;L</keycap></keycombo>
+              <keycap>&Ctrl;+L</keycap></keycombo>
             </entry>
             <entry>Muda local. Muda o focu para o campo da barra de tarefas para o trabalho 
 selecionado.</entry>
@@ -1066,7 +1066,7 @@ selecionado.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;N</keycap></keycombo>
+              <keycap>&Ctrl;+N</keycap></keycombo>
             </entry>
             <entry>Procura com livros desta janela.</entry>
           </row>
@@ -1074,7 +1074,7 @@ selecionado.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;O</keycap></keycombo>
+              <keycap>&Ctrl;+O</keycap></keycombo>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-search-openworks"> <menuchoice> 
@@ -1086,7 +1086,7 @@ busca para procurar em todas as obras abertas.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;Q</keycap></keycombo>
+              <keycap>&Ctrl;+Q</keycap></keycombo>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-file-quit"> <menuchoice> 
@@ -1096,7 +1096,7 @@ busca para procurar em todas as obras abertas.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;W</keycap></keycombo>
+              <keycap>&Ctrl;+W</keycap></keycombo>
             </entry>
             <entry>Fecha a janela atual.</entry>
           </row>

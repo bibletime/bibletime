@@ -21,7 +21,7 @@ horkých kláves</link>.</para>
               <menuchoice>
                 <shortcut>
                   <keycombo action="simul">
-                  <keycap>&Ctrl;Q</keycap></keycombo>
+                  <keycap>&Ctrl;+Q</keycap></keycombo>
                 </shortcut>
                 <guimenu>
                 <inlinemediaobject>
@@ -146,7 +146,7 @@ nebo vypnutí zobrazení časopisu na levé straně.</para>
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;&Alt;F</keycap></keycombo>
+                <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -171,7 +171,7 @@ linkend="hdbk-op-search">Vyhledávání v dílech</link>.</para>
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;O</keycap></keycombo>
+                <keycap>&Ctrl;+O</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -221,7 +221,7 @@ na další položku jak uložit nové sezení.</para>
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;&Alt;S</keycap></keycombo>
+                <keycap>&Ctrl;+&Alt;+S</keycap></keycombo>
               </shortcut>
               <guimenu>Window</guimenu>
               <guimenuitem>Save as new session</guimenuitem>
@@ -288,7 +288,7 @@ tak je vyzkoušejte!)</para>
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;J</keycap></keycombo>
+                <keycap>&Ctrl;+J</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -312,7 +312,7 @@ tak je vyzkoušejte!)</para>
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;I</keycap></keycombo>
+                <keycap>&Ctrl;+I</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -336,7 +336,7 @@ tak je vyzkoušejte!)</para>
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;G</keycap></keycombo>
+                <keycap>&Ctrl;+G</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -360,7 +360,7 @@ tak je vyzkoušejte!)</para>
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;H</keycap></keycombo>
+                <keycap>&Ctrl;+H</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -384,7 +384,7 @@ tak je vyzkoušejte!)</para>
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;&Alt;W</keycap></keycombo>
+                <keycap>&Ctrl;+&Alt;+W</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -843,21 +843,21 @@ hlavního menu</link>.</para>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Alt;Left</keycap></keycombo>
+              <keycap>&Alt;+Left</keycap></keycombo>
             </entry>
             <entry>Posune zpět v historii aktivního okna.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Alt;Right</keycap></keycombo>
+              <keycap>&Alt;+Right</keycap></keycombo>
             </entry>
             <entry>Posune vpřed v historii aktivního okna.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;F</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-search-defaultbible"> <menuchoice> 
@@ -869,7 +869,7 @@ bibli.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;G</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+G</keycap></keycombo>
             </entry>
 
             <entry>
@@ -882,7 +882,7 @@ vertikálně</guimenuitem> </menuchoice> zapnout automatické skládání oken.
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;H</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+H</keycap></keycombo>
             </entry>
             <entry>
             <menuchoice> <guimenu>Okno</guimenu> <guimenuitem>Mód 
@@ -893,7 +893,7 @@ horizontálně</guimenuitem> </menuchoice> zapne automatické skládání oken.<
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;I</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+I</keycap></keycombo>
             </entry>
 
             <entry>
@@ -906,7 +906,7 @@ skládání oken.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;J</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+J</keycap></keycombo>
             </entry>
             <entry>
             <menuchoice> <guimenu>Okno</guimenu> <guimenuitem>Mód 
@@ -917,7 +917,7 @@ rozvržení</guimenuitem> <guimenuitem>Automaticky kaskádovat</guimenuitem>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;M</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+M</keycap></keycombo>
             </entry>
 
             <entry>
@@ -929,7 +929,7 @@ zapne manuální skládání oken.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;T</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+T</keycap></keycombo>
             </entry>
             <entry>
 	      <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement 
@@ -940,7 +940,7 @@ equivalent; organizes windows with tabs across the top.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;S</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+S</keycap></keycombo>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-window-savenewsession"> <menuchoice> 
@@ -950,7 +950,7 @@ equivalent; organizes windows with tabs across the top.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;W</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+W</keycap></keycombo>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-window-closeall"> <menuchoice> 
@@ -960,28 +960,28 @@ equivalent; organizes windows with tabs across the top.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;-</keycap></keycombo>
+              <keycap>&Ctrl;+-</keycap></keycombo>
             </entry>
             <entry>Oddálit. Zmenší velikost písma v aktivním okně.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;+</keycap></keycombo>
+              <keycap>&Ctrl;++</keycap></keycombo>
             </entry>
             <entry>Přiblížit. Zvětší velikost písma v aktivním okně.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;A</keycap></keycombo>
+              <keycap>&Ctrl;+A</keycap></keycombo>
             </entry>
             <entry>Vybrat vše. Vybere všechen text v aktivním okně.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;C</keycap></keycombo>
+              <keycap>&Ctrl;+C</keycap></keycombo>
             </entry>
             <entry>Kopírovat. Zkopíruje vybraný text do schránky.</entry>
           </row>
@@ -989,7 +989,7 @@ equivalent; organizes windows with tabs across the top.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;F</keycap></keycombo>
+              <keycap>&Ctrl;+F</keycap></keycombo>
             </entry>
             <entry>Hledat. Vyhledává v textu aktivního okna</entry>
           </row>
@@ -997,7 +997,7 @@ equivalent; organizes windows with tabs across the top.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;G</keycap></keycombo>
+              <keycap>&Ctrl;+G</keycap></keycombo>
             </entry>
 
             <entry>
@@ -1010,7 +1010,7 @@ equivalent; organizes windows with tabs across the top.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;H</keycap></keycombo>
+              <keycap>&Ctrl;+H</keycap></keycombo>
             </entry>
 
             <entry>
@@ -1023,7 +1023,7 @@ equivalent; organizes windows with tabs across the top.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;I</keycap></keycombo>
+              <keycap>&Ctrl;+I</keycap></keycombo>
             </entry>
 
             <entry>
@@ -1036,7 +1036,7 @@ equivalent; organizes windows with tabs across the top.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;J</keycap></keycombo>
+              <keycap>&Ctrl;+J</keycap></keycombo>
             </entry>
 
             <entry>
@@ -1049,7 +1049,7 @@ equivalent; organizes windows with tabs across the top.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;L</keycap></keycombo>
+              <keycap>&Ctrl;+L</keycap></keycombo>
             </entry>
             <entry>Změnit umístění. Pro vybrané dílo změní zaměření na nástrojovou lištu.</entry>
           </row>
@@ -1057,7 +1057,7 @@ equivalent; organizes windows with tabs across the top.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;N</keycap></keycombo>
+              <keycap>&Ctrl;+N</keycap></keycombo>
             </entry>
             <entry>Vyhledávat s díly tohoto okna.</entry>
           </row>
@@ -1065,7 +1065,7 @@ equivalent; organizes windows with tabs across the top.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;O</keycap></keycombo>
+              <keycap>&Ctrl;+O</keycap></keycombo>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-search-openworks"> <menuchoice> 
@@ -1077,7 +1077,7 @@ všech otevřených dílech.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;Q</keycap></keycombo>
+              <keycap>&Ctrl;+Q</keycap></keycombo>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-file-quit"> <menuchoice> 
@@ -1087,7 +1087,7 @@ všech otevřených dílech.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;W</keycap></keycombo>
+              <keycap>&Ctrl;+W</keycap></keycombo>
             </entry>
             <entry>Zavře aktuální okno.</entry>
           </row>

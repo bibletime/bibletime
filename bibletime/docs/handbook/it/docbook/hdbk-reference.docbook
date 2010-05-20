@@ -21,7 +21,7 @@ ogni elemento, una lista completa di tutte le scorciatoie la trovi nella
               <menuchoice>
                 <shortcut>
                   <keycombo action="simul">
-                  <keycap>&Ctrl;Q</keycap></keycombo>
+                  <keycap>&Ctrl;+Q</keycap></keycombo>
                 </shortcut>
                 <guimenu>
                 <inlinemediaobject>
@@ -146,7 +146,7 @@ mostrare o nascodere la Lente nel pannello di sinistra.</para>
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;&Alt;F</keycap></keycombo>
+                <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -171,7 +171,7 @@ sezione <link linkend="hdbk-op-search">Cercare nei documenti</link>.</para>
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;O</keycap></keycombo>
+                <keycap>&Ctrl;+O</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -222,7 +222,7 @@ salvare in una nuova sessione.</para>
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;&Alt;S</keycap></keycombo>
+                <keycap>&Ctrl;+&Alt;+S</keycap></keycombo>
               </shortcut>
               <guimenu>Window</guimenu>
               <guimenuitem>Save as new session</guimenuitem>
@@ -289,7 +289,7 @@ disposizione delle finestre (modalità manuale) o lasciare che sia
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;J</keycap></keycombo>
+                <keycap>&Ctrl;+J</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -313,7 +313,7 @@ disposizione delle finestre (modalità manuale) o lasciare che sia
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;I</keycap></keycombo>
+                <keycap>&Ctrl;+I</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -337,7 +337,7 @@ disposizione delle finestre (modalità manuale) o lasciare che sia
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;G</keycap></keycombo>
+                <keycap>&Ctrl;+G</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -361,7 +361,7 @@ disposizione delle finestre (modalità manuale) o lasciare che sia
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;H</keycap></keycombo>
+                <keycap>&Ctrl;+H</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -385,7 +385,7 @@ disposizione delle finestre (modalità manuale) o lasciare che sia
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;&Alt;W</keycap></keycombo>
+                <keycap>&Ctrl;+&Alt;+W</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -849,21 +849,21 @@ linkend="hdbk-reference-menus">Riferimento Menu Principale</link>.</para>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Alt;Left</keycap></keycombo>
+              <keycap>&Alt;+Left</keycap></keycombo>
             </entry>
             <entry>Vai indietro nella cronologia della finestra di lettura.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Alt;Right</keycap></keycombo>
+              <keycap>&Alt;+Right</keycap></keycombo>
             </entry>
             <entry>Vai avanti nella cronologia della finestra di lettura.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;F</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-search-defaultbible"> <menuchoice> 
@@ -875,7 +875,7 @@ cercare nella Bibbia di default.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;G</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+G</keycap></keycombo>
             </entry>
 
             <entry>
@@ -889,7 +889,7 @@ disposizione automatica delle finestre.
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;H</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+H</keycap></keycombo>
             </entry>
             <entry>
             <menuchoice> <guimenu>Finestra</guimenu> 
@@ -901,7 +901,7 @@ disposizione automatica delle finestre.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;I</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+I</keycap></keycombo>
             </entry>
 
             <entry>
@@ -914,7 +914,7 @@ disposizione automatica delle finestre.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;J</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+J</keycap></keycombo>
             </entry>
             <entry>
             <menuchoice> <guimenu>Finestra</guimenu> 
@@ -926,7 +926,7 @@ cascata automatica delle finestre.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;M</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+M</keycap></keycombo>
             </entry>
 
             <entry>
@@ -939,7 +939,7 @@ manuale del piazzamento delle finestre.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;T</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+T</keycap></keycombo>
             </entry>
             <entry>
 	      <menuchoice> <guimenu>Finestra</guimenu> 
@@ -950,7 +950,7 @@ manuale del piazzamento delle finestre.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;S</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+S</keycap></keycombo>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-window-savenewsession"> <menuchoice> 
@@ -961,7 +961,7 @@ corrente come nuova sessione.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;W</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+W</keycap></keycombo>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-window-closeall"> <menuchoice> 
@@ -971,28 +971,28 @@ corrente come nuova sessione.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;-</keycap></keycombo>
+              <keycap>&Ctrl;+-</keycap></keycombo>
             </entry>
             <entry>Zoom out. Diminuisce la dimensione del carattere della finestra di lettura.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;+</keycap></keycombo>
+              <keycap>&Ctrl;++</keycap></keycombo>
             </entry>
             <entry>Zoom out. Aumenta la dimensione del carattere della finestra di lettura.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;A</keycap></keycombo>
+              <keycap>&Ctrl;+A</keycap></keycombo>
             </entry>
             <entry>Seleziona tutto. Seleziona tutto il testo nella finestra di lettura.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;C</keycap></keycombo>
+              <keycap>&Ctrl;+C</keycap></keycombo>
             </entry>
             <entry>Copia. Copia il testo selezionato negli appunti.</entry>
           </row>
@@ -1000,7 +1000,7 @@ corrente come nuova sessione.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;F</keycap></keycombo>
+              <keycap>&Ctrl;+F</keycap></keycombo>
             </entry>
             <entry>Cerca. Ti permette di cercare nel testo della finestra di lettura.</entry>
           </row>
@@ -1008,7 +1008,7 @@ corrente come nuova sessione.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;G</keycap></keycombo>
+              <keycap>&Ctrl;+G</keycap></keycombo>
             </entry>
 
             <entry>
@@ -1021,7 +1021,7 @@ corrente come nuova sessione.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;H</keycap></keycombo>
+              <keycap>&Ctrl;+H</keycap></keycombo>
             </entry>
 
             <entry>
@@ -1034,7 +1034,7 @@ orizzontalmente</guimenuitem> </menuchoice> </link> equivalent.
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;I</keycap></keycombo>
+              <keycap>&Ctrl;+I</keycap></keycombo>
             </entry>
 
             <entry>
@@ -1047,7 +1047,7 @@ orizzontalmente</guimenuitem> </menuchoice> </link> equivalent.
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;J</keycap></keycombo>
+              <keycap>&Ctrl;+J</keycap></keycombo>
             </entry>
 
             <entry>
@@ -1060,7 +1060,7 @@ orizzontalmente</guimenuitem> </menuchoice> </link> equivalent.
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;L</keycap></keycombo>
+              <keycap>&Ctrl;+L</keycap></keycombo>
             </entry>
             <entry>Cambia posizione. Modifica focus al campo della barra degli strumenti per il 
 lavoro selezionato.</entry>
@@ -1069,7 +1069,7 @@ lavoro selezionato.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;N</keycap></keycombo>
+              <keycap>&Ctrl;+N</keycap></keycombo>
             </entry>
             <entry>Cerca nei documenti di questa finestra.</entry>
           </row>
@@ -1077,7 +1077,7 @@ lavoro selezionato.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;O</keycap></keycombo>
+              <keycap>&Ctrl;+O</keycap></keycombo>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-search-openworks"> <menuchoice> 
@@ -1089,7 +1089,7 @@ ricerca per cercare in tutti i documenti aperti.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;Q</keycap></keycombo>
+              <keycap>&Ctrl;+Q</keycap></keycombo>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-file-quit"> <menuchoice> 
@@ -1099,7 +1099,7 @@ ricerca per cercare in tutti i documenti aperti.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;W</keycap></keycombo>
+              <keycap>&Ctrl;+W</keycap></keycombo>
             </entry>
             <entry>Chiude la finestra corrente.</entry>
           </row>

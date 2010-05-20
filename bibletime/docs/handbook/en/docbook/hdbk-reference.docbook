@@ -21,7 +21,7 @@
               <menuchoice>
                 <shortcut>
                   <keycombo action="simul">
-                  <keycap>&Ctrl;Q</keycap></keycombo>
+                  <keycap>&Ctrl;+Q</keycap></keycombo>
                 </shortcut>
                 <guimenu>
                 <inlinemediaobject>
@@ -149,7 +149,7 @@
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;&Alt;F</keycap></keycombo>
+                <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -175,7 +175,7 @@
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;O</keycap></keycombo>
+                <keycap>&Ctrl;+O</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -228,7 +228,7 @@
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;&Alt;S</keycap></keycombo>
+                <keycap>&Ctrl;+&Alt;+S</keycap></keycombo>
               </shortcut>
               <guimenu>Window</guimenu>
               <guimenuitem>Save as new session</guimenuitem>
@@ -299,7 +299,7 @@
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;J</keycap></keycombo>
+                <keycap>&Ctrl;+J</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -323,7 +323,7 @@
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;I</keycap></keycombo>
+                <keycap>&Ctrl;+I</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -347,7 +347,7 @@
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;G</keycap></keycombo>
+                <keycap>&Ctrl;+G</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -371,7 +371,7 @@
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;H</keycap></keycombo>
+                <keycap>&Ctrl;+H</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -396,7 +396,7 @@
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;&Alt;W</keycap></keycombo>
+                <keycap>&Ctrl;+&Alt;+W</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -865,14 +865,14 @@
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Alt;Left</keycap></keycombo>
+              <keycap>&Alt;+Left</keycap></keycombo>
             </entry>
             <entry>Moves back in the history of read windows.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Alt;Right</keycap></keycombo>
+              <keycap>&Alt;+Right</keycap></keycombo>
             </entry>
             <entry>Moves forward in the history of read
             windows.</entry>
@@ -880,7 +880,7 @@
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;F</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-search-defaultbible">
@@ -895,7 +895,7 @@
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;G</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+G</keycap></keycombo>
             </entry>
 
             <entry>
@@ -910,7 +910,7 @@
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;H</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+H</keycap></keycombo>
             </entry>
             <entry>
             <menuchoice>
@@ -924,7 +924,7 @@
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;I</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+I</keycap></keycombo>
             </entry>
 
             <entry>
@@ -939,7 +939,7 @@
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;J</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+J</keycap></keycombo>
             </entry>
             <entry>
             <menuchoice>
@@ -953,7 +953,7 @@
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;M</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+M</keycap></keycombo>
             </entry>
 
             <entry>
@@ -968,7 +968,7 @@
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;T</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+T</keycap></keycombo>
             </entry>
             <entry>
 	      <menuchoice>
@@ -982,7 +982,7 @@
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;S</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+S</keycap></keycombo>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-window-savenewsession">
@@ -996,7 +996,7 @@
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;W</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+W</keycap></keycombo>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-window-closeall">
@@ -1009,7 +1009,7 @@
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;-</keycap></keycombo>
+              <keycap>&Ctrl;+-</keycap></keycombo>
             </entry>
             <entry>Zoom out. This decreases the font size of read
             windows.</entry>
@@ -1017,7 +1017,7 @@
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;+</keycap></keycombo>
+              <keycap>&Ctrl;++</keycap></keycombo>
             </entry>
             <entry>Zoom in. This increases the font size of read
             windows.</entry>
@@ -1025,7 +1025,7 @@
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;A</keycap></keycombo>
+              <keycap>&Ctrl;+A</keycap></keycombo>
             </entry>
             <entry>Select all. This selects all text in read
             windows.</entry>
@@ -1033,7 +1033,7 @@
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;C</keycap></keycombo>
+              <keycap>&Ctrl;+C</keycap></keycombo>
             </entry>
             <entry>Copy. This copies the selected text to the
             clipboard.</entry>
@@ -1042,7 +1042,7 @@
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;F</keycap></keycombo>
+              <keycap>&Ctrl;+F</keycap></keycombo>
             </entry>
             <entry>Search. This lets you search within the text of a
             read window.</entry>
@@ -1051,7 +1051,7 @@
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;G</keycap></keycombo>
+              <keycap>&Ctrl;+G</keycap></keycombo>
             </entry>
 
             <entry>
@@ -1067,7 +1067,7 @@
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;H</keycap></keycombo>
+              <keycap>&Ctrl;+H</keycap></keycombo>
             </entry>
 
             <entry>
@@ -1083,7 +1083,7 @@
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;I</keycap></keycombo>
+              <keycap>&Ctrl;+I</keycap></keycombo>
             </entry>
 
             <entry>
@@ -1099,7 +1099,7 @@
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;J</keycap></keycombo>
+              <keycap>&Ctrl;+J</keycap></keycombo>
             </entry>
 
             <entry>
@@ -1115,7 +1115,7 @@
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;L</keycap></keycombo>
+              <keycap>&Ctrl;+L</keycap></keycombo>
             </entry>
             <entry>Change location. Changes focus to the toolbar field for the
             	selected work.</entry>
@@ -1124,7 +1124,7 @@
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;N</keycap></keycombo>
+              <keycap>&Ctrl;+N</keycap></keycombo>
             </entry>
             <entry>Search with works of this window.</entry>
           </row>
@@ -1132,7 +1132,7 @@
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;O</keycap></keycombo>
+              <keycap>&Ctrl;+O</keycap></keycombo>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-search-openworks">
@@ -1147,7 +1147,7 @@
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;Q</keycap></keycombo>
+              <keycap>&Ctrl;+Q</keycap></keycombo>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-file-quit">
@@ -1160,7 +1160,7 @@
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;W</keycap></keycombo>
+              <keycap>&Ctrl;+W</keycap></keycombo>
             </entry>
             <entry>Closes the current window.</entry>
           </row>

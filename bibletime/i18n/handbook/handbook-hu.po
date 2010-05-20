@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: handbook-hu\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
-"POT-Creation-Date: 2010-05-20 15:15-0400\n"
+"POT-Creation-Date: 2010-05-20 16:17-0400\n"
 "PO-Revision-Date: 2010-02-18 21:16+0100\n"
 "Last-Translator: Novak Geza <gza@gza.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -2257,7 +2257,7 @@ msgstr "A &bibletime; kézikönyv a &bibletime; programmal együtt terjesztve."
 # type: Content of: <book><bookinfo><date>
 #: docs/handbook/en/docbook/index.docbook:54
 #, fuzzy
-msgid "$LastChangedDate: 2010-02-25 12:20:19 -0500 (Thu, 25 Feb 2010) $"
+msgid "$LastChangedDate: 2010-05-20 15:20:48 -0400 (Thu, 20 May 2010) $"
 msgstr "$LastChangedDate: 2009-12-31 15:05:52 -0500 (Thu, 31 Dec 2009) $"
 
 # type: Content of: <book><bookinfo><releaseinfo>

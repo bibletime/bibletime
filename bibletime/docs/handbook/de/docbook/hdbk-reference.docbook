@@ -21,7 +21,7 @@ Eintrags sehen, ein komplettes Verzeichnis aller Kurzbefehle finden Sie im
               <menuchoice>
                 <shortcut>
                   <keycombo action="simul">
-                  <keycap>&Ctrl;Q</keycap></keycombo>
+                  <keycap>&Ctrl;+Q</keycap></keycombo>
                 </shortcut>
                 <guimenu>
                 <inlinemediaobject>
@@ -147,7 +147,7 @@ Lupenfenster im linken Abschnitt oder verbirgt es.</para>
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;&Alt;F</keycap></keycombo>
+                <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -171,7 +171,7 @@ k??nnen Sie unter <link linkend="hdbk-op-search">Sucharten</link> finden.</para>
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;O</keycap></keycombo>
+                <keycap>&Ctrl;+O</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -223,7 +223,7 @@ abspeichern k??nnen.</para>
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;&Alt;S</keycap></keycombo>
+                <keycap>&Ctrl;+&Alt;+S</keycap></keycombo>
               </shortcut>
               <guimenu>Window</guimenu>
               <guimenuitem>Save as new session</guimenuitem>
@@ -290,7 +290,7 @@ k??mmern soll (automatische Modi, probieren Sie's einfach aus!).</para>
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;J</keycap></keycombo>
+                <keycap>&Ctrl;+J</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -314,7 +314,7 @@ k??mmern soll (automatische Modi, probieren Sie's einfach aus!).</para>
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;I</keycap></keycombo>
+                <keycap>&Ctrl;+I</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -338,7 +338,7 @@ k??mmern soll (automatische Modi, probieren Sie's einfach aus!).</para>
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;G</keycap></keycombo>
+                <keycap>&Ctrl;+G</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -362,7 +362,7 @@ k??mmern soll (automatische Modi, probieren Sie's einfach aus!).</para>
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;H</keycap></keycombo>
+                <keycap>&Ctrl;+H</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -386,7 +386,7 @@ k??mmern soll (automatische Modi, probieren Sie's einfach aus!).</para>
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;&Alt;W</keycap></keycombo>
+                <keycap>&Ctrl;+&Alt;+W</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -853,21 +853,21 @@ linkend="hdbk-reference-menus">Hauptmen??-Referenz</link> nachsehen.</para>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Alt;Left</keycap></keycombo>
+              <keycap>&Alt;+Left</keycap></keycombo>
             </entry>
             <entry>Im Lesefenster-Verlauf zur??ckbl??ttern.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Alt;Right</keycap></keycombo>
+              <keycap>&Alt;+Right</keycap></keycombo>
             </entry>
             <entry>Im Lesefenster-Verlauf vorw??rtsbl??ttern.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;F</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-search-defaultbible"> <menuchoice> 
@@ -879,7 +879,7 @@ der Standardbibel zu suchen.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;G</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+G</keycap></keycombo>
             </entry>
 
             <entry>
@@ -893,7 +893,7 @@ Fensteranordnung auf vertikalen Kachelmodus.
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;H</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+H</keycap></keycombo>
             </entry>
             <entry>
             <menuchoice> <guimenu>Fenster</guimenu> 
@@ -905,7 +905,7 @@ Fensteranordnung auf horizontalen Kachelmodus.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;I</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+I</keycap></keycombo>
             </entry>
 
             <entry>
@@ -918,7 +918,7 @@ Fensteranordnung auf automatisches Staffeln um.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;J</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+J</keycap></keycombo>
             </entry>
             <entry>
             <menuchoice> <guimenu>Fenster</guimenu> 
@@ -930,7 +930,7 @@ automatisches Staffeln.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;M</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+M</keycap></keycombo>
             </entry>
 
             <entry>
@@ -942,7 +942,7 @@ automatisches Staffeln.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;T</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+T</keycap></keycombo>
             </entry>
             <entry>
 	      <menuchoice> <guimenu>Fenster</guimenu> 
@@ -953,7 +953,7 @@ automatisches Staffeln.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;S</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+S</keycap></keycombo>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-window-savenewsession"> <menuchoice> 
@@ -964,7 +964,7 @@ als neue Sitzung ab.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;&Alt;W</keycap></keycombo>
+              <keycap>&Ctrl;+&Alt;+W</keycap></keycombo>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-window-closeall"> <menuchoice> 
@@ -975,28 +975,28 @@ Fenster.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;-</keycap></keycombo>
+              <keycap>&Ctrl;+-</keycap></keycombo>
             </entry>
             <entry>Verkleinern. Dies verkleinert die Schriftgr????e von Lesefenstern.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;+</keycap></keycombo>
+              <keycap>&Ctrl;++</keycap></keycombo>
             </entry>
             <entry>Vergr????ern. Dies vergr????ert die Schriftgr????e von Lesefenstern.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;A</keycap></keycombo>
+              <keycap>&Ctrl;+A</keycap></keycombo>
             </entry>
             <entry>Alles ausw??hlen. Dies w??hlt den gesamten Text in Lesefenstern aus.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;C</keycap></keycombo>
+              <keycap>&Ctrl;+C</keycap></keycombo>
             </entry>
             <entry>Kopieren. Dies kopiert ausgew??hlten Text in die Zwischenablage.</entry>
           </row>
@@ -1004,7 +1004,7 @@ Fenster.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;F</keycap></keycombo>
+              <keycap>&Ctrl;+F</keycap></keycombo>
             </entry>
             <entry>Suchen. Diese Funktion erlaubt Ihnen innerhalb eines Lesefenster-Textes zu 
 suchen.</entry>
@@ -1013,7 +1013,7 @@ suchen.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;G</keycap></keycombo>
+              <keycap>&Ctrl;+G</keycap></keycombo>
             </entry>
 
             <entry>
@@ -1027,7 +1027,7 @@ Kacheln.
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;H</keycap></keycombo>
+              <keycap>&Ctrl;+H</keycap></keycombo>
             </entry>
 
             <entry>
@@ -1041,7 +1041,7 @@ Kacheln.
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;I</keycap></keycombo>
+              <keycap>&Ctrl;+I</keycap></keycombo>
             </entry>
 
             <entry>
@@ -1054,7 +1054,7 @@ Kacheln.
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;J</keycap></keycombo>
+              <keycap>&Ctrl;+J</keycap></keycombo>
             </entry>
 
             <entry>
@@ -1067,7 +1067,7 @@ Kacheln.
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;L</keycap></keycombo>
+              <keycap>&Ctrl;+L</keycap></keycombo>
             </entry>
             <entry>Ort ??ndern. Wechselt den Fokus zur Werkzeugleiste des selektierten Werkes.</entry>
           </row>
@@ -1075,7 +1075,7 @@ Kacheln.
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;N</keycap></keycombo>
+              <keycap>&Ctrl;+N</keycap></keycombo>
             </entry>
             <entry>Das Suchfenster mit den Werken dieses Fensters ??ffnen.</entry>
           </row>
@@ -1083,7 +1083,7 @@ Kacheln.
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;O</keycap></keycombo>
+              <keycap>&Ctrl;+O</keycap></keycombo>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-search-openworks"> <menuchoice> 
@@ -1095,7 +1095,7 @@ allen gegenw??rtig ge??ffneten Werken zu suchen.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;Q</keycap></keycombo>
+              <keycap>&Ctrl;+Q</keycap></keycombo>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-file-quit"> <menuchoice> 
@@ -1105,7 +1105,7 @@ allen gegenw??rtig ge??ffneten Werken zu suchen.</entry>
           <row>
             <entry>
               <keycombo action="simul">
-              <keycap>&Ctrl;W</keycap></keycombo>
+              <keycap>&Ctrl;+W</keycap></keycombo>
             </entry>
             <entry>Schlie??t das aktuelle Fenster.</entry>
           </row>
