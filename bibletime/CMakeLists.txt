@@ -4,7 +4,7 @@ SET(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 # BibleTime version
 SET(BT_VERSION_MAJOR "2")
-SET(BT_VERSION_MINOR "7")
+SET(BT_VERSION_MINOR "8")
 #SET(BT_REVISION_PATCH ".rc1")
 
 # Determine SVN patch version, if needed:

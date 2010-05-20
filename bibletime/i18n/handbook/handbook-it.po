@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
-"POT-Creation-Date: 2010-04-21 14:40-0400\n"
+"POT-Creation-Date: 2010-05-20 15:15-0400\n"
 "PO-Revision-Date: 2010-05-10 16:37+0200\n"
 "Last-Translator: \n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -2225,7 +2225,8 @@ msgstr "$LastChangedDate: 2010-02-25 12:20:19 -0500 (Thu, 25 Feb 2010) $"
 
 # type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:56
-msgid "2.7"
+#, fuzzy
+msgid "2.8"
 msgstr "2.7"
 
 # type: Content of: <book><bookinfo><abstract><para>
@@ -2242,4 +2243,3 @@ msgstr ""
 "funzionare su diversi sistemi operativi inclusi Linux, Windows, FreeBSD e "
 "Mac OS X. Il software usa la libreria &sword; per lavorare con oltre 200 "
 "testi della Bibbia, commenti, dizionari e libri gratuiti forniti da &cbs;."
-
