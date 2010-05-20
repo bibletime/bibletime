@@ -22,32 +22,32 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BibleTime</name>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="593"/>
+        <location filename="../../src/bibletime_init.cpp" line="628"/>
         <source>&amp;File</source>
         <translation>&amp;Súbor</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="594"/>
+        <location filename="../../src/bibletime_init.cpp" line="629"/>
         <source>&amp;View</source>
         <translation>&amp;Zobrazenie</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="607"/>
+        <location filename="../../src/bibletime_init.cpp" line="632"/>
         <source>&amp;Search</source>
         <translation>&amp;Hľadanie</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="608"/>
+        <location filename="../../src/bibletime_init.cpp" line="633"/>
         <source>&amp;Window</source>
         <translation>&amp;Okno</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="614"/>
+        <location filename="../../src/bibletime_init.cpp" line="639"/>
         <source>Se&amp;ttings</source>
         <translation>Nas&amp;tavenia</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="615"/>
+        <location filename="../../src/bibletime_init.cpp" line="640"/>
         <source>&amp;Help</source>
         <translation>&amp;Pomocník</translation>
     </message>
@@ -60,10 +60,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/bibletime_init.cpp" line="114"/>
         <source>&amp;Fullscreen mode</source>
         <translation>&amp;Celá obrazovka</translation>
-    </message>
-    <message>
-        <source>Main Toolbar</source>
-        <translation type="obsolete">Hlavný panel</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="107"/>
@@ -81,48 +77,22 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Informácie o programe BibleTime</translation>
     </message>
     <message>
-        <source>Show Bookshelf</source>
-        <translation type="obsolete">Zobraziť knižnicu</translation>
-    </message>
-    <message>
-        <source>Show Bookmarks</source>
-        <translation type="obsolete">Zobraziť záložky</translation>
-    </message>
-    <message>
-        <source>Show Mag</source>
-        <translation type="obsolete">Zobraziť informačnú oblasť</translation>
-    </message>
-    <message>
-        <location filename="../../src/bibletime_init.cpp" line="600"/>
-        <source>Show navigation</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/bibletime_init.cpp" line="602"/>
-        <source>Show tools</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>O&amp;pen Windows</source>
-        <translation type="obsolete">&amp;Otvoriť okná</translation>
-    </message>
-    <message>
-        <location filename="../../src/bibletime_init.cpp" line="611"/>
+        <location filename="../../src/bibletime_init.cpp" line="636"/>
         <source>&amp;Save session</source>
         <translation>&amp;Uložiť reláciu</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="612"/>
+        <location filename="../../src/bibletime_init.cpp" line="637"/>
         <source>&amp;Load session</source>
         <translation>N&amp;ačítať reláciu</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="613"/>
+        <location filename="../../src/bibletime_init.cpp" line="638"/>
         <source>&amp;Delete session</source>
         <translation>O&amp;dstrániť reláciu</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="610"/>
+        <location filename="../../src/bibletime_init.cpp" line="635"/>
         <source>&amp;Arrangement mode</source>
         <translation>Režim &amp;usporiadania</translation>
     </message>
@@ -317,87 +287,97 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Otvoriť BibleTime príručku</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="587"/>
+        <location filename="../../src/bibletime_init.cpp" line="622"/>
         <source>Main toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="588"/>
+        <location filename="../../src/bibletime_init.cpp" line="623"/>
         <source>Navigation toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="589"/>
+        <location filename="../../src/bibletime_init.cpp" line="624"/>
         <source>Works toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="590"/>
+        <location filename="../../src/bibletime_init.cpp" line="625"/>
         <source>Tools toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="591"/>
+        <location filename="../../src/bibletime_init.cpp" line="626"/>
         <source>Format toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="595"/>
+        <location filename="../../src/bibletime_init.cpp" line="656"/>
+        <source>Show main toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="657"/>
+        <source>Show navigation bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="658"/>
+        <source>Show works toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="659"/>
+        <source>Show tools toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="660"/>
+        <source>Show formatting toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="661"/>
         <source>Show bookshelf</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="596"/>
+        <location filename="../../src/bibletime_init.cpp" line="662"/>
         <source>Show bookmarks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="597"/>
+        <location filename="../../src/bibletime_init.cpp" line="663"/>
         <source>Show mag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="598"/>
+        <location filename="../../src/bibletime_init.cpp" line="630"/>
         <source>Toolbars</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="599"/>
-        <source>Show main</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/bibletime_init.cpp" line="601"/>
-        <source>Show works</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/bibletime_init.cpp" line="603"/>
-        <source>Show format</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/bibletime_init.cpp" line="604"/>
+        <location filename="../../src/bibletime_init.cpp" line="655"/>
         <source>Show toolbars in text windows</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="606"/>
+        <location filename="../../src/bibletime_init.cpp" line="664"/>
         <source>Show parallel text headers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="609"/>
+        <location filename="../../src/bibletime_init.cpp" line="634"/>
         <source>O&amp;pen windows</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="618"/>
+        <location filename="../../src/bibletime_init.cpp" line="643"/>
         <source>Show &quot;Whats this widget&quot; dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="787"/>
+        <location filename="../../src/bibletime_init.cpp" line="832"/>
         <source>Whats this widget?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -452,21 +432,17 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Enter the unlock key for this work.</source>
-        <translation type="obsolete">Zadajte kľúč k odomknutiu diela.</translation>
-    </message>
-    <message>
         <location filename="../../src/bibletime_init.cpp" line="258"/>
         <source>&amp;About BibleTime</source>
         <translation>&amp;O Bibletime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="585"/>
+        <location filename="../../src/bibletime_init.cpp" line="620"/>
         <source>Bookmarks</source>
         <translation>Záložky</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="586"/>
+        <location filename="../../src/bibletime_init.cpp" line="621"/>
         <source>Mag</source>
         <translation>Informácie</translation>
     </message>
@@ -711,42 +687,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="75"/>
         <source>Module</source>
         <translation>Modul</translation>
-    </message>
-    <message>
-        <source>Bibles</source>
-        <translation type="obsolete">Biblie</translation>
-    </message>
-    <message>
-        <source>Commentaries</source>
-        <translation type="obsolete">Komentáre</translation>
-    </message>
-    <message>
-        <source>Books</source>
-        <translation type="obsolete">Knihy</translation>
-    </message>
-    <message>
-        <source>Cults/Unorthodox</source>
-        <translation type="obsolete">Kultové/Neortodoxné</translation>
-    </message>
-    <message>
-        <source>Maps and Images</source>
-        <translation type="obsolete">Mapy a obrázky</translation>
-    </message>
-    <message>
-        <source>Daily Devotionals</source>
-        <translation type="obsolete">Denné zamyslenia</translation>
-    </message>
-    <message>
-        <source>Lexicons and Dictionaries</source>
-        <translation type="obsolete">Lexikóny a slovníky</translation>
-    </message>
-    <message>
-        <source>Glossaries</source>
-        <translation type="obsolete">Glosáre</translation>
-    </message>
-    <message>
-        <source>Unknown</source>
-        <translation type="obsolete">Neznáme</translation>
     </message>
 </context>
 <context>
@@ -2033,14 +1973,6 @@ skratka</translation>
         <translation>Vpravo</translation>
     </message>
     <message>
-        <source>Select all</source>
-        <translation type="obsolete">Označiť všetko</translation>
-    </message>
-    <message>
-        <source>HTML editor window</source>
-        <translation type="obsolete">Okno HTML editora</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="198"/>
         <source>Font</source>
         <translation>Písmo</translation>
@@ -2069,22 +2001,6 @@ skratka</translation>
 <context>
     <name>CHTMLWriteWindow</name>
     <message>
-        <source>Sync with active Bible</source>
-        <translation type="obsolete">Synchronizovať s aktívnou Bibliou</translation>
-    </message>
-    <message>
-        <source>Save text</source>
-        <translation type="obsolete">Uložiť text</translation>
-    </message>
-    <message>
-        <source>Delete current entry</source>
-        <translation type="obsolete">Odstrániť aktuálnu položku</translation>
-    </message>
-    <message>
-        <source>Restore original text</source>
-        <translation type="obsolete">Obnoviť pôvodný text</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="129"/>
         <source>Module not writable</source>
         <translation>Do modulu nie je možné zapisovať</translation>
@@ -2098,18 +2014,6 @@ skratka</translation>
         <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="132"/>
         <source>Either the module may not be edited, or you do not have write permission.</source>
         <translation>Buď nie je možné upravovať modul, alebo nemáte práva na zápis.</translation>
-    </message>
-    <message>
-        <source>Synchronize (show the same verse) with the active Bible window</source>
-        <translation type="obsolete">Synchronizovať (zobraziť rovnaký verš) v aktívnom okne Biblie</translation>
-    </message>
-    <message>
-        <source>Delete current entry (no undo)</source>
-        <translation type="obsolete">Zmazať aktuálnu položku (nie je možné vrátiť späť)</translation>
-    </message>
-    <message>
-        <source>Restore original text, new text will be lost</source>
-        <translation type="obsolete">Obnoviť originálny text, nový text bude stratený</translation>
     </message>
 </context>
 <context>
@@ -2160,38 +2064,6 @@ skratka</translation>
 </context>
 <context>
     <name>CLanguageSettingsPage</name>
-    <message>
-        <source>Use custom font</source>
-        <translation type="obsolete">Použiť vlastné písmo</translation>
-    </message>
-    <message>
-        <source>Language for names of Bible books:</source>
-        <translation type="obsolete">Jazyk pre názvy kníh Biblie:</translation>
-    </message>
-    <message>
-        <source>The languages which can be used for the biblical booknames</source>
-        <translation type="obsolete">Jazyky, ktoré je možné použiť pre názvy biblických kníh</translation>
-    </message>
-    <message>
-        <source>The font selection below will apply to all texts in this language</source>
-        <translation type="obsolete">Výber písma sa použije na všetky texty v tomto jazyku</translation>
-    </message>
-    <message>
-        <source>Select the language in which the Biblical book names are displayed.</source>
-        <translation type="obsolete">Vyberte jazyk, v ktorom sa budú zobrazovať názvy kníh Biblie.</translation>
-    </message>
-    <message>
-        <source>Fonts</source>
-        <translation type="obsolete">Písma</translation>
-    </message>
-    <message>
-        <source>You can specify a custom font for each language.</source>
-        <translation type="obsolete">Môžete si vybrať vlastné písmo pre každý jazyk.</translation>
-    </message>
-    <message>
-        <source>Languages</source>
-        <translation type="obsolete">Zoznam jazykov</translation>
-    </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="297"/>
         <source></source>
@@ -2266,34 +2138,34 @@ skratka</translation>
         <translation>Položka ako surový text</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="262"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="264"/>
         <source>Lexicon window</source>
         <translation>Okno lexikónu</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="269"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="271"/>
         <source>Copy...</source>
         <translation>Kopírovať...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="278"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="280"/>
         <source>Save...</source>
         <translation>Ulož...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="294"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="296"/>
         <source>Print...</source>
         <translation>Tlačiť...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="337"/>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="367"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="339"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="369"/>
         <source>Saving entry ...</source>
         <translation>Ukladanie položky...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="337"/>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="367"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="339"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="369"/>
         <source>Saving</source>
         <translation>Ukladám</translation>
     </message>
@@ -3881,25 +3753,9 @@ Language name ppk</extracomment>
         <translation>Dávajte si pozor, toto dielo obsahuje kultový / otázny materiál!</translation>
     </message>
     <message>
-        <source>Language</source>
-        <translation type="obsolete">Jazyk</translation>
-    </message>
-    <message>
-        <source>Unlock key</source>
-        <translation type="obsolete">Kľúč k odomknutiu</translation>
-    </message>
-    <message>
-        <source>not set</source>
-        <translation type="obsolete">nenastavené</translation>
-    </message>
-    <message>
         <location filename="../../src/util/tool.cpp" line="192"/>
         <source>Version</source>
         <translation>Verzia</translation>
-    </message>
-    <message>
-        <source>Options</source>
-        <translation type="obsolete">Voľby</translation>
     </message>
     <message>
         <location filename="../../src/util/migrationutil.cpp" line="55"/>
@@ -4790,12 +4646,8 @@ Toto môže dlho trvať. Pokračovať s indexovaním?</translation>
 <context>
     <name>StandardWorksTab</name>
     <message>
-        <source>Standard works are used when no particular work is specified,   for example when a hyperlink into a Bible or lexicon was clicked .</source>
-        <translation type="obsolete">Štandardné diela sa použijú, keď žiadny modul nie je určený, napríklad pri kliknutí na hyperodkaz do Biblie alebo lexikónu.</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="57"/>
-        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked .</source>
+        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

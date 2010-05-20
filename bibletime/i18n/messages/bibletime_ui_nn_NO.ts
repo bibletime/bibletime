@@ -22,32 +22,32 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BibleTime</name>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="593"/>
+        <location filename="../../src/bibletime_init.cpp" line="628"/>
         <source>&amp;File</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="594"/>
+        <location filename="../../src/bibletime_init.cpp" line="629"/>
         <source>&amp;View</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="607"/>
+        <location filename="../../src/bibletime_init.cpp" line="632"/>
         <source>&amp;Search</source>
         <translation>&amp;Søk</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="608"/>
+        <location filename="../../src/bibletime_init.cpp" line="633"/>
         <source>&amp;Window</source>
         <translation>&amp;Vindauge</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="614"/>
+        <location filename="../../src/bibletime_init.cpp" line="639"/>
         <source>Se&amp;ttings</source>
         <translation>&amp;Innstillingar</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="615"/>
+        <location filename="../../src/bibletime_init.cpp" line="640"/>
         <source>&amp;Help</source>
         <translation></translation>
     </message>
@@ -77,40 +77,22 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Show Bookshelf</source>
-        <translation type="obsolete">Vis bokhylle</translation>
-    </message>
-    <message>
-        <source>Show Bookmarks</source>
-        <translation type="obsolete">Vis bokmerke</translation>
-    </message>
-    <message>
-        <location filename="../../src/bibletime_init.cpp" line="600"/>
-        <source>Show navigation</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/bibletime_init.cpp" line="602"/>
-        <source>Show tools</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/bibletime_init.cpp" line="611"/>
+        <location filename="../../src/bibletime_init.cpp" line="636"/>
         <source>&amp;Save session</source>
         <translation>Lagre &amp;økt</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="612"/>
+        <location filename="../../src/bibletime_init.cpp" line="637"/>
         <source>&amp;Load session</source>
         <translation>&amp;Opne økt</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="613"/>
+        <location filename="../../src/bibletime_init.cpp" line="638"/>
         <source>&amp;Delete session</source>
         <translation>&amp;Slett økt</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="610"/>
+        <location filename="../../src/bibletime_init.cpp" line="635"/>
         <source>&amp;Arrangement mode</source>
         <translation>&amp;Oppstillingsmodus</translation>
     </message>
@@ -305,87 +287,97 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="587"/>
+        <location filename="../../src/bibletime_init.cpp" line="622"/>
         <source>Main toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="588"/>
+        <location filename="../../src/bibletime_init.cpp" line="623"/>
         <source>Navigation toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="589"/>
+        <location filename="../../src/bibletime_init.cpp" line="624"/>
         <source>Works toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="590"/>
+        <location filename="../../src/bibletime_init.cpp" line="625"/>
         <source>Tools toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="591"/>
+        <location filename="../../src/bibletime_init.cpp" line="626"/>
         <source>Format toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="595"/>
+        <location filename="../../src/bibletime_init.cpp" line="656"/>
+        <source>Show main toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="657"/>
+        <source>Show navigation bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="658"/>
+        <source>Show works toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="659"/>
+        <source>Show tools toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="660"/>
+        <source>Show formatting toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="661"/>
         <source>Show bookshelf</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="596"/>
+        <location filename="../../src/bibletime_init.cpp" line="662"/>
         <source>Show bookmarks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="597"/>
+        <location filename="../../src/bibletime_init.cpp" line="663"/>
         <source>Show mag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="598"/>
+        <location filename="../../src/bibletime_init.cpp" line="630"/>
         <source>Toolbars</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="599"/>
-        <source>Show main</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/bibletime_init.cpp" line="601"/>
-        <source>Show works</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/bibletime_init.cpp" line="603"/>
-        <source>Show format</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/bibletime_init.cpp" line="604"/>
+        <location filename="../../src/bibletime_init.cpp" line="655"/>
         <source>Show toolbars in text windows</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="606"/>
+        <location filename="../../src/bibletime_init.cpp" line="664"/>
         <source>Show parallel text headers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="609"/>
+        <location filename="../../src/bibletime_init.cpp" line="634"/>
         <source>O&amp;pen windows</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="618"/>
+        <location filename="../../src/bibletime_init.cpp" line="643"/>
         <source>Show &quot;Whats this widget&quot; dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="787"/>
+        <location filename="../../src/bibletime_init.cpp" line="832"/>
         <source>Whats this widget?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -440,21 +432,17 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Enter the unlock key for this work.</source>
-        <translation type="obsolete">Skriv inn passordet for å låse opp verket.</translation>
-    </message>
-    <message>
         <location filename="../../src/bibletime_init.cpp" line="258"/>
         <source>&amp;About BibleTime</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="585"/>
+        <location filename="../../src/bibletime_init.cpp" line="620"/>
         <source>Bookmarks</source>
         <translation type="unfinished">Bokmerke</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="586"/>
+        <location filename="../../src/bibletime_init.cpp" line="621"/>
         <source>Mag</source>
         <translation type="unfinished"></translation>
     </message>
@@ -699,26 +687,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="75"/>
         <source>Module</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Bibles</source>
-        <translation type="obsolete">Biblar</translation>
-    </message>
-    <message>
-        <source>Commentaries</source>
-        <translation type="obsolete">Kommentarar</translation>
-    </message>
-    <message>
-        <source>Books</source>
-        <translation type="obsolete">Bøker</translation>
-    </message>
-    <message>
-        <source>Daily Devotionals</source>
-        <translation type="obsolete">Andaktsbøker</translation>
-    </message>
-    <message>
-        <source>Glossaries</source>
-        <translation type="obsolete">Ordbøker</translation>
     </message>
 </context>
 <context>
@@ -2001,14 +1969,6 @@ shortcut</source>
         <translation></translation>
     </message>
     <message>
-        <source>Select all</source>
-        <translation type="obsolete">Vel alle</translation>
-    </message>
-    <message>
-        <source>HTML editor window</source>
-        <translation type="obsolete">HTML-redigeringsvindauge</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="198"/>
         <source>Font</source>
         <translation type="unfinished">Skrifttype</translation>
@@ -2036,22 +1996,6 @@ shortcut</source>
 </context>
 <context>
     <name>CHTMLWriteWindow</name>
-    <message>
-        <source>Sync with active Bible</source>
-        <translation type="obsolete">Synkroniser med aktiv bibel</translation>
-    </message>
-    <message>
-        <source>Save text</source>
-        <translation type="obsolete">Lagre tekst</translation>
-    </message>
-    <message>
-        <source>Delete current entry</source>
-        <translation type="obsolete">Slett gjeldande oppføring</translation>
-    </message>
-    <message>
-        <source>Restore original text</source>
-        <translation type="obsolete">Gjenopprett opphavleg tekst</translation>
-    </message>
     <message>
         <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="129"/>
         <source>Module not writable</source>
@@ -2119,18 +2063,6 @@ shortcut</source>
 </context>
 <context>
     <name>CLanguageSettingsPage</name>
-    <message>
-        <source>Use custom font</source>
-        <translation type="obsolete">Bruk sjølvvald skrifttype</translation>
-    </message>
-    <message>
-        <source>Fonts</source>
-        <translation type="obsolete">Skrifttypar</translation>
-    </message>
-    <message>
-        <source>Languages</source>
-        <translation type="obsolete">Språk</translation>
-    </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="297"/>
         <source></source>
@@ -2205,34 +2137,34 @@ shortcut</source>
         <translation>Oppføring som rein tekst</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="262"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="264"/>
         <source>Lexicon window</source>
         <translation>Leksikonvindauge</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="269"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="271"/>
         <source>Copy...</source>
         <translation>Kopier...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="278"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="280"/>
         <source>Save...</source>
         <translation>Lagre...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="294"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="296"/>
         <source>Print...</source>
         <translation>Skriv ut ...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="337"/>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="367"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="339"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="369"/>
         <source>Saving entry ...</source>
         <translation>Lagrar oppføring ...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="337"/>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="367"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="339"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="369"/>
         <source>Saving</source>
         <translation>Lagrar</translation>
     </message>
@@ -3823,18 +3755,6 @@ Language name ppk</extracomment>
         <translation>Åtvaring: Dette verket kan innehalde sekterisk eller tvilsamt materiale!</translation>
     </message>
     <message>
-        <source>Language</source>
-        <translation type="obsolete">Språk</translation>
-    </message>
-    <message>
-        <source>Unlock key</source>
-        <translation type="obsolete">Nøkkel</translation>
-    </message>
-    <message>
-        <source>not set</source>
-        <translation type="obsolete">ikkje sett</translation>
-    </message>
-    <message>
         <location filename="../../src/util/tool.cpp" line="192"/>
         <source>Version</source>
         <translation>Versjon</translation>
@@ -4730,12 +4650,8 @@ This could take a long time. Proceed with indexing?</source>
 <context>
     <name>StandardWorksTab</name>
     <message>
-        <source>Standard works are used when no particular work is specified,   for example when a hyperlink into a Bible or lexicon was clicked .</source>
-        <translation type="obsolete">Standardverk vert nytta når ein ikkje har valt spesielle verk, til dømes når ein klikkar på ei lenkje som peikar til ein bibel eller eit leksikon.</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="57"/>
-        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked .</source>
+        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

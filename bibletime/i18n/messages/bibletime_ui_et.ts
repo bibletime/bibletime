@@ -62,10 +62,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Täis&amp;ekraanvaade</translation>
     </message>
     <message>
-        <source>Main Toolbar</source>
-        <translation type="obsolete">Peamine tööriistariba</translation>
-    </message>
-    <message>
         <location filename="../../src/bibletime_init.cpp" line="107"/>
         <source>&amp;Quit</source>
         <translation>&amp;Välju</translation>
@@ -79,42 +75,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/bibletime_init.cpp" line="259"/>
         <source>Information about the BibleTime program</source>
         <translation>Informatsioon BibleTime kohta</translation>
-    </message>
-    <message>
-        <source>Show Bookshelf</source>
-        <translation type="obsolete">Näita raamaturiiulit</translation>
-    </message>
-    <message>
-        <source>Show Bookmarks</source>
-        <translation type="obsolete">Näita järjehoidjaid</translation>
-    </message>
-    <message>
-        <source>Show Mag</source>
-        <translation type="obsolete">Näita infopaneeli</translation>
-    </message>
-    <message>
-        <source>Text windows</source>
-        <translation type="obsolete">Tekstiaknad</translation>
-    </message>
-    <message>
-        <source>Show text area headers</source>
-        <translation type="obsolete">Näita tekstiala päiseid</translation>
-    </message>
-    <message>
-        <source>Show navigation</source>
-        <translation type="obsolete">Näita navigeerimisvidinaid</translation>
-    </message>
-    <message>
-        <source>Show work chooser buttons</source>
-        <translation type="obsolete">Näita teoste valimise nuppe</translation>
-    </message>
-    <message>
-        <source>Show tools</source>
-        <translation type="obsolete">Näita tööriistu</translation>
-    </message>
-    <message>
-        <source>O&amp;pen Windows</source>
-        <translation type="obsolete">Ava&amp;tud aknad</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="636"/>
@@ -397,18 +357,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Tööriistaribad</translation>
     </message>
     <message>
-        <source>Show main</source>
-        <translation type="obsolete">Kuva peamist tööriistariba</translation>
-    </message>
-    <message>
-        <source>Show works</source>
-        <translation type="obsolete">Kuva teoste riba</translation>
-    </message>
-    <message>
-        <source>Show format</source>
-        <translation type="obsolete">Kuva vorminguriba</translation>
-    </message>
-    <message>
         <location filename="../../src/bibletime_init.cpp" line="655"/>
         <source>Show toolbars in text windows</source>
         <translation>Kuva tööriistaribasid tekstiakendes</translation>
@@ -482,10 +430,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/bibletime.cpp" line="278"/>
         <source>The unlock key you provided did not properly unlock this module. Please try again.</source>
         <translation>Teie poolt sisestatud võti ei avanud seda moodulit. Palun proovige uuesti.</translation>
-    </message>
-    <message>
-        <source>Enter the unlock key for this work.</source>
-        <translation type="obsolete">Sisestage võti selle teose avamiseks.</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="258"/>
@@ -743,42 +687,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="75"/>
         <source>Module</source>
         <translation>Moodul</translation>
-    </message>
-    <message>
-        <source>Bibles</source>
-        <translation type="obsolete">Piiblid</translation>
-    </message>
-    <message>
-        <source>Commentaries</source>
-        <translation type="obsolete">Kommentaarid</translation>
-    </message>
-    <message>
-        <source>Books</source>
-        <translation type="obsolete">Raamatud</translation>
-    </message>
-    <message>
-        <source>Cults/Unorthodox</source>
-        <translation type="obsolete">Kultuslik/mitteortodoksne</translation>
-    </message>
-    <message>
-        <source>Maps and Images</source>
-        <translation type="obsolete">Kaardid ja pildid</translation>
-    </message>
-    <message>
-        <source>Daily Devotionals</source>
-        <translation type="obsolete">Igapäevane harduskirjandus</translation>
-    </message>
-    <message>
-        <source>Lexicons and Dictionaries</source>
-        <translation type="obsolete">Leksikonid ja sõnaraamatud</translation>
-    </message>
-    <message>
-        <source>Glossaries</source>
-        <translation type="obsolete">Sõnastikud</translation>
-    </message>
-    <message>
-        <source>Unknown</source>
-        <translation type="obsolete">Teadmata</translation>
     </message>
 </context>
 <context>
@@ -2013,10 +1921,6 @@ kiirklahv</translation>
         <source>Format</source>
         <translation>Vormindus</translation>
     </message>
-    <message>
-        <source>Tools</source>
-        <translation type="obsolete">Tööriistad</translation>
-    </message>
 </context>
 <context>
     <name>CFontChooser</name>
@@ -2076,14 +1980,6 @@ kiirklahv</translation>
         <translation>Paremale</translation>
     </message>
     <message>
-        <source>Select all</source>
-        <translation type="obsolete">Vali kõik</translation>
-    </message>
-    <message>
-        <source>HTML editor window</source>
-        <translation type="obsolete">HTML&apos;i redaktoraken</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="198"/>
         <source>Font</source>
         <translation>Kirjatüüp</translation>
@@ -2112,22 +2008,6 @@ kiirklahv</translation>
 <context>
     <name>CHTMLWriteWindow</name>
     <message>
-        <source>Sync with active Bible</source>
-        <translation type="obsolete">Sünkroniseeri aktiivse Piibliga</translation>
-    </message>
-    <message>
-        <source>Save text</source>
-        <translation type="obsolete">Salvesta tekst</translation>
-    </message>
-    <message>
-        <source>Delete current entry</source>
-        <translation type="obsolete">Kustuta see kirje</translation>
-    </message>
-    <message>
-        <source>Restore original text</source>
-        <translation type="obsolete">Taasta esialgne tekst</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="129"/>
         <source>Module not writable</source>
         <translation>Moodul pole kirjutatav</translation>
@@ -2141,18 +2021,6 @@ kiirklahv</translation>
         <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="132"/>
         <source>Either the module may not be edited, or you do not have write permission.</source>
         <translation>Moodulit ei või redigeerida, või Teil puuduvad kirjutusõigused.</translation>
-    </message>
-    <message>
-        <source>Synchronize (show the same verse) with the active Bible window</source>
-        <translation type="obsolete">Sünkroniseeri (näita sama salmi) aktiivse piibliaknaga</translation>
-    </message>
-    <message>
-        <source>Delete current entry (no undo)</source>
-        <translation type="obsolete">Kustuta see kirje (kustutamist ei saa tagasi võtta)</translation>
-    </message>
-    <message>
-        <source>Restore original text, new text will be lost</source>
-        <translation type="obsolete">Taasta originaaltekst, uus tekst kaotatakse</translation>
     </message>
 </context>
 <context>
@@ -2203,38 +2071,6 @@ kiirklahv</translation>
 </context>
 <context>
     <name>CLanguageSettingsPage</name>
-    <message>
-        <source>Use custom font</source>
-        <translation type="obsolete">Kasuta kohandatud kirjatüüpi</translation>
-    </message>
-    <message>
-        <source>Language for names of Bible books:</source>
-        <translation type="obsolete">Piibli raamatute nimede keel:</translation>
-    </message>
-    <message>
-        <source>The languages which can be used for the biblical booknames</source>
-        <translation type="obsolete">Keeled, mida saab kasutada Piibli raamatute nimede jaoks</translation>
-    </message>
-    <message>
-        <source>The font selection below will apply to all texts in this language</source>
-        <translation type="obsolete">Allpoololev kirjatüübi valik rakendub kõikidele selle keele tekstidele</translation>
-    </message>
-    <message>
-        <source>Select the language in which the Biblical book names are displayed.</source>
-        <translation type="obsolete">Valige keel, milles kuvatakse Piibli raamatute nimed.</translation>
-    </message>
-    <message>
-        <source>Fonts</source>
-        <translation type="obsolete">Kirjatüübid</translation>
-    </message>
-    <message>
-        <source>You can specify a custom font for each language.</source>
-        <translation type="obsolete">Te võite määrata iga keele jaoks kohandatud kirjatüübi.</translation>
-    </message>
-    <message>
-        <source>Languages</source>
-        <translation type="obsolete">Keeled</translation>
-    </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="297"/>
         <source></source>
@@ -3926,25 +3762,9 @@ Language name ppk</extracomment>
         <translation>Hoiatus, see teos sisaldab kultuslikku või küsitavat materjali!</translation>
     </message>
     <message>
-        <source>Language</source>
-        <translation type="obsolete">Keel</translation>
-    </message>
-    <message>
-        <source>Unlock key</source>
-        <translation type="obsolete">Avamiskood</translation>
-    </message>
-    <message>
-        <source>not set</source>
-        <translation type="obsolete">määramata</translation>
-    </message>
-    <message>
         <location filename="../../src/util/tool.cpp" line="192"/>
         <source>Version</source>
         <translation>Versioon</translation>
-    </message>
-    <message>
-        <source>Options</source>
-        <translation type="obsolete">Valikud</translation>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="184"/>
@@ -4835,14 +4655,6 @@ See võib võtta kaua aega. Kas jätkata indekseerimisega?</translation>
 </context>
 <context>
     <name>StandardWorksTab</name>
-    <message>
-        <source>Standard works are used when no particular work is specified,   for example when a hyperlink into a Bible or lexicon was clicked .</source>
-        <translation type="obsolete">Eelistatud teoseid kasutatake kui ei ole määratud konkreetset teost, näiteks kui kasutatakse hüperlinki, mis viitab Piiblisse või mõnda leksikoni.</translation>
-    </message>
-    <message>
-        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked .</source>
-        <translation type="obsolete">Eelistatud teoseid kasutatake kui ei ole määratud konkreetset teost, näiteks kui kasutatakse hüperlinki, mis viitab Piiblisse või mõnda leksikoni.</translation>
-    </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="57"/>
         <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>

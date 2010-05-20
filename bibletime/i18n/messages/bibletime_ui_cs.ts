@@ -117,18 +117,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Zapnou celoobrazovkový režim hlavního okna</translation>
     </message>
     <message>
-        <source>Show Bookshelf</source>
-        <translation type="obsolete">Zobrazit knihovnu</translation>
-    </message>
-    <message>
-        <source>Show Bookmarks</source>
-        <translation type="obsolete">Zobrazit záložky</translation>
-    </message>
-    <message>
-        <source>Show Mag</source>
-        <translation type="obsolete">Zobrazit časopis</translation>
-    </message>
-    <message>
         <source>Search in &amp;open works...</source>
         <translation>Hledat v &amp;otevřených dílech...</translation>
     </message>
@@ -201,10 +189,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Hledat ve všech právě otevřených dílech</translation>
     </message>
     <message>
-        <source>Main Toolbar</source>
-        <translation type="obsolete">Hlavní Panel nástrojů</translation>
-    </message>
-    <message>
         <source>&amp;Quit</source>
         <translation>&amp;Ukončit</translation>
     </message>
@@ -253,10 +237,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="unfinished">Odemknout dílo</translation>
     </message>
     <message>
-        <source>Enter the unlock key for this work.</source>
-        <translation type="obsolete">Vložte klíč k odemknutí modulu.</translation>
-    </message>
-    <message>
         <source>Close &amp;window</source>
         <translation type="unfinished"></translation>
     </message>
@@ -282,14 +262,6 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Tile the open windows</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show navigation</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show tools</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -357,18 +329,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Show main</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show works</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show format</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Show toolbars in text windows</source>
         <translation type="unfinished"></translation>
     </message>
@@ -378,6 +338,26 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>O&amp;pen windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show main toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show navigation bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show works toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show tools toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show formatting toolbar</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -575,34 +555,6 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <source>Module</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Bibles</source>
-        <translation type="obsolete">Bible</translation>
-    </message>
-    <message>
-        <source>Commentaries</source>
-        <translation type="obsolete">Komentáře</translation>
-    </message>
-    <message>
-        <source>Books</source>
-        <translation type="obsolete">Knihy</translation>
-    </message>
-    <message>
-        <source>Maps and Images</source>
-        <translation type="obsolete">Mapy a obrázky</translation>
-    </message>
-    <message>
-        <source>Daily Devotionals</source>
-        <translation type="obsolete">Ranní zamyšlení</translation>
-    </message>
-    <message>
-        <source>Lexicons and Dictionaries</source>
-        <translation type="obsolete">Lexikony a slovníky</translation>
-    </message>
-    <message>
-        <source>Glossaries</source>
-        <translation type="obsolete">Glosáře</translation>
     </message>
 </context>
 <context>
@@ -1636,14 +1588,6 @@ shortcut</source>
         <translation>Vpravo</translation>
     </message>
     <message>
-        <source>Select all</source>
-        <translation type="obsolete">Vybrat vše</translation>
-    </message>
-    <message>
-        <source>HTML editor window</source>
-        <translation type="obsolete">Okno HTML editoru</translation>
-    </message>
-    <message>
         <source>Font</source>
         <translation>Písmo</translation>
     </message>
@@ -1667,22 +1611,6 @@ shortcut</source>
 <context>
     <name>CHTMLWriteWindow</name>
     <message>
-        <source>Sync with active Bible</source>
-        <translation type="obsolete">Synchronizovat s aktivní Biblí</translation>
-    </message>
-    <message>
-        <source>Save text</source>
-        <translation type="obsolete">Uložit text</translation>
-    </message>
-    <message>
-        <source>Delete current entry</source>
-        <translation type="obsolete">Smazat tuto položku</translation>
-    </message>
-    <message>
-        <source>Restore original text</source>
-        <translation type="obsolete">Obnovit původní text</translation>
-    </message>
-    <message>
         <source>Module not writable</source>
         <translation>Modul není zapisovatelný</translation>
     </message>
@@ -1693,14 +1621,6 @@ shortcut</source>
     <message>
         <source>Either the module may not be edited, or you do not have write permission.</source>
         <translation>Modul nemůže být editován nebo k nemáte oprávnění zápisu.</translation>
-    </message>
-    <message>
-        <source>Synchronize (show the same verse) with the active Bible window</source>
-        <translation type="obsolete">Synchronizovat (zobrazit stejný verš) s aktivním oknem Bible</translation>
-    </message>
-    <message>
-        <source>Restore original text, new text will be lost</source>
-        <translation type="obsolete">Obnovit originální text, nový text bude ztracen</translation>
     </message>
 </context>
 <context>
@@ -1743,30 +1663,6 @@ shortcut</source>
 </context>
 <context>
     <name>CLanguageSettingsPage</name>
-    <message>
-        <source>Use custom font</source>
-        <translation type="obsolete">Použít vlastní písmo</translation>
-    </message>
-    <message>
-        <source>Language for names of Bible books:</source>
-        <translation type="obsolete">Jazyk jmen biblických knih:</translation>
-    </message>
-    <message>
-        <source>The languages which can be used for the biblical booknames</source>
-        <translation type="obsolete">Jazyky, které je možno použít pro jména biblických knih</translation>
-    </message>
-    <message>
-        <source>Fonts</source>
-        <translation type="obsolete">Písma</translation>
-    </message>
-    <message>
-        <source>You can specify a custom font for each language.</source>
-        <translation type="obsolete">Můžete vybrat vlastní písmo pro každý jazyk.</translation>
-    </message>
-    <message>
-        <source>Languages</source>
-        <translation type="obsolete">Jazyky</translation>
-    </message>
     <message>
         <source></source>
         <translation></translation>
@@ -3128,24 +3024,8 @@ Language name ppk</extracomment>
         <translation>Pozor, tento modul obsahuje kultovní / pochybné informace!</translation>
     </message>
     <message>
-        <source>Language</source>
-        <translation type="obsolete">Jazyk</translation>
-    </message>
-    <message>
-        <source>Unlock key</source>
-        <translation type="obsolete">Odemykací klíč</translation>
-    </message>
-    <message>
-        <source>not set</source>
-        <translation type="obsolete">není nastaveno</translation>
-    </message>
-    <message>
         <source>Version</source>
         <translation>Verze</translation>
-    </message>
-    <message>
-        <source>Options</source>
-        <translation type="obsolete">Nastavení</translation>
     </message>
     <message>
         <source>Settings Migration</source>
@@ -3856,10 +3736,6 @@ To může trvat dlouhou dobu. Pokračovat v indexování?</translation>
 <context>
     <name>StandardWorksTab</name>
     <message>
-        <source>Standard works are used when no particular work is specified,   for example when a hyperlink into a Bible or lexicon was clicked .</source>
-        <translation type="obsolete">Standardní díla se použijí, pokud není zvoleno konkrétní dílo. K tomu může dojít při kliknutí na odkaz do textu Bible nebo slovníku.</translation>
-    </message>
-    <message>
         <source>Bible:</source>
         <translation>Bible:</translation>
     </message>
@@ -3928,7 +3804,7 @@ To může trvat dlouhou dobu. Pokračovat v indexování?</translation>
         <translation></translation>
     </message>
     <message>
-        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked .</source>
+        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

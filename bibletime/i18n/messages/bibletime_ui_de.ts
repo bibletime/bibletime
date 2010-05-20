@@ -209,24 +209,8 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Lupe</translation>
     </message>
     <message>
-        <source>Main Toolbar</source>
-        <translation type="obsolete">Haupt-Werkzeugleiste</translation>
-    </message>
-    <message>
         <source>&amp;Quit</source>
         <translation>&amp;Beenden</translation>
-    </message>
-    <message>
-        <source>Show Bookshelf</source>
-        <translation type="obsolete">Bücherregal anzeigen</translation>
-    </message>
-    <message>
-        <source>Show Bookmarks</source>
-        <translation type="obsolete">Lesezeichen anzeigen</translation>
-    </message>
-    <message>
-        <source>Show Mag</source>
-        <translation type="obsolete">Lupe anzeigen</translation>
     </message>
     <message>
         <source>Cl&amp;ose all windows</source>
@@ -253,20 +237,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Werk freischalten</translation>
     </message>
     <message>
-        <source>Enter the unlock key for this work.</source>
-        <translation type="obsolete">Geben Sie den Freischalt-Schlüssel für dieses Werk ein.</translation>
-    </message>
-    <message>
         <source>Close &amp;window</source>
         <translation>&amp;Fenster schließen</translation>
     </message>
     <message>
         <source>Close the current open window</source>
         <translation>Das gegenwärtig geöffnete Fenster schließen</translation>
-    </message>
-    <message>
-        <source>O&amp;pen Windows</source>
-        <translation type="obsolete">Fenster ö&amp;ffnen</translation>
     </message>
     <message>
         <source>Open the Bible study HowTo included with BibleTime.&lt;br/&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
@@ -287,26 +263,6 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <source>Tile the open windows</source>
         <translation>Die offenen Fenster kacheln</translation>
-    </message>
-    <message>
-        <source>Text windows</source>
-        <translation type="obsolete">Textfenster</translation>
-    </message>
-    <message>
-        <source>Show text area headers</source>
-        <translation type="obsolete">Kopfzeile für Textbereich anzeigen</translation>
-    </message>
-    <message>
-        <source>Show navigation</source>
-        <translation>Navigation anzeigen</translation>
-    </message>
-    <message>
-        <source>Show work chooser buttons</source>
-        <translation type="obsolete">Knöpfe zum Auswählen von Werken anzeigen</translation>
-    </message>
-    <message>
-        <source>Show tools</source>
-        <translation>Werkzeuge anzeigen</translation>
     </message>
     <message>
         <source>Show &quot;Whats this widget&quot; dialog</source>
@@ -373,18 +329,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Symbolleisten</translation>
     </message>
     <message>
-        <source>Show main</source>
-        <translation>Hauptfenster anzeigen</translation>
-    </message>
-    <message>
-        <source>Show works</source>
-        <translation>Werke anzeigen</translation>
-    </message>
-    <message>
-        <source>Show format</source>
-        <translation>Format anzeigen</translation>
-    </message>
-    <message>
         <source>Show toolbars in text windows</source>
         <translation>Symbolleisten in Textfenstern anzeigen</translation>
     </message>
@@ -395,6 +339,26 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <source>O&amp;pen windows</source>
         <translation>Fenster ö&amp;ffnen</translation>
+    </message>
+    <message>
+        <source>Show main toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show navigation bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show works toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show tools toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show formatting toolbar</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -591,42 +555,6 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <source>Module</source>
         <translation>Module</translation>
-    </message>
-    <message>
-        <source>Bibles</source>
-        <translation type="obsolete">Bibeln</translation>
-    </message>
-    <message>
-        <source>Commentaries</source>
-        <translation type="obsolete">Kommentare</translation>
-    </message>
-    <message>
-        <source>Books</source>
-        <translation type="obsolete">Bücher</translation>
-    </message>
-    <message>
-        <source>Cults/Unorthodox</source>
-        <translation type="obsolete">Sekten/Unorthodox</translation>
-    </message>
-    <message>
-        <source>Maps and Images</source>
-        <translation type="obsolete">Karten und Bilder</translation>
-    </message>
-    <message>
-        <source>Daily Devotionals</source>
-        <translation type="obsolete">Andachtsbücher</translation>
-    </message>
-    <message>
-        <source>Lexicons and Dictionaries</source>
-        <translation type="obsolete">Lexika und Wörterbücher</translation>
-    </message>
-    <message>
-        <source>Glossaries</source>
-        <translation type="obsolete">Wörterbücher</translation>
-    </message>
-    <message>
-        <source>Unknown</source>
-        <translation type="obsolete">Unbekannt</translation>
     </message>
 </context>
 <context>
@@ -1606,10 +1534,6 @@ shortcut</source>
         <translation>Navigation</translation>
     </message>
     <message>
-        <source>Tools</source>
-        <translation type="obsolete">Werkzeuge</translation>
-    </message>
-    <message>
         <source>Text area header</source>
         <translation>Kopfleiste für Textbereich</translation>
     </message>
@@ -1664,14 +1588,6 @@ shortcut</source>
         <translation>Rechts</translation>
     </message>
     <message>
-        <source>Select all</source>
-        <translation type="obsolete">Alle auswählen</translation>
-    </message>
-    <message>
-        <source>HTML editor window</source>
-        <translation type="obsolete">HTML-Editor-Fenster</translation>
-    </message>
-    <message>
         <source>Font</source>
         <translation>Schrift</translation>
     </message>
@@ -1695,22 +1611,6 @@ shortcut</source>
 <context>
     <name>CHTMLWriteWindow</name>
     <message>
-        <source>Sync with active Bible</source>
-        <translation type="obsolete">Mit aktiver Bibel abgleichen</translation>
-    </message>
-    <message>
-        <source>Save text</source>
-        <translation type="obsolete">Text speichern</translation>
-    </message>
-    <message>
-        <source>Delete current entry</source>
-        <translation type="obsolete">Ausgewählten Eintrag löschen</translation>
-    </message>
-    <message>
-        <source>Restore original text</source>
-        <translation type="obsolete">Den ursprünglichen Text wiederherstellen</translation>
-    </message>
-    <message>
         <source>Module not writable</source>
         <translation>Modul ist nicht schreibbar</translation>
     </message>
@@ -1721,18 +1621,6 @@ shortcut</source>
     <message>
         <source>Either the module may not be edited, or you do not have write permission.</source>
         <translation>Entweder darf das Modul nicht geschrieben werden oder Sie haben keine Schreibberechtigung.</translation>
-    </message>
-    <message>
-        <source>Synchronize (show the same verse) with the active Bible window</source>
-        <translation type="obsolete">Synchronisiere (zeige denselben Vers) mit dem aktiven Bibelfenster</translation>
-    </message>
-    <message>
-        <source>Delete current entry (no undo)</source>
-        <translation type="obsolete">Aktuellen Eintrag löschen (ohne Rückgängig-Funktion)</translation>
-    </message>
-    <message>
-        <source>Restore original text, new text will be lost</source>
-        <translation type="obsolete">Original-Text wiederherstellen, neue Texte gehen verloren</translation>
     </message>
 </context>
 <context>
@@ -1775,38 +1663,6 @@ shortcut</source>
 </context>
 <context>
     <name>CLanguageSettingsPage</name>
-    <message>
-        <source>Use custom font</source>
-        <translation type="obsolete">Benutzerdefinierte Schrift verwenden</translation>
-    </message>
-    <message>
-        <source>Language for names of Bible books:</source>
-        <translation type="obsolete">Sprache der Bibelbücher-Namen:</translation>
-    </message>
-    <message>
-        <source>The languages which can be used for the biblical booknames</source>
-        <translation type="obsolete">Die Sprachen die für die Bibelbücher-Namen verwendet werden können</translation>
-    </message>
-    <message>
-        <source>The font selection below will apply to all texts in this language</source>
-        <translation type="obsolete">Die untenstehende Schriftauswahl wird für alle Texte in dieser Sprache gelten</translation>
-    </message>
-    <message>
-        <source>Select the language in which the Biblical book names are displayed.</source>
-        <translation type="obsolete">Wählen Sie die Sprache in der die BIbelbücher-Namen angezeigt werden.</translation>
-    </message>
-    <message>
-        <source>Fonts</source>
-        <translation type="obsolete">Schriften</translation>
-    </message>
-    <message>
-        <source>You can specify a custom font for each language.</source>
-        <translation type="obsolete">Sie können eine angepasste Schrift für jede Sprache spezifizieren.</translation>
-    </message>
-    <message>
-        <source>Languages</source>
-        <translation type="obsolete">Sprachen</translation>
-    </message>
     <message>
         <source></source>
         <translation></translation>
@@ -2954,24 +2810,8 @@ Language name ppk</extracomment>
         <translation>Achtung. dieses Modul enthält sektiererisches / fragwürdiges Material!</translation>
     </message>
     <message>
-        <source>Language</source>
-        <translation type="obsolete">Sprache</translation>
-    </message>
-    <message>
-        <source>Unlock key</source>
-        <translation type="obsolete">Schlüssel</translation>
-    </message>
-    <message>
-        <source>not set</source>
-        <translation type="obsolete">nicht gesetzt</translation>
-    </message>
-    <message>
         <source>Version</source>
         <translation>Version</translation>
-    </message>
-    <message>
-        <source>Options</source>
-        <translation type="obsolete">Optionen</translation>
     </message>
     <message>
         <source>Settings Migration</source>
@@ -3901,10 +3741,6 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
 <context>
     <name>StandardWorksTab</name>
     <message>
-        <source>Standard works are used when no particular work is specified,   for example when a hyperlink into a Bible or lexicon was clicked .</source>
-        <translation type="obsolete">Standardmodule werden benutzt, wenn kein konkretes Modul angegeben wurde. Dies kann z.B. bei Querverweisen in Bibeln oder Lexika auftreten.</translation>
-    </message>
-    <message>
         <source>Bible:</source>
         <translation>Bibel:</translation>
     </message>
@@ -3973,8 +3809,8 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
         <translation></translation>
     </message>
     <message>
-        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked .</source>
-        <translation>Standardwerke werden genutzt, wenn kein bestimmtes Werk spezifiziert ist, z.B. wenn ein Verweis auf eine Bibel oder ein Lexikon angeklickt wurde.</translation>
+        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
