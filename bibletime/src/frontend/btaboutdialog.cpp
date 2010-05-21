@@ -171,6 +171,7 @@ void BtAboutDialog::retranslateContributorsTab() {
     content += tr("The following people translated BibleTime into their language:");
     content += "</b></p><ul>"
                    "<li>Horatiu Alexe</li>"
+                   "<li>Roy Alvear Aguirre</li>"
                    "<li>Luis Barron</li>"
                    "<li>Jan B&#x11B;lohoubek</li>"
                    "<li>Chun-shek Chan</li>"
