@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: handbook\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
-"POT-Creation-Date: 2010-05-21 11:26-0400\n"
+"POT-Creation-Date: 2010-05-21 15:10-0400\n"
 "PO-Revision-Date: 2009-12-20 17:40-0200\n"
 "Last-Translator: Saulo\n"
 "Language-Team: Português do Brasil <kde-i18n-doc@kde.org>\n"
@@ -1557,47 +1557,43 @@ msgstr ""
 "\">aqui</link>."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:295
-msgid ""
-"<action>Directly saves the current session</action>. This will open a "
-"context menu where you can select an existing session to save to. It will be "
-"overwritten with your current session. See the next item on how to save to a "
-"new session."
-msgstr ""
-"<action>Diretamente salva a sessão atual</action>. Essa irá abrir um menu de "
-"contexto onde você pode selecionar uma sessão existente para salvar. Ela "
-"pode ser sobrescrita com sua sessão atual. Veja o próximo item sobre como "
-"salvar para uma nova sessão."
+#: docs/handbook/en/docbook/hdbk-reference.docbook:304
+#, fuzzy
+msgid "<action>Closes active window</action>."
+msgstr "<action>Fecha todas as janelas abertas</action>."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:317
-msgid ""
-"<action>Saves the current session under a new name</action>. This will ask "
-"for a new name to save the session to."
-msgstr ""
-"<action>Salva a sessão atual sob um novo nome</action>. Essa irá perguntar "
-"por um novo nome para salvar a sessão."
+#: docs/handbook/en/docbook/hdbk-reference.docbook:327
+msgid "<action>Closes all open windows</action>."
+msgstr "<action>Fecha todas as janelas abertas</action>."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:333
-msgid ""
-"<action>Loads an existing session</action>. This will open a context menu "
-"where you can select an existing session to load."
-msgstr ""
-"<action>Carrega uma sessão existente</action>. Essa irá abrir um menu de "
-"contexto onde você pode selecionar uma sessão existente para carregar."
+#: docs/handbook/en/docbook/hdbk-reference.docbook:350
+msgid "<action>Cascades all open windows</action>."
+msgstr "<action>Organiza em cascata todas as janelas abertas</action>."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:349
-msgid ""
-"<action>Deletes an existing session</action>. This will open a context menu "
-"where you can select an existing session that should be deleted."
-msgstr ""
-"<action>Exclui uma sessão existente</action>. Essa irá abrir um menu de "
-"contexto onde você pode selecionar uma sessão existente para excluir."
+#: docs/handbook/en/docbook/hdbk-reference.docbook:374
+#, fuzzy
+msgid "<action>Tiles all open windows</action>."
+msgstr "<action>Fecha todas as janelas abertas</action>."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:365
+#: docs/handbook/en/docbook/hdbk-reference.docbook:398
+msgid "<action>Automatically tiles all open windows vertically</action>."
+msgstr ""
+"<action>Automaticamente divide verticalmente todas as janelas abertas</"
+"action>."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:422
+msgid "<action>Automatically tiles all open windows horizontally</action>."
+msgstr ""
+"<action>Automaticamente divide horizontalmente todas as janelas abertas</"
+"action>."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:438
 msgid ""
 "<action>Controls the basic window arrangement behaviour</action>. In the "
 "opening context menu, you can either specify that you want to take care of "
@@ -1610,37 +1606,47 @@ msgstr ""
 "para você (modos Automáticos, experimente)."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:393
-msgid "<action>Cascades all open windows</action>."
-msgstr "<action>Organiza em cascata todas as janelas abertas</action>."
-
-# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:417
-#, fuzzy
-msgid "<action>Tiles all open windows</action>."
-msgstr "<action>Fecha todas as janelas abertas</action>."
-
-# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:441
-msgid "<action>Automatically tiles all open windows vertically</action>."
+#: docs/handbook/en/docbook/hdbk-reference.docbook:459
+msgid ""
+"<action>Directly saves the current session</action>. This will open a "
+"context menu where you can select an existing session to save to. It will be "
+"overwritten with your current session. See the next item on how to save to a "
+"new session."
 msgstr ""
-"<action>Automaticamente divide verticalmente todas as janelas abertas</"
-"action>."
+"<action>Diretamente salva a sessão atual</action>. Essa irá abrir um menu de "
+"contexto onde você pode selecionar uma sessão existente para salvar. Ela "
+"pode ser sobrescrita com sua sessão atual. Veja o próximo item sobre como "
+"salvar para uma nova sessão."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:465
-msgid "<action>Automatically tiles all open windows horizontally</action>."
+#: docs/handbook/en/docbook/hdbk-reference.docbook:481
+msgid ""
+"<action>Saves the current session under a new name</action>. This will ask "
+"for a new name to save the session to."
 msgstr ""
-"<action>Automaticamente divide horizontalmente todas as janelas abertas</"
-"action>."
+"<action>Salva a sessão atual sob um novo nome</action>. Essa irá perguntar "
+"por um novo nome para salvar a sessão."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:490
-msgid "<action>Closes all open windows</action>."
-msgstr "<action>Fecha todas as janelas abertas</action>."
+#: docs/handbook/en/docbook/hdbk-reference.docbook:497
+msgid ""
+"<action>Loads an existing session</action>. This will open a context menu "
+"where you can select an existing session to load."
+msgstr ""
+"<action>Carrega uma sessão existente</action>. Essa irá abrir um menu de "
+"contexto onde você pode selecionar uma sessão existente para carregar."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:515
+#: docs/handbook/en/docbook/hdbk-reference.docbook:513
+msgid ""
+"<action>Deletes an existing session</action>. This will open a context menu "
+"where you can select an existing session that should be deleted."
+msgstr ""
+"<action>Exclui uma sessão existente</action>. Essa irá abrir um menu de "
+"contexto onde você pode selecionar uma sessão existente para excluir."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:540
 msgid ""
 "<action>Opens &bibletime;'s main configuration dialog</action>. You can "
 "configure all kinds of nice settings there to adapt &bibletime; to your "
@@ -1653,7 +1659,7 @@ msgstr ""
 "\">essa seção</link> para detalhes."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:544
+#: docs/handbook/en/docbook/hdbk-reference.docbook:569
 msgid ""
 "<action>Opens a dialog where you can change your &sword; configuration and "
 "manage your bookshelf</action>. Please see the <link linkend=\"hdbk-op-"
@@ -1664,14 +1670,14 @@ msgstr ""
 "bookshelfmanager\">essa seção</link> para detalhes."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:577
+#: docs/handbook/en/docbook/hdbk-reference.docbook:602
 msgid "<action>Opens &bibletime;'s user guide</action> You are reading it now."
 msgstr ""
 "<action>Abre o guia de usuário &bibletime;</action> que você está lendo "
 "agora."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:601
+#: docs/handbook/en/docbook/hdbk-reference.docbook:626
 msgid ""
 "<action>Opens a guide on how to study the Bible</action> It is the hope of "
 "the &bibletime; team that this HowTo will provoke the readers to study the "
@@ -1690,7 +1696,7 @@ msgstr ""
 "palavra em seu coração, Ele não irá desapontá-lo."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:622
+#: docs/handbook/en/docbook/hdbk-reference.docbook:647
 msgid ""
 "<action>Opens a window about &bibletime; project information</action> "
 "contains information about &bibletime; software version, project "
@@ -1703,12 +1709,12 @@ msgstr ""
 "licença."
 
 # type: Content of: <chapter><title>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:634
+#: docs/handbook/en/docbook/hdbk-reference.docbook:659
 msgid "Works reference"
 msgstr "Referência"
 
 # type: Content of: <chapter><sect1><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:636
+#: docs/handbook/en/docbook/hdbk-reference.docbook:661
 msgid ""
 "In this section you can find descriptions of the icons associated with open "
 "works."
@@ -1717,74 +1723,74 @@ msgstr ""
 "abertos."
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:657
+#: docs/handbook/en/docbook/hdbk-reference.docbook:682
 msgid "Scrolls forward through history."
 msgstr "Navega para frente através do histórico."
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:680
+#: docs/handbook/en/docbook/hdbk-reference.docbook:705
 msgid "Scrolls back through history."
 msgstr "Navega para trás através do histórico."
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:703
+#: docs/handbook/en/docbook/hdbk-reference.docbook:728
 msgid "Select an installed bible."
 msgstr "Seleciona uma bíblia instalada."
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:726
+#: docs/handbook/en/docbook/hdbk-reference.docbook:751
 msgid "Select an additional bible."
 msgstr "Seleciona uma bíblia adicional."
 
 # type: Content of: <chapter><sect1><title>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:749
+#: docs/handbook/en/docbook/hdbk-reference.docbook:774
 #, fuzzy
 msgid "Search in selected works."
 msgstr "Buscando em obras"
 
 # type: Content of: <chapter><sect1><sect2><title>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:772
+#: docs/handbook/en/docbook/hdbk-reference.docbook:797
 msgid "Display configuration."
 msgstr "Configuração de Tela."
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:795
+#: docs/handbook/en/docbook/hdbk-reference.docbook:820
 msgid "Select an installed commentary."
 msgstr "Seleciona um comentário instalado."
 
 # type: Content of: <chapter><sect1><sect2><sect3><title>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:818
+#: docs/handbook/en/docbook/hdbk-reference.docbook:843
 msgid "Select additional commentary."
 msgstr "Seleciona um comentário adicional. "
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:841
+#: docs/handbook/en/docbook/hdbk-reference.docbook:866
 msgid "Synchronize displayed entry with active Bible window."
 msgstr "Sincroniza a tela mostrada com a janela de Bíblia ativa."
 
 # type: Content of: <chapter><sect1><sect2><sect3><title>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:864
+#: docs/handbook/en/docbook/hdbk-reference.docbook:889
 #, fuzzy
 msgid "Select a book."
 msgstr "Selecionando obras"
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:887
+#: docs/handbook/en/docbook/hdbk-reference.docbook:912
 msgid "Select an installed glossary or devotional."
 msgstr "Seleciona um glossário ou devocional instalado."
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:910
+#: docs/handbook/en/docbook/hdbk-reference.docbook:935
 msgid "Select an additional glossary or devotional."
 msgstr "Selecione um glossário ou devocional adicional."
 
 # type: Content of: <chapter><sect1><title>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:920
+#: docs/handbook/en/docbook/hdbk-reference.docbook:945
 msgid "Shortcuts index"
 msgstr "Índice de teclas de atalho"
 
 # type: Content of: <chapter><sect1><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:922
+#: docs/handbook/en/docbook/hdbk-reference.docbook:947
 msgid ""
 "This is an index of all shortcuts and their corresponding description in the "
 "handbook. The shortcuts are sorted (roughly)  alphabetical. If you want to "
@@ -1801,27 +1807,27 @@ msgstr ""
 "reference-menus\">nessa seção</link>."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><thead><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:937
+#: docs/handbook/en/docbook/hdbk-reference.docbook:962
 msgid "Shortcut"
 msgstr "Atalho"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><thead><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:938
+#: docs/handbook/en/docbook/hdbk-reference.docbook:963
 msgid "Description"
 msgstr "Descrição"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:947
+#: docs/handbook/en/docbook/hdbk-reference.docbook:972
 msgid "Moves back in the history of read windows."
 msgstr "Volta no histórico das janelas de leitura."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:954
+#: docs/handbook/en/docbook/hdbk-reference.docbook:979
 msgid "Moves forward in the history of read windows."
 msgstr "Avança no histórico das janelas de leitura."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:963
+#: docs/handbook/en/docbook/hdbk-reference.docbook:988
 msgid ""
 "<link linkend=\"hdbk-reference-menus-search-defaultbible\"> <menuchoice> "
 "<guimenu>Search</guimenu> <guimenuitem>Search in default bible</guimenuitem> "
@@ -1834,7 +1840,7 @@ msgstr ""
 "procurar na bíblia padrão."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:979
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1004
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> <guimenuitem>Auto-tile vertically</guimenuitem> </menuchoice> "
@@ -1845,7 +1851,7 @@ msgstr ""
 "menuchoice> equivalente; alterna divisão automática de janelas."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:993
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1018
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> <guimenuitem>Auto-tile horizontally</guimenuitem> </menuchoice> "
@@ -1856,7 +1862,7 @@ msgstr ""
 "menuchoice> equivalente; alterna divisão automática de janelas."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1008
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1033
 #, fuzzy
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
@@ -1868,7 +1874,7 @@ msgstr ""
 "menuchoice> equivalente; alterna divisão automática de janelas."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1022
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1047
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> <guimenuitem>Auto-cascade</guimenuitem> </menuchoice> "
@@ -1879,7 +1885,7 @@ msgstr ""
 "equivalente; alterna cascateamento automático de janelas."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1037
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1062
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> <guimenuitem>Manual mode</guimenuitem> </menuchoice> "
@@ -1890,7 +1896,7 @@ msgstr ""
 "equivalente; alterna posicionamento manual das janelas."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1051
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1076
 #, fuzzy
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
@@ -1902,7 +1908,7 @@ msgstr ""
 "equivalente; alterna posicionamento manual das janelas."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1065
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1090
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-savenewsession\"> <menuchoice> "
 "<guimenu>Window</guimenu> <guimenuitem>Save as new session</guimenuitem> </"
@@ -1913,7 +1919,7 @@ msgstr ""
 "</menuchoice> </link> equivalente; salva layout atual como nova sessão."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1079
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1104
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-closeall\"> <menuchoice> "
 "<guimenu>Window</guimenu> <guimenuitem>Close all</guimenuitem> </menuchoice> "
@@ -1924,32 +1930,32 @@ msgstr ""
 "menuchoice> </link> equivalente; fecha todas as janelas abertas."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1091
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1116
 msgid "Zoom out. This decreases the font size of read windows."
 msgstr "Diminuir zoom. Diminui o tamanho da fonte das janelas de leitura."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1099
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1124
 msgid "Zoom in. This increases the font size of read windows."
 msgstr "Aumentar zoom. Aumenta o tamanho da fonte das janelas de leitura."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1107
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1132
 msgid "Select all. This selects all text in read windows."
 msgstr "Selecionar tudo. Seleciona todo o texto na janela de leitura."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1115
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1140
 msgid "Copy. This copies the selected text to the clipboard."
 msgstr "Copiar. Copia o texto selecionado para a rea de transferência."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1124
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1149
 msgid "Search. This lets you search within the text of a read window."
 msgstr "Procurar. Permite a você buscar no texto de uma janela de leitura."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1135
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1160
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-tilevertically\"> <menuchoice> "
 "<guimenu>Window</guimenu> <guimenuitem>Tile vertically</guimenuitem> </"
@@ -1960,7 +1966,7 @@ msgstr ""
 "menuchoice> </link> equivalente."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1151
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1176
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-tilehorizontally\"> <menuchoice> "
 "<guimenu>Window</guimenu> <guimenuitem>Tile horizontally</guimenuitem> </"
@@ -1971,7 +1977,7 @@ msgstr ""
 "</menuchoice> </link> equivalente."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1167
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1192
 #, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-tile\"> <menuchoice> "
@@ -1983,7 +1989,7 @@ msgstr ""
 "link> equivalente a janelas."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1183
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1208
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-cascade\"> <menuchoice> "
 "<guimenu>Window</guimenu> <guimenuitem>Cascade</guimenuitem> </menuchoice> </"
@@ -1994,7 +2000,7 @@ msgstr ""
 "link> equivalente a janelas."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1197
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1222
 msgid ""
 "Change location. Changes focus to the toolbar field for the selected work."
 msgstr ""
@@ -2002,12 +2008,12 @@ msgstr ""
 "selecionado."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1206
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1231
 msgid "Search with works of this window."
 msgstr "Procura com livros desta janela."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1215
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1240
 msgid ""
 "<link linkend=\"hdbk-reference-menus-search-openworks\"> <menuchoice> "
 "<guimenu>Search</guimenu> <guimenuitem>Search in open work(s)</guimenuitem> "
@@ -2020,7 +2026,7 @@ msgstr ""
 "procurar em todas as obras abertas."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1230
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1255
 msgid ""
 "<link linkend=\"hdbk-reference-menus-file-quit\"> <menuchoice> "
 "<guimenu>File</guimenu> <guimenuitem>Quit</guimenuitem> </menuchoice> </"
@@ -2031,12 +2037,12 @@ msgstr ""
 "link> equivalente; fecha o &bibletime;."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1242
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1267
 msgid "Closes the current window."
 msgstr "Fecha a janela atual."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1251
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1276
 msgid ""
 "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> </"
 "menuchoice> equivalent; opens the handbook."
@@ -2045,7 +2051,7 @@ msgstr ""
 "guimenuitem> </menuchoice> equivalente; abre o livro de mão."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1263
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1288
 #, fuzzy
 msgid ""
 "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy HowTo</"
@@ -2055,7 +2061,7 @@ msgstr ""
 "guimenuitem> </menuchoice> equivalente; abre o Howto do Estudo Bíblico."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1276
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1301
 msgid ""
 "<link linkend=\"hdbk-reference-menus-settings-bookshelf_manager\"> "
 "<menuchoice> <guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</"
@@ -2067,7 +2073,7 @@ msgstr ""
 "da Estante."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1291
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1316
 msgid ""
 "<link linkend=\"hdbk-reference-menus-view-showbookshelf\"> <menuchoice> "
 "<guimenu>View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem> </"
@@ -2078,7 +2084,7 @@ msgstr ""
 "menuchoice> </link> equivalente; alterna exibição da Estante."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1306
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1331
 msgid ""
 "<link linkend=\"hdbk-reference-menus-view-showmag\"> <menuchoice> "
 "<guimenu>View</guimenu> <guimenuitem>Show mag</guimenuitem> </menuchoice> </"

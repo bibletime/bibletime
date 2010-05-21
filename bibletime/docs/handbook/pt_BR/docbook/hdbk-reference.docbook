@@ -272,91 +272,53 @@ linkend="hdbk-op-search">aqui</link>.</para>
       </title>
 
       <variablelist>
-        <varlistentry id="hdbk-reference-menus-window-savesession">
-          <term>
-            <menuchoice>
-              <guimenu> Window</guimenu>
-              <guimenuitem>Save session</guimenuitem>
-            </menuchoice>
-          </term>
-
-          <listitem>
-            <para>
-            <action>Diretamente salva a sessão atual</action>. Essa irá abrir um menu de 
-contexto onde você pode selecionar uma sessão existente para salvar. Ela 
-pode ser sobrescrita com sua sessão atual. Veja o próximo item sobre como 
-salvar para uma nova sessão.</para>
-          </listitem>
-        </varlistentry>
-
-        <varlistentry id="hdbk-reference-menus-window-savenewsession">
+        <varlistentry id="hdbk-reference-menus-window-close">
           <term>
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;+&Alt;+S</keycap></keycombo>
+                <keycap>&Ctrl;+W</keycap></keycombo>
               </shortcut>
-              <guimenu>Window</guimenu>
-              <guimenuitem>Save as new session</guimenuitem>
+              <guimenu>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="i_fileclose.png" width="32" depth="32" format="PNG" />
+                </imageobject>
+              </inlinemediaobject>Window</guimenu>
+              <guimenuitem>Close window</guimenuitem>
             </menuchoice>
           </term>
 
           <listitem>
             <para>
-            <action>Salva a sessão atual sob um novo nome</action>. Essa irá perguntar 
-por um novo nome para salvar a sessão.</para>
+            <action>Closes active window</action>.</para>
           </listitem>
         </varlistentry>
 
-        <varlistentry id="hdbk-reference-menus-window-loadsession">
+        <varlistentry id="hdbk-reference-menus-window-closeall">
           <term>
             <menuchoice>
-              <guimenu>Window</guimenu>
-              <guimenuitem>Load session</guimenuitem>
+              <shortcut>
+                <keycombo action="simul">
+                <keycap>&Ctrl;+&Alt;+W</keycap></keycombo>
+              </shortcut>
+              <guimenu>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="i_fileclose.png" width="32" depth="32" format="PNG" />
+                </imageobject>
+              </inlinemediaobject>Window</guimenu>
+              <guimenuitem>Close all</guimenuitem>
             </menuchoice>
           </term>
 
           <listitem>
             <para>
-            <action>Carrega uma sessão existente</action>. Essa irá abrir um menu de 
-contexto onde você pode selecionar uma sessão existente para carregar.</para>
+            <action>Fecha todas as janelas abertas</action>.</para>
           </listitem>
         </varlistentry>
 
-        <varlistentry id="hdbk-reference-menus-window-deletesession">
-          <term>
-            <menuchoice>
-              <guimenu>Window</guimenu>
-              <guimenuitem>Delete session</guimenuitem>
-            </menuchoice>
-          </term>
-
-          <listitem>
-            <para>
-            <action>Exclui uma sessão existente</action>. Essa irá abrir um menu de 
-contexto onde você pode selecionar uma sessão existente para excluir.</para>
-          </listitem>
-        </varlistentry>
-
-        <varlistentry id="hdbk-reference-menus-window-arrangement_mode">
-          <term>
-            <menuchoice>
-              <guimenu>Window</guimenu>
-              <guimenuitem>Arrangement mode</guimenuitem>
-            </menuchoice>
-          </term>
-
-          <listitem>
-            <para>
-            <action>Controla o comportamento de posicionamento das janelas</action>. No 
-menu de contexto que se abre, você pode especificar se quer cuidar do 
-posicionamento você mesmo (modo Manual) ou deixar que o &bibletime; cuide 
-para você (modos Automáticos, experimente).</para>
-          </listitem>
-        </varlistentry>
-
-        <!--- TODO add submen items here -->
-<varlistentry id="hdbk-reference-menus-window-cascade">
+        <varlistentry id="hdbk-reference-menus-window-cascade">
           <term>
             <menuchoice>
               <shortcut>
@@ -454,26 +416,89 @@ abertas</action>.
           </listitem>
         </varlistentry>
 
-        <varlistentry id="hdbk-reference-menus-window-closeall">
+        <varlistentry id="hdbk-reference-menus-window-arrangement_mode">
           <term>
             <menuchoice>
-              <shortcut>
-                <keycombo action="simul">
-                <keycap>&Ctrl;+&Alt;+W</keycap></keycombo>
-              </shortcut>
-              <guimenu>
-              <inlinemediaobject>
-                <imageobject>
-                  <imagedata fileref="i_fileclose.png" width="32" depth="32" format="PNG" />
-                </imageobject>
-              </inlinemediaobject>Window</guimenu>
-              <guimenuitem>Close all</guimenuitem>
+              <guimenu>Window</guimenu>
+              <guimenuitem>Arrangement mode</guimenuitem>
             </menuchoice>
           </term>
 
           <listitem>
             <para>
-            <action>Fecha todas as janelas abertas</action>.</para>
+            <action>Controla o comportamento de posicionamento das janelas</action>. No 
+menu de contexto que se abre, você pode especificar se quer cuidar do 
+posicionamento você mesmo (modo Manual) ou deixar que o &bibletime; cuide 
+para você (modos Automáticos, experimente).</para>
+          </listitem>
+        </varlistentry>
+
+
+
+        <!--- TODO add submenu items here -->
+<varlistentry id="hdbk-reference-menus-window-savesession">
+          <term>
+            <menuchoice>
+              <guimenu> Window</guimenu>
+              <guimenuitem>Save session</guimenuitem>
+            </menuchoice>
+          </term>
+
+          <listitem>
+            <para>
+            <action>Diretamente salva a sessão atual</action>. Essa irá abrir um menu de 
+contexto onde você pode selecionar uma sessão existente para salvar. Ela 
+pode ser sobrescrita com sua sessão atual. Veja o próximo item sobre como 
+salvar para uma nova sessão.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry id="hdbk-reference-menus-window-savenewsession">
+          <term>
+            <menuchoice>
+              <shortcut>
+                <keycombo action="simul">
+                <keycap>&Ctrl;+&Alt;+S</keycap></keycombo>
+              </shortcut>
+              <guimenu>Window</guimenu>
+              <guimenuitem>Save as new session</guimenuitem>
+            </menuchoice>
+          </term>
+
+          <listitem>
+            <para>
+            <action>Salva a sessão atual sob um novo nome</action>. Essa irá perguntar 
+por um novo nome para salvar a sessão.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry id="hdbk-reference-menus-window-loadsession">
+          <term>
+            <menuchoice>
+              <guimenu>Window</guimenu>
+              <guimenuitem>Load session</guimenuitem>
+            </menuchoice>
+          </term>
+
+          <listitem>
+            <para>
+            <action>Carrega uma sessão existente</action>. Essa irá abrir um menu de 
+contexto onde você pode selecionar uma sessão existente para carregar.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry id="hdbk-reference-menus-window-deletesession">
+          <term>
+            <menuchoice>
+              <guimenu>Window</guimenu>
+              <guimenuitem>Delete session</guimenuitem>
+            </menuchoice>
+          </term>
+
+          <listitem>
+            <para>
+            <action>Exclui uma sessão existente</action>. Essa irá abrir um menu de 
+contexto onde você pode selecionar uma sessão existente para excluir.</para>
           </listitem>
         </varlistentry>
       </variablelist>

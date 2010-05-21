@@ -272,92 +272,53 @@ linkend="hdbk-op-search">In Werken suchen</link> finden.</para>
       </title>
 
       <variablelist>
-        <varlistentry id="hdbk-reference-menus-window-savesession">
-          <term>
-            <menuchoice>
-              <guimenu> Window</guimenu>
-              <guimenuitem>Save session</guimenuitem>
-            </menuchoice>
-          </term>
-
-          <listitem>
-            <para>
-            <action>Sitzung speichern</action>. Dies wird ein Kontextmen?? ??ffnen, in 
-dem Sie eine bereits existierende Sitzung als Ziel zur Abspeicherung 
-ausw??hlen k??nnen. Die aktuelle Sitzung wird diese ??berschreiben. Schauen 
-Sie sich den n??chsten Abschnitt an, wie Sie eine neue Sitzung anlegen und 
-abspeichern k??nnen.</para>
-          </listitem>
-        </varlistentry>
-
-        <varlistentry id="hdbk-reference-menus-window-savenewsession">
+        <varlistentry id="hdbk-reference-menus-window-close">
           <term>
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;+&Alt;+S</keycap></keycombo>
+                <keycap>&Ctrl;+W</keycap></keycombo>
               </shortcut>
-              <guimenu>Window</guimenu>
-              <guimenuitem>Save as new session</guimenuitem>
+              <guimenu>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="i_fileclose.png" width="32" depth="32" format="PNG" />
+                </imageobject>
+              </inlinemediaobject>Window</guimenu>
+              <guimenuitem>Close window</guimenuitem>
             </menuchoice>
           </term>
 
           <listitem>
             <para>
-            <action>Als neue Sitzung speichern</action>. Diese Funktion wird Sie nach 
-einem neuen Namen f??r die zu speichernde Sitzung fragen.</para>
+            <action>Closes active window</action>.</para>
           </listitem>
         </varlistentry>
 
-        <varlistentry id="hdbk-reference-menus-window-loadsession">
+        <varlistentry id="hdbk-reference-menus-window-closeall">
           <term>
             <menuchoice>
-              <guimenu>Window</guimenu>
-              <guimenuitem>Load session</guimenuitem>
+              <shortcut>
+                <keycombo action="simul">
+                <keycap>&Ctrl;+&Alt;+W</keycap></keycombo>
+              </shortcut>
+              <guimenu>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="i_fileclose.png" width="32" depth="32" format="PNG" />
+                </imageobject>
+              </inlinemediaobject>Window</guimenu>
+              <guimenuitem>Close all</guimenuitem>
             </menuchoice>
           </term>
 
           <listitem>
             <para>
-            <action>Sitzung laden</action>. Hiermit wird ein Kontextmen?? ge??ffnet, wo 
-Sie eine existierende Sitzung zum Laden ausw??hlen k??nnen.</para>
+            <action>Alle ge??ffneten Fenster schlie??en</action>.</para>
           </listitem>
         </varlistentry>
 
-        <varlistentry id="hdbk-reference-menus-window-deletesession">
-          <term>
-            <menuchoice>
-              <guimenu>Window</guimenu>
-              <guimenuitem>Delete session</guimenuitem>
-            </menuchoice>
-          </term>
-
-          <listitem>
-            <para>
-            <action>Sitzung l??schen</action>. Hiermit ??ffnen Sie ein Kontextmen??, das 
-Ihnen erlaubt, eine existierende Sitzung zum L??schen auszuw??hlen.</para>
-          </listitem>
-        </varlistentry>
-
-        <varlistentry id="hdbk-reference-menus-window-arrangement_mode">
-          <term>
-            <menuchoice>
-              <guimenu>Window</guimenu>
-              <guimenuitem>Arrangement mode</guimenuitem>
-            </menuchoice>
-          </term>
-
-          <listitem>
-            <para>
-            <action>Anordnungs-Art</action>. Im sich ??ffnenden Kontextmen?? k??nnen Sie 
-bestimmen, dass Sie entweder die Fensteranordnung selbst bestimmen m??chten 
-(manueller Modus), oder dass &bibletime; sich um die Fensteranordnung 
-k??mmern soll (automatische Modi, probieren Sie's einfach aus!).</para>
-          </listitem>
-        </varlistentry>
-
-        <!--- TODO add submen items here -->
-<varlistentry id="hdbk-reference-menus-window-cascade">
+        <varlistentry id="hdbk-reference-menus-window-cascade">
           <term>
             <menuchoice>
               <shortcut>
@@ -453,26 +414,90 @@ k??mmern soll (automatische Modi, probieren Sie's einfach aus!).</para>
           </listitem>
         </varlistentry>
 
-        <varlistentry id="hdbk-reference-menus-window-closeall">
+        <varlistentry id="hdbk-reference-menus-window-arrangement_mode">
           <term>
             <menuchoice>
-              <shortcut>
-                <keycombo action="simul">
-                <keycap>&Ctrl;+&Alt;+W</keycap></keycombo>
-              </shortcut>
-              <guimenu>
-              <inlinemediaobject>
-                <imageobject>
-                  <imagedata fileref="i_fileclose.png" width="32" depth="32" format="PNG" />
-                </imageobject>
-              </inlinemediaobject>Window</guimenu>
-              <guimenuitem>Close all</guimenuitem>
+              <guimenu>Window</guimenu>
+              <guimenuitem>Arrangement mode</guimenuitem>
             </menuchoice>
           </term>
 
           <listitem>
             <para>
-            <action>Alle ge??ffneten Fenster schlie??en</action>.</para>
+            <action>Anordnungs-Art</action>. Im sich ??ffnenden Kontextmen?? k??nnen Sie 
+bestimmen, dass Sie entweder die Fensteranordnung selbst bestimmen m??chten 
+(manueller Modus), oder dass &bibletime; sich um die Fensteranordnung 
+k??mmern soll (automatische Modi, probieren Sie's einfach aus!).</para>
+          </listitem>
+        </varlistentry>
+
+
+
+        <!--- TODO add submenu items here -->
+<varlistentry id="hdbk-reference-menus-window-savesession">
+          <term>
+            <menuchoice>
+              <guimenu> Window</guimenu>
+              <guimenuitem>Save session</guimenuitem>
+            </menuchoice>
+          </term>
+
+          <listitem>
+            <para>
+            <action>Sitzung speichern</action>. Dies wird ein Kontextmen?? ??ffnen, in 
+dem Sie eine bereits existierende Sitzung als Ziel zur Abspeicherung 
+ausw??hlen k??nnen. Die aktuelle Sitzung wird diese ??berschreiben. Schauen 
+Sie sich den n??chsten Abschnitt an, wie Sie eine neue Sitzung anlegen und 
+abspeichern k??nnen.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry id="hdbk-reference-menus-window-savenewsession">
+          <term>
+            <menuchoice>
+              <shortcut>
+                <keycombo action="simul">
+                <keycap>&Ctrl;+&Alt;+S</keycap></keycombo>
+              </shortcut>
+              <guimenu>Window</guimenu>
+              <guimenuitem>Save as new session</guimenuitem>
+            </menuchoice>
+          </term>
+
+          <listitem>
+            <para>
+            <action>Als neue Sitzung speichern</action>. Diese Funktion wird Sie nach 
+einem neuen Namen f??r die zu speichernde Sitzung fragen.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry id="hdbk-reference-menus-window-loadsession">
+          <term>
+            <menuchoice>
+              <guimenu>Window</guimenu>
+              <guimenuitem>Load session</guimenuitem>
+            </menuchoice>
+          </term>
+
+          <listitem>
+            <para>
+            <action>Sitzung laden</action>. Hiermit wird ein Kontextmen?? ge??ffnet, wo 
+Sie eine existierende Sitzung zum Laden ausw??hlen k??nnen.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry id="hdbk-reference-menus-window-deletesession">
+          <term>
+            <menuchoice>
+              <guimenu>Window</guimenu>
+              <guimenuitem>Delete session</guimenuitem>
+            </menuchoice>
+          </term>
+
+          <listitem>
+            <para>
+            <action>Sitzung l??schen</action>. Hiermit ??ffnen Sie ein Kontextmen??, das 
+Ihnen erlaubt, eine existierende Sitzung zum L??schen auszuw??hlen.</para>
           </listitem>
         </varlistentry>
       </variablelist>

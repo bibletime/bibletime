@@ -273,91 +273,53 @@ works</link> section.</para>
       </title>
 
       <variablelist>
-        <varlistentry id="hdbk-reference-menus-window-savesession">
-          <term>
-            <menuchoice>
-              <guimenu> Window</guimenu>
-              <guimenuitem>Save session</guimenuitem>
-            </menuchoice>
-          </term>
-
-          <listitem>
-            <para>
-            <action>Tallettaa suoraan nykyisen istunnon</action>. Tämä avaa 
-kontekstivalikon, jossa voit valita olemassaolevan istunnon 
-talletettavaksi. Se korvaataan nykyisellä istunnollasi. Katso seuraavasta, 
-miten istunnon voi tallettaa uudeksi istunnoksi.</para>
-          </listitem>
-        </varlistentry>
-
-        <varlistentry id="hdbk-reference-menus-window-savenewsession">
+        <varlistentry id="hdbk-reference-menus-window-close">
           <term>
             <menuchoice>
               <shortcut>
                 <keycombo action="simul">
-                <keycap>&Ctrl;+&Alt;+S</keycap></keycombo>
+                <keycap>&Ctrl;+W</keycap></keycombo>
               </shortcut>
-              <guimenu>Window</guimenu>
-              <guimenuitem>Save as new session</guimenuitem>
+              <guimenu>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="i_fileclose.png" width="32" depth="32" format="PNG" />
+                </imageobject>
+              </inlinemediaobject>Window</guimenu>
+              <guimenuitem>Close window</guimenuitem>
             </menuchoice>
           </term>
 
           <listitem>
             <para>
-            <action>Tallettaa nykyisen istunnon uudella nimellä</action>. Tämä kysyy 
-uutta nimeä istunnon talletukselle.</para>
+            <action>Closes active window</action>.</para>
           </listitem>
         </varlistentry>
 
-        <varlistentry id="hdbk-reference-menus-window-loadsession">
+        <varlistentry id="hdbk-reference-menus-window-closeall">
           <term>
             <menuchoice>
-              <guimenu>Window</guimenu>
-              <guimenuitem>Load session</guimenuitem>
+              <shortcut>
+                <keycombo action="simul">
+                <keycap>&Ctrl;+&Alt;+W</keycap></keycombo>
+              </shortcut>
+              <guimenu>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="i_fileclose.png" width="32" depth="32" format="PNG" />
+                </imageobject>
+              </inlinemediaobject>Window</guimenu>
+              <guimenuitem>Close all</guimenuitem>
             </menuchoice>
           </term>
 
           <listitem>
             <para>
-            <action>Lataa olemassaolevan istunnon</action>. Tämä avaa kontekstivalikon, 
-josta voit valita olemassaolevan istunnon ladattavaksi.</para>
+            <action>Sulkee kaikki avoimet ikkunat</action>.</para>
           </listitem>
         </varlistentry>
 
-        <varlistentry id="hdbk-reference-menus-window-deletesession">
-          <term>
-            <menuchoice>
-              <guimenu>Window</guimenu>
-              <guimenuitem>Delete session</guimenuitem>
-            </menuchoice>
-          </term>
-
-          <listitem>
-            <para>
-            <action>Poistaa olemassaolevan istunnon</action>. Tämä avaa 
-kontekstivalikon, jossa voit valita olemassaolevan istunnon poistettavaksi.</para>
-          </listitem>
-        </varlistentry>
-
-        <varlistentry id="hdbk-reference-menus-window-arrangement_mode">
-          <term>
-            <menuchoice>
-              <guimenu>Window</guimenu>
-              <guimenuitem>Arrangement mode</guimenuitem>
-            </menuchoice>
-          </term>
-
-          <listitem>
-            <para>
-            <action>Controls the basic window arrangement behaviour</action>. In the 
-opening context menu, you can either specify that you want to take care of 
-the window arrangement yourself (Manual mode) or have &bibletime; handle it 
-for you (Automatic modes, just try them out!).</para>
-          </listitem>
-        </varlistentry>
-
-        <!--- TODO add submen items here -->
-<varlistentry id="hdbk-reference-menus-window-cascade">
+        <varlistentry id="hdbk-reference-menus-window-cascade">
           <term>
             <menuchoice>
               <shortcut>
@@ -453,26 +415,89 @@ for you (Automatic modes, just try them out!).</para>
           </listitem>
         </varlistentry>
 
-        <varlistentry id="hdbk-reference-menus-window-closeall">
+        <varlistentry id="hdbk-reference-menus-window-arrangement_mode">
           <term>
             <menuchoice>
-              <shortcut>
-                <keycombo action="simul">
-                <keycap>&Ctrl;+&Alt;+W</keycap></keycombo>
-              </shortcut>
-              <guimenu>
-              <inlinemediaobject>
-                <imageobject>
-                  <imagedata fileref="i_fileclose.png" width="32" depth="32" format="PNG" />
-                </imageobject>
-              </inlinemediaobject>Window</guimenu>
-              <guimenuitem>Close all</guimenuitem>
+              <guimenu>Window</guimenu>
+              <guimenuitem>Arrangement mode</guimenuitem>
             </menuchoice>
           </term>
 
           <listitem>
             <para>
-            <action>Sulkee kaikki avoimet ikkunat</action>.</para>
+            <action>Controls the basic window arrangement behaviour</action>. In the 
+opening context menu, you can either specify that you want to take care of 
+the window arrangement yourself (Manual mode) or have &bibletime; handle it 
+for you (Automatic modes, just try them out!).</para>
+          </listitem>
+        </varlistentry>
+
+
+
+        <!--- TODO add submenu items here -->
+<varlistentry id="hdbk-reference-menus-window-savesession">
+          <term>
+            <menuchoice>
+              <guimenu> Window</guimenu>
+              <guimenuitem>Save session</guimenuitem>
+            </menuchoice>
+          </term>
+
+          <listitem>
+            <para>
+            <action>Tallettaa suoraan nykyisen istunnon</action>. Tämä avaa 
+kontekstivalikon, jossa voit valita olemassaolevan istunnon 
+talletettavaksi. Se korvaataan nykyisellä istunnollasi. Katso seuraavasta, 
+miten istunnon voi tallettaa uudeksi istunnoksi.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry id="hdbk-reference-menus-window-savenewsession">
+          <term>
+            <menuchoice>
+              <shortcut>
+                <keycombo action="simul">
+                <keycap>&Ctrl;+&Alt;+S</keycap></keycombo>
+              </shortcut>
+              <guimenu>Window</guimenu>
+              <guimenuitem>Save as new session</guimenuitem>
+            </menuchoice>
+          </term>
+
+          <listitem>
+            <para>
+            <action>Tallettaa nykyisen istunnon uudella nimellä</action>. Tämä kysyy 
+uutta nimeä istunnon talletukselle.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry id="hdbk-reference-menus-window-loadsession">
+          <term>
+            <menuchoice>
+              <guimenu>Window</guimenu>
+              <guimenuitem>Load session</guimenuitem>
+            </menuchoice>
+          </term>
+
+          <listitem>
+            <para>
+            <action>Lataa olemassaolevan istunnon</action>. Tämä avaa kontekstivalikon, 
+josta voit valita olemassaolevan istunnon ladattavaksi.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry id="hdbk-reference-menus-window-deletesession">
+          <term>
+            <menuchoice>
+              <guimenu>Window</guimenu>
+              <guimenuitem>Delete session</guimenuitem>
+            </menuchoice>
+          </term>
+
+          <listitem>
+            <para>
+            <action>Poistaa olemassaolevan istunnon</action>. Tämä avaa 
+kontekstivalikon, jossa voit valita olemassaolevan istunnon poistettavaksi.</para>
           </listitem>
         </varlistentry>
       </variablelist>
