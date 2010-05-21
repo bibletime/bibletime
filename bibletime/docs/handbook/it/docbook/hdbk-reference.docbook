@@ -187,7 +187,8 @@ remove the tools icons in the open works.</para>
             </menuchoice>
           </term>
           <listitem>
-            <para><action>Toggles format.</action></para>
+            <para><action>Toggles format.</action> Toggle this setting when editing HTML in 
+Personal Commentaries. It will add or remove the formatting toolbar.</para>
           </listitem>
         </varlistentry>
 
@@ -201,7 +202,7 @@ remove the tools icons in the open works.</para>
             </menuchoice>
           </term>
           <listitem>
-            <para><action>Toggles toolsbars in works.</action> Toggle this setting to add or 
+            <para><action>Toggles toolbars in works.</action> Toggle this setting to add or 
 remove the complete toolbar in open works.</para>
           </listitem>
         </varlistentry>
