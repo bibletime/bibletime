@@ -72,25 +72,6 @@ maximize the &bibletime; window.</para>
           </listitem>
         </varlistentry>
 
-        <varlistentry id="hdbk-reference-menus-view-showtoolbar">
-          <term>
-            <menuchoice>
-              <shortcut>
-                <keycombo action="simul">
-                  <keycap>F6</keycap>
-                </keycombo>
-              </shortcut>
-              <guimenu>View</guimenu>
-              <guimenuitem>Show toolbar</guimenuitem>
-            </menuchoice>
-          </term>
-          <listitem>
-            <para>
-            <action>Active/désactive l'affichage de la barre d'outils.</action> Permet 
-de faire apparaître ou disparaître la barre d'outil.</para>
-          </listitem>
-        </varlistentry>
-
         <varlistentry id="hdbk-reference-menus-view-showbookshelf">
           <term>
             <menuchoice>
@@ -133,6 +114,96 @@ more space for the Mag.</para>
             <para>
             <action>Active/désactive l'affichage de la barre d'outils.</action> Permet 
 de faire apparaître ou disparaître le zoom dans le panneau de gauche. </para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry id="hdbk-reference-menus-view-toolbars-showmain">
+          <term>
+            <menuchoice>
+              <shortcut>
+                <keycombo action="simul">
+                  <keycap>F6</keycap>
+                </keycombo>
+              </shortcut>
+              <guimenu>View</guimenu>
+              <guimenuitem>Toolbars</guimenuitem>
+	      <guimenuitem>Show main</guimenuitem>
+            </menuchoice>
+          </term>
+          <listitem>
+            <para><action>Toggles Main Toolbar display.</action> Toggle this setting to turn 
+the main toolbar on or off.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry id="hdbk-reference-menus-view-toolbars-shownavigation">
+          <term>
+            <menuchoice>
+              <guimenu>View</guimenu>
+              <guimenuitem>Toolbars</guimenuitem>
+	      <guimenuitem>Show navigation</guimenuitem>
+            </menuchoice>
+          </term>
+          <listitem>
+            <para><action>Toggles Navigation in works.</action> Toggle this setting to add or 
+remove the navigation combo box in works.  This can be handy to view the 
+full toolbar in the open works</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry id="hdbk-reference-menus-view-toolbars-showworks">
+          <term>
+            <menuchoice>
+              <guimenu>View</guimenu>
+              <guimenuitem>Toolbars</guimenuitem>
+	      <guimenuitem>Show works</guimenuitem>
+            </menuchoice>
+          </term>
+          <listitem>
+            <para><action>Toggles Toolbars in works.</action> Toggle this setting to add or 
+remove the works icons in the open works.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry id="hdbk-reference-menus-view-toolbars-showtools">
+          <term>
+            <menuchoice>
+              <guimenu>View</guimenu>
+              <guimenuitem>Toolbars</guimenuitem>
+	      <guimenuitem>Show tools</guimenuitem>
+            </menuchoice>
+          </term>
+          <listitem>
+            <para><action>Toggles tools in works.</action> Toggle this setting to add or 
+remove the tools icons in the open works.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry id="hdbk-reference-menus-view-toolbars-showformat">
+          <term>
+            <menuchoice>
+              <guimenu>View</guimenu>
+              <guimenuitem>Toolbars</guimenuitem>
+	      <guimenuitem>Show format</guimenuitem>
+            </menuchoice>
+          </term>
+          <listitem>
+            <para><action>Toggles format.</action></para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry
+	id="hdbk-reference-menus-view-toolbars-showtoolbarsintextwindows">
+          <term>
+            <menuchoice>
+              <guimenu>View</guimenu>
+              <guimenuitem>Toolbars</guimenuitem>
+	      <guimenuitem>Show toolbars in text windows</guimenuitem>
+            </menuchoice>
+          </term>
+          <listitem>
+            <para><action>Toggles toolsbars in works.</action> Toggle this setting to add or 
+remove the complete toolbar in open works.</para>
           </listitem>
         </varlistentry>
       </variablelist>
