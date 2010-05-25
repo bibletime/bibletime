@@ -423,7 +423,7 @@ QString BtSearchResultArea::highlightSearchedText(const QString& content, const 
     //char buf8[1000];
     //standard::WhitespaceAnalyzer analyzer;
     //lucene_utf8towcs(m_wcharBuffer, searchedText.utf8(), MAX_CONV_SIZE);
-    //boost::scoped_ptr<Query> q( QueryParser::parse(m_wcharBuffer, _T("content"), &analyzer) );
+    //QSharedPointer<Query> q( QueryParser::parse(m_wcharBuffer, _T("content"), &analyzer) );
     //StringReader reader(m_wcharBuffer);
     //TokenStream* tokenStream = analyzer.tokenStream( _T("field"), &reader);
     //Token token;

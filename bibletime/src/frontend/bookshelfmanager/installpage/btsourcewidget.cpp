@@ -9,7 +9,7 @@
 
 #include "frontend/bookshelfmanager/installpage/btsourcewidget.h"
 
-#include <boost/scoped_ptr.hpp>
+#include <QSharedPointer>
 #include <QApplication>
 #include <QFileInfo>
 #include <QHBoxLayout>
@@ -69,7 +69,7 @@ void BtSourceWidget::slotDelete() {
 
 void BtSourceWidget::slotAdd() {
 
-    boost::scoped_ptr<CSwordSetupInstallSourcesDialog> dlg( new CSwordSetupInstallSourcesDialog() );
+    QSharedPointer<CSwordSetupInstallSourcesDialog> dlg( new CSwordSetupInstallSourcesDialog() );
     sword::InstallSource newSource(""); //empty, invalid Source
 
     if (dlg->exec() == QDialog::Accepted) {

@@ -9,7 +9,7 @@
 
 #include "backend/rendering/ctextrendering.h"
 
-#include <boost/scoped_ptr.hpp>
+#include <QSharedPointer>
 
 #include <QRegExp>
 #include <QtAlgorithms>
@@ -176,14 +176,14 @@ const QString CTextRendering::renderKeyTree( KeyTree& tree ) {
     QString t;
 
     //optimization for entries with the same key
-    boost::scoped_ptr<CSwordKey> key(
+    QSharedPointer<CSwordKey> key(
         (modules.count() == 1) ? CSwordKey::createInstance(modules.first()) : 0
     );
 
     foreach (KeyTreeItem* c, tree) {
         if (modules.count() == 1) { //this optimizes the rendering, only one key created for all items
             key->key( c->key() );
-            t.append( renderEntry( *c, key.get()) );
+            t.append( renderEntry( *c, key.data()) );
         }
         else {
             t.append( renderEntry( *c ) );
@@ -198,14 +198,14 @@ const QString CTextRendering::renderKeyRange( const QString& start, const QStrin
     CSwordModuleInfo* module = modules.first();
     //qWarning( "renderKeyRange start %s stop %s \n", start.latin1(), stop.latin1() );
 
-    boost::scoped_ptr<CSwordKey> lowerBound( CSwordKey::createInstance(module) );
+    QSharedPointer<CSwordKey> lowerBound( CSwordKey::createInstance(module) );
     lowerBound->key(start);
 
-    boost::scoped_ptr<CSwordKey> upperBound( CSwordKey::createInstance(module) );
+    QSharedPointer<CSwordKey> upperBound( CSwordKey::createInstance(module) );
     upperBound->key(stop);
 
-    sword::SWKey* sw_start = dynamic_cast<sword::SWKey*>(lowerBound.get());
-    sword::SWKey* sw_stop = dynamic_cast<sword::SWKey*>(upperBound.get());
+    sword::SWKey* sw_start = dynamic_cast<sword::SWKey*>(lowerBound.data());
+    sword::SWKey* sw_stop = dynamic_cast<sword::SWKey*>(upperBound.data());
 
     Q_ASSERT((*sw_start == *sw_stop) || (*sw_start < *sw_stop));
 
@@ -216,10 +216,10 @@ const QString CTextRendering::renderKeyRange( const QString& start, const QStrin
         KeyTree tree;
         KeyTreeItem::Settings settings = keySettings;
 
-        CSwordVerseKey* vk_start = dynamic_cast<CSwordVerseKey*>(lowerBound.get());
+        CSwordVerseKey* vk_start = dynamic_cast<CSwordVerseKey*>(lowerBound.data());
         Q_ASSERT(vk_start);
 
-        CSwordVerseKey* vk_stop = dynamic_cast<CSwordVerseKey*>(upperBound.get());
+        CSwordVerseKey* vk_stop = dynamic_cast<CSwordVerseKey*>(upperBound.data());
         Q_ASSERT(vk_stop);
 
         bool ok = true;

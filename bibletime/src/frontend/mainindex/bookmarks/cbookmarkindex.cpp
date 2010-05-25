@@ -9,7 +9,7 @@
 
 #include "frontend/mainindex/bookmarks/cbookmarkindex.h"
 
-#include <boost/scoped_ptr.hpp>
+#include <QSharedPointer>
 #include <QAction>
 #include <QApplication>
 #include <QCursor>
@@ -671,7 +671,7 @@ void CBookmarkIndex::printBookmarks() {
         qWarning("Tried to print empty bookmark list.");
         return;
     }
-    boost::scoped_ptr<Printing::CPrinter> printer(
+    QSharedPointer<Printing::CPrinter> printer(
         new Printing::CPrinter( this, CBTConfig::getDisplayOptionDefaults(), CBTConfig::getFilterOptionDefaults() )
     );
     printer->printKeyTree(tree);

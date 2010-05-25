@@ -9,7 +9,7 @@
 
 #include "backend/drivers/cswordmoduleinfo.h"
 
-#include <boost/scoped_ptr.hpp>
+#include <QSharedPointer>
 #include <CLucene.h>
 #include <CLucene/util/Misc.h>
 #include <CLucene/util/Reader.h>
@@ -269,7 +269,7 @@ void CSwordModuleInfo::buildIndex() {
             }
         }
 
-        boost::scoped_ptr<lucene::index::IndexWriter> writer( new lucene::index::IndexWriter(index.toAscii().constData(), &an, true) ); //always create a new index
+        QSharedPointer<lucene::index::IndexWriter> writer( new lucene::index::IndexWriter(index.toAscii().constData(), &an, true) ); //always create a new index
         writer->setMaxFieldLength(BT_MAX_LUCENE_FIELD_LENGTH);
         writer->setUseCompoundFile(true); //merge segments into a single file
         writer->setMinMergeDocs(1000);
@@ -320,7 +320,7 @@ void CSwordModuleInfo::buildIndex() {
             // with entry attributes this doesn't work any more.
             // Hits in the search dialog will show up as 1:1 (instead of 0)
 
-            boost::scoped_ptr<lucene::document::Document> doc(new lucene::document::Document());
+            QSharedPointer<lucene::document::Document> doc(new lucene::document::Document());
 
             //index the key
             lucene_utf8towcs(wcharBuffer, key->getText(), BT_MAX_LUCENE_FIELD_LENGTH);
@@ -374,7 +374,7 @@ void CSwordModuleInfo::buildIndex() {
                 }
             } // for attListI
 
-            writer->addDocument(doc.get());
+            writer->addDocument(doc.data());
             //Index() is not implemented properly for lexicons, so we use a
             //workaround.
             if (type() == CSwordModuleInfo::Lexicon) {
@@ -443,8 +443,8 @@ bool CSwordModuleInfo::searchIndexed(const QString& searchedText, sword::ListKey
     wchar_t wcharBuffer[BT_MAX_LUCENE_FIELD_LENGTH + 1];
 
     // work around Swords thread insafety for Bibles and Commentaries
-    boost::scoped_ptr < CSwordKey > key(CSwordKey::createInstance(this));
-    sword::SWKey* s = dynamic_cast < sword::SWKey * >(key.get());
+    QSharedPointer < CSwordKey > key(CSwordKey::createInstance(this));
+    sword::SWKey* s = dynamic_cast < sword::SWKey * >(key.data());
     QList<sword::VerseKey*> list;
 
     if (s) {
@@ -459,15 +459,15 @@ bool CSwordModuleInfo::searchIndexed(const QString& searchedText, sword::ListKey
         lucene::analysis::standard::StandardAnalyzer analyzer( stop_words );
         lucene::search::IndexSearcher searcher(getModuleStandardIndexLocation().toAscii().constData());
         lucene_utf8towcs(wcharBuffer, searchedText.toUtf8().constData(), BT_MAX_LUCENE_FIELD_LENGTH);
-        boost::scoped_ptr<lucene::search::Query> q( lucene::queryParser::QueryParser::parse((const TCHAR*)wcharBuffer, (const TCHAR*)_T("content"), &analyzer) );
+        QSharedPointer<lucene::search::Query> q( lucene::queryParser::QueryParser::parse((const TCHAR*)wcharBuffer, (const TCHAR*)_T("content"), &analyzer) );
 
-        boost::scoped_ptr<lucene::search::Hits> h( searcher.search(q.get(), lucene::search::Sort::INDEXORDER) );
+        QSharedPointer<lucene::search::Hits> h( searcher.search(q.data(), lucene::search::Sort::INDEXORDER) );
 
         const bool useScope = (scope.Count() > 0);
 //		const bool isVerseModule = (type() == CSwordModuleInfo::Bible) || (type() == CSwordModuleInfo::Commentary);
 
         lucene::document::Document* doc = 0;
-        boost::scoped_ptr<sword::SWKey> swKey( module()->CreateKey() );
+        QSharedPointer<sword::SWKey> swKey( module()->CreateKey() );
 
 
         for (int i = 0; i < h->length(); ++i) {

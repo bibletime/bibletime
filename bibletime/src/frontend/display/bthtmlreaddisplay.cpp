@@ -9,7 +9,7 @@
 
 #include "frontend/display/bthtmlreaddisplay.h"
 
-#include <boost/scoped_ptr.hpp>
+#include <QSharedPointer>
 #include <QMenu>
 #include <QString>
 #include "backend/config/cbtconfig.h"
@@ -146,7 +146,7 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType format, const CD
             ReferenceManager::decodeHyperlink(activeAnchor(), moduleName, keyName, type);
 
             if (CSwordModuleInfo* module = backend()->findModuleByName(moduleName)) {
-                boost::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(module) );
+                QSharedPointer<CSwordKey> key( CSwordKey::createInstance(module) );
                 key->key( keyName );
 
                 return key->strippedText();
@@ -161,7 +161,7 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType format, const CD
             ReferenceManager::decodeHyperlink(activeAnchor(), moduleName, keyName, type);
 
             if (CSwordModuleInfo* module = backend()->findModuleByName(moduleName)) {
-                boost::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(module) );
+                QSharedPointer<CSwordKey> key( CSwordKey::createInstance(module) );
                 key->key( keyName );
 
                 /// \todo This is a BAD HACK, we have to fnd a better solution to manage the settings now

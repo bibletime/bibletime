@@ -12,7 +12,7 @@
 
 #include <QThread>
 
-#include <boost/scoped_ptr.hpp>
+#include <QSharedPointer>
 #include "frontend/bookshelfmanager/btinstallmgr.h"
 
 
@@ -79,10 +79,10 @@ class BtInstallThread : public QThread {
         bool m_cancelled;
         BtInstallMgr* m_iMgr;
         //BtInstallMgr m_iMgr;
-        boost::scoped_ptr<sword::InstallSource> m_installSource;
+        QSharedPointer<sword::InstallSource> m_installSource;
         /// \todo it would be best to get the backend from the bookshelf manager install page
         // where it has already been created. Could fasten the progress dialog startup.
-        boost::scoped_ptr<CSwordBackend> m_backendForSource;
+        QSharedPointer<CSwordBackend> m_backendForSource;
 
     signals:
         /** Emitted when the install progress status is updated. */

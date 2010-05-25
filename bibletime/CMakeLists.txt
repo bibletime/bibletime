@@ -57,7 +57,7 @@ LIST(APPEND HANDBOOK_LOCALE_LANGS cs de fi fr hu it nl pt_BR)
 LIST(APPEND HOWTO_LOCALE_LANGS bg cs da de es fi fr it hu ko nl pt_BR ru)
 
 # Find required packages
-SET(QT_MIN_VERSION 4.4.0)
+SET(QT_MIN_VERSION 4.5.0)
 SET(QT_USE_QTXML 1)
 SET(QT_USE_QTWEBKIT 1)
 SET(QT_USE_QTMAIN 1)
@@ -72,7 +72,6 @@ ENDIF (QT_QTDBUS_FOUND AND NOT APPLE)
 # If cmake says that qdbusxml2cpp is missing, uncomment the following line
 #SET(QT_DBUSXML2CPP_EXECUTABLE "/usr/bin/qdbusxml2cpp") #TEMP HACK?
 
-FIND_PACKAGE(Boost REQUIRED)
 #
 #custom includes
 #
@@ -100,7 +99,6 @@ INCLUDE_DIRECTORIES(
     ${CMAKE_CURRENT_SOURCE_DIR}/src	# so that include paths like "frontend/..." work
     ${CLUCENE_INCLUDE_DIR}			#CLucene headers
     ${CLUCENE_LIBRARY_DIR}			#CLucene/clucene-config.h
-    ${Boost_INCLUDE_DIRS}
     ${SWORD_INCLUDE_DIR}
 )
 

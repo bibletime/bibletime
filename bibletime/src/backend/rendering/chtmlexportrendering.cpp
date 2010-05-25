@@ -9,7 +9,7 @@
 
 #include "backend/rendering/chtmlexportrendering.h"
 
-#include <boost/scoped_ptr.hpp>
+#include <QSharedPointer>
 #include <iostream>
 #include <QDebug>
 
@@ -86,8 +86,8 @@ const QString CHTMLExportRendering::renderEntry( const KeyTreeItem& i, CSwordKey
         return QString(""); //no module present for rendering
     }
 
-    boost::scoped_ptr<CSwordKey> scoped_key( !k ? CSwordKey::createInstance(modules.first()) : 0 );
-    CSwordKey* key = k ? k : scoped_key.get();
+    QSharedPointer<CSwordKey> scoped_key( !k ? CSwordKey::createInstance(modules.first()) : 0 );
+    CSwordKey* key = k ? k : scoped_key.data();
     Q_ASSERT(key);
 
     CSwordVerseKey* myVK = dynamic_cast<CSwordVerseKey*>(key);

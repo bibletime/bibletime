@@ -9,7 +9,7 @@
 
 #include "frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.h"
 
-#include <boost/scoped_ptr.hpp>
+#include <QSharedPointer>
 #include <QComboBox>
 #include <QDir>
 #include <QFileInfo>

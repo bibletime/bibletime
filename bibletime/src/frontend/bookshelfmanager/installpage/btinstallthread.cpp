@@ -46,8 +46,8 @@ void BtInstallThread::run() {
     emit preparingInstall(m_module, m_source);
     //This is 0 before set here - remember when using the value when cancelling
     // the installation before this has been run
-    m_installSource.reset(new sword::InstallSource(instbackend::source(m_source)));
-    m_backendForSource.reset(instbackend::backend(*m_installSource));
+    m_installSource = QSharedPointer<sword::InstallSource>(new sword::InstallSource(instbackend::source(m_source)));
+    m_backendForSource = QSharedPointer<CSwordBackend>(instbackend::backend(*m_installSource));
 
     //make sure target/mods.d and target/modules exist
     /// \todo move this to some common precondition
@@ -77,7 +77,7 @@ void BtInstallThread::run() {
 
     if (instbackend::isRemote(*m_installSource)) {
         qDebug() << "calling install";
-        int status = m_iMgr->installModule(&lMgr, 0, m_module.toLatin1(), m_installSource.get());
+        int status = m_iMgr->installModule(&lMgr, 0, m_module.toLatin1(), m_installSource.data());
         if (status != 0) {
             qWarning() << "Error with install: " << status << "module:" << m_module;
         }
@@ -124,7 +124,7 @@ void BtInstallThread::slotStopInstall() {
         qDebug() << "BtInstallThread::slotStopInstall 3";
         // cleanup: remove the module, remove the temp files
         // if installation has already started
-        if (m_installSource.get() != 0) {
+        if (m_installSource.data() != 0) {
             qDebug() << "BtInstallThread::slotStopInstall 4";
             // remove the installed module, just to be sure because mgr may
             // have been terminated when copying files

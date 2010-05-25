@@ -9,7 +9,7 @@
 
 #include "backend/rendering/cplaintextexportrendering.h"
 
-#include <boost/scoped_ptr.hpp>
+#include <QSharedPointer>
 #include "backend/keys/cswordkey.h"
 
 
@@ -26,7 +26,7 @@ const QString CPlainTextExportRendering::renderEntry( const KeyTreeItem& i, CSwo
     }
 
     QList<CSwordModuleInfo*> modules = i.modules();
-    boost::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(modules.first()) );
+    QSharedPointer<CSwordKey> key( CSwordKey::createInstance(modules.first()) );
     QString renderedText = QString(i.key()).append(":\n");
 
     QString entry;

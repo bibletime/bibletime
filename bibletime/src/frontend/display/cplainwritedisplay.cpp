@@ -9,7 +9,7 @@
 
 #include "frontend/display/cplainwritedisplay.h"
 
-#include <boost/scoped_ptr.hpp>
+#include <QSharedPointer>
 #include <QDragEnterEvent>
 #include <QDragMoveEvent>
 #include <QDropEvent>
@@ -129,7 +129,7 @@ void CPlainWriteDisplay::dropEvent( QDropEvent* e ) {
         for (it = items.begin(); it != items.end(); ++it) {
 
             CSwordModuleInfo* module = backend()->findModuleByName((*it).module());
-            boost::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(module) );
+            QSharedPointer<CSwordKey> key( CSwordKey::createInstance(module) );
             key->key( (*it).key() );
             QString moduleText = key->strippedText();
 

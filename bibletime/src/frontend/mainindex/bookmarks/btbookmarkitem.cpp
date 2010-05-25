@@ -9,7 +9,7 @@
 
 #include "frontend/mainindex/bookmarks/btbookmarkitem.h"
 
-#include <boost/scoped_ptr.hpp>
+#include <QSharedPointer>
 #include <QDebug>
 #include "backend/config/cbtconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
@@ -82,14 +82,14 @@ QString BtBookmarkItem::toolTip() const {
     CPointers::backend()->setFilterOptions(filterOptions);
 
     QString ret;
-    boost::scoped_ptr<CSwordKey> k( CSwordKey::createInstance(module()) );
+    QSharedPointer<CSwordKey> k( CSwordKey::createInstance(module()) );
     k->key(this->key());
 
     const CLanguageMgr::Language* lang = module()->language();
     CBTConfig::FontSettingsPair fontPair = CBTConfig::get
                                            (lang);
 
-    Q_ASSERT(k.get());
+    Q_ASSERT(k.data());
     if (fontPair.first) { //use a special font
         ret = QString::fromLatin1("<b>%1 (%2)</b><hr>%3")
               .arg(key())
