@@ -314,27 +314,27 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="656"/>
         <source>Show main toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Show main toolbar</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="657"/>
         <source>Show navigation bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Show navigation bar</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="658"/>
         <source>Show works toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Show works toolbar</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="659"/>
         <source>Show tools toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Show tools toolbar</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="660"/>
         <source>Show formatting toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Show formatting toolbar</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="661"/>
@@ -4631,7 +4631,7 @@ This could take a long time. Proceed with indexing?</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="57"/>
         <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
-        <translation type="unfinished"></translation>
+        <translation>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="65"/>
