@@ -423,18 +423,14 @@ nella sezione <link linkend="hdbk-op-search">Cercare nei documenti</link>.</para
           </term>
 
           <listitem>
-            <para>
-            <action>Controlla il comportamento base della disposizione delle finestre 
-</action>. Nel menu contestuale, puoi specificare se vuoi gestire tu la 
-disposizione delle finestre (modalità manuale) o lasciare che sia 
-&bibletime; a gestirla (modalità automatica). Dacci un'occhiata!</para>
+            <para><action>Controls the basic window arrangement behaviour</action>. In the 
+opening context menu, you can either specify that you want to take care of 
+the window arrangement yourself (Manual mode), Tabbed, Auto-tile vertically, 
+Auto-tile horizontally, Auto-tile or Auto-cascade.  Just try them out!</para>
           </listitem>
         </varlistentry>
 
-
-
-        <!--- TODO add submenu items here -->
-<varlistentry id="hdbk-reference-menus-window-savesession">
+        <varlistentry id="hdbk-reference-menus-window-savesession">
           <term>
             <menuchoice>
               <guimenu> Window</guimenu>

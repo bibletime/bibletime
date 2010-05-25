@@ -228,7 +228,7 @@ scope</guimenu>. You can define your own search ranges by clicking the
       </sect3>
 
       <sect3 id="hd-op-search-config-syntax">
-        <title>Basic Search Syntax Introduction</title>
+        <title>Introduction élémentaire syntaxe de recherche</title>
 
         <para>Enter the search phrase separated by spaces.  By default the search function 
 will return results that match all the words.  If you want to find any of 

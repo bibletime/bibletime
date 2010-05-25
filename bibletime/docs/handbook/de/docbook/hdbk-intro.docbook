@@ -1,73 +1,72 @@
 <chapter id="hdbk-intro">
   <title>Einleitung</title>
   <sect1 id="hdbk-intro-about">
-    <title>??ber &bibletime;</title>
+    <title>Über &bibletime;</title>
 
     <para>&bibletime; ist ein Bibelstudien-Werkzeug, das verschiedene Textarten und 
-Sprachen unterst??tzt. Sogar gro??e Anzahlen an Werk-Modulen k??nnen einfach 
+Sprachen unterstützt. Sogar große Anzahlen an Werk-Modulen können einfach 
 installiert und verwaltet werden. Es basiert auf der <ulink 
 url="http://www.crosswire.org/sword/">&sword;</ulink>-Bibliothek, welche die 
-zugrundeliegende Backend-Funktionalit??t f??r &bibletime; zur Verf??gung 
+zugrundeliegende Backend-Funktionalität für &bibletime; zur Verfügung 
 stellt, so zum Beispiel das Anzeigen von Bibeltexten, das Suchen in ihnen 
 usw. &sword; ist das Hauptprodukt der <ulink 
 url="http://www.crosswire.org">&cbs;</ulink>.</para>
 
     <para>&bibletime; wurde konzipiert, um mit Werken zu arbeiten, die in einem der 
-Formate vorliegen, die vom &sword;-Projekt unterst??tzt 
-werden. Vollst??ndige Informationen ??ber die unterst??tzten 
-Dokumentenformate sind auf den <ulink 
+Formate vorliegen, die vom &sword;-Projekt unterstützt werden. Vollständige 
+Informationen über die unterstützten Dokumentenformate sind auf den <ulink 
 url="http://www.crosswire.org/sword/develop/index.jsp">Entwicklerseiten</ulink> 
 des &sword;-Projektes der &cbs; zu finden.</para>
 
     <sect2 id="hdbk-intro-works">
       <title>Vorhandene Werke</title>
-      <para>??ber 200 Dokumente in 50 Sprachen sind von der <ulink 
-url="http://www.crosswire.org">&cbs;</ulink> erh??ltlich. Dazu geh??ren:
+      <para>Über 200 Dokumente in 50 Sprachen sind von der <ulink 
+url="http://www.crosswire.org">&cbs;</ulink> erhältlich. Dazu gehören:
       <variablelist>
         <varlistentry>
           <term>Bibeln</term>
           <listitem>
-            <para>Der vollst??ndie Bibeltext mit optionalen Dingen wie Strong-Nummern, 
-Kopfzeilen und/oder Fu??zeilen im Text. Bibeln sind in vielen verschiedenen 
-Sprachen verf??gbar und nicht nur auf moderne Versionen beschr??nkt, sondern 
-umfassen auch altert??mliche Texte wie den Codex Leningradensis ("WLC", 
-hebr??isch), und die Septuaginta ("LXX", griechisch). Dies ist der 
+            <para>Der vollständie Bibeltext mit optionalen Dingen wie Strong-Nummern, 
+Kopfzeilen und/oder Fußzeilen im Text. Bibeln sind in vielen verschiedenen 
+Sprachen verfügbar und nicht nur auf moderne Versionen beschränkt, sondern 
+umfassen auch altertümliche Texte wie den Codex Leningradensis ("WLC", 
+hebräisch), und die Septuaginta ("LXX", griechisch). Dies ist der 
 fortgeschrittenste Abschnitt in der Bibliothek des &sword;-Projektes.</para>
           </listitem>
         </varlistentry>
         <varlistentry>
-          <term>B??cher</term>
+          <term>Bücher</term>
           <listitem>
-            <para>Zu den verf??gbaren B??chern geh??ren "Imitation of Christ", "Enuma Elish" 
-und "Josephus: Die vollst??ndigen Werke"</para>
+            <para>Zu den verfügbaren Büchern gehören "Imitation of Christ", "Enuma Elish" und 
+"Josephus: Die vollständigen Werke"</para>
           </listitem>
         </varlistentry>
         <varlistentry>
           <term>Kommentare</term>
           <listitem>
-            <para>Zu den verf??gbaren Kommentaren geh??ren Klassiker wie John Wesleys "Notes 
-on the Bible", Matthew Henrys Kommentar und Luthers "Kommentar ??ber 
-Galater". " Mit dem <emphasis>Pers??nlichen</emphasis> Kommentar sind Sie in 
-der Lage <link linkend="hdbk-op-parts-desk-write">Ihre eigenen 
-Notizen</link> ??ber Bibelabschnitte zu erstellen.</para>
+            <para>Zu den verfügbaren Kommentaren gehören Klassiker wie John Wesleys "Notes on 
+the Bible", Matthew Henrys Kommentar und Luthers "Kommentar über Galater". " 
+Mit dem <emphasis>Persönlichen</emphasis> Kommentar sind Sie in der Lage 
+<link linkend="hdbk-op-parts-desk-write">Ihre eigenen Notizen</link> über 
+Bibelabschnitte zu erstellen.</para>
           </listitem>
         </varlistentry>
         <varlistentry>
-          <term>Andachtsb??cher</term>
+          <term>Andachtsbücher</term>
           <listitem>
-            <para>Viele Leute sch??tzen diese kleinen, t??glichen Abschnitte aus Gottes 
+            <para>Viele Leute schätzen diese kleinen, täglichen Abschnitte aus Gottes 
 Wort. Die vorhandene Werke enthalten "Daily Light" und die "Losungen".</para>
           </listitem>
         </varlistentry>
 
         <varlistentry>
-          <term>Lexika / W??rterb??cher</term>
+          <term>Lexika / Wörterbücher</term>
           <listitem>
-            <para>Zu den verf??gbaren Lexika geh??ren: Robinson's Morphological Analysis 
-Codes, und die International Standard Bible Encyclopaedia. Verf??gbare 
-W??rterb??cher umfassen Strong's Hebrew Bible Dictionary, Strong's Greek 
-Bible Dictionary, Webster's Revised Unabridged Dictionary of the English 
-Language 1913 und Nave's Topical Bible.</para>
+            <para>Zu den verfügbaren Lexika gehören: Robinson's Morphological Analysis Codes, 
+und die International Standard Bible Encyclopaedia. Verfügbare Wörterbücher 
+umfassen Strong's Hebrew Bible Dictionary, Strong's Greek Bible Dictionary, 
+Webster's Revised Unabridged Dictionary of the English Language 1913 und 
+Nave's Topical Bible.</para>
           </listitem>
         </varlistentry>
       </variablelist></para>
@@ -76,14 +75,14 @@ Language 1913 und Nave's Topical Bible.</para>
     <sect2 id="hdbk-intro-motivation">
       <title>Motivation</title>
       <para>Unser Verlangen ist es, Gott zu dienen und unseren Teil dazu beizutragen, 
-dass andere in ihrer Beziehung mit IHM wachsen. Wir haben uns bem??ht dies 
-zu einem m??chtigen und hochwertigen Programm zu machen, das jedoch 
-gleichzeitig einfach und intuitiv zu bedienen ist. Es ist unser Bed??rfnis, 
-dass Gott gepriesen wird, da Er die Quelle aller guten Dinge ist.</para>
+dass andere in ihrer Beziehung mit IHM wachsen. Wir haben uns bemüht dies zu 
+einem mächtigen und hochwertigen Programm zu machen, das jedoch gleichzeitig 
+einfach und intuitiv zu bedienen ist. Es ist unser Bedürfnis, dass Gott 
+gepriesen wird, da Er die Quelle aller guten Dinge ist.</para>
       <blockquote>
-        <attribution>Jakobus 1,17, Hoffnung f??r Alle</attribution>
+        <attribution>Jakobus 1,17, Hoffnung für Alle</attribution>
         <para>Alles, was Gott uns gibt, ist gut und vollkommen. Er, der Vater des Lichts, 
-??ndert sich nicht; niemals wechseln bei ihm Licht und Finsternis.</para>
+ändert sich nicht; niemals wechseln bei ihm Licht und Finsternis.</para>
       </blockquote>
       <para>Gott segne Sie durch Benutzung dieses Programms.</para>
     </sect2>

@@ -6,9 +6,8 @@
 
     <sect2 id="hdbk-start-starting">
       <title> &bibletime; starten</title>
-      <para>&bibletime; ist eine ausf??hrbare Datei, die in Ihrem Desktop integriert 
-ist. Sie k??nnen &bibletime; aus dem Startmen?? mit folgendem Symbol 
-starten: 
+      <para>&bibletime; ist eine ausführbare Datei, die in Ihrem Desktop integriert 
+ist. Sie können &bibletime; aus dem Startmenü mit folgendem Symbol starten: 
       <mediaobject>
         <imageobject>
           <imagedata fileref="i_bibletime.png" width="32" depth="32" format="PNG" />
@@ -19,30 +18,28 @@ starten:
       </mediaobject></para>
 
       <para>&bibletime; kann auch von der Kommandozeile eines Terminals aufgerufen 
-werden. Um &bibletime; zu starten, ??ffnen Sie ein Terminal-Fenster und 
-geben Sie folgendes ein: 
+werden. Um &bibletime; zu starten, öffnen Sie ein Terminal-Fenster und geben 
+Sie folgendes ein: 
       <screen>bibletime</screen></para>
     </sect2>
 
     <sect2 id="hdbk-start-custom">
       <title>Konfiguration des Startverhaltens</title>
-      <para>Von einem Terminal aus k??nnen Sie &bibletime; folgenderma??en verwenden, um 
+      <para>Von einem Terminal aus können Sie &bibletime; folgendermaßen verwenden, um 
 einen Zufallsvers aus der Standardbibel anzeigen zu lassen:
 	<screen>bibletime --open-default-bible "&lt;random&gt;"</screen>
 	Um einen bestimmten Vers wie z.B. Joh. 3,16 aufzuschlagen:
 	<screen>bibletime --open-default-bible "Joh 3:16"</screen>
-	Sie k??nnen auch Buchnamen in Ihrer gegenw??rtigen Buchnamen-Sprache 
-benutzen.</para>
+	Sie können auch Buchnamen in Ihrer gegenwärtigen Buchnamen-Sprache benutzen.</para>
     </sect2>
   </sect1>
 
   <sect1 id="hdbk-start-firstrun">
     <title>&bibletime; erstmalig starten</title>
 
-    <para>Wenn Sie &bibletime; zum ersten Mal ausf??hren, m??chten Sie bestimmt die 
-folgenden Optionen einstellen, die unter dem Men??punkt <link 
-linkend="hdbk-reference-menus-settings">Einstellungen</link> verf??gbar 
-sind.</para>
+    <para>Wenn Sie &bibletime; zum ersten Mal ausführen, möchten Sie bestimmt die 
+folgenden Optionen einstellen, die unter dem Menüpunkt <link 
+linkend="hdbk-reference-menus-settings">Einstellungen</link> verfügbar sind.</para>
 
     <variablelist>
       <varlistentry>
@@ -52,7 +49,7 @@ sind.</para>
         <listitem>
           <para>
           <action>&bibletime; anpassen.</action>Dieser Dialog erlaubt Ihnen 
-&bibletime; an Ihre Bed??rfnisse anzupassen. Bitte schlagen Sie <link 
+&bibletime; an Ihre Bedürfnisse anzupassen. Bitte schlagen Sie <link 
 linkend="hdbk-config-bt">die detaillierte Beschreibung</link> dieses Dialogs 
 nach.</para>
         </listitem>
@@ -63,17 +60,17 @@ nach.</para>
           <interface>Bookshelf Manager</interface>
         </term>
         <listitem>
-          <para><action>Ihr B??cherregal modifizieren.</action> Dieser Dialog erlaubt Ihnen, 
-Ihr B??cherregal zu modifizieren, Werke zu Ihrem System hinzuzuf??gen oder 
-vom System zu l??schen. Er wird nur dann angezeigt, wenn kein 
-Standard-B??cherregal gefunden werden kann. Bitte sehen Sie in dem Abschnitt 
-<link linkend="hdbk-op-bookshelfmanager">Der B??cherregal-Verwalter</link> 
-f??r weitere Details nach. Falls Sie mit einem leeren B??cherregal starten, 
+          <para><action>Ihr Bücherregal modifizieren.</action> Dieser Dialog erlaubt Ihnen, 
+Ihr Bücherregal zu modifizieren, Werke zu Ihrem System hinzuzufügen oder vom 
+System zu löschen. Er wird nur dann angezeigt, wenn kein 
+Standard-Bücherregal gefunden werden kann. Bitte sehen Sie in dem Abschnitt 
+<link linkend="hdbk-op-bookshelfmanager">Der Bücherregal-Verwalter</link> 
+für weitere Details nach. Falls Sie mit einem leeren Bücherregal starten, 
 ist es hilfreich, zumindest eine Bibel, ein Kommentar, ein Lexikon und ein 
 Buch zu installieren, um rasch die grundlegenden Funktionseigenschaften von 
 &bibletime; kennen zu lernen. Sie erreichen dies, indem Sie auf die 
-Schaltfl??che Auffrischen... klicken. Ihnen wird eine Liste der von der 
-&cbs; verf??gbaren Werke angezeigt.</para>
+Schaltfläche Auffrischen... klicken. Ihnen wird eine Liste der von der &cbs; 
+verfügbaren Werke angezeigt.</para>
         </listitem>
       </varlistentry>
     </variablelist>

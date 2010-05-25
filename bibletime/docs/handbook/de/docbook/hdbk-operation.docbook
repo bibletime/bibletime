@@ -1,7 +1,7 @@
 <chapter id="hdbk-op">
   <title>Programmbedienung</title>
   <sect1 id="hdbk-op-overview">
-    <title>Programm??berblick</title>
+    <title>Programmüberblick</title>
     <para>So sieht eine typische &bibletime;-Sitzung aus: 
     <mediaobject>
       <imageobject>
@@ -11,14 +11,14 @@
         <phrase>Das &bibletime;-Applikations-Fenster</phrase>
       </textobject>
     </mediaobject>
-    Sie k??nnen leicht die verschiedenen Abschnitte des Applikations-Fensters 
-erkennen. Das Fenster oben links erlaubt das ??ffnen installierter Werke im 
-B??cherregal-Reiter. Mit dem Lesezeichen-Reiter k??nnen Sie Ihre Lesezeichen 
-verwalten. Das kleine "Lupen"-Fenster unterhalb des B??cherregals zeigt in 
+    Sie können leicht die verschiedenen Abschnitte des Applikations-Fensters 
+erkennen. Das Fenster oben links erlaubt das Öffnen installierter Werke im 
+Bücherregal-Reiter. Mit dem Lesezeichen-Reiter können Sie Ihre Lesezeichen 
+verwalten. Das kleine "Lupen"-Fenster unterhalb des Bücherregals zeigt in 
 Dokumenten eingebettete Extra-Informationen an. Wenn Sie beispielsweise Ihre 
-Maus ??ber Fu??noten-Markierungen bewegen, wird das Lupenfenster den 
-tats??chlichen Inhalt der Fu??note anzeigen. Die Werkzeugleiste erlaubt 
-Ihnen den schnellen Zugriff auf wichtige Funktionen und auf dem Pult auf der 
+Maus über Fußnoten-Markierungen bewegen, wird das Lupenfenster den 
+tatsächlichen Inhalt der Fußnote anzeigen. Die Werkzeugleiste erlaubt Ihnen 
+den schnellen Zugriff auf wichtige Funktionen und auf dem Pult auf der 
 rechten Seite verrichten Sie Ihre eigentliche Arbeit.</para>
 
     <para>Wir fahren fort, indem wir nun die verschiedenen Teile der Anwendung einzeln 
@@ -27,42 +27,40 @@ betrachten.</para>
   <sect1 id="hdbk-op-parts">
     <title>Elemente des &bibletime; Fensters</title>
     <sect2 id="hdbk-op-parts-bookshelf">
-      <title>Das B??cherregal</title>
-      <para>Das B??cherregal enth??lt alle installierten Werke, nach Kategorie und 
-Sprache sortiert. Es enth??lt auch einen Abschnitt namens 
-"Lesezeichen". Hier k??nnen sie ihre eigenen Lesezeichen ablegen und darauf 
-zugreifen.</para>
+      <title>Das Bücherregal</title>
+      <para>Das Bücherregal enthält alle installierten Werke, nach Kategorie und Sprache 
+sortiert. Es enthält auch einen Abschnitt namens "Lesezeichen". Hier können 
+sie ihre eigenen Lesezeichen ablegen und darauf zugreifen.</para>
 
       <sect3 id="hdbk-op-parts-bookshelf-open">
         <title>Werke lesen</title>
 
-        <para>Wenn Sie Dokument ausw??hlen wollen, klicken Sie einfach auf die gew??nschte 
-Dokumentengruppe (Bibeln, Kommentare, Lexika, B??cher, Andachten oder 
-W??rterb??cher) um den Inhalt der Dokumentengruppe anzuzeigen. Um ein 
-Dokument zu ??ffnen klicken Sie auf dessen Symbol.</para>
+        <para>Wenn Sie Dokument auswählen wollen, klicken Sie einfach auf die gewünschte 
+Dokumentengruppe (Bibeln, Kommentare, Lexika, Bücher, Andachten oder 
+Wörterbücher) um den Inhalt der Dokumentengruppe anzuzeigen. Um ein Dokument 
+zu öffnen klicken Sie auf dessen Symbol.</para>
 
-        <para>Wenn Sie ein bestimmtes Werk lesen und ein anderes Werk bez??glich des 
-aktuellen Textabschnittes ??ffnen m??chten, k??nnen Sie einen Kurzbefehl 
+        <para>Wenn Sie ein bestimmtes Werk lesen und ein anderes Werk bezüglich des 
+aktuellen Textabschnittes öffnen möchten, können Sie einen Kurzbefehl 
 verwenden. Klicken Sie einfach mit der <mousebutton>linken 
 Maustaste</mousebutton> auf den Vers-/Abschnitts-Verweis (der Zeiger wird 
-zur Hand) und ziehen Sie ihn zum B??cherregal. Lassen Sie auf dem zu 
-??ffnenden Werk los und es wird zum Lesen an der spezifizierten Stelle 
-ge??ffnet. Au??erdem k??nnen Sie einen Versverweis in ein bereits 
-existierendes Lesefenster ziehen, es wird dann zur gew??nschten Stelle 
-gesprungen.</para>
+zur Hand) und ziehen Sie ihn zum Bücherregal. Lassen Sie auf dem zu 
+öffnenden Werk los und es wird zum Lesen an der spezifizierten Stelle 
+geöffnet. Außerdem können Sie einen Versverweis in ein bereits existierendes 
+Lesefenster ziehen, es wird dann zur gewünschten Stelle gesprungen.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-bookshelf-metainfo">
-        <title>Weitere Informationen ??ber Werke</title>
+        <title>Weitere Informationen über Werke</title>
 
         <para>Wenn Sie mit der <mousebutton>rechten</mousebutton> Maustaste auf das Symbol 
-eines Werkes klicken, ??ffnet sich Ihnen ein Men?? mit weiteren f??r das 
-Werk relevanten Eintr??gen. <guimenuitem>"??ber..."</guimenuitem> ??ffnet 
-ein Fenster mit einer Vielzahl an interessanten Informationen ??ber das 
-gew??hlte Werk. <guimenuitem>"Entschl??sseln..."</guimenuitem> ??ffnet ein 
-kleines Dialogfenster f??r verschl??sselte Dokumente, in dem Sie den 
-Entschl??sselungs-Schl??ssel f??r den Zugriff eingeben k??nnen. F??r weitere 
-Informationen ??ber gesperrte Werke, lesen Sie bitte die Seite ??ber <ulink 
+eines Werkes klicken, öffnet sich Ihnen ein Menü mit weiteren für das Werk 
+relevanten Einträgen. <guimenuitem>"Über..."</guimenuitem> öffnet ein 
+Fenster mit einer Vielzahl an interessanten Informationen über das gewählte 
+Werk. <guimenuitem>"Entschlüsseln..."</guimenuitem> öffnet ein kleines 
+Dialogfenster für verschlüsselte Dokumente, in dem Sie den 
+Entschlüsselungs-Schlüssel für den Zugriff eingeben können. Für weitere 
+Informationen über gesperrte Werke, lesen Sie bitte die Seite über <ulink 
 url="http://www.crosswire.org/sword/modules/aboutlocked.jsp">gesperrte 
 Module</ulink> auf der Website der &cbs;.</para>
       </sect3>
@@ -70,13 +68,13 @@ Module</ulink> auf der Website der &cbs;.</para>
       <sect3 id="hdbk-op-parts-bookshelf-search">
         <title>In Werken suchen</title>
 
-        <para>Sie k??nnen ein Werk durchsuchen, indem Sie mit der 
+        <para>Sie können ein Werk durchsuchen, indem Sie mit der 
 <mousebutton>rechten</mousebutton> Maustaste auf sein Symbol klicken und 
-<guimenuitem>"Suche in..."</guimenuitem> ausw??hlen. Indem Sie &Shift; und 
-auf andere Werke klicken, k??nnen Sie mehr als ein Werk ausw??hlen. Dann 
-folgen Sie demselben Ablauf, um ein Such-Dialogfenster zu ??ffnen. Sie 
-werden so in jedem dieser Dokumente suchen. Eine vollst??ndige Beschreibung 
-der Arbeitsweise der Suchfunktionenk??nnen Sie im Abschnitt<link 
+<guimenuitem>"Suche in..."</guimenuitem> auswählen. Indem Sie &Shift; und 
+auf andere Werke klicken, können Sie mehr als ein Werk auswählen. Dann 
+folgen Sie demselben Ablauf, um ein Such-Dialogfenster zu öffnen. Sie werden 
+so in jedem dieser Dokumente suchen. Eine vollständige Beschreibung der 
+Arbeitsweise der Suchfunktionenkönnen Sie im Abschnitt<link 
 linkend="hdbk-op-search">In Werken suchen</link> finden.</para>
       </sect3>
 
@@ -89,21 +87,21 @@ linkend="hdbk-op-search">In Werken suchen</link> finden.</para>
         </tip>
 
 	Klicken Sie mit der <mousebutton>rechten Maustaste</mousebutton> auf den 
-Lesezeichen-Reiter im B??cherregal und w??hlen Sie <guimenuitem>"Neuer 
+Lesezeichen-Reiter im Bücherregal und wählen Sie <guimenuitem>"Neuer 
 Ordner"</guimenuitem> aus, um ein neues Unterverzeichnis zu erstellen. Sie 
-k??nnen normale Drag&amp;Drop-Funktionen nutzen, um Versverweise aus 
+können normale Drag&amp;Drop-Funktionen nutzen, um Versverweise aus 
 Lesefenstern oder Suchergebnissen zum Lesezeichen-Ordner zu ziehen und um 
 Lesezeichen zwischen Verzeichnissen neu anzuordnen.</para>
-        <para>Au??erdem ist es Ihnen m??glich, Lesezeichen anderer Personen zu importieren 
+        <para>Außerdem ist es Ihnen möglich, Lesezeichen anderer Personen zu importieren 
 sowie eigene Lesezeichen zu exportieren, um sie mit anderen zu teilen. Um 
-dies zu tun, ??ffnen Sie das <guimenuitem>Kontextmen??</guimenuitem> des 
-Lesezeichen-Ordners wie oben beschrieben und w??hlen Sie <guimenuitem>"Aus 
+dies zu tun, öffnen Sie das <guimenuitem>Kontextmenü</guimenuitem> des 
+Lesezeichen-Ordners wie oben beschrieben und wählen Sie <guimenuitem>"Aus 
 Verzeichnis exportieren..."</guimenuitem>. Dies wird ein Dialogfenster 
-??ffnen, mit dem Sie die Lesezeichen-Sammlung abspeichern k??nnen. Das 
+öffnen, mit dem Sie die Lesezeichen-Sammlung abspeichern können. Das 
 Importieren von Lesezeichen funktioniert in der gleichen Weise.</para>
 
-        <para>Auch k??nnen Sie mit der <mousebutton>rechten Maustaste</mousebutton> auf 
-Ordner und Lesezeichen klicken, um ihre Namen und Beschreibungen zu ??ndern.</para>
+        <para>Auch können Sie mit der <mousebutton>rechten Maustaste</mousebutton> auf 
+Ordner und Lesezeichen klicken, um ihre Namen und Beschreibungen zu ändern.</para>
       </sect3>
     </sect2>
 
@@ -111,40 +109,40 @@ Ordner und Lesezeichen klicken, um ihre Namen und Beschreibungen zu ??ndern.</pa
       <title>Die Lupe</title>
 
       <para>Diese kleine Fenster in der linken unteren Ecke von &bibletime; ist rein 
-passiv. Wann immer der Mauspfeil ??ber Text positioniert ist, welcher 
-zus??tzliche Informationen (z.B. Strongnummern) enth??lt, dann werden eben 
+passiv. Wann immer der Mauspfeil über Text positioniert ist, welcher 
+zusätzliche Informationen (z.B. Strongnummern) enthält, dann werden eben 
 diese in der Lupe dargestellt, nicht jedoch der Text selbst. Probieren sie 
 es einfach aus.</para>
     </sect2>
 
     <sect2 id="hdbk-op-parts-desk">
-      <title>Die Arbeitsfl??che</title>
-      <para>Auf der Arbeitsfl??che findet die eigentliche Arbeit mit &bibletime; 
-statt. Hier k??nnen Sie Werke aus dem B??cherregal ??ffnen, sie lesen, darin 
-<link linkend="hdbk-op-search">suchen</link> und sogar ihre pers??nlichen 
-Anmerkungen im pers??nlichen Kommentar speichern (siehe <link 
+      <title>Die Arbeitsfläche</title>
+      <para>Auf der Arbeitsfläche findet die eigentliche Arbeit mit &bibletime; 
+statt. Hier können Sie Werke aus dem Bücherregal öffnen, sie lesen, darin 
+<link linkend="hdbk-op-search">suchen</link> und sogar ihre persönlichen 
+Anmerkungen im persönlichen Kommentar speichern (siehe <link 
 linkend="hdbk-op-parts-desk-write">unten</link>).</para>
 
       <sect3 id="hdbk-op-parts-desk-read">
         <title>Werke lesen</title>
         <para>Wie wir <link linkend="hdbk-op-parts-bookshelf-open">bereits gesehen</link> 
-haben, k??nnen Sie Werke zum Lesen leicht duch Klicken auf ihr Symbol im 
-B??cherregal ??ffnen. Ein Lesefenster wird sich auf der Arbeitsfl??che 
-??ffnen. Jedes Lesefenster hat seine eigene Werkzeugleiste. Dort finden Sie 
+haben, können Sie Werke zum Lesen leicht duch Klicken auf ihr Symbol im 
+Bücherregal öffnen. Ein Lesefenster wird sich auf der Arbeitsfläche 
+öffnen. Jedes Lesefenster hat seine eigene Werkzeugleiste. Dort finden Sie 
 Werkzeuge, um innerhalb des Werkes, auf das sich das Lesefenster bezieht, zu 
-navigieren. Au??erdem finden sich dort Verlaufskn??pfe in der Art, wie Sie 
-sie von Ihrem Browser her gewohnt sind.</para>
+navigieren. Außerdem finden sich dort Verlaufsknöpfe in der Art, wie Sie sie 
+von Ihrem Browser her gewohnt sind.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-desk-placement">
         <title>Lese-Fenster Anordnung</title>
-        <para>Selbstverst??ndlich k??nnen Sie mehrere Werke gleichzeitig ??ffnen. Es gibt 
-verschiedene M??glichkeiten, die Lesefenster auf der Arbeitsfl??che 
-anzuordnen. Schauen Sie sich ruhig mal das <guimenu>Fenster</guimenu>-Men?? 
-im Hauptmen?? an. Dort sehen Sie, dass Sie entweder die Fensteranordnung 
-vollst??ndig selbst kontrollieren oder &bibletime; die automatische 
-Anordnung ??berlassen k??nnen. Um letzteres zu erreichen, w??hlen Sie eines 
-der verf??gbaren automatischen Anordnungsarten in <menuchoice> 
+        <para>Selbstverständlich können Sie mehrere Werke gleichzeitig öffnen. Es gibt 
+verschiedene Möglichkeiten, die Lesefenster auf der Arbeitsfläche 
+anzuordnen. Schauen Sie sich ruhig mal das <guimenu>Fenster</guimenu>-Menü 
+im Hauptmenü an. Dort sehen Sie, dass Sie entweder die Fensteranordnung 
+vollständig selbst kontrollieren oder &bibletime; die automatische Anordnung 
+überlassen können. Um letzteres zu erreichen, wählen Sie eines der 
+verfügbaren automatischen Anordnungsarten in <menuchoice> 
 <guimenu>Fenster</guimenu> <guimenuitem>Anordnungs-Art</guimenuitem> 
 </menuchoice> aus. Probieren Sie's einfach aus, es ist leicht und 
 funktioniert.</para>
@@ -153,30 +151,29 @@ funktioniert.</para>
       <sect3 id="hdbk-op-parts-desk-write">
         <title>Bearbeiten Sie ihren eigenen Kommentar</title>
 
-        <para>Um Ihre eigenen Kommentare ??ber Bibelabschnitte zu speichern, m??ssen Sie 
-ein bestimmtes Werk von der Bibliothek der <ulink 
-url="http://www.crosswire.org">&cbs;</ulink> installieren. Dieses Werk 
-hei??t "Pers??nlicher Kommentar".</para>
+        <para>Um Ihre eigenen Kommentare über Bibelabschnitte zu speichern, müssen Sie ein 
+bestimmtes Werk von der Bibliothek der <ulink 
+url="http://www.crosswire.org">&cbs;</ulink> installieren. Dieses Werk heißt 
+"Persönlicher Kommentar".</para>
 
-        <para>Wenn Sie den pers??nlichen Kommentar durch Klicken auf sein Symbol im 
-B??cherregal mit der <mousebutton>linken Maustaste</mousebutton> ??ffnen, 
-wird dieser im Nur-Lese-Modus ge??ffnet. Es wird Ihnen nicht m??glich sein, 
-ihn in diesem Modus zu editieren. Falls Sie Anmerkungen zu Ihrem 
-pers??nlichen Kommentar hinzuf??gen m??chten, m??ssen Sie diesen mit der 
-<mousebutton>rechten Maustaste</mousebutton> ??ffnen und dann 
-<guimenu>Bearbeiten</guimenu> und dann entweder 
-<guimenuitem>Reintext</guimenuitem> (Quellcode-Editor) oder 
-<guimenuitem>HTML</guimenuitem> (simpler WYSIWYG-GUI-Editor) ausw??hlen.</para>
+        <para>Wenn Sie den persönlichen Kommentar durch Klicken auf sein Symbol im 
+Bücherregal mit der <mousebutton>linken Maustaste</mousebutton> öffnen, wird 
+dieser im Nur-Lese-Modus geöffnet. Es wird Ihnen nicht möglich sein, ihn in 
+diesem Modus zu editieren. Falls Sie Anmerkungen zu Ihrem persönlichen 
+Kommentar hinzufügen möchten, müssen Sie diesen mit der <mousebutton>rechten 
+Maustaste</mousebutton> öffnen und dann <guimenu>Bearbeiten</guimenu> und 
+dann entweder <guimenuitem>Reintext</guimenuitem> (Quellcode-Editor) oder 
+<guimenuitem>HTML</guimenuitem> (simpler WYSIWYG-GUI-Editor) auswählen.</para>
 
         <tip>
           <para>Falls <menuchoice> <guimenu>Bearbeiten</guimenu> </menuchoice> deaktiviert 
-ist, ??berpr??fen Sie, ob sie Schreibberechtigung f??r diese Dateien des 
-pers??nlichen Kommentars besitzen.</para>
+ist, überprüfen Sie, ob sie Schreibberechtigung für diese Dateien des 
+persönlichen Kommentars besitzen.</para>
         </tip>
 
         <tip>
           <para>Hier funktioniert Drag&amp;Drop. Lassen Sie hier einen Versverweis fallen, 
-um den Text des Verses einzuf??gen.</para>
+um den Text des Verses einzufügen.</para>
         </tip>
       </sect3>
     </sect2>
@@ -185,33 +182,33 @@ um den Text des Verses einzuf??gen.</para>
     <title>In Werken suchen</title>
 
     <sect2 id="hdbk-op-search-intext">
-      <title>Nach Text in einem ge??ffneten Lesefenster suchen</title>
-      <para>Sie k??nnen nach einem Wort oder Ausdruck im offenen Lesefenster (z.B. in 
-dem Bibel-Kapitel, das Sie gerade lesen) suchen, ganz wie Sie es von anderen 
+      <title>Nach Text in einem geöffneten Lesefenster suchen</title>
+      <para>Sie können nach einem Wort oder Ausdruck im offenen Lesefenster (z.B. in dem 
+Bibel-Kapitel, das Sie gerade lesen) suchen, ganz wie Sie es von anderen 
 Programmen her gewohnt sind. Diese Funktion kann entweder durch Klicken mit 
 der <mousebutton>rechten Maustaste</mousebutton> und Auswahl von 
 <guimenuitem>Finden...</guimenuitem>, oder durch Anwenden des Kurzbefehls 
 <keycombo action="simul"> <keycap>&Ctrl;F</keycap></keycombo> erreicht 
 werden. Lesen Sie weiter, um zu erfahren, wie Sie in ganzen Werken suchen 
-k??nnen.</para>
+können.</para>
     </sect2>
 
     <sect2 id="hdbk-op-search-access">
       <title>Auf den Suchdialog zugreifen</title>
-      <para>Sie k??nnen in einem Werk suchen, indem Sie mit der <mousebutton>rechten 
-Maustaste</mousebutton> auf das Symbol im <guimenu>B??cherregal</guimenu> 
-klicken und <guimenuitem>Suche in...</guimenuitem> ausw??hlen. Indem Sie 
-&Shift; oder &Ctrl; gedr??ckt halten und auf Namen anderer Werke klicken, 
-ist eine Auswahl mehrerer Werke m??glich. Befolgen Sie denselben Ablauf, um 
-den Suchdialog zu ??ffnen. Sie werden dann in jedem dieser Werke 
-gleichzeitig suchen.</para>
+      <para>Sie können in einem Werk suchen, indem Sie mit der <mousebutton>rechten 
+Maustaste</mousebutton> auf das Symbol im <guimenu>Bücherregal</guimenu> 
+klicken und <guimenuitem>Suche in...</guimenuitem> auswählen. Indem Sie 
+&Shift; oder &Ctrl; gedrückt halten und auf Namen anderer Werke klicken, ist 
+eine Auswahl mehrerer Werke möglich. Befolgen Sie denselben Ablauf, um den 
+Suchdialog zu öffnen. Sie werden dann in jedem dieser Werke gleichzeitig 
+suchen.</para>
 
-      <para>Sie erreichen den Suchdialog au??erdem, indem Sie auf <menuchoice> 
-<guimenu>Suche</guimenu> </menuchoice> im Hauptmen?? klicken und den 
-entsprechenden Eintrag ausw??hlen.</para>
+      <para>Sie erreichen den Suchdialog außerdem, indem Sie auf <menuchoice> 
+<guimenu>Suche</guimenu> </menuchoice> im Hauptmenü klicken und den 
+entsprechenden Eintrag auswählen.</para>
 
-      <para>Eine dritte M??glichkeit, Suchen zu starten, ist, auf das Suchsymbol in 
-einem offenen Lesefenster zu klicken.</para>
+      <para>Eine dritte Möglichkeit, Suchen zu starten, ist, auf das Suchsymbol in einem 
+offenen Lesefenster zu klicken.</para>
     </sect2>
 
     <sect2 id="hdbk-op-search-config">
@@ -225,43 +222,43 @@ einem offenen Lesefenster zu klicken.</para>
         </mediaobject>
       </screenshot>
       <sect3 id="hdbk-op-search-config-works">
-        <title>Werke ausw??hlen</title>
+        <title>Werke auswählen</title>
         <para>Oben im Optionen-Reiter finden Sie 
-<guibutton>Ausw??hlen...</guibutton>. Falls Sie in mehreren Werken suchen 
-m??chten, klicken Sie auf diesen Knopf und es wird sich Ihnen ein Men?? 
-auftun, in dem Sie die zu durchsuchenden Werke w??hlen k??nnen.</para>
+<guibutton>Auswählen...</guibutton>. Falls Sie in mehreren Werken suchen 
+möchten, klicken Sie auf diesen Knopf und es wird sich Ihnen ein Menü 
+auftun, in dem Sie die zu durchsuchenden Werke wählen können.</para>
       </sect3>
       <sect3 id="hd-op-search-config-scope">
         <title>Suchbereiche verwenden</title>
-        <para>Sie k??nnen nun den Suchbereich auf bestimmte Bibelabschnitte eingrenzen, 
+        <para>Sie können nun den Suchbereich auf bestimmte Bibelabschnitte eingrenzen, 
 indem Sie einen der vordefinierten Suchbereiche aus der Liste 
-<guimenu>Bereich:</guimenu> ausw??hlen. Desweiteren k??nnen Sie Ihre eigenen 
+<guimenu>Bereich:</guimenu> auswählen. Desweiteren können Sie Ihre eigenen 
 Suchbereiche festlegen, indem Sie auf <guibutton>Einrichten...</guibutton> 
 klicken.</para>
       </sect3>
 
       <sect3 id="hd-op-search-config-syntax">
-        <title>Grundlegende Einf??hrung in die Suchsyntax</title>
+        <title>Grundlegende Einführung in die Suchsyntax</title>
 
-        <para>Geben Sie den zu suchenden Text separiert mit Leerzeichen 
-ein. Standardm????ig wird die Suchfunktion Ergebnisse zur??ckliefern, die 
-auf alle W??rter zutreffen. Wenn Sie irgend eines der eingegebenen W??rter 
-finden m??chten, w??hlen Sie den <guimenu>Einige W??rter</guimenu>-Knopf 
-aus. Falls Sie eine komplexere Suche beabsichtigen, selektieren Sie den 
-<guimenu>Frei</guimenu>-Knopf. Sie k??nnen Syntax-Beispiele von Suchanfragen 
-durch Klicken auf <guimenu>Vollst??ndige Syntax</guimenu> sehen.
+        <para>Geben Sie den zu suchenden Text separiert mit Leerzeichen ein. Standardmäßig 
+wird die Suchfunktion Ergebnisse zurückliefern, die auf alle Wörter 
+zutreffen. Wenn Sie irgend eines der eingegebenen Wörter finden möchten, 
+wählen Sie den <guimenu>Einige Wörter</guimenu>-Knopf aus. Falls Sie eine 
+komplexere Suche beabsichtigen, selektieren Sie den 
+<guimenu>Frei</guimenu>-Knopf. Sie können Syntax-Beispiele von Suchanfragen 
+durch Klicken auf <guimenu>Vollständige Syntax</guimenu> sehen.
 	  </para>
 
-        <para>Sie k??nnen Platzhalter verwenden. '*' steht f??r jede Anzahl von Zeichen, 
-w??hrend '?' auf jedes einzelne Zeichen zutrifft. Das Benutzen von Klammern 
+        <para>Sie können Platzhalter verwenden. '*' steht für jede Anzahl von Zeichen, 
+während '?' auf jedes einzelne Zeichen zutrifft. Das Benutzen von Klammern 
 erlaubt Ihnen das Gruppieren der Suchbegriffe, z.B. '(Jesus OR Geist) AND 
 Gott'.</para>
 
-        <para>Um Text au??erhalb des Haupttextes zu finden, geben Sie die Textart gefolgt 
+        <para>Um Text außerhalb des Haupttextes zu finden, geben Sie die Textart gefolgt 
 von einem ':' und dem Suchbegriff ein. Beispiele sind in der unteren Tabelle 
-aufgef??hrt.</para>
+aufgeführt.</para>
 
-        <para>Verf??gbare Textarten: 
+        <para>Verfügbare Textarten: 
         <table id="hd-op-search-config-syntax-table">
 	  <title>Sucharten</title>
           <tgroup cols="3">
@@ -269,7 +266,7 @@ aufgef??hrt.</para>
               <row>
 		<?dbhtml bgcolor="#EEEEEE" ?>
 		<?dbfo bgcolor="#EEEEEE" ?>
-                <entry>Pr??fix</entry>
+                <entry>Präfix</entry>
                 <entry>Bedeutung</entry>
 		<entry>Beispiel</entry>
               </row>
@@ -282,7 +279,7 @@ aufgef??hrt.</para>
               </row>
               <row>
                 <entry>footnote:</entry>
-                <entry>durchsucht Fu??noten</entry>
+                <entry>durchsucht Fußnoten</entry>
 		<entry>footnote:Moses</entry>
               </row>
               <row>
@@ -300,31 +297,31 @@ aufgef??hrt.</para>
         </table></para>
 
 	<tip>
-	  <para>Sie k??nnen mit der rechten Maustaste auf ein installiertes Werk klicken und 
-<guimenu>??ber...</guimenu> ausw??hlen, um zu sehen, welche der oben 
-genannten Suchkriterien f??r Sie zutreffen. Nicht alle Werke haben die 
-eingebauten Eigenschaften um diese Art von Suche durchzuf??hren.</para>
+	  <para>Sie können mit der rechten Maustaste auf ein installiertes Werk klicken und 
+<guimenu>Über...</guimenu> auswählen, um zu sehen, welche der oben genannten 
+Suchkriterien für Sie zutreffen. Nicht alle Werke haben die eingebauten 
+Eigenschaften um diese Art von Suche durchzuführen.</para>
 	</tip>
 
         <para>&bibletime; benutzt die Lucene Suchmaschine, um Ihre Suchanfragen 
-auszuf??hren. Sie hat viele erweiterte Funktionen, Sie k??nnen hier mehr 
-??ber Sie lesen: <ulink url="http://lucene.apache.org/java/docs/index.html"> 
+auszuführen. Sie hat viele erweiterte Funktionen, Sie können hier mehr über 
+Sie lesen: <ulink url="http://lucene.apache.org/java/docs/index.html"> 
 http://lucene.apache.org/java/docs/index.html</ulink>.</para>
       </sect3>
     </sect2>
 
     <sect2 id="hdbk-op-search-results">
       <title>Suchergebnisse</title>
-      <para>Hier k??nnen Sie erkennen, wieviele Instanzen des Suchstrings gefunden 
+      <para>Hier können Sie erkennen, wieviele Instanzen des Suchstrings gefunden 
 wurden, nach Werken sortiert. Das Klicken mit der <mousebutton>rechten 
 Maustaste</mousebutton> erlaubt Ihnen alle in einem bestimmten Werk 
 gefundenen Verse auf einmal zu kopieren, zu speichern oder zu drucken. Dies 
 funktioniert auch, wenn Sie auf einen oder mehrere der Verweise klicken, um 
 sie zu kopieren, zu speichern oder zu drucken. Das Klicken auf einen 
-bestimmten Verweis ??ffnet ihn mit Kontext unterhalb im Vorschaufenster.</para>
+bestimmten Verweis öffnet ihn mit Kontext unterhalb im Vorschaufenster.</para>
       <tip>
-        <para>Ziehen Sie einen Versverweis zum B??cherregal und lassen Sie ihn auf einem 
-Werkssymbol los, so ??ffnet sich das Werk an der Stelle in einem neuen 
+        <para>Ziehen Sie einen Versverweis zum Bücherregal und lassen Sie ihn auf einem 
+Werkssymbol los, so öffnet sich das Werk an der Stelle in einem neuen 
 Lesefenster, auf die der Verweis zeigt.</para>
       </tip>
       <tip>
@@ -332,14 +329,14 @@ Lesefenster, auf die der Verweis zeigt.</para>
 dann los, wird zu dieser Stelle gesprungen.</para>
       </tip>
       <tip>
-        <para>W??hlen Sie Verweise und ziehen Sie sie zum B??cherregal, um Lesezeichen zu 
+        <para>Wählen Sie Verweise und ziehen Sie sie zum Bücherregal, um Lesezeichen zu 
 erstellen.</para>
       </tip>
       <sect3 id="hdbk-op-search-analysis">
         <title>Suchergebnisse analysieren</title>
         <para>Klicken Sie auf <guibutton>Ergebnisse analysieren...</guibutton>, um die 
-Anzeige der Suchergebnis-Analyse zu ??ffnen. Sie zeigt eine einfache 
-graphische Analyse des Auftretens in jedem Buch der Bibel. Auch k??nnen Sie 
+Anzeige der Suchergebnis-Analyse zu öffnen. Sie zeigt eine einfache 
+graphische Analyse des Auftretens in jedem Buch der Bibel. Auch können Sie 
 die Analyse abspeichern.</para>
         <screenshot>
           <screeninfo>Suchanalyse Dialogbox</screeninfo>
@@ -354,35 +351,34 @@ die Analyse abspeichern.</para>
   </sect1>
 
   <sect1 id="hdbk-op-bookshelfmanager">
-    <title>Der <guimenuitem>B??cherregal Verwalter</guimenuitem></title>
+    <title>Der <guimenuitem>Bücherregal Verwalter</guimenuitem></title>
 
-    <para>Die <guimenuitem>B??cherregal-Verwaltung</guimenuitem> ist ein Werkzeug, das 
-Ihnen die Verwaltung des B??cherregals erm??glicht. Sie k??nnen neue Werke 
-zu Ihrem B??cherregal hinzuf??gen oder existierende Werke aktualisieren oder 
-Sie aus dem B??cherregal entfernen. Greifen Sie darauf zu, indem Sie auf 
+    <para>Die <guimenuitem>Bücherregal-Verwaltung</guimenuitem> ist ein Werkzeug, das 
+Ihnen die Verwaltung des Bücherregals ermöglicht. Sie können neue Werke zu 
+Ihrem Bücherregal hinzufügen oder existierende Werke aktualisieren oder Sie 
+aus dem Bücherregal entfernen. Greifen Sie darauf zu, indem Sie auf 
 <menuchoice> <guimenu>Einstellungen</guimenu> 
-<guimenuitem>B??cherregal-Verwaltung</guimenuitem> </menuchoice> im 
-Hauptmen?? klicken.</para>
+<guimenuitem>Bücherregal-Verwaltung</guimenuitem> </menuchoice> im Hauptmenü 
+klicken.</para>
 
       <tip>
 	<para>Wenn Sie &bibletime; zum ersten Mal starten, klicken Sie auf die 
-Schaltfl??che Auffrischen..., um eine Liste der von der &cbs; zur Verf??gung 
+Schaltfläche Auffrischen..., um eine Liste der von der &cbs; zur Verfügung 
 gestellten Werke einzusehen.</para>
       </tip>
 
     <sect2 id="hdbk-op-bookshelfmanager-path">
-      <title>B??cherregal-Pfade einrichten</title>
+      <title>Bücherregal-Pfade einrichten</title>
 
-      <para>Hier k??nnen Sie festlegen, wo &bibletime; Ihr B??cherregal auf der 
-Festplatte abspeichern soll. Sie k??nnen es sogar in verschiedenen 
-Verzeichnissen speichern. Die Voreinstellung ist "~/.sword/" auf *nix und 
-"C:\Dokumente und Einstellungen\Alle Benutzer\Anwendungsdaten\Sword" f??r 
-Windows.</para>
+      <para>Hier können Sie festlegen, wo &bibletime; Ihr Bücherregal auf der Festplatte 
+abspeichern soll. Sie können es sogar in verschiedenen Verzeichnissen 
+speichern. Die Voreinstellung ist "~/.sword/" auf *nix und "C:\Dokumente und 
+Einstellungen\Alle Benutzer\Anwendungsdaten\Sword" für Windows.</para>
 
       <tip>
         <para>Wenn Sie eine Sword-CD besitzen aber nicht alle Werke auf die Festplatte 
-installieren wollen und sie direkt von der CD nutzen wollen, so k??nnen Sie 
-den Pfad der CD als einen Ihrer B??cherregal-Pfade hinzuf??gen. Wenn Sie 
+installieren wollen und sie direkt von der CD nutzen wollen, so können Sie 
+den Pfad der CD als einen Ihrer Bücherregal-Pfade hinzufügen. Wenn Sie 
 &bibletime; starten, wird es alle Werke auf der CD anzeigen, wenn sie 
 eingelegt ist.</para>
       </tip>
@@ -391,41 +387,40 @@ eingelegt ist.</para>
     <sect2 id="hdbk-op-bookshelfmanager-installupdate">
       <title>Werke installieren/updaten</title>
 
-      <para>Mit dieser Einrichtung k??nnen Sie sich mit einer Sammlung von Werken 
+      <para>Mit dieser Einrichtung können Sie sich mit einer Sammlung von Werken 
 (genannt "Bibliothek") in Verbindung setzen und ein oder mehrere Werke zu 
-Ihrem lokalen B??cherregal ??bertragen. Diese Bibliotheken k??nnen lokal 
-sein (z.B. eine &sword;-CD) oder ferngelegen (z.B. Crosswire's 
-Online-Repository der &sword;-Module, oder eine andere Site, die 
-&sword;-Module anbietet). Installieren Sie andere Quellen durch Bet??tigen 
-des Knopfes <guibutton>Liste holen...</guibutton> im ge??ffneten Dialog 
-<guibutton>Neue Installationsquelle</guibutton>. Sie k??nnen Ihre 
-Bibliotheken mit <guibutton>Hinzuf??gen...</guibutton> und 
-<guibutton>L??schen...</guibutton> verwalten.</para>
+Ihrem lokalen Bücherregal übertragen. Diese Bibliotheken können lokal sein 
+(z.B. eine &sword;-CD) oder ferngelegen (z.B. Crosswire's Online-Repository 
+der &sword;-Module, oder eine andere Site, die &sword;-Module 
+anbietet). Installieren Sie andere Quellen durch Betätigen des Knopfes 
+<guibutton>Liste holen...</guibutton> im geöffneten Dialog <guibutton>Neue 
+Installationsquelle</guibutton>. Sie können Ihre Bibliotheken mit 
+<guibutton>Hinzufügen...</guibutton> und <guibutton>Löschen...</guibutton> 
+verwalten.</para>
 
       <para>Um den Installations- oder Aktualisierungsvorgang zu starten, suchen Sie 
 eine Bibliothek aus, mit der Sie sich verbinden wollen und einen lokalen 
-B??cherregal-Pfad, wohin die Werke installiert werden sollen. Dann klicken 
+Bücherregal-Pfad, wohin die Werke installiert werden sollen. Dann klicken 
 Sie auf <guibutton>Auffrischen...</guibutton>. &bibletime; wird den Inhalt 
 der Bibliothek scannen und Ihnen eine Liste mit Werken anzeigen, die Sie 
-Ihrem B??cherregal hinzuf??gen k??nnen oder die Sie schon installiert haben, 
+Ihrem Bücherregal hinzufügen können oder die Sie schon installiert haben, 
 die aber in einer aktuelleren Version in der Bibliothek vorliegen und 
-aktualisiert werden k??nnen. Sie k??nnen dann alle Werke, die Sie 
-installieren oder aktualisieren wollen markieren und anschlie??end auf 
+aktualisiert werden können. Sie können dann alle Werke, die Sie installieren 
+oder aktualisieren wollen markieren und anschließend auf 
 <guibutton>Installieren...</guibutton> klicken. Sie werden dann zu Ihrem 
-B??cherregal ??bertragen.</para>
+Bücherregal übertragen.</para>
     </sect2>
 
     <sect2 id="hdbk-op-bookshelfmanager-remove">
       <title>Werk(e) entfernen</title>
       <para>Diese Einrichtung erlaubt Ihnen, eines oder mehrere Werke aus Ihrem 
-B??cherregal zu entfernen, um Plattenspeicherplatz zu gewinnen. Markieren 
-Sei einfach die Posten und klicken Sie auf 
-<guibutton>Entfernen...</guibutton>.</para>
+Bücherregal zu entfernen, um Plattenspeicherplatz zu gewinnen. Markieren Sei 
+einfach die Posten und klicken Sie auf <guibutton>Entfernen...</guibutton>.</para>
     </sect2>
     <sect2 id="hdbk-op-bookshelfmanager-searchindexes">
       <title>Suchindizes</title>
       <para>Diese Option erlaubt Ihnen, neue Suchindizes zu erstellen und verwaiste 
-Suchindizes entfernter Werke aufzur??umen.</para>
+Suchindizes entfernter Werke aufzuräumen.</para>
       <tip>
 	If you are having problems with your search function, visit
 	this feature.
@@ -434,9 +429,9 @@ Suchindizes entfernter Werke aufzur??umen.</para>
   </sect1>
   <sect1 id="hdbk-op-output">
     <title>Exortieren und Drucken</title>
-    <para>An vielen Stellen k??nnen Sie ein Kontextmen?? durch Klicken mit der 
-<mousebutton>rechten Maustaste</mousebutton> ??ffnen. Abh??ngig vom Kontext 
-wird es Ihnen erm??glichen, Text mit <guimenuitem>Ausw??hlen</guimenuitem>, 
+    <para>An vielen Stellen können Sie ein Kontextmenü durch Klicken mit der 
+<mousebutton>rechten Maustaste</mousebutton> öffnen. Abhängig vom Kontext 
+wird es Ihnen ermöglichen, Text mit <guimenuitem>Auswählen</guimenuitem>, 
 <guimenuitem>Kopieren</guimenuitem> (zur Zwischenablage), 
 <guimenuitem>Speichern</guimenuitem> oder <guimenuitem>Drucken</guimenuitem> 
 zu verarbeiten. Dies funktioniert beispielsweise in den Lesefenstern, wenn 
@@ -446,9 +441,9 @@ Versreferenzen klicken. Es ist ziemlich unkompliziert, versuchen Sie's
 einfach mal.</para>
 
     <para>Das Drucken in &bibletime; ist relativ primitiv und als Hilfsmittel 
-gedacht. Wenn Sie ein Dokument oder eine Pr??sentation erstellen, die Text 
-aus &bibletime;-Werken enth??lt, empfehlen wir Ihnen, eines der Programme 
-f??r Pr??sentationen oder zum Editieren auf Ihrem System zu verwenden, um 
-Ihr Dokument zu formatieren, anstatt von &bibletime; aus direkt zu drucken.</para>
+gedacht. Wenn Sie ein Dokument oder eine Präsentation erstellen, die Text 
+aus &bibletime;-Werken enthält, empfehlen wir Ihnen, eines der Programme für 
+Präsentationen oder zum Editieren auf Ihrem System zu verwenden, um Ihr 
+Dokument zu formatieren, anstatt von &bibletime; aus direkt zu drucken.</para>
   </sect1>
 </chapter>

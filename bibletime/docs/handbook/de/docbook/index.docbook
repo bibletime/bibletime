@@ -58,11 +58,11 @@ ausgeliefert.</para>
 
   <abstract>
     <para>&bibletime; ist ein absolut freies Bibelarbeits-Programm. Seine 
-Benutzeroberfl??che ist mit dem &qt;-Rahmenwerk erstellt, das es auf 
-mehreren Betriebssystemen lauff??hig macht, darunter Linux, Windows, FreeBSD 
-und Mac OS X. Die Software nutzt die &sword;-Programmierbibliothek, um mit 
-??ber 200 freien Bibeltexten, Kommentaren, W??rterb??chern und B??chern zu 
-laufen, die von der &cbs; zur Verf??gung gestellt werden.</para>
+Benutzeroberfläche ist mit dem &qt;-Rahmenwerk erstellt, das es auf mehreren 
+Betriebssystemen lauffähig macht, darunter Linux, Windows, FreeBSD und Mac 
+OS X. Die Software nutzt die &sword;-Programmierbibliothek, um mit über 200 
+freien Bibeltexten, Kommentaren, Wörterbüchern und Büchern zu laufen, die 
+von der &cbs; zur Verfügung gestellt werden.</para>
   </abstract>
 
   <keywordset>

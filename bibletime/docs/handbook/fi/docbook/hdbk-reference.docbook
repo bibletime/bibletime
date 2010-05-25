@@ -424,18 +424,14 @@ works</link> section.</para>
           </term>
 
           <listitem>
-            <para>
-            <action>Controls the basic window arrangement behaviour</action>. In the 
+            <para><action>Controls the basic window arrangement behaviour</action>. In the 
 opening context menu, you can either specify that you want to take care of 
-the window arrangement yourself (Manual mode) or have &bibletime; handle it 
-for you (Automatic modes, just try them out!).</para>
+the window arrangement yourself (Manual mode), Tabbed, Auto-tile vertically, 
+Auto-tile horizontally, Auto-tile or Auto-cascade.  Just try them out!</para>
           </listitem>
         </varlistentry>
 
-
-
-        <!--- TODO add submenu items here -->
-<varlistentry id="hdbk-reference-menus-window-savesession">
+        <varlistentry id="hdbk-reference-menus-window-savesession">
           <term>
             <menuchoice>
               <guimenu> Window</guimenu>

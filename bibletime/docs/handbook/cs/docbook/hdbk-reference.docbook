@@ -423,18 +423,14 @@ linkend="hdbk-op-search">Vyhledávání v dílech</link>.</para>
           </term>
 
           <listitem>
-            <para>
-            <action>Ovládá chování jednoduchého rozvržení oken</action>. V otevřeném 
-kontextovém menu můžete zvolit, že se chcete o rozvržení oken starat osobně 
-(Ruční mód) nebo použít připravené možnosti &bibletime; (Automatické módy, 
-tak je vyzkoušejte!)</para>
+            <para><action>Controls the basic window arrangement behaviour</action>. In the 
+opening context menu, you can either specify that you want to take care of 
+the window arrangement yourself (Manual mode), Tabbed, Auto-tile vertically, 
+Auto-tile horizontally, Auto-tile or Auto-cascade.  Just try them out!</para>
           </listitem>
         </varlistentry>
 
-
-
-        <!--- TODO add submenu items here -->
-<varlistentry id="hdbk-reference-menus-window-savesession">
+        <varlistentry id="hdbk-reference-menus-window-savesession">
           <term>
             <menuchoice>
               <guimenu> Window</guimenu>

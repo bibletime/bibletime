@@ -425,18 +425,14 @@ abertas</action>.
           </term>
 
           <listitem>
-            <para>
-            <action>Controla o comportamento de posicionamento das janelas</action>. No 
-menu de contexto que se abre, você pode especificar se quer cuidar do 
-posicionamento você mesmo (modo Manual) ou deixar que o &bibletime; cuide 
-para você (modos Automáticos, experimente).</para>
+            <para><action>Controls the basic window arrangement behaviour</action>. In the 
+opening context menu, you can either specify that you want to take care of 
+the window arrangement yourself (Manual mode), Tabbed, Auto-tile vertically, 
+Auto-tile horizontally, Auto-tile or Auto-cascade.  Just try them out!</para>
           </listitem>
         </varlistentry>
 
-
-
-        <!--- TODO add submenu items here -->
-<varlistentry id="hdbk-reference-menus-window-savesession">
+        <varlistentry id="hdbk-reference-menus-window-savesession">
           <term>
             <menuchoice>
               <guimenu> Window</guimenu>

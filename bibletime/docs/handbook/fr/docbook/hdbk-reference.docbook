@@ -424,18 +424,14 @@ works</link> section.</para>
           </term>
 
           <listitem>
-            <para>
-            <action>Controls the basic window arrangement behaviour</action>. In the 
+            <para><action>Controls the basic window arrangement behaviour</action>. In the 
 opening context menu, you can either specify that you want to take care of 
-the window arrangement yourself (Manual mode) or have &bibletime; handle it 
-for you (Automatic modes, just try them out!).</para>
+the window arrangement yourself (Manual mode), Tabbed, Auto-tile vertically, 
+Auto-tile horizontally, Auto-tile or Auto-cascade.  Just try them out!</para>
           </listitem>
         </varlistentry>
 
-
-
-        <!--- TODO add submenu items here -->
-<varlistentry id="hdbk-reference-menus-window-savesession">
+        <varlistentry id="hdbk-reference-menus-window-savesession">
           <term>
             <menuchoice>
               <guimenu> Window</guimenu>
@@ -704,7 +700,7 @@ works.
 
             <listitem>
               <para>
-		Select an installed bible.
+		Sélectionnez une bible installé.
               </para>
             </listitem>
           </varlistentry>
@@ -727,7 +723,7 @@ works.
 
             <listitem>
               <para>
-		Select an additional bible.
+		électionnez une bible supplémentaires.
               </para>
             </listitem>
           </varlistentry>
@@ -796,7 +792,7 @@ works.
 
             <listitem>
               <para>
-		Select an installed commentary.
+		Sélectionnez un commentaire installé.
               </para>
             </listitem>
           </varlistentry>
@@ -842,7 +838,7 @@ works.
 
             <listitem>
               <para>
-		Synchronize displayed entry with active Bible window.
+		Synchroniser s'affiche entrée avec la Bible fenêtre active.
               </para>
             </listitem>
           </varlistentry>
@@ -888,7 +884,7 @@ works.
 
             <listitem>
               <para>
-		Select an installed glossary or devotional.
+		Sélectionnez un glossaire installé ou de dévotion.
               </para>
             </listitem>
           </varlistentry>
@@ -911,7 +907,7 @@ works.
 
             <listitem>
               <para>
-		Select an additional glossary or devotional.
+		Sélectionnez un glossaire supplémentaires ou de dévotion.
               </para>
             </listitem>
           </varlistentry>
