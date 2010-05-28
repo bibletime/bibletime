@@ -92,7 +92,7 @@ void CBookmarkIndex::initView() {
     m_actions.newFolder = newQAction(tr("New folder"), CResMgr::mainIndex::newFolder::icon, 0, this, SLOT(createNewFolder()), this);
     m_actions.changeFolder = newQAction(tr("Rename folder"), CResMgr::mainIndex::changeFolder::icon, 0, this, SLOT(changeFolder()), this);
 
-    m_actions.changeBookmark = newQAction(tr("Change bookmark description..."), CResMgr::mainIndex::changeBookmark::icon, 0, this, SLOT(changeBookmark()), this);
+    m_actions.changeBookmark = newQAction(tr("Edit bookmark..."), CResMgr::mainIndex::changeBookmark::icon, 0, this, SLOT(changeBookmark()), this);
     m_actions.importBookmarks = newQAction(tr("Import to folder..."), CResMgr::mainIndex::importBookmarks::icon, 0, this, SLOT(importBookmarks()), this);
     m_actions.exportBookmarks = newQAction(tr("Export from folder..."), CResMgr::mainIndex::exportBookmarks::icon, 0, this, SLOT(exportBookmarks()), this);
     m_actions.printBookmarks = newQAction(tr("Print bookmarks..."), CResMgr::mainIndex::printBookmarks::icon, 0, this, SLOT(printBookmarks()), this);
@@ -452,8 +452,9 @@ void CBookmarkIndex::createBookmarkFromDrop(QDropEvent* event, QTreeWidgetItem* 
         QString keyText = mdata->bookmark().key();
         QString description = mdata->bookmark().description();
         CSwordModuleInfo* minfo = CPointers::backend()->findModuleByName(moduleName);
+	QString title;  // TODO
 
-        QTreeWidgetItem* newItem = new BtBookmarkItem(minfo, keyText, description);
+        QTreeWidgetItem* newItem = new BtBookmarkItem(minfo, keyText, description, title);
         //  connect(newItem, SIGNAL(bookmarkModified()), this, SLOT(needToSaveBookmarks()) );
         parentItem->insertChild(indexInParent, newItem);
 

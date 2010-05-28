@@ -1,3 +1,6 @@
+2010-05-27 Gary Holmlund <gary.holmlund@gmail.com>
+    * Add editing of bookmark title, see bookmark right context menu "Edit bookmark"
+
 2010-05-25 Martin Gruner <mgruner@crosswire.org>
     * Changed BibleTime to require QT 4.5, but no boost any more.
 

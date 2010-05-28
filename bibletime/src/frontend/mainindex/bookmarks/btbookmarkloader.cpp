@@ -91,6 +91,9 @@ QTreeWidgetItem* BtBookmarkLoader::handleXmlElement(QDomElement& element, QTreeW
         if (element.hasAttribute("description")) {
             newBookmarkItem->m_description = element.attribute("description");
         }
+        if (element.hasAttribute("title")) {
+            newBookmarkItem->m_title = element.attribute("title");
+        }
         newBookmarkItem->update();
         newItem = newBookmarkItem;
     }
@@ -166,7 +169,9 @@ void BtBookmarkLoader::saveItem(QTreeWidgetItem* item, QDomElement& parentElemen
         elem.setAttribute("description", bookmarkItem->description());
         elem.setAttribute("modulename", bookmarkItem->m_moduleName);
         elem.setAttribute("moduledescription", bookmarkItem->module() ? bookmarkItem->module()->config(CSwordModuleInfo::Description) : QString::null);
-
+	if ( ! bookmarkItem->title().isEmpty()) {
+	  elem.setAttribute("title", bookmarkItem->m_title);
+	}
         parentElement.appendChild(elem);
     }
 }

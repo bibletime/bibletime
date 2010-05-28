@@ -128,7 +128,6 @@ SET(bibletime_SRC_FRONTEND
 	src/frontend/cdragdrop.cpp
 	src/frontend/cexportmanager.cpp
 	src/frontend/cinfodisplay.cpp
-	src/frontend/cinputdialog.cpp
 	src/frontend/cmdiarea.cpp
 	src/frontend/cmoduleindexdialog.cpp
 	src/frontend/cprinter.cpp
@@ -183,6 +182,7 @@ SET(bibletime_SRC_FRONTEND_MAININDEX_BOOKMARKS
 	src/frontend/mainindex/bookmarks/btbookmarkitem.cpp
 	src/frontend/mainindex/bookmarks/btbookmarkitembase.cpp
 	src/frontend/mainindex/bookmarks/btbookmarkloader.cpp
+	src/frontend/mainindex/bookmarks/bteditbookmarkdialog.cpp
 	src/frontend/mainindex/bookmarks/cbookmarkindex.cpp
 )
 
@@ -337,7 +337,6 @@ SET(bibletime_MOCABLE_HEADERS
 	src/frontend/btopenworkaction.h
 	src/frontend/cdragdrop.h
 	src/frontend/cinfodisplay.h
-	src/frontend/cinputdialog.h
 	src/frontend/cmdiarea.h
 	src/frontend/cmoduleindexdialog.h
 	src/frontend/cprinter.h
@@ -376,6 +375,7 @@ SET(bibletime_MOCABLE_HEADERS
 	src/frontend/keychooser/versekeychooser/btversekeymenu.h
 	src/frontend/keychooser/versekeychooser/cbiblekeychooser.h
 	src/frontend/keychooser/versekeychooser/ckeyreferencewidget.h
+	src/frontend/mainindex/bookmarks/bteditbookmarkdialog.h
 	src/frontend/mainindex/bookmarks/cbookmarkindex.h
 	src/frontend/searchdialog/analysis/csearchanalysisdialog.h
 	src/frontend/searchdialog/analysis/csearchanalysisscene.h

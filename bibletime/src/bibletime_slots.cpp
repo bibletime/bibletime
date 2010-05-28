@@ -25,7 +25,6 @@
 #include "backend/keys/cswordversekey.h"
 #include "frontend/btaboutdialog.h"
 #include "frontend/cinfodisplay.h"
-#include "frontend/cinputdialog.h"
 #include "frontend/cmdiarea.h"
 #include "frontend/bookshelfmanager/btmodulemanagerdialog.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"

@@ -26,7 +26,7 @@ class BtBookmarkItem : public BtBookmarkItemBase {
 
         /** Creates a bookmark with module, key and description. */
         BtBookmarkItem(const CSwordModuleInfo *module, const QString &key,
-                       const QString &description);
+                       const QString &description, const QString &title);
 
         /** Creates a copy. */
         BtBookmarkItem(const BtBookmarkItem& other);
@@ -42,6 +42,11 @@ class BtBookmarkItem : public BtBookmarkItemBase {
         /** Returns the used description. */
         inline const QString &description() const {
             return m_description;
+        }
+
+        /** Returns the title. */
+        inline const QString &title() const {
+            return m_title;
         }
 
         /** Returns a tooltip for this bookmark. */
@@ -65,6 +70,7 @@ class BtBookmarkItem : public BtBookmarkItemBase {
         QString m_key;
         QString m_description;
         QString m_moduleName;
+	QString m_title;
 };
 
 #endif

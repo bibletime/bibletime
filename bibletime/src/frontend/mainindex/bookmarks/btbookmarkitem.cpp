@@ -14,7 +14,7 @@
 #include "backend/config/cbtconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/keys/cswordversekey.h"
-#include "frontend/cinputdialog.h"
+#include "bteditbookmarkdialog.h"
 #include "frontend/mainindex/bookmarks/btbookmarkfolder.h"
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
@@ -22,9 +22,10 @@
 
 
 BtBookmarkItem::BtBookmarkItem(const CSwordModuleInfo *module, const QString &key,
-                               const QString &description)
+                               const QString &description, const QString &title)
         : m_description(description),
-        m_moduleName(module ? module->name() : QString::null) {
+        m_moduleName(module ? module->name() : QString::null),
+        m_title(title) {
     if (((module && (module->type() == CSwordModuleInfo::Bible)) || (module->type() == CSwordModuleInfo::Commentary))  ) {
         CSwordVerseKey vk(0);
         vk.key(key);
@@ -45,7 +46,8 @@ BtBookmarkItem::BtBookmarkItem(const BtBookmarkItem& other)
         : BtBookmarkItemBase(0),
         m_key(other.m_key),
         m_description(other.m_description),
-        m_moduleName(other.m_moduleName) {
+        m_moduleName(other.m_moduleName),
+        m_title(other.m_title) {
     update();
 }
 
@@ -90,17 +92,19 @@ QString BtBookmarkItem::toolTip() const {
                                            (lang);
 
     Q_ASSERT(k.data());
-    if (fontPair.first) { //use a special font
-        ret = QString::fromLatin1("<b>%1 (%2)</b><hr>%3")
-              .arg(key())
-              .arg(module()->name())
+    QString header = QString::fromLatin1("%1 (%2)")
+		      .arg(key())
+		      .arg(module()->name());
+    if (title() != header) {
+        ret = QString::fromLatin1("<b>%1</b><br>%2<hr>%3")
+              .arg(header)
+              .arg(title())
               .arg(description())
               ;
     }
     else {
-        ret = QString::fromLatin1("<b>%1 (%2)</b><hr>%3")
-              .arg(key())
-              .arg(module()->name())
+        ret = QString::fromLatin1("<b>%1</b><hr>%2")
+              .arg(header)
               .arg(description())
               ;
     }
@@ -117,10 +121,13 @@ bool BtBookmarkItem::enableAction(MenuAction action) {
 
 void BtBookmarkItem::rename() {
     bool ok  = false;
-    const QString newDescription = CInputDialog::getText(QObject::tr("Change description ..."), QObject::tr("Enter a new description for the chosen bookmark."), description(), &ok, treeWidget());
+    BtEditBookmarkDialog::getText(QObject::tr("Edit Bookmark"), 
+				  QString::fromLatin1("%1 (%2)").arg(key()).arg(module() ? module()->name() : QObject::tr("unknown")), 
+				  QObject::tr("Edit the title of the bookmark."), &m_title, 
+				  QObject::tr("Edit the description of the bookmark."), &m_description, 
+				  &ok, treeWidget());
 
     if (ok) {
-        m_description = newDescription;
         update();
     }
 }
@@ -131,8 +138,10 @@ void BtBookmarkItem::update() {
     qDebug() << "BtBookmarkItem::update";
     setIcon(0, DU::getIcon(CResMgr::mainIndex::bookmark::icon));
 
-    const QString title = QString::fromLatin1("%1 (%2)").arg(key()).arg(module() ? module()->name() : QObject::tr("unknown"));
-    setText(0, title);
+    if (m_title.isEmpty()) {
+      m_title = QString::fromLatin1("%1 (%2)").arg(key()).arg(module() ? module()->name() : QObject::tr("unknown"));
+    }
+    setText(0,m_title);
     setToolTip(0, toolTip());
 }
 
