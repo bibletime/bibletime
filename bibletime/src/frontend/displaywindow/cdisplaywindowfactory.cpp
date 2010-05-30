@@ -25,20 +25,25 @@
 
 CReadWindow* CDisplayWindowFactory::createReadInstance(QList<CSwordModuleInfo*> modules, CMDIArea* parent) {
     qDebug() << "CDisplayWindowFactory::createReadInstance";
+    CReadWindow* win = 0;
     switch (modules.first()->type()) {
         case CSwordModuleInfo::Bible:
-            return new CBibleReadWindow(modules, parent);
+            win = new CBibleReadWindow(modules, parent);
+	    break;
         case CSwordModuleInfo::Commentary:
-            return new CCommentaryReadWindow(modules, parent);
+            win = new CCommentaryReadWindow(modules, parent);
+	    break;
         case CSwordModuleInfo::Lexicon:
-            return new CLexiconReadWindow(modules, parent);
+            win = new CLexiconReadWindow(modules, parent);
+	    break;
         case CSwordModuleInfo::GenericBook:
-            return new CBookReadWindow(modules, parent);
+            win = new CBookReadWindow(modules, parent);
+	    break;
         default:
             qWarning("unknown module type");
             break;
     }
-    return 0;
+    return win;
 }
 
 CWriteWindow* CDisplayWindowFactory::createWriteInstance(QList<CSwordModuleInfo*> modules, CMDIArea* parent, const CDisplayWindow::WriteWindowType type) {

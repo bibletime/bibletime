@@ -181,10 +181,8 @@ CDisplayWindow* BibleTime::createReadDisplayWindow(QList<CSwordModuleInfo*> modu
     CDisplayWindow* displayWindow = CDisplayWindowFactory::createReadInstance(modules, m_mdi);
     if ( displayWindow ) {
         displayWindow->init();
-        if (m_mdi->subWindowList().count() == 0)
-            displayWindow->showMaximized();
-        else
-            displayWindow->show();
+	m_mdi->addSubWindow(displayWindow); 
+        displayWindow->show();
         //   if (!key.isEmpty())
         displayWindow->lookupKey(key);
     }

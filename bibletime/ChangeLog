@@ -1,3 +1,6 @@
+2010-05-29 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix crash opening first window in manual arrangement mode.
+
 2010-05-27 Gary Holmlund <gary.holmlund@gmail.com>
     * Add editing of bookmark title, see bookmark right context menu "Edit bookmark"
 
