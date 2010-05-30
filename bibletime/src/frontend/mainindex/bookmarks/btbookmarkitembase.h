@@ -25,7 +25,9 @@ class BtBookmarkItemBase : public QTreeWidgetItem {
             NewFolder = 0,
             ChangeFolder,
 
-            ChangeBookmark,
+            EditBookmark,
+            SortFolderBookmarks,
+            SortAllBookmarks,
             ImportBookmarks,
             ExportBookmarks,
             PrintBookmarks,

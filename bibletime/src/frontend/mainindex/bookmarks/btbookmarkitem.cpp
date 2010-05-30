@@ -113,7 +113,7 @@ QString BtBookmarkItem::toolTip() const {
 }
 
 bool BtBookmarkItem::enableAction(MenuAction action) {
-    if (action == ChangeBookmark || (module() && (action == PrintBookmarks)) || action == DeleteEntries)
+    if (action == EditBookmark || (module() && (action == PrintBookmarks)) || action == DeleteEntries)
         return true;
 
     return false;

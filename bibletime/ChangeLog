@@ -1,4 +1,7 @@
 2010-05-29 Gary Holmlund <gary.holmlund@gmail.com>
+    * Add sorting of bookmarks, see bookmark right context menu "Sort folder bookmarks" and "Sort all bookmarks"
+
+2010-05-29 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix crash opening first window in manual arrangement mode.
 
 2010-05-27 Gary Holmlund <gary.holmlund@gmail.com>

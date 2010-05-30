@@ -453,7 +453,13 @@ const QString icon = "folder.svg";
 namespace bookmark {
 const QString icon = "bookmark.svg";
 }
-namespace changeBookmark {
+namespace editBookmark {
+const QString icon = "bookmark.svg";
+}
+namespace sortFolderBookmarks {
+const QString icon = "bookmark.svg";
+}
+namespace sortAllBookmarks {
 const QString icon = "bookmark.svg";
 }
 namespace importBookmarks {

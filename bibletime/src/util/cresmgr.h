@@ -468,7 +468,13 @@ extern const QString icon;
 namespace bookmark {
 extern const QString icon;
 }
-namespace changeBookmark {
+namespace editBookmark {
+extern const QString icon;
+}
+namespace sortFolderBookmarks {
+extern const QString icon;
+}
+namespace sortAllBookmarks {
 extern const QString icon;
 }
 namespace importBookmarks {

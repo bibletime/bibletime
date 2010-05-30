@@ -92,7 +92,9 @@ void CBookmarkIndex::initView() {
     m_actions.newFolder = newQAction(tr("New folder"), CResMgr::mainIndex::newFolder::icon, 0, this, SLOT(createNewFolder()), this);
     m_actions.changeFolder = newQAction(tr("Rename folder"), CResMgr::mainIndex::changeFolder::icon, 0, this, SLOT(changeFolder()), this);
 
-    m_actions.changeBookmark = newQAction(tr("Edit bookmark..."), CResMgr::mainIndex::changeBookmark::icon, 0, this, SLOT(changeBookmark()), this);
+    m_actions.editBookmark = newQAction(tr("Edit bookmark..."), CResMgr::mainIndex::editBookmark::icon, 0, this, SLOT(editBookmark()), this);
+    m_actions.sortFolderBookmarks = newQAction(tr("Sort folder bookmarks..."), CResMgr::mainIndex::sortFolderBookmarks::icon, 0, this, SLOT(sortFolderBookmarks()), this);
+    m_actions.sortAllBookmarks = newQAction(tr("Sort all bookmarks..."), CResMgr::mainIndex::sortAllBookmarks::icon, 0, this, SLOT(sortAllBookmarks()), this);
     m_actions.importBookmarks = newQAction(tr("Import to folder..."), CResMgr::mainIndex::importBookmarks::icon, 0, this, SLOT(importBookmarks()), this);
     m_actions.exportBookmarks = newQAction(tr("Export from folder..."), CResMgr::mainIndex::exportBookmarks::icon, 0, this, SLOT(exportBookmarks()), this);
     m_actions.printBookmarks = newQAction(tr("Print bookmarks..."), CResMgr::mainIndex::printBookmarks::icon, 0, this, SLOT(printBookmarks()), this);
@@ -106,7 +108,9 @@ void CBookmarkIndex::initView() {
     QAction* separator = new QAction(this);
     separator->setSeparator(true);
     m_popup->addAction(separator);
-    m_popup->addAction(m_actions.changeBookmark);
+    m_popup->addAction(m_actions.editBookmark);
+    m_popup->addAction(m_actions.sortFolderBookmarks);
+    m_popup->addAction(m_actions.sortAllBookmarks);
     m_popup->addAction(m_actions.importBookmarks);
     m_popup->addAction(m_actions.exportBookmarks);
     m_popup->addAction(m_actions.printBookmarks);
@@ -495,8 +499,12 @@ QAction* CBookmarkIndex::action( BtBookmarkItemBase::MenuAction type ) const {
         case BtBookmarkItemBase::ChangeFolder:
             return m_actions.changeFolder;
 
-        case BtBookmarkItemBase::ChangeBookmark:
-            return m_actions.changeBookmark;
+        case BtBookmarkItemBase::EditBookmark:
+            return m_actions.editBookmark;
+        case BtBookmarkItemBase::SortFolderBookmarks:
+            return m_actions.sortFolderBookmarks;
+        case BtBookmarkItemBase::SortAllBookmarks:
+            return m_actions.sortAllBookmarks;
         case BtBookmarkItemBase::ImportBookmarks:
             return m_actions.importBookmarks;
         case BtBookmarkItemBase::ExportBookmarks:
@@ -532,6 +540,7 @@ void CBookmarkIndex::contextMenu(const QPoint& p) {
                         //case BtBookmarkItemBase::ExportBookmarks:
                         //case BtBookmarkItemBase::ImportBookmarks:
                     case BtBookmarkItemBase::NewFolder:
+		    case BtBookmarkItemBase::SortAllBookmarks:
                         //case BtBookmarkItemBase::PrintBookmarks:
                         a->setEnabled(true);
                         break;
@@ -611,13 +620,35 @@ void CBookmarkIndex::changeFolder() {
     }
 }
 
-/** Changes the current bookmark. */
-void CBookmarkIndex::changeBookmark() {
+/** Edits the current bookmark. */
+void CBookmarkIndex::editBookmark() {
     BtBookmarkItem* i = dynamic_cast<BtBookmarkItem*>(currentItem());
     Q_ASSERT(i);
 
     if (i) {
         i->rename();
+    }
+}
+
+/** Sorts the current folder bookmarks. */
+void CBookmarkIndex::sortFolderBookmarks() {
+    BtBookmarkFolder* i = dynamic_cast<BtBookmarkFolder*>(currentItem());
+    Q_ASSERT(i);
+
+    if (i) {
+        i->sortChildren(0, Qt::AscendingOrder);
+    }
+}
+
+/** Sorts all bookmarks. */
+void CBookmarkIndex::sortAllBookmarks() {
+    sortItems(0, Qt::AscendingOrder);
+    int index = indexOfTopLevelItem(m_extraItem);
+    if (index >= 0) {
+      QTreeWidgetItem* item = takeTopLevelItem(index);
+      if (item != 0) {
+	addTopLevelItem(m_extraItem);
+      }
     }
 }
 
@@ -741,7 +772,11 @@ bool CBookmarkIndex::isMultiAction( const BtBookmarkItemBase::MenuAction type ) 
         case BtBookmarkItemBase::ChangeFolder:
             return false;
 
-        case BtBookmarkItemBase::ChangeBookmark:
+        case BtBookmarkItemBase::EditBookmark:
+            return false;
+        case BtBookmarkItemBase::SortFolderBookmarks:
+            return false;
+        case BtBookmarkItemBase::SortAllBookmarks:
             return false;
         case BtBookmarkItemBase::ImportBookmarks:
             return false;

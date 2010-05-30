@@ -27,7 +27,7 @@ BtBookmarkFolder::BtBookmarkFolder(const QString &name, QTreeWidgetItem *parent)
 bool BtBookmarkFolder::enableAction(MenuAction action) {
     if (action == ChangeFolder || action == NewFolder || action == DeleteEntries || action == ImportBookmarks )
         return true;
-    if (action == ExportBookmarks || action == ImportBookmarks )
+    if (action == SortFolderBookmarks || action == ExportBookmarks || action == ImportBookmarks )
         return true;
     if ((action == PrintBookmarks) && childCount())
         return true;
