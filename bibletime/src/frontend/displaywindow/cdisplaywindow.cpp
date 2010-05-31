@@ -50,7 +50,6 @@ CDisplayWindow::CDisplayWindow(QList<CSwordModuleInfo*> modules, CMDIArea *paren
         m_history(0) {
     qDebug() << "CDisplayWindow::CDisplayWindow";
     setAttribute(Qt::WA_DeleteOnClose); //we want to destroy this window when it is closed
-    parent->addSubWindow(this);
     m_actionCollection = new BtActionCollection(this);
     setModules(modules);
 
