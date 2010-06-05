@@ -24,7 +24,6 @@ class BtHtmlJsObject: public QObject {
         BtHtmlJsObject(BtHtmlReadDisplay* display);
         ~BtHtmlJsObject() {}
         void moveToAnchor(const QString& anchor);
-        void setBodyEditable(bool editable);
         void clearPrevAttribute();
 
     public slots:
@@ -39,8 +38,6 @@ class BtHtmlJsObject: public QObject {
         void mouseMoveAttribute(const QString& attrName, const QString& attrValue);
         void gotoAnchor(const QString& anchor);
         void selectAll();
-        void setDocumentEditable();
-        void setDocumentNotEditable();
 
     private:
         int m_int;

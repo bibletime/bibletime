@@ -12,6 +12,7 @@
 #include <QApplication>
 #include <QDebug>
 #include <QFrame>
+#include <QMenu>
 #include <QProgressDialog>
 #include <QPushButton>
 #include <QSize>
@@ -87,7 +88,29 @@ void BtSearchResultArea::initView() {
     m_previewDisplay->view()->setToolTip(tr("Text of the selected search result item"));
     frameLayout->addWidget(m_previewDisplay->view());
 
+    QAction* selectAllAction = new QAction(QIcon(), tr("Select all"), this);
+    selectAllAction->setShortcut(QKeySequence::SelectAll);
+    QObject::connect(selectAllAction, SIGNAL(triggered()), this, SLOT(selectAll()) );
+
+    QAction* copyAction = new QAction(tr("Copy"), this);
+    copyAction->setShortcut( QKeySequence(Qt::CTRL + Qt::Key_C) );
+    QObject::connect(copyAction, SIGNAL(triggered()), this, SLOT(copySelection()) );
+
+    QMenu* menu = new QMenu();
+    menu->addAction(selectAllAction);
+    menu->addAction(copyAction);
+    m_previewDisplay->installPopup(menu);
+
     loadDialogSettings();
+}
+
+void BtSearchResultArea::selectAll() {
+    m_previewDisplay->selectAll();
+}
+
+void BtSearchResultArea::copySelection() {
+    
+//    m_previewDisplay->copySelection();
 }
 
 void BtSearchResultArea::setSearchResult(QList<CSwordModuleInfo*> modules) {

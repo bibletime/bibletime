@@ -180,6 +180,14 @@ class BtSearchResultArea : public QWidget {
         * Shows a dialog with the search analysis of the current search.
         */
         void showAnalysis();
+        /**
+        * Select all text
+        */
+        void selectAll();
+        /**
+        * Copy selected text
+        */
+        void copySelection();
 
     private:
 

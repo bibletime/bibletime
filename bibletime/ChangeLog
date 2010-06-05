@@ -1,3 +1,7 @@
+2010-06-04 Gary Holmlund <gary.holmlund@gmail.com>
+    * Add select all and copy to the Mag window and the Search dialog results area.
+    * Fix the functionality of select all in all windows
+
 2010-05-29 Gary Holmlund <gary.holmlund@gmail.com>
     * Add sorting of bookmarks, see bookmark right context menu "Sort folder bookmarks" and "Sort all bookmarks"
 

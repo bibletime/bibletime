@@ -234,10 +234,7 @@ QWidget* BtHtmlReadDisplay::view() {
 
 // Select all text in the viewer
 void BtHtmlReadDisplay::selectAll() {
-    m_jsObject->setBodyEditable(true);
-    m_view->triggerPageAction( QWebPage::MoveToStartOfDocument, true );
-    m_view->triggerPageAction( QWebPage::SelectEndOfDocument,   true );
-    m_jsObject->setBodyEditable(false);
+    m_view->triggerPageAction( QWebPage::SelectAll, true );
 }
 
 // Scroll QWebView to the correct location as specified by the anchor

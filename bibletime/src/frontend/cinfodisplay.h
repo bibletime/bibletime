@@ -58,10 +58,10 @@ class CInfoDisplay : public QWidget {
 
     protected slots:
         void lookupInfo(const QString &, const QString &);
+        void selectAll();
 
     private:
         CReadDisplay* m_htmlPart;
-        QAction* m_copyAction;
 };
 
 } //end of InfoDisplay namespace

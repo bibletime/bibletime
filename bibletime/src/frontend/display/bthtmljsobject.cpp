@@ -39,13 +39,6 @@ void BtHtmlJsObject::moveToAnchor(const QString& anchor) {
     emit gotoAnchor(anchor);
 }
 
-void BtHtmlJsObject::setBodyEditable(bool editable) {
-    if (editable)
-        emit setDocumentEditable();
-    else
-        emit setDocumentNotEditable();
-}
-
 void BtHtmlJsObject::mouseDownLeft(const QString& url, const int& x, const int& y) {
     m_dndData.mousePressed = true;
     m_dndData.isDragging = false;

@@ -18,6 +18,7 @@
 #include <QSize>
 #include <QVBoxLayout>
 #include <QtAlgorithms>
+#include <QMenu>
 
 #include "backend/config/cbtconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
@@ -47,9 +48,18 @@ CInfoDisplay::CInfoDisplay(QWidget *parent) : QWidget(parent) {
     m_htmlPart->setMouseTracking(false); //we don't want strong/lemma/note mouse infos
     m_htmlPart->view()->setAcceptDrops(false);
 
-    m_copyAction = new QAction(tr("Copy"), this);
-    m_copyAction->setShortcut( QKeySequence(Qt::CTRL + Qt::Key_C) );
-    QObject::connect(m_copyAction, SIGNAL(triggered()), m_htmlPart->connectionsProxy(), SLOT(copySelection()) );
+    QAction* selectAllAction = new QAction(QIcon(), tr("Select all"), this);
+    selectAllAction->setShortcut(QKeySequence::SelectAll);
+    QObject::connect(selectAllAction, SIGNAL(triggered()), this, SLOT(selectAll()) );
+
+    QAction* copyAction = new QAction(tr("Copy"), this);
+    copyAction->setShortcut( QKeySequence(Qt::CTRL + Qt::Key_C) );
+    QObject::connect(copyAction, SIGNAL(triggered()), m_htmlPart->connectionsProxy(), SLOT(copySelection()) );
+
+    QMenu* menu = new QMenu();
+    menu->addAction(selectAllAction);
+    menu->addAction(copyAction);
+    m_htmlPart->installPopup(menu);
 
     connect(
         m_htmlPart->connectionsProxy(),
@@ -78,7 +88,6 @@ CInfoDisplay::CInfoDisplay(QWidget *parent) : QWidget(parent) {
 
 
 CInfoDisplay::~CInfoDisplay() {
-    delete m_copyAction;
 }
 
 void CInfoDisplay::lookupInfo(const QString &mod_name, const QString &key_text) {
@@ -175,6 +184,9 @@ void CInfoDisplay::setInfo(const ListInfoData& list) {
     m_htmlPart->setText(content);
 }
 
+void CInfoDisplay::selectAll() {
+    m_htmlPart->selectAll();
+}
 
 const QString CInfoDisplay::decodeAbbreviation( const QString& data ) {
     //  QStringList strongs = QStringList::split("|", data);
