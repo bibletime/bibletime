@@ -109,8 +109,7 @@ void BtSearchResultArea::selectAll() {
 }
 
 void BtSearchResultArea::copySelection() {
-    
-//    m_previewDisplay->copySelection();
+    m_previewDisplay->connectionsProxy()->copySelection();
 }
 
 void BtSearchResultArea::setSearchResult(QList<CSwordModuleInfo*> modules) {
