@@ -214,12 +214,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="175"/>
         <source>Ta&amp;bbed</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta&amp;bulada</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="178"/>
         <source>Automatically tab the open windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Tabular automaticamente as janelas abertas</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="185"/>
@@ -279,7 +279,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="240"/>
         <source>Configure your bookshelf and install/update/remove/index works</source>
-        <translation>Configurar seu gerenciador de livros e instalar/atualizar/remover/indexar trabalhos</translation>
+        <translation>Configurar seu Estante e instalar/atualizar/remover/indexar obras</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="247"/>
@@ -289,102 +289,102 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="622"/>
         <source>Main toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barra de ferramentas principal</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="623"/>
         <source>Navigation toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barra de ferramentas de navegação</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="624"/>
         <source>Works toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barra de ferramentas das obras</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="625"/>
         <source>Tools toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barra de ferramentas</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="626"/>
         <source>Format toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Formatar barra de ferramentas</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="656"/>
         <source>Show main toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar barra de ferramentas principal</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="657"/>
         <source>Show navigation bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar barra de navegação</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="658"/>
         <source>Show works toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar barra de ferramentas das obras</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="659"/>
         <source>Show tools toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar ferramentas (barra)</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="660"/>
         <source>Show formatting toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar barra de ferramentas de formatação</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="661"/>
         <source>Show bookshelf</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar Estante de Livros</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="662"/>
         <source>Show bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar marcadores</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="663"/>
         <source>Show mag</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar Lupa</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="630"/>
         <source>Toolbars</source>
-        <translation type="unfinished"></translation>
+        <translation>Barras de ferramentas</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="655"/>
         <source>Show toolbars in text windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar barra de ferramentas nas janelas de texto</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="664"/>
         <source>Show parallel text headers</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar cabeçalhos paralelos ao texto</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="634"/>
         <source>O&amp;pen windows</source>
-        <translation type="unfinished"></translation>
+        <translation>A&amp;brir janelas</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="643"/>
         <source>Show &quot;Whats this widget&quot; dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar diálogo &quot;Que widget é este&quot;</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="832"/>
         <source>Whats this widget?</source>
-        <translation type="unfinished"></translation>
+        <translation>Que widget é este?</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="129"/>
         <source>Search in all works that are currently open</source>
-        <translation>Buscar em todos os trabalhos que estão abertos agora</translation>
+        <translation>Buscar em todas as obras que estão abertos agora</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="136"/>
@@ -414,22 +414,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime.cpp" line="257"/>
         <source>Unlock Work</source>
-        <translation>Trabalho Destravado</translation>
+        <translation>Obra Destravada</translation>
     </message>
     <message>
         <location filename="../../src/bibletime.cpp" line="257"/>
         <source>Enter the unlock key for %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Entre com a chave para destravar %1.</translation>
     </message>
     <message>
         <location filename="../../src/bibletime.cpp" line="277"/>
         <source>Warning: Invalid unlock key!</source>
-        <translation type="unfinished"></translation>
+        <translation>Atenção: chave para destravar inválida!</translation>
     </message>
     <message>
         <location filename="../../src/bibletime.cpp" line="278"/>
         <source>The unlock key you provided did not properly unlock this module. Please try again.</source>
-        <translation type="unfinished"></translation>
+        <translation>A chave fornecida por você não pôde destravar este módulo. Por favor, tente novamente.</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="258"/>
@@ -457,7 +457,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="249"/>
         <source>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</source>
-        <translation type="unfinished"></translation>
+        <translation>BibleTime é lançado sob a licença GPL. Você pode baixar e utilizar este programa para uso pessoal, privado, público ou propósitos comerciais, sem restrições, mas você terá que dar ou distribuir o programa somente se distribuir o código fonte correspondente.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="255"/>
@@ -472,22 +472,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="109"/>
         <source>&amp;BibleTime</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="114"/>
         <source>We are looking for developers and translators. If you would like to join our team, please send an email to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nós estamos procurando por desenvolvedores e tradutores. Se você deseja se juntar ao nosso time, por favor, envie um e-mail para %1.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="118"/>
         <source>(c)1999-2010, The BibleTime Team</source>
-        <translation type="unfinished"></translation>
+        <translation>(c)1999-2010, O Time  BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="125"/>
         <source>&amp;Contributors</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Contribuidores</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="135"/>
@@ -502,52 +502,52 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="146"/>
         <source>project manager</source>
-        <translation type="unfinished"></translation>
+        <translation>administrador do projeto</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="160"/>
         <source>tester</source>
-        <translation type="unfinished"></translation>
+        <translation>testador</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="160"/>
         <source>usability expert</source>
-        <translation type="unfinished"></translation>
+        <translation>especialista em usabilidade</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="198"/>
         <source>Some names may be missing, please email %1 if you notice errors or omissions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Alguns nomes podem ter sido esquecidos, por favor envie um e-mail para %1 para informar erros ou omissões.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="215"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
-        <translation type="unfinished"></translation>
+        <translation>BibleTime faz uso do Projeto SWORD. O Projeto SWORD é um projeto bíblico livre da Sociedade Bíblica Crosswire. Seu propósito é criar ferramentas de código aberto independentes de plataforma &amp;mdash; cobertas pela GNU General Public License &amp;mdash; que permite programadores e sociedades bíblicas escreverem novos softwares bíblicos de maneira mais ágil e fácil.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="221"/>
         <source>The SWORD Project: </source>
-        <translation type="unfinished"></translation>
+        <translation>O Projeto SWORD:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="229"/>
         <source>&amp;Qt</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Qt</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="232"/>
         <source>Qt toolkit version %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Qt kit de ferramentas versão %1</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="238"/>
         <source>More info...</source>
-        <translation type="unfinished"></translation>
+        <translation>Mais informações...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="243"/>
         <source>&amp;License</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Licença</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="128"/>
@@ -562,7 +562,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="138"/>
         <source>project founder</source>
-        <translation type="unfinished"></translation>
+        <translation>fundador do projeto</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="144"/>
@@ -588,7 +588,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="156"/>
         <source>artist</source>
-        <translation type="unfinished"></translation>
+        <translation>artista</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="158"/>
@@ -603,7 +603,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="209"/>
         <source>&amp;SWORD</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="213"/>
@@ -669,12 +669,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="152"/>
         <source>Warning: Module locked!</source>
-        <translation type="unfinished"></translation>
+        <translation>Atenção: Módulo travado!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="153"/>
         <source>You are trying to access an encrypted module. Please provide an unlock key in the following dialog to open the module.</source>
-        <translation type="unfinished"></translation>
+        <translation>Você está tentando acessar um módulo criptografado. Por favor, forneça uma chave na próxima caixa de diálogo para abrir o módulo.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="202"/>
@@ -695,53 +695,53 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btbookshelfwidget.cpp" line="180"/>
         <source>Fi&amp;lter:</source>
-        <translation type="unfinished">Fil&amp;tro:</translation>
+        <translation>Fil&amp;tro:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfwidget.cpp" line="181"/>
         <location filename="../../src/frontend/btbookshelfwidget.cpp" line="184"/>
         <source>Grouping</source>
-        <translation type="unfinished">Agrupando</translation>
+        <translation>Agrupando</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfwidget.cpp" line="182"/>
         <source>Change the grouping of items in the bookshelf.</source>
-        <translation type="unfinished">Alterar o agrupamento de itens na estante.</translation>
+        <translation>Alterar o agrupamento de itens na estante.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfwidget.cpp" line="185"/>
         <source>Use grouping from bookshelf dock</source>
-        <translation type="unfinished"></translation>
+        <translation>Use o agrupamento da divisão estante</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfwidget.cpp" line="186"/>
         <source>Category/Language</source>
-        <translation type="unfinished">Categoria/Idioma</translation>
+        <translation>Categoria/Idioma</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfwidget.cpp" line="187"/>
         <source>Category</source>
-        <translation type="unfinished">Categoria</translation>
+        <translation>Categoria</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfwidget.cpp" line="188"/>
         <source>Language/Category</source>
-        <translation type="unfinished">idioma/Categoria</translation>
+        <translation>idioma/Categoria</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfwidget.cpp" line="189"/>
         <source>Language</source>
-        <translation type="unfinished">Idioma</translation>
+        <translation>Idioma</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfwidget.cpp" line="190"/>
         <source>No grouping</source>
-        <translation type="unfinished">Sem agrupamento</translation>
+        <translation>Sem agrupamento</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfwidget.cpp" line="191"/>
         <source>Show/hide works</source>
-        <translation type="unfinished">Mostrar/Esconder Trabalhos</translation>
+        <translation>Mostrar/Esconder obras</translation>
     </message>
 </context>
 <context>
@@ -820,22 +820,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="155"/>
         <source>You can specify a custom font for each language.</source>
-        <translation type="unfinished">Você pode especificar uma fonte personalizada para cada idioma.</translation>
+        <translation>Você pode especificar uma fonte personalizada para cada idioma.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="43"/>
         <source>The font selection below will apply to all texts in this language</source>
-        <translation type="unfinished">A seleção da fonte abaixo será aplicada a todos os textos neste idioma</translation>
+        <translation>A seleção da fonte abaixo será aplicada a todos os textos neste idioma</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="67"/>
         <source>Use custom font</source>
-        <translation type="unfinished">Usar fonte personalizada</translation>
+        <translation>Usar fonte personalizada</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="159"/>
         <source>Fonts</source>
-        <translation type="unfinished">Fontes</translation>
+        <translation>Fontes</translation>
     </message>
 </context>
 <context>
@@ -843,7 +843,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="39"/>
         <source>If selected, those indexes which have no corresponding work will be deleted when BibleTime starts</source>
-        <translation>Se selecionados, aqueles índices não corresponderão a trabalhos e serão deletados quando o BibleTime iniciar</translation>
+        <translation>Se selecionados, aqueles índices não corresponderão a obras e serão deletados quando o BibleTime iniciar</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="40"/>
@@ -863,12 +863,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="57"/>
         <source>Create new indexes for the selected works</source>
-        <translation>Criar novos índices para os trabalhos selecionados</translation>
+        <translation>Criar novos índices para as obras selecionadas</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="64"/>
         <source>Work</source>
-        <translation>Trabalho</translation>
+        <translation>obra</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="64"/>
@@ -878,7 +878,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="89"/>
         <source>Create new search indexes and delete created indexes for the installed works.</source>
-        <translation>Criar novos índices de busca e apagar índices criados para os trabalhos instalados.</translation>
+        <translation>Criar novos índices de busca e apagar índices criados para as obras instaladas.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="97"/>
@@ -888,12 +888,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="109"/>
         <source>Indexed Works</source>
-        <translation>Trabalhos Indexados</translation>
+        <translation>Obras Indexadas</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="114"/>
         <source>Unindexed Works</source>
-        <translation>Trabalhos não - indexados</translation>
+        <translation>obras não indexadas</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="127"/>
@@ -912,17 +912,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.cpp" line="55"/>
         <source>Install/Update works?</source>
-        <translation type="unfinished">Instalar/Atualizar trabalhos?</translation>
+        <translation>Instalar/Atualizar obras?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.cpp" line="58"/>
         <source>Do you really want to install these works?</source>
-        <translation type="unfinished">Você realmente quer instalar estes trabalhos?</translation>
+        <translation>Você realmente quer instalar estas obras?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.cpp" line="59"/>
         <source>Only one version of a work can be installed at the same time. Select only one if there are items marked with red.</source>
-        <translation type="unfinished">Somente uma versão pode ser instalada por vez. Selecione somente um se existem items marcados de vermelho.</translation>
+        <translation>Somente uma versão pode ser instalada por vez. Selecione somente uma se existem items marcados de vermelho.</translation>
     </message>
 </context>
 <context>
@@ -930,12 +930,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialogmodel.cpp" line="78"/>
         <source>Work</source>
-        <translation type="unfinished">Trabalho</translation>
+        <translation>obra</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialogmodel.cpp" line="81"/>
         <source>Installation source</source>
-        <translation type="unfinished"></translation>
+        <translation>Fonte de instalação</translation>
     </message>
 </context>
 <context>
@@ -948,7 +948,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="181"/>
         <source>Install and update works. Add remote or local sources, refresh them, select the works to be installed/updated and click Install.&lt;br/&gt;&lt;b&gt;WARNING:&lt;/b&gt; If you live in a persecuted country and don&apos;t want to risk detection don&apos;t use remote sources.</source>
-        <translation>Instalar e atualizar trabalhos. Adicione fontes remotas ou locais, atualize-os, selecione os trabalhos para serem instalados/atualizados e clique em Instalar&lt;br/&gt;&lt;b&gt;ATENÇÃO:&lt;/b&gt;.Se você vive em um país sob perseguição e não quer ter risco de detecção não use fontes remotas.</translation>
+        <translation>Instalar e atualizar obras. Adicione fontes remotas ou locais, atualize-os, selecione os obras para serem instalados/atualizados e clique em Instalar&lt;br/&gt;&lt;b&gt;ATENÇÃO:&lt;/b&gt;.Se você vive em um país sob perseguição e não quer ter risco de detecção não use fontes remotas.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="91"/>
@@ -958,12 +958,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="96"/>
         <source>The folder where the new works will be installed</source>
-        <translation>A ṕasta onde os novos trabalhos serão instalados</translation>
+        <translation>A pasta onde as novas obras serão instaladas</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="100"/>
         <source>Configure folders where works are installed and found</source>
-        <translation>Configurar pastas onde os trabalhos serão instalados e buscados</translation>
+        <translation>Configurar pastas onde as obras serão instaladas e buscadas</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="116"/>
@@ -973,7 +973,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="117"/>
         <source>Install or update selected works</source>
-        <translation>Instalar ou atualizar trabalhos selecionados</translation>
+        <translation>Instalar ou atualizar obras selecionadas</translation>
     </message>
 </context>
 <context>
@@ -981,22 +981,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="34"/>
         <source>Bookshelf Folders</source>
-        <translation>Gerenciador e Livros: Pastas</translation>
+        <translation>Gerenciador de Livros: Pastas</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="42"/>
         <source>Works can be installed in one or more folders. After setting up folders here you can choose one of them in Install page.</source>
-        <translation>Trabalhos podem ser instalados em uma ou mais pastas. Depois de configurá-las aqui, você pode escolher uma delas na página de instalação.</translation>
+        <translation>obras podem ser instalados em uma ou mais pastas. Depois de configurá-las aqui, você pode escolher uma delas na página de instalação.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="44"/>
         <source>BibleTime and the SWORD library find the works from  all of these folders. If a folder is removed here it still exists in the system with all the works in it.</source>
-        <translation>BibleTime e a biblioteca SWORD busca os trabalhos de todas estas pastas. Se uma pasta é removida daqui, ela ainda existe no sistema com todos os trabalhos nela.</translation>
+        <translation>BibleTime e a biblioteca SWORD busca os obras de todas estas pastas. Se uma pasta é removida daqui, ela ainda existe no sistema com todos os obras nela.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="47"/>
         <source>Configure bookshelf folders</source>
-        <translation>Configurar pastas do Gerenciador de Livros</translation>
+        <translation>Configurar pastas do Estante</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="52"/>
@@ -1006,7 +1006,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="60"/>
         <source>Folders where new works can be installed</source>
-        <translation>Pastas onde novos trabalhos podem ser instalados</translation>
+        <translation>Pastas onde novas obras podem ser instaladas</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="63"/>
@@ -1068,12 +1068,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="182"/>
         <source>This folder is not writable, so works can not be installed here using BibleTime. Do you want to use this folder instead of the previous value?</source>
-        <translation>Esta pasta não pode ser escrita, logo, trabalhos não podem ser instalados aqui utilizando o BibleTime. Você gostaria de utilizar esta pasta ao invés da anterior?</translation>
+        <translation>Esta pasta não pode ser escrita, logo, obras não podem ser instaladas aqui utilizando o BibleTime. Você gostaria de utilizar esta pasta ao invés da anterior?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="202"/>
         <source>This folder is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of bookshelf folders?</source>
-        <translation>Esta pasta não pode ser escrita, logo, trabalhos não podem ser instalados aqui utilizando o BibleTime. Você ainda quer adicioná-la à lista das pastas do Gerenciador de Livros?</translation>
+        <translation>Esta pasta não pode ser escrita, logo, obras não podem ser instaladas aqui utilizando o BibleTime. Você ainda quer adicioná-la à lista das pastas da Estante?</translation>
     </message>
 </context>
 <context>
@@ -1081,7 +1081,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="39"/>
         <source>Work</source>
-        <translation>Trabalho</translation>
+        <translation>obra</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="39"/>
@@ -1134,22 +1134,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="145"/>
         <source>Select the language in which the Biblical book names are displayed.</source>
-        <translation type="unfinished">Selecione o idioma no qual os nomes dos livros bíblicos serão mostrados.</translation>
+        <translation>Selecione o idioma no qual os nomes dos livros bíblicos serão mostrados.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="38"/>
         <source>Language for names of Bible books:</source>
-        <translation type="unfinished">Linguagem para os nomes dos livros bíblicos:</translation>
+        <translation>Idioma para os nomes dos livros bíblicos:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="40"/>
         <source>The languages which can be used for the biblical booknames</source>
-        <translation type="unfinished">As linguagens que podem ser usadas para os nomes dos livros da bíblia</translation>
+        <translation>Os idiomas que podem ser usadas para os nomes dos livros da bíblia</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="149"/>
         <source>Languages</source>
-        <translation type="unfinished">Idiomas</translation>
+        <translation>Idiomas</translation>
     </message>
 </context>
 <context>
@@ -1157,12 +1157,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="80"/>
         <source>Select a work [%1]</source>
-        <translation>Selecione um trabalho [%1]</translation>
+        <translation>Selecione uma obra [%1]</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="83"/>
         <source>Select an additional work</source>
-        <translation>Selecione um trabalho adicional</translation>
+        <translation>Selecione uma obra adicional</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="93"/>
@@ -1176,7 +1176,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfmanager/btmodulemanagerdialog.cpp" line="35"/>
         <source>Bookshelf Manager</source>
-        <translation>Gerenciador de livros</translation>
+        <translation>Estante</translation>
     </message>
 </context>
 <context>
@@ -1184,7 +1184,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btopenworkaction.cpp" line="86"/>
         <source>&amp;Open work</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir Trabalh&amp;o</translation>
     </message>
 </context>
 <context>
@@ -1197,12 +1197,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="79"/>
         <source>Remove installed works. Select the works and click Remove button.</source>
-        <translation>Remover trabalhos instalados. Selecione os trabalhos e clique no botão remover.</translation>
+        <translation>Remover obras instaladas. Selecione as obras e clique no botão remover.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="102"/>
         <source>You selected the following work(s): </source>
-        <translation>Você selecionou o(s) seguinte(s) trabalho(s):</translation>
+        <translation>Você selecionou a(s) seguinte(s) obra(s):</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="105"/>
@@ -1217,12 +1217,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="62"/>
         <source>Remove the selected works</source>
-        <translation>Remover os trabalhos selecionados</translation>
+        <translation>Remover as obras selecionadas</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="107"/>
         <source>Remove Works?</source>
-        <translation>Remover Trabalhos?</translation>
+        <translation>Remover obras?</translation>
     </message>
 </context>
 <context>
@@ -1230,7 +1230,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.cpp" line="52"/>
         <source>Work</source>
-        <translation>Trabalho</translation>
+        <translation>obra</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.cpp" line="55"/>
@@ -1243,12 +1243,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchmodulechooserdialog.cpp" line="47"/>
         <source>Works to Search in</source>
-        <translation type="unfinished">Obras de Pesquisa em</translation>
+        <translation>Obras para Buscar em</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchmodulechooserdialog.cpp" line="49"/>
         <source>Select the works which should be searched.</source>
-        <translation type="unfinished">Selecionar as obras que devem ser pesquisadas.</translation>
+        <translation>Selecionar as obras que devem ser pesquisadas.</translation>
     </message>
 </context>
 <context>
@@ -1334,7 +1334,7 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="108"/>
         <source>Work</source>
-        <translation>Trabalho</translation>
+        <translation>obra</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="108"/>
@@ -1354,7 +1354,7 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="88"/>
         <source>Refresh the list of works from this source</source>
-        <translation>Atualizar a lista de trabalhos desta fonte</translation>
+        <translation>Atualizar a lista de obras desta fonte</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="92"/>
@@ -1408,7 +1408,7 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="221"/>
         <source>No sources were found in the SWORD configuration and BibleTime couldn&apos;t create a default source. Check your SWORD configuration and that the configuration path is writable. Then restart the Bookshelf Manager.</source>
-        <translation>Nenhuma fonte foi encontrada na configuração do SWORD e o BibleTime não pôde criar uma fonte padrão. Verifique sua configuração do SWORD e se o caminho da configuração é gravável. Então reinicie o Gerenciador de Livros.</translation>
+        <translation>Nenhuma fonte foi encontrada na configuração do SWORD e o BibleTime não pôde criar uma fonte padrão. Verifique sua configuração do SWORD e se o caminho da configuração é gravável. Então reinicie o Estante.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="236"/>
@@ -1668,7 +1668,7 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="808"/>
         <source>The work to which the bookmark points to is not installed.</source>
-        <translation>O trabalho para o qual o marcador está apontando não está instalado.</translation>
+        <translation>A obra para o qual o marcador está apontando não está instalada.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="95"/>
@@ -1761,7 +1761,7 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="65"/>
         <source>Synchronize the displayed entry of this work with the active Bible window</source>
-        <translation>Sincronizar a entrada mostrada deste trabalho com a janela ativa da Bíblia</translation>
+        <translation>Sincronizar a entrada mostrada desta obra com a janela ativa da Bíblia</translation>
     </message>
 </context>
 <context>
@@ -1832,7 +1832,7 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="143"/>
         <source>This is the judgement, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ora, este é o julgamento: a luz veio ao mundo, mas os homens amaram mais as trevas do que a luz, pois as suas obras eram más.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="188"/>
@@ -1890,12 +1890,12 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="147"/>
         <source>Search with works of this window</source>
-        <translation>Procurar em trabalhos desta janela</translation>
+        <translation>Procurar em obras desta janela</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="332"/>
         <source>Work chooser buttons</source>
-        <translation>Botões selecionadores de trabalhos</translation>
+        <translation>Botões selecionadores de obras</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="342"/>
@@ -1910,12 +1910,12 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="400"/>
         <source>Tool</source>
-        <translation type="unfinished"></translation>
+        <translation>Ferramenta</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="406"/>
         <source>Format</source>
-        <translation type="unfinished"></translation>
+        <translation>Formatar</translation>
     </message>
 </context>
 <context>
@@ -2080,7 +2080,7 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="49"/>
         <source>Entries of the current work</source>
-        <translation>Registros do trabalho atual</translation>
+        <translation>Registros da obra atual</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="50"/>
@@ -2185,7 +2185,7 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="52"/>
         <source>Creating index for work: %1</source>
-        <translation>criando índice para o trabalho: %1</translation>
+        <translation>criando índice para a obra: %1</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="97"/>
@@ -2257,37 +2257,37 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="215"/>
         <source>Save Search Analysis</source>
-        <translation type="unfinished"></translation>
+        <translation>Salvar Análise de Busca</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="215"/>
         <source>HTML files (*.html;*.HTML;*.HTM;*.htm)</source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivos HTML (*.html;*.HTML;*.HTM;*.htm)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="233"/>
         <source>BibleTime Search Analysis</source>
-        <translation type="unfinished"></translation>
+        <translation>Análise de Busca BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="234"/>
         <source>Search text :</source>
-        <translation type="unfinished"></translation>
+        <translation>Buscar texto:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="236"/>
         <source>Book</source>
-        <translation type="unfinished"></translation>
+        <translation>Livro</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="237"/>
         <source>Total hits</source>
-        <translation type="unfinished"></translation>
+        <translation>Acertos totais</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="269"/>
         <source>Created by &lt;a href=&quot;http://www.bibletime.info/&quot;&gt;BibleTime&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Criado por &lt;a href=&quot;http://www.bibletime.info/&quot;&gt;BibleTime&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
@@ -2356,7 +2356,7 @@ atalho</translation>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="834"/>
         <source>Take care, this work contains cult / questionable material!</source>
-        <translation>Cuidado, este trabalho contém material questionável / cultural!</translation>
+        <translation>Cuidado, esta obra contém material questionável / cultural!</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="837"/>
@@ -2416,47 +2416,47 @@ atalho</translation>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="981"/>
         <source>Bibles</source>
-        <translation type="unfinished">Bíblias</translation>
+        <translation>Bíblias</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="983"/>
         <source>Commentaries</source>
-        <translation type="unfinished">Comentários</translation>
+        <translation>Comentários</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="985"/>
         <source>Books</source>
-        <translation type="unfinished">Livros</translation>
+        <translation>Livros</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="987"/>
         <source>Cults/Unorthodox</source>
-        <translation type="unfinished"></translation>
+        <translation>Cultos/Heterodoxos</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="989"/>
         <source>Maps and Images</source>
-        <translation type="unfinished">Mapas e Imagens</translation>
+        <translation>Mapas e Imagens</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="991"/>
         <source>Daily Devotionals</source>
-        <translation type="unfinished">Devocionais Diárias</translation>
+        <translation>Devocionais Diárias</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="993"/>
         <source>Lexicons and Dictionaries</source>
-        <translation type="unfinished">Léxicos e Dicionários</translation>
+        <translation>Léxicos e Dicionários</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="995"/>
         <source>Glossaries</source>
-        <translation type="unfinished">Glossários</translation>
+        <translation>Glossários</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="997"/>
         <source>Unknown</source>
-        <translation type="unfinished">Desconhecido</translation>
+        <translation>Desconhecido</translation>
     </message>
 </context>
 <context>
@@ -2464,7 +2464,7 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="40"/>
         <source>Standard works</source>
-        <translation>Trabalhos padrão</translation>
+        <translation>obras padrão</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="41"/>
@@ -2512,7 +2512,7 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="108"/>
         <source>A source with this caption already exists. Please provide a different caption.</source>
-        <translation type="unfinished"></translation>
+        <translation>Uma fonte com esse título já existe. Por favor, providencie um título diferente.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="155"/>
@@ -3753,7 +3753,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/util/tool.cpp" line="179"/>
         <source>Take care, this work contains cult / questionable material!</source>
-        <translation>Cuidado, este trabalho contém material questionável / cultural!</translation>
+        <translation>Cuidado, esta obra contém material questionável / cultural!</translation>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="192"/>
@@ -3923,12 +3923,12 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/backend/bookshelfmodel/indexingitem.cpp" line="27"/>
         <source>Indexed works</source>
-        <translation>Trabalhos Indexados</translation>
+        <translation>obras Indexadas</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/indexingitem.cpp" line="30"/>
         <source>Unindexed works</source>
-        <translation>Trabalhos não-indexados</translation>
+        <translation>obras não-indexadas</translation>
     </message>
 </context>
 <context>
@@ -4039,7 +4039,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="108"/>
         <source>Start to search the text in the chosen works</source>
-        <translation>Começar a busca do texto nos trabalhos escolhidos</translation>
+        <translation>Começar a busca do texto nas obras escolhidos</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="111"/>
@@ -4049,7 +4049,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="113"/>
         <source>Choose works for the search</source>
-        <translation>Escolher trabalhos para busca</translation>
+        <translation>Escolher obras para busca</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="116"/>
@@ -4079,7 +4079,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="175"/>
         <source>Works:</source>
-        <translation>Trabalhos:</translation>
+        <translation>obras:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="346"/>
@@ -4140,7 +4140,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="52"/>
         <source>Search Syntax Help</source>
-        <translation type="unfinished">Busca Sintaxe Ajuda</translation>
+        <translation>Busca Sintaxe Ajuda</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="99"/>
@@ -4383,7 +4383,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="52"/>
         <source>Work</source>
-        <translation>Trabalho</translation>
+        <translation>obra</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="52"/>
@@ -4563,7 +4563,7 @@ Isto pode levar um novo tempo. Iniciar indexação?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="232"/>
         <source>Show a graphical analysis of the search result</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar uma anális gráfica do resultado de busca</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="238"/>
@@ -4643,7 +4643,7 @@ Isto pode levar um novo tempo. Iniciar indexação?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="41"/>
         <source>Search result of the selected work</source>
-        <translation>Procurar resultado do trabalho selecionado</translation>
+        <translation>Procurar resultado da obra selecionado</translation>
     </message>
 </context>
 <context>
@@ -4651,7 +4651,7 @@ Isto pode levar um novo tempo. Iniciar indexação?</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="57"/>
         <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
-        <translation type="unfinished"></translation>
+        <translation>obras padrão são utilizadas quando nenhuma obra particular é especificada, por exemplo quando um link de dentro de uma bíblia ou léxico é clicado.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="65"/>
@@ -4812,7 +4812,7 @@ Isto pode levar um novo tempo. Iniciar indexação?</translation>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="51"/>
         <source>Search with case sensitivity</source>
-        <translation type="unfinished"></translation>
+        <translation>Buscar com &quot;case sensitivity&quot; </translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="54"/>
