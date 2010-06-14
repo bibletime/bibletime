@@ -25,7 +25,7 @@ FOREACH(MESSAGE_LOCALE_LANG ${MESSAGE_LOCALE_LANGS})
         "bibletime_ui_${MESSAGE_LOCALE_LANG}.qm"
     )
     INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}/bibletime_ui_${MESSAGE_LOCALE_LANG}.qm"
-        DESTINATION "${BT_SHARE_PATH}share/bibletime/locale/"
+        DESTINATION "${BT_SHARE_PATH}bibletime/locale/"
     )
 ENDFOREACH(MESSAGE_LOCALE_LANG)
 

@@ -1,3 +1,6 @@
+2010-06-14 Martin Gruner <mgruner@crosswire.org>
+    * Tweaked the cmake stuff to generate a valid standalone .dmg image on Mac OS
+
 2010-06-04 Gary Holmlund <gary.holmlund@gmail.com>
     * Add select all and copy to the Mag window and the Search dialog results area.
     * Fix the functionality of select all in all windows

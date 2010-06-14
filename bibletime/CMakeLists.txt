@@ -88,9 +88,6 @@ FIND_PACKAGE(Sword REQUIRED)
 # Define $bibletime_SOURCES
 INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTSourceFileList.cmake")
 
-# Define rules to generate ${bibletime_UI_translations} files
-INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTUITranslation.cmake")
-
 #
 # The actual build options
 #
@@ -212,6 +209,10 @@ IF (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
     SET(CMAKE_INSTALL_PREFIX "install/") #install to ./build/install, allow override
 ENDIF (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
 
+IF (APPLE)
+    SET(CMAKE_INSTALL_PREFIX "install/BibleTime.app/Contents/Resources")
+ENDIF (APPLE)
+
 IF (MSVC)
     SET(CMAKE_CXX_FLAGS_RELEASE "-DNO_DBUS -DSWUSINGDLL -DBT_VERSION=\\\"${BT_VERSION}\\\" /MD  /Zc:wchar_t- /W1 /D_UNICODE /DUNICODE ")
     SET(CMAKE_CXX_FLAGS_DEBUG   "-DNO_DBUS -DSWUSINGDLL -DBT_VERSION=\\\"${BT_VERSION}\\\" /MDd /Zc:wchar_t- /W1 /D_UNICODE /DUNICODE -DBT_ENABLE_TESTING /ZI")
@@ -224,7 +225,11 @@ ENDIF (MSVC)
 # Install files
 #
 SET(BT_DESTINATION "bin/")
-SET(BT_SHARE_PATH "")
+SET(BT_SHARE_PATH "share/")
+IF (APPLE)
+    SET(BT_DESTINATION "../MacOS/")
+    SET(BT_SHARE_PATH "../share/")
+ENDIF (APPLE)
 
 INSTALL(TARGETS "${EXECUTABLE_NAME}"
     DESTINATION "${BT_DESTINATION}"
@@ -233,47 +238,47 @@ INSTALL(TARGETS "${EXECUTABLE_NAME}"
 # icons
 FILE(GLOB INSTALL_ICONS_LIST "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/*.svg")
 INSTALL(FILES ${INSTALL_ICONS_LIST}
-    DESTINATION "${BT_SHARE_PATH}share/bibletime/icons/"
+    DESTINATION "${BT_SHARE_PATH}bibletime/icons/"
 )
 # icons - png, needed for About Dialog
 FILE(GLOB INSTALL_ICONS_LIST_PNG "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/bibletime.png")
 INSTALL(FILES ${INSTALL_ICONS_LIST_PNG}
-    DESTINATION "${BT_SHARE_PATH}share/bibletime/icons/"
+    DESTINATION "${BT_SHARE_PATH}bibletime/icons/"
 )
 # display templates
 FILE(GLOB INSTALL_DISPLAY_TEMPLATES_LIST ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/*.tmpl)
 INSTALL(FILES ${INSTALL_DISPLAY_TEMPLATES_LIST}
-    DESTINATION "${BT_SHARE_PATH}share/bibletime/display-templates/"
+    DESTINATION "${BT_SHARE_PATH}bibletime/display-templates/"
 )
 # javascript
 INSTALL(FILES "src/frontend/display/bthtml.js"
-    DESTINATION "${BT_SHARE_PATH}share/bibletime/javascript/"
+    DESTINATION "${BT_SHARE_PATH}bibletime/javascript/"
 )
 # license.html
 INSTALL(FILES "docs/license.html"
-    DESTINATION "${BT_SHARE_PATH}share/bibletime/license/"
+    DESTINATION "${BT_SHARE_PATH}bibletime/license/"
 )
 # splash screen
 INSTALL(FILES "pics/startuplogo.png" "pics/startuplogo_christmas.png"
-    DESTINATION "${BT_SHARE_PATH}share/bibletime/pics/"
+    DESTINATION "${BT_SHARE_PATH}bibletime/pics/"
 )
 #
 # Platform specific installation
 #
 # LINUX: application icon
 INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/bibletime.svg"
-    DESTINATION "${BT_SHARE_PATH}share/icons/"
+    DESTINATION "${BT_SHARE_PATH}icons/"
 )
 # LINUX: desktop file
 CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/linux/bibletime.desktop.cmake" "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop")
 INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop"
-    DESTINATION "${BT_SHARE_PATH}share/applications/"
+    DESTINATION "${BT_SHARE_PATH}applications/"
 )
 IF (MSVC)
     # sword locale information
     FILE(GLOB INSTALL_SWORD_LOCALE_LIST ${SWORD_INCLUDE_DIR}/../locales.d/*)
     INSTALL(FILES ${INSTALL_SWORD_LOCALE_LIST}
-        DESTINATION "${BT_SHARE_PATH}share/sword/locales.d/"
+        DESTINATION "${BT_SHARE_PATH}sword/locales.d/"
     )
 
     # install pdb file for debugging purposes
@@ -285,6 +290,9 @@ IF (MSVC)
     ENDIF (CMAKE_BUILD_TYPE STREQUAL "Debug")
 ENDIF (MSVC)
 
+
+# Define rules to generate ${bibletime_UI_translations} files
+INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTUITranslation.cmake")
 
 INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTDocumentation.cmake")
 INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTDeveloper.cmake")
@@ -300,9 +308,9 @@ ENDIF (APPLE)
 # "make uninstall" target; see http://www.cmake.org/Wiki/CMake_FAQ#Can_I_do_.22make_uninstall.22_with_CMake.3F
 #
 CONFIGURE_FILE(
-"${CMAKE_CURRENT_SOURCE_DIR}/cmake/cmake_uninstall.cmake.in"
-"${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake"
-IMMEDIATE @ONLY
+    "${CMAKE_CURRENT_SOURCE_DIR}/cmake/cmake_uninstall.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake"
+    IMMEDIATE @ONLY
 )
 ADD_CUSTOM_TARGET(uninstall "${CMAKE_COMMAND}" -P "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake")
 ######################################################
