@@ -84,6 +84,13 @@ FIND_PACKAGE(ZLIB)
 
 FIND_PACKAGE(Sword REQUIRED)
 
+# directory layout settings up front, needed in various places
+SET(BT_DESTINATION "bin/")
+SET(BT_SHARE_PATH "share/")
+IF (APPLE)
+    SET(BT_DESTINATION "../MacOS/")
+    SET(BT_SHARE_PATH "../share/")
+ENDIF (APPLE)
 
 # Define $bibletime_SOURCES
 INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTSourceFileList.cmake")
@@ -118,6 +125,10 @@ IF (APPLE)
     SET(EXECUTABLE_NAME "BibleTime")
 ENDIF (APPLE)
 
+
+# Define rules to generate ${bibletime_UI_translations} files
+INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTUITranslation.cmake")
+
 SET(common_bibletime_SOURCES
     ${bibletime_SOURCES}
     ${bibletime_UIS_H}
@@ -149,10 +160,9 @@ IF (MSVC)
 	    "cmake/BTWinIcon.rc"
 	)
 
-SOURCE_GROUP( "Icon Files"
-    FILES "cmake/BTWinIcon.rc" }
-)
-
+    SOURCE_GROUP( "Icon Files"
+        FILES "cmake/BTWinIcon.rc" }
+    )
 ENDIF (MSVC)
 
 #Link to QtTest only in debug builds
@@ -224,12 +234,6 @@ ENDIF (MSVC)
 
 # Install files
 #
-SET(BT_DESTINATION "bin/")
-SET(BT_SHARE_PATH "share/")
-IF (APPLE)
-    SET(BT_DESTINATION "../MacOS/")
-    SET(BT_SHARE_PATH "../share/")
-ENDIF (APPLE)
 
 INSTALL(TARGETS "${EXECUTABLE_NAME}"
     DESTINATION "${BT_DESTINATION}"
@@ -290,9 +294,6 @@ IF (MSVC)
     ENDIF (CMAKE_BUILD_TYPE STREQUAL "Debug")
 ENDIF (MSVC)
 
-
-# Define rules to generate ${bibletime_UI_translations} files
-INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTUITranslation.cmake")
 
 INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTDocumentation.cmake")
 INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTDeveloper.cmake")
