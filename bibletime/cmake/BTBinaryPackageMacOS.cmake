@@ -17,9 +17,9 @@ IF(APPLE)
 
     INSTALL(CODE "
         FILE(GLOB_RECURSE QTPLUGINS
-          \"${CMAKE_INSTALL_PREFIX}/${BT_DESTINATION}/plugins/*${CMAKE_SHARED_LIBRARY_SUFFIX}\")
+          \"\${CMAKE_INSTALL_PREFIX}/${BT_DESTINATION}/plugins/*${CMAKE_SHARED_LIBRARY_SUFFIX}\")
 #        FILE(GLOB_RECURSE QTPLUGINS
-#          \"${CMAKE_INSTALL_PREFIX}/${BT_DESTINATION}/plugins/*.bundle\")
+#          \"\${CMAKE_INSTALL_PREFIX}/${BT_DESTINATION}/plugins/*.bundle\")
         INCLUDE(BundleUtilities)
 
 
@@ -43,9 +43,9 @@ IF(APPLE)
         endfunction(gp_item_default_embedded_path_override)
 
         FIXUP_BUNDLE(
-            \"${CMAKE_INSTALL_PREFIX}/${BT_DESTINATION}/BibleTime\"
+            \"\${CMAKE_INSTALL_PREFIX}/${BT_DESTINATION}/BibleTime\"
             \"\${QTPLUGINS}\"
-            \"${CMAKE_INSTALL_PREFIX}/${BT_DESTINATION}/plugins/imageformats;${CMAKE_INSTALL_PREFIX}/${BT_DESTINATION}/plugins/iconengines\"
+            \"\${CMAKE_INSTALL_PREFIX}/${BT_DESTINATION}/plugins/imageformats;\${CMAKE_INSTALL_PREFIX}/${BT_DESTINATION}/plugins/iconengines\"
         )
     ")
 
