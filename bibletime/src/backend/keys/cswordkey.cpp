@@ -109,23 +109,22 @@ QString CSwordKey::renderedText( const CSwordKey::TextRenderType mode ) {
         }
 
         if (mode == HTMLEscaped) {
-            //we have to encode all UTF-8 in HTML escapes
-            // go though every character and write down the escaped HTML unicode entity
-            // form is &#<decimal unicode value here>;
+            /*
+              Here we encode all non-latin1 characters as HTML unicode entities
+              in the form &#<decimal unicode value here>;
+            */
             QString ret;
-            QChar c;
-            const unsigned int length = text.length();
 
-            for (unsigned int i = 0; i < length; ++i) {
-                c = text.at(i);
+            // Reserve characters to reduce number of memory allocations:
+            ret.reserve(text.size());
 
-                if (c.toLatin1()) { //normal latin1 character
+            for (int i = 0; i < text.size(); ++i) {
+                const QChar c = text.at(i);
+
+                if (c.toLatin1()) {
                     ret.append(c);
-                }
-                else {//unicode character, needs to be escaped
-                    ret.append("&#")
-                    .append(c.unicode())
-                    .append(";");
+                } else {
+                    ret.append("&#").append(c.unicode()).append(";");
                 }
             }
 
