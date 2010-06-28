@@ -72,7 +72,7 @@ class CKeyChooser : public QWidget {
         /**
         * Returns the history object of this keychooser.
         */
-        BTHistory* history();
+        inline BTHistory *history() const { return m_history; }
 
     signals:
 

@@ -36,25 +36,35 @@ CKeyChooser::~CKeyChooser() {}
 CKeyChooser* CKeyChooser::createInstance(QList<CSwordModuleInfo*> modules, 
         BTHistory* historyPtr, CSwordKey *key, QWidget *parent) {
     if (!modules.count()) {
+        /**
+          \todo Verify and document that we need to return 0 here rather than
+                fail with an assertion.
+        */
         return 0;
     }
 
-    switch ( modules.first()->type() ) {
-        case CSwordModuleInfo::Commentary:  //Bibles and commentaries use the same key chooser
+    CSwordModuleInfo::ModuleType typeOfModules = modules.first()->type();
+
+#ifdef BT_DEBUG
+    foreach (CSwordModuleInfo *module, modules) {
+        Q_ASSERT(module->type() == typeOfModules);
+    }
+#endif
+
+    switch (typeOfModules) {
+        case CSwordModuleInfo::Commentary:
+            /* Fall thru - Bibles and commentaries use the same key chooser */
         case CSwordModuleInfo::Bible:
             return new CBibleKeyChooser(modules, historyPtr, key, parent);
-            break;
         case CSwordModuleInfo::Lexicon:
             return new CLexiconKeyChooser(modules, historyPtr, key, parent);
         case CSwordModuleInfo::GenericBook:
             return new CBookKeyChooser(modules, historyPtr, key, parent);
         default:
+            /**
+              \todo Verify and document that we need to return 0 here rather
+                    than fail with an assertion.
+            */
             return 0;
     }
 }
-
-
-BTHistory* CKeyChooser::history() {
-    return m_history;
-}
-
