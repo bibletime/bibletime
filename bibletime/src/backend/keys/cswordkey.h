@@ -97,7 +97,7 @@ class CSwordKey {
          * Returns the encoded key appropriate for use directly with Sword.
          */
         virtual const char * rawKey() const = 0;
-        static const QTextCodec* cp1252Codec();
+        static inline const QTextCodec *cp1252Codec() { return m_cp1252Codec; };
         void emitChanged();
 
     private:
@@ -107,6 +107,7 @@ class CSwordKey {
         CSwordKey& operator= ( const CSwordKey & );
 
     protected:
+        static const QTextCodec *m_cp1252Codec;
         CSwordModuleInfo* m_module; //module pointer used by all keys
         QPointer<BtSignal> m_signal;
 };

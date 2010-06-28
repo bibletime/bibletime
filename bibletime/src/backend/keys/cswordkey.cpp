@@ -27,6 +27,8 @@
 #include <versekey.h>
 
 
+const QTextCodec *CSwordKey::m_cp1252Codec = QTextCodec::codecForName("Windows-1252");
+
 CSwordKey::CSwordKey(CSwordModuleInfo* const module) 
     : m_module(module),
     m_signal(0) {}
@@ -149,11 +151,6 @@ QString CSwordKey::strippedText() {
     }
 
     return QString::fromUtf8( m_module->module()->StripText() );
-}
-
-const QTextCodec* CSwordKey::cp1252Codec() {
-    static QTextCodec * codec = QTextCodec::codecForName("Windows-1252");
-    return codec;
 }
 
 void CSwordKey::emitChanged() {
