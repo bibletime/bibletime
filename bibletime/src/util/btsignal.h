@@ -27,13 +27,12 @@ class BtSignal : public QObject {
         Q_OBJECT
 
     public:
-        BtSignal(QObject *parent = 0);
-        ~BtSignal();
+        inline BtSignal(QObject *parent = 0) : QObject(parent) {};
 
         /**
           Immediately emits the changed() signal.
         */
-        void emitChanged();
+        inline void emitChanged() { emit changed(); }
 
     signals:
         void changed();
