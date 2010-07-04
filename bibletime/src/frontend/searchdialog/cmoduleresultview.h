@@ -22,7 +22,7 @@ class QContextMenuEvent;
 class QMenu;
 class QPoint;
 class QStringList;
-class StrongsResultClass;
+class StrongsResultList;
 
 namespace Search {
 
@@ -119,7 +119,7 @@ class CModuleResultView : public QTreeWidget {
 
         QMenu* m_popup;
 
-        QHash<CSwordModuleInfo*, StrongsResultClass*> strongsResults;
+        QHash<CSwordModuleInfo*, StrongsResultList*> m_strongsResults;
         QSize m_size;
 };
 

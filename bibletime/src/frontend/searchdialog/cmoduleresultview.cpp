@@ -38,8 +38,7 @@ CModuleResultView::CModuleResultView(QWidget* parent)
 }
 
 CModuleResultView::~CModuleResultView() {
-    qDeleteAll(strongsResults);
-    strongsResults.clear();
+    qDeleteAll(m_strongsResults);
 }
 
 
@@ -109,8 +108,8 @@ void CModuleResultView::setupTree( QList<CSwordModuleInfo*> modules, const QStri
 
     sword::ListKey result;
 
-    qDeleteAll(strongsResults);
-    strongsResults.clear();
+    qDeleteAll(m_strongsResults);
+    m_strongsResults.clear();
 
     bool strongsAvailable = false;
 
@@ -153,28 +152,24 @@ void CModuleResultView::setupTree( QList<CSwordModuleInfo*> modules, const QStri
     setRootIsDecorated( strongsAvailable );
 }
 
-void CModuleResultView::setupStrongsResults(CSwordModuleInfo* module, QTreeWidgetItem* parent,
-        const QString& sNumber) {
-    QString lText;
-    /// \todo
-    //util::CSortListViewItem* item = 0;
-    QTreeWidgetItem* item = 0;
+void CModuleResultView::setupStrongsResults(CSwordModuleInfo *module,
+                                            QTreeWidgetItem *parent,
+                                            const QString &sNumber)
+{
+    StrongsResultList *m = new StrongsResultList(module, sNumber);
+    m_strongsResults[module] = m;
 
-    strongsResults[module] = new StrongsResultClass(module, sNumber);
-
-    for (int cnt = 0; cnt < strongsResults[module]->count(); ++cnt) {
-        lText = strongsResults[module]->keyText(cnt);
-
-        item = new QTreeWidgetItem(parent, QStringList(lText) << QString::number(strongsResults[module]->keyCount(cnt)));
-        /// \todo
-        //item->setColumnSorting(1, util::CSortListViewItem::Number);
+    for (int cnt = 0; cnt < m->count(); ++cnt) {
+        QStringList columns(m->at(cnt).keyText());
+        columns.append(QString::number(m->at(cnt).keyCount()));
+        new QTreeWidgetItem(parent, columns);
     }
 }
 
 /// \todo
 /** Is executed when an item was selected in the list. */
 void CModuleResultView::executed( QTreeWidgetItem* i, QTreeWidgetItem*) {
-    QString itemText, lText;
+    QString itemText;
 
     if (!i) {
         //Clear list
@@ -187,7 +182,7 @@ void CModuleResultView::executed( QTreeWidgetItem* i, QTreeWidgetItem*) {
         return;
     }
 
-    StrongsResultClass* strongsResult = strongsResults[activeModule()];
+    StrongsResultList *strongsResult = m_strongsResults[activeModule()];
 
     if (!strongsResult) {
         return;
@@ -195,11 +190,11 @@ void CModuleResultView::executed( QTreeWidgetItem* i, QTreeWidgetItem*) {
 
     itemText = i->text(0);
     for (int cnt = 0; cnt < strongsResult->count(); cnt++) {
-        lText = strongsResult->keyText(cnt);
-        if (lText == itemText) {
+        if (strongsResult->at(cnt).keyText() == itemText) {
             //clear the verses list
             emit moduleChanged();
-            emit strongsSelected(activeModule(), strongsResult->getKeyList(cnt));
+            emit strongsSelected(activeModule(),
+                                 strongsResult->at(cnt).getKeyList());
             return;
         }
     }

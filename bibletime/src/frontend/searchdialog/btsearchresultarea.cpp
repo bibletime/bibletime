@@ -523,10 +523,13 @@ void BtSearchResultArea::saveDialogSettings() {
     CBTConfig::set(CBTConfig::searchResultSplitterSizes, m_resultListSplitter->sizes());
 }
 
-/********************************************
-************  StrongsResultClass *************
-********************************************/
-void StrongsResultClass::initStrongsResults(void) {
+/******************************************************************************
+* StrongsResultList:
+******************************************************************************/
+
+StrongsResultList::StrongsResultList(CSwordModuleInfo *module,
+                                     const QString &strongsNumber)
+{
     using namespace Rendering;
 
     CDisplayRendering render;
@@ -539,14 +542,14 @@ void StrongsResultClass::initStrongsResults(void) {
     int index;
     QString text;
 
-    modules.append(m_srModule);
-    sword::ListKey& result = m_srModule->searchResult();
+    modules.append(module);
+    sword::ListKey& result = module->searchResult();
 
     count = result.Count();
     if (!count)
         return;
     qApp->processEvents( QEventLoop::AllEvents, 1 ); //1 ms only
-    m_srList.clear();
+    clear();
     // for whatever reason the text "Parsing...translations." does not appear.
     // this is not critical but the text is necessary to get the dialog box
     // to be wide enough.
@@ -564,10 +567,9 @@ void StrongsResultClass::initStrongsResults(void) {
         key = QString::fromUtf8(result.GetElement(index)->getText());
         text = render.renderSingleKey(key, modules, settings);
         sIndex = 0;
-        while ((rText = getStrongsNumberText(text, &sIndex)) != "") {
-            QList<StrongsResult>::iterator it;
+        while (!(rText = getStrongsNumberText(text, sIndex, strongsNumber)).isEmpty()) {
             found = FALSE;
-            for ( it = m_srList.begin(); it != m_srList.end(); ++it ) {
+            for (iterator it = begin(); it != end(); ++it) {
                 lText = (*it).keyText();
                 if (lText == rText) {
                     found = TRUE;
@@ -576,7 +578,7 @@ void StrongsResultClass::initStrongsResults(void) {
                 }
             }
             if (found == FALSE)
-                m_srList.append( StrongsResult(rText, key) );
+                append(StrongsResult(rText, key));
         }
     }
     delete progress;
@@ -584,18 +586,21 @@ void StrongsResultClass::initStrongsResults(void) {
     //qHeapSort(srList);
 }
 
-QString StrongsResultClass::getStrongsNumberText(const QString& verseContent, int *startIndex) {
+QString StrongsResultList::getStrongsNumberText(const QString &verseContent,
+                                                int &startIndex,
+                                                const QString &lemmaText)
+{
     // get the strongs text
     int idx1, idx2, index;
     QString sNumber, strongsText;
     //const bool cs = CSwordModuleSearch::caseSensitive;
     const Qt::CaseSensitivity cs = Qt::CaseInsensitive;
 
-    if (*startIndex == 0) {
+    if (startIndex == 0) {
         index = verseContent.indexOf("<body");
     }
     else {
-        index = *startIndex;
+        index = startIndex;
     }
 
     // find all the "lemma=" inside the the content
@@ -605,7 +610,7 @@ QString StrongsResultClass::getStrongsNumberText(const QString& verseContent, in
         idx1 = verseContent.indexOf("\"", index) + 1;
         idx2 = verseContent.indexOf("\"", idx1 + 1);
         sNumber = verseContent.mid(idx1, idx2 - idx1);
-        if (sNumber == m_lemmaText) {
+        if (sNumber == lemmaText) {
             // strongs number is found now we need to get the text of this node
             // search right until the ">" is found.  Get the text from here to
             // the next "<".
@@ -613,7 +618,7 @@ QString StrongsResultClass::getStrongsNumberText(const QString& verseContent, in
             idx2  = verseContent.indexOf("<", index, cs);
             strongsText = verseContent.mid(index, idx2 - index);
             index = idx2;
-            *startIndex = index;
+            startIndex = index;
 
             return(strongsText);
         }

@@ -45,7 +45,7 @@ namespace Search {
 *   To add a new verse to a strongs text result use addKeyName.
 */
 class StrongsResult {
-    public:
+    public: /* Methods: */
         inline StrongsResult() {}
         inline StrongsResult(const QString &text,
                              const QString &keyName)
@@ -63,54 +63,26 @@ class StrongsResult {
 
         inline const QStringList &getKeyList() const { return m_keyNameList; }
 
-    private:
+    private: /* Fields: */
         QString m_text;
         QStringList m_keyNameList;
 };
 
 /**
+* \todo Fix comment!
 * This class is used to keep track of the text strongs results.
 * It keeps track of all instances of all strongs text results.
 * This class makes use of the above class StrongsResult.
-*
-*    The functions of the class are:
-*       - Store an instance of a strongs text result.
-*       - Each strongs text result will contain a list of verses (keyNames).
-*       - The number of verses (keyNames) is returned by keyCount().
-*       - The text for the strongs text result is returned by keyText().
-*       - The list of verses (keyNames) is returned by getKeyList() [as QStringList].
-*
-*   To add a new verse to a strongs text result use addKeyName.
 */
-class StrongsResultClass {
-    public:
-        inline StrongsResultClass(CSwordModuleInfo *module,
-                                  const QString &strongsNumber)
-                : m_srModule(module), m_lemmaText(strongsNumber)
-        {
-            initStrongsResults();
-        }
+class StrongsResultList: public QList<StrongsResult> {
+    public: /* Methods: */
+        StrongsResultList(CSwordModuleInfo *module,
+                           const QString &strongsNumber);
 
-        inline QString keyText(int index) const {
-            return m_srList[index].keyText();
-        }
-        inline int keyCount(int index) const {
-            return m_srList[index].keyCount();
-        }
-        inline const QStringList &getKeyList(int index) const {
-            return m_srList[index].getKeyList();
-        }
-        inline int count() const {
-            return m_srList.count();
-        }
-
-    private:
-        void initStrongsResults(void);
-        QString getStrongsNumberText(const QString& verseContent, int *startIndex);
-
-        QList<StrongsResult> m_srList;
-        CSwordModuleInfo *m_srModule;
-        QString m_lemmaText;
+    private: /* Methods: */
+        QString getStrongsNumberText(const QString &verseContent,
+                                     int &startIndex,
+                                     const QString &lemmaText);
 };
 
 
@@ -119,7 +91,7 @@ class StrongsResultClass {
   */
 class BtSearchResultArea : public QWidget {
         Q_OBJECT
-    public:
+    public: /* Methods: */
         BtSearchResultArea(QWidget *parent = 0);
         inline ~BtSearchResultArea() { saveDialogSettings(); }
 
@@ -148,7 +120,7 @@ class BtSearchResultArea : public QWidget {
         */
         void reset();
 
-    protected:
+    protected: /* Methods: */
         /**
         * Initializes the view of this widget.
         */
@@ -209,7 +181,7 @@ class BtSearchResultArea : public QWidget {
             m_previewDisplay->connectionsProxy()->copySelection();
         }
 
-    private:
+    private: /* Fields: */
 
         CModuleResultView* m_moduleListBox;
         CSearchResultView* m_resultListBox;
