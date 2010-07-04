@@ -162,7 +162,7 @@ void CModuleResultView::setupStrongsResults(CSwordModuleInfo* module, QTreeWidge
 
     strongsResults[module] = new StrongsResultClass(module, sNumber);
 
-    for (int cnt = 0; cnt < strongsResults[module]->Count(); ++cnt) {
+    for (int cnt = 0; cnt < strongsResults[module]->count(); ++cnt) {
         lText = strongsResults[module]->keyText(cnt);
 
         item = new QTreeWidgetItem(parent, QStringList(lText) << QString::number(strongsResults[module]->keyCount(cnt)));
@@ -194,7 +194,7 @@ void CModuleResultView::executed( QTreeWidgetItem* i, QTreeWidgetItem*) {
     }
 
     itemText = i->text(0);
-    for (int cnt = 0; cnt < strongsResult->Count(); cnt++) {
+    for (int cnt = 0; cnt < strongsResult->count(); cnt++) {
         lText = strongsResult->keyText(cnt);
         if (lText == itemText) {
             //clear the verses list

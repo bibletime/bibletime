@@ -16,13 +16,14 @@
 #include <QWidget>
 #include "backend/managers/cswordbackend.h"
 #include "backend/cswordmodulesearch.h"
+#include "frontend/display/creaddisplay.h"
+#include "frontend/searchdialog/analysis/csearchanalysisdialog.h"
 
 
 namespace Search {
 class CModuleResultView;
 class CSearchResultView;
 }
-class CReadDisplay;
 class CSwordModuleInfo;
 class QFrame;
 class QHBoxLayout;
@@ -83,31 +84,33 @@ class StrongsResult {
 */
 class StrongsResultClass {
     public:
-        StrongsResultClass(CSwordModuleInfo* module, const QString& strongsNumber)
-                : srModule(module), lemmaText(strongsNumber) {
+        inline StrongsResultClass(CSwordModuleInfo *module,
+                                  const QString &strongsNumber)
+                : m_srModule(module), m_lemmaText(strongsNumber)
+        {
             initStrongsResults();
         }
 
-        QString keyText(int index) const {
-            return srList[index].keyText();
+        inline QString keyText(int index) const {
+            return m_srList[index].keyText();
         }
-        int keyCount(int index) const {
-            return srList[index].keyCount();
+        inline int keyCount(int index) const {
+            return m_srList[index].keyCount();
         }
-        const QStringList &getKeyList(int index) const {
-            return srList.at(index).getKeyList();
+        inline const QStringList &getKeyList(int index) const {
+            return m_srList[index].getKeyList();
         }
-        int Count() const {
-            return srList.count();
+        inline int count() const {
+            return m_srList.count();
         }
 
     private:
         void initStrongsResults(void);
         QString getStrongsNumberText(const QString& verseContent, int *startIndex);
 
-        QList<StrongsResult> srList;
-        CSwordModuleInfo* srModule;
-        QString lemmaText;
+        QList<StrongsResult> m_srList;
+        CSwordModuleInfo *m_srModule;
+        QString m_lemmaText;
 };
 
 
@@ -118,16 +121,24 @@ class BtSearchResultArea : public QWidget {
         Q_OBJECT
     public:
         BtSearchResultArea(QWidget *parent = 0);
-        ~BtSearchResultArea();
+        inline ~BtSearchResultArea() { saveDialogSettings(); }
+
         /**
         * Sets the modules which contain the result of each.
         */
-        void setSearchResult(QList<CSwordModuleInfo*> modules);
+        void setSearchResult(const QList<CSwordModuleInfo*> &modules);
 
-        QSize sizeHint() const {
+        /**
+          Reimplemented from QWidget::sizeHint().
+        */
+        virtual QSize sizeHint() const {
             return baseSize();
         }
-        QSize minimumSizeHint() const {
+
+        /**
+          Reimplemented from QWidget::minimumSizeHint().
+        */
+        virtual QSize minimumSizeHint() const {
             return minimumSize();
         }
 
@@ -142,14 +153,17 @@ class BtSearchResultArea : public QWidget {
         * Initializes the view of this widget.
         */
         void initView();
+
         /**
         * Initializes the signal slot conections of the child widgets
         */
         void initConnections();
+
         /**
         * This function breakes the queryString into clucene tokens
         */
-        QStringList QueryParser(const QString& queryString);
+        QStringList queryParser(const QString& queryString);
+
         /**
         * This function highlights the searched text in the content using the search type given by search flags
         */
@@ -159,6 +173,7 @@ class BtSearchResultArea : public QWidget {
         * Load the settings from the resource file
         */
         void loadDialogSettings();
+
         /**
         * Save the settings to the resource file
         */
@@ -169,22 +184,30 @@ class BtSearchResultArea : public QWidget {
         * Update the preview of the selected key.
         */
         void updatePreview(const QString& key);
+
         /**
          * Clear the preview of the selected key.
          */
         void clearPreview();
+
         /**
         * Shows a dialog with the search analysis of the current search.
         */
-        void showAnalysis();
+        inline void showAnalysis() {
+            CSearchAnalysisDialog(m_modules, this).exec();
+        }
+
         /**
         * Select all text
         */
-        void selectAll();
+        inline void selectAll() { m_previewDisplay->selectAll(); }
+
         /**
         * Copy selected text
         */
-        void copySelection();
+        inline void copySelection() {
+            m_previewDisplay->connectionsProxy()->copySelection();
+        }
 
     private:
 
@@ -196,8 +219,8 @@ class BtSearchResultArea : public QWidget {
 
         QList<CSwordModuleInfo*> m_modules;
 
-        QSplitter *mainSplitter;
-        QSplitter *resultListSplitter;
+        QSplitter *m_mainSplitter;
+        QSplitter *m_resultListSplitter;
 };
 
 } //namespace Search

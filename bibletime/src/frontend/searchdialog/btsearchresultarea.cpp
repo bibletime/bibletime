@@ -23,8 +23,6 @@
 #include "backend/keys/cswordversekey.h"
 #include "backend/rendering/cdisplayrendering.h"
 #include "frontend/display/cdisplay.h"
-#include "frontend/display/creaddisplay.h"
-#include "frontend/searchdialog/analysis/csearchanalysisdialog.h"
 #include "frontend/searchdialog/cmoduleresultview.h"
 #include "frontend/searchdialog/csearchdialog.h"
 #include "frontend/searchdialog/csearchresultview.h"
@@ -41,10 +39,6 @@ BtSearchResultArea::BtSearchResultArea(QWidget *parent)
     qDebug() << "BtSearchResultArea::BtSearchResultArea end";
 }
 
-BtSearchResultArea::~BtSearchResultArea() {
-    saveDialogSettings();
-}
-
 void BtSearchResultArea::initView() {
     QVBoxLayout *mainLayout;
     QWidget *resultListsWidget;
@@ -55,32 +49,32 @@ void BtSearchResultArea::initView() {
     int mWidth = util::tool::mWidth(this, 1);
     this->setMinimumSize(QSize(mWidth*40, mWidth*15));
     mainLayout = new QVBoxLayout(this);
-    mainSplitter = new QSplitter(this);
-    mainSplitter->setOrientation(Qt::Horizontal);
+    m_mainSplitter = new QSplitter(this);
+    m_mainSplitter->setOrientation(Qt::Horizontal);
 
-    resultListsWidget = new QWidget(mainSplitter);
+    resultListsWidget = new QWidget(m_mainSplitter);
 
     resultListsWidgetLayout = new QVBoxLayout(resultListsWidget);
     resultListsWidgetLayout->setContentsMargins(0, 0, 0, 0);
 
     //Splitter for two result lists
-    resultListSplitter = new QSplitter(resultListsWidget);
-    resultListSplitter->setOrientation(Qt::Vertical);
-    m_moduleListBox = new CModuleResultView(resultListSplitter);
-    resultListSplitter->addWidget(m_moduleListBox);
-    m_resultListBox = new CSearchResultView(resultListSplitter);
-    resultListSplitter->addWidget(m_resultListBox);
-    resultListsWidgetLayout->addWidget(resultListSplitter);
+    m_resultListSplitter = new QSplitter(resultListsWidget);
+    m_resultListSplitter->setOrientation(Qt::Vertical);
+    m_moduleListBox = new CModuleResultView(m_resultListSplitter);
+    m_resultListSplitter->addWidget(m_moduleListBox);
+    m_resultListBox = new CSearchResultView(m_resultListSplitter);
+    m_resultListSplitter->addWidget(m_resultListBox);
+    resultListsWidgetLayout->addWidget(m_resultListSplitter);
 
-    mainSplitter->addWidget(resultListsWidget);
+    m_mainSplitter->addWidget(resultListsWidget);
 
     //Preview ("info") area
-    m_displayFrame = new QFrame(mainSplitter);
+    m_displayFrame = new QFrame(m_mainSplitter);
     m_displayFrame->setFrameShape(QFrame::NoFrame);
     m_displayFrame->setFrameShadow(QFrame::Plain);
-    mainSplitter->addWidget(m_displayFrame);
+    m_mainSplitter->addWidget(m_displayFrame);
 
-    mainLayout->addWidget(mainSplitter);
+    mainLayout->addWidget(m_mainSplitter);
 
     QVBoxLayout* frameLayout = new QVBoxLayout(m_displayFrame);
     frameLayout->setContentsMargins(0, 0, 0, 0);
@@ -104,15 +98,7 @@ void BtSearchResultArea::initView() {
     loadDialogSettings();
 }
 
-void BtSearchResultArea::selectAll() {
-    m_previewDisplay->selectAll();
-}
-
-void BtSearchResultArea::copySelection() {
-    m_previewDisplay->connectionsProxy()->copySelection();
-}
-
-void BtSearchResultArea::setSearchResult(QList<CSwordModuleInfo*> modules) {
+void BtSearchResultArea::setSearchResult(const QList<CSwordModuleInfo*> &modules) {
     const QString searchedText = CSearchDialog::getSearchDialog()->searchText();
     reset(); //clear current modules
 
@@ -215,7 +201,7 @@ void BtSearchResultArea::updatePreview(const QString& key) {
     }
 }
 
-QStringList BtSearchResultArea::QueryParser(const QString& queryString) {
+QStringList BtSearchResultArea::queryParser(const QString& queryString) {
     QString token;
     QStringList tokenList;
     int cnt, pos;
@@ -458,7 +444,7 @@ QString BtSearchResultArea::highlightSearchedText(const QString& content, const 
     // since I could not figure out the lucene query parser, I
     // made a simple parser.
     //===========================================================
-    QStringList words = QueryParser(newSearchText);
+    QStringList words = queryParser(newSearchText);
     qDebug() << "btsearchresultarea.cpp: " << __LINE__ << ": " <<  words << '\n';
     foreach (QString word, words) { //search for every word in the list
         QRegExp findExp;
@@ -511,36 +497,30 @@ void BtSearchResultArea::initConnections() {
             m_resultListBox, SLOT(setupStrongsTree(CSwordModuleInfo*, const QStringList&)));
 }
 
-/** Shows a dialog with the search analysis of the current search. */
-void BtSearchResultArea::showAnalysis() {
-    CSearchAnalysisDialog dlg(m_modules, this);
-    dlg.exec();
-}
-
 /**
 * Load the settings from the resource file
 */
 void BtSearchResultArea::loadDialogSettings() {
     QList<int> mainSplitterSizes = CBTConfig::get(CBTConfig::searchMainSplitterSizes);
     if (mainSplitterSizes.count() > 0) {
-        mainSplitter->setSizes(mainSplitterSizes);
+        m_mainSplitter->setSizes(mainSplitterSizes);
     }
     else {
         int w = this->size().width();
         int w2 = m_moduleListBox->sizeHint().width();
         mainSplitterSizes << w2 << w - w2;
-        mainSplitter->setSizes(mainSplitterSizes);
+        m_mainSplitter->setSizes(mainSplitterSizes);
     }
     QList<int> resultSplitterSizes = CBTConfig::get(CBTConfig::searchResultSplitterSizes);
-    if (resultSplitterSizes.count() > 0) resultListSplitter->setSizes(resultSplitterSizes);
+    if (resultSplitterSizes.count() > 0) m_resultListSplitter->setSizes(resultSplitterSizes);
 }
 
 /**
 * Save the settings to the resource file
 */
 void BtSearchResultArea::saveDialogSettings() {
-    CBTConfig::set(CBTConfig::searchMainSplitterSizes, mainSplitter->sizes());
-    CBTConfig::set(CBTConfig::searchResultSplitterSizes, resultListSplitter->sizes());
+    CBTConfig::set(CBTConfig::searchMainSplitterSizes, m_mainSplitter->sizes());
+    CBTConfig::set(CBTConfig::searchResultSplitterSizes, m_resultListSplitter->sizes());
 }
 
 /********************************************
@@ -559,14 +539,14 @@ void StrongsResultClass::initStrongsResults(void) {
     int index;
     QString text;
 
-    modules.append(srModule);
-    sword::ListKey& result = srModule->searchResult();
+    modules.append(m_srModule);
+    sword::ListKey& result = m_srModule->searchResult();
 
     count = result.Count();
     if (!count)
         return;
     qApp->processEvents( QEventLoop::AllEvents, 1 ); //1 ms only
-    srList.clear();
+    m_srList.clear();
     // for whatever reason the text "Parsing...translations." does not appear.
     // this is not critical but the text is necessary to get the dialog box
     // to be wide enough.
@@ -587,7 +567,7 @@ void StrongsResultClass::initStrongsResults(void) {
         while ((rText = getStrongsNumberText(text, &sIndex)) != "") {
             QList<StrongsResult>::iterator it;
             found = FALSE;
-            for ( it = srList.begin(); it != srList.end(); ++it ) {
+            for ( it = m_srList.begin(); it != m_srList.end(); ++it ) {
                 lText = (*it).keyText();
                 if (lText == rText) {
                     found = TRUE;
@@ -596,7 +576,7 @@ void StrongsResultClass::initStrongsResults(void) {
                 }
             }
             if (found == FALSE)
-                srList.append( StrongsResult(rText, key) );
+                m_srList.append( StrongsResult(rText, key) );
         }
     }
     delete progress;
@@ -625,7 +605,7 @@ QString StrongsResultClass::getStrongsNumberText(const QString& verseContent, in
         idx1 = verseContent.indexOf("\"", index) + 1;
         idx2 = verseContent.indexOf("\"", idx1 + 1);
         sNumber = verseContent.mid(idx1, idx2 - idx1);
-        if (sNumber == lemmaText) {
+        if (sNumber == m_lemmaText) {
             // strongs number is found now we need to get the text of this node
             // search right until the ">" is found.  Get the text from here to
             // the next "<".
