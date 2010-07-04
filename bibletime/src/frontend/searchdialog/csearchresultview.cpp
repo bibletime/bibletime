@@ -118,24 +118,20 @@ void CSearchResultView::setupTree(CSwordModuleInfo* m) {
     this->setCurrentItem(this->topLevelItem(0), 0);
 }
 
-void CSearchResultView::setupStrongsTree(CSwordModuleInfo* m, QStringList* vList) {
+void CSearchResultView::setupStrongsTree(CSwordModuleInfo* m, const QStringList &vList) {
     clear();
-    if (!m) {
-        return;
-    }
+    if (!m) return;
 
     m_module = m;
 
-    if (vList->count() <= 0) {
-        return;
-    }
+    if (vList.empty()) return;
 
     setUpdatesEnabled(false);
 
     QTreeWidgetItem* oldItem = 0;
     QTreeWidgetItem* item = 0;
 
-    foreach (QString s, *vList) {
+    foreach (QString s, vList) {
         item = new QTreeWidgetItem(this, oldItem);
         item->setText(0, (s));
         oldItem = item;

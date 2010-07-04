@@ -46,7 +46,7 @@ class CSearchResultView  : public QTreeWidget {
         * Setups the list with the given module.
         */
         void setupTree(CSwordModuleInfo*);
-        void setupStrongsTree(CSwordModuleInfo*, QStringList*);
+        void setupStrongsTree(CSwordModuleInfo*, const QStringList&);
         void copyItemsWithText();
         void copyItems();
         void saveItemsWithText();

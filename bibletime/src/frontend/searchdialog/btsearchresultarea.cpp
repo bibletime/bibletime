@@ -507,8 +507,8 @@ void BtSearchResultArea::initConnections() {
     connect(m_moduleListBox, SIGNAL(moduleChanged()), m_previewDisplay->connectionsProxy(), SLOT(clear()));
 
     // connect the strongs list
-    connect(m_moduleListBox, SIGNAL(strongsSelected(CSwordModuleInfo*, QStringList*)),
-            m_resultListBox, SLOT(setupStrongsTree(CSwordModuleInfo*, QStringList*)));
+    connect(m_moduleListBox, SIGNAL(strongsSelected(CSwordModuleInfo*, const QStringList&)),
+            m_resultListBox, SLOT(setupStrongsTree(CSwordModuleInfo*, const QStringList&)));
 }
 
 /** Shows a dialog with the search analysis of the current search. */
@@ -542,34 +542,6 @@ void BtSearchResultArea::saveDialogSettings() {
     CBTConfig::set(CBTConfig::searchMainSplitterSizes, mainSplitter->sizes());
     CBTConfig::set(CBTConfig::searchResultSplitterSizes, resultListSplitter->sizes());
 }
-
-StrongsResult::StrongsResult() {
-}
-
-StrongsResult::StrongsResult(const QString& text, const QString &keyName)
-        : text(text) {
-    //keyNameList.clear();
-    keyNameList.append(keyName);
-}
-
-QString StrongsResult::keyText() const {
-    return text;
-}
-
-int StrongsResult::keyCount() const {
-    return keyNameList.count();
-}
-
-void StrongsResult::addKeyName(const QString& keyName) {
-    if (keyNameList.indexOf(keyName) == -1)
-        keyNameList.append(keyName);
-}
-
-QStringList* StrongsResult::getKeyList() {
-    return & keyNameList;
-}
-
-
 
 /********************************************
 ************  StrongsResultClass *************
@@ -613,7 +585,7 @@ void StrongsResultClass::initStrongsResults(void) {
         text = render.renderSingleKey(key, modules, settings);
         sIndex = 0;
         while ((rText = getStrongsNumberText(text, &sIndex)) != "") {
-            StrongsResultList::iterator it;
+            QList<StrongsResult>::iterator it;
             found = FALSE;
             for ( it = srList.begin(); it != srList.end(); ++it ) {
                 lText = (*it).keyText();

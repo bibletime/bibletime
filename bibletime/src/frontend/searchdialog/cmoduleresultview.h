@@ -91,7 +91,7 @@ class CModuleResultView : public QTreeWidget {
     signals:
         void moduleSelected(CSwordModuleInfo*);
         void moduleChanged();
-        void strongsSelected(CSwordModuleInfo*, QStringList*);
+        void strongsSelected(CSwordModuleInfo*, const QStringList&);
 
     private:
         struct {

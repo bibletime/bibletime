@@ -45,30 +45,27 @@ namespace Search {
 */
 class StrongsResult {
     public:
-        StrongsResult();
-        StrongsResult(const QString& text, const QString &keyName);
+        inline StrongsResult() {}
+        inline StrongsResult(const QString &text,
+                             const QString &keyName)
+            : m_text(text)
+        {
+            m_keyNameList.append(keyName);
+        }
 
-        QString keyText() const;
-        int keyCount() const;
-        void addKeyName(const QString& keyName);
-        QStringList* getKeyList();
+        const QString &keyText() const { return m_text; }
+        inline int keyCount() const { return m_keyNameList.count(); }
+        inline void addKeyName(const QString &keyName) {
+            if (m_keyNameList.contains(keyName)) return;
+            m_keyNameList.append(keyName);
+        }
 
-        /* ????
-        bool operator==(const StrongsResult &l, const StrongsResult &r)
-        	{ return (l.keyText() == r.keyText()); }
+        inline const QStringList &getKeyList() const { return m_keyNameList; }
 
-        bool operator<(const StrongsResult &l, const StrongsResult &r)
-        	{ return (l->keyText() < r->keyText()); }
-
-        bool operator>(const StrongsResult &l, const StrongsResult &r)
-        	{ return (l->keyText() > r->keyText()); }
-        */
     private:
-        QString text;
-        QStringList keyNameList;
+        QString m_text;
+        QStringList m_keyNameList;
 };
-
-typedef QList<StrongsResult> StrongsResultList;
 
 /**
 * This class is used to keep track of the text strongs results.
@@ -97,8 +94,8 @@ class StrongsResultClass {
         int keyCount(int index) const {
             return srList[index].keyCount();
         }
-        QStringList* getKeyList(int index) {
-            return srList[index].getKeyList();
+        const QStringList &getKeyList(int index) const {
+            return srList.at(index).getKeyList();
         }
         int Count() const {
             return srList.count();
@@ -108,7 +105,7 @@ class StrongsResultClass {
         void initStrongsResults(void);
         QString getStrongsNumberText(const QString& verseContent, int *startIndex);
 
-        StrongsResultList srList;
+        QList<StrongsResult> srList;
         CSwordModuleInfo* srModule;
         QString lemmaText;
 };
