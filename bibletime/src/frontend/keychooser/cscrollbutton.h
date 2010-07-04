@@ -61,8 +61,8 @@ class CScrollButton: public QToolButton {
         virtual void mouseReleaseEvent(QMouseEvent *e);
 
         /**
-        * \brief Reimplementation from \ref QWidget#mouseMoveEvent - processes
-        *        the mouse move events
+        * \brief Reimplementation of QWidget::mouseMoveEvent() to process mouse
+                 move events.
         */
         virtual void mouseMoveEvent(QMouseEvent *e);
 
@@ -72,7 +72,7 @@ class CScrollButton: public QToolButton {
         *
         * If the button is in the locked state, this means the mouse is grabbed
         * and any mouse move events invoke calculation about whether to emit the
-        * \ref CScrollButton#change_requested signal.
+        * change_requested() signal.
         */
         bool m_isLocked;
 };

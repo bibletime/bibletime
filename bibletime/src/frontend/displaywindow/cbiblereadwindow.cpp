@@ -46,8 +46,8 @@ CBibleReadWindow::~CBibleReadWindow() {
 
 void CBibleReadWindow::applyProfileSettings(CProfileWindow* const settings) {
     /**
-      \todo Make \ref CProfileWindow properly handle these things so we wouldn't have to mess
-            around with bits.
+      \todo Make CProfileWindow properly handle these things so we wouldn't have
+            to mess around with bits.
     */
     CLexiconReadWindow::applyProfileSettings(settings);
 
@@ -77,8 +77,8 @@ void CBibleReadWindow::applyProfileSettings(CProfileWindow* const settings) {
 
 void CBibleReadWindow::storeProfileSettings( CProfileWindow * const settings) {
     /**
-      \todo Make \ref CProfileWindow properly handle these things so we wouldn't have to mess
-            around with bits.
+      \todo Make CProfileWindow properly handle these things so we wouldn't have
+            to mess around with bits.
     */
 
     int result = 0x0000;

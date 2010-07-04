@@ -37,7 +37,7 @@ QIcon getIconForModule( CSwordModuleInfo* );
 QString getIconNameForModule( CSwordModuleInfo* );
 
 /**
-  Returns a new QLabel initialized by \ref initExplanationLabel().
+  Returns a new QLabel initialized by initExplanationLabel().
 */
 QLabel *explanationLabel(QWidget *parent, const QString &heading, const QString &text);
 

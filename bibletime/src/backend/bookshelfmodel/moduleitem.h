@@ -28,10 +28,10 @@ class ModuleItem: public Item {
         ModuleItem(CSwordModuleInfo *module, BtBookshelfTreeModel *parentModel);
 
         /**
-          Reimplementation of \ref Item::data which dispatches all requests to
-          the \ref BtBookshelfTreeModel parent model.
+          Reimplementation of Item::data() which dispatches all
+          requests to the parent model (BtBookshelfTreeModel).
         */
-        QVariant data(int role = Qt::DisplayRole) const;
+        virtual QVariant data(int role = Qt::DisplayRole) const;
 
         inline CSwordModuleInfo *moduleInfo() const {
             return m_moduleInfo;
