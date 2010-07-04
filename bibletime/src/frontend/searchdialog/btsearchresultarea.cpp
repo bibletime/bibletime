@@ -532,58 +532,48 @@ StrongsResultList::StrongsResultList(CSwordModuleInfo *module,
 {
     using namespace Rendering;
 
-    CDisplayRendering render;
-    QList<CSwordModuleInfo*> modules;
-    CTextRendering::KeyTreeItem::Settings settings;
-    QString rText, lText, key;
-    bool found;
-    int sIndex;
-    int count;
-    int index;
-    QString text;
-
-    modules.append(module);
-    sword::ListKey& result = module->searchResult();
-
-    count = result.Count();
+    sword::ListKey &result = module->searchResult();
+    int count = result.Count();
     if (!count)
         return;
-    qApp->processEvents( QEventLoop::AllEvents, 1 ); //1 ms only
+
+    CTextRendering::KeyTreeItem::Settings settings;
+    QList<CSwordModuleInfo*> modules;
+    modules.append(module);
     clear();
+
     // for whatever reason the text "Parsing...translations." does not appear.
     // this is not critical but the text is necessary to get the dialog box
     // to be wide enough.
-    QProgressDialog* progress = new QProgressDialog(QObject::tr("Parsing Strong's Numbers"), 0, 0, count);
+    QProgressDialog progress(QObject::tr("Parsing Strong's Numbers"), 0, 0, count);
     //0, "progressDialog", tr("Parsing Strong's Numbers"), tr("Parsing Strong's numbers for translations."), true);
-
     //progress->setAllowCancel(false);
     //progress->setMinimumDuration(0);
-    progress->show();
-    progress->raise();
-    for (index = 0; index < count; index++) {
-        progress->setValue( index );
-        qApp->processEvents(QEventLoop::AllEvents, 1 ); //1 ms only
+    progress.show();
+    progress.raise();
 
-        key = QString::fromUtf8(result.GetElement(index)->getText());
-        text = render.renderSingleKey(key, modules, settings);
-        sIndex = 0;
-        while (!(rText = getStrongsNumberText(text, sIndex, strongsNumber)).isEmpty()) {
-            found = FALSE;
+    qApp->processEvents(QEventLoop::AllEvents, 1); //1 ms only
+
+    for (int index = 0; index < count; index++) {
+        progress.setValue(index);
+        qApp->processEvents(QEventLoop::AllEvents, 1); //1 ms only
+
+        QString key = QString::fromUtf8(result.GetElement(index)->getText());
+        QString text = CDisplayRendering().renderSingleKey(key, modules, settings);
+        for (int sIndex = 0;;) {
+            continueloop:
+            QString rText = getStrongsNumberText(text, sIndex, strongsNumber);
+            if (rText.isEmpty()) break;
+
             for (iterator it = begin(); it != end(); ++it) {
-                lText = (*it).keyText();
-                if (lText == rText) {
-                    found = TRUE;
+                if ((*it).keyText() == rText) {
                     (*it).addKeyName(key);
-                    break;
+                    goto continueloop; // break, then continue
                 }
             }
-            if (found == FALSE)
-                append(StrongsResult(rText, key));
+            append(StrongsResult(rText, key));
         }
     }
-    delete progress;
-    progress = 0;
-    //qHeapSort(srList);
 }
 
 QString StrongsResultList::getStrongsNumberText(const QString &verseContent,
