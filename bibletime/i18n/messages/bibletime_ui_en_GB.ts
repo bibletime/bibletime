@@ -625,37 +625,37 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="112"/>
         <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
-        <translation type="unfinished">Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</translation>
+        <translation>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="114"/>
         <source>Next book</source>
-        <translation type="unfinished">Next book</translation>
+        <translation>Next book</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="116"/>
         <source>Previous book</source>
-        <translation type="unfinished">Previous book</translation>
+        <translation>Previous book</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="119"/>
         <source>Next chapter</source>
-        <translation type="unfinished">Next chapter</translation>
+        <translation>Next chapter</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="121"/>
         <source>Previous chapter</source>
-        <translation type="unfinished">Previous chapter</translation>
+        <translation>Previous chapter</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="124"/>
         <source>Next verse</source>
-        <translation type="unfinished">Next verse</translation>
+        <translation>Next verse</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="126"/>
         <source>Previous verse</source>
-        <translation type="unfinished">Previous verse</translation>
+        <translation>Previous verse</translation>
     </message>
 </context>
 <context>
@@ -857,22 +857,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookmarks/bteditbookmarkdialog.cpp" line="72"/>
         <source>Edit Bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Edit Bookmark</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/bteditbookmarkdialog.cpp" line="73"/>
         <source>Location:</source>
-        <translation type="unfinished"></translation>
+        <translation>Location:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/bteditbookmarkdialog.cpp" line="74"/>
         <source>Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Title:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/bteditbookmarkdialog.cpp" line="75"/>
         <source>Description:</source>
-        <translation type="unfinished"></translation>
+        <translation>Description:</translation>
     </message>
 </context>
 <context>
@@ -1731,10 +1731,6 @@ shortcut</translation>
         <translation>The work to which the bookmark points to is not installed.</translation>
     </message>
     <message>
-        <source>Change bookmark description...</source>
-        <translation type="obsolete">Change bookmark description...</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="102"/>
         <source>Print bookmarks...</source>
         <translation>Print bookmarks...</translation>
@@ -1752,17 +1748,17 @@ shortcut</translation>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="96"/>
         <source>Edit bookmark...</source>
-        <translation type="unfinished"></translation>
+        <translation>Edit bookmark...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="98"/>
         <source>Sort folder bookmarks...</source>
-        <translation type="unfinished"></translation>
+        <translation>Sort folder bookmarks...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="99"/>
         <source>Sort all bookmarks...</source>
-        <translation type="unfinished"></translation>
+        <translation>Sort all bookmarks...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="101"/>
@@ -2083,44 +2079,6 @@ shortcut</translation>
         <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="132"/>
         <source>Either the module may not be edited, or you do not have write permission.</source>
         <translation>Either the module may not be edited, or you do not have write permission.</translation>
-    </message>
-</context>
-<context>
-    <name>CInputDialog</name>
-    <message>
-        <source>Clear</source>
-        <translation type="obsolete">Clear</translation>
-    </message>
-</context>
-<context>
-    <name>CKeyReferenceWidget</name>
-    <message>
-        <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
-        <translation type="obsolete">Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</translation>
-    </message>
-    <message>
-        <source>Next book</source>
-        <translation type="obsolete">Next book</translation>
-    </message>
-    <message>
-        <source>Previous book</source>
-        <translation type="obsolete">Previous book</translation>
-    </message>
-    <message>
-        <source>Next chapter</source>
-        <translation type="obsolete">Next chapter</translation>
-    </message>
-    <message>
-        <source>Previous chapter</source>
-        <translation type="obsolete">Previous chapter</translation>
-    </message>
-    <message>
-        <source>Next verse</source>
-        <translation type="obsolete">Next verse</translation>
-    </message>
-    <message>
-        <source>Previous verse</source>
-        <translation type="obsolete">Previous verse</translation>
     </message>
 </context>
 <context>
@@ -2697,7 +2655,7 @@ Do you want to continue?</translation>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="51"/>
         <source>Select all</source>
-        <translation type="unfinished">Select all</translation>
+        <translation>Select all</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="76"/>
@@ -3764,14 +3722,6 @@ Language name ppk</extracomment>
         <translation>unknown</translation>
     </message>
     <message>
-        <source>Change description ...</source>
-        <translation type="obsolete">Change description ...</translation>
-    </message>
-    <message>
-        <source>Enter a new description for the chosen bookmark.</source>
-        <translation type="obsolete">Enter a new description for the chosen bookmark.</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookmarks/btbookmarkfolder.cpp" line="66"/>
         <source>New folder</source>
         <translation>New folder</translation>
@@ -4188,12 +4138,12 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="85"/>
         <source>Select all</source>
-        <translation type="unfinished">Select all</translation>
+        <translation>Select all</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="89"/>
         <source>Copy</source>
-        <translation type="unfinished">Copy</translation>
+        <translation>Copy</translation>
     </message>
 </context>
 <context>
