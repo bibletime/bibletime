@@ -22,427 +22,427 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BibleTime</name>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="628"/>
+        <location filename="../../src/bibletime_init.cpp" line="626"/>
         <source>&amp;File</source>
         <translation>&amp;Súbor</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="629"/>
+        <location filename="../../src/bibletime_init.cpp" line="627"/>
         <source>&amp;View</source>
         <translation>&amp;Zobrazenie</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="632"/>
+        <location filename="../../src/bibletime_init.cpp" line="630"/>
         <source>&amp;Search</source>
         <translation>&amp;Hľadanie</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="633"/>
+        <location filename="../../src/bibletime_init.cpp" line="631"/>
         <source>&amp;Window</source>
         <translation>&amp;Okno</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="639"/>
+        <location filename="../../src/bibletime_init.cpp" line="637"/>
         <source>Se&amp;ttings</source>
         <translation>Nas&amp;tavenia</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="640"/>
+        <location filename="../../src/bibletime_init.cpp" line="638"/>
         <source>&amp;Help</source>
         <translation>&amp;Pomocník</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="121"/>
+        <location filename="../../src/bibletime_init.cpp" line="119"/>
         <source>&amp;Show toolbar</source>
         <translation>&amp;Zobraziť panel nástrojov</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="114"/>
+        <location filename="../../src/bibletime_init.cpp" line="112"/>
         <source>&amp;Fullscreen mode</source>
         <translation>&amp;Celá obrazovka</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="107"/>
+        <location filename="../../src/bibletime_init.cpp" line="105"/>
         <source>&amp;Quit</source>
         <translation>&amp;Koniec</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="254"/>
+        <location filename="../../src/bibletime_init.cpp" line="252"/>
         <source>Open the Bible study HowTo included with BibleTime.&lt;br/&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
         <translation type="unfinished">Otvoriť Biblické štúdium Ako (Howto), ktoré je súčasťou BibleTime.&lt;br/&gt; Táto príručka je úvodom ako študovať Bibliu efektívnym spôsobom.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="259"/>
+        <location filename="../../src/bibletime_init.cpp" line="257"/>
         <source>Information about the BibleTime program</source>
         <translation>Informácie o programe BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="636"/>
+        <location filename="../../src/bibletime_init.cpp" line="634"/>
         <source>&amp;Save session</source>
         <translation>&amp;Uložiť reláciu</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="637"/>
+        <location filename="../../src/bibletime_init.cpp" line="635"/>
         <source>&amp;Load session</source>
         <translation>N&amp;ačítať reláciu</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="638"/>
+        <location filename="../../src/bibletime_init.cpp" line="636"/>
         <source>&amp;Delete session</source>
         <translation>O&amp;dstrániť reláciu</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="635"/>
+        <location filename="../../src/bibletime_init.cpp" line="633"/>
         <source>&amp;Arrangement mode</source>
         <translation>Režim &amp;usporiadania</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="147"/>
+        <location filename="../../src/bibletime_init.cpp" line="145"/>
         <source>&amp;Manual mode</source>
         <translation>&amp;Manuálny režim</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="154"/>
+        <location filename="../../src/bibletime_init.cpp" line="152"/>
         <source>Auto-tile &amp;vertically</source>
         <translation>Automaticky zarovnať &amp;zvisle</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="161"/>
+        <location filename="../../src/bibletime_init.cpp" line="159"/>
         <source>Auto-tile &amp;horizontally</source>
         <translation>Automaticky zarovnať &amp;vodorovne</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="182"/>
+        <location filename="../../src/bibletime_init.cpp" line="180"/>
         <source>Auto-&amp;cascade</source>
         <translation>&amp;Automaticky kaskádovať</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="189"/>
+        <location filename="../../src/bibletime_init.cpp" line="187"/>
         <source>&amp;Cascade</source>
         <translation>&amp;Kaskádovať</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="203"/>
+        <location filename="../../src/bibletime_init.cpp" line="201"/>
         <source>Tile &amp;vertically</source>
         <translation>Zarovnať &amp;zvisle</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="210"/>
+        <location filename="../../src/bibletime_init.cpp" line="208"/>
         <source>Tile &amp;horizontally</source>
         <translation>Zarovnať &amp;vodorovne</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="224"/>
+        <location filename="../../src/bibletime_init.cpp" line="222"/>
         <source>Cl&amp;ose all windows</source>
         <translation>Zatv&amp;oriť všetky okná</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="227"/>
+        <location filename="../../src/bibletime_init.cpp" line="225"/>
         <source>Close all open windows inside BibleTime</source>
         <translation>Zatvoriť všetky okná v BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="244"/>
+        <location filename="../../src/bibletime_init.cpp" line="242"/>
         <source>&amp;Handbook</source>
         <translation>&amp;Príručka</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="251"/>
+        <location filename="../../src/bibletime_init.cpp" line="249"/>
         <source>&amp;Bible Study Howto</source>
         <translation>&amp;Biblické štúdium Ako (Howto)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="552"/>
+        <location filename="../../src/bibletime_slots.cpp" line="551"/>
         <source>Please enter a name for the new session.</source>
         <translation>Vložte prosím názov novej relácie.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="110"/>
+        <location filename="../../src/bibletime_init.cpp" line="108"/>
         <source>Quit BibleTime</source>
         <translation>Ukončiť BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="117"/>
+        <location filename="../../src/bibletime_init.cpp" line="115"/>
         <source>Toggle fullscreen mode of the main window</source>
         <translation>Prepnúť celoobrázkový režim hlavného okna</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="126"/>
+        <location filename="../../src/bibletime_init.cpp" line="124"/>
         <source>Search in &amp;open works...</source>
         <translation>Hľadať v &amp;otvorených dielach...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="133"/>
+        <location filename="../../src/bibletime_init.cpp" line="131"/>
         <source>Search in standard &amp;Bible...</source>
         <translation>Hľadať v štandardnej &amp;Biblií...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="140"/>
+        <location filename="../../src/bibletime_init.cpp" line="138"/>
         <source>Save as &amp;new session...</source>
         <translation>Uložiť &amp;novú reláciu...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="143"/>
+        <location filename="../../src/bibletime_init.cpp" line="141"/>
         <source>Create and save a new session</source>
         <translation>Vytvorí a uloží novú reláciu</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="150"/>
+        <location filename="../../src/bibletime_init.cpp" line="148"/>
         <source>Manually arrange the open windows</source>
         <translation>Manuálne usporiadať otvorené okná</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="157"/>
+        <location filename="../../src/bibletime_init.cpp" line="155"/>
         <source>Automatically tile the open windows vertically (arrange side by side)</source>
         <translation>Automaticky vertikálne zarovnáva otvorené okná (okraj vedľa okraju)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="164"/>
+        <location filename="../../src/bibletime_init.cpp" line="162"/>
         <source>Automatically tile the open windows horizontally (arrange on top of each other)</source>
         <translation>Automaticky horizontálne zarovnáva otvorené okná (okraj vedľa okraju)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="168"/>
+        <location filename="../../src/bibletime_init.cpp" line="166"/>
         <source>Auto-&amp;tile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="171"/>
+        <location filename="../../src/bibletime_init.cpp" line="169"/>
         <source>Automatically tile the open windows</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="175"/>
+        <location filename="../../src/bibletime_init.cpp" line="173"/>
         <source>Ta&amp;bbed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="178"/>
+        <location filename="../../src/bibletime_init.cpp" line="176"/>
         <source>Automatically tab the open windows</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="185"/>
+        <location filename="../../src/bibletime_init.cpp" line="183"/>
         <source>Automatically cascade the open windows</source>
         <translation>Automaticky kaskáduje otvorené okná</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="192"/>
+        <location filename="../../src/bibletime_init.cpp" line="190"/>
         <source>Cascade the open windows</source>
         <translation>Kaskádovať otvorené okná</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="196"/>
+        <location filename="../../src/bibletime_init.cpp" line="194"/>
         <source>&amp;Tile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="199"/>
+        <location filename="../../src/bibletime_init.cpp" line="197"/>
         <source>Tile the open windows</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="206"/>
+        <location filename="../../src/bibletime_init.cpp" line="204"/>
         <source>Vertically tile (arrange side by side) the open windows</source>
         <translation>Vertikálne uložiť (okraj vedľa okraju) otvorené okná</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="213"/>
+        <location filename="../../src/bibletime_init.cpp" line="211"/>
         <source>Horizontally tile (arrange on top of each other) the open windows</source>
         <translation>Horizontálne uložiť (okraj vedľa okraju) otvorené okná</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="217"/>
+        <location filename="../../src/bibletime_init.cpp" line="215"/>
         <source>Close &amp;window</source>
         <translation type="unfinished">&amp;Zatvoriť okno</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="220"/>
+        <location filename="../../src/bibletime_init.cpp" line="218"/>
         <source>Close the current open window</source>
         <translation type="unfinished">Zavorí aktuálne okno</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="231"/>
+        <location filename="../../src/bibletime_init.cpp" line="229"/>
         <source>&amp;Configure BibleTime...</source>
         <translation>Kon&amp;figurácia Bibletime...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="233"/>
+        <location filename="../../src/bibletime_init.cpp" line="231"/>
         <source>Set BibleTime&apos;s preferences</source>
         <translation>Upraviť BibleTime nastavenia</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="237"/>
+        <location filename="../../src/bibletime_init.cpp" line="235"/>
         <source>Bookshelf &amp;Manager...</source>
         <translation>Správca k&amp;nižnice...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="240"/>
+        <location filename="../../src/bibletime_init.cpp" line="238"/>
         <source>Configure your bookshelf and install/update/remove/index works</source>
         <translation>Konfigurácia vašej knižnice a inštalácia/aktualizácia/odstránenie/indexovanie diel</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="247"/>
+        <location filename="../../src/bibletime_init.cpp" line="245"/>
         <source>Open BibleTime&apos;s handbook</source>
         <translation>Otvoriť BibleTime príručku</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="622"/>
+        <location filename="../../src/bibletime_init.cpp" line="620"/>
         <source>Main toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="623"/>
+        <location filename="../../src/bibletime_init.cpp" line="621"/>
         <source>Navigation toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="624"/>
+        <location filename="../../src/bibletime_init.cpp" line="622"/>
         <source>Works toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="625"/>
+        <location filename="../../src/bibletime_init.cpp" line="623"/>
         <source>Tools toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="626"/>
+        <location filename="../../src/bibletime_init.cpp" line="624"/>
         <source>Format toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="656"/>
+        <location filename="../../src/bibletime_init.cpp" line="654"/>
         <source>Show main toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="657"/>
+        <location filename="../../src/bibletime_init.cpp" line="655"/>
         <source>Show navigation bar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="658"/>
+        <location filename="../../src/bibletime_init.cpp" line="656"/>
         <source>Show works toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="659"/>
+        <location filename="../../src/bibletime_init.cpp" line="657"/>
         <source>Show tools toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="660"/>
+        <location filename="../../src/bibletime_init.cpp" line="658"/>
         <source>Show formatting toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="661"/>
+        <location filename="../../src/bibletime_init.cpp" line="659"/>
         <source>Show bookshelf</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="662"/>
+        <location filename="../../src/bibletime_init.cpp" line="660"/>
         <source>Show bookmarks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="663"/>
+        <location filename="../../src/bibletime_init.cpp" line="661"/>
         <source>Show mag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="630"/>
+        <location filename="../../src/bibletime_init.cpp" line="628"/>
         <source>Toolbars</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="655"/>
+        <location filename="../../src/bibletime_init.cpp" line="653"/>
         <source>Show toolbars in text windows</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="664"/>
+        <location filename="../../src/bibletime_init.cpp" line="662"/>
         <source>Show parallel text headers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="634"/>
+        <location filename="../../src/bibletime_init.cpp" line="632"/>
         <source>O&amp;pen windows</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="643"/>
+        <location filename="../../src/bibletime_init.cpp" line="641"/>
         <source>Show &quot;Whats this widget&quot; dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="832"/>
+        <location filename="../../src/bibletime_init.cpp" line="829"/>
         <source>Whats this widget?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="129"/>
+        <location filename="../../src/bibletime_init.cpp" line="127"/>
         <source>Search in all works that are currently open</source>
         <translation>Hľadať vo všetkých dielach, ktoré sú otvorené</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="136"/>
+        <location filename="../../src/bibletime_init.cpp" line="134"/>
         <source>Search in the standard Bible</source>
         <translation>Hľadať v štandardnej biblií</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="551"/>
+        <location filename="../../src/bibletime_slots.cpp" line="550"/>
         <source>New Session</source>
         <translation>Nová relácia</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="78"/>
+        <location filename="../../src/bibletime.cpp" line="83"/>
         <source>Initializing the SWORD engine...</source>
         <translation>Spúšťanie systému SWORD...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="84"/>
+        <location filename="../../src/bibletime.cpp" line="89"/>
         <source>Creating BibleTime&apos;s user interface...</source>
         <translation>Vytváranie BibleTime rozhrania...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="90"/>
+        <location filename="../../src/bibletime.cpp" line="95"/>
         <source>Initializing menu- and toolbars...</source>
         <translation>Inicializácia ponuky a panelov...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="257"/>
+        <location filename="../../src/bibletime.cpp" line="260"/>
         <source>Unlock Work</source>
         <translation>Odomknúť dielo</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="257"/>
+        <location filename="../../src/bibletime.cpp" line="260"/>
         <source>Enter the unlock key for %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="277"/>
+        <location filename="../../src/bibletime.cpp" line="280"/>
         <source>Warning: Invalid unlock key!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="278"/>
+        <location filename="../../src/bibletime.cpp" line="281"/>
         <source>The unlock key you provided did not properly unlock this module. Please try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="258"/>
+        <location filename="../../src/bibletime_init.cpp" line="256"/>
         <source>&amp;About BibleTime</source>
         <translation>&amp;O Bibletime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="620"/>
+        <location filename="../../src/bibletime_init.cpp" line="618"/>
         <source>Bookmarks</source>
         <translation>Záložky</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="621"/>
+        <location filename="../../src/bibletime_init.cpp" line="619"/>
         <source>Mag</source>
         <translation>Informácie</translation>
     </message>
@@ -455,12 +455,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>BibleTime sa ľahko používa, ale je mocný nástroj na štúdium Biblie.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="249"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="250"/>
         <source>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="255"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="256"/>
         <source>The complete legally binding license is below.</source>
         <translation>Nižšie je možné dokončiť právne obmedzenia.</translation>
     </message>
@@ -515,37 +515,37 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="198"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="199"/>
         <source>Some names may be missing, please email %1 if you notice errors or omissions.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="215"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="216"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="221"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="222"/>
         <source>The SWORD Project: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="229"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="230"/>
         <source>&amp;Qt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="232"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="233"/>
         <source>Qt toolkit version %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="238"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="239"/>
         <source>More info...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="243"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="244"/>
         <source>&amp;License</source>
         <translation type="unfinished"></translation>
     </message>
@@ -600,24 +600,62 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Nasledujúci ľudia preložili BibleTime do svojho jazyka:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="209"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="210"/>
         <source>&amp;SWORD</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="213"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="214"/>
         <source>SWORD library version %1</source>
         <translation>Verzia  %1 knižnice SWORD</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="234"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="235"/>
         <source>This program uses Qt version %1.</source>
         <translation type="unfinished">Tento program pouzíva Qt verziu %1.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="236"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="237"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
         <translation type="unfinished">QT je multiplatformová aplikácia a UI rámec, vytvorený v jazyku C++. Qt bolo vydané pod licenciou LGPL.</translation>
+    </message>
+</context>
+<context>
+    <name>BtBibleKeyWidget</name>
+    <message>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="112"/>
+        <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
+        <translation type="unfinished">Posúvanie cez položky v zozname. Stlačením tlačidla a pohybom myši presuniete položku hore alebo dole.</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="114"/>
+        <source>Next book</source>
+        <translation type="unfinished">Ďalšia kniha</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="116"/>
+        <source>Previous book</source>
+        <translation type="unfinished">Predchádzajúca kniha</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="119"/>
+        <source>Next chapter</source>
+        <translation type="unfinished">Nasledujúca kapitola</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="121"/>
+        <source>Previous chapter</source>
+        <translation type="unfinished">Predchádzajúca kapitola</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="124"/>
+        <source>Next verse</source>
+        <translation type="unfinished">Nasledujúci verš</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="126"/>
+        <source>Previous verse</source>
+        <translation type="unfinished">Predchádzajúci verš</translation>
     </message>
 </context>
 <context>
@@ -631,52 +669,52 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtBookshelfDockWidget</name>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="120"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="119"/>
         <source>Bookshelf</source>
         <translation>Knižnica</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="122"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="121"/>
         <source>&amp;Open</source>
         <translation>O&amp;tvoriť</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="123"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="122"/>
         <source>&amp;Edit</source>
         <translation>&amp;Upraviť</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="124"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="123"/>
         <source>&amp;Plain text</source>
         <translation>O&amp;byčajný text</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="125"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="124"/>
         <source>&amp;HTML</source>
         <translation>&amp;HTML</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="126"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="125"/>
         <source>&amp;Unlock...</source>
         <translation>O&amp;domknúť...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="127"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="126"/>
         <source>&amp;About...</source>
         <translation>&amp;O...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="152"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="151"/>
         <source>Warning: Module locked!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="153"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="152"/>
         <source>You are trying to access an encrypted module. Please provide an unlock key in the following dialog to open the module.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="202"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="201"/>
         <source>&amp;Search in %1...</source>
         <translation>&amp;Hľadanie v %1...</translation>
     </message>
@@ -754,85 +792,108 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtDisplaySettingsButton</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="99"/>
+        <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="98"/>
         <source>Use linebreaks after each verse</source>
         <translation type="unfinished">Použiť ukončenie riadkov po každom verši</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="100"/>
+        <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="99"/>
         <source>Show verse numbers</source>
         <translation type="unfinished">Zobraziť čísla veršov</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="101"/>
+        <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="100"/>
         <source>Show headings</source>
         <translation type="unfinished">Zobraziť nadpisy</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="102"/>
+        <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="101"/>
         <source>Highlight words of Jesus</source>
         <translation type="unfinished">Zvýrazniť Ježišove slová</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="103"/>
+        <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="102"/>
         <source>Show Hebrew vowel points</source>
         <translation type="unfinished">Zobraziť body hebrejských hlások</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="104"/>
+        <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="103"/>
         <source>Show Hebrew cantillation marks</source>
         <translation type="unfinished">Zobraziť hebrejské liturgické znaky</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="105"/>
+        <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="104"/>
         <source>Show Greek accents</source>
         <translation type="unfinished">Zobraziť grécke akcenty</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="106"/>
+        <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="105"/>
         <source>Use alternative textual variant</source>
         <translation type="unfinished">Použiť alternatívne textové variácie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="107"/>
+        <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="106"/>
         <source>Show scripture cross-references</source>
         <translation type="unfinished">Zobraziť krížové odkazy Biblie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="108"/>
+        <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="107"/>
         <source>Show morph segmentation</source>
         <translation type="unfinished">Zobraziť morfologické delenie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="115"/>
+        <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="114"/>
         <source>Display settings</source>
         <translation type="unfinished">Zobraziť nastavenia</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="118"/>
+        <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="117"/>
         <source>Display settings: No options available</source>
         <translation type="unfinished">Zobraziť nastavenia: nie sú žiadne dostupné možnosti</translation>
     </message>
 </context>
 <context>
+    <name>BtEditBookmarkDialog</name>
+    <message>
+        <location filename="../../src/frontend/bookmarks/bteditbookmarkdialog.cpp" line="72"/>
+        <source>Edit Bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookmarks/bteditbookmarkdialog.cpp" line="73"/>
+        <source>Location:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookmarks/bteditbookmarkdialog.cpp" line="74"/>
+        <source>Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookmarks/bteditbookmarkdialog.cpp" line="75"/>
+        <source>Description:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>BtFontSettingsPage</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="155"/>
+        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="154"/>
         <source>You can specify a custom font for each language.</source>
         <translation type="unfinished">Môžete si vybrať vlastné písmo pre každý jazyk.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="43"/>
+        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="42"/>
         <source>The font selection below will apply to all texts in this language</source>
         <translation type="unfinished">Výber písma sa použije na všetky texty v tomto jazyku</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="67"/>
+        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="66"/>
         <source>Use custom font</source>
         <translation type="unfinished">Použiť vlastné písmo</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="159"/>
+        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="158"/>
         <source>Fonts</source>
         <translation type="unfinished">Písma</translation>
     </message>
@@ -840,69 +901,69 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtIndexPage</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="39"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="38"/>
         <source>If selected, those indexes which have no corresponding work will be deleted when BibleTime starts</source>
         <translation>Ak je zvolené, tak tie indexy, ku ktorým nebude existovať dielo, budu vymazané pri spustení Bibletime</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="40"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="39"/>
         <source>Automatically delete orphaned indexes when BibleTime starts</source>
         <translation>Automaticky odstrániť osamotené indexy pri spustení BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="52"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="51"/>
         <source>Delete the selected indexes</source>
         <translatorcomment>Vymazať zvolené indexi</translatorcomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="53"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="52"/>
         <source>Delete</source>
         <translation>Zmazať</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="57"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="56"/>
         <source>Create new indexes for the selected works</source>
         <translation>Vytvoriť nové indexy pre zvolené diela</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="64"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="63"/>
         <source>Work</source>
         <translation>Dielo</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="64"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="63"/>
         <source>Index size</source>
         <translation>Veľkosť indexu</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="89"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="88"/>
         <source>Create new search indexes and delete created indexes for the installed works.</source>
         <translation>Vytvoriť nové indexy a zmazať vytvorené indexy pre nainštalované diela.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="97"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="96"/>
         <source>Search Indexes</source>
         <translation>Prehľadávať indexy</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="109"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="108"/>
         <source>Indexed Works</source>
         <translation>Indexované diela</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="114"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="113"/>
         <source>Unindexed Works</source>
         <translation>Neindexované diela</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="127"/>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="134"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="126"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="133"/>
         <source>KiB</source>
         <translation>KiB</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="58"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="57"/>
         <source>Create...</source>
         <translation>Vytvoriť...</translation>
     </message>
@@ -910,17 +971,17 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtInstallModuleChooserDialog</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.cpp" line="55"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.cpp" line="54"/>
         <source>Install/Update works?</source>
         <translation type="unfinished">Inštalovať/Aktualizovať diela?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.cpp" line="58"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.cpp" line="57"/>
         <source>Do you really want to install these works?</source>
         <translation type="unfinished">Skutočne chcete nainštalovať tieto diela?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.cpp" line="59"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.cpp" line="58"/>
         <source>Only one version of a work can be installed at the same time. Select only one if there are items marked with red.</source>
         <translation type="unfinished">Iba jedna verzia diela môže byť nainštalovaná v rovnakom čase. Vyberte iba jedno, ak sp tam položky označené červenou.</translation>
     </message>
@@ -941,37 +1002,37 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtInstallPage</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="185"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="184"/>
         <source>Install/Update</source>
         <translation>Inštalovať/Aktualizovať</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="181"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="180"/>
         <source>Install and update works. Add remote or local sources, refresh them, select the works to be installed/updated and click Install.&lt;br/&gt;&lt;b&gt;WARNING:&lt;/b&gt; If you live in a persecuted country and don&apos;t want to risk detection don&apos;t use remote sources.</source>
         <translation>Inštalovať a aktualizovať diela. Pridajte vzdialené alebo lokálne zdroje, obnovte ich, vyberte diela, ktoré sa majú nainštalovať/zaktualizovať a kliknite na Inštalovať.&lt;br/&gt;&lt;b&gt;VAROVANIE:&lt;/b&gt; Ak ste v krajine, kde je prenasledovanie a nechcete riskovať odhalenie, tak nepoužívajte vzdialené zdroje.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="91"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="90"/>
         <source>Install folder:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="96"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="95"/>
         <source>The folder where the new works will be installed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="100"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="99"/>
         <source>Configure folders where works are installed and found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="116"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="115"/>
         <source>Install...</source>
         <translation>Inštalovať...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="117"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="116"/>
         <source>Install or update selected works</source>
         <translation>Inštalovať alebo aktualizovať zvolené diela</translation>
     </message>
@@ -1079,52 +1140,52 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtInstallProgressDialog</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="39"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="38"/>
         <source>Work</source>
         <translation>Dielo</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="39"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="38"/>
         <source>Progress</source>
         <translation>Postup</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="52"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="51"/>
         <source>Stop</source>
         <translation>Zastaviť</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="76"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="75"/>
         <source>Stop All</source>
         <translation>Zastaviť všetko</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="136"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="135"/>
         <source>Completed</source>
         <translation>Ukončené</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="142"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="141"/>
         <source>Cancelled</source>
         <translation>Zrušené</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="62"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="61"/>
         <source>Waiting for turn...</source>
         <translation>Čakanie...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="212"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="211"/>
         <source>Preparing install...</source>
         <translation>Príprava inštalácie...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="35"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="34"/>
         <source>Install Progress</source>
         <translation>Postup inštalácie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="133"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="132"/>
         <source>Failed</source>
         <translation>Zlyhanie</translation>
     </message>
@@ -1132,22 +1193,22 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtLanguageSettingsPage</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="145"/>
+        <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="144"/>
         <source>Select the language in which the Biblical book names are displayed.</source>
         <translation type="unfinished">Vyberte jazyk, v ktorom sa budú zobrazovať názvy kníh Biblie.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="38"/>
+        <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="37"/>
         <source>Language for names of Bible books:</source>
         <translation type="unfinished">Jazyk pre názvy kníh Biblie:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="40"/>
+        <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="39"/>
         <source>The languages which can be used for the biblical booknames</source>
         <translation type="unfinished">Jazyky, ktoré je možné použiť pre názvy biblických kníh</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="149"/>
+        <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="148"/>
         <source>Languages</source>
         <translation type="unfinished">Zoznam jazykov</translation>
     </message>
@@ -1155,18 +1216,18 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtModuleChooserButton</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="80"/>
+        <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="79"/>
         <source>Select a work [%1]</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="83"/>
+        <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="82"/>
         <source>Select an additional work</source>
         <translation type="unfinished">Vybrať dodatočnú prácu</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="93"/>
-        <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="122"/>
+        <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="92"/>
+        <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="121"/>
         <source>NONE</source>
         <translation type="unfinished">Nič</translation>
     </message>
@@ -1174,7 +1235,7 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtModuleManagerDialog</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/btmodulemanagerdialog.cpp" line="35"/>
+        <location filename="../../src/frontend/bookshelfmanager/btmodulemanagerdialog.cpp" line="34"/>
         <source>Bookshelf Manager</source>
         <translation>Manažér Knižnice</translation>
     </message>
@@ -1182,7 +1243,7 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtOpenWorkAction</name>
     <message>
-        <location filename="../../src/frontend/btopenworkaction.cpp" line="86"/>
+        <location filename="../../src/frontend/btopenworkaction.cpp" line="85"/>
         <source>&amp;Open work</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1190,37 +1251,37 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtRemovePage</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="87"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="86"/>
         <source>Remove</source>
         <translation>Odstrániť</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="79"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="78"/>
         <source>Remove installed works. Select the works and click Remove button.</source>
         <translation>Odstrániť inštalované diela. Vyberte dielo a kliknite na tlačidlo Odstrániť.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="102"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="101"/>
         <source>You selected the following work(s): </source>
         <translation>Vybrali ste nasledovné dielo/diela:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="105"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="104"/>
         <source>Do you really want to remove them from your system?</source>
         <translation>Skutočne ich chcete odstrániť z vášho systému?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="61"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="60"/>
         <source>Remove...</source>
         <translation>Odstrániť...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="62"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="61"/>
         <source>Remove the selected works</source>
         <translation>Odstrániť označené diela</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="107"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="106"/>
         <source>Remove Works?</source>
         <translation>Odstrániť diela?</translation>
     </message>
@@ -1241,12 +1302,12 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtSearchModuleChooserDialog</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchmodulechooserdialog.cpp" line="47"/>
+        <location filename="../../src/frontend/searchdialog/btsearchmodulechooserdialog.cpp" line="46"/>
         <source>Works to Search in</source>
         <translation type="unfinished">Diela do hľadať v</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchmodulechooserdialog.cpp" line="49"/>
+        <location filename="../../src/frontend/searchdialog/btsearchmodulechooserdialog.cpp" line="48"/>
         <source>Select the works which should be searched.</source>
         <translation type="unfinished">Vyberte diela, v ktorých chcete hľadať.</translation>
     </message>
@@ -1332,42 +1393,42 @@ skratka</translation>
 <context>
     <name>BtSourceArea</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="108"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="107"/>
         <source>Work</source>
         <translation>Dielo</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="108"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="107"/>
         <source>Description</source>
         <translation>Popis</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="96"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="95"/>
         <source>Add...</source>
         <translation>Pridať...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="87"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="86"/>
         <source>Refresh...</source>
         <translation>Obnoviť...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="88"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="87"/>
         <source>Refresh the list of works from this source</source>
         <translation>Obnoviť zoznam diel z tohoto zdroja</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="92"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="91"/>
         <source>Delete...</source>
         <translation>Zmazať...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="93"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="92"/>
         <source>Delete this source</source>
         <translation>Zmazať tento zdroj</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="97"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="96"/>
         <source>Add new source</source>
         <translation>Pridať nový zdroj</translation>
     </message>
@@ -1444,22 +1505,22 @@ skratka</translation>
 <context>
     <name>BtTextWindowHeaderWidget</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="49"/>
+        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="48"/>
         <source>Add/remove/replace</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="138"/>
+        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="137"/>
         <source>Remove</source>
         <translation type="unfinished">Odstrániť</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="144"/>
+        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="143"/>
         <source>Replace</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="149"/>
+        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="148"/>
         <source>Add</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1640,83 +1701,97 @@ skratka</translation>
 <context>
     <name>CBookmarkIndex</name>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="90"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="91"/>
         <source>Bookmarks</source>
         <translation>Záložky</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="92"/>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="595"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="93"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="612"/>
         <source>New folder</source>
         <translation>Nový priečinok</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="93"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="94"/>
         <source>Rename folder</source>
         <translation>Premenovať priečinok</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="693"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="732"/>
         <source>Delete Items</source>
         <translation>Zmazať položky</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="694"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="733"/>
         <source>Do you really want to delete the selected items and child-items?</source>
         <translation>Naozaj chcete zmazať vybrané položky a ich potomkov?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="808"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="851"/>
         <source>The work to which the bookmark points to is not installed.</source>
         <translation>Dielo, do ktorého ukazuje záložka, nie je nainštalované.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="95"/>
         <source>Change bookmark description...</source>
-        <translation>Zmeňte popis záložky...</translation>
+        <translation type="obsolete">Zmeňte popis záložky...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="98"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="102"/>
         <source>Print bookmarks...</source>
         <translation>Tlačiť záložky...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="100"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="104"/>
         <source>Remove selected items...</source>
         <translation>Odstrániť zvolené položky...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="96"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="100"/>
         <source>Import to folder...</source>
         <translation>Importovať priečinok...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="97"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="96"/>
+        <source>Edit bookmark...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="98"/>
+        <source>Sort folder bookmarks...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="99"/>
+        <source>Sort all bookmarks...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="101"/>
         <source>Export from folder...</source>
         <translation>Exportovať priečinok...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="401"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="412"/>
         <source>Can drop only bookmarks or one folder</source>
         <translation>Je možné pustiť len jednu záložku alebo priečinok</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="406"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="417"/>
         <source>Can&apos;t drop folder into the folder itself or into its subfolder</source>
         <translation>Nie je možné pustiť priečinok do samého seba alebo do podpriečinku</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="413"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="424"/>
         <source>Copy</source>
         <translation>Kopírovať</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="414"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="425"/>
         <source>Move</source>
         <translation>Presunúť</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="481"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="493"/>
         <source>Drag references from text views to this view</source>
         <translation>Ťahať odkazy zo zobrazenia textu do tohoto zobrazenia</translation>
     </message>
@@ -1767,7 +1842,7 @@ skratka</translation>
 <context>
     <name>CConfigurationDialog</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="37"/>
+        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="36"/>
         <source>Configure BibleTime</source>
         <translation>Konfigurácia BibleTime</translation>
     </message>
@@ -1775,67 +1850,67 @@ skratka</translation>
 <context>
     <name>CDisplaySettingsPage</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="67"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="66"/>
         <source>Display templates</source>
         <translation>Šablóny zobrazenia</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="78"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="77"/>
         <source>Available display styles:</source>
         <translation>Dostupné štýly zobrazenia:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="88"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="87"/>
         <source>Style preview</source>
         <translation>Náhľad štýlu</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="124"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="123"/>
         <source>For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.</source>
         <translation>Lebo tak miloval Boh svet, že svojho jednorodeného Syna dal, aby nikto, kto verí v Neho, nezahynul, ale mal večný život.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="131"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="130"/>
         <source>For God didn&apos;t send his Son into the world to judge the world, but that the world should be saved through him.</source>
         <translation>Lebo neposlal Boh na svet svojho Syna aby súdil svet, ale aby bol svet spasený skrze Neho.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="138"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="137"/>
         <source>He who believes in him is not judged. He who doesn&apos;t believe has been judged already, because he has not believed in the name of the one and only Son of God.</source>
         <translation>Kto verí v Neho, nebude odsúdený, ale ten, kto neverí, už je odsúdený. lebo neuveril v meno jednorodeného Syna Božieho.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="148"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="147"/>
         <source>For everyone who does evil hates the light, and doesn&apos;t come to the light, lest his works would be exposed.</source>
         <translation>Lebo každý, kto robí zlé, nenávidí svetlo a nejde k svetlu, aby neboli trestané jeho skutky.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="153"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="152"/>
         <source>But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.</source>
         <translation>Ale ten, kto činí pravdu, ide k svetlu, aby boli zjavené jeho skutky, že sú vykonané v Bohu.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="68"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="67"/>
         <source>Display templates define how text is displayed.</source>
         <translation>Zobraziť šablóny definujúce ako sa text zobrazí.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="57"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="56"/>
         <source>Show the BibleTime logo on startup</source>
         <translation>Zobraziť logo BibleTime pri spustení</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="56"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="55"/>
         <source>Show startup logo</source>
         <translation>Zobraziť logo pri spustení</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="143"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="142"/>
         <source>This is the judgement, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="188"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="187"/>
         <source>Display</source>
         <translation>Zobrazenie</translation>
     </message>
@@ -1848,72 +1923,72 @@ skratka</translation>
 <context>
     <name>CDisplayWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="153"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="152"/>
         <source>Back in history</source>
         <translation>Späť v histórii</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="161"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="160"/>
         <source>Forward in history</source>
         <translation>Dopredu v histórii</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="122"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="121"/>
         <source>Zoom in</source>
         <translation>Zväčšiť</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="126"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="125"/>
         <source>Zoom out</source>
         <translation>Zmenšiť</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="130"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="129"/>
         <source>Select all</source>
         <translation>Označiť všetko</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="134"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="133"/>
         <source>Copy</source>
         <translation>Kopírovať</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="138"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="137"/>
         <source>Find...</source>
         <translation>Hľadať...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="142"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="141"/>
         <source>Change location</source>
         <translation>Zmeniť umiestnenie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="147"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="146"/>
         <source>Search with works of this window</source>
         <translation>Hľadať v dielach tohoto okna</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="332"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="331"/>
         <source>Work chooser buttons</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="342"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="341"/>
         <source>Text area header</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="394"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="393"/>
         <source>Navigation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="400"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="399"/>
         <source>Tool</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="406"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="405"/>
         <source>Format</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2019,47 +2094,39 @@ skratka</translation>
 <context>
     <name>CInputDialog</name>
     <message>
-        <location filename="../../src/frontend/cinputdialog.cpp" line="50"/>
         <source>Clear</source>
-        <translation>Vyčistiť</translation>
+        <translation type="obsolete">Vyčistiť</translation>
     </message>
 </context>
 <context>
     <name>CKeyReferenceWidget</name>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="112"/>
         <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
-        <translation>Posúvanie cez položky v zozname. Stlačením tlačidla a pohybom myši presuniete položku hore alebo dole.</translation>
+        <translation type="obsolete">Posúvanie cez položky v zozname. Stlačením tlačidla a pohybom myši presuniete položku hore alebo dole.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="114"/>
         <source>Next book</source>
-        <translation>Ďalšia kniha</translation>
+        <translation type="obsolete">Ďalšia kniha</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="116"/>
         <source>Previous book</source>
-        <translation>Predchádzajúca kniha</translation>
+        <translation type="obsolete">Predchádzajúca kniha</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="119"/>
         <source>Next chapter</source>
-        <translation>Nasledujúca kapitola</translation>
+        <translation type="obsolete">Nasledujúca kapitola</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="121"/>
         <source>Previous chapter</source>
-        <translation>Predchádzajúca kapitola</translation>
+        <translation type="obsolete">Predchádzajúca kapitola</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="124"/>
         <source>Next verse</source>
-        <translation>Nasledujúci verš</translation>
+        <translation type="obsolete">Nasledujúci verš</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="126"/>
         <source>Previous verse</source>
-        <translation>Predchádzajúci verš</translation>
+        <translation type="obsolete">Predchádzajúci verš</translation>
     </message>
 </context>
 <context>
@@ -2173,27 +2240,27 @@ skratka</translation>
 <context>
     <name>CModuleIndexDialog</name>
     <message>
-        <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="38"/>
+        <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="37"/>
         <source>Cancel</source>
         <translation>Zrušiť</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="40"/>
+        <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="39"/>
         <source>Creating indices</source>
         <translation>Vytváranie indexov</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="52"/>
+        <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="51"/>
         <source>Creating index for work: %1</source>
         <translation>Vytváranie indexu pre dielo: %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="97"/>
+        <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="96"/>
         <source>Indexing Is Cancelled</source>
         <translation>Indexovanie zrušené</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="97"/>
+        <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="96"/>
         <source>Indexing is cancelled because modules are removed.</source>
         <translation>Indexovanie je zrušené, lebo moduly sú presunuté.</translation>
     </message>
@@ -2293,168 +2360,168 @@ skratka</translation>
 <context>
     <name>CSwordModuleInfo</name>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="775"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="774"/>
         <source>Version</source>
         <translation>Verzia</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="776"/>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="781"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="775"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="780"/>
         <source>unknown</source>
         <translation>neznámy</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="779"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="778"/>
         <source>Markup</source>
         <translation>Označenie</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="784"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="783"/>
         <source>Location</source>
         <translation>Umiestnenie</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="788"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="787"/>
         <source>Language</source>
         <translation>Jazyk</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="793"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="792"/>
         <source>Category</source>
         <translation>Kategória</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="798"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="797"/>
         <source>LCSH</source>
         <translation>LCSH</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="802"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="801"/>
         <source>Writable</source>
         <translation>Zapisovateľné</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="803"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="802"/>
         <source>yes</source>
         <translation>áno</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="803"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="802"/>
         <source>no</source>
         <translation>nie</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="807"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="806"/>
         <source>Unlock key</source>
         <translation>Kľúč k odomknutiu</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="826"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="825"/>
         <source>Features</source>
         <translation>Vlastnosti</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="834"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="833"/>
         <source>Take care, this work contains cult / questionable material!</source>
         <translation>Dávajte si pozor, toto dielo obsahuje kultový / otázny materiál!</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="837"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="836"/>
         <source>About</source>
         <translation>O module</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="859"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="858"/>
         <source>Distribution license</source>
         <translation>Licencia ohľadom distribuovanie</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="860"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="859"/>
         <source>Distribution source</source>
         <translation>Zdroj distribúcie</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="861"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="860"/>
         <source>Distribution notes</source>
         <translation>Poznámky k distribúcii</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="862"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="861"/>
         <source>Text source</source>
         <translation>Zdroj textu</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="863"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="862"/>
         <source>Copyright notes</source>
         <translation>Poznámky k autorským právam</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="864"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="863"/>
         <source>Copyright holder</source>
         <translation>Držiteľ autorských práv</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="865"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="864"/>
         <source>Copyright date</source>
         <translation>Dátum autorských práv</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="866"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="865"/>
         <source>Copyright contact name</source>
         <translation>Kontakt ohľadom autorských práv</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="867"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="866"/>
         <source>Copyright contact address</source>
         <translation>Kontaktná adresa ohľadom autorských práv</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="868"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="867"/>
         <source>Copyright contact email</source>
         <translation>Kontaktný email ohľadom autorských práv</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="981"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="980"/>
         <source>Bibles</source>
         <translation type="unfinished">Biblie</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="983"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="982"/>
         <source>Commentaries</source>
         <translation type="unfinished">Komentáre</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="985"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="984"/>
         <source>Books</source>
         <translation type="unfinished">Knihy</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="987"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="986"/>
         <source>Cults/Unorthodox</source>
         <translation type="unfinished">Kultové/Neortodoxné</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="989"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="988"/>
         <source>Maps and Images</source>
         <translation type="unfinished">Mapy a obrázky</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="991"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="990"/>
         <source>Daily Devotionals</source>
         <translation type="unfinished">Denné zamyslenia</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="993"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="992"/>
         <source>Lexicons and Dictionaries</source>
         <translation type="unfinished">Lexikóny a slovníky</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="995"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="994"/>
         <source>Glossaries</source>
         <translation type="unfinished">Glosáre</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="997"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="996"/>
         <source>Unknown</source>
         <translation type="unfinished">Neznáme</translation>
     </message>
@@ -2462,17 +2529,17 @@ skratka</translation>
 <context>
     <name>CSwordSettingsPage</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="40"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="39"/>
         <source>Standard works</source>
         <translation>Štandardné diela</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="41"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="40"/>
         <source>Text filters</source>
         <translation>Textové filtre</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="337"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="336"/>
         <source>Desk</source>
         <translation>Plocha</translation>
     </message>
@@ -2609,43 +2676,48 @@ Do you want to continue?</source>
 <context>
     <name>InfoDisplay::CInfoDisplay</name>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="186"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="198"/>
         <source>Abbreviation</source>
         <translation>Skratka</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="197"/>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="297"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="209"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="309"/>
         <source>Cross references</source>
         <translation>Krížové referencie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="353"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="365"/>
         <source>Footnote</source>
         <translation>Poznámky pod čiarou</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="384"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="396"/>
         <source>Strongs</source>
         <translation>Strongové čísla</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="466"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="478"/>
         <source>Morphology</source>
         <translation>Morfologické príznaky</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="490"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="502"/>
         <source>Word lookup</source>
         <translation>Hľadanie slov</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="50"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="55"/>
         <source>Copy</source>
         <translation>Kopírovať</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="66"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="51"/>
+        <source>Select all</source>
+        <translation type="unfinished">Označiť všetko</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="76"/>
         <source>&lt;small&gt;This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.&lt;/small&gt;</source>
         <translation>&lt;small&gt;Toto je informačná oblasť. Postavte sa s myšou nad odkaz alebo inú položku, ktorá obsahuje nejaké dáta, a jej obsah sa po chvíli zobrazí v informačnej oblasti. Rýchlym pohybom myši sa presuňte do informačnej oblasti, alebo uzamknite zobrazenie stlačením a držaním klávesy Shift pri pohybe myši.&lt;/small&gt;</translation>
     </message>
@@ -2653,22 +2725,22 @@ Do you want to continue?</source>
 <context>
     <name>QCoreApplication</name>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="420"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="419"/>
         <source>Indexing aborted</source>
         <translation>Indexovanie bolo prerušené</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="420"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="419"/>
         <source>An internal error occurred while building the index.</source>
         <translation>Vyskytla sa interná chyba pri vytváraní indexu.</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="496"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="495"/>
         <source>Search aborted</source>
         <translation>Vyhľadávanie prerušené</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="496"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="495"/>
         <source>An internal error occurred while executing your search.</source>
         <translation>Vyskytla sa interná chyba pri vykonávaní vyhľadávania.</translation>
     </message>
@@ -2676,788 +2748,788 @@ Do you want to continue?</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="130"/>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="247"/>
+        <location filename="../../src/backend/btmoduletreeitem.cpp" line="129"/>
+        <location filename="../../src/backend/btmoduletreeitem.cpp" line="246"/>
         <source>Commentaries</source>
         <translation>Komentáre</translation>
     </message>
     <message>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="131"/>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="253"/>
+        <location filename="../../src/backend/btmoduletreeitem.cpp" line="130"/>
+        <location filename="../../src/backend/btmoduletreeitem.cpp" line="252"/>
         <source>Cults/Unorthodox</source>
         <translation>Kultové/Neortodoxné</translation>
     </message>
     <message>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="132"/>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="252"/>
+        <location filename="../../src/backend/btmoduletreeitem.cpp" line="131"/>
+        <location filename="../../src/backend/btmoduletreeitem.cpp" line="251"/>
         <source>Maps and Images</source>
         <translation>Mapy a obrázky</translation>
     </message>
     <message>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="133"/>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="251"/>
+        <location filename="../../src/backend/btmoduletreeitem.cpp" line="132"/>
+        <location filename="../../src/backend/btmoduletreeitem.cpp" line="250"/>
         <source>Daily Devotionals</source>
         <translation>Denné zamyslenia</translation>
     </message>
     <message>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="134"/>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="249"/>
+        <location filename="../../src/backend/btmoduletreeitem.cpp" line="133"/>
+        <location filename="../../src/backend/btmoduletreeitem.cpp" line="248"/>
         <source>Lexicons and Dictionaries</source>
         <translation>Lexikóny a slovníky</translation>
     </message>
     <message>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="135"/>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="246"/>
+        <location filename="../../src/backend/btmoduletreeitem.cpp" line="134"/>
+        <location filename="../../src/backend/btmoduletreeitem.cpp" line="245"/>
         <source>Bibles</source>
         <translation>Biblie</translation>
     </message>
     <message>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="136"/>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="250"/>
+        <location filename="../../src/backend/btmoduletreeitem.cpp" line="135"/>
+        <location filename="../../src/backend/btmoduletreeitem.cpp" line="249"/>
         <source>Glossaries</source>
         <translation>Glosáre</translation>
     </message>
     <message>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="137"/>
-        <location filename="../../src/backend/btmoduletreeitem.cpp" line="248"/>
+        <location filename="../../src/backend/btmoduletreeitem.cpp" line="136"/>
+        <location filename="../../src/backend/btmoduletreeitem.cpp" line="247"/>
         <source>Books</source>
         <translation>Knihy</translation>
     </message>
     <message>
-        <location filename="../../src/backend/filters/bt_osishtml.cpp" line="392"/>
+        <location filename="../../src/backend/filters/bt_osishtml.cpp" line="391"/>
         <source>Added text</source>
         <translation>Pridaný text</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="149"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="164"/>
         <source>Names of languages</source>
         <comment>No need to translate - see the longer comment (If there is no longer comment, it doesn&apos;t work yet :)) ------ </comment>
         <extracomment>The string &quot;Names of languages&quot; doesn&apos;t actually need translation. It is put here to help translators notice this help text. ------- The names of the languages should follow the conventions of your language. You can write the names with a capital first letter even if your language uses non-capitalized language names (they look better with capital first letter when they are listed). ------- To find the names of all languages from internet try searching for &quot;names of languages in language_x&quot; but in your own language, e.g. &quot;kielten nimet suomeksi&quot; in Finnish or &quot;names of languages in english&quot; in English. ------- You can find the language codes and names by googling for the standards mentioned below. ------- Preference order for locale codes are: ------- ISO 639-1 ------- ISO 639-2 ------- ISO 639-3 ------- x-E-XXX form is deprecated and no modules in repositories use it. If you find a module with x-E-XXX language, update the module.</extracomment>
         <translation>Názvy jazykov</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="154"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="169"/>
         <source>Afrikaans</source>
         <extracomment>Language name af</extracomment>
         <translation>Afrikánske</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="157"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="172"/>
         <source>Amuzgo, Guerrero</source>
         <extracomment>Language name amu</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="159"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="174"/>
         <source>English, Old (ca.450-1100)</source>
         <extracomment>Language name ang</extracomment>
         <translation>Staroanglické, (450-1100)</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="161"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="176"/>
         <source>Arabic</source>
         <extracomment>Language name ar</extracomment>
         <translation>Arabské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="164"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="179"/>
         <source>Azerbaijani</source>
         <extracomment>Language name az</extracomment>
         <translation>Azerbajdžanské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="166"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="181"/>
         <source>Azerbaijani, South</source>
         <extracomment>Language name azb</extracomment>
         <translation>Juhoazerbajdžanské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="171"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="186"/>
         <source>Belarusian</source>
         <extracomment>Language name be</extracomment>
         <translation>Bieloruské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="173"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="188"/>
         <source>Bulgarian</source>
         <extracomment>Language name bg</extracomment>
         <translation>Bulharské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="179"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="194"/>
         <source>Breton</source>
         <extracomment>Language name br</extracomment>
         <translation>Bretónske</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="181"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="196"/>
         <source>Bosnian</source>
         <extracomment>Language name bs</extracomment>
         <translation>Bosnianské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="183"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="198"/>
         <source>Catalan</source>
         <extracomment>Language name ca</extracomment>
         <translation>Katalánske</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="186"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="201"/>
         <source>Chinantec, Comaltepec</source>
         <extracomment>Language name cco</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="188"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="203"/>
         <source>Cebuano</source>
         <extracomment>Language name ceb</extracomment>
         <translation>Cebuánske</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="190"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="205"/>
         <source>Chamorro</source>
         <extracomment>Language name ch</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="192"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="207"/>
         <source>Chontal, Highland Oaxaca</source>
         <extracomment>Language name chd</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="194"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="209"/>
         <source>Chinantec, Quiotepec</source>
         <extracomment>Language name chq</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="196"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="211"/>
         <source>Chinantec, Ozumacu00edn</source>
         <extracomment>Language name chz</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="199"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="214"/>
         <source>Cakchiquel, Western</source>
         <extracomment>Language name ckw</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="201"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="216"/>
         <source>Chinantec, Lalana</source>
         <extracomment>Language name cnl</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="203"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="218"/>
         <source>Chinantec, Tepetotutla</source>
         <extracomment>Language name cnt</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="205"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="220"/>
         <source>Coptic</source>
         <extracomment>Language name cop</extracomment>
         <translation>Koptské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="207"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="222"/>
         <source>Czech</source>
         <extracomment>Language name cs</extracomment>
         <translation>České</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="209"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="224"/>
         <source>Chinantec, Sochiapan</source>
         <extracomment>Language name cso</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="211"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="226"/>
         <source>Chol, Tila</source>
         <extracomment>Language name cti</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="213"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="228"/>
         <source>Chatino, Western Highland</source>
         <extracomment>Language name ctp</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="215"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="230"/>
         <source>Church Slavic</source>
         <extracomment>Language name cu</extracomment>
         <translation>Staroslovienske</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="218"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="233"/>
         <source>Welsh</source>
         <extracomment>Language name cy</extracomment>
         <translation>Welšské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="220"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="235"/>
         <source>Danish</source>
         <extracomment>Language name da</extracomment>
         <translation>Dánske</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="222"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="237"/>
         <source>German</source>
         <extracomment>Language name de</extracomment>
         <translation>Nemecké</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="224"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="239"/>
         <source>Duruma</source>
         <extracomment>Language name dug</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="227"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="242"/>
         <source>Greek, Modern (1453-)</source>
         <extracomment>Language name el</extracomment>
         <translation>Moderné grécke (1453-)</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="229"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="244"/>
         <source>English</source>
         <extracomment>Language name en</extracomment>
         <translation>Anglické</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="231"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="246"/>
         <source>American English</source>
         <extracomment>Language name en_US</extracomment>
         <translation>Americko-anglické</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="233"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="248"/>
         <source>English, Middle (1100-1500)</source>
         <extracomment>Language name enm</extracomment>
         <translation>Stredo-anglické (1100-1500)</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="235"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="250"/>
         <source>Esperanto</source>
         <extracomment>Language name eo</extracomment>
         <translation>Esperanto</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="237"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="252"/>
         <source>Spanish</source>
         <extracomment>Language name es</extracomment>
         <translation>Španielske</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="239"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="254"/>
         <source>Estonian</source>
         <extracomment>Language name et</extracomment>
         <translation>Estónske</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="241"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="256"/>
         <source>Basque</source>
         <extracomment>Language name eu</extracomment>
         <translation>Baskitské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="243"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="258"/>
         <source>Persian</source>
         <extracomment>Language name fa</extracomment>
         <translation>Perské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="245"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="260"/>
         <source>Finnish</source>
         <extracomment>Language name fi</extracomment>
         <translation>Fínske</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="249"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="264"/>
         <source>French</source>
         <extracomment>Language name fr</extracomment>
         <translation>Francúzske</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="251"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="266"/>
         <source>Frisian</source>
         <extracomment>Language name fy</extracomment>
         <translation>Frisianské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="253"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="268"/>
         <source>Irish</source>
         <extracomment>Language name ga</extracomment>
         <translation>Írske</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="255"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="270"/>
         <source>Gaelic (Scots)</source>
         <extracomment>Language name gd</extracomment>
         <translation>Gaelštinské (Škótske)</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="257"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="272"/>
         <source>Geez</source>
         <extracomment>Language name gez</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="262"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="277"/>
         <source>Gothic</source>
         <extracomment>Language name got</extracomment>
         <translation>Gotické</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="264"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="279"/>
         <source>Manx</source>
         <extracomment>Language name gv</extracomment>
         <translation>Manské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="266"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="281"/>
         <source>Greek, Ancient (to 1453)</source>
         <extracomment>Language name grc</extracomment>
         <translation>Starogrécke (do 1453)</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="268"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="283"/>
         <source>Hebrew</source>
         <extracomment>Language name he</extracomment>
         <translation>Hebrejské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="270"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="285"/>
         <source>Hausa</source>
         <extracomment>Language name hau</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="272"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="287"/>
         <source>Hawaiian</source>
         <extracomment>Language name haw</extracomment>
         <translation>Havajské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="274"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="289"/>
         <source>Hindi</source>
         <extracomment>Language name hi</extracomment>
         <translation>Hindské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="277"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="292"/>
         <source>Croatian</source>
         <extracomment>Language name hr</extracomment>
         <translation>Chorvátske</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="281"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="296"/>
         <source>Hungarian</source>
         <extracomment>Language name hu</extracomment>
         <translation>Maďarské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="283"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="298"/>
         <source>Huave, San Mateo Del Mar</source>
         <extracomment>Language name huv</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="285"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="300"/>
         <source>Armenian</source>
         <extracomment>Language name hy</extracomment>
         <translation>Arménske</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="289"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="304"/>
         <source>Indonesian</source>
         <extracomment>Language name id</extracomment>
         <translation>Indonézske</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="293"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="308"/>
         <source>Icelandic</source>
         <extracomment>Language name is</extracomment>
         <translation>Islandské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="295"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="310"/>
         <source>Italian</source>
         <extracomment>Language name it</extracomment>
         <translation>Talianske</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="297"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="312"/>
         <source>Itzu00e1</source>
         <extracomment>Language name itz</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="299"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="314"/>
         <source>Ixil, San Juan Cotzal</source>
         <extracomment>Language name ixl</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="302"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="317"/>
         <source>Japanese</source>
         <extracomment>Language name ja</extracomment>
         <translation>Japonské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="304"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="319"/>
         <source>Jacalteco, Eastern</source>
         <extracomment>Language name jac</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="306"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="321"/>
         <source>Javanese, Caribbean</source>
         <extracomment>Language name jvn</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="308"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="323"/>
         <source>Georgian</source>
         <extracomment>Language name ka</extracomment>
         <translation>Gruzínske</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="318"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="333"/>
         <source>Korean</source>
         <extracomment>Language name ko</extracomment>
         <translation>Kórejské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="321"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="336"/>
         <source>Kurdish</source>
         <extracomment>Language name ku</extracomment>
         <translation>Kurdské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="325"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="340"/>
         <source>Kirghiz</source>
         <extracomment>Language name ky</extracomment>
         <translation>Kyrgizské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="327"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="342"/>
         <source>Latin</source>
         <extracomment>Language name la</extracomment>
         <translation>Latinské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="329"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="344"/>
         <source>Lacandon</source>
         <extracomment>Language name lac</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="336"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="351"/>
         <source>Lithuanian</source>
         <extracomment>Language name lt</extracomment>
         <translation>Litovské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="338"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="353"/>
         <source>Latvian</source>
         <extracomment>Language name lv</extracomment>
         <translation>Lotyšské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="340"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="355"/>
         <source>Malagasy</source>
         <extracomment>Language name mg</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="343"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="358"/>
         <source>Maori</source>
         <extracomment>Language name mi</extracomment>
         <translation>Maorské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="345"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="360"/>
         <source>Mixe, Isthmus</source>
         <extracomment>Language name mir</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="347"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="362"/>
         <source>Mixtec, Coatzospan</source>
         <extracomment>Language name miz</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="349"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="364"/>
         <source>Macedonian</source>
         <extracomment>Language name mk</extracomment>
         <translation>Macedónske</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="351"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="366"/>
         <source>Mixtec, Silacayoapan</source>
         <extracomment>Language name mks</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="356"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="371"/>
         <source>More</source>
         <extracomment>Language name mos</extracomment>
         <translation>Maorské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="359"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="374"/>
         <source>Malay</source>
         <extracomment>Language name ms</extracomment>
         <translation>Malajské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="361"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="376"/>
         <source>Maltese</source>
         <extracomment>Language name mt</extracomment>
         <translation>Maltské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="381"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="396"/>
         <source>Low German; Low Saxon</source>
         <extracomment>Language name nds</extracomment>
         <translation>Dolnonemecké; dolnosaské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="383"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="398"/>
         <source>Nepali</source>
         <extracomment>Language name ne</extracomment>
         <translation>Nepálske</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="385"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="400"/>
         <source>Nahuatl, Guerrero</source>
         <extracomment>Language name ngu</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="387"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="402"/>
         <source>Nahuatl, Northern Oaxaca</source>
         <extracomment>Language name nhy</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="390"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="405"/>
         <source>Dutch</source>
         <extracomment>Language name nl</extracomment>
         <translation>Holandské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="392"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="407"/>
         <source>Norwegian Nynorsk</source>
         <extracomment>Language name nn</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="394"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="409"/>
         <source>Norwegian</source>
         <extracomment>Language name no</extracomment>
         <translation>Nórske</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="403"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="418"/>
         <source>Otomi, Queru00e9taro</source>
         <extracomment>Language name otq</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="406"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="421"/>
         <source>Papiamento</source>
         <extracomment>Language name pap</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="411"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="426"/>
         <source>Polish</source>
         <extracomment>Language name pl</extracomment>
         <translation>Poľské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="417"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="432"/>
         <source>Persian (Dari)</source>
         <extracomment>Language name prs</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="421"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="436"/>
         <source>Portuguese</source>
         <extracomment>Language name pt</extracomment>
         <translation>Portugalské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="423"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="438"/>
         <source>Brasilian Portuguese</source>
         <extracomment>Language name pt_BR</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="426"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="441"/>
         <source>Quichu00e9, West Central</source>
         <extracomment>Language name qut</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="430"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="445"/>
         <source>Romanian</source>
         <extracomment>Language name ro</extracomment>
         <translation>Rumunské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="432"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="447"/>
         <source>Russian</source>
         <extracomment>Language name ru</extracomment>
         <translation>Ruské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="437"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="452"/>
         <source>Scots</source>
         <extracomment>Language name sco</extracomment>
         <translation>Škótske</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="443"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="458"/>
         <source>Slovak</source>
         <extracomment>Language name sk</extracomment>
         <translation>Slovenské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="445"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="460"/>
         <source>Slovenian</source>
         <extracomment>Language name sl</extracomment>
         <translation>Slovinské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="449"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="464"/>
         <source>Somali</source>
         <extracomment>Language name so</extracomment>
         <translation>Somálske</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="451"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="466"/>
         <source>Albanian</source>
         <extracomment>Language name sq</extracomment>
         <translation>Albánske</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="459"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="474"/>
         <source>Swedish</source>
         <extracomment>Language name sv</extracomment>
         <translation>Švédske</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="461"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="476"/>
         <source>Swahili</source>
         <extracomment>Language name sw</extracomment>
         <translation>Swahilské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="463"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="478"/>
         <source>Syriac</source>
         <extracomment>Language name syr</extracomment>
         <translation>Sýrske</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="465"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="480"/>
         <source>Tamil</source>
         <extracomment>Language name ta</extracomment>
         <translation>Tamilské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="469"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="484"/>
         <source>Thai</source>
         <extracomment>Language name th</extracomment>
         <translation>Thajské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="472"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="487"/>
         <source>Tagalog</source>
         <extracomment>Language name tl</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="476"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="491"/>
         <source>Tswana</source>
         <extracomment>Language name tn</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="478"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="493"/>
         <source>Turkish</source>
         <extracomment>Language name tr</extracomment>
         <translation>Turecké</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="482"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="497"/>
         <source>Tektiteko</source>
         <extracomment>Language name ttc</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="485"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="500"/>
         <source>Tahitian</source>
         <extracomment>Language name ty</extracomment>
         <translation>Tahitské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="487"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="502"/>
         <source>Tzotzil, Zinacantu00e1n</source>
         <extracomment>Language name tzz</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="490"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="505"/>
         <source>Ukrainian</source>
         <extracomment>Language name uk</extracomment>
         <translation>Ukrajinské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="493"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="508"/>
         <source>Orya</source>
         <extracomment>Language name ury</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="495"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="510"/>
         <source>Uspanteco</source>
         <extracomment>Language name usp</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="498"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="513"/>
         <source>Vietnamese</source>
         <extracomment>Language name vi</extracomment>
         <translation>Vietnamské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="502"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="517"/>
         <source>Xhosa</source>
         <extracomment>Language name xh</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="169"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="184"/>
         <source>Bavarian</source>
         <extracomment>Language name bar</extracomment>
         <translation>Bavorské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="332"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="347"/>
         <source>Lombard</source>
         <extracomment>Language name lmo</extracomment>
         <translation>Lombardské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="409"/>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="415"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="424"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="430"/>
         <source>Uma</source>
         <extracomment>Language name ppk
 ----------
@@ -3465,145 +3537,145 @@ Language name ppk</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="454"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="469"/>
         <source>Sranan</source>
         <extracomment>Language name srn</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="506"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="521"/>
         <source>Yiddish</source>
         <extracomment>Language name yi</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="511"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="526"/>
         <source>Zapotec, San Juan Guelavu00eda</source>
         <extracomment>Language name zab</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="513"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="528"/>
         <source>Zapotec, Mitla</source>
         <extracomment>Language name zaw</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="515"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="530"/>
         <source>Chinese</source>
         <extracomment>Language name zh</extracomment>
         <translation>Čínske</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="517"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="532"/>
         <source>Zapotec, Amatlu00e1n</source>
         <extracomment>Language name zpo</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="519"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="534"/>
         <source>Zapotec, Zoogocho</source>
         <extracomment>Language name zpq</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="521"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="536"/>
         <source>Zapotec, Yalu00e1lag</source>
         <extracomment>Language name zpu</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="523"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="538"/>
         <source>Zapotec, Chichicapan</source>
         <extracomment>Language name zpv</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="525"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="540"/>
         <source>Zapotec, Southern Rincon</source>
         <extracomment>Language name zsr</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="527"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="542"/>
         <source>Zapotec, Quioquitani-Quieru00ed</source>
         <extracomment>Language name ztq</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="529"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="544"/>
         <source>Zapotec, Yatee</source>
         <extracomment>Language name zty</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="531"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="546"/>
         <source>Zulu</source>
         <extracomment>Language name zu</extracomment>
         <translation>Zulské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="360"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="362"/>
         <source>Footnotes</source>
         <translation>Poznámky pod čiarou</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="362"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="364"/>
         <source>Strong&apos;s numbers</source>
         <translation>Strongové číslo</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="364"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="366"/>
         <source>Headings</source>
         <translation>Nadpisy</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="366"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="368"/>
         <source>Morphological tags</source>
         <translation>Morfologické značky</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="368"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="370"/>
         <source>Lemmas</source>
         <translation>Lemy</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="370"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="372"/>
         <source>Hebrew vowel points</source>
         <translation>Body hebrejských samohlások</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="372"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="374"/>
         <source>Hebrew cantillation marks</source>
         <translation>Zobraziť hebrejské liturgické znaky</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="374"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="376"/>
         <source>Greek accents</source>
         <translation>Grécke akcenty</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="376"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="378"/>
         <source>Red letter words</source>
         <translation>Slová s červeným písmom</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="378"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="380"/>
         <source>Textual variants</source>
         <translation>Textové varianty</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="380"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="382"/>
         <source>Scripture cross-references</source>
         <translation>Krížové referencie Písma</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="382"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="384"/>
         <source>Morph segmentation</source>
         <translation>Morfologické delenie</translation>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/chtmlexportrendering.cpp" line="227"/>
+        <location filename="../../src/backend/rendering/chtmlexportrendering.cpp" line="226"/>
         <source>Export</source>
         <translation>Export</translation>
     </message>
@@ -3618,65 +3690,65 @@ Language name ppk</extracomment>
         <translation>Vzdialený</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="465"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="464"/>
         <source>Old testament</source>
         <translation>Starý zákon</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="466"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="465"/>
         <source>Moses/Pentateuch/Torah</source>
         <translation>Mojžišove knihy/Pentateuch/Tóra</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="467"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="466"/>
         <source>History</source>
         <translation>História</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="468"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="467"/>
         <source>Prophets</source>
         <translation>Proroci</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="469"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="468"/>
         <source>New testament</source>
         <translation>Nový zákon</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="470"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="469"/>
         <source>Gospels</source>
         <translation>Evanjeliá</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="471"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="470"/>
         <source>Letters/Epistles</source>
         <translation>Listy/Epištoly</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="472"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="471"/>
         <source>Paul&apos;s Epistles</source>
         <translation>Pavlove epištoly</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cexportmanager.cpp" line="465"/>
-        <location filename="../../src/frontend/display/cdisplay.cpp" line="145"/>
+        <location filename="../../src/frontend/display/cdisplay.cpp" line="144"/>
         <source>HTML files</source>
         <translation>HTML súbory</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/bookmarks/btbookmarkfolder.cpp" line="38"/>
+        <location filename="../../src/frontend/bookmarks/btbookmarkfolder.cpp" line="50"/>
         <location filename="../../src/frontend/cexportmanager.cpp" line="465"/>
         <location filename="../../src/frontend/cexportmanager.cpp" line="467"/>
         <location filename="../../src/frontend/cexportmanager.cpp" line="469"/>
-        <location filename="../../src/frontend/display/cdisplay.cpp" line="145"/>
-        <location filename="../../src/frontend/display/cdisplay.cpp" line="148"/>
-        <location filename="../../src/frontend/mainindex/bookmarks/btbookmarkfolder.cpp" line="38"/>
-        <location filename="../../src/frontend/mainindex/bookmarks/btbookmarkfolder.cpp" line="50"/>
+        <location filename="../../src/frontend/display/cdisplay.cpp" line="144"/>
+        <location filename="../../src/frontend/display/cdisplay.cpp" line="147"/>
         <source>All files</source>
         <translation>Všetky súbory</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cexportmanager.cpp" line="467"/>
-        <location filename="../../src/frontend/display/cdisplay.cpp" line="148"/>
+        <location filename="../../src/frontend/display/cdisplay.cpp" line="147"/>
         <source>Text files</source>
         <translation>Textové súbory</translation>
     </message>
@@ -3686,7 +3758,7 @@ Language name ppk</extracomment>
         <translation>Uložiť súbor</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/cdisplay.cpp" line="152"/>
+        <location filename="../../src/frontend/display/cdisplay.cpp" line="151"/>
         <source>Save document ...</source>
         <translation>Uložiť dokument...</translation>
     </message>
@@ -3696,29 +3768,28 @@ Language name ppk</extracomment>
         <translation>Tlačiť kľúče</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/btbookmarkfolder.cpp" line="38"/>
-        <location filename="../../src/frontend/mainindex/bookmarks/btbookmarkfolder.cpp" line="50"/>
+        <location filename="../../src/frontend/bookmarks/btbookmarkfolder.cpp" line="38"/>
+        <location filename="../../src/frontend/bookmarks/btbookmarkfolder.cpp" line="50"/>
         <source>BibleTime bookmark files</source>
         <translation>Súbor BibleTime záložiek</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/btbookmarkitem.cpp" line="134"/>
+        <location filename="../../src/frontend/bookmarks/btbookmarkitem.cpp" line="125"/>
+        <location filename="../../src/frontend/bookmarks/btbookmarkitem.cpp" line="143"/>
         <location filename="../../src/frontend/profile/cprofile.cpp" line="24"/>
         <source>unknown</source>
         <translation>neznámy</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/btbookmarkitem.cpp" line="120"/>
         <source>Change description ...</source>
-        <translation>Zmeniť popis...</translation>
+        <translation type="obsolete">Zmeniť popis...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/btbookmarkitem.cpp" line="120"/>
         <source>Enter a new description for the chosen bookmark.</source>
-        <translation>Vložiť nový popis pre zvolenú záložku.</translation>
+        <translation type="obsolete">Vložiť nový popis pre zvolenú záložku.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/btbookmarkfolder.cpp" line="66"/>
+        <location filename="../../src/frontend/bookmarks/btbookmarkfolder.cpp" line="66"/>
         <source>New folder</source>
         <translation>Nový priečinok</translation>
     </message>
@@ -3753,7 +3824,7 @@ Language name ppk</extracomment>
         <translation>Dávajte si pozor, toto dielo obsahuje kultový / otázny materiál!</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="192"/>
+        <location filename="../../src/util/tool.cpp" line="200"/>
         <source>Version</source>
         <translation>Verzia</translation>
     </message>
@@ -3768,132 +3839,132 @@ Language name ppk</extracomment>
         <translation>Zdá sa, že vaša BibleTime konfigurácia z KDE 3 je uložená v %1, a nebola premigrovaná do tejto verzie. Chcete ju naimportovať?</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="184"/>
+        <location filename="../../src/util/tool.cpp" line="189"/>
         <source>Encrypted - needs unlock key</source>
         <translation>Šifrovaný - potrebný je kľúč na odomknutie</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="200"/>
+        <location filename="../../src/util/tool.cpp" line="213"/>
         <source>Double click for more information</source>
         <translation>Dvojklik zobrazí viac informácií</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="188"/>
+        <location filename="../../src/util/tool.cpp" line="195"/>
         <source>Updated version available!</source>
         <translation>Dostupná je nová aktualizácia!</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="196"/>
+        <location filename="../../src/util/tool.cpp" line="208"/>
         <source>Installed version</source>
         <translation>Nainštalovaná verzia</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="279"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="294"/>
         <source>Haitian Creole</source>
         <extracomment>Language name ht</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="310"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="325"/>
         <source>Kekchu00ed</source>
         <comment>kek</comment>
         <extracomment>Language name kek</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="363"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="378"/>
         <source>(Multiple languages)</source>
         <extracomment>Language name mul (meaning that the work has multiple languages)</extracomment>
         <translation>Viacjazyčné</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="365"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="380"/>
         <source>Mam, Central</source>
         <extracomment>Language name mvc</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="367"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="382"/>
         <source>Mam, Todos Santos Cuchumatu00e1n</source>
         <extracomment>Language name mvj</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="369"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="384"/>
         <source>Mixe, Juquila</source>
         <extracomment>Language name mxq</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="371"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="386"/>
         <source>Mixtec, Jamiltepec</source>
         <extracomment>Language name mxt</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="373"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="388"/>
         <source>Burmese</source>
         <extracomment>Language name my</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="376"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="391"/>
         <source>Norwegian Bokmu00e5l</source>
         <extracomment>Language name nb</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="378"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="393"/>
         <source>Nahuatl, Michoacu00e1n</source>
         <extracomment>Language name ncl</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="413"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="428"/>
         <source>Potawatomi</source>
         <extracomment>Language name pot</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="474"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="489"/>
         <source>Klingon</source>
         <extracomment>Language name tlh</extracomment>
         <translation>Klingónske</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="504"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="519"/>
         <source>Mixtec, Diuxi-Tilantongo</source>
         <extracomment>Language name xtd</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="508"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="523"/>
         <source>Yoryba</source>
         <extracomment>Language name yo</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/filters/bt_osishtml.cpp" line="409"/>
+        <location filename="../../src/backend/filters/bt_osishtml.cpp" line="408"/>
         <source>Verb tense changed</source>
         <translation>Slovesný čas sa zmenil</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/instbackend.cpp" line="187"/>
+        <location filename="../../src/frontend/bookshelfmanager/instbackend.cpp" line="186"/>
         <source>Can&apos;t write file</source>
         <translation>Nie je možné zapísať súbor</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/instbackend.cpp" line="187"/>
+        <location filename="../../src/frontend/bookshelfmanager/instbackend.cpp" line="186"/>
         <source>The Sword config file can&apos;t be written!</source>
         <translation>Nie je možné zapísať Sword konfiguráciu!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/btbookmarkfolder.cpp" line="39"/>
+        <location filename="../../src/frontend/bookmarks/btbookmarkfolder.cpp" line="39"/>
         <source>Export Bookmarks</source>
         <translation>Exportovať záložky</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/btbookmarkfolder.cpp" line="51"/>
+        <location filename="../../src/frontend/bookmarks/btbookmarkfolder.cpp" line="51"/>
         <source>Import bookmarks</source>
         <translation>Import záložiek</translation>
     </message>
@@ -3903,7 +3974,7 @@ Language name ppk</extracomment>
         <translation>Prepísať súbor?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="579"/>
+        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="548"/>
         <source>Parsing Strong&apos;s Numbers</source>
         <translation>Spracovanie strongových čísel</translation>
     </message>
@@ -4024,102 +4095,102 @@ Language name ppk</extracomment>
 <context>
     <name>Search::BtSearchOptionsArea</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="99"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="98"/>
         <source>Search for:</source>
         <translation>Hľadať:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="106"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="105"/>
         <source>&amp;Search</source>
         <translation>&amp;Hľadanie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="108"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="107"/>
         <source>Start to search the text in the chosen works</source>
         <translation>Spustiť hľadanie textu vo zvolených dielach</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="111"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="110"/>
         <source>Ch&amp;oose...</source>
         <translation>Vy&amp;brať...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="113"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="112"/>
         <source>Choose works for the search</source>
         <translation>Vybrať diela do vyhľadávania</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="116"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="115"/>
         <source>S&amp;etup...</source>
         <translation>&amp;Nastaviť...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="135"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="134"/>
         <source>All of the words (AND is added between the words)</source>
         <translation>Všetky slová (AND je pridané medzi slová)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="139"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="138"/>
         <source> (&lt;a href=&apos;syntax_help&apos;&gt;full syntax&lt;/a&gt;)</source>
         <translation> (&lt;a href=&apos;syntax_help&apos;&gt;úplná syntax&lt;/a&gt;)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="150"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="149"/>
         <source>Scope:</source>
         <translation>Záber:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="171"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="170"/>
         <source>The text you want to search for</source>
         <translation>Text, ktorý chcete hľadať</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="175"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="174"/>
         <source>Works:</source>
         <translation>Diela:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="346"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="345"/>
         <source>No search scope</source>
         <translation>Bez rozsahu vyhľadávania</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="130"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="129"/>
         <source>All words</source>
         <translation>Všetky slová</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="118"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="117"/>
         <source>Configure predefined scopes for search</source>
         <translation>Konfigurovať preddefinované zábery hľadania</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="132"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="131"/>
         <source>Some words</source>
         <translation>Niektoré slová</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="133"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="132"/>
         <source>Free</source>
         <translation>Voľné</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="136"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="135"/>
         <source>Some of the words (OR is added between the words)</source>
         <translation>Niektoré slová (OR bude pridané medzi slová)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="137"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="136"/>
         <source>Full lucene syntax</source>
         <translation>Úplná syntax lucene</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="140"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="139"/>
         <source>Click the link to get help for search syntax</source>
         <translation>Kliknite na odkaz, ak chcete získať pomoc pre syntax hľadania</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="161"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="160"/>
         <source>Choose the scope (books/chapters/verses to search in).&lt;br /&gt;Applicable for Bibles and commentaries.</source>
         <translation>Vybrať záber (knihy/kapitoly/verše do vyhľadávania).&lt;br /&gt;Použiteľné pre Biblie a komentáre.</translation>
     </message>
@@ -4127,9 +4198,19 @@ Language name ppk</extracomment>
 <context>
     <name>Search::BtSearchResultArea</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="87"/>
+        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="82"/>
         <source>Text of the selected search result item</source>
         <translation>Text vybranej položky výsledku hľadania</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="85"/>
+        <source>Select all</source>
+        <translation type="unfinished">Označiť všetko</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="89"/>
+        <source>Copy</source>
+        <translation type="unfinished">Kopírovať</translation>
     </message>
 </context>
 <context>
@@ -4378,79 +4459,79 @@ Language name ppk</extracomment>
 <context>
     <name>Search::CModuleResultView</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="52"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="51"/>
         <source>Work</source>
         <translation>Dielo</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="52"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="51"/>
         <source>Hits</source>
         <translation>Výsledky</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="66"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="65"/>
         <source>Copy...</source>
         <translation>Kopírovať...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="68"/>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="78"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="67"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="77"/>
         <source>Reference only</source>
         <translation>Iba odkazy</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="71"/>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="81"/>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="88"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="70"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="80"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="87"/>
         <source>Reference with text</source>
         <translation>Odkaz s textom</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="76"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="75"/>
         <source>Save...</source>
         <translation>Uložiť...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="86"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="85"/>
         <source>Print...</source>
         <translation>Tlačiť...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="241"/>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="250"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="236"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="245"/>
         <source>Copy search result...</source>
         <translation>Kopírovať výsledky hľadania...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="241"/>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="250"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="236"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="245"/>
         <source>Copying search result</source>
         <translation>Kopírovanie výsledkov hľadania</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="259"/>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="268"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="254"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="263"/>
         <source>Save search result...</source>
         <translation>Uložiť výsledky hľadania...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="259"/>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="268"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="254"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="263"/>
         <source>Saving search result</source>
         <translation>Ukladanie výsledkov hľadania</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="277"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="272"/>
         <source>Print search result...</source>
         <translation>Vytlačiť výsledky hľadania...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="277"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="272"/>
         <source>Printing search result</source>
         <translation>Tlač výsledkov hľadania</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="51"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="50"/>
         <source>Works chosen for the search and the number of the hits in each work</source>
         <translation>Diela vybrané pre vyhľadávanie a počet výsledok pre každé dielo</translation>
     </message>
@@ -4604,36 +4685,36 @@ Toto môže dlho trvať. Pokračovať s indexovaním?</translation>
         <translation>Tlačiť...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="171"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="167"/>
         <source>Print search result...</source>
         <translation>Vytlačiť výsledky hľadania...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="171"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="167"/>
         <source>Printing search result</source>
         <translation>Tlač výsledkov hľadania</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="181"/>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="199"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="177"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="195"/>
         <source>Save search result...</source>
         <translation>Uložiť výsledky hľadania...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="181"/>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="199"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="177"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="195"/>
         <source>Saving search result</source>
         <translation>Ukladanie výsledkov hľadania</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="217"/>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="235"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="213"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="231"/>
         <source>Copy search result...</source>
         <translation>Kopírovať výsledky hľadania...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="217"/>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="235"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="213"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="231"/>
         <source>Copying search result</source>
         <translation>Kopírovanie výsledkov hľadania</translation>
     </message>
@@ -4646,87 +4727,87 @@ Toto môže dlho trvať. Pokračovať s indexovaním?</translation>
 <context>
     <name>StandardWorksTab</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="57"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="56"/>
         <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="65"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="64"/>
         <source>Bible:</source>
         <translation>Biblia:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="69"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="68"/>
         <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
         <translation>Štandardná Biblia sa použije, keď sa klikne na hyperodkaz do Biblie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="75"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="74"/>
         <source>Commentary:</source>
         <translation>Komentár:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="79"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="78"/>
         <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
         <translation>Štandardný komentár sa použije, keď sa klikne na hyperodkaz do komentára</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="85"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="84"/>
         <source>Lexicon:</source>
         <translation>Lexikón:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="89"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="88"/>
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
         <translation>Štandardný lexikón sa použije, keď sa klikne na hyperodkaz do lexikónu</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="95"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="94"/>
         <source>Daily devotional:</source>
         <translation>Denné zamyslenie:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="99"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="98"/>
         <source>The standard devotional will be used to display a short start up devotional</source>
         <translation>Štandardné denné zamyslenie sa použije na zobrazenie krátkeho zamyslenie pri spustení</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="105"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="104"/>
         <source>Hebrew Strong&apos;s lexicon:</source>
         <translation>Lexikón hebrejských strongových čísel:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="109"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="108"/>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
         <translation>Štandardný hebrejský lexikón sa použije, keď sa klikne na hyperodkaz do hebrejského lexikónu</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="115"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="114"/>
         <source>Greek Strong&apos;s lexicon:</source>
         <translation>Lexikón gréckych strongových čísel:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="119"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="118"/>
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
         <translation>Štandardný grécky lexikón sa použije, keď sa klikne na hyperodkaz do gréckeho lexikónu</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="125"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="124"/>
         <source>Hebrew morphological lexicon:</source>
         <translation>Hebrejský morfologický lexikón:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="129"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="128"/>
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
         <translation>Štandardný morfologický lexikón pre hebrejský text sa použije, keď sa klikne na hyperodkaz morfologickej značky v hebrejskom texte</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="135"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="134"/>
         <source>Greek morphological lexicon:</source>
         <translation>Grécky morfologický lexikón:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="139"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="138"/>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
         <translation>Štandardný morfologický lexikón pre grécky text sa použije, keď sa klikne na hyperodkaz morfologickej značky v gréckom texte</translation>
     </message>
@@ -4739,52 +4820,52 @@ Toto môže dlho trvať. Pokračovať s indexovaním?</translation>
 <context>
     <name>TextFiltersTab</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="275"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="274"/>
         <source>Insert line break after each verse</source>
         <translation>Vložiť ukončenie riadku po každom verši</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="280"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="279"/>
         <source>Show verse numbers</source>
         <translation>Zobraziť čísla veršov</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="285"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="284"/>
         <source>Show section headings</source>
         <translation>Zobraziť nadpisy oddielov</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="291"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="290"/>
         <source>Show scripture cross-references</source>
         <translation>Zobraziť krížové odkazy Biblie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="296"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="295"/>
         <source>Show Greek accents</source>
         <translation>Zobraziť grécke akcenty</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="301"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="300"/>
         <source>Show Hebrew vowel points</source>
         <translation>Zobraziť body hebrejských hlások</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="306"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="305"/>
         <source>Show Hebrew cantillation marks</source>
         <translation>Zobraziť hebrejské liturgické znaky</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="311"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="310"/>
         <source>Show morph segmentation</source>
         <translation>Zobraziť morfologické delenie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="316"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="315"/>
         <source>Use textual variants</source>
         <translation>Použiť textové varianty</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="264"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="263"/>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
         <translation>Filtre ovládajú vzhľad textu. Tu môžete určiť štandardné nastavenia pre všetky filtre. Môžete prepísať tieto nastavenia v každom okne zobrazenia.</translation>
     </message>

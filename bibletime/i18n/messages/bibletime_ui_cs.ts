@@ -501,6 +501,37 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
 </context>
 <context>
+    <name>BtBibleKeyWidget</name>
+    <message>
+        <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next book</source>
+        <translation type="unfinished">Další kniha</translation>
+    </message>
+    <message>
+        <source>Previous book</source>
+        <translation type="unfinished">Předchozí kniha</translation>
+    </message>
+    <message>
+        <source>Next chapter</source>
+        <translation type="unfinished">Další kapitola</translation>
+    </message>
+    <message>
+        <source>Previous chapter</source>
+        <translation type="unfinished">Předchozí kapitola</translation>
+    </message>
+    <message>
+        <source>Next verse</source>
+        <translation type="unfinished">Další verš</translation>
+    </message>
+    <message>
+        <source>Previous verse</source>
+        <translation type="unfinished">Předchozí verš</translation>
+    </message>
+</context>
+<context>
     <name>BtBookDropdownChooserButton</name>
     <message>
         <source>Select book</source>
@@ -656,6 +687,25 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <source>Display settings: No options available</source>
         <translation type="unfinished">Zobrazit nastavení: Žádné volby k dispozici</translation>
+    </message>
+</context>
+<context>
+    <name>BtEditBookmarkDialog</name>
+    <message>
+        <source>Edit Bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Location:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1347,7 +1397,7 @@ shortcut</source>
     </message>
     <message>
         <source>Change bookmark description...</source>
-        <translation>Změnit popis záložky...</translation>
+        <translation type="obsolete">Změnit popis záložky...</translation>
     </message>
     <message>
         <source>Print bookmarks...</source>
@@ -1383,6 +1433,18 @@ shortcut</source>
     </message>
     <message>
         <source>Drag references from text views to this view</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit bookmark...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort folder bookmarks...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort all bookmarks...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1627,38 +1689,34 @@ shortcut</source>
     <name>CInputDialog</name>
     <message>
         <source>Clear</source>
-        <translation>Vyprázdnit</translation>
+        <translation type="obsolete">Vyprázdnit</translation>
     </message>
 </context>
 <context>
     <name>CKeyReferenceWidget</name>
     <message>
-        <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Next book</source>
-        <translation>Další kniha</translation>
+        <translation type="obsolete">Další kniha</translation>
     </message>
     <message>
         <source>Previous book</source>
-        <translation>Předchozí kniha</translation>
+        <translation type="obsolete">Předchozí kniha</translation>
     </message>
     <message>
         <source>Next chapter</source>
-        <translation>Další kapitola</translation>
+        <translation type="obsolete">Další kapitola</translation>
     </message>
     <message>
         <source>Previous chapter</source>
-        <translation>Předchozí kapitola</translation>
+        <translation type="obsolete">Předchozí kapitola</translation>
     </message>
     <message>
         <source>Next verse</source>
-        <translation>Další verš</translation>
+        <translation type="obsolete">Další verš</translation>
     </message>
     <message>
         <source>Previous verse</source>
-        <translation>Předchozí verš</translation>
+        <translation type="obsolete">Předchozí verš</translation>
     </message>
 </context>
 <context>
@@ -2126,6 +2184,10 @@ Do you want to continue?</source>
     <message>
         <source>&lt;small&gt;This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.&lt;/small&gt;</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select all</source>
+        <translation type="unfinished">Vybrat vše</translation>
     </message>
 </context>
 <context>
@@ -2989,11 +3051,11 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Change description ...</source>
-        <translation>Změnit popis ...</translation>
+        <translation type="obsolete">Změnit popis ...</translation>
     </message>
     <message>
         <source>Enter a new description for the chosen bookmark.</source>
-        <translation>Vložte nový popis pro zvolenou záložku.</translation>
+        <translation type="obsolete">Vložte nový popis pro zvolenou záložku.</translation>
     </message>
     <message>
         <source>New folder</source>
@@ -3333,6 +3395,14 @@ Language name ppk</extracomment>
     <message>
         <source>Text of the selected search result item</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select all</source>
+        <translation type="unfinished">Vybrat vše</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished">Kopírovat</translation>
     </message>
 </context>
 <context>

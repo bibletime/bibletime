@@ -501,6 +501,37 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
 </context>
 <context>
+    <name>BtBibleKeyWidget</name>
+    <message>
+        <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
+        <translation type="unfinished">Durchlaufen Sie die Listeneinträge. Drücken Sie die Taste und bewegen Sie die Maus um nach vorn oder hinten durch die Liste zu laufen.</translation>
+    </message>
+    <message>
+        <source>Next book</source>
+        <translation type="unfinished">Nächstes Buch</translation>
+    </message>
+    <message>
+        <source>Previous book</source>
+        <translation type="unfinished">Vorheriges Buch</translation>
+    </message>
+    <message>
+        <source>Next chapter</source>
+        <translation type="unfinished">Nächstes Kapitel</translation>
+    </message>
+    <message>
+        <source>Previous chapter</source>
+        <translation type="unfinished">Vorheriges Kapitel</translation>
+    </message>
+    <message>
+        <source>Next verse</source>
+        <translation type="unfinished">Nächster Vers</translation>
+    </message>
+    <message>
+        <source>Previous verse</source>
+        <translation type="unfinished">Vorheriger Vers</translation>
+    </message>
+</context>
+<context>
     <name>BtBookDropdownChooserButton</name>
     <message>
         <source>Select book</source>
@@ -656,6 +687,25 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <source>Display settings: No options available</source>
         <translation>Anzeigeeinstellungen: keine Einstellungen verfügbar</translation>
+    </message>
+</context>
+<context>
+    <name>BtEditBookmarkDialog</name>
+    <message>
+        <source>Edit Bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Location:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1347,7 +1397,7 @@ shortcut</source>
     </message>
     <message>
         <source>Change bookmark description...</source>
-        <translation>Die Lesezeichen-Beschreibung verändern...</translation>
+        <translation type="obsolete">Die Lesezeichen-Beschreibung verändern...</translation>
     </message>
     <message>
         <source>Print bookmarks...</source>
@@ -1384,6 +1434,18 @@ shortcut</source>
     <message>
         <source>Drag references from text views to this view</source>
         <translation>Referenzen von der Textansicht in diese Ansicht mitführen</translation>
+    </message>
+    <message>
+        <source>Edit bookmark...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort folder bookmarks...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort all bookmarks...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1627,38 +1689,38 @@ shortcut</source>
     <name>CInputDialog</name>
     <message>
         <source>Clear</source>
-        <translation>Löschen</translation>
+        <translation type="obsolete">Löschen</translation>
     </message>
 </context>
 <context>
     <name>CKeyReferenceWidget</name>
     <message>
         <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
-        <translation>Durchlaufen Sie die Listeneinträge. Drücken Sie die Taste und bewegen Sie die Maus um nach vorn oder hinten durch die Liste zu laufen.</translation>
+        <translation type="obsolete">Durchlaufen Sie die Listeneinträge. Drücken Sie die Taste und bewegen Sie die Maus um nach vorn oder hinten durch die Liste zu laufen.</translation>
     </message>
     <message>
         <source>Next book</source>
-        <translation>Nächstes Buch</translation>
+        <translation type="obsolete">Nächstes Buch</translation>
     </message>
     <message>
         <source>Previous book</source>
-        <translation>Vorheriges Buch</translation>
+        <translation type="obsolete">Vorheriges Buch</translation>
     </message>
     <message>
         <source>Next chapter</source>
-        <translation>Nächstes Kapitel</translation>
+        <translation type="obsolete">Nächstes Kapitel</translation>
     </message>
     <message>
         <source>Previous chapter</source>
-        <translation>Vorheriges Kapitel</translation>
+        <translation type="obsolete">Vorheriges Kapitel</translation>
     </message>
     <message>
         <source>Next verse</source>
-        <translation>Nächster Vers</translation>
+        <translation type="obsolete">Nächster Vers</translation>
     </message>
     <message>
         <source>Previous verse</source>
-        <translation>Vorheriger Vers</translation>
+        <translation type="obsolete">Vorheriger Vers</translation>
     </message>
 </context>
 <context>
@@ -2128,6 +2190,10 @@ Möchten Sie fortfahren?</translation>
     <message>
         <source>&lt;small&gt;This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.&lt;/small&gt;</source>
         <translation>&lt;small&gt;Das ist die Lupe. Bewegen Sie die Maus über Links oder andere Einträge, die zusätzliche Informationen enthalten, und die Inhalte werden mit kurzer Verzögerung im Lupenbereich erscheinen. Bewegen Sie die Maus zügig in den Lupenbereich oder frieren Sie den Lupenbereich durch Drücken und Halten von Shift ein, während Sie die Maus bewegen.&lt;/small&gt;</translation>
+    </message>
+    <message>
+        <source>Select all</source>
+        <translation type="unfinished">Alles auswählen</translation>
     </message>
 </context>
 <context>
@@ -2775,11 +2841,11 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Change description ...</source>
-        <translation>Beschreibung ändern...</translation>
+        <translation type="obsolete">Beschreibung ändern...</translation>
     </message>
     <message>
         <source>Enter a new description for the chosen bookmark.</source>
-        <translation>Geben Sie eine neue Beschreibung des Lesezeichens ein.</translation>
+        <translation type="obsolete">Geben Sie eine neue Beschreibung des Lesezeichens ein.</translation>
     </message>
     <message>
         <source>New folder</source>
@@ -3335,6 +3401,14 @@ Language name ppk</extracomment>
     <message>
         <source>Text of the selected search result item</source>
         <translation>Text des ausgewählten Suchergebnis-Eintrags</translation>
+    </message>
+    <message>
+        <source>Select all</source>
+        <translation type="unfinished">Alles auswählen</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
