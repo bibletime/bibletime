@@ -125,7 +125,7 @@ class BtBookshelfModel: public QAbstractListModel {
         /**
           Returns the list of handled modules as a list of CSwordModuleInfo* pointers.
         */
-        inline const QList<CSwordModuleInfo *> &modules() const {
+        inline const QList<CSwordModuleInfo *> &moduleList() const {
             return m_data;
         }
 

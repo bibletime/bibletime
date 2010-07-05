@@ -181,7 +181,7 @@ CSwordBackend::LoadError CSwordBackend::initModules(SetupChangedReason reason) {
         }
     }
 
-    Q_FOREACH(CSwordModuleInfo* mod, m_dataModel.modules()) {
+    Q_FOREACH(CSwordModuleInfo* mod, m_dataModel.moduleList()) {
         //unlock modules if keys are present
         if ( mod->isEncrypted() ) {
             const QString unlockKey = CBTConfig::getModuleEncryptionKey( mod->name() );
@@ -301,7 +301,7 @@ void CSwordBackend::setFilterOptions( const CSwordBackend::FilterOptions options
 
 /** This function searches for a module with the specified description */
 CSwordModuleInfo* CSwordBackend::findModuleByDescription(const QString& description) {
-    Q_FOREACH (CSwordModuleInfo *mod, m_dataModel.modules()) {
+    Q_FOREACH (CSwordModuleInfo *mod, m_dataModel.moduleList()) {
         if (mod->config(CSwordModuleInfo::Description) == description) return mod;
     }
     return 0;
@@ -309,14 +309,14 @@ CSwordModuleInfo* CSwordBackend::findModuleByDescription(const QString& descript
 
 /** This function searches for a module with the specified name */
 CSwordModuleInfo* CSwordBackend::findModuleByName(const QString& name) {
-    Q_FOREACH (CSwordModuleInfo *mod, m_dataModel.modules()) {
+    Q_FOREACH (CSwordModuleInfo *mod, m_dataModel.moduleList()) {
         if (mod->name() == name) return mod;
     }
     return 0;
 }
 
 CSwordModuleInfo* CSwordBackend::findSwordModuleByPointer(const sword::SWModule* const swmodule) {
-    Q_FOREACH (CSwordModuleInfo *mod, m_dataModel.modules()) {
+    Q_FOREACH (CSwordModuleInfo *mod, m_dataModel.moduleList()) {
         if (mod->module() == swmodule ) return mod;
     }
     return 0;
@@ -423,7 +423,7 @@ const QString CSwordBackend::booknameLanguage( const QString& language ) {
         //use what sword returns, language may be different
         QString newLocaleName( sword::LocaleMgr::getSystemLocaleMgr()->getDefaultLocaleName()  );
 
-        Q_FOREACH (CSwordModuleInfo *mod, m_dataModel.modules()) {
+        Q_FOREACH (CSwordModuleInfo *mod, m_dataModel.moduleList()) {
             if ( (mod->type() == CSwordModuleInfo::Bible) || (mod->type() == CSwordModuleInfo::Commentary) ) {
                 //Create a new key, it will get the default bookname language
                 ((sword::VerseKey*)(mod->module()->getKey()))->setLocale( newLocaleName.toUtf8().constData() );

@@ -249,7 +249,7 @@ Q_DECLARE_METATYPE(CSwordBackend::DisplayOptions)
 
 /**Returns The list of modules managed by this backend*/
 inline const QList<CSwordModuleInfo*> &CSwordBackend::moduleList() const {
-    return m_dataModel.modules();
+    return m_dataModel.moduleList();
 }
 
 inline BtBookshelfModel *CSwordBackend::model() {
