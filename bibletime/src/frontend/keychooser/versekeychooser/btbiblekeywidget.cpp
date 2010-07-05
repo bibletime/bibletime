@@ -7,7 +7,7 @@
 *
 **********/
 
-#include "frontend/keychooser/versekeychooser/ckeyreferencewidget.h"
+#include "frontend/keychooser/versekeychooser/btbiblekeywidget.h"
 
 #include <QApplication>
 #include <QDebug>
@@ -46,7 +46,7 @@ class BtLineEdit : public QLineEdit {
 };
 
 
-CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVerseKey *key, QWidget *parent, const char* /*name*/) :
+BtBibleKeyWidget::BtBibleKeyWidget( CSwordBibleModuleInfo *mod, CSwordVerseKey *key, QWidget *parent, const char* /*name*/) :
         QWidget(parent),
         m_key(key),
         m_dropDownHoverTimer(this) {
@@ -142,18 +142,18 @@ CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVers
     Q_ASSERT(ok);
 }
 
-CKeyReferenceWidget::~CKeyReferenceWidget() {
+BtBibleKeyWidget::~BtBibleKeyWidget() {
     delete m_dropDownButtons;
 }
 
-void CKeyReferenceWidget::setModule(CSwordBibleModuleInfo *m) {
+void BtBibleKeyWidget::setModule(CSwordBibleModuleInfo *m) {
     if (m) { //can be null
         m_module = m;
         m_key->module(m);
     }
 }
 
-bool CKeyReferenceWidget::eventFilter(QObject *o, QEvent *e) {
+bool BtBibleKeyWidget::eventFilter(QObject *o, QEvent *e) {
     if (o != m_dropDownButtons) return false;
     switch (e->type()) {
         case QEvent::Enter:
@@ -167,7 +167,7 @@ bool CKeyReferenceWidget::eventFilter(QObject *o, QEvent *e) {
     }
 }
 
-void CKeyReferenceWidget::enterEvent(QEvent *) {
+void BtBibleKeyWidget::enterEvent(QEvent *) {
     m_dropDownHoverTimer.stop();
 
     resetDropDownButtons();
@@ -176,18 +176,18 @@ void CKeyReferenceWidget::enterEvent(QEvent *) {
     m_dropDownButtons->show();
 }
 
-void CKeyReferenceWidget::leaveEvent(QEvent *) {
+void BtBibleKeyWidget::leaveEvent(QEvent *) {
     m_dropDownHoverTimer.start();
 }
 
-void CKeyReferenceWidget::resizeEvent(QResizeEvent *event) {
+void BtBibleKeyWidget::resizeEvent(QResizeEvent *event) {
     if (m_dropDownButtons->isVisible()) {
         resetDropDownButtons();
     }
     QWidget::resizeEvent(event);
 }
 
-void CKeyReferenceWidget::resetDropDownButtons() {
+void BtBibleKeyWidget::resetDropDownButtons() {
     m_dropDownButtons->setParent(window());
     int h(m_dropDownButtons->layout()->minimumSize().height());
     QPoint topLeft(mapTo(window(),
@@ -196,12 +196,12 @@ void CKeyReferenceWidget::resetDropDownButtons() {
                                    m_textbox->width(), h);
 }
 
-void CKeyReferenceWidget::slotClearRef( ) {
+void BtBibleKeyWidget::slotClearRef( ) {
     m_textbox->setText("");
     m_textbox->setFocus();
 }
 
-void CKeyReferenceWidget::updateText() {
+void BtBibleKeyWidget::updateText() {
     QString text(m_key->key());
     m_textbox->setText(text);
     QFontMetrics fm(m_textbox->font());
@@ -212,45 +212,45 @@ void CKeyReferenceWidget::updateText() {
     }
 }
 
-bool CKeyReferenceWidget::setKey(CSwordVerseKey *key) {
+bool BtBibleKeyWidget::setKey(CSwordVerseKey *key) {
     if (!key) return false;
 
     m_key->key(key->key());
     return true;
 }
 
-void CKeyReferenceWidget::slotReturnPressed() {
+void BtBibleKeyWidget::slotReturnPressed() {
     m_key->key(m_textbox->text());
     emit changed(m_key);
 }
 
 /* Handlers for the various scroller widgetsets. Do we really want a verse scroller? */
-void CKeyReferenceWidget::slotUpdateLock() {
+void BtBibleKeyWidget::slotUpdateLock() {
     updatelock = true;
     oldKey = m_key->key();
 }
 
-void CKeyReferenceWidget::slotUpdateUnlock() {
+void BtBibleKeyWidget::slotUpdateUnlock() {
     updatelock = false;
     if (oldKey != m_key->key())
         emit changed(m_key);
 }
 
-void CKeyReferenceWidget::slotStepBook(int n) {
+void BtBibleKeyWidget::slotStepBook(int n) {
     emit beforeChange(m_key);
     n > 0 ? m_key->next( CSwordVerseKey::UseBook ) : m_key->previous( CSwordVerseKey::UseBook );
     if (!updatelock)
         emit changed(m_key);
 }
 
-void CKeyReferenceWidget::slotStepChapter(int n) {
+void BtBibleKeyWidget::slotStepChapter(int n) {
     emit beforeChange(m_key);
     n > 0 ? m_key->next( CSwordVerseKey::UseChapter ) : m_key->previous( CSwordVerseKey::UseChapter );
     if (!updatelock)
         emit changed(m_key);
 }
 
-void CKeyReferenceWidget::slotStepVerse(int n) {
+void BtBibleKeyWidget::slotStepVerse(int n) {
     emit beforeChange(m_key);
     n > 0 ? m_key->next( CSwordVerseKey::UseVerse ) : m_key->previous( CSwordVerseKey::UseVerse );
     if (!updatelock)
@@ -258,7 +258,7 @@ void CKeyReferenceWidget::slotStepVerse(int n) {
 }
 
 
-void CKeyReferenceWidget::slotChangeVerse(int n) {
+void BtBibleKeyWidget::slotChangeVerse(int n) {
     if (m_key->Verse() != n) {
         emit beforeChange(m_key);
         m_key->Verse( n );
@@ -267,7 +267,7 @@ void CKeyReferenceWidget::slotChangeVerse(int n) {
     if (!updatelock) emit changed(m_key);
 }
 
-void CKeyReferenceWidget::slotChangeChapter(int n) {
+void BtBibleKeyWidget::slotChangeChapter(int n) {
     if (m_key->Chapter() != n) {
         emit beforeChange(m_key);
         m_key->Chapter( n );
@@ -277,7 +277,7 @@ void CKeyReferenceWidget::slotChangeChapter(int n) {
         emit changed(m_key);
 }
 
-void CKeyReferenceWidget::slotChangeBook(QString bookname) {
+void BtBibleKeyWidget::slotChangeBook(QString bookname) {
     if (m_key->book() != bookname) {
         emit beforeChange(m_key);
         m_key->book( bookname );

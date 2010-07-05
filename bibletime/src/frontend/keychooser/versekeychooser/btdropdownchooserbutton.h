@@ -13,7 +13,7 @@
 #include <QToolButton>
 
 
-class CKeyReferenceWidget;
+class BtBibleKeyWidget;
 
 /**
 * Base class for book/ch/v dropdown list chooser buttons.
@@ -21,7 +21,7 @@ class CKeyReferenceWidget;
 class BtDropdownChooserButton : public QToolButton {
         Q_OBJECT
     public:
-        BtDropdownChooserButton(CKeyReferenceWidget* ref);
+        BtDropdownChooserButton(BtBibleKeyWidget* ref);
 
         virtual ~BtDropdownChooserButton() {}
         /** The item list is constructed here just before the menu is shown.*/
@@ -29,14 +29,14 @@ class BtDropdownChooserButton : public QToolButton {
         /** Recreates the menu list.*/
         virtual void newList() = 0;
         /** Returns the verse reference widget which this button belongs to.*/
-        CKeyReferenceWidget* ref() {
+        BtBibleKeyWidget* ref() {
             return m_ref;
         }
     public slots:
         /** When a menu item is selected the key will be changed.*/
         virtual void slotMenuTriggered(QAction* action) = 0;
     protected:
-        CKeyReferenceWidget* m_ref;
+        BtBibleKeyWidget* m_ref;
         void wheelEvent(QWheelEvent* event);
     signals:
         void stepItem(int step);
@@ -46,7 +46,7 @@ class BtDropdownChooserButton : public QToolButton {
 class BtBookDropdownChooserButton : public BtDropdownChooserButton {
         Q_OBJECT
     public:
-        BtBookDropdownChooserButton(CKeyReferenceWidget* ref);
+        BtBookDropdownChooserButton(BtBibleKeyWidget* ref);
         ~BtBookDropdownChooserButton() {}
         virtual void newList();
     public slots:
@@ -57,7 +57,7 @@ class BtBookDropdownChooserButton : public BtDropdownChooserButton {
 class BtChapterDropdownChooserButton : public BtDropdownChooserButton {
         Q_OBJECT
     public:
-        BtChapterDropdownChooserButton(CKeyReferenceWidget* ref);
+        BtChapterDropdownChooserButton(BtBibleKeyWidget* ref);
         ~BtChapterDropdownChooserButton() {}
         virtual void newList();
     public slots:
@@ -68,7 +68,7 @@ class BtChapterDropdownChooserButton : public BtDropdownChooserButton {
 class BtVerseDropdownChooserButton : public BtDropdownChooserButton {
         Q_OBJECT
     public:
-        BtVerseDropdownChooserButton(CKeyReferenceWidget* ref);
+        BtVerseDropdownChooserButton(BtBibleKeyWidget* ref);
         ~BtVerseDropdownChooserButton() {}
         virtual void newList();
     public slots:

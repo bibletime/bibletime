@@ -12,12 +12,12 @@
 #include <QDebug>
 #include <QWheelEvent>
 #include "frontend/keychooser/versekeychooser/btversekeymenu.h"
-#include "frontend/keychooser/versekeychooser/ckeyreferencewidget.h"
+#include "frontend/keychooser/versekeychooser/btbiblekeywidget.h"
 
 
 const unsigned int ARROW_HEIGHT = 15;
 
-BtDropdownChooserButton::BtDropdownChooserButton(CKeyReferenceWidget* ref)
+BtDropdownChooserButton::BtDropdownChooserButton(BtBibleKeyWidget* ref)
         : QToolButton(),
         m_ref(ref) {
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
@@ -61,7 +61,7 @@ void BtDropdownChooserButton::wheelEvent(QWheelEvent* e) {
 
 //******************Book dropdown button*************************************/
 
-BtBookDropdownChooserButton::BtBookDropdownChooserButton(CKeyReferenceWidget* ref)
+BtBookDropdownChooserButton::BtBookDropdownChooserButton(BtBibleKeyWidget* ref)
         : BtDropdownChooserButton(ref) {
     setToolTip(tr("Select book"));
     QObject::connect(this, SIGNAL(stepItem(int)), m_ref, SLOT(slotStepBook(int)));
@@ -83,7 +83,7 @@ void BtBookDropdownChooserButton::slotMenuTriggered(QAction* action) {
 
 //****************** Chapter dropdown button *************************************/
 
-BtChapterDropdownChooserButton::BtChapterDropdownChooserButton(CKeyReferenceWidget* ref)
+BtChapterDropdownChooserButton::BtChapterDropdownChooserButton(BtBibleKeyWidget* ref)
         : BtDropdownChooserButton(ref) {
     setToolTip(tr("Select chapter"));
     QObject::connect(this, SIGNAL(stepItem(int)), m_ref, SLOT(slotStepChapter(int)));
@@ -104,7 +104,7 @@ void BtChapterDropdownChooserButton::slotMenuTriggered(QAction* action) {
 
 //****************** Verse dropdown button *************************************/
 
-BtVerseDropdownChooserButton::BtVerseDropdownChooserButton(CKeyReferenceWidget* ref)
+BtVerseDropdownChooserButton::BtVerseDropdownChooserButton(BtBibleKeyWidget* ref)
         : BtDropdownChooserButton(ref) {
     setToolTip(tr("Select verse"));
     QObject::connect(this, SIGNAL(stepItem(int)), m_ref, SLOT(slotStepVerse(int)));

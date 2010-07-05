@@ -18,7 +18,7 @@
 
 class QWidget;
 
-class CKeyReferenceWidget;
+class BtBibleKeyWidget;
 class CSwordVerseKey;
 class CSwordBibleModuleInfo;
 
@@ -26,7 +26,7 @@ class CSwordBibleModuleInfo;
  *
  * it inhertits @ref CKeyChooser
  *
- * it uses a CKeyReferenceWidget 's to represent the bible keys
+ * it uses a BtBibleKeyWidget to represent the bible keys
  *
   * @author The BibleTime team
   */
@@ -74,7 +74,7 @@ class CBibleKeyChooser : public CKeyChooser  {
         virtual void setKey(QString& newKey);
 
     private:
-        CKeyReferenceWidget* w_ref;
+        BtBibleKeyWidget* w_ref;
         QList<CSwordBibleModuleInfo*> m_modules;
         CSwordVerseKey *m_key;
 };

@@ -7,8 +7,8 @@
 *
 **********/
 
-#ifndef CKEYREFERENCEWIDGET_H
-#define CKEYREFERENCEWIDGET_H
+#ifndef BTBIBLEKEYWIDGET_H
+#define BTBIBLEKEYWIDGET_H
 
 #include <QWidget>
 
@@ -22,14 +22,14 @@ class CLexiconKeyChooser;
 class CSwordVerseKey;
 class QLineEdit;
 
-class CKeyReferenceWidget : public QWidget  {
+class BtBibleKeyWidget : public QWidget  {
         Q_OBJECT
     public:
         /**
         * the constructor
         */
-        CKeyReferenceWidget(CSwordBibleModuleInfo *, CSwordVerseKey*, QWidget *parent = 0, const char *name = 0);
-        ~CKeyReferenceWidget();
+        BtBibleKeyWidget(CSwordBibleModuleInfo *, CSwordVerseKey*, QWidget *parent = 0, const char *name = 0);
+        ~BtBibleKeyWidget();
         bool setKey(CSwordVerseKey* key);
         void setModule(CSwordBibleModuleInfo *m = 0);
         bool eventFilter(QObject *o, QEvent *e);

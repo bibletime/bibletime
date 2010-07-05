@@ -16,7 +16,7 @@
 #include "backend/keys/cswordversekey.h"
 #include "frontend/keychooser/bthistory.h"
 #include "frontend/keychooser/cscrollbutton.h"
-#include "frontend/keychooser/versekeychooser/ckeyreferencewidget.h"
+#include "frontend/keychooser/versekeychooser/btbiblekeywidget.h"
 #include "util/cresmgr.h"
 
 
@@ -38,7 +38,7 @@ CBibleKeyChooser::CBibleKeyChooser(QList<CSwordModuleInfo*> modules,
     layout->setContentsMargins(0, 0, 0, 0);
     layout->setDirection( QBoxLayout::LeftToRight );
 
-    w_ref = new CKeyReferenceWidget(dynamic_cast<CSwordBibleModuleInfo*>(m_modules.first()), m_key, this);
+    w_ref = new BtBibleKeyWidget(dynamic_cast<CSwordBibleModuleInfo*>(m_modules.first()), m_key, this);
     setFocusProxy(w_ref);
     layout->addWidget(w_ref);
 

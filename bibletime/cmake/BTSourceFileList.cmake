@@ -257,7 +257,7 @@ SET(bibletime_SRC_FRONTEND_KEYCHOOSER_VERSEKEYCHOOSER
 	src/frontend/keychooser/versekeychooser/btdropdownchooserbutton.cpp
 	src/frontend/keychooser/versekeychooser/btversekeymenu.cpp
 	src/frontend/keychooser/versekeychooser/cbiblekeychooser.cpp
-	src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp
+	src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp
 )
 
 SOURCE_GROUP("src\\frontend\\keychooser\\versekeychooser" FILES ${bibletime_SRC_FRONTEND_KEYCHOOSER_VERSEKEYCHOOSER})
@@ -373,7 +373,7 @@ SET(bibletime_MOCABLE_HEADERS
 	src/frontend/keychooser/versekeychooser/btdropdownchooserbutton.h
 	src/frontend/keychooser/versekeychooser/btversekeymenu.h
 	src/frontend/keychooser/versekeychooser/cbiblekeychooser.h
-	src/frontend/keychooser/versekeychooser/ckeyreferencewidget.h
+	src/frontend/keychooser/versekeychooser/btbiblekeywidget.h
 	src/frontend/mainindex/bookmarks/bteditbookmarkdialog.h
 	src/frontend/mainindex/bookmarks/cbookmarkindex.h
 	src/frontend/searchdialog/analysis/csearchanalysisdialog.h
