@@ -93,8 +93,9 @@ void CBookmarkIndex::initView() {
     m_actions.changeFolder = newQAction(tr("Rename folder"), CResMgr::mainIndex::changeFolder::icon, 0, this, SLOT(changeFolder()), this);
 
     m_actions.editBookmark = newQAction(tr("Edit bookmark..."), CResMgr::mainIndex::editBookmark::icon, 0, this, SLOT(editBookmark()), this);
-    m_actions.sortFolderBookmarks = newQAction(tr("Sort folder bookmarks..."), CResMgr::mainIndex::sortFolderBookmarks::icon, 0, this, SLOT(sortFolderBookmarks()), this);
-    m_actions.sortAllBookmarks = newQAction(tr("Sort all bookmarks..."), CResMgr::mainIndex::sortAllBookmarks::icon, 0, this, SLOT(sortAllBookmarks()), this);
+    /// \todo Add icons for sorting bookmarks
+    m_actions.sortFolderBookmarks = newQAction(tr("Sort folder bookmarks..."), QString::null, 0, this, SLOT(sortFolderBookmarks()), this);
+    m_actions.sortAllBookmarks = newQAction(tr("Sort all bookmarks..."), QString::null, 0, this, SLOT(sortAllBookmarks()), this);
     m_actions.importBookmarks = newQAction(tr("Import to folder..."), CResMgr::mainIndex::importBookmarks::icon, 0, this, SLOT(importBookmarks()), this);
     m_actions.exportBookmarks = newQAction(tr("Export from folder..."), CResMgr::mainIndex::exportBookmarks::icon, 0, this, SLOT(exportBookmarks()), this);
     m_actions.printBookmarks = newQAction(tr("Print bookmarks..."), CResMgr::mainIndex::printBookmarks::icon, 0, this, SLOT(printBookmarks()), this);
@@ -129,7 +130,12 @@ void CBookmarkIndex::initView() {
 */
 QAction* CBookmarkIndex::newQAction(const QString& text, const QString& pix, const int /*shortcut*/, const QObject* receiver, const char* slot, QObject* parent) {
     namespace DU = util::directory;
-    QAction* action = new QAction(DU::getIcon(pix), text, parent);
+    QAction *action;
+    if (pix.isEmpty()) {
+        action = new QAction(text, parent);
+    } else {
+        action = new QAction(DU::getIcon(pix), text, parent);
+    }
     QObject::connect(action, SIGNAL(triggered()), receiver, slot);
     return action;
 }
