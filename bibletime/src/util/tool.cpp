@@ -167,42 +167,51 @@ bool util::tool::inHTMLTag(int pos, QString & text) {
     return false;
 }
 
-QString util::tool::remoteModuleToolTip(CSwordModuleInfo* module, QString localVer) {
-    Q_ASSERT(module);
-    if (!module) {
-        return QString::null;
+QString util::tool::remoteModuleToolTip(const CSwordModuleInfo &module,
+                                        const QString &localVer)
+{
+    QString text = "<p style='white-space:pre'><b>";
+    text += module.name();
+    text += "</b> ";
+
+    if (module.category() == CSwordModuleInfo::Cult) {
+        text += "<small><b>";
+        text += QObject::tr("Take care, this work contains cult / questionable "
+                            "material!");
+        text += "</b></small><br/>";
     }
 
-    QString text;
+    text += "<small>(";
+    text += module.config(CSwordModuleInfo::Description);
+    text += ")</small><hr/>";
 
-    text = QString("<p style='white-space:pre'><b>%1</b> ").arg( module->name() )
-           + ((module->category() == CSwordModuleInfo::Cult) ? QString::fromLatin1("<small><b>%1</b></small><br/>").arg(QObject::tr("Take care, this work contains cult / questionable material!")) : QString::null);
-
-    text += QString("<small>(") + module->config(CSwordModuleInfo::Description) + QString(")</small><hr/>");
-
-    if (module->isEncrypted()) {
-        text += QObject::tr("Encrypted - needs unlock key") + QString("<br/>");
+    if (module.isEncrypted()) {
+        text += QObject::tr("Encrypted - needs unlock key");
+        text += "<br/>";
     }
 
     if (!localVer.isEmpty()) {
-        text += QString("<b>") + QObject::tr("Updated version available!") + QString("</b><br/>");
+        text += "<b>";
+        text += QObject::tr("Updated version available!");
+        text += "</b><br/>";
     }
 
-    if (module->hasVersion()) {
-        text += QObject::tr("Version") + QString(": %1").arg( module->config(CSwordModuleInfo::ModuleVersion) );
+    if (module.hasVersion()) {
+        text += QObject::tr("Version");
+        text += ": ";
+        text += module.config(CSwordModuleInfo::ModuleVersion);
     }
+
     // if installed already
     if (!localVer.isEmpty()) {
-        text += QString("  ") + QObject::tr("Installed version") + QString(": %1").arg(localVer);
+        text += "  ";
+        text += QObject::tr("Installed version");
+        text += ": ";
+        text += localVer;
     }
-    text += QString("<br/>");
-
-    text += QString("<small>(") + QObject::tr("Double click for more information") + QString(")</small></p>");
-
-
-    if (text.right(4) == QString::fromLatin1("<br/>")) {
-        text = text.left(text.length() - 4);
-    }
+    text += "<br/><small>(";
+    text += QObject::tr("Double click for more information");
+    text += ")</small></p>";
 
     return text;
 }

@@ -59,7 +59,8 @@ bool inHTMLTag(int pos, QString & text);
 * @param module The module required for the tooltip
 * @return The tooltip text for the passed module
 */
-QString remoteModuleToolTip(CSwordModuleInfo* module, QString localVer);
+QString remoteModuleToolTip(const CSwordModuleInfo &module,
+                            const QString &localVer);
 
 /**
 * Returns the width in pixels for a string which has mCount 'M' letters, using the specified widget's font.

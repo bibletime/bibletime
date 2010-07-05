@@ -221,7 +221,7 @@ void BtSourceArea::addToTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem
 
 
             QString descr(mInfo->config(CSwordModuleInfo::Description));
-            QString toolTipText = util::tool::remoteModuleToolTip(mInfo, installedV);
+            QString toolTipText = util::tool::remoteModuleToolTip(*mInfo, installedV);
 
             widgetItem->setText(1, descr);
             widgetItem->setToolTip(0, toolTipText);
