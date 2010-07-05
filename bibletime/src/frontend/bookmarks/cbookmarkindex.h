@@ -10,7 +10,7 @@
 #ifndef CBOOKMARKINDEX_H
 #define CBOOKMARKINDEX_H
 
-#include "frontend/mainindex/bookmarks/btbookmarkitembase.h"
+#include "frontend/bookmarks/btbookmarkitembase.h"
 
 #include <QList>
 #include <QTimer>

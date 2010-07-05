@@ -10,7 +10,7 @@
 #ifndef BTBOOKMARKITEM_H
 #define BTBOOKMARKITEM_H
 
-#include "frontend/mainindex/bookmarks/btbookmarkitembase.h"
+#include "frontend/bookmarks/btbookmarkitembase.h"
 
 #include <QString>
 

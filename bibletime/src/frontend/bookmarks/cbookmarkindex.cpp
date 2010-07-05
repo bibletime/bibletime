@@ -7,7 +7,7 @@
 *
 **********/
 
-#include "frontend/mainindex/bookmarks/cbookmarkindex.h"
+#include "frontend/bookmarks/cbookmarkindex.h"
 
 #include <QSharedPointer>
 #include <QAction>
@@ -35,10 +35,10 @@
 #include "frontend/cdragdrop.h"
 #include "frontend/cinfodisplay.h"
 #include "frontend/cprinter.h"
-#include "frontend/mainindex/bookmarks/btbookmarkitembase.h"
-#include "frontend/mainindex/bookmarks/btbookmarkitem.h"
-#include "frontend/mainindex/bookmarks/btbookmarkfolder.h"
-#include "frontend/mainindex/bookmarks/btbookmarkloader.h"
+#include "frontend/bookmarks/btbookmarkitembase.h"
+#include "frontend/bookmarks/btbookmarkitem.h"
+#include "frontend/bookmarks/btbookmarkfolder.h"
+#include "frontend/bookmarks/btbookmarkloader.h"
 #include "frontend/searchdialog/csearchdialog.h"
 #include "util/cresmgr.h"
 #include "util/tool.h"

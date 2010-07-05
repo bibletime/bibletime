@@ -10,7 +10,7 @@
 #ifndef BTBOOKMARKFOLDER_H
 #define BTBOOKMARKFOLDER_H
 
-#include "frontend/mainindex/bookmarks/btbookmarkitembase.h"
+#include "frontend/bookmarks/btbookmarkitembase.h"
 
 
 #define CURRENT_SYNTAX_VERSION 1

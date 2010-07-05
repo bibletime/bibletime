@@ -174,17 +174,17 @@ SET(bibletime_SRC_FRONTEND_BOOKSHELFMANAGER_REMOVEPAGE
 
 SOURCE_GROUP("src\\frontend\\bookshelfmanager\\removepage" FILES ${bibletime_SRC_FRONTEND_BOOKSHELFMANAGER_REMOVEPAGE})
 
-SET(bibletime_SRC_FRONTEND_MAININDEX_BOOKMARKS
+SET(bibletime_SRC_FRONTEND_BOOKMARKS
 	# Bookshelf/Bookmarks widget in main window:
-	src/frontend/mainindex/bookmarks/btbookmarkfolder.cpp
-	src/frontend/mainindex/bookmarks/btbookmarkitem.cpp
-	src/frontend/mainindex/bookmarks/btbookmarkitembase.cpp
-	src/frontend/mainindex/bookmarks/btbookmarkloader.cpp
-	src/frontend/mainindex/bookmarks/bteditbookmarkdialog.cpp
-	src/frontend/mainindex/bookmarks/cbookmarkindex.cpp
+	src/frontend/bookmarks/btbookmarkfolder.cpp
+	src/frontend/bookmarks/btbookmarkitem.cpp
+	src/frontend/bookmarks/btbookmarkitembase.cpp
+	src/frontend/bookmarks/btbookmarkloader.cpp
+	src/frontend/bookmarks/bteditbookmarkdialog.cpp
+	src/frontend/bookmarks/cbookmarkindex.cpp
 )
 
-SOURCE_GROUP("src\\frontend\\mainindex\\bookmarks" FILES ${bibletime_SRC_FRONTEND_MAININDEX_BOOKMARKS})
+SOURCE_GROUP("src\\frontend\\bookmarks" FILES ${bibletime_SRC_FRONTEND_BOOKMARKS})
 
 SET(bibletime_SRC_FRONTEND_SEARCHDIALOG
 	# Search dialog:
@@ -310,6 +310,8 @@ SET(bibletime_MOCABLE_HEADERS
 	src/backend/cswordmodulesearch.h
 	src/backend/drivers/cswordmoduleinfo.h
 	src/backend/managers/cswordbackend.h
+	src/frontend/bookmarks/bteditbookmarkdialog.h
+	src/frontend/bookmarks/cbookmarkindex.h
 	src/frontend/bookshelfmanager/btconfigdialog.h
 	src/frontend/bookshelfmanager/btinstallmgr.h
 	src/frontend/bookshelfmanager/btmodulemanagerdialog.h
@@ -373,8 +375,6 @@ SET(bibletime_MOCABLE_HEADERS
 	src/frontend/keychooser/versekeychooser/btversekeymenu.h
 	src/frontend/keychooser/versekeychooser/cbiblekeychooser.h
 	src/frontend/keychooser/versekeychooser/btbiblekeywidget.h
-	src/frontend/mainindex/bookmarks/bteditbookmarkdialog.h
-	src/frontend/mainindex/bookmarks/cbookmarkindex.h
 	src/frontend/searchdialog/analysis/csearchanalysisdialog.h
 	src/frontend/searchdialog/analysis/csearchanalysisscene.h
 	src/frontend/searchdialog/btsearchmodulechooserdialog.h
@@ -411,11 +411,11 @@ SET(bibletime_SOURCES
     ${bibletime_SRC_BACKEND_MANAGERS}
     ${bibletime_SRC_UTIL}
     ${bibletime_SRC_FRONTEND}
+    ${bibletime_SRC_FRONTEND_BOOKMARKS}
     ${bibletime_SRC_FRONTEND_BOOKSHELFMANAGER}
     ${bibletime_SRC_FRONTEND_BOOKSHELFMANAGER_INDEXPAGE}
     ${bibletime_SRC_FRONTEND_BOOKSHELFMANAGER_INSTALLPAGE}
     ${bibletime_SRC_FRONTEND_BOOKSHELFMANAGER_REMOVEPAGE}
-    ${bibletime_SRC_FRONTEND_MAININDEX_BOOKMARKS}
     ${bibletime_SRC_FRONTEND_SEARCHDIALOG}
     ${bibletime_SRC_FRONTEND_SEARCHDIALOG_ANALYSIS}
     ${bibletime_SRC_FRONTEND_SETTINGSDIALOG}

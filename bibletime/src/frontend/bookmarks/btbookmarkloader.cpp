@@ -7,7 +7,7 @@
 *
 **********/
 
-#include "frontend/mainindex/bookmarks/btbookmarkloader.h"
+#include "frontend/bookmarks/btbookmarkloader.h"
 
 #include <QDebug>
 #include <QDomElement>
@@ -19,8 +19,8 @@
 #include <QTextStream>
 #include <QTreeWidgetItem>
 #include "backend/drivers/cswordmoduleinfo.h"
-#include "frontend/mainindex/bookmarks/btbookmarkitem.h"
-#include "frontend/mainindex/bookmarks/btbookmarkfolder.h"
+#include "frontend/bookmarks/btbookmarkitem.h"
+#include "frontend/bookmarks/btbookmarkfolder.h"
 #include "util/tool.h"
 
 

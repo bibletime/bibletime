@@ -7,7 +7,7 @@
 *
 **********/
 
-#include "frontend/mainindex/bookmarks/btbookmarkitembase.h"
+#include "frontend/bookmarks/btbookmarkitembase.h"
 
 
 BtBookmarkItemBase::BtBookmarkItemBase() {

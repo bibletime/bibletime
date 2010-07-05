@@ -31,7 +31,7 @@
 #include "frontend/cprinter.h"
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"
-#include "frontend/mainindex/bookmarks/cbookmarkindex.h"
+#include "frontend/bookmarks/cbookmarkindex.h"
 #include "frontend/profile/cprofile.h"
 #include "frontend/profile/cprofilemgr.h"
 #include "util/cresmgr.h"

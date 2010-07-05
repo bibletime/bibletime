@@ -7,13 +7,13 @@
 *
 **********/
 
-#include "frontend/mainindex/bookmarks/btbookmarkfolder.h"
+#include "frontend/bookmarks/btbookmarkfolder.h"
 
 #include <QDebug>
 #include <QFileDialog>
-#include "frontend/mainindex/bookmarks/btbookmarkitembase.h"
-#include "frontend/mainindex/bookmarks/btbookmarkitem.h"
-#include "frontend/mainindex/bookmarks/btbookmarkloader.h"
+#include "frontend/bookmarks/btbookmarkitembase.h"
+#include "frontend/bookmarks/btbookmarkitem.h"
+#include "frontend/bookmarks/btbookmarkloader.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
 

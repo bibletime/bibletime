@@ -7,7 +7,7 @@
 *
 **********/
 
-#include "frontend/mainindex/bookmarks/btbookmarkitem.h"
+#include "frontend/bookmarks/btbookmarkitem.h"
 
 #include <QSharedPointer>
 #include <QDebug>
@@ -15,7 +15,7 @@
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/keys/cswordversekey.h"
 #include "bteditbookmarkdialog.h"
-#include "frontend/mainindex/bookmarks/btbookmarkfolder.h"
+#include "frontend/bookmarks/btbookmarkfolder.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
 
