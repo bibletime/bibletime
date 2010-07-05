@@ -11,44 +11,52 @@
 #define BTEDITBOOKMARKDIALOG_H
 
 #include <QDialog>
+#include <QLineEdit>
+#include <QTextEdit>
 
-
-class QLineEdit;
-class QTextEdit;
+class QDialogButtonBox;
+class QFormLayout;
+class QLabel;
 class QWidget;
 
-/** This dialog box is design for editing bookmark
- * titles and descriptions
-  * @author The BibleTime team
-  */
+/**
+  \brief A dialog box for editing bookmarks.
+*/
 class BtEditBookmarkDialog : public QDialog  {
         Q_OBJECT
-    public:
-        BtEditBookmarkDialog(const QString& caption, const QString& keyText,
-			     const QString& title, const QString& titleText, 
-			     const QString& description, const QString& descriptionText, 
-			     QWidget *parent = 0, Qt::WindowFlags wflags = Qt::Dialog);
-        /**
-        * A static function to get some using BtEditBookmarkDialog.
-        */
-        static void getText( const QString& caption, const QString& keyText,
-			     const QString& title, QString* titleText, 
-			     const QString& description, QString* descriptionText, 
-				      bool* ok = 0, QWidget* parent = 0, Qt::WindowFlags wflags = Qt::Dialog);
-        /**
-        * Returns the description.
-        */
-        const QString descriptionText();
+
+    public: /* Methods: */
+        BtEditBookmarkDialog(const QString &key,
+                             const QString &title,
+                             const QString &description,
+                             QWidget *parent = 0,
+                             Qt::WindowFlags wflags = Qt::Dialog);
 
         /**
-        * Returns the title.
+        * Returns the description written in the description box.
         */
-        const QString titleText();
-	
-	
-    private:
-        QLineEdit* m_titleEdit;
-        QTextEdit* m_descriptionEdit;
+        inline const QString descriptionText() {
+            return m_descriptionEdit->toPlainText();
+        }
+
+        /**
+        * Returns the title written in the title box.
+        */
+        inline const QString titleText() { return m_titleEdit->text(); }
+
+    protected: /* Methods: */
+        void retranslateUi();
+
+    private: /* Fields: */
+        QFormLayout *m_layout;
+            QLabel *m_keyLabel;
+                QLabel *m_keyTextLabel;
+            QLabel *m_titleLabel;
+                QLineEdit *m_titleEdit;
+            QLabel *m_descriptionLabel;
+                QTextEdit *m_descriptionEdit;
+        QDialogButtonBox *m_buttonBox;
+
 };
 
 #endif

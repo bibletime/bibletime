@@ -21,11 +21,14 @@
 #include "util/directory.h"
 
 
-BtBookmarkItem::BtBookmarkItem(const CSwordModuleInfo *module, const QString &key,
-                               const QString &description, const QString &title)
+BtBookmarkItem::BtBookmarkItem(const CSwordModuleInfo *module,
+                               const QString &key,
+                               const QString &description,
+                               const QString &title)
         : m_description(description),
-        m_moduleName(module ? module->name() : QString::null),
-        m_title(title) {
+          m_moduleName(module ? module->name() : QString::null),
+          m_title(title)
+{
     if (((module && (module->type() == CSwordModuleInfo::Bible)) || (module->type() == CSwordModuleInfo::Commentary))  ) {
         CSwordVerseKey vk(0);
         vk.key(key);
@@ -47,7 +50,8 @@ BtBookmarkItem::BtBookmarkItem(const BtBookmarkItem& other)
         m_key(other.m_key),
         m_description(other.m_description),
         m_moduleName(other.m_moduleName),
-        m_title(other.m_title) {
+        m_title(other.m_title)
+{
     update();
 }
 
@@ -120,14 +124,13 @@ bool BtBookmarkItem::enableAction(MenuAction action) {
 }
 
 void BtBookmarkItem::rename() {
-    bool ok  = false;
-    BtEditBookmarkDialog::getText(QObject::tr("Edit Bookmark"), 
-				  QString::fromLatin1("%1 (%2)").arg(key()).arg(module() ? module()->name() : QObject::tr("unknown")), 
-				  QObject::tr("Edit the title of the bookmark."), &m_title, 
-				  QObject::tr("Edit the description of the bookmark."), &m_description, 
-				  &ok, treeWidget());
+    BtEditBookmarkDialog d(QString::fromLatin1("%1 (%2)").arg(key()).arg(module() ? module()->name() : QObject::tr("unknown")),
+                           m_title,
+                           m_description, treeWidget());
 
-    if (ok) {
+    if (d.exec() == QDialog::Accepted) {
+        m_title = d.titleText();
+        m_description = d.descriptionText();
         update();
     }
 }

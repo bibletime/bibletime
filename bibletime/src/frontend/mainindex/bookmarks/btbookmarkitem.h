@@ -70,7 +70,7 @@ class BtBookmarkItem : public BtBookmarkItemBase {
         QString m_key;
         QString m_description;
         QString m_moduleName;
-	QString m_title;
+        QString m_title;
 };
 
 #endif
