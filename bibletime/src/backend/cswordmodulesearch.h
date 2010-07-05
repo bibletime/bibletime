@@ -28,7 +28,7 @@ class CSwordModuleInfo;
   * @version $Id: cswordmodulesearch.h,v 1.34 2006/08/08 19:32:48 joachim Exp $
   */
 
-class CSwordModuleSearch: public QObject, CPointers  {
+class CSwordModuleSearch: public QObject {
         Q_OBJECT
 
     public:

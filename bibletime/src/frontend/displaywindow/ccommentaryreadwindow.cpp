@@ -135,7 +135,7 @@ void CCommentaryReadWindow::reload(CSwordBackend::SetupChangedReason reason) {
     CLexiconReadWindow::reload(reason);
 
     //refresh the book lists
-    verseKey()->setLocale( backend()->booknameLanguage().toLatin1() );
+    verseKey()->setLocale( CPointers::backend()->booknameLanguage().toLatin1() );
     keyChooser()->refreshContent();
 
     CBTConfig::setupAccelSettings(CBTConfig::commentaryWindow, actionCollection());

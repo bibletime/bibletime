@@ -49,7 +49,7 @@ BtLanguageSettingsPage::BtLanguageSettingsPage(QWidget *parent)
     mainLayout->addSpacerItem(new QSpacerItem(1,1, QSizePolicy::Fixed, QSizePolicy::Expanding));
 
     QStringList languageNames;
-    languageNames.append( languageMgr()->languageForAbbrev("en_US")->translatedName() );
+    languageNames.append(CPointers::languageMgr()->languageForAbbrev("en_US")->translatedName());
 
     std::list<sword::SWBuf> locales = sword::LocaleMgr::getSystemLocaleMgr()->getAvailableLocales();
     for (std::list<sword::SWBuf>::const_iterator it = locales.begin(); it != locales.end(); it++) {
@@ -86,8 +86,8 @@ BtLanguageSettingsPage::BtLanguageSettingsPage(QWidget *parent)
     }
 
     if (currentLanguageName.isEmpty()) { 	// set english as default if nothing was chosen
-        Q_ASSERT(languageMgr()->languageForAbbrev("en_US"));
-        currentLanguageName = languageMgr()->languageForAbbrev("en_US")->translatedName();
+        Q_ASSERT(CPointers::languageMgr()->languageForAbbrev("en_US"));
+        currentLanguageName = CPointers::languageMgr()->languageForAbbrev("en_US")->translatedName();
     }
 
     //now set the item with the right name as current item

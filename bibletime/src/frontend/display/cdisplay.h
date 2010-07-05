@@ -27,7 +27,7 @@ class QMenu;
 /** The base class for all display widgets.
   * @author The BibleTime team
   */
-class CDisplay : public CPointers {
+class CDisplay {
     public:
         enum WriteDisplayType {
             HTMLDisplay = 0,

@@ -145,7 +145,7 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType format, const CD
             ReferenceManager::Type type;
             ReferenceManager::decodeHyperlink(activeAnchor(), moduleName, keyName, type);
 
-            if (CSwordModuleInfo* module = backend()->findModuleByName(moduleName)) {
+            if (CSwordModuleInfo* module = CPointers::backend()->findModuleByName(moduleName)) {
                 QSharedPointer<CSwordKey> key( CSwordKey::createInstance(module) );
                 key->key( keyName );
 
@@ -160,7 +160,7 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType format, const CD
             ReferenceManager::Type type;
             ReferenceManager::decodeHyperlink(activeAnchor(), moduleName, keyName, type);
 
-            if (CSwordModuleInfo* module = backend()->findModuleByName(moduleName)) {
+            if (CSwordModuleInfo* module = CPointers::backend()->findModuleByName(moduleName)) {
                 QSharedPointer<CSwordKey> key( CSwordKey::createInstance(module) );
                 key->key( keyName );
 
@@ -323,7 +323,7 @@ void BtHtmlReadDisplayView::dragEnterEvent( QDragEnterEvent* e ) {
 
     BookmarkItem item = (qobject_cast<const BTMimeData*>(e->mimeData()))->bookmark();
     QString moduleName = item.module();
-    CSwordModuleInfo* m = backend()->findModuleByName(moduleName);
+    CSwordModuleInfo* m = CPointers::backend()->findModuleByName(moduleName);
     Q_ASSERT(m);
     if (m == 0) 
         return;

@@ -26,7 +26,7 @@ class QProgressDialog;
 /** Contains the functions to export text to disk, clipboard or printer.
   * @author The BibleTime team
   */
-class CExportManager : CPointers {
+class CExportManager {
     public:
         /** The format the export actions should have
         */

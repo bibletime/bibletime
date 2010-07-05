@@ -25,7 +25,7 @@ class QComboBox;
 /**
     @author The BibleTime team <info@bibletime.info>
 */
-class BtFontSettingsPage : public BtConfigPage, CPointers {
+class BtFontSettingsPage : public BtConfigPage {
         Q_OBJECT
     public:
         BtFontSettingsPage(QWidget *parent = 0);

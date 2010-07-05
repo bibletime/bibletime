@@ -18,8 +18,8 @@
 class CSwordModuleInfo;
 
 /**
- * Manages the display templates used in the filters and display classes.
- * @author The BibleTime team
+  Manages the display templates used in the filters and display classes.
+  \note This is a singleton.
 */
 class CDisplayTemplateMgr {
     public:
@@ -59,8 +59,13 @@ class CDisplayTemplateMgr {
         */
         inline static const QString defaultTemplate();
 
+        /** Returns the singleton instance, creating it if one does not exist. */
+        static CDisplayTemplateMgr *instance();
+
+        /** Destroys the singleton instance, if one exists. */
+        static void destroyInstance();
+
     protected:
-        friend class CPointers;
         /** Display template manager constructor. Protected to just allow CPointers to create objects. */
         CDisplayTemplateMgr();
         /** Destructor. */
@@ -70,6 +75,7 @@ class CDisplayTemplateMgr {
 
     private:
         QMap<QString, QString> m_templateMap;
+        static CDisplayTemplateMgr *m_instance;
 };
 
 inline const QString CDisplayTemplateMgr::defaultTemplate() {

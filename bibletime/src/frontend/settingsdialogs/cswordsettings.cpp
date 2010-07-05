@@ -145,7 +145,7 @@ StandardWorksTab::StandardWorksTab()
 
     //fill the comboboxes with the right modules
 
-    const QList<CSwordModuleInfo*> &modules(backend()->moduleList());
+    const QList<CSwordModuleInfo*> &modules(CPointers::backend()->moduleList());
     QString modDescript;
     for (MLCI it(modules.begin()); it != modules.end(); it++) {
         modDescript = (*it)->config(CSwordModuleInfo::Description);
@@ -371,7 +371,7 @@ void StandardWorksTab::save() {
                 qWarning("Unhandled module type.");
         };
 
-        CSwordModuleInfo* const module = backend()->findModuleByDescription(moduleDescription);
+        CSwordModuleInfo* const module = CPointers::backend()->findModuleByDescription(moduleDescription);
         CBTConfig::set
         (moduleType, module);
     }

@@ -114,7 +114,7 @@ const QString CPrinter::finishText(const QString& text, KeyTree& tree) {
         settings.pageDirection = ( modules.first()->textDirection() == CSwordModuleInfo::LeftToRight ) ? "ltr" : "rtl";
     }
 
-    CDisplayTemplateMgr* tMgr = CPointers::displayTemplateManager();
+    CDisplayTemplateMgr *tMgr = CDisplayTemplateMgr::instance();
     return tMgr->fillTemplate(CBTConfig::get(CBTConfig::displayStyle), text, settings);
 }
 

@@ -43,7 +43,7 @@ class CSwordSettingsPage : public BtConfigPage {
 
 //Tab pages. To be used only in Sword settings page.
 
-class StandardWorksTab : public QWidget, CPointers {
+class StandardWorksTab: public QWidget {
         Q_OBJECT
     public:
         StandardWorksTab();

@@ -10,6 +10,7 @@
 #include "bibletimeapp.h"
 
 #include "backend/config/cbtconfig.h"
+#include "backend/managers/cdisplaytemplatemgr.h"
 #include "util/cresmgr.h"
 
 
@@ -24,9 +25,9 @@ BibleTimeApp::~BibleTimeApp() {
     CBTConfig::set(CBTConfig::crashedLastTime, false);
     CBTConfig::set(CBTConfig::crashedTwoTimes, false);
 
-    deleteDisplayTemplateMgr();
-    deleteLanguageMgr();
-    deleteBackend();
+    CDisplayTemplateMgr::destroyInstance();
+    CPointers::deleteLanguageMgr();
+    CPointers::deleteBackend();
 }
 
 /*

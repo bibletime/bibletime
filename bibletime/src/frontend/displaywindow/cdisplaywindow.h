@@ -37,7 +37,7 @@ class BibleTime;
 /** The base class for all display windows of BibleTime.
   * @author The BibleTime team
   */
-class CDisplayWindow : public QMainWindow, public CPointers {
+class CDisplayWindow : public QMainWindow {
         Q_OBJECT
     public:
         enum WriteWindowType {

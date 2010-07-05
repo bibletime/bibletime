@@ -398,7 +398,7 @@ bool CExportManager::printByHyperlink( const QString& hyperlink, CSwordBackend::
         ? CPrinter::KeyTreeItem::Settings::SimpleKey
         : CPrinter::KeyTreeItem::Settings::NoKey;
 
-    CSwordModuleInfo* module = backend()->findModuleByName(moduleName);
+    CSwordModuleInfo* module = CPointers::backend()->findModuleByName(moduleName);
     Q_ASSERT(module);
 
     if (module) {

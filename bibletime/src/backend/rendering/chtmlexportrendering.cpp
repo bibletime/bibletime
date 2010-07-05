@@ -215,7 +215,7 @@ const QString CHTMLExportRendering::finishText( const QString& text, KeyTree& tr
 
     const CLanguageMgr::Language* const lang = modules.first()->language();
 
-    CDisplayTemplateMgr* tMgr = CPointers::displayTemplateManager();
+    CDisplayTemplateMgr *tMgr = CDisplayTemplateMgr::instance();
     CDisplayTemplateMgr::Settings settings;
     settings.modules = modules;
     settings.langAbbrev = ((modules.count() == 1) && lang->isValid()) ? lang->abbrev() : "unknown";

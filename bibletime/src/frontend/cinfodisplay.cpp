@@ -69,7 +69,7 @@ CInfoDisplay::CInfoDisplay(QWidget *parent) : QWidget(parent) {
 
     layout->addWidget(m_htmlPart->view());
 
-    CDisplayTemplateMgr *mgr(CPointers::displayTemplateManager());
+    CDisplayTemplateMgr *mgr = CDisplayTemplateMgr::instance();
     CDisplayTemplateMgr::Settings settings;
     settings.pageCSS_ID = "infodisplay";
     QString divText("<div class=\"infodisplay\">%1</div>");
@@ -100,7 +100,7 @@ void CInfoDisplay::lookupInfo(const QString &mod_name, const QString &key_text) 
     QSharedPointer<CSwordKey> key( CSwordKey::createInstance(m) );
     key->key( key_text );
 
-    CDisplayTemplateMgr* mgr = CPointers::displayTemplateManager();
+    CDisplayTemplateMgr *mgr = CDisplayTemplateMgr::instance();
     CDisplayTemplateMgr::Settings settings;
     settings.pageCSS_ID = "infodisplay";
 
@@ -172,7 +172,7 @@ void CInfoDisplay::setInfo(const ListInfoData& list) {
         };
     }
 
-    CDisplayTemplateMgr* mgr = CPointers::displayTemplateManager();
+    CDisplayTemplateMgr *mgr = CDisplayTemplateMgr::instance();
     CDisplayTemplateMgr::Settings settings;
     settings.pageCSS_ID = "infodisplay";
     //  settings.langAbbrev = "";
@@ -506,12 +506,8 @@ const QString CInfoDisplay::getWordTranslation( const QString& data ) {
     return ret;
 }
 
-
-/*!
-	\fn CInfoDisplay::clearInfo()
-	*/
 void CInfoDisplay::clearInfo() {
-    CDisplayTemplateMgr* tmgr = CPointers::displayTemplateManager();
+    CDisplayTemplateMgr *tmgr = CDisplayTemplateMgr::instance();
     CDisplayTemplateMgr::Settings settings;
     settings.pageCSS_ID = "infodisplay";
 

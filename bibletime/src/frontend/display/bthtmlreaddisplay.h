@@ -104,7 +104,7 @@ class BtHtmlReadDisplay : public QWebPage, public CReadDisplay {
 };
 
 
-class BtHtmlReadDisplayView : public QWebView, public CPointers {
+class BtHtmlReadDisplayView : public QWebView {
         Q_OBJECT
     protected:
         friend class BtHtmlReadDisplay;

@@ -21,6 +21,21 @@
 #include "util/directory.h"
 
 
+CDisplayTemplateMgr *CDisplayTemplateMgr::m_instance = 0;
+
+void CDisplayTemplateMgr::destroyInstance() {
+    delete m_instance;
+    m_instance = 0;
+}
+
+CDisplayTemplateMgr *CDisplayTemplateMgr::instance() {
+    if (m_instance == 0) {
+        m_instance = new CDisplayTemplateMgr();
+    }
+
+    return m_instance;
+}
+
 CDisplayTemplateMgr::CDisplayTemplateMgr() {
     loadTemplates();
 }

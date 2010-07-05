@@ -219,7 +219,7 @@ void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
     //first make sure all used Sword modules are still present
     QMutableStringListIterator it(m_modules);
     while (it.hasNext()) {
-        if (!backend()->findModuleByName(it.next())) {
+        if (!CPointers::backend()->findModuleByName(it.next())) {
             it.remove();
         }
     }
@@ -465,7 +465,7 @@ void CDisplayWindow::lookupModKey( const QString& moduleName, const QString& key
         return;
     }
 
-    CSwordModuleInfo* m = backend()->findModuleByName(moduleName);
+    CSwordModuleInfo* m = CPointers::backend()->findModuleByName(moduleName);
     Q_ASSERT(m);
     if (!m) {
         return;

@@ -439,7 +439,7 @@ void CBibleReadWindow::reload(CSwordBackend::SetupChangedReason reason) {
     }
 
     //refresh the book lists
-    verseKey()->setLocale( backend()->booknameLanguage().toLatin1() );
+    verseKey()->setLocale( CPointers::backend()->booknameLanguage().toLatin1() );
     keyChooser()->refreshContent();
 
     CBTConfig::setupAccelSettings(CBTConfig::bibleWindow, actionCollection());

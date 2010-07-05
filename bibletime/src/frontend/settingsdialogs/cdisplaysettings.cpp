@@ -93,7 +93,7 @@ CDisplaySettingsPage::CDisplaySettingsPage(QWidget *parent)
     mainLayout->addWidget(webViewWidget);
 
     m_styleChooserCombo->addItems(
-        CPointers::displayTemplateManager()->availableTemplates()
+        CDisplayTemplateMgr::instance()->availableTemplates()
     );
 
     for (int i = 0; i < m_styleChooserCombo->count(); ++i) {

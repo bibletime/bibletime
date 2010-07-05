@@ -141,7 +141,7 @@ const QString CDisplayRendering::finishText( const QString& oldText, KeyTree& tr
         ? modules.first()->language()
         : CPointers::languageMgr()->defaultLanguage();
 
-    CDisplayTemplateMgr* tMgr = CPointers::displayTemplateManager();
+    CDisplayTemplateMgr *tMgr = CDisplayTemplateMgr::instance();
 
     //Q_ASSERT(modules.count() >= 1);
 
