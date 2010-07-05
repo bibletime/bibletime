@@ -22,24 +22,23 @@
 
 CDisplayTemplateMgr *CDisplayTemplateMgr::m_instance = 0;
 
-void CDisplayTemplateMgr::destroyInstance() {
-    delete m_instance;
-    m_instance = 0;
-}
-
-CDisplayTemplateMgr *CDisplayTemplateMgr::instance() {
-    if (m_instance == 0) {
-        m_instance = new CDisplayTemplateMgr();
-    }
-
-    return m_instance;
-}
-
 CDisplayTemplateMgr::CDisplayTemplateMgr() {
-    loadTemplates();
-}
+    namespace DU = util::directory;
 
-CDisplayTemplateMgr::~CDisplayTemplateMgr() {
+    QStringList filter("*.tmpl");
+
+    // Preload global display templates from disk:
+    QDir td = DU::getDisplayTemplatesDir();
+    Q_FOREACH(QString file, td.entryList(filter, QDir::Files | QDir::Readable))
+        loadTemplate(td.canonicalPath() + "/" + file);
+
+    /*
+      Preload user display templates from disk, overriding any global templates
+      with the same file name:
+    */
+    QDir utd = DU::getUserDisplayTemplatesDir();
+    Q_FOREACH(QString file, utd.entryList(filter, QDir::Files | QDir::Readable))
+        loadTemplate(utd.canonicalPath() + "/" + file);
 }
 
 const QString CDisplayTemplateMgr::fillTemplate( const QString& name, const QString& content, Settings& settings ) {
@@ -158,25 +157,13 @@ const QString CDisplayTemplateMgr::fillTemplate( const QString& name, const QStr
     return t;
 }
 
-void CDisplayTemplateMgr::loadTemplates() {
-    namespace DU = util::directory;
+void CDisplayTemplateMgr::loadTemplate(const QString &filename) {
+    QFile f(filename);
+    if (f.open(QIODevice::ReadOnly)) {
+        QString fileContent = QTextStream(&f).readAll();
 
-    QStringList files;
-    foreach (QString file, DU::getDisplayTemplatesDir().entryList(QStringList("*.tmpl"))) {
-        files += DU::getDisplayTemplatesDir().canonicalPath() + "/" + file;
-    }
-    foreach (QString file, DU::getUserDisplayTemplatesDir().entryList(QStringList("*.tmpl"))) {
-        files += DU::getUserDisplayTemplatesDir().canonicalPath() + "/" + file;
-    }
-
-    foreach (QString file, files) {
-        QFile f(file);
-        if (f.exists() && f.open( QIODevice::ReadOnly )) {
-            QString fileContent = QTextStream( &f ).readAll();
-
-            if (!fileContent.isEmpty()) {
-                m_templateMap[ QFileInfo(file).fileName() ] = fileContent;
-            }
+        if (!fileContent.isEmpty()) {
+            m_templateMap[QFileInfo(f).fileName()] = fileContent;
         }
     }
 }

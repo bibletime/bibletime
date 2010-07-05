@@ -22,72 +22,83 @@ class CSwordModuleInfo;
   \note This is a singleton.
 */
 class CDisplayTemplateMgr {
-    public:
-        /** Settings which are used to fill the content into the template.
+    public: /* Types: */
+        /**
+          Settings which are used to fill the content into the template.
         */
-
         struct Settings {
-            /** Constructor. Constructs the new settings object. The default values are empty.
-             */
-            Settings() {
-                title = QString::null;
-                langAbbrev = QString::null;
-                pageCSS_ID = QString::null;
-                pageDirection = QString("ltr");
-            };
+            Settings() : pageDirection("ltr") {}
 
-            QList<CSwordModuleInfo*> modules; /**< the list of modules */
-            QString title; /**< the title which is used for the new processed HTML page */
-            QString langAbbrev; /**< the language for the HTML page. */
-            QString pageDirection; /**< the language for the HTML page. */
-            QString pageCSS_ID; /**< the CSS ID which is used in the content part of the page */
+            /** The list of modules */
+            QList<CSwordModuleInfo*> modules;
+
+            /** The title which is used for the new processed HTML page */
+            QString title;
+
+            /** The language for the HTML page. */
+            QString langAbbrev;
+
+            /** The language direction for the HTML page. */
+            QString pageDirection;
+
+            /** The CSS ID which is used in the content part of the page */
+            QString pageCSS_ID;
         };
 
-        /** Available templates.
-        * @return The list of templates, which are available.
+    public: /* Methods: */
+
+        /**
+          \returns the list of available templates.
         */
-        inline const QStringList availableTemplates();
-        /** Fill template. Fill rendered content into the template given by the name.
-        * @param name The name of the template
-        * @param content The content which should be filled into the template
-        * @param settings The settings which are used to process the templating process
-        * @return The full HTML template HTML code including the CSS data.
+        inline const QStringList availableTemplates() const {
+            return m_templateMap.keys();
+        }
+
+        /**
+          \brief Fills the template.
+
+          Fills rendered content into the template given by the name.
+
+          \param name The name of the template to fill.
+          \param content The content which should be filled into the template.
+          \param settings The settings which are used to process the templating
+                          process.
+
+          \returns The full HTML template HTML code including the CSS data.
         */
         const QString fillTemplate( const QString& name, const QString& content, Settings& settings);
-        /** Default template.
-        * @return The i18n'ed name of the default template
-        */
-        inline static const QString defaultTemplate();
 
-        /** Returns the singleton instance, creating it if one does not exist. */
-        static CDisplayTemplateMgr *instance();
+        /**
+          \returns the name of the default template.
+        */
+        inline static const char *defaultTemplate() { return "Blue.tmpl"; }
+
+        /**
+          \returns the singleton instance, creating it if one does not exist.
+        */
+        static inline CDisplayTemplateMgr *instance() {
+            if (m_instance == 0) m_instance = new CDisplayTemplateMgr();
+            return m_instance;
+        };
 
         /** Destroys the singleton instance, if one exists. */
-        static void destroyInstance();
+        static inline void destroyInstance() {
+            delete m_instance;
+            m_instance = 0;
+        }
 
-    protected:
+    protected: /* Methods: */
+
+        /** Preloads templates from disk. */
         CDisplayTemplateMgr();
-        ~CDisplayTemplateMgr();
 
-        /** Does the actual work of loading templates from disk */
-        void loadTemplates();
+    private: /* Methods: */
+        /** Preloads a single template from disk: */
+        void loadTemplate(const QString &filename);
 
-    private:
+    private: /* Fields: */
         QMap<QString, QString> m_templateMap;
         static CDisplayTemplateMgr *m_instance;
 };
-
-inline const QString CDisplayTemplateMgr::defaultTemplate() {
-    return QString("Blue.tmpl");
-}
-
-/**
- * CDisplayTemplateMgr::availableTemplates()
- */
-inline const QStringList CDisplayTemplateMgr::availableTemplates() {
-    return m_templateMap.keys();
-}
-
-
 
 #endif
