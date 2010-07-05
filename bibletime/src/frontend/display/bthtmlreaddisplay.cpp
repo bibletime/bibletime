@@ -189,7 +189,7 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType format, const CD
         default:
             return QString::null;
     }
-    return QString();
+    return QString::null;
 }
 
 // Puts html text and javascript into QWebView

@@ -33,7 +33,7 @@ class BtShortcutsEditor : public QWidget {
         void commitChanges();
 
         // puts actions and shortcut keys into QTableWidget
-        void addCollection(BtActionCollection* collection, const QString& title = QString());
+        void addCollection(BtActionCollection *collection, const QString &title = QString::null);
 
         // clears any shortcut keys in the table matching the specified keys
         void clearConflictWithKeys(const QString& keys);

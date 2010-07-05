@@ -209,8 +209,6 @@ QString util::tool::remoteModuleToolTip(CSwordModuleInfo* module, QString localV
 
 
 int util::tool::mWidth(const QWidget* widget, int m) {
-    if (widget) {
-        return widget->fontMetrics().width(QString().fill('M', m));
-    }
-    return QApplication::fontMetrics().width(QString().fill('M', m));
+    if (widget) return widget->fontMetrics().width(QString(m, 'M'));
+    return QApplication::fontMetrics().width(QString(m, 'M'));
 }

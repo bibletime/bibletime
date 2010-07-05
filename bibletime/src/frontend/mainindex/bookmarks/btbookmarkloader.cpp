@@ -110,7 +110,7 @@ QString BtBookmarkLoader::loadXmlFromFile(QString fileName) {
     }
     QFile file(fileName);
     if (!file.exists())
-        return QString();
+        return QString::null;
 
     QString xml;
     if (file.open(QIODevice::ReadOnly)) {

@@ -230,7 +230,7 @@ void CMDIArea::emitWindowCaptionChanged() {
         emit sigSetToplevelCaption(activeSubWindow()->windowTitle());
     }
     else {
-        emit sigSetToplevelCaption(QString());
+        emit sigSetToplevelCaption(QString::null);
     }
 }
 

@@ -131,7 +131,7 @@ const QString CDisplayTemplateMgr::fillTemplate( const QString& name, const QStr
 
     //at first append the font standard settings for all languages without configured font
     // Create a dummy language (the langmap may be empty)
-    CLanguageMgr::Language lang_v(QString("en"), QString("English"), QString());
+    CLanguageMgr::Language lang_v(QString("en"), QString("English"), QString::null);
     CLanguageMgr::Language* lang = &lang_v;
 
     if (lang && !lang->abbrev().isEmpty()/*&& lang->isValid()*/) {

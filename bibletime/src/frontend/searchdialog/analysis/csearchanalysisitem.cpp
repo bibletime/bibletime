@@ -149,8 +149,8 @@ const QString CSearchAnalysisItem::getToolTip() {
         const QColor c = CSearchAnalysisScene::getColor(i);
 
         toolTipString.append(
-            QString("<tr bgcolor=\"white\"><td><b><font color=\"#%1\">%2</font></b></td><td>%3 (%4%)</td></tr>")
-            .arg(QString().sprintf("%02X%02X%02X", c.red(), c.green(), c.blue()))
+            QString("<tr bgcolor=\"white\"><td><b><font color=\"%1\">%2</font></b></td><td>%3 (%4%)</td></tr>")
+            .arg(c.name())
             .arg(info ? info->name() : QString::null)
             .arg( m_resultCountArray[i] )
             .arg( (info && m_resultCountArray[i]) ? ((double)m_resultCountArray[i] / (double)info->searchResult().Count())*(double)100 : 0.0, 0, 'g', 2)

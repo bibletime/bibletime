@@ -273,7 +273,7 @@ QString getDefault(const strings ID) {
         case displayStyle:
             return CDisplayTemplateMgr::defaultTemplate();
         case bookshelfCurrentItem:
-            return QString();
+            return QString::null;
     }
     return QString::null;
 }
