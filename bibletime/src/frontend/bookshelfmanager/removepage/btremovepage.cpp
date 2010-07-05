@@ -23,7 +23,6 @@
 #include "frontend/btbookshelfdockwidget.h"
 #include "frontend/btbookshelfview.h"
 #include "frontend/btbookshelfwidget.h"
-#include "util/cpointers.h"
 #include "util/cresmgr.h"
 #include "util/dialogutil.h"
 #include "util/directory.h"
@@ -50,7 +49,7 @@ BtRemovePage::BtRemovePage(QWidget *parent)
     m_bookshelfWidget->postFilterModel()->setShowHidden(true);
     const BtBookshelfDockWidget *dw(BtBookshelfDockWidget::getInstance());
     m_bookshelfWidget->setTreeModel(new BtRemovePageTreeModel(dw->groupingOrder(), this));
-    m_bookshelfWidget->setSourceModel(CPointers::backend()->model());
+    m_bookshelfWidget->setSourceModel(CSwordBackend::instance()->model());
     m_bookshelfWidget->showHideAction()->setVisible(false);
     m_bookshelfWidget->showHideButton()->hide();
     m_bookshelfWidget->treeView()->header()->show();
@@ -107,7 +106,7 @@ void BtRemovePage::slotRemoveModules() {
     if ((util::showQuestion(this, tr("Remove Works?"), message, QMessageBox::Yes | QMessageBox::No, QMessageBox::No) == QMessageBox::Yes)) {  //Yes was pressed.
 
         // Update the module list before really removing. Remember deleting the pointers later.
-        QList<CSwordModuleInfo*> toBeDeleted = CPointers::backend()->takeModulesFromList(moduleNames);
+        QList<CSwordModuleInfo*> toBeDeleted = CSwordBackend::instance()->takeModulesFromList(moduleNames);
 
         sword::InstallMgr installMgr;
         QMap<QString, sword::SWMgr*> mgrDict; //maps config paths to SWMgr objects

@@ -66,10 +66,9 @@ class CDisplayTemplateMgr {
         static void destroyInstance();
 
     protected:
-        /** Display template manager constructor. Protected to just allow CPointers to create objects. */
         CDisplayTemplateMgr();
-        /** Destructor. */
         ~CDisplayTemplateMgr();
+
         /** Does the actual work of loading templates from disk */
         void loadTemplates();
 

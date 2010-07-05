@@ -417,6 +417,4 @@ inline bool CSwordModuleInfo::isWritable() const {
     return false;
 }
 
-//#include "util/cpointers.h"
-
 #endif

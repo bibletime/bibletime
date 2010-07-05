@@ -128,7 +128,7 @@ void CPlainWriteDisplay::dropEvent( QDropEvent* e ) {
         BTMimeData::ItemList::iterator it;
         for (it = items.begin(); it != items.end(); ++it) {
 
-            CSwordModuleInfo* module = CPointers::backend()->findModuleByName((*it).module());
+            CSwordModuleInfo *module = CSwordBackend::instance()->findModuleByName((*it).module());
             QSharedPointer<CSwordKey> key( CSwordKey::createInstance(module) );
             key->key( (*it).key() );
             QString moduleText = key->strippedText();

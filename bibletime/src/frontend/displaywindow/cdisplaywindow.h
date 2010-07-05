@@ -11,7 +11,6 @@
 #define CDISPLAYWINDOW_H
 
 #include <QMainWindow>
-#include "util/cpointers.h"
 
 #include <QStringList>
 #include "backend/managers/cswordbackend.h"

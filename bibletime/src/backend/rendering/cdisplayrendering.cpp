@@ -16,7 +16,6 @@
 #include "backend/keys/cswordversekey.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
 #include "backend/managers/referencemanager.h"
-#include "util/cpointers.h"
 
 
 namespace Rendering {
@@ -139,7 +138,7 @@ const QString CDisplayRendering::finishText( const QString& oldText, KeyTree& tr
     const CLanguageMgr::Language* const lang =
         (modules.count() >= 1)
         ? modules.first()->language()
-        : CPointers::languageMgr()->defaultLanguage();
+        : CLanguageMgr::instance()->defaultLanguage();
 
     CDisplayTemplateMgr *tMgr = CDisplayTemplateMgr::instance();
 

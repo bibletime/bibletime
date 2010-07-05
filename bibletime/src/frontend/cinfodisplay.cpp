@@ -93,7 +93,7 @@ CInfoDisplay::~CInfoDisplay() {
 void CInfoDisplay::lookupInfo(const QString &mod_name, const QString &key_text) {
     qDebug() << "CInfoDisplay::lookup";
     qDebug() <<  mod_name <<  key_text;
-    CSwordModuleInfo* m = CPointers::backend()->findModuleByName(mod_name);
+    CSwordModuleInfo* m = CSwordBackend::instance()->findModuleByName(mod_name);
     Q_ASSERT(m);
     if (!m)
         return;
@@ -240,7 +240,7 @@ const QString CInfoDisplay::decodeCrossReference( const QString& data ) {
     if (pos > 0) {
         const QString moduleName = data.left(pos);
         //     qWarning("found module %s", moduleName.latin1());
-        module = CPointers::backend()->findModuleByName(moduleName);
+        module = CSwordBackend::instance()->findModuleByName(moduleName);
         if (!module) {
             module = CBTConfig::get(CBTConfig::standardBible);
         }
@@ -330,7 +330,7 @@ const QString CInfoDisplay::decodeFootnote( const QString& data ) {
     // turn scripRefs off, so that they do not show up as footnotes in the OSIS filter's EntryAttributes
     filterOpts.scriptureReferences = false;
 
-    CPointers::backend()->setFilterOptions(filterOpts);
+    CSwordBackend::instance()->setFilterOptions(filterOpts);
 
     const QString modulename = list.first();
     const QString swordFootnote = list.last();
@@ -340,7 +340,7 @@ const QString CInfoDisplay::decodeFootnote( const QString& data ) {
     list.pop_front();
     const QString keyname = list.join("/");
 
-    CSwordModuleInfo* module = CPointers::backend()->findModuleByName(modulename);
+    CSwordModuleInfo* module = CSwordBackend::instance()->findModuleByName(modulename);
     if (!module) {
         return QString::null;
     }
@@ -417,7 +417,7 @@ const QString CInfoDisplay::decodeMorph( const QString& data ) {
         if (valStart > -1) {
             valueClass = morph.mid(0, valStart);
             //qDebug() << "valueClass: " << valueClass;
-            module = CPointers::backend()->findModuleByName( valueClass );
+            module = CSwordBackend::instance()->findModuleByName( valueClass );
         }
         value = morph.mid(valStart + 1); //works for prepended module and without (-1 +1 == 0).
 

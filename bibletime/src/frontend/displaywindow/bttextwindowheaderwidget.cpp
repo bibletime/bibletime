@@ -24,7 +24,6 @@
 #include "frontend/displaywindow/bttextwindowheader.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
-#include "util/cpointers.h"
 
 const char* ActionType = "ActionType";
 

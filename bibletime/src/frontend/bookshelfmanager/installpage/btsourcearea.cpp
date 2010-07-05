@@ -28,7 +28,6 @@
 #include "frontend/bookshelfmanager/instbackend.h"
 #include "frontend/btaboutmoduledialog.h"
 #include "util/directory.h"
-#include "util/cpointers.h"
 #include "util/cresmgr.h"
 #include "util/tool.h"
 
@@ -44,7 +43,7 @@ struct InstalledFilter: BTModuleTreeItem::Filter {
         typedef CSwordModuleInfo CSMI;
         typedef sword::SWVersion SV;
 
-        const CSMI *installedModule = CPointers::backend()->findModuleByName(mInfo->name());
+        const CSMI *installedModule = CSwordBackend::instance()->findModuleByName(mInfo->name());
         if (installedModule) {
             // Already installed, check if it's an update:
             const SV curVersion(installedModule->config(CSMI::ModuleVersion).toLatin1());
@@ -110,7 +109,7 @@ void BtSourceArea::initView() {
     mainLayout->addWidget(m_view);
 
     connect(m_view, SIGNAL(itemDoubleClicked(QTreeWidgetItem*, int)), SLOT(slotItemDoubleClicked(QTreeWidgetItem*, int)));
-    connect(CPointers::backend(), SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)), SLOT(slotSwordSetupChanged()));
+    connect(CSwordBackend::instance(), SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)), SLOT(slotSwordSetupChanged()));
     connect(this, SIGNAL(signalCreateTree()), SLOT(slotCreateTree()), Qt::QueuedConnection);
 }
 
@@ -191,7 +190,7 @@ void BtSourceArea::addToTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem
             widgetItem->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled);
             widgetItem->setCheckState(0, Qt::Unchecked);
 
-            CSwordModuleInfo* const installedModule = CPointers::backend()->findModuleByName(mInfo->name());
+            CSwordModuleInfo * const installedModule = CSwordBackend::instance()->findModuleByName(mInfo->name());
             QString installedV;
 
             if (!installedModule) {

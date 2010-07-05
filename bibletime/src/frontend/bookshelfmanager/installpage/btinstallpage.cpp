@@ -44,7 +44,6 @@
 #include "frontend/bookshelfmanager/installpage/btsourcearea.h"
 #include "frontend/bookshelfmanager/instbackend.h"
 #include "util/directory.h"
-#include "util/cpointers.h"
 #include "util/cresmgr.h"
 
 // Sword includes:
@@ -128,7 +127,7 @@ void BtInstallPage::initConnections() {
     QObject::connect(m_configurePathButton, SIGNAL(clicked()), this, SLOT(slotEditPaths()));
     QObject::connect(m_installButton, SIGNAL(clicked()), m_sourceWidget, SLOT(slotInstall()) );
 
-    QObject::connect(CPointers::backend(), SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)), this, SLOT(slotSwordSetupChanged()));
+    QObject::connect(CSwordBackend::instance(), SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)), this, SLOT(slotSwordSetupChanged()));
     //source widget has its own connections, not here
 }
 
@@ -166,7 +165,7 @@ void BtInstallPage::slotEditPaths() {
     int result = dlg->exec();
     if (result == QDialog::Accepted) {
         //dynamic_cast<BtModuleManagerDialog*>(parentDialog())->slotSwordSetupChanged();
-        CPointers::backend()->reloadModules(CSwordBackend::PathChanged);
+        CSwordBackend::instance()->reloadModules(CSwordBackend::PathChanged);
     }
 }
 

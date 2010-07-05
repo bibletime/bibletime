@@ -15,7 +15,6 @@
 #include <QToolTip>
 #include <QToolButton>
 #include "util/directory.h"
-#include "util/cpointers.h"
 #include "util/cresmgr.h"
 
 

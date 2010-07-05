@@ -44,6 +44,7 @@
 #include "util/tool.h"
 #include "util/directory.h"
 #include "util/dialogutil.h"
+#include "bibletime.h"
 
 
 CBookmarkIndex::CBookmarkIndex(QWidget *parent)
@@ -461,7 +462,7 @@ void CBookmarkIndex::createBookmarkFromDrop(QDropEvent* event, QTreeWidgetItem* 
         QString moduleName = mdata->bookmark().module();
         QString keyText = mdata->bookmark().key();
         QString description = mdata->bookmark().description();
-        CSwordModuleInfo* minfo = CPointers::backend()->findModuleByName(moduleName);
+        CSwordModuleInfo *minfo = CSwordBackend::instance()->findModuleByName(moduleName);
 	QString title;  // TODO
 
         QTreeWidgetItem* newItem = new BtBookmarkItem(minfo, keyText, description, title);
@@ -841,13 +842,13 @@ void CBookmarkIndex::magTimeout() {
             //qDebug() << "CBookmarkIndex::timerEvent: update the infodisplay";
             // Update the mag
             if (bitem->module()) {
-                (CPointers::infoDisplay())->setInfo(
+                (BibleTime::instance()->infoDisplay())->setInfo(
                     InfoDisplay::CInfoDisplay::CrossReference,
                     bitem->module()->name() + ":" + bitem->key()
                 );
             }
             else {
-                (CPointers::infoDisplay())->setInfo(InfoDisplay::CInfoDisplay::Text, tr("The work to which the bookmark points to is not installed."));
+                (BibleTime::instance()->infoDisplay())->setInfo(InfoDisplay::CInfoDisplay::Text, tr("The work to which the bookmark points to is not installed."));
             }
 
         }

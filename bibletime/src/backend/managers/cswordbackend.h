@@ -31,14 +31,17 @@ class CChapterDisplay;
 class CBookDisplay;
 }
 
-/** The backend layer main class.
- * This is the implementation of CBackend for Sword. It's additionally derived from SWMgr
- * to provide functions of Sword.
-  *
-  * @short The backend implementation of Sword
-  * @author The BibleTime team
-  * @version $Id: cswordbackend.h,v 1.58 2007/03/14 21:32:47 joachim Exp $
-  */
+/**
+  \brief The backend layer main class, a backend implementation of Sword.
+
+  This is the implementation of CBackend for Sword. It's additionally derived
+  from SWMgr to provide functions of Sword.
+
+  \note Mostly, only one instance of this class is used. This instance is
+        created by BibleTime::initBackends() and is destroyed by
+        BibleTimeApp::~BibleTimeApp(). Only when \ref BackendNotSingleton
+        "managing modules" separate backends are created.
+*/
 class CSwordBackend : public QObject, public sword::SWMgr {
         Q_OBJECT
     public:
@@ -86,12 +89,6 @@ class CSwordBackend : public QObject, public sword::SWMgr {
             NoModules = 1
         };
         /**
-        * The constructor of the Sword backend.
-        * It creates the SWModule objects using SWMgr's methods, it adds the necessary
-        * filters for the module format.
-        */
-        CSwordBackend();
-        /**
         * The constructor of the Sword backend. This is actually used nowhere.
         * Notice that using augmentHome=false can mess up the system because it is true elsewhere.
         * @param path The path which is used to load modules
@@ -103,6 +100,19 @@ class CSwordBackend : public QObject, public sword::SWMgr {
         * The destrctor of this backend. This function shuts the modules down using @ref shutdownModules.
         */
         ~CSwordBackend();
+
+        /** Creates and returns the instance. */
+        static inline CSwordBackend *createInstance() {
+            Q_ASSERT(m_instance == 0);
+            m_instance = new CSwordBackend();
+            return m_instance;
+        }
+
+        /** Returns the singleton instance, creating it if one does not exist. */
+        static inline CSwordBackend *instance() { return m_instance; }
+
+        /** Destroys the singleton instance, if one exists. */
+        static void destroyInstance() { delete m_instance; }
 
         /**
         * This function returns the list of available modules managed by this
@@ -213,6 +223,13 @@ class CSwordBackend : public QObject, public sword::SWMgr {
 
     protected:
         /**
+        * The constructor of the Sword backend.
+        * It creates the SWModule objects using SWMgr's methods, it adds the necessary
+        * filters for the module format.
+        */
+        CSwordBackend();
+
+        /**
         * Reimplemented from sword::SWMgr.
         */
         void AddRenderFilters(sword::SWModule *module, sword::ConfigEntMap &section);
@@ -242,6 +259,7 @@ class CSwordBackend : public QObject, public sword::SWMgr {
         }	m_displays;
 
         BtBookshelfModel m_dataModel;
+        static CSwordBackend *m_instance;
 };
 
 Q_DECLARE_METATYPE(CSwordBackend::FilterOptions)

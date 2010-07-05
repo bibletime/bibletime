@@ -21,7 +21,6 @@
 #include "backend/managers/cswordbackend.h"
 #include "frontend/cmoduleindexdialog.h"
 #include "util/directory.h"
-#include "util/cpointers.h"
 #include "util/cresmgr.h"
 #include "util/tool.h"
 
@@ -76,7 +75,7 @@ BtIndexPage::BtIndexPage(QWidget *parent)
     // connect our signals/slots
     connect(m_createButton, SIGNAL(clicked()), this, SLOT(createIndices()));
     connect(m_deleteButton, SIGNAL(clicked()), this, SLOT(deleteIndices()));
-    connect(CPointers::backend(), SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)), SLOT(slotSwordSetupChanged()));
+    connect(CSwordBackend::instance(), SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)), SLOT(slotSwordSetupChanged()));
 
     populateModuleList();
 }
@@ -117,7 +116,7 @@ void BtIndexPage::populateModuleList() {
 
 
 
-    const QList<CSwordModuleInfo*> &modules(CPointers::backend()->moduleList());
+    const QList<CSwordModuleInfo*> &modules(CSwordBackend::instance()->moduleList());
     for (MLCI it(modules.begin()); it != modules.end(); ++it) {
         QTreeWidgetItem* item = 0;
 
@@ -145,7 +144,7 @@ void BtIndexPage::createIndices() {
 
     for (int i = 0; i < m_modsWithoutIndices->childCount(); i++) {
         if (m_modsWithoutIndices->child(i)->checkState(0) == Qt::Checked) {
-            CSwordModuleInfo* module = CPointers::backend()->findModuleByName(m_modsWithoutIndices->child(i)->text(0).toUtf8());
+            CSwordModuleInfo* module = CSwordBackend::instance()->findModuleByName(m_modsWithoutIndices->child(i)->text(0).toUtf8());
             if (module) {
                 moduleList.append( module );
                 indicesCreated = true;
@@ -166,7 +165,7 @@ void BtIndexPage::deleteIndices() {
 
     for (int i = 0; i < m_modsWithIndices->childCount(); i++) {
         if (m_modsWithIndices->child(i)->checkState(0) == Qt::Checked) {
-            CSwordModuleInfo* module = CPointers::backend()->findModuleByName(m_modsWithIndices->child(i)->text(0).toUtf8());
+            CSwordModuleInfo* module = CSwordBackend::instance()->findModuleByName(m_modsWithIndices->child(i)->text(0).toUtf8());
             if (module) {
                 module->deleteIndex();
                 indicesDeleted = true;

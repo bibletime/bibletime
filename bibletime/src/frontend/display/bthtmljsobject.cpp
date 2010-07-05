@@ -18,6 +18,7 @@
 #include "frontend/cdragdrop.h"
 #include "frontend/cinfodisplay.h"
 #include "frontend/display/bthtmlreaddisplay.h"
+#include "bibletime.h"
 
 
 using namespace InfoDisplay;
@@ -87,7 +88,7 @@ void BtHtmlJsObject::mouseMoveEvent(const QString& attributes, const int& x, con
                 BTMimeData* mimedata = new BTMimeData(moduleName, keyName, QString::null);
                 drag->setMimeData(mimedata);
                 //add real Bible text from module/key
-                if (CSwordModuleInfo* module = CPointers::backend()->findModuleByName(moduleName)) {
+                if (CSwordModuleInfo *module = CSwordBackend::instance()->findModuleByName(moduleName)) {
                     QSharedPointer<CSwordKey> key( CSwordKey::createInstance(module) );
                     key->key( keyName );
                     mimedata->setText(key->strippedText()); // This works across applications!
@@ -144,7 +145,7 @@ void BtHtmlJsObject::timeOutEvent(const QString& attributes) {
     }
     // Update the mag if valid attributes were found
     if (!(infoList.isEmpty())) {
-        CPointers::infoDisplay()->setInfo(infoList);
+        BibleTime::instance()->infoDisplay()->setInfo(infoList);
     }
 }
 

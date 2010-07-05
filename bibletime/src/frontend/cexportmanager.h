@@ -10,8 +10,6 @@
 #ifndef CEXPORTMANAGER_H
 #define CEXPORTMANAGER_H
 
-#include "util/cpointers.h"
-
 #include <QList>
 #include <QString>
 #include "backend/config/cbtconfig.h"

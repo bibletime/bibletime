@@ -18,7 +18,6 @@
 #include <QTreeWidgetItem>
 #include <QToolTip>
 #include "frontend/displaywindow/cdisplaywindow.h"
-#include "util/cpointers.h"
 
 
 class BTMimeData;

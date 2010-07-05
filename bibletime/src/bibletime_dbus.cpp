@@ -60,7 +60,7 @@ void BibleTime::syncAllVerseBasedModules(const QString& key) {
 
 void BibleTime::openWindow(const QString& moduleName, const QString& key) {
     qDebug() << "DBUS: open window for module" << moduleName.toLatin1() << "and key" << key.toLatin1();
-    CSwordModuleInfo* module = CPointers::backend()->findModuleByName(moduleName);
+    CSwordModuleInfo* module = CSwordBackend::instance()->findModuleByName(moduleName);
     if (module) {
         createReadDisplayWindow(module, key);
     }
@@ -77,7 +77,7 @@ void BibleTime::openDefaultBible(const QString& key) {
 QStringList BibleTime::searchInModule(const QString& moduleName, const QString& searchText) {
     qDebug() << "DBUS: searchInModule" << moduleName.toLatin1();
     QStringList ret;
-    CSwordModuleInfo* mod = CPointers::backend()->findModuleByName(moduleName);
+    CSwordModuleInfo* mod = CSwordBackend::instance()->findModuleByName(moduleName);
 
     if (mod) {
         //mod->search(searchText, CSwordModuleSearch::multipleWords, sword::ListKey());
@@ -189,7 +189,7 @@ QStringList BibleTime::getModulesOfType(const QString& type) {
         modType = CSwordModuleInfo::GenericBook;
     }
 
-    QList<CSwordModuleInfo*> modList = CPointers::backend()->moduleList();
+    QList<CSwordModuleInfo*> modList = CSwordBackend::instance()->moduleList();
     for (QList<CSwordModuleInfo*>::iterator it( modList.begin() ); it != modList.end(); ++it) {
         if ((*it)->type() == modType) {
             ret.append( (*it)->name() );

@@ -11,7 +11,6 @@
 #define CSWORDSETTINGS_H
 
 #include "frontend/bookshelfmanager/btconfigdialog.h"
-#include "util/cpointers.h"
 #include <QWidget>
 
 

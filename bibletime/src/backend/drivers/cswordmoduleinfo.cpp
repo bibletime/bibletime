@@ -30,7 +30,6 @@
 #include "backend/cswordmodulesearch.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
-#include "util/cpointers.h"
 #include "util/exceptions.h"
 #include "util/dialogutil.h"
 
@@ -83,7 +82,7 @@ CSwordModuleInfo::CSwordModuleInfo(sword::SWModule * module, CSwordBackend * con
 
     m_cancelIndexing = false;
     m_searchResult.ClearList();
-    m_backend = usedBackend ? usedBackend : CPointers::backend();
+    m_backend = usedBackend ? usedBackend : CSwordBackend::instance();
     m_dataCache.name = module ? QString(module->Name()) : QString::null;
     m_dataCache.isUnicode = module ? module->isUnicode() : false;
     m_dataCache.category = UnknownCategory;
@@ -891,14 +890,14 @@ const CLanguageMgr::Language* CSwordModuleInfo::language() const {
         if (module()) {
             if (category() == Glossary) {
                 //special handling for glossaries, we use the "from language" as language for the module
-                m_dataCache.language = (CPointers::languageMgr())->languageForAbbrev(config(GlossaryFrom));
+                m_dataCache.language = (CLanguageMgr::instance())->languageForAbbrev(config(GlossaryFrom));
             }
             else {
-                m_dataCache.language = (CPointers::languageMgr())->languageForAbbrev(module()->Lang());
+                m_dataCache.language = (CLanguageMgr::instance())->languageForAbbrev(module()->Lang());
             }
         }
         else {
-            m_dataCache.language = (CPointers::languageMgr())->defaultLanguage(); //default language
+            m_dataCache.language = (CLanguageMgr::instance())->defaultLanguage(); //default language
         }
     }
 

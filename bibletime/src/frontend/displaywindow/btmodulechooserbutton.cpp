@@ -20,7 +20,6 @@
 #include "frontend/displaywindow/btmodulechooserbar.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
-#include "util/cpointers.h"
 
 
 BtModuleChooserButton::BtModuleChooserButton(BtModuleChooserBar *parent, CSwordModuleInfo::ModuleType mtype)

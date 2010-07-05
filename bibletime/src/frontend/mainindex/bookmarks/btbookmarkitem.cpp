@@ -16,7 +16,6 @@
 #include "backend/keys/cswordversekey.h"
 #include "bteditbookmarkdialog.h"
 #include "frontend/mainindex/bookmarks/btbookmarkfolder.h"
-#include "util/cpointers.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
 
@@ -56,7 +55,7 @@ BtBookmarkItem::BtBookmarkItem(const BtBookmarkItem& other)
 }
 
 CSwordModuleInfo *BtBookmarkItem::module() const {
-    return CPointers::backend()->findModuleByName(m_moduleName);
+    return CSwordBackend::instance()->findModuleByName(m_moduleName);
 }
 
 QString BtBookmarkItem::key() const {
@@ -69,7 +68,7 @@ QString BtBookmarkItem::key() const {
     if ((module()->type() == CSwordModuleInfo::Bible) || (module()->type() == CSwordModuleInfo::Commentary)) {
         CSwordVerseKey vk(0);
         vk.key(englishKeyName);
-        vk.setLocale(CPointers::backend()->booknameLanguage().toLatin1() );
+        vk.setLocale(CSwordBackend::instance()->booknameLanguage().toLatin1() );
 
         returnKeyName = vk.key(); //the returned key is always in the currently set bookname language
     }
@@ -85,15 +84,14 @@ QString BtBookmarkItem::toolTip() const {
     CSwordBackend::FilterOptions filterOptions = CBTConfig::getFilterOptionDefaults();
     filterOptions.footnotes = false;
     filterOptions.scriptureReferences = false;
-    CPointers::backend()->setFilterOptions(filterOptions);
+    CSwordBackend::instance()->setFilterOptions(filterOptions);
 
     QString ret;
     QSharedPointer<CSwordKey> k( CSwordKey::createInstance(module()) );
     k->key(this->key());
 
-    const CLanguageMgr::Language* lang = module()->language();
-    CBTConfig::FontSettingsPair fontPair = CBTConfig::get
-                                           (lang);
+    // const CLanguageMgr::Language* lang = module()->language();
+    // CBTConfig::FontSettingsPair fontPair = CBTConfig::get(lang);
 
     Q_ASSERT(k.data());
     QString header = QString::fromLatin1("%1 (%2)")

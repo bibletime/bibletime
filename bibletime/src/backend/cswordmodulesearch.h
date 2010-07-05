@@ -11,8 +11,8 @@
 #define CSWORDMODULESEARCH_H
 
 #include <QObject>
+
 #include <QString>
-#include "util/cpointers.h"
 
 // Sword includes:
 #include <listkey.h>

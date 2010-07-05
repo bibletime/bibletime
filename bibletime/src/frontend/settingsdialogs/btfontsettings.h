@@ -11,7 +11,6 @@
 #define BTFONTSETTINGS_H
 
 #include "frontend/bookshelfmanager/btconfigdialog.h"
-#include "util/cpointers.h"
 
 #include <QMap>
 #include <QWidget>

@@ -17,7 +17,6 @@
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "backend/managers/cswordbackend.h"
 #include "frontend/btbookshelfdockwidget.h"
-#include "util/cpointers.h"
 #include "util/tool.h"
 
 
@@ -34,7 +33,7 @@ BtSearchModuleChooserDialog::BtSearchModuleChooserDialog(QWidget *parent,
     bookshelfWidget()->showHideAction()->setVisible(false);
     bookshelfWidget()->showHideButton()->hide();
     bookshelfWidget()->setTreeModel(treeModel);
-    bookshelfWidget()->setSourceModel(CPointers::backend()->model());
+    bookshelfWidget()->setSourceModel(CSwordBackend::instance()->model());
 
     retranslateUi();
 }

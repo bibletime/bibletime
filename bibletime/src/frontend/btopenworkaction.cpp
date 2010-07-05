@@ -15,7 +15,6 @@
 #include "backend/bookshelfmodel/btbookshelffiltermodel.h"
 #include "backend/managers/cswordbackend.h"
 #include "frontend/btbookshelfdockwidget.h"
-#include "util/cpointers.h"
 #include "util/directory.h"
 
 
@@ -58,7 +57,7 @@ BtOpenWorkAction::BtOpenWorkAction(QObject *parent)
     : QAction(parent)
 {
     m_menu = new BtOpenWorkActionMenu();
-    m_menu->setSourceModel(CPointers::backend()->model());
+    m_menu->setSourceModel(CSwordBackend::instance()->model());
 
     setMenu(m_menu);
     setIcon(util::directory::getIcon("folder-open.svg"));

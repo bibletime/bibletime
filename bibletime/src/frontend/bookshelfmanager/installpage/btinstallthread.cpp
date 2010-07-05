@@ -17,7 +17,6 @@
 #include "backend/managers/cswordbackend.h"
 #include "frontend/bookshelfmanager/btinstallmgr.h"
 #include "frontend/bookshelfmanager/instbackend.h"
-#include "util/cpointers.h"
 
 // Sword includes:
 #include <filemgr.h>
@@ -149,7 +148,7 @@ void BtInstallThread::slotDownloadStarted() {
 void BtInstallThread::removeModule() {
     qDebug() << "BtInstallThread::removeModule start";
     CSwordModuleInfo* m;
-    m = CPointers::backend()->findModuleByName(m_module);
+    m = CSwordBackend::instance()->findModuleByName(m_module);
     if (!m) {
         m = instbackend::backend(instbackend::source(m_destination.toLatin1()))->findModuleByName(m_module);
     }
@@ -165,7 +164,7 @@ void BtInstallThread::removeModule() {
             prefixPath.remove( prefixPath.indexOf(dataPath), dataPath.length() );
         }
         else {
-            prefixPath = QString::fromLatin1(CPointers::backend()->prefixPath);
+            prefixPath = QString::fromLatin1(CSwordBackend::instance()->prefixPath);
         }
 
         sword::SWMgr mgr(prefixPath.toLatin1());

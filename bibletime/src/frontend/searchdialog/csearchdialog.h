@@ -15,7 +15,6 @@
 #include <QString>
 #include "backend/cswordmodulesearch.h"
 #include "backend/managers/cswordbackend.h"
-#include "util/cpointers.h"
 
 
 namespace Search {

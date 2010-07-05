@@ -54,7 +54,7 @@ CDisplayWindow::CDisplayWindow(QList<CSwordModuleInfo*> modules, CMDIArea *paren
     setModules(modules);
 
     // Connect this to the backend module list changes
-    connect(CPointers::backend(),
+    connect(CSwordBackend::instance(),
             SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)),
             SLOT(reload(CSwordBackend::SetupChangedReason)));
     BibleTime* mainwindow = btMainWindow();
@@ -110,7 +110,7 @@ const QString CDisplayWindow::windowCaption() {
 QList<CSwordModuleInfo*> CDisplayWindow::modules() {
     //qDebug() << "CDisplayWindow::modules";
 
-    return CPointers::backend()->getPointerList(m_modules);
+    return CSwordBackend::instance()->getPointerList(m_modules);
 }
 
 void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
@@ -219,7 +219,7 @@ void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
     //first make sure all used Sword modules are still present
     QMutableStringListIterator it(m_modules);
     while (it.hasNext()) {
-        if (!CPointers::backend()->findModuleByName(it.next())) {
+        if (!CSwordBackend::instance()->findModuleByName(it.next())) {
             it.remove();
         }
     }
@@ -465,7 +465,7 @@ void CDisplayWindow::lookupModKey( const QString& moduleName, const QString& key
         return;
     }
 
-    CSwordModuleInfo* m = CPointers::backend()->findModuleByName(moduleName);
+    CSwordModuleInfo *m = CSwordBackend::instance()->findModuleByName(moduleName);
     Q_ASSERT(m);
     if (!m) {
         return;

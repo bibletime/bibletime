@@ -17,7 +17,6 @@
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/clanguagemgr.h"
 #include "backend/managers/referencemanager.h"
-#include "util/cpointers.h"
 
 // Sword includes:
 #include <swmodule.h>
@@ -43,7 +42,7 @@ Filters::BT_ThMLHTML::BT_ThMLHTML() {
 char Filters::BT_ThMLHTML::processText(sword::SWBuf& buf, const sword::SWKey* key, const sword::SWModule* module) {
     sword::ThMLHTML::processText(buf, key, module);
 
-    CSwordModuleInfo* m = CPointers::backend()->findModuleByName( module->Name() );
+    CSwordModuleInfo* m = CSwordBackend::instance()->findModuleByName( module->Name() );
 
     if (m && !(m->has(CSwordModuleInfo::lemmas) || m->has(CSwordModuleInfo::strongNumbers))) { //only parse if the module has strongs or lemmas
         return 1;
@@ -205,7 +204,7 @@ bool Filters::BT_ThMLHTML::handleToken(sword::SWBuf &buf, const char *token, swo
 
             if (tag.getAttribute("lang")) {
                 const char* abbrev = tag.getAttribute("lang");
-                //const CLanguageMgr::Language* const language = CPointers::languageMgr()->languageForAbbrev( QString::fromLatin1(abbrev) );
+                //const CLanguageMgr::Language* const language = CLanguageMgr::instance()->languageForAbbrev( QString::fromLatin1(abbrev) );
 
                 buf.append("<span class=\"foreign\" lang=\"");
                 buf.append(abbrev);

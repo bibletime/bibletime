@@ -14,7 +14,6 @@
 #include <QProgressDialog>
 #include <QString>
 #include "backend/managers/cswordbackend.h"
-#include "util/cpointers.h"
 #include "util/dialogutil.h"
 
 
@@ -43,7 +42,7 @@ void CModuleIndexDialog::indexAllModules( const QList<CSwordModuleInfo*>& module
 
         foreach (CSwordModuleInfo* info, modules) {
             /// \todo how to cancel
-            //QObject::connect(CPointers::backend(), SIGNAL(sigSwordSetupChanged()), this, SLOT(swordSetupChanged()));
+            //QObject::connect(CSwordBackend::instance()(), SIGNAL(sigSwordSetupChanged()), this, SLOT(swordSetupChanged()));
             connect(this, SIGNAL(sigCancel()), info, SLOT(cancelIndexing()) );
             connect(m_progress, SIGNAL(canceled()), info, SLOT(cancelIndexing()));
             connect(info, SIGNAL(indexingFinished()), this, SLOT(slotFinished()));

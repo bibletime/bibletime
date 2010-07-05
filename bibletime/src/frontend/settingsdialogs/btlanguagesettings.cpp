@@ -15,7 +15,6 @@
 #include <QVBoxLayout>
 #include <QWidget>
 
-#include "util/cpointers.h"
 #include "util/cresmgr.h"
 #include "util/tool.h"
 #include "util/directory.h"
@@ -49,13 +48,13 @@ BtLanguageSettingsPage::BtLanguageSettingsPage(QWidget *parent)
     mainLayout->addSpacerItem(new QSpacerItem(1,1, QSizePolicy::Fixed, QSizePolicy::Expanding));
 
     QStringList languageNames;
-    languageNames.append(CPointers::languageMgr()->languageForAbbrev("en_US")->translatedName());
+    languageNames.append(CLanguageMgr::instance()->languageForAbbrev("en_US")->translatedName());
 
     std::list<sword::SWBuf> locales = sword::LocaleMgr::getSystemLocaleMgr()->getAvailableLocales();
     for (std::list<sword::SWBuf>::const_iterator it = locales.begin(); it != locales.end(); it++) {
         //    qWarning("working on %s", (*it).c_str());
-        const CLanguageMgr::Language* const l =
-            CPointers::languageMgr()->languageForAbbrev( sword::LocaleMgr::getSystemLocaleMgr()->getLocale((*it).c_str())->getName() );
+        const CLanguageMgr::Language * const l =
+            CLanguageMgr::instance()->languageForAbbrev( sword::LocaleMgr::getSystemLocaleMgr()->getLocale((*it).c_str())->getName() );
 
         if (l->isValid()) {
             languageNames.append( l->translatedName() );
@@ -70,8 +69,8 @@ BtLanguageSettingsPage::BtLanguageSettingsPage(QWidget *parent)
     languageNames.sort();
     m_swordLocaleCombo->addItems( languageNames );
 
-    const CLanguageMgr::Language* const l =
-        CPointers::languageMgr()->languageForAbbrev( CBTConfig::get(CBTConfig::language) );
+    const CLanguageMgr::Language * const l =
+        CLanguageMgr::instance()->languageForAbbrev( CBTConfig::get(CBTConfig::language) );
 
     QString currentLanguageName;
     if ( l->isValid() && languageNames.contains(l->translatedName()) ) { 	//tranlated language name is in the box
@@ -86,8 +85,8 @@ BtLanguageSettingsPage::BtLanguageSettingsPage(QWidget *parent)
     }
 
     if (currentLanguageName.isEmpty()) { 	// set english as default if nothing was chosen
-        Q_ASSERT(CPointers::languageMgr()->languageForAbbrev("en_US"));
-        currentLanguageName = CPointers::languageMgr()->languageForAbbrev("en_US")->translatedName();
+        Q_ASSERT(CLanguageMgr::instance()->languageForAbbrev("en_US"));
+        currentLanguageName = CLanguageMgr::instance()->languageForAbbrev("en_US")->translatedName();
     }
 
     //now set the item with the right name as current item
@@ -109,7 +108,7 @@ void BtLanguageSettingsPage::save() {
     QString languageAbbrev;
 
     const QString currentLanguageName = m_swordLocaleCombo->currentText();
-    const CLanguageMgr::Language* const l = CPointers::languageMgr()->languageForTranslatedName( currentLanguageName );
+    const CLanguageMgr::Language * const l = CLanguageMgr::instance()->languageForTranslatedName( currentLanguageName );
 
     if (l && l->isValid()) {
         languageAbbrev = l->abbrev();

@@ -11,7 +11,6 @@
 
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
-#include "util/cpointers.h"
 
 
 CLanguageMgr::Language::Language() {}
@@ -37,6 +36,22 @@ CLanguageMgr::Language::~Language() {
 /****************************************************/
 /******************** CLanguageMgr ******************/
 /****************************************************/
+
+CLanguageMgr *CLanguageMgr::m_instance = 0;
+
+void CLanguageMgr::destroyInstance() {
+    delete m_instance;
+    m_instance = 0;
+}
+
+CLanguageMgr *CLanguageMgr::instance() {
+    if (m_instance == 0) {
+        m_instance = new CLanguageMgr();
+    }
+
+    return m_instance;
+}
+
 CLanguageMgr::CLanguageMgr() : m_langMap() {
     m_availableModulesCache.moduleCount = 0;
     init();
@@ -50,7 +65,7 @@ CLanguageMgr::~CLanguageMgr() {
 }
 
 const CLanguageMgr::LangMap& CLanguageMgr::availableLanguages() {
-    QList<CSwordModuleInfo*> mods = CPointers::backend()->moduleList();
+    QList<CSwordModuleInfo*> mods = CSwordBackend::instance()->moduleList();
 
     if ( m_availableModulesCache.moduleCount != (unsigned int)mods.count() ) { //we have to refill the cached map
         m_availableModulesCache.availableLanguages.clear();

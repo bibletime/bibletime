@@ -102,7 +102,7 @@ class BTModuleTreeItem {
         * The root item is populated with the item tree.
         * The constructor takes a list of filters (see Filter), grouping indicator (see Grouping)
         * and optionally the module list from which the tree is constructed
-        * (by default CPointers::backend()->moduleList() is used).
+        * (by default CSwordBackend::instance()()->moduleList() is used).
         */
         BTModuleTreeItem(QList<BTModuleTreeItem::Filter*>& filters,
                          BTModuleTreeItem::Grouping grouping, QList<CSwordModuleInfo*>* modules = 0);

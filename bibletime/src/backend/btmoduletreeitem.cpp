@@ -14,7 +14,6 @@
 #include <QString>
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
-#include "util/cpointers.h"
 #include "util/cresmgr.h"
 #include "util/tool.h"
 
@@ -30,7 +29,7 @@ BTModuleTreeItem::BTModuleTreeItem(QList<BTModuleTreeItem::Filter*>& filters, BT
         m_originalModuleList = *modules;
     }
     else {
-        m_originalModuleList = CPointers::backend()->moduleList();
+        m_originalModuleList = CSwordBackend::instance()->moduleList();
     }
     //populate the tree with groups/modules
     create_tree(filters, grouping);
@@ -139,7 +138,7 @@ void BTModuleTreeItem::create_tree(QList<BTModuleTreeItem::Filter*>& filters, BT
         map_initialized = true;
     }
 
-    //QList<CSwordModuleInfo*> originalInfoList = CPointers::backend()->moduleList();
+    //QList<CSwordModuleInfo*> originalInfoList = CSwordBackend::instance()()->moduleList();
 
     foreach (CSwordModuleInfo* info, m_originalModuleList) {
         bool included;

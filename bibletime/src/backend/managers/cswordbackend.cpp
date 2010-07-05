@@ -90,6 +90,8 @@ CSwordBackend::~CSwordBackend() {
     delete m_displays.entry;
 }
 
+CSwordBackend *CSwordBackend::m_instance = 0;
+
 void CSwordBackend::filterInit() {
     //HACK: replace Sword's OSISMorphSegmentation filter, seems to be buggy, ours works
     if (sword::SWOptionFilter* filter = optionFilters["OSISMorphSegmentation"]) {

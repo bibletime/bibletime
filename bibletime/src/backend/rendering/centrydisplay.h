@@ -10,8 +10,6 @@
 #ifndef CENTRYDISPLAY_H
 #define CENTRYDISPLAY_H
 
-#include "util/cpointers.h"
-
 #include <QString>
 #include "backend/managers/cswordbackend.h"
 

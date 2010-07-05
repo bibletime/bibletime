@@ -39,16 +39,21 @@
 #include "frontend/displaywindow/cwritewindow.h"
 #include "frontend/keychooser/ckeychooser.h"
 #include "frontend/searchdialog/csearchdialog.h"
-#include "util/cpointers.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
 
 
 using namespace Profile;
 
+BibleTime *BibleTime::m_instance = 0;
+
 BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
-        : QMainWindow(parent, flags), m_WindowWasMaximizedBeforeFullScreen(false) {
+    : QMainWindow(parent, flags), m_WindowWasMaximizedBeforeFullScreen(false)
+{
     namespace DU = util::directory;
+
+    Q_ASSERT(m_instance == 0);
+    m_instance = this;
 
     QSplashScreen splash;
     bool showSplash = CBTConfig::get(CBTConfig::logo);
@@ -265,7 +270,7 @@ bool BibleTime::moduleUnlock(CSwordModuleInfo *module, QWidget *parent) {
          */
         {
             const QString moduleName(module->name());
-            CSwordBackend *backend = CPointers::backend();
+            CSwordBackend *backend = CSwordBackend::instance();
             backend->reloadModules(CSwordBackend::OtherChange);
             module = backend->findModuleByName(moduleName);
             Q_ASSERT(module != 0);

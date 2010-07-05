@@ -18,7 +18,6 @@
 #include "backend/managers/cdisplaytemplatemgr.h"
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/searchdialog/btsearchoptionsarea.h"
-#include "util/cpointers.h"
 #include "util/directory.h"
 
 // Sword includes:
@@ -280,7 +279,7 @@ QString getDefault(const strings ID) {
 }
 
 QString getDefault(const modules ID) {
-    // CSwordBackend *b = CPointers::backend();
+    // CSwordBackend *b = CSwordBackend::instance()();
     switch (ID) {
         case standardBible:
             return "KJV";
@@ -510,7 +509,7 @@ QString get(const strings ID) {
 
 CSwordModuleInfo *get(const modules ID) {
     getConfig()->beginGroup("modules");
-    CSwordModuleInfo *result(CPointers::backend()->findModuleByName(
+    CSwordModuleInfo *result(CSwordBackend::instance()->findModuleByName(
                                  getConfig()->value(getKey(ID), getDefault(ID)).toString()
                              ));
     getConfig()->endGroup();
@@ -632,7 +631,7 @@ void set(const modules ID, CSwordModuleInfo * const value) {
 }
 
 void set(const modules ID, const QString& value) {
-    CSwordModuleInfo *module(CPointers::backend()->findModuleByName(value));
+    CSwordModuleInfo *module(CSwordBackend::instance()->findModuleByName(value));
     if (module) {
         set(ID, module);
     }

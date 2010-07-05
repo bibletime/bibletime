@@ -16,9 +16,10 @@
 #include <QStringList>
 
 
-/** Manages the languages of BibleTime and provides functions to work with them.
-  * @author The BibleTime team
-  */
+/**
+  \brief Manages the languages and provides functions to work with them.
+  \note This is a singleton.
+*/
 class CLanguageMgr {
 
     public:
@@ -88,6 +89,13 @@ class CLanguageMgr {
         typedef QHash<QString, const Language*> LangMap;
         typedef QHash<QString, const Language*>::const_iterator LangMapIterator;
 
+
+        /** Returns the singleton instance, creating it if one does not exist. */
+        static CLanguageMgr *instance();
+
+        /** Destroys the singleton instance, if one exists. */
+        static void destroyInstance();
+
         /** Constructor.
         */
         CLanguageMgr();
@@ -138,8 +146,9 @@ class CLanguageMgr {
         struct ModuleCache {
             unsigned int moduleCount;
             LangMap availableLanguages;
-        }
-        m_availableModulesCache;
+        } m_availableModulesCache;
+
+        static CLanguageMgr *m_instance;
 };
 
 #endif

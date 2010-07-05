@@ -22,7 +22,6 @@
 #include <QVBoxLayout>
 #include "backend/managers/cswordbackend.h"
 #include "frontend/bookshelfmanager/installpage/btinstallthread.h"
-#include "util/cpointers.h"
 
 
 BtInstallProgressDialog::BtInstallProgressDialog(const QSet<CSwordModuleInfo*> &modules,
@@ -91,7 +90,7 @@ void BtInstallProgressDialog::startThreads() {
     // remove all the updated modules from the backend module list at once
     //foreach (QString mName, m_threadsByModule.keys()) {
     //}
-    //QList<CSwordModuleInfo*> CPointers::backend()->takeModulesFromList(m_threadsByModule.keys());
+    //QList<CSwordModuleInfo*> CSwordBackend::instance()()->takeModulesFromList(m_threadsByModule.keys());
     qDebug() << "start threads...";
     //loop through the multimap of the waiting threads, start at most 3 threads for each source
     QMultiMap<QString, BtInstallThread*>::iterator threadIterator = m_waitingThreads.end();
@@ -236,7 +235,7 @@ void BtInstallProgressDialog::closeEvent(QCloseEvent* event) {
         return;
     }
     // other parts of the UI/engine must be updated
-    CPointers::backend()->reloadModules(CSwordBackend::AddedModules);
+    CSwordBackend::instance()->reloadModules(CSwordBackend::AddedModules);
 }
 
 bool BtInstallProgressDialog::threadsDone() {

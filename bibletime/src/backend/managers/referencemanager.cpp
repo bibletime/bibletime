@@ -15,7 +15,6 @@
 #include <QDebug>
 #include "backend/config/cbtconfig.h"
 #include "backend/keys/cswordversekey.h"
-#include "util/cpointers.h"
 
 
 /** Returns a hyperlink used to be imbedded in the display windows. At the moment the format is sword://module/key */
@@ -87,7 +86,7 @@ const QString ReferenceManager::encodeHyperlink( const QString moduleName, const
             case Bible: //bibles or commentary keys need parsing
 
             case Commentary: {
-                /*  				CSwordModuleInfo* mod = CPointers::backend()->findModuleByName(moduleName);
+                /*  				CSwordModuleInfo* mod = CSwordBackend::instance()()->findModuleByName(moduleName);
 
                   				ParseOptions options;
                   				options.refDestinationModule = mod->name();
@@ -327,7 +326,7 @@ ReferenceManager::Type ReferenceManager::typeFromModule( const CSwordModuleInfo:
 /** Parses the given verse references using the given language and the module.*/
 const QString ReferenceManager::parseVerseReference( const QString& ref, const ReferenceManager::ParseOptions& options) {
 
-    CSwordModuleInfo* const mod = CPointers::backend()->findModuleByName(options.refDestinationModule);
+    CSwordModuleInfo* const mod = CSwordBackend::instance()->findModuleByName(options.refDestinationModule);
     //Q_ASSERT(mod); tested later
 
     if (!mod) {
@@ -362,8 +361,8 @@ const QString ReferenceManager::parseVerseReference( const QString& ref, const R
 
 // 	CSwordVerseKey dummy(0);
     //HACK: We have to workaround a Sword bug, we have to set the default locale to the same as the sourceLanguage !
-    const QString oldLocaleName = CPointers::backend()->booknameLanguage();
-    CPointers::backend()->booknameLanguage(sourceLanguage);
+    const QString oldLocaleName = CSwordBackend::instance()->booknameLanguage();
+    CSwordBackend::instance()->booknameLanguage(sourceLanguage);
 
     sword::VerseKey dummy;
     dummy.setLocale( sourceLanguage.toUtf8().constData() );
@@ -402,6 +401,6 @@ const QString ReferenceManager::parseVerseReference( const QString& ref, const R
 
     }
 
-    CPointers::backend()->booknameLanguage(oldLocaleName);
+    CSwordBackend::instance()->booknameLanguage(oldLocaleName);
     return ret;
 }

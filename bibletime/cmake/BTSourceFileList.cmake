@@ -104,7 +104,6 @@ SOURCE_GROUP("src\\backend\\managers" FILES ${bibletime_SRC_BACKEND_MANAGERS})
 
 SET(bibletime_SRC_UTIL
 	# Utilities:
-	src/util/cpointers.cpp
 	src/util/cresmgr.cpp
 	src/util/dialogutil.cpp
 	src/util/directory.cpp

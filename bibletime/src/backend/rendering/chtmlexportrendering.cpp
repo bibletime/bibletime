@@ -18,7 +18,6 @@
 #include "backend/keys/cswordversekey.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
 #include "backend/managers/clanguagemgr.h"
-#include "util/cpointers.h"
 
 
 #ifdef BT_DEBUG
@@ -206,8 +205,8 @@ const QString CHTMLExportRendering::renderEntry( const KeyTreeItem& i, CSwordKey
 }
 
 void CHTMLExportRendering::initRendering() {
-    //CPointers::backend()->setDisplayOptions( m_displayOptions );
-    CPointers::backend()->setFilterOptions( m_filterOptions );
+    //CSwordBackend::instance()()->setDisplayOptions( m_displayOptions );
+    CSwordBackend::instance()->setFilterOptions( m_filterOptions );
 }
 
 const QString CHTMLExportRendering::finishText( const QString& text, KeyTree& tree ) {

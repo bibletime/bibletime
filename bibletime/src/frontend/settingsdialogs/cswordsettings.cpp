@@ -20,7 +20,6 @@
 #include <QVBoxLayout>
 #include <QWidget>
 #include "backend/config/cbtconfig.h"
-#include "util/cpointers.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
 #include "util/tool.h"
@@ -145,7 +144,7 @@ StandardWorksTab::StandardWorksTab()
 
     //fill the comboboxes with the right modules
 
-    const QList<CSwordModuleInfo*> &modules(CPointers::backend()->moduleList());
+    const QList<CSwordModuleInfo*> &modules(CSwordBackend::instance()->moduleList());
     QString modDescript;
     for (MLCI it(modules.begin()); it != modules.end(); it++) {
         modDescript = (*it)->config(CSwordModuleInfo::Description);
@@ -371,9 +370,8 @@ void StandardWorksTab::save() {
                 qWarning("Unhandled module type.");
         };
 
-        CSwordModuleInfo* const module = CPointers::backend()->findModuleByDescription(moduleDescription);
-        CBTConfig::set
-        (moduleType, module);
+        CSwordModuleInfo * const module = CSwordBackend::instance()->findModuleByDescription(moduleDescription);
+        CBTConfig::set(moduleType, module);
     }
 }
 

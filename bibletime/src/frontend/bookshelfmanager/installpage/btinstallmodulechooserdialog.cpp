@@ -18,7 +18,6 @@
 #include "backend/bookshelfmodel/btbookshelffiltermodel.h"
 #include "frontend/btbookshelfdockwidget.h"
 #include "frontend/btbookshelfview.h"
-#include "util/cpointers.h"
 #include "util/tool.h"
 
 

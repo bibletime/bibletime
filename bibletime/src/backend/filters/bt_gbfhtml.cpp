@@ -13,7 +13,6 @@
 #include <QString>
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
-#include "util/cpointers.h"
 
 // Sword includes:
 #include <utilxml.h>
@@ -79,7 +78,7 @@ char Filters::BT_GBFHTML::processText(sword::SWBuf& buf, const sword::SWKey * ke
         return 1; //no processing should be done, may happen in a search
     }
 
-    CSwordModuleInfo* m = CPointers::backend()->findModuleByName( module->Name() );
+    CSwordModuleInfo* m = CSwordBackend::instance()->findModuleByName( module->Name() );
 
     if (m && !(m->has(CSwordModuleInfo::lemmas) || m->has(CSwordModuleInfo::morphTags) || m->has(CSwordModuleInfo::strongNumbers))) { //only parse if the module has strongs or lemmas
         return 1; //WARNING: Return alread here

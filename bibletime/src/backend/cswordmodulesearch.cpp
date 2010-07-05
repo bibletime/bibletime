@@ -39,7 +39,7 @@ void CSwordModuleSearch::setModules( const QList<CSwordModuleInfo*>& list ) {
 
 /** Starts the search for the search text. */
 bool CSwordModuleSearch::startSearch() {
-    CPointers::backend()->setFilterOptions(CBTConfig::getFilterOptionDefaults());
+    CSwordBackend::instance()->setFilterOptions(CBTConfig::getFilterOptionDefaults());
     m_foundItems   = false;
 
     bool foundItems = false;

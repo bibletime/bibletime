@@ -25,7 +25,6 @@
 #include "frontend/searchdialog/btsearchmodulechooserdialog.h"
 #include "frontend/searchdialog/btsearchsyntaxhelpdialog.h"
 #include "frontend/searchdialog/crangechooserdialog.h"
-#include "util/cpointers.h"
 #include "util/cresmgr.h"
 #include "util/tool.h"
 #include "util/directory.h"
@@ -259,7 +258,7 @@ void BtSearchOptionsArea::moduleListTextSelected(int index) {
     QStringList moduleNamesList = text.split(", ");
     QList<CSwordModuleInfo*> moduleList;
     foreach(QString name, moduleNamesList) {
-        moduleList.append(CPointers::backend()->findModuleByName(name));
+        moduleList.append(CSwordBackend::instance()->findModuleByName(name));
     }
     //set the list and the combobox list and text
     setModules(moduleList);

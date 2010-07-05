@@ -136,6 +136,8 @@ class BibleTime : public QMainWindow {
          */
         ~BibleTime();
 
+        static inline BibleTime *instance() { return m_instance; }
+
         /**
         * Reads the settings from the configfile and sets the right properties.
         */
@@ -163,26 +165,33 @@ class BibleTime : public QMainWindow {
         /**
         * Get pointer to Navigation toolbar
         */
-        inline QToolBar* navToolBar() {
+        inline QToolBar *navToolBar() const {
             return m_navToolBar;
         }
         /**
         * Get pointer to Works toolbar
         */
-        inline BtModuleChooserBar* worksToolBar() {
+        inline BtModuleChooserBar *worksToolBar() const {
             return m_worksToolBar;
         }
         /**
         * Get pointer to Tools toolbar
         */
-        inline QToolBar* toolsToolBar() {
+        inline QToolBar *toolsToolBar() const {
             return m_toolsToolBar;
         }
         /**
         * Get pointer to Format toolbar
         */
-        inline QToolBar* formatToolBar() {
+        inline QToolBar *formatToolBar() const {
             return m_formatToolBar;
+        }
+
+        /**
+          \returns a pointer to the info display.
+        */
+        inline InfoDisplay::CInfoDisplay *infoDisplay() const {
+            return m_infoDisplay;
         }
 
         /**
@@ -422,6 +431,8 @@ class BibleTime : public QMainWindow {
         void toggledTextWindowFormatToolbar(bool newState);
 
     private:
+        static BibleTime *m_instance;
+
         //  True if window was maximized before last toggle to full screen.
         bool m_WindowWasMaximizedBeforeFullScreen;
 

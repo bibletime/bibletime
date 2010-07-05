@@ -22,7 +22,6 @@
 #include "bibletime.h"
 #include "frontend/btbookshelfview.h"
 #include "frontend/btbookshelfwidget.h"
-#include "util/cpointers.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
 
@@ -48,7 +47,7 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
     // Setup widgets:
     m_bookshelfWidget = new BtBookshelfWidget(this);
     m_bookshelfWidget->setTreeModel(treeModel);
-    m_bookshelfWidget->setSourceModel(CPointers::backend()->model());
+    m_bookshelfWidget->setSourceModel(CSwordBackend::instance()->model());
     m_bookshelfWidget->setItemContextMenu(m_itemContextMenu);
     m_bookshelfWidget->groupingBookshelfAction()->setVisible(false);
     /// \bug The correct grouping action is not selected on startup.
@@ -159,7 +158,7 @@ void BtBookshelfDockWidget::slotModuleActivated(CSwordModuleInfo *module) {
 
         if (BibleTime::moduleUnlock(module)) {
             // Re-initialize module pointer:
-            module = CPointers::backend()->findModuleByName(moduleName);
+            module = CSwordBackend::instance()->findModuleByName(moduleName);
             Q_ASSERT(module != 0);
 
             emit moduleOpenTriggered(module);

@@ -17,7 +17,6 @@
 #include "backend/config/cbtconfig.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
 #include "backend/rendering/cdisplayrendering.h"
-#include "util/cpointers.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
 #include "util/tool.h"

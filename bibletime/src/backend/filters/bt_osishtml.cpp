@@ -14,7 +14,6 @@
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/clanguagemgr.h"
 #include "backend/managers/referencemanager.h"
-#include "util/cpointers.h"
 
 // Sword includes:
 #include <swbuf.h>
@@ -549,7 +548,7 @@ void Filters::BT_OSISHTML::renderReference(const char *osisRef, sword::SWBuf &bu
         //If the osisRef is something like "ModuleID:key comes here" then the
         // modulename is given, so we'll use that one
 
-        CSwordModuleInfo* mod = CPointers::backend()->findSwordModuleByPointer(myModule);
+        CSwordModuleInfo* mod = CSwordBackend::instance()->findSwordModuleByPointer(myModule);
         //Q_ASSERT(mod); checked later
         if (!mod || (mod->type() != CSwordModuleInfo::Bible
                      && mod->type() != CSwordModuleInfo::Commentary)) {
@@ -566,8 +565,8 @@ void Filters::BT_OSISHTML::renderReference(const char *osisRef, sword::SWBuf &bu
             QString newModuleName = ref.left(pos);
             hrefRef = ref.mid(pos + 1);
 
-            if (CPointers::backend()->findModuleByName(newModuleName)) {
-                mod = CPointers::backend()->findModuleByName(newModuleName);
+            if (CSwordBackend::instance()->findModuleByName(newModuleName)) {
+                mod = CSwordBackend::instance()->findModuleByName(newModuleName);
             }
         }
 

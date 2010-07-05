@@ -22,7 +22,6 @@
 #include "frontend/displaywindow/cdisplaywindowfactory.h"
 #include "frontend/displaywindow/creadwindow.h"
 #include "util/directory.h"
-#include "util/cpointers.h"
 
 
 using namespace InfoDisplay;
@@ -107,7 +106,7 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType format, const CD
                     filterOptions.scriptureReferences = false;
                     filterOptions.textualVariants = false;
 
-                    CPointers::backend()->setFilterOptions(filterOptions);
+                    CSwordBackend::instance()->setFilterOptions(filterOptions);
 
                     return QString(key->strippedText()).append("\n(")
                            .append(key->key())
@@ -145,7 +144,7 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType format, const CD
             ReferenceManager::Type type;
             ReferenceManager::decodeHyperlink(activeAnchor(), moduleName, keyName, type);
 
-            if (CSwordModuleInfo* module = CPointers::backend()->findModuleByName(moduleName)) {
+            if (CSwordModuleInfo *module = CSwordBackend::instance()->findModuleByName(moduleName)) {
                 QSharedPointer<CSwordKey> key( CSwordKey::createInstance(module) );
                 key->key( keyName );
 
@@ -160,7 +159,7 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType format, const CD
             ReferenceManager::Type type;
             ReferenceManager::decodeHyperlink(activeAnchor(), moduleName, keyName, type);
 
-            if (CSwordModuleInfo* module = CPointers::backend()->findModuleByName(moduleName)) {
+            if (CSwordModuleInfo *module = CSwordBackend::instance()->findModuleByName(moduleName)) {
                 QSharedPointer<CSwordKey> key( CSwordKey::createInstance(module) );
                 key->key( keyName );
 
@@ -173,7 +172,7 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType format, const CD
                 filterOptions.scriptureReferences = false;
                 filterOptions.textualVariants = false;
 
-                CPointers::backend()->setFilterOptions(filterOptions);
+                CSwordBackend::instance()->setFilterOptions(filterOptions);
 
                 return QString(key->strippedText()).append("\n(")
                        .append(key->key())
@@ -323,7 +322,7 @@ void BtHtmlReadDisplayView::dragEnterEvent( QDragEnterEvent* e ) {
 
     BookmarkItem item = (qobject_cast<const BTMimeData*>(e->mimeData()))->bookmark();
     QString moduleName = item.module();
-    CSwordModuleInfo* m = CPointers::backend()->findModuleByName(moduleName);
+    CSwordModuleInfo *m = CSwordBackend::instance()->findModuleByName(moduleName);
     Q_ASSERT(m);
     if (m == 0) 
         return;

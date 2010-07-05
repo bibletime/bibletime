@@ -26,8 +26,8 @@ BibleTimeApp::~BibleTimeApp() {
     CBTConfig::set(CBTConfig::crashedTwoTimes, false);
 
     CDisplayTemplateMgr::destroyInstance();
-    CPointers::deleteLanguageMgr();
-    CPointers::deleteBackend();
+    CLanguageMgr::destroyInstance();
+    CSwordBackend::destroyInstance();
 }
 
 /*

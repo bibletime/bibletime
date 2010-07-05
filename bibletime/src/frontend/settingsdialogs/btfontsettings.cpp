@@ -16,7 +16,6 @@
 #include <QVBoxLayout>
 #include <QWidget>
 #include "frontend/settingsdialogs/cfontchooser.h"
-#include "util/cpointers.h"
 #include "util/cresmgr.h"
 #include "util/tool.h"
 #include "util/directory.h"
@@ -44,7 +43,7 @@ BtFontSettingsPage::BtFontSettingsPage(QWidget *parent)
 
     hLayout->addWidget(m_usageCombo);
 
-    CLanguageMgr::LangMap langMap = CPointers::languageMgr()->availableLanguages();
+    CLanguageMgr::LangMap langMap = CLanguageMgr::instance()->availableLanguages();
 
     for (CLanguageMgr::LangMapIterator it = langMap.constBegin() ; it != langMap.constEnd(); ++it ) {
         const QString name =
@@ -99,7 +98,7 @@ BtFontSettingsPage::~BtFontSettingsPage() {
 
 void BtFontSettingsPage::save() {
     for (QMap<QString, CBTConfig::FontSettingsPair>::Iterator it = m_fontMap.begin(); it != m_fontMap.end(); ++it ) {
-        const CLanguageMgr::Language* const lang = CPointers::languageMgr()->languageForTranslatedName(it.key());
+        const CLanguageMgr::Language * const lang = CLanguageMgr::instance()->languageForTranslatedName(it.key());
         if (!lang->isValid()) { 	//we possibly use a language, for which we have only the abbrev
             if (!lang->abbrev().isEmpty()) {
                 CLanguageMgr::Language l(it.key(), it.key(), it.key()); //create a temp language

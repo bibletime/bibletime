@@ -34,7 +34,6 @@
 #include "frontend/mainindex/bookmarks/cbookmarkindex.h"
 #include "frontend/profile/cprofile.h"
 #include "frontend/profile/cprofilemgr.h"
-#include "util/cpointers.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
 
@@ -78,7 +77,6 @@ void BibleTime::initView() {
     m_magDock->setWidget(m_infoDisplay);
     addDockWidget(Qt::LeftDockWidgetArea, m_magDock);
 
-    CPointers::setInfoDisplay(m_infoDisplay);
     m_mdi->setMinimumSize(100, 100);
     m_mdi->setFocusPolicy(Qt::ClickFocus);
 }
@@ -719,11 +717,10 @@ void BibleTime::initBackends() {
     sword::StringMgr::setSystemStringMgr( new BTStringMgr() );
     sword::SWLog::getSystemLog()->setLogLevel(1);
 
-    CSwordBackend* backend = new CSwordBackend();
+    CSwordBackend *backend = CSwordBackend::createInstance();
     backend->booknameLanguage(CBTConfig::get(CBTConfig::language) );
 
-    CPointers::setBackend(backend);
-    const CSwordBackend::LoadError errorCode = CPointers::backend()->initModules(CSwordBackend::OtherChange);
+    const CSwordBackend::LoadError errorCode = CSwordBackend::instance()->initModules(CSwordBackend::OtherChange);
 
     if (errorCode != CSwordBackend::NoError) {
         //show error message that initBackend failed

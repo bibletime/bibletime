@@ -18,7 +18,6 @@
 #include <utility>
 #include "backend/managers/cswordbackend.h"
 #include "frontend/bookshelfmanager/btinstallmgr.h"
-#include "util/cpointers.h"
 #include "util/directory.h"
 #include "util/dialogutil.h"
 
@@ -153,7 +152,7 @@ QString configFilename() {
 
 QStringList targetList() {
     qDebug() << "backend::targetList";
-    QStringList names = CPointers::backend()->swordDirList();
+    QStringList names = CSwordBackend::instance()->swordDirList();
     return names;
 }
 
@@ -219,7 +218,7 @@ bool setTargetList( const QStringList& targets ) {
     }
     qDebug() << "save the sword conf...";
     conf.Save();
-    CPointers::backend()->reloadModules(CSwordBackend::PathChanged);
+    CSwordBackend::instance()->reloadModules(CSwordBackend::PathChanged);
     return true;
 }
 
@@ -287,6 +286,7 @@ QDir swordDir() {
 CSwordBackend* backend( const sword::InstallSource& is) {
     qDebug() << "backend::backend";
     CSwordBackend* ret = 0;
+    /// \anchor BackendNotSingleton
     if (isRemote(is)) {
         ret = new CSwordBackend( QString(is.localShadow.c_str()), false );
     }

@@ -10,8 +10,6 @@
 #ifndef CDISPLAY_H
 #define CDISPLAY_H
 
-#include "util/cpointers.h"
-
 #include <QMap>
 #include "backend/managers/cswordbackend.h"
 

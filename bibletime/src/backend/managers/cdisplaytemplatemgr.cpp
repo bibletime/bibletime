@@ -17,7 +17,6 @@
 #include "backend/config/cbtconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/clanguagemgr.h"
-#include "util/cpointers.h"
 #include "util/directory.h"
 
 
@@ -103,7 +102,7 @@ const QString CDisplayTemplateMgr::fillTemplate( const QString& name, const QStr
     }
 
     QString langCSS;
-    CLanguageMgr::LangMap langMap = CPointers::languageMgr()->availableLanguages();
+    CLanguageMgr::LangMap langMap = CLanguageMgr::instance()->availableLanguages();
 
     qDebug() << "langMap length:" << langMap.count();
     qDebug() << "loop through langMap";

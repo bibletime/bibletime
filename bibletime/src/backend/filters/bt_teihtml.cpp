@@ -14,7 +14,6 @@
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/clanguagemgr.h"
 #include "backend/managers/referencemanager.h"
-#include "util/cpointers.h"
 
 // Sword includes:
 #include <swbuf.h>
@@ -113,8 +112,8 @@ void Filters::BT_TEIHTML::renderReference(const char *osisRef, sword::SWBuf &buf
             QString newModuleName = ref.left(pos);
             hrefRef = ref.mid(pos + 1);
 
-            if (CPointers::backend()->findModuleByName(newModuleName)) {
-                mod = CPointers::backend()->findModuleByName(newModuleName);
+            if (CSwordBackend::instance()->findModuleByName(newModuleName)) {
+                mod = CSwordBackend::instance()->findModuleByName(newModuleName);
             }
         }
 

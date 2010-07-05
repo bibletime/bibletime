@@ -15,7 +15,6 @@
 #include "frontend/bookshelfmanager/indexpage/btindexpage.h"
 #include "frontend/bookshelfmanager/installpage/btinstallpage.h"
 #include "frontend/bookshelfmanager/removepage/btremovepage.h"
-#include "util/cpointers.h"
 #include "util/dialogutil.h"
 
 
