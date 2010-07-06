@@ -1,0 +1,208 @@
+<chapter id="hdbk-config">
+  <title>&bibletime; konfigurieren</title>
+  <para>In diesem Abschnitt finden Sie eine ??bersicht, wie &bibletime; zu 
+konfigurieren ist. Sie k??nnen das Men?? <guimenu>Einstellungen</guimenu> im 
+Hauptmen?? finden.</para>
+  <sect1 id="hdbk-config-bt">
+    <title>Dialog &bibletime; konfigurieren</title>
+    <para>Die &bibletime; Benutzeroberfl??che kann auf vielf??ltige Art ihren 
+Anspr??chen angepasst werden. Sie k??nnen auf den Konfigurationsdialog ??ber 
+die Auswahl von <menuchoice><guimenu>Einstellungen</guimenu></menuchoice> 
+<guimenuitem>&bibletime; einrichten</guimenuitem>. gelangen.</para>
+
+    <sect2 id="hdbk-config-bt-display">
+      <title>
+        <guimenu>Display</guimenu>
+      </title>
+      <para>Das Startverhalten kann angepasst werden. W??hlen Sie aus den folgenden 
+Optionen aus: 
+      <itemizedlist>
+        <listitem>
+          <para>Startlogo anzeigen</para>
+        </listitem>
+      </itemizedlist></para>
+      <para>Anzeigenvorlagen definieren das Aussehen des Textes (Farben, Gr????e, 
+usw.). Es sind mehrere eingebaute Vorlagen verf??gbar. Nach Auswahl einer 
+Vorlage wird im rechten Abschnitt eine Vorschau angezeigt,</para>
+    </sect2>
+
+    <sect2 id="hdbk-config-bt-desk">
+      <title>
+        <guimenu>Desk</guimenu>
+      </title>
+      <para>Viele Funktionen, die vom &sword;-Backend zur Verf??gung gestellt werden, 
+k??nnen nun in &bibletime; konfiguriert werden. Diese Funktionseigenschaften 
+sind im rechten Dialog dokumentiert. Ihnen ist au??erdem erm??glicht, 
+Standardwerke zu definieren, wenn kein bestimmtes Werk in der Referenz 
+spezifiziert ist. Zum Beispiel wird die Standard-Bibel zur Darstellung des 
+Inhalts von Kreuzverweisen in der Bibel herangezogen. Wenn Sie ??ber sie 
+fahren, wird die Lupe den Versinhalt anzeigen, auf den Bezug genommen wird, 
+gem???? der Standard-Bibel, die Sie spezifiziert haben. Unter Mitverwendung 
+von Textfiltern, k??nnen Sie die Erscheinungsform des Textes bestimmen.</para>
+    </sect2>
+
+    <sect2 id="hdbk-config-bt-languages">
+      <title>
+        <guimenu>Languages</guimenu>
+      </title>
+      <para>Hier k??nnen Sie angeben, welche Sprache f??r die Buchnamen der Bibel 
+verwendet werden soll. Stellen Sie (falls verf??gbar) ihre Muttersprache 
+ein, und sie werden sich gleich zu Hause f??hlen.</para>
+
+      <para>Standardm????ig verwendet &bibletime; die System-Standardschrift zur 
+Anzeige. Sie k??nnen diese Schrift bei Bedarf aufheben. Einige Sprachen 
+erfordern spezielle Schriftarten, um korrekt dargestellt werden zu k??nnen 
+und dieser Dialog erlaubt Ihnen, spezielle Schriftarten f??r jede Sprache zu 
+spezifizieren.</para>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="ss_configfonts.png" width="100%" contentdepth="100%" scalefit="1" format="PNG" />
+        </imageobject>
+        <textobject>
+          <phrase>Optionendialog - Schriften</phrase>
+        </textobject>
+        <caption>
+          <para>Der Optionendialog - Schriften.</para>
+        </caption>
+      </mediaobject>
+      <para>&bibletime; kann nun alle unterst??tzten Schriftarten benutzen. Solange die 
+f??r sie relevanten Werke korrekt dargestellt werden, muss hier nichts 
+unternommen werden. Wenn ein Werk jedoch nur als Folge von Fragezeichen 
+(??????) oder leeren K??stchen dargestellt wird, dann erkennen Sie, dass die 
+Standard-Schriftart die in diesem Werk benutzten Zeichen nicht enth??lt.</para>
+
+      <para>Um dies zu korrigieren, w??hlen Sie bitte die Sprache dieses Werkes aus dem 
+Aufklappmen?? aus. W??hlen Sie das Kontrollk??stchen 
+&quot;Benutzerdefinierte Schrift verwenden&quot; aus und w??hlen Sie 
+anschlie??end eine Schriftart aus. So ist zum Beispiel die Schriftart 
+Code2000 eine, die viele verschiedene Sprachen unterst??tzt. Wenn keiner der 
+installierten Schriftarten das f??r sie interessante Werk darstellen kann, 
+so versuchen Sie bitte, das entsprechende Lokalisierungspaket f??r diese 
+Sprache zu installieren.</para>
+      <sect3 id="hdbk-config-bt-addfont">
+        <title>Schriftarten installieren</title>
+        <para>Detaillierte Anweisungen zur Schriftarten-Installation gehen ??ber den 
+Umfang dieses Handbuches hinaus. F??r weitergehende Informationen k??nnen 
+Sie auch das <ulink 
+url="http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html"> 
+Unicode-HOWTO</ulink> lesen.</para>
+        <tip>
+          <para>Wenn Sie eine kleine Schriftart wie Clearlyu (etwa 22kb) verwenden, wird 
+&bibletime; schneller laufen als mit einer gro??en Schriftart wie <trademark 
+class="registered">Bitstream Cyberbit</trademark> (etwa 12MB).</para>
+        </tip>
+      </sect3>
+      <sect3 id="hdbk-config-bt-ob-font">
+        <title>Schriftarten beziehen</title>
+        <para>Schriftarten k??nnen von unterschiedlichen Quellen bezogen werden:</para>
+        <itemizedlist>
+          <listitem>
+            <para>Ihre *nix-Distribution.</para>
+          </listitem>
+          <listitem>
+            <para>Die Sprachpakete ihrer Distribution.</para>
+          </listitem>
+          <listitem>
+            <para>Eine bestehende <trademark class="registered">Microsoft 
+Windows</trademark>-Installation auf dem gleichen Computer.</para>
+          </listitem>
+          <listitem>
+            <para>Eine Sammlung von Schriftarten, wie sie z.B. von Adobe oder Bitstream 
+erh??ltlich sind.</para>
+          </listitem>
+          <listitem>
+            <para>Sammlungen von Schriftarten im Internet.</para>
+          </listitem>
+        </itemizedlist>
+        <para>Unicode Schriftarten unterst??tzen mehr Zeichen als andere, und einige 
+dieser Schriftarten sind kostenlos erh??ltlich. Keine der verf??gbaren 
+Schriftarten enth??lt alle Zeichen des Unicode-Standards. Sie m??ssen also 
+evtl. verschiedene Schriftarten f??r verschiedene Sprachen benutzen.</para>
+        <table id="hdbk-config-unicode-fonts-table">
+          <title>Unicode Schriftarten</title>
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry>
+                  <ulink url="http://code2000.net/CODE2000.ZIP">
+                  Code2000</ulink>
+                </entry>
+                <entry>Vielleicht die beste Unicode-Schriftart, sie deckt einen gro??en 
+Zeichenbereich ab.</entry>
+              </row>
+              <row>
+                <entry>
+                  <ulink url="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;cat_id=FontDownloads">
+                  SIL unicode fonts</ulink>
+                </entry>
+                <entry>Exzellente Unicode-Schriftarten des Summer Institute of Linguistics.</entry>
+              </row>
+              <row>
+                <entry>
+                  <ulink url="http://www.nongnu.org/freefont/">
+                  FreeFont</ulink>
+                </entry>
+                <entry>Eine neue Initiative f??r freie Unicode-Schriftarten.</entry>
+              </row>
+              <row>
+                <entry>
+                  <ulink url="ftp://ftp.crosswire.org/pub/sword/iso/latest/FONTS/">
+                  Crosswire's font directory</ulink>
+                </entry>
+
+                <entry>Verschiedene Schriften sind auf der FTP-Site von &cbs; verf??gbar.</entry>
+              </row>
+              <row>
+                <entry>
+                  <ulink url="http://aol-4.vo.llnwd.net/pub/communicator/extras/fonts/windows/">
+                  Bitstream CyberBit</ulink>
+                </entry>
+                <entry>Deckt fast den ganzen Unicode-Bereich ab, k??nnte aber &bibletime; durch 
+seine Gr????e verlangsamen.</entry>
+              </row>
+              <row>
+                <entry>Clearlyu</entry>
+                <entry>Ist in einigen Distributionen enthalten. Enth??lt Europ??isch, Griechisch, 
+Hebr??isch, Thai.</entry>
+              </row>
+              <row>
+                <entry>
+                  <ulink url="http://fontforge.sourceforge.net/sfds/">
+                  Caslon, Monospace, Cupola, Caliban</ulink>
+                </entry>
+                <entry>Teilweise Abdeckung, siehe die Information auf der angegebenen Seite.</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+        <para>Es gibt gute Listen mit Unicode-Schriftarten im Netz, so z.B. eine von 
+Christoph Singer (<ulink 
+url="http://www.slovo.info/unifonts.htm">Multilingual Unicode TrueType Fonts 
+in the Internet</ulink>), oder eine von Alan Wood (<ulink 
+url="http://www.alanwood.net/unicode/fontsbyrange.html"> Unicode character 
+ranges and the Unicode fonts that support them</ulink>).</para>
+      </sect3>
+    </sect2>
+
+    <sect2 id="hdbk-config-bt-shortcuts">
+      <title>
+        <guimenu>Shortcuts</guimenu>
+      </title>
+
+      <para>Tastenk??rzel (ehemals HotKeys) sind spezielle Tastenbefehle, die an Stelle 
+der Men??eintr??ge oder Symbole verwendet werden k??nnen. Eine Anzahl von 
+&bibletime;s Befehlen hat bereits vordefinierte Tastenk??rzel (siehe hierzu 
+den <link linkend="hdbk-reference-shortcuts">Abschnitt ??ber die 
+Tastenk??rzel</link> f??r eine komplette Auflistung). Den meisten Befehlen 
+von &bibletime; kann hier ein Tastenk??rzel zugewiesen werden. Dies ist sehr 
+hilfreich, um die meistbenutzten Funktionen schnell zu erreichen.</para>
+
+      <imageobject>
+	<imagedata fileref="ss_shortcuts.png" width="100%" contentdepth="100%" scalefit="1" format="PNG" />
+      </imageobject>
+
+      <para>Im vorherigen Beispiel, F2, wurde der Anleitung zum Bibelstudium ein zweiter 
+Kurzbefehl, CTRL+2, zugewiesen.</para>
+    </sect2>
+  </sect1>
+</chapter>

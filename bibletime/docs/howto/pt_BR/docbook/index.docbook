@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY bibletime '<application>BibleTime</application>'>
+  <!ENTITY kapp "&bibletimehandbook;">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY howto-chap1 SYSTEM "howto-importance.docbook">
+  <!ENTITY howto-chap2 SYSTEM "howto-basics.docbook">
+  <!ENTITY howto-chap3 SYSTEM "howto-interpretation.docbook">
+]>
+
+<book>
+
+<bookinfo>
+	<title>Estudo Bíblico HowTo</title>
+	
+	<authorgroup>
+		<author>
+			<firstname>Bob</firstname>
+			<surname>Harman</surname>
+		</author>
+		<author>
+			<firstname></firstname>
+			<surname>The BibleTime team</surname>
+		</author>
+	</authorgroup>
+	
+	
+	
+	<!-- TRANS:ROLES_OF_TRANSLATORS -->
+<copyright>
+		<year>2001-2009</year>
+		<holder>Time do &bibletime;, (info@bibletime.info)</holder>
+	</copyright>
+	
+	<legalnotice>
+		<para>
+			Este documento foi originalmente criado pelo Sr. Bob Harman e é licenciado 
+pelos termos da licença <link 
+url="http://creativecommons.org/licenses/by-sa/3.0/"> "Creative Commons 
+Attribution-Share Alike"</link>.
+		</para>
+		<para>
+			Citações das Escrituras no original em inglês são da New American Standard 
+Bible.Na tradução em português foi usada a edição Atualizada de Almeida (Por 
+AA).
+		</para>
+	</legalnotice>
+	
+	<abstract>
+		<title>Resumo</title>
+		
+		<para>
+			O <application>Estudo Bíblico HowTo</application> é um guia para estudo da 
+Bíblia.
+		</para>
+		<para>
+			A esperança do time do &bibletime; é que esse HowTo incentive os leitores a 
+estudar as escrituras e ver o que elas dizem. Esse guia de estudo particular 
+foi escolhido porque não promove nenhuma doutrina denominacional em 
+particular. Nós esperamos que você leia e estude as escrituras para entender 
+o que elas dizem. Se você começar com a atitude de querer que o Senhor 
+mostre sua Palavra em seu coração ele não desapontará você.
+		</para>
+	</abstract>
+	
+	<keywordset>
+		<keyword>Bible</keyword>
+		<keyword>Study</keyword>
+		<keyword>HowTo</keyword>
+	</keywordset>
+
+</bookinfo>
+
+&howto-chap1;
+&howto-chap2;
+&howto-chap3;
+
+</book>
