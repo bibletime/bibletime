@@ -24,13 +24,14 @@
 //Change it once the format changed to make all systems rebuild their caches
 #define CACHE_FORMAT "3"
 
-CSwordLexiconModuleInfo::CSwordLexiconModuleInfo( const CSwordLexiconModuleInfo& m ) : CSwordModuleInfo(m) {
-    delete m_entryList;
-    m_entryList = 0;
-
-    if (m.m_entryList) {
-        m_entryList = new QStringList();
-        *m_entryList = *m.m_entryList;//copy list items
+CSwordLexiconModuleInfo::CSwordLexiconModuleInfo(
+        const CSwordLexiconModuleInfo &copy)
+    : CSwordModuleInfo(copy)
+{
+    if (copy.m_entryList != 0) {
+        m_entryList = new QStringList(*copy.m_entryList);
+    } else {
+        m_entryList = 0;
     }
 }
 
