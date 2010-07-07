@@ -83,7 +83,7 @@ CSwordModuleInfo::CSwordModuleInfo(sword::SWModule * module, CSwordBackend * con
     m_cancelIndexing = false;
     m_searchResult.ClearList();
     m_backend = usedBackend ? usedBackend : CSwordBackend::instance();
-    m_dataCache.name = module ? QString(module->Name()) : QString::null;
+    m_dataCache.name = QString(module->Name());
     m_dataCache.category = UnknownCategory;
     m_dataCache.language = 0;
     m_dataCache.hasVersion = !QString((*m_backend->getConfig())[module->Name()]["Version"]).isEmpty();

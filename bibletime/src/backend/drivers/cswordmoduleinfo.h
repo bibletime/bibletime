@@ -177,7 +177,10 @@ class CSwordModuleInfo: public QObject {
         /**
         * Returns the module object so all objects can access the original Sword module.
         */
-        sword::SWModule* module() const;
+        sword::SWModule *module() const {
+            return m_module;
+        }
+
         /**
         * Sets the unlock key of the modules and writes the key into the cofig file.
         * @return True if the unlock process was succesful, if the key was wrong, or if the config file was write protected return false.
@@ -206,10 +209,13 @@ class CSwordModuleInfo: public QObject {
 
         bool unlockKeyIsValid() const;
 
-        /** The module version.
-        * @return true if this module has a version number and false if it doesn't have one.
+        /**
+          \retval true if this module has a version number
+          \retval false if it doesn't have a version number
         */
-        inline bool hasVersion() const;
+        inline bool hasVersion() const {
+            return m_dataCache.hasVersion;
+        }
 
         /**
         * Returns true if the module's index has been built.
@@ -244,19 +250,29 @@ class CSwordModuleInfo: public QObject {
         virtual sword::ListKey& searchResult( const sword::ListKey* newResult = 0 );
 
         /**
-        * Returns the type of the module.
+          \returns the type of the module.
+          \note Subclasses should override this, the default implementation
+                returns unknown type.
         */
-        virtual CSwordModuleInfo::ModuleType type() const;
+        virtual CSwordModuleInfo::ModuleType type() const {
+            return CSwordModuleInfo::Unknown;
+        }
+
         /**
         * Returns the required Sword version for this module.
         * Returns -1 if no special Sword version is required.
         */
         sword::SWVersion minimumSwordVersion();
+
         /**
-        * Returns the name of the module.
-        * @return The name of this module.
+          \note The Sword library takes care of the duplicate names: _n is added
+                after each duplicate.
+          \returns The name of this module.
         */
-        const QString &name() const;
+        inline const QString &name() const {
+            return m_dataCache.name;
+        }
+
         /**
         * Snaps to the closest entry in the module if the current key is
         * not present in the data files.
@@ -283,10 +299,14 @@ class CSwordModuleInfo: public QObject {
         * Returns the language of the module.
         */
         const CLanguageMgr::Language* language() const;
+
         /**
-        * Returns true if this module may be written by the write display windows.
+          \returns whether this module may be written to.
         */
-        inline virtual bool isWritable() const;
+        inline virtual bool isWritable() const {
+            return false;
+        }
+
         /**
         * Returns true if this module is hidden (not to be shown with other modules in certain views).
         */
@@ -389,31 +409,5 @@ class CSwordModuleInfo: public QObject {
 
 Q_DECLARE_METATYPE(CSwordModuleInfo::Category);
 Q_DECLARE_OPERATORS_FOR_FLAGS(CSwordModuleInfo::Categories)
-
-inline CSwordModuleInfo::ModuleType CSwordModuleInfo::type() const {
-    return CSwordModuleInfo::Unknown;
-}
-
-inline sword::SWModule* CSwordModuleInfo::module() const {
-    return m_module;
-}
-
-inline bool CSwordModuleInfo::hasVersion() const {
-    return m_dataCache.hasVersion;
-}
-
-
-/**
-* Returns the name of the module.
-* The Sword library takes care of the duplicate names: _n is added after each duplicate.
-*/
-inline const QString &CSwordModuleInfo::name() const {
-    return m_dataCache.name;
-}
-
-/** Returns true if this module may be written by the write display windows. */
-inline bool CSwordModuleInfo::isWritable() const {
-    return false;
-}
 
 #endif
