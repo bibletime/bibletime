@@ -230,7 +230,6 @@ bool Filters::BT_GBFHTML::handleToken(sword::SWBuf &buf, const char *token, swor
     if (!substituteToken(buf, token)) {  //more than a simple replace
         const unsigned int tokenLength = strlen(token);
         unsigned long i;
-        sword::SWBuf value;
 
         BT_UserData* myUserData = dynamic_cast<BT_UserData*>(userData);
         sword::SWModule* myModule = const_cast<sword::SWModule*>(myUserData->module); //hack to be able to call stuff like Lang()
