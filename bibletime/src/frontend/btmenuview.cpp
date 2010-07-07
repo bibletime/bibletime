@@ -27,9 +27,7 @@ BtMenuView::BtMenuView(QWidget *parent)
 }
 
 BtMenuView::~BtMenuView() {
-    if (m_actions != 0) {
-        delete m_actions;
-    }
+    delete m_actions;
 }
 
 void BtMenuView::setModel(QAbstractItemModel *model) {
