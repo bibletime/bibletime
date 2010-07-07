@@ -38,9 +38,7 @@ CSwordLexiconModuleInfo::CSwordLexiconModuleInfo( const CSwordLexiconModuleInfo&
 QStringList* CSwordLexiconModuleInfo::entries() {
     namespace DU = util::directory;
 
-    if (!module()) {
-        return 0;
-    }
+    Q_ASSERT(module() != 0);
 
     if (m_entryList) return m_entryList;
 
