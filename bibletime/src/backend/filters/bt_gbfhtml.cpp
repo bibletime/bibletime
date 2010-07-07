@@ -229,7 +229,6 @@ char Filters::BT_GBFHTML::processText(sword::SWBuf& buf, const sword::SWKey * ke
 bool Filters::BT_GBFHTML::handleToken(sword::SWBuf &buf, const char *token, sword::BasicFilterUserData *userData) {
     if (!substituteToken(buf, token)) {  //more than a simple replace
         const unsigned int tokenLength = strlen(token);
-        unsigned long i;
 
         BT_UserData* myUserData = dynamic_cast<BT_UserData*>(userData);
         sword::SWModule* myModule = const_cast<sword::SWModule*>(myUserData->module); //hack to be able to call stuff like Lang()
@@ -270,7 +269,7 @@ bool Filters::BT_GBFHTML::handleToken(sword::SWBuf &buf, const char *token, swor
         else if (!strncmp(token, "FN", 2)) { //the end </font> tag is inserted in addTokenSubsitute
             buf.append("<font face=\"");
 
-            for (i = 2; i < tokenLength; i++) {
+            for (unsigned long i = 2; i < tokenLength; i++) {
                 if (token[i] != '\"') {
                     buf.append( token[i] );
                 }
