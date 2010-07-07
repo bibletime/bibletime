@@ -104,7 +104,6 @@ void CModuleResultView::setupTree( QList<CSwordModuleInfo*> modules, const QStri
     //util::CSortListViewItem* item = 0;
     //util::CSortListViewItem* oldItem = 0;
     QTreeWidgetItem* item = 0;
-    QTreeWidgetItem* oldItem = 0;
 
     sword::ListKey result;
 
@@ -122,7 +121,6 @@ void CModuleResultView::setupTree( QList<CSwordModuleInfo*> modules, const QStri
         /// \todo item->setColumnSorting(1, util::CSortListViewItem::Number);
 
         item->setIcon(0, util::tool::getIconForModule(*it) );
-        oldItem = item;
         //----------------------------------------------------------------------
         // we need to make a decision here.  Either don't show any Strong's
         // number translations, or show the first one in the search text, or
