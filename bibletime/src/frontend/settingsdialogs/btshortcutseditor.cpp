@@ -157,10 +157,8 @@ void BtShortcutsEditor::commitChanges() {
 void BtShortcutsEditor::addCollection(BtActionCollection* collection, const QString& title) {
     Q_UNUSED(title); /// \todo Is this correct?
 
-    QList<QAction*> actionList = collection->actions();
-    int count;
-    count = actionList.count();
     foreach (QAction *action, collection->actions()) {
+        /// \todo Is the following check really necessary?
         if (action) {
             int count = m_table->rowCount();
             m_table->insertRow(count);
