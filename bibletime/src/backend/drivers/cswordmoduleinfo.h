@@ -314,7 +314,7 @@ class CSwordModuleInfo: public QObject {
         * Protected because it should not be used outside of the CSword*ModuleInfo classes.
         */
         inline bool isUnicode() const {
-            return m_dataCache.isUnicode;
+            return m_module->isUnicode();
         }
 
         /**
@@ -373,7 +373,6 @@ class CSwordModuleInfo: public QObject {
             }
 
             QString name;
-            bool isUnicode;
             CSwordModuleInfo::Category category;
             const CLanguageMgr::Language* language;
             bool hasVersion;

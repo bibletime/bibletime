@@ -77,14 +77,13 @@ const unsigned int INDEX_VERSION = 7;
 const unsigned long BT_MAX_LUCENE_FIELD_LENGTH = 1024 * 1024;
 
 CSwordModuleInfo::CSwordModuleInfo(sword::SWModule * module, CSwordBackend * const usedBackend) {
-    m_module = module;
     Q_ASSERT(module);
+    m_module = module;
 
     m_cancelIndexing = false;
     m_searchResult.ClearList();
     m_backend = usedBackend ? usedBackend : CSwordBackend::instance();
     m_dataCache.name = module ? QString(module->Name()) : QString::null;
-    m_dataCache.isUnicode = module ? module->isUnicode() : false;
     m_dataCache.category = UnknownCategory;
     m_dataCache.language = 0;
     m_dataCache.hasVersion = !QString((*m_backend->getConfig())[module->Name()]["Version"]).isEmpty();
