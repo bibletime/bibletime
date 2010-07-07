@@ -173,7 +173,7 @@ bool CSwordModuleInfo::isEncrypted() const {
 */
 bool CSwordModuleInfo::unlockKeyIsValid() const {
 
-    (*m_module) = sword::TOP;
+    m_module->setPosition(sword::TOP);
 
     // This needs to use ::fromLatin1 because if the text is still locked,
     // a lot of garbage will show up. It will also work with properly decrypted
@@ -273,9 +273,9 @@ void CSwordModuleInfo::buildIndex() {
         writer->setUseCompoundFile(true); //merge segments into a single file
         writer->setMinMergeDocs(1000);
 
-        *m_module = sword::TOP;
+        m_module->setPosition(sword::TOP);
         unsigned long verseLowIndex = m_module->Index();
-        *m_module = sword::BOTTOM;
+        m_module->setPosition(sword::BOTTOM);
         unsigned long verseHighIndex = m_module->Index();
 
         //verseLowIndex is not 0 in all cases (i.e. NT-only modules)
@@ -312,7 +312,8 @@ void CSwordModuleInfo::buildIndex() {
 
         wchar_t wcharBuffer[BT_MAX_LUCENE_FIELD_LENGTH + 1];
 
-        for (*m_module = sword::TOP; !(m_module->Error()) && !m_cancelIndexing; (*m_module)++) {
+        m_module->setPosition(sword::TOP);
+        while (!(m_module->Error()) && !m_cancelIndexing) {
 
             // Also index Chapter 0 and Verse 0, because they might have information in the entry attributes
             // We used to just put their content into the textBuffer and continue to the next verse, but
@@ -396,7 +397,9 @@ void CSwordModuleInfo::buildIndex() {
                 //m_indexingProgress.activate();
                 emit indexingProgress(indexingProgressValue);
             }
-        }
+
+            m_module->increment();
+        } // while (!(m_module->Error()) && !m_cancelIndexing)
 
         if (!m_cancelIndexing) {
             writer->optimize();
