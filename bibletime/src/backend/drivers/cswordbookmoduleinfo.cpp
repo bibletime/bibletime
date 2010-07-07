@@ -16,17 +16,6 @@
 #include <treekeyidx.h>
 
 
-CSwordBookModuleInfo::CSwordBookModuleInfo( sword::SWModule* module, CSwordBackend* const usedBackend )
-        : CSwordModuleInfo(module, usedBackend),
-        m_depth(-1) {}
-
-CSwordBookModuleInfo::CSwordBookModuleInfo( const CSwordBookModuleInfo& module )
-        : CSwordModuleInfo(module) {
-    m_depth = module.m_depth;
-}
-
-CSwordBookModuleInfo::~CSwordBookModuleInfo() {}
-
 int CSwordBookModuleInfo::depth() {
     if (m_depth == -1) {
         sword::TreeKeyIdx* key = tree();

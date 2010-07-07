@@ -308,6 +308,10 @@ SET(bibletime_MOCABLE_HEADERS
 	src/backend/bookshelfmodel/btbookshelfmodel.h
 	src/backend/bookshelfmodel/btbookshelftreemodel.h
 	src/backend/cswordmodulesearch.h
+	src/backend/drivers/cswordbiblemoduleinfo.h
+	src/backend/drivers/cswordbookmoduleinfo.h
+	src/backend/drivers/cswordcommentarymoduleinfo.h
+	src/backend/drivers/cswordlexiconmoduleinfo.h
 	src/backend/drivers/cswordmoduleinfo.h
 	src/backend/managers/cswordbackend.h
 	src/frontend/bookmarks/bteditbookmarkdialog.h

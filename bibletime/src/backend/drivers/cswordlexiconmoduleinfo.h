@@ -16,55 +16,49 @@
 
 
 /**
- * The implementation of CModuleInfo for the Sword lexiccons and citionaries.
- * @author The BibleTime team
- * @version $Id: cswordlexiconmoduleinfo.h,v 1.12 2006/02/25 11:38:15 joachim Exp $
- */
+  The implementation of CModuleInfo for the Sword lexiccons and citionaries.
+*/
+class CSwordLexiconModuleInfo: public CSwordModuleInfo {
+        Q_OBJECT
 
-class CSwordLexiconModuleInfo : public CSwordModuleInfo {
+    public: /* Methods: */
+        CSwordLexiconModuleInfo(sword::SWModule *module,
+                                CSwordBackend * const backend)
+                : CSwordModuleInfo(module, backend, Lexicon), m_entryList(0) {}
 
-    public:
-        /**
-        * The standard constructor fot this object.
-        * A default constructor doesn't exist. Use this one.
-        */
-        CSwordLexiconModuleInfo( sword::SWModule* module, CSwordBackend* const );
-        /**
-        * The copy constructor
-        */
-        CSwordLexiconModuleInfo( const CSwordLexiconModuleInfo& m );
-        /** Reimplementation to return a valid clone.
-        */
-        virtual CSwordModuleInfo* clone();
-        /** Destructor.
-        */
-        virtual ~CSwordLexiconModuleInfo();
-        /**
-        * Returns the entries of the module.
-        * This function returns the entries of the modules represented by this object.
-        * If this function is called for the first time the list is load from disk and stored in a list which cahes it.
-        * If the function is called again, the cached list is returned so we have a major speed improvement.
-        * @return The list of lexicon entries
-        */
-        QStringList* entries();
-        /**
-        * Reimplementation, to return the right type for this lexicon.
-        */
-        virtual CSwordModuleInfo::ModuleType type() const;
-        /**
-        * Jumps to the closest entry in the module.
-        */
-        bool snap();
+        CSwordLexiconModuleInfo(const CSwordLexiconModuleInfo &copy);
 
-    private:
+        /* Reimplementation of CSwordModuleInfo::clone(). */
+        virtual inline CSwordModuleInfo *clone() {
+            return new CSwordLexiconModuleInfo(*this);
+        }
+
+        inline ~CSwordLexiconModuleInfo() {
+            delete m_entryList;
+        }
+
+        /**
+          This method returns the entries of the modules represented by this
+          object. If this function is called for the first time the list is load
+          from disk and stored in a list which cahes it. If the function is
+          called again, the cached list is returned so we have a major speed
+          improvement.
+          \returns the list of lexicon entries in the module.
+        */
+        QStringList *entries();
+
+        /**
+          Jumps to the closest entry in the module.
+        */
+        inline bool snap() {
+            return module()->getRawEntry();
+        }
+
+    private: /* Fields: */
         /**
         * This is the list which caches the entres of the module.
         */
-        QStringList* m_entryList;
+        QStringList *m_entryList;
 };
-
-inline CSwordModuleInfo::ModuleType CSwordLexiconModuleInfo::type() const {
-    return CSwordModuleInfo::Lexicon;
-}
 
 #endif

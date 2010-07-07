@@ -18,8 +18,10 @@
 #include <versekey.h>
 
 
-CSwordBibleModuleInfo::CSwordBibleModuleInfo( sword::SWModule* module, CSwordBackend* const usedBackend )
-        : CSwordModuleInfo(module, usedBackend),
+CSwordBibleModuleInfo::CSwordBibleModuleInfo(sword::SWModule *module,
+                                             CSwordBackend * const usedBackend,
+                                             ModuleType type)
+        : CSwordModuleInfo(module, usedBackend, type),
         m_lowerBound(0),
         m_upperBound(0),
         m_bookList(0),
@@ -27,27 +29,19 @@ CSwordBibleModuleInfo::CSwordBibleModuleInfo( sword::SWModule* module, CSwordBac
         m_hasOT(-1),
         m_hasNT(-1) {}
 
-CSwordBibleModuleInfo::CSwordBibleModuleInfo( const CSwordBibleModuleInfo& m ) :
-        CSwordModuleInfo(m),
+CSwordBibleModuleInfo::CSwordBibleModuleInfo(const CSwordBibleModuleInfo &copy) :
+        CSwordModuleInfo(copy),
         m_lowerBound(0),
         m_upperBound(0),
         m_bookList(0) {
-    if (m.m_bookList) {
+    if (copy.m_bookList) {
         m_bookList = new QStringList();
-        *m_bookList = *m.m_bookList;
+        *m_bookList = *copy.m_bookList;
     }
 
-    m_hasOT = m.m_hasOT;
-    m_hasNT = m.m_hasNT;
-    m_cachedLocale = m.m_cachedLocale;
-}
-
-CSwordModuleInfo* CSwordBibleModuleInfo::clone() {
-    return new CSwordBibleModuleInfo(*this);
-}
-
-CSwordBibleModuleInfo::~CSwordBibleModuleInfo() {
-    delete m_bookList;
+    m_hasOT = copy.m_hasOT;
+    m_hasNT = copy.m_hasNT;
+    m_cachedLocale = copy.m_cachedLocale;
 }
 
 void CSwordBibleModuleInfo::initBounds() {

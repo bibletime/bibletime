@@ -16,50 +16,51 @@
 #include <treekeyidx.h>
 
 
-/** Class for generic book support
-  * @author The BibleTime team
-  */
+/**
+  \brief Class for generic book support
+*/
+class CSwordBookModuleInfo: public CSwordModuleInfo {
+        Q_OBJECT
 
-class CSwordBookModuleInfo : public CSwordModuleInfo {
+    public: /* Methods: */
+        /**
+          \param module The module which belongs to this object
+          \param backend The parent backend for this book module.
+        */
+        inline CSwordBookModuleInfo(sword::SWModule *module,
+                                    CSwordBackend * const usedBackend)
+            : CSwordModuleInfo(module, usedBackend,
+                               CSwordModuleInfo::GenericBook),
+              m_depth(-1) {}
 
-    public:
-        /** Constructor.
-        * @param module The module which belongs to this object
-        * @param backend The parent backend for this book module.
-        */
-        CSwordBookModuleInfo( sword::SWModule* module, CSwordBackend* const backend );
-        /** Copy constructor.
-        * Copy constructor to copy the passed parameter.
-        * @param module The module which should be copied.
-        */
-        CSwordBookModuleInfo( const CSwordBookModuleInfo& module );
-        /** Destructor.
-        */
-        ~CSwordBookModuleInfo();
+        inline CSwordBookModuleInfo(const CSwordBookModuleInfo &copy)
+            : CSwordModuleInfo(copy), m_depth(copy.m_depth) {}
+
+        /* Reimplementation of CSwordModuleInfo::clone(). */
+        virtual inline CSwordModuleInfo *clone() const {
+            return new CSwordBookModuleInfo(*this);
+        }
+
         /**
-        * Returns the type of the module.
-        */
-        virtual CSwordModuleInfo::ModuleType type() const;
-        /**
-        * Returns the maximal depth of sections and subsections.
+          \returns the maximal depth of sections and subsections.
         */
         int depth();
-        /**
-        * @return A treekey filled with the structure of this module. Don't delete the returned key because it's casted from the module object.
-        */
-        sword::TreeKeyIdx* tree() const;
 
-    private:
+        /**
+          \returns A treekey filled with the structure of this module. Don't
+                   delete the returned key because it's casted from the module
+                   object.
+        */
+        sword::TreeKeyIdx *tree() const;
+
+    private: /* Methods: */
         /**
         * A recursive helper function to help computng the module depth!
         */
-        void computeDepth(sword::TreeKeyIdx* key, int level = 0 );
+        void computeDepth(sword::TreeKeyIdx *key, int level = 0);
+
+    private: /* Fields: */
         int m_depth;
 };
-
-inline CSwordBookModuleInfo::ModuleType CSwordBookModuleInfo::type() const {
-    return CSwordModuleInfo::GenericBook;
-}
-
 
 #endif

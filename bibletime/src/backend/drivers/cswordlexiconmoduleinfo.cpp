@@ -24,10 +24,6 @@
 //Change it once the format changed to make all systems rebuild their caches
 #define CACHE_FORMAT "3"
 
-CSwordLexiconModuleInfo::CSwordLexiconModuleInfo( sword::SWModule* module, CSwordBackend* const backend ) : CSwordModuleInfo(module, backend) {
-    m_entryList = 0;
-}
-
 CSwordLexiconModuleInfo::CSwordLexiconModuleInfo( const CSwordLexiconModuleInfo& m ) : CSwordModuleInfo(m) {
     delete m_entryList;
     m_entryList = 0;
@@ -36,11 +32,6 @@ CSwordLexiconModuleInfo::CSwordLexiconModuleInfo( const CSwordLexiconModuleInfo&
         m_entryList = new QStringList();
         *m_entryList = *m.m_entryList;//copy list items
     }
-}
-
-CSwordLexiconModuleInfo::~CSwordLexiconModuleInfo() {
-    delete m_entryList;
-    m_entryList = 0;
 }
 
 /** Returns the entries of the module. */
@@ -152,18 +143,4 @@ QStringList* CSwordLexiconModuleInfo::entries() {
     }
 
     return m_entryList;
-}
-
-/** Jumps to the closest entry in the module.  */
-bool CSwordLexiconModuleInfo::snap() {
-    if (module()->getRawEntry()) { // Snap to the current entry
-        return true;
-    }
-
-    return false;
-}
-
-/** No descriptions */
-CSwordModuleInfo* CSwordLexiconModuleInfo::clone() {
-    return new CSwordLexiconModuleInfo(*this);
 }

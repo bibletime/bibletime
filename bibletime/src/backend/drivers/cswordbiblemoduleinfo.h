@@ -17,110 +17,101 @@
 
 
 /**
- * This is the CModuleInfo imlementation for Bible modules managed by Sword.
- *
- * @short Implementation for Sword Bibles
-  * @author The BibleTime team
-  * @version $Id: cswordbiblemoduleinfo.h,v 1.18 2006/02/25 11:38:15 joachim Exp $
-  */
+  \brief Implementation for Sword Bibles.
 
-class CSwordBibleModuleInfo : public CSwordModuleInfo {
+  This is the CModuleInfo imlementation for Bible modules managed by Sword.
+*/
+class CSwordBibleModuleInfo: public CSwordModuleInfo {
+        Q_OBJECT
 
-    public:
+    public: /* Types: */
         enum Testament {
             OldTestament = 1,
             NewTestament = 2
         };
 
+    public: /* Methods: */
+        CSwordBibleModuleInfo(sword::SWModule *module, CSwordBackend * const,
+                              ModuleType type = Bible);
+        CSwordBibleModuleInfo(const CSwordBibleModuleInfo &copy);
+
+        /* Reimplementation of CSwordModuleInfo::clone(). */
+        virtual inline CSwordModuleInfo *clone() const {
+            return new CSwordBibleModuleInfo(*this);
+        }
+
+        inline ~CSwordBibleModuleInfo() {
+            delete m_bookList;
+        }
+
         /**
-        * The constructor of this class
+          \returns the number of avalable verses for the given chapter and book.
+          \param book The number book we should use
+          \param chapter The chapter we should use
         */
-        CSwordBibleModuleInfo( sword::SWModule* module, CSwordBackend* const );
-        /** The copy constructor for this Bible module.
-        */
-        CSwordBibleModuleInfo( const CSwordBibleModuleInfo& m );
+        unsigned int verseCount(const unsigned int book,
+                                const unsigned int chapter);
+
         /**
-        * The destructor of this class
+          \returns the number of avalable verses for the given chapter and book.
+          \param book The name of the book we use
+          \param chapter The number of the chapter we use
         */
-        ~CSwordBibleModuleInfo();
+        unsigned int verseCount(const QString &book, const unsigned int chapter);
+
         /**
-        * Returns the number of avalable verses for the given chapter and book.
-        *
-        * @param book The number book we should use
-        * @param chapter The chapter we should use
-        * @return The number of verses for the given book and chapter
+          \returns the number of available chapters in the given book.
         */
-        virtual unsigned int verseCount( const unsigned int book, const unsigned int chapter );
+        unsigned int chapterCount(const unsigned int book);
+
         /**
-        * Returns the number of avalable verses for the given chapter and book.
-        *
-        * @param book The name of the book we use
-        * @param chapter The number of the chapter we use
-        * @return The number of verses for the given book and chapter
+          \returns the number of available chapters in the given book.
         */
-        virtual unsigned int verseCount( const QString& book, const unsigned int chapter );
-        /** Information about the chapters in a book.
-        * @return The number of available chapters of the given book.
-        * @return The number of chapters for the given book
-        */
-        virtual unsigned int chapterCount( const unsigned int book );
-        /** Information about the chapters in a book.
-        * @return The number of available chapters of the given book.
-        */
-        virtual unsigned int chapterCount( const QString& book );
-        /** Return all book of this module.
-        * @return A QStringList containing the books which are available in this module.
-        */
-        virtual QStringList* books();
+        unsigned int chapterCount(const QString &book);
+
         /**
-        * Reimplementation, Returns the type
+          \returns a QStringList containing the books available in this module.
         */
-        virtual CSwordModuleInfo::ModuleType type() const;
+        QStringList *books();
+
         /**
-        * @return the book number, values starting with 1; 0 if not found
+          \returns the index of the book given by its name.
+          \retval 0 if a book with the given name was not found.
         */
         unsigned int bookNumber(const QString &book);
-        /**
-        * Returns true if his module has the text of desired type of testament
-        */
-        bool hasTestament( CSwordBibleModuleInfo::Testament );
-        /** Reimplementation to clone this object. */
-        virtual CSwordModuleInfo* clone();
-        /**
-        * Returns the key which represents the lower bound of this module.
-        */
-        inline const CSwordVerseKey& lowerBound();
-        /**
-        * Returns the key which represents the upper bound of this module.
-        */
-        inline const CSwordVerseKey& upperBound();
 
-    private:
+        /**
+          \returns whether this module has the text of desired type of testament
+        */
+        bool hasTestament(CSwordBibleModuleInfo::Testament type);
+
+        /**
+          \returns the key which represents the lower bound of this module.
+        */
+        inline const CSwordVerseKey &lowerBound() {
+            initBounds();
+            return m_lowerBound;
+        }
+
+        /**
+          \returns the key which represents the upper bound of this module.
+        */
+        inline const CSwordVerseKey &upperBound() {
+            initBounds();
+            return m_upperBound;
+        }
+
+    private: /* Methods: */
         void initBounds();
 
+    private:
         CSwordVerseKey m_lowerBound;
         CSwordVerseKey m_upperBound;
 
-        QStringList* m_bookList; //This booklist is cached
+        QStringList *m_bookList; //This booklist is cached
         QString m_cachedLocale;
         short int m_hasOT;
         short int m_hasNT;
 };
-
-inline CSwordModuleInfo::ModuleType CSwordBibleModuleInfo::type() const {
-    return CSwordModuleInfo::Bible;
-}
-
-/** Returns the key which represents the lower bound of this module. */
-inline const CSwordVerseKey& CSwordBibleModuleInfo::lowerBound() {
-    initBounds();
-    return m_lowerBound;
-}
-
-/** Returns the key which represents the lower bound of this module. */
-inline const CSwordVerseKey& CSwordBibleModuleInfo::upperBound() {
-    initBounds();
-    return m_upperBound;
-}
 
 #endif

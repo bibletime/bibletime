@@ -162,17 +162,25 @@ class CSwordModuleInfo: public QObject {
         */
         QString config( const CSwordModuleInfo::ConfigEntry entry ) const;
 
-        CSwordModuleInfo( sword::SWModule* module, CSwordBackend* const = 0 );
+        CSwordModuleInfo(sword::SWModule *module,
+                         CSwordBackend * const = 0,
+                         ModuleType type = Unknown);
+
         /** Copy constructor to copy the passed parameter.
         * @param m The module to be copied
         */
         CSwordModuleInfo( const CSwordModuleInfo& m );
-        /** Reimplementation to return a valid clone.
-        */
-        virtual CSwordModuleInfo* clone();
-        /** Destructor.
-        */
-        virtual ~CSwordModuleInfo();
+
+        virtual inline CSwordModuleInfo *clone() const {
+            return new CSwordModuleInfo(*this);
+        }
+
+        virtual inline ~CSwordModuleInfo() {
+            // m_module is deleted by the backend
+            /// \todo is this needed?
+            m_searchResult.ClearList();
+        }
+
 
         /**
         * Returns the module object so all objects can access the original Sword module.
@@ -214,7 +222,7 @@ class CSwordModuleInfo: public QObject {
           \retval false if it doesn't have a version number
         */
         inline bool hasVersion() const {
-            return m_dataCache.hasVersion;
+            return m_cachedHasVersion;
         }
 
         /**
@@ -251,11 +259,9 @@ class CSwordModuleInfo: public QObject {
 
         /**
           \returns the type of the module.
-          \note Subclasses should override this, the default implementation
-                returns unknown type.
         */
-        virtual CSwordModuleInfo::ModuleType type() const {
-            return CSwordModuleInfo::Unknown;
+        inline ModuleType type() const {
+            return m_type;
         }
 
         /**
@@ -270,7 +276,7 @@ class CSwordModuleInfo: public QObject {
           \returns The name of this module.
         */
         inline const QString &name() const {
-            return m_dataCache.name;
+            return m_cachedName;
         }
 
         /**
@@ -295,10 +301,13 @@ class CSwordModuleInfo: public QObject {
         * Deletes the current entry and removes it from the module.
         */
         bool deleteEntry( CSwordKey* const key );
+
         /**
-        * Returns the language of the module.
+          \returns the language of the module.
         */
-        const CLanguageMgr::Language* language() const;
+        inline const CLanguageMgr::Language *language() const {
+            return m_cachedLanguage;
+        }
 
         /**
           \returns whether this module may be written to.
@@ -322,9 +331,12 @@ class CSwordModuleInfo: public QObject {
         bool setHidden(bool hide);
 
         /**
-        * Returns the category of this module. See CSwordModuleInfo::Category for possible values.
+          \returns the category of this module.
         */
-        CSwordModuleInfo::Category category() const;
+        inline CSwordModuleInfo::Category category() const {
+            return m_cachedCategory;
+        }
+
         /**
         * The about text which belongs to this module.
         */
@@ -376,6 +388,20 @@ class CSwordModuleInfo: public QObject {
         QString getSimpleConfigEntry(const QString& name) const;
         QString getFormattedConfigEntry(const QString& name) const;
 
+    private: /* Methods: */
+        /**
+          Initializes CSwordModuleInfo::m_cachedCategory.
+          \pre m_module must be set
+        */
+        void initCachedCategory();
+
+        /**
+          Initializes CSwordModuleInfo::m_cachedLanguage.
+          \pre CSwordModuleInfo::m_module must be set
+          \pre CSwordModuleInfo::m_cachedLanguage must be set
+        */
+        void initCachedLanguage();
+
     signals:
         void hasIndexChanged(bool hasIndex);
         void hiddenChanged(bool hidden);
@@ -384,27 +410,18 @@ class CSwordModuleInfo: public QObject {
         void indexingProgress(int);
 
     private:
-        sword::SWModule* m_module;
+        sword::SWModule *m_module;
+        CSwordBackend *m_backend;
         sword::ListKey m_searchResult;
-
-        mutable struct DataCache {
-            DataCache() {
-                language = 0;
-            }
-
-            QString name;
-            CSwordModuleInfo::Category category;
-            const CLanguageMgr::Language* language;
-            bool hasVersion;
-        }
-
-        m_dataCache;
-
-        CSwordBackend* m_backend;
-
+        ModuleType m_type;
         bool m_hidden;
-
         bool m_cancelIndexing;
+
+        // Cached data:
+        const QString m_cachedName;
+        CSwordModuleInfo::Category m_cachedCategory;
+        const CLanguageMgr::Language *m_cachedLanguage;
+        bool m_cachedHasVersion;
 };
 
 Q_DECLARE_METATYPE(CSwordModuleInfo::Category);

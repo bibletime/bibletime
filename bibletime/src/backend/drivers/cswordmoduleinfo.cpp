@@ -76,44 +76,46 @@ const unsigned int INDEX_VERSION = 7;
 //Lucene default is too small
 const unsigned long BT_MAX_LUCENE_FIELD_LENGTH = 1024 * 1024;
 
-CSwordModuleInfo::CSwordModuleInfo(sword::SWModule * module, CSwordBackend * const usedBackend) {
-    Q_ASSERT(module);
-    m_module = module;
+CSwordModuleInfo::CSwordModuleInfo(sword::SWModule *module,
+                                   CSwordBackend * const usedBackend,
+                                   ModuleType type)
+    : m_module(module),
+      m_backend(usedBackend ? usedBackend : CSwordBackend::instance()),
+      m_type(type),
+      m_cancelIndexing(false),
+      m_cachedName(module->Name()),
+      m_cachedHasVersion(!QString((*m_backend->getConfig())[module->Name()]["Version"]).isEmpty())
+{
+    Q_ASSERT(module != 0);
+    Q_ASSERT(usedBackend != 0);
 
-    m_cancelIndexing = false;
+    initCachedCategory();
+    initCachedLanguage();
+
+    /// \todo Is this needed?
     m_searchResult.ClearList();
-    m_backend = usedBackend ? usedBackend : CSwordBackend::instance();
-    m_dataCache.name = QString(module->Name());
-    m_dataCache.category = UnknownCategory;
-    m_dataCache.language = 0;
-    m_dataCache.hasVersion = !QString((*m_backend->getConfig())[module->Name()]["Version"]).isEmpty();
+
     m_hidden = CBTConfig::get(CBTConfig::hiddenModules).contains(name());
 
     if (backend()) {
         if (hasVersion() && (minimumSwordVersion() > sword::SWVersion::currentVersion)) {
             qWarning("The module \"%s\" requires a newer Sword library. Please update to \"Sword %s\".",
                      name().toUtf8().constData(), (const char *)minimumSwordVersion());
+
+            /// \todo if this is the case, can we use the module at all?
         }
     }
 }
 
-CSwordModuleInfo::CSwordModuleInfo(const CSwordModuleInfo & m) : QObject() {
-    m_module = m.m_module;
-    m_backend = m.m_backend;
-    m_dataCache = m.m_dataCache;
-    m_searchResult = m.m_searchResult;
-    m_hidden = m.m_hidden;
-    m_cancelIndexing = m.m_cancelIndexing;
-}
-
-/** No descriptions */
-CSwordModuleInfo *CSwordModuleInfo::clone() {
-    return new CSwordModuleInfo(*this);
-}
-
-CSwordModuleInfo::~CSwordModuleInfo() {
-    m_searchResult.ClearList();
-    m_module = 0;    //the Sword module object is deleted by the backend
+CSwordModuleInfo::CSwordModuleInfo(const CSwordModuleInfo &o)
+    : QObject(0), m_module(o.m_module), m_backend(o.m_backend),
+      m_searchResult(o.m_searchResult), m_type(o.m_type), m_hidden(o.m_hidden),
+      m_cancelIndexing(o.m_cancelIndexing), m_cachedName(o.m_cachedName),
+      m_cachedCategory(o.m_cachedCategory),
+      m_cachedLanguage(o.m_cachedLanguage),
+      m_cachedHasVersion(o.m_cachedHasVersion)
+{
+    // Intentionally empty
 }
 
 /** Sets the unlock key of the modules and writes the key into the cofig file.*/
@@ -727,40 +729,48 @@ bool CSwordModuleInfo::deleteEntry(CSwordKey * const key) {
     return false;
 }
 
-/** Returns the category of this module. See CSwordModuleInfo::Category for possible values. */
-CSwordModuleInfo::Category CSwordModuleInfo::category() const {
-    //qDebug() << "CSwordModuleInfo::category";
-    if (m_dataCache.category == CSwordModuleInfo::UnknownCategory) {
-        const QString cat(m_module->getConfigEntry("Category"));
-        //qDebug() << "the category was unknown, add a category "<< cat << "for module" << m_module->Name();
+void CSwordModuleInfo::initCachedCategory() {
+    switch (type()) {
+        case Bible:       m_cachedCategory = Bibles; break;
+        case Commentary:  m_cachedCategory = Commentaries; break;
+        case Lexicon:     m_cachedCategory = Lexicons; break;
+        case GenericBook: m_cachedCategory = Books; break;
+        case Unknown: // Fall thru
+        default:
+        {
+            /// \todo Maybe we can use raw string comparsion instead of QString?
+            const QString cat(m_module->getConfigEntry("Category"));
 
-        if (cat == "Cults / Unorthodox / Questionable Material") {
-            m_dataCache.category = Cult;
-        }
-        else if (cat == "Daily Devotional" || m_module->getConfig().has("Feature", "DailyDevotion")) {
-            m_dataCache.category = DailyDevotional;
-        }
-        else if (cat == "Glossaries" || m_module->getConfig().has("Feature", "Glossary")) { //allow both
-            m_dataCache.category = Glossary;
-        }
-        else if (cat == "Images" || cat == "Maps") {
-            m_dataCache.category = Images;
-        }
-        else if (type() == Commentary) {
-            m_dataCache.category = Commentaries;
-        }
-        else if (type() == Bible) {
-            m_dataCache.category = Bibles;
-        }
-        else if (type() == Lexicon) {
-            m_dataCache.category = Lexicons;
-        }
-        else if (type() == GenericBook) {
-            m_dataCache.category = Books;
+            if (cat == "Cults / Unorthodox / Questionable Material") {
+                m_cachedCategory = Cult;
+            } else if (cat == "Daily Devotional"
+                       || m_module->getConfig().has("Feature","DailyDevotion"))
+            {
+                m_cachedCategory = DailyDevotional;
+            } else if (cat == "Glossaries"
+                       || m_module->getConfig().has("Feature", "Glossary"))
+            {
+                m_cachedCategory = Glossary;
+            } else if (cat == "Images" || cat == "Maps") {
+                m_cachedCategory = Images;
+            } else {
+                m_cachedCategory = UnknownCategory;
+            }
         }
     }
-    //qDebug() << "assigned category: " << m_dataCache.category;
-    return m_dataCache.category;
+}
+
+void CSwordModuleInfo::initCachedLanguage() {
+    CLanguageMgr *lm = CLanguageMgr::instance();
+    if (category() == Glossary) {
+        /*
+          Special handling for glossaries, we use the "from language" as
+          language for the module.
+        */
+        m_cachedLanguage = lm->languageForAbbrev(config(GlossaryFrom));
+    } else {
+        m_cachedLanguage = lm->languageForAbbrev(m_module->Lang());
+    }
 }
 
 /** Returns the display object for this module. */
@@ -884,26 +894,6 @@ QString CSwordModuleInfo::aboutText() const {
     text += "</table></font>";
 
     return text;
-}
-
-/** Returns the language of the module. */
-const CLanguageMgr::Language* CSwordModuleInfo::language() const {
-    if (!m_dataCache.language) {
-        if (module()) {
-            if (category() == Glossary) {
-                //special handling for glossaries, we use the "from language" as language for the module
-                m_dataCache.language = (CLanguageMgr::instance())->languageForAbbrev(config(GlossaryFrom));
-            }
-            else {
-                m_dataCache.language = (CLanguageMgr::instance())->languageForAbbrev(module()->Lang());
-            }
-        }
-        else {
-            m_dataCache.language = (CLanguageMgr::instance())->defaultLanguage(); //default language
-        }
-    }
-
-    return m_dataCache.language;
 }
 
 QIcon CSwordModuleInfo::moduleIcon(const CSwordModuleInfo *module) {
