@@ -176,17 +176,15 @@ void CSwordSetupInstallSourcesDialog::slotGetListClicked() {
     qApp->processEvents();
     qWarning() << "Start downloading the list of sources";
     int ret = iMgr.refreshRemoteSourceConfiguration();
-    bool success = false;
+
     if ( !ret ) { //make sure the sources were updated sucessfully
         qDebug() << "download succeeded";
-        success = true;
         m_progressDialog->setValue(100); //make sure the dialog closes
         m_remoteListAdded = true;
         accept();
     }
     else {
         qWarning("InstallMgr: getting remote list returned an error.");
-        success = false;
     }
     delete m_progressDialog;
     m_progressDialog = 0;
