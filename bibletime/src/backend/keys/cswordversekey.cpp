@@ -116,19 +116,24 @@ bool CSwordVerseKey::key( const QString& newKey ) {
 }
 
 bool CSwordVerseKey::key( const char* newKey ) {
-    if (newKey && (strlen(newKey) > 0) ) {
-        VerseKey::operator = (newKey);
-    }
-    else if (newKey && !strlen(newKey)) {
-        CSwordBibleModuleInfo* bible = dynamic_cast<CSwordBibleModuleInfo*>(module());
+    typedef CSwordModuleInfo CSMI;
 
-        if ( bible ) {
-            VerseKey::operator = (bible->lowerBound().key().toUtf8().constData());
+    /// \todo Is this check necessary?
+    if (newKey) {
+        /// \todo Is this check necessary?
+        // Check if empty string:
+        if (*newKey != '\0') {
+            positionFrom(newKey);
+        } else {
+            CSMI *bible = module();
+            if (bible) {
+                positionFrom(bible->lowerBound().key().toUtf8().constData());
+            }
         }
     }
 
+    /// \todo Do we ALWAYS need to emit this signal and check for errors?
     emitChanged();
-
     return !Error();
 }
 
