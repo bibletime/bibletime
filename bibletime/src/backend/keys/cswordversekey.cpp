@@ -116,7 +116,7 @@ bool CSwordVerseKey::key( const QString& newKey ) {
 }
 
 bool CSwordVerseKey::key( const char* newKey ) {
-    typedef CSwordModuleInfo CSMI;
+    typedef CSwordBibleModuleInfo CSBMI;
 
     /// \todo Is this check necessary?
     if (newKey) {
@@ -125,8 +125,10 @@ bool CSwordVerseKey::key( const char* newKey ) {
         if (*newKey != '\0') {
             positionFrom(newKey);
         } else {
-            CSMI *bible = module();
-            if (bible) {
+            CSwordModuleInfo *m = module();
+            if (m->type() == CSwordModuleInfo::Bible) {
+                Q_ASSERT(dynamic_cast<CSBMI*>(m) != 0);
+                CSBMI *bible = static_cast<CSBMI*>(m);
                 positionFrom(bible->lowerBound().key().toUtf8().constData());
             }
         }
