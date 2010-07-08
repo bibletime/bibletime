@@ -104,7 +104,7 @@ QStringList* CSwordBibleModuleInfo::books() {
         }
 
         QSharedPointer<sword::VerseKey> key((sword::VerseKey *)module()->CreateKey());
-        (*key) = sword::TOP;
+        key->setPosition(sword::TOP);
 
         for (key->Testament(min + 1); !key->Error() && (key->Testament() - 1) <= max; key->Book(key->Book() + 1)) {
             m_bookList->append( QString::fromUtf8(key->getBookName()) );
@@ -121,11 +121,11 @@ unsigned int CSwordBibleModuleInfo::chapterCount(const unsigned int book) {
     int result = 0;
 
     QSharedPointer<sword::VerseKey> key((sword::VerseKey *)module()->CreateKey());
-    (*key) = sword::TOP;
+    key->setPosition(sword::TOP);
 
     // works for old and new versions
     key->Book(book);
-    (*key) = sword::MAXCHAPTER;
+    key->setPosition(sword::MAXCHAPTER);
     result = key->Chapter();
 
     return result;
@@ -141,12 +141,12 @@ unsigned int CSwordBibleModuleInfo::verseCount( const unsigned int book, const u
     unsigned int result = 0;
 
     QSharedPointer<sword::VerseKey> key((sword::VerseKey *)module()->CreateKey());
-    (*key) = sword::TOP;
+    key->setPosition(sword::TOP);
 
     // works for old and new versions
     key->Book(book);
     key->Chapter(chapter);
-    (*key) = sword::MAXVERSE;
+    key->setPosition(sword::MAXVERSE);
     result = key->Verse();
 
     return result;
@@ -163,7 +163,7 @@ unsigned int CSwordBibleModuleInfo::bookNumber(const QString &book) {
     initBounds();
 
     QSharedPointer<sword::VerseKey> key((sword::VerseKey *)module()->CreateKey());
-    (*key) = sword::TOP;
+    key->setPosition(sword::TOP);
 
     key->setBookName(book.toUtf8().constData());
 
@@ -178,7 +178,7 @@ bool CSwordBibleModuleInfo::hasTestament( CSwordBibleModuleInfo::Testament type 
         const bool oldStatus = module()->getSkipConsecutiveLinks();
         module()->setSkipConsecutiveLinks(true);
 
-        *module() = sword::TOP; //position to first entry
+        module()->setPosition(sword::TOP); // position to first entry
         sword::VerseKey key( module()->KeyText() );
 
         if (key.Testament() == 1) { // OT && NT
@@ -188,7 +188,7 @@ bool CSwordBibleModuleInfo::hasTestament( CSwordBibleModuleInfo::Testament type 
             m_hasOT = 0;
         }
 
-        *module() = sword::BOTTOM;
+        module()->setPosition(sword::BOTTOM);
         key = module()->KeyText();
 
         if (key.Testament() == 1) { // only OT, no NT

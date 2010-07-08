@@ -93,28 +93,25 @@ QStringList* CSwordLexiconModuleInfo::entries() {
      */
     qDebug() << "Read all entries of lexicon" << name();
 
-    sword::SWModule* my_module = module();
-    my_module->setSkipConsecutiveLinks(true);
-    (*my_module) = sword::TOP;
+    module()->setSkipConsecutiveLinks(true);
+    module()->setPosition(sword::TOP);
     snap(); //snap to top entry
 
     do {
         if ( isUnicode() ) {
-            m_entryList->append(QString::fromUtf8(my_module->KeyText()));
+            m_entryList->append(QString::fromUtf8(module()->KeyText()));
         }
         else {
             //for latin1 modules use fromLatin1 because of speed
             QTextCodec* codec = QTextCodec::codecForName("Windows-1252");
-            m_entryList->append(codec->toUnicode(my_module->KeyText()));
+            m_entryList->append(codec->toUnicode(module()->KeyText()));
         }
 
-        (*my_module)++;
-    }
-    while ( !my_module->Error() );
+        module()->increment();
+    } while (!module()->Error());
 
-    (*my_module) = sword::TOP; //back to the first entry
-
-    my_module->setSkipConsecutiveLinks(false);
+    module()->setPosition(sword::TOP); // back to the first entry
+    module()->setSkipConsecutiveLinks(false);
 
     if (m_entryList->count()) {
         m_entryList->first().simplified();

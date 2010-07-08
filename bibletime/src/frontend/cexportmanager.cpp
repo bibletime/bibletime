@@ -124,12 +124,12 @@ bool CExportManager::saveKeyList(sword::ListKey* list, CSwordModuleInfo* module,
     CTextRendering::KeyTreeItem::Settings itemSettings;
     itemSettings.highlight = false;
 
-    *list = sword::TOP;
+    list->setPosition(sword::TOP);
     while (!list->Error() && !progressWasCancelled()) {
         tree.append( new CTextRendering::KeyTreeItem(QString::fromLocal8Bit((const char*)(*list)) , module, itemSettings) );
         incProgress();
 
-        (*list)++;
+        list->increment();
     }
 
     const QString text = render->renderKeyTree(tree);
@@ -258,11 +258,11 @@ bool CExportManager::copyKeyList(sword::ListKey* list, CSwordModuleInfo* module,
     CTextRendering::KeyTreeItem::Settings itemSettings;
     itemSettings.highlight = false;
 
-    *list = sword::TOP;
+    list->setPosition(sword::TOP);
     while (!list->Error() && !progressWasCancelled()) {
         tree.append( new CTextRendering::KeyTreeItem(QString::fromLocal8Bit((const char*)(*list)) , module, itemSettings) );
 
-        (*list)++;
+        list->increment();
     }
 
     const QString text = render->renderKeyTree(tree);
@@ -317,7 +317,7 @@ bool CExportManager::printKeyList(sword::ListKey* list, CSwordModuleInfo* module
     QString startKey, stopKey;
     setProgressRange(list->Count());
 
-    (*list) = sword::TOP;
+    list->setPosition(sword::TOP);
     while (!list->Error() && !progressWasCancelled()) {
         sword::VerseKey* vk = dynamic_cast<sword::VerseKey*>(list);
         if (vk) {
@@ -330,7 +330,7 @@ bool CExportManager::printKeyList(sword::ListKey* list, CSwordModuleInfo* module
             tree.append( new CPrinter::KeyTreeItem(startKey, module, settings) );
         }
 
-        (*list)++;
+        list->increment();
         incProgress();
     }
 
