@@ -168,9 +168,7 @@ class CSwordModuleInfo: public QObject {
 
         CSwordModuleInfo(const CSwordModuleInfo &copy);
 
-        virtual inline CSwordModuleInfo *clone() const {
-            return new CSwordModuleInfo(*this);
-        }
+        virtual CSwordModuleInfo *clone() const = 0;
 
         virtual inline ~CSwordModuleInfo() {
             // m_module is deleted by the backend
@@ -182,7 +180,7 @@ class CSwordModuleInfo: public QObject {
         /**
         * Returns the module object so all objects can access the original Sword module.
         */
-        sword::SWModule *module() const {
+        inline sword::SWModule *module() const {
             return m_module;
         }
 
@@ -212,6 +210,15 @@ class CSwordModuleInfo: public QObject {
         */
         bool isLocked() const;
 
+
+        /**
+          This function makes an estimate if a module was properly unlocked. It
+          returns true if the first entry of the module is not empty and
+          contains only printable characters (for the first 100 chars or so). If
+          that is the case, we can safely assume that a) the module was properly
+          unlocked and b) no buffer overflows will occur, which can happen when
+          Sword filters process garbage text which was not properly decrypted.
+        */
         bool unlockKeyIsValid() const;
 
         /**
@@ -223,36 +230,42 @@ class CSwordModuleInfo: public QObject {
         }
 
         /**
-        * Returns true if the module's index has been built.
+          \returns true if the module's index has been built.
         */
-        virtual bool hasIndex();
+        bool hasIndex();
+
         /**
-        * Returns the path to this module's index base dir
+          \returns the path to this module's index base dir
         */
-        virtual QString getModuleBaseIndexLocation() const;
+        QString getModuleBaseIndexLocation() const;
+
         /**
-        * Returns the path to this module's standard index
+          \returns the path to this module's standard index
         */
-        virtual QString getModuleStandardIndexLocation() const;
+        QString getModuleStandardIndexLocation() const;
+
         /**
-        * Builds a search index for this module
-          */
-        virtual void buildIndex();
-        /**
-        * Returns index size
+          Builds a search index for this module
         */
-        virtual unsigned long indexSize() const;
+        void buildIndex();
+
         /**
-        * Returns true if something was found, otherwise return false.
-        * This function uses CLucene to perform and index based search.  It also
-        * overwrites the variable containing the last search result.
+          \returns index size
         */
-        virtual bool searchIndexed(const QString& searchedText, sword::ListKey& scope);
+        unsigned long indexSize() const;
+
+        /**
+          This function uses CLucene to perform and index based search. It also
+          overwrites the variable containing the last search result.
+          \returns whether something was found
+        */
+        bool searchIndexed(const QString &searchedText, sword::ListKey &scope);
+
         /**
         * Returns the last search result for this module.
         * The last result is cleared by @ref search
         */
-        virtual sword::ListKey& searchResult( const sword::ListKey* newResult = 0 );
+        sword::ListKey &searchResult(const sword::ListKey *newResult = 0);
 
         /**
           \returns the type of the module.
@@ -265,7 +278,7 @@ class CSwordModuleInfo: public QObject {
         * Returns the required Sword version for this module.
         * Returns -1 if no special Sword version is required.
         */
-        sword::SWVersion minimumSwordVersion();
+        sword::SWVersion minimumSwordVersion() const;
 
         /**
           \note The Sword library takes care of the duplicate names: _n is added
@@ -284,20 +297,28 @@ class CSwordModuleInfo: public QObject {
             return false;
         }
 
-        bool has( const CSwordModuleInfo::Feature ) const;
-        bool has( const CSwordModuleInfo::FilterTypes  ) const;
         /**
-        * Returns the text direction of the module's text.,
+          \returns whether the module supports the feature given as parameter.
         */
-        virtual CSwordModuleInfo::TextDirection textDirection();
+        bool has(const CSwordModuleInfo::Feature) const;
+
+        bool has(const CSwordModuleInfo::FilterTypes ) const;
+
         /**
-        * Writes the new text at the given position into the module. This does only work for writabe modules.
+          \returns the text direction of the module's text.
         */
-        virtual void write( CSwordKey* key, const QString& newText );
+        CSwordModuleInfo::TextDirection textDirection() const;
+
         /**
-        * Deletes the current entry and removes it from the module.
+          Writes the new text at the given position into the module. This does
+          only work for writabe modules.
         */
-        bool deleteEntry( CSwordKey* const key );
+        void write(CSwordKey *key, const QString &newText);
+
+        /**
+          Deletes the current entry and removes it from the module.
+        */
+        bool deleteEntry(CSwordKey * const key);
 
         /**
           \returns the language of the module.

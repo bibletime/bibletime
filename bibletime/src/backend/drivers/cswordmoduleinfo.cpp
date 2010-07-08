@@ -118,7 +118,6 @@ CSwordModuleInfo::CSwordModuleInfo(const CSwordModuleInfo &o)
     // Intentionally empty
 }
 
-/** Sets the unlock key of the modules and writes the key into the cofig file.*/
 bool CSwordModuleInfo::unlock(const QString & unlockKey) {
     if (!isEncrypted()) {
         return false;
@@ -143,7 +142,6 @@ bool CSwordModuleInfo::unlock(const QString & unlockKey) {
     return true;
 }
 
-/** This function returns true if this module is locked, otherwise return false. */
 bool CSwordModuleInfo::isLocked() const {
     //still works, but the cipherkey is stored in CBTConfig.
     //Works because it is set in sword on program startup.
@@ -151,7 +149,6 @@ bool CSwordModuleInfo::isLocked() const {
     return isEncrypted() && !unlockKeyIsValid();
 }
 
-/** This functions returns true if this module is encrypted (locked or unlocked). */
 bool CSwordModuleInfo::isEncrypted() const {
     /**
     * If we have the CipherKey entry the module
@@ -165,15 +162,7 @@ bool CSwordModuleInfo::isEncrypted() const {
     return it != config.end();
 }
 
-/** This function makes an estimate if a module was properly unlocked.
-* It returns true if the first entry of the module is not empty and
-* contains only printable characters (for the first 100 chars or so).
-* If that is the case, we can safely assume that a) the module was properly
-* unlocked and b) no buffer overflows will occur, which can happen when
-* Sword filters process garbage text which was not properly decrypted.
-*/
 bool CSwordModuleInfo::unlockKeyIsValid() const {
-
     m_module->setPosition(sword::TOP);
 
     // This needs to use ::fromLatin1 because if the text is still locked,
@@ -506,7 +495,6 @@ bool CSwordModuleInfo::searchIndexed(const QString& searchedText, sword::ListKey
     return (m_searchResult.Count() > 0);
 }
 
-/** Returns the last search result for this module. */
 sword::ListKey & CSwordModuleInfo::searchResult(const sword::ListKey * newResult) {
     if (newResult) {
         m_searchResult.copyFrom(*newResult);
@@ -515,8 +503,7 @@ sword::ListKey & CSwordModuleInfo::searchResult(const sword::ListKey * newResult
     return m_searchResult;
 }
 
-/** Returns the required Sword version for this module. Returns -1 if no special Sword version is required. */
-sword::SWVersion CSwordModuleInfo::minimumSwordVersion() {
+sword::SWVersion CSwordModuleInfo::minimumSwordVersion() const {
     return sword::SWVersion(config(CSwordModuleInfo::MinimumSwordVersion).toUtf8().constData());
 }
 
@@ -649,7 +636,6 @@ QString CSwordModuleInfo::config(const CSwordModuleInfo::ConfigEntry entry) cons
     }
 }
 
-/** Returns true if the module supports the feature given as parameter. */
 bool CSwordModuleInfo::has(const CSwordModuleInfo::Feature feature) const {
     switch (feature) {
 
@@ -699,25 +685,20 @@ bool CSwordModuleInfo::has(const CSwordModuleInfo::FilterTypes option) const {
     return false;
 }
 
-/** Returns the text direction of the module's text., */
-CSwordModuleInfo::TextDirection CSwordModuleInfo::textDirection() {
-    if (config(TextDir) == "RtoL") {
+CSwordModuleInfo::TextDirection CSwordModuleInfo::textDirection() const {
+    if (config(TextDir) == "RtoL")
         return CSwordModuleInfo::RightToLeft;
-    }
-    else {
-        return CSwordModuleInfo::LeftToRight;
-    }
+
+    return CSwordModuleInfo::LeftToRight;
 }
 
-/** Writes the new text at the given position into the module. This does only work for writable modules. */
-void CSwordModuleInfo::write(CSwordKey * key, const QString & newText) {
+void CSwordModuleInfo::write(CSwordKey *key, const QString &newText) {
     module()->KeyText(key->key().toUtf8().constData());
 
     //don't store a pointer to the const char* value somewhere because QCString doesn't keep the value of it
     module()->setEntry(isUnicode() ? newText.toUtf8().constData() : newText.toLocal8Bit().constData());
 }
 
-/** Deletes the current entry and removes it from the module. */
 bool CSwordModuleInfo::deleteEntry(CSwordKey * const key) {
     module()->KeyText(isUnicode() ? key->key().toUtf8().constData() : key->key().toLocal8Bit().constData());
 
@@ -773,7 +754,6 @@ void CSwordModuleInfo::initCachedLanguage() {
     }
 }
 
-/** Returns the display object for this module. */
 Rendering::CEntryDisplay * CSwordModuleInfo::getDisplay() const {
     return dynamic_cast < Rendering::CEntryDisplay * >(m_module->Disp());
 }
@@ -989,9 +969,6 @@ QString CSwordModuleInfo::categoryName(
     }
 }
 
-/*!
-	\fn CSwordModuleInfo::getSimpleConfigEntry(char* name)
-*/
 QString CSwordModuleInfo::getSimpleConfigEntry(const QString& name) const {
     QString ret = isUnicode()
                   ? QString::fromUtf8(m_module->getConfigEntry(name.toUtf8().constData()))
