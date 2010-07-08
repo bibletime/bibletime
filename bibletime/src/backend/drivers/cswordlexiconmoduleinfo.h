@@ -29,7 +29,7 @@ class CSwordLexiconModuleInfo: public CSwordModuleInfo {
         CSwordLexiconModuleInfo(const CSwordLexiconModuleInfo &copy);
 
         /* Reimplementation of CSwordModuleInfo::clone(). */
-        virtual inline CSwordModuleInfo *clone() {
+        virtual inline CSwordModuleInfo *clone() const {
             return new CSwordLexiconModuleInfo(*this);
         }
 
