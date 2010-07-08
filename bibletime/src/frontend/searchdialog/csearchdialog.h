@@ -27,8 +27,8 @@ class QWidget;
 namespace Search {
 
 /**
-  *@author The BibleTime team
-  */
+  \note destroys itself on close
+*/
 class CSearchDialog : public QDialog {
         Q_OBJECT
     public:
@@ -46,10 +46,6 @@ class CSearchDialog : public QDialog {
         */
         static CSearchDialog* getSearchDialog();
 
-        /**
-        * The constructor of the dialog. It's protected because you should use the static public function openDialog.
-        * The dialog destroys itself if it was closed.
-        */
         CSearchDialog(QWidget *parent);
         ~CSearchDialog();
 

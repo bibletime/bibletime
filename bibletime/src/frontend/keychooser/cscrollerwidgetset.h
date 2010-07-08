@@ -26,11 +26,10 @@ class QVBoxLayout;
   */
 class CScrollerWidgetSet : public QWidget {
         Q_OBJECT
+
     public:
-        /**
-        * the constructor
-        */
         CScrollerWidgetSet(QWidget *parent = 0);
+
         /**
         * Sets the tooltips for the given entries using the parameters as text.
         */

@@ -30,12 +30,8 @@ class QWidget;
   */
 class CLexiconKeyChooser : public CKeyChooser {
         Q_OBJECT
+
     public:
-        /**
-        * The constructor
-        *
-        * you should not need to use this, use @ref CKeyChooser::createInstance instead
-        */
         CLexiconKeyChooser(
             QList<CSwordModuleInfo*> modules, 
             BTHistory* history, 

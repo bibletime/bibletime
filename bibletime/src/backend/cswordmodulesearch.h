@@ -33,10 +33,9 @@ class CSwordModuleSearch: public QObject {
 
     public:
         CSwordModuleSearch();
-        /**
-        * The destructor of this class. It cleans uop memory before it's deleted.
-        */
-        virtual ~CSwordModuleSearch();
+
+        ~CSwordModuleSearch();
+
         /**
         * Sets the text which should be search in the modules.
         */

@@ -166,10 +166,7 @@ class CSwordModuleInfo: public QObject {
                          CSwordBackend * const = 0,
                          ModuleType type = Unknown);
 
-        /** Copy constructor to copy the passed parameter.
-        * @param m The module to be copied
-        */
-        CSwordModuleInfo( const CSwordModuleInfo& m );
+        CSwordModuleInfo(const CSwordModuleInfo &copy);
 
         virtual inline CSwordModuleInfo *clone() const {
             return new CSwordModuleInfo(*this);

@@ -28,21 +28,21 @@ class CLanguageMgr {
          */
         class Language {
             public:
-                /** Default constructor of a language object.
-                 * Uses the abbreviation parameter to lookup the
-                 * language name and to be able to return the name, flag etc.
-                 * Possible values for abbrev are de, en, fr, it etc.
+                /**
+                  Uses the abbreviation parameter to lookup the language name
+                  and to be able to return the name, flag etc. Possible values
+                  for abbrev are de, en, fr, it etc.
                  */
                 Language();
-                /** Copy constructor.
-                 */
-                Language(const Language&);
-                /** Constructor which takes all necessary data.
-                */
-                Language(const QString& abbrev, const QString& englishName, const QString& translatedName, const QStringList& altAbbrevs = QStringList());
-                /** Destructor.
-                 */
+
+                Language(const Language &copy);
+
+                Language(const QString &abbrev, const QString &englishName,
+                         const QString &translatedName,
+                         const QStringList &altAbbrevs = QStringList());
+
                 ~Language();
+
                 /** Returns the abbreviation.
                  * @return The abbreviation of the chosen language.
                  */
@@ -96,12 +96,10 @@ class CLanguageMgr {
         /** Destroys the singleton instance, if one exists. */
         static void destroyInstance();
 
-        /** Constructor.
-        */
         CLanguageMgr();
-        /** Destructor
-        */
+
         virtual ~CLanguageMgr();
+
         /**
         * Returns the standard languages available as standard. Does nothing for Sword.
         * @return A LangMap map which contains all known languages

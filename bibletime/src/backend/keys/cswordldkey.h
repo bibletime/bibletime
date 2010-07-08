@@ -52,19 +52,19 @@ class CSwordLDKey : public CSwordKey, public sword::SWKey {
 
     public:
         /**
-        * Constructor of CSwordLDKey
+          \todo Document param
         */
-        CSwordLDKey( CSwordModuleInfo* module );
+        CSwordLDKey(CSwordModuleInfo *module);
+
+        CSwordLDKey(const CSwordLDKey &copy);
+
         /**
-        * Copy constructor for this key class.
+          \todo Document params
         */
-        CSwordLDKey( const CSwordLDKey &k );
+        CSwordLDKey(const sword::SWKey *k, CSwordModuleInfo *module);
+
         /**
-        * Copy constructor for this key class.
-        */
-        CSwordLDKey( const sword::SWKey *k, CSwordModuleInfo* module);
-        /**
-        * Clones this object by copying the members.
+          Reimplementation of CSwordKey::copy()
         */
         virtual CSwordLDKey* copy() const;
         /**

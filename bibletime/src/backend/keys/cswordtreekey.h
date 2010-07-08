@@ -26,18 +26,19 @@ class CSwordModuleInfo;
 class CSwordTreeKey : public CSwordKey, public sword::TreeKeyIdx {
 
     public:
-        /** Constructor of this CSwordKey implementation.
-         * @param k The Sword tree key which belongs to this key
-         * @param module The module which belongs to this key
+        /**
+          \param k The Sword tree key which belongs to this key
+          \param module The module which belongs to this key
          */
-        CSwordTreeKey( const sword::TreeKeyIdx *k, CSwordModuleInfo* module );
-        /** Copy constructor.
-         */
+        CSwordTreeKey(const sword::TreeKeyIdx *k, CSwordModuleInfo *module);
+
         CSwordTreeKey( const CSwordTreeKey& k );
-        /** The module which belongs to this key.
-         * @return The module.
-         */
-        virtual CSwordModuleInfo* module( CSwordModuleInfo* const newModule );
+
+        /**
+          \returns the module which belongs to this key.
+        */
+        virtual CSwordModuleInfo *module(CSwordModuleInfo * const newModule);
+
         /** Copy method.
         * @return A new copy of this object.
         */

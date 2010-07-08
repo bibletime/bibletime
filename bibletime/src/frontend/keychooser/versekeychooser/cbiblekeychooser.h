@@ -35,10 +35,6 @@ class CBibleKeyChooser : public CKeyChooser  {
         Q_OBJECT
 
     public:
-        /**
-        * the constructor
-        * you should not need to use this, use @ref CKeyChooser::createInstance instead
-        */
         CBibleKeyChooser(QList<CSwordModuleInfo*> modules,
             BTHistory* history,
             CSwordKey *key = 0, 

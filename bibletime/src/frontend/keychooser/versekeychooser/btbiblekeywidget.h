@@ -24,10 +24,8 @@ class QLineEdit;
 
 class BtBibleKeyWidget : public QWidget  {
         Q_OBJECT
+
     public:
-        /**
-        * the constructor
-        */
         BtBibleKeyWidget(CSwordBibleModuleInfo *, CSwordVerseKey*, QWidget *parent = 0, const char *name = 0);
         ~BtBibleKeyWidget();
         bool setKey(CSwordVerseKey* key);

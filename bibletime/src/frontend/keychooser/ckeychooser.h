@@ -87,9 +87,6 @@ class CKeyChooser : public QWidget {
 
     protected:
 
-        /**
-        * the constructor - DO NOT USE! -- use @ref #createInstance instead!
-        */
         CKeyChooser(QList<CSwordModuleInfo*> info, BTHistory* history, CSwordKey *key = 0, QWidget *parent = 0);
         virtual ~CKeyChooser();
         /**

@@ -63,15 +63,15 @@ class CKCComboBox : public QComboBox {
   */
 class CKeyChooserWidget : public QWidget  {
         Q_OBJECT
+
     public:
-        /**
-        * the constructor
-        */
-        CKeyChooserWidget(QStringList *list = 0, const bool useNextPrevSignals = false, QWidget *parent = 0 );
-        /**
-        * the constructor
-        */
-        CKeyChooserWidget(int count = 0, const bool useNextPrevSignals = false, QWidget *parent = 0 );
+        CKeyChooserWidget(QStringList *list = 0,
+                          const bool useNextPrevSignals = false,
+                          QWidget *parent = 0);
+
+        CKeyChooserWidget(int count = 0, const bool useNextPrevSignals = false,
+                          QWidget *parent = 0);
+
         /**
         * This function does clear the combobox, then fill in
         * the StringList, set the ComboBox' current item to index
@@ -84,6 +84,7 @@ class CKeyChooserWidget : public QWidget  {
         void reset(const int count, int index, bool do_emit);
         void reset(QStringList& list, int index, bool do_emit);
         void reset(QStringList *list, int index, bool do_emit);
+
         /**
         * Initializes this widget. We need this function because
         * we have more than one constructor.

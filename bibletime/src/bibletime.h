@@ -126,14 +126,11 @@ class BibleTime : public QMainWindow {
         friend class CDisplayWindow;
         friend class BibleTimeDBusAdaptor;
         Q_OBJECT
+
     public:
-        /**
-         * construtor of BibleTime
-         */
+
         BibleTime(QWidget *parent = 0, Qt::WindowFlags flags = 0);
-        /**
-         * destructor of BibleTime
-         */
+
         ~BibleTime();
 
         static inline BibleTime *instance() { return m_instance; }

@@ -23,17 +23,14 @@ class BtSignal;
  * @author The BibleTime team
  * @version $Id: cswordkey.h,v 1.27 2006/10/30 19:53:32 mgruner Exp $
  */
-
 class CSwordKey {
-
     protected:
-        /** Constructor. May only be called from sublasses because this class contains pure virtual methods.
-        * @param module The module which belongs to this key, may be NULL
+        /**
+          \param module The module which belongs to this key, may be NULL
         */
-        CSwordKey(CSwordModuleInfo* const module = 0); //protected constructor, because CSwordKey shouldn't be used (it's an abstract base class).
-        /** Copy constructor.
-        */
-        CSwordKey(const CSwordKey&); //copy constructor
+        CSwordKey(CSwordModuleInfo * const module = 0);
+
+        CSwordKey(const CSwordKey &copy);
 
     public:
         enum TextRenderType {
@@ -41,12 +38,9 @@ class CSwordKey {
             HTMLEscaped = 1,
             ProcessEntryAttributesOnly = 2	// in this case, renderText() will not return text, but only cause EntryAttribute processing
         };
-        /** Destructor.
-        * Public, not protected like the constructor, because CSwordKey pointers may be deleted by all others.
-        */
+
         virtual ~CSwordKey();
 
-        //pure virtual functions
         /** Returns the current key.
          * @return The current key which belongs to the current object.
          */
@@ -64,7 +58,6 @@ class CSwordKey {
          */
         virtual CSwordKey* copy() const = 0;
 
-        //implemented functions
         /** Set/get the module. Set and get the module which belongs to this key.
          * @return The module which belongs to this key.
          */

@@ -53,25 +53,24 @@ class CSwordVerseKey : public CSwordKey, public sword::VerseKey {
         };
 
         /**
-        * Constructor of this class.
-        *
-        * This function will construct a versekey with the current module position
-        * and it will setup the m_module members.
-        *
+          Constructs a versekey with the current module position and setups
+          the m_module members.
         */
-        CSwordVerseKey( CSwordModuleInfo* const module );
+        CSwordVerseKey(CSwordModuleInfo *const module);
+
+        CSwordVerseKey(const CSwordVerseKey &copy);
+
         /**
-        * Copy constructor.
+          \todo Document params
         */
-        CSwordVerseKey( const CSwordVerseKey& k );
+        CSwordVerseKey(const sword::VerseKey * const k,
+                       CSwordModuleInfo * const module);
+
         /**
-        * VerseKey based constructor.
-        */
-        CSwordVerseKey( const sword::VerseKey* const k, CSwordModuleInfo* const module );
-        /**
-        * Clones this object.
+          Reimplementation of CSwordKey::copy().
         */
         virtual CSwordKey* copy() const;
+
         /**
         * Set/get the key. If the parameter is not set (means equal to QString::null)
         * the used key is returned. Otherwise the key is set and the new on ei returned.

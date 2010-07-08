@@ -223,9 +223,8 @@ class CSwordBackend : public QObject, public sword::SWMgr {
 
     protected:
         /**
-        * The constructor of the Sword backend.
-        * It creates the SWModule objects using SWMgr's methods, it adds the necessary
-        * filters for the module format.
+          Creates the SWModule objects using SWMgr's methods, it adds the
+          necessary filters for the module format.
         */
         CSwordBackend();
 
