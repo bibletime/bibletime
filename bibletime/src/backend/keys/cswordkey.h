@@ -78,10 +78,9 @@ class CSwordKey {
         /** Stripped down text. Returns the text after removing all markup tags from it.
          */
         virtual QString strippedText();
-        /**
-        *
-        */
-        const BtSignal* signaler();
+
+        const BtSignal *signaler();
+
         /**
          * This returns a new object of the right CSwordKey* implementation
          * (e.g. CSwordVerseKey or CSwordLDKey)
