@@ -473,7 +473,7 @@ void CDisplayWindow::lookupModKey( const QString& moduleName, const QString& key
 
     /// \todo check for containsRef compat
     if (m && modules().contains(m)) {
-        key()->key(keyName);
+        key()->setKey(keyName);
         keyChooser()->setKey(key()); //the key chooser does send an update signal
         emit sigKeyChanged(key());
     }

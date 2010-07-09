@@ -146,7 +146,7 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType format, const CD
 
             if (CSwordModuleInfo *module = CSwordBackend::instance()->findModuleByName(moduleName)) {
                 QSharedPointer<CSwordKey> key( CSwordKey::createInstance(module) );
-                key->key( keyName );
+                key->setKey(keyName);
 
                 return key->strippedText();
             }
@@ -161,7 +161,7 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType format, const CD
 
             if (CSwordModuleInfo *module = CSwordBackend::instance()->findModuleByName(moduleName)) {
                 QSharedPointer<CSwordKey> key( CSwordKey::createInstance(module) );
-                key->key( keyName );
+                key->setKey(keyName);
 
                 /// \todo This is a BAD HACK, we have to fnd a better solution to manage the settings now
                 CSwordBackend::FilterOptions filterOptions;

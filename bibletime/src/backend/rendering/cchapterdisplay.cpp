@@ -42,7 +42,7 @@ const QString Rendering::CChapterDisplay::text( const QList<CSwordModuleInfo*>& 
 
         CSwordVerseKey k1(module);
         k1.Headings(1);
-        k1.key(keyName);
+        k1.setKey(keyName);
 
         if (k1.Chapter() == 1)	k1.Chapter(0); //Chapter 1, start with 0:0, otherwise X:0
 

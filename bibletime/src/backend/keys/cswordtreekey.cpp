@@ -38,19 +38,19 @@ const char * CSwordTreeKey::rawKey() const {
     return getText();
 }
 
-bool CSwordTreeKey::key( const QString& newKey ) {
+bool CSwordTreeKey::setKey(const QString &newKey) {
     //return key( newKey.toLocal8Bit().constData() );
     //return key(m_module->getTextCodec()->fromUnicode(newKey).constData());
     Q_ASSERT(m_module);
     if (m_module->isUnicode()) {
-        return key(newKey.toUtf8().constData());
+        return setKey(newKey.toUtf8().constData());
     }
     else {
-        return key((const char*)cp1252Codec()->fromUnicode(newKey));
+        return setKey((const char*)cp1252Codec()->fromUnicode(newKey));
     }
 }
 
-bool CSwordTreeKey::key( const char* newKey ) {
+bool CSwordTreeKey::setKey(const char *newKey) {
     Q_ASSERT(newKey);
 
     if (newKey) {
@@ -84,7 +84,7 @@ CSwordModuleInfo* CSwordTreeKey::module( CSwordModuleInfo* const newModule ) {
         CSwordBookModuleInfo* newBook = dynamic_cast<CSwordBookModuleInfo*>(newModule);
         copyFrom( *(newBook->tree()) );
 
-        key(oldKey); //try to restore our old key
+        setKey(oldKey); //try to restore our old key
 
         //set the key to the root node
         root();

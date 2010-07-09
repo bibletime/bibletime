@@ -215,12 +215,12 @@ void BtBibleKeyWidget::updateText() {
 bool BtBibleKeyWidget::setKey(CSwordVerseKey *key) {
     if (!key) return false;
 
-    m_key->key(key->key());
+    m_key->setKey(key->key());
     return true;
 }
 
 void BtBibleKeyWidget::slotReturnPressed() {
-    m_key->key(m_textbox->text());
+    m_key->setKey(m_textbox->text());
     emit changed(m_key);
 }
 

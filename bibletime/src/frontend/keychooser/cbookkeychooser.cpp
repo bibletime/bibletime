@@ -84,7 +84,7 @@ void CBookKeyChooser::setKey(CSwordKey* newKey, const bool emitSignal) {
         if (found)
             key = m_key->key(); //found: change key to this level
         else
-            m_key->key(key); //not found: restore old key
+            m_key->setKey(key); //not found: restore old key
 
         setupCombo(key, depth, index);
 
@@ -215,7 +215,7 @@ void CBookKeyChooser::setupCombo(const QString key, const int depth, const int c
     CKeyChooserWidget* chooserWidget = m_chooserWidgets.at(depth);
 
     CSwordTreeKey tmpKey(*m_key);
-    tmpKey.key(key);
+    tmpKey.setKey(key);
     tmpKey.sword::TreeKeyIdx::parent();
     tmpKey.firstChild();
 
@@ -251,7 +251,7 @@ void CBookKeyChooser::keyChooserChanged(int /*newIndex*/) {
     QString newKey("/");
     newKey.append(items.join("/"));
 
-    m_key->key(newKey);
+    m_key->setKey(newKey);
     setKey(m_key);
 }
 
@@ -261,6 +261,6 @@ void CBookKeyChooser::updateKey(CSwordKey* key) {
 }
 
 void CBookKeyChooser::setKey(QString& newKey) {
-    m_key->key(newKey);
+    m_key->setKey(newKey);
     setKey(m_key);
 }

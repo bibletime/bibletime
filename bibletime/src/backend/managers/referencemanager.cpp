@@ -356,7 +356,7 @@ const QString ReferenceManager::parseVerseReference( const QString& ref, const R
 
     CSwordVerseKey baseKey(0);
     baseKey.setLocale( sourceLanguage.toUtf8().constData() );
-    baseKey.key( options.refBase ); //probably in the sourceLanguage
+    baseKey.setKey(options.refBase); //probably in the sourceLanguage
     baseKey.setLocale( "en_US" ); //english works in all environments as base
 
 // 	CSwordVerseKey dummy(0);

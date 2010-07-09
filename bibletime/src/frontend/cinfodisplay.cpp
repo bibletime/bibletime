@@ -98,7 +98,7 @@ void CInfoDisplay::lookupInfo(const QString &mod_name, const QString &key_text) 
     if (!m)
         return;
     QSharedPointer<CSwordKey> key( CSwordKey::createInstance(m) );
-    key->key( key_text );
+    key->setKey(key_text);
 
     CDisplayTemplateMgr *mgr = CDisplayTemplateMgr::instance();
     CDisplayTemplateMgr::Settings settings;
@@ -346,7 +346,7 @@ const QString CInfoDisplay::decodeFootnote( const QString& data ) {
     }
 
     QSharedPointer<CSwordKey> key( CSwordKey::createInstance(module) );
-    key->key(keyname);
+    key->setKey(keyname);
     key->renderedText(CSwordKey::ProcessEntryAttributesOnly); //force entryAttributes
 
     const char* note =
@@ -382,7 +382,7 @@ const QString CInfoDisplay::decodeStrongs( const QString& data ) {
         QString text;
         if (module) {
             QSharedPointer<CSwordKey> key( CSwordKey::createInstance(module) );
-            key->key( (*it).mid(1) ); //skip H or G (language sign), will have to change later if we have better modules
+            key->setKey((*it).mid(1)); // skip H or G (language sign), will have to change later if we have better modules
             text = key->renderedText();
         }
         //if the module could not be found just display an empty lemma info
@@ -458,12 +458,12 @@ const QString CInfoDisplay::decodeMorph( const QString& data ) {
             QSharedPointer<CSwordKey> key( CSwordKey::createInstance(module) );
 
             //skip H or G (language sign) if we have to skip it
-            const bool isOk = key->key( skipFirstChar ? value.mid(1) : value );
+            const bool isOk = key->setKey(skipFirstChar ? value.mid(1) : value);
             //Q_ASSERT(isOk);
             if (!isOk) { //try to use the other morph lexicon, because this one failed with the current morph code
                 key->module(CBTConfig::get
                             (CBTConfig::standardHebrewMorphLexicon));
-                key->key( skipFirstChar ? value.mid(1) : value );
+                key->setKey(skipFirstChar ? value.mid(1) : value);
             }
 
             text = key->renderedText();
@@ -492,7 +492,7 @@ const QString CInfoDisplay::getWordTranslation( const QString& data ) {
     }
 
     QSharedPointer<CSwordKey> key( CSwordKey::createInstance(module) );
-    key->key( data );
+    key->setKey(data);
     if (key->key().toUpper() != data.toUpper()) { //key not present in the lexicon
         return QString::null;
     }

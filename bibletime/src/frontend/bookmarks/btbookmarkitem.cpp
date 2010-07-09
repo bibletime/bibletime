@@ -30,7 +30,7 @@ BtBookmarkItem::BtBookmarkItem(const CSwordModuleInfo *module,
 {
     if (((module && (module->type() == CSwordModuleInfo::Bible)) || (module->type() == CSwordModuleInfo::Commentary))  ) {
         CSwordVerseKey vk(0);
-        vk.key(key);
+        vk.setKey(key);
         vk.setLocale("en");
         m_key = vk.key(); //the m_key member is always the english key!
     }
@@ -67,7 +67,7 @@ QString BtBookmarkItem::key() const {
     QString returnKeyName = englishKeyName;
     if ((module()->type() == CSwordModuleInfo::Bible) || (module()->type() == CSwordModuleInfo::Commentary)) {
         CSwordVerseKey vk(0);
-        vk.key(englishKeyName);
+        vk.setKey(englishKeyName);
         vk.setLocale(CSwordBackend::instance()->booknameLanguage().toLatin1() );
 
         returnKeyName = vk.key(); //the returned key is always in the currently set bookname language
@@ -88,7 +88,7 @@ QString BtBookmarkItem::toolTip() const {
 
     QString ret;
     QSharedPointer<CSwordKey> k( CSwordKey::createInstance(module()) );
-    k->key(this->key());
+    k->setKey(key());
 
     // const CLanguageMgr::Language* lang = module()->language();
     // CBTConfig::FontSettingsPair fontPair = CBTConfig::get(lang);

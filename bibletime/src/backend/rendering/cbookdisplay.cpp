@@ -35,7 +35,7 @@ const QString Rendering::CBookDisplay::text( const QList<CSwordModuleInfo*>& mod
     QSharedPointer<CSwordTreeKey> key (
         dynamic_cast<CSwordTreeKey*>( CSwordKey::createInstance(book) )
     );
-    key->key(keyName); //set the key to position we'd like to get
+    key->setKey(keyName); //set the key to position we'd like to get
 
     const unsigned long offset = key->getOffset();
 

@@ -142,7 +142,7 @@ void BtSearchResultArea::updatePreview(const QString& key) {
         if (module->type() == CSwordModuleInfo::Bible) {
             CSwordVerseKey vk(module);
             vk.Headings(1);
-            vk.key(key);
+            vk.setKey(key);
 
             ((sword::VerseKey*)(module->module()->getKey()))->Headings(1); //HACK: enable headings for VerseKeys
 
@@ -160,7 +160,7 @@ void BtSearchResultArea::updatePreview(const QString& key) {
 
             const QString startKey = vk.key();
 
-            vk.key(key);
+            vk.setKey(key);
 
             vk.next(CSwordVerseKey::UseVerse);
             vk.next(CSwordVerseKey::UseVerse);
@@ -173,7 +173,7 @@ void BtSearchResultArea::updatePreview(const QString& key) {
         else if (module->type() == CSwordModuleInfo::Commentary) {
             CSwordVerseKey vk(module);
             vk.Headings(1);
-            vk.key(key);
+            vk.setKey(key);
 
             ((sword::VerseKey*)(module->module()->getKey()))->Headings(1); //HACK: enable headings for VerseKeys
 
@@ -186,7 +186,7 @@ void BtSearchResultArea::updatePreview(const QString& key) {
             }
             const QString startKey = vk.key();
 
-            vk.key(key);
+            vk.setKey(key);
             const QString endKey = vk.key();
 
             settings.keyRenderingFace = CTextRendering::KeyTreeItem::Settings::NoKey;

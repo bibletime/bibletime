@@ -27,7 +27,7 @@ CSwordVerseKey::CSwordVerseKey( CSwordModuleInfo* const module ) :
         // Copy important settings like versification system
         copyFrom((sword::VerseKey*) bible->module()->getKey());
 
-        key( bible->lowerBound().key() );
+        setKey( bible->lowerBound().key() );
     }
     this->VerseKey::setAutoNormalize(true);
 }
@@ -52,11 +52,11 @@ CSwordModuleInfo* CSwordVerseKey::module( CSwordModuleInfo* const newModule ) {
         CSwordBibleModuleInfo* bible = dynamic_cast<CSwordBibleModuleInfo*>(newModule);
 
         if (_compare(bible->lowerBound()) < 0) {
-            key( bible->lowerBound() );
+            setKey(bible->lowerBound());
         }
 
         if (_compare(bible->upperBound()) > 0) {
-            key( bible->upperBound() );
+            setKey(bible->upperBound());
         }
     }
 
@@ -111,11 +111,11 @@ const char * CSwordVerseKey::rawKey() const {
     return getText();
 }
 
-bool CSwordVerseKey::key( const QString& newKey ) {
-    return key( newKey.toUtf8().constData() );
+bool CSwordVerseKey::setKey(const QString &newKey) {
+    return setKey(newKey.toUtf8().constData());
 }
 
-bool CSwordVerseKey::key( const char* newKey ) {
+bool CSwordVerseKey::setKey(const char *newKey) {
     typedef CSwordBibleModuleInfo CSBMI;
 
     /// \todo Is this check necessary?
@@ -184,7 +184,7 @@ bool CSwordVerseKey::next( const JumpType type ) {
                 m_module->module()->setSkipConsecutiveLinks(oldStatus);
 
                 if (!m_module->module()->Error()) {
-                    key( QString::fromUtf8(m_module->module()->KeyText()) );
+                    setKey(QString::fromUtf8(m_module->module()->KeyText()));
                 }
                 else {
                     //         Verse(Verse()+1);
@@ -208,12 +208,12 @@ bool CSwordVerseKey::next( const JumpType type ) {
 
     if ( CSwordBibleModuleInfo* bible = dynamic_cast<CSwordBibleModuleInfo*>(module()) ) {
         if (_compare(bible->lowerBound()) < 0 ) {
-            key( bible->lowerBound() );
+            setKey(bible->lowerBound());
             ret = false;
         }
 
         if (_compare(bible->upperBound()) > 0 ) {
-            key( bible->upperBound() );
+            setKey(bible->upperBound());
             ret = false;
         }
 
@@ -268,7 +268,7 @@ bool CSwordVerseKey::previous( const JumpType type ) {
                 m_module->module()->setSkipConsecutiveLinks(oldStatus);
 
                 if (!m_module->module()->Error()) {
-                    key( QString::fromUtf8(m_module->module()->KeyText()) );//don't use fromUtf8
+                    setKey(QString::fromUtf8(m_module->module()->KeyText()));//don't use fromUtf8
                 }
                 else {
                     ret = false;
@@ -289,12 +289,12 @@ bool CSwordVerseKey::previous( const JumpType type ) {
 
     if ( CSwordBibleModuleInfo* bible = dynamic_cast<CSwordBibleModuleInfo*>(module()) ) {
         if (_compare(bible->lowerBound()) < 0 ) {
-            key( bible->lowerBound() );
+            setKey(bible->lowerBound());
             ret = false;
         }
 
         if (_compare(bible->upperBound()) > 0 ) {
-            key( bible->upperBound() );
+            setKey(bible->upperBound());
             ret = false;
         }
 

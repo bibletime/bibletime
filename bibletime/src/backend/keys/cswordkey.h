@@ -45,14 +45,19 @@ class CSwordKey {
          * @return The current key which belongs to the current object.
          */
         virtual QString key() const = 0;
-        /** Sets the current key. Sets the key using a utf8 enabled QString.
-         * @param key The key which should be used to set the current one
-         */
-        virtual bool key(const QString& key) = 0;
-        /** Set the key using a utf8-decoded c-string
-         * @param key The key which should be used to set the current one
-         */
-        virtual bool key(const char* key) = 0;
+
+        /**
+          Sets the current key. Sets the key using a utf8 enabled QString.
+          \param key The key which should be used to set the current one.
+        */
+        virtual bool setKey(const QString &key) = 0;
+
+        /**
+          Set the key using a utf8-decoded c-string.
+          \param key The key which should be used to set the current one.
+        */
+        virtual bool setKey(const char *key) = 0;
+
         /** Clone this object. Clone this current object and return it.
          * @return A clone of the current object.
          */

@@ -89,7 +89,7 @@ void CReadWindow::lookupSwordKey( CSwordKey* newKey ) {
     }
 
     if (key() != newKey) {
-        key()->key(newKey->key());
+        key()->setKey(newKey->key());
     }
 
     /// \todo next-TODO how about options?

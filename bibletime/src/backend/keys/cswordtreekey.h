@@ -54,15 +54,16 @@ class CSwordTreeKey : public CSwordKey, public sword::TreeKeyIdx {
         * Returns the current key as unicode decoded QString.
         */
         virtual QString key() const;
+
         /**
-        * Set the key. If the parameter is empty or null, the key will be set to "/"
+          Reimplemented from CSwordKey::setKey(const QString &key).
         */
-        virtual bool key( const QString& key );
+        virtual bool setKey(const QString &key);
+
         /**
-        * Set the key from char* To avoid encoding problems use key(QString instead),
-        * otherwise it is caller's responsibility to ensure the correct encoding (utf8/latin1).
+          Reimplemented from CSwordKey::setKey(const char *key).
         */
-        virtual bool key( const char* key );
+        virtual bool setKey(const char *key);
 
     protected:
         /**

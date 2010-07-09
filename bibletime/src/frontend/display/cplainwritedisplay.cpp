@@ -130,7 +130,7 @@ void CPlainWriteDisplay::dropEvent( QDropEvent* e ) {
 
             CSwordModuleInfo *module = CSwordBackend::instance()->findModuleByName((*it).module());
             QSharedPointer<CSwordKey> key( CSwordKey::createInstance(module) );
-            key->key( (*it).key() );
+            key->setKey((*it).key());
             QString moduleText = key->strippedText();
 
             const QString text = QString::fromLatin1("%1\n(%2, %3)\n").arg(moduleText).arg((*it).key()).arg((*it).module());

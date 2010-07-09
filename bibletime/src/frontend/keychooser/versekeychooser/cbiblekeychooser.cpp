@@ -118,6 +118,6 @@ void CBibleKeyChooser::updateKey(CSwordKey* /*key*/) {
 void CBibleKeyChooser::adjustFont() {}
 
 void CBibleKeyChooser::setKey(QString& newKey) {
-    m_key->key(newKey);
+    m_key->setKey(newKey);
     setKey(m_key);
 }

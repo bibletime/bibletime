@@ -94,10 +94,10 @@ CTextRendering::KeyTreeItem::KeyTreeItem(const QString& startKey, const QString&
 
     if (module->type() == CSwordModuleInfo::Bible) {
         CSwordVerseKey start(module);
-        start.key(startKey);
+        start.setKey(startKey);
 
         CSwordVerseKey stop(module);
-        stop.key(stopKey);
+        stop.setKey(stopKey);
 
         if (!m_key.isEmpty() && !m_stopKey.isEmpty()) { //we have a range of keys
             bool ok = true;
@@ -182,7 +182,7 @@ const QString CTextRendering::renderKeyTree( KeyTree& tree ) {
 
     foreach (KeyTreeItem* c, tree) {
         if (modules.count() == 1) { //this optimizes the rendering, only one key created for all items
-            key->key( c->key() );
+            key->setKey(c->key());
             t.append( renderEntry( *c, key.data()) );
         }
         else {
@@ -199,10 +199,10 @@ const QString CTextRendering::renderKeyRange( const QString& start, const QStrin
     //qWarning( "renderKeyRange start %s stop %s \n", start.latin1(), stop.latin1() );
 
     QSharedPointer<CSwordKey> lowerBound( CSwordKey::createInstance(module) );
-    lowerBound->key(start);
+    lowerBound->setKey(start);
 
     QSharedPointer<CSwordKey> upperBound( CSwordKey::createInstance(module) );
-    upperBound->key(stop);
+    upperBound->setKey(stop);
 
     sword::SWKey* sw_start = dynamic_cast<sword::SWKey*>(lowerBound.data());
     sword::SWKey* sw_stop = dynamic_cast<sword::SWKey*>(upperBound.data());

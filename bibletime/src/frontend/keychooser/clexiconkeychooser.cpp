@@ -97,7 +97,7 @@ void CLexiconKeyChooser::activated(int index) {
 
     // To prevent from eternal loop, because activated() is emitted again
     if (m_key && m_key->key() != text) {
-        m_key->key(text);
+        m_key->setKey(text);
         setKey(m_key);
     }
     //  qWarning("activated end");
@@ -180,6 +180,6 @@ void CLexiconKeyChooser::setModules( const QList<CSwordModuleInfo*>& modules, co
 }
 
 void CLexiconKeyChooser::setKey(QString& newKey) {
-    m_key->key(newKey);
+    m_key->setKey(newKey);
     setKey(m_key);
 }

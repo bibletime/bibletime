@@ -54,17 +54,17 @@ void CSwordBibleModuleInfo::initBounds() {
     }
 
     if (m_hasOT) {
-        m_lowerBound.key("Genesis 1:1");
+        m_lowerBound.setKey("Genesis 1:1");
     }
     else {
-        m_lowerBound.key("Matthew 1:1");
+        m_lowerBound.setKey("Matthew 1:1");
     }
 
     if (!m_hasNT) {
-        m_upperBound.key("Malachi 4:6");
+        m_upperBound.setKey("Malachi 4:6");
     }
     else {
-        m_upperBound.key("Revelation of John 22:21");
+        m_upperBound.setKey("Revelation of John 22:21");
     }
 }
 

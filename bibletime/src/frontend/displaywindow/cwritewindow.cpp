@@ -103,7 +103,7 @@ void CWriteWindow::lookupSwordKey( CSwordKey* newKey ) {
         return;
 
     if (key() != newKey) { //set passage of newKey to key() if they're different, otherwise we'd get mixed up if we look up newkey which may have a different module set
-        key()->key(newKey->key());
+        key()->setKey(newKey->key());
     }
 
     if ( modules().count() ) {

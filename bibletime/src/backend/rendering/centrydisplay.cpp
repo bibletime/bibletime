@@ -42,7 +42,7 @@ const QString CEntryDisplay::text( const QList<CSwordModuleInfo*>& modules, cons
 
         CSwordVerseKey k1(module);
         k1.Headings(1);
-        k1.key(keyName);
+        k1.setKey(keyName);
 
         // don't print the key
         CTextRendering::KeyTreeItem::Settings preverse_settings(false, CTextRendering::KeyTreeItem::Settings::NoKey);

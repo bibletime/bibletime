@@ -182,7 +182,7 @@ void CSearchResultView::saveItems() {
     QList<CSwordKey*> keys;
     foreach (QTreeWidgetItem* i, items) {
         k = CSwordKey::createInstance( m );
-        k->key(i->text(0));
+        k->setKey(i->text(0));
         keys.append( k );
     }
     mgr.saveKeyList( keys, CExportManager::Text, false);
@@ -200,7 +200,7 @@ void CSearchResultView::saveItemsWithText() {
     QList<CSwordKey*> keys;
     foreach (QTreeWidgetItem* i, items) {
         k = CSwordKey::createInstance( m );
-        k->key(i->text(0));
+        k->setKey(i->text(0));
         keys.append( k );
     };
     mgr.saveKeyList( keys, CExportManager::Text, true);
@@ -218,7 +218,7 @@ void CSearchResultView::copyItems() {
     QList<CSwordKey*> keys;
     foreach (QTreeWidgetItem* i, items) {
         k = CSwordKey::createInstance( m );
-        k->key(i->text(0));
+        k->setKey(i->text(0));
         keys.append( k );
     };
     mgr.copyKeyList( keys, CExportManager::Text, false);
@@ -236,7 +236,7 @@ void CSearchResultView::copyItemsWithText() {
     QList<CSwordKey*> keys;
     foreach (QTreeWidgetItem* i, items) {
         k = CSwordKey::createInstance( m );
-        k->key(i->text(0));
+        k->setKey(i->text(0));
         keys.append( k );
     };
     mgr.copyKeyList( keys, CExportManager::Text, true);

@@ -76,15 +76,16 @@ class CSwordVerseKey : public CSwordKey, public sword::VerseKey {
         * the used key is returned. Otherwise the key is set and the new on ei returned.
         */
         virtual QString key() const;
+
         /**
-        * Set the current key.
+          Reimplemented from CSwordKey::setKey(const QString &key).
         */
-        virtual bool key( const QString& );
+        virtual bool setKey(const QString &key);
+
         /**
-        * Set/get the key. If the parameter is not set (means equal to QString::null)
-        * the used key is returned. Otherwise the key is set and the new on ei returned.
+          Reimplemented from CSwordKey::setKey(const char *key).
         */
-        virtual bool key( const char* key );
+        virtual bool setKey(const char *key);
 
         /**
         * Jumps to the next entry of the given type

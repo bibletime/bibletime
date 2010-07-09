@@ -78,7 +78,7 @@ void CSearchAnalysisScene::analyse(QList<CSwordModuleInfo*> modules) {
     m_maxCount = 0;
     int count = 0;
     CSwordVerseKey key(0);
-    key.key("Genesis 1:1");
+    key.setKey("Genesis 1:1");
 
     CSearchAnalysisItem* analysisItem = m_itemList[key.book()];
     bool ok = true;
@@ -122,7 +122,7 @@ void CSearchAnalysisScene::setModules(QList<CSwordModuleInfo*> modules) {
     m_itemList.clear();
     CSearchAnalysisItem* analysisItem = 0;
     CSwordVerseKey key(0);
-    key.key("Genesis 1:1");
+    key.setKey("Genesis 1:1");
     do {
         analysisItem = new CSearchAnalysisItem(m_moduleList.count(), key.book(), &m_scaleFactor, &m_moduleList);
         addItem(analysisItem);
@@ -226,7 +226,7 @@ void CSearchAnalysisScene::saveAsHTML() {
     CSwordVerseKey key(0);
     sword::ListKey searchResult;
 
-    key.key("Genesis 1:1");
+    key.setKey("Genesis 1:1");
 
     CSearchAnalysisItem* analysisItem = m_itemList.value( key.book() );
 

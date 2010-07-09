@@ -90,7 +90,7 @@ void BtHtmlJsObject::mouseMoveEvent(const QString& attributes, const int& x, con
                 //add real Bible text from module/key
                 if (CSwordModuleInfo *module = CSwordBackend::instance()->findModuleByName(moduleName)) {
                     QSharedPointer<CSwordKey> key( CSwordKey::createInstance(module) );
-                    key->key( keyName );
+                    key->setKey(keyName);
                     mimedata->setText(key->strippedText()); // This works across applications!
                 }
             }

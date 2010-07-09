@@ -31,7 +31,7 @@ const QString CDisplayRendering::entryLink( const KeyTreeItem& item, CSwordModul
     vk.Headings(true);
 
     if (isBible) {
-        vk.key(item.key());
+        vk.setKey(item.key());
     }
 
     if (isBible && (vk.Verse() == 0)) {

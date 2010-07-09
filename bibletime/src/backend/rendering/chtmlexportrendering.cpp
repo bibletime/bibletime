@@ -108,7 +108,7 @@ const QString CHTMLExportRendering::renderEntry( const KeyTreeItem& i, CSwordKey
 
     for (QList<CSwordModuleInfo*>::const_iterator mod_Itr(modules.begin()); mod_Itr != end_modItr; ++mod_Itr) {
         key->module(*mod_Itr);
-        key->key( i.key() );
+        key->setKey(i.key());
 
         keyText = key->key();
         isRTL = ((*mod_Itr)->textDirection() == CSwordModuleInfo::RightToLeft);

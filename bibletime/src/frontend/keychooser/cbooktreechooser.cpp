@@ -140,7 +140,7 @@ void CBookTreeChooser::itemActivated( QTreeWidgetItem* item ) {
     qDebug() << "CBookTreeChooser::itemActivated";
     //Sometimes Qt calls this function with a null pointer.
     if (item) {
-        m_key->key(item->text(1));
+        m_key->setKey(item->text(1));
         //tell possible listeners about the change
         emit keyChanged(m_key);
     }
@@ -194,6 +194,6 @@ void CBookTreeChooser::addKeyChildren(CSwordTreeKey* key, QTreeWidgetItem* item)
 }
 
 void CBookTreeChooser::setKey(QString& newKey) {
-    m_key->key(newKey);
+    m_key->setKey(newKey);
     setKey(m_key);
 }

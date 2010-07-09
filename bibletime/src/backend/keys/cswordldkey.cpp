@@ -42,7 +42,7 @@ CSwordModuleInfo* CSwordLDKey::module(CSwordModuleInfo* const newModule) {
     if (newModule && newModule->type() == CSwordModuleInfo::Lexicon) {
         const QString oldKey = key();
         m_module = newModule;
-        key(oldKey);
+        setKey(oldKey);
     }
 
     return m_module;
@@ -64,20 +64,20 @@ const char * CSwordLDKey::rawKey() const {
     return getText();
 }
 
-bool CSwordLDKey::key( const QString& newKey ) {
+bool CSwordLDKey::setKey(const QString &newKey) {
     Q_ASSERT(m_module);
 
     if (m_module->isUnicode()) {
-        return key(newKey.toUtf8().constData());
+        return setKey(newKey.toUtf8().constData());
     }
     else {
-        return key((const char*)cp1252Codec()->fromUnicode(newKey));
+        return setKey((const char*)cp1252Codec()->fromUnicode(newKey));
     }
 }
 
 
 /** Sets the key of this instance */
-bool CSwordLDKey::key( const char* newKey ) {
+bool CSwordLDKey::setKey(const char *newKey) {
     Q_ASSERT(newKey);
 
     if (newKey) {
@@ -98,7 +98,7 @@ CSwordLDKey* CSwordLDKey::NextEntry() {
     ( *( m_module->module() ) )++;
     m_module->module()->setSkipConsecutiveLinks(false);
 
-    key(m_module->module()->KeyText());
+    setKey(m_module->module()->KeyText());
     SWKey::operator = (m_module->module()->KeyText());
 
     return this;

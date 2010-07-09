@@ -35,7 +35,7 @@ const QString CPlainTextExportRendering::renderEntry( const KeyTreeItem& i, CSwo
 
     for (QList<CSwordModuleInfo*>::iterator it(modules.begin()); it != end_it; ++it) {
         key->module(*it);
-        key->key( i.key() );
+        key->setKey(i.key());
 
         /// \todo Check this code
         entry.append(key->strippedText()).append("\n");

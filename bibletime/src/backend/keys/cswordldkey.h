@@ -83,14 +83,16 @@ class CSwordLDKey : public CSwordKey, public sword::SWKey {
         * Returns the current key as a QString
         */
         virtual QString key() const;
+
         /**
-        * Set the current key using unicode decoded QString.
+          Reimplemented from CSwordKey::setKey(const QString &key).
         */
-        virtual bool key( const QString& newKey );
+        virtual bool setKey(const QString &newKey);
+
         /**
-        * Set the current key from char*. To avoid encoding problems use key(QString) instead.
+          Reimplemented from CSwordKey::setKey(const char *key).
         */
-        virtual bool key( const char* );
+        virtual bool setKey(const char *key);
 
     protected:
         /**
