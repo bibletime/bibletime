@@ -293,7 +293,7 @@ class CSwordModuleInfo: public QObject {
         * Snaps to the closest entry in the module if the current key is
         * not present in the data files.
         */
-        virtual bool snap() {
+        virtual inline bool snap() {
             return false;
         }
 

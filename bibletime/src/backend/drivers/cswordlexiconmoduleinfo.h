@@ -50,7 +50,7 @@ class CSwordLexiconModuleInfo: public CSwordModuleInfo {
         /**
           Jumps to the closest entry in the module.
         */
-        inline bool snap() {
+        virtual inline bool snap() {
             return module()->getRawEntry();
         }
 
