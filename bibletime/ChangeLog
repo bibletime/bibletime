@@ -1,3 +1,10 @@
+2010-07-11 Martin Gruner <mgruner@crosswire.org>
+    * Released 2.7.2
+    * fix version number
+
+2010-07-06 Martin Gruner <mgruner@crosswire.org>
+    * Released 2.7.1
+
 2010-06-14 Martin Gruner <mgruner@crosswire.org>
     * Tweaked the cmake stuff to generate a valid standalone .dmg image on Mac OS
 
