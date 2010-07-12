@@ -294,6 +294,14 @@ IF (MSVC)
     ENDIF (CMAKE_BUILD_TYPE STREQUAL "Debug")
 ENDIF (MSVC)
 
+IF (APPLE)
+    # sword locale information, needed for DMG image
+    FILE(GLOB INSTALL_SWORD_LOCALE_LIST ${SWORD_INCLUDE_DIR}/../../share/sword/locales.d/*)
+    INSTALL(FILES ${INSTALL_SWORD_LOCALE_LIST}
+        DESTINATION "${BT_SHARE_PATH}sword/locales.d/"
+    )
+ENDIF (APPLE)
+
 
 INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTDocumentation.cmake")
 INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTDeveloper.cmake")
