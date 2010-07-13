@@ -42,25 +42,24 @@
   </authorgroup>
   
   <!-- TRANS:ROLES_OF_TRANSLATORS -->
-<copyright>
-    <year>1999-2010</year>
-    <holder>A &bibletime; csapat</holder>
-  </copyright>
+<copyright> <year>1999-2010</year> <holder>The &bibletime; Team</holder>
+</copyright>
 
   <legalnotice>
     <para>A &bibletime; kézikönyv a &bibletime; programmal együtt terjesztve.</para>
   </legalnotice>
 
-  <date>$LastChangedDate: 2010-05-20 15:20:48 -0400 (Thu, 20 May 2010) $</date>
+  <date>$LastChangedDate: 2010-05-20 15:20:48 -0400 (Thu, 20 May 2010)
+$</date>
 
   <releaseinfo>2.8</releaseinfo>
 
   <abstract>
-    <para>A &bibletime; egy teljesen ingyenes és szabad Biblia tanulmányozó program. A 
-program kezelőfelülete a &qt; keretrendszerre épült, ami lehetővé teszi 
-többféle operációs rendszeren való futtatását, mint Linux, Windows, FreeBSD 
-és Mac OS X rendszeren. A szoftver a &sword; programozási könyvtárat 
-használja, több, mint 200 ingyenes Bibliaváltozattal, kommentárokkal, 
+    <para>A &bibletime; egy teljesen ingyenes és szabad Biblia tanulmányozó program. A
+program kezelőfelülete a &qt; keretrendszerre épült, ami lehetővé teszi
+többféle operációs rendszeren való futtatását, mint Linux, Windows, FreeBSD
+és Mac OS X rendszeren. A szoftver a &sword; programozási könyvtárat
+használja, több, mint 200 ingyenes Bibliaváltozattal, kommentárokkal,
 szótárakkal és könyvekkel, amit a &cbs; biztosít.</para>
   </abstract>
 
@@ -76,19 +75,11 @@ szótárakkal és könyvekkel, amit a &cbs; biztosít.</para>
 </book>
 
 <!--
-
 Local Variables:
-
 mode: sgml
-
 sgml-minimize-attributes:nil
-
 sgml-general-insert-case:lower
-
 sgml-indent-step:0
-
 sgml-indent-data:nil
-
 End:
-
 -->

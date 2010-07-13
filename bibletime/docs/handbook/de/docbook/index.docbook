@@ -42,26 +42,25 @@
   </authorgroup>
   
   <!-- TRANS:ROLES_OF_TRANSLATORS -->
-<copyright>
-    <year>1999-2010</year>
-    <holder>Das &bibletime;-Team</holder>
-  </copyright>
+<copyright> <year>1999-2010</year> <holder>The &bibletime; Team</holder>
+</copyright>
 
   <legalnotice>
-    <para>Das &bibletime;-Handbuch wird zusammen mit der &bibletime;-Studienhilfe 
+    <para>Das &bibletime;-Handbuch wird zusammen mit der &bibletime;-Studienhilfe
 ausgeliefert.</para>
   </legalnotice>
 
-  <date>$LastChangedDate: 2010-05-20 15:20:48 -0400 (Thu, 20 May 2010) $</date>
+  <date>$LastChangedDate: 2010-05-20 15:20:48 -0400 (Thu, 20 May 2010)
+$</date>
 
   <releaseinfo>2.8</releaseinfo>
 
   <abstract>
-    <para>&bibletime; ist ein absolut freies Bibelarbeits-Programm. Seine 
-Benutzeroberfläche ist mit dem &qt;-Rahmenwerk erstellt, das es auf mehreren 
-Betriebssystemen lauffähig macht, darunter Linux, Windows, FreeBSD und Mac 
-OS X. Die Software nutzt die &sword;-Programmierbibliothek, um mit über 200 
-freien Bibeltexten, Kommentaren, Wörterbüchern und Büchern zu laufen, die 
+    <para>&bibletime; ist ein absolut freies Bibelarbeits-Programm. Seine
+Benutzeroberfläche ist mit dem &qt;-Rahmenwerk erstellt, das es auf mehreren
+Betriebssystemen lauffähig macht, darunter Linux, Windows, FreeBSD und Mac
+OS X. Die Software nutzt die &sword;-Programmierbibliothek, um mit über 200
+freien Bibeltexten, Kommentaren, Wörterbüchern und Büchern zu laufen, die
 von der &cbs; zur Verfügung gestellt werden.</para>
   </abstract>
 
@@ -77,19 +76,11 @@ von der &cbs; zur Verfügung gestellt werden.</para>
 </book>
 
 <!--
-
 Local Variables:
-
 mode: sgml
-
 sgml-minimize-attributes:nil
-
 sgml-general-insert-case:lower
-
 sgml-indent-step:0
-
 sgml-indent-data:nil
-
 End:
-
 -->

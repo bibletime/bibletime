@@ -42,25 +42,24 @@
   </authorgroup>
   
   <!-- TRANS:ROLES_OF_TRANSLATORS -->
-<copyright>
-    <year>1999-2010</year>
-    <holder>The &bibletime; Team</holder>
-  </copyright>
+<copyright> <year>1999-2010</year> <holder>The &bibletime; Team</holder>
+</copyright>
 
   <legalnotice>
     <para>The &bibletime; Handbook is distributed with the &bibletime; study program.</para>
   </legalnotice>
 
-  <date>$LastChangedDate: 2010-05-20 15:20:48 -0400 (Thu, 20 May 2010) $</date>
+  <date>$LastChangedDate: 2010-05-20 15:20:48 -0400 (Thu, 20 May 2010)
+$</date>
 
   <releaseinfo>2.8</releaseinfo>
 
   <abstract>
-    <para>&bibletime; est un programme d'études offert gratuitement Bible. L'interface 
-utilisateur du programme est construit avec le cadre &qt;, qui lui fait 
-tourner sur plusieurs systèmes d'exploitation dont Linux, Windows, FreeBSD 
-et Mac OS X. Le logiciel utilise la librairie de programmation &sword; de 
-travailler avec plus de 200 textes de la Bible gratuite, des commentaires, 
+    <para>&bibletime; est un programme d'études offert gratuitement Bible. L'interface
+utilisateur du programme est construit avec le cadre &qt;, qui lui fait
+tourner sur plusieurs systèmes d'exploitation dont Linux, Windows, FreeBSD
+et Mac OS X. Le logiciel utilise la librairie de programmation &sword; de
+travailler avec plus de 200 textes de la Bible gratuite, des commentaires,
 des dictionnaires et des livres fournis par le &cbs;.</para>
   </abstract>
 
@@ -76,19 +75,11 @@ des dictionnaires et des livres fournis par le &cbs;.</para>
 </book>
 
 <!--
-
 Local Variables:
-
 mode: sgml
-
 sgml-minimize-attributes:nil
-
 sgml-general-insert-case:lower
-
 sgml-indent-step:0
-
 sgml-indent-data:nil
-
 End:
-
 -->
