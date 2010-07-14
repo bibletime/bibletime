@@ -715,7 +715,18 @@ void BibleTime::initBackends() {
     initSwordConfigFile();
 
     sword::StringMgr::setSystemStringMgr( new BTStringMgr() );
-    sword::SWLog::getSystemLog()->setLogLevel(1);
+    sword::SWLog::getSystemLog()->setLogLevel(sword::SWLog::LOG_ERROR);
+
+    if (qApp->property("--debug").toBool()) {
+    	sword::SWLog::getSystemLog()->setLogLevel(sword::SWLog::LOG_DEBUG);
+    }
+
+#ifdef Q_WS_MAC
+    // set a LocaleMgr with a fixed path to the locales.d of the DMG image on MacOS
+    // note: this must be done after setting the BTStringMgr, because this will reset the LocaleMgr
+    qDebug() << "Using sword locales dir: " << util::directory::getSwordLocalesDir().absolutePath().toUtf8();
+    sword::LocaleMgr::setSystemLocaleMgr(new sword::LocaleMgr(util::directory::getSwordLocalesDir().absolutePath().toUtf8()));
+#endif
 
     CSwordBackend *backend = CSwordBackend::createInstance();
     backend->booknameLanguage(CBTConfig::get(CBTConfig::language) );

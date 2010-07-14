@@ -45,6 +45,10 @@ QDir cachedApplicationSwordDir; // Only Windows installs the sword directory whi
 QDir cachedSharedSwordDir;
 #endif
 
+#ifdef Q_WS_MAC
+QDir cachedSwordLocalesDir;
+#endif
+
 #ifdef Q_WS_WIN
 static const char* BIBLETIME = "Bibletime";
 static const char* SWORD_DIR = "Sword";
@@ -83,6 +87,14 @@ bool initDirectoryCache() {
             qWarning() << "Cannot find ALLUSERSPROFILE\\Application Data\\Sword";
             return false;
         }
+    }
+#endif
+
+#ifdef Q_WS_MAC
+    cachedSwordLocalesDir = wDir; // application sword dir for Windows only
+    if (!cachedSwordLocalesDir.cd("share/sword/locales.d") || !cachedSwordLocalesDir.isReadable()) {
+        qWarning() << "Cannot find sword locales directory relative to" << QCoreApplication::applicationDirPath();
+        return false;
     }
 #endif
 
@@ -307,6 +319,12 @@ const QDir &getSharedSwordDir() {
     return cachedSharedSwordDir;
 }
 
+#endif
+
+#ifdef Q_WS_MAC
+const QDir &getSwordLocalesDir() {
+    return cachedSwordLocalesDir;
+}
 #endif
 
 const QDir &getSwordPathDir() {

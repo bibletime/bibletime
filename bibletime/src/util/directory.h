@@ -72,6 +72,15 @@ const QDir &getSharedSwordDir();
 
 #endif
 
+#ifdef Q_WS_MAC  // Mac only directories
+
+/**
+ * Path to the Sword locales
+ */
+const QDir &getSwordLocalesDir();
+
+#endif
+
 /** Return the path to the SWORD_PATH env var directory */
 const QDir &getSwordPathDir();
 
