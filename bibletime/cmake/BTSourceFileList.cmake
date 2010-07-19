@@ -61,7 +61,7 @@ SET(bibletime_SRC_BACKEND_FILTERS
 	src/backend/filters/osistohtml.cpp
 	src/backend/filters/plaintohtml.cpp
 	src/backend/filters/teitohtml.cpp
-	src/backend/filters/bt_thmlhtml.cpp
+	src/backend/filters/thmltohtml.cpp
 	src/backend/filters/bt_thmlplain.cpp
 	src/backend/filters/osismorphsegmentation.cpp
 )

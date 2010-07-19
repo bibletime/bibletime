@@ -24,7 +24,7 @@
 #include "backend/filters/osistohtml.h"
 #include "backend/filters/plaintohtml.h"
 #include "backend/filters/teitohtml.h"
-#include "backend/filters/bt_thmlhtml.h"
+#include "backend/filters/thmltohtml.h"
 #include "backend/filters/bt_thmlplain.h"
 #include "backend/filters/osismorphsegmentation.h"
 #include "backend/rendering/cbookdisplay.h"
@@ -49,7 +49,7 @@ CSwordBackend::CSwordBackend()
         m_dataModel(this) {
     m_filters.gbf = new Filters::GbfToHtml();
     m_filters.plain = new Filters::PlainToHtml();
-    m_filters.thml = new Filters::BT_ThMLHTML();
+    m_filters.thml = new Filters::ThmlToHtml();
     m_filters.osis = new Filters::OsisToHtml();
     m_filters.tei = new Filters::TeiToHtml();
 
@@ -64,7 +64,7 @@ CSwordBackend::CSwordBackend(const QString& path, const bool augmentHome)
         : sword::SWMgr(!path.isEmpty() ? path.toLocal8Bit().constData() : 0, false, new sword::EncodingFilterMgr( sword::ENC_UTF8 ), false, augmentHome) { // don't allow module renaming, because we load from a path
     m_filters.gbf = new Filters::GbfToHtml();
     m_filters.plain = new Filters::PlainToHtml();
-    m_filters.thml = new Filters::BT_ThMLHTML();
+    m_filters.thml = new Filters::ThmlToHtml();
     m_filters.osis = new Filters::OsisToHtml();
     m_filters.tei = new Filters::TeiToHtml();
 

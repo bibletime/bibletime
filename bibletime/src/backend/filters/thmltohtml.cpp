@@ -7,7 +7,7 @@
 *
 **********/
 
-#include "backend/filters/bt_thmlhtml.h"
+#include "backend/filters/thmltohtml.h"
 
 #include <QString>
 #include <QRegExp>
@@ -25,7 +25,9 @@
 #include <versekey.h>
 
 
-Filters::BT_ThMLHTML::BT_ThMLHTML() {
+namespace Filters {
+
+ThmlToHtml::ThmlToHtml() {
     setEscapeStringCaseSensitive(true);
     setPassThruUnknownEscapeString(true); //the HTML widget will render the HTML escape codes
 
@@ -39,7 +41,9 @@ Filters::BT_ThMLHTML::BT_ThMLHTML() {
     removeTokenSubstitute("/note");
 }
 
-char Filters::BT_ThMLHTML::processText(sword::SWBuf& buf, const sword::SWKey* key, const sword::SWModule* module) {
+char ThmlToHtml::processText(sword::SWBuf &buf, const sword::SWKey *key,
+                             const sword::SWModule *module)
+{
     sword::ThMLHTML::processText(buf, key, module);
 
     CSwordModuleInfo* m = CSwordBackend::instance()->findModuleByName( module->Name() );
@@ -194,10 +198,12 @@ char Filters::BT_ThMLHTML::processText(sword::SWBuf& buf, const sword::SWKey* ke
 }
 
 
-bool Filters::BT_ThMLHTML::handleToken(sword::SWBuf &buf, const char *token, sword::BasicFilterUserData *userData) {
+bool ThmlToHtml::handleToken(sword::SWBuf &buf, const char *token,
+                             sword::BasicFilterUserData *userData)
+{
     if (!substituteToken(buf, token) && !substituteEscapeString(buf, token)) {
         sword::XMLTag tag(token);
-        BT_UserData* myUserData = dynamic_cast<BT_UserData*>(userData);
+        UserData* myUserData = dynamic_cast<UserData*>(userData);
         sword::SWModule* myModule = const_cast<sword::SWModule*>(myUserData->module); //hack to be able to call stuff like Lang()
 
         if ( tag.getName() && !sword::stricmp(tag.getName(), "foreign") ) { // a text part in another language, we have to set the right font
@@ -382,3 +388,5 @@ bool Filters::BT_ThMLHTML::handleToken(sword::SWBuf &buf, const char *token, swo
 
     return true;
 }
+
+} // namespace Filtes
