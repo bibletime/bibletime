@@ -22,8 +22,8 @@
 #include "backend/drivers/cswordlexiconmoduleinfo.h"
 #include "backend/filters/btgbftohtmlfilter.h"
 #include "backend/filters/btosistohtmlfilter.h"
+#include "backend/filters/btplaintohtmlfilter.h"
 #include "backend/filters/bt_teihtml.h"
-#include "backend/filters/bt_plainhtml.h"
 #include "backend/filters/bt_thmlhtml.h"
 #include "backend/filters/bt_thmlplain.h"
 #include "backend/filters/osismorphsegmentation.h"
@@ -49,7 +49,7 @@ CSwordBackend::CSwordBackend()
         : sword::SWMgr(0, 0, false, new sword::EncodingFilterMgr( sword::ENC_UTF8 ), true),
         m_dataModel(this) {
     m_filters.gbf = new BtGbfToHtmlFilter();
-    m_filters.plain = new BT_PLAINHTML();
+    m_filters.plain = new BtPlainToHtmlFilter();
     m_filters.thml = new BT_ThMLHTML();
     m_filters.osis = new BtOsisToHtmlFilter();
     m_filters.tei = new BT_TEIHTML();
@@ -64,7 +64,7 @@ CSwordBackend::CSwordBackend()
 CSwordBackend::CSwordBackend(const QString& path, const bool augmentHome)
         : sword::SWMgr(!path.isEmpty() ? path.toLocal8Bit().constData() : 0, false, new sword::EncodingFilterMgr( sword::ENC_UTF8 ), false, augmentHome) { // don't allow module renaming, because we load from a path
     m_filters.gbf = new BtGbfToHtmlFilter();
-    m_filters.plain = new BT_PLAINHTML();
+    m_filters.plain = new BtPlainToHtmlFilter();
     m_filters.thml = new BT_ThMLHTML();
     m_filters.osis = new BtOsisToHtmlFilter();
     m_filters.tei = new BT_TEIHTML();

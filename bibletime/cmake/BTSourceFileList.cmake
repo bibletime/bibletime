@@ -59,7 +59,7 @@ SET(bibletime_SRC_BACKEND_FILTERS
 	# Backend filters:
 	src/backend/filters/btgbftohtmlfilter.cpp
 	src/backend/filters/btosistohtmlfilter.cpp
-	src/backend/filters/bt_plainhtml.cpp
+	src/backend/filters/btplaintohtmlfilter.cpp
 	src/backend/filters/bt_teihtml.cpp
 	src/backend/filters/bt_thmlhtml.cpp
 	src/backend/filters/bt_thmlplain.cpp
