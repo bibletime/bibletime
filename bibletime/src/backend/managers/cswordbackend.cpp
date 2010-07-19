@@ -25,7 +25,7 @@
 #include "backend/filters/plaintohtml.h"
 #include "backend/filters/teitohtml.h"
 #include "backend/filters/thmltohtml.h"
-#include "backend/filters/bt_thmlplain.h"
+#include "backend/filters/thmltoplain.h"
 #include "backend/filters/osismorphsegmentation.h"
 #include "backend/rendering/cbookdisplay.h"
 #include "backend/rendering/cchapterdisplay.h"
@@ -106,7 +106,7 @@ void CSwordBackend::filterInit() {
     //remove this hack as soon as Sword is fixed
     cleanupFilters.remove(thmlplain);
     delete thmlplain;
-    thmlplain = new Filters::BT_ThMLPlain();
+    thmlplain = new Filters::ThmlToPlain();
     cleanupFilters.push_back(thmlplain);
 }
 

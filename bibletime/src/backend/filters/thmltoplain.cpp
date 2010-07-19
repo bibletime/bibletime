@@ -7,19 +7,20 @@
 *
 **********/
 
-/******************************************************************************
- *
- * thmlplain -	SWFilter descendant to strip out all ThML tags or convert to
- *		ASCII rendered symbols.
- */
+#include "backend/filters/thmltoplain.h"
 
-#include "backend/filters/bt_thmlplain.h"
+#include <QtGlobal>
 
 
-Filters::BT_ThMLPlain::BT_ThMLPlain() {
-}
+namespace Filters {
 
-char Filters::BT_ThMLPlain::processText(sword::SWBuf &text, const sword::SWKey* /*key*/, const sword::SWModule* /*module*/) {
+char ThmlToPlain::processText(sword::SWBuf &text,
+                              const sword::SWKey *key,
+                              const sword::SWModule *module)
+{
+    Q_UNUSED(key);
+    Q_UNUSED(module);
+
     char token[2048];
     int tokpos = 0;
     bool intoken = false;
@@ -218,3 +219,4 @@ char Filters::BT_ThMLPlain::processText(sword::SWBuf &text, const sword::SWKey* 
     return 0;
 }
 
+} // namespace Filters
