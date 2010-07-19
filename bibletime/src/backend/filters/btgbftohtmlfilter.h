@@ -56,6 +56,6 @@ class BtGbfToHtmlFilter: public sword::GBFHTML {
         }
 };
 
-}
+} // namespace Filters
 
 #endif

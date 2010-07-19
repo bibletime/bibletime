@@ -21,7 +21,7 @@
 #include "backend/drivers/cswordcommentarymoduleinfo.h"
 #include "backend/drivers/cswordlexiconmoduleinfo.h"
 #include "backend/filters/btgbftohtmlfilter.h"
-#include "backend/filters/bt_osishtml.h"
+#include "backend/filters/btosistohtmlfilter.h"
 #include "backend/filters/bt_teihtml.h"
 #include "backend/filters/bt_plainhtml.h"
 #include "backend/filters/bt_thmlhtml.h"
@@ -51,7 +51,7 @@ CSwordBackend::CSwordBackend()
     m_filters.gbf = new BtGbfToHtmlFilter();
     m_filters.plain = new BT_PLAINHTML();
     m_filters.thml = new BT_ThMLHTML();
-    m_filters.osis = new BT_OSISHTML();
+    m_filters.osis = new BtOsisToHtmlFilter();
     m_filters.tei = new BT_TEIHTML();
 
     m_displays.entry = new CEntryDisplay();
@@ -66,7 +66,7 @@ CSwordBackend::CSwordBackend(const QString& path, const bool augmentHome)
     m_filters.gbf = new BtGbfToHtmlFilter();
     m_filters.plain = new BT_PLAINHTML();
     m_filters.thml = new BT_ThMLHTML();
-    m_filters.osis = new BT_OSISHTML();
+    m_filters.osis = new BtOsisToHtmlFilter();
     m_filters.tei = new BT_TEIHTML();
 
     m_displays.entry = new CEntryDisplay();

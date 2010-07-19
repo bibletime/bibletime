@@ -7,7 +7,7 @@
 *
 **********/
 
-#include "backend/filters/bt_osishtml.h"
+#include "backend/filters/btosistohtmlfilter.h"
 
 #include <QString>
 #include "backend/config/cbtconfig.h"
@@ -21,7 +21,7 @@
 #include <utilxml.h>
 
 
-Filters::BT_OSISHTML::BT_OSISHTML() : sword::OSISHTMLHREF() {
+Filters::BtOsisToHtmlFilter::BtOsisToHtmlFilter() : sword::OSISHTMLHREF() {
     setPassThruUnknownEscapeString(true); //the HTML widget will render the HTML escape codes
 
     addTokenSubstitute("inscription", "<span class=\"inscription\">");
@@ -47,11 +47,11 @@ Filters::BT_OSISHTML::BT_OSISHTML() : sword::OSISHTMLHREF() {
 
 }
 
-bool Filters::BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, sword::BasicFilterUserData *userData) {
+bool Filters::BtOsisToHtmlFilter::handleToken(sword::SWBuf &buf, const char *token, sword::BasicFilterUserData *userData) {
     // manually process if it wasn't a simple substitution
 
     if (!substituteToken(buf, token)) {
-        BT_UserData* myUserData = dynamic_cast<BT_UserData*>(userData);
+        UserData* myUserData = dynamic_cast<UserData*>(userData);
         sword::SWModule* myModule = const_cast<sword::SWModule*>(myUserData->module); //hack
 
         sword::XMLTag tag(token);
@@ -223,7 +223,7 @@ bool Filters::BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, swo
 
                 if (type == "crossReference") { //note containing cross references
                     myUserData->inCrossrefNote = true;
-                    myUserData->noteType = BT_UserData::CrossReference;
+                    myUserData->noteType = UserData::CrossReference;
 
                     /*
                      * Do not count crossrefs as footnotes if they are displayed in the text. This will cause problems
@@ -250,7 +250,7 @@ bool Filters::BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, swo
                     */
 
                     myUserData->suspendTextPassThru = true;
-                    myUserData->noteType = BT_UserData::StrongsMarkup;
+                    myUserData->noteType = UserData::StrongsMarkup;
                 }
 
                 else {
@@ -268,20 +268,20 @@ bool Filters::BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, swo
                     buf.append( (n.length() > 0) ? n.c_str() : "*" );
                     buf.append("</span> ");
 
-                    myUserData->noteType = BT_UserData::Footnote;
+                    myUserData->noteType = UserData::Footnote;
                     myUserData->suspendTextPassThru = true;
                 }
             }
             else { //if (tag.isEndTag()) {
-                Q_ASSERT(myUserData->noteType != BT_UserData::Unknown);
+                Q_ASSERT(myUserData->noteType != UserData::Unknown);
 
-                if (myUserData->noteType == BT_UserData::CrossReference) {
+                if (myUserData->noteType == UserData::CrossReference) {
                     buf.append("</span> ");
 // 					myUserData->suspendTextPassThru = false;
                     myUserData->inCrossrefNote = false;
                 }
 
-                myUserData->noteType = BT_UserData::Unknown;
+                myUserData->noteType = UserData::Unknown;
                 myUserData->suspendTextPassThru = false;
             }
         }
@@ -538,7 +538,7 @@ bool Filters::BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, swo
     return false;
 }
 
-void Filters::BT_OSISHTML::renderReference(const char *osisRef, sword::SWBuf &buf, sword::SWModule *myModule, BT_UserData *myUserData) {
+void Filters::BtOsisToHtmlFilter::renderReference(const char *osisRef, sword::SWBuf &buf, sword::SWModule *myModule, UserData *myUserData) {
     QString ref( osisRef );
     QString hrefRef( ref );
     //Q_ASSERT(!ref.isEmpty()); checked later
