@@ -20,7 +20,7 @@
 #include "backend/drivers/cswordbookmoduleinfo.h"
 #include "backend/drivers/cswordcommentarymoduleinfo.h"
 #include "backend/drivers/cswordlexiconmoduleinfo.h"
-#include "backend/filters/bt_gbfhtml.h"
+#include "backend/filters/btgbftohtmlfilter.h"
 #include "backend/filters/bt_osishtml.h"
 #include "backend/filters/bt_teihtml.h"
 #include "backend/filters/bt_plainhtml.h"
@@ -48,7 +48,7 @@ using namespace Rendering;
 CSwordBackend::CSwordBackend()
         : sword::SWMgr(0, 0, false, new sword::EncodingFilterMgr( sword::ENC_UTF8 ), true),
         m_dataModel(this) {
-    m_filters.gbf = new BT_GBFHTML();
+    m_filters.gbf = new BtGbfToHtmlFilter();
     m_filters.plain = new BT_PLAINHTML();
     m_filters.thml = new BT_ThMLHTML();
     m_filters.osis = new BT_OSISHTML();
@@ -63,7 +63,7 @@ CSwordBackend::CSwordBackend()
 
 CSwordBackend::CSwordBackend(const QString& path, const bool augmentHome)
         : sword::SWMgr(!path.isEmpty() ? path.toLocal8Bit().constData() : 0, false, new sword::EncodingFilterMgr( sword::ENC_UTF8 ), false, augmentHome) { // don't allow module renaming, because we load from a path
-    m_filters.gbf = new BT_GBFHTML();
+    m_filters.gbf = new BtGbfToHtmlFilter();
     m_filters.plain = new BT_PLAINHTML();
     m_filters.thml = new BT_ThMLHTML();
     m_filters.osis = new BT_OSISHTML();

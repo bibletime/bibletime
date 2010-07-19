@@ -57,7 +57,7 @@ SOURCE_GROUP("src\\backend\\drivers" FILES ${bibletime_SRC_BACKEND_DRIVERS})
 
 SET(bibletime_SRC_BACKEND_FILTERS
 	# Backend filters:
-	src/backend/filters/bt_gbfhtml.cpp
+	src/backend/filters/btgbftohtmlfilter.cpp
 	src/backend/filters/bt_osishtml.cpp
 	src/backend/filters/bt_plainhtml.cpp
 	src/backend/filters/bt_teihtml.cpp

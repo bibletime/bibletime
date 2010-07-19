@@ -7,7 +7,7 @@
 *
 **********/
 
-#include "backend/filters/bt_gbfhtml.h"
+#include "backend/filters/btgbftohtmlfilter.h"
 
 #include <QRegExp>
 #include <QString>
@@ -18,7 +18,7 @@
 #include <utilxml.h>
 
 
-Filters::BT_GBFHTML::BT_GBFHTML() : sword::GBFHTML() {
+Filters::BtGbfToHtmlFilter::BtGbfToHtmlFilter() : sword::GBFHTML() {
 
     setEscapeStringCaseSensitive(true);
     setPassThruUnknownEscapeString(true); //the HTML widget will render the HTML escape codes
@@ -71,7 +71,7 @@ Filters::BT_GBFHTML::BT_GBFHTML() : sword::GBFHTML() {
 }
 
 /** No descriptions */
-char Filters::BT_GBFHTML::processText(sword::SWBuf& buf, const sword::SWKey * key, const sword::SWModule * module) {
+char Filters::BtGbfToHtmlFilter::processText(sword::SWBuf& buf, const sword::SWKey * key, const sword::SWModule * module) {
     GBFHTML::processText(buf, key, module);
 
     if (!module->isProcessEntryAttributes()) {
@@ -226,11 +226,11 @@ char Filters::BT_GBFHTML::processText(sword::SWBuf& buf, const sword::SWKey * ke
     return 1;
 }
 
-bool Filters::BT_GBFHTML::handleToken(sword::SWBuf &buf, const char *token, sword::BasicFilterUserData *userData) {
+bool Filters::BtGbfToHtmlFilter::handleToken(sword::SWBuf &buf, const char *token, sword::BasicFilterUserData *userData) {
     if (!substituteToken(buf, token)) {  //more than a simple replace
         const unsigned int tokenLength = strlen(token);
 
-        BT_UserData* myUserData = dynamic_cast<BT_UserData*>(userData);
+        UserData* myUserData = dynamic_cast<UserData*>(userData);
         sword::SWModule* myModule = const_cast<sword::SWModule*>(myUserData->module); //hack to be able to call stuff like Lang()
 
         if (  !strncmp(token, "WG", 2)
