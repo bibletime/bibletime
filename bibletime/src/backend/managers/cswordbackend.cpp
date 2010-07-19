@@ -23,7 +23,7 @@
 #include "backend/filters/gbftohtml.h"
 #include "backend/filters/osistohtml.h"
 #include "backend/filters/plaintohtml.h"
-#include "backend/filters/bt_teihtml.h"
+#include "backend/filters/teitohtml.h"
 #include "backend/filters/bt_thmlhtml.h"
 #include "backend/filters/bt_thmlplain.h"
 #include "backend/filters/osismorphsegmentation.h"
@@ -51,7 +51,7 @@ CSwordBackend::CSwordBackend()
     m_filters.plain = new Filters::PlainToHtml();
     m_filters.thml = new Filters::BT_ThMLHTML();
     m_filters.osis = new Filters::OsisToHtml();
-    m_filters.tei = new Filters::BT_TEIHTML();
+    m_filters.tei = new Filters::TeiToHtml();
 
     m_displays.entry = new CEntryDisplay();
     m_displays.chapter = new CChapterDisplay();
@@ -66,7 +66,7 @@ CSwordBackend::CSwordBackend(const QString& path, const bool augmentHome)
     m_filters.plain = new Filters::PlainToHtml();
     m_filters.thml = new Filters::BT_ThMLHTML();
     m_filters.osis = new Filters::OsisToHtml();
-    m_filters.tei = new Filters::BT_TEIHTML();
+    m_filters.tei = new Filters::TeiToHtml();
 
     m_displays.entry = new CEntryDisplay();
     m_displays.chapter = new CChapterDisplay();

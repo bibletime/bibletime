@@ -7,7 +7,7 @@
 *
 **********/
 
-#include "backend/filters/bt_teihtml.h"
+#include "backend/filters/teitohtml.h"
 
 #include <QString>
 #include "backend/config/cbtconfig.h"
@@ -21,12 +21,17 @@
 #include <utilxml.h>
 
 
+namespace Filters {
 
-Filters::BT_TEIHTML::BT_TEIHTML() : sword::TEIHTMLHREF() {
-    setPassThruUnknownEscapeString(true); //the HTML widget will render the HTML escape codes
+TeiToHtml::TeiToHtml()
+    : sword::TEIHTMLHREF()
+{
+    setPassThruUnknownEscapeString(true); // the HTML widget will render the HTML escape codes
 }
 
-bool Filters::BT_TEIHTML::handleToken(sword::SWBuf &buf, const char *token, sword::BasicFilterUserData *userData) {
+bool TeiToHtml::handleToken(sword::SWBuf &buf, const char *token,
+                            sword::BasicFilterUserData *userData)
+{
     // manually process if it wasn't a simple substitution
 
     if (!substituteToken(buf, token)) {
@@ -92,7 +97,9 @@ bool Filters::BT_TEIHTML::handleToken(sword::SWBuf &buf, const char *token, swor
     return false;
 }
 
-void Filters::BT_TEIHTML::renderReference(const char *osisRef, sword::SWBuf &buf, sword::BasicFilterUserData *myUserData) {
+void TeiToHtml::renderReference(const char *osisRef, sword::SWBuf &buf,
+                                sword::BasicFilterUserData *myUserData)
+{
     QString ref( osisRef );
     QString hrefRef( ref );
 
@@ -140,3 +147,4 @@ void Filters::BT_TEIHTML::renderReference(const char *osisRef, sword::SWBuf &buf
     }
 }
 
+} // namespace Filters
