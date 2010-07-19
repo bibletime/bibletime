@@ -7,14 +7,14 @@
 *
 **********/
 
-#include "backend/filters/btplaintohtmlfilter.h"
+#include "backend/filters/plaintohtml.h"
 
 
-Filters::BtPlainToHtmlFilter::BtPlainToHtmlFilter() : sword::SWFilter() {
+Filters::PlainToHtml::PlainToHtml() : sword::SWFilter() {
 }
 
 /** No descriptions */
-char Filters::BtPlainToHtmlFilter::processText(sword::SWBuf& text, const sword::SWKey* /*key*/, const sword::SWModule* /*module*/) {
+char Filters::PlainToHtml::processText(sword::SWBuf& text, const sword::SWKey* /*key*/, const sword::SWModule* /*module*/) {
     int count = 0;
 
     sword::SWBuf orig = text;

@@ -243,13 +243,13 @@ class CSwordBackend : public QObject, public sword::SWMgr {
 
     private:
         // Filters
-        struct Filters {
+        struct {
             sword::SWFilter* gbf;
             sword::SWFilter* plain;
             sword::SWFilter* thml;
             sword::SWFilter* osis;
             sword::SWFilter* tei;
-        }	m_filters;
+        } m_filters;
 
         struct Displays {
             Rendering::CChapterDisplay* chapter;

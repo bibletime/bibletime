@@ -7,8 +7,8 @@
 *
 **********/
 
-#ifndef BTOSISTOHTMLFILTER_H
-#define BTOSISTOHTMLFILTER_H
+#ifndef FILTERS_OSISTOHTML_H
+#define FILTERS_OSISTOHTML_H
 
 // Sword includes:
 #include <osishtmlhref.h>
@@ -20,7 +20,7 @@ namespace Filters {
 /**
   \brief OSIS to HTMl conversion filter.
 */
-class BtOsisToHtmlFilter: public sword::OSISHTMLHREF {
+class OsisToHtml: public sword::OSISHTMLHREF {
     protected: /* Types: */
         class UserData: public sword::OSISHTMLHREF::MyUserData {
             public:
@@ -49,7 +49,7 @@ class BtOsisToHtmlFilter: public sword::OSISHTMLHREF {
         };
 
     public: /* Methods: */
-        BtOsisToHtmlFilter();
+        OsisToHtml();
 
         /** Reimplemented from sword::OSISHTMLHREF. */
         virtual bool handleToken(sword::SWBuf &buf,

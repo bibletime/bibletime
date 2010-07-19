@@ -7,7 +7,7 @@
 *
 **********/
 
-#include "backend/filters/btosistohtmlfilter.h"
+#include "backend/filters/osistohtml.h"
 
 #include <QString>
 #include "backend/config/cbtconfig.h"
@@ -21,7 +21,7 @@
 #include <utilxml.h>
 
 
-Filters::BtOsisToHtmlFilter::BtOsisToHtmlFilter() : sword::OSISHTMLHREF() {
+Filters::OsisToHtml::OsisToHtml() : sword::OSISHTMLHREF() {
     setPassThruUnknownEscapeString(true); //the HTML widget will render the HTML escape codes
 
     addTokenSubstitute("inscription", "<span class=\"inscription\">");
@@ -47,7 +47,7 @@ Filters::BtOsisToHtmlFilter::BtOsisToHtmlFilter() : sword::OSISHTMLHREF() {
 
 }
 
-bool Filters::BtOsisToHtmlFilter::handleToken(sword::SWBuf &buf, const char *token, sword::BasicFilterUserData *userData) {
+bool Filters::OsisToHtml::handleToken(sword::SWBuf &buf, const char *token, sword::BasicFilterUserData *userData) {
     // manually process if it wasn't a simple substitution
 
     if (!substituteToken(buf, token)) {
@@ -538,7 +538,7 @@ bool Filters::BtOsisToHtmlFilter::handleToken(sword::SWBuf &buf, const char *tok
     return false;
 }
 
-void Filters::BtOsisToHtmlFilter::renderReference(const char *osisRef, sword::SWBuf &buf, sword::SWModule *myModule, UserData *myUserData) {
+void Filters::OsisToHtml::renderReference(const char *osisRef, sword::SWBuf &buf, sword::SWModule *myModule, UserData *myUserData) {
     QString ref( osisRef );
     QString hrefRef( ref );
     //Q_ASSERT(!ref.isEmpty()); checked later

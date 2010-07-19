@@ -7,8 +7,8 @@
 *
 **********/
 
-#ifndef BTGBFTOHTMLFILTER_H
-#define BTGBFTOHTMLFILTER_H
+#ifndef FILTERS_GBFTOHTML_H
+#define FILTERS_GBFTOHTML_H
 
 // Sword includes:
 #include <gbfhtml.h>
@@ -19,7 +19,7 @@ namespace Filters {
 /**
   \brief GBF to HTML conversion filter.
 */
-class BtGbfToHtmlFilter: public sword::GBFHTML {
+class GbfToHtml: public sword::GBFHTML {
     protected: /* Types: */
         class UserData: public sword::GBFHTML::MyUserData {
             public:
@@ -35,7 +35,7 @@ class BtGbfToHtmlFilter: public sword::GBFHTML {
         };
 
     public: /* Methods: */
-        BtGbfToHtmlFilter();
+        GbfToHtml();
 
         /** Reimplemented from sword::OSISHTMLHREF. */
         virtual bool handleToken(sword::SWBuf &buf,

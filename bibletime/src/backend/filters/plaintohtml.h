@@ -7,8 +7,8 @@
 *
 **********/
 
-#ifndef BTPLAINTOHTMLFILTER_H
-#define BTPLAINTOHTMLFILTER_H
+#ifndef FILTERS_PLAINTOHTML_H
+#define FILTERS_PLAINTOHTML_H
 
 // Sword includes:
 #include <swbuf.h>
@@ -23,9 +23,9 @@ namespace Filters {
 /**
   \brief Plain text to HTML conversion filter.
 */
-class BtPlainToHtmlFilter: public sword::SWFilter {
+class PlainToHtml: public sword::SWFilter {
     public: /* Methods: */
-        BtPlainToHtmlFilter();
+        PlainToHtml();
 
     protected: /* Methods: */
         /** Reimplemented from sword::SWFilter. */

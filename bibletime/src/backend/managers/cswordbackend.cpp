@@ -20,9 +20,9 @@
 #include "backend/drivers/cswordbookmoduleinfo.h"
 #include "backend/drivers/cswordcommentarymoduleinfo.h"
 #include "backend/drivers/cswordlexiconmoduleinfo.h"
-#include "backend/filters/btgbftohtmlfilter.h"
-#include "backend/filters/btosistohtmlfilter.h"
-#include "backend/filters/btplaintohtmlfilter.h"
+#include "backend/filters/gbftohtml.h"
+#include "backend/filters/osistohtml.h"
+#include "backend/filters/plaintohtml.h"
 #include "backend/filters/bt_teihtml.h"
 #include "backend/filters/bt_thmlhtml.h"
 #include "backend/filters/bt_thmlplain.h"
@@ -42,17 +42,16 @@
 #include <utilstr.h>
 
 
-using namespace Filters;
 using namespace Rendering;
 
 CSwordBackend::CSwordBackend()
         : sword::SWMgr(0, 0, false, new sword::EncodingFilterMgr( sword::ENC_UTF8 ), true),
         m_dataModel(this) {
-    m_filters.gbf = new BtGbfToHtmlFilter();
-    m_filters.plain = new BtPlainToHtmlFilter();
-    m_filters.thml = new BT_ThMLHTML();
-    m_filters.osis = new BtOsisToHtmlFilter();
-    m_filters.tei = new BT_TEIHTML();
+    m_filters.gbf = new Filters::GbfToHtml();
+    m_filters.plain = new Filters::PlainToHtml();
+    m_filters.thml = new Filters::BT_ThMLHTML();
+    m_filters.osis = new Filters::OsisToHtml();
+    m_filters.tei = new Filters::BT_TEIHTML();
 
     m_displays.entry = new CEntryDisplay();
     m_displays.chapter = new CChapterDisplay();
@@ -63,11 +62,11 @@ CSwordBackend::CSwordBackend()
 
 CSwordBackend::CSwordBackend(const QString& path, const bool augmentHome)
         : sword::SWMgr(!path.isEmpty() ? path.toLocal8Bit().constData() : 0, false, new sword::EncodingFilterMgr( sword::ENC_UTF8 ), false, augmentHome) { // don't allow module renaming, because we load from a path
-    m_filters.gbf = new BtGbfToHtmlFilter();
-    m_filters.plain = new BtPlainToHtmlFilter();
-    m_filters.thml = new BT_ThMLHTML();
-    m_filters.osis = new BtOsisToHtmlFilter();
-    m_filters.tei = new BT_TEIHTML();
+    m_filters.gbf = new Filters::GbfToHtml();
+    m_filters.plain = new Filters::PlainToHtml();
+    m_filters.thml = new Filters::BT_ThMLHTML();
+    m_filters.osis = new Filters::OsisToHtml();
+    m_filters.tei = new Filters::BT_TEIHTML();
 
     m_displays.entry = new CEntryDisplay();
     m_displays.chapter = new CChapterDisplay();
@@ -99,7 +98,7 @@ void CSwordBackend::filterInit() {
         optionFilters.erase("OSISMorphSegmentation");
         delete filter;
     }
-    sword::SWOptionFilter* tmpFilter = new OSISMorphSegmentation();
+    sword::SWOptionFilter *tmpFilter = new Filters::OSISMorphSegmentation();
     optionFilters.insert(sword::OptionFilterMap::value_type("OSISMorphSegmentation", tmpFilter));
     cleanupFilters.push_back(tmpFilter);
 
@@ -107,7 +106,7 @@ void CSwordBackend::filterInit() {
     //remove this hack as soon as Sword is fixed
     cleanupFilters.remove(thmlplain);
     delete thmlplain;
-    thmlplain = new BT_ThMLPlain();
+    thmlplain = new Filters::BT_ThMLPlain();
     cleanupFilters.push_back(thmlplain);
 }
 
