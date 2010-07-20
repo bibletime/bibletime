@@ -137,7 +137,7 @@ void CSearchDialog::startSearch() {
         }
 
         // Show indexing dialog, and index the modules:
-        if (!CModuleIndexDialog::getInstance()->indexAllModules(unindexedModules)) {
+        if (!CModuleIndexDialog::indexAllModules(unindexedModules)) {
             // User cancelled.
             return;
         }

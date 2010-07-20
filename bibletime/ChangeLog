@@ -1,5 +1,6 @@
 2010-07-20 Jaak Ristioja <ristioja@gmail.com>
-    * Enhanced module indexing dialogs on search, and fixed a crash there.
+    * Enhanced module indexing dialog.
+    * Fixed a crash when cancelling module indexing when invoked using search.
 
 2010-07-11 Martin Gruner <mgruner@crosswire.org>
     * Released 2.7.2

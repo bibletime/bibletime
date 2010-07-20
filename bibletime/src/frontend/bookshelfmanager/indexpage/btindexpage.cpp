@@ -154,7 +154,7 @@ void BtIndexPage::createIndices() {
 
     //Shows the progress dialog
     if (indicesCreated) {
-        CModuleIndexDialog::getInstance()->indexAllModules( moduleList );
+        CModuleIndexDialog::indexAllModules(moduleList);
         populateModuleList();
     }
 }

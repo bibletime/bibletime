@@ -10,53 +10,56 @@
 #ifndef CMODULEINDEXDIALOG_H
 #define CMODULEINDEXDIALOG_H
 
-#include <QObject>
+#include <QProgressDialog>
+
+#include <QMutex>
 
 
 class CSwordModuleInfo;
-class QProgressDialog;
 
 /**
- * This dialog is used to index a list of modules and to show progress for that.\
- * While the indexing is in progress it creates a blocking, top level dialog which shows the progress
+  This dialog is used to index a list of modules and to show progress for that.
+  While the indexing is in progress it creates a blocking, top level dialog which shows the progress
  * while the indexing is done.
- *
- * @author The BibleTime team <info@bibletime.info>
- \todo Rename to CModuleIndexer, since this is not a dialog!
 */
-class CModuleIndexDialog : public QObject {
+class CModuleIndexDialog: public QProgressDialog {
         Q_OBJECT
-    public:
-        /** Get the singleton instance.
-         *
-         */
-        static CModuleIndexDialog* getInstance();
+        Q_DISABLE_COPY(CModuleIndexDialog)
+
+    public: /* Methods: */
+        /**
+          Creates and shows the indexing progress dialog and starts the actual
+          indexing. It shows the dialog with progress information. In case
+          indexing some module is unsuccessful or cancelled, any indices that
+          were created for other given modules are deleted. After indexing, the
+          dialog is closed.
+          \param[in] modules The list of modules to index.
+          \pre all given modules are unindexed
+          \returns whether the indexing was finished successfully.
+        */
+        static bool indexAllModules(const QList<const CSwordModuleInfo*> &modules);
+
+    private: /* Methods: */
+        CModuleIndexDialog(int numModules);
 
         /**
-          Starts the actual indexing. It shows the dialog with progress
-          information.
-          \returns whether the indexing was successful.
+          Shows the indexing progress dialog and starts the actual indexing. It
+          shows the dialog with progress information. In case indexing some
+          module is unsuccessful or cancelled, any indices that were created for
+          other given modules are deleted. After indexing, the dialog is closed.
+          \param[in] modules The list of modules to index.
+          \pre all given modules are unindexed
+          \returns whether the indexing was finished successfully.
         */
-        bool indexAllModules(const QList<const CSwordModuleInfo*> &modules);
+        bool indexAllModules2(const QList<const CSwordModuleInfo*> &modules);
 
-        /**
-          Indexes all modules in the list which don't have an index yet.
-          \returns whether the indexing was successful.
-        */
-        bool indexUnindexedModules(const QList<const CSwordModuleInfo*> &modules);
-
-    signals:
-        /** Indexing is cancelled programmatically. */
-        void sigCancel();
-
-    private:
-        QProgressDialog* m_progress;
-        int m_currentModuleIndex;
-
-    protected slots:
-        void slotModuleProgress( int percentage );
+    private slots:
+        void slotModuleProgress(int percentage);
         void slotFinished();
-        void slotSwordSetupChanged();
+
+    private: /* Fields: */
+        static QMutex m_singleInstanceMutex;
+        int m_currentModuleIndex;
 };
 
 #endif
