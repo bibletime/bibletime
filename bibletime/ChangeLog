@@ -1,3 +1,6 @@
+2010-07-20 Jaak Ristioja <ristioja@gmail.com>
+    * Enhanced module indexing dialogs on search, and fixed a crash there.
+
 2010-07-11 Martin Gruner <mgruner@crosswire.org>
     * Released 2.7.2
     * fix version number

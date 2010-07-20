@@ -84,9 +84,6 @@ CSearchDialog::CSearchDialog(QWidget *parent)
     setWindowTitle(tr("Search"));
     setAttribute(Qt::WA_DeleteOnClose);
 
-    connect(&m_searcher, SIGNAL(finished()),
-            this,        SLOT(searchFinished()));
-
     initView();
     initConnections();
 }
@@ -96,10 +93,9 @@ CSearchDialog::~CSearchDialog() {
     m_staticDialog = 0;
 }
 
-/** Starts the search with the set modules and the set search text. */
 void CSearchDialog::startSearch() {
+    typedef QList<const CSwordModuleInfo*> ML;
     QString originalSearchText(m_searchOptionsArea->searchText());
-    QString searchText("");
 
     // first check the search string for errors
     {
@@ -109,50 +105,72 @@ void CSearchDialog::startSearch() {
             return;
         }
     }
-
-    searchText = prepareSearchText(originalSearchText);
+    QString searchText = prepareSearchText(originalSearchText);
 
     // Insert search text into history list of combobox
     m_searchOptionsArea->addToHistory(originalSearchText);
 
-    // check that we have the indices we need for searching
-    if (!m_searcher.modulesHaveIndices(modules()) )	{
-        int result = util::showQuestion(this, tr("Missing indices"),
-                                        tr("One or more works need indexing before they can be searched.\n"
-                                           "This could take a long time. Proceed with indexing?"),
-                                        QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
-        // In SuSE 10.0 the result is the logical or of the button type, just like it is
-        // inputed into the QMessageBox.
-        if ( (result == (QMessageBox::Yes | QMessageBox::Default)) ||
-                (result == QMessageBox::Yes) || (result == QMessageBox::Default) ) {
-            CModuleIndexDialog* dlg = CModuleIndexDialog::getInstance();
-            dlg->indexUnindexedModules( modules() );
+    // Check that we have the indices we need for searching
+    ML unindexedModules = CSwordModuleSearch::unindexedModules(modules());
+    if (unindexedModules.size() > 0) {
+        // Build the list of module names:
+        QStringList moduleNameList;
+        Q_FOREACH (const CSwordModuleInfo *m, unindexedModules) {
+            moduleNameList.append(m->name());
         }
-        else {
+        QString moduleNames("<br><center>");
+        moduleNames.append(moduleNameList.join(", "));
+        moduleNames.append("</center><br>");
+
+        // Ask the user about unindexed modules:
+        int result = util::showQuestion(
+                this, tr("Missing indices"),
+                tr("The following modules need to be indexed before they can be"
+                   " searched in:") + moduleNames + tr("Indexing could take a l"
+                   "ong time. Click \"Yes\" to index the modules and start the "
+                   "search, or \"No\" to cancel the search."),
+                QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+
+        // User didn't press "Yes":
+        if ((result & (QMessageBox::Yes | QMessageBox::Default)) == 0x0) {
+            return;
+        }
+
+        // Show indexing dialog, and index the modules:
+        if (!CModuleIndexDialog::getInstance()->indexAllModules(unindexedModules)) {
+            // User cancelled.
             return;
         }
     }
 
+    // Set the search options:
+    m_searcher.setSearchedText(searchText);
+    m_searcher.setModules(modules());
     if (m_searchOptionsArea->hasSearchScope()) {
-        m_searcher.setSearchScope( m_searchOptionsArea->searchScope() );
-    }
-    else {
+        m_searcher.setSearchScope(m_searchOptionsArea->searchScope());
+    } else {
         m_searcher.resetSearchScope();
     }
 
-    m_searcher.setModules( modules() );
-    m_searcher.setSearchedText(searchText);
+    // Disable the dialog:
+    setEnabled(false);
+    setCursor(Qt::WaitCursor);
 
-
-    //Just to be sure that it can't be clicked again, if the search happens to be a bit slow.
-    m_searchOptionsArea->searchButton()->setEnabled(false);
-    m_searchOptionsArea->m_searchTextCombo->setEnabled(false);
-
+    // Execute search:
     m_searcher.startSearch();
 
-    m_searchOptionsArea->searchButton()->setEnabled(true);
-    m_searchOptionsArea->m_searchTextCombo->setEnabled(true);
-    m_searchOptionsArea->m_searchTextCombo->setFocus();
+    // Display the search results:
+    if (m_searcher.foundItems() > 0) {
+        m_searchResultArea->setSearchResult(m_searcher.results());
+    } else {
+        m_searchResultArea->reset();
+    }
+    m_staticDialog->raise();
+    m_staticDialog->activateWindow();
+
+    // Re-enable the dialog:
+    setEnabled(true);
+    setCursor(Qt::ArrowCursor);
 }
 
 QString CSearchDialog::prepareSearchText(const QString& orig) {
@@ -229,17 +247,6 @@ void CSearchDialog::initView() {
     verticalLayout->addLayout(horizontalLayout);
 
     loadDialogSettings();
-}
-
-void CSearchDialog::searchFinished() {
-    if (m_searcher.foundItems() > 0) {
-        m_searchResultArea->setSearchResult(m_searcher.results());
-    }
-    else {
-        m_searchResultArea->reset();
-    }
-    m_staticDialog->raise();
-    m_staticDialog->activateWindow();
 }
 
 void CSearchDialog::showModulesSelector() {

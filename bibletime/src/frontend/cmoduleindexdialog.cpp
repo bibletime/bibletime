@@ -27,13 +27,16 @@ CModuleIndexDialog* CModuleIndexDialog::getInstance() {
     return instance;
 }
 
-void CModuleIndexDialog::indexAllModules(
+bool CModuleIndexDialog::indexAllModules(
         const QList<const CSwordModuleInfo*> &modules)
 {
+    if (modules.size() < 0) return true;
+
     static bool indexing = false;
+
+    bool success = true;
     if (!indexing) {
         indexing = true;
-        if (modules.count() < 1) return;
 
         m_currentModuleIndex = 0;
         m_progress = new QProgressDialog(QString(""), tr("Cancel"), 0, modules.count()*100);
@@ -42,35 +45,55 @@ void CModuleIndexDialog::indexAllModules(
         m_progress->show();
         m_progress->raise();
 
-        Q_FOREACH(const CSwordModuleInfo *info, modules) {
+        QList<CSwordModuleInfo *> indexedModules;
+        Q_FOREACH(const CSwordModuleInfo *cm, modules) {
+            Q_ASSERT(!cm->hasIndex());
+
+            /// \warning const_cast
+            CSwordModuleInfo *m = const_cast<CSwordModuleInfo*>(cm);
+            indexedModules.append(m);
+
             /// \todo how to cancel
             //QObject::connect(CSwordBackend::instance()(), SIGNAL(sigSwordSetupChanged()), this, SLOT(swordSetupChanged()));
-            connect(this, SIGNAL(sigCancel()), info, SLOT(cancelIndexing()) );
-            connect(m_progress, SIGNAL(canceled()), info, SLOT(cancelIndexing()));
-            connect(info, SIGNAL(indexingFinished()), this, SLOT(slotFinished()));
-            connect(info, SIGNAL(indexingProgress(int)), this, SLOT(slotModuleProgress(int)) );
-            QString modname(info->name());
+            connect(this, SIGNAL(sigCancel()), m, SLOT(cancelIndexing()) );
+            connect(m_progress, SIGNAL(canceled()), m, SLOT(cancelIndexing()));
+            connect(m, SIGNAL(indexingFinished()), this, SLOT(slotFinished()));
+            connect(m, SIGNAL(indexingProgress(int)), this, SLOT(slotModuleProgress(int)) );
+            QString modname(m->name());
             const QString labelText = tr("Creating index for work: %1").arg(modname);
             m_progress->setLabelText(labelText);
 
             // Single module indexing blocks until finished:
-            /// \warning const_cast
-            const_cast<CSwordModuleInfo*>(info)->buildIndex();
+            m->buildIndex();
 
             m_currentModuleIndex++;
-            disconnect(m_progress, SIGNAL(canceled()), info, SLOT(cancelIndexing()));
-            disconnect(info, SIGNAL(indexingFinished()), this, SLOT(slotFinished()));
-            disconnect(info, SIGNAL(indexingProgress(int)), this, SLOT(slotModuleProgress(int)) );
-            if (m_progress->wasCanceled()) break;
+            disconnect(m_progress, SIGNAL(canceled()), m, SLOT(cancelIndexing()));
+            disconnect(m, SIGNAL(indexingFinished()), this, SLOT(slotFinished()));
+            disconnect(m, SIGNAL(indexingProgress(int)), this, SLOT(slotModuleProgress(int)) );
+            if (m_progress->wasCanceled()) {
+                success = false;
+                break;
+            }
         }
 
         delete m_progress;
         m_progress = 0;
+
+        if (!success) {
+            // Delete already created indices:
+            Q_FOREACH(CSwordModuleInfo *m, indexedModules) {
+                if (m->hasIndex()) {
+                    m->deleteIndex();
+                }
+            }
+        }
+
         indexing = false;
     }
+    return success;
 }
 
-void CModuleIndexDialog::indexUnindexedModules(
+bool CModuleIndexDialog::indexUnindexedModules(
         const QList<const CSwordModuleInfo*> &modules)
 {
     QList<const CSwordModuleInfo*> unindexedMods;
@@ -83,7 +106,7 @@ void CModuleIndexDialog::indexUnindexedModules(
 
         unindexedMods << (*it);
     }
-    indexAllModules(unindexedMods);
+    return indexAllModules(unindexedMods);
 }
 
 void CModuleIndexDialog::slotModuleProgress( int percentage ) {

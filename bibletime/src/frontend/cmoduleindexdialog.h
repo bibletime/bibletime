@@ -32,14 +32,18 @@ class CModuleIndexDialog : public QObject {
          */
         static CModuleIndexDialog* getInstance();
 
-        /** Starts the actual indexing. It shows the dialog with progress information.
-         */
-        void indexAllModules(const QList<const CSwordModuleInfo*> &modules);
+        /**
+          Starts the actual indexing. It shows the dialog with progress
+          information.
+          \returns whether the indexing was successful.
+        */
+        bool indexAllModules(const QList<const CSwordModuleInfo*> &modules);
 
         /**
           Indexes all modules in the list which don't have an index yet.
+          \returns whether the indexing was successful.
         */
-        void indexUnindexedModules(const QList<const CSwordModuleInfo*> &modules);
+        bool indexUnindexedModules(const QList<const CSwordModuleInfo*> &modules);
 
     signals:
         /** Indexing is cancelled programmatically. */

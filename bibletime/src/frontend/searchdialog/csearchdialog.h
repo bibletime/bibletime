@@ -117,7 +117,6 @@ class CSearchDialog : public QDialog {
         */
         void startSearch();
 
-        void searchFinished();
         void showModulesSelector();
         /**
         * Initializes the signal slot connections

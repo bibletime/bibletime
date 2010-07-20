@@ -52,7 +52,7 @@ class CSwordModuleSearch: public QObject {
         */
         inline void setModules(const QList<const CSwordModuleInfo*> &modules) {
             Q_ASSERT(!modules.empty());
-            Q_ASSERT(modulesHaveIndices(modules));
+            Q_ASSERT(unindexedModules(modules).empty());
             m_searchModules = modules;
         }
 
@@ -96,17 +96,10 @@ class CSwordModuleSearch: public QObject {
         }
 
         /**
-          \returns whether all of the specified modules have indices already
-                   built.
+          \returns the list of unindexed modules in the given list.
         */
-        static bool modulesHaveIndices(
+        static QList<const CSwordModuleInfo*> unindexedModules(
                 const QList<const CSwordModuleInfo*> &modules);
-
-    signals:
-        /**
-          This signal is emitted when the search is completed.
-        */
-        void finished();
 
     private: /* Fields: */
         QString                        m_searchText;

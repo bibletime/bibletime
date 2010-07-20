@@ -31,8 +31,6 @@ void CSwordModuleSearch::startSearch() {
             m_foundItems += found;
         }
     }
-
-    emit finished();
 }
 
 void CSwordModuleSearch::setSearchScope(const sword::ListKey &scope) {
@@ -52,13 +50,14 @@ void CSwordModuleSearch::setSearchScope(const sword::ListKey &scope) {
     }
 }
 
-bool CSwordModuleSearch::modulesHaveIndices(
+QList<const CSwordModuleInfo*> CSwordModuleSearch::unindexedModules(
         const QList<const CSwordModuleInfo*> &modules)
 {
+    QList<const CSwordModuleInfo*> unindexed;
     Q_FOREACH (const CSwordModuleInfo *m, modules) {
         if (!m->hasIndex()) {
-            return false;
+            unindexed.append(m);
         }
     }
-    return true;
+    return unindexed;
 }
