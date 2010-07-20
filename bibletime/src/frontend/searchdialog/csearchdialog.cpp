@@ -83,7 +83,10 @@ CSearchDialog::CSearchDialog(QWidget *parent)
     setWindowIcon(DU::getIcon(CResMgr::searchdialog::icon));
     setWindowTitle(tr("Search"));
     setAttribute(Qt::WA_DeleteOnClose);
-    m_searcher.connectFinished( this, SLOT(searchFinished()));
+
+    connect(&m_searcher, SIGNAL(finished()),
+            this,        SLOT(searchFinished()));
+
     initView();
     initConnections();
 }

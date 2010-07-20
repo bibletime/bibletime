@@ -13,7 +13,6 @@
 #include <QObject>
 
 #include <QHash>
-#include <QString>
 
 // Sword includes:
 #include <listkey.h>
@@ -35,14 +34,47 @@ class CSwordModuleSearch: public QObject {
     public: /* Types: */
         typedef QHash<const CSwordModuleInfo*, sword::ListKey> Results;
 
-    public:
+    public: /* Methods: */
         inline CSwordModuleSearch()
-            : m_searchOptions(0), m_foundItems(0) {}
+            : m_foundItems(0) {}
 
         /**
-        * Sets the text which should be search in the modules.
+          Sets the text which should be search in the modules.
+          \param[in] text the text to search.
         */
-        void setSearchedText( const QString& );
+        inline void setSearchedText(const QString &text) {
+            m_searchText = text;
+        }
+
+        /**
+          Set the modules which should be searched.
+          \param[in] modules the modules to search in.
+        */
+        inline void setModules(const QList<const CSwordModuleInfo*> &modules) {
+            Q_ASSERT(!modules.empty());
+            Q_ASSERT(modulesHaveIndices(modules));
+            m_searchModules = modules;
+        }
+
+        /**
+          Sets the search scope.
+          \param[in] scope the scope used for the search.
+        */
+        void setSearchScope(const sword::ListKey &scope);
+
+        /**
+          Resets the search scope.
+        */
+        inline void resetSearchScope() {
+            m_searchScope.ClearList();
+        }
+
+        /**
+          \returns the search scope.
+        */
+        const sword::ListKey &searchScope() const {
+            return m_searchScope;
+        }
 
         /**
           Starts the search for the search text.
@@ -50,22 +82,9 @@ class CSwordModuleSearch: public QObject {
         void startSearch();
 
         /**
-        * This function sets the modules which should be searched.
-        */
-        void setModules(const QList<const CSwordModuleInfo*> &modules);
-        /**
-        * Sets the search scope.
-        */
-        void setSearchScope( const sword::ListKey& scope );
-        /**
-        * Sets the seaech scope back.
-        */
-        void resetSearchScope();
-
-        /**
           \returns the number of found items in the last search.
         */
-        inline unsigned foundItems() const {
+        inline unsigned long foundItems() const {
             return m_foundItems;
         }
 
@@ -77,31 +96,25 @@ class CSwordModuleSearch: public QObject {
         }
 
         /**
-        * Returns a copy of the used search scope.
+          \returns whether all of the specified modules have indices already
+                   built.
         */
-        const sword::ListKey& searchScope() const;
-
-        void connectFinished( QObject * receiver, const char * member );
-
-        /**
-          \returns whether all of the specified modules have indices already built.
-        */
-        bool modulesHaveIndices(const QList<const CSwordModuleInfo*> &modules);
-
-    protected:
-        QString m_searchedText;
-        sword::ListKey m_searchScope;
-        QList<const CSwordModuleInfo*> m_moduleList;
-
-        int m_searchOptions;
-        Results m_results;
-        unsigned m_foundItems;
+        static bool modulesHaveIndices(
+                const QList<const CSwordModuleInfo*> &modules);
 
     signals:
+        /**
+          This signal is emitted when the search is completed.
+        */
         void finished();
 
-    private:
-        static CSwordModuleSearch* searcher;
+    private: /* Fields: */
+        QString                        m_searchText;
+        sword::ListKey                 m_searchScope;
+        QList<const CSwordModuleInfo*> m_searchModules;
+
+        Results                        m_results;
+        unsigned long                  m_foundItems;
 };
 
 #endif

@@ -10,29 +10,22 @@
 #include "backend/cswordmodulesearch.h"
 
 #include "backend/config/cbtconfig.h"
-#include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
 #include "btglobal.h"
 
-// Sword includes:
-#include <listkey.h>
-#include <swkey.h>
-#include <swmodule.h>
-
-
-void CSwordModuleSearch::setModules(const QList<const CSwordModuleInfo*> &modules) {
-    m_moduleList = modules;
-}
 
 void CSwordModuleSearch::startSearch() {
+    // Clear old search results:
+    m_results.clear();
     m_foundItems = 0;
 
+    /// \todo What is the purpose of the following statement?
     CSwordBackend::instance()->setFilterOptions(CBTConfig::getFilterOptionDefaults());
 
-    m_results.clear();
-    Q_FOREACH(const CSwordModuleInfo *m, m_moduleList) {
+    // Search module-by-module:
+    Q_FOREACH(const CSwordModuleInfo *m, m_searchModules) {
         sword::ListKey results;
-        int found = m->searchIndexed(m_searchedText, m_searchScope, results);
+        int found = m->searchIndexed(m_searchText, m_searchScope, results);
         if (found > 0) {
             m_results.insert(m, results);
             m_foundItems += found;
@@ -42,13 +35,9 @@ void CSwordModuleSearch::startSearch() {
     emit finished();
 }
 
-/** Sets the text which should be search in the modules. */
-void CSwordModuleSearch::setSearchedText( const QString& text ) {
-    m_searchedText = text;
-}
+void CSwordModuleSearch::setSearchScope(const sword::ListKey &scope) {
+    /// \todo Properly examine and document the inner workings of this method.
 
-/** Sets the search scope. */
-void CSwordModuleSearch::setSearchScope( const sword::ListKey& scope ) {
     m_searchScope.copyFrom( scope );
 
     if (!strlen(scope.getRangeText())) { //we can't search with an empty search scope, would crash
@@ -63,29 +52,11 @@ void CSwordModuleSearch::setSearchScope( const sword::ListKey& scope ) {
     }
 }
 
-/** Sets the search scope back. */
-void CSwordModuleSearch::resetSearchScope() {
-    m_searchScope.ClearList();
-}
-
-/** Returns a copy of the used search scope. */
-const sword::ListKey& CSwordModuleSearch::searchScope() const {
-    return m_searchScope;
-}
-
-void CSwordModuleSearch::connectFinished( QObject *receiver, const char *member ) {
-    //m_finishedSig.connect(receiver, member);
-    QObject::connect(this, SIGNAL(finished()), receiver, member);
-}
-
 bool CSwordModuleSearch::modulesHaveIndices(
         const QList<const CSwordModuleInfo*> &modules)
 {
-    QList<const CSwordModuleInfo*>::const_iterator end_it = modules.end();
-    for (QList<const CSwordModuleInfo*>::const_iterator it = modules.begin();
-         it != end_it; ++it)
-    {
-        if (!(*it)->hasIndex()) {
+    Q_FOREACH (const CSwordModuleInfo *m, modules) {
+        if (!m->hasIndex()) {
             return false;
         }
     }
