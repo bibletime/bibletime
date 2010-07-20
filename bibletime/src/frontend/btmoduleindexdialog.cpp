@@ -7,29 +7,29 @@
 *
 **********/
 
-#include "frontend/cmoduleindexdialog.h"
+#include "frontend/btmoduleindexdialog.h"
 
 #include <QApplication>
 #include <QMutexLocker>
 #include "backend/managers/cswordbackend.h"
 
 
-QMutex CModuleIndexDialog::m_singleInstanceMutex;
+QMutex BtModuleIndexDialog::m_singleInstanceMutex;
 
-bool CModuleIndexDialog::indexAllModules(
+bool BtModuleIndexDialog::indexAllModules(
         const QList<const CSwordModuleInfo*> &modules)
 {
     QMutexLocker lock(&m_singleInstanceMutex);
 
     if (modules.empty()) return true;
 
-    CModuleIndexDialog d(modules.size());
+    BtModuleIndexDialog d(modules.size());
     d.show();
     d.raise();
     return d.indexAllModules2(modules);
 }
 
-CModuleIndexDialog::CModuleIndexDialog(int numModules)
+BtModuleIndexDialog::BtModuleIndexDialog(int numModules)
     : QProgressDialog(tr("Preparing to index modules..."), tr("Cancel"), 0,
                       numModules * 100, 0),
       m_currentModuleIndex(0)
@@ -38,7 +38,7 @@ CModuleIndexDialog::CModuleIndexDialog(int numModules)
     setModal(true);
 }
 
-bool CModuleIndexDialog::indexAllModules2(
+bool BtModuleIndexDialog::indexAllModules2(
         const QList<const CSwordModuleInfo*> &modules)
 {
     bool success = true;
@@ -92,12 +92,12 @@ bool CModuleIndexDialog::indexAllModules2(
     return success;
 }
 
-void CModuleIndexDialog::slotModuleProgress(int percentage) {
+void BtModuleIndexDialog::slotModuleProgress(int percentage) {
     setValue(m_currentModuleIndex * 100 + percentage);
     qApp->processEvents();
 }
 
-void CModuleIndexDialog::slotFinished() {
+void BtModuleIndexDialog::slotFinished() {
     setValue(m_currentModuleIndex * 100 + 100);
     qApp->processEvents();
 }

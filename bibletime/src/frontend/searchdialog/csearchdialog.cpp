@@ -24,7 +24,7 @@
 #include "backend/cswordmodulesearch.h"
 #include "backend/keys/cswordkey.h"
 #include "backend/keys/cswordversekey.h"
-#include "frontend/cmoduleindexdialog.h"
+#include "frontend/btmoduleindexdialog.h"
 #include "frontend/searchdialog/btsearchoptionsarea.h"
 #include "frontend/searchdialog/btsearchresultarea.h"
 #include "util/cresmgr.h"
@@ -137,8 +137,8 @@ void CSearchDialog::startSearch() {
         }
 
         // Show indexing dialog, and index the modules:
-        if (!CModuleIndexDialog::indexAllModules(unindexedModules)) {
-            // User cancelled.
+        if (!BtModuleIndexDialog::indexAllModules(unindexedModules)) {
+            // Failed or user cancelled.
             return;
         }
     }

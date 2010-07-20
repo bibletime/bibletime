@@ -7,8 +7,8 @@
 *
 **********/
 
-#ifndef CMODULEINDEXDIALOG_H
-#define CMODULEINDEXDIALOG_H
+#ifndef BTMODULEINDEXDIALOG_H
+#define BTMODULEINDEXDIALOG_H
 
 #include <QProgressDialog>
 
@@ -22,9 +22,9 @@ class CSwordModuleInfo;
   While the indexing is in progress it creates a blocking, top level dialog which shows the progress
  * while the indexing is done.
 */
-class CModuleIndexDialog: public QProgressDialog {
+class BtModuleIndexDialog: public QProgressDialog {
         Q_OBJECT
-        Q_DISABLE_COPY(CModuleIndexDialog)
+        Q_DISABLE_COPY(BtModuleIndexDialog)
 
     public: /* Methods: */
         /**
@@ -40,7 +40,7 @@ class CModuleIndexDialog: public QProgressDialog {
         static bool indexAllModules(const QList<const CSwordModuleInfo*> &modules);
 
     private: /* Methods: */
-        CModuleIndexDialog(int numModules);
+        BtModuleIndexDialog(int numModules);
 
         /**
           Shows the indexing progress dialog and starts the actual indexing. It

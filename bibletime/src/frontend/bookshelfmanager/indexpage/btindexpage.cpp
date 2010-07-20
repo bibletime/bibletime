@@ -19,7 +19,7 @@
 #include "backend/config/cbtconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
-#include "frontend/cmoduleindexdialog.h"
+#include "frontend/btmoduleindexdialog.h"
 #include "util/directory.h"
 #include "util/cresmgr.h"
 #include "util/tool.h"
@@ -154,7 +154,7 @@ void BtIndexPage::createIndices() {
 
     //Shows the progress dialog
     if (indicesCreated) {
-        CModuleIndexDialog::indexAllModules(moduleList);
+        BtModuleIndexDialog::indexAllModules(moduleList);
         populateModuleList();
     }
 }
