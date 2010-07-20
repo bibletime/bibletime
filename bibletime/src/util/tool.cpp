@@ -63,45 +63,43 @@ bool util::tool::savePlainFile( const QString& filename, const QString& text, co
 }
 
 
-/** Returns the icon used for the module given as aparameter. */
-QIcon util::tool::getIconForModule( CSwordModuleInfo* module_info ) {
+QIcon util::tool::getIconForModule(const CSwordModuleInfo *module) {
     namespace DU = util::directory;
-    return DU::getIcon(getIconNameForModule(module_info));
+    return DU::getIcon(getIconNameForModule(module));
 }
 
-/** Returns the name for the icon used for the module given as aparameter. */
-QString util::tool::getIconNameForModule( CSwordModuleInfo* module_info ) {
+QString util::tool::getIconNameForModule(const CSwordModuleInfo *module) {
     //qDebug() << "util::tool::getIconNameForModule";
-    if (!module_info) return CResMgr::modules::book::icon_locked;
+    if (!module) return CResMgr::modules::book::icon_locked;
 
-    if (module_info->category() == CSwordModuleInfo::Cult) {
+    if (module->category() == CSwordModuleInfo::Cult) {
         return "stop.svg";
     }
 
-    switch (module_info->type()) {
+    switch (module->type()) {
         case CSwordModuleInfo::Bible:
-            if (module_info->isLocked())
+            if (module->isLocked())
                 return CResMgr::modules::bible::icon_locked;
             else
                 return CResMgr::modules::bible::icon_unlocked;
             break;
 
         case CSwordModuleInfo::Lexicon:
-            if (module_info->isLocked())
+            if (module->isLocked())
                 return CResMgr::modules::lexicon::icon_locked;
             else
                 return CResMgr::modules::lexicon::icon_unlocked;
             break;
 
         case CSwordModuleInfo::Commentary:
-            if (module_info->isLocked())
+            if (module->isLocked())
                 return CResMgr::modules::commentary::icon_locked;
             else
                 return CResMgr::modules::commentary::icon_unlocked;
             break;
 
         case CSwordModuleInfo::GenericBook:
-            if (module_info->isLocked())
+            if (module->isLocked())
                 return CResMgr::modules::book::icon_locked;
             else
                 return CResMgr::modules::book::icon_unlocked;
@@ -109,7 +107,7 @@ QString util::tool::getIconNameForModule( CSwordModuleInfo* module_info ) {
 
         case CSwordModuleInfo::Unknown: //fallback
         default:
-            if (module_info->isLocked())
+            if (module->isLocked())
                 return CResMgr::modules::book::icon_locked;
             else
                 return CResMgr::modules::book::icon_unlocked;

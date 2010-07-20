@@ -204,15 +204,15 @@ void BtSearchOptionsArea::initConnections() {
 }
 
 /** Sets the modules used by the search. */
-void BtSearchOptionsArea::setModules( QList<CSwordModuleInfo*> modules ) {
+void BtSearchOptionsArea::setModules(const QList<const CSwordModuleInfo*> &modules) {
     qDebug() << "BtSearchOptionsArea::setModules";
     qDebug() << modules;
     QString t;
 
     m_modules.clear(); //remove old modules
-    QList<CSwordModuleInfo*>::iterator end_it = modules.end();
+    QList<const CSwordModuleInfo*>::const_iterator end_it = modules.end();
 
-    for (QList<CSwordModuleInfo*>::iterator it(modules.begin()); it != end_it; ++it) {
+    for (QList<const CSwordModuleInfo*>::const_iterator it(modules.begin()); it != end_it; ++it) {
         /// \todo Check for containsRef compat
         if (*it == 0) { //don't operate on null modules.
             continue;
@@ -256,7 +256,7 @@ void BtSearchOptionsArea::moduleListTextSelected(int index) {
     QString text = m_modulesCombo->itemText(index);
     qDebug() << text;
     QStringList moduleNamesList = text.split(", ");
-    QList<CSwordModuleInfo*> moduleList;
+    QList<const CSwordModuleInfo*> moduleList;
     foreach(QString name, moduleNamesList) {
         moduleList.append(CSwordBackend::instance()->findModuleByName(name));
     }
@@ -271,10 +271,6 @@ void BtSearchOptionsArea::chooseModules() {
         setModules(dlg->checkedModules().toList());
     }
     delete dlg;
-}
-
-QList<CSwordModuleInfo*> BtSearchOptionsArea::modules() const {
-    return m_modules;
 }
 
 void BtSearchOptionsArea::reset() {

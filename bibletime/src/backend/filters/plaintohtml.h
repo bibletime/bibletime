@@ -14,9 +14,10 @@
 #include <swbuf.h>
 #include <swfilter.h>
 
-
-class SWKey;
-class SWModule;
+namespace sword {
+    class SWKey;
+    class SWModule;
+}
 
 namespace Filters {
 

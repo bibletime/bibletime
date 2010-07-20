@@ -46,12 +46,16 @@ void dumpEntryAttributes(sword::SWModule *module) {
 
 namespace Rendering {
 
-CHTMLExportRendering::CHTMLExportRendering(const CHTMLExportRendering::Settings& settings, CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions)
+CHTMLExportRendering::CHTMLExportRendering(
+        const CHTMLExportRendering::Settings &settings,
+        const DisplayOptions &displayOptions,
+        const FilterOptions &filterOptions)
         : m_displayOptions(displayOptions),
-        m_filterOptions(filterOptions),
-        m_settings(settings) {}
-
-CHTMLExportRendering::~CHTMLExportRendering() {}
+          m_filterOptions(filterOptions),
+          m_settings(settings)
+{
+    // Intentionally empty
+}
 
 const QString CHTMLExportRendering::renderEntry( const KeyTreeItem& i, CSwordKey* k) {
 
@@ -64,7 +68,7 @@ const QString CHTMLExportRendering::renderEntry( const KeyTreeItem& i, CSwordKey
         if (!i.childList()->isEmpty()) {
             KeyTree * const  tree = i.childList();
 
-            const QList<CSwordModuleInfo*> modules = collectModules(tree);
+            const QList<const CSwordModuleInfo*> modules = collectModules(tree);
 
             if (modules.count() == 1) { //insert the direction into the sorrounding div
                 ret.insert( 5, QString("dir=\"%1\" ").arg((modules.first()->textDirection() == CSwordModuleInfo::LeftToRight) ? "ltr" : "rtl" ));
@@ -80,7 +84,7 @@ const QString CHTMLExportRendering::renderEntry( const KeyTreeItem& i, CSwordKey
     }
 
 
-    const QList<CSwordModuleInfo*>& modules( i.modules() );
+    const QList<const CSwordModuleInfo*> &modules(i.modules());
     if (modules.count() == 0) {
         return QString(""); //no module present for rendering
     }
@@ -104,10 +108,10 @@ const QString CHTMLExportRendering::renderEntry( const KeyTreeItem& i, CSwordKey
     QString langAttr;
     QString key_renderedText;
 
-    QList<CSwordModuleInfo*>::const_iterator end_modItr = modules.end();
+    QList<const CSwordModuleInfo*>::const_iterator end_modItr = modules.end();
 
-    for (QList<CSwordModuleInfo*>::const_iterator mod_Itr(modules.begin()); mod_Itr != end_modItr; ++mod_Itr) {
-        key->module(*mod_Itr);
+    for (QList<const CSwordModuleInfo*>::const_iterator mod_Itr(modules.begin()); mod_Itr != end_modItr; ++mod_Itr) {
+        key->setModule(*mod_Itr);
         key->setKey(i.key());
 
         keyText = key->key();
@@ -210,7 +214,7 @@ void CHTMLExportRendering::initRendering() {
 }
 
 const QString CHTMLExportRendering::finishText( const QString& text, KeyTree& tree ) {
-    const QList<CSwordModuleInfo*> modules = collectModules(&tree);
+    const QList<const CSwordModuleInfo*> modules = collectModules(&tree);
 
     const CLanguageMgr::Language* const lang = modules.first()->language();
 
@@ -229,7 +233,11 @@ const QString CHTMLExportRendering::finishText( const QString& text, KeyTree& tr
 /*!
     \fn CHTMLExportRendering::entryLink( KeyTreeItem& item )
  */
-const QString CHTMLExportRendering::entryLink( const KeyTreeItem& item, CSwordModuleInfo* ) {
+const QString CHTMLExportRendering::entryLink(const KeyTreeItem& item,
+                                              const CSwordModuleInfo *module)
+{
+    Q_UNUSED(module);
+
     return item.key();
 }
 

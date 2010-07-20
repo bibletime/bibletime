@@ -12,6 +12,7 @@
 #include "backend/config/cbtconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
+#include "btglobal.h"
 
 // Sword includes:
 #include <listkey.h>
@@ -19,45 +20,26 @@
 #include <swmodule.h>
 
 
-CSwordModuleSearch* CSwordModuleSearch::searcher = 0;
-
-CSwordModuleSearch::CSwordModuleSearch()
-        : m_searchedText(QString::null),
-        m_searchOptions(0),
-        m_foundItems(false) {
-    searcher = this;
+void CSwordModuleSearch::setModules(const QList<const CSwordModuleInfo*> &modules) {
+    m_moduleList = modules;
 }
 
-CSwordModuleSearch::~CSwordModuleSearch() {
-    searcher = 0;
-}
+void CSwordModuleSearch::startSearch() {
+    m_foundItems = 0;
 
-/** This function sets the modules which should be searched. */
-void CSwordModuleSearch::setModules( const QList<CSwordModuleInfo*>& list ) {
-    m_moduleList = list;
-}
-
-/** Starts the search for the search text. */
-bool CSwordModuleSearch::startSearch() {
     CSwordBackend::instance()->setFilterOptions(CBTConfig::getFilterOptionDefaults());
-    m_foundItems   = false;
 
-    bool foundItems = false;
-
-    // for (m_moduleList.first(); m_moduleList.current() && !m_terminateSearch; m_moduleList.next()) {
-    QList<CSwordModuleInfo*>::iterator end_it = m_moduleList.end();
-
-    for (QList<CSwordModuleInfo*>::iterator it = m_moduleList.begin(); it != end_it; ++it) {
-        if ( (*it)->searchIndexed(m_searchedText/*, m_searchOptions*/, m_searchScope) ) {
-            foundItems = true;
+    m_results.clear();
+    Q_FOREACH(const CSwordModuleInfo *m, m_moduleList) {
+        sword::ListKey results;
+        int found = m->searchIndexed(m_searchedText, m_searchScope, results);
+        if (found > 0) {
+            m_results.insert(m, results);
+            m_foundItems += found;
         }
     }
 
-    m_foundItems = foundItems;
-
-    //m_finishedSig.activate();
     emit finished();
-    return true;
 }
 
 /** Sets the text which should be search in the modules. */
@@ -86,11 +68,6 @@ void CSwordModuleSearch::resetSearchScope() {
     m_searchScope.ClearList();
 }
 
-/** Returns true if in the last search the searcher found items, if no items were found return false. */
-bool CSwordModuleSearch::foundItems() const {
-    return m_foundItems;
-}
-
 /** Returns a copy of the used search scope. */
 const sword::ListKey& CSwordModuleSearch::searchScope() const {
     return m_searchScope;
@@ -101,14 +78,16 @@ void CSwordModuleSearch::connectFinished( QObject *receiver, const char *member 
     QObject::connect(this, SIGNAL(finished()), receiver, member);
 }
 
-bool CSwordModuleSearch::modulesHaveIndices( const QList<CSwordModuleInfo*>& modules ) {
-    bool hasIndices = true;
-    QList<CSwordModuleInfo*>::const_iterator end_it = modules.end();
-    for ( QList<CSwordModuleInfo*>::const_iterator it = modules.begin(); it != end_it; ++it) {
+bool CSwordModuleSearch::modulesHaveIndices(
+        const QList<const CSwordModuleInfo*> &modules)
+{
+    QList<const CSwordModuleInfo*>::const_iterator end_it = modules.end();
+    for (QList<const CSwordModuleInfo*>::const_iterator it = modules.begin();
+         it != end_it; ++it)
+    {
         if (!(*it)->hasIndex()) {
-            hasIndices = false;
-            break;
+            return false;
         }
     }
-    return hasIndices;
+    return true;
 }

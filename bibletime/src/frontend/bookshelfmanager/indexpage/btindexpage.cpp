@@ -140,7 +140,7 @@ void BtIndexPage::populateModuleList() {
 /** Creates indices for selected modules if no index currently exists */
 void BtIndexPage::createIndices() {
     bool indicesCreated = false;
-    QList<CSwordModuleInfo*> moduleList;
+    QList<const CSwordModuleInfo*> moduleList;
 
     for (int i = 0; i < m_modsWithoutIndices->childCount(); i++) {
         if (m_modsWithoutIndices->child(i)->checkState(0) == Qt::Checked) {

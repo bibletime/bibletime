@@ -86,8 +86,8 @@ void myMessageOutput( QtMsgType type, const char *msg ) {
 }
 
 void registerMetaTypes() {
-    qRegisterMetaType<CSwordBackend::FilterOptions>();
-    qRegisterMetaType<CSwordBackend::DisplayOptions>();
+    qRegisterMetaType<FilterOptions>();
+    qRegisterMetaType<DisplayOptions>();
     qRegisterMetaTypeStreamOperators<BtBookshelfTreeModel::Grouping>("BtBookshelfTreeModel::Grouping");
 }
 

@@ -15,7 +15,11 @@
 #include <QColor>
 #include <QHash>
 #include <QMap>
+#include "backend/cswordmodulesearch.h"
 #include "frontend/searchdialog/analysis/csearchanalysisitem.h"
+
+// Sword includes
+#include <listkey.h>
 
 
 class CSwordModuleInfo;
@@ -39,7 +43,8 @@ class CSearchAnalysisScene : public QGraphicsScene {
         * This should be called only once because
         * QCanvas handles the updates automatically.
         */
-        void analyse(QList<CSwordModuleInfo*> modules);
+        void analyse(const CSwordModuleSearch::Results &results);
+
         /**
         * This function returns a color for each module
         * @return The color at position index in the list
@@ -62,17 +67,17 @@ class CSearchAnalysisScene : public QGraphicsScene {
         void slotResized();
 
     protected:
-        void setModules(QList<CSwordModuleInfo*> modules);
+        void setResults(const CSwordModuleSearch::Results &results);
 
     private:
         /**
         * Returns the count of the book in the module
         */
-        unsigned int getCount( const QString book, CSwordModuleInfo* module );
+        unsigned int getCount(const QString &book, const CSwordModuleInfo *module);
 
-        QList<CSwordModuleInfo*> m_moduleList;
+        CSwordModuleSearch::Results m_results;
         QHash<QString, CSearchAnalysisItem*> m_itemList;
-        QMap<CSwordModuleInfo*, unsigned int> m_lastPosList;
+        QMap<const CSwordModuleInfo*, unsigned int> m_lastPosList;
         int m_maxCount;
         double m_scaleFactor;
         CSearchAnalysisLegendItem* m_legend;

@@ -17,12 +17,18 @@
 #include "backend/rendering/cdisplayrendering.h"
 
 
-/** Returns the rendered text using the modules in the list and using the key parameter. The displayoptions and filter options are used, too. */
-const QString Rendering::CBookDisplay::text( const QList<CSwordModuleInfo*>& modules, const QString& keyName, const CSwordBackend::DisplayOptions displayOptions, const CSwordBackend::FilterOptions filterOptions ) {
-    CSwordBookModuleInfo* book = dynamic_cast<CSwordBookModuleInfo*>(modules.first());
+const QString Rendering::CBookDisplay::text(
+        const QList<const CSwordModuleInfo*> &modules,
+        const QString &keyName,
+        const DisplayOptions &displayOptions,
+        const FilterOptions &filterOptions)
+{
+    typedef CSwordBookModuleInfo CSBMI;
+
+    const CSBMI* book = dynamic_cast<const CSBMI*>(modules.first());
     Q_ASSERT(book);
 
-    CSwordBackend::DisplayOptions dOpts = displayOptions;
+    DisplayOptions dOpts = displayOptions;
     dOpts.lineBreaks = true; //books should render with blocks, not with inlined sections
 
     CDisplayRendering render(dOpts, filterOptions);
@@ -126,7 +132,9 @@ void Rendering::CBookDisplay::setupRenderTree(CSwordTreeKey * swordTree, CTextRe
     CTextRendering::KeyTreeItem::Settings settings;
     settings.highlight = (key == highlightKey);
 
-    CTextRendering::KeyTreeItem* item = new CTextRendering::KeyTreeItem(key, swordTree->module(0), settings );
+    /// \todo Check whether this is correct:
+    CTextRendering::KeyTreeItem *item = new CTextRendering::KeyTreeItem(
+            key, swordTree->module(), settings);
     renderTree->append( item );
 
     if (swordTree->hasChildren()) { //print tree for the child items

@@ -20,11 +20,13 @@ class CrossRefRendering : public Rendering::CHTMLExportRendering {
         friend class CInfoDisplay;
 
         CrossRefRendering(
-            CSwordBackend::DisplayOptions displayOptions = CBTConfig::getDisplayOptionDefaults(),
-            CSwordBackend::FilterOptions filterOptions = CBTConfig::getFilterOptionDefaults()
+            const DisplayOptions &displayOptions = CBTConfig::getDisplayOptionDefaults(),
+            const FilterOptions &filterOptions = CBTConfig::getFilterOptionDefaults()
         );
 
-        virtual const QString entryLink( const KeyTreeItem& item, CSwordModuleInfo* module );
+        virtual const QString entryLink(const KeyTreeItem &item,
+                                        const CSwordModuleInfo *module);
+
         virtual const QString finishText( const QString&, KeyTree& tree );
 };
 

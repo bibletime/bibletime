@@ -16,20 +16,19 @@
 #include <treekeyidx.h>
 
 
-int CSwordBookModuleInfo::depth() {
-    if (m_depth == -1) {
-        sword::TreeKeyIdx* key = tree();
-
-        if (key) {
-            key->root();
-            computeDepth(key, 0);
-        }
+CSwordBookModuleInfo::CSwordBookModuleInfo(sword::SWModule *module,
+                                           CSwordBackend * const usedBackend)
+    : CSwordModuleInfo(module, usedBackend,
+                       CSwordModuleInfo::GenericBook)
+{
+    sword::TreeKeyIdx *key = tree();
+    if (key) {
+        key->root();
+        computeDepth(key, 0);
     }
-
-    return m_depth;
 }
 
-void CSwordBookModuleInfo::computeDepth(sword::TreeKeyIdx* key, int level ) {
+void CSwordBookModuleInfo::computeDepth(sword::TreeKeyIdx *key, int level) {
     std::string savedKey;
     //	savedKey = key->getFullName(); //sword 1.5.8
     savedKey = key->getText();

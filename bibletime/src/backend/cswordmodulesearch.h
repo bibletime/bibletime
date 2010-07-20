@@ -12,6 +12,7 @@
 
 #include <QObject>
 
+#include <QHash>
 #include <QString>
 
 // Sword includes:
@@ -31,23 +32,27 @@ class CSwordModuleInfo;
 class CSwordModuleSearch: public QObject {
         Q_OBJECT
 
-    public:
-        CSwordModuleSearch();
+    public: /* Types: */
+        typedef QHash<const CSwordModuleInfo*, sword::ListKey> Results;
 
-        ~CSwordModuleSearch();
+    public:
+        inline CSwordModuleSearch()
+            : m_searchOptions(0), m_foundItems(0) {}
 
         /**
         * Sets the text which should be search in the modules.
         */
         void setSearchedText( const QString& );
+
         /**
-        * Starts the search for the search text.
+          Starts the search for the search text.
         */
-        bool startSearch();
+        void startSearch();
+
         /**
         * This function sets the modules which should be searched.
         */
-        void setModules( const QList<CSwordModuleInfo*>& );
+        void setModules(const QList<const CSwordModuleInfo*> &modules);
         /**
         * Sets the search scope.
         */
@@ -56,10 +61,21 @@ class CSwordModuleSearch: public QObject {
         * Sets the seaech scope back.
         */
         void resetSearchScope();
+
         /**
-        * @return "true" if in the last search the searcher found items, if no items were found return "false"
+          \returns the number of found items in the last search.
         */
-        bool foundItems() const;
+        inline unsigned foundItems() const {
+            return m_foundItems;
+        }
+
+        /**
+          \returns the results of the search.
+        */
+        const Results &results() const {
+            return m_results;
+        }
+
         /**
         * Returns a copy of the used search scope.
         */
@@ -68,18 +84,18 @@ class CSwordModuleSearch: public QObject {
         void connectFinished( QObject * receiver, const char * member );
 
         /**
-        * Returns true if all of the specified modules have indices already built.
+          \returns whether all of the specified modules have indices already built.
         */
-        bool modulesHaveIndices( const QList<CSwordModuleInfo*>& );
+        bool modulesHaveIndices(const QList<const CSwordModuleInfo*> &modules);
 
     protected:
         QString m_searchedText;
         sword::ListKey m_searchScope;
-        QList<CSwordModuleInfo*> m_moduleList;
+        QList<const CSwordModuleInfo*> m_moduleList;
 
         int m_searchOptions;
-
-        bool m_foundItems;
+        Results m_results;
+        unsigned m_foundItems;
 
     signals:
         void finished();

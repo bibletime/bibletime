@@ -268,7 +268,7 @@ void BtBookshelfTreeModel::setGroupingOrder(const Grouping &groupingOrder) {
     m_groupingOrder = groupingOrder;
 
     if (m_sourceModel != 0) {
-        QSet<CSwordModuleInfo*> checked(m_checkedModulesCache);
+        QSet<const CSwordModuleInfo*> checked(m_checkedModulesCache);
         m_checkedModulesCache.clear();
 
         beginRemoveRows(QModelIndex(), 0, m_rootItem->children().size() - 1);
@@ -304,7 +304,7 @@ void BtBookshelfTreeModel::setCheckable(bool checkable) {
     resetData();
 }
 
-void BtBookshelfTreeModel::setCheckedModules(const QSet<CSwordModuleInfo*> &modules) {
+void BtBookshelfTreeModel::setCheckedModules(const QSet<const CSwordModuleInfo*> &modules) {
     typedef ModuleItemMap::const_iterator MIMCI;
 
     for (MIMCI it(m_modules.constBegin()); it != m_modules.constEnd(); it++) {

@@ -16,17 +16,21 @@
 
 namespace InfoDisplay {
 
-CrossRefRendering::CrossRefRendering( CSwordBackend::DisplayOptions displayOptions,
-                                      CSwordBackend::FilterOptions filterOptions
-                                    )
-        : CHTMLExportRendering(Settings(), displayOptions, filterOptions) {}
+CrossRefRendering::CrossRefRendering(const DisplayOptions &displayOptions,
+                                     const FilterOptions &filterOptions)
+        : CHTMLExportRendering(Settings(), displayOptions, filterOptions)
+{
+    // Intentionally empty
+}
 
 const QString CrossRefRendering::finishText( const QString& text, KeyTree& ) {
     //   qDebug() << "CrossRefRendering::finishText";
     return text;
 }
 
-const QString CrossRefRendering::entryLink( const KeyTreeItem& item, CSwordModuleInfo*  module ) {
+const QString CrossRefRendering::entryLink(const KeyTreeItem &item,
+                                           const CSwordModuleInfo *module)
+{
     QString linkText;
 
     const bool isBible = module && (module->type() == CSwordModuleInfo::Bible);

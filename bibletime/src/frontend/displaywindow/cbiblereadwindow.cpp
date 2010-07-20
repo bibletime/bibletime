@@ -383,7 +383,7 @@ void CBibleReadWindow::copyDisplayedText() {
     CSwordVerseKey vk(*verseKey());
     vk.LowerBound(dummy);
 
-    CSwordBibleModuleInfo* bible = dynamic_cast<CSwordBibleModuleInfo*>(modules().first());
+    const CSwordBibleModuleInfo* bible = dynamic_cast<const CSwordBibleModuleInfo*>(modules().first());
     dummy.Verse(bible->verseCount(dummy.book(), dummy.Chapter()));
     vk.UpperBound(dummy);
 
@@ -394,10 +394,8 @@ void CBibleReadWindow::copyDisplayedText() {
 /** Saves the chapter as valid HTML page. */
 void CBibleReadWindow::saveChapterHTML() {
     //saves the complete chapter to disk
-    CSwordBibleModuleInfo* bible = dynamic_cast<CSwordBibleModuleInfo*>(modules().first());
-    Q_ASSERT(bible);
-    if (!bible) //shouldn't happen
-        return;
+    Q_ASSERT(dynamic_cast<const CSwordBibleModuleInfo*>(modules().first()) != 0);
+    const CSwordBibleModuleInfo *bible = static_cast<const CSwordBibleModuleInfo*>(modules().first());
 
     CSwordVerseKey dummy(*verseKey());
     dummy.Verse(1);
@@ -422,7 +420,7 @@ void CBibleReadWindow::saveChapterPlain() {
     dummy.Verse(1);
     vk.LowerBound(dummy);
 
-    CSwordBibleModuleInfo* bible = dynamic_cast<CSwordBibleModuleInfo*>(modules().first());
+    const CSwordBibleModuleInfo* bible = dynamic_cast<const CSwordBibleModuleInfo*>(modules().first());
     dummy.Verse(bible->verseCount(dummy.book(), dummy.Chapter()));
     vk.UpperBound(dummy);
 

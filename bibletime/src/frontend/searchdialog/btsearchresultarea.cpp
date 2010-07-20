@@ -98,17 +98,22 @@ void BtSearchResultArea::initView() {
     loadDialogSettings();
 }
 
-void BtSearchResultArea::setSearchResult(const QList<CSwordModuleInfo*> &modules) {
+void BtSearchResultArea::setSearchResult(
+        const CSwordModuleSearch::Results &results)
+{
     const QString searchedText = CSearchDialog::getSearchDialog()->searchText();
     reset(); //clear current modules
 
-    m_modules = modules;
-    //pre-select the first module in the list
-    //this will pre-select and display the first hit of that module
-    m_moduleListBox->setupTree(modules, searchedText);
+    m_results = results;
+
+    // Populate listbox:
+    m_moduleListBox->setupTree(results, searchedText);
+
+    // Pre-select the first module in the list:
     m_moduleListBox->setCurrentItem(m_moduleListBox->topLevelItem(0), 0);
 
-    qobject_cast<CSearchDialog*>(parent())->m_analyseButton->setEnabled(true);
+    Q_ASSERT(qobject_cast<CSearchDialog*>(parent()) != 0);
+    static_cast<CSearchDialog*>(parent())->m_analyseButton->setEnabled(true);
 }
 
 void BtSearchResultArea::reset() {
@@ -116,7 +121,6 @@ void BtSearchResultArea::reset() {
     m_resultListBox->clear();
     m_previewDisplay->setText("<html><head/><body></body></html>");
     qobject_cast<CSearchDialog*>(parent())->m_analyseButton->setEnabled(false);
-    m_modules.clear();
 }
 
 void BtSearchResultArea::clearPreview() {
@@ -133,7 +137,7 @@ void BtSearchResultArea::updatePreview(const QString& key) {
         QString text;
         CDisplayRendering render;
 
-        QList<CSwordModuleInfo*> modules;
+        QList<const CSwordModuleInfo*> modules;
         modules.append(module);
 
         CTextRendering::KeyTreeItem::Settings settings;
@@ -489,7 +493,10 @@ QString BtSearchResultArea::highlightSearchedText(const QString& content, const 
 void BtSearchResultArea::initConnections() {
     connect(m_resultListBox, SIGNAL(keySelected(const QString&)), this, SLOT(updatePreview(const QString&)));
     connect(m_resultListBox, SIGNAL(keyDeselected()), this, SLOT(clearPreview()));
-    connect(m_moduleListBox, SIGNAL(moduleSelected(CSwordModuleInfo*)), m_resultListBox, SLOT(setupTree(CSwordModuleInfo*)));
+    connect(m_moduleListBox,
+            SIGNAL(moduleSelected(const CSwordModuleInfo*, const sword::ListKey&)),
+            m_resultListBox,
+            SLOT(setupTree(const CSwordModuleInfo*, const sword::ListKey&)));
     connect(m_moduleListBox, SIGNAL(moduleChanged()), m_previewDisplay->connectionsProxy(), SLOT(clear()));
 
     // connect the strongs list
@@ -527,18 +534,21 @@ void BtSearchResultArea::saveDialogSettings() {
 * StrongsResultList:
 ******************************************************************************/
 
-StrongsResultList::StrongsResultList(CSwordModuleInfo *module,
+StrongsResultList::StrongsResultList(const CSwordModuleInfo *module,
+                                     const sword::ListKey &results,
                                      const QString &strongsNumber)
 {
     using namespace Rendering;
 
-    sword::ListKey &result = module->searchResult();
+    /// \warning This is a workaround for Sword constness
+    sword::ListKey result = results;
+
     int count = result.Count();
     if (!count)
         return;
 
     CTextRendering::KeyTreeItem::Settings settings;
-    QList<CSwordModuleInfo*> modules;
+    QList<const CSwordModuleInfo*> modules;
     modules.append(module);
     clear();
 

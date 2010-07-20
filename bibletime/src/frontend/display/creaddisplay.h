@@ -33,8 +33,10 @@ class CReadDisplay :  public CDisplay {
         * Moves the widget to the given anchor.
         */
         virtual void moveToAnchor( const QString& ) = 0;
-        virtual void print(const CDisplay::TextPart, CSwordBackend::DisplayOptions displayOptions,
-                           CSwordBackend::FilterOptions filterOptions);
+
+        virtual void print(const CDisplay::TextPart,
+                           const DisplayOptions &displayOptions,
+                           const FilterOptions &filterOptions);
 
         void setMouseTracking(const bool trackingEnabled) {
             m_useMouseTracking = trackingEnabled;

@@ -32,44 +32,46 @@ class CLexiconKeyChooser : public CKeyChooser {
         Q_OBJECT
 
     public:
-        CLexiconKeyChooser(
-            QList<CSwordModuleInfo*> modules, 
-            BTHistory* history, 
-            CSwordKey *key = 0, 
-            QWidget *parent = 0);
+        CLexiconKeyChooser(const QList<const CSwordModuleInfo*> &modules,
+                           BTHistory *history, CSwordKey *key = 0,
+                           QWidget *parent = 0);
 
     public slots:
         /**
-        * see @ref CKeyChooser::getKey
-        * @return Return the key object we use.
+          Reimplemented from CKeyChooser::key().
         */
-        virtual CSwordKey* key();
+        virtual CSwordKey *key();
+
         /**
-        * see @ref CKeyChooser::setKey
+          Reimplemented from CKeyChooser::setKey().
         */
         virtual void setKey(CSwordKey* key);
+
         /**
         * used to react to changes in the @ref CKeyChooserWidget
         *
         * @param index not used
         **/
         virtual void activated(int index);
+
         /**
-        * Reimplementation.
+          Reimplemented from CKeyChooser::refreshContent().
         */
         virtual void refreshContent();
+
         /**
-        * Sets the module and refreshes the combo boxes of this keychooser.
+          Reimplemented from CKeyChooser::setModules().
         */
-        virtual void setModules( const QList<CSwordModuleInfo*>& modules, const bool refresh = true );
+        virtual void setModules(const QList<const CSwordModuleInfo*> &modules,
+                                bool refresh = true);
 
     protected:
         CKeyChooserWidget *m_widget;
         CSwordLDKey* m_key;
-        QList<CSwordLexiconModuleInfo*> m_modules;
+        QList<const CSwordLexiconModuleInfo*> m_modules;
         QHBoxLayout *m_layout;
 
-        virtual void adjustFont();
+        virtual inline void adjustFont() {}
 
     public slots: // Public slots
         virtual void updateKey(CSwordKey* key);

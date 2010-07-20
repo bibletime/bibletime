@@ -46,10 +46,14 @@ bool CReadDisplay::hasActiveAnchor() {
 }
 
 
-void CReadDisplay::print(const CDisplay::TextPart type, CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions) {
+void CReadDisplay::print(const CDisplay::TextPart type,
+                         const DisplayOptions &displayOptions,
+                         const FilterOptions &filterOptions)
+{
+    typedef CSwordBibleModuleInfo CSBiMI;
     CDisplayWindow* window = parentWindow();
     CSwordKey* const key = window->key();
-    CSwordModuleInfo* module = key->module();
+    const CSwordModuleInfo *module = key->module();
 
     const CDisplayWindow *displayWindow = parentWindow();
     CExportManager mgr(QObject::tr("Print keys"), false, QString::null, displayWindow->filterOptions(), displayWindow->displayOptions());
@@ -64,7 +68,7 @@ void CReadDisplay::print(const CDisplay::TextPart type, CSwordBackend::DisplayOp
 
                 CSwordVerseKey stopKey(*vk);
 
-                CSwordBibleModuleInfo* bible = dynamic_cast<CSwordBibleModuleInfo*>(module);
+                const CSBiMI *bible = dynamic_cast<const CSBiMI*>(module);
                 if (bible) {
                     stopKey.Verse( bible->verseCount( bible->bookNumber(startKey.book()), startKey.Chapter() ) );
                 }

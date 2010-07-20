@@ -211,11 +211,11 @@ const QString CInfoDisplay::decodeCrossReference( const QString& data ) {
 
     //  qWarning("setting crossref %s", data.latin1());
 
-    CSwordBackend::DisplayOptions dispOpts;
+    DisplayOptions dispOpts;
     dispOpts.lineBreaks  = false;
     dispOpts.verseNumbers = true;
 
-    CSwordBackend::FilterOptions filterOpts;
+    FilterOptions filterOpts;
     filterOpts.headings    = false;
     filterOpts.strongNumbers  = false;
     filterOpts.morphTags    = false;
@@ -321,7 +321,7 @@ const QString CInfoDisplay::decodeFootnote( const QString& data ) {
         return QString::null;
     }
 
-    CSwordBackend::FilterOptions filterOpts;
+    FilterOptions filterOpts;
     filterOpts.headings    = false;
     filterOpts.strongNumbers  = false;
     filterOpts.morphTags    = false;
@@ -461,8 +461,8 @@ const QString CInfoDisplay::decodeMorph( const QString& data ) {
             const bool isOk = key->setKey(skipFirstChar ? value.mid(1) : value);
             //Q_ASSERT(isOk);
             if (!isOk) { //try to use the other morph lexicon, because this one failed with the current morph code
-                key->module(CBTConfig::get
-                            (CBTConfig::standardHebrewMorphLexicon));
+                key->setModule(CBTConfig::get
+                               (CBTConfig::standardHebrewMorphLexicon));
                 key->setKey(skipFirstChar ? value.mid(1) : value);
             }
 

@@ -18,8 +18,8 @@
 #include <utilstr.h>
 
 
-CSwordLDKey::CSwordLDKey( CSwordModuleInfo* module ) {
-    if ((m_module = dynamic_cast<CSwordLexiconModuleInfo*>(module))) {
+CSwordLDKey::CSwordLDKey(const CSwordModuleInfo *module) {
+    if ((m_module = dynamic_cast<const CSwordLexiconModuleInfo*>(module))) {
         //    *(m_module->module()) = TOP;
     }
 
@@ -30,7 +30,11 @@ CSwordLDKey::CSwordLDKey( CSwordModuleInfo* module ) {
 CSwordLDKey::CSwordLDKey( const CSwordLDKey &k ) : CSwordKey(k), SWKey((const char*)k) {}
 
 /** No descriptions */
-CSwordLDKey::CSwordLDKey( const SWKey *k, CSwordModuleInfo* module) : CSwordKey(module), SWKey(*k) {}
+CSwordLDKey::CSwordLDKey(const SWKey *k, const CSwordModuleInfo *module)
+    : CSwordKey(module), SWKey(*k)
+{
+    // Intentionally empty
+}
 
 /** Clones this object by copying the members. */
 CSwordLDKey* CSwordLDKey::copy() const {
@@ -38,14 +42,14 @@ CSwordLDKey* CSwordLDKey::copy() const {
 }
 
 /** Sets the module of this key. */
-CSwordModuleInfo* CSwordLDKey::module(CSwordModuleInfo* const newModule) {
-    if (newModule && newModule->type() == CSwordModuleInfo::Lexicon) {
-        const QString oldKey = key();
-        m_module = newModule;
-        setKey(oldKey);
-    }
+void CSwordLDKey::setModule(const CSwordModuleInfo *newModule) {
+    Q_ASSERT(newModule);
+    if (m_module == newModule) return;
+    Q_ASSERT(newModule->type() == CSwordModuleInfo::Lexicon);
 
-    return m_module;
+    const QString oldKey = key();
+    m_module = newModule;
+    setKey(oldKey);
 }
 
 QString CSwordLDKey::key() const {

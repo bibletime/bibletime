@@ -26,11 +26,14 @@ namespace Search {
 static const int DIALOG_HEIGHT = 400;
 static const int DIALOG_BORDER = 30;
 
-CSearchAnalysisDialog::CSearchAnalysisDialog( QList<CSwordModuleInfo*> modules, QWidget* parentDialog )
-        : QDialog(parentDialog) {
+CSearchAnalysisDialog::CSearchAnalysisDialog(
+        const CSwordModuleSearch::Results &results,
+        QWidget *parentDialog)
+        : QDialog(parentDialog)
+{
     initView();
     m_analysis->reset();
-    m_analysis->analyse(modules);
+    m_analysis->analyse(results);
 
     // Set initial width based on the search data, but limit to the
     // width of the desktop
@@ -39,7 +42,6 @@ CSearchAnalysisDialog::CSearchAnalysisDialog( QList<CSwordModuleInfo*> modules, 
     if (width > desktopWidth)
         width = desktopWidth;
     resize(width, DIALOG_HEIGHT);
-
 }
 
 /** Initializes this dialog. */

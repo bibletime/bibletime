@@ -57,9 +57,11 @@ class BtSearchOptionsArea : public QWidget {
         QPushButton* searchButton() const;
 
         /**
-        * Returns the list of used modules.
+          Returns the list of used modules.
         */
-        QList<CSwordModuleInfo*> modules() const;
+        inline QList<const CSwordModuleInfo*> modules() const {
+            return m_modules;
+        }
 
         /**
         * Sets all options back to the default.
@@ -88,11 +90,12 @@ class BtSearchOptionsArea : public QWidget {
         */
         void saveSettings();
         bool eventFilter(QObject* obj, QEvent* event);
+
     public slots:
         /**
-        * Sets the modules used by the search.
+          Sets the modules used by the search.
         */
-        void setModules( QList<CSwordModuleInfo*> modules );
+        void setModules(const QList<const CSwordModuleInfo*> &modules);
 
         /** Sets the modules when user selects them from the combobox.*/
         void moduleListTextSelected(int index);
@@ -121,7 +124,7 @@ class BtSearchOptionsArea : public QWidget {
         void sigStartSearch();
 
     private:
-        QList<CSwordModuleInfo*> m_modules;
+        QList<const CSwordModuleInfo*> m_modules;
 
         QHBoxLayout *hboxLayout;
         QGroupBox *searchGroupBox;

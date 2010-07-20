@@ -46,11 +46,15 @@ class BtLineEdit : public QLineEdit {
 };
 
 
-BtBibleKeyWidget::BtBibleKeyWidget( CSwordBibleModuleInfo *mod, CSwordVerseKey *key, QWidget *parent, const char* /*name*/) :
-        QWidget(parent),
-        m_key(key),
-        m_dropDownHoverTimer(this) {
+BtBibleKeyWidget::BtBibleKeyWidget(const CSwordBibleModuleInfo *mod,
+                                   CSwordVerseKey *key, QWidget *parent,
+                                   const char *name)
+   : QWidget(parent), m_key(key), m_dropDownHoverTimer(this)
+{
+    Q_UNUSED(name);
+
     namespace DU = util::directory;
+
 
     updatelock = false;
     m_module = mod;
@@ -146,10 +150,10 @@ BtBibleKeyWidget::~BtBibleKeyWidget() {
     delete m_dropDownButtons;
 }
 
-void BtBibleKeyWidget::setModule(CSwordBibleModuleInfo *m) {
+void BtBibleKeyWidget::setModule(const CSwordBibleModuleInfo *m) {
     if (m) { //can be null
         m_module = m;
-        m_key->module(m);
+        m_key->setModule(m);
     }
 }
 

@@ -89,8 +89,10 @@ class CDisplay {
         * Returns the parent window used for this display widget.
         */
         CDisplayWindow* parentWindow() const;
-        virtual void print( const CDisplay::TextPart, CSwordBackend::DisplayOptions displayOptions,
-                            CSwordBackend::FilterOptions filterOptions) = 0;
+
+        virtual void print(const CDisplay::TextPart,
+                           const DisplayOptions &displayOptions,
+                           const FilterOptions &filterOptions) = 0;
         /**
         * Installs the popup which should be opened when the right mouse button was pressed.
         */
@@ -149,9 +151,11 @@ class CDisplayConnections : public QObject {
         void saveAsHTML();
         void saveAnchorWithText();
 
-        void printAll(CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions);
-        void printAnchorWithText(CSwordBackend::DisplayOptions displayOptions,
-                                 CSwordBackend::FilterOptions filterOptions);
+        void printAll(const DisplayOptions &displayOptions,
+                      const FilterOptions &filterOptions);
+
+        void printAnchorWithText(const DisplayOptions &displayOptions,
+                                 const FilterOptions &filterOptions);
 
         void copySelection();
         void copyAll();

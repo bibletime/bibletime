@@ -39,12 +39,6 @@ const int LEGEND_DELTAY = 4;
 const int LEGEND_WIDTH = 85;
 
 
-CSearchAnalysisLegendItem::CSearchAnalysisLegendItem(QList<CSwordModuleInfo*> *list )
-        : QGraphicsRectItem() {
-    m_moduleList = list;
-}
-
-/** Reimplementation. Draws the content of this item. */
 void CSearchAnalysisLegendItem::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*) {
     painter->save();
 
@@ -61,8 +55,7 @@ void CSearchAnalysisLegendItem::paint(QPainter* painter, const QStyleOptionGraph
 
     //   for (unsigned int index=0; index < m_moduleList->count(); index++){
     int moduleIndex = 0;
-    QList<CSwordModuleInfo*>::iterator end_it = m_moduleList->end();
-    for (QList<CSwordModuleInfo*>::iterator it(m_moduleList->begin()); it != end_it; ++it) {
+    Q_FOREACH(const CSwordModuleInfo *m, m_moduleList) {
         // the module color indicators
         QPoint p1( (int)(rect().x()) + LEGEND_INNER_BORDER, (int)(rect().y()) + LEGEND_INNER_BORDER + moduleIndex*(LEGEND_DELTAY + ITEM_TEXT_SIZE) );
         QPoint p2(p1.x() + ITEM_TEXT_SIZE, p1.y() + ITEM_TEXT_SIZE);
@@ -72,7 +65,7 @@ void CSearchAnalysisLegendItem::paint(QPainter* painter, const QStyleOptionGraph
         painter->drawRect(r);
 
         QPoint p3( p2.x() + LEGEND_INNER_BORDER, p2.y() );
-        painter->drawText(p3, (*it)->name() );
+        painter->drawText(p3, m->name() );
 
         ++moduleIndex;
     }

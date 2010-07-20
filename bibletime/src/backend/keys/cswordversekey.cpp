@@ -21,9 +21,11 @@
 #include <localemgr.h>
 
 
-CSwordVerseKey::CSwordVerseKey( CSwordModuleInfo* const module ) :
-        CSwordKey(module) {
-    if ( CSwordBibleModuleInfo* bible = dynamic_cast<CSwordBibleModuleInfo*>(module) ) {
+CSwordVerseKey::CSwordVerseKey(const CSwordModuleInfo *module)
+    : CSwordKey(module)
+{
+    typedef CSwordBibleModuleInfo CSBMI;
+    if (const CSBMI *bible = dynamic_cast<const CSBMI*>(module) ) {
         // Copy important settings like versification system
         copyFrom((sword::VerseKey*) bible->module()->getKey());
 
@@ -36,7 +38,12 @@ CSwordVerseKey::CSwordVerseKey( const CSwordVerseKey& k ) : CSwordKey(k), VerseK
     this->VerseKey::setAutoNormalize(true);
 }
 
-CSwordVerseKey::CSwordVerseKey( const VerseKey* const k, CSwordModuleInfo* const module ) : CSwordKey(module), VerseKey(*k) {}
+CSwordVerseKey::CSwordVerseKey(const VerseKey *k,
+                               const CSwordModuleInfo *module)
+    : CSwordKey(module), VerseKey(*k)
+{
+    // Intentionally empty
+}
 
 /** Clones this object. */
 CSwordKey* CSwordVerseKey::copy() const {
@@ -44,33 +51,38 @@ CSwordKey* CSwordVerseKey::copy() const {
 }
 
 /** Sets the module for this key */
-CSwordModuleInfo* CSwordVerseKey::module( CSwordModuleInfo* const newModule ) {
-    if (newModule && ((newModule->type() == CSwordModuleInfo::Bible)  || (newModule->type() == CSwordModuleInfo::Commentary) ) ) {
-        m_module = newModule;
+void CSwordVerseKey::setModule(const CSwordModuleInfo *newModule) {
+    typedef CSwordBibleModuleInfo CSBMI;
 
-        //check if the module contains the key we present
-        CSwordBibleModuleInfo* bible = dynamic_cast<CSwordBibleModuleInfo*>(newModule);
+    Q_ASSERT(newModule);
+    if (m_module == newModule) return;
+    Q_ASSERT(newModule->type() == CSwordModuleInfo::Bible
+             || newModule->type() == CSwordModuleInfo::Commentary);
 
-        if (_compare(bible->lowerBound()) < 0) {
-            setKey(bible->lowerBound());
-        }
+    m_module = newModule;
 
-        if (_compare(bible->upperBound()) > 0) {
-            setKey(bible->upperBound());
-        }
+    //check if the module contains the key we present
+    const CSBMI* bible = dynamic_cast<const CSBMI*>(newModule);
+
+    if (_compare(bible->lowerBound()) < 0) {
+        setKey(bible->lowerBound());
     }
 
-    return dynamic_cast<CSwordBibleModuleInfo*>(m_module);
+    if (_compare(bible->upperBound()) > 0) {
+        setKey(bible->upperBound());
+    }
 }
 
 /** Returns the current book as Text, not as integer. */
 QString CSwordVerseKey::book( const QString& newBook ) {
+    typedef CSwordBibleModuleInfo CSBMI;
     int min = 0;
     int max = 1;
 
-    if (CSwordBibleModuleInfo* bible = dynamic_cast<CSwordBibleModuleInfo*>(module())) {
-        const bool hasOT = bible->hasTestament(CSwordBibleModuleInfo::OldTestament);
-        const bool hasNT = bible->hasTestament(CSwordBibleModuleInfo::NewTestament);
+    const CSBMI *bible = dynamic_cast<const CSBMI*>(module());
+    if (bible != 0) {
+        const bool hasOT = bible->hasTestament(CSBMI::OldTestament);
+        const bool hasNT = bible->hasTestament(CSBMI::NewTestament);
 
         if (hasOT && hasNT) {
             min = 0;
@@ -125,10 +137,10 @@ bool CSwordVerseKey::setKey(const char *newKey) {
         if (*newKey != '\0') {
             positionFrom(newKey);
         } else {
-            CSwordModuleInfo *m = module();
+            const CSwordModuleInfo *m = module();
             if (m->type() == CSwordModuleInfo::Bible) {
-                Q_ASSERT(dynamic_cast<CSBMI*>(m) != 0);
-                CSBMI *bible = static_cast<CSBMI*>(m);
+                Q_ASSERT(dynamic_cast<const CSBMI*>(m) != 0);
+                const CSBMI *bible = static_cast<const CSBMI*>(m);
                 positionFrom(bible->lowerBound().key().toUtf8().constData());
             }
         }
@@ -140,6 +152,8 @@ bool CSwordVerseKey::setKey(const char *newKey) {
 }
 
 bool CSwordVerseKey::next( const JumpType type ) {
+    typedef CSwordBibleModuleInfo CSBMI;
+
     Error(); //clear Error status
     bool ret = true;
 
@@ -206,7 +220,8 @@ bool CSwordVerseKey::next( const JumpType type ) {
             return false;
     }
 
-    if ( CSwordBibleModuleInfo* bible = dynamic_cast<CSwordBibleModuleInfo*>(module()) ) {
+    const CSBMI *bible = dynamic_cast<const CSBMI*>(module());
+    if (bible != 0) {
         if (_compare(bible->lowerBound()) < 0 ) {
             setKey(bible->lowerBound());
             ret = false;
@@ -229,6 +244,8 @@ bool CSwordVerseKey::next( const JumpType type ) {
 }
 
 bool CSwordVerseKey::previous( const JumpType type ) {
+    typedef CSwordBibleModuleInfo CSBMI;
+
     bool ret = true;
 
     switch (type) {
@@ -287,7 +304,8 @@ bool CSwordVerseKey::previous( const JumpType type ) {
             return false;
     }
 
-    if ( CSwordBibleModuleInfo* bible = dynamic_cast<CSwordBibleModuleInfo*>(module()) ) {
+    const CSBMI *bible = dynamic_cast<const CSBMI*>(module());
+    if (bible != 0) {
         if (_compare(bible->lowerBound()) < 0 ) {
             setKey(bible->lowerBound());
             ret = false;

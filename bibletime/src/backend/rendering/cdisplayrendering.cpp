@@ -20,10 +20,17 @@
 
 namespace Rendering {
 
-CDisplayRendering::CDisplayRendering(CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions)
-        : CHTMLExportRendering(CHTMLExportRendering::Settings(true), displayOptions, filterOptions) {}
+CDisplayRendering::CDisplayRendering(const DisplayOptions &displayOptions,
+                                     const FilterOptions &filterOptions)
+        : CHTMLExportRendering(CHTMLExportRendering::Settings(true),
+                               displayOptions, filterOptions)
+{
+    // Intentionally empty
+}
 
-const QString CDisplayRendering::entryLink( const KeyTreeItem& item, CSwordModuleInfo*  module ) {
+const QString CDisplayRendering::entryLink(const KeyTreeItem &item,
+                                           const CSwordModuleInfo *module)
+{
     QString linkText;
 
     const bool isBible = module && (module->type() == CSwordModuleInfo::Bible);
@@ -104,7 +111,7 @@ const QString CDisplayRendering::keyToHTMLAnchor(const QString& key) {
 }
 
 const QString CDisplayRendering::finishText( const QString& oldText, KeyTree& tree ) {
-    QList<CSwordModuleInfo*> modules = collectModules(&tree);
+    QList<const CSwordModuleInfo*> modules = collectModules(&tree);
     qDebug() << "CDisplayRendering::finishText";
 
     //marking words is very slow, we have to find a better solution

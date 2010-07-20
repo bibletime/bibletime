@@ -26,10 +26,13 @@ class BtBibleKeyWidget : public QWidget  {
         Q_OBJECT
 
     public:
-        BtBibleKeyWidget(CSwordBibleModuleInfo *, CSwordVerseKey*, QWidget *parent = 0, const char *name = 0);
+        BtBibleKeyWidget(const CSwordBibleModuleInfo *module,
+                         CSwordVerseKey *key, QWidget *parent = 0,
+                         const char *name = 0);
+
         ~BtBibleKeyWidget();
         bool setKey(CSwordVerseKey* key);
-        void setModule(CSwordBibleModuleInfo *m = 0);
+        void setModule(const CSwordBibleModuleInfo *m = 0);
         bool eventFilter(QObject *o, QEvent *e);
 
     signals:
@@ -85,7 +88,7 @@ class BtBibleKeyWidget : public QWidget  {
 
         bool updatelock;
         QString oldKey;
-        CSwordBibleModuleInfo *m_module;
+        const CSwordBibleModuleInfo *m_module;
 };
 
 #endif

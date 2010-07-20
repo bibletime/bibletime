@@ -20,16 +20,9 @@
 #include "backend/drivers/cswordbookmoduleinfo.h"
 #include "backend/drivers/cswordcommentarymoduleinfo.h"
 #include "backend/drivers/cswordlexiconmoduleinfo.h"
-#include "backend/filters/gbftohtml.h"
-#include "backend/filters/osistohtml.h"
-#include "backend/filters/plaintohtml.h"
-#include "backend/filters/teitohtml.h"
-#include "backend/filters/thmltohtml.h"
 #include "backend/filters/thmltoplain.h"
 #include "backend/filters/osismorphsegmentation.h"
-#include "backend/rendering/cbookdisplay.h"
-#include "backend/rendering/cchapterdisplay.h"
-#include "backend/rendering/centrydisplay.h"
+#include "btglobal.h"
 #include "util/directory.h"
 
 // Sword includes:
@@ -44,52 +37,24 @@
 
 using namespace Rendering;
 
+CSwordBackend *CSwordBackend::m_instance = 0;
+
 CSwordBackend::CSwordBackend()
-        : sword::SWMgr(0, 0, false, new sword::EncodingFilterMgr( sword::ENC_UTF8 ), true),
-        m_dataModel(this) {
-    m_filters.gbf = new Filters::GbfToHtml();
-    m_filters.plain = new Filters::PlainToHtml();
-    m_filters.thml = new Filters::ThmlToHtml();
-    m_filters.osis = new Filters::OsisToHtml();
-    m_filters.tei = new Filters::TeiToHtml();
-
-    m_displays.entry = new CEntryDisplay();
-    m_displays.chapter = new CChapterDisplay();
-    m_displays.book = new CBookDisplay();
-
+        : sword::SWMgr(0, 0, false,
+                       new sword::EncodingFilterMgr(sword::ENC_UTF8), true),
+          m_dataModel(this)
+{
     filterInit();
 }
 
 CSwordBackend::CSwordBackend(const QString& path, const bool augmentHome)
         : sword::SWMgr(!path.isEmpty() ? path.toLocal8Bit().constData() : 0, false, new sword::EncodingFilterMgr( sword::ENC_UTF8 ), false, augmentHome) { // don't allow module renaming, because we load from a path
-    m_filters.gbf = new Filters::GbfToHtml();
-    m_filters.plain = new Filters::PlainToHtml();
-    m_filters.thml = new Filters::ThmlToHtml();
-    m_filters.osis = new Filters::OsisToHtml();
-    m_filters.tei = new Filters::TeiToHtml();
-
-    m_displays.entry = new CEntryDisplay();
-    m_displays.chapter = new CChapterDisplay();
-    m_displays.book = new CBookDisplay();
-
     filterInit();
 }
 
 CSwordBackend::~CSwordBackend() {
     shutdownModules();
-
-    delete m_filters.gbf;
-    delete m_filters.plain;
-    delete m_filters.thml;
-    delete m_filters.osis;
-    delete m_filters.tei;
-
-    delete m_displays.book;
-    delete m_displays.chapter;
-    delete m_displays.entry;
 }
-
-CSwordBackend *CSwordBackend::m_instance = 0;
 
 void CSwordBackend::filterInit() {
     //HACK: replace Sword's OSISMorphSegmentation filter, seems to be buggy, ours works
@@ -126,10 +91,23 @@ QList<CSwordModuleInfo*> CSwordBackend::takeModulesFromList(QStringList names) {
     return list;
 }
 
-QList<CSwordModuleInfo*> CSwordBackend::getPointerList(QStringList names) {
+QList<CSwordModuleInfo*> CSwordBackend::getPointerList(const QStringList &names) {
     QList<CSwordModuleInfo*> list;
-    foreach(QString name, names) {
-        CSwordModuleInfo* mInfo = findModuleByName(name);
+    Q_FOREACH (const QString &name, names) {
+        CSwordModuleInfo *mInfo = findModuleByName(name);
+        if (mInfo) {
+            list.append(mInfo);
+        }
+    }
+    return list;
+}
+
+QList<const CSwordModuleInfo*> CSwordBackend::getConstPointerList(
+        const QStringList &names)
+{
+    QList<const CSwordModuleInfo*> list;
+    Q_FOREACH (const QString &name, names) {
+        const CSwordModuleInfo *mInfo = findModuleByName(name);
         if (mInfo) {
             list.append(mInfo);
         }
@@ -155,19 +133,19 @@ CSwordBackend::LoadError CSwordBackend::initModules(SetupChangedReason reason) {
 
         if (!strcmp(curMod->Type(), "Biblical Texts")) {
             newModule = new CSwordBibleModuleInfo(curMod, this);
-            newModule->module()->Disp(m_displays.chapter);
+            newModule->module()->Disp(&m_chapterDisplay);
         }
         else if (!strcmp(curMod->Type(), "Commentaries")) {
             newModule = new CSwordCommentaryModuleInfo(curMod, this);
-            newModule->module()->Disp(m_displays.entry);
+            newModule->module()->Disp(&m_entryDisplay);
         }
         else if (!strcmp(curMod->Type(), "Lexicons / Dictionaries")) {
             newModule = new CSwordLexiconModuleInfo(curMod, this);
-            newModule->module()->Disp(m_displays.entry);
+            newModule->module()->Disp(&m_entryDisplay);
         }
         else if (!strcmp(curMod->Type(), "Generic Books")) {
             newModule = new CSwordBookModuleInfo(curMod, this);
-            newModule->module()->Disp(m_displays.book);
+            newModule->module()->Disp(&m_bookDisplay);
         }
 
         if (newModule) {
@@ -206,29 +184,29 @@ void CSwordBackend::AddRenderFilters(sword::SWModule *module, sword::ConfigEntMa
     moduleDriver = ((entry = section.find("ModDrv")) != section.end()) ? (*entry).second : (sword::SWBuf) "";
 
     if (sourceformat == "OSIS") {
-        module->AddRenderFilter(m_filters.osis);
+        module->AddRenderFilter(&m_osisFilter);
         noDriver = false;
     }
     else if (sourceformat == "ThML") {
-        module->AddRenderFilter(m_filters.thml);
+        module->AddRenderFilter(&m_thmlFilter);
         noDriver = false;
     }
     else if (sourceformat == "TEI") {
-        module->AddRenderFilter(m_filters.tei);
+        module->AddRenderFilter(&m_teiFilter);
         noDriver = false;
     }
     else if (sourceformat == "GBF") {
-        module->AddRenderFilter(m_filters.gbf);
+        module->AddRenderFilter(&m_gbfFilter);
         noDriver = false;
     }
     else if (sourceformat == "PLAIN") {
-        module->AddRenderFilter(m_filters.plain);
+        module->AddRenderFilter(&m_plainFilter);
         noDriver = false;
     }
 
     if (noDriver) { //no driver found
         if ( (moduleDriver == "RawCom") || (moduleDriver == "RawLD") ) {
-            module->AddRenderFilter(m_filters.plain);
+            module->AddRenderFilter(&m_plainFilter);
             noDriver = false;
         }
     }
@@ -284,7 +262,7 @@ void CSwordBackend::setOption( const CSwordModuleInfo::FilterTypes type, const i
         setGlobalOption(optionName(type).toUtf8().constData(), value.c_str());
 }
 
-void CSwordBackend::setFilterOptions( const CSwordBackend::FilterOptions options) {
+void CSwordBackend::setFilterOptions(const FilterOptions &options) {
     setOption( CSwordModuleInfo::footnotes,      options.footnotes );
     setOption( CSwordModuleInfo::strongNumbers,    options.strongNumbers );
     setOption( CSwordModuleInfo::headings,       options.headings );

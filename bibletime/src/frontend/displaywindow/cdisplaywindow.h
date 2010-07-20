@@ -14,6 +14,7 @@
 
 #include <QStringList>
 #include "backend/managers/cswordbackend.h"
+#include "btglobal.h"
 #include "frontend/profile/cprofilewindow.h"
 
 
@@ -55,7 +56,7 @@ class CDisplayWindow : public QMainWindow {
         const QString windowCaption();
 
         /** Returns the used modules as a pointer list.*/
-        QList<CSwordModuleInfo*> modules();
+        const QList<const CSwordModuleInfo*> modules() const;
 
         /** Returns the used modules as a string list. */
         inline const QStringList &getModuleList() const {
@@ -69,12 +70,12 @@ class CDisplayWindow : public QMainWindow {
         virtual void applyProfileSettings( Profile::CProfileWindow* profileWindow ) = 0;
 
         /** Returns the display options used by this display window. */
-        inline const CSwordBackend::DisplayOptions &displayOptions() const {
+        inline const DisplayOptions &displayOptions() const {
             return m_displayOptions;
         }
 
         /** Returns the filter options used by this window. */
-        inline const CSwordBackend::FilterOptions &filterOptions() const {
+        inline const FilterOptions &filterOptions() const {
             return m_filterOptions;
         }
 
@@ -183,12 +184,20 @@ class CDisplayWindow : public QMainWindow {
         void sigModuleRemoved(int index);
         /** The module list of window changed but backend list didn't.*/
         void sigModuleListChanged();
-        /**  signal for change of display options */
-        void sigDisplayOptionsChanged(const CSwordBackend::DisplayOptions &displayOptions);
-        /**  signal for change of filter options */
-        void sigFilterOptionsChanged(const CSwordBackend::FilterOptions &filterOptions);
+
+        /**
+          Signal emitted when display options are changed.
+        */
+        void sigDisplayOptionsChanged(const DisplayOptions &displayOptions);
+
+        /**
+          Signal emitted when display options are changed.
+        */
+        void sigFilterOptionsChanged(const FilterOptions &filterOptions);
+
         /**  signal for change of modules */
-        void sigModulesChanged(const QList<CSwordModuleInfo*> &modules);
+        void sigModulesChanged(const QList<const CSwordModuleInfo*> &modules);
+
         /**  signal for sword key change */
         void sigKeyChanged(CSwordKey* key);
 
@@ -223,13 +232,17 @@ class CDisplayWindow : public QMainWindow {
         CDisplayWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
         virtual ~CDisplayWindow();
 
-        /** Returns the display options used by this display window. */
-        inline CSwordBackend::DisplayOptions &displayOptions() {
+        /**
+          \returns the display options used by this display window.
+        */
+        inline DisplayOptions &displayOptions() {
             return m_displayOptions;
         }
 
-        /** Returns the filter options used by this window. */
-        inline CSwordBackend::FilterOptions &filterOptions() {
+        /**
+          \returns the filter options used by this window.
+        */
+        inline FilterOptions &filterOptions() {
             return m_filterOptions;
         }
 
@@ -277,11 +290,15 @@ class CDisplayWindow : public QMainWindow {
         void clearMainWindowToolBars();
 
     protected slots:
-        /** Sets the new filter options of this window.*/
-        void setFilterOptions(const CSwordBackend::FilterOptions &filterOptions);
+        /**
+          Sets the new filter options of this window.
+        */
+        void setFilterOptions(const FilterOptions &filterOptions);
 
-        /** Sets the new display options for this window.*/
-        void setDisplayOptions(const CSwordBackend::DisplayOptions &displayOptions);
+        /**
+          Sets the new display options for this window.
+        */
+        void setDisplayOptions(const DisplayOptions &displayOptions);
 
         virtual void modulesChanged();
 
@@ -308,8 +325,8 @@ class CDisplayWindow : public QMainWindow {
         //we may only cache the module names bacause after a backend relaod the pointers are invalid!
         QStringList m_modules;
 
-        CSwordBackend::FilterOptions m_filterOptions;
-        CSwordBackend::DisplayOptions m_displayOptions;
+        FilterOptions m_filterOptions;
+        DisplayOptions m_displayOptions;
 
         CKeyChooser* m_keyChooser;
         CSwordKey* m_swordKey;

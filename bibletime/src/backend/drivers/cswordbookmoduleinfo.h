@@ -27,11 +27,8 @@ class CSwordBookModuleInfo: public CSwordModuleInfo {
           \param module The module which belongs to this object
           \param backend The parent backend for this book module.
         */
-        inline CSwordBookModuleInfo(sword::SWModule *module,
-                                    CSwordBackend * const usedBackend)
-            : CSwordModuleInfo(module, usedBackend,
-                               CSwordModuleInfo::GenericBook),
-              m_depth(-1) {}
+        CSwordBookModuleInfo(sword::SWModule *module,
+                             CSwordBackend * const usedBackend);
 
         inline CSwordBookModuleInfo(const CSwordBookModuleInfo &copy)
             : CSwordModuleInfo(copy), m_depth(copy.m_depth) {}
@@ -44,7 +41,7 @@ class CSwordBookModuleInfo: public CSwordModuleInfo {
         /**
           \returns the maximal depth of sections and subsections.
         */
-        int depth();
+        inline int depth() const { return m_depth; }
 
         /**
           \returns A treekey filled with the structure of this module. Don't

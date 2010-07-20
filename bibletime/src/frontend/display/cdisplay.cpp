@@ -62,11 +62,15 @@ void CDisplayConnections::copySelection() {
     m_display->copy(CDisplay::PlainText, CDisplay::SelectedText);
 }
 
-void CDisplayConnections::printAll(CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions) {
+void CDisplayConnections::printAll(const DisplayOptions &displayOptions,
+                                   const FilterOptions &filterOptions)
+{
     m_display->print(CDisplay::Document, displayOptions, filterOptions);
 }
 
-void CDisplayConnections::printAnchorWithText(CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions) {
+void CDisplayConnections::printAnchorWithText(const DisplayOptions &displayOptions,
+                                              const FilterOptions &filterOptions)
+{
     m_display->print(CDisplay::AnchorWithText, displayOptions, filterOptions);
 }
 

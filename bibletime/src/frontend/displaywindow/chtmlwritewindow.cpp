@@ -119,7 +119,7 @@ void CHTMLWriteWindow::saveCurrentText( const QString& /*key*/ ) {
 
     const QString& oldKey = this->key()->key();
     if ( modules().first()->isWritable() ) {
-        modules().first()->write(this->key(), t );
+        const_cast<CSwordModuleInfo*>(modules().first())->write(this->key(), t);
         this->key()->setKey(oldKey);
 
         ((CWriteDisplay*)displayWidget())->setModified(false);

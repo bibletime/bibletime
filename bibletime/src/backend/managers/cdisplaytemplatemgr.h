@@ -30,7 +30,7 @@ class CDisplayTemplateMgr {
             Settings() : pageDirection("ltr") {}
 
             /** The list of modules */
-            QList<CSwordModuleInfo*> modules;
+            QList<const CSwordModuleInfo*> modules;
 
             /** The title which is used for the new processed HTML page */
             QString title;

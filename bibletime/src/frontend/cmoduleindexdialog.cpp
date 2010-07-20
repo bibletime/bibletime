@@ -27,7 +27,9 @@ CModuleIndexDialog* CModuleIndexDialog::getInstance() {
     return instance;
 }
 
-void CModuleIndexDialog::indexAllModules( const QList<CSwordModuleInfo*>& modules ) {
+void CModuleIndexDialog::indexAllModules(
+        const QList<const CSwordModuleInfo*> &modules)
+{
     static bool indexing = false;
     if (!indexing) {
         indexing = true;
@@ -40,7 +42,7 @@ void CModuleIndexDialog::indexAllModules( const QList<CSwordModuleInfo*>& module
         m_progress->show();
         m_progress->raise();
 
-        foreach (CSwordModuleInfo* info, modules) {
+        Q_FOREACH(const CSwordModuleInfo *info, modules) {
             /// \todo how to cancel
             //QObject::connect(CSwordBackend::instance()(), SIGNAL(sigSwordSetupChanged()), this, SLOT(swordSetupChanged()));
             connect(this, SIGNAL(sigCancel()), info, SLOT(cancelIndexing()) );
@@ -50,8 +52,10 @@ void CModuleIndexDialog::indexAllModules( const QList<CSwordModuleInfo*>& module
             QString modname(info->name());
             const QString labelText = tr("Creating index for work: %1").arg(modname);
             m_progress->setLabelText(labelText);
-            /// \todo if we want to cancel indexing from
-            info->buildIndex(); //waits until this module is finished
+
+            // Single module indexing blocks until finished:
+            /// \warning const_cast
+            const_cast<CSwordModuleInfo*>(info)->buildIndex();
 
             m_currentModuleIndex++;
             disconnect(m_progress, SIGNAL(canceled()), info, SLOT(cancelIndexing()));
@@ -66,11 +70,13 @@ void CModuleIndexDialog::indexAllModules( const QList<CSwordModuleInfo*>& module
     }
 }
 
-void CModuleIndexDialog::indexUnindexedModules( const QList<CSwordModuleInfo*>& modules ) {
-    QList<CSwordModuleInfo*> unindexedMods;
+void CModuleIndexDialog::indexUnindexedModules(
+        const QList<const CSwordModuleInfo*> &modules)
+{
+    QList<const CSwordModuleInfo*> unindexedMods;
 
-    QList<CSwordModuleInfo*>::const_iterator end_it = modules.end();
-    for ( QList<CSwordModuleInfo*>::const_iterator it = modules.begin(); it != end_it; ++it) {
+    QList<const CSwordModuleInfo*>::const_iterator end_it = modules.end();
+    for ( QList<const CSwordModuleInfo*>::const_iterator it = modules.begin(); it != end_it; ++it) {
         if ((*it)->hasIndex()) {
             continue;
         }

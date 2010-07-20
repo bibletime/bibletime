@@ -137,7 +137,7 @@ void CKeyChooserWidget::reset(const int count, int index, bool do_emit) {
     reset(&m_list, index, do_emit);
 }
 
-void CKeyChooserWidget::reset(QStringList& list, int index, bool do_emit) {
+void CKeyChooserWidget::reset(const QStringList &list, int index, bool do_emit) {
     //This prevents the widget from resetting during application load, which
     //produces undesirable behavior.
     //if (!updatesEnabled())
@@ -148,7 +148,7 @@ void CKeyChooserWidget::reset(QStringList& list, int index, bool do_emit) {
 }
 
 
-void CKeyChooserWidget::reset(QStringList *list, int index, bool do_emit) {
+void CKeyChooserWidget::reset(const QStringList *list, int index, bool do_emit) {
     //if (isResetting || !updatesEnabled())
     if (isResetting)
         return;

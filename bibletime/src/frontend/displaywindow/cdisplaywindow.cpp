@@ -107,10 +107,10 @@ const QString CDisplayWindow::windowCaption() {
 }
 
 /** Returns the used modules as a pointer list */
-QList<CSwordModuleInfo*> CDisplayWindow::modules() {
+const QList<const CSwordModuleInfo*> CDisplayWindow::modules() const {
     //qDebug() << "CDisplayWindow::modules";
 
-    return CSwordBackend::instance()->getPointerList(m_modules);
+    return CSwordBackend::instance()->getConstPointerList(m_modules);
 }
 
 void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
@@ -265,13 +265,13 @@ void CDisplayWindow::slotRemoveModule(int index) {
 }
 
 /** Sets the new display options for this window. */
-void CDisplayWindow::setDisplayOptions(const CSwordBackend::DisplayOptions &displayOptions) {
+void CDisplayWindow::setDisplayOptions(const DisplayOptions &displayOptions) {
     m_displayOptions = displayOptions;
     emit sigDisplayOptionsChanged(m_displayOptions);
 }
 
 /** Sets the new filter options of this window. */
-void CDisplayWindow::setFilterOptions(const CSwordBackend::FilterOptions &filterOptions) {
+void CDisplayWindow::setFilterOptions(const FilterOptions &filterOptions) {
     m_filterOptions = filterOptions;
     emit sigFilterOptionsChanged(m_filterOptions);
 }
@@ -313,7 +313,7 @@ void CDisplayWindow::modulesChanged() {
     }
     else {
         emit sigModulesChanged(modules());
-        key()->module(modules().first());
+        key()->setModule(modules().first());
         keyChooser()->setModules(modules());
     }
 }
@@ -407,25 +407,22 @@ void CDisplayWindow::setFormatToolBar( QToolBar* bar ) {
 }
 
 /** Sets the display settings button. */
-void CDisplayWindow::setDisplaySettingsButton( BtDisplaySettingsButton* button ) {
+void CDisplayWindow::setDisplaySettingsButton(BtDisplaySettingsButton *button) {
+    connect(this, SIGNAL(sigDisplayOptionsChanged(const DisplayOptions&)),
+        button, SLOT(setDisplayOptions(const DisplayOptions&)));
+    connect(this, SIGNAL(sigFilterOptionsChanged(const FilterOptions&)),
+        button, SLOT(setFilterOptions(const FilterOptions&)));
+    connect(this, SIGNAL(sigModulesChanged(const QList<const CSwordModuleInfo*>&)),
+        button, SLOT(setModules(const QList<const CSwordModuleInfo*>&)));
 
-    bool ok = connect(this, SIGNAL(sigDisplayOptionsChanged(CSwordBackend::DisplayOptions)),
-        button, SLOT(setDisplayOptions(CSwordBackend::DisplayOptions)));
-    Q_ASSERT(ok);
-    ok = connect(this, SIGNAL(sigFilterOptionsChanged(CSwordBackend::FilterOptions)),
-        button, SLOT(setFilterOptions(CSwordBackend::FilterOptions)));
-    Q_ASSERT(ok);
-    ok = connect(this, SIGNAL(sigModulesChanged(const QList<CSwordModuleInfo*>&)),
-        button, SLOT(setModules(const QList<CSwordModuleInfo*>&)));
-    Q_ASSERT(ok);
     button->setDisplayOptions(displayOptions(), false);
     button->setFilterOptions(filterOptions(), false);
     button->setModules(modules());
 
-    connect(button, SIGNAL(sigFilterOptionsChanged(CSwordBackend::FilterOptions)),
-            this, SLOT(setFilterOptions(CSwordBackend::FilterOptions)));
-    connect(button, SIGNAL(sigDisplayOptionsChanged(CSwordBackend::DisplayOptions)),
-            this, SLOT(setDisplayOptions(CSwordBackend::DisplayOptions)));
+    connect(button, SIGNAL(sigFilterOptionsChanged(const FilterOptions&)),
+            this, SLOT(setFilterOptions(const FilterOptions&)));
+    connect(button, SIGNAL(sigDisplayOptionsChanged(const DisplayOptions&)),
+            this, SLOT(setDisplayOptions(const DisplayOptions&)));
     connect(button, SIGNAL(sigChanged()),
             this, SLOT(lookup()));
 }

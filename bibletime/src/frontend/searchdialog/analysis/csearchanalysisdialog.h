@@ -12,7 +12,10 @@
 
 #include <QDialog>
 
-#include <QObject>
+#include "backend/cswordmodulesearch.h"
+
+// Sword includes
+#include <listkey.h>
 
 
 class CSwordModuleInfo;
@@ -30,8 +33,8 @@ class CSearchAnalysisScene;
 class CSearchAnalysisDialog : public QDialog {
         Q_OBJECT
     public:
-        CSearchAnalysisDialog(QList<CSwordModuleInfo*> modules, QWidget* parentDialog);
-        ~CSearchAnalysisDialog() {}
+        CSearchAnalysisDialog(const CSwordModuleSearch::Results &results,
+                              QWidget *parentDialog = 0);
 
     protected: // Protected methods
         /**

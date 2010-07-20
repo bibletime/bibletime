@@ -20,12 +20,14 @@
 #include "util/cresmgr.h"
 
 
-CBibleKeyChooser::CBibleKeyChooser(QList<CSwordModuleInfo*> modules, 
-                                   BTHistory* historyPtr, 
-                                   CSwordKey *key, 
-                                   QWidget *parent)
+CBibleKeyChooser::CBibleKeyChooser(
+        const QList<const CSwordModuleInfo*> &modules,
+        BTHistory *historyPtr, CSwordKey *key, QWidget *parent)
         : CKeyChooser(modules, historyPtr, key, parent),
-        m_key(dynamic_cast<CSwordVerseKey*>(key)) {
+          m_key(dynamic_cast<CSwordVerseKey*>(key))
+{
+    typedef CSwordBibleModuleInfo CSBMI;
+
     w_ref = 0;
     setModules(modules, false);
     if (!m_modules.count()) {
@@ -38,7 +40,8 @@ CBibleKeyChooser::CBibleKeyChooser(QList<CSwordModuleInfo*> modules,
     layout->setContentsMargins(0, 0, 0, 0);
     layout->setDirection( QBoxLayout::LeftToRight );
 
-    w_ref = new BtBibleKeyWidget(dynamic_cast<CSwordBibleModuleInfo*>(m_modules.first()), m_key, this);
+    w_ref = new BtBibleKeyWidget(dynamic_cast<const CSBMI*>(m_modules.first()),
+                                 m_key, this);
     setFocusProxy(w_ref);
     layout->addWidget(w_ref);
 
@@ -93,17 +96,26 @@ void CBibleKeyChooser::refChanged(CSwordVerseKey* key) {
     setUpdatesEnabled(true);
 }
 
-void CBibleKeyChooser::setModules(const QList<CSwordModuleInfo*>& modules, const bool refresh) {
+void CBibleKeyChooser::setModules(const QList<const CSwordModuleInfo*> &modules,
+                                  bool refresh)
+{
+    typedef CSwordBibleModuleInfo CSBMI;
+
     m_modules.clear();
 
-    foreach (CSwordModuleInfo* mod, modules) {
-        if (mod->type() == CSwordModuleInfo::Bible || mod->type() == CSwordModuleInfo::Commentary) {
-            if (CSwordBibleModuleInfo* bible = dynamic_cast<CSwordBibleModuleInfo*>(mod)) m_modules.append(bible);
+    Q_FOREACH (const CSwordModuleInfo *mod, modules) {
+        if (mod->type() == CSwordModuleInfo::Bible
+            || mod->type() == CSwordModuleInfo::Commentary)
+        {
+            const CSBMI* bible = dynamic_cast<const CSBMI*>(mod);
+            if (bible != 0) {
+                m_modules.append(bible);
+            }
         }
     }
 
     // First time this is called we havnt set up w_ref.
-    if (w_ref) w_ref->setModule(dynamic_cast<CSwordBibleModuleInfo*>(m_modules.first()));
+    if (w_ref) w_ref->setModule(dynamic_cast<const CSwordBibleModuleInfo*>(m_modules.first()));
     if (refresh) refreshContent();
 }
 

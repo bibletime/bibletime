@@ -41,13 +41,17 @@ const int LEGEND_INNER_BORDER = 5;
 const int LEGEND_DELTAY = 4;
 const int LEGEND_WIDTH = 85;
 
-CSearchAnalysisItem::CSearchAnalysisItem(const int moduleCount, const QString &bookname, double *scaleFactor, QList<CSwordModuleInfo*>* modules)
-        : QGraphicsRectItem(),
-        m_moduleList( modules ),
-        m_scaleFactor(scaleFactor),
-        m_bookName(bookname),
-        m_moduleCount(moduleCount),
-        m_bufferPixmap(0) {
+CSearchAnalysisItem::CSearchAnalysisItem(
+        const int moduleCount,
+        const QString &bookname,
+        double *scaleFactor,
+        const CSwordModuleSearch::Results &results)
+        : m_results(results),
+          m_scaleFactor(scaleFactor),
+          m_bookName(bookname),
+          m_moduleCount(moduleCount),
+          m_bufferPixmap(0)
+{
     m_resultCountArray.resize(m_moduleCount);
     int index = 0;
     for (index = 0; index < m_moduleCount; ++index) m_resultCountArray[index] = 0;
@@ -137,15 +141,19 @@ int CSearchAnalysisItem::width() {
 
 /** Returns the tooltip for this item. */
 const QString CSearchAnalysisItem::getToolTip() {
+    typedef CSwordModuleSearch::Results::const_iterator RCI;
+
     QString toolTipString = QString("<center><b>%1</b></center><hr/>").arg(m_bookName);
     toolTipString += "<table cellspacing=\"0\" cellpadding=\"3\" width=\"100%\" height=\"100%\" align=\"center\">";
 
     /// \todo Fix that loop
     int i = 0;
-    QList<CSwordModuleInfo*>::iterator end_it = m_moduleList->end();
+    for (RCI it = m_results.begin(); it != m_results.end(); it++) {
+        const CSwordModuleInfo *info = it.key();
 
-    for (QList<CSwordModuleInfo*>::iterator it(m_moduleList->begin()); it != end_it; ++it) {
-        CSwordModuleInfo* info = (*it);
+        /// \warning This is a workaround for sword constness
+        sword::ListKey &results = const_cast<sword::ListKey &>(it.value());
+
         const QColor c = CSearchAnalysisScene::getColor(i);
 
         toolTipString.append(
@@ -153,7 +161,7 @@ const QString CSearchAnalysisItem::getToolTip() {
             .arg(c.name())
             .arg(info ? info->name() : QString::null)
             .arg( m_resultCountArray[i] )
-            .arg( (info && m_resultCountArray[i]) ? ((double)m_resultCountArray[i] / (double)info->searchResult().Count())*(double)100 : 0.0, 0, 'g', 2)
+            .arg( (info && m_resultCountArray[i]) ? ((double)m_resultCountArray[i] / (double)results.Count())*(double)100 : 0.0, 0, 'g', 2)
         );
         ++i;
     }

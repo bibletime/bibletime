@@ -80,13 +80,14 @@ QStringList BibleTime::searchInModule(const QString& moduleName, const QString& 
     CSwordModuleInfo* mod = CSwordBackend::instance()->findModuleByName(moduleName);
 
     if (mod) {
+        sword::ListKey result;
+
         //mod->search(searchText, CSwordModuleSearch::multipleWords, sword::ListKey());
         sword::ListKey scope;
-        mod->searchIndexed( searchText, scope );
+        mod->searchIndexed(searchText, scope, result);
 
-        sword::ListKey result = mod->searchResult();
         const QString lead = QString("[%1] ").arg(moduleName);
-        ;
+
         for ( int i = 0; i < result.Count(); ++i ) {
             sword::SWKey* key = result.getElement(i);
             Q_ASSERT(key);
@@ -111,9 +112,9 @@ QStringList BibleTime::searchInOpenModules(const QString& searchText) {
     QStringList ret;
     foreach (QMdiSubWindow* subWindow,  m_mdi->subWindowList()) {
         if (CDisplayWindow* w = dynamic_cast<CDisplayWindow*>(subWindow->widget())) {
-            QList<CSwordModuleInfo*> windowModules = w->modules();
-            QList<CSwordModuleInfo*>::iterator end_it = windowModules.end();
-            for (QList<CSwordModuleInfo*>::iterator it(windowModules.begin()); it != end_it; ++it) {
+            QList<const CSwordModuleInfo*> windowModules = w->modules();
+            QList<const CSwordModuleInfo*>::iterator end_it = windowModules.end();
+            for (QList<const CSwordModuleInfo*>::iterator it(windowModules.begin()); it != end_it; ++it) {
                 ret += searchInModule((*it)->name(), searchText);
             }
         }

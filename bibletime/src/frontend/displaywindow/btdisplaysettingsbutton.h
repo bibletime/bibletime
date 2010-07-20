@@ -13,6 +13,7 @@
 #include <QToolButton>
 
 #include "backend/managers/cswordbackend.h"
+#include "btglobal.h"
 
 
 class CSwordModuleInfo;
@@ -28,15 +29,16 @@ class BtDisplaySettingsButton: public QToolButton {
         BtDisplaySettingsButton(QWidget *parent = 0);
 
     public slots:
-        void setDisplayOptions(const CSwordBackend::DisplayOptions &displaySettings,
+        void setDisplayOptions(const DisplayOptions &displaySettings,
                                bool repopulate = true);
-        void setFilterOptions(const CSwordBackend::FilterOptions &moduleSettings,
+        void setFilterOptions(const FilterOptions &moduleSettings,
                               bool repopulate = true);
-        void setModules(const QList<CSwordModuleInfo*> &modules);
+
+        void setModules(const QList<const CSwordModuleInfo*> &modules);
 
     signals:
-        void sigFilterOptionsChanged(CSwordBackend::FilterOptions filterOptions);
-        void sigDisplayOptionsChanged(CSwordBackend::DisplayOptions displayOptions);
+        void sigFilterOptionsChanged(FilterOptions filterOptions);
+        void sigDisplayOptionsChanged(DisplayOptions displayOptions);
         void sigModulesChanged(const QList<CSwordModuleInfo*> &modules);
         void sigChanged(void);
 
@@ -53,9 +55,9 @@ class BtDisplaySettingsButton: public QToolButton {
         void addMenuEntry(QAction *action, bool checked);
 
     private:
-        CSwordBackend::FilterOptions  m_filterOptions;
-        CSwordBackend::DisplayOptions m_displayOptions;
-        QList<CSwordModuleInfo*> m_modules;
+        FilterOptions  m_filterOptions;
+        DisplayOptions m_displayOptions;
+        QList<const CSwordModuleInfo*> m_modules;
 
         QMenu *m_popup;
         QAction *m_lineBreakAction;

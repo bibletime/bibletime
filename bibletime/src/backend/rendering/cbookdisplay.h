@@ -20,26 +20,27 @@ class CSwordTreeKey;
 namespace Rendering {
 
 /**
-* A CEntryDisplay implementation which works on tree-based GenBook modules
-* of Sword.
-* @short CEntryDisplay implementation for GenBook modules,
-* @author The BibleTime team
+* \brief CEntryDisplay implementation for GenBook modules,
+
+  A CEntryDisplay implementation which works on tree-based GenBook modules of
+  Sword.
 */
+class CBookDisplay: public CEntryDisplay {
+    public: /* Methods: */
+        virtual inline ~CBookDisplay() {}
 
-class CBookDisplay : public CEntryDisplay {
-    public: // Public methods
-        virtual ~CBookDisplay() {}
+        /** Reimplemented from CEntryDisplay. */
+        virtual const QString text(const QList<const CSwordModuleInfo*> &modules,
+                                   const QString &key,
+                                   const DisplayOptions &displayOptions,
+                                   const FilterOptions &filterOptions);
 
-        /**
-        * Returns the rendered text using the modules in the list and using the key parameter.
-        * The displayoptions and filter options are used, too.
-        */
-        virtual const QString text( const QList<CSwordModuleInfo*>& modules, const QString& key, const CSwordBackend::DisplayOptions displayOptions, const CSwordBackend::FilterOptions filterOptions);
-
-    protected:
-        void setupRenderTree(CSwordTreeKey* swordTree, CTextRendering::KeyTree* renderTree, const QString& highlightKey);
+    protected: /* Methods: */
+        void setupRenderTree(CSwordTreeKey *swordTree,
+                             CTextRendering::KeyTree *renderTree,
+                             const QString &highlightKey);
 };
 
-}
+} // namespace Rendering
 
 #endif

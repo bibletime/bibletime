@@ -44,7 +44,14 @@ class CPlainWriteDisplay : public QTextEdit, public CWriteDisplay  {
         */
         virtual QWidget* view();
         virtual const QString text( const CDisplay::TextType format = CDisplay::HTMLText, const CDisplay::TextPart part = CDisplay::Document );
-        virtual void print( const CDisplay::TextPart, CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions );
+
+        /**
+          Reimplemented from CDisplay.
+        */
+        virtual inline void print(const CDisplay::TextPart,
+                                  const DisplayOptions &,
+                                  const FilterOptions &) {}
+
         /**
         * Reimplementation (CWriteDisplay).
         */

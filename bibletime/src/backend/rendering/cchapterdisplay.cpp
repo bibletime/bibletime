@@ -14,11 +14,18 @@
 #include "backend/rendering/cdisplayrendering.h"
 
 
-const QString Rendering::CChapterDisplay::text( const QList<CSwordModuleInfo*>& modules, const QString& keyName, const CSwordBackend::DisplayOptions displayOptions, const CSwordBackend::FilterOptions filterOptions ) {
+const QString Rendering::CChapterDisplay::text(
+        const QList<const CSwordModuleInfo*> &modules,
+        const QString &keyName,
+        const DisplayOptions &displayOptions,
+        const FilterOptions &filterOptions)
+{
+    typedef CSwordBibleModuleInfo CSBMI;
+
     Q_ASSERT( modules.count() >= 1 );
     Q_ASSERT( !keyName.isEmpty() );
 
-    CSwordModuleInfo* module = modules.first();
+    const CSwordModuleInfo *module = modules.first();
 
     if (modules.count() == 1) module->module()->setSkipConsecutiveLinks( true ); //skip empty, linked verses
 
@@ -37,8 +44,8 @@ const QString Rendering::CChapterDisplay::text( const QList<CSwordModuleInfo*>& 
     if (module->type() == CSwordModuleInfo::Bible) {
         ((sword::VerseKey*)(module->module()->getKey()))->Headings(1); //HACK: enable headings for VerseKeys
 
-        CSwordBibleModuleInfo* bible = dynamic_cast<CSwordBibleModuleInfo*>(module);
-        Q_ASSERT(bible);
+        Q_ASSERT(dynamic_cast<const CSBMI*>(module) != 0);
+        const CSBMI *bible = static_cast<const CSBMI*>(module);
 
         CSwordVerseKey k1(module);
         k1.Headings(1);

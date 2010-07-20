@@ -22,19 +22,19 @@ class CSwordLexiconModuleInfo: public CSwordModuleInfo {
         Q_OBJECT
 
     public: /* Methods: */
-        CSwordLexiconModuleInfo(sword::SWModule *module,
-                                CSwordBackend * const backend)
-                : CSwordModuleInfo(module, backend, Lexicon), m_entryList(0) {}
+        inline CSwordLexiconModuleInfo(sword::SWModule *module,
+                                       CSwordBackend * const backend)
+                : CSwordModuleInfo(module, backend, Lexicon)
+        {
+            initEntries();
+        }
 
-        CSwordLexiconModuleInfo(const CSwordLexiconModuleInfo &copy);
+        inline CSwordLexiconModuleInfo(const CSwordLexiconModuleInfo &copy)
+            : CSwordModuleInfo(copy), m_entries(copy.m_entries) {}
 
         /* Reimplementation of CSwordModuleInfo::clone(). */
         virtual inline CSwordModuleInfo *clone() const {
             return new CSwordLexiconModuleInfo(*this);
-        }
-
-        inline ~CSwordLexiconModuleInfo() {
-            delete m_entryList;
         }
 
         /**
@@ -45,20 +45,23 @@ class CSwordLexiconModuleInfo: public CSwordModuleInfo {
           improvement.
           \returns the list of lexicon entries in the module.
         */
-        QStringList *entries();
+        inline const QStringList &entries() const { return m_entries; }
 
         /**
           Jumps to the closest entry in the module.
         */
-        virtual inline bool snap() {
+        virtual inline bool snap() const {
             return module()->getRawEntry();
         }
 
+    private: /* Methods: */
+        void initEntries();
+
     private: /* Fields: */
         /**
-        * This is the list which caches the entres of the module.
+          This is the list which caches the entres of the module.
         */
-        QStringList *m_entryList;
+        QStringList m_entries;
 };
 
 #endif

@@ -46,6 +46,8 @@ class BtSourceWidget : public QTabWidget {
         /** Add one source to tabs/stack. */
         void addSource(const QString& sourceName);
 
+        void installAccepted(const QSet<const CSwordModuleInfo*> &mi);
+
     private slots:
         /** Add tabs/views for each source. */
         void initSources();
@@ -64,7 +66,6 @@ class BtSourceWidget : public QTabWidget {
         void slotModuleSelectionChanged(QString sourceName, int selectedCount);
 
         void slotTabSelected(int index);
-        void slotInstallAccepted(const QSet<CSwordModuleInfo*> &mi);
 
     private:
         BtInstallPage* m_page;

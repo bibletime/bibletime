@@ -36,7 +36,8 @@ BtDisplaySettingsButton::BtDisplaySettingsButton(QWidget *parent)
 }
 
 void BtDisplaySettingsButton::setDisplayOptions(
-        const CSwordBackend::DisplayOptions &displaySettings, bool repopulate)
+        const DisplayOptions &displaySettings,
+        bool repopulate)
 {
     m_displayOptions = displaySettings;
     if (repopulate) {
@@ -45,7 +46,7 @@ void BtDisplaySettingsButton::setDisplayOptions(
 }
 
 void BtDisplaySettingsButton::setFilterOptions(
-        const CSwordBackend::FilterOptions &moduleSettings,
+        const FilterOptions &moduleSettings,
         bool repopulate)
 {
     m_filterOptions = moduleSettings;
@@ -54,7 +55,9 @@ void BtDisplaySettingsButton::setFilterOptions(
     }
 }
 
-void BtDisplaySettingsButton::setModules(const QList<CSwordModuleInfo*> &modules) {
+void BtDisplaySettingsButton::setModules(
+        const QList<const CSwordModuleInfo*> &modules)
+{
     m_modules = modules;
     repopulateMenu();
 }
@@ -224,7 +227,7 @@ void BtDisplaySettingsButton::addMenuEntry(QAction *action, bool checked) {
 }
 
 bool BtDisplaySettingsButton::isOptionAvailable(const CSwordModuleInfo::FilterTypes option) {
-    foreach (CSwordModuleInfo *module, m_modules) {
+    Q_FOREACH (const CSwordModuleInfo *module, m_modules) {
         if (module->has(option)) return true;
     }
     return false;

@@ -26,12 +26,17 @@ namespace Printing {
 class CPrinter : public QObject, public Rendering::CDisplayRendering {
         Q_OBJECT
     public:
-        CPrinter(QObject* parent, CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions);
+        CPrinter(QObject *parent,
+                 const DisplayOptions &displayOptions,
+                 const FilterOptions &filterOptions);
+
         virtual ~CPrinter();
         void printKeyTree( KeyTree& );
 
     protected:
-        virtual const QString entryLink(const KeyTreeItem& item, CSwordModuleInfo* const module);
+        virtual const QString entryLink(const KeyTreeItem &item,
+                                        const CSwordModuleInfo *module);
+
         virtual const QString renderEntry( const KeyTreeItem&, CSwordKey* = 0 );
         virtual const QString finishText(const QString& arg1, KeyTree& tree);
 

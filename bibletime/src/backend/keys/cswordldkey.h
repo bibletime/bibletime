@@ -54,14 +54,14 @@ class CSwordLDKey : public CSwordKey, public sword::SWKey {
         /**
           \todo Document param
         */
-        CSwordLDKey(CSwordModuleInfo *module);
+        CSwordLDKey(const CSwordModuleInfo *module);
 
         CSwordLDKey(const CSwordLDKey &copy);
 
         /**
           \todo Document params
         */
-        CSwordLDKey(const sword::SWKey *k, CSwordModuleInfo *module);
+        CSwordLDKey(const sword::SWKey *k, const CSwordModuleInfo *module);
 
         /**
           Reimplementation of CSwordKey::copy()
@@ -75,10 +75,12 @@ class CSwordLDKey : public CSwordKey, public sword::SWKey {
         * Uses the parameter to returns the previous entry afer this key.
         */
         CSwordLDKey* PreviousEntry( void );
+
         /**
-        * Sets the module of this key.
+          Sets the module of this key.
         */
-        virtual CSwordModuleInfo* module( CSwordModuleInfo* const module = 0 );
+        virtual void setModule(const CSwordModuleInfo *module);
+
         /**
         * Returns the current key as a QString
         */

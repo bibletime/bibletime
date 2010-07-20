@@ -12,6 +12,7 @@
 
 #include "frontend/keychooser/ckeychooser.h"
 
+#include "backend/keys/cswordtreekey.h"
 #include "frontend/keychooser/ckeychooserwidget.h"
 
 
@@ -20,7 +21,6 @@ class TreeKeyIdx;
 }
 class CSwordBookModuleInfo;
 class CSwordKey;
-class CSwordTreeKey;
 class QTreeWidget;
 class QTreeWidgetItem;
 class BTHistory;
@@ -31,25 +31,34 @@ class BTHistory;
 class CBookTreeChooser : public CKeyChooser {
         Q_OBJECT
     public:
-        CBookTreeChooser(QList<CSwordModuleInfo*> modules, 
-            BTHistory* history, CSwordKey *key = 0, QWidget *parent = 0);
-        ~CBookTreeChooser();
+        CBookTreeChooser(const QList<const CSwordModuleInfo*> &modules,
+                         BTHistory *history, CSwordKey *key = 0,
+                         QWidget *parent = 0);
+
         /**
-        * Refreshes the content.
+          Reimplemented from CKeyChooser::refreshContent().
         */
         virtual void refreshContent();
+
         /**
-        * Sets another module to this keychooser
+          Reimplemented from CKeyChooser::setModules().
         */
-        virtual void setModules(const QList<CSwordModuleInfo*>& modules, const bool refresh = true);
+        virtual void setModules(const QList<const CSwordModuleInfo*> &modules,
+                                bool refresh = true);
+
         /**
-        * Returns the key of this keychooser.
+          Reimplemented from CKeyChooser::key().
         */
-        virtual CSwordKey* key();
+        virtual inline CSwordKey *key() {
+            return m_key;
+        }
+
         /**
-        * Sets a new key to this keychooser
+          Reimplemented from CKeyChooser::setKey().
         */
-        virtual void setKey(CSwordKey*);
+        virtual void setKey(CSwordKey *key);
+
+
         void setKey(CSwordKey*, const bool emitSinal);
 
     public slots: // Public slots
@@ -73,7 +82,7 @@ class CBookTreeChooser : public CKeyChooser {
         void setKey(QString& newKey);
 
     private:
-        QList<CSwordBookModuleInfo*> m_modules;
+        QList<const CSwordBookModuleInfo*> m_modules;
         CSwordTreeKey* m_key;
         QTreeWidget* m_treeView;
 };

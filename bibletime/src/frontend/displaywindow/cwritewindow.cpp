@@ -65,10 +65,8 @@ void CWriteWindow::storeProfileSettings(CProfileWindow * const settings) {
     }
 
     QStringList mods;
-    QList<CSwordModuleInfo*> allMods = modules();
-    QList<CSwordModuleInfo*>::iterator end_it = allMods.end();
-    for (QList<CSwordModuleInfo*>::iterator it(allMods.begin()); it != end_it; ++it) {
-        mods.append((*it)->name());
+    Q_FOREACH(const CSwordModuleInfo *m, modules()) {
+        mods.append(m->name());
     }
     settings->setModules(mods);
 }

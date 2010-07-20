@@ -95,7 +95,9 @@ void BtRemovePage::slotRemoveModules() {
     if (m_bookshelfWidget->treeModel()->checkedModules().empty()) return;
 
     QStringList moduleNames;
-    foreach (CSwordModuleInfo *m, m_bookshelfWidget->treeModel()->checkedModules()) {
+    Q_FOREACH(const CSwordModuleInfo *m,
+              m_bookshelfWidget->treeModel()->checkedModules())
+    {
         moduleNames.append(m->name());
     }
     const QString message = tr("You selected the following work(s): ")

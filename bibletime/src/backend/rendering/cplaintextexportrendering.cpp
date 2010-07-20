@@ -15,26 +15,34 @@
 
 namespace Rendering {
 
-CPlainTextExportRendering::CPlainTextExportRendering(const CPlainTextExportRendering::Settings& settings, CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions)
-        : CHTMLExportRendering(settings, displayOptions, filterOptions) {}
+CPlainTextExportRendering::CPlainTextExportRendering(
+        const CPlainTextExportRendering::Settings &settings,
+        const DisplayOptions &displayOptions,
+        const FilterOptions &filterOptions)
+        : CHTMLExportRendering(settings, displayOptions, filterOptions)
+{
+    // Intentionally empty
+}
 
-CPlainTextExportRendering::~CPlainTextExportRendering() {}
+const QString CPlainTextExportRendering::renderEntry(const KeyTreeItem &i,
+                                                     CSwordKey *k)
+{
+    Q_UNUSED(k);
 
-const QString CPlainTextExportRendering::renderEntry( const KeyTreeItem& i, CSwordKey*  ) {
     if (!m_settings.addText) {
         return QString(i.key()).append("\n");
     }
 
-    QList<CSwordModuleInfo*> modules = i.modules();
+    QList<const CSwordModuleInfo*> modules = i.modules();
     QSharedPointer<CSwordKey> key( CSwordKey::createInstance(modules.first()) );
     QString renderedText = QString(i.key()).append(":\n");
 
     QString entry;
     //   for (CSwordModuleInfo* m = modules.first(); m; m = modules.next()) {
-    QList<CSwordModuleInfo*>::iterator end_it = modules.end();
+    QList<const CSwordModuleInfo*>::iterator end_it = modules.end();
 
-    for (QList<CSwordModuleInfo*>::iterator it(modules.begin()); it != end_it; ++it) {
-        key->module(*it);
+    for (QList<const CSwordModuleInfo*>::iterator it(modules.begin()); it != end_it; ++it) {
+        key->setModule(*it);
         key->setKey(i.key());
 
         /// \todo Check this code

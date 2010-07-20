@@ -329,12 +329,12 @@ void BtSourceWidget::slotInstall() {
     }
 
     if (dlg->exec() == QDialog::Accepted) {
-        slotInstallAccepted(dlg->checkedModules());
+        installAccepted(dlg->checkedModules());
     }
     delete dlg;
 }
 
-void BtSourceWidget::slotInstallAccepted(const QSet<CSwordModuleInfo*> &mi) {
+void BtSourceWidget::installAccepted(const QSet<const CSwordModuleInfo*> &mi) {
     qDebug() << "BtSourceWidget::slotInstallAccepted";
 
     if (mi.empty()) return;

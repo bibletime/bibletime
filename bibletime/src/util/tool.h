@@ -27,14 +27,18 @@ namespace tool {
 * @return True if saving was sucessful, otherwise false
 */
 bool savePlainFile( const QString& filename, const QString& text, const bool& forceOverwrite = false, QTextCodec* fileCodec = QTextCodec::codecForLocale());
+
 /**
-* Returns the icon used for the module given as aparameter.
+  \param[in] module the module whose icon to return.
+  \returns the icon used for the a module.
 */
-QIcon getIconForModule( CSwordModuleInfo* );
+QIcon getIconForModule(const CSwordModuleInfo *module);
+
 /**
-* Returns the name for the icon used for the module given as aparameter.
+  \param[in] module the module whose icon name to return.
+  \returns the icon name used for the a module.
 */
-QString getIconNameForModule( CSwordModuleInfo* );
+QString getIconNameForModule(const CSwordModuleInfo *module);
 
 /**
   Returns a new QLabel initialized by initExplanationLabel().

@@ -24,7 +24,7 @@ class QTreeWidgetItem;
 class BtInstallProgressDialog : public QDialog {
         Q_OBJECT
     public:
-        BtInstallProgressDialog(const QSet<CSwordModuleInfo*> &modules,
+        BtInstallProgressDialog(const QSet<const CSwordModuleInfo*> &modules,
                                 const QString &destination, QWidget *parent = 0,
                                 Qt::WindowFlags flags = 0);
 

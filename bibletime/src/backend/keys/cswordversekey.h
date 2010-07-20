@@ -56,15 +56,15 @@ class CSwordVerseKey : public CSwordKey, public sword::VerseKey {
           Constructs a versekey with the current module position and setups
           the m_module members.
         */
-        CSwordVerseKey(CSwordModuleInfo *const module);
+        CSwordVerseKey(const CSwordModuleInfo *module);
 
         CSwordVerseKey(const CSwordVerseKey &copy);
 
         /**
           \todo Document params
         */
-        CSwordVerseKey(const sword::VerseKey * const k,
-                       CSwordModuleInfo * const module);
+        CSwordVerseKey(const sword::VerseKey *k,
+                       const CSwordModuleInfo *module);
 
         /**
           Reimplementation of CSwordKey::copy().
@@ -102,10 +102,11 @@ class CSwordVerseKey : public CSwordKey, public sword::VerseKey {
         * @return The name of the current book
         */
         QString book(const QString& newBook = QString::null);
+
         /**
-        * Sets the module for this key
+          Sets the module for this key.
         */
-        virtual CSwordModuleInfo* module( CSwordModuleInfo* const newModule = 0 );
+        virtual void setModule(const CSwordModuleInfo *newModule);
 
     protected:
         /**

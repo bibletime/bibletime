@@ -22,6 +22,7 @@ class QProgressDialog;
  * while the indexing is done.
  *
  * @author The BibleTime team <info@bibletime.info>
+ \todo Rename to CModuleIndexer, since this is not a dialog!
 */
 class CModuleIndexDialog : public QObject {
         Q_OBJECT
@@ -33,11 +34,12 @@ class CModuleIndexDialog : public QObject {
 
         /** Starts the actual indexing. It shows the dialog with progress information.
          */
-        void indexAllModules( const QList<CSwordModuleInfo*>& modules );
+        void indexAllModules(const QList<const CSwordModuleInfo*> &modules);
 
-        /** Indexes all modules in the list which don't have an index yet.
-         */
-        void indexUnindexedModules( const QList<CSwordModuleInfo*>& modules );
+        /**
+          Indexes all modules in the list which don't have an index yet.
+        */
+        void indexUnindexedModules(const QList<const CSwordModuleInfo*> &modules);
 
     signals:
         /** Indexing is cancelled programmatically. */

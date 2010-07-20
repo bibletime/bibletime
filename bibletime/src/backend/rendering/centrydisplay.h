@@ -11,29 +11,27 @@
 #define CENTRYDISPLAY_H
 
 #include <QString>
-#include "backend/managers/cswordbackend.h"
 
 // Sword includes:
 #include <swdisp.h>
 
 
 class CSwordModuleInfo;
+struct DisplayOptions;
+struct FilterOptions;
 
 namespace Rendering {
 
-/**
-* The reimplementation of SWDisplay to fit our needs.
-* @short Display implementation
-* @author The BibleTime team
-*/
-
-class CEntryDisplay : public sword::SWDisplay {
+class CEntryDisplay: public sword::SWDisplay {
     public:
         /**
-        * Returns the rendered text using the modules in the list and using the key parameter.
-        * The displayoptions and filter options are used, too.
+          \returns the rendered text using the modules in the list and using the
+                   key parameter.
         */
-        virtual const QString text( const QList<CSwordModuleInfo*>& modules, const QString& key, const CSwordBackend::DisplayOptions displayOptions, const CSwordBackend::FilterOptions filterOptions);
+        virtual const QString text(const QList<const CSwordModuleInfo*> &modules,
+                                   const QString &key,
+                                   const DisplayOptions &displayOptions,
+                                   const FilterOptions &filterOptions);
 };
 
 

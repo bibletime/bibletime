@@ -28,6 +28,7 @@
 #include "backend/managers/cswordbackend.h"
 #include "backend/rendering/centrydisplay.h"
 #include "backend/cswordmodulesearch.h"
+#include "btglobal.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
 #include "util/exceptions.h"
@@ -92,9 +93,6 @@ CSwordModuleInfo::CSwordModuleInfo(sword::SWModule *module,
     initCachedCategory();
     initCachedLanguage();
 
-    /// \todo Is this needed?
-    m_searchResult.ClearList();
-
     m_hidden = CBTConfig::get(CBTConfig::hiddenModules).contains(name());
 
     if (backend()) {
@@ -109,7 +107,7 @@ CSwordModuleInfo::CSwordModuleInfo(sword::SWModule *module,
 
 CSwordModuleInfo::CSwordModuleInfo(const CSwordModuleInfo &o)
     : QObject(0), m_module(o.m_module), m_backend(o.m_backend),
-      m_searchResult(o.m_searchResult), m_type(o.m_type), m_hidden(o.m_hidden),
+      m_type(o.m_type), m_hidden(o.m_hidden),
       m_cancelIndexing(o.m_cancelIndexing), m_cachedName(o.m_cachedName),
       m_cachedCategory(o.m_cachedCategory),
       m_cachedLanguage(o.m_cachedLanguage),
@@ -198,7 +196,7 @@ QString CSwordModuleInfo::getModuleStandardIndexLocation() const { //this for no
     return getModuleBaseIndexLocation() + QString("/standard");
 }
 
-bool CSwordModuleInfo::hasIndex() {
+bool CSwordModuleInfo::hasIndex() const {
     //this will return true only
     //if the index exists and has correct version information for both index and module
     QDir d;
@@ -277,7 +275,7 @@ void CSwordModuleInfo::buildIndex() {
         if (type() == CSwordModuleInfo::Lexicon) {
             verseIndex = 0;
             verseLowIndex = 0;
-            verseSpan = ((CSwordLexiconModuleInfo*)this)->entries()->size();
+            verseSpan = ((CSwordLexiconModuleInfo*)this)->entries().size();
         }
 
         emit indexingProgress(0);
@@ -430,7 +428,10 @@ unsigned long CSwordModuleInfo::indexSize() const {
 }
 
 
-bool CSwordModuleInfo::searchIndexed(const QString& searchedText, sword::ListKey& scope) {
+int CSwordModuleInfo::searchIndexed(const QString &searchedText,
+                                    const sword::ListKey &scope,
+                                    sword::ListKey &results) const
+{
     char utfBuffer[BT_MAX_LUCENE_FIELD_LENGTH  + 1];
     wchar_t wcharBuffer[BT_MAX_LUCENE_FIELD_LENGTH + 1];
 
@@ -443,7 +444,7 @@ bool CSwordModuleInfo::searchIndexed(const QString& searchedText, sword::ListKey
         m_module->SetKey(*s);
     }
 
-    m_searchResult.ClearList();
+    results.ClearList();
 
     try {
         // do not use any stop words
@@ -455,7 +456,8 @@ bool CSwordModuleInfo::searchIndexed(const QString& searchedText, sword::ListKey
 
         QSharedPointer<lucene::search::Hits> h( searcher.search(q.data(), lucene::search::Sort::INDEXORDER) );
 
-        const bool useScope = (scope.Count() > 0);
+        /// \warning This is a workaround for Sword constness
+        const bool useScope = (const_cast<sword::ListKey&>(scope).Count() > 0);
 //		const bool isVerseModule = (type() == CSwordModuleInfo::Bible) || (type() == CSwordModuleInfo::Commentary);
 
         lucene::document::Document* doc = 0;
@@ -471,36 +473,31 @@ bool CSwordModuleInfo::searchIndexed(const QString& searchedText, sword::ListKey
             // limit results based on scope
             //if (searchOptions & CSwordModuleSearch::useScope && scope.Count() > 0){
             if (useScope) {
-                for (int j = 0; j < scope.Count(); j++) {
-                    sword::VerseKey* vkey = dynamic_cast<sword::VerseKey*>(scope.getElement(j));
+                /// \warning This is a workaround for sword constness
+                for (int j = 0; j < const_cast<sword::ListKey&>(scope).Count(); j++) {
+                    /// \warning This is a workaround for sword constness
+                    sword::ListKey &scope2 = const_cast<sword::ListKey&>(scope);
+                    sword::VerseKey* vkey = dynamic_cast<sword::VerseKey*>(scope2.getElement(j));
                     if (vkey->LowerBound().compare(*swKey) <= 0 && vkey->UpperBound().compare(*swKey) >= 0) {
-                        m_searchResult.add(*swKey);
+                        results.add(*swKey);
                     }
                 }
             }
             else { // no scope, give me all buffers
-                m_searchResult.add(*swKey);
+                results.add(*swKey);
             }
         }
     }
     catch (...) {
         qWarning("CLucene exception occurred");
         util::showWarning(0, QCoreApplication::tr("Search aborted"), QCoreApplication::tr("An internal error occurred while executing your search."));
-        return false;
+        return 0;
     }
 
     qDeleteAll(list);
     list.clear();
 
-    return (m_searchResult.Count() > 0);
-}
-
-sword::ListKey & CSwordModuleInfo::searchResult(const sword::ListKey * newResult) {
-    if (newResult) {
-        m_searchResult.copyFrom(*newResult);
-    }
-
-    return m_searchResult;
+    return results.Count();
 }
 
 sword::SWVersion CSwordModuleInfo::minimumSwordVersion() const {

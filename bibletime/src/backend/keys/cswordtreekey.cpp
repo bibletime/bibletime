@@ -16,7 +16,12 @@
 
 CSwordTreeKey::CSwordTreeKey( const CSwordTreeKey& k ) : CSwordKey(k), TreeKeyIdx(k) {}
 
-CSwordTreeKey::CSwordTreeKey( const TreeKeyIdx *k, CSwordModuleInfo* module ) : CSwordKey(module), TreeKeyIdx(*k) {}
+CSwordTreeKey::CSwordTreeKey(const TreeKeyIdx *k,
+                             const CSwordModuleInfo *module)
+    : CSwordKey(module), TreeKeyIdx(*k)
+{
+    // Intentionally empty
+}
 
 CSwordTreeKey* CSwordTreeKey::copy() const {
     return new CSwordTreeKey(*this);
@@ -75,21 +80,21 @@ QString CSwordTreeKey::getLocalNameUnicode() {
     }
 }
 
-CSwordModuleInfo* CSwordTreeKey::module( CSwordModuleInfo* const newModule ) {
-    if (newModule && (newModule != m_module) && (newModule->type() == CSwordModuleInfo::GenericBook) ) {
-        m_module = newModule;
+void CSwordTreeKey::setModule(const CSwordModuleInfo *newModule) {
+    Q_ASSERT(newModule);
+    if (m_module == newModule) return;
+    Q_ASSERT(newModule->type() == CSwordModuleInfo::GenericBook);
 
-        const QString oldKey = key();
+    m_module = newModule;
 
-        CSwordBookModuleInfo* newBook = dynamic_cast<CSwordBookModuleInfo*>(newModule);
-        copyFrom( *(newBook->tree()) );
+    const QString oldKey = key();
 
-        setKey(oldKey); //try to restore our old key
+    const CSwordBookModuleInfo *newBook = dynamic_cast<const CSwordBookModuleInfo*>(newModule);
+    copyFrom( *(newBook->tree()) );
 
-        //set the key to the root node
-        root();
-        firstChild();
-    }
+    setKey(oldKey); //try to restore our old key
 
-    return m_module;
+    //set the key to the root node
+    root();
+    firstChild();
 }

@@ -17,19 +17,20 @@ class CSwordModuleInfo;
 
 namespace Search {
 
-/**
-    @author The BibleTime team <info@bibletime.info>
-*/
 class CSearchAnalysisLegendItem : public QGraphicsRectItem {
-    public:
-        CSearchAnalysisLegendItem(QList<CSwordModuleInfo*>* list );
+    public: /* Methods: */
+        inline CSearchAnalysisLegendItem(const QList<const CSwordModuleInfo*> &modules)
+            : m_moduleList(modules) {}
 
-    private:
+    private: /* Methods: */
+        /** Reimplementation of QGraphicsItem::paint. */
         virtual void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*);
-        QList<CSwordModuleInfo*>* m_moduleList;
+
+    private: /* Fields: */
+        QList<const CSwordModuleInfo*> m_moduleList;
 
 };
 
-}
+} // namespace Search
 
 #endif

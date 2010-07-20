@@ -25,11 +25,11 @@ class CPlainTextExportRendering : public CHTMLExportRendering {
 
     public:
         CPlainTextExportRendering(
-            const Settings& settings,
-            CSwordBackend::DisplayOptions displayOptions = CBTConfig::getDisplayOptionDefaults(),
-            CSwordBackend::FilterOptions filterOptions = CBTConfig::getFilterOptionDefaults()
+            const Settings &settings,
+            const DisplayOptions &displayOptions = CBTConfig::getDisplayOptionDefaults(),
+            const FilterOptions &filterOptions = CBTConfig::getFilterOptionDefaults()
         );
-        virtual ~CPlainTextExportRendering();
+        virtual inline ~CPlainTextExportRendering() {};
 
     protected:
         virtual const QString renderEntry( const KeyTreeItem&, CSwordKey* = 0 );

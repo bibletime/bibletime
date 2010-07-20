@@ -93,13 +93,16 @@ void CSearchResultView::initConnections() {
 }
 
 /** Setups the list with the given module. */
-void CSearchResultView::setupTree(CSwordModuleInfo* m) {
+void CSearchResultView::setupTree(const CSwordModuleInfo *m,
+                                  const sword::ListKey &results)
+{
     clear();
 
     if (!m) return;
 
     m_module = m;
-    sword::ListKey& result = m->searchResult();
+    /// \warning This is a workaround for Sword constness
+    sword::ListKey &result = const_cast<sword::ListKey&>(results);
     const int count = result.Count();
     if (!count) return;
 
@@ -176,7 +179,7 @@ void CSearchResultView::printItems() {
 void CSearchResultView::saveItems() {
     CExportManager mgr(tr("Save search result..."), true, tr("Saving search result"));
 
-    CSwordModuleInfo* m = module();
+    const CSwordModuleInfo *m = module();
     CSwordKey* k = 0;
     QList<QTreeWidgetItem*> items = selectedItems();
     QList<CSwordKey*> keys;
@@ -194,7 +197,7 @@ void CSearchResultView::saveItems() {
 void CSearchResultView::saveItemsWithText() {
     CExportManager mgr(tr("Save search result..."), true, tr("Saving search result"));
 
-    CSwordModuleInfo* m = module();
+    const CSwordModuleInfo *m = module();
     CSwordKey* k = 0;
     QList<QTreeWidgetItem*> items = selectedItems();
     QList<CSwordKey*> keys;
@@ -212,7 +215,7 @@ void CSearchResultView::saveItemsWithText() {
 void CSearchResultView::copyItems() {
     CExportManager mgr(tr("Copy search result..."), true, tr("Copying search result"));
 
-    CSwordModuleInfo* m = module();
+    const CSwordModuleInfo *m = module();
     CSwordKey* k = 0;
     QList<QTreeWidgetItem*> items = selectedItems();
     QList<CSwordKey*> keys;
@@ -230,7 +233,7 @@ void CSearchResultView::copyItems() {
 void CSearchResultView::copyItemsWithText() {
     CExportManager mgr(tr("Copy search result..."), true, tr("Copying search result"));
 
-    CSwordModuleInfo* m = module();
+    const CSwordModuleInfo *m = module();
     CSwordKey* k = 0;
     QList<QTreeWidgetItem*> items = selectedItems();
     QList<CSwordKey*> keys;
@@ -243,10 +246,6 @@ void CSearchResultView::copyItemsWithText() {
 
     qDeleteAll(keys);
     keys.clear(); //delete all the keys we created
-}
-
-CSwordModuleInfo* CSearchResultView::module() {
-    return m_module;
 }
 
 /// \todo port this to the new d'n'd

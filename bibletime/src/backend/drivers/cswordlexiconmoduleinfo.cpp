@@ -24,35 +24,19 @@
 //Change it once the format changed to make all systems rebuild their caches
 #define CACHE_FORMAT "3"
 
-CSwordLexiconModuleInfo::CSwordLexiconModuleInfo(
-        const CSwordLexiconModuleInfo &copy)
-    : CSwordModuleInfo(copy)
-{
-    if (copy.m_entryList != 0) {
-        m_entryList = new QStringList(*copy.m_entryList);
-    } else {
-        m_entryList = 0;
-    }
-}
-
-/** Returns the entries of the module. */
-QStringList* CSwordLexiconModuleInfo::entries() {
+void CSwordLexiconModuleInfo::initEntries() {
     namespace DU = util::directory;
 
-    Q_ASSERT(module() != 0);
-
-    if (m_entryList) return m_entryList;
-
-    m_entryList = new QStringList();
+    Q_ASSERT(m_entries.empty());
 
     //Check for buggy modules! They will not be loaded any more.
     if ( name() == QString("ZhEnglish")) {
         qWarning() << "Module ZhEnglish is buggy and will not be loaded.";
-        return m_entryList;
+        return;
     }
     if ( name() == QString("EReo_en")) {
         qWarning() << "Module EReo_en is buggy and will not be loaded.";
-        return m_entryList;
+        return;
     }
 
     QString dir(DU::getUserCacheDir().absolutePath());
@@ -78,11 +62,11 @@ QStringList* CSwordLexiconModuleInfo::entries() {
         if (ModuleVersion == config(CSwordModuleInfo::ModuleVersion)
                 && CacheVersion == CACHE_FORMAT
                 && QDataStreamVersion == QString::number(s.version())) {
-            s >> *m_entryList;
+            s >> m_entries;
 
             f1.close();
-            qDebug() << "Read" << m_entryList->count() << "entries from lexicon cache for module" << name();
-            return m_entryList;
+            qDebug() << "Read" << m_entries.count() << "entries from lexicon cache for module" << name();
+            return;
         }
 
         f1.close();
@@ -99,12 +83,12 @@ QStringList* CSwordLexiconModuleInfo::entries() {
 
     do {
         if ( isUnicode() ) {
-            m_entryList->append(QString::fromUtf8(module()->KeyText()));
+            m_entries.append(QString::fromUtf8(module()->KeyText()));
         }
         else {
             //for latin1 modules use fromLatin1 because of speed
             QTextCodec* codec = QTextCodec::codecForName("Windows-1252");
-            m_entryList->append(codec->toUnicode(module()->KeyText()));
+            m_entries.append(codec->toUnicode(module()->KeyText()));
         }
 
         module()->increment();
@@ -113,17 +97,17 @@ QStringList* CSwordLexiconModuleInfo::entries() {
     module()->setPosition(sword::TOP); // back to the first entry
     module()->setSkipConsecutiveLinks(false);
 
-    if (m_entryList->count()) {
-        m_entryList->first().simplified();
+    if (m_entries.count()) {
+        m_entries.first().simplified();
 
-        if (m_entryList->first().trimmed().isEmpty()) {
-            m_entryList->erase( m_entryList->begin() );
+        if (m_entries.first().trimmed().isEmpty()) {
+            m_entries.erase( m_entries.begin() );
         }
     }
 
     qDebug() << "Writing cache file for lexicon module" << name();
 
-    if (m_entryList->count()) {
+    if (m_entries.count()) {
         //create cache
         QString dir(DU::getUserCacheDir().absolutePath());
         QFile f2( QString(dir).append("/").append(name()) );
@@ -133,10 +117,10 @@ QStringList* CSwordLexiconModuleInfo::entries() {
             s << config(CSwordModuleInfo::ModuleVersion) //store module version
             << QString(CACHE_FORMAT) //store BT version -- format may change
             << QString::number(s.version()) //store QDataStream version -- format may change
-            << *m_entryList;
+            << m_entries;
             f2.close();
         }
     }
 
-    return m_entryList;
+    return;
 }

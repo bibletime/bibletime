@@ -16,6 +16,14 @@
 #include <QStringList>
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/bookshelfmodel/btbookshelfmodel.h"
+#include "backend/filters/gbftohtml.h"
+#include "backend/filters/osistohtml.h"
+#include "backend/filters/plaintohtml.h"
+#include "backend/filters/teitohtml.h"
+#include "backend/filters/thmltohtml.h"
+#include "backend/rendering/cbookdisplay.h"
+#include "backend/rendering/cchapterdisplay.h"
+#include "backend/rendering/centrydisplay.h"
 
 // Sword includes:
 #include <swmgr.h>
@@ -24,12 +32,6 @@
 #include <swversion.h>
 #include <localemgr.h>
 #include <utilstr.h>
-
-namespace Rendering {
-class CEntryDisplay;
-class CChapterDisplay;
-class CBookDisplay;
-}
 
 /**
   \brief The backend layer main class, a backend implementation of Sword.
@@ -53,32 +55,6 @@ class CSwordBackend : public QObject, public sword::SWMgr {
             HidedModules = 4,
             PathChanged = 8,
             OtherChange = 16
-        };
-
-        /** Filter options. Filter options to
-         * control the text display of modules. Uses int and not bool because not all
-         * options have just two toggle values.
-         */
-        struct FilterOptions {
-            int footnotes; /**< 0 for disabled, 1 for enabled */
-            int strongNumbers; /**< 0 for disabled, 1 for enabled */
-            int headings; /**< 0 for disabled, 1 for enabled */
-            int morphTags; /**< 0 for disabled, 1 for enabled */
-            int lemmas; /**< 0 for disabled, 1 for enabled */
-            int hebrewPoints; /**< 0 for disabled, 1 for enabled */
-            int hebrewCantillation; /**< 0 for disabled, 1 for enabled */
-            int greekAccents; /**< 0 for disabled, 1 for enabled */
-            int textualVariants; /**< Number n to enabled the n-th variant */
-            int redLetterWords; /**< 0 for disabled, 1 for enabled */
-            int scriptureReferences; /**< 0 for disabled, 1 for enabled */
-            int morphSegmentation; /**< 0 for disabled, 1 for enabled */
-        };
-
-        /** Control the display of a text.
-        */
-        struct DisplayOptions {
-            int lineBreaks;
-            int verseNumbers;
         };
 
         /** The error codes which may be returned by the @ref Load() call.
@@ -144,8 +120,8 @@ class CSwordBackend : public QObject, public sword::SWMgr {
         * @param enable If this is true the option will be enabled, otherwise it will be disabled.
         */
         void setOption( const CSwordModuleInfo::FilterTypes type, const int state );
-        /** */
-        void setFilterOptions( const CSwordBackend::FilterOptions options );
+
+        void setFilterOptions(const FilterOptions &options);
         /**
         * Sets the language for the international booknames of Sword.
         * @param langName The abbreviation string which should be used for the Sword backend
@@ -204,9 +180,16 @@ class CSwordBackend : public QObject, public sword::SWMgr {
         QList<CSwordModuleInfo*> takeModulesFromList(QStringList names);
 
         /**
-        * Returns a list of pointers to modules, created from a list of module names.
+          \returns a list of pointers to modules, created from a list of module
+                   names.
         */
-        QList<CSwordModuleInfo*> getPointerList(QStringList names);
+        QList<CSwordModuleInfo*> getPointerList(const QStringList &names);
+
+        /**
+          \returns a list of pointers to const modules, created from a list of
+                   module names.
+        */
+        QList<const CSwordModuleInfo*> getConstPointerList(const QStringList &names);
 
         /** Sword prefix list.
         * @return A list of all known Sword prefix dirs
@@ -241,28 +224,23 @@ class CSwordBackend : public QObject, public sword::SWMgr {
         QString getPrivateSwordConfigPath() const;
         QString getPrivateSwordConfigFile() const;
 
-    private:
-        // Filters
-        struct {
-            sword::SWFilter* gbf;
-            sword::SWFilter* plain;
-            sword::SWFilter* thml;
-            sword::SWFilter* osis;
-            sword::SWFilter* tei;
-        } m_filters;
+    private: /* Fields: */
+        // Filters:
+        Filters::GbfToHtml   m_gbfFilter;
+        Filters::OsisToHtml  m_osisFilter;
+        Filters::PlainToHtml m_plainFilter;
+        Filters::TeiToHtml   m_teiFilter;
+        Filters::ThmlToHtml  m_thmlFilter;
 
-        struct Displays {
-            Rendering::CChapterDisplay* chapter;
-            Rendering::CEntryDisplay* entry;
-            Rendering::CBookDisplay* book;
-        }	m_displays;
+        // Displays:
+        Rendering::CChapterDisplay m_chapterDisplay;
+        Rendering::CEntryDisplay   m_entryDisplay;
+        Rendering::CBookDisplay    m_bookDisplay;
 
         BtBookshelfModel m_dataModel;
+
         static CSwordBackend *m_instance;
 };
-
-Q_DECLARE_METATYPE(CSwordBackend::FilterOptions)
-Q_DECLARE_METATYPE(CSwordBackend::DisplayOptions)
 
 /**Returns The list of modules managed by this backend*/
 inline const QList<CSwordModuleInfo*> &CSwordBackend::moduleList() const {

@@ -14,8 +14,9 @@
 #include "backend/config/cbtconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/keys/cswordversekey.h"
-#include "bteditbookmarkdialog.h"
+#include "btglobal.h"
 #include "frontend/bookmarks/btbookmarkfolder.h"
+#include "frontend/bookmarks/bteditbookmarkdialog.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
 
@@ -81,7 +82,7 @@ QString BtBookmarkItem::toolTip() const {
         return QString::null;
     }
 
-    CSwordBackend::FilterOptions filterOptions = CBTConfig::getFilterOptionDefaults();
+    FilterOptions filterOptions = CBTConfig::getFilterOptionDefaults();
     filterOptions.footnotes = false;
     filterOptions.scriptureReferences = false;
     CSwordBackend::instance()->setFilterOptions(filterOptions);

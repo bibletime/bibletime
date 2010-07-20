@@ -30,17 +30,20 @@ class TreeKeyIdx;
 class CBookKeyChooser : public CKeyChooser {
         Q_OBJECT
     public:
-        CBookKeyChooser(QList<CSwordModuleInfo*> modules, 
-            BTHistory* history, CSwordKey *key = 0, QWidget *parent = 0);
-        ~CBookKeyChooser();
+        CBookKeyChooser(const QList<const CSwordModuleInfo*> &modules,
+                        BTHistory *history, CSwordKey *key = 0,
+                        QWidget *parent = 0);
+
         /**
-        * Refreshes the content.
+          Reimplemented from CKeyChooser.
         */
         virtual void refreshContent();
+
         /**
         * Sets another module to this keychooser
         */
-        virtual void setModules(const QList<CSwordModuleInfo*>& modules, const bool refresh = false);
+        virtual void setModules(const QList<const CSwordModuleInfo*> &modules,
+                                bool refresh = false);
         /**
         * Returns the key of this keychooser
         */
@@ -79,7 +82,7 @@ class CBookKeyChooser : public CKeyChooser {
 
     private:
         QList<CKeyChooserWidget*> m_chooserWidgets;
-        QList<CSwordBookModuleInfo*> m_modules;
+        QList<const CSwordBookModuleInfo*> m_modules;
         CSwordTreeKey *m_key;
         QHBoxLayout* m_layout;
 };

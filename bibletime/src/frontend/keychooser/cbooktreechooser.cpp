@@ -21,7 +21,7 @@
 #include "frontend/keychooser/bthistory.h"
 
 
-CBookTreeChooser::CBookTreeChooser(QList<CSwordModuleInfo*> modules, 
+CBookTreeChooser::CBookTreeChooser(const QList<const CSwordModuleInfo*> &modules,
                                    BTHistory* historyPtr, CSwordKey *key, QWidget *parent)
         : CKeyChooser(modules, historyPtr, key, parent),
         m_key( dynamic_cast<CSwordTreeKey*>(key) ) {
@@ -50,8 +50,6 @@ CBookTreeChooser::CBookTreeChooser(QList<CSwordModuleInfo*> modules,
     adjustFont();
     connect(this, SIGNAL(keyChanged(CSwordKey*)), history(), SLOT(add(CSwordKey*)) );
 }
-
-CBookTreeChooser::~CBookTreeChooser() {}
 
 /** Sets a new key to this keychooser. Inherited from ckeychooser. */
 void CBookTreeChooser::setKey(CSwordKey* key) {
@@ -87,20 +85,16 @@ void CBookTreeChooser::setKey(CSwordKey* newKey, const bool emitSignal) {
     }
 }
 
-/** Returns the key of this keychooser. Inherited from ckeychooser.*/
-CSwordKey*  CBookTreeChooser::key() {
-    return m_key;
-}
-
-/** Sets another module to this keychooser. Inherited from ckeychooser (therefore
-the list of modules instead of one). */
-void CBookTreeChooser::setModules(const QList<CSwordModuleInfo*>& modules, const bool refresh) {
+void CBookTreeChooser::setModules(const QList<const CSwordModuleInfo*> &modules,
+                                  bool refresh)
+{
+    typedef CSwordBookModuleInfo CSBMI;
 
     //Add given modules into private list
     m_modules.clear();
-    QList<CSwordModuleInfo*>::const_iterator end_it = modules.end();
-    for (QList<CSwordModuleInfo*>::const_iterator it(modules.begin()); it != end_it; ++it) {
-        if (CSwordBookModuleInfo* book = dynamic_cast<CSwordBookModuleInfo*>(*it)) {
+    Q_FOREACH (const CSwordModuleInfo *m, modules) {
+        const CSBMI *book = dynamic_cast<const CSBMI*>(m);
+        if (book != 0) {
             m_modules.append(book);
         }
     }

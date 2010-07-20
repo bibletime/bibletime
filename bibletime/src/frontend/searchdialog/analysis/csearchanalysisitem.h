@@ -13,19 +13,19 @@
 #include <QGraphicsRectItem>
 
 #include <QGraphicsScene>
+#include "backend/cswordmodulesearch.h"
 
 
 class CSwordModuleInfo;
 
 namespace Search {
 
-/**
-    @author The BibleTime team <info@bibletime.info>
-*/
 class CSearchAnalysisItem : public QGraphicsRectItem {
     public:
+        CSearchAnalysisItem(const int moduleCount, const QString &bookname,
+                            double *scaleFactor,
+                            const CSwordModuleSearch::Results &results);
 
-        CSearchAnalysisItem(const int moduleCount, const QString& bookname, double *scaleFactor, QList<CSwordModuleInfo*>* modules);
         ~CSearchAnalysisItem();
         /**
         * Sets the resultcount of this item
@@ -52,7 +52,8 @@ class CSearchAnalysisItem : public QGraphicsRectItem {
     private:
         virtual void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*);
 
-        QList<CSwordModuleInfo*>* m_moduleList;
+    private: /* Fields: */
+        CSwordModuleSearch::Results m_results;
         double *m_scaleFactor;
         QString m_bookName;
         int m_moduleCount;

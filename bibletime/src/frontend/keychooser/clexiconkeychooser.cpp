@@ -23,12 +23,12 @@
 #include "util/cresmgr.h"
 
 
-CLexiconKeyChooser::CLexiconKeyChooser(QList<CSwordModuleInfo*> modules, 
-                                       BTHistory* historyPtr,
-                                       CSwordKey *key, 
-                                       QWidget *parent)
+CLexiconKeyChooser::CLexiconKeyChooser(
+        const QList<const CSwordModuleInfo*> &modules,
+        BTHistory *historyPtr, CSwordKey *key, QWidget *parent)
         : CKeyChooser(modules, historyPtr, key, parent),
-        m_key(dynamic_cast<CSwordLDKey*>(key)) {
+          m_key(dynamic_cast<CSwordLDKey*>(key))
+{
     setModules(modules, false);
 
     //we use a layout because the key chooser should be resized to full size
@@ -110,24 +110,24 @@ inline bool my_cmpEntries(const QString& a, const QString& b) {
 /** Reimplementation. */
 void CLexiconKeyChooser::refreshContent() {
     if (m_modules.count() == 1) {
-        m_widget->reset(m_modules.first()->entries(), 0, true);
+        m_widget->reset(&m_modules.first()->entries(), 0, true);
         //     qWarning("resetted");
     }
     else {
-        typedef std::multimap<unsigned int, QStringList*> EntryMap;
+        typedef std::multimap<unsigned int, const QStringList*> EntryMap;
         EntryMap entryMap;
-        QStringList* entries = 0;
-        QListIterator<CSwordLexiconModuleInfo*> mit(m_modules);
+
+        QListIterator<const CSwordLexiconModuleInfo*> mit(m_modules);
         while (mit.hasNext()) {
-            entries = mit.next()->entries();
-            entryMap.insert( std::make_pair(entries->count(), entries) );
+            const QStringList &entries = mit.next()->entries();
+            entryMap.insert( std::make_pair(entries.count(), &entries) );
         }
 
         QStringList goodEntries; //The string list which contains the entries which are available in all modules
 
         EntryMap::iterator it = entryMap.begin(); //iterator to go thoigh all selected modules
         QStringList refEntries = *(it->second); //copy the items for the first time
-        QStringList* cmpEntries = ( ++it )->second; //list for comparision, starts with the second module in the map
+        const QStringList *cmpEntries = (++it)->second; //list for comparision, starts with the second module in the map
 
         // Testing for refEntries being empty is not needed for the set union
         // of all keys, but is a good idea since it is being updated in the
@@ -154,21 +154,17 @@ void CLexiconKeyChooser::refreshContent() {
 
 }
 
-/** No descriptions */
-void CLexiconKeyChooser::adjustFont() {
-
-}
-
-/** Sets the module and refreshes the combo boxes */
-void CLexiconKeyChooser::setModules( const QList<CSwordModuleInfo*>& modules, const bool refresh ) {
+void CLexiconKeyChooser::setModules(const QList<const CSwordModuleInfo*> &modules,
+                                    bool refresh)
+{
+    typedef CSwordLexiconModuleInfo CSLMI;
 
     while (!m_modules.isEmpty())
         m_modules.takeFirst(); // not deleting the pointer
 
-    QList<CSwordModuleInfo*>::const_iterator end_it = modules.end();
-    for (QList<CSwordModuleInfo*>::const_iterator it(modules.begin()); it != end_it; ++it) {
-        CSwordLexiconModuleInfo* lexicon = dynamic_cast<CSwordLexiconModuleInfo*>(*it);
-        if (lexicon) {
+    Q_FOREACH(const CSwordModuleInfo *m, modules) {
+        const CSLMI *lexicon = dynamic_cast<const CSLMI*>(m);
+        if (lexicon != 0) {
             m_modules.append(lexicon);
         }
     }

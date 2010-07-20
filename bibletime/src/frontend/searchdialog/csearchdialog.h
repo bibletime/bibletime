@@ -15,11 +15,10 @@
 #include <QString>
 #include "backend/cswordmodulesearch.h"
 #include "backend/managers/cswordbackend.h"
-
+#include "frontend/searchdialog/btsearchoptionsarea.h"
 
 namespace Search {
 class BtSearchResultArea;
-class BtSearchOptionsArea;
 }
 class QPushButton;
 class QWidget;
@@ -32,7 +31,10 @@ namespace Search {
 class CSearchDialog : public QDialog {
         Q_OBJECT
     public:
-        static void openDialog(const QList<CSwordModuleInfo*> modules, const QString& searchText = QString::null, QWidget* parentDialog = 0);
+        static void openDialog(const QList<const CSwordModuleInfo*> modules,
+                               const QString &searchText = QString::null,
+                               QWidget *parentDialog = 0);
+
         static void closeDialog();
 
     protected:
@@ -53,33 +55,48 @@ class CSearchDialog : public QDialog {
          * Initializes this object.
          */
         void initView();
+
         /**
-        * Starts the search with the given module list and given search text.
-        * Doesn't wait for the start button press, starts immediately
+          Starts the search with the given module list and given search text.
         */
-        void startSearch( const QList<CSwordModuleInfo*> modules, const QString& searchText);
+        void startSearch(const QList<const CSwordModuleInfo*> modules,
+                         const QString &searchText);
+
         /**Prepares the search string given by user for a specific search type */
         QString prepareSearchText(const QString& orig);
+
         /**
-        * Sets the list of modules for the search.
+          Sets the list of modules for the search.
         */
-        void setModules( const QList<CSwordModuleInfo*> modules );
+        void setModules(const QList<const CSwordModuleInfo*> modules) {
+            m_searchOptionsArea->setModules(modules);
+        }
+
         /**
-        * Returns the list of used modules.
+          Returns the list of used modules.
         */
-        QList<CSwordModuleInfo*> modules() const;
+        inline QList<const CSwordModuleInfo*> modules() const {
+            return m_searchOptionsArea->modules();
+        }
+
         /**
         * Sets the search text which is used for the search.
         */
         void setSearchText( const QString &searchText );
+
         /**
-        * Returns the search text which is set currently.
+          \returns the search text which is set currently.
         */
-        QString searchText() const;
+        QString searchText() const {
+            return m_searchOptionsArea->searchText();
+        }
+
         /**
-        * Returns the used search scope as a list key
+          \returns the used search scope as a list key
         */
-        sword::ListKey searchScope();
+        inline sword::ListKey searchScope() const {
+            return m_searchOptionsArea->searchScope();
+        }
 
         /**
         * Resets the parts to the default.
@@ -96,9 +113,10 @@ class CSearchDialog : public QDialog {
 
     protected slots:
         /**
-        * Starts the search with the set modules and the set search text.
+          Starts the search with the set modules and the set search text.
         */
         void startSearch();
+
         void searchFinished();
         void showModulesSelector();
         /**

@@ -13,8 +13,7 @@
 #include <QList>
 #include <QString>
 #include "backend/config/cbtconfig.h"
-#include "backend/managers/cswordbackend.h"
-
+#include "btglobal.h"
 
 class CSwordKey;
 class CSwordModuleInfo;
@@ -33,21 +32,60 @@ class CExportManager {
             Text
         };
 
-        CExportManager(const QString& caption, const bool showProgress = true, const QString& progressLabel = QString::null, const CSwordBackend::FilterOptions filterOptions = CBTConfig::getFilterOptionDefaults(), const CSwordBackend::DisplayOptions displayOptions = CBTConfig::getDisplayOptionDefaults());
+        CExportManager(const QString &caption,
+                       const bool showProgress = true,
+                       const QString &progressLabel = QString::null,
+                       const FilterOptions &filterOptions = CBTConfig::getFilterOptionDefaults(),
+                       const DisplayOptions &displayOptions = CBTConfig::getDisplayOptionDefaults());
 
         bool saveKey(CSwordKey* key, const Format format, const bool addText);
-        bool saveKeyList(sword::ListKey* list, CSwordModuleInfo* module, const Format format, const bool addText);
-        bool saveKeyList(QList<CSwordKey*>& list, const Format format, const bool addText );
+
+        bool saveKeyList(const sword::ListKey &list,
+                         const CSwordModuleInfo *module,
+                         Format format,
+                         bool addText);
+
+        bool saveKeyList(const QList<CSwordKey*> &list,
+                         Format format,
+                         const bool addText );
 
         bool copyKey(CSwordKey* key, const Format format, const bool addText);
-        bool copyKeyList(sword::ListKey* list, CSwordModuleInfo* module, const Format format, const bool addText);
-        bool copyKeyList(QList<CSwordKey*>& list, const Format format, const bool addText );
 
-        bool printKey(CSwordKey* key, CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions);
-        bool printKey( CSwordModuleInfo* module, const QString& startKey, const QString& stopKey, CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions );
-        bool printByHyperlink(const QString& hyperlink, CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions);
-        bool printKeyList(sword::ListKey* list, CSwordModuleInfo* module, CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions);
-        bool printKeyList(const QStringList& list, CSwordModuleInfo* module, CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions);
+        bool copyKeyList(const sword::ListKey &list,
+                         const CSwordModuleInfo *module,
+                         Format format,
+                         bool addText);
+
+        bool copyKeyList(const QList<CSwordKey*> &list,
+                         Format format,
+                         bool addText);
+
+        bool printKey(const CSwordKey *key,
+                      const DisplayOptions &displayOptions,
+                      const FilterOptions &filterOptions);
+
+        bool printKey(const CSwordModuleInfo *module,
+                      const QString &startKey,
+                      const QString &stopKey,
+                      const DisplayOptions &displayOptions,
+                      const FilterOptions &filterOptions);
+
+        /**
+          Prints a key using the hyperlink created by CReferenceManager.
+        */
+        bool printByHyperlink(const QString &hyperlink,
+                              const DisplayOptions &displayOptions,
+                              const FilterOptions &filterOptions);
+
+        bool printKeyList(const sword::ListKey &list,
+                          const CSwordModuleInfo *module,
+                          const DisplayOptions &displayOptions,
+                          const FilterOptions &filterOptions);
+
+        bool printKeyList(const QStringList &list,
+                          const CSwordModuleInfo *module,
+                          const DisplayOptions &displayOptions,
+                          const FilterOptions &filterOptions);
 
     protected: // Protected methods
         /**
@@ -63,8 +101,8 @@ class CExportManager {
         QString m_caption; ///< \todo Useless field
         QString m_progressLabel;
         bool m_showProgress;
-        CSwordBackend::FilterOptions m_filterOptions;
-        CSwordBackend::DisplayOptions m_displayOptions;
+        FilterOptions m_filterOptions;
+        DisplayOptions m_displayOptions;
 
         QProgressDialog* m_progressDialog;
 

@@ -24,9 +24,9 @@
 #include "frontend/bookshelfmanager/installpage/btinstallthread.h"
 
 
-BtInstallProgressDialog::BtInstallProgressDialog(const QSet<CSwordModuleInfo*> &modules,
-                                                 const QString &destination, QWidget *parent,
-                                                 Qt::WindowFlags flags)
+BtInstallProgressDialog::BtInstallProgressDialog(
+        const QSet<const CSwordModuleInfo*> &modules,
+        const QString &destination, QWidget *parent, Qt::WindowFlags flags)
         : QDialog(parent, flags)
 {
     // we want this dialog to be deleted when user closes it or the downloads are completed
@@ -41,7 +41,7 @@ BtInstallProgressDialog::BtInstallProgressDialog(const QSet<CSwordModuleInfo*> &
     m_statusWidget->header()->setMovable(false);
     //m_statusWidget->setColumnWidth(1, util::tool::mWidth(m_statusWidget, 2));
 
-    foreach (CSwordModuleInfo *module, modules) {
+    Q_FOREACH(const CSwordModuleInfo *module, modules) {
         const QString sourceName(module->property("installSourceName").toString());
         // create a thread for this module
         BtInstallThread* thread = new BtInstallThread(module->name(), sourceName, destination);

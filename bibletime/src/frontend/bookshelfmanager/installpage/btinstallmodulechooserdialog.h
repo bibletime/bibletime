@@ -33,7 +33,7 @@ class BtInstallModuleChooserDialog: public BtModuleChooserDialog {
                                               Qt::WindowFlags flags = 0);
         ~BtInstallModuleChooserDialog();
 
-        inline const QSet<CSwordModuleInfo*> &checkedModules() const {
+        inline const QSet<const CSwordModuleInfo*> &checkedModules() const {
             return bookshelfWidget()->treeModel()->checkedModules();
         }
 

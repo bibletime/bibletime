@@ -52,7 +52,11 @@ CSearchAnalysisScene::CSearchAnalysisScene(QObject *parent )
 }
 
 /** Starts the analysis of the search result. This should be called only once because QCanvas handles the updates automatically. */
-void CSearchAnalysisScene::analyse(QList<CSwordModuleInfo*> modules) {
+void CSearchAnalysisScene::analyse(
+        const CSwordModuleSearch::Results &results)
+{
+    typedef CSwordModuleSearch::Results::const_iterator RCI;
+
     /**
     * Steps of analysing our search result;
     * -Create the items for all available books ("Genesis" - "Revelation")
@@ -61,13 +65,13 @@ void CSearchAnalysisScene::analyse(QList<CSwordModuleInfo*> modules) {
     *   -Find out how many times we found the book
     *   -Set the count to the items which belongs to the book
     */
-    setModules(modules);
+    setResults(results);
 
     m_lastPosList.clear();
-    const int numberOfModules = m_moduleList.count();
+    const int numberOfModules = m_results.count();
     if (!numberOfModules)
         return;
-    m_legend = new CSearchAnalysisLegendItem(&m_moduleList);
+    m_legend = new CSearchAnalysisLegendItem(m_results.keys());
     addItem(m_legend);
     m_legend->setRect(LEFT_BORDER, UPPER_BORDER,
                       LEGEND_WIDTH, LEGEND_INNER_BORDER*2 + ITEM_TEXT_SIZE*numberOfModules + LEGEND_DELTAY*(numberOfModules - 1) );
@@ -84,14 +88,13 @@ void CSearchAnalysisScene::analyse(QList<CSwordModuleInfo*> modules) {
     bool ok = true;
     while (ok && analysisItem) {
         moduleIndex = 0;
-        QList<CSwordModuleInfo*>::iterator end_it = m_moduleList.end();
-        for (QList<CSwordModuleInfo*>::iterator it(m_moduleList.begin()); it != end_it; ++it) {
+        for (RCI it = m_results.begin(); it != m_results.end(); it++) {
             qApp->processEvents( QEventLoop::AllEvents );
-            if (!m_lastPosList.contains(*it)) {
-                m_lastPosList.insert(*it, 0);
+            if (!m_lastPosList.contains(it.key())) {
+                m_lastPosList.insert(it.key(), 0);
             }
 
-            analysisItem->setCountForModule(moduleIndex, (count = getCount(key.book(), *it)));
+            analysisItem->setCountForModule(moduleIndex, (count = getCount(key.book(), it.key())));
             m_maxCount = (count > m_maxCount) ? count : m_maxCount;
 
             ++moduleIndex;
@@ -106,16 +109,21 @@ void CSearchAnalysisScene::analyse(QList<CSwordModuleInfo*> modules) {
         ok = key.next(CSwordVerseKey::UseBook);
         analysisItem = m_itemList[key.book()];
     }
-    setSceneRect(0, 0, xPos + BAR_WIDTH + (m_moduleList.count() - 1)*BAR_DELTAX + RIGHT_BORDER, height() );
+    setSceneRect(0, 0, xPos + BAR_WIDTH + (m_results.count() - 1)*BAR_DELTAX + RIGHT_BORDER, height() );
     slotResized();
 }
 
 /** Sets the module list used for the analysis. */
-void CSearchAnalysisScene::setModules(QList<CSwordModuleInfo*> modules) {
-    m_moduleList.clear();
-    foreach (CSwordModuleInfo * mod, modules) {
-        if ( (mod->type() == CSwordModuleInfo::Bible) || (mod->type() == CSwordModuleInfo::Commentary) ) { //a Bible or an commentary
-            m_moduleList.append(mod);
+void CSearchAnalysisScene::setResults(
+        const CSwordModuleSearch::Results &results)
+{
+    typedef CSwordModuleSearch::Results::const_iterator RCI;
+
+    m_results.clear();
+    for (RCI it = results.begin(); it != results.end(); it++) {
+        const CSwordModuleInfo *m = it.key();
+        if ( (m->type() == CSwordModuleInfo::Bible) || (m->type() == CSwordModuleInfo::Commentary) ) { //a Bible or an commentary
+            m_results.insert(m, it.value());
         }
     }
 
@@ -124,7 +132,7 @@ void CSearchAnalysisScene::setModules(QList<CSwordModuleInfo*> modules) {
     CSwordVerseKey key(0);
     key.setKey("Genesis 1:1");
     do {
-        analysisItem = new CSearchAnalysisItem(m_moduleList.count(), key.book(), &m_scaleFactor, &m_moduleList);
+        analysisItem = new CSearchAnalysisItem(m_results.count(), key.book(), &m_scaleFactor, m_results);
         addItem(analysisItem);
         analysisItem->hide();
         m_itemList.insert(key.book(), analysisItem);
@@ -154,13 +162,13 @@ void CSearchAnalysisScene::reset() {
 
 /** No descriptions */
 void CSearchAnalysisScene::slotResized() {
-    m_scaleFactor = (double)( (double)(height() - UPPER_BORDER - LOWER_BORDER - BAR_LOWER_BORDER - 100 - (m_moduleList.count() - 1) * BAR_DELTAY)
+    m_scaleFactor = (double)( (double)(height() - UPPER_BORDER - LOWER_BORDER - BAR_LOWER_BORDER - 100 - (m_results.count() - 1) * BAR_DELTAY)
                               / (double)m_maxCount);
     QHashIterator<QString, CSearchAnalysisItem*> it( m_itemList );
     while ( it.hasNext() ) {
         it.next();
         if (it.value()) {
-            it.value()->setRect(it.value()->rect().x(), UPPER_BORDER, BAR_WIDTH + (m_moduleList.count() - 1)*BAR_DELTAX, height() - LOWER_BORDER - BAR_LOWER_BORDER);
+            it.value()->setRect(it.value()->rect().x(), UPPER_BORDER, BAR_WIDTH + (m_results.count() - 1)*BAR_DELTAX, height() - LOWER_BORDER - BAR_LOWER_BORDER);
         }
     }
     update();
@@ -194,9 +202,12 @@ QColor CSearchAnalysisScene::getColor(int index) {
     }
 }
 
-/** Returns the count of the book in the module */
-unsigned int CSearchAnalysisScene::getCount( const QString book, CSwordModuleInfo* module ) {
-    sword::ListKey& result = module->searchResult();
+unsigned int CSearchAnalysisScene::getCount(const QString &book,
+                                            const CSwordModuleInfo* module)
+{
+    /// \warning This is a workaround for sword constness
+    sword::ListKey result = m_results[module];
+
     const int length = book.length();
     unsigned int i = m_lastPosList[module];
     unsigned int count = 0;
@@ -212,6 +223,8 @@ unsigned int CSearchAnalysisScene::getCount( const QString book, CSwordModuleInf
 }
 
 void CSearchAnalysisScene::saveAsHTML() {
+    typedef CSwordModuleSearch::Results::const_iterator RCI;
+
     const QString fileName = QFileDialog::getSaveFileName(0, tr("Save Search Analysis"), QString::null, tr("HTML files (*.html;*.HTML;*.HTM;*.htm)") );
     if (fileName.isEmpty()) return;
 
@@ -224,7 +237,6 @@ void CSearchAnalysisScene::saveAsHTML() {
     const QString txtCSS = QString("<style type=\"text/css\">\ntd {border:1px solid black;}\nth {font-size: 130%; text-align:left; vertical-align:top;}\n</style>\n");
     const QString metaEncoding = QString("<META http-equiv=Content-Type content=\"text/html; charset=utf-8\">");
     CSwordVerseKey key(0);
-    sword::ListKey searchResult;
 
     key.setKey("Genesis 1:1");
 
@@ -236,9 +248,12 @@ void CSearchAnalysisScene::saveAsHTML() {
     tableTitle = "<tr><th align=\"left\">" + tr("Book") + "</th>";
     tableTotals = "<tr><td align=\"left\">" + tr("Total hits") + "</td>";
 
-    foreach (CSwordModuleInfo* mod, m_moduleList) {
+    for (RCI it = m_results.begin(); it != m_results.end(); it++) {
+        const CSwordModuleInfo *mod = it.key();
         tableTitle += QString("<th align=\"left\">") + mod->name() + QString("</th>");
-        searchResult = mod->searchResult();
+
+        /// \warning This is a workaround for sword constness
+        sword::ListKey searchResult = it.value();
         countStr.setNum(searchResult.Count());
 
         tableTotals += QString("<td align=\"right\">") + countStr + QString("</td>");
@@ -253,8 +268,7 @@ void CSearchAnalysisScene::saveAsHTML() {
         analysisItem = m_itemList.value( key.book() );
 
         int moduleIndex = 0;
-        QList<CSwordModuleInfo*>::iterator end_it = m_moduleList.end();
-        for (QList<CSwordModuleInfo*>::iterator it(m_moduleList.begin()); it != end_it; ++it) {
+        for (RCI it = m_results.begin(); it != m_results.end(); it++) {
             count = analysisItem->getCountForModule(moduleIndex);
             countStr.setNum(count);
             m_searchAnalysisHTML += QString("<td align=\"right\">") + countStr + QString("</td>");

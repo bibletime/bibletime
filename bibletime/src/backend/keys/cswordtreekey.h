@@ -30,14 +30,15 @@ class CSwordTreeKey : public CSwordKey, public sword::TreeKeyIdx {
           \param k The Sword tree key which belongs to this key
           \param module The module which belongs to this key
          */
-        CSwordTreeKey(const sword::TreeKeyIdx *k, CSwordModuleInfo *module);
+        CSwordTreeKey(const sword::TreeKeyIdx *k,
+                      const CSwordModuleInfo *module);
 
         CSwordTreeKey( const CSwordTreeKey& k );
 
         /**
-          \returns the module which belongs to this key.
+          Reimplemented from CSwordKey.
         */
-        virtual CSwordModuleInfo *module(CSwordModuleInfo * const newModule);
+        virtual void setModule(const CSwordModuleInfo *newModule);
 
         /** Copy method.
         * @return A new copy of this object.

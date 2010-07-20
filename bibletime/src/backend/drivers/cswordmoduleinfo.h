@@ -170,11 +170,7 @@ class CSwordModuleInfo: public QObject {
 
         virtual CSwordModuleInfo *clone() const = 0;
 
-        virtual inline ~CSwordModuleInfo() {
-            // m_module is deleted by the backend
-            /// \todo is this needed?
-            m_searchResult.ClearList();
-        }
+        virtual inline ~CSwordModuleInfo() {}
 
 
         /**
@@ -232,7 +228,7 @@ class CSwordModuleInfo: public QObject {
         /**
           \returns true if the module's index has been built.
         */
-        bool hasIndex();
+        bool hasIndex() const;
 
         /**
           \returns the path to this module's index base dir
@@ -257,15 +253,11 @@ class CSwordModuleInfo: public QObject {
         /**
           This function uses CLucene to perform and index based search. It also
           overwrites the variable containing the last search result.
-          \returns whether something was found
+          \returns the number of results found
         */
-        bool searchIndexed(const QString &searchedText, sword::ListKey &scope);
-
-        /**
-        * Returns the last search result for this module.
-        * The last result is cleared by @ref search
-        */
-        sword::ListKey &searchResult(const sword::ListKey *newResult = 0);
+        int searchIndexed(const QString &searchedText,
+                          const sword::ListKey &scope,
+                          sword::ListKey &results) const;
 
         /**
           \returns the type of the module.
@@ -293,7 +285,7 @@ class CSwordModuleInfo: public QObject {
         * Snaps to the closest entry in the module if the current key is
         * not present in the data files.
         */
-        virtual inline bool snap() {
+        virtual inline bool snap() const {
             return false;
         }
 
@@ -428,9 +420,8 @@ class CSwordModuleInfo: public QObject {
         void indexingProgress(int);
 
     private:
-        sword::SWModule *m_module;
+        sword::SWModule * const m_module;
         CSwordBackend *m_backend;
-        sword::ListKey m_searchResult;
         ModuleType m_type;
         bool m_hidden;
         bool m_cancelIndexing;

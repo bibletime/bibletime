@@ -29,7 +29,7 @@
 
 const QTextCodec *CSwordKey::m_cp1252Codec = QTextCodec::codecForName("Windows-1252");
 
-CSwordKey::CSwordKey(CSwordModuleInfo* const module) 
+CSwordKey::CSwordKey(const CSwordModuleInfo * const module)
     : m_module(module),
     m_signal(0) {}
 
@@ -159,7 +159,7 @@ void CSwordKey::emitChanged() {
 }
 
 /** This will create a proper key object from a given module */
-CSwordKey* CSwordKey::createInstance( CSwordModuleInfo* const module ) {
+CSwordKey *CSwordKey::createInstance(const CSwordModuleInfo *module) {
     if (!module) {
         return 0;
     }

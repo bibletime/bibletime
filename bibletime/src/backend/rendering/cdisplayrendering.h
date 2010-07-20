@@ -25,12 +25,14 @@ class CDisplayRendering : public CHTMLExportRendering {
         static const QString keyToHTMLAnchor(const QString& key);
 
         CDisplayRendering(
-            CSwordBackend::DisplayOptions displayOptions = CBTConfig::getDisplayOptionDefaults(),
-            CSwordBackend::FilterOptions filterOptions = CBTConfig::getFilterOptionDefaults()
+            const DisplayOptions &displayOptions = CBTConfig::getDisplayOptionDefaults(),
+            const FilterOptions &filterOptions = CBTConfig::getFilterOptionDefaults()
         );
 
     protected:
-        virtual const QString entryLink( const KeyTreeItem& item, CSwordModuleInfo* const module );
+        virtual const QString entryLink(const KeyTreeItem &item,
+                                        const CSwordModuleInfo *module);
+
         virtual const QString finishText( const QString&, KeyTree& tree );
 };
 

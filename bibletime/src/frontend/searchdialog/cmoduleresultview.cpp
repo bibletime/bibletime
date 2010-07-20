@@ -97,30 +97,31 @@ void CModuleResultView::initConnections() {
             this, SLOT(executed(QTreeWidgetItem*, QTreeWidgetItem*)));
 }
 
-/** Setups the tree using the given list of modules. */
-void CModuleResultView::setupTree( QList<CSwordModuleInfo*> modules, const QString& searchedText ) {
+void CModuleResultView::setupTree(
+        const CSwordModuleSearch::Results &results,
+        const QString &searchedText)
+{
     clear();
+
+    m_results = results;
+
     /// \todo this class is for sorting
     //util::CSortListViewItem* item = 0;
     //util::CSortListViewItem* oldItem = 0;
     QTreeWidgetItem* item = 0;
-
-    sword::ListKey result;
 
     qDeleteAll(m_strongsResults);
     m_strongsResults.clear();
 
     bool strongsAvailable = false;
 
-    QList<CSwordModuleInfo*>::iterator end_it = modules.end();
-    for (QList<CSwordModuleInfo*>::iterator it(modules.begin()); it != end_it; ++it) {
-        //   for (modules.first(); modules.current(); modules.next()) {
-        result = (*it)->searchResult();
+    Q_FOREACH(const CSwordModuleInfo *m, results.keys()) {
+        sword::ListKey result = results.value(m);
 
-        item = new QTreeWidgetItem(this, QStringList((*it)->name()) << QString::number(result.Count()) );
+        item = new QTreeWidgetItem(this, QStringList(m->name()) << QString::number(result.Count()) );
         /// \todo item->setColumnSorting(1, util::CSortListViewItem::Number);
 
-        item->setIcon(0, util::tool::getIconForModule(*it) );
+        item->setIcon(0, util::tool::getIconForModule(m) );
         //----------------------------------------------------------------------
         // we need to make a decision here.  Either don't show any Strong's
         // number translations, or show the first one in the search text, or
@@ -139,7 +140,7 @@ void CModuleResultView::setupTree( QList<CSwordModuleInfo*> modules, const QStri
             sTokenIndex = searchedText.indexOf(" ", sstIndex);
             sNumber = searchedText.mid(sstIndex, sTokenIndex - sstIndex);
 
-            setupStrongsResults((*it), item, sNumber);
+            setupStrongsResults(m, results[m], item, sNumber);
 
             /// \todo item->setOpen(true);
             strongsAvailable = true;
@@ -150,11 +151,12 @@ void CModuleResultView::setupTree( QList<CSwordModuleInfo*> modules, const QStri
     setRootIsDecorated( strongsAvailable );
 }
 
-void CModuleResultView::setupStrongsResults(CSwordModuleInfo *module,
+void CModuleResultView::setupStrongsResults(const CSwordModuleInfo *module,
+                                            const sword::ListKey &results,
                                             QTreeWidgetItem *parent,
                                             const QString &sNumber)
 {
-    StrongsResultList *m = new StrongsResultList(module, sNumber);
+    StrongsResultList *m = new StrongsResultList(module, results, sNumber);
     m_strongsResults[module] = m;
 
     for (int cnt = 0; cnt < m->count(); ++cnt) {
@@ -176,7 +178,7 @@ void CModuleResultView::executed( QTreeWidgetItem* i, QTreeWidgetItem*) {
     }
     if (CSwordModuleInfo *m = CSwordBackend::instance()->findModuleByName(i->text(0))) {
         emit moduleChanged();
-        emit moduleSelected(m);
+        emit moduleSelected(m, m_results.value(m));
         return;
     }
 
@@ -229,46 +231,57 @@ void CModuleResultView::contextMenuEvent( QContextMenuEvent * event ) {
 
 /** Copies the whole search result into the clipboard. */
 void CModuleResultView::copyResult() {
-    if (CSwordModuleInfo* m = activeModule()) {
-        sword::ListKey result = m->searchResult();
-        CExportManager mgr(tr("Copy search result..."), true, tr("Copying search result"));
-        mgr.copyKeyList(&result, m, CExportManager::Text, false);
+    CSwordModuleInfo *m = activeModule();
+    if (m != 0) {
+        CExportManager mgr(tr("Copy search result..."), true,
+                           tr("Copying search result"));
+
+        mgr.copyKeyList(m_results[m], m, CExportManager::Text, false);
     };
 }
 
 /** Copies the whole search result with the text into the clipboard. */
 void CModuleResultView::copyResultWithText() {
-    if (CSwordModuleInfo* m = activeModule()) {
-        sword::ListKey result = m->searchResult();
-        CExportManager mgr(tr("Copy search result..."), true, tr("Copying search result"));
-        mgr.copyKeyList(&result, m, CExportManager::Text, true);
+    CSwordModuleInfo *m = activeModule();
+    if (m != 0) {
+        CExportManager mgr(tr("Copy search result..."), true,
+                           tr("Copying search result"));
+
+        mgr.copyKeyList(m_results[m], m, CExportManager::Text, true);
     };
 }
 
 /** Saves the search result keys. */
 void CModuleResultView::saveResult() {
-    if (CSwordModuleInfo* m = activeModule()) {
-        sword::ListKey result = m->searchResult();
-        CExportManager mgr(tr("Save search result..."), true, tr("Saving search result"));
-        mgr.saveKeyList(&result, m, CExportManager::Text, false);
+    CSwordModuleInfo *m = activeModule();
+    if (m != 0) {
+        CExportManager mgr(tr("Save search result..."), true,
+                           tr("Saving search result"));
+
+        mgr.saveKeyList(m_results[m], m, CExportManager::Text, false);
     };
 }
 
 /** Saves the search result with it's text. */
 void CModuleResultView::saveResultWithText() {
-    if (CSwordModuleInfo* m = activeModule()) {
-        sword::ListKey result = m->searchResult();
-        CExportManager mgr(tr("Save search result..."), true, tr("Saving search result"));
-        mgr.saveKeyList(&result, m, CExportManager::Text, true);
+    CSwordModuleInfo *m = activeModule();
+    if (m != 0) {
+        CExportManager mgr(tr("Save search result..."), true,
+                           tr("Saving search result"));
+
+        mgr.saveKeyList(m_results[m], m, CExportManager::Text, true);
     };
 }
 
 /** Appends the whole search result to the printer queue. */
 void CModuleResultView::printResult() {
-    if (CSwordModuleInfo* m = activeModule()) {
-        sword::ListKey result = m->searchResult();
-        CExportManager mgr(tr("Print search result..."), true, tr("Printing search result"));
-        mgr.printKeyList(&result, m, CBTConfig::getDisplayOptionDefaults(), CBTConfig::getFilterOptionDefaults());
+    CSwordModuleInfo *m = activeModule();
+    if (m != 0) {
+        CExportManager mgr(tr("Print search result..."), true,
+                           tr("Printing search result"));
+
+        mgr.printKeyList(m_results[m], m, CBTConfig::getDisplayOptionDefaults(),
+                         CBTConfig::getFilterOptionDefaults());
     };
 }
 

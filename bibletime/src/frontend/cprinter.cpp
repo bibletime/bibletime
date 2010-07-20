@@ -19,10 +19,14 @@
 
 namespace Printing {
 
-CPrinter::CPrinter(QObject*, CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions)
-        :	QObject(0),
-        CDisplayRendering(displayOptions, filterOptions),
-        m_htmlPage(new QWebPage()) {
+/// \todo WHY IS parent NOT USED!?
+CPrinter::CPrinter(QObject *,
+                   const DisplayOptions &displayOptions,
+                   const FilterOptions &filterOptions)
+        : QObject(0),
+          CDisplayRendering(displayOptions, filterOptions),
+          m_htmlPage(new QWebPage())
+{
     m_htmlPage->setParent(this);
 
     //override the filteroptions set in the c-tor of CDisplayRendering
@@ -48,7 +52,9 @@ void CPrinter::printKeyTree( KeyTree& tree ) {
     }
 }
 
-const QString CPrinter::entryLink(const KeyTreeItem& item, CSwordModuleInfo* module) {
+const QString CPrinter::entryLink(const KeyTreeItem &item,
+                                  const CSwordModuleInfo *module)
+{
     Q_ASSERT(module);
     if (module->type() == CSwordModuleInfo::Bible) {
         CSwordVerseKey vk(module);
@@ -93,7 +99,7 @@ const QString CPrinter::renderEntry( const KeyTreeItem& i, CSwordKey* ) {
 }
 
 const QString CPrinter::finishText(const QString& text, KeyTree& tree) {
-    QList<CSwordModuleInfo*> modules = collectModules(&tree);
+    QList<const CSwordModuleInfo*> modules = collectModules(&tree);
     Q_ASSERT(modules.count() > 0);
 
     const CLanguageMgr::Language* const lang = modules.first()->language();

@@ -24,15 +24,17 @@
 
 using namespace Rendering;
 
-/** Returns the rendered text using the modules in the list and using the key parameter.
- * The displayoptions and filter options are used, too.
- */
-const QString CEntryDisplay::text( const QList<CSwordModuleInfo*>& modules, const QString& keyName, const CSwordBackend::DisplayOptions displayOptions, const CSwordBackend::FilterOptions filterOptions ) {
+const QString CEntryDisplay::text(
+        const QList<const CSwordModuleInfo*> &modules,
+        const QString &keyName,
+        const DisplayOptions &displayOptions,
+        const FilterOptions &filterOptions)
+{
     CDisplayRendering render(displayOptions, filterOptions);
 
     //no highlighted key and no extra key link in the text
     CTextRendering::KeyTreeItem::Settings normal_settings(false, CTextRendering::KeyTreeItem::Settings::CompleteShort);
-    CSwordModuleInfo* module = modules.first();
+    const CSwordModuleInfo *module = modules.first();
 
     Rendering::CTextRendering::KeyTree tree;
 

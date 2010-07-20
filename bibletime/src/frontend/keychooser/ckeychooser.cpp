@@ -22,7 +22,7 @@
 #include "frontend/keychooser/versekeychooser/cbiblekeychooser.h"
 
 
-CKeyChooser::CKeyChooser(QList<CSwordModuleInfo*>, BTHistory* historyPtr,
+CKeyChooser::CKeyChooser(const QList<const CSwordModuleInfo*> &, BTHistory* historyPtr,
                          CSwordKey *, QWidget *parent)
         : QWidget(parent),
         m_history(historyPtr) {
@@ -31,10 +31,10 @@ CKeyChooser::CKeyChooser(QList<CSwordModuleInfo*>, BTHistory* historyPtr,
     Q_ASSERT(ok);
 }
 
-CKeyChooser::~CKeyChooser() {}
-
-CKeyChooser* CKeyChooser::createInstance(QList<CSwordModuleInfo*> modules, 
-        BTHistory* historyPtr, CSwordKey *key, QWidget *parent) {
+CKeyChooser* CKeyChooser::createInstance(
+        const QList<const CSwordModuleInfo*> &modules, BTHistory *historyPtr,
+        CSwordKey *key, QWidget *parent)
+{
     if (!modules.count()) {
         /**
           \todo Verify and document that we need to return 0 here rather than
@@ -46,7 +46,7 @@ CKeyChooser* CKeyChooser::createInstance(QList<CSwordModuleInfo*> modules,
     CSwordModuleInfo::ModuleType typeOfModules = modules.first()->type();
 
 #ifdef BT_DEBUG
-    foreach (CSwordModuleInfo *module, modules) {
+    Q_FOREACH (const CSwordModuleInfo *module, modules) {
         Q_ASSERT(module->type() == typeOfModules);
     }
 #endif

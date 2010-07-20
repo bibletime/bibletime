@@ -39,38 +39,42 @@ class CKeyChooser : public QWidget {
         * @param key if not NULL, the @ref CKey the KeyChooser should be set to
         * @param parent the parent of the widget to create
         */
-        static CKeyChooser* createInstance(QList<CSwordModuleInfo*> modules, 
-            BTHistory* history, CSwordKey *key, QWidget *parent);
+        static CKeyChooser *createInstance(
+            const QList<const CSwordModuleInfo*> &modules,
+            BTHistory *history, CSwordKey *key, QWidget *parent);
 
 
     public slots:
         /**
-        * sets the @ref CKey
-        * @param key the key which the widget should be set to
+          Sets the CKey
+          \param key the key which the widget should be set to.
         */
         virtual void setKey(CSwordKey* key) = 0;
+
         /**
-        * sets the @ref CKey
-        * @param key the key which the widget should be set to
+          Updates the CKey.
+          \param key the key which the widget should be set to.
         */
-        virtual void updateKey(CSwordKey* key) = 0;
+        virtual void updateKey(CSwordKey *key) = 0;
+
         /**
-        * gets the current @ref CKey
-        *
-        * @return the current @ref CKey
+          \returns the current CKey.
         */
-        virtual CSwordKey* key() = 0;
+        virtual CSwordKey *key() = 0;
+
         /**
-        * Sets the module of this keychooser and refreshes the comboboxes
+          Sets the module of this keychooser and refreshes the comboboxes
         */
-        virtual void setModules( const QList<CSwordModuleInfo*>& modules, const bool refresh = true ) = 0;
+        virtual void setModules(const QList<const CSwordModuleInfo*> &modules,
+                                bool refresh = true) = 0;
+
         /**
-        * Freshes the content of the different key chooser parts.
+          Refreshes the content of the different key chooser parts.
         */
         virtual void refreshContent() = 0;
 
         /**
-        * Returns the history object of this keychooser.
+          \returns the history object of this keychooser.
         */
         inline BTHistory *history() const { return m_history; }
 
@@ -87,18 +91,22 @@ class CKeyChooser : public QWidget {
 
     protected:
 
-        CKeyChooser(QList<CSwordModuleInfo*> info, BTHistory* history, CSwordKey *key = 0, QWidget *parent = 0);
-        virtual ~CKeyChooser();
+        CKeyChooser(const QList<const CSwordModuleInfo*> &info,
+                    BTHistory *history, CSwordKey *key = 0,
+                    QWidget *parent = 0);
+
+        virtual inline ~CKeyChooser() {}
+
         /**
-        * Set the appropriate font do display the modules
+          Resets the appropriate font to for the modules.
         */
         virtual void adjustFont() = 0;
 
     protected slots:
-        virtual void setKey(QString& newKey) = 0;
+        virtual void setKey(QString &newKey) = 0;
 
     private:
-        BTHistory* m_history;
+        BTHistory *m_history;
 
 };
 

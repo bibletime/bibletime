@@ -36,7 +36,9 @@ namespace Search {
 
 static CSearchDialog* m_staticDialog = 0;
 
-void CSearchDialog::openDialog(const QList<CSwordModuleInfo*> modules, const QString& searchText, QWidget* parentDialog) {
+void CSearchDialog::openDialog(const QList<const CSwordModuleInfo*> modules,
+                               const QString &searchText, QWidget *parentDialog)
+{
     if (!m_staticDialog) {
         m_staticDialog = new CSearchDialog(parentDialog);
     };
@@ -111,7 +113,7 @@ void CSearchDialog::startSearch() {
     m_searchOptionsArea->addToHistory(originalSearchText);
 
     // check that we have the indices we need for searching
-    if (!m_searcher.modulesHaveIndices( modules() ) )	{
+    if (!m_searcher.modulesHaveIndices(modules()) )	{
         int result = util::showQuestion(this, tr("Missing indices"),
                                         tr("One or more works need indexing before they can be searched.\n"
                                            "This could take a long time. Proceed with indexing?"),
@@ -179,33 +181,15 @@ QString CSearchDialog::prepareSearchText(const QString& orig) {
     return text;
 }
 
-/** Starts the search with the given module list and given search text. */
-void CSearchDialog::startSearch( const QList<CSwordModuleInfo*> modules, const QString& searchText) {
+void CSearchDialog::startSearch(const QList<const CSwordModuleInfo*> modules,
+                                const QString &searchText)
+{
     m_searchResultArea->reset();
     m_searchOptionsArea->reset();
     setModules(modules);
     setSearchText(searchText);
 
     startSearch();
-}
-
-/** Returns the list of used modules. */
-QList<CSwordModuleInfo*> CSearchDialog::modules() const {
-    return m_searchOptionsArea->modules();
-}
-
-/** Sets the list of modules for the search. */
-void CSearchDialog::setModules( const QList<CSwordModuleInfo*> modules ) {
-    m_searchOptionsArea->setModules(modules);
-}
-
-/** Returns the search text which is set currently. */
-QString CSearchDialog::searchText() const {
-    return m_searchOptionsArea->searchText();
-}
-
-sword::ListKey CSearchDialog::searchScope() {
-    return m_searchOptionsArea->searchScope();
 }
 
 /** Sets the search text which is used for the search. */
@@ -245,8 +229,8 @@ void CSearchDialog::initView() {
 }
 
 void CSearchDialog::searchFinished() {
-    if ( m_searcher.foundItems() ) {
-        m_searchResultArea->setSearchResult(modules());
+    if (m_searcher.foundItems() > 0) {
+        m_searchResultArea->setSearchResult(m_searcher.results());
     }
     else {
         m_searchResultArea->reset();

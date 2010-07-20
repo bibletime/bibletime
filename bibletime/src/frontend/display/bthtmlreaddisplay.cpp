@@ -87,7 +87,7 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType format, const CD
             else {
                 CDisplayWindow* window = parentWindow();
                 CSwordKey* const key = window->key();
-                CSwordModuleInfo* module = key->module();
+                const CSwordModuleInfo *module = key->module();
                 //This is never used for Bibles, so it is not implemented for
                 //them.  If it should be, see CReadDisplay::print() for example
                 //code.
@@ -98,7 +98,7 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType format, const CD
                         module->type() == CSwordModuleInfo::Commentary ||
                         module->type() == CSwordModuleInfo::GenericBook) {
                     /// \todo This is a BAD HACK, we have to fnd a better solution to manage the settings now
-                    CSwordBackend::FilterOptions filterOptions;
+                    FilterOptions filterOptions;
                     filterOptions.footnotes = false;
                     filterOptions.strongNumbers = false;
                     filterOptions.morphTags = false;
@@ -164,7 +164,7 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType format, const CD
                 key->setKey(keyName);
 
                 /// \todo This is a BAD HACK, we have to fnd a better solution to manage the settings now
-                CSwordBackend::FilterOptions filterOptions;
+                FilterOptions filterOptions;
                 filterOptions.footnotes = false;
                 filterOptions.strongNumbers = false;
                 filterOptions.morphTags = false;

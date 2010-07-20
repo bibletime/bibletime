@@ -25,52 +25,48 @@ CSwordBibleModuleInfo::CSwordBibleModuleInfo(sword::SWModule *module,
         m_lowerBound(0),
         m_upperBound(0),
         m_bookList(0),
-        m_cachedLocale("unknown"),
-        m_hasOT(-1),
-        m_hasNT(-1) {}
+        m_cachedLocale("unknown")
+{
+    initBounds();
+}
 
 CSwordBibleModuleInfo::CSwordBibleModuleInfo(const CSwordBibleModuleInfo &copy) :
         CSwordModuleInfo(copy),
         m_lowerBound(0),
         m_upperBound(0),
-        m_bookList(0) {
+        m_bookList(0),
+        m_cachedLocale(copy.m_cachedLocale),
+        m_hasOT(copy.m_hasOT),
+        m_hasNT(copy.m_hasNT)
+{
     if (copy.m_bookList) {
         m_bookList = new QStringList();
         *m_bookList = *copy.m_bookList;
     }
-
-    m_hasOT = copy.m_hasOT;
-    m_hasNT = copy.m_hasNT;
-    m_cachedLocale = copy.m_cachedLocale;
+    initBounds();
 }
 
 void CSwordBibleModuleInfo::initBounds() {
-    if (m_hasOT == -1) {
-        m_hasOT = hasTestament(OldTestament);
-    }
+    const bool oldStatus = module()->getSkipConsecutiveLinks();
+    module()->setSkipConsecutiveLinks(true);
 
-    if (m_hasNT == -1) {
-        m_hasNT = hasTestament(NewTestament);
-    }
+    module()->setPosition(sword::TOP); // position to first entry
+    sword::VerseKey key(module()->KeyText());
+    m_hasOT = (key.Testament() == 1);
 
-    if (m_hasOT) {
-        m_lowerBound.setKey("Genesis 1:1");
-    }
-    else {
-        m_lowerBound.setKey("Matthew 1:1");
-    }
+    module()->setPosition(sword::BOTTOM);
+    key = module()->KeyText();
+    m_hasNT = (key.Testament() == 2);
 
-    if (!m_hasNT) {
-        m_upperBound.setKey("Malachi 4:6");
-    }
-    else {
-        m_upperBound.setKey("Revelation of John 22:21");
-    }
+    module()->setSkipConsecutiveLinks(oldStatus);
+
+    m_lowerBound.setKey(m_hasOT ? "Genesis 1:1" : "Matthew 1:1");
+    m_upperBound.setKey(!m_hasNT ? "Malachi 4:6" : "Revelation of John 22:21");
 }
 
 
 /** Returns the books available in this module */
-QStringList* CSwordBibleModuleInfo::books() {
+QStringList *CSwordBibleModuleInfo::books() const {
     if (m_cachedLocale != backend()->booknameLanguage()) { //if the locale has changed
         delete m_bookList;
         m_bookList = 0;
@@ -79,21 +75,20 @@ QStringList* CSwordBibleModuleInfo::books() {
     if (!m_bookList) {
         m_bookList = new QStringList();
 
-        initBounds();
         int min = 0;
         int max = 1;
 
         //find out if we have ot and nt, only ot or only nt
 
-        if (m_hasOT > 0 && m_hasNT > 0) { //both
+        if (m_hasOT && m_hasNT) { //both
             min = 0;
             max = 1;
         }
-        else if (m_hasOT > 0 && !m_hasNT) { //only OT
+        else if (m_hasOT && !m_hasNT) { //only OT
             min = 0;
             max = 0;
         }
-        else if (!m_hasOT && m_hasNT > 0) { //only NT
+        else if (!m_hasOT && m_hasNT) { //only NT
             min = 1;
             max = 1;
         }
@@ -116,8 +111,7 @@ QStringList* CSwordBibleModuleInfo::books() {
     return m_bookList;
 }
 
-/** Returns the number of chapters for the given book. */
-unsigned int CSwordBibleModuleInfo::chapterCount(const unsigned int book) {
+unsigned int CSwordBibleModuleInfo::chapterCount(const unsigned int book) const {
     int result = 0;
 
     QSharedPointer<sword::VerseKey> key((sword::VerseKey *)module()->CreateKey());
@@ -131,13 +125,15 @@ unsigned int CSwordBibleModuleInfo::chapterCount(const unsigned int book) {
     return result;
 }
 
-unsigned int CSwordBibleModuleInfo::chapterCount(const QString& book) {
-    return chapterCount( bookNumber(book) );
+unsigned int CSwordBibleModuleInfo::chapterCount(const QString &book) const {
+    return chapterCount(bookNumber(book));
 }
 
 /** Returns the number of verses  for the given chapter. */
 
-unsigned int CSwordBibleModuleInfo::verseCount( const unsigned int book, const unsigned int chapter ) {
+unsigned int CSwordBibleModuleInfo::verseCount(const unsigned int book,
+                                               const unsigned int chapter) const
+{
     unsigned int result = 0;
 
     QSharedPointer<sword::VerseKey> key((sword::VerseKey *)module()->CreateKey());
@@ -152,15 +148,14 @@ unsigned int CSwordBibleModuleInfo::verseCount( const unsigned int book, const u
     return result;
 }
 
-unsigned int CSwordBibleModuleInfo::verseCount( const QString& book, const unsigned int chapter ) {
-    return verseCount( bookNumber(book), chapter );
+unsigned int CSwordBibleModuleInfo::verseCount(const QString &book,
+                                               const unsigned int chapter) const
+{
+    return verseCount(bookNumber(book), chapter);
 }
 
-unsigned int CSwordBibleModuleInfo::bookNumber(const QString &book) {
+unsigned int CSwordBibleModuleInfo::bookNumber(const QString &book) const {
     unsigned int bookNumber = 0;
-
-    //find out if we have ot and nt, only ot or only nt
-    initBounds();
 
     QSharedPointer<sword::VerseKey> key((sword::VerseKey *)module()->CreateKey());
     key->setPosition(sword::TOP);
@@ -171,46 +166,3 @@ unsigned int CSwordBibleModuleInfo::bookNumber(const QString &book) {
 
     return bookNumber;
 }
-
-/** Returns true if his module has the text of desired type of testament */
-bool CSwordBibleModuleInfo::hasTestament( CSwordBibleModuleInfo::Testament type ) {
-    if (m_hasOT == -1 || m_hasNT == -1) {
-        const bool oldStatus = module()->getSkipConsecutiveLinks();
-        module()->setSkipConsecutiveLinks(true);
-
-        module()->setPosition(sword::TOP); // position to first entry
-        sword::VerseKey key( module()->KeyText() );
-
-        if (key.Testament() == 1) { // OT && NT
-            m_hasOT = 1;
-        }
-        else if (key.Testament() == 2) { //no OT
-            m_hasOT = 0;
-        }
-
-        module()->setPosition(sword::BOTTOM);
-        key = module()->KeyText();
-
-        if (key.Testament() == 1) { // only OT, no NT
-            m_hasNT = 0;
-        }
-        else if (key.Testament() == 2) { //has NT
-            m_hasNT = 1;
-        }
-
-        module()->setSkipConsecutiveLinks(oldStatus);
-    }
-
-    switch (type) {
-
-        case OldTestament:
-            return m_hasOT > 0;
-
-        case NewTestament:
-            return m_hasNT > 0;
-
-        default:
-            return false;
-    }
-}
-

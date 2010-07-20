@@ -35,7 +35,12 @@
 using namespace Rendering;
 using namespace Printing;
 
-CExportManager::CExportManager(const QString& caption, const bool showProgress, const QString& progressLabel, const CSwordBackend::FilterOptions filterOptions, const CSwordBackend::DisplayOptions displayOptions) {
+CExportManager::CExportManager(const QString &caption,
+                               const bool showProgress,
+                               const QString &progressLabel,
+                               const FilterOptions &filterOptions,
+                               const DisplayOptions &displayOptions)
+{
     m_caption = !caption.isEmpty() ? caption : QString::fromLatin1("BibleTime");
     m_progressLabel = progressLabel;
     m_filterOptions = filterOptions;
@@ -56,7 +61,7 @@ bool CExportManager::saveKey(CSwordKey* key, const Format format, const bool add
         return false;
     }
 
-    CSwordBackend::FilterOptions filterOptions = m_filterOptions;
+    FilterOptions filterOptions = m_filterOptions;
     filterOptions.footnotes = false;
     filterOptions.strongNumbers = false;
     filterOptions.morphTags = false;
@@ -75,7 +80,7 @@ bool CExportManager::saveKey(CSwordKey* key, const Format format, const bool add
     QString startKey;
     QString stopKey;
 
-    QList<CSwordModuleInfo*> modules;
+    QList<const CSwordModuleInfo*> modules;
     modules.append(key->module());
 
     CSwordVerseKey *vk = dynamic_cast<CSwordVerseKey*>(key);
@@ -94,8 +99,14 @@ bool CExportManager::saveKey(CSwordKey* key, const Format format, const bool add
     return false;
 }
 
-bool CExportManager::saveKeyList(sword::ListKey* list, CSwordModuleInfo* module, const Format format, const bool addText) {
-    if (!list->Count())
+bool CExportManager::saveKeyList(const sword::ListKey &l,
+                                 const CSwordModuleInfo *module,
+                                 Format format,
+                                 bool addText)
+{
+    /// \warning This is a workaround for Sword constness
+    sword::ListKey list = l;
+    if (!list.Count())
         return false;
 
     const QString filename = getSaveFileName(format);
@@ -103,7 +114,7 @@ bool CExportManager::saveKeyList(sword::ListKey* list, CSwordModuleInfo* module,
         return false;
     }
 
-    CSwordBackend::FilterOptions filterOptions = m_filterOptions;
+    FilterOptions filterOptions = m_filterOptions;
     filterOptions.footnotes = false;
     filterOptions.strongNumbers = false;
     filterOptions.morphTags = false;
@@ -120,16 +131,16 @@ bool CExportManager::saveKeyList(sword::ListKey* list, CSwordModuleInfo* module,
 
     CTextRendering::KeyTree tree;
 
-    setProgressRange(list->Count());
+    setProgressRange(list.Count());
     CTextRendering::KeyTreeItem::Settings itemSettings;
     itemSettings.highlight = false;
 
-    list->setPosition(sword::TOP);
-    while (!list->Error() && !progressWasCancelled()) {
-        tree.append( new CTextRendering::KeyTreeItem(QString::fromLocal8Bit((const char*)(*list)) , module, itemSettings) );
+    list.setPosition(sword::TOP);
+    while (!list.Error() && !progressWasCancelled()) {
+        tree.append( new CTextRendering::KeyTreeItem(QString::fromLocal8Bit((const char*)list) , module, itemSettings) );
         incProgress();
 
-        list->increment();
+        list.increment();
     }
 
     const QString text = render->renderKeyTree(tree);
@@ -142,7 +153,10 @@ bool CExportManager::saveKeyList(sword::ListKey* list, CSwordModuleInfo* module,
     return false;
 }
 
-bool CExportManager::saveKeyList(QList<CSwordKey*>& list, const Format format, const bool addText ) {
+bool CExportManager::saveKeyList(const QList<CSwordKey*> &list,
+                                 Format format,
+                                 bool addText)
+{
     if (!list.count())
         return false;
 
@@ -151,7 +165,7 @@ bool CExportManager::saveKeyList(QList<CSwordKey*>& list, const Format format, c
         return false;
     }
 
-    CSwordBackend::FilterOptions filterOptions = m_filterOptions;
+    FilterOptions filterOptions = m_filterOptions;
     filterOptions.footnotes = false;
     filterOptions.strongNumbers = false;
     filterOptions.morphTags = false;
@@ -197,7 +211,7 @@ bool CExportManager::copyKey(CSwordKey* key, const Format format, const bool add
         return false;
     }
 
-    CSwordBackend::FilterOptions filterOptions = m_filterOptions;
+    FilterOptions filterOptions = m_filterOptions;
     filterOptions.footnotes = false;
     filterOptions.strongNumbers = false;
     filterOptions.morphTags = false;
@@ -216,7 +230,7 @@ bool CExportManager::copyKey(CSwordKey* key, const Format format, const bool add
     QString startKey;
     QString stopKey;
 
-    QList<CSwordModuleInfo*> modules;
+    QList<const CSwordModuleInfo*> modules;
     modules.append(key->module());
 
     CSwordVerseKey *vk = dynamic_cast<CSwordVerseKey*>(key);
@@ -235,11 +249,16 @@ bool CExportManager::copyKey(CSwordKey* key, const Format format, const bool add
     return true;
 }
 
-bool CExportManager::copyKeyList(sword::ListKey* list, CSwordModuleInfo* module, const Format format, const bool addText) {
-    if (!list->Count())
+bool CExportManager::copyKeyList(const sword::ListKey &l,
+                                 const CSwordModuleInfo *module,
+                                 Format format,
+                                 bool addText)
+{
+    sword::ListKey list = l;
+    if (!list.Count())
         return false;
 
-    CSwordBackend::FilterOptions filterOptions = m_filterOptions;
+    FilterOptions filterOptions = m_filterOptions;
     filterOptions.footnotes = false;
     filterOptions.strongNumbers = false;
     filterOptions.morphTags = false;
@@ -258,11 +277,11 @@ bool CExportManager::copyKeyList(sword::ListKey* list, CSwordModuleInfo* module,
     CTextRendering::KeyTreeItem::Settings itemSettings;
     itemSettings.highlight = false;
 
-    list->setPosition(sword::TOP);
-    while (!list->Error() && !progressWasCancelled()) {
-        tree.append( new CTextRendering::KeyTreeItem(QString::fromLocal8Bit((const char*)(*list)) , module, itemSettings) );
+    list.setPosition(sword::TOP);
+    while (!list.Error() && !progressWasCancelled()) {
+        tree.append( new CTextRendering::KeyTreeItem(QString::fromLocal8Bit((const char*)list) , module, itemSettings) );
 
-        list->increment();
+        list.increment();
     }
 
     const QString text = render->renderKeyTree(tree);
@@ -271,11 +290,14 @@ bool CExportManager::copyKeyList(sword::ListKey* list, CSwordModuleInfo* module,
 }
 
 
-bool CExportManager::copyKeyList(QList<CSwordKey*>& list, const Format format, const bool addText ) {
+bool CExportManager::copyKeyList(const QList<CSwordKey*> &list,
+                                 Format format,
+                                 bool addText)
+{
     if (!list.count())
         return false;
 
-    CSwordBackend::FilterOptions filterOptions = m_filterOptions;
+    FilterOptions filterOptions = m_filterOptions;
     filterOptions.footnotes = false;
     filterOptions.strongNumbers = false;
     filterOptions.morphTags = false;
@@ -310,27 +332,38 @@ bool CExportManager::copyKeyList(QList<CSwordKey*>& list, const Format format, c
     return true;
 }
 
-bool CExportManager::printKeyList(sword::ListKey* list, CSwordModuleInfo* module, CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions) {
+bool CExportManager::printKeyList(const sword::ListKey &l,
+                                  const CSwordModuleInfo *module,
+                                  const DisplayOptions &displayOptions,
+                                  const FilterOptions &filterOptions)
+{
+    /// \warning This is a workaround for Sword constness
+    sword::ListKey list = l;
     CPrinter::KeyTreeItem::Settings settings;
     CPrinter::KeyTree tree;
 
     QString startKey, stopKey;
-    setProgressRange(list->Count());
+    setProgressRange(list.Count());
 
-    list->setPosition(sword::TOP);
-    while (!list->Error() && !progressWasCancelled()) {
-        sword::VerseKey* vk = dynamic_cast<sword::VerseKey*>(list);
-        if (vk) {
-            startKey = QString::fromUtf8((const char*)(vk->LowerBound()) );
-            stopKey = QString::fromUtf8((const char*)(vk->UpperBound()) );
-            tree.append( new CPrinter::KeyTreeItem(startKey, stopKey, module, settings) );
+    list.setPosition(sword::TOP);
+    while (!list.Error() && !progressWasCancelled()) {
+        if (dynamic_cast<const sword::VerseKey&>(l) != 0) {
+            const sword::VerseKey &vk = static_cast<const sword::VerseKey&>(l);
+            startKey = QString::fromUtf8((const char*) vk.LowerBound());
+            stopKey = QString::fromUtf8((const char*) vk.UpperBound());
+            tree.append(new CTextRendering::KeyTreeItem(startKey,
+                                                        stopKey,
+                                                        module,
+                                                        settings));
         }
         else {
             startKey = QString::fromUtf8((const char*) * list);
-            tree.append( new CPrinter::KeyTreeItem(startKey, module, settings) );
+            tree.append(new CTextRendering::KeyTreeItem(startKey,
+                                                        module,
+                                                        settings));
         }
 
-        list->increment();
+        list.increment();
         incProgress();
     }
 
@@ -345,7 +378,12 @@ bool CExportManager::printKeyList(sword::ListKey* list, CSwordModuleInfo* module
     return false;
 }
 
-bool CExportManager::printKey( CSwordModuleInfo* module, const QString& startKey, const QString& stopKey, CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions ) {
+bool CExportManager::printKey(const CSwordModuleInfo *module,
+                              const QString &startKey,
+                              const QString &stopKey,
+                              const DisplayOptions &displayOptions,
+                              const FilterOptions &filterOptions)
+{
     CPrinter::KeyTreeItem::Settings settings;
     settings.keyRenderingFace =
         displayOptions.verseNumbers
@@ -365,7 +403,10 @@ bool CExportManager::printKey( CSwordModuleInfo* module, const QString& startKey
     return true;
 }
 
-bool CExportManager::printKey( CSwordKey* key, CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions) {
+bool CExportManager::printKey(const CSwordKey *key,
+                              const DisplayOptions &displayOptions,
+                              const FilterOptions &filterOptions)
+{
     CPrinter::KeyTreeItem::Settings settings;
     settings.keyRenderingFace =
         displayOptions.verseNumbers
@@ -380,8 +421,10 @@ bool CExportManager::printKey( CSwordKey* key, CSwordBackend::DisplayOptions dis
     return true;
 }
 
-/** Prints a key using the hyperlink created by CReferenceManager. */
-bool CExportManager::printByHyperlink( const QString& hyperlink, CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions ) {
+bool CExportManager::printByHyperlink(const QString &hyperlink,
+                                      const DisplayOptions &displayOptions,
+                                      const FilterOptions &filterOptions)
+{
     QString moduleName;
     QString keyName;
     ReferenceManager::Type type;
@@ -431,7 +474,11 @@ bool CExportManager::printByHyperlink( const QString& hyperlink, CSwordBackend::
     return true;
 }
 
-bool CExportManager::printKeyList(const QStringList& list, CSwordModuleInfo* module,  CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions) {
+bool CExportManager::printKeyList(const QStringList &list,
+                                  const CSwordModuleInfo *module,
+                                  const DisplayOptions &displayOptions,
+                                  const FilterOptions &filterOptions)
+{
     CPrinter::KeyTreeItem::Settings settings;
     settings.keyRenderingFace =
         displayOptions.verseNumbers

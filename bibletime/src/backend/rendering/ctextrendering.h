@@ -53,13 +53,26 @@ class CTextRendering {
                     KeyRenderingFace keyRenderingFace;
                 };
 
-                KeyTreeItem(const QString& key, CSwordModuleInfo const * module, const Settings settings);
-                KeyTreeItem(const QString& key, const QList<CSwordModuleInfo*>& modules, const Settings settings);
-                KeyTreeItem(const QString& startKey, const QString& stopKey, CSwordModuleInfo* module, const Settings settings);
-                KeyTreeItem(const QString& content, const Settings settings);
-                KeyTreeItem(const KeyTreeItem& i);
+                KeyTreeItem(const QString &key,
+                            const CSwordModuleInfo *module,
+                            const Settings &settings);
 
-                virtual ~KeyTreeItem();
+                KeyTreeItem(const QString &key,
+                            const QList<const CSwordModuleInfo*> &modules,
+                            const Settings &settings);
+
+                KeyTreeItem(const QString &startKey,
+                            const QString &stopKey,
+                            const CSwordModuleInfo *module,
+                            const Settings &settings);
+
+                KeyTreeItem(const QString &content, const Settings &settings);
+
+                KeyTreeItem(const KeyTreeItem &i);
+
+                virtual inline ~KeyTreeItem() {
+                    qDeleteAll(m_childList);
+                }
 
                 const QString& getAlternativeContent() const;
                 inline void setAlternativeContent(const QString& newContent) {
@@ -70,7 +83,7 @@ class CTextRendering {
                     return !m_alternativeContent.isNull();
                 };
 
-                inline const QList<CSwordModuleInfo*>& modules() const {
+                inline const QList<const CSwordModuleInfo*>& modules() const {
                     return m_moduleList;
                 };
 
@@ -89,7 +102,7 @@ class CTextRendering {
                 KeyTreeItem();
 
                 Settings m_settings;
-                QList<CSwordModuleInfo*> m_moduleList;
+                QList<const CSwordModuleInfo*> m_moduleList;
                 QString m_key;
                 mutable KeyTree m_childList;
 
@@ -101,12 +114,20 @@ class CTextRendering {
 
         const QString renderKeyTree( KeyTree& );
 
-        const QString renderKeyRange( const QString& start, const QString& stop, const QList<CSwordModuleInfo*>& modules, const QString& hightlightKey = QString::null, const KeyTreeItem::Settings& settings = KeyTreeItem::Settings() );
+        const QString renderKeyRange(
+                const QString &start,
+                const QString &stop,
+                const QList<const CSwordModuleInfo*> &modules,
+                const QString &hightlightKey = QString::null,
+                const KeyTreeItem::Settings &settings = KeyTreeItem::Settings());
 
-        const QString renderSingleKey( const QString& key, const QList<CSwordModuleInfo*>&, const KeyTreeItem::Settings& settings = KeyTreeItem::Settings() );
+        const QString renderSingleKey(
+                const QString &key,
+                const QList<const CSwordModuleInfo*> &modules,
+                const KeyTreeItem::Settings &settings = KeyTreeItem::Settings());
 
     protected:
-        const QList<CSwordModuleInfo*> collectModules(KeyTree* const tree) const;
+        const QList<const CSwordModuleInfo*> collectModules(KeyTree* const tree) const;
         virtual const QString renderEntry( const KeyTreeItem&, CSwordKey* = 0 ) = 0;
         virtual const QString finishText( const QString&, KeyTree& tree ) = 0;
         virtual void initRendering() = 0;

@@ -21,9 +21,11 @@
 
 QMap<QObject*, int> boxes;
 
-CBookKeyChooser::CBookKeyChooser(QList<CSwordModuleInfo*> modules, 
-            BTHistory* historyPtr, CSwordKey *key, QWidget *parent)
-        : CKeyChooser(modules, historyPtr, key, parent), m_layout(0) {
+CBookKeyChooser::CBookKeyChooser(const QList<const CSwordModuleInfo*> &modules,
+                                 BTHistory *historyPtr, CSwordKey *key,
+                                 QWidget *parent)
+    : CKeyChooser(modules, historyPtr, key, parent), m_layout(0)
+{
 
     setModules(modules, false);
     m_key = dynamic_cast<CSwordTreeKey*>(key);
@@ -37,8 +39,6 @@ CBookKeyChooser::CBookKeyChooser(QList<CSwordModuleInfo*> modules,
     adjustFont();
     connect(this, SIGNAL(keyChanged(CSwordKey*)), history(), SLOT(add(CSwordKey*)) );
 }
-
-CBookKeyChooser::~CBookKeyChooser() {}
 
 void CBookKeyChooser::setKey(CSwordKey* newKey) {
     setKey(newKey, true);
@@ -120,14 +120,17 @@ CSwordKey* CBookKeyChooser::key() {
 }
 
 /** Sets another module to this keychooser */
-void CBookKeyChooser::setModules(const QList<CSwordModuleInfo*>& modules, const bool refresh) {
+void CBookKeyChooser::setModules(const QList<const CSwordModuleInfo*> &modules,
+                                 bool refresh)
+{
+    typedef CSwordBookModuleInfo CSBMI;
     m_modules.clear();
 
     //   for (modules.first(); modules.current(); modules.next()) {
-    QList<CSwordModuleInfo*>::const_iterator end_it = modules.end();
-    for (QList<CSwordModuleInfo*>::const_iterator it(modules.begin()); it != end_it; ++it) {
-        if ( (*it)->type() == CSwordModuleInfo::GenericBook ) {
-            if (CSwordBookModuleInfo* book = dynamic_cast<CSwordBookModuleInfo*>(*it)) {
+    Q_FOREACH(const CSwordModuleInfo *m, modules) {
+        if (m->type() == CSwordModuleInfo::GenericBook ) {
+            const CSBMI *book = dynamic_cast<const CSBMI*>(m);
+            if (book != 0) {
                 m_modules.append(book);
             }
         }

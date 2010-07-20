@@ -35,24 +35,27 @@ class CBibleKeyChooser : public CKeyChooser  {
         Q_OBJECT
 
     public:
-        CBibleKeyChooser(QList<CSwordModuleInfo*> modules,
-            BTHistory* history,
-            CSwordKey *key = 0, 
-            QWidget *parent = 0);
+        CBibleKeyChooser(const QList<const CSwordModuleInfo*> &modules,
+                         BTHistory *history, CSwordKey *key = 0,
+                         QWidget *parent = 0);
 
     public slots:
         /**
-        * see @ref CKeyChooser::getKey
+          Reimplemented from CKeyChooser::key().
         */
         CSwordKey* key();
+
         /**
-        * see @ref CKeyChooser::setKey
+          Reimplemented from CKeyChooser::setKey().
         */
         virtual void setKey(CSwordKey *key);
+
         /**
-        * Sets the module
+          Reimplemented from CKeyChooser::setModules().
         */
-        virtual void setModules(const QList<CSwordModuleInfo*>& modules, const bool refresh = true);
+        virtual void setModules(const QList<const CSwordModuleInfo*> &modules,
+                                bool refresh = true);
+
         /**
         * used to do actions before key changes
         */
@@ -67,11 +70,14 @@ class CBibleKeyChooser : public CKeyChooser  {
         void refreshContent();
 
     protected slots:
+        /**
+          Reimplemented from CKeyChooser::setModules().
+        */
         virtual void setKey(QString& newKey);
 
     private:
         BtBibleKeyWidget* w_ref;
-        QList<CSwordBibleModuleInfo*> m_modules;
+        QList<const CSwordBibleModuleInfo*> m_modules;
         CSwordVerseKey *m_key;
 };
 

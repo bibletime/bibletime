@@ -76,8 +76,9 @@ class StrongsResult {
 */
 class StrongsResultList: public QList<StrongsResult> {
     public: /* Methods: */
-        StrongsResultList(CSwordModuleInfo *module,
-                           const QString &strongsNumber);
+        StrongsResultList(const CSwordModuleInfo *module,
+                          const sword::ListKey &results,
+                          const QString &strongsNumber);
 
     private: /* Methods: */
         QString getStrongsNumberText(const QString &verseContent,
@@ -98,7 +99,8 @@ class BtSearchResultArea : public QWidget {
         /**
         * Sets the modules which contain the result of each.
         */
-        void setSearchResult(const QList<CSwordModuleInfo*> &modules);
+        void setSearchResult(
+            const CSwordModuleSearch::Results &results);
 
         /**
           Reimplemented from QWidget::sizeHint().
@@ -166,7 +168,7 @@ class BtSearchResultArea : public QWidget {
         * Shows a dialog with the search analysis of the current search.
         */
         inline void showAnalysis() {
-            CSearchAnalysisDialog(m_modules, this).exec();
+            CSearchAnalysisDialog(m_results, this).exec();
         }
 
         /**
@@ -182,14 +184,13 @@ class BtSearchResultArea : public QWidget {
         }
 
     private: /* Fields: */
+        CSwordModuleSearch::Results m_results;
 
         CModuleResultView* m_moduleListBox;
         CSearchResultView* m_resultListBox;
 
         QFrame *m_displayFrame;
         CReadDisplay* m_previewDisplay;
-
-        QList<CSwordModuleInfo*> m_modules;
 
         QSplitter *m_mainSplitter;
         QSplitter *m_resultListSplitter;

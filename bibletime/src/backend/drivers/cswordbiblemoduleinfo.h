@@ -50,54 +50,55 @@ class CSwordBibleModuleInfo: public CSwordModuleInfo {
           \param chapter The chapter we should use
         */
         unsigned int verseCount(const unsigned int book,
-                                const unsigned int chapter);
+                                const unsigned int chapter) const;
 
         /**
           \returns the number of avalable verses for the given chapter and book.
           \param book The name of the book we use
           \param chapter The number of the chapter we use
         */
-        unsigned int verseCount(const QString &book, const unsigned int chapter);
+        unsigned int verseCount(const QString &book,
+                                const unsigned int chapter) const;
 
         /**
           \returns the number of available chapters in the given book.
         */
-        unsigned int chapterCount(const unsigned int book);
+        unsigned int chapterCount(const unsigned int book) const;
 
         /**
           \returns the number of available chapters in the given book.
         */
-        unsigned int chapterCount(const QString &book);
+        unsigned int chapterCount(const QString &book) const;
 
         /**
           \returns a QStringList containing the books available in this module.
         */
-        QStringList *books();
+        QStringList *books() const;
 
         /**
           \returns the index of the book given by its name.
           \retval 0 if a book with the given name was not found.
         */
-        unsigned int bookNumber(const QString &book);
+        unsigned int bookNumber(const QString &book) const;
 
         /**
           \returns whether this module has the text of desired type of testament
         */
-        bool hasTestament(CSwordBibleModuleInfo::Testament type);
+        bool hasTestament(CSwordBibleModuleInfo::Testament type) const {
+            return type == OldTestament ? m_hasOT : m_hasNT;
+        }
 
         /**
           \returns the key which represents the lower bound of this module.
         */
-        inline const CSwordVerseKey &lowerBound() {
-            initBounds();
+        inline const CSwordVerseKey &lowerBound() const {
             return m_lowerBound;
         }
 
         /**
           \returns the key which represents the upper bound of this module.
         */
-        inline const CSwordVerseKey &upperBound() {
-            initBounds();
+        inline const CSwordVerseKey &upperBound() const {
             return m_upperBound;
         }
 
@@ -108,10 +109,10 @@ class CSwordBibleModuleInfo: public CSwordModuleInfo {
         CSwordVerseKey m_lowerBound;
         CSwordVerseKey m_upperBound;
 
-        QStringList *m_bookList; //This booklist is cached
-        QString m_cachedLocale;
-        short int m_hasOT;
-        short int m_hasNT;
+        mutable QStringList *m_bookList; //This booklist is cached
+        mutable QString m_cachedLocale;
+        bool m_hasOT;
+        bool m_hasNT;
 };
 
 #endif

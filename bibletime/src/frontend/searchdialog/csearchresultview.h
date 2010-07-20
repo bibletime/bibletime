@@ -10,11 +10,13 @@
 #ifndef CSEARCHRESULTSVIEW_H
 #define CSEARCHRESULTSVIEW_H
 
-class CSwordModuleInfo;
-
 #include <QTreeWidget>
 
+// Sword includes
+#include <listkey.h>
 
+
+class CSwordModuleInfo;
 class CReadDisplay;
 class QAction;
 class QMenu;
@@ -26,8 +28,13 @@ class CSearchResultView  : public QTreeWidget {
     public:
         CSearchResultView(QWidget* parent);
         virtual ~CSearchResultView();
-        /** Returns the module which is currently used. */
-        CSwordModuleInfo* module();
+
+        /**
+          \returns the module which is currently used.
+        */
+        inline const CSwordModuleInfo *module() const {
+            return m_module;
+        }
 
     protected: // Protected methods
         /**
@@ -42,10 +49,12 @@ class CSearchResultView  : public QTreeWidget {
 
     public slots: // Public slots
         void saveItems();
+
         /**
-        * Setups the list with the given module.
+          Setups the list with the given module.
         */
-        void setupTree(CSwordModuleInfo*);
+        void setupTree(const CSwordModuleInfo *m, const sword::ListKey &results);
+
         void setupStrongsTree(CSwordModuleInfo*, const QStringList&);
         void copyItemsWithText();
         void copyItems();
@@ -88,7 +97,7 @@ class CSearchResultView  : public QTreeWidget {
         m_actions;
 
         QMenu* m_popup;
-        CSwordModuleInfo* m_module;
+        const CSwordModuleInfo *m_module;
 
     signals: // Signals
         void keySelected(const QString&);

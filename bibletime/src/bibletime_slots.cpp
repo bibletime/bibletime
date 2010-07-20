@@ -376,7 +376,7 @@ void BibleTime::slotSetActiveSubWindow(QWidget* window) {
 
 void BibleTime::slotSearchModules() {
     //get the modules of the open windows
-    QList<CSwordModuleInfo*> modules;
+    QList<const CSwordModuleInfo*> modules;
 
     foreach(QMdiSubWindow* subWindow, m_mdi->subWindowList()) {
         if (CDisplayWindow* w = dynamic_cast<CDisplayWindow*>(subWindow->widget())) {
@@ -390,7 +390,7 @@ void BibleTime::slotSearchModules() {
  * Call CSearchDialog::openDialog with only the default bible module
  */
 void BibleTime::slotSearchDefaultBible() {
-    QList<CSwordModuleInfo*> module;
+    QList<const CSwordModuleInfo*> module;
     CSwordModuleInfo* bible = CBTConfig::get(CBTConfig::standardBible);
     if (bible) {
         module.append(bible);

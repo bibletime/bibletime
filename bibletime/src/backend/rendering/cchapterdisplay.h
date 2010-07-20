@@ -15,24 +15,25 @@
 
 namespace Rendering {
 
-/** Chapter rendering.
-* A CEntryDisplay implementation mde for Bibles to display whole chapters
-* at once.
-* @author The BibleTime team
+/**
+  \brief CEntryDisplay implementation  for whole chapters.
+
+  A CEntryDisplay implementation made for Bibles to display whole chapters at
+  once.
 */
-
-class CChapterDisplay : public CEntryDisplay {
-
-    public: // Public methods
-        virtual ~CChapterDisplay() {}
+class CChapterDisplay: public CEntryDisplay {
+    public: /* Methods: */
+        virtual inline ~CChapterDisplay() {}
 
         /**
-        * Returns the rendered text using the modules in the list and using the key parameter.
-        * The displayoptions and filter options are used, too.
+          Reimplemented from CEntryDisplay.
         */
-        virtual const QString text( const QList<CSwordModuleInfo*>& modules, const QString& key, const CSwordBackend::DisplayOptions displayOptions, const CSwordBackend::FilterOptions filterOptions);
+        virtual const QString text(const QList<const CSwordModuleInfo*> &modules,
+                                   const QString &key,
+                                   const DisplayOptions &displayOptions,
+                                   const FilterOptions &filterOptions);
 };
 
-}
+} // namespace Rendering
 
 #endif

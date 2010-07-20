@@ -16,6 +16,7 @@
 #include <QWebSettings>
 #include "backend/btmoduletreeitem.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
+#include "btglobal.h"
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/searchdialog/btsearchoptionsarea.h"
 #include "util/directory.h"
@@ -715,15 +716,15 @@ void set(const CLanguageMgr::Language * const language,
     m_fontCache.remove(language);
 }
 
-CSwordBackend::DisplayOptions getDisplayOptionDefaults() {
-    CSwordBackend::DisplayOptions options;
+DisplayOptions getDisplayOptionDefaults() {
+    DisplayOptions options;
     options.lineBreaks   = get(lineBreaks);
     options.verseNumbers = get(verseNumbers);
     return options;
 }
 
-CSwordBackend::FilterOptions getFilterOptionDefaults() {
-    CSwordBackend::FilterOptions options;
+FilterOptions getFilterOptionDefaults() {
+    FilterOptions options;
 
     options.footnotes           = true; // Required for the info display
     options.strongNumbers       = true; // get(strongNumbers);

@@ -28,7 +28,7 @@ class CSwordKey {
         /**
           \param module The module which belongs to this key, may be NULL
         */
-        CSwordKey(CSwordModuleInfo * const module = 0);
+        CSwordKey(const CSwordModuleInfo * const module = 0);
 
         CSwordKey(const CSwordKey &copy);
 
@@ -63,10 +63,21 @@ class CSwordKey {
          */
         virtual CSwordKey* copy() const = 0;
 
-        /** Set/get the module. Set and get the module which belongs to this key.
-         * @return The module which belongs to this key.
-         */
-        inline virtual CSwordModuleInfo* module(CSwordModuleInfo* const newModule = 0);
+        /**
+          \returns the module which belongs to this key.
+        */
+        inline const CSwordModuleInfo *module() const {
+            return m_module;
+        }
+
+        /**
+          Sets the module which belongs to this key.
+          \param[in] newModule the module to set.
+        */
+        virtual inline void setModule(const CSwordModuleInfo *newModule) {
+            m_module = newModule;
+        }
+
         /** Returns the raw, unchanged text. Returns the text without any filter modifications,
          * just in the way it comes out of the module.
          */
@@ -87,7 +98,7 @@ class CSwordKey {
          * The type is determined by the type of the module.
          * @see CSwordModuleInfo, CSwordBibleModuleInfo, CSwordCommentaryModuleInfo, CSwordLexiconModukleInfo
          */
-        static CSwordKey* createInstance(CSwordModuleInfo * const module);
+        static CSwordKey* createInstance(const CSwordModuleInfo *module);
 
     protected:
         /**
@@ -105,15 +116,8 @@ class CSwordKey {
 
     protected:
         static const QTextCodec *m_cp1252Codec;
-        CSwordModuleInfo* m_module; //module pointer used by all keys
+        const CSwordModuleInfo *m_module;
         QPointer<BtSignal> m_signal;
 };
-
-inline CSwordModuleInfo* CSwordKey::module(CSwordModuleInfo* const newModule) {
-    if (newModule) {
-        m_module = newModule;
-    }
-    return m_module;
-}
 
 #endif

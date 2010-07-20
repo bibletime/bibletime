@@ -119,7 +119,7 @@ void CPlainWriteWindow::saveCurrentText( const QString& /*key*/ ) {
 
     const QString& oldKey = this->key()->key();
     if ( modules().first()->isWritable() ) {
-        modules().first()->write(this->key(), t );
+        const_cast<CSwordModuleInfo*>(modules().first())->write(this->key(), t);
         this->key()->setKey(oldKey);
 
         ((CWriteDisplay*)displayWidget())->setModified(false);
@@ -151,7 +151,7 @@ void CPlainWriteWindow::textChanged() {
 
 /** Deletes the module entry and clears the edit widget, */
 void CPlainWriteWindow::deleteEntry() {
-    modules().first()->deleteEntry( key() );
+    const_cast<CSwordModuleInfo*>(modules().first())->deleteEntry(key());
     lookupSwordKey( key() );
     ((CWriteDisplay*)displayWidget())->setModified(false);
 }

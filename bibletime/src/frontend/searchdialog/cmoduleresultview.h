@@ -33,9 +33,11 @@ class CModuleResultView : public QTreeWidget {
         ~CModuleResultView();
 
         /**
-        * Setups the tree using the given list of modules.
+          Setups the tree using the given list of modules.
         */
-        void setupTree( QList<CSwordModuleInfo*> modules, const QString& searchedText );
+        void setupTree(const CSwordModuleSearch::Results &results,
+                       const QString &searchedText);
+
         /**
         * Returns the currently active module.
         */
@@ -56,7 +58,10 @@ class CModuleResultView : public QTreeWidget {
         void initConnections();
 
 
-        void setupStrongsResults(CSwordModuleInfo* module, QTreeWidgetItem* parent, const QString& searchedText);
+        void setupStrongsResults(const CSwordModuleInfo *module,
+                                 const sword::ListKey &results,
+                                 QTreeWidgetItem *parent,
+                                 const QString &searchedText);
 
     protected slots:
         /**
@@ -89,7 +94,7 @@ class CModuleResultView : public QTreeWidget {
         void saveResult();
 
     signals:
-        void moduleSelected(CSwordModuleInfo*);
+        void moduleSelected(const CSwordModuleInfo*, const sword::ListKey&);
         void moduleChanged();
         void strongsSelected(CSwordModuleInfo*, const QStringList&);
 
@@ -119,7 +124,8 @@ class CModuleResultView : public QTreeWidget {
 
         QMenu* m_popup;
 
-        QHash<CSwordModuleInfo*, StrongsResultList*> m_strongsResults;
+        CSwordModuleSearch::Results m_results;
+        QHash<const CSwordModuleInfo*, StrongsResultList*> m_strongsResults;
         QSize m_size;
 };
 

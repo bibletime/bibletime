@@ -174,8 +174,8 @@ void set(const stringMaps,  const StringMap          value);
 void set(const CLanguageMgr::Language * const language,
          const FontSettingsPair &fontSettings);
 
-CSwordBackend::FilterOptions  getFilterOptionDefaults();
-CSwordBackend::DisplayOptions getDisplayOptionDefaults();
+FilterOptions  getFilterOptionDefaults();
+DisplayOptions getDisplayOptionDefaults();
 
 void setupAccelSettings(const keys type,
                         BtActionCollection * const actionCollection);

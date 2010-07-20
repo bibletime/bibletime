@@ -26,17 +26,20 @@
 
 using namespace Rendering;
 
-CTextRendering::KeyTreeItem::KeyTreeItem(const QString& key, CSwordModuleInfo const * mod, const Settings settings )
-        : m_settings( settings ),
+CTextRendering::KeyTreeItem::KeyTreeItem(const QString &key,
+                                         const CSwordModuleInfo *module,
+                                         const Settings &settings)
+        : m_settings(settings),
         m_moduleList(),
         m_key( key ),
         m_childList(),
         m_stopKey( QString::null ),
         m_alternativeContent( QString::null ) {
-    m_moduleList.append( const_cast<CSwordModuleInfo*>(mod) ); //BAD CODE
+    m_moduleList.append( const_cast<CSwordModuleInfo*>(module) ); //BAD CODE
 }
 
-CTextRendering::KeyTreeItem::KeyTreeItem(const QString& content, const Settings settings )
+CTextRendering::KeyTreeItem::KeyTreeItem(const QString &content,
+                                         const Settings &settings)
         : m_settings( settings ),
         m_moduleList(),
         m_key( QString::null ),
@@ -45,7 +48,9 @@ CTextRendering::KeyTreeItem::KeyTreeItem(const QString& content, const Settings 
         m_alternativeContent( content ) {
 }
 
-CTextRendering::KeyTreeItem::KeyTreeItem(const QString& key, const QList<CSwordModuleInfo*>& mods, const Settings settings )
+CTextRendering::KeyTreeItem::KeyTreeItem(const QString &key,
+                                         const QList<const CSwordModuleInfo*> &mods,
+                                         const Settings &settings)
         : m_settings( settings ),
         m_moduleList( mods ),
         m_key( key ),
@@ -76,11 +81,10 @@ CTextRendering::KeyTreeItem::KeyTreeItem(const KeyTreeItem& i)
 
 }
 
-CTextRendering::KeyTreeItem::~KeyTreeItem() {
-    qDeleteAll(m_childList);
-}
-
-CTextRendering::KeyTreeItem::KeyTreeItem(const QString& startKey, const QString& stopKey, CSwordModuleInfo* module, const Settings settings)
+CTextRendering::KeyTreeItem::KeyTreeItem(const QString &startKey,
+                                         const QString &stopKey,
+                                         const CSwordModuleInfo *module,
+                                         const Settings &settings)
         : m_settings( settings ),
         m_moduleList(),
         m_key( startKey ),
@@ -154,13 +158,13 @@ const QString& CTextRendering::KeyTreeItem::getAlternativeContent() const {
     return m_alternativeContent;
 }
 
-const QList<CSwordModuleInfo*> CTextRendering::collectModules(KeyTree* const tree) const {
+const QList<const CSwordModuleInfo*> CTextRendering::collectModules(KeyTree* const tree) const {
     //collect all modules which are available and used by child items
-    QList<CSwordModuleInfo*> modules;
+    QList<const CSwordModuleInfo*> modules;
 
     foreach (KeyTreeItem* c, (*tree)) {
         Q_ASSERT(c);
-        foreach (CSwordModuleInfo* mod, c->modules()) {
+        foreach (const CSwordModuleInfo* mod, c->modules()) {
             if (!modules.contains(mod)) {
                 modules.append(mod);
             }
@@ -172,7 +176,7 @@ const QList<CSwordModuleInfo*> CTextRendering::collectModules(KeyTree* const tre
 const QString CTextRendering::renderKeyTree( KeyTree& tree ) {
     initRendering();
 
-    QList<CSwordModuleInfo*> modules = collectModules(&tree);
+    QList<const CSwordModuleInfo*> modules = collectModules(&tree);
     QString t;
 
     //optimization for entries with the same key
@@ -193,9 +197,15 @@ const QString CTextRendering::renderKeyTree( KeyTree& tree ) {
     return finishText(t, tree);
 }
 
-const QString CTextRendering::renderKeyRange( const QString& start, const QString& stop, const QList<CSwordModuleInfo*>& modules, const QString& highlightKey, const KeyTreeItem::Settings& keySettings ) {
+const QString CTextRendering::renderKeyRange(
+        const QString &start,
+        const QString &stop,
+        const QList<const CSwordModuleInfo*> &modules,
+        const QString &highlightKey,
+        const KeyTreeItem::Settings &keySettings)
+{
 
-    CSwordModuleInfo* module = modules.first();
+    const CSwordModuleInfo *module = modules.first();
     //qWarning( "renderKeyRange start %s stop %s \n", start.latin1(), stop.latin1() );
 
     QSharedPointer<CSwordKey> lowerBound( CSwordKey::createInstance(module) );
@@ -250,9 +260,13 @@ const QString CTextRendering::renderKeyRange( const QString& start, const QStrin
     return QString::null;
 }
 
-const QString CTextRendering::renderSingleKey( const QString& key, const QList<CSwordModuleInfo*>& moduleList, const KeyTreeItem::Settings& settings ) {
+const QString CTextRendering::renderSingleKey(
+        const QString &key,
+        const QList<const CSwordModuleInfo*> &modules,
+        const KeyTreeItem::Settings &settings)
+{
     KeyTree tree;
-    tree.append( new KeyTreeItem(key, moduleList, settings) );
+    tree.append( new KeyTreeItem(key, modules, settings) );
 
     const QString renderedText = renderKeyTree(tree);
     qDeleteAll(tree);
