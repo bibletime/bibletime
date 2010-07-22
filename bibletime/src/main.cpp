@@ -77,9 +77,6 @@ void printHelp(const QStringList &args) {
         << std::endl;
 }
 
-} // anonymous namespace
-
-
 void myMessageOutput( QtMsgType type, const char *msg ) {
     //we use this messagehandler to switch debugging off in final releases
     FILE* outFd = 0;
@@ -115,6 +112,9 @@ void registerMetaTypes() {
     qRegisterMetaType<DisplayOptions>();
     qRegisterMetaTypeStreamOperators<BtBookshelfTreeModel::Grouping>("BtBookshelfTreeModel::Grouping");
 }
+
+} // anonymous namespace
+
 
 /// \todo Reimplement signal handler which handles consecutive crashes.
 
@@ -155,11 +155,6 @@ int main(int argc, char* argv[]) {
         return QTest::qExec(&testClass);
     }
 #endif
-
-    /**
-      \todo Reimplement "--ignore-session" and "--open-default-bible <key>"
-            command line argument handling.
-    */
 
 #ifdef Q_WS_WIN
 
