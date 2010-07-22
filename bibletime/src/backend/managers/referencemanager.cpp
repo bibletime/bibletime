@@ -10,7 +10,6 @@
 #include "backend/managers/referencemanager.h"
 
 #include <algorithm>
-
 #include <QRegExp>
 #include <QDebug>
 #include "backend/config/cbtconfig.h"

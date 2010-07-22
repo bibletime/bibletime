@@ -9,9 +9,7 @@
 
 #include "bibletime.h"
 
-#include <cstdlib>
 #include <iostream>
-#include <ctime>
 #include <QAction>
 #include <QApplication>
 #include <QCloseEvent>

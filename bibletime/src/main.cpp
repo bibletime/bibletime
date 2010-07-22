@@ -7,9 +7,7 @@
 *
 **********/
 
-#include <cstdlib>
-#include <cstdio>
-#include <csignal>
+// #include <csignal>
 #ifndef NO_DBUS
 #include <QDBusConnection>
 #endif

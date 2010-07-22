@@ -10,8 +10,6 @@
 #include "frontend/keychooser/clexiconkeychooser.h"
 
 #include <algorithm>
-#include <iterator>
-#include <map>
 #include <QHBoxLayout>
 #include <QDebug>
 #include "backend/config/cbtconfig.h"

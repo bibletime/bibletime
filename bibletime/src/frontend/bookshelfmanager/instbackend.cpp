@@ -9,13 +9,10 @@
 
 #include "frontend/bookshelfmanager/instbackend.h"
 
-#include <functional>
-#include <map>
 #include <QDebug>
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
-#include <utility>
 #include "backend/managers/cswordbackend.h"
 #include "frontend/bookshelfmanager/btinstallmgr.h"
 #include "util/directory.h"

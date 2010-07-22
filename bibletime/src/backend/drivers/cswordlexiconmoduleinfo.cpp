@@ -9,7 +9,6 @@
 
 #include "backend/drivers/cswordlexiconmoduleinfo.h"
 
-#include <algorithm>
 #include <QFile>
 #include <QDataStream>
 #include <QTextCodec>
