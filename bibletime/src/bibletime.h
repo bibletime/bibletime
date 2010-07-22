@@ -223,10 +223,13 @@ class BibleTime : public QMainWindow {
         * Opens the bible study howto.
         */
         void openOnlineHelp_Howto();
+
         /**
-        * Processes the commandline options given to BibleTime.
+          Processes the command-line options given to BibleTime.
+          \param[in] args the command-line arguments given to BibleTime.
         */
-        void processCommandline();
+        void processCommandline(const QStringList &args);
+
         /**
         * Creates QAction's that have keyboard shortcuts
         */

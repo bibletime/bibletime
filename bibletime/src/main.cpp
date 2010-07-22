@@ -8,6 +8,7 @@
 **********/
 
 // #include <csignal>
+#include <iostream>
 #ifndef NO_DBUS
 #include <QDBusConnection>
 #endif
@@ -34,7 +35,7 @@
 
 namespace {
 
-bool showDebugMessages;
+bool showDebugMessages = false;
 
 #ifdef Q_WS_WIN
 
@@ -49,6 +50,32 @@ FILE *out_fd = 0;
 #define CLOSE_DEBUG_STREAM
 
 #endif
+
+void printHelp(const QStringList &args) {
+    std::cout << qPrintable(args.at(0)) << std::endl << std::endl
+        << "    --help" << std::endl << "        "
+        << qPrintable(QObject::tr("Show this help message and exit"))
+        << std::endl << std::endl
+        << "    --ignore-session" << std::endl << "        "
+        << qPrintable(QObject::tr("open a clean session"))
+        << std::endl << std::endl
+        << "    --open-default-bible <ref>" << std::endl << "        "
+        << qPrintable(QObject::tr("Open the default Bible with the "
+                                  "reference <ref>"))
+        << std::endl << std::endl
+#ifdef BT_ENABLE_TESTING
+        << "  --run-tests" << std::endl << "        "
+        << qPrintable(QObject::tr(""))
+        << std::endl << std::endl
+#endif
+        << qPrintable(QObject::tr("For command-line arguments parsed by the"
+                                  " Qt toolkit, see %1.")
+               .arg("http://doc.qt.nokia.com/latest/qapplication.html"))
+        << ' ' << qPrintable(QObject::tr("All command-line arguments not "
+                                         "recognized by BibleTime or Qt will "
+                                         "be silently ignored."))
+        << std::endl;
+}
 
 } // anonymous namespace
 
@@ -98,7 +125,20 @@ int main(int argc, char* argv[]) {
     app.setApplicationName("bibletime");
     app.setApplicationVersion(BT_VERSION);
 
-    showDebugMessages = QCoreApplication::arguments().contains("--debug");
+    QStringList args = qApp->arguments();
+
+    if (args.contains("--help")
+        || args.contains("-h")
+        || args.contains("/?")
+        || args.contains("/h"))
+    {
+        printHelp(args);
+        return 0;
+    }
+
+    if (args.removeAll("--debug") > 0) {
+        showDebugMessages = true;
+    }
 
 #ifdef Q_WS_WIN
     // Use the default Qt message handler if --debug is not specified
@@ -110,7 +150,7 @@ int main(int argc, char* argv[]) {
 #endif
 
 #ifdef BT_ENABLE_TESTING
-    if (QString(argv[1]) == QString("--run-tests")) {
+    if (args.contains("--run-tests")) {
         BibleTimeTest testClass;
         return QTest::qExec(&testClass);
     }
@@ -177,7 +217,7 @@ int main(int argc, char* argv[]) {
     // restore the workspace and process command line options
     //app.setMainWidget(bibletime_ptr); //no longer used in qt4 (QApplication)
     mainWindow->show();
-    mainWindow->processCommandline(); //must be done after the bibletime window is visible
+    mainWindow->processCommandline(args); // must be done after the bibletime window is visible
 
 #ifndef NO_DBUS
     new BibleTimeDBusAdaptor(mainWindow);

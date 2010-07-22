@@ -1,3 +1,7 @@
+2010-07-22 Jaak Ristioja <ristioja@gmail.com>
+    * Enhanced parsing of command-line arguments, also fixing a bug which caused
+      --help and friends still create a GUI before exiting.
+
 2010-07-20 Jaak Ristioja <ristioja@gmail.com>
     * Enhanced module indexing dialog.
     * Fixed a crash when cancelling module indexing when invoked using search.
