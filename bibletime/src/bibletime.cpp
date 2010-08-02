@@ -19,6 +19,7 @@
 #include <QMessageBox>
 #include <QSplashScreen>
 #include <QSplitter>
+#include <ctime>
 #include "backend/config/cbtconfig.h"
 #include "backend/drivers/cswordbiblemoduleinfo.h"
 #include "backend/drivers/cswordbookmoduleinfo.h"
