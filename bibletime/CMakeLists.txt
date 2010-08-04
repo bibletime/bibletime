@@ -53,7 +53,7 @@ ENDIF (NOT CMAKE_BUILD_TYPE STREQUAL "Release")
 LIST(APPEND MESSAGE_LOCALE_LANGS cs da de en_GB es et fi fr hu it nl nn_NO pl pt_BR ro ru sk)
 #WARNING: If you modify HANDBOOK_LOCALE_LANGS or HOWTO_LOCALE_LANGS,
 #also modify the po4a conf files in cmake/docs/ to make sure all languages are processed.
-LIST(APPEND HANDBOOK_LOCALE_LANGS cs de fi fr hu it nl pt_BR)
+LIST(APPEND HANDBOOK_LOCALE_LANGS cs de es fi fr hu it nl pt_BR)
 LIST(APPEND HOWTO_LOCALE_LANGS bg cs da de es fi fr it hu ko nl pt_BR ru)
 
 # Find required packages
