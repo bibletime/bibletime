@@ -2,20 +2,21 @@
   <title>Operación del programa</title>
   <sect1 id="hdbk-op-overview">
     <title>Visión general del programa</title>
-    <para>This is what a typical &bibletime; session looks like: <mediaobject>
+    <para>Esta es el aspecto típico de una sesión de &bibletime; <mediaobject>
       <imageobject> <imagedata fileref="ss_mainterms.png" width="100%"
 contentdepth="100%" scalefit="1" format="PNG" /> </imageobject>
       <textobject>
-        <phrase>The &bibletime; application window</phrase>
+        <phrase>La ventana de aplicación &bibletime;</phrase>
       </textobject>
-    </mediaobject> You can easily see the different parts of the
-application. The top left window is used to open installed works in the
-Bookshelf tab, and with the Bookmarks tab you can manage your bookmarks. The
-little "Mag" window below the Bookshelf is used to display extra information
-that is embedded in documents. When you move your mouse over a footnote
-marker, for example, then the Mag will display the actual content of the
-footnote. The toolbar gives you quick access to important functions, and the
-Desk on the right side is where you do your real work.</para>
+    </mediaobject> Usted puede ver facilmente las distintas partes
+de la aplicación. La ventana superior izquierda se utiliza para abrir las
+obras instaladas en la ficha de la biblioteca, y con la ficha Marcadores
+puede administrar sus marcadores. La pequeña ventana "Lente" debajo de la
+biblioteca se utiliza para mostrar información adicional que se incrusta en
+los documentos. Al mover el ratón sobre un marcador de la nota, por ejemplo,
+el Lente mostrará el contenido real de la nota. La barra de herramientas que
+proporciona acceso rápido a funciones importantes, y el escritorio en la
+parte derecha es donde usted hace su trabajo real.</para>
 
     <para>Pasemos ahora al mirar las diferentes partes de la aplicación de forma
 individual.</para>
@@ -24,28 +25,28 @@ individual.</para>
     <title>Las partes de la ventana de aplicación &bibletime;</title>
     <sect2 id="hdbk-op-parts-bookshelf">
       <title>La Biblioteca</title>
-      <para>La biblioteca listas todas las obras instaladas, ordenadas por categoría y
-el idioma. También tiene una categoría denominada "Marcadores". Aquí es
-donde usted puede almacenar y acceder a sus propios marcadores.</para>
+      <para>La biblioteca lista todas las obras instaladas, ordenadas por categoría e
+idioma. También tiene una categoría denominada "Marcadores". Aquí es donde
+usted puede almacenar y acceder a sus propios marcadores.</para>
 
       <sect3 id="hdbk-op-parts-bookshelf-open">
         <title>Lectura de obras</title>
 
-        <para>Para abrir una obra de la biblioteca para leer, simplemente haga clic con el
-<mousebutton>botón izquierdo del ratón</mousebutton> sobre la categoría
+        <para>Para abrir una obra de la biblioteca para lectura, simplemente haga clic con
+el <mousebutton>botón izquierdo del ratón</mousebutton> sobre la categoría
 deseada (Biblias, Comentarios, Léxicos, Libros, Devocionales o Glosarios)
 para visualizar su contenido. A continuación, simplemente haga clic en una
 de las obras para abrir esa lectura. Una ventana de lectura aparecerá en el
 área de Escritorio.</para>
 
-        <para>Si usted está leyendo un determinado trabajo, y quieren abrir otro trabajo
-en el pasaje que está leyendo, puede utilizar un atajo. Simplemente haga
-clic con <mousebutton>el botón izquierdo del ratón</mousebutton> en el verso
-/ referencia pasaje (puntero cambia a mano) y arrástrelo a la
-biblioteca. Déjalo en la obra que desea abrir, y será abierto para lectura
-en la ubicación especificada. También puede arrastrar una referencia verso
-en una ventana de lectura existentes, entonces saltará a la ubicación
-especificada.</para>
+        <para>Si usted está leyendo una determinada obra, y quieren abrir otra obra en el
+pasaje que está leyendo, puede utilizar un atajo. Simplemente haga clic con
+<mousebutton>el botón izquierdo del ratón</mousebutton> en el verso /
+referencia al pasaje (puntero cambia a mano) y arrástrelo a la
+biblioteca. Déjalo sobre la obra que desea abrir, y será abierto para
+lectura en la ubicación especificada. También puede arrastrar una referencia
+al verso en una ventana de lectura existente, entonces saltará a la
+ubicación especificada.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-bookshelf-metainfo">
@@ -53,8 +54,8 @@ especificada.</para>
 
         <para>Si hace clic con el <mousebutton>botón derecho</mousebutton> del ratón sobre
 el símbolo de una obra, verá un menú con entradas adicionales que son
-relevantes para este trabajo. <guimenuitem>"Acerca de"</guimenuitem> abre
-una ventana con un montón de información interesante acerca de la obra
+relevantes para esta obra. <guimenuitem>"Acerca de"</guimenuitem> abre una
+ventana con un montón de información interesante acerca de la obra
 seleccionada. <guimenuitem>"Desbloquear"</guimenuitem> se abre un pequeño
 cuadro de diálogo para los documentos cifrados, donde puede introducir la
 clave de desbloqueo para acceder a la obra. Para obtener información
@@ -129,7 +130,7 @@ símbolo en la biblioteca. Una ventana de lectura se abrirá en el área de
 Escritorio. Cada ventana tiene una barra de herramientas de lectura. Allí
 usted puede encontrar herramientas para navegar en el trabajo que esta
 ventana está conectado a leer, así como botones de historial como los que
-usted sabe de su navegador.</para>
+usted conoce de su navegador.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-desk-placement">
@@ -183,7 +184,7 @@ verso y el texto del verso será insertado.</para>
 ejemplo, el capítulo de una Biblia que usted está leyendo) al igual que se
 utilizan para otros programas. Esta función se puede llegar ya sea haciendo
 clic con el <mousebutton>botón derecho</mousebutton> y seleccionando
-<guimenuitem>Encontrar...</guimenuitem> o usando el atajo de <keycombo
+<guimenuitem>Encontrar...</guimenuitem> o usando el atajo <keycombo
 action="simul"> <keycap>&Ctrl;F</keycap></keycombo>. Siga leyendo para
 aprender cómo usted puede buscar en obras completas.</para>
     </sect2>
@@ -248,7 +249,7 @@ búsqueda, por ejemplo, '(Jesús OR Espíritu) AND Dios'.</para>
 seguida de ':' y, a continuación el término de búsqueda. Consulte la tabla
 de abajo para los ejemplos.</para>
 
-        <para>Available text types: <table id="hd-op-search-config-syntax-table">
+        <para>Tipos disponibles de texto: <table id="hd-op-search-config-syntax-table">
 	  <title>Tipos de Búsqueda</title>
           <tgroup cols="3">
             <thead>

@@ -4,9 +4,9 @@
     <title>Acerca de &bibletime;</title>
 
     <para>&bibletime; es una herramienta de estudio bíblico que soporta diferentes
-tipos de textos y lenguajes. Incluso grandes cantidades de trabajo por
-módulos que son fáciles de instalar y manejar.  Estos son construidos sobre
-la librería <ulink  url="http://www.crosswire.org/sword/">&sword;</ulink>,
+tipos de textos e idiomas. Incluso grandes cantidades de trabajo por módulos
+que son fáciles de instalar y manejar.  Estos son construidos sobre la
+librería <ulink  url="http://www.crosswire.org/sword/">&sword;</ulink>,
 proporcionando las funcionalidades back-end para &bibletime;, poder
 visualizar el texto bíblico, buscar etc. &sword; es el producto estrella de
 <ulink url="http://www.crosswire.org">&cbs;</ulink>.</para>
@@ -19,8 +19,8 @@ desarolladores</ulink>  del proyecto  &sword; , &cbs;.</para>
 
     <sect2 id="hdbk-intro-works">
       <title>Obras disponibles</title>
-      <para>Over 200 documents in 50 languages are available from the <ulink
-url="http://www.crosswire.org">&cbs;</ulink>.  These include: <variablelist>
+      <para>Sobre 200 documentos en 50 idiomas están disponibles en <ulink
+url="http://www.crosswire.org">&cbs;</ulink>.  Ellos incluyen: <variablelist>
         <varlistentry>
           <term>Biblias</term>
           <listitem>

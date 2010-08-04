@@ -11,7 +11,7 @@ configuración seleccionando <menuchoice> <guimenu>Preferencias</guimenu>
 
     <sect2 id="hdbk-config-bt-display">
       <title>
-        <guimenu>Display</guimenu>
+        <guimenu>Mostrar</guimenu>
       </title>
       <para>El comportamiento de arranque puede ser personalizado. Seleccione entre las
 siguientes opciones: 
@@ -27,7 +27,7 @@ podrás ver una vista previa en el panel derecho.</para>
 
     <sect2 id="hdbk-config-bt-desk">
       <title>
-        <guimenu>Desk</guimenu>
+        <guimenu>Escritorio</guimenu>
       </title>
       <para>Muchas de las funciones previstas por el backend &sword; ahora se pueden
 personalizar en&bibletime;. Estas características están documentadas en el
@@ -42,7 +42,7 @@ controlar la apariencia del texto.</para>
 
     <sect2 id="hdbk-config-bt-languages">
       <title>
-        <guimenu>Languages</guimenu>
+        <guimenu>Idiomas</guimenu>
       </title>
       <para>Aquí usted puede especificar qué idioma se debe utilizar para los nombres de
 libros bíblicos. Ponga esto en su idioma nativo, si está disponible, y usted
@@ -57,7 +57,7 @@ personalizada para cada idioma.</para>
         <imageobject> <imagedata fileref="ss_configfonts.png" width="100%"
 contentdepth="100%" scalefit="1" format="PNG" /> </imageobject>
         <textobject>
-          <phrase>Options Dialog - fonts</phrase>
+          <phrase>Diálogo de Opciones - Fuentes</phrase>
         </textobject>
         <caption>
           <para>El Diálogo de Opciones - Fuentes</para>
@@ -100,7 +100,7 @@ class="registered">Bitstream Cyberbit</trademark>(unos 12Mb).</para>
             <para>Sus paquetes de localización de su distribución</para>
           </listitem>
           <listitem>
-            <para>Una existente instalación de <trademark class="registered">Microsoft
+            <para>Una instalación existente de <trademark class="registered">Microsoft
 Windows</trademark> en su mismo computador.</para>
           </listitem>
           <listitem>
@@ -130,7 +130,7 @@ caracteres.</entry>
                 <entry>
                   <ulink
 url="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;cat_id=FontDownloads">
-SIL unicode fonts</ulink>
+Fuentes SIL Unicode</ulink>
                 </entry>
                 <entry>Excelente fuentes Unicode del Instituto Lingüístico de Verano.</entry>
               </row>
@@ -138,12 +138,12 @@ SIL unicode fonts</ulink>
                 <entry>
                   <ulink url="http://www.nongnu.org/freefont/"> FreeFont</ulink>
                 </entry>
-                <entry>Una nueva iniciativa de libre de la fuente Unicode.</entry>
+                <entry>Una nueva iniciativa libre de fuentes Unicode.</entry>
               </row>
               <row>
                 <entry>
                   <ulink url="ftp://ftp.crosswire.org/pub/sword/iso/latest/FONTS/">
-Crosswire's font directory</ulink>
+diccionario de fuentes de Crosswire</ulink>
                 </entry>
 
                 <entry>Varias fuentes disponibles en el sitio FTP &cbs;.</entry>
@@ -181,7 +181,7 @@ caracteres Unicode y las fuentes Unicode soportadas</ulink>).</para>
 
     <sect2 id="hdbk-config-bt-shortcuts">
       <title>
-        <guimenu>Shortcuts</guimenu>
+        <guimenu>Atajos</guimenu>
       </title>
 
       <para>Atajos (anteriormente conocido como Accesos Directos) son comandos a través
