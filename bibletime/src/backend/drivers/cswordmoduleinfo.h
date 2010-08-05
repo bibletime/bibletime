@@ -36,9 +36,56 @@ class CEntryDisplay;
  * Base class for Sword modules.
  * This is the base class for all Sword modules. Every class handling a special Sword module type
  * does inherit from this class.
+ * --------------------------------------------------------------------------
+ *
+ * Comment on FilterTypes ModuleType vs. Category<br>
+ *                    (by Peter von Kaehne, refdoc[at]gmx[dot]net):<br>
+ *
+ * <ul>
+ * <li>1) The four module types are essentially four (3 1/2) different ways of
+ * encoding, accessing and organising a text. Incidentally these types
+ * happen to correspond to common categories of literature.
+ *
+ * <dl compact>
+ * <dt>"Bible"</dt><dd> -  a text organised along a canon of biblical books, chapters,
+ * verse, using a specific versification scheme and specific markup.</dd>
+ *
+ * <dt>"Commentary"</dt><dd>, much the same, but with often bulky material not
+ * corresponding to specific verses or even chapters.</dd>
+ *
+ * <dt>"GenBook"</dt><dd> - a text much like most common books organised under a single
+ * overarching title, with an arbitrary depth hierarchy of parts, sections,
+ * chapters etc.</dd>
+ *
+ * <dt>"LexDic"</dt><dd> a text of a huge number of often short components, organised
+ * along an ordered set of keys.</dd>
+ * </dl>
+ *
+ * <p>This is the technical bit. There is not much in human literature which
+ * can not be gainfully encoded with the help of one of the four types
+ * above. A lot of stuff can gainfully be encoded in several of such ways.</p>
+ *
+ * <p>We have some Bibles encoded as GenBooks. This is one of  the two ways
+ * (currently rather dormant) in which we can deal with different
+ * versification schemes and canons.</p>
+ * </li>
+ *
+ * <li>2) Users do not care about our technical representation. They organise
+ * their books/modules in categories of content, irrespective of underlying
+ * driver. While a devotional book may internally be very similar to a
+ * lexicon, it is something entirely different in content and a frontend
+ * which shows both as the same is missing the point. Similarly a GenBook
+ * encoded Bible should not appear as a GenBook but as a ordinary Bible as
+ * far as the user is concerned.
+ * </li>
+ * </ul>
+ *
+ * So, "Type" is about technical underpinnings, "Category" about user and
+ * content. There is no real redundancy here.
  *
  * @author The BibleTime team
  * @version $Id: cswordmoduleinfo.h,v 1.83 2007/02/04 23:12:32 joachim Exp $
+ *
  */
 
 class CSwordModuleInfo: public QObject {
