@@ -66,6 +66,10 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
     retranslateUi();
 }
 
+BtBookshelfDockWidget::~BtBookshelfDockWidget() {
+	saveGroupingSetting();
+}
+
 const BtBookshelfTreeModel::Grouping &BtBookshelfDockWidget::groupingOrder() const {
     return m_bookshelfWidget->treeModel()->groupingOrder();
 }
@@ -137,6 +141,16 @@ BtBookshelfTreeModel::Grouping BtBookshelfDockWidget::loadGroupingSetting() cons
     } else {
         return BtBookshelfTreeModel::defaultGrouping();
     }
+}
+
+void BtBookshelfDockWidget::saveGroupingSetting() const {
+	
+    QSettings *settings(CBTConfig::getConfig());
+    settings->beginGroup("GUI/MainWindow/Docks/Bookshelf");
+	QVariant v;
+	v.setValue(groupingOrder());
+	settings->setValue("grouping", v);
+    settings->endGroup();
 }
 
 void BtBookshelfDockWidget::slotModuleActivated(CSwordModuleInfo *module) {

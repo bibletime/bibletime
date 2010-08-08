@@ -27,6 +27,7 @@ class BtBookshelfDockWidget: public QDockWidget {
         Q_OBJECT
     public:
         BtBookshelfDockWidget(QWidget *parent = 0, Qt::WindowFlags f = 0);
+        ~BtBookshelfDockWidget();
 
         static inline BtBookshelfDockWidget *getInstance() { return m_instance; }
 
@@ -45,6 +46,7 @@ class BtBookshelfDockWidget: public QDockWidget {
         void initMenus();
         void retranslateUi();
         BtBookshelfTreeModel::Grouping loadGroupingSetting() const;
+        void saveGroupingSetting() const;
 
     protected slots:
         void slotModuleActivated(CSwordModuleInfo *module);
