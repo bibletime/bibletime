@@ -36,6 +36,14 @@ Q_DECLARE_METATYPE(FilterOptions)
 struct DisplayOptions {
     int lineBreaks;
     int verseNumbers;
+
+// Work around for Windows compiler bug in Visual Studio 2008 & 2010.
+// Crash occurs at the return statement of CBTConfig::getDisplayOptionDefaults.
+// Crash is caused by a bad calling sequence when called from CDisplayWindow::init
+#ifdef Q_WS_WIN
+	int notUsed;
+#endif
+
 };
 Q_DECLARE_METATYPE(DisplayOptions)
 
