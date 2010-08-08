@@ -37,9 +37,12 @@ struct DisplayOptions {
     int lineBreaks;
     int verseNumbers;
 
-// Work around for Windows compiler bug in Visual Studio 2008 & 2010.
-// Crash occurs at the return statement of CBTConfig::getDisplayOptionDefaults.
-// Crash is caused by a bad calling sequence when called from CDisplayWindow::init
+/**
+  Work around for Windows compiler bug in Visual Studio 2008 & 2010. The Crash
+  occurs at the return statement of CBTConfig::getDisplayOptionDefaults and is
+  caused by a bad calling sequence when called from CDisplayWindow::init.
+  \todo Properly identify this bug and remove the #ifdef when fix is available.
+*/
 #ifdef Q_WS_WIN
 	int notUsed;
 #endif
