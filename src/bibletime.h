@@ -77,7 +77,7 @@ class QSignalMapper;
   * </p><p>
   * The display windows which provide functionality are CBibleReadWindow for
   * Bibles, CBookReadWindow for books, CCommentaryReadWindow for commentaries and CLexiconReadWindow for
-  * lexicon and dictionaries.
+  * lexicon and dictionaries. CHTMLWriteWindow and CPlainWriteWindows are used for editing the Personal Commentary.
   * </p><p>
   * 
   * The class CDisplay is the class that various views with in the windows are derived. 
