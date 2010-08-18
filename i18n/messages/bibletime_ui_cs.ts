@@ -996,6 +996,25 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
 </context>
 <context>
+    <name>BtModuleIndexDialog</name>
+    <message>
+        <source>Preparing to index modules...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Creating indices</source>
+        <translation type="unfinished">Vytváření rejstříků</translation>
+    </message>
+    <message>
+        <source>Creating index for work: %1</source>
+        <translation type="unfinished">Vytváření rejstříku pro dílo %1</translation>
+    </message>
+</context>
+<context>
     <name>BtModuleManagerDialog</name>
     <message>
         <source>Bookshelf Manager</source>
@@ -1808,23 +1827,23 @@ shortcut</source>
     <name>CModuleIndexDialog</name>
     <message>
         <source>Cancel</source>
-        <translation>Zpět</translation>
+        <translation type="obsolete">Zpět</translation>
     </message>
     <message>
         <source>Creating indices</source>
-        <translation>Vytváření rejstříků</translation>
+        <translation type="obsolete">Vytváření rejstříků</translation>
     </message>
     <message>
         <source>Creating index for work: %1</source>
-        <translation>Vytváření rejstříku pro dílo %1</translation>
+        <translation type="obsolete">Vytváření rejstříku pro dílo %1</translation>
     </message>
     <message>
         <source>Indexing Is Cancelled</source>
-        <translation>Indexování bylo zrušeno</translation>
+        <translation type="obsolete">Indexování bylo zrušeno</translation>
     </message>
     <message>
         <source>Indexing is cancelled because modules are removed.</source>
-        <translation>Indexování bylo zrušeno, protože moduly byly odstraněny.</translation>
+        <translation type="obsolete">Indexování bylo zrušeno, protože moduly byly odstraněny.</translation>
     </message>
 </context>
 <context>
@@ -3228,6 +3247,26 @@ Language name ppk</extracomment>
         <source>Unindexed works</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Show this help message and exit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>open a clean session</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open the default Bible with the reference &lt;ref&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For command-line arguments parsed by the Qt toolkit, see %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All command-line arguments not recognized by BibleTime or Qt will be silently ignored.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QPushButton</name>
@@ -3732,7 +3771,7 @@ Language name ppk</extracomment>
     <message>
         <source>One or more works need indexing before they can be searched.
 This could take a long time. Proceed with indexing?</source>
-        <translation>Jedno nebo více děl potřebuje sestavit rejstřík předtím než může být prohledáno. 
+        <translation type="obsolete">Jedno nebo více děl potřebuje sestavit rejstřík předtím než může být prohledáno. 
 To může trvat dlouhou dobu. Pokračovat v indexování?</translation>
     </message>
     <message>
@@ -3745,6 +3784,14 @@ To může trvat dlouhou dobu. Pokračovat v indexování?</translation>
     </message>
     <message>
         <source>Show a graphical analysis of the search result</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The following modules need to be indexed before they can be searched in:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Indexing could take a long time. Click &quot;Yes&quot; to index the modules and start the search, or &quot;No&quot; to cancel the search.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
