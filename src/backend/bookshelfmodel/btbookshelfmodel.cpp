@@ -14,6 +14,7 @@
 
 #include <QIcon>
 #include <QSet>
+#include "util/macros.h"
 
 
 BtBookshelfModel::BtBookshelfModel(QObject *parent)
@@ -182,7 +183,7 @@ void BtBookshelfModel::removeModules(const QSet<CSwordModuleInfo *> &modules,
 
 CSwordModuleInfo* BtBookshelfModel::getModule(const QString &name) const {
     Q_FOREACH(CSwordModuleInfo *module, m_data) {
-        if (module->name() == name) return module;
+        if (UNLIKELY(module->name() == name)) return module;
     }
     return 0;
 }

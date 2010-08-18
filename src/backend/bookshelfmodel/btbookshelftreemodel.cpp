@@ -17,6 +17,7 @@
 #include "backend/bookshelfmodel/indexingitem.h"
 #include "backend/bookshelfmodel/languageitem.h"
 #include "backend/bookshelfmodel/moduleitem.h"
+#include "util/macros.h"
 
 
 using namespace BookshelfModel;
@@ -127,10 +128,10 @@ bool BtBookshelfTreeModel::setData(const QModelIndex &itemIndex,
     typedef QPair<Item *, QModelIndex> IP;
 
     Qt::CheckState newState;
-    if (role == Qt::CheckStateRole) {
+    if (LIKELY(role == Qt::CheckStateRole)) {
         bool ok;
         newState = (Qt::CheckState) value.toInt(&ok);
-        if (!ok) return false;
+        if (UNLIKELY(!ok)) return false;
     }
     else {
         return false;
@@ -419,7 +420,7 @@ void BtBookshelfTreeModel::removeModule(CSwordModuleInfo *module) {
 }
 
 Item *BtBookshelfTreeModel::getItem(const QModelIndex &index) const {
-    if (index.isValid()) {
+    if (LIKELY(index.isValid())) {
         Item *item(static_cast<Item*>(index.internalPointer()));
         Q_ASSERT(item != 0);
         return item;
