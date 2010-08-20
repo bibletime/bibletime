@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2010-07-12 22:32-0300\n"
+"POT-Creation-Date: 2010-08-20 09:15-0300\n"
 "PO-Revision-Date: 2010-07-25 20:20-0400\n"
 "Last-Translator: Roy Alvear <racl@fedoraproject.org>\n"
 "Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
@@ -3475,10 +3475,8 @@ msgstr ""
 
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:54
-msgid ""
-"<date>$LastChangedDate: 2010-05-20 15:20:48 -0400 (Thu, 20 May 2010) $</date>"
+msgid "<date>August 2010</date>"
 msgstr ""
-"<date>$LastChangedDate: 2010-05-20 15:20:48 -0400 (Thu, 20 May 2010) $</date>"
 
 #. type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:56
@@ -3527,6 +3525,13 @@ msgstr "Crosswire"
 #: docs/handbook/en/docbook/index.docbook:72
 msgid "Help dialog"
 msgstr "Dialogo de Ayuda"
+
+#~ msgid ""
+#~ "<date>$LastChangedDate: 2010-05-20 15:20:48 -0400 (Thu, 20 May 2010) $</"
+#~ "date>"
+#~ msgstr ""
+#~ "<date>$LastChangedDate: 2010-05-20 15:20:48 -0400 (Thu, 20 May 2010) $</"
+#~ "date>"
 
 # type: Content of: <chapter><sect1><sect2><mediaobject><textobject>
 #~ msgid "<phrase>Options Dialog - fonts</phrase>"

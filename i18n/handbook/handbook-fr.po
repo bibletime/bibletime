@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: handbook\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
-"POT-Creation-Date: 2010-07-12 22:32-0300\n"
+"POT-Creation-Date: 2010-08-20 09:15-0300\n"
 "PO-Revision-Date: 2010-05-21 16:06-0500\n"
 "Last-Translator: Thomas Abthorpe <tabthorpe@FreeBSD.org>\n"
 "Language-Team: BibleTime Translators <bibletime-translasions@lists."
@@ -3213,14 +3213,10 @@ msgid ""
 "The &bibletime; Handbook is distributed with the &bibletime; study program."
 msgstr "Le manuel &bibletime; fait partie de &bibletime;."
 
-# type: Content of: <book><bookinfo><date>
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:54
-#, fuzzy
-#| msgid "$LastChangedDate: 2010-05-20 15:20:48 -0400 (Thu, 20 May 2010) $"
-msgid ""
-"<date>$LastChangedDate: 2010-05-20 15:20:48 -0400 (Thu, 20 May 2010) $</date>"
-msgstr "$LastChangedDate: 2010-05-20 15:20:48 -0400 (Thu, 20 May 2010) $"
+msgid "<date>August 2010</date>"
+msgstr ""
 
 # type: Content of: <book><bookinfo><releaseinfo>
 #. type: Content of: <book><bookinfo><releaseinfo>
@@ -3270,6 +3266,14 @@ msgstr ""
 #: docs/handbook/en/docbook/index.docbook:72
 msgid "Help dialog"
 msgstr ""
+
+# type: Content of: <book><bookinfo><date>
+#, fuzzy
+#~| msgid "$LastChangedDate: 2010-05-20 15:20:48 -0400 (Thu, 20 May 2010) $"
+#~ msgid ""
+#~ "<date>$LastChangedDate: 2010-05-20 15:20:48 -0400 (Thu, 20 May 2010) $</"
+#~ "date>"
+#~ msgstr "$LastChangedDate: 2010-05-20 15:20:48 -0400 (Thu, 20 May 2010) $"
 
 #, fuzzy
 #~ msgid "<phrase>Options Dialog - fonts</phrase>"

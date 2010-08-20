@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: handbook-hu\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
-"POT-Creation-Date: 2010-07-12 22:32-0300\n"
+"POT-Creation-Date: 2010-08-20 09:15-0300\n"
 "PO-Revision-Date: 2010-02-18 21:16+0100\n"
 "Last-Translator: Novak Geza <gza@gza.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -3469,13 +3469,10 @@ msgid ""
 "The &bibletime; Handbook is distributed with the &bibletime; study program."
 msgstr "A &bibletime; kézikönyv a &bibletime; programmal együtt terjesztve."
 
-# type: Content of: <book><bookinfo><date>
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:54
-#, fuzzy
-msgid ""
-"<date>$LastChangedDate: 2010-05-20 15:20:48 -0400 (Thu, 20 May 2010) $</date>"
-msgstr "$LastChangedDate: 2009-12-31 15:05:52 -0500 (Thu, 31 Dec 2009) $"
+msgid "<date>August 2010</date>"
+msgstr ""
 
 # type: Content of: <book><bookinfo><releaseinfo>
 #. type: Content of: <book><bookinfo><releaseinfo>
@@ -3528,6 +3525,13 @@ msgstr ""
 #: docs/handbook/en/docbook/index.docbook:72
 msgid "Help dialog"
 msgstr ""
+
+# type: Content of: <book><bookinfo><date>
+#, fuzzy
+#~ msgid ""
+#~ "<date>$LastChangedDate: 2010-05-20 15:20:48 -0400 (Thu, 20 May 2010) $</"
+#~ "date>"
+#~ msgstr "$LastChangedDate: 2009-12-31 15:05:52 -0500 (Thu, 31 Dec 2009) $"
 
 # type: Content of: <chapter><sect1><sect2><mediaobject><caption><para>
 #~ msgid "<phrase>Options Dialog - fonts</phrase>"

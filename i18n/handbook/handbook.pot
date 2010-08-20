@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2010-07-12 22:32-0300\n"
+"POT-Creation-Date: 2010-08-20 09:15-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2506,9 +2506,7 @@ msgstr ""
 
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:54
-msgid ""
-"<date>$LastChangedDate: 2010-05-20 15:20:48 -0400 (Thu, 20 May 2010) "
-"$</date>"
+msgid "<date>August 2010</date>"
 msgstr ""
 
 #. type: Content of: <book><bookinfo><releaseinfo>
