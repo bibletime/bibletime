@@ -706,6 +706,24 @@ void BibleTime::initSwordConfigFile() {
     out << "\n";
     file.close();
 #endif
+
+#ifdef Q_WS_MAC
+    namespace DU = util::directory;
+    QString configFile = util::directory::getUserHomeSwordDir().filePath("sword.conf");
+    QFile file(configFile);
+    if (file.exists()) {
+        return;
+    }
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        return;
+    }
+    QTextStream out(&file);
+    out << "\n";
+    out << "[Install]\n";
+    out << "DataPath="   << DU::convertDirSeparators( DU::getUserHomeSwordDir().absolutePath()) << "\n";
+    out << "\n";
+    file.close();
+#endif
 }
 
 /** Initializes the backend */

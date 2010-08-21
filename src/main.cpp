@@ -182,6 +182,14 @@ int main(int argc, char* argv[]) {
     dir.setCurrent(homeSwordDir);
 #endif
 
+#ifdef Q_WS_MAC
+    // change to the user's sword dir containing the sword.conf config file, so that
+    // Sword will correctly find it.
+    QString homeSwordDir = util::directory::getUserHomeSwordDir().absolutePath();
+    QDir dir;
+    dir.setCurrent(homeSwordDir);
+#endif
+
     // This is needed for languagemgr language names to work, they use \uxxxx escape sequences in string literals
     QTextCodec::setCodecForTr(QTextCodec::codecForName("UTF-8"));
     //first install QT's own translations
