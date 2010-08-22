@@ -19,7 +19,8 @@
 CSwordBookModuleInfo::CSwordBookModuleInfo(sword::SWModule *module,
                                            CSwordBackend * const usedBackend)
     : CSwordModuleInfo(module, usedBackend,
-                       CSwordModuleInfo::GenericBook)
+                       CSwordModuleInfo::GenericBook),
+                       m_depth(-1)
 {
     sword::TreeKeyIdx *key = tree();
     if (key) {
