@@ -3,6 +3,7 @@
       Gary Holmlund.
     * Backported "Fixed a bug that caused some users home directories to be
       deleted" by Jaak Ristioja.
+    * Backported "Save the "grouping" setting of the Bookshelf" by Gary Holmlund.
 
 2010-07-11 Martin Gruner <mgruner@crosswire.org>
     * Released 2.7.2
