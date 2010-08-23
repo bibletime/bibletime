@@ -129,7 +129,7 @@ QString getKey(const bools ID) {
             return "showToolbarsInEachWindow";
     }
     Q_ASSERT(false);
-    return false;
+    return QString::null;
 }
 
 QString getKey(const ints ID) {
