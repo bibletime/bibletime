@@ -1,6 +1,8 @@
 2010-08-23 Jaak Ristioja <ristioja@gmail.com>
     * Backported "Fix crash opening first window in manual arrangement mode." by
       Gary Holmlund.
+    * Backported "Fixed a bug that caused some users home directories to be
+      deleted" by Jaak Ristioja.
 
 2010-07-11 Martin Gruner <mgruner@crosswire.org>
     * Released 2.7.2

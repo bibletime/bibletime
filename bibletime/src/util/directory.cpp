@@ -199,6 +199,7 @@ bool initDirectoryCache() {
     if (!cachedUserIndexDir.cd("indices")) {
         if (!cachedUserIndexDir.mkdir("indices") || !cachedUserIndexDir.cd("indices")) {
             qWarning() << "Could not create user indices directory.";
+            return false;
         }
     }
 
@@ -206,6 +207,7 @@ bool initDirectoryCache() {
     if (!cachedUserDisplayTemplatesDir.cd("display-templates")) {
         if (!cachedUserDisplayTemplatesDir.mkdir("display-templates") || !cachedUserDisplayTemplatesDir.cd("display-templates")) {
             qWarning() << "Could not create user display templates directory.";
+            return false;
         }
     }
 
