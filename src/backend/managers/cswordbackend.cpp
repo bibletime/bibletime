@@ -531,13 +531,13 @@ void CSwordBackend::deleteOrphanedIndices() {
         if (dir[i] != "." && dir[i] != "..") {
             if ( (module = this->findModuleByName(dir[i])) ) { //mod exists
                 if (!module->hasIndex()) { //index files found, but wrong version etc.
-					qDebug() << "deleting outdated index for module" << dir[i];
+                    qDebug() << "deleting outdated index for module" << dir[i];
                     CSwordModuleInfo::deleteIndexForModule( dir[i] );
                 }
             }
             else { //no module exists
                 if (CBTConfig::get( CBTConfig::autoDeleteOrphanedIndices ) ) {
-					qDebug() << "deleting orphaned index in directory" << dir[i];
+                    qDebug() << "deleting orphaned index in directory" << dir[i];
                     CSwordModuleInfo::deleteIndexForModule( dir[i] );
                 }
             }

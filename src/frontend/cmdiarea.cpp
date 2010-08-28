@@ -285,7 +285,7 @@ bool CMDIArea::eventFilter(QObject *o, QEvent *e) {
     QMdiSubWindow *w(qobject_cast<QMdiSubWindow*>(o));
 
     // Let the event be handled by other filters:
-    if (w == 0) 
+    if (w == 0)
         return QMdiArea::eventFilter(o, e);
 
     switch (e->type()) {

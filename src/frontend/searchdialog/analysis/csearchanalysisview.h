@@ -22,7 +22,7 @@ namespace Search {
 class CSearchAnalysisScene;
 
 /**
-	@author The BibleTime team <info@bibletime.info>
+    @author The BibleTime team <info@bibletime.info>
 */
 class CSearchAnalysisView : public QGraphicsView {
     public:
@@ -31,10 +31,10 @@ class CSearchAnalysisView : public QGraphicsView {
         ~CSearchAnalysisView() {}
 
         /**
-        	* Returns the sizeHint for this view
-        	* We give back the size of the parent widgetas default.
-        	* This is a reimplementation from QCanvasView::sizeHint().
-        	*/
+            * Returns the sizeHint for this view
+            * We give back the size of the parent widgetas default.
+            * This is a reimplementation from QCanvasView::sizeHint().
+            */
         virtual QSize sizeHint() const;
 
         /**

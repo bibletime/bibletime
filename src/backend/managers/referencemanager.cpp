@@ -85,15 +85,15 @@ const QString ReferenceManager::encodeHyperlink( const QString moduleName, const
             case Bible: //bibles or commentary keys need parsing
 
             case Commentary: {
-                /*  				CSwordModuleInfo* mod = CSwordBackend::instance()()->findModuleByName(moduleName);
+                /*                  CSwordModuleInfo* mod = CSwordBackend::instance()()->findModuleByName(moduleName);
 
-                  				ParseOptions options;
-                  				options.refDestinationModule = mod->name();
-                  				options.refBase =
-                  				options.sourceLanguage = mod->module()->Lang();
-                  				options.destinationLanguage = "en";
+                                  ParseOptions options;
+                                  options.refDestinationModule = mod->name();
+                                  options.refBase =
+                                  options.sourceLanguage = mod->module()->Lang();
+                                  options.destinationLanguage = "en";
 
-                				ret.append( parseVerseReference(key, options) ); //we add the english key, so drag and drop will work in all cases*/
+                                ret.append( parseVerseReference(key, options) ); //we add the english key, so drag and drop will work in all cases*/
                 ret.append(key);
                 break;
             }
@@ -358,7 +358,7 @@ const QString ReferenceManager::parseVerseReference( const QString& ref, const R
     baseKey.setKey(options.refBase); //probably in the sourceLanguage
     baseKey.setLocale( "en_US" ); //english works in all environments as base
 
-// 	CSwordVerseKey dummy(0);
+//     CSwordVerseKey dummy(0);
     //HACK: We have to workaround a Sword bug, we have to set the default locale to the same as the sourceLanguage !
     const QString oldLocaleName = CSwordBackend::instance()->booknameLanguage();
     CSwordBackend::instance()->booknameLanguage(sourceLanguage);
@@ -367,7 +367,7 @@ const QString ReferenceManager::parseVerseReference( const QString& ref, const R
     dummy.setLocale( sourceLanguage.toUtf8().constData() );
     Q_ASSERT( !strcmp(dummy.getLocale(), sourceLanguage.toUtf8().constData()) );
 
-// 	qDebug("Parsing '%s' in '%s' using '%s' as base, source lang '%s', dest lang '%s'", ref.latin1(), options.refDestinationModule.latin1(), baseKey.key().latin1(), sourceLanguage.latin1(), destinationLanguage.latin1());
+//     qDebug("Parsing '%s' in '%s' using '%s' as base, source lang '%s', dest lang '%s'", ref.latin1(), options.refDestinationModule.latin1(), baseKey.key().latin1(), sourceLanguage.latin1(), destinationLanguage.latin1());
 
     for (QStringList::iterator it = refList.begin(); it != refList.end(); it++) {
         //The listkey may contain more than one item, because a ref lik "Gen 1:3,5" is parsed into two single refs

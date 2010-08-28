@@ -83,7 +83,7 @@ void CReadWindow::lookupSwordKey( CSwordKey* newKey ) {
 
     using namespace Rendering;
 
-//	Q_ASSERT(isReady() && newKey && modules().first());
+//    Q_ASSERT(isReady() && newKey && modules().first());
     if (!isReady() || !newKey || modules().empty() || !modules().first()) {
         return;
     }
@@ -188,7 +188,7 @@ void CReadWindow::resizeEvent(QResizeEvent* /*e*/) {
 }
 
 void CReadWindow::openSearchStrongsDialog() {
-//	qWarning("looking for lemma %s",  displayWidget()->getCurrentNodeInfo()[CDisplay::Lemma].latin1() );
+//    qWarning("looking for lemma %s",  displayWidget()->getCurrentNodeInfo()[CDisplay::Lemma].latin1() );
     QString searchText = QString::null;
 
     if (displayWidget()->getCurrentNodeInfo()[CDisplay::Lemma] != QString::null) {

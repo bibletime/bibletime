@@ -42,7 +42,7 @@ void CPlainWriteDisplay::selectAll() {
 void CPlainWriteDisplay::setText( const QString& newText ) {
     //make sure the text has been converted to show \n instead of <br/>
     QString text = newText;
-// 	text.replace("\n<br /><!-- BT newline -->\n", "\n");
+//     text.replace("\n<br /><!-- BT newline -->\n", "\n");
     text.replace("<br />", "\n"); //inserted by BT or the Qt textedit widget
 
     QTextEdit::setText(text);

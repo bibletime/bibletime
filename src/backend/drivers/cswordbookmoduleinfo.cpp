@@ -31,7 +31,7 @@ CSwordBookModuleInfo::CSwordBookModuleInfo(sword::SWModule *module,
 
 void CSwordBookModuleInfo::computeDepth(sword::TreeKeyIdx *key, int level) {
     std::string savedKey;
-    //	savedKey = key->getFullName(); //sword 1.5.8
+    //    savedKey = key->getFullName(); //sword 1.5.8
     savedKey = key->getText();
 
     if (level > m_depth) {

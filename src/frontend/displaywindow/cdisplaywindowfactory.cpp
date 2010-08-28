@@ -29,16 +29,16 @@ CReadWindow* CDisplayWindowFactory::createReadInstance(QList<CSwordModuleInfo*> 
     switch (modules.first()->type()) {
         case CSwordModuleInfo::Bible:
             win = new CBibleReadWindow(modules, parent);
-	    break;
+        break;
         case CSwordModuleInfo::Commentary:
             win = new CCommentaryReadWindow(modules, parent);
-	    break;
+        break;
         case CSwordModuleInfo::Lexicon:
             win = new CLexiconReadWindow(modules, parent);
-	    break;
+        break;
         case CSwordModuleInfo::GenericBook:
             win = new CBookReadWindow(modules, parent);
-	    break;
+        break;
         default:
             qWarning("unknown module type");
             break;

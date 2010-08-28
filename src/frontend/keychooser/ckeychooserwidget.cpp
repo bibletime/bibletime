@@ -127,7 +127,7 @@ void CKeyChooserWidget::reset(const int count, int index, bool do_emit) {
     //This prevents the widget from resetting during application load, which
     //produces undesirable behavior.
     //if (!updatesEnabled())
-    //	return;
+    //    return;
 
     m_list.clear();
     for (int i = 1; i <= count; i++) { /// \todo CHECK
@@ -141,7 +141,7 @@ void CKeyChooserWidget::reset(const QStringList &list, int index, bool do_emit) 
     //This prevents the widget from resetting during application load, which
     //produces undesirable behavior.
     //if (!updatesEnabled())
-    //	return;
+    //    return;
 
     m_list = list;
     reset(&m_list, index, do_emit);
@@ -239,7 +239,7 @@ void CKeyChooserWidget::slotReturnPressed( /*const QString& text*/) {
     QString text = comboBox()->lineEdit()->text();
     for (int index = 0; index < comboBox()->count(); ++index) {
         if (comboBox()->itemText(index) == text) {
-//			emit changed(index);
+//            emit changed(index);
             emit focusOut(index); // a workaround because focusOut is not checked, the slot connected to changed to check
             break;
         }

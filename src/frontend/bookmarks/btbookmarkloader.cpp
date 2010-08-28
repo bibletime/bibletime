@@ -169,9 +169,9 @@ void BtBookmarkLoader::saveItem(QTreeWidgetItem* item, QDomElement& parentElemen
         elem.setAttribute("description", bookmarkItem->description());
         elem.setAttribute("modulename", bookmarkItem->m_moduleName);
         elem.setAttribute("moduledescription", bookmarkItem->module() ? bookmarkItem->module()->config(CSwordModuleInfo::Description) : QString::null);
-	if ( ! bookmarkItem->title().isEmpty()) {
-	  elem.setAttribute("title", bookmarkItem->m_title);
-	}
+    if ( ! bookmarkItem->title().isEmpty()) {
+      elem.setAttribute("title", bookmarkItem->m_title);
+    }
         parentElement.appendChild(elem);
     }
 }

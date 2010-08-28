@@ -73,7 +73,7 @@ BtBibleKeyWidget::BtBibleKeyWidget(const CSwordBibleModuleInfo *mod,
     setFocusProxy(m_textbox);
     m_textbox->setContentsMargins(0, 0, 0, 0);
 
-    setKey(key);	// The order of these two functions is important.
+    setKey(key);    // The order of these two functions is important.
     setModule();
 
     m_chapterScroller = new CScrollerWidgetSet(this);

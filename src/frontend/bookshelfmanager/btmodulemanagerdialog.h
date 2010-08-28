@@ -44,7 +44,7 @@ class BtModuleManagerDialog : public BtConfigDialog {
 
 
 //signals:
-//	void swordSetupChanged();
+//    void swordSetupChanged();
 };
 
 

@@ -67,7 +67,7 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
 }
 
 BtBookshelfDockWidget::~BtBookshelfDockWidget() {
-	saveGroupingSetting();
+    saveGroupingSetting();
 }
 
 const BtBookshelfTreeModel::Grouping &BtBookshelfDockWidget::groupingOrder() const {
@@ -144,12 +144,12 @@ BtBookshelfTreeModel::Grouping BtBookshelfDockWidget::loadGroupingSetting() cons
 }
 
 void BtBookshelfDockWidget::saveGroupingSetting() const {
-	
+
     QSettings *settings(CBTConfig::getConfig());
     settings->beginGroup("GUI/MainWindow/Docks/Bookshelf");
-	QVariant v;
-	v.setValue(groupingOrder());
-	settings->setValue("grouping", v);
+    QVariant v;
+    v.setValue(groupingOrder());
+    settings->setValue("grouping", v);
     settings->endGroup();
 }
 

@@ -67,7 +67,7 @@ char Filters::OSISMorphSegmentation::processText(sword::SWBuf &text, const sword
             text.append(token);
             text.append('>');
 
-            //				hide = false; //not right, because there may be child tags in seg. Only /seg may disable the seg hiding.
+            //                hide = false; //not right, because there may be child tags in seg. Only /seg may disable the seg hiding.
 
             continue;
         } //end of intoken part

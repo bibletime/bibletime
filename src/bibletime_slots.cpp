@@ -63,14 +63,14 @@ void BibleTime::slotSettingsChanged() {
     CSwordBackend::instance()->booknameLanguage(language);
 
 // \todo update the bookmarks after Bible bookname language has been changed
-// 	QTreeWidgetItemIterator it(m_mainIndex);
-// 	while (*it) {
-// 		CIndexItemBase* citem = dynamic_cast<CIndexItemBase*>(*it);
-// 		if (citem) {
-// 			citem->update();
-// 		}
-// 		++it;
-// 	}
+//     QTreeWidgetItemIterator it(m_mainIndex);
+//     while (*it) {
+//         CIndexItemBase* citem = dynamic_cast<CIndexItemBase*>(*it);
+//         if (citem) {
+//             citem->update();
+//         }
+//         ++it;
+//     }
 
     refreshBibleTimeAccel();
     refreshDisplayWindows();

@@ -15,7 +15,7 @@
 
 
 BibleTimeApp::BibleTimeApp( int & argc, char ** argv ) : QApplication(argc, argv) {
-//	initDCOP();
+//    initDCOP();
     CResMgr::init_tr();
 }
 
@@ -32,11 +32,11 @@ BibleTimeApp::~BibleTimeApp() {
 
 /*
 void BibleTimeApp::initDCOP() {
-	const bool dcopOk = dcopClient()->attach();
-	Q_ASSERT(dcopOk);
-	if (dcopOk) {
-		const Q3CString appId = dcopClient()->registerAs(kapp->name(), false);
-		//   dcopClient()->setDefaultObject("BibleTimeInterface");
-	}
+    const bool dcopOk = dcopClient()->attach();
+    Q_ASSERT(dcopOk);
+    if (dcopOk) {
+        const Q3CString appId = dcopClient()->registerAs(kapp->name(), false);
+        //   dcopClient()->setDefaultObject("BibleTimeInterface");
+    }
 }
 */

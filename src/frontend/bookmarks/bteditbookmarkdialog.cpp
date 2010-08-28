@@ -20,7 +20,7 @@
 #include "util/dialogutil.h"
 #include "util/directory.h"
 
- 
+
 BtEditBookmarkDialog::BtEditBookmarkDialog(const QString &key,
                                            const QString &title,
                                            const QString &description,

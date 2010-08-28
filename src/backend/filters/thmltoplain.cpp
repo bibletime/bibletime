@@ -198,7 +198,7 @@ char ThmlToPlain::processText(sword::SWBuf &text,
                 token[tokpos++] = *from;
             token[tokpos+2] = 0;
         }
-        else	text += *from;
+        else    text += *from;
     }
 
     orig = text;

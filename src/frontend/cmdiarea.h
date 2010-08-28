@@ -71,7 +71,7 @@ class CMDIArea: public QMdiArea {
         */
         QList<QMdiSubWindow*> usableWindowList();
 
-        /** 
+        /**
           Show or hide the sub-window min/max buttons.
         */
         void enableWindowMinMaxFlags(bool enable);

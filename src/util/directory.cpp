@@ -92,7 +92,7 @@ bool initDirectoryCache() {
             qWarning() << "Cannot find ALLUSERSPROFILE\\Application Data\\Sword";
             return false;
         }
-	}
+    }
 #endif
 
 #ifdef Q_WS_MAC

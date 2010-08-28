@@ -22,7 +22,7 @@ class BibleTimeApp : public QApplication {
         ~BibleTimeApp();
 
     protected:
-//	void initDCOP();
+//    void initDCOP();
 };
 
 #endif

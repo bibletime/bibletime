@@ -298,7 +298,7 @@ void CDisplayWindow::setKey( CSwordKey* key ) {
 }
 
 BTHistory* CDisplayWindow::history() {
-    if (m_history == 0) 
+    if (m_history == 0)
         m_history = new BTHistory(this);
     return m_history;
 }
@@ -474,7 +474,7 @@ void CDisplayWindow::lookupModKey( const QString& moduleName, const QString& key
         keyChooser()->setKey(key()); //the key chooser does send an update signal
         emit sigKeyChanged(key());
     }
-    else { 	//given module not displayed in this window
+    else {     //given module not displayed in this window
         //if the module is displayed in another display window we assume a wrong drop
         //create a new window for the given module
         QList<CSwordModuleInfo*> mList;

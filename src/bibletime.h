@@ -72,15 +72,15 @@ class QSignalMapper;
   * @page frontend The structure of the frontend
   *
   * <p>
-  * The frontend contains the classes which interact with the user. For example the 
+  * The frontend contains the classes which interact with the user. For example the
   * display windows, the searchdialog or the other parts.
   * </p><p>
   * The display windows which provide functionality are CBibleReadWindow for
   * Bibles, CBookReadWindow for books, CCommentaryReadWindow for commentaries and CLexiconReadWindow for
   * lexicon and dictionaries. CHTMLWriteWindow and CPlainWriteWindows are used for editing the Personal Commentary.
   * </p><p>
-  * 
-  * The class CDisplay is the class that various views with in the windows are derived. 
+  *
+  * The class CDisplay is the class that various views with in the windows are derived.
   * </p><p>
   *
   * Another important part of the frontend are the keychoosers.
@@ -99,7 +99,7 @@ class QSignalMapper;
  * <p>This is the sourcecode documentation of BibleTime, a Bible study tool.
  * <p>
  * The main class of BibleTime is called @ref BibleTime, which is the main window
- * and initializes all important parts at startup. 
+ * and initializes all important parts at startup.
  * </p><p>
  * BibleTime is divided in two major parts, the backend and the frontend.
  * The text display windows belong to the @ref frontend.
@@ -360,7 +360,7 @@ class BibleTime : public QMainWindow {
         void slotToggleFormatToolbar();
 
         void slotToggleToolBarsInEachWindow();
-        
+
         /**
         * Shows/hides the text window text area headers and sets
         * configuration that newly opened windows don't user headers.

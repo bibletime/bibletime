@@ -99,7 +99,7 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(QWidget *parent)
     // ----- Commentary windows ------ //
     m_commentary.actionCollection = new BtActionCollection(this);
     CCommentaryReadWindow::insertKeyboardActions( m_commentary.actionCollection);
-    CBTConfig::setupAccelSettings(CBTConfig::commentaryWindow,	m_commentary.actionCollection);
+    CBTConfig::setupAccelSettings(CBTConfig::commentaryWindow,    m_commentary.actionCollection);
     m_commentary.keyChooser = new BtShortcutsEditor(m_commentary.actionCollection, m_keyChooserStack);
     m_keyChooserStack->addWidget(m_commentary.keyChooser);
     ok = connect(m_commentary.keyChooser, SIGNAL(keyChangeRequest(BtShortcutsEditor*, const QString&)),
@@ -110,7 +110,7 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(QWidget *parent)
     m_lexicon.actionCollection = new BtActionCollection(this);
     CLexiconReadWindow::insertKeyboardActions(  m_lexicon.actionCollection );
     CBTConfig::setupAccelSettings(CBTConfig::lexiconWindow, m_lexicon.actionCollection);
-    m_lexicon.keyChooser = new BtShortcutsEditor(m_lexicon.actionCollection, m_keyChooserStack										 );
+    m_lexicon.keyChooser = new BtShortcutsEditor(m_lexicon.actionCollection, m_keyChooserStack                                         );
     m_keyChooserStack->addWidget(m_lexicon.keyChooser);
     ok = connect(m_lexicon.keyChooser, SIGNAL(keyChangeRequest(BtShortcutsEditor*, const QString&)),
                  this, SLOT(completeKeyChangeRequest(BtShortcutsEditor*, const QString&)));
@@ -232,12 +232,12 @@ void CAcceleratorSettingsPage::save() {
     if (m_book.keyChooser)
         m_book.keyChooser->commitChanges();
 
-    CBTConfig::saveAccelSettings(CBTConfig::application, m_application.actionCollection);		//application
-    CBTConfig::saveAccelSettings(CBTConfig::allWindows, m_general.actionCollection);			//read display windows
-    CBTConfig::saveAccelSettings(CBTConfig::bibleWindow, m_bible.actionCollection);				//bible
-    CBTConfig::saveAccelSettings(CBTConfig::commentaryWindow, m_commentary.actionCollection);	//commentary
-    CBTConfig::saveAccelSettings(CBTConfig::lexiconWindow, m_lexicon.actionCollection);			//lexicon
-    CBTConfig::saveAccelSettings(CBTConfig::bookWindow,	m_book.actionCollection);				//book
+    CBTConfig::saveAccelSettings(CBTConfig::application, m_application.actionCollection);        //application
+    CBTConfig::saveAccelSettings(CBTConfig::allWindows, m_general.actionCollection);            //read display windows
+    CBTConfig::saveAccelSettings(CBTConfig::bibleWindow, m_bible.actionCollection);                //bible
+    CBTConfig::saveAccelSettings(CBTConfig::commentaryWindow, m_commentary.actionCollection);    //commentary
+    CBTConfig::saveAccelSettings(CBTConfig::lexiconWindow, m_lexicon.actionCollection);            //lexicon
+    CBTConfig::saveAccelSettings(CBTConfig::bookWindow,    m_book.actionCollection);                //book
 }
 
 void CAcceleratorSettingsPage::slotKeyChooserTypeChanged(const QString& title) {

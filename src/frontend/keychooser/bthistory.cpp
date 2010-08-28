@@ -28,7 +28,7 @@ void BTHistory::add(CSwordKey* newKey) {
     Q_ASSERT(newKey);
     // Add new key Action after current index if we were not using the history functions,
     // if it's not a duplicate and if it's not empty.
-    if (!m_inHistoryFunction &&	((m_index < 0) || (newKey->key() != m_historyList.at(m_index)->text()) )) {
+    if (!m_inHistoryFunction &&    ((m_index < 0) || (newKey->key() != m_historyList.at(m_index)->text()) )) {
         if (!newKey->key().isEmpty()) {
             m_historyList.insert(++m_index, new QAction(newKey->key(), this));
         }

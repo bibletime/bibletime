@@ -96,7 +96,7 @@ class CTextRendering {
                 };
 
                 inline KeyTree* childList() const;
-//		inline const bool hasChildItems() const;
+//        inline const bool hasChildItems() const;
 
             protected:
                 KeyTreeItem();
@@ -138,7 +138,7 @@ inline CTextRendering::KeyTree* CTextRendering::KeyTreeItem::childList() const {
 }
 //
 //inline const bool CTextRendering::KeyTreeItem::hasChildItems() const {
-//	return !m_childList.isEmpty();
+//    return !m_childList.isEmpty();
 //}
 
 }

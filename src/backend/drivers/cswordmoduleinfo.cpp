@@ -455,7 +455,7 @@ int CSwordModuleInfo::searchIndexed(const QString &searchedText,
 
         /// \warning This is a workaround for Sword constness
         const bool useScope = (const_cast<sword::ListKey&>(scope).Count() > 0);
-//		const bool isVerseModule = (type() == CSwordModuleInfo::Bible) || (type() == CSwordModuleInfo::Commentary);
+//        const bool isVerseModule = (type() == CSwordModuleInfo::Bible) || (type() == CSwordModuleInfo::Commentary);
 
         lucene::document::Document* doc = 0;
         QSharedPointer<sword::SWKey> swKey( module()->CreateKey() );
@@ -633,8 +633,8 @@ QString CSwordModuleInfo::config(const CSwordModuleInfo::ConfigEntry entry) cons
 bool CSwordModuleInfo::has(const CSwordModuleInfo::Feature feature) const {
     switch (feature) {
 
-            // 		case StrongsNumbers:
-            // 		return m_module->getConfig().has("Feature", "StrongsNumber");
+            //         case StrongsNumbers:
+            //         return m_module->getConfig().has("Feature", "StrongsNumber");
 
         case GreekDef:
             return m_module->getConfig().has("Feature", "GreekDef");

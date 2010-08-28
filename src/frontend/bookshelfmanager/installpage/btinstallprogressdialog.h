@@ -46,7 +46,7 @@ class BtInstallProgressDialog : public QDialog {
         virtual void closeEvent(QCloseEvent* event);
 
 //signals:
-//	void swordSetupChanged();
+//    void swordSetupChanged();
 
     private:
 

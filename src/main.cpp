@@ -206,7 +206,7 @@ int main(int argc, char* argv[]) {
     //Migrate configuration data, if neccessary
     util::migration::checkMigration();
 
-//	setSignalHandler(signalHandler);
+//    setSignalHandler(signalHandler);
 
     BibleTime *mainWindow = new BibleTime();
     mainWindow->setAttribute(Qt::WA_DeleteOnClose);
