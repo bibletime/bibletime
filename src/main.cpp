@@ -123,7 +123,7 @@ int main(int argc, char* argv[]) {
     app.setApplicationName("bibletime");
     app.setApplicationVersion(BT_VERSION);
 
-    QStringList args = qApp->arguments();
+    QStringList args = app.arguments();
 
     if (args.contains("--help")
         || args.contains("-h")
