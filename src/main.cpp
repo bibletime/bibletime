@@ -53,8 +53,11 @@ FILE *out_fd = 0;
 
 void printHelp(const QStringList &args) {
     std::cout << qPrintable(args.at(0)) << std::endl << std::endl
-        << "    --help" << std::endl << "        "
+        << "    --help, -h" << std::endl << "        "
         << qPrintable(QObject::tr("Show this help message and exit"))
+        << std::endl << std::endl
+        << "    --version, -V" << std::endl << "        "
+        << qPrintable(QObject::tr("Output BibleTime version and exit"))
         << std::endl << std::endl
         << "    --ignore-session" << std::endl << "        "
         << qPrintable(QObject::tr("open a clean session"))
@@ -133,6 +136,9 @@ int main(int argc, char* argv[]) {
         || args.contains("/h"))
     {
         printHelp(args);
+        return 0;
+    } else if (args.contains("-V") || args.contains("--version")) {
+        std::cout << "BibleTime " BT_VERSION << std::endl;
         return 0;
     }
 
