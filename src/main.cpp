@@ -7,23 +7,18 @@
 *
 **********/
 
-// #include <csignal>
 #include <iostream>
 #ifndef NO_DBUS
 #include <QDBusConnection>
 #endif
-#include <QDebug>
 #include <QLocale>
 #include <QTextCodec>
 #include <QTranslator>
-#include <QVariant>
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "backend/config/cbtconfig.h"
-#include "backend/managers/cswordbackend.h"
 #include "bibletime.h"
 #include "bibletime_dbus_adaptor.h"
 #include "bibletimeapp.h"
-#include "util/cresmgr.h"
 #include "util/directory.h"
 #include "util/migrationutil.h"
 
