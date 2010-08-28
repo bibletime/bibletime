@@ -207,10 +207,8 @@ int main(int argc, char* argv[]) {
     // Use the default Qt message handler if --debug is not specified
     // This works with Visual Studio debugger Output Window
     if (showDebugMessages)
-        qInstallMsgHandler( myMessageOutput );
-#else
-    qInstallMsgHandler( myMessageOutput );
 #endif
+    qInstallMsgHandler(myMessageOutput);
 
 #ifdef Q_WS_WIN
 
