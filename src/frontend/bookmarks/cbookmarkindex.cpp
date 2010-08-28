@@ -18,7 +18,6 @@
 #include <QDragLeaveEvent>
 #include <QDragMoveEvent>
 #include <QDropEvent>
-#include <QHeaderView>
 #include <QInputDialog>
 #include <QList>
 #include <QMenu>
@@ -69,7 +68,7 @@ CBookmarkIndex::~CBookmarkIndex() {
 void CBookmarkIndex::initView() {
     //qDebug() << "CBookmarkIndex::initView";
 
-    header()->hide();
+    setHeaderHidden(true);
 
     setFocusPolicy(Qt::WheelFocus);
 

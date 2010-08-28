@@ -15,7 +15,6 @@
 #include <QDir>
 #include <QFileDialog>
 #include <QGridLayout>
-#include <QHeaderView>
 #include <QLabel>
 #include <QPushButton>
 #include <QString>
@@ -55,7 +54,7 @@ BtInstallPathDialog::BtInstallPathDialog() {
 
 
     m_swordPathListBox = new QTreeWidget(this);
-    m_swordPathListBox->header()->hide();
+    m_swordPathListBox->setHeaderHidden(true);
 
     QString rwfolderitem(tr("Folders where new works can be installed"));
     m_writableItem = new QTreeWidgetItem(m_swordPathListBox, QStringList(rwfolderitem));;

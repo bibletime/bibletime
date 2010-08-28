@@ -13,15 +13,15 @@
 #include "frontend/btbookshelfview.h"
 
 #include <QApplication>
-#include <QHeaderView>
 #include <QMouseEvent>
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 
 
 BtBookshelfView::BtBookshelfView(QWidget *parent)
-        : QTreeView(parent) {
-    header()->hide();
+        : QTreeView(parent)
+{
+    setHeaderHidden(true);
 
     /*
       Uncommenting the following statement will hide the [+]expand/[-]collapse
