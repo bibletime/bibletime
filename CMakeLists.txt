@@ -118,22 +118,6 @@ SET(common_bibletime_SOURCES
     ${bibletime_UI_translations}
 )
 
-# include test files in debug mode
-IF (NOT CMAKE_BUILD_TYPE STREQUAL "Release")
-    # this will run moc on test source files
-    QT4_WRAP_CPP(bibletime_test_MOC_SOURCES ${bibletime_test_MOCABLE_HEADERS})
-
-SOURCE_GROUP( "Generated Files"
-    FILES ${bibletime_UIS} ${bibletime_MOC_SOURCES} ${bibletime_test_MOC_SOURCES}
-)
-
-    SET(common_bibletime_SOURCES
-        ${common_bibletime_SOURCES}
-        ${bibletime_test_SOURCES}
-        ${bibletime_test_MOC_SOURCES}
-    )
-ENDIF (NOT CMAKE_BUILD_TYPE STREQUAL "Release")
-
 # For the Windows Application Icon
 IF (MSVC)
     SET(common_bibletime_SOURCES
@@ -146,7 +130,6 @@ IF (MSVC)
     )
 ENDIF (MSVC)
 
-#Link to QtTest only in debug builds
 IF (CMAKE_BUILD_TYPE STREQUAL "Release")
     IF (MSVC)
         ADD_EXECUTABLE(${EXECUTABLE_NAME} WIN32 ${common_bibletime_SOURCES})
@@ -174,11 +157,6 @@ ELSE (CMAKE_BUILD_TYPE STREQUAL "Release")
     ELSE (MSVC)
         ADD_EXECUTABLE(${EXECUTABLE_NAME} ${common_bibletime_SOURCES})
     ENDIF (MSVC)
-    SET_TARGET_PROPERTIES(${EXECUTABLE_NAME}
-        PROPERTIES
-            COMPILE_FLAGS "-DBT_ENABLE_TESTING" #Enable exception handling and Testing
-    )
-    SET(QT_USE_QTTEST 1)
     INCLUDE(${QT_USE_FILE})
     TARGET_LINK_LIBRARIES(${EXECUTABLE_NAME}
         ${QT_LIBRARIES}
@@ -187,12 +165,6 @@ ELSE (CMAKE_BUILD_TYPE STREQUAL "Release")
         ${ICU_LIBRARIES} # optional, empty if not found
         ${ICU_I18N_LIBRARIES} # optional, empty if not found
         ${SWORD_LIBRARY}
-    )
-    # Unit Tests
-    ADD_CUSTOM_TARGET(test
-        COMMAND ./${EXECUTABLE_NAME} --run-tests
-        WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
-        COMMENT "Running BibleTime Unit Tests"
     )
 ENDIF (CMAKE_BUILD_TYPE STREQUAL "Release")
 
@@ -206,10 +178,10 @@ ENDIF (APPLE)
 
 IF (MSVC)
     SET(CMAKE_CXX_FLAGS_RELEASE "-DNO_DBUS -DSWUSINGDLL /MD  /Zc:wchar_t- /W1 /D_UNICODE /DUNICODE ")
-    SET(CMAKE_CXX_FLAGS_DEBUG   "-DNO_DBUS -DSWUSINGDLL /MDd /Zc:wchar_t- /W1 /D_UNICODE /DUNICODE -DBT_ENABLE_TESTING /ZI")
+    SET(CMAKE_CXX_FLAGS_DEBUG   "-DNO_DBUS -DSWUSINGDLL /MDd /Zc:wchar_t- /W1 /D_UNICODE /DUNICODE /ZI")
 ELSE (MSVC)
     SET(CMAKE_CXX_FLAGS_RELEASE "-Wall -O2 -fexceptions")
-    SET(CMAKE_CXX_FLAGS_DEBUG   "-Wall -Werror -O0 -g -fexceptions -DBT_ENABLE_TESTING")
+    SET(CMAKE_CXX_FLAGS_DEBUG   "-Wall -Werror -O0 -g -fexceptions")
 ENDIF (MSVC)
 
 

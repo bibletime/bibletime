@@ -27,11 +27,6 @@
 #include "util/directory.h"
 #include "util/migrationutil.h"
 
-#ifdef BT_ENABLE_TESTING
-#include <QtTest/QtTest>
-#include "tests/bibletime_test.h"
-#endif
-
 
 namespace {
 
@@ -148,13 +143,6 @@ int main(int argc, char* argv[]) {
         qInstallMsgHandler( myMessageOutput );
 #else
     qInstallMsgHandler( myMessageOutput );
-#endif
-
-#ifdef BT_ENABLE_TESTING
-    if (args.contains("--run-tests")) {
-        BibleTimeTest testClass;
-        return QTest::qExec(&testClass);
-    }
 #endif
 
 #ifdef Q_WS_WIN

@@ -429,18 +429,3 @@ SET(bibletime_SOURCES
     ${bibletime_SRC_FRONTEND_DISPLAY}
     ${bibletime_SRC_FRONTEND_DISPLAYWINDOW}
 )
-
-
-# Unit tests:
-SET(bibletime_test_SOURCES
-    #main file
-    src/tests/bibletime_test.cpp
-    #frontend
-    src/tests/backend/config/cbtconfig_test.cpp
-)
-
-SOURCE_GROUP("src\\tests" FILES ${bibletime_test_SOURCES})
-
-SET(bibletime_test_MOCABLE_HEADERS
-    src/tests/bibletime_test.h
-)
