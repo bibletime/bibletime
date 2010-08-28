@@ -27,7 +27,7 @@ IF(WIN32 AND NOT UNIX)
         "${QT_BINARY_DIR}/QtSvgd4.dll"
         "${QT_BINARY_DIR}/QtXmlPatternsd4.dll"
         DESTINATION "${BT_DESTINATION}"
-		CONFIGURATIONS "Debug"
+        CONFIGURATIONS "Debug"
     )
     INSTALL(FILES
         "${QT_BINARY_DIR}/QtWebKit4.dll"
@@ -50,14 +50,14 @@ IF(WIN32 AND NOT UNIX)
         CONFIGURATIONS "Release"
     )
     INSTALL(FILES
-		"${QT_PLUGINS_DIR}/imageformats/qgif4.dll"
-		"${QT_PLUGINS_DIR}/imageformats/qico4.dll"
-		"${QT_PLUGINS_DIR}/imageformats/qjpeg4.dll"
-		"${QT_PLUGINS_DIR}/imageformats/qmng4.dll"
-		"${QT_PLUGINS_DIR}/imageformats/qsvg4.dll"
-		"${QT_PLUGINS_DIR}/imageformats/qtiff4.dll"
-		DESTINATION "${BT_DESTINATION}/plugins/imageformats"
-		CONFIGURATIONS "Release"
+        "${QT_PLUGINS_DIR}/imageformats/qgif4.dll"
+        "${QT_PLUGINS_DIR}/imageformats/qico4.dll"
+        "${QT_PLUGINS_DIR}/imageformats/qjpeg4.dll"
+        "${QT_PLUGINS_DIR}/imageformats/qmng4.dll"
+        "${QT_PLUGINS_DIR}/imageformats/qsvg4.dll"
+        "${QT_PLUGINS_DIR}/imageformats/qtiff4.dll"
+        DESTINATION "${BT_DESTINATION}/plugins/imageformats"
+        CONFIGURATIONS "Release"
     )
 
     # This adds in the required Windows system libraries

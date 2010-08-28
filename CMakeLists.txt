@@ -99,10 +99,10 @@ INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTSourceFileList.cmake")
 # The actual build options
 #
 INCLUDE_DIRECTORIES(
-    ${CMAKE_CURRENT_BINARY_DIR}		#for .h files generated from .ui
-    ${CMAKE_CURRENT_SOURCE_DIR}/src	# so that include paths like "frontend/..." work
-    ${CLUCENE_INCLUDE_DIR}			#CLucene headers
-    ${CLUCENE_LIBRARY_DIR}			#CLucene/clucene-config.h
+    ${CMAKE_CURRENT_BINARY_DIR}        #for .h files generated from .ui
+    ${CMAKE_CURRENT_SOURCE_DIR}/src    # so that include paths like "frontend/..." work
+    ${CLUCENE_INCLUDE_DIR}            #CLucene headers
+    ${CLUCENE_LIBRARY_DIR}            #CLucene/clucene-config.h
     ${SWORD_INCLUDE_DIR}
 )
 
@@ -139,14 +139,14 @@ SET(common_bibletime_SOURCES
 
 # include test files in debug mode
 IF (NOT CMAKE_BUILD_TYPE STREQUAL "Release")
-	# this will run moc on test source files
-	QT4_WRAP_CPP(bibletime_test_MOC_SOURCES ${bibletime_test_MOCABLE_HEADERS})
+    # this will run moc on test source files
+    QT4_WRAP_CPP(bibletime_test_MOC_SOURCES ${bibletime_test_MOCABLE_HEADERS})
 
 SOURCE_GROUP( "Generated Files"
     FILES ${bibletime_UIS} ${bibletime_MOC_SOURCES} ${bibletime_test_MOC_SOURCES}
 )
 
-	SET(common_bibletime_SOURCES
+    SET(common_bibletime_SOURCES
         ${common_bibletime_SOURCES}
         ${bibletime_test_SOURCES}
         ${bibletime_test_MOC_SOURCES}
@@ -155,10 +155,10 @@ ENDIF (NOT CMAKE_BUILD_TYPE STREQUAL "Release")
 
 # For the Windows Application Icon
 IF (MSVC)
-	SET(common_bibletime_SOURCES
-	    ${common_bibletime_SOURCES}
-	    "cmake/BTWinIcon.rc"
-	)
+    SET(common_bibletime_SOURCES
+        ${common_bibletime_SOURCES}
+        "cmake/BTWinIcon.rc"
+    )
 
     SOURCE_GROUP( "Icon Files"
         FILES "cmake/BTWinIcon.rc" }
@@ -172,10 +172,10 @@ IF (CMAKE_BUILD_TYPE STREQUAL "Release")
     ELSE (MSVC)
         ADD_EXECUTABLE(${EXECUTABLE_NAME} ${common_bibletime_SOURCES})
     ENDIF (MSVC)
-#	SET_TARGET_PROPERTIES(${EXECUTABLE_NAME}
-#		PROPERTIES
-#			COMPILE_FLAGS "${SWORD_CFLAGS}" #Enable exception handling
-#	)
+#    SET_TARGET_PROPERTIES(${EXECUTABLE_NAME}
+#        PROPERTIES
+#            COMPILE_FLAGS "${SWORD_CFLAGS}" #Enable exception handling
+#    )
     INCLUDE(${QT_USE_FILE})
     TARGET_LINK_LIBRARIES(${EXECUTABLE_NAME}
         ${QT_LIBRARIES}
