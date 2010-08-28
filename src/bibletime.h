@@ -226,9 +226,11 @@ class BibleTime : public QMainWindow {
 
         /**
           Processes the command-line options given to BibleTime.
-          \param[in] args the command-line arguments given to BibleTime.
+          \param[in] ignoreSession Specifies whether --ignore-session was used.
+          \param[in] bibleKey If --open-default-bible was used, the bible key
+                              specified, or null otherwise.
         */
-        void processCommandline(const QStringList &args);
+        void processCommandline(bool ignoreSession, const QString &bibleKey);
 
         /**
         * Creates QAction's that have keyboard shortcuts

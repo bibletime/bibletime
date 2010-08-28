@@ -332,20 +332,20 @@ void BibleTime::restoreWorkspace() {
     }
 }
 
-void BibleTime::processCommandline(const QStringList &args) {
-    if ( !CBTConfig::get(CBTConfig::crashedTwoTimes) &&
-            !args.contains("--ignore-session") ) {
+void BibleTime::processCommandline(bool ignoreSession, const QString &bibleKey) {
+    if (CBTConfig::get(CBTConfig::crashedTwoTimes)) {
+        return;
+    }
+
+    if (!ignoreSession) {
         restoreWorkspace();
     }
 
-    if ( args.contains("--open-default-bible") &&
-            !CBTConfig::get(CBTConfig::crashedLastTime) &&
-            !CBTConfig::get(CBTConfig::crashedTwoTimes)) {
-        int index = args.indexOf("--open-default-bible");
-        QString bibleKey;
-        if (index >= 0 && (index + 1) < args.size()) {
-            bibleKey = args.at(index + 1);
-        }
+    if (CBTConfig::get(CBTConfig::crashedLastTime)) {
+        return;
+    }
+
+    if (!bibleKey.isNull()) {
         CSwordModuleInfo* bible = CBTConfig::get(CBTConfig::standardBible);
         if (bibleKey == "random") {
             CSwordVerseKey vk(0);
@@ -356,10 +356,16 @@ void BibleTime::processCommandline(const QStringList &args) {
             int newIndex = rand() % maxIndex;
             vk.setPosition(sword::TOP);
             vk.Index(newIndex);
-            bibleKey = vk.key();
+            createReadDisplayWindow(bible, vk.key());
+        } else {
+            createReadDisplayWindow(bible, bibleKey);
         }
-        createReadDisplayWindow(bible, bibleKey);
-        m_mdi->myTileVertical();//we are sure only one window is open, which should be displayed fullscreen in the working area
+
+        /*
+          We are sure only one window is open - it should be displayed
+          fullscreen in the working area:
+        */
+        m_mdi->myTileVertical();
     }
 }
 

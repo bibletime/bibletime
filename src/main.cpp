@@ -46,8 +46,8 @@ FILE *out_fd = 0;
 
 #endif
 
-void printHelp(const QStringList &args) {
-    std::cout << qPrintable(args.at(0)) << std::endl << std::endl
+void printHelp(const QString &executable) {
+    std::cout << qPrintable(executable) << std::endl << std::endl
         << "    --help, -h" << std::endl << "        "
         << qPrintable(QObject::tr("Show this help message and exit"))
         << std::endl << std::endl
@@ -68,6 +68,48 @@ void printHelp(const QStringList &args) {
                                          "recognized by BibleTime or Qt will "
                                          "be silently ignored."))
         << std::endl;
+}
+
+int parseCommandLine(bool &showDebugMessages, bool &ignoreSession,
+                     QString &openBibleKey)
+{
+    QStringList args = BibleTimeApp::arguments();
+    for (int i = 1; i < args.size(); i++) {
+        const QString &arg = args.at(i);
+        if (arg == "--help"
+            || arg == "-h"
+            || arg == "/?"
+            || arg == "/h")
+        {
+            printHelp(args.at(0));
+            return 0;
+        } else if (arg == "--version"
+                   || arg == "-V")
+        {
+            std::cout << "BibleTime " BT_VERSION << std::endl;
+            return 0;
+        } else if (arg == "--debug") {
+            showDebugMessages = true;
+        } else if (arg == "--ignore-session") {
+            ignoreSession = true;
+        } else if (arg == "--open-default-bible") {
+            i++;
+            if (i < args.size()) {
+                openBibleKey = args.at(i);
+            } else {
+                std::cerr << qPrintable(QObject::tr(
+                    "Error: %1 expects an argument. See --help for details.")
+                    .arg("--open-default-bible")) << std::endl;
+                return 1;
+            }
+        } else {
+            std::cerr << qPrintable(QObject::tr(
+                "Error: Invalid command-line argument: %1")
+                .arg(arg)) << std::endl;
+            return 1;
+        }
+    }
+    return 0;
 }
 
 void myMessageOutput( QtMsgType type, const char *msg ) {
@@ -118,23 +160,11 @@ int main(int argc, char* argv[]) {
     app.setApplicationName("bibletime");
     app.setApplicationVersion(BT_VERSION);
 
-    QStringList args = app.arguments();
-
-    if (args.contains("--help")
-        || args.contains("-h")
-        || args.contains("/?")
-        || args.contains("/h"))
-    {
-        printHelp(args);
-        return 0;
-    } else if (args.contains("-V") || args.contains("--version")) {
-        std::cout << "BibleTime " BT_VERSION << std::endl;
-        return 0;
-    }
-
-    if (args.removeAll("--debug") > 0) {
-        showDebugMessages = true;
-    }
+    // Parse command line arguments:
+    bool ignoreSession = false;
+    QString openBibleKey;
+    int r = parseCommandLine(showDebugMessages, ignoreSession, openBibleKey);
+    if (r != 0) return r;
 
 #ifdef Q_WS_WIN
     // Use the default Qt message handler if --debug is not specified
@@ -211,7 +241,9 @@ int main(int argc, char* argv[]) {
     // restore the workspace and process command line options
     //app.setMainWidget(bibletime_ptr); //no longer used in qt4 (QApplication)
     mainWindow->show();
-    mainWindow->processCommandline(args); // must be done after the bibletime window is visible
+
+    // The following must be done after the bibletime window is visible:
+    mainWindow->processCommandline(ignoreSession, openBibleKey);
 
 #ifndef NO_DBUS
     new BibleTimeDBusAdaptor(mainWindow);
@@ -220,7 +252,7 @@ int main(int argc, char* argv[]) {
     QDBusConnection::sessionBus().registerObject("/BibleTime", mainWindow);
 #endif
 
-    int r = app.exec();
+    r = app.exec();
     CLOSE_DEBUG_STREAM;
     return r;
 }
