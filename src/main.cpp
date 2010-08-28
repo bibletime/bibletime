@@ -175,6 +175,8 @@ int main(int argc, char* argv[]) {
         return EXIT_FAILURE;
     }
 
+    app.startInit();
+
 #ifdef Q_WS_WIN
     // change directory to the Sword or .sword directory in the $HOME dir so that
     // the sword.conf is found. It points to the sword/locales.d directory

@@ -13,16 +13,19 @@
 #include <QApplication>
 
 
-/** The BibleTimeApp class is used to clean up all instances of the backend and to delete all created module objects.
-  * @author The BibleTime team
-  */
+/**
+  The BibleTimeApp class is used to clean up all instances of the backend and to
+  delete all created module objects.
+*/
 class BibleTimeApp : public QApplication {
     public:
-        BibleTimeApp(int &argc, char **argv);
+        inline BibleTimeApp(int &argc, char **argv) : QApplication(argc, argv), m_init(false) {}
         ~BibleTimeApp();
 
-    protected:
-//    void initDCOP();
+        inline void startInit() { m_init = true; }
+
+    private:
+        bool m_init;
 };
 
 #endif

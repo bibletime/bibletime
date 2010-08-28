@@ -1,3 +1,8 @@
+2010-08-07 Jaak Ristioja <ristioja@gmail.com>
+    * Fixed creation of bibletimerc into current working directory when exiting
+      BibleTime before the directory cache is initialized (e.g when using the
+      command-line --help switch).
+
 2010-08-21 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix refactoring hang/crash issue introduced 2010-07-20
 
