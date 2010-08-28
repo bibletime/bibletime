@@ -66,11 +66,6 @@ void printHelp(const QStringList &args) {
         << qPrintable(QObject::tr("Open the default Bible with the "
                                   "reference <ref>"))
         << std::endl << std::endl
-#ifdef BT_ENABLE_TESTING
-        << "  --run-tests" << std::endl << "        "
-        << qPrintable(QObject::tr(""))
-        << std::endl << std::endl
-#endif
         << qPrintable(QObject::tr("For command-line arguments parsed by the"
                                   " Qt toolkit, see %1.")
                .arg("http://doc.qt.nokia.com/latest/qapplication.html"))
