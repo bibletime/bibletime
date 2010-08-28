@@ -19,11 +19,13 @@
   */
 class BibleTimeApp : public QApplication, public CPointers {
     public:
-        BibleTimeApp(int &argc, char **argv);
+        inline BibleTimeApp(int &argc, char **argv) : QApplication(argc, argv), m_init(false) {}
         ~BibleTimeApp();
 
-    protected:
-//	void initDCOP();
+        inline void startInit() { m_init = true; }
+
+    private:
+        bool m_init;
 };
 
 #endif

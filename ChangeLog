@@ -1,3 +1,7 @@
+2010-08-28 Jaak Ristioja <ristioja@gmail.com>
+    * Backported "Fixed invalid bibletimerc creation; removed unused
+      CResMgr::init_tr()." by Jaak Ristioja
+
 2010-08-23 Jaak Ristioja <ristioja@gmail.com>
     * Backported "Fix crash opening first window in manual arrangement mode." by
       Gary Holmlund.

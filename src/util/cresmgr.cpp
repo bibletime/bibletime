@@ -513,13 +513,5 @@ const QString add_icon = "plus";
 const QString edit_icon = "pencil";
 const QString remove_icon = "trash";
 }
-}
-
-}
-
-
-
-namespace CResMgr {
-void init_tr() {
-} //init_tr()
-} //CResMgr
+} // namespace bookshelfmgr
+} // namespace CResMgr
