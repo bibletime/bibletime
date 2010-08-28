@@ -20,7 +20,6 @@
 #include "bibletime_dbus_adaptor.h"
 #include "bibletimeapp.h"
 #include "util/directory.h"
-#include "util/migrationutil.h"
 
 
 /// \todo Reimplement signal handler which handles consecutive crashes.
@@ -253,9 +252,6 @@ int main(int argc, char* argv[]) {
     app.installTranslator(&BibleTimeTranslator);
 
     app.setProperty("--debug", QVariant(showDebugMessages));
-
-    //Migrate configuration data, if neccessary
-    util::migration::checkMigration();
 
 //    setSignalHandler(signalHandler);
 

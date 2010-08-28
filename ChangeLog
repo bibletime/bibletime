@@ -1,3 +1,6 @@
+2010-08-28 Jaak Ristioja <ristioja@gmail.com>
+    * Removed support for configuration migration from KDE3.
+
 2010-08-27 Jaak Ristioja <ristioja@gmail.com>
     * Fixed creation of bibletimerc into current working directory when exiting
       BibleTime before the directory cache is initialized (e.g when using the
