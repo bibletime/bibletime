@@ -28,24 +28,18 @@
 #include "util/migrationutil.h"
 
 
+/// \todo Reimplement signal handler which handles consecutive crashes.
+
 namespace {
 
-bool showDebugMessages = false;
+/*******************************************************************************
+  Printing command-line help.
+*******************************************************************************/
 
-#ifdef Q_WS_WIN
-
-FILE *out_fd = 0;
-#define DEBUG_STREAM (out_fd != 0 ? out_fd :\
-    out_fd = fopen(QDir::homePath().append("/BibleTime Debug.txt").toLocal8Bit().data(),"w"))
-#define CLOSE_DEBUG_STREAM { if (out_fd != 0) fclose(out_fd); }
-
-#else
-
-#define DEBUG_STREAM (stderr)
-#define CLOSE_DEBUG_STREAM
-
-#endif
-
+/**
+  Prints command-line help text for BibleTime when --help is used.
+  \param[in] executable The executed file name (argv[0]).
+*/
 void printHelp(const QString &executable) {
     std::cout << qPrintable(executable) << std::endl << std::endl
         << "    --help, -h" << std::endl << "        "
@@ -70,6 +64,20 @@ void printHelp(const QString &executable) {
         << std::endl;
 }
 
+/*******************************************************************************
+  Parsing command-line arguments
+*******************************************************************************/
+
+/**
+  Parses all command-line arguments.
+  \param[out] showDebugMessages Whether --debug was specified.
+  \param[out] ignoreSession Whether --ignore-session was specified.
+  \param[out] openBibleKey Will be set to --open-default-bible if specified.
+  \retval -1 Parsing was successful, the application should exit with
+             EXIT_SUCCESS.
+  \retval 0 Parsing was successful.
+  \retval 1 Parsing failed, the application should exit with EXIT_FAILURE.
+*/
 int parseCommandLine(bool &showDebugMessages, bool &ignoreSession,
                      QString &openBibleKey)
 {
@@ -82,12 +90,12 @@ int parseCommandLine(bool &showDebugMessages, bool &ignoreSession,
             || arg == "/h")
         {
             printHelp(args.at(0));
-            return 0;
+            return -1;
         } else if (arg == "--version"
                    || arg == "-V")
         {
             std::cout << "BibleTime " BT_VERSION << std::endl;
-            return 0;
+            return -1;
         } else if (arg == "--debug") {
             showDebugMessages = true;
         } else if (arg == "--ignore-session") {
@@ -111,6 +119,26 @@ int parseCommandLine(bool &showDebugMessages, bool &ignoreSession,
     }
     return 0;
 }
+
+/*******************************************************************************
+  Console messaging.
+*******************************************************************************/
+
+bool showDebugMessages = false;
+
+#ifdef Q_WS_WIN
+
+FILE *out_fd = 0;
+#define DEBUG_STREAM (out_fd != 0 ? out_fd :\
+    out_fd = fopen(QDir::homePath().append("/BibleTime Debug.txt").toLocal8Bit().data(),"w"))
+#define CLOSE_DEBUG_STREAM { if (out_fd != 0) fclose(out_fd); }
+
+#else
+
+#define DEBUG_STREAM (stderr)
+#define CLOSE_DEBUG_STREAM
+
+#endif
 
 void myMessageOutput( QtMsgType type, const char *msg ) {
     //we use this messagehandler to switch debugging off in final releases
@@ -142,6 +170,10 @@ void myMessageOutput( QtMsgType type, const char *msg ) {
     }
 }
 
+/*******************************************************************************
+  Handle Qt's meta type system.
+*******************************************************************************/
+
 void registerMetaTypes() {
     qRegisterMetaType<FilterOptions>();
     qRegisterMetaType<DisplayOptions>();
@@ -151,7 +183,9 @@ void registerMetaTypes() {
 } // anonymous namespace
 
 
-/// \todo Reimplement signal handler which handles consecutive crashes.
+/*******************************************************************************
+  Program main entry point.
+*******************************************************************************/
 
 int main(int argc, char* argv[]) {
     namespace DU = util::directory;
@@ -164,7 +198,10 @@ int main(int argc, char* argv[]) {
     bool ignoreSession = false;
     QString openBibleKey;
     int r = parseCommandLine(showDebugMessages, ignoreSession, openBibleKey);
-    if (r != 0) return r;
+    if (r != 0) {
+        if (r < 0) return EXIT_SUCCESS;
+        return EXIT_FAILURE;
+    }
 
 #ifdef Q_WS_WIN
     // Use the default Qt message handler if --debug is not specified
