@@ -32,10 +32,8 @@ BtMenuView::~BtMenuView() {
 
 void BtMenuView::setModel(QAbstractItemModel *model) {
     m_model = model;
-    if (m_actions != 0) {
-        delete m_actions;
-        m_actions = 0;
-    }
+    delete m_actions;
+    m_actions = 0;
     m_indexMap.clear();
     m_parentIndex = QModelIndex();
 }
@@ -179,10 +177,8 @@ void BtMenuView::buildMenu(QMenu *parentMenu, const QModelIndex &parentIndex) {
 }
 
 void BtMenuView::slotAboutToShow() {
-    if (m_actions != 0) {
-        delete m_actions;
-        m_actions = 0;
-    }
+    delete m_actions;
+    m_actions = 0;
     m_indexMap.clear();
 
     preBuildMenu();
