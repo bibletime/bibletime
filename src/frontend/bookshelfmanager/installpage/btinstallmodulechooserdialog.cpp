@@ -54,7 +54,7 @@ void BtInstallModuleChooserDialog::retranslateUi() {
     setWindowTitle(tr("Install/Update works?"));
     util::tool::initExplanationLabel(
             label(), QString::null,
-            tr("Do you really want to install these works?") + "<br/><br/><small>"
+            tr("Do you really want to install these works?") + "<br/><br/><small>" +
             tr("Only one version of a work can be installed at the same time. Select only "
                "one if there are items marked with red.") + "</small>");
 }
