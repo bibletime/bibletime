@@ -1,3 +1,6 @@
+2010-09-05 Jaak Ristioja <ristioja@gmail.com>
+    * Released 2.7.3
+
 2010-08-28 Jaak Ristioja <ristioja@gmail.com>
     * Backported "Fixed invalid bibletimerc creation; removed unused
       CResMgr::init_tr()." by Jaak Ristioja
