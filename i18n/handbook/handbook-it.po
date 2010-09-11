@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
 "POT-Creation-Date: 2010-08-20 09:15-0300\n"
-"PO-Revision-Date: 2010-05-10 16:37+0200\n"
+"PO-Revision-Date: 2010-03-15 18:25+0100\n"
 "Last-Translator: \n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -436,6 +436,10 @@ msgstr ""
 # type: Content of: <chapter><sect1><sect2><para>
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:218
+#, fuzzy
+#| msgid ""
+#| "In the preceding example, F2, Bible Study Howto has a secondary shortcut "
+#| "defined, CTRL+2."
 msgid ""
 "In the preceding example, F2, Bible Study HowTo has a secondary shortcut "
 "defined, CTRL+2."
@@ -458,6 +462,15 @@ msgstr "About &bibletime;"
 # type: Content of: <chapter><sect1><para>
 #. type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:6
+#, fuzzy
+#| msgid ""
+#| "&bibletime; is a Bible study tool with support for different types of "
+#| "texts and languages. Even large amounts of works modules are easy to "
+#| "install and manage. It is built on the <ulink url=\"http://www.crosswire."
+#| "org/sword\">&sword;</ulink> library, which provides the back-end "
+#| "functionality for &bibletime;, such as viewing Bible text, searching etc. "
+#| "&sword; is the flagship product of the <ulink url=\"http://www.crosswire."
+#| "org\">&cbs;</ulink>."
 msgid ""
 "&bibletime; is a Bible study tool with support for different types of texts "
 "and languages. Even large amounts of works modules are easy to install and "
@@ -470,7 +483,7 @@ msgstr ""
 "&bibletime; è uno strumento di studio della Bibbia che supporta diversi tipi "
 "di testi e lingue. Anche gradi quantità di documenti sono facili da "
 "installare e gestire. È costruito sulla libreria <ulink url=\"http://www."
-"crosswire.org/sword/\">&sword;</ulink>, che fornisce un back-end per "
+"crosswire.org/sword\">&sword;</ulink>, che fornisce un back-end per "
 "&bibletime;, come ad esempio la visualizzazione della Bibbia, le ricerche "
 "ecc.  &sword; è il prodotto principale di <ulink url=\"http://www.crosswire."
 "org\">&cbs;</ulink>."
@@ -1853,6 +1866,9 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:136
 #, fuzzy
+#| msgid ""
+#| "<action>Toggles Toolbar display.</action> Toggle this setting to turn the "
+#| "main toolbar on or off."
 msgid ""
 "<action>Toggles Main Toolbar display.</action> Toggle this setting to turn "
 "the main toolbar on or off."
@@ -1881,6 +1897,10 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:150
 #, fuzzy
+#| msgid ""
+#| "<action>Toggles display of the Bookmarks.</action> Toggle this setting to "
+#| "turn the Bookmarks on the left pane on or off. This can be handy if you "
+#| "need more space for the Mag."
 msgid ""
 "<action>Toggles Navigation in works.</action> Toggle this setting to add or "
 "remove the navigation combo box in works.  This can be handy to view the "
@@ -1911,6 +1931,9 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:166
 #, fuzzy
+#| msgid ""
+#| "<action>Toggles Toolbar display.</action> Toggle this setting to turn the "
+#| "main toolbar on or off."
 msgid ""
 "<action>Toggles Toolbars in works.</action> Toggle this setting to add or "
 "remove the works icons in the open works."
@@ -1939,6 +1962,9 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:181
 #, fuzzy
+#| msgid ""
+#| "<action>Toggles Toolbar display.</action> Toggle this setting to turn the "
+#| "main toolbar on or off."
 msgid ""
 "<action>Toggles tools in works.</action> Toggle this setting to add or "
 "remove the tools icons in the open works."
@@ -1967,6 +1993,9 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:196
 #, fuzzy
+#| msgid ""
+#| "<action>Toggles Toolbar display.</action> Toggle this setting to turn the "
+#| "main toolbar on or off."
 msgid ""
 "<action>Toggles format.</action> Toggle this setting when editing HTML in "
 "Personal Commentaries. It will add or remove the formatting toolbar."
@@ -1995,6 +2024,9 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:212
 #, fuzzy
+#| msgid ""
+#| "<action>Toggles Toolbar display.</action> Toggle this setting to turn the "
+#| "main toolbar on or off."
 msgid ""
 "<action>Toggles toolbars in works.</action> Toggle this setting to add or "
 "remove the complete toolbar in open works."
@@ -2091,6 +2123,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:304
 #, fuzzy
+#| msgid "<action>Closes all open windows</action>."
 msgid "<action>Closes active window</action>."
 msgstr "<action>Chiudi tutte le finestre aperte</action>."
 
@@ -2217,6 +2250,11 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:437
 #, fuzzy
+#| msgid ""
+#| "<action>Controls the basic window arrangement behaviour</action>. In the "
+#| "opening context menu, you can either specify that you want to take care "
+#| "of the window arrangement yourself (Manual mode) or have &bibletime; "
+#| "handle it for you (Automatic modes, just try them out!)."
 msgid ""
 "<action>Controls the basic window arrangement behaviour</action>. In the "
 "opening context menu, you can either specify that you want to take care of "
@@ -3091,12 +3129,16 @@ msgstr ""
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1285
+#, fuzzy
+#| msgid ""
+#| "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy Howto</"
+#| "guimenuitem> </menuchoice> equivalent; opens the BibleStudy Howto."
 msgid ""
 "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy HowTo</"
 "guimenuitem> </menuchoice> equivalent; opens the BibleStudy HowTo."
 msgstr ""
 "<menuchoice> <guimenu>Aiuto</guimenu> <guimenuitem>HowTo Studio Bibbia</"
-"guimenuitem> </menuchoice> equivalent; apre l'HowTo per lo studio della "
+"guimenuitem> </menuchoice> equivalent; apre l'Howto per lo studio della "
 "Bibbia."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -3260,7 +3302,7 @@ msgid ""
 "reference-menus-settings\">Settings menu bar</link>."
 msgstr ""
 "Se è la prima volta che avvii &bibletime;, vorrai configurare le seguenti "
-"opzioni, disponibili tra le <link linkend=\"hdbk-reference-menus-settings"
+"opzioni, disponibili tra le <link linkend=\"hdbk-reference- menus-settings"
 "\">Impostazioni barra dei menu</link>."
 
 # type: Content of: <chapter><sect1><title>
@@ -3435,6 +3477,7 @@ msgstr ""
 #. type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:56
 #, fuzzy
+#| msgid "2.7"
 msgid "2.8"
 msgstr "2.7"
 
@@ -3482,13 +3525,6 @@ msgstr ""
 msgid "Help dialog"
 msgstr ""
 
-# type: Content of: <book><bookinfo><date>
-#, fuzzy
-#~ msgid ""
-#~ "<date>$LastChangedDate: 2010-05-20 15:20:48 -0400 (Thu, 20 May 2010) $</"
-#~ "date>"
-#~ msgstr "$LastChangedDate: 2010-02-25 12:20:19 -0500 (Thu, 25 Feb 2010) $"
-
 # type: Content of: <chapter><sect1><sect2><mediaobject><textobject>
 #~ msgid "<phrase>Options Dialog - fonts</phrase>"
 #~ msgstr "<phrase>Finestra Opzioni - caratteri</phrase>"
@@ -3526,3 +3562,7 @@ msgstr ""
 # type: Content of: <chapter><sect1><title>
 #~ msgid "The &bibletime; Team"
 #~ msgstr "Il Team di &bibletime;"
+
+# type: Content of: <book><bookinfo><date>
+#~ msgid "$LastChangedDate: 2010-02-25 12:20:19 -0500 (Thu, 25 Feb 2010) $"
+#~ msgstr "$LastChangedDate: 2010-02-25 12:20:19 -0500 (Thu, 25 Feb 2010) $"

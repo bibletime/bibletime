@@ -971,9 +971,8 @@ ricerca per cercare in tutti i documenti aperti.</entry>
               <keycombo action="simul"> <keycap>F2</keycap> </keycombo>
             </entry>
             <entry>
-            <menuchoice> <guimenu>Aiuto</guimenu> <guimenuitem>HowTo Studio
-Bibbia</guimenuitem> </menuchoice> equivalent; apre l'HowTo per lo studio
-della Bibbia.</entry>
+            <menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy
+HowTo</guimenuitem> </menuchoice> equivalent; opens the BibleStudy HowTo.</entry>
           </row>
           <row>
             <entry>
