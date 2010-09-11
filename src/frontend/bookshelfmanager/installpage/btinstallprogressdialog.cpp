@@ -95,17 +95,17 @@ void BtInstallProgressDialog::startThreads() {
     //loop through the multimap of the waiting threads, start at most 3 threads for each source
     QMultiMap<QString, BtInstallThread*>::iterator threadIterator = m_waitingThreads.end();
 // concurrency is disabled for now
-// 	while (threadIterator != m_waitingThreads.end()) {
-// 		QString sourceName = threadIterator.key();
-// 		qDebug() << sourceName;
-// 		if (m_runningThreads.values(sourceName).count() < 3) {
-// 			BtInstallThread* t = threadIterator.value();
-// 			m_runningThreads.insert(sourceName, t);
-// 			threadIterator = m_waitingThreads.erase(threadIterator);
-// 			t->start();
-// 		}
-// 		else ++threadIterator;
-// 	}
+//     while (threadIterator != m_waitingThreads.end()) {
+//         QString sourceName = threadIterator.key();
+//         qDebug() << sourceName;
+//         if (m_runningThreads.values(sourceName).count() < 3) {
+//             BtInstallThread* t = threadIterator.value();
+//             m_runningThreads.insert(sourceName, t);
+//             threadIterator = m_waitingThreads.erase(threadIterator);
+//             t->start();
+//         }
+//         else ++threadIterator;
+//     }
     //non-concurrent
     if (threadIterator != m_waitingThreads.begin()) {
         // go to the last item which is actually the first in the visible list
@@ -154,16 +154,16 @@ void BtInstallProgressDialog::oneItemStoppedOrCompleted(QString module, QString 
     m_waitingThreads.remove(source, m_threadsByModule.value(module));
 
 //concurrency is disabled for now
-// 	//start a waiting thread if there are any
-// 	QList<BtInstallThread*> threadsForSource = m_waitingThreads.values(source);
-// 	qDebug() << threadsForSource;
-// 	if (!threadsForSource.isEmpty()) {
-// 		qDebug() << "Threads are waiting for turn";
-// 		BtInstallThread* thread = threadsForSource.at(0);
-// 		m_waitingThreads.remove(source, thread);
-// 		m_runningThreads.insert(source, thread);
-// 		thread->start();
-// 	}
+//     //start a waiting thread if there are any
+//     QList<BtInstallThread*> threadsForSource = m_waitingThreads.values(source);
+//     qDebug() << threadsForSource;
+//     if (!threadsForSource.isEmpty()) {
+//         qDebug() << "Threads are waiting for turn";
+//         BtInstallThread* thread = threadsForSource.at(0);
+//         m_waitingThreads.remove(source, thread);
+//         m_runningThreads.insert(source, thread);
+//         thread->start();
+//     }
 
     //non-concurrent
     QMultiMap<QString, BtInstallThread*>::iterator threadIterator = m_waitingThreads.end();

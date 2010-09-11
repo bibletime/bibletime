@@ -17,7 +17,7 @@
 
 int main(int argc, char* argv[])
 {
-	sword::SWVersion testversion(argv[1]);
-	std::cout << "Your installed Sword version is: " << sword::SWVersion::currentVersion.getText();
-	return (sword::SWVersion::currentVersion >= testversion) ? 0 : 1;
+    sword::SWVersion testversion(argv[1]);
+    std::cout << "Your installed Sword version is: " << sword::SWVersion::currentVersion.getText();
+    return (sword::SWVersion::currentVersion >= testversion) ? 0 : 1;
 }

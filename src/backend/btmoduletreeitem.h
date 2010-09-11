@@ -27,21 +27,21 @@ different set of filters you have to create a new tree - it's not possible to mo
 
 Example:
 
-	...
-	QList<BTModuleTreeItem::Filter*> noFilters
-	BTModuleTreeItem root(noFilters, BTModuleTreeItem::CatLangMod);
-	add_to_view(&root, qtreewidget->invisibleRootItem());
-	...
-	void add_to_view(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem) {
-		foreach (BTModuleTreeItem* i, item->children()) {
-			add_to_view(i, new QTreeWidgetItem(widgetItem));
-		}
-		if (item->type() == BTModuleTreeItem::Category) prepare_category_item(widgetItem, item);
-		...
-	}
+    ...
+    QList<BTModuleTreeItem::Filter*> noFilters
+    BTModuleTreeItem root(noFilters, BTModuleTreeItem::CatLangMod);
+    add_to_view(&root, qtreewidget->invisibleRootItem());
+    ...
+    void add_to_view(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem) {
+        foreach (BTModuleTreeItem* i, item->children()) {
+            add_to_view(i, new QTreeWidgetItem(widgetItem));
+        }
+        if (item->type() == BTModuleTreeItem::Category) prepare_category_item(widgetItem, item);
+        ...
+    }
 
 
-	@author The BibleTime team <info@bibletime.info>
+    @author The BibleTime team <info@bibletime.info>
 */
 class BTModuleTreeItem {
     public:
@@ -63,10 +63,10 @@ class BTModuleTreeItem {
         * will stop with the first negative.
         *
         * Example:
-        *	QList<BTModuleTreeItem::Filter*> filters;
-        *	MyFilter filter; BTModuleTreeItem::HiddenOff hideFilter;
-        *	filters.append(&hideFilter); filters.append(&filter);
-        *	BTModuleTreeItem root(filters, BTModuleTreeItem::CatLangMod);
+        *    QList<BTModuleTreeItem::Filter*> filters;
+        *    MyFilter filter; BTModuleTreeItem::HiddenOff hideFilter;
+        *    filters.append(&hideFilter); filters.append(&filter);
+        *    BTModuleTreeItem root(filters, BTModuleTreeItem::CatLangMod);
         */
         struct Filter {
             virtual bool filter(CSwordModuleInfo*) = 0;

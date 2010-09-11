@@ -706,6 +706,24 @@ void BibleTime::initSwordConfigFile() {
     out << "\n";
     file.close();
 #endif
+
+#ifdef Q_WS_MAC
+    namespace DU = util::directory;
+    QString configFile = util::directory::getUserHomeSwordDir().filePath("sword.conf");
+    QFile file(configFile);
+    if (file.exists()) {
+        return;
+    }
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        return;
+    }
+    QTextStream out(&file);
+    out << "\n";
+    out << "[Install]\n";
+    out << "DataPath="   << DU::convertDirSeparators( DU::getUserHomeSwordDir().absolutePath()) << "\n";
+    out << "\n";
+    file.close();
+#endif
 }
 
 /** Initializes the backend */
@@ -718,7 +736,7 @@ void BibleTime::initBackends() {
     sword::SWLog::getSystemLog()->setLogLevel(sword::SWLog::LOG_ERROR);
 
     if (qApp->property("--debug").toBool()) {
-    	sword::SWLog::getSystemLog()->setLogLevel(sword::SWLog::LOG_DEBUG);
+        sword::SWLog::getSystemLog()->setLogLevel(sword::SWLog::LOG_DEBUG);
     }
 
 #ifdef Q_WS_MAC
@@ -736,37 +754,37 @@ void BibleTime::initBackends() {
     if (errorCode != CSwordBackend::NoError) {
         //show error message that initBackend failed
         /// \todo
-// 		switch (errorCode) {
-// 			case CSwordBackend::NoSwordConfig: //mods.d or mods.conf missing
-// 			{
-// 				KStartupLogo::hideSplash();
-// 				qDebug() << "case CSwordBackend::NoSwordConfig";
-// 				BookshelfManager::CSwordSetupDialog dlg;
-// 				dlg.showPart( BookshelfManager::CSwordSetupDialog::Sword );
-// 				dlg.exec();
-// 				break;
-// 			}
+//         switch (errorCode) {
+//             case CSwordBackend::NoSwordConfig: //mods.d or mods.conf missing
+//             {
+//                 KStartupLogo::hideSplash();
+//                 qDebug() << "case CSwordBackend::NoSwordConfig";
+//                 BookshelfManager::CSwordSetupDialog dlg;
+//                 dlg.showPart( BookshelfManager::CSwordSetupDialog::Sword );
+//                 dlg.exec();
+//                 break;
+//             }
 //
-// 			case CSwordBackend::NoModules: //no modules installed, but config exists
-// 			{
-// 				KStartupLogo::hideSplash();
-// 				qDebug() << "case CSwordBackend::NoModules";
-// 				BookshelfManager::CSwordSetupDialog dlg;
-// 				dlg.showPart( BookshelfManager::CSwordSetupDialog::Install );
-// 				dlg.exec();
-// 				break;
-// 			}
+//             case CSwordBackend::NoModules: //no modules installed, but config exists
+//             {
+//                 KStartupLogo::hideSplash();
+//                 qDebug() << "case CSwordBackend::NoModules";
+//                 BookshelfManager::CSwordSetupDialog dlg;
+//                 dlg.showPart( BookshelfManager::CSwordSetupDialog::Install );
+//                 dlg.exec();
+//                 break;
+//             }
 //
-// 			default: //unknown error
-// 			{
-// 				KStartupLogo::hideSplash();
-// 				qDebug() << "unknown error";
-// 				BookshelfManager::CSwordSetupDialog dlg;
-// 				dlg.showPart( BookshelfManager::CSwordSetupDialog::Sword );
-// 				dlg.exec();
-// 				break;
-// 			}
-// 		}
+//             default: //unknown error
+//             {
+//                 KStartupLogo::hideSplash();
+//                 qDebug() << "unknown error";
+//                 BookshelfManager::CSwordSetupDialog dlg;
+//                 dlg.showPart( BookshelfManager::CSwordSetupDialog::Sword );
+//                 dlg.exec();
+//                 break;
+//             }
+//         }
     }
 
     // This function will

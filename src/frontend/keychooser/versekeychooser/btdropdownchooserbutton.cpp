@@ -30,7 +30,7 @@ BtDropdownChooserButton::BtDropdownChooserButton(BtBibleKeyWidget* ref)
     setStyleSheet("QToolButton{margin:0px;}QToolButton::menu-indicator{subcontrol-position: center center;}");
 
     BtVerseKeyMenu* m = new BtVerseKeyMenu(this);
-//	KAcceleratorManager::setNoAccel(m);
+//    KAcceleratorManager::setNoAccel(m);
     setMenu(m);
     QObject::connect(m, SIGNAL(triggered(QAction*)), this, SLOT(slotMenuTriggered(QAction*)));
 }

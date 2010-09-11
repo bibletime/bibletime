@@ -19,9 +19,9 @@
 
 int main(int argc, char* argv[])
 {
-	sword::SWMgr mgr;
-	sword::InstallMgr imgr;
-	sword::FTPTransport trans("example.com");
+    sword::SWMgr mgr;
+    sword::InstallMgr imgr;
+    sword::FTPTransport trans("example.com");
 
-	return 0;
+    return 0;
 }

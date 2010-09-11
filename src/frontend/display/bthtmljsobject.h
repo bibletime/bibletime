@@ -53,7 +53,7 @@ class BtHtmlJsObject: public QObject {
                 Link,
                 Text
             } dragType;
-        }		m_dndData;
+        }        m_dndData;
 
 };
 

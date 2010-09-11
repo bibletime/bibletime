@@ -18,7 +18,6 @@
 #include <QDragLeaveEvent>
 #include <QDragMoveEvent>
 #include <QDropEvent>
-#include <QHeaderView>
 #include <QInputDialog>
 #include <QList>
 #include <QMenu>
@@ -69,7 +68,7 @@ CBookmarkIndex::~CBookmarkIndex() {
 void CBookmarkIndex::initView() {
     //qDebug() << "CBookmarkIndex::initView";
 
-    header()->hide();
+    setHeaderHidden(true);
 
     setFocusPolicy(Qt::WheelFocus);
 
@@ -463,7 +462,7 @@ void CBookmarkIndex::createBookmarkFromDrop(QDropEvent* event, QTreeWidgetItem* 
         QString keyText = mdata->bookmark().key();
         QString description = mdata->bookmark().description();
         CSwordModuleInfo *minfo = CSwordBackend::instance()->findModuleByName(moduleName);
-	QString title;  // TODO
+    QString title;  // TODO
 
         QTreeWidgetItem* newItem = new BtBookmarkItem(minfo, keyText, description, title);
         //  connect(newItem, SIGNAL(bookmarkModified()), this, SLOT(needToSaveBookmarks()) );
@@ -547,7 +546,7 @@ void CBookmarkIndex::contextMenu(const QPoint& p) {
                         //case BtBookmarkItemBase::ExportBookmarks:
                         //case BtBookmarkItemBase::ImportBookmarks:
                     case BtBookmarkItemBase::NewFolder:
-		    case BtBookmarkItemBase::SortAllBookmarks:
+            case BtBookmarkItemBase::SortAllBookmarks:
                         //case BtBookmarkItemBase::PrintBookmarks:
                         a->setEnabled(true);
                         break;
@@ -654,7 +653,7 @@ void CBookmarkIndex::sortAllBookmarks() {
     if (index >= 0) {
       QTreeWidgetItem* item = takeTopLevelItem(index);
       if (item != 0) {
-	addTopLevelItem(m_extraItem);
+    addTopLevelItem(m_extraItem);
       }
     }
 }

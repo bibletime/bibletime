@@ -33,7 +33,7 @@ BtFontSettingsPage::BtFontSettingsPage(QWidget *parent)
 
     Q_ASSERT(qobject_cast<QVBoxLayout*>(layout()) != 0);
     QVBoxLayout *mainLayout = static_cast<QVBoxLayout*>(layout());
- 
+
     //Font settings
 
     QHBoxLayout* hLayout = new QHBoxLayout();
@@ -55,10 +55,10 @@ BtFontSettingsPage::BtFontSettingsPage(QWidget *parent)
     }
 
     for ( QMap<QString, CBTConfig::FontSettingsPair>::Iterator it = m_fontMap.begin(); it != m_fontMap.end(); ++it ) {
-        if ( m_fontMap[it.key()].first ) { 	//show font icon
+        if ( m_fontMap[it.key()].first ) {     //show font icon
             m_usageCombo->addItem(DU::getIcon("fonts.svg"), it.key() );
         }
-        else { 	//don't show icon for font
+        else {     //don't show icon for font
             m_usageCombo->addItem(it.key());
         }
     }
@@ -99,7 +99,7 @@ BtFontSettingsPage::~BtFontSettingsPage() {
 void BtFontSettingsPage::save() {
     for (QMap<QString, CBTConfig::FontSettingsPair>::Iterator it = m_fontMap.begin(); it != m_fontMap.end(); ++it ) {
         const CLanguageMgr::Language * const lang = CLanguageMgr::instance()->languageForTranslatedName(it.key());
-        if (!lang->isValid()) { 	//we possibly use a language, for which we have only the abbrev
+        if (!lang->isValid()) {     //we possibly use a language, for which we have only the abbrev
             if (!lang->abbrev().isEmpty()) {
                 CLanguageMgr::Language l(it.key(), it.key(), it.key()); //create a temp language
                 CBTConfig::set(&l, it.value());
@@ -137,7 +137,7 @@ void BtFontSettingsPage::useOwnFontClicked(bool isOn) {
     m_fontChooser->setEnabled(isOn);
     m_fontMap[ m_usageCombo->currentText() ].first = isOn;
 
-    if (isOn) { 	//show font icon
+    if (isOn) {     //show font icon
         m_usageCombo->setItemIcon(m_usageCombo->currentIndex(), DU::getIcon("fonts.svg"));
     }
     else {   //don't show

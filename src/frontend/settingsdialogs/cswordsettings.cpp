@@ -179,7 +179,7 @@ StandardWorksTab::StandardWorksTab()
                     inserted = true;
                 }
 
-                if (!inserted) {	//daily dvotionals, striong lexicons etc. are not very useful for word lookups
+                if (!inserted) {    //daily dvotionals, striong lexicons etc. are not very useful for word lookups
                     m_standardLexiconCombo->addItem(modDescript);
                 }
                 break;

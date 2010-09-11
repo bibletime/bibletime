@@ -96,8 +96,8 @@ QString BtBookmarkItem::toolTip() const {
 
     Q_ASSERT(k.data());
     QString header = QString::fromLatin1("%1 (%2)")
-		      .arg(key())
-		      .arg(module()->name());
+              .arg(key())
+              .arg(module()->name());
     if (title() != header) {
         ret = QString::fromLatin1("<b>%1</b><br>%2<hr>%3")
               .arg(header)

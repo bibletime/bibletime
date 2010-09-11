@@ -161,7 +161,7 @@ void CBookReadWindow::setupMainWindowToolBars() {
     QAction* action = qobject_cast<QAction*>(actionCollection()->action(
                           CResMgr::displaywindows::general::search::actionName ));
     if (action) {
-        btMainWindow()->toolsToolBar()->addAction(action);  // Search 
+        btMainWindow()->toolsToolBar()->addAction(action);  // Search
     }
 }
 

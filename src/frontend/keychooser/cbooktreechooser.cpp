@@ -12,7 +12,6 @@
 #include <QApplication>
 #include <QDebug>
 #include <QHBoxLayout>
-#include <QHeaderView>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
 #include "backend/config/cbtconfig.h"
@@ -41,7 +40,7 @@ CBookTreeChooser::CBookTreeChooser(const QList<const CSwordModuleInfo*> &modules
     layout->setSpacing(0);
     layout->setContentsMargins(0, 0, 0, 0);
     layout->addWidget(m_treeView);
-    m_treeView->header()->hide();
+    m_treeView->setHeaderHidden(true);
 
     //when user selects the item whe must react
     connect(m_treeView, SIGNAL(currentItemChanged ( QTreeWidgetItem*, QTreeWidgetItem*)), SLOT(itemActivated(QTreeWidgetItem*)));

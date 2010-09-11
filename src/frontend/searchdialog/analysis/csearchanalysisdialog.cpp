@@ -51,7 +51,7 @@ void CSearchAnalysisDialog::initView() {
 
     m_analysis = new CSearchAnalysisScene(this);
     m_analysisView = new CSearchAnalysisView(m_analysis, this);
-////	m_analysisView->show();
+////    m_analysisView->show();
     vboxLayout->addWidget(m_analysisView);
 
     m_buttonBox = new QDialogButtonBox(this);

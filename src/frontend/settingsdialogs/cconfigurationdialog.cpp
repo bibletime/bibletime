@@ -51,7 +51,7 @@ CConfigurationDialog::CConfigurationDialog(QWidget * parent, BtActionCollection*
     // Add "Fonts" page
     m_fontsPage = new BtFontSettingsPage(this);
     addPage(m_fontsPage);
-    
+
     // Add "Keyboard" (accelerators) page
     m_acceleratorsPage = new CAcceleratorSettingsPage(this);
     addPage(m_acceleratorsPage);

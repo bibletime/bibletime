@@ -24,7 +24,7 @@ class BtModuleChooserBar: public QToolBar, public BtWindowModuleChooser {
         BtModuleChooserBar(QWidget* parent);
         /** Initialize with module list.*/
         void setModules( QStringList useModules,CSwordModuleInfo::ModuleType type, CReadWindow* window);
-    
+
     public slots:
         /**
         * The backend module list was updated, module list and widgets must be updated.

@@ -30,12 +30,12 @@ Filters::OsisToHtml::OsisToHtml() : sword::OSISHTMLHREF() {
     addTokenSubstitute("mentioned", "<span class=\"mentioned\">");
     addTokenSubstitute("/mentioned", "</span>");
 
-//	addTokenSubstitute("divineName", "<span class=\"name\"><span class=\"divine\">");
-//	addTokenSubstitute("/divineName", "</span></span>");
+//    addTokenSubstitute("divineName", "<span class=\"name\"><span class=\"divine\">");
+//    addTokenSubstitute("/divineName", "</span></span>");
 
     /// \todo Move that down to the real tag handling, segs without the type morph would generate incorrect markup, as the end span is always inserted
-//	addTokenSubstitute("seg type=\"morph\"", "<span class=\"morphSegmentation\">");
-//	addTokenSubstitute("/seg", "</span>");
+//    addTokenSubstitute("seg type=\"morph\"", "<span class=\"morphSegmentation\">");
+//    addTokenSubstitute("/seg", "</span>");
 
     // OSIS tables
     addTokenSubstitute("table", "<table>");
@@ -184,7 +184,7 @@ bool Filters::OsisToHtml::handleToken(sword::SWBuf &buf, const char *token, swor
                             }
                             //strongs is handled by BibleTime
                             /*else if (!strncmp("strongs", attrib, val-atrrib)) {
-                            	attrValue.append( !strncmp(attrib, "x-", 2) ? attrib+2 : attrib );
+                                attrValue.append( !strncmp(attrib, "x-", 2) ? attrib+2 : attrib );
                             }*/
                             else {
                                 attrValue.append( !strncmp(attrib, "x-", 2) ? attrib + 2 : attrib );
@@ -277,7 +277,7 @@ bool Filters::OsisToHtml::handleToken(sword::SWBuf &buf, const char *token, swor
 
                 if (myUserData->noteType == UserData::CrossReference) {
                     buf.append("</span> ");
-// 					myUserData->suspendTextPassThru = false;
+//                     myUserData->suspendTextPassThru = false;
                     myUserData->inCrossrefNote = false;
                 }
 
@@ -432,7 +432,7 @@ bool Filters::OsisToHtml::handleToken(sword::SWBuf &buf, const char *token, swor
 
             if ((!tag.isEndTag())) {
                 if (!tag.isEmpty()) {
-                	myUserData->quote.who = who;
+                    myUserData->quote.who = who;
                 }
 
                 if (quoteMarker.size() > 0) {

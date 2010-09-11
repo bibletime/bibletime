@@ -59,7 +59,7 @@ QVariant BtInstallModuleChooserDialogModel::data(const QModelIndex &i, int role)
             if (i.column() == 0) return BtBookshelfTreeModel::data(i, role);
     }
 
-    
+
     return QVariant();
 }
 

@@ -129,7 +129,7 @@ class CBookmarkIndex : public QTreeWidget {
 
         /** Sorts the current folder bookmarks. */
         void sortFolderBookmarks();
-	
+
         /** Sorts all bookmarks. */
         void sortAllBookmarks();
 
@@ -176,8 +176,8 @@ class CBookmarkIndex : public QTreeWidget {
             QAction* changeFolder;
 
             QAction* editBookmark;
-	    QAction* sortFolderBookmarks;
-	    QAction* sortAllBookmarks;
+        QAction* sortFolderBookmarks;
+        QAction* sortAllBookmarks;
             QAction* importBookmarks;
             QAction* exportBookmarks;
             QAction* printBookmarks;

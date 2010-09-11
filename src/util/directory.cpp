@@ -53,8 +53,13 @@ QDir cachedSwordLocalesDir;
 static const char* BIBLETIME = "Bibletime";
 static const char* SWORD_DIR = "Sword";
 #else
+#ifdef Q_WS_MAC
+static const char* BIBLETIME = "Library/Application Support/BibleTime";
+static const char* SWORD_DIR = "Library/Application Support/Sword";
+#else
 static const char* BIBLETIME = ".bibletime";
 static const char* SWORD_DIR = ".sword";
+#endif
 #endif
 static const char* SWORD_PATH = "SWORD_PATH";
 static const char* UNSET_SWORD_PATH = "SWORD_PATH=";
@@ -169,7 +174,7 @@ bool initDirectoryCache() {
 
     cachedUserBaseDir = cachedUserHomeDir;
     if (!cachedUserBaseDir.cd(BIBLETIME)) {
-        if (!cachedUserBaseDir.mkdir(BIBLETIME) || !cachedUserBaseDir.cd(BIBLETIME)) {
+        if (!cachedUserBaseDir.mkpath(BIBLETIME) || !cachedUserBaseDir.cd(BIBLETIME)) {
             qWarning() << "Could not create user setting directory.";
             return false;
         }
@@ -177,7 +182,7 @@ bool initDirectoryCache() {
 
     cachedUserHomeSwordDir = cachedUserHomeDir;
     if (!cachedUserHomeSwordDir.cd(SWORD_DIR)) {
-        if (!cachedUserHomeSwordDir.mkdir(SWORD_DIR) || !cachedUserHomeSwordDir.cd(SWORD_DIR)) {
+        if (!cachedUserHomeSwordDir.mkpath(SWORD_DIR) || !cachedUserHomeSwordDir.cd(SWORD_DIR)) {
             qWarning() << "Could not create user home " << SWORD_DIR << " directory.";
             return false;
         }

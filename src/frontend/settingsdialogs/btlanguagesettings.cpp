@@ -73,10 +73,10 @@ BtLanguageSettingsPage::BtLanguageSettingsPage(QWidget *parent)
         CLanguageMgr::instance()->languageForAbbrev( CBTConfig::get(CBTConfig::language) );
 
     QString currentLanguageName;
-    if ( l->isValid() && languageNames.contains(l->translatedName()) ) { 	//tranlated language name is in the box
+    if ( l->isValid() && languageNames.contains(l->translatedName()) ) {     //tranlated language name is in the box
         currentLanguageName = l->translatedName();
     }
-    else { 	//a language like "German Abbrevs" might be the language to set
+    else {     //a language like "German Abbrevs" might be the language to set
         sword::SWLocale* locale =
             sword::LocaleMgr::getSystemLocaleMgr()->getLocale( CBTConfig::get(CBTConfig::language).toLocal8Bit() );
         if (locale) {
@@ -84,7 +84,7 @@ BtLanguageSettingsPage::BtLanguageSettingsPage(QWidget *parent)
         }
     }
 
-    if (currentLanguageName.isEmpty()) { 	// set english as default if nothing was chosen
+    if (currentLanguageName.isEmpty()) {     // set english as default if nothing was chosen
         Q_ASSERT(CLanguageMgr::instance()->languageForAbbrev("en_US"));
         currentLanguageName = CLanguageMgr::instance()->languageForAbbrev("en_US")->translatedName();
     }
@@ -113,7 +113,7 @@ void BtLanguageSettingsPage::save() {
     if (l && l->isValid()) {
         languageAbbrev = l->abbrev();
     }
-    else { 	//it can be the lang abbrev like de_abbrev or the Sword description
+    else {     //it can be the lang abbrev like de_abbrev or the Sword description
         std::list <sword::SWBuf> locales = sword::LocaleMgr::getSystemLocaleMgr()->getAvailableLocales();
 
         for (std::list <sword::SWBuf>::iterator it = locales.begin(); it != locales.end(); it++) {

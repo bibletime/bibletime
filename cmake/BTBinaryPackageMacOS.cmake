@@ -15,43 +15,46 @@ IF(APPLE)
         DESTINATION "${BT_SHARE_PATH}/../Resources"
     )
 
-    INSTALL(CODE "
-        FILE(GLOB_RECURSE QTPLUGINS
-          \"\${CMAKE_INSTALL_PREFIX}/${BT_DESTINATION}/plugins/*${CMAKE_SHARED_LIBRARY_SUFFIX}\")
-#        FILE(GLOB_RECURSE QTPLUGINS
-#          \"\${CMAKE_INSTALL_PREFIX}/${BT_DESTINATION}/plugins/*.bundle\")
-        INCLUDE(BundleUtilities)
+    IF (CMAKE_BUILD_TYPE STREQUAL "Release")
+
+        INSTALL(CODE "
+            FILE(GLOB_RECURSE QTPLUGINS
+              \"\${CMAKE_INSTALL_PREFIX}/${BT_DESTINATION}/plugins/*${CMAKE_SHARED_LIBRARY_SUFFIX}\")
+#            FILE(GLOB_RECURSE QTPLUGINS
+#              \"\${CMAKE_INSTALL_PREFIX}/${BT_DESTINATION}/plugins/*.bundle\")
+            INCLUDE(BundleUtilities)
 
 
-        function(gp_item_default_embedded_path_override item default_embedded_path_var)
-            set(path \"\@executable_path/../MacOS\")
-            set(overridden 0)
+            function(gp_item_default_embedded_path_override item default_embedded_path_var)
+                set(path \"\@executable_path/../MacOS\")
+                set(overridden 0)
 
-            if(item MATCHES \"plugins/iconengines/.*\\\\.dylib$\")
-                set(path \"\@executable_path/plugins/iconengines\")
-                set(overridden 1)
-            endif(item MATCHES \"plugins/iconengines/.*\\\\.dylib$\")
+                if(item MATCHES \"plugins/iconengines/.*\\\\.dylib$\")
+                    set(path \"\@executable_path/plugins/iconengines\")
+                    set(overridden 1)
+                endif(item MATCHES \"plugins/iconengines/.*\\\\.dylib$\")
 
-            if(item MATCHES \"plugins/imageformats/.*\\\\.dylib$\")
-                set(path \"\@executable_path/plugins/imageformats\")
-                set(overridden 1)
-            endif(item MATCHES \"plugins/imageformats/.*\\\\.dylib$\")
+                if(item MATCHES \"plugins/imageformats/.*\\\\.dylib$\")
+                    set(path \"\@executable_path/plugins/imageformats\")
+                    set(overridden 1)
+                endif(item MATCHES \"plugins/imageformats/.*\\\\.dylib$\")
 
-            if (overridden)
-                set(\${default_embedded_path_var} \"\${path}\" PARENT_SCOPE)
-            endif (overridden)
-        endfunction(gp_item_default_embedded_path_override)
+                if (overridden)
+                    set(\${default_embedded_path_var} \"\${path}\" PARENT_SCOPE)
+                endif (overridden)
+            endfunction(gp_item_default_embedded_path_override)
 
-        FIXUP_BUNDLE(
-            \"\${CMAKE_INSTALL_PREFIX}/${BT_DESTINATION}/BibleTime\"
-            \"\${QTPLUGINS}\"
-            \"\${CMAKE_INSTALL_PREFIX}/${BT_DESTINATION}/plugins/imageformats;\${CMAKE_INSTALL_PREFIX}/${BT_DESTINATION}/plugins/iconengines\"
-        )
-    ")
+            FIXUP_BUNDLE(
+                \"\${CMAKE_INSTALL_PREFIX}/${BT_DESTINATION}/BibleTime\"
+                \"\${QTPLUGINS}\"
+                \"\${CMAKE_INSTALL_PREFIX}/${BT_DESTINATION}/plugins/imageformats;\${CMAKE_INSTALL_PREFIX}/${BT_DESTINATION}/plugins/iconengines\"
+            )
+        ")
+
+    ENDIF (CMAKE_BUILD_TYPE STREQUAL "Release")
 
     SET(CPACK_BUNDLE_NAME "BibleTime")
     SET(CPACK_PACKAGE_FILE_NAME "BibleTime ${BT_VERSION_FULL}")
-    #SET(CPACK_BUNDLE_STARTUP_COMMAND "${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/macos/bt_start.sh")
     SET(CPACK_BUNDLE_PLIST "${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/macos/Info.plist")
     SET(CPACK_BUNDLE_ICON "${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/macos/BibleTime.icns")
     SET(CPACK_PACKAGE_ICON "${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/macos/BibleTime.icns")

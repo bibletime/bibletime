@@ -197,7 +197,7 @@ class CSwordBackend : public QObject, public sword::SWMgr {
         QStringList swordDirList() const;
         /**
          * delete all orphaned indexes (no module present) if autoDeleteOrphanedIndices is true
-		 * delete all indices of modules where hasIndex() returns false (because of wrong index version etc.)
+         * delete all indices of modules where hasIndex() returns false (because of wrong index version etc.)
          */
         void deleteOrphanedIndices();
 

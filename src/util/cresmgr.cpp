@@ -41,28 +41,28 @@ const QString icon_add       = "book_add.svg";
 
 namespace categories {
 namespace bibles {
-const QString icon 			= "bible.svg";
+const QString icon             = "bible.svg";
 }
 namespace commentaries {
-const QString icon 			= "commentary.svg";
+const QString icon             = "commentary.svg";
 }
 namespace lexicons {
-const QString icon 			= "lexicon.svg";
+const QString icon             = "lexicon.svg";
 }
 namespace dailydevotional {
-const QString icon 			= "calendar.svg";
+const QString icon             = "calendar.svg";
 }
 namespace books {
-const QString icon 			= "books.svg";
+const QString icon             = "books.svg";
 }
 namespace glossary {
-const QString icon 			= "dictionary.svg";
+const QString icon             = "dictionary.svg";
 }
 namespace images {
-const QString icon 			= "map.svg";
+const QString icon             = "map.svg";
 }
 namespace cults {
-const QString icon 			= "questionable.svg";
+const QString icon             = "questionable.svg";
 }
 }//categories
 namespace mainMenu { //Main menu
@@ -243,9 +243,9 @@ const QString icon = "print.svg";
 } //searchDialog
 
 namespace displaywindows {
-/*		namespace transliteration {
-			const QString icon = "bt_displaytranslit";
-		}*/
+/*        namespace transliteration {
+            const QString icon = "bt_displaytranslit";
+        }*/
 namespace displaySettings {
 const QString icon = "displayconfig.svg";
 }
@@ -519,13 +519,5 @@ const QString add_icon = "plus";
 const QString edit_icon = "pencil";
 const QString remove_icon = "trash";
 }
-}
-
-}
-
-
-
-namespace CResMgr {
-void init_tr() {
-} //init_tr()
-} //CResMgr
+} // namespace bookshelfmgr
+} // namespace CResMgr

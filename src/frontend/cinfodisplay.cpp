@@ -312,8 +312,8 @@ const QString CInfoDisplay::decodeCrossReference( const QString& data ) {
 }
 
 /*!
-	\fn CInfoDisplay::decodeFootnote( const QString& data )
-	*/
+    \fn CInfoDisplay::decodeFootnote( const QString& data )
+    */
 const QString CInfoDisplay::decodeFootnote( const QString& data ) {
     QStringList list = data.split("/");
     Q_ASSERT(list.count() >= 3);

@@ -15,14 +15,17 @@
 #include <QToolButton>
 
 
-class BtToolButton : public QToolButton {
+namespace {
+
+class BtToolButton: public QToolButton {
     public:
-        BtToolButton(QWidget* parent = 0) : QToolButton(parent) {
-        }
+        inline BtToolButton(QWidget *parent = 0)
+            : QToolButton(parent) {}
     private:
-        void nextCheckState() {
-        }
+        virtual inline void nextCheckState() {}
 };
+
+} // anonymous namespace
 
 
 // This class provides a toolbar widget that has a icon plus a right side down arrow

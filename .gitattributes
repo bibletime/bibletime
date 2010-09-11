@@ -1,0 +1,7 @@
+* text=auto
+*.svg -text
+
+# Make git diff warn about trailing space and tabs in indentation:
+*.c   whitespace=space-before-tab,tab-in-indent,trailing-space
+*.cpp whitespace=space-before-tab,tab-in-indent,trailing-space
+*.h   whitespace=space-before-tab,tab-in-indent,trailing-space

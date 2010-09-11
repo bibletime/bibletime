@@ -25,7 +25,13 @@ IF(Git_EXECUTABLE)
       # MESSAGE(STATUS "Unable to find a git setup.")
       UNSET(${prefix}_WC_REVISION_HASH)
     ELSE(NOT ((${Git_result} EQUAL 0) AND (NOT ${${prefix}_WC_REVISION_HASH} MATCHES "^$")))
-      # MESSAGE(STATUS "Found git HEAD: ${${prefix}_WC_REVISION_HASH}")
+      EXECUTE_PROCESS(COMMAND ${Git_EXECUTABLE} rev-list -n 1 --abbrev-commit HEAD
+        WORKING_DIRECTORY ${dir}
+        RESULT_VARIABLE Git_result
+        OUTPUT_VARIABLE ${prefix}_WC_REVISION_HASH_SHORT
+        OUTPUT_STRIP_TRAILING_WHITESPACE
+        ERROR_QUIET)
+      # MESSAGE(STATUS "Found git HEAD: ${${prefix}_WC_REVISION_HASH_SHORT}")
       EXECUTE_PROCESS(COMMAND ${Git_EXECUTABLE} rev-list --grep=git-svn-id: -n 1 HEAD
          WORKING_DIRECTORY ${dir}
          RESULT_VARIABLE Git_result2

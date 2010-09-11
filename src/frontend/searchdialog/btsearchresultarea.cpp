@@ -238,13 +238,13 @@ QStringList BtSearchResultArea::queryParser(const QString& queryString) {
         }
         // wild card - treat as a special token break
         //else if (queryString[cnt] == '*') {
-        //	token = token + queryString[cnt];
-        //	token = token.simplified();
-        //	if ((token != "*") && (token != ""))
-        //		tokenList.append(token);
-        //	// start next token with wildcard (kin*m -> kin* *m)
-        //	token = "*";
-        //	cnt++;
+        //    token = token + queryString[cnt];
+        //    token = token.simplified();
+        //    if ((token != "*") && (token != ""))
+        //        tokenList.append(token);
+        //    // start next token with wildcard (kin*m -> kin* *m)
+        //    token = "*";
+        //    cnt++;
         //}
         // the ! token is also a token break
         else if (queryString[cnt] == '!') {
@@ -440,8 +440,8 @@ QString BtSearchResultArea::highlightSearchedText(const QString& content, const 
     //TokenStream* tokenStream = analyzer.tokenStream( _T("field"), &reader);
     //Token token;
     //while(tokenStream->next(&token) != 0) {
-    //	lucene_wcstoutf8(buf8, token.termText(), 1000);
-    //	printf("%s\n", buf8);
+    //    lucene_wcstoutf8(buf8, token.termText(), 1000);
+    //    printf("%s\n", buf8);
     //}
 
     //===========================================================

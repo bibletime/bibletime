@@ -44,7 +44,7 @@ struct DisplayOptions {
   \todo Properly identify this bug and remove the #ifdef when fix is available.
 */
 #ifdef Q_WS_WIN
-	int notUsed;
+    int notUsed;
 #endif
 
 };

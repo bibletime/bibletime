@@ -122,7 +122,7 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType format, const CD
                 return QString::null;
             }
             else if (format == HTMLText) {
-                //	\todo It does not appear this is ever called
+                //    \todo It does not appear this is ever called
             }
             else { //plain text requested
                 return selectedText();
@@ -180,9 +180,9 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType format, const CD
                        .append(key->module()->name())
                        .append(")");
                 /*    ("%1\n(%2, %3)")
-                	.arg()
-                	.arg(key->key())
-                	.arg(key->module()->name());*/
+                    .arg()
+                    .arg(key->key())
+                    .arg(key->module()->name());*/
             }
             return QString::null;
         }
@@ -198,9 +198,9 @@ void BtHtmlReadDisplay::setText( const QString& newText ) {
     QString jsText = newText;
 
     jsText.replace(
-		QString("</body>"),
-		QString("<script  type=\"text/javascript\">").append(javascript).append("</script></body>")
-	);
+        QString("</body>"),
+        QString("<script  type=\"text/javascript\">").append(javascript).append("</script></body>")
+    );
 
     // Disconnect any previous connect and connect to slot that loads the javascript object
     QWebFrame* frame = mainFrame();
@@ -211,11 +211,11 @@ void BtHtmlReadDisplay::setText( const QString& newText ) {
     // Send text to the html viewer
     m_view->setHtml(jsText);
 
-	this->currentSource = jsText;
+    this->currentSource = jsText;
 }
 
 QString BtHtmlReadDisplay::getCurrentSource( ) {
-	return this->currentSource;
+    return this->currentSource;
 }
 
 // See if any text is selected
@@ -309,11 +309,11 @@ void BtHtmlReadDisplayView::dropEvent( QDropEvent* e ) {
 
 // Reimplementation from QWebView
 void BtHtmlReadDisplayView::dragEnterEvent( QDragEnterEvent* e ) {
-    if ( ! e->mimeData()->hasFormat("BibleTime/Bookmark")) 
+    if ( ! e->mimeData()->hasFormat("BibleTime/Bookmark"))
         return;
 
     const QMimeData* mimedata = e->mimeData();
-    if (mimedata == 0) 
+    if (mimedata == 0)
         return;
 
     const BTMimeData* btmimedata = qobject_cast<const BTMimeData*>(mimedata);
@@ -324,17 +324,17 @@ void BtHtmlReadDisplayView::dragEnterEvent( QDragEnterEvent* e ) {
     QString moduleName = item.module();
     CSwordModuleInfo *m = CSwordBackend::instance()->findModuleByName(moduleName);
     Q_ASSERT(m);
-    if (m == 0) 
+    if (m == 0)
         return;
 
     CSwordModuleInfo::ModuleType bookmarkType = m->type();
     CSwordModuleInfo::ModuleType windowType = CDisplayWindowFactory::getModuleType(m_readWindow);
 
     // Is bible reference bookmark compatible with the window type?
-    if ((bookmarkType == CSwordModuleInfo::Bible || 
+    if ((bookmarkType == CSwordModuleInfo::Bible ||
         bookmarkType == CSwordModuleInfo::Commentary)) {
-            if (windowType == CSwordModuleInfo::Bible || 
-                windowType == CSwordModuleInfo::Commentary) 
+            if (windowType == CSwordModuleInfo::Bible ||
+                windowType == CSwordModuleInfo::Commentary)
                 e->acceptProposedAction();
             return;
     }

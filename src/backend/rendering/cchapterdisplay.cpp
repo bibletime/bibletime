@@ -51,7 +51,7 @@ const QString Rendering::CChapterDisplay::text(
         k1.Headings(1);
         k1.setKey(keyName);
 
-        if (k1.Chapter() == 1)	k1.Chapter(0); //Chapter 1, start with 0:0, otherwise X:0
+        if (k1.Chapter() == 1)    k1.Chapter(0); //Chapter 1, start with 0:0, otherwise X:0
 
         k1.Verse(0);
 

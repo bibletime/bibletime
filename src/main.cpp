@@ -7,33 +7,116 @@
 *
 **********/
 
-// #include <csignal>
 #include <iostream>
 #ifndef NO_DBUS
 #include <QDBusConnection>
 #endif
-#include <QDebug>
 #include <QLocale>
 #include <QTextCodec>
 #include <QTranslator>
-#include <QVariant>
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "backend/config/cbtconfig.h"
-#include "backend/managers/cswordbackend.h"
 #include "bibletime.h"
 #include "bibletime_dbus_adaptor.h"
 #include "bibletimeapp.h"
-#include "util/cresmgr.h"
 #include "util/directory.h"
-#include "util/migrationutil.h"
 
-#ifdef BT_ENABLE_TESTING
-#include <QtTest/QtTest>
-#include "tests/bibletime_test.h"
-#endif
 
+/// \todo Reimplement signal handler which handles consecutive crashes.
 
 namespace {
+
+/*******************************************************************************
+  Printing command-line help.
+*******************************************************************************/
+
+/**
+  Prints command-line help text for BibleTime when --help is used.
+  \param[in] executable The executed file name (argv[0]).
+*/
+void printHelp(const QString &executable) {
+    std::cout << qPrintable(executable) << std::endl << std::endl
+        << "    --help, -h" << std::endl << "        "
+        << qPrintable(QObject::tr("Show this help message and exit"))
+        << std::endl << std::endl
+        << "    --version, -V" << std::endl << "        "
+        << qPrintable(QObject::tr("Output BibleTime version and exit"))
+        << std::endl << std::endl
+        << "    --ignore-session" << std::endl << "        "
+        << qPrintable(QObject::tr("open a clean session"))
+        << std::endl << std::endl
+        << "    --open-default-bible <ref>" << std::endl << "        "
+        << qPrintable(QObject::tr("Open the default Bible with the "
+                                  "reference <ref>"))
+        << std::endl << std::endl
+        << qPrintable(QObject::tr("For command-line arguments parsed by the"
+                                  " Qt toolkit, see %1.")
+               .arg("http://doc.qt.nokia.com/latest/qapplication.html"))
+        << ' ' << qPrintable(QObject::tr("All command-line arguments not "
+                                         "recognized by BibleTime or Qt will "
+                                         "be silently ignored."))
+        << std::endl;
+}
+
+/*******************************************************************************
+  Parsing command-line arguments
+*******************************************************************************/
+
+/**
+  Parses all command-line arguments.
+  \param[out] showDebugMessages Whether --debug was specified.
+  \param[out] ignoreSession Whether --ignore-session was specified.
+  \param[out] openBibleKey Will be set to --open-default-bible if specified.
+  \retval -1 Parsing was successful, the application should exit with
+             EXIT_SUCCESS.
+  \retval 0 Parsing was successful.
+  \retval 1 Parsing failed, the application should exit with EXIT_FAILURE.
+*/
+int parseCommandLine(bool &showDebugMessages, bool &ignoreSession,
+                     QString &openBibleKey)
+{
+    QStringList args = BibleTimeApp::arguments();
+    for (int i = 1; i < args.size(); i++) {
+        const QString &arg = args.at(i);
+        if (arg == "--help"
+            || arg == "-h"
+            || arg == "/?"
+            || arg == "/h")
+        {
+            printHelp(args.at(0));
+            return -1;
+        } else if (arg == "--version"
+                   || arg == "-V")
+        {
+            std::cout << "BibleTime " BT_VERSION << std::endl;
+            return -1;
+        } else if (arg == "--debug") {
+            showDebugMessages = true;
+        } else if (arg == "--ignore-session") {
+            ignoreSession = true;
+        } else if (arg == "--open-default-bible") {
+            i++;
+            if (i < args.size()) {
+                openBibleKey = args.at(i);
+            } else {
+                std::cerr << qPrintable(QObject::tr(
+                    "Error: %1 expects an argument. See --help for details.")
+                    .arg("--open-default-bible")) << std::endl;
+                return 1;
+            }
+        } else {
+            std::cerr << qPrintable(QObject::tr(
+                "Error: Invalid command-line argument: %1")
+                .arg(arg)) << std::endl;
+            return 1;
+        }
+    }
+    return 0;
+}
+
+/*******************************************************************************
+  Console messaging.
+*******************************************************************************/
 
 bool showDebugMessages = false;
 
@@ -50,32 +133,6 @@ FILE *out_fd = 0;
 #define CLOSE_DEBUG_STREAM
 
 #endif
-
-void printHelp(const QStringList &args) {
-    std::cout << qPrintable(args.at(0)) << std::endl << std::endl
-        << "    --help" << std::endl << "        "
-        << qPrintable(QObject::tr("Show this help message and exit"))
-        << std::endl << std::endl
-        << "    --ignore-session" << std::endl << "        "
-        << qPrintable(QObject::tr("open a clean session"))
-        << std::endl << std::endl
-        << "    --open-default-bible <ref>" << std::endl << "        "
-        << qPrintable(QObject::tr("Open the default Bible with the "
-                                  "reference <ref>"))
-        << std::endl << std::endl
-#ifdef BT_ENABLE_TESTING
-        << "  --run-tests" << std::endl << "        "
-        << qPrintable(QObject::tr(""))
-        << std::endl << std::endl
-#endif
-        << qPrintable(QObject::tr("For command-line arguments parsed by the"
-                                  " Qt toolkit, see %1.")
-               .arg("http://doc.qt.nokia.com/latest/qapplication.html"))
-        << ' ' << qPrintable(QObject::tr("All command-line arguments not "
-                                         "recognized by BibleTime or Qt will "
-                                         "be silently ignored."))
-        << std::endl;
-}
 
 void myMessageOutput( QtMsgType type, const char *msg ) {
     //we use this messagehandler to switch debugging off in final releases
@@ -107,6 +164,10 @@ void myMessageOutput( QtMsgType type, const char *msg ) {
     }
 }
 
+/*******************************************************************************
+  Handle Qt's meta type system.
+*******************************************************************************/
+
 void registerMetaTypes() {
     qRegisterMetaType<FilterOptions>();
     qRegisterMetaType<DisplayOptions>();
@@ -116,7 +177,9 @@ void registerMetaTypes() {
 } // anonymous namespace
 
 
-/// \todo Reimplement signal handler which handles consecutive crashes.
+/*******************************************************************************
+  Program main entry point.
+*******************************************************************************/
 
 int main(int argc, char* argv[]) {
     namespace DU = util::directory;
@@ -125,36 +188,21 @@ int main(int argc, char* argv[]) {
     app.setApplicationName("bibletime");
     app.setApplicationVersion(BT_VERSION);
 
-    QStringList args = qApp->arguments();
-
-    if (args.contains("--help")
-        || args.contains("-h")
-        || args.contains("/?")
-        || args.contains("/h"))
-    {
-        printHelp(args);
-        return 0;
-    }
-
-    if (args.removeAll("--debug") > 0) {
-        showDebugMessages = true;
+    // Parse command line arguments:
+    bool ignoreSession = false;
+    QString openBibleKey;
+    int r = parseCommandLine(showDebugMessages, ignoreSession, openBibleKey);
+    if (r != 0) {
+        if (r < 0) return EXIT_SUCCESS;
+        return EXIT_FAILURE;
     }
 
 #ifdef Q_WS_WIN
     // Use the default Qt message handler if --debug is not specified
     // This works with Visual Studio debugger Output Window
     if (showDebugMessages)
-        qInstallMsgHandler( myMessageOutput );
-#else
-    qInstallMsgHandler( myMessageOutput );
 #endif
-
-#ifdef BT_ENABLE_TESTING
-    if (args.contains("--run-tests")) {
-        BibleTimeTest testClass;
-        return QTest::qExec(&testClass);
-    }
-#endif
+    qInstallMsgHandler(myMessageOutput);
 
 #ifdef Q_WS_WIN
 
@@ -174,10 +222,20 @@ int main(int argc, char* argv[]) {
         return EXIT_FAILURE;
     }
 
+    app.startInit();
+
 #ifdef Q_WS_WIN
     // change directory to the Sword or .sword directory in the $HOME dir so that
     // the sword.conf is found. It points to the sword/locales.d directory
     QString homeSwordDir = util::directory::getUserHomeDir().absolutePath();
+    QDir dir;
+    dir.setCurrent(homeSwordDir);
+#endif
+
+#ifdef Q_WS_MAC
+    // change to the user's sword dir containing the sword.conf config file, so that
+    // Sword will correctly find it.
+    QString homeSwordDir = util::directory::getUserHomeSwordDir().absolutePath();
     QDir dir;
     dir.setCurrent(homeSwordDir);
 #endif
@@ -195,10 +253,7 @@ int main(int argc, char* argv[]) {
 
     app.setProperty("--debug", QVariant(showDebugMessages));
 
-    //Migrate configuration data, if neccessary
-    util::migration::checkMigration();
-
-//	setSignalHandler(signalHandler);
+//    setSignalHandler(signalHandler);
 
     BibleTime *mainWindow = new BibleTime();
     mainWindow->setAttribute(Qt::WA_DeleteOnClose);
@@ -212,7 +267,9 @@ int main(int argc, char* argv[]) {
     // restore the workspace and process command line options
     //app.setMainWidget(bibletime_ptr); //no longer used in qt4 (QApplication)
     mainWindow->show();
-    mainWindow->processCommandline(args); // must be done after the bibletime window is visible
+
+    // The following must be done after the bibletime window is visible:
+    mainWindow->processCommandline(ignoreSession, openBibleKey);
 
 #ifndef NO_DBUS
     new BibleTimeDBusAdaptor(mainWindow);
@@ -221,7 +278,7 @@ int main(int argc, char* argv[]) {
     QDBusConnection::sessionBus().registerObject("/BibleTime", mainWindow);
 #endif
 
-    int r = app.exec();
+    r = app.exec();
     CLOSE_DEBUG_STREAM;
     return r;
 }

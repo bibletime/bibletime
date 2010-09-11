@@ -14,7 +14,6 @@
 #include <QString>
 
 namespace CResMgr {
-void init_tr();
 
 namespace mainWindow {
 extern const QString icon;

@@ -36,7 +36,7 @@ class CSwordKey {
         enum TextRenderType {
             Normal = 0,
             HTMLEscaped = 1,
-            ProcessEntryAttributesOnly = 2	// in this case, renderText() will not return text, but only cause EntryAttribute processing
+            ProcessEntryAttributesOnly = 2    // in this case, renderText() will not return text, but only cause EntryAttribute processing
         };
 
         virtual ~CSwordKey();

@@ -55,7 +55,7 @@ void CPlainWriteWindow::initToolbars() {
     namespace DU = util::directory;
 
     // Navigation toolbar
-    setKeyChooser( CKeyChooser::createInstance(modules(), 
+    setKeyChooser( CKeyChooser::createInstance(modules(),
         history(), key(), mainToolBar()) );
     mainToolBar()->addWidget(keyChooser());
 
@@ -166,7 +166,7 @@ bool CPlainWriteWindow::syncAllowed() const {
 
 void CPlainWriteWindow::initActions() {
     insertKeyboardActions(actionCollection());
-    
+
     QAction* action = actionCollection()->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
     bool ok = QObject::connect(action, SIGNAL(triggered()), this, SLOT(saveCurrentText()));
     Q_ASSERT(ok);

@@ -14,12 +14,9 @@
 #include "util/cresmgr.h"
 
 
-BibleTimeApp::BibleTimeApp( int & argc, char ** argv ) : QApplication(argc, argv) {
-//	initDCOP();
-    CResMgr::init_tr();
-}
-
 BibleTimeApp::~BibleTimeApp() {
+    // Prevent writing to the log file before the directory cache is init:
+    if (!m_init) return;
 
     //we can set this safely now because we close now (hopyfully without crash)
     CBTConfig::set(CBTConfig::crashedLastTime, false);
@@ -29,14 +26,3 @@ BibleTimeApp::~BibleTimeApp() {
     CLanguageMgr::destroyInstance();
     CSwordBackend::destroyInstance();
 }
-
-/*
-void BibleTimeApp::initDCOP() {
-	const bool dcopOk = dcopClient()->attach();
-	Q_ASSERT(dcopOk);
-	if (dcopOk) {
-		const Q3CString appId = dcopClient()->registerAs(kapp->name(), false);
-		//   dcopClient()->setDefaultObject("BibleTimeInterface");
-	}
-}
-*/

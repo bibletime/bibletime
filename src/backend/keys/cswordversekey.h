@@ -115,7 +115,7 @@ class CSwordVerseKey : public CSwordKey, public sword::VerseKey {
         virtual const char * rawKey() const;
 
     private:
-        /** Disable assignment operator	*/
+        /** Disable assignment operator    */
         CSwordVerseKey& operator= (const CSwordVerseKey&);
         /** Disable from base class to prevent compiler warnings */
         inline virtual CSwordVerseKey& operator= (const sword::VerseKey&) {
