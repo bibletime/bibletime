@@ -342,23 +342,23 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Show main toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Hauptwerkzeugleiste anzeigen</translation>
     </message>
     <message>
         <source>Show navigation bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Navigationsleiste anzeigen</translation>
     </message>
     <message>
         <source>Show works toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Werke-Symbolleiste anzeigen</translation>
     </message>
     <message>
         <source>Show tools toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Werkzeugleiste anzeigen</translation>
     </message>
     <message>
         <source>Show formatting toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Formatierungsleiste anzeigen</translation>
     </message>
 </context>
 <context>
@@ -504,31 +504,31 @@ This file is distributed under the same license as the Bibetime package.</transl
     <name>BtBibleKeyWidget</name>
     <message>
         <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
-        <translation type="unfinished">Durchlaufen Sie die Listeneinträge. Drücken Sie die Taste und bewegen Sie die Maus um nach vorn oder hinten durch die Liste zu laufen.</translation>
+        <translation>Durchlaufen Sie die Listeneinträge. Drücken Sie die Taste und bewegen Sie die Maus um nach vorn oder hinten durch die Liste zu laufen.</translation>
     </message>
     <message>
         <source>Next book</source>
-        <translation type="unfinished">Nächstes Buch</translation>
+        <translation>Nächstes Buch</translation>
     </message>
     <message>
         <source>Previous book</source>
-        <translation type="unfinished">Vorheriges Buch</translation>
+        <translation>Vorheriges Buch</translation>
     </message>
     <message>
         <source>Next chapter</source>
-        <translation type="unfinished">Nächstes Kapitel</translation>
+        <translation>Nächstes Kapitel</translation>
     </message>
     <message>
         <source>Previous chapter</source>
-        <translation type="unfinished">Vorheriges Kapitel</translation>
+        <translation>Vorheriges Kapitel</translation>
     </message>
     <message>
         <source>Next verse</source>
-        <translation type="unfinished">Nächster Vers</translation>
+        <translation>Nächster Vers</translation>
     </message>
     <message>
         <source>Previous verse</source>
-        <translation type="unfinished">Vorheriger Vers</translation>
+        <translation>Vorheriger Vers</translation>
     </message>
 </context>
 <context>
@@ -693,19 +693,19 @@ This file is distributed under the same license as the Bibetime package.</transl
     <name>BtEditBookmarkDialog</name>
     <message>
         <source>Edit Bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Lesezeichen editieren</translation>
     </message>
     <message>
         <source>Location:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ort:</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Titel:</translation>
     </message>
     <message>
         <source>Description:</source>
-        <translation type="unfinished"></translation>
+        <translation>Beschreibung:</translation>
     </message>
 </context>
 <context>
@@ -993,25 +993,6 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <source>NONE</source>
         <translation>NICHTS</translation>
-    </message>
-</context>
-<context>
-    <name>BtModuleIndexDialog</name>
-    <message>
-        <source>Preparing to index modules...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="unfinished">Abbrechen</translation>
-    </message>
-    <message>
-        <source>Creating indices</source>
-        <translation type="unfinished">Erstellung der Indizes</translation>
-    </message>
-    <message>
-        <source>Creating index for work: %1</source>
-        <translation type="unfinished">Erstelle Index für Werk: %1</translation>
     </message>
 </context>
 <context>
@@ -1456,15 +1437,15 @@ shortcut</source>
     </message>
     <message>
         <source>Edit bookmark...</source>
-        <translation type="unfinished"></translation>
+        <translation>Lesezeichen editieren...</translation>
     </message>
     <message>
         <source>Sort folder bookmarks...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordner-Lesezeichen sortieren...</translation>
     </message>
     <message>
         <source>Sort all bookmarks...</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle Lesezeichen sortieren...</translation>
     </message>
 </context>
 <context>
@@ -1831,23 +1812,23 @@ shortcut</source>
     <name>CModuleIndexDialog</name>
     <message>
         <source>Cancel</source>
-        <translation type="obsolete">Abbrechen</translation>
+        <translation>Abbrechen</translation>
     </message>
     <message>
         <source>Creating indices</source>
-        <translation type="obsolete">Erstellung der Indizes</translation>
+        <translation>Erstellung der Indizes</translation>
     </message>
     <message>
         <source>Indexing Is Cancelled</source>
-        <translation type="obsolete">Indizierung abgebrochen</translation>
+        <translation>Indizierung abgebrochen</translation>
     </message>
     <message>
         <source>Indexing is cancelled because modules are removed.</source>
-        <translation type="obsolete">Indizierung aufgrund entfernter Module abgebrochen.</translation>
+        <translation>Indizierung aufgrund entfernter Module abgebrochen.</translation>
     </message>
     <message>
         <source>Creating index for work: %1</source>
-        <translation type="obsolete">Erstelle Index für Werk: %1</translation>
+        <translation>Erstelle Index für Werk: %1</translation>
     </message>
 </context>
 <context>
@@ -2212,7 +2193,7 @@ Möchten Sie fortfahren?</translation>
     </message>
     <message>
         <source>Select all</source>
-        <translation type="unfinished">Alles auswählen</translation>
+        <translation>Alles auswählen</translation>
     </message>
 </context>
 <context>
@@ -3253,26 +3234,6 @@ Language name ppk</extracomment>
         <source>Unindexed works</source>
         <translation>Nicht indizierte Werke</translation>
     </message>
-    <message>
-        <source>Show this help message and exit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>open a clean session</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open the default Bible with the reference &lt;ref&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>For command-line arguments parsed by the Qt toolkit, see %1.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>All command-line arguments not recognized by BibleTime or Qt will be silently ignored.</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>QPushButton</name>
@@ -3443,11 +3404,11 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Select all</source>
-        <translation type="unfinished">Alles auswählen</translation>
+        <translation>Alles auswählen</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopieren</translation>
     </message>
 </context>
 <context>
@@ -3780,7 +3741,7 @@ Language name ppk</extracomment>
     <message>
         <source>One or more works need indexing before they can be searched.
 This could take a long time. Proceed with indexing?</source>
-        <translation type="obsolete">Für ein oder mehrere Werke müssen Indices erstellt werden, bevor darin gesucht werden kann. 
+        <translation>Für ein oder mehrere Werke müssen Indices erstellt werden, bevor darin gesucht werden kann. 
 Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     </message>
     <message>
@@ -3794,14 +3755,6 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     <message>
         <source>Show a graphical analysis of the search result</source>
         <translation>Eine grafische Analyse des Suchergebnisses anzeigen</translation>
-    </message>
-    <message>
-        <source>The following modules need to be indexed before they can be searched in:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Indexing could take a long time. Click &quot;Yes&quot; to index the modules and start the search, or &quot;No&quot; to cancel the search.</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3931,7 +3884,7 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     </message>
     <message>
         <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
-        <translation type="unfinished"></translation>
+        <translation>Standard-Werke werden genutzt, wenn kein bestimmtes Werk festgelegt wurde, zum Beispiel wenn ein Verweis auf eine Bibel oder ein Lexikon angeklickt wurde.</translation>
     </message>
 </context>
 <context>

@@ -42,7 +42,7 @@
   </authorgroup>
   
   <!-- TRANS:ROLES_OF_TRANSLATORS -->
-<copyright> <year>1999-2010</year> <holder>The &bibletime; Team</holder>
+<copyright> <year>1999-2010</year> <holder>Das &bibletime;-Team</holder>
 </copyright>
 
   <legalnotice>
@@ -68,7 +68,7 @@ von der &cbs; zur Verfügung gestellt werden.</para>
     <keyword>BibleTime</keyword>
     <keyword>SWORD</keyword>
     <keyword>Crosswire</keyword>
-    <keyword>Help dialog</keyword>
+    <keyword>Hilfe-Dialog</keyword>
   </keywordset>
 </bookinfo>
 &hdbkchap1; &hdbkchap2; &hdbkchap3; &hdbkchap4; &hdbkchap5;
