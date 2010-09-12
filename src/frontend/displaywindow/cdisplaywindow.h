@@ -40,10 +40,6 @@ class BibleTime;
 class CDisplayWindow : public QMainWindow {
         Q_OBJECT
     public:
-        enum WriteWindowType {
-            HTMLWindow = 1,
-            PlainTextWindow = 2
-        };
 
         /** Insert the keyboard accelerators of this window into the given actioncollection.*/
         static void insertKeyboardActions( BtActionCollection* const a );

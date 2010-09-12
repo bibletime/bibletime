@@ -44,8 +44,8 @@ class CHTMLWriteWindow : public CPlainWriteWindow  {
         virtual void initToolbars();
         virtual void initActions();
         static void insertKeyboardActions( BtActionCollection* const a );
-        virtual CDisplayWindow::WriteWindowType writeWindowType() {
-            return CDisplayWindow::HTMLWindow;
+        virtual CWriteWindow::WriteWindowType writeWindowType() {
+            return CWriteWindow::HTMLWindow;
         }
         /** Called to add actions to mainWindow toolbars */
         virtual void setupMainWindowToolBars();

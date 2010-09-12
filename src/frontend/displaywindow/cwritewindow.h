@@ -23,6 +23,11 @@ class QString;
 class CWriteWindow : public CDisplayWindow  {
         Q_OBJECT
     public:
+        enum WriteWindowType {
+            HTMLWindow = 1,
+            PlainTextWindow = 2
+        };
+
         static void insertKeyboardActions( BtActionCollection* const a );
 
         CWriteWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
@@ -51,7 +56,7 @@ class CWriteWindow : public CDisplayWindow  {
         * as backend in each write window implementation.
         */
         void setDisplayWidget( CDisplay* display );
-        virtual CDisplayWindow::WriteWindowType writeWindowType() = 0;
+        virtual CWriteWindow::WriteWindowType writeWindowType() = 0;
         virtual bool queryClose();
         virtual void saveCurrentText( const QString& key ) = 0;
         /** Called to add actions to mainWindow toolbars */

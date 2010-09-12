@@ -14,6 +14,7 @@
 
 #include <QList>
 #include "frontend/displaywindow/cdisplaywindow.h"
+#include "frontend/displaywindow/cwritewindow.h"
 #include "frontend/profile/cprofile.h"
 #include "frontend/profile/cprofilemgr.h"
 #include <QSignalMapper>
@@ -307,7 +308,7 @@ class BibleTime : public QMainWindow {
          */
         CDisplayWindow* createReadDisplayWindow(QList<CSwordModuleInfo*> modules, const QString& key);
         CDisplayWindow* createReadDisplayWindow(CSwordModuleInfo* module, const QString& key = QString::null);
-        CDisplayWindow* createWriteDisplayWindow(CSwordModuleInfo* module, const QString& key, const CDisplayWindow::WriteWindowType& type);
+        CDisplayWindow* createWriteDisplayWindow(CSwordModuleInfo* module, const QString& key, const CWriteWindow::WriteWindowType& type);
         CDisplayWindow* moduleEditPlain(CSwordModuleInfo *module);
         CDisplayWindow* moduleEditHtml(CSwordModuleInfo *module);
         void searchInModule(CSwordModuleInfo *module);

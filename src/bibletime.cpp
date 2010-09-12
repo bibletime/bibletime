@@ -207,7 +207,7 @@ CDisplayWindow* BibleTime::createReadDisplayWindow(CSwordModuleInfo* module, con
     return createReadDisplayWindow(list, key);
 }
 
-CDisplayWindow* BibleTime::createWriteDisplayWindow(CSwordModuleInfo* module, const QString& key, const CDisplayWindow::WriteWindowType& type) {
+CDisplayWindow* BibleTime::createWriteDisplayWindow(CSwordModuleInfo* module, const QString& key, const CWriteWindow::WriteWindowType& type) {
     qApp->setOverrideCursor( QCursor(Qt::WaitCursor) );
 
     QList<CSwordModuleInfo*> modules;
@@ -232,14 +232,14 @@ CDisplayWindow* BibleTime::moduleEditPlain(CSwordModuleInfo *module) {
     /// \todo Refactor this.
     return createWriteDisplayWindow(module,
                                     QString::null,
-                                    CDisplayWindow::PlainTextWindow);
+                                    CWriteWindow::PlainTextWindow);
 }
 
 CDisplayWindow* BibleTime::moduleEditHtml(CSwordModuleInfo *module) {
     /// \todo Refactor this.
     return createWriteDisplayWindow(module,
                                     QString::null,
-                                    CDisplayWindow::HTMLWindow);
+                                    CWriteWindow::HTMLWindow);
 }
 
 

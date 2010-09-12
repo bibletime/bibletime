@@ -46,8 +46,8 @@ CReadWindow* CDisplayWindowFactory::createReadInstance(QList<CSwordModuleInfo*> 
     return win;
 }
 
-CWriteWindow* CDisplayWindowFactory::createWriteInstance(QList<CSwordModuleInfo*> modules, CMDIArea* parent, const CDisplayWindow::WriteWindowType type) {
-    if (type == CDisplayWindow::HTMLWindow) {
+CWriteWindow* CDisplayWindowFactory::createWriteInstance(QList<CSwordModuleInfo*> modules, CMDIArea* parent, const CWriteWindow::WriteWindowType type) {
+    if (type == CWriteWindow::HTMLWindow) {
         return new CHTMLWriteWindow(modules, parent);
     }
     else {

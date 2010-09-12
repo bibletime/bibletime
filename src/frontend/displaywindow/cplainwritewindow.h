@@ -48,8 +48,8 @@ class CPlainWriteWindow : public CWriteWindow  {
         virtual void initView();
         virtual void initConnections();
         virtual void initToolbars();
-        virtual CDisplayWindow::WriteWindowType writeWindowType() {
-            return CDisplayWindow::PlainTextWindow;
+        virtual CWriteWindow::WriteWindowType writeWindowType() {
+            return CWriteWindow::PlainTextWindow;
         };
 
         /** Called to add actions to mainWindow toolbars */

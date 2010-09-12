@@ -11,6 +11,7 @@
 #define CDISPLAYWINDOWFACTORY_H
 
 #include "frontend/displaywindow/cdisplaywindow.h"
+#include "frontend/displaywindow/cwritewindow.h"
 
 
 class CMDIArea;
@@ -22,7 +23,7 @@ class CWriteWindow;
 class CDisplayWindowFactory {
     public:
         static CReadWindow* createReadInstance(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
-        static CWriteWindow* createWriteInstance(QList<CSwordModuleInfo*> modules, CMDIArea* parent, const CDisplayWindow::WriteWindowType type = CDisplayWindow::HTMLWindow);
+        static CWriteWindow* createWriteInstance(QList<CSwordModuleInfo*> modules, CMDIArea* parent, const CWriteWindow::WriteWindowType type = CWriteWindow::HTMLWindow);
         static const CSwordModuleInfo::ModuleType getModuleType(QObject* widget);
 
     private:
