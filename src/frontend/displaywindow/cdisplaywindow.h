@@ -31,7 +31,12 @@ class QToolBar;
 class BTHistory;
 class BibleTime;
 
-/** The base class for all display windows of BibleTime.
+/** The base class for all display windows of BibleTime. 
+  * 
+  * Inherits QMainWindow.
+  *
+  * Inherited by CReadWindow and CWriteWindow.
+  *
   * @author The BibleTime team
   */
 class CDisplayWindow : public QMainWindow {
@@ -41,6 +46,7 @@ class CDisplayWindow : public QMainWindow {
         /** Insert the keyboard accelerators of this window into the given actioncollection.*/
         static void insertKeyboardActions( BtActionCollection* const a );
 
+        /** Returns pointer to the mdi area object.*/
         inline CMDIArea *mdi() const {
             return m_mdi;
         }
@@ -59,7 +65,7 @@ class CDisplayWindow : public QMainWindow {
         /** Store the settings of this window in the given CProfileWindow object.*/
         virtual void storeProfileSettings( Profile::CProfileWindow* profileWindow ) = 0;
 
-        /** Store the settings of this window in the given profile window.*/
+        /** Load the settings the given CProfileWindow object into this window.*/
         virtual void applyProfileSettings( Profile::CProfileWindow* profileWindow ) = 0;
 
         /** Returns the display options used by this display window. */

@@ -81,7 +81,7 @@ class QSignalMapper;
   * lexicon and dictionaries. CHTMLWriteWindow and CPlainWriteWindows are used for editing the Personal Commentary.
   * </p><p>
   *
-  * The class CDisplay is the class that various views with in the windows are derived.
+  * The class CDisplayWindow is the class that various views with in the windows are derived.
   * </p><p>
   *
   * Another important part of the frontend are the keychoosers.

@@ -15,7 +15,11 @@
 
 class QAction;
 
-/** The WYSIWYG implementation of the editor.
+/** 
+ * The write window class which offers a WYSIWYG text editor for creating a personal commentary.
+  *
+  * Inherits CPlainWriteWindow.
+  *
   * @author The BibleTime team
   */
 class CHTMLWriteWindow : public CPlainWriteWindow  {
@@ -28,11 +32,15 @@ class CHTMLWriteWindow : public CPlainWriteWindow  {
         * Store the settings of this window in the given CProfileWindow object.
         */
         virtual void storeProfileSettings( Profile::CProfileWindow* );
+
         /**
         * Store the settings of this window in the given profile window.
         */
         virtual void applyProfileSettings( Profile::CProfileWindow* );
 
+        /**
+         * Returns true if the sync toolbar is enabled.
+         */
         virtual bool syncAllowed() const;
 
     protected:
@@ -43,11 +51,18 @@ class CHTMLWriteWindow : public CPlainWriteWindow  {
         virtual void initConnections();
         virtual void initToolbars();
         virtual void initActions();
+
+        /**
+        * Insert the keyboard accelerators of this window into the given KAccel object.
+        */
         static void insertKeyboardActions( BtActionCollection* const a );
+
         virtual CWriteWindow::WriteWindowType writeWindowType() {
             return CWriteWindow::HTMLWindow;
         }
-        /** Called to add actions to mainWindow toolbars */
+        /** 
+         * Called to add actions to mainWindow toolbars 
+         */
         virtual void setupMainWindowToolBars();
 
     protected slots:

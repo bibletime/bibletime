@@ -17,7 +17,12 @@ class BtActionCollection;
 class QAction;
 class QString;
 
-/** The write window class which offers a plain editor for source code editing.
+/** The write window class which offers a plain text editor for creating a personal commentary.
+  *
+  * Inherits CWriteWindow.
+  *
+  * Inherited by CHTMLWriteWindow.
+  *
   * @author The BibleTime team
   */
 class CPlainWriteWindow : public CWriteWindow  {
@@ -39,6 +44,10 @@ class CPlainWriteWindow : public CWriteWindow  {
          * Setups the popup menu of this display widget.
          */
         virtual void setupPopupMenu();
+
+        /**
+         * Returns true if the sync toolbar is enabled.
+         */
         virtual bool syncAllowed() const;
 
     protected: // Protected methods

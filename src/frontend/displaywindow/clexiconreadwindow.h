@@ -22,8 +22,13 @@ class CSwordKey;
 class QAction;
 class QMenu;
 
-/**
-  *@author The BibleTime team
+/** The class used to display lexicons. It is also used as the class that other display window types are derived from.
+  *
+  * Inherits CReadWindow.
+  *
+  * Inherited by CBibleReadWindow, CBookReadWindow, and CCommentaryReadWindow.
+  *
+  * @author The BibleTime team
   */
 class CLexiconReadWindow : public CReadWindow  {
         Q_OBJECT
@@ -31,9 +36,7 @@ class CLexiconReadWindow : public CReadWindow  {
         CLexiconReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
         virtual ~CLexiconReadWindow();
 
-        /**
-        * Reimplementation of CReadWindow::insertKeyboardActions();
-        */
+        /** Insert the keyboard accelerators of this window into the given actioncollection.*/
         static void insertKeyboardActions( BtActionCollection* const a );
 
     public slots:

@@ -20,12 +20,18 @@ class BtActionCollection;
 class QResizeEvent;
 
 /** The base class for all read-only display windows.
+  *
+  * Inherits CDisplayWindow.
+  *
+  * Inherited by CLexiconReadWindow
+  *
   * @author The BibleTime team
   */
 class CReadWindow : public CDisplayWindow  {
         Q_OBJECT
     public:
 
+        /** Insert the keyboard accelerators of this window into the given actioncollection.*/
         static void insertKeyboardActions( BtActionCollection* const a );
 
         CReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
@@ -35,7 +41,7 @@ class CReadWindow : public CDisplayWindow  {
         */
         virtual void storeProfileSettings(Profile::CProfileWindow * const settings);
         /**
-        * Store the settings of this window in the given CProfileWindow object.
+        * Load the settings the given CProfileWindow object into this window.
         */
         virtual void applyProfileSettings(Profile::CProfileWindow * const settings);
 
@@ -45,9 +51,11 @@ class CReadWindow : public CDisplayWindow  {
         */
         virtual void setDisplayWidget( CDisplay* newDisplay );
         /**
+         * Reimplemented Qt function for resize of window.
          */
         virtual void resizeEvent(QResizeEvent* e);
-        ///** Called to add actions to mainWindow toolbars */
+
+        /** Called to add actions to mainWindow toolbars.*/
         virtual void setupMainWindowToolBars() = 0;
 
     protected slots:
@@ -64,8 +72,8 @@ class CReadWindow : public CDisplayWindow  {
         * Update the status of the popup menu entries.
         */
         virtual void copyDisplayedText();
-        /** Open the search dialog with the strong info of the last clicked word.
-         *
+        /** 
+         * Open the search dialog with the strong info of the last clicked word.
         */
         void openSearchStrongsDialog();
 

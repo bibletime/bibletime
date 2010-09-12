@@ -18,6 +18,11 @@ class CWriteDisplay;
 class QString;
 
 /** The base class for all write-only display windows.
+  *
+  * Inherits CDisplayWindow.
+  *
+  * Inherited by CPlainWriteWindow.
+  *
   *@author The BibleTime team
   */
 class CWriteWindow : public CDisplayWindow  {
@@ -28,6 +33,7 @@ class CWriteWindow : public CDisplayWindow  {
             PlainTextWindow = 2
         };
 
+        /** Insert the keyboard accelerators of this window into the given actioncollection.*/
         static void insertKeyboardActions( BtActionCollection* const a );
 
         CWriteWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
@@ -37,10 +43,14 @@ class CWriteWindow : public CDisplayWindow  {
         */
         virtual void storeProfileSettings(Profile::CProfileWindow * const settings);
         /**
-        * Store the settings of this window in the given CProfileWindow object.
+        * Load the settings the given CProfileWindow object into this window.
         */
         virtual void applyProfileSettings(Profile::CProfileWindow * const settings);
+
+        /** Initializes the signal / slot connections of this display window.*/
         virtual void initConnections();
+
+        /** Initializes the internel keyboard actions.*/
         virtual void initActions();
 
     public slots:
@@ -52,13 +62,19 @@ class CWriteWindow : public CDisplayWindow  {
 
     protected: // Protected methods
         /**
-        * Saves the given text as text of the given key. Use this function
-        * as backend in each write window implementation.
+        * Set the displayWidget which is a subclass of QWebPage.
         */
         void setDisplayWidget( CDisplay* display );
+
+        /** Returns the type of the write window.*/
         virtual CWriteWindow::WriteWindowType writeWindowType() = 0;
+
+        /** Returns true if the window may be closed.*/
         virtual bool queryClose();
+
+        /** Saves the text for the current key. Directly writes the changed text into the module. */
         virtual void saveCurrentText( const QString& key ) = 0;
+
         /** Called to add actions to mainWindow toolbars */
         virtual void setupMainWindowToolBars() = 0;
 
