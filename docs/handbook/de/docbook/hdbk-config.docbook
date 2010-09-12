@@ -12,7 +12,7 @@ von <menuchoice><guimenu>Einstellungen</guimenu></menuchoice>
 
     <sect2 id="hdbk-config-bt-display">
       <title>
-        <guimenu>Display</guimenu>
+        <guimenu>Anzeige</guimenu>
       </title>
       <para>Das Startverhalten kann angepasst werden. Wählen Sie aus den folgenden
 Optionen aus: 
@@ -28,7 +28,7 @@ Vorlage wird im rechten Abschnitt eine Vorschau angezeigt,</para>
 
     <sect2 id="hdbk-config-bt-desk">
       <title>
-        <guimenu>Desk</guimenu>
+        <guimenu>Arbeitsfläche</guimenu>
       </title>
       <para>Viele Funktionen, die vom &sword;-Backend zur Verfügung gestellt werden,
 können nun in &bibletime; konfiguriert werden. Diese Funktionseigenschaften
@@ -43,7 +43,7 @@ von Textfiltern, können Sie die Erscheinungsform des Textes bestimmen.</para>
 
     <sect2 id="hdbk-config-bt-languages">
       <title>
-        <guimenu>Languages</guimenu>
+        <guimenu>Sprachen</guimenu>
       </title>
       <para>Hier können Sie angeben, welche Sprache für die Buchnamen der Bibel
 verwendet werden soll. Stellen Sie (falls verfügbar) ihre Muttersprache ein,
@@ -58,7 +58,7 @@ spezifizieren.</para>
         <imageobject> <imagedata fileref="ss_configfonts.png" width="100%"
 contentdepth="100%" scalefit="1" format="PNG" /> </imageobject>
         <textobject>
-          <phrase>Options Dialog - fonts</phrase>
+          <phrase>Der Optionendialog - Schriften</phrase>
         </textobject>
         <caption>
           <para>Der Optionendialog - Schriften.</para>
@@ -131,7 +131,7 @@ Zeichenbereich ab.</entry>
                 <entry>
                   <ulink
 url="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;cat_id=FontDownloads">
-SIL unicode fonts</ulink>
+SIL Unicode-Schriftarten</ulink>
                 </entry>
                 <entry>Exzellente Unicode-Schriftarten des Summer Institute of Linguistics.</entry>
               </row>
@@ -143,8 +143,8 @@ SIL unicode fonts</ulink>
               </row>
               <row>
                 <entry>
-                  <ulink url="ftp://ftp.crosswire.org/pub/sword/iso/latest/FONTS/">
-Crosswire's font directory</ulink>
+                  <ulink url="ftp://ftp.crosswire.org/pub/sword/iso/latest/FONTS/"> Crosswires
+Schriftarten-Verzeichnis</ulink>
                 </entry>
 
                 <entry>Verschiedene Schriften sind auf der FTP-Site von &cbs; verfügbar.</entry>
@@ -184,7 +184,7 @@ ranges and the Unicode fonts that support them</ulink>).</para>
 
     <sect2 id="hdbk-config-bt-shortcuts">
       <title>
-        <guimenu>Shortcuts</guimenu>
+        <guimenu>Tastenkürzel</guimenu>
       </title>
 
       <para>Tastenkürzel (ehemals HotKeys) sind spezielle Tastenbefehle, die an Stelle

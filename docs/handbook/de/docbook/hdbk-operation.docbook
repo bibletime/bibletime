@@ -2,20 +2,22 @@
   <title>Programmbedienung</title>
   <sect1 id="hdbk-op-overview">
     <title>Programmüberblick</title>
-    <para>This is what a typical &bibletime; session looks like: <mediaobject>
+    <para>So sieht eine typische &bibletime;-Sitzung aus: <mediaobject>
       <imageobject> <imagedata fileref="ss_mainterms.png" width="100%"
 contentdepth="100%" scalefit="1" format="PNG" /> </imageobject>
       <textobject>
-        <phrase>The &bibletime; application window</phrase>
+        <phrase>Das &bibletime;-Applikationsfenster</phrase>
       </textobject>
-    </mediaobject> You can easily see the different parts of the
-application. The top left window is used to open installed works in the
-Bookshelf tab, and with the Bookmarks tab you can manage your bookmarks. The
-little "Mag" window below the Bookshelf is used to display extra information
-that is embedded in documents. When you move your mouse over a footnote
-marker, for example, then the Mag will display the actual content of the
-footnote. The toolbar gives you quick access to important functions, and the
-Desk on the right side is where you do your real work.</para>
+    </mediaobject>Sie können leicht die verschiedenen Abschnitte
+des Applikations-Fensters erkennen. Das Fenster oben links erlaubt das
+Öffnen installierter Werke im Bücherregal-Reiter. Mit dem Lesezeichen-Reiter
+können Sie Ihre Lesezeichen verwalten. Das kleine "Lupen"-Fenster unterhalb
+des Bücherregals zeigt in Dokumenten eingebettete Extra-Informationen
+an. Wenn Sie beispielsweise Ihre Maus über Fußnoten-Markierungen bewegen,
+wird das Lupenfenster den eigentlichen Inhalt der Fußnote anzeigen. Die
+Werkzeugleiste erlaubt Ihnen den schnellen Zugriff auf wichtige Funktionen
+und mittels der Arbeitsfläche auf der rechten Seite verrichten Sie Ihre
+eigentliche Arbeit.</para>
 
     <para>Wir fahren fort, indem wir nun die verschiedenen Teile der Anwendung einzeln
 betrachten.</para>
@@ -250,7 +252,7 @@ Gott'.</para>
 von einem ':' und dem Suchbegriff ein. Beispiele sind in der unteren Tabelle
 aufgeführt.</para>
 
-        <para>Available text types: <table id="hd-op-search-config-syntax-table">
+        <para>Verfügbare Textarten: <table id="hd-op-search-config-syntax-table">
 	  <title>Sucharten</title>
           <tgroup cols="3">
             <thead>
