@@ -298,10 +298,10 @@ static QToolBar* createToolBar(const QString& name, QWidget* parent, bool visibl
 
 void BibleTime::clearMdiToolBars() {
     // Clear main window toolbars
-    navToolBar()->clear();
-    worksToolBar()->clear();
-    toolsToolBar()->clear();
-    formatToolBar()->clear();
+    m_navToolBar->clear();
+    m_worksToolBar->clear();
+    m_toolsToolBar->clear();
+    m_formatToolBar->clear();
 }
 
 void BibleTime::createMenuAndToolBar()
@@ -319,9 +319,9 @@ void BibleTime::createMenuAndToolBar()
     addToolBar(m_navToolBar);
 
     m_worksToolBar = new BtModuleChooserBar(this);
-    worksToolBar()->setObjectName("WorksToolBar");
-    worksToolBar()->setVisible(visible);
-    addToolBar(worksToolBar());
+    m_worksToolBar->setObjectName("WorksToolBar");
+    m_worksToolBar->setVisible(visible);
+    addToolBar(m_worksToolBar);
 
     m_toolsToolBar = createToolBar("ToolsToolBar", this, visible);
     addToolBar(m_toolsToolBar);
