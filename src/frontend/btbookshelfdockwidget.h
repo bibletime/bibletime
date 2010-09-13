@@ -21,7 +21,10 @@
 
 class QAction;
 class QActionGroup;
+class QLabel;
 class QMenu;
+class QPushButton;
+class QStackedWidget;
 
 class BtBookshelfDockWidget: public QDockWidget {
         Q_OBJECT
@@ -53,9 +56,14 @@ class BtBookshelfDockWidget: public QDockWidget {
         void slotModuleChecked(CSwordModuleInfo *module, bool checked);
         void slotItemActionTriggered(QAction *action);
         void slotPrepareItemContextMenu();
+        void slotModulesChanged();
 
     protected:
+        QStackedWidget    *m_stackedWidget;
         BtBookshelfWidget *m_bookshelfWidget;
+        QWidget           *m_welcomeWidget;
+            QLabel            *m_installLabel;
+            QPushButton       *m_installButton;
 
         // Item context menu:
         QMenu *m_itemContextMenu;

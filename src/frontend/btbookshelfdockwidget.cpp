@@ -14,9 +14,13 @@
 
 #include <QAction>
 #include <QActionGroup>
+#include <QLabel>
 #include <QMenu>
 #include <QMessageBox>
+#include <QPushButton>
 #include <QSettings>
+#include <QStackedWidget>
+#include <QVBoxLayout>
 #include "backend/config/cbtconfig.h"
 #include "backend/managers/cswordbackend.h"
 #include "bibletime.h"
@@ -44,14 +48,35 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
     // Setup actions and menus:
     initMenus();
 
-    // Setup widgets:
+    BtBookshelfModel *bookshelfModel = CSwordBackend::instance()->model();
+
+    // Setup bookshelf widgets:
     m_bookshelfWidget = new BtBookshelfWidget(this);
     m_bookshelfWidget->setTreeModel(treeModel);
-    m_bookshelfWidget->setSourceModel(CSwordBackend::instance()->model());
+    m_bookshelfWidget->setSourceModel(bookshelfModel);
     m_bookshelfWidget->setItemContextMenu(m_itemContextMenu);
     m_bookshelfWidget->groupingBookshelfAction()->setVisible(false);
     /// \bug The correct grouping action is not selected on startup.
-    setWidget(m_bookshelfWidget);
+
+    // Setup welcome widgets:
+    m_welcomeWidget = new QWidget(this);
+    QVBoxLayout *welcomeLayout = new QVBoxLayout;
+    m_installLabel = new QLabel(this);
+    m_installLabel->setWordWrap(true);
+    m_installLabel->setAlignment(Qt::AlignHCenter | Qt::AlignBottom);
+    welcomeLayout->addWidget(m_installLabel, 0, Qt::AlignHCenter | Qt::AlignBottom);
+    m_installButton = new QPushButton(this);
+    welcomeLayout->addWidget(m_installButton, 0, Qt::AlignHCenter | Qt::AlignTop);
+    m_welcomeWidget->setLayout(welcomeLayout);
+
+    // Setup stacked widget:
+    m_stackedWidget = new QStackedWidget(this);
+    m_stackedWidget->addWidget(m_bookshelfWidget);
+    m_stackedWidget->addWidget(m_welcomeWidget);
+    m_stackedWidget->setCurrentWidget(bookshelfModel->moduleList().empty()
+                                      ? m_welcomeWidget
+                                      : m_bookshelfWidget);
+    setWidget(m_stackedWidget);
 
     // Connect signals:
     connect(m_bookshelfWidget->treeView(), SIGNAL(moduleActivated(CSwordModuleInfo*)),
@@ -62,6 +87,12 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
             this,      SIGNAL(groupingOrderChanged(BtBookshelfTreeModel::Grouping)));
     connect(m_bookshelfWidget->showHideAction(), SIGNAL(toggled(bool)),
             treeModel,                           SLOT(setCheckable(bool)));
+    connect(bookshelfModel, SIGNAL(rowsInserted(const QModelIndex&,int,int)),
+            this,           SLOT(slotModulesChanged()));
+    connect(bookshelfModel, SIGNAL(rowsRemoved(const QModelIndex&,int,int)),
+            this,           SLOT(slotModulesChanged()));
+    connect(m_installButton,       SIGNAL(clicked()),
+            BibleTime::instance(), SLOT(slotSwordSetupDialog()));
 
     retranslateUi();
 }
@@ -128,6 +159,10 @@ void BtBookshelfDockWidget::retranslateUi() {
     m_itemEditHtmlAction->setText(tr("&HTML"));
     m_itemUnlockAction->setText(tr("&Unlock..."));
     m_itemAboutAction->setText(tr("&About..."));
+
+    m_installLabel->setText(tr("There are currently no works installed. Please "
+                               "click the button below to install new works."));
+    m_installButton->setText(tr("&Install works..."));
 }
 
 BtBookshelfTreeModel::Grouping BtBookshelfDockWidget::loadGroupingSetting() const {
@@ -216,4 +251,11 @@ void BtBookshelfDockWidget::slotPrepareItemContextMenu() {
     m_itemSearchAction->setEnabled(!module->isLocked());
     m_itemEditMenu->setEnabled(module->isWritable());
     m_itemUnlockAction->setEnabled(module->isLocked());
+}
+
+void BtBookshelfDockWidget::slotModulesChanged() {
+    const BtBookshelfModel *bookshelfModel = CSwordBackend::instance()->model();
+    m_stackedWidget->setCurrentWidget(bookshelfModel->moduleList().empty()
+                                      ? m_welcomeWidget
+                                      : m_bookshelfWidget);
 }
