@@ -13,17 +13,9 @@
 #include "frontend/bookshelfmanager/installpage/btinstallmodulechooserdialogmodel.h"
 
 #include <QBrush>
-#include <QMutex>
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
 
-
-namespace {
-
-QMutex dataChangedMutex;
-bool dataChangedFired = false;
-
-}
 
 #define MODULEPOINTERFORINDEX(i) static_cast<CSwordModuleInfo *>(\
     BtBookshelfTreeModel::data((i), BtBookshelfModel::ModulePointerRole).value<void*>())
@@ -31,12 +23,13 @@ bool dataChangedFired = false;
 BtInstallModuleChooserDialogModel::BtInstallModuleChooserDialogModel(
         const Grouping &grouping,
         QObject *parent)
-    : BtBookshelfTreeModel(grouping, parent)
+    : BtBookshelfTreeModel(grouping, parent), m_dataChangedFired(false)
 {
     setDefaultChecked(BtBookshelfTreeModel::CHECKED);
     setCheckable(true);
     connect(this, SIGNAL(dataChanged(QModelIndex,QModelIndex)),
-            this, SLOT(parentDataChanged(QModelIndex,QModelIndex)));
+            this, SLOT(parentDataChanged(QModelIndex,QModelIndex)),
+            Qt::DirectConnection);
 }
 
 BtInstallModuleChooserDialogModel::~BtInstallModuleChooserDialogModel() {
@@ -112,19 +105,10 @@ void BtInstallModuleChooserDialogModel::parentDataChanged(const QModelIndex &top
     Q_UNUSED(topLeft);
     Q_UNUSED(bottomRight);
 
-    dataChangedMutex.lock();
-    if (dataChangedFired) {
-        dataChangedMutex.unlock();
-        return;
-    }
-    dataChangedFired = true;
-    dataChangedMutex.unlock();
-
+    if (m_dataChangedFired) return;
+    m_dataChangedFired = true;
     resetData();
-
-    dataChangedMutex.lock();
-    dataChangedFired = false;
-    dataChangedMutex.unlock();
+    m_dataChangedFired = false;
 }
 
 bool BtInstallModuleChooserDialogModel::isMulti(CSwordModuleInfo *m1) const {

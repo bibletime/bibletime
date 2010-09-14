@@ -38,6 +38,7 @@ class BtInstallModuleChooserDialogModel: public BtBookshelfTreeModel {
 
     private:
         QMap<QString, int> m_nameCounts;
+        bool m_dataChangedFired;
 };
 
 #endif // BTINSTALLMODULECHOOSERDIALOGMODEL_H
