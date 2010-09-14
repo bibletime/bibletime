@@ -15,6 +15,7 @@
 #include <QBrush>
 #include <QMutex>
 #include "backend/drivers/cswordmoduleinfo.h"
+#include "backend/managers/cswordbackend.h"
 
 
 namespace {
@@ -51,14 +52,34 @@ QVariant BtInstallModuleChooserDialogModel::data(const QModelIndex &i, int role)
             if (isMulti(i)) return QBrush(Qt::white);
             return BtBookshelfTreeModel::data(i, role);
         case Qt::DisplayRole:
-            if (i.column() == 1) {
-                CSwordModuleInfo *module = MODULEPOINTERFORINDEX(index(i.row(), 0, i.parent()));
-                if (module != 0) return module->property("installSourceName");
+            switch (i.column()) {
+                case 0:
+                    return BtBookshelfTreeModel::data(i, role);
+                case 1:
+                {
+                    CSwordModuleInfo *module = MODULEPOINTERFORINDEX(index(i.row(), 0, i.parent()));
+                    if (module != 0) return module->property("installSourceName");
+                    break;
+                }
+                case 2:
+                {
+                    CSwordModuleInfo *module = MODULEPOINTERFORINDEX(index(i.row(), 0, i.parent()));
+                    if (module == 0) break;
+                    CSwordBackend *b = CSwordBackend::instance();
+                    CSwordModuleInfo *imodule = b->findModuleByName(module->name());
+                    if (imodule == 0) {
+                        return module->config(CSwordModuleInfo::ModuleVersion);
+                    } else {
+                        return imodule->config(CSwordModuleInfo::ModuleVersion)
+                               + " => "
+                               + module->config(CSwordModuleInfo::ModuleVersion);
+                    }
+                }
+                default: break;
             }
         default:
             if (i.column() == 0) return BtBookshelfTreeModel::data(i, role);
     }
-
 
     return QVariant();
 }
@@ -66,7 +87,7 @@ QVariant BtInstallModuleChooserDialogModel::data(const QModelIndex &i, int role)
 int BtInstallModuleChooserDialogModel::columnCount(const QModelIndex &parent) const {
     Q_UNUSED(parent);
 
-    return 2;
+    return 3;
 }
 
 QVariant BtInstallModuleChooserDialogModel::headerData(int section,
@@ -74,11 +95,11 @@ QVariant BtInstallModuleChooserDialogModel::headerData(int section,
                                                        int role) const
 {
     if (role == Qt::DisplayRole && orientation == Qt::Horizontal) {
-        if (section == 0) {
-            return tr("Work");
-        }
-        else if (section == 1) {
-            return tr("Installation source");
+        switch (section) {
+            case 0: return tr("Work");
+            case 1: return tr("Installation source");
+            case 2: return tr("Version");
+            default: break;
         }
     }
 

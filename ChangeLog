@@ -1,6 +1,8 @@
 2010-09-14 Jaak Ristioja <ristioja@gmail.com>
     * In case no works are installed, the bookshelf dock now provides a label
       and "Install works..." button to guide the user to install new modules.
+    * Made the install page confirmation dialog also show the versions of the
+      modules to be installed / upgraded.
 
 2010-08-28 Jaak Ristioja <ristioja@gmail.com>
     * Removed support for configuration migration from KDE3.
