@@ -12,11 +12,6 @@
 
 #include "frontend/bookshelfmanager/btconfigdialog.h"
 
-#include <QString>
-
-// Sword includes:
-#include <installmgr.h>
-
 
 class BtSourceWidget;
 class QComboBox;
@@ -59,7 +54,6 @@ class BtInstallPage : public BtConfigPage {
     private:
 
         QComboBox* m_pathCombo;
-        //QPushButton* m_configurePathButton;
         QToolButton* m_configurePathButton;
         BtSourceWidget* m_sourceWidget;
         QPushButton* m_installButton;
