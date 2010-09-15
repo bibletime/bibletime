@@ -16,7 +16,7 @@
 #include <QThread>
 #include "backend/managers/cswordbackend.h"
 #include "frontend/bookshelfmanager/btinstallmgr.h"
-#include "frontend/bookshelfmanager/instbackend.h"
+#include "backend/btinstallbackend.h"
 
 // Sword includes:
 #include <filemgr.h>
@@ -45,8 +45,8 @@ void BtInstallThread::run() {
     emit preparingInstall(m_module, m_source);
     //This is 0 before set here - remember when using the value when cancelling
     // the installation before this has been run
-    m_installSource = QSharedPointer<sword::InstallSource>(new sword::InstallSource(instbackend::source(m_source)));
-    m_backendForSource = QSharedPointer<CSwordBackend>(instbackend::backend(*m_installSource));
+    m_installSource = QSharedPointer<sword::InstallSource>(new sword::InstallSource(BtInstallBackend::source(m_source)));
+    m_backendForSource = QSharedPointer<CSwordBackend>(BtInstallBackend::backend(*m_installSource));
 
     //make sure target/mods.d and target/modules exist
     /// \todo move this to some common precondition
@@ -74,7 +74,7 @@ void BtInstallThread::run() {
     // manager for the destination path
     sword::SWMgr lMgr( m_destination.toLatin1() );
 
-    if (instbackend::isRemote(*m_installSource)) {
+    if (BtInstallBackend::isRemote(*m_installSource)) {
         qDebug() << "calling install";
         int status = m_iMgr->installModule(&lMgr, 0, m_module.toLatin1(), m_installSource.data());
         if (status != 0) {
@@ -150,7 +150,7 @@ void BtInstallThread::removeModule() {
     CSwordModuleInfo* m;
     m = CSwordBackend::instance()->findModuleByName(m_module);
     if (!m) {
-        m = instbackend::backend(instbackend::source(m_destination.toLatin1()))->findModuleByName(m_module);
+        m = BtInstallBackend::backend(BtInstallBackend::source(m_destination.toLatin1()))->findModuleByName(m_module);
     }
     if (m) { //module found?
         qDebug() << "BtInstallThread::removeModule, module" << m_module << "found";
@@ -182,8 +182,8 @@ void BtInstallThread::removeTempFiles() {
     // (take the remote conf file for this module, take DataPath,
     // take the absolute path of the InstallMgr)
 
-    //sword::InstallSource is = instbackend::source(m_source);
-    if (instbackend::isRemote(*m_installSource)) {
+    //sword::InstallSource is = BtInstallBackend::source(m_source);
+    if (BtInstallBackend::isRemote(*m_installSource)) {
         // get the path for the module temp files
         CSwordModuleInfo* mInfo = m_backendForSource->findModuleByName(m_module);
         QString dataPath = mInfo->config(CSwordModuleInfo::AbsoluteDataPath);

@@ -20,7 +20,7 @@
 
 class CSwordModuleInfo;
 
-namespace instbackend {
+namespace BtInstallBackend {
 
 /** Adds the source to the backend. */
 bool addSource(sword::InstallSource& source);
@@ -66,6 +66,6 @@ QDir swordDir();
 /** Returns backend Sword manager for the source. */
 CSwordBackend* backend( const sword::InstallSource& is);
 
-}
+} // namespace BtInstallBackend
 
 #endif

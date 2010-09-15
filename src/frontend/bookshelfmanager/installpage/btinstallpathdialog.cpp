@@ -20,7 +20,7 @@
 #include <QString>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
-#include "frontend/bookshelfmanager/instbackend.h"
+#include "backend/btinstallbackend.h"
 #include "util/dialogutil.h"
 #include "util/directory.h"
 #include "util/cresmgr.h"
@@ -46,7 +46,7 @@ BtInstallPathDialog::BtInstallPathDialog() {
                         tr("Configure bookshelf folders"), l1 + QString("<small><br/><br/>") + l2 + QString("</small>"));
     mainLayout->addWidget(mainLabel);
 
-    QString swordConfPath = instbackend::swordConfigFilename();
+    QString swordConfPath = BtInstallBackend::swordConfigFilename();
     /// \todo After releasing 2.4, change the following line to: QLabel *confPathLabel = new QLabel(tr("Configuration file for the folders is: <b>%1</b>").arg(swordConfPath), this);
     QLabel* confPathLabel = new QLabel(tr("Configuration file for the folders is: ").append("<b>%1</b>").arg(swordConfPath), this);
     confPathLabel->setWordWrap(true);
@@ -64,7 +64,7 @@ BtInstallPathDialog::BtInstallPathDialog() {
     m_nonexistingItem = new QTreeWidgetItem(m_swordPathListBox, QStringList(tr("Nonexistent folders")));;
     m_nonexistingItem->setFlags(Qt::ItemIsEnabled);
 
-    QStringList targets = instbackend::targetList();
+    QStringList targets = BtInstallBackend::targetList();
 
     foreach (QString pathname, targets)  {
         addPathToList(pathname);
@@ -161,7 +161,7 @@ void BtInstallPathDialog::addPathToList(QString pathname) {
             i = new QTreeWidgetItem(m_readableItem, QStringList(pathname) );
         }
     }
-    if (i && QDir(pathname) == instbackend::swordDir()) {
+    if (i && QDir(pathname) == BtInstallBackend::swordDir()) {
         i->setFlags(Qt::NoItemFlags);
         i->setToolTip(0, tr("This default folder in your home directory can't be removed"));
     }
@@ -230,7 +230,7 @@ void BtInstallPathDialog::writeSwordConfig() {
         ++it;
     }
     qDebug() << "save the target list" << targets;
-    instbackend::setTargetList(targets); //creates new Sword config
+    BtInstallBackend::setTargetList(targets); //creates new Sword config
 }
 
 void BtInstallPathDialog::accept() {

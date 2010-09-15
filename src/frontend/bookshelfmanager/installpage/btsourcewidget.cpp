@@ -29,7 +29,7 @@
 #include "frontend/bookshelfmanager/installpage/btinstallpage.h"
 #include "frontend/bookshelfmanager/installpage/btinstallprogressdialog.h"
 #include "frontend/bookshelfmanager/installpage/btsourcearea.h"
-#include "frontend/bookshelfmanager/instbackend.h"
+#include "backend/btinstallbackend.h"
 #include "util/dialogutil.h"
 
 
@@ -62,7 +62,7 @@ void BtSourceWidget::slotDelete() {
                                 QMessageBox::Yes | QMessageBox::No);
 
     if (ret == QMessageBox::Yes) {
-        instbackend::deleteSource(currentSourceName());
+        BtInstallBackend::deleteSource(currentSourceName());
         initSources();
     }
 }
@@ -76,7 +76,7 @@ void BtSourceWidget::slotAdd() {
         if (!dlg->wasRemoteListAdded()) {
             newSource = dlg->getSource();
             if ( !((QString)newSource.type.c_str()).isEmpty() ) { // we have a valid source to add
-                instbackend::addSource(newSource);
+                BtInstallBackend::addSource(newSource);
             }
         }
         initSources();
@@ -100,17 +100,17 @@ void BtSourceWidget::slotRefresh() {
     connect(m_progressDialog, SIGNAL(canceled()), SLOT(slotRefreshCanceled()));
 
     // BACKEND CODE **********************************************************
-    // would this be possible: instbackend::refreshSource( arguments );
+    // would this be possible: BtInstallBackend::refreshSource( arguments );
     qDebug() << "void BtSourceWidget::slotRefresh 1";
     BtInstallMgr iMgr;
     m_currentInstallMgr = &iMgr; //for the progress dialog
-    sword::InstallSource is = instbackend::source(sourceName);
+    sword::InstallSource is = BtInstallBackend::source(sourceName);
     bool success = false;
     qDebug() << "void BtSourceWidget::slotRefresh 2";
     // connect this directly to the dialog setValue(int) if possible
     connect(&iMgr, SIGNAL(percentCompleted(const int, const int)), SLOT(slotRefreshCompleted(const int, const int)));
 
-    if (instbackend::isRemote(is)) {
+    if (BtInstallBackend::isRemote(is)) {
         m_progressDialog->show();
         qApp->processEvents();
         this->slotRefreshCompleted(0, 0);
@@ -185,8 +185,8 @@ void BtSourceWidget::initSources() {
     m_sourceNameList.clear();
 
     // ***** Use the backend to get the list of sources *****
-    instbackend::initPassiveFtpMode();
-    QStringList sourceList = instbackend::sourceList();
+    BtInstallBackend::initPassiveFtpMode();
+    QStringList sourceList = BtInstallBackend::sourceList();
     qDebug() << "got the source list from backend:" << sourceList;
     // Add a default entry, the Crosswire main repository
     if (!sourceList.count()) {
@@ -197,9 +197,9 @@ void BtSourceWidget::initSources() {
         is.directory = "/pub/sword/raw";
         // passive ftp is not needed here, it's the default
 
-        instbackend::addSource(is);
+        BtInstallBackend::addSource(is);
 
-        sourceList = instbackend::sourceList();
+        sourceList = BtInstallBackend::sourceList();
         //Q_ASSERT( sourceList.count() > 0 );
     }
     qDebug() << "void BtSourceWidget::initSources 1";
@@ -231,8 +231,8 @@ void BtSourceWidget::addSource(const QString& sourceName) {
     QString type;
     QString server;
     QString path;
-    sword::InstallSource is = instbackend::source(sourceName);
-    if (instbackend::isRemote(is)) {
+    sword::InstallSource is = BtInstallBackend::source(sourceName);
+    if (BtInstallBackend::isRemote(is)) {
         type = tr("Remote:");
         server = is.source.c_str();
         path = is.directory.c_str();

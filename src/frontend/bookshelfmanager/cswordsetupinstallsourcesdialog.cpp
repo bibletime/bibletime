@@ -25,7 +25,7 @@
 #include <QProgressDialog>
 #include <QApplication>
 #include <QDebug>
-#include "frontend/bookshelfmanager/instbackend.h"
+#include "backend/btinstallbackend.h"
 #include "util/dialogutil.h"
 
 const QString PROTO_FILE( QObject::tr("Local") ); //Local path
@@ -102,7 +102,7 @@ void CSwordSetupInstallSourcesDialog::slotOk() {
 
     //BTInstallMgr iMgr;
     //sword::InstallSource is = BTInstallMgr::Tool::RemoteConfig::source( &iMgr, m_captionEdit->text() );
-    sword::InstallSource is = instbackend::source(m_captionEdit->text());
+    sword::InstallSource is = BtInstallBackend::source(m_captionEdit->text());
     if ( (QString)is.caption.c_str() == m_captionEdit->text() ) { //source already exists
         util::showInformation( this, tr( "Error" ),
                                tr("A source with this caption already exists. Please provide a different caption."));

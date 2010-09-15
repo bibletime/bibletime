@@ -25,7 +25,7 @@
 #include <QWidget>
 #include "backend/btmoduletreeitem.h"
 #include "backend/managers/cswordbackend.h"
-#include "frontend/bookshelfmanager/instbackend.h"
+#include "backend/btinstallbackend.h"
 #include "frontend/btaboutmoduledialog.h"
 #include "util/directory.h"
 #include "util/cresmgr.h"
@@ -150,9 +150,9 @@ void BtSourceArea::slotCreateTree() {
     /// \todo if the tree already exists for this source, maybe the selections should be preserved
     m_checkedModules.clear();
 
-    sword::InstallSource is = instbackend::source(m_sourceName);
+    sword::InstallSource is = BtInstallBackend::source(m_sourceName);
     delete m_remoteBackend; // the old one can be deleted
-    m_remoteBackend = instbackend::backend(is);
+    m_remoteBackend = BtInstallBackend::backend(is);
     Q_ASSERT(m_remoteBackend);
     m_moduleList = m_remoteBackend->moduleList();
 

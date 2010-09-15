@@ -10,7 +10,7 @@
 #include "frontend/bookshelfmanager/btinstallmgr.h"
 
 #include "backend/managers/cswordbackend.h"
-#include "frontend/bookshelfmanager/instbackend.h"
+#include "backend/btinstallbackend.h"
 #include <QDebug>
 #include <QList>
 #include <QObject>
@@ -25,7 +25,7 @@
 using namespace sword;
 
 BtInstallMgr::BtInstallMgr()
-        : InstallMgr(instbackend::configPath().toLatin1(), this),
+        : InstallMgr(BtInstallBackend::configPath().toLatin1(), this),
         m_totalBytes(1), m_completedBytes(0), m_firstCallOfPreStatus(true)
 { //use this class also as status reporter
     qDebug() << "BtInstallMgr::BtInstallMgr";

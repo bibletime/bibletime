@@ -7,7 +7,7 @@
 *
 **********/
 
-#include "frontend/bookshelfmanager/instbackend.h"
+#include "backend/btinstallbackend.h"
 
 #include <QDebug>
 #include <QDir>
@@ -26,7 +26,7 @@
 
 using namespace sword;
 
-namespace instbackend {
+namespace BtInstallBackend {
 
 /** Adds the source described by Source to the backend. */
 bool addSource(sword::InstallSource& source) {
@@ -298,4 +298,4 @@ CSwordBackend* backend( const sword::InstallSource& is) {
     return ret;
 }
 
-}
+} // namespace BtInstallBackend

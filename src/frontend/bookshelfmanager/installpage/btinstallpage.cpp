@@ -42,7 +42,7 @@
 #include "frontend/bookshelfmanager/installpage/btinstallprogressdialog.h"
 #include "frontend/bookshelfmanager/installpage/btsourcewidget.h"
 #include "frontend/bookshelfmanager/installpage/btsourcearea.h"
-#include "frontend/bookshelfmanager/instbackend.h"
+#include "backend/btinstallbackend.h"
 #include "util/directory.h"
 #include "util/cresmgr.h"
 
@@ -136,7 +136,7 @@ void BtInstallPage::initPathCombo() {
     //populate the combo list
     m_pathCombo->clear();
 
-    QStringList targets = instbackend::targetList();
+    QStringList targets = BtInstallBackend::targetList();
     for (QStringList::iterator it = targets.begin(); it != targets.end(); ++it)  {
         // Add the path only if it's writable
         if ((*it).isEmpty()) continue;

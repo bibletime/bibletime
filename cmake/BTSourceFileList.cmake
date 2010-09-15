@@ -19,6 +19,7 @@ SET(bibletime_SRC_BACKEND
     # Backend top level:
     src/backend/btmoduletreeitem.cpp
     src/backend/cswordmodulesearch.cpp
+    src/backend/btinstallbackend.cpp
 )
 
 SOURCE_GROUP("src\\backend" FILES ${bibletime_SRC_BACKEND})
@@ -139,7 +140,6 @@ SET(bibletime_SRC_FRONTEND_BOOKSHELFMANAGER
     src/frontend/bookshelfmanager/btinstallmgr.cpp
     src/frontend/bookshelfmanager/btmodulemanagerdialog.cpp
     src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp
-    src/frontend/bookshelfmanager/instbackend.cpp
 )
 
 SOURCE_GROUP("src\\frontend\\bookshelfmanager" FILES ${bibletime_SRC_FRONTEND_BOOKSHELFMANAGER})
