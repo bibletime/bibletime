@@ -10,23 +10,23 @@
 #include "frontend/bookshelfmanager/installpage/btsourcearea.h"
 
 #include <QApplication>
-#include <QDebug>
 #include <QHBoxLayout>
 #include <QHeaderView>
 #include <QLabel>
 #include <QMap>
 #include <QPushButton>
 #include <QSpacerItem>
-#include <QString>
-#include <QTime>
-#include <QTreeWidget>
-#include <QTreeWidgetItem>
+#include <QToolButton>
 #include <QVBoxLayout>
 #include <QWidget>
-#include "backend/btmoduletreeitem.h"
 #include "backend/managers/cswordbackend.h"
 #include "backend/btinstallbackend.h"
+#include "frontend/bookshelfmanager/installpage/btsourceareamodel.h"
+#include "frontend/bookshelfmanager/installpage/btsourcewidget.h"
 #include "frontend/btaboutmoduledialog.h"
+#include "frontend/btbookshelfdockwidget.h"
+#include "frontend/btbookshelfview.h"
+#include "frontend/btbookshelfwidget.h"
 #include "util/directory.h"
 #include "util/cresmgr.h"
 #include "util/tool.h"
@@ -38,23 +38,21 @@
 namespace {
 
 /** Filters out already installed modules which can't be updated right now. */
-struct InstalledFilter: BTModuleTreeItem::Filter {
-    bool filter(CSwordModuleInfo *mInfo) {
-        typedef CSwordModuleInfo CSMI;
-        typedef sword::SWVersion SV;
+bool filter(CSwordModuleInfo *mInfo) {
+    typedef CSwordModuleInfo CSMI;
+    typedef sword::SWVersion SV;
 
-        const CSMI *installedModule = CSwordBackend::instance()->findModuleByName(mInfo->name());
-        if (installedModule) {
-            // Already installed, check if it's an update:
-            const SV curVersion(installedModule->config(CSMI::ModuleVersion).toLatin1());
-            const SV newVersion(mInfo->config(CSMI::ModuleVersion).toLatin1());
-            if (curVersion >= newVersion) {
-                return false;
-            }
+    const CSMI *installedModule = CSwordBackend::instance()->findModuleByName(mInfo->name());
+    if (installedModule) {
+        // Already installed, check if it's an update:
+        const SV curVersion(installedModule->config(CSMI::ModuleVersion).toLatin1());
+        const SV newVersion(mInfo->config(CSMI::ModuleVersion).toLatin1());
+        if (curVersion >= newVersion) {
+            return false;
         }
-        return true;
     }
-};
+    return true;
+}
 
 } // anonymous namespace
 
@@ -62,13 +60,24 @@ struct InstalledFilter: BTModuleTreeItem::Filter {
 // ******** Installation source and module list widget ************
 // ****************************************************************
 
-BtSourceArea::BtSourceArea(const QString& sourceName)
-        : QWidget(),
+BtSourceArea::BtSourceArea(const QString &sourceName, BtSourceWidget *parent)
+        : QWidget(parent),
         m_sourceName(sourceName),
         m_treeAlreadyInitialized(false),
-        m_remoteBackend(0) { //important!
+        m_remoteBackend(0), //important!
+        m_model(0),
+        m_parent(parent)
+{
     setObjectName(sourceName);
+
+    m_treeModel = new BtSourceAreaModel(BtBookshelfDockWidget::getInstance()->groupingOrder(), this);
+
     initView();
+
+    connect(m_treeModel, SIGNAL(groupingOrderChanged(BtBookshelfTreeModel::Grouping)),
+            this,        SLOT(slotViewGroupingOrderChanged()));
+    connect(m_view->treeView()->header(), SIGNAL(geometriesChanged()),
+            this,                         SLOT(slotHeaderChanged()));
 }
 
 BtSourceArea::~BtSourceArea() {
@@ -78,7 +87,6 @@ BtSourceArea::~BtSourceArea() {
 void BtSourceArea::initView() {
     namespace DU = util::directory;
 
-    qDebug() << "BtSourceArea::initView";
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
 
     // source related button row
@@ -103,23 +111,26 @@ void BtSourceArea::initView() {
 
     mainLayout->addLayout(sourceLayout);
     // There are no views for the stack yet, see initSources
-    m_view = new QTreeWidget(this);
-    m_view->setHeaderLabels(QStringList() << tr("Work") << tr("Description"));
-    m_view->setColumnWidth(0, util::tool::mWidth(m_view, 20));
+    m_view = new BtBookshelfWidget(this);
+    m_view->treeView()->setHeaderHidden(false);
+    m_view->showHideButton()->hide();
+    m_view->setTreeModel(m_treeModel);
     mainLayout->addWidget(m_view);
 
-    connect(m_view, SIGNAL(itemDoubleClicked(QTreeWidgetItem*, int)), SLOT(slotItemDoubleClicked(QTreeWidgetItem*, int)));
-    connect(CSwordBackend::instance(), SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)), SLOT(slotSwordSetupChanged()));
-    connect(this, SIGNAL(signalCreateTree()), SLOT(slotCreateTree()), Qt::QueuedConnection);
+    connect(m_view->treeView(), SIGNAL(doubleClicked(QModelIndex)),
+            this,   SLOT(slotItemDoubleClicked(const QModelIndex&)));
+    connect(this, SIGNAL(signalCreateTree()),
+            this, SLOT(slotCreateTree()), Qt::QueuedConnection);
 }
 
 void BtSourceArea::prepareRemove() {
     // don't create tree anymore, this will be removed
-    disconnect(this, SIGNAL(signalCreateTree()), this, SLOT(slotCreateTree()));
+    disconnect(this, SIGNAL(signalCreateTree()),
+               this, SLOT(slotCreateTree()));
 }
 
 QSize BtSourceArea::sizeHint() const {
-    return QSize(100, m_refreshButton->height() + (m_view->header()->height() * 5));
+    return QSize(100, m_refreshButton->height() + (m_view->treeView()->header()->height() * 5));
 }
 
 void BtSourceArea::initTreeFirstTime() {
@@ -130,13 +141,11 @@ void BtSourceArea::initTreeFirstTime() {
 }
 
 void BtSourceArea::createModuleTree() {
-    qDebug() << "BtSourceArea::createModuleTree start";
     // Start creating tree with a queued connection.
     // This makes showing the dialog possible even before the tree is initialized.
     emit signalCreateTree();
 }
 void BtSourceArea::slotCreateTree() {
-    qDebug() << "BtSourceArea::slotCreateTree" << QTime::currentTime ();
     //let the dialog become visible
     QCoreApplication::processEvents();
     // Creating the view and populating list may take time
@@ -144,122 +153,40 @@ void BtSourceArea::slotCreateTree() {
 
     // disconnect the signal so that we don't have to run functions for every module
     // (note: what to do if we want to restore the item selection when rebuilding?
-    disconnect(m_view, SIGNAL(itemChanged(QTreeWidgetItem*, int)), this, SLOT(slotSelectionChanged(QTreeWidgetItem*, int)) );
-    m_view->clear();
-
-    /// \todo if the tree already exists for this source, maybe the selections should be preserved
-    m_checkedModules.clear();
+    disconnect(m_treeModel, SIGNAL(moduleChecked(CSwordModuleInfo*,bool)),
+               this,        SIGNAL(signalInstallablesChanged()));
 
     sword::InstallSource is = BtInstallBackend::source(m_sourceName);
     delete m_remoteBackend; // the old one can be deleted
     m_remoteBackend = BtInstallBackend::backend(is);
     Q_ASSERT(m_remoteBackend);
-    m_moduleList = m_remoteBackend->moduleList();
 
     // give the list to BTModuleTreeItem, create filter to remove
     // those modules which are installed already
-    InstalledFilter alreadyInstalledFilter;
-    QList<BTModuleTreeItem::Filter*> filterList;
-    filterList.append(&alreadyInstalledFilter);
-    BTModuleTreeItem rootItem(filterList, BTModuleTreeItem::CatLangMod, &m_moduleList);
 
-    addToTree(&rootItem, m_view->invisibleRootItem());
+    BtBookshelfModel *model = new BtBookshelfModel(this);
+    Q_FOREACH (CSwordModuleInfo *module, m_remoteBackend->moduleList()) {
+        if (filter(module)) model->addModule(module);
+    }
+    m_treeModel->setSourceModel(model);
+    delete m_model;
+    m_model = model;
+
     QCoreApplication::processEvents();
     // receive signal when user checks modules
-    connect(m_view, SIGNAL(itemChanged(QTreeWidgetItem*, int)), this, SLOT(slotSelectionChanged(QTreeWidgetItem*, int)) );
+    connect(m_treeModel, SIGNAL(moduleChecked(CSwordModuleInfo*,bool)),
+            this,        SIGNAL(signalInstallablesChanged()));
     QApplication::restoreOverrideCursor();
-    qDebug() << "BtSourceArea::createModuleTree end" << QTime::currentTime ();
-}
-
-void BtSourceArea::addToTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem) {
-    //qDebug()<<"BtSourceArea::addToTree "<<item->text();
-    //qDebug() << "BTMTItem type: " << item->type();
-
-    foreach (BTModuleTreeItem* i, item->children()) {
-        addToTree(i, new QTreeWidgetItem(widgetItem));
-    }
-    if (item->type() != BTModuleTreeItem::Root) {
-        CSwordModuleInfo* mInfo = item->moduleInfo();
-        widgetItem->setText(0, item->text());
-        if (item->type() == BTModuleTreeItem::Category || item->type() == BTModuleTreeItem::Language) {
-            //qDebug() << "item"<<item->text()<< "was cat or lang";
-            widgetItem->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsTristate);
-        }
-        if (item->type() == BTModuleTreeItem::Module) {
-            //qDebug() << "item"<<item->text()<< "was a module";
-            widgetItem->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled);
-            widgetItem->setCheckState(0, Qt::Unchecked);
-
-            CSwordModuleInfo * const installedModule = CSwordBackend::instance()->findModuleByName(mInfo->name());
-            QString installedV;
-
-            if (!installedModule) {
-                /**
-                \todo maybe? save the module list of a source before refreshing,
-                      compare after refreshing, mark the newly added modules if
-                      not newly added:
-                        state: installable (no indicator)
-                        else: status: newly added, color yellow
-                */
-            } else { // the module is already installed
-                QBrush bg(QColor(255, 153, 153)); /// \bug Possible color conflict
-                widgetItem->setBackground(0, bg);
-                widgetItem->setBackground(1, bg);
-                installedV = QString(installedModule->config(CSwordModuleInfo::ModuleVersion).toLatin1());
-                // set the color for the parent items
-                QTreeWidgetItem* parent1 = widgetItem->parent();
-                if (parent1) {
-                    parent1->setBackground(0, bg);
-                    parent1->setBackground(1, bg);
-                    QTreeWidgetItem* parent2 = parent1->parent();
-                    if (parent2) {
-                        parent2->setBackground(0, bg);
-                        parent2->setBackground(1, bg);
-                    }
-                }
-            }
-
-
-            QString descr(mInfo->config(CSwordModuleInfo::Description));
-            QString toolTipText = util::tool::remoteModuleToolTip(*mInfo, installedV);
-
-            widgetItem->setText(1, descr);
-            widgetItem->setToolTip(0, toolTipText);
-            widgetItem->setToolTip(1, toolTipText);
-        }
-    }
 }
 
 // return the selected modules
 const QSet<CSwordModuleInfo*> &BtSourceArea::selectedModules() const {
-    return m_checkedModules;
+    return m_treeModel->checkedModules();
 }
 
-// when a module is checked/unchecked
-void BtSourceArea::slotSelectionChanged(QTreeWidgetItem* item, int column) {
-    //qDebug() << "BtSourceArea::slotSelectionChanged";
-    // modify the internal list of selected (actually checked) modules
-    // if() leaves groups away
-    if (!item->childCount() && column == 0) {
-        foreach (CSwordModuleInfo* module, m_moduleList) {
-            if (module->name() == item->text(0)) {
-                if (item->checkState(0) == Qt::Checked) {
-                    qDebug() << module->name() << "was checked";
-                    m_checkedModules.insert(module);
-                }
-                else {
-                    qDebug() << module->name() << "was unchecked";
-                    m_checkedModules.remove(module);
-                }
-                emit signalSelectionChanged(m_sourceName, m_checkedModules.count());
-                break;
-            }
-        }
-    }
-}
-
-void BtSourceArea::slotItemDoubleClicked(QTreeWidgetItem* item, int /*column*/) {
-    CSwordModuleInfo* mInfo = m_remoteBackend->findModuleByName(item->text(0));
+void BtSourceArea::slotItemDoubleClicked(const QModelIndex &i) {
+    QModelIndex itemIndex = m_view->treeView()->model()->index(i.row(), 0, i.parent());
+    CSwordModuleInfo *mInfo = m_view->treeView()->getModule(itemIndex);
     if (mInfo) {
         BTAboutModuleDialog *dialog = new BTAboutModuleDialog(mInfo, this);
         dialog->setAttribute(Qt::WA_DeleteOnClose); // Destroy dialog when closed
@@ -268,6 +195,23 @@ void BtSourceArea::slotItemDoubleClicked(QTreeWidgetItem* item, int /*column*/) 
     }
 }
 
-void BtSourceArea::slotSwordSetupChanged() {
-    createModuleTree();
+void BtSourceArea::slotViewGroupingOrderChanged() {
+    m_parent->setGroupingOrder(m_treeModel->groupingOrder());
+}
+
+void BtSourceArea::slotHeaderChanged() {
+    m_parent->setHeaderState(m_view->treeView()->header()->saveState());
+}
+
+void BtSourceArea::syncGroupingOrder(const BtBookshelfTreeModel::Grouping &groupingOrder) {
+    m_treeModel->setGroupingOrder(groupingOrder, false);
+    m_view->treeView()->setRootIsDecorated(!groupingOrder.empty());
+}
+
+void BtSourceArea::syncHeaderState(const QByteArray &state) {
+    disconnect(m_view->treeView()->header(), SIGNAL(geometriesChanged()),
+               this,                         SLOT(slotHeaderChanged()));
+    m_view->treeView()->header()->restoreState(state);
+    connect(m_view->treeView()->header(), SIGNAL(geometriesChanged()),
+            this,                         SLOT(slotHeaderChanged()));
 }

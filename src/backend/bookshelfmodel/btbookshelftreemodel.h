@@ -81,18 +81,19 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
         inline bool checkable() const { return m_checkable; }
         inline CheckedBehavior defaultChecked() const { return m_defaultChecked; }
         inline QList<CSwordModuleInfo*> modules() const { return m_modules.keys(); }
-        inline const QSet<const CSwordModuleInfo*> &checkedModules() const {
+        inline const QSet<CSwordModuleInfo*> &checkedModules() const {
             return m_checkedModulesCache;
         }
 
     public slots:
         void setSourceModel(QAbstractItemModel *sourceModel);
-        void setGroupingOrder(const BtBookshelfTreeModel::Grouping &groupingOrder);
+        void setGroupingOrder(const BtBookshelfTreeModel::Grouping &groupingOrder,
+                              bool emitSignal = true);
         void setCheckable(bool checkable);
         inline void setDefaultChecked(CheckedBehavior b) {
             m_defaultChecked = b;
         }
-        void setCheckedModules(const QSet<const CSwordModuleInfo*> &modules);
+        void setCheckedModules(const QSet<CSwordModuleInfo*> &modules);
 
     signals:
         void groupingOrderChanged(BtBookshelfTreeModel::Grouping newGrouping);
@@ -142,7 +143,7 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
         CheckedBehavior       m_defaultChecked;
         bool                  m_checkable;
 
-        QSet<const CSwordModuleInfo*> m_checkedModulesCache;
+        QSet<CSwordModuleInfo*> m_checkedModulesCache;
 };
 
 QDataStream &operator<<(QDataStream &os, const BtBookshelfTreeModel::Grouping &o);

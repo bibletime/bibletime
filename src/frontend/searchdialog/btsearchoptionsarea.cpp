@@ -266,9 +266,18 @@ void BtSearchOptionsArea::moduleListTextSelected(int index) {
 
 void BtSearchOptionsArea::chooseModules() {
     BtSearchModuleChooserDialog* dlg = new BtSearchModuleChooserDialog(this);
-    dlg->setCheckedModules(modules().toSet());
+    QSet<CSwordModuleInfo*> ms;
+    Q_FOREACH (const CSwordModuleInfo *module, modules()) {
+        ms.insert(const_cast<CSwordModuleInfo*>(module));
+    }
+
+    dlg->setCheckedModules(ms);
     if (dlg->exec() == QDialog::Accepted) {
-        setModules(dlg->checkedModules().toList());
+        QList<const CSwordModuleInfo*> ms;
+        Q_FOREACH(const CSwordModuleInfo *m, dlg->checkedModules()) {
+            ms.append(m);
+        }
+        setModules(ms);
     }
     delete dlg;
 }

@@ -11,8 +11,8 @@
 
 #include <QTabWidget>
 
-#include <QMap>
-#include <QString>
+#include <QByteArray>
+#include "backend/bookshelfmodel/btbookshelftreemodel.h"
 
 
 class BtInstallMgr;
@@ -33,12 +33,24 @@ class BtSourceWidget : public QTabWidget {
         friend class BtInstallPage;
 
         BtSourceWidget(BtInstallPage *parent = 0);
-        virtual ~BtSourceWidget() {}
 
         BtSourceArea* area();
         QString currentSourceName();
 
+        /**
+          Called by BtSourceArea when grouping changed. Sets the grouping for
+          all BtSourceArea's.
+        */
+        void setGroupingOrder(const BtBookshelfTreeModel::Grouping &groupingOrder);
+
+        /**
+          Called by BtSourceArea when header state changed. Sets the header
+          state of all BtSourceArea's.
+        */
+        void setHeaderState(const QByteArray &state);
+
     public slots:
+
         /** Install button has been clicked. */
         void slotInstall();
 
@@ -63,7 +75,7 @@ class BtSourceWidget : public QTabWidget {
         /** Add button clicked. */
         void slotAdd();
         /** Modules have been checked/unchecked in the view. */
-        void slotModuleSelectionChanged(QString sourceName, int selectedCount);
+        void slotInstallablesChanged();
 
         void slotTabSelected(int index);
 
@@ -72,7 +84,8 @@ class BtSourceWidget : public QTabWidget {
         QStringList m_sourceNameList;
         QProgressDialog* m_progressDialog; // for refreshing
         BtInstallMgr* m_currentInstallMgr; // for refreshing
-        QMap<QString, int> m_selectedModulesCountMap;
+        BtBookshelfTreeModel::Grouping m_groupingOrder;
+        QByteArray m_headerState;
 };
 
 #endif

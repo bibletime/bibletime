@@ -16,12 +16,14 @@
 #include <QLabel>
 #include <QProgressDialog>
 #include <QPushButton>
-#include <QString>
+#include <QSettings>
 #include <QTabBar>
 #include <QTabWidget>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
 #include <QWidget>
+#include "backend/btinstallbackend.h"
+#include "backend/config/cbtconfig.h"
 #include "frontend/bookshelfmanager/btinstallmgr.h"
 #include "frontend/bookshelfmanager/btmodulemanagerdialog.h"
 #include "frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.h"
@@ -29,9 +31,11 @@
 #include "frontend/bookshelfmanager/installpage/btinstallpage.h"
 #include "frontend/bookshelfmanager/installpage/btinstallprogressdialog.h"
 #include "frontend/bookshelfmanager/installpage/btsourcearea.h"
-#include "backend/btinstallbackend.h"
 #include "util/dialogutil.h"
 
+
+#define ISGROUPING(v) (v).canConvert<BtBookshelfTreeModel::Grouping>()
+#define TOGROUPING(v) (v).value<BtBookshelfTreeModel::Grouping>()
 
 /**
 * Tab Widget that holds source widgets
@@ -39,7 +43,18 @@
 BtSourceWidget::BtSourceWidget(BtInstallPage *parent)
         : QTabWidget(parent), m_page(parent)
 {
-    qDebug() << "BtSourceWidget::BtSourceWidget start";
+    // Read settings:
+    QSettings *settings(CBTConfig::getConfig());
+    settings->beginGroup("GUI/BookshelfManager/InstallPage");
+    QVariant groupingOrderSetting = settings->value("grouping");
+    if (ISGROUPING(groupingOrderSetting)) {
+        m_groupingOrder = TOGROUPING(groupingOrderSetting);
+    } else {
+        m_groupingOrder = BtBookshelfTreeModel::defaultGrouping();
+    }
+    m_headerState = settings->value("headerState").toByteArray();
+    settings->endGroup();
+
     initSources();
 
     /// \todo choose the active tab from config
@@ -250,7 +265,9 @@ void BtSourceWidget::addSource(const QString& sourceName) {
     }
 
     // Here the tab UI is created and added to the tab widget
-    BtSourceArea* area = new BtSourceArea(sourceName);
+    BtSourceArea* area = new BtSourceArea(sourceName, this);
+    area->syncGroupingOrder(m_groupingOrder);
+    area->syncHeaderState(m_headerState);
     int tabNumber = this->addTab(area, sourceName);
 
     /// \todo add "remote/local", server, path etc.
@@ -265,29 +282,21 @@ void BtSourceWidget::addSource(const QString& sourceName) {
     connect(area->m_refreshButton, SIGNAL(clicked()), SLOT(slotRefresh()));
     connect(area->m_deleteButton, SIGNAL(clicked()), SLOT(slotDelete()), Qt::QueuedConnection);
     connect(area->m_addButton, SIGNAL(clicked()), SLOT(slotAdd()));
-    connect(area, SIGNAL(signalSelectionChanged(QString, int)), SLOT(slotModuleSelectionChanged(QString, int)) );
+    connect(area, SIGNAL(signalInstallablesChanged()),
+            this, SLOT(slotInstallablesChanged()));
 
     qDebug() << "BtSourceWidget::addSource end";
 }
 
-//
-void BtSourceWidget::slotModuleSelectionChanged(QString sourceName, int selectedCount) {
-    /// \todo editing sources should update the map also
-    qDebug() << "BtSourceWidget::slotModuleSelectionChanged start";
-
-    int overallCount = 0;
-    m_selectedModulesCountMap.insert(sourceName, selectedCount);
-    foreach (int count, m_selectedModulesCountMap) {
-        qDebug() << "add" << count << "to overall count of selected modules";
-        overallCount += count;
+void BtSourceWidget::slotInstallablesChanged() {
+    for (int i = 0; i < count(); i++) {
+        BtSourceArea *area = static_cast<BtSourceArea*>(widget(i));
+        if (!area->selectedModules().empty()) {
+            m_page->setInstallEnabled(true);
+            return;
+        }
     }
-
-    if (overallCount > 0) {
-        m_page->setInstallEnabled(true);
-    }
-    else {
-        m_page->setInstallEnabled(false);
-    }
+    m_page->setInstallEnabled(false);
 }
 
 void BtSourceWidget::slotTabSelected(int /*index*/) {
@@ -329,7 +338,11 @@ void BtSourceWidget::slotInstall() {
     }
 
     if (dlg->exec() == QDialog::Accepted) {
-        installAccepted(dlg->checkedModules());
+        QSet<const CSwordModuleInfo*> cm;
+        Q_FOREACH(const CSwordModuleInfo *m, dlg->checkedModules()) {
+            cm.insert(m);
+        }
+        installAccepted(cm);
     }
     delete dlg;
 }
@@ -353,4 +366,38 @@ void BtSourceWidget::installAccepted(const QSet<const CSwordModuleInfo*> &mi) {
     dlg->exec();
 
     qDebug() << "BtSourceWidget::slotInstallAccepted end";
+}
+
+void BtSourceWidget::setGroupingOrder(const BtBookshelfTreeModel::Grouping &groupingOrder) {
+    m_groupingOrder = groupingOrder;
+
+    // Save grouping setting:
+    QSettings *settings(CBTConfig::getConfig());
+    settings->beginGroup("GUI/BookshelfManager/InstallPage");
+    QVariant v;
+    v.setValue(groupingOrder);
+    settings->setValue("grouping", v);
+    settings->endGroup();
+
+    for (int tab = 0; tab < count(); tab++) {
+        BtSourceArea *sArea = static_cast<BtSourceArea*>(widget(tab));
+        sArea->syncGroupingOrder(groupingOrder);
+    }
+}
+
+void BtSourceWidget::setHeaderState(const QByteArray &state) {
+    m_headerState = state;
+
+    // Save header state setting:
+    QSettings *settings(CBTConfig::getConfig());
+    settings->beginGroup("GUI/BookshelfManager/InstallPage");
+    QVariant v;
+    v.setValue(state);
+    settings->setValue("headerState", v);
+    settings->endGroup();
+
+    for (int tab = 0; tab < count(); tab++) {
+        BtSourceArea *sArea = static_cast<BtSourceArea*>(widget(tab));
+        sArea->syncHeaderState(state);
+    }
 }

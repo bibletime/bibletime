@@ -13,17 +13,19 @@
 #include <QWidget>
 
 #include <QSet>
-
-// Sword includes:
-#include <installmgr.h>
+#include "backend/bookshelfmodel/btbookshelftreemodel.h"
 
 
+class BtBookshelfModel;
+class BtBookshelfWidget;
 class BTModuleTreeItem;
+class BtSourceAreaModel;
+class BtSourceWidget;
 class CSwordBackend;
 class CSwordModuleInfo;
-class QTreeWidget;
-class QTreeWidgetItem;
+class QByteArray;
 class QLabel;
+class QModelIndex;
 class QPushButton;
 
 /**
@@ -44,7 +46,7 @@ class BtSourceArea : public QWidget {
         friend class BtSourceWidget;
     public:
 
-        BtSourceArea(const QString& sourceName);
+        BtSourceArea(const QString &sourceName, BtSourceWidget *parent = 0);
         ~BtSourceArea();
 
         void initView();
@@ -55,29 +57,33 @@ class BtSourceArea : public QWidget {
 
         const QSet<CSwordModuleInfo*> &selectedModules() const;
 
+        void syncGroupingOrder(const BtBookshelfTreeModel::Grouping &groupingOrder);
+        void syncHeaderState(const QByteArray &state);
+
     public slots:
-        void slotSwordSetupChanged();
         /** Create a module tree for a tree widget */
         void createModuleTree();
 
     signals:
-        void signalSelectionChanged(QString sourceName, int selectedCount);
+        void signalInstallablesChanged();
         void signalCreateTree();
 
     private slots:
         void slotCreateTree();
-        void slotSelectionChanged(QTreeWidgetItem* item, int column);
-        void slotItemDoubleClicked(QTreeWidgetItem* item, int column);
-    private:
-        void addToTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem);
+        void slotItemDoubleClicked(const QModelIndex &itemIndex);
+        void slotViewGroupingOrderChanged();
+        void slotHeaderChanged();
 
+    private:
         QString m_sourceName;
         bool m_treeAlreadyInitialized;
-        QSet<CSwordModuleInfo*> m_checkedModules;
         CSwordBackend* m_remoteBackend; // needed for the module list
-        QList<CSwordModuleInfo*> m_moduleList;
+        BtBookshelfModel *m_model;
+        BtSourceAreaModel *m_treeModel;
 
-        QTreeWidget* m_view;
+        BtSourceWidget *m_parent;
+
+        BtBookshelfWidget *m_view;
         QLabel* m_refreshTimeLabel;
         QPushButton* m_refreshButton;
         QPushButton* m_deleteButton;

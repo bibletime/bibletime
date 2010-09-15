@@ -160,6 +160,7 @@ SET(bibletime_SRC_FRONTEND_BOOKSHELFMANAGER_INSTALLPAGE
     src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp
     src/frontend/bookshelfmanager/installpage/btinstallthread.cpp
     src/frontend/bookshelfmanager/installpage/btsourcearea.cpp
+    src/frontend/bookshelfmanager/installpage/btsourceareamodel.cpp
     src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp
 )
 
@@ -327,6 +328,7 @@ SET(bibletime_MOCABLE_HEADERS
     src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.h
     src/frontend/bookshelfmanager/installpage/btinstallthread.h
     src/frontend/bookshelfmanager/installpage/btsourcearea.h
+    src/frontend/bookshelfmanager/installpage/btsourceareamodel.h
     src/frontend/bookshelfmanager/installpage/btsourcewidget.h
     src/frontend/bookshelfmanager/removepage/btremovepage.h
     src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.h
