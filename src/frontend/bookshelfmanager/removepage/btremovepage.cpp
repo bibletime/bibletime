@@ -20,7 +20,6 @@
 #include <QToolButton>
 #include "backend/bookshelfmodel/btbookshelffiltermodel.h"
 #include "backend/managers/cswordbackend.h"
-#include "frontend/btbookshelfdockwidget.h"
 #include "frontend/btbookshelfview.h"
 #include "frontend/btbookshelfwidget.h"
 #include "util/cresmgr.h"
@@ -31,6 +30,10 @@
 #include <swmgr.h>
 #include <installmgr.h>
 
+
+namespace {
+const QString groupingOrderKey("GUI/BookshelfManager/RemovePage/grouping");
+}
 
 BtRemovePage::BtRemovePage(QWidget *parent)
         : BtConfigPage(parent)
@@ -44,11 +47,14 @@ BtRemovePage::BtRemovePage(QWidget *parent)
     gridLayout->setColumnStretch(1, 1);
     gridLayout->setRowStretch(2, 1);
 
+    BtRemovePageTreeModel *treeModel = new BtRemovePageTreeModel(groupingOrderKey,
+                                                                 this);
+    connect(treeModel, SIGNAL(groupingOrderChanged(BtBookshelfTreeModel::Grouping)),
+            this,      SLOT(slotGroupingOrderChanged(const BtBookshelfTreeModel::Grouping&)));
 
     m_bookshelfWidget = new BtBookshelfWidget(this);
     m_bookshelfWidget->postFilterModel()->setShowHidden(true);
-    const BtBookshelfDockWidget *dw(BtBookshelfDockWidget::getInstance());
-    m_bookshelfWidget->setTreeModel(new BtRemovePageTreeModel(dw->groupingOrder(), this));
+    m_bookshelfWidget->setTreeModel(treeModel);
     m_bookshelfWidget->setSourceModel(CSwordBackend::instance()->model());
     m_bookshelfWidget->showHideAction()->setVisible(false);
     m_bookshelfWidget->showHideButton()->hide();
@@ -143,4 +149,8 @@ void BtRemovePage::slotRemoveModules() {
         qDeleteAll(mgrDict);
         mgrDict.clear();
     }
+}
+
+void BtRemovePage::slotGroupingOrderChanged(const BtBookshelfTreeModel::Grouping &g) {
+    g.saveTo(groupingOrderKey);
 }

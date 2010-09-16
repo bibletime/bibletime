@@ -1,5 +1,7 @@
 2010-09-16 Jaak Ristioja <ristioja@gmail.com>
     * Removed confusing "Use grouping from bookshelf dock" feature.
+    * Implemented saving of grouping setting for the page for removing works
+      in the Bookshelf Manager.
 
 2010-09-15 Jaak Ristioja <ristioja@gmail.com>
     * Integrated the wonderful BtBookshelfWidget into the install page of the

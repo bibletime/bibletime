@@ -42,6 +42,7 @@ class BtRemovePage: public BtConfigPage {
     protected slots:
         void slotRemoveModules();
         void resetRemoveButton();
+        void slotGroupingOrderChanged(const BtBookshelfTreeModel::Grouping &g);
 
     protected:
         BtBookshelfWidget *m_bookshelfWidget;
