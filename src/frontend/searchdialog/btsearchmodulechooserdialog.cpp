@@ -16,18 +16,23 @@
 #include <QToolButton>
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "backend/managers/cswordbackend.h"
-#include "frontend/btbookshelfdockwidget.h"
 #include "util/tool.h"
 
+
+namespace {
+const QString groupingOrderKey("GUI/SearchDialog/ModuleChooserDialog/grouping");
+}
 
 BtSearchModuleChooserDialog::BtSearchModuleChooserDialog(QWidget *parent,
                                                          Qt::WindowFlags flags)
     : BtModuleChooserDialog(parent, flags)
 {
     // Initialize the tree model:
-    const BtBookshelfDockWidget *dw(BtBookshelfDockWidget::getInstance());
-    BtBookshelfTreeModel *treeModel = new BtBookshelfTreeModel(dw->groupingOrder(), this);
+    BtBookshelfTreeModel::Grouping grouping(groupingOrderKey);
+    BtBookshelfTreeModel *treeModel = new BtBookshelfTreeModel(grouping, this);
     treeModel->setCheckable(true);
+    connect(treeModel, SIGNAL(groupingOrderChanged(BtBookshelfTreeModel::Grouping)),
+            this,      SLOT(slotGroupingOrderChanged(const BtBookshelfTreeModel::Grouping&)));
 
     // Initialize the bookshelf widget:
     bookshelfWidget()->showHideAction()->setVisible(false);
@@ -46,4 +51,8 @@ void BtSearchModuleChooserDialog::retranslateUi() {
     setWindowTitle(tr("Works to Search in"));
     util::tool::initExplanationLabel(label(), QString::null,
                                      tr("Select the works which should be searched."));
+}
+
+void BtSearchModuleChooserDialog::slotGroupingOrderChanged(const BtBookshelfTreeModel::Grouping &g) {
+    g.saveTo(groupingOrderKey);
 }

@@ -24,7 +24,8 @@ class CSwordModuleInfo;
 class BtSearchModuleChooserDialog: public BtModuleChooserDialog {
     Q_OBJECT
     public:
-        explicit BtSearchModuleChooserDialog(QWidget *parent = 0, Qt::WindowFlags flags = 0);
+        BtSearchModuleChooserDialog(QWidget *parent = 0,
+                                    Qt::WindowFlags flags = 0);
         ~BtSearchModuleChooserDialog();
 
         inline void setCheckedModules(const QSet<CSwordModuleInfo*> &modules) {
@@ -33,6 +34,9 @@ class BtSearchModuleChooserDialog: public BtModuleChooserDialog {
         inline const QSet<CSwordModuleInfo*> &checkedModules() const {
             return bookshelfWidget()->treeModel()->checkedModules();
         }
+
+    protected slots:
+        void slotGroupingOrderChanged(const BtBookshelfTreeModel::Grouping &g);
 
     protected:
         void retranslateUi();
