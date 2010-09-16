@@ -88,11 +88,6 @@ void BtBookshelfWidget::initActions() {
     connect(m_groupingActionGroup, SIGNAL(triggered(QAction*)),
             this, SLOT(slotGroupingActionTriggered(QAction*)));
 
-    m_groupingBookshelfAction = new QAction(this);
-    m_groupingBookshelfAction->setCheckable(true);
-    m_groupingBookshelfAction->setChecked(true);
-    m_groupingActionGroup->addAction(m_groupingBookshelfAction);
-
     m_groupingCatLangAction = new QAction(this);
     m_groupingCatLangAction->setCheckable(true);
     m_groupingActionGroup->addAction(m_groupingCatLangAction);
@@ -127,8 +122,6 @@ void BtBookshelfWidget::initMenus() {
     // Grouping menu:
     m_groupingMenu = new QMenu(this);
     m_groupingMenu->setIcon(DU::getIcon(RM::grouping::icon));
-    m_groupingMenu->addAction(m_groupingBookshelfAction);
-    m_groupingMenu->addSeparator();
     m_groupingMenu->addAction(m_groupingCatLangAction);
     m_groupingMenu->addAction(m_groupingCatAction);
     m_groupingMenu->addAction(m_groupingLangCatAction);
@@ -182,7 +175,6 @@ void BtBookshelfWidget::retranslateUi() {
     m_groupingButton->setToolTip(tr("Change the grouping of items in the bookshelf."));
 
     m_groupingMenu->setTitle(tr("Grouping"));
-    m_groupingBookshelfAction->setText(tr("Use grouping from bookshelf dock"));
     m_groupingCatLangAction->setText(tr("Category/Language"));
     m_groupingCatAction->setText(tr("Category"));
     m_groupingLangCatAction->setText(tr("Language/Category"));
@@ -210,18 +202,6 @@ bool BtBookshelfWidget::eventFilter(QObject *object, QEvent *event) {
 }
 
 void BtBookshelfWidget::slotGroupingActionTriggered(QAction *action) {
-    BtBookshelfDockWidget *dockWidget(BtBookshelfDockWidget::getInstance());
-
-    if (action == m_groupingBookshelfAction) {
-        connect(dockWidget, SIGNAL(groupingOrderChanged(BtBookshelfTreeModel::Grouping)),
-                m_treeModel, SLOT(setGroupingOrder(const BtBookshelfTreeModel::Grouping &)));
-        m_treeModel->setGroupingOrder(dockWidget->groupingOrder());
-        m_treeView->setRootIsDecorated(!dockWidget->groupingOrder().isEmpty());
-        return;
-    }
-    disconnect(dockWidget, SIGNAL(groupingOrderChanged(BtBookshelfTreeModel::Grouping)),
-               m_treeModel, SLOT(setGroupingOrder(const BtBookshelfTreeModel::Grouping &)));
-
     BtBookshelfTreeModel::Grouping grouping(true);
     if (action == m_groupingCatAction) {
         grouping.append(BtBookshelfTreeModel::GROUP_CATEGORY);

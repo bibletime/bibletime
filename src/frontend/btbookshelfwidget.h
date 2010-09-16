@@ -56,7 +56,6 @@ class BtBookshelfWidget: public QWidget {
 
         // Getters for actions:
         inline QAction *showHideAction() const { return m_showHideAction; }
-        inline QAction *groupingBookshelfAction() const { return m_groupingBookshelfAction; }
 
         // Setters for context menus:
         inline void setContextMenu(QMenu *newMenu) { m_contextMenu = newMenu; }
@@ -92,7 +91,6 @@ class BtBookshelfWidget: public QWidget {
         QMenu *m_contextMenu;
         QMenu *m_groupingMenu;
         QActionGroup *m_groupingActionGroup;
-        QAction *m_groupingBookshelfAction;
         QAction *m_groupingCatLangAction;
         QAction *m_groupingCatAction;
         QAction *m_groupingLangCatAction;

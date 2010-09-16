@@ -59,7 +59,6 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
     m_bookshelfWidget->setTreeModel(m_treeModel);
     m_bookshelfWidget->setSourceModel(bookshelfModel);
     m_bookshelfWidget->setItemContextMenu(m_itemContextMenu);
-    m_bookshelfWidget->groupingBookshelfAction()->setVisible(false);
     /// \bug The correct grouping action is not selected on startup.
 
     // Setup welcome widgets:
