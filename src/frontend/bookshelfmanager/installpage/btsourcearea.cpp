@@ -24,7 +24,6 @@
 #include "frontend/bookshelfmanager/installpage/btsourceareamodel.h"
 #include "frontend/bookshelfmanager/installpage/btsourcewidget.h"
 #include "frontend/btaboutmoduledialog.h"
-#include "frontend/btbookshelfdockwidget.h"
 #include "frontend/btbookshelfview.h"
 #include "frontend/btbookshelfwidget.h"
 #include "util/directory.h"
@@ -70,7 +69,7 @@ BtSourceArea::BtSourceArea(const QString &sourceName, BtSourceWidget *parent)
 {
     setObjectName(sourceName);
 
-    m_treeModel = new BtSourceAreaModel(BtBookshelfDockWidget::getInstance()->groupingOrder(), this);
+    m_treeModel = new BtSourceAreaModel(BtBookshelfTreeModel::Grouping(true), this);
 
     initView();
 
