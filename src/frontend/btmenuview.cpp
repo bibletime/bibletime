@@ -196,7 +196,7 @@ void BtMenuView::slotAboutToHide() {
 }
 
 void BtMenuView::slotActionTriggered(QAction *action) {
-    Q_ASSERT(m_indexMap.contains(action));
+    if (!m_indexMap.contains(action)) return;
     QPersistentModelIndex itemIndex(m_indexMap.value(action));
     if (itemIndex.isValid()) {
         emit triggered(itemIndex);
