@@ -321,7 +321,7 @@ void BtSourceWidget::slotInstall() {
     }
 
     // create the confirmation dialog
-    BtInstallModuleChooserDialog *dlg = new BtInstallModuleChooserDialog(this);
+    BtInstallModuleChooserDialog *dlg = new BtInstallModuleChooserDialog(m_groupingOrder, this);
 
     // Add all checked modules from all tabs:
     for (int tab = 0; tab < count(); tab++) {

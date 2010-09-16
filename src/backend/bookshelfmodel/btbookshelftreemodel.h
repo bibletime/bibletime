@@ -70,7 +70,7 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
                 inline Grouping(const Grouping &copy)
                     : QList<Group>(copy) {}
 
-                Grouping &loadFrom(const QString &configKey);
+                bool loadFrom(const QString &configKey);
                 void saveTo(const QString &configKey) const;
         };
 

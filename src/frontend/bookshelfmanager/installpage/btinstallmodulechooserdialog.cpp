@@ -16,31 +16,41 @@
 #include <QHeaderView>
 #include <QToolButton>
 #include "backend/bookshelfmodel/btbookshelffiltermodel.h"
-#include "frontend/btbookshelfdockwidget.h"
 #include "frontend/btbookshelfview.h"
 #include "util/tool.h"
 
 
-BtInstallModuleChooserDialog::BtInstallModuleChooserDialog(QWidget *parent,
+namespace {
+const QString groupingOrderKey("GUI/BookshelfManager/InstallConfirmDialog/grouping");
+}
+
+BtInstallModuleChooserDialog::BtInstallModuleChooserDialog(const BtBookshelfTreeModel::Grouping &g,
+                                                           QWidget *parent,
                                                            Qt::WindowFlags flags)
     : BtModuleChooserDialog(parent, flags), m_shown(false)
 {
     resize(550, 340);
 
+    // Read grouping order from settings or the default from argument:
+    BtBookshelfTreeModel::Grouping groupingOrder(false);
+    if (!groupingOrder.loadFrom(groupingOrderKey)) {
+        groupingOrder = g;
+    }
+
+    BtInstallModuleChooserDialogModel *treeModel;
+    treeModel = new BtInstallModuleChooserDialogModel(groupingOrder, this);
+    connect(treeModel, SIGNAL(groupingOrderChanged(BtBookshelfTreeModel::Grouping)),
+            this,      SLOT(slotGroupingOrderChanged(const BtBookshelfTreeModel::Grouping&)));
+
     m_bookshelfModel = new BtBookshelfModel(this);
     bookshelfWidget()->postFilterModel()->setShowShown(true);
-    const BtBookshelfDockWidget *dw(BtBookshelfDockWidget::getInstance());
-    bookshelfWidget()->setTreeModel(new BtInstallModuleChooserDialogModel(dw->groupingOrder(), this));
+    bookshelfWidget()->setTreeModel(treeModel);
     bookshelfWidget()->setSourceModel(m_bookshelfModel);
     bookshelfWidget()->showHideAction()->setVisible(false);
     bookshelfWidget()->showHideButton()->hide();
     bookshelfWidget()->treeView()->header()->show();
 
     retranslateUi();
-}
-
-BtInstallModuleChooserDialog::~BtInstallModuleChooserDialog() {
-    // Intentionally empty
 }
 
 void BtInstallModuleChooserDialog::addModuleItem(CSwordModuleInfo *module,
@@ -66,4 +76,8 @@ void BtInstallModuleChooserDialog::showEvent(QShowEvent *event) {
     bookshelfWidget()->treeView()->expandAll();
     bookshelfWidget()->treeView()->header()->resizeSections(QHeaderView::ResizeToContents);
     m_shown = true;
+}
+
+void BtInstallModuleChooserDialog::slotGroupingOrderChanged(const BtBookshelfTreeModel::Grouping &g) {
+    g.saveTo(groupingOrderKey);
 }
