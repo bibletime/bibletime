@@ -30,29 +30,33 @@
 #include "util/directory.h"
 
 
-#define ISGROUPING(v) (v).canConvert<BtBookshelfTreeModel::Grouping>()
-#define TOGROUPING(v) (v).value<BtBookshelfTreeModel::Grouping>()
+namespace {
+const QString groupingOrderKey("GUI/MainWindow/Docks/Bookshelf/grouping");
+}
 
 BtBookshelfDockWidget *BtBookshelfDockWidget::m_instance = 0;
 
 BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
-        : QDockWidget(parent, f) {
+        : QDockWidget(parent, f)
+{
     Q_ASSERT(m_instance == 0);
     m_instance = this;
 
     setObjectName("BookshelfDock");
 
-    // Setup tree model:
-    BtBookshelfTreeModel *treeModel = new BtBookshelfTreeModel(loadGroupingSetting(), this);
 
     // Setup actions and menus:
     initMenus();
 
+    // Setup tree model:
+    m_treeModel = new BtBookshelfTreeModel(groupingOrderKey, this);
+
+    // Get backend model:
     BtBookshelfModel *bookshelfModel = CSwordBackend::instance()->model();
 
     // Setup bookshelf widgets:
     m_bookshelfWidget = new BtBookshelfWidget(this);
-    m_bookshelfWidget->setTreeModel(treeModel);
+    m_bookshelfWidget->setTreeModel(m_treeModel);
     m_bookshelfWidget->setSourceModel(bookshelfModel);
     m_bookshelfWidget->setItemContextMenu(m_itemContextMenu);
     m_bookshelfWidget->groupingBookshelfAction()->setVisible(false);
@@ -81,12 +85,12 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
     // Connect signals:
     connect(m_bookshelfWidget->treeView(), SIGNAL(moduleActivated(CSwordModuleInfo*)),
             this,                          SLOT(slotModuleActivated(CSwordModuleInfo*)));
-    connect(treeModel, SIGNAL(moduleChecked(CSwordModuleInfo*, bool)),
-            this,      SLOT(slotModuleChecked(CSwordModuleInfo*, bool)));
-    connect(treeModel, SIGNAL(groupingOrderChanged(BtBookshelfTreeModel::Grouping)),
-            this,      SIGNAL(groupingOrderChanged(BtBookshelfTreeModel::Grouping)));
+    connect(m_treeModel, SIGNAL(moduleChecked(CSwordModuleInfo*, bool)),
+            this,        SLOT(slotModuleChecked(CSwordModuleInfo*, bool)));
+    connect(m_treeModel, SIGNAL(groupingOrderChanged(BtBookshelfTreeModel::Grouping)),
+            this,        SLOT(slotGroupingOrderChanged(const BtBookshelfTreeModel::Grouping&)));
     connect(m_bookshelfWidget->showHideAction(), SIGNAL(toggled(bool)),
-            treeModel,                           SLOT(setCheckable(bool)));
+            m_treeModel,                         SLOT(setCheckable(bool)));
     connect(bookshelfModel, SIGNAL(rowsInserted(const QModelIndex&,int,int)),
             this,           SLOT(slotModulesChanged()));
     connect(bookshelfModel, SIGNAL(rowsRemoved(const QModelIndex&,int,int)),
@@ -95,14 +99,6 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
             BibleTime::instance(), SLOT(slotSwordSetupDialog()));
 
     retranslateUi();
-}
-
-BtBookshelfDockWidget::~BtBookshelfDockWidget() {
-    saveGroupingSetting();
-}
-
-const BtBookshelfTreeModel::Grouping &BtBookshelfDockWidget::groupingOrder() const {
-    return m_bookshelfWidget->treeModel()->groupingOrder();
 }
 
 void BtBookshelfDockWidget::initMenus() {
@@ -163,29 +159,6 @@ void BtBookshelfDockWidget::retranslateUi() {
     m_installLabel->setText(tr("There are currently no works installed. Please "
                                "click the button below to install new works."));
     m_installButton->setText(tr("&Install works..."));
-}
-
-BtBookshelfTreeModel::Grouping BtBookshelfDockWidget::loadGroupingSetting() const {
-    QSettings *settings(CBTConfig::getConfig());
-    settings->beginGroup("GUI/MainWindow/Docks/Bookshelf");
-    QVariant v = settings->value("grouping");
-    settings->endGroup();
-
-    if (ISGROUPING(v)) {
-        return TOGROUPING(v);
-    } else {
-        return BtBookshelfTreeModel::defaultGrouping();
-    }
-}
-
-void BtBookshelfDockWidget::saveGroupingSetting() const {
-
-    QSettings *settings(CBTConfig::getConfig());
-    settings->beginGroup("GUI/MainWindow/Docks/Bookshelf");
-    QVariant v;
-    v.setValue(groupingOrder());
-    settings->setValue("grouping", v);
-    settings->endGroup();
 }
 
 void BtBookshelfDockWidget::slotModuleActivated(CSwordModuleInfo *module) {
@@ -258,4 +231,11 @@ void BtBookshelfDockWidget::slotModulesChanged() {
     m_stackedWidget->setCurrentWidget(bookshelfModel->moduleList().empty()
                                       ? m_welcomeWidget
                                       : m_bookshelfWidget);
+}
+
+void BtBookshelfDockWidget::slotGroupingOrderChanged(
+        const BtBookshelfTreeModel::Grouping &g)
+{
+    g.saveTo(groupingOrderKey);
+    emit groupingOrderChanged(g);
 }

@@ -36,7 +36,7 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
         typedef QMap<CSwordModuleInfo*, BookshelfModel::ModuleItem*> ModuleItemMap;
         typedef QMap<CSwordModuleInfo*, QPersistentModelIndex> SourceIndexMap;
 
-    public:
+    public: /* Types: */
         enum ModuleRole {
             CheckStateRole = BtBookshelfModel::UserRole,
             UserRole = BtBookshelfModel::UserRole + 100
@@ -52,12 +52,33 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
             MODULE_HIDDEN,  /**< By default, check only added modules that are not hidden. */
             MODULE_INDEXED  /**< By default, check only added modules that are indexed. */
         };
-        typedef QList<Group> Grouping;
 
+        class Grouping: public QList<Group> {
+            public:
+                /**
+                  \warning Be careful using this constructor!
+                */
+                explicit inline Grouping(bool empty = false) {
+                    if (empty) return;
+                    push_back(GROUP_CATEGORY);
+                    push_back(GROUP_LANGUAGE);
+                }
+                explicit inline Grouping(Group group) { push_back(group); }
+                explicit inline Grouping(const QString &configKey) {
+                    loadFrom(configKey);
+                }
+                inline Grouping(const Grouping &copy)
+                    : QList<Group>(copy) {}
+
+                Grouping &loadFrom(const QString &configKey);
+                void saveTo(const QString &configKey) const;
+        };
+
+    public: /* Methods: */
+        BtBookshelfTreeModel(QObject *parent = 0);
+        BtBookshelfTreeModel(const QString &configKey, QObject *parent = 0);
         BtBookshelfTreeModel(const Grouping &grouping, QObject *parent = 0);
         virtual ~BtBookshelfTreeModel();
-
-        static Grouping defaultGrouping();
 
         virtual int rowCount(const QModelIndex &parent = QModelIndex()) const;
         virtual int columnCount(const QModelIndex &parent = QModelIndex())

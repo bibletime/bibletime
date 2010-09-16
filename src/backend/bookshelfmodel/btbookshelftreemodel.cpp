@@ -13,30 +13,55 @@
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
 
 #include <QSet>
+#include <QSettings>
 #include "backend/bookshelfmodel/categoryitem.h"
 #include "backend/bookshelfmodel/indexingitem.h"
 #include "backend/bookshelfmodel/languageitem.h"
 #include "backend/bookshelfmodel/moduleitem.h"
+#include "backend/config/cbtconfig.h"
 #include "util/macros.h"
 
 
 using namespace BookshelfModel;
 
+BtBookshelfTreeModel::Grouping &BtBookshelfTreeModel::Grouping::loadFrom(
+        const QString &configKey)
+{
+    Q_ASSERT(!configKey.isNull());
+    return ((*this) = CBTConfig::getConfig()->value(configKey).value<Grouping>());
+}
+
+void BtBookshelfTreeModel::Grouping::saveTo(const QString &configKey) const {
+    Q_ASSERT(!configKey.isNull());
+    CBTConfig::getConfig()->setValue(configKey, QVariant::fromValue(*this));
+}
+
+
+BtBookshelfTreeModel::BtBookshelfTreeModel(QObject *parent)
+    : QAbstractItemModel(parent), m_sourceModel(0), m_rootItem(new RootItem),
+    m_defaultChecked(MODULE_HIDDEN), m_checkable(false)
+{
+    // Intentionally empty
+}
+
+BtBookshelfTreeModel::BtBookshelfTreeModel(const QString &configKey,
+                                           QObject *parent)
+       : QAbstractItemModel(parent), m_sourceModel(0), m_rootItem(new RootItem),
+       m_groupingOrder(configKey), m_defaultChecked(MODULE_HIDDEN),
+       m_checkable(false)
+{
+    // Intentionally empty
+}
+
 BtBookshelfTreeModel::BtBookshelfTreeModel(const Grouping &g, QObject *parent)
         : QAbstractItemModel(parent), m_sourceModel(0), m_rootItem(new RootItem),
-        m_groupingOrder(g), m_defaultChecked(MODULE_HIDDEN), m_checkable(false) {
+        m_groupingOrder(g), m_defaultChecked(MODULE_HIDDEN), m_checkable(false)
+{
     // Intentionally empty
 }
 
 BtBookshelfTreeModel::~BtBookshelfTreeModel() {
     delete m_rootItem;
-}
-
-BtBookshelfTreeModel::Grouping BtBookshelfTreeModel::defaultGrouping() {
-    Grouping g;
-    g.push_back(GROUP_CATEGORY);
-    g.push_back(GROUP_LANGUAGE);
-    return g;
 }
 
 int BtBookshelfTreeModel::rowCount(const QModelIndex &parent) const {

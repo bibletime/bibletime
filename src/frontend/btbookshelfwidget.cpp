@@ -222,7 +222,7 @@ void BtBookshelfWidget::slotGroupingActionTriggered(QAction *action) {
     disconnect(dockWidget, SIGNAL(groupingOrderChanged(BtBookshelfTreeModel::Grouping)),
                m_treeModel, SLOT(setGroupingOrder(const BtBookshelfTreeModel::Grouping &)));
 
-    BtBookshelfTreeModel::Grouping grouping;
+    BtBookshelfTreeModel::Grouping grouping(true);
     if (action == m_groupingCatAction) {
         grouping.append(BtBookshelfTreeModel::GROUP_CATEGORY);
     }
@@ -236,6 +236,8 @@ void BtBookshelfWidget::slotGroupingActionTriggered(QAction *action) {
     else if (action == m_groupingLangCatAction) {
         grouping.append(BtBookshelfTreeModel::GROUP_LANGUAGE);
         grouping.append(BtBookshelfTreeModel::GROUP_CATEGORY);
+    } else {
+        Q_ASSERT(action == m_groupingNoneAction);
     }
     m_treeModel->setGroupingOrder(grouping);
     m_treeView->setRootIsDecorated(!grouping.isEmpty());

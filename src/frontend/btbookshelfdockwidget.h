@@ -30,11 +30,12 @@ class BtBookshelfDockWidget: public QDockWidget {
         Q_OBJECT
     public:
         BtBookshelfDockWidget(QWidget *parent = 0, Qt::WindowFlags f = 0);
-        ~BtBookshelfDockWidget();
 
         static inline BtBookshelfDockWidget *getInstance() { return m_instance; }
 
-        const BtBookshelfTreeModel::Grouping &groupingOrder() const;
+        inline const BtBookshelfTreeModel::Grouping &groupingOrder() const {
+            return m_treeModel->groupingOrder();
+        }
 
     signals:
         void moduleOpenTriggered(CSwordModuleInfo *module);
@@ -48,8 +49,6 @@ class BtBookshelfDockWidget: public QDockWidget {
     protected:
         void initMenus();
         void retranslateUi();
-        BtBookshelfTreeModel::Grouping loadGroupingSetting() const;
-        void saveGroupingSetting() const;
 
     protected slots:
         void slotModuleActivated(CSwordModuleInfo *module);
@@ -57,8 +56,11 @@ class BtBookshelfDockWidget: public QDockWidget {
         void slotItemActionTriggered(QAction *action);
         void slotPrepareItemContextMenu();
         void slotModulesChanged();
+        void slotGroupingOrderChanged(const BtBookshelfTreeModel::Grouping &g);
 
     protected:
+        BtBookshelfTreeModel *m_treeModel;
+
         QStackedWidget    *m_stackedWidget;
         BtBookshelfWidget *m_bookshelfWidget;
         QWidget           *m_welcomeWidget;

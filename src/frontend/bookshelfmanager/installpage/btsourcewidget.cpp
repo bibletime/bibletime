@@ -34,26 +34,20 @@
 #include "util/dialogutil.h"
 
 
-#define ISGROUPING(v) (v).canConvert<BtBookshelfTreeModel::Grouping>()
-#define TOGROUPING(v) (v).value<BtBookshelfTreeModel::Grouping>()
+namespace {
+const QString groupingOrderKey("GUI/BookshelfManager/InstallPage/grouping");
+const QString headerStateKey  ("GUI/BookshelfManager/InstallPage/headerState");
+}
 
 /**
 * Tab Widget that holds source widgets
 */
 BtSourceWidget::BtSourceWidget(BtInstallPage *parent)
-        : QTabWidget(parent), m_page(parent)
+        : QTabWidget(parent), m_page(parent),
+        m_groupingOrder(groupingOrderKey)
 {
     // Read settings:
-    QSettings *settings(CBTConfig::getConfig());
-    settings->beginGroup("GUI/BookshelfManager/InstallPage");
-    QVariant groupingOrderSetting = settings->value("grouping");
-    if (ISGROUPING(groupingOrderSetting)) {
-        m_groupingOrder = TOGROUPING(groupingOrderSetting);
-    } else {
-        m_groupingOrder = BtBookshelfTreeModel::defaultGrouping();
-    }
-    m_headerState = settings->value("headerState").toByteArray();
-    settings->endGroup();
+    m_headerState = CBTConfig::getConfig()->value(headerStateKey).toByteArray();
 
     initSources();
 
@@ -370,14 +364,7 @@ void BtSourceWidget::installAccepted(const QSet<const CSwordModuleInfo*> &mi) {
 
 void BtSourceWidget::setGroupingOrder(const BtBookshelfTreeModel::Grouping &groupingOrder) {
     m_groupingOrder = groupingOrder;
-
-    // Save grouping setting:
-    QSettings *settings(CBTConfig::getConfig());
-    settings->beginGroup("GUI/BookshelfManager/InstallPage");
-    QVariant v;
-    v.setValue(groupingOrder);
-    settings->setValue("grouping", v);
-    settings->endGroup();
+    m_groupingOrder.saveTo(groupingOrderKey);
 
     for (int tab = 0; tab < count(); tab++) {
         BtSourceArea *sArea = static_cast<BtSourceArea*>(widget(tab));
@@ -387,14 +374,7 @@ void BtSourceWidget::setGroupingOrder(const BtBookshelfTreeModel::Grouping &grou
 
 void BtSourceWidget::setHeaderState(const QByteArray &state) {
     m_headerState = state;
-
-    // Save header state setting:
-    QSettings *settings(CBTConfig::getConfig());
-    settings->beginGroup("GUI/BookshelfManager/InstallPage");
-    QVariant v;
-    v.setValue(state);
-    settings->setValue("headerState", v);
-    settings->endGroup();
+    CBTConfig::getConfig()->setValue(headerStateKey, state);
 
     for (int tab = 0; tab < count(); tab++) {
         BtSourceArea *sArea = static_cast<BtSourceArea*>(widget(tab));
