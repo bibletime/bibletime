@@ -19,6 +19,7 @@
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
 
 
+class BtBookshelfGroupingMenu;
 class BtBookshelfTreeModel;
 class BtBookshelfFilterModel;
 class CSwordModuleInfo;
@@ -26,7 +27,8 @@ class CSwordModuleInfo;
 class BtOpenWorkActionMenu: public BtMenuView {
     Q_OBJECT
     public:
-        BtOpenWorkActionMenu(QWidget *parent = 0);
+        BtOpenWorkActionMenu(const QString &groupingConfigKey,
+                             QWidget *parent = 0);
         ~BtOpenWorkActionMenu();
 
         void setSourceModel(QAbstractItemModel *model);
@@ -37,19 +39,31 @@ class BtOpenWorkActionMenu: public BtMenuView {
     signals:
         void triggered(CSwordModuleInfo *module);
 
+    private:
+        void retranslateUi();
+
+        /* Reimplemented from BtMenuView. */
+        virtual void postBuildMenu();
+
     private slots:
         void slotIndexTriggered(const QModelIndex &index);
+        void slotGroupingActionTriggered(const BtBookshelfTreeModel::Grouping &grouping);
 
     private:
         // Models:
         BtBookshelfTreeModel   *m_treeModel;
         BtBookshelfFilterModel *m_postFilterModel;
+
+        // Grouping menu:
+        BtBookshelfGroupingMenu *m_groupingMenu;
+        const QString m_groupingConfigKey;
 };
 
 class BtOpenWorkAction: public QAction {
     Q_OBJECT
     public:
-        explicit BtOpenWorkAction(QObject *parent = 0);
+        explicit BtOpenWorkAction(const QString &groupingConfigKey,
+                                  QObject *parent = 0);
         ~BtOpenWorkAction();
 
     signals:

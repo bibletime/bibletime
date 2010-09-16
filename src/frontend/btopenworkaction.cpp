@@ -14,25 +14,29 @@
 
 #include "backend/bookshelfmodel/btbookshelffiltermodel.h"
 #include "backend/managers/cswordbackend.h"
-#include "frontend/btbookshelfdockwidget.h"
+#include "frontend/btbookshelfgroupingmenu.h"
 #include "util/directory.h"
 
 
-BtOpenWorkActionMenu::BtOpenWorkActionMenu(QWidget *parent)
-    : BtMenuView(parent), m_treeModel(0), m_postFilterModel(0)
+BtOpenWorkActionMenu::BtOpenWorkActionMenu(const QString &groupingConfigKey,
+                                           QWidget *parent)
+    : BtMenuView(parent), m_treeModel(0), m_postFilterModel(0),
+      m_groupingConfigKey(groupingConfigKey)
 {
     // Setup models:
-    const BtBookshelfDockWidget *bookshelfDock(BtBookshelfDockWidget::getInstance());
-    m_treeModel = new BtBookshelfTreeModel(bookshelfDock->groupingOrder(), this);
+    m_treeModel = new BtBookshelfTreeModel(groupingConfigKey, this);
     m_postFilterModel = new BtBookshelfFilterModel(this);
     m_postFilterModel->setSourceModel(m_treeModel);
     setModel(m_postFilterModel);
 
+    m_groupingMenu = new BtBookshelfGroupingMenu(false, this);
+
     connect(this, SIGNAL(triggered(QModelIndex)),
             this, SLOT(slotIndexTriggered(QModelIndex)));
-    connect(bookshelfDock, SIGNAL(groupingOrderChanged(BtBookshelfTreeModel::Grouping)),
-            m_treeModel,   SLOT(setGroupingOrder(BtBookshelfTreeModel::Grouping)));
+    connect(m_groupingMenu, SIGNAL(signalGroupingOrderChanged(BtBookshelfTreeModel::Grouping)),
+            this,           SLOT(slotGroupingActionTriggered(BtBookshelfTreeModel::Grouping)));
 
+    retranslateUi();
 }
 
 BtOpenWorkActionMenu::~BtOpenWorkActionMenu() {
@@ -41,6 +45,17 @@ BtOpenWorkActionMenu::~BtOpenWorkActionMenu() {
 
 void BtOpenWorkActionMenu::setSourceModel(QAbstractItemModel *model) {
     m_treeModel->setSourceModel(model);
+}
+
+void BtOpenWorkActionMenu::retranslateUi() {
+    m_groupingMenu->setTitle(tr("&Grouping order"));
+    m_groupingMenu->setStatusTip(tr("Sets the grouping order for the items in "
+                                    "this menu."));
+}
+
+void BtOpenWorkActionMenu::postBuildMenu() {
+    addSeparator();
+    addMenu(m_groupingMenu);
 }
 
 void BtOpenWorkActionMenu::slotIndexTriggered(const QModelIndex &index) {
@@ -53,10 +68,16 @@ void BtOpenWorkActionMenu::slotIndexTriggered(const QModelIndex &index) {
     }
 }
 
-BtOpenWorkAction::BtOpenWorkAction(QObject *parent)
+void BtOpenWorkActionMenu::slotGroupingActionTriggered(const BtBookshelfTreeModel::Grouping &grouping) {
+    m_treeModel->setGroupingOrder(grouping);
+    grouping.saveTo(m_groupingConfigKey);
+}
+
+BtOpenWorkAction::BtOpenWorkAction(const QString &groupingConfigKey,
+                                   QObject *parent)
     : QAction(parent)
 {
-    m_menu = new BtOpenWorkActionMenu();
+    m_menu = new BtOpenWorkActionMenu(groupingConfigKey);
     m_menu->setSourceModel(CSwordBackend::instance()->model());
 
     setMenu(m_menu);

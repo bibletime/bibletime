@@ -27,6 +27,7 @@
 #include "frontend/bookshelfmanager/installpage/btinstallmodulechooserdialogmodel.h"
 #include "frontend/bookshelfmanager/removepage/btremovepagetreemodel.h"
 #include "frontend/btbookshelfdockwidget.h"
+#include "frontend/btbookshelfgroupingmenu.h"
 #include "frontend/btbookshelfview.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
@@ -82,32 +83,6 @@ void BtBookshelfWidget::initActions() {
     namespace DU = util::directory;
     namespace RM = CResMgr::mainIndex;
 
-    // Grouping action group and actions:
-    m_groupingActionGroup = new QActionGroup(this);
-    m_groupingActionGroup->setExclusive(true);
-    connect(m_groupingActionGroup, SIGNAL(triggered(QAction*)),
-            this, SLOT(slotGroupingActionTriggered(QAction*)));
-
-    m_groupingCatLangAction = new QAction(this);
-    m_groupingCatLangAction->setCheckable(true);
-    m_groupingActionGroup->addAction(m_groupingCatLangAction);
-
-    m_groupingCatAction = new QAction(this);
-    m_groupingCatAction->setCheckable(true);
-    m_groupingActionGroup->addAction(m_groupingCatAction);
-
-    m_groupingLangCatAction = new QAction(this);
-    m_groupingLangCatAction->setCheckable(true);
-    m_groupingActionGroup->addAction(m_groupingLangCatAction);
-
-    m_groupingLangAction = new QAction(this);
-    m_groupingLangAction->setCheckable(true);
-    m_groupingActionGroup->addAction(m_groupingLangAction);
-
-    m_groupingNoneAction = new QAction(this);
-    m_groupingNoneAction->setCheckable(true);
-    m_groupingActionGroup->addAction(m_groupingNoneAction);
-
     m_showHideAction = new QAction(this);
     m_showHideAction->setIcon(DU::getIcon("layer-visible-on.svg"));
     m_showHideAction->setCheckable(true);
@@ -120,13 +95,9 @@ void BtBookshelfWidget::initMenus() {
     namespace RM = CResMgr::mainIndex;
 
     // Grouping menu:
-    m_groupingMenu = new QMenu(this);
-    m_groupingMenu->setIcon(DU::getIcon(RM::grouping::icon));
-    m_groupingMenu->addAction(m_groupingCatLangAction);
-    m_groupingMenu->addAction(m_groupingCatAction);
-    m_groupingMenu->addAction(m_groupingLangCatAction);
-    m_groupingMenu->addAction(m_groupingLangAction);
-    m_groupingMenu->addAction(m_groupingNoneAction);
+    m_groupingMenu = new BtBookshelfGroupingMenu(this);
+    connect(m_groupingMenu, SIGNAL(signalGroupingOrderChanged(BtBookshelfTreeModel::Grouping)),
+            this,           SLOT(slotGroupingActionTriggered(BtBookshelfTreeModel::Grouping)));
 
     // Context menu
     m_contextMenu = new QMenu(this);
@@ -173,13 +144,7 @@ void BtBookshelfWidget::retranslateUi() {
     m_nameFilterLabel->setText(tr("Fi&lter:"));
     m_groupingButton->setText(tr("Grouping"));
     m_groupingButton->setToolTip(tr("Change the grouping of items in the bookshelf."));
-
     m_groupingMenu->setTitle(tr("Grouping"));
-    m_groupingCatLangAction->setText(tr("Category/Language"));
-    m_groupingCatAction->setText(tr("Category"));
-    m_groupingLangCatAction->setText(tr("Language/Category"));
-    m_groupingLangAction->setText(tr("Language"));
-    m_groupingNoneAction->setText(tr("No grouping"));
     m_showHideAction->setText(tr("Show/hide works"));
 }
 
@@ -201,24 +166,7 @@ bool BtBookshelfWidget::eventFilter(QObject *object, QEvent *event) {
     return false;
 }
 
-void BtBookshelfWidget::slotGroupingActionTriggered(QAction *action) {
-    BtBookshelfTreeModel::Grouping grouping(true);
-    if (action == m_groupingCatAction) {
-        grouping.append(BtBookshelfTreeModel::GROUP_CATEGORY);
-    }
-    else if (action == m_groupingCatLangAction) {
-        grouping.append(BtBookshelfTreeModel::GROUP_CATEGORY);
-        grouping.append(BtBookshelfTreeModel::GROUP_LANGUAGE);
-    }
-    else if (action == m_groupingLangAction) {
-        grouping.append(BtBookshelfTreeModel::GROUP_LANGUAGE);
-    }
-    else if (action == m_groupingLangCatAction) {
-        grouping.append(BtBookshelfTreeModel::GROUP_LANGUAGE);
-        grouping.append(BtBookshelfTreeModel::GROUP_CATEGORY);
-    } else {
-        Q_ASSERT(action == m_groupingNoneAction);
-    }
+void BtBookshelfWidget::slotGroupingActionTriggered(const BtBookshelfTreeModel::Grouping &grouping) {
     m_treeModel->setGroupingOrder(grouping);
     m_treeView->setRootIsDecorated(!grouping.isEmpty());
 }

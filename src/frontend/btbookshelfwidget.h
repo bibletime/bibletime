@@ -19,6 +19,7 @@
 
 
 class BtBookshelfFilterModel;
+class BtBookshelfGroupingMenu;
 class BtBookshelfTreeModel;
 class BtBookshelfView;
 class QAbstractItemModel;
@@ -50,7 +51,7 @@ class BtBookshelfWidget: public QWidget {
         inline QToolButton *groupingButton() const { return m_groupingButton; }
         inline QToolButton *showHideButton() const { return m_showHideButton; }
         inline BtBookshelfView *treeView() const { return m_treeView; }
-        inline QMenu *groupingMenu() const { return m_groupingMenu; }
+        inline BtBookshelfGroupingMenu *groupingMenu() const { return m_groupingMenu; }
         inline QMenu *contextMenu() const { return m_contextMenu; }
         inline QMenu *itemContextMenu() const { return m_itemContextMenu; }
 
@@ -70,7 +71,7 @@ class BtBookshelfWidget: public QWidget {
         void retranslateUi();
 
     protected slots:
-        void slotGroupingActionTriggered(QAction *action);
+        void slotGroupingActionTriggered(const BtBookshelfTreeModel::Grouping &grouping);
         void slotShowContextMenu(const QPoint &pos);
         void slotShowItemContextMenu(CSwordModuleInfo *module, const QPoint &pos);
 
@@ -89,13 +90,7 @@ class BtBookshelfWidget: public QWidget {
 
         // Popup menus:
         QMenu *m_contextMenu;
-        QMenu *m_groupingMenu;
-        QActionGroup *m_groupingActionGroup;
-        QAction *m_groupingCatLangAction;
-        QAction *m_groupingCatAction;
-        QAction *m_groupingLangCatAction;
-        QAction *m_groupingLangAction;
-        QAction *m_groupingNoneAction;
+        BtBookshelfGroupingMenu *m_groupingMenu;
         QAction *m_showHideAction;
         QMenu *m_itemContextMenu;
         QActionGroup *m_itemActionGroup;

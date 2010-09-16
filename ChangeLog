@@ -1,8 +1,10 @@
 2010-09-16 Jaak Ristioja <ristioja@gmail.com>
     * Removed confusing "Use grouping from bookshelf dock" feature.
-    * Implemented saving of grouping setting for the page for removing works
-      and for the installation confirmation dialog in the Bookshelf Manager;
-      and in the search module chooser dialog.
+    * Implemented saving of grouping setting for:
+      * the page for removing works in the Bookshelf Manager.
+      * the installation confirmation dialog in the Bookshelf Manager,
+      * the search module chooser dialog,
+      * the main window "Open works" action in main menu and main toolbar.
 
 2010-09-15 Jaak Ristioja <ristioja@gmail.com>
     * Integrated the wonderful BtBookshelfWidget into the install page of the

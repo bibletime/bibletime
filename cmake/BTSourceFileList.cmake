@@ -118,6 +118,7 @@ SET(bibletime_SRC_FRONTEND
     src/frontend/btaboutdialog.cpp
     src/frontend/btaboutmoduledialog.cpp
     src/frontend/btbookshelfdockwidget.cpp
+    src/frontend/btbookshelfgroupingmenu.cpp
     src/frontend/btbookshelfview.cpp
     src/frontend/btbookshelfwidget.cpp
     src/frontend/btmenuview.cpp
@@ -335,6 +336,7 @@ SET(bibletime_MOCABLE_HEADERS
     src/frontend/btaboutdialog.h
     src/frontend/btaboutmoduledialog.h
     src/frontend/btbookshelfdockwidget.h
+    src/frontend/btbookshelfgroupingmenu.h
     src/frontend/btbookshelfview.h
     src/frontend/btbookshelfwidget.h
     src/frontend/btmenuview.h
