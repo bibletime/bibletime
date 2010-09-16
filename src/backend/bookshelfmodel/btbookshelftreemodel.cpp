@@ -601,6 +601,7 @@ QDataStream &operator<<(QDataStream &os, const BtBookshelfTreeModel::Grouping &o
 QDataStream &operator>>(QDataStream &is, BtBookshelfTreeModel::Grouping &o) {
     int s;
     is >> s;
+    o.clear();
     for (int i(0); i < s; i++) {
         int g;
         is >> g;
