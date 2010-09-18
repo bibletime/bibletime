@@ -11,6 +11,7 @@
 
 #include <QDebug>
 #include <QDialogButtonBox>
+#include <QLabel>
 #include <QLineEdit>
 #include <QPushButton>
 #include <QSettings>
@@ -229,7 +230,11 @@ void CSearchDialog::initView() {
     verticalLayout->addWidget(m_searchOptionsArea);
 
     m_searchResultArea = new BtSearchResultArea(this);
+    m_searchResultArea->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     verticalLayout->addWidget(m_searchResultArea);
+
+    QLabel* hint = new QLabel(tr("Drag any verse reference onto an open Bible window"), this);
+    verticalLayout->addWidget(hint);
 
     QHBoxLayout* horizontalLayout = new QHBoxLayout();
 
