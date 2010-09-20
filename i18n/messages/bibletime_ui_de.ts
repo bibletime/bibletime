@@ -580,6 +580,37 @@ This file is distributed under the same license as the Bibetime package.</transl
         <source>You are trying to access an encrypted module. Please provide an unlock key in the following dialog to open the module.</source>
         <translation>Sie versuchen, auf ein verschlüsseltes Modul zuzugreifen. Bitte geben Sie einen Freischaltschüssel im folgenden Dialogfenster ein, um das Modul zu öffnen.</translation>
     </message>
+    <message>
+        <source>There are currently no works installed. Please click the button below to install new works.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Install works...</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>BtBookshelfGroupingMenu</name>
+    <message>
+        <source>Category/Language</source>
+        <translation type="unfinished">Kategorie/Sprache</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation type="unfinished">Kategorie</translation>
+    </message>
+    <message>
+        <source>Language/Category</source>
+        <translation type="unfinished">Sprache/Kategorie</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished">Sprache</translation>
+    </message>
+    <message>
+        <source>No grouping</source>
+        <translation type="unfinished">Nicht gruppiert</translation>
+    </message>
 </context>
 <context>
     <name>BtBookshelfModel</name>
@@ -604,27 +635,27 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Use grouping from bookshelf dock</source>
-        <translation>Gruppierung aus dem Bücherregal verwenden</translation>
+        <translation type="obsolete">Gruppierung aus dem Bücherregal verwenden</translation>
     </message>
     <message>
         <source>Category/Language</source>
-        <translation>Kategorie/Sprache</translation>
+        <translation type="obsolete">Kategorie/Sprache</translation>
     </message>
     <message>
         <source>Category</source>
-        <translation>Kategorie</translation>
+        <translation type="obsolete">Kategorie</translation>
     </message>
     <message>
         <source>Language/Category</source>
-        <translation>Sprache/Kategorie</translation>
+        <translation type="obsolete">Sprache/Kategorie</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>Sprache</translation>
+        <translation type="obsolete">Sprache</translation>
     </message>
     <message>
         <source>No grouping</source>
-        <translation>Nicht gruppiert</translation>
+        <translation type="obsolete">Nicht gruppiert</translation>
     </message>
     <message>
         <source>Show/hide works</source>
@@ -806,6 +837,10 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <source>Installation source</source>
         <translation>Installationsquelle</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation type="unfinished">Version</translation>
     </message>
 </context>
 <context>
@@ -996,6 +1031,25 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
 </context>
 <context>
+    <name>BtModuleIndexDialog</name>
+    <message>
+        <source>Preparing to index modules...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Abbrechen</translation>
+    </message>
+    <message>
+        <source>Creating indices</source>
+        <translation type="unfinished">Erstellung der Indizes</translation>
+    </message>
+    <message>
+        <source>Creating index for work: %1</source>
+        <translation type="unfinished">Erstelle Index für Werk: %1</translation>
+    </message>
+</context>
+<context>
     <name>BtModuleManagerDialog</name>
     <message>
         <source>Bookshelf Manager</source>
@@ -1007,6 +1061,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <source>&amp;Open work</source>
         <translation>Werk &amp;öffnen</translation>
+    </message>
+</context>
+<context>
+    <name>BtOpenWorkActionMenu</name>
+    <message>
+        <source>&amp;Grouping order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sets the grouping order for the items in this menu.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1127,11 +1192,11 @@ shortcut</source>
     <name>BtSourceArea</name>
     <message>
         <source>Work</source>
-        <translation>Werk</translation>
+        <translation type="obsolete">Werk</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation>Beschreibung</translation>
+        <translation type="obsolete">Beschreibung</translation>
     </message>
     <message>
         <source>Add...</source>
@@ -1156,6 +1221,21 @@ shortcut</source>
     <message>
         <source>Add new source</source>
         <translation>Neue Quelle hinzufügen</translation>
+    </message>
+</context>
+<context>
+    <name>BtSourceAreaModel</name>
+    <message>
+        <source>Work</source>
+        <translation type="unfinished">Werk</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation type="unfinished">Version</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation type="unfinished">Beschreibung</translation>
     </message>
 </context>
 <context>
@@ -1812,23 +1892,23 @@ shortcut</source>
     <name>CModuleIndexDialog</name>
     <message>
         <source>Cancel</source>
-        <translation>Abbrechen</translation>
+        <translation type="obsolete">Abbrechen</translation>
     </message>
     <message>
         <source>Creating indices</source>
-        <translation>Erstellung der Indizes</translation>
+        <translation type="obsolete">Erstellung der Indizes</translation>
     </message>
     <message>
         <source>Indexing Is Cancelled</source>
-        <translation>Indizierung abgebrochen</translation>
+        <translation type="obsolete">Indizierung abgebrochen</translation>
     </message>
     <message>
         <source>Indexing is cancelled because modules are removed.</source>
-        <translation>Indizierung aufgrund entfernter Module abgebrochen.</translation>
+        <translation type="obsolete">Indizierung aufgrund entfernter Module abgebrochen.</translation>
     </message>
     <message>
         <source>Creating index for work: %1</source>
-        <translation>Erstelle Index für Werk: %1</translation>
+        <translation type="obsolete">Erstelle Index für Werk: %1</translation>
     </message>
 </context>
 <context>
@@ -2881,11 +2961,11 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Settings Migration</source>
-        <translation>Übernahme von Einstellungen</translation>
+        <translation type="obsolete">Übernahme von Einstellungen</translation>
     </message>
     <message>
         <source>It appears you have a BibleTime configuration from KDE 3 stored in %1, and you have not migrated it to this version.  Would you like to import it?</source>
-        <translation>Sie haben eine BibleTime-Konfiguration aus KDE3 in %1, und sie haben sie noch nicht in diese Version migriert. Möchten sie diese Konfiguration jetzt importieren?</translation>
+        <translation type="obsolete">Sie haben eine BibleTime-Konfiguration aus KDE3 in %1, und sie haben sie noch nicht in diese Version migriert. Möchten sie diese Konfiguration jetzt importieren?</translation>
     </message>
     <message>
         <source>Encrypted - needs unlock key</source>
@@ -3233,6 +3313,38 @@ Language name ppk</extracomment>
     <message>
         <source>Unindexed works</source>
         <translation>Nicht indizierte Werke</translation>
+    </message>
+    <message>
+        <source>Show this help message and exit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Output BibleTime version and exit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>open a clean session</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open the default Bible with the reference &lt;ref&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For command-line arguments parsed by the Qt toolkit, see %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All command-line arguments not recognized by BibleTime or Qt will be silently ignored.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error: %1 expects an argument. See --help for details.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error: Invalid command-line argument: %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3741,7 +3853,7 @@ Language name ppk</extracomment>
     <message>
         <source>One or more works need indexing before they can be searched.
 This could take a long time. Proceed with indexing?</source>
-        <translation>Für ein oder mehrere Werke müssen Indices erstellt werden, bevor darin gesucht werden kann. 
+        <translation type="obsolete">Für ein oder mehrere Werke müssen Indices erstellt werden, bevor darin gesucht werden kann. 
 Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     </message>
     <message>
@@ -3755,6 +3867,18 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     <message>
         <source>Show a graphical analysis of the search result</source>
         <translation>Eine grafische Analyse des Suchergebnisses anzeigen</translation>
+    </message>
+    <message>
+        <source>The following modules need to be indexed before they can be searched in:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Indexing could take a long time. Click &quot;Yes&quot; to index the modules and start the search, or &quot;No&quot; to cancel the search.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Drag any verse reference onto an open Bible window</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

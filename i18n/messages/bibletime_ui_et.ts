@@ -377,7 +377,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Näita &quot;Mis vidin see on?&quot; akent</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="840"/>
+        <location filename="../../src/bibletime_init.cpp" line="858"/>
         <source>Whats this widget?</source>
         <translation>Mis vidin see on?</translation>
     </message>
@@ -412,22 +412,22 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Menüü ja tööriistaribade käivitamine...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="258"/>
+        <location filename="../../src/bibletime.cpp" line="259"/>
         <source>Unlock Work</source>
         <translation>Kaitstud teose avamine</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="258"/>
+        <location filename="../../src/bibletime.cpp" line="259"/>
         <source>Enter the unlock key for %1.</source>
         <translation>Palun sisestage võti teose %1 avamiseks.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="278"/>
+        <location filename="../../src/bibletime.cpp" line="279"/>
         <source>Warning: Invalid unlock key!</source>
         <translation>Hoiatus: Vale võti!</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="279"/>
+        <location filename="../../src/bibletime.cpp" line="280"/>
         <source>The unlock key you provided did not properly unlock this module. Please try again.</source>
         <translation>Teie poolt sisestatud võti ei avanud seda moodulit. Palun proovige uuesti.</translation>
     </message>
@@ -669,60 +669,98 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtBookshelfDockWidget</name>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="123"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="149"/>
         <source>Bookshelf</source>
         <translation>Raamaturiiul</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="125"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="151"/>
         <source>&amp;Open</source>
         <translation>&amp;Ava</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="126"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="152"/>
         <source>&amp;Edit</source>
         <translation>&amp;Redigeeri</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="127"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="153"/>
         <source>&amp;Plain text</source>
         <translation>&amp;Tavalist teksti</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="128"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="154"/>
         <source>&amp;HTML</source>
         <translation>&amp;HTML&apos;i</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="129"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="155"/>
         <source>&amp;Unlock...</source>
         <translation>Võta &amp;lukust lahti...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="130"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="156"/>
         <source>&amp;About...</source>
         <translation>&amp;Info...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="165"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="158"/>
+        <source>There are currently no works installed. Please click the button below to install new works.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="160"/>
+        <source>&amp;Install works...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="172"/>
         <source>Warning: Module locked!</source>
         <translation>Hoiatus: Moodul lukustatud!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="166"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="173"/>
         <source>You are trying to access an encrypted module. Please provide an unlock key in the following dialog to open the module.</source>
         <translation>Te üritade ligi pääseda krüpteeritud moodulile. Palun sisetage järgnevas dialoogaknas mooduli avamiseks võti.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="215"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="222"/>
         <source>&amp;Search in %1...</source>
         <translation>&amp;Otsing teosest &quot;%1&quot;...</translation>
     </message>
 </context>
 <context>
+    <name>BtBookshelfGroupingMenu</name>
+    <message>
+        <location filename="../../src/frontend/btbookshelfgroupingmenu.cpp" line="101"/>
+        <source>Category/Language</source>
+        <translation type="unfinished">Kategooria/keel</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfgroupingmenu.cpp" line="102"/>
+        <source>Category</source>
+        <translation type="unfinished">Kategooria</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfgroupingmenu.cpp" line="103"/>
+        <source>Language/Category</source>
+        <translation type="unfinished">Keel/kategooria</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfgroupingmenu.cpp" line="104"/>
+        <source>Language</source>
+        <translation type="unfinished">Keel</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfgroupingmenu.cpp" line="107"/>
+        <source>No grouping</source>
+        <translation type="unfinished">Ära grupeeri</translation>
+    </message>
+</context>
+<context>
     <name>BtBookshelfModel</name>
     <message>
-        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="75"/>
+        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="76"/>
         <source>Module</source>
         <translation>Moodul</translation>
     </message>
@@ -730,53 +768,47 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtBookshelfWidget</name>
     <message>
-        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="180"/>
+        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="144"/>
         <source>Fi&amp;lter:</source>
         <translation>Fi&amp;lter:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="181"/>
-        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="184"/>
+        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="145"/>
+        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="147"/>
         <source>Grouping</source>
         <translation>Grupeerimine</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="182"/>
+        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="146"/>
         <source>Change the grouping of items in the bookshelf.</source>
         <translation>Muuda raamaturiiuli teoste grupeerimist.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="185"/>
         <source>Use grouping from bookshelf dock</source>
-        <translation>Kasuta grupeerimist peaakna raamaturiiulist</translation>
+        <translation type="obsolete">Kasuta grupeerimist peaakna raamaturiiulist</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="186"/>
         <source>Category/Language</source>
-        <translation>Kategooria/keel</translation>
+        <translation type="obsolete">Kategooria/keel</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="187"/>
         <source>Category</source>
-        <translation>Kategooria</translation>
+        <translation type="obsolete">Kategooria</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="188"/>
         <source>Language/Category</source>
-        <translation>Keel/kategooria</translation>
+        <translation type="obsolete">Keel/kategooria</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="189"/>
         <source>Language</source>
-        <translation>Keel</translation>
+        <translation type="obsolete">Keel</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="190"/>
         <source>No grouping</source>
-        <translation>Ära grupeeri</translation>
+        <translation type="obsolete">Ära grupeeri</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="191"/>
+        <location filename="../../src/frontend/btbookshelfwidget.cpp" line="148"/>
         <source>Show/hide works</source>
         <translation>Näita/peida teoseid</translation>
     </message>
@@ -970,17 +1002,17 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtInstallModuleChooserDialog</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.cpp" line="54"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.cpp" line="64"/>
         <source>Install/Update works?</source>
         <translation>Paigalda/uuenda teosed?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.cpp" line="57"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.cpp" line="67"/>
         <source>Do you really want to install these works?</source>
         <translation>Kas soovite tõesti need teosed paigaldada?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.cpp" line="58"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.cpp" line="68"/>
         <source>Only one version of a work can be installed at the same time. Select only one if there are items marked with red.</source>
         <translation>Igast teosest saab paigaldatud olla ainult üks versioon. Punaselt märgitud elementide puhul valige ainult üks.</translation>
     </message>
@@ -988,14 +1020,19 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtInstallModuleChooserDialogModel</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialogmodel.cpp" line="78"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialogmodel.cpp" line="92"/>
         <source>Work</source>
         <translation>Teos</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialogmodel.cpp" line="81"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialogmodel.cpp" line="93"/>
         <source>Installation source</source>
         <translation>Paigalduse allikas</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialogmodel.cpp" line="94"/>
+        <source>Version</source>
+        <translation type="unfinished">Versioon</translation>
     </message>
 </context>
 <context>
@@ -1040,99 +1077,99 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtInstallPathDialog</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="34"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="33"/>
         <source>Bookshelf Folders</source>
         <translation>Raamaturiiuli kataloogid</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="42"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="41"/>
         <source>Works can be installed in one or more folders. After setting up folders here you can choose one of them in Install page.</source>
         <translation>Teoseid saab paigaldada ühte või enamasse kataloogi. Pärast kataloogide määramist saab paigaldamise leheküljel neid valida.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="44"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="43"/>
         <source>BibleTime and the SWORD library find the works from  all of these folders. If a folder is removed here it still exists in the system with all the works in it.</source>
         <translation>BibleTime ja SWORD teek leiavad teoseid kõigist nendest kataloogidest. Kui mõni kataloog siit eemaldatakse, jääb see süsteemi alles koos kõikide teostega, mis on sinna paigaldatud.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="47"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="46"/>
         <source>Configure bookshelf folders</source>
         <translation>Raamaturiiuli kataloogide seadistamine</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="52"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="51"/>
         <source>Configuration file for the folders is: </source>
         <translation>Selle kataloogi seadistuse fail on: </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="60"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="59"/>
         <source>Folders where new works can be installed</source>
         <translation>Kataloogid, kuhu saab paigaldada uusi teoseid</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="63"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="62"/>
         <source>Read-only folders</source>
         <translation>Kirjutuskaitstud kataloogid</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="65"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="64"/>
         <source>Nonexistent folders</source>
         <translation>Mitte-eksisteerivad kataloogid</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="79"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="78"/>
         <source>Add...</source>
         <translation>Lisa...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="80"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="79"/>
         <source>Add new folder</source>
         <translation>Lisa uus kataloog</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="85"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="84"/>
         <source>Edit...</source>
         <translation>Muuda...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="86"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="85"/>
         <source>Edit the selected folder</source>
         <translation>Muuda valitud kataloogi</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="91"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="90"/>
         <source>Remove</source>
         <translation>Eemalda</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="92"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="91"/>
         <source>Remove the selected folder</source>
         <translation>Eemalda valitud kataloog</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="167"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="166"/>
         <source>This default folder in your home directory can&apos;t be removed</source>
         <translation>Vaikimisi kataloogi teie kodukataloogis ei saa eemaldada</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="173"/>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="194"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="172"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="193"/>
         <source>Choose Folder</source>
         <translation>Vali kataloog</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="182"/>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="202"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="181"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="201"/>
         <source>Use Folder?</source>
         <translation>Kasutada kataloogi?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="182"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="181"/>
         <source>This folder is not writable, so works can not be installed here using BibleTime. Do you want to use this folder instead of the previous value?</source>
         <translation>Sellel kataloog on kirjutuskaitstud, seega ei saa BibleTime sinna teosed paigaldada. Kas siiski kasutada seda kataloogi eelneva asemel?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="202"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="201"/>
         <source>This folder is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of bookshelf folders?</source>
         <translation>Sellel kataloog on kirjutuskaitstud, seega ei saa BibleTime sinna teosed paigaldada. Kas siiski lisada see kataloog raamaturiiuli kataloogide hulka?</translation>
     </message>
@@ -1266,45 +1303,58 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtOpenWorkAction</name>
     <message>
-        <location filename="../../src/frontend/btopenworkaction.cpp" line="85"/>
+        <location filename="../../src/frontend/btopenworkaction.cpp" line="106"/>
         <source>&amp;Open work</source>
         <translation>&amp;Ava teos</translation>
     </message>
 </context>
 <context>
+    <name>BtOpenWorkActionMenu</name>
+    <message>
+        <location filename="../../src/frontend/btopenworkaction.cpp" line="51"/>
+        <source>&amp;Grouping order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btopenworkaction.cpp" line="52"/>
+        <source>Sets the grouping order for the items in this menu.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>BtRemovePage</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="86"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="92"/>
         <source>Remove</source>
         <translation>Eemalda</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="78"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="84"/>
         <source>Remove installed works. Select the works and click Remove button.</source>
         <translation>Paigaldatud teoste eemaldamine. Valige teosed ja vajutage eemaldamisnupul.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="103"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="109"/>
         <source>You selected the following work(s): </source>
         <translation>Valisite järgmised teos(ed):</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="106"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="112"/>
         <source>Do you really want to remove them from your system?</source>
         <translation>Kas soovite need tõesti enda süsteemist eemaldada?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="60"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="66"/>
         <source>Remove...</source>
         <translation>Eemalda...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="61"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="67"/>
         <source>Remove the selected works</source>
         <translation>Eemalda valitud teosed</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="108"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="114"/>
         <source>Remove Works?</source>
         <translation>Eemaldada teosed?</translation>
     </message>
@@ -1325,12 +1375,12 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtSearchModuleChooserDialog</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchmodulechooserdialog.cpp" line="46"/>
+        <location filename="../../src/frontend/searchdialog/btsearchmodulechooserdialog.cpp" line="51"/>
         <source>Works to Search in</source>
         <translation>Teosed, millest otsida</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchmodulechooserdialog.cpp" line="48"/>
+        <location filename="../../src/frontend/searchdialog/btsearchmodulechooserdialog.cpp" line="53"/>
         <source>Select the works which should be searched.</source>
         <translation>Valige teosed, millest peaks otsima.</translation>
     </message>
@@ -1416,111 +1466,127 @@ kiirklahv</translation>
 <context>
     <name>BtSourceArea</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="107"/>
         <source>Work</source>
-        <translation>Teos</translation>
+        <translation type="obsolete">Teos</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="107"/>
         <source>Description</source>
-        <translation>Kirjeldus</translation>
+        <translation type="obsolete">Kirjeldus</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="95"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="102"/>
         <source>Add...</source>
         <translation>Lisa...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="86"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="93"/>
         <source>Refresh...</source>
         <translation>Värskenda...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="87"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="94"/>
         <source>Refresh the list of works from this source</source>
         <translation>Värskenda teoste nimekiri sellest allikast</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="91"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="98"/>
         <source>Delete...</source>
         <translation>Eemalda...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="92"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="99"/>
         <source>Delete this source</source>
         <translation>Eemalda see allikas</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="96"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="103"/>
         <source>Add new source</source>
         <translation>Lisa uus allikas</translation>
     </message>
 </context>
 <context>
+    <name>BtSourceAreaModel</name>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourceareamodel.cpp" line="79"/>
+        <source>Work</source>
+        <translation type="unfinished">Teos</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourceareamodel.cpp" line="80"/>
+        <source>Version</source>
+        <translation type="unfinished">Versioon</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourceareamodel.cpp" line="81"/>
+        <source>Description</source>
+        <translation type="unfinished">Kirjeldus</translation>
+    </message>
+</context>
+<context>
     <name>BtSourceWidget</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="60"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="69"/>
         <source>Delete Source?</source>
         <translation>Eemaldada allikas?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="61"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="70"/>
         <source>Do you really want to delete this source?</source>
         <translation>Kas soovite tõesti selle allika BibleTime&apos;st eemaldada?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="94"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="103"/>
         <source>Cancel</source>
         <translation>Tühista</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="95"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="104"/>
         <source>Refreshing Source</source>
         <translation>Värskendamine allikast</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="117"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="126"/>
         <source>Connecting...</source>
         <translation>Ühendumine...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="160"/>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="161"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="169"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="170"/>
         <source>Refreshing...</source>
         <translation>Värskendamine...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="221"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="230"/>
         <source>No sources were found in the SWORD configuration and BibleTime couldn&apos;t create a default source. Check your SWORD configuration and that the configuration path is writable. Then restart the Bookshelf Manager.</source>
         <translation>SWORD teegi seadistuses ei leitud ühtegi allikat, mistõttu ei saanud BibleTime valida vaikimisi allikat. Palun kontrollige SWORD&apos;i konfiguratsiooni ning et konfiguratsiooni asukoht oleks kirjutatav. Seejärel taaskäivitage raamaturiiuli haldamine.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="236"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="245"/>
         <source>Remote:</source>
         <translation>Võrgusolev:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="241"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="250"/>
         <source>Local:</source>
         <translation>Kohalik:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="245"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="254"/>
         <source>Not a directory!</source>
         <translation>Ei ole kataloog!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="248"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="257"/>
         <source>Not readable!</source>
         <translation>Pole loetav!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="314"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="317"/>
         <source>Warning</source>
         <translation>Hoiatus</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="314"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="317"/>
         <source>The destination directory is not writable or does not exist. Installation will fail unless this has first been fixed.</source>
         <translation>Sihtkataloog pole kirjutatav või ei eksisteeri. Paigaldus ebaõnnestub kui seda probleemi eelnevalt ei lahendata.</translation>
     </message>
@@ -1724,33 +1790,33 @@ kiirklahv</translation>
 <context>
     <name>CBookmarkIndex</name>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="91"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="90"/>
         <source>Bookmarks</source>
         <translation>Järjehoidjad</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="93"/>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="612"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="92"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="611"/>
         <source>New folder</source>
         <translation>Uus kaust</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="94"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="93"/>
         <source>Rename folder</source>
         <translation>Nimeta kaust ümber</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="732"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="731"/>
         <source>Delete Items</source>
         <translation>Kustuta kirjed</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="733"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="732"/>
         <source>Do you really want to delete the selected items and child-items?</source>
         <translation>Kas Te tõesti soovite kustutada valitud kirjed ja alamkirjed?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="851"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="850"/>
         <source>The work to which the bookmark points to is not installed.</source>
         <translation>Teos, millele järjehoidja viitab, pole paigaldatud.</translation>
     </message>
@@ -1759,62 +1825,62 @@ kiirklahv</translation>
         <translation type="obsolete">Muuda järjehoidja kirjeldust...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="102"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="101"/>
         <source>Print bookmarks...</source>
         <translation>Trüki järjehoidjad...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="104"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="103"/>
         <source>Remove selected items...</source>
         <translation>Eemalda valitud kirjed...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="100"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="99"/>
         <source>Import to folder...</source>
         <translation>Impordi kaustast...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="96"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="95"/>
         <source>Edit bookmark...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="98"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="97"/>
         <source>Sort folder bookmarks...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="99"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="98"/>
         <source>Sort all bookmarks...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="101"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="100"/>
         <source>Export from folder...</source>
         <translation>Ekspordi kausta...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="412"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="411"/>
         <source>Can drop only bookmarks or one folder</source>
         <translation>Ainult järjehoidjaid või üksikut kausta saab lohistada</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="417"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="416"/>
         <source>Can&apos;t drop folder into the folder itself or into its subfolder</source>
         <translation>Kausta ei saa iseendasse või mõnda iseenda alamkausta asetada</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="424"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="423"/>
         <source>Copy</source>
         <translation>Kopeeri</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="425"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="424"/>
         <source>Move</source>
         <translation>Teisalda</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="493"/>
+        <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="492"/>
         <source>Drag references from text views to this view</source>
         <translation>Lohistage viiteid tekstiakendest siia</translation>
     </message>
@@ -3871,14 +3937,12 @@ Language name ppk</extracomment>
         <translation>Lisainformatsiooni jaoks tehke siin topeltklikk</translation>
     </message>
     <message>
-        <location filename="../../src/util/migrationutil.cpp" line="55"/>
         <source>Settings Migration</source>
-        <translation>Seadete ületoomine</translation>
+        <translation type="obsolete">Seadete ületoomine</translation>
     </message>
     <message>
-        <location filename="../../src/util/migrationutil.cpp" line="56"/>
         <source>It appears you have a BibleTime configuration from KDE 3 stored in %1, and you have not migrated it to this version.  Would you like to import it?</source>
-        <translation>Näib, et Teil on kataloogi %1 salvestatud BibleTime konfiguratsioon KDE versioon 3-st, ja Te pole veel uuele versioonile üle läinud. Kas Te soovite selle konfiguratsiooni importida?</translation>
+        <translation type="obsolete">Näib, et Teil on kataloogi %1 salvestatud BibleTime konfiguratsioon KDE versioon 3-st, ja Te pole veel uuele versioonile üle läinud. Kas Te soovite selle konfiguratsiooni importida?</translation>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="206"/>
@@ -3976,12 +4040,12 @@ Language name ppk</extracomment>
         <translation>Verbi ajavorm muutus</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/instbackend.cpp" line="183"/>
+        <location filename="../../src/backend/btinstallbackend.cpp" line="183"/>
         <source>Can&apos;t write file</source>
         <translation>Ei saa faili kirjutada</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/instbackend.cpp" line="183"/>
+        <location filename="../../src/backend/btinstallbackend.cpp" line="183"/>
         <source>The Sword config file can&apos;t be written!</source>
         <translation>Ei saa kirjutada Sword&apos;i konfiguratsioonifaili!</translation>
     </message>
@@ -4026,28 +4090,43 @@ Language name ppk</extracomment>
         <translation>Indekseerimata teosed</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="57"/>
+        <location filename="../../src/main.cpp" line="40"/>
         <source>Show this help message and exit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="60"/>
+        <location filename="../../src/main.cpp" line="43"/>
+        <source>Output BibleTime version and exit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/main.cpp" line="46"/>
         <source>open a clean session</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="63"/>
+        <location filename="../../src/main.cpp" line="49"/>
         <source>Open the default Bible with the reference &lt;ref&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="71"/>
+        <location filename="../../src/main.cpp" line="52"/>
         <source>For command-line arguments parsed by the Qt toolkit, see %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="74"/>
+        <location filename="../../src/main.cpp" line="55"/>
         <source>All command-line arguments not recognized by BibleTime or Qt will be silently ignored.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/main.cpp" line="102"/>
+        <source>Error: %1 expects an argument. See --help for details.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/main.cpp" line="108"/>
+        <source>Error: Invalid command-line argument: %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4203,7 +4282,7 @@ Language name ppk</extracomment>
         <translation>Teosed:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="341"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="350"/>
         <source>No search scope</source>
         <translation>Otsingu skoop on määramata</translation>
     </message>
@@ -4670,12 +4749,12 @@ Language name ppk</extracomment>
 <context>
     <name>Search::CSearchDialog</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="84"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="85"/>
         <source>Search</source>
         <translation>Otsing</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="127"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="128"/>
         <source>Missing indices</source>
         <translation>Puuduvad indeksid</translation>
     </message>
@@ -4686,27 +4765,32 @@ This could take a long time. Proceed with indexing?</source>
 See võib võtta kaua aega. Kas jätkata indekseerimisega?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="128"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="129"/>
         <source>The following modules need to be indexed before they can be searched in:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="129"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="130"/>
         <source>Indexing could take a long time. Click &quot;Yes&quot; to index the modules and start the search, or &quot;No&quot; to cancel the search.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="236"/>
+        <source>Drag any verse reference onto an open Bible window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="241"/>
         <source>&amp;Analyze results...</source>
         <translation>&amp;Analüüsi tulemusi...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="237"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="242"/>
         <source>Show a graphical analysis of the search result</source>
         <translation>Näita graafilist analüüsi otsingutulemuste kohta</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="243"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="248"/>
         <source>&amp;Close</source>
         <translation>&amp;Sule</translation>
     </message>

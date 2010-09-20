@@ -580,6 +580,37 @@ This file is distributed under the same license as the Bibetime package.</transl
         <source>You are trying to access an encrypted module. Please provide an unlock key in the following dialog to open the module.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>There are currently no works installed. Please click the button below to install new works.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Install works...</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>BtBookshelfGroupingMenu</name>
+    <message>
+        <source>Category/Language</source>
+        <translation type="unfinished">Kategorie/Jazyk</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation type="unfinished">Kategorie</translation>
+    </message>
+    <message>
+        <source>Language/Category</source>
+        <translation type="unfinished">Jazyk/kategorie</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished">Jazyk</translation>
+    </message>
+    <message>
+        <source>No grouping</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BtBookshelfModel</name>
@@ -603,28 +634,20 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Use grouping from bookshelf dock</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Category/Language</source>
-        <translation type="unfinished">Kategorie/Jazyk</translation>
+        <translation type="obsolete">Kategorie/Jazyk</translation>
     </message>
     <message>
         <source>Category</source>
-        <translation type="unfinished">Kategorie</translation>
+        <translation type="obsolete">Kategorie</translation>
     </message>
     <message>
         <source>Language/Category</source>
-        <translation type="unfinished">Jazyk/kategorie</translation>
+        <translation type="obsolete">Jazyk/kategorie</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation type="unfinished">Jazyk</translation>
-    </message>
-    <message>
-        <source>No grouping</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Jazyk</translation>
     </message>
     <message>
         <source>Show/hide works</source>
@@ -806,6 +829,10 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <source>Installation source</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation type="unfinished">Verze</translation>
     </message>
 </context>
 <context>
@@ -1029,6 +1056,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
 </context>
 <context>
+    <name>BtOpenWorkActionMenu</name>
+    <message>
+        <source>&amp;Grouping order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sets the grouping order for the items in this menu.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>BtRemovePage</name>
     <message>
         <source>Remove</source>
@@ -1146,11 +1184,11 @@ shortcut</source>
     <name>BtSourceArea</name>
     <message>
         <source>Work</source>
-        <translation>Dílo</translation>
+        <translation type="obsolete">Dílo</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation>Popis</translation>
+        <translation type="obsolete">Popis</translation>
     </message>
     <message>
         <source>Add...</source>
@@ -1175,6 +1213,21 @@ shortcut</source>
     <message>
         <source>Add new source</source>
         <translation>Přidat nový zdroj</translation>
+    </message>
+</context>
+<context>
+    <name>BtSourceAreaModel</name>
+    <message>
+        <source>Work</source>
+        <translation type="unfinished">Dílo</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation type="unfinished">Verze</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation type="unfinished">Popis</translation>
     </message>
 </context>
 <context>
@@ -3110,11 +3163,7 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Settings Migration</source>
-        <translation>Přesun nastavení</translation>
-    </message>
-    <message>
-        <source>It appears you have a BibleTime configuration from KDE 3 stored in %1, and you have not migrated it to this version.  Would you like to import it?</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Přesun nastavení</translation>
     </message>
     <message>
         <source>Encrypted - needs unlock key</source>
@@ -3265,6 +3314,18 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>All command-line arguments not recognized by BibleTime or Qt will be silently ignored.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Output BibleTime version and exit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error: %1 expects an argument. See --help for details.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error: Invalid command-line argument: %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3792,6 +3853,10 @@ To může trvat dlouhou dobu. Pokračovat v indexování?</translation>
     </message>
     <message>
         <source>Indexing could take a long time. Click &quot;Yes&quot; to index the modules and start the search, or &quot;No&quot; to cancel the search.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Drag any verse reference onto an open Bible window</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
