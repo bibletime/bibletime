@@ -180,7 +180,7 @@ void CDisplay::emitReferenceDropped( const QString& reference ) {
     m_connections->emitReferenceDropped(key);
 }
 
-/** Returns the connections obect used for signas and slots. */
+/** Returns the connections object used for signals and slots. */
 CDisplayConnections* CDisplay::connectionsProxy() const {
     return m_connections;
 }

@@ -202,7 +202,7 @@ void BtHtmlReadDisplay::setText( const QString& newText ) {
         QString("<script  type=\"text/javascript\">").append(javascript).append("</script></body>")
     );
 
-    // Disconnect any previous connect and connect to slot that loads the javascript object
+    // Disconnect any previous connections and connect to slot that loads the javascript object
     QWebFrame* frame = mainFrame();
     disconnect(frame, SIGNAL(javaScriptWindowObjectCleared()), 0, 0);
     bool ok = connect(frame, SIGNAL(javaScriptWindowObjectCleared()), this, SLOT(loadJSObject()));

@@ -272,5 +272,3 @@ const QString CTextRendering::renderSingleKey(
     qDeleteAll(tree);
     return renderedText;
 }
-
-

@@ -82,7 +82,7 @@ class CDisplay {
         */
         virtual void selectAll() = 0;
         /**
-        * Returns the connections obect used for signas and slots.
+        * Returns the connections object used for signals and slots.
         */
         virtual CDisplayConnections* connectionsProxy() const;
         /**
