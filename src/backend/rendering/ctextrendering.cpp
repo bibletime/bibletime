@@ -184,16 +184,18 @@ const QString CTextRendering::renderKeyTree( KeyTree& tree ) {
         (modules.count() == 1) ? CSwordKey::createInstance(modules.first()) : 0
     );
 
-    foreach (KeyTreeItem* c, tree) {
-        if (modules.count() == 1) { //this optimizes the rendering, only one key created for all items
+    if (modules.count() == 1) { //this optimizes the rendering, only one key created for all items
+	foreach (KeyTreeItem* c, tree) {
             key->setKey(c->key());
             t.append( renderEntry( *c, key.data()) );
-        }
-        else {
-            t.append( renderEntry( *c ) );
-        }
+	}
     }
-
+    else {
+	foreach (KeyTreeItem* c, tree) {
+            t.append( renderEntry( *c ) );
+	}
+    }
+    
     return finishText(t, tree);
 }
 
