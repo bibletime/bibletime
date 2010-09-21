@@ -62,13 +62,13 @@ const QString CHTMLExportRendering::renderEntry( const KeyTreeItem& i, CSwordKey
         ret.append(i.getAlternativeContent());
 
         //   Q_ASSERT(i.hasChildItems());
-
+ 
         if (!i.childList()->isEmpty()) {
             KeyTree * const  tree = i.childList();
 
             const QList<const CSwordModuleInfo*> modules = collectModules(tree);
 
-            if (modules.count() == 1) { //insert the direction into the sorrounding div
+            if (modules.count() == 1) { //insert the direction into the surrounding div
                 ret.insert( 5, QString("dir=\"%1\" ").arg((modules.first()->textDirection() == CSwordModuleInfo::LeftToRight) ? "ltr" : "rtl" ));
             }
 
