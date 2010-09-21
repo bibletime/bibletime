@@ -100,7 +100,6 @@ const QString CHTMLExportRendering::renderEntry( const KeyTreeItem& i, CSwordKey
 
     //declarations out of the loop for optimization
     QString entry;
-    QString keyText;
     bool isRTL;
     QString preverseHeading;
     QString langAttr;
@@ -112,7 +111,6 @@ const QString CHTMLExportRendering::renderEntry( const KeyTreeItem& i, CSwordKey
         key->setModule(*mod_Itr);
         key->setKey(i.key());
 
-        keyText = key->key();
         isRTL = ((*mod_Itr)->textDirection() == CSwordModuleInfo::RightToLeft);
         entry = QString::null;
 
