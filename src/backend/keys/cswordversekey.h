@@ -35,8 +35,8 @@ class CSwordModuleInfo;
  * @see NextVerse()
  * @see PreviousVerse().
  *
- * Call the constructor only with a valid verse based modules, otherwise this key will be invalid
- * and the application will probably crash.
+ * Call the constructor only with valid verse based modules, otherwise this key
+ * will be invalid and the application will probably crash.
  *
  * @version $Id: cswordversekey.h,v 1.26 2006/02/25 11:38:15 joachim Exp $
  * @short CSwordKey implementation for Sword's VerseKey.
@@ -61,8 +61,12 @@ class CSwordVerseKey : public CSwordKey, public sword::VerseKey {
         CSwordVerseKey(const CSwordVerseKey &copy);
 
         /**
-          \todo Document params
-        */
+         * Constructs a CSwordVerseKey using the given module at the position given
+         * by the versekey.
+         *
+         * \param[in] k Position to use.
+         * \param[in] module Module to use.
+         */
         CSwordVerseKey(const sword::VerseKey *k,
                        const CSwordModuleInfo *module);
 

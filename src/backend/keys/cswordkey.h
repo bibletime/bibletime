@@ -42,7 +42,7 @@ class CSwordKey {
         virtual ~CSwordKey();
 
         /** Returns the current key.
-         * @return The current key which belongs to the current object.
+         * @return The key which belongs to the current object.
          */
         virtual QString key() const = 0;
 
