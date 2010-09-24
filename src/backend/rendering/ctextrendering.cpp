@@ -185,17 +185,17 @@ const QString CTextRendering::renderKeyTree( KeyTree& tree ) {
     );
 
     if (modules.count() == 1) { //this optimizes the rendering, only one key created for all items
-	foreach (KeyTreeItem* c, tree) {
+        foreach (KeyTreeItem* c, tree) {
             key->setKey(c->key());
             t.append( renderEntry( *c, key.data()) );
-	}
+        }
     }
     else {
-	foreach (KeyTreeItem* c, tree) {
+        foreach (KeyTreeItem* c, tree) {
             t.append( renderEntry( *c ) );
-	}
+        }
     }
-    
+
     return finishText(t, tree);
 }
 
