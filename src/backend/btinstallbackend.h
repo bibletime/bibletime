@@ -43,7 +43,7 @@ QStringList targetList();
 /** Saves the list of available install target paths to the sword config. Return success indicator.*/
 bool setTargetList( const QStringList& targets );
 
-QStringList sourceList();
+QStringList sourceNameList();
 
 /** Returns the path of the sword installer configuration file. */
 QString configPath();

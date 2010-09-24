@@ -195,7 +195,7 @@ void BtSourceWidget::initSources() {
 
     // ***** Use the backend to get the list of sources *****
     BtInstallBackend::initPassiveFtpMode();
-    QStringList sourceList = BtInstallBackend::sourceList();
+    QStringList sourceList = BtInstallBackend::sourceNameList();
     qDebug() << "got the source list from backend:" << sourceList;
     // Add a default entry, the Crosswire main repository
     if (!sourceList.count()) {
@@ -208,7 +208,7 @@ void BtSourceWidget::initSources() {
 
         BtInstallBackend::addSource(is);
 
-        sourceList = BtInstallBackend::sourceList();
+        sourceList = BtInstallBackend::sourceNameList();
         //Q_ASSERT( sourceList.count() > 0 );
     }
     qDebug() << "void BtSourceWidget::initSources 1";

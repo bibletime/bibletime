@@ -219,7 +219,7 @@ bool setTargetList( const QStringList& targets ) {
     return true;
 }
 
-QStringList sourceList() {
+QStringList sourceNameList() {
     qDebug() << "backend::sourceList";
     BtInstallMgr mgr;
     Q_ASSERT(mgr.installConf);
