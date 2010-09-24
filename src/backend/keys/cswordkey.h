@@ -82,7 +82,7 @@ class CSwordKey {
          * just in the way it comes out of the module.
          */
         virtual QString rawText();
-        /** Returns the rendered text. Returns the text of the current key after passign it through the
+        /** Returns the rendered text. Returns the text of the current key after passing it through the
          * modules filters.
          */
         virtual QString renderedText( const CSwordKey::TextRenderType mode = CSwordKey::Normal );
