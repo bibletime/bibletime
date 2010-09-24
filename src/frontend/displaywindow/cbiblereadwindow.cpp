@@ -367,7 +367,7 @@ void CBibleReadWindow::previousVerse() {
     }
 }
 
-/** rapper around key() to return the right type of key. */
+/** wrapper around key() to return the right type of key. */
 CSwordVerseKey* CBibleReadWindow::verseKey() {
     CSwordVerseKey* k = dynamic_cast<CSwordVerseKey*>(CDisplayWindow::key());
     Q_ASSERT(k);

@@ -321,7 +321,7 @@ class CDisplayWindow : public QMainWindow {
         BtActionCollection* m_actionCollection;
         CMDIArea* m_mdi;
 
-        //we may only cache the module names bacause after a backend relaod the pointers are invalid!
+        //we may only cache the module names bacause after a backend reload the pointers are invalid!
         QStringList m_modules;
 
         FilterOptions m_filterOptions;
