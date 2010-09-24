@@ -9,13 +9,11 @@
 
 #include "frontend/bookshelfmanager/btmodulemanagerdialog.h"
 
-#include <QDialogButtonBox>
 #include "backend/config/cbtconfig.h"
 #include "backend/managers/cswordbackend.h"
 #include "frontend/bookshelfmanager/indexpage/btindexpage.h"
 #include "frontend/bookshelfmanager/installpage/btinstallpage.h"
 #include "frontend/bookshelfmanager/removepage/btremovepage.h"
-#include "util/dialogutil.h"
 
 
 static BtModuleManagerDialog *m_staticModuleManagerDialog = 0;
@@ -46,13 +44,6 @@ BtModuleManagerDialog::BtModuleManagerDialog(QWidget* parent)
     addPage(indexPage);
 
     slotChangePage(0);
-
-    // Dialog button (Close)
-    QDialogButtonBox* bbox = new QDialogButtonBox(this);
-    bbox->addButton(QDialogButtonBox::Close);
-    util::prepareDialogBox(bbox);
-    addButtonBox(bbox);
-    connect(bbox, SIGNAL(rejected()), SLOT(close()));
 
     loadDialogSettings();
 }

@@ -43,14 +43,6 @@ BtConfigDialog::BtConfigDialog(QWidget* parent)
 
     m_pageLayout->addWidget(m_pageWidget);
 
-    // Horizontal line
-    QFrame* line = new QFrame();
-    line->setGeometry(QRect(1, 1, 1, 3));
-    line->setFrameShape(QFrame::HLine);
-    line->setFrameShadow(QFrame::Sunken);
-    line->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
-    m_pageLayout->addWidget(line);
-
     connect(m_contentsList,
             SIGNAL(currentRowChanged(int)),
             this, SLOT(slotChangePage(int))
@@ -87,6 +79,15 @@ void BtConfigDialog::addPage(BtConfigPage* pageWidget) {
 }
 
 void BtConfigDialog::addButtonBox(QDialogButtonBox* box) {
+    // First add a horizontal ruler:
+    QFrame *line = new QFrame();
+    line->setGeometry(QRect(1, 1, 1, 3));
+    line->setFrameShape(QFrame::HLine);
+    line->setFrameShadow(QFrame::Sunken);
+    line->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+    m_pageLayout->addWidget(line);
+
+    // Add button box:
     m_pageLayout->addWidget(box);
 }
 
