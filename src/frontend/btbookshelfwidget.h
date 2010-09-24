@@ -25,6 +25,7 @@ class BtBookshelfView;
 class QAbstractItemModel;
 class QAction;
 class QActionGroup;
+class QHBoxLayout;
 class QLabel;
 class QLineEdit;
 class QMenu;
@@ -46,14 +47,20 @@ class BtBookshelfWidget: public QWidget {
         void setTreeModel(BtBookshelfTreeModel *model);
 
         // Getters for widgets:
+        inline QWidget *leftCornerWidget() const { return m_leftCornerWidget; }
         inline QLabel *nameFilterLabel() const { return m_nameFilterLabel; }
         inline QLineEdit *nameFilterEdit() const { return m_nameFilterEdit; }
         inline QToolButton *groupingButton() const { return m_groupingButton; }
         inline QToolButton *showHideButton() const { return m_showHideButton; }
+        inline QWidget *rightCornerWidget() const { return m_rightCornerWidget; }
         inline BtBookshelfView *treeView() const { return m_treeView; }
         inline BtBookshelfGroupingMenu *groupingMenu() const { return m_groupingMenu; }
         inline QMenu *contextMenu() const { return m_contextMenu; }
         inline QMenu *itemContextMenu() const { return m_itemContextMenu; }
+
+        // Setters for widgets:
+        void setLeftCornerWidget(QWidget *w);
+        void setRightCornerWidget(QWidget *w);
 
         // Getters for actions:
         inline QAction *showHideAction() const { return m_showHideAction; }
@@ -82,6 +89,9 @@ class BtBookshelfWidget: public QWidget {
         BtBookshelfFilterModel *m_postFilterModel;
 
         // Widgets:
+        QHBoxLayout     *m_toolBar;
+        QWidget         *m_leftCornerWidget;
+        QWidget         *m_rightCornerWidget;
         QLabel          *m_nameFilterLabel;
         QLineEdit       *m_nameFilterEdit;
         QToolButton     *m_groupingButton;

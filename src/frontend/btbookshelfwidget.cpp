@@ -34,7 +34,11 @@
 
 
 BtBookshelfWidget::BtBookshelfWidget(QWidget *parent, Qt::WindowFlags flags)
-        : QWidget(parent, flags), m_sourceModel(0), m_treeModel(0)
+        : QWidget(parent, flags)
+        , m_sourceModel(0)
+        , m_treeModel(0)
+        , m_leftCornerWidget(0)
+        , m_rightCornerWidget(0)
 {
     // Setup post-filter:
     m_postFilterModel = new BtBookshelfFilterModel(this);
@@ -79,6 +83,18 @@ void BtBookshelfWidget::setTreeModel(BtBookshelfTreeModel *model) {
     m_postFilterModel->setSourceModel(model);
 }
 
+void BtBookshelfWidget::setLeftCornerWidget(QWidget *w) {
+    delete m_leftCornerWidget;
+    w->setParent(this);
+    m_toolBar->insertWidget(0, w, 0);
+}
+
+void BtBookshelfWidget::setRightCornerWidget(QWidget *w) {
+    delete m_rightCornerWidget;
+    w->setParent(this);
+    m_toolBar->insertWidget(m_toolBar->count(), w, 0);
+}
+
 void BtBookshelfWidget::initActions() {
     namespace DU = util::directory;
     namespace RM = CResMgr::mainIndex;
@@ -111,29 +127,29 @@ void BtBookshelfWidget::initMenus() {
 void BtBookshelfWidget::initWidgets() {
     QVBoxLayout *layout(new QVBoxLayout);
     layout->setContentsMargins(0, 0, 0, 0);
-    QHBoxLayout *toolBar(new QHBoxLayout);
+    m_toolBar = new QHBoxLayout;
     // Add a small margin between the edge of the window and the label (looks better)
-    toolBar->setContentsMargins(3, 0, 0, 0);
+    m_toolBar->setContentsMargins(3, 0, 0, 0);
     m_nameFilterLabel = new QLabel(this);
-    toolBar->addWidget(m_nameFilterLabel);
+    m_toolBar->addWidget(m_nameFilterLabel);
 
     m_nameFilterEdit = new QLineEdit(this);
     m_nameFilterEdit->installEventFilter(this);
     m_nameFilterLabel->setBuddy(m_nameFilterEdit);
-    toolBar->addWidget(m_nameFilterEdit);
+    m_toolBar->addWidget(m_nameFilterEdit);
 
     m_groupingButton = new QToolButton(this);
     m_groupingButton->setPopupMode(QToolButton::InstantPopup);
     m_groupingButton->setMenu(m_groupingMenu);
     m_groupingButton->setIcon(m_groupingMenu->icon());
     m_groupingButton->setAutoRaise(true);
-    toolBar->addWidget(m_groupingButton);
+    m_toolBar->addWidget(m_groupingButton);
 
     m_showHideButton = new QToolButton(this);
     m_showHideButton->setDefaultAction(m_showHideAction);
     m_showHideButton->setAutoRaise(true);
-    toolBar->addWidget(m_showHideButton);
-    layout->addLayout(toolBar);
+    m_toolBar->addWidget(m_showHideButton);
+    layout->addLayout(m_toolBar);
 
     m_treeView = new BtBookshelfView(this);
     layout->addWidget(m_treeView);
