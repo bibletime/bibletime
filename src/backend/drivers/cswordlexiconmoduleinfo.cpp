@@ -23,19 +23,23 @@
 //Change it once the format changed to make all systems rebuild their caches
 #define CACHE_FORMAT "3"
 
-void CSwordLexiconModuleInfo::initEntries() {
+const QStringList &CSwordLexiconModuleInfo::entries() const {
     namespace DU = util::directory;
 
-    Q_ASSERT(m_entries.empty());
+    // If cache is ok, just return it:
+    if (!m_entries.empty()) {
+        return m_entries;
+    }
 
+    // Initialize cache:
     //Check for buggy modules! They will not be loaded any more.
     if ( name() == QString("ZhEnglish")) {
         qWarning() << "Module ZhEnglish is buggy and will not be loaded.";
-        return;
+        return m_entries;
     }
     if ( name() == QString("EReo_en")) {
         qWarning() << "Module EReo_en is buggy and will not be loaded.";
-        return;
+        return m_entries;
     }
 
     QString dir(DU::getUserCacheDir().absolutePath());
@@ -65,7 +69,7 @@ void CSwordLexiconModuleInfo::initEntries() {
 
             f1.close();
             qDebug() << "Read" << m_entries.count() << "entries from lexicon cache for module" << name();
-            return;
+            return m_entries;
         }
 
         f1.close();
@@ -121,5 +125,5 @@ void CSwordLexiconModuleInfo::initEntries() {
         }
     }
 
-    return;
+    return m_entries;
 }

@@ -24,10 +24,7 @@ class CSwordLexiconModuleInfo: public CSwordModuleInfo {
     public: /* Methods: */
         inline CSwordLexiconModuleInfo(sword::SWModule *module,
                                        CSwordBackend * const backend)
-                : CSwordModuleInfo(module, backend, Lexicon)
-        {
-            initEntries();
-        }
+                : CSwordModuleInfo(module, backend, Lexicon) {}
 
         inline CSwordLexiconModuleInfo(const CSwordLexiconModuleInfo &copy)
             : CSwordModuleInfo(copy), m_entries(copy.m_entries) {}
@@ -45,7 +42,7 @@ class CSwordLexiconModuleInfo: public CSwordModuleInfo {
           improvement.
           \returns the list of lexicon entries in the module.
         */
-        inline const QStringList &entries() const { return m_entries; }
+        const QStringList &entries() const;
 
         /**
           Jumps to the closest entry in the module.
@@ -54,14 +51,11 @@ class CSwordLexiconModuleInfo: public CSwordModuleInfo {
             return module()->getRawEntry();
         }
 
-    private: /* Methods: */
-        void initEntries();
-
     private: /* Fields: */
         /**
           This is the list which caches the entres of the module.
         */
-        QStringList m_entries;
+        mutable QStringList m_entries;
 };
 
 #endif
