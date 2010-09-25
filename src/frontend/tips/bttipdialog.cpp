@@ -93,17 +93,22 @@ BtTipDialog::BtTipDialog(QWidget *parent, Qt::WindowFlags wflags)
     mainLayout->addLayout(hLayout);
     setLayout(mainLayout);
 
-    Q_ASSERT(connect(m_showTipsCheckBox, SIGNAL(toggled(bool)),
-                     this,               SLOT(startupBoxChanged(bool))));
+    bool ok;
+    ok = connect(m_showTipsCheckBox, SIGNAL(toggled(bool)),
+                     this,               SLOT(startupBoxChanged(bool)));
+    Q_ASSERT(ok);
 
-    Q_ASSERT(connect(m_buttonBox, SIGNAL(rejected()),
-                     this,        SLOT(reject())));
+    ok = connect(m_buttonBox, SIGNAL(rejected()),
+                     this,        SLOT(reject()));
+    Q_ASSERT(ok);
 
-    Q_ASSERT(connect(nextButton, SIGNAL(clicked()),
-                     this,       SLOT(nextTip())));
+    ok = connect(nextButton, SIGNAL(clicked()),
+                     this,       SLOT(nextTip()));
+    Q_ASSERT(ok);
 
-    Q_ASSERT(connect(m_tipView->page(), SIGNAL(linkClicked(const QUrl&)),
-                     this,              SLOT(linkClicked(const QUrl&))));
+    ok = connect(m_tipView->page(), SIGNAL(linkClicked(const QUrl&)),
+                     this,              SLOT(linkClicked(const QUrl&)));
+    Q_ASSERT(ok);
 
     m_tipNumber = CBTConfig::get(CBTConfig::tipNumber);
     initTips();
