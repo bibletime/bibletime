@@ -278,6 +278,9 @@ int main(int argc, char* argv[]) {
     QDBusConnection::sessionBus().registerObject("/BibleTime", mainWindow);
 #endif
 
+    if (CBTConfig::get(CBTConfig::showTipAtStartup))
+        mainWindow->slotOpenTipDialog();
+
     r = app.exec();
     CLOSE_DEBUG_STREAM;
     return r;

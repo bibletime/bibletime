@@ -34,6 +34,7 @@
 #include "frontend/profile/cprofilewindow.h"
 #include "frontend/searchdialog/csearchdialog.h"
 #include "frontend/settingsdialogs/cconfigurationdialog.h"
+#include "frontend/tips/bttipdialog.h"
 #include "util/directory.h"
 
 
@@ -410,6 +411,11 @@ void BibleTime::openOnlineHelp_Howto() {
 
 void BibleTime::slotOpenAboutDialog() {
     BtAboutDialog* dlg = new BtAboutDialog(this);
+    dlg->show();
+}
+
+void BibleTime::slotOpenTipDialog() {
+    BtTipDialog* dlg = new BtTipDialog(this);
     dlg->show();
 }
 

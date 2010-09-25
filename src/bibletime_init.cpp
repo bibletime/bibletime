@@ -258,6 +258,13 @@ void BibleTime::insertKeyboardActions( BtActionCollection* const a ) {
     a->addAction("aboutBibleTime", action);
 
     action = new QAction(a);
+    action->setText(tr("&Tip of the day..."));
+    action->setIcon(DU::getIcon(CResMgr::mainMenu::help::tipOfTheDay::icon));
+    action->setShortcut(QKeySequence(CResMgr::mainMenu::help::tipOfTheDay::accel));
+    action->setToolTip(tr("Tips about the BibleTime program"));
+    a->addAction("tipOfTheDay", action);
+
+    action = new QAction(a);
     a->addAction("showToolbarsInTextWindows", action);
 
     action = new QAction(a);
@@ -497,6 +504,10 @@ void BibleTime::initActions() {
     connect(m_aboutBibleTimeAction,  SIGNAL(triggered()),
             this,                    SLOT(slotOpenAboutDialog()) );
 
+    m_tipOfTheDayAction = m_actionCollection->action("tipOfTheDay");
+    connect(m_tipOfTheDayAction,  SIGNAL(triggered()),
+            this,                    SLOT(slotOpenTipDialog()) );
+
     #ifdef BT_DEBUG
     m_debugWidgetAction = new QAction(this);
     m_debugWidgetAction->setCheckable(true);
@@ -591,6 +602,7 @@ void BibleTime::initMenubar() {
     m_helpMenu = new QMenu(this);
     m_helpMenu->addAction(m_openHandbookAction);
     m_helpMenu->addAction(m_bibleStudyHowtoAction);
+    m_helpMenu->addAction(m_tipOfTheDayAction);
     m_helpMenu->addSeparator();
     m_helpMenu->addAction(m_aboutBibleTimeAction);
     #ifdef BT_DEBUG

@@ -127,6 +127,8 @@ QString getKey(const bools ID) {
             return "showTextWindowToolButtons";
         case showToolbarsInEachWindow:
             return "showToolbarsInEachWindow";
+        case showTipAtStartup:
+            return "showTipAtStartup";
     }
     Q_ASSERT(false);
     return QString::null;
@@ -194,6 +196,8 @@ QString getKey(const ints ID) {
             return "configDialogHeight";
         case configDialogWidth:
             return "configDialogWidth";
+        case tipNumber:
+            return "tipNumber";
     }
     Q_ASSERT(false);
     return QString::null;
@@ -359,6 +363,8 @@ bool getDefault(const bools ID) {
             return true;
         case showToolbarsInEachWindow:
             return true;
+        case showTipAtStartup:
+            return true;
     }
     return false;
 }
@@ -425,6 +431,8 @@ int getDefault(const ints ID) {
             return 1;
         case configDialogWidth:
             return 1;
+        case tipNumber:
+            return 0;
     }
     return 0;
 }

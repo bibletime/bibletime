@@ -238,6 +238,13 @@ SET(bibletime_SRC_FRONTEND_PROFILE
 
 SOURCE_GROUP("src\\frontend\\profile" FILES ${bibletime_SRC_FRONTEND_PROFILE})
 
+SET(bibletime_SRC_FRONTEND_TIPDIALOG
+    # Tip dialog:
+    src/frontend/tips/bttipdialog.cpp
+)
+
+SOURCE_GROUP("src\\frontend\\tips" FILES ${bibletime_SRC_FRONTEND_TIPDIALOG})
+
 SET(bibletime_SRC_FRONTEND_KEYCHOOSER
     # Frontend keychooser widgets:
     src/frontend/keychooser/bthistory.cpp
@@ -403,6 +410,7 @@ SET(bibletime_MOCABLE_HEADERS
     src/frontend/settingsdialogs/btlanguagesettings.h
     src/frontend/settingsdialogs/clistwidget.h
     src/frontend/settingsdialogs/cswordsettings.h
+    src/frontend/tips/bttipdialog.h
     src/util/btsignal.h
 )
 
@@ -426,6 +434,7 @@ SET(bibletime_SOURCES
     ${bibletime_SRC_FRONTEND_SEARCHDIALOG}
     ${bibletime_SRC_FRONTEND_SEARCHDIALOG_ANALYSIS}
     ${bibletime_SRC_FRONTEND_SETTINGSDIALOG}
+    ${bibletime_SRC_FRONTEND_TIPDIALOG}
     ${bibletime_SRC_FRONTEND_PROFILE}
     ${bibletime_SRC_FRONTEND_KEYCHOOSER}
     ${bibletime_SRC_FRONTEND_KEYCHOOSER_VERSEKEYCHOOSER}

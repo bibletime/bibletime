@@ -76,7 +76,8 @@ enum bools {
     showTextWindowToolButtons,
     showTextWindowModuleSelectorButtons,
     showFormatToolbarButtons,
-    showToolbarsInEachWindow
+    showToolbarsInEachWindow,
+    showTipAtStartup
 };
 enum ints {
     footnotes,
@@ -113,7 +114,8 @@ enum ints {
     configDialogPosX,
     configDialogPosY,
     configDialogHeight,
-    configDialogWidth
+    configDialogWidth,
+    tipNumber
 };
 enum intLists {
     leftPaneSplitterSizes,

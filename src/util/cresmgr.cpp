@@ -204,6 +204,11 @@ const QString icon        = "contents2.svg";
 const QKeySequence accel(Qt::Key_F2);
 const char* actionName    = "helpHowTo_action";
 }
+namespace tipOfTheDay {
+const QString icon        = "light_bulb.svg";
+const QKeySequence accel(Qt::Key_F3);
+const char* actionName    = "tipOfTheDay_action";
+}
 }//mainMenu::help
 }  //end of mainMenu
 

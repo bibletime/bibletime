@@ -226,6 +226,11 @@ class BibleTime : public QMainWindow {
         void openOnlineHelp_Howto();
 
         /**
+        * Open the Tip Dialog
+        */
+        void slotOpenTipDialog();
+
+        /**
           Processes the command-line options given to BibleTime.
           \param[in] ignoreSession Specifies whether --ignore-session was used.
           \param[in] bibleKey If --open-default-bible was used, the bible key
@@ -503,6 +508,7 @@ class BibleTime : public QMainWindow {
         QAction *m_openHandbookAction;
         QAction *m_bibleStudyHowtoAction;
         QAction *m_aboutBibleTimeAction;
+        QAction *m_tipOfTheDayAction;
 
         BtActionCollection* m_actionCollection;
 

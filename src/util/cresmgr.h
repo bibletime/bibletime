@@ -210,6 +210,11 @@ extern const QString icon;
 extern const QKeySequence accel;
 extern const char* actionName;
 }
+namespace tipOfTheDay {
+extern const QString icon;
+extern const QKeySequence accel;
+extern const char* actionName;
+}
 }
 }  //end of main menu
 
