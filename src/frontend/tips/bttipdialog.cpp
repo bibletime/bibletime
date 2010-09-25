@@ -14,94 +14,22 @@
 #include "util/directory.h"
 
 #include <QCheckBox>
-#include <QDialogButtonBox>
-#include <QAbstractButton>
-#include <QWebView>
-#include <QHBoxLayout>
-#include <QVBoxLayout>
 #include <QDesktopServices>
+#include <QDialogButtonBox>
+#include <QHBoxLayout>
+#include <QPushButton>
+#include <QVBoxLayout>
+#include <QWebView>
 
-BtTipDialog::BtTipDialog(QWidget *parent, Qt::WindowFlags wflags)
-        : QDialog(parent, wflags), m_buttonBox(0), m_tipView(0), m_showTipsCheckBox(0)
-{
-    Qt::WindowFlags flags = windowFlags();
-    setWindowFlags(flags & ~Qt::WindowContextHelpButtonHint);
 
-    setWindowTitle(tr("Tip Of The Day"));
-    resize(450, 220);
+namespace {
 
-    QVBoxLayout *mainLayout = new QVBoxLayout;
-
-    m_tipView = new QWebView;
-    m_tipView->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    mainLayout->addWidget(m_tipView);
-
-    QHBoxLayout* hLayout = new QHBoxLayout;
-
-    m_showTipsCheckBox = new QCheckBox;
-    m_showTipsCheckBox->setText(tr("Show tips at startup"));
-    bool showTips = CBTConfig::get(CBTConfig::showTipAtStartup);
-    m_showTipsCheckBox->setChecked(showTips);
-    hLayout->addWidget(m_showTipsCheckBox);
-
-    m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, Qt::Horizontal, this);
-    m_buttonBox->addButton(tr("Next Tip"), QDialogButtonBox::ActionRole);
-    hLayout->addWidget(m_buttonBox);
-
-    mainLayout->addLayout(hLayout);
-    setLayout(mainLayout);
-
-    bool ok;
-    ok = connect(m_showTipsCheckBox, SIGNAL(stateChanged(int)), this, SLOT(startupBoxChanged(int)));
-    Q_ASSERT(ok);
-
-    ok = connect(m_buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
-    Q_ASSERT(ok);
-
-    ok = connect(m_buttonBox, SIGNAL(clicked(QAbstractButton*)), this, SLOT(nextTip(QAbstractButton*)));
-    Q_ASSERT(ok);
-
-    m_tipView->page()->setLinkDelegationPolicy(QWebPage::DelegateAllLinks);
-    ok = connect(m_tipView->page(), SIGNAL(linkClicked(const QUrl&)), this, SLOT(linkClicked(const QUrl&)));
-    Q_ASSERT(ok);
-
-    m_tipNumber = CBTConfig::get(CBTConfig::tipNumber);
-    create_tips();
-    displayTip();
+inline QString vertical_align(const QString &text) {
+    return "<table height=\"100%\"><tr><td style=\"vertical-align:middle\" "
+            "height=\"100%\">" + text + "</td></tr></table>";
 }
 
-BtTipDialog::~BtTipDialog() {
-    // Intentionally empty
-}
-
-void BtTipDialog::linkClicked(const QUrl& url) {
-    QDesktopServices::openUrl(url);
-}
-
-void BtTipDialog::nextTip(QAbstractButton* button) {
-    QString text = button->text();
-    if (text == tr("Next Tip"))
-    {
-        m_tipNumber++;
-        if (m_tipNumber >= m_tips.count())
-            m_tipNumber = 0;
-        CBTConfig::set(CBTConfig::tipNumber, m_tipNumber);
-        displayTip();
-    }
-}
-
-void BtTipDialog::startupBoxChanged(int value) {
-    bool tipAtStartup = m_showTipsCheckBox->isChecked();
-    CBTConfig::set(CBTConfig::showTipAtStartup, tipAtStartup);
-}
-
-static QString vertical_align(const QString& text)
-{
-    return "<table height=\"100%\"><tr><td style=\"vertical-align:middle\" height=\"100%\">" + text + "</td></tr></table>";
-}
-
-static QString make_style(QWidget* widget)
-{
+inline QString make_style(QWidget *widget) {
     const QPalette &p = widget->palette();
     return "<style type=\"text/css\">"
         "body{"
@@ -114,48 +42,89 @@ static QString make_style(QWidget* widget)
     "</style>";
 }
 
-static QString make_html(QWidget* widget, const QString& text)
-{
-    QString vText = vertical_align(text);
-    return "<html><head>" + make_style(widget) + "</head><body>" + vText + "</body></html>";
+inline QString make_html(QWidget *widget, const QString &text) {
+    return "<html><head>" + make_style(widget) + "</head><body>"
+            + vertical_align(text) + "</body></html>";
 }
 
-static QString make_icon(const QString& icon)
-{
+inline QString make_icon(const QString &icon) {
     namespace DU = util::directory;
     QString fileName = DU::getIconDir().filePath(icon);
-    QUrl url = QUrl::fromLocalFile(fileName);
-    QString fileUrl = url.toString();
-    return "<img src=\"" + fileUrl + "\" width=\"32\" />";
+    QString iconUrl = QUrl::fromLocalFile(fileName).toString();
+    return "<img src=\"" + iconUrl + "\" width=\"32\" />";
 }
 
-void BtTipDialog::displayTip() {
-    QString html = make_html(this, m_tips[m_tipNumber]);
-    m_tipView->setHtml(html);
+} // anonymous namespace
+
+
+BtTipDialog::BtTipDialog(QWidget *parent, Qt::WindowFlags wflags)
+        : QDialog(parent, wflags)
+{
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    setWindowTitle(tr("Tip Of The Day"));
+    resize(450, 220);
+
+    QVBoxLayout *mainLayout = new QVBoxLayout;
+
+    m_tipView = new QWebView;
+    m_tipView->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    m_tipView->page()->setLinkDelegationPolicy(QWebPage::DelegateAllLinks);
+    mainLayout->addWidget(m_tipView);
+
+    QHBoxLayout* hLayout = new QHBoxLayout;
+
+    m_showTipsCheckBox = new QCheckBox;
+    m_showTipsCheckBox->setText(tr("Show tips at startup"));
+    bool showTips = CBTConfig::get(CBTConfig::showTipAtStartup);
+    m_showTipsCheckBox->setChecked(showTips);
+    hLayout->addWidget(m_showTipsCheckBox);
+
+    m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Close,
+                                       Qt::Horizontal,
+                                       this);
+    QPushButton *nextButton;
+    nextButton = m_buttonBox->addButton(tr("Next Tip"),
+                                        QDialogButtonBox::ActionRole);
+    hLayout->addWidget(m_buttonBox);
+
+    mainLayout->addLayout(hLayout);
+    setLayout(mainLayout);
+
+    Q_ASSERT(connect(m_showTipsCheckBox, SIGNAL(toggled(bool)),
+                     this,               SLOT(startupBoxChanged(bool))));
+
+    Q_ASSERT(connect(m_buttonBox, SIGNAL(rejected()),
+                     this,        SLOT(reject())));
+
+    Q_ASSERT(connect(nextButton, SIGNAL(clicked()),
+                     this,       SLOT(nextTip())));
+
+    Q_ASSERT(connect(m_tipView->page(), SIGNAL(linkClicked(const QUrl&)),
+                     this,              SLOT(linkClicked(const QUrl&))));
+
+    m_tipNumber = CBTConfig::get(CBTConfig::tipNumber);
+    initTips();
+    displayTip();
 }
 
-/********************************** Tips *************************************************/
+void BtTipDialog::initTips() {
+    m_tips.clear();
 
-void BtTipDialog::create_tips() {
-
-    QString icon = make_icon(CResMgr::modules::bible::icon_add);
     m_tips << tr("To add multiple Bible works in parallel in your active Bible window"
         " select this icon and choose another Bible work.")
-        + "<br><center>" + icon + "</center>";
+        + "<br><center>" + make_icon(CResMgr::modules::bible::icon_add) + "</center>";
 
-    icon = make_icon(CResMgr::modules::commentary::icon_add);
     m_tips << tr("To add multiple commentary works in parallel in your active commentary window"
         " select this icon and choose another commentary work.")
-        + "<br><center>" + icon + "</center>";
+        + "<br><center>" + make_icon(CResMgr::modules::commentary::icon_add) + "</center>";
 
     m_tips << tr("To learn more about the BibleTime project please go to our web site.")
         + "<br><center><a href=\"http://www.bibletime.info\">www.bibletime.info</a></center>";
 
-    icon = make_icon(CResMgr::displaywindows::commentaryWindow::syncWindow::icon);
     m_tips << tr("To synchronize a commentary window with the active Bible window, activate the"
-        " commentary window and select this icon.")
-        + "<br><center>" + icon + "</center><br>"
-        + tr("Select the icon again to stop the synchronization.");
+        " commentary window and select this icon.") + "<br><center>"
+        + make_icon(CResMgr::displaywindows::commentaryWindow::syncWindow::icon)
+        + "</center><br>" + tr("Select the icon again to stop the synchronization.");
 
     m_tips << tr("To create a bookmark drag any verse reference from a Bible or commentary work"
         " into the Bookmarks window. An arrow will indicate the position that the bookmark will"
@@ -165,4 +134,25 @@ void BtTipDialog::create_tips() {
     m_tips << tr("To change a bookmark title or description, right click on the bookmark"
         " and select \"Edit Bookmark...\". After finishing the edit the description can be"
         " seen by hovering over the bookmark.");
+}
+
+void BtTipDialog::displayTip() {
+    m_tipView->setHtml(make_html(this, m_tips[m_tipNumber]));
+}
+
+void BtTipDialog::startupBoxChanged(bool checked) {
+    CBTConfig::set(CBTConfig::showTipAtStartup, checked);
+}
+
+void BtTipDialog::nextTip() {
+    m_tipNumber++;
+    if (m_tipNumber >= m_tips.count()) {
+        m_tipNumber = 0;
+    }
+    CBTConfig::set(CBTConfig::tipNumber, m_tipNumber);
+    displayTip();
+}
+
+void BtTipDialog::linkClicked(const QUrl& url) {
+    QDesktopServices::openUrl(url);
 }

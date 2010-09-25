@@ -13,42 +13,44 @@
 #include <QDialog>
 #include <QStringList>
 
+
 class QAbstractButton;
 class QCheckBox;
 class QDialogButtonBox;
-class QWebView;
+class QPushButton;
 class QUrl;
+class QWebView;
 
 /**
-* The Tip Of The Day dialog
+  The Tip Of The Day dialog.
 */
 class BtTipDialog: public QDialog {
         Q_OBJECT
 
-    public:
+    public: /* Methods: */
+
         BtTipDialog(QWidget *parent = 0, Qt::WindowFlags wflags = Qt::Dialog);
-        ~BtTipDialog();
 
-    public slots:
+    private: /* Methods: */
 
-    /** Called when the show tips at startup checkbox changes. */
-        void startupBoxChanged(int value);
+        /** Enter tips in this function */
+        void initTips();
+
+        /** Sends the current tip to the web view */
+        void displayTip();
 
     private slots:
 
+        /** Called when the show tips at startup checkbox changes. */
+        void startupBoxChanged(bool checked);
+
         /** Called when the next tip button is pressed. */
-        void nextTip(QAbstractButton* button);
+        void nextTip();
 
         /** Called when any link in a tip is clicked. */
         void linkClicked(const QUrl& url);
 
-    private:
-
-        /** Enter tips in this function */
-        void create_tips();
-
-        /** Sends the current tip to the web view */
-        void displayTip();
+    private: /* Fields: */
 
         QDialogButtonBox* m_buttonBox;
         QWebView* m_tipView;
