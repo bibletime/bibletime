@@ -360,6 +360,14 @@ This file is distributed under the same license as the Bibetime package.</transl
         <source>Show formatting toolbar</source>
         <translation>Formatierungsleiste anzeigen</translation>
     </message>
+    <message>
+        <source>&amp;Tip of the day...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show tips about BibleTime</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BtAboutDialog</name>
@@ -1310,6 +1318,49 @@ shortcut</source>
     <message>
         <source>Add</source>
         <translation>Hinzufügen</translation>
+    </message>
+</context>
+<context>
+    <name>BtTipDialog</name>
+    <message>
+        <source>Tip Of The Day</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show tips at startup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next Tip</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To add multiple Bible works in parallel in your active Bible window select this icon and choose another Bible work.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To add multiple commentary works in parallel in your active commentary window select this icon and choose another commentary work.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To learn more about the BibleTime project please go to our web site.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To synchronize a commentary window with the active Bible window, activate the commentary window and select this icon.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select the icon again to stop the synchronization.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To create a bookmark drag any verse reference from a Bible or commentary work into the Bookmarks window. An arrow will indicate the position that the bookmark will go when you release the cursor. Other works will have a reference in the upper left corner that can be used to create a bookmark.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To change a bookmark title or description, right click on the bookmark and select &quot;Edit Bookmark...&quot;. After finishing the edit the description can be seen by hovering over the bookmark.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
