@@ -102,7 +102,9 @@ void BtConfigDialog::slotChangePage(int newIndex) {
 
 
 BtConfigPage::BtConfigPage(QWidget *parent)
-    : QWidget(parent), m_labelInitialized(false)
+    : QWidget(parent)
+    , m_parentDialog(0)
+    , m_labelInitialized(false)
 {
     QVBoxLayout *containerLayout = new QVBoxLayout(this);
     m_headerLabel = new QLabel(this);
