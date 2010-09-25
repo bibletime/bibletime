@@ -101,7 +101,7 @@ QStringList *CSwordBibleModuleInfo::books() const {
         QSharedPointer<sword::VerseKey> key((sword::VerseKey *)module()->CreateKey());
         key->setPosition(sword::TOP);
 
-        for (key->Testament(min); !key->Error() && key->Testament() <= max; key->Book(key->Book() + 1)) {
+        for (key->setTestament(min); !key->Error() && key->getTestament() <= max; key->Book(key->Book() + 1)) {
             m_bookList->append( QString::fromUtf8(key->getBookName()) );
         }
 
