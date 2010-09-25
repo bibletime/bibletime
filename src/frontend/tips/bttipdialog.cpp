@@ -60,8 +60,11 @@ inline QString make_icon(const QString &icon) {
 BtTipDialog::BtTipDialog(QWidget *parent, Qt::WindowFlags wflags)
         : QDialog(parent, wflags)
 {
+    namespace DU = util::directory;
+
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setWindowTitle(tr("Tip Of The Day"));
+    setWindowIcon(DU::getIcon(CResMgr::mainMenu::help::tipOfTheDay::icon));
     resize(450, 220);
 
     QVBoxLayout *mainLayout = new QVBoxLayout;
