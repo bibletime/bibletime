@@ -32,8 +32,7 @@ class CKeyChooser : public QWidget {
 
         /**
         * Creates a proper Instance, either
-        *
-        @ref CLexiconKeyChooser or
+        * @ref CLexiconKeyChooser or
         * @ref CBibleKeyChooser
         * @param info the @ref CModuleInfo to be represented by the KeyChooser
         * @param key if not NULL, the @ref CKey the KeyChooser should be set to
