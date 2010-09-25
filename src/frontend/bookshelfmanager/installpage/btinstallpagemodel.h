@@ -10,19 +10,19 @@
 *
 **********/
 
-#ifndef BTSOURCEAREAMODEL_H
-#define BTSOURCEAREAMODEL_H
+#ifndef BTINSTALLPAGEMODEL_H
+#define BTINSTALLPAGEMODEL_H
 
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
 
 #include <QMap>
 
 
-class BtSourceAreaModel: public BtBookshelfTreeModel {
+class BtInstallPageModel: public BtBookshelfTreeModel {
     Q_OBJECT
     public:
-        BtSourceAreaModel(const Grouping &grouping, QObject *parent = 0);
-        ~BtSourceAreaModel();
+        BtInstallPageModel(const Grouping &grouping, QObject *parent = 0);
+        ~BtInstallPageModel();
 
         QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
         int columnCount(const QModelIndex &parent = QModelIndex()) const;
@@ -30,4 +30,4 @@ class BtSourceAreaModel: public BtBookshelfTreeModel {
                             int role = Qt::DisplayRole) const;
 };
 
-#endif // BTSOURCEAREAMODEL_H
+#endif // BTINSTALLPAGEMODEL_H

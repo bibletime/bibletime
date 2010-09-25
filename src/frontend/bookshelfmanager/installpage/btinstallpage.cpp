@@ -9,45 +9,35 @@
 
 #include "frontend/bookshelfmanager/installpage/btinstallpage.h"
 
-#include <QAction>
 #include <QApplication>
-#include <QButtonGroup>
 #include <QComboBox>
-#include <QDialog>
-#include <QFileInfo>
+#include <QGroupBox>
 #include <QHBoxLayout>
 #include <QHeaderView>
 #include <QLabel>
-#include <QMessageBox>
-#include <QProgressBar>
-#include <QProgressDialog>
 #include <QPushButton>
-#include <QSpacerItem>
-#include <QStackedWidget>
-#include <QTabBar>
-#include <QTimer>
-#include <QTreeWidget>
-#include <QTreeWidgetItem>
+#include <QSettings>
+#include <QStackedLayout>
 #include <QToolButton>
-#include <QVBoxLayout>
-#include <QWidget>
 #include "backend/config/cbtconfig.h"
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/managers/cswordbackend.h"
-#include "frontend/bookshelfmanager/btconfigdialog.h"
-#include "frontend/bookshelfmanager/btinstallmgr.h"
+#include "backend/btinstallbackend.h"
 #include "frontend/bookshelfmanager/btmodulemanagerdialog.h"
 #include "frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.h"
+#include "frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.h"
+#include "frontend/bookshelfmanager/installpage/btinstallpageworkswidget.h"
 #include "frontend/bookshelfmanager/installpage/btinstallpathdialog.h"
 #include "frontend/bookshelfmanager/installpage/btinstallprogressdialog.h"
-#include "frontend/bookshelfmanager/installpage/btsourcewidget.h"
-#include "frontend/bookshelfmanager/installpage/btsourcearea.h"
-#include "backend/btinstallbackend.h"
-#include "util/directory.h"
+#include "frontend/btbookshelfview.h"
 #include "util/cresmgr.h"
+#include "util/dialogutil.h"
+#include "util/directory.h"
 
-// Sword includes:
-#include <swversion.h>
+
+namespace {
+const QString groupingOrderKey ("GUI/BookshelfManager/InstallPage/grouping");
+const QString headerStateKey   ("GUI/BookshelfManager/InstallPage/headerState");
+const QString selectedModuleKey("GUI/BookshelfManager/InstallPage/selectedModule");
+} // anonymous namespace
 
 
 // *********************************************************
@@ -56,8 +46,14 @@
 
 BtInstallPage::BtInstallPage(QWidget *parent)
         : BtConfigPage(parent)
+        , m_groupingOrder(groupingOrderKey)
+        , m_modulesSelected(0)
+        , m_modulesSelectedSources(0)
 {
-    qDebug() << "BtInstallPage::BtInstallPage() start";
+    // Read settings:
+    m_headerState = CBTConfig::getConfig()->value(headerStateKey).toByteArray();
+
+    // Initialize widgets:
     initView();
     initConnections();
 }
@@ -74,65 +70,94 @@ QString BtInstallPage::selectedInstallPath() {
 void BtInstallPage::initView() {
     namespace DU = util::directory;
 
-    qDebug() << "void BtInstallPage::initView() start";
-    Q_ASSERT(qobject_cast<QVBoxLayout*>(layout()) != 0);
-    QVBoxLayout *mainLayout = static_cast<QVBoxLayout*>(layout());
+    // Source chooser:
+    m_sourceGroupBox = new QGroupBox(tr("Select installation &source:"), this);
+    m_sourceGroupBox->setFlat(true);
 
-    // installation path chooser
-    QHBoxLayout* pathLayout = new QHBoxLayout();
-    // beautify the layout
-    int top;
-    int bottom;
-    int left;
-    int right;
-    pathLayout->getContentsMargins(&left, &top, &right, &bottom);
-    pathLayout->setContentsMargins(left, top + 7, right, bottom + 7 );
-    QLabel* pathLabel = new QLabel(tr("Install folder:"));
-    m_pathCombo = new QComboBox();
+    m_sourceComboBox = new QComboBox(this);
+    m_sourceComboBox->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
+    initSourcesCombo();
+
+    m_sourceAddButton = new QPushButton(tr("Add..."));
+    m_sourceAddButton ->setToolTip(tr("Add new source"));
+    m_sourceAddButton ->setIcon(DU::getIcon(CResMgr::bookshelfmgr::installpage::add_icon));
+
+    m_sourceDeleteButton = new QPushButton(tr("Delete..."));
+    m_sourceDeleteButton->setToolTip(tr("Delete this source"));
+    m_sourceDeleteButton->setIcon(DU::getIcon(CResMgr::bookshelfmgr::installpage::delete_icon));
+
+    QHBoxLayout *sourceChooserLayout = new QHBoxLayout();
+    sourceChooserLayout->setContentsMargins(0, 0, 0, 0);
+    sourceChooserLayout->addWidget(m_sourceComboBox, 1);
+    sourceChooserLayout->addWidget(m_sourceAddButton);
+    sourceChooserLayout->addWidget(m_sourceDeleteButton);
+    m_sourceGroupBox->setLayout(sourceChooserLayout);
+
+    // Works chooser:
+    m_worksGroupBox = new QGroupBox(tr("Select &works to install:"), this);
+    m_worksGroupBox->setFlat(true);
+    m_worksLayout = new QStackedLayout();
+    m_worksGroupBox->setLayout(m_worksLayout);
+    slotSourceIndexChanged(m_sourceComboBox->currentIndex());
+
+    // Installation path chooser:
+    m_installGroupBox = new QGroupBox(this);
+    m_installGroupBox->setFlat(true);
+    retranslateInstallGroupBox();
+
+    m_pathLabel = new QLabel(tr("Install &folder:"));
+    m_pathCombo = new QComboBox(this);
     m_pathCombo->setMinimumContentsLength(20);
     m_pathCombo->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLengthWithIcon);
     m_pathCombo->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
     m_pathCombo->setToolTip(tr("The folder where the new works will be installed"));
     m_pathCombo->view()->setTextElideMode(Qt::ElideMiddle);
-    initPathCombo(); // set the paths and the current path
+    m_pathLabel->setBuddy(m_pathCombo);
+    initPathCombo();
+
     m_configurePathButton = new QToolButton(this);
     m_configurePathButton->setToolTip(tr("Configure folders where works are installed and found"));
     m_configurePathButton->setIcon(DU::getIcon(CResMgr::bookshelfmgr::installpage::path_icon));
 
-    pathLayout->addWidget(pathLabel);
-    pathLayout->addWidget(m_pathCombo);
-    pathLayout->addWidget(m_configurePathButton);
-    mainLayout->addLayout(pathLayout);
-
-    // Source widget
-    m_sourceWidget = new BtSourceWidget(this);
-    mainLayout->addWidget(m_sourceWidget);
-    // Install button
-    QHBoxLayout *installButtonLayout = new QHBoxLayout();
-    installButtonLayout->setContentsMargins(0, 5, 0, 5);
-    QSpacerItem *installButtonSpacer = new QSpacerItem(371, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-    installButtonLayout->addItem(installButtonSpacer);
     m_installButton = new QPushButton(tr("Install..."), this);
     m_installButton->setToolTip(tr("Install or update selected works"));
     m_installButton->setIcon(DU::getIcon(CResMgr::bookshelfmgr::installpage::install_icon));
     m_installButton->setEnabled(false);
-    installButtonLayout->addWidget(m_installButton);
 
-    mainLayout->addLayout(installButtonLayout);
+    QHBoxLayout *pathLayout = new QHBoxLayout();
+    pathLayout->setContentsMargins(0, 0, 0, 0);
+    pathLayout->addWidget(m_pathLabel);
+    pathLayout->addWidget(m_pathCombo);
+    pathLayout->addWidget(m_configurePathButton);
+    pathLayout->addWidget(m_installButton);
+    m_installGroupBox->setLayout(pathLayout);
+
+    Q_ASSERT(qobject_cast<QVBoxLayout*>(layout()) != 0);
+    QVBoxLayout *mainLayout = static_cast<QVBoxLayout*>(layout());
+    mainLayout->addWidget(m_sourceGroupBox);
+    mainLayout->addWidget(m_worksGroupBox);
+    mainLayout->addWidget(m_installGroupBox);
 }
 
 void BtInstallPage::initConnections() {
-    qDebug() << "void BtInstallPage::initConnections() start";
-    QObject::connect(m_pathCombo, SIGNAL(activated(const QString&)), this , SLOT(slotPathChanged(const QString&)));
-    QObject::connect(m_configurePathButton, SIGNAL(clicked()), this, SLOT(slotEditPaths()));
-    QObject::connect(m_installButton, SIGNAL(clicked()), m_sourceWidget, SLOT(slotInstall()) );
-
-    QObject::connect(CSwordBackend::instance(), SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)), this, SLOT(slotSwordSetupChanged()));
-    //source widget has its own connections, not here
+    connect(m_sourceComboBox, SIGNAL(currentIndexChanged(int)),
+            this,             SLOT(slotSourceIndexChanged(int)));
+    connect(m_sourceAddButton, SIGNAL(clicked()),
+            this,              SLOT(slotSourceAdd()));
+    connect(m_sourceDeleteButton, SIGNAL(clicked()),
+            this,                 SLOT(slotSourceDelete()));
+    connect(m_installButton, SIGNAL(clicked()),
+            this,            SLOT(slotInstall()));
+    connect(m_pathCombo, SIGNAL(activated(const QString&)),
+            this , SLOT(slotPathChanged(const QString&)));
+    connect(m_configurePathButton, SIGNAL(clicked()),
+            this, SLOT(slotEditPaths()));
+    connect(CSwordBackend::instance(),
+            SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)),
+            this, SLOT(slotSwordSetupChanged()));
 }
 
 void BtInstallPage::initPathCombo() {
-    qDebug() << "void BtInstallPage::initPathCombo() start";
     //populate the combo list
     m_pathCombo->clear();
 
@@ -154,19 +179,229 @@ void BtInstallPage::initPathCombo() {
     m_pathCombo->setCurrentIndex(index);
 }
 
+void BtInstallPage::initSourcesCombo() {
+    /// \todo Implement a proper model for this
+
+    m_sourceComboBox->clear();
+    QStringList sourceList = BtInstallBackend::sourceNameList();
+
+    // Add a default entry, the Crosswire main repository
+    if (sourceList.empty()) {
+        /// \todo Open a dialog which asks whether to get list from server and add sources
+        sword::InstallSource is("FTP");   //default return value
+        is.caption = "CrossWire Bible Society";
+        is.source = "ftp.crosswire.org";
+        is.directory = "/pub/sword/raw";
+        // passive ftp is not needed here, it's the default
+
+        BtInstallBackend::addSource(is);
+
+        sourceList = BtInstallBackend::sourceNameList();
+        Q_ASSERT(!sourceList.empty());
+    }
+
+    // Read selected module from config:
+    QString selected = CBTConfig::getConfig()->value(selectedModuleKey).toString();
+
+    // Populate combo box
+    bool selectionOk = false;
+    for (int i = 0; i < sourceList.size(); i++) {
+        m_sourceComboBox->addItem(sourceList.at(i));
+
+        // Select configured item:
+        if (!selectionOk && sourceList.at(i) == selected) {
+            m_sourceComboBox->setCurrentIndex(i);
+            selectionOk = true;
+        }
+    }
+
+    // Set selection, if it wasn't properly configured:
+    if (!selectionOk) {
+        m_sourceComboBox->setCurrentIndex(0);
+        CBTConfig::getConfig()->setValue(selectedModuleKey, sourceList.at(0));
+    }
+}
+
+void BtInstallPage::activateSource(const sword::InstallSource &src) {
+    qDebug() << "Selected source" << src.caption;
+    qApp->setOverrideCursor(Qt::WaitCursor);
+    BtInstallPageWorksWidget *w = m_sourceMap.value(QString(src.caption), 0);
+    if (w == 0) {
+        if (parentDialog() != 0) parentDialog()->setEnabled(false);
+        qApp->processEvents();
+        w = new BtInstallPageWorksWidget(src, m_groupingOrder, this);
+        m_sourceMap.insert(QString(src.caption), w);
+        m_worksLayout->addWidget(w);
+        connect(w->treeModel(), SIGNAL(groupingOrderChanged(BtBookshelfTreeModel::Grouping)),
+                this,           SLOT(slotGroupingOrderChanged(const BtBookshelfTreeModel::Grouping&)));
+        connect(w->treeModel(), SIGNAL(moduleChecked(CSwordModuleInfo*,bool)),
+                this,           SLOT(slotSelectedModulesChanged()));
+        if (parentDialog() != 0) parentDialog()->setEnabled(true);
+    } else {
+        disconnect(w->treeView()->header(), SIGNAL(geometriesChanged()),
+                   this,                    SLOT(slotHeaderChanged()));
+    }
+    m_worksLayout->setCurrentWidget(w);
+    w->treeModel()->setGroupingOrder(m_groupingOrder);
+    w->treeView()->header()->restoreState(m_headerState);
+    connect(w->treeView()->header(), SIGNAL(geometriesChanged()),
+            this,                    SLOT(slotHeaderChanged()));
+    qApp->restoreOverrideCursor();
+}
+
+void BtInstallPage::retranslateInstallGroupBox() {
+    if (m_modulesSelected > 0) {
+        m_installGroupBox->setTitle(tr("Start installation of %1 works from %2 sources:")
+                                    .arg(m_modulesSelected)
+                                    .arg(m_modulesSelectedSources));
+    } else {
+        m_installGroupBox->setTitle(tr("Start installation:"));
+    }
+}
+
+void BtInstallPage::slotGroupingOrderChanged(const BtBookshelfTreeModel::Grouping &g) {
+    m_groupingOrder = g;
+    m_groupingOrder.saveTo(groupingOrderKey);
+}
+
+void BtInstallPage::slotHeaderChanged() {
+    typedef BtInstallPageWorksWidget IPWW;
+    Q_ASSERT(qobject_cast<IPWW*>(m_worksLayout->currentWidget()) != 0);
+    IPWW *w = static_cast<IPWW*>(m_worksLayout->currentWidget());
+    m_headerState = w->treeView()->header()->saveState();
+    CBTConfig::getConfig()->setValue(headerStateKey, m_headerState);
+}
+
+void BtInstallPage::slotInstall() {
+    qDebug() << "BtInstallPage::slotInstall";
+
+    // check that the destination path is writable, do nothing if not and user doesn't want to continue
+    QDir dir = selectedInstallPath();
+    bool canWrite = true;
+    if (dir.isReadable()) {
+        const QFileInfo fi( dir.canonicalPath() );
+        if (!fi.exists() || !fi.isWritable()) {
+            canWrite = false;
+        }
+    }
+    else {
+        canWrite = false;
+    }
+    if (!canWrite) {
+        const int result = util::showWarning(this, tr("Warning"), tr("The destination directory is not writable or does not exist. Installation will fail unless this has first been fixed."), QMessageBox::Ignore | QMessageBox::Cancel, QMessageBox::Cancel);
+        if (result != QMessageBox::Ignore) {
+            return;
+        }
+    }
+
+    // create the confirmation dialog
+    BtInstallModuleChooserDialog *dlg = new BtInstallModuleChooserDialog(m_groupingOrder, this);
+
+    // Add all checked modules from all tabs:
+    Q_FOREACH (BtInstallPageWorksWidget *w, m_sourceMap.values()) {
+        Q_FOREACH (CSwordModuleInfo *module, w->treeModel()->checkedModules()) {
+            dlg->addModuleItem(module, QString(w->installSource().caption));
+        }
+    }
+
+    if (dlg->exec() == QDialog::Accepted) {
+        QSet<const CSwordModuleInfo*> cm;
+        Q_FOREACH(const CSwordModuleInfo *m, dlg->checkedModules()) {
+            cm.insert(m);
+        }
+
+        if (cm.empty()) return;
+
+        /// \todo first remove all modules which will be updated from the module list
+        // but what modules? all with the same real name? (there may be _n modules...)
+
+        BtModuleManagerDialog *parentDlg = dynamic_cast<BtModuleManagerDialog*>(parentDialog());
+
+        BtInstallProgressDialog *dlg = new BtInstallProgressDialog(cm, selectedInstallPath(), parentDlg);
+
+        if (!parentDlg) qDebug() << "error, wrong parent!";
+
+        m_installButton->setEnabled(false);
+
+        // the progress dialog is now modal, it can be made modeless later.
+        dlg->exec();
+
+        qDebug() << "BtSourceWidget::slotInstallAccepted end";
+    }
+    delete dlg;
+}
+
 void BtInstallPage::slotPathChanged(const QString& /*pathText*/) {
     CBTConfig::set(CBTConfig::installPathIndex, m_pathCombo->currentIndex( ) );
 }
 
 void BtInstallPage::slotEditPaths() {
-    qDebug() << "void BtInstallPage::slotEditPaths() start";
-
     BtInstallPathDialog* dlg = new BtInstallPathDialog();
     int result = dlg->exec();
     if (result == QDialog::Accepted) {
         //dynamic_cast<BtModuleManagerDialog*>(parentDialog())->slotSwordSetupChanged();
         CSwordBackend::instance()->reloadModules(CSwordBackend::PathChanged);
     }
+}
+
+void BtInstallPage::slotSourceAdd() {
+    typedef CSwordSetupInstallSourcesDialog SSISD;
+
+    QSharedPointer<SSISD> dlg(new SSISD());
+    if (dlg->exec() == QDialog::Accepted) {
+        if (!dlg->wasRemoteListAdded()) {
+            sword::InstallSource newSource = dlg->getSource();
+            if ( !((QString)newSource.type.c_str()).isEmpty() ) { // we have a valid source to add
+                BtInstallBackend::addSource(newSource);
+            }
+            initSourcesCombo();
+            for (int i = 0; i < m_sourceComboBox->count(); i++) {
+                if (m_sourceComboBox->itemText(i) == newSource.caption) {
+                    m_sourceComboBox->setCurrentIndex(i);
+                    break;
+                }
+            }
+        }
+    }
+}
+
+void BtInstallPage::slotSourceDelete() {
+    typedef BtInstallPageWorksWidget IPWW;
+
+    int ret = util::showWarning(this, tr("Delete Source?"),
+                                tr("Do you really want to delete this source?"),
+                                QMessageBox::Yes | QMessageBox::No);
+
+    if (ret == QMessageBox::Yes) {
+        Q_ASSERT(qobject_cast<IPWW*>(m_worksLayout->currentWidget()));
+        IPWW *w = static_cast<IPWW*>(m_worksLayout->currentWidget());
+        w->deleteSource();
+        initSourcesCombo();
+        slotSourceIndexChanged(m_sourceComboBox->currentIndex());
+        delete w;
+    }
+}
+
+void BtInstallPage::slotSourceIndexChanged(int index) {
+    /// \todo use pointers instead of text
+    QString moduleName = m_sourceComboBox->itemText(index);
+    CBTConfig::getConfig()->setValue(selectedModuleKey, moduleName);
+    activateSource(BtInstallBackend::source(moduleName));
+}
+
+void BtInstallPage::slotSelectedModulesChanged() {
+    m_modulesSelected = 0;
+    m_modulesSelectedSources = 0;
+    Q_FOREACH (BtInstallPageWorksWidget *w, m_sourceMap.values()) {
+        int selected = w->treeModel()->checkedModules().size();
+        if (selected > 0) {
+            m_modulesSelectedSources++;
+            m_modulesSelected += selected;
+        }
+    }
+
+    m_installButton->setEnabled(m_modulesSelected > 0);
+    retranslateInstallGroupBox();
 }
 
 // implement the BtConfigPage methods
@@ -185,14 +420,12 @@ QString BtInstallPage::header() const {
 }
 
 void BtInstallPage::slotSwordSetupChanged() {
-    qDebug() << "BtInstallPage::slotSwordSetupChanged";
+    initSourcesCombo();
+    qDeleteAll(m_sourceMap.values());
+    m_sourceMap.clear();
+    slotSourceIndexChanged(m_sourceComboBox->currentIndex());
     initPathCombo();
-//     for (int i = 0; i < m_sourceWidget->count(); i++ ) {
-//         BtSourceArea* sourceArea = dynamic_cast<BtSourceArea*>(m_sourceWidget->widget(i));
-//         Q_ASSERT(sourceArea);
-//         sourceArea->createModuleTree();
-//     }
+    m_modulesSelected = 0;
+    m_modulesSelectedSources = 0;
+    retranslateInstallGroupBox();
 }
-
-
-

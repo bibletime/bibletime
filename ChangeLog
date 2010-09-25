@@ -3,6 +3,7 @@
 
 2010-09-25 Jaak Ristioja <ristioja@gmail.com>
     * Removed "Close" button from bookshelf manager dialog to save screen space.
+    * Redesigned and refactored the bookshelf manager install page.
 
 2010-09-16 Jaak Ristioja <ristioja@gmail.com>
     * Removed confusing "Use grouping from bookshelf dock" feature.

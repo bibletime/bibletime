@@ -157,12 +157,12 @@ SET(bibletime_SRC_FRONTEND_BOOKSHELFMANAGER_INSTALLPAGE
     src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.cpp
     src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialogmodel.cpp
     src/frontend/bookshelfmanager/installpage/btinstallpage.cpp
+    src/frontend/bookshelfmanager/installpage/btinstallpageworkswidget.cpp
     src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp
     src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp
     src/frontend/bookshelfmanager/installpage/btinstallthread.cpp
-    src/frontend/bookshelfmanager/installpage/btsourcearea.cpp
-    src/frontend/bookshelfmanager/installpage/btsourceareamodel.cpp
-    src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp
+    src/frontend/bookshelfmanager/installpage/btinstallpagemodel.cpp
+    src/frontend/bookshelfmanager/installpage/btrefreshprogressdialog.cpp
 )
 
 SOURCE_GROUP("src\\frontend\\bookshelfmanager\\installpage" FILES ${bibletime_SRC_FRONTEND_BOOKSHELFMANAGER_INSTALLPAGE})
@@ -332,12 +332,12 @@ SET(bibletime_MOCABLE_HEADERS
     src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.h
     src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialogmodel.h
     src/frontend/bookshelfmanager/installpage/btinstallpage.h
+    src/frontend/bookshelfmanager/installpage/btinstallpageworkswidget.h
     src/frontend/bookshelfmanager/installpage/btinstallpathdialog.h
     src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.h
     src/frontend/bookshelfmanager/installpage/btinstallthread.h
-    src/frontend/bookshelfmanager/installpage/btsourcearea.h
-    src/frontend/bookshelfmanager/installpage/btsourceareamodel.h
-    src/frontend/bookshelfmanager/installpage/btsourcewidget.h
+    src/frontend/bookshelfmanager/installpage/btinstallpagemodel.h
+    src/frontend/bookshelfmanager/installpage/btrefreshprogressdialog.h
     src/frontend/bookshelfmanager/removepage/btremovepage.h
     src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.h
     src/frontend/btaboutdialog.h

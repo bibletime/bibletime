@@ -12,17 +12,26 @@
 
 #include "frontend/bookshelfmanager/btconfigdialog.h"
 
+#include "backend/bookshelfmodel/btbookshelftreemodel.h"
 
-class BtSourceWidget;
+
+namespace sword {
+class InstallSource;
+}
+
+class BtInstallPageWorksWidget;
 class QComboBox;
+class QGroupBox;
 class QPushButton;
+class QStackedLayout;
 class QToolButton;
 
 /**
 * The Install page includes module path chooser, source/module handler and install button.
 */
-class BtInstallPage : public BtConfigPage {
+class BtInstallPage: public BtConfigPage {
         Q_OBJECT
+
     public:
         BtInstallPage(QWidget *parent = 0);
 
@@ -46,17 +55,44 @@ class BtInstallPage : public BtConfigPage {
         void initView();
         void initConnections();
         void initPathCombo();
+        void initSourcesCombo();
+
+        void activateSource(const sword::InstallSource &src);
+        void retranslateInstallGroupBox();
 
     private slots:
+        void slotGroupingOrderChanged(const BtBookshelfTreeModel::Grouping &g);
+        void slotHeaderChanged();
+        void slotInstall();
         void slotPathChanged(const QString& pathText);
         void slotEditPaths();
+        void slotSourceAdd();
+        void slotSourceDelete();
+        void slotSourceIndexChanged(int index);
+        void slotSelectedModulesChanged();
 
     private:
+        BtBookshelfTreeModel::Grouping m_groupingOrder;
+        QByteArray m_headerState;
 
-        QComboBox* m_pathCombo;
-        QToolButton* m_configurePathButton;
-        BtSourceWidget* m_sourceWidget;
-        QPushButton* m_installButton;
+        QMap<QString, BtInstallPageWorksWidget*> m_sourceMap;
+
+        QGroupBox *m_sourceGroupBox;
+            QComboBox   *m_sourceComboBox;
+            QPushButton *m_sourceAddButton;
+            QPushButton *m_sourceDeleteButton;
+
+        QGroupBox *m_worksGroupBox;
+            QStackedLayout *m_worksLayout;
+
+        QGroupBox *m_installGroupBox;
+            QLabel      *m_pathLabel;
+            QComboBox   *m_pathCombo;
+            QToolButton *m_configurePathButton;
+            QPushButton *m_installButton;
+
+        unsigned m_modulesSelected;
+        unsigned m_modulesSelectedSources;
 };
 
 #endif

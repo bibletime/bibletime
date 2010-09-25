@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "frontend/bookshelfmanager/installpage/btsourceareamodel.h"
+#include "frontend/bookshelfmanager/installpage/btinstallpagemodel.h"
 
 
 #include "backend/drivers/cswordmoduleinfo.h"
@@ -20,18 +20,18 @@
 #define MODULEPOINTERFORINDEX(i) static_cast<CSwordModuleInfo *>(\
     BtBookshelfTreeModel::data((i), BtBookshelfModel::ModulePointerRole).value<void*>())
 
-BtSourceAreaModel::BtSourceAreaModel(const Grouping &grouping, QObject *parent)
+BtInstallPageModel::BtInstallPageModel(const Grouping &grouping, QObject *parent)
     : BtBookshelfTreeModel(grouping, parent)
 {
     setDefaultChecked(BtBookshelfTreeModel::UNCHECKED);
     setCheckable(true);
 }
 
-BtSourceAreaModel::~BtSourceAreaModel() {
+BtInstallPageModel::~BtInstallPageModel() {
     // Intentionally empty
 }
 
-QVariant BtSourceAreaModel::data(const QModelIndex &i, int role) const {
+QVariant BtInstallPageModel::data(const QModelIndex &i, int role) const {
     switch (role) {
         case Qt::DisplayRole:
             switch (i.column()) {
@@ -65,13 +65,13 @@ QVariant BtSourceAreaModel::data(const QModelIndex &i, int role) const {
     return QVariant();
 }
 
-int BtSourceAreaModel::columnCount(const QModelIndex &parent) const {
+int BtInstallPageModel::columnCount(const QModelIndex &parent) const {
     Q_UNUSED(parent);
 
     return 3;
 }
 
-QVariant BtSourceAreaModel::headerData(int section, Qt::Orientation orientation,
+QVariant BtInstallPageModel::headerData(int section, Qt::Orientation orientation,
                                        int role) const
 {
     if (role == Qt::DisplayRole && orientation == Qt::Horizontal) {
