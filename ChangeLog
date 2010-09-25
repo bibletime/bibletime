@@ -4,7 +4,7 @@
 2010-09-25 Jaak Ristioja <ristioja@gmail.com>
     * Removed "Close" button from bookshelf manager dialog to save screen space.
 
-\2010-09-16 Jaak Ristioja <ristioja@gmail.com>
+2010-09-16 Jaak Ristioja <ristioja@gmail.com>
     * Removed confusing "Use grouping from bookshelf dock" feature.
     * Implemented saving of grouping setting for:
       * the page for removing works in the Bookshelf Manager.

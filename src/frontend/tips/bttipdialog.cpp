@@ -102,12 +102,15 @@ static QString vertical_align(const QString& text)
 
 static QString make_style(QWidget* widget)
 {
-    return "<style type=\"text/css\">"\
-     "body{}"\
-    "h3{font-weight:bold;text-align:center}"\
-    "a{text-decoration:underline}"\
-    "a:link{color:" + widget->palette().color(QPalette::Link).name() + "}"\
-    "a:visited{color:" + widget->palette().color(QPalette::LinkVisited).name() + "}"\
+    const QPalette &p = widget->palette();
+    return "<style type=\"text/css\">"
+        "body{"
+            "background-color:" + p.color(QPalette::Base).name() + ";"
+            "color:" + p.color(QPalette::Text).name() + "}"
+        "h3{font-weight:bold;text-align:center}"
+        "a{text-decoration:underline}"
+        "a:link{color:" + p.color(QPalette::Link).name() + "}"
+        "a:visited{color:" + p.color(QPalette::LinkVisited).name() + "}"
     "</style>";
 }
 
@@ -158,7 +161,7 @@ void BtTipDialog::create_tips() {
         " into the Bookmarks window. An arrow will indicate the position that the bookmark will"
         " go when you release the cursor. Other works will have a reference in the upper left"
        " corner that can be used to create a bookmark.");
- 
+
     m_tips << tr("To change a bookmark title or description, right click on the bookmark"
         " and select \"Edit Bookmark...\". After finishing the edit the description can be"
         " seen by hovering over the bookmark.");

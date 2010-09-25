@@ -261,7 +261,7 @@ void BibleTime::insertKeyboardActions( BtActionCollection* const a ) {
     action->setText(tr("&Tip of the day..."));
     action->setIcon(DU::getIcon(CResMgr::mainMenu::help::tipOfTheDay::icon));
     action->setShortcut(QKeySequence(CResMgr::mainMenu::help::tipOfTheDay::accel));
-    action->setToolTip(tr("Tips about the BibleTime program"));
+    action->setToolTip(tr("Show tips about BibleTime"));
     a->addAction("tipOfTheDay", action);
 
     action = new QAction(a);
