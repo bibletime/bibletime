@@ -140,8 +140,20 @@ void BtTipDialog::initTips() {
        " corner that can be used to create a bookmark.");
 
     m_tips << tr("To change a bookmark title or description, right click on the bookmark"
-        " and select \"Edit Bookmark...\". After finishing the edit the description can be"
+        " and select the Edit Bookmark menu. After finishing the edit the description can be"
         " seen by hovering over the bookmark.");
+
+    m_tips << tr("To load multiple installation sources for works, go to the Bookshelf Manager"
+        ", select the Add button, and then the Get List button.");
+
+    m_tips << tr("To find more information about a work, go the the Bookshelf window, right"
+        " click on the work, and select the About menu.");
+
+    m_tips << tr("The Bookshelf, Bookmark, and Mag windows can be moved to new locations by"
+        " dragging them from the title at the top of each window. They can be placed to the left,"
+        " right, above, or below the works windows. They can be placed on top of each other and"
+        " tabs will appear so each window can be selected. They can be resized by dragging the"
+        "border between the window and another window.");
 }
 
 void BtTipDialog::displayTip() {
