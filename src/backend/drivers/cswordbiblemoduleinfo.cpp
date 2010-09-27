@@ -75,33 +75,33 @@ QStringList *CSwordBibleModuleInfo::books() const {
     if (!m_bookList) {
         m_bookList = new QStringList();
 
-        int min = 0;
-        int max = 1;
+        int min = 1; // 1 = OT
+        int max = 2; // 2 = NT
 
         //find out if we have ot and nt, only ot or only nt
 
         if (m_hasOT && m_hasNT) { //both
-            min = 0;
-            max = 1;
+            min = 1;
+            max = 2;
         }
         else if (m_hasOT && !m_hasNT) { //only OT
-            min = 0;
-            max = 0;
-        }
-        else if (!m_hasOT && m_hasNT) { //only NT
             min = 1;
             max = 1;
         }
+        else if (!m_hasOT && m_hasNT) { //only NT
+            min = 2;
+            max = 2;
+        }
         else if (!m_hasOT && !m_hasNT) { //somethings wrong here! - no OT and no NT
             qWarning("CSwordBibleModuleInfo (%s) no OT and not NT! Check your config!", module()->Name());
-            min = 0;
-            max = -1;
+            min = 1;
+            max = 0;
         }
 
         QSharedPointer<sword::VerseKey> key((sword::VerseKey *)module()->CreateKey());
         key->setPosition(sword::TOP);
 
-        for (key->Testament(min + 1); !key->Error() && (key->Testament() - 1) <= max; key->Book(key->Book() + 1)) {
+        for (key->setTestament(min); !key->Error() && key->getTestament() <= max; key->Book(key->Book() + 1)) {
             m_bookList->append( QString::fromUtf8(key->getBookName()) );
         }
 
@@ -162,7 +162,7 @@ unsigned int CSwordBibleModuleInfo::bookNumber(const QString &book) const {
 
     key->setBookName(book.toUtf8().constData());
 
-    bookNumber = ((key->Testament() > 1) ? key->BMAX[0] : 0) + key->Book();
+    bookNumber = ((key->getTestament() > 1) ? key->BMAX[0] : 0) + key->Book();
 
     return bookNumber;
 }

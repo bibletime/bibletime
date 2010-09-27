@@ -61,7 +61,6 @@ QString CSwordKey::renderedText( const CSwordKey::TextRenderType mode ) {
 
     if (k) {
         sword::VerseKey* vk_mod = dynamic_cast<sword::VerseKey*>(m_module->module()->getKey());
-
         if (vk_mod) {
             vk_mod->Headings(1);
         }
@@ -84,9 +83,8 @@ QString CSwordKey::renderedText( const CSwordKey::TextRenderType mode ) {
 
     //Q_ASSERT(!key().isNull());
     if (!key().isNull()) { //we have valid text
-        bool DoRender = (mode == ProcessEntryAttributesOnly) ? 0 : 1;
-        QString text = QString::fromUtf8( m_module->module()->RenderText(0, -1, DoRender) );
-        if (!DoRender) return QString::null;
+        if (mode == ProcessEntryAttributesOnly) return QString::null;
+        QString text = QString::fromUtf8( m_module->module()->RenderText(0, -1) );
 
         // This is yucky, but if we want strong lexicon refs we have to do it here.
         if (m_module->type() == CSwordModuleInfo::Lexicon) {

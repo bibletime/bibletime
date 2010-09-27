@@ -42,7 +42,7 @@ class CSwordKey {
         virtual ~CSwordKey();
 
         /** Returns the current key.
-         * @return The current key which belongs to the current object.
+         * @return The key which belongs to the current object.
          */
         virtual QString key() const = 0;
 
@@ -82,7 +82,7 @@ class CSwordKey {
          * just in the way it comes out of the module.
          */
         virtual QString rawText();
-        /** Returns the rendered text. Returns the text of the current key after passign it through the
+        /** Returns the rendered text. Returns the text of the current key after passing it through the
          * modules filters.
          */
         virtual QString renderedText( const CSwordKey::TextRenderType mode = CSwordKey::Normal );

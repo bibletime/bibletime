@@ -181,8 +181,9 @@ class CSwordModuleInfo: public QObject {
         }
 
         /**
-        * Sets the unlock key of the modules and writes the key into the cofig file.
-        * @return True if the unlock process was succesful, if the key was wrong, or if the config file was write protected return false.
+        * Sets the unlock key of the modules and writes the key into the config file.
+        * @return True if the unlock process was succesful, if the key was
+wrong, or if the config file was write protected return false.
         */
         bool unlock( const QString& unlockKey );
         /**

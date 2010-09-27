@@ -62,13 +62,13 @@ const QString CHTMLExportRendering::renderEntry( const KeyTreeItem& i, CSwordKey
         ret.append(i.getAlternativeContent());
 
         //   Q_ASSERT(i.hasChildItems());
-
+ 
         if (!i.childList()->isEmpty()) {
             KeyTree * const  tree = i.childList();
 
             const QList<const CSwordModuleInfo*> modules = collectModules(tree);
 
-            if (modules.count() == 1) { //insert the direction into the sorrounding div
+            if (modules.count() == 1) { //insert the direction into the surrounding div
                 ret.insert( 5, QString("dir=\"%1\" ").arg((modules.first()->textDirection() == CSwordModuleInfo::LeftToRight) ? "ltr" : "rtl" ));
             }
 
@@ -100,7 +100,6 @@ const QString CHTMLExportRendering::renderEntry( const KeyTreeItem& i, CSwordKey
 
     //declarations out of the loop for optimization
     QString entry;
-    QString keyText;
     bool isRTL;
     QString preverseHeading;
     QString langAttr;
@@ -112,7 +111,6 @@ const QString CHTMLExportRendering::renderEntry( const KeyTreeItem& i, CSwordKey
         key->setModule(*mod_Itr);
         key->setKey(i.key());
 
-        keyText = key->key();
         isRTL = ((*mod_Itr)->textDirection() == CSwordModuleInfo::RightToLeft);
         entry = QString::null;
 
