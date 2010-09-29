@@ -65,7 +65,7 @@ BtTipDialog::BtTipDialog(QWidget *parent, Qt::WindowFlags wflags)
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setWindowTitle(tr("Tip Of The Day"));
     setWindowIcon(DU::getIcon(CResMgr::mainMenu::help::tipOfTheDay::icon));
-    resize(450, 220);
+    resize(450, 240);
 
     QVBoxLayout *mainLayout = new QVBoxLayout;
 
@@ -154,6 +154,21 @@ void BtTipDialog::initTips() {
         " right, above, or below the works windows. They can be placed on top of each other and"
         " tabs will appear so each window can be selected. They can be resized by dragging the"
         "border between the window and another window.");
+
+    m_tips << tr("You can search for Strong's numbers in a work. Start with a work that has Strong's"
+                 " numbers and hover over a word. Right click the word and use the Strong's Search"
+                 " menu. A search dialog will appear that allows you to see the use of the same"
+                 "Strong's number in other locations of the work.");
+
+    m_tips << tr("You can save personal notes for specific verses references. You must install"
+                 " the Personal commentary. Open the Bookshelf Manager, choose Crosswire as the"
+                 " source and look under Commentary and English. Once installed, use the"
+                 " Bookshelf window and right click the Personal commentary. Use either the"
+                 " Edit Plain Text menu or the Edit HTML menu to open the work in write mode.");
+
+    m_tips << tr("You can view Strong's number information in the MAG window by hovering over"
+                 " a word in a Bible work that has Strong's numbers. You should have the StrongsGreek"
+                 " and StrongsHebrew lexicons from Crosswire installed.");
 }
 
 void BtTipDialog::displayTip() {
