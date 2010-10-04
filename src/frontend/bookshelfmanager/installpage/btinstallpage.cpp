@@ -383,6 +383,8 @@ void BtInstallPage::slotSourceDelete() {
 }
 
 void BtInstallPage::slotSourceIndexChanged(int index) {
+    if (index < 0) index = 0;
+
     /// \todo use pointers instead of text
     QString moduleName = m_sourceComboBox->itemText(index);
     CBTConfig::getConfig()->setValue(selectedModuleKey, moduleName);
@@ -420,10 +422,12 @@ QString BtInstallPage::header() const {
 }
 
 void BtInstallPage::slotSwordSetupChanged() {
+    QString moduleName = m_sourceComboBox->currentText();
+
     initSourcesCombo();
     qDeleteAll(m_sourceMap.values());
     m_sourceMap.clear();
-    slotSourceIndexChanged(m_sourceComboBox->currentIndex());
+    m_sourceComboBox->setCurrentIndex(m_sourceComboBox->findText(moduleName));
     initPathCombo();
     m_modulesSelected = 0;
     m_modulesSelectedSources = 0;
