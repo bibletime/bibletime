@@ -135,7 +135,7 @@ void BtInstallPage::initView() {
     Q_ASSERT(qobject_cast<QVBoxLayout*>(layout()) != 0);
     QVBoxLayout *mainLayout = static_cast<QVBoxLayout*>(layout());
     mainLayout->addWidget(m_sourceGroupBox);
-    mainLayout->addWidget(m_worksGroupBox);
+    mainLayout->addWidget(m_worksGroupBox, 1);
     mainLayout->addWidget(m_installGroupBox);
 }
 
