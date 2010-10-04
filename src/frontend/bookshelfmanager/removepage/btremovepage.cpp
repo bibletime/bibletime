@@ -13,11 +13,13 @@
 #include "frontend/bookshelfmanager/removepage/btremovepage.h"
 
 #include <QAction>
-#include <QGridLayout>
+#include <QGroupBox>
+#include <QHBoxLayout>
 #include <QHeaderView>
 #include <QMessageBox>
 #include <QPushButton>
 #include <QToolButton>
+#include <QVBoxLayout>
 #include "backend/bookshelfmodel/btbookshelffiltermodel.h"
 #include "backend/managers/cswordbackend.h"
 #include "frontend/btbookshelfview.h"
@@ -40,12 +42,11 @@ BtRemovePage::BtRemovePage(QWidget *parent)
 {
     namespace DU = util::directory;
 
-    QGridLayout *gridLayout = new QGridLayout;
-    gridLayout->setMargin(5);
-
-    gridLayout->setSpacing(10);
-    gridLayout->setColumnStretch(1, 1);
-    gridLayout->setRowStretch(2, 1);
+    m_worksGroupBox = new QGroupBox(tr("Select &works to uninstall:"), this);
+    m_worksGroupBox->setFlat(true);
+    QVBoxLayout *wLayout = new QVBoxLayout;
+    wLayout->setContentsMargins(0, 0, 0, 0);
+    m_worksGroupBox->setLayout(wLayout);
 
     BtRemovePageTreeModel *treeModel = new BtRemovePageTreeModel(groupingOrderKey,
                                                                  this);
@@ -60,24 +61,33 @@ BtRemovePage::BtRemovePage(QWidget *parent)
     m_bookshelfWidget->showHideButton()->hide();
     m_bookshelfWidget->treeView()->header()->show();
     m_bookshelfWidget->treeView()->header()->setResizeMode(QHeaderView::ResizeToContents);
+    wLayout->addWidget(m_bookshelfWidget);
 
-    gridLayout->addWidget(m_bookshelfWidget, 2, 0, 1, 2);
+    m_uninstallGroupBox = new QGroupBox(this);
+    m_uninstallGroupBox->setFlat(true);
+    retranslateUninstallGroupBox();
+    QHBoxLayout *uLayout = new QHBoxLayout;
+    uLayout->setContentsMargins(0, 0, 0, 0);
+    m_uninstallGroupBox->setLayout(uLayout);
+    uLayout->addStretch(1);
 
-    m_removeButton = new QPushButton(tr("Remove..."), this);
+    m_removeButton = new QPushButton(tr("&Remove..."), this);
     m_removeButton->setToolTip(tr("Remove the selected works"));
     m_removeButton->setIcon(DU::getIcon(CResMgr::bookshelfmgr::removepage::remove_icon));
     m_removeButton->setEnabled(false);
-    gridLayout->addWidget(m_removeButton, 3, 1, Qt::AlignRight);
+    uLayout->addWidget(m_removeButton, 0, Qt::AlignRight);
 
     Q_ASSERT(qobject_cast<QVBoxLayout*>(layout()) != 0);
-    static_cast<QVBoxLayout*>(layout())->addLayout(gridLayout);
+    QVBoxLayout *mainLayout = static_cast<QVBoxLayout*>(layout());
+    mainLayout->addWidget(m_worksGroupBox, 1);
+    mainLayout->addWidget(m_uninstallGroupBox);
 
     connect(m_removeButton, SIGNAL(clicked()),
             this, SLOT(slotRemoveModules()));
     connect(m_bookshelfWidget->treeModel(), SIGNAL(moduleChecked(CSwordModuleInfo*,bool)),
-            this,                           SLOT(resetRemoveButton()));
+            this,                           SLOT(slotResetRemoveButton()));
     connect(m_bookshelfWidget->treeModel(), SIGNAL(rowsRemoved(const QModelIndex&,int,int)),
-            this,                           SLOT(resetRemoveButton()));
+            this,                           SLOT(slotResetRemoveButton()));
 }
 
 QString BtRemovePage::label() const {
@@ -92,7 +102,18 @@ QString BtRemovePage::header() const {
     return tr("Remove");
 }
 
-void BtRemovePage::resetRemoveButton() {
+void BtRemovePage::retranslateUninstallGroupBox() {
+    int count = m_bookshelfWidget->treeModel()->checkedModules().count();
+    if (count > 0) {
+        m_uninstallGroupBox->setTitle(tr("Start removal of %1 works:")
+                                      .arg(count));
+    } else {
+        m_uninstallGroupBox->setTitle(tr("Start removal:"));
+    }
+}
+
+void BtRemovePage::slotResetRemoveButton() {
+    retranslateUninstallGroupBox();
     m_removeButton->setEnabled(!m_bookshelfWidget->treeModel()->checkedModules().empty());
 }
 
