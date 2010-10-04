@@ -179,10 +179,6 @@ const QIcon &CDisplaySettingsPage::icon() const {
     return util::directory::getIcon(CResMgr::settings::startup::icon);
 }
 
-QString CDisplaySettingsPage::label() const {
-    return QString::null;
-}
-
 QString CDisplaySettingsPage::header() const {
     return tr("Display");
 }

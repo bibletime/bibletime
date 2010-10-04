@@ -140,10 +140,6 @@ const QIcon &BtLanguageSettingsPage::icon() const {
     return util::directory::getIcon(CResMgr::settings::languages::icon);
 }
 
-QString BtLanguageSettingsPage::label() const {
-    return tr("Select the language in which the Biblical book names are displayed.");
-}
-
 QString BtLanguageSettingsPage::header() const {
     return tr("Languages");
 }

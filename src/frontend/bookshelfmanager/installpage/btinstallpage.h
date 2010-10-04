@@ -39,9 +39,6 @@ class BtInstallPage: public BtConfigPage {
         virtual const QIcon &icon() const;
 
         /** Reimplemented from BtConfigPage. */
-        virtual QString label() const;
-
-        /** Reimplemented from BtConfigPage. */
         virtual QString header() const;
 
         void setInstallEnabled(bool b);
@@ -76,6 +73,8 @@ class BtInstallPage: public BtConfigPage {
         QByteArray m_headerState;
 
         QMap<QString, BtInstallPageWorksWidget*> m_sourceMap;
+
+        QLabel *m_warningLabel;
 
         QGroupBox *m_sourceGroupBox;
             QComboBox   *m_sourceComboBox;

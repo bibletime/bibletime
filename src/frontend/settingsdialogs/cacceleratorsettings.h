@@ -36,9 +36,6 @@ class CAcceleratorSettingsPage : public BtConfigPage {
         virtual const QIcon &icon() const;
 
         /** Reimplemented from BtConfigPage. */
-        virtual QString label() const;
-
-        /** Reimplemented from BtConfigPage. */
         virtual QString header() const;
 
     protected slots:

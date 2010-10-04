@@ -31,6 +31,7 @@
 #include "util/cresmgr.h"
 #include "util/dialogutil.h"
 #include "util/directory.h"
+#include "util/tool.h"
 
 
 namespace {
@@ -69,6 +70,12 @@ QString BtInstallPage::selectedInstallPath() {
 
 void BtInstallPage::initView() {
     namespace DU = util::directory;
+
+    // Warning label:
+
+    m_warningLabel = util::tool::explanationLabel(this, tr("WARNING!!!"),
+        tr("If you live in a persecuted country and don't want to risk "
+           "detection don't use remote sources."));
 
     // Source chooser:
     m_sourceGroupBox = new QGroupBox(tr("Select installation &source:"), this);
@@ -134,6 +141,7 @@ void BtInstallPage::initView() {
 
     Q_ASSERT(qobject_cast<QVBoxLayout*>(layout()) != 0);
     QVBoxLayout *mainLayout = static_cast<QVBoxLayout*>(layout());
+    mainLayout->addWidget(m_warningLabel);
     mainLayout->addWidget(m_sourceGroupBox);
     mainLayout->addWidget(m_worksGroupBox, 1);
     mainLayout->addWidget(m_installGroupBox);
@@ -410,11 +418,6 @@ void BtInstallPage::slotSelectedModulesChanged() {
 
 const QIcon &BtInstallPage::icon() const {
     return util::directory::getIcon(CResMgr::bookshelfmgr::installpage::icon);
-}
-
-QString BtInstallPage::label() const {
-    // \todo move the warning to a dialog which is shown when adding a source.
-    return tr("Install and update works. Add remote or local sources, refresh them, select the works to be installed/updated and click Install.<br/><b>WARNING:</b> If you live in a persecuted country and don't want to risk detection don't use remote sources.");
 }
 
 QString BtInstallPage::header() const {

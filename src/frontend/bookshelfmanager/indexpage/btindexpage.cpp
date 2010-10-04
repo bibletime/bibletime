@@ -84,10 +84,6 @@ BtIndexPage::~BtIndexPage() {
     CBTConfig::set( CBTConfig::autoDeleteOrphanedIndices, m_autoDeleteOrphanedIndicesBox->isChecked() );
 }
 
-QString BtIndexPage::label() const{
-    return tr("Create new search indexes and delete created indexes for the installed works.");
-}
-
 const QIcon &BtIndexPage::icon() const {
     return util::directory::getIcon(CResMgr::bookshelfmgr::indexpage::icon);
 }

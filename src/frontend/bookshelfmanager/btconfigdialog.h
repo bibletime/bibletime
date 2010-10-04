@@ -77,24 +77,14 @@ class BtConfigPage : public QWidget {
         * For example: header(){return tr("General");}
         */
         virtual const QIcon &icon() const = 0;
-        virtual QString label() const = 0;
         virtual QString header() const = 0;
 
         inline BtConfigDialog *parentDialog() const {
             return m_parentDialog;
         }
 
-    protected:
-        /** Reimplemented from QWidget. */
-        virtual void showEvent(QShowEvent *event);
-
-    private:
-        void initializeLabel();
-
     private:
         BtConfigDialog *m_parentDialog;
-        QLabel *m_headerLabel;
-        bool m_labelInitialized;
 };
 
 

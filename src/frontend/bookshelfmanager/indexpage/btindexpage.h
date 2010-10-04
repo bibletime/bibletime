@@ -35,9 +35,6 @@ class BtIndexPage : public BtConfigPage {
         /** Reimplemented from BtConfigPage. */
         virtual const QIcon &icon() const;
 
-        /** Reimplemented from BtConfigPage. */
-        virtual QString label() const;
-
     public slots:
         void slotSwordSetupChanged();
 

@@ -328,10 +328,6 @@ const QIcon &CSwordSettingsPage::icon() const {
     return util::directory::getIcon(CResMgr::settings::sword::icon);
 }
 
-QString CSwordSettingsPage::label() const {
-    return QString::null;
-}
-
 QString CSwordSettingsPage::header() const {
     return tr("Desk");
 }

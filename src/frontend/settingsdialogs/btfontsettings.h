@@ -20,6 +20,7 @@
 class CFontChooser;
 class QCheckBox;
 class QComboBox;
+class QGroupBox;
 
 /**
     @author The BibleTime team <info@bibletime.info>
@@ -33,9 +34,6 @@ class BtFontSettingsPage : public BtConfigPage {
 
         /** Reimplemented from BtConfigPage. */
         virtual const QIcon &icon() const;
-
-        /** Reimplemented from BtConfigPage. */
-        virtual QString label() const;
 
         /** Reimplemented from BtConfigPage. */
         virtual QString header() const;
@@ -52,9 +50,10 @@ class BtFontSettingsPage : public BtConfigPage {
         void newDisplayWindowFontAreaSelected(const QString&);
 
     private:
-        //QComboBox* m_swordLocaleCombo;
-        QComboBox* m_usageCombo;
-        QCheckBox* m_useOwnFontCheck;
+        QGroupBox *m_fontsGroupBox;
+        QLabel *m_languageLabel;
+        QComboBox *m_languageComboBox;
+        QCheckBox *m_languageCheckBox;
         CFontChooser* m_fontChooser;
 
         QMap<QString, CBTConfig::FontSettingsPair> m_fontMap;

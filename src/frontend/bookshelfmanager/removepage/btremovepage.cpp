@@ -90,10 +90,6 @@ BtRemovePage::BtRemovePage(QWidget *parent)
             this,                           SLOT(slotResetRemoveButton()));
 }
 
-QString BtRemovePage::label() const {
-    return tr("Remove installed works. Select the works and click Remove button.");
-}
-
 const QIcon &BtRemovePage::icon() const {
     return util::directory::getIcon(CResMgr::bookshelfmgr::removepage::icon);
 }

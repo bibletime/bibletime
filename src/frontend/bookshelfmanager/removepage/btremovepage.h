@@ -37,9 +37,6 @@ class BtRemovePage: public BtConfigPage {
         /** Reimplemented from BtConfigPage. */
         virtual const QIcon &icon() const;
 
-        /** Reimplemented from BtConfigPage. */
-        virtual QString label() const;
-
     private:
         void retranslateUninstallGroupBox();
 

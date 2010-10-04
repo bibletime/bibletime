@@ -20,7 +20,6 @@
 #include <QListWidgetItem>
 #include <QStackedWidget>
 #include <QVBoxLayout>
-#include "util/tool.h"
 
 
 BtConfigDialog::BtConfigDialog(QWidget* parent)
@@ -104,27 +103,10 @@ void BtConfigDialog::slotChangePage(int newIndex) {
 BtConfigPage::BtConfigPage(QWidget *parent)
     : QWidget(parent)
     , m_parentDialog(0)
-    , m_labelInitialized(false)
 {
-    QVBoxLayout *containerLayout = new QVBoxLayout(this);
-    m_headerLabel = new QLabel(this);
-    containerLayout->addWidget(m_headerLabel);
-    setLayout(containerLayout);
+    setLayout(new QVBoxLayout);
 }
 
 BtConfigPage::~BtConfigPage() {
     // Intentionally empty
-}
-
-void BtConfigPage::showEvent(QShowEvent *event) {
-    if (!m_labelInitialized) {
-        initializeLabel();
-    }
-
-    QWidget::showEvent(event);
-}
-
-void BtConfigPage::initializeLabel() {
-    util::tool::initExplanationLabel(m_headerLabel, header(), label());
-    m_labelInitialized = true;
 }

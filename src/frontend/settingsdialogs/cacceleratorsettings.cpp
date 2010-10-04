@@ -252,10 +252,6 @@ const QIcon &CAcceleratorSettingsPage::icon() const {
     return util::directory::getIcon(CResMgr::settings::keys::icon);
 }
 
-QString CAcceleratorSettingsPage::label() const {
-    return QString::null;
-}
-
 QString CAcceleratorSettingsPage::header() const {
     return tr("Shortcuts");
 }
