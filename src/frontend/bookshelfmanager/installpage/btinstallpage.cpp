@@ -119,7 +119,7 @@ void BtInstallPage::initView() {
     m_configurePathButton->setToolTip(tr("Configure folders where works are installed and found"));
     m_configurePathButton->setIcon(DU::getIcon(CResMgr::bookshelfmgr::installpage::path_icon));
 
-    m_installButton = new QPushButton(tr("Install..."), this);
+    m_installButton = new QPushButton(tr("&Install..."), this);
     m_installButton->setToolTip(tr("Install or update selected works"));
     m_installButton->setIcon(DU::getIcon(CResMgr::bookshelfmgr::installpage::install_icon));
     m_installButton->setEnabled(false);
