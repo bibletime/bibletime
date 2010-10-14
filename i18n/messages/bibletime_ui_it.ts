@@ -1012,22 +1012,31 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtFontSettingsPage</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="154"/>
         <source>You can specify a custom font for each language.</source>
-        <translation>Puoi specificare un carattere personalizzato per ogni lingua.</translation>
+        <translation type="obsolete">Puoi specificare un carattere personalizzato per ogni lingua.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="42"/>
+        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="34"/>
+        <source>&amp;Language:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="37"/>
         <source>The font selection below will apply to all texts in this language</source>
         <translation>Il carattere selezionatto sotto sarà applicato a tutto il testo in questa lingua</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="66"/>
+        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="40"/>
         <source>Use custom font</source>
         <translation>Usa carattere personalizzato</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="158"/>
+        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="96"/>
+        <source>Optionally specify a custom font for each language:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="163"/>
         <source>Fonts</source>
         <translation>Caratteri</translation>
     </message>
@@ -1070,28 +1079,27 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Dimensione indice</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="88"/>
         <source>Create new search indexes and delete created indexes for the installed works.</source>
-        <translation>Crea un nuovo indice di ricerca ed elimina gli indici creati per i documenti installati.</translation>
+        <translation type="obsolete">Crea un nuovo indice di ricerca ed elimina gli indici creati per i documenti installati.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="96"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="92"/>
         <source>Search Indexes</source>
         <translation>Ricerca Indici</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="108"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="104"/>
         <source>Indexed Works</source>
         <translation>Documenti Indicizzati</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="113"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="109"/>
         <source>Unindexed Works</source>
         <translation>Documenti non indicizzati</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="126"/>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="133"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="122"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="129"/>
         <source>KiB</source>
         <translation>KiB</translation>
     </message>
@@ -1140,39 +1148,142 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtInstallPage</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="184"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="424"/>
         <source>Install/Update</source>
         <translation>Installa/Aggiorna</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="180"/>
         <source>Install and update works. Add remote or local sources, refresh them, select the works to be installed/updated and click Install.&lt;br/&gt;&lt;b&gt;WARNING:&lt;/b&gt; If you live in a persecuted country and don&apos;t want to risk detection don&apos;t use remote sources.</source>
-        <translation>Installa e aggiorna documenti. Aggiungi fonti remote o locali, aggiornale, seleziona i documenti che devono essere installati/aggiornati e clicca Installa.&lt;br/&gt;&lt;b&gt;ATTENZIONE:&lt;/b&gt; Se vivi in un paese perseguitato e non vuoi rischiare di essere rilevato non usare origini remote.</translation>
+        <translation type="obsolete">Installa e aggiorna documenti. Aggiungi fonti remote o locali, aggiornale, seleziona i documenti che devono essere installati/aggiornati e clicca Installa.&lt;br/&gt;&lt;b&gt;ATTENZIONE:&lt;/b&gt; Se vivi in un paese perseguitato e non vuoi rischiare di essere rilevato non usare origini remote.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="90"/>
         <source>Install folder:</source>
-        <translation>Cartella d&apos;installazione:</translation>
+        <translation type="obsolete">Cartella d&apos;installazione:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="95"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="76"/>
+        <source>WARNING!!!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="77"/>
+        <source>If you live in a persecuted country and don&apos;t want to risk detection don&apos;t use remote sources.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="81"/>
+        <source>Select installation &amp;source:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="88"/>
+        <source>Add...</source>
+        <translation type="unfinished">Aggiungi...</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="89"/>
+        <source>Add new source</source>
+        <translation type="unfinished">Aggiungi nuova fonte</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="92"/>
+        <source>Delete...</source>
+        <translation type="unfinished">Elimina...</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="93"/>
+        <source>Delete this source</source>
+        <translation type="unfinished">Elimina questa fonte</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="104"/>
+        <source>Select &amp;works to install:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="115"/>
+        <source>Install &amp;folder:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="120"/>
         <source>The folder where the new works will be installed</source>
         <translation>La cartella dove i nuovi documenti saranno installati</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="99"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="126"/>
         <source>Configure folders where works are installed and found</source>
         <translation>Configura le cartelle dove i documenti sono installati e trovati</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="115"/>
-        <source>Install...</source>
-        <translation>Installa...</translation>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="129"/>
+        <source>&amp;Install...</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="116"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="262"/>
+        <source>Start installation of %1 works from %2 sources:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="266"/>
+        <source>Start installation:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="299"/>
+        <source>Warning</source>
+        <translation type="unfinished">Attenzione</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="299"/>
+        <source>The destination directory is not writable or does not exist. Installation will fail unless this has first been fixed.</source>
+        <translation type="unfinished">La cartella di destinazione non è scrivibile o non esiste. L&apos;installazione fallirà se questo non viene risolto prima.</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="379"/>
+        <source>Delete Source?</source>
+        <translation type="unfinished">Eliminare Fonte?</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="380"/>
+        <source>Do you really want to delete this source?</source>
+        <translation type="unfinished">Vuoi davvero eliminare questa fonte?</translation>
+    </message>
+    <message>
+        <source>Install...</source>
+        <translation type="obsolete">Installa...</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="130"/>
         <source>Install or update selected works</source>
         <translation>Installa o aggiorna i documenti selezionati</translation>
+    </message>
+</context>
+<context>
+    <name>BtInstallPageModel</name>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpagemodel.cpp" line="79"/>
+        <source>Work</source>
+        <translation type="unfinished">Documento</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpagemodel.cpp" line="80"/>
+        <source>Version</source>
+        <translation type="unfinished">Versione</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpagemodel.cpp" line="81"/>
+        <source>Description</source>
+        <translation type="unfinished">Descrizione</translation>
+    </message>
+</context>
+<context>
+    <name>BtInstallPageWorksWidget</name>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpageworkswidget.cpp" line="70"/>
+        <source>Refresh the list of works from this source</source>
+        <translation type="unfinished">Aggiorna la lista dei documenti da questa fonte</translation>
     </message>
 </context>
 <context>
@@ -1331,9 +1442,8 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtLanguageSettingsPage</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="144"/>
         <source>Select the language in which the Biblical book names are displayed.</source>
-        <translation>Seleziona la lingua in cui i nomi dei libri della Bibbia sono visualizzati.</translation>
+        <translation type="obsolete">Seleziona la lingua in cui i nomi dei libri della Bibbia sono visualizzati.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="37"/>
@@ -1346,7 +1456,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Lingue che possono essere utilizzate per i nomi dei libri della Bibbia</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="148"/>
+        <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="144"/>
         <source>Languages</source>
         <translation>Lingue</translation>
     </message>
@@ -1423,39 +1533,85 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
 </context>
 <context>
+    <name>BtRefreshProgressDialog</name>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btrefreshprogressdialog.cpp" line="18"/>
+        <source>Refreshing Source %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btrefreshprogressdialog.cpp" line="19"/>
+        <source>&amp;Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btrefreshprogressdialog.cpp" line="20"/>
+        <source>Connecting...</source>
+        <translation type="unfinished">Connessione...</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btrefreshprogressdialog.cpp" line="56"/>
+        <source>Warning</source>
+        <translation type="unfinished">Attenzione</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btrefreshprogressdialog.cpp" line="57"/>
+        <source>Failed to refresh source %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>BtRemovePage</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="92"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="98"/>
         <source>Remove</source>
         <translation>Rimuovi</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="84"/>
         <source>Remove installed works. Select the works and click Remove button.</source>
-        <translation>Rimuovi i documenti installati. Seleziona i documenti e clicca il tasto Rimuovi.</translation>
+        <translation type="obsolete">Rimuovi i documenti installati. Seleziona i documenti e clicca il tasto Rimuovi.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="109"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="45"/>
+        <source>Select &amp;works to uninstall:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="74"/>
+        <source>&amp;Remove...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="104"/>
+        <source>Start removal of %1 works:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="107"/>
+        <source>Start removal:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="126"/>
         <source>You selected the following work(s): </source>
         <translation>Hai selezioni i seguenti documenti: </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="112"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="129"/>
         <source>Do you really want to remove them from your system?</source>
         <translation>Vuoi veramente rimuoverle dal sistema?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="66"/>
         <source>Remove...</source>
-        <translation>Rimuovi...</translation>
+        <translation type="obsolete">Rimuovi...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="67"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="75"/>
         <source>Remove the selected works</source>
         <translation>Rimuovi i documenti selezionati</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="114"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="131"/>
         <source>Remove Works?</source>
         <translation>Rimuovere i Documenti?</translation>
     </message>
@@ -1575,121 +1731,98 @@ scorciatoia</translation>
         <translation type="obsolete">Descrizione</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="102"/>
         <source>Add...</source>
-        <translation>Aggiungi...</translation>
+        <translation type="obsolete">Aggiungi...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="93"/>
         <source>Refresh...</source>
-        <translation>Aggiorna...</translation>
+        <translation type="obsolete">Aggiorna...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="94"/>
         <source>Refresh the list of works from this source</source>
-        <translation>Aggiorna la lista dei documenti da questa fonte</translation>
+        <translation type="obsolete">Aggiorna la lista dei documenti da questa fonte</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="98"/>
         <source>Delete...</source>
-        <translation>Elimina...</translation>
+        <translation type="obsolete">Elimina...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="99"/>
         <source>Delete this source</source>
-        <translation>Elimina questa fonte</translation>
+        <translation type="obsolete">Elimina questa fonte</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="103"/>
         <source>Add new source</source>
-        <translation>Aggiungi nuova fonte</translation>
+        <translation type="obsolete">Aggiungi nuova fonte</translation>
     </message>
 </context>
 <context>
     <name>BtSourceAreaModel</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourceareamodel.cpp" line="79"/>
         <source>Work</source>
-        <translation type="unfinished">Documento</translation>
+        <translation type="obsolete">Documento</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourceareamodel.cpp" line="80"/>
         <source>Version</source>
-        <translation type="unfinished">Versione</translation>
+        <translation type="obsolete">Versione</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourceareamodel.cpp" line="81"/>
         <source>Description</source>
-        <translation type="unfinished">Descrizione</translation>
+        <translation type="obsolete">Descrizione</translation>
     </message>
 </context>
 <context>
     <name>BtSourceWidget</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="69"/>
         <source>Delete Source?</source>
-        <translation>Eliminare Fonte?</translation>
+        <translation type="obsolete">Eliminare Fonte?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="70"/>
         <source>Do you really want to delete this source?</source>
-        <translation>Vuoi davvero eliminare questa fonte?</translation>
+        <translation type="obsolete">Vuoi davvero eliminare questa fonte?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="103"/>
         <source>Cancel</source>
-        <translation>Annulla</translation>
+        <translation type="obsolete">Annulla</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="104"/>
         <source>Refreshing Source</source>
-        <translation>Aggiornamento Fonte</translation>
+        <translation type="obsolete">Aggiornamento Fonte</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="126"/>
         <source>Connecting...</source>
-        <translation>Connessione...</translation>
+        <translation type="obsolete">Connessione...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="169"/>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="170"/>
         <source>Refreshing...</source>
-        <translation>Aggiornamento...</translation>
+        <translation type="obsolete">Aggiornamento...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="230"/>
         <source>No sources were found in the SWORD configuration and BibleTime couldn&apos;t create a default source. Check your SWORD configuration and that the configuration path is writable. Then restart the Bookshelf Manager.</source>
-        <translation>Nessuna fonte trovata nella configurazione di SWORD e BibleTime non può creare una fonte di default. Controlla la configurazione di SWORD e che il percorso di configurazione sia scrivibile. Quindi riavvia il Gestore dei Segnalibri.</translation>
+        <translation type="obsolete">Nessuna fonte trovata nella configurazione di SWORD e BibleTime non può creare una fonte di default. Controlla la configurazione di SWORD e che il percorso di configurazione sia scrivibile. Quindi riavvia il Gestore dei Segnalibri.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="245"/>
         <source>Remote:</source>
-        <translation>Remoto:</translation>
+        <translation type="obsolete">Remoto:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="250"/>
         <source>Local:</source>
-        <translation>Locale:</translation>
+        <translation type="obsolete">Locale:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="254"/>
         <source>Not a directory!</source>
-        <translation>Non è una cartella!</translation>
+        <translation type="obsolete">Non è una cartella!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="257"/>
         <source>Not readable!</source>
-        <translation>Non leggibile!</translation>
+        <translation type="obsolete">Non leggibile!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="317"/>
         <source>Warning</source>
-        <translation>Attenzione</translation>
+        <translation type="obsolete">Attenzione</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="317"/>
         <source>The destination directory is not writable or does not exist. Installation will fail unless this has first been fixed.</source>
-        <translation>La cartella di destinazione non è scrivibile o non esiste. L&apos;installazione fallirà se questo non viene risolto prima.</translation>
+        <translation type="obsolete">La cartella di destinazione non è scrivibile o non esiste. L&apos;installazione fallirà se questo non viene risolto prima.</translation>
     </message>
 </context>
 <context>
@@ -1764,7 +1897,37 @@ scorciatoia</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="142"/>
-        <source>To change a bookmark title or description, right click on the bookmark and select &quot;Edit Bookmark...&quot;. After finishing the edit the description can be seen by hovering over the bookmark.</source>
+        <source>To change a bookmark title or description, right click on the bookmark and select the Edit Bookmark menu. After finishing the edit the description can be seen by hovering over the bookmark.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="146"/>
+        <source>To load multiple installation sources for works, go to the Bookshelf Manager, select the Add button, and then the Get List button.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="149"/>
+        <source>To find more information about a work, go the the Bookshelf window, right click on the work, and select the About menu.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="152"/>
+        <source>The Bookshelf, Bookmark, and Mag windows can be moved to new locations by dragging them from the title at the top of each window. They can be placed to the left, right, above, or below the works windows. They can be placed on top of each other and tabs will appear so each window can be selected. They can be resized by dragging theborder between the window and another window.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="158"/>
+        <source>You can search for Strong&apos;s numbers in a work. Start with a work that has Strong&apos;s numbers and hover over a word. Right click the word and use the Strong&apos;s Search menu. A search dialog will appear that allows you to see the use of the sameStrong&apos;s number in other locations of the work.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="163"/>
+        <source>You can save personal notes for specific verses references. You must install the Personal commentary. Open the Bookshelf Manager, choose Crosswire as the source and look under Commentary and English. Once installed, use the Bookshelf window and right click the Personal commentary. Use either the Edit Plain Text menu or the Edit HTML menu to open the work in write mode.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="169"/>
+        <source>You can view Strong&apos;s number information in the MAG window by hovering over a word in a Bible work that has Strong&apos;s numbers. You should have the StrongsGreek and StrongsHebrew lexicons from Crosswire installed.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1821,7 +1984,7 @@ scorciatoia</translation>
    &quot;%1&quot; nel &quot;%2&quot; grouppo</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="260"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="256"/>
         <source>Shortcuts</source>
         <translation>Scorciatoie</translation>
     </message>
@@ -2153,7 +2316,7 @@ scorciatoia</translation>
         <translation>E il giudizio è questo: la luce è venuta nel mondo, ma gli uomini hanno preferito le tenebre alla luce, perché le loro opere erano malvagie.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="187"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="183"/>
         <source>Display</source>
         <translation>Mostra</translation>
     </message>
@@ -2849,7 +3012,7 @@ scorciatoia</translation>
         <translation>Filtri testo</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="336"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="332"/>
         <source>Desk</source>
         <translation>Scrivania</translation>
     </message>
@@ -3992,7 +4155,7 @@ Language name ppk</extracomment>
         <translation>Segmentazione morfologica</translation>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/chtmlexportrendering.cpp" line="228"/>
+        <location filename="../../src/backend/rendering/chtmlexportrendering.cpp" line="226"/>
         <source>Export</source>
         <translation>Esporta</translation>
     </message>

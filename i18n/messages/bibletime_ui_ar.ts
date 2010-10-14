@@ -897,22 +897,31 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtFontSettingsPage</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="154"/>
         <source>You can specify a custom font for each language.</source>
-        <translation>تستطيع تخصيص خط محدد لكل لغة.</translation>
+        <translation type="obsolete">تستطيع تخصيص خط محدد لكل لغة.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="42"/>
+        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="34"/>
+        <source>&amp;Language:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="37"/>
         <source>The font selection below will apply to all texts in this language</source>
         <translation>خيار الخط أدناه سيتم تطبيقه على جميع النصوص في هذه اللغة</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="66"/>
+        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="40"/>
         <source>Use custom font</source>
         <translation>استخدام خط مخصص</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="158"/>
+        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="96"/>
+        <source>Optionally specify a custom font for each language:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="163"/>
         <source>Fonts</source>
         <translation>خطوط</translation>
     </message>
@@ -955,28 +964,27 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>حجم الفهرس</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="88"/>
         <source>Create new search indexes and delete created indexes for the installed works.</source>
-        <translation>إنشاء فهرس بحث جديد وحذف الفهارس المنشأة للكتب المثبتة.</translation>
+        <translation type="obsolete">إنشاء فهرس بحث جديد وحذف الفهارس المنشأة للكتب المثبتة.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="96"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="92"/>
         <source>Search Indexes</source>
         <translation>بحث الفهارس</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="108"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="104"/>
         <source>Indexed Works</source>
         <translation>الكتب المفهرسة</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="113"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="109"/>
         <source>Unindexed Works</source>
         <translation>الكتب الغير مفهرسة</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="126"/>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="133"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="122"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="129"/>
         <source>KiB</source>
         <translation>KiB</translation>
     </message>
@@ -1025,39 +1033,142 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtInstallPage</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="184"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="424"/>
         <source>Install/Update</source>
         <translation>تثبيت/تحديث</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="180"/>
         <source>Install and update works. Add remote or local sources, refresh them, select the works to be installed/updated and click Install.&lt;br/&gt;&lt;b&gt;WARNING:&lt;/b&gt; If you live in a persecuted country and don&apos;t want to risk detection don&apos;t use remote sources.</source>
-        <translation>ثبت وحدث الكتب. اضف مصادر خارجية أو من على الجهاز، قم بتحديثهم، اختر الكتب التي تريد تثبيتها/تحديثها واضغط على تثبيت.&lt;br/&gt;&lt;b&gt;تحذير:&lt;/b&gt; إذا كنت تعيش في بلد إضطهاد وترغب في تجنب مخاطرة الإكتشاف لا تستخدم المصادر الخارجية.</translation>
+        <translation type="obsolete">ثبت وحدث الكتب. اضف مصادر خارجية أو من على الجهاز، قم بتحديثهم، اختر الكتب التي تريد تثبيتها/تحديثها واضغط على تثبيت.&lt;br/&gt;&lt;b&gt;تحذير:&lt;/b&gt; إذا كنت تعيش في بلد إضطهاد وترغب في تجنب مخاطرة الإكتشاف لا تستخدم المصادر الخارجية.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="90"/>
         <source>Install folder:</source>
-        <translation>مجلد التثبيت:</translation>
+        <translation type="obsolete">مجلد التثبيت:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="95"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="76"/>
+        <source>WARNING!!!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="77"/>
+        <source>If you live in a persecuted country and don&apos;t want to risk detection don&apos;t use remote sources.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="81"/>
+        <source>Select installation &amp;source:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="88"/>
+        <source>Add...</source>
+        <translation type="unfinished">إضافة...</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="89"/>
+        <source>Add new source</source>
+        <translation type="unfinished">إضافة مصدر جديد</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="92"/>
+        <source>Delete...</source>
+        <translation type="unfinished">حذف...</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="93"/>
+        <source>Delete this source</source>
+        <translation type="unfinished">حذف هذا المصدر</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="104"/>
+        <source>Select &amp;works to install:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="115"/>
+        <source>Install &amp;folder:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="120"/>
         <source>The folder where the new works will be installed</source>
         <translation>الذي المجلد الذي به يتم تثبيت الكتب الجديدة</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="99"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="126"/>
         <source>Configure folders where works are installed and found</source>
         <translation>تعيين المجلدات حيث يتم تثبيت الكتب وإيجادها</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="115"/>
-        <source>Install...</source>
-        <translation>تثبيت...</translation>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="129"/>
+        <source>&amp;Install...</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="116"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="262"/>
+        <source>Start installation of %1 works from %2 sources:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="266"/>
+        <source>Start installation:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="299"/>
+        <source>Warning</source>
+        <translation type="unfinished">تحذير</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="299"/>
+        <source>The destination directory is not writable or does not exist. Installation will fail unless this has first been fixed.</source>
+        <translation type="unfinished">المجلد الهدف إما لا يقبل الكتابة إليه أو إنه غير موجود. سيفشل التثبيت مالم يتم إصلاح هذا أولاً.</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="379"/>
+        <source>Delete Source?</source>
+        <translation type="unfinished">حذف المصدر؟</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="380"/>
+        <source>Do you really want to delete this source?</source>
+        <translation type="unfinished">هل تريد حقاً حذف هذا المصدر؟</translation>
+    </message>
+    <message>
+        <source>Install...</source>
+        <translation type="obsolete">تثبيت...</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="130"/>
         <source>Install or update selected works</source>
         <translation>تثبيت أو تحديث الكتب المختارة</translation>
+    </message>
+</context>
+<context>
+    <name>BtInstallPageModel</name>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpagemodel.cpp" line="79"/>
+        <source>Work</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpagemodel.cpp" line="80"/>
+        <source>Version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpagemodel.cpp" line="81"/>
+        <source>Description</source>
+        <translation type="unfinished">الوصف</translation>
+    </message>
+</context>
+<context>
+    <name>BtInstallPageWorksWidget</name>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpageworkswidget.cpp" line="70"/>
+        <source>Refresh the list of works from this source</source>
+        <translation type="unfinished">تحديث قائمة الكتب من هذا المصدر</translation>
     </message>
 </context>
 <context>
@@ -1216,9 +1327,8 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtLanguageSettingsPage</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="144"/>
         <source>Select the language in which the Biblical book names are displayed.</source>
-        <translation>اختر لغة عرض اسماء أسفار الكتاب المقدس.</translation>
+        <translation type="obsolete">اختر لغة عرض اسماء أسفار الكتاب المقدس.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="37"/>
@@ -1231,7 +1341,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>اللغات المتاح إستخدامها لعرض اسماء أسفار الكتاب المقدس</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="148"/>
+        <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="144"/>
         <source>Languages</source>
         <translation>اللغات</translation>
     </message>
@@ -1308,39 +1418,85 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
 </context>
 <context>
+    <name>BtRefreshProgressDialog</name>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btrefreshprogressdialog.cpp" line="18"/>
+        <source>Refreshing Source %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btrefreshprogressdialog.cpp" line="19"/>
+        <source>&amp;Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btrefreshprogressdialog.cpp" line="20"/>
+        <source>Connecting...</source>
+        <translation type="unfinished">جار الإتصال...</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btrefreshprogressdialog.cpp" line="56"/>
+        <source>Warning</source>
+        <translation type="unfinished">تحذير</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btrefreshprogressdialog.cpp" line="57"/>
+        <source>Failed to refresh source %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>BtRemovePage</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="92"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="98"/>
         <source>Remove</source>
         <translation>إزالة</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="84"/>
         <source>Remove installed works. Select the works and click Remove button.</source>
-        <translation>إزالة الكتب المثبتة. اختر الكتب واضغط على زر إزالة.</translation>
+        <translation type="obsolete">إزالة الكتب المثبتة. اختر الكتب واضغط على زر إزالة.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="109"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="45"/>
+        <source>Select &amp;works to uninstall:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="74"/>
+        <source>&amp;Remove...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="104"/>
+        <source>Start removal of %1 works:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="107"/>
+        <source>Start removal:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="126"/>
         <source>You selected the following work(s): </source>
         <translation>لقد قمت بإختيار الكتب التالية: </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="112"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="129"/>
         <source>Do you really want to remove them from your system?</source>
         <translation>هل تريد حقاً إزالتها من النظام؟</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="66"/>
         <source>Remove...</source>
-        <translation>إزالة...</translation>
+        <translation type="obsolete">إزالة...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="67"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="75"/>
         <source>Remove the selected works</source>
         <translation>إزالة الكتب المختارة</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="114"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="131"/>
         <source>Remove Works?</source>
         <translation>إزالة الكتب؟</translation>
     </message>
@@ -1449,121 +1605,98 @@ shortcut</source>
 <context>
     <name>BtSourceArea</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="102"/>
         <source>Add...</source>
-        <translation>إضافة...</translation>
+        <translation type="obsolete">إضافة...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="93"/>
         <source>Refresh...</source>
-        <translation>تحديث...</translation>
+        <translation type="obsolete">تحديث...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="94"/>
         <source>Refresh the list of works from this source</source>
-        <translation>تحديث قائمة الكتب من هذا المصدر</translation>
+        <translation type="obsolete">تحديث قائمة الكتب من هذا المصدر</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="98"/>
         <source>Delete...</source>
-        <translation>حذف...</translation>
+        <translation type="obsolete">حذف...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="99"/>
         <source>Delete this source</source>
-        <translation>حذف هذا المصدر</translation>
+        <translation type="obsolete">حذف هذا المصدر</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="103"/>
         <source>Add new source</source>
-        <translation>إضافة مصدر جديد</translation>
+        <translation type="obsolete">إضافة مصدر جديد</translation>
     </message>
 </context>
 <context>
     <name>BtSourceAreaModel</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourceareamodel.cpp" line="79"/>
         <source>Work</source>
-        <translation>الكتاب</translation>
+        <translation type="obsolete">الكتاب</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourceareamodel.cpp" line="80"/>
         <source>Version</source>
-        <translation>النسخة</translation>
+        <translation type="obsolete">النسخة</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourceareamodel.cpp" line="81"/>
         <source>Description</source>
-        <translation>الوصف</translation>
+        <translation type="obsolete">الوصف</translation>
     </message>
 </context>
 <context>
     <name>BtSourceWidget</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="69"/>
         <source>Delete Source?</source>
-        <translation>حذف المصدر؟</translation>
+        <translation type="obsolete">حذف المصدر؟</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="70"/>
         <source>Do you really want to delete this source?</source>
-        <translation>هل تريد حقاً حذف هذا المصدر؟</translation>
+        <translation type="obsolete">هل تريد حقاً حذف هذا المصدر؟</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="103"/>
         <source>Cancel</source>
-        <translation>إلغاء</translation>
+        <translation type="obsolete">إلغاء</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="104"/>
         <source>Refreshing Source</source>
-        <translation>تحديث المصدر</translation>
+        <translation type="obsolete">تحديث المصدر</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="126"/>
         <source>Connecting...</source>
-        <translation>جار الإتصال...</translation>
+        <translation type="obsolete">جار الإتصال...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="169"/>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="170"/>
         <source>Refreshing...</source>
-        <translation>جار التحديث...</translation>
+        <translation type="obsolete">جار التحديث...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="230"/>
         <source>No sources were found in the SWORD configuration and BibleTime couldn&apos;t create a default source. Check your SWORD configuration and that the configuration path is writable. Then restart the Bookshelf Manager.</source>
-        <translation>لم يعثر على مصادر في إعدادات سورد ولم يتمكن بيبل تايم من إنشاء المصدر الإفتراضي. تأكد من إعدادات سورد وأن مسار الإعدادات قابل للكتابة. ثم أعد تشغيل مدير رف الكتب.</translation>
+        <translation type="obsolete">لم يعثر على مصادر في إعدادات سورد ولم يتمكن بيبل تايم من إنشاء المصدر الإفتراضي. تأكد من إعدادات سورد وأن مسار الإعدادات قابل للكتابة. ثم أعد تشغيل مدير رف الكتب.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="245"/>
         <source>Remote:</source>
-        <translation>خارجي:</translation>
+        <translation type="obsolete">خارجي:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="250"/>
         <source>Local:</source>
-        <translation>على الجهاز:</translation>
+        <translation type="obsolete">على الجهاز:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="254"/>
         <source>Not a directory!</source>
-        <translation>ليس مجلداً!</translation>
+        <translation type="obsolete">ليس مجلداً!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="257"/>
         <source>Not readable!</source>
-        <translation>غير قابل للقراءة!</translation>
+        <translation type="obsolete">غير قابل للقراءة!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="317"/>
         <source>Warning</source>
-        <translation>تحذير</translation>
+        <translation type="obsolete">تحذير</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="317"/>
         <source>The destination directory is not writable or does not exist. Installation will fail unless this has first been fixed.</source>
-        <translation>المجلد الهدف إما لا يقبل الكتابة إليه أو إنه غير موجود. سيفشل التثبيت مالم يتم إصلاح هذا أولاً.</translation>
+        <translation type="obsolete">المجلد الهدف إما لا يقبل الكتابة إليه أو إنه غير موجود. سيفشل التثبيت مالم يتم إصلاح هذا أولاً.</translation>
     </message>
 </context>
 <context>
@@ -1638,8 +1771,42 @@ shortcut</source>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="142"/>
+        <source>To change a bookmark title or description, right click on the bookmark and select the Edit Bookmark menu. After finishing the edit the description can be seen by hovering over the bookmark.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="146"/>
+        <source>To load multiple installation sources for works, go to the Bookshelf Manager, select the Add button, and then the Get List button.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="149"/>
+        <source>To find more information about a work, go the the Bookshelf window, right click on the work, and select the About menu.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="152"/>
+        <source>The Bookshelf, Bookmark, and Mag windows can be moved to new locations by dragging them from the title at the top of each window. They can be placed to the left, right, above, or below the works windows. They can be placed on top of each other and tabs will appear so each window can be selected. They can be resized by dragging theborder between the window and another window.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="158"/>
+        <source>You can search for Strong&apos;s numbers in a work. Start with a work that has Strong&apos;s numbers and hover over a word. Right click the word and use the Strong&apos;s Search menu. A search dialog will appear that allows you to see the use of the sameStrong&apos;s number in other locations of the work.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="163"/>
+        <source>You can save personal notes for specific verses references. You must install the Personal commentary. Open the Bookshelf Manager, choose Crosswire as the source and look under Commentary and English. Once installed, use the Bookshelf window and right click the Personal commentary. Use either the Edit Plain Text menu or the Edit HTML menu to open the work in write mode.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="169"/>
+        <source>You can view Strong&apos;s number information in the MAG window by hovering over a word in a Bible work that has Strong&apos;s numbers. You should have the StrongsGreek and StrongsHebrew lexicons from Crosswire installed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>To change a bookmark title or description, right click on the bookmark and select &quot;Edit Bookmark...&quot;. After finishing the edit the description can be seen by hovering over the bookmark.</source>
-        <translation>لتغيير عنوان أو وصف علامة، انقر بالزر الأيمن على العلامة واختر &quot;تحرير علامة...&quot;. بعد الإنتهاء من التحرير ستتمكن من مشاهدة الوصف عن طريق المرور بالمؤشر على العلامة.</translation>
+        <translation type="obsolete">لتغيير عنوان أو وصف علامة، انقر بالزر الأيمن على العلامة واختر &quot;تحرير علامة...&quot;. بعد الإنتهاء من التحرير ستتمكن من مشاهدة الوصف عن طريق المرور بالمؤشر على العلامة.</translation>
     </message>
 </context>
 <context>
@@ -1694,7 +1861,7 @@ shortcut</source>
         <translation>...&quot;%1&quot; في مجموعة &quot;%2&quot;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="260"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="256"/>
         <source>Shortcuts</source>
         <translation>إختصارات</translation>
     </message>
@@ -2022,7 +2189,7 @@ shortcut</source>
         <translation>وهذه هي الدينونة ان النور قد جاء الى العالم واحب الناس الظلمة اكثر من النور لان اعمالهم كانت شريرة.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="187"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="183"/>
         <source>Display</source>
         <translation>عرض</translation>
     </message>
@@ -2572,7 +2739,7 @@ shortcut</source>
         <translation>فلترة نصوص</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="336"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="332"/>
         <source>Desk</source>
         <translation>المكتب</translation>
     </message>
@@ -3705,7 +3872,7 @@ Language name ppk</extracomment>
         <translation>تجزئة صرفية</translation>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/chtmlexportrendering.cpp" line="228"/>
+        <location filename="../../src/backend/rendering/chtmlexportrendering.cpp" line="226"/>
         <source>Export</source>
         <translation>تصدير</translation>
     </message>

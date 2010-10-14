@@ -743,7 +743,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <name>BtFontSettingsPage</name>
     <message>
         <source>You can specify a custom font for each language.</source>
-        <translation type="unfinished">Můžete vybrat vlastní písmo pro každý jazyk.</translation>
+        <translation type="obsolete">Můžete vybrat vlastní písmo pro každý jazyk.</translation>
     </message>
     <message>
         <source>The font selection below will apply to all texts in this language</source>
@@ -756,6 +756,14 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <source>Fonts</source>
         <translation type="unfinished">Písma</translation>
+    </message>
+    <message>
+        <source>&amp;Language:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Optionally specify a custom font for each language:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -790,7 +798,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Create new search indexes and delete created indexes for the installed works.</source>
-        <translation>Vytvořit nové vyhledávací rejstříky a smazat dříve vytvořené rejstříky u nainstalovaných děl.</translation>
+        <translation type="obsolete">Vytvořit nové vyhledávací rejstříky a smazat dříve vytvořené rejstříky u nainstalovaných děl.</translation>
     </message>
     <message>
         <source>Search Indexes</source>
@@ -851,19 +859,15 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Install and update works. Add remote or local sources, refresh them, select the works to be installed/updated and click Install.&lt;br/&gt;&lt;b&gt;WARNING:&lt;/b&gt; If you live in a persecuted country and don&apos;t want to risk detection don&apos;t use remote sources.</source>
-        <translation>Instalovat a aktualizovat díla. Přidejte vzdálené nebo lokální zdroje, obnovte je, vyberte díla k instalaci/aktualizaci a klikněte na Instalovat. &lt;br/&gt;&lt;b&gt;VAROVÁNÍ:&lt;/b&gt; Pokud žijete v nesvobodné zemi a nechcete riskovat odhalení, nepoužívejte vzdálené zdroje.</translation>
+        <translation type="obsolete">Instalovat a aktualizovat díla. Přidejte vzdálené nebo lokální zdroje, obnovte je, vyberte díla k instalaci/aktualizaci a klikněte na Instalovat. &lt;br/&gt;&lt;b&gt;VAROVÁNÍ:&lt;/b&gt; Pokud žijete v nesvobodné zemi a nechcete riskovat odhalení, nepoužívejte vzdálené zdroje.</translation>
     </message>
     <message>
         <source>Install...</source>
-        <translation>Instalovat...</translation>
+        <translation type="obsolete">Instalovat...</translation>
     </message>
     <message>
         <source>Install or update selected works</source>
         <translation>Instalovat nebo aktualizovat vybraná díla</translation>
-    </message>
-    <message>
-        <source>Install folder:</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>The folder where the new works will be installed</source>
@@ -872,6 +876,92 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <source>Configure folders where works are installed and found</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>WARNING!!!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If you live in a persecuted country and don&apos;t want to risk detection don&apos;t use remote sources.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select installation &amp;source:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add...</source>
+        <translation type="unfinished">Přidat...</translation>
+    </message>
+    <message>
+        <source>Add new source</source>
+        <translation type="unfinished">Přidat nový zdroj</translation>
+    </message>
+    <message>
+        <source>Delete...</source>
+        <translation type="unfinished">Smazat...</translation>
+    </message>
+    <message>
+        <source>Delete this source</source>
+        <translation type="unfinished">Smazat tento zdroj</translation>
+    </message>
+    <message>
+        <source>Select &amp;works to install:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Install &amp;folder:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Install...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start installation of %1 works from %2 sources:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start installation:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Varování</translation>
+    </message>
+    <message>
+        <source>The destination directory is not writable or does not exist. Installation will fail unless this has first been fixed.</source>
+        <translation type="unfinished">Do cílového adresáře nelze zapisovat nebo neexistuje. Instalace bude selhávat, dokud to nebude opraveno.</translation>
+    </message>
+    <message>
+        <source>Delete Source?</source>
+        <translation type="unfinished">Smazat zdroj?</translation>
+    </message>
+    <message>
+        <source>Do you really want to delete this source?</source>
+        <translation type="unfinished">Opravdu si přejete smazat tento zdroj?</translation>
+    </message>
+</context>
+<context>
+    <name>BtInstallPageModel</name>
+    <message>
+        <source>Work</source>
+        <translation type="unfinished">Dílo</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation type="unfinished">Verze</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation type="unfinished">Popis</translation>
+    </message>
+</context>
+<context>
+    <name>BtInstallPageWorksWidget</name>
+    <message>
+        <source>Refresh the list of works from this source</source>
+        <translation type="unfinished">Obnovit seznam děl z tohoto zdroje</translation>
     </message>
 </context>
 <context>
@@ -999,10 +1089,6 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtLanguageSettingsPage</name>
     <message>
-        <source>Select the language in which the Biblical book names are displayed.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Language for names of Bible books:</source>
         <translation type="unfinished">Jazyk jmen biblických knih:</translation>
     </message>
@@ -1075,6 +1161,29 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
 </context>
 <context>
+    <name>BtRefreshProgressDialog</name>
+    <message>
+        <source>Refreshing Source %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Connecting...</source>
+        <translation type="unfinished">Připojování...</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Varování</translation>
+    </message>
+    <message>
+        <source>Failed to refresh source %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>BtRemovePage</name>
     <message>
         <source>Remove</source>
@@ -1082,7 +1191,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Remove installed works. Select the works and click Remove button.</source>
-        <translation>Odebrat nainstalovaná díla. Vyberte díla a klikněte na tlačítko Odebrat.</translation>
+        <translation type="obsolete">Odebrat nainstalovaná díla. Vyberte díla a klikněte na tlačítko Odebrat.</translation>
     </message>
     <message>
         <source>You selected the following work(s): </source>
@@ -1094,7 +1203,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Remove...</source>
-        <translation>Odstranit...</translation>
+        <translation type="obsolete">Odstranit...</translation>
     </message>
     <message>
         <source>Remove the selected works</source>
@@ -1103,6 +1212,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <source>Remove Works?</source>
         <translation>Odstranit díla?</translation>
+    </message>
+    <message>
+        <source>Select &amp;works to uninstall:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Remove...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start removal of %1 works:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start removal:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1200,97 +1325,97 @@ shortcut</source>
     </message>
     <message>
         <source>Add...</source>
-        <translation>Přidat...</translation>
+        <translation type="obsolete">Přidat...</translation>
     </message>
     <message>
         <source>Refresh...</source>
-        <translation>Obnovit...</translation>
+        <translation type="obsolete">Obnovit...</translation>
     </message>
     <message>
         <source>Refresh the list of works from this source</source>
-        <translation>Obnovit seznam děl z tohoto zdroje</translation>
+        <translation type="obsolete">Obnovit seznam děl z tohoto zdroje</translation>
     </message>
     <message>
         <source>Delete...</source>
-        <translation>Smazat...</translation>
+        <translation type="obsolete">Smazat...</translation>
     </message>
     <message>
         <source>Delete this source</source>
-        <translation>Smazat tento zdroj</translation>
+        <translation type="obsolete">Smazat tento zdroj</translation>
     </message>
     <message>
         <source>Add new source</source>
-        <translation>Přidat nový zdroj</translation>
+        <translation type="obsolete">Přidat nový zdroj</translation>
     </message>
 </context>
 <context>
     <name>BtSourceAreaModel</name>
     <message>
         <source>Work</source>
-        <translation type="unfinished">Dílo</translation>
+        <translation type="obsolete">Dílo</translation>
     </message>
     <message>
         <source>Version</source>
-        <translation type="unfinished">Verze</translation>
+        <translation type="obsolete">Verze</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation type="unfinished">Popis</translation>
+        <translation type="obsolete">Popis</translation>
     </message>
 </context>
 <context>
     <name>BtSourceWidget</name>
     <message>
         <source>Delete Source?</source>
-        <translation>Smazat zdroj?</translation>
+        <translation type="obsolete">Smazat zdroj?</translation>
     </message>
     <message>
         <source>Do you really want to delete this source?</source>
-        <translation>Opravdu si přejete smazat tento zdroj?</translation>
+        <translation type="obsolete">Opravdu si přejete smazat tento zdroj?</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Zrušit</translation>
+        <translation type="obsolete">Zrušit</translation>
     </message>
     <message>
         <source>Refreshing Source</source>
-        <translation>Obnovuji zdroje</translation>
+        <translation type="obsolete">Obnovuji zdroje</translation>
     </message>
     <message>
         <source>Connecting...</source>
-        <translation>Připojování...</translation>
+        <translation type="obsolete">Připojování...</translation>
     </message>
     <message>
         <source>Refreshing...</source>
-        <translation>Obnovování...</translation>
+        <translation type="obsolete">Obnovování...</translation>
     </message>
     <message>
         <source>No sources were found in the SWORD configuration and BibleTime couldn&apos;t create a default source. Check your SWORD configuration and that the configuration path is writable. Then restart the Bookshelf Manager.</source>
-        <translation>Nebyly nalezeny žádné zdroje v nastavení SWORD a BibleTime nemůže vytvořit výchozí zdroj. Skontrolujte nastavení SWORD a také jestli lze do konfiguračního umístění zapisovat. Potom restartujte Správce knihovny.</translation>
+        <translation type="obsolete">Nebyly nalezeny žádné zdroje v nastavení SWORD a BibleTime nemůže vytvořit výchozí zdroj. Skontrolujte nastavení SWORD a také jestli lze do konfiguračního umístění zapisovat. Potom restartujte Správce knihovny.</translation>
     </message>
     <message>
         <source>Remote:</source>
-        <translation>Vzdálené:</translation>
+        <translation type="obsolete">Vzdálené:</translation>
     </message>
     <message>
         <source>Local:</source>
-        <translation>Místní:</translation>
+        <translation type="obsolete">Místní:</translation>
     </message>
     <message>
         <source>Not a directory!</source>
-        <translation>Není adresářem!</translation>
+        <translation type="obsolete">Není adresářem!</translation>
     </message>
     <message>
         <source>Not readable!</source>
-        <translation>Nečitelné!</translation>
+        <translation type="obsolete">Nečitelné!</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varování</translation>
+        <translation type="obsolete">Varování</translation>
     </message>
     <message>
         <source>The destination directory is not writable or does not exist. Installation will fail unless this has first been fixed.</source>
-        <translation>Do cílového adresáře nelze zapisovat nebo neexistuje. Instalace bude selhávat, dokud to nebude opraveno.</translation>
+        <translation type="obsolete">Do cílového adresáře nelze zapisovat nebo neexistuje. Instalace bude selhávat, dokud to nebude opraveno.</translation>
     </message>
 </context>
 <context>
@@ -1351,7 +1476,31 @@ shortcut</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>To change a bookmark title or description, right click on the bookmark and select &quot;Edit Bookmark...&quot;. After finishing the edit the description can be seen by hovering over the bookmark.</source>
+        <source>To change a bookmark title or description, right click on the bookmark and select the Edit Bookmark menu. After finishing the edit the description can be seen by hovering over the bookmark.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To load multiple installation sources for works, go to the Bookshelf Manager, select the Add button, and then the Get List button.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To find more information about a work, go the the Bookshelf window, right click on the work, and select the About menu.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The Bookshelf, Bookmark, and Mag windows can be moved to new locations by dragging them from the title at the top of each window. They can be placed to the left, right, above, or below the works windows. They can be placed on top of each other and tabs will appear so each window can be selected. They can be resized by dragging theborder between the window and another window.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can search for Strong&apos;s numbers in a work. Start with a work that has Strong&apos;s numbers and hover over a word. Right click the word and use the Strong&apos;s Search menu. A search dialog will appear that allows you to see the use of the sameStrong&apos;s number in other locations of the work.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can save personal notes for specific verses references. You must install the Personal commentary. Open the Bookshelf Manager, choose Crosswire as the source and look under Commentary and English. Once installed, use the Bookshelf window and right click the Personal commentary. Use either the Edit Plain Text menu or the Edit HTML menu to open the work in write mode.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can view Strong&apos;s number information in the MAG window by hovering over a word in a Bible work that has Strong&apos;s numbers. You should have the StrongsGreek and StrongsHebrew lexicons from Crosswire installed.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

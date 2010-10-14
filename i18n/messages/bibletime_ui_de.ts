@@ -751,7 +751,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <name>BtFontSettingsPage</name>
     <message>
         <source>You can specify a custom font for each language.</source>
-        <translation>Sie können eine angepasste Schrift für jede Sprache angeben.</translation>
+        <translation type="obsolete">Sie können eine angepasste Schrift für jede Sprache angeben.</translation>
     </message>
     <message>
         <source>The font selection below will apply to all texts in this language</source>
@@ -764,6 +764,14 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <source>Fonts</source>
         <translation>Schriften</translation>
+    </message>
+    <message>
+        <source>&amp;Language:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Optionally specify a custom font for each language:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -798,7 +806,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Create new search indexes and delete created indexes for the installed works.</source>
-        <translation>Erstellung neuer Such-Indizes und Löschen erstellter Indizes für installierte Werke.</translation>
+        <translation type="obsolete">Erstellung neuer Such-Indizes und Löschen erstellter Indizes für installierte Werke.</translation>
     </message>
     <message>
         <source>Search Indexes</source>
@@ -859,11 +867,11 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Install and update works. Add remote or local sources, refresh them, select the works to be installed/updated and click Install.&lt;br/&gt;&lt;b&gt;WARNING:&lt;/b&gt; If you live in a persecuted country and don&apos;t want to risk detection don&apos;t use remote sources.</source>
-        <translation>Werke installieren und aktualisieren. Fügen Sie entfernte oder lokale Quellen hinzu, aktualisieren Sie diese, wählen Sie die Werke aus, die installiert/aktualisiert werden sollen und klicken Sie Installieren.&lt;br/&gt;&lt;b&gt;WARNUNG:&lt;/b&gt;Wenn Sie in einem Land mit religiöser Verfolgung leben und es nicht riskieren wollen, entdeckt zu werden, sollten Sie keine entfernten Quellen verwenden.</translation>
+        <translation type="obsolete">Werke installieren und aktualisieren. Fügen Sie entfernte oder lokale Quellen hinzu, aktualisieren Sie diese, wählen Sie die Werke aus, die installiert/aktualisiert werden sollen und klicken Sie Installieren.&lt;br/&gt;&lt;b&gt;WARNUNG:&lt;/b&gt;Wenn Sie in einem Land mit religiöser Verfolgung leben und es nicht riskieren wollen, entdeckt zu werden, sollten Sie keine entfernten Quellen verwenden.</translation>
     </message>
     <message>
         <source>Install...</source>
-        <translation>Installieren...</translation>
+        <translation type="obsolete">Installieren...</translation>
     </message>
     <message>
         <source>Install or update selected works</source>
@@ -871,7 +879,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Install folder:</source>
-        <translation>Installationsverzeichnis:</translation>
+        <translation type="obsolete">Installationsverzeichnis:</translation>
     </message>
     <message>
         <source>The folder where the new works will be installed</source>
@@ -880,6 +888,92 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <source>Configure folders where works are installed and found</source>
         <translation>Konfigurieren Sie Verzeichnisse in denen Werke installiert und gefunden werden</translation>
+    </message>
+    <message>
+        <source>WARNING!!!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If you live in a persecuted country and don&apos;t want to risk detection don&apos;t use remote sources.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select installation &amp;source:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add...</source>
+        <translation type="unfinished">Hinzufügen...</translation>
+    </message>
+    <message>
+        <source>Add new source</source>
+        <translation type="unfinished">Neue Quelle hinzufügen</translation>
+    </message>
+    <message>
+        <source>Delete...</source>
+        <translation type="unfinished">Löschen...</translation>
+    </message>
+    <message>
+        <source>Delete this source</source>
+        <translation type="unfinished">Diese Quelle löschen</translation>
+    </message>
+    <message>
+        <source>Select &amp;works to install:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Install &amp;folder:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Install...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start installation of %1 works from %2 sources:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start installation:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Warnung</translation>
+    </message>
+    <message>
+        <source>The destination directory is not writable or does not exist. Installation will fail unless this has first been fixed.</source>
+        <translation type="unfinished">Das Zielverzeichnis ist nicht beschreibbar oder existiert nicht. Die Installation wird fehlschlagen, wenn dieser Umstand vorher nicht behoben wird.</translation>
+    </message>
+    <message>
+        <source>Delete Source?</source>
+        <translation type="unfinished">Quelle löschen?</translation>
+    </message>
+    <message>
+        <source>Do you really want to delete this source?</source>
+        <translation type="unfinished">Möchten Sie diese Quelle wirklich löschen?</translation>
+    </message>
+</context>
+<context>
+    <name>BtInstallPageModel</name>
+    <message>
+        <source>Work</source>
+        <translation type="unfinished">Werk</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation type="unfinished">Version</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation type="unfinished">Beschreibung</translation>
+    </message>
+</context>
+<context>
+    <name>BtInstallPageWorksWidget</name>
+    <message>
+        <source>Refresh the list of works from this source</source>
+        <translation type="unfinished">Liste der Werke aus dieser Quelle auffrischen</translation>
     </message>
 </context>
 <context>
@@ -1008,7 +1102,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <name>BtLanguageSettingsPage</name>
     <message>
         <source>Select the language in which the Biblical book names are displayed.</source>
-        <translation>Wählen Sie die Sprache in der die BIbelbücher-Namen angezeigt werden.</translation>
+        <translation type="obsolete">Wählen Sie die Sprache in der die BIbelbücher-Namen angezeigt werden.</translation>
     </message>
     <message>
         <source>Language for names of Bible books:</source>
@@ -1083,6 +1177,29 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
 </context>
 <context>
+    <name>BtRefreshProgressDialog</name>
+    <message>
+        <source>Refreshing Source %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Connecting...</source>
+        <translation type="unfinished">Verbinde...</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Warnung</translation>
+    </message>
+    <message>
+        <source>Failed to refresh source %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>BtRemovePage</name>
     <message>
         <source>Remove</source>
@@ -1090,7 +1207,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Remove installed works. Select the works and click Remove button.</source>
-        <translation>Entfernen installierter Werke. Wählen Sie die Werke aus und betätigen Sie die \&quot;Entfernen\&quot;-Schaltfläche.</translation>
+        <translation type="obsolete">Entfernen installierter Werke. Wählen Sie die Werke aus und betätigen Sie die \&quot;Entfernen\&quot;-Schaltfläche.</translation>
     </message>
     <message>
         <source>You selected the following work(s): </source>
@@ -1102,7 +1219,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Remove...</source>
-        <translation>Entfernen...</translation>
+        <translation type="obsolete">Entfernen...</translation>
     </message>
     <message>
         <source>Remove the selected works</source>
@@ -1111,6 +1228,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <source>Remove Works?</source>
         <translation>Werke entfernen?</translation>
+    </message>
+    <message>
+        <source>Select &amp;works to uninstall:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Remove...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start removal of %1 works:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start removal:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1208,97 +1341,97 @@ shortcut</source>
     </message>
     <message>
         <source>Add...</source>
-        <translation>Hinzufügen...</translation>
+        <translation type="obsolete">Hinzufügen...</translation>
     </message>
     <message>
         <source>Refresh...</source>
-        <translation>Auffrischen...</translation>
+        <translation type="obsolete">Auffrischen...</translation>
     </message>
     <message>
         <source>Refresh the list of works from this source</source>
-        <translation>Liste der Werke aus dieser Quelle auffrischen</translation>
+        <translation type="obsolete">Liste der Werke aus dieser Quelle auffrischen</translation>
     </message>
     <message>
         <source>Delete...</source>
-        <translation>Löschen...</translation>
+        <translation type="obsolete">Löschen...</translation>
     </message>
     <message>
         <source>Delete this source</source>
-        <translation>Diese Quelle löschen</translation>
+        <translation type="obsolete">Diese Quelle löschen</translation>
     </message>
     <message>
         <source>Add new source</source>
-        <translation>Neue Quelle hinzufügen</translation>
+        <translation type="obsolete">Neue Quelle hinzufügen</translation>
     </message>
 </context>
 <context>
     <name>BtSourceAreaModel</name>
     <message>
         <source>Work</source>
-        <translation type="unfinished">Werk</translation>
+        <translation type="obsolete">Werk</translation>
     </message>
     <message>
         <source>Version</source>
-        <translation type="unfinished">Version</translation>
+        <translation type="obsolete">Version</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation type="unfinished">Beschreibung</translation>
+        <translation type="obsolete">Beschreibung</translation>
     </message>
 </context>
 <context>
     <name>BtSourceWidget</name>
     <message>
         <source>Delete Source?</source>
-        <translation>Quelle löschen?</translation>
+        <translation type="obsolete">Quelle löschen?</translation>
     </message>
     <message>
         <source>Do you really want to delete this source?</source>
-        <translation>Möchten Sie diese Quelle wirklich löschen?</translation>
+        <translation type="obsolete">Möchten Sie diese Quelle wirklich löschen?</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Abbrechen</translation>
+        <translation type="obsolete">Abbrechen</translation>
     </message>
     <message>
         <source>Refreshing Source</source>
-        <translation>Quelle wird aktualisiert</translation>
+        <translation type="obsolete">Quelle wird aktualisiert</translation>
     </message>
     <message>
         <source>Connecting...</source>
-        <translation>Verbinde...</translation>
+        <translation type="obsolete">Verbinde...</translation>
     </message>
     <message>
         <source>Refreshing...</source>
-        <translation>Aktualisiere...</translation>
+        <translation type="obsolete">Aktualisiere...</translation>
     </message>
     <message>
         <source>Remote:</source>
-        <translation>Entfernt:</translation>
+        <translation type="obsolete">Entfernt:</translation>
     </message>
     <message>
         <source>Local:</source>
-        <translation>Lokal:</translation>
+        <translation type="obsolete">Lokal:</translation>
     </message>
     <message>
         <source>Not a directory!</source>
-        <translation>Kein Verzeichnis!</translation>
+        <translation type="obsolete">Kein Verzeichnis!</translation>
     </message>
     <message>
         <source>Not readable!</source>
-        <translation>Nicht lesbar!</translation>
+        <translation type="obsolete">Nicht lesbar!</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Warnung</translation>
+        <translation type="obsolete">Warnung</translation>
     </message>
     <message>
         <source>The destination directory is not writable or does not exist. Installation will fail unless this has first been fixed.</source>
-        <translation>Das Zielverzeichnis ist nicht beschreibbar oder existiert nicht. Die Installation wird fehlschlagen, wenn dieser Umstand vorher nicht behoben wird.</translation>
+        <translation type="obsolete">Das Zielverzeichnis ist nicht beschreibbar oder existiert nicht. Die Installation wird fehlschlagen, wenn dieser Umstand vorher nicht behoben wird.</translation>
     </message>
     <message>
         <source>No sources were found in the SWORD configuration and BibleTime couldn&apos;t create a default source. Check your SWORD configuration and that the configuration path is writable. Then restart the Bookshelf Manager.</source>
-        <translation>In der SWORD-Konfiguration wurden keine Quellen gefunden und BibleTime konnte keine Standard-Quelle erstellen. Überprüfen Sie Ihre SWORD-Konfiguration und dass der Konfigurations-Pfad beschreibbar ist. Dann starten Sie die Bücherregal-Verwaltung erneut.</translation>
+        <translation type="obsolete">In der SWORD-Konfiguration wurden keine Quellen gefunden und BibleTime konnte keine Standard-Quelle erstellen. Überprüfen Sie Ihre SWORD-Konfiguration und dass der Konfigurations-Pfad beschreibbar ist. Dann starten Sie die Bücherregal-Verwaltung erneut.</translation>
     </message>
 </context>
 <context>
@@ -1359,7 +1492,31 @@ shortcut</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>To change a bookmark title or description, right click on the bookmark and select &quot;Edit Bookmark...&quot;. After finishing the edit the description can be seen by hovering over the bookmark.</source>
+        <source>To change a bookmark title or description, right click on the bookmark and select the Edit Bookmark menu. After finishing the edit the description can be seen by hovering over the bookmark.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To load multiple installation sources for works, go to the Bookshelf Manager, select the Add button, and then the Get List button.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To find more information about a work, go the the Bookshelf window, right click on the work, and select the About menu.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The Bookshelf, Bookmark, and Mag windows can be moved to new locations by dragging them from the title at the top of each window. They can be placed to the left, right, above, or below the works windows. They can be placed on top of each other and tabs will appear so each window can be selected. They can be resized by dragging theborder between the window and another window.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can search for Strong&apos;s numbers in a work. Start with a work that has Strong&apos;s numbers and hover over a word. Right click the word and use the Strong&apos;s Search menu. A search dialog will appear that allows you to see the use of the sameStrong&apos;s number in other locations of the work.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can save personal notes for specific verses references. You must install the Personal commentary. Open the Bookshelf Manager, choose Crosswire as the source and look under Commentary and English. Once installed, use the Bookshelf window and right click the Personal commentary. Use either the Edit Plain Text menu or the Edit HTML menu to open the work in write mode.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can view Strong&apos;s number information in the MAG window by hovering over a word in a Bible work that has Strong&apos;s numbers. You should have the StrongsGreek and StrongsHebrew lexicons from Crosswire installed.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
