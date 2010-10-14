@@ -31,7 +31,7 @@ IF (NOT CMAKE_BUILD_TYPE STREQUAL "Release")
 ENDIF (NOT CMAKE_BUILD_TYPE STREQUAL "Release")
 
 #Non-English locales to be processed and installed for UI, handbook and howto
-LIST(APPEND MESSAGE_LOCALE_LANGS cs da de en_GB es et fi fr hu it nl nn_NO pl pt_BR ro ru sk)
+LIST(APPEND MESSAGE_LOCALE_LANGS ar_EG cs da de en_GB es et fi fr hu it nl nn_NO pl pt_BR ro ru sk zh_TW)
 #WARNING: If you modify HANDBOOK_LOCALE_LANGS or HOWTO_LOCALE_LANGS,
 #also modify the po4a conf files in cmake/docs/ to make sure all languages are processed.
 LIST(APPEND HANDBOOK_LOCALE_LANGS cs de es fi fr hu it nl pt_BR)
