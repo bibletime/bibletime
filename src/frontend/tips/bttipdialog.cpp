@@ -153,12 +153,12 @@ void BtTipDialog::initTips() {
         " dragging them from the title at the top of each window. They can be placed to the left,"
         " right, above, or below the works windows. They can be placed on top of each other and"
         " tabs will appear so each window can be selected. They can be resized by dragging the"
-        "border between the window and another window.");
+        " border between the window and another window.");
 
     m_tips << tr("You can search for Strong's numbers in a work. Start with a work that has Strong's"
                  " numbers and hover over a word. Right click the word and use the Strong's Search"
                  " menu. A search dialog will appear that allows you to see the use of the same"
-                 "Strong's number in other locations of the work.");
+                 " Strong's number in other locations of the work.");
 
     m_tips << tr("You can save personal notes for specific verses references. You must install"
                  " the Personal commentary. Open the Bookshelf Manager, choose Crosswire as the"
