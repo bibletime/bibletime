@@ -1045,8 +1045,8 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="88"/>
-        <source>Add...</source>
-        <translation>Add...</translation>
+        <source>&amp;Add...</source>
+        <translation>&amp;Add...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="89"/>
@@ -1055,8 +1055,8 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="92"/>
-        <source>Delete...</source>
-        <translation>Delete...</translation>
+        <source>&amp;Delete...</source>
+        <translation>&amp;Delete...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="93"/>
@@ -1194,8 +1194,8 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="78"/>
-        <source>Add...</source>
-        <translation>Add...</translation>
+        <source>&amp;Add...</source>
+        <translation>&amp;Add...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="79"/>
@@ -1204,8 +1204,8 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="84"/>
-        <source>Edit...</source>
-        <translation>Edit...</translation>
+        <source>&amp;Edit...</source>
+        <translation>&amp;Edit...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="85"/>
@@ -1214,8 +1214,8 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="90"/>
-        <source>Remove</source>
-        <translation>Remove</translation>
+        <source>&amp;Remove</source>
+        <translation>&amp;Remove</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="91"/>
@@ -1424,8 +1424,8 @@ This file is distributed under the same license as the Bibetime package.</transl
     <name>BtRemovePage</name>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="98"/>
-        <source>Remove</source>
-        <translation>Remove</translation>
+        <source>&amp;Remove</source>
+        <translation>&amp;Remove</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="45"/>
@@ -1581,8 +1581,8 @@ shortcut</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="137"/>
-        <source>Remove</source>
-        <translation>Remove</translation>
+        <source>&amp;Remove</source>
+        <translation>&amp;Remove</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="143"/>

@@ -75,19 +75,19 @@ BtInstallPathDialog::BtInstallPathDialog() {
 
     QVBoxLayout* buttonLayout = new QVBoxLayout();
 
-    m_addButton = new QPushButton(tr("Add..."), this);
+    m_addButton = new QPushButton(tr("&Add..."), this);
     m_addButton->setToolTip(tr("Add new folder"));
     m_addButton->setIcon(DU::getIcon(CResMgr::bookshelfmgr::paths::add_icon));
     connect(m_addButton, SIGNAL(clicked()), this, SLOT(slotAddClicked()));
     buttonLayout->addWidget(m_addButton);
 
-    m_editButton = new QPushButton(tr("Edit..."), this);
+    m_editButton = new QPushButton(tr("&Edit..."), this);
     m_editButton->setToolTip(tr("Edit the selected folder"));
     m_editButton->setIcon(DU::getIcon(CResMgr::bookshelfmgr::paths::edit_icon));
     connect(m_editButton, SIGNAL(clicked()), this, SLOT(slotEditClicked()));
     buttonLayout->addWidget(m_editButton);
 
-    m_removeButton = new QPushButton(tr("Remove"), this);
+    m_removeButton = new QPushButton(tr("&Remove"), this);
     m_removeButton->setToolTip(tr("Remove the selected folder"));
     m_removeButton->setIcon(DU::getIcon(CResMgr::bookshelfmgr::paths::remove_icon));
     connect(m_removeButton, SIGNAL(clicked()), this, SLOT(slotRemoveClicked()));

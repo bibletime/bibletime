@@ -1085,7 +1085,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="88"/>
-        <source>Add...</source>
+        <source>&amp;Add...</source>
         <translation type="unfinished">Lisää...</translation>
     </message>
     <message>
@@ -1095,7 +1095,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="92"/>
-        <source>Delete...</source>
+        <source>&amp;Delete...</source>
         <translation type="unfinished">Poista...</translation>
     </message>
     <message>
@@ -1238,7 +1238,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="78"/>
-        <source>Add...</source>
+        <source>&amp;Add...</source>
         <translation>Lisää...</translation>
     </message>
     <message>
@@ -1248,7 +1248,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="84"/>
-        <source>Edit...</source>
+        <source>&amp;Edit...</source>
         <translation>Muokkaa...</translation>
     </message>
     <message>
@@ -1258,7 +1258,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="90"/>
-        <source>Remove</source>
+        <source>&amp;Remove</source>
         <translation>Poista</translation>
     </message>
     <message>
@@ -1472,7 +1472,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <name>BtRemovePage</name>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="98"/>
-        <source>Remove</source>
+        <source>&amp;Remove</source>
         <translation>Poista</translation>
     </message>
     <message>
@@ -1639,7 +1639,7 @@ pikanäppäin</translation>
         <translation type="obsolete">Kuvaus</translation>
     </message>
     <message>
-        <source>Add...</source>
+        <source>&amp;Add...</source>
         <translation type="obsolete">Lisää...</translation>
     </message>
     <message>
@@ -1651,7 +1651,7 @@ pikanäppäin</translation>
         <translation type="obsolete">Päivitä tämän lähteen teosluettelo</translation>
     </message>
     <message>
-        <source>Delete...</source>
+        <source>&amp;Delete...</source>
         <translation type="obsolete">Poista...</translation>
     </message>
     <message>
@@ -1742,7 +1742,7 @@ pikanäppäin</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="137"/>
-        <source>Remove</source>
+        <source>&amp;Remove</source>
         <translation>Poista</translation>
     </message>
     <message>

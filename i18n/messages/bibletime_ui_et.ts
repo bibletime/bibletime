@@ -1076,8 +1076,8 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="88"/>
-        <source>Add...</source>
-        <translation>Lisa...</translation>
+        <source>&amp;Add...</source>
+        <translation>&amp;Lisa...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="89"/>
@@ -1086,8 +1086,8 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="92"/>
-        <source>Delete...</source>
-        <translation>Eemalda...</translation>
+        <source>&amp;Delete...</source>
+        <translation>&amp;Eemalda...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="93"/>
@@ -1239,8 +1239,8 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="78"/>
-        <source>Add...</source>
-        <translation>Lisa...</translation>
+        <source>&amp;Add...</source>
+        <translation>&amp;Lisa...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="79"/>
@@ -1249,8 +1249,8 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="84"/>
-        <source>Edit...</source>
-        <translation>Muuda...</translation>
+        <source>&amp;Edit...</source>
+        <translation>&amp;Muuda...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="85"/>
@@ -1259,8 +1259,8 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="90"/>
-        <source>Remove</source>
-        <translation>Eemalda</translation>
+        <source>&amp;Remove</source>
+        <translation>&amp;Eemalda</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="91"/>
@@ -1473,8 +1473,8 @@ This file is distributed under the same license as the Bibetime package.</transl
     <name>BtRemovePage</name>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="98"/>
-        <source>Remove</source>
-        <translation>Eemalda</translation>
+        <source>&amp;Remove</source>
+        <translation>&amp;Eemalda</translation>
     </message>
     <message>
         <source>Remove installed works. Select the works and click Remove button.</source>
@@ -1640,7 +1640,7 @@ kiirklahv</translation>
         <translation type="obsolete">Kirjeldus</translation>
     </message>
     <message>
-        <source>Add...</source>
+        <source>&amp;Add...</source>
         <translation type="obsolete">Lisa...</translation>
     </message>
     <message>
@@ -1652,7 +1652,7 @@ kiirklahv</translation>
         <translation type="obsolete">Värskenda teoste nimekiri sellest allikast</translation>
     </message>
     <message>
-        <source>Delete...</source>
+        <source>&amp;Delete...</source>
         <translation type="obsolete">Eemalda...</translation>
     </message>
     <message>
@@ -1743,8 +1743,8 @@ kiirklahv</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="137"/>
-        <source>Remove</source>
-        <translation>Eemalda</translation>
+        <source>&amp;Remove</source>
+        <translation>&amp;Eemalda</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="143"/>

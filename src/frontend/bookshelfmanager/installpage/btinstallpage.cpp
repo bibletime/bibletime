@@ -85,11 +85,11 @@ void BtInstallPage::initView() {
     m_sourceComboBox->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
     initSourcesCombo();
 
-    m_sourceAddButton = new QPushButton(tr("Add..."));
+    m_sourceAddButton = new QPushButton(tr("&Add..."));
     m_sourceAddButton ->setToolTip(tr("Add new source"));
     m_sourceAddButton ->setIcon(DU::getIcon(CResMgr::bookshelfmgr::installpage::add_icon));
 
-    m_sourceDeleteButton = new QPushButton(tr("Delete..."));
+    m_sourceDeleteButton = new QPushButton(tr("&Delete..."));
     m_sourceDeleteButton->setToolTip(tr("Delete this source"));
     m_sourceDeleteButton->setIcon(DU::getIcon(CResMgr::bookshelfmgr::installpage::delete_icon));
 

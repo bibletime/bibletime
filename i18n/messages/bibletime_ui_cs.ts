@@ -890,7 +890,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Add...</source>
+        <source>&amp;Add...</source>
         <translation type="unfinished">Přidat...</translation>
     </message>
     <message>
@@ -898,7 +898,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="unfinished">Přidat nový zdroj</translation>
     </message>
     <message>
-        <source>Delete...</source>
+        <source>&amp;Delete...</source>
         <translation type="unfinished">Smazat...</translation>
     </message>
     <message>
@@ -967,15 +967,15 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtInstallPathDialog</name>
     <message>
-        <source>Add...</source>
+        <source>&amp;Add...</source>
         <translation>Přidat...</translation>
     </message>
     <message>
-        <source>Edit...</source>
+        <source>&amp;Edit...</source>
         <translation>Upravit...</translation>
     </message>
     <message>
-        <source>Remove</source>
+        <source>&amp;Remove</source>
         <translation>Odstranit</translation>
     </message>
     <message>
@@ -1186,7 +1186,7 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtRemovePage</name>
     <message>
-        <source>Remove</source>
+        <source>&amp;Remove</source>
         <translation>Odebrat</translation>
     </message>
     <message>
@@ -1324,7 +1324,7 @@ shortcut</source>
         <translation type="obsolete">Popis</translation>
     </message>
     <message>
-        <source>Add...</source>
+        <source>&amp;Add...</source>
         <translation type="obsolete">Přidat...</translation>
     </message>
     <message>
@@ -1336,7 +1336,7 @@ shortcut</source>
         <translation type="obsolete">Obnovit seznam děl z tohoto zdroje</translation>
     </message>
     <message>
-        <source>Delete...</source>
+        <source>&amp;Delete...</source>
         <translation type="obsolete">Smazat...</translation>
     </message>
     <message>
@@ -1425,7 +1425,7 @@ shortcut</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Remove</source>
+        <source>&amp;Remove</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

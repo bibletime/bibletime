@@ -902,7 +902,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Add...</source>
+        <source>&amp;Add...</source>
         <translation type="unfinished">Hinzufügen...</translation>
     </message>
     <message>
@@ -910,7 +910,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="unfinished">Neue Quelle hinzufügen</translation>
     </message>
     <message>
-        <source>Delete...</source>
+        <source>&amp;Delete...</source>
         <translation type="unfinished">Löschen...</translation>
     </message>
     <message>
@@ -979,15 +979,15 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtInstallPathDialog</name>
     <message>
-        <source>Add...</source>
+        <source>&amp;Add...</source>
         <translation>Hinzufügen...</translation>
     </message>
     <message>
-        <source>Edit...</source>
+        <source>&amp;Edit...</source>
         <translation>Bearbeiten...</translation>
     </message>
     <message>
-        <source>Remove</source>
+        <source>&amp;Remove</source>
         <translation>Entfernen</translation>
     </message>
     <message>
@@ -1202,7 +1202,7 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtRemovePage</name>
     <message>
-        <source>Remove</source>
+        <source>&amp;Remove</source>
         <translation>Entfernen</translation>
     </message>
     <message>
@@ -1340,7 +1340,7 @@ shortcut</source>
         <translation type="obsolete">Beschreibung</translation>
     </message>
     <message>
-        <source>Add...</source>
+        <source>&amp;Add...</source>
         <translation type="obsolete">Hinzufügen...</translation>
     </message>
     <message>
@@ -1352,7 +1352,7 @@ shortcut</source>
         <translation type="obsolete">Liste der Werke aus dieser Quelle auffrischen</translation>
     </message>
     <message>
-        <source>Delete...</source>
+        <source>&amp;Delete...</source>
         <translation type="obsolete">Löschen...</translation>
     </message>
     <message>
@@ -1441,7 +1441,7 @@ shortcut</source>
         <translation>Hinzufügen/entfernen/ersetzen</translation>
     </message>
     <message>
-        <source>Remove</source>
+        <source>&amp;Remove</source>
         <translation>Entfernen</translation>
     </message>
     <message>
