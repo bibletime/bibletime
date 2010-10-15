@@ -99,7 +99,8 @@ int parseCommandLine(bool &showDebugMessages, bool &ignoreSession,
                 std::cerr << qPrintable(QObject::tr(
                         "Error: %1 expects an argument.")
                     .arg("--open-default-bible")) << ' '
-                        << QObject::tr("See --help for details.") << std::endl;
+                        << qPrintable(QObject::tr("See --help for details."))
+                        << std::endl;
                 return 1;
             }
         } else {
