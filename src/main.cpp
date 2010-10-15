@@ -43,7 +43,7 @@ void printHelp(const QString &executable) {
         << qPrintable(QObject::tr("Output BibleTime version and exit"))
         << std::endl << std::endl
         << "    --ignore-session" << std::endl << "        "
-        << qPrintable(QObject::tr("open a clean session"))
+        << qPrintable(QObject::tr("Open a clean session"))
         << std::endl << std::endl
         << "    --open-default-bible <ref>" << std::endl << "        "
         << qPrintable(QObject::tr("Open the default Bible with the "
@@ -52,9 +52,6 @@ void printHelp(const QString &executable) {
         << qPrintable(QObject::tr("For command-line arguments parsed by the"
                                   " Qt toolkit, see %1.")
                .arg("http://doc.qt.nokia.com/latest/qapplication.html"))
-        << ' ' << qPrintable(QObject::tr("All command-line arguments not "
-                                         "recognized by BibleTime or Qt will "
-                                         "be silently ignored."))
         << std::endl;
 }
 
@@ -100,8 +97,9 @@ int parseCommandLine(bool &showDebugMessages, bool &ignoreSession,
                 openBibleKey = args.at(i);
             } else {
                 std::cerr << qPrintable(QObject::tr(
-                    "Error: %1 expects an argument. See --help for details.")
-                    .arg("--open-default-bible")) << std::endl;
+                        "Error: %1 expects an argument.")
+                    .arg("--open-default-bible")) << ' '
+                        << QObject::tr("See --help for details.") << std::endl;
                 return 1;
             }
         } else {

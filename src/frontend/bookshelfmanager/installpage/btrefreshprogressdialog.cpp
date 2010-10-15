@@ -15,7 +15,7 @@ BtRefreshProgressDialog::BtRefreshProgressDialog(sword::InstallSource &source,
     qDebug() << "Creating BtRefreshProgressDialog for source" << source.caption;
 
     Q_ASSERT(BtInstallBackend::isRemote(source));
-    setWindowTitle(tr("Refreshing Source %1").arg(QString(source.caption)));
+    setWindowTitle(tr("Refreshing source %1").arg(QString(source.caption)));
     setCancelButtonText(tr("&Cancel"));
     setLabelText(tr("Connecting..."));
     Q_ASSERT(minimum() == 0);

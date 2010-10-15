@@ -1396,8 +1396,8 @@ This file is distributed under the same license as the Bibetime package.</transl
     <name>BtRefreshProgressDialog</name>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btrefreshprogressdialog.cpp" line="18"/>
-        <source>Refreshing Source %1</source>
-        <translation>Refreshing Source %1</translation>
+        <source>Refreshing source %1</source>
+        <translation>Refreshing source %1</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btrefreshprogressdialog.cpp" line="19"/>
@@ -4059,8 +4059,8 @@ Language name ppk</extracomment>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="46"/>
-        <source>open a clean session</source>
-        <translation>open a clean session</translation>
+        <source>Open a clean session</source>
+        <translation>Open a clean session</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="49"/>

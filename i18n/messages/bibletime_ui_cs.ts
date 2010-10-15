@@ -1163,7 +1163,7 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtRefreshProgressDialog</name>
     <message>
-        <source>Refreshing Source %1</source>
+        <source>Refreshing source %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1378,7 +1378,7 @@ shortcut</source>
         <translation type="obsolete">Zrušit</translation>
     </message>
     <message>
-        <source>Refreshing Source</source>
+        <source>Refreshing source</source>
         <translation type="obsolete">Obnovuji zdroje</translation>
     </message>
     <message>
@@ -3501,7 +3501,7 @@ Language name ppk</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>open a clean session</source>
+        <source>Open a clean session</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

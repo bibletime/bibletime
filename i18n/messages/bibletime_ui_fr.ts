@@ -1436,7 +1436,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <name>BtRefreshProgressDialog</name>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btrefreshprogressdialog.cpp" line="18"/>
-        <source>Refreshing Source %1</source>
+        <source>Refreshing source %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1685,7 +1685,7 @@ raccourci</translation>
         <translation type="obsolete">Annuler</translation>
     </message>
     <message>
-        <source>Refreshing Source</source>
+        <source>Refreshing source</source>
         <translation type="obsolete">Rafraîchir la source</translation>
     </message>
     <message>
@@ -4303,7 +4303,7 @@ Language name ppk</extracomment>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="46"/>
-        <source>open a clean session</source>
+        <source>Open a clean session</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
