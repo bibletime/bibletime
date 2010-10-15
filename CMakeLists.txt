@@ -4,8 +4,8 @@ SET(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 # BibleTime version
 SET(BT_VERSION_MAJOR "2")
-SET(BT_VERSION_MINOR "7")
-SET(BT_VERSION_PATCH "0")
+SET(BT_VERSION_MINOR "8")
+SET(BT_VERSION_PATCH "0_beta1")
 #SET(BT_VERSION_BUILD "") # Temporarily uncomment this line for release procedures
 
 # Determine build, if needed:
