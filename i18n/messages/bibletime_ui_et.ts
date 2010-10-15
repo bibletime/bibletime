@@ -289,12 +289,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="261"/>
         <source>&amp;Tip of the day...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Päeva vihje...</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="264"/>
         <source>Show tips about BibleTime</source>
-        <translation type="unfinished"></translation>
+        <translation>Näita vihjeid BibleTime kohta</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="632"/>
@@ -635,37 +635,37 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="116"/>
         <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
-        <translation type="unfinished">Elemendi valimiseks vajutage seda nuppu ja liigutage hiirekursorit üles või alla.</translation>
+        <translation>Elemendi valimiseks vajutage seda nuppu ja liigutage hiirekursorit üles või alla.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="118"/>
         <source>Next book</source>
-        <translation type="unfinished">Järgmine raamat</translation>
+        <translation>Järgmine raamat</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="120"/>
         <source>Previous book</source>
-        <translation type="unfinished">Eelmine raamat</translation>
+        <translation>Eelmine raamat</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="123"/>
         <source>Next chapter</source>
-        <translation type="unfinished">Järgmine peatükk</translation>
+        <translation>Järgmine peatükk</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="125"/>
         <source>Previous chapter</source>
-        <translation type="unfinished">Eelmine peatükk</translation>
+        <translation>Eelmine peatükk</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="128"/>
         <source>Next verse</source>
-        <translation type="unfinished">Järgmine salm</translation>
+        <translation>Järgmine salm</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="130"/>
         <source>Previous verse</source>
-        <translation type="unfinished">Eelmine salm</translation>
+        <translation>Eelmine salm</translation>
     </message>
 </context>
 <context>
@@ -716,12 +716,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="158"/>
         <source>There are currently no works installed. Please click the button below to install new works.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hetkel pole ühtegi teost paigaldatud. Palun vajutage allpoololevat nuppu uute teoste paigaldamiseks.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="160"/>
         <source>&amp;Install works...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Paigalda teosed...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="172"/>
@@ -744,27 +744,27 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btbookshelfgroupingmenu.cpp" line="101"/>
         <source>Category/Language</source>
-        <translation type="unfinished">Kategooria/keel</translation>
+        <translation>Kategooria/keel</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfgroupingmenu.cpp" line="102"/>
         <source>Category</source>
-        <translation type="unfinished">Kategooria</translation>
+        <translation>Kategooria</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfgroupingmenu.cpp" line="103"/>
         <source>Language/Category</source>
-        <translation type="unfinished">Keel/kategooria</translation>
+        <translation>Keel/kategooria</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfgroupingmenu.cpp" line="104"/>
         <source>Language</source>
-        <translation type="unfinished">Keel</translation>
+        <translation>Keel</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfgroupingmenu.cpp" line="107"/>
         <source>No grouping</source>
-        <translation type="unfinished">Ära grupeeri</translation>
+        <translation>Ära grupeeri</translation>
     </message>
 </context>
 <context>
@@ -899,22 +899,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookmarks/bteditbookmarkdialog.cpp" line="72"/>
         <source>Edit Bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Muuda järjehoidjat</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/bteditbookmarkdialog.cpp" line="73"/>
         <source>Location:</source>
-        <translation type="unfinished"></translation>
+        <translation>Viide:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/bteditbookmarkdialog.cpp" line="74"/>
         <source>Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nimi:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/bteditbookmarkdialog.cpp" line="75"/>
         <source>Description:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kirjeldus:</translation>
     </message>
 </context>
 <context>
@@ -926,7 +926,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="34"/>
         <source>&amp;Language:</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Keel:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="37"/>
@@ -941,7 +941,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="96"/>
         <source>Optionally specify a custom font for each language:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valikuliselt võite iga keele jaoks valida eraldi kirjatüübi:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="163"/>
@@ -1050,7 +1050,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialogmodel.cpp" line="94"/>
         <source>Version</source>
-        <translation type="unfinished">Versioon</translation>
+        <translation>Versioon</translation>
     </message>
 </context>
 <context>
@@ -1062,47 +1062,47 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="76"/>
         <source>WARNING!!!</source>
-        <translation type="unfinished"></translation>
+        <translation>HOIATUS!!!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="77"/>
         <source>If you live in a persecuted country and don&apos;t want to risk detection don&apos;t use remote sources.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kui Te elate riigis, kus Teid võidakse taga kiusata, ning Te ei soovi riskeerida Teie avastamisega, ärge kasutage kaug-allikaid.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="81"/>
         <source>Select installation &amp;source:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valige paigalduse &amp;allikas:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="88"/>
         <source>Add...</source>
-        <translation type="unfinished">Lisa...</translation>
+        <translation>Lisa...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="89"/>
         <source>Add new source</source>
-        <translation type="unfinished">Lisa uus allikas</translation>
+        <translation>Lisa uus allikas</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="92"/>
         <source>Delete...</source>
-        <translation type="unfinished">Eemalda...</translation>
+        <translation>Eemalda...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="93"/>
         <source>Delete this source</source>
-        <translation type="unfinished">Eemalda see allikas</translation>
+        <translation>Eemalda see allikas</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="104"/>
         <source>Select &amp;works to install:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valige &amp;teosed paigaldamiseks:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="115"/>
         <source>Install &amp;folder:</source>
-        <translation type="unfinished"></translation>
+        <translation>Paigaldus&amp;kataloog:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="120"/>
@@ -1117,37 +1117,37 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="129"/>
         <source>&amp;Install...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Paigalda...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="262"/>
         <source>Start installation of %1 works from %2 sources:</source>
-        <translation type="unfinished"></translation>
+        <translation>Alusta %1 teose paigaldamist %2 allikast:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="266"/>
         <source>Start installation:</source>
-        <translation type="unfinished"></translation>
+        <translation>Alusta paigaldamist:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="299"/>
         <source>Warning</source>
-        <translation type="unfinished">Hoiatus</translation>
+        <translation>Hoiatus</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="299"/>
         <source>The destination directory is not writable or does not exist. Installation will fail unless this has first been fixed.</source>
-        <translation type="unfinished">Sihtkataloog pole kirjutatav või ei eksisteeri. Paigaldus ebaõnnestub kui seda probleemi eelnevalt ei lahendata.</translation>
+        <translation>Sihtkataloog pole kirjutatav või ei eksisteeri. Paigaldus ebaõnnestub kui seda probleemi eelnevalt ei lahendata.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="379"/>
         <source>Delete Source?</source>
-        <translation type="unfinished">Eemaldada allikas?</translation>
+        <translation>Eemaldada allikas?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="380"/>
         <source>Do you really want to delete this source?</source>
-        <translation type="unfinished">Kas soovite tõesti selle allika BibleTime&apos;st eemaldada?</translation>
+        <translation>Kas soovite tõesti selle allika BibleTime&apos;st eemaldada?</translation>
     </message>
     <message>
         <source>Install and update works. Add remote or local sources, refresh them, select the works to be installed/updated and click Install.&lt;br/&gt;&lt;b&gt;WARNING:&lt;/b&gt; If you live in a persecuted country and don&apos;t want to risk detection don&apos;t use remote sources.</source>
@@ -1174,17 +1174,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpagemodel.cpp" line="79"/>
         <source>Work</source>
-        <translation type="unfinished">Teos</translation>
+        <translation>Teos</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpagemodel.cpp" line="80"/>
         <source>Version</source>
-        <translation type="unfinished">Versioon</translation>
+        <translation>Versioon</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpagemodel.cpp" line="81"/>
         <source>Description</source>
-        <translation type="unfinished">Kirjeldus</translation>
+        <translation>Kirjeldus</translation>
     </message>
 </context>
 <context>
@@ -1192,7 +1192,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpageworkswidget.cpp" line="70"/>
         <source>Refresh the list of works from this source</source>
-        <translation type="unfinished">Värskenda teoste nimekiri sellest allikast</translation>
+        <translation>Värskenda teoste nimekiri sellest allikast</translation>
     </message>
 </context>
 <context>
@@ -1394,22 +1394,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="33"/>
         <source>Preparing to index modules...</source>
-        <translation type="unfinished"></translation>
+        <translation>Teoste indekseerimiseks valmistumine...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="33"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Katkesta</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="37"/>
         <source>Creating indices</source>
-        <translation type="unfinished">Indeksite loomine</translation>
+        <translation>Indeksite loomine</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btmoduleindexdialog.cpp" line="67"/>
         <source>Creating index for work: %1</source>
-        <translation type="unfinished">Teose %1 indekseerimine</translation>
+        <translation>Teose %1 indekseerimine</translation>
     </message>
 </context>
 <context>
@@ -1433,12 +1433,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btopenworkaction.cpp" line="51"/>
         <source>&amp;Grouping order</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Grupeerimine</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btopenworkaction.cpp" line="52"/>
         <source>Sets the grouping order for the items in this menu.</source>
-        <translation type="unfinished"></translation>
+        <translation>Muuda selle menüü elementide grupeerimist.</translation>
     </message>
 </context>
 <context>
@@ -1446,27 +1446,27 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btrefreshprogressdialog.cpp" line="18"/>
         <source>Refreshing Source %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Allika %1 värskendamine</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btrefreshprogressdialog.cpp" line="19"/>
         <source>&amp;Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Katkesta</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btrefreshprogressdialog.cpp" line="20"/>
         <source>Connecting...</source>
-        <translation type="unfinished">Ühendumine...</translation>
+        <translation>Ühendumine...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btrefreshprogressdialog.cpp" line="56"/>
         <source>Warning</source>
-        <translation type="unfinished">Hoiatus</translation>
+        <translation>Hoiatus</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btrefreshprogressdialog.cpp" line="57"/>
         <source>Failed to refresh source %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Allika %1 värskendamine ebaõnnestus</translation>
     </message>
 </context>
 <context>
@@ -1483,22 +1483,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="45"/>
         <source>Select &amp;works to uninstall:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valige &amp;teosed eemaldamiseks:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="74"/>
         <source>&amp;Remove...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Eemalda...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="104"/>
         <source>Start removal of %1 works:</source>
-        <translation type="unfinished"></translation>
+        <translation>Alusta %1 teose eemaldamist:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="107"/>
         <source>Start removal:</source>
-        <translation type="unfinished"></translation>
+        <translation>Alusta eemaldamist:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="126"/>
@@ -1762,82 +1762,82 @@ kiirklahv</translation>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="66"/>
         <source>Tip Of The Day</source>
-        <translation type="unfinished"></translation>
+        <translation>Päeva vihje</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="80"/>
         <source>Show tips at startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Näita vihjeid käivitamisel</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="89"/>
         <source>Next Tip</source>
-        <translation type="unfinished"></translation>
+        <translation>Järgmine vihje</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="121"/>
         <source>To add multiple Bible works in parallel in your active Bible window select this icon and choose another Bible work.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mitme piiblitõlke kõrvuti kuvamiseks valige see ikoon ja valige teine piiblitõlge.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="125"/>
         <source>To add multiple commentary works in parallel in your active commentary window select this icon and choose another commentary work.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mitmete kommentaaride kõrvuti kuvamiseks valige see ikoon ja valige teine kommentaaridega teos.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="129"/>
         <source>To learn more about the BibleTime project please go to our web site.</source>
-        <translation type="unfinished"></translation>
+        <translation>BibleTime kohta lisainformatsiooni leidmiseks, palun külastage meie kodulehekülge.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="132"/>
         <source>To synchronize a commentary window with the active Bible window, activate the commentary window and select this icon.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kommentaariakna sünkroniseerimiseks aktiivse piibliaknaga aktiveerige kommentaariaken ja valige see ikoon.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="135"/>
         <source>Select the icon again to stop the synchronization.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sünkroniseerimise lõpetamiseks, valige ikoon uuesti.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="137"/>
         <source>To create a bookmark drag any verse reference from a Bible or commentary work into the Bookmarks window. An arrow will indicate the position that the bookmark will go when you release the cursor. Other works will have a reference in the upper left corner that can be used to create a bookmark.</source>
-        <translation type="unfinished"></translation>
+        <translation>Järjehoidja loomiseks lohistage viide värsile piibli- või kommentaariaknast järjehoidjate kuvale. Ilmuv nool näitab kohta kuhu järjehoidja asetatakse kui te hiirekursori vabastate. Teistel teostel on ülemises vasakus nurgas viide, mida saab järjehoidja loomiseks kasutada.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="142"/>
         <source>To change a bookmark title or description, right click on the bookmark and select the Edit Bookmark menu. After finishing the edit the description can be seen by hovering over the bookmark.</source>
-        <translation type="unfinished"></translation>
+        <translation>Järjehoidja nime või kirjelduse muutmiseks, vajutage hiire parema nupuga järjehoidjal ja valige hüpikmenüüst &quot;Muuda järjehoidjat&quot;. Pärast järjehoidja muutmist võib tema kirjeldust näha ka hiirekursorit järjehoidja kohal hoides.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="146"/>
         <source>To load multiple installation sources for works, go to the Bookshelf Manager, select the Add button, and then the Get List button.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mitmete paigaldusallikate laadimiseks avage &quot;Raamaturiiuli haldamine&quot;, valige &quot;Lisa...&quot; nupp ja vajutage &quot;Hangi nimekiri...&quot; nuppu.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="149"/>
         <source>To find more information about a work, go the the Bookshelf window, right click on the work, and select the About menu.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mõne teose kohta lisainformatsiooni leidmiseks vajutage raamaturiiulis teosel parema hiirenupuga ja valige &quot;Info...&quot; menüü.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="152"/>
         <source>The Bookshelf, Bookmark, and Mag windows can be moved to new locations by dragging them from the title at the top of each window. They can be placed to the left, right, above, or below the works windows. They can be placed on top of each other and tabs will appear so each window can be selected. They can be resized by dragging theborder between the window and another window.</source>
-        <translation type="unfinished"></translation>
+        <translation>Raamaturiiuli, järjehoidjate ja infokuva saab peaaknas ümber paigutada neid päistest lohistades. Neid saab paigaldada igasse peaakna äärde. Kui neid lohistada üksteise peale jäävad nad mõlemad ligipääsetavaks sakkide abil. Nende kuvade suurust saab muuta neid äärtest lohistades.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="158"/>
         <source>You can search for Strong&apos;s numbers in a work. Start with a work that has Strong&apos;s numbers and hover over a word. Right click the word and use the Strong&apos;s Search menu. A search dialog will appear that allows you to see the use of the sameStrong&apos;s number in other locations of the work.</source>
-        <translation type="unfinished"></translation>
+        <translation>Teosest Strongi numbrite järgi otsimiseks kasutage Strongi numbritega teost ja liigutage hiirekursor mõne sõna peale. Parema hiireklõpsuga avate hüpikmenüü, kust saate valida Strongi numbrite otsingu. Avanevas aknas näete samade Strongi numbrite kasutust teose teistes osades.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="163"/>
         <source>You can save personal notes for specific verses references. You must install the Personal commentary. Open the Bookshelf Manager, choose Crosswire as the source and look under Commentary and English. Once installed, use the Bookshelf window and right click the Personal commentary. Use either the Edit Plain Text menu or the Edit HTML menu to open the work in write mode.</source>
-        <translation type="unfinished"></translation>
+        <translation>Isiklikke märkmeid saate salvesta värsside viitade kohta. Selleks peate paigaldama kommentaaride teose &quot;Personal&quot;. Selleks avage &quot;Raamaturiiuli haldamine&quot;, valige allikaks Crosswire, leidke teos Personal ingliskeelsete kommentaaride alt ning paigaldage see. Märkete lisamiseks või muutmiseks vajutage raamaturiiulikuvas teose Personal peal parema hiirenupuga ja valige hüpikmenüüst &quot;Redigeeri&quot;.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="169"/>
         <source>You can view Strong&apos;s number information in the MAG window by hovering over a word in a Bible work that has Strong&apos;s numbers. You should have the StrongsGreek and StrongsHebrew lexicons from Crosswire installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Strongi numbrite info vaatamiseks infokuvast liikuge hiirekursoriga mõne sõna peale piibliaknas, kus on avatus Strongi numbrite toega piiblitõlge. Selleks läheb vaja ka StrongsGreek ja StrongsHebrew leksikone Crosswire allikast.</translation>
     </message>
 </context>
 <context>
@@ -2068,17 +2068,17 @@ kiirklahv</translation>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="95"/>
         <source>Edit bookmark...</source>
-        <translation type="unfinished"></translation>
+        <translation>Muuda järjehoidjat...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="97"/>
         <source>Sort folder bookmarks...</source>
-        <translation type="unfinished"></translation>
+        <translation>Sorteeri järjehoidjad kaustas...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="98"/>
         <source>Sort all bookmarks...</source>
-        <translation type="unfinished"></translation>
+        <translation>Sorteeri kõik järjehoidjad...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="100"/>
@@ -2997,7 +2997,7 @@ Kas soovite jätkata?</translation>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="51"/>
         <source>Select all</source>
-        <translation type="unfinished">Vali kõik</translation>
+        <translation>Vali kõik</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="55"/>
@@ -4318,42 +4318,42 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/main.cpp" line="40"/>
         <source>Show this help message and exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Näita seda abiteksti ja välju</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="43"/>
         <source>Output BibleTime version and exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Väljasta BibleTime&apos;i versioon ja välju</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="46"/>
         <source>open a clean session</source>
-        <translation type="unfinished"></translation>
+        <translation>Ava puhas sessioon</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="49"/>
         <source>Open the default Bible with the reference &lt;ref&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Ava vaikimisi piibel kohalt &lt;ref&gt;</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="52"/>
         <source>For command-line arguments parsed by the Qt toolkit, see %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Qt raamistiku poolt toetatud käsurea argumentide jaoks vaadake %1.</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="55"/>
         <source>All command-line arguments not recognized by BibleTime or Qt will be silently ignored.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kõiki käsurea argumente, mida BibleTime või Qt raamistik ei tuvasta, ignoreeritakse vaikselt.</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="102"/>
         <source>Error: %1 expects an argument. See --help for details.</source>
-        <translation type="unfinished"></translation>
+        <translation>Viga: %1 vajab argumenti. Vaata --help detailide kohta.</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="108"/>
         <source>Error: Invalid command-line argument: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Viga: Vale käsureaargument: %1</translation>
     </message>
 </context>
 <context>
@@ -4563,12 +4563,12 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="85"/>
         <source>Select all</source>
-        <translation type="unfinished">Vali kõik</translation>
+        <translation>Vali kõik</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="89"/>
         <source>Copy</source>
-        <translation type="unfinished">Kopeeri</translation>
+        <translation>Kopeeri</translation>
     </message>
 </context>
 <context>
@@ -4993,17 +4993,17 @@ See võib võtta kaua aega. Kas jätkata indekseerimisega?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="129"/>
         <source>The following modules need to be indexed before they can be searched in:</source>
-        <translation type="unfinished"></translation>
+        <translation>Järgmised teosed vajavad indekseerimist enne kui nendest saab otsinguid teostada:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="130"/>
         <source>Indexing could take a long time. Click &quot;Yes&quot; to index the modules and start the search, or &quot;No&quot; to cancel the search.</source>
-        <translation type="unfinished"></translation>
+        <translation>Indekseerimine võib võtta kaua aega. Vajutage &quot;Jah&quot; kõikide moodulite indekseerimiseks ja otsingu alustamiseks, või &quot;Ei&quot; otsingu katkestamiseks.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="236"/>
         <source>Drag any verse reference onto an open Bible window</source>
-        <translation type="unfinished"></translation>
+        <translation>Lohistage värsside viiteid avatud piibliaknasse</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="241"/>
