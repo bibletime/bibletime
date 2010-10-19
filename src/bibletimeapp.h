@@ -23,6 +23,7 @@ class BibleTimeApp : public QApplication {
         ~BibleTimeApp();
 
         inline void startInit() { m_init = true; }
+        bool initDisplayTemplateManager();
 
     private:
         bool m_init;

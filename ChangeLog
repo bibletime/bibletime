@@ -1,3 +1,6 @@
+2010-10-19 Jaak Ristioja <ristioja@gmail.com>
+    * Made BibleTime handle missing default template gracefully.
+
 2010-10-15 Jaak Ristioja <ristioja@gmail.com>
     * Released 2.8 beta
 

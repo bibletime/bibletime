@@ -254,6 +254,8 @@ int main(int argc, char* argv[]) {
 
 //    setSignalHandler(signalHandler);
 
+    if (!app.initDisplayTemplateManager()) return EXIT_FAILURE;
+
     BibleTime *mainWindow = new BibleTime();
     mainWindow->setAttribute(Qt::WA_DeleteOnClose);
 

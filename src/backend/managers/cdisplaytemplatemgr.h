@@ -48,6 +48,12 @@ class CDisplayTemplateMgr {
     public: /* Methods: */
 
         /**
+          \param[out] errorMessage Set to error string on error, otherwise set
+                                   to QString::null.
+        */
+        explicit CDisplayTemplateMgr(QString &errorMessage);
+
+        /**
           \returns the list of available templates.
         */
         inline const QStringList availableTemplates() const {
@@ -74,23 +80,12 @@ class CDisplayTemplateMgr {
         inline static const char *defaultTemplate() { return "Blue.tmpl"; }
 
         /**
-          \returns the singleton instance, creating it if one does not exist.
+          \returns The singleton instance of the instance of this class.
         */
         static inline CDisplayTemplateMgr *instance() {
-            if (m_instance == 0) m_instance = new CDisplayTemplateMgr();
+            Q_ASSERT(m_instance != 0);
             return m_instance;
         };
-
-        /** Destroys the singleton instance, if one exists. */
-        static inline void destroyInstance() {
-            delete m_instance;
-            m_instance = 0;
-        }
-
-    protected: /* Methods: */
-
-        /** Preloads templates from disk. */
-        CDisplayTemplateMgr();
 
     private: /* Methods: */
         /** Preloads a single template from disk: */

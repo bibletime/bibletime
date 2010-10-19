@@ -22,7 +22,10 @@
 
 CDisplayTemplateMgr *CDisplayTemplateMgr::m_instance = 0;
 
-CDisplayTemplateMgr::CDisplayTemplateMgr() {
+CDisplayTemplateMgr::CDisplayTemplateMgr(QString &errorMessage) {
+    Q_ASSERT(m_instance == 0);
+
+    m_instance = this;
     namespace DU = util::directory;
 
     QStringList filter("*.tmpl");
@@ -39,6 +42,13 @@ CDisplayTemplateMgr::CDisplayTemplateMgr() {
     QDir utd = DU::getUserDisplayTemplatesDir();
     Q_FOREACH(QString file, utd.entryList(filter, QDir::Files | QDir::Readable))
         loadTemplate(utd.canonicalPath() + "/" + file);
+
+    if (m_templateMap.contains(defaultTemplate())) {
+        errorMessage = QString::null;
+    } else {
+        errorMessage = QObject::tr("Default template \"%1\" not found!")
+                       .arg(defaultTemplate());
+    }
 }
 
 const QString CDisplayTemplateMgr::fillTemplate( const QString& name, const QString& content, Settings& settings ) {

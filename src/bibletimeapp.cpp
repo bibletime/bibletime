@@ -9,6 +9,7 @@
 
 #include "bibletimeapp.h"
 
+#include <QMessageBox>
 #include "backend/config/cbtconfig.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
 #include "util/cresmgr.h"
@@ -22,7 +23,15 @@ BibleTimeApp::~BibleTimeApp() {
     CBTConfig::set(CBTConfig::crashedLastTime, false);
     CBTConfig::set(CBTConfig::crashedTwoTimes, false);
 
-    CDisplayTemplateMgr::destroyInstance();
+    delete CDisplayTemplateMgr::instance();
     CLanguageMgr::destroyInstance();
     CSwordBackend::destroyInstance();
+}
+
+bool BibleTimeApp::initDisplayTemplateManager() {
+    QString errorMessage;
+    new CDisplayTemplateMgr(errorMessage);
+    if (errorMessage.isNull()) return true;
+    QMessageBox::critical(0, tr("Fatal error!"), errorMessage);
+    return false;
 }
