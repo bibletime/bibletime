@@ -27,16 +27,14 @@
 	
 	
 	<!-- TRANS:ROLES_OF_TRANSLATORS -->
-<copyright>
-		<year>2001-2009</year>
-		<holder>The team of &bibletime; (info@bibletime.info)</holder>
-	</copyright>
+<copyright> <year>2001-2009</year> <holder>The team of &bibletime;
+(info@bibletime.info)</holder> </copyright>
 	
 	<legalnotice>
 		<para>
-			Questo documento è stato originariamente creato da Mr. Bob Harman ed è sotto 
-i termini della licenza <link 
-url="http://creativecommons.org/licenses/by-sa/3.0/"> "Creative Commons 
+			Questo documento è stato originariamente creato da Mr. Bob Harman ed è sotto
+i termini della licenza <link
+url="http://creativecommons.org/licenses/by-sa/3.0/"> "Creative Commons
 Attribution-Share Alike"</link>.
 		</para>
 		<para>
@@ -48,21 +46,21 @@ Attribution-Share Alike"</link>.
 		<title>Sommario</title>
 		
 		<para>
-			L'<application>HowTo sullo studio della Bibbia</application> è una guida per 
+			L'<application>HowTo sullo studio della Bibbia</application> è una guida per
 lo studio della Bibbia.
 		</para>
 		<para>
-			Il team di &bibletime; spera che questo HowTo guidi i lettori allo studio 
-delle scritture per comprendere cosa dicono. Questa guida, in particolare, è 
-stata scelta perché non spinge una particolare dottrina. Speriamo che tu 
-legga e studi le scritture per capirne il senso. Se iniziate con 
+			Il team di &bibletime; spera che questo HowTo guidi i lettori allo studio
+delle scritture per comprendere cosa dicono. Questa guida, in particolare, è
+stata scelta perché non spinge una particolare dottrina. Speriamo che tu
+legga e studi le scritture per capirne il senso. Se iniziate con
 l'intenzione che Dio semini la sua parola nel tuo cuore non ti deluderà.
 		</para>
 	</abstract>
 	
 	<keywordset>
 		<keyword>Bible</keyword>
-		<keyword>Study</keyword>
+		<keyword>Studio</keyword>
 		<keyword>HowTo</keyword>
 	</keywordset>
 
