@@ -57,11 +57,7 @@ void BtModuleChooserBar::adjustButtonCount(bool adjustToZero) {
     //if there are more buttons than modules, delete buttons
     if (buttonCountDifference > 0) {
         for (int j = 0; j < buttonCountDifference; j++) {
-            //qDebug() << "delete first button, " << j;
-            // it should be safe to delete the button later
-            BtModuleChooserButton* b = m_buttonList.takeFirst();
-            b->setParent(0);
-            b->deleteLater();
+            delete m_buttonList.takeFirst();
         }
     }
     // if there are more modules than buttons, add buttons
