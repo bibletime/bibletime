@@ -458,6 +458,14 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
 </context>
 <context>
+    <name>BibleTimeApp</name>
+    <message>
+        <location filename="../../src/bibletimeapp.cpp" line="35"/>
+        <source>Fatal error!</source>
+        <translation>Saatuslik viga!</translation>
+    </message>
+</context>
+<context>
     <name>BtAboutDialog</name>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="112"/>
@@ -1444,9 +1452,13 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtRefreshProgressDialog</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btrefreshprogressdialog.cpp" line="18"/>
         <source>Refreshing Source %1</source>
-        <translation>Allika %1 värskendamine</translation>
+        <translation type="obsolete">Allika %1 värskendamine</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btrefreshprogressdialog.cpp" line="18"/>
+        <source>Refreshing source %1</source>
+        <translation>Allika &quot;%1&quot; värskendamine</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btrefreshprogressdialog.cpp" line="19"/>
@@ -1472,9 +1484,8 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtRemovePage</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="98"/>
         <source>&amp;Remove</source>
-        <translation>&amp;Eemalda</translation>
+        <translation type="obsolete">&amp;Eemalda</translation>
     </message>
     <message>
         <source>Remove installed works. Select the works and click Remove button.</source>
@@ -1489,6 +1500,11 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="74"/>
         <source>&amp;Remove...</source>
         <translation>&amp;Eemalda...</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="98"/>
+        <source>Remove</source>
+        <translation>Eemalda</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="104"/>
@@ -1742,9 +1758,13 @@ kiirklahv</translation>
         <translation>Lisa/eemalda/asenda</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="137"/>
         <source>&amp;Remove</source>
-        <translation>&amp;Eemalda</translation>
+        <translation type="obsolete">&amp;Eemalda</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="137"/>
+        <source>Remove</source>
+        <translation>Eemalda</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="143"/>
@@ -1821,13 +1841,21 @@ kiirklahv</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="152"/>
-        <source>The Bookshelf, Bookmark, and Mag windows can be moved to new locations by dragging them from the title at the top of each window. They can be placed to the left, right, above, or below the works windows. They can be placed on top of each other and tabs will appear so each window can be selected. They can be resized by dragging theborder between the window and another window.</source>
+        <source>The Bookshelf, Bookmark, and Mag windows can be moved to new locations by dragging them from the title at the top of each window. They can be placed to the left, right, above, or below the works windows. They can be placed on top of each other and tabs will appear so each window can be selected. They can be resized by dragging the border between the window and another window.</source>
         <translation>Raamaturiiuli, järjehoidjate ja infokuva saab peaaknas ümber paigutada neid päistest lohistades. Neid saab paigaldada igasse peaakna äärde. Kui neid lohistada üksteise peale jäävad nad mõlemad ligipääsetavaks sakkide abil. Nende kuvade suurust saab muuta neid äärtest lohistades.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="158"/>
-        <source>You can search for Strong&apos;s numbers in a work. Start with a work that has Strong&apos;s numbers and hover over a word. Right click the word and use the Strong&apos;s Search menu. A search dialog will appear that allows you to see the use of the sameStrong&apos;s number in other locations of the work.</source>
+        <source>You can search for Strong&apos;s numbers in a work. Start with a work that has Strong&apos;s numbers and hover over a word. Right click the word and use the Strong&apos;s Search menu. A search dialog will appear that allows you to see the use of the same Strong&apos;s number in other locations of the work.</source>
         <translation>Teosest Strongi numbrite järgi otsimiseks kasutage Strongi numbritega teost ja liigutage hiirekursor mõne sõna peale. Parema hiireklõpsuga avate hüpikmenüü, kust saate valida Strongi numbrite otsingu. Avanevas aknas näete samade Strongi numbrite kasutust teose teistes osades.</translation>
+    </message>
+    <message>
+        <source>The Bookshelf, Bookmark, and Mag windows can be moved to new locations by dragging them from the title at the top of each window. They can be placed to the left, right, above, or below the works windows. They can be placed on top of each other and tabs will appear so each window can be selected. They can be resized by dragging theborder between the window and another window.</source>
+        <translation type="obsolete">Raamaturiiuli, järjehoidjate ja infokuva saab peaaknas ümber paigutada neid päistest lohistades. Neid saab paigaldada igasse peaakna äärde. Kui neid lohistada üksteise peale jäävad nad mõlemad ligipääsetavaks sakkide abil. Nende kuvade suurust saab muuta neid äärtest lohistades.</translation>
+    </message>
+    <message>
+        <source>You can search for Strong&apos;s numbers in a work. Start with a work that has Strong&apos;s numbers and hover over a word. Right click the word and use the Strong&apos;s Search menu. A search dialog will appear that allows you to see the use of the sameStrong&apos;s number in other locations of the work.</source>
+        <translation type="obsolete">Teosest Strongi numbrite järgi otsimiseks kasutage Strongi numbritega teost ja liigutage hiirekursor mõne sõna peale. Parema hiireklõpsuga avate hüpikmenüü, kust saate valida Strongi numbrite otsingu. Avanevas aknas näete samade Strongi numbrite kasutust teose teistes osades.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="163"/>
@@ -4327,8 +4355,22 @@ Language name ppk</extracomment>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="46"/>
+        <source>Open a clean session</source>
+        <translation>ava puhas sessioon</translation>
+    </message>
+    <message>
+        <location filename="../../src/main.cpp" line="99"/>
+        <source>Error: %1 expects an argument.</source>
+        <translation>Viga: %1 vajab argumenti.</translation>
+    </message>
+    <message>
+        <location filename="../../src/main.cpp" line="102"/>
+        <source>See --help for details.</source>
+        <translation>Täpsema info jaoks kasutage --help võtit.</translation>
+    </message>
+    <message>
         <source>open a clean session</source>
-        <translation>Ava puhas sessioon</translation>
+        <translation type="obsolete">Ava puhas sessioon</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="49"/>
@@ -4341,19 +4383,22 @@ Language name ppk</extracomment>
         <translation>Qt raamistiku poolt toetatud käsurea argumentide jaoks vaadake %1.</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="55"/>
         <source>All command-line arguments not recognized by BibleTime or Qt will be silently ignored.</source>
-        <translation>Kõiki käsurea argumente, mida BibleTime või Qt raamistik ei tuvasta, ignoreeritakse vaikselt.</translation>
+        <translation type="obsolete">Kõiki käsurea argumente, mida BibleTime või Qt raamistik ei tuvasta, ignoreeritakse vaikselt.</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="102"/>
         <source>Error: %1 expects an argument. See --help for details.</source>
-        <translation>Viga: %1 vajab argumenti. Vaata --help detailide kohta.</translation>
+        <translation type="obsolete">Viga: %1 vajab argumenti. Vaata --help detailide kohta.</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="108"/>
+        <location filename="../../src/main.cpp" line="107"/>
         <source>Error: Invalid command-line argument: %1</source>
         <translation>Viga: Vale käsureaargument: %1</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="49"/>
+        <source>Default template &quot;%1&quot; not found!</source>
+        <translation>Vaikemalli &quot;%1&quot; ei leitud!</translation>
     </message>
 </context>
 <context>
