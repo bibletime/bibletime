@@ -1519,7 +1519,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="126"/>
         <source>You selected the following work(s): </source>
-        <translation>Valisite järgmised teos(ed):</translation>
+        <translation>Valisite järgmised teos(ed): </translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="129"/>
