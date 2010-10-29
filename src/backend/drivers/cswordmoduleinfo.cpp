@@ -871,37 +871,43 @@ QString CSwordModuleInfo::aboutText() const {
 }
 
 QIcon CSwordModuleInfo::moduleIcon(const CSwordModuleInfo *module) {
-    namespace DU = util::directory;
+    const QString &filename = moduleIconFilename(module);
+    if (filename.isEmpty()) return QIcon();
+    return util::directory::getIcon(filename);
+}
 
-    CSwordModuleInfo::Category cat(module->category());
+const QString &CSwordModuleInfo::moduleIconFilename(
+        const CSwordModuleInfo *module)
+{
+    const CSwordModuleInfo::Category cat(module->category());
     switch (cat) {
         case CSwordModuleInfo::Bibles:
             if (module->isLocked()) {
-                return DU::getIcon(CResMgr::modules::bible::icon_locked);
+                return CResMgr::modules::bible::icon_locked;
             }
             else {
-                return DU::getIcon(CResMgr::modules::bible::icon_unlocked);
+                return CResMgr::modules::bible::icon_unlocked;
             }
         case CSwordModuleInfo::Commentaries:
             if (module->isLocked()) {
-                return DU::getIcon(CResMgr::modules::commentary::icon_locked);
+                return CResMgr::modules::commentary::icon_locked;
             }
             else {
-                return DU::getIcon(CResMgr::modules::commentary::icon_unlocked);
+                return CResMgr::modules::commentary::icon_unlocked;
             }
         case CSwordModuleInfo::Lexicons:
             if (module->isLocked()) {
-                return DU::getIcon(CResMgr::modules::lexicon::icon_locked);
+                return CResMgr::modules::lexicon::icon_locked;
             }
             else {
-                return DU::getIcon(CResMgr::modules::lexicon::icon_unlocked);
+                return CResMgr::modules::lexicon::icon_unlocked;
             }
         case CSwordModuleInfo::Books:
             if (module->isLocked()) {
-                return DU::getIcon(CResMgr::modules::book::icon_locked);
+                return CResMgr::modules::book::icon_locked;
             }
             else {
-                return DU::getIcon(CResMgr::modules::book::icon_unlocked);
+                return CResMgr::modules::book::icon_unlocked;
             }
         case CSwordModuleInfo::Cult:
         case CSwordModuleInfo::Images:
@@ -909,33 +915,42 @@ QIcon CSwordModuleInfo::moduleIcon(const CSwordModuleInfo *module) {
         case CSwordModuleInfo::Glossary:
         case CSwordModuleInfo::UnknownCategory:
         default:
-            return categoryIcon(cat);
+            return categoryIconFilename(cat);
     }
 }
 
-QIcon CSwordModuleInfo::categoryIcon(const CSwordModuleInfo::Category &category) {
-    namespace DU = util::directory;
+QIcon CSwordModuleInfo::categoryIcon(const CSwordModuleInfo::Category &category)
+{
+    QString filename = categoryIconFilename(category);
+    if (filename.isEmpty()) return QIcon();
+    return util::directory::getIcon(filename);
+}
+
+const QString &CSwordModuleInfo::categoryIconFilename(
+        const CSwordModuleInfo::Category &category)
+{
+    static const QString noFilename;
 
     switch (category) {
         case CSwordModuleInfo::Bibles:
-            return DU::getIcon(CResMgr::categories::bibles::icon);
+            return CResMgr::categories::bibles::icon;
         case CSwordModuleInfo::Commentaries:
-            return DU::getIcon(CResMgr::categories::commentaries::icon);
+            return CResMgr::categories::commentaries::icon;
         case CSwordModuleInfo::Books:
-            return DU::getIcon(CResMgr::categories::books::icon);
+            return CResMgr::categories::books::icon;
         case CSwordModuleInfo::Cult:
-            return DU::getIcon(CResMgr::categories::cults::icon);
+            return CResMgr::categories::cults::icon;
         case CSwordModuleInfo::Images:
-            return DU::getIcon(CResMgr::categories::images::icon);
+            return CResMgr::categories::images::icon;
         case CSwordModuleInfo::DailyDevotional:
-            return DU::getIcon(CResMgr::categories::dailydevotional::icon);
+            return CResMgr::categories::dailydevotional::icon;
         case CSwordModuleInfo::Lexicons:
-            return DU::getIcon(CResMgr::categories::lexicons::icon);
+            return CResMgr::categories::lexicons::icon;
         case CSwordModuleInfo::Glossary:
-            return DU::getIcon(CResMgr::categories::glossary::icon);
+            return CResMgr::categories::glossary::icon;
         case CSwordModuleInfo::UnknownCategory:
         default:
-            return QIcon();
+            return noFilename;
     }
 }
 

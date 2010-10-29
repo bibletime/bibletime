@@ -367,10 +367,22 @@ wrong, or if the config file was write protected return false.
         static QIcon moduleIcon(const CSwordModuleInfo *module);
 
         /**
+          Returns the icon filename for the given module.
+          \param[in] module The module whose icon filename to return.
+        */
+        static const QString &moduleIconFilename(const CSwordModuleInfo *module);
+
+        /**
           Returns an icon for the category of given module.
           \param[in] module The module whose category icon to return.
         */
         static QIcon categoryIcon(const CSwordModuleInfo::Category &category);
+
+        /**
+          Returns the icon filename for the category of given module.
+          \param[in] module The module whose category icon filename to return.
+        */
+        static const QString &categoryIconFilename(const CSwordModuleInfo::Category &category);
 
         /**
           Returns a translated name for the given category.

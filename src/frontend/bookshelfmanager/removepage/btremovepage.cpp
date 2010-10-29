@@ -118,14 +118,25 @@ void BtRemovePage::slotRemoveModules() {
     if (m_bookshelfWidget->treeModel()->checkedModules().empty()) return;
 
     QStringList moduleNames;
+    const int textHeight = fontMetrics().height();
+    /// \bug <nobr> is not working, Qt bug
+    const QString moduleString("<nobr><img src=\"%1\" width=\"%2\" height=\"%3\"/>&nbsp;%4</nobr>");
+    const QString iconDir = util::directory::getIconDir().canonicalPath() + '/';
     Q_FOREACH(const CSwordModuleInfo *m,
               m_bookshelfWidget->treeModel()->checkedModules())
     {
-        moduleNames.append(m->name());
+        const QIcon icon = CSwordModuleInfo::moduleIcon(m);
+        const QSize iconSize = icon.actualSize(QSize(textHeight, textHeight));
+        moduleNames.append(moduleString
+                           .arg(iconDir + CSwordModuleInfo::moduleIconFilename(m))
+                           .arg(iconSize.width())
+                           .arg(iconSize.height())
+                           .arg(m->name()));
     }
     const QString message = tr("You selected the following work(s): ")
-                            .append(moduleNames.join(", "))
-                            .append("\n\n")
+                            .append("<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;")
+                            .append(moduleNames.join(",&nbsp; "))
+                            .append("<br/><br/>")
                             .append(tr("Do you really want to remove them from your system?"));
 
     if ((util::showQuestion(this, tr("Remove Works?"), message, QMessageBox::Yes | QMessageBox::No, QMessageBox::No) == QMessageBox::Yes)) {  //Yes was pressed.
