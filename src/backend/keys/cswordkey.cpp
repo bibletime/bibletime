@@ -83,8 +83,11 @@ QString CSwordKey::renderedText( const CSwordKey::TextRenderType mode ) {
 
     //Q_ASSERT(!key().isNull());
     if (!key().isNull()) { //we have valid text
-        if (mode == ProcessEntryAttributesOnly) return QString::null;
-        QString text = QString::fromUtf8( m_module->module()->RenderText(0, -1) );
+        bool DoRender = mode != ProcessEntryAttributesOnly;
+        QString text = QString::fromUtf8( m_module->module()->RenderText(0,-1, DoRender));
+        if (!DoRender)
+
+            return QString::null;
 
         // This is yucky, but if we want strong lexicon refs we have to do it here.
         if (m_module->type() == CSwordModuleInfo::Lexicon) {

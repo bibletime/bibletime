@@ -1,3 +1,6 @@
+2010-10-31 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix bug in display of footnotes in mag window
+
 2010-10-29 Jaak Ristioja <ristioja@gmail.com>
     * Made the "Remove modules" confirmation dialog a bit prettier.
     * Released 2.8 RC 1
