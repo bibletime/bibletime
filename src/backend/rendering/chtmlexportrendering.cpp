@@ -143,7 +143,16 @@ const QString CHTMLExportRendering::renderEntry( const KeyTreeItem& i, CSwordKey
                 (*mod_Itr)->module()->getEntryAttributes()["Heading"]["Preverse"].end();
 
             for (; it != end; ++it) {
-                preverseHeading = QString::fromUtf8(it->second.c_str());
+                QString unfiltered = it->second.c_str();
+
+                /// \todo This is only a preliminary workaround to strip the tags:
+                QRegExp filter("<title>(.*)</title>");
+                if (unfiltered.indexOf(filter) >= 0) {
+                    preverseHeading = filter.cap(1);
+                } else {
+                    preverseHeading = unfiltered;
+                }
+
                 /// \todo Take care of the heading type!
                 if (!preverseHeading.isEmpty()) {
                     entry.append("<div ")
