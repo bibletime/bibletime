@@ -1,3 +1,6 @@
+2011-11-12 Jaak Ristioja <ristioja@gmail.com>
+    * Temporary workaround for bug 2954856 causing wrong HTML code for headings.
+
 2010-10-31 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug in display of footnotes in mag window
 
