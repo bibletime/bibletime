@@ -980,15 +980,15 @@ This file is distributed under the same license as the Bibetime package.</transl
     <name>BtInstallPathDialog</name>
     <message>
         <source>&amp;Add...</source>
-        <translation>Hinzufügen...</translation>
+        <translation>&amp;Hinzufügen...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Bearbeiten...</translation>
+        <translation>&amp;Bearbeiten...</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Entfernen</translation>
+        <translation>&amp;Entfernen</translation>
     </message>
     <message>
         <source>Bookshelf Folders</source>
@@ -1203,7 +1203,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <name>BtRemovePage</name>
     <message>
         <source>&amp;Remove</source>
-        <translation>Entfernen</translation>
+        <translation>&amp;Entfernen</translation>
     </message>
     <message>
         <source>Remove installed works. Select the works and click Remove button.</source>
