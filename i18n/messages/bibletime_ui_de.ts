@@ -362,11 +362,11 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>&amp;Tip of the day...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Tipp des Tages...</translation>
     </message>
     <message>
         <source>Show tips about BibleTime</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeigt Tipps für BibleTime an</translation>
     </message>
 </context>
 <context>
@@ -590,34 +590,34 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>There are currently no works installed. Please click the button below to install new works.</source>
-        <translation type="unfinished"></translation>
+        <translation>Derzeit sind keine Werke installiert. Bitte klicken Sie auf den Knopf unten um neue Werke zu installieren.</translation>
     </message>
     <message>
         <source>&amp;Install works...</source>
-        <translation type="unfinished"></translation>
+        <translation>Werke &amp;installierien...</translation>
     </message>
 </context>
 <context>
     <name>BtBookshelfGroupingMenu</name>
     <message>
         <source>Category/Language</source>
-        <translation type="unfinished">Kategorie/Sprache</translation>
+        <translation>Kategorie/Sprache</translation>
     </message>
     <message>
         <source>Category</source>
-        <translation type="unfinished">Kategorie</translation>
+        <translation>Kategorie</translation>
     </message>
     <message>
         <source>Language/Category</source>
-        <translation type="unfinished">Sprache/Kategorie</translation>
+        <translation>Sprache/Kategorie</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation type="unfinished">Sprache</translation>
+        <translation>Sprache</translation>
     </message>
     <message>
         <source>No grouping</source>
-        <translation type="unfinished">Nicht gruppiert</translation>
+        <translation>Nicht gruppiert</translation>
     </message>
 </context>
 <context>
@@ -767,11 +767,11 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>&amp;Language:</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Sprache:</translation>
     </message>
     <message>
         <source>Optionally specify a custom font for each language:</source>
-        <translation type="unfinished"></translation>
+        <translation>Optional können Sie eine spezielle Schrift für jede Sprache angeben:</translation>
     </message>
 </context>
 <context>
@@ -856,7 +856,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Version</source>
-        <translation type="unfinished">Version</translation>
+        <translation>Version</translation>
     </message>
 </context>
 <context>
@@ -891,89 +891,89 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>WARNING!!!</source>
-        <translation type="unfinished"></translation>
+        <translation>WARNUNG!!!</translation>
     </message>
     <message>
         <source>If you live in a persecuted country and don&apos;t want to risk detection don&apos;t use remote sources.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn Sie in einem Land mit Verfolgung leben, sollten Sie die entfernten Quellen nicht verwenden.</translation>
     </message>
     <message>
         <source>Select installation &amp;source:</source>
-        <translation type="unfinished"></translation>
+        <translation>Installationsquelle au&amp;swählen:</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished">Hinzufügen...</translation>
+        <translation>&amp;Hinzufügen...</translation>
     </message>
     <message>
         <source>Add new source</source>
-        <translation type="unfinished">Neue Quelle hinzufügen</translation>
+        <translation>Neue Quelle hinzufügen</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation type="unfinished">Löschen...</translation>
+        <translation>&amp;Löschen...</translation>
     </message>
     <message>
         <source>Delete this source</source>
-        <translation type="unfinished">Diese Quelle löschen</translation>
+        <translation>Diese Quelle löschen</translation>
     </message>
     <message>
         <source>Select &amp;works to install:</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Werke zum Installieren auswählen:</translation>
     </message>
     <message>
         <source>Install &amp;folder:</source>
-        <translation type="unfinished"></translation>
+        <translation>Installations&amp;verzeichnis:</translation>
     </message>
     <message>
         <source>&amp;Install...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Installieren...</translation>
     </message>
     <message>
         <source>Start installation of %1 works from %2 sources:</source>
-        <translation type="unfinished"></translation>
+        <translation>Installation von %1 Werken von %2 Quellen:</translation>
     </message>
     <message>
         <source>Start installation:</source>
-        <translation type="unfinished"></translation>
+        <translation>Installation starten:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Warnung</translation>
+        <translation>Warnung</translation>
     </message>
     <message>
         <source>The destination directory is not writable or does not exist. Installation will fail unless this has first been fixed.</source>
-        <translation type="unfinished">Das Zielverzeichnis ist nicht beschreibbar oder existiert nicht. Die Installation wird fehlschlagen, wenn dieser Umstand vorher nicht behoben wird.</translation>
+        <translation>Das Zielverzeichnis ist nicht beschreibbar oder existiert nicht. Die Installation wird fehlschlagen, wenn dieser Umstand vorher nicht behoben wird.</translation>
     </message>
     <message>
         <source>Delete Source?</source>
-        <translation type="unfinished">Quelle löschen?</translation>
+        <translation>Quelle löschen?</translation>
     </message>
     <message>
         <source>Do you really want to delete this source?</source>
-        <translation type="unfinished">Möchten Sie diese Quelle wirklich löschen?</translation>
+        <translation>Möchten Sie diese Quelle wirklich löschen?</translation>
     </message>
 </context>
 <context>
     <name>BtInstallPageModel</name>
     <message>
         <source>Work</source>
-        <translation type="unfinished">Werk</translation>
+        <translation>Werk</translation>
     </message>
     <message>
         <source>Version</source>
-        <translation type="unfinished">Version</translation>
+        <translation>Version</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation type="unfinished">Beschreibung</translation>
+        <translation>Beschreibung</translation>
     </message>
 </context>
 <context>
     <name>BtInstallPageWorksWidget</name>
     <message>
         <source>Refresh the list of works from this source</source>
-        <translation type="unfinished">Liste der Werke aus dieser Quelle auffrischen</translation>
+        <translation>Liste der Werke aus dieser Quelle auffrischen</translation>
     </message>
 </context>
 <context>
@@ -1136,19 +1136,19 @@ This file is distributed under the same license as the Bibetime package.</transl
     <name>BtModuleIndexDialog</name>
     <message>
         <source>Preparing to index modules...</source>
-        <translation type="unfinished"></translation>
+        <translation>Indizierung der Werke wird vorbereitet...</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Abbrechen</translation>
+        <translation>Abbrechen</translation>
     </message>
     <message>
         <source>Creating indices</source>
-        <translation type="unfinished">Erstellung der Indizes</translation>
+        <translation>Erstellung der Indizes</translation>
     </message>
     <message>
         <source>Creating index for work: %1</source>
-        <translation type="unfinished">Erstelle Index für Werk: %1</translation>
+        <translation>Erstelle Index für Werk: %1</translation>
     </message>
 </context>
 <context>
@@ -1169,34 +1169,34 @@ This file is distributed under the same license as the Bibetime package.</transl
     <name>BtOpenWorkActionMenu</name>
     <message>
         <source>&amp;Grouping order</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Gruppierung</translation>
     </message>
     <message>
         <source>Sets the grouping order for the items in this menu.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppierung für die Einträge dieses Menüs auswählen.</translation>
     </message>
 </context>
 <context>
     <name>BtRefreshProgressDialog</name>
     <message>
         <source>Refreshing source %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Auktualisiere Quelle %1</translation>
     </message>
     <message>
         <source>&amp;Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Abbrechen</translation>
     </message>
     <message>
         <source>Connecting...</source>
-        <translation type="unfinished">Verbinde...</translation>
+        <translation>Verbinde...</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Warnung</translation>
+        <translation>Warnung</translation>
     </message>
     <message>
         <source>Failed to refresh source %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Konnte Quelle %1 nicht aktualisieren</translation>
     </message>
 </context>
 <context>
@@ -1231,19 +1231,19 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Select &amp;works to uninstall:</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Werke zur Deinstallation auswählen:</translation>
     </message>
     <message>
         <source>&amp;Remove...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Entfernen...</translation>
     </message>
     <message>
         <source>Start removal of %1 works:</source>
-        <translation type="unfinished"></translation>
+        <translation>Entfernung von %1 Werken starten:</translation>
     </message>
     <message>
         <source>Start removal:</source>
-        <translation type="unfinished"></translation>
+        <translation>Entfernung starten:</translation>
     </message>
 </context>
 <context>
@@ -1442,7 +1442,7 @@ shortcut</source>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Entfernen</translation>
+        <translation>&amp;Entfernen</translation>
     </message>
     <message>
         <source>Replace</source>
@@ -1457,67 +1457,67 @@ shortcut</source>
     <name>BtTipDialog</name>
     <message>
         <source>Tip Of The Day</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipp des Tages</translation>
     </message>
     <message>
         <source>Show tips at startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeigt Tipps beim Start an</translation>
     </message>
     <message>
         <source>Next Tip</source>
-        <translation type="unfinished"></translation>
+        <translation>Nächster Tipp</translation>
     </message>
     <message>
         <source>To add multiple Bible works in parallel in your active Bible window select this icon and choose another Bible work.</source>
-        <translation type="unfinished"></translation>
+        <translation>Um weitere Bibeln parallel im aktiven Bibelfenster anzeigen zu können, wählen Sie dieses Symbol aus und wählen Sie eine andere Bibel zur Anzeige aus.</translation>
     </message>
     <message>
         <source>To add multiple commentary works in parallel in your active commentary window select this icon and choose another commentary work.</source>
-        <translation type="unfinished"></translation>
+        <translation>Um weitere Kommentare parallel im aktiven Kommentarfenster anzeigen zu können, wählen Sie dieses Symbol aus und wählen Sie einen anderen Kommentar zur Anzeige aus.</translation>
     </message>
     <message>
         <source>To learn more about the BibleTime project please go to our web site.</source>
-        <translation type="unfinished"></translation>
+        <translation>Um mehr über BibleTime zu erfahren, gehen Sie bitte zu unserer Webseite.</translation>
     </message>
     <message>
         <source>To synchronize a commentary window with the active Bible window, activate the commentary window and select this icon.</source>
-        <translation type="unfinished"></translation>
+        <translation>Um einen Kommentar mit dem aktiven Bibelfenster zu synchronisieren, aktivieren Sie das Kommentarfenster und wählen Sie dieses Symbol aus.</translation>
     </message>
     <message>
         <source>Select the icon again to stop the synchronization.</source>
-        <translation type="unfinished"></translation>
+        <translation>Klicken Sie erneut auf das Symbol um die Synchronisierung zu beenden.</translation>
     </message>
     <message>
         <source>To create a bookmark drag any verse reference from a Bible or commentary work into the Bookmarks window. An arrow will indicate the position that the bookmark will go when you release the cursor. Other works will have a reference in the upper left corner that can be used to create a bookmark.</source>
-        <translation type="unfinished"></translation>
+        <translation>Um ein Lesezeichen zu erstellen, ziehen Sie eine Versreferenz aus einem Bibel- oder Kommentarfenster in das Lesezeichen-Fenster. Ein Pfeil wird die Position des neu anzulegenden Lesezeichens angeben, wenn Sie die Maustaste wieder loslassen. Andere Werke haben eine Referenz in der oberen linken Ecke, mit der Sie ebenfalls Lesezeichen erstellen können.</translation>
     </message>
     <message>
         <source>To change a bookmark title or description, right click on the bookmark and select the Edit Bookmark menu. After finishing the edit the description can be seen by hovering over the bookmark.</source>
-        <translation type="unfinished"></translation>
+        <translation>Um Titel oder Beschreibung eines Lesezeichens zu ändern, rechtsklicken Sie das Lesezeichen und wählen Sie &quot;Lesezeichen bearbeiten&quot; aus. Nach der Bearbeitung kann die Beschreibung angezeigt werden, indem Sie den Mauszeiger über das Lesezeichen bewegen.</translation>
     </message>
     <message>
         <source>To load multiple installation sources for works, go to the Bookshelf Manager, select the Add button, and then the Get List button.</source>
-        <translation type="unfinished"></translation>
+        <translation>Um weitere Installationsquellen für Werke zu bekommen, gehen Sie zur Bücherregal-Verwaltung, wählen sie den Knopf &quot;Hinzufügen&quot; und dann &quot;Liste holen&quot; aus.</translation>
     </message>
     <message>
         <source>To find more information about a work, go the the Bookshelf window, right click on the work, and select the About menu.</source>
-        <translation type="unfinished"></translation>
+        <translation>Um mehr Informationen über ein Werk zu bekommen, gehen Sie zum Bücherregal-Fenster, rechtsklicken Sie auf das Werk, und wählen Sie den Eintrag &quot;Über&quot; aus.</translation>
     </message>
     <message>
         <source>The Bookshelf, Bookmark, and Mag windows can be moved to new locations by dragging them from the title at the top of each window. They can be placed to the left, right, above, or below the works windows. They can be placed on top of each other and tabs will appear so each window can be selected. They can be resized by dragging theborder between the window and another window.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Fenster &quot;Bücherregal&quot;, &quot;Lesezeichen&quot; und &quot;Lupe&quot; können an neue Orte bewegt werden, in dem der Titel mit der Maus gezogen wird. Sie können links, rechts, oberhalb oder unterhalb der Werk-Lesefenster angeordnet werden. Wenn man Sie aufeinanderlegt, werden Tabs erscheinen, mit denen jedes Fenster ausgewählt werden kann. Ihre Größe kann angepasst werden, indem man die Grenze zwischen dem Fenster und einem angrenzenden Fenster verschiebt.</translation>
     </message>
     <message>
         <source>You can search for Strong&apos;s numbers in a work. Start with a work that has Strong&apos;s numbers and hover over a word. Right click the word and use the Strong&apos;s Search menu. A search dialog will appear that allows you to see the use of the sameStrong&apos;s number in other locations of the work.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie können nach Strongnummern in einem Werk suchen. Beginnen Sie mit einem Werk, das Strongnummern hat, und bewegen Sie die Maus über ein Wort. Rechtsklicken Sie auf das Wort und nutzen Sie das Menü &quot;Strong-Suche&quot;. Ein Suchdialog wird erscheinen, der Ihnen die Verwendung des Wortes mit derselben Strongnummer an anderen Stellen des Werkes anzeigen wird.</translation>
     </message>
     <message>
         <source>You can save personal notes for specific verses references. You must install the Personal commentary. Open the Bookshelf Manager, choose Crosswire as the source and look under Commentary and English. Once installed, use the Bookshelf window and right click the Personal commentary. Use either the Edit Plain Text menu or the Edit HTML menu to open the work in write mode.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie können persönliche Notizen zu Bibelversen speichern. Dazu müssen Sie zunächst das &quot;Personal&quot;-Kommentarmodul installieren. Öffnen Sie die Bücherregal-Verwaltung, wählen Sie Crosswire als Quelle aus, und suchen Sie das Werk unter &quot;Kommentare&quot; und &quot;Englisch&quot;. Wenn es installiert ist, rechtsklicken Sie auf das &quot;Personal&quot;-Kommentarmodul im Bücherregal. Wählen Sie entweder &quot;Klartext bearbeiten&quot; oder &quot;HTML bearbeiten&quot; aus, um das Modul im Schreibmodus zu öffnen.</translation>
     </message>
     <message>
         <source>You can view Strong&apos;s number information in the MAG window by hovering over a word in a Bible work that has Strong&apos;s numbers. You should have the StrongsGreek and StrongsHebrew lexicons from Crosswire installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie können Strongnummer-Informationen in der Lupe sehen, indem Sie die Maus über ein Wort bewegen. Dazu muss das Werk Strongnummer-Informationen enthalten, und Sie müssen die StrongsGreek und StrongsHebrew-Werke von Crosswire installiert und in der Konfiguration ausgewählt haben.</translation>
     </message>
 </context>
 <context>
@@ -3524,35 +3524,35 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Show this help message and exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Diese Hilfe anzeigen und beenden</translation>
     </message>
     <message>
         <source>Output BibleTime version and exit</source>
-        <translation type="unfinished"></translation>
+        <translation>BibleTime-Versionsnummer ausgeben und beenden</translation>
     </message>
     <message>
         <source>Open a clean session</source>
-        <translation type="unfinished"></translation>
+        <translation>Eine leere Sitzung öffnen</translation>
     </message>
     <message>
         <source>Open the default Bible with the reference &lt;ref&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Standardbibel mit der Referenz &lt;ref&gt; öffnen</translation>
     </message>
     <message>
         <source>For command-line arguments parsed by the Qt toolkit, see %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Für Kommandozeilenargumente, die vom Qt-Toolkit verarbeitet werden, sehen Sie bitte in %1 nach.</translation>
     </message>
     <message>
         <source>All command-line arguments not recognized by BibleTime or Qt will be silently ignored.</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle Kommandozeilenargumente, die nicht von BibleTime oder Qt erkannt werden, können nicht ausgewertet werden.</translation>
     </message>
     <message>
         <source>Error: %1 expects an argument. See --help for details.</source>
-        <translation type="unfinished"></translation>
+        <translation>Error: %1 erwartet ein Argument. Vgl. --help für Details.</translation>
     </message>
     <message>
         <source>Error: Invalid command-line argument: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Error: Ungültiges Kommandozeilenargument: %1</translation>
     </message>
 </context>
 <context>
@@ -4078,15 +4078,15 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     </message>
     <message>
         <source>The following modules need to be indexed before they can be searched in:</source>
-        <translation type="unfinished"></translation>
+        <translation>Folgende Werke müssen indiziert werden, bevor sie durchsucht werden können:</translation>
     </message>
     <message>
         <source>Indexing could take a long time. Click &quot;Yes&quot; to index the modules and start the search, or &quot;No&quot; to cancel the search.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Indizierung kann eine längere Zeit dauern. Klicken Sie &quot;Ja&quot;, um die Werke zu indizieren und die Suche zu starten, &quot;Nein&quot;, um die Suche abzubrechen.</translation>
     </message>
     <message>
         <source>Drag any verse reference onto an open Bible window</source>
-        <translation type="unfinished"></translation>
+        <translation>Ziehen Sie eine Versreferenz auf ein geöffnetes Bibelfenster</translation>
     </message>
 </context>
 <context>
