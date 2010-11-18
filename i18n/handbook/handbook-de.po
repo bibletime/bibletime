@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: handbook-de\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
 "POT-Creation-Date: 2010-08-20 09:15-0300\n"
-"PO-Revision-Date: 2010-09-11 12:12+0200\n"
+"PO-Revision-Date: 2010-11-17 17:53+0100\n"
 "Last-Translator: Roland Teschner <rolte@gmx.net>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -3369,7 +3369,7 @@ msgstr ""
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:54
 msgid "<date>August 2010</date>"
-msgstr ""
+msgstr "<date>August 2010</date>"
 
 # type: Content of: <book><bookinfo><releaseinfo>
 #. type: Content of: <book><bookinfo><releaseinfo>
