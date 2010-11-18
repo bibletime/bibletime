@@ -11,6 +11,7 @@ msgstr ""
 "PO-Revision-Date: 2010-05-10 22:48-0400\n"
 "Last-Translator: Roy Alvear <racl@gulix.cl>\n"
 "Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: ENCODINGX-Generator: Lokalize 0.3\n"
@@ -38,22 +39,21 @@ msgid ""
 "life; and it is these that bear witness of Me; and you are unwilling to come "
 "to Me, that you may have life."
 msgstr ""
-"Escudriñad las Escrituras, porque a vosotros os parece que en ellas tenéis la "
-"vida eterna; y ellas son las que dan testimonio de mí. Y no queréis venir a mí, "
-"para que tengáis vida."
+"Escudriñad las Escrituras, porque a vosotros os parece que en ellas tenéis "
+"la vida eterna; y ellas son las que dan testimonio de mí. Y no queréis venir "
+"a mí, para que tengáis vida."
 
 # type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-basics.docbook:12
 msgid ""
 "The chief purpose of the book is to bring us to the Person.  Martin Luther "
 "said <quote>we go to the cradle only for the sake of the baby</quote>; just "
-"so in Bible study, we do it not for its own sake but for fellowship with "
-"God."
+"so in Bible study, we do it not for its own sake but for fellowship with God."
 msgstr ""
-"El propósito principal del libro es para llevarnos a la Persona. Martin Luther "
-"dijo <quote>vamos a la cuna sólo por el bien del bebé</quote>; sólo que en "
-"el estudio de la Biblia, no lo hacemos por el bien de Dios, sino para tener "
-"comunión con Él."
+"El propósito principal del libro es para llevarnos a la Persona. Martin "
+"Luther dijo <quote>vamos a la cuna sólo por el bien del bebé</quote>; sólo "
+"que en el estudio de la Biblia, no lo hacemos por el bien de Dios, sino para "
+"tener comunión con Él."
 
 # type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-basics.docbook:17
@@ -61,9 +61,8 @@ msgid ""
 "John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, "
 "InterVarsity Press 1978, pp.97, 104."
 msgstr ""
-"John R.W. Stott, <emphasis>Christ the Controversialist (Cristo el Polemico)<"
-"/emphasis>, "
-"InterVarsity Press 1978, pp.97, 104."
+"John R.W. Stott, <emphasis>Christ the Controversialist (Cristo el Polemico)</"
+"emphasis>, InterVarsity Press 1978, pp.97, 104."
 
 # type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-basics.docbook:19
@@ -75,10 +74,10 @@ msgid ""
 "deceived. [...]"
 msgstr ""
 "Los Judios a quien Jesús habló [...] imaginado que poseer las Escrituras "
-"equivaldría a poseer la vida. Hillel solía decir: &quot;El que se ha hecho a sí "
-"mismo las palabras de la Torah ha conseguido para sí la vida del mundo venidero."
-"&quot; Su estudio es un fin en sí mismo. En esto fueron gravemente engañados. [.."
-".]"
+"equivaldría a poseer la vida. Hillel solía decir: &quot;El que se ha hecho a "
+"sí mismo las palabras de la Torah ha conseguido para sí la vida del mundo "
+"venidero.&quot; Su estudio es un fin en sí mismo. En esto fueron gravemente "
+"engañados. [...]"
 
 # type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-basics.docbook:24
@@ -88,10 +87,10 @@ msgid ""
 "Bible is read, what is needed is an eager expectation that through it we may "
 "meet Christ."
 msgstr ""
-"No hay ni mérito ni a la ganancia en la lectura de las Escrituras para nuestro "
-"propio beneficio, solamente si efectivamente nos presenta a Cristo Jesús. "
-"Siempre que la Biblia se lee, lo que se necesita es una expectativa ansiosa de "
-"que a través de ella podemos encontrar a Cristo."
+"No hay ni mérito ni a la ganancia en la lectura de las Escrituras para "
+"nuestro propio beneficio, solamente si efectivamente nos presenta a Cristo "
+"Jesús. Siempre que la Biblia se lee, lo que se necesita es una expectativa "
+"ansiosa de que a través de ella podemos encontrar a Cristo."
 
 # type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:31
@@ -108,8 +107,9 @@ msgid ""
 msgstr ""
 "Escuchando y leyendo proporcionan una visión telescópica de la Escritura "
 "mientras que el estudio y la memorización de la Escritura proporcionar una "
-"visión microscópica. Meditando en las escrituras trae entendimiento, leyendo, "
-"estudiando y memorizando en conjunto, cimienta la palabra en nuestras mentes."
+"visión microscópica. Meditando en las escrituras trae entendimiento, "
+"leyendo, estudiando y memorizando en conjunto, cimienta la palabra en "
+"nuestras mentes."
 
 # type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:37
@@ -119,11 +119,11 @@ msgstr "Oír"
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:38
 msgid ""
-"Lk.11:28 <quote>blessed are those who hear the word of God, and observe "
-"it.</quote>"
+"Lk.11:28 <quote>blessed are those who hear the word of God, and observe it.</"
+"quote>"
 msgstr ""
-"Lucas 11:28 <quote>bienaventurados los que oyen la palabra de Dios, y la guardan."
-"</quote>"
+"Lucas 11:28 <quote>bienaventurados los que oyen la palabra de Dios, y la "
+"guardan.</quote>"
 
 # type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:42
@@ -136,17 +136,17 @@ msgid ""
 "Rev.1:3 <quote>Blessed is he who reads and those who hear the words of this "
 "prophecy [...]</quote>"
 msgstr ""
-"Apocalipsis 1:3 <quote>Bienaventurado el que lee, y los que oyen las palabras de "
-"esta profecía [...]</quote>"
+"Apocalipsis 1:3 <quote>Bienaventurado el que lee, y los que oyen las "
+"palabras de esta profecía [...]</quote>"
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:45
 msgid ""
-"1 Tim.4:13 <quote>give attention to the public reading of Scripture "
-"[...]</quote>"
+"1 Tim.4:13 <quote>give attention to the public reading of Scripture [...]</"
+"quote>"
 msgstr ""
-"1 Timoteo 4:13 <quote>presta atención a la lectura pública de la Escritura[...]<"
-"/quote>"
+"1 Timoteo 4:13 <quote>presta atención a la lectura pública de la Escritura"
+"[...]</quote>"
 
 # type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:49
@@ -160,9 +160,10 @@ msgid ""
 "Thessalonica, for they received the word with great eagerness, examining the "
 "Scriptures daily, to see whether these things were so.</quote>"
 msgstr ""
-"Hechos 17:11 <quote>Ahora éstos eran de mentalidad más noble que los que estaban "
-"en Tesalónica, pues recibieron la palabra con gran entusiasmo, examinando las "
-"Escrituras diariamente, para ver si estas cosas eran así.</quote>"
+"Hechos 17:11 <quote>Ahora éstos eran de mentalidad más noble que los que "
+"estaban en Tesalónica, pues recibieron la palabra con gran entusiasmo, "
+"examinando las Escrituras diariamente, para ver si estas cosas eran así.</"
+"quote>"
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:54
@@ -186,8 +187,8 @@ msgid ""
 "Ps.119:11 <quote>Thy word I have hid in my heart, that I may not sin against "
 "Thee.</quote>"
 msgstr ""
-"Salmos 119:11 <quote>En mi corazón atesoro tus dichos, para no pecar contra ti.<"
-"/quote>"
+"Salmos 119:11 <quote>En mi corazón atesoro tus dichos, para no pecar contra "
+"ti.</quote>"
 
 # type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:64
@@ -202,10 +203,10 @@ msgid ""
 "streams of water, Which yields its fruit in its season, And its leaf does "
 "not wither; And in whatever he does, he prospers.</quote>"
 msgstr ""
-"Salmos 1:2-3 <quote>pero su delicia está en la ley del Señor, y en su ley medita "
-"de día y de noche. Y será como un árbol firmemente plantado junto a corrientes "
-"de agua, que da su fruto en su tiempo, y su hoja no cae; Y en todo lo que hace, "
-"prospera.</quote>"
+"Salmos 1:2-3 <quote>pero su delicia está en la ley del Señor, y en su ley "
+"medita de día y de noche. Y será como un árbol firmemente plantado junto a "
+"corrientes de agua, que da su fruto en su tiempo, y su hoja no cae; Y en "
+"todo lo que hace, prospera.</quote>"
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:71
@@ -216,12 +217,12 @@ msgid ""
 "the Bible more than they need to study and memorize it. This is so that they "
 "become familiar with the overall message of the Bible."
 msgstr ""
-"Los Navegantes ilustran esto diciendo que, así como el dedo pulgar puede tocar "
-"todos los dedos, podemos meditar en la Palabra en cualquiera de los primeros "
-"cuatro."
-"La meditación es una clave para la revelación. Un  nuevo cristiano necesita oír "
-"y leer la Biblia más de lo que necesita para estudiar y memorizar. Esto es para "
-"que se familiaricen con el mensaje general de la Biblia."
+"Los Navegantes ilustran esto diciendo que, así como el dedo pulgar puede "
+"tocar todos los dedos, podemos meditar en la Palabra en cualquiera de los "
+"primeros cuatro.La meditación es una clave para la revelación. Un  nuevo "
+"cristiano necesita oír y leer la Biblia más de lo que necesita para estudiar "
+"y memorizar. Esto es para que se familiaricen con el mensaje general de la "
+"Biblia."
 
 # type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:79
@@ -239,8 +240,8 @@ msgid ""
 "Pick out a certain topic and follow it through, using cross-references or a "
 "concordance."
 msgstr ""
-"Elige un tema determinado y seguirlo a través del uso de referencias cruzadas o "
-"una concordancia."
+"Elige un tema determinado y seguirlo a través del uso de referencias "
+"cruzadas o una concordancia."
 
 # type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:85
@@ -249,10 +250,11 @@ msgstr "Estudio de Personajes"
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:86
-msgid "Studying the life of a Bible character, e.g. Joseph's life in Gen.37-50."
+msgid ""
+"Studying the life of a Bible character, e.g. Joseph's life in Gen.37-50."
 msgstr ""
-"Estudiando la vida de un personaje de la Biblia, por ejemplo, La vida de José en "
-"Gen.37-50."
+"Estudiando la vida de un personaje de la Biblia, por ejemplo, La vida de "
+"José en Gen.37-50."
 
 # type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:90
@@ -280,8 +282,8 @@ msgid ""
 "What does it say? What does it say in the original language? Be careful with "
 "definitions. Don't read into it what it doesn't say."
 msgstr ""
-"¿Qué dice? ¿Qué dice en el idioma original? Tenga cuidado con las definiciones. "
-"No lea en lo que no dice."
+"¿Qué dice? ¿Qué dice en el idioma original? Tenga cuidado con las "
+"definiciones. No lea en lo que no dice."
 
 # type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:102
@@ -295,12 +297,13 @@ msgid ""
 "the passage must make sense within the structure of the entire passage and "
 "book."
 msgstr ""
-"¿Qué dicen los versos a su alrededor? &quot;El contexto es el rey&quot; es la "
-"regla -- el texto debe tener sentido dentro de la estructura de todo el pasaje y "
-"del libro."
+"¿Qué dicen los versos a su alrededor? &quot;El contexto es el rey&quot; es "
+"la regla -- el texto debe tener sentido dentro de la estructura de todo el "
+"pasaje y del libro."
 
 # type: Content of: <chapter><section><orderedlist><listitem><formalpara><title>
-#: docs/howto/en/docbook/howto-basics.docbook:107 docs/howto/en/docbook/howto-interpretation.docbook:26
+#: docs/howto/en/docbook/howto-basics.docbook:107
+#: docs/howto/en/docbook/howto-interpretation.docbook:26
 msgid "Cross-reference"
 msgstr "Referencias Cruzadas"
 
@@ -311,9 +314,9 @@ msgid ""
 "God doesn't contradict Himself, so our interpretation needs to stand the "
 "test of other scriptures."
 msgstr ""
-"¿Qué dicen otros versículos sobre este mismo tema en el resto de la Biblia? Dios "
-"no se contradice a sí mismo, por lo que nuestra interpretación tiene que superar "
-"la prueba de otras escrituras."
+"¿Qué dicen otros versículos sobre este mismo tema en el resto de la Biblia? "
+"Dios no se contradice a sí mismo, por lo que nuestra interpretación tiene "
+"que superar la prueba de otras escrituras."
 
 # type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:113
@@ -330,10 +333,10 @@ msgid ""
 "Roman numeral One of your outline:"
 msgstr ""
 "Vamos a estudiar juntos Mateo 6:1-18. Lea para si mismo, primero busque el "
-"versículo clave, el verso que resume todo el pasaje. ¿Cree que tiene? Pruébelo "
-"seleccionando diferentes lugares en el pasaje y pregúntese si se refieren a la "
-"idea del versículo clave. Una vez que lo encuentre, escriba un número romano Uno "
-"en su esquema: "
+"versículo clave, el verso que resume todo el pasaje. ¿Cree que tiene? "
+"Pruébelo seleccionando diferentes lugares en el pasaje y pregúntese si se "
+"refieren a la idea del versículo clave. Una vez que lo encuentre, escriba un "
+"número romano Uno en su esquema: "
 
 # type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:119
@@ -352,7 +355,8 @@ msgstr ""
 "motivos!</emphasis> ¿Qué sub-títulos desarrolla este pensamiento?"
 
 # type: Content of: <chapter><sect1><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:126 docs/howto/en/docbook/howto-basics.docbook:135
+#: docs/howto/en/docbook/howto-basics.docbook:126
+#: docs/howto/en/docbook/howto-basics.docbook:135
 msgid "When you give"
 msgstr "Cuando Ud. da"
 
@@ -372,8 +376,8 @@ msgid ""
 "Now fill in the outline with specific instructions of how to avoid wrong "
 "ways of practicing our righteousness:"
 msgstr ""
-"Ahora complete el esquema con instrucciones específicas de cómo evitar caminos "
-"equivocados para practicar piedad."
+"Ahora complete el esquema con instrucciones específicas de cómo evitar "
+"caminos equivocados para practicar piedad."
 
 # type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:137
@@ -381,8 +385,8 @@ msgid ""
 "don't sound a trumpet.  (how might someone <quote>sound a trumpet</quote> "
 "today?)"
 msgstr ""
-"no hagas sonar trompeta. (¿cómo podría alguien <quote>tocar trompeta</quote> hoy "
-"en día?)"
+"no hagas sonar trompeta. (¿cómo podría alguien <quote>tocar trompeta</quote> "
+"hoy en día?)"
 
 # type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:138
@@ -453,11 +457,11 @@ msgid ""
 "them, e.g.  &quot;redeem, redeemed, ransom,&quot; even &quot;buy&quot; or "
 "&quot;bought.&quot;"
 msgstr ""
-"Digamos que usted quiere hacer un estudio de la palabra &quot;redención&quot;. "
-"Primero usted busque esa palabra en la concordancia y busque las referencias que "
-"figuran en ella. Entonces usted verá palabras relacionadas y listas de "
-"referencias para ellas, por ejemplo, &quot;redimir, rescatar, rescate,&quot; "
-"hasta &quot;comprar&quot; o &quot;compró&quot;."
+"Digamos que usted quiere hacer un estudio de la palabra &quot;"
+"redención&quot;. Primero usted busque esa palabra en la concordancia y "
+"busque las referencias que figuran en ella. Entonces usted verá palabras "
+"relacionadas y listas de referencias para ellas, por ejemplo, &quot;redimir, "
+"rescatar, rescate,&quot; hasta &quot;comprar&quot; o &quot;compró&quot;."
 
 # type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:170
@@ -490,8 +494,8 @@ msgid ""
 "Go down the column of entries to Mt.7:1.  To the right is a number, 2919.  "
 "This refers to the Greek word used.  Write it down."
 msgstr ""
-"Diríjase a la columna de entrada de Mt.7:1. a la derecha verá el número 2919. "
-"Ésta es la referencia a la palabra Griega usada. Anótela."
+"Diríjase a la columna de entrada de Mt.7:1. a la derecha verá el número "
+"2919. Ésta es la referencia a la palabra Griega usada. Anótela."
 
 # type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:178
@@ -522,10 +526,10 @@ msgstr "Para encontrar los significados de los nombres"
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:186
 msgid ""
-"By the same process we can find the meaning of a name in the Greek or "
-"Hebrew."
+"By the same process we can find the meaning of a name in the Greek or Hebrew."
 msgstr ""
-"De igual forma, podemos encontrar el significado de un nombre en griego o hebreo."
+"De igual forma, podemos encontrar el significado de un nombre en griego o "
+"hebreo."
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:187
@@ -564,9 +568,9 @@ msgid ""
 "name.  Study of the Bible is one of the primary ways that we learn to "
 "communicate with God."
 msgstr ""
-"La comprensión de la Palabra de Dios es de gran importancia para todos los que "
-"invocan el nombre de Dios. El estudio de la Biblia es una de las principales "
-"maneras en que aprendemos a comunicarnos con Dios."
+"La comprensión de la Palabra de Dios es de gran importancia para todos los "
+"que invocan el nombre de Dios. El estudio de la Biblia es una de las "
+"principales maneras en que aprendemos a comunicarnos con Dios."
 
 # type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:6
@@ -581,11 +585,11 @@ msgstr "La Biblia es única en muchos sentidos. Es única en:"
 # type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:12
 msgid ""
-"popularity.  Bible sales in North America: more than $500 million per "
-"year. The Bible is both the the all-time and year-to-year best seller!"
+"popularity.  Bible sales in North America: more than $500 million per year. "
+"The Bible is both the the all-time and year-to-year best seller!"
 msgstr ""
-"popularidad. La Biblia vende en Norte America mas de $500 millones (USD) por año."
-" La Biblia es ambos el todos los tiempos y año a año el más vendido."
+"popularidad. La Biblia vende en Norte America mas de $500 millones (USD) por "
+"año. La Biblia es ambos el todos los tiempos y año a año el más vendido."
 
 # type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:18
@@ -593,24 +597,24 @@ msgid ""
 "authorship.  It was written over a period of 1600 years by 40 different "
 "authors from different backgrounds, yet reads as if written by one."
 msgstr ""
-"autoría. Fue escrito en un período de 1.600 años por 40 diferentes autores de "
-"diferentes orígenes, sin embargo, parece que hubiera sido escrita por uno."
+"autoría. Fue escrito en un período de 1.600 años por 40 diferentes autores "
+"de diferentes orígenes, sin embargo, parece que hubiera sido escrita por uno."
 
 # type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:24
 msgid ""
-"preservation.  F. F. Bruce in <emphasis>Are New Testament Documents "
-"Reliable?</emphasis> compares New Testament manuscripts with other ancient "
-"texts:"
+"preservation.  F. F. Bruce in <emphasis>Are New Testament Documents Reliable?"
+"</emphasis> compares New Testament manuscripts with other ancient texts:"
 msgstr ""
-"conservación. F. F. Bruce en <emphasis>Are New Testament Documents "
-"Reliable? (¿Son los documentos del Nuevo Testamento confiables?)</emphasis> "
-"compara manuscritos del Nuevo Testamento con otros textos antiguos:"
+"conservación. F. F. Bruce en <emphasis>Are New Testament Documents Reliable? "
+"(¿Son los documentos del Nuevo Testamento confiables?)</emphasis> compara "
+"manuscritos del Nuevo Testamento con otros textos antiguos:"
 
 # type: Content of: <chapter><sect1><table><title>
 #: docs/howto/en/docbook/howto-importance.docbook:30
 msgid "Comparison of New Testament manuscripts with other ancient texts."
-msgstr "Comparación de manuscritos del Nuevo Testamento con otros textos antiguos."
+msgstr ""
+"Comparación de manuscritos del Nuevo Testamento con otros textos antiguos."
 
 # type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:34
@@ -648,7 +652,9 @@ msgid "448-428 B.C."
 msgstr "448-428 AC"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:42 docs/howto/en/docbook/howto-importance.docbook:52 docs/howto/en/docbook/howto-importance.docbook:57
+#: docs/howto/en/docbook/howto-importance.docbook:42
+#: docs/howto/en/docbook/howto-importance.docbook:52
+#: docs/howto/en/docbook/howto-importance.docbook:57
 msgid "900 A.D."
 msgstr "900 DC"
 
@@ -683,7 +689,8 @@ msgid "1000 years"
 msgstr "1000 años"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:48 docs/howto/en/docbook/howto-importance.docbook:58
+#: docs/howto/en/docbook/howto-importance.docbook:48
+#: docs/howto/en/docbook/howto-importance.docbook:58
 msgid "20"
 msgstr "20"
 
@@ -758,11 +765,11 @@ msgid ""
 "other? 5,000 in Greek and 10,000 in Latin!"
 msgstr ""
 "Existen Diez copias de <emphasis>Guerra de las Galias</emphasis> de César, "
-"siendo la copia más antigua 900 años después que César escribió el original, etc."
-" Para el Nuevo Testamento nosotros tenemos manuscritos completos del 350 DC, "
-"papiros contienen la mayor parte del Nuevo Testamento desde los 200 y un "
-"fragmento del Evangelio de Juan desde el 130 DC. ¿Cuántos manuscritos tenemos a "
-"comparar uno al otro? 5000 en Griego y 10000 en Latin!"
+"siendo la copia más antigua 900 años después que César escribió el original, "
+"etc. Para el Nuevo Testamento nosotros tenemos manuscritos completos del 350 "
+"DC, papiros contienen la mayor parte del Nuevo Testamento desde los 200 y un "
+"fragmento del Evangelio de Juan desde el 130 DC. ¿Cuántos manuscritos "
+"tenemos a comparar uno al otro? 5000 en Griego y 10000 en Latin!"
 
 # type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-importance.docbook:72
@@ -771,9 +778,10 @@ msgid ""
 "vol. 1 p561, Macmillan Co., quoted in <emphasis>Questions of Life</emphasis> "
 "p.  25-26"
 msgstr ""
-"Crítica textual F. J. A. Hort \"The New Testament in the Original Greek\" (El "
-"Nuevo Testamento en el Griego Original) vol. 1 p561, Macmillan Co., Citado en <"
-"emphasis>Questions of Life (Preguntas de Vida)</emphasis> p.  25-26"
+"Crítica textual F. J. A. Hort \"The New Testament in the Original Greek"
+"\" (El Nuevo Testamento en el Griego Original) vol. 1 p561, Macmillan Co., "
+"Citado en <emphasis>Questions of Life (Preguntas de Vida)</emphasis> p.  "
+"25-26"
 
 # type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:74
@@ -782,9 +790,9 @@ msgid ""
 "the New Testament stands absolutely and unapproachably alone among other "
 "ancient prose writings.\""
 msgstr ""
-"\"En la veracidad y la plenitud de las evidencias en que se apoya, el texto del "
-"Nuevo Testamento está absolutamente inalcanzable por otros antiguos escritos en "
-"prosa\"."
+"\"En la veracidad y la plenitud de las evidencias en que se apoya, el texto "
+"del Nuevo Testamento está absolutamente inalcanzable por otros antiguos "
+"escritos en prosa\"."
 
 # type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:79
@@ -801,23 +809,23 @@ msgid ""
 "As we read the Bible, God's Spirit is there to speak it to our hearts in a "
 "continually-fresh way."
 msgstr ""
-"<emphasis>Heb.4:12 </emphasis>\"<emphasis>Porque la palabra de Dios es viva y "
-"eficaz</emphasis>\" Jesús dice <emphasis>(Mt.4:4),</emphasis> \"<emphasis>"
-"Escrito está: No sólo de pan vivirá el hombre, sino de toda palabra que sale "
-"[lit., está procediendo] de la boca de Dios.</emphasis>\" "
+"<emphasis>Heb.4:12 </emphasis>\"<emphasis>Porque la palabra de Dios es viva "
+"y eficaz</emphasis>\" Jesús dice <emphasis>(Mt.4:4),</emphasis> "
+"\"<emphasis>Escrito está: No sólo de pan vivirá el hombre, sino de toda "
+"palabra que sale [lit., está procediendo] de la boca de Dios.</emphasis>\" "
 "Cuando leemos la Biblia, el Espíritu de Dios está ahí para hablar a nuestros "
 "corazones de una manera fresca continuamente."
 
 # type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:86
 msgid ""
-"2 Tim.3:16 declares, \"<emphasis>All scripture is inspired by God [lit., "
-"God-breathed].</emphasis>\" Do you believe this? Before you answer, consider "
+"2 Tim.3:16 declares, \"<emphasis>All scripture is inspired by God [lit., God-"
+"breathed].</emphasis>\" Do you believe this? Before you answer, consider "
 "Jesus' attitude toward the Scriptures."
 msgstr ""
-"2 Tim. 3:16 declara, \"<emphasis>Toda la escritura es inspirada por Dios [lit. "
-"aliento de Dios]</emphasis>\"  ¿Cree esto? antes de contestar, considere la "
-"actitud de Jesús hacia las Escrituras. "
+"2 Tim. 3:16 declara, \"<emphasis>Toda la escritura es inspirada por Dios "
+"[lit. aliento de Dios]</emphasis>\"  ¿Cree esto? antes de contestar, "
+"considere la actitud de Jesús hacia las Escrituras. "
 
 # type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-importance.docbook:89
@@ -825,9 +833,8 @@ msgid ""
 "John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, "
 "InterVarsity Press 1978, pp.93-95"
 msgstr ""
-"John R.W. Stott, <emphasis>Christ the Controversialist (Cristo el Polemico)<"
-"/emphasis>, "
-"InterVarsity Press 1978, pp.93-95"
+"John R.W. Stott, <emphasis>Christ the Controversialist (Cristo el Polemico)</"
+"emphasis>, InterVarsity Press 1978, pp.93-95"
 
 # type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:90
@@ -848,18 +855,19 @@ msgid ""
 "to detract from the other. ..."
 msgstr ""
 "Se refirió a los autores humanos, pero daba por sentado que detrás de todos "
-"ellos era un único Autor divino. Podía igualmente decir 'Moises dijo' o 'Dios "
-"dijo' (Marcos 7:10). Se podría citar un comentario del narrador en Génesis 2:24 "
-"como una expresión del Creador mismo (Mateo 19:4-5). Similarmente dijo 'Bien "
-"profetizó de vosotros Isaías, como está escrito:' cuando lo que pasó a citar es "
-"la expresión directa del Señor Dios (Mk.7:6 &amp; Is.29:13). Es a partir del "
-"mismo Jesús que los autores del Nuevo Testamento han ganado su convicción de la  "
-"doble autoría de la Escritura. Para ellos era tan cierto decir que 'Dios habló a "
-"nuestros padres por los profetas' (Heb.1:1) como lo fue decir 'hombres movidos "
-"por el Espíritu Santo hablan de parte de Dios' (2 Pe.1:21). Dios no habló de tal "
-"manera que anulara la personalidad de los autores humanos, ni los hombres "
-"hablaron de manera tal que sea corrompida la Palabra del Autor divino. Dios "
-"habla. El hombre habla. Ninguno a la verdad debe ir en menoscabo del otro. ..."
+"ellos era un único Autor divino. Podía igualmente decir 'Moises dijo' o "
+"'Dios dijo' (Marcos 7:10). Se podría citar un comentario del narrador en "
+"Génesis 2:24 como una expresión del Creador mismo (Mateo 19:4-5). "
+"Similarmente dijo 'Bien profetizó de vosotros Isaías, como está escrito:' "
+"cuando lo que pasó a citar es la expresión directa del Señor Dios (Mk.7:6 "
+"&amp; Is.29:13). Es a partir del mismo Jesús que los autores del Nuevo "
+"Testamento han ganado su convicción de la  doble autoría de la Escritura. "
+"Para ellos era tan cierto decir que 'Dios habló a nuestros padres por los "
+"profetas' (Heb.1:1) como lo fue decir 'hombres movidos por el Espíritu Santo "
+"hablan de parte de Dios' (2 Pe.1:21). Dios no habló de tal manera que "
+"anulara la personalidad de los autores humanos, ni los hombres hablaron de "
+"manera tal que sea corrompida la Palabra del Autor divino. Dios habla. El "
+"hombre habla. Ninguno a la verdad debe ir en menoscabo del otro. ..."
 
 # type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:105
@@ -869,10 +877,10 @@ msgid ""
 "reason why the Christian believes in the divine origin of the Bible is that "
 "Jesus Christ Himself taught it."
 msgstr ""
-"Esto, entonces, era la opinión de Cristo de las Escrituras. Su declaración era "
-"la declaración de Dios. El testimonio de la Biblia es el testimonio de Dios. Y "
-"la razón principal por la que el cristiano cree en el origen divino de la Biblia "
-"es que Jesucristo mismo lo enseñó."
+"Esto, entonces, era la opinión de Cristo de las Escrituras. Su declaración "
+"era la declaración de Dios. El testimonio de la Biblia es el testimonio de "
+"Dios. Y la razón principal por la que el cristiano cree en el origen divino "
+"de la Biblia es que Jesucristo mismo lo enseñó."
 
 # type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:110
@@ -884,10 +892,10 @@ msgid ""
 "faith and conduct."
 msgstr ""
 "2 Tim.3:16 continúa, \"<emphasis>y útil para enseñar, para redargüir, para "
-"corregir, para instruir en justicia, para que el hombre de Dios sea perfecto, "
-"enteramente preparado para toda buena obra.</emphasis>\" Si aceptamos que la "
-"Biblia realmente es Dios hablándonos, se deduce que será nuestra autoridad en "
-"todos los asuntos de fe y conducta."
+"corregir, para instruir en justicia, para que el hombre de Dios sea "
+"perfecto, enteramente preparado para toda buena obra.</emphasis>\" Si "
+"aceptamos que la Biblia realmente es Dios hablándonos, se deduce que será "
+"nuestra autoridad en todos los asuntos de fe y conducta."
 
 # type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:117
@@ -901,9 +909,9 @@ msgid ""
 "\"<emphasis>performs its work in you who believe.</emphasis>\" Beside each "
 "scripture, write down the work the Word performs."
 msgstr ""
-"¿Qué hará el estudio de la Biblia por Usted? 1 Tesalonicenses 2:13 dice que la "
-"Biblia \"<emphasis>obra también en vosotros que creísteis.</emphasis>\" Al lado "
-"de cada escritura, escriba la labor que la Palabra realiza."
+"¿Qué hará el estudio de la Biblia por Usted? 1 Tesalonicenses 2:13 dice que "
+"la Biblia \"<emphasis>obra también en vosotros que creísteis.</emphasis>\" "
+"Al lado de cada escritura, escriba la labor que la Palabra realiza."
 
 # type: Content of: <chapter><sect1><table><title>
 #: docs/howto/en/docbook/howto-importance.docbook:125
@@ -928,8 +936,7 @@ msgstr "Efesios 5:26"
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:137
 msgid ""
-"cleanses -- \"...having cleansed her by the washing of water with the "
-"word.\""
+"cleanses -- \"...having cleansed her by the washing of water with the word.\""
 msgstr "limpia -- \"...limpiándola en el lavamiento del agua por la palabra\""
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
@@ -971,7 +978,8 @@ msgid ""
 "gives faith -- \"So faith comes from hearing, and hearing by the word of "
 "Christ.\""
 msgstr ""
-"da fe -- \"Así que la fe viene por el oír, y el oír, por la palabra de Dios.\""
+"da fe -- \"Así que la fe viene por el oír, y el oír, por la palabra de Dios."
+"\""
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:175
@@ -984,8 +992,8 @@ msgid ""
 "instructs -- \"Now these things happened to them for an example, and they "
 "were written for our instruction\""
 msgstr ""
-"instruye -- \"Y todas estas cosas les acontecieron como ejemplo; y son escritas "
-"para amonestarnos a nosotros\""
+"instruye -- \"Y todas estas cosas les acontecieron como ejemplo; y son "
+"escritas para amonestarnos a nosotros\""
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:186
@@ -999,8 +1007,8 @@ msgid ""
 "live on bread alone, but on every word that proceeds out of the mouth of "
 "God.'\""
 msgstr ""
-"alimenta -- \"Mas Él respondiendo dijo: 'Escrito está: No sólo de pan vivirá el "
-"hombre, sino de toda palabra que sale de la boca de Dios.'\""
+"alimenta -- \"Mas Él respondiendo dijo: 'Escrito está: No sólo de pan vivirá "
+"el hombre, sino de toda palabra que sale de la boca de Dios.'\""
 
 # type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:200
@@ -1017,12 +1025,12 @@ msgid ""
 "v.31. \"<emphasis>If you abide in My word, then you are truly disciples of "
 "Mine... </emphasis>\""
 msgstr ""
-"Juan 8:32 \"<emphasis>y conoceréis la verdad, y la verdad os hará libres.<"
-"/emphasis>\" Esto es citado por sí mismo. ¿Es ésta una promesa condicional o "
+"Juan 8:32 \"<emphasis>y conoceréis la verdad, y la verdad os hará libres.</"
+"emphasis>\" Esto es citado por sí mismo. ¿Es ésta una promesa condicional o "
 "incondicional? ¿Se aplicaría a todo tipo de conocimiento? Encuentra las "
-"respuestas mediante el examen de la primera mitad de la frase, en el verso 31. "
-"\"<emphasis>Si vosotros permaneciereis en mi palabra, seréis verdaderamente mis "
-"discípulos;</emphasis>\""
+"respuestas mediante el examen de la primera mitad de la frase, en el verso "
+"31. \"<emphasis>Si vosotros permaneciereis en mi palabra, seréis "
+"verdaderamente mis discípulos;</emphasis>\""
 
 # type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:208
@@ -1030,24 +1038,24 @@ msgid ""
 "We see that this is a conditional promice, specifically speaking of the "
 "truth of God's word."
 msgstr ""
-"Vemos que esta es un promesa condicional, específicamente hablando de la verdad "
-"de la Palabra de Dios."
+"Vemos que esta es un promesa condicional, específicamente hablando de la "
+"verdad de la Palabra de Dios."
 
 # type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:210
 msgid ""
-"The Greek word for \"wind\" used in Eph.4:14 means a <emphasis>violent "
-"wind.</emphasis> \"<emphasis>As a result, we are no longer to be children, "
-"tossed here and there by waves, and carried about by every wind of "
-"doctrine...</emphasis>\"One thing studying the Bible does for us is to "
-"ground us in the truth, with the result that we won't be easily \"blown "
-"away.\""
+"The Greek word for \"wind\" used in Eph.4:14 means a <emphasis>violent wind."
+"</emphasis> \"<emphasis>As a result, we are no longer to be children, tossed "
+"here and there by waves, and carried about by every wind of doctrine...</"
+"emphasis>\"One thing studying the Bible does for us is to ground us in the "
+"truth, with the result that we won't be easily \"blown away.\""
 msgstr ""
-"La palabra griega que significa \"viento\" utilizada en Efesios 4:14: un <"
-"emphasis>viento violento.</emphasis> \"<emphasis>para que ya no seamos niños "
-"fluctuantes, llevados por doquiera de todo viento de doctrina...</emphasis>\" "
-"Una cosa que el estudio de la Biblia hace por nosotros es aterrizarnos en la "
-"verdad, con el resultado que no será fácil \"soplarnos fuera.\""
+"La palabra griega que significa \"viento\" utilizada en Efesios 4:14: un "
+"<emphasis>viento violento.</emphasis> \"<emphasis>para que ya no seamos "
+"niños fluctuantes, llevados por doquiera de todo viento de doctrina...</"
+"emphasis>\" Una cosa que el estudio de la Biblia hace por nosotros es "
+"aterrizarnos en la verdad, con el resultado que no será fácil \"soplarnos "
+"fuera.\""
 
 # type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:216
@@ -1056,9 +1064,9 @@ msgid ""
 "are mistaken [KJV Ye do err], not understanding the Scriptures, or the power "
 "of God.</emphasis>\"Mt.22:29"
 msgstr ""
-"<emphasis>Entonces respondiendo Jesús, les dijo: </emphasis>\"<emphasis>Ustedes "
-"se equivocan [RV Erráis], no conociendo las Escrituras, ni el poder de Dios.<"
-"/emphasis>\" Mateo 22:29"
+"<emphasis>Entonces respondiendo Jesús, les dijo: </emphasis>"
+"\"<emphasis>Ustedes se equivocan [RV Erráis], no conociendo las Escrituras, "
+"ni el poder de Dios.</emphasis>\" Mateo 22:29"
 
 # type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:218
@@ -1139,25 +1147,25 @@ msgstr "Exhortaciones"
 #: docs/howto/en/docbook/howto-importance.docbook:245
 msgid ""
 "2 Tim.2:15 (KJV) \"<emphasis>Study to show thyself approved unto God, a "
-"workman that needeth not to be ashamed, rightly dividing the word of "
-"truth.</emphasis>\""
+"workman that needeth not to be ashamed, rightly dividing the word of truth.</"
+"emphasis>\""
 msgstr ""
-"2 Tim.2:15 (RV) \"<emphasis>Procura con diligencia presentarte a Dios aprobado, "
-"como obrero que no tiene de qué avergonzarse, que usa bien la palabra de verdad."
-"</emphasis>\""
+"2 Tim.2:15 (RV) \"<emphasis>Procura con diligencia presentarte a Dios "
+"aprobado, como obrero que no tiene de qué avergonzarse, que usa bien la "
+"palabra de verdad.</emphasis>\""
 
 # type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:249
 msgid ""
 "Col.3:16 \"<emphasis>Let the word of Christ richly dwell within you; with "
 "all wisdom teaching and admonishing one another with psalms and hymns and "
-"spiritual songs, singing with thankfulness in your hearts to "
-"God.</emphasis>\""
+"spiritual songs, singing with thankfulness in your hearts to God.</emphasis>"
+"\""
 msgstr ""
 "Col.3:16 \"<emphasis>La palabra de Cristo more en abundancia en vosotros, "
-"enseñándoos y exhortándoos unos a otros en toda sabiduría; con salmos, e himnos, "
-"y cánticos espirituales, cantando con gracia en vuestros corazones al Señor. "
-"</emphasis>\""
+"enseñándoos y exhortándoos unos a otros en toda sabiduría; con salmos, e "
+"himnos, y cánticos espirituales, cantando con gracia en vuestros corazones "
+"al Señor. </emphasis>\""
 
 # type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:253
@@ -1175,13 +1183,13 @@ msgid ""
 "Eccl.12:11-12 \"<emphasis>The words of wise men are like goads, and masters "
 "of these collections are like well-driven nails; they are given by one "
 "Shepherd.  But beyond this, my son, be warned: the writing of many books is "
-"endless, and excessive devotion to books is wearying to the "
-"body.</emphasis>\""
+"endless, and excessive devotion to books is wearying to the body.</emphasis>"
+"\""
 msgstr ""
-"Eclesiastés 12:11-12 \"<emphasis>Las palabras de los sabios son como aguijones. "
-"Como clavos bien puestos son sus colecciones de dichos, dados por un solo pastor."
-" Además de ellas, hijo mío, ten presente que el hacer muchos libros es algo "
-"interminable y que el mucho leer causa fatiga.</emphasis>\""
+"Eclesiastés 12:11-12 \"<emphasis>Las palabras de los sabios son como "
+"aguijones. Como clavos bien puestos son sus colecciones de dichos, dados por "
+"un solo pastor. Además de ellas, hijo mío, ten presente que el hacer muchos "
+"libros es algo interminable y que el mucho leer causa fatiga.</emphasis>\""
 
 # type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:265
@@ -1194,33 +1202,32 @@ msgid ""
 "John R. W. Stott, <emphasis>Christ the Controversialist,</emphasis> "
 "InterVarsity Press 1978, pp.106-107"
 msgstr ""
-"John R.W. Stott, <emphasis>Christ the Controversialist (Cristo el Polémico)<"
-"/emphasis> "
-"InterVarsity Press 1978, pp.106-107"
+"John R.W. Stott, <emphasis>Christ the Controversialist (Cristo el Polémico)</"
+"emphasis> InterVarsity Press 1978, pp.106-107"
 
 # type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:269
 msgid ""
 "The truth regarding the finality of God's initiative in Christ is conveyed "
-"by one word of the Greek Testament, namely the adverb "
-"<foreignphrase>hapax</foreignphrase> and "
-"<foreignphrase>ephapax</foreignphrase>. It is usually translated in the "
-"Authorized Version once, meaning once for all. It is used of what is so done "
-"as to be of perpetual validity and never need repetition, and is applied in "
-"the NT to both revelation and redemption.  Thus, Jude refers to the faith "
-"which was once for all delivered to the saints (Jude 3), and Romans says, "
-"\"<emphasis>Christ also died for sins once for all</emphasis>\" (Rom.6:10, "
-"see also 1 Pe.3:18; Heb.9:26-28)."
+"by one word of the Greek Testament, namely the adverb <foreignphrase>hapax</"
+"foreignphrase> and <foreignphrase>ephapax</foreignphrase>. It is usually "
+"translated in the Authorized Version once, meaning once for all. It is used "
+"of what is so done as to be of perpetual validity and never need repetition, "
+"and is applied in the NT to both revelation and redemption.  Thus, Jude "
+"refers to the faith which was once for all delivered to the saints (Jude 3), "
+"and Romans says, \"<emphasis>Christ also died for sins once for all</"
+"emphasis>\" (Rom.6:10, see also 1 Pe.3:18; Heb.9:26-28)."
 msgstr ""
 "La verdad sobre el carácter definitivo de la iniciativa de Dios en Cristo es "
-"transmitido por una palabra en el Testamento Griego, nombrada por los adverbios "
-"<foreignphrase>hapax</foreignphrase> y <foreignphrase>ephapax</foreignphrase>."
-"Por lo general se traduce en la Versión Autorizada 'una vez', lo que significa "
-"'una vez para siempre'. Esto se usa está hecho a ser de validez permanente y no "
-"es necesario repetir, y se aplica en el NT tanto a la revelación y a la "
-"redención. Por lo tanto, Judas se refiere a la fe que ha sido una vez dada a los "
-"santos (Judas 1:3), y los Romanos, dice,\"<emphasis>Cristo murió por los pecados "
-"una vez para siempre</emphasis>\" (Rom.6:10, ver también 1 Pe.3:18; Heb.9:26-28)."
+"transmitido por una palabra en el Testamento Griego, nombrada por los "
+"adverbios <foreignphrase>hapax</foreignphrase> y <foreignphrase>ephapax</"
+"foreignphrase>.Por lo general se traduce en la Versión Autorizada 'una vez', "
+"lo que significa 'una vez para siempre'. Esto se usa está hecho a ser de "
+"validez permanente y no es necesario repetir, y se aplica en el NT tanto a "
+"la revelación y a la redención. Por lo tanto, Judas se refiere a la fe que "
+"ha sido una vez dada a los santos (Judas 1:3), y los Romanos, dice,"
+"\"<emphasis>Cristo murió por los pecados una vez para siempre</emphasis>"
+"\" (Rom.6:10, ver también 1 Pe.3:18; Heb.9:26-28)."
 
 # type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:279
@@ -1232,18 +1239,18 @@ msgid ""
 "which the Protestant Reformation was built -- Gods revealed word without the "
 "addition of human traditions and Christ's finished work without the addition "
 "of human merits.  The Reformers great watchwords were <foreignphrase>sola "
-"scriptura</foreignphrase> for our authority and <foreignphrase>sola "
-"gratia</foreignphrase> for our salvation."
+"scriptura</foreignphrase> for our authority and <foreignphrase>sola gratia</"
+"foreignphrase> for our salvation."
 msgstr ""
 "Así, podemos decir que Dios ha hablado una vez para siempre y que Cristo ha "
-"sufrido una vez para siempre. Esto significa que la revelación cristiana y de la "
-"redención cristiana ambas son igualmente completas en Cristo. Nada puede ser "
-"añadido a cualquiera sin ser un insulto a Cristo... Estas son las dos rocas en "
-"que se construyó la Reforma Protestante -- La palabra de Dios revelada sin "
-"agregados de tradición humana y la obra terminada de Cristo sin agregados de "
-"méritos humanos. Las grandes consignas de los Reformadores eran <foreignphrase>"
-"sólo la escritura</foreignphrase> para nuestra autoridad y <foreignphrase>sólo "
-"la gracia</foreignphrase> para nuestra salvación."
+"sufrido una vez para siempre. Esto significa que la revelación cristiana y "
+"de la redención cristiana ambas son igualmente completas en Cristo. Nada "
+"puede ser añadido a cualquiera sin ser un insulto a Cristo... Estas son las "
+"dos rocas en que se construyó la Reforma Protestante -- La palabra de Dios "
+"revelada sin agregados de tradición humana y la obra terminada de Cristo sin "
+"agregados de méritos humanos. Las grandes consignas de los Reformadores eran "
+"<foreignphrase>sólo la escritura</foreignphrase> para nuestra autoridad y "
+"<foreignphrase>sólo la gracia</foreignphrase> para nuestra salvación."
 
 # type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:290
@@ -1258,14 +1265,15 @@ msgid ""
 "#5.  Vary the program from year to year to keep it fresh!"
 msgstr ""
 "Éstos son algunos de los programas fáciles de leer la Biblia de forma "
-"sistemática. Usted puede hacer más de uno al mismo tiempo si usted quiere, por "
-"ejemplo #1 con #4 o #2 con #5. Variar el programa de un año a otro para "
+"sistemática. Usted puede hacer más de uno al mismo tiempo si usted quiere, "
+"por ejemplo #1 con #4 o #2 con #5. Variar el programa de un año a otro para "
 "mantenerlo fresco!"
 
 # type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:296
 msgid "New Testament in a Year: read one chapter each day, 5 days a week."
-msgstr "Nuevo Testamento en un año: leer un capítulo cada día, 5 días a la semana."
+msgstr ""
+"Nuevo Testamento en un año: leer un capítulo cada día, 5 días a la semana."
 
 # type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:298
@@ -1273,8 +1281,8 @@ msgid ""
 "Proverbs in a Month: read one chapter of Proverbs each day, corresponding to "
 "the day of the month."
 msgstr ""
-"Proverbios en un mes: leer un capítulo de Proverbios cada día, que corresponde "
-"al día del mes."
+"Proverbios en un mes: leer un capítulo de Proverbios cada día, que "
+"corresponde al día del mes."
 
 # type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:300
@@ -1282,8 +1290,8 @@ msgid ""
 "Psalms in a Month: read 5 Psalms at intervals of 30 each day, for instance "
 "on the 20th you read Ps.20, 50, 80, 110, &amp; 140."
 msgstr ""
-"Salmos en un mes: 5 leer los Salmos, a intervalos de 30 cada día, por ejemplo, "
-"el día 20 leer Salmos 20, 50, 80, 110, y 140."
+"Salmos en un mes: 5 leer los Salmos, a intervalos de 30 cada día, por "
+"ejemplo, el día 20 leer Salmos 20, 50, 80, 110, y 140."
 
 # type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:302
@@ -1291,8 +1299,8 @@ msgid ""
 "Psalms &amp; Proverbs in 6 months: read through Psalms and Proverbs one "
 "chapter per day."
 msgstr ""
-"Los Salmos y Proverbios en 6 meses: leer a través de los Salmos y Proverbios de "
-"un capítulo por día."
+"Los Salmos y Proverbios en 6 meses: leer a través de los Salmos y Proverbios "
+"de un capítulo por día."
 
 # type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:304
@@ -1301,9 +1309,9 @@ msgid ""
 "chapter a day of the Old Testament, skipping over Psalms &amp; Proverbs, you "
 "will read the Old Testament in 2 years and 2 weeks."
 msgstr ""
-"Antiguo Testamento, sin Salmos y Proverbios en 2 años: si se lee un capítulo al "
-"día de el Antiguo Testamento, saltando Salmos y Proverbios, se lee el Antiguo "
-"Testamento en 2 años y 2 semanas."
+"Antiguo Testamento, sin Salmos y Proverbios en 2 años: si se lee un capítulo "
+"al día de el Antiguo Testamento, saltando Salmos y Proverbios, se lee el "
+"Antiguo Testamento en 2 años y 2 semanas."
 
 # type: Content of: <chapter><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:1
@@ -1319,25 +1327,26 @@ msgid ""
 "Author!).  While many applications of a passage are valid, only one "
 "interpretation is valid. The scripture itself says this by saying that no "
 "scripture is of any private interpretation (2 Pe.1:20 KJV <quote>Knowing "
-"this first, that no prophesy of scripture is of any private "
-"interpretation.</quote>). Certain rules are helps toward discovering the "
-"correct meaning; by ignoring these rules people have brought much trouble on "
-"themselves and their followers.  2 Pe.3:16 <quote>...in which are some "
-"things hard to understand, which the untaught and unstable distort, as they "
-"do also the rest of the Scriptures, to their own destruction.</quote>"
+"this first, that no prophesy of scripture is of any private interpretation.</"
+"quote>). Certain rules are helps toward discovering the correct meaning; by "
+"ignoring these rules people have brought much trouble on themselves and "
+"their followers.  2 Pe.3:16 <quote>...in which are some things hard to "
+"understand, which the untaught and unstable distort, as they do also the "
+"rest of the Scriptures, to their own destruction.</quote>"
 msgstr ""
 "Ya hemos aprendido acerca de las \"3 C\": contenido, contexto, referencia "
 "cruzada. Queremos ampliar ahora brevemente profundizando en la hermenéutica "
-"bíblica, cuyo objetivo es descubrir el sentido querido por el autor original (y "
-"el Autor!). Mientras que muchas aplicaciones de un pasaje son válidas, sólo una "
-"interpretación es válida. La escritura se dice de si misma que la Escritura no "
-"es de interpretación privada (2 Pe.1:20 RV <quote>entendiendo primero esto, que "
-"ninguna profecía de la Escritura es de interpretación privada</quote>). Algunas "
-"normas son ayuda para descubrir el sentido correcto, personas haciendo caso "
-"omiso de las normas han traído muchos problemas para sí mismos y a sus "
-"seguidores. 2 Pe.3:16 <quote>...entre las cuales hay algunas difíciles de "
-"entender, las cuales los indoctos e inconstantes tuercen, como también las otras "
-"Escrituras, para su propia perdición.</quote>"
+"bíblica, cuyo objetivo es descubrir el sentido querido por el autor original "
+"(y el Autor!). Mientras que muchas aplicaciones de un pasaje son válidas, "
+"sólo una interpretación es válida. La escritura se dice de si misma que la "
+"Escritura no es de interpretación privada (2 Pe.1:20 RV <quote>entendiendo "
+"primero esto, que ninguna profecía de la Escritura es de interpretación "
+"privada</quote>). Algunas normas son ayuda para descubrir el sentido "
+"correcto, personas haciendo caso omiso de las normas han traído muchos "
+"problemas para sí mismos y a sus seguidores. 2 Pe.3:16 <quote>...entre las "
+"cuales hay algunas difíciles de entender, las cuales los indoctos e "
+"inconstantes tuercen, como también las otras Escrituras, para su propia "
+"perdición.</quote>"
 
 # type: Content of: <chapter><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:11
@@ -1346,9 +1355,9 @@ msgid ""
 "your attention has been drawn to a particular verse whose meaning is not "
 "clear to you.  How do you study it out? Keep these rules in mind:"
 msgstr ""
-"¿Cómo hacemos para descubrir el significado correcto de un pasaje? Digamos que "
-"su atención ha sido puesta en un versículo en particular, cuyo significado no es "
-"claro. ¿Cómo estudiarlo? Tenga en cuenta estas normas:"
+"¿Cómo hacemos para descubrir el significado correcto de un pasaje? Digamos "
+"que su atención ha sido puesta en un versículo en particular, cuyo "
+"significado no es claro. ¿Cómo estudiarlo? Tenga en cuenta estas normas:"
 
 # type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:14
@@ -1363,8 +1372,8 @@ msgid ""
 "words by following these steps:"
 msgstr ""
 "Cuanto más precisos podamos ser con el significado original exacto de las "
-"palabras, mejor será nuestra interpretación. Trate de encontrar el significado "
-"exacto de las palabras clave, siga estos pasos:"
+"palabras, mejor será nuestra interpretación. Trate de encontrar el "
+"significado exacto de las palabras clave, siga estos pasos:"
 
 # type: Content of: <chapter><section><orderedlist><listitem><formalpara><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:20
@@ -1394,13 +1403,13 @@ msgid ""
 msgstr ""
 "Compare escritura con escritura. Observe como la misma palabra en Griego o "
 "Hebreo (No en Español) es usada en la escritura puede aclarar u ofrecer una "
-"nueva luz en la definición. ¿Cómo usa el autor esta palabra en otros lugares? "
-"¿Otros autores? Sus herramientas de referencia pueden dar uso a la palabra en "
-"documentos no bíblicos también. ¿Por qué tenemos que ir a los idiomas "
-"originales, por qué no es suficiente la palabra en Español?<emphasis>Debido a "
-"que más de una palabra griega que puede traducirse a la misma palabra en "
-"Español, y las palabras griegas pueden tener distintos matices de significado. "
-"</emphasis>"
+"nueva luz en la definición. ¿Cómo usa el autor esta palabra en otros "
+"lugares? ¿Otros autores? Sus herramientas de referencia pueden dar uso a la "
+"palabra en documentos no bíblicos también. ¿Por qué tenemos que ir a los "
+"idiomas originales, por qué no es suficiente la palabra en Español?"
+"<emphasis>Debido a que más de una palabra griega que puede traducirse a la "
+"misma palabra en Español, y las palabras griegas pueden tener distintos "
+"matices de significado. </emphasis>"
 
 # type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:37
@@ -1413,45 +1422,47 @@ msgid ""
 "Jn.20:17 <emphasis>\"Touch me not\"</emphasis> (KJV) sounds harsh, doesn't "
 "it? Sounds like Jesus doesn't want to be touched now that He is risen, that "
 "He is too holy or something.  But that doesn't seem right, so let's look it "
-"up in Spiros Zodhiates' <emphasis>The Complete Word Study New "
-"Testament</emphasis> (AMG Publishers, 1991)."
+"up in Spiros Zodhiates' <emphasis>The Complete Word Study New Testament</"
+"emphasis> (AMG Publishers, 1991)."
 msgstr ""
-"Jn.20:17 <emphasis>\"No me toques\"</emphasis> (RV) suena duro, ¿no? Suena como "
-"Jesús no quiere ser tocado ahora que Él ha resucitado, que Él es demasiado "
-"sagrado o algo así. Pero eso no me parece bien, así que vamos a ver que es "
-"'Spiros Zodhiates'<emphasis>The Complete Word Study New Testament (El completo "
-"estudio de la palabra del Nuevo Testamento)</emphasis> (AMG Publishers, 1991)."
+"Jn.20:17 <emphasis>\"No me toques\"</emphasis> (RV) suena duro, ¿no? Suena "
+"como Jesús no quiere ser tocado ahora que Él ha resucitado, que Él es "
+"demasiado sagrado o algo así. Pero eso no me parece bien, así que vamos a "
+"ver que es 'Spiros Zodhiates'<emphasis>The Complete Word Study New Testament "
+"(El completo estudio de la palabra del Nuevo Testamento)</emphasis> (AMG "
+"Publishers, 1991)."
 
 # type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:42
 msgid ""
-"Definition: Turning to John 20:17, above the word \"Touch\" we see "
-"\"pim680.\" The letters give us a code for the part of speech, and the "
-"number refers to Strong's dictionary reference.  Let's look up the "
-"definition (p. 879).  \"680.  Haptomai; from hapto (681), touch.  Refers to "
-"such handling of an object as to exert a modifying influence upon "
-"it... Distinguished from pselaphao (5584), which actually only means to "
-"touch the surface of something. \" Now look up \"pim.\" The grammar codes in "
-"Zodhiates come right after Revelation; on p. 849 we see that pim stands for "
-"\"present imperative active (80)\".  On p.857, \"Present Imperative.  In the "
-"active voice, it may indicate a command to do something in the future which "
-"involves continuous or repeated action or, when it is negated, a command to "
-"stop doing something. \" This is a negative command, so it is to stop doing "
-"something that is already occuring.  So, what have we found?"
+"Definition: Turning to John 20:17, above the word \"Touch\" we see \"pim680."
+"\" The letters give us a code for the part of speech, and the number refers "
+"to Strong's dictionary reference.  Let's look up the definition (p. 879).  "
+"\"680.  Haptomai; from hapto (681), touch.  Refers to such handling of an "
+"object as to exert a modifying influence upon it... Distinguished from "
+"pselaphao (5584), which actually only means to touch the surface of "
+"something. \" Now look up \"pim.\" The grammar codes in Zodhiates come right "
+"after Revelation; on p. 849 we see that pim stands for \"present imperative "
+"active (80)\".  On p.857, \"Present Imperative.  In the active voice, it may "
+"indicate a command to do something in the future which involves continuous "
+"or repeated action or, when it is negated, a command to stop doing "
+"something. \" This is a negative command, so it is to stop doing something "
+"that is already occuring.  So, what have we found?"
 msgstr ""
-"Definición: Volviendo a Juan 20:17, sobre la palabra \"Toques\" vemos \"pim680\"."
-" Las letras nos dan un código de la parte de la oración, y los números "
-"referencia a la Fuente de referencia del diccionario. Veamos la definición (p. "
-"879). \"680. Haptomai; de hapto (681), tocar. Se refiere a la manipulación de un "
-"objeto como para ejercer una modificación de influencia sobre él... Distinguido "
-"de pselaphao (5584), que en realidad sólo significa que toque la superficie de "
-"algo.\" Ahora busquemos \"pim\" . El código gramatical en Zodhiates vienen justo "
-"después de la Revelación; en p. 849 vemos que pim significa \"presente "
-"imperativo activo (80)\". En p.857, \"Presente imperativo. En la voz activa, "
-"esto puede indicar una orden para hacer algo en el futuro, que implica que "
-"continua o repite una acción, o, cuando se niega una orden para dejar de hacer "
-"algo.\" Este es una orden negativa, por lo que es dejar de hacer algo que ya "
-"está ocurriendo. Entonces, ¿qué hemos encontrado?"
+"Definición: Volviendo a Juan 20:17, sobre la palabra \"Toques\" vemos "
+"\"pim680\". Las letras nos dan un código de la parte de la oración, y los "
+"números referencia a la Fuente de referencia del diccionario. Veamos la "
+"definición (p. 879). \"680. Haptomai; de hapto (681), tocar. Se refiere a la "
+"manipulación de un objeto como para ejercer una modificación de influencia "
+"sobre él... Distinguido de pselaphao (5584), que en realidad sólo significa "
+"que toque la superficie de algo.\" Ahora busquemos \"pim\" . El código "
+"gramatical en Zodhiates vienen justo después de la Revelación; en p. 849 "
+"vemos que pim significa \"presente imperativo activo (80)\". En p.857, "
+"\"Presente imperativo. En la voz activa, esto puede indicar una orden para "
+"hacer algo en el futuro, que implica que continua o repite una acción, o, "
+"cuando se niega una orden para dejar de hacer algo.\" Este es una orden "
+"negativa, por lo que es dejar de hacer algo que ya está ocurriendo. "
+"Entonces, ¿qué hemos encontrado?"
 
 # type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:53
@@ -1464,29 +1475,31 @@ msgid ""
 "In James 5:14, <emphasis>Elders are told to pray and anoint someone who is "
 "sick</emphasis>.  What is this anointing?"
 msgstr ""
-"En Santiago 5:14 <emphasis>Llame a los ancianos de la iglesia, y oren por él, "
-"ungiéndole con aceite en el nombre del Señor</emphasis>. ¿Qué es esta unción?"
+"En Santiago 5:14 <emphasis>Llame a los ancianos de la iglesia, y oren por "
+"él, ungiéndole con aceite en el nombre del Señor</emphasis>. ¿Qué es esta "
+"unción?"
 
 # type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:55
 msgid ""
 "Definition of aleipho (218) - \"to oil\" (Strong's); but we also have "
 "another Greek word translated \"anoint\", chrio (5548) - \"to smear or rub "
-"with oil, i.e. to consecrate to an office or religious service\" "
-"(Strong's).  Since it's a verb, consider the tense also, \"apta\" aorist "
+"with oil, i.e. to consecrate to an office or religious service"
+"\" (Strong's).  Since it's a verb, consider the tense also, \"apta\" aorist "
 "participle active.  \"The aorist participle expresses simple action, as "
 "opposed to continuous action...When its relaitonship to the main verb is "
-"temporal, it usually signifies action prior to that of the main verb.\" "
-"(Zodhiates p.851)"
+"temporal, it usually signifies action prior to that of the main verb."
+"\" (Zodhiates p.851)"
 msgstr ""
 "La definición de aleipho (218) - \"aceite\" (Fuente Strong); pero también "
-"tenemos otra palabra griega traducida \"ungir\", chrio (5548) - \"para embarrar "
-"o frotar con aceite, es decir, para consagrar un oficio o un servicio "
-"religioso\" (Fuente Strong). Puesto que es un verbo, considere el tiempo "
-"también, \"apta\" aoristo participio activo. \"El participio aoristo expresa una "
-"acción simple, opuesta a la acción continua [Nota de traducción: es decir, "
-"momentánea] ... Cuando su relación con el verbo principal es temporal, por lo "
-"general significa una acción previa a la del verbo principal.\" (Zodhiates p.851)"
+"tenemos otra palabra griega traducida \"ungir\", chrio (5548) - \"para "
+"embarrar o frotar con aceite, es decir, para consagrar un oficio o un "
+"servicio religioso\" (Fuente Strong). Puesto que es un verbo, considere el "
+"tiempo también, \"apta\" aoristo participio activo. \"El participio aoristo "
+"expresa una acción simple, opuesta a la acción continua [Nota de traducción: "
+"es decir, momentánea] ... Cuando su relación con el verbo principal es "
+"temporal, por lo general significa una acción previa a la del verbo "
+"principal.\" (Zodhiates p.851)"
 
 # type: Content of: <chapter><section><section><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:62
@@ -1507,9 +1520,9 @@ msgstr ""
 # type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:66
 msgid ""
-"Mk.6:13 And they were...anointing with oil many sick people and healing "
-"them."
-msgstr "Marcos 6:13 [...] y ungían con aceite a muchos enfermos, y los sanaban."
+"Mk.6:13 And they were...anointing with oil many sick people and healing them."
+msgstr ""
+"Marcos 6:13 [...] y ungían con aceite a muchos enfermos, y los sanaban."
 
 # type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:67
@@ -1518,7 +1531,8 @@ msgstr "Lucas 7:38 [...] besaba sus pies, y los ungía con el ungüento."
 
 # type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:68
-msgid "Jn.12:3 Mary [...] anointed the feet of Jesus, and wiped them with her hair"
+msgid ""
+"Jn.12:3 Mary [...] anointed the feet of Jesus, and wiped them with her hair"
 msgstr ""
 "Juan 12:3 María [...] ungió los pies de Jesús, y los enjugó con sus cabellos"
 
@@ -1545,7 +1559,8 @@ msgstr "Hechos 4:27 Jesús, a quien ungiste"
 #: docs/howto/en/docbook/howto-interpretation.docbook:76
 msgid "Acts 10:38 God anointed Jesus with the Holy Ghost and power"
 msgstr ""
-"Hechos 10:38 Jesús de Nazaret, a quien Dios ungió con Espíritu Santo y con poder"
+"Hechos 10:38 Jesús de Nazaret, a quien Dios ungió con Espíritu Santo y con "
+"poder"
 
 # type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:77
@@ -1555,15 +1570,15 @@ msgstr "2 Corintios 1:21 [...] el que nos ungió, es Dios"
 # type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:82
 msgid ""
-"So what's the difference between aleipho and chrio? Look back over the "
-"cross-references and the definitions, and sum up the difference: "
-"<emphasis>&quot;aleipho&quot; is a practical use of oil and "
-"&quot;chrio&quot; is a spiritual</emphasis>"
+"So what's the difference between aleipho and chrio? Look back over the cross-"
+"references and the definitions, and sum up the difference: <emphasis>&quot;"
+"aleipho&quot; is a practical use of oil and &quot;chrio&quot; is a "
+"spiritual</emphasis>"
 msgstr ""
 "Entonces, ¿cuál es la diferencia entre aleipho y chrio?  Mirando atrás las "
-"referencias cruzadas y las definiciones, resumimos la diferencia:<emphasis>"
-"&quot;aleipho&quot; es un uso práctico de aceite y &quot;chrio&quot; es uno "
-"espiritual</emphasis>"
+"referencias cruzadas y las definiciones, resumimos la diferencia:"
+"<emphasis>&quot;aleipho&quot; es un uso práctico de aceite y &quot;"
+"chrio&quot; es uno espiritual</emphasis>"
 
 # type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:85
@@ -1573,10 +1588,10 @@ msgid ""
 "robbers he poured oil and wine in the wound.  So oil had a medicinal use in "
 "Jesus' day."
 msgstr ""
-"Como ejemplo (aunque la palabra no se utiliza), de la utilización práctica del "
-"aceite en esa época, cuando el buen samaritano cuida al hombre golpeado por "
-"asaltantes vertió aceite y vino en la herida. Pues el aceite tenía un uso "
-"medicinal en la época de Jesús."
+"Como ejemplo (aunque la palabra no se utiliza), de la utilización práctica "
+"del aceite en esa época, cuando el buen samaritano cuida al hombre golpeado "
+"por asaltantes vertió aceite y vino en la herida. Pues el aceite tenía un "
+"uso medicinal en la época de Jesús."
 
 # type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:89
@@ -1588,8 +1603,8 @@ msgid ""
 msgstr ""
 "Ahora vamos a aplicar lo que hemos aprendido de este estudio de la palabra a "
 "Santiago 5:14 <emphasis>\"¿Está alguno enfermo entre vosotros? Llame a los "
-"ancianos de la iglesia, y oren por él, ungiéndole con aceite en el nombre del "
-"Señor.\"</emphasis> Es \"unción\" espiritual o práctica? Práctica!"
+"ancianos de la iglesia, y oren por él, ungiéndole con aceite en el nombre "
+"del Señor.\"</emphasis> Es \"unción\" espiritual o práctica? Práctica!"
 
 # type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:93
@@ -1602,11 +1617,11 @@ msgid ""
 "of practical and spiritual in our God!"
 msgstr ""
 "Y el tiempo en griego, el participio aoristo, sería mejor traducido como "
-"\"teniendo ungido\", por lo que el orden es primero la unción, luego la oración, "
-"(\"en el nombre del Señor\" se refiere a la oración, no a la unción). Santiago 5 "
-"está diciendo que los ancianos deben dar el medicamento a la persona enferma y "
-"orar por él en el nombre del Señor. ¿No que expresan un hermoso balance de lo "
-"práctico y espiritual en nuestro Dios!"
+"\"teniendo ungido\", por lo que el orden es primero la unción, luego la "
+"oración, (\"en el nombre del Señor\" se refiere a la oración, no a la "
+"unción). Santiago 5 está diciendo que los ancianos deben dar el medicamento "
+"a la persona enferma y orar por él en el nombre del Señor. ¿No que expresan "
+"un hermoso balance de lo práctico y espiritual en nuestro Dios!"
 
 # type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:103
@@ -1623,12 +1638,13 @@ msgid ""
 "If confusion remains as to the meaning after we have interpreted the text "
 "within its context, we have to look further."
 msgstr ""
-"Interprete la escritura en armonía con otras escrituras. ¿Qué dicen los versos "
-"en cada lado? ¿Cuál es el tema del capítulo? del libro? ¿Encaja su "
-"interpretación con estos? Si no, es defectuosa. Usualmente, el contexto suple lo "
-"que necesitamos para interpretar correctamente un pasaje. El contexto es la "
-"llave. Si se mantiene la confusión sobre el significado después de haber "
-"interpretado el texto en su contexto, tenemos que buscar más allá."
+"Interprete la escritura en armonía con otras escrituras. ¿Qué dicen los "
+"versos en cada lado? ¿Cuál es el tema del capítulo? del libro? ¿Encaja su "
+"interpretación con estos? Si no, es defectuosa. Usualmente, el contexto "
+"suple lo que necesitamos para interpretar correctamente un pasaje. El "
+"contexto es la llave. Si se mantiene la confusión sobre el significado "
+"después de haber interpretado el texto en su contexto, tenemos que buscar "
+"más allá."
 
 # type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:110
@@ -1650,13 +1666,12 @@ msgid ""
 "Water baptism is not under discussion here, which would be a big switch from "
 "the subject being discussed by Jesus and Nicodemus.  Watch out for a sudden "
 "change of topic, it may be a clue that your interpretation has been "
-"derailed! The water is the amniotic fluid, \"born of water\" = natural "
-"birth."
+"derailed! The water is the amniotic fluid, \"born of water\" = natural birth."
 msgstr ""
-"El bautismo en agua no está en debate aquí, lo que sería un gran cambio del tema "
-"discutido por Jesús y Nicodemo. ¡Cuidado con un repentino cambio de tema, puede "
-"ser un indicio de que su interpretación se ha descarrilado! El agua es el "
-"líquido amniótico, \"nacido de agua\" = parto natural."
+"El bautismo en agua no está en debate aquí, lo que sería un gran cambio del "
+"tema discutido por Jesús y Nicodemo. ¡Cuidado con un repentino cambio de "
+"tema, puede ser un indicio de que su interpretación se ha descarrilado! El "
+"agua es el líquido amniótico, \"nacido de agua\" = parto natural."
 
 # type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:117
@@ -1670,9 +1685,9 @@ msgid ""
 "be taken within the biblical context of 1 Cor.11:5 <quote>every woman [...] "
 "while praying or prophesying [...]</quote>"
 msgstr ""
-"1 Corintios 14:34 <quote>Vuestras mujeres callen en las iglesias</quote> tiene "
-"que tomarse en el contexto bíblico de 1 Corintios 11:5 <quote>toda mujer que ora "
-"o profetiza [...]</quote>"
+"1 Corintios 14:34 <quote>Vuestras mujeres callen en las iglesias</quote> "
+"tiene que tomarse en el contexto bíblico de 1 Corintios 11:5 <quote>toda "
+"mujer que ora o profetiza [...]</quote>"
 
 # type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:121
@@ -1692,16 +1707,16 @@ msgid ""
 "to being born again, how could Paul write 1 Cor.1:17 <emphasis>\"For Christ "
 "did not send me to baptize, but to preach the gospel\"</emphasis>?"
 msgstr ""
-"Hechos 2:38 <quote>Pedro les dijo: &quot;Arrepentíos, y bautícese cada uno de "
-"vosotros en el nombre de Jesucristo para perdón de los pecados; [...]&quot; "
-"</quote>. Esta enseñanza es la regeneración bautismal? Si este fuese el único "
-"versículo de la Escritura que hubiese, tendríamos que concluir eso. Pero a la "
-"luz de la clara enseñanza de otros lugares que la regeneración ocurre por la fe "
-"en Cristo, tenemos que interpretar de otro modo. Pedro está instando al bautismo "
-"como un medio para que sus oyentes respondan al evangelio. Si el bautismo es la "
-"vía para volver a nacer, ¿cómo podría Pablo escribir 1 Cor.1: 17 <emphasis>"
-"&quot;Porque no me envió Cristo a bautizar, sino a predicar el evangelio&quot; "
-"</emphasis>?"
+"Hechos 2:38 <quote>Pedro les dijo: &quot;Arrepentíos, y bautícese cada uno "
+"de vosotros en el nombre de Jesucristo para perdón de los pecados; [...]"
+"&quot; </quote>. Esta enseñanza es la regeneración bautismal? Si este fuese "
+"el único versículo de la Escritura que hubiese, tendríamos que concluir eso. "
+"Pero a la luz de la clara enseñanza de otros lugares que la regeneración "
+"ocurre por la fe en Cristo, tenemos que interpretar de otro modo. Pedro está "
+"instando al bautismo como un medio para que sus oyentes respondan al "
+"evangelio. Si el bautismo es la vía para volver a nacer, ¿cómo podría Pablo "
+"escribir 1 Cor.1: 17 <emphasis>&quot;Porque no me envió Cristo a bautizar, "
+"sino a predicar el evangelio&quot; </emphasis>?"
 
 # type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:134
@@ -1716,10 +1731,11 @@ msgid ""
 "<quote>What does it mean to me?</quote>.  We have to take into account the "
 "historical and cultural background of the author and the recipients."
 msgstr ""
-"Al principio no nos preguntamos <quote>¿Qué significa para mí?</quote>, sino que "
-"primero preguntemos <quote>¿Qué significó para sus lectores originales?</quote>; "
-"luego puede preguntar <quote>¿Qué significa para mí?</quote>. Tenemos que tener "
-"en cuenta los antecedentes históricos y culturales del autor y los destinatarios."
+"Al principio no nos preguntamos <quote>¿Qué significa para mí?</quote>, sino "
+"que primero preguntemos <quote>¿Qué significó para sus lectores originales?</"
+"quote>; luego puede preguntar <quote>¿Qué significa para mí?</quote>. "
+"Tenemos que tener en cuenta los antecedentes históricos y culturales del "
+"autor y los destinatarios."
 
 # type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:139
@@ -1737,9 +1753,10 @@ msgid ""
 msgstr ""
 "<quote>3 días y 3 noches</quote> (Mt.12:40) ha llevado a algunos a traer una "
 "\"teoría de Miércoles de crucifixión\", especialmente en el culto del "
-"Armstrongismo. ¿Cómo pudo Jesus morir un Viernes en la tarde y resucitar Domingo "
-"en la mañana y aún \"resucitar al tercer día.\" (Mt.16:21)? El significado "
-"exacto de \"tres\" o \"días\" no ayudan a explicar la aparente contradicción."
+"Armstrongismo. ¿Cómo pudo Jesus morir un Viernes en la tarde y resucitar "
+"Domingo en la mañana y aún \"resucitar al tercer día.\" (Mt.16:21)? El "
+"significado exacto de \"tres\" o \"días\" no ayudan a explicar la aparente "
+"contradicción."
 
 # type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:144
@@ -1753,14 +1770,14 @@ msgid ""
 "Sunday 5 or so a.m. = day 3.  Interpreting within the cultural context keeps "
 "us out of trouble."
 msgstr ""
-"Necesitaremos sugerencias históricas: Los Judíos contaban cualquier parte de un "
-"día como un día completo, como cuentan los cubos de agua (si son 6 cubos y medio "
-"de agua, nos dicen que fueron 7 cubos de agua, incluso si sólo uno esta "
-"parcialmente lleno). Así que para la mentalidad judía, una parte del día es "
-"contada como un día, y los días comienzan a las 6 p.m. y finalizan a las 6 p.m. "
-"Viernes desde la 3 p.m. a 6 p.m. = 1er día. Viernes 6 p.m. a Sábado 6 p.m. = 2do "
-"día. Domingo 5 o más a.m. = 3er día. La interpretación en el contexto cultural "
-"nos mantiene fuera de problemas."
+"Necesitaremos sugerencias históricas: Los Judíos contaban cualquier parte de "
+"un día como un día completo, como cuentan los cubos de agua (si son 6 cubos "
+"y medio de agua, nos dicen que fueron 7 cubos de agua, incluso si sólo uno "
+"esta parcialmente lleno). Así que para la mentalidad judía, una parte del "
+"día es contada como un día, y los días comienzan a las 6 p.m. y finalizan a "
+"las 6 p.m. Viernes desde la 3 p.m. a 6 p.m. = 1er día. Viernes 6 p.m. a "
+"Sábado 6 p.m. = 2do día. Domingo 5 o más a.m. = 3er día. La interpretación "
+"en el contexto cultural nos mantiene fuera de problemas."
 
 # type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:151
@@ -1777,18 +1794,19 @@ msgid ""
 "the contract.  But in this case only God goes thru, making it a unilateral "
 "covenant."
 msgstr ""
-"Génesis 15:7-21. El contexto histórico que los animales se corten en dos y luego "
-"caminar entre las piezas era la forma normal de entrar en un contrato en el "
-"tiempo de Abraham. Ambos grupos caminan entre las partes, teniendo el compromiso "
-"que el desmembramiento les ocurriría si no estaban a la altura de su parte del "
-"contrato. Pero en este caso sólo Dios pasa a través, por lo que es un pacto "
-"unilateral."
+"Génesis 15:7-21. El contexto histórico que los animales se corten en dos y "
+"luego caminar entre las piezas era la forma normal de entrar en un contrato "
+"en el tiempo de Abraham. Ambos grupos caminan entre las partes, teniendo el "
+"compromiso que el desmembramiento les ocurriría si no estaban a la altura de "
+"su parte del contrato. Pero en este caso sólo Dios pasa a través, por lo que "
+"es un pacto unilateral."
 
 # type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:159
 msgid "Rule 4 - Interpret according to the normal usage of words in language"
 msgstr ""
-"Norma 4 - Interpretar de acuerdo con el uso normal de las palabras en el idioma"
+"Norma 4 - Interpretar de acuerdo con el uso normal de las palabras en el "
+"idioma"
 
 # type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:160
@@ -1796,8 +1814,9 @@ msgid ""
 "Let literal language be literal and figurative language be figurative.  And "
 "watch out for idioms, which have special meanings."
 msgstr ""
-"Deja que el lenguaje literal sea literal y el lenguaje figurativo sea figurativo."
-" Y cuidado con las expresiones idiomáticas, que tienen un significado especial."
+"Deja que el lenguaje literal sea literal y el lenguaje figurativo sea "
+"figurativo. Y cuidado con las expresiones idiomáticas, que tienen un "
+"significado especial."
 
 # type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:163
@@ -1816,9 +1835,10 @@ msgid ""
 "seems to confuse us even more.  It doesn't seem to fit with what goes before "
 "and after! This should tip us off that we aren't understanding it rightly!!"
 msgstr ""
-"La norma 1, la definición de \"malvado\" y \"ojo\" - no ayuda aquí. Norma 2, el "
-"contexto: parece confundir aún más. No parece encajar con lo que sucede antes y "
-"después! Esto nos da un aviso que no estamos entendiendo esto correctamente!!"
+"La norma 1, la definición de \"malvado\" y \"ojo\" - no ayuda aquí. Norma 2, "
+"el contexto: parece confundir aún más. No parece encajar con lo que sucede "
+"antes y después! Esto nos da un aviso que no estamos entendiendo esto "
+"correctamente!!"
 
 # type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:168
@@ -1834,8 +1854,8 @@ msgstr ""
 "buscar otros usos en este idioma: Mt.20:15 \"<emphasis>¿No es legal para mi "
 "hacer lo que quiero con lo que poseo? ¿O es tu ojo malo[lit. \"malvado\"], "
 "porque soy bueno?</emphasis>\" Nos parece que tener un \"ojo malvado\" es un "
-"modismo hebreo por ser tacaño o envidioso. Ahora vuelva a Mt.6 y observe cómo "
-"esta comprensión en las relaciones dan perfectamente el contexto."
+"modismo hebreo por ser tacaño o envidioso. Ahora vuelva a Mt.6 y observe "
+"cómo esta comprensión en las relaciones dan perfectamente el contexto."
 
 # type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:174
@@ -1868,18 +1888,17 @@ msgid ""
 "ridiculousness of their position."
 msgstr ""
 "Las referencias a partes del cuerpo de Dios son usados por los Santos de los "
-"Últimos Días para probar que Dios fue una vez un hombre justo como nosotros. Una "
-"vez que convencen a la gente de eso, van a enseñar que podemos llegar a ser Dios "
-"tal como Él lo es! En una conferencia que estaba dando, un grupo de ancianos del "
-"Mormón desafió a Walter Martin (autor del <emphasis>Kingdom of the Cults (Reino "
-"de "
-"los Cultos)</emphasis>) con una enumeración de los versos como estos. El Dr. "
-"Martin pidió a los mormones a leer una escritura más: Salmos.91: 4  <quote>Con "
-"sus plumas te cubrirá, y debajo de sus alas estarás seguro</quote>. W.M. dijo: "
-"<quote>Por las mismas reglas de interpretación que ustedes acaban de demostrar "
-"que "
-"Dios es un hombre, ustedes acaban de demostrar que Él es un pájaro</quote>. Los "
-"mormones tuvieron que reír cuando se dieron cuenta de lo ridículo de su posición."
+"Últimos Días para probar que Dios fue una vez un hombre justo como nosotros. "
+"Una vez que convencen a la gente de eso, van a enseñar que podemos llegar a "
+"ser Dios tal como Él lo es! En una conferencia que estaba dando, un grupo de "
+"ancianos del Mormón desafió a Walter Martin (autor del <emphasis>Kingdom of "
+"the Cults (Reino de los Cultos)</emphasis>) con una enumeración de los "
+"versos como estos. El Dr. Martin pidió a los mormones a leer una escritura "
+"más: Salmos.91: 4  <quote>Con sus plumas te cubrirá, y debajo de sus alas "
+"estarás seguro</quote>. W.M. dijo: <quote>Por las mismas reglas de "
+"interpretación que ustedes acaban de demostrar que Dios es un hombre, "
+"ustedes acaban de demostrar que Él es un pájaro</quote>. Los mormones "
+"tuvieron que reír cuando se dieron cuenta de lo ridículo de su posición."
 
 # type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:189
@@ -1893,11 +1912,11 @@ msgstr ""
 # type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:190
 msgid ""
-"An allegory is: <emphasis>A story where each element has a "
-"meaning.</emphasis>"
+"An allegory is: <emphasis>A story where each element has a meaning.</"
+"emphasis>"
 msgstr ""
-"Una alegoría es: <emphasis>Una historia donde cada elemento tiene un significado."
-"</emphasis>"
+"Una alegoría es: <emphasis>Una historia donde cada elemento tiene un "
+"significado.</emphasis>"
 
 # type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:191
@@ -1914,13 +1933,14 @@ msgid ""
 "twisted to say all sorts of things.  We need to get our doctrine from clear "
 "scriptures that lay it out; then if a parable illustrates that, fine."
 msgstr ""
-"Algunas parábolas son alegorías, por ejemplo, la parábola del sembrador es una "
-"alegoría: la semilla es la palabra de Dios, las espinas son las preocupaciones y "
-"la codicia, etc, pero la mayoría de las parábolas no son alegorías, sino "
-"simplemente historias para ilustrar un punto. Es peligroso obtener nuestra "
-"doctrina desde las parábolas; ella puede ser retorcida para decir todo tipo de "
-"cosas. Nosotros necesitamos obtener nuestra doctrina de desde escrituras claras "
-"dejando de lado eso; luego si una parábola ilustra eso, bien."
+"Algunas parábolas son alegorías, por ejemplo, la parábola del sembrador es "
+"una alegoría: la semilla es la palabra de Dios, las espinas son las "
+"preocupaciones y la codicia, etc, pero la mayoría de las parábolas no son "
+"alegorías, sino simplemente historias para ilustrar un punto. Es peligroso "
+"obtener nuestra doctrina desde las parábolas; ella puede ser retorcida para "
+"decir todo tipo de cosas. Nosotros necesitamos obtener nuestra doctrina de "
+"desde escrituras claras dejando de lado eso; luego si una parábola ilustra "
+"eso, bien."
 
 # type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:198
@@ -1958,8 +1978,8 @@ msgid ""
 "The parable of the unrighteous steward in Lk.16:1-9.  What is the point of "
 "the parable? Is it an allegory?"
 msgstr ""
-"La parábola del administrador injusto en Lucas 16:1-9 ¿Cuál es el punto de la "
-"parábola? ¿Es una alegoría?"
+"La parábola del administrador injusto en Lucas 16:1-9 ¿Cuál es el punto de "
+"la parábola? ¿Es una alegoría?"
 
 # type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:207
@@ -1969,8 +1989,8 @@ msgid ""
 "for his unethical behavior in cheating his master."
 msgstr ""
 "El mayordomo es elogiado por una sola cosa, su sagacidad en el uso de lo que "
-"tenía para prepararse para el momento cuando él no tiene. Pero no es elogiado "
-"por su comportamiento poco ético al engañar a su amo."
+"tenía para prepararse para el momento cuando él no tiene. Pero no es "
+"elogiado por su comportamiento poco ético al engañar a su amo."
 
 # type: Content of the bibletime entity
 #: docs/howto/en/docbook/index.docbook:3
@@ -1996,14 +2016,13 @@ msgstr "El equipo de &bibletime; (info@bibletime.info)"
 #: docs/howto/en/docbook/index.docbook:36
 msgid ""
 "This document was originally created by Mr. Bob Harman and is licensed under "
-"the terms of the license <link "
-"url=\"http://creativecommons.org/licenses/by-sa/3.0/\"> \"Creative Commons "
-"Attribution-Share Alike\"</link>."
+"the terms of the license <link url=\"http://creativecommons.org/licenses/by-"
+"sa/3.0/\"> \"Creative Commons Attribution-Share Alike\"</link>."
 msgstr ""
-"Este documento fue creado originalmente por el Sr. Bob Harman y está disponible "
-"bajo los términos de la licencia <link "
-"url=\"http://creativecommons.org/licenses/by-sa/3.0/\">\"Creative Commons "
-"Reconocimiento-Compartir Igual\".</link>."
+"Este documento fue creado originalmente por el Sr. Bob Harman y está "
+"disponible bajo los términos de la licencia <link url=\"http://"
+"creativecommons.org/licenses/by-sa/3.0/\">\"Creative Commons Reconocimiento-"
+"Compartir Igual\".</link>."
 
 # type: Content of: <book><bookinfo><legalnotice><para>
 #: docs/howto/en/docbook/index.docbook:42
@@ -2012,8 +2031,8 @@ msgid ""
 "indicated."
 msgstr ""
 "Citas bíblicas son de la New American Standard Bible menos que se indique lo "
-"contrario. "
-"[Nota del traductor: En la mayor parte de las citas usé SpaRVG2004]"
+"contrario. [Nota del traductor: En la mayor parte de las citas usé "
+"SpaRVG2004]"
 
 # type: Content of: <book><bookinfo><abstract><title>
 #: docs/howto/en/docbook/index.docbook:47
@@ -2039,11 +2058,9 @@ msgid ""
 "to understand what they say. If you start with the attitude that you want to "
 "have the Lord sow his word in your heart He will not disappoint you."
 msgstr ""
-"Es la esperanza del equipo &bibletime; que este Cómo provoque a los lectores a "
-"estudiar las Escrituras para ver lo que dicen. Esta guía de estudio en "
+"Es la esperanza del equipo &bibletime; que este Cómo provoque a los lectores "
+"a estudiar las Escrituras para ver lo que dicen. Esta guía de estudio en "
 "particular ha sido elegido, ya que se cuida de no apoyar ninguna doctrina "
 "confesional particular. Le recomendamos leer y estudiar las Escrituras para "
-"entender lo que dicen. Si usted inicia con la actitud de querer tener la palabra "
-"del Señor sembrada en su corazón, Él no lo defraudará."
-
-
+"entender lo que dicen. Si usted inicia con la actitud de querer tener la "
+"palabra del Señor sembrada en su corazón, Él no lo defraudará."
