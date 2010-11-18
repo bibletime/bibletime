@@ -27,20 +27,18 @@
 	
 	
 	<!-- TRANS:ROLES_OF_TRANSLATORS -->
-<copyright>
-		<year>2001-2009</year>
-		<holder>&bibletime; teamet (info@bibletime.info)</holder>
-	</copyright>
+<copyright> <year>2001-2009</year> <holder>The team of &bibletime;
+(info@bibletime.info)</holder> </copyright>
 	
 	<legalnotice>
 		<para>
-			Dette dokument var oprindeligt lavet af Hr. Bob Harman og er licenseret 
-under vilkårene af denne licens <link 
-url="http://creativecommons.org/licenses/by-sa/3.0/"> "Creative Commons 
+			Dette dokument var oprindeligt lavet af Hr. Bob Harman og er licenseret
+under vilkårene af denne licens <link
+url="http://creativecommons.org/licenses/by-sa/3.0/"> "Creative Commons
 Attribution-Share Alike"</link>.
 		</para>
 		<para>
-			Skriftsteder er fra Bibelselskabets Autoriserede Bibel fra 1992, med mindre 
+			Skriftsteder er fra Bibelselskabets Autoriserede Bibel fra 1992, med mindre
 andet er indikeret.
 		</para>
 	</legalnotice>
@@ -49,22 +47,22 @@ andet er indikeret.
 		<title>Abstrakt</title>
 		
 		<para>
-			<application>Biblestudie vejledningen</application> er en guide til at 
+			<application>Biblestudie vejledningen</application> er en guide til at
 studere Bibelen.
 		</para>
 		<para>
-			Det er &bibletime; holdets håb, at denne vejledning vil provokere  læserne 
-til at studere skrifterne for at se hvad de siger. Denne studieguide er 
-blevet valgt, fordi den ikke prøver at fremhæve nogen bestemt kirkeretnings 
-doktrin. vi anbefaler dig at læse og studere skriften for at forstå hvad den 
-siger. Hvis du starter med den indstilling at du vil have Herren til at så 
+			Det er &bibletime; holdets håb, at denne vejledning vil provokere  læserne
+til at studere skrifterne for at se hvad de siger. Denne studieguide er
+blevet valgt, fordi den ikke prøver at fremhæve nogen bestemt kirkeretnings
+doktrin. vi anbefaler dig at læse og studere skriften for at forstå hvad den
+siger. Hvis du starter med den indstilling at du vil have Herren til at så
 hans ord i dit hjerte, så vil han ikke skuffe dig.
 		</para>
 	</abstract>
 	
 	<keywordset>
 		<keyword>Bible</keyword>
-		<keyword>Study</keyword>
+		<keyword>Studér</keyword>
 		<keyword>HowTo</keyword>
 	</keywordset>
 

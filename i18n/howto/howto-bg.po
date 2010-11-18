@@ -13,6 +13,7 @@ msgstr ""
 "PO-Revision-Date: 2003-12-28 14:05+0200\n"
 "Last-Translator: Andrew Ivanov <linux_ready@yahoo.com>\n"
 "Language-Team: Bulgarian\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: application/x-xml2pot; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1344,7 +1345,6 @@ msgstr ""
 "\" (Зодиатес стр. 851)"
 
 #: docs/howto/en/docbook/howto-interpretation.docbook:62
-#, fuzzy
 msgid "Cross-references for aleipho:"
 msgstr ""
 
@@ -1371,7 +1371,6 @@ msgid ""
 msgstr ""
 
 #: docs/howto/en/docbook/howto-interpretation.docbook:72
-#, fuzzy
 msgid "Cross-references of chrio:"
 msgstr ""
 
