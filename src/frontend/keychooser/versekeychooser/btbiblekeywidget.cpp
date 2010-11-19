@@ -73,9 +73,6 @@ BtBibleKeyWidget::BtBibleKeyWidget(const CSwordBibleModuleInfo *mod,
     setFocusProxy(m_textbox);
     m_textbox->setContentsMargins(0, 0, 0, 0);
 
-    setKey(key);    // The order of these two functions is important.
-    setModule();
-
     m_chapterScroller = new CScrollerWidgetSet(this);
     m_verseScroller = new CScrollerWidgetSet(this);
 
@@ -144,6 +141,9 @@ BtBibleKeyWidget::BtBibleKeyWidget(const CSwordBibleModuleInfo *mod,
     connect(m_verseScroller, SIGNAL(scroller_released()), SLOT(slotUpdateUnlock()));
     bool ok = connect(m_key->signaler(), SIGNAL(changed()), this, SLOT(updateText()));
     Q_ASSERT(ok);
+
+    setKey(key);    // The order of these two functions is important.
+    setModule();
 }
 
 BtBibleKeyWidget::~BtBibleKeyWidget() {
