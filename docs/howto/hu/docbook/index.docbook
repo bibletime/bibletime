@@ -27,20 +27,18 @@
 	
 	
 	<!-- TRANS:ROLES_OF_TRANSLATORS -->
-<copyright>
-		<year>2001-2009</year>
-		<holder>A &bibletime; csapat (info@bibletime.info)</holder>
-	</copyright>
+<copyright> <year>2001-2009</year> <holder>The team of &bibletime;
+(info@bibletime.info)</holder> </copyright>
 	
 	<legalnotice>
 		<para>
-			Ezt a dokumentumot eredetileg Mr. Bob Harman készítette, és a <link 
-url="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons 
-Attribution-Share Alike"</link> felhasználási feltételei szerint 
+			Ezt a dokumentumot eredetileg Mr. Bob Harman készítette, és a <link
+url="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons
+Attribution-Share Alike"</link> felhasználási feltételei szerint
 licenszelte. A magyar fordítást Novák Géza készítette.
 		</para>
 		<para>
-			Az idézetek a Károli Gáspár -féle Bibliából származnak, kivéve a külön 
+			Az idézetek a Károli Gáspár -féle Bibliából származnak, kivéve a külön
 jelzettek.
 		</para>
 	</legalnotice>
@@ -49,23 +47,23 @@ jelzettek.
 		<title>Vázlat</title>
 		
 		<para>
-			A <application>Hogyan tanulmányozza a Bibliát</application> egy vezérfonal a 
+			A <application>Hogyan tanulmányozza a Bibliát</application> egy vezérfonal a
 biblia tanulmányozásához
 		</para>
 		<para>
-			A &bibletime; csapat reménysége, hogy ez a "hogyan" provokálja olvasóit az 
-írások tanulmányozására, hogy meglássák, mit is mondanak. Ez a különleges 
-útmutató azért lett kiválasztva, mert vigyáz arra, hogy ne támogasson 
-semmilyen egyedi felekezeti tanítást. Azt javasoljuk, olvassa és 
-tanulmányozza az írásokat, hogy a mondandójukat megértse. Ha úgy kezd hozzá, 
-hogy kívánja, hogy az Úr vesse szavát az ön szívébe, Ő nem fog csalódást 
+			A &bibletime; csapat reménysége, hogy ez a "hogyan" provokálja olvasóit az
+írások tanulmányozására, hogy meglássák, mit is mondanak. Ez a különleges
+útmutató azért lett kiválasztva, mert vigyáz arra, hogy ne támogasson
+semmilyen egyedi felekezeti tanítást. Azt javasoljuk, olvassa és
+tanulmányozza az írásokat, hogy a mondandójukat megértse. Ha úgy kezd hozzá,
+hogy kívánja, hogy az Úr vesse szavát az ön szívébe, Ő nem fog csalódást
 okozni. 
 		</para>
 	</abstract>
 	
 	<keywordset>
 		<keyword>Bible</keyword>
-		<keyword>Study</keyword>
+		<keyword>Tanulmányozni</keyword>
 		<keyword>HowTo</keyword>
 	</keywordset>
 
