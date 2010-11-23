@@ -6,7 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: howto(2)\n"
-"POT-Creation-Date: 2009-04-21 12:33-0400\n"
+"Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
+"POT-Creation-Date: 2010-11-22 23:08-0500\n"
 "PO-Revision-Date: 2009-08-09 21:36+0200\n"
 "Last-Translator: \n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -17,21 +18,25 @@ msgstr ""
 "X-Generator: Lokalize 1.0\n"
 
 # type: Content of: <chapter><title>
+#. type: Content of: <chapter><title>
 #: docs/howto/en/docbook/howto-basics.docbook:1
 msgid "Bible Study Basics"
 msgstr ""
 
 # type: Content of: <chapter><sect1><title>
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:4
 msgid "Our Purpose as we Approach the Bible"
 msgstr "Vores formål når vi nærmer os Bibelen"
 
 # type: Content of: <chapter><sect1><para><blockquote><attribution>
+#. type: Content of: <chapter><sect1><para><blockquote><attribution>
 #: docs/howto/en/docbook/howto-basics.docbook:6
 msgid "Jn.5:39-40"
 msgstr "Joh.5:39-40 (Bibelen på hverdagsdansk)"
 
 # type: Content of: <chapter><sect1><para><blockquote><para>
+#. type: Content of: <chapter><sect1><para><blockquote><para>
 #: docs/howto/en/docbook/howto-basics.docbook:6
 msgid ""
 "You search the Scriptures, because you think that in them you have eternal "
@@ -43,6 +48,7 @@ msgstr ""
 "liv."
 
 # type: Content of: <chapter><sect1><para>
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-basics.docbook:12
 msgid ""
 "The chief purpose of the book is to bring us to the Person.  Martin Luther "
@@ -55,6 +61,7 @@ msgstr ""
 "have fællesskab med Gud."
 
 # type: Content of: <chapter><sect1><blockquote><attribution>
+#. type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-basics.docbook:17
 msgid ""
 "John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, "
@@ -64,6 +71,7 @@ msgstr ""
 "InterVarsity Press 1978, pp.97, 104."
 
 # type: Content of: <chapter><sect1><blockquote><para>
+#. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-basics.docbook:19
 msgid ""
 "The Jews to whom Jesus spoke [...] imagined that to possess Scripture was "
@@ -79,6 +87,7 @@ msgstr ""
 "bitterligt bedraget. [...]"
 
 # type: Content of: <chapter><sect1><blockquote><para>
+#. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-basics.docbook:24
 msgid ""
 "There is neither merit nor profit in the reading of Scripture for its own "
@@ -92,11 +101,13 @@ msgstr ""
 "må møde Kristus."
 
 # type: Content of: <chapter><sect1><title>
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:31
 msgid "Approaches to God's Word"
 msgstr "Tilgange til Guds Ord"
 
 # type: Content of: <chapter><sect1><para>
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-basics.docbook:32
 msgid ""
 "Hearing and reading provide a telescopic view of the scripture while study "
@@ -110,11 +121,13 @@ msgstr ""
 "sind."
 
 # type: Content of: <chapter><sect1><sect2><title>
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:37
 msgid "Hear"
 msgstr "Hør"
 
 # type: Content of: <chapter><sect1><sect2><para>
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:38
 msgid ""
 "Lk.11:28 <quote>blessed are those who hear the word of God, and observe it.</"
@@ -123,11 +136,13 @@ msgstr ""
 "Luk.11:28 <quote>Salige er de, som hører Guds ord og bevarer det!</quote>"
 
 # type: Content of: <chapter><sect1><sect2><title>
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:42
 msgid "Read"
 msgstr "Læs"
 
 # type: Content of: <chapter><sect1><sect2><para>
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:43
 msgid ""
 "Rev.1:3 <quote>Blessed is he who reads and those who hear the words of this "
@@ -137,6 +152,7 @@ msgstr ""
 "[...]</quote>"
 
 # type: Content of: <chapter><sect1><sect2><para>
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:45
 msgid ""
 "1 Tim.4:13 <quote>give attention to the public reading of Scripture [...]</"
@@ -146,11 +162,14 @@ msgstr ""
 "[...]</quote>"
 
 # type: Content of: <chapter><sect1><sect2><title>
+#. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/howto/en/docbook/howto-basics.docbook:49
+#: docs/howto/en/docbook/index.docbook:65
 msgid "Study"
 msgstr "Studér"
 
 # type: Content of: <chapter><sect1><sect2><para>
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:50
 msgid ""
 "Acts 17:11 <quote>Now these were more noble-minded than those in "
@@ -162,6 +181,7 @@ msgstr ""
 "Skrifterne for at se, om det forholdt sig sådan.</quote>"
 
 # type: Content of: <chapter><sect1><sect2><para>
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:54
 msgid ""
 "2 Tim.2:15 <quote>Be diligent [KJV `Study'] to present yourself approved to "
@@ -172,11 +192,13 @@ msgstr ""
 "ikke behøver at skamme sig, men som går lige på med sandhedens ord.</quote>"
 
 # type: Content of: <chapter><sect1><sect2><title>
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:59
 msgid "Memorize"
 msgstr "Lær uden ad"
 
 # type: Content of: <chapter><sect1><sect2><para>
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:60
 msgid ""
 "Ps.119:11 <quote>Thy word I have hid in my heart, that I may not sin against "
@@ -186,11 +208,13 @@ msgstr ""
 "quote>"
 
 # type: Content of: <chapter><sect1><sect2><title>
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:64
 msgid "Meditate"
 msgstr "Meditér"
 
 # type: Content of: <chapter><sect1><sect2><para>
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:65
 msgid ""
 "Ps.1:2-3 <quote>But his delight is in the law of the Lord, And in His law he "
@@ -204,6 +228,7 @@ msgstr ""
 "quote>"
 
 # type: Content of: <chapter><sect1><sect2><para>
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:71
 msgid ""
 "The Navigators illustrate this by saying that as the thumb can touch all the "
@@ -219,16 +244,19 @@ msgstr ""
 "de bliver mere bekendte med Bibelens samlede budskab."
 
 # type: Content of: <chapter><sect1><title>
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:79
 msgid "Types of Bible Studies"
 msgstr "Typer af bibelstudie"
 
 # type: Content of: <chapter><sect1><sect2><title>
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:80
 msgid "Topical Study"
 msgstr "Emne Studie"
 
 # type: Content of: <chapter><sect1><sect2><para>
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:81
 msgid ""
 "Pick out a certain topic and follow it through, using cross-references or a "
@@ -238,37 +266,44 @@ msgstr ""
 "bibelordbog."
 
 # type: Content of: <chapter><sect1><sect2><title>
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:85
 msgid "Character Study"
 msgstr "Person Studie"
 
 # type: Content of: <chapter><sect1><sect2><para>
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:86
 msgid ""
 "Studying the life of a Bible character, e.g. Joseph's life in Gen.37-50."
 msgstr "At studere en bibelsk persons liv, f.eks. Josefs liv i 1. Mos.37-50."
 
 # type: Content of: <chapter><sect1><sect2><title>
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:90
 msgid "Expository Study"
 msgstr "Forklarende studie"
 
 # type: Content of: <chapter><sect1><sect2><para>
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:91
 msgid "Studying a certain passage: paragraph, chapter, or book."
 msgstr "Studér er bestemt passage: afsnit, kapitel, eller bog."
 
 # type: Content of: <chapter><sect1><title>
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:95
 msgid "Basics of Correct Interpretation"
 msgstr "Det grundlæggende for korrekt fortolkning"
 
 # type: Content of: <chapter><sect1><sect2><title>
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:97
 msgid "Content"
 msgstr "Indhold"
 
 # type: Content of: <chapter><sect1><sect2><para>
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:98
 msgid ""
 "What does it say? What does it say in the original language? Be careful with "
@@ -278,11 +313,13 @@ msgstr ""
 "forsigtig med definitioner. Læs ikke ind i det den ikke siger."
 
 # type: Content of: <chapter><sect1><sect2><title>
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:102
 msgid "Context"
 msgstr "Sammenhæng"
 
 # type: Content of: <chapter><sect1><sect2><para>
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:103
 msgid ""
 "What do the verses around it say? &quot;Context is king&quot; is the rule -- "
@@ -293,12 +330,14 @@ msgstr ""
 "passagen må give mening i forhold til strukturen af hele passagen og bogen."
 
 # type: Content of: <chapter><section><orderedlist><listitem><formalpara><title>
+#. type: Content of: <chapter><section><orderedlist><listitem><formalpara><title>
 #: docs/howto/en/docbook/howto-basics.docbook:107
 #: docs/howto/en/docbook/howto-interpretation.docbook:26
 msgid "Cross-reference"
 msgstr "Krydsreference"
 
 # type: Content of: <chapter><sect1><sect2><para>
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:108
 msgid ""
 "What do other verses about this subject say through the rest of the Bible? "
@@ -310,11 +349,13 @@ msgstr ""
 "skriftsteder. ææ"
 
 # type: Content of: <chapter><sect1><title>
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:113
 msgid "An Expository Study of Matthew 6:1-18"
 msgstr "Et forklarende studie af Matthæus 6:1-18"
 
 # type: Content of: <chapter><sect1><para>
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-basics.docbook:114
 msgid ""
 "Let's study together Mt.6:1-18.  Read it to yourself, first looking for the "
@@ -325,6 +366,7 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><sect1><orderedlist><listitem><para>
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:119
 msgid "Beware of practicing your righteousness before men to be noticed"
 msgstr ""
@@ -332,6 +374,7 @@ msgstr ""
 "blive set af dem"
 
 # type: Content of: <chapter><sect1><para>
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-basics.docbook:122
 msgid ""
 "What does <quote>practicing your righteousness</quote> mean? Does the "
@@ -340,22 +383,25 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><sect1><orderedlist><listitem><para>
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:126
-#: docs/howto/en/docbook/howto-basics.docbook:135
 msgid "When you give"
 msgstr "Når du giver"
 
 # type: Content of: <chapter><sect1><orderedlist><listitem><para>
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:127
 msgid "When you fast"
 msgstr "Når du faster"
 
 # type: Content of: <chapter><sect1><orderedlist><listitem><para>
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:128
 msgid "When you pray"
 msgstr "Når du beder"
 
 # type: Content of: <chapter><sect1><para>
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-basics.docbook:131
 msgid ""
 "Now fill in the outline with specific instructions of how to avoid wrong "
@@ -363,6 +409,7 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:137
 msgid ""
 "don't sound a trumpet.  (how might someone <quote>sound a trumpet</quote> "
@@ -370,66 +417,83 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:138
 msgid "do it secretly."
 msgstr "gør det i det skjulte."
 
 # type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:139
 msgid "etc."
 msgstr "osv."
 
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
+#: docs/howto/en/docbook/howto-basics.docbook:135
+msgid "When you give <placeholder type=\"orderedlist\" id=\"0\"/>"
+msgstr ""
+
 # type: Content of: <chapter><sect1><title>
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:145
 msgid "Worksheet: How to Use a Concordance"
 msgstr "Arbejdsark: Hvordan man bruger en konkordans"
 
 # type: Content of: <chapter><sect1><sect2><title>
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:147
 msgid "To Find a Particular Verse"
 msgstr "At finde et bestemt vers"
 
 # type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:149
 msgid "Pick out a key word or most-unusual word of the verse."
 msgstr "Vælg et nøgleord eller det mest usædvanelige ord i verset."
 
 # type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:150
 msgid "Turn to this word alphabetically."
 msgstr "Slå ordet op alfabetisk."
 
 # type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:151
 msgid "Go down the column of listings until you find your verse."
 msgstr ""
 
-# type: Content of: <chapter><sect1><sect2><para>
-#: docs/howto/en/docbook/howto-basics.docbook:154
-msgid "Find these verses:"
-msgstr "Find disse vers:"
-
 # type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:156
 msgid "<quote>Faithful are the wounds of a friend</quote>"
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:157
 msgid "<quote>We are ambassadors of Christ.</quote>"
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:158
 msgid "The story of the rich man and Lazarus."
 msgstr "Historien om den rige mand og Lazarus."
 
+#. type: Content of: <chapter><sect1><sect2><para>
+#: docs/howto/en/docbook/howto-basics.docbook:154
+msgid "Find these verses: <placeholder type=\"orderedlist\" id=\"0\"/>"
+msgstr ""
+
 # type: Content of: <chapter><sect1><sect2><title>
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:163
 msgid "To Do a Topical Study"
 msgstr "At lave et emnestudie"
 
 # type: Content of: <chapter><sect1><sect2><para>
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:164
 msgid ""
 "Let's say you wanted to do a study of the word &quot;redemption.&quot; First "
@@ -440,11 +504,13 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><title>
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:170
 msgid "To Clarify Word Meanings in the Greek and Hebrew"
 msgstr "At Klargøre Ords Betydninger på Græsk og Hebraisk"
 
 # type: Content of: <chapter><sect1><sect2><para>
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:171
 msgid ""
 "What if you noticed a contradiction in the KJV between Mt.7:1 <quote>Judge "
@@ -455,11 +521,13 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:175
 msgid "Look up &quot;judge&quot;."
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:176
 msgid ""
 "Go down the column of entries to Mt.7:1.  To the right is a number, 2919.  "
@@ -467,16 +535,19 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:178
 msgid "Now look up &quot;judgeth&quot;."
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:179
 msgid "Go down the column to 1 Cor.2:15 . . . . . 350."
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:180
 msgid ""
 "Turn in the back to the Greek dictionary.  (Remember, you're in the NT so "
@@ -485,11 +556,13 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><title>
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:185
 msgid "To Find Meanings of Names"
 msgstr "At Finde Betydningen af Navne"
 
 # type: Content of: <chapter><sect1><sect2><para>
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:186
 msgid ""
 "By the same process we can find the meaning of a name in the Greek or Hebrew."
@@ -498,36 +571,43 @@ msgstr ""
 "hebraisk."
 
 # type: Content of: <chapter><sect1><sect2><para>
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:187
 msgid "Look up these names and write down their meaning:"
 msgstr "Slå de følgende navne op og skriv deres betydning ned:"
 
 # type: Content of: <chapter><sect1><sect2><itemizedlist><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:189
 msgid "Nabal"
 msgstr "Nabal"
 
 # type: Content of: <chapter><sect1><sect2><itemizedlist><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:190
 msgid "Abigail"
 msgstr "Abigajil"
 
 # type: Content of: <chapter><sect1><sect2><itemizedlist><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:191
 msgid "Joshua"
 msgstr "Josva"
 
 # type: Content of: <chapter><sect1><sect2><itemizedlist><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:192
 msgid "Barnabus"
 msgstr "Barnabas"
 
 # type: Content of: <chapter><title>
+#. type: Content of: <chapter><title>
 #: docs/howto/en/docbook/howto-importance.docbook:1
 msgid "Importance of God's Word"
 msgstr "Vigtigheden af Guds Ord"
 
 # type: Content of: <chapter><para>
+#. type: Content of: <chapter><para>
 #: docs/howto/en/docbook/howto-importance.docbook:2
 msgid ""
 "Understanding God's word is of great importance to all who call on God's "
@@ -538,16 +618,19 @@ msgstr ""
 "af Bibelen er en af de primære måder hvorpå vi lærer at kommunikere med Gud."
 
 # type: Content of: <chapter><sect1><title>
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:6
 msgid "A Book that is Unique"
 msgstr "En Bog der er Unik"
 
 # type: Content of: <chapter><sect1><para>
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:7
 msgid "The Bible stands alone in many ways.  It is unique in:"
 msgstr "Bibelen er overlegen på mange punkter. Den er unik med hensyn til:"
 
 # type: Content of: <chapter><sect1><itemizedlist><listitem><para>
+#. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:12
 msgid ""
 "popularity.  Bible sales in North America: more than $500 million per year. "
@@ -557,6 +640,7 @@ msgstr ""
 "året. Bibelen er både den meste solgte bog til alle tider og fra år til år!"
 
 # type: Content of: <chapter><sect1><itemizedlist><listitem><para>
+#. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:18
 msgid ""
 "authorship.  It was written over a period of 1600 years by 40 different "
@@ -567,6 +651,7 @@ msgstr ""
 "den var skrevet af en."
 
 # type: Content of: <chapter><sect1><itemizedlist><listitem><para>
+#. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:24
 msgid ""
 "preservation.  F. F. Bruce in <emphasis>Are New Testament Documents Reliable?"
@@ -576,6 +661,7 @@ msgstr ""
 "sammenligner F. F. Bruce Det Nye Testamente med andre old-tekster: "
 
 # type: Content of: <chapter><sect1><table><title>
+#. type: Content of: <chapter><sect1><table><title>
 #: docs/howto/en/docbook/howto-importance.docbook:30
 msgid "Comparison of New Testament manuscripts with other ancient texts."
 msgstr ""
@@ -583,41 +669,49 @@ msgstr ""
 "tekster."
 
 # type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:34
 msgid "Work"
 msgstr "Værk"
 
 # type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:35
 msgid "When Written"
 msgstr "Blev skrevet"
 
 # type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:36
 msgid "Earliest Copy"
 msgstr "Første Kopi"
 
 # type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:37
 msgid "Time Lapse"
 msgstr "Tidsforløb"
 
 # type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:37
 msgid "Number of Copies"
 msgstr "Antal Kopier"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:41
 msgid "Herodotus"
 msgstr "Herodotus"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:42
 msgid "448-428 B.C."
 msgstr "448-428 f.kr."
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:42
 #: docs/howto/en/docbook/howto-importance.docbook:52
 #: docs/howto/en/docbook/howto-importance.docbook:57
@@ -625,102 +719,122 @@ msgid "900 A.D."
 msgstr "900 e.kr."
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:43
 msgid "1300 years"
 msgstr "1300 år"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:43
 msgid "8"
 msgstr "8"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:46
 msgid "Tacitus"
 msgstr "Tacitus"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:47
 msgid "100 A.D."
 msgstr "100 e.kr."
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:47
 msgid "1100 A.D."
 msgstr "110 e.kr."
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:48
 msgid "1000 years"
 msgstr "1000 år"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:48
 #: docs/howto/en/docbook/howto-importance.docbook:58
 msgid "20"
 msgstr "20"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:51
 msgid "Caesar's <emphasis>Gallic War</emphasis>"
 msgstr "Caesar's <emphasis>Galliske Krig</emphasis>"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:52
 msgid "50-58 B.C."
 msgstr "80-58 f.kr."
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:53
 msgid "950 years"
 msgstr "950 år"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:53
 msgid "10"
 msgstr "10"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:56
 msgid "Livy's <emphasis>Roman History</emphasis>"
 msgstr "Livy's <emphasis>Roms historie</emphasis>"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:57
 msgid "59 B.C. - 17 A.D."
 msgstr "59 f.kr. - 17 e.kr."
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:58
 msgid "900 years"
 msgstr "900 år"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:61
 msgid "New Testament"
 msgstr "Det nye testamente"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:62
 msgid "40 A.D. - 100 A.D."
 msgstr "40 e.kr. - 100 e.kr."
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:62
 msgid "130 A.D. Partial manuscripts 350 A.D. Full manuscripts"
 msgstr "130 e.kr. Delvise manuskripter 350 e.kr. Hele manuskripter"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:63
 msgid "30 - 310 years"
 msgstr "30 - 310 år"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:63
 msgid "5000 Greek &amp; 10,000 Latin"
 msgstr "5000 Græske &amp; 10,000 på Latin"
 
 # type: Content of: <chapter><sect1><para>
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:66
 msgid ""
 "Ten copies of Caesar's <emphasis>Gallic War</emphasis> exist, the earliest "
@@ -732,6 +846,7 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><sect1><blockquote><attribution>
+#. type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-importance.docbook:72
 msgid ""
 "Textual critic F. J. A. Hort, \"The New Testament in the Original Greek\", "
@@ -743,6 +858,7 @@ msgstr ""
 "p.  25-26"
 
 # type: Content of: <chapter><sect1><blockquote><para>
+#. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:74
 msgid ""
 "\"In the verity and fullness of the evidence on which it rests, the text of "
@@ -754,11 +870,13 @@ msgstr ""
 "oldhistoriske prosa.\""
 
 # type: Content of: <chapter><sect1><title>
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:79
 msgid "A Book that God Breathed"
 msgstr "En bog Gud åndede"
 
 # type: Content of: <chapter><sect1><para>
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:80
 msgid ""
 "<emphasis>Heb.4:12 </emphasis>\"<emphasis>For the word of God is living and "
@@ -770,6 +888,7 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><sect1><para>
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:86
 msgid ""
 "2 Tim.3:16 declares, \"<emphasis>All scripture is inspired by God [lit., God-"
@@ -778,6 +897,7 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><sect1><blockquote><attribution>
+#. type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-importance.docbook:89
 msgid ""
 "John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, "
@@ -787,6 +907,7 @@ msgstr ""
 "InterVarsity Press 1978, pp.93-95"
 
 # type: Content of: <chapter><sect1><blockquote><para>
+#. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:90
 msgid ""
 "He referred to the human authors, but took it for granted that behind them "
@@ -806,6 +927,7 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><sect1><blockquote><para>
+#. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:105
 msgid ""
 "This, then, was Christ's view of the Scriptures.  Their witness was God's "
@@ -815,6 +937,7 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><sect1><para>
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:110
 msgid ""
 "2 Tim.3:16 goes on, \"<emphasis>and profitable for teaching, for correction, "
@@ -831,11 +954,13 @@ msgstr ""
 "og handling."
 
 # type: Content of: <chapter><sect1><title>
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:117
 msgid "A Book that Works"
 msgstr "En Bog der Virker"
 
 # type: Content of: <chapter><sect1><para>
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:119
 msgid ""
 "What will studying the Bible do for you? 1 Thess.2:13 says that the Bible "
@@ -844,26 +969,31 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><sect1><table><title>
+#. type: Content of: <chapter><sect1><table><title>
 #: docs/howto/en/docbook/howto-importance.docbook:125
 msgid "What does Bible study do for Christians?"
 msgstr "Hvad gør bibelsstudie for kristne?"
 
 # type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:129
 msgid "Reference"
 msgstr ""
 
 # type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:130
 msgid "Action"
 msgstr "Handling"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:135
 msgid "Eph. 5:26"
 msgstr "Ef. 5:26"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:137
 msgid ""
 "cleanses -- \"...having cleansed her by the washing of water with the word.\""
@@ -872,11 +1002,13 @@ msgstr ""
 "ordet,\""
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:142
 msgid "Acts 20:32"
 msgstr "ApG 20:32"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:145
 msgid ""
 "builds up -- \" ...the word of His grace, which is able to build you up and "
@@ -886,11 +1018,13 @@ msgstr ""
 "alle dem, der er helliget. \""
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:154
 msgid "Rom. 15:4"
 msgstr "Rom. 15:4"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:157
 msgid ""
 "encourages -- \"that through perseverance and the encouragement of the "
@@ -900,11 +1034,13 @@ msgstr ""
 "os, kan fastholde håbet."
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:164
 msgid "Rom. 10:17"
 msgstr "Rom. 10:17"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:167
 msgid ""
 "gives faith -- \"So faith comes from hearing, and hearing by the word of "
@@ -914,11 +1050,13 @@ msgstr ""
 "kommer i kraft af Kristi ord.\""
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:175
 msgid "1 Cor. 10:11"
 msgstr "1. Kor. 10:11"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:178
 msgid ""
 "instructs -- \"Now these things happened to them for an example, and they "
@@ -928,11 +1066,13 @@ msgstr ""
 "eksempler, og det blev skrevet for at vejlede os\""
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:186
 msgid "Mt. 4:4"
 msgstr "Matt. 4:4"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:189
 msgid ""
 "nourishment -- \"But He answered and said, 'It is written, Man shall not "
@@ -943,11 +1083,13 @@ msgstr ""
 "brød alene, men af hvert ord, der udgår af Guds mund.‹\""
 
 # type: Content of: <chapter><sect1><title>
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:200
 msgid "A Book that Liberates"
 msgstr "En bog som befrier"
 
 # type: Content of: <chapter><sect1><para>
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:202
 msgid ""
 "Jn.8:32 \"<emphasis>and you shall know the truth, and the truth shall make "
@@ -965,6 +1107,7 @@ msgstr ""
 "emphasis>\" "
 
 # type: Content of: <chapter><sect1><para>
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:208
 msgid ""
 "We see that this is a conditional promice, specifically speaking of the "
@@ -974,6 +1117,7 @@ msgstr ""
 "ord."
 
 # type: Content of: <chapter><sect1><para>
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:210
 msgid ""
 "The Greek word for \"wind\" used in Eph.4:14 means a <emphasis>violent wind."
@@ -984,6 +1128,7 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><sect1><para>
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:216
 msgid ""
 "<emphasis>But Jesus answered and said to them, </emphasis>\"<emphasis>You "
@@ -992,81 +1137,97 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><sect1><para>
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:218
 msgid "What 2 things do we need to know to be kept from error?"
 msgstr "Hvilke 2 ting har vi brug for at kende, for at holde os fra fejl?"
 
 # type: Content of: <chapter><sect1><itemizedlist><listitem><para>
+#. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:220
 msgid "God's word"
 msgstr "Guds ord"
 
 # type: Content of: <chapter><sect1><itemizedlist><listitem><para>
+#. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:221
 msgid "God's power"
 msgstr "Guds kraft"
 
 # type: Content of: <chapter><sect1><title>
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:225
 msgid "A Book that Wars"
 msgstr "En Bog som Bekriger"
 
 # type: Content of: <chapter><sect1><para>
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:227
 msgid "Eph.6:10-18 is one picture of our spiritual armament."
 msgstr "Ef.6:10-18 er et billede på vores åndelige udrustning."
 
 # type: Content of: <chapter><sect1><table><title>
+#. type: Content of: <chapter><sect1><table><title>
 #: docs/howto/en/docbook/howto-importance.docbook:229
 msgid "Spiritual Armor"
 msgstr "Åndelig Rustning"
 
 # type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:233
 msgid "Question"
 msgstr "Spørgsmål"
 
 # type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:234
 msgid "Answer"
 msgstr "Svar"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:237
 msgid "How many of the weapons listed here are defensive weapons?"
 msgstr "Hvor mange af de våben der er opremset her er defensive våben?"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:237
 msgid "5"
 msgstr "5"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:238
 msgid "How many are offensive?"
 msgstr "Hvor mange er offensive?"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:238
 msgid "One"
 msgstr "Et"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:239
 msgid "Which one(s)?"
 msgstr "Hvile(t)?"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:239
 msgid "the word - <foreignphrase>rhema</foreignphrase>"
 msgstr "ordet - <foreignphrase>rhema</foreignphrase>"
 
 # type: Content of: <chapter><sect1><title>
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:243
 msgid "Exhortations"
 msgstr "Formaninger"
 
 # type: Content of: <chapter><sect1><para>
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:245
 msgid ""
 "2 Tim.2:15 (KJV) \"<emphasis>Study to show thyself approved unto God, a "
@@ -1079,6 +1240,7 @@ msgstr ""
 "sandheden.</emphasis>\""
 
 # type: Content of: <chapter><sect1><para>
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:249
 msgid ""
 "Col.3:16 \"<emphasis>Let the word of Christ richly dwell within you; with "
@@ -1092,16 +1254,19 @@ msgstr ""
 "hjerte til Guds ære - salmer, hymner og åndelige sange. </emphasis>\""
 
 # type: Content of: <chapter><sect1><para>
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:253
 msgid "If you're rich in something, how much of it do you have?"
 msgstr "Hvis du er rig på noget, hvor meget har du så af det?"
 
 # type: Content of: <chapter><sect1><para>
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:256
 msgid "Not a little!"
 msgstr "Ikke kun en smule!"
 
 # type: Content of: <chapter><sect1><para>
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:259
 msgid ""
 "Eccl.12:11-12 \"<emphasis>The words of wise men are like goads, and masters "
@@ -1116,11 +1281,13 @@ msgstr ""
 "læsning bliver man træt af.</emphasis>\""
 
 # type: Content of: <chapter><sect1><title>
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:265
 msgid "Appendix: \"Once for All\""
 msgstr "Tillæg: \"En gang for alle\""
 
 # type: Content of: <chapter><sect1><blockquote><attribution>
+#. type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-importance.docbook:268
 msgid ""
 "John R. W. Stott, <emphasis>Christ the Controversialist,</emphasis> "
@@ -1130,6 +1297,7 @@ msgstr ""
 "InterVarsity Press 1978, pp.106-107"
 
 # type: Content of: <chapter><sect1><blockquote><para>
+#. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:269
 msgid ""
 "The truth regarding the finality of God's initiative in Christ is conveyed "
@@ -1144,6 +1312,7 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><sect1><blockquote><para>
+#. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:279
 msgid ""
 "Thus we may say that God has spoken once for all and Christ has suffered "
@@ -1158,11 +1327,13 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><sect1><title>
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:290
 msgid "Supplement: Bible Reading Programs"
 msgstr "Supplement: Bibel Læseplaner"
 
 # type: Content of: <chapter><sect1><para>
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:291
 msgid ""
 "Here are some easy programs to systematically read your Bible.  You can do "
@@ -1174,11 +1345,13 @@ msgstr ""
 "eller #2 men #5. Variér programmer fra år til år for at holde det friskt!"
 
 # type: Content of: <chapter><sect1><orderedlist><listitem><para>
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:296
 msgid "New Testament in a Year: read one chapter each day, 5 days a week."
 msgstr "Det Nye Testamente på et År: læs et kapitel hver dag, 5 dage om ugen."
 
 # type: Content of: <chapter><sect1><orderedlist><listitem><para>
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:298
 msgid ""
 "Proverbs in a Month: read one chapter of Proverbs each day, corresponding to "
@@ -1188,6 +1361,7 @@ msgstr ""
 "til dagen på måneden."
 
 # type: Content of: <chapter><sect1><orderedlist><listitem><para>
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:300
 msgid ""
 "Psalms in a Month: read 5 Psalms at intervals of 30 each day, for instance "
@@ -1197,6 +1371,7 @@ msgstr ""
 "eksempel på den 20. læser du Sl. 20, 50, 80, &amp; 140."
 
 # type: Content of: <chapter><sect1><orderedlist><listitem><para>
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:302
 msgid ""
 "Psalms &amp; Proverbs in 6 months: read through Psalms and Proverbs one "
@@ -1206,6 +1381,7 @@ msgstr ""
 "et kapitel om dagen."
 
 # type: Content of: <chapter><sect1><orderedlist><listitem><para>
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:304
 msgid ""
 "Old Testament without Psalms &amp; Proverbs in 2 years: if you read one "
@@ -1218,11 +1394,13 @@ msgstr ""
 "uger."
 
 # type: Content of: <chapter><title>
+#. type: Content of: <chapter><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:1
 msgid "Rules of Bible Interpretation (Hermeneutics)"
 msgstr "Regler for Bibel-tolkning (Hermeneutik)"
 
 # type: Content of: <chapter><para>
+#. type: Content of: <chapter><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:2
 msgid ""
 "We already learned about the \"3 Cs\": content, context, cross-reference.  "
@@ -1240,6 +1418,7 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><para>
+#. type: Content of: <chapter><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:11
 msgid ""
 "How do we go about discovering the intended meaning of a passage? Let's say "
@@ -1248,11 +1427,13 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><section><title>
+#. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:14
 msgid "Rule 1 - Interpret according to the exact meaning of the words."
 msgstr "Regel 1 - Fortolk med hensyn til den nøjagtige betydning af ordene."
 
 # type: Content of: <chapter><section><para>
+#. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:15
 msgid ""
 "The more precise we can be with the exact, original meaning of the words the "
@@ -1264,11 +1445,13 @@ msgstr ""
 "betydning af nøgleordene ved at følge disse trin:"
 
 # type: Content of: <chapter><section><orderedlist><listitem><formalpara><title>
+#. type: Content of: <chapter><section><orderedlist><listitem><formalpara><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:20
 msgid "Definition"
 msgstr "Definition"
 
 # type: Content of: <chapter><section><orderedlist><listitem><formalpara><para>
+#. type: Content of: <chapter><section><orderedlist><listitem><formalpara><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:21
 msgid ""
 "Look up the definition in a Greek or Hebrew dictionary.  For verbs, the verb "
@@ -1276,6 +1459,7 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><section><orderedlist><listitem><formalpara><para>
+#. type: Content of: <chapter><section><orderedlist><listitem><formalpara><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:27
 msgid ""
 "Compare scripture with scripture.  Seeing how the same Greek or Hebrew word "
@@ -1289,11 +1473,13 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><section><section><title>
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:37
 msgid "Example 1A"
 msgstr "Eksempel 1A"
 
 # type: Content of: <chapter><section><section><para>
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:38
 msgid ""
 "Jn.20:17 <emphasis>\"Touch me not\"</emphasis> (KJV) sounds harsh, doesn't "
@@ -1304,6 +1490,7 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><section><section><para>
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:42
 msgid ""
 "Definition: Turning to John 20:17, above the word \"Touch\" we see \"pim680."
@@ -1321,12 +1508,21 @@ msgid ""
 "that is already occuring.  So, what have we found?"
 msgstr ""
 
+#. type: Content of: <chapter><section><section><para>
+#: docs/howto/en/docbook/howto-interpretation.docbook:50
+msgid ""
+"<emphasis>Mary is already clinging to Jesus, and he is saying to stop "
+"holding him!</emphasis>"
+msgstr ""
+
 # type: Content of: <chapter><section><section><title>
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:53
 msgid "Example 1B"
 msgstr "Eksempel 1B"
 
 # type: Content of: <chapter><section><section><para>
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:54
 msgid ""
 "In James 5:14, <emphasis>Elders are told to pray and anoint someone who is "
@@ -1334,6 +1530,7 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><section><section><para>
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:55
 msgid ""
 "Definition of aleipho (218) - \"to oil\" (Strong's); but we also have "
@@ -1346,45 +1543,47 @@ msgid ""
 "\" (Zodhiates p.851)"
 msgstr ""
 
-# type: Content of: <chapter><section><section><itemizedlist><listitem><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:62
-msgid "Cross-references for aleipho:"
-msgstr "Kryds-referencer af aleipho:"
-
 # type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:64
 msgid "Mt.6:17 But you, when you fast, anoint your head"
 msgstr "Matt.6:17 Men når du faster, så salv dit hoved"
 
 # type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:65
 msgid "Mk.16:1 [the women] brought spices that they might come and anoint Him."
 msgstr ""
 "Mark.16.1 købte [kvinderne] vellugtende salver for at gå ud og salve ham."
 
 # type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:66
 msgid ""
 "Mk.6:13 And they were...anointing with oil many sick people and healing them."
 msgstr "Mark.6:13 Og de salvede mange syge med olie og helbredte dem."
 
 # type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:67
 msgid "Lk.7:38 [...] kissing His feet and anointing them with the perfume"
 msgstr "Luk.7:38 [...] hun kyssede hans fødder og salvede dem med olien. "
 
 # type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:68
 msgid ""
 "Jn.12:3 Mary [...] anointed the feet of Jesus, and wiped them with her hair"
 msgstr "Joh.12:3 Maria [...] salvede Jesu fødder og tørrede dem med sit hår"
 
-# type: Content of: <chapter><section><section><itemizedlist><listitem><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:72
-msgid "Cross-references of chrio:"
-msgstr "Kryds-referencer af chrio:"
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para>
+#: docs/howto/en/docbook/howto-interpretation.docbook:62
+msgid ""
+"Cross-references for aleipho: <placeholder type=\"orderedlist\" id=\"0\"/>"
+msgstr ""
 
 # type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:74
 msgid ""
 "Lk.4:18 <quote>The Spirit of the Lord is upon me, because He has anointed me "
@@ -1394,21 +1593,30 @@ msgstr ""
 "til at prædike [...]</quote>"
 
 # type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:75
 msgid "Acts 4:27 Jesus, whom Thou hast anointed"
 msgstr "Ap.G. 4.27 Jesus, som du har salvet "
 
 # type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:76
 msgid "Acts 10:38 God anointed Jesus with the Holy Ghost and power"
 msgstr "ApG. 10:38 Gud salvede Jesus fra Nazaret med Helligånd og kraft"
 
 # type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:77
 msgid "2 Cor.1:21 Now He who...anointed us is God"
 msgstr "2. Kor.1.21 Og den...som salvede os, er Gud"
 
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para>
+#: docs/howto/en/docbook/howto-interpretation.docbook:72
+msgid "Cross-references of chrio: <placeholder type=\"orderedlist\" id=\"0\"/>"
+msgstr ""
+
 # type: Content of: <chapter><section><section><para>
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:82
 msgid ""
 "So what's the difference between aleipho and chrio? Look back over the cross-"
@@ -1418,6 +1626,7 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><section><section><para>
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:85
 msgid ""
 "As an illustration (although the word is not used) of the practical use of "
@@ -1427,6 +1636,7 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><section><section><para>
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:89
 msgid ""
 "Now let's apply what we just learned by this word study to James 5:14 "
@@ -1436,6 +1646,7 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><section><section><para>
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:93
 msgid ""
 "And the tense in Greek, the aorist participle, would be better translated "
@@ -1447,11 +1658,13 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><section><title>
+#. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:103
 msgid "Rule 2 - Interpret within the biblical context"
 msgstr "Regel 2 - Fortolk inden for den bibelske sammenhæng"
 
 # type: Content of: <chapter><section><para>
+#. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:105
 msgid ""
 "Interpret scripture in harmony with other scripture.  What do the verses on "
@@ -1463,11 +1676,13 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><section><section><title>
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:110
 msgid "Example 2A"
 msgstr "Eksempel 2A"
 
 # type: Content of: <chapter><section><section><para>
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:111
 msgid ""
 "In a previous lesson we considered Jn.3:5 <emphasis>\"born of water and the "
@@ -1475,6 +1690,7 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><section><section><para>
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:113
 msgid ""
 "Water baptism is not under discussion here, which would be a big switch from "
@@ -1484,11 +1700,13 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><section><section><title>
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:117
 msgid "Example 2B"
 msgstr "Eksempel 2B"
 
 # type: Content of: <chapter><section><section><para>
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:118
 msgid ""
 "1 Cor.14:34 <quote>Let the women keep silent in the churches</quote> has to "
@@ -1497,11 +1715,13 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><section><section><title>
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:121
 msgid "Example 2C"
 msgstr "Eksempel 2C"
 
 # type: Content of: <chapter><section><section><para>
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:122
 msgid ""
 "Acts 2:38 <quote>And Peter said to them, &quot;Repent, and let each of you "
@@ -1516,11 +1736,13 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><section><title>
+#. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:134
 msgid "Rule 3 - Interpret within the historical and cultural context"
 msgstr "Regel 3 - Fortolk inden for den historiske og kulturelle sammenhæng"
 
 # type: Content of: <chapter><section><para>
+#. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:136
 msgid ""
 "At first we are not asking <quote>What does it mean to me?</quote> but "
@@ -1530,11 +1752,13 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><section><section><title>
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:139
 msgid "Example 3A"
 msgstr "Eksempel 3A"
 
 # type: Content of: <chapter><section><section><para>
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:139
 msgid ""
 "<quote>3 days &amp; 3 nights</quote> (Mt.12:40) have led some to come up "
@@ -1545,6 +1769,7 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><section><section><para>
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:144
 msgid ""
 "We need an historical tidbit: Jews counted any part of a day as a full day, "
@@ -1558,11 +1783,13 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><section><section><title>
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:151
 msgid "Example 3B"
 msgstr "Eksempel 3B"
 
 # type: Content of: <chapter><section><section><para>
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:151
 msgid ""
 "Gen.15:7-21.  The historical context is that cutting animals in two and then "
@@ -1574,12 +1801,14 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><section><title>
+#. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:159
 msgid "Rule 4 - Interpret according to the normal usage of words in language"
 msgstr ""
 "Regel 4 - Fortolk i overensstemmelse med det normale brug af ordene i sprog"
 
 # type: Content of: <chapter><section><para>
+#. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:160
 msgid ""
 "Let literal language be literal and figurative language be figurative.  And "
@@ -1587,16 +1816,19 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><section><section><title>
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:163
 msgid "Example 4A"
 msgstr "Eksempel 4A"
 
 # type: Content of: <chapter><section><section><para>
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:164
 msgid "<quote>evil eye</quote> in Mt.6:23."
 msgstr ""
 
 # type: Content of: <chapter><section><section><para>
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:165
 msgid ""
 "Rule 1, definition of \"evil\" and \"eye\" - no help here.  Rule 2, context: "
@@ -1605,6 +1837,7 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><section><section><para>
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:168
 msgid ""
 "What we have here is a Hebrew idiom, <quote>evil eye</quote>.  Let's look up "
@@ -1616,21 +1849,25 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><section><section><title>
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:174
 msgid "Example 4B"
 msgstr "Eksempel 4B"
 
 # type: Content of: <chapter><section><section><para>
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:175
 msgid "Is.59:1 <quote>The Lord's hand is not short;</quote>"
 msgstr "Es.59:1 <quote>Herrens arm er ikke for kort...</quote>"
 
 # type: Content of: <chapter><section><section><para>
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:176
 msgid "Deut.33:27 <quote>Underneath are the everlasting arms.</quote>"
 msgstr "5. Mos.33:27 <quote>han bærer dig på stærke arme...</quote>"
 
 # type: Content of: <chapter><section><section><para>
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:178
 msgid ""
 "References to body parts of God are used by Latter-Day Saints to prove that "
@@ -1647,6 +1884,7 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><section><title>
+#. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:189
 msgid ""
 "Rule 5 - Understand the purpose of parables and the difference between a "
@@ -1654,6 +1892,7 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><section><para>
+#. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:190
 msgid ""
 "An allegory is: <emphasis>A story where each element has a meaning.</"
@@ -1663,11 +1902,13 @@ msgstr ""
 "emphasis>"
 
 # type: Content of: <chapter><section><para>
+#. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:191
 msgid "Every parable is an allegory, true or false?"
 msgstr "Alle lignelser er en allegori, sandt eller falsk?"
 
 # type: Content of: <chapter><section><para>
+#. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:193
 msgid ""
 "Some parables are allegories, for instance, the parable of the sower is an "
@@ -1679,11 +1920,13 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><section><section><title>
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:198
 msgid "Example 5A"
 msgstr "Eksempel 5A"
 
 # type: Content of: <chapter><section><section><para>
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:199
 msgid ""
 "The parable of the widow with the unrighteous judge in Lk.18:1-8. This story "
@@ -1692,6 +1935,7 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><section><section><para>
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:201
 msgid ""
 "All sorts of violence happens to the meanings: God is reluctant to protect "
@@ -1699,11 +1943,13 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><section><section><title>
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:204
 msgid "Example 5B"
 msgstr "Eksempel 5B"
 
 # type: Content of: <chapter><section><section><para>
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:205
 msgid ""
 "The parable of the unrighteous steward in Lk.16:1-9.  What is the point of "
@@ -1711,6 +1957,7 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><section><section><para>
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:207
 msgid ""
 "The steward is commended for only one thing, his shrewdness in using what he "
@@ -1719,26 +1966,48 @@ msgid ""
 msgstr ""
 
 # type: Content of the bibletime entity
+#. type: Content of the bibletime entity
 #: docs/howto/en/docbook/index.docbook:3
 msgid "<application>BibleTime</application>"
 msgstr "<application>BibleTime</application>"
 
 # type: Content of the kapp entity
+#. type: Content of the kapp entity
 #: docs/howto/en/docbook/index.docbook:4
 msgid "&bibletimehandbook;"
 msgstr "&bibletimehandbook;"
 
 # type: Content of: <book><bookinfo><title>
+#. type: Content of: <book><bookinfo><title>
 #: docs/howto/en/docbook/index.docbook:14
 msgid "The Biblestudy HowTo"
 msgstr "Guiden til Bibelstudie"
 
-# type: Content of: <book><bookinfo><copyright><holder>
-#: docs/howto/en/docbook/index.docbook:31
-msgid "The team of &bibletime; (info@bibletime.info)"
-msgstr "&bibletime; teamet (info@bibletime.info)"
+#. type: Content of: <book><bookinfo><authorgroup><author><firstname>
+#: docs/howto/en/docbook/index.docbook:18
+msgid "Bob"
+msgstr ""
+
+#. type: Content of: <book><bookinfo><authorgroup><author><surname>
+#: docs/howto/en/docbook/index.docbook:19
+msgid "Harman"
+msgstr ""
+
+#. type: Content of: <book><bookinfo><authorgroup><author><surname>
+#: docs/howto/en/docbook/index.docbook:23
+msgid "The BibleTime team"
+msgstr ""
+
+#.  TRANS:ROLES_OF_TRANSLATORS 
+#. type: Content of: <book><bookinfo>
+#: docs/howto/en/docbook/index.docbook:29
+msgid ""
+"<copyright> <year>2001-2009</year> <holder>The team of &bibletime; "
+"(info@bibletime.info)</holder> </copyright>"
+msgstr ""
 
 # type: Content of: <book><bookinfo><legalnotice><para>
+#. type: Content of: <book><bookinfo><legalnotice><para>
 #: docs/howto/en/docbook/index.docbook:36
 msgid ""
 "This document was originally created by Mr. Bob Harman and is licensed under "
@@ -1750,6 +2019,7 @@ msgstr ""
 "licenses/by-sa/3.0/\"> \"Creative Commons Attribution-Share Alike\"</link>."
 
 # type: Content of: <book><bookinfo><legalnotice><para>
+#. type: Content of: <book><bookinfo><legalnotice><para>
 #: docs/howto/en/docbook/index.docbook:42
 msgid ""
 "Scripture quotes are from the New American Standard Bible unless otherwise "
@@ -1759,11 +2029,13 @@ msgstr ""
 "andet er indikeret."
 
 # type: Content of: <book><bookinfo><abstract><title>
+#. type: Content of: <book><bookinfo><abstract><title>
 #: docs/howto/en/docbook/index.docbook:47
 msgid "Abstract"
 msgstr "Abstrakt"
 
 # type: Content of: <book><bookinfo><abstract><para>
+#. type: Content of: <book><bookinfo><abstract><para>
 #: docs/howto/en/docbook/index.docbook:50
 msgid ""
 "The <application>Biblestudy HowTo</application> is a guide for studying the "
@@ -1773,6 +2045,7 @@ msgstr ""
 "studere Bibelen."
 
 # type: Content of: <book><bookinfo><abstract><para>
+#. type: Content of: <book><bookinfo><abstract><para>
 #: docs/howto/en/docbook/index.docbook:53
 msgid ""
 "It is the hope of the &bibletime; team that this HowTo will provoke the "
@@ -1788,3 +2061,29 @@ msgstr ""
 "doktrin. vi anbefaler dig at læse og studere skriften for at forstå hvad den "
 "siger. Hvis du starter med den indstilling at du vil have Herren til at så "
 "hans ord i dit hjerte, så vil han ikke skuffe dig."
+
+#. type: Content of: <book><bookinfo><keywordset><keyword>
+#: docs/howto/en/docbook/index.docbook:64
+msgid "Bible"
+msgstr ""
+
+#. type: Content of: <book><bookinfo><keywordset><keyword>
+#: docs/howto/en/docbook/index.docbook:66
+msgid "HowTo"
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><para>
+#~ msgid "Find these verses:"
+#~ msgstr "Find disse vers:"
+
+# type: Content of: <chapter><section><section><itemizedlist><listitem><para>
+#~ msgid "Cross-references for aleipho:"
+#~ msgstr "Kryds-referencer af aleipho:"
+
+# type: Content of: <chapter><section><section><itemizedlist><listitem><para>
+#~ msgid "Cross-references of chrio:"
+#~ msgstr "Kryds-referencer af chrio:"
+
+# type: Content of: <book><bookinfo><copyright><holder>
+#~ msgid "The team of &bibletime; (info@bibletime.info)"
+#~ msgstr "&bibletime; teamet (info@bibletime.info)"
