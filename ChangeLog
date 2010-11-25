@@ -1,3 +1,6 @@
+2010-11-25 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix main window toolbar key changer to save a modified entry in Personal Commentary
+
 2011-11-19 Jaak Ristioja <ristioja@gmail.com>
     * Fixed a crash caused by indirectly referencing unconstructed fields from
       the constructor of BtBibleKeyWidget.
