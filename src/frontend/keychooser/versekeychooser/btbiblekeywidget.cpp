@@ -240,23 +240,44 @@ void BtBibleKeyWidget::slotUpdateUnlock() {
         emit changed(m_key);
 }
 
-void BtBibleKeyWidget::slotStepBook(int n) {
+void BtBibleKeyWidget::slotStepBook(int offset) {
     emit beforeChange(m_key);
-    n > 0 ? m_key->next( CSwordVerseKey::UseBook ) : m_key->previous( CSwordVerseKey::UseBook );
+
+    if(offset >= 0)
+        for(; offset != 0; offset--)
+            m_key->next( CSwordVerseKey::UseBook );
+    else
+        for(; offset != 0; offset++)
+            m_key->previous( CSwordVerseKey::UseBook );
+
     if (!updatelock)
         emit changed(m_key);
 }
 
-void BtBibleKeyWidget::slotStepChapter(int n) {
+void BtBibleKeyWidget::slotStepChapter(int offset) {
     emit beforeChange(m_key);
-    n > 0 ? m_key->next( CSwordVerseKey::UseChapter ) : m_key->previous( CSwordVerseKey::UseChapter );
+
+    if(offset >= 0)
+        for(; offset != 0; offset--)
+            m_key->next( CSwordVerseKey::UseChapter );
+    else
+        for(; offset != 0; offset++)
+            m_key->previous( CSwordVerseKey::UseChapter );
+
     if (!updatelock)
         emit changed(m_key);
 }
 
-void BtBibleKeyWidget::slotStepVerse(int n) {
+void BtBibleKeyWidget::slotStepVerse(int offset) {
     emit beforeChange(m_key);
-    n > 0 ? m_key->next( CSwordVerseKey::UseVerse ) : m_key->previous( CSwordVerseKey::UseVerse );
+
+    if(offset >= 0)
+        for(; offset != 0; offset--)
+            m_key->next( CSwordVerseKey::UseVerse );
+    else
+        for(; offset != 0; offset++)
+            m_key->previous( CSwordVerseKey::UseVerse );
+
     if (!updatelock)
         emit changed(m_key);
 }
