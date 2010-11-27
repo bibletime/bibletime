@@ -75,6 +75,14 @@ class CScrollButton: public QToolButton {
         * change_requested() signal.
         */
         bool m_isLocked;
+
+        /**
+         * \brief The amount the mouse moved.
+         *
+         * This is saved so high resolution mice can be tracked in a sane manner.
+         * The problem was that for every tiniest movement of the mouse
+         */
+        int m_movement;
 };
 
 #endif
