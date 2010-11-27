@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
-"POT-Creation-Date: 2010-10-26 16:18-0300\n"
-"PO-Revision-Date: 2010-03-15 18:30+0100\n"
+"POT-Creation-Date: 2010-11-22 23:08-0500\n"
+"PO-Revision-Date: 2010-11-16 09:42+0100\n"
 "Last-Translator: \n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
+"X-Generator: Lokalize 1.1\n"
 
 #. type: Content of: <chapter><title>
 #: docs/howto/en/docbook/howto-basics.docbook:1
@@ -399,7 +399,7 @@ msgstr "etc."
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:135
 msgid "When you give <placeholder type=\"orderedlist\" id=\"0\"/>"
-msgstr ""
+msgstr "Quando tu doni <placeholder type=\"orderedlist\" id=\"0\"/>"
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:145
@@ -446,7 +446,7 @@ msgstr "La storia del ricco e Lazzaro."
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:154
 msgid "Find these verses: <placeholder type=\"orderedlist\" id=\"0\"/>"
-msgstr ""
+msgstr "Trova questi versetti <placeholder type=\"orderedlist\" id=\"0\"/>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:163
@@ -1483,6 +1483,8 @@ msgid ""
 "<emphasis>Mary is already clinging to Jesus, and he is saying to stop "
 "holding him!</emphasis>"
 msgstr ""
+"<emphasis>Maria sta già trattenendo Gesù, e lui dice di smetteredi "
+"trattenerlo!</emphasis>"
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:53
@@ -1553,7 +1555,7 @@ msgstr ""
 #: docs/howto/en/docbook/howto-interpretation.docbook:62
 msgid ""
 "Cross-references for aleipho: <placeholder type=\"orderedlist\" id=\"0\"/>"
-msgstr ""
+msgstr "Riferimenti di aleipho: <placeholder type=\"orderedlist\" id=\"0\"/>"
 
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:74
@@ -1585,7 +1587,7 @@ msgstr ""
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:72
 msgid "Cross-references of chrio: <placeholder type=\"orderedlist\" id=\"0\"/>"
-msgstr ""
+msgstr "Riferimenti di chrio: <placeholder type=\"orderedlist\" id=\"0\"/>"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:82
@@ -2030,17 +2032,17 @@ msgstr "HowTo sullo studio della Bibbia"
 #. type: Content of: <book><bookinfo><authorgroup><author><firstname>
 #: docs/howto/en/docbook/index.docbook:18
 msgid "Bob"
-msgstr ""
+msgstr "Bob"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
 #: docs/howto/en/docbook/index.docbook:19
 msgid "Harman"
-msgstr ""
+msgstr "Harman"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
 #: docs/howto/en/docbook/index.docbook:23
 msgid "The BibleTime team"
-msgstr ""
+msgstr "Il team di BibleTime"
 
 #.  TRANS:ROLES_OF_TRANSLATORS 
 #. type: Content of: <book><bookinfo>
@@ -2049,6 +2051,8 @@ msgid ""
 "<copyright> <year>2001-2009</year> <holder>The team of &bibletime; "
 "(info@bibletime.info)</holder> </copyright>"
 msgstr ""
+"<copyright> <year>2001-2009</year> <holder>Il team di &bibletime; "
+"(info@bibletime.info)</holder> </copyright>"
 
 # type: Content of: <book><bookinfo><legalnotice><para>
 #. type: Content of: <book><bookinfo><legalnotice><para>
@@ -2102,12 +2106,12 @@ msgstr ""
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/howto/en/docbook/index.docbook:64
 msgid "Bible"
-msgstr ""
+msgstr "Bibbia"
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/howto/en/docbook/index.docbook:66
 msgid "HowTo"
-msgstr ""
+msgstr "HowTo"
 
 #~ msgid "Find these verses:"
 #~ msgstr "Trova questi versetto:"

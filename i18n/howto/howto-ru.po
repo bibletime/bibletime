@@ -7,28 +7,33 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: full\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-04-21 12:33-0400\n"
+"Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
+"POT-Creation-Date: 2010-11-22 23:08-0500\n"
 "PO-Revision-Date: 2004-05-20 10:58+0300\n"
 "Last-Translator: Vlad Savitsky <vlad_savitsky@mail.ru>\n"
 "Language-Team: russain <ru@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: application/x-xml2pot; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.0.1\n"
 
+#. type: Content of: <chapter><title>
 #: docs/howto/en/docbook/howto-basics.docbook:1
 msgid "Bible Study Basics"
 msgstr "Основы изучения Библии"
 
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:4
 msgid "Our Purpose as we Approach the Bible"
 msgstr "Цель, с которой мы приступаем к изучению Библии "
 
+#. type: Content of: <chapter><sect1><para><blockquote><attribution>
 #: docs/howto/en/docbook/howto-basics.docbook:6
 msgid "Jn.5:39-40"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><para><blockquote><para>
 #: docs/howto/en/docbook/howto-basics.docbook:6
 #, fuzzy
 msgid ""
@@ -40,6 +45,7 @@ msgstr ""
 "жизнь вечную; а они свидетельствуют о Мне. Но вы не хотите придти ко Мне, "
 "чтобы иметь жизнь.\"</emphasis>"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-basics.docbook:12
 #, fuzzy
 msgid ""
@@ -51,6 +57,7 @@ msgstr ""
 "идём к колыбели только ради ребёнка\"; так же и с изучением Библии - мы "
 "делаем это не ради самого изучения, но, чтобы иметь общение с Богом."
 
+#. type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-basics.docbook:17
 msgid ""
 "John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, "
@@ -59,6 +66,7 @@ msgstr ""
 "Джон Р. В. Скотт (John R.W. Stott), <emphasis>Христос - Спорщик (Christ the "
 "Controversialist)</emphasis>, InterVarsity Press 1978, стр.97, 104."
 
+#. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-basics.docbook:19
 #, fuzzy
 msgid ""
@@ -73,6 +81,7 @@ msgstr ""
 "слова Торы, приобрёл себе жизнь мира, грядущего.\" Их изучение было замкнуто "
 "на самом изучении. В этом они тяжко заблуждались..."
 
+#. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-basics.docbook:24
 msgid ""
 "There is neither merit nor profit in the reading of Scripture for its own "
@@ -85,10 +94,12 @@ msgstr ""
 "раз при чтении Библии, необходимо усердное ожидание того, чтобы через чтение "
 "встретиться со Христом."
 
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:31
 msgid "Approaches to God's Word"
 msgstr "Приближение к Слову Божьему"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-basics.docbook:32
 #, fuzzy
 msgid ""
@@ -102,10 +113,12 @@ msgstr ""
 "над Писанием соединяет вместе слышание, чтение, изучение и запоминание. "
 "Размышление закрепляет Слово в нашем уме."
 
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:37
 msgid "Hear"
 msgstr "Слышать"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:38
 #, fuzzy
 msgid ""
@@ -115,10 +128,12 @@ msgstr ""
 "Луки.11:28 <emphasis>\"... блаженны слышащие слово Божие и соблюдающие его."
 "\"</emphasis>"
 
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:42
 msgid "Read"
 msgstr "Читать"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:43
 #, fuzzy
 msgid ""
@@ -128,6 +143,7 @@ msgstr ""
 "Откр.1:3 <emphasis>\"Блажен читающий и слушающие слова пророчества сего..."
 "\"</emphasis>"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:45
 #, fuzzy
 msgid ""
@@ -136,10 +152,13 @@ msgid ""
 msgstr ""
 "1 Тим.4:13 <emphasis>\"Доколе не приду, занимайся чтением...\"</emphasis>"
 
+#. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/howto/en/docbook/howto-basics.docbook:49
+#: docs/howto/en/docbook/index.docbook:65
 msgid "Study"
 msgstr "Изучать"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:50
 #, fuzzy
 msgid ""
@@ -151,6 +170,7 @@ msgstr ""
 "приняли слово со всем усердием, ежедневно разбирая Писания, точно ли это так."
 "\"</emphasis>"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:54
 #, fuzzy
 msgid ""
@@ -162,10 +182,12 @@ msgstr ""
 "`Изучай, чтобы'] представить себя Богу достойным, делателем неукоризненным, "
 "верно преподающим слово истины.\"</emphasis>"
 
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:59
 msgid "Memorize"
 msgstr "Запоминать"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:60
 #, fuzzy
 msgid ""
@@ -175,10 +197,12 @@ msgstr ""
 "Пс.119:11 <emphasis>\"В сердце моем сокрыл я слово Твое, чтобы не грешить "
 "пред Тобою.\"</emphasis>"
 
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:64
 msgid "Meditate"
 msgstr "Размышлять"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:65
 #, fuzzy
 msgid ""
@@ -192,6 +216,7 @@ msgstr ""
 "приносит плод свой во время свое, и лист которого не вянет; и во всем, что "
 "он ни делает, успеет.\"</emphasis>"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:71
 #, fuzzy
 msgid ""
@@ -209,14 +234,17 @@ msgstr ""
 "память. Это так до тех пор, пока они не разберутся хорошо с основной идеей "
 "Библии. "
 
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:79
 msgid "Types of Bible Studies"
 msgstr "Типы изучения Библии"
 
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:80
 msgid "Topical Study"
 msgstr "Тематическое изучение"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:81
 msgid ""
 "Pick out a certain topic and follow it through, using cross-references or a "
@@ -225,32 +253,39 @@ msgstr ""
 "Выберите определённую тему и исследуйте её, используя перекрёстные ссылки "
 "или симфонию."
 
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:85
 msgid "Character Study"
 msgstr "Изучение действующих лиц"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:86
 msgid ""
 "Studying the life of a Bible character, e.g. Joseph's life in Gen.37-50."
 msgstr ""
 "Изучение жизни библейских персонажей, например жизнь Иосифа в Быт.37-50."
 
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:90
 msgid "Expository Study"
 msgstr "Экспозиционное изучение"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:91
 msgid "Studying a certain passage: paragraph, chapter, or book."
 msgstr "Изучение определённого отрывка: параграфа, главы или книги."
 
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:95
 msgid "Basics of Correct Interpretation"
 msgstr "Основы правильного истолкования"
 
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:97
 msgid "Content"
 msgstr "Содержание"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:98
 msgid ""
 "What does it say? What does it say in the original language? Be careful with "
@@ -259,10 +294,12 @@ msgstr ""
 "Что это значит? Что это значит на языке оригинала? Будьте осторожны со "
 "значениями слов. Не ищите в них того, о чём они не говорят."
 
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:102
 msgid "Context"
 msgstr "Контекст"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:103
 #, fuzzy
 msgid ""
@@ -273,11 +310,13 @@ msgstr ""
 "Что говорится в ближайших стихах? Есть правило - \"Главное - контекст\", "
 "отрывок должен иметь смысл в структуре большего отрывка и всей книги."
 
+#. type: Content of: <chapter><section><orderedlist><listitem><formalpara><title>
 #: docs/howto/en/docbook/howto-basics.docbook:107
 #: docs/howto/en/docbook/howto-interpretation.docbook:26
 msgid "Cross-reference"
 msgstr "Перекрёстные ссылки"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:108
 msgid ""
 "What do other verses about this subject say through the rest of the Bible? "
@@ -288,10 +327,12 @@ msgstr ""
 "Себе, поэтому наше истолкование должно выдержать проверку других мест "
 "Писания. "
 
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:113
 msgid "An Expository Study of Matthew 6:1-18"
 msgstr "Экспозиционное изучение отрывка Матфея 6:1-18"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-basics.docbook:114
 #, fuzzy
 msgid ""
@@ -307,10 +348,12 @@ msgstr ""
 "ключевого стиха. Как только вы его нашли, запишите его под римской цифрой "
 "один в вашем конспекте:"
 
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:119
 msgid "Beware of practicing your righteousness before men to be noticed"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-basics.docbook:122
 #, fuzzy
 msgid ""
@@ -322,19 +365,22 @@ msgstr ""
 "либо примеры? Какой сферы нашей жизни это касается? Наших мотивов! Какие "
 "подзаголовки развивают эту мысль?"
 
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:126
-#: docs/howto/en/docbook/howto-basics.docbook:135
 msgid "When you give"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:127
 msgid "When you fast"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:128
 msgid "When you pray"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-basics.docbook:131
 msgid ""
 "Now fill in the outline with specific instructions of how to avoid wrong "
@@ -344,63 +390,81 @@ msgstr ""
 "путей проявления своей праведности:"
 
 # type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:137
 msgid ""
 "don't sound a trumpet.  (how might someone <quote>sound a trumpet</quote> "
 "today?)"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:138
 msgid "do it secretly."
 msgstr ""
 
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:139
 msgid "etc."
 msgstr ""
 
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
+#: docs/howto/en/docbook/howto-basics.docbook:135
+msgid "When you give <placeholder type=\"orderedlist\" id=\"0\"/>"
+msgstr ""
+
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:145
 msgid "Worksheet: How to Use a Concordance"
 msgstr "Рабочий лист: Как пользоваться симфонией"
 
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:147
 msgid "To Find a Particular Verse"
 msgstr "Чтобы найти определённый стих "
 
+#. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:149
 msgid "Pick out a key word or most-unusual word of the verse."
 msgstr "Выберите ключевое слово или наиболее редкое слово в стихе."
 
+#. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:150
 msgid "Turn to this word alphabetically."
 msgstr "Найдите это слово по алфавиту."
 
+#. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:151
 msgid "Go down the column of listings until you find your verse."
 msgstr "Просмотрите колонку списка и найдите нужный вам стих."
 
-#: docs/howto/en/docbook/howto-basics.docbook:154
-#, fuzzy
-msgid "Find these verses:"
-msgstr "Пресса о нас"
-
 # type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:156
 msgid "<quote>Faithful are the wounds of a friend</quote>"
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:157
 msgid "<quote>We are ambassadors of Christ.</quote>"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:158
 msgid "The story of the rich man and Lazarus."
 msgstr ""
 
+#. type: Content of: <chapter><sect1><sect2><para>
+#: docs/howto/en/docbook/howto-basics.docbook:154
+msgid "Find these verses: <placeholder type=\"orderedlist\" id=\"0\"/>"
+msgstr ""
+
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:163
 msgid "To Do a Topical Study"
 msgstr "Чтобы сделать тематическое исследование"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:164
 #, fuzzy
 msgid ""
@@ -416,10 +480,12 @@ msgstr ""
 "напр. \"искупать\", \"искупленный\", \"выкуп\", и даже \"покупать\" или "
 "\"купил\"."
 
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:170
 msgid "To Clarify Word Meanings in the Greek and Hebrew"
 msgstr "Чтобы выяснить значение слова в греческом или еврейском языке"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:171
 #, fuzzy
 msgid ""
@@ -434,11 +500,13 @@ msgstr ""
 "греческих слова были переведены на русский одним словом \"судить\"? (Мы "
 "используем Словари Стронга здесь и далее)."
 
+#. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:175
 #, fuzzy
 msgid "Look up &quot;judge&quot;."
 msgstr "Найдите \"судить\"."
 
+#. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:176
 #, fuzzy
 msgid ""
@@ -448,15 +516,18 @@ msgstr ""
 "Просмотрите колонку записей и найдите Мтф.7:1. Справа число - 2919. Оно "
 "ссылается на использованное греческое слово. Запишите его. "
 
+#. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:178
 #, fuzzy
 msgid "Now look up &quot;judgeth&quot;."
 msgstr "Теперь найдите \"судимы\"."
 
+#. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:179
 msgid "Go down the column to 1 Cor.2:15 . . . . . 350."
 msgstr "Найдите в колонке 1 Кор.2:15 . . . . . 350."
 
+#. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:180
 #, fuzzy
 msgid ""
@@ -468,10 +539,12 @@ msgstr ""
 "поэтому язык греческий; для Ветхого Завета - еврейский). Сравните значение "
 "2919 со значением 350. Вот и ответ!"
 
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:185
 msgid "To Find Meanings of Names"
 msgstr "Чтобы найти значения имён"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:186
 msgid ""
 "By the same process we can find the meaning of a name in the Greek or Hebrew."
@@ -479,30 +552,37 @@ msgstr ""
 "Таким же образом мы можем найти значение имени в греческом или еврейском "
 "языке."
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:187
 msgid "Look up these names and write down their meaning:"
 msgstr "Найдите эти имена и запишите их значения:"
 
+#. type: Content of: <chapter><sect1><sect2><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:189
 msgid "Nabal"
 msgstr "Навал (Nabal)"
 
+#. type: Content of: <chapter><sect1><sect2><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:190
 msgid "Abigail"
 msgstr "Авигея (Abigail)"
 
+#. type: Content of: <chapter><sect1><sect2><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:191
 msgid "Joshua"
 msgstr "Иисус Навин (Joshua)"
 
+#. type: Content of: <chapter><sect1><sect2><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:192
 msgid "Barnabus"
 msgstr "Варнава (Barnabus)"
 
+#. type: Content of: <chapter><title>
 #: docs/howto/en/docbook/howto-importance.docbook:1
 msgid "Importance of God's Word"
 msgstr "Важность Слова Божьего"
 
+#. type: Content of: <chapter><para>
 #: docs/howto/en/docbook/howto-importance.docbook:2
 #, fuzzy
 msgid ""
@@ -514,10 +594,12 @@ msgstr ""
 "Изучение Библии - один из основных способов, которым мы учимся общаться с "
 "Богом. "
 
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:6
 msgid "A Book that is Unique"
 msgstr "Уникальная Книга"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:7
 #, fuzzy
 msgid "The Bible stands alone in many ways.  It is unique in:"
@@ -525,6 +607,7 @@ msgstr ""
 "Библия во многих смыслах занимает особое положение. Она уникальна в "
 "отношении:"
 
+#. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:12
 #, fuzzy
 msgid ""
@@ -534,6 +617,7 @@ msgstr ""
 "популярности. В Северной Америке продаётся Библий более чем на 500 миллионов "
 "долларов в год. Библия является постоянным и ежегодным бестселлером! "
 
+#. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:18
 #, fuzzy
 msgid ""
@@ -543,6 +627,7 @@ msgstr ""
 "авторства. Её писали на протяжении более 1600 лет 40 разных авторов из "
 "разных слоёв общества, но читается она как написанная одним. "
 
+#. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:24
 #, fuzzy
 msgid ""
@@ -553,124 +638,153 @@ msgstr ""
 "документам Нового Завета?\" (\"Are New Testament Documents Reliable?\")</"
 "emphasis> сравнивает новозаветние писания с другими древними текстами: "
 
+#. type: Content of: <chapter><sect1><table><title>
 #: docs/howto/en/docbook/howto-importance.docbook:30
 msgid "Comparison of New Testament manuscripts with other ancient texts."
 msgstr "Сравнение новозаветних Писаний с другими древними текстами."
 
+#. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:34
 msgid "Work"
 msgstr "Труд"
 
+#. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:35
 msgid "When Written"
 msgstr "Когда написаны"
 
+#. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:36
 msgid "Earliest Copy"
 msgstr "Самые ранние копии"
 
+#. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:37
 msgid "Time Lapse"
 msgstr "Промежуток времени"
 
+#. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:37
 msgid "Number of Copies"
 msgstr "Число копий"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:41
 msgid "Herodotus"
 msgstr "Геродот"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:42
 msgid "448-428 B.C."
 msgstr "448-428 г.г. до н.э."
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:42
 #: docs/howto/en/docbook/howto-importance.docbook:52
 #: docs/howto/en/docbook/howto-importance.docbook:57
 msgid "900 A.D."
 msgstr "900 г. н.э."
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:43
 msgid "1300 years"
 msgstr "1300 лет"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:43
 msgid "8"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:46
 msgid "Tacitus"
 msgstr "Тацит"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:47
 msgid "100 A.D."
 msgstr "100 г. н.э."
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:47
 msgid "1100 A.D."
 msgstr "1100 г. н.э."
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:48
 msgid "1000 years"
 msgstr "1000 лет"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:48
 #: docs/howto/en/docbook/howto-importance.docbook:58
 msgid "20"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:51
 msgid "Caesar's <emphasis>Gallic War</emphasis>"
 msgstr "Цезарь <emphasis>\"Галльские войны\"</emphasis>"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:52
 msgid "50-58 B.C."
 msgstr "50-58 г. до н.э."
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:53
 msgid "950 years"
 msgstr "950 лет"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:53
 msgid "10"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:56
 msgid "Livy's <emphasis>Roman History</emphasis>"
 msgstr "Ливий <emphasis>\"Римская история\"</emphasis>"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:57
 msgid "59 B.C. - 17 A.D."
 msgstr "59 г. до н.э. - 17 г. н.э."
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:58
 msgid "900 years"
 msgstr "900 лет"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:61
 msgid "New Testament"
 msgstr "Новый Завет"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:62
 msgid "40 A.D. - 100 A.D."
 msgstr "40 г. н.э. - 100 г. н.э."
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:62
 msgid "130 A.D. Partial manuscripts 350 A.D. Full manuscripts"
 msgstr "130 г. н.э. Частичные Писания 350 г. н.э. Полные Писания"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:63
 msgid "30 - 310 years"
 msgstr "30 - 310 лет"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:63
 msgid "5000 Greek &amp; 10,000 Latin"
 msgstr "5000 Греческих и 10000 Латинских"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:66
 #, fuzzy
 msgid ""
@@ -689,6 +803,7 @@ msgstr ""
 "Сколько рукописей мы можем сравнить друг с другом? 5000 на греческом языке и "
 "10000 на латыни!"
 
+#. type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-importance.docbook:72
 #, fuzzy
 msgid ""
@@ -701,6 +816,7 @@ msgstr ""
 "процитированный в <emphasis>\"Вопросы жизни\" (Questions of Life)</emphasis> "
 "стр. 25-26"
 
+#. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:74
 msgid ""
 "\"In the verity and fullness of the evidence on which it rests, the text of "
@@ -711,10 +827,12 @@ msgstr ""
 "абсолютно и неоспоримо исключительным среди других старинных прозаичных "
 "рукописей.\""
 
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:79
 msgid "A Book that God Breathed"
 msgstr "Книга, вдохновлённая Богом"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:80
 #, fuzzy
 msgid ""
@@ -731,6 +849,7 @@ msgstr ""
 "исходящим из уст Божиих.</emphasis>\" Когда мы читаем Библию, Дух Божий "
 "всегда готов говорить к нашему сердцу. "
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:86
 msgid ""
 "2 Tim.3:16 declares, \"<emphasis>All scripture is inspired by God [lit., God-"
@@ -741,6 +860,7 @@ msgstr ""
 "вдохновлено Богом].</emphasis>\" Верите ли вы этому? Прежде чем ответить, "
 "обратите внимание на отношение Иисуса к Писанию. "
 
+#. type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-importance.docbook:89
 msgid ""
 "John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, "
@@ -749,6 +869,7 @@ msgstr ""
 "Джон Р. В. Скотт (John R.W. Stott), <emphasis>Христос - Спорщик (Christ the "
 "Controversialist)</emphasis>, InterVarsity Press 1978, стр.93-95 "
 
+#. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:90
 #, fuzzy
 msgid ""
@@ -782,6 +903,7 @@ msgstr ""
 "также и люди не говорили так, чтобы исказить Слово божественного Автора. Бог "
 "говорил. Люди говорили. Ни одну из этих истин нельзя умалять. "
 
+#. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:105
 #, fuzzy
 msgid ""
@@ -795,6 +917,7 @@ msgstr ""
 "причина того, что христиане верят в божественное происхождение Библии "
 "состоит в том, что Сам Иисус Христос учил этому. "
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:110
 msgid ""
 "2 Tim.3:16 goes on, \"<emphasis>and profitable for teaching, for correction, "
@@ -810,10 +933,12 @@ msgstr ""
 "следовательно, она будет нашим авторитетом во всех вопросах веры и "
 "поведения. "
 
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:117
 msgid "A Book that Works"
 msgstr "Действенная Книга"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:119
 msgid ""
 "What will studying the Bible do for you? 1 Thess.2:13 says that the Bible "
@@ -824,32 +949,39 @@ msgstr ""
 "\"<emphasis>действует в вас, верующих.</emphasis>\" Рядом с каждым отрывком, "
 "запишите действие, которое производит Слово. "
 
+#. type: Content of: <chapter><sect1><table><title>
 #: docs/howto/en/docbook/howto-importance.docbook:125
 msgid "What does Bible study do for Christians?"
 msgstr "Что даёт изучение Библии христианам?"
 
+#. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:129
 msgid "Reference"
 msgstr "Ссылка"
 
+#. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:130
 msgid "Action"
 msgstr "Действие"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:135
 msgid "Eph. 5:26"
 msgstr "Еф.5:26"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:137
 msgid ""
 "cleanses -- \"...having cleansed her by the washing of water with the word.\""
 msgstr ""
 "очищает -- \"...чтобы освятить ее, очистив банею водною посредством слова;\" "
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:142
 msgid "Acts 20:32"
 msgstr "Деян.20:32"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:145
 #, fuzzy
 msgid ""
@@ -859,10 +991,12 @@ msgstr ""
 "назидает -- \" ...слову благодати Его, могущему назидать вас более и дать "
 "вам наследие со всеми освященными. \""
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:154
 msgid "Rom. 15:4"
 msgstr "Рим.15:4"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:157
 msgid ""
 "encourages -- \"that through perseverance and the encouragement of the "
@@ -870,20 +1004,24 @@ msgid ""
 msgstr ""
 "утешает -- \"чтобы мы терпением и утешением из Писаний сохраняли надежду.\""
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:164
 msgid "Rom. 10:17"
 msgstr "Рим.10:17"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:167
 msgid ""
 "gives faith -- \"So faith comes from hearing, and hearing by the word of "
 "Christ.\""
 msgstr "даёт веру -- \"Итак вера от слышания, а слышание от слова Божия.\""
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:175
 msgid "1 Cor. 10:11"
 msgstr "1 Кор.10:11"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:178
 msgid ""
 "instructs -- \"Now these things happened to them for an example, and they "
@@ -892,10 +1030,12 @@ msgstr ""
 "наставляет -- \"Все это происходило с ними, как образы; а описано в "
 "наставление нам, достигшим последних веков.\""
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:186
 msgid "Mt. 4:4"
 msgstr "Мтф.4:4"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:189
 msgid ""
 "nourishment -- \"But He answered and said, 'It is written, Man shall not "
@@ -905,10 +1045,12 @@ msgstr ""
 "питает -- \"Он же сказал ему в ответ: написано: не хлебом одним будет жить "
 "человек, но всяким словом, исходящим из уст Божиих.\""
 
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:200
 msgid "A Book that Liberates"
 msgstr "Книга, которая освобождает"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:202
 #, fuzzy
 msgid ""
@@ -925,6 +1067,7 @@ msgstr ""
 "первую половину предложения в стихе 31. \"<emphasis>Если пребудете в слове "
 "Моем, то вы истинно Мои ученики... </emphasis>\""
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:208
 msgid ""
 "We see that this is a conditional promice, specifically speaking of the "
@@ -933,6 +1076,7 @@ msgstr ""
 "Как видим, это обещание с условием, говорящее конкретно об истине Божьего "
 "Слова."
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:210
 msgid ""
 "The Greek word for \"wind\" used in Eph.4:14 means a <emphasis>violent wind."
@@ -947,6 +1091,7 @@ msgstr ""
 "\" Изучение Библии даёт нам укорениться в истине, и как результат --- нас "
 "будет не просто \"сдуть\". "
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:216
 msgid ""
 "<emphasis>But Jesus answered and said to them, </emphasis>\"<emphasis>You "
@@ -956,68 +1101,84 @@ msgstr ""
 "<emphasis>Иисус сказал им в ответ: </emphasis>\"<emphasis>заблуждаетесь, не "
 "зная Писаний, ни силы Божией</emphasis>\" Мтф.22:29."
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:218
 msgid "What 2 things do we need to know to be kept from error?"
 msgstr "Какие 2 вещи мы должны знать, чтобы избежать заблуждений?"
 
+#. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:220
 msgid "God's word"
 msgstr "Божье Слово"
 
+#. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:221
 msgid "God's power"
 msgstr "Божья Сила"
 
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:225
 msgid "A Book that Wars"
 msgstr "Книга, которая воюет"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:227
 msgid "Eph.6:10-18 is one picture of our spiritual armament."
 msgstr "В Еф.6:10-18 есть описание нашего духовного оружия."
 
+#. type: Content of: <chapter><sect1><table><title>
 #: docs/howto/en/docbook/howto-importance.docbook:229
 msgid "Spiritual Armor"
 msgstr "Духовное оружие"
 
+#. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:233
 msgid "Question"
 msgstr "Вопрос"
 
+#. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:234
 msgid "Answer"
 msgstr "Ответ"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:237
 msgid "How many of the weapons listed here are defensive weapons?"
 msgstr "Сколько из перечисленного оружия используется для защиты?"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:237
 msgid "5"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:238
 msgid "How many are offensive?"
 msgstr "Сколько для нападения?"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:238
 msgid "One"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:239
 msgid "Which one(s)?"
 msgstr "Какое?"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:239
 msgid "the word - <foreignphrase>rhema</foreignphrase>"
 msgstr "слово - <foreignphrase>рхема (rhema)</foreignphrase>"
 
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:243
 msgid "Exhortations"
 msgstr "Увещевания"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:245
 msgid ""
 "2 Tim.2:15 (KJV) \"<emphasis>Study to show thyself approved unto God, a "
@@ -1027,6 +1188,7 @@ msgstr ""
 "2 Тим.2:15 \"<emphasis>Старайся представить себя Богу достойным, делателем "
 "неукоризненным, верно преподающим слово истины.</emphasis>\""
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:249
 msgid ""
 "Col.3:16 \"<emphasis>Let the word of Christ richly dwell within you; with "
@@ -1039,14 +1201,17 @@ msgstr ""
 "духовными песнями, во благодати воспевая в сердцах ваших Господу.</emphasis>"
 "\""
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:253
 msgid "If you're rich in something, how much of it do you have?"
 msgstr "Если вы чем-то богаты, то сколько у вас этого?"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:256
 msgid "Not a little!"
 msgstr "Ведь не чуть-чуть!"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:259
 #, fuzzy
 msgid ""
@@ -1061,10 +1226,12 @@ msgstr ""
 "берегись: составлять много книг - конца не будет, и много читать - "
 "утомительно для тела. </emphasis>\""
 
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:265
 msgid "Appendix: \"Once for All\""
 msgstr "Приложение: \"Однажды для всех\""
 
+#. type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-importance.docbook:268
 msgid ""
 "John R. W. Stott, <emphasis>Christ the Controversialist,</emphasis> "
@@ -1073,6 +1240,7 @@ msgstr ""
 "Джон Р. В. Скотт (John R.W. Stott), <emphasis>Христос - Спорщик (Christ the "
 "Controversialist)</emphasis>, InterVarsity Press 1978, стр.106-107"
 
+#. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:269
 #, fuzzy
 msgid ""
@@ -1097,6 +1265,7 @@ msgstr ""
 "\"<emphasis>Христос также умер для греха однажды за всех</emphasis>"
 "\" (Рим.6:10, см. также 1 Пт.3:18; Евр.9:26-28). "
 
+#. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:279
 #, fuzzy
 msgid ""
@@ -1121,10 +1290,12 @@ msgstr ""
 "<foreignphrase>sola gratia (одна благодать - прим. пер.)</foreignphrase> для "
 "нашего спасения. "
 
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:290
 msgid "Supplement: Bible Reading Programs"
 msgstr "Дополнение: Программы чтения Библии"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:291
 #, fuzzy
 msgid ""
@@ -1136,10 +1307,12 @@ msgstr ""
 "нескольким одновременно, если хотите, например №1 и №4 или №2 и №5. Меняйте "
 "программу из года в год для разнообразия!"
 
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:296
 msgid "New Testament in a Year: read one chapter each day, 5 days a week."
 msgstr "Новый Завет за год: читайте одну главу каждый день, 5 дней в неделю."
 
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:298
 msgid ""
 "Proverbs in a Month: read one chapter of Proverbs each day, corresponding to "
@@ -1148,6 +1321,7 @@ msgstr ""
 "Притчи за месяц: читайте одну главу Притч каждый день, соответственно числу "
 "месяца."
 
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:300
 msgid ""
 "Psalms in a Month: read 5 Psalms at intervals of 30 each day, for instance "
@@ -1156,6 +1330,7 @@ msgstr ""
 "Псалмы за месяц: читайте 5 Псалмов с интервалом 30 каждый день, например 20-"
 "го числа вы читаете Пс.20, 50, 80, 110 и 140."
 
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:302
 msgid ""
 "Psalms &amp; Proverbs in 6 months: read through Psalms and Proverbs one "
@@ -1164,6 +1339,7 @@ msgstr ""
 "Псалмы и Притчи за 6 месяцев: читайте по порядку Псалмы и Притчи по одной "
 "главе в день."
 
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:304
 msgid ""
 "Old Testament without Psalms &amp; Proverbs in 2 years: if you read one "
@@ -1174,10 +1350,12 @@ msgstr ""
 "в день из Ветхого Завета, пропуская Псалмы и Притчи, то вы прочтёте Ветхий "
 "Завет за 2 года и 2 недели."
 
+#. type: Content of: <chapter><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:1
 msgid "Rules of Bible Interpretation (Hermeneutics)"
 msgstr "Правила толкования Библии (Герменевтика)"
 
+#. type: Content of: <chapter><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:2
 #, fuzzy
 msgid ""
@@ -1207,6 +1385,7 @@ msgstr ""
 "неудобовразумительное, что невежды и неутвержденные, к собственной своей "
 "погибели, превращают, как и прочие Писания\".</emphasis>"
 
+#. type: Content of: <chapter><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:11
 #, fuzzy
 msgid ""
@@ -1218,10 +1397,12 @@ msgstr ""
 "внимание было привлечено к определённому стиху, значение которого не совсем "
 "ясно для вас. Как его понять? Держите эти правила в уме:"
 
+#. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:14
 msgid "Rule 1 - Interpret according to the exact meaning of the words."
 msgstr "Правило 1 - Истолковывать в соответствии с точным значением слов."
 
+#. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:15
 #, fuzzy
 msgid ""
@@ -1233,11 +1414,13 @@ msgstr ""
 "лучше будет наше истолкование. Старайтесь определить точное значение "
 "ключевых слов, придерживаясь таких шагов: "
 
+#. type: Content of: <chapter><section><orderedlist><listitem><formalpara><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:20
 #, fuzzy
 msgid "Definition"
 msgstr "Шаг 1) Значение слов"
 
+#. type: Content of: <chapter><section><orderedlist><listitem><formalpara><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:21
 #, fuzzy
 msgid ""
@@ -1247,6 +1430,7 @@ msgstr ""
 "Найдите значение слова в греческом или еврейском словаре. Для глаголов и их "
 "временных форм это особенно важно."
 
+#. type: Content of: <chapter><section><orderedlist><listitem><formalpara><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:27
 #, fuzzy
 msgid ""
@@ -1269,10 +1453,12 @@ msgstr ""
 "ПЕРЕВЕДЕНО ОДНИМ РУССКИМ СЛОВОМ И ГРЕЧЕСКИЕ СЛОВА МОГУТ ИМЕТЬ РАЗЛИЧНЫЕ "
 "ОТТЕНКИ ЗНАЧЕНИЙ."
 
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:37
 msgid "Example 1A"
 msgstr "Пример 1А"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:38
 #, fuzzy
 msgid ""
@@ -1289,6 +1475,7 @@ msgstr ""
 "Complete Word Study New Testament (Полное исследование слов Нового Завета)</"
 "emphasis> (AMG Publishers, 1991)."
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:42
 #, fuzzy
 msgid ""
@@ -1322,11 +1509,20 @@ msgstr ""
 "Это отрицание повеление, поэтому это повеление прекратить делать что-то, что "
 "уже происходит. Итак, что же мы выяснили?"
 
+#. type: Content of: <chapter><section><section><para>
+#: docs/howto/en/docbook/howto-interpretation.docbook:50
+msgid ""
+"<emphasis>Mary is already clinging to Jesus, and he is saying to stop "
+"holding him!</emphasis>"
+msgstr ""
+
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:53
 #, fuzzy
 msgid "Example 1B"
 msgstr "Пример 1А"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:54
 #, fuzzy
 msgid ""
@@ -1337,6 +1533,7 @@ msgstr ""
 "Церкви, и пусть помолятся над ним, помазав его елеем во имя Господне</"
 "emphasis>. Что это за помазание?"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:55
 #, fuzzy
 msgid ""
@@ -1359,56 +1556,67 @@ msgstr ""
 "глаголу временное, то он обычно обозначает действие совершаемое до того, "
 "которое обозначено главным глаголом.\" (Zodhiates стр.851)"
 
-#: docs/howto/en/docbook/howto-interpretation.docbook:62
-#, fuzzy
-msgid "Cross-references for aleipho:"
-msgstr "Перекрёстные ссылки"
-
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:64
 msgid "Mt.6:17 But you, when you fast, anoint your head"
 msgstr ""
 
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:65
 msgid "Mk.16:1 [the women] brought spices that they might come and anoint Him."
 msgstr ""
 
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:66
 msgid ""
 "Mk.6:13 And they were...anointing with oil many sick people and healing them."
 msgstr ""
 
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:67
 msgid "Lk.7:38 [...] kissing His feet and anointing them with the perfume"
 msgstr ""
 
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:68
 msgid ""
 "Jn.12:3 Mary [...] anointed the feet of Jesus, and wiped them with her hair"
 msgstr ""
 
-#: docs/howto/en/docbook/howto-interpretation.docbook:72
-#, fuzzy
-msgid "Cross-references of chrio:"
-msgstr "Перекрёстные ссылки"
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para>
+#: docs/howto/en/docbook/howto-interpretation.docbook:62
+msgid ""
+"Cross-references for aleipho: <placeholder type=\"orderedlist\" id=\"0\"/>"
+msgstr ""
 
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:74
 msgid ""
 "Lk.4:18 <quote>The Spirit of the Lord is upon me, because He has anointed me "
 "to preach [...]</quote>"
 msgstr ""
 
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:75
 msgid "Acts 4:27 Jesus, whom Thou hast anointed"
 msgstr ""
 
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:76
 msgid "Acts 10:38 God anointed Jesus with the Holy Ghost and power"
 msgstr ""
 
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:77
 msgid "2 Cor.1:21 Now He who...anointed us is God"
 msgstr ""
 
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para>
+#: docs/howto/en/docbook/howto-interpretation.docbook:72
+msgid "Cross-references of chrio: <placeholder type=\"orderedlist\" id=\"0\"/>"
+msgstr ""
+
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:82
 #, fuzzy
 msgid ""
@@ -1421,6 +1629,7 @@ msgstr ""
 "ссылки и значения слов и подведите итог разницы: ALEIPHO - ЭТО ПРАКТИЧЕСКОЕ "
 "ИСПОЛЬЗОВАНИЕ МАСЛА, А CHRIO - ДУХОВНОЕ."
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:85
 #, fuzzy
 msgid ""
@@ -1434,6 +1643,7 @@ msgstr ""
 "разбойниками, он лил масло и вино на его раны. В дни Иисуса масло "
 "применялось как медицинское средство. "
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:89
 msgid ""
 "Now let's apply what we just learned by this word study to James 5:14 "
@@ -1446,6 +1656,7 @@ msgstr ""
 "пусть помолятся над ним, помазав его елеем во имя Господне.\"</emphasis> Это "
 "\"помазание\" духовное или практическое? Практическое!"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:93
 #, fuzzy
 msgid ""
@@ -1464,10 +1675,12 @@ msgstr ""
 "Господне. Разве это не прекрасное выражение гармонии практичного и духовного "
 "в нашем Боге?!"
 
+#. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:103
 msgid "Rule 2 - Interpret within the biblical context"
 msgstr "Правило 2 - Истолковывать в библейском контексте"
 
+#. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:105
 #, fuzzy
 msgid ""
@@ -1486,10 +1699,12 @@ msgstr ""
 "контексте, его смысл не прояснился, нам нужно рассматривать место более "
 "глубоко."
 
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:110
 msgid "Example 2A"
 msgstr "Пример 2А"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:111
 msgid ""
 "In a previous lesson we considered Jn.3:5 <emphasis>\"born of water and the "
@@ -1498,6 +1713,7 @@ msgstr ""
 "В предыдущем уроке мы рассматривали Ин.3:5 <emphasis>\"рождённый от воды и "
 "Духа\".</emphasis> В контексте, что такое вода, о которой говорится здесь?"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:113
 #, fuzzy
 msgid ""
@@ -1512,10 +1728,12 @@ msgstr ""
 "правильного пути! Вода - это окоплодные воды, \"родиться от воды\" = "
 "естественное рождение."
 
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:117
 msgid "Example 2B"
 msgstr "Пример 2Б"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:118
 #, fuzzy
 msgid ""
@@ -1527,10 +1745,12 @@ msgstr ""
 "рассматривать в библейском контексте 1 Кор.11:5 <emphasis>\"всякая жена, "
 "молящаяся или пророчествующая...\"</emphasis>"
 
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:121
 msgid "Example 2C"
 msgstr "Пример 2В"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:122
 #, fuzzy
 msgid ""
@@ -1555,10 +1775,12 @@ msgstr ""
 "Павел написать в 1 Кор.1:17 \"<emphasis>Ибо Христос послал меня не крестить, "
 "а благовествовать</emphasis>\"? "
 
+#. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:134
 msgid "Rule 3 - Interpret within the historical and cultural context"
 msgstr "Правило 3 - Толковать в историческом и культурном контексте"
 
+#. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:136
 #, fuzzy
 msgid ""
@@ -1572,10 +1794,12 @@ msgstr ""
 "значит для меня?\" Мы должны принимать во внимание историческую и культурную "
 "среду, в которой жили автор и первые читатели. "
 
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:139
 msgid "Example 3A"
 msgstr "Пример 3А"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:139
 #, fuzzy
 msgid ""
@@ -1591,6 +1815,7 @@ msgstr ""
 "этом \"в третий день воскреснуть.\" (Мтф.16:21)? Точные значения слов \"три"
 "\" и \"день\" не помогут объяснить кажущееся противоречие."
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:144
 #, fuzzy
 msgid ""
@@ -1614,10 +1839,12 @@ msgstr ""
 " Суббота с 6 часов вечера до 5 или около того утра в Воскресенье = 3й день.\n"
 " Толкование с учётом культурного контекста помогает нам избегать ошибок. "
 
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:151
 msgid "Example 3B"
 msgstr "Пример 3Б"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:151
 #, fuzzy
 msgid ""
@@ -1635,11 +1862,13 @@ msgstr ""
 "разделены. Но в данном случае прошёл только Бог, заключая односторонний "
 "договор."
 
+#. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:159
 msgid "Rule 4 - Interpret according to the normal usage of words in language"
 msgstr ""
 "Правило 4 - Толковать в соответствии с обычным употреблением слов в языке"
 
+#. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:160
 #, fuzzy
 msgid ""
@@ -1649,15 +1878,18 @@ msgstr ""
 "Пусть буквальный язык будет буквальным, а образный будет образным. И будьте "
 "внимательны к идиомам, которые имеют особое значение."
 
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:163
 msgid "Example 4A"
 msgstr "Пример 4А"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:164
 #, fuzzy
 msgid "<quote>evil eye</quote> in Mt.6:23."
 msgstr "\"худое око\" в Mтф.6:23."
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:165
 #, fuzzy
 msgid ""
@@ -1670,6 +1902,7 @@ msgstr ""
 "сочетаются с тем, что написано до и после! Это говорит нам о том, что мы не "
 "понимаем данное место правильно!!"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:168
 #, fuzzy
 msgid ""
@@ -1688,18 +1921,22 @@ msgstr ""
 "и завистливости. Теперь вернёмся к 6й главе Матфея и отметим, что такое "
 "понимание идеально вписывается в контекст."
 
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:174
 msgid "Example 4B"
 msgstr "Пример 4Б"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:175
 msgid "Is.59:1 <quote>The Lord's hand is not short;</quote>"
 msgstr ""
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:176
 msgid "Deut.33:27 <quote>Underneath are the everlasting arms.</quote>"
 msgstr ""
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:178
 #, fuzzy
 msgid ""
@@ -1729,6 +1966,7 @@ msgstr ""
 "только что доказали, что Бог --- это человек, вы доказали что Он --- птица."
 "\" Мормоны вынуждены были отшучиваться, осознав нелепость своего положения. "
 
+#. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:189
 msgid ""
 "Rule 5 - Understand the purpose of parables and the difference between a "
@@ -1736,16 +1974,19 @@ msgid ""
 msgstr ""
 "Правило 5 - Нужно понять цель притч и разницу между притчей и аллегорией"
 
+#. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:190
 msgid ""
 "An allegory is: <emphasis>A story where each element has a meaning.</"
 "emphasis>"
 msgstr ""
 
+#. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:191
 msgid "Every parable is an allegory, true or false?"
 msgstr "Каждая притча является аллегорией, верно или нет?"
 
+#. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:193
 #, fuzzy
 msgid ""
@@ -1763,10 +2004,12 @@ msgstr ""
 "вкус. Мы должны извлекать наши доктрины из ясных мест Писания, в которых они "
 "ясно предоставлены; и, если притча изображает их на примере, --- это хорошо."
 
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:198
 msgid "Example 5A"
 msgstr "Пример 5А"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:199
 #, fuzzy
 msgid ""
@@ -1778,6 +2021,7 @@ msgstr ""
 "один урок: дерзновение в молитве. Если мы переделаем её в аллегорию, то что "
 "мы получим?"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:201
 msgid ""
 "All sorts of violence happens to the meanings: God is reluctant to protect "
@@ -1786,10 +2030,12 @@ msgstr ""
 "Её значение подвергается различным искажениям: Бог не желает защищать права "
 "вдов, молитвы \"досаждают\" Ему, и т.д."
 
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:204
 msgid "Example 5B"
 msgstr "Пример 5Б"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:205
 #, fuzzy
 msgid ""
@@ -1799,6 +2045,7 @@ msgstr ""
 "Притча о неверному управителе в Луки.16:1-9. В чём смысл притчи? Аллегория "
 "ли это?"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:207
 #, fuzzy
 msgid ""
@@ -1812,25 +2059,47 @@ msgstr ""
 "и обкрадывание своего господина. "
 
 # type: Content of the bibletime entity
+#. type: Content of the bibletime entity
 #: docs/howto/en/docbook/index.docbook:3
 msgid "<application>BibleTime</application>"
 msgstr ""
 
 # type: Content of the kapp entity
+#. type: Content of the kapp entity
 #: docs/howto/en/docbook/index.docbook:4
 msgid "&bibletimehandbook;"
 msgstr ""
 
+#. type: Content of: <book><bookinfo><title>
 #: docs/howto/en/docbook/index.docbook:14
 msgid "The Biblestudy HowTo"
 msgstr "Как изучать Библию"
 
-#: docs/howto/en/docbook/index.docbook:31
-#, fuzzy
-msgid "The team of &bibletime; (info@bibletime.info)"
-msgstr "Команда &bibletime;, info@bibletime.info"
+#. type: Content of: <book><bookinfo><authorgroup><author><firstname>
+#: docs/howto/en/docbook/index.docbook:18
+msgid "Bob"
+msgstr ""
+
+#. type: Content of: <book><bookinfo><authorgroup><author><surname>
+#: docs/howto/en/docbook/index.docbook:19
+msgid "Harman"
+msgstr ""
+
+#. type: Content of: <book><bookinfo><authorgroup><author><surname>
+#: docs/howto/en/docbook/index.docbook:23
+msgid "The BibleTime team"
+msgstr ""
+
+#.  TRANS:ROLES_OF_TRANSLATORS 
+#. type: Content of: <book><bookinfo>
+#: docs/howto/en/docbook/index.docbook:29
+msgid ""
+"<copyright> <year>2001-2009</year> <holder>The team of &bibletime; "
+"(info@bibletime.info)</holder> </copyright>"
+msgstr ""
 
 # type: Content of: <book><bookinfo><legalnotice><para>
+#. type: Content of: <book><bookinfo><legalnotice><para>
 #: docs/howto/en/docbook/index.docbook:36
 msgid ""
 "This document was originally created by Mr. Bob Harman and is licensed under "
@@ -1838,6 +2107,7 @@ msgid ""
 "sa/3.0/\"> \"Creative Commons Attribution-Share Alike\"</link>."
 msgstr ""
 
+#. type: Content of: <book><bookinfo><legalnotice><para>
 #: docs/howto/en/docbook/index.docbook:42
 #, fuzzy
 msgid ""
@@ -1847,10 +2117,12 @@ msgstr ""
 "Цитаты из Писания взяты из Синодального перевода Библии, если иное не "
 "указано."
 
+#. type: Content of: <book><bookinfo><abstract><title>
 #: docs/howto/en/docbook/index.docbook:47
 msgid "Abstract"
 msgstr "Резюме"
 
+#. type: Content of: <book><bookinfo><abstract><para>
 #: docs/howto/en/docbook/index.docbook:50
 #, fuzzy
 msgid ""
@@ -1860,6 +2132,7 @@ msgstr ""
 "<application>\"Как изучать Библию\"</application> - это помощь в изучении "
 "Библии."
 
+#. type: Content of: <book><bookinfo><abstract><para>
 #: docs/howto/en/docbook/index.docbook:53
 #, fuzzy
 msgid ""
@@ -1876,3 +2149,29 @@ msgstr ""
 "деноминационную доктрину. Мы ожидаем, что вы сами будете читать и изучать "
 "Писания, чтобы понять, о чём в них говорится. Если вы начнёте с желанием, "
 "чтобы Господь сеял Своё слово в ваше сердце, - Он не разочарует вас."
+
+#. type: Content of: <book><bookinfo><keywordset><keyword>
+#: docs/howto/en/docbook/index.docbook:64
+msgid "Bible"
+msgstr ""
+
+#. type: Content of: <book><bookinfo><keywordset><keyword>
+#: docs/howto/en/docbook/index.docbook:66
+msgid "HowTo"
+msgstr ""
+
+#, fuzzy
+#~ msgid "Find these verses:"
+#~ msgstr "Пресса о нас"
+
+#, fuzzy
+#~ msgid "Cross-references for aleipho:"
+#~ msgstr "Перекрёстные ссылки"
+
+#, fuzzy
+#~ msgid "Cross-references of chrio:"
+#~ msgstr "Перекрёстные ссылки"
+
+#, fuzzy
+#~ msgid "The team of &bibletime; (info@bibletime.info)"
+#~ msgstr "Команда &bibletime;, info@bibletime.info"

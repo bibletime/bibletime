@@ -7,28 +7,33 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: index\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-04-21 12:33-0400\n"
+"Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
+"POT-Creation-Date: 2010-11-22 23:08-0500\n"
 "PO-Revision-Date: 2003-07-01 13:57+0200\n"
 "Last-Translator: Harry Vennik <htvennik@zonnet.nl>\n"
 "Language-Team: Nederlands <nl@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: application/x-xml2pot; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.0.1\n"
 
+#. type: Content of: <chapter><title>
 #: docs/howto/en/docbook/howto-basics.docbook:1
 msgid "Bible Study Basics"
 msgstr "Basisprincipes van bijbelstudie"
 
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:4
 msgid "Our Purpose as we Approach the Bible"
 msgstr "Ons doel als we de bijbel benaderen "
 
+#. type: Content of: <chapter><sect1><para><blockquote><attribution>
 #: docs/howto/en/docbook/howto-basics.docbook:6
 msgid "Jn.5:39-40"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><para><blockquote><para>
 #: docs/howto/en/docbook/howto-basics.docbook:6
 #, fuzzy
 msgid ""
@@ -40,6 +45,7 @@ msgstr ""
 "eeuwig leven te hebben, en deze zijn het die van Mij getuigen, en toch wilt "
 "gij niet tot Mij komen om leven te hebben.\"</emphasis>"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-basics.docbook:12
 #, fuzzy
 msgid ""
@@ -52,12 +58,14 @@ msgstr ""
 "bijbel is het net zo: we bestuderen de bijbel, niet om de bijbel op zich, "
 "maar om in contact te komen met God."
 
+#. type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-basics.docbook:17
 msgid ""
 "John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, "
 "InterVarsity Press 1978, pp.97, 104."
 msgstr ""
 
+#. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-basics.docbook:19
 #, fuzzy
 msgid ""
@@ -73,6 +81,7 @@ msgstr ""
 "toekomende wereld in zich gekregen.\" Hun studie was een doel op zichzelf. "
 "Hierin waren ze pijnlijk misleid."
 
+#. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-basics.docbook:24
 msgid ""
 "There is neither merit nor profit in the reading of Scripture for its own "
@@ -84,10 +93,12 @@ msgstr ""
 "bekend maakt met Jezus Christus. Telkens als de bijbel gelezen wordt, is een "
 "sterk verlangen nodig om daardoor Christus te ontmoeten."
 
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:31
 msgid "Approaches to God's Word"
 msgstr "Manieren om Gods woord te benaderen"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-basics.docbook:32
 #, fuzzy
 msgid ""
@@ -101,10 +112,12 @@ msgstr ""
 "van de schriften brengt horen, lezen, studie en memorisatie bij elkaar en "
 "bevestigt het woord in onze gedachten."
 
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:37
 msgid "Hear"
 msgstr "Horen"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:38
 #, fuzzy
 msgid ""
@@ -114,10 +127,12 @@ msgstr ""
 "Luk.11:28 <emphasis>\"Maar Hij zeide: Zeker, zalig, die het woord van God "
 "horen en het bewaren.\"</emphasis>"
 
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:42
 msgid "Read"
 msgstr "Lezen"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:43
 #, fuzzy
 msgid ""
@@ -128,6 +143,7 @@ msgstr ""
 "der profetie, en bewaren, hetgeen daarin geschreven staat, want de tijd is "
 "nabij.\"</emphasis>"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:45
 #, fuzzy
 msgid ""
@@ -137,10 +153,13 @@ msgstr ""
 "1 Tim.4:13 <emphasis>\"... moet gij u toeleggen op het voorlezen...\"</"
 "emphasis>"
 
+#. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/howto/en/docbook/howto-basics.docbook:49
+#: docs/howto/en/docbook/index.docbook:65
 msgid "Study"
 msgstr "Bestuderen"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:50
 #, fuzzy
 msgid ""
@@ -152,6 +171,7 @@ msgstr ""
 "Thessalonica, daar zij het woord met alle bereidwilligheid aannamen en "
 "dagelijks de schriften nagingen, of deze dingen zo waren.\"</emphasis>"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:54
 #, fuzzy
 msgid ""
@@ -163,10 +183,12 @@ msgstr ""
 "te stellen, als een arbeider, die zich niet behoeft te schamen, doch rechte "
 "voren trekt bij het brengen van het woord der waarheid.\"</emphasis>"
 
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:59
 msgid "Memorize"
 msgstr "Memoriseren "
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:60
 #, fuzzy
 msgid ""
@@ -176,10 +198,12 @@ msgstr ""
 "Ps.119:11 <emphasis>\"Ik berg uw woord in mijn hart, opdat ik tegen U niet "
 "zondige.\"</emphasis>"
 
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:64
 msgid "Meditate"
 msgstr "Overdenken"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:65
 #, fuzzy
 msgid ""
@@ -193,6 +217,7 @@ msgstr ""
 "als een boom, geplant aan waterstromen, die zijn vrucht geeft op zijn tijd, "
 "welks loof niet verwelkt; al wat hij onderneemt gelukt.\"</emphasis>"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:71
 #, fuzzy
 msgid ""
@@ -209,14 +234,17 @@ msgstr ""
 "horen en lezen van de bijbel dan aan studie en memorisatie van teksten. Dit "
 "is om bekend te worden met de globale boodschap van de bijbel. "
 
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:79
 msgid "Types of Bible Studies"
 msgstr "Verschillende soorten van bijbelstudie"
 
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:80
 msgid "Topical Study"
 msgstr "Onderwerp-studie"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:81
 msgid ""
 "Pick out a certain topic and follow it through, using cross-references or a "
@@ -225,10 +253,12 @@ msgstr ""
 "Kies een bepaald onderwerp en ga het na door het volgen van "
 "tekstverwijzingen of door een concordantie te gebruiken."
 
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:85
 msgid "Character Study"
 msgstr "Karakterstudie"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:86
 msgid ""
 "Studying the life of a Bible character, e.g. Joseph's life in Gen.37-50."
@@ -236,23 +266,28 @@ msgstr ""
 "Het bestuderen van het leven van een persoon in de bijbel, bijvoorbeeld het "
 "leven van Jozef in Gen.37-50."
 
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:90
 msgid "Expository Study"
 msgstr "Studie vanuit een bijbelgedeelte"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:91
 msgid "Studying a certain passage: paragraph, chapter, or book."
 msgstr ""
 "Het bestuderen van een bepaalde passage, of een alinea, hoofdstuk of boek."
 
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:95
 msgid "Basics of Correct Interpretation"
 msgstr "Basisprincipes voor juiste interpretatie"
 
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:97
 msgid "Content"
 msgstr "Inhoud"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:98
 msgid ""
 "What does it say? What does it say in the original language? Be careful with "
@@ -261,10 +296,12 @@ msgstr ""
 "Wat staat er? Wat staat er in de grondtekst? Wees voorzichtig met "
 "definities. Lees er niets in, wat er niet echt staat."
 
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:102
 msgid "Context"
 msgstr "Context"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:103
 #, fuzzy
 msgid ""
@@ -276,11 +313,13 @@ msgstr ""
 "de passage moet betekenis hebben in de struktuur van de hele passage en het "
 "hele boek."
 
+#. type: Content of: <chapter><section><orderedlist><listitem><formalpara><title>
 #: docs/howto/en/docbook/howto-basics.docbook:107
 #: docs/howto/en/docbook/howto-interpretation.docbook:26
 msgid "Cross-reference"
 msgstr "Tekstverwijzingen"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:108
 msgid ""
 "What do other verses about this subject say through the rest of the Bible? "
@@ -291,10 +330,12 @@ msgstr ""
 "bijbel? God spreekt zichzelf niet tegen, dus zal onze interpretatie de test "
 "van vergelijking met ander schriftgedeelten moeten kunnen doorstaan."
 
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:113
 msgid "An Expository Study of Matthew 6:1-18"
 msgstr "Een studie van een bijbelgedeelte: Matt.6:1-18"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-basics.docbook:114
 #, fuzzy
 msgid ""
@@ -312,10 +353,12 @@ msgstr ""
 "kernvers eenmaal gevonden, geef dat vers dan het Romeinse cijfer I in je "
 "overzicht:"
 
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:119
 msgid "Beware of practicing your righteousness before men to be noticed"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-basics.docbook:122
 #, fuzzy
 msgid ""
@@ -327,19 +370,22 @@ msgstr ""
 "voorbeelden van? Over welk aspect van ons leven gaat het hier? Onze "
 "motieven! Welke ondertitels ontwikkelen deze gedachte?"
 
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:126
-#: docs/howto/en/docbook/howto-basics.docbook:135
 msgid "When you give"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:127
 msgid "When you fast"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:128
 msgid "When you pray"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-basics.docbook:131
 msgid ""
 "Now fill in the outline with specific instructions of how to avoid wrong "
@@ -349,64 +395,82 @@ msgstr ""
 "manieren van in praktijk brengen van je gerechtigheid kunt voorkomen:"
 
 # type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:137
 msgid ""
 "don't sound a trumpet.  (how might someone <quote>sound a trumpet</quote> "
 "today?)"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:138
 msgid "do it secretly."
 msgstr ""
 
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:139
 msgid "etc."
 msgstr ""
 
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
+#: docs/howto/en/docbook/howto-basics.docbook:135
+msgid "When you give <placeholder type=\"orderedlist\" id=\"0\"/>"
+msgstr ""
+
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:145
 msgid "Worksheet: How to Use a Concordance"
 msgstr "Werkblad: Hoe gebruik je een concordantie?"
 
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:147
 msgid "To Find a Particular Verse"
 msgstr "Om een bepaald vers te vinden"
 
+#. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:149
 msgid "Pick out a key word or most-unusual word of the verse."
 msgstr "Neem het kernwoord, of het meest ongebruikelijke woord uit het vers."
 
+#. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:150
 msgid "Turn to this word alphabetically."
 msgstr "Zoek dit woord op in de concordantie."
 
+#. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:151
 msgid "Go down the column of listings until you find your verse."
 msgstr ""
 "Loop de lijst van teksten bij dat woord na, totdat je je tekst gevonden hebt."
 
-#: docs/howto/en/docbook/howto-basics.docbook:154
-#, fuzzy
-msgid "Find these verses:"
-msgstr "In de media"
-
 # type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:156
 msgid "<quote>Faithful are the wounds of a friend</quote>"
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:157
 msgid "<quote>We are ambassadors of Christ.</quote>"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:158
 msgid "The story of the rich man and Lazarus."
 msgstr ""
 
+#. type: Content of: <chapter><sect1><sect2><para>
+#: docs/howto/en/docbook/howto-basics.docbook:154
+msgid "Find these verses: <placeholder type=\"orderedlist\" id=\"0\"/>"
+msgstr ""
+
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:163
 msgid "To Do a Topical Study"
 msgstr "Om een onderwerp-studie doen"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:164
 #, fuzzy
 msgid ""
@@ -422,10 +486,12 @@ msgstr ""
 "genoemde teksten. Bijvoorbeeld de woorden \"verlossen, verlost, losgeld,\" "
 "en zelfs \"kopen\" of \"kocht\""
 
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:170
 msgid "To Clarify Word Meanings in the Greek and Hebrew"
 msgstr "Om de betekenis van Hebreeuwse en Griekse woorden duidelijk maken"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:171
 #, fuzzy
 msgid ""
@@ -441,11 +507,13 @@ msgstr ""
 "omdat \"oordelen\" en \"beoordelen\" in de KJV beiden zijn weergegeven als "
 "een vorm van \"to judge\") Vanaf hier gebruiken wij Strong's."
 
+#. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:175
 #, fuzzy
 msgid "Look up &quot;judge&quot;."
 msgstr "Zoek op \"oordeelt\""
 
+#. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:176
 #, fuzzy
 msgid ""
@@ -455,15 +523,18 @@ msgstr ""
 "Loop de kolom door tot Matt.7:1. Rechts van het woord 'oordeelt' staat het "
 "nummer 2919. Dit verwijst naar het Griekse woord. Schrijf het op."
 
+#. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:178
 #, fuzzy
 msgid "Now look up &quot;judgeth&quot;."
 msgstr "Zoek nu \"beoordeelt\" op."
 
+#. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:179
 msgid "Go down the column to 1 Cor.2:15 . . . . . 350."
 msgstr "Loop de kolom door tot 1 Cor.2:15 . . . . . 350."
 
+#. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:180
 #, fuzzy
 msgid ""
@@ -476,10 +547,12 @@ msgstr ""
 "Hebreews is.) Vergelijk de betekenis van 2919 met de betekenis van 350, en "
 "je hebt het antwoord!"
 
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:185
 msgid "To Find Meanings of Names"
 msgstr "Om de betekenis van een naam te vinden"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:186
 msgid ""
 "By the same process we can find the meaning of a name in the Greek or Hebrew."
@@ -487,30 +560,37 @@ msgstr ""
 "Op dezelfde manier kunnen we de betekenis van een naam in het Grieks of "
 "Hebreews vinden."
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:187
 msgid "Look up these names and write down their meaning:"
 msgstr "Zoek de volgende namen op en schrijf hun betekenis erbij:"
 
+#. type: Content of: <chapter><sect1><sect2><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:189
 msgid "Nabal"
 msgstr "Nabal"
 
+#. type: Content of: <chapter><sect1><sect2><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:190
 msgid "Abigail"
 msgstr "Abigail"
 
+#. type: Content of: <chapter><sect1><sect2><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:191
 msgid "Joshua"
 msgstr "Jozua"
 
+#. type: Content of: <chapter><sect1><sect2><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:192
 msgid "Barnabus"
 msgstr "Barnabas"
 
+#. type: Content of: <chapter><title>
 #: docs/howto/en/docbook/howto-importance.docbook:1
 msgid "Importance of God's Word"
 msgstr "Het belang van Gods Woord"
 
+#. type: Content of: <chapter><para>
 #: docs/howto/en/docbook/howto-importance.docbook:2
 #, fuzzy
 msgid ""
@@ -522,15 +602,18 @@ msgstr ""
 "begrijpen. Het bestuderen van de bijbel is een van de belangrijkste manieren "
 "om te leren communiceren met God."
 
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:6
 msgid "A Book that is Unique"
 msgstr "Een uniek boek"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:7
 #, fuzzy
 msgid "The Bible stands alone in many ways.  It is unique in:"
 msgstr "De bijbel is de enige in veel dingen. Hij is uniek in:"
 
+#. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:12
 #, fuzzy
 msgid ""
@@ -541,6 +624,7 @@ msgstr ""
 "miljoen per jaar. De bijbel is zowel het best verkochte boek ooit, als de "
 "jaarlijkse bestseller!"
 
+#. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:18
 #, fuzzy
 msgid ""
@@ -551,6 +635,7 @@ msgstr ""
 "verschillende auteurs, met verschillende achtergronden, en leest als of hij "
 "geschreven is door een persoon."
 
+#. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:24
 #, fuzzy
 msgid ""
@@ -561,127 +646,156 @@ msgstr ""
 "Reliable?</emphasis> handschriften van het Nieuwe Testament met andere oude "
 "teksten:"
 
+#. type: Content of: <chapter><sect1><table><title>
 #: docs/howto/en/docbook/howto-importance.docbook:30
 msgid "Comparison of New Testament manuscripts with other ancient texts."
 msgstr ""
 "Vergelijking van handschriften van het Nieuwe Testament met andere oude "
 "teksten."
 
+#. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:34
 msgid "Work"
 msgstr "Werk"
 
+#. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:35
 msgid "When Written"
 msgstr "Wanneer geschreven"
 
+#. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:36
 msgid "Earliest Copy"
 msgstr "Oudste kopie"
 
+#. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:37
 msgid "Time Lapse"
 msgstr "Tijdsduur"
 
+#. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:37
 msgid "Number of Copies"
 msgstr "Aantal exemplaren"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:41
 msgid "Herodotus"
 msgstr "Herodotus"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:42
 msgid "448-428 B.C."
 msgstr "448-428 v. Chr."
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:42
 #: docs/howto/en/docbook/howto-importance.docbook:52
 #: docs/howto/en/docbook/howto-importance.docbook:57
 msgid "900 A.D."
 msgstr "900 na Chr."
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:43
 msgid "1300 years"
 msgstr "1300 jaar"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:43
 msgid "8"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:46
 msgid "Tacitus"
 msgstr "Tacitus"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:47
 msgid "100 A.D."
 msgstr "100 na Chr."
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:47
 msgid "1100 A.D."
 msgstr "1100 na Chr."
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:48
 msgid "1000 years"
 msgstr "1000 jaar"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:48
 #: docs/howto/en/docbook/howto-importance.docbook:58
 msgid "20"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:51
 msgid "Caesar's <emphasis>Gallic War</emphasis>"
 msgstr "Caesar's <emphasis>Gallic War</emphasis>"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:52
 msgid "50-58 B.C."
 msgstr "50-58 v. Chr."
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:53
 msgid "950 years"
 msgstr "950 jaar"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:53
 msgid "10"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:56
 msgid "Livy's <emphasis>Roman History</emphasis>"
 msgstr "<emphasis>Roman History</emphasis> van Livy"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:57
 msgid "59 B.C. - 17 A.D."
 msgstr "59 v. Chr. - 17 na Chr."
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:58
 msgid "900 years"
 msgstr "900 jaar"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:61
 msgid "New Testament"
 msgstr "Nieuwe Testament"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:62
 msgid "40 A.D. - 100 A.D."
 msgstr "40 - 100 n. Chr."
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:62
 msgid "130 A.D. Partial manuscripts 350 A.D. Full manuscripts"
 msgstr ""
 "130 na Chr. Gedeeltelijke handschiften 350 na Chr. Complete handschriften"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:63
 msgid "30 - 310 years"
 msgstr "30 - 310 jaar"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:63
 msgid "5000 Greek &amp; 10,000 Latin"
 msgstr "5000 Grieks &amp; 10.000 Latijn"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:66
 #, fuzzy
 msgid ""
@@ -701,6 +815,7 @@ msgstr ""
 "Grieks en 10.000 in het Latijn!"
 
 # type: Content of: <chapter><sect1><blockquote><attribution>
+#. type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-importance.docbook:72
 msgid ""
 "Textual critic F. J. A. Hort, \"The New Testament in the Original Greek\", "
@@ -708,6 +823,7 @@ msgid ""
 "p.  25-26"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:74
 msgid ""
 "\"In the verity and fullness of the evidence on which it rests, the text of "
@@ -718,10 +834,12 @@ msgstr ""
 "tekst van het Nieuwe Testament absoluut en onbenaderbaar alleen tussen alle "
 "andere antieke proza.\""
 
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:79
 msgid "A Book that God Breathed"
 msgstr "En boek met de adem van God"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:80
 #, fuzzy
 msgid ""
@@ -739,6 +857,7 @@ msgstr ""
 "de bijbel lezen, is Gods Geest er om het tot onze harten te spreken op een "
 "altijd nieuwe manier."
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:86
 msgid ""
 "2 Tim.3:16 declares, \"<emphasis>All scripture is inspired by God [lit., God-"
@@ -749,12 +868,14 @@ msgstr ""
 "die God ademde].</emphasis>\" Geloof je dit? Bedenk, voordat je antwoord "
 "geeft, hoe Jezus' houding tegenover de Schriften was."
 
+#. type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-importance.docbook:89
 msgid ""
 "John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, "
 "InterVarsity Press 1978, pp.93-95"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:90
 #, fuzzy
 msgid ""
@@ -790,6 +911,7 @@ msgstr ""
 "goddelijke Schrijver aantastten. God sprak. Mensen spraken. Geen van die "
 "twee waarheden mag iets van de andere afdoen."
 
+#. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:105
 #, fuzzy
 msgid ""
@@ -803,6 +925,7 @@ msgstr ""
 "waarom de Christen gelooft  in de goddelijke oorsprong van de bijbel is dat "
 "Jezus Christus zelf dat leerde."
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:110
 msgid ""
 "2 Tim.3:16 goes on, \"<emphasis>and profitable for teaching, for correction, "
@@ -818,10 +941,12 @@ msgstr ""
 "daaruit dat de bijbel voor ons autoriteit heeft in alle zaken van geloof en "
 "gedrag."
 
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:117
 msgid "A Book that Works"
 msgstr "Een boek dat werkt"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:119
 msgid ""
 "What will studying the Bible do for you? 1 Thess.2:13 says that the Bible "
@@ -832,31 +957,38 @@ msgstr ""
 "\"<emphasis>werkzaam is in u, die gelooft</emphasis>\" Schrijf naast elk "
 "schriftgedeelte, het werk dat het Woord doet."
 
+#. type: Content of: <chapter><sect1><table><title>
 #: docs/howto/en/docbook/howto-importance.docbook:125
 msgid "What does Bible study do for Christians?"
 msgstr "Wat doet bijbelstudie voor Christenen?"
 
+#. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:129
 msgid "Reference"
 msgstr "Naslag"
 
+#. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:130
 msgid "Action"
 msgstr "Actie"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:135
 msgid "Eph. 5:26"
 msgstr "Ef. 5:26"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:137
 msgid ""
 "cleanses -- \"...having cleansed her by the washing of water with the word.\""
 msgstr "reinigt -- \"...haar reinigende door het waterbad met het woord.\""
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:142
 msgid "Acts 20:32"
 msgstr "Hand.20:32"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:145
 #, fuzzy
 msgid ""
@@ -867,10 +999,12 @@ msgstr ""
 "aan Hem, die bij machte is te bouwen en het erfdeel te geven onder alle "
 "geheiligden\""
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:154
 msgid "Rom. 15:4"
 msgstr "Rom.15:4"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:157
 msgid ""
 "encourages -- \"that through perseverance and the encouragement of the "
@@ -879,10 +1013,12 @@ msgstr ""
 "bemoedigd -- \"opdat wij  in de weg der volharding en van de vertroosting "
 "der Schriften de hope zouden vasthouden.\""
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:164
 msgid "Rom. 10:17"
 msgstr "Rom.10:17"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:167
 msgid ""
 "gives faith -- \"So faith comes from hearing, and hearing by the word of "
@@ -891,10 +1027,12 @@ msgstr ""
 "geeft geloof -- \"Zo is dan het geloof uit het horen, en het horen door het "
 "woord van Christus.\""
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:175
 msgid "1 Cor. 10:11"
 msgstr "1 Cor.10:11"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:178
 msgid ""
 "instructs -- \"Now these things happened to them for an example, and they "
@@ -903,10 +1041,12 @@ msgstr ""
 "onderwijst -- \"Dit is hun overkomen tot een voorbeeld (voor ons) en het is "
 "opgetekend ter waarschuwing voor ons\""
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:186
 msgid "Mt. 4:4"
 msgstr "Matt.4:4"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:189
 msgid ""
 "nourishment -- \"But He answered and said, 'It is written, Man shall not "
@@ -917,10 +1057,12 @@ msgstr ""
 "van brood zal de mens leven, maar van alle woord, dat uit de mond Gods gaat."
 "\""
 
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:200
 msgid "A Book that Liberates"
 msgstr "Een bevrijdend boek"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:202
 #, fuzzy
 msgid ""
@@ -938,6 +1080,7 @@ msgstr ""
 "loep te nemen, in vs.31. \"<emphasis>Als gij in Mijn woord blijft, zijt gij "
 "waarlijk discipelen van Mij... </emphasis>\""
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:208
 msgid ""
 "We see that this is a conditional promice, specifically speaking of the "
@@ -946,6 +1089,7 @@ msgstr ""
 "We zien dat het gaat om een voorwaardelijke belofte, specifiek sprekend over "
 "de waarheid van Gods woord."
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:210
 msgid ""
 "The Greek word for \"wind\" used in Eph.4:14 means a <emphasis>violent wind."
@@ -961,6 +1105,7 @@ msgstr ""
 "het ons een vaste grond geeft in de waarheid, met als resultaat dat we niet "
 "zo eenvoudig \"weggeblazen\" worden."
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:216
 msgid ""
 "<emphasis>But Jesus answered and said to them, </emphasis>\"<emphasis>You "
@@ -970,69 +1115,85 @@ msgstr ""
 "<emphasis>Jezus antwoordde en zeide tot hen: Gij dwaalt, want gij kent de "
 "Schriften niet noch de kracht Gods.</emphasis>\" Matt.22:29"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:218
 msgid "What 2 things do we need to know to be kept from error?"
 msgstr "Welke 2 dingen moeten wij weten om dwaling te voorkomen?"
 
+#. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:220
 msgid "God's word"
 msgstr "Gods woord"
 
+#. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:221
 msgid "God's power"
 msgstr "Gods kracht"
 
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:225
 msgid "A Book that Wars"
 msgstr "Een boek dat strijdt"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:227
 msgid "Eph.6:10-18 is one picture of our spiritual armament."
 msgstr ""
 "Ef.6:10-18 is een mogelijke afbeelding van onze geestelijke wapenrusting."
 
+#. type: Content of: <chapter><sect1><table><title>
 #: docs/howto/en/docbook/howto-importance.docbook:229
 msgid "Spiritual Armor"
 msgstr "Geestelijke wapenrusting"
 
+#. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:233
 msgid "Question"
 msgstr "Vraag"
 
+#. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:234
 msgid "Answer"
 msgstr "Antwoord"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:237
 msgid "How many of the weapons listed here are defensive weapons?"
 msgstr "Hoeveel van de hier opgenoemde wapens zijn verdedigingswapens?"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:237
 msgid "5"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:238
 msgid "How many are offensive?"
 msgstr "En hoeveel aanvalswapens?"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:238
 msgid "One"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:239
 msgid "Which one(s)?"
 msgstr "Welke?"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:239
 msgid "the word - <foreignphrase>rhema</foreignphrase>"
 msgstr "het woord - <foreignphrase>rhema</foreignphrase>"
 
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:243
 msgid "Exhortations"
 msgstr "Vermaningen"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:245
 msgid ""
 "2 Tim.2:15 (KJV) \"<emphasis>Study to show thyself approved unto God, a "
@@ -1043,6 +1204,7 @@ msgstr ""
 "stellen, een arbeider, die niet beschaamd wordt, die het Woord der waarheid "
 "recht snijdt.</emphasis>\""
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:249
 msgid ""
 "Col.3:16 \"<emphasis>Let the word of Christ richly dwell within you; with "
@@ -1054,14 +1216,17 @@ msgstr ""
 "in alle wijsheid elkander leert en terechtwijst en met psalmen, lofzangen en "
 "geestelijke liederen zingende, Gode dank brengt in uw harten.</emphasis>\""
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:253
 msgid "If you're rich in something, how much of it do you have?"
 msgstr "Als je ergens rijk in bent, hoeveel heb je er dan van?"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:256
 msgid "Not a little!"
 msgstr "Niet een beetje!"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:259
 #, fuzzy
 msgid ""
@@ -1077,16 +1242,19 @@ msgstr ""
 "maken van veel boeken, en veel doorvorsen is afmatting voor het lichaam.</"
 "emphasis>\"\""
 
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:265
 msgid "Appendix: \"Once for All\""
 msgstr "Bijlage: \"Eens voor altijd\""
 
+#. type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-importance.docbook:268
 msgid ""
 "John R. W. Stott, <emphasis>Christ the Controversialist,</emphasis> "
 "InterVarsity Press 1978, pp.106-107"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:269
 #, fuzzy
 msgid ""
@@ -1112,6 +1280,7 @@ msgstr ""
 "Hij voor de zonde eens voor altijd gestorven</emphasis>\" (Rom.6:10, zie ook "
 "1 Petr.3:18; Hebr.9:26-28)."
 
+#. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:279
 #, fuzzy
 msgid ""
@@ -1136,10 +1305,12 @@ msgstr ""
 "scriptura</foreignphrase> voor onze autoriteit en <foreignphrase>sola "
 "gratia</foreignphrase> voor onze redding."
 
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:290
 msgid "Supplement: Bible Reading Programs"
 msgstr "Supplement: Bijbellees-programma's"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:291
 #, fuzzy
 msgid ""
@@ -1152,12 +1323,14 @@ msgstr ""
 "#1 met #4, of #2 met #5. Varieer het programma van jaar tot jaar om het fris "
 "te houden!"
 
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:296
 msgid "New Testament in a Year: read one chapter each day, 5 days a week."
 msgstr ""
 "Het Nieuwe Testament in een jaar: lees per dag een hoofdstuk, 5 dagen per "
 "week."
 
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:298
 msgid ""
 "Proverbs in a Month: read one chapter of Proverbs each day, corresponding to "
@@ -1166,6 +1339,7 @@ msgstr ""
 "Spreuken in een maand: lees elke dag een hoofdstuk uit Spreuken, "
 "overeenkomstig de dag van de maand."
 
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:300
 msgid ""
 "Psalms in a Month: read 5 Psalms at intervals of 30 each day, for instance "
@@ -1174,6 +1348,7 @@ msgstr ""
 "De Psalmen in een maand: lees 5 Psalmen per dag, met een interval van 30. "
 "Lees bijvoorbeel op de 20e Ps. 20, 50, 80, 110 &amp; 140."
 
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:302
 msgid ""
 "Psalms &amp; Proverbs in 6 months: read through Psalms and Proverbs one "
@@ -1182,6 +1357,7 @@ msgstr ""
 "Psalmen &amp; Spreuken in 6 maanden: lees Psalmen en Spreuken door, elke dag "
 "een hoofdstuk."
 
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:304
 msgid ""
 "Old Testament without Psalms &amp; Proverbs in 2 years: if you read one "
@@ -1192,10 +1368,12 @@ msgstr ""
 "Oute Testament elke dag een hoofdstuk leest,  en daarbij Psalmen en Spreuken "
 "overslaat, lees je het Oude Testament in 2 jaar en 2 weken."
 
+#. type: Content of: <chapter><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:1
 msgid "Rules of Bible Interpretation (Hermeneutics)"
 msgstr "Regels voor interpretatie van de bijbel (Hermeneutiek)"
 
+#. type: Content of: <chapter><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:2
 #, fuzzy
 msgid ""
@@ -1226,6 +1404,7 @@ msgstr ""
 "verstaan, wat onkundige en onstandvastige lieden tot hun eigen verderf "
 "verdraaien, evenals trouwens de overige schriften.\"</emphasis>"
 
+#. type: Content of: <chapter><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:11
 #, fuzzy
 msgid ""
@@ -1238,11 +1417,13 @@ msgstr ""
 "opgevallen, wat je niet zo goed begrijpt. Hoe bestudeer je het dan? Houdt de "
 "volgende regels in gedachte:"
 
+#. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:14
 msgid "Rule 1 - Interpret according to the exact meaning of the words."
 msgstr ""
 "Regel 1 - Interpreteer de tekst volgens de precieze betekenis van de woorden."
 
+#. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:15
 #, fuzzy
 msgid ""
@@ -1255,11 +1436,13 @@ msgstr ""
 "precieze betekenisvan kernwoorden te vinden aan de hand van de volgende "
 "stappen:"
 
+#. type: Content of: <chapter><section><orderedlist><listitem><formalpara><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:20
 #, fuzzy
 msgid "Definition"
 msgstr "Stap 1) Definitie"
 
+#. type: Content of: <chapter><section><orderedlist><listitem><formalpara><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:21
 #, fuzzy
 msgid ""
@@ -1269,6 +1452,7 @@ msgstr ""
 "Zoek de definitie op in een Grieks of Hebreews woordenboek. Bij werkwoorden "
 "is de gebruikte vorm ook cruciaal."
 
+#. type: Content of: <chapter><section><orderedlist><listitem><formalpara><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:27
 #, fuzzy
 msgid ""
@@ -1292,10 +1476,12 @@ msgstr ""
 "KUNNEN ZIJN NAAR HETZELFDE NEDERLANDSE WOORD, EN DE GRIEKSE WOORDEN KUNNEN "
 "VERSCHILLENDE NUANCES WEERGEVEN."
 
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:37
 msgid "Example 1A"
 msgstr "Voorbeeld 1A"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:38
 #, fuzzy
 msgid ""
@@ -1311,6 +1497,7 @@ msgstr ""
 "dus laten we het opzoeken in <emphasis>The Complete Word Study New "
 "Testament</emphasis> van Spiros Zodhiates (AMG Publishers, 1991)."
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:42
 #, fuzzy
 msgid ""
@@ -1344,11 +1531,20 @@ msgstr ""
 "negatieve opdracht, dus is het een opdracht om ergens mee op te houden. Wat "
 "hebben we dus ontdekt?"
 
+#. type: Content of: <chapter><section><section><para>
+#: docs/howto/en/docbook/howto-interpretation.docbook:50
+msgid ""
+"<emphasis>Mary is already clinging to Jesus, and he is saying to stop "
+"holding him!</emphasis>"
+msgstr ""
+
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:53
 #, fuzzy
 msgid "Example 1B"
 msgstr "Voorbeeld 1A"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:54
 #, fuzzy
 msgid ""
@@ -1358,6 +1554,7 @@ msgstr ""
 "In Jakobus 5:14 wordt zieken opgedragen <emphasis>zich te laten zalven door "
 "de oudsten van de gemeente</emphasis>. Wat houdt die zalving in?"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:55
 #, fuzzy
 msgid ""
@@ -1380,56 +1577,67 @@ msgstr ""
 "hoofdwerkwoord, dan duidt het meestal op een actie die aan die van het "
 "hoofdwerkwoord vooraf gaat. (zie Zodhiates p.851)"
 
-#: docs/howto/en/docbook/howto-interpretation.docbook:62
-#, fuzzy
-msgid "Cross-references for aleipho:"
-msgstr "Tekstverwijzingen"
-
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:64
 msgid "Mt.6:17 But you, when you fast, anoint your head"
 msgstr ""
 
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:65
 msgid "Mk.16:1 [the women] brought spices that they might come and anoint Him."
 msgstr ""
 
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:66
 msgid ""
 "Mk.6:13 And they were...anointing with oil many sick people and healing them."
 msgstr ""
 
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:67
 msgid "Lk.7:38 [...] kissing His feet and anointing them with the perfume"
 msgstr ""
 
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:68
 msgid ""
 "Jn.12:3 Mary [...] anointed the feet of Jesus, and wiped them with her hair"
 msgstr ""
 
-#: docs/howto/en/docbook/howto-interpretation.docbook:72
-#, fuzzy
-msgid "Cross-references of chrio:"
-msgstr "Tekstverwijzingen"
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para>
+#: docs/howto/en/docbook/howto-interpretation.docbook:62
+msgid ""
+"Cross-references for aleipho: <placeholder type=\"orderedlist\" id=\"0\"/>"
+msgstr ""
 
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:74
 msgid ""
 "Lk.4:18 <quote>The Spirit of the Lord is upon me, because He has anointed me "
 "to preach [...]</quote>"
 msgstr ""
 
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:75
 msgid "Acts 4:27 Jesus, whom Thou hast anointed"
 msgstr ""
 
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:76
 msgid "Acts 10:38 God anointed Jesus with the Holy Ghost and power"
 msgstr ""
 
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:77
 msgid "2 Cor.1:21 Now He who...anointed us is God"
 msgstr ""
 
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para>
+#: docs/howto/en/docbook/howto-interpretation.docbook:72
+msgid "Cross-references of chrio: <placeholder type=\"orderedlist\" id=\"0\"/>"
+msgstr ""
+
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:82
 #, fuzzy
 msgid ""
@@ -1443,6 +1651,7 @@ msgstr ""
 "EEN PRAKTISCH GEBRUIK VAN OLIE, TERWIJL CHRIO EEN GEESTELIJKE BETEKENIS "
 "HEEFT."
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:85
 #, fuzzy
 msgid ""
@@ -1456,6 +1665,7 @@ msgstr ""
 "mishandelde man verzorgde, goot hij olie en wijn op de wond. Olie was dus "
 "ook in gebruik als medicijn in Jezus' tijd."
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:89
 msgid ""
 "Now let's apply what we just learned by this word study to James 5:14 "
@@ -1469,6 +1679,7 @@ msgstr ""
 "gebed uitspreken en hem met olie zalven in de naam des Heren.\"</emphasis> "
 "Is dat zalven geestelijk of praktisch? Het is praktisch! "
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:93
 #, fuzzy
 msgid ""
@@ -1486,10 +1697,12 @@ msgstr ""
 "hem bidden in de naam van de Heer. Geeft dat niet iets weer van een "
 "prachtige balans tussen het praktische en het spirituele bij onze God?"
 
+#. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:103
 msgid "Rule 2 - Interpret within the biblical context"
 msgstr "Regel 2 - Interpreteer binnen the bijbelse context"
 
+#. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:105
 #, fuzzy
 msgid ""
@@ -1508,10 +1721,12 @@ msgstr ""
 "onzekerheid blijft over de betekenis na interpretatie in de context, dan "
 "moeten we verder kijken."
 
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:110
 msgid "Example 2A"
 msgstr "Voorbeeld 2A "
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:111
 msgid ""
 "In a previous lesson we considered Jn.3:5 <emphasis>\"born of water and the "
@@ -1521,6 +1736,7 @@ msgstr ""
 "water en geest.\"</emphasis> Wat is volgens de context het water waarover "
 "het hier gaat?"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:113
 #, fuzzy
 msgid ""
@@ -1535,10 +1751,12 @@ msgstr ""
 "dat je interpretatie ontspoord is! Het bedoelde water is het vruchtwater. "
 "\"Geboren uit water\" is de natuurlijke geboorte."
 
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:117
 msgid "Example 2B"
 msgstr "Voorbeeld 2B"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:118
 #, fuzzy
 msgid ""
@@ -1550,10 +1768,12 @@ msgstr ""
 "emphasis> moet gelezen worden binnen de bijbelse context van 1 Kor.11:5 "
 "<emphasis>\"maar iedere vrouw, die ...bidt of profeteert...\"</emphasis>"
 
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:121
 msgid "Example 2C"
 msgstr "Voorbeeld 2C"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:122
 #, fuzzy
 msgid ""
@@ -1579,10 +1799,12 @@ msgstr ""
 "heeft mij niet gezonden om te dopen, maar om het evangelie te verkondigen\"</"
 "emphasis>?"
 
+#. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:134
 msgid "Rule 3 - Interpret within the historical and cultural context"
 msgstr "Regel 3 - Interpreteer binnen de historische en culturele context"
 
+#. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:136
 #, fuzzy
 msgid ""
@@ -1596,10 +1818,12 @@ msgstr ""
 "voor mij?\" komt pas later. We moeten rekening houden met de historische en "
 "culturele achtergrond van de schrijver en de geadresseerden."
 
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:139
 msgid "Example 3A"
 msgstr "Example 3A"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:139
 #, fuzzy
 msgid ""
@@ -1616,6 +1840,7 @@ msgstr ""
 "precieze betekenis van \"drie\" en \"dagen\" helpt niet om deze paradox te "
 "verklaren."
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:144
 #, fuzzy
 msgid ""
@@ -1638,10 +1863,12 @@ msgstr ""
 "Zondag 5:00 = dag 3. Interpretatie binnen de culturele context houdt ons uit "
 "de moeilijkheden."
 
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:151
 msgid "Example 3B"
 msgstr "Voorbeeld 3B"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:151
 #, fuzzy
 msgid ""
@@ -1659,11 +1886,13 @@ msgstr ""
 "net zo zou vergaan als die dieren. Maar in dit geval is God de enige die er "
 "tussendoor gaat, en zo een eenzijdig verbond sluit."
 
+#. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:159
 msgid "Rule 4 - Interpret according to the normal usage of words in language"
 msgstr ""
 "Regel 4 - Interpreteer volgens het normale gebruik van woorden in de taal"
 
+#. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:160
 #, fuzzy
 msgid ""
@@ -1673,15 +1902,18 @@ msgstr ""
 "Laat literaire taal gewoon literaire taal zijn, en laat figuurlijke taal "
 "figuurlijk zijn. En kijk uit voor idioom met een speciale betekenis."
 
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:163
 msgid "Example 4A"
 msgstr "Voorbeeld 4A"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:164
 #, fuzzy
 msgid "<quote>evil eye</quote> in Mt.6:23."
 msgstr "\"slecht oog\" in Matt.6:23."
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:165
 #, fuzzy
 msgid ""
@@ -1694,6 +1926,7 @@ msgstr ""
 "niet te passen in wat er aan vooraf gaat, en wat er na komt. Dat zou ons "
 "erop moeten wijzen dat we het niet opvatten zoals het bedoeld is!!"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:168
 #, fuzzy
 msgid ""
@@ -1711,18 +1944,22 @@ msgstr ""
 "een Hebreeuwse uitdrukking voor gierig of jaloers zijn. Nu terug naar "
 "Matt.6. Merk op hoe goed deze interpretatie past in de context!"
 
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:174
 msgid "Example 4B"
 msgstr "Voorbeeld 4B"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:175
 msgid "Is.59:1 <quote>The Lord's hand is not short;</quote>"
 msgstr ""
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:176
 msgid "Deut.33:27 <quote>Underneath are the everlasting arms.</quote>"
 msgstr ""
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:178
 #, fuzzy
 msgid ""
@@ -1754,6 +1991,7 @@ msgstr ""
 "is.\" De Mormonen moesten lachen toen zij zich realiseerden hoe belachelijk "
 "hun positie was."
 
+#. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:189
 msgid ""
 "Rule 5 - Understand the purpose of parables and the difference between a "
@@ -1762,16 +2000,19 @@ msgstr ""
 "Regel 5 - Begrijp de zin van gelijkenissen, en het verschil tussen een "
 "gelijkenis en een allegorie"
 
+#. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:190
 msgid ""
 "An allegory is: <emphasis>A story where each element has a meaning.</"
 "emphasis>"
 msgstr ""
 
+#. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:191
 msgid "Every parable is an allegory, true or false?"
 msgstr "Elke gelijkenis is een allegorie. Is dat juist of onjuist?"
 
+#. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:193
 #, fuzzy
 msgid ""
@@ -1791,10 +2032,12 @@ msgstr ""
 "schriftgedeelten halen, die het uiteenzetten, en als er dan een gelijkenis "
 "is die dat illustreert, dat is dan fijn."
 
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:198
 msgid "Example 5A"
 msgstr "Voorbeeld 5A"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:199
 #, fuzzy
 msgid ""
@@ -1806,6 +2049,7 @@ msgstr ""
 "Dit verhaal is een illustratie bij één les: volharding in gebed. Wat krijgen "
 "we als we er een allegorie van maken?"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:201
 msgid ""
 "All sorts of violence happens to the meanings: God is reluctant to protect "
@@ -1814,10 +2058,12 @@ msgstr ""
 "De betekenis wordt op allerlei manieren geweld aangedaan: God is onwillig om "
 "de rechten van weduwen te beschermen, gebed \"kwelt\" Hem, enz."
 
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:204
 msgid "Example 5B"
 msgstr "Voorbeeld 5B"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:205
 #, fuzzy
 msgid ""
@@ -1827,6 +2073,7 @@ msgstr ""
 "De gelijkenis van de onrechtvaardige rentmeester in Luk.16:1-9. Wat is het "
 "punt van vergelijking in deze gelijkenis? Is het een allegorie?"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:207
 #, fuzzy
 msgid ""
@@ -1839,25 +2086,47 @@ msgstr ""
 "heer oplichten) wordt niets gezegd."
 
 # type: Content of the bibletime entity
+#. type: Content of the bibletime entity
 #: docs/howto/en/docbook/index.docbook:3
 msgid "<application>BibleTime</application>"
 msgstr ""
 
 # type: Content of the kapp entity
+#. type: Content of the kapp entity
 #: docs/howto/en/docbook/index.docbook:4
 msgid "&bibletimehandbook;"
 msgstr ""
 
+#. type: Content of: <book><bookinfo><title>
 #: docs/howto/en/docbook/index.docbook:14
 msgid "The Biblestudy HowTo"
 msgstr "Bijbelstudie HowTo"
 
-#: docs/howto/en/docbook/index.docbook:31
-#, fuzzy
-msgid "The team of &bibletime; (info@bibletime.info)"
-msgstr "Het &bibletime; team, info@bibletime.info"
+#. type: Content of: <book><bookinfo><authorgroup><author><firstname>
+#: docs/howto/en/docbook/index.docbook:18
+msgid "Bob"
+msgstr ""
+
+#. type: Content of: <book><bookinfo><authorgroup><author><surname>
+#: docs/howto/en/docbook/index.docbook:19
+msgid "Harman"
+msgstr ""
+
+#. type: Content of: <book><bookinfo><authorgroup><author><surname>
+#: docs/howto/en/docbook/index.docbook:23
+msgid "The BibleTime team"
+msgstr ""
+
+#.  TRANS:ROLES_OF_TRANSLATORS 
+#. type: Content of: <book><bookinfo>
+#: docs/howto/en/docbook/index.docbook:29
+msgid ""
+"<copyright> <year>2001-2009</year> <holder>The team of &bibletime; "
+"(info@bibletime.info)</holder> </copyright>"
+msgstr ""
 
 # type: Content of: <book><bookinfo><legalnotice><para>
+#. type: Content of: <book><bookinfo><legalnotice><para>
 #: docs/howto/en/docbook/index.docbook:36
 msgid ""
 "This document was originally created by Mr. Bob Harman and is licensed under "
@@ -1865,6 +2134,7 @@ msgid ""
 "sa/3.0/\"> \"Creative Commons Attribution-Share Alike\"</link>."
 msgstr ""
 
+#. type: Content of: <book><bookinfo><legalnotice><para>
 #: docs/howto/en/docbook/index.docbook:42
 #, fuzzy
 msgid ""
@@ -1874,10 +2144,12 @@ msgstr ""
 "Schriftgedeelten zijn geciteerd uit de vertaling van het Nederlands "
 "Bijbelgennotschap (NBG 1951), tenzij anders vermeld "
 
+#. type: Content of: <book><bookinfo><abstract><title>
 #: docs/howto/en/docbook/index.docbook:47
 msgid "Abstract"
 msgstr "Overzicht"
 
+#. type: Content of: <book><bookinfo><abstract><para>
 #: docs/howto/en/docbook/index.docbook:50
 #, fuzzy
 msgid ""
@@ -1887,6 +2159,7 @@ msgstr ""
 "De <application>Bijbelstudie HowTo</application> is een gids bij het "
 "bestuderen van de Bijbel."
 
+#. type: Content of: <book><bookinfo><abstract><para>
 #: docs/howto/en/docbook/index.docbook:53
 #, fuzzy
 msgid ""
@@ -1903,3 +2176,29 @@ msgstr ""
 "denominatie verdedigt. We verwachten dat je de schriften bestudeert om "
 "erachter te komen wat ze zeggen. Als je eraan begint met het verlangen dat "
 "de Heer Zijn woord in je hart zaait, zal Hij je zeker niet teleurstellen!"
+
+#. type: Content of: <book><bookinfo><keywordset><keyword>
+#: docs/howto/en/docbook/index.docbook:64
+msgid "Bible"
+msgstr ""
+
+#. type: Content of: <book><bookinfo><keywordset><keyword>
+#: docs/howto/en/docbook/index.docbook:66
+msgid "HowTo"
+msgstr ""
+
+#, fuzzy
+#~ msgid "Find these verses:"
+#~ msgstr "In de media"
+
+#, fuzzy
+#~ msgid "Cross-references for aleipho:"
+#~ msgstr "Tekstverwijzingen"
+
+#, fuzzy
+#~ msgid "Cross-references of chrio:"
+#~ msgstr "Tekstverwijzingen"
+
+#, fuzzy
+#~ msgid "The team of &bibletime; (info@bibletime.info)"
+#~ msgstr "Het &bibletime; team, info@bibletime.info"

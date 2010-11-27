@@ -5,24 +5,28 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-04-21 12:33-0400\n"
+"Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
+"POT-Creation-Date: 2010-11-22 23:08-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 
+#. type: Content of: <chapter><title>
 #: docs/howto/en/docbook/howto-basics.docbook:1
 msgid "Bible Study Basics"
 msgstr "Základy studia Bible"
 
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:4
 msgid "Our Purpose as we Approach the Bible"
 msgstr "Proč přistupujeme k Bibli"
 
+#. type: Content of: <chapter><sect1><para><blockquote><attribution>
 #: docs/howto/en/docbook/howto-basics.docbook:6
 msgid "Jn.5:39-40"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><para><blockquote><para>
 #: docs/howto/en/docbook/howto-basics.docbook:6
 #, fuzzy
 msgid ""
@@ -34,6 +38,7 @@ msgstr ""
 "a ona svědčí o mně. Ale nechcete ke mně přijít, abyste měli život.</emphasis>"
 "\" (Jan 5,39-40)"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-basics.docbook:12
 #, fuzzy
 msgid ""
@@ -44,12 +49,14 @@ msgstr ""
 "Hlavním účelem knihy je přivést nás k Osobě. Martin Luther řekl \"ke kolébce "
 "chodíme jen kvůli dítěti\";"
 
+#. type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-basics.docbook:17
 msgid ""
 "John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, "
 "InterVarsity Press 1978, pp.97, 104."
 msgstr ""
 
+#. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-basics.docbook:19
 #, fuzzy
 msgid ""
@@ -64,6 +71,7 @@ msgstr ""
 "život světa, který přijde.\" Jejich studium bylo cílem samotným. V tomto se "
 "tragicky mýlili..."
 
+#. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-basics.docbook:24
 msgid ""
 "There is neither merit nor profit in the reading of Scripture for its own "
@@ -75,10 +83,12 @@ msgstr ""
 "Ježíši Kristu. Při každém čtení Bible je potřeba horlivě očekávat, že se "
 "takto můžeme setkat s Ježíšem."
 
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:31
 msgid "Approaches to God's Word"
 msgstr "Přístupy k Božímu Slovu"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-basics.docbook:32
 #, fuzzy
 msgid ""
@@ -92,10 +102,12 @@ msgstr ""
 "spojuje slyšení, čtení, studium a učení se a pomáhá uchovat slovo v naší "
 "mysli."
 
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:37
 msgid "Hear"
 msgstr "Slyšení"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:38
 #, fuzzy
 msgid ""
@@ -105,10 +117,12 @@ msgstr ""
 "\"<emphasis>...blaze těm, kdo slyší Boží slovo a dodržují je.\" (L 11,28)</"
 "emphasis>"
 
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:42
 msgid "Read"
 msgstr "Čtení"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:43
 #, fuzzy
 msgid ""
@@ -118,6 +132,7 @@ msgstr ""
 "\"<emphasis>Blaze tomu, kdo čte, i těm, kteří slyší slova tohoto proroctví..."
 "</emphasis>\" (Zj 1,3)"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:45
 #, fuzzy
 msgid ""
@@ -125,12 +140,15 @@ msgid ""
 "quote>"
 msgstr "\"<emphasis>... zabývej se čtením, ...</emphasis>\" (1Tm 4,13)"
 
+#. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/howto/en/docbook/howto-basics.docbook:49
+#: docs/howto/en/docbook/index.docbook:65
 msgid "Study"
 msgstr ""
 "Scripture quotes are from the New American Standard Bible unless otherwise "
 "indicated"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:50
 #, fuzzy
 msgid ""
@@ -142,6 +160,7 @@ msgstr ""
 "vší dychtivostí a každý den zkoumali Písma, zda jsou ty věci tak.</emphasis>"
 "\" (Sk 17,11)"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:54
 #, fuzzy
 msgid ""
@@ -153,10 +172,12 @@ msgstr ""
 "představit jako osvědčený před Bohem, dělník, který se nemá za co stydět a "
 "který správně vykládá slovo pravdy.</emphasis>\" (2Tm 2,15)"
 
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:59
 msgid "Memorize"
 msgstr "Memorování"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:60
 #, fuzzy
 msgid ""
@@ -166,10 +187,12 @@ msgstr ""
 "\"<emphasis>V srdci svém skládám řeč tvou, abych nehřešil proti tobě.</"
 "emphasis>\" (Ž 119,11)"
 
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:64
 msgid "Meditate"
 msgstr "Meditování"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:65
 #, fuzzy
 msgid ""
@@ -183,6 +206,7 @@ msgstr ""
 "kterýž ovoce své vydává časem svým, jehožto list nevadne, a cožkoli činiti "
 "bude, šťastně mu se povede.</emphasis> (Ž 1,2-3)"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:71
 #, fuzzy
 msgid ""
@@ -198,14 +222,17 @@ msgstr ""
 "křesťan potřebuje Bibli víc slyšet a číst, než studovat a učit se. Potřebuje "
 "se totiž seznámit s celkovým poselstvím Bible."
 
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:79
 msgid "Types of Bible Studies"
 msgstr "Typy studia Bible"
 
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:80
 msgid "Topical Study"
 msgstr "Tématické studium"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:81
 msgid ""
 "Pick out a certain topic and follow it through, using cross-references or a "
@@ -214,31 +241,38 @@ msgstr ""
 "Zvolí se určité téma a procházejí se místa, která o tématu mluví. Využívají "
 "se přitom křížové odkazy a konkordance."
 
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:85
 msgid "Character Study"
 msgstr "Studium postavy"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:86
 msgid ""
 "Studying the life of a Bible character, e.g. Joseph's life in Gen.37-50."
 msgstr "Studium života biblické postavy, např. Josefa v Gn 37-50."
 
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:90
 msgid "Expository Study"
 msgstr "Vysvětlující studium"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:91
 msgid "Studying a certain passage: paragraph, chapter, or book."
 msgstr "Studium určité pasáže: odstavce, kapitoly nebo knihy."
 
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:95
 msgid "Basics of Correct Interpretation"
 msgstr "Základy správného výkladu"
 
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:97
 msgid "Content"
 msgstr "Obsah"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:98
 msgid ""
 "What does it say? What does it say in the original language? Be careful with "
@@ -247,10 +281,12 @@ msgstr ""
 "Co text říká? Co text říká v originálním jazyce? Dávejte si pozor na "
 "definice. Nesnažte se \"číst\" něco, co text neříká."
 
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:102
 msgid "Context"
 msgstr "Souvislosti"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:103
 #, fuzzy
 msgid ""
@@ -261,11 +297,13 @@ msgstr ""
 "Co říkají okolní verše? Pravidlo zní: \"kontext je král\" - pasáž musí "
 "zapadat do celkového kontextu a struktury okolního textu a knihy."
 
+#. type: Content of: <chapter><section><orderedlist><listitem><formalpara><title>
 #: docs/howto/en/docbook/howto-basics.docbook:107
 #: docs/howto/en/docbook/howto-interpretation.docbook:26
 msgid "Cross-reference"
 msgstr "Odkazy"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:108
 msgid ""
 "What do other verses about this subject say through the rest of the Bible? "
@@ -275,10 +313,12 @@ msgstr ""
 "Co říkají ostatní verše k tomuto tématu v celé Bibli? Bůh nepopře sám sebe, "
 "proto naše interpretace musí obstát vzhledem ke zbytku Písma."
 
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:113
 msgid "An Expository Study of Matthew 6:1-18"
 msgstr "Vysvětlující studium Matouše 6,1-18"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-basics.docbook:114
 #, fuzzy
 msgid ""
@@ -294,10 +334,12 @@ msgstr ""
 "ujistíte se, že mají vztah k významu klíčového verše. Až jej najdete, "
 "napište si jej jako římskou jedničku do vaší osnovy:"
 
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:119
 msgid "Beware of practicing your righteousness before men to be noticed"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-basics.docbook:122
 #, fuzzy
 msgid ""
@@ -309,19 +351,22 @@ msgstr ""
 "Jaké oblasti našeho života se to týká? Našich motivů! Do jakých bodů můžeme "
 "konkretizovat celkovou ideu?"
 
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:126
-#: docs/howto/en/docbook/howto-basics.docbook:135
 msgid "When you give"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:127
 msgid "When you fast"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:128
 msgid "When you pray"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-basics.docbook:131
 msgid ""
 "Now fill in the outline with specific instructions of how to avoid wrong "
@@ -331,62 +376,81 @@ msgstr ""
 "praktikování spravedlnosti:"
 
 # type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:137
 msgid ""
 "don't sound a trumpet.  (how might someone <quote>sound a trumpet</quote> "
 "today?)"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:138
 msgid "do it secretly."
 msgstr ""
 
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:139
 msgid "etc."
 msgstr ""
 
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
+#: docs/howto/en/docbook/howto-basics.docbook:135
+msgid "When you give <placeholder type=\"orderedlist\" id=\"0\"/>"
+msgstr ""
+
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:145
 msgid "Worksheet: How to Use a Concordance"
 msgstr "Jak používat konkordanci"
 
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:147
 msgid "To Find a Particular Verse"
 msgstr "K nalezení konkrétního verše"
 
+#. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:149
 msgid "Pick out a key word or most-unusual word of the verse."
 msgstr "Vyberte z verše klíčové slovo nebo slovo nejméně běžné."
 
+#. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:150
 msgid "Turn to this word alphabetically."
 msgstr "Vyhledejte v konkordanci toto slovo (v základním tvaru)."
 
+#. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:151
 msgid "Go down the column of listings until you find your verse."
 msgstr "Projděte seznam výskytů, dokud nenaleznete váš verš."
 
-#: docs/howto/en/docbook/howto-basics.docbook:154
-msgid "Find these verses:"
-msgstr ""
-
 # type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:156
 msgid "<quote>Faithful are the wounds of a friend</quote>"
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:157
 msgid "<quote>We are ambassadors of Christ.</quote>"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:158
 msgid "The story of the rich man and Lazarus."
 msgstr ""
 
+#. type: Content of: <chapter><sect1><sect2><para>
+#: docs/howto/en/docbook/howto-basics.docbook:154
+msgid "Find these verses: <placeholder type=\"orderedlist\" id=\"0\"/>"
+msgstr ""
+
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:163
 msgid "To Do a Topical Study"
 msgstr "K tématickému studiu"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:164
 #, fuzzy
 msgid ""
@@ -401,10 +465,12 @@ msgstr ""
 "hledat příbuzná slova a odkazy na ně, např. \"vykoupit, vykoupený, výkupné"
 "\", dokonce i \"koupit, koupen\"."
 
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:170
 msgid "To Clarify Word Meanings in the Greek and Hebrew"
 msgstr "K ujasnění slovního významu v řečtině a hebrejštině"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:171
 #, fuzzy
 msgid ""
@@ -420,11 +486,13 @@ msgstr ""
 "všecko). Nejsou to dvě různá řecká slova přeložená do angličtiny jako \"judge"
 "\" (soudit)? (Budeme používat Strongovu konkordanci.)"
 
+#. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:175
 #, fuzzy
 msgid "Look up &quot;judge&quot;."
 msgstr "Vyhledejte slovo \"judge\"."
 
+#. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:176
 #, fuzzy
 msgid ""
@@ -434,15 +502,18 @@ msgstr ""
 "Vyhledejte odkaz na Mt 7,1. Vpravo naleznete číslo 2919. To je odkaz na "
 "použité řecké slovo. Poznamenejte si ho."
 
+#. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:178
 #, fuzzy
 msgid "Now look up &quot;judgeth&quot;."
 msgstr "Nyní vyhledejte slovo \"judgeth\"."
 
+#. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:179
 msgid "Go down the column to 1 Cor.2:15 . . . . . 350."
 msgstr "U odkazu na 1K 2,15 je číslo 350."
 
+#. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:180
 #, fuzzy
 msgid ""
@@ -454,40 +525,49 @@ msgstr ""
 "Starý Zákon používáme hebrejštinu.) Porovnáním významu slova číslo 2919 se "
 "slovem číslo 350 získáte odpověď."
 
+#. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:185
 msgid "To Find Meanings of Names"
 msgstr "K nalezení významu jmen"
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:186
 msgid ""
 "By the same process we can find the meaning of a name in the Greek or Hebrew."
 msgstr ""
 "Stejným způsobem můžete zjistit význam jmen v řečtině nebo hebrejštině."
 
+#. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:187
 msgid "Look up these names and write down their meaning:"
 msgstr "Nalezněte tato jména a zjistěte jejich význam:"
 
+#. type: Content of: <chapter><sect1><sect2><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:189
 msgid "Nabal"
 msgstr "Nábal"
 
+#. type: Content of: <chapter><sect1><sect2><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:190
 msgid "Abigail"
 msgstr "Abigail"
 
+#. type: Content of: <chapter><sect1><sect2><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:191
 msgid "Joshua"
 msgstr "Jozue"
 
+#. type: Content of: <chapter><sect1><sect2><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:192
 msgid "Barnabus"
 msgstr "Barnabáš"
 
+#. type: Content of: <chapter><title>
 #: docs/howto/en/docbook/howto-importance.docbook:1
 msgid "Importance of God's Word"
 msgstr "Význam Božího Slova"
 
+#. type: Content of: <chapter><para>
 #: docs/howto/en/docbook/howto-importance.docbook:2
 #, fuzzy
 msgid ""
@@ -499,15 +579,18 @@ msgstr ""
 "Studium Bible je jedním z hlavních způsobů, jakým se učíme komunikovat s "
 "Bohem."
 
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:6
 msgid "A Book that is Unique"
 msgstr "Jedinečná kniha"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:7
 #, fuzzy
 msgid "The Bible stands alone in many ways.  It is unique in:"
 msgstr "Bible je výjimečná v mnoha směrech. Je jedinečná v:"
 
+#. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:12
 #, fuzzy
 msgid ""
@@ -517,6 +600,7 @@ msgstr ""
 "popularitě. Prodej Biblí jen v Severní Americe činí více než pět set milionů "
 "dolarů ročně. Bible je bestsellerem v žebříčcích každoročních i celkových."
 
+#. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:18
 #, fuzzy
 msgid ""
@@ -526,6 +610,7 @@ msgstr ""
 "autorství. Byla psána během více než 1 600 let čtyřiceti různými autory v "
 "různém prostředí, přesto je kompaktní jako od jednoho autora."
 
+#. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:24
 #, fuzzy
 msgid ""
@@ -536,34 +621,42 @@ msgstr ""
 "emphasis> (Jsou spisy Nového Zákona věrohodné?) porovnává spisy Nového "
 "Zákona s ostaními starověkými texty:"
 
+#. type: Content of: <chapter><sect1><table><title>
 #: docs/howto/en/docbook/howto-importance.docbook:30
 msgid "Comparison of New Testament manuscripts with other ancient texts."
 msgstr "Porovnání spisů Nového Zákona s ostatními starověkými texty."
 
+#. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:34
 msgid "Work"
 msgstr "Text"
 
+#. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:35
 msgid "When Written"
 msgstr "Kdy napsáno"
 
+#. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:36
 msgid "Earliest Copy"
 msgstr "Nejstarší opis"
 
+#. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:37
 msgid "Time Lapse"
 msgstr "Časový odstup"
 
+#. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:37
 msgid "Number of Copies"
 msgstr "Počet opisů"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:41
 msgid "Herodotus"
 msgstr "Herodotus"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:42
 msgid "448-428 B.C."
 msgstr "448-428 př.K."
@@ -586,92 +679,113 @@ msgstr "448-428 př.K."
 # index.docbook:41, index.docbook:41, index.docbook:41
 # index.docbook:41, index.docbook:41, index.docbook:41
 # index.docbook:41, index.docbook:41, index.docbook:41
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:42
 #: docs/howto/en/docbook/howto-importance.docbook:52
 #: docs/howto/en/docbook/howto-importance.docbook:57
 msgid "900 A.D."
 msgstr "900 n.l."
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:43
 msgid "1300 years"
 msgstr "1300 let"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:43
 msgid "8"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:46
 msgid "Tacitus"
 msgstr "Tacitus"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:47
 msgid "100 A.D."
 msgstr "100 n.l."
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:47
 msgid "1100 A.D."
 msgstr "1100 n.l."
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:48
 msgid "1000 years"
 msgstr "1000 let"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:48
 #: docs/howto/en/docbook/howto-importance.docbook:58
 msgid "20"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:51
 msgid "Caesar's <emphasis>Gallic War</emphasis>"
 msgstr "Caesarova <emphasis>Válka Galská</emphasis>"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:52
 msgid "50-58 B.C."
 msgstr "50-58 př.K."
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:53
 msgid "950 years"
 msgstr "950 let"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:53
 msgid "10"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:56
 msgid "Livy's <emphasis>Roman History</emphasis>"
 msgstr "Livyho <emphasis>Roman History</emphasis>"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:57
 msgid "59 B.C. - 17 A.D."
 msgstr "59 př.K. - 17 n.l."
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:58
 msgid "900 years"
 msgstr "900 let"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:61
 msgid "New Testament"
 msgstr "Nový Zákon"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:62
 msgid "40 A.D. - 100 A.D."
 msgstr "40 n.l. - 100 n.l."
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:62
 msgid "130 A.D. Partial manuscripts 350 A.D. Full manuscripts"
 msgstr "130 n.l. zlomky spisů, 350 n.l. úplné spisy"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:63
 msgid "30 - 310 years"
 msgstr "30 - 310 let"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:63
 msgid "5000 Greek &amp; 10,000 Latin"
 msgstr "5000 řeckých a 10 000 latinských"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:66
 #, fuzzy
 msgid ""
@@ -689,6 +803,7 @@ msgstr ""
 "porovnat? Pět tisíc v řečtině a deset tisíc v latině!"
 
 # type: Content of: <chapter><sect1><blockquote><attribution>
+#. type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-importance.docbook:72
 msgid ""
 "Textual critic F. J. A. Hort, \"The New Testament in the Original Greek\", "
@@ -696,6 +811,7 @@ msgid ""
 "p.  25-26"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:74
 msgid ""
 "\"In the verity and fullness of the evidence on which it rests, the text of "
@@ -705,10 +821,12 @@ msgstr ""
 "\"V pravdivosti a plnosti důkazů, kterými je podepřen, je text Nového Zákona "
 "absolutně a nedosažitelně osamocený mezi ostatními starověkými prózami.\""
 
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:79
 msgid "A Book that God Breathed"
 msgstr "Kniha vdechnutá Bohem"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:80
 #, fuzzy
 msgid ""
@@ -724,6 +842,7 @@ msgstr ""
 "slovem, které vychází z Božích úst.'\" (Mt 4,4) </emphasis> Když čteme "
 "Bibli, Duch Boží je s námi a promlouvá do našeho srdce."
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:86
 msgid ""
 "2 Tim.3:16 declares, \"<emphasis>All scripture is inspired by God [lit., God-"
@@ -733,12 +852,14 @@ msgstr ""
 "2Tm 3,16 vyznává, že <emphasis>\"Veškeré Písmo vdechnuté Bohem...\"</"
 "emphasis> Věříte tomu? Než odpovíte, zvažte Ježíšův postoj k Písmu."
 
+#. type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-importance.docbook:89
 msgid ""
 "John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, "
 "InterVarsity Press 1978, pp.93-95"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:90
 #, fuzzy
 msgid ""
@@ -770,6 +891,7 @@ msgstr ""
 "nemluvili tak, aby porušili Slovo božského Autora. Bůh mluvil. Lidé mluvili. "
 "Žádné pravdě nesmí být dovoleno ubrat z ostatních..."
 
+#. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:105
 #, fuzzy
 msgid ""
@@ -782,6 +904,7 @@ msgstr ""
 "svědectví. Svědectví Bible je svědectvím Božím. A ten hlavní důvod, proč "
 "křesťané věří v božský původ Bible, je, že to učil sám Ježíš Kristus."
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:110
 msgid ""
 "2 Tim.3:16 goes on, \"<emphasis>and profitable for teaching, for correction, "
@@ -796,10 +919,12 @@ msgstr ""
 "opravdu Bůh mluvící k nám, budeme ji mít jako autoritu ve všech věcech víry "
 "a chování."
 
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:117
 msgid "A Book that Works"
 msgstr "Kniha, která pracuje"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:119
 msgid ""
 "What will studying the Bible do for you? 1 Thess.2:13 says that the Bible "
@@ -810,31 +935,38 @@ msgstr ""
 "Boží, jež také působí ve vás věřících.\"</emphasis> Popišme si, co všechno "
 "Slovo vykonává."
 
+#. type: Content of: <chapter><sect1><table><title>
 #: docs/howto/en/docbook/howto-importance.docbook:125
 msgid "What does Bible study do for Christians?"
 msgstr "Co studium Bible dělá s křesťanem?"
 
+#. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:129
 msgid "Reference"
 msgstr "Odkaz"
 
+#. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:130
 msgid "Action"
 msgstr "Vliv"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:135
 msgid "Eph. 5:26"
 msgstr "Ef 5,26"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:137
 msgid ""
 "cleanses -- \"...having cleansed her by the washing of water with the word.\""
 msgstr "očišťuje - \"...když ji očistil koupelí vody skrze slovo.\""
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:142
 msgid "Acts 20:32"
 msgstr "Sk 20,32"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:145
 #, fuzzy
 msgid ""
@@ -844,10 +976,12 @@ msgstr ""
 "buduje - \"...vás, bratři, svěřuji Bohu a slovu jeho milosti, které má moc "
 "vás vybudovat a dát vám dědictví mezi všemi posvěcenými.\""
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:154
 msgid "Rom. 15:4"
 msgstr "Ř 15,4"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:157
 msgid ""
 "encourages -- \"that through perseverance and the encouragement of the "
@@ -855,20 +989,24 @@ msgid ""
 msgstr ""
 "povzbuzuje - \"abychom skrze trpělivost a skrze potěšení Písem měli naději.\""
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:164
 msgid "Rom. 10:17"
 msgstr "Ř 10,17"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:167
 msgid ""
 "gives faith -- \"So faith comes from hearing, and hearing by the word of "
 "Christ.\""
 msgstr "dává víru - \"Víra je tedy ze slyšení a slyšení skrze slovo Boží.\""
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:175
 msgid "1 Cor. 10:11"
 msgstr "1K 10,11"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:178
 msgid ""
 "instructs -- \"Now these things happened to them for an example, and they "
@@ -877,10 +1015,12 @@ msgstr ""
 "napomíná - \"A toto všechno se jim stalo na výstrahu a bylo to zapsáno pro "
 "napomenutí nám\""
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:186
 msgid "Mt. 4:4"
 msgstr "Mt 4,4"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:189
 msgid ""
 "nourishment -- \"But He answered and said, 'It is written, Man shall not "
@@ -890,10 +1030,12 @@ msgstr ""
 "sytí - \"Je napsáno: 'Nejen chlebem bude člověk živ, ale každým slovem, "
 "které vychází z Božích úst.'\""
 
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:200
 msgid "A Book that Liberates"
 msgstr "Kniha, která osvobozuje"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:202
 #, fuzzy
 msgid ""
@@ -910,6 +1052,7 @@ msgstr ""
 "v první části věty, verš 31: <emphasis>\"Jestliže zůstanete v mém slově, "
 "jste opravdu mými učedníky.\"</emphasis>"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:208
 msgid ""
 "We see that this is a conditional promice, specifically speaking of the "
@@ -918,6 +1061,7 @@ msgstr ""
 "Vidíme, že se jedná o podmíněné zaslíbení, mluvící speciálně o pravdě Božího "
 "slova."
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:210
 msgid ""
 "The Greek word for \"wind\" used in Eph.4:14 means a <emphasis>violent wind."
@@ -931,6 +1075,7 @@ msgstr ""
 "větrem učení...</emphasis> Jedna z věcí, které nám studium Bible přináší, je "
 "zakořenění v pravdě, takže nemůžeme být jednoduše \"odfouknuti\"."
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:216
 msgid ""
 "<emphasis>But Jesus answered and said to them, </emphasis>\"<emphasis>You "
@@ -940,68 +1085,84 @@ msgstr ""
 "<emphasis>Ježíš jim však odpověděl: \"Bloudíte [v ang. KJV: 'Ye do err' = "
 "děláte chybu], protože neznáte Písma ani Boží moc.\"</emphasis>Mt 22,29"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:218
 msgid "What 2 things do we need to know to be kept from error?"
 msgstr "Jaké dvě věci musíme znát, abychom se vyvarovali chyb?"
 
+#. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:220
 msgid "God's word"
 msgstr "Boží slovo"
 
+#. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:221
 msgid "God's power"
 msgstr "Boží moc"
 
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:225
 msgid "A Book that Wars"
 msgstr "Kniha, která bojuje"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:227
 msgid "Eph.6:10-18 is one picture of our spiritual armament."
 msgstr "V Ef 6,10-18 je jeden přehled naší duchovní zbroje."
 
+#. type: Content of: <chapter><sect1><table><title>
 #: docs/howto/en/docbook/howto-importance.docbook:229
 msgid "Spiritual Armor"
 msgstr "Duchovní zbroj"
 
+#. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:233
 msgid "Question"
 msgstr "Otázka"
 
+#. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:234
 msgid "Answer"
 msgstr "Odpověď"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:237
 msgid "How many of the weapons listed here are defensive weapons?"
 msgstr "Kolik popsaných částí zbroje slouží k obraně?"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:237
 msgid "5"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:238
 msgid "How many are offensive?"
 msgstr "Kolik je jich útočných?"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:238
 msgid "One"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:239
 msgid "Which one(s)?"
 msgstr "Která (-é)?"
 
+#. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #: docs/howto/en/docbook/howto-importance.docbook:239
 msgid "the word - <foreignphrase>rhema</foreignphrase>"
 msgstr "Slovo - <foreignphrase>rhema</foreignphrase>"
 
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:243
 msgid "Exhortations"
 msgstr "Napomenutí"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:245
 msgid ""
 "2 Tim.2:15 (KJV) \"<emphasis>Study to show thyself approved unto God, a "
@@ -1012,6 +1173,7 @@ msgstr ""
 "osvědčený před Bohem, dělník, který se nemá za co stydět a který správně "
 "vykládá slovo pravdy.\"</emphasis> (2Tm 2,15)"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:249
 msgid ""
 "Col.3:16 \"<emphasis>Let the word of Christ richly dwell within you; with "
@@ -1023,14 +1185,17 @@ msgstr ""
 "Vyučujte a napomínejte jedni druhé žalmy, chvalozpěvy a duchovními písněmi; "
 "s vděčností zpívejte svým srdcem Pánu.\"</emphasis> (Kol 3,16)"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:253
 msgid "If you're rich in something, how much of it do you have?"
 msgstr "Pokud jste v něčem bohatí, kolik toho něčeho máte?"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:256
 msgid "Not a little!"
 msgstr "Nemálo!"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:259
 #, fuzzy
 msgid ""
@@ -1045,16 +1210,19 @@ msgstr ""
 "můj, hojně dosti osvícen býti můžeš. Dělání knih mnohých žádného konce není, "
 "a čísti mnoho jest zemdlení těla.\"</emphasis> (Kaz 12,11-12)"
 
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:265
 msgid "Appendix: \"Once for All\""
 msgstr "Dodatek: \"Jednou provždy\""
 
+#. type: Content of: <chapter><sect1><blockquote><attribution>
 #: docs/howto/en/docbook/howto-importance.docbook:268
 msgid ""
 "John R. W. Stott, <emphasis>Christ the Controversialist,</emphasis> "
 "InterVarsity Press 1978, pp.106-107"
 msgstr ""
 
+#. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:269
 #, fuzzy
 msgid ""
@@ -1078,6 +1246,7 @@ msgstr ""
 "\"[Kristus] zemřel hříchu jednou provždy\"</emphasis> (Ř 6,10; viz také 1P "
 "3,18; Ž 9,26-28)."
 
+#. type: Content of: <chapter><sect1><blockquote><para>
 #: docs/howto/en/docbook/howto-importance.docbook:279
 #, fuzzy
 msgid ""
@@ -1101,10 +1270,12 @@ msgstr ""
 "autoritu a <foreignphrase>sola gratia</foreignphrase> (pouhá milost) pro "
 "naše spasení."
 
+#. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-importance.docbook:290
 msgid "Supplement: Bible Reading Programs"
 msgstr "Příloha: Plány čtení Bible"
 
+#. type: Content of: <chapter><sect1><para>
 #: docs/howto/en/docbook/howto-importance.docbook:291
 #, fuzzy
 msgid ""
@@ -1117,10 +1288,12 @@ msgstr ""
 "například první se čtvrtým, nebo druhý s pátým. Každý rok je obměňujte, aby "
 "pro vás zůstaly čerstvé."
 
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:296
 msgid "New Testament in a Year: read one chapter each day, 5 days a week."
 msgstr "Nový Zákon za rok: čtěte jednu kapitolu denně, pět dní v týdnu."
 
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:298
 msgid ""
 "Proverbs in a Month: read one chapter of Proverbs each day, corresponding to "
@@ -1129,6 +1302,7 @@ msgstr ""
 "Přísloví za měsíc: čtěte jednu kapitolu Přísloví denně, podle čísla dne v "
 "měsíci."
 
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:300
 msgid ""
 "Psalms in a Month: read 5 Psalms at intervals of 30 each day, for instance "
@@ -1137,6 +1311,7 @@ msgstr ""
 "Žalmy za měsíc: čtěte každý den pět Žalmů s odstupem třiceti čísel, "
 "například pro 20. den čtěte Ž 20, 50, 80, 110 a 140."
 
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:302
 msgid ""
 "Psalms &amp; Proverbs in 6 months: read through Psalms and Proverbs one "
@@ -1145,6 +1320,7 @@ msgstr ""
 "Žalmy a Přísloví za šest měsíců: čtěte od začátku do konce jednu kapitolu "
 "denně."
 
+#. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-importance.docbook:304
 msgid ""
 "Old Testament without Psalms &amp; Proverbs in 2 years: if you read one "
@@ -1155,10 +1331,12 @@ msgstr ""
 "kapitolu denně a přeskočíte Žalmy a Přísloví, přečtete celý SZ za dva roky a "
 "dva týdny."
 
+#. type: Content of: <chapter><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:1
 msgid "Rules of Bible Interpretation (Hermeneutics)"
 msgstr "Pravidla interpretace Bible (Hermeneutika)"
 
+#. type: Content of: <chapter><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:2
 #, fuzzy
 msgid ""
@@ -1187,6 +1365,7 @@ msgstr ""
 "listech] některá nesnadno srozumitelná místa, která nevědomí a nestálí lidé "
 "ke své vlastní záhubě překrucují, tak jako i ostatní Písma.\"</emphasis>"
 
+#. type: Content of: <chapter><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:11
 #, fuzzy
 msgid ""
@@ -1197,10 +1376,12 @@ msgstr ""
 "Jak se postupuje při takovém hledání správného významu? Řekněme, že jste "
 "narazili na verš, kterému nerozumíte. Postupujte tímto způsobem:"
 
+#. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:14
 msgid "Rule 1 - Interpret according to the exact meaning of the words."
 msgstr "Pravidlo 1. - Výklad podle přesného významu slov."
 
+#. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:15
 #, fuzzy
 msgid ""
@@ -1211,11 +1392,13 @@ msgstr ""
 "Čím přesněji rozumíme správnému, původnímu významu slov, tím lepší náš "
 "výklad bude. Pokuste se najít přesný význam slov pomocí těchto kroků:"
 
+#. type: Content of: <chapter><section><orderedlist><listitem><formalpara><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:20
 #, fuzzy
 msgid "Definition"
 msgstr "Krok 1) Definice"
 
+#. type: Content of: <chapter><section><orderedlist><listitem><formalpara><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:21
 #, fuzzy
 msgid ""
@@ -1225,6 +1408,7 @@ msgstr ""
 "Vyhledejte definici slova v řeckém nebo hebrejském slovníku. U sloves si "
 "dejte pozor i na správný čas."
 
+#. type: Content of: <chapter><section><orderedlist><listitem><formalpara><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:27
 #, fuzzy
 msgid ""
@@ -1245,10 +1429,12 @@ msgstr ""
 "PŘELOŽENO JEDNÍM ČESKÝM SLOVEM A ORIGINÁLNÍ SLOVA MOHOU MÍT JINÉ VÝZNAMOVÉ "
 "ODSTÍNY."
 
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:37
 msgid "Example 1A"
 msgstr "Příklad 1A"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:38
 #, fuzzy
 msgid ""
@@ -1264,6 +1450,7 @@ msgstr ""
 "se ale do knihy <emphasis>The Complete Word Study New Testament</emphasis> "
 "(Spiros Zodhiates, AMG Publishers, 1991)."
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:42
 #, fuzzy
 msgid ""
@@ -1294,11 +1481,20 @@ msgstr ""
 "činnosti.\" Náš případ je právě negovaný příkaz, takže znamená ukončení "
 "něčeho, co již probíhá. Takže závěr našeho zkoumání je:"
 
+#. type: Content of: <chapter><section><section><para>
+#: docs/howto/en/docbook/howto-interpretation.docbook:50
+msgid ""
+"<emphasis>Mary is already clinging to Jesus, and he is saying to stop "
+"holding him!</emphasis>"
+msgstr ""
+
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:53
 #, fuzzy
 msgid "Example 1B"
 msgstr "Příklad 1A"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:54
 #, fuzzy
 msgid ""
@@ -1309,6 +1505,7 @@ msgstr ""
 "sboru a ať se za něj modlí a pomažou ho olejem v Pánově jménu.</emphasis> Co "
 "znamená ono pomazání?"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:55
 #, fuzzy
 msgid ""
@@ -1330,56 +1527,67 @@ msgstr ""
 "ang. temporal, pozn. překl.), označuje většinou činnost předcházející "
 "činnost hlavního slovesa.\" (Zodhiates, str. 851)"
 
-#: docs/howto/en/docbook/howto-interpretation.docbook:62
-#, fuzzy
-msgid "Cross-references for aleipho:"
-msgstr "Odkazy"
-
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:64
 msgid "Mt.6:17 But you, when you fast, anoint your head"
 msgstr ""
 
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:65
 msgid "Mk.16:1 [the women] brought spices that they might come and anoint Him."
 msgstr ""
 
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:66
 msgid ""
 "Mk.6:13 And they were...anointing with oil many sick people and healing them."
 msgstr ""
 
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:67
 msgid "Lk.7:38 [...] kissing His feet and anointing them with the perfume"
 msgstr ""
 
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:68
 msgid ""
 "Jn.12:3 Mary [...] anointed the feet of Jesus, and wiped them with her hair"
 msgstr ""
 
-#: docs/howto/en/docbook/howto-interpretation.docbook:72
-#, fuzzy
-msgid "Cross-references of chrio:"
-msgstr "Odkazy"
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para>
+#: docs/howto/en/docbook/howto-interpretation.docbook:62
+msgid ""
+"Cross-references for aleipho: <placeholder type=\"orderedlist\" id=\"0\"/>"
+msgstr ""
 
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:74
 msgid ""
 "Lk.4:18 <quote>The Spirit of the Lord is upon me, because He has anointed me "
 "to preach [...]</quote>"
 msgstr ""
 
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:75
 msgid "Acts 4:27 Jesus, whom Thou hast anointed"
 msgstr ""
 
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:76
 msgid "Acts 10:38 God anointed Jesus with the Holy Ghost and power"
 msgstr ""
 
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:77
 msgid "2 Cor.1:21 Now He who...anointed us is God"
 msgstr ""
 
+#. type: Content of: <chapter><section><section><itemizedlist><listitem><para>
+#: docs/howto/en/docbook/howto-interpretation.docbook:72
+msgid "Cross-references of chrio: <placeholder type=\"orderedlist\" id=\"0\"/>"
+msgstr ""
+
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:82
 #, fuzzy
 msgid ""
@@ -1391,6 +1599,7 @@ msgstr ""
 "Takže jaký je rozdíl mezi aleipho a chrio? Aleipho je praktické použití "
 "oleje a chrio je duchovní."
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:85
 #, fuzzy
 msgid ""
@@ -1403,6 +1612,7 @@ msgstr ""
 "použito) je dobrý Samaritán, který zbitému člověku nalil na rány olej a "
 "víno. V Ježíšových dnech se používal olej jako lék."
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:89
 msgid ""
 "Now let's apply what we just learned by this word study to James 5:14 "
@@ -1413,6 +1623,7 @@ msgstr ""
 "A nyní se pokusme aplikovat náš poznatek na Jakuba 5,14. Je ono \"pomazání\" "
 "duchovní nebo praktické (fyzické)? Praktické!"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:93
 #, fuzzy
 msgid ""
@@ -1430,10 +1641,12 @@ msgstr ""
 "jménu Páně. Nevyjadřuje to nádhernou rovnováhu mezi praktickým a duchovním v "
 "našem Bohu?"
 
+#. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:103
 msgid "Rule 2 - Interpret within the biblical context"
 msgstr "Pravidlo 2. - Výklad v biblickém kontextu"
 
+#. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:105
 #, fuzzy
 msgid ""
@@ -1450,10 +1663,12 @@ msgstr ""
 "je klíč. Pokud zmatek přetrvává i po zasazení textu do blízkého kontextu, "
 "musíme se podívat dál."
 
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:110
 msgid "Example 2A"
 msgstr "Příklad 2A"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:111
 msgid ""
 "In a previous lesson we considered Jn.3:5 <emphasis>\"born of water and the "
@@ -1462,6 +1677,7 @@ msgstr ""
 "Podívejme se na Jan 3,5: \"<emphasis>Jestliže se někdo nenarodí z vody a z "
 "Ducha</emphasis>\". Co znamená slovo voda v daném kontextu?"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:113
 #, fuzzy
 msgid ""
@@ -1475,10 +1691,12 @@ msgstr ""
 "váš výklad \"vykolejil\"! Voda je v tomto případě plodová voda, \"narození z "
 "vody\" je přirozené narození."
 
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:117
 msgid "Example 2B"
 msgstr "Příklad 2B"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:118
 #, fuzzy
 msgid ""
@@ -1490,10 +1708,12 @@ msgstr ""
 "nutno vykládat v kontextu 1K 11,5: \"<emphasis>každá žena modlící se nebo "
 "prorokující...</emphasis>\"."
 
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:121
 msgid "Example 2C"
 msgstr "Přiklad 2C"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:122
 #, fuzzy
 msgid ""
@@ -1517,10 +1737,12 @@ msgstr ""
 "napsat v 1K 1,17: \"<emphasis>Kristus mě totiž neposlal křtít, ale kázat "
 "evangelium</emphasis>\"?"
 
+#. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:134
 msgid "Rule 3 - Interpret within the historical and cultural context"
 msgstr "Pravidlo 3. - Výklad v historickém a kulturním kontextu"
 
+#. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:136
 #, fuzzy
 msgid ""
@@ -1534,10 +1756,12 @@ msgstr ""
 "mě?\" Musíme pochopit historické a kulturní pozadí autora a těch, kterým "
 "bylo slovo určeno."
 
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:139
 msgid "Example 3A"
 msgstr "Příklad 3A"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:139
 #, fuzzy
 msgid ""
@@ -1552,6 +1776,7 @@ msgstr ""
 "přitom \"třetího dne vstát z mrtvých\"? Přesný význam slov \"třetí\" nebo "
 "\"den\" nepomůže s výsvětlením zřejmého protimluvu."
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:144
 #, fuzzy
 msgid ""
@@ -1570,10 +1795,12 @@ msgstr ""
 "až neděle 6 hod. = 3. den. Výklad v rámci historického kontextu nás ochrání "
 "před problémy."
 
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:151
 msgid "Example 3B"
 msgstr "Příklad 3B"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:151
 #, fuzzy
 msgid ""
@@ -1590,10 +1817,12 @@ msgstr ""
 "skončit jako ono zvíře. Ale v tomto případě pouze Bůh prošel skrz a vzal tak "
 "na sebe jednostranný závazek."
 
+#. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:159
 msgid "Rule 4 - Interpret according to the normal usage of words in language"
 msgstr "Pravidlo 4. - Výklad s ohledem na normální užívání slov v jazyce"
 
+#. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:160
 #, fuzzy
 msgid ""
@@ -1603,15 +1832,18 @@ msgstr ""
 "Doslovný jazyk chápejte doslovně, obrazný obrazně. A pozor na idiomy "
 "(ustálená slovní spojení, fráze), které mají speciální význam."
 
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:163
 msgid "Example 4A"
 msgstr "Příklad 4A"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:164
 #, fuzzy
 msgid "<quote>evil eye</quote> in Mt.6:23."
 msgstr "\"zlé oko\" v Mt 6,23."
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:165
 #, fuzzy
 msgid ""
@@ -1623,6 +1855,7 @@ msgstr ""
 "kontext - spíše ještě více mate. Nevypadá to, že by text zapadal mezi okolní "
 "verše. To může znamenat, že ho nesprávně chápeme!"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:168
 #, fuzzy
 msgid ""
@@ -1640,18 +1873,22 @@ msgstr ""
 "lakomost nebo závist. Nyní se vraťte do Mt 6 a podívejte se, jak náš "
 "poznatek nyní zapadá do kontextu."
 
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:174
 msgid "Example 4B"
 msgstr "Příklad 4B"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:175
 msgid "Is.59:1 <quote>The Lord's hand is not short;</quote>"
 msgstr ""
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:176
 msgid "Deut.33:27 <quote>Underneath are the everlasting arms.</quote>"
 msgstr ""
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:178
 #, fuzzy
 msgid ""
@@ -1680,6 +1917,7 @@ msgstr ""
 "Bůh je ptákem.\" Mormoni se museli smát, když si uvědomili směšnost svého "
 "postoje."
 
+#. type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:189
 msgid ""
 "Rule 5 - Understand the purpose of parables and the difference between a "
@@ -1688,16 +1926,19 @@ msgstr ""
 "Pravidlo 5. - Pochopení smyslu podobenství a rozdílu mezi podobenstvím a "
 "alegorií"
 
+#. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:190
 msgid ""
 "An allegory is: <emphasis>A story where each element has a meaning.</"
 "emphasis>"
 msgstr ""
 
+#. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:191
 msgid "Every parable is an allegory, true or false?"
 msgstr "Je pravda, že každé podobenství je alegorií?"
 
+#. type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:193
 #, fuzzy
 msgid ""
@@ -1716,10 +1957,12 @@ msgstr ""
 "která lze jasně vyložit. Pokud je na dokreslení připojeno podobenství, je to "
 "skvělé."
 
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:198
 msgid "Example 5A"
 msgstr "Příklad 5A"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:199
 #, fuzzy
 msgid ""
@@ -1731,6 +1974,7 @@ msgstr ""
 "demonstruje jednu věc - vytrvalost v modlitbě. Pokud jej ale vezmeme jako "
 "alegorii, co dostaneme?"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:201
 msgid ""
 "All sorts of violence happens to the meanings: God is reluctant to protect "
@@ -1739,10 +1983,12 @@ msgstr ""
 "Zcela znásilněný obraz - Bůh je neochotný bránit práva vdov, modlitebník jej "
 "obtěžuje atd."
 
+#. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:204
 msgid "Example 5B"
 msgstr "Příklad 5B"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:205
 #, fuzzy
 msgid ""
@@ -1752,6 +1998,7 @@ msgstr ""
 "Podobenství o nepoctivém správci v L 16,1-9. Jaká je pointa podobenství? "
 "Jedná se o alegorii?"
 
+#. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:207
 #, fuzzy
 msgid ""
@@ -1764,25 +2011,47 @@ msgstr ""
 "chování při podvádění svého pána."
 
 # type: Content of the bibletime entity
+#. type: Content of the bibletime entity
 #: docs/howto/en/docbook/index.docbook:3
 msgid "<application>BibleTime</application>"
 msgstr ""
 
 # type: Content of the kapp entity
+#. type: Content of the kapp entity
 #: docs/howto/en/docbook/index.docbook:4
 msgid "&bibletimehandbook;"
 msgstr ""
 
+#. type: Content of: <book><bookinfo><title>
 #: docs/howto/en/docbook/index.docbook:14
 msgid "The Biblestudy HowTo"
 msgstr "Jak studovat Bibli"
 
-#: docs/howto/en/docbook/index.docbook:31
-#, fuzzy
-msgid "The team of &bibletime; (info@bibletime.info)"
-msgstr "The team of &bibletime;, info@bibletime.info"
+#. type: Content of: <book><bookinfo><authorgroup><author><firstname>
+#: docs/howto/en/docbook/index.docbook:18
+msgid "Bob"
+msgstr ""
+
+#. type: Content of: <book><bookinfo><authorgroup><author><surname>
+#: docs/howto/en/docbook/index.docbook:19
+msgid "Harman"
+msgstr ""
+
+#. type: Content of: <book><bookinfo><authorgroup><author><surname>
+#: docs/howto/en/docbook/index.docbook:23
+msgid "The BibleTime team"
+msgstr ""
+
+#.  TRANS:ROLES_OF_TRANSLATORS 
+#. type: Content of: <book><bookinfo>
+#: docs/howto/en/docbook/index.docbook:29
+msgid ""
+"<copyright> <year>2001-2009</year> <holder>The team of &bibletime; "
+"(info@bibletime.info)</holder> </copyright>"
+msgstr ""
 
 # type: Content of: <book><bookinfo><legalnotice><para>
+#. type: Content of: <book><bookinfo><legalnotice><para>
 #: docs/howto/en/docbook/index.docbook:36
 msgid ""
 "This document was originally created by Mr. Bob Harman and is licensed under "
@@ -1790,6 +2059,7 @@ msgid ""
 "sa/3.0/\"> \"Creative Commons Attribution-Share Alike\"</link>."
 msgstr ""
 
+#. type: Content of: <book><bookinfo><legalnotice><para>
 #: docs/howto/en/docbook/index.docbook:42
 #, fuzzy
 msgid ""
@@ -1799,10 +2069,12 @@ msgstr ""
 "Biblické citace jsou z překladu Nové Bible Kralické, pokud není uvedeno "
 "jinak."
 
+#. type: Content of: <book><bookinfo><abstract><title>
 #: docs/howto/en/docbook/index.docbook:47
 msgid "Abstract"
 msgstr "Původní anglické znění:"
 
+#. type: Content of: <book><bookinfo><abstract><para>
 #: docs/howto/en/docbook/index.docbook:50
 #, fuzzy
 msgid ""
@@ -1812,6 +2084,7 @@ msgstr ""
 "This the copyright of this text is held by the author Bob Harman. The text "
 "was adapted for publication with Bibletime by Fred Saalbach."
 
+#. type: Content of: <book><bookinfo><abstract><para>
 #: docs/howto/en/docbook/index.docbook:53
 #, fuzzy
 msgid ""
@@ -1826,3 +2099,25 @@ msgstr ""
 "Bibletime Software have been made. Redistribution as part of the Bibletime "
 "software without modification and limited reproduction as provided by the "
 "\"fair use\" provisions of the US copyright code are also permitted."
+
+#. type: Content of: <book><bookinfo><keywordset><keyword>
+#: docs/howto/en/docbook/index.docbook:64
+msgid "Bible"
+msgstr ""
+
+#. type: Content of: <book><bookinfo><keywordset><keyword>
+#: docs/howto/en/docbook/index.docbook:66
+msgid "HowTo"
+msgstr ""
+
+#, fuzzy
+#~ msgid "Cross-references for aleipho:"
+#~ msgstr "Odkazy"
+
+#, fuzzy
+#~ msgid "Cross-references of chrio:"
+#~ msgstr "Odkazy"
+
+#, fuzzy
+#~ msgid "The team of &bibletime; (info@bibletime.info)"
+#~ msgstr "The team of &bibletime;, info@bibletime.info"

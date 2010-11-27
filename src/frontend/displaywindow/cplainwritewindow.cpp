@@ -76,6 +76,8 @@ void CPlainWriteWindow::setupMainWindowToolBars() {
     btMainWindow()->navToolBar()->addWidget(keyChooser);
     bool ok = connect(keyChooser, SIGNAL(keyChanged(CSwordKey*)), this, SLOT(lookupSwordKey(CSwordKey*)));
     Q_ASSERT(ok);
+    ok = connect(keyChooser, SIGNAL(beforeKeyChange(const QString&)), this, SLOT(beforeKeyChange(const QString&)));
+    Q_ASSERT(ok);
 
     // Tools toolbar
     QAction* action = actionCollection()->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
