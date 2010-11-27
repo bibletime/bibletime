@@ -19,7 +19,7 @@
 
 
 CScrollButton::CScrollButton(QWidget *parent)
-        : QToolButton(parent), m_isLocked(false) {
+        : QToolButton(parent), m_isLocked(false), m_movement(0) {
     setFocusPolicy(Qt::WheelFocus);
     setCursor(Qt::SplitVCursor);
 }
@@ -53,7 +53,7 @@ void CScrollButton::mouseMoveEvent(QMouseEvent *e) {
         int vchange = (e->globalY() - center.y());
 
         if (vchange != 0) {
-            // Calculate the real change we are going to emit:
+            // Adapt the change value, so we get a more natural feeling:
             int avchange(vchange >= 0 ? vchange : -vchange);
             if (avchange < 10) {
                 avchange = (int) pow(avchange, 0.3);
@@ -68,14 +68,12 @@ void CScrollButton::mouseMoveEvent(QMouseEvent *e) {
                 avchange = (int) pow(avchange, 2.0);
             }
 
+            m_movement += vchange >= 0 ? avchange : -avchange;
+
             // Emit the change request signal only when necessary:
-            if (avchange != 0) {
-                if (vchange > 0) {
-                    emit change_requested(avchange);
-                }
-                else if (vchange < 0) {
-                    emit change_requested(-avchange);
-                }
+            if (m_movement >= 10 || m_movement <= -10) {
+                emit change_requested(m_movement/10);
+                m_movement = 0;
             }
         }
 
