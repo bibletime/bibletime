@@ -17,6 +17,7 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QSettings>
+#include <QSharedPointer>
 #include <QStackedLayout>
 #include <QToolButton>
 #include "backend/config/cbtconfig.h"
