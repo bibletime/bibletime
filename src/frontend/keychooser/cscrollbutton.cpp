@@ -19,7 +19,7 @@
 
 
 CScrollButton::CScrollButton(QWidget *parent)
-        : QToolButton(parent), m_isLocked(false), m_movement(0) {
+        : QToolButton(parent), m_isLocked(false), m_movement(0.0) {
     setFocusPolicy(Qt::WheelFocus);
     setCursor(Qt::SplitVCursor);
 }
@@ -40,10 +40,11 @@ void CScrollButton::mouseReleaseEvent(QMouseEvent *e) {
     if (!m_isLocked) return;
     if (e->button() != Qt::LeftButton) return;
     m_isLocked = false;
+    m_movement = 0.0;
     releaseMouse();
     emit unlock();
 }
-
+#include <stdio.h>
 void CScrollButton::mouseMoveEvent(QMouseEvent *e) {
     if (m_isLocked) {
         // Recalculate the center of the widget (might change during grab):
@@ -54,26 +55,15 @@ void CScrollButton::mouseMoveEvent(QMouseEvent *e) {
 
         if (vchange != 0) {
             // Adapt the change value, so we get a more natural feeling:
-            int avchange(vchange >= 0 ? vchange : -vchange);
-            if (avchange < 10) {
-                avchange = (int) pow(avchange, 0.3);
-            }
-            else if (avchange < 30) {
-                avchange = (int) pow(avchange, 0.6);
-            }
-            else if (avchange < 40) {
-                avchange = (int) pow(avchange, 1.2);
-            }
-            else {
-                avchange = (int) pow(avchange, 2.0);
-            }
+            if(vchange > 0)
+                m_movement += pow((float)vchange/10.0, 1.2);
+            else // (vchange < 0)
+                m_movement -= pow(-(float)vchange/10.0, 1.2);
 
-            m_movement += vchange >= 0 ? avchange : -avchange;
-
-            // Emit the change request signal only when necessary:
-            if (m_movement >= 10 || m_movement <= -10) {
-                emit change_requested(m_movement/10);
-                m_movement = 0;
+            // Emit the change request signal only when the mouse was moved far enough
+            if (m_movement >= 1.0 || m_movement <= -1.0) {
+                emit change_requested((int) m_movement);
+                m_movement = 0.0;
             }
         }
 

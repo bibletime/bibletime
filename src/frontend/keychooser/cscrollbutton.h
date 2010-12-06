@@ -79,10 +79,10 @@ class CScrollButton: public QToolButton {
         /**
          * \brief The amount the mouse moved.
          *
-         * This is saved so high resolution mice can be tracked in a sane manner.
-         * The problem was that for every tiniest movement of the mouse
+         * This is saved so slow movements of mice can still be tracked and yet not
+         * emitting a change for every smallest movement of the mouse.
          */
-        int m_movement;
+        float m_movement;
 };
 
 #endif
