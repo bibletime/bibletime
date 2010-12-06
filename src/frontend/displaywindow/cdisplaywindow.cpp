@@ -463,9 +463,8 @@ void CDisplayWindow::lookupModKey( const QString& moduleName, const QString& key
     }
 
     CSwordModuleInfo *m = CSwordBackend::instance()->findModuleByName(moduleName);
-    Q_ASSERT(m);
     if (!m) {
-        return;
+        return; /// \todo check if this is correct behavior
     }
 
     /// \todo check for containsRef compat
