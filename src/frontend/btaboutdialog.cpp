@@ -12,6 +12,7 @@
 #include <QApplication>
 #include <QDesktopServices>
 #include <QDialogButtonBox>
+#include <QFontMetrics>
 #include <QLabel>
 #include <QTabWidget>
 #include <QTextStream>
@@ -50,16 +51,21 @@ BtAboutDialog::BtAboutDialog(QWidget *parent, Qt::WindowFlags wflags)
         : QDialog(parent, wflags)
 {
     setAttribute(Qt::WA_DeleteOnClose);
-    resize(550, 340);
+    resize(640, 380);
 
     QVBoxLayout *mainLayout = new QVBoxLayout;
 
     QWidget *top = new QWidget(this);
     QHBoxLayout *topLayout = new QHBoxLayout;
-    QLabel *iconLabel = new QLabel(this);
-    iconLabel->setPixmap(QIcon(util::directory::getIconDir().path() + "/bibletime.svg").pixmap(48));
-    topLayout->addWidget(iconLabel);
-    topLayout->addWidget(new QLabel("<h1>BibleTime " BT_VERSION "</h1>"), 1);
+    m_iconLabel = new QLabel(this);
+    m_iconLabel->setPixmap(QIcon(util::directory::getIconDir().path() + "/bibletime.svg").pixmap(48));
+    topLayout->addWidget(m_iconLabel);
+    m_versionLabel = new QLabel(this);
+    QFont font = m_versionLabel->font();
+    font.setPointSize(font.pointSize()+6);
+    font.setBold(true);
+    m_versionLabel->setFont(font);
+    topLayout->addWidget(m_versionLabel);
     top->setLayout(topLayout);
     mainLayout->addWidget(top, 0, Qt::AlignCenter);
 
@@ -85,6 +91,15 @@ BtAboutDialog::BtAboutDialog(QWidget *parent, Qt::WindowFlags wflags)
 BtAboutDialog::~BtAboutDialog() {
     // Intentionally empty
 }
+
+void BtAboutDialog::resizeEvent(QResizeEvent* event) {
+    QString version = "BibleTime " BT_VERSION;
+    QFontMetrics fm(m_versionLabel->font());
+    int w = width()  - m_iconLabel->width() - 80;
+    QString shortVersion = fm.elidedText(version, Qt::ElideMiddle, w);
+    m_versionLabel->setText(shortVersion);
+}
+
 
 void BtAboutDialog::initTab(QWebView *&tab) {
     tab = new QWebView(this);
