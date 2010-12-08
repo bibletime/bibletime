@@ -169,6 +169,10 @@ void BtTipDialog::initTips() {
     m_tips << tr("You can view Strong's number information in the MAG window by hovering over"
                  " a word in a Bible work that has Strong's numbers. You should have the StrongsGreek"
                  " and StrongsHebrew lexicons from Crosswire installed.");
+
+    m_tips << tr("You can save your open windows in a session. Such a session can easily be restored"
+        " later on. You can save as many sessions as you like. The session feature can be"
+        " accessed under the Window menu entry.");
 }
 
 void BtTipDialog::displayTip() {
