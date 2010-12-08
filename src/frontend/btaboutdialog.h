@@ -16,12 +16,16 @@ class QDialogButtonBox;
 class QTabWidget;
 class QUrl;
 class QWebView;
+class QLabel;
 
 class BtAboutDialog: public QDialog {
         Q_OBJECT
     public:
         BtAboutDialog(QWidget *parent = 0, Qt::WindowFlags wflags = Qt::Dialog);
         ~BtAboutDialog();
+
+    protected:
+        virtual void resizeEvent(QResizeEvent* event);
 
     private:
         void initTab(QWebView *&tab);
@@ -38,12 +42,14 @@ class BtAboutDialog: public QDialog {
 
     private:
         QTabWidget *m_tabWidget;
-            QWebView *m_bibletimeTab;
-            QWebView *m_contributorsTab;
-            QWebView *m_swordTab;
-            QWebView *m_qtTab;
-            QWebView *m_licenceTab;
+        QWebView *m_bibletimeTab;
+        QWebView *m_contributorsTab;
+        QWebView *m_swordTab;
+        QWebView *m_qtTab;
+        QWebView *m_licenceTab;
         QDialogButtonBox *m_buttonBox;
+        QLabel *m_iconLabel;
+        QLabel *m_versionLabel;
 };
 
 #endif
