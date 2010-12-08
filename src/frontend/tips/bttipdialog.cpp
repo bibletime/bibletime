@@ -137,7 +137,7 @@ void BtTipDialog::initTips() {
     m_tips << tr("To create a bookmark drag any verse reference from a Bible or commentary work"
         " into the Bookmarks window. An arrow will indicate the position that the bookmark will"
         " go when you release the cursor. Other works will have a reference in the upper left"
-       " corner that can be used to create a bookmark.");
+        " corner that can be used to create a bookmark.");
 
     m_tips << tr("To change a bookmark title or description, right click on the bookmark"
         " and select the Edit Bookmark menu. After finishing the edit the description can be"
@@ -156,19 +156,19 @@ void BtTipDialog::initTips() {
         " border between the window and another window.");
 
     m_tips << tr("You can search for Strong's numbers in a work. Start with a work that has Strong's"
-                 " numbers and hover over a word. Right click the word and use the Strong's Search"
-                 " menu. A search dialog will appear that allows you to see the use of the same"
-                 " Strong's number in other locations of the work.");
+        " numbers and hover over a word. Right click the word and use the Strong's Search"
+        " menu. A search dialog will appear that allows you to see the use of the same"
+        " Strong's number in other locations of the work.");
 
     m_tips << tr("You can save personal notes for specific verses references. You must install"
-                 " the Personal commentary. Open the Bookshelf Manager, choose Crosswire as the"
-                 " source and look under Commentary and English. Once installed, use the"
-                 " Bookshelf window and right click the Personal commentary. Use either the"
-                 " Edit Plain Text menu or the Edit HTML menu to open the work in write mode.");
+        " the Personal commentary. Open the Bookshelf Manager, choose Crosswire as the"
+        " source and look under Commentary and English. Once installed, use the"
+        " Bookshelf window and right click the Personal commentary. Use either the"
+        " Edit Plain Text menu or the Edit HTML menu to open the work in write mode.");
 
     m_tips << tr("You can view Strong's number information in the MAG window by hovering over"
-                 " a word in a Bible work that has Strong's numbers. You should have the StrongsGreek"
-                 " and StrongsHebrew lexicons from Crosswire installed.");
+        " a word in a Bible work that has Strong's numbers. You should have the StrongsGreek"
+        " and StrongsHebrew lexicons from Crosswire installed.");
 
     m_tips << tr("You can save your open windows in a session. Such a session can easily be restored"
         " later on. You can save as many sessions as you like. The session feature can be"
