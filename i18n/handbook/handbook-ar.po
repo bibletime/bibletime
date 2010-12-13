@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2010-12-12 22:53-0500\n"
+"POT-Creation-Date: 2010-12-12 23:38-0500\n"
 "PO-Revision-Date: 2010-12-12 23:19-0500\n"
 "Last-Translator: Thomas Abthorpe <tabthorpe@FreeBSD.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3102,12 +3102,16 @@ msgstr "يوزع دليل إستخدام بيبل تايم مع برنامج د�
 
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:54
-msgid "<date>August 2010</date>"
+#, fuzzy
+#| msgid "<date>August 2010</date>"
+msgid "<date>December 2010</date>"
 msgstr "<date>أغسطس 2010 </date>"
 
 #. type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:56
-msgid "2.8"
+#, fuzzy
+#| msgid "2.8"
+msgid "2.9"
 msgstr "2.8"
 
 #. type: Content of: <book><bookinfo><abstract><para>
