@@ -468,7 +468,7 @@ class BibleTime : public QMainWindow {
         QAction *m_showBookmarksAction;
         QAction *m_showMagAction;
         QMenu *m_toolBarsMenu;
-        QAction* m_showMainToolbarAction;
+        QAction* m_showMainWindowToolbarAction;
         QAction *m_showTextAreaHeadersAction;
         QAction *m_showTextWindowNavigationAction;
         QAction *m_showTextWindowModuleChooserAction;
