@@ -89,7 +89,7 @@ void BibleTime::slotSwordSetupDialog() {
     dlg->activateWindow();
 }
 
-/** Is called just before the window menu is ahown. */
+/** Is called just before the window menu is shown. */
 void BibleTime::slotWindowMenuAboutToShow() {
     Q_ASSERT(m_windowMenu);
 
@@ -118,7 +118,7 @@ void BibleTime::slotWindowMenuAboutToShow() {
     }
 }
 
-/** Is called just before the open windows menu is ahown. */
+/** Is called just before the open windows menu is shown. */
 void BibleTime::slotOpenWindowsMenuAboutToShow() {
     Q_ASSERT(m_openWindowsMenu);
 
@@ -278,7 +278,9 @@ void BibleTime::slotAutoCascade() {
 /** Shows/hides the toolbar */
 void BibleTime::slotToggleMainToolbar() {
     Q_ASSERT(m_mainToolBar);
-    if ( m_showMainToolbarAction->isChecked()) {
+    bool currentState = CBTConfig::get(CBTConfig::showMainWindowToolbar);
+    CBTConfig::set(CBTConfig::showMainWindowToolbar, !currentState);
+    if ( m_showMainWindowToolbarAction->isChecked()) {
         m_mainToolBar->show();
     }
     else {

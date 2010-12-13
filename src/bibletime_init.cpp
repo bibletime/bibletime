@@ -379,7 +379,7 @@ void BibleTime::initActions() {
 
     m_showMainWindowToolbarAction = m_actionCollection->action("showToolbar");
     m_showMainWindowToolbarAction->setCheckable(true);
-    m_showMainWindowToolbarAction->setChecked(true);
+    m_showMainWindowToolbarAction->setChecked(CBTConfig::get(CBTConfig::showMainWindowToolbar));
     connect( m_showMainWindowToolbarAction, SIGNAL(triggered()),
             this,                SLOT(slotToggleMainToolbar()));
 
