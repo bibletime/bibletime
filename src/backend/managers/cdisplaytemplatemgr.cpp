@@ -164,14 +164,14 @@ const QString CDisplayTemplateMgr::fillTemplate( const QString& name, const QStr
     
 
 //     qWarning("Outputing unformated text");
-    const QString t = QString(m_templateMap[ "Blue.tmpl" /*templateName*/ ]) //don't change the map's content directly, use  a copy
+    const QString t = QString(m_templateMap[ "Basic.tmpl" ]) //don't change the map's content directly, use  a copy
                       .replace("#TITLE#", settings.title)
                       .replace("#LANG_ABBREV#", settings.langAbbrev.isEmpty() ? QString("en") : settings.langAbbrev)
                       .replace("#DISPLAYTYPE#", displayTypeString)
                       .replace("#LANG_CSS#", langCSS)
                       .replace("#PAGE_DIRECTION#", settings.pageDirection)
                       .replace("#CONTENT#", newContent)
-                      .replace("#THEME_STYLE#", m_cssMap[ templateName /*"Blue.css"*/ ])
+                      .replace("#THEME_STYLE#", m_cssMap[ templateName ])
                       .replace("#MODULE_STYLESHEET#", QString(""));	// Let's fix this!
 
     qDebug() << t;
