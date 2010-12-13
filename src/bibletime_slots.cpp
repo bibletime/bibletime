@@ -278,7 +278,7 @@ void BibleTime::slotAutoCascade() {
 /** Shows/hides the toolbar */
 void BibleTime::slotToggleMainToolbar() {
     Q_ASSERT(m_mainToolBar);
-    if (m_viewToolbarAction->isChecked()) {
+    if ( m_showMainToolbarAction->isChecked()) {
         m_mainToolBar->show();
     }
     else {

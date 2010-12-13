@@ -377,10 +377,10 @@ void BibleTime::initActions() {
     connect(m_showTextAreaHeadersAction, SIGNAL(toggled(bool)),
             this,                        SLOT(slotToggleTextWindowHeader()));
 
-    m_viewToolbarAction = m_actionCollection->action("showToolbar");
-    m_viewToolbarAction->setCheckable(true);
-    m_viewToolbarAction->setChecked(true);
-    connect(m_viewToolbarAction, SIGNAL(triggered()),
+    m_showMainToolbarAction = m_actionCollection->action("showToolbar");
+    m_showMainToolbarAction->setCheckable(true);
+    m_showMainToolbarAction->setChecked(true);
+    connect( m_showMainToolbarAction, SIGNAL(triggered()),
             this,                SLOT(slotToggleMainToolbar()));
 
     m_showTextWindowNavigationAction = m_actionCollection->action("showNavigation");
@@ -535,7 +535,7 @@ void BibleTime::initMenubar() {
     m_viewMenu->addAction(m_showTextAreaHeadersAction);
     m_viewMenu->addSeparator();
     m_toolBarsMenu = new QMenu(this);
-    m_toolBarsMenu->addAction(m_viewToolbarAction);
+    m_toolBarsMenu->addAction( m_showMainToolbarAction);
     m_toolBarsMenu->addAction(m_showTextWindowNavigationAction);
     m_toolBarsMenu->addAction(m_showTextWindowModuleChooserAction);
     m_toolBarsMenu->addAction(m_showTextWindowToolButtonsAction);

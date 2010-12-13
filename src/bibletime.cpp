@@ -118,7 +118,7 @@ void BibleTime::saveSettings() {
     /// \todo how to write settings?
     //accel()->writeSettings(CBTConfig::getConfig());
 
-    CBTConfig::set(CBTConfig::toolbar, m_viewToolbarAction->isChecked());
+    CBTConfig::set(CBTConfig::toolbar, m_showMainToolbarAction->isChecked());
 
     // set the default to false
     /* CBTConfig::set(CBTConfig::autoTileVertical, false);
@@ -143,7 +143,7 @@ void BibleTime::readSettings() {
     //  accel()->readSettings(CBTConfig::getConfig());
     CBTConfig::setupAccelSettings(CBTConfig::application, m_actionCollection);
 
-    m_viewToolbarAction->setChecked( CBTConfig::get(CBTConfig::toolbar) );
+    m_showMainToolbarAction->setChecked( CBTConfig::get(CBTConfig::toolbar) );
     slotToggleMainToolbar();
 
     if ( CBTConfig::get(CBTConfig::autoTileVertical) ) {
