@@ -44,13 +44,13 @@ CKeyChooser* CKeyChooser::createInstance(
     }
 
     CSwordModuleInfo::ModuleType typeOfModules = modules.first()->type();
-
+/*
 #ifdef BT_DEBUG
     Q_FOREACH (const CSwordModuleInfo *module, modules) {
         Q_ASSERT(module->type() == typeOfModules);
     }
 #endif
-
+*/
     switch (typeOfModules) {
         case CSwordModuleInfo::Commentary:
             /* Fall thru - Bibles and commentaries use the same key chooser */

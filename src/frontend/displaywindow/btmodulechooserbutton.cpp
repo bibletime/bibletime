@@ -131,22 +131,37 @@ void BtModuleChooserButton::populateMenu() {
 
     // Filters: add only non-hidden and right type
     BTModuleTreeItem::HiddenOff hiddenFilter;
-    TypeFilter typeFilter(m_moduleType);
     QList<BTModuleTreeItem::Filter*> filters;
     if (!CBTConfig::get(CBTConfig::bookshelfShowHidden)) {
         filters.append(&hiddenFilter);
     }
+    TypeFilter typeFilter(m_moduleType);
     filters.append(&typeFilter);
-    BTModuleTreeItem root(filters, BTModuleTreeItem::LangMod);
-    // add all items recursively
-    addItemToMenu(&root, m_popup);
+
+    if (m_moduleType == CSwordModuleInfo::Bible) {
+      BTModuleTreeItem root(filters, BTModuleTreeItem::CatLangMod);
+        QList<BTModuleTreeItem::Filter*> filters2;
+        if (!CBTConfig::get(CBTConfig::bookshelfShowHidden)) {
+            filters2.append(&hiddenFilter);
+        }
+        TypeFilter typeFilter2(CSwordModuleInfo::Commentary);
+        filters2.append(&typeFilter2);
+        root.add_items(filters2);
+        // add all items recursively
+        addItemToMenu(&root, m_popup);
+    }
+    else {
+        BTModuleTreeItem root(filters, BTModuleTreeItem::LangMod);
+        addItemToMenu(&root, m_popup);
+    }
 }
 
 void BtModuleChooserButton::addItemToMenu(BTModuleTreeItem* item, QMenu* menu) {
     qDebug() << "BtModuleChooserButton::addItemToMenu";
     foreach (BTModuleTreeItem* i, item->children()) {
 
-        if (i->type() == BTModuleTreeItem::Language) {
+        if (i->type() == BTModuleTreeItem::Language ||
+            i->type() == BTModuleTreeItem::Category ) {
             // argument menu was m_popup, create and add a new lang menu to it
             QMenu* langMenu = new QMenu(i->text(), this);
             menu->addMenu(langMenu);

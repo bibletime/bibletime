@@ -24,7 +24,8 @@ BTModuleTreeItem::BTModuleTreeItem(QList<BTModuleTreeItem::Filter*>& filters, BT
         m_firstChild(0),
         m_next(0),
         m_type(BTModuleTreeItem::Root),
-        m_category(CSwordModuleInfo::UnknownCategory) {
+        m_category(CSwordModuleInfo::UnknownCategory),
+        m_grouping (grouping) {
     if (modules) {
         m_originalModuleList = *modules;
     }
@@ -32,7 +33,7 @@ BTModuleTreeItem::BTModuleTreeItem(QList<BTModuleTreeItem::Filter*>& filters, BT
         m_originalModuleList = CSwordBackend::instance()->moduleList();
     }
     //populate the tree with groups/modules
-    create_tree(filters, grouping);
+    create_tree(filters);
 }
 
 /**
@@ -120,26 +121,27 @@ QString BTModuleTreeItem::iconName() const {
     return QString::null;
 }
 
+bool BTModuleTreeItem::m_map_initialized = false;
+QMap<CSwordModuleInfo::Category, QString> BTModuleTreeItem::m_CategoryNamesMap;
 
-void BTModuleTreeItem::create_tree(QList<BTModuleTreeItem::Filter*>& filters, BTModuleTreeItem::Grouping grouping) {
+void BTModuleTreeItem::create_tree(QList<BTModuleTreeItem::Filter*>& filters) {
     qDebug() << "BTModuleTreeItem::create_tree";
-    static bool map_initialized = false;
-    static QMap<CSwordModuleInfo::Category, QString> CategoryNamesMap;
-    if (!map_initialized) {
-        CategoryNamesMap.insert(CSwordModuleInfo::Commentaries, QObject::tr("Commentaries"));
-        CategoryNamesMap.insert(CSwordModuleInfo::Cult, QObject::tr("Cults/Unorthodox"));
-        CategoryNamesMap.insert(CSwordModuleInfo::Images, QObject::tr("Maps and Images"));
-        CategoryNamesMap.insert(CSwordModuleInfo::DailyDevotional, QObject::tr("Daily Devotionals"));
-        CategoryNamesMap.insert(CSwordModuleInfo::Lexicons, QObject::tr("Lexicons and Dictionaries"));
-        CategoryNamesMap.insert(CSwordModuleInfo::Bibles, QObject::tr("Bibles"));
-        CategoryNamesMap.insert(CSwordModuleInfo::Glossary, QObject::tr("Glossaries"));
-        CategoryNamesMap.insert(CSwordModuleInfo::Books, QObject::tr("Books"));
+    if (!m_map_initialized) {
+        m_CategoryNamesMap.insert(CSwordModuleInfo::Commentaries, QObject::tr("Commentaries"));
+        m_CategoryNamesMap.insert(CSwordModuleInfo::Cult, QObject::tr("Cults/Unorthodox"));
+        m_CategoryNamesMap.insert(CSwordModuleInfo::Images, QObject::tr("Maps and Images"));
+        m_CategoryNamesMap.insert(CSwordModuleInfo::DailyDevotional, QObject::tr("Daily Devotionals"));
+        m_CategoryNamesMap.insert(CSwordModuleInfo::Lexicons, QObject::tr("Lexicons and Dictionaries"));
+        m_CategoryNamesMap.insert(CSwordModuleInfo::Bibles, QObject::tr("Bibles"));
+        m_CategoryNamesMap.insert(CSwordModuleInfo::Glossary, QObject::tr("Glossaries"));
+        m_CategoryNamesMap.insert(CSwordModuleInfo::Books, QObject::tr("Books"));
 
-        map_initialized = true;
+        m_map_initialized = true;
     }
+    add_items(filters);
+}
 
-    //QList<CSwordModuleInfo*> originalInfoList = CSwordBackend::instance()()->moduleList();
-
+void BTModuleTreeItem::add_items(QList<BTModuleTreeItem::Filter*>& filters) {
     foreach (CSwordModuleInfo* info, m_originalModuleList) {
         bool included;
         included = true;
@@ -157,32 +159,32 @@ void BTModuleTreeItem::create_tree(QList<BTModuleTreeItem::Filter*>& filters, BT
             BTModuleTreeItem* parentGroupForCategory = this;
 
             //the order of if(grouping...) clauses is important
-            if (grouping == BTModuleTreeItem::LangMod || grouping == BTModuleTreeItem::LangCatMod) {
+            if (m_grouping == BTModuleTreeItem::LangMod || m_grouping == BTModuleTreeItem::LangCatMod) {
                 BTModuleTreeItem* langItem = create_parent_item(parentGroupForLanguage, info->language()->translatedName(), BTModuleTreeItem::Language);
 
-                if (grouping == BTModuleTreeItem::LangMod)
+                if (m_grouping == BTModuleTreeItem::LangMod)
                     parentGroupForModule = langItem;
                 else
                     parentGroupForCategory = langItem;
             }
 
-            if (grouping == BTModuleTreeItem::CatMod || grouping == BTModuleTreeItem::CatLangMod) {
-                BTModuleTreeItem* catItem = create_parent_item(parentGroupForCategory, CategoryNamesMap.value(info->category()), BTModuleTreeItem::Category, info->category());
+            if (m_grouping == BTModuleTreeItem::CatMod || m_grouping == BTModuleTreeItem::CatLangMod) {
+                BTModuleTreeItem* catItem = create_parent_item(parentGroupForCategory, m_CategoryNamesMap.value(info->category()), BTModuleTreeItem::Category, info->category());
 
-                if (grouping == BTModuleTreeItem::CatMod)
+                if (m_grouping == BTModuleTreeItem::CatMod)
                     parentGroupForModule = catItem;
                 else
                     parentGroupForLanguage = catItem;
             }
 
-            if (grouping == BTModuleTreeItem::CatLangMod) {
+            if (m_grouping == BTModuleTreeItem::CatLangMod) {
                 // category is there already, create language and make it the parent for the module
                 parentGroupForModule = create_parent_item(parentGroupForLanguage, info->language()->translatedName(), BTModuleTreeItem::Language);
             }
 
-            if (grouping == BTModuleTreeItem::LangCatMod) {
+            if (m_grouping == BTModuleTreeItem::LangCatMod) {
                 //language is there already, create category and make it the parent for the module
-                parentGroupForModule = create_parent_item(parentGroupForCategory, CategoryNamesMap.value(info->category()), BTModuleTreeItem::Category, info->category());
+                parentGroupForModule = create_parent_item(parentGroupForCategory, m_CategoryNamesMap.value(info->category()), BTModuleTreeItem::Category, info->category());
             }
 
             // the parent group for module has been set above, now just add the module to it
