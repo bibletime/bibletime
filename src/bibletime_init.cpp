@@ -363,12 +363,6 @@ void BibleTime::initActions() {
     connect(m_windowFullscreenAction, SIGNAL(triggered()),
             this,                     SLOT(toggleFullscreen()));
 
-    m_viewToolbarAction = m_actionCollection->action("showToolbar");
-    m_viewToolbarAction->setCheckable(true);
-    m_viewToolbarAction->setChecked(true);
-    connect(m_viewToolbarAction, SIGNAL(triggered()),
-            this,                SLOT(slotToggleMainToolbar()));
-
     // Special case these actions, overwrite those already in collection
     m_showBookshelfAction = m_bookshelfDock->toggleViewAction();
     m_actionCollection->addAction("showBookshelf", m_showBookshelfAction);
@@ -382,6 +376,12 @@ void BibleTime::initActions() {
     m_showTextAreaHeadersAction->setChecked(CBTConfig::get(CBTConfig::showTextWindowHeaders));
     connect(m_showTextAreaHeadersAction, SIGNAL(toggled(bool)),
             this,                        SLOT(slotToggleTextWindowHeader()));
+
+    m_viewToolbarAction = m_actionCollection->action("showToolbar");
+    m_viewToolbarAction->setCheckable(true);
+    m_viewToolbarAction->setChecked(true);
+    connect(m_viewToolbarAction, SIGNAL(triggered()),
+            this,                SLOT(slotToggleMainToolbar()));
 
     m_showTextWindowNavigationAction = m_actionCollection->action("showNavigation");
     m_showTextWindowNavigationAction->setCheckable(true);

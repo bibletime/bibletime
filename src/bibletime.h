@@ -464,11 +464,11 @@ class BibleTime : public QMainWindow {
 
         // View menu:
         QMenu *m_viewMenu;
-        QAction* m_viewToolbarAction;
         QAction *m_showBookshelfAction;
         QAction *m_showBookmarksAction;
         QAction *m_showMagAction;
         QMenu *m_toolBarsMenu;
+        QAction* m_viewToolbarAction;
         QAction *m_showTextAreaHeadersAction;
         QAction *m_showTextWindowNavigationAction;
         QAction *m_showTextWindowModuleChooserAction;
