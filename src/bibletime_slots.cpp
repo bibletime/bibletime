@@ -166,6 +166,11 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
         m_windowAutoTabbedAction->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(true);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeManual );
+        CBTConfig::set(CBTConfig::autoTileVertical, false);
+        CBTConfig::set(CBTConfig::autoTileHorizontal, false);
+        CBTConfig::set(CBTConfig::autoTile, false);
+        CBTConfig::set(CBTConfig::autoTabbed, false);
+        CBTConfig::set(CBTConfig::autoCascade, false);
     }
     else if (clickedAction == m_windowAutoTileVerticalAction) {
         m_windowManualModeAction->setChecked(false);
@@ -175,6 +180,7 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
         m_windowAutoTabbedAction->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(false);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTileVertical );
+        CBTConfig::set(CBTConfig::autoTileVertical, true);
     }
     else if (clickedAction == m_windowAutoTileHorizontalAction) {
         m_windowManualModeAction->setChecked(false);
@@ -184,6 +190,7 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
         m_windowAutoTabbedAction->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(false);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTileHorizontal );
+        CBTConfig::set(CBTConfig::autoTileHorizontal, true);
     }
     else if (clickedAction == m_windowAutoTileAction) {
         m_windowManualModeAction->setChecked(false);
@@ -193,6 +200,7 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
         m_windowAutoCascadeAction->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(false);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTile );
+        CBTConfig::set(CBTConfig::autoTile, true);
     }
     else if (clickedAction == m_windowAutoTabbedAction) {
         m_windowManualModeAction->setChecked(false);
@@ -202,6 +210,7 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
         m_windowAutoCascadeAction->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(false);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTabbed );
+        CBTConfig::set(CBTConfig::autoTabbed, true);
     }
     else if (clickedAction == m_windowAutoCascadeAction) {
         m_windowManualModeAction->setChecked(false);
@@ -211,6 +220,7 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
         m_windowAutoTabbedAction->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(false);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeCascade );
+        CBTConfig::set(CBTConfig::autoCascade, true);
     }
     else if (clickedAction == m_windowTileAction) {
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeManual );

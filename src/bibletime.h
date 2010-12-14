@@ -137,14 +137,6 @@ class BibleTime : public QMainWindow {
         static inline BibleTime *instance() { return m_instance; }
 
         /**
-        * Reads the settings from the configfile and sets the right properties.
-        */
-        void readSettings();
-        /**
-        * Saves the settings of this class
-        */
-        void saveSettings();
-        /**
         * Restores the workspace if the flaf for this is set in the config.
         */
         void restoreWorkspace();

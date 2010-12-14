@@ -450,35 +450,65 @@ void BibleTime::initActions() {
 
     m_windowManualModeAction = m_actionCollection->action("manualArrangement");
     m_windowManualModeAction->setCheckable(true);
+    m_windowManualModeAction->setChecked(true);
+    // slot is called conditionally after auto arrangements have been initialized
     connect(m_windowManualModeAction, SIGNAL(triggered()),
             this,                      SLOT(slotManualArrangementMode()));
 
     m_windowAutoTabbedAction = m_actionCollection->action("autoTabbed");
     m_windowAutoTabbedAction->setCheckable(true);
+    if(CBTConfig::get(CBTConfig::autoTabbed) == true) {
+        m_windowManualModeAction->setChecked(false);
+        m_windowAutoTabbedAction->setChecked(true);
+        slotAutoTabbed();
+    }
     connect(m_windowAutoTabbedAction, SIGNAL(triggered()),
             this,                      SLOT(slotAutoTabbed()));
 
     //: Vertical tiling means that windows are vertical, placed side by side
     m_windowAutoTileVerticalAction = m_actionCollection->action("autoVertical");
     m_windowAutoTileVerticalAction->setCheckable(true);
+    if(CBTConfig::get(CBTConfig::autoTileVertical) == true) {
+        m_windowManualModeAction->setChecked(false);
+        m_windowAutoTileVerticalAction->setChecked(true);
+        slotAutoTileVertical();
+    }
     connect(m_windowAutoTileVerticalAction, SIGNAL(triggered()),
             this,                            SLOT(slotAutoTileVertical()));
 
     //: Horizontal tiling means that windows are horizontal, placed on top of each other
     m_windowAutoTileHorizontalAction = m_actionCollection->action("autoHorizontal");
     m_windowAutoTileHorizontalAction->setCheckable(true);
+    if(CBTConfig::get(CBTConfig::autoTileHorizontal) == true) {
+        m_windowManualModeAction->setChecked(false);
+        m_windowAutoTileHorizontalAction->setChecked(true);
+        slotAutoTileHorizontal();
+    }
     connect(m_windowAutoTileHorizontalAction, SIGNAL(triggered()),
             this,                              SLOT(slotAutoTileHorizontal()));
 
     m_windowAutoTileAction = m_actionCollection->action("autoTile");
     m_windowAutoTileAction->setCheckable(true);
+    if(CBTConfig::get(CBTConfig::autoTile) == true) {
+        m_windowManualModeAction->setChecked(false);
+        m_windowAutoTileAction->setChecked(true);
+        slotAutoTile();
+    }
     connect(m_windowAutoTileAction, SIGNAL(triggered()),
             this,                    SLOT(slotAutoTile()));
 
     m_windowAutoCascadeAction = m_actionCollection->action("autoCascade");
     m_windowAutoCascadeAction->setCheckable(true);
+    if(CBTConfig::get(CBTConfig::autoCascade) == true) {
+        m_windowManualModeAction->setChecked(false);
+        m_windowAutoCascadeAction->setChecked(true);
+        slotAutoCascade();
+    }
     connect(m_windowAutoCascadeAction, SIGNAL(triggered()),
             this,                       SLOT(slotAutoCascade()));
+
+    if(m_windowManualModeAction->isChecked() == true)
+        slotManualArrangementMode();
 
     m_windowSaveToNewProfileAction = m_actionCollection->action("saveNewSession");
     connect(m_windowSaveToNewProfileAction, SIGNAL(triggered()),

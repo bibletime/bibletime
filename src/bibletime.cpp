@@ -97,7 +97,6 @@ BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
     initMenubar();
     initToolbars();
     initConnections();
-    readSettings();
 
     setWindowTitle("BibleTime " BT_VERSION);
     setWindowIcon(DU::getIcon(CResMgr::mainWindow::icon));
@@ -110,66 +109,6 @@ BibleTime::~BibleTime() {
 #ifdef BT_DEBUG
     deleteDebugWindow();
 #endif
-    saveSettings();
-}
-
-/** Saves the properties of BibleTime to the application wide configfile  */
-void BibleTime::saveSettings() {
-    /// \todo how to write settings?
-    //accel()->writeSettings(CBTConfig::getConfig());
-
-    // set the default to false
-    /* CBTConfig::set(CBTConfig::autoTileVertical, false);
-     CBTConfig::set(CBTConfig::autoTileHorizontal, false);
-     CBTConfig::set(CBTConfig::autoCascade, false);
-    */
-    CBTConfig::set(CBTConfig::autoTileVertical, m_windowAutoTileVerticalAction->isChecked());
-    CBTConfig::set(CBTConfig::autoTileHorizontal, m_windowAutoTileHorizontalAction->isChecked());
-    CBTConfig::set(CBTConfig::autoTile, m_windowAutoTileAction->isChecked());
-    CBTConfig::set(CBTConfig::autoTabbed, m_windowAutoTabbedAction->isChecked());
-    CBTConfig::set(CBTConfig::autoCascade, m_windowAutoCascadeAction->isChecked());
-
-    CProfile* p = m_profileMgr.startupProfile();
-    if (p) {
-        saveProfile(p);
-    }
-}
-
-/** Reads the settings from the configfile and sets the right properties. */
-void BibleTime::readSettings() {
-    qDebug() << "******************BibleTime::readSettings******************************";
-    //  accel()->readSettings(CBTConfig::getConfig());
-    CBTConfig::setupAccelSettings(CBTConfig::application, m_actionCollection);
-
-    if ( CBTConfig::get(CBTConfig::autoTileVertical) ) {
-        m_windowAutoTileVerticalAction->setChecked( true );
-        m_windowManualModeAction->setChecked(false);
-        slotAutoTileVertical();
-    }
-    else if ( CBTConfig::get(CBTConfig::autoTileHorizontal) ) {
-        m_windowAutoTileHorizontalAction->setChecked( true );
-        m_windowManualModeAction->setChecked(false);
-        slotAutoTileHorizontal();
-    }
-    else if ( CBTConfig::get(CBTConfig::autoTile) ) {
-        m_windowAutoTileAction->setChecked(true);
-        m_windowManualModeAction->setChecked(false);
-        slotAutoTile();
-    }
-    else if ( CBTConfig::get(CBTConfig::autoTabbed) ) {
-        m_windowAutoTabbedAction->setChecked(true);
-        m_windowManualModeAction->setChecked(false);
-        slotAutoTabbed();
-    }
-    else if ( CBTConfig::get(CBTConfig::autoCascade) ) {
-        m_windowAutoCascadeAction->setChecked(true);
-        m_windowManualModeAction->setChecked(false);
-        slotAutoCascade();
-    }
-    else {
-        m_windowManualModeAction->setChecked(true);
-        slotManualArrangementMode();
-    }
 }
 
 /** Creates a new presenter in the MDI area according to the type of the module. */
