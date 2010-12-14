@@ -109,6 +109,10 @@ BibleTime::~BibleTime() {
 #ifdef BT_DEBUG
     deleteDebugWindow();
 #endif
+    CProfile* p = m_profileMgr.startupProfile();
+    if (p) {
+        saveProfile(p);
+    }
 }
 
 /** Creates a new presenter in the MDI area according to the type of the module. */
