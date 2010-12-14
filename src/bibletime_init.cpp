@@ -451,7 +451,6 @@ void BibleTime::initActions() {
     m_windowManualModeAction = m_actionCollection->action("manualArrangement");
     m_windowManualModeAction->setCheckable(true);
     m_windowManualModeAction->setChecked(true);
-    // slot is called conditionally after auto arrangements have been initialized
     connect(m_windowManualModeAction, SIGNAL(triggered()),
             this,                      SLOT(slotManualArrangementMode()));
 
@@ -460,7 +459,6 @@ void BibleTime::initActions() {
     if(CBTConfig::get(CBTConfig::autoTabbed) == true) {
         m_windowManualModeAction->setChecked(false);
         m_windowAutoTabbedAction->setChecked(true);
-        slotAutoTabbed();
     }
     connect(m_windowAutoTabbedAction, SIGNAL(triggered()),
             this,                      SLOT(slotAutoTabbed()));
@@ -471,7 +469,6 @@ void BibleTime::initActions() {
     if(CBTConfig::get(CBTConfig::autoTileVertical) == true) {
         m_windowManualModeAction->setChecked(false);
         m_windowAutoTileVerticalAction->setChecked(true);
-        slotAutoTileVertical();
     }
     connect(m_windowAutoTileVerticalAction, SIGNAL(triggered()),
             this,                            SLOT(slotAutoTileVertical()));
@@ -482,7 +479,6 @@ void BibleTime::initActions() {
     if(CBTConfig::get(CBTConfig::autoTileHorizontal) == true) {
         m_windowManualModeAction->setChecked(false);
         m_windowAutoTileHorizontalAction->setChecked(true);
-        slotAutoTileHorizontal();
     }
     connect(m_windowAutoTileHorizontalAction, SIGNAL(triggered()),
             this,                              SLOT(slotAutoTileHorizontal()));
@@ -492,7 +488,6 @@ void BibleTime::initActions() {
     if(CBTConfig::get(CBTConfig::autoTile) == true) {
         m_windowManualModeAction->setChecked(false);
         m_windowAutoTileAction->setChecked(true);
-        slotAutoTile();
     }
     connect(m_windowAutoTileAction, SIGNAL(triggered()),
             this,                    SLOT(slotAutoTile()));
@@ -502,12 +497,25 @@ void BibleTime::initActions() {
     if(CBTConfig::get(CBTConfig::autoCascade) == true) {
         m_windowManualModeAction->setChecked(false);
         m_windowAutoCascadeAction->setChecked(true);
-        slotAutoCascade();
     }
     connect(m_windowAutoCascadeAction, SIGNAL(triggered()),
             this,                       SLOT(slotAutoCascade()));
 
-    if(m_windowManualModeAction->isChecked() == true)
+    /*
+     * All actions related to arrangement modes have to be initialized before calling a slot on them,
+     * thus we call them afterwards now.
+     */
+    if(m_windowAutoTabbedAction->isChecked() == true)
+        slotAutoTabbed();
+    else if(m_windowAutoTileVerticalAction->isChecked() == true)
+        slotAutoTileVertical();
+    else if(m_windowAutoTileHorizontalAction->isChecked() == true)
+        slotAutoTileHorizontal();
+    else if(m_windowAutoTileAction->isChecked() == true)
+        slotAutoTile();
+    else if(m_windowAutoCascadeAction->isChecked() == true)
+        slotAutoCascade();
+    else
         slotManualArrangementMode();
 
     m_windowSaveToNewProfileAction = m_actionCollection->action("saveNewSession");
