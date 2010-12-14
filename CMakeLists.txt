@@ -27,7 +27,10 @@ ADD_DEFINITIONS(-DBT_VERSION="${BT_VERSION_FULL}")
 
 # Define debug flags
 IF (NOT CMAKE_BUILD_TYPE STREQUAL "Release")
+    SET(CMAKE_BUILD_TYPE "Debug")
     ADD_DEFINITIONS(-DBT_DEBUG)
+ELSE (NOT CMAKE_BUILD_TYPE STREQUAL "Release")
+    ADD_DEFINITIONS(-DBT_NO_DEBUG -DNDEBUG -DQT_NO_DEBUG)
 ENDIF (NOT CMAKE_BUILD_TYPE STREQUAL "Release")
 
 #Non-English locales to be processed and installed for UI, handbook and howto
@@ -151,7 +154,6 @@ IF (CMAKE_BUILD_TYPE STREQUAL "Release")
         ${SWORD_LIBRARY}
     )
 ELSE (CMAKE_BUILD_TYPE STREQUAL "Release")
-    SET(CMAKE_BUILD_TYPE "Debug")
     IF (MSVC)
         ADD_EXECUTABLE(${EXECUTABLE_NAME} WIN32 ${common_bibletime_SOURCES})
     ELSE (MSVC)
