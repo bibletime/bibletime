@@ -78,8 +78,8 @@ QString getKey(const bools ID) {
         case readOldBookmarks:
             return "readOldBookmarks";
 
-        case toolbar:
-            return "toolbar";
+        case showMainWindowToolbar:
+            return "showMainWindowToolbar";
         case mainIndex:
             return "mainIndex";
         case infoDisplay:
@@ -315,7 +315,7 @@ bool getDefault(const bools ID) {
         case readOldBookmarks:
             return false;
 
-        case toolbar:
+        case showMainWindowToolbar:
             return true;
         case mainIndex:
             return true;
