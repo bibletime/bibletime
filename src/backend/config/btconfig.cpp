@@ -23,7 +23,7 @@ BtConfig::BtConfig() : m_defaults(), m_sessionSettings(), m_settings(util::direc
         m_defaults.insert("bibletimeVersion", "0.0");
         m_defaults.insert("language", QLocale::system().name());
         m_defaults.insert("gui/displayStyle", CDisplayTemplateMgr::defaultTemplate());
-        m_defaults.insert("state/bookshelfCurrentItem", QString::null);
+        m_defaults.insert("state/bookshelfCurrentItem", QVariant(QString::null));
 
         m_defaults.insert("settings/defaults/standardBible", "KJV");
         m_defaults.insert("settings/defaults/standardCommentary", "MHC");
@@ -93,6 +93,7 @@ BtConfig::BtConfig() : m_defaults(), m_sessionSettings(), m_settings(util::direc
         m_defaults.insert("gui/windows/configDialogHeight", 1);
         m_defaults.insert("gui/windows/configDialogWidth", 1);
         m_defaults.insert("state/tipNumber", 0);
+        //TODO: continue here
 
         // TODO: these variables seems not to be used, check and remove
         /*
@@ -105,7 +106,8 @@ BtConfig::BtConfig() : m_defaults(), m_sessionSettings(), m_settings(util::direc
         //TODO: save defaults somewhere so they can be loaded directly on next startup
 
     // load session settings
-
+        m_sessionSettings.insert("showTextWindowHeaders");
+        //TODO: continue here
 }
 
 BtConfig::~BtConfig() {}

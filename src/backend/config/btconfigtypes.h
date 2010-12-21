@@ -15,11 +15,9 @@ enum alignmentMode
     autoTabbed,
     autoCascade
 };
-Q_DECLARE_METATYPE(alignmentMode);
-
+}
+Q_DECLARE_METATYPE(btconfigtypes::alignmentMode);
 Q_DECLARE_METATYPE(BTModuleTreeItem::Grouping);
 Q_DECLARE_METATYPE(Search::BtSearchOptionsArea::SearchType);
-
-}
 
 #endif // BTCONFIGTYPES_H
