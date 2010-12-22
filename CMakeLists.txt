@@ -166,6 +166,7 @@ ELSE (CMAKE_BUILD_TYPE STREQUAL "Release")
         ${CURL_LIBRARIES} # optional, empty if not found
         ${ICU_LIBRARIES} # optional, empty if not found
         ${ICU_I18N_LIBRARIES} # optional, empty if not found
+        ${ZLIB_LIBRARIES} # optional, empty if not found
         ${SWORD_LIBRARY}
     )
 ENDIF (CMAKE_BUILD_TYPE STREQUAL "Release")
