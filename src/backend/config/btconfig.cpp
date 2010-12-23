@@ -118,3 +118,29 @@ BtConfig& BtConfig::getInstance()
         m_instance = new BtConfig;
     return *m_instance;
 }
+
+QVariant BtConfig::getValue(QString key)
+{
+    // get default value
+
+    // retrieve value from config
+
+    // return
+    return QVariant();
+}
+
+void BtConfig::setValue(QString key, QVariant value)
+{
+
+}
+
+bool BtConfig::hasValue(QString key)
+{
+    // forward call to QSettings
+    return false;
+}
+
+void BtConfig::deleteValue(QString key)
+{
+    // forward call to QSettings
+}

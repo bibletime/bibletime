@@ -22,6 +22,11 @@ private:
 public:
     BtConfig& getInstance();
     ~BtConfig();
+
+    QVariant getValue(QString key);
+    void setValue(QString key, QVariant value);
+    bool hasValue(QString key);
+    void deleteValue(QString key);
 };
 
 #endif // BTCONFIG_H
