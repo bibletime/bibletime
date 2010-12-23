@@ -8,6 +8,8 @@ SET(BT_VERSION_MINOR "9")
 SET(BT_VERSION_PATCH "0")
 #SET(BT_VERSION_BUILD "") # Temporarily uncomment this line for release procedures
 
+OPTION(BUILD_TESTS "build test applications " OFF)
+
 # Determine build, if needed:
 IF (NOT (DEFINED BT_VERSION_BUILD))
     SET(Git_FIND_QUIETLY TRUE)
@@ -45,7 +47,13 @@ SET(QT_MIN_VERSION 4.5.0)
 SET(QT_USE_QTXML 1)
 SET(QT_USE_QTWEBKIT 1)
 SET(QT_USE_QTMAIN 1)
+if(BUILD_TESTS)
+    SET(QT_USE_QTTEST 1)
+endif(BUILD_TESTS)
 FIND_PACKAGE(Qt4 REQUIRED)
+IF(QT_USE_QTTEST AND QT_QTTEST_FOUND)
+    MESSAGE(STATUS "Using QTest")
+ENDIF(QT_USE_QTTEST AND QT_QTTEST_FOUND)
 IF (QT_QTDBUS_FOUND AND NOT APPLE)
     SET(QT_USE_QTDBUS 1)
     MESSAGE(STATUS "Using DBUS")
@@ -169,6 +177,16 @@ ELSE (CMAKE_BUILD_TYPE STREQUAL "Release")
         ${SWORD_LIBRARY}
     )
 ENDIF (CMAKE_BUILD_TYPE STREQUAL "Release")
+
+# Tests
+#
+if(BUILD_TESTS)
+    ENABLE_TESTING()
+    INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTTest.cmake")
+    SET(TEST_DIR "${CMAKE_CURRENT_SOURCE_DIR}/src/tests/")
+    add_unit_test(btconfig_test "${TEST_DIR}/btconfig_test.cpp")
+endif(BUILD_TESTS)
+
 
 IF (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
     SET(CMAKE_INSTALL_PREFIX "install/") #install to ./build/install, allow override
