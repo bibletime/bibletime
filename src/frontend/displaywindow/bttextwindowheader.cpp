@@ -11,6 +11,7 @@
 
 #include "bttextwindowheaderwidget.h"
 #include "clexiconreadwindow.h"
+#include "util/btmodules.h"
 
 #include <QStringList>
 #include <QWidget>
@@ -49,7 +50,8 @@ void BtTextWindowHeader::slotBackendModulesChanged() {
         BtTextWindowHeaderWidget* widgt = m_widgetList.at(i);
         QString moduleName = m_modules.at(i);
         qDebug() << "refresh button's menu:" << moduleName << i;
-        widgt->recreateWidget(m_modules, moduleName, i);
+        int leftLikeModules = leftLikeParallelModules(m_modules);
+        widgt->recreateWidget(m_modules, moduleName, i, leftLikeModules);
     }
 }
 
@@ -118,10 +120,11 @@ void BtTextWindowHeader::setModules( QStringList useModules ) {
 }
 
 void BtTextWindowHeader::updateWidgets() {
+    int leftLikeModules = leftLikeParallelModules(m_modules);
     for (int i = 0; i < m_widgetList.count(); i++) {
         BtTextWindowHeaderWidget* w = m_widgetList.at(i);
         //QString moduleName = m_modules.at(i);
         //qDebug() << "refresh button's menu:" << moduleName << i;
-        w->updateWidget(m_modules, m_modules.at(i), i);
+        w->updateWidget(m_modules, m_modules.at(i), i, leftLikeModules);
     }
 }

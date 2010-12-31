@@ -56,9 +56,9 @@ BtTextWindowHeaderWidget::BtTextWindowHeaderWidget(BtTextWindowHeader *parent, C
 
 BtTextWindowHeaderWidget::~BtTextWindowHeaderWidget() {}
 
-void BtTextWindowHeaderWidget::recreateWidget(QStringList newModulesToUse, QString thisModule, int newIndex) {
+void BtTextWindowHeaderWidget::recreateWidget(QStringList newModulesToUse, QString thisModule, int newIndex, int lefLikeModules) {
     populateMenu();
-    updateWidget(newModulesToUse, thisModule, newIndex);
+    updateWidget(newModulesToUse, thisModule, newIndex, lefLikeModules);
 }
 
 // don't remove yet, maybe we'll add icons to buttons...
@@ -78,13 +78,14 @@ void BtTextWindowHeaderWidget::recreateWidget(QStringList newModulesToUse, QStri
 //     }
 // }
 
-void BtTextWindowHeaderWidget::updateWidget(QStringList newModulesToUse, QString thisModule, int newIndex) {
+void BtTextWindowHeaderWidget::updateWidget(QStringList newModulesToUse, QString thisModule, int newIndex, int leftLikeModules) {
     //qDebug() << "BtTextWindowHeaderWidget::updateMenu" << newModulesToUse << thisModule << newIndex << this;
     m_label->setText(thisModule);
-    // create the menu if it doesn't exist
-    if (!m_popup) populateMenu();
-
     m_id = newIndex;
+    // create the menu if it doesn't exist
+    if (!m_popup)
+        populateMenu();
+
     m_module = thisModule;
     namespace DU = util::directory;
 
@@ -105,7 +106,11 @@ void BtTextWindowHeaderWidget::updateWidget(QStringList newModulesToUse, QString
     else {
         m_separator->show();
     }
-    m_removeAction->setDisabled((newModulesToUse.count() == 1) ? true : false);
+    bool disableRemove = false;
+    if (newModulesToUse.count() == 1 ||
+        (newIndex == 0 && leftLikeModules == 1))
+        disableRemove = true;
+    m_removeAction->setDisabled(disableRemove);
 }
 
 /** Is called after a module was selected in the popup */
@@ -171,9 +176,11 @@ void BtTextWindowHeaderWidget::populateMenu() {
             if (!CBTConfig::get(CBTConfig::bookshelfShowHidden)) {
                 filters2.append(&hiddenFilter);
             }
-            TypeFilter typeFilter2(CSwordModuleInfo::Commentary);
-            filters2.append(&typeFilter2);
-            root.add_items(filters2);
+            if (m_id != 0 || menu == addItem) {
+                TypeFilter typeFilter2(CSwordModuleInfo::Commentary);
+                filters2.append(&typeFilter2);
+                root.add_items(filters2);
+            }
             addItemToMenu(&root, menu, (TypeOfAction)menu->property(ActionType).toInt());
         }
         else {

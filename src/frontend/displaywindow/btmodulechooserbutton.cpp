@@ -32,9 +32,9 @@ BtModuleChooserButton::BtModuleChooserButton(BtModuleChooserBar *parent, CSwordM
 
 BtModuleChooserButton::~BtModuleChooserButton() {}
 
-void BtModuleChooserButton::recreateMenu(QStringList newModulesToUse, QString thisModule, int newIndex) {
+void BtModuleChooserButton::recreateMenu(QStringList newModulesToUse, QString thisModule, int newIndex, int leftLikeModules) {
     populateMenu();
-    updateMenu(newModulesToUse, thisModule, newIndex);
+    updateMenu(newModulesToUse, thisModule, newIndex, leftLikeModules);
 }
 
 const QString BtModuleChooserButton::iconName() {
@@ -53,12 +53,14 @@ const QString BtModuleChooserButton::iconName() {
     }
 }
 
-void BtModuleChooserButton::updateMenu(QStringList newModulesToUse, QString thisModule, int newIndex) {
+void BtModuleChooserButton::updateMenu(QStringList newModulesToUse, QString thisModule, int newIndex, int leftLikeModules) {
     //qDebug() << "BtModuleChooserButton::updateMenu" << newModulesToUse << thisModule << newIndex << this;
-    // create the menu if it doesn't exist
-    if (!m_popup) populateMenu();
-
     m_id = newIndex;
+
+    // create the menu if it doesn't exist
+    if (!m_popup)
+        populateMenu();
+
     m_module = thisModule;
     m_hasModule = thisModule.isEmpty() ? false : true;
     namespace DU = util::directory;
@@ -81,7 +83,11 @@ void BtModuleChooserButton::updateMenu(QStringList newModulesToUse, QString this
     else {
         setToolTip( tr("Select an additional work") );
     }
-    m_noneAction->setDisabled((newModulesToUse.count() == 1) ? true : false);
+    bool disableNone = false;
+    if (newModulesToUse.count() == 1 ||
+        (newIndex == 0 && leftLikeModules == 1))
+        disableNone = true;
+    m_noneAction->setDisabled(disableNone);
     //qDebug()<<"BtModuleChooserButton::modulesChanged end";
 }
 
@@ -144,9 +150,11 @@ void BtModuleChooserButton::populateMenu() {
         if (!CBTConfig::get(CBTConfig::bookshelfShowHidden)) {
             filters2.append(&hiddenFilter);
         }
-        TypeFilter typeFilter2(CSwordModuleInfo::Commentary);
-        filters2.append(&typeFilter2);
-        root.add_items(filters2);
+        if (m_id != 0) {
+            TypeFilter typeFilter2(CSwordModuleInfo::Commentary);
+            filters2.append(&typeFilter2);
+            root.add_items(filters2);
+        }
         // add all items recursively
         addItemToMenu(&root, m_popup);
     }
