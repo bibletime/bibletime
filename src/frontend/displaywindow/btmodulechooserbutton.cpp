@@ -88,6 +88,18 @@ void BtModuleChooserButton::updateMenu(QStringList newModulesToUse, QString this
         (newIndex == 0 && leftLikeModules == 1))
         disableNone = true;
     m_noneAction->setDisabled(disableNone);
+
+    // Disable non-Bible categories on first button
+    if (m_moduleType == CSwordModuleInfo::Bible && m_id == 0) {
+        QList<QAction*> actions = m_popup->actions();
+        for (int i=0; i<actions.count(); i++) {
+            QAction* action = actions.at(i);
+            QString text = action->text();
+            if (text != QObject::tr("Bibles")) {
+                action->setDisabled(true);
+            }
+        }
+    }
     //qDebug()<<"BtModuleChooserButton::modulesChanged end";
 }
 
@@ -150,11 +162,9 @@ void BtModuleChooserButton::populateMenu() {
         if (!CBTConfig::get(CBTConfig::bookshelfShowHidden)) {
             filters2.append(&hiddenFilter);
         }
-        if (m_id != 0) {
-            TypeFilter typeFilter2(CSwordModuleInfo::Commentary);
-            filters2.append(&typeFilter2);
-            root.add_items(filters2);
-        }
+        TypeFilter typeFilter2(CSwordModuleInfo::Commentary);
+        filters2.append(&typeFilter2);
+        root.add_items(filters2);
         // add all items recursively
         addItemToMenu(&root, m_popup);
     }

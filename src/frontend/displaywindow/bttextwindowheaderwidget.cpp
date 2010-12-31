@@ -99,18 +99,33 @@ void BtTextWindowHeaderWidget::updateWidget(QStringList newModulesToUse, QString
         }
     }
 
-    if (m_id == newModulesToUse.count() - 1) {
-        // this is the rightmost module, hide the separator
-        m_separator->hide();
-    }
-    else {
-        m_separator->show();
-    }
     bool disableRemove = false;
     if (newModulesToUse.count() == 1 ||
         (newIndex == 0 && leftLikeModules == 1))
         disableRemove = true;
     m_removeAction->setDisabled(disableRemove);
+
+    // Disable non-Bible categories on left replace menu
+    if (m_moduleType == CSwordModuleInfo::Bible && m_id == 0) {
+        QList<QAction*> actionsType = m_popup->actions();
+        for (int t=0; t<actionsType.count(); t++) {
+            QAction* actionType = actionsType.at(t);
+            QString typeText = actionType->text();
+            if (typeText != QObject::tr("Replace"))
+                continue;
+            QMenu* menuType = actionType->menu();
+            if (menuType == 0)
+                continue;
+            QList<QAction*> actions = menuType->actions();
+            for (int i=0; i<actions.count(); i++) {
+                QAction* action = actions.at(i);
+                QString text = action->text();
+                if (text != QObject::tr("Bibles")) {
+                    action->setDisabled(true);
+                }
+            }
+        }
+    }
 }
 
 /** Is called after a module was selected in the popup */
@@ -176,7 +191,7 @@ void BtTextWindowHeaderWidget::populateMenu() {
             if (!CBTConfig::get(CBTConfig::bookshelfShowHidden)) {
                 filters2.append(&hiddenFilter);
             }
-            if (m_id != 0 || menu == addItem) {
+            if (menu == addItem || menu == replaceItem) {
                 TypeFilter typeFilter2(CSwordModuleInfo::Commentary);
                 filters2.append(&typeFilter2);
                 root.add_items(filters2);
