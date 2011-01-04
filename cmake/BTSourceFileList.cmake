@@ -309,6 +309,13 @@ SET(bibletime_SRC_FRONTEND_DISPLAYWINDOW
 
 SOURCE_GROUP("src\\frontend\\displaywindow" FILES ${bibletime_SRC_FRONTEND_DISPLAYWINDOW})
 
+SET(bibletime_SRC_TESTS
+    # unit tests:
+    src/tests/btconfigtest.cpp
+)
+
+SOURCE_GROUP("src\\tests" FILES ${bibletime_SRC_TESTS})
+
 # Mocable headers:
 SET(bibletime_MOCABLE_HEADERS
     src/bibletime.h

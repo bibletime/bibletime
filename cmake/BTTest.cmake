@@ -106,6 +106,8 @@ macro (ADD_UNIT_TEST _test_NAME)
     #qt4_wrap_cpp(ignore_me ${_srcList})
 
     #SET(_test_SOURCES ${_srcList} ${${_test_NAME}_MOCFILES})
+    #http://www.cmake.org/pipermail/cmake/2009-December/033804.html
+    #not working with cmake version 2.8.2
     QT4_AUTOMOC(${_srcList})
     #QT4_GENERATE_MOC(${_srcList} ${_srcList})
 
@@ -115,7 +117,7 @@ macro (ADD_UNIT_TEST _test_NAME)
         add_executable(${_test_NAME} ${_srcList})
     endif(WIN32)
 
-
+    target_link_libraries(${_test_NAME} ${EXECUTABLE_NAME}_test)
     # so we get QTest
     target_link_libraries(${_test_NAME} ${QT_LIBRARIES})
 
@@ -154,14 +156,11 @@ macro (ADD_UNIT_TEST _test_NAME)
     endif (TEST_OUTPUT STREQUAL "xml")
 
     if (NOT MSVC_IDE)   #not needed for the ide
-        # if the tests are EXCLUDE_FROM_ALL, add a target "buildtests" to build all tests
-        if (NOT BUILD_TESTS)
-           get_directory_property(_buildtestsAdded BUILDTESTS_ADDED)
-           if(NOT _buildtestsAdded)
-              add_custom_target(buildtests)
-              set_directory_properties(PROPERTIES BUILDTESTS_ADDED TRUE)
-           endif(NOT _buildtestsAdded)
-           add_dependencies(buildtests ${_test_NAME})
-        endif (NOT BUILD_TESTS)
+        get_directory_property(_buildtestsAdded BUILDTESTS_ADDED)
+        if(NOT _buildtestsAdded)
+            add_custom_target(buildtests)
+            set_directory_properties(PROPERTIES BUILDTESTS_ADDED TRUE)
+        endif(NOT _buildtestsAdded)
+        add_dependencies(buildtests ${_test_NAME})
     endif (NOT MSVC_IDE)
 endmacro (ADD_UNIT_TEST)

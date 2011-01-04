@@ -1,16 +1,19 @@
 #ifndef BTCONFIG_TEST_H
 #define BTCONFIG_TEST_H
 
-#include <qglobal.h>
 #include <QObject>
 #include <QTest>
+#include "backend/config/btconfig.h"
 
 class BtConfigTest: public QObject
 {
 Q_OBJECT
+
+    BtConfig* m_btConfig;
 private slots:
     void initTestCase()
     {
+        m_btConfig->getInstance();
         qDebug("called before everything else");
     }
 
