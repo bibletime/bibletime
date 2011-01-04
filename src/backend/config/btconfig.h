@@ -7,12 +7,17 @@
 #include <QtCore/QVariant>
 #include <QtCore/QSettings>
 
+//#include "tests/btconfig_test.h"
+
 class BtConfig
 {
 private:
     BtConfig();
     BtConfig(const BtConfig& other) {} // stub, do not use
     BtConfig& operator=(const BtConfig& other) {return *this;} // stub, do not use
+
+    friend class BtConfigTest;
+    BtConfig(QString settingsFile); //used by test
 
     static BtConfig* m_instance; // singleton instance
 

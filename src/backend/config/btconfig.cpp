@@ -3,6 +3,7 @@
 
 #include <cstddef> // NULL macro
 #include <QLocale>
+#include <qglobal.h> // Q_ASSERT
 
 #include "backend/managers/cdisplaytemplatemgr.h"
 #include "btconfigtypes.h"
@@ -121,12 +122,11 @@ BtConfig& BtConfig::getInstance()
 
 QVariant BtConfig::getValue(QString key)
 {
-    // get default value
+    // if this fails some code is asking for a non existent configuration option
+    Q_ASSERT(m_defaults.contains(key) == true);
 
     // retrieve value from config
-
-    // return
-    return QVariant();
+    return m_settings.value(key, m_defaults.value(key));
 }
 
 void BtConfig::setValue(QString key, QVariant value)
