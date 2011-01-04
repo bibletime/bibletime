@@ -16,7 +16,7 @@
  */
 BtConfig* BtConfig::m_instance = NULL;
 
-BtConfig::BtConfig() : m_defaults(), m_sessionSettings(), m_settings(util::directory::getUserBaseDir().absolutePath() + "/bibletimerc", QSettings::IniFormat)
+BtConfig::BtConfig(QString settingsFile) : m_defaults(), m_sessionSettings(), m_settings(settingsFile, QSettings::IniFormat)
 {
     // construct defaults
         m_defaults.reserve(512); //TODO: check whether this value can be calculated automatically...
@@ -116,7 +116,7 @@ BtConfig::~BtConfig() {}
 BtConfig& BtConfig::getInstance()
 {
     if(m_instance == NULL)
-        m_instance = new BtConfig;
+        m_instance = new BtConfig(util::directory::getUserBaseDir().absolutePath() + "/bibletimerc");
     return *m_instance;
 }
 

@@ -12,12 +12,11 @@
 class BtConfig
 {
 private:
-    BtConfig();
+    BtConfig(QString settingsFile); //used by test
     BtConfig(const BtConfig& other) {} // stub, do not use
     BtConfig& operator=(const BtConfig& other) {return *this;} // stub, do not use
 
     friend class BtConfigTest;
-    BtConfig(QString settingsFile); //used by test
 
     static BtConfig* m_instance; // singleton instance
 

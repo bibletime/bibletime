@@ -3,18 +3,20 @@
 
 #include <QObject>
 #include <QTest>
+#include <QFile>
 #include "backend/config/btconfig.h"
 
 class BtConfigTest: public QObject
 {
 Q_OBJECT
 
+    QString m_configFileName;
     BtConfig* m_btConfig;
 private slots:
     void initTestCase()
     {
-        m_btConfig->getInstance();
-        qDebug("called before everything else");
+        m_configFileName = "testsettings.ini";
+        m_btConfig = new BtConfig(m_configFileName);
     }
 
     void myFirstTest()
@@ -29,7 +31,7 @@ private slots:
 
     void cleanupTestCase()
     {
-        qDebug("called after myFirstTest and mySecondTest");
+        QFile(m_configFileName).remove();
     }
 };
 
