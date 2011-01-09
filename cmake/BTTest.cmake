@@ -89,6 +89,55 @@
 #    endif (UNIX)
 # endmacro (HANDLE_RPATH_FOR_EXECUTABLE)
 
+# copied and modified from CMake 2.8.3 Qt4Macros.cmake
+# this version supports having the #include statement and the class declaration in one file (typical for QTest)
+MACRO(QT4_AUTOMOC_CUSTOM)
+  QT4_GET_MOC_FLAGS(_moc_INCS)
+
+  SET(_matching_FILES )
+  FOREACH (_current_FILE ${ARGN})
+
+    GET_FILENAME_COMPONENT(_abs_FILE ${_current_FILE} ABSOLUTE)
+    # if "SKIP_AUTOMOC" is set to true, we will not handle this file here.
+    # This is required to make uic work correctly:
+    # we need to add generated .cpp files to the sources (to compile them),
+    # but we cannot let automoc handle them, as the .cpp files don't exist yet when
+    # cmake is run for the very first time on them -> however the .cpp files might
+    # exist at a later run. at that time we need to skip them, so that we don't add two
+    # different rules for the same moc file
+    GET_SOURCE_FILE_PROPERTY(_skip ${_abs_FILE} SKIP_AUTOMOC)
+
+    IF ( NOT _skip AND EXISTS ${_abs_FILE} )
+
+      FILE(READ ${_abs_FILE} _contents)
+
+      GET_FILENAME_COMPONENT(_abs_PATH ${_abs_FILE} PATH)
+
+      STRING(REGEX MATCHALL "# *include +[^ ]+\\.moc[\">]" _match "${_contents}")
+      IF(_match)
+        FOREACH (_current_MOC_INC ${_match})
+          STRING(REGEX MATCH "[^ <\"]+\\.moc" _current_MOC "${_current_MOC_INC}")
+
+          GET_FILENAME_COMPONENT(_basename ${_current_MOC} NAME_WE)
+          IF(EXISTS ${_abs_PATH}/${_basename}.hpp)
+            SET(_header ${_abs_PATH}/${_basename}.hpp)
+          ELSE(EXISTS ${_abs_PATH}/${_basename}.hpp)
+            IF(EXISTS ${_abs_PATH}/${_basename}.h)
+              SET(_header ${_abs_PATH}/${_basename}.h)
+            ELSE(EXISTS ${_abs_PATH}/${_basename}.h)
+              # fallback to original cpp file
+              SET(_header ${_abs_FILE})
+            ENDIF(EXISTS ${_abs_PATH}/${_basename}.h)
+          ENDIF(EXISTS ${_abs_PATH}/${_basename}.hpp)
+          SET(_moc    ${CMAKE_CURRENT_BINARY_DIR}/${_current_MOC})
+          QT4_CREATE_MOC_COMMAND(${_header} ${_moc} "${_moc_INCS}" "")
+          MACRO_ADD_FILE_DEPENDENCIES(${_abs_FILE} ${_moc})
+        ENDFOREACH (_current_MOC_INC)
+      ENDIF(_match)
+    ENDIF ( NOT _skip AND EXISTS ${_abs_FILE} )
+  ENDFOREACH (_current_FILE)
+ENDMACRO(QT4_AUTOMOC_CUSTOM)
+
 # Add a unit test, which is executed when running make test .
 # The targets are always created, but only built for the "all"
 # target if the option BUILD_TESTS is enabled. Otherwise the rules for the target
@@ -107,8 +156,8 @@ macro (ADD_UNIT_TEST _test_NAME)
 
     #SET(_test_SOURCES ${_srcList} ${${_test_NAME}_MOCFILES})
     #http://www.cmake.org/pipermail/cmake/2009-December/033804.html
-    #not working with cmake version 2.8.2
-    QT4_AUTOMOC(${_srcList})
+    #not working with cmake version 2.8.3
+    QT4_AUTOMOC_CUSTOM(${_srcList})
     #QT4_GENERATE_MOC(${_srcList} ${_srcList})
 
     if(WIN32)
