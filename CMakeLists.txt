@@ -141,40 +141,28 @@ IF (MSVC)
     )
 ENDIF (MSVC)
 
+IF (MSVC)
+    ADD_EXECUTABLE(${EXECUTABLE_NAME} WIN32 ${common_bibletime_SOURCES})
+ELSE (MSVC)
+    ADD_EXECUTABLE(${EXECUTABLE_NAME} ${common_bibletime_SOURCES})
+ENDIF (MSVC)
+INCLUDE(${QT_USE_FILE})
+TARGET_LINK_LIBRARIES(${EXECUTABLE_NAME}
+    ${QT_LIBRARIES}
+    ${CLUCENE_LIBRARY}
+    ${CURL_LIBRARIES} # optional, empty if not found
+    ${ICU_LIBRARIES} # optional, empty if not found
+    ${ICU_I18N_LIBRARIES} # optional, empty if not found
+    ${SWORD_LIBRARY}
+)
+
 IF (CMAKE_BUILD_TYPE STREQUAL "Release")
-    IF (MSVC)
-        ADD_EXECUTABLE(${EXECUTABLE_NAME} WIN32 ${common_bibletime_SOURCES})
-    ELSE (MSVC)
-        ADD_EXECUTABLE(${EXECUTABLE_NAME} ${common_bibletime_SOURCES})
-    ENDIF (MSVC)
 #    SET_TARGET_PROPERTIES(${EXECUTABLE_NAME}
 #        PROPERTIES
 #            COMPILE_FLAGS "${SWORD_CFLAGS}" #Enable exception handling
 #    )
-    INCLUDE(${QT_USE_FILE})
     TARGET_LINK_LIBRARIES(${EXECUTABLE_NAME}
-        ${QT_LIBRARIES}
-        ${CLUCENE_LIBRARY}
-        ${CURL_LIBRARIES} # optional, empty if not found
-        ${ICU_LIBRARIES} # optional, empty if not found
-        ${ICU_I18N_LIBRARIES} # optional, empty if not found
         ${ZLIB_LIBRARIES} # optional, empty if not found
-        ${SWORD_LIBRARY}
-    )
-ELSE (CMAKE_BUILD_TYPE STREQUAL "Release")
-    IF (MSVC)
-        ADD_EXECUTABLE(${EXECUTABLE_NAME} WIN32 ${common_bibletime_SOURCES})
-    ELSE (MSVC)
-        ADD_EXECUTABLE(${EXECUTABLE_NAME} ${common_bibletime_SOURCES})
-    ENDIF (MSVC)
-    INCLUDE(${QT_USE_FILE})
-    TARGET_LINK_LIBRARIES(${EXECUTABLE_NAME}
-        ${QT_LIBRARIES}
-        ${CLUCENE_LIBRARY}
-        ${CURL_LIBRARIES} # optional, empty if not found
-        ${ICU_LIBRARIES} # optional, empty if not found
-        ${ICU_I18N_LIBRARIES} # optional, empty if not found
-        ${SWORD_LIBRARY}
     )
 ENDIF (CMAKE_BUILD_TYPE STREQUAL "Release")
 
