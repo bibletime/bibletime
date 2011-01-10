@@ -15,8 +15,12 @@
  * whether the variable has been initialized yet.
  */
 BtConfig* BtConfig::m_instance = NULL;
+const QString BtConfig::m_sessionsGroup = "sessions";
+const QString BtConfig::m_currentSessionKey = "currentSession";
+const QString BtConfig::m_defaultSession = QObject::tr("defaultSession");
+const QString BtConfig::m_defaultSessionName = QObject::tr("default session");
 
-BtConfig::BtConfig(QString settingsFile) : m_defaults(), m_sessionSettings(), m_settings(settingsFile, QSettings::IniFormat)
+BtConfig::BtConfig(QString settingsFile) : m_defaults(), m_sessionSettings(), m_settings(settingsFile, QSettings::IniFormat), m_currentSessionCache()
 {
     // construct defaults
         m_defaults.reserve(512); //TODO: check whether this value can be calculated automatically...
@@ -106,9 +110,12 @@ BtConfig::BtConfig(QString settingsFile) : m_defaults(), m_sessionSettings(), m_
 
         //TODO: save defaults somewhere so they can be loaded directly on next startup
 
-    // load session settings
+    // initialize session settings
         m_sessionSettings.insert("showTextWindowHeaders");
         //TODO: continue here
+
+    // initialize current session variable
+        m_currentSessionCache = m_sessionsGroup + "/" + m_settings.value(m_currentSessionKey, m_defaultSession).toString() + "/";
 }
 
 BtConfig::~BtConfig() {}
@@ -120,27 +127,139 @@ BtConfig& BtConfig::getInstance()
     return *m_instance;
 }
 
+QString BtConfig::getCurrentSessionName()
+{
+    // every session must have a name at any time
+        Q_ASSERT(m_settings.value(m_currentSessionCache + "name") != QVariant());
+
+    return m_settings.value(m_currentSessionCache + "name").toString();
+}
+
+QStringList BtConfig::getAllSessionNames()
+{
+    m_settings.beginGroup(m_sessionsGroup);
+
+    QStringList sessions = m_settings.childGroups();
+    QStringList sessionNames;
+    foreach(QString session, sessions)
+        sessionNames.append(m_settings.value(session + "/name").toString());
+    m_settings.endGroup();
+    return sessionNames;
+}
+
+void BtConfig::switchToSession(QString name)
+{
+    m_settings.beginGroup(m_sessionsGroup);
+    QStringList sessions = m_settings.childGroups();
+
+    //check whether the session already exist
+        bool found = false;
+        foreach(QString session, sessions)
+        {
+            if(m_settings.value(session + "/name") == name)
+            {
+                found = true;
+                break;
+            }
+        }
+
+    // session doesn't exist yet, create it
+        if(not found)
+        {
+            QString sessionKey = "invalid";
+            for(int i = 0; i != 1000; i--) // noone will have 1000 sessions...
+            {
+                if(not sessions.contains(QString::number(i)))
+                    sessionKey = QString::number(i);
+            }
+            Q_ASSERT(sessionKey != "invalid");
+
+            m_settings.beginGroup(sessionKey);
+                m_settings.setValue("name", name);
+            m_settings.endGroup();
+        }
+
+    m_settings.endGroup();
+
+    // switch to the session
+        m_settings.setValue(m_currentSessionKey, name);
+        m_currentSessionCache = name;
+}
+
+bool BtConfig::deleteSession(QString name)
+{
+    m_settings.beginGroup(m_sessionsGroup);
+    QStringList sessions = m_settings.childGroups();
+
+    foreach(QString session, sessions)
+    {
+        if(m_settings.value(session + "/name") == name)
+        {
+            m_settings.endGroup();
+
+            // we don't delete the current session
+            if(m_settings.value(m_currentSessionKey) == session)
+                return false;
+            else
+            {
+                m_settings.remove(session);
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
 QVariant BtConfig::getValue(QString key)
 {
+    //accessing session values directly is prohibited
+        Q_ASSERT(not key.startsWith(m_sessionsGroup));
+        Q_ASSERT(key != m_currentSessionKey);
+
     // if this fails some code is asking for a non existent configuration option
-    Q_ASSERT(m_defaults.contains(key) == true);
+        Q_ASSERT(m_defaults.contains(key));
 
     // retrieve value from config
-    return m_settings.value(key, m_defaults.value(key));
+        if(m_sessionSettings.contains(key))
+        {
+            return m_settings.value(m_currentSessionCache + key, m_defaults.value(key));
+        }
+        else
+            return m_settings.value(key, m_defaults.value(key));
 }
 
 void BtConfig::setValue(QString key, QVariant value)
 {
+    //accessing session values directly is prohibited
+    Q_ASSERT(not key.startsWith(m_sessionsGroup));
+    Q_ASSERT(key != m_currentSessionKey);
 
+    if(m_sessionSettings.contains(key))
+        m_settings.setValue(m_currentSessionCache + key, value);
+    else
+        m_settings.setValue(key, value);
 }
 
 bool BtConfig::hasValue(QString key)
 {
-    // forward call to QSettings
-    return false;
+    //accessing session values directly is prohibited
+    Q_ASSERT(not key.startsWith(m_sessionsGroup));
+    Q_ASSERT(key != m_currentSessionKey);
+
+    if(m_sessionSettings.contains(key))
+        return m_settings.contains(m_currentSessionCache + key);
+    else
+        return m_settings.contains(key);
 }
 
 void BtConfig::deleteValue(QString key)
 {
-    // forward call to QSettings
+    //accessing session values directly is prohibited
+    Q_ASSERT(not key.startsWith(m_sessionsGroup));
+    Q_ASSERT(key != m_currentSessionKey);
+
+    if(m_sessionSettings.contains(key))
+        m_settings.remove(m_currentSessionCache + key);
+    else
+        m_settings.remove(key);
 }
