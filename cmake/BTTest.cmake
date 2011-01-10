@@ -166,9 +166,10 @@ macro (ADD_UNIT_TEST _test_NAME)
         add_executable(${_test_NAME} ${_srcList})
     endif(WIN32)
 
-    target_link_libraries(${_test_NAME} ${EXECUTABLE_NAME}_test)
-    # so we get QTest
-    target_link_libraries(${_test_NAME} ${QT_LIBRARIES})
+    target_link_libraries(${_test_NAME}
+        ${DYNAMIC_LIB_NAME}
+        ${QT_LIBRARIES} # so we get QTest
+    )
 
 # not needed, we don't have libraries, only .o files
 #    handle_rpath_for_executable(${_test_NAME})

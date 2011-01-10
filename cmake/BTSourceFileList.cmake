@@ -2,6 +2,10 @@ SET(bibletime_UIS
     src/frontend/display/bthtmlfindtext.ui
 )
 
+SET(bibletime_MAIN
+    src/main.cpp
+)
+
 SET(bibletime_SRC
     # Toplevel files:
     src/bibletime.cpp
@@ -10,7 +14,6 @@ SET(bibletime_SRC
     src/bibletime_init.cpp
     src/bibletime_slots.cpp
     src/bibletimeapp.cpp
-    src/main.cpp
 )
 
 SOURCE_GROUP("src" FILES ${bibletime_SRC})

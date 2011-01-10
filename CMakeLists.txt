@@ -116,6 +116,8 @@ SET(EXECUTABLE_NAME "bibletime")
 IF (APPLE)
     SET(EXECUTABLE_NAME "BibleTime")
 ENDIF (APPLE)
+SET(STATIC_LIB_NAME ${EXECUTABLE_NAME}_static)
+SET(DYNAMIC_LIB_NAME ${EXECUTABLE_NAME}_dynamic)
 
 
 # Define rules to generate ${bibletime_UI_translations} files
@@ -141,13 +143,23 @@ IF (MSVC)
     )
 ENDIF (MSVC)
 
+# here we create a static library containing all compiled bibletime sources
+# these will be used to create both, a bibletime executable and optionally a
+# dynamic library to be used by tests
+# This prevents compiling the complete source twice, once for the executable
+# and once for the library
+ADD_LIBRARY(${STATIC_LIB_NAME} STATIC EXCLUDE_FROM_ALL ${common_bibletime_SOURCES})
+
 IF (MSVC)
-    ADD_EXECUTABLE(${EXECUTABLE_NAME} WIN32 ${common_bibletime_SOURCES})
+    ADD_EXECUTABLE(${EXECUTABLE_NAME} WIN32 ${bibletime_MAIN})
 ELSE (MSVC)
-    ADD_EXECUTABLE(${EXECUTABLE_NAME} ${common_bibletime_SOURCES})
+    ADD_EXECUTABLE(${EXECUTABLE_NAME} ${bibletime_MAIN})
 ENDIF (MSVC)
 INCLUDE(${QT_USE_FILE})
 TARGET_LINK_LIBRARIES(${EXECUTABLE_NAME}
+    -Wl,-whole-archive # static libraries are included even though they aren't referenced
+        ${STATIC_LIB_NAME} # the actual bibletime compiled sources
+    -Wl,-no-whole-archive
     ${QT_LIBRARIES}
     ${CLUCENE_LIBRARY}
     ${CURL_LIBRARIES} # optional, empty if not found
@@ -169,13 +181,12 @@ ENDIF (CMAKE_BUILD_TYPE STREQUAL "Release")
 # Tests
 #
 if(BUILD_TESTS)
-    IF (MSVC)
-        ADD_LIBRARY(${EXECUTABLE_NAME}_test SHARED WIN32 ${common_bibletime_SOURCES})
-    ELSE (MSVC)
-        ADD_LIBRARY(${EXECUTABLE_NAME}_test SHARED ${common_bibletime_SOURCES})
-    ENDIF (MSVC)
+    ADD_LIBRARY(${DYNAMIC_LIB_NAME} SHARED)
     INCLUDE(${QT_USE_FILE})
-    TARGET_LINK_LIBRARIES(${EXECUTABLE_NAME}_test
+    TARGET_LINK_LIBRARIES(${DYNAMIC_LIB_NAME}
+        -Wl,-whole-archive # static libraries are included even though they aren't referenced
+            ${STATIC_LIB_NAME}
+        -Wl,-no-whole-archive
         ${QT_LIBRARIES}
         ${CLUCENE_LIBRARY}
         ${CURL_LIBRARIES} # optional, empty if not found
