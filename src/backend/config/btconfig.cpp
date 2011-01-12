@@ -20,7 +20,7 @@ const QString BtConfig::m_currentSessionKey = "currentSession";
 const QString BtConfig::m_defaultSession = QObject::tr("defaultSession");
 const QString BtConfig::m_defaultSessionName = QObject::tr("default session");
 
-BtConfig::BtConfig(QString settingsFile) : m_defaults(), m_sessionSettings(), m_settings(settingsFile, QSettings::IniFormat), m_currentSessionCache()
+BtConfig::BtConfig(const QString& settingsFile) : m_defaults(), m_sessionSettings(), m_settings(settingsFile, QSettings::IniFormat), m_currentSessionCache()
 {
     // construct defaults
         m_defaults.reserve(512); //TODO: check whether this value can be calculated automatically...
@@ -147,7 +147,7 @@ QStringList BtConfig::getAllSessionNames()
     return sessionNames;
 }
 
-void BtConfig::switchToSession(QString name)
+void BtConfig::switchToSession(const QString& name)
 {
     m_settings.beginGroup(m_sessionsGroup);
     QStringList sessions = m_settings.childGroups();
@@ -186,7 +186,7 @@ void BtConfig::switchToSession(QString name)
         m_currentSessionCache = name;
 }
 
-bool BtConfig::deleteSession(QString name)
+bool BtConfig::deleteSession(const QString& name)
 {
     m_settings.beginGroup(m_sessionsGroup);
     QStringList sessions = m_settings.childGroups();
@@ -210,7 +210,7 @@ bool BtConfig::deleteSession(QString name)
     return false;
 }
 
-QVariant BtConfig::getValue(QString key)
+QVariant BtConfig::getValue(const QString& key)
 {
     //accessing session values directly is prohibited
         Q_ASSERT(not key.startsWith(m_sessionsGroup));
@@ -228,19 +228,7 @@ QVariant BtConfig::getValue(QString key)
             return m_settings.value(key, m_defaults.value(key));
 }
 
-/*void BtConfig::setValue(QString key, QVariant value)
-{
-    //accessing session values directly is prohibited
-    Q_ASSERT(not key.startsWith(m_sessionsGroup));
-    Q_ASSERT(key != m_currentSessionKey);
-
-    if(m_sessionSettings.contains(key))
-        m_settings.setValue(m_currentSessionCache + key, value);
-    else
-        m_settings.setValue(key, value);
-}*/
-
-bool BtConfig::hasValue(QString key)
+bool BtConfig::hasValue(const QString& key)
 {
     //accessing session values directly is prohibited
     Q_ASSERT(not key.startsWith(m_sessionsGroup));
@@ -252,7 +240,7 @@ bool BtConfig::hasValue(QString key)
         return m_settings.contains(key);
 }
 
-void BtConfig::deleteValue(QString key)
+void BtConfig::deleteValue(const QString& key)
 {
     //accessing session values directly is prohibited
     Q_ASSERT(not key.startsWith(m_sessionsGroup));

@@ -63,7 +63,7 @@ public:
      *
      * \param[in] name Name of session to switch to.
      */
-    void switchToSession(QString name);
+    void switchToSession(const QString& name);
 
     /*!
      * \brief Delete a session.
@@ -74,7 +74,7 @@ public:
      * exists.
      * \returns True if deletion was successful and false otherwise.
      */
-    bool deleteSession(QString name);
+    bool deleteSession(const QString& name);
 
     /*!
      * \brief Returns a value.
@@ -87,7 +87,7 @@ public:
      * \param[in] key Key to get the value for.
      * \returns QVariant of the value.
      */
-    QVariant getValue(QString key);
+    QVariant getValue(const QString& key);
 
     /*!
      * \brief Set a value.
@@ -102,13 +102,13 @@ public:
      * \tparam[in] value Value to set.
      */
     template<typename T>
-    void setValue(QString key, T value);
+    void setValue(const QString& key, T value);
 
     /*!
      * \brief Checks whether a value has been manually set.
      * \param[in] key Key to check for.
      */
-    bool hasValue(QString key);
+    bool hasValue(const QString& key);
 
     /*!
      * \brief Delete a key.
@@ -119,11 +119,11 @@ public:
      *
      * \param[in] key Key to delete.
      */
-    void deleteValue(QString key);
+    void deleteValue(const QString& key);
 };
 
 template<typename T>
-void BtConfig::setValue(QString key, T value)
+void BtConfig::setValue(const QString& key, T value)
 {
     //accessing session values directly is prohibited
     Q_ASSERT(not key.startsWith(m_sessionsGroup));
@@ -141,7 +141,7 @@ void BtConfig::setValue(QString key, T value)
  * functions anymore and would result in multiple definition errors.
  */
 template <>
-inline void BtConfig::setValue(QString key, const char* const value)
+inline void BtConfig::setValue(const QString& key, const char* const value)
 {
     setValue<QString>(key, QString(value));
 }
