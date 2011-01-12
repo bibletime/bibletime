@@ -7,6 +7,7 @@
 #include <QStringList>
 #include <QVariant>
 #include <QSettings>
+#include <util/nocopy.h>
 
 /*!
  * \brief Class holding and managing the configuration of bibletime.
@@ -20,13 +21,10 @@
  * TODO: preserve session order
  * TODO: noncopy base class
  */
-class BtConfig
+class BtConfig : private NoCopy
 {
 private:
-    BtConfig(QString settingsFile); //used by test
-    BtConfig(const BtConfig& other) {} // stub, do not use
-    BtConfig& operator=(const BtConfig& other) {return *this;} // stub, do not use
-
+    explicit BtConfig(const QString& settingsFile); //used by BtConfigTest
     friend class BtConfigTest;
 
     static BtConfig* m_instance; // singleton instance
