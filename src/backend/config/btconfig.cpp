@@ -114,8 +114,17 @@ BtConfig::BtConfig(const QString& settingsFile) : m_defaults(), m_sessionSetting
         m_sessionSettings.insert("showTextWindowHeaders");
         //TODO: continue here
 
-    // initialize current session variable
-        m_currentSessionCache = m_sessionsGroup + "/" + m_settings.value(m_currentSessionKey, m_defaultSession).toString() + "/";
+
+    // make sure the current session key is set
+        if(not m_settings.contains(m_currentSessionKey))
+            m_settings.setValue(m_currentSessionKey, m_defaultSession);
+
+    // initialize current session variable cache
+        m_currentSessionCache = m_sessionsGroup + "/" + m_settings.value(m_currentSessionKey).toString() + "/";
+
+    // make sure the current session has a name
+        if(not m_settings.contains(m_currentSessionCache + "name"))
+            m_settings.setValue(m_currentSessionCache + "name", m_defaultSessionName);
 }
 
 BtConfig::~BtConfig() {}
@@ -151,14 +160,16 @@ void BtConfig::switchToSession(const QString& name)
 {
     m_settings.beginGroup(m_sessionsGroup);
     QStringList sessions = m_settings.childGroups();
+    QString sessionKey = "invalid";
 
-    //check whether the session already exist
+    //check whether the session already exists
         bool found = false;
         foreach(QString session, sessions)
         {
             if(m_settings.value(session + "/name") == name)
             {
                 found = true;
+                sessionKey = session;
                 break;
             }
         }
@@ -166,24 +177,21 @@ void BtConfig::switchToSession(const QString& name)
     // session doesn't exist yet, create it
         if(not found)
         {
-            QString sessionKey = "invalid";
-            for(int i = 0; i != 1000; i--) // noone will have 1000 sessions...
+            for(int i = 0; i != 1000; i++) // noone will have 1000 sessions...
             {
                 if(not sessions.contains(QString::number(i)))
                     sessionKey = QString::number(i);
             }
             Q_ASSERT(sessionKey != "invalid");
 
-            m_settings.beginGroup(sessionKey);
-                m_settings.setValue("name", name);
-            m_settings.endGroup();
+            m_settings.setValue(sessionKey + "/name", name);
         }
 
     m_settings.endGroup();
 
     // switch to the session
-        m_settings.setValue(m_currentSessionKey, name);
-        m_currentSessionCache = name;
+        m_settings.setValue(m_currentSessionKey, sessionKey);
+        m_currentSessionCache = m_sessionsGroup + "/" + sessionKey + "/";
 }
 
 bool BtConfig::deleteSession(const QString& name)

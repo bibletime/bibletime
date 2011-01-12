@@ -46,20 +46,20 @@ private slots:
     {
         m_btConfig->setValue("settings/defaults/standardBible", "Lut1940");
         QVERIFY(m_btConfig->getValue("settings/defaults/standardBible").toString() == "Lut1940");
+
         m_btConfig->deleteValue("settings/defaults/standardBible");
         QVERIFY(m_btConfig->getValue("settings/defaults/standardBible").toString() == "KJV");
     }
 
     void sessionNamesTest()
     {
-
         QVERIFY(m_btConfig->getCurrentSessionName() == "default session");
         QVERIFY(m_btConfig->getAllSessionNames().size() == 1);
+
         m_btConfig->switchToSession("One");
         m_btConfig->switchToSession("Two");
         m_btConfig->switchToSession("Three");
         QVERIFY(m_btConfig->getAllSessionNames().size() == 4);
-
         QVERIFY(m_btConfig->getCurrentSessionName() == "Three");
     }
 
