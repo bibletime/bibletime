@@ -228,7 +228,7 @@ QVariant BtConfig::getValue(QString key)
             return m_settings.value(key, m_defaults.value(key));
 }
 
-void BtConfig::setValue(QString key, QVariant value)
+/*void BtConfig::setValue(QString key, QVariant value)
 {
     //accessing session values directly is prohibited
     Q_ASSERT(not key.startsWith(m_sessionsGroup));
@@ -238,7 +238,7 @@ void BtConfig::setValue(QString key, QVariant value)
         m_settings.setValue(m_currentSessionCache + key, value);
     else
         m_settings.setValue(key, value);
-}
+}*/
 
 bool BtConfig::hasValue(QString key)
 {

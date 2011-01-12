@@ -18,6 +18,7 @@
  * of this class.
  *
  * TODO: preserve session order
+ * TODO: noncopy base class
  */
 class BtConfig
 {
@@ -94,9 +95,14 @@ public:
      * Sets a value for a key. Whether the key should be part of the session
      * or not is determined automatically. Setting values not part of the
      * config is prohibited and will result in an assertion.
+     * The value type can be any type that is QVariant enabled. Those are the
+     * default ones of QVariant (look at the Qt documentation), and those declared
+     * in btconfigtypes.h.
      * \param[in] key Ket to set.
-     * \param[in] value Value to set.
-    void setValue(QString key, QVariant value);
+     * \tparam[in] value Value to set.
+     */
+    template<typename T>
+    void setValue(QString key, T value);
 
     /*!
      * \brief Checks whether a value has been manually set.
@@ -115,5 +121,29 @@ public:
      */
     void deleteValue(QString key);
 };
+
+template<typename T>
+void BtConfig::setValue(QString key, T value)
+{
+    //accessing session values directly is prohibited
+    Q_ASSERT(not key.startsWith(m_sessionsGroup));
+    Q_ASSERT(key != m_currentSessionKey);
+
+    if(m_sessionSettings.contains(key))
+        m_settings.setValue(m_currentSessionCache + key, QVariant::fromValue<T>(value));
+    else
+        m_settings.setValue(key, QVariant::fromValue<T>(value));
+}
+
+/*
+ * This specialization allows implicit conversion of char* to QString.
+ * Full function specializations have to be inline, since they are no template
+ * functions anymore and would result in multiple definition errors.
+ */
+template <>
+inline void BtConfig::setValue(QString key, const char* const value)
+{
+    setValue<QString>(key, QString(value));
+}
 
 #endif // BTCONFIG_H

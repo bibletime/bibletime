@@ -5,6 +5,7 @@
 #include "backend/config/btconfig.h"
 #include "backend/config/btconfigtypes.h"
 
+#include <QtDebug>
 class BtConfigTest: public QObject
 {
     Q_OBJECT
@@ -22,7 +23,7 @@ private slots:
     {
         m_btConfig->setValue("settings/defaults/standardBible", "Lut1940");
         m_btConfig->setValue("gui/showTextWindowHeaders", false);
-        m_btConfig->setValue("gui/alignmentMode", btconfigtypes::autoCascade);
+        m_btConfig->setValue<btconfigtypes::alignmentMode>("gui/alignmentMode", btconfigtypes::autoCascade);
         QVERIFY(true);
     }
 
@@ -30,7 +31,7 @@ private slots:
     {
         QVERIFY(m_btConfig->getValue("settings/defaults/standardBible").toString() == "Lut1940");
         QVERIFY(m_btConfig->getValue("gui/showTextWindowHeaders").toBool() == false);
-        QVERIFY(m_btConfig->getValue("gui/showTextWindowHeaders").value<btconfigtypes::alignmentMode>() == btconfigtypes::autoCascade);
+        QVERIFY(m_btConfig->getValue("gui/alignmentMode").value<btconfigtypes::alignmentMode>() == btconfigtypes::autoCascade);
     }
 
     void retrievingNonSetOptions()
