@@ -56,9 +56,9 @@ BtTextWindowHeaderWidget::BtTextWindowHeaderWidget(BtTextWindowHeader *parent, C
 
 BtTextWindowHeaderWidget::~BtTextWindowHeaderWidget() {}
 
-void BtTextWindowHeaderWidget::recreateWidget(QStringList newModulesToUse, QString thisModule, int newIndex) {
+void BtTextWindowHeaderWidget::recreateWidget(QStringList newModulesToUse, QString thisModule, int newIndex, int lefLikeModules) {
     populateMenu();
-    updateWidget(newModulesToUse, thisModule, newIndex);
+    updateWidget(newModulesToUse, thisModule, newIndex, lefLikeModules);
 }
 
 // don't remove yet, maybe we'll add icons to buttons...
@@ -78,13 +78,14 @@ void BtTextWindowHeaderWidget::recreateWidget(QStringList newModulesToUse, QStri
 //     }
 // }
 
-void BtTextWindowHeaderWidget::updateWidget(QStringList newModulesToUse, QString thisModule, int newIndex) {
+void BtTextWindowHeaderWidget::updateWidget(QStringList newModulesToUse, QString thisModule, int newIndex, int leftLikeModules) {
     //qDebug() << "BtTextWindowHeaderWidget::updateMenu" << newModulesToUse << thisModule << newIndex << this;
     m_label->setText(thisModule);
-    // create the menu if it doesn't exist
-    if (!m_popup) populateMenu();
-
     m_id = newIndex;
+    // create the menu if it doesn't exist
+    if (!m_popup)
+        populateMenu();
+
     m_module = thisModule;
     namespace DU = util::directory;
 
@@ -98,14 +99,33 @@ void BtTextWindowHeaderWidget::updateWidget(QStringList newModulesToUse, QString
         }
     }
 
-    if (m_id == newModulesToUse.count() - 1) {
-        // this is the rightmost module, hide the separator
-        m_separator->hide();
+    bool disableRemove = false;
+    if (newModulesToUse.count() == 1 ||
+        (newIndex == 0 && leftLikeModules == 1))
+        disableRemove = true;
+    m_removeAction->setDisabled(disableRemove);
+
+    // Disable non-Bible categories on left replace menu
+    if (m_moduleType == CSwordModuleInfo::Bible && m_id == 0) {
+        QList<QAction*> actionsType = m_popup->actions();
+        for (int t=0; t<actionsType.count(); t++) {
+            QAction* actionType = actionsType.at(t);
+            QString typeText = actionType->text();
+            if (typeText != QObject::tr("Replace"))
+                continue;
+            QMenu* menuType = actionType->menu();
+            if (menuType == 0)
+                continue;
+            QList<QAction*> actions = menuType->actions();
+            for (int i=0; i<actions.count(); i++) {
+                QAction* action = actions.at(i);
+                QString text = action->text();
+                if (text != QObject::tr("Bibles")) {
+                    action->setDisabled(true);
+                }
+            }
+        }
     }
-    else {
-        m_separator->show();
-    }
-    m_removeAction->setDisabled((newModulesToUse.count() == 1) ? true : false);
 }
 
 /** Is called after a module was selected in the popup */
@@ -155,20 +175,33 @@ void BtTextWindowHeaderWidget::populateMenu() {
     toplevelMenus.append(addItem);
 
     foreach(QMenu* menu, toplevelMenus) {
-        // ******* Add languages and modules ********
-        //m_popup->addSeparator();
-
+        // ******* Add categories, languages and modules ********
         // Filters: add only non-hidden, non-locked and correct type
         BTModuleTreeItem::HiddenOff hiddenFilter;
-        TypeFilter typeFilter(m_moduleType);
         QList<BTModuleTreeItem::Filter*> filters;
         if (!CBTConfig::get(CBTConfig::bookshelfShowHidden)) {
             filters.append(&hiddenFilter);
         }
+        TypeFilter typeFilter(m_moduleType);
         filters.append(&typeFilter);
-        BTModuleTreeItem root(filters, BTModuleTreeItem::LangMod);
-        // add all items recursively
-        addItemToMenu(&root, menu, (TypeOfAction)menu->property(ActionType).toInt());
+
+        if (m_moduleType == CSwordModuleInfo::Bible) {
+            BTModuleTreeItem root(filters, BTModuleTreeItem::CatLangMod);
+            QList<BTModuleTreeItem::Filter*> filters2;
+            if (!CBTConfig::get(CBTConfig::bookshelfShowHidden)) {
+                filters2.append(&hiddenFilter);
+            }
+            if (menu == addItem || menu == replaceItem) {
+                TypeFilter typeFilter2(CSwordModuleInfo::Commentary);
+                filters2.append(&typeFilter2);
+                root.add_items(filters2);
+            }
+            addItemToMenu(&root, menu, (TypeOfAction)menu->property(ActionType).toInt());
+        }
+        else {
+            BTModuleTreeItem root(filters, BTModuleTreeItem::LangMod);
+            addItemToMenu(&root, menu, (TypeOfAction)menu->property(ActionType).toInt());
+        }
     }
 }
 
@@ -176,7 +209,8 @@ void BtTextWindowHeaderWidget::addItemToMenu(BTModuleTreeItem* item, QMenu* menu
     qDebug() << "BtTextWindowHeaderWidget::addItemToMenu";
     foreach (BTModuleTreeItem* i, item->children()) {
 
-        if (i->type() == BTModuleTreeItem::Language) {
+        if (i->type() == BTModuleTreeItem::Language ||
+            i->type() == BTModuleTreeItem::Category) {
             // argument menu was m_popup, create and add a new lang menu to it
             QMenu* langMenu = new QMenu(i->text(), this);
             menu->addMenu(langMenu);

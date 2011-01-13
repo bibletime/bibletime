@@ -4,7 +4,7 @@ SET(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 # BibleTime version
 SET(BT_VERSION_MAJOR "2")
-SET(BT_VERSION_MINOR "8")
+SET(BT_VERSION_MINOR "9")
 SET(BT_VERSION_PATCH "0")
 #SET(BT_VERSION_BUILD "") # Temporarily uncomment this line for release procedures
 
@@ -27,14 +27,17 @@ ADD_DEFINITIONS(-DBT_VERSION="${BT_VERSION_FULL}")
 
 # Define debug flags
 IF (NOT CMAKE_BUILD_TYPE STREQUAL "Release")
+    SET(CMAKE_BUILD_TYPE "Debug")
     ADD_DEFINITIONS(-DBT_DEBUG)
+ELSE (NOT CMAKE_BUILD_TYPE STREQUAL "Release")
+    ADD_DEFINITIONS(-DBT_NO_DEBUG -DNDEBUG -DQT_NO_DEBUG)
 ENDIF (NOT CMAKE_BUILD_TYPE STREQUAL "Release")
 
 #Non-English locales to be processed and installed for UI, handbook and howto
 LIST(APPEND MESSAGE_LOCALE_LANGS ar cs da de en_GB es et fi fr hu it nl nn_NO pl pt_BR ro ru sk zh_TW)
 #WARNING: If you modify HANDBOOK_LOCALE_LANGS or HOWTO_LOCALE_LANGS,
 #also modify the po4a conf files in cmake/docs/ to make sure all languages are processed.
-LIST(APPEND HANDBOOK_LOCALE_LANGS cs de es fi fr hu it nl pt_BR)
+LIST(APPEND HANDBOOK_LOCALE_LANGS ar cs de es fi fr hu it nl pt_BR)
 LIST(APPEND HOWTO_LOCALE_LANGS ar bg cs da de es fi fr it hu ko nl pt_BR ru)
 
 # Find required packages
@@ -151,7 +154,6 @@ IF (CMAKE_BUILD_TYPE STREQUAL "Release")
         ${SWORD_LIBRARY}
     )
 ELSE (CMAKE_BUILD_TYPE STREQUAL "Release")
-    SET(CMAKE_BUILD_TYPE "Debug")
     IF (MSVC)
         ADD_EXECUTABLE(${EXECUTABLE_NAME} WIN32 ${common_bibletime_SOURCES})
     ELSE (MSVC)
@@ -164,9 +166,18 @@ ELSE (CMAKE_BUILD_TYPE STREQUAL "Release")
         ${CURL_LIBRARIES} # optional, empty if not found
         ${ICU_LIBRARIES} # optional, empty if not found
         ${ICU_I18N_LIBRARIES} # optional, empty if not found
+        ${ZLIB_LIBRARIES} # optional, empty if not found
         ${SWORD_LIBRARY}
     )
 ENDIF (CMAKE_BUILD_TYPE STREQUAL "Release")
+
+IF (APPLE)
+    SET_TARGET_PROPERTIES(${EXECUTABLE_NAME}
+        PROPERTIES
+            LINK_FLAGS "-mmacosx-version-min=10.4" # support MacOS 10.4+
+    )
+ENDIF (APPLE)
+
 
 IF (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
     SET(CMAKE_INSTALL_PREFIX "install/") #install to ./build/install, allow override

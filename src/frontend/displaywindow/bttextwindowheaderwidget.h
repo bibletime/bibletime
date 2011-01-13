@@ -63,10 +63,10 @@ class BtTextWindowHeaderWidget : public QWidget {
         * the existing menu items but doesn't add or remove them if the menu exists.
         * If the menu doesn't exist, creates it first and then updates it.
         */
-        void updateWidget(QStringList newModulesToUse, QString thisModule, int newIndex);
+        void updateWidget(QStringList newModulesToUse, QString thisModule, int newIndex, int leftLikeModules);
 
         /** Creates the menu from scratch and updates the items using updateMenu().*/
-        void recreateWidget(QStringList newModulesToUse, QString thisModule, int newIndex);
+        void recreateWidget(QStringList newModulesToUse, QString thisModule, int newIndex, int leftLikeModules);
 
     signals:
         /** User selected a module from menu to replace an existing module.*/

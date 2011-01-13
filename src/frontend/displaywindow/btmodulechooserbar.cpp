@@ -10,6 +10,7 @@
 #include "frontend/displaywindow/btmodulechooserbar.h"
 #include "frontend/displaywindow/btmodulechooserbutton.h"
 #include "creadwindow.h"
+#include "util/btmodules.h"
 
 #include <QAction>
 #include <QDebug>
@@ -38,7 +39,8 @@ void BtModuleChooserBar::slotBackendModulesChanged() {
         BtModuleChooserButton* button = m_buttonList.at(i);
         QString moduleName = (i >= m_modules.count()) ? QString::null : m_modules.at(i);
         qDebug() << "refresh button's menu:" << moduleName << i;
-        button->recreateMenu(m_modules, moduleName, i);
+        int leftLikeModules = leftLikeParallelModules(m_modules);
+        button->recreateMenu(m_modules, moduleName, i, leftLikeModules);
     }
 }
 
@@ -120,10 +122,11 @@ void BtModuleChooserBar::setModules( QStringList useModules,CSwordModuleInfo::Mo
 void BtModuleChooserBar::updateButtonMenus() {
     //qDebug() << "BtModuleChooserBar::updateMenuItems";
 
+    int leftLikeModules = leftLikeParallelModules(m_modules);
     for (int i = 0; i < m_buttonList.count(); i++) {
         BtModuleChooserButton* button = m_buttonList.at(i);
         QString moduleName = (i >= m_modules.count()) ? QString::null : m_modules.at(i);
         //qDebug() << "refresh button's menu:" << moduleName << i;
-        button->updateMenu(m_modules, moduleName, i);
+        button->updateMenu(m_modules, moduleName, i, leftLikeModules);
     }
 }

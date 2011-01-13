@@ -37,8 +37,9 @@ class CScrollerWidgetSet : public QWidget {
 
     signals:
         /**
-        * is emitted to proceed to some other entry relative to the
-        * current, indicated by the int value
+        * Is emitted to proceed to some other entry relative to the
+        * current, indicated by the int value.
+        * \param count offset to change to
         */
         void change(int count);
 

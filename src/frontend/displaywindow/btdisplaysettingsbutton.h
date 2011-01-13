@@ -69,6 +69,7 @@ class BtDisplaySettingsButton: public QToolButton {
         QAction *m_greekAccentsAction;
         QAction *m_variantAction;
         QAction *m_scriptureReferencesAction;
+        QAction *m_footnotesAction;
         QAction *m_morphSegmentationAction;
 };
 

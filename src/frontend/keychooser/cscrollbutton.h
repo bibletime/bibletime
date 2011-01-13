@@ -75,6 +75,14 @@ class CScrollButton: public QToolButton {
         * change_requested() signal.
         */
         bool m_isLocked;
+
+        /**
+         * \brief The amount the mouse moved.
+         *
+         * This is saved so slow movements of mice can still be tracked and yet not
+         * emitting a change for every smallest movement of the mouse.
+         */
+        float m_movement;
 };
 
 #endif

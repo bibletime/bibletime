@@ -55,11 +55,41 @@ class BtBibleKeyWidget : public QWidget  {
 
         void slotUpdateLock();
         void slotUpdateUnlock();
-        void slotStepBook(int);
-        void slotStepChapter(int);
-        void slotStepVerse(int);
+
+        /**
+         * \brief Change the book by the given offset.
+         * \param offset The offset to move to.
+         */
+        void slotStepBook(int offset);
+
+        /**
+         * \brief Change the chapter by the given offset.
+         * \param offset The offset to move to.
+         */
+        void slotStepChapter(int offset);
+
+        /**
+         * \brief Change the verse by the given offset.
+         * \param offset The offset to move to.
+         */
+        void slotStepVerse(int offset);
+
+        /**
+         * \brief Jump to the specified book.
+         * \param bookname name of the book to change to
+         */
         void slotChangeBook(QString bookname);
+
+        /**
+         * \brief Jump to the specified chapter.
+         * \param chapter number of the chapter to change to
+         */
         void slotChangeChapter(int chapter);
+
+        /**
+         * \brief Jump to the specified verse.
+         * \param bookname number of the verse to change to
+         */
         void slotChangeVerse(int verse);
 
     public slots:

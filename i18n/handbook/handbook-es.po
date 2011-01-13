@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2010-08-20 09:15-0300\n"
+"POT-Creation-Date: 2010-12-12 23:38-0500\n"
 "PO-Revision-Date: 2010-07-25 20:20-0400\n"
 "Last-Translator: Roy Alvear <racl@fedoraproject.org>\n"
 "Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
@@ -3475,12 +3475,14 @@ msgstr ""
 
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:54
-msgid "<date>August 2010</date>"
+msgid "<date>December 2010</date>"
 msgstr ""
 
 #. type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:56
-msgid "2.8"
+#, fuzzy
+#| msgid "2.8"
+msgid "2.9"
 msgstr "2.8"
 
 # type: Content of: <book><bookinfo><abstract><para>
