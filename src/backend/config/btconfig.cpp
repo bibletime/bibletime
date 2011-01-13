@@ -97,23 +97,39 @@ BtConfig::BtConfig(const QString& settingsFile) : m_defaults(), m_sessionSetting
         m_defaults.insert("gui/windows/configDialogPosY", 1);
         m_defaults.insert("gui/windows/configDialogHeight", 1);
         m_defaults.insert("gui/windows/configDialogWidth", 1);
-        m_defaults.insert("state/tipNumber", 0);
+            QStringList list;
+            list.append(QString::null);
+        m_defaults.insert("properties/searchTexts", list);
+        m_defaults.insert("history/searchCompletionTexts", QStringList());
+        m_defaults.insert("history/bookshelfOpenGroups", QStringList());
+        m_defaults.insert("state/hiddenModules", QStringList());
+        m_defaults.insert("history/searchModuleHistory", QStringList());
+            btconfigtypes::StringMap map;
+            map.insert(QObject::tr("Old testament"),          QString("Gen - Mal"));
+            map.insert(QObject::tr("Moses/Pentateuch/Torah"), QString("Gen - Deut"));
+            map.insert(QObject::tr("History"),                QString("Jos - Est"));
+            map.insert(QObject::tr("Prophets"),               QString("Isa - Mal"));
+            map.insert(QObject::tr("New testament"),          QString("Mat - Rev"));
+            map.insert(QObject::tr("Gospels"),                QString("Mat - Joh"));
+            map.insert(QObject::tr("Letters/Epistles"),       QString("Rom - Jude"));
+            map.insert(QObject::tr("Paul's Epistles"),        QString("Rom - Phile"));
+        m_defaults.insert("properties/searchScopes", QVariant::fromValue(map));
         //TODO: continue here
 
-        // TODO: these variables seems not to be used, check and remove
+        // TODO: these variables seem not to be used, check and remove
         /*
-         m _defaults.insert("firstSearchDialog", true);
+        m _defaults.insert("firstSearchDialog", true);
         m_defaults.insert("readOldBookmars", false);
         m_defaults.insert("mainIndex", true);
         m_defaults.insert("infoDisplay", true);
         */
 
-        //TODO: save defaults somewhere so they can be loaded directly on next startup
 
     // initialize session settings
         m_sessionSettings.insert("showTextWindowHeaders");
         //TODO: continue here
 
+    //TODO: save defaults somewhere so they can be loaded directly on next startup
 
     // make sure the current session key is set
         if(not m_settings.contains(m_currentSessionKey))
@@ -226,9 +242,6 @@ QVariant BtConfig::getValue(const QString& key)
     //accessing session values directly is prohibited
         Q_ASSERT(not key.startsWith(m_sessionsGroup));
         Q_ASSERT(key != m_currentSessionKey);
-
-    // if this fails some code is asking for a non existent configuration option
-        Q_ASSERT(m_defaults.contains(key));
 
     // retrieve value from config
         if(m_sessionSettings.contains(key))

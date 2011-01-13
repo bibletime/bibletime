@@ -15,9 +15,11 @@ enum alignmentMode
     autoTabbed,
     autoCascade
 };
+typedef QMap<QString, QString> StringMap;
 }
 Q_DECLARE_METATYPE(btconfigtypes::alignmentMode);
 Q_DECLARE_METATYPE(BTModuleTreeItem::Grouping);
 Q_DECLARE_METATYPE(Search::BtSearchOptionsArea::SearchType);
+Q_DECLARE_METATYPE(btconfigtypes::StringMap);
 
 #endif // BTCONFIGTYPES_H

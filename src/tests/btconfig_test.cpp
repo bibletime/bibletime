@@ -16,6 +16,7 @@ private slots:
     void initTestCase()
     {
         m_configFileName = "testsettings.ini";
+        QFile(m_configFileName).remove();
         m_btConfig = new BtConfig(m_configFileName);
     }
 
