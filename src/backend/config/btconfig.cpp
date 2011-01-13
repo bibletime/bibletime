@@ -3,6 +3,7 @@
 
 #include <cstddef> // NULL macro
 #include <QLocale>
+#include <QDebug>
 #include <qglobal.h> // Q_ASSERT
 
 #include "backend/managers/cdisplaytemplatemgr.h"
@@ -17,7 +18,6 @@
 BtConfig* BtConfig::m_instance = NULL;
 const QString BtConfig::m_sessionsGroup = "sessions";
 const QString BtConfig::m_currentSessionKey = "currentSession";
-const QString BtConfig::m_defaultSession = QObject::tr("defaultSession");
 const QString BtConfig::m_defaultSessionName = QObject::tr("default session");
 
 BtConfig::BtConfig(const QString& settingsFile) : m_defaults(), m_sessionSettings(), m_settings(settingsFile, QSettings::IniFormat), m_currentSessionCache()
@@ -117,14 +117,7 @@ BtConfig::BtConfig(const QString& settingsFile) : m_defaults(), m_sessionSetting
 
     // make sure the current session key is set
         if(not m_settings.contains(m_currentSessionKey))
-            m_settings.setValue(m_currentSessionKey, m_defaultSession);
-
-    // initialize current session variable cache
-        m_currentSessionCache = m_sessionsGroup + "/" + m_settings.value(m_currentSessionKey).toString() + "/";
-
-    // make sure the current session has a name
-        if(not m_settings.contains(m_currentSessionCache + "name"))
-            m_settings.setValue(m_currentSessionCache + "name", m_defaultSessionName);
+            switchToSession(m_defaultSessionName);
 }
 
 BtConfig::~BtConfig() {}
@@ -138,8 +131,12 @@ BtConfig& BtConfig::getInstance()
 
 QString BtConfig::getCurrentSessionName()
 {
-    // every session must have a name at any time
-        Q_ASSERT(m_settings.value(m_currentSessionCache + "name") != QVariant());
+    // every session must have a name at any time, this is an error in the config if this is not the case
+    if(m_settings.value(m_currentSessionCache + "name") == QVariant())
+    {
+        qDebug() << "The session with key " << m_settings.value(m_currentSessionKey).toString() << " had no name associated, probably someone messed with the config. The default session name, \"" + m_defaultSessionName + "\", was set.";
+        m_settings.setValue(m_currentSessionCache + "name", m_defaultSessionName);
+    }
 
     return m_settings.value(m_currentSessionCache + "name").toString();
 }
@@ -180,7 +177,10 @@ void BtConfig::switchToSession(const QString& name)
             for(int i = 0; i != 1000; i++) // noone will have 1000 sessions...
             {
                 if(not sessions.contains(QString::number(i)))
+                {
                     sessionKey = QString::number(i);
+                    break;
+                }
             }
             Q_ASSERT(sessionKey != "invalid");
 
@@ -215,6 +215,9 @@ bool BtConfig::deleteSession(const QString& name)
             }
         }
     }
+
+    // no session with the name was found
+    m_settings.endGroup();
     return false;
 }
 

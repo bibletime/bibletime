@@ -31,7 +31,6 @@ private:
 
     const static QString m_sessionsGroup;
     const static QString m_currentSessionKey;
-    const static QString m_defaultSession;
     const static QString m_defaultSessionName;
 
     QHash<QString,QVariant> m_defaults;

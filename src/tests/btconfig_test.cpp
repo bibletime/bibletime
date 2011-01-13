@@ -1,11 +1,11 @@
 #include <QObject>
 #include <QTest>
 #include <QFile>
+#include <QDebug>
 #include <qglobal.h>
 #include "backend/config/btconfig.h"
 #include "backend/config/btconfigtypes.h"
 
-#include <QtDebug>
 class BtConfigTest: public QObject
 {
     Q_OBJECT
@@ -86,12 +86,12 @@ private slots:
         m_btConfig->setValue("settings/defaults/standardBible", "neUe");
         QVERIFY(m_btConfig->getValue("settings/defaults/standardBible").toString() == "neUe");
 
-        QVERIFY(m_btConfig->deleteSession("First Session") == false);
+        QVERIFY(m_btConfig->deleteSession("Third Session") == false);
 
         m_btConfig->switchToSession("Fourth session");
         QVERIFY(m_btConfig->getValue("settings/defaults/standardBible").toString() == "KJV");
 
-        QVERIFY(m_btConfig->deleteSession("First Session") == true);
+        QVERIFY(m_btConfig->deleteSession("Third Session") == true);
 
         m_btConfig->switchToSession("Third session");
         QVERIFY(m_btConfig->getValue("settings/defaults/standardBible").toString() == "KJV");
