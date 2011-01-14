@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2010-12-12 23:38-0500\n"
-"PO-Revision-Date: 2010-12-12 23:19-0500\n"
-"Last-Translator: Thomas Abthorpe <tabthorpe@FreeBSD.org>\n"
+"PO-Revision-Date: 2010-12-14 15:56+0200\n"
+"Last-Translator: Andrew Alfy <andrewalfy@yahoo.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -1285,7 +1285,6 @@ msgstr "<guimenuitem>مدير رف الكتب </guimenuitem>"
 
 #. type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:387
-#, fuzzy
 msgid ""
 "The <guimenuitem>Bookshelf Manager</guimenuitem> is a tool to manage your "
 "Bookshelf. You can install new works to your Bookshelf, and update or remove "
@@ -1297,7 +1296,7 @@ msgstr ""
 "الكتب الخاص بك. تستطيع تثبيت كتب جديدة إلى رف الكتب، وتحديث أو إزالة الكتب "
 "الموجودة على رف الكتب. للوصول إلى هذه الأداة اختر قائمة <menuchoice> "
 "<guimenu>إعدادات</guimenu> <guimenuitem> من القائمة الرئيسية ومنها اختر "
-"<guimenuitem></menuchoice>مدير رف الكت."
+"</guimenuitem></menuchoice>مدير رف الكتب."
 
 #. type: Content of: <chapter><sect1><tip><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:397
@@ -3102,17 +3101,13 @@ msgstr "يوزع دليل إستخدام بيبل تايم مع برنامج د�
 
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:54
-#, fuzzy
-#| msgid "<date>August 2010</date>"
 msgid "<date>December 2010</date>"
-msgstr "<date>أغسطس 2010 </date>"
+msgstr "<date>ديسمبر 2010 </date>"
 
 #. type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:56
-#, fuzzy
-#| msgid "2.8"
 msgid "2.9"
-msgstr "2.8"
+msgstr "2.9"
 
 #. type: Content of: <book><bookinfo><abstract><para>
 #: docs/handbook/en/docbook/index.docbook:59
