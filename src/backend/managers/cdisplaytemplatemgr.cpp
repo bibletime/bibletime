@@ -62,9 +62,11 @@ const QString CDisplayTemplateMgr::fillTemplate( const QString& name, const QStr
     const QString templateName = m_cssMap.contains(name) ? name : defaultTemplate();
 
     QString displayTypeString;
+    QString moduleName;
 
     if (!settings.pageCSS_ID.isEmpty()) {
         displayTypeString = settings.pageCSS_ID;
+        moduleName = "";
     }
     else {
         if (settings.modules.count()) {
@@ -84,9 +86,11 @@ const QString CDisplayTemplateMgr::fillTemplate( const QString& name, const QStr
                     displayTypeString = "singleentry";
                     break;
             };
+            moduleName = settings.modules.first()->name();
         }
         else { //use bible as default type if no modules are set
             displayTypeString = "bible";
+            moduleName = "";
         };
     }
 
@@ -172,6 +176,8 @@ const QString CDisplayTemplateMgr::fillTemplate( const QString& name, const QStr
                       .replace("#PAGE_DIRECTION#", settings.pageDirection)
                       .replace("#CONTENT#", newContent)
                       .replace("#THEME_STYLE#", m_cssMap[ templateName ])
+                      .replace("#MODTYPE#", displayTypeString)
+                      .replace("#MODNAME#", moduleName)
                       .replace("#MODULE_STYLESHEET#", QString(""));	// Let's fix this!
 
     qDebug() << t;
