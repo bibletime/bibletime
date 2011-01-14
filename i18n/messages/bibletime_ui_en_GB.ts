@@ -462,7 +462,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletimeapp.cpp" line="35"/>
         <source>Fatal error!</source>
-        <translation type="unfinished"></translation>
+        <translation>Fatal error!</translation>
     </message>
 </context>
 <context>
@@ -865,7 +865,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="113"/>
         <source>Show footnotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Show footnotes</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="114"/>
@@ -1436,10 +1436,6 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtRemovePage</name>
     <message>
-        <source>&amp;Remove</source>
-        <translation type="obsolete">&amp;Remove</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="45"/>
         <source>Select &amp;works to uninstall:</source>
         <translation>Select &amp;works to uninstall:</translation>
@@ -1452,7 +1448,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="98"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Remove</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="104"/>
@@ -1597,13 +1593,9 @@ shortcut</translation>
         <translation>Add/remove/replace</translation>
     </message>
     <message>
-        <source>&amp;Remove</source>
-        <translation type="obsolete">&amp;Remove</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="157"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Remove</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="163"/>
@@ -1681,25 +1673,17 @@ shortcut</translation>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="152"/>
         <source>The Bookshelf, Bookmark, and Mag windows can be moved to new locations by dragging them from the title at the top of each window. They can be placed to the left, right, above, or below the works windows. They can be placed on top of each other and tabs will appear so each window can be selected. They can be resized by dragging the border between the window and another window.</source>
-        <translation type="unfinished"></translation>
+        <translation>The Bookshelf, Bookmark, and Mag windows can be moved to new locations by dragging them from the title at the top of each window. They can be placed to the left, right, above, or below the works windows. They can be placed on top of each other and tabs will appear so each window can be selected. They can be resized by dragging the border between the window and another window.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="158"/>
         <source>You can search for Strong&apos;s numbers in a work. Start with a work that has Strong&apos;s numbers and hover over a word. Right click the word and use the Strong&apos;s Search menu. A search dialog will appear that allows you to see the use of the same Strong&apos;s number in other locations of the work.</source>
-        <translation type="unfinished"></translation>
+        <translation>You can search for Strong&apos;s numbers in a work. Start with a work that has Strong&apos;s numbers and hover over a word. Right click the word and use the Strong&apos;s Search menu. A search dialogue will appear that allows you to see the use of the same Strong&apos;s number in other locations of the work.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="173"/>
         <source>You can save your open windows in a session. Such a session can easily be restored later on. You can save as many sessions as you like. The session feature can be accessed under the Window menu entry.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>The Bookshelf, Bookmark, and Mag windows can be moved to new locations by dragging them from the title at the top of each window. They can be placed to the left, right, above, or below the works windows. They can be placed on top of each other and tabs will appear so each window can be selected. They can be resized by dragging theborder between the window and another window.</source>
-        <translation type="obsolete">The Bookshelf, Bookmark, and Mag windows can be moved to new locations by dragging them from the title at the top of each window. They can be placed to the left, right, above, or below the works windows. They can be placed on top of each other and tabs will appear so each window can be selected. They can be resized by dragging theborder between the window and another window.</translation>
-    </message>
-    <message>
-        <source>You can search for Strong&apos;s numbers in a work. Start with a work that has Strong&apos;s numbers and hover over a word. Right click the word and use the Strong&apos;s Search menu. A search dialog will appear that allows you to see the use of the sameStrong&apos;s number in other locations of the work.</source>
-        <translation type="obsolete">You can search for Strong&apos;s numbers in a work. Start with a work that has Strong&apos;s numbers and hover over a word. Right click the word and use the Strong&apos;s Search menu. A search dialogue will appear that allows you to see the use of the same Strong&apos;s number in other locations of the work.</translation>
+        <translation>You can save your open windows in a session. Such a session can easily be restored later on. You can save as many sessions as you like. The session feature can be accessed under the Window menu entry.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="163"/>
@@ -4111,20 +4095,12 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/main.cpp" line="99"/>
         <source>Error: %1 expects an argument.</source>
-        <translation type="unfinished"></translation>
+        <translation>Error: %1 expects an argument.</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="102"/>
         <source>See --help for details.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>All command-line arguments not recognized by BibleTime or Qt will be silently ignored.</source>
-        <translation type="obsolete">All command-line arguments not recognized by BibleTime or Qt will be silently ignored.</translation>
-    </message>
-    <message>
-        <source>Error: %1 expects an argument. See --help for details.</source>
-        <translation type="obsolete">Error: %1 expects an argument. See --help for details.</translation>
+        <translation>See --help for details.</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="107"/>
@@ -4134,12 +4110,12 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="49"/>
         <source>Default template &quot;%1&quot; not found!</source>
-        <translation type="unfinished"></translation>
+        <translation>Default template &quot;%1&quot; not found!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="114"/>
         <source>Replace</source>
-        <translation type="unfinished">Replace</translation>
+        <translation>Replace</translation>
     </message>
 </context>
 <context>
