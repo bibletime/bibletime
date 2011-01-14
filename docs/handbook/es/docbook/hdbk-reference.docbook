@@ -16,6 +16,18 @@ linkend="hdbk-reference-shortcuts">sección atajos</link>.</para>
       </title>
       <para>
         <variablelist>
+          <varlistentry id="hdbk-reference-menus-file-open-work">
+            <term>
+              <menuchoice> <guimenu> <inlinemediaobject>
+<imageobject> <imagedata fileref="i_folder_open.png" width="32" depth="32"
+format="PNG" /> </imageobject></inlinemediaobject>File</guimenu> <guimenuitem>Open work</guimenuitem> </menuchoice>
+            </term>
+            <listitem>
+              <para><action>Open work.</action> This will give you a menu that will allow you to
+open installed books.</para>
+            </listitem>
+          </varlistentry>
+
           <varlistentry id="hdbk-reference-menus-file-quit">
             <term>
               <menuchoice> <shortcut> <keycombo action="simul">
@@ -470,6 +482,20 @@ elegida, ya que se cuida de no apoyar ninguna doctrina confesional
 particular. Esperamos que lea y estudie las escrituras para entender lo que
 dicen. Si usted comienza con la actitud que desea que el Señor siembre su
 Palabra en su corazón, Él no le defraudará.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry id="hdbk-reference-menus-help-tip_of_the_day">
+          <term>
+            <menuchoice> <shortcut> <keycombo action="simul"> <keycap>F3</keycap>
+</keycombo> </shortcut> <guimenu> <inlinemediaobject>
+<imageobject> <imagedata fileref="i_light_bulb.png" width="22" depth="32"
+format="PNG" /> </imageobject></inlinemediaobject>Help</guimenu> <guimenuitem>Tip of the Day</guimenuitem>
+</menuchoice>
+          </term>
+          <listitem>
+            <para><action>Opens a helpful tip</action> The Tip of the Day provides a useful
+tip that will assist in the use of &bibletime;.</para>
           </listitem>
         </varlistentry>
 
@@ -976,6 +1002,7 @@ de búsqueda a buscar en todos las obras abiertas.</entry>
             <menuchoice> <guimenu>Ayuda</guimenu> <guimenuitem>Manual</guimenuitem>
 </menuchoice> equivalente; abrir el manual.</entry>
           </row>
+
           <row>
             <entry>
               <keycombo action="simul"> <keycap>F2</keycap> </keycombo>
@@ -985,6 +1012,16 @@ de búsqueda a buscar en todos las obras abiertas.</entry>
 Biblia</guimenuitem> </menuchoice> equivalente; abrir el Cómo estudiar la
 Biblia.</entry>
           </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul"> <keycap>F3</keycap> </keycombo>
+            </entry>
+            <entry>
+            <menuchoice> <guimenu>Help</guimenu> <guimenuitem>Tip of the
+Day</guimenuitem> </menuchoice> Opens a helpful tip to use &bibletime;.</entry>
+          </row>
+
           <row>
             <entry>
               <keycombo action="simul"> <keycap>F4</keycap> </keycombo>

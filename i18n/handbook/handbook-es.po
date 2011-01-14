@@ -6,7 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2010-12-12 23:38-0500\n"
+"Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
+"POT-Creation-Date: 2011-01-13 23:27-0500\n"
 "PO-Revision-Date: 2010-07-25 20:20-0400\n"
 "Last-Translator: Roy Alvear <racl@fedoraproject.org>\n"
 "Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
@@ -1712,7 +1713,42 @@ msgid "<guimenu>File</guimenu>"
 msgstr "<guimenu>Archivo</guimenu>"
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:28
+#: docs/handbook/en/docbook/hdbk-reference.docbook:24
+#, fuzzy
+#| msgid ""
+#| "<imageobject> <imagedata fileref=\"i_fileclose.png\" width=\"32\" depth="
+#| "\"32\" format=\"PNG\" /> </imageobject>"
+msgid ""
+"<imageobject> <imagedata fileref=\"i_folder_open.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
+msgstr ""
+"<imageobject> <imagedata fileref=\"i_fileclose.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
+
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:21
+#, fuzzy
+#| msgid ""
+#| "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
+#| ">Settings</guimenu> <guimenuitem>Configure &bibletime;</guimenuitem> </"
+#| "menuchoice>"
+msgid ""
+"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
+">File</guimenu> <guimenuitem>Open work</guimenuitem> </menuchoice>"
+msgstr ""
+"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
+">Preferencias</guimenu> <guimenuitem>Configurar &bibletime;</guimenuitem> </"
+"menuchoice>"
+
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:32
+msgid ""
+"<action>Open work.</action> This will give you a menu that will allow you to "
+"open installed books."
+msgstr ""
+
+#. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:46
 msgid ""
 "<imageobject> <imagedata fileref=\"i_exit.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
@@ -1721,7 +1757,7 @@ msgstr ""
 "format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:21
+#: docs/handbook/en/docbook/hdbk-reference.docbook:39
 msgid ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+Q</"
 "keycap></keycombo> </shortcut> <guimenu> <placeholder type="
@@ -1735,7 +1771,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:37
+#: docs/handbook/en/docbook/hdbk-reference.docbook:55
 msgid ""
 "<action>Closes &bibletime;.</action> &bibletime; will ask you if you want to "
 "write unsaved changes to disk."
@@ -1745,28 +1781,28 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:18
-#: docs/handbook/en/docbook/hdbk-reference.docbook:664
-#: docs/handbook/en/docbook/hdbk-reference.docbook:687
-#: docs/handbook/en/docbook/hdbk-reference.docbook:710
-#: docs/handbook/en/docbook/hdbk-reference.docbook:733
-#: docs/handbook/en/docbook/hdbk-reference.docbook:756
-#: docs/handbook/en/docbook/hdbk-reference.docbook:779
-#: docs/handbook/en/docbook/hdbk-reference.docbook:802
-#: docs/handbook/en/docbook/hdbk-reference.docbook:825
-#: docs/handbook/en/docbook/hdbk-reference.docbook:848
-#: docs/handbook/en/docbook/hdbk-reference.docbook:871
-#: docs/handbook/en/docbook/hdbk-reference.docbook:894
-#: docs/handbook/en/docbook/hdbk-reference.docbook:917
+#: docs/handbook/en/docbook/hdbk-reference.docbook:706
+#: docs/handbook/en/docbook/hdbk-reference.docbook:729
+#: docs/handbook/en/docbook/hdbk-reference.docbook:752
+#: docs/handbook/en/docbook/hdbk-reference.docbook:775
+#: docs/handbook/en/docbook/hdbk-reference.docbook:798
+#: docs/handbook/en/docbook/hdbk-reference.docbook:821
+#: docs/handbook/en/docbook/hdbk-reference.docbook:844
+#: docs/handbook/en/docbook/hdbk-reference.docbook:867
+#: docs/handbook/en/docbook/hdbk-reference.docbook:890
+#: docs/handbook/en/docbook/hdbk-reference.docbook:913
+#: docs/handbook/en/docbook/hdbk-reference.docbook:936
+#: docs/handbook/en/docbook/hdbk-reference.docbook:959
 msgid "<placeholder type=\"variablelist\" id=\"0\"/>"
 msgstr "<placeholder type=\"variablelist\" id=\"0\"/>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:47
+#: docs/handbook/en/docbook/hdbk-reference.docbook:65
 msgid "<guimenu>View</guimenu>"
 msgstr "<guimenu>Ver</guimenu>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:61
+#: docs/handbook/en/docbook/hdbk-reference.docbook:79
 msgid ""
 "<imageobject> <imagedata fileref=\"i_window_fullscreen.png\" width=\"32\" "
 "depth=\"32\" format=\"PNG\" /> </imageobject>"
@@ -1775,7 +1811,7 @@ msgstr ""
 "depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:53
+#: docs/handbook/en/docbook/hdbk-reference.docbook:71
 msgid ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F5</keycap> </"
 "keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id="
@@ -1789,7 +1825,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:70
+#: docs/handbook/en/docbook/hdbk-reference.docbook:88
 msgid ""
 "<action>Toggles full screen display.</action> Toggle this setting to "
 "maximize the &bibletime; window."
@@ -1799,7 +1835,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:77
+#: docs/handbook/en/docbook/hdbk-reference.docbook:95
 msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Show Bookshelf</"
 "guimenuitem> </menuchoice>"
@@ -1809,7 +1845,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:84
+#: docs/handbook/en/docbook/hdbk-reference.docbook:102
 msgid ""
 "<action>Toggles display of the Bookshelf.</action> Toggle this setting to "
 "turn the Bookshelf on the left pane on or off. This can be handy if you need "
@@ -1821,7 +1857,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:93
+#: docs/handbook/en/docbook/hdbk-reference.docbook:111
 msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Show Bookmarks</"
 "guimenuitem> </menuchoice>"
@@ -1831,7 +1867,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:100
+#: docs/handbook/en/docbook/hdbk-reference.docbook:118
 msgid ""
 "<action>Toggles display of the Bookmarks.</action> Toggle this setting to "
 "turn the Bookmarks on the left pane on or off. This can be handy if you need "
@@ -1843,7 +1879,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:109
+#: docs/handbook/en/docbook/hdbk-reference.docbook:127
 msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Show Mag</guimenuitem> </"
 "menuchoice>"
@@ -1853,7 +1889,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:116
+#: docs/handbook/en/docbook/hdbk-reference.docbook:134
 msgid ""
 "<action>Toggles display of the Mag(nifying glass).</action> Toggle this "
 "setting to turn the Mag on the left pane on or off."
@@ -1862,7 +1898,7 @@ msgstr ""
 "para agrgar o quitar el Lente en el panel izquierdo."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:124
+#: docs/handbook/en/docbook/hdbk-reference.docbook:142
 msgid ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F6</keycap> </"
 "keycombo> </shortcut> <guimenu>View</guimenu> <guimenuitem>Toolbars</"
@@ -1875,7 +1911,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:136
+#: docs/handbook/en/docbook/hdbk-reference.docbook:154
 msgid ""
 "<action>Toggles Main Toolbar display.</action> Toggle this setting to turn "
 "the main toolbar on or off."
@@ -1885,7 +1921,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:143
+#: docs/handbook/en/docbook/hdbk-reference.docbook:161
 msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Toolbars</guimenuitem> "
 "<guimenuitem>Show navigation</guimenuitem> </menuchoice>"
@@ -1895,7 +1931,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:150
+#: docs/handbook/en/docbook/hdbk-reference.docbook:168
 msgid ""
 "<action>Toggles Navigation in works.</action> Toggle this setting to add or "
 "remove the navigation combo box in works.  This can be handy to view the "
@@ -1907,7 +1943,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:159
+#: docs/handbook/en/docbook/hdbk-reference.docbook:177
 msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Toolbars</guimenuitem> "
 "<guimenuitem>Show works</guimenuitem> </menuchoice>"
@@ -1917,7 +1953,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:166
+#: docs/handbook/en/docbook/hdbk-reference.docbook:184
 msgid ""
 "<action>Toggles Toolbars in works.</action> Toggle this setting to add or "
 "remove the works icons in the open works."
@@ -1927,7 +1963,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:174
+#: docs/handbook/en/docbook/hdbk-reference.docbook:192
 msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Toolbars</guimenuitem> "
 "<guimenuitem>Show tools</guimenuitem> </menuchoice>"
@@ -1937,7 +1973,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:181
+#: docs/handbook/en/docbook/hdbk-reference.docbook:199
 msgid ""
 "<action>Toggles tools in works.</action> Toggle this setting to add or "
 "remove the tools icons in the open works."
@@ -1947,7 +1983,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:189
+#: docs/handbook/en/docbook/hdbk-reference.docbook:207
 msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Toolbars</guimenuitem> "
 "<guimenuitem>Show format</guimenuitem> </menuchoice>"
@@ -1957,7 +1993,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:196
+#: docs/handbook/en/docbook/hdbk-reference.docbook:214
 msgid ""
 "<action>Toggles format.</action> Toggle this setting when editing HTML in "
 "Personal Commentaries. It will add or remove the formatting toolbar."
@@ -1968,7 +2004,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:205
+#: docs/handbook/en/docbook/hdbk-reference.docbook:223
 msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Toolbars</guimenuitem> "
 "<guimenuitem>Show toolbars in text windows</guimenuitem> </menuchoice>"
@@ -1979,7 +2015,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:212
+#: docs/handbook/en/docbook/hdbk-reference.docbook:230
 msgid ""
 "<action>Toggles toolbars in works.</action> Toggle this setting to add or "
 "remove the complete toolbar in open works."
@@ -1990,14 +2026,14 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><title>
 #. type: Content of: <chapter><sect1><sect2><title>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:221
+#: docs/handbook/en/docbook/hdbk-reference.docbook:239
 msgid "<guimenu>Search</guimenu>"
 msgstr "<guimenu>Buscar</guimenu>"
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:233
-#: docs/handbook/en/docbook/hdbk-reference.docbook:259
-#: docs/handbook/en/docbook/hdbk-reference.docbook:762
+#: docs/handbook/en/docbook/hdbk-reference.docbook:251
+#: docs/handbook/en/docbook/hdbk-reference.docbook:277
+#: docs/handbook/en/docbook/hdbk-reference.docbook:804
 msgid ""
 "<imageobject> <imagedata fileref=\"i_find.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
@@ -2006,7 +2042,7 @@ msgstr ""
 "format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:226
+#: docs/handbook/en/docbook/hdbk-reference.docbook:244
 msgid ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</"
 "keycap></keycombo> </shortcut> <guimenu> <placeholder type="
@@ -2020,7 +2056,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:242
+#: docs/handbook/en/docbook/hdbk-reference.docbook:260
 msgid ""
 "<action>Opens the Search Dialog to search in the standard Bible only</"
 "action>. More works can be added in the Search Dialog. A more detailed "
@@ -2033,7 +2069,7 @@ msgstr ""
 "linkend=\"hdbk-op-search\">sección de búsqueda</link> de las obras."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:252
+#: docs/handbook/en/docbook/hdbk-reference.docbook:270
 msgid ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+O</"
 "keycap></keycombo> </shortcut> <guimenu> <placeholder type="
@@ -2047,7 +2083,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:268
+#: docs/handbook/en/docbook/hdbk-reference.docbook:286
 msgid ""
 "<action>Opens the Search Dialog to search in all open works</action>. Works "
 "can be added or removed in the Search Dialog. A more detailed search "
@@ -2060,13 +2096,13 @@ msgstr ""
 "linkend=\"hdbk-op-search\">sección de búsqueda</link> de las obras."
 
 #. type: Content of: <chapter><sect1><sect2><title>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:281
+#: docs/handbook/en/docbook/hdbk-reference.docbook:299
 msgid "<guimenu>Window</guimenu>"
 msgstr "<guimenu>Ventana</guimenu>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:294
-#: docs/handbook/en/docbook/hdbk-reference.docbook:317
+#: docs/handbook/en/docbook/hdbk-reference.docbook:312
+#: docs/handbook/en/docbook/hdbk-reference.docbook:335
 msgid ""
 "<imageobject> <imagedata fileref=\"i_fileclose.png\" width=\"32\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
@@ -2075,7 +2111,7 @@ msgstr ""
 "\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:287
+#: docs/handbook/en/docbook/hdbk-reference.docbook:305
 msgid ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+W</"
 "keycap></keycombo> </shortcut> <guimenu> <placeholder type="
@@ -2089,12 +2125,12 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:304
+#: docs/handbook/en/docbook/hdbk-reference.docbook:322
 msgid "<action>Closes active window</action>."
 msgstr "<action>Cerrar ventanas activas</action>."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:310
+#: docs/handbook/en/docbook/hdbk-reference.docbook:328
 msgid ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+W</"
 "keycap></keycombo> </shortcut> <guimenu> <placeholder type="
@@ -2108,12 +2144,12 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:327
+#: docs/handbook/en/docbook/hdbk-reference.docbook:345
 msgid "<action>Closes all open windows</action>."
 msgstr "<action>Cerrar todas las ventanas abiertas</action>."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:340
+#: docs/handbook/en/docbook/hdbk-reference.docbook:358
 msgid ""
 "<imageobject> <imagedata fileref=\"i_cascade.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
@@ -2122,7 +2158,7 @@ msgstr ""
 "format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:333
+#: docs/handbook/en/docbook/hdbk-reference.docbook:351
 msgid ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+J</"
 "keycap></keycombo> </shortcut> <guimenu> <placeholder type="
@@ -2136,12 +2172,12 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:350
+#: docs/handbook/en/docbook/hdbk-reference.docbook:368
 msgid "<action>Cascades all open windows</action>."
 msgstr "<action>Acomodar en Cascada todas las ventanas abiertas</action>."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:364
+#: docs/handbook/en/docbook/hdbk-reference.docbook:382
 msgid ""
 "<imageobject> <imagedata fileref=\"i_tile.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
@@ -2150,7 +2186,7 @@ msgstr ""
 "format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:357
+#: docs/handbook/en/docbook/hdbk-reference.docbook:375
 msgid ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+I</"
 "keycap></keycombo> </shortcut> <guimenu> <placeholder type="
@@ -2164,12 +2200,12 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:374
+#: docs/handbook/en/docbook/hdbk-reference.docbook:392
 msgid "<action>Tiles all open windows</action>."
 msgstr "<action>Acomodar en Mosaicos todas las ventanas abiertas</action>."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:388
+#: docs/handbook/en/docbook/hdbk-reference.docbook:406
 msgid ""
 "<imageobject> <imagedata fileref=\"i_tile_vert.png\" width=\"32\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
@@ -2178,7 +2214,7 @@ msgstr ""
 "\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:381
+#: docs/handbook/en/docbook/hdbk-reference.docbook:399
 msgid ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+G</"
 "keycap></keycombo> </shortcut> <guimenu> <placeholder type="
@@ -2192,13 +2228,13 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:398
+#: docs/handbook/en/docbook/hdbk-reference.docbook:416
 msgid "<action>Automatically tiles all open windows vertically</action>."
 msgstr ""
 "<action>Acomodar en Mosaicos Verticales todas las ventanas abiertas</action>."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:412
+#: docs/handbook/en/docbook/hdbk-reference.docbook:430
 msgid ""
 "<imageobject> <imagedata fileref=\"i_tile_horiz.png\" width=\"32\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
@@ -2207,7 +2243,7 @@ msgstr ""
 "\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:405
+#: docs/handbook/en/docbook/hdbk-reference.docbook:423
 msgid ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+H</"
 "keycap></keycombo> </shortcut> <guimenu> <placeholder type="
@@ -2221,7 +2257,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:422
+#: docs/handbook/en/docbook/hdbk-reference.docbook:440
 msgid "<action>Automatically tiles all open windows horizontally</action>."
 msgstr ""
 "<action>Acomodar en mosaicos Horizontales todas las ventanas abiertas</"
@@ -2229,7 +2265,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:430
+#: docs/handbook/en/docbook/hdbk-reference.docbook:448
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> </menuchoice>"
@@ -2239,7 +2275,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:437
+#: docs/handbook/en/docbook/hdbk-reference.docbook:455
 msgid ""
 "<action>Controls the basic window arrangement behaviour</action>. In the "
 "opening context menu, you can either specify that you want to take care of "
@@ -2254,7 +2290,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:448
+#: docs/handbook/en/docbook/hdbk-reference.docbook:466
 msgid ""
 "<menuchoice> <guimenu> Window</guimenu> <guimenuitem>Save session</"
 "guimenuitem> </menuchoice>"
@@ -2264,7 +2300,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:456
+#: docs/handbook/en/docbook/hdbk-reference.docbook:474
 msgid ""
 "<action>Directly saves the current session</action>. This will open a "
 "context menu where you can select an existing session to save to. It will be "
@@ -2277,7 +2313,7 @@ msgstr ""
 "siguiente ítem sobre cómo guardar en una nueva sesión."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:466
+#: docs/handbook/en/docbook/hdbk-reference.docbook:484
 msgid ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+S</"
 "keycap></keycombo> </shortcut> <guimenu>Window</guimenu> <guimenuitem>Save "
@@ -2289,7 +2325,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:478
+#: docs/handbook/en/docbook/hdbk-reference.docbook:496
 msgid ""
 "<action>Saves the current session under a new name</action>. This will ask "
 "for a new name to save the session to."
@@ -2299,7 +2335,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:486
+#: docs/handbook/en/docbook/hdbk-reference.docbook:504
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Load session</"
 "guimenuitem> </menuchoice>"
@@ -2309,7 +2345,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:494
+#: docs/handbook/en/docbook/hdbk-reference.docbook:512
 msgid ""
 "<action>Loads an existing session</action>. This will open a context menu "
 "where you can select an existing session to load."
@@ -2319,7 +2355,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:502
+#: docs/handbook/en/docbook/hdbk-reference.docbook:520
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Delete session</"
 "guimenuitem> </menuchoice>"
@@ -2329,7 +2365,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:510
+#: docs/handbook/en/docbook/hdbk-reference.docbook:528
 msgid ""
 "<action>Deletes an existing session</action>. This will open a context menu "
 "where you can select an existing session that should be deleted."
@@ -2338,12 +2374,12 @@ msgstr ""
 "contextual donde puede seleccionar una sesión existente que va a ser borrada."
 
 #. type: Content of: <chapter><sect1><sect2><title>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:520
+#: docs/handbook/en/docbook/hdbk-reference.docbook:538
 msgid "<guimenu>Settings</guimenu>"
 msgstr "<guimenu>Preferencias</guimenu>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:528
+#: docs/handbook/en/docbook/hdbk-reference.docbook:546
 msgid ""
 "<imageobject> <imagedata fileref=\"i_configure.png\" width=\"32\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
@@ -2352,7 +2388,7 @@ msgstr ""
 "\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:525
+#: docs/handbook/en/docbook/hdbk-reference.docbook:543
 msgid ""
 "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
 ">Settings</guimenu> <guimenuitem>Configure &bibletime;</guimenuitem> </"
@@ -2364,7 +2400,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:537
+#: docs/handbook/en/docbook/hdbk-reference.docbook:555
 msgid ""
 "<action>Opens &bibletime;'s main configuration dialog</action>. You can "
 "configure all kinds of nice settings there to adapt &bibletime; to your "
@@ -2377,7 +2413,7 @@ msgstr ""
 "bt\">sección de Configuración de &bibletime;</link> para mayor detalle."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:557
+#: docs/handbook/en/docbook/hdbk-reference.docbook:575
 msgid ""
 "<imageobject> <imagedata fileref=\"i_configuresword.png\" width=\"32\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
@@ -2386,7 +2422,7 @@ msgstr ""
 "\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:549
+#: docs/handbook/en/docbook/hdbk-reference.docbook:567
 msgid ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F4</keycap> </"
 "keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id="
@@ -2400,7 +2436,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:566
+#: docs/handbook/en/docbook/hdbk-reference.docbook:584
 msgid ""
 "<action>Opens a dialog where you can change your &sword; configuration and "
 "manage your bookshelf</action>. Please see the <link linkend=\"hdbk-op-"
@@ -2411,13 +2447,13 @@ msgstr ""
 "bookshelfmanager\">sección manejando la Biblioteca</link> para detalles."
 
 #. type: Content of: <chapter><sect1><sect2><title>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:577
+#: docs/handbook/en/docbook/hdbk-reference.docbook:595
 msgid "<guimenu>Help</guimenu>"
 msgstr "<guimenu>Ayuda</guimenu>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:590
-#: docs/handbook/en/docbook/hdbk-reference.docbook:614
+#: docs/handbook/en/docbook/hdbk-reference.docbook:608
+#: docs/handbook/en/docbook/hdbk-reference.docbook:632
 msgid ""
 "<imageobject> <imagedata fileref=\"i_contents2.png\" width=\"32\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
@@ -2426,7 +2462,7 @@ msgstr ""
 "\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:582
+#: docs/handbook/en/docbook/hdbk-reference.docbook:600
 msgid ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F1</keycap> </"
 "keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id="
@@ -2438,14 +2474,14 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:599
+#: docs/handbook/en/docbook/hdbk-reference.docbook:617
 msgid "<action>Opens &bibletime;'s user guide</action> You are reading it now."
 msgstr ""
 "<action>Abrir la guía de usuario de &bibletime;</action> Usted la está "
 "leyendo ahora."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:606
+#: docs/handbook/en/docbook/hdbk-reference.docbook:624
 msgid ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F2</keycap> </"
 "keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id="
@@ -2459,7 +2495,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:623
+#: docs/handbook/en/docbook/hdbk-reference.docbook:641
 msgid ""
 "<action>Opens a guide on how to study the Bible</action> It is the hope of "
 "the &bibletime; team that this HowTo will provoke the readers to study the "
@@ -2477,9 +2513,45 @@ msgstr ""
 "dicen. Si usted comienza con la actitud que desea que el Señor siembre su "
 "Palabra en su corazón, Él no le defraudará."
 
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:663
+#, fuzzy
+#| msgid ""
+#| "<imageobject> <imagedata fileref=\"i_bible.png\" width=\"32\" depth="
+#| "\"32\" format=\"PNG\" /> </imageobject>"
+msgid ""
+"<imageobject> <imagedata fileref=\"i_light_bulb.png\" width=\"22\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
+msgstr ""
+"<imageobject> <imagedata fileref=\"i_bible.png\" width=\"32\" depth=\"32\" "
+"format=\"PNG\" /> </imageobject>"
+
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:655
+#, fuzzy
+#| msgid ""
+#| "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F1</keycap> </"
+#| "keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" "
+#| "id=\"0\"/>Help</guimenu> <guimenuitem>Handbook</guimenuitem> </menuchoice>"
+msgid ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F3</keycap> </"
+"keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id="
+"\"0\"/>Help</guimenu> <guimenuitem>Tip of the Day</guimenuitem> </menuchoice>"
+msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F1</keycap> </"
+"keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id="
+"\"0\"/>Ayuda</guimenu> <guimenuitem>Manual</guimenuitem> </menuchoice>"
+
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:671
+msgid ""
+"<action>Opens a helpful tip</action> The Tip of the Day provides a useful "
+"tip that will assist in the use of &bibletime;."
+msgstr ""
+
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:637
+#: docs/handbook/en/docbook/hdbk-reference.docbook:679
 msgid ""
 "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>About</guimenuitem> </"
 "menuchoice>"
@@ -2489,7 +2561,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:644
+#: docs/handbook/en/docbook/hdbk-reference.docbook:686
 msgid ""
 "<action>Opens a window about &bibletime; project information</action> "
 "contains information about &bibletime; software version, project "
@@ -2503,13 +2575,13 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><title>
 #. type: Content of: <chapter><sect1><title>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:656
+#: docs/handbook/en/docbook/hdbk-reference.docbook:698
 msgid "Works reference"
 msgstr "Obras de referencia"
 
 # type: Content of: <chapter><sect1><para>
 #. type: Content of: <chapter><sect1><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:658
+#: docs/handbook/en/docbook/hdbk-reference.docbook:700
 msgid ""
 "In this section you can find descriptions of the icons associated with open "
 "works."
@@ -2518,7 +2590,7 @@ msgstr ""
 "la obra abierta."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:670
+#: docs/handbook/en/docbook/hdbk-reference.docbook:712
 msgid ""
 "<imageobject> <imagedata fileref=\"i_forward.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
@@ -2527,18 +2599,18 @@ msgstr ""
 "format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:667
-#: docs/handbook/en/docbook/hdbk-reference.docbook:690
-#: docs/handbook/en/docbook/hdbk-reference.docbook:713
-#: docs/handbook/en/docbook/hdbk-reference.docbook:736
-#: docs/handbook/en/docbook/hdbk-reference.docbook:759
-#: docs/handbook/en/docbook/hdbk-reference.docbook:782
-#: docs/handbook/en/docbook/hdbk-reference.docbook:805
-#: docs/handbook/en/docbook/hdbk-reference.docbook:828
-#: docs/handbook/en/docbook/hdbk-reference.docbook:851
-#: docs/handbook/en/docbook/hdbk-reference.docbook:874
-#: docs/handbook/en/docbook/hdbk-reference.docbook:897
-#: docs/handbook/en/docbook/hdbk-reference.docbook:920
+#: docs/handbook/en/docbook/hdbk-reference.docbook:709
+#: docs/handbook/en/docbook/hdbk-reference.docbook:732
+#: docs/handbook/en/docbook/hdbk-reference.docbook:755
+#: docs/handbook/en/docbook/hdbk-reference.docbook:778
+#: docs/handbook/en/docbook/hdbk-reference.docbook:801
+#: docs/handbook/en/docbook/hdbk-reference.docbook:824
+#: docs/handbook/en/docbook/hdbk-reference.docbook:847
+#: docs/handbook/en/docbook/hdbk-reference.docbook:870
+#: docs/handbook/en/docbook/hdbk-reference.docbook:893
+#: docs/handbook/en/docbook/hdbk-reference.docbook:916
+#: docs/handbook/en/docbook/hdbk-reference.docbook:939
+#: docs/handbook/en/docbook/hdbk-reference.docbook:962
 msgid ""
 "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/></"
 "guimenu> </menuchoice>"
@@ -2548,12 +2620,12 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:679
+#: docs/handbook/en/docbook/hdbk-reference.docbook:721
 msgid "Scrolls forward through history."
 msgstr "Desplaza hacia adelante en la historia."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:693
+#: docs/handbook/en/docbook/hdbk-reference.docbook:735
 msgid ""
 "<imageobject> <imagedata fileref=\"i_back.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
@@ -2563,12 +2635,12 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:702
+#: docs/handbook/en/docbook/hdbk-reference.docbook:744
 msgid "Scrolls back through history."
 msgstr "Desplaza hacia atrás en la historia."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:716
+#: docs/handbook/en/docbook/hdbk-reference.docbook:758
 msgid ""
 "<imageobject> <imagedata fileref=\"i_bible.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
@@ -2578,12 +2650,12 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:725
+#: docs/handbook/en/docbook/hdbk-reference.docbook:767
 msgid "Select an installed bible."
 msgstr "Seleccionar una Biblia instalada."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:739
+#: docs/handbook/en/docbook/hdbk-reference.docbook:781
 msgid ""
 "<imageobject> <imagedata fileref=\"i_bible_add.png\" width=\"32\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
@@ -2593,18 +2665,18 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:748
+#: docs/handbook/en/docbook/hdbk-reference.docbook:790
 msgid "Select an additional bible."
 msgstr "Seleccionar una Biblia adicional."
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:771
+#: docs/handbook/en/docbook/hdbk-reference.docbook:813
 msgid "Search in selected works."
 msgstr "Buscar en una obra seleccionada."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:785
+#: docs/handbook/en/docbook/hdbk-reference.docbook:827
 msgid ""
 "<imageobject> <imagedata fileref=\"i_displayconfig.png\" width=\"32\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
@@ -2614,12 +2686,12 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:794
+#: docs/handbook/en/docbook/hdbk-reference.docbook:836
 msgid "Display configuration."
 msgstr "Mostrar la configuración."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:808
+#: docs/handbook/en/docbook/hdbk-reference.docbook:850
 msgid ""
 "<imageobject> <imagedata fileref=\"i_commentary.png\" width=\"32\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
@@ -2629,12 +2701,12 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:817
+#: docs/handbook/en/docbook/hdbk-reference.docbook:859
 msgid "Select an installed commentary."
 msgstr "Seleccionar un comentario instalado."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:831
+#: docs/handbook/en/docbook/hdbk-reference.docbook:873
 msgid ""
 "<imageobject> <imagedata fileref=\"i_commentary_add.png\" width=\"32\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
@@ -2644,12 +2716,12 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:840
+#: docs/handbook/en/docbook/hdbk-reference.docbook:882
 msgid "Select additional commentary."
 msgstr "Seleccionar un comentario adicional."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:854
+#: docs/handbook/en/docbook/hdbk-reference.docbook:896
 msgid ""
 "<imageobject> <imagedata fileref=\"i_sync.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
@@ -2659,13 +2731,13 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:863
+#: docs/handbook/en/docbook/hdbk-reference.docbook:905
 msgid "Synchronize displayed entry with active Bible window."
 msgstr ""
 "Sincronizar las entradas mostradas con la de la Biblia de la ventana activa."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:877
+#: docs/handbook/en/docbook/hdbk-reference.docbook:919
 msgid ""
 "<imageobject> <imagedata fileref=\"i_book.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
@@ -2675,12 +2747,12 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:886
+#: docs/handbook/en/docbook/hdbk-reference.docbook:928
 msgid "Select a book."
 msgstr "Seleccionar un libro."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:900
+#: docs/handbook/en/docbook/hdbk-reference.docbook:942
 msgid ""
 "<imageobject> <imagedata fileref=\"i_lexicon.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
@@ -2690,12 +2762,12 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:909
+#: docs/handbook/en/docbook/hdbk-reference.docbook:951
 msgid "Select an installed glossary or devotional."
 msgstr "Seleccionar un glosario o devocional instalado."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:923
+#: docs/handbook/en/docbook/hdbk-reference.docbook:965
 msgid ""
 "<imageobject> <imagedata fileref=\"i_lexicon_add.png\" width=\"32\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
@@ -2705,19 +2777,19 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:932
+#: docs/handbook/en/docbook/hdbk-reference.docbook:974
 msgid "Select an additional glossary or devotional."
 msgstr "Seleccionar un glosario o devocional adicional."
 
 # type: Content of: <chapter><sect1><title>
 #. type: Content of: <chapter><sect1><title>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:942
+#: docs/handbook/en/docbook/hdbk-reference.docbook:984
 msgid "Shortcuts index"
 msgstr "Indice de Atajos"
 
 # type: Content of: <chapter><sect1><para>
 #. type: Content of: <chapter><sect1><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:944
+#: docs/handbook/en/docbook/hdbk-reference.docbook:986
 msgid ""
 "This is an index of all shortcuts and their corresponding description in the "
 "handbook. The shortcuts are sorted (roughly)  alphabetical. If you want to "
@@ -2735,46 +2807,46 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><thead><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><thead><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:959
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1001
 msgid "Shortcut"
 msgstr "Atajo"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><thead><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><thead><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:960
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1002
 msgid "Description"
 msgstr "Descripción"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:966
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1008
 msgid "<keycombo action=\"simul\"> <keycap>&Alt;+Left</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Alt;+Left</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:969
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1011
 msgid "Moves back in the history of read windows."
 msgstr "Mueve atrás en la historia de la ventana de lectura"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:973
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1015
 msgid "<keycombo action=\"simul\"> <keycap>&Alt;+Right</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Alt;+Right</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:976
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1018
 msgid "Moves forward in the history of read windows."
 msgstr "Mueve adelante en la historia de la ventana de lectura."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:981
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1023
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:985
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1027
 msgid ""
 "<link linkend=\"hdbk-reference-menus-search-defaultbible\"> <menuchoice> "
 "<guimenu>Search</guimenu> <guimenuitem>Search in default bible</guimenuitem> "
@@ -2787,13 +2859,13 @@ msgstr ""
 "en la Biblia Estándar."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:996
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1038
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+G</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+G</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1001
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1043
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> <guimenuitem>Auto-tile vertically</guimenuitem> </menuchoice> "
@@ -2804,13 +2876,13 @@ msgstr ""
 "menuchoice> equivalente; activar ventana en mosaico automático."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1011
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1053
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+H</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+H</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1015
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1057
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> <guimenuitem>Auto-tile horizontally</guimenuitem> </menuchoice> "
@@ -2821,13 +2893,13 @@ msgstr ""
 "menuchoice> equivalente; Activar ventana en mosaico automático."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1025
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1067
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+I</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+I</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1030
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1072
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> <guimenuitem>Auto-tile</guimenuitem> </menuchoice> equivalent; "
@@ -2838,13 +2910,13 @@ msgstr ""
 "equivalente; Activar ventana en mosaico automático."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1040
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1082
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+J</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+J</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1044
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1086
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> <guimenuitem>Auto-cascade</guimenuitem> </menuchoice> "
@@ -2855,13 +2927,13 @@ msgstr ""
 "equivalente; activar ventanas en cascada automático."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1054
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1096
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+M</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+M</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1059
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1101
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> <guimenuitem>Manual mode</guimenuitem> </menuchoice> "
@@ -2872,13 +2944,13 @@ msgstr ""
 "equivalente; activar la colocación manual de la ventana."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1069
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1111
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+T</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+T</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1073
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1115
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> <guimenuitem>Tabbed</guimenuitem> </menuchoice> equivalent; "
@@ -2889,13 +2961,13 @@ msgstr ""
 "equivalente; organizar ventanas con pestañas superiores."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1083
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1125
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+S</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+S</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1087
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1129
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-savenewsession\"> <menuchoice> "
 "<guimenu>Window</guimenu> <guimenuitem>Save as new session</guimenuitem> </"
@@ -2907,13 +2979,13 @@ msgstr ""
 "como nueva sesión."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1097
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1139
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+W</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+W</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1101
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1143
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-closeall\"> <menuchoice> "
 "<guimenu>Window</guimenu> <guimenuitem>Close all</guimenuitem> </menuchoice> "
@@ -2924,69 +2996,69 @@ msgstr ""
 "menuchoice> </link> equivalente; cerrar todas las ventanas abiertas."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1110
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1152
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+-</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+-</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1113
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1155
 msgid "Zoom out. This decreases the font size of read windows."
 msgstr "Reducir. Esto disminuye el tamaño de la fuente de las ventanas."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1118
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1160
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;++</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;++</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1121
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1163
 msgid "Zoom in. This increases the font size of read windows."
 msgstr "Aumentar. Esto aumenta el tamaño de la fuente de las ventanas."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1126
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1168
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+A</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+A</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1129
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1171
 msgid "Select all. This selects all text in read windows."
 msgstr "Seleccionar todo. Selecciona todo el texto en las ventanas."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1134
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1176
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+C</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+C</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1137
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1179
 msgid "Copy. This copies the selected text to the clipboard."
 msgstr "Copiar. Esto copia el texto seleccionado al portapapeles."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1143
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1185
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+F</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+F</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1146
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1188
 msgid "Search. This lets you search within the text of a read window."
 msgstr ""
 "Buscar. Esto le permite buscar dentro del texto de una ventana de lectura."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1152
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1194
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+G</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+G</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1157
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1199
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-tilevertically\"> <menuchoice> "
 "<guimenu>Window</guimenu> <guimenuitem>Tile vertically</guimenuitem> </"
@@ -2997,13 +3069,13 @@ msgstr ""
 "</menuchoice> </link> equivalente."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1168
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1210
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+H</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+H</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1173
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1215
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-tilehorizontally\"> <menuchoice> "
 "<guimenu>Window</guimenu> <guimenuitem>Tile horizontally</guimenuitem> </"
@@ -3014,13 +3086,13 @@ msgstr ""
 "guimenuitem> </menuchoice> </link> equivalente."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1184
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1226
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+I</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+I</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1189
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1231
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-tile\"> <menuchoice> "
 "<guimenu>Window</guimenu> <guimenuitem>Tile</guimenuitem> </menuchoice> </"
@@ -3031,13 +3103,13 @@ msgstr ""
 "</link> ventanas equivalente."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1200
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1242
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+J</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+J</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1205
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1247
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-cascade\"> <menuchoice> "
 "<guimenu>Window</guimenu> <guimenuitem>Cascade</guimenuitem> </menuchoice> </"
@@ -3048,13 +3120,13 @@ msgstr ""
 "</link> ventanas equivalente."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1216
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1258
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+L</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+L</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1219
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1261
 msgid ""
 "Change location. Changes focus to the toolbar field for the selected work."
 msgstr ""
@@ -3062,24 +3134,24 @@ msgstr ""
 "herramientas para el trabajo seleccionado."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1225
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1267
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+N</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+N</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1228
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1270
 msgid "Search with works of this window."
 msgstr "Buscar en las obras de esta ventana."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1233
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1275
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+O</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+O</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1237
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1279
 msgid ""
 "<link linkend=\"hdbk-reference-menus-search-openworks\"> <menuchoice> "
 "<guimenu>Search</guimenu> <guimenuitem>Search in open work(s)</guimenuitem> "
@@ -3092,13 +3164,13 @@ msgstr ""
 "a buscar en todos las obras abiertas."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1248
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1290
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+Q</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+Q</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1252
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1294
 msgid ""
 "<link linkend=\"hdbk-reference-menus-file-quit\"> <menuchoice> "
 "<guimenu>File</guimenu> <guimenuitem>Quit</guimenuitem> </menuchoice> </"
@@ -3109,24 +3181,24 @@ msgstr ""
 "link> equivalente; cerrar &bibletime;."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1261
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1303
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+W</keycap></keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+W</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1264
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1306
 msgid "Closes the current window."
 msgstr "Cierra la ventana actual."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1268
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1310
 msgid "<keycombo action=\"simul\"> <keycap>F1</keycap> </keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>F1</keycap> </keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1273
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1315
 msgid ""
 "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> </"
 "menuchoice> equivalent; opens the handbook."
@@ -3135,13 +3207,13 @@ msgstr ""
 "menuchoice> equivalente; abrir el manual."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1280
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1323
 msgid "<keycombo action=\"simul\"> <keycap>F2</keycap> </keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>F2</keycap> </keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1285
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1328
 msgid ""
 "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy HowTo</"
 "guimenuitem> </menuchoice> equivalent; opens the BibleStudy HowTo."
@@ -3150,13 +3222,34 @@ msgstr ""
 "guimenuitem> </menuchoice> equivalente; abrir el Cómo estudiar la Biblia."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1293
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1337
+#, fuzzy
+#| msgid "<keycombo action=\"simul\"> <keycap>F1</keycap> </keycombo>"
+msgid "<keycombo action=\"simul\"> <keycap>F3</keycap> </keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>F1</keycap> </keycombo>"
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1342
+#, fuzzy
+#| msgid ""
+#| "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>About</guimenuitem> </"
+#| "menuchoice>"
+msgid ""
+"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Tip of the Day</"
+"guimenuitem> </menuchoice> Opens a helpful tip to use &bibletime;."
+msgstr ""
+"<menuchoice> <guimenu>Ayuda</guimenu> <guimenuitem>Acerca de</guimenuitem> </"
+"menuchoice>"
+
+#. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1350
 msgid "<keycombo action=\"simul\"> <keycap>F4</keycap> </keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>F4</keycap> </keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1298
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1355
 msgid ""
 "<link linkend=\"hdbk-reference-menus-settings-bookshelf_manager\"> "
 "<menuchoice> <guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</"
@@ -3168,13 +3261,13 @@ msgstr ""
 "Administrar Biblioteca."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1308
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1365
 msgid "<keycombo action=\"simul\"> <keycap>F8</keycap> </keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>F8</keycap> </keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1313
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1370
 msgid ""
 "<link linkend=\"hdbk-reference-menus-view-showbookshelf\"> <menuchoice> "
 "<guimenu>View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem> </"
@@ -3185,13 +3278,13 @@ msgstr ""
 "menuchoice> </link> equivalente; activar mostrar la Biblioteca."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1323
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1380
 msgid "<keycombo action=\"simul\"> <keycap>F9</keycap> </keycombo>"
 msgstr "<keycombo action=\"simul\"> <keycap>F9</keycap> </keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1328
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1385
 msgid ""
 "<link linkend=\"hdbk-reference-menus-view-showmag\"> <menuchoice> "
 "<guimenu>View</guimenu> <guimenuitem>Show mag</guimenuitem> </menuchoice> </"
@@ -3457,8 +3550,12 @@ msgstr "Abthorpe"
 #.  TRANS:ROLES_OF_TRANSLATORS 
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:44
+#, fuzzy
+#| msgid ""
+#| "<copyright> <year>1999-2010</year> <holder>The &bibletime; Team</holder> "
+#| "</copyright>"
 msgid ""
-"<copyright> <year>1999-2010</year> <holder>The &bibletime; Team</holder> </"
+"<copyright> <year>1999-2011</year> <holder>The &bibletime; Team</holder> </"
 "copyright>"
 msgstr ""
 "<copyright> <year>1999-2010</year> <holder>El Equipo &bibletime;</holder> </"
@@ -3475,15 +3572,13 @@ msgstr ""
 
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:54
-msgid "<date>December 2010</date>"
+msgid "<date>January 2011</date>"
 msgstr ""
 
 #. type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:56
-#, fuzzy
-#| msgid "2.8"
-msgid "2.9"
-msgstr "2.8"
+msgid "2.9.0"
+msgstr ""
 
 # type: Content of: <book><bookinfo><abstract><para>
 #. type: Content of: <book><bookinfo><abstract><para>
@@ -3527,6 +3622,11 @@ msgstr "Crosswire"
 #: docs/handbook/en/docbook/index.docbook:72
 msgid "Help dialog"
 msgstr "Dialogo de Ayuda"
+
+#, fuzzy
+#~| msgid "2.8"
+#~ msgid "2.9"
+#~ msgstr "2.8"
 
 #~ msgid ""
 #~ "<date>$LastChangedDate: 2010-05-20 15:20:48 -0400 (Thu, 20 May 2010) $</"
