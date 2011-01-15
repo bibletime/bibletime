@@ -1,4 +1,7 @@
-﻿2011-01-01 Gary Holmlund <gary.holmlund@gmail.com>
+2011-01-15 Jaak Ristioja <ristioja@gmail.com>
+    * Fixed category detection for modules.
+
+2011-01-01 Gary Holmlund <gary.holmlund@gmail.com>
     * Switch off footnotes in display options, feature request 2892157
 
 2010-12-31 Gary Holmlund <gary.holmlund@gmail.com>
