@@ -57,7 +57,7 @@ class CDisplayTemplateMgr {
           \returns the list of available templates.
         */
         inline const QStringList availableTemplates() const {
-            return m_templateMap.keys();
+            return m_cssMap.keys();
         }
 
         /**
@@ -77,7 +77,7 @@ class CDisplayTemplateMgr {
         /**
           \returns the name of the default template.
         */
-        inline static const char *defaultTemplate() { return "Blue.tmpl"; }
+        inline static const char *defaultTemplate() { return "Blue.css"; }
 
         /**
           \returns The singleton instance of the instance of this class.
@@ -90,9 +90,11 @@ class CDisplayTemplateMgr {
     private: /* Methods: */
         /** Preloads a single template from disk: */
         void loadTemplate(const QString &filename);
+        void loadCSSTemplate(const QString &filename);
 
     private: /* Fields: */
         QMap<QString, QString> m_templateMap;
+        QMap<QString, QString> m_cssMap;
         static CDisplayTemplateMgr *m_instance;
 };
 

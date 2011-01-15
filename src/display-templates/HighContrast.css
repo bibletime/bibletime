@@ -1,34 +1,28 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-	<title>#TITLE#</title>
-	<meta name="GENERATOR" content="BibleTime - www.bibletime.info" />
-	<meta name="AUTHOR" content="BibleTime - www.bibletime.info" />
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
-	<style type="text/css">
-	/* <![CDATA[ */
+/**
+ * Theme by BibleTime - www.bibletime.info
+ */
+* {
+	/* To work around a KDE 3.2 bug / problem */
+	/* background-color:white; #this seems to break*/
+}
 
 body {
 	background-color: white;
 	color: black;
 }
 #content {
-	margin:10px;
+	margin: 10px;
 }
-
 #content > table {
 	margin: 0;
 	padding: 0;
 	border-spacing:10px;
 	vertical-align:top;
 }
-
 #content > table th {
 	padding: 0 0 2px 0;
 	text-align: center;
-	font-weight: bold;
+	/*font-weight: bold;*/
 	font-size: 110%;
 	border-bottom: 1px solid #6B6B6B;
 }
@@ -36,47 +30,47 @@ body {
 a {
 	text-decoration:none;
 	font-weight:normal;
-	color: #3B11AE;
-	padding:0 2px;
+	/*color: #F98100;*/
+	padding:1px;
 }
 a:hover {
-	color: #AE1518;
-	padding:0 2px;
+	color: #FF0000;
+	padding:1px;
+	text-decoration:underline;
 }
-
 
 /* Settings which apply to all entries in all modules */
 .entry {
-	padding: 3px;
- 	vertical-align: middle;
+	padding: 2px;
+	/*vertical-align: top;*/
 	text-align: justify;
 }
 #printer .entry {
-	font-size:90%;
-	text-align:left;
+	font-size: 90%;
+	text-align: left;
 }
-.entry[dir=rtl] {
-	text-align:right !important;
+.entry[dir=rtl],#printer .entry[dir=rtl]  {
+	text-align: right;
 }
-#printer .entry[dir=rtl] {
-	text-align:right !important;
-}
-td.entry, td.currententry {
+div.entry, td.entry, td.currententry {
 	vertical-align:top;
 }
 
 /* Keep the values the same as in .entry (take the border into account!) */
 .currententry {
-	padding:3px;
-	text-align:justify;
+	padding: 2px;
+	text-align: justify;
+	/*color:white;*/
+	/*The background colour of selected text as of kde 3.5.2*/
+	background-color: #A5A5FF;
 }
 .currententry[dir=rtl] {
-	text-align:right !important;
+	text-align: right;
 }
 div.currententry {
 }
 span.currententry {
-	background-color:#D4FFCB;
+
 }
 
 
@@ -87,70 +81,76 @@ td.entry + td.entry {
 
 /* Several additional settings for display of modules*/
 #bible div.currententry, #bible td.currententry {
-	border:1px solid black;
-	padding:2px;
-	background-color:#F6FFF7;
+	/*border: 1px solid black;*/
+	padding: 4px;
 }
 #bible span.currententry {
-	background-color:#C8FFB6;
 }
 
 /*Same for books!*/
 #book div.currententry, #book td.currententry {
-	border:1px solid black;
-	background-color:#F6FFF7;
+	border: 1px solid black;
 }
 #book span.currententry {
-	background-color:#C8FFB6;
 }
-
 
 .entryname {
-	font-size:80%;
-	padding:0 2px 0 0;
-	vertical-align:super;
+ 	font-size:70%;
+	padding:0 1px 0 0;
+	vertical-align:top;
+	/*color: #F98100;*/
+	color: black;
+	/*font-style: italic;*/
 }
 .entry[dir=rtl] .entryname, .currententry[dir=rtl] .entryname {
-	padding: 0 0 0 2px;
-	font-size: 80%;
-	vertical-align:super;
+	padding:0 0 0 1px;
+	font-size:60%;
+	/*vertical-align:top; */
 }
 .entryname a, #printer .entryname  {
-	vertical-align: middle
+	vertical-align: top;
+	font-size: 100%;
+	font-weight: bold;
+	color: black;
 }
 
 #printer .entry  .entry, #printer .entry .sectiontitle , #printer .entry .booktitle {
-	padding-top: 0.05em;
-	margin-left: 10px;
+	padding-top:0.05em;
+	margin-left:10px;
 }
 
 .footnote {
 	vertical-align:super;
-	color: blue;
-	font-size: 70%;
+	font-weight:bold;
+	/*color: #00B7FF;*/ /*This one is kind of blinding on white*/
+	/*color: #F98100;*/
+	font-size:80%;
+	color: black;
 }
-.footnote:before { content:"("; }
-.footnote:after { content:")"; }
+
+
+.footnote:before {
+	content: "(";
+}
+
+.footnote:after {
+	content: ")";
+}
 
 .crossreference {
 	font-size: 80%;
 	/*vertical-align:middle;*/
-	color: blue;
+	/*color: blue;*/
+	/*color: #F98100;*/
 }
 
-.crossreference a {
-	font-size: 80%;
-	/*vertical-align:middle;*/
-	color: blue;
+.crossreference:before {
+	content: "[";
 }
 
-.crossreference a:hover {
-	font-size: 80%;
-	/*vertical-align:middle;*/
-	color: blue;
+.crosreference:after {
+	content: "]";
 }
-
-
 
 .sectiontitle {
 	font-weight: bold;
@@ -177,7 +177,12 @@ td.entry + td.entry {
 .foreign {
 }
 .jesuswords {
-	color:#9C2323;
+	/*color:red;*/
+	/*color: #7500AC;*/
+	/*color: #F98100;*/
+	font-style:italic;
+	/*font-weight: bold;*/
+	font-size:0.9em;
 }
 
 .quotation {
@@ -253,7 +258,7 @@ td.entry + td.entry {
 }
 
 .morphSegmentation {
-	border: 1px solid gray;
+	border: 1px solid grey;
 	margin-top: 1px; /* Don`t let the boxes touch here, between the lines */
 	margin-left: -1px; /* But here, for better reading of the text,
 											this will only occur within a word consisting of several segments.*/
@@ -266,55 +271,42 @@ td.entry + td.entry {
 }
 
 #infodisplay .footnoteinfo h3, #infodisplay .strongsinfo h3, #infodisplay .morphinfo h3, #infodisplay .translationinfo h3, #infodisplay .crossrefinfo h3 {
-	padding:4px 4px 2px 0;
-	color:darkGray;
-	font-weight:bold;
-	border-bottom:1px solid gray;
-	text-align:left !important;
+	padding: 2px 0 0 0;
+	color: black;
+	font-weight: bold;
+	border-bottom: 1px solid black;
+	margin: 0 0 3px 0;
 }
 
-#infodisplay > p, #infodisplay  * > p { /* We only format the first p child in a special way */
-	text-align:justify;
-	color:black;
-	margin:0px;
-	padding:0px;
+#infodisplay > p { /* We only format the first p child in a special way */
+	color: black;
+	margin: 0px;
+	padding: 0px;
 }
 
 /*Required for cross references*/
 #infodisplay .entry {
-	padding:2px;
-	text-align:justify;
-	margin-bottom:10px;
-	margin-left:15px;
+	padding: 2px;
+	text-align: justify;
+	margin: 0 0 10px 10px;
 }
 #infodisplay .entry .entry { /*No smaller font size for nested entries*/
-	margin:0px;
+	margin: 0px;
 }
 #infodisplay .entryname {
-	padding:2px;
-	margin:0px;
-	text-align:left;
-	font-weight:bold;
+	padding: 2px;
+	margin: 0px;
+	text-align: left;
+	font-weight: bold;
 }
 
 #infodisplay .rangeheading {
-	color:black;
-	font-weight:bold;
-	margin-left:-10px;
+	color: black;
+	font-weight: bold;
+	margin-left: -5px;
 }
 
 #printer .rangeheading {
-	border-bottom:1px solid black;
-	color:black;
+	border-bottom: 1px solid black;
+	color: black;
 }
-
-#LANG_CSS#
-
-	/* ]]> */
-	</style>
-</head>
-
-<body id="#DISPLAYTYPE#">
-	<div id="content" lang="#LANG_ABBREV#" xml:lang="#LANG_ABBREV#" dir="#PAGE_DIRECTION#">#CONTENT#</div>
-</body>
-</html>
