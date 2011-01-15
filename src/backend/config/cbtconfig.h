@@ -49,7 +49,7 @@ enum bools {
     firstSearchDialog,
     readOldBookmarks,
 
-    toolbar,
+    showMainWindowToolbar,
     mainIndex,
     infoDisplay,
 

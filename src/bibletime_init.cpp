@@ -363,12 +363,6 @@ void BibleTime::initActions() {
     connect(m_windowFullscreenAction, SIGNAL(triggered()),
             this,                     SLOT(toggleFullscreen()));
 
-    m_viewToolbarAction = m_actionCollection->action("showToolbar");
-    m_viewToolbarAction->setCheckable(true);
-    m_viewToolbarAction->setChecked(true);
-    connect(m_viewToolbarAction, SIGNAL(triggered()),
-            this,                SLOT(slotToggleMainToolbar()));
-
     // Special case these actions, overwrite those already in collection
     m_showBookshelfAction = m_bookshelfDock->toggleViewAction();
     m_actionCollection->addAction("showBookshelf", m_showBookshelfAction);
@@ -382,6 +376,12 @@ void BibleTime::initActions() {
     m_showTextAreaHeadersAction->setChecked(CBTConfig::get(CBTConfig::showTextWindowHeaders));
     connect(m_showTextAreaHeadersAction, SIGNAL(toggled(bool)),
             this,                        SLOT(slotToggleTextWindowHeader()));
+
+    m_showMainWindowToolbarAction = m_actionCollection->action("showToolbar");
+    m_showMainWindowToolbarAction->setCheckable(true);
+    m_showMainWindowToolbarAction->setChecked(CBTConfig::get(CBTConfig::showMainWindowToolbar));
+    connect( m_showMainWindowToolbarAction, SIGNAL(triggered()),
+            this,                SLOT(slotToggleMainToolbar()));
 
     m_showTextWindowNavigationAction = m_actionCollection->action("showNavigation");
     m_showTextWindowNavigationAction->setCheckable(true);
@@ -450,35 +450,73 @@ void BibleTime::initActions() {
 
     m_windowManualModeAction = m_actionCollection->action("manualArrangement");
     m_windowManualModeAction->setCheckable(true);
+    m_windowManualModeAction->setChecked(true);
     connect(m_windowManualModeAction, SIGNAL(triggered()),
             this,                      SLOT(slotManualArrangementMode()));
 
     m_windowAutoTabbedAction = m_actionCollection->action("autoTabbed");
     m_windowAutoTabbedAction->setCheckable(true);
+    if(CBTConfig::get(CBTConfig::autoTabbed) == true) {
+        m_windowManualModeAction->setChecked(false);
+        m_windowAutoTabbedAction->setChecked(true);
+    }
     connect(m_windowAutoTabbedAction, SIGNAL(triggered()),
             this,                      SLOT(slotAutoTabbed()));
 
     //: Vertical tiling means that windows are vertical, placed side by side
     m_windowAutoTileVerticalAction = m_actionCollection->action("autoVertical");
     m_windowAutoTileVerticalAction->setCheckable(true);
+    if(CBTConfig::get(CBTConfig::autoTileVertical) == true) {
+        m_windowManualModeAction->setChecked(false);
+        m_windowAutoTileVerticalAction->setChecked(true);
+    }
     connect(m_windowAutoTileVerticalAction, SIGNAL(triggered()),
             this,                            SLOT(slotAutoTileVertical()));
 
     //: Horizontal tiling means that windows are horizontal, placed on top of each other
     m_windowAutoTileHorizontalAction = m_actionCollection->action("autoHorizontal");
     m_windowAutoTileHorizontalAction->setCheckable(true);
+    if(CBTConfig::get(CBTConfig::autoTileHorizontal) == true) {
+        m_windowManualModeAction->setChecked(false);
+        m_windowAutoTileHorizontalAction->setChecked(true);
+    }
     connect(m_windowAutoTileHorizontalAction, SIGNAL(triggered()),
             this,                              SLOT(slotAutoTileHorizontal()));
 
     m_windowAutoTileAction = m_actionCollection->action("autoTile");
     m_windowAutoTileAction->setCheckable(true);
+    if(CBTConfig::get(CBTConfig::autoTile) == true) {
+        m_windowManualModeAction->setChecked(false);
+        m_windowAutoTileAction->setChecked(true);
+    }
     connect(m_windowAutoTileAction, SIGNAL(triggered()),
             this,                    SLOT(slotAutoTile()));
 
     m_windowAutoCascadeAction = m_actionCollection->action("autoCascade");
     m_windowAutoCascadeAction->setCheckable(true);
+    if(CBTConfig::get(CBTConfig::autoCascade) == true) {
+        m_windowManualModeAction->setChecked(false);
+        m_windowAutoCascadeAction->setChecked(true);
+    }
     connect(m_windowAutoCascadeAction, SIGNAL(triggered()),
             this,                       SLOT(slotAutoCascade()));
+
+    /*
+     * All actions related to arrangement modes have to be initialized before calling a slot on them,
+     * thus we call them afterwards now.
+     */
+    if(m_windowAutoTabbedAction->isChecked() == true)
+        slotAutoTabbed();
+    else if(m_windowAutoTileVerticalAction->isChecked() == true)
+        slotAutoTileVertical();
+    else if(m_windowAutoTileHorizontalAction->isChecked() == true)
+        slotAutoTileHorizontal();
+    else if(m_windowAutoTileAction->isChecked() == true)
+        slotAutoTile();
+    else if(m_windowAutoCascadeAction->isChecked() == true)
+        slotAutoCascade();
+    else
+        slotManualArrangementMode();
 
     m_windowSaveToNewProfileAction = m_actionCollection->action("saveNewSession");
     connect(m_windowSaveToNewProfileAction, SIGNAL(triggered()),
@@ -535,7 +573,7 @@ void BibleTime::initMenubar() {
     m_viewMenu->addAction(m_showTextAreaHeadersAction);
     m_viewMenu->addSeparator();
     m_toolBarsMenu = new QMenu(this);
-    m_toolBarsMenu->addAction(m_viewToolbarAction);
+    m_toolBarsMenu->addAction( m_showMainWindowToolbarAction);
     m_toolBarsMenu->addAction(m_showTextWindowNavigationAction);
     m_toolBarsMenu->addAction(m_showTextWindowModuleChooserAction);
     m_toolBarsMenu->addAction(m_showTextWindowToolButtonsAction);

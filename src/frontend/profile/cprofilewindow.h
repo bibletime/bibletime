@@ -120,4 +120,3 @@ class CProfileWindow {
 } //end of namespace Profile
 
 #endif
-

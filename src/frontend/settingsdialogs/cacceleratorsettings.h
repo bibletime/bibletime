@@ -23,8 +23,9 @@ class QComboBox;
 class QStackedWidget;
 
 /**
-    @author The BibleTime team <info@bibletime.info>
-*/
+ * @brief The shortcut settings page.
+ * @author The BibleTime team <info@bibletime.info>
+ */
 class CAcceleratorSettingsPage : public BtConfigPage {
         Q_OBJECT
     public:
