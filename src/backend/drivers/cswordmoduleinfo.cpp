@@ -705,32 +705,30 @@ bool CSwordModuleInfo::deleteEntry(CSwordKey * const key) {
 }
 
 void CSwordModuleInfo::initCachedCategory() {
-    switch (type()) {
-        case Bible:       m_cachedCategory = Bibles; break;
-        case Commentary:  m_cachedCategory = Commentaries; break;
-        case Lexicon:     m_cachedCategory = Lexicons; break;
-        case GenericBook: m_cachedCategory = Books; break;
-        case Unknown: // Fall thru
-        default:
-        {
-            /// \todo Maybe we can use raw string comparsion instead of QString?
-            const QString cat(m_module->getConfigEntry("Category"));
+    /// \todo Maybe we can use raw string comparsion instead of QString?
+    const QString cat(m_module->getConfigEntry("Category"));
 
-            if (cat == "Cults / Unorthodox / Questionable Material") {
-                m_cachedCategory = Cult;
-            } else if (cat == "Daily Devotional"
-                       || m_module->getConfig().has("Feature","DailyDevotion"))
-            {
-                m_cachedCategory = DailyDevotional;
-            } else if (cat == "Glossaries"
-                       || m_module->getConfig().has("Feature", "Glossary"))
-            {
-                m_cachedCategory = Glossary;
-            } else if (cat == "Images" || cat == "Maps") {
-                m_cachedCategory = Images;
-            } else {
-                m_cachedCategory = UnknownCategory;
-            }
+    /// \warning cat has to be checked before type() !!!
+    if (cat == "Cults / Unorthodox / Questionable Material") {
+        m_cachedCategory = Cult;
+    } else if (cat == "Daily Devotional"
+               || m_module->getConfig().has("Feature","DailyDevotion"))
+    {
+        m_cachedCategory = DailyDevotional;
+    } else if (cat == "Glossaries"
+               || m_module->getConfig().has("Feature", "Glossary"))
+    {
+        m_cachedCategory = Glossary;
+    } else if (cat == "Images" || cat == "Maps") {
+        m_cachedCategory = Images;
+    } else {
+        switch (type()) {
+            case Bible:       m_cachedCategory = Bibles; break;
+            case Commentary:  m_cachedCategory = Commentaries; break;
+            case Lexicon:     m_cachedCategory = Lexicons; break;
+            case GenericBook: m_cachedCategory = Books; break;
+            case Unknown: // Fall thru
+            default:          m_cachedCategory = UnknownCategory; break;
         }
     }
 }
