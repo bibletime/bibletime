@@ -71,6 +71,15 @@ extern const QString icon;
 namespace mainMenu { //Main menu
 
 namespace view { //Main menu->View
+namespace showBookshelf {
+extern const QString icon;
+}
+namespace showBookmarks {
+extern const QString icon;
+}
+namespace showMag {
+extern const QString icon;
+}
 namespace showMainIndex {
 extern const QString icon;
 extern const QKeySequence accel;

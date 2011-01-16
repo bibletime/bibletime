@@ -364,11 +364,18 @@ void BibleTime::initActions() {
             this,                     SLOT(toggleFullscreen()));
 
     // Special case these actions, overwrite those already in collection
+    namespace DU = util::directory;
     m_showBookshelfAction = m_bookshelfDock->toggleViewAction();
+    m_showBookshelfAction->setIcon(DU::getIcon(CResMgr::mainMenu::view::showBookshelf::icon));
+    m_showBookshelfAction->setToolTip(tr("Toggle visibility of the bookshelf window"));
     m_actionCollection->addAction("showBookshelf", m_showBookshelfAction);
     m_showBookmarksAction = m_bookmarksDock->toggleViewAction();
+    m_showBookmarksAction->setIcon(DU::getIcon(CResMgr::mainMenu::view::showBookmarks::icon));
+    m_showBookmarksAction->setToolTip(tr("Toggle visibility of the bookmarks window"));
     m_actionCollection->addAction("showBookmarks", m_showBookmarksAction);
     m_showMagAction = m_magDock->toggleViewAction();
+    m_showMagAction->setIcon(DU::getIcon(CResMgr::mainMenu::view::showMag::icon));
+    m_showMagAction->setToolTip(tr("Toggle visibility of the mag window"));
     m_actionCollection->addAction("showMag", m_showMagAction);
 
     m_showTextAreaHeadersAction = m_actionCollection->action("showParallelTextHeaders");
@@ -656,11 +663,11 @@ void BibleTime::initToolbars() {
     openWorkButton->setPopupMode(QToolButton::InstantPopup);
     m_mainToolBar->addWidget(openWorkButton);
 
-    m_mainToolBar->addSeparator();
     m_mainToolBar->addAction(m_windowFullscreenAction);
-    m_mainToolBar->addSeparator();
+    m_mainToolBar->addAction(m_actionCollection->action("showBookshelf"));
+    m_mainToolBar->addAction(m_actionCollection->action("showBookmarks"));
+    m_mainToolBar->addAction(m_actionCollection->action("showMag"));
     m_mainToolBar->addAction(m_searchOpenWorksAction);
-    m_mainToolBar->addSeparator();
     m_mainToolBar->addAction(m_openHandbookAction);
 }
 

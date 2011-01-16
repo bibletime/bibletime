@@ -68,6 +68,15 @@ const QString icon             = "questionable.svg";
 namespace mainMenu { //Main menu
 
 namespace view { //Main menu->View
+namespace showBookshelf {
+const QString icon        = "books.svg";
+}
+namespace showBookmarks {
+const QString icon        = "bookmark.svg";
+}
+namespace showMag {
+const QString icon        = "document_magnifier.svg";
+}
 namespace showMainIndex {
 const QString icon        = "view_index.svg";
 const QKeySequence accel(Qt::Key_F9);
