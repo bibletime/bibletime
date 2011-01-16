@@ -170,9 +170,11 @@ ELSE (CMAKE_BUILD_TYPE STREQUAL "Release")
 ENDIF (CMAKE_BUILD_TYPE STREQUAL "Release")
 
 IF (APPLE)
+     # enable support MacOS 10.5+
     SET_TARGET_PROPERTIES(${EXECUTABLE_NAME}
         PROPERTIES
-            LINK_FLAGS "-mmacosx-version-min=10.4" # support MacOS 10.4+
+            COMPILE_FLAGS   "-mmacosx-version-min=10.5 -isysroot /Developer/SDKs/MacOSX10.5.sdk"
+            LINK_FLAGS      "-mmacosx-version-min=10.5 -isysroot /Developer/SDKs/MacOSX10.5.sdk"
     )
 ENDIF (APPLE)
 

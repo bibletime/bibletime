@@ -5,10 +5,6 @@
 # just from there: ./build/install/bin/bibletime. It will find all
 # required files.
 
-# MacOS specific stuff
-export MACOSX_DEPLOYMENT_TARGET=10.4
-
-
 if [ ! -d build ]; then mkdir build; fi
 cd build
 cmake -D CMAKE_BUILD_TYPE=Debug -D CMAKE_INSTALL_PREFIX="install/" ..  || exit 1
