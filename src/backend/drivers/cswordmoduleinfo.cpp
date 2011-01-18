@@ -81,7 +81,7 @@ CSwordModuleInfo::CSwordModuleInfo(sword::SWModule *module,
       m_backend(usedBackend ? usedBackend : CSwordBackend::instance()),
       m_type(type),
       m_cancelIndexing(false),
-      m_cachedName(module->Name()),
+      m_cachedName(QString::fromUtf8(module->Name())),
       m_cachedHasVersion(!QString((*m_backend->getConfig())[module->Name()]["Version"]).isEmpty())
 {
     Q_ASSERT(module != 0);
@@ -151,7 +151,11 @@ bool CSwordModuleInfo::isEncrypted() const {
     */
 
     //This code is still right, though we do no longer write to the module config files any more
-    sword::ConfigEntMap config = backend()->getConfig()->Sections.find(name().toUtf8().constData())->second;
+    std::map < sword::SWBuf, sword::ConfigEntMap, std::less < sword::SWBuf > >::iterator SectionMapIter;
+    SectionMapIter = backend()->getConfig()->Sections.find(name().toUtf8().constData());
+    if (SectionMapIter == backend()->getConfig()->Sections.end())
+        return false;
+    sword::ConfigEntMap config = SectionMapIter->second;
     sword::ConfigEntMap::iterator it = config.find("CipherKey");
 
     return it != config.end();
