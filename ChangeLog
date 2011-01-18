@@ -1,3 +1,6 @@
+2011-01-16 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix crash when using Bookshelf Manager with Xiphos source
+
 2011-01-15 Jaak Ristioja <ristioja@gmail.com>
     * Fixed category detection for modules.
 
