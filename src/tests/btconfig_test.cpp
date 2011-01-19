@@ -52,6 +52,18 @@ private slots:
         QVERIFY(m_btConfig->getValue("settings/defaults/standardBible").toString() == "KJV");
     }
 
+    void stringMapTest()
+    {
+        btconfigtypes::StringMap map;
+        map.insert(QObject::tr("Old testament"),          QString("Gen - Mal"));
+        map.insert(QObject::tr("Moses/Pentateuch/Torah"), QString("Gen - Deut"));
+        m_btConfig->setValue<btconfigtypes::StringMap>("test/map", map);
+
+        btconfigtypes::StringMap newMap = m_btConfig->getValue("test/map").value<btconfigtypes::StringMap>();
+        QVERIFY(newMap.value("Old testament") == "Gen - Mal");
+        QVERIFY(newMap.value("Moses/Pentateuch/Torah") == "Gen - Deut");
+    }
+
     void sessionNamesTest()
     {
         QVERIFY(m_btConfig->getCurrentSessionName() == "default session");
