@@ -85,8 +85,6 @@ public:
      * Returns the value for the given key. Whether the key is part of
      * the session or not is determined automatically. If the value
      * has not been set before the default value is returned.
-     * Getting values not part of the config is prohibited and will result
-     * in an assertion.
      * \param[in] key Key to get the value for.
      * \returns QVariant of the value.
      */
@@ -96,8 +94,7 @@ public:
      * \brief Set a value.
      *
      * Sets a value for a key. Whether the key should be part of the session
-     * or not is determined automatically. Setting values not part of the
-     * config is prohibited and will result in an assertion.
+     * or not is determined automatically.
      * The value type can be any type that is QVariant enabled. Those are the
      * default ones of QVariant (look at the Qt documentation), and those declared
      * in btconfigtypes.h.
