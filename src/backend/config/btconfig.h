@@ -20,6 +20,12 @@
  *
  * TODO: preserve session order
  * TODO: noncopy base class
+ * TODO: Encryption keys helper function
+ * TODO: AccelSettings helper function
+ * TODO: FilterOptions helper function
+ * TODO: DisplayOptions helper function
+ * TODO: LanguageFont helper function
+ * TODO: search scopes helper function
  */
 class BtConfig : private NoCopy
 {
