@@ -277,5 +277,5 @@ void BtConfig::deleteValue(const QString& key)
 }
 
 void BtConfig::syncConfig() {
-    m_settings->sync();
+    m_settings.sync();
 }
