@@ -117,6 +117,11 @@ public:
      * \param[in] key Key to delete.
      */
     void deleteValue(const QString& key);
+
+    /*!
+     * \brief Synchronize the underlying QSettings.
+     */
+    void syncConfig();
 };
 
 template<typename T>
