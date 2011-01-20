@@ -180,7 +180,7 @@ const QString CDisplayTemplateMgr::fillTemplate( const QString& name, const QStr
                       .replace("#MODNAME#", moduleName)
                       .replace("#MODULE_STYLESHEET#", QString(""));	// Let's fix this!
 
-    qDebug() << t;
+    //qDebug() << t;
     return t;
 }
 
