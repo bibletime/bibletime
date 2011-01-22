@@ -503,7 +503,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>(c)1999-2010, The BibleTime Team</source>
+        <source>(c)1999-2011, The BibleTime Team</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

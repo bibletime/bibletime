@@ -499,8 +499,8 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="133"/>
-        <source>(c)1999-2010, The BibleTime Team</source>
-        <translation>(c)1999-2010, BibleTime-tiimi</translation>
+        <source>(c)1999-2011, The BibleTime Team</source>
+        <translation>(c)1999-2011, BibleTime-tiimi</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="140"/>
