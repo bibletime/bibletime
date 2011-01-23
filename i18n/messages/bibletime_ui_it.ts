@@ -59,7 +59,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="112"/>
         <source>&amp;Fullscreen mode</source>
-        <translation>&amp;A schermo intero</translation>
+        <translation>&amp;Schermo intero</translation>
     </message>
     <message>
         <source>Main Toolbar</source>
@@ -518,7 +518,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletimeapp.cpp" line="35"/>
         <source>Fatal error!</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore irreversibile!</translation>
     </message>
 </context>
 <context>
@@ -555,8 +555,8 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="133"/>
-        <source>(c)1999-2011, The BibleTime Team</source>
-        <translation>(c)1999-2011, The BibleTime Team</translation>
+        <source>(c)1999-2010, The BibleTime Team</source>
+        <translation>(c)1999-2010, The BibleTime Team</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="140"/>
@@ -981,7 +981,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="113"/>
         <source>Show footnotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra note</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="114"/>
@@ -1374,7 +1374,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="166"/>
         <source>This default folder in your home directory can&apos;t be removed</source>
-        <translation>Questa cartella nella tua home directory non può essere rimossa</translation>
+        <translation>Questa cartella predefinita nella tua home directory non può essere rimossa</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="172"/>
@@ -1596,7 +1596,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="98"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Rimuovi</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="104"/>
@@ -1724,7 +1724,7 @@ scorciatoia</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="260"/>
         <source>Default</source>
-        <translation>Default</translation>
+        <translation>Predefinito</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="265"/>
@@ -1734,7 +1734,7 @@ scorciatoia</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="280"/>
         <source>Default key:</source>
-        <translation>Chiave di default:</translation>
+        <translation>Chiave predefinita:</translation>
     </message>
 </context>
 <context>
@@ -1856,7 +1856,7 @@ scorciatoia</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="157"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Rimuovi</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="163"/>
@@ -1934,17 +1934,17 @@ scorciatoia</translation>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="152"/>
         <source>The Bookshelf, Bookmark, and Mag windows can be moved to new locations by dragging them from the title at the top of each window. They can be placed to the left, right, above, or below the works windows. They can be placed on top of each other and tabs will appear so each window can be selected. They can be resized by dragging the border between the window and another window.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le finestre Libreria, Segnalibri, e Lente possono essere spostate in nuove posizioni trascinandole dal titolo nella parte superiore della finestra. Possono essere posizionate a sinistra, destra, sopra o sotto alla finestra dei documenti. Possono essere posizionate una sopra l&apos;altra e delle linguette appariranno affinchè ogni finestra possa essere selezionata. Possono essere ridimensionate trascinando il bordo tra le finestre.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="158"/>
         <source>You can search for Strong&apos;s numbers in a work. Start with a work that has Strong&apos;s numbers and hover over a word. Right click the word and use the Strong&apos;s Search menu. A search dialog will appear that allows you to see the use of the same Strong&apos;s number in other locations of the work.</source>
-        <translation type="unfinished"></translation>
+        <translation>Puoi cercare i numeri Strong in un documento. Parti da un documento che ha i numeri Strong e vai su una parola. Clicca di destro la parola e usa la Ricerca Strong. Una finestra di dialogo si aprirà permettendoti di vedere l&apos;utilizzo dello stesso numero Strong in altre parti del documento.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="173"/>
         <source>You can save your open windows in a session. Such a session can easily be restored later on. You can save as many sessions as you like. The session feature can be accessed under the Window menu entry.</source>
-        <translation type="unfinished"></translation>
+        <translation>Puoi salvare le tue finestre aperte in una sessione. Tale sessione può essere facilmente ripristinata in seguito. Puoi salvare tante sessioni quante ne vuoi. Puoi accedere alla funzione sessione dal menu Finestra.</translation>
     </message>
     <message>
         <source>The Bookshelf, Bookmark, and Mag windows can be moved to new locations by dragging them from the title at the top of each window. They can be placed to the left, right, above, or below the works windows. They can be placed on top of each other and tabs will appear so each window can be selected. They can be resized by dragging theborder between the window and another window.</source>
@@ -4546,7 +4546,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/main.cpp" line="49"/>
         <source>Open the default Bible with the reference &lt;ref&gt;</source>
-        <translation>Apre la Bibbia di default con i riferimenti &lt;ref&gt;</translation>
+        <translation>Apre la Bibbia predefinita con i riferimenti &lt;ref&gt;</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="52"/>
@@ -4556,12 +4556,12 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/main.cpp" line="99"/>
         <source>Error: %1 expects an argument.</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore: %1 aspetta un argomento.</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="102"/>
         <source>See --help for details.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vedi --help per dettagli.</translation>
     </message>
     <message>
         <source>All command-line arguments not recognized by BibleTime or Qt will be silently ignored.</source>
@@ -4579,12 +4579,12 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="49"/>
         <source>Default template &quot;%1&quot; not found!</source>
-        <translation type="unfinished"></translation>
+        <translation>Modello predefinito &quot;%1&quot; non trovato!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="114"/>
         <source>Replace</source>
-        <translation type="unfinished">Sostituisci</translation>
+        <translation>Sostituisci</translation>
     </message>
 </context>
 <context>
@@ -4641,7 +4641,7 @@ Language name ppk</extracomment>
         <location filename="../../src/util/dialogutil.cpp" line="53"/>
         <source>Restore defaults</source>
         <comment>Dialog Button</comment>
-        <translation>Ripristina default</translation>
+        <translation>Ripristina predefiniti</translation>
     </message>
     <message>
         <location filename="../../src/util/dialogutil.cpp" line="54"/>
@@ -5477,7 +5477,7 @@ Questo potrebbe richiedere parecchio tempo. Procedere all&apos;indicizzazione?</
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="263"/>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
-        <translation>I filtri controllano l&apos;aspetto del testo. Qui puoi specificare le impostazioni di default per tutti i filtri. Puoi ignorare queste impostazioni in ogni finestra.</translation>
+        <translation>I filtri controllano l&apos;aspetto del testo. Qui puoi specificare le impostazioni predefinites per tutti i filtri. Puoi ignorare queste impostazioni in ogni finestra.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="287"/>
