@@ -31,7 +31,26 @@ class BtActionCollection : public QObject {
         QAction* addAction(const QString &name, const QObject *receiver, const char* member = 0);
         QList<QAction*> actions();
         QAction* action(const QString& name);
+
+        /*!
+         * \brief Read shortcuts from config.
+         *
+         * Read the shortcuts for the given group
+         * from the configuration and add them to
+         * this action collection.
+         *
+         * \param[in] group Shortcut group to read actions from.
+         */
         void readShortcuts(const QString &group);
+
+        /*!
+         * \brief Write shortcuts to config.
+         *
+         * Write the shortcuts of this action collection
+         * to the given group in the configuration.
+         *
+         * \param[in] group Shortcut group to write actions to.
+         */
         void writeShortcuts(const QString& group);
         QKeySequence getDefaultShortcut(QAction* action);
 
