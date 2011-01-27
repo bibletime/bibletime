@@ -9,6 +9,8 @@
 #include <QSettings>
 #include <util/nocopy.h>
 
+namespace btconfiguration
+{
 /*!
  * \brief Class holding and managing the configuration of bibletime.
  *
@@ -19,13 +21,6 @@
  * of this class.
  *
  * TODO: preserve session order
- * TODO: noncopy base class
- * TODO: Encryption keys helper function
- * TODO: AccelSettings helper function
- * TODO: FilterOptions helper function
- * TODO: DisplayOptions helper function
- * TODO: LanguageFont helper function
- * TODO: search scopes helper function
  */
 class BtConfig : private NoCopy
 {
@@ -125,6 +120,48 @@ public:
      * \brief Synchronize the underlying QSettings.
      */
     void syncConfig();
+
+
+    // helper functions
+
+    /*!
+     * \brief Function to set a module decryption key.
+     *
+     * This helper function will set a module decryption key
+     * in the configuration. Any previous key will be overwritten.
+     *
+     * \param[in] config BtConfig to use
+     * \param[in] name Name of module to set the key for
+     * \param[in] key Decryption key to set as string
+     */
+    void setModuleEncryptionKey(BtConfig& config, const QString &name, const QString &key);
+
+    /*!
+     * \brief Function to get a module decryption key.
+     *
+     * This helper function will retrieve a previously set
+     * module decryption key from the configuration. If the key
+     * is not set it will return a null string.
+     *
+     * \param[in] config BtConfig to use
+     * \param[in] name Name of module to retrieve the key for
+     * \returns Decryption key as a string
+     */
+    QString getModuleEncryptionKey(BtConfig& config, const QString &name);
+
+
+    QHash< QString, QList<QKeySequence> > getShortcuts(const QString& shortcutGroup);
+    void setShortcuts( const QString& shortcutGroup, const QHash< QString, QList< QKeySequence > >& shortcuts);
+
+    FilterOptions getFilterOptionDefaults();
+    DisplayOptions getDisplayOptionDefaults();
+
+    QFont &getDefault(const CLanguageMgr::Language * const);
+    void set(const CLanguageMgr::Language * const language, const FontSettingsPair &fontSettings);
+    FontSettingsPair get(const CLanguageMgr::Language * const);
+
+    void saveSearchScopes();
+    void loadSearchScopes();
 };
 
 template<typename T>
@@ -150,5 +187,6 @@ inline void BtConfig::setValue(const QString& key, const char* const value)
 {
     setValue<QString>(key, QString(value));
 }
+} //btconfiguration
 
 #endif // BTCONFIG_H

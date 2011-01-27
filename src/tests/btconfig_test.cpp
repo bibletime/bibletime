@@ -6,6 +6,8 @@
 #include "backend/config/btconfig.h"
 #include "backend/config/btconfigtypes.h"
 
+namespace btconfiguration
+{
 class BtConfigTest: public QObject
 {
     Q_OBJECT
@@ -110,7 +112,8 @@ private slots:
         QVERIFY(m_btConfig->getValue("settings/defaults/standardBible").toString() == "KJV");
     }
 };
+} //btconfiguration
 
-QTEST_MAIN(BtConfigTest)
+QTEST_MAIN(btconfiguration::BtConfigTest)
 
 #include "btconfig_test.moc"

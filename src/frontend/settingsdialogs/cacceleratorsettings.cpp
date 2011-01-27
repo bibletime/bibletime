@@ -69,7 +69,7 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(QWidget *parent)
     // ------ Application -------------- //
     m_application.actionCollection = new BtActionCollection(this);
     BibleTime::insertKeyboardActions( m_application.actionCollection);
-    CBTConfig::setupAccelSettings(CBTConfig::application, m_application.actionCollection);
+    m_application.actionCollection->readShortcuts("Application shortcuts");
     m_application.keyChooser = new BtShortcutsEditor(m_application.actionCollection, m_keyChooserStack);
     m_keyChooserStack->addWidget(m_application.keyChooser);
     ok = connect(m_application.keyChooser, SIGNAL(keyChangeRequest(BtShortcutsEditor*, const QString&)),
@@ -79,7 +79,7 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(QWidget *parent)
     // ----- All display windows ------ //
     m_general.actionCollection = new BtActionCollection(this);
     CDisplayWindow::insertKeyboardActions( m_general.actionCollection);
-    CBTConfig::setupAccelSettings(CBTConfig::allWindows, m_general.actionCollection);
+    m_general.actionCollection->readShortcuts("Displaywindow shortcuts");
     m_general.keyChooser = new BtShortcutsEditor(m_general.actionCollection, m_keyChooserStack);
     m_keyChooserStack->addWidget(m_general.keyChooser);
     ok = connect(m_general.keyChooser, SIGNAL(keyChangeRequest(BtShortcutsEditor*, const QString&)),
@@ -89,7 +89,7 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(QWidget *parent)
     // ----- Bible windows ------ //
     m_bible.actionCollection = new BtActionCollection(this);
     CBibleReadWindow::insertKeyboardActions( m_bible.actionCollection);
-    CBTConfig::setupAccelSettings(CBTConfig::bibleWindow, m_bible.actionCollection);
+    m_bible.actionCollection->readShortcuts("Bible shortcuts");
     m_bible.keyChooser = new BtShortcutsEditor(m_bible.actionCollection, m_keyChooserStack);
     m_keyChooserStack->addWidget(m_bible.keyChooser);
     ok = connect(m_bible.keyChooser, SIGNAL(keyChangeRequest(BtShortcutsEditor*, const QString&)),
@@ -99,7 +99,7 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(QWidget *parent)
     // ----- Commentary windows ------ //
     m_commentary.actionCollection = new BtActionCollection(this);
     CCommentaryReadWindow::insertKeyboardActions( m_commentary.actionCollection);
-    CBTConfig::setupAccelSettings(CBTConfig::commentaryWindow,    m_commentary.actionCollection);
+    m_commentary.actionCollection->readShortcuts("Commentary shortcuts");
     m_commentary.keyChooser = new BtShortcutsEditor(m_commentary.actionCollection, m_keyChooserStack);
     m_keyChooserStack->addWidget(m_commentary.keyChooser);
     ok = connect(m_commentary.keyChooser, SIGNAL(keyChangeRequest(BtShortcutsEditor*, const QString&)),
@@ -109,7 +109,7 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(QWidget *parent)
     // ----- Lexicon windows ------ //
     m_lexicon.actionCollection = new BtActionCollection(this);
     CLexiconReadWindow::insertKeyboardActions(  m_lexicon.actionCollection );
-    CBTConfig::setupAccelSettings(CBTConfig::lexiconWindow, m_lexicon.actionCollection);
+    m_lexicon.actionCollection->readShortcuts("Lexicon shortcuts");
     m_lexicon.keyChooser = new BtShortcutsEditor(m_lexicon.actionCollection, m_keyChooserStack                                         );
     m_keyChooserStack->addWidget(m_lexicon.keyChooser);
     ok = connect(m_lexicon.keyChooser, SIGNAL(keyChangeRequest(BtShortcutsEditor*, const QString&)),
@@ -119,7 +119,7 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(QWidget *parent)
     // ----- Book windows ------ //
     m_book.actionCollection = new BtActionCollection(this);
     CBookReadWindow::insertKeyboardActions( m_book.actionCollection);
-    CBTConfig::setupAccelSettings(CBTConfig::bookWindow, m_book.actionCollection);
+    m_book.actionCollection->readShortcuts("Book shortcuts");
     m_book.keyChooser = new BtShortcutsEditor(m_book.actionCollection, m_keyChooserStack);
     m_keyChooserStack->addWidget(m_book.keyChooser);
     ok = connect(m_book.keyChooser, SIGNAL(keyChangeRequest(BtShortcutsEditor*, const QString&)),
@@ -232,12 +232,12 @@ void CAcceleratorSettingsPage::save() {
     if (m_book.keyChooser)
         m_book.keyChooser->commitChanges();
 
-    CBTConfig::saveAccelSettings(CBTConfig::application, m_application.actionCollection);        //application
-    CBTConfig::saveAccelSettings(CBTConfig::allWindows, m_general.actionCollection);            //read display windows
-    CBTConfig::saveAccelSettings(CBTConfig::bibleWindow, m_bible.actionCollection);                //bible
-    CBTConfig::saveAccelSettings(CBTConfig::commentaryWindow, m_commentary.actionCollection);    //commentary
-    CBTConfig::saveAccelSettings(CBTConfig::lexiconWindow, m_lexicon.actionCollection);            //lexicon
-    CBTConfig::saveAccelSettings(CBTConfig::bookWindow,    m_book.actionCollection);                //book
+    m_application.actionCollection->writeShortcuts("Application shortcuts"); //application
+    m_general.actionCollection->writeShortcuts("Displaywindow shortcuts"); //read display windows
+    m_bible.actionCollection->writeShortcuts("Bible shortcuts"); //bible
+    m_commentary.actionCollection->writeShortcuts("Commentary shortcuts"); //commentary
+    m_lexicon.actionCollection->writeShortcuts("Lexicon shortcuts"); //lexicon
+    m_book.actionCollection->writeShortcuts("Book shortcuts"); //book
 }
 
 void CAcceleratorSettingsPage::slotKeyChooserTypeChanged(const QString& title) {

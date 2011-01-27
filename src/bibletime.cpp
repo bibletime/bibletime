@@ -141,7 +141,7 @@ void BibleTime::saveSettings() {
 void BibleTime::readSettings() {
     qDebug() << "******************BibleTime::readSettings******************************";
     //  accel()->readSettings(CBTConfig::getConfig());
-    CBTConfig::setupAccelSettings(CBTConfig::application, m_actionCollection);
+    m_actionCollection->readShortcuts("Application shortcuts");
 
     m_viewToolbarAction->setChecked( CBTConfig::get(CBTConfig::toolbar) );
     slotToggleMainToolbar();
@@ -305,7 +305,7 @@ void BibleTime::refreshDisplayWindows() {
 
 /** Refresh main window accelerators */
 void BibleTime::refreshBibleTimeAccel() {
-    CBTConfig::setupAccelSettings(CBTConfig::application, m_actionCollection);
+    m_actionCollection->readShortcuts("Application shortcuts");
 }
 
 void BibleTime::closeEvent(QCloseEvent *event) {

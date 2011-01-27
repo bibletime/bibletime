@@ -210,7 +210,7 @@ void CDisplayWindow::initActions() {
     Q_ASSERT(ok);
     addAction(popupaction);
 
-    CBTConfig::setupAccelSettings(CBTConfig::allWindows, ac);
+    ac->readShortcuts("Displaywindow shortcuts");
 }
 
 /** Refresh the settings of this window. */
@@ -233,8 +233,8 @@ void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
 
     lookup();
 
-    CBTConfig::setupAccelSettings(CBTConfig::allWindows, actionCollection());
-    CBTConfig::setupAccelSettings(CBTConfig::readWindow, actionCollection());
+    actionCollection()->readShortcuts("DisplayWindow shortcuts");
+    actionCollection()->readShortcuts("Readwindow shortcuts");
     qDebug() << "CDisplayWindow::reload emits sigModuleListSet...";
     emit sigModuleListSet(m_modules);
 }

@@ -67,7 +67,7 @@ void CBookReadWindow::initActions() {
     QObject::connect(m_treeAction, SIGNAL(triggered()), this, SLOT(treeToggled()) );
     addAction(m_treeAction);
 
-    CBTConfig::setupAccelSettings(CBTConfig::bookWindow, ac);
+    ac->readShortcuts("Book shortcuts");
 }
 
 void CBookReadWindow::insertKeyboardActions( BtActionCollection* const a ) {

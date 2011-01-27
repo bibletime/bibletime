@@ -105,7 +105,7 @@ void CCommentaryReadWindow::initActions() {
     m_syncButton = qaction;
     addAction(qaction);
 
-    CBTConfig::setupAccelSettings(CBTConfig::commentaryWindow, actionCollection());
+    actionCollection()->readShortcuts("Commentary shortcuts");
 }
 
 void CCommentaryReadWindow::applyProfileSettings( CProfileWindow* profileWindow ) {
@@ -138,7 +138,7 @@ void CCommentaryReadWindow::reload(CSwordBackend::SetupChangedReason reason) {
     verseKey()->setLocale( CSwordBackend::instance()->booknameLanguage().toLatin1() );
     keyChooser()->refreshContent();
 
-    CBTConfig::setupAccelSettings(CBTConfig::commentaryWindow, actionCollection());
+    actionCollection()->readShortcuts("Commentary shortcuts");
 }
 
 /** rapper around key() to return the right type of key. */

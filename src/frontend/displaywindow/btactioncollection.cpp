@@ -86,50 +86,19 @@ QKeySequence BtActionCollection::getDefaultShortcut(QAction* action) {
     return QKeySequence();
 }
 
-void BtActionCollection::setConfigGroup(const QString &group) {
-    m_groupName = group;
+void BtActionCollection::readShortcuts(const QString &group) {
+    QHash<QString, QList <QKeySequence > > shortcuts = btconfiguration::BtConfig.getInstance().getShortcuts(group);
+    for(QHash::const_iterator<QString, QList <QKeySequence > iter = shortcuts.begin();
+                                                             iter != shortcuts.end();
+                                                             iter++)
+        action(iter.key())->setShortcuts(iter.value());
 }
 
-void BtActionCollection::readSettings() {
-    QSettings* settings = CBTConfig::getConfig();
-    settings->beginGroup(m_groupName);
-    QStringList keyList = settings->childKeys();
-    for (int i = 0; i < keyList.size(); i++) {
-        QString key = keyList.at(i);
-        QVariant variant = settings->value(key);
-        QList<QKeySequence> shortcuts;
-        if ( variant != QVariant()) {
-            QList<QVariant> varShortcuts = variant.toList();
-            for (int i = 0; i < varShortcuts.count(); i++) {
-                QString keys = varShortcuts.at(i).toString();
-                QKeySequence shortcut(keys);
-                shortcuts.append(shortcut);
-            }
-        }
-        action(key)->setShortcuts(shortcuts);
-    }
-    settings->endGroup();
-}
-
-static QList<QVariant> keyListToVariantList(const QList<QKeySequence>& keyList) {
-    QList<QVariant> varList;
-    for (int i = 0; i < keyList.count(); i++) {
-        QKeySequence keySeq = keyList.at(i);
-        varList.append(keySeq.toString());
-    }
-    return varList;
-}
-
-void BtActionCollection::writeSettings() {
-    QSettings* settings = CBTConfig::getConfig();
-    settings->beginGroup(m_groupName);
-    QMap<QString, BtActionItem*>::const_iterator iter = m_actions.constBegin();
-    while (iter != m_actions.constEnd()) {
-        QString actionName = iter.key();
-        QList<QKeySequence> keyList = iter.value()->action->shortcuts();
-        QList<QVariant> varList = keyListToVariantList(keyList);
-        settings->setValue(actionName, varList);
-        iter++;
-    }
-    settings->endGroup();
+void BtActionCollection::writeShortcuts(const QString &group) {
+    QHash< QString, QList<QKeySequence> > shortcuts;
+    for(QMap<QString, BtActionItem*>::const_iterator iter = m_actions.begin();
+                                                             iter != m_actions.end();
+                                                             iter++)
+        shortcuts.insert(iter.key(), iter.value()->action->shortcuts());
+    btconfiguration::BtConfig.getInstance().setShortcuts(group, shortcuts);
 }

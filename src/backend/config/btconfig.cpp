@@ -11,6 +11,8 @@
 #include "backend/btmoduletreeitem.h"
 #include "frontend/searchdialog/btsearchoptionsarea.h"
 
+namespace btconfiguration
+{
 /*
  * set the instance variable initially to NULL, so it can be safely checked
  * whether the variable has been initialized yet.
@@ -279,3 +281,47 @@ void BtConfig::deleteValue(const QString& key)
 void BtConfig::syncConfig() {
     m_settings.sync();
 }
+
+// Helper functions
+
+QHash< QString, QList<QKeySequence> > BtConfig::getShortcuts( const QString& shortcutGroup )
+{
+    qDebug() << "BtConfig::readShortcuts begin";
+    m_settings.beginGroup(shortcutGroup);
+        QHash< QString, QList<QKeySequence> > allShortcuts;
+        QStringList keyList = m_settings->childKeys();
+        foreach(QString key, keyList) {
+            QVariant variant = m_settings->value(key);
+            QList<QKeySequence> shortcuts;
+            if (variant != QVariant()) {
+                QList<QVariant> keyShortcuts = variant.toList();
+                foreach (QVariant shortcutVariant, varShortcuts) {
+                    QKeySequence shortcut(shortcutVariant.toString());
+                    shortcuts.append(shortcut);
+                }
+            }
+            allShortcuts.insert(key, shortcuts);
+        }
+    m_settings->endGroup();
+    qDebug() << "BtConfig::readShortcuts end";
+    return allShortcuts;
+}
+
+void BtConfig::setShortcuts( const QString& shortcutGroup, const QHash< QString, QList<QKeySequence> >& shortcuts )
+{
+    qDebug() << "BtConfig::setShortcuts begin";
+    m_settings.beginGroup(shortcutGroup);
+        for(QHash<QString, QList<QKeySequence> >::const_iterator iter = shortcuts.begin();
+                                                                 iter != shortcuts.end();
+                                                                 iter++)
+        {
+            QList<QVariant> varList;
+                foreach(QKeySequence seq, iter.value())
+                    varList.append(seq.toString());
+            m_settings.setValue(iter.key(), varList);
+        }
+    m_settings.endGroup();
+    qDebug() << "BtConfig::setShortcuts end";
+}
+
+} //btconfiguration

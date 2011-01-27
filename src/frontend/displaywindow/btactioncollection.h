@@ -15,6 +15,7 @@
 #include <QList>
 #include <QMap>
 
+#include "backend/config/btconfig.h"
 
 class BtActionItem;
 class QAction;
@@ -30,14 +31,12 @@ class BtActionCollection : public QObject {
         QAction* addAction(const QString &name, const QObject *receiver, const char* member = 0);
         QList<QAction*> actions();
         QAction* action(const QString& name);
-        void setConfigGroup(const QString &group);
-        void readSettings();
-        void writeSettings();
+        void readShortcuts(const QString &group);
+        void writeShortcuts(const QString& group);
         QKeySequence getDefaultShortcut(QAction* action);
 
     private:
         QMap<QString, BtActionItem*> m_actions;
-        QString m_groupName;
 };
 
 #endif

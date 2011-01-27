@@ -145,8 +145,8 @@ void CLexiconReadWindow::initActions() {
     addAction(m_actions.print.entry);
 
     // init with the user defined settings
-    qDebug() << "call CBTConfig::setupAccelSettings(CBTConfig::lexiconWindow, ac); and end CLexiconReadWindow::initActions";
-    CBTConfig::setupAccelSettings(CBTConfig::lexiconWindow, ac);
+    qDebug() << "call ac->readShortcuts() and end CLexiconReadWindow::initActions";
+    ac->readShortcuts("Lexicon shortcuts");
 }
 
 /** No descriptions */
@@ -316,7 +316,7 @@ void CLexiconReadWindow::updatePopupMenu() {
 void CLexiconReadWindow::reload(CSwordBackend::SetupChangedReason reason) {
     CReadWindow::reload(reason);
 
-    CBTConfig::setupAccelSettings(CBTConfig::lexiconWindow, actionCollection());
+    actionCollection()->readShortcuts("Lexicon shortcuts");
 }
 
 /** No descriptions */
