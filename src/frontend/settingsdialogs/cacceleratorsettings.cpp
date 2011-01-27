@@ -110,7 +110,7 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(QWidget *parent)
     m_lexicon.actionCollection = new BtActionCollection(this);
     CLexiconReadWindow::insertKeyboardActions(  m_lexicon.actionCollection );
     m_lexicon.actionCollection->readShortcuts("Lexicon shortcuts");
-    m_lexicon.keyChooser = new BtShortcutsEditor(m_lexicon.actionCollection, m_keyChooserStack                                         );
+    m_lexicon.keyChooser = new BtShortcutsEditor(m_lexicon.actionCollection, m_keyChooserStack);
     m_keyChooserStack->addWidget(m_lexicon.keyChooser);
     ok = connect(m_lexicon.keyChooser, SIGNAL(keyChangeRequest(BtShortcutsEditor*, const QString&)),
                  this, SLOT(completeKeyChangeRequest(BtShortcutsEditor*, const QString&)));
