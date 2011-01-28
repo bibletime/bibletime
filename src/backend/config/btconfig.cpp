@@ -289,20 +289,20 @@ QHash< QString, QList<QKeySequence> > BtConfig::getShortcuts( const QString& sho
     qDebug() << "BtConfig::readShortcuts begin";
     m_settings.beginGroup(shortcutGroup);
         QHash< QString, QList<QKeySequence> > allShortcuts;
-        QStringList keyList = m_settings->childKeys();
+        QStringList keyList = m_settings.childKeys();
         foreach(QString key, keyList) {
-            QVariant variant = m_settings->value(key);
+            QVariant variant = m_settings.value(key);
             QList<QKeySequence> shortcuts;
             if (variant != QVariant()) {
                 QList<QVariant> keyShortcuts = variant.toList();
-                foreach (QVariant shortcutVariant, varShortcuts) {
+                foreach (QVariant shortcutVariant, keyShortcuts) {
                     QKeySequence shortcut(shortcutVariant.toString());
                     shortcuts.append(shortcut);
                 }
             }
             allShortcuts.insert(key, shortcuts);
         }
-    m_settings->endGroup();
+    m_settings.endGroup();
     qDebug() << "BtConfig::readShortcuts end";
     return allShortcuts;
 }
