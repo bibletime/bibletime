@@ -39,7 +39,7 @@ private:
     QSettings m_settings;
     QString m_currentSessionCache; // cache of the current session string, for speed
 public:
-    BtConfig& getInstance();
+    static BtConfig& getInstance();
     ~BtConfig();
 
     /*!
@@ -134,7 +134,7 @@ public:
      * \param[in] name Name of module to set the key for
      * \param[in] key Decryption key to set as string
      */
-    void setModuleEncryptionKey(BtConfig& config, const QString &name, const QString &key);
+    //void setModuleEncryptionKey(BtConfig& config, const QString &name, const QString &key);
 
     /*!
      * \brief Function to get a module decryption key.
@@ -147,13 +147,29 @@ public:
      * \param[in] name Name of module to retrieve the key for
      * \returns Decryption key as a string
      */
-    QString getModuleEncryptionKey(BtConfig& config, const QString &name);
+    //QString getModuleEncryptionKey(BtConfig& config, const QString &name);
 
-
+    /*!
+     * \brief Gets the shortcuts for the given group.
+     *
+     * Returns a hash of shortcuts for strings for the respective
+     * shortcut group.
+     * \param[in] shortcutGroup The group to retrieve shortcuts for.
+     * \returns Hash of strings and lists of shortcuts.
+     */
     QHash< QString, QList<QKeySequence> > getShortcuts(const QString& shortcutGroup);
+
+    /*!
+     * \brief Sets the shortcuts for the given group.
+     *
+     * Writes a hash of shortcuts for strings for the respective
+     * shortcut group.
+     * \param[in] shortcutGroup The group to retrieve shortcuts for.
+     * \param[in] Hash of strings and lists of shortcuts to write.
+     */
     void setShortcuts( const QString& shortcutGroup, const QHash< QString, QList< QKeySequence > >& shortcuts);
 
-    FilterOptions getFilterOptionDefaults();
+    /*FilterOptions getFilterOptionDefaults();
     DisplayOptions getDisplayOptionDefaults();
 
     QFont &getDefault(const CLanguageMgr::Language * const);
@@ -161,7 +177,7 @@ public:
     FontSettingsPair get(const CLanguageMgr::Language * const);
 
     void saveSearchScopes();
-    void loadSearchScopes();
+    void loadSearchScopes();*/
 };
 
 template<typename T>

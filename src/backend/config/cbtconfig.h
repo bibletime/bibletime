@@ -179,11 +179,6 @@ void set(const CLanguageMgr::Language * const language,
 FilterOptions  getFilterOptionDefaults();
 DisplayOptions getDisplayOptionDefaults();
 
-void setupAccelSettings(const keys type,
-                        BtActionCollection * const actionCollection);
-void saveAccelSettings (const keys type,
-                        BtActionCollection * const actionCollection);
-
 QString getModuleEncryptionKey(const QString &name);
 void    setModuleEncryptionKey(const QString &name, const QString &key);
 
