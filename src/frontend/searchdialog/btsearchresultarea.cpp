@@ -27,6 +27,7 @@
 #include "frontend/searchdialog/csearchdialog.h"
 #include "frontend/searchdialog/csearchresultview.h"
 #include "util/tool.h"
+#include "backend/config/cbtconfig.h"
 
 
 namespace Search {

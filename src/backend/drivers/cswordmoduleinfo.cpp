@@ -22,6 +22,7 @@
 #include <QRegExp>
 #include <QSettings>
 #include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "backend/drivers/cswordlexiconmoduleinfo.h"
 #include "backend/keys/cswordkey.h"
 #include "backend/managers/clanguagemgr.h"
@@ -225,7 +226,7 @@ void CSwordModuleInfo::buildIndex() {
 
     try {
         //Without this we don't get strongs, lemmas, etc
-        backend()->setFilterOptions ( CBTConfig::getFilterOptionDefaults() );
+        backend()->setFilterOptions ( btconfiguration::BtConfig::getInstance().getFilterOptions() );
         //make sure we reset all important filter options which influcence the plain filters.
         // turn on these options, they are needed for the EntryAttributes population
         backend()->setOption( CSwordModuleInfo::strongNumbers,  true );

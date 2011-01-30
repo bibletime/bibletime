@@ -184,9 +184,25 @@ public:
      */
     void setShortcuts( const QString& shortcutGroup, const QHash< QString, QList< QKeySequence > >& shortcuts);
 
+	/*!
+	 * \brief Returns current filter options.
+	 * 
+	 * Returns a structure containing the current
+	 * settings to be used for filtering.
+	 * 
+	 * \returns FilterOptions structure containing filter settings.
+	 */
+    FilterOptions getFilterOptions();
 
-    FilterOptions getFilterOptionDefaults();
-    DisplayOptions getDisplayOptionDefaults();
+	/*!
+	 * \brief Returns current display options.
+	 * 
+	 * Returns a structure containing the current
+	 * settings to be used for displaying texts.
+	 * 
+	 * \returns DisplayOptions structure containing display settings.
+	 */
+    DisplayOptions getDisplayOptions();
 
     QFont &getDefault(const CLanguageMgr::Language * const);
     void set(const CLanguageMgr::Language * const language, const FontSettingsPair &fontSettings);

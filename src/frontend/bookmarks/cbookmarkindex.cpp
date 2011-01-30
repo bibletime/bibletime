@@ -29,6 +29,7 @@
 #include <QTreeWidgetItem>
 #include <QToolTip>
 #include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/referencemanager.h"
 #include "frontend/cdragdrop.h"
@@ -710,7 +711,7 @@ void CBookmarkIndex::printBookmarks() {
         return;
     }
     QSharedPointer<Printing::CPrinter> printer(
-        new Printing::CPrinter( this, CBTConfig::getDisplayOptionDefaults(), CBTConfig::getFilterOptionDefaults() )
+        new Printing::CPrinter( this, btconfiguration::BtConfig::getInstance().getDisplayOptions(), btconfiguration::BtConfig::getInstance().getFilterOptions() )
     );
     printer->printKeyTree(tree);
 }

@@ -16,6 +16,7 @@
 #include "backend/keys/cswordversekey.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
 #include "backend/managers/referencemanager.h"
+#include "backend/config/cbtconfig.h"
 
 
 namespace Rendering {

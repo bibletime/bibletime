@@ -21,6 +21,7 @@
 #include "frontend/cexportmanager.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
+#include "backend/config/btconfig.h"
 
 
 namespace Search {
@@ -173,7 +174,7 @@ void CSearchResultView::printItems() {
     foreach (QTreeWidgetItem* k, items) {
         list.append( k->text(0) );
     }
-    mgr.printKeyList( list, module(), CBTConfig::getDisplayOptionDefaults(), CBTConfig::getFilterOptionDefaults() );
+    mgr.printKeyList( list, module(), btconfiguration::BtConfig::getInstance().getDisplayOptions(), btconfiguration::BtConfig::getInstance().getFilterOptions() );
 }
 
 void CSearchResultView::saveItems() {

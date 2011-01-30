@@ -15,6 +15,7 @@
 #include <QStringList>
 #include <QWidget>
 #include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "backend/keys/cswordkey.h"
 #include "bibletime.h"
 #include "frontend/cmdiarea.h"
@@ -371,8 +372,8 @@ bool CDisplayWindow::init() {
     initConnections();
     setupPopupMenu();
 
-    m_filterOptions = CBTConfig::getFilterOptionDefaults();
-    m_displayOptions = CBTConfig::getDisplayOptionDefaults();
+    m_filterOptions = btconfiguration::BtConfig::getInstance().getFilterOptions();
+    m_displayOptions = btconfiguration::BtConfig::getInstance().getDisplayOptions();
     emit sigDisplayOptionsChanged(m_displayOptions);
     emit sigFilterOptionsChanged(m_filterOptions);
     emit sigModulesChanged(modules());

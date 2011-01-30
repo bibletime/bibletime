@@ -334,7 +334,7 @@ void BtConfig::setShortcuts( const QString& shortcutGroup, const QHash< QString,
     qDebug() << "BtConfig::setShortcuts end";
 }
 
-FilterOptions BtConfig::getFilterOptionDefaults()
+FilterOptions BtConfig::getFilterOptions()
 {
     FilterOptions options;
 
@@ -354,7 +354,7 @@ FilterOptions BtConfig::getFilterOptionDefaults()
     return options;
 }
 
-DisplayOptions BtConfig::getDisplayOptionDefaults()
+DisplayOptions BtConfig::getDisplayOptions()
 {
         DisplayOptions options;
     options.lineBreaks   = getValue("presentation/lineBreaks").toInt();

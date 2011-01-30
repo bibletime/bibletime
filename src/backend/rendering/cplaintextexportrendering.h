@@ -11,6 +11,7 @@
 #define RENDERINGCPLAINTEXTEXPORTRENDERING_H
 
 #include "backend/rendering/chtmlexportrendering.h"
+#include "backend/config/btconfig.h"
 
 
 namespace Rendering {
@@ -26,8 +27,8 @@ class CPlainTextExportRendering : public CHTMLExportRendering {
     public:
         CPlainTextExportRendering(
             const Settings &settings,
-            const DisplayOptions &displayOptions = CBTConfig::getDisplayOptionDefaults(),
-            const FilterOptions &filterOptions = CBTConfig::getFilterOptionDefaults()
+            const DisplayOptions &displayOptions = btconfiguration::BtConfig::getInstance().getDisplayOptions(),
+            const FilterOptions &filterOptions = btconfiguration::BtConfig::getInstance().getFilterOptions()
         );
         virtual inline ~CPlainTextExportRendering() {};
 

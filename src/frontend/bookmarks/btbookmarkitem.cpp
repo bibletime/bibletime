@@ -11,7 +11,8 @@
 
 #include <QSharedPointer>
 #include <QDebug>
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
+#include "backend/managers/cswordbackend.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/keys/cswordversekey.h"
 #include "btglobal.h"
@@ -82,7 +83,7 @@ QString BtBookmarkItem::toolTip() const {
         return QString::null;
     }
 
-    FilterOptions filterOptions = CBTConfig::getFilterOptionDefaults();
+    FilterOptions filterOptions = btconfiguration::BtConfig::getInstance().getFilterOptions();
     filterOptions.footnotes = false;
     filterOptions.scriptureReferences = false;
     CSwordBackend::instance()->setFilterOptions(filterOptions);
