@@ -7,7 +7,22 @@
 #include <QStringList>
 #include <QVariant>
 #include <QSettings>
-#include <util/nocopy.h>
+
+#include "btglobal.h"
+#include "util/nocopy.h"
+#include "backend/btmoduletreeitem.h" // for BTModuleTreeItem::Grouping
+#include "frontend/searchdialog/btsearchoptionsarea.h" // for Search::BtSearchOptionsArea::SearchType
+
+namespace btconfiguration
+{
+typedef QPair<bool, QFont> FontSettingsPair;
+typedef QMap<QString, QString> StringMap;
+}
+
+// declare types used in configuration as metatype so they can be saved directly into the configuration
+Q_DECLARE_METATYPE(BTModuleTreeItem::Grouping);
+Q_DECLARE_METATYPE(Search::BtSearchOptionsArea::SearchType);
+Q_DECLARE_METATYPE(btconfiguration::StringMap);
 
 namespace btconfiguration
 {
@@ -38,6 +53,8 @@ private:
     QSet<QString> m_sessionSettings;
     QSettings m_settings;
     QString m_currentSessionCache; // cache of the current session string, for speed
+    
+    QFont *m_defaultFont;
 public:
     static BtConfig& getInstance();
     ~BtConfig();
@@ -92,7 +109,7 @@ public:
      * or not is determined automatically.
      * The value type can be any type that is QVariant enabled. Those are the
      * default ones of QVariant (look at the Qt documentation), and those declared
-     * in btconfigtypes.h.
+     * in btglobal.h.
      * \param[in] key Ket to set.
      * \tparam[in] value Value to set.
      */
@@ -130,11 +147,10 @@ public:
      * This helper function will set a module decryption key
      * in the configuration. Any previous key will be overwritten.
      *
-     * \param[in] config BtConfig to use
      * \param[in] name Name of module to set the key for
      * \param[in] key Decryption key to set as string
      */
-    //void setModuleEncryptionKey(BtConfig& config, const QString &name, const QString &key);
+    void setModuleEncryptionKey(const QString &name, const QString &key);
 
     /*!
      * \brief Function to get a module decryption key.
@@ -143,11 +159,10 @@ public:
      * module decryption key from the configuration. If the key
      * is not set it will return a null string.
      *
-     * \param[in] config BtConfig to use
      * \param[in] name Name of module to retrieve the key for
      * \returns Decryption key as a string
      */
-    //QString getModuleEncryptionKey(BtConfig& config, const QString &name);
+    QString getModuleEncryptionKey(const QString &name);
 
     /*!
      * \brief Gets the shortcuts for the given group.
@@ -169,7 +184,8 @@ public:
      */
     void setShortcuts( const QString& shortcutGroup, const QHash< QString, QList< QKeySequence > >& shortcuts);
 
-    /*FilterOptions getFilterOptionDefaults();
+
+    FilterOptions getFilterOptionDefaults();
     DisplayOptions getDisplayOptionDefaults();
 
     QFont &getDefault(const CLanguageMgr::Language * const);
@@ -177,7 +193,7 @@ public:
     FontSettingsPair get(const CLanguageMgr::Language * const);
 
     void saveSearchScopes();
-    void loadSearchScopes();*/
+    void loadSearchScopes();
 };
 
 template<typename T>

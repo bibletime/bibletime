@@ -4,7 +4,6 @@
 #include <QDebug>
 #include <qglobal.h>
 #include "backend/config/btconfig.h"
-#include "backend/config/btconfigtypes.h"
 
 namespace btconfiguration
 {
@@ -39,10 +38,10 @@ private slots:
     {
         m_btConfig->setValue("settings/defaults/standardBible", "Lut1940");
         m_btConfig->setValue("gui/showTextWindowHeaders", false);
-        m_btConfig->setValue<btconfigtypes::alignmentMode>("gui/alignmentMode", btconfigtypes::autoCascade);
+        m_btConfig->setValue<alignmentMode>("gui/alignmentMode", autoCascade);
         QVERIFY(m_btConfig->getValue("settings/defaults/standardBible").toString() == "Lut1940");
         QVERIFY(m_btConfig->getValue("gui/showTextWindowHeaders").toBool() == false);
-        QVERIFY(m_btConfig->getValue("gui/alignmentMode").value<btconfigtypes::alignmentMode>() == btconfigtypes::autoCascade);
+        QVERIFY(m_btConfig->getValue("gui/alignmentMode").value<alignmentMode>() == autoCascade);
     }
 
     void deletingOptionsTest()
@@ -56,12 +55,12 @@ private slots:
 
     void stringMapTest()
     {
-        btconfigtypes::StringMap map;
+        StringMap map;
         map.insert(QObject::tr("Old testament"),          QString("Gen - Mal"));
         map.insert(QObject::tr("Moses/Pentateuch/Torah"), QString("Gen - Deut"));
-        m_btConfig->setValue<btconfigtypes::StringMap>("test/map", map);
+        m_btConfig->setValue<StringMap>("test/map", map);
 
-        btconfigtypes::StringMap newMap = m_btConfig->getValue("test/map").value<btconfigtypes::StringMap>();
+        StringMap newMap = m_btConfig->getValue("test/map").value<StringMap>();
         QVERIFY(newMap.value("Old testament") == "Gen - Mal");
         QVERIFY(newMap.value("Moses/Pentateuch/Torah") == "Gen - Deut");
     }

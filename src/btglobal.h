@@ -28,7 +28,7 @@ struct FilterOptions {
     int scriptureReferences; /**< 0 for disabled, 1 for enabled */
     int morphSegmentation; /**< 0 for disabled, 1 for enabled */
 };
-Q_DECLARE_METATYPE(FilterOptions)
+Q_DECLARE_METATYPE(FilterOptions);
 
 /**
   Controls the display of a text.
@@ -48,6 +48,20 @@ struct DisplayOptions {
 #endif
 
 };
-Q_DECLARE_METATYPE(DisplayOptions)
+Q_DECLARE_METATYPE(DisplayOptions);
+
+/*!
+ * Enumeration indicating the alignment mode
+ * used for child windows.
+ */
+enum alignmentMode
+{
+    autoTileVertical,
+    autoTileHorizontal,
+    autoTile,
+    autoTabbed,
+    autoCascade
+};
+Q_DECLARE_METATYPE(alignmentMode);
 
 #endif // BTGLOBAL_H

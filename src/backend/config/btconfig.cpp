@@ -5,9 +5,9 @@
 #include <QLocale>
 #include <QDebug>
 #include <qglobal.h> // Q_ASSERT
+#include <QWebSettings>
 
 #include "backend/managers/cdisplaytemplatemgr.h"
-#include "btconfigtypes.h"
 #include "backend/btmoduletreeitem.h"
 #include "frontend/searchdialog/btsearchoptionsarea.h"
 
@@ -22,7 +22,7 @@ const QString BtConfig::m_sessionsGroup = "sessions";
 const QString BtConfig::m_currentSessionKey = "currentSession";
 const QString BtConfig::m_defaultSessionName = QObject::tr("default session");
 
-BtConfig::BtConfig(const QString& settingsFile) : m_defaults(), m_sessionSettings(), m_settings(settingsFile, QSettings::IniFormat), m_currentSessionCache()
+BtConfig::BtConfig(const QString& settingsFile) : m_defaults(), m_sessionSettings(), m_settings(settingsFile, QSettings::IniFormat), m_currentSessionCache(), m_defaultFont(0)
 {
     // construct defaults
         m_defaults.reserve(512); //TODO: check whether this value can be calculated automatically...
@@ -50,7 +50,7 @@ BtConfig::BtConfig(const QString& settingsFile) : m_defaults(), m_sessionSetting
         m_defaults.insert("gui/autoTabbed", false);
         m_defaults.insert("gui/autoCascade", false);
         */
-        m_defaults.insert("gui/alignmentMode", QVariant::fromValue(btconfigtypes::autoTileVertical));
+        m_defaults.insert("gui/alignmentMode", QVariant::fromValue(autoTileVertical));
 
         m_defaults.insert("presentation/lineBreaks", false);
         m_defaults.insert("presentation/verseNumbers", false);
@@ -106,7 +106,7 @@ BtConfig::BtConfig(const QString& settingsFile) : m_defaults(), m_sessionSetting
         m_defaults.insert("history/bookshelfOpenGroups", QStringList());
         m_defaults.insert("state/hiddenModules", QStringList());
         m_defaults.insert("history/searchModuleHistory", QStringList());
-            btconfigtypes::StringMap map;
+            StringMap map;
             map.insert(QObject::tr("Old testament"),          QString("Gen - Mal"));
             map.insert(QObject::tr("Moses/Pentateuch/Torah"), QString("Gen - Deut"));
             map.insert(QObject::tr("History"),                QString("Jos - Est"));
@@ -143,7 +143,7 @@ BtConfig::~BtConfig() {}
 BtConfig& BtConfig::getInstance()
 {
     if(m_instance == NULL)
-        m_instance = new BtConfig(util::directory::getUserBaseDir().absolutePath() + "/bibletimerc");
+        m_instance = new BtConfig(util::directory::getUserBaseDir().absolutePath() + "/bibletimerc.new");
     return *m_instance;
 }
 
@@ -284,6 +284,16 @@ void BtConfig::syncConfig() {
 
 // Helper functions
 
+void BtConfig::setModuleEncryptionKey(const QString& name, const QString& key)
+{
+
+}
+
+QString BtConfig::getModuleEncryptionKey(const QString& name)
+{
+    return QString();
+}
+
 QHash< QString, QList<QKeySequence> > BtConfig::getShortcuts( const QString& shortcutGroup )
 {
     qDebug() << "BtConfig::readShortcuts begin";
@@ -322,6 +332,69 @@ void BtConfig::setShortcuts( const QString& shortcutGroup, const QHash< QString,
         }
     m_settings.endGroup();
     qDebug() << "BtConfig::setShortcuts end";
+}
+
+FilterOptions BtConfig::getFilterOptionDefaults()
+{
+    FilterOptions options;
+
+    options.footnotes           = true; // Required for the info display
+    options.strongNumbers       = true; // get(strongNumbers);
+    options.headings            = getValue("gui/headings").toInt();
+    options.morphTags           = true; // Required for the info display
+    options.lemmas              = true; // Required for the info display
+    options.redLetterWords      = true;
+    options.hebrewPoints        = getValue("gui/hebrewPoints").toInt();
+    options.hebrewCantillation  = getValue("gui/hebrewCantillation").toInt();
+    options.greekAccents        = getValue("gui/greekAccents").toInt();
+    options.textualVariants     = getValue("gui/textualVariants").toInt();
+    options.scriptureReferences = getValue("gui/scriptureReferences").toInt();
+    options.morphSegmentation   = getValue("gui/morphSegmentation").toInt();
+
+    return options;
+}
+
+DisplayOptions BtConfig::getDisplayOptionDefaults()
+{
+        DisplayOptions options;
+    options.lineBreaks   = getValue("presentation/lineBreaks").toInt();
+    options.verseNumbers = getValue("presentation/verseNumbers").toInt();
+    return options;
+}
+
+QFont &BtConfig::getDefault(const CLanguageMgr::Language * const)
+{
+	// Language specific lookup of the font name
+    if (m_defaultFont) return *m_defaultFont;
+
+    /// \todo make the font name and size a configuration option
+    // int fontSize = QWebSettings::globalSettings()->fontSize(QWebSettings::DefaultFontSize);
+    int fontSize(12);
+    QString fontName(QWebSettings::globalSettings()->fontFamily(QWebSettings::StandardFont));
+
+    m_defaultFont = new QFont(fontName, fontSize); /// \todo there may be a mem leak here!
+    return *m_defaultFont;
+}
+
+void BtConfig::set(const CLanguageMgr::Language * const language, const FontSettingsPair &fontSettings)
+{
+
+}
+
+FontSettingsPair BtConfig::get(const CLanguageMgr::Language * const)
+{
+	return FontSettingsPair();
+}
+
+
+void BtConfig::saveSearchScopes()
+{
+
+}
+
+void BtConfig::loadSearchScopes()
+{
+
 }
 
 } //btconfiguration
