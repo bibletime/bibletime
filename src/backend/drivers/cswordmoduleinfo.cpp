@@ -121,7 +121,7 @@ bool CSwordModuleInfo::unlock(const QString & unlockKey) {
 
     bool unlocked = unlockKeyIsValid();
 
-    btconfiguration::BtConfig::getInstance().setModuleEncryptionKey(name(), unlockKey);
+    BtConfig::getInstance().setModuleEncryptionKey(name(), unlockKey);
 
     /// \todo remove this comment once it is no longer needed
     /* There is currently a deficiency in sword 1.6.1 in that backend->setCipherKey() does
@@ -226,7 +226,7 @@ void CSwordModuleInfo::buildIndex() {
 
     try {
         //Without this we don't get strongs, lemmas, etc
-        backend()->setFilterOptions ( btconfiguration::BtConfig::getInstance().getFilterOptions() );
+        backend()->setFilterOptions ( BtConfig::getInstance().getFilterOptions() );
         //make sure we reset all important filter options which influcence the plain filters.
         // turn on these options, they are needed for the EntryAttributes population
         backend()->setOption( CSwordModuleInfo::strongNumbers,  true );
@@ -509,11 +509,11 @@ QString CSwordModuleInfo::config(const CSwordModuleInfo::ConfigEntry entry) cons
             return getFormattedConfigEntry("About");
 
         case CipherKey: {
-            if (btconfiguration::BtConfig::getInstance().getModuleEncryptionKey(name()).isNull()) { //fall back!
+            if (BtConfig::getInstance().getModuleEncryptionKey(name()).isNull()) { //fall back!
                 return QString(m_module->getConfigEntry("CipherKey"));
             }
             else {
-                return btconfiguration::BtConfig::getInstance().getModuleEncryptionKey(name());
+                return BtConfig::getInstance().getModuleEncryptionKey(name());
             }
         }
 

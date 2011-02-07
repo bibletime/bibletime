@@ -282,8 +282,8 @@ void CModuleResultView::printResult() {
         CExportManager mgr(tr("Print search result..."), true,
                            tr("Printing search result"));
 
-        mgr.printKeyList(m_results[m], m, btconfiguration::BtConfig::getInstance().getDisplayOptions(),
-                         btconfiguration::BtConfig::getInstance().getFilterOptions());
+        mgr.printKeyList(m_results[m], m, BtConfig::getInstance().getDisplayOptions(),
+                         BtConfig::getInstance().getFilterOptions());
     };
 }
 

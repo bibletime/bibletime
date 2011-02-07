@@ -204,7 +204,7 @@ void CBookKeyChooser::adjustFont() {
     //Make sure the entries are displayed correctly.
     QListIterator<CKeyChooserWidget*> it(m_chooserWidgets);
     while (it.hasNext()) {
-        it.next()->comboBox()->setFont( btconfiguration::BtConfig::getInstance().getFontForLanguage( m_modules.first()->language() ).second );
+        it.next()->comboBox()->setFont( BtConfig::getInstance().getFontForLanguage( m_modules.first()->language() ).second );
     }
 }
 

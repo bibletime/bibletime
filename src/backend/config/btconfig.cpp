@@ -11,8 +11,6 @@
 #include "backend/btmoduletreeitem.h"
 #include "frontend/searchdialog/btsearchoptionsarea.h"
 
-namespace btconfiguration
-{
 /*
  * set the instance variable initially to NULL, so it can be safely checked
  * whether the variable has been initialized yet.
@@ -417,5 +415,3 @@ BtConfig::FontSettingsPair BtConfig::getFontForLanguage(const CLanguageMgr::Lang
 
     return fontSettings;
 }
-
-} //btconfiguration

@@ -27,8 +27,8 @@ class CPlainTextExportRendering : public CHTMLExportRendering {
     public:
         CPlainTextExportRendering(
             const Settings &settings,
-            const DisplayOptions &displayOptions = btconfiguration::BtConfig::getInstance().getDisplayOptions(),
-            const FilterOptions &filterOptions = btconfiguration::BtConfig::getInstance().getFilterOptions()
+            const DisplayOptions &displayOptions = BtConfig::getInstance().getDisplayOptions(),
+            const FilterOptions &filterOptions = BtConfig::getInstance().getFilterOptions()
         );
         virtual inline ~CPlainTextExportRendering() {};
 

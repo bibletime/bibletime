@@ -164,7 +164,7 @@ CSwordBackend::LoadError CSwordBackend::initModules(SetupChangedReason reason) {
     Q_FOREACH(CSwordModuleInfo* mod, m_dataModel.moduleList()) {
         //unlock modules if keys are present
         if ( mod->isEncrypted() ) {
-            const QString unlockKey = btconfiguration::BtConfig::getInstance().getModuleEncryptionKey( mod->name() );
+            const QString unlockKey = BtConfig::getInstance().getModuleEncryptionKey( mod->name() );
             if (!unlockKey.isNull()) {
                 setCipherKey( mod->name().toUtf8().constData(), unlockKey.toUtf8().constData() );
             }

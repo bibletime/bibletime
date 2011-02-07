@@ -174,7 +174,7 @@ void CSearchResultView::printItems() {
     foreach (QTreeWidgetItem* k, items) {
         list.append( k->text(0) );
     }
-    mgr.printKeyList( list, module(), btconfiguration::BtConfig::getInstance().getDisplayOptions(), btconfiguration::BtConfig::getInstance().getFilterOptions() );
+    mgr.printKeyList( list, module(), BtConfig::getInstance().getDisplayOptions(), BtConfig::getInstance().getFilterOptions() );
 }
 
 void CSearchResultView::saveItems() {

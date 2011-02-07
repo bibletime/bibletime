@@ -26,8 +26,8 @@ class CDisplayRendering : public CHTMLExportRendering {
         static const QString keyToHTMLAnchor(const QString& key);
 
         CDisplayRendering(
-            const DisplayOptions &displayOptions = btconfiguration::BtConfig::getInstance().getDisplayOptions(),
-            const FilterOptions &filterOptions = btconfiguration::BtConfig::getInstance().getFilterOptions()
+            const DisplayOptions &displayOptions = BtConfig::getInstance().getDisplayOptions(),
+            const FilterOptions &filterOptions = BtConfig::getInstance().getFilterOptions()
         );
 
     protected:

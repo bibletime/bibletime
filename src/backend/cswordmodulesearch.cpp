@@ -21,7 +21,7 @@ void CSwordModuleSearch::startSearch() {
     m_foundItems = 0;
 
     /// \todo What is the purpose of the following statement?
-    CSwordBackend::instance()->setFilterOptions(btconfiguration::BtConfig::getInstance().getFilterOptions());
+    CSwordBackend::instance()->setFilterOptions(BtConfig::getInstance().getFilterOptions());
 
     // Search module-by-module:
     Q_FOREACH(const CSwordModuleInfo *m, m_searchModules) {

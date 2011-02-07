@@ -57,7 +57,7 @@ class BtFontSettingsPage : public BtConfigPage {
         QCheckBox *m_languageCheckBox;
         CFontChooser* m_fontChooser;
 
-        QMap<QString, btconfiguration::BtConfig::FontSettingsPair> m_fontMap;
+        QMap<QString, BtConfig::FontSettingsPair> m_fontMap;
 };
 
 #endif

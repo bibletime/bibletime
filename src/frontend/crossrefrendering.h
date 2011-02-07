@@ -21,8 +21,8 @@ class CrossRefRendering : public Rendering::CHTMLExportRendering {
         friend class CInfoDisplay;
 
         CrossRefRendering(
-            const DisplayOptions &displayOptions = btconfiguration::BtConfig::getInstance().getDisplayOptions(),
-            const FilterOptions &filterOptions = btconfiguration::BtConfig::getInstance().getFilterOptions()
+            const DisplayOptions &displayOptions = BtConfig::getInstance().getDisplayOptions(),
+            const FilterOptions &filterOptions = BtConfig::getInstance().getFilterOptions()
         );
 
         virtual const QString entryLink(const KeyTreeItem &item,

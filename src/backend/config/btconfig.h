@@ -13,8 +13,6 @@
 #include "backend/btmoduletreeitem.h" // for BTModuleTreeItem::Grouping
 #include "frontend/searchdialog/btsearchoptionsarea.h" // for Search::BtSearchOptionsArea::SearchType
 
-namespace btconfiguration
-{
 /*!
  * \brief Class holding and managing the configuration of bibletime.
  *
@@ -258,11 +256,10 @@ const QFont &BtConfig::getDefaultFont() const
 {
     return m_defaultFont;
 }
-} //btconfiguration
 
 // declare types used in configuration as metatype so they can be saved directly into the configuration
 Q_DECLARE_METATYPE(BTModuleTreeItem::Grouping);
 Q_DECLARE_METATYPE(Search::BtSearchOptionsArea::SearchType);
-Q_DECLARE_METATYPE(btconfiguration::BtConfig::StringMap);
+Q_DECLARE_METATYPE(BtConfig::StringMap);
 
 #endif // BTCONFIG_H
