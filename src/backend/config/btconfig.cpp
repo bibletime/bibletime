@@ -286,12 +286,18 @@ void BtConfig::syncConfig() {
 
 void BtConfig::setModuleEncryptionKey(const QString& name, const QString& key)
 {
-
+    m_settings.beginGroup("Module keys");
+        m_settings.setValue(name, key);
+    m_settings.endGroup();
 }
 
 QString BtConfig::getModuleEncryptionKey(const QString& name)
 {
-    return QString();
+    Q_ASSERT(not name.isEmpty());
+    m_settings.beginGroup("Module keys");
+        QString result(m_settings.value(name, QVariant(QString::null)).toString());
+    m_settings.endGroup();
+    return result;
 }
 
 QHash< QString, QList<QKeySequence> > BtConfig::getShortcuts( const QString& shortcutGroup )
@@ -356,7 +362,7 @@ FilterOptions BtConfig::getFilterOptions()
 
 DisplayOptions BtConfig::getDisplayOptions()
 {
-        DisplayOptions options;
+    DisplayOptions options;
     options.lineBreaks   = getValue("presentation/lineBreaks").toInt();
     options.verseNumbers = getValue("presentation/verseNumbers").toInt();
     return options;
@@ -364,7 +370,7 @@ DisplayOptions BtConfig::getDisplayOptions()
 
 QFont &BtConfig::getDefault(const CLanguageMgr::Language * const)
 {
-	// Language specific lookup of the font name
+    // Language specific lookup of the font name
     if (m_defaultFont) return *m_defaultFont;
 
     /// \todo make the font name and size a configuration option

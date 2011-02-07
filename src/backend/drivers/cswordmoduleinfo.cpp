@@ -121,7 +121,7 @@ bool CSwordModuleInfo::unlock(const QString & unlockKey) {
 
     bool unlocked = unlockKeyIsValid();
 
-    CBTConfig::setModuleEncryptionKey(name(), unlockKey);
+    btconfiguration::BtConfig::getInstance().setModuleEncryptionKey(name(), unlockKey);
 
     /// \todo remove this comment once it is no longer needed
     /* There is currently a deficiency in sword 1.6.1 in that backend->setCipherKey() does
@@ -509,11 +509,11 @@ QString CSwordModuleInfo::config(const CSwordModuleInfo::ConfigEntry entry) cons
             return getFormattedConfigEntry("About");
 
         case CipherKey: {
-            if (CBTConfig::getModuleEncryptionKey(name()).isNull()) { //fall back!
+            if (btconfiguration::BtConfig::getInstance().getModuleEncryptionKey(name()).isNull()) { //fall back!
                 return QString(m_module->getConfigEntry("CipherKey"));
             }
             else {
-                return CBTConfig::getModuleEncryptionKey(name());
+                return btconfiguration::BtConfig::getInstance().getModuleEncryptionKey(name());
             }
         }
 

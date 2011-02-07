@@ -16,6 +16,7 @@
 #include <QString>
 #include <QTextCodec>
 #include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "backend/drivers/cswordbiblemoduleinfo.h"
 #include "backend/drivers/cswordbookmoduleinfo.h"
 #include "backend/drivers/cswordcommentarymoduleinfo.h"
@@ -163,7 +164,7 @@ CSwordBackend::LoadError CSwordBackend::initModules(SetupChangedReason reason) {
     Q_FOREACH(CSwordModuleInfo* mod, m_dataModel.moduleList()) {
         //unlock modules if keys are present
         if ( mod->isEncrypted() ) {
-            const QString unlockKey = CBTConfig::getModuleEncryptionKey( mod->name() );
+            const QString unlockKey = btconfiguration::BtConfig::getInstance().getModuleEncryptionKey( mod->name() );
             if (!unlockKey.isNull()) {
                 setCipherKey( mod->name().toUtf8().constData(), unlockKey.toUtf8().constData() );
             }
