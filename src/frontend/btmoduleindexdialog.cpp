@@ -65,7 +65,9 @@ bool BtModuleIndexDialog::indexAllModules2(
 
         // Single module indexing blocks until finished:
         setLabelText(tr("Creating index for work: %1").arg(m->name()));
-        m->buildIndex();
+
+        if (!m->buildIndex()) success = false;
+
         m_currentModuleIndex++;
 
         disconnect(this, SIGNAL(canceled()),
@@ -75,10 +77,9 @@ bool BtModuleIndexDialog::indexAllModules2(
         disconnect(m,    SIGNAL(indexingProgress(int)),
                    this, SLOT(slotModuleProgress(int)));
 
-        if (wasCanceled()) {
-            success = false;
-            break;
-        }
+        if (wasCanceled()) success = false;
+
+        if (!success) break;
     }
 
     if (!success) {

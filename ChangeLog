@@ -1,3 +1,6 @@
+2011-02-07 Jaak Ristioja <ristioja@gmail.com>
+    * Fixed an assert-crash caused by not catching indexing failures properly.
+
 2011-01-16 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix crash when using Bookshelf Manager with Xiphos source
 
