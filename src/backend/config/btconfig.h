@@ -227,7 +227,7 @@ public:
      * \param[in] language pointer to a language to get the font for.
      * \returns FontSettingsPair for given language
      */
-    FontSettingsPair getFontForLanguage(const CLanguageMgr::Language * const);
+    FontSettingsPair getFontForLanguage(const CLanguageMgr::Language * const language);
 };
 
 template<typename T>
