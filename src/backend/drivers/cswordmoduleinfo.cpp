@@ -223,7 +223,7 @@ bool CSwordModuleInfo::hasIndex() const {
     return lucene::index::IndexReader::indexExists(getModuleStandardIndexLocation().toAscii().constData());
 }
 
-void CSwordModuleInfo::buildIndex() {
+bool CSwordModuleInfo::buildIndex() {
 
     m_cancelIndexing = false;
 
@@ -411,7 +411,10 @@ void CSwordModuleInfo::buildIndex() {
         util::showWarning(0, QCoreApplication::tr("Indexing aborted"), QCoreApplication::tr("An internal error occurred while building the index."));
         deleteIndex();
         m_cancelIndexing = false;
+        return false;
     }
+
+    return true;
 }
 
 void CSwordModuleInfo::deleteIndex() {
