@@ -418,14 +418,4 @@ BtConfig::FontSettingsPair BtConfig::getFontForLanguage(const CLanguageMgr::Lang
     return fontSettings;
 }
 
-void BtConfig::saveSearchScopes()
-{
-
-}
-
-void BtConfig::loadSearchScopes()
-{
-
-}
-
 } //btconfiguration

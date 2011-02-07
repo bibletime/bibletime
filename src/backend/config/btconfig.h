@@ -228,9 +228,6 @@ public:
      * \returns FontSettingsPair for given language
      */
     FontSettingsPair getFontForLanguage(const CLanguageMgr::Language * const);
-
-    void saveSearchScopes();
-    void loadSearchScopes();
 };
 
 template<typename T>
