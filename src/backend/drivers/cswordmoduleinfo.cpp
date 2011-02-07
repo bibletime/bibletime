@@ -406,7 +406,7 @@ bool CSwordModuleInfo::buildIndex() {
             emit hasIndexChanged(true);
         }
     }
-    catch (const std::exception &e) {
+    catch (CLuceneError &e) {
         qWarning() << "CLucene exception occurred while indexing:" << e.what();
         util::showWarning(0, QCoreApplication::tr("Indexing aborted"), QCoreApplication::tr("An internal error occurred while building the index: %1").arg(e.what()));
         deleteIndex();
