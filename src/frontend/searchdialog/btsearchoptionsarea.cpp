@@ -28,6 +28,7 @@
 #include "util/cresmgr.h"
 #include "util/tool.h"
 #include "util/directory.h"
+#include <backend/config/btconfig.h>
 
 
 namespace Search {
@@ -352,13 +353,12 @@ void BtSearchOptionsArea::refreshRanges() {
     //m_rangeChooserCombo->insertItem(tr("Last search result"));
 
     //insert the user-defined ranges
-    m_rangeChooserCombo->insertItems(1, CBTConfig::get(CBTConfig::searchScopes).keys());
-
+    m_rangeChooserCombo->insertItems(1, BtConfig::getInstance().getSearchScopesForCurrentLocale().keys());
 }
 
 sword::ListKey BtSearchOptionsArea::searchScope() {
     if (m_rangeChooserCombo->currentIndex() > 0) { //is not "no scope"
-        CBTConfig::StringMap map = CBTConfig::get(CBTConfig::searchScopes);
+        BtConfig::StringMap map = BtConfig::getInstance().getSearchScopesForCurrentLocale();
         QString scope = map[ m_rangeChooserCombo->currentText() ];
         if (!scope.isEmpty()) {
             return sword::VerseKey().ParseVerseList( (const char*)scope.toUtf8(), "Genesis 1:1", true);

@@ -89,6 +89,7 @@ public:
      */
     bool deleteSession(const QString& name);
 
+    //TODO: template this
     /*!
      * \brief Returns a value.
      *
@@ -208,6 +209,7 @@ public:
      */
     inline const QFont &getDefaultFont() const;
 
+    //TODO: put FontSettingsPair in QVariant directly
     /*!
      * \brief Set font for a language.
      *
@@ -226,6 +228,29 @@ public:
      * \returns FontSettingsPair for given language
      */
     FontSettingsPair getFontForLanguage(const CLanguageMgr::Language * const language);
+
+    //TODO: unit test these functions
+    /*!
+     * Returns the searchScopes for the current locale.
+     *
+     * This function retrieves the search scopes of the
+     * "properties/searchScopes" property and converts them
+     * to the current locale.
+     *
+     * \returns Search scopes in current locale.
+     */
+    StringMap getSearchScopesForCurrentLocale();
+
+    /*!
+     * Sets the searchScopes given in the current locale.
+     *
+     * This function sets the search scopes of the
+     * "properties/searchScopes" property, the scopes are
+     * converted to the english locale before saving them.
+     *
+     * \param[in] searchScopes Search scopes in any locale.
+     */
+    void setSearchScopesWithCurrentLocale(StringMap searchScopes);
 };
 
 template<typename T>

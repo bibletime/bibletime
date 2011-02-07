@@ -11,6 +11,9 @@
 #include "backend/btmoduletreeitem.h"
 #include "frontend/searchdialog/btsearchoptionsarea.h"
 
+// Sword includes:
+#include <versekey.h> // For search scope configuration
+
 /*
  * set the instance variable initially to NULL, so it can be safely checked
  * whether the variable has been initialized yet.
@@ -414,4 +417,66 @@ BtConfig::FontSettingsPair BtConfig::getFontForLanguage(const CLanguageMgr::Lang
         m_fontCache.insert(language, fontSettings);
 
     return fontSettings;
+}
+
+BtConfig::StringMap BtConfig::getSearchScopesForCurrentLocale()
+{
+    BtConfig::StringMap map = getValue("properties/searchScopes").value<BtConfig::StringMap>();
+
+    // convert map to current locale
+        sword::VerseKey vk;
+        for (BtConfig::StringMap::Iterator iter = map.begin();
+            iter != map.end();
+            ++iter)
+        {
+            QByteArray b(iter.value().toUtf8());
+            sword::ListKey list(vk.ParseVerseList(b, "Genesis 1:1", true));
+            QString data;
+            for (int i(0); i < list.Count(); i++)
+            {
+                data.append(QString::fromUtf8(list.GetElement(i)->getRangeText()));
+                data.append("; ");
+            }
+            iter.value() = data;
+        }
+    return map;
+}
+
+void BtConfig::setSearchScopesWithCurrentLocale(StringMap searchScopes)
+{
+
+    /**
+     * We want to make sure that the search scopes are saved with english
+     * key names so loading them will always work with each locale set.
+     */
+    sword::VerseKey vk;
+    BtConfig::StringMap::Iterator iter = searchScopes.begin();
+    while(iter != searchScopes.end())
+    {
+        QString data;
+        bool parsingWorked = true;
+        sword::ListKey list(vk.ParseVerseList(iter.value().toUtf8(), "Genesis 1:1", true));
+        for (int i = 0; i < list.Count(); i++)
+        {
+            sword::VerseKey* verse(dynamic_cast<sword::VerseKey*>(list.GetElement(i)));
+            if (verse != 0) {
+                verse->setLocale("en");
+                data.append(QString::fromUtf8( verse->getRangeText() ));
+                data.append(";");
+            }
+            else {
+                parsingWorked = false;
+                break;
+            }
+        }
+
+        if(parsingWorked)
+        {
+            iter.value() = data;
+            ++iter;
+        }
+        else
+            iter = searchScopes.erase(iter);
+    }
+    setValue("properties/searchScopes", searchScopes);
 }

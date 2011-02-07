@@ -21,6 +21,7 @@
 #include <QTextEdit>
 #include <QVBoxLayout>
 #include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "util/dialogutil.h"
 
 // Sword includes:
@@ -67,9 +68,8 @@ CRangeChooserDialog::CRangeChooserDialog( QWidget* parentDialog )
     initConnections();
 
     //add the existing scopes
-    CBTConfig::StringMap map = CBTConfig::get
-                               (CBTConfig::searchScopes);
-    CBTConfig::StringMap::Iterator it;
+    BtConfig::StringMap map = BtConfig::getInstance().getSearchScopesForCurrentLocale();
+    BtConfig::StringMap::Iterator it;
     for (it = map.begin(); it != map.end(); ++it) {
         new RangeItem(m_rangeList, 0, it.key(), it.value());
     };
@@ -277,14 +277,13 @@ void CRangeChooserDialog::deleteCurrentRange() {
 void CRangeChooserDialog::slotOk() {
     m_rangeList->sortItems(); //sorted first because the order will be saved
     //save the new map of search scopes
-    CBTConfig::StringMap map;
+    BtConfig::StringMap map;
     for (int i = 0; i < m_rangeList->count(); i++) {
         if ( RangeItem* item = dynamic_cast<RangeItem*>(m_rangeList->item(i)) ) {
             map[item->caption()] = item->range();
         };
     }
-    CBTConfig::set
-    (CBTConfig::searchScopes, map);
+    BtConfig::getInstance().setSearchScopesWithCurrentLocale(map);
 
     QDialog::accept();
 }
@@ -292,8 +291,9 @@ void CRangeChooserDialog::slotOk() {
 void CRangeChooserDialog::slotDefault() {
     //qDebug() << "CRangeChooserDialog::slotDefault";
     m_rangeList->clear();
-    CBTConfig::StringMap map = CBTConfig::getDefault(CBTConfig::searchScopes);
-    CBTConfig::StringMap::Iterator it;
+    BtConfig::getInstance().deleteValue("properties/searchScopes");
+    BtConfig::StringMap map = BtConfig::getInstance().getSearchScopesForCurrentLocale();
+    BtConfig::StringMap::Iterator it;
     for (it = map.begin(); it != map.end(); ++it) {
         new RangeItem(m_rangeList, 0, it.key(), it.value());
     };
