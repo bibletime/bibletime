@@ -15,6 +15,7 @@
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
 #include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "backend/drivers/cswordbookmoduleinfo.h"
 #include "backend/keys/cswordtreekey.h"
 #include "frontend/keychooser/bthistory.h"
@@ -111,8 +112,7 @@ void CBookTreeChooser::setModules(const QList<const CSwordModuleInfo*> &modules,
 /** From ckeychooser. */
 void CBookTreeChooser::adjustFont() {
     //Make sure the entries are displayed correctly.
-    m_treeView->setFont( CBTConfig::get(m_modules.first()->language()).second );
-
+    m_treeView->setFont( btconfiguration::BtConfig::getInstance().getFontForLanguage(m_modules.first()->language()).second );
 }
 
 

@@ -20,6 +20,7 @@
 #include "util/cresmgr.h"
 #include "util/tool.h"
 #include "util/directory.h"
+#include <backend/config/btconfig.h>
 
 // Sword includes:
 #include <localemgr.h>
@@ -56,10 +57,10 @@ BtFontSettingsPage::BtFontSettingsPage(QWidget *parent)
             ? (*it)->abbrev()
             : (*it)->translatedName();
 
-        m_fontMap.insert(name, CBTConfig::get(*it) );
+        m_fontMap.insert(name, btconfiguration::BtConfig::getInstance().getFontForLanguage(*it) );
     }
 
-    for ( QMap<QString, CBTConfig::FontSettingsPair>::Iterator it = m_fontMap.begin(); it != m_fontMap.end(); ++it ) {
+    for ( QMap<QString, btconfiguration::BtConfig::FontSettingsPair>::Iterator it = m_fontMap.begin(); it != m_fontMap.end(); ++it ) {
         if ( m_fontMap[it.key()].first ) {     //show font icon
             m_languageComboBox->addItem(DU::getIcon("fonts.svg"), it.key() );
         }
@@ -106,16 +107,16 @@ BtFontSettingsPage::~BtFontSettingsPage() {
 }
 
 void BtFontSettingsPage::save() {
-    for (QMap<QString, CBTConfig::FontSettingsPair>::Iterator it = m_fontMap.begin(); it != m_fontMap.end(); ++it ) {
+    for (QMap<QString, btconfiguration::BtConfig::FontSettingsPair>::Iterator it = m_fontMap.begin(); it != m_fontMap.end(); ++it ) {
         const CLanguageMgr::Language * const lang = CLanguageMgr::instance()->languageForTranslatedName(it.key());
         if (!lang->isValid()) {     //we possibly use a language, for which we have only the abbrev
             if (!lang->abbrev().isEmpty()) {
                 CLanguageMgr::Language l(it.key(), it.key(), it.key()); //create a temp language
-                CBTConfig::set(&l, it.value());
+                btconfiguration::BtConfig::getInstance().setFontForLanguage(&l, it.value());
             }
         }
         else {
-            CBTConfig::set(lang, it.value());
+            btconfiguration::BtConfig::getInstance().setFontForLanguage(lang, it.value());
         }
     }
 }
@@ -123,8 +124,8 @@ void BtFontSettingsPage::save() {
 /**  */
 void BtFontSettingsPage::newDisplayWindowFontSelected(const QFont &newFont) {
     //belongs to the languages/fonts page
-    CBTConfig::FontSettingsPair oldSettings = m_fontMap[ m_languageComboBox->currentText() ];
-    m_fontMap.insert( m_languageComboBox->currentText(), CBTConfig::FontSettingsPair(oldSettings.first, newFont) );
+    btconfiguration::BtConfig::FontSettingsPair oldSettings = m_fontMap[ m_languageComboBox->currentText() ];
+    m_fontMap.insert( m_languageComboBox->currentText(), btconfiguration::BtConfig::FontSettingsPair(oldSettings.first, newFont) );
 }
 
 /** Called when the combobox contents is changed */

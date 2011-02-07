@@ -15,17 +15,6 @@
 
 namespace btconfiguration
 {
-typedef QPair<bool, QFont> FontSettingsPair;
-typedef QMap<QString, QString> StringMap;
-}
-
-// declare types used in configuration as metatype so they can be saved directly into the configuration
-Q_DECLARE_METATYPE(BTModuleTreeItem::Grouping);
-Q_DECLARE_METATYPE(Search::BtSearchOptionsArea::SearchType);
-Q_DECLARE_METATYPE(btconfiguration::StringMap);
-
-namespace btconfiguration
-{
 /*!
  * \brief Class holding and managing the configuration of bibletime.
  *
@@ -39,11 +28,18 @@ namespace btconfiguration
  */
 class BtConfig : private NoCopy
 {
+public:
+    /*!
+    * The first parameter indicates whether the custom font should be used or not.
+    * The second parameter is the custom font that has been set.
+    */
+    typedef QPair<bool, QFont> FontSettingsPair;
+    typedef QMap<QString, QString> StringMap;
 private:
-    explicit BtConfig(const QString& settingsFile); //used by BtConfigTest
+    explicit BtConfig(const QString& settingsFile); //!< used by BtConfigTest
     friend class BtConfigTest;
 
-    static BtConfig* m_instance; // singleton instance
+    static BtConfig* m_instance; //!< singleton instance
 
     const static QString m_sessionsGroup;
     const static QString m_currentSessionKey;
@@ -52,10 +48,14 @@ private:
     QHash<QString,QVariant> m_defaults;
     QSet<QString> m_sessionSettings;
     QSettings m_settings;
-    QString m_currentSessionCache; // cache of the current session string, for speed
-    
-    QFont *m_defaultFont;
+
+    QString m_currentSessionCache; //!< cache of the current session string, for speed
+    QFont m_defaultFont; //!< default font used when no special one is set
+    typedef QHash<const CLanguageMgr::Language*, FontSettingsPair> FontCacheMap;
+    FontCacheMap m_fontCache; //!< a cache for the fonts saved in the configuration file for speed
 public:
+
+    
     static BtConfig& getInstance();
     ~BtConfig();
 
@@ -184,29 +184,50 @@ public:
      */
     void setShortcuts( const QString& shortcutGroup, const QHash< QString, QList< QKeySequence > >& shortcuts);
 
-	/*!
-	 * \brief Returns current filter options.
-	 * 
-	 * Returns a structure containing the current
-	 * settings to be used for filtering.
-	 * 
-	 * \returns FilterOptions structure containing filter settings.
-	 */
+    /*!
+     * \brief Returns current filter options.
+     *
+     * Returns a structure containing the current
+     * settings to be used for filtering.
+     * 
+     * \returns FilterOptions structure containing filter settings.
+     */
     FilterOptions getFilterOptions();
 
-	/*!
-	 * \brief Returns current display options.
-	 * 
-	 * Returns a structure containing the current
-	 * settings to be used for displaying texts.
-	 * 
-	 * \returns DisplayOptions structure containing display settings.
-	 */
+    /*!
+     * \brief Returns current display options.
+     *
+     * Returns a structure containing the current
+     * settings to be used for displaying texts.
+     * 
+     * \returns DisplayOptions structure containing display settings.
+     */
     DisplayOptions getDisplayOptions();
 
-    QFont &getDefault(const CLanguageMgr::Language * const);
-    void set(const CLanguageMgr::Language * const language, const FontSettingsPair &fontSettings);
-    FontSettingsPair get(const CLanguageMgr::Language * const);
+    /*!
+     * Returns a default font that is suitable for the current language.
+     * \returns QFont suitable for current language.
+     */
+    inline const QFont &getDefaultFont() const;
+
+    /*!
+     * \brief Set font for a language.
+     *
+     * Sets a FontSettingsPair for the language given.
+     * \param[in] language pointer to a language to set the font for
+     * \param[in] fontSettings FontSettingsPair to set
+     */
+    void setFontForLanguage(const CLanguageMgr::Language * const language, const FontSettingsPair &fontSettings);
+
+    /*!
+     * \brief Get font for a language.
+     *
+     * Gets a FontSettingsPair for the language given. If no font has been saved
+     * a default font is returned.
+     * \param[in] language pointer to a language to get the font for.
+     * \returns FontSettingsPair for given language
+     */
+    FontSettingsPair getFontForLanguage(const CLanguageMgr::Language * const);
 
     void saveSearchScopes();
     void loadSearchScopes();
@@ -235,6 +256,16 @@ inline void BtConfig::setValue(const QString& key, const char* const value)
 {
     setValue<QString>(key, QString(value));
 }
+
+const QFont &BtConfig::getDefaultFont() const
+{
+    return m_defaultFont;
+}
 } //btconfiguration
+
+// declare types used in configuration as metatype so they can be saved directly into the configuration
+Q_DECLARE_METATYPE(BTModuleTreeItem::Grouping);
+Q_DECLARE_METATYPE(Search::BtSearchOptionsArea::SearchType);
+Q_DECLARE_METATYPE(btconfiguration::BtConfig::StringMap);
 
 #endif // BTCONFIG_H

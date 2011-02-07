@@ -55,12 +55,12 @@ private slots:
 
     void stringMapTest()
     {
-        StringMap map;
+        BtConfig::StringMap map;
         map.insert(QObject::tr("Old testament"),          QString("Gen - Mal"));
         map.insert(QObject::tr("Moses/Pentateuch/Torah"), QString("Gen - Deut"));
-        m_btConfig->setValue<StringMap>("test/map", map);
+        m_btConfig->setValue<BtConfig::StringMap>("test/map", map);
 
-        StringMap newMap = m_btConfig->getValue("test/map").value<StringMap>();
+        BtConfig::StringMap newMap = m_btConfig->getValue("test/map").value<BtConfig::StringMap>();
         QVERIFY(newMap.value("Old testament") == "Gen - Mal");
         QVERIFY(newMap.value("Moses/Pentateuch/Torah") == "Gen - Deut");
     }

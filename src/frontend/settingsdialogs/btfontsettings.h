@@ -15,6 +15,7 @@
 #include <QMap>
 #include <QWidget>
 #include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 
 
 class CFontChooser;
@@ -56,7 +57,7 @@ class BtFontSettingsPage : public BtConfigPage {
         QCheckBox *m_languageCheckBox;
         CFontChooser* m_fontChooser;
 
-        QMap<QString, CBTConfig::FontSettingsPair> m_fontMap;
+        QMap<QString, btconfiguration::BtConfig::FontSettingsPair> m_fontMap;
 };
 
 #endif

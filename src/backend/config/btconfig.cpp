@@ -22,7 +22,7 @@ const QString BtConfig::m_sessionsGroup = "sessions";
 const QString BtConfig::m_currentSessionKey = "currentSession";
 const QString BtConfig::m_defaultSessionName = QObject::tr("default session");
 
-BtConfig::BtConfig(const QString& settingsFile) : m_defaults(), m_sessionSettings(), m_settings(settingsFile, QSettings::IniFormat), m_currentSessionCache(), m_defaultFont(0)
+BtConfig::BtConfig(const QString& settingsFile) : m_defaults(), m_sessionSettings(), m_settings(settingsFile, QSettings::IniFormat), m_currentSessionCache(), m_defaultFont(QWebSettings::globalSettings()->fontFamily(QWebSettings::StandardFont), 12)
 {
     // construct defaults
         m_defaults.reserve(512); //TODO: check whether this value can be calculated automatically...
@@ -368,30 +368,55 @@ DisplayOptions BtConfig::getDisplayOptions()
     return options;
 }
 
-QFont &BtConfig::getDefault(const CLanguageMgr::Language * const)
+void BtConfig::setFontForLanguage(const CLanguageMgr::Language* const language, const FontSettingsPair &fontSettings)
 {
-    // Language specific lookup of the font name
-    if (m_defaultFont) return *m_defaultFont;
+    Q_ASSERT(not language->name().isEmpty());
 
-    /// \todo make the font name and size a configuration option
-    // int fontSize = QWebSettings::globalSettings()->fontSize(QWebSettings::DefaultFontSize);
-    int fontSize(12);
-    QString fontName(QWebSettings::globalSettings()->fontFamily(QWebSettings::StandardFont));
+    // write the language to the settings
+        m_settings.beginGroup("fonts");
+            m_settings.setValue(language->name(), fontSettings.second.toString());
+        m_settings.endGroup();
 
-    m_defaultFont = new QFont(fontName, fontSize); /// \todo there may be a mem leak here!
-    return *m_defaultFont;
+        m_settings.beginGroup("font standard settings");
+            m_settings.setValue(language->name(), fontSettings.first);
+        m_settings.endGroup();
+
+    // Remove language from the cache:
+        m_fontCache.remove(language);
 }
 
-void BtConfig::set(const CLanguageMgr::Language * const language, const FontSettingsPair &fontSettings)
+BtConfig::FontSettingsPair BtConfig::getFontForLanguage(const CLanguageMgr::Language* const language)
 {
+    Q_ASSERT(not language->name().isEmpty());
 
+    // Check the cache first:
+        FontCacheMap::const_iterator it(m_fontCache.find(language));
+        if (it != m_fontCache.end())
+            return *it;
+
+    // Retrieve the font from the settings
+        FontSettingsPair fontSettings;
+
+        m_settings.beginGroup("font standard settings");
+            fontSettings.first = m_settings.value(language->name(), false).toBool();
+        m_settings.endGroup();
+
+        m_settings.beginGroup("fonts");
+            QFont font;
+            if (fontSettings.first) {
+                font.fromString(m_settings.value(language->name(), getDefaultFont()).toString());
+            }
+            else {
+                font = getDefaultFont();
+            }
+            fontSettings.second = font;
+        m_settings.endGroup();
+
+    // Cache the value
+        m_fontCache.insert(language, fontSettings);
+
+    return fontSettings;
 }
-
-FontSettingsPair BtConfig::get(const CLanguageMgr::Language * const)
-{
-	return FontSettingsPair();
-}
-
 
 void BtConfig::saveSearchScopes()
 {
