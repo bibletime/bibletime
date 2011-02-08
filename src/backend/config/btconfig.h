@@ -90,6 +90,7 @@ public:
     bool deleteSession(const QString& name);
 
     //TODO: template this
+    //TODO: make session specific check also work for groups (check for / in path and check for sub parts in session qhash)
     /*!
      * \brief Returns a value.
      *

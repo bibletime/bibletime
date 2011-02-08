@@ -117,7 +117,6 @@ BtConfig::BtConfig(const QString& settingsFile) : m_defaults(), m_sessionSetting
             map.insert(QObject::tr("Letters/Epistles"),       QString("Rom - Jude"));
             map.insert(QObject::tr("Paul's Epistles"),        QString("Rom - Phile"));
         m_defaults.insert("properties/searchScopes", QVariant::fromValue(map));
-        //TODO: continue here
 
         // TODO: these variables seem not to be used, check and remove
         /*
@@ -129,7 +128,10 @@ BtConfig::BtConfig(const QString& settingsFile) : m_defaults(), m_sessionSetting
 
 
     // initialize session settings
-        m_sessionSettings.insert("showTextWindowHeaders");
+        m_sessionSettings.insert("gui/showTextWindowHeaders");
+        m_sessionSettings.insert("gui/childWindows/");
+        m_sessionSettings.insert("presentation/");
+        m_sessionSettings.insert("windows/");
         //TODO: continue here
 
     //TODO: save defaults somewhere so they can be loaded directly on next startup
