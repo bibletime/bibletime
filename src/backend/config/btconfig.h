@@ -261,6 +261,11 @@ public:
     void readSession();
 };
 
+/*!
+ * Returns the BtConfiguration singleton instance.
+ * This is a shortcut for BtConfig::getInstance().
+ * \returns BtConfig instance
+ */
 inline BtConfig& getBtConfig()
 {
     return BtConfig::getInstance();
