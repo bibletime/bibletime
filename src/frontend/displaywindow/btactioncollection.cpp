@@ -87,7 +87,7 @@ QKeySequence BtActionCollection::getDefaultShortcut(QAction* action) {
 }
 
 void BtActionCollection::readShortcuts(const QString &group) {
-    QHash<QString, QList <QKeySequence > > shortcuts = BtConfig::getInstance().getShortcuts(group);
+    QHash<QString, QList <QKeySequence > > shortcuts = getBtConfig().getShortcuts(group);
     for(QHash<QString, QList <QKeySequence> >::const_iterator iter = shortcuts.begin();
                                                              iter != shortcuts.end();
                                                              iter++)
@@ -100,5 +100,5 @@ void BtActionCollection::writeShortcuts(const QString &group) {
                                                              iter != m_actions.end();
                                                              iter++)
         shortcuts.insert(iter.key(), iter.value()->action->shortcuts());
-    BtConfig::getInstance().setShortcuts(group, shortcuts);
+    getBtConfig().setShortcuts(group, shortcuts);
 }

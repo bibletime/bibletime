@@ -57,7 +57,7 @@ BtFontSettingsPage::BtFontSettingsPage(QWidget *parent)
             ? (*it)->abbrev()
             : (*it)->translatedName();
 
-        m_fontMap.insert(name, BtConfig::getInstance().getFontForLanguage(*it) );
+        m_fontMap.insert(name, getBtConfig().getFontForLanguage(*it) );
     }
 
     for ( QMap<QString, BtConfig::FontSettingsPair>::Iterator it = m_fontMap.begin(); it != m_fontMap.end(); ++it ) {
@@ -112,11 +112,11 @@ void BtFontSettingsPage::save() {
         if (!lang->isValid()) {     //we possibly use a language, for which we have only the abbrev
             if (!lang->abbrev().isEmpty()) {
                 CLanguageMgr::Language l(it.key(), it.key(), it.key()); //create a temp language
-                BtConfig::getInstance().setFontForLanguage(&l, it.value());
+                getBtConfig().setFontForLanguage(&l, it.value());
             }
         }
         else {
-            BtConfig::getInstance().setFontForLanguage(lang, it.value());
+            getBtConfig().setFontForLanguage(lang, it.value());
         }
     }
 }

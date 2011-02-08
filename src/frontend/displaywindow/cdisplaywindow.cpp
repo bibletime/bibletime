@@ -372,8 +372,8 @@ bool CDisplayWindow::init() {
     initConnections();
     setupPopupMenu();
 
-    m_filterOptions = BtConfig::getInstance().getFilterOptions();
-    m_displayOptions = BtConfig::getInstance().getDisplayOptions();
+    m_filterOptions = getBtConfig().getFilterOptions();
+    m_displayOptions = getBtConfig().getDisplayOptions();
     emit sigDisplayOptionsChanged(m_displayOptions);
     emit sigFilterOptionsChanged(m_filterOptions);
     emit sigModulesChanged(modules());

@@ -711,7 +711,7 @@ void CBookmarkIndex::printBookmarks() {
         return;
     }
     QSharedPointer<Printing::CPrinter> printer(
-        new Printing::CPrinter( this, BtConfig::getInstance().getDisplayOptions(), BtConfig::getInstance().getFilterOptions() )
+        new Printing::CPrinter( this, getBtConfig().getDisplayOptions(), getBtConfig().getFilterOptions() )
     );
     printer->printKeyTree(tree);
 }

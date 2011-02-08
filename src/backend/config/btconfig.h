@@ -256,6 +256,11 @@ public:
     void readSession();
 };
 
+inline BtConfig& getBtConfig()
+{
+    return BtConfig::getInstance();
+}
+
 template<typename T>
 void BtConfig::setValue(const QString& key, T value)
 {

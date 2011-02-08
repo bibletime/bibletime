@@ -39,8 +39,8 @@ class CHTMLExportRendering : public CTextRendering {
 
         CHTMLExportRendering(
             const Settings &settings,
-            const DisplayOptions &displayOptions = BtConfig::getInstance().getDisplayOptions(),
-            const FilterOptions &filterOptions = BtConfig::getInstance().getFilterOptions()
+            const DisplayOptions &displayOptions = getBtConfig().getDisplayOptions(),
+            const FilterOptions &filterOptions = getBtConfig().getFilterOptions()
         );
         virtual inline ~CHTMLExportRendering() {};
 
