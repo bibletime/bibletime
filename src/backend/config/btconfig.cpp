@@ -482,3 +482,32 @@ void BtConfig::setSearchScopesWithCurrentLocale(StringMap searchScopes)
     }
     setValue("properties/searchScopes", searchScopes);
 }
+
+void BtConfig::readSession()
+{
+    /*
+     * -CDisplayWindow gets a construct method that reads from config and constructs and
+     * returns the respective child window (check whether module is installed...)
+     * -CDisplayWindows get a new variable "id" or something, which is a unique identifier.
+     * The path in the configuration will use this id as name. (who gives out the IDs?)
+     * -values are updated as they are changed, just like the rest of bibletime
+     * -QMdiArea::subWindowActivated signal will trigger reading the window order and saving
+     * it to the config.
+     * 
+     */
+    /*
+     * Action Plan:
+     * 1. get current code to work with old session system
+     * 2. move complete code over to BtConfig
+     * 3. remove CBTConfig
+     * 4. implement BtConfig infrastructure for saving window configuration
+     *  - function to add a window
+     *  - function to remove a window
+     *  - specify how to save ordering
+     * 5. change CDisplayWindows to write all state changes to the configuration
+     * 6. implement BtConfig::readSession and callers
+     * 7. make session handling code work with groups
+     * 7. add gui for new session handling
+     * 8. remove old gui for session handling
+     */
+}

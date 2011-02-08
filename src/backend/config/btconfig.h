@@ -252,6 +252,8 @@ public:
      * \param[in] searchScopes Search scopes in any locale.
      */
     void setSearchScopesWithCurrentLocale(StringMap searchScopes);
+
+    void readSession();
 };
 
 template<typename T>
