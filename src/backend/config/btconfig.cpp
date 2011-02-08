@@ -506,8 +506,8 @@ void BtConfig::readSession()
      *  - specify how to save ordering
      * 5. change CDisplayWindows to write all state changes to the configuration
      * 6. implement BtConfig::readSession and callers
-     * 7. make session handling code work with groups
-     * 7. add gui for new session handling
-     * 8. remove old gui for session handling
+     * 7. make session handling code work with QSetting paths instead of properties
+     * 8. add gui for new session handling
+     * 9. remove old gui for session handling
      */
 }
