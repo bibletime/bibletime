@@ -497,7 +497,7 @@ void BibleTime::loadProfile(CProfile* p) {
             continue;
         }
 
-        //is w->isWriteWindow is false we create a write window, otherwise a read window
+        //if w->isWriteWindow is true we create a write window, otherwise a read window
         CDisplayWindow* displayWindow = 0;
         if (w->writeWindowType() > 0) { //create a write window
             displayWindow = createWriteDisplayWindow(modules.first(), key, CWriteWindow::WriteWindowType(w->writeWindowType()) );

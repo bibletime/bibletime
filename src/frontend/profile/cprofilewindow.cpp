@@ -77,7 +77,7 @@ void CProfileWindow::setScrollbarPositions(const int& horizontal, const int& ver
     m_scrollbarPos.vertical = vertical;
 }
 
-/** Returns tghe position of the scrollbars */
+/** Returns the position of the scrollbars */
 const CProfileWindow::ScrollbarPos& CProfileWindow::scrollbarPositions() const {
     return m_scrollbarPos;
 }
