@@ -16,7 +16,7 @@
 #include "backend/keys/cswordversekey.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
 #include "backend/managers/referencemanager.h"
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 
 
 namespace Rendering {
@@ -161,6 +161,6 @@ const QString CDisplayRendering::finishText( const QString& oldText, KeyTree& tr
     else
         settings.pageDirection = QString::null;
 
-    return tMgr->fillTemplate(CBTConfig::get(CBTConfig::displayStyle), oldText, settings);
+    return tMgr->fillTemplate(getBtConfig().getValue<QString>("gui/displayStyle"), oldText, settings);
 }
 }
