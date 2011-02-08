@@ -97,10 +97,15 @@ public:
      * Returns the value for the given key. Whether the key is part of
      * the session or not is determined automatically. If the value
      * has not been set before the default value is returned.
+     * The type that is returned can be set via the template parameter,
+     * it is necessary, that the respective property can be cast to this
+     * type.
      * \param[in] key Key to get the value for.
+     * \tparam T value type to return
      * \returns QVariant of the value.
      */
-    QVariant getValue(const QString& key);
+    template<typename T>
+    T getValue(const QString& key);
 
     /*!
      * \brief Set a value.
@@ -259,6 +264,22 @@ public:
 inline BtConfig& getBtConfig()
 {
     return BtConfig::getInstance();
+}
+
+template<typename T>
+T BtConfig::getValue(const QString& key)
+{
+    //accessing session values directly is prohibited
+        Q_ASSERT(not key.startsWith(m_sessionsGroup));
+        Q_ASSERT(key != m_currentSessionKey);
+
+    // retrieve value from config
+        if(m_sessionSettings.contains(key))
+        {
+            return m_settings.value(m_currentSessionCache + key, m_defaults.value(key)).value<T>();
+        }
+        else
+            return m_settings.value(key, m_defaults.value(key)).value<T>();
 }
 
 template<typename T>

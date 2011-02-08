@@ -242,21 +242,6 @@ bool BtConfig::deleteSession(const QString& name)
     return false;
 }
 
-QVariant BtConfig::getValue(const QString& key)
-{
-    //accessing session values directly is prohibited
-        Q_ASSERT(not key.startsWith(m_sessionsGroup));
-        Q_ASSERT(key != m_currentSessionKey);
-
-    // retrieve value from config
-        if(m_sessionSettings.contains(key))
-        {
-            return m_settings.value(m_currentSessionCache + key, m_defaults.value(key));
-        }
-        else
-            return m_settings.value(key, m_defaults.value(key));
-}
-
 bool BtConfig::hasValue(const QString& key)
 {
     //accessing session values directly is prohibited
@@ -349,16 +334,16 @@ FilterOptions BtConfig::getFilterOptions()
 
     options.footnotes           = true; // Required for the info display
     options.strongNumbers       = true; // get(strongNumbers);
-    options.headings            = getValue("gui/headings").toInt();
+    options.headings            = getValue<int>("gui/headings");
     options.morphTags           = true; // Required for the info display
     options.lemmas              = true; // Required for the info display
     options.redLetterWords      = true;
-    options.hebrewPoints        = getValue("gui/hebrewPoints").toInt();
-    options.hebrewCantillation  = getValue("gui/hebrewCantillation").toInt();
-    options.greekAccents        = getValue("gui/greekAccents").toInt();
-    options.textualVariants     = getValue("gui/textualVariants").toInt();
-    options.scriptureReferences = getValue("gui/scriptureReferences").toInt();
-    options.morphSegmentation   = getValue("gui/morphSegmentation").toInt();
+    options.hebrewPoints        = getValue<int>("gui/hebrewPoints");
+    options.hebrewCantillation  = getValue<int>("gui/hebrewCantillation");
+    options.greekAccents        = getValue<int>("gui/greekAccents");
+    options.textualVariants     = getValue<int>("gui/textualVariants");
+    options.scriptureReferences = getValue<int>("gui/scriptureReferences");
+    options.morphSegmentation   = getValue<int>("gui/morphSegmentation");
 
     return options;
 }
@@ -366,8 +351,8 @@ FilterOptions BtConfig::getFilterOptions()
 DisplayOptions BtConfig::getDisplayOptions()
 {
     DisplayOptions options;
-    options.lineBreaks   = getValue("presentation/lineBreaks").toInt();
-    options.verseNumbers = getValue("presentation/verseNumbers").toInt();
+    options.lineBreaks   = getValue<int>("presentation/lineBreaks");
+    options.verseNumbers = getValue<int>("presentation/verseNumbers");
     return options;
 }
 
@@ -423,7 +408,7 @@ BtConfig::FontSettingsPair BtConfig::getFontForLanguage(const CLanguageMgr::Lang
 
 BtConfig::StringMap BtConfig::getSearchScopesForCurrentLocale()
 {
-    BtConfig::StringMap map = getValue("properties/searchScopes").value<BtConfig::StringMap>();
+    BtConfig::StringMap map = getValue<BtConfig::StringMap>("properties/searchScopes");
 
     // convert map to current locale
         sword::VerseKey vk;
