@@ -55,6 +55,13 @@ BtConfig::BtConfig(const QString& settingsFile) : m_defaults(), m_sessionSetting
 
         m_defaults.insert("presentation/lineBreaks", false);
         m_defaults.insert("presentation/verseNumbers", false);
+        m_defaults.insert("presentation/headings", true);
+        m_defaults.insert("presentation/hebrewPoints", true);
+        m_defaults.insert("presentation/hebrewCantillation", true);
+        m_defaults.insert("presentation/greekAccents", true);
+        m_defaults.insert("presentation/textualVariants", false);
+        m_defaults.insert("presentation/scriptureReferences", true);
+        m_defaults.insert("presentation/morphSegmentation", true);
 
         m_defaults.insert("gui/logo", true);
         m_defaults.insert("settings/behaviour/autoDeleteOrphanedIndices", true);
@@ -72,15 +79,8 @@ BtConfig::BtConfig(const QString& settingsFile) : m_defaults(), m_sessionSetting
         // TODO: are the following booleans or ints, what do they do? rename to: show***?
         m_defaults.insert("gui/footnotes", true);
         m_defaults.insert("gui/strongNumbers", true);
-        m_defaults.insert("gui/headings", true);
         m_defaults.insert("gui/morphTags", true);
         m_defaults.insert("gui/lemmas", true);
-        m_defaults.insert("gui/hebrewPoints", true);
-        m_defaults.insert("gui/hebrewCantillation", true);
-        m_defaults.insert("gui/greekAccents", true);
-        m_defaults.insert("gui/textualVariants", false);
-        m_defaults.insert("gui/scriptureReferences", true);
-        m_defaults.insert("gui/morphSegmentation", true);
         m_defaults.insert("gui/windows/bookshelfContentsX", 0);
         m_defaults.insert("gui/windows/bookshelfContentsY", 0);
         m_defaults.insert("gui/windows/magDelay", 400);
