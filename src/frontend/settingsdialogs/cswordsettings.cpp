@@ -19,10 +19,11 @@
 #include <QTabWidget>
 #include <QVBoxLayout>
 #include <QWidget>
-#include "backend/config/cbtconfig.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
 #include "util/tool.h"
+#include "backend/managers/cswordbackend.h"
+#include "backend/config/btconfig.h"
 
 
 CSwordSettingsPage::CSwordSettingsPage(QWidget *parent)
@@ -190,49 +191,41 @@ StandardWorksTab::StandardWorksTab()
     } //for
 
     //using two lists and one loop is better than six loops with almost the same code :)
-    QList<QComboBox*> comboList;
-    QStringList moduleList;
+        QList<QComboBox*> comboList;
+        QStringList moduleList;
+        const CSwordModuleInfo*  m;
+    // fill combobox and modulelist
+        comboList.append(m_standardBibleCombo);
+        m = getBtConfig().getDefaultSwordModuleByType("standardBible");
+        moduleList << (m != 0 ? m->config(CSwordModuleInfo::Description) : QString::null);
 
-    for (int i = 0; i <= (int)CBTConfig::lastModuleType; ++i) {
-        //fill the combobox list in the right order (i.e. same order as the CBTConfig::module enum list)
-        CBTConfig::modules moduleType = (CBTConfig::modules)(i);
-        switch (moduleType) {
-            case CBTConfig::standardBible:
-                comboList.append(m_standardBibleCombo);
-                break;
-            case CBTConfig::standardCommentary:
-                comboList.append(m_standardCommentaryCombo);
-                break;
-            case CBTConfig::standardLexicon:
-                comboList.append(m_standardLexiconCombo);
-                break;
-            case CBTConfig::standardDailyDevotional:
-                comboList.append(m_standardDailyDevotionalCombo);
-                break;
-            case CBTConfig::standardHebrewStrongsLexicon:
-                comboList.append(m_standardHebrewStrongCombo);
-                break;
-            case CBTConfig::standardGreekStrongsLexicon:
-                comboList.append(m_standardGreekStrongCombo);
-                break;
-            case CBTConfig::standardHebrewMorphLexicon:
-                comboList.append(m_standardHebrewMorphCombo);
-                break;
-            case CBTConfig::standardGreekMorphLexicon:
-                comboList.append(m_standardGreekMorphCombo);
-                break;
-        }
-        ; //switch
+        comboList.append(m_standardCommentaryCombo);
+        m = getBtConfig().getDefaultSwordModuleByType("standardCommentary");
+        moduleList << (m != 0 ? m->config(CSwordModuleInfo::Description) : QString::null);
 
-        //fill the module list
-        CSwordModuleInfo* const m = CBTConfig::get( (CBTConfig::modules)(i) );
-        if (m) {
-            moduleList << m->config(CSwordModuleInfo::Description);
-        }
-        else {
-            moduleList << QString::null;
-        }
-    } //for
+        comboList.append(m_standardLexiconCombo);
+        m = getBtConfig().getDefaultSwordModuleByType("standardLexicon");
+        moduleList << (m != 0 ? m->config(CSwordModuleInfo::Description) : QString::null);
+        
+        comboList.append(m_standardDailyDevotionalCombo);
+        m = getBtConfig().getDefaultSwordModuleByType("standardDailyDevotional");
+        moduleList << (m != 0 ? m->config(CSwordModuleInfo::Description) : QString::null);
+        
+        comboList.append(m_standardHebrewStrongCombo);
+        m = getBtConfig().getDefaultSwordModuleByType("standardHebrewStrongsLexicon");
+        moduleList << (m != 0 ? m->config(CSwordModuleInfo::Description) : QString::null);
+        
+        comboList.append(m_standardGreekStrongCombo);
+        m = getBtConfig().getDefaultSwordModuleByType("standardGreekStrongsLexicon");
+        moduleList << (m != 0 ? m->config(CSwordModuleInfo::Description) : QString::null);
+        
+        comboList.append(m_standardHebrewMorphCombo);
+        m = getBtConfig().getDefaultSwordModuleByType("standardHebrewMorphLexicon");
+        moduleList << (m != 0 ? m->config(CSwordModuleInfo::Description) : QString::null);
+        
+        comboList.append(m_standardGreekMorphCombo);
+        m = getBtConfig().getDefaultSwordModuleByType("standardGreekMorphLexicon");
+        moduleList << (m != 0 ? m->config(CSwordModuleInfo::Description) : QString::null);
 
     QString module = QString::null;
     int item = 0;
@@ -272,48 +265,48 @@ TextFiltersTab::TextFiltersTab() {
 
     m_lineBreaksCheck = new QCheckBox(this);
     m_lineBreaksCheck->setText(tr("Insert line break after each verse"));
-    m_lineBreaksCheck->setChecked(CBTConfig::get(CBTConfig::lineBreaks));
+    m_lineBreaksCheck->setChecked(getBtConfig().getValue<bool>("lineBreaks"));
     layout->addWidget(m_lineBreaksCheck);
 
     m_verseNumbersCheck = new QCheckBox(this);
     m_verseNumbersCheck->setText(tr("Show verse numbers"));
-    m_verseNumbersCheck->setChecked(CBTConfig::get(CBTConfig::verseNumbers));
+    m_verseNumbersCheck->setChecked(getBtConfig().getValue<bool>("verseNumbers"));
     layout->addWidget(m_verseNumbersCheck);
 
     m_headingsCheck = new QCheckBox(this);
     m_headingsCheck->setText(tr("Show section headings"));
-    m_headingsCheck->setChecked(CBTConfig::get(CBTConfig::headings));
+    m_headingsCheck->setChecked(getBtConfig().getValue<bool>("headings"));
     layout->addWidget(m_headingsCheck);
 
 
     m_scriptureReferencesCheck = new QCheckBox(this);
     m_scriptureReferencesCheck->setText(tr("Show scripture cross-references"));
-    m_scriptureReferencesCheck->setChecked(CBTConfig::get(CBTConfig::scriptureReferences));
+    m_scriptureReferencesCheck->setChecked(getBtConfig().getValue<bool>("scriptureReferences"));
     layout->addWidget(m_scriptureReferencesCheck);
 
     m_greekAccentsCheck = new QCheckBox(this);
     m_greekAccentsCheck->setText(tr("Show Greek accents"));
-    m_greekAccentsCheck->setChecked(CBTConfig::get(CBTConfig::greekAccents));
+    m_greekAccentsCheck->setChecked(getBtConfig().getValue<bool>("greekAccents"));
     layout->addWidget(m_greekAccentsCheck);
 
     m_hebrewPointsCheck = new QCheckBox(this);
     m_hebrewPointsCheck->setText(tr("Show Hebrew vowel points"));
-    m_hebrewPointsCheck->setChecked(CBTConfig::get(CBTConfig::hebrewPoints));
+    m_hebrewPointsCheck->setChecked(getBtConfig().getValue<bool>("hebrewPoints"));
     layout->addWidget(m_hebrewPointsCheck);
 
     m_hebrewCantillationCheck = new QCheckBox(this);
     m_hebrewCantillationCheck->setText(tr("Show Hebrew cantillation marks"));
-    m_hebrewCantillationCheck->setChecked(CBTConfig::get(CBTConfig::hebrewCantillation));
+    m_hebrewCantillationCheck->setChecked(getBtConfig().getValue<bool>("hebrewCantillation"));
     layout->addWidget(m_hebrewCantillationCheck);
 
     m_morphSegmentationCheck = new QCheckBox(this);
     m_morphSegmentationCheck->setText(tr("Show morph segmentation"));
-    m_morphSegmentationCheck->setChecked(CBTConfig::get(CBTConfig::morphSegmentation));
+    m_morphSegmentationCheck->setChecked(getBtConfig().getValue<bool>("morphSegmentation"));
     layout->addWidget(m_morphSegmentationCheck);
 
     m_textualVariantsCheck = new QCheckBox(this);
     m_textualVariantsCheck->setText(tr("Use textual variants"));
-    m_textualVariantsCheck->setChecked(CBTConfig::get(CBTConfig::textualVariants));
+    m_textualVariantsCheck->setChecked(getBtConfig().getValue<bool>("textualVariants"));
     layout->addWidget(m_textualVariantsCheck);
 
     layout->addStretch(4);
@@ -333,55 +326,44 @@ QString CSwordSettingsPage::header() const {
 }
 
 void StandardWorksTab::save() {
-    for (int i = 0; i <= (int)CBTConfig::lastModuleType; ++i) {
-        QString moduleDescription = QString::null;
-
-        CBTConfig::modules moduleType = (CBTConfig::modules)(i);
-        switch (moduleType) {
-            case CBTConfig::standardBible:
-                moduleDescription = m_standardBibleCombo->currentText();
-                break;
-            case CBTConfig::standardCommentary:
-                moduleDescription = m_standardCommentaryCombo->currentText();
-                break;
-            case CBTConfig::standardLexicon:
-                moduleDescription = m_standardLexiconCombo->currentText();
-                break;
-            case CBTConfig::standardDailyDevotional:
-                moduleDescription = m_standardDailyDevotionalCombo->currentText();
-                break;
-            case CBTConfig::standardHebrewStrongsLexicon:
-                moduleDescription = m_standardHebrewStrongCombo->currentText();
-                break;
-            case CBTConfig::standardGreekStrongsLexicon:
-                moduleDescription = m_standardGreekStrongCombo->currentText();
-                break;
-            case CBTConfig::standardHebrewMorphLexicon:
-                moduleDescription = m_standardHebrewMorphCombo->currentText();
-                break;
-            case CBTConfig::standardGreekMorphLexicon:
-                moduleDescription = m_standardGreekMorphCombo->currentText();
-                break;
-            default:
-                qWarning("Unhandled module type.");
-        };
-
-        CSwordModuleInfo * const module = CSwordBackend::instance()->findModuleByDescription(moduleDescription);
-        CBTConfig::set(moduleType, module);
-    }
+    getBtConfig().setDefaultSwordModuleByType("standardBible",
+                                              CSwordBackend::instance()->findModuleByDescription(m_standardBibleCombo->currentText())
+                                             );
+    getBtConfig().setDefaultSwordModuleByType("standardCommentary",
+                                              CSwordBackend::instance()->findModuleByDescription(m_standardCommentaryCombo->currentText())
+                                             );
+    getBtConfig().setDefaultSwordModuleByType("standardLexicon",
+                                              CSwordBackend::instance()->findModuleByDescription(m_standardLexiconCombo->currentText())
+                                             );
+    getBtConfig().setDefaultSwordModuleByType("standardDailyDevotional",
+                                              CSwordBackend::instance()->findModuleByDescription(m_standardDailyDevotionalCombo->currentText())
+                                             );
+    getBtConfig().setDefaultSwordModuleByType("standardHebrewStrongsLexicon",
+                                              CSwordBackend::instance()->findModuleByDescription(m_standardHebrewStrongCombo->currentText())
+                                             );
+    getBtConfig().setDefaultSwordModuleByType("standardGreekStrongsLexicon",
+                                              CSwordBackend::instance()->findModuleByDescription(m_standardGreekStrongCombo->currentText())
+                                             );
+    getBtConfig().setDefaultSwordModuleByType("standardHebrewMorphLexicon",
+                                              CSwordBackend::instance()->findModuleByDescription(m_standardHebrewMorphCombo->currentText())
+                                             );
+    getBtConfig().setDefaultSwordModuleByType("standardGreekMorphLexicon",
+                                              CSwordBackend::instance()->findModuleByDescription(m_standardGreekMorphCombo->currentText())
+                                             );
 }
 
-
 void TextFiltersTab::save() {
-    CBTConfig::set(CBTConfig::lineBreaks, m_lineBreaksCheck->isChecked());
-    CBTConfig::set(CBTConfig::verseNumbers, m_verseNumbersCheck->isChecked());
-    CBTConfig::set(CBTConfig::headings, m_headingsCheck->isChecked());
-    CBTConfig::set(CBTConfig::scriptureReferences, m_scriptureReferencesCheck->isChecked());
-    CBTConfig::set(CBTConfig::hebrewPoints, m_hebrewPointsCheck->isChecked());
-    CBTConfig::set(CBTConfig::hebrewCantillation, m_hebrewCantillationCheck->isChecked());
-    CBTConfig::set(CBTConfig::morphSegmentation, m_morphSegmentationCheck->isChecked());
-    CBTConfig::set(CBTConfig::greekAccents, m_greekAccentsCheck->isChecked());
-    CBTConfig::set(CBTConfig::textualVariants, m_textualVariantsCheck->isChecked());
+    getBtConfig().beginGroup("presentation");
+        getBtConfig().setValue("lineBreaks", m_lineBreaksCheck->isChecked());
+        getBtConfig().setValue("verseNumbers", m_verseNumbersCheck->isChecked());
+        getBtConfig().setValue("headings", m_headingsCheck->isChecked());
+        getBtConfig().setValue("scriptureReferences", m_scriptureReferencesCheck->isChecked());
+        getBtConfig().setValue("hebrewPoints", m_hebrewPointsCheck->isChecked());
+        getBtConfig().setValue("hebrewCantillation", m_hebrewCantillationCheck->isChecked());
+        getBtConfig().setValue("morphSegmentation", m_morphSegmentationCheck->isChecked());
+        getBtConfig().setValue("greekAccents", m_greekAccentsCheck->isChecked());
+        getBtConfig().setValue("textualVariants", m_textualVariantsCheck->isChecked());
+    getBtConfig().endGroup();
 }
 
 
