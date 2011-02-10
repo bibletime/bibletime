@@ -143,6 +143,25 @@ public:
      */
     void syncConfig();
 
+    /*!
+     * \brief Begin a configuration group.
+     *
+     * All following calls to get/setValue() will have the given prefix automatically
+     * prefixed.
+     * \post You *must* call endGroup() after you are done with the group, otherwise
+     * you will mess up all calls to get/setValue() by others.
+     * \param[in] prefix the prefix to use
+     */
+    inline void beginGroup(const QString& prefix);
+
+    /*!
+     * \brief Ends a previously set configuration group.
+     *
+     * Call this function after you are done with a started group. Every call to
+     * beginGroup() must be matched with a call to this function.
+     */
+    inline void endGroup();
+
 
     // helper functions
 
@@ -309,6 +328,16 @@ template <>
 inline void BtConfig::setValue(const QString& key, const char* const value)
 {
     setValue<QString>(key, QString(value));
+}
+
+void BtConfig::beginGroup(const QString& prefix)
+{
+    m_settings.beginGroup(prefix);
+}
+
+void BtConfig::endGroup()
+{
+    m_settings.endGroup();
 }
 
 const QFont &BtConfig::getDefaultFont() const
