@@ -13,6 +13,7 @@
 
 // Sword includes:
 #include <versekey.h> // For search scope configuration
+#include "backend/managers/cswordbackend.h"
 
 /*
  * set the instance variable initially to NULL, so it can be safely checked
@@ -466,6 +467,19 @@ void BtConfig::setSearchScopesWithCurrentLocale(StringMap searchScopes)
             iter = searchScopes.erase(iter);
     }
     setValue("properties/searchScopes", searchScopes);
+}
+
+CSwordModuleInfo *BtConfig::getDefaultSwordModuleByType(const QString& moduleType) {
+    m_settings.beginGroup("settings/defaults");
+        CSwordModuleInfo *result(CSwordBackend::instance()->findModuleByName(getValue<QString>(moduleType)));
+    m_settings.endGroup();
+    return result;
+}
+
+void BtConfig::setDefaultSwordModuleByType(const QString& moduleType, const CSwordModuleInfo* const module) {
+    m_settings.beginGroup("settings/defaults");
+        m_settings.setValue(moduleType, module != 0 ? module->name() : QString::null);
+    m_settings.endGroup();
 }
 
 void BtConfig::readSession()

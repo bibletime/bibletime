@@ -12,6 +12,7 @@
 #include "util/nocopy.h"
 #include "backend/btmoduletreeitem.h" // for BTModuleTreeItem::Grouping
 #include "frontend/searchdialog/btsearchoptionsarea.h" // for Search::BtSearchOptionsArea::SearchType
+#include "backend/drivers/cswordmoduleinfo.h"
 
 /*!
  * \brief Class holding and managing the configuration of bibletime.
@@ -276,6 +277,28 @@ public:
      * \param[in] searchScopes Search scopes in any locale.
      */
     void setSearchScopesWithCurrentLocale(StringMap searchScopes);
+
+    /*!
+     * \brief Returns default sword module info class for a given module type.
+     *
+     * This is basically a convenience function for getting the respective
+     * "settings/defaults/*" variable and searching that module manually.
+     * If module is not installed 0 will be returned.
+     * \param[in] moduleType module type to return the default sword module info for
+     * \returns sword module info pointer or 0
+     */
+    CSwordModuleInfo* getDefaultSwordModuleByType(const QString& moduleType);
+
+    /*!
+     * \brief Sets the default sword module for a module type.
+     *
+     * This is basically a convenience function for setting the "settings/defaults/*"
+     * variables to the module->name() string manually.
+     * 0 is allowed as the module, then the default module will be unset.
+     * \param[in] moduleType module type to set
+     * \param[in] module the sword module info to set as default module
+     */
+    void setDefaultSwordModuleByType(const QString& moduleType, const CSwordModuleInfo* const module);
 
     void readSession();
 };
