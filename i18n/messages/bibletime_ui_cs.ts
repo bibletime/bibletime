@@ -368,6 +368,18 @@ This file is distributed under the same license as the Bibetime package.</transl
         <source>Show tips about BibleTime</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Toggle visibility of the bookshelf window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toggle visibility of the bookmarks window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toggle visibility of the mag window</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BibleTimeApp</name>
@@ -2498,6 +2510,10 @@ Do you want to continue?</source>
     <message>
         <source>An internal error occurred while executing your search.</source>
         <translation>Při vyhledávání se objevila interní chyba.</translation>
+    </message>
+    <message>
+        <source>An internal error occurred while building the index: %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -24,32 +24,32 @@ Ce fichier est distribué sous la même licence que le paquet BibleTime.</transl
 <context>
     <name>BibleTime</name>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="638"/>
+        <location filename="../../src/bibletime_init.cpp" line="683"/>
         <source>&amp;File</source>
         <translation>&amp;Fichier</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="639"/>
+        <location filename="../../src/bibletime_init.cpp" line="684"/>
         <source>&amp;View</source>
         <translation>&amp;Vue</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="642"/>
+        <location filename="../../src/bibletime_init.cpp" line="687"/>
         <source>&amp;Search</source>
         <translation>&amp;Rechercher</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="643"/>
+        <location filename="../../src/bibletime_init.cpp" line="688"/>
         <source>&amp;Window</source>
         <translation>Fe&amp;nêtre</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="649"/>
+        <location filename="../../src/bibletime_init.cpp" line="694"/>
         <source>Se&amp;ttings</source>
         <translation>Configura&amp;tion</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="650"/>
+        <location filename="../../src/bibletime_init.cpp" line="695"/>
         <source>&amp;Help</source>
         <translation>&amp;Aide</translation>
     </message>
@@ -79,22 +79,22 @@ Ce fichier est distribué sous la même licence que le paquet BibleTime.</transl
         <translation>Informations sur le programme BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="646"/>
+        <location filename="../../src/bibletime_init.cpp" line="691"/>
         <source>&amp;Save session</source>
         <translation>&amp;Sauvegarder profil</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="647"/>
+        <location filename="../../src/bibletime_init.cpp" line="692"/>
         <source>&amp;Load session</source>
         <translation>Ouvrir profi&amp;l</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="648"/>
+        <location filename="../../src/bibletime_init.cpp" line="693"/>
         <source>&amp;Delete session</source>
         <translation>&amp;Effacer le profil</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="645"/>
+        <location filename="../../src/bibletime_init.cpp" line="690"/>
         <source>&amp;Arrangement mode</source>
         <translation>Mode d&apos;&amp;arrangement</translation>
     </message>
@@ -154,7 +154,7 @@ Ce fichier est distribué sous la même licence que le paquet BibleTime.</transl
         <translation>Tutoriel d&apos;étude &amp;Biblique</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="557"/>
+        <location filename="../../src/bibletime_slots.cpp" line="569"/>
         <source>Please enter a name for the new session.</source>
         <translation>Entrer un nom pour la nouvelle session.</translation>
     </message>
@@ -299,97 +299,112 @@ Ce fichier est distribué sous la même licence que le paquet BibleTime.</transl
         <translation type="unfinished">Afficher des astuces à propos de BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="632"/>
+        <location filename="../../src/bibletime_init.cpp" line="370"/>
+        <source>Toggle visibility of the bookshelf window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="374"/>
+        <source>Toggle visibility of the bookmarks window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="378"/>
+        <source>Toggle visibility of the mag window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="677"/>
         <source>Main toolbar</source>
         <translation type="unfinished">Barre d&apos;outils principale</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="633"/>
+        <location filename="../../src/bibletime_init.cpp" line="678"/>
         <source>Navigation toolbar</source>
         <translation type="unfinished">Barre d&apos;outils navigation</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="634"/>
+        <location filename="../../src/bibletime_init.cpp" line="679"/>
         <source>Works toolbar</source>
         <translation type="unfinished">Barre d&apos;outils modules</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="635"/>
+        <location filename="../../src/bibletime_init.cpp" line="680"/>
         <source>Tools toolbar</source>
         <translation type="unfinished">Barre d&apos;outils outils</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="636"/>
+        <location filename="../../src/bibletime_init.cpp" line="681"/>
         <source>Format toolbar</source>
         <translation type="unfinished">Barre d&apos;outils format</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="666"/>
+        <location filename="../../src/bibletime_init.cpp" line="711"/>
         <source>Show main toolbar</source>
         <translation type="unfinished">Afficher la barre d&apos;outils principale</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="667"/>
+        <location filename="../../src/bibletime_init.cpp" line="712"/>
         <source>Show navigation bar</source>
         <translation type="unfinished">Afficher la barre d&apos;outils navigation</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="668"/>
+        <location filename="../../src/bibletime_init.cpp" line="713"/>
         <source>Show works toolbar</source>
         <translation type="unfinished">Afficher la barre d&apos;outils modules</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="669"/>
+        <location filename="../../src/bibletime_init.cpp" line="714"/>
         <source>Show tools toolbar</source>
         <translation type="unfinished">Afficher la barre d&apos;outils outils</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="670"/>
+        <location filename="../../src/bibletime_init.cpp" line="715"/>
         <source>Show formatting toolbar</source>
         <translation type="unfinished">Afficher la barre d&apos;outils format</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="671"/>
+        <location filename="../../src/bibletime_init.cpp" line="716"/>
         <source>Show bookshelf</source>
         <translation type="unfinished">Afficher la bibliothèque</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="672"/>
+        <location filename="../../src/bibletime_init.cpp" line="717"/>
         <source>Show bookmarks</source>
         <translation type="unfinished">Afficher les signets</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="673"/>
+        <location filename="../../src/bibletime_init.cpp" line="718"/>
         <source>Show mag</source>
         <translation type="unfinished">Afficher le zoom</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="640"/>
+        <location filename="../../src/bibletime_init.cpp" line="685"/>
         <source>Toolbars</source>
         <translation type="unfinished">Barres d&apos;outils</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="665"/>
+        <location filename="../../src/bibletime_init.cpp" line="710"/>
         <source>Show toolbars in text windows</source>
         <translation type="unfinished">Afficher les barres d&apos;outils dans les fenêtres de texte</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="674"/>
+        <location filename="../../src/bibletime_init.cpp" line="719"/>
         <source>Show parallel text headers</source>
         <translation type="unfinished">Afficher les en-têtes textuels parallèlement</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="644"/>
+        <location filename="../../src/bibletime_init.cpp" line="689"/>
         <source>O&amp;pen windows</source>
         <translation type="unfinished">Fenêtres ouvertes</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="653"/>
+        <location filename="../../src/bibletime_init.cpp" line="698"/>
         <source>Show &quot;Whats this widget&quot; dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="870"/>
+        <location filename="../../src/bibletime_init.cpp" line="915"/>
         <source>Whats this widget?</source>
         <translation type="unfinished">Qu&apos;est-ce que ce gadget?</translation>
     </message>
@@ -404,7 +419,7 @@ Ce fichier est distribué sous la même licence que le paquet BibleTime.</transl
         <translation>Rechercher dans la Bible par défaut</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="556"/>
+        <location filename="../../src/bibletime_slots.cpp" line="568"/>
         <source>New Session</source>
         <translation>Nouveau profil</translation>
     </message>
@@ -424,22 +439,22 @@ Ce fichier est distribué sous la même licence que le paquet BibleTime.</transl
         <translation>Initialisation des menus et barres d&apos;outils...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="259"/>
+        <location filename="../../src/bibletime.cpp" line="197"/>
         <source>Unlock Work</source>
         <translation>Déverrouiller le module</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="259"/>
+        <location filename="../../src/bibletime.cpp" line="197"/>
         <source>Enter the unlock key for %1.</source>
         <translation type="unfinished">Entrer la clef de déverrouillage pour %1.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="279"/>
+        <location filename="../../src/bibletime.cpp" line="217"/>
         <source>Warning: Invalid unlock key!</source>
         <translation type="unfinished">Attention: clef de déverrouillage invalide!</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="280"/>
+        <location filename="../../src/bibletime.cpp" line="218"/>
         <source>The unlock key you provided did not properly unlock this module. Please try again.</source>
         <translation type="unfinished">La clef de déverrouillage fournie ne débloque pas correctement ce module. Veuillez Essayer de nouveau.</translation>
     </message>
@@ -449,12 +464,12 @@ Ce fichier est distribué sous la même licence que le paquet BibleTime.</transl
         <translation>&amp;A propos de BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="630"/>
+        <location filename="../../src/bibletime_init.cpp" line="675"/>
         <source>Bookmarks</source>
         <translation>Signets</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="631"/>
+        <location filename="../../src/bibletime_init.cpp" line="676"/>
         <source>Mag</source>
         <translation>Zoom</translation>
     </message>
@@ -500,9 +515,8 @@ Ce fichier est distribué sous la même licence que le paquet BibleTime.</transl
         <translation type="unfinished">Nous recherchons des développeurs et des traducteurs. Si vous souhaitez rejoindre l&apos;équipe, envoyez un e-mail à %1.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="133"/>
         <source>(c)1999-2010, The BibleTime Team</source>
-        <translation type="unfinished">(c)1999-2010, L&apos;équipe de BibleTime</translation>
+        <translation type="obsolete">(c)1999-2010, L&apos;équipe de BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="140"/>
@@ -573,6 +587,11 @@ Ce fichier est distribué sous la même licence que le paquet BibleTime.</transl
         <location filename="../../src/frontend/btaboutdialog.cpp" line="143"/>
         <source>designer</source>
         <translation>concepteur</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="133"/>
+        <source>(c)1999-2011, The BibleTime Team</source>
+        <translation type="unfinished">(c)1999-2010, L&apos;équipe de BibleTime {1999-2011,?}</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="142"/>
@@ -1749,7 +1768,7 @@ raccourci</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="48"/>
         <source>Add/remove/replace</source>
-	<translation type="unfinished">Ajouter/supprimer/remplacer</translation>
+        <translation type="unfinished">Ajouter/supprimer/remplacer</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
@@ -2681,168 +2700,168 @@ raccourci</translation>
 <context>
     <name>CSwordModuleInfo</name>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="760"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="772"/>
         <source>Version</source>
         <translation>Version</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="761"/>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="766"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="773"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="778"/>
         <source>unknown</source>
         <translation>inconnu</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="764"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="776"/>
         <source>Markup</source>
         <translation>Abréviation</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="769"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="781"/>
         <source>Location</source>
         <translation>Emplacement</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="773"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="785"/>
         <source>Language</source>
         <translation>Langue</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="778"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="790"/>
         <source>Category</source>
         <translation>Catégorie</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="783"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="795"/>
         <source>LCSH</source>
         <translation>LCSH</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="787"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="799"/>
         <source>Writable</source>
         <translation>Modifiable</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="788"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="800"/>
         <source>yes</source>
         <translation>oui</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="788"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="800"/>
         <source>no</source>
         <translation>non</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="792"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="804"/>
         <source>Unlock key</source>
         <translation>Clef de déverrouillage</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="811"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="823"/>
         <source>Features</source>
         <translation>Caractéristiques</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="819"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="831"/>
         <source>Take care, this work contains cult / questionable material!</source>
         <translation>Attention, ce module contient des éléments polémiques!</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="822"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="834"/>
         <source>About</source>
         <translation>A propos</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="844"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="856"/>
         <source>Distribution license</source>
         <translation>Licence de la distribution</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="845"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="857"/>
         <source>Distribution source</source>
         <translation>Source de la distribution</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="846"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="858"/>
         <source>Distribution notes</source>
         <translation>Notes de la distribution</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="847"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="859"/>
         <source>Text source</source>
         <translation>Source de texte</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="848"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="860"/>
         <source>Copyright notes</source>
         <translation>Notes de copyright</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="849"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="861"/>
         <source>Copyright holder</source>
         <translation>Détenteur du copyright</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="850"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="862"/>
         <source>Copyright date</source>
         <translation>Date du copyright</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="851"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="863"/>
         <source>Copyright contact name</source>
         <translation>Contact copyright</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="852"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="864"/>
         <source>Copyright contact address</source>
         <translation>Adresse du contact du copyright</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="853"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="865"/>
         <source>Copyright contact email</source>
         <translation>Courriel du contact du copyright</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="961"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="973"/>
         <source>Bibles</source>
         <translation type="unfinished">Bibles</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="963"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="975"/>
         <source>Commentaries</source>
         <translation type="unfinished">Commentaires</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="965"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="977"/>
         <source>Books</source>
         <translation type="unfinished">Livres</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="967"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="979"/>
         <source>Cults/Unorthodox</source>
         <translation type="unfinished">Sectes/Non-orthodoxes</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="969"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="981"/>
         <source>Maps and Images</source>
         <translation type="unfinished">Cartes et images</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="971"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="983"/>
         <source>Daily Devotionals</source>
         <translation type="unfinished">Lectures quotidiennes</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="973"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="985"/>
         <source>Lexicons and Dictionaries</source>
         <translation type="unfinished">Lexiques et dictionnaires</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="975"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="987"/>
         <source>Glossaries</source>
         <translation type="unfinished">Glossaires</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="977"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="989"/>
         <source>Unknown</source>
         <translation type="unfinished">Inconnu</translation>
     </message>
@@ -3048,22 +3067,28 @@ Voulez vous continuer ?</translation>
 <context>
     <name>QCoreApplication</name>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="407"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="411"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="418"/>
         <source>Indexing aborted</source>
         <translation>Indexation abandonée</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="407"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="411"/>
+        <source>An internal error occurred while building the index: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="418"/>
         <source>An internal error occurred while building the index.</source>
         <translation>Une erreur interne s&apos;est produite pendant la construction de l&apos;index.</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="490"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="504"/>
         <source>Search aborted</source>
         <translation>Recherche abandonnée</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="490"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="504"/>
         <source>An internal error occurred while executing your search.</source>
         <translation>Une erreur interne est survenue lors de la recherche.</translation>
     </message>
@@ -4362,7 +4387,7 @@ Language name ppk</extracomment>
         <translation type="unfinished">Erreur: argument de la ligne de commande invalide: %1</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="49"/>
+        <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="54"/>
         <source>Default template &quot;%1&quot; not found!</source>
         <translation type="unfinished">Modèle par défaut &quot;%1&quot; non trouvé!</translation>
     </message>
@@ -4980,7 +5005,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="132"/>
         <source>The search ranges which will be used for the search, parsed to the canonical form</source>
-	<translation>Les plages de recherche seront utilisées pour la recherche, analysées sous la forme canonique</translation>
+        <translation>Les plages de recherche seront utilisées pour la recherche, analysées sous la forme canonique</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="86"/>
