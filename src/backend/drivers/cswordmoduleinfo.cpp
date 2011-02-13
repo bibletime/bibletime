@@ -21,7 +21,6 @@
 #include <QList>
 #include <QRegExp>
 #include <QSettings>
-#include "backend/config/cbtconfig.h"
 #include "backend/config/btconfig.h"
 #include "backend/drivers/cswordlexiconmoduleinfo.h"
 #include "backend/keys/cswordkey.h"
@@ -91,7 +90,7 @@ CSwordModuleInfo::CSwordModuleInfo(sword::SWModule *module,
     initCachedCategory();
     initCachedLanguage();
 
-    m_hidden = CBTConfig::get(CBTConfig::hiddenModules).contains(name());
+    m_hidden = getBtConfig().getValue<QStringList>("state/hiddenModules").contains(name());
 
     if (backend()) {
         if (hasVersion() && (minimumSwordVersion() > sword::SWVersion::currentVersion)) {
@@ -139,7 +138,7 @@ bool CSwordModuleInfo::unlock(const QString & unlockKey) {
 }
 
 bool CSwordModuleInfo::isLocked() const {
-    //still works, but the cipherkey is stored in CBTConfig.
+    //still works, but the cipherkey is stored in BtConfig.
     //Works because it is set in sword on program startup.
 
     return isEncrypted() && !unlockKeyIsValid();
@@ -1002,7 +1001,7 @@ bool CSwordModuleInfo::setHidden(bool hide) {
     if (m_hidden == hide) return false;
 
     m_hidden = hide;
-    QStringList hiddenModules(CBTConfig::get(CBTConfig::hiddenModules));
+    QStringList hiddenModules(getBtConfig().getValue<QStringList>("state/hiddenModules"));
     if (hide) {
         Q_ASSERT(!hiddenModules.contains(name()));
         hiddenModules.append(name());
@@ -1011,7 +1010,7 @@ bool CSwordModuleInfo::setHidden(bool hide) {
         Q_ASSERT(hiddenModules.contains(name()));
         hiddenModules.removeOne(name());
     }
-    CBTConfig::set(CBTConfig::hiddenModules, hiddenModules);
+    getBtConfig().setValue("state/hiddenModules", hiddenModules);
     emit hiddenChanged(hide);
     return true;
 }
