@@ -15,7 +15,7 @@
 #include <QTextCodec>
 #include <QTranslator>
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "bibletime.h"
 #include "bibletime_dbus_adaptor.h"
 #include "bibletimeapp.h"
@@ -260,8 +260,8 @@ int main(int argc, char* argv[]) {
     mainWindow->setAttribute(Qt::WA_DeleteOnClose);
 
     // a new BibleTime version was installed (maybe a completely new installation)
-    if (CBTConfig::get(CBTConfig::bibletimeVersion) != BT_VERSION) {
-        CBTConfig::set(CBTConfig::bibletimeVersion, BT_VERSION);
+    if (getBtConfig().getValue<QString>("bibletimeVersion") != BT_VERSION) {
+        getBtConfig().setValue("bibletimeVersion", BT_VERSION);
         mainWindow->saveConfigSettings();
     }
 
@@ -279,7 +279,7 @@ int main(int argc, char* argv[]) {
     QDBusConnection::sessionBus().registerObject("/BibleTime", mainWindow);
 #endif
 
-    if (CBTConfig::get(CBTConfig::showTipAtStartup))
+    if (getBtConfig().getValue<bool>("gui/showTipAtStartup"))
         mainWindow->slotOpenTipDialog();
 
     r = app.exec();
