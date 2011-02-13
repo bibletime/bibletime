@@ -31,7 +31,7 @@ BtConfig::BtConfig(const QString& settingsFile) : m_defaults(), m_sessionSetting
 
         m_defaults.insert("bibletimeVersion", "0.0");
         m_defaults.insert("language", QLocale::system().name());
-        m_defaults.insert("gui/displayStyle", CDisplayTemplateMgr::defaultTemplate());
+        m_defaults.insert("gui/displayStyle", QString(CDisplayTemplateMgr::defaultTemplate()));
         m_defaults.insert("state/bookshelfCurrentItem", QVariant(QString::null));
 
         m_defaults.insert("settings/defaults/standardBible", "KJV");

@@ -20,7 +20,7 @@
 #include <QtAlgorithms>
 #include <QMenu>
 
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/keys/cswordkey.h"
 #include "backend/keys/cswordversekey.h"
@@ -79,7 +79,7 @@ CInfoDisplay::CInfoDisplay(QWidget *parent) : QWidget(parent) {
                               "after a short delay. Move the mouse into Mag "
                               "rapidly or lock the view by pressing and "
                               "holding Shift while moving the mouse.</small>"));
-    QString content(mgr->fillTemplate(CBTConfig::get(CBTConfig::displayStyle),
+    QString content(mgr->fillTemplate(getBtConfig().getValue<QString>("gui/displayStyle"),
                                       divText.arg(initialMagText),
                                       settings)
                    );
@@ -113,8 +113,7 @@ void CInfoDisplay::lookupInfo(const QString &mod_name, const QString &key_text) 
     divText.append(renderedText);
     divText.append("</div>");
 
-    QString content = mgr->fillTemplate(CBTConfig::get
-                                        (CBTConfig::displayStyle), divText, settings);
+    QString content = mgr->fillTemplate(getBtConfig().getValue<QString>("gui/displayStyle"), divText, settings);
 
     m_htmlPart->setText(content);
 }
@@ -176,8 +175,7 @@ void CInfoDisplay::setInfo(const ListInfoData& list) {
     CDisplayTemplateMgr::Settings settings;
     settings.pageCSS_ID = "infodisplay";
     //  settings.langAbbrev = "";
-    QString content = mgr->fillTemplate(CBTConfig::get
-                                        (CBTConfig::displayStyle), text, settings);
+    QString content = mgr->fillTemplate(getBtConfig().getValue<QString>("gui/displayStyle"), text, settings);
 
     //   qWarning("setting text:\n%s", content.latin1());
 
@@ -227,7 +225,7 @@ const QString CInfoDisplay::decodeCrossReference( const QString& data ) {
     CTextRendering::KeyTree tree;
 
     //  const bool isBible = true;
-    CSwordModuleInfo* module = CBTConfig::get(CBTConfig::standardBible);
+    CSwordModuleInfo* module = getBtConfig().getDefaultSwordModuleByType("standardBible");
 
     //a prefixed module gives the module to look into
     QRegExp re("^[^ ]+:");
@@ -242,7 +240,7 @@ const QString CInfoDisplay::decodeCrossReference( const QString& data ) {
         //     qWarning("found module %s", moduleName.latin1());
         module = CSwordBackend::instance()->findModuleByName(moduleName);
         if (!module) {
-            module = CBTConfig::get(CBTConfig::standardBible);
+            module = getBtConfig().getDefaultSwordModuleByType("standardBible");
         }
         //   Q_ASSERT(module);
     }
@@ -372,11 +370,11 @@ const QString CInfoDisplay::decodeStrongs( const QString& data ) {
 
     QStringList::const_iterator end = strongs.end();
     for (QStringList::const_iterator it = strongs.begin(); it != end; ++it) {
-        CSwordModuleInfo* const module = CBTConfig::get
+        CSwordModuleInfo* const module = getBtConfig().getDefaultSwordModuleByType
                                          (
                                              ((*it).left(1) == QString("H")) ?
-                                             CBTConfig::standardHebrewStrongsLexicon :
-                                             CBTConfig::standardGreekStrongsLexicon
+                                             "standardHebrewStrongsLexicon" :
+                                             "standardGreekStrongsLexicon"
                                          );
 
         QString text;
@@ -429,26 +427,23 @@ const QString CInfoDisplay::decodeMorph( const QString& data ) {
             if (value.size() > 1 && value.at(1).isDigit()) {
                 switch (value.at(0).toLatin1()) {
                     case 'G':
-                        module = CBTConfig::get
-                                 (CBTConfig::standardGreekMorphLexicon);
+                        module = getBtConfig().getDefaultSwordModuleByType("standardGreekMorphLexicon");
                         skipFirstChar = true;
                         break;
                     case 'H':
-                        module = CBTConfig::get
-                                 (CBTConfig::standardHebrewMorphLexicon);
+                        module = getBtConfig().getDefaultSwordModuleByType("standardHebrewMorphLexicon");
                         skipFirstChar = true;
                         break;
                     default:
                         skipFirstChar = false;
                         /// \todo we can't tell here if it's a greek or hebrew moprh code, that's a problem we have to solve
-                        //       module = CBTConfig::get(CBTConfig::standardGreekMorphLexicon);
+                        //       module = getBtConfig().getDefaultSwordModuleByType("standardGreekMorphLexicon");
                         break;
                 }
             }
             //if it is still not set use the default
             if (!module) {
-                module = CBTConfig::get
-                         (CBTConfig::standardGreekMorphLexicon);
+                module = getBtConfig().getDefaultSwordModuleByType("standardGreekMorphLexicon");
             }
         }
 
@@ -461,8 +456,7 @@ const QString CInfoDisplay::decodeMorph( const QString& data ) {
             const bool isOk = key->setKey(skipFirstChar ? value.mid(1) : value);
             //Q_ASSERT(isOk);
             if (!isOk) { //try to use the other morph lexicon, because this one failed with the current morph code
-                key->setModule(CBTConfig::get
-                               (CBTConfig::standardHebrewMorphLexicon));
+                key->setModule(getBtConfig().getDefaultSwordModuleByType("standardHebrewMorphLexicon")); //TODO: what if the module doesn't exist?
                 key->setKey(skipFirstChar ? value.mid(1) : value);
             }
 
@@ -485,8 +479,7 @@ const QString CInfoDisplay::decodeMorph( const QString& data ) {
 }
 
 const QString CInfoDisplay::getWordTranslation( const QString& data ) {
-    CSwordModuleInfo* const module = CBTConfig::get
-                                     (CBTConfig::standardLexicon);
+    CSwordModuleInfo* const module = getBtConfig().getDefaultSwordModuleByType("standardLexicon");
     if (!module) {
         return QString::null;
     }
@@ -511,7 +504,7 @@ void CInfoDisplay::clearInfo() {
     CDisplayTemplateMgr::Settings settings;
     settings.pageCSS_ID = "infodisplay";
 
-    m_htmlPart->setText( tmgr->fillTemplate(CBTConfig::get(CBTConfig::displayStyle), QString::null, settings) );
+    m_htmlPart->setText( tmgr->fillTemplate(getBtConfig().getValue<QString>("gui/displayStyle"), QString::null, settings) );
 }
 
 QSize CInfoDisplay::sizeHint() const {
