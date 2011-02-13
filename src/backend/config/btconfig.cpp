@@ -336,16 +336,16 @@ FilterOptions BtConfig::getFilterOptions()
 
     options.footnotes           = true; // Required for the info display
     options.strongNumbers       = true; // get(strongNumbers);
-    options.headings            = getValue<int>("gui/headings");
+    options.headings            = getValue<int>("presentation/headings");
     options.morphTags           = true; // Required for the info display
     options.lemmas              = true; // Required for the info display
     options.redLetterWords      = true;
-    options.hebrewPoints        = getValue<int>("gui/hebrewPoints");
-    options.hebrewCantillation  = getValue<int>("gui/hebrewCantillation");
-    options.greekAccents        = getValue<int>("gui/greekAccents");
-    options.textualVariants     = getValue<int>("gui/textualVariants");
-    options.scriptureReferences = getValue<int>("gui/scriptureReferences");
-    options.morphSegmentation   = getValue<int>("gui/morphSegmentation");
+    options.hebrewPoints        = getValue<int>("presentation/hebrewPoints");
+    options.hebrewCantillation  = getValue<int>("presentation/hebrewCantillation");
+    options.greekAccents        = getValue<int>("presentation/greekAccents");
+    options.textualVariants     = getValue<int>("presentation/textualVariants");
+    options.scriptureReferences = getValue<int>("presentation/scriptureReferences");
+    options.morphSegmentation   = getValue<int>("presentation/morphSegmentation");
 
     return options;
 }

@@ -320,6 +320,9 @@ T BtConfig::getValue(const QString& key)
         Q_ASSERT(not key.startsWith(m_sessionsGroup));
         Q_ASSERT(key != m_currentSessionKey);
 
+    // accessing values not listed in defaults is prohibited (this effectively prevents typos)
+        Q_ASSERT_X(m_defaults.contains(key), "BtConfig", QString(key + " was accessed, this is a nonexisting and thus prohibited key.").toLatin1());
+
     // retrieve value from config
         if(m_sessionSettings.contains(key))
         {
@@ -333,8 +336,11 @@ template<typename T>
 void BtConfig::setValue(const QString& key, T value)
 {
     //accessing session values directly is prohibited
-    Q_ASSERT(not key.startsWith(m_sessionsGroup));
-    Q_ASSERT(key != m_currentSessionKey);
+        Q_ASSERT(not key.startsWith(m_sessionsGroup));
+        Q_ASSERT(key != m_currentSessionKey);
+
+    // accessing values not listed in defaults is prohibited (this effectively prevents typos)
+        Q_ASSERT_X(m_defaults.contains(key), "BtConfig", QString(key + " was accessed, this is a nonexisting and thus prohibited key.").toLatin1());
 
     if(m_sessionSettings.contains(key))
         m_settings.setValue(m_currentSessionCache + key, QVariant::fromValue<T>(value));
