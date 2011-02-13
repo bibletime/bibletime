@@ -20,7 +20,7 @@
 #include <QToolBar>
 #include <QToolButton>
 #include <QVBoxLayout>
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "backend/managers/btstringmgr.h"
 #include "backend/managers/clanguagemgr.h"
 #include "backend/managers/cswordbackend.h"
@@ -320,7 +320,7 @@ void BibleTime::createMenuAndToolBar()
     addToolBar(m_mainToolBar);
 
     // Set visibility of main window toolbars based on config
-    bool visible = ! CBTConfig::get(CBTConfig::showToolbarsInEachWindow);
+    bool visible = ! getBtConfig().getValue<bool>("gui/showToolbarsInEachWindow");
 
     m_navToolBar = createToolBar("NavToolBar", this, visible);
     addToolBar(m_navToolBar);
@@ -379,37 +379,37 @@ void BibleTime::initActions() {
 
     m_showTextAreaHeadersAction = m_actionCollection->action("showParallelTextHeaders");
     m_showTextAreaHeadersAction->setCheckable(true);
-    m_showTextAreaHeadersAction->setChecked(CBTConfig::get(CBTConfig::showTextWindowHeaders));
+    m_showTextAreaHeadersAction->setChecked(getBtConfig().getValue<bool>("gui/showTextWindowHeaders"));
     connect(m_showTextAreaHeadersAction, SIGNAL(toggled(bool)),
             this,                        SLOT(slotToggleTextWindowHeader()));
 
     m_showTextWindowNavigationAction = m_actionCollection->action("showNavigation");
     m_showTextWindowNavigationAction->setCheckable(true);
-    m_showTextWindowNavigationAction->setChecked(CBTConfig::get(CBTConfig::showTextWindowNavigator));
+    m_showTextWindowNavigationAction->setChecked(getBtConfig().getValue<bool>("gui/showTextWindowNavigator"));
     connect(m_showTextWindowNavigationAction, SIGNAL(toggled(bool)),
             this,                             SLOT(slotToggleNavigatorToolbar()));
 
     m_showTextWindowModuleChooserAction = m_actionCollection->action("showWorks");
     m_showTextWindowModuleChooserAction->setCheckable(true);
-    m_showTextWindowModuleChooserAction->setChecked(CBTConfig::get(CBTConfig::showTextWindowModuleSelectorButtons));
+    m_showTextWindowModuleChooserAction->setChecked(getBtConfig().getValue<bool>("gui/showTextWindowModuleSelectorButtons"));
     connect(m_showTextWindowModuleChooserAction, SIGNAL(toggled(bool)),
             this,                                SLOT(slotToggleWorksToolbar()));
 
     m_showTextWindowToolButtonsAction = m_actionCollection->action("showTools");
     m_showTextWindowToolButtonsAction->setCheckable(true);
-    m_showTextWindowToolButtonsAction->setChecked(CBTConfig::get(CBTConfig::showTextWindowToolButtons));
+    m_showTextWindowToolButtonsAction->setChecked(getBtConfig().getValue<bool>("gui/showTextWindowToolButtons"));
     connect(m_showTextWindowToolButtonsAction, SIGNAL(toggled(bool)),
             this,                              SLOT(slotToggleToolsToolbar()));
 
     m_showFormatToolbarAction = m_actionCollection->action("showFormat");
     m_showFormatToolbarAction->setCheckable(true);
-    m_showFormatToolbarAction->setChecked(CBTConfig::get(CBTConfig::showFormatToolbarButtons));
+    m_showFormatToolbarAction->setChecked(getBtConfig().getValue<bool>("gui/showFormatToolbarButtons"));
     bool ok = connect(m_showFormatToolbarAction, SIGNAL(toggled(bool)),
                       this,                      SLOT(slotToggleFormatToolbar()));
 
     m_toolbarsInEachWindow = m_actionCollection->action("showToolbarsInTextWindows");
     m_toolbarsInEachWindow->setCheckable(true);
-    m_toolbarsInEachWindow->setChecked(CBTConfig::get(CBTConfig::showToolbarsInEachWindow));
+    m_toolbarsInEachWindow->setChecked(getBtConfig().getValue<bool>("gui/showToolbarsInEachWindow"));
     ok = connect(m_toolbarsInEachWindow, SIGNAL(toggled(bool)),
                       this,                   SLOT(slotToggleToolBarsInEachWindow()));
     Q_ASSERT(ok);
@@ -759,7 +759,7 @@ void BibleTime::initBackends() {
 #endif
 
     CSwordBackend *backend = CSwordBackend::createInstance();
-    backend->booknameLanguage(CBTConfig::get(CBTConfig::language) );
+    backend->booknameLanguage(getBtConfig().getValue<QString>("language"));
 
     const CSwordBackend::LoadError errorCode = CSwordBackend::instance()->initModules(CSwordBackend::OtherChange);
 

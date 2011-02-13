@@ -72,6 +72,7 @@ BtConfig::BtConfig(const QString& settingsFile) : m_defaults(), m_sessionSetting
         m_defaults.insert("settings/behaviour/allowNetworkConnection", false);
         m_defaults.insert("gui/showTextWindowHeaders", true);
         m_defaults.insert("gui/showTextWindowNavigator", true);
+        m_defaults.insert("gui/showTextWindowModuleSelectorButtons", true);
         m_defaults.insert("gui/showTextWindowToolButtons", true);
         m_defaults.insert("gui/showFormatToolbarButtons", true);
         m_defaults.insert("gui/showToolbarsInEachWindow", true);
