@@ -15,6 +15,7 @@
 #include <QWebPage>
 #include "backend/keys/cswordversekey.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
+#include "backend/config/btconfig.h"
 
 
 namespace Printing {
@@ -120,7 +121,7 @@ const QString CPrinter::finishText(const QString& text, KeyTree& tree) {
     }
 
     CDisplayTemplateMgr *tMgr = CDisplayTemplateMgr::instance();
-    return tMgr->fillTemplate(CBTConfig::get(CBTConfig::displayStyle), text, settings);
+    return tMgr->fillTemplate(getBtConfig().getValue<QString>("gui/displayStyle"), text, settings);
 }
 
 } //end of namespace
