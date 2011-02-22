@@ -21,7 +21,7 @@
 #include <QtGlobal>
 #include <QToolBar>
 #include <QUrl>
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "backend/keys/cswordversekey.h"
 #include "frontend/btaboutdialog.h"
 #include "frontend/cinfodisplay.h"
@@ -60,7 +60,7 @@ void BibleTime::saveConfigSettings() {
 /** Is called when settings in the optionsdialog were changed (ok or apply) */
 void BibleTime::slotSettingsChanged() {
     qDebug() << "BibleTime::slotSettingsChanged";
-    const QString language = CBTConfig::get(CBTConfig::language);
+    const QString language = getBtConfig().getValue<QString>(language);
     CSwordBackend::instance()->booknameLanguage(language);
 
 // \todo update the bookmarks after Bible bookname language has been changed
@@ -287,61 +287,61 @@ void BibleTime::slotToggleMainToolbar() {
 }
 
 void BibleTime::slotToggleTextWindowHeader() {
-    bool currentState = CBTConfig::get(CBTConfig::showTextWindowHeaders);
-    CBTConfig::set(CBTConfig::showTextWindowHeaders, !currentState);
+    bool currentState = getBtConfig().getValue<bool>("gui/showTextWindowHeaders");
+    getBtConfig().setValue("gui/showTextWindowHeaders", !currentState);
     emit toggledTextWindowHeader(!currentState);
 }
 
 void BibleTime::slotToggleNavigatorToolbar() {
-    bool currentState = CBTConfig::get(CBTConfig::showTextWindowNavigator);
-    CBTConfig::set(CBTConfig::showTextWindowNavigator, !currentState);
+    bool currentState = getBtConfig().getValue<bool>("gui/showTextWindowNavigator");
+    getBtConfig().setValue("gui/showTextWindowNavigator", !currentState);
     showOrHideToolBars();
-    if (CBTConfig::get(CBTConfig::showToolbarsInEachWindow))
+    if (getBtConfig().getValue<bool>("gui/showToolbarsInEachWindow"))
         emit toggledTextWindowNavigator(!currentState);
     else
         emit toggledTextWindowNavigator(false);
 }
 
 void BibleTime::slotToggleToolsToolbar() {
-    bool currentState = CBTConfig::get(CBTConfig::showTextWindowToolButtons);
-    CBTConfig::set(CBTConfig::showTextWindowToolButtons, !currentState);
+    bool currentState = getBtConfig().getValue<bool>("gui/showTextWindowToolButtons");
+    getBtConfig().setValue("gui/showTextWindowToolButtons", !currentState);
     showOrHideToolBars();
-    if (CBTConfig::get(CBTConfig::showToolbarsInEachWindow))
+    if (getBtConfig().getValue<bool>("gui/showToolbarsInEachWindow"))
         emit toggledTextWindowToolButtons(!currentState);
     else
         emit toggledTextWindowToolButtons(false);
 }
 
 void BibleTime::slotToggleWorksToolbar() {
-    bool currentState = CBTConfig::get(CBTConfig::showTextWindowModuleSelectorButtons);
-    CBTConfig::set(CBTConfig::showTextWindowModuleSelectorButtons, !currentState);
+    bool currentState = getBtConfig().getValue<bool>("gui/showTextWindowModuleSelectorButtons");
+    getBtConfig().setValue("gui/showTextWindowModuleSelectorButtons", !currentState);
     showOrHideToolBars();
-    if (CBTConfig::get(CBTConfig::showToolbarsInEachWindow))
+    if (getBtConfig().getValue<bool>("gui/showToolbarsInEachWindow"))
         emit toggledTextWindowModuleChooser(!currentState);
     else
         emit toggledTextWindowModuleChooser(false);
 }
 
 void BibleTime::slotToggleFormatToolbar() {
-    bool currentState = CBTConfig::get(CBTConfig::showFormatToolbarButtons);
-    CBTConfig::set(CBTConfig::showFormatToolbarButtons, !currentState);
+    bool currentState = getBtConfig().getValue<bool>("gui/showFormatToolbarButtons");
+    getBtConfig().setValue("gui/showFormatToolbarButtons", !currentState);
     showOrHideToolBars();
-    if (CBTConfig::get(CBTConfig::showToolbarsInEachWindow))
+    if (getBtConfig().getValue<bool>("gui/showToolbarsInEachWindow"))
         emit toggledTextWindowFormatToolbar(!currentState);
     else
         emit toggledTextWindowFormatToolbar(false);
 }
 
 void BibleTime::slotToggleToolBarsInEachWindow() {
-    bool currentState = CBTConfig::get(CBTConfig::showToolbarsInEachWindow);
-    CBTConfig::set(CBTConfig::showToolbarsInEachWindow, !currentState);
+    bool currentState = getBtConfig().getValue<bool>("gui/showToolbarsInEachWindow");
+    getBtConfig().setValue("gui/showToolbarsInEachWindow", !currentState);
     showOrHideToolBars();
 
     if (!currentState) {
-        emit toggledTextWindowNavigator(CBTConfig::get(CBTConfig::showTextWindowNavigator));
-        emit toggledTextWindowToolButtons(CBTConfig::get(CBTConfig::showTextWindowToolButtons));
-        emit toggledTextWindowModuleChooser(CBTConfig::get(CBTConfig::showTextWindowModuleSelectorButtons));
-        emit toggledTextWindowFormatToolbar(CBTConfig::get(CBTConfig::showFormatToolbarButtons));
+        emit toggledTextWindowNavigator(getBtConfig().getValue<bool>("gui/showTextWindowNavigator"));
+        emit toggledTextWindowModuleChooser(getBtConfig().getValue<bool>("gui/showTextWindowModuleSelectorButtons"));
+        emit toggledTextWindowToolButtons(getBtConfig().getValue<bool>("gui/showTextWindowToolButtons"));
+        emit toggledTextWindowFormatToolbar(getBtConfig().getValue<bool>("gui/showFormatToolbarButtons"));
     }
     else {
         emit toggledTextWindowNavigator(false);
@@ -354,17 +354,17 @@ void BibleTime::slotToggleToolBarsInEachWindow() {
 }
 
 void BibleTime::showOrHideToolBars() {
-    if (CBTConfig::get(CBTConfig::showToolbarsInEachWindow)) {
+    if (getBtConfig().getValue<bool>("gui/showToolbarsInEachWindow")) {
         m_navToolBar->setVisible(false);
         m_worksToolBar->setVisible(false);
         m_toolsToolBar->setVisible(false);
         m_formatToolBar->setVisible(false);
     }
     else {
-        m_navToolBar->setVisible(CBTConfig::get(CBTConfig::showTextWindowNavigator));
-        m_worksToolBar->setVisible(CBTConfig::get(CBTConfig::showTextWindowModuleSelectorButtons));
-        m_toolsToolBar->setVisible(CBTConfig::get(CBTConfig::showTextWindowToolButtons));
-        m_formatToolBar->setVisible(CBTConfig::get(CBTConfig::showFormatToolbarButtons));
+        m_navToolBar->setVisible(getBtConfig().getValue<bool>("gui/showTextWindowNavigator"));
+        m_worksToolBar->setVisible(getBtConfig().getValue<bool>("gui/showTextWindowModuleSelectorButtons"));
+        m_toolsToolBar->setVisible(getBtConfig().getValue<bool>("gui/showTextWindowToolButtons"));
+        m_formatToolBar->setVisible(getBtConfig().getValue<bool>("gui/showFormatToolbarButtons"));
     }
 }
 
@@ -392,7 +392,7 @@ void BibleTime::slotSearchModules() {
  */
 void BibleTime::slotSearchDefaultBible() {
     QList<const CSwordModuleInfo*> module;
-    CSwordModuleInfo* bible = CBTConfig::get(CBTConfig::standardBible);
+    CSwordModuleInfo* bible = getBtConfig().getDefaultSwordModuleByType("standardBible");
     if (bible) {
         module.append(bible);
     }
