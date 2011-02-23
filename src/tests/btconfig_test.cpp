@@ -56,9 +56,9 @@ private slots:
         BtConfig::StringMap map;
         map.insert(QObject::tr("Old testament"),          QString("Gen - Mal"));
         map.insert(QObject::tr("Moses/Pentateuch/Torah"), QString("Gen - Deut"));
-        m_btConfig->setValue<BtConfig::StringMap>("test/map", map);
+        m_btConfig->setValue<BtConfig::StringMap>("properties/searchScopes", map);
 
-        BtConfig::StringMap newMap = m_btConfig->getValue<BtConfig::StringMap>("test/map");
+        BtConfig::StringMap newMap = m_btConfig->getValue<BtConfig::StringMap>("properties/searchScopes");
         QVERIFY(newMap.value("Old testament") == "Gen - Mal");
         QVERIFY(newMap.value("Moses/Pentateuch/Torah") == "Gen - Deut");
     }
@@ -107,6 +107,28 @@ private slots:
 
         m_btConfig->switchToSession("Third session");
         QVERIFY(m_btConfig->getValue<QString>("settings/defaults/standardBible") == "KJV");
+    }
+
+    void groupTest()
+    {
+        m_btConfig->getValue<bool>("presentation/lineBreaks");
+        m_btConfig->beginGroup("presentation");
+            m_btConfig->getValue<bool>("lineBreaks");
+        m_btConfig->endGroup();
+        m_btConfig->getValue<bool>("presentation/lineBreaks");
+        m_btConfig->getValue<bool>("gui/logo");
+
+        QVERIFY(m_btConfig->getGroup() == "");
+            m_btConfig->beginGroup("asdf");
+            m_btConfig->beginGroup("qwer");
+            m_btConfig->beginGroup("zxcv");
+            m_btConfig->beginGroup("yuio");
+                QVERIFY(m_btConfig->getGroup() == "asdf/qwer/zxcv/yuio/");
+            m_btConfig->endGroup();
+            m_btConfig->endGroup();
+            m_btConfig->endGroup();
+            m_btConfig->endGroup();
+        QVERIFY(m_btConfig->getGroup() == "");
     }
 };
 

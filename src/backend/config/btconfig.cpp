@@ -24,8 +24,9 @@ const QString BtConfig::m_sessionsGroup = "sessions";
 const QString BtConfig::m_currentSessionKey = "currentSession";
 const QString BtConfig::m_defaultSessionName = QObject::tr("default session");
 
-BtConfig::BtConfig(const QString& settingsFile) : m_defaults(), m_sessionSettings(), m_settings(settingsFile, QSettings::IniFormat), m_currentSessionCache(), m_defaultFont(QWebSettings::globalSettings()->fontFamily(QWebSettings::StandardFont), 12)
+BtConfig::BtConfig(const QString& settingsFile) : m_currentGroups(), m_defaults(), m_sessionSettings(), m_settings(settingsFile, QSettings::IniFormat), m_currentSessionCache(), m_defaultFont(QWebSettings::globalSettings()->fontFamily(QWebSettings::StandardFont), 12)
 {
+    m_currentGroups.reserve(10);
     // construct defaults
         m_defaults.reserve(512); //TODO: check whether this value can be calculated automatically...
 
@@ -272,6 +273,28 @@ void BtConfig::syncConfig() {
     m_settings.sync();
 }
 
+void BtConfig::endGroup()
+{
+    if(m_currentGroups.size() > 0)
+    {
+        m_currentGroups.remove(m_currentGroups.size()-1);
+    }
+    else
+    {
+        Q_ASSERT_X(false, "BtConfig", "An endGroup() was called without a previous beginGroup().");
+    }
+}
+
+QString BtConfig::getGroup()
+{
+    QString group;
+    foreach(QString groupElement, m_currentGroups)
+    {
+        group += groupElement;
+    }
+    return group;
+}
+
 // Helper functions
 
 void BtConfig::setModuleEncryptionKey(const QString& name, const QString& key)
@@ -471,16 +494,14 @@ void BtConfig::setSearchScopesWithCurrentLocale(StringMap searchScopes)
 }
 
 CSwordModuleInfo *BtConfig::getDefaultSwordModuleByType(const QString& moduleType) {
-    m_settings.beginGroup("settings/defaults");
-        CSwordModuleInfo *result(CSwordBackend::instance()->findModuleByName(getValue<QString>(moduleType)));
-    m_settings.endGroup();
+    QString completeKey = "settings/defaults/" + moduleType;
+        CSwordModuleInfo *result(CSwordBackend::instance()->findModuleByName(getValue<QString>(completeKey)));
     return result;
 }
 
 void BtConfig::setDefaultSwordModuleByType(const QString& moduleType, const CSwordModuleInfo* const module) {
-    m_settings.beginGroup("settings/defaults");
-        m_settings.setValue(moduleType, module != 0 ? module->name() : QString::null);
-    m_settings.endGroup();
+    QString completeKey = "settings/defaults/" + moduleType;
+    setValue(moduleType, module != 0 ? module->name() : QString::null);
 }
 
 void BtConfig::readSession()
