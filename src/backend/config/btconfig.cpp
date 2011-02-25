@@ -103,6 +103,7 @@ BtConfig::BtConfig(const QString& settingsFile) : m_currentGroups(), m_defaults(
         m_defaults.insert("gui/windows/configDialogPosY", 1);
         m_defaults.insert("gui/windows/configDialogHeight", 1);
         m_defaults.insert("gui/windows/configDialogWidth", 1);
+        m_defaults.insert("state/tipNumber", 0);
             QStringList list;
             list.append(QString::null);
         m_defaults.insert("properties/searchTexts", list);
