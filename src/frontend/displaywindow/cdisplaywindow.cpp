@@ -14,7 +14,6 @@
 #include <QMenu>
 #include <QStringList>
 #include <QWidget>
-#include "backend/config/cbtconfig.h"
 #include "backend/config/btconfig.h"
 #include "backend/keys/cswordkey.h"
 #include "bibletime.h"
@@ -331,7 +330,7 @@ void CDisplayWindow::setModuleChooserBar( BtModuleChooserBar* bar ) {
         m_moduleChooserBar = bar;
         bar->setWindowTitle(tr("Work chooser buttons"));
         bar->setLayoutDirection(Qt::LeftToRight);
-        bar->setVisible(CBTConfig::get(CBTConfig::showTextWindowModuleSelectorButtons));
+        bar->setVisible(getBtConfig().getValue<bool>("gui/showTextWindowModuleSelectorButtons"));
     }
 }
 
@@ -340,7 +339,7 @@ void CDisplayWindow::setHeaderBar( QToolBar* header ) {
     m_headerBar = header;
     header->setMovable(false);
     header->setWindowTitle(tr("Text area header"));
-    header->setVisible(CBTConfig::get(CBTConfig::showTextWindowHeaders));
+    header->setVisible(getBtConfig().getValue<bool>("gui/showTextWindowHeaders"));
 }
 
 /** Sets the modules. */
@@ -365,7 +364,7 @@ bool CDisplayWindow::init() {
     parentWidget()->setFocusPolicy(Qt::ClickFocus);
     initActions();
     initToolbars();
-    if ( ! CBTConfig::get(CBTConfig::showToolbarsInEachWindow))
+    if (not getBtConfig().getValue<bool>("gui/showToolbarsInEachWindow"))
         setToolBarsHidden();
     btMainWindow()->clearMdiToolBars();
     clearMainWindowToolBars();
@@ -391,13 +390,13 @@ static void prepareToolBar(QToolBar* bar, const QString& title, bool visible) {
 
 /** Setup the Navigation toolbar. */
 void CDisplayWindow::setMainToolBar( QToolBar* bar ) {
-    prepareToolBar(bar, tr("Navigation"), CBTConfig::get(CBTConfig::showTextWindowNavigator) );
+    prepareToolBar(bar, tr("Navigation"), getBtConfig().getValue<bool>("gui/showTextWindowNavigator") );
     m_mainToolBar = bar;
 }
 
 /** Setup the Tools toolbar. */
 void CDisplayWindow::setButtonsToolBar( QToolBar* bar ) {
-    prepareToolBar(bar, tr("Tool"), CBTConfig::get(CBTConfig::showTextWindowToolButtons) );
+    prepareToolBar(bar, tr("Tool"), getBtConfig().getValue<bool>("gui/showTextWindowToolButtons") );
     m_buttonsToolBar = bar;
 }
 
