@@ -15,7 +15,6 @@
 #include <QSet>
 #include <QString>
 #include <QTextCodec>
-#include "backend/config/cbtconfig.h"
 #include "backend/config/btconfig.h"
 #include "backend/drivers/cswordbiblemoduleinfo.h"
 #include "backend/drivers/cswordbookmoduleinfo.h"
@@ -537,7 +536,7 @@ void CSwordBackend::deleteOrphanedIndices() {
                 }
             }
             else { //no module exists
-                if (CBTConfig::get( CBTConfig::autoDeleteOrphanedIndices ) ) {
+                if (getBtConfig().getValue<bool>("settings/behaviour/autoDeleteOrphanedIndices")) {
                     qDebug() << "deleting orphaned index in directory" << dir[i];
                     CSwordModuleInfo::deleteIndexForModule( dir[i] );
                 }
