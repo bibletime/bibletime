@@ -14,7 +14,7 @@
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QWebView>
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
 #include "backend/rendering/cdisplayrendering.h"
 #include "util/cresmgr.h"
@@ -55,7 +55,7 @@ CDisplaySettingsPage::CDisplaySettingsPage(QWidget *parent)
         m_showLogoCheck->setText(tr("Show startup logo"));
         m_showLogoCheck->setToolTip(tr("Show the BibleTime logo on startup"));
 
-        m_showLogoCheck->setChecked(CBTConfig::get(CBTConfig::logo));
+        m_showLogoCheck->setChecked(getBtConfig().getValue<bool>("gui/logo"));
         mainLayout->addWidget(m_showLogoCheck);
     }
     mainLayout->addSpacing(20);
@@ -96,7 +96,7 @@ CDisplaySettingsPage::CDisplaySettingsPage(QWidget *parent)
     );
 
     for (int i = 0; i < m_styleChooserCombo->count(); ++i) {
-        if ( m_styleChooserCombo->itemText(i) == CBTConfig::get(CBTConfig::displayStyle) ) {
+        if ( m_styleChooserCombo->itemText(i) == getBtConfig().getValue<QString>("gui/displayStyle") ) {
             m_styleChooserCombo->setCurrentIndex( i );
             break;
         }
@@ -152,25 +152,20 @@ void CDisplaySettingsPage::updateStylePreview() {
                      .arg(tr("But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.")),
                      settings));
 
-    const QString oldStyleName = CBTConfig::get
-                                 (CBTConfig::displayStyle);
+    const QString oldStyleName = getBtConfig().getValue<QString>("gui/displayStyle");
     //qDebug() << "old style name: " << oldStyleName;
-    CBTConfig::set
-    (CBTConfig::displayStyle, styleName);
-    //qDebug() << "new style name: " << CBTConfig::get(CBTConfig::displayStyle);
+    getBtConfig().setValue("gui/displayStyle", styleName);
+    //qDebug() << "new style name: " << getBtConfig().getValue<QString>("gui/displayStyle");
     CDisplayRendering render;
     m_stylePreviewViewer->setHtml( render.renderKeyTree(tree));
-
-    CBTConfig::set
-    (CBTConfig::displayStyle, oldStyleName);
+    
+    getBtConfig().setValue("gui/displayStyle", oldStyleName);
     qDebug() << "CDisplaySettingsPage::updateStylePreview end";
 }
 
 void CDisplaySettingsPage::save() {
-    CBTConfig::set
-    ( CBTConfig::logo, m_showLogoCheck->isChecked() );
-    CBTConfig::set
-    ( CBTConfig::displayStyle, m_styleChooserCombo->currentText() );
+    getBtConfig().setValue("gui/logo", m_showLogoCheck->isChecked() );
+    getBtConfig().setValue("gui/displayStyle", m_styleChooserCombo->currentText());
 }
 
 // implement the BtConfigPage methods
