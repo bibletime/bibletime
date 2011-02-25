@@ -263,51 +263,52 @@ TextFiltersTab::TextFiltersTab() {
     layout->setSpacing(2);
     layout->addWidget(eLabel);
 
-    m_lineBreaksCheck = new QCheckBox(this);
-    m_lineBreaksCheck->setText(tr("Insert line break after each verse"));
-    m_lineBreaksCheck->setChecked(getBtConfig().getValue<bool>("lineBreaks"));
-    layout->addWidget(m_lineBreaksCheck);
+    getBtConfig().beginGroup("presentation");
+        m_lineBreaksCheck = new QCheckBox(this);
+        m_lineBreaksCheck->setText(tr("Insert line break after each verse"));
+        m_lineBreaksCheck->setChecked(getBtConfig().getValue<bool>("lineBreaks"));
+        layout->addWidget(m_lineBreaksCheck);
 
-    m_verseNumbersCheck = new QCheckBox(this);
-    m_verseNumbersCheck->setText(tr("Show verse numbers"));
-    m_verseNumbersCheck->setChecked(getBtConfig().getValue<bool>("verseNumbers"));
-    layout->addWidget(m_verseNumbersCheck);
+        m_verseNumbersCheck = new QCheckBox(this);
+        m_verseNumbersCheck->setText(tr("Show verse numbers"));
+        m_verseNumbersCheck->setChecked(getBtConfig().getValue<bool>("verseNumbers"));
+        layout->addWidget(m_verseNumbersCheck);
 
-    m_headingsCheck = new QCheckBox(this);
-    m_headingsCheck->setText(tr("Show section headings"));
-    m_headingsCheck->setChecked(getBtConfig().getValue<bool>("headings"));
-    layout->addWidget(m_headingsCheck);
+        m_headingsCheck = new QCheckBox(this);
+        m_headingsCheck->setText(tr("Show section headings"));
+        m_headingsCheck->setChecked(getBtConfig().getValue<bool>("headings"));
+        layout->addWidget(m_headingsCheck);
 
+        m_scriptureReferencesCheck = new QCheckBox(this);
+        m_scriptureReferencesCheck->setText(tr("Show scripture cross-references"));
+        m_scriptureReferencesCheck->setChecked(getBtConfig().getValue<bool>("scriptureReferences"));
+        layout->addWidget(m_scriptureReferencesCheck);
 
-    m_scriptureReferencesCheck = new QCheckBox(this);
-    m_scriptureReferencesCheck->setText(tr("Show scripture cross-references"));
-    m_scriptureReferencesCheck->setChecked(getBtConfig().getValue<bool>("scriptureReferences"));
-    layout->addWidget(m_scriptureReferencesCheck);
+        m_greekAccentsCheck = new QCheckBox(this);
+        m_greekAccentsCheck->setText(tr("Show Greek accents"));
+        m_greekAccentsCheck->setChecked(getBtConfig().getValue<bool>("greekAccents"));
+        layout->addWidget(m_greekAccentsCheck);
 
-    m_greekAccentsCheck = new QCheckBox(this);
-    m_greekAccentsCheck->setText(tr("Show Greek accents"));
-    m_greekAccentsCheck->setChecked(getBtConfig().getValue<bool>("greekAccents"));
-    layout->addWidget(m_greekAccentsCheck);
+        m_hebrewPointsCheck = new QCheckBox(this);
+        m_hebrewPointsCheck->setText(tr("Show Hebrew vowel points"));
+        m_hebrewPointsCheck->setChecked(getBtConfig().getValue<bool>("hebrewPoints"));
+        layout->addWidget(m_hebrewPointsCheck);
 
-    m_hebrewPointsCheck = new QCheckBox(this);
-    m_hebrewPointsCheck->setText(tr("Show Hebrew vowel points"));
-    m_hebrewPointsCheck->setChecked(getBtConfig().getValue<bool>("hebrewPoints"));
-    layout->addWidget(m_hebrewPointsCheck);
+        m_hebrewCantillationCheck = new QCheckBox(this);
+        m_hebrewCantillationCheck->setText(tr("Show Hebrew cantillation marks"));
+        m_hebrewCantillationCheck->setChecked(getBtConfig().getValue<bool>("hebrewCantillation"));
+        layout->addWidget(m_hebrewCantillationCheck);
 
-    m_hebrewCantillationCheck = new QCheckBox(this);
-    m_hebrewCantillationCheck->setText(tr("Show Hebrew cantillation marks"));
-    m_hebrewCantillationCheck->setChecked(getBtConfig().getValue<bool>("hebrewCantillation"));
-    layout->addWidget(m_hebrewCantillationCheck);
+        m_morphSegmentationCheck = new QCheckBox(this);
+        m_morphSegmentationCheck->setText(tr("Show morph segmentation"));
+        m_morphSegmentationCheck->setChecked(getBtConfig().getValue<bool>("morphSegmentation"));
+        layout->addWidget(m_morphSegmentationCheck);
 
-    m_morphSegmentationCheck = new QCheckBox(this);
-    m_morphSegmentationCheck->setText(tr("Show morph segmentation"));
-    m_morphSegmentationCheck->setChecked(getBtConfig().getValue<bool>("morphSegmentation"));
-    layout->addWidget(m_morphSegmentationCheck);
-
-    m_textualVariantsCheck = new QCheckBox(this);
-    m_textualVariantsCheck->setText(tr("Use textual variants"));
-    m_textualVariantsCheck->setChecked(getBtConfig().getValue<bool>("textualVariants"));
-    layout->addWidget(m_textualVariantsCheck);
+        m_textualVariantsCheck = new QCheckBox(this);
+        m_textualVariantsCheck->setText(tr("Use textual variants"));
+        m_textualVariantsCheck->setChecked(getBtConfig().getValue<bool>("textualVariants"));
+        layout->addWidget(m_textualVariantsCheck);
+    getBtConfig().endGroup();
 
     layout->addStretch(4);
 }
