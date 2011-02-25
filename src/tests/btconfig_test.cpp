@@ -78,17 +78,14 @@ private slots:
     void switchingSessionTest()
     {
         m_btConfig->switchToSession("First session");
-        m_btConfig->setValue("settings/defaults/standardBible", "neUe");
         m_btConfig->setValue("gui/showTextWindowHeaders", true);
-        QVERIFY(m_btConfig->getValue<QString>("settings/defaults/standardBible") == "neUe");
         QVERIFY(m_btConfig->getValue<bool>("gui/showTextWindowHeaders") == true);
 
         m_btConfig->switchToSession("Second session");
-        QVERIFY(m_btConfig->getValue<QString>("settings/defaults/standardBible") == "KJV");
+        m_btConfig->setValue("gui/showTextWindowHeaders", false);
         QVERIFY(m_btConfig->getValue<bool>("gui/showTextWindowHeaders") == false);
 
         m_btConfig->switchToSession("First session");
-        QVERIFY(m_btConfig->getValue<QString>("settings/defaults/standardBible") == "neUe");
         QVERIFY(m_btConfig->getValue<bool>("gui/showTextWindowHeaders") == true);
     }
 
