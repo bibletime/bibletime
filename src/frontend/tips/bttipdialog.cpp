@@ -9,7 +9,7 @@
 
 #include "bttipdialog.h"
 
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
 
@@ -78,7 +78,7 @@ BtTipDialog::BtTipDialog(QWidget *parent, Qt::WindowFlags wflags)
 
     m_showTipsCheckBox = new QCheckBox;
     m_showTipsCheckBox->setText(tr("Show tips at startup"));
-    bool showTips = CBTConfig::get(CBTConfig::showTipAtStartup);
+    bool showTips = getBtConfig().getValue<bool>("gui/showTipAtStartup");
     m_showTipsCheckBox->setChecked(showTips);
     hLayout->addWidget(m_showTipsCheckBox);
 
@@ -110,7 +110,7 @@ BtTipDialog::BtTipDialog(QWidget *parent, Qt::WindowFlags wflags)
                      this,              SLOT(linkClicked(const QUrl&)));
     Q_ASSERT(ok);
 
-    m_tipNumber = CBTConfig::get(CBTConfig::tipNumber);
+    m_tipNumber = getBtConfig().getValue<int>("state/tipNumber");
     initTips();
     displayTip();
 }
@@ -180,7 +180,7 @@ void BtTipDialog::displayTip() {
 }
 
 void BtTipDialog::startupBoxChanged(bool checked) {
-    CBTConfig::set(CBTConfig::showTipAtStartup, checked);
+    getBtConfig().setValue("gui/showTipAtStartup", checked);
 }
 
 void BtTipDialog::nextTip() {
@@ -188,7 +188,7 @@ void BtTipDialog::nextTip() {
     if (m_tipNumber >= m_tips.count()) {
         m_tipNumber = 0;
     }
-    CBTConfig::set(CBTConfig::tipNumber, m_tipNumber);
+    getBtConfig().setValue("state/tipNumber", m_tipNumber);
     displayTip();
 }
 
