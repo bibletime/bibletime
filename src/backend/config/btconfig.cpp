@@ -221,21 +221,24 @@ void BtConfig::switchToSession(const QString& name)
 bool BtConfig::deleteSession(const QString& name)
 {
     m_settings.beginGroup(m_sessionsGroup);
-    QStringList sessions = m_settings.childGroups();
+        QStringList sessions = m_settings.childGroups();
+    m_settings.endGroup();
 
     foreach(QString session, sessions)
     {
-        // we found the session and it's not the current session
-        if(m_settings.value(session + "/name") == name && m_settings.value(m_currentSessionKey) != session)
+        if(m_settings.value(m_sessionsGroup + "/" + session + "/name").toString() == name) // we found the session
         {
-            m_settings.remove(session);
-            m_settings.endGroup();
-            return true;
+            if(m_settings.value(m_currentSessionKey) != session)
+            {
+                m_settings.remove(m_sessionsGroup + "/" + session);
+                return true;
+            }
+            else // it's was the current session, we don't do it
+                return false;
         }
     }
 
-    // no session with the name was found, or request to delete current session
-    m_settings.endGroup();
+    // no session with the name was found
     return false;
 }
 

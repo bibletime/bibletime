@@ -91,19 +91,20 @@ private slots:
 
     void deletingSessionTest()
     {
+        // This test depends on the default value of gui/showTextWindowHeaders, I guess that's ok since that value will probably not change in the forseable future.
         m_btConfig->switchToSession("Third session");
-        m_btConfig->setValue("settings/defaults/standardBible", "neUe");
-        QVERIFY(m_btConfig->getValue<QString>("settings/defaults/standardBible") == "neUe");
+        QVERIFY(m_btConfig->getValue<bool>("gui/showTextWindowHeaders") == true); // if this line fails the defaults have changed
+        m_btConfig->setValue("gui/showTextWindowHeaders", false);
+        QVERIFY(m_btConfig->getValue<bool>("gui/showTextWindowHeaders") == false);
 
-        QVERIFY(m_btConfig->deleteSession("Third Session") == false);
+        QVERIFY(m_btConfig->deleteSession("Third session") == false);
+        QVERIFY(m_btConfig->getValue<bool>("gui/showTextWindowHeaders") == false);
 
         m_btConfig->switchToSession("Fourth session");
-        QVERIFY(m_btConfig->getValue<QString>("settings/defaults/standardBible") == "KJV");
-
-        QVERIFY(m_btConfig->deleteSession("Third Session") == true);
+        QVERIFY(m_btConfig->deleteSession("Third session") == true);
 
         m_btConfig->switchToSession("Third session");
-        QVERIFY(m_btConfig->getValue<QString>("settings/defaults/standardBible") == "KJV");
+        QVERIFY(m_btConfig->getValue<bool>("gui/showTextWindowHeaders") == true);
     }
 
     void groupTest()
