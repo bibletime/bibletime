@@ -225,22 +225,16 @@ bool BtConfig::deleteSession(const QString& name)
 
     foreach(QString session, sessions)
     {
-        if(m_settings.value(session + "/name") == name)
+        // we found the session and it's not the current session
+        if(m_settings.value(session + "/name") == name && m_settings.value(m_currentSessionKey) != session)
         {
+            m_settings.remove(session);
             m_settings.endGroup();
-
-            // we don't delete the current session
-            if(m_settings.value(m_currentSessionKey) == session)
-                return false;
-            else
-            {
-                m_settings.remove(session);
-                return true;
-            }
+            return true;
         }
     }
 
-    // no session with the name was found
+    // no session with the name was found, or request to delete current session
     m_settings.endGroup();
     return false;
 }
