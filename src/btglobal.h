@@ -60,7 +60,8 @@ enum alignmentMode
     autoTileHorizontal,
     autoTile,
     autoTabbed,
-    autoCascade
+    autoCascade,
+    manual
 };
 Q_DECLARE_METATYPE(alignmentMode);
 
