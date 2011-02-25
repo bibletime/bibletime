@@ -12,7 +12,7 @@
 #include <QDebug>
 #include <QList>
 #include <QMdiSubWindow>
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "backend/keys/cswordversekey.h"
 #include "frontend/cmdiarea.h"
 
@@ -68,7 +68,7 @@ void BibleTime::openWindow(const QString& moduleName, const QString& key) {
 
 void BibleTime::openDefaultBible(const QString& key) {
     qDebug() << "DBUS: open default bible ...";
-    CSwordModuleInfo* mod = CBTConfig::get(CBTConfig::standardBible);
+    CSwordModuleInfo* mod = getBtConfig().getDefaultSwordModuleByType("standardBible");
     if (mod) {
         openWindow(mod->name(), key);
     }
@@ -123,7 +123,7 @@ QStringList BibleTime::searchInOpenModules(const QString& searchText) {
 }
 
 QStringList BibleTime::searchInDefaultBible(const QString& searchText) {
-    CSwordModuleInfo* bible = CBTConfig::get(CBTConfig::standardBible);
+    CSwordModuleInfo* bible = getBtConfig().getDefaultSwordModuleByType("standardBible");
     return searchInModule(bible->name(), searchText);
 }
 
