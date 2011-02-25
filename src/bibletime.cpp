@@ -19,8 +19,9 @@
 #include <QMessageBox>
 #include <QSplashScreen>
 #include <QSplitter>
+#include <qglobal.h>
 #include <ctime>
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "backend/drivers/cswordbiblemoduleinfo.h"
 #include "backend/drivers/cswordbookmoduleinfo.h"
 #include "backend/drivers/cswordcommentarymoduleinfo.h"
@@ -54,7 +55,7 @@ BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
     m_instance = this;
 
     QSplashScreen splash;
-    bool showSplash = CBTConfig::get(CBTConfig::logo);
+    bool showSplash = getBtConfig().getValue<bool>("gui/logo");
     QString splashHtml;
 
     if (showSplash) {
@@ -116,20 +117,14 @@ BibleTime::~BibleTime() {
 /** Saves the properties of BibleTime to the application wide configfile  */
 void BibleTime::saveSettings() {
     /// \todo how to write settings?
-    //accel()->writeSettings(CBTConfig::getConfig());
 
-    CBTConfig::set(CBTConfig::toolbar, m_viewToolbarAction->isChecked());
+    getBtConfig().setValue("gui/showMainToolbar", m_viewToolbarAction->isChecked());
 
-    // set the default to false
-    /* CBTConfig::set(CBTConfig::autoTileVertical, false);
-     CBTConfig::set(CBTConfig::autoTileHorizontal, false);
-     CBTConfig::set(CBTConfig::autoCascade, false);
-    */
-    CBTConfig::set(CBTConfig::autoTileVertical, m_windowAutoTileVerticalAction->isChecked());
-    CBTConfig::set(CBTConfig::autoTileHorizontal, m_windowAutoTileHorizontalAction->isChecked());
-    CBTConfig::set(CBTConfig::autoTile, m_windowAutoTileAction->isChecked());
-    CBTConfig::set(CBTConfig::autoTabbed, m_windowAutoTabbedAction->isChecked());
-    CBTConfig::set(CBTConfig::autoCascade, m_windowAutoCascadeAction->isChecked());
+    if(m_windowAutoTileVerticalAction->isChecked())        getBtConfig().setValue("gui/alignmentMode", autoTileVertical);
+    else if(m_windowAutoTileHorizontalAction->isChecked()) getBtConfig().setValue("gui/alignmentMode", autoTileHorizontal);
+    else if(m_windowAutoTileAction->isChecked())           getBtConfig().setValue("gui/alignmentMode", autoTile);
+    else if(m_windowAutoTabbedAction->isChecked())         getBtConfig().setValue("gui/alignmentMode", autoTabbed);
+    else if(m_windowAutoCascadeAction->isChecked())        getBtConfig().setValue("gui/alignmentMode", autoCascade);
 
     CProfile* p = m_profileMgr.startupProfile();
     if (p) {
@@ -140,40 +135,45 @@ void BibleTime::saveSettings() {
 /** Reads the settings from the configfile and sets the right properties. */
 void BibleTime::readSettings() {
     qDebug() << "******************BibleTime::readSettings******************************";
-    //  accel()->readSettings(CBTConfig::getConfig());
     m_actionCollection->readShortcuts("Application shortcuts");
 
-    m_viewToolbarAction->setChecked( CBTConfig::get(CBTConfig::toolbar) );
+    m_viewToolbarAction->setChecked( getBtConfig().getValue<bool>("gui/showMainToolbar") );
     slotToggleMainToolbar();
 
-    if ( CBTConfig::get(CBTConfig::autoTileVertical) ) {
-        m_windowAutoTileVerticalAction->setChecked( true );
-        m_windowManualModeAction->setChecked(false);
-        slotAutoTileVertical();
-    }
-    else if ( CBTConfig::get(CBTConfig::autoTileHorizontal) ) {
-        m_windowAutoTileHorizontalAction->setChecked( true );
-        m_windowManualModeAction->setChecked(false);
-        slotAutoTileHorizontal();
-    }
-    else if ( CBTConfig::get(CBTConfig::autoTile) ) {
-        m_windowAutoTileAction->setChecked(true);
-        m_windowManualModeAction->setChecked(false);
-        slotAutoTile();
-    }
-    else if ( CBTConfig::get(CBTConfig::autoTabbed) ) {
-        m_windowAutoTabbedAction->setChecked(true);
-        m_windowManualModeAction->setChecked(false);
-        slotAutoTabbed();
-    }
-    else if ( CBTConfig::get(CBTConfig::autoCascade) ) {
-        m_windowAutoCascadeAction->setChecked(true);
-        m_windowManualModeAction->setChecked(false);
-        slotAutoCascade();
-    }
-    else {
-        m_windowManualModeAction->setChecked(true);
-        slotManualArrangementMode();
+    switch(getBtConfig().getValue<alignmentMode>("gui/alignmentMode"))
+    {
+        case autoTileVertical:
+            m_windowAutoTileVerticalAction->setChecked( true );
+            m_windowManualModeAction->setChecked(false);
+            slotAutoTileVertical();
+            break;
+        case autoTileHorizontal:
+            m_windowAutoTileHorizontalAction->setChecked( true );
+            m_windowManualModeAction->setChecked(false);
+            slotAutoTileHorizontal();
+            break;
+        case autoTile:
+            m_windowAutoTileAction->setChecked(true);
+            m_windowManualModeAction->setChecked(false);
+            slotAutoTile();
+            break;
+        case autoTabbed:
+            m_windowAutoTabbedAction->setChecked(true);
+            m_windowManualModeAction->setChecked(false);
+            slotAutoTabbed();
+            break;
+        case autoCascade:
+            m_windowAutoCascadeAction->setChecked(true);
+            m_windowManualModeAction->setChecked(false);
+            slotAutoCascade();
+            break;
+        case manual:
+            m_windowManualModeAction->setChecked(true);
+            slotManualArrangementMode();
+            break;
+        default:
+            Q_ASSERT("An unknown arrangement mode was used, this is a programming error.");
+            break;
     }
 }
 
@@ -333,7 +333,7 @@ void BibleTime::restoreWorkspace() {
 }
 
 void BibleTime::processCommandline(bool ignoreSession, const QString &bibleKey) {
-    if (CBTConfig::get(CBTConfig::crashedTwoTimes)) {
+    if (getBtConfig().getValue<bool>("state/crashedTwoTimes")) {
         return;
     }
 
@@ -341,12 +341,12 @@ void BibleTime::processCommandline(bool ignoreSession, const QString &bibleKey) 
         restoreWorkspace();
     }
 
-    if (CBTConfig::get(CBTConfig::crashedLastTime)) {
+    if (getBtConfig().getValue<bool>("state/crashedLastTime")) {
         return;
     }
 
     if (!bibleKey.isNull()) {
-        CSwordModuleInfo* bible = CBTConfig::get(CBTConfig::standardBible);
+        CSwordModuleInfo* bible = getBtConfig().getDefaultSwordModuleByType("standardBible");
         if (bibleKey == "random") {
             CSwordVerseKey vk(0);
             const int maxIndex = 31100;
