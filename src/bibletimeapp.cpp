@@ -10,7 +10,8 @@
 #include "bibletimeapp.h"
 
 #include <QMessageBox>
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
+#include "backend/managers/cswordbackend.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
 #include "util/cresmgr.h"
 
@@ -20,8 +21,8 @@ BibleTimeApp::~BibleTimeApp() {
     if (!m_init) return;
 
     //we can set this safely now because we close now (hopyfully without crash)
-    CBTConfig::set(CBTConfig::crashedLastTime, false);
-    CBTConfig::set(CBTConfig::crashedTwoTimes, false);
+    getBtConfig().setValue("state/crashedLastTime", false);
+    getBtConfig().setValue("state/crashedTwoTimes", false);
 
     delete CDisplayTemplateMgr::instance();
     CLanguageMgr::destroyInstance();
