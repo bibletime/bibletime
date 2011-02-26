@@ -72,6 +72,24 @@ private slots:
         QVERIFY(newMap.value("TestBlu") == "Teststring2");
     }
 
+    void intMapTest()
+    {
+        QList<int> intList;
+        intList.append(1);
+        intList.append(12);
+        intList.append(13);
+        intList.append(14);
+        m_btConfig->setValue("gui/windows/searchResultArea/mainSplitterSizes", intList);
+
+        reloadConfig();
+
+        QList<int> newIntList = m_btConfig->getValue< QList<int> >("gui/windows/searchResultArea/mainSplitterSizes");
+        QVERIFY(newIntList.takeFirst() == 1);
+        QVERIFY(newIntList.takeFirst() == 12);
+        QVERIFY(newIntList.takeFirst() == 13);
+        QVERIFY(newIntList.takeFirst() == 14);
+    }
+
     void sessionNamesTest()
     {
         QVERIFY(m_btConfig->getCurrentSessionName() == "default session");

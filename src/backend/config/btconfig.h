@@ -388,6 +388,7 @@ const QFont &BtConfig::getDefaultFont() const
 Q_DECLARE_METATYPE(BTModuleTreeItem::Grouping);
 Q_DECLARE_METATYPE(Search::BtSearchOptionsArea::SearchType);
 Q_DECLARE_METATYPE(BtConfig::StringMap);
+Q_DECLARE_METATYPE(QList<int>);
 
 // operator<</operator>> are needed for QVariant to be able to save it's contents to a text file, see documentation for qRegisterMetaTypeStreamOperators()
 QDataStream &operator<<(QDataStream &out, const Search::BtSearchOptionsArea::SearchType &searchType);

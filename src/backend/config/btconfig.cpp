@@ -27,9 +27,6 @@ const QString BtConfig::m_defaultSessionName = QObject::tr("default session");
 BtConfig::BtConfig(const QString& settingsFile) : m_currentGroups(), m_defaults(), m_sessionSettings(), m_settings(settingsFile, QSettings::IniFormat), m_currentSessionCache(), m_defaultFont(QWebSettings::globalSettings()->fontFamily(QWebSettings::StandardFont), 12)
 {
     // register all the types
-        qRegisterMetaType<StringMap>("StringMap");
-        qRegisterMetaTypeStreamOperators<StringMap>("StringMap");
-        
         qRegisterMetaType<BTModuleTreeItem::Grouping>("Grouping");
         qRegisterMetaTypeStreamOperators<BTModuleTreeItem::Grouping>("Grouping");
 
@@ -38,6 +35,12 @@ BtConfig::BtConfig(const QString& settingsFile) : m_currentGroups(), m_defaults(
         
         qRegisterMetaType<Search::BtSearchOptionsArea::SearchType>("SearchType");
         qRegisterMetaTypeStreamOperators<Search::BtSearchOptionsArea::SearchType>("SearchType");
+        
+        qRegisterMetaType<StringMap>("StringMap");
+        qRegisterMetaTypeStreamOperators<StringMap>("StringMap");
+        
+        qRegisterMetaType< QList<int> >("QList<int>");
+        qRegisterMetaTypeStreamOperators< QList<int> >("QList<int>");
 
     m_currentGroups.reserve(10);
     // construct defaults
