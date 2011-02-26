@@ -140,8 +140,10 @@ BtConfig::BtConfig(const QString& settingsFile) : m_currentGroups(), m_defaults(
 
     //TODO: save defaults somewhere so they can be loaded directly on next startup
 
-    // make sure the current session key is set
-        if(not m_settings.contains(m_currentSessionKey))
+    // make sure the current session key and cache are set
+        if(m_settings.contains(m_currentSessionKey))
+            m_currentSessionCache = m_sessionsGroup + "/" + m_settings.value(m_currentSessionKey).toString() + "/";
+        else
             switchToSession(m_defaultSessionName);
 }
 

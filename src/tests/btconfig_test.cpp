@@ -11,6 +11,13 @@ class BtConfigTest: public QObject
 
     QString m_configFileName;
     BtConfig* m_btConfig;
+
+    void reloadConfig()
+    {
+        delete m_btConfig;
+        m_configFileName = "testsettings.ini";
+        m_btConfig = new BtConfig(m_configFileName);
+    }
 private slots:
     void initTestCase()
     {
@@ -54,13 +61,15 @@ private slots:
     void stringMapTest()
     {
         BtConfig::StringMap map;
-        map.insert(QObject::tr("Old testament"),          QString("Gen - Mal"));
-        map.insert(QObject::tr("Moses/Pentateuch/Torah"), QString("Gen - Deut"));
+        map.insert("TestBla", "Teststring1");
+        map.insert("TestBlu", "Teststring2");
         m_btConfig->setValue<BtConfig::StringMap>("properties/searchScopes", map);
 
+        reloadConfig();
+
         BtConfig::StringMap newMap = m_btConfig->getValue<BtConfig::StringMap>("properties/searchScopes");
-        QVERIFY(newMap.value("Old testament") == "Gen - Mal");
-        QVERIFY(newMap.value("Moses/Pentateuch/Torah") == "Gen - Deut");
+        QVERIFY(newMap.value("TestBla") == "Teststring1");
+        QVERIFY(newMap.value("TestBlu") == "Teststring2");
     }
 
     void sessionNamesTest()
