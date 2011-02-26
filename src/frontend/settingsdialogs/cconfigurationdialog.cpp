@@ -14,6 +14,7 @@
 #include <QLayout>
 #include <QPushButton>
 #include <QWidget>
+#include "backend/config/btconfig.h"
 #include "frontend/settingsdialogs/cacceleratorsettings.h"
 #include "frontend/settingsdialogs/cdisplaysettings.h"
 #include "frontend/settingsdialogs/btfontsettings.h"
@@ -99,13 +100,15 @@ void CConfigurationDialog::slotButtonClicked(QAbstractButton* button) {
 }
 
 void CConfigurationDialog::loadDialogSettings() {
-    resize(CBTConfig::get(CBTConfig::configDialogWidth), CBTConfig::get(CBTConfig::configDialogHeight));
-    move(CBTConfig::get(CBTConfig::configDialogPosX), CBTConfig::get(CBTConfig::configDialogPosY));
+    getBtConfig().beginGroup("gui/windows/configDialog");
+        resize(getBtConfig().getValue<QSize>("Size"));
+        move(getBtConfig().getValue<QPoint>("Pos"));
+    getBtConfig().endGroup();
 }
 
 void CConfigurationDialog::saveDialogSettings() {
-    CBTConfig::set(CBTConfig::configDialogWidth, size().width());
-    CBTConfig::set(CBTConfig::configDialogHeight, size().height());
-    CBTConfig::set(CBTConfig::configDialogPosX, x());
-    CBTConfig::set(CBTConfig::configDialogPosY, y());
+    getBtConfig().beginGroup("gui/windows/configDialog");
+        getBtConfig().setValue("Size", size());
+        getBtConfig().setValue("Pos", pos());
+    getBtConfig().endGroup();
 }
