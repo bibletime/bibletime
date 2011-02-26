@@ -28,7 +28,6 @@
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
 #include <QToolTip>
-#include "backend/config/cbtconfig.h"
 #include "backend/config/btconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/referencemanager.h"
@@ -53,7 +52,7 @@ CBookmarkIndex::CBookmarkIndex(QWidget *parent)
         m_previousEventItem(0) {
     setMouseTracking(true);
     m_magTimer.setSingleShot(true);
-    m_magTimer.setInterval(CBTConfig::get(CBTConfig::magDelay));
+    m_magTimer.setInterval(getBtConfig().getValue<int>("gui/windows/magDelay"));
     setContextMenuPolicy(Qt::CustomContextMenu);
     initView();
     initConnections();
