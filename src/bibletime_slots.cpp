@@ -60,7 +60,7 @@ void BibleTime::saveConfigSettings() {
 /** Is called when settings in the optionsdialog were changed (ok or apply) */
 void BibleTime::slotSettingsChanged() {
     qDebug() << "BibleTime::slotSettingsChanged";
-    const QString language = getBtConfig().getValue<QString>(language);
+    const QString language = getBtConfig().getValue<QString>("language");
     CSwordBackend::instance()->booknameLanguage(language);
 
 // \todo update the bookmarks after Bible bookname language has been changed
