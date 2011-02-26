@@ -22,12 +22,12 @@
 #include <QWidget>
 #include "backend/keys/cswordversekey.h"
 #include "backend/rendering/cdisplayrendering.h"
+#include "backend/config/btconfig.h"
 #include "frontend/display/cdisplay.h"
 #include "frontend/searchdialog/cmoduleresultview.h"
 #include "frontend/searchdialog/csearchdialog.h"
 #include "frontend/searchdialog/csearchresultview.h"
 #include "util/tool.h"
-#include "backend/config/cbtconfig.h"
 
 
 namespace Search {
@@ -509,26 +509,28 @@ void BtSearchResultArea::initConnections() {
 * Load the settings from the resource file
 */
 void BtSearchResultArea::loadDialogSettings() {
-    QList<int> mainSplitterSizes = CBTConfig::get(CBTConfig::searchMainSplitterSizes);
-    if (mainSplitterSizes.count() > 0) {
+    QList<int> mainSplitterSizes = getBtConfig().getValue< QList<int> >("gui/windows/searchResultArea/mainSplitterSizes");
+    if (mainSplitterSizes.count() > 0)
         m_mainSplitter->setSizes(mainSplitterSizes);
-    }
-    else {
+    else
+    {
         int w = this->size().width();
         int w2 = m_moduleListBox->sizeHint().width();
         mainSplitterSizes << w2 << w - w2;
         m_mainSplitter->setSizes(mainSplitterSizes);
     }
-    QList<int> resultSplitterSizes = CBTConfig::get(CBTConfig::searchResultSplitterSizes);
-    if (resultSplitterSizes.count() > 0) m_resultListSplitter->setSizes(resultSplitterSizes);
+
+    QList<int> resultSplitterSizes = getBtConfig().getValue< QList<int> >("gui/windows/searchResultArea/resultSplitterSizes");
+    if (resultSplitterSizes.count() > 0)
+        m_resultListSplitter->setSizes(resultSplitterSizes);
 }
 
 /**
 * Save the settings to the resource file
 */
 void BtSearchResultArea::saveDialogSettings() {
-    CBTConfig::set(CBTConfig::searchMainSplitterSizes, m_mainSplitter->sizes());
-    CBTConfig::set(CBTConfig::searchResultSplitterSizes, m_resultListSplitter->sizes());
+    getBtConfig().setValue("gui/windows/searchResultArea/mainSplitterSizes", m_mainSplitter->sizes());
+    getBtConfig().setValue("gui/windows/searchResultArea/resultSplitterSizes", m_resultListSplitter->sizes());
 }
 
 /******************************************************************************

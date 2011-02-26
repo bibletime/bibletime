@@ -115,6 +115,8 @@ BtConfig::BtConfig(const QString& settingsFile) : m_currentGroups(), m_defaults(
         m_defaults.insert("gui/windows/searchDialog/Pos", QPoint(200,200));
         m_defaults.insert("gui/windows/searchDialog/Size", QSize(200,400));
         m_defaults.insert("gui/windows/bookshelfContents/Pos", QPoint(0,0));
+        m_defaults.insert("gui/windows/searchResultArea/mainSplitterSizes", QVariant::fromValue(QList<int>()));
+        m_defaults.insert("gui/windows/searchResultArea/resultSplitterSizes", QVariant::fromValue(QList<int>()));
         m_defaults.insert("state/tipNumber", 0);
             QStringList list;
             list.append(QString::null);
