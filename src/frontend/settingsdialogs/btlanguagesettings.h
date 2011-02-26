@@ -14,7 +14,6 @@
 
 #include <QMap>
 #include <QWidget>
-#include "backend/config/cbtconfig.h"
 
 
 //class CFontChooser;
@@ -54,7 +53,7 @@ class BtLanguageSettingsPage : public BtConfigPage {
         //QCheckBox* m_useOwnFontCheck;
         //CFontChooser* m_fontChooser;
 
-        //QMap<QString, CBTConfig::FontSettingsPair> m_fontMap;
+        //QMap<QString, BtConfig::FontSettingsPair> m_fontMap;
 };
 
 #endif

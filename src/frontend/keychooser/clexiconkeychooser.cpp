@@ -12,7 +12,6 @@
 #include <algorithm>
 #include <QHBoxLayout>
 #include <QDebug>
-#include "backend/config/cbtconfig.h"
 #include "backend/drivers/cswordlexiconmoduleinfo.h"
 #include "backend/keys/cswordldkey.h"
 #include "frontend/keychooser/bthistory.h"

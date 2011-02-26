@@ -15,7 +15,6 @@
 #include <QSettings>
 #include <QString>
 #include <QStringList>
-#include "backend/config/cbtconfig.h"
 #include "util/directory.h"
 
 

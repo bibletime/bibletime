@@ -18,7 +18,6 @@
 #include <QWidget>
 #include <QDebug>
 
-#include "backend/config/cbtconfig.h"
 #include "backend/drivers/cswordbiblemoduleinfo.h"
 #include "backend/keys/cswordversekey.h"
 #include "frontend/cexportmanager.h"

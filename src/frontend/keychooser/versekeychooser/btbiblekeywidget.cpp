@@ -20,7 +20,6 @@
 #include <QString>
 #include <QStringList>
 #include <QToolButton>
-#include "backend/config/cbtconfig.h"
 #include "backend/keys/cswordversekey.h"
 #include "frontend/keychooser/cscrollerwidgetset.h"
 #include "frontend/keychooser/versekeychooser/btdropdownchooserbutton.h"

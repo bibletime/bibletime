@@ -12,7 +12,6 @@
 #include <QSharedPointer>
 #include <QMenu>
 #include <QString>
-#include "backend/config/cbtconfig.h"
 #include "backend/keys/cswordkey.h"
 #include "backend/managers/referencemanager.h"
 #include "frontend/cdragdrop.h"

@@ -23,7 +23,6 @@
 #include "util/cresmgr.h"
 #include "util/tool.h"
 #include "util/directory.h"
-#include "backend/config/cbtconfig.h"
 #include "backend/config/btconfig.h"
 
 

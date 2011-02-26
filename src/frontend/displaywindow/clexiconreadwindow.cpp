@@ -17,7 +17,6 @@
 #include <QDebug>
 
 #include "bibletime.h"
-#include "backend/config/cbtconfig.h"
 #include "backend/keys/cswordldkey.h"
 #include "backend/keys/cswordkey.h"
 #include "frontend/cexportmanager.h"

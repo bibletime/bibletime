@@ -13,7 +13,6 @@
 #include <QObject>
 #include "backend/rendering/cdisplayrendering.h"
 
-#include "backend/config/cbtconfig.h"
 #include "backend/managers/cswordbackend.h"
 
 

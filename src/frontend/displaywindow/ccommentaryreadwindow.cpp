@@ -13,7 +13,6 @@
 #include <QIcon>
 #include <QMenu>
 #include <QToolBar>
-#include "backend/config/cbtconfig.h"
 #include "backend/keys/cswordversekey.h"
 #include "bibletime.h"
 #include "frontend/display/cdisplay.h"

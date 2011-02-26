@@ -18,7 +18,6 @@
 #include <QVBoxLayout>
 #include <QWidget>
 #include "bibletime.h"
-#include "backend/config/cbtconfig.h"
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/cbiblereadwindow.h"
 #include "frontend/displaywindow/cbookreadwindow.h"

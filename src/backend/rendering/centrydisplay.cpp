@@ -12,7 +12,6 @@
 #include <QApplication>
 #include <QRegExp>
 
-#include "backend/config/cbtconfig.h"
 #include "backend/drivers/cswordbookmoduleinfo.h"
 #include "backend/keys/cswordkey.h"
 #include "backend/keys/cswordversekey.h"

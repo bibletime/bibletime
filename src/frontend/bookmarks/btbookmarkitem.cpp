@@ -93,7 +93,7 @@ QString BtBookmarkItem::toolTip() const {
     k->setKey(key());
 
     // const CLanguageMgr::Language* lang = module()->language();
-    // CBTConfig::FontSettingsPair fontPair = CBTConfig::get(lang);
+    // BtConfig::FontSettingsPair fontPair = getBtConfig().getFontForLanguage(lang);
 
     Q_ASSERT(k.data());
     QString header = QString::fromLatin1("%1 (%2)")

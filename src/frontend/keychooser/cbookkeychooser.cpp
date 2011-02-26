@@ -13,7 +13,6 @@
 #include <QHBoxLayout>
 #include <QList>
 #include <QWidget>
-#include "backend/config/cbtconfig.h"
 #include "backend/config/btconfig.h"
 #include "backend/drivers/cswordbookmoduleinfo.h"
 #include "backend/keys/cswordtreekey.h"

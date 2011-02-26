@@ -14,7 +14,6 @@
 #include <QFileInfo>
 #include <QStringList>
 #include <QTextStream>
-#include "backend/config/cbtconfig.h"
 #include "backend/config/btconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/clanguagemgr.h"
@@ -121,7 +120,7 @@ const QString CDisplayTemplateMgr::fillTemplate( const QString& name, const QStr
         //qDebug() << "foreach, lang: ";
         //qDebug() << lang;
 
-        //if (lang->isValid() && CBTConfig::get(lang).first) {
+        //if (lang->isValid() && getBtConfig().getFontForLanguage(lang).first) {
         if (!lang->abbrev().isEmpty() && getBtConfig().getFontForLanguage(lang).first) {
             const QFont f = getBtConfig().getFontForLanguage(lang).second;
 

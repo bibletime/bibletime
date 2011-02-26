@@ -9,10 +9,9 @@
 
 #include "backend/cswordmodulesearch.h"
 
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "backend/managers/cswordbackend.h"
 #include "btglobal.h"
-#include "backend/config/btconfig.h"
 
 
 void CSwordModuleSearch::startSearch() {
