@@ -43,7 +43,6 @@ SOURCE_GROUP("src\\backend\\bookshelfmodel" FILES ${bibletime_SRC_BACKEND_BOOKSH
 
 SET(bibletime_SRC_BACKEND_CONFIG
     # Backend config:
-    src/backend/config/cbtconfig.cpp
     src/backend/config/btconfig.cpp
 )
 
