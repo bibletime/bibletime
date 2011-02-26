@@ -367,6 +367,14 @@ void BibleTime::processCommandline(bool ignoreSession, const QString &bibleKey) 
         */
         m_mdi->myTileVertical();
     }
+
+    if (getBtConfig().getValue<bool>("state/crashedLastTime")) {
+        getBtConfig().setValue("state/crashedTwoTimes", true);
+    }
+    else {
+        getBtConfig().setValue("state/crashedLastTime", true);
+    }
+    getBtConfig().syncConfig();
 }
 
 bool BibleTime::event(QEvent* event) {
