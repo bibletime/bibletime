@@ -1,18 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-	<title>#TITLE#</title>
-	<meta name="GENERATOR" content="BibleTime - www.bibletime.info" />
-	<meta name="AUTHOR" content="BibleTime - www.bibletime.info" />
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	
-	<style type="text/css">
-/* <![CDATA[ */
-* { 
-	background-color:inherit; /* To work around a KDE 3.2 bug / problem */
-}
-
 /* content wraps all of the displayed elements */
 #content { }
 /* The table contains the Bible verses, each verse on an own row, each Bible module in an own column */
@@ -24,12 +9,12 @@
 a { }
 a:hover { }
 
-/* An entry is the generic element used for all content items. 
+/* An entry is the generic element used for all content items.
  In Bibles an entry contains a verse, in commentaries the comment to a verse range,
  in lexicons an simple item and in book the text of an item with other .entry elements as childs.
- 
+
  If just one module is chosen, all entries are put together in one sourrounding table column. In this case the elements div and span may have the class "entry". If it's a div each entry should be on it's own line. span.entry should not add a linebreak.
- 
+
  If more than one module (Bibles) was chosen, the entry class applies to "td" elements, one column for a verse
  */
 .entry { }
@@ -93,8 +78,8 @@ td.entry + td.entry { }
 .crossreference a { }
 .crossreference a:hover { }
 
-/* Alternative reading as defined in the OSIS specs. The information about the alternative text is displayed in the info display. It's 
-often a good idea to format this the same as footnotes 
+/* Alternative reading as defined in the OSIS specs. The information about the alternative text is displayed in the info display. It's
+often a good idea to format this the same as footnotes
 The text which is the alternative of the displayed text is available in the attribute "alternative"
 so something like .alternative:before { content:"'"attr(alternative); } is possible
 */
@@ -191,15 +176,3 @@ so something like .alternative:before { content:"'"attr(alternative); } is possi
 #infodisplay .rangeheading {}
 
 #printer .rangeheading {}
-
-/* Here's the marker for the language specific fotn information. BibleTime replaces this by the CSS for the fonts */
-#LANG_CSS#
-
-/* ]]> */
-	</style>
-</head>
-
-<!--  The display type may be bible, book, printer -->
-<body id="#DISPLAYTYPE#">
-	<div id="content" lang="#LANG_ABBREV#" xml:lang="#LANG_ABBREV#">#CONTENT#</div></body>
-</html>

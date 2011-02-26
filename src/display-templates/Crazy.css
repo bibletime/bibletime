@@ -1,15 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-	<!--TODO: This needs a better title than "Crazy"-->
-	<title>#TITLE#</title>
-	<meta name="GENERATOR" content="BibleTime - www.bibletime.info" />
-	<meta name="AUTHOR" content="BibleTime - www.bibletime.info" />
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
-	<style type="text/css">
-/* <![CDATA[ */
+/**
+ * Theme by BibleTime - www.bibletime.info *
+ */
 body {
 	background-color: white;
 	color: black;
@@ -306,16 +297,3 @@ so something like .alternative:before { content:"'"attr(alternative); } is possi
 #printer .rangeheading {}
 
 *[dir=rtl] { text-align:right !important; }
-
-/* Here's the marker for the language specific fotn information. BibleTime replaces this by the CSS for the fonts */
-#LANG_CSS#
-
-/* ]]> */
-	</style>
-</head>
-
-<!--  The display type may be bible, book, printer -->
-<body id="#DISPLAYTYPE#">
-	<div id="content" lang="#LANG_ABBREV#" xml:lang="#LANG_ABBREV#" dir="#PAGE_DIRECTION#">#CONTENT#</div>
-</body>
-</html>

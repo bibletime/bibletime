@@ -192,6 +192,7 @@ if(BUILD_TESTS)
         ${CURL_LIBRARIES} # optional, empty if not found
         ${ICU_LIBRARIES} # optional, empty if not found
         ${ICU_I18N_LIBRARIES} # optional, empty if not found
+        ${ZLIB_LIBRARIES} # optional, empty if not found
         ${SWORD_LIBRARY}
     )
     ENABLE_TESTING()
@@ -199,6 +200,16 @@ if(BUILD_TESTS)
     SET(TEST_DIR "${CMAKE_CURRENT_SOURCE_DIR}/src/tests/")
     add_unit_test(btconfig_test ${TEST_DIR}/btconfig_test.cpp)
 endif(BUILD_TESTS)
+
+
+IF (APPLE)
+     # enable support MacOS 10.5+
+    SET_TARGET_PROPERTIES(${EXECUTABLE_NAME}
+        PROPERTIES
+            COMPILE_FLAGS   "-mmacosx-version-min=10.5 -isysroot /Developer/SDKs/MacOSX10.5.sdk"
+            LINK_FLAGS      "-mmacosx-version-min=10.5 -isysroot /Developer/SDKs/MacOSX10.5.sdk"
+    )
+ENDIF (APPLE)
 
 
 IF (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
@@ -238,6 +249,10 @@ INSTALL(FILES ${INSTALL_ICONS_LIST_PNG}
 # display templates
 FILE(GLOB INSTALL_DISPLAY_TEMPLATES_LIST ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/*.tmpl)
 INSTALL(FILES ${INSTALL_DISPLAY_TEMPLATES_LIST}
+    DESTINATION "${BT_SHARE_PATH}bibletime/display-templates/"
+)
+FILE(GLOB INSTALL_DISPLAY_CSS_LIST ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/*.css)
+INSTALL(FILES ${INSTALL_DISPLAY_CSS_LIST}
     DESTINATION "${BT_SHARE_PATH}bibletime/display-templates/"
 )
 # javascript

@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2010 by the BibleTime developers.
+* Copyright 1999-2011 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -65,7 +65,9 @@ bool BtModuleIndexDialog::indexAllModules2(
 
         // Single module indexing blocks until finished:
         setLabelText(tr("Creating index for work: %1").arg(m->name()));
-        m->buildIndex();
+
+        if (!m->buildIndex()) success = false;
+
         m_currentModuleIndex++;
 
         disconnect(this, SIGNAL(canceled()),
@@ -75,10 +77,9 @@ bool BtModuleIndexDialog::indexAllModules2(
         disconnect(m,    SIGNAL(indexingProgress(int)),
                    this, SLOT(slotModuleProgress(int)));
 
-        if (wasCanceled()) {
-            success = false;
-            break;
-        }
+        if (wasCanceled()) success = false;
+
+        if (!success) break;
     }
 
     if (!success) {

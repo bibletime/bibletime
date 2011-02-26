@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2010 by the BibleTime developers.
+* Copyright 1999-2011 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -93,6 +93,9 @@ void BtDisplaySettingsButton::initMenu() {
     m_scriptureReferencesAction = new QAction(this);
     m_scriptureReferencesAction->setCheckable(true);
 
+    m_footnotesAction = new QAction(this);
+    m_footnotesAction->setCheckable(true);
+
     m_morphSegmentationAction = new QAction(this);
     m_morphSegmentationAction->setCheckable(true);
 }
@@ -107,6 +110,7 @@ void BtDisplaySettingsButton::retranslateUi() {
     m_greekAccentsAction->setText(tr("Show Greek accents"));
     m_variantAction->setText(tr("Use alternative textual variant"));
     m_scriptureReferencesAction->setText(tr("Show scripture cross-references"));
+    m_footnotesAction->setText(tr("Show footnotes"));
     m_morphSegmentationAction->setText(tr("Show morph segmentation"));
 
     retranslateToolTip();
@@ -150,6 +154,9 @@ void BtDisplaySettingsButton::slotOptionToggled(QAction *action) {
         emit sigFilterOptionsChanged(m_filterOptions);
     } else if (action == m_scriptureReferencesAction) {
         m_filterOptions.scriptureReferences = checked;
+        emit sigFilterOptionsChanged(m_filterOptions);
+    } else if (action == m_footnotesAction) {
+        m_filterOptions.footnotes = checked;
         emit sigFilterOptionsChanged(m_filterOptions);
     } else if (action == m_redWordsAction) {
         m_filterOptions.redLetterWords = checked;
@@ -206,6 +213,11 @@ void BtDisplaySettingsButton::repopulateMenu() {
 
         if (isOptionAvailable(CSwordModuleInfo::scriptureReferences)) {
             addMenuEntry(m_scriptureReferencesAction, m_filterOptions.scriptureReferences);
+            enable = true;
+        }
+
+        if (isOptionAvailable(CSwordModuleInfo::footnotes)) {
+            addMenuEntry(m_footnotesAction, m_filterOptions.footnotes);
             enable = true;
         }
 

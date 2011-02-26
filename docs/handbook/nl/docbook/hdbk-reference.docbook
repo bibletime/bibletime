@@ -16,6 +16,18 @@ linkend="hdbk-reference-shortcuts">shortcuts section</link>.</para>
       </title>
       <para>
         <variablelist>
+          <varlistentry id="hdbk-reference-menus-file-open-work">
+            <term>
+              <menuchoice> <guimenu> <inlinemediaobject>
+<imageobject> <imagedata fileref="i_folder_open.png" width="32" depth="32"
+format="PNG" /> </imageobject></inlinemediaobject>File</guimenu> <guimenuitem>Open work</guimenuitem> </menuchoice>
+            </term>
+            <listitem>
+              <para><action>Open work.</action> This will give you a menu that will allow you to
+open installed books.</para>
+            </listitem>
+          </varlistentry>
+
           <varlistentry id="hdbk-reference-menus-file-quit">
             <term>
               <menuchoice> <shortcut> <keycombo action="simul">
@@ -459,6 +471,20 @@ as it takes care not to advocate any particular denominational doctrine. We
 expect you to read and study the scriptures to understand what they say. If
 you start with the attitude that you want to have the Lord sow his word in
 your heart He will not disappoint you.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry id="hdbk-reference-menus-help-tip_of_the_day">
+          <term>
+            <menuchoice> <shortcut> <keycombo action="simul"> <keycap>F3</keycap>
+</keycombo> </shortcut> <guimenu> <inlinemediaobject>
+<imageobject> <imagedata fileref="i_light_bulb.png" width="22" depth="32"
+format="PNG" /> </imageobject></inlinemediaobject>Help</guimenu> <guimenuitem>Tip of the Day</guimenuitem>
+</menuchoice>
+          </term>
+          <listitem>
+            <para><action>Opens a helpful tip</action> The Tip of the Day provides a useful
+tip that will assist in the use of &bibletime;.</para>
           </listitem>
         </varlistentry>
 
@@ -961,6 +987,7 @@ currently opened works.</entry>
             <menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem>
 </menuchoice> equivalent; opens the handbook.</entry>
           </row>
+
           <row>
             <entry>
               <keycombo action="simul"> <keycap>F2</keycap> </keycombo>
@@ -969,6 +996,16 @@ currently opened works.</entry>
             <menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy
 HowTo</guimenuitem> </menuchoice> equivalent; opens the BibleStudy HowTo.</entry>
           </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul"> <keycap>F3</keycap> </keycombo>
+            </entry>
+            <entry>
+            <menuchoice> <guimenu>Help</guimenu> <guimenuitem>Tip of the
+Day</guimenuitem> </menuchoice> Opens a helpful tip to use &bibletime;.</entry>
+          </row>
+
           <row>
             <entry>
               <keycombo action="simul"> <keycap>F4</keycap> </keycombo>

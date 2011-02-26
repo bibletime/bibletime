@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2010 by the BibleTime developers.
+* Copyright 1999-2011 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -29,11 +29,16 @@ CDisplayTemplateMgr::CDisplayTemplateMgr(QString &errorMessage) {
     namespace DU = util::directory;
 
     QStringList filter("*.tmpl");
+    QStringList cssfilter("*.css");
 
     // Preload global display templates from disk:
     QDir td = DU::getDisplayTemplatesDir();
     Q_FOREACH(QString file, td.entryList(filter, QDir::Files | QDir::Readable))
         loadTemplate(td.canonicalPath() + "/" + file);
+        
+    // Load app stylesheets
+    Q_FOREACH(QString file, td.entryList(cssfilter, QDir::Files | QDir::Readable))
+    	loadCSSTemplate(td.canonicalPath() + "/" + file);
 
     /*
       Preload user display templates from disk, overriding any global templates
@@ -43,7 +48,7 @@ CDisplayTemplateMgr::CDisplayTemplateMgr(QString &errorMessage) {
     Q_FOREACH(QString file, utd.entryList(filter, QDir::Files | QDir::Readable))
         loadTemplate(utd.canonicalPath() + "/" + file);
 
-    if (m_templateMap.contains(defaultTemplate())) {
+    if (m_cssMap.contains(defaultTemplate())) {
         errorMessage = QString::null;
     } else {
         errorMessage = QObject::tr("Default template \"%1\" not found!")
@@ -54,12 +59,14 @@ CDisplayTemplateMgr::CDisplayTemplateMgr(QString &errorMessage) {
 const QString CDisplayTemplateMgr::fillTemplate( const QString& name, const QString& content, Settings& settings ) {
     qDebug() << "CDisplayTemplateMgr::fillTemplate";
 
-    const QString templateName = m_templateMap.contains(name) ? name : defaultTemplate();
+    const QString templateName = m_cssMap.contains(name) ? name : defaultTemplate();
 
     QString displayTypeString;
+    QString moduleName;
 
     if (!settings.pageCSS_ID.isEmpty()) {
         displayTypeString = settings.pageCSS_ID;
+        moduleName = "";
     }
     else {
         if (settings.modules.count()) {
@@ -79,9 +86,11 @@ const QString CDisplayTemplateMgr::fillTemplate( const QString& name, const QStr
                     displayTypeString = "singleentry";
                     break;
             };
+            moduleName = settings.modules.first()->name();
         }
         else { //use bible as default type if no modules are set
             displayTypeString = "bible";
+            moduleName = "";
         };
     }
 
@@ -154,16 +163,24 @@ const QString CDisplayTemplateMgr::fillTemplate( const QString& name, const QStr
             .arg(standardFont.italic() ? "italic" : "normal")
         );
     }
+    
+    // Template stylesheet
+    
 
 //     qWarning("Outputing unformated text");
-    const QString t = QString(m_templateMap[ templateName ]) //don't change the map's content directly, use  a copy
+    const QString t = QString(m_templateMap[ "Basic.tmpl" ]) //don't change the map's content directly, use  a copy
                       .replace("#TITLE#", settings.title)
                       .replace("#LANG_ABBREV#", settings.langAbbrev.isEmpty() ? QString("en") : settings.langAbbrev)
                       .replace("#DISPLAYTYPE#", displayTypeString)
                       .replace("#LANG_CSS#", langCSS)
                       .replace("#PAGE_DIRECTION#", settings.pageDirection)
-                      .replace("#CONTENT#", newContent);
+                      .replace("#CONTENT#", newContent)
+                      .replace("#THEME_STYLE#", m_cssMap[ templateName ])
+                      .replace("#MODTYPE#", displayTypeString)
+                      .replace("#MODNAME#", moduleName)
+                      .replace("#MODULE_STYLESHEET#", QString(""));	// Let's fix this!
 
+    //qDebug() << t;
     return t;
 }
 
@@ -176,4 +193,9 @@ void CDisplayTemplateMgr::loadTemplate(const QString &filename) {
             m_templateMap[QFileInfo(f).fileName()] = fileContent;
         }
     }
+}
+
+void CDisplayTemplateMgr::loadCSSTemplate(const QString &filename) {
+    QFile f(filename);
+    m_cssMap[QFileInfo(f).fileName()] = QString("file://") + filename;
 }

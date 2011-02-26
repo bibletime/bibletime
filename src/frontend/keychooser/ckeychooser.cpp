@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2010 by the BibleTime developers.
+* Copyright 1999-2011 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -44,13 +44,13 @@ CKeyChooser* CKeyChooser::createInstance(
     }
 
     CSwordModuleInfo::ModuleType typeOfModules = modules.first()->type();
-
+/*
 #ifdef BT_DEBUG
     Q_FOREACH (const CSwordModuleInfo *module, modules) {
         Q_ASSERT(module->type() == typeOfModules);
     }
 #endif
-
+*/
     switch (typeOfModules) {
         case CSwordModuleInfo::Commentary:
             /* Fall thru - Bibles and commentaries use the same key chooser */

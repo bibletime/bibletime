@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
 "POT-Creation-Date: 2010-11-22 23:08-0500\n"
-"PO-Revision-Date: 2010-11-16 18:17+0200\n"
-"Last-Translator: Andrew\n"
+"PO-Revision-Date: 2010-12-14 15:54+0200\n"
+"Last-Translator: Andrew Alfy <andrewalfy@yahoo.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -425,7 +425,7 @@ msgstr "إلخ."
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:135
 msgid "When you give <placeholder type=\"orderedlist\" id=\"0\"/>"
-msgstr ""
+msgstr "عندما تعطي <placeholder type=\"orderedlist\" id=\"0\"/>"
 
 # type: Content of: <chapter><sect1><title>
 #. type: Content of: <chapter><sect1><title>
@@ -478,7 +478,7 @@ msgstr "قصة الغني ولعازر"
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:154
 msgid "Find these verses: <placeholder type=\"orderedlist\" id=\"0\"/>"
-msgstr ""
+msgstr "ابحث عن هذه الآيات: <placeholder type=\"orderedlist\" id=\"0\"/>"
 
 # type: Content of: <chapter><sect1><sect2><title>
 #. type: Content of: <chapter><sect1><sect2><title>
@@ -1586,6 +1586,8 @@ msgid ""
 "<emphasis>Mary is already clinging to Jesus, and he is saying to stop "
 "holding him!</emphasis>"
 msgstr ""
+"<emphasis>مريم كانت تمسك بيسوع بالفعل، وهو يخبرها بأن تكف عن الإمساك به! </"
+"emphasis>"
 
 # type: Content of: <chapter><section><section><title>
 #. type: Content of: <chapter><section><section><title>
@@ -1667,6 +1669,7 @@ msgstr ""
 msgid ""
 "Cross-references for aleipho: <placeholder type=\"orderedlist\" id=\"0\"/>"
 msgstr ""
+"المراجع ذات الصلة بـ aleipho: <placeholder type=\"orderedlist\" id=\"0\"/>"
 
 # type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
@@ -1700,6 +1703,7 @@ msgstr ""
 #: docs/howto/en/docbook/howto-interpretation.docbook:72
 msgid "Cross-references of chrio: <placeholder type=\"orderedlist\" id=\"0\"/>"
 msgstr ""
+"المراجع ذات الصلة بـ chrio: <placeholder type=\"orderedlist\" id=\"0\"/>"
 
 # type: Content of: <chapter><section><section><para>
 #. type: Content of: <chapter><section><section><para>
@@ -2160,17 +2164,17 @@ msgstr "كيفية دراسة الكتاب المقدس"
 #. type: Content of: <book><bookinfo><authorgroup><author><firstname>
 #: docs/howto/en/docbook/index.docbook:18
 msgid "Bob"
-msgstr ""
+msgstr "بوب"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
 #: docs/howto/en/docbook/index.docbook:19
 msgid "Harman"
-msgstr ""
+msgstr "هارمان"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
 #: docs/howto/en/docbook/index.docbook:23
 msgid "The BibleTime team"
-msgstr ""
+msgstr "فريق بيبل تايم"
 
 #.  TRANS:ROLES_OF_TRANSLATORS 
 #. type: Content of: <book><bookinfo>
@@ -2179,6 +2183,8 @@ msgid ""
 "<copyright> <year>2001-2009</year> <holder>The team of &bibletime; "
 "(info@bibletime.info)</holder> </copyright>"
 msgstr ""
+"<copyright> <year>2001-2009</year> <holder>فريق بيبل تايم ; (info@bibletime."
+"info)</holder> </copyright>"
 
 # type: Content of: <book><bookinfo><legalnotice><para>
 #. type: Content of: <book><bookinfo><legalnotice><para>
@@ -2237,25 +2243,9 @@ msgstr ""
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/howto/en/docbook/index.docbook:64
 msgid "Bible"
-msgstr ""
+msgstr "الكتاب المقدس"
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/howto/en/docbook/index.docbook:66
 msgid "HowTo"
-msgstr ""
-
-# type: Content of: <chapter><sect1><sect2><para>
-#~ msgid "Find these verses:"
-#~ msgstr "ابحث عن هذه الآيات:"
-
-# type: Content of: <chapter><section><section><itemizedlist><listitem><para>
-#~ msgid "Cross-references for aleipho:"
-#~ msgstr "مراجع ذات صلة بaleipho:"
-
-# type: Content of: <chapter><section><section><itemizedlist><listitem><para>
-#~ msgid "Cross-references of chrio:"
-#~ msgstr "مراجع ذات صلة بchrio:"
-
-# type: Content of: <book><bookinfo><copyright><holder>
-#~ msgid "The team of &bibletime; (info@bibletime.info)"
-#~ msgstr "فريق بيبل تايم؛ (info@bibletime.info)"
+msgstr "كيفية دراسة"

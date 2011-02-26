@@ -15,6 +15,18 @@ linkend="hdbk-reference-shortcuts">قسم الإختصارات</link>. </para>
       </title>
       <para>
         <variablelist>
+          <varlistentry id="hdbk-reference-menus-file-open-work">
+            <term>
+              <menuchoice> <guimenu> <inlinemediaobject>
+<imageobject> <imagedata fileref="i_folder_open.png" width="32" depth="32"
+format="PNG" /> </imageobject></inlinemediaobject>File</guimenu> <guimenuitem>Open work</guimenuitem> </menuchoice>
+            </term>
+            <listitem>
+              <para><action>Open work.</action> This will give you a menu that will allow you to
+open installed books.</para>
+            </listitem>
+          </varlistentry>
+
           <varlistentry id="hdbk-reference-menus-file-quit">
             <term>
               <menuchoice> <shortcut> <keycombo action="simul">
@@ -454,6 +466,20 @@ format="PNG" /> </imageobject></inlinemediaobject>مساعدة</guimenu> <guimen
 الدعوة لأفكار تخص مذهب معين بذاته. نشجعكم على قراءة ودراسة الكتاب المقدس
 لفهم ما يقوله. إذا بدأت وأنت تشتاق إلى أن يزرع الرب كلمته بقلبك فهو لن يدعك
 تخذل.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry id="hdbk-reference-menus-help-tip_of_the_day">
+          <term>
+            <menuchoice> <shortcut> <keycombo action="simul"> <keycap>F3</keycap>
+</keycombo> </shortcut> <guimenu> <inlinemediaobject>
+<imageobject> <imagedata fileref="i_light_bulb.png" width="22" depth="32"
+format="PNG" /> </imageobject></inlinemediaobject>Help</guimenu> <guimenuitem>Tip of the Day</guimenuitem>
+</menuchoice>
+          </term>
+          <listitem>
+            <para><action>Opens a helpful tip</action> The Tip of the Day provides a useful
+tip that will assist in the use of &bibletime;.</para>
           </listitem>
         </varlistentry>
 
@@ -953,6 +979,7 @@ format="PNG" /> </imageobject></inlinemediaobject></guimenu> </menuchoice>
             يساوي <menuchoice> <guimenu>مساعدة</guimenu> <guimenuitem>دليل
 الإستخدام</guimenuitem> </menuchoice> يفتح دليل إستخدام البرنامج.</entry>
           </row>
+
           <row>
             <entry>
               <keycombo action="simul"> <keycap>F2</keycap> </keycombo>
@@ -961,6 +988,16 @@ format="PNG" /> </imageobject></inlinemediaobject></guimenu> </menuchoice>
             يساوي <menuchoice> <guimenu>مساعدة</guimenu> <guimenuitem>كيفية دراسة الكتاب
 المقدس </guimenuitem> </menuchoice> يفتح دليل كيفية دراسة الكتاب المقدس.</entry>
           </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul"> <keycap>F3</keycap> </keycombo>
+            </entry>
+            <entry>
+            <menuchoice> <guimenu>Help</guimenu> <guimenuitem>Tip of the
+Day</guimenuitem> </menuchoice> Opens a helpful tip to use &bibletime;.</entry>
+          </row>
+
           <row>
             <entry>
               <keycombo action="simul"> <keycap>F4</keycap> </keycombo>

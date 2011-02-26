@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2010 by the BibleTime developers.
+* Copyright 1999-2011 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -98,7 +98,6 @@ BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
     initMenubar();
     initToolbars();
     initConnections();
-    readSettings();
 
     setWindowTitle("BibleTime " BT_VERSION);
     setWindowIcon(DU::getIcon(CResMgr::mainWindow::icon));
@@ -111,69 +110,9 @@ BibleTime::~BibleTime() {
 #ifdef BT_DEBUG
     deleteDebugWindow();
 #endif
-    saveSettings();
-}
-
-/** Saves the properties of BibleTime to the application wide configfile  */
-void BibleTime::saveSettings() {
-    /// \todo how to write settings?
-
-    getBtConfig().setValue("gui/showMainToolbar", m_viewToolbarAction->isChecked());
-
-    if(m_windowAutoTileVerticalAction->isChecked())        getBtConfig().setValue("gui/alignmentMode", autoTileVertical);
-    else if(m_windowAutoTileHorizontalAction->isChecked()) getBtConfig().setValue("gui/alignmentMode", autoTileHorizontal);
-    else if(m_windowAutoTileAction->isChecked())           getBtConfig().setValue("gui/alignmentMode", autoTile);
-    else if(m_windowAutoTabbedAction->isChecked())         getBtConfig().setValue("gui/alignmentMode", autoTabbed);
-    else if(m_windowAutoCascadeAction->isChecked())        getBtConfig().setValue("gui/alignmentMode", autoCascade);
-
     CProfile* p = m_profileMgr.startupProfile();
     if (p) {
         saveProfile(p);
-    }
-}
-
-/** Reads the settings from the configfile and sets the right properties. */
-void BibleTime::readSettings() {
-    qDebug() << "******************BibleTime::readSettings******************************";
-    m_actionCollection->readShortcuts("Application shortcuts");
-
-    m_viewToolbarAction->setChecked( getBtConfig().getValue<bool>("gui/showMainToolbar") );
-    slotToggleMainToolbar();
-
-    switch(getBtConfig().getValue<alignmentMode>("gui/alignmentMode"))
-    {
-        case autoTileVertical:
-            m_windowAutoTileVerticalAction->setChecked( true );
-            m_windowManualModeAction->setChecked(false);
-            slotAutoTileVertical();
-            break;
-        case autoTileHorizontal:
-            m_windowAutoTileHorizontalAction->setChecked( true );
-            m_windowManualModeAction->setChecked(false);
-            slotAutoTileHorizontal();
-            break;
-        case autoTile:
-            m_windowAutoTileAction->setChecked(true);
-            m_windowManualModeAction->setChecked(false);
-            slotAutoTile();
-            break;
-        case autoTabbed:
-            m_windowAutoTabbedAction->setChecked(true);
-            m_windowManualModeAction->setChecked(false);
-            slotAutoTabbed();
-            break;
-        case autoCascade:
-            m_windowAutoCascadeAction->setChecked(true);
-            m_windowManualModeAction->setChecked(false);
-            slotAutoCascade();
-            break;
-        case manual:
-            m_windowManualModeAction->setChecked(true);
-            slotManualArrangementMode();
-            break;
-        default:
-            Q_ASSERT("An unknown arrangement mode was used, this is a programming error.");
-            break;
     }
 }
 

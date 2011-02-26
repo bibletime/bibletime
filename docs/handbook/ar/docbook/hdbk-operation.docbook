@@ -304,11 +304,11 @@ contentdepth="100%" scalefit="1" format="PNG" /> </imageobject></mediaobject></s
   <sect1 id="hdbk-op-bookshelfmanager">
     <title><guimenuitem>مدير رف الكتب </guimenuitem></title>
 
-    <para>The <guimenuitem>Bookshelf Manager</guimenuitem> is a tool to manage your
-Bookshelf. You can install new works to your Bookshelf, and update or remove
-existing works from your Bookshelf. Access it by clicking <menuchoice>
-<guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem>
-</menuchoice> in the main menu.</para>
+    <para><guimenuitem>مدير رف الكتب </guimenuitem> هو الأداة التي تمكنك من إدارة رف
+الكتب الخاص بك. تستطيع تثبيت كتب جديدة إلى رف الكتب، وتحديث أو إزالة الكتب
+الموجودة على رف الكتب. للوصول إلى هذه الأداة اختر قائمة <menuchoice>
+<guimenu>إعدادات</guimenu> <guimenuitem> من القائمة الرئيسية ومنها اختر
+</guimenuitem></menuchoice>مدير رف الكتب.</para>
 
       <tip>
 	<para>إذا كانت هذه هي المرة الأولى التي تقوم فيها بتشغيل بيبل تايم، انقر على زر

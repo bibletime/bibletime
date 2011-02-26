@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2010 by the BibleTime developers.
+* Copyright 1999-2011 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -32,9 +32,9 @@ BtModuleChooserButton::BtModuleChooserButton(BtModuleChooserBar *parent, CSwordM
 
 BtModuleChooserButton::~BtModuleChooserButton() {}
 
-void BtModuleChooserButton::recreateMenu(QStringList newModulesToUse, QString thisModule, int newIndex) {
+void BtModuleChooserButton::recreateMenu(QStringList newModulesToUse, QString thisModule, int newIndex, int leftLikeModules) {
     populateMenu();
-    updateMenu(newModulesToUse, thisModule, newIndex);
+    updateMenu(newModulesToUse, thisModule, newIndex, leftLikeModules);
 }
 
 const QString BtModuleChooserButton::iconName() {
@@ -53,12 +53,14 @@ const QString BtModuleChooserButton::iconName() {
     }
 }
 
-void BtModuleChooserButton::updateMenu(QStringList newModulesToUse, QString thisModule, int newIndex) {
+void BtModuleChooserButton::updateMenu(QStringList newModulesToUse, QString thisModule, int newIndex, int leftLikeModules) {
     //qDebug() << "BtModuleChooserButton::updateMenu" << newModulesToUse << thisModule << newIndex << this;
-    // create the menu if it doesn't exist
-    if (!m_popup) populateMenu();
-
     m_id = newIndex;
+
+    // create the menu if it doesn't exist
+    if (!m_popup)
+        populateMenu();
+
     m_module = thisModule;
     m_hasModule = thisModule.isEmpty() ? false : true;
     namespace DU = util::directory;
@@ -81,7 +83,23 @@ void BtModuleChooserButton::updateMenu(QStringList newModulesToUse, QString this
     else {
         setToolTip( tr("Select an additional work") );
     }
-    m_noneAction->setDisabled((newModulesToUse.count() == 1) ? true : false);
+    bool disableNone = false;
+    if (newModulesToUse.count() == 1 ||
+        (newIndex == 0 && leftLikeModules == 1))
+        disableNone = true;
+    m_noneAction->setDisabled(disableNone);
+
+    // Disable non-Bible categories on first button
+    if (m_moduleType == CSwordModuleInfo::Bible && m_id == 0) {
+        QList<QAction*> actions = m_popup->actions();
+        for (int i=0; i<actions.count(); i++) {
+            QAction* action = actions.at(i);
+            QString text = action->text();
+            if (text != QObject::tr("Bibles")) {
+                action->setDisabled(true);
+            }
+        }
+    }
     //qDebug()<<"BtModuleChooserButton::modulesChanged end";
 }
 
@@ -131,22 +149,37 @@ void BtModuleChooserButton::populateMenu() {
 
     // Filters: add only non-hidden and right type
     BTModuleTreeItem::HiddenOff hiddenFilter;
-    TypeFilter typeFilter(m_moduleType);
     QList<BTModuleTreeItem::Filter*> filters;
     if (not getBtConfig().getValue<bool>("gui/bookshelfShowHidden")) {
         filters.append(&hiddenFilter);
     }
+    TypeFilter typeFilter(m_moduleType);
     filters.append(&typeFilter);
-    BTModuleTreeItem root(filters, BTModuleTreeItem::LangMod);
-    // add all items recursively
-    addItemToMenu(&root, m_popup);
+
+    if (m_moduleType == CSwordModuleInfo::Bible) {
+      BTModuleTreeItem root(filters, BTModuleTreeItem::CatLangMod);
+        QList<BTModuleTreeItem::Filter*> filters2;
+        if (not getBtConfig().getValue<bool>("gui/bookshelfShowHidden")) {
+            filters2.append(&hiddenFilter);
+        }
+        TypeFilter typeFilter2(CSwordModuleInfo::Commentary);
+        filters2.append(&typeFilter2);
+        root.add_items(filters2);
+        // add all items recursively
+        addItemToMenu(&root, m_popup);
+    }
+    else {
+        BTModuleTreeItem root(filters, BTModuleTreeItem::LangMod);
+        addItemToMenu(&root, m_popup);
+    }
 }
 
 void BtModuleChooserButton::addItemToMenu(BTModuleTreeItem* item, QMenu* menu) {
     qDebug() << "BtModuleChooserButton::addItemToMenu";
     foreach (BTModuleTreeItem* i, item->children()) {
 
-        if (i->type() == BTModuleTreeItem::Language) {
+        if (i->type() == BTModuleTreeItem::Language ||
+            i->type() == BTModuleTreeItem::Category ) {
             // argument menu was m_popup, create and add a new lang menu to it
             QMenu* langMenu = new QMenu(i->text(), this);
             menu->addMenu(langMenu);

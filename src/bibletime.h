@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2010 by the BibleTime developers.
+* Copyright 1999-2011 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -136,14 +136,6 @@ class BibleTime : public QMainWindow {
 
         static inline BibleTime *instance() { return m_instance; }
 
-        /**
-        * Reads the settings from the configfile and sets the right properties.
-        */
-        void readSettings();
-        /**
-        * Saves the settings of this class
-        */
-        void saveSettings();
         /**
         * Restores the workspace if the flaf for this is set in the config.
         */
@@ -464,11 +456,11 @@ class BibleTime : public QMainWindow {
 
         // View menu:
         QMenu *m_viewMenu;
-        QAction* m_viewToolbarAction;
         QAction *m_showBookshelfAction;
         QAction *m_showBookmarksAction;
         QAction *m_showMagAction;
         QMenu *m_toolBarsMenu;
+        QAction* m_showMainWindowToolbarAction;
         QAction *m_showTextAreaHeadersAction;
         QAction *m_showTextWindowNavigationAction;
         QAction *m_showTextWindowModuleChooserAction;

@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2010 by the BibleTime developers.
+* Copyright 1999-2011 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -363,18 +363,19 @@ void BibleTime::initActions() {
     connect(m_windowFullscreenAction, SIGNAL(triggered()),
             this,                     SLOT(toggleFullscreen()));
 
-    m_viewToolbarAction = m_actionCollection->action("showToolbar");
-    m_viewToolbarAction->setCheckable(true);
-    m_viewToolbarAction->setChecked(true);
-    connect(m_viewToolbarAction, SIGNAL(triggered()),
-            this,                SLOT(slotToggleMainToolbar()));
-
     // Special case these actions, overwrite those already in collection
+    namespace DU = util::directory;
     m_showBookshelfAction = m_bookshelfDock->toggleViewAction();
+    m_showBookshelfAction->setIcon(DU::getIcon(CResMgr::mainMenu::view::showBookshelf::icon));
+    m_showBookshelfAction->setToolTip(tr("Toggle visibility of the bookshelf window"));
     m_actionCollection->addAction("showBookshelf", m_showBookshelfAction);
     m_showBookmarksAction = m_bookmarksDock->toggleViewAction();
+    m_showBookmarksAction->setIcon(DU::getIcon(CResMgr::mainMenu::view::showBookmarks::icon));
+    m_showBookmarksAction->setToolTip(tr("Toggle visibility of the bookmarks window"));
     m_actionCollection->addAction("showBookmarks", m_showBookmarksAction);
     m_showMagAction = m_magDock->toggleViewAction();
+    m_showMagAction->setIcon(DU::getIcon(CResMgr::mainMenu::view::showMag::icon));
+    m_showMagAction->setToolTip(tr("Toggle visibility of the mag window"));
     m_actionCollection->addAction("showMag", m_showMagAction);
 
     m_showTextAreaHeadersAction = m_actionCollection->action("showParallelTextHeaders");
@@ -382,6 +383,12 @@ void BibleTime::initActions() {
     m_showTextAreaHeadersAction->setChecked(getBtConfig().getValue<bool>("gui/showTextWindowHeaders"));
     connect(m_showTextAreaHeadersAction, SIGNAL(toggled(bool)),
             this,                        SLOT(slotToggleTextWindowHeader()));
+
+    m_showMainWindowToolbarAction = m_actionCollection->action("showToolbar");
+    m_showMainWindowToolbarAction->setCheckable(true);
+    m_showMainWindowToolbarAction->setChecked(getBtConfig().getValue<bool>("gui/showMainToolbar"));
+    connect( m_showMainWindowToolbarAction, SIGNAL(triggered()),
+            this,                SLOT(slotToggleMainToolbar()));
 
     m_showTextWindowNavigationAction = m_actionCollection->action("showNavigation");
     m_showTextWindowNavigationAction->setCheckable(true);
@@ -448,37 +455,74 @@ void BibleTime::initActions() {
     connect(m_windowTileHorizontalAction, SIGNAL(triggered()),
             this,                          SLOT(slotTileHorizontal()));
 
+    alignmentMode alignment = getBtConfig().getValue<alignmentMode>("gui/alignmentMode");
+    
     m_windowManualModeAction = m_actionCollection->action("manualArrangement");
     m_windowManualModeAction->setCheckable(true);
+    if(alignment == manual)
+        m_windowManualModeAction->setChecked(true);
     connect(m_windowManualModeAction, SIGNAL(triggered()),
             this,                      SLOT(slotManualArrangementMode()));
 
     m_windowAutoTabbedAction = m_actionCollection->action("autoTabbed");
     m_windowAutoTabbedAction->setCheckable(true);
+    if(alignment == autoTabbed)
+        m_windowAutoTabbedAction->setChecked(true);
     connect(m_windowAutoTabbedAction, SIGNAL(triggered()),
             this,                      SLOT(slotAutoTabbed()));
 
     //: Vertical tiling means that windows are vertical, placed side by side
     m_windowAutoTileVerticalAction = m_actionCollection->action("autoVertical");
     m_windowAutoTileVerticalAction->setCheckable(true);
+    if(alignment == autoTileVertical)
+        m_windowAutoTileVerticalAction->setChecked(true);
     connect(m_windowAutoTileVerticalAction, SIGNAL(triggered()),
             this,                            SLOT(slotAutoTileVertical()));
 
     //: Horizontal tiling means that windows are horizontal, placed on top of each other
     m_windowAutoTileHorizontalAction = m_actionCollection->action("autoHorizontal");
     m_windowAutoTileHorizontalAction->setCheckable(true);
+    if(alignment == autoTileHorizontal)
+        m_windowAutoTileHorizontalAction->setChecked(true);
     connect(m_windowAutoTileHorizontalAction, SIGNAL(triggered()),
             this,                              SLOT(slotAutoTileHorizontal()));
 
     m_windowAutoTileAction = m_actionCollection->action("autoTile");
     m_windowAutoTileAction->setCheckable(true);
+    if(alignment == autoTile)
+        m_windowAutoTileAction->setChecked(true);
     connect(m_windowAutoTileAction, SIGNAL(triggered()),
             this,                    SLOT(slotAutoTile()));
 
     m_windowAutoCascadeAction = m_actionCollection->action("autoCascade");
     m_windowAutoCascadeAction->setCheckable(true);
+    if(alignment == autoCascade)
+        m_windowAutoCascadeAction->setChecked(true);
     connect(m_windowAutoCascadeAction, SIGNAL(triggered()),
             this,                       SLOT(slotAutoCascade()));
+
+    /*
+     * All actions related to arrangement modes have to be initialized before calling a slot on them,
+     * thus we call them afterwards now.
+     */
+    switch(alignment)
+    {
+        case autoTabbed:
+            slotAutoTabbed(); break;
+        case autoTileVertical:
+            slotAutoTileVertical(); break;
+        case autoTileHorizontal:
+            slotAutoTileHorizontal(); break;
+        case autoTile:
+            slotAutoTile(); break;
+        case autoCascade:
+            slotAutoCascade(); break;
+        case manual:
+            slotManualArrangementMode(); break;
+        default:
+            // not reachable
+            break;
+    }
 
     m_windowSaveToNewProfileAction = m_actionCollection->action("saveNewSession");
     connect(m_windowSaveToNewProfileAction, SIGNAL(triggered()),
@@ -535,7 +579,7 @@ void BibleTime::initMenubar() {
     m_viewMenu->addAction(m_showTextAreaHeadersAction);
     m_viewMenu->addSeparator();
     m_toolBarsMenu = new QMenu(this);
-    m_toolBarsMenu->addAction(m_viewToolbarAction);
+    m_toolBarsMenu->addAction( m_showMainWindowToolbarAction);
     m_toolBarsMenu->addAction(m_showTextWindowNavigationAction);
     m_toolBarsMenu->addAction(m_showTextWindowModuleChooserAction);
     m_toolBarsMenu->addAction(m_showTextWindowToolButtonsAction);
@@ -618,11 +662,11 @@ void BibleTime::initToolbars() {
     openWorkButton->setPopupMode(QToolButton::InstantPopup);
     m_mainToolBar->addWidget(openWorkButton);
 
-    m_mainToolBar->addSeparator();
     m_mainToolBar->addAction(m_windowFullscreenAction);
-    m_mainToolBar->addSeparator();
+    m_mainToolBar->addAction(m_actionCollection->action("showBookshelf"));
+    m_mainToolBar->addAction(m_actionCollection->action("showBookmarks"));
+    m_mainToolBar->addAction(m_actionCollection->action("showMag"));
     m_mainToolBar->addAction(m_searchOpenWorksAction);
-    m_mainToolBar->addSeparator();
     m_mainToolBar->addAction(m_openHandbookAction);
 }
 

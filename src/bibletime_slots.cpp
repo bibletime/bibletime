@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2010 by the BibleTime developers.
+* Copyright 1999-2011 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -89,7 +89,7 @@ void BibleTime::slotSwordSetupDialog() {
     dlg->activateWindow();
 }
 
-/** Is called just before the window menu is ahown. */
+/** Is called just before the window menu is shown. */
 void BibleTime::slotWindowMenuAboutToShow() {
     Q_ASSERT(m_windowMenu);
 
@@ -118,7 +118,7 @@ void BibleTime::slotWindowMenuAboutToShow() {
     }
 }
 
-/** Is called just before the open windows menu is ahown. */
+/** Is called just before the open windows menu is shown. */
 void BibleTime::slotOpenWindowsMenuAboutToShow() {
     Q_ASSERT(m_openWindowsMenu);
 
@@ -166,6 +166,7 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
         m_windowAutoTabbedAction->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(true);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeManual );
+        getBtConfig().setValue("gui/alignmentMode", manual);
     }
     else if (clickedAction == m_windowAutoTileVerticalAction) {
         m_windowManualModeAction->setChecked(false);
@@ -175,6 +176,7 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
         m_windowAutoTabbedAction->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(false);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTileVertical );
+        getBtConfig().setValue("gui/alignmentMode", autoTileVertical);
     }
     else if (clickedAction == m_windowAutoTileHorizontalAction) {
         m_windowManualModeAction->setChecked(false);
@@ -184,6 +186,7 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
         m_windowAutoTabbedAction->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(false);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTileHorizontal );
+        getBtConfig().setValue("gui/alignmentMode", autoTileHorizontal);
     }
     else if (clickedAction == m_windowAutoTileAction) {
         m_windowManualModeAction->setChecked(false);
@@ -193,6 +196,7 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
         m_windowAutoCascadeAction->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(false);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTile );
+        getBtConfig().setValue("gui/alignmentMode", autoTile);
     }
     else if (clickedAction == m_windowAutoTabbedAction) {
         m_windowManualModeAction->setChecked(false);
@@ -202,6 +206,7 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
         m_windowAutoCascadeAction->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(false);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTabbed );
+        getBtConfig().setValue("gui/alignmentMode", autoTabbed);
     }
     else if (clickedAction == m_windowAutoCascadeAction) {
         m_windowManualModeAction->setChecked(false);
@@ -211,6 +216,7 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
         m_windowAutoTabbedAction->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(false);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeCascade );
+        getBtConfig().setValue("gui/alignmentMode", autoCascade);
     }
     else if (clickedAction == m_windowTileAction) {
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeManual );
@@ -278,7 +284,9 @@ void BibleTime::slotAutoCascade() {
 /** Shows/hides the toolbar */
 void BibleTime::slotToggleMainToolbar() {
     Q_ASSERT(m_mainToolBar);
-    if (m_viewToolbarAction->isChecked()) {
+    bool currentState = getBtConfig().getValue<bool>("gui/showMainToolbar");
+    getBtConfig().setValue("gui/showMainToolbar", !currentState);
+    if ( m_showMainWindowToolbarAction->isChecked()) {
         m_mainToolBar->show();
     }
     else {

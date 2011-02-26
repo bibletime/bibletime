@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2010 by the BibleTime developers.
+* Copyright 1999-2011 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -10,6 +10,7 @@
 #ifndef BTMODULETREEITEM_H
 #define BTMODULETREEITEM_H
 
+#include <QMap>
 #include <QString>
 #include "backend/drivers/cswordmoduleinfo.h"
 
@@ -110,6 +111,9 @@ class BTModuleTreeItem {
         /** When the root item is deleted the whole tree is deleted. */
         ~BTModuleTreeItem();
 
+	/** Adds filtered items to the tree */
+	void add_items(QList<BTModuleTreeItem::Filter*>& filters);
+
         /**
         * Returns the item type.
         */
@@ -154,12 +158,16 @@ class BTModuleTreeItem {
         BTModuleTreeItem();
 
         /** Creates the tree under this root item (called only from root ctor). */
-        void create_tree(QList<BTModuleTreeItem::Filter*>& filters, BTModuleTreeItem::Grouping grouping);
+        void create_tree(QList<BTModuleTreeItem::Filter*>& filters);
         /** Sorts recursively the children of of the given item. */
         void sort_children(BTModuleTreeItem* parent);
         /** Helper function for creating a group item while creating the tree. */
         BTModuleTreeItem* create_parent_item(BTModuleTreeItem* parent, const QString& text, BTModuleTreeItem::Type type, CSwordModuleInfo::Category category = CSwordModuleInfo::UnknownCategory);
 
+	static bool m_map_initialized;
+	static QMap<CSwordModuleInfo::Category, QString> m_CategoryNamesMap;
+	
+	
         CSwordModuleInfo* m_moduleInfo;
         QString m_text;
         BTModuleTreeItem* m_firstChild;
@@ -167,6 +175,7 @@ class BTModuleTreeItem {
         Type m_type;
         CSwordModuleInfo::Category m_category;
         QList<CSwordModuleInfo*> m_originalModuleList;
+        Grouping m_grouping;
 };
 
 #endif

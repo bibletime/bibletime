@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2010 by the BibleTime developers.
+* Copyright 1999-2011 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -61,10 +61,10 @@ class BtModuleChooserButton : public QToolButton  {
         * If the menu doesn't exist, creates it first and then updates it.
         * Updates also the icon.
         */
-        void updateMenu(QStringList newModulesToUse, QString thisModule, int newIndex);
+        void updateMenu(QStringList newModulesToUse, QString thisModule, int newIndex, int leftLikeModules);
 
         /** Creates the menu from scratch and updates the items using updateMenu().*/
-        void recreateMenu(QStringList newModulesToUse, QString thisModule, int newIndex);
+        void recreateMenu(QStringList newModulesToUse, QString thisModule, int newIndex, int leftLikeModules);
 
     signals:
         /** User selected a module from menu to replace another module*/

@@ -42,7 +42,7 @@
   </authorgroup>
   
   <!-- TRANS:ROLES_OF_TRANSLATORS -->
-<copyright> <year>1999-2010</year> <holder>Das &bibletime;-Team</holder>
+<copyright> <year>1999-2011</year> <holder>The &bibletime; Team</holder>
 </copyright>
 
   <legalnotice>
@@ -50,9 +50,9 @@
 ausgeliefert.</para>
   </legalnotice>
 
-  <date>December 2010</date>
+  <date>January 2011</date>
 
-  <releaseinfo>2.9</releaseinfo>
+  <releaseinfo>2.9.0</releaseinfo>
 
   <abstract>
     <para>&bibletime; ist ein absolut freies Bibelarbeits-Programm. Seine

@@ -16,6 +16,18 @@ horkých kláves</link>.</para>
       </title>
       <para>
         <variablelist>
+          <varlistentry id="hdbk-reference-menus-file-open-work">
+            <term>
+              <menuchoice> <guimenu> <inlinemediaobject>
+<imageobject> <imagedata fileref="i_folder_open.png" width="32" depth="32"
+format="PNG" /> </imageobject></inlinemediaobject>File</guimenu> <guimenuitem>Open work</guimenuitem> </menuchoice>
+            </term>
+            <listitem>
+              <para><action>Open work.</action> This will give you a menu that will allow you to
+open installed books.</para>
+            </listitem>
+          </varlistentry>
+
           <varlistentry id="hdbk-reference-menus-file-quit">
             <term>
               <menuchoice> <shortcut> <keycombo action="simul">
@@ -453,6 +465,20 @@ dozvědět se co říkají. Tato příručka byla zvolena proto, že neobhajuje
 doktrínu žádné konkrétní denominace. Očekáváme, že budete číst a studovat
 Písma, abyste jim rozuměli. Když začnete s postojem, že chcete mít semeno
 Páně v srdci, On vás nezklame.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry id="hdbk-reference-menus-help-tip_of_the_day">
+          <term>
+            <menuchoice> <shortcut> <keycombo action="simul"> <keycap>F3</keycap>
+</keycombo> </shortcut> <guimenu> <inlinemediaobject>
+<imageobject> <imagedata fileref="i_light_bulb.png" width="22" depth="32"
+format="PNG" /> </imageobject></inlinemediaobject>Help</guimenu> <guimenuitem>Tip of the Day</guimenuitem>
+</menuchoice>
+          </term>
+          <listitem>
+            <para><action>Opens a helpful tip</action> The Tip of the Day provides a useful
+tip that will assist in the use of &bibletime;.</para>
           </listitem>
         </varlistentry>
 
@@ -954,6 +980,7 @@ všech otevřených dílech.</entry>
             <menuchoice> <guimenu>Nápověda</guimenu> <guimenuitem>Příručka</guimenuitem>
 </menuchoice> otevře příručku.</entry>
           </row>
+
           <row>
             <entry>
               <keycombo action="simul"> <keycap>F2</keycap> </keycombo>
@@ -962,6 +989,16 @@ všech otevřených dílech.</entry>
             <menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy
 HowTo</guimenuitem> </menuchoice> equivalent; opens the BibleStudy HowTo.</entry>
           </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul"> <keycap>F3</keycap> </keycombo>
+            </entry>
+            <entry>
+            <menuchoice> <guimenu>Help</guimenu> <guimenuitem>Tip of the
+Day</guimenuitem> </menuchoice> Opens a helpful tip to use &bibletime;.</entry>
+          </row>
+
           <row>
             <entry>
               <keycombo action="simul"> <keycap>F4</keycap> </keycombo>

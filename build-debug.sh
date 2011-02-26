@@ -5,7 +5,6 @@
 # just from there: ./build/install/bin/bibletime. It will find all
 # required files.
 
-
 if [ ! -d build ]; then mkdir build; fi
 cd build
 cmake -D CMAKE_BUILD_TYPE=Debug -D CMAKE_INSTALL_PREFIX="install/" ..  || exit 1

@@ -368,6 +368,25 @@ This file is distributed under the same license as the Bibetime package.</transl
         <source>Show tips about BibleTime</source>
         <translation>Zeigt Tipps für BibleTime an</translation>
     </message>
+    <message>
+        <source>Toggle visibility of the bookshelf window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toggle visibility of the bookmarks window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toggle visibility of the mag window</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>BibleTimeApp</name>
+    <message>
+        <source>Fatal error!</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BtAboutDialog</name>
@@ -496,8 +515,8 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>&amp;Lizenz</translation>
     </message>
     <message>
-        <source>(c)1999-2010, The BibleTime Team</source>
-        <translation>(c)1999-2010, das BibleTime Team</translation>
+        <source>(c)1999-2011, The BibleTime Team</source>
+        <translation>(c)1999-2011, das BibleTime Team</translation>
     </message>
     <message>
         <source>&amp;SWORD</source>
@@ -726,6 +745,10 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <source>Display settings: No options available</source>
         <translation>Anzeigeeinstellungen: keine Einstellungen verfügbar</translation>
+    </message>
+    <message>
+        <source>Show footnotes</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1203,7 +1226,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <name>BtRemovePage</name>
     <message>
         <source>&amp;Remove</source>
-        <translation>&amp;Entfernen</translation>
+        <translation type="obsolete">&amp;Entfernen</translation>
     </message>
     <message>
         <source>Remove installed works. Select the works and click Remove button.</source>
@@ -1244,6 +1267,10 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <source>Start removal:</source>
         <translation>Entfernung starten:</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1442,7 +1469,7 @@ shortcut</source>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>&amp;Entfernen</translation>
+        <translation type="obsolete">&amp;Entfernen</translation>
     </message>
     <message>
         <source>Replace</source>
@@ -1451,6 +1478,10 @@ shortcut</source>
     <message>
         <source>Add</source>
         <translation>Hinzufügen</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1505,11 +1536,11 @@ shortcut</source>
     </message>
     <message>
         <source>The Bookshelf, Bookmark, and Mag windows can be moved to new locations by dragging them from the title at the top of each window. They can be placed to the left, right, above, or below the works windows. They can be placed on top of each other and tabs will appear so each window can be selected. They can be resized by dragging theborder between the window and another window.</source>
-        <translation>Die Fenster &quot;Bücherregal&quot;, &quot;Lesezeichen&quot; und &quot;Lupe&quot; können an neue Orte bewegt werden, in dem der Titel mit der Maus gezogen wird. Sie können links, rechts, oberhalb oder unterhalb der Werk-Lesefenster angeordnet werden. Wenn man Sie aufeinanderlegt, werden Tabs erscheinen, mit denen jedes Fenster ausgewählt werden kann. Ihre Größe kann angepasst werden, indem man die Grenze zwischen dem Fenster und einem angrenzenden Fenster verschiebt.</translation>
+        <translation type="obsolete">Die Fenster &quot;Bücherregal&quot;, &quot;Lesezeichen&quot; und &quot;Lupe&quot; können an neue Orte bewegt werden, in dem der Titel mit der Maus gezogen wird. Sie können links, rechts, oberhalb oder unterhalb der Werk-Lesefenster angeordnet werden. Wenn man Sie aufeinanderlegt, werden Tabs erscheinen, mit denen jedes Fenster ausgewählt werden kann. Ihre Größe kann angepasst werden, indem man die Grenze zwischen dem Fenster und einem angrenzenden Fenster verschiebt.</translation>
     </message>
     <message>
         <source>You can search for Strong&apos;s numbers in a work. Start with a work that has Strong&apos;s numbers and hover over a word. Right click the word and use the Strong&apos;s Search menu. A search dialog will appear that allows you to see the use of the sameStrong&apos;s number in other locations of the work.</source>
-        <translation>Sie können nach Strongnummern in einem Werk suchen. Beginnen Sie mit einem Werk, das Strongnummern hat, und bewegen Sie die Maus über ein Wort. Rechtsklicken Sie auf das Wort und nutzen Sie das Menü &quot;Strong-Suche&quot;. Ein Suchdialog wird erscheinen, der Ihnen die Verwendung des Wortes mit derselben Strongnummer an anderen Stellen des Werkes anzeigen wird.</translation>
+        <translation type="obsolete">Sie können nach Strongnummern in einem Werk suchen. Beginnen Sie mit einem Werk, das Strongnummern hat, und bewegen Sie die Maus über ein Wort. Rechtsklicken Sie auf das Wort und nutzen Sie das Menü &quot;Strong-Suche&quot;. Ein Suchdialog wird erscheinen, der Ihnen die Verwendung des Wortes mit derselben Strongnummer an anderen Stellen des Werkes anzeigen wird.</translation>
     </message>
     <message>
         <source>You can save personal notes for specific verses references. You must install the Personal commentary. Open the Bookshelf Manager, choose Crosswire as the source and look under Commentary and English. Once installed, use the Bookshelf window and right click the Personal commentary. Use either the Edit Plain Text menu or the Edit HTML menu to open the work in write mode.</source>
@@ -1518,6 +1549,18 @@ shortcut</source>
     <message>
         <source>You can view Strong&apos;s number information in the MAG window by hovering over a word in a Bible work that has Strong&apos;s numbers. You should have the StrongsGreek and StrongsHebrew lexicons from Crosswire installed.</source>
         <translation>Sie können Strongnummer-Informationen in der Lupe sehen, indem Sie die Maus über ein Wort bewegen. Dazu muss das Werk Strongnummer-Informationen enthalten, und Sie müssen die StrongsGreek und StrongsHebrew-Werke von Crosswire installiert und in der Konfiguration ausgewählt haben.</translation>
+    </message>
+    <message>
+        <source>The Bookshelf, Bookmark, and Mag windows can be moved to new locations by dragging them from the title at the top of each window. They can be placed to the left, right, above, or below the works windows. They can be placed on top of each other and tabs will appear so each window can be selected. They can be resized by dragging the border between the window and another window.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can search for Strong&apos;s numbers in a work. Start with a work that has Strong&apos;s numbers and hover over a word. Right click the word and use the Strong&apos;s Search menu. A search dialog will appear that allows you to see the use of the same Strong&apos;s number in other locations of the work.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can save your open windows in a session. Such a session can easily be restored later on. You can save as many sessions as you like. The session feature can be accessed under the Window menu entry.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2501,6 +2544,10 @@ Möchten Sie fortfahren?</translation>
     <message>
         <source>An internal error occurred while executing your search.</source>
         <translation>Ein interner Fehler trat während der Suche auf.</translation>
+    </message>
+    <message>
+        <source>An internal error occurred while building the index: %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3544,15 +3591,31 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>All command-line arguments not recognized by BibleTime or Qt will be silently ignored.</source>
-        <translation>Alle Kommandozeilenargumente, die nicht von BibleTime oder Qt erkannt werden, können nicht ausgewertet werden.</translation>
+        <translation type="obsolete">Alle Kommandozeilenargumente, die nicht von BibleTime oder Qt erkannt werden, können nicht ausgewertet werden.</translation>
     </message>
     <message>
         <source>Error: %1 expects an argument. See --help for details.</source>
-        <translation>Error: %1 erwartet ein Argument. Vgl. --help für Details.</translation>
+        <translation type="obsolete">Error: %1 erwartet ein Argument. Vgl. --help für Details.</translation>
     </message>
     <message>
         <source>Error: Invalid command-line argument: %1</source>
         <translation>Error: Ungültiges Kommandozeilenargument: %1</translation>
+    </message>
+    <message>
+        <source>Default template &quot;%1&quot; not found!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Replace</source>
+        <translation type="unfinished">Ersetzen</translation>
+    </message>
+    <message>
+        <source>Error: %1 expects an argument.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>See --help for details.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

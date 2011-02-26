@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2010 by the BibleTime developers.
+* Copyright 1999-2011 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -63,10 +63,10 @@ class BtTextWindowHeaderWidget : public QWidget {
         * the existing menu items but doesn't add or remove them if the menu exists.
         * If the menu doesn't exist, creates it first and then updates it.
         */
-        void updateWidget(QStringList newModulesToUse, QString thisModule, int newIndex);
+        void updateWidget(QStringList newModulesToUse, QString thisModule, int newIndex, int leftLikeModules);
 
         /** Creates the menu from scratch and updates the items using updateMenu().*/
-        void recreateWidget(QStringList newModulesToUse, QString thisModule, int newIndex);
+        void recreateWidget(QStringList newModulesToUse, QString thisModule, int newIndex, int leftLikeModules);
 
     signals:
         /** User selected a module from menu to replace an existing module.*/

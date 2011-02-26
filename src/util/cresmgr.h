@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2010 by the BibleTime developers.
+* Copyright 1999-2011 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -71,6 +71,15 @@ extern const QString icon;
 namespace mainMenu { //Main menu
 
 namespace view { //Main menu->View
+namespace showBookshelf {
+extern const QString icon;
+}
+namespace showBookmarks {
+extern const QString icon;
+}
+namespace showMag {
+extern const QString icon;
+}
 namespace showMainIndex {
 extern const QString icon;
 extern const QKeySequence accel;

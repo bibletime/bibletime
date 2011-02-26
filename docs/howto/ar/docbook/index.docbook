@@ -15,19 +15,19 @@
 	
 	<authorgroup>
 		<author>
-			<firstname>Bob</firstname>
-			<surname>Harman</surname>
+			<firstname>بوب</firstname>
+			<surname>هارمان</surname>
 		</author>
 		<author>
 			<firstname></firstname>
-			<surname>The BibleTime team</surname>
+			<surname>فريق بيبل تايم</surname>
 		</author>
 	</authorgroup>
 	
 	
 	
 	<!-- TRANS:ROLES_OF_TRANSLATORS -->
-<copyright> <year>2001-2009</year> <holder>The team of &bibletime;
+<copyright> <year>2001-2009</year> <holder>فريق بيبل تايم ;
 (info@bibletime.info)</holder> </copyright>
 	
 	<legalnotice>
@@ -58,9 +58,9 @@ Attribution-Share Alike"</link>.
 	</abstract>
 	
 	<keywordset>
-		<keyword>Bible</keyword>
+		<keyword>الكتاب المقدس</keyword>
 		<keyword>ادرس</keyword>
-		<keyword>HowTo</keyword>
+		<keyword>كيفية دراسة</keyword>
 	</keywordset>
 
 </bookinfo>

@@ -111,6 +111,7 @@ SET(bibletime_SRC_UTIL
     src/util/cresmgr.cpp
     src/util/dialogutil.cpp
     src/util/directory.cpp
+    src/util/btmodules.cpp
     src/util/tool.cpp
 )
 

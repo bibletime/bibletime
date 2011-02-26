@@ -3,7 +3,6 @@
 #
 # BibleTime will be installed to /usr/local by default (see CMAKE_INSTALL_PREFIX below).
 
-
 if [ ! -d build ]; then mkdir build; fi
 cd build
 cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=/usr/local ..  || exit 1

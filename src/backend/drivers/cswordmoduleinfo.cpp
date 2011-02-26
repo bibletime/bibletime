@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2010 by the BibleTime developers.
+* Copyright 1999-2011 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -81,7 +81,7 @@ CSwordModuleInfo::CSwordModuleInfo(sword::SWModule *module,
       m_backend(usedBackend ? usedBackend : CSwordBackend::instance()),
       m_type(type),
       m_cancelIndexing(false),
-      m_cachedName(module->Name()),
+      m_cachedName(QString::fromUtf8(module->Name())),
       m_cachedHasVersion(!QString((*m_backend->getConfig())[module->Name()]["Version"]).isEmpty())
 {
     Q_ASSERT(module != 0);
@@ -151,7 +151,11 @@ bool CSwordModuleInfo::isEncrypted() const {
     */
 
     //This code is still right, though we do no longer write to the module config files any more
-    sword::ConfigEntMap config = backend()->getConfig()->Sections.find(name().toUtf8().constData())->second;
+    std::map < sword::SWBuf, sword::ConfigEntMap, std::less < sword::SWBuf > >::iterator SectionMapIter;
+    SectionMapIter = backend()->getConfig()->Sections.find(name().toUtf8().constData());
+    if (SectionMapIter == backend()->getConfig()->Sections.end())
+        return false;
+    sword::ConfigEntMap config = SectionMapIter->second;
     sword::ConfigEntMap::iterator it = config.find("CipherKey");
 
     return it != config.end();
@@ -219,7 +223,7 @@ bool CSwordModuleInfo::hasIndex() const {
     return lucene::index::IndexReader::indexExists(getModuleStandardIndexLocation().toAscii().constData());
 }
 
-void CSwordModuleInfo::buildIndex() {
+bool CSwordModuleInfo::buildIndex() {
 
     m_cancelIndexing = false;
 
@@ -402,12 +406,22 @@ void CSwordModuleInfo::buildIndex() {
             emit hasIndexChanged(true);
         }
     }
+    catch (CLuceneError &e) {
+        qWarning() << "CLucene exception occurred while indexing:" << e.what();
+        util::showWarning(0, QCoreApplication::tr("Indexing aborted"), QCoreApplication::tr("An internal error occurred while building the index: %1").arg(e.what()));
+        deleteIndex();
+        m_cancelIndexing = false;
+        return false;
+    }
     catch (...) {
         qWarning("CLucene exception occurred while indexing");
         util::showWarning(0, QCoreApplication::tr("Indexing aborted"), QCoreApplication::tr("An internal error occurred while building the index."));
         deleteIndex();
         m_cancelIndexing = false;
+        return false;
     }
+
+    return true;
 }
 
 void CSwordModuleInfo::deleteIndex() {
@@ -705,32 +719,30 @@ bool CSwordModuleInfo::deleteEntry(CSwordKey * const key) {
 }
 
 void CSwordModuleInfo::initCachedCategory() {
-    switch (type()) {
-        case Bible:       m_cachedCategory = Bibles; break;
-        case Commentary:  m_cachedCategory = Commentaries; break;
-        case Lexicon:     m_cachedCategory = Lexicons; break;
-        case GenericBook: m_cachedCategory = Books; break;
-        case Unknown: // Fall thru
-        default:
-        {
-            /// \todo Maybe we can use raw string comparsion instead of QString?
-            const QString cat(m_module->getConfigEntry("Category"));
+    /// \todo Maybe we can use raw string comparsion instead of QString?
+    const QString cat(m_module->getConfigEntry("Category"));
 
-            if (cat == "Cults / Unorthodox / Questionable Material") {
-                m_cachedCategory = Cult;
-            } else if (cat == "Daily Devotional"
-                       || m_module->getConfig().has("Feature","DailyDevotion"))
-            {
-                m_cachedCategory = DailyDevotional;
-            } else if (cat == "Glossaries"
-                       || m_module->getConfig().has("Feature", "Glossary"))
-            {
-                m_cachedCategory = Glossary;
-            } else if (cat == "Images" || cat == "Maps") {
-                m_cachedCategory = Images;
-            } else {
-                m_cachedCategory = UnknownCategory;
-            }
+    /// \warning cat has to be checked before type() !!!
+    if (cat == "Cults / Unorthodox / Questionable Material") {
+        m_cachedCategory = Cult;
+    } else if (cat == "Daily Devotional"
+               || m_module->getConfig().has("Feature","DailyDevotion"))
+    {
+        m_cachedCategory = DailyDevotional;
+    } else if (cat == "Glossaries"
+               || m_module->getConfig().has("Feature", "Glossary"))
+    {
+        m_cachedCategory = Glossary;
+    } else if (cat == "Images" || cat == "Maps") {
+        m_cachedCategory = Images;
+    } else {
+        switch (type()) {
+            case Bible:       m_cachedCategory = Bibles; break;
+            case Commentary:  m_cachedCategory = Commentaries; break;
+            case Lexicon:     m_cachedCategory = Lexicons; break;
+            case GenericBook: m_cachedCategory = Books; break;
+            case Unknown: // Fall thru
+            default:          m_cachedCategory = UnknownCategory; break;
         }
     }
 }

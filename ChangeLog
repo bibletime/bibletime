@@ -1,12 +1,30 @@
+2011-02-07 Jaak Ristioja <ristioja@gmail.com>
+    * Fixed an assert-crash caused by not catching indexing failures properly.
+
+2011-01-16 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix crash when using Bookshelf Manager with Xiphos source
+
+2011-01-15 Gary Holmlund <gary.holmlund@gmail.com>
+    * Add toolbar icons to toggle visibility of docking windows
+
+2011-01-15 Jaak Ristioja <ristioja@gmail.com>
+    * Fixed category detection for modules.
+
+2011-01-01 Gary Holmlund <gary.holmlund@gmail.com>
+    * Switch off footnotes in display options, feature request 2892157
+
+2010-12-31 Gary Holmlund <gary.holmlund@gmail.com>
+    * Bible windows can have parallel commentaries
+
 2010-11-25 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix main window toolbar key changer to save a modified entry in Personal Commentary
 
-2011-11-19 Jaak Ristioja <ristioja@gmail.com>
+2010-11-19 Jaak Ristioja <ristioja@gmail.com>
     * Fixed a crash triggered by an assertion in legacy code.
     * Fixed a crash caused by indirectly referencing unconstructed fields from
       the constructor of BtBibleKeyWidget.
 
-2011-11-12 Jaak Ristioja <ristioja@gmail.com>
+2010-11-12 Jaak Ristioja <ristioja@gmail.com>
     * Temporary workaround for bug 2954856 causing wrong HTML code for headings.
 
 2010-10-31 Gary Holmlund <gary.holmlund@gmail.com>
