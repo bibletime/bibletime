@@ -499,7 +499,7 @@ CSwordModuleInfo *BtConfig::getDefaultSwordModuleByType(const QString& moduleTyp
 
 void BtConfig::setDefaultSwordModuleByType(const QString& moduleType, const CSwordModuleInfo* const module) {
     QString completeKey = "settings/defaults/" + moduleType;
-    setValue(moduleType, module != 0 ? module->name() : QString::null);
+    setValue(completeKey, module != 0 ? module->name() : QString::null);
 }
 
 void BtConfig::readSession()
