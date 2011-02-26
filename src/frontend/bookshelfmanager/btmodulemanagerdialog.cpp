@@ -9,7 +9,7 @@
 
 #include "frontend/bookshelfmanager/btmodulemanagerdialog.h"
 
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "backend/managers/cswordbackend.h"
 #include "frontend/bookshelfmanager/indexpage/btindexpage.h"
 #include "frontend/bookshelfmanager/installpage/btinstallpage.h"
@@ -59,13 +59,11 @@ void BtModuleManagerDialog::closeEvent(QCloseEvent*) {
 }
 
 void BtModuleManagerDialog::loadDialogSettings() {
-    resize(CBTConfig::get(CBTConfig::bookshelfWidth), CBTConfig::get(CBTConfig::bookshelfHeight));
-    move(CBTConfig::get(CBTConfig::bookshelfPosX), CBTConfig::get(CBTConfig::bookshelfPosY));
+    resize(getBtConfig().getValue<QSize>("gui/windows/bookshelf/Size"));
+    move(getBtConfig().getValue<QPoint>("gui/windows/bookshelf/Pos"));
 }
 
 void BtModuleManagerDialog::saveDialogSettings() {
-    CBTConfig::set(CBTConfig::bookshelfWidth, size().width());
-    CBTConfig::set(CBTConfig::bookshelfHeight, size().height());
-    CBTConfig::set(CBTConfig::bookshelfPosX, x());
-    CBTConfig::set(CBTConfig::bookshelfPosY, y());
+    getBtConfig().setValue("gui/windows/bookshelf/Size", size());
+    getBtConfig().setValue("gui/windows/bookshelf/Pos", pos());
 }
