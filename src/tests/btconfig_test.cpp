@@ -63,7 +63,7 @@ private slots:
         BtConfig::StringMap map;
         map.insert("TestBla", "Teststring1");
         map.insert("TestBlu", "Teststring2");
-        m_btConfig->setValue<BtConfig::StringMap>("properties/searchScopes", map);
+        m_btConfig->setValue("properties/searchScopes", map);
 
         reloadConfig();
 
