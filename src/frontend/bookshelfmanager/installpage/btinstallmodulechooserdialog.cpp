@@ -20,10 +20,6 @@
 #include "util/tool.h"
 
 
-namespace {
-const QString groupingOrderKey("GUI/BookshelfManager/InstallConfirmDialog/grouping");
-}
-
 BtInstallModuleChooserDialog::BtInstallModuleChooserDialog(const BtBookshelfTreeModel::Grouping &g,
                                                            QWidget *parent,
                                                            Qt::WindowFlags flags)
@@ -33,7 +29,7 @@ BtInstallModuleChooserDialog::BtInstallModuleChooserDialog(const BtBookshelfTree
 
     // Read grouping order from settings or the default from argument:
     BtBookshelfTreeModel::Grouping groupingOrder(false);
-    if (!groupingOrder.loadFrom(groupingOrderKey)) {
+    if (!groupingOrder.loadFrom("gui/bookshelfManager/installConfirmDialog/grouping")) {
         groupingOrder = g;
     }
 
@@ -79,5 +75,5 @@ void BtInstallModuleChooserDialog::showEvent(QShowEvent *event) {
 }
 
 void BtInstallModuleChooserDialog::slotGroupingOrderChanged(const BtBookshelfTreeModel::Grouping &g) {
-    g.saveTo(groupingOrderKey);
+    g.saveTo("gui/bookshelfManager/installConfirmDialog/grouping");
 }

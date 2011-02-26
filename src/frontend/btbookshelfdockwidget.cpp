@@ -29,11 +29,6 @@
 #include "util/cresmgr.h"
 #include "util/directory.h"
 
-
-namespace {
-const QString groupingOrderKey("GUI/MainWindow/Docks/Bookshelf/grouping");
-}
-
 BtBookshelfDockWidget *BtBookshelfDockWidget::m_instance = 0;
 
 BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
@@ -49,7 +44,7 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
     initMenus();
 
     // Setup tree model:
-    m_treeModel = new BtBookshelfTreeModel(groupingOrderKey, this);
+    m_treeModel = new BtBookshelfTreeModel("gui/mainWindow/docks/bookshelf/grouping", this);
 
     // Get backend model:
     BtBookshelfModel *bookshelfModel = CSwordBackend::instance()->model();
@@ -235,6 +230,6 @@ void BtBookshelfDockWidget::slotModulesChanged() {
 void BtBookshelfDockWidget::slotGroupingOrderChanged(
         const BtBookshelfTreeModel::Grouping &g)
 {
-    g.saveTo(groupingOrderKey);
+    g.saveTo("gui/mainWindow/docks/bookshelf/grouping");
     emit groupingOrderChanged(g);
 }

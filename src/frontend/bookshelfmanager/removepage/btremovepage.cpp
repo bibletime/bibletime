@@ -32,11 +32,6 @@
 #include <swmgr.h>
 #include <installmgr.h>
 
-
-namespace {
-const QString groupingOrderKey("GUI/BookshelfManager/RemovePage/grouping");
-}
-
 BtRemovePage::BtRemovePage(QWidget *parent)
         : BtConfigPage(parent)
 {
@@ -48,7 +43,7 @@ BtRemovePage::BtRemovePage(QWidget *parent)
     wLayout->setContentsMargins(0, 0, 0, 0);
     m_worksGroupBox->setLayout(wLayout);
 
-    BtRemovePageTreeModel *treeModel = new BtRemovePageTreeModel(groupingOrderKey,
+    BtRemovePageTreeModel *treeModel = new BtRemovePageTreeModel("gui/bookshelfManager/removePage/grouping",
                                                                  this);
     connect(treeModel, SIGNAL(groupingOrderChanged(BtBookshelfTreeModel::Grouping)),
             this,      SLOT(slotGroupingOrderChanged(const BtBookshelfTreeModel::Grouping&)));
@@ -180,5 +175,5 @@ void BtRemovePage::slotRemoveModules() {
 }
 
 void BtRemovePage::slotGroupingOrderChanged(const BtBookshelfTreeModel::Grouping &g) {
-    g.saveTo(groupingOrderKey);
+    g.saveTo("gui/bookshelfManager/removePage/grouping");
 }

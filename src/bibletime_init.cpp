@@ -348,7 +348,7 @@ void BibleTime::initActions() {
             this,           SLOT(slotSetActiveSubWindow(QWidget*)));
 
     // File menu actions:
-    m_openWorkAction = new BtOpenWorkAction("GUI/MainWindow/OpenWorkAction/grouping", this);
+    m_openWorkAction = new BtOpenWorkAction("gui/mainWindow/openWorkAction/grouping", this);
     connect(m_openWorkAction, SIGNAL(triggered(CSwordModuleInfo*)),
             this,             SLOT(createReadDisplayWindow(CSwordModuleInfo*)));
 

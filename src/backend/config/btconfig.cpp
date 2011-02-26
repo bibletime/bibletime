@@ -108,6 +108,11 @@ BtConfig::BtConfig(const QString& settingsFile) : m_currentGroups(), m_defaults(
         m_defaults.insert("gui/bookshelfManager/installPage/selectedModule", "");
         m_defaults.insert("gui/bookshelfManager/installPage/headerState", QByteArray());
         m_defaults.insert("gui/bookshelfManager/installPage/grouping", QVariant());
+        m_defaults.insert("gui/searchDialog/moduleChooserDialog/grouping", QVariant());
+        m_defaults.insert("gui/mainWindow/docks/bookshelf/grouping", QVariant());
+        m_defaults.insert("gui/bookshelfManager/installConfirmDialog/grouping", QVariant());
+        m_defaults.insert("gui/bookshelfManager/removePage/grouping", QVariant());
+        m_defaults.insert("gui/mainWindow/openWorkAction/grouping", QVariant());
         m_defaults.insert("gui/windows/bookshelf/Pos", QPoint(1,1));
         m_defaults.insert("gui/windows/bookshelf/Size", QSize(1,1));
         m_defaults.insert("gui/windows/configDialog/Pos", QPoint(1,1));
