@@ -26,6 +26,10 @@ const QString BtConfig::m_defaultSessionName = QObject::tr("default session");
 
 BtConfig::BtConfig(const QString& settingsFile) : m_currentGroups(), m_defaults(), m_sessionSettings(), m_settings(settingsFile, QSettings::IniFormat), m_currentSessionCache(), m_defaultFont(QWebSettings::globalSettings()->fontFamily(QWebSettings::StandardFont), 12)
 {
+    // register all the types
+        qRegisterMetaType<StringMap>("StringMap");
+        qRegisterMetaTypeStreamOperators<StringMap>("StringMap");
+        
     m_currentGroups.reserve(10);
     // construct defaults
         m_defaults.reserve(512); //TODO: check whether this value can be calculated automatically...
