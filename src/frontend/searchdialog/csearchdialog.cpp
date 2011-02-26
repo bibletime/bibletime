@@ -21,7 +21,7 @@
 #include <QVBoxLayout>
 #include <QWidget>
 
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "backend/cswordmodulesearch.h"
 #include "backend/keys/cswordkey.h"
 #include "backend/keys/cswordversekey.h"
@@ -285,15 +285,13 @@ void CSearchDialog::closeButtonClicked() {
 }
 
 void CSearchDialog::loadDialogSettings() {
-    resize(CBTConfig::get(CBTConfig::searchDialogWidth), CBTConfig::get(CBTConfig::searchDialogHeight));
-    move(CBTConfig::get(CBTConfig::searchDialogX), CBTConfig::get(CBTConfig::searchDialogY));
+    resize(getBtConfig().getValue<QSize>("gui/windows/searchDialog/Size"));
+    move(getBtConfig().getValue<QPoint>("gui/windows/searchDialog/Pos"));
 }
 
 void CSearchDialog::saveDialogSettings() {
-    CBTConfig::set(CBTConfig::searchDialogWidth, size().width());
-    CBTConfig::set(CBTConfig::searchDialogHeight, size().height());
-    CBTConfig::set(CBTConfig::searchDialogX, x());
-    CBTConfig::set(CBTConfig::searchDialogY, y());
+    getBtConfig().setValue("gui/windows/searchDialog/Size", size());
+    getBtConfig().setValue("gui/windows/searchDialog/Pos", pos());
 }
 
 
