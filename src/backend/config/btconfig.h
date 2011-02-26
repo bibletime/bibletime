@@ -6,6 +6,7 @@
 #include <QString>
 #include <QStringList>
 #include <QVariant>
+#include <QMetaType>
 #include <QSettings>
 
 #include "btglobal.h"
@@ -387,5 +388,15 @@ const QFont &BtConfig::getDefaultFont() const
 Q_DECLARE_METATYPE(BTModuleTreeItem::Grouping);
 Q_DECLARE_METATYPE(Search::BtSearchOptionsArea::SearchType);
 Q_DECLARE_METATYPE(BtConfig::StringMap);
+
+// operator<</operator>> are needed for QVariant to be able to save it's contents to a text file, see documentation for qRegisterMetaTypeStreamOperators()
+QDataStream &operator<<(QDataStream &out, const Search::BtSearchOptionsArea::SearchType &searchType);
+QDataStream &operator>>(QDataStream &in, Search::BtSearchOptionsArea::SearchType &searchType);
+
+QDataStream &operator<<(QDataStream &out, const alignmentMode &x);
+QDataStream &operator>>(QDataStream &in, alignmentMode &x);
+
+QDataStream &operator<<(QDataStream &out, const BTModuleTreeItem::Grouping &x);
+QDataStream &operator>>(QDataStream &in, BTModuleTreeItem::Grouping &x);
 
 #endif // BTCONFIG_H

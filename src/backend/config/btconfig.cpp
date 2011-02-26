@@ -30,6 +30,15 @@ BtConfig::BtConfig(const QString& settingsFile) : m_currentGroups(), m_defaults(
         qRegisterMetaType<StringMap>("StringMap");
         qRegisterMetaTypeStreamOperators<StringMap>("StringMap");
         
+        qRegisterMetaType<BTModuleTreeItem::Grouping>("Grouping");
+        qRegisterMetaTypeStreamOperators<BTModuleTreeItem::Grouping>("Grouping");
+
+        qRegisterMetaType<alignmentMode>("alignmentMode");
+        qRegisterMetaTypeStreamOperators<alignmentMode>("alignmentMode");
+        
+        qRegisterMetaType<Search::BtSearchOptionsArea::SearchType>("SearchType");
+        qRegisterMetaTypeStreamOperators<Search::BtSearchOptionsArea::SearchType>("SearchType");
+
     m_currentGroups.reserve(10);
     // construct defaults
         m_defaults.reserve(512); //TODO: check whether this value can be calculated automatically...
@@ -531,4 +540,41 @@ void BtConfig::readSession()
      * 8. add gui for new session handling
      * 9. remove old gui for session handling
      */
+}
+
+// operators needed for QVariant to work
+QDataStream &operator<<(QDataStream &out, const Search::BtSearchOptionsArea::SearchType &x)
+{
+    out << x;
+    return out;
+}
+
+QDataStream &operator>>(QDataStream &in, Search::BtSearchOptionsArea::SearchType &x)
+{
+    in >> x;
+    return in;
+}
+
+QDataStream &operator<<(QDataStream &out, const alignmentMode &x)
+{
+    out << x;
+    return out;
+}
+
+QDataStream &operator>>(QDataStream &in, alignmentMode &x)
+{
+    in >> x;
+    return in;
+}
+
+QDataStream &operator<<(QDataStream &out, const BTModuleTreeItem::Grouping &x)
+{
+    out << x;
+    return out;
+}
+
+QDataStream &operator>>(QDataStream &in, BTModuleTreeItem::Grouping &x)
+{
+    in >> x;
+    return in;
 }
