@@ -11,7 +11,7 @@
 
 #include <QSharedPointer>
 #include <QObject>
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "backend/keys/cswordkey.h"
 #include "backend/managers/referencemanager.h"
 #include "backend/managers/cswordbackend.h"
@@ -105,7 +105,7 @@ void BtHtmlJsObject::mouseMoveEvent(const QString& attributes, const int& x, con
         // no mouse button pressed and tracking enabled
         // start timer that updates the mag window
         // Sets timer in javascript. See bthtml.js startTimer()
-        emit startTimer(CBTConfig::get(CBTConfig::magDelay));
+        emit startTimer(getBtConfig().getValue<int>("gui/windows/magDelay"));
         m_prev_attributes = attributes;
         // When the javascript timer interupts, the see timerEvent() in bthtml.js
         // will call the timeOutEvent in this class
