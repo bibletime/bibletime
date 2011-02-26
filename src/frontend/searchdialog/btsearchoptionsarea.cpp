@@ -20,7 +20,8 @@
 #include <QPushButton>
 #include <QRadioButton>
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
+#include "backend/managers/cswordbackend.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "frontend/searchdialog/btsearchmodulechooserdialog.h"
 #include "frontend/searchdialog/btsearchsyntaxhelpdialog.h"
@@ -28,7 +29,6 @@
 #include "util/cresmgr.h"
 #include "util/tool.h"
 #include "util/directory.h"
-#include <backend/config/btconfig.h>
 
 
 namespace Search {
@@ -246,7 +246,7 @@ void BtSearchOptionsArea::setModules(const QList<const CSwordModuleInfo*> &modul
     for (int i = 0; i < m_modulesCombo->count(); ++i) {
         historyList.append(m_modulesCombo->itemText(i));
     }
-    CBTConfig::set(CBTConfig::searchModulesHistory, historyList);
+    getBtConfig().setValue("history/searchModuleHistory", historyList);
     emit sigSetSearchButtonStatus(modules.count() != 0);
 }
 
@@ -289,7 +289,7 @@ void BtSearchOptionsArea::reset() {
 }
 
 void BtSearchOptionsArea::saveSettings() {
-    CBTConfig::set(CBTConfig::searchTexts, m_searchTextCombo->historyItems());
+    getBtConfig().setValue("properties/searchTexts", m_searchTextCombo->historyItems());
     SearchType t = FullType;
     if (m_typeAndButton->isChecked()) {
         t = AndType;
@@ -297,11 +297,11 @@ void BtSearchOptionsArea::saveSettings() {
     if (m_typeOrButton->isChecked()) {
         t = OrType;
     }
-    CBTConfig::set(CBTConfig::searchType, t);
+    getBtConfig().setValue("gui/windows/searchType", t);
 }
 
 void BtSearchOptionsArea::readSettings() {
-    QStringList texts = CBTConfig::get(CBTConfig::searchTexts);
+    QStringList texts = getBtConfig().getValue<QStringList>("properties/searchTexts");
     //for some reason the slot was called when setting the upmost item
     disconnect(m_searchTextCombo, SIGNAL(editTextChanged(const QString&)), this, SLOT(slotValidateText(const QString&)));
     for (int i = 0; i < texts.size(); i++) {
@@ -310,12 +310,12 @@ void BtSearchOptionsArea::readSettings() {
     }
     connect(m_searchTextCombo, SIGNAL(editTextChanged(const QString&)), this, SLOT(slotValidateText(const QString&)));
 
-    m_modulesCombo->insertItems(0, CBTConfig::get(CBTConfig::searchModulesHistory));
+    m_modulesCombo->insertItems(0, getBtConfig().getValue<QStringList>("history/searchModuleHistory"));
     for (int i = 0; i < m_modulesCombo->count(); ++i) {
         m_modulesCombo->setItemData(i, m_modulesCombo->itemText(i), Qt::ToolTipRole);
     }
 
-    int stype = CBTConfig::get(CBTConfig::searchType);
+    int stype = getBtConfig().getValue<int>("gui/windows/searchType");
     switch (stype) {
         case AndType:
             m_typeAndButton->setChecked(true);
