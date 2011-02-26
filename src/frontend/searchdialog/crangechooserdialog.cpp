@@ -20,7 +20,6 @@
 #include <QString>
 #include <QTextEdit>
 #include <QVBoxLayout>
-#include "backend/config/cbtconfig.h"
 #include "backend/config/btconfig.h"
 #include "util/dialogutil.h"
 
