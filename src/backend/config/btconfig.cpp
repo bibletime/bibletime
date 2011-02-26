@@ -89,6 +89,9 @@ BtConfig::BtConfig(const QString& settingsFile) : m_currentGroups(), m_defaults(
         m_defaults.insert("gui/windows/searchType", Search::BtSearchOptionsArea::AndType);
         m_defaults.insert("gui/mainindexActiveTab", 0);
         m_defaults.insert("gui/installPathIndex", 0);
+        m_defaults.insert("gui/bookshelfManager/installPage/selectedModule", "");
+        m_defaults.insert("gui/bookshelfManager/installPage/headerState", QByteArray());
+        m_defaults.insert("gui/bookshelfManager/installPage/grouping", QVariant());
         m_defaults.insert("gui/windows/bookshelf/Pos", QPoint(1,1));
         m_defaults.insert("gui/windows/bookshelf/Size", QSize(1,1));
         m_defaults.insert("gui/windows/configDialog/Pos", QPoint(1,1));
