@@ -150,7 +150,7 @@ void BtFontSettingsPage::useOwnFontClicked(bool isOn) {
         m_languageComboBox->setItemIcon(m_languageComboBox->currentIndex(), DU::getIcon("fonts.svg"));
     }
     else {   //don't show
-        m_languageComboBox->setItemText(m_languageComboBox->currentIndex(), m_languageComboBox->currentText() ); /// \todo should this change icon to empty?
+        m_languageComboBox->setItemIcon(m_languageComboBox->currentIndex(), QIcon());
     }
 }
 
