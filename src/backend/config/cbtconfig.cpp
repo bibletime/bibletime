@@ -503,7 +503,7 @@ QFont &getDefault(const CLanguageMgr::Language * const) {
     /// \todo make the font name and size a configuration option
 
     m_defaultFont = new QFont();
-    m_defaultFont->setPointSize();
+    m_defaultFont->setPointSize(12);
     return *m_defaultFont;
 }
 
