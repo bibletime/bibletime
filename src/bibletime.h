@@ -441,9 +441,6 @@ class BibleTime : public QMainWindow {
     private:
         static BibleTime *m_instance;
 
-        //  True if window was maximized before last toggle to full screen.
-        bool m_WindowWasMaximizedBeforeFullScreen;
-
         // Docking widgets and their respective content widgets:
         BtBookshelfDockWidget* m_bookshelfDock;
         QDockWidget* m_bookmarksDock;
