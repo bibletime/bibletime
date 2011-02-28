@@ -1,3 +1,6 @@
+2011-02-28 Patrick Sebastian Zimmermann <patrick@zakweb.de>
+    * Fix restoring from fullscreen to a maximized window.
+
 2011-02-07 Gary Holmlund <gary.holmlund@gmail.com>
     * Fixed Personal Commentary. Text could be saved to wrong reference.
 

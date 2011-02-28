@@ -545,20 +545,7 @@ void BibleTime::deleteProfile(QAction* action) {
 }
 
 void BibleTime::toggleFullscreen() {
-    if (m_windowFullscreenAction->isChecked()) {
-        // set full screen mode
-        m_WindowWasMaximizedBeforeFullScreen = isMaximized();
-        showFullScreen();
-    }
-    else {
-        // restore previous non-full screen mode
-        if (m_WindowWasMaximizedBeforeFullScreen) {
-            showMaximized();
-        }
-        else {
-            showNormal();
-        }
-    }
+    setWindowState(windowState() ^ Qt::WindowFullScreen);
     m_mdi->triggerWindowUpdate();
 }
 

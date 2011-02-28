@@ -46,7 +46,7 @@ using namespace Profile;
 BibleTime *BibleTime::m_instance = 0;
 
 BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
-    : QMainWindow(parent, flags), m_WindowWasMaximizedBeforeFullScreen(false)
+    : QMainWindow(parent, flags)
 {
     namespace DU = util::directory;
 
