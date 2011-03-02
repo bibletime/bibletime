@@ -10,7 +10,6 @@
 #include <QSettings>
 
 #include "btglobal.h"
-#include "util/nocopy.h"
 #include "backend/btmoduletreeitem.h" // for BTModuleTreeItem::Grouping
 #include "frontend/searchdialog/btsearchoptionsarea.h" // for Search::BtSearchOptionsArea::SearchType
 #include "backend/drivers/cswordmoduleinfo.h"
@@ -26,8 +25,11 @@
  *
  * TODO: preserve session order
  */
-class BtConfig : private NoCopy
+class BtConfig
 {
+
+    Q_DISABLE_COPY(BtConfig)
+
 public:
     /*!
     * The first parameter indicates whether the custom font should be used or not.
