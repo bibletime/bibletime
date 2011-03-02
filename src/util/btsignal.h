@@ -30,11 +30,16 @@ class BtSignal : public QObject {
         inline BtSignal(QObject *parent = 0) : QObject(parent) {};
 
         /**
+          Immediately emits the beforeChanged() signal.
+        */
+        inline void emitBeforeChanged() { emit beforeChanged(); }
+        /**
           Immediately emits the changed() signal.
         */
         inline void emitChanged() { emit changed(); }
 
     signals:
+        void beforeChanged();
         void changed();
 };
 #endif

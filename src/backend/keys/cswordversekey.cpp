@@ -135,12 +135,17 @@ bool CSwordVerseKey::setKey(const char *newKey) {
         /// \todo Is this check necessary?
         // Check if empty string:
         if (*newKey != '\0') {
+            QString newKeyStr = newKey;
+            if (newKeyStr == key())
+                return true;
+            emitBeforeChanged();
             positionFrom(newKey);
         } else {
             const CSwordModuleInfo *m = module();
             if (m->type() == CSwordModuleInfo::Bible) {
                 Q_ASSERT(dynamic_cast<const CSBMI*>(m) != 0);
                 const CSBMI *bible = static_cast<const CSBMI*>(m);
+                emitBeforeChanged();
                 positionFrom(bible->lowerBound().key().toUtf8().constData());
             }
         }
@@ -223,11 +228,13 @@ bool CSwordVerseKey::next( const JumpType type ) {
     const CSBMI *bible = dynamic_cast<const CSBMI*>(module());
     if (bible != 0) {
         if (_compare(bible->lowerBound()) < 0 ) {
+            emitBeforeChanged();
             setKey(bible->lowerBound());
             ret = false;
         }
 
         if (_compare(bible->upperBound()) > 0 ) {
+            emitBeforeChanged();
             setKey(bible->upperBound());
             ret = false;
         }
@@ -307,11 +314,13 @@ bool CSwordVerseKey::previous( const JumpType type ) {
     const CSBMI *bible = dynamic_cast<const CSBMI*>(module());
     if (bible != 0) {
         if (_compare(bible->lowerBound()) < 0 ) {
+            emitBeforeChanged();
             setKey(bible->lowerBound());
             ret = false;
         }
 
         if (_compare(bible->upperBound()) > 0 ) {
+            emitBeforeChanged();
             setKey(bible->upperBound());
             ret = false;
         }

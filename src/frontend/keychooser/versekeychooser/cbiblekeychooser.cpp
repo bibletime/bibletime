@@ -63,7 +63,6 @@ void CBibleKeyChooser::setKey(CSwordKey* key) {
     Q_ASSERT(dynamic_cast<CSwordVerseKey*>(key));
     if (dynamic_cast<CSwordVerseKey*>(key) == 0) return;
 
-    emit (beforeKeyChange(m_key->key())); //required to make direct setKey calls work from the outside
     m_key = dynamic_cast<CSwordVerseKey*>(key);
     w_ref->setKey(m_key);
     emit keyChanged(m_key);
@@ -76,10 +75,6 @@ void CBibleKeyChooser::beforeRefChange(CSwordVerseKey* key) {
 
     if (!updatesEnabled())
         return;
-
-    if (m_key)
-        emit beforeKeyChange(m_key->key());
-
 }
 
 void CBibleKeyChooser::refChanged(CSwordVerseKey* key) {
