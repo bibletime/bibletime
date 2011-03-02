@@ -106,6 +106,7 @@ class CSwordKey {
          */
         virtual const char * rawKey() const = 0;
         static inline const QTextCodec *cp1252Codec() { return m_cp1252Codec; };
+        void emitBeforeChanged();
         void emitChanged();
 
     private:

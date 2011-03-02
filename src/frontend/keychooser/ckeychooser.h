@@ -83,10 +83,6 @@ class CKeyChooser : public QWidget {
         * is emitted if the @ref CKey was changed by the user
         */
         void keyChanged(CSwordKey* newKey);
-        /**
-        * Is emitted before the key is changed!
-        */
-        void beforeKeyChange(const QString& key);
 
     protected:
 

@@ -84,7 +84,7 @@ class CWriteWindow : public CDisplayWindow  {
         void saveCurrentText();
         /**
          */
-        virtual void beforeKeyChange(const QString&);
+        virtual void beforeKeyChange();
 
     private:
         CWriteDisplay* m_writeDisplay;
