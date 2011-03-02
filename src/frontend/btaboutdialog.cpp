@@ -177,6 +177,7 @@ void BtAboutDialog::retranslateContributorsTab() {
         MAKE_CONTR(content, "Thorsten Uhlmann", developer)
         MAKE_CONTR(content, "David White", developer)
         MAKE_CONTR(content, "Mark Zealey", developer)
+        MAKE_CONTR(content, "Patrick Sebastian Zimmermann", developer)
     "</ul><p><b>";
 
 
