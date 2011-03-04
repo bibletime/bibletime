@@ -46,7 +46,9 @@ CBibleKeyChooser::CBibleKeyChooser(
     layout->addWidget(w_ref);
 
     bool ok = connect(w_ref, SIGNAL(beforeChange(CSwordVerseKey *)), SLOT(beforeRefChange(CSwordVerseKey *)));
-    connect(w_ref, SIGNAL(changed(CSwordVerseKey *)), SLOT(refChanged(CSwordVerseKey *)));
+    Q_ASSERT(ok);
+
+    ok =connect(w_ref, SIGNAL(changed(CSwordVerseKey *)), SLOT(refChanged(CSwordVerseKey *)));
     Q_ASSERT(ok);
 
     setKey(m_key); //set the key without changing it, setKey(key()) would change it

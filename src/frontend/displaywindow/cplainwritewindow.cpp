@@ -120,9 +120,8 @@ void CPlainWriteWindow::saveCurrentText( const QString& /*key*/ ) {
     const QString& oldKey = this->key()->key();
     if ( modules().first()->isWritable() ) {
         const_cast<CSwordModuleInfo*>(modules().first())->write(this->key(), t);
-        this->key()->setKey(oldKey);
-
         ((CWriteDisplay*)displayWidget())->setModified(false);
+        this->key()->setKey(oldKey);
         textChanged();
     }
     else {
