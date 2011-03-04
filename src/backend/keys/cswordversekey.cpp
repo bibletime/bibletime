@@ -136,8 +136,6 @@ bool CSwordVerseKey::setKey(const char *newKey) {
         // Check if empty string:
         if (*newKey != '\0') {
             QString newKeyStr = newKey;
-            if (newKeyStr == key())
-                return true;
             emitBeforeChanged();
             positionFrom(newKey);
         } else {
