@@ -20,11 +20,11 @@ linkend="hdbk-reference-shortcuts">Tastenkürzel-Verzeichnis</link>.</para>
             <term>
               <menuchoice> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_folder_open.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>File</guimenu> <guimenuitem>Open work</guimenuitem> </menuchoice>
+format="PNG" /> </imageobject></inlinemediaobject>Datei</guimenu> <guimenuitem>Werk öffnen</guimenuitem> </menuchoice>
             </term>
             <listitem>
-              <para><action>Open work.</action> This will give you a menu that will allow you to
-open installed books.</para>
+              <para><action>Werk öffnen.</action> Dies öffnet Ihnen ein Menü zum Öffnen
+installierter Bücher.</para>
             </listitem>
           </varlistentry>
 
@@ -489,12 +489,13 @@ enttäuschen.</para>
             <menuchoice> <shortcut> <keycombo action="simul"> <keycap>F3</keycap>
 </keycombo> </shortcut> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_light_bulb.png" width="22" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>Help</guimenu> <guimenuitem>Tip of the Day</guimenuitem>
+format="PNG" /> </imageobject></inlinemediaobject>Hilfe</guimenu> <guimenuitem>Tipp des Tages</guimenuitem>
 </menuchoice>
           </term>
           <listitem>
-            <para><action>Opens a helpful tip</action> The Tip of the Day provides a useful
-tip that will assist in the use of &bibletime;.</para>
+            <para><action>Öffnet einen hilfreichen Tipp</action> Der Tipp des Tages liefert
+einen nützlichen Hinweis, der für die Benutzung von &bibletime; hilfreich
+ist.</para>
           </listitem>
         </varlistentry>
 
@@ -1021,8 +1022,9 @@ zum Bibelstudium.</entry>
               <keycombo action="simul"> <keycap>F3</keycap> </keycombo>
             </entry>
             <entry>
-            <menuchoice> <guimenu>Help</guimenu> <guimenuitem>Tip of the
-Day</guimenuitem> </menuchoice> Opens a helpful tip to use &bibletime;.</entry>
+            <menuchoice> <guimenu>Hilfe</guimenu> <guimenuitem>Tipp des
+Tages</guimenuitem> </menuchoice> Öffnet einen hilfreichen Tipp zur
+Benutzung von &bibletime;.</entry>
           </row>
 
           <row>

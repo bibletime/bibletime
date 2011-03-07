@@ -20,14 +20,14 @@
 		</author>
 		<author>
 			<firstname></firstname>
-			<surname>The BibleTime team</surname>
+			<surname>Das BibleTime-Team</surname>
 		</author>
 	</authorgroup>
 	
 	
 	
 	<!-- TRANS:ROLES_OF_TRANSLATORS -->
-<copyright> <year>2001-2009</year> <holder>The team of &bibletime;
+<copyright> <year>2001-2009</year> <holder>Das Team von &bibletime;
 (info@bibletime.info)</holder> </copyright>
 	
 	<legalnotice>
@@ -63,9 +63,9 @@ enttäuschen.
 	</abstract>
 	
 	<keywordset>
-		<keyword>Bible</keyword>
+		<keyword>Bibel</keyword>
 		<keyword>Studium</keyword>
-		<keyword>HowTo</keyword>
+		<keyword>Anleitung</keyword>
 	</keywordset>
 
 </bookinfo>
