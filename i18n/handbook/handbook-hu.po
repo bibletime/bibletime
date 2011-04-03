@@ -3752,15 +3752,3 @@ msgstr "Crosswire"
 #: docs/handbook/en/docbook/index.docbook:72
 msgid "Help dialog"
 msgstr "Segítség párbeszédablak"
-
-# type: Content of: <book><bookinfo><date>
-#, fuzzy
-#~ msgid ""
-#~ "<date>$LastChangedDate: 2010-05-20 15:20:48 -0400 (Thu, 20 May 2010) $</"
-#~ "date>"
-#~ msgstr "$LastChangedDate: 2009-12-31 15:05:52 -0500 (Thu, 31 Dec 2009) $"
-
-# type: Content of: <book><bookinfo><releaseinfo>
-#, fuzzy
-#~ msgid "2.8"
-#~ msgstr "2.6"
