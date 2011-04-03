@@ -244,7 +244,7 @@ Isten'.</para>
 után ':', és jöhet a keresési kifejezés. Például, ha a H8077-es Strong's
 szám előfordulását keresi, így kell megadni: 'strong:H8077'.</para>
 
-        <para>Available text types: <table id="hd-op-search-config-syntax-table">
+        <para>Elérhető szövegtípusok: <table id="hd-op-search-config-syntax-table">
 	  <title>Keresési típusok</title>
           <tgroup cols="3">
             <thead>

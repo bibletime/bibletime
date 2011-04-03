@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: handbook-hu\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
 "POT-Creation-Date: 2011-01-13 23:27-0500\n"
-"PO-Revision-Date: 2010-02-18 21:16+0100\n"
-"Last-Translator: Novak Geza <gza@gza.hu>\n"
+"PO-Revision-Date: 2011-03-28 09:19+0100\n"
+"Last-Translator: Geza Novak <gza@ggza.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
@@ -57,7 +57,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-config.docbook:18
 msgid "<guimenu>Display</guimenu>"
-msgstr ""
+msgstr "<guimenu>Képernyő</guimenu>"
 
 # type: Content of: <chapter><sect1><sect2><para>
 #. type: Content of: <chapter><sect1><sect2><para>
@@ -88,7 +88,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-config.docbook:34
 msgid "<guimenu>Desk</guimenu>"
-msgstr ""
+msgstr "<guimenu>Munkaasztal</guimenu>"
 
 # type: Content of: <chapter><sect1><sect2><para>
 #. type: Content of: <chapter><sect1><sect2><para>
@@ -152,6 +152,8 @@ msgid ""
 "<imageobject> <imagedata fileref=\"ss_configfonts.png\" width=\"100%\" "
 "contentdepth=\"100%\" scalefit=\"1\" format=\"PNG\" /> </imageobject>"
 msgstr ""
+"<imageobject> <imagedata fileref=\"ss_configfonts.png\" width=\"100%\" "
+"contentdepth=\"100%\" scalefit=\"1\" format=\"PNG\" /> </imageobject>"
 
 # type: Content of: <chapter><sect1><sect2><mediaobject><caption><para>
 #. type: Content of: <chapter><sect1><sect2><mediaobject><textobject><phrase>
@@ -302,7 +304,7 @@ msgstr "UNICODE betűkészletek"
 #. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:134
 msgid "<ulink url=\"http://code2000.net/CODE2000.ZIP\"> Code2000</ulink>"
-msgstr ""
+msgstr "<ulink url=\"http://code2000.net/CODE2000.ZIP\"> Code2000</ulink>"
 
 # type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
@@ -319,6 +321,8 @@ msgid ""
 "<ulink url=\"http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;"
 "cat_id=FontDownloads\"> SIL unicode fonts</ulink>"
 msgstr ""
+"<ulink url=\"http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;"
+"cat_id=FontDownloads\"> SIL unicode betűkészlet</ulink>"
 
 # type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
@@ -331,7 +335,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:150
 msgid "<ulink url=\"http://www.nongnu.org/freefont/\"> FreeFont</ulink>"
-msgstr ""
+msgstr "<ulink url=\"http://www.nongnu.org/freefont/\"> FreeFont</ulink>"
 
 # type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
@@ -345,6 +349,8 @@ msgid ""
 "<ulink url=\"ftp://ftp.crosswire.org/pub/sword/iso/latest/FONTS/\"> "
 "Crosswire's font directory</ulink>"
 msgstr ""
+"<ulink url=\"ftp://ftp.crosswire.org/pub/sword/iso/latest/FONTS/\"> "
+"Crosswire betűkészlet mappája</ulink>"
 
 # type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
@@ -358,6 +364,8 @@ msgid ""
 "<ulink url=\"http://aol-4.vo.llnwd.net/pub/communicator/extras/fonts/windows/"
 "\"> Bitstream CyberBit</ulink>"
 msgstr ""
+"<ulink url=\"http://aol-4.vo.llnwd.net/pub/communicator/extras/fonts/windows/"
+"\"> Bitstream CyberBit</ulink>"
 
 # type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
@@ -389,6 +397,8 @@ msgid ""
 "<ulink url=\"http://fontforge.sourceforge.net/sfds/\"> Caslon, Monospace, "
 "Cupola, Caliban</ulink>"
 msgstr ""
+"<ulink url=\"http://fontforge.sourceforge.net/sfds/\"> Caslon, Monospace, "
+"Cupola, Caliban</ulink>"
 
 # type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
@@ -417,7 +427,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-config.docbook:202
 msgid "<guimenu>Shortcuts</guimenu>"
-msgstr ""
+msgstr "<guimenu>Gyorslinkek</guimenu>"
 
 # type: Content of: <chapter><sect1><sect2><para>
 #. type: Content of: <chapter><sect1><sect2><para>
@@ -440,7 +450,7 @@ msgstr ""
 #. type: Attribute 'fileref' of: <chapter><sect1><sect2><imageobject><imagedata>
 #: docs/handbook/en/docbook/hdbk-config.docbook:215
 msgid "ss_shortcuts.png"
-msgstr ""
+msgstr "ss_shortcuts.png"
 
 # type: Content of: <chapter><sect1><sect2><para>
 #. type: Content of: <chapter><sect1><sect2><para>
@@ -679,6 +689,8 @@ msgid ""
 "<imageobject> <imagedata fileref=\"ss_mainterms.png\" width=\"100%\" "
 "contentdepth=\"100%\" scalefit=\"1\" format=\"PNG\" /> </imageobject>"
 msgstr ""
+"<imageobject> <imagedata fileref=\"ss_mainterms.png\" width=\"100%\" "
+"contentdepth=\"100%\" scalefit=\"1\" format=\"PNG\" /> </imageobject>"
 
 # type: Content of: <chapter><sect1><title>
 #. type: Content of: <chapter><sect1><para><mediaobject><textobject><phrase>
@@ -1146,6 +1158,8 @@ msgid ""
 "<imageobject> <imagedata fileref=\"ss_searchopts.png\" width=\"100%\" "
 "contentdepth=\"100%\" scalefit=\"1\" format=\"PNG\" /> </imageobject>"
 msgstr ""
+"<imageobject> <imagedata fileref=\"ss_searchopts.png\" width=\"100%\" "
+"contentdepth=\"100%\" scalefit=\"1\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><sect3><screenshot>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:243
@@ -1154,6 +1168,8 @@ msgid ""
 "<placeholder type=\"screeninfo\" id=\"0\"/> <placeholder type=\"mediaobject"
 "\" id=\"1\"/>"
 msgstr ""
+"<placeholder type=\"screeninfo\" id=\"0\"/> <placeholder type=\"mediaobject"
+"\" id=\"1\"/>"
 
 # type: Content of: <chapter><sect1><sect2><sect3><title>
 #. type: Content of: <chapter><sect1><sect2><sect3><title>
@@ -1347,7 +1363,7 @@ msgstr "morph:N-GSM"
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:289
 msgid "Available text types: <placeholder type=\"table\" id=\"0\"/>"
-msgstr ""
+msgstr "Elérhető szövegtípusok: <placeholder type=\"table\" id=\"0\"/>"
 
 # type: Content of: <chapter><sect1><sect2><sect3><tip><para>
 #. type: Content of: <chapter><sect1><sect2><sect3><tip><para>
@@ -1464,6 +1480,8 @@ msgid ""
 "<imageobject> <imagedata fileref=\"ss_searchanal.png\" width=\"100%\" "
 "contentdepth=\"100%\" scalefit=\"1\" format=\"PNG\" /> </imageobject>"
 msgstr ""
+"<imageobject> <imagedata fileref=\"ss_searchanal.png\" width=\"100%\" "
+"contentdepth=\"100%\" scalefit=\"1\" format=\"PNG\" /> </imageobject>"
 
 # type: Content of: <chapter><sect1><title>
 #. type: Content of: <chapter><sect1><title>
@@ -1712,28 +1730,35 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:15
 msgid "<guimenu>File</guimenu>"
-msgstr ""
+msgstr "<guimenu>Fájl</guimenu>"
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:24
+#, fuzzy
+#| msgid ""
+#| "<imageobject> <imagedata fileref=\"i_fileclose.png\" width=\"32\" depth="
+#| "\"32\" format=\"PNG\" /> </imageobject>"
 msgid ""
 "<imageobject> <imagedata fileref=\"i_folder_open.png\" width=\"32\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
+"<imageobject> <imagedata fileref=\"i_fileclose.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
 
-# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:21
 #, fuzzy
 #| msgid ""
-#| "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> "
-#| "</menuchoice> equivalent; opens the handbook."
+#| "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
+#| ">Settings</guimenu> <guimenuitem>Configure &bibletime;</guimenuitem> </"
+#| "menuchoice>"
 msgid ""
 "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
 ">File</guimenu> <guimenuitem>Open work</guimenuitem> </menuchoice>"
 msgstr ""
-"Megegyezik a <menuchoice><guimenu>Segítség</guimenu><guimenuitem> Kézikönyv</"
-"guimenuitem></menuchoice> menüponttal, megnyitja ezt a kézikönyvet."
+"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
+">Beállítások</guimenu> <guimenuitem> &bibletime; beállítása</guimenuitem> </"
+"menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:32
@@ -1748,6 +1773,8 @@ msgid ""
 "<imageobject> <imagedata fileref=\"i_exit.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
 msgstr ""
+"<imageobject> <imagedata fileref=\"i_exit.png\" width=\"32\" depth=\"32\" "
+"format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:39
@@ -1757,6 +1784,10 @@ msgid ""
 "\"inlinemediaobject\" id=\"0\"/>File</guimenu> <guimenuitem>Quit</"
 "guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+Q</"
+"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
+"\"inlinemediaobject\" id=\"0\"/>File</guimenu> <guimenuitem>Kilépés</"
+"guimenuitem> </menuchoice>"
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
@@ -1783,12 +1814,12 @@ msgstr ""
 #: docs/handbook/en/docbook/hdbk-reference.docbook:936
 #: docs/handbook/en/docbook/hdbk-reference.docbook:959
 msgid "<placeholder type=\"variablelist\" id=\"0\"/>"
-msgstr ""
+msgstr "<placeholder type=\"variablelist\" id=\"0\"/>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:65
 msgid "<guimenu>View</guimenu>"
-msgstr ""
+msgstr "<guimenu>Nézet</guimenu>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:79
@@ -1796,6 +1827,8 @@ msgid ""
 "<imageobject> <imagedata fileref=\"i_window_fullscreen.png\" width=\"32\" "
 "depth=\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
+"<imageobject> <imagedata fileref=\"i_window_fullscreen.png\" width=\"32\" "
+"depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:71
@@ -1805,6 +1838,10 @@ msgid ""
 "\"0\"/>View</guimenu> <guimenuitem>Fullscreen mode</guimenuitem> </"
 "menuchoice>"
 msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F5</keycap> </"
+"keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id="
+"\"0\"/>View</guimenu> <guimenuitem>Teljes képernyő</guimenuitem> </"
+"menuchoice>"
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -1900,6 +1937,9 @@ msgid ""
 "keycombo> </shortcut> <guimenu>View</guimenu> <guimenuitem>Toolbars</"
 "guimenuitem> <guimenuitem>Show main</guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F6</keycap> </"
+"keycombo> </shortcut> <guimenu>View</guimenu> <guimenuitem>Toolbars</"
+"guimenuitem> <guimenuitem>Fő eszköztár mutatása</guimenuitem> </menuchoice>"
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -2074,6 +2114,8 @@ msgid ""
 "<imageobject> <imagedata fileref=\"i_find.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
 msgstr ""
+"<imageobject> <imagedata fileref=\"i_find.png\" width=\"32\" depth=\"32\" "
+"format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:244
@@ -2083,6 +2125,10 @@ msgid ""
 "\"inlinemediaobject\" id=\"0\"/>Search</guimenu> <guimenuitem>Search in "
 "standard bible</guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</"
+"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
+"\"inlinemediaobject\" id=\"0\"/>Search</guimenu> <guimenuitem>Keresés az "
+"alapértelmezett bibliában</guimenuitem> </menuchoice>"
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -2105,6 +2151,10 @@ msgid ""
 "\"inlinemediaobject\" id=\"0\"/>Search</guimenu> <guimenuitem>Search in open "
 "work(s)</guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+O</"
+"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
+"\"inlinemediaobject\" id=\"0\"/>Search</guimenu> <guimenuitem>Keresés a "
+"megnyitott munká(k)ban</guimenuitem> </menuchoice>"
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -2123,7 +2173,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:299
 msgid "<guimenu>Window</guimenu>"
-msgstr ""
+msgstr "<guimenu>Ablak</guimenu>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:312
@@ -2132,6 +2182,8 @@ msgid ""
 "<imageobject> <imagedata fileref=\"i_fileclose.png\" width=\"32\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
+"<imageobject> <imagedata fileref=\"i_fileclose.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:305
@@ -2141,6 +2193,10 @@ msgid ""
 "\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Close window</"
 "guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+W</"
+"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
+"\"inlinemediaobject\" id=\"0\"/>Ablak</guimenu> <guimenuitem>Ablak bezárása</"
+"guimenuitem> </menuchoice>"
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -2157,6 +2213,10 @@ msgid ""
 "\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Close all</"
 "guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+W</"
+"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
+"\"inlinemediaobject\" id=\"0\"/>Ablak</guimenu> <guimenuitem>Összes "
+"bezárása</guimenuitem> </menuchoice>"
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -2170,6 +2230,8 @@ msgid ""
 "<imageobject> <imagedata fileref=\"i_cascade.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
 msgstr ""
+"<imageobject> <imagedata fileref=\"i_cascade.png\" width=\"32\" depth=\"32\" "
+"format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:351
@@ -2179,6 +2241,10 @@ msgid ""
 "\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Cascade</"
 "guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+J</"
+"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
+"\"inlinemediaobject\" id=\"0\"/>Ablak</guimenu> <guimenuitem>Átlapolt</"
+"guimenuitem> </menuchoice>"
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -2192,6 +2258,8 @@ msgid ""
 "<imageobject> <imagedata fileref=\"i_tile.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
 msgstr ""
+"<imageobject> <imagedata fileref=\"i_tile.png\" width=\"32\" depth=\"32\" "
+"format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:375
@@ -2201,6 +2269,10 @@ msgid ""
 "\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Tile</"
 "guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+I</"
+"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
+"\"inlinemediaobject\" id=\"0\"/>Ablak</guimenu> <guimenuitem>Mozaik</"
+"guimenuitem> </menuchoice>"
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -2214,6 +2286,8 @@ msgid ""
 "<imageobject> <imagedata fileref=\"i_tile_vert.png\" width=\"32\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
+"<imageobject> <imagedata fileref=\"i_tile_vert.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:399
@@ -2223,6 +2297,10 @@ msgid ""
 "\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Tile "
 "vertically</guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+G</"
+"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
+"\"inlinemediaobject\" id=\"0\"/>Ablak</guimenu> <guimenuitem>Függőleges "
+"mozaik</guimenuitem> </menuchoice>"
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -2237,6 +2315,8 @@ msgid ""
 "<imageobject> <imagedata fileref=\"i_tile_horiz.png\" width=\"32\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
+"<imageobject> <imagedata fileref=\"i_tile_horiz.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:423
@@ -2246,6 +2326,10 @@ msgid ""
 "\"inlinemediaobject\" id=\"0\"/>Window</guimenu> <guimenuitem>Tile "
 "horizontally</guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+H</"
+"keycap></keycombo> </shortcut> <guimenu> <placeholder type="
+"\"inlinemediaobject\" id=\"0\"/>Ablak</guimenu> <guimenuitem>Vízszintes "
+"mozaik</guimenuitem> </menuchoice>"
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -2319,6 +2403,9 @@ msgid ""
 "keycap></keycombo> </shortcut> <guimenu>Window</guimenu> <guimenuitem>Save "
 "as new session</guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+S</"
+"keycap></keycombo> </shortcut> <guimenu>Ablak</guimenu> <guimenuitem>Mentés "
+"új munkafolyamatként</guimenuitem> </menuchoice>"
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -2386,7 +2473,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:538
 msgid "<guimenu>Settings</guimenu>"
-msgstr ""
+msgstr "<guimenu>Beállítások</guimenu>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:546
@@ -2394,6 +2481,8 @@ msgid ""
 "<imageobject> <imagedata fileref=\"i_configure.png\" width=\"32\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
+"<imageobject> <imagedata fileref=\"i_configure.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:543
@@ -2402,6 +2491,9 @@ msgid ""
 ">Settings</guimenu> <guimenuitem>Configure &bibletime;</guimenuitem> </"
 "menuchoice>"
 msgstr ""
+"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
+">Beállítások</guimenu> <guimenuitem> &bibletime; beállítása</guimenuitem> </"
+"menuchoice>"
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -2423,6 +2515,8 @@ msgid ""
 "<imageobject> <imagedata fileref=\"i_configuresword.png\" width=\"32\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
+"<imageobject> <imagedata fileref=\"i_configuresword.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:567
@@ -2432,6 +2526,10 @@ msgid ""
 "\"0\"/>Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem> </"
 "menuchoice>"
 msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F4</keycap> </"
+"keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id="
+"\"0\"/>Beállítások</guimenu> <guimenuitem>Könyvespolc menedzser</"
+"guimenuitem> </menuchoice>"
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -2448,7 +2546,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:595
 msgid "<guimenu>Help</guimenu>"
-msgstr ""
+msgstr "<guimenu>Segítség</guimenu>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:608
@@ -2457,6 +2555,8 @@ msgid ""
 "<imageobject> <imagedata fileref=\"i_contents2.png\" width=\"32\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
+"<imageobject> <imagedata fileref=\"i_contents2.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:600
@@ -2465,6 +2565,9 @@ msgid ""
 "keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id="
 "\"0\"/>Help</guimenu> <guimenuitem>Handbook</guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F1</keycap> </"
+"keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id="
+"\"0\"/>Segítség</guimenu> <guimenuitem>Kézikönyv</guimenuitem> </menuchoice>"
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -2483,6 +2586,10 @@ msgid ""
 "\"0\"/>Help</guimenu> <guimenuitem>Bible Study HowTo</guimenuitem> </"
 "menuchoice>"
 msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F2</keycap> </"
+"keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id="
+"\"0\"/>Segítség</guimenu> <guimenuitem>Hogyan tanulmányozza a  Bibliát</"
+"guimenuitem> </menuchoice>"
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -2514,18 +2621,32 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:663
+#, fuzzy
+#| msgid ""
+#| "<imageobject> <imagedata fileref=\"i_bible.png\" width=\"32\" depth="
+#| "\"32\" format=\"PNG\" /> </imageobject>"
 msgid ""
 "<imageobject> <imagedata fileref=\"i_light_bulb.png\" width=\"22\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
+"<imageobject> <imagedata fileref=\"i_bible.png\" width=\"32\" depth=\"32\" "
+"format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:655
+#, fuzzy
+#| msgid ""
+#| "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F1</keycap> </"
+#| "keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" "
+#| "id=\"0\"/>Help</guimenu> <guimenuitem>Handbook</guimenuitem> </menuchoice>"
 msgid ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F3</keycap> </"
 "keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id="
 "\"0\"/>Help</guimenu> <guimenuitem>Tip of the Day</guimenuitem> </menuchoice>"
 msgstr ""
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F1</keycap> </"
+"keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id="
+"\"0\"/>Segítség</guimenu> <guimenuitem>Kézikönyv</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:671
@@ -2584,6 +2705,8 @@ msgid ""
 "<imageobject> <imagedata fileref=\"i_forward.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
 msgstr ""
+"<imageobject> <imagedata fileref=\"i_forward.png\" width=\"32\" depth=\"32\" "
+"format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:709
@@ -2602,6 +2725,8 @@ msgid ""
 "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/></"
 "guimenu> </menuchoice>"
 msgstr ""
+"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/></"
+"guimenu> </menuchoice>"
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
@@ -2615,6 +2740,8 @@ msgid ""
 "<imageobject> <imagedata fileref=\"i_back.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
 msgstr ""
+"<imageobject> <imagedata fileref=\"i_back.png\" width=\"32\" depth=\"32\" "
+"format=\"PNG\" /> </imageobject>"
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
@@ -2628,6 +2755,8 @@ msgid ""
 "<imageobject> <imagedata fileref=\"i_bible.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
 msgstr ""
+"<imageobject> <imagedata fileref=\"i_bible.png\" width=\"32\" depth=\"32\" "
+"format=\"PNG\" /> </imageobject>"
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
@@ -2641,6 +2770,8 @@ msgid ""
 "<imageobject> <imagedata fileref=\"i_bible_add.png\" width=\"32\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
+"<imageobject> <imagedata fileref=\"i_bible_add.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
@@ -2660,6 +2791,8 @@ msgid ""
 "<imageobject> <imagedata fileref=\"i_displayconfig.png\" width=\"32\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
+"<imageobject> <imagedata fileref=\"i_displayconfig.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
 
 # type: Content of: <chapter><sect1><sect2><title>
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
@@ -2673,6 +2806,8 @@ msgid ""
 "<imageobject> <imagedata fileref=\"i_commentary.png\" width=\"32\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
+"<imageobject> <imagedata fileref=\"i_commentary.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
@@ -2686,6 +2821,8 @@ msgid ""
 "<imageobject> <imagedata fileref=\"i_commentary_add.png\" width=\"32\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
+"<imageobject> <imagedata fileref=\"i_commentary_add.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
 
 # type: Content of: <chapter><sect1><sect2><sect3><title>
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
@@ -2699,6 +2836,8 @@ msgid ""
 "<imageobject> <imagedata fileref=\"i_sync.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
 msgstr ""
+"<imageobject> <imagedata fileref=\"i_sync.png\" width=\"32\" depth=\"32\" "
+"format=\"PNG\" /> </imageobject>"
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
@@ -2712,6 +2851,8 @@ msgid ""
 "<imageobject> <imagedata fileref=\"i_book.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
 msgstr ""
+"<imageobject> <imagedata fileref=\"i_book.png\" width=\"32\" depth=\"32\" "
+"format=\"PNG\" /> </imageobject>"
 
 # type: Content of: <chapter><sect1><sect2><sect3><title>
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
@@ -2725,6 +2866,8 @@ msgid ""
 "<imageobject> <imagedata fileref=\"i_lexicon.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
 msgstr ""
+"<imageobject> <imagedata fileref=\"i_lexicon.png\" width=\"32\" depth=\"32\" "
+"format=\"PNG\" /> </imageobject>"
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
@@ -2738,6 +2881,8 @@ msgid ""
 "<imageobject> <imagedata fileref=\"i_lexicon_add.png\" width=\"32\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
+"<imageobject> <imagedata fileref=\"i_lexicon_add.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
@@ -2783,7 +2928,7 @@ msgstr "Leírás"
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1008
 msgid "<keycombo action=\"simul\"> <keycap>&Alt;+Left</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Alt;+Balra</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -2794,7 +2939,7 @@ msgstr "Visszalép az előzményekben az olvasó ablakban."
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1015
 msgid "<keycombo action=\"simul\"> <keycap>&Alt;+Right</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Alt;+Jobbra</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -2805,7 +2950,7 @@ msgstr "Előrelép az előzményekben."
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1023
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -2824,7 +2969,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1038
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+G</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+G</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -2842,7 +2987,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1053
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+H</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+H</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -2860,7 +3005,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1067
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+I</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+I</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -2878,7 +3023,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1082
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+J</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+J</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -2895,7 +3040,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1096
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+M</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+M</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -2912,7 +3057,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1111
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+T</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+T</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -2929,7 +3074,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1125
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+S</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+S</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -2947,7 +3092,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1139
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+W</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+W</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -2965,7 +3110,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1152
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+-</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+-</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -2976,7 +3121,7 @@ msgstr "Kicsinyít. Csökkenti az ablakban alkalmazott betű méretét."
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1160
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;++</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;++</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -2987,7 +3132,7 @@ msgstr "Nagyít. Növeli az ablakban alkalmazott betű méretét."
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1168
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+A</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+A</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -3000,7 +3145,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1176
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+C</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+C</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -3011,7 +3156,7 @@ msgstr "Másolás. A kijelölt szöveget a vágólapra másolja."
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1185
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+F</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+F</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -3022,7 +3167,7 @@ msgstr "Keresés. Az ablakban lévő szövegben keres."
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1194
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+G</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+G</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -3040,7 +3185,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1210
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+H</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+H</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -3058,7 +3203,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1226
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+I</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+I</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -3075,7 +3220,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1242
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+J</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+J</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -3093,7 +3238,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1258
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+L</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+L</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -3105,7 +3250,7 @@ msgstr "Hely cseréje. A fókuszt a választott munka eszköztárára állítja.
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1267
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+N</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+N</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -3116,7 +3261,7 @@ msgstr "Keresés az ablak dokumentumaiban."
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1275
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+O</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+O</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -3135,7 +3280,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1290
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+Q</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+Q</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -3152,7 +3297,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1303
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+W</keycap></keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+W</keycap></keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -3163,7 +3308,7 @@ msgstr "Bezárja az aktuális ablakot."
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1310
 msgid "<keycombo action=\"simul\"> <keycap>F1</keycap> </keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>F1</keycap> </keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -3178,7 +3323,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1323
 msgid "<keycombo action=\"simul\"> <keycap>F2</keycap> </keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>F2</keycap> </keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -3194,8 +3339,10 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1337
+#, fuzzy
+#| msgid "<keycombo action=\"simul\"> <keycap>F1</keycap> </keycombo>"
 msgid "<keycombo action=\"simul\"> <keycap>F3</keycap> </keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>F1</keycap> </keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -3214,7 +3361,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1350
 msgid "<keycombo action=\"simul\"> <keycap>F4</keycap> </keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>F4</keycap> </keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -3232,7 +3379,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1365
 msgid "<keycombo action=\"simul\"> <keycap>F8</keycap> </keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>F8</keycap> </keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -3250,7 +3397,7 @@ msgstr ""
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1380
 msgid "<keycombo action=\"simul\"> <keycap>F9</keycap> </keycombo>"
-msgstr ""
+msgstr "<keycombo action=\"simul\"> <keycap>F9</keycap> </keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -3284,6 +3431,8 @@ msgid ""
 "<imageobject> <imagedata fileref=\"i_bibletime.png\" width=\"32\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
+"<imageobject> <imagedata fileref=\"i_bibletime.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
 
 # type: Content of: <chapter><sect1><sect2><para><mediaobject><textobject>
 #. type: Content of: <chapter><sect1><sect2><para><mediaobject><textobject><phrase>
@@ -3358,6 +3507,11 @@ msgid ""
 "passage like John 3:16, use: <placeholder type=\"screen\" id=\"1\"/> You can "
 "also use booknames in your current bookname language."
 msgstr ""
+"Terminálból is indítható a &bibletime; véletlenszerű verssel az "
+"alapértelmezett bibliából: <placeholder type=\"screen\" id=\"0\"/> Egy "
+"meghatározott verssel indításhoz (pl.  Jn 3:16), ezt írja be: <placeholder "
+"type=\"screen\" id=\"1\"/> Természetesen a könyvek neveit saját nyelvén is "
+"megadhatja."
 
 # type: Content of: <chapter><sect1><sect2><title>
 #. type: Content of: <chapter><sect1><title>
@@ -3486,50 +3640,56 @@ msgstr "&bibletime; kézikönyv"
 #. type: Content of: <book><bookinfo><authorgroup><author><firstname>
 #: docs/handbook/en/docbook/index.docbook:27
 msgid "Fred"
-msgstr ""
+msgstr "Fred"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
 #: docs/handbook/en/docbook/index.docbook:28
 msgid "Saalbach"
-msgstr ""
+msgstr "Saalbach"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><firstname>
 #: docs/handbook/en/docbook/index.docbook:31
 msgid "Jeffrey"
-msgstr ""
+msgstr "Jeffrey"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
 #: docs/handbook/en/docbook/index.docbook:32
 msgid "Hoyt"
-msgstr ""
+msgstr "Hoyt"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><firstname>
 #: docs/handbook/en/docbook/index.docbook:35
 msgid "Martin"
-msgstr ""
+msgstr "Martin"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
 #: docs/handbook/en/docbook/index.docbook:36
 msgid "Gruner"
-msgstr ""
+msgstr "Gruner"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><firstname>
 #: docs/handbook/en/docbook/index.docbook:39
 msgid "Thomas"
-msgstr ""
+msgstr "Thomas"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
 #: docs/handbook/en/docbook/index.docbook:40
 msgid "Abthorpe"
-msgstr ""
+msgstr "Abthorpe"
 
 #.  TRANS:ROLES_OF_TRANSLATORS 
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:44
+#, fuzzy
+#| msgid ""
+#| "<copyright> <year>1999-2010</year> <holder>The &bibletime; Team</holder> "
+#| "</copyright>"
 msgid ""
 "<copyright> <year>1999-2011</year> <holder>The &bibletime; Team</holder> </"
 "copyright>"
 msgstr ""
+"<copyright> <year>1999-2010</year> <holder>The &bibletime; Team</holder> </"
+"copyright>"
 
 # type: Content of: <book><bookinfo><legalnotice><para>
 #. type: Content of: <book><bookinfo><legalnotice><para>
@@ -3568,7 +3728,7 @@ msgstr ""
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/handbook/en/docbook/index.docbook:68
 msgid "Qt4"
-msgstr ""
+msgstr "Qt4"
 
 # type: Content of: <chapter><sect1><title>
 #. type: Content of: <book><bookinfo><keywordset><keyword>
@@ -3581,22 +3741,17 @@ msgstr "bibletime"
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/handbook/en/docbook/index.docbook:70
 msgid "SWORD"
-msgstr ""
+msgstr "SWORD"
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/handbook/en/docbook/index.docbook:71
 msgid "Crosswire"
-msgstr ""
+msgstr "Crosswire"
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/handbook/en/docbook/index.docbook:72
 msgid "Help dialog"
-msgstr ""
-
-# type: Content of: <book><bookinfo><releaseinfo>
-#, fuzzy
-#~ msgid "2.9"
-#~ msgstr "2.6"
+msgstr "Segítség párbeszédablak"
 
 # type: Content of: <book><bookinfo><date>
 #, fuzzy
@@ -3605,37 +3760,7 @@ msgstr ""
 #~ "date>"
 #~ msgstr "$LastChangedDate: 2009-12-31 15:05:52 -0500 (Thu, 31 Dec 2009) $"
 
-# type: Content of: <chapter><sect1><sect2><mediaobject><caption><para>
-#~ msgid "<phrase>Options Dialog - fonts</phrase>"
-#~ msgstr "<phrase>A betűkészletek beállítása</phrase>"
-
-# type: Content of: <chapter><sect1><para>
-#~ msgid "This is what a typical &bibletime; session looks like:"
-#~ msgstr "Így néz ki egy tipikus &bibletime; munkafolyamat:"
-
-# type: Content of: <chapter><sect1><title>
-#~ msgid "<phrase>The &bibletime; application window</phrase>"
-#~ msgstr "<phrase>A &bibletime; alkalmazás ablak</phrase>"
-
-# type: Content of: <chapter><sect1><sect2><sect3><para>
-#~ msgid "Available text types:"
-#~ msgstr "Lehetséges szövegtípusok: "
-
-# type: Content of: <chapter><sect1><sect2><para>
-#~ msgid ""
-#~ "From a terminal you can use &bibletime; to open a random verse in the "
-#~ "default bible:"
-#~ msgstr "Terminálból véletlenszerű verssel így indítható a &bibletime;:"
-
-# type: Content of: <chapter><sect1><sect2><para>
-#~ msgid "To open at a given passage like John 3:16, use:"
-#~ msgstr ""
-#~ "Egy meghatározott verssel induláshoz, mint például a János 3:16 így:"
-
-# type: Content of: <chapter><sect1><sect2><para>
-#~ msgid "You can also use booknames in your current bookname language."
-#~ msgstr "Használhatja a könyvek neveit saját nyelvén is."
-
-# type: Content of: <book><bookinfo><title>
-#~ msgid "The &bibletime; Team"
-#~ msgstr "A &bibletime; csapat"
+# type: Content of: <book><bookinfo><releaseinfo>
+#, fuzzy
+#~ msgid "2.8"
+#~ msgstr "2.6"
