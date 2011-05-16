@@ -342,29 +342,27 @@ bool CExportManager::printKeyList(const sword::ListKey &l,
     CPrinter::KeyTreeItem::Settings settings;
     CPrinter::KeyTree tree;
 
-    QString startKey, stopKey;
     setProgressRange(list.Count());
-
-    list.setPosition(sword::TOP);
-    while (!list.Error() && !progressWasCancelled()) {
-        if (dynamic_cast<const sword::VerseKey&>(l) != 0) {
-            const sword::VerseKey &vk = static_cast<const sword::VerseKey&>(l);
-            startKey = QString::fromUtf8((const char*) vk.LowerBound());
-            stopKey = QString::fromUtf8((const char*) vk.UpperBound());
+    for (int i=0; i< list.Count(); i++) {
+        const sword::SWKey* swKey = list.getElement(i);
+        const sword::VerseKey* vKey = dynamic_cast<const sword::VerseKey*>(swKey);
+        if (vKey != 0) {
+            QString startKey = vKey->getText();
             tree.append(new CTextRendering::KeyTreeItem(startKey,
-                                                        stopKey,
-                                                        module,
-                                                        settings));
+                startKey,
+                module,
+                settings));
         }
         else {
-            startKey = QString::fromUtf8((const char*) * list);
-            tree.append(new CTextRendering::KeyTreeItem(startKey,
-                                                        module,
-                                                        settings));
+            QString key = swKey->getText();
+            tree.append(new CTextRendering::KeyTreeItem(key,
+                key,
+                module,
+                settings));
         }
-
-        list.increment();
         incProgress();
+        if (progressWasCancelled())
+            break;
     }
 
     QSharedPointer<CPrinter> printer(new CPrinter(0, displayOptions, filterOptions));
