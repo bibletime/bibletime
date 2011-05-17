@@ -43,7 +43,7 @@
 #include <versekey.h>
 
 
-#ifdef BT_DEBUG
+#if 0
 namespace {
 
 /** HELPER Method to dump all current EntryAttributes of a module. */

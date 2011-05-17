@@ -19,7 +19,7 @@
 #include "backend/managers/clanguagemgr.h"
 
 
-#ifdef BT_DEBUG
+#if 0
 namespace {
 
 /** Helper function to dump a verse with all its enty attributes. */
