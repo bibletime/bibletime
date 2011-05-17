@@ -31,8 +31,6 @@ class BtBookmarkItem : public BtBookmarkItemBase {
         /** Creates a copy. */
         BtBookmarkItem(const BtBookmarkItem& other);
 
-        ~BtBookmarkItem() {}
-
         /** Returns the used module, 0 if there is no such module. */
         CSwordModuleInfo *module() const;
 

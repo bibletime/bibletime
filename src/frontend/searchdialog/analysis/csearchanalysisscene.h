@@ -36,8 +36,6 @@ class CSearchAnalysisScene : public QGraphicsScene {
     public:
         CSearchAnalysisScene(QObject* parent);
 
-        virtual ~CSearchAnalysisScene() {}
-
         /**
         * Starts the analysis of the search result.
         * This should be called only once because

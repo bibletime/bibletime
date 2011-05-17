@@ -23,7 +23,6 @@ class BtDropdownChooserButton : public QToolButton {
     public:
         BtDropdownChooserButton(BtBibleKeyWidget* ref);
 
-        virtual ~BtDropdownChooserButton() {}
         /** The item list is constructed here just before the menu is shown.*/
         virtual void mousePressEvent(QMouseEvent* event);
         /** Recreates the menu list.*/
@@ -47,7 +46,6 @@ class BtBookDropdownChooserButton : public BtDropdownChooserButton {
         Q_OBJECT
     public:
         BtBookDropdownChooserButton(BtBibleKeyWidget* ref);
-        ~BtBookDropdownChooserButton() {}
         virtual void newList();
     public slots:
         virtual void slotMenuTriggered(QAction* action);
@@ -58,7 +56,6 @@ class BtChapterDropdownChooserButton : public BtDropdownChooserButton {
         Q_OBJECT
     public:
         BtChapterDropdownChooserButton(BtBibleKeyWidget* ref);
-        ~BtChapterDropdownChooserButton() {}
         virtual void newList();
     public slots:
         virtual void slotMenuTriggered(QAction* action);
@@ -69,7 +66,6 @@ class BtVerseDropdownChooserButton : public BtDropdownChooserButton {
         Q_OBJECT
     public:
         BtVerseDropdownChooserButton(BtBibleKeyWidget* ref);
-        ~BtVerseDropdownChooserButton() {}
         virtual void newList();
     public slots:
         virtual void slotMenuTriggered(QAction* action);

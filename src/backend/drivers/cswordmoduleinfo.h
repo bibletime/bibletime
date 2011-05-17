@@ -170,8 +170,6 @@ class CSwordModuleInfo: public QObject {
 
         virtual CSwordModuleInfo *clone() const = 0;
 
-        virtual inline ~CSwordModuleInfo() {}
-
 
         /**
         * Returns the module object so all objects can access the original Sword module.

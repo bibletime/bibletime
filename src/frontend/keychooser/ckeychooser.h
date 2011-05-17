@@ -90,8 +90,6 @@ class CKeyChooser : public QWidget {
                     BTHistory *history, CSwordKey *key = 0,
                     QWidget *parent = 0);
 
-        virtual inline ~CKeyChooser() {}
-
         /**
           Resets the appropriate font to for the modules.
         */

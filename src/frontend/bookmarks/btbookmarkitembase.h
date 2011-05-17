@@ -43,7 +43,6 @@ class BtBookmarkItemBase : public QTreeWidgetItem {
 
         BtBookmarkItemBase();
         BtBookmarkItemBase(QTreeWidgetItem* parent);
-        virtual ~BtBookmarkItemBase() {}
 
         virtual QString toolTip() const = 0;
 
