@@ -154,10 +154,6 @@ CTextRendering::KeyTreeItem::KeyTreeItem(const QString &startKey,
     m_alternativeContent.prepend("<div class=\"rangeheading\" dir=\"ltr\">").append("</div>"); //insert the right tags
 }
 
-const QString& CTextRendering::KeyTreeItem::getAlternativeContent() const {
-    return m_alternativeContent;
-}
-
 const QList<const CSwordModuleInfo*> CTextRendering::collectModules(const KeyTree * const tree) const {
     //collect all modules which are available and used by child items
     QList<const CSwordModuleInfo*> modules;
