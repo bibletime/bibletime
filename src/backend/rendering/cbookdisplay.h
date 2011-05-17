@@ -29,8 +29,6 @@ class CBookDisplay: public CEntryDisplay {
 
     public: /* Methods: */
 
-        virtual inline ~CBookDisplay() {}
-
         virtual const QString text(const QList<const CSwordModuleInfo*> &modules,
                                    const QString &key,
                                    const DisplayOptions &displayOptions,
