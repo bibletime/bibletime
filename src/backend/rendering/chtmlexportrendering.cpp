@@ -10,7 +10,6 @@
 #include "backend/rendering/chtmlexportrendering.h"
 
 #include <QSharedPointer>
-#include <QDebug>
 
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/keys/cswordkey.h"
@@ -20,6 +19,8 @@
 
 
 #if 0
+#include <QDebug>
+
 namespace {
 
 /** Helper function to dump a verse with all its enty attributes. */
