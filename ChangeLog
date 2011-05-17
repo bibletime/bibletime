@@ -1,3 +1,6 @@
+2011-05-16 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix compile error on Fedora 15.
+
 2011-05-15 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix crash when printing from Works pane of search dialog.
 
