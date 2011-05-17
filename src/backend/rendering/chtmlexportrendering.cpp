@@ -48,9 +48,9 @@ CHTMLExportRendering::CHTMLExportRendering(
         const CHTMLExportRendering::Settings &settings,
         const DisplayOptions &displayOptions,
         const FilterOptions &filterOptions)
-        : m_displayOptions(displayOptions),
-          m_filterOptions(filterOptions),
-          m_settings(settings)
+    : m_displayOptions(displayOptions)
+    , m_filterOptions(filterOptions)
+    , m_settings(settings)
 {
     // Intentionally empty
 }
