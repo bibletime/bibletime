@@ -158,13 +158,13 @@ const QString& CTextRendering::KeyTreeItem::getAlternativeContent() const {
     return m_alternativeContent;
 }
 
-const QList<const CSwordModuleInfo*> CTextRendering::collectModules(KeyTree* const tree) const {
+const QList<const CSwordModuleInfo*> CTextRendering::collectModules(const KeyTree * const tree) const {
     //collect all modules which are available and used by child items
     QList<const CSwordModuleInfo*> modules;
 
-    foreach (KeyTreeItem* c, (*tree)) {
-        Q_ASSERT(c);
-        foreach (const CSwordModuleInfo* mod, c->modules()) {
+    Q_FOREACH (const KeyTreeItem * const c, *tree) {
+        Q_ASSERT(c != 0);
+        Q_FOREACH (const CSwordModuleInfo * const mod, c->modules()) {
             if (!modules.contains(mod)) {
                 modules.append(mod);
             }

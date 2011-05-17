@@ -58,13 +58,15 @@ CHTMLExportRendering::CHTMLExportRendering(
 const QString CHTMLExportRendering::renderEntry( const KeyTreeItem& i, CSwordKey* k) {
 
     if (i.hasAlternativeContent()) {
-        QString ret = QString(i.settings().highlight ? "<div class=\"currententry\">" : "<div class=\"entry\">");
+        QString ret = i.settings().highlight
+                      ? "<div class=\"currententry\">"
+                      : "<div class=\"entry\">";
         ret.append(i.getAlternativeContent());
 
         //   Q_ASSERT(i.hasChildItems());
  
         if (!i.childList()->isEmpty()) {
-            KeyTree * const  tree = i.childList();
+            const KeyTree * const tree = i.childList();
 
             const QList<const CSwordModuleInfo*> modules = collectModules(tree);
 
@@ -72,8 +74,8 @@ const QString CHTMLExportRendering::renderEntry( const KeyTreeItem& i, CSwordKey
                 ret.insert( 5, QString("dir=\"%1\" ").arg((modules.first()->textDirection() == CSwordModuleInfo::LeftToRight) ? "ltr" : "rtl" ));
             }
 
-            foreach ( KeyTreeItem* c, (*tree) ) {
-                ret.append( renderEntry( *c ) );
+            Q_FOREACH (const KeyTreeItem * const item, *tree) {
+                ret.append(renderEntry(*item));
             }
         }
 
@@ -84,7 +86,7 @@ const QString CHTMLExportRendering::renderEntry( const KeyTreeItem& i, CSwordKey
 
     const QList<const CSwordModuleInfo*> &modules(i.modules());
     if (modules.count() == 0) {
-        return QString(""); //no module present for rendering
+        return ""; //no module present for rendering
     }
 
     QSharedPointer<CSwordKey> scoped_key( !k ? CSwordKey::createInstance(modules.first()) : 0 );
@@ -93,7 +95,9 @@ const QString CHTMLExportRendering::renderEntry( const KeyTreeItem& i, CSwordKey
 
     CSwordVerseKey* myVK = dynamic_cast<CSwordVerseKey*>(key);
 
-    if ( myVK ) myVK->Headings(1);
+    if (myVK) {
+        myVK->Headings(1);
+    }
 
     QString renderedText( (modules.count() > 1) ? "\n\t\t<tr>\n" : "\n" );
     // Only insert the table stuff if we are displaying parallel.
@@ -219,20 +223,23 @@ void CHTMLExportRendering::initRendering() {
 }
 
 const QString CHTMLExportRendering::finishText( const QString& text, KeyTree& tree ) {
-    const QList<const CSwordModuleInfo*> modules = collectModules(&tree);
+    typedef CDisplayTemplateMgr CDTM;
 
-    const CLanguageMgr::Language* const lang = modules.first()->language();
-
-    CDisplayTemplateMgr *tMgr = CDisplayTemplateMgr::instance();
-    CDisplayTemplateMgr::Settings settings;
-    settings.modules = modules;
-    settings.langAbbrev = ((modules.count() == 1) && lang->isValid()) ? lang->abbrev() : "unknown";
-    if (modules.count() == 1)
-        settings.pageDirection = ((modules.first()->textDirection() == CSwordModuleInfo::LeftToRight) ? "ltr"  : "rtl");
-    else
+    CDTM::Settings settings;
+    settings.modules = collectModules(&tree);
+    if (settings.modules.count() == 1) {
+        const CSwordModuleInfo * const firstModule = settings.modules.first();
+        const CLanguageMgr::Language * const lang = firstModule->language();
+        settings.langAbbrev = lang->isValid() ? lang->abbrev() : "unknown";
+        if (firstModule->textDirection() == CSwordModuleInfo::RightToLeft) {
+            settings.pageDirection = "rtl";
+        }
+    } else {
+        settings.langAbbrev = "unknown";
         settings.pageDirection = QString::null;
+    }
 
-    return tMgr->fillTemplate(QObject::tr("Export"), text, settings);
+    return CDTM::instance()->fillTemplate(QObject::tr("Export"), text, settings);
 }
 
 /*!

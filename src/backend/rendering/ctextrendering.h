@@ -127,7 +127,7 @@ class CTextRendering {
                 const KeyTreeItem::Settings &settings = KeyTreeItem::Settings());
 
     protected:
-        const QList<const CSwordModuleInfo*> collectModules(KeyTree* const tree) const;
+        const QList<const CSwordModuleInfo*> collectModules(const KeyTree * const tree) const;
         virtual const QString renderEntry( const KeyTreeItem&, CSwordKey* = 0 ) = 0;
         virtual const QString finishText( const QString&, KeyTree& tree ) = 0;
         virtual void initRendering() = 0;
