@@ -65,7 +65,7 @@ class CSwordBackend : public QObject, public sword::SWMgr {
             NoModules = 1
         };
         /**
-        * The constructor of the Sword backend. This is actually used nowhere.
+        * The constructor of the Sword backend. Used by BtInstallBackend only.
         * Notice that using augmentHome=false can mess up the system because it is true elsewhere.
         * @param path The path which is used to load modules
         * @param augmentHome True if the $HOME/.sword/ modules should be augmented with the other modules
