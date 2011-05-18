@@ -22,12 +22,15 @@ class CSwordModuleInfo;
   \note This is a singleton.
 */
 class CDisplayTemplateMgr {
+
     public: /* Types: */
+
         /**
           Settings which are used to fill the content into the template.
         */
         struct Settings {
-            Settings() : pageDirection("ltr") {}
+
+            inline Settings() : pageDirection("ltr") {}
 
             /** The list of modules */
             QList<const CSwordModuleInfo*> modules;
@@ -43,6 +46,7 @@ class CDisplayTemplateMgr {
 
             /** The CSS ID which is used in the content part of the page */
             QString pageCSS_ID;
+
         };
 
     public: /* Methods: */
@@ -72,7 +76,8 @@ class CDisplayTemplateMgr {
 
           \returns The full HTML template HTML code including the CSS data.
         */
-        const QString fillTemplate( const QString& name, const QString& content, Settings& settings);
+        QString fillTemplate(const QString &name, const QString &content,
+                             const Settings &settings);
 
         /**
           \returns the name of the default template.
@@ -85,17 +90,20 @@ class CDisplayTemplateMgr {
         static inline CDisplayTemplateMgr *instance() {
             Q_ASSERT(m_instance != 0);
             return m_instance;
-        };
+        }
 
     private: /* Methods: */
+
         /** Preloads a single template from disk: */
         void loadTemplate(const QString &filename);
         void loadCSSTemplate(const QString &filename);
 
     private: /* Fields: */
+
         QMap<QString, QString> m_templateMap;
         QMap<QString, QString> m_cssMap;
         static CDisplayTemplateMgr *m_instance;
+
 };
 
 #endif
