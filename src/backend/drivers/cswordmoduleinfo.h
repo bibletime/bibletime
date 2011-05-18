@@ -138,7 +138,7 @@ class CSwordModuleInfo: public QObject {
             Cult            = 0x80, /**< Cult / sect / questionable module. */
             AllCategories   = 0xff
         };
-        Q_DECLARE_FLAGS(Categories, Category);
+        Q_DECLARE_FLAGS(Categories, Category)
 
         /**
         * Returns the base directory for search indices
