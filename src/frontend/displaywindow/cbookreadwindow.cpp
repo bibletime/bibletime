@@ -58,13 +58,17 @@ void CBookReadWindow::initActions() {
     insertKeyboardActions(ac);
 
     //cleanup, not a clean oo-solution
-    Q_ASSERT(ac->action("nextEntry"));
-    Q_ASSERT(ac->action("previousEntry"));
-    ac->action("nextEntry")->setEnabled(false);
-    ac->action("previousEntry")->setEnabled(false);
+    QAction *a = ac->action("nextEntry");
+    Q_ASSERT(a != 0);
+    a->setEnabled(false);
+    a = ac->action("previousEntry");
+    Q_ASSERT(a != 0);
+    a->setEnabled(false);
 
     m_treeAction = ac->action("toggleTree");
-    QObject::connect(m_treeAction, SIGNAL(triggered()), this, SLOT(treeToggled()) );
+    Q_ASSERT(m_treeAction != 0);
+    QObject::connect(m_treeAction, SIGNAL(triggered()),
+                     this,         SLOT(treeToggled()));
     addAction(m_treeAction);
 
     CBTConfig::setupAccelSettings(CBTConfig::bookWindow, ac);
@@ -132,9 +136,8 @@ void CBookReadWindow::initToolbars() {
     BtDisplaySettingsButton* button = new BtDisplaySettingsButton(buttonsToolBar());
     setDisplaySettingsButton(button);
     buttonsToolBar()->addWidget(button);  // Display settings
-    QAction* action = qobject_cast<QAction*>(actionCollection()->action(
-                          CResMgr::displaywindows::general::search::actionName ));
-    if (action) {
+    QAction *action = actionCollection()->action(CResMgr::displaywindows::general::search::actionName);
+    if (action != 0) {
         buttonsToolBar()->addAction(action);  // Search
     }
 }
@@ -158,9 +161,8 @@ void CBookReadWindow::setupMainWindowToolBars() {
     BtDisplaySettingsButton* button = new BtDisplaySettingsButton(buttonsToolBar());
     setDisplaySettingsButton(button);
     btMainWindow()->toolsToolBar()->addWidget(button);  // Display settings
-    QAction* action = qobject_cast<QAction*>(actionCollection()->action(
-                          CResMgr::displaywindows::general::search::actionName ));
-    if (action) {
+    QAction *action = actionCollection()->action(CResMgr::displaywindows::general::search::actionName);
+    if (action != 0) {
         btMainWindow()->toolsToolBar()->addAction(action);  // Search
     }
 }

@@ -164,35 +164,49 @@ void CDisplayWindow::initActions() {
     CDisplayWindow::insertKeyboardActions(ac);
 
     QAction* actn = ac->action(CResMgr::displaywindows::general::search::actionName);
-    QObject::connect(actn, SIGNAL(triggered()), this, SLOT(slotSearchInModules()));
+    Q_ASSERT(actn != 0);
+    QObject::connect(actn, SIGNAL(triggered()),
+                     this, SLOT(slotSearchInModules()));
 
     CDisplayConnections* conn = displayWidget()->connectionsProxy();
 
     actn = ac->action("openLocation");
-    QObject::connect(actn, SIGNAL(triggered()), this, SLOT(setFocusKeyChooser()));
+    Q_ASSERT(actn != 0);
+    QObject::connect(actn, SIGNAL(triggered()),
+                     this, SLOT(setFocusKeyChooser()));
     addAction(actn);
 
     actn = ac->action("selectAll");
-    QObject::connect(actn, SIGNAL(triggered()), conn, SLOT(selectAll()));
+    Q_ASSERT(actn != 0);
+    QObject::connect(actn, SIGNAL(triggered()),
+                     conn, SLOT(selectAll()));
     addAction(actn);
 
     actn = ac->action("copySelectedText");
-    QObject::connect(actn, SIGNAL(triggered()), conn, SLOT(copySelection()));
+    Q_ASSERT(actn != 0);
+    QObject::connect(actn, SIGNAL(triggered()),
+                     conn, SLOT(copySelection()));
     addAction(actn);
 
     actn = ac->action("findText");
-    QObject::connect(actn, SIGNAL(triggered()), conn, SLOT(openFindTextDialog()));
+    Q_ASSERT(actn != 0);
+    QObject::connect(actn, SIGNAL(triggered()),
+                     conn, SLOT(openFindTextDialog()));
     addAction(actn);
 
-    QAction* popupaction = ac->action(CResMgr::displaywindows::general::backInHistory::actionName);
-    bool ok = QObject::connect(popupaction, SIGNAL(triggered()), keyChooser()->history(), SLOT(back()));
+    actn = ac->action(CResMgr::displaywindows::general::backInHistory::actionName);
+    Q_ASSERT(actn != 0);
+    bool ok = QObject::connect(actn,                    SIGNAL(triggered()),
+                               keyChooser()->history(), SLOT(back()));
     Q_ASSERT(ok);
-    addAction(popupaction);
+    addAction(actn);
 
-    popupaction = ac->action(CResMgr::displaywindows::general::forwardInHistory::actionName);
-    ok = QObject::connect(popupaction, SIGNAL(triggered()), keyChooser()->history(), SLOT(fw()) );
+    actn = ac->action(CResMgr::displaywindows::general::forwardInHistory::actionName);
+    Q_ASSERT(actn != 0);
+    ok = QObject::connect(actn,                    SIGNAL(triggered()),
+                          keyChooser()->history(), SLOT(fw()));
     Q_ASSERT(ok);
-    addAction(popupaction);
+    addAction(actn);
 
     CBTConfig::setupAccelSettings(CBTConfig::allWindows, ac);
 }

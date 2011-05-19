@@ -72,36 +72,51 @@ void CCommentaryReadWindow::initActions() {
     insertKeyboardActions(ac);
 
     //cleanup, not a clean oo-solution
-    ac->action("nextEntry")->setEnabled(false);
-    ac->action("previousEntry")->setEnabled(false);
-
-    QAction* qaction;
+    QAction *qaction = ac->action("nextEntry");
+    Q_ASSERT(qaction != 0);
+    qaction->setEnabled(false);
+    qaction = ac->action("previousEntry");
+    Q_ASSERT(qaction != 0);
+    qaction->setEnabled(false);
 
     qaction = ac->action("nextBook");
-    QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(nextBook()) );
+    Q_ASSERT(qaction != 0);
+    QObject::connect(qaction, SIGNAL(triggered()),
+                     this,    SLOT(nextBook()));
     addAction(qaction);
 
     qaction = ac->action("previousBook");
-    QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(previousBook()) );
+    Q_ASSERT(qaction != 0);
+    QObject::connect(qaction, SIGNAL(triggered()),
+                     this,    SLOT(previousBook()));
     addAction(qaction);
 
     qaction = ac->action("nextChapter");
-    QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(nextChapter()) );
+    Q_ASSERT(qaction != 0);
+    QObject::connect(qaction, SIGNAL(triggered()),
+                     this,    SLOT(nextChapter()));
     addAction(qaction);
 
     qaction = ac->action("previousChapter");
-    QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(previousChapter()) );
+    Q_ASSERT(qaction != 0);
+    QObject::connect(qaction, SIGNAL(triggered()),
+                     this,    SLOT(previousChapter()));
     addAction(qaction);
 
     qaction = ac->action("nextVerse");
-    QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(nextVerse()) );
+    Q_ASSERT(qaction != 0);
+    QObject::connect(qaction, SIGNAL(triggered()),
+                     this,    SLOT(nextVerse()));
     addAction(qaction);
 
     qaction = ac->action("previousVerse");
-    QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(previousVerse()) );
+    Q_ASSERT(qaction != 0);
+    QObject::connect(qaction, SIGNAL(triggered()),
+                     this,    SLOT(previousVerse()));
     addAction(qaction);
 
     qaction = ac->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
+    Q_ASSERT(qaction != 0);
     m_syncButton = qaction;
     addAction(qaction);
 

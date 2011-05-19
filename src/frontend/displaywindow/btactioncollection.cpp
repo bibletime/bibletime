@@ -19,117 +19,126 @@
 #include "util/directory.h"
 
 
-class BtActionItem : public QObject {
-    public:
+class BtActionItem: public QObject {
+
+    public: /* Methods: */
+
         BtActionItem(QAction *action, QObject *parent = 0)
                 : QObject(parent), defaultKeys(action->shortcut()), action(action)
         {
             // Intentionally empty
         }
+
+    public: /* Fields: */
+
         QKeySequence defaultKeys;
         QAction* action;
+
 };
-
-BtActionCollection::BtActionCollection(QObject* parent)
-        : QObject(parent) {
-}
-
-BtActionCollection::~BtActionCollection() {
-}
 
 QList<QAction*> BtActionCollection::actions() {
     QList<QAction*> actionList;
-
-    QMap<QString, BtActionItem*>::const_iterator iter = m_actions.constBegin();
-    while (iter != m_actions.constEnd()) {
-        QAction* action = iter.value()->action;
-        actionList.append(action);
-        ++iter;
+    for (ActionMap::const_iterator iter = m_actions.constBegin();
+         iter != m_actions.constEnd();
+         iter++)
+    {
+        actionList.append(iter.value()->action);
     }
     return actionList;
 }
 
-QAction* BtActionCollection::action(const QString& name) {
-    if (m_actions.contains(name))
-        return m_actions[name]->action;
+QAction *BtActionCollection::action(const QString &name) const {
+    ActionMap::const_iterator it = m_actions.find(name);
+    if (it != m_actions.constEnd())
+        return (*it)->action;
+
     qWarning() << "A QAction for a shortcut named" << name << "was requested but it is not defined.";
-    return (new QAction(this)); // dummy QAction*
+    return 0;
 }
 
 QAction* BtActionCollection::addAction(const QString& name, QAction* action) {
     Q_ASSERT(action != 0);
-    if (m_actions.contains(name)) {
-        delete m_actions[name];
-    }
-    BtActionItem* item = new BtActionItem(action, this);
-    m_actions.insert(name, item);
+    ActionMap::iterator it = m_actions.find(name);
+    if (it != m_actions.constEnd())
+        delete *it;
+
+    m_actions.insert(name, new BtActionItem(action, this));
     return action;
 }
 
 QAction* BtActionCollection::addAction(const QString &name, const QObject *receiver, const char* member) {
     QAction* action = new QAction(name, this);
     if (receiver && member) {
-        bool ok = connect(action, SIGNAL(triggered()), receiver, SLOT(triggered()));
+        bool ok = connect(action,   SIGNAL(triggered()),
+                          receiver, SLOT(triggered()));
         Q_ASSERT(ok);
     }
     return addAction(name, action);
 }
 
 QKeySequence BtActionCollection::getDefaultShortcut(QAction* action) {
-    QMap<QString, BtActionItem*>::const_iterator iter = m_actions.constBegin();
-    while (iter != m_actions.constEnd()) {
-        if ( iter.value()->action == action) {
+    for (ActionMap::const_iterator iter = m_actions.constBegin();
+         iter != m_actions.constEnd();
+         iter++)
+    {
+        if (iter.value()->action == action) {
             return iter.value()->defaultKeys;
         }
-        iter++;
     }
     return QKeySequence();
-}
-
-void BtActionCollection::setConfigGroup(const QString &group) {
-    m_groupName = group;
 }
 
 void BtActionCollection::readSettings() {
     QSettings* settings = CBTConfig::getConfig();
     settings->beginGroup(m_groupName);
-    QStringList keyList = settings->childKeys();
-    for (int i = 0; i < keyList.size(); i++) {
-        QString key = keyList.at(i);
+
+    Q_FOREACH (const QString &key, settings->childKeys()) {
+        QAction *a = action(key);
+        if (a == 0)
+            continue;
+
         QVariant variant = settings->value(key);
+        qDebug() << variant << " | " << variant.typeName();
+        if (variant.type() != QVariant::List
+            && variant.type() != QVariant::StringList)
+        {
+            continue;
+        }
+
         QList<QKeySequence> shortcuts;
-        if ( variant != QVariant()) {
-            QList<QVariant> varShortcuts = variant.toList();
-            for (int i = 0; i < varShortcuts.count(); i++) {
-                QString keys = varShortcuts.at(i).toString();
-                QKeySequence shortcut(keys);
+        if (variant.type() == QVariant::List) { // For BibleTime before 2.9
+            Q_FOREACH (const QVariant &shortcut, variant.toList()) {
+                shortcuts.append(shortcut.toString());
+            }
+        } else {
+            Q_ASSERT(variant.type() == QVariant::StringList);
+            Q_FOREACH (const QString &shortcut, variant.toStringList()) {
                 shortcuts.append(shortcut);
             }
         }
-        action(key)->setShortcuts(shortcuts);
+        a->setShortcuts(shortcuts);
     }
-    settings->endGroup();
-}
 
-static QList<QVariant> keyListToVariantList(const QList<QKeySequence>& keyList) {
-    QList<QVariant> varList;
-    for (int i = 0; i < keyList.count(); i++) {
-        QKeySequence keySeq = keyList.at(i);
-        varList.append(keySeq.toString());
-    }
-    return varList;
+    settings->endGroup();
 }
 
 void BtActionCollection::writeSettings() {
     QSettings* settings = CBTConfig::getConfig();
     settings->beginGroup(m_groupName);
-    QMap<QString, BtActionItem*>::const_iterator iter = m_actions.constBegin();
-    while (iter != m_actions.constEnd()) {
-        QString actionName = iter.key();
-        QList<QKeySequence> keyList = iter.value()->action->shortcuts();
-        QList<QVariant> varList = keyListToVariantList(keyList);
-        settings->setValue(actionName, varList);
-        iter++;
+
+    for (ActionMap::const_iterator iter = m_actions.constBegin();
+         iter != m_actions.constEnd();
+         iter++)
+    {
+        // Write beautiful string lists (since 2.9):
+        QStringList varList;
+        Q_FOREACH (const QKeySequence &shortcut, iter.value()->action->shortcuts()) {
+            /// \note saving QKeySequences directly doesn't appear to work!
+            varList.append(shortcut.toString());
+        }
+        settings->setValue(iter.key(), varList);
+        qDebug() << ">>" << settings->value(iter.key()).typeName();
     }
+
     settings->endGroup();
 }
