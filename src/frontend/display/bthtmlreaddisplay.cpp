@@ -55,7 +55,7 @@ void BtHtmlReadDisplay::initJavascript() {
     namespace DU = util::directory;
 
     // read bthtml.js javascript file once
-    if (javascript.size() == 0) {
+    if (javascript.isEmpty()) {
         QString jsFile = DU::getJavascriptDir().canonicalPath() + "/bthtml.js";
         QFile file(jsFile);
         if (file.open(QFile::ReadOnly)) {

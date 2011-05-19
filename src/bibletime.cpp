@@ -155,7 +155,7 @@ CDisplayWindow* BibleTime::createWriteDisplayWindow(CSwordModuleInfo* module, co
     if ( displayWindow ) {
         displayWindow->init();
         m_mdi->addSubWindow(displayWindow);
-        if (m_mdi->subWindowList().count() == 0)
+        if (m_mdi->subWindowList().isEmpty())
             displayWindow->showMaximized();
         else
             displayWindow->show();

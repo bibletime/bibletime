@@ -86,7 +86,7 @@ const QString CHTMLExportRendering::renderEntry( const KeyTreeItem& i, CSwordKey
 
 
     const QList<const CSwordModuleInfo*> &modules(i.modules());
-    if (modules.count() == 0) {
+    if (modules.isEmpty()) {
         return ""; //no module present for rendering
     }
 

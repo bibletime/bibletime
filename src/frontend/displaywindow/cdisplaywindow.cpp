@@ -208,7 +208,7 @@ void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
         }
     }
 
-    if (m_modules.count() == 0) {
+    if (m_modules.isEmpty()) {
         close();
         return;
     }

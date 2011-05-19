@@ -248,7 +248,7 @@ QList<QMdiSubWindow*> CMDIArea::usableWindowList() {
 }
 
 void CMDIArea::slotSubWindowActivated(QMdiSubWindow* client) {
-    if (subWindowList().count() == 0)
+    if (subWindowList().isEmpty())
         m_bibleTime->clearMdiToolBars();
 
     if (!client) {

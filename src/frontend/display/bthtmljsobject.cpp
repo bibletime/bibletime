@@ -77,7 +77,7 @@ void BtHtmlJsObject::mouseMoveEvent(const QString& attributes, const int& x, con
         QPoint current(x, y);
         if ((current - m_dndData.startPos).manhattanLength() > 4 /*qApp->startDragDistance()*/ ) {
             QDrag* drag = 0;
-            if (m_dndData.url.size() != 0 ) {
+            if (!m_dndData.url.isEmpty()) {
                 // create a new bookmark drag!
                 QString moduleName = QString::null;
                 QString keyName = QString::null;

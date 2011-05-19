@@ -133,7 +133,7 @@ void CInfoDisplay::setInfo(const ListInfoData& list) {
         return;
     }
 
-    if (list.count() == 0) {
+    if (list.isEmpty()) {
         m_htmlPart->setText("<html></html>");
         return;
     }

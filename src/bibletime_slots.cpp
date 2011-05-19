@@ -571,7 +571,7 @@ void BibleTime::refreshProfileMenus() {
     m_profileMgr.refresh();
     QList<CProfile*> profiles = m_profileMgr.profiles();
 
-    const bool enableActions = bool(profiles.count() != 0);
+    const bool enableActions = !profiles.isEmpty();
     m_windowSaveProfileMenu->setEnabled(enableActions);
     m_windowLoadProfileMenu->setEnabled(enableActions);
     m_windowDeleteProfileMenu->setEnabled(enableActions);

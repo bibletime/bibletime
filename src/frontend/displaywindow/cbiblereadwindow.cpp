@@ -431,7 +431,7 @@ void CBibleReadWindow::saveChapterPlain() {
 void CBibleReadWindow::reload(CSwordBackend::SetupChangedReason reason) {
     CLexiconReadWindow::reload(reason);
 
-    if (m_modules.count() == 0) {
+    if (m_modules.isEmpty()) {
         close();
         return;
     }
