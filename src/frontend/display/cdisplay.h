@@ -106,13 +106,8 @@ class CDisplay {
         virtual void zoomOut() {}
         virtual void openFindTextDialog() {}
 
-        enum NodeInfoType {
-            Lemma
-        };
-
-
-        virtual QMap<NodeInfoType, QString> getCurrentNodeInfo() {
-            return QMap<NodeInfoType, QString>();
+        inline virtual QString getCurrentNodeInfo() const {
+            return QString::null;
         }
 
     protected:

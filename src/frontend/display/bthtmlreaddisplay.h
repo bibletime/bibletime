@@ -54,7 +54,7 @@ class BtHtmlReadDisplay : public QWebPage, public CReadDisplay {
         virtual void selectAll();
         virtual void moveToAnchor( const QString& anchor );
         virtual void openFindTextDialog();
-        virtual QMap<CDisplay::NodeInfoType, QString> getCurrentNodeInfo() {
+        inline virtual QString getCurrentNodeInfo() const {
             return m_nodeInfo;
         }
         QWidget* view();
@@ -86,7 +86,7 @@ class BtHtmlReadDisplay : public QWebPage, public CReadDisplay {
 
         QString currentSource;
 
-        QMap<NodeInfoType, QString> m_nodeInfo;
+        QString m_nodeInfo;
         int m_magTimerId;
 
 // For debugging javascript - setbreakpoint in this function to catch javascript error messages

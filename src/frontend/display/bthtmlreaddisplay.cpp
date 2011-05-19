@@ -248,7 +248,7 @@ void BtHtmlReadDisplay::slotGoToAnchor(const QString& anchor) {
 
 // Save the Lemma (Strongs number) attribute
 void BtHtmlReadDisplay::setLemma(const QString& lemma) {
-    m_nodeInfo[ CDisplay::Lemma ] = lemma;
+    m_nodeInfo = lemma;
 }
 
 // Open the Find text dialog

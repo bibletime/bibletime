@@ -313,7 +313,7 @@ void CBibleReadWindow::setupPopupMenu() {
 void CBibleReadWindow::updatePopupMenu() {
     qWarning("CBibleReadWindow::updatePopupMenu()");
 
-    m_actions.findStrongs->setEnabled( displayWidget()->getCurrentNodeInfo()[CDisplay::Lemma] != QString::null );
+    m_actions.findStrongs->setEnabled(!displayWidget()->getCurrentNodeInfo().isNull());
 
     m_actions.copy.referenceOnly->setEnabled( ((CReadDisplay*)displayWidget())->hasActiveAnchor() );
     m_actions.copy.referenceTextOnly->setEnabled( ((CReadDisplay*)displayWidget())->hasActiveAnchor() );

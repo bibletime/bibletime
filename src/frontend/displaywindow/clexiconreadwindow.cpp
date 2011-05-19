@@ -305,7 +305,7 @@ void CLexiconReadWindow::setupPopupMenu() {
 void CLexiconReadWindow::updatePopupMenu() {
     //enable the action depending on the supported module features
 
-    m_actions.findStrongs->setEnabled( displayWidget()->getCurrentNodeInfo()[CDisplay::Lemma] != QString::null );
+    m_actions.findStrongs->setEnabled(!displayWidget()->getCurrentNodeInfo().isNull());
 
     m_actions.copy.reference->setEnabled( ((CReadDisplay*)displayWidget())->hasActiveAnchor() );
     m_actions.copy.selectedText->setEnabled( displayWidget()->hasSelection() );
