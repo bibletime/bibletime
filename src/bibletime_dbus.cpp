@@ -24,9 +24,9 @@
 //helper function
 void BibleTime::syncAllModulesByType(const CSwordModuleInfo::ModuleType type, const QString& key) {
     qDebug() << "Syncing modules by type to key" << key.toLatin1();
-    foreach (QMdiSubWindow* w, m_mdi->usableWindowList()) {
-        CDisplayWindow* d = dynamic_cast<CDisplayWindow*>(w->widget());
-        if (d && d->modules().count() && d->modules().first()->type() == type) {
+    Q_FOREACH (const QMdiSubWindow * const w, m_mdi->usableWindowList()) {
+        CDisplayWindow * const d = dynamic_cast<CDisplayWindow*>(w->widget());
+        if (d != 0 && !d->modules().isEmpty() && d->modules().first()->type() == type) {
             d->lookupKey(key);
         }
     }
@@ -110,12 +110,11 @@ QStringList BibleTime::searchInModule(const QString& moduleName, const QString& 
 QStringList BibleTime::searchInOpenModules(const QString& searchText) {
     qDebug() << "DBUS: search in open modules ...";
     QStringList ret;
-    foreach (QMdiSubWindow* subWindow,  m_mdi->subWindowList()) {
-        if (CDisplayWindow* w = dynamic_cast<CDisplayWindow*>(subWindow->widget())) {
-            QList<const CSwordModuleInfo*> windowModules = w->modules();
-            QList<const CSwordModuleInfo*>::iterator end_it = windowModules.end();
-            for (QList<const CSwordModuleInfo*>::iterator it(windowModules.begin()); it != end_it; ++it) {
-                ret += searchInModule((*it)->name(), searchText);
+    Q_FOREACH (const QMdiSubWindow * const subWindow, m_mdi->subWindowList()) {
+        const CDisplayWindow * const w = dynamic_cast<CDisplayWindow*>(subWindow->widget());
+        if (w != 0) {
+            Q_FOREACH (const CSwordModuleInfo * const mi, w->modules()) {
+                ret += searchInModule(mi->name(), searchText);
             }
         }
     }
@@ -174,8 +173,8 @@ QString BibleTime::getCurrentReference() {
 
 QStringList BibleTime::getModulesOfType(const QString& type) {
     QStringList ret;
+    CSwordModuleInfo::ModuleType modType;
 
-    CSwordModuleInfo::ModuleType modType = CSwordModuleInfo::Unknown;
     if (type == "BIBLES") {
         modType = CSwordModuleInfo::Bible;
     }
@@ -184,16 +183,17 @@ QStringList BibleTime::getModulesOfType(const QString& type) {
     }
     else if (type == "LEXICONS") {
         modType = CSwordModuleInfo::Lexicon;
-
     }
     else if (type == "BOOKS") {
         modType = CSwordModuleInfo::GenericBook;
     }
+    else {
+        modType = CSwordModuleInfo::Unknown;
+    }
 
-    QList<CSwordModuleInfo*> modList = CSwordBackend::instance()->moduleList();
-    for (QList<CSwordModuleInfo*>::iterator it( modList.begin() ); it != modList.end(); ++it) {
-        if ((*it)->type() == modType) {
-            ret.append( (*it)->name() );
+    Q_FOREACH(const CSwordModuleInfo * const mi, CSwordBackend::instance()->moduleList()) {
+        if (mi->type() == modType) {
+            ret.append(mi->name());
         }
     }
 

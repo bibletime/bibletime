@@ -288,7 +288,7 @@ class BibleTime : public QMainWindow {
         /**
         * Refreshes all presenter supporting at least in of the features given as parameter.
         */
-        void refreshDisplayWindows();
+        void refreshDisplayWindows() const;
         /**
         * Refresh main window accelerators
         */
