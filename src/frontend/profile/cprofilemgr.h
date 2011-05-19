@@ -32,7 +32,9 @@ class CProfileMgr {
         /**
         * @return a list of available profiles
         */
-        const QList<CProfile*>& profiles();
+        inline const QList<CProfile*> &profiles() const {
+            return m_profiles;
+        }
         /**
         * Removes the profile from the list and from the directory containg the profile files.
         */

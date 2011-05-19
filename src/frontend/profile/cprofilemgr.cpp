@@ -42,11 +42,6 @@ CProfileMgr::~CProfileMgr() {
     delete m_startupProfile;
 }
 
-/** Returns a list of available profiles. */
-const QList<CProfile*>& CProfileMgr::profiles() {
-    return m_profiles;
-}
-
 /** Creates a new profile with the name "name" (first parameter).  @return The profile object */
 CProfile *CProfileMgr::create(const QString &name) {
     CProfile* p = new CProfile(QString::null, name);
