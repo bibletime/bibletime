@@ -102,8 +102,6 @@ class CDisplay {
         */
         QMenu* installedPopup();
 
-        virtual void zoomIn() {}
-        virtual void zoomOut() {}
         virtual void openFindTextDialog() {}
 
         inline virtual QString getCurrentNodeInfo() const {
@@ -159,9 +157,6 @@ class CDisplayConnections : public QObject {
         void copyAnchorOnly();
 
         void clear();
-
-        void zoomIn();
-        void zoomOut();
 
         void openFindTextDialog();
 

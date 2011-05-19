@@ -118,15 +118,7 @@ void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
 
     qDebug() << "CDisplayWindow::insertKeyboardActions: ac: " << a;
 
-    QAction* actn = new QAction(QIcon(), tr("Zoom in"), a);
-    actn->setShortcut(QKeySequence::ZoomIn);
-    a->addAction("zoomIn", actn);
-
-    actn = new QAction(QIcon(), tr("Zoom out"), a);
-    actn->setShortcut(QKeySequence::ZoomOut);
-    a->addAction("zoomOut", actn);
-
-    actn = new QAction(QIcon(), tr("Select all"), a);
+    QAction* actn = new QAction(QIcon(), tr("Select all"), a);
     actn->setShortcut(QKeySequence::SelectAll);
     a->addAction("selectAll", actn);
 
@@ -178,14 +170,6 @@ void CDisplayWindow::initActions() {
 
     actn = ac->action("openLocation");
     QObject::connect(actn, SIGNAL(triggered()), this, SLOT(setFocusKeyChooser()));
-    addAction(actn);
-
-    actn = ac->action("zoomIn");
-    QObject::connect(actn, SIGNAL(triggered()), conn, SLOT(zoomIn()));
-    addAction(actn);
-
-    actn = ac->action("zoomOut");
-    QObject::connect(actn, SIGNAL(triggered()), conn, SLOT(zoomOut()));
     addAction(actn);
 
     actn = ac->action("selectAll");
