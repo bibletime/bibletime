@@ -17,9 +17,11 @@
 #include "util/dialogutil.h"
 
 
-BTAboutModuleDialog::BTAboutModuleDialog(CSwordModuleInfo *moduleInfo, QWidget *parent,
+BTAboutModuleDialog::BTAboutModuleDialog(const CSwordModuleInfo *moduleInfo,
+                                         QWidget *parent,
                                          Qt::WindowFlags flags)
-        : QDialog(parent, flags), m_moduleInfo(moduleInfo)
+        : QDialog(parent, flags)
+        , m_moduleInfo(moduleInfo)
 {
     resize(650, 400);
     QVBoxLayout* vboxLayout = new QVBoxLayout(this);
