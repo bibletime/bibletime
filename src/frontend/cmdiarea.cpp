@@ -19,8 +19,15 @@
 #include <QMenu>
 
 
+#define MOVESIZE 30
+
+
 CMDIArea::CMDIArea(BibleTime *parent)
-        : QMdiArea(parent), m_mdiArrangementMode(ArrangementModeManual), m_activeWindow(0), m_bibleTime(parent) {
+        : QMdiArea(parent)
+        , m_mdiArrangementMode(ArrangementModeManual)
+        , m_activeWindow(0)
+        , m_bibleTime(parent)
+{
     Q_ASSERT(parent != 0);
 
     #if QT_VERSION >= 0x040500
@@ -42,16 +49,11 @@ CMDIArea::CMDIArea(BibleTime *parent)
             this, SLOT(slotSubWindowActivated(QMdiSubWindow*)));
 }
 
-static const int moveSize = 30;
-
 void CMDIArea::fixSystemMenu(QMdiSubWindow* subWindow) {
     // Change Qt QMdiSubWindow Close action to have no shortcuts
     // This makes our closeWindow actions with Ctrl-W work correctly
-    QList<QAction*> actions = subWindow->systemMenu()->actions();
-    for (int i=0; i<actions.count(); i++) {
-        QAction* action = actions.at(i);
-        QString text = action->text();
-        if (text.contains("Close")) {
+    Q_FOREACH(QAction * const action, subWindow->systemMenu()->actions()) {
+        if (action->text().contains("Close")) {
             action->setShortcuts(QList<QKeySequence>());
             break;
         }
@@ -77,10 +79,10 @@ QMdiSubWindow* CMDIArea::addSubWindow(QWidget * widget, Qt::WindowFlags windowFl
                 // Make new window the same size as the active window and move it slightly.
                 subWindow->resize(activeSubWindow()->size());
                 QRect subWinGeom = activeSubWindow()->geometry();
-                subWinGeom.translate(moveSize, moveSize);
+                subWinGeom.translate(MOVESIZE, MOVESIZE);
                 // If it goes off screen, move it almost to the top left
                 if ( ! frameRect().contains(subWinGeom)) {
-                    subWinGeom.moveTo(moveSize, moveSize);
+                    subWinGeom.moveTo(MOVESIZE, MOVESIZE);
                 }
                 subWindow->setGeometry(subWinGeom);
             }
@@ -120,18 +122,22 @@ void CMDIArea::setMDIArrangementMode( const MDIArrangementMode newArrangementMod
 }
 
 void CMDIArea::myTileVertical() {
-    if (!updatesEnabled() || !usableWindowList().count() ) {
+    if (!updatesEnabled()) {
+        return;
+    }
+    QList<QMdiSubWindow*> windows = usableWindowList();
+    if (windows.isEmpty()) {
         return;
     }
     setViewMode(QMdiArea::SubWindowView);
 
-    QList<QMdiSubWindow*> windows = usableWindowList();
     setUpdatesEnabled(false);
-    QMdiSubWindow* active = activeSubWindow();
+
+    QMdiSubWindow * const active = activeSubWindow();
 
     const int widthForEach = width() / windows.count();
     unsigned int x = 0;
-    foreach (QMdiSubWindow *window, windows) {
+    Q_FOREACH (QMdiSubWindow * const window, windows) {
         window->showNormal();
 
         const int preferredWidth = window->minimumWidth() + window->baseSize().width();
@@ -141,24 +147,30 @@ void CMDIArea::myTileVertical() {
         x += actWidth;
     }
 
-    if (active) active->setFocus();
+    if (active != 0) {
+        active->setFocus();
+    }
+
     setUpdatesEnabled(true);
-emitWindowCaptionChanged();
+    emitWindowCaptionChanged();
 }
 
 void CMDIArea::myTileHorizontal() {
-    if (!updatesEnabled() || !usableWindowList().count() ) {
+    if (!updatesEnabled()) {
+        return;
+    }
+    QList<QMdiSubWindow*> windows = usableWindowList();
+    if (windows.isEmpty()) {
         return;
     }
     setViewMode(QMdiArea::SubWindowView);
 
-    QList<QMdiSubWindow*> windows = usableWindowList();
     setUpdatesEnabled(false);
-    QMdiSubWindow* active = activeSubWindow();
+    QMdiSubWindow * const active = activeSubWindow();
 
     const int heightForEach = height() / windows.count();
     unsigned int y = 0;
-    foreach (QMdiSubWindow *window, windows) {
+    Q_FOREACH (QMdiSubWindow * const window, windows) {
         window->showNormal();
 
         const int preferredHeight = window->minimumHeight() + window->baseSize().height();
@@ -167,14 +179,18 @@ void CMDIArea::myTileHorizontal() {
         window->setGeometry( 0, y, width(), actHeight );
         y += actHeight;
     }
-    if (active) active->setFocus();
+
+    if (active != 0) {
+        active->setFocus();
+    }
+
     setUpdatesEnabled(true);
     emitWindowCaptionChanged();
 }
 
 // Tile the windows, tiling implemented by Qt
 void CMDIArea::myTile() {
-    if (!updatesEnabled() || !usableWindowList().count() ) {
+    if (!updatesEnabled() || usableWindowList().isEmpty()) {
         return;
     }
     setViewMode(QMdiArea::SubWindowView);
@@ -183,29 +199,31 @@ void CMDIArea::myTile() {
 }
 
 void CMDIArea::myCascade() {
-    if (!updatesEnabled() || !usableWindowList().count() ) {
+    if (!updatesEnabled()) {
+        return;
+    }
+    QList<QMdiSubWindow*> windows = usableWindowList();
+    if (windows.isEmpty()) {
         return;
     }
     setViewMode(QMdiArea::SubWindowView);
 
-    QList<QMdiSubWindow*> windows = usableWindowList();
-
     if (windows.count() == 1) {
-        windows.at(0)->showMaximized();
+        windows.first()->showMaximized();
     }
     else {
         setUpdatesEnabled(false);
 
-        QMdiSubWindow* active = activeSubWindow();
+        QMdiSubWindow * const active = activeSubWindow();
 
-        const unsigned int offsetX = 40;
-        const unsigned int offsetY = 40;
+        static const unsigned offsetX = 40;
+        static const unsigned offsetY = 40;
         const unsigned int windowWidth =  width() - (windows.count() - 1) * offsetX;
         const unsigned int windowHeight = height() - (windows.count() - 1) * offsetY;
         unsigned int x = 0;
         unsigned int y = 0;
 
-        foreach (QMdiSubWindow* window, windows) {
+        Q_FOREACH (QMdiSubWindow * const window, windows) {
             if (window == active) { //leave out the active window which should be the top window
                 continue;
             }
@@ -222,6 +240,7 @@ void CMDIArea::myCascade() {
 
         setUpdatesEnabled(true);
     }
+
     emitWindowCaptionChanged();
 }
 
@@ -234,15 +253,14 @@ void CMDIArea::emitWindowCaptionChanged() {
     }
 }
 
-QList<QMdiSubWindow*> CMDIArea::usableWindowList() {
+QList<QMdiSubWindow*> CMDIArea::usableWindowList() const {
     //Take care: when new windows are added, they will not appear
     //in subWindowList() when their ChildAdded-Event is triggered
     QList<QMdiSubWindow*> ret;
-    foreach(QMdiSubWindow* w, subWindowList()) {
-        if (w->isHidden()) { //not usable for us
-            continue;
+    Q_FOREACH (QMdiSubWindow * const w, subWindowList()) {
+        if (!w->isHidden()) {
+            ret.append(w);
         }
-        ret.append( w );
     }
     return ret;
 }
@@ -251,13 +269,13 @@ void CMDIArea::slotSubWindowActivated(QMdiSubWindow* client) {
     if (subWindowList().isEmpty())
         m_bibleTime->clearMdiToolBars();
 
-    if (!client) {
+    if (client == 0) {
         return;
     }
     emit sigSetToplevelCaption( client->windowTitle().trimmed() );
 
     // Notify child window it is active
-    CDisplayWindow* activeWindow = qobject_cast<CDisplayWindow*>(client->widget());
+    CDisplayWindow * const activeWindow = qobject_cast<CDisplayWindow*>(client->widget());
     if (activeWindow != 0 && activeWindow != m_activeWindow) {
         m_activeWindow = activeWindow;
         activeWindow->windowActivated();
@@ -282,7 +300,7 @@ void CMDIArea::resizeEvent(QResizeEvent* e) {
 
 //handle events of the client windows to update layout if necessary
 bool CMDIArea::eventFilter(QObject *o, QEvent *e) {
-    QMdiSubWindow *w(qobject_cast<QMdiSubWindow*>(o));
+    const QMdiSubWindow * const w = qobject_cast<QMdiSubWindow*>(o);
 
     // Let the event be handled by other filters:
     if (w == 0)
@@ -350,15 +368,13 @@ void CMDIArea::triggerWindowUpdate() {
 
 void CMDIArea::enableWindowMinMaxFlags(bool enable)
 {
-    foreach(QMdiSubWindow* subWindow, subWindowList()) {
+    Q_FOREACH (QMdiSubWindow * const subWindow, subWindowList()) {
         Qt::WindowFlags flags = subWindow->windowFlags();
         if (enable) {
-            flags |= Qt::WindowMinimizeButtonHint;
-            flags |= Qt::WindowMaximizeButtonHint;
+            flags |= (Qt::WindowMinimizeButtonHint | Qt::WindowMaximizeButtonHint);
         }
         else {
-            flags &= ~Qt::WindowMinimizeButtonHint;
-            flags &= ~Qt::WindowMaximizeButtonHint;
+            flags &= ~(Qt::WindowMinimizeButtonHint | Qt::WindowMaximizeButtonHint);
         }
         subWindow->setWindowFlags(flags);
     }
