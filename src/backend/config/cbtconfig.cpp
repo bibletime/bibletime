@@ -251,19 +251,36 @@ QString getKey(const CLanguageMgr::Language * const language) {
 
 } // anonymous namespace
 
-QString IntListToString(const QList<int> intList) {
+QString IntListToString(const QList<int> &intList) {
     QStringList intStrings;
-    foreach(int i, intList) {
+    Q_FOREACH (int i, intList) {
         intStrings << QString::number(i);
     }
     return intStrings.join(",");
 }
 
-QList<int> StringToIntList(const QString &intListString) {
+QList<int> StringToIntList(const QString &intListString,
+                           bool *ok,
+                           QString::SplitBehavior splitBehavior)
+{
     QList<int> intList;
-    if (!intListString.isEmpty() && intListString.contains(',')) {
-        foreach(QString intString, intListString.split(',')) {
-            intList << intString.trimmed().toInt();
+    if (ok != 0) {
+        *ok = true;
+
+        if (!intListString.isEmpty()) {
+            Q_FOREACH (const QString &intString, intListString.split(',', splitBehavior)) {
+                int i = intString.trimmed().toInt(ok);
+                if (!(*ok))
+                    break;
+
+                intList << i;
+            }
+        }
+    } else {
+        if (!intListString.isEmpty()) {
+            Q_FOREACH (const QString &intString, intListString.split(',', splitBehavior)) {
+                intList << intString.trimmed().toInt();
+            }
         }
     }
     return intList;
@@ -540,13 +557,18 @@ int get(const ints ID) {
 }
 
 QList<int> get(const intLists ID) {
-    getConfig()->beginGroup("intlists");
-    QList<int> result(StringToIntList(
-                          getConfig()->value(getKey(ID), IntListToString(getDefault(ID)))
-                          .toString()
-                      ));
-    getConfig()->endGroup();
-    return result;
+    QSettings *s = getConfig();
+    s->beginGroup("intlists");
+    QVariant v = s->value(getKey(ID));
+    s->endGroup();
+
+    if (v.isValid()) {
+        bool ok;
+        QList<int> r = StringToIntList(v.toString(), &ok);
+        if (ok)
+            return r;
+    }
+    return getDefault(ID);
 }
 
 QStringList get(const stringLists ID) {
@@ -559,39 +581,33 @@ QStringList get(const stringLists ID) {
 }
 
 StringMap get(const stringMaps ID) {
-    StringMap map;
+    Q_ASSERT(ID == searchScopes);
 
-    getConfig()->beginGroup(getKey(ID));
+    QSettings *s = getConfig();
+    s->beginGroup(getKey(ID));
     QStringList keys(getConfig()->childKeys());
+    s->endGroup();
 
-    if (!keys.isEmpty()) {
-        switch (ID) {
-            case searchScopes: {
-                /**
-                  Make sure we return the scopes in the chosen language. saved
-                  keys are in english.
-                */
-                sword::VerseKey vk;
-                foreach (QString key, keys) {
-                    Q_ASSERT(!key.isEmpty());
-                    QByteArray b(getConfig()->value(key).toString().toUtf8());
-                    sword::ListKey list(vk.ParseVerseList(b, "Genesis 1:1", true));
-                    QString data;
-                    for (int i(0); i < list.Count(); i++) {
-                        data.append(QString::fromUtf8(list.GetElement(i)->getRangeText()));
-                        data.append("; ");
-                    }
-                    map[key] = data; // Set the new data
-                }
-            }
-            default:
-                break;
+    if (keys.isEmpty())
+        return getDefault(ID);
+
+    /**
+      Make sure we return the scopes in the chosen language. saved
+      keys are in english.
+    */
+    StringMap map;
+    sword::VerseKey vk;
+    Q_FOREACH (const QString &key, keys) {
+        Q_ASSERT(!key.isEmpty());
+        QByteArray b(getConfig()->value(key).toString().toUtf8());
+        sword::ListKey list(vk.ParseVerseList(b, "Genesis 1:1", true));
+        QString data;
+        for (int i = 0; i < list.Count(); i++) {
+            data.append(QString::fromUtf8(list.GetElement(i)->getRangeText()));
+            data.append("; ");
         }
+        map[key] = data; // Set the new data
     }
-    else {
-        map = getDefault(ID);
-    }
-    getConfig()->endGroup();
     return map;
 }
 

@@ -144,8 +144,10 @@ enum stringMaps {
     searchScopes
 };
 
-QString    IntListToString(const QList<int> intList);
-QList<int> StringToIntList(const QString   &intListString);
+QString IntListToString(const QList<int> &intList);
+QList<int> StringToIntList(const QString &intListString,
+                           bool *ok = 0,
+                           QString::SplitBehavior splitBehavior = QString::KeepEmptyParts);
 
 QString     getDefault(const strings);
 QString     getDefault(const modules);
