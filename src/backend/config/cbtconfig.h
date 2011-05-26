@@ -169,12 +169,12 @@ FontSettingsPair  get(const CLanguageMgr::Language * const);
 
 void set(const strings,     const QString           &value);
 void set(const modules,     CSwordModuleInfo * const module);
-void set(const modules,     const QString&           moduleName);
+void set(const modules,     const QString           &moduleName);
 void set(const bools,       const bool               value);
 void set(const ints,        const int                value);
-void set(const intLists,    const QList<int>         value);
-void set(const stringLists, const QStringList        value);
-void set(const stringMaps,  const StringMap          value);
+void set(const intLists,    const QList<int>        &value);
+void set(const stringLists, const QStringList       &value);
+void set(const stringMaps,  const StringMap         &value);
 void set(const CLanguageMgr::Language * const language,
          const FontSettingsPair &fontSettings);
 
