@@ -15,27 +15,35 @@
 #include <QWidget>
 
 
+class QLabel;
 class CListWidget;
 class QListWidget;
 class QListWidgetItem;
 class QString;
-class QVBoxLayout;
 class QWebView;
 
 class CFontChooser : public QFrame {
+
         Q_OBJECT
 
-    public:
-        CFontChooser(QWidget *parent = 0);
-        ~CFontChooser();
-        void setFont(const QFont& font);
-        void setSampleText(const QString& text);
-        QSize sizeHint() const;
+    public: /* Methods: */
 
-    private:
-        void createFontAreaLayout();
+        CFontChooser(QWidget *parent = 0);
+
+        void setFont(const QFont &font);
+        void setSampleText(const QString &text);
+
+        // Inherited from QWidget:
+        virtual QSize sizeHint() const;
+
+    signals:
+
+        void fontSelected(const QFont&);
+
+    private: /* Methods: */
+
         void createLayout();
-        void createTextAreaLayout();
+        void retranslateUi();
         void connectListWidgets();
         QString formatAsHtml(const QString& text);
         void loadFonts();
@@ -45,24 +53,29 @@ class CFontChooser : public QFrame {
         void restoreListWidgetValue(QListWidget* listWidget, const QString& value);
         QString saveListWidgetValue(QListWidget* listWidget);
 
-        QFrame* m_fontWidget;
-        QWebView* m_webView;
-        CListWidget* m_fontListWidget;
-        CListWidget* m_styleListWidget;
-        CListWidget* m_sizeListWidget;
-        QString m_htmlText;
-        QFont m_font;
-        QVBoxLayout* m_vBoxLayout;
-        QString m_choosenStyle;
 
     private slots:
+
         void fontChanged(QListWidgetItem* current, QListWidgetItem* previous);
         void setFontStyle(const QString& styleString, QFont* font);
         void sizeChanged(QListWidgetItem* current, QListWidgetItem* previous);
         void styleChanged(QListWidgetItem* current, QListWidgetItem* previous);
 
-    signals:
-        void fontSelected(const QFont&);
+    private: /* Fields: */
+
+        QLabel *m_fontNameLabel;
+            CListWidget *m_fontListWidget;
+        QLabel *m_fontStyleLabel;
+            CListWidget *m_styleListWidget;
+        QLabel *m_fontSizeLabel;
+            CListWidget *m_sizeListWidget;
+
+        QWebView *m_fontPreview;
+
+        QString m_htmlText;
+        QFont m_font;
+        QString m_choosenStyle;
+
 };
 
 #endif

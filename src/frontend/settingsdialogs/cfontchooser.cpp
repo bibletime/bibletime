@@ -9,123 +9,97 @@
 
 #include "frontend/settingsdialogs/cfontchooser.h"
 
-#include <QWidget>
 #include <QFontDatabase>
 #include <QFrame>
+#include <QGridLayout>
 #include <QLabel>
 #include <QListWidget>
 #include <QListWidgetItem>
-#include <QVBoxLayout>
 #include <QWebSettings>
 #include <QWebView>
 #include "frontend/settingsdialogs/clistwidget.h"
 
 
-// ***********************
-// Container for KHTHMView to control its size
-class WebViewerWidget : public QWidget {
-    public:
-        WebViewerWidget(QWidget* parent = 0);
-        ~WebViewerWidget();
-        virtual QSize sizeHint () const;
+namespace {
+
+class BtFontPreviewWebView: public QWebView {
+
+    public: /* Methods: */
+
+        inline BtFontPreviewWebView(QWidget *parent = 0)
+            : QWebView(parent)
+        {
+            setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
+        }
+
+        virtual inline QSize sizeHint() const {
+            return QSize(100, 100);
+        }
+
 };
 
-WebViewerWidget::WebViewerWidget(QWidget* parent)
-        : QWidget(parent) {
-}
+const QString DEFAULT_FONT_PREVIEW_TEXT =
+    "1 In the beginning God created the heaven and the earth. "
+    "2 And the earth was without form, and void; and darkness was on the face of the deep. "
+    " And the Spirit of God moved on the face of the waters.";
 
-WebViewerWidget::~WebViewerWidget() {
-}
-
-QSize WebViewerWidget::sizeHint () const {
-    return QSize(100, 100);
-}
-// ************************
-
-
+} // anonymous namespace
 
 CFontChooser::CFontChooser(QWidget* parent)
-        :  QFrame(parent), m_fontWidget(0),
-        m_fontListWidget(0), m_styleListWidget(0), m_sizeListWidget(0) {
+        : QFrame(parent)
+        , m_htmlText(DEFAULT_FONT_PREVIEW_TEXT)
+{
     setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
     createLayout();
     connectListWidgets();
     loadFonts();
     setFrameStyle(QFrame::Box);
     setFrameShadow(QFrame::Raised);
+
+    retranslateUi();
 }
 
-
-CFontChooser::~CFontChooser() {
-}
-
-
-void CFontChooser::createFontAreaLayout() {
-    QHBoxLayout* fontStyleSizeHBoxLayout = new QHBoxLayout();
-
-    // font column
-    QVBoxLayout* fontLayout = new QVBoxLayout();
-    fontStyleSizeHBoxLayout->addLayout(fontLayout);
-
-    QLabel* fontLabel = new QLabel(tr("Font name:"));
-    fontLayout->addWidget(fontLabel);
+void CFontChooser::createLayout() {
+    m_fontNameLabel = new QLabel(this);
 
     m_fontListWidget = new CListWidget();
     m_fontListWidget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::MinimumExpanding);
     m_fontListWidget->setMinimumHeight(50);
-    fontLayout->addWidget(m_fontListWidget);
 
-    // style column
-    QVBoxLayout* styleLayout = new QVBoxLayout();
-    fontStyleSizeHBoxLayout->addLayout(styleLayout);
-
-    QLabel* styleLabel = new QLabel(tr("Font style:"));
-    styleLayout->addWidget(styleLabel);
+    m_fontStyleLabel = new QLabel(this);
 
     m_styleListWidget = new CListWidget();
     m_styleListWidget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::MinimumExpanding);
     m_styleListWidget->setMinimumHeight(50);
     m_styleListWidget->setCharWidth(12);
-    styleLayout->addWidget(m_styleListWidget);
 
-    // size column
-    QVBoxLayout* sizeLayout = new QVBoxLayout();
-    fontStyleSizeHBoxLayout->addLayout(sizeLayout);
-
-    QLabel* sizeLabel = new QLabel(tr("Size:"));
-    sizeLayout->addWidget(sizeLabel);
+    m_fontSizeLabel = new QLabel(this);
 
     m_sizeListWidget = new CListWidget();
     m_sizeListWidget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::MinimumExpanding);
     m_sizeListWidget->setMinimumHeight(50);
     m_sizeListWidget->setCharWidth(5);
-    sizeLayout->addWidget(m_sizeListWidget);
 
-    m_vBoxLayout->addLayout(fontStyleSizeHBoxLayout);
+    m_fontPreview = new BtFontPreviewWebView(this);
+
+    QGridLayout *l = new QGridLayout;
+    l->addWidget(m_fontNameLabel, 0, 0);
+    l->addWidget(m_fontListWidget, 1, 0);
+    l->addWidget(m_fontStyleLabel, 0, 1);
+    l->addWidget(m_styleListWidget, 1, 1);
+    l->addWidget(m_fontSizeLabel, 0, 2);
+    l->addWidget(m_sizeListWidget, 1, 2);
+    l->addWidget(m_fontPreview, 2, 0, 1, 3);
+    setLayout(l);
 }
 
-
-void CFontChooser::createLayout() {
-    m_vBoxLayout = new QVBoxLayout(this);
-    createFontAreaLayout();
-    createTextAreaLayout();
+void CFontChooser::retranslateUi() {
+    m_fontNameLabel->setText(tr("Font name:"));
+    m_fontStyleLabel->setText(tr("Font style:"));
+    m_fontSizeLabel->setText(tr("Size:"));
 }
-
-
-void CFontChooser::createTextAreaLayout() {
-    QWidget* webViewWidget = new WebViewerWidget(this);
-    QLayout* webViewLayout = new QVBoxLayout(webViewWidget);
-
-    webViewWidget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
-
-    m_webView = new QWebView(webViewWidget);
-    webViewLayout->addWidget(m_webView);
-    m_vBoxLayout->addWidget(webViewWidget);
-}
-
 
 void CFontChooser::connectListWidgets() {
-
     bool ok = connect(
                   m_fontListWidget,
                   SIGNAL(currentItemChanged(QListWidgetItem *, QListWidgetItem *)),
@@ -148,112 +122,102 @@ void CFontChooser::connectListWidgets() {
     Q_ASSERT(ok);
 }
 
-
 void CFontChooser::fontChanged(QListWidgetItem* current, QListWidgetItem* /*previous*/) {
     if (current == 0)
         return;
-    QString fontFamily = current->text();
+
+    const QString fontFamily = current->text();
     m_font.setFamily(fontFamily);
     loadStyles(fontFamily);
     outputHtmlText();
     emit fontSelected(m_font);
 }
 
-
-QString CFontChooser::formatAsHtml(const QString& text) {
-
-    QString htmlText;
-    htmlText.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
-    htmlText.append("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n");
-    htmlText.append("<html xmlns=\"http://www.w3.org/1999/xhtml\">\n");
-    htmlText.append("<head>\n");
-    htmlText.append("    <style type=\"text/css\">\n");
-    htmlText.append("        *[lang=en] { font-family:#FONT-FAMILY#; font-size:#FONT-SIZE#pt; font-weight:#FONT-WEIGHT#; font-style:#FONT-STYLE#; }\n");
-    htmlText.append("    </style>\n");
-    htmlText.append("</head>\n");
-    htmlText.append("<body>\n");
-    htmlText.append("    <div>\n");
-    htmlText.append("        <div style=\"display: inline;\" lang=\"en\">\n");
-    htmlText.append(text);
-    htmlText.append("        </div>\n");
-    htmlText.append("</body>\n");
-    htmlText.append("</html>\n");
-    return htmlText;
-}
-
-
 void CFontChooser::loadFonts() {
     m_fontListWidget->clear();
     QFontDatabase database;
-    foreach (QString font, database.families()) {
+    Q_FOREACH (const QString &font, database.families()) {
         m_fontListWidget->addItem(font);
     }
     // This triggers loading the styles for the first font
     m_fontListWidget->setCurrentRow(0);
 }
 
-
 void CFontChooser::loadStyles(const QString& font) {
     m_styleListWidget->clear();
     QFontDatabase database;
-    foreach (QString style, database.styles(font)) {
+    Q_FOREACH (const QString &style, database.styles(font)) {
         m_styleListWidget->addItem(style);
         // This triggers loading the sizes for the first style
         restoreListWidgetValue(m_styleListWidget, m_choosenStyle);
     }
 }
 
-
 void CFontChooser::loadSizes(const QString& font, const QString& style) {
-
-    QString saveText = saveListWidgetValue(m_sizeListWidget);
+    const QString saveText = saveListWidgetValue(m_sizeListWidget);
 
     // Put new values into listWidget
     m_sizeListWidget->clear();
     QFontDatabase database;
-    foreach (int size, database.pointSizes(font, style)) {
+    Q_FOREACH (int size, database.pointSizes(font, style)) {
         m_sizeListWidget->addItem(QString::number(size));
     }
 
     restoreListWidgetValue(m_sizeListWidget, saveText);
 }
 
-
 void CFontChooser::outputHtmlText() {
-    QString text = formatAsHtml(m_htmlText);
-    text.replace("#FONT-FAMILY#", m_font.family());
-    text.replace("#FONT-SIZE#", QString::number(m_font.pointSize()));
-    text.replace("#FONT-WEIGHT#", (m_font.bold() ? "bold" : "normal") );
-    text.replace("#FONT-STYLE#", m_font.italic() ? "italic" : "normal");
-    m_webView->setHtml(text);
+    m_fontPreview->setHtml(
+        QString(
+            "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+            "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n"
+            "<html xmlns=\"http://www.w3.org/1999/xhtml\">"
+            "<head>"
+                "<style type=\"text/css\">"
+                    "*{background-color:%1;"
+                      "color:%2;"
+                      "font-family:%3;"
+                      "font-size:%4pt;"
+                      "font-weight:%5;"
+                      "font-style:%6}"
+                "</style>"
+                "</head>"
+                "<body>"
+                    "<div style=\"display: inline;\" lang=\"en\">"
+                        "%7"
+                    "</div>"
+                "</body>"
+            "</html>"
+        )
+        .arg(palette().base().color().name())
+        .arg(palette().text().color().name())
+        .arg(m_font.family())
+        .arg(QString::number(m_font.pointSize()))
+        .arg(m_font.bold() ? "bold" : "normal")
+        .arg(m_font.italic() ? "italic" : "normal")
+        .arg(m_htmlText)
+    );
 }
 
-
 void CFontChooser::restoreListWidgetValue(QListWidget* listWidget, const QString& value) {
-    if (value == "") {
-        listWidget->setCurrentRow(0);
-        return;
-    }
-
-    for (int i = 0; i < listWidget->count(); i++) {
-        if (listWidget->item(i)->text() == value) {
-            listWidget->setCurrentRow(i);
-            return;
+    if (!value.isEmpty()) {
+        for (int i = 0; i < listWidget->count(); i++) {
+            if (listWidget->item(i)->text() == value) {
+                listWidget->setCurrentRow(i);
+                return;
+            }
         }
     }
     listWidget->setCurrentRow(0);
 }
 
-
 QString CFontChooser::saveListWidgetValue(QListWidget* listWidget) {
-    QString saveText;
     int row = listWidget->currentRow();
-    if (row >= 0) {
-        saveText = listWidget->item(row)->text();
-    }
-    return saveText;
-}
+    if (row >= 0)
+        return listWidget->item(row)->text();
 
+    return QString();
+}
 
 void CFontChooser::setFont(const QFont& font) {
     disconnect(m_fontListWidget, 0, 0, 0);
@@ -262,54 +226,44 @@ void CFontChooser::setFont(const QFont& font) {
 
     // set the font
     m_font = font;
-    restoreListWidgetValue(m_fontListWidget, m_font.family());
+    const QString fontFamily = font.family();
+    restoreListWidgetValue(m_fontListWidget, fontFamily);
 
     // set the style
-    loadStyles( m_font.family());
+    loadStyles(fontFamily);
     QFontDatabase database;
-    QString styleString = database.styleString(m_font);
+    const QString styleString = database.styleString(m_font);
     m_choosenStyle = styleString;
     restoreListWidgetValue(m_styleListWidget, styleString);
 
     // set the size
-    loadSizes(m_font.family(), styleString);
+    loadSizes(fontFamily, styleString);
     restoreListWidgetValue(m_sizeListWidget, QString::number(m_font.pointSize()) );
 
     outputHtmlText();
     connectListWidgets();
 }
 
-
 void CFontChooser::setFontStyle(const QString& styleString, QFont* font) {
-    if (styleString.contains("bold", Qt::CaseInsensitive))
-        font->setBold(true);
-    else
-        font->setBold(false);
-
-    if (styleString.contains("italic", Qt::CaseInsensitive) || styleString.contains("oblique", Qt::CaseInsensitive) )
-        font->setItalic(true);
-    else
-        font->setItalic(false);
+    font->setBold(styleString.contains("bold", Qt::CaseInsensitive));
+    font->setItalic(styleString.contains("italic", Qt::CaseInsensitive)
+                    || styleString.contains("oblique", Qt::CaseInsensitive));
 }
-
 
 void CFontChooser::setSampleText(const QString& htmlText) {
     m_htmlText = htmlText;
     outputHtmlText();
 }
 
-
 void CFontChooser::sizeChanged(QListWidgetItem* current, QListWidgetItem* /*previous*/) {
     if (current == 0)
         return;
 
-    QString size = m_sizeListWidget->currentItem()->text();
-    m_font.setPointSize(size.toInt());
+    m_font.setPointSize(m_sizeListWidget->currentItem()->text().toInt());
 
     outputHtmlText();
     emit fontSelected(m_font);
 }
-
 
 QSize CFontChooser::sizeHint() const {
     return QSize(170, 100);
@@ -323,15 +277,11 @@ void CFontChooser::styleChanged(QListWidgetItem* current, QListWidgetItem* /*pre
     setFontStyle(styleString, &m_font);
 
     // Save style if the user choose it
-    bool focus = m_styleListWidget->hasFocus();
-    if (focus)
+    if (m_styleListWidget->hasFocus())
         m_choosenStyle = styleString;
 
-    QString font  = m_fontListWidget->currentItem()->text();
-    loadSizes(font, styleString);
+    loadSizes(m_fontListWidget->currentItem()->text(), styleString);
 
     outputHtmlText();
     emit fontSelected(m_font);
 }
-
-

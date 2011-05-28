@@ -71,14 +71,8 @@ BtFontSettingsPage::BtFontSettingsPage(QWidget *parent)
     /// \todo remember the last selected font and jump there.
 
     m_fontChooser = new CFontChooser(this);
-
     /// \todo Eeli's wishlist: why not show something relevant here, like a Bible verse in chosen (not tr()'ed!) language?
-    QString sampleText;
-    sampleText.append("1 In the beginning God created the heaven and the earth.  ");
-    sampleText.append("2 And the earth was without form, and void; and darkness was on the face of the deep.");
-    sampleText.append(" And the Spirit of God moved on the face of the waters.");
-
-    m_fontChooser->setSampleText(sampleText);
+    // m_fontChooser->setSampleText("SOMETHING");
 
     connect(m_fontChooser, SIGNAL(fontSelected(const QFont&)), SLOT(newDisplayWindowFontSelected(const QFont&)));
     connect(m_languageComboBox, SIGNAL(activated(const QString&)), SLOT(newDisplayWindowFontAreaSelected(const QString&)));
