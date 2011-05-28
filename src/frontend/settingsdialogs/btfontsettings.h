@@ -26,11 +26,15 @@ class BtFontSettingsPage : public BtConfigPage {
 
         Q_OBJECT
 
+    private: /* Types: */
+
+        typedef QMap<QString, CBTConfig::FontSettingsPair> FontMap;
+
     public: /* Methods: */
 
         BtFontSettingsPage(QWidget *parent = 0);
 
-        void save();
+        void save() const;
 
         /** Reimplemented from BtConfigPage. */
         virtual const QIcon &icon() const;
@@ -49,6 +53,10 @@ class BtFontSettingsPage : public BtConfigPage {
         // Called when the combobox contents is changed
         void newDisplayWindowFontAreaSelected(const QString&);
 
+    private: /* Methods: */
+
+        void retranslateUi();
+
     private: /* Fields: */
 
         QGroupBox *m_fontsGroupBox;
@@ -57,7 +65,7 @@ class BtFontSettingsPage : public BtConfigPage {
         QCheckBox *m_languageCheckBox;
         BtFontChooserWidget* m_fontChooser;
 
-        QMap<QString, CBTConfig::FontSettingsPair> m_fontMap;
+        FontMap m_fontMap;
 
 };
 

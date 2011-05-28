@@ -31,13 +31,10 @@ BtFontSettingsPage::BtFontSettingsPage(QWidget *parent)
 {
     namespace DU = util::directory;
 
-    m_languageLabel = new QLabel(tr("&Language:"), this);
-
+    m_languageLabel = new QLabel(this);
     m_languageComboBox = new QComboBox(this);
-    m_languageComboBox->setToolTip(tr("The font selection below will apply to all texts in this language"));
     m_languageLabel->setBuddy(m_languageComboBox);
-
-    m_languageCheckBox = new QCheckBox(tr("Use custom font"), this);
+    m_languageCheckBox = new QCheckBox(this);
     connect(m_languageCheckBox, SIGNAL(toggled(bool)),
             this,               SLOT(useOwnFontClicked(bool)) );
 
@@ -49,37 +46,47 @@ BtFontSettingsPage::BtFontSettingsPage(QWidget *parent)
     hLayout->addWidget(m_languageCheckBox);
 
     CLanguageMgr::LangMap langMap = CLanguageMgr::instance()->availableLanguages();
+    typedef CLanguageMgr::Language L;
+    for (CLanguageMgr::LangMapIterator it = langMap.constBegin();
+         it != langMap.constEnd();
+         it++)
+    {
+        const L * const l = *it;
+        const QString &(L::*f)() const =
+            l->translatedName().isEmpty()
+            ? &L::abbrev
+            : &L::translatedName;
 
-    for (CLanguageMgr::LangMapIterator it = langMap.constBegin() ; it != langMap.constEnd(); ++it ) {
-        const QString name =
-            (*it)->translatedName().isEmpty()
-            ? (*it)->abbrev()
-            : (*it)->translatedName();
-
-        m_fontMap.insert(name, CBTConfig::get(*it) );
+        m_fontMap.insert((l->*f)(), CBTConfig::get(l));
     }
 
-    for ( QMap<QString, CBTConfig::FontSettingsPair>::Iterator it = m_fontMap.begin(); it != m_fontMap.end(); ++it ) {
-        if ( m_fontMap[it.key()].first ) {     //show font icon
-            m_languageComboBox->addItem(DU::getIcon("fonts.svg"), it.key() );
-        }
-        else {     //don't show icon for font
-            m_languageComboBox->addItem(it.key());
+    for (FontMap::ConstIterator it = m_fontMap.constBegin(); it != m_fontMap.constEnd(); ++it) {
+        const QString &k = it.key();
+        if (m_fontMap[k].first) { // show font icon
+            m_languageComboBox->addItem(DU::getIcon("fonts.svg"), k);
+        } else { // don't show icon for font
+            m_languageComboBox->addItem(k);
         }
     }
 
     /// \todo remember the last selected font and jump there.
 
     m_fontChooser = new BtFontChooserWidget(this);
-    /// \todo Eeli's wishlist: why not show something relevant here, like a Bible verse in chosen (not tr()'ed!) language?
+    /**
+      \todo Eeli's wishlist: why not show something relevant here, like a Bible
+            verse in chosen (not tr()'ed!) language?
+    */
     // m_fontChooser->setSampleText("SOMETHING");
 
-    connect(m_fontChooser, SIGNAL(fontSelected(const QFont&)), SLOT(newDisplayWindowFontSelected(const QFont&)));
-    connect(m_languageComboBox, SIGNAL(activated(const QString&)), SLOT(newDisplayWindowFontAreaSelected(const QString&)));
+    connect(m_fontChooser, SIGNAL(fontSelected(const QFont&)),
+            this,          SLOT(newDisplayWindowFontSelected(const QFont&)));
+    connect(m_languageComboBox, SIGNAL(activated(const QString&)),
+            this,               SLOT(newDisplayWindowFontAreaSelected(const QString&)));
 
-    m_fontChooser->setFont( m_fontMap[m_languageComboBox->currentText()].second );
-    useOwnFontClicked( m_fontMap[m_languageComboBox->currentText()].first );
-    m_languageCheckBox->setChecked( m_fontMap[m_languageComboBox->currentText()].first );
+    const CBTConfig::FontSettingsPair &v = m_fontMap.value(m_languageComboBox->currentText());
+    m_fontChooser->setFont(v.second);
+    useOwnFontClicked(v.first);
+    m_languageCheckBox->setChecked(v.first);
     m_fontChooser->setMinimumSize(m_fontChooser->sizeHint());
 
     QVBoxLayout *fLayout = new QVBoxLayout;
@@ -93,14 +100,22 @@ BtFontSettingsPage::BtFontSettingsPage(QWidget *parent)
 
     Q_ASSERT(qobject_cast<QVBoxLayout*>(layout()) != 0);
     static_cast<QVBoxLayout*>(layout())->addWidget(m_fontsGroupBox);
+
+    retranslateUi();
 }
 
-void BtFontSettingsPage::save() {
-    for (QMap<QString, CBTConfig::FontSettingsPair>::Iterator it = m_fontMap.begin(); it != m_fontMap.end(); ++it ) {
-        const CLanguageMgr::Language * const lang = CLanguageMgr::instance()->languageForTranslatedName(it.key());
-        if (!lang->isValid()) {     //we possibly use a language, for which we have only the abbrev
+void BtFontSettingsPage::save() const {
+    for (FontMap::ConstIterator it = m_fontMap.constBegin();
+         it != m_fontMap.constEnd();
+         it++)
+    {
+        const QString &k = it.key();
+        const CLanguageMgr::Language * const lang = CLanguageMgr::instance()->languageForTranslatedName(k);
+        if (!lang->isValid()) {
+            // We possibly use a language, for which we have only the abbrevation
             if (!lang->abbrev().isEmpty()) {
-                CLanguageMgr::Language l(it.key(), it.key(), it.key()); //create a temp language
+                // Create a temp language:
+                CLanguageMgr::Language l(k, k, k);
                 CBTConfig::set(&l, it.value());
             }
         }
@@ -110,38 +125,26 @@ void BtFontSettingsPage::save() {
     }
 }
 
-/**  */
 void BtFontSettingsPage::newDisplayWindowFontSelected(const QFont &newFont) {
-    //belongs to the languages/fonts page
-    CBTConfig::FontSettingsPair oldSettings = m_fontMap[ m_languageComboBox->currentText() ];
-    m_fontMap.insert( m_languageComboBox->currentText(), CBTConfig::FontSettingsPair(oldSettings.first, newFont) );
+    const QString languageName = m_languageComboBox->currentText();
+    m_fontMap.insert(languageName,
+                     CBTConfig::FontSettingsPair(m_fontMap[languageName].first, newFont));
 }
 
-/** Called when the combobox contents is changed */
-void BtFontSettingsPage::newDisplayWindowFontAreaSelected(const QString& usage) {
-    //belongs to fonts/languages
-    useOwnFontClicked( m_fontMap[usage].first );
-    m_languageCheckBox->setChecked( m_fontMap[usage].first );
-
-    m_fontChooser->setFont( m_fontMap[usage].second );
+void BtFontSettingsPage::newDisplayWindowFontAreaSelected(const QString &usage) {
+    const CBTConfig::FontSettingsPair &p = m_fontMap[usage];
+    useOwnFontClicked(p.first);
+    m_languageCheckBox->setChecked(p.first);
+    m_fontChooser->setFont(p.second);
 }
 
-
-/** This slot is called when the "Use own font for language" bo was clicked. */
 void BtFontSettingsPage::useOwnFontClicked(bool isOn) {
     namespace DU = util::directory;
 
-    //belongs to fonts/languages
-
     m_fontChooser->setEnabled(isOn);
-    m_fontMap[ m_languageComboBox->currentText() ].first = isOn;
-
-    if (isOn) {     //show font icon
-        m_languageComboBox->setItemIcon(m_languageComboBox->currentIndex(), DU::getIcon("fonts.svg"));
-    }
-    else {   //don't show
-        m_languageComboBox->setItemText(m_languageComboBox->currentIndex(), m_languageComboBox->currentText() ); /// \todo should this change icon to empty?
-    }
+    m_fontMap[m_languageComboBox->currentText()].first = isOn;
+    m_languageComboBox->setItemIcon(m_languageComboBox->currentIndex(),
+                                    isOn ? DU::getIcon("fonts.svg") : QIcon());
 }
 
 
@@ -151,4 +154,11 @@ const QIcon &BtFontSettingsPage::icon() const {
 
 QString BtFontSettingsPage::header() const {
     return tr("Fonts");
+}
+
+void BtFontSettingsPage::retranslateUi() {
+    m_languageLabel->setText(tr("&Language:"));
+    m_languageComboBox->setToolTip(tr("The font selection below will apply to all texts in this language"));
+    m_languageCheckBox->setText(tr("Use custom font"));
+    m_fontsGroupBox->setTitle(tr("Optionally specify a custom font for each language:"));
 }
