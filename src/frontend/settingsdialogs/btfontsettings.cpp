@@ -16,7 +16,7 @@
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QWidget>
-#include "frontend/settingsdialogs/cfontchooser.h"
+#include "frontend/settingsdialogs/btfontchooserwidget.h"
 #include "util/cresmgr.h"
 #include "util/tool.h"
 #include "util/directory.h"
@@ -70,7 +70,7 @@ BtFontSettingsPage::BtFontSettingsPage(QWidget *parent)
 
     /// \todo remember the last selected font and jump there.
 
-    m_fontChooser = new CFontChooser(this);
+    m_fontChooser = new BtFontChooserWidget(this);
     /// \todo Eeli's wishlist: why not show something relevant here, like a Bible verse in chosen (not tr()'ed!) language?
     // m_fontChooser->setSampleText("SOMETHING");
 
@@ -93,10 +93,6 @@ BtFontSettingsPage::BtFontSettingsPage(QWidget *parent)
 
     Q_ASSERT(qobject_cast<QVBoxLayout*>(layout()) != 0);
     static_cast<QVBoxLayout*>(layout())->addWidget(m_fontsGroupBox);
-}
-
-
-BtFontSettingsPage::~BtFontSettingsPage() {
 }
 
 void BtFontSettingsPage::save() {

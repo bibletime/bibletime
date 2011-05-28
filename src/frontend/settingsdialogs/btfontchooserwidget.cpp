@@ -7,7 +7,7 @@
 *
 **********/
 
-#include "frontend/settingsdialogs/cfontchooser.h"
+#include "frontend/settingsdialogs/btfontchooserwidget.h"
 
 #include <QFontDatabase>
 #include <QFrame>
@@ -45,7 +45,7 @@ const QString DEFAULT_FONT_PREVIEW_TEXT =
 
 } // anonymous namespace
 
-CFontChooser::CFontChooser(QWidget* parent)
+BtFontChooserWidget::BtFontChooserWidget(QWidget* parent)
         : QFrame(parent)
         , m_htmlText(DEFAULT_FONT_PREVIEW_TEXT)
 {
@@ -59,7 +59,7 @@ CFontChooser::CFontChooser(QWidget* parent)
     retranslateUi();
 }
 
-void CFontChooser::createLayout() {
+void BtFontChooserWidget::createLayout() {
     m_fontNameLabel = new QLabel(this);
 
     m_fontListWidget = new CListWidget();
@@ -93,13 +93,13 @@ void CFontChooser::createLayout() {
     setLayout(l);
 }
 
-void CFontChooser::retranslateUi() {
+void BtFontChooserWidget::retranslateUi() {
     m_fontNameLabel->setText(tr("Font name:"));
     m_fontStyleLabel->setText(tr("Font style:"));
     m_fontSizeLabel->setText(tr("Size:"));
 }
 
-void CFontChooser::connectListWidgets() {
+void BtFontChooserWidget::connectListWidgets() {
     bool ok = connect(
                   m_fontListWidget,
                   SIGNAL(currentItemChanged(QListWidgetItem *, QListWidgetItem *)),
@@ -122,7 +122,7 @@ void CFontChooser::connectListWidgets() {
     Q_ASSERT(ok);
 }
 
-void CFontChooser::fontChanged(QListWidgetItem* current, QListWidgetItem* /*previous*/) {
+void BtFontChooserWidget::fontChanged(QListWidgetItem* current, QListWidgetItem* /*previous*/) {
     if (current == 0)
         return;
 
@@ -133,7 +133,7 @@ void CFontChooser::fontChanged(QListWidgetItem* current, QListWidgetItem* /*prev
     emit fontSelected(m_font);
 }
 
-void CFontChooser::loadFonts() {
+void BtFontChooserWidget::loadFonts() {
     m_fontListWidget->clear();
     QFontDatabase database;
     Q_FOREACH (const QString &font, database.families()) {
@@ -143,7 +143,7 @@ void CFontChooser::loadFonts() {
     m_fontListWidget->setCurrentRow(0);
 }
 
-void CFontChooser::loadStyles(const QString& font) {
+void BtFontChooserWidget::loadStyles(const QString& font) {
     m_styleListWidget->clear();
     QFontDatabase database;
     Q_FOREACH (const QString &style, database.styles(font)) {
@@ -153,7 +153,7 @@ void CFontChooser::loadStyles(const QString& font) {
     }
 }
 
-void CFontChooser::loadSizes(const QString& font, const QString& style) {
+void BtFontChooserWidget::loadSizes(const QString& font, const QString& style) {
     const QString saveText = saveListWidgetValue(m_sizeListWidget);
 
     // Put new values into listWidget
@@ -166,7 +166,7 @@ void CFontChooser::loadSizes(const QString& font, const QString& style) {
     restoreListWidgetValue(m_sizeListWidget, saveText);
 }
 
-void CFontChooser::outputHtmlText() {
+void BtFontChooserWidget::outputHtmlText() {
     m_fontPreview->setHtml(
         QString(
             "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
@@ -199,7 +199,7 @@ void CFontChooser::outputHtmlText() {
     );
 }
 
-void CFontChooser::restoreListWidgetValue(QListWidget* listWidget, const QString& value) {
+void BtFontChooserWidget::restoreListWidgetValue(QListWidget* listWidget, const QString& value) {
     if (!value.isEmpty()) {
         for (int i = 0; i < listWidget->count(); i++) {
             if (listWidget->item(i)->text() == value) {
@@ -211,7 +211,7 @@ void CFontChooser::restoreListWidgetValue(QListWidget* listWidget, const QString
     listWidget->setCurrentRow(0);
 }
 
-QString CFontChooser::saveListWidgetValue(QListWidget* listWidget) {
+QString BtFontChooserWidget::saveListWidgetValue(QListWidget* listWidget) {
     int row = listWidget->currentRow();
     if (row >= 0)
         return listWidget->item(row)->text();
@@ -219,7 +219,7 @@ QString CFontChooser::saveListWidgetValue(QListWidget* listWidget) {
     return QString();
 }
 
-void CFontChooser::setFont(const QFont& font) {
+void BtFontChooserWidget::setFont(const QFont& font) {
     disconnect(m_fontListWidget, 0, 0, 0);
     disconnect(m_styleListWidget, 0, 0, 0);
     disconnect(m_sizeListWidget, 0, 0, 0);
@@ -244,18 +244,18 @@ void CFontChooser::setFont(const QFont& font) {
     connectListWidgets();
 }
 
-void CFontChooser::setFontStyle(const QString& styleString, QFont* font) {
+void BtFontChooserWidget::setFontStyle(const QString& styleString, QFont* font) {
     font->setBold(styleString.contains("bold", Qt::CaseInsensitive));
     font->setItalic(styleString.contains("italic", Qt::CaseInsensitive)
                     || styleString.contains("oblique", Qt::CaseInsensitive));
 }
 
-void CFontChooser::setSampleText(const QString& htmlText) {
+void BtFontChooserWidget::setSampleText(const QString& htmlText) {
     m_htmlText = htmlText;
     outputHtmlText();
 }
 
-void CFontChooser::sizeChanged(QListWidgetItem* current, QListWidgetItem* /*previous*/) {
+void BtFontChooserWidget::sizeChanged(QListWidgetItem* current, QListWidgetItem* /*previous*/) {
     if (current == 0)
         return;
 
@@ -265,11 +265,11 @@ void CFontChooser::sizeChanged(QListWidgetItem* current, QListWidgetItem* /*prev
     emit fontSelected(m_font);
 }
 
-QSize CFontChooser::sizeHint() const {
+QSize BtFontChooserWidget::sizeHint() const {
     return QSize(170, 100);
 }
 
-void CFontChooser::styleChanged(QListWidgetItem* current, QListWidgetItem* /*previous*/) {
+void BtFontChooserWidget::styleChanged(QListWidgetItem* current, QListWidgetItem* /*previous*/) {
     if (current == 0)
         return;
 

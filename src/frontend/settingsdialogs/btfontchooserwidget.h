@@ -22,13 +22,13 @@ class QListWidgetItem;
 class QString;
 class QWebView;
 
-class CFontChooser : public QFrame {
+class BtFontChooserWidget : public QFrame {
 
         Q_OBJECT
 
     public: /* Methods: */
 
-        CFontChooser(QWidget *parent = 0);
+        BtFontChooserWidget(QWidget *parent = 0);
 
         void setFont(const QFont &font);
         void setSampleText(const QString &text);

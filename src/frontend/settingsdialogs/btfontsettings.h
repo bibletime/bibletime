@@ -17,19 +17,19 @@
 #include "backend/config/cbtconfig.h"
 
 
-class CFontChooser;
+class BtFontChooserWidget;
 class QCheckBox;
 class QComboBox;
 class QGroupBox;
 
-/**
-    @author The BibleTime team <info@bibletime.info>
-*/
 class BtFontSettingsPage : public BtConfigPage {
+
         Q_OBJECT
-    public:
+
+    public: /* Methods: */
+
         BtFontSettingsPage(QWidget *parent = 0);
-        ~BtFontSettingsPage();
+
         void save();
 
         /** Reimplemented from BtConfigPage. */
@@ -49,14 +49,16 @@ class BtFontSettingsPage : public BtConfigPage {
         // Called when the combobox contents is changed
         void newDisplayWindowFontAreaSelected(const QString&);
 
-    private:
+    private: /* Fields: */
+
         QGroupBox *m_fontsGroupBox;
         QLabel *m_languageLabel;
         QComboBox *m_languageComboBox;
         QCheckBox *m_languageCheckBox;
-        CFontChooser* m_fontChooser;
+        BtFontChooserWidget* m_fontChooser;
 
         QMap<QString, CBTConfig::FontSettingsPair> m_fontMap;
+
 };
 
 #endif
