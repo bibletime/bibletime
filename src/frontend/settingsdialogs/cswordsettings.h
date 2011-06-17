@@ -15,8 +15,6 @@
 
 
 class CConfigurationDialog;
-class QCheckBox;
-class QComboBox;
 class StandardWorksTab;
 class TextFiltersTab;
 
@@ -24,58 +22,22 @@ class CSwordSettingsPage: public BtConfigDialog::Page {
 
         Q_OBJECT
 
-    public:
+    public: /* Methods: */
 
         CSwordSettingsPage(CConfigurationDialog *parent = 0);
 
         void save();
 
-        /** Reimplemented from BtConfigPage. */
-        virtual const QIcon &icon() const;
+    protected: /* Methods: */
 
-        /** Reimplemented from BtConfigPage. */
-        virtual QString header() const;
+        void retranslateUi();
 
-    private:
-        StandardWorksTab* m_worksTab;
-        TextFiltersTab* m_filtersTab;
-};
+    private: /* Fields: */
 
-//Tab pages. To be used only in Sword settings page.
+        QTabWidget *m_tabWidget;
+        StandardWorksTab *m_worksTab;
+        TextFiltersTab *m_filtersTab;
 
-class StandardWorksTab: public QWidget {
-        Q_OBJECT
-    public:
-        StandardWorksTab();
-        void save();
-
-    private:
-        QComboBox* m_standardBibleCombo;
-        QComboBox* m_standardCommentaryCombo;
-        QComboBox* m_standardLexiconCombo;
-        QComboBox* m_standardDailyDevotionalCombo;
-        QComboBox* m_standardHebrewStrongCombo;
-        QComboBox* m_standardGreekStrongCombo;
-        QComboBox* m_standardHebrewMorphCombo;
-        QComboBox* m_standardGreekMorphCombo;
-};
-
-class TextFiltersTab : public QWidget {
-        Q_OBJECT
-    public:
-        TextFiltersTab();
-        void save();
-
-    private:
-        QCheckBox* m_lineBreaksCheck;
-        QCheckBox* m_verseNumbersCheck;
-        QCheckBox* m_headingsCheck;
-        QCheckBox* m_hebrewPointsCheck;
-        QCheckBox* m_hebrewCantillationCheck;
-        QCheckBox* m_morphSegmentationCheck;
-        QCheckBox* m_greekAccentsCheck;
-        QCheckBox* m_textualVariantsCheck;
-        QCheckBox* m_scriptureReferencesCheck;
 };
 
 #endif

@@ -17,7 +17,6 @@
 #include <QLabel>
 #include <QListWidget>
 #include <QListView>
-#include <QListWidgetItem>
 #include <QStackedWidget>
 #include <QVBoxLayout>
 
@@ -53,9 +52,10 @@ void BtConfigDialog::addPage(Page* pageWidget) {
 
     QListWidgetItem* item = new QListWidgetItem(m_contentsList);
     item->setIcon(pageWidget->icon());
-    item->setText(pageWidget->header());
+    item->setText(pageWidget->headerText());
     item->setTextAlignment(Qt::AlignHCenter);
     item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+    pageWidget->setListWidgetItem(item);
 
     //set the list width - it may bee too wide (if there were no pages) or too narrow
     if (m_maxItemWidth < m_contentsList->visualItemRect(item).width()) {

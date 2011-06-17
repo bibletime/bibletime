@@ -27,7 +27,7 @@
 
 
 BtIndexPage::BtIndexPage(BtModuleManagerDialog *parent)
-        : BtConfigDialog::Page(parent)
+        : BtConfigDialog::Page(util::directory::getIcon(CResMgr::bookshelfmgr::indexpage::icon), parent)
 {
     namespace DU = util::directory;
 
@@ -35,8 +35,6 @@ BtIndexPage::BtIndexPage(BtModuleManagerDialog *parent)
     QHBoxLayout *hboxLayout;
 
     m_autoDeleteOrphanedIndicesBox = new QCheckBox(this);
-    m_autoDeleteOrphanedIndicesBox->setToolTip(tr("If selected, those indexes which have no corresponding work will be deleted when BibleTime starts"));
-    m_autoDeleteOrphanedIndicesBox->setText(tr("Automatically delete orphaned indexes when BibleTime starts"));
     vboxLayout->addWidget(m_autoDeleteOrphanedIndicesBox);
 
     m_moduleList = new QTreeWidget(this);
@@ -48,19 +46,15 @@ BtIndexPage::BtIndexPage(BtModuleManagerDialog *parent)
     hboxLayout->addItem(spacerItem);
 
     m_deleteButton = new QPushButton(this);
-    m_deleteButton->setToolTip(tr("Delete the selected indexes"));
-    m_deleteButton->setText(tr("Delete"));
     hboxLayout->addWidget(m_deleteButton);
 
     m_createButton = new QPushButton(this);
-    m_createButton->setToolTip(tr("Create new indexes for the selected works"));
-    m_createButton->setText(tr("Create..."));
     hboxLayout->addWidget(m_createButton);
 
     vboxLayout->addLayout(hboxLayout);
 
     // configure the list view
-    m_moduleList->setHeaderLabels( (QStringList(tr("Work")) << tr("Index size")) );
+    m_moduleList->setHeaderLabels( (QStringList(tr("Work")) << tr("Index size")) ); /// \todo Move to retranslateUi()
     m_moduleList->setRootIsDecorated(true);
     m_moduleList->setColumnWidth(0, util::tool::mWidth(m_moduleList, 20) );
     //m_moduleList->setTextAlignment(1, Qt::AlignRight); see doc...
@@ -73,25 +67,19 @@ BtIndexPage::BtIndexPage(BtModuleManagerDialog *parent)
     m_deleteButton->setIcon(DU::getIcon(CResMgr::bookshelfmgr::indexpage::delete_icon));
 
     // connect our signals/slots
-    connect(m_createButton, SIGNAL(clicked()), this, SLOT(createIndices()));
-    connect(m_deleteButton, SIGNAL(clicked()), this, SLOT(deleteIndices()));
-    connect(CSwordBackend::instance(), SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)), SLOT(slotSwordSetupChanged()));
+    connect(m_createButton, SIGNAL(clicked()),
+            this,           SLOT(createIndices()));
+    connect(m_deleteButton, SIGNAL(clicked()),
+            this,           SLOT(deleteIndices()));
+    connect(CSwordBackend::instance(), SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)),
+            this,                      SLOT(slotSwordSetupChanged()));
 
-    populateModuleList();
+    retranslateUi(); // also calls populateModuleList();
 }
 
 BtIndexPage::~BtIndexPage() {
     CBTConfig::set( CBTConfig::autoDeleteOrphanedIndices, m_autoDeleteOrphanedIndicesBox->isChecked() );
 }
-
-const QIcon &BtIndexPage::icon() const {
-    return util::directory::getIcon(CResMgr::bookshelfmgr::indexpage::icon);
-}
-
-QString BtIndexPage::header() const {
-    return tr("Search Indexes");
-}
-
 
 /** Populates the module list with installed modules and orphaned indices */
 void BtIndexPage::populateModuleList() {
@@ -110,8 +98,6 @@ void BtIndexPage::populateModuleList() {
     m_modsWithoutIndices->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsTristate);
     m_modsWithoutIndices->setExpanded(true);
 
-
-
     const QList<CSwordModuleInfo*> &modules(CSwordBackend::instance()->moduleList());
     for (MLCI it(modules.begin()); it != modules.end(); ++it) {
         QTreeWidgetItem* item = 0;
@@ -119,18 +105,33 @@ void BtIndexPage::populateModuleList() {
         if ((*it)->hasIndex()) {
             item = new QTreeWidgetItem(m_modsWithIndices);
             item->setText(0, (*it)->name());
-            item->setText(1, QString("%1 ").arg((*it)->indexSize() / 1024) + tr("KiB"));
+            item->setText(1, tr("%1 KiB").arg((*it)->indexSize() / 1024));
             item->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled);
             item->setCheckState(0, Qt::Unchecked);
         }
         else {
             item = new QTreeWidgetItem(m_modsWithoutIndices);
             item->setText(0, (*it)->name());
-            item->setText(1, QString("0 ") + tr("KiB"));
+            item->setText(1, tr("0 KiB"));
             item->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled);
             item->setCheckState(0, Qt::Checked);
         }
     }
+}
+
+void BtIndexPage::retranslateUi() {
+    setHeaderText(tr("Search Indexes"));
+
+    m_autoDeleteOrphanedIndicesBox->setToolTip(tr("If selected, those indexes which have no corresponding work will be deleted when BibleTime starts"));
+    m_autoDeleteOrphanedIndicesBox->setText(tr("Automatically delete orphaned indexes when BibleTime starts"));
+
+    m_deleteButton->setToolTip(tr("Delete the selected indexes"));
+    m_deleteButton->setText(tr("Delete"));
+
+    m_createButton->setToolTip(tr("Create new indexes for the selected works"));
+    m_createButton->setText(tr("Create..."));
+
+    populateModuleList();
 }
 
 /** Creates indices for selected modules if no index currently exists */

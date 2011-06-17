@@ -34,11 +34,9 @@ class BtRemovePage: public BtConfigDialog::Page {
 
         BtRemovePage(BtModuleManagerDialog *parent = 0);
 
-        /** Reimplemented from BtConfigPage. */
-        virtual QString header() const;
+    public: /* Methods: */
 
-        /** Reimplemented from BtConfigPage. */
-        virtual const QIcon &icon() const;
+        void retranslateUi();
 
     private: /* Methods: */
 

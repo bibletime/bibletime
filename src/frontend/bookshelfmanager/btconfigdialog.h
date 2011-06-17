@@ -12,11 +12,13 @@
 
 #include <QDialog>
 
+#include <QIcon>
+#include <QListWidgetItem>
+
 
 class BtConfigPage;
 class QDialogButtonBox;
 class QFrame;
-class QListWidget;
 class QStackedWidget;
 class QVBoxLayout;
 
@@ -37,13 +39,40 @@ class BtConfigDialog : public QDialog {
         /** Base class for configuration dialog pages. */
         class Page : public QWidget {
 
+            friend class BtConfigDialog;
+
             public: /* Methods: */
 
-                inline Page(BtConfigDialog *parent) : QWidget(parent) {}
+                inline Page(BtConfigDialog *parent)
+                    : QWidget(parent), m_listWidgetItem(0) {}
+                inline Page(const QIcon &icon, BtConfigDialog *parent)
+                    : QWidget(parent), m_icon(icon), m_listWidgetItem(0) {}
 
-                virtual const QIcon &icon() const = 0;
+                inline const QIcon &icon() const { return m_icon; }
+                inline void setIcon(const QIcon &icon) {
+                    m_icon = icon;
+                    if (m_listWidgetItem != 0)
+                        m_listWidgetItem->setIcon(icon);
+                }
 
-                virtual QString header() const = 0;
+                inline const QString &headerText() const { return m_headerText; }
+                inline void setHeaderText(const QString &headerText) {
+                    m_headerText = headerText;
+                    if (m_listWidgetItem != 0)
+                        m_listWidgetItem->setText(headerText);
+                }
+
+            private: /* Methods: */
+
+                void setListWidgetItem(QListWidgetItem *item) {
+                    m_listWidgetItem = item;
+                }
+
+            private: /* Fields: */
+
+                QIcon m_icon;
+                QString m_headerText;
+                QListWidgetItem *m_listWidgetItem;
 
         };
 

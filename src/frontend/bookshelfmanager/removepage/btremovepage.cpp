@@ -40,11 +40,11 @@ const QString groupingOrderKey("GUI/BookshelfManager/RemovePage/grouping");
 }
 
 BtRemovePage::BtRemovePage(BtModuleManagerDialog *parent)
-        : BtConfigDialog::Page(parent)
+        : BtConfigDialog::Page(util::directory::getIcon(CResMgr::bookshelfmgr::removepage::icon), parent)
 {
     namespace DU = util::directory;
 
-    m_worksGroupBox = new QGroupBox(tr("Select &works to uninstall:"), this);
+    m_worksGroupBox = new QGroupBox(this);
     m_worksGroupBox->setFlat(true);
     QVBoxLayout *wLayout = new QVBoxLayout;
     wLayout->setContentsMargins(0, 0, 0, 0);
@@ -67,14 +67,12 @@ BtRemovePage::BtRemovePage(BtModuleManagerDialog *parent)
 
     m_uninstallGroupBox = new QGroupBox(this);
     m_uninstallGroupBox->setFlat(true);
-    retranslateUninstallGroupBox();
     QHBoxLayout *uLayout = new QHBoxLayout;
     uLayout->setContentsMargins(0, 0, 0, 0);
     m_uninstallGroupBox->setLayout(uLayout);
     uLayout->addStretch(1);
 
-    m_removeButton = new QPushButton(tr("&Remove..."), this);
-    m_removeButton->setToolTip(tr("Remove the selected works"));
+    m_removeButton = new QPushButton(this);
     m_removeButton->setIcon(DU::getIcon(CResMgr::bookshelfmgr::removepage::remove_icon));
     m_removeButton->setEnabled(false);
     uLayout->addWidget(m_removeButton, 0, Qt::AlignRight);
@@ -89,14 +87,19 @@ BtRemovePage::BtRemovePage(BtModuleManagerDialog *parent)
             this,                           SLOT(slotResetRemoveButton()));
     connect(m_bookshelfWidget->treeModel(), SIGNAL(rowsRemoved(const QModelIndex&,int,int)),
             this,                           SLOT(slotResetRemoveButton()));
+
+    retranslateUi();
 }
 
-const QIcon &BtRemovePage::icon() const {
-    return util::directory::getIcon(CResMgr::bookshelfmgr::removepage::icon);
-}
+void BtRemovePage::retranslateUi() {
+    setHeaderText(tr("Remove"));
 
-QString BtRemovePage::header() const {
-    return tr("Remove");
+    m_worksGroupBox->setTitle(tr("Select &works to uninstall:"));
+
+    m_removeButton->setText(tr("&Remove..."));
+    m_removeButton->setToolTip(tr("Remove the selected works"));
+
+    retranslateUninstallGroupBox();
 }
 
 void BtRemovePage::retranslateUninstallGroupBox() {

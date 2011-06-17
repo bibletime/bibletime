@@ -25,7 +25,7 @@
 
 
 BtLanguageSettingsPage::BtLanguageSettingsPage(CConfigurationDialog *parent)
-        : BtConfigDialog::Page(parent)
+        : BtConfigDialog::Page(util::directory::getIcon(CResMgr::settings::languages::icon), parent)
 {
     namespace DU = util::directory;
 
@@ -118,15 +118,9 @@ void BtLanguageSettingsPage::save() {
     }
 }
 
-const QIcon &BtLanguageSettingsPage::icon() const {
-    return util::directory::getIcon(CResMgr::settings::languages::icon);
-}
-
-QString BtLanguageSettingsPage::header() const {
-    return tr("Languages");
-}
-
 void BtLanguageSettingsPage::retranslateUi() {
+    setHeaderText(tr("Languages"));
+
     m_languageNamesLabel->setText(tr("Language for names of Bible books:"));
     m_swordLocaleCombo->setToolTip(tr("The languages which can be used for the biblical booknames"));
 }

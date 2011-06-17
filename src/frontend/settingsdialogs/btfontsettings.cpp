@@ -28,7 +28,7 @@
 
 
 BtFontSettingsPage::BtFontSettingsPage(CConfigurationDialog *parent)
-        : BtConfigDialog::Page(parent)
+        : BtConfigDialog::Page(util::directory::getIcon(CResMgr::settings::fonts::icon), parent)
 {
     namespace DU = util::directory;
 
@@ -148,16 +148,8 @@ void BtFontSettingsPage::useOwnFontClicked(bool isOn) {
                                     isOn ? DU::getIcon("fonts.svg") : QIcon());
 }
 
-
-const QIcon &BtFontSettingsPage::icon() const {
-    return util::directory::getIcon(CResMgr::settings::fonts::icon);
-}
-
-QString BtFontSettingsPage::header() const {
-    return tr("Fonts");
-}
-
 void BtFontSettingsPage::retranslateUi() {
+    setHeaderText(tr("Fonts"));
     m_languageLabel->setText(tr("&Language:"));
     m_languageComboBox->setToolTip(tr("The font selection below will apply to all texts in this language"));
     m_languageCheckBox->setText(tr("Use custom font"));

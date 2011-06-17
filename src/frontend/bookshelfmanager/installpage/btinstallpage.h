@@ -39,18 +39,16 @@ class BtInstallPage: public BtConfigDialog::Page {
 
         BtInstallPage(BtModuleManagerDialog *parent = 0);
 
-        /** Reimplemented from BtConfigPage. */
-        virtual const QIcon &icon() const;
-
-        /** Reimplemented from BtConfigPage. */
-        virtual QString header() const;
-
         void setInstallEnabled(bool b);
 
         QString selectedInstallPath();
 
     public slots:
         void slotSwordSetupChanged();
+
+    protected:
+
+        void retranslateUi();
 
     private:
         void initView();

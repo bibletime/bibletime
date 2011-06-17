@@ -38,12 +38,6 @@ class BtFontSettingsPage: public BtConfigDialog::Page {
 
         void save() const;
 
-        /** Reimplemented from BtConfigPage. */
-        virtual const QIcon &icon() const;
-
-        /** Reimplemented from BtConfigPage. */
-        virtual QString header() const;
-
     protected slots:
 
         // This slot is called when the "Use own font for language" button was clicked.

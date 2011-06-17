@@ -11,7 +11,7 @@
 
 #include <QCheckBox>
 #include <QComboBox>
-#include <QGridLayout>
+#include <QFormLayout>
 #include <QLabel>
 #include <QList>
 #include <QString>
@@ -26,121 +26,68 @@
 #include "util/tool.h"
 
 
-CSwordSettingsPage::CSwordSettingsPage(CConfigurationDialog *parent)
-        : BtConfigDialog::Page(parent)
+/*******************************************************************************
+  StandardWorksTab
+*******************************************************************************/
+
+class StandardWorksTab: public QWidget {
+
+    public: /* Methods: */
+
+        StandardWorksTab(CSwordSettingsPage *parent);
+
+        void save();
+
+    protected: /* Methods: */
+
+        void retranslateUi();
+
+    private: /* Fields: */
+
+        QLabel *m_explanationLabel;
+
+#define STANDARD_WORKS_TAB_FIELD(name) \
+        QLabel *m_ ## name ## Label; \
+        QComboBox *m_ ## name ## Combo
+
+        STANDARD_WORKS_TAB_FIELD(standardBible);
+        STANDARD_WORKS_TAB_FIELD(standardCommentary);
+        STANDARD_WORKS_TAB_FIELD(standardLexicon);
+        STANDARD_WORKS_TAB_FIELD(standardDailyDevotional);
+        STANDARD_WORKS_TAB_FIELD(standardHebrewStrongsLexicon);
+        STANDARD_WORKS_TAB_FIELD(standardGreekStrongsLexicon);
+        STANDARD_WORKS_TAB_FIELD(standardHebrewMorphLexicon);
+        STANDARD_WORKS_TAB_FIELD(standardGreekMorphLexicon);
+};
+
+StandardWorksTab::StandardWorksTab(CSwordSettingsPage *parent)
+    : QWidget(parent)
 {
-    QVBoxLayout *vbox = new QVBoxLayout(this);
-
-    QTabWidget* tabWidget = new QTabWidget();
-    vbox->addWidget(tabWidget);
-
-    m_worksTab = new StandardWorksTab();
-    m_filtersTab = new TextFiltersTab();
-    tabWidget->addTab(m_worksTab, tr("Standard works"));
-    tabWidget->addTab(m_filtersTab, tr("Text filters"));
-}
-
-//Standard works tab
-
-StandardWorksTab::StandardWorksTab()
-        : QWidget(0) {
     typedef QList<CSwordModuleInfo*>::const_iterator MLCI;
 
-    // move: tabCtl->addTab(currentTab, tr("Standard works"));
-    QGridLayout* gridLayout = new QGridLayout(this); //the last row is for stretching available space
-    gridLayout->setSizeConstraint(QLayout::SetMinimumSize);
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+    m_explanationLabel = new QLabel(this);
+    mainLayout->addWidget(m_explanationLabel);
 
-    gridLayout->addWidget(
-        util::tool::explanationLabel(
-            this, "",
-            tr("Standard works are used when no particular work is specified, for example "
-               "when a hyperlink into a Bible or lexicon was clicked.")),
-        0, 0, 1, 2 /*fill the horizontal space*/
-    );
+    QFormLayout *formLayout = new QFormLayout;
 
-    //Create selection boxes
+#define STANDARD_WORKS_TAB_ADD_ROW(name) \
+    if (true) { \
+        m_ ## name ## Label = new QLabel(this); \
+        m_ ## name ## Combo = new QComboBox(this); \
+        formLayout->addRow(m_ ## name ## Label, m_ ## name ## Combo); \
+    } else (void) 0
 
-    m_standardBibleCombo = new QComboBox(this);
-    QLabel* label = new QLabel( tr("Bible:"), this);
-    label->setAlignment(Qt::AlignRight);
-    label->setBuddy(m_standardBibleCombo);
-    ////label->setAutoResize(true); //? not found in docs
-    m_standardBibleCombo->setToolTip(tr("The standard Bible is used when a hyperlink into a Bible is clicked"));
+    STANDARD_WORKS_TAB_ADD_ROW(standardBible);
+    STANDARD_WORKS_TAB_ADD_ROW(standardCommentary);
+    STANDARD_WORKS_TAB_ADD_ROW(standardLexicon);
+    STANDARD_WORKS_TAB_ADD_ROW(standardDailyDevotional);
+    STANDARD_WORKS_TAB_ADD_ROW(standardHebrewStrongsLexicon);
+    STANDARD_WORKS_TAB_ADD_ROW(standardGreekStrongsLexicon);
+    STANDARD_WORKS_TAB_ADD_ROW(standardHebrewMorphLexicon);
+    STANDARD_WORKS_TAB_ADD_ROW(standardGreekMorphLexicon);
 
-    gridLayout->addWidget(label, 1, 0);
-    gridLayout->addWidget(m_standardBibleCombo, 1, 1);
-
-    m_standardCommentaryCombo = new QComboBox(this);
-    label = new QLabel( tr("Commentary:"), this);
-    label->setAlignment(Qt::AlignRight);
-    label->setBuddy(m_standardCommentaryCombo);
-    //label->setAutoResize(true);
-    m_standardCommentaryCombo->setToolTip(tr("The standard commentary is used when a hyperlink into a commentary is clicked"));
-
-    gridLayout->addWidget(label, 2, 0);
-    gridLayout->addWidget(m_standardCommentaryCombo, 2, 1);
-
-    m_standardLexiconCombo = new QComboBox(this);
-    label = new QLabel(tr("Lexicon:"), this);
-    label->setAlignment(Qt::AlignRight);
-    label->setBuddy(m_standardLexiconCombo);
-    //label->setAutoResize(true);
-    m_standardLexiconCombo->setToolTip(tr("The standard lexicon is used when a hyperlink into a lexicon is clicked"));
-
-    gridLayout->addWidget(label, 3, 0);
-    gridLayout->addWidget(m_standardLexiconCombo, 3, 1);
-
-    m_standardDailyDevotionalCombo = new QComboBox(this);
-    label = new QLabel(tr("Daily devotional:"), this);
-    label->setAlignment(Qt::AlignRight);
-    label->setBuddy(m_standardDailyDevotionalCombo);
-    //label->setAutoResize(true);
-    m_standardDailyDevotionalCombo->setToolTip(tr("The standard devotional will be used to display a short start up devotional"));
-
-    gridLayout->addWidget(label, 4, 0);
-    gridLayout->addWidget(m_standardDailyDevotionalCombo, 4, 1);
-
-    m_standardHebrewStrongCombo = new QComboBox(this);
-    label = new QLabel(tr("Hebrew Strong's lexicon:"), this);
-    label->setAlignment(Qt::AlignRight);
-    label->setBuddy(m_standardHebrewStrongCombo);
-    //label->setAutoResize(true);
-    m_standardHebrewStrongCombo->setToolTip(tr("The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked"));
-
-    gridLayout->addWidget(label, 5, 0);
-    gridLayout->addWidget(m_standardHebrewStrongCombo, 5, 1);
-
-    m_standardGreekStrongCombo = new QComboBox(this);
-    label = new QLabel(tr("Greek Strong's lexicon:"), this);
-    label->setAlignment(Qt::AlignRight);
-    label->setBuddy(m_standardGreekStrongCombo);
-    //label->setAutoResize(true);
-    m_standardGreekStrongCombo->setToolTip(tr("The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked"));
-
-    gridLayout->addWidget(label, 6, 0);
-    gridLayout->addWidget(m_standardGreekStrongCombo, 6, 1);
-
-    m_standardHebrewMorphCombo = new QComboBox(this);
-    label = new QLabel( tr("Hebrew morphological lexicon:"), this);
-    label->setAlignment(Qt::AlignRight);
-    label->setBuddy(m_standardHebrewMorphCombo);
-    //label->setAutoResize(true);
-    m_standardHebrewMorphCombo->setToolTip(tr("The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked"));
-
-    gridLayout->addWidget(label, 7, 0);
-    gridLayout->addWidget(m_standardHebrewMorphCombo, 7, 1);
-
-    m_standardGreekMorphCombo = new QComboBox(this);
-    label = new QLabel(tr("Greek morphological lexicon:"), this);
-    label->setAlignment(Qt::AlignRight);
-    label->setBuddy(m_standardGreekMorphCombo);
-    //label->setAutoResize(true);
-    m_standardGreekMorphCombo->setToolTip(tr("The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked"));
-
-    gridLayout->addWidget(label, 8, 0);
-    gridLayout->addWidget(m_standardGreekMorphCombo, 8, 1);
-
-    gridLayout->setRowStretch(9, 5);
+    mainLayout->addLayout(formLayout);
 
     //fill the comboboxes with the right modules
 
@@ -159,19 +106,19 @@ StandardWorksTab::StandardWorksTab()
             case CSwordModuleInfo::Lexicon: {
                 bool inserted = false;
                 if ((*it)->has(CSwordModuleInfo::HebrewDef)) {
-                    m_standardHebrewStrongCombo->addItem(modDescript);
+                    m_standardHebrewStrongsLexiconCombo->addItem(modDescript);
                     inserted = true;
                 }
                 if ((*it)->has(CSwordModuleInfo::GreekDef)) {
-                    m_standardGreekStrongCombo->addItem(modDescript);
+                    m_standardGreekStrongsLexiconCombo->addItem(modDescript);
                     inserted = true;
                 }
                 if ((*it)->has(CSwordModuleInfo::HebrewParse)) {
-                    m_standardHebrewMorphCombo->addItem(modDescript);
+                    m_standardHebrewMorphLexiconCombo->addItem(modDescript);
                     inserted = true;
                 }
                 if ((*it)->has(CSwordModuleInfo::GreekParse)) {
-                    m_standardGreekMorphCombo->addItem(modDescript);
+                    m_standardGreekMorphLexiconCombo->addItem(modDescript);
                     inserted = true;
                 }
                 if ((*it)->category() == CSwordModuleInfo::DailyDevotional) {
@@ -193,34 +140,23 @@ StandardWorksTab::StandardWorksTab()
     QList<QComboBox*> comboList;
     QStringList moduleList;
 
+#define STANDARD_WORKS_TAB_CASE(name) \
+    case CBTConfig::name: \
+        comboList.append(m_ ## name ## Combo); \
+        break
+
     for (int i = 0; i <= (int)CBTConfig::lastModuleType; ++i) {
         //fill the combobox list in the right order (i.e. same order as the CBTConfig::module enum list)
         CBTConfig::modules moduleType = (CBTConfig::modules)(i);
         switch (moduleType) {
-            case CBTConfig::standardBible:
-                comboList.append(m_standardBibleCombo);
-                break;
-            case CBTConfig::standardCommentary:
-                comboList.append(m_standardCommentaryCombo);
-                break;
-            case CBTConfig::standardLexicon:
-                comboList.append(m_standardLexiconCombo);
-                break;
-            case CBTConfig::standardDailyDevotional:
-                comboList.append(m_standardDailyDevotionalCombo);
-                break;
-            case CBTConfig::standardHebrewStrongsLexicon:
-                comboList.append(m_standardHebrewStrongCombo);
-                break;
-            case CBTConfig::standardGreekStrongsLexicon:
-                comboList.append(m_standardGreekStrongCombo);
-                break;
-            case CBTConfig::standardHebrewMorphLexicon:
-                comboList.append(m_standardHebrewMorphCombo);
-                break;
-            case CBTConfig::standardGreekMorphLexicon:
-                comboList.append(m_standardGreekMorphCombo);
-                break;
+            STANDARD_WORKS_TAB_CASE(standardBible);
+            STANDARD_WORKS_TAB_CASE(standardCommentary);
+            STANDARD_WORKS_TAB_CASE(standardLexicon);
+            STANDARD_WORKS_TAB_CASE(standardDailyDevotional);
+            STANDARD_WORKS_TAB_CASE(standardHebrewStrongsLexicon);
+            STANDARD_WORKS_TAB_CASE(standardGreekStrongsLexicon);
+            STANDARD_WORKS_TAB_CASE(standardHebrewMorphLexicon);
+            STANDARD_WORKS_TAB_CASE(standardGreekMorphLexicon);
         }
         ; //switch
 
@@ -254,114 +190,26 @@ StandardWorksTab::StandardWorksTab()
     }
 }
 
-
-TextFiltersTab::TextFiltersTab() {
-    QVBoxLayout* layout = new QVBoxLayout(this);
-    layout->setMargin(5);
-    QWidget* eLabel = util::tool::explanationLabel(
-                          this, "",
-                          tr("Filters control the appearance of text. Here you can specify "
-                             "default settings for all filters. You can override these "
-                             "settings in each display window.")
-                      );
-    eLabel->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Preferred);
-    eLabel->setMaximumHeight(50);
-    eLabel->setMinimumWidth(300);
-    layout->setSpacing(2);
-    layout->addWidget(eLabel);
-
-    m_lineBreaksCheck = new QCheckBox(this);
-    m_lineBreaksCheck->setText(tr("Insert line break after each verse"));
-    m_lineBreaksCheck->setChecked(CBTConfig::get(CBTConfig::lineBreaks));
-    layout->addWidget(m_lineBreaksCheck);
-
-    m_verseNumbersCheck = new QCheckBox(this);
-    m_verseNumbersCheck->setText(tr("Show verse numbers"));
-    m_verseNumbersCheck->setChecked(CBTConfig::get(CBTConfig::verseNumbers));
-    layout->addWidget(m_verseNumbersCheck);
-
-    m_headingsCheck = new QCheckBox(this);
-    m_headingsCheck->setText(tr("Show section headings"));
-    m_headingsCheck->setChecked(CBTConfig::get(CBTConfig::headings));
-    layout->addWidget(m_headingsCheck);
-
-
-    m_scriptureReferencesCheck = new QCheckBox(this);
-    m_scriptureReferencesCheck->setText(tr("Show scripture cross-references"));
-    m_scriptureReferencesCheck->setChecked(CBTConfig::get(CBTConfig::scriptureReferences));
-    layout->addWidget(m_scriptureReferencesCheck);
-
-    m_greekAccentsCheck = new QCheckBox(this);
-    m_greekAccentsCheck->setText(tr("Show Greek accents"));
-    m_greekAccentsCheck->setChecked(CBTConfig::get(CBTConfig::greekAccents));
-    layout->addWidget(m_greekAccentsCheck);
-
-    m_hebrewPointsCheck = new QCheckBox(this);
-    m_hebrewPointsCheck->setText(tr("Show Hebrew vowel points"));
-    m_hebrewPointsCheck->setChecked(CBTConfig::get(CBTConfig::hebrewPoints));
-    layout->addWidget(m_hebrewPointsCheck);
-
-    m_hebrewCantillationCheck = new QCheckBox(this);
-    m_hebrewCantillationCheck->setText(tr("Show Hebrew cantillation marks"));
-    m_hebrewCantillationCheck->setChecked(CBTConfig::get(CBTConfig::hebrewCantillation));
-    layout->addWidget(m_hebrewCantillationCheck);
-
-    m_morphSegmentationCheck = new QCheckBox(this);
-    m_morphSegmentationCheck->setText(tr("Show morph segmentation"));
-    m_morphSegmentationCheck->setChecked(CBTConfig::get(CBTConfig::morphSegmentation));
-    layout->addWidget(m_morphSegmentationCheck);
-
-    m_textualVariantsCheck = new QCheckBox(this);
-    m_textualVariantsCheck->setText(tr("Use textual variants"));
-    m_textualVariantsCheck->setChecked(CBTConfig::get(CBTConfig::textualVariants));
-    layout->addWidget(m_textualVariantsCheck);
-
-    layout->addStretch(4);
-}
-
-void CSwordSettingsPage::save() {
-    m_worksTab->save();
-    m_filtersTab->save();
-}
-
-const QIcon &CSwordSettingsPage::icon() const {
-    return util::directory::getIcon(CResMgr::settings::sword::icon);
-}
-
-QString CSwordSettingsPage::header() const {
-    return tr("Desk");
-}
-
 void StandardWorksTab::save() {
     for (int i = 0; i <= (int)CBTConfig::lastModuleType; ++i) {
-        QString moduleDescription = QString::null;
+        QString moduleDescription;
+
+
+#define STANDARD_WORKS_TAB_SCASE(name) \
+        case CBTConfig::name: \
+            moduleDescription = m_ ## name ## Combo->currentText(); \
+            break;
 
         CBTConfig::modules moduleType = (CBTConfig::modules)(i);
         switch (moduleType) {
-            case CBTConfig::standardBible:
-                moduleDescription = m_standardBibleCombo->currentText();
-                break;
-            case CBTConfig::standardCommentary:
-                moduleDescription = m_standardCommentaryCombo->currentText();
-                break;
-            case CBTConfig::standardLexicon:
-                moduleDescription = m_standardLexiconCombo->currentText();
-                break;
-            case CBTConfig::standardDailyDevotional:
-                moduleDescription = m_standardDailyDevotionalCombo->currentText();
-                break;
-            case CBTConfig::standardHebrewStrongsLexicon:
-                moduleDescription = m_standardHebrewStrongCombo->currentText();
-                break;
-            case CBTConfig::standardGreekStrongsLexicon:
-                moduleDescription = m_standardGreekStrongCombo->currentText();
-                break;
-            case CBTConfig::standardHebrewMorphLexicon:
-                moduleDescription = m_standardHebrewMorphCombo->currentText();
-                break;
-            case CBTConfig::standardGreekMorphLexicon:
-                moduleDescription = m_standardGreekMorphCombo->currentText();
-                break;
+            STANDARD_WORKS_TAB_SCASE(standardBible);
+            STANDARD_WORKS_TAB_SCASE(standardCommentary);
+            STANDARD_WORKS_TAB_SCASE(standardLexicon);
+            STANDARD_WORKS_TAB_SCASE(standardDailyDevotional);
+            STANDARD_WORKS_TAB_SCASE(standardHebrewStrongsLexicon);
+            STANDARD_WORKS_TAB_SCASE(standardGreekStrongsLexicon);
+            STANDARD_WORKS_TAB_SCASE(standardHebrewMorphLexicon);
+            STANDARD_WORKS_TAB_SCASE(standardGreekMorphLexicon);
             default:
                 qWarning("Unhandled module type.");
         };
@@ -371,17 +219,166 @@ void StandardWorksTab::save() {
     }
 }
 
+void StandardWorksTab::retranslateUi() {
+    util::tool::initExplanationLabel(
+        m_explanationLabel, "",
+        tr("Standard works are used when no particular work is specified, for example "
+           "when a hyperlink into a Bible or lexicon was clicked."));
 
-void TextFiltersTab::save() {
-    CBTConfig::set(CBTConfig::lineBreaks, m_lineBreaksCheck->isChecked());
-    CBTConfig::set(CBTConfig::verseNumbers, m_verseNumbersCheck->isChecked());
-    CBTConfig::set(CBTConfig::headings, m_headingsCheck->isChecked());
-    CBTConfig::set(CBTConfig::scriptureReferences, m_scriptureReferencesCheck->isChecked());
-    CBTConfig::set(CBTConfig::hebrewPoints, m_hebrewPointsCheck->isChecked());
-    CBTConfig::set(CBTConfig::hebrewCantillation, m_hebrewCantillationCheck->isChecked());
-    CBTConfig::set(CBTConfig::morphSegmentation, m_morphSegmentationCheck->isChecked());
-    CBTConfig::set(CBTConfig::greekAccents, m_greekAccentsCheck->isChecked());
-    CBTConfig::set(CBTConfig::textualVariants, m_textualVariantsCheck->isChecked());
+    m_standardBibleLabel->setText(tr("Bible:"));
+    m_standardBibleCombo->setToolTip(tr("The standard Bible is used when a hyperlink into a Bible is clicked"));
+
+    m_standardCommentaryLabel->setText(tr("Commentary:"));
+    m_standardCommentaryCombo->setToolTip(tr("The standard commentary is used when a hyperlink into a commentary is clicked"));
+
+    m_standardLexiconLabel->setText(tr("Lexicon:"));
+    m_standardLexiconCombo->setToolTip(tr("The standard lexicon is used when a hyperlink into a lexicon is clicked"));
+
+    m_standardDailyDevotionalLabel->setText(tr("Daily devotional:"));
+    m_standardDailyDevotionalCombo->setToolTip(tr("The standard devotional will be used to display a short start up devotional"));
+
+    m_standardHebrewStrongsLexiconLabel->setText(tr("Hebrew Strong's lexicon:"));
+    m_standardHebrewStrongsLexiconCombo->setToolTip(tr("The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked"));
+
+    m_standardGreekStrongsLexiconLabel->setText(tr("Greek Strong's lexicon:"));
+    m_standardGreekStrongsLexiconCombo->setToolTip(tr("The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked"));
+
+    m_standardHebrewMorphLexiconLabel->setText(tr("Hebrew morphological lexicon:"));
+    m_standardHebrewMorphLexiconCombo->setToolTip(tr("The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked"));
+
+    m_standardGreekMorphLexiconLabel->setText(tr("Greek morphological lexicon:"));
+    m_standardGreekMorphLexiconCombo->setToolTip(tr("The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked"));
 }
 
 
+/*******************************************************************************
+  TextFiltersTab
+*******************************************************************************/
+
+class TextFiltersTab: public QWidget {
+
+    public: /* Methods: */
+
+        TextFiltersTab(CSwordSettingsPage *parent);
+
+        void save();
+
+    protected: /* Methods: */
+
+        void retranslateUi();
+
+    private: /* Fields: */
+
+        QLabel *m_explanationLabel;
+
+#define TEXT_FILTERS_TAB_FIELD(name) QCheckBox *m_ ## name ## Check
+
+        TEXT_FILTERS_TAB_FIELD(lineBreaks);
+        TEXT_FILTERS_TAB_FIELD(verseNumbers);
+        TEXT_FILTERS_TAB_FIELD(headings);
+        TEXT_FILTERS_TAB_FIELD(hebrewPoints);
+        TEXT_FILTERS_TAB_FIELD(hebrewCantillation);
+        TEXT_FILTERS_TAB_FIELD(morphSegmentation);
+        TEXT_FILTERS_TAB_FIELD(greekAccents);
+        TEXT_FILTERS_TAB_FIELD(textualVariants);
+        TEXT_FILTERS_TAB_FIELD(scriptureReferences);
+
+};
+
+TextFiltersTab::TextFiltersTab(CSwordSettingsPage *parent)
+    : QWidget(parent)
+{
+    QVBoxLayout *layout = new QVBoxLayout(this);
+    layout->setMargin(5);
+
+    m_explanationLabel = new QLabel(this);
+    m_explanationLabel->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Preferred);
+    m_explanationLabel->setMaximumHeight(50);
+    m_explanationLabel->setMinimumWidth(300);
+    layout->setSpacing(2);
+    layout->addWidget(m_explanationLabel);
+
+#define TEXT_FILTERS_TAB_ADD_ROW(name) \
+    m_ ## name ## Check = new QCheckBox(this); \
+    m_ ## name ## Check->setChecked(CBTConfig::get(CBTConfig::name)); \
+    layout->addWidget(m_ ## name ## Check);
+
+    TEXT_FILTERS_TAB_ADD_ROW(lineBreaks);
+    TEXT_FILTERS_TAB_ADD_ROW(verseNumbers);
+    TEXT_FILTERS_TAB_ADD_ROW(headings);
+    TEXT_FILTERS_TAB_ADD_ROW(hebrewPoints);
+    TEXT_FILTERS_TAB_ADD_ROW(hebrewCantillation);
+    TEXT_FILTERS_TAB_ADD_ROW(morphSegmentation);
+    TEXT_FILTERS_TAB_ADD_ROW(greekAccents);
+    TEXT_FILTERS_TAB_ADD_ROW(textualVariants);
+    TEXT_FILTERS_TAB_ADD_ROW(scriptureReferences);
+
+    layout->addStretch(4);
+}
+
+void TextFiltersTab::save() {
+#define TEXT_FILTERS_TAB_SAVE(name) CBTConfig::set(CBTConfig::name, m_ ## name ## Check->isChecked())
+
+    TEXT_FILTERS_TAB_SAVE(lineBreaks);
+    TEXT_FILTERS_TAB_SAVE(verseNumbers);
+    TEXT_FILTERS_TAB_SAVE(headings);
+    TEXT_FILTERS_TAB_SAVE(hebrewPoints);
+    TEXT_FILTERS_TAB_SAVE(hebrewCantillation);
+    TEXT_FILTERS_TAB_SAVE(morphSegmentation);
+    TEXT_FILTERS_TAB_SAVE(greekAccents);
+    TEXT_FILTERS_TAB_SAVE(textualVariants);
+    TEXT_FILTERS_TAB_SAVE(scriptureReferences);
+}
+
+
+void TextFiltersTab::retranslateUi() {
+    util::tool::initExplanationLabel(m_explanationLabel, "",
+          tr("Filters control the appearance of text. Here you can specify "
+             "default settings for all filters. You can override these "
+             "settings in each display window."));
+
+    m_lineBreaksCheck->setText(tr("Insert line break after each verse"));
+    m_verseNumbersCheck->setText(tr("Show verse numbers"));
+    m_headingsCheck->setText(tr("Show section headings"));
+    m_scriptureReferencesCheck->setText(tr("Show scripture cross-references"));
+    m_greekAccentsCheck->setText(tr("Show Greek accents"));
+    m_hebrewPointsCheck->setText(tr("Show Hebrew vowel points"));
+    m_hebrewCantillationCheck->setText(tr("Show Hebrew cantillation marks"));
+    m_morphSegmentationCheck->setText(tr("Show morph segmentation"));
+    m_textualVariantsCheck->setText(tr("Use textual variants"));
+}
+
+/*******************************************************************************
+  CSwordSettingsPage
+*******************************************************************************/
+
+CSwordSettingsPage::CSwordSettingsPage(CConfigurationDialog *parent)
+        : BtConfigDialog::Page(util::directory::getIcon(CResMgr::settings::sword::icon), parent)
+{
+    static const QString nullString;
+
+    m_tabWidget = new QTabWidget(this);
+        m_worksTab = new StandardWorksTab(this);
+        m_tabWidget->addTab(m_worksTab, nullString);
+
+        m_filtersTab = new TextFiltersTab(this);
+        m_tabWidget->addTab(m_filtersTab, nullString);
+
+
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+    mainLayout->addWidget(m_tabWidget);
+
+    retranslateUi();
+}
+
+void CSwordSettingsPage::retranslateUi() {
+    setHeaderText(tr("Desk"));
+
+    m_tabWidget->setTabText(m_tabWidget->indexOf(m_worksTab), tr("Standard works"));
+    m_tabWidget->setTabText(m_tabWidget->indexOf(m_filtersTab), tr("Text filters"));
+}
+
+void CSwordSettingsPage::save() {
+    m_worksTab->save();
+    m_filtersTab->save();
+}

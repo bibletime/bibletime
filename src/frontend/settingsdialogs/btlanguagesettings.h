@@ -31,12 +31,6 @@ class BtLanguageSettingsPage: public BtConfigDialog::Page {
 
         void save();
 
-        /** Reimplemented from BtConfigPage. */
-        virtual const QIcon &icon() const;
-
-        /** Reimplemented from BtConfigPage. */
-        virtual QString header() const;
-
     private: /* Methods: */
 
         void retranslateUi();

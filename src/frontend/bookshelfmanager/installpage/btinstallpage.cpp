@@ -48,7 +48,7 @@ const QString selectedModuleKey("GUI/BookshelfManager/InstallPage/selectedModule
 // *********************************************************
 
 BtInstallPage::BtInstallPage(BtModuleManagerDialog *parent)
-        : BtConfigDialog::Page(parent)
+        : BtConfigDialog::Page(util::directory::getIcon(CResMgr::bookshelfmgr::installpage::icon), parent)
         , m_groupingOrder(groupingOrderKey)
         , m_modulesSelected(0)
         , m_modulesSelectedSources(0)
@@ -59,6 +59,8 @@ BtInstallPage::BtInstallPage(BtModuleManagerDialog *parent)
     // Initialize widgets:
     initView();
     initConnections();
+
+    retranslateUi();
 }
 
 void BtInstallPage::setInstallEnabled(bool b) {
@@ -74,25 +76,20 @@ void BtInstallPage::initView() {
     namespace DU = util::directory;
 
     // Warning label:
-
-    m_warningLabel = util::tool::explanationLabel(this, tr("WARNING!!!"),
-        tr("If you live in a persecuted country and don't want to risk "
-           "detection don't use remote sources."));
+    m_warningLabel = new QLabel(this);
 
     // Source chooser:
-    m_sourceGroupBox = new QGroupBox(tr("Select installation &source:"), this);
+    m_sourceGroupBox = new QGroupBox(this);
     m_sourceGroupBox->setFlat(true);
 
     m_sourceComboBox = new QComboBox(this);
     m_sourceComboBox->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
     initSourcesCombo();
 
-    m_sourceAddButton = new QPushButton(tr("&Add..."));
-    m_sourceAddButton ->setToolTip(tr("Add new source"));
+    m_sourceAddButton = new QPushButton(this);
     m_sourceAddButton ->setIcon(DU::getIcon(CResMgr::bookshelfmgr::installpage::add_icon));
 
-    m_sourceDeleteButton = new QPushButton(tr("&Delete..."));
-    m_sourceDeleteButton->setToolTip(tr("Delete this source"));
+    m_sourceDeleteButton = new QPushButton(this);
     m_sourceDeleteButton->setIcon(DU::getIcon(CResMgr::bookshelfmgr::installpage::delete_icon));
 
     QHBoxLayout *sourceChooserLayout = new QHBoxLayout();
@@ -103,7 +100,7 @@ void BtInstallPage::initView() {
     m_sourceGroupBox->setLayout(sourceChooserLayout);
 
     // Works chooser:
-    m_worksGroupBox = new QGroupBox(tr("Select &works to install:"), this);
+    m_worksGroupBox = new QGroupBox(this);
     m_worksGroupBox->setFlat(true);
     m_worksLayout = new QStackedLayout();
     m_worksGroupBox->setLayout(m_worksLayout);
@@ -114,22 +111,19 @@ void BtInstallPage::initView() {
     m_installGroupBox->setFlat(true);
     retranslateInstallGroupBox();
 
-    m_pathLabel = new QLabel(tr("Install &folder:"));
+    m_pathLabel = new QLabel(this);
     m_pathCombo = new QComboBox(this);
     m_pathCombo->setMinimumContentsLength(20);
     m_pathCombo->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLengthWithIcon);
     m_pathCombo->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
-    m_pathCombo->setToolTip(tr("The folder where the new works will be installed"));
     m_pathCombo->view()->setTextElideMode(Qt::ElideMiddle);
     m_pathLabel->setBuddy(m_pathCombo);
     initPathCombo();
 
     m_configurePathButton = new QToolButton(this);
-    m_configurePathButton->setToolTip(tr("Configure folders where works are installed and found"));
     m_configurePathButton->setIcon(DU::getIcon(CResMgr::bookshelfmgr::installpage::path_icon));
 
-    m_installButton = new QPushButton(tr("&Install..."), this);
-    m_installButton->setToolTip(tr("Install or update selected works"));
+    m_installButton = new QPushButton(this);
     m_installButton->setIcon(DU::getIcon(CResMgr::bookshelfmgr::installpage::install_icon));
     m_installButton->setEnabled(false);
 
@@ -266,6 +260,30 @@ void BtInstallPage::retranslateInstallGroupBox() {
     } else {
         m_installGroupBox->setTitle(tr("Start installation:"));
     }
+}
+
+void BtInstallPage::retranslateUi() {
+    setHeaderText(tr("Install/Update"));
+
+    util::tool::initExplanationLabel(m_warningLabel, tr("WARNING!!!"),
+            tr("If you live in a persecuted country and don't want to risk "
+               "detection don't use remote sources."));
+
+    m_sourceGroupBox->setTitle(tr("Select installation &source:"));
+    m_sourceAddButton->setText(tr("&Add..."));
+    m_sourceAddButton ->setToolTip(tr("Add new source"));
+    m_sourceDeleteButton->setText(tr("&Delete..."));
+    m_sourceDeleteButton->setToolTip(tr("Delete this source"));
+
+    m_worksGroupBox->setTitle(tr("Select &works to install:"));
+
+    m_pathLabel->setText(tr("Install &folder:"));
+    m_pathCombo->setToolTip(tr("The folder where the new works will be installed"));
+    m_configurePathButton->setToolTip(tr("Configure folders where works are installed and found"));
+    m_installButton->setText(tr("&Install..."));
+    m_installButton->setToolTip(tr("Install or update selected works"));
+
+    retranslateInstallGroupBox();
 }
 
 void BtInstallPage::slotGroupingOrderChanged(const BtBookshelfTreeModel::Grouping &g) {
@@ -411,16 +429,6 @@ void BtInstallPage::slotSelectedModulesChanged() {
 
     m_installButton->setEnabled(m_modulesSelected > 0);
     retranslateInstallGroupBox();
-}
-
-// implement the BtConfigPage methods
-
-const QIcon &BtInstallPage::icon() const {
-    return util::directory::getIcon(CResMgr::bookshelfmgr::installpage::icon);
-}
-
-QString BtInstallPage::header() const {
-    return tr("Install/Update");
 }
 
 void BtInstallPage::slotSwordSetupChanged() {

@@ -18,32 +18,36 @@
 class CConfigurationDialog;
 class QCheckBox;
 class QComboBox;
+class QLabel;
 class QWebView;
 
 class CDisplaySettingsPage: public BtConfigDialog::Page {
 
         Q_OBJECT
 
-    public:
+    public: /* Methods: */
 
         CDisplaySettingsPage(CConfigurationDialog *parent = 0);
 
         void save();
 
-        /** Reimplemented from BtConfigPage. */
-        virtual const QIcon &icon() const;
+    protected: /* Methods: */
 
-        /** Reimplemented from BtConfigPage. */
-        virtual QString header() const;
+        void retranslateUi();
 
     protected slots:
         /** Update the style preview widget. */
         void updateStylePreview();
 
-    private:
+    private: /* Fields: */
+
         QCheckBox* m_showLogoCheck;
+        QLabel *m_explanationLabel;
         QComboBox* m_styleChooserCombo;
+        QLabel *m_availableLabel;
         QWebView* m_stylePreviewViewer;
+        QLabel *m_previewLabel;
+
 };
 
 #endif

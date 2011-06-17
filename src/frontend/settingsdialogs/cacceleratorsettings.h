@@ -21,6 +21,7 @@ class BtActionCollection;
 class BtShortcutsEditor;
 class CConfigurationDialog;
 class QComboBox;
+class QLabel;
 class QStackedWidget;
 
 /**
@@ -34,14 +35,12 @@ class CAcceleratorSettingsPage: public BtConfigDialog::Page {
     public: /* Methods: */
 
         CAcceleratorSettingsPage(CConfigurationDialog *parent = 0);
-        ~CAcceleratorSettingsPage();
+
         void save();
 
-        /** Reimplemented from BtConfigPage. */
-        virtual const QIcon &icon() const;
+    protected: /* Methods: */
 
-        /** Reimplemented from BtConfigPage. */
-        virtual QString header() const;
+        void retranslateUi();
 
     protected slots:
 
@@ -79,6 +78,7 @@ class CAcceleratorSettingsPage: public BtConfigDialog::Page {
         WindowType m_lexicon;
         WindowType m_book;
 
+        QLabel *m_actionGroupLabel;
         QComboBox* m_typeChooser;
         QStackedWidget* m_keyChooserStack;
 

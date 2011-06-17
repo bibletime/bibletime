@@ -47,27 +47,19 @@ QSize CWebViewerWidget::sizeHint () const {
 
 /** Initializes the startup section of the OD. */
 CDisplaySettingsPage::CDisplaySettingsPage(CConfigurationDialog *parent)
-        : BtConfigDialog::Page(parent)
+        : BtConfigDialog::Page(util::directory::getIcon(CResMgr::settings::startup::icon), parent)
 {
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
 
     { //startup logo
         m_showLogoCheck = new QCheckBox(this);
-        m_showLogoCheck->setText(tr("Show startup logo"));
-        m_showLogoCheck->setToolTip(tr("Show the BibleTime logo on startup"));
-
         m_showLogoCheck->setChecked(CBTConfig::get(CBTConfig::logo));
         mainLayout->addWidget(m_showLogoCheck);
     }
     mainLayout->addSpacing(20);
 
-    mainLayout->addWidget(
-        util::tool::explanationLabel(
-            this,
-            tr("Display templates"),
-            tr("Display templates define how text is displayed.")
-        )
-    );
+    m_explanationLabel = new QLabel(this);
+    mainLayout->addWidget(m_explanationLabel);
 
     QHBoxLayout* hboxlayout = new QHBoxLayout();
 
@@ -75,9 +67,9 @@ CDisplaySettingsPage::CDisplaySettingsPage(CConfigurationDialog *parent)
     connect( m_styleChooserCombo, SIGNAL( activated( int ) ),
              this, SLOT( updateStylePreview() ) );
 
-    QLabel* availableLabel = new QLabel(tr("Available display styles:"), this);
-    availableLabel->setBuddy(m_styleChooserCombo);
-    hboxlayout->addWidget(availableLabel);
+    m_availableLabel = new QLabel(this);
+    m_availableLabel->setBuddy(m_styleChooserCombo);
+    hboxlayout->addWidget(m_availableLabel);
     hboxlayout->addWidget( m_styleChooserCombo );
     hboxlayout->addStretch();
     mainLayout->addLayout( hboxlayout );
@@ -85,9 +77,9 @@ CDisplaySettingsPage::CDisplaySettingsPage(CConfigurationDialog *parent)
     QWidget* webViewWidget = new CWebViewerWidget(this);
     QLayout* webViewLayout = new QVBoxLayout(webViewWidget);
     m_stylePreviewViewer = new QWebView(webViewWidget);
-    QLabel* previewLabel = new QLabel(tr("Style preview"), webViewWidget);
-    previewLabel->setBuddy(m_stylePreviewViewer);
-    webViewLayout->addWidget(previewLabel);
+    m_previewLabel = new QLabel(webViewWidget);
+    m_previewLabel->setBuddy(m_stylePreviewViewer);
+    webViewLayout->addWidget(m_previewLabel);
     webViewLayout->addWidget(m_stylePreviewViewer);
     webViewWidget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
     mainLayout->addWidget(webViewWidget);
@@ -103,7 +95,25 @@ CDisplaySettingsPage::CDisplaySettingsPage(CConfigurationDialog *parent)
         }
     }
 
-    updateStylePreview(); //render it
+    retranslateUi(); // also calls updateStylePreview();
+}
+
+void CDisplaySettingsPage::retranslateUi() {
+    setHeaderText(tr("Display"));
+
+    util::tool::initExplanationLabel(
+        m_explanationLabel,
+        tr("Display templates"),
+        tr("Display templates define how text is displayed.")
+    );
+
+    m_showLogoCheck->setText(tr("Show startup logo"));
+    m_showLogoCheck->setToolTip(tr("Show the BibleTime logo on startup"));
+
+    m_availableLabel->setText(tr("Available display styles:"));
+    m_previewLabel->setText(tr("Style preview"));
+
+    updateStylePreview();
 }
 
 
@@ -173,14 +183,3 @@ void CDisplaySettingsPage::save() {
     CBTConfig::set
     ( CBTConfig::displayStyle, m_styleChooserCombo->currentText() );
 }
-
-// implement the BtConfigPage methods
-
-const QIcon &CDisplaySettingsPage::icon() const {
-    return util::directory::getIcon(CResMgr::settings::startup::icon);
-}
-
-QString CDisplaySettingsPage::header() const {
-    return tr("Display");
-}
-
