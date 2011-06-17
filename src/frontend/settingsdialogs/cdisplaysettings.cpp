@@ -11,6 +11,7 @@
 
 #include <QCheckBox>
 #include <QComboBox>
+#include <QDebug>
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QWebView>

@@ -11,6 +11,7 @@
 
 #include <QApplication>
 #include <QComboBox>
+#include <QDebug>
 #include <QGroupBox>
 #include <QHBoxLayout>
 #include <QHeaderView>

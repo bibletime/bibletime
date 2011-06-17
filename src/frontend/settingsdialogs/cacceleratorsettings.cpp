@@ -10,6 +10,7 @@
 #include "frontend/settingsdialogs/cacceleratorsettings.h"
 
 #include <QComboBox>
+#include <QDebug>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QList>

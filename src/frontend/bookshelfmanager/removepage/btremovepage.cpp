@@ -13,6 +13,7 @@
 #include "frontend/bookshelfmanager/removepage/btremovepage.h"
 
 #include <QAction>
+#include <QDebug>
 #include <QGroupBox>
 #include <QHBoxLayout>
 #include <QHeaderView>
