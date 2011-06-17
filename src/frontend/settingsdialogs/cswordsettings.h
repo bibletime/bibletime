@@ -14,15 +14,19 @@
 #include <QWidget>
 
 
+class CConfigurationDialog;
 class QCheckBox;
 class QComboBox;
 class StandardWorksTab;
 class TextFiltersTab;
 
-class CSwordSettingsPage : public BtConfigPage {
+class CSwordSettingsPage: public BtConfigDialog::Page {
+
         Q_OBJECT
+
     public:
-        CSwordSettingsPage(QWidget *parent = 0);
+
+        CSwordSettingsPage(CConfigurationDialog *parent = 0);
 
         void save();
 

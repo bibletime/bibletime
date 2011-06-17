@@ -19,19 +19,19 @@
 #include "backend/config/cbtconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
+#include "frontend/bookshelfmanager/btmodulemanagerdialog.h"
 #include "frontend/btmoduleindexdialog.h"
 #include "util/directory.h"
 #include "util/cresmgr.h"
 #include "util/tool.h"
 
 
-BtIndexPage::BtIndexPage(QWidget *parent)
-        : BtConfigPage(parent)
+BtIndexPage::BtIndexPage(BtModuleManagerDialog *parent)
+        : BtConfigDialog::Page(parent)
 {
     namespace DU = util::directory;
 
-    Q_ASSERT(qobject_cast<QVBoxLayout*>(layout()) != 0);
-    QVBoxLayout *vboxLayout = static_cast<QVBoxLayout*>(layout());
+    QVBoxLayout *vboxLayout = new QVBoxLayout(this);
     QHBoxLayout *hboxLayout;
 
     m_autoDeleteOrphanedIndicesBox = new QCheckBox(this);

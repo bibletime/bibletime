@@ -47,8 +47,8 @@ const QString selectedModuleKey("GUI/BookshelfManager/InstallPage/selectedModule
 // *********** Config dialog page: Install/Update **********
 // *********************************************************
 
-BtInstallPage::BtInstallPage(QWidget *parent)
-        : BtConfigPage(parent)
+BtInstallPage::BtInstallPage(BtModuleManagerDialog *parent)
+        : BtConfigDialog::Page(parent)
         , m_groupingOrder(groupingOrderKey)
         , m_modulesSelected(0)
         , m_modulesSelectedSources(0)
@@ -141,8 +141,7 @@ void BtInstallPage::initView() {
     pathLayout->addWidget(m_installButton);
     m_installGroupBox->setLayout(pathLayout);
 
-    Q_ASSERT(qobject_cast<QVBoxLayout*>(layout()) != 0);
-    QVBoxLayout *mainLayout = static_cast<QVBoxLayout*>(layout());
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
     mainLayout->addWidget(m_warningLabel);
     mainLayout->addWidget(m_sourceGroupBox);
     mainLayout->addWidget(m_worksGroupBox, 1);
@@ -237,7 +236,7 @@ void BtInstallPage::activateSource(const sword::InstallSource &src) {
     qApp->setOverrideCursor(Qt::WaitCursor);
     BtInstallPageWorksWidget *w = m_sourceMap.value(QString(src.caption), 0);
     if (w == 0) {
-        if (parentDialog() != 0) parentDialog()->setEnabled(false);
+        window()->setEnabled(false);
         qApp->processEvents();
         w = new BtInstallPageWorksWidget(src, m_groupingOrder, this);
         m_sourceMap.insert(QString(src.caption), w);
@@ -246,7 +245,7 @@ void BtInstallPage::activateSource(const sword::InstallSource &src) {
                 this,           SLOT(slotGroupingOrderChanged(const BtBookshelfTreeModel::Grouping&)));
         connect(w->treeModel(), SIGNAL(moduleChecked(CSwordModuleInfo*,bool)),
                 this,           SLOT(slotSelectedModulesChanged()));
-        if (parentDialog() != 0) parentDialog()->setEnabled(true);
+        window()->setEnabled(true);
     } else {
         disconnect(w->treeView()->header(), SIGNAL(geometriesChanged()),
                    this,                    SLOT(slotHeaderChanged()));
@@ -320,21 +319,19 @@ void BtInstallPage::slotInstall() {
             cm.insert(m);
         }
 
-        if (cm.empty()) return;
+        if (cm.empty())
+            return;
 
         /// \todo first remove all modules which will be updated from the module list
         // but what modules? all with the same real name? (there may be _n modules...)
 
-        BtModuleManagerDialog *parentDlg = dynamic_cast<BtModuleManagerDialog*>(parentDialog());
-
-        BtInstallProgressDialog *dlg = new BtInstallProgressDialog(cm, selectedInstallPath(), parentDlg);
-
-        if (!parentDlg) qDebug() << "error, wrong parent!";
+        // progressDialog is WA_DeleteOnClose
+        BtInstallProgressDialog *progressDialog = new BtInstallProgressDialog(cm, selectedInstallPath(), this);
 
         m_installButton->setEnabled(false);
 
         // the progress dialog is now modal, it can be made modeless later.
-        dlg->exec();
+        progressDialog->exec();
 
         qDebug() << "BtSourceWidget::slotInstallAccepted end";
     }

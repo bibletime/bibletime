@@ -17,6 +17,7 @@
 #include <QVBoxLayout>
 #include <QWidget>
 #include "frontend/settingsdialogs/btfontchooserwidget.h"
+#include "frontend/settingsdialogs/cconfigurationdialog.h"
 #include "util/cresmgr.h"
 #include "util/tool.h"
 #include "util/directory.h"
@@ -26,8 +27,8 @@
 #include <swlocale.h>
 
 
-BtFontSettingsPage::BtFontSettingsPage(QWidget *parent)
-        : BtConfigPage(parent)
+BtFontSettingsPage::BtFontSettingsPage(CConfigurationDialog *parent)
+        : BtConfigDialog::Page(parent)
 {
     namespace DU = util::directory;
 
@@ -98,8 +99,8 @@ BtFontSettingsPage::BtFontSettingsPage(QWidget *parent)
     m_fontsGroupBox->setFlat(true);
     m_fontsGroupBox->setLayout(fLayout);
 
-    Q_ASSERT(qobject_cast<QVBoxLayout*>(layout()) != 0);
-    static_cast<QVBoxLayout*>(layout())->addWidget(m_fontsGroupBox);
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+    mainLayout->addWidget(m_fontsGroupBox);
 
     retranslateUi();
 }

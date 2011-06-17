@@ -23,6 +23,7 @@
 #include <QVBoxLayout>
 #include "backend/bookshelfmodel/btbookshelffiltermodel.h"
 #include "backend/managers/cswordbackend.h"
+#include "frontend/bookshelfmanager/btmodulemanagerdialog.h"
 #include "frontend/btbookshelfview.h"
 #include "frontend/btbookshelfwidget.h"
 #include "util/cresmgr.h"
@@ -38,8 +39,8 @@ namespace {
 const QString groupingOrderKey("GUI/BookshelfManager/RemovePage/grouping");
 }
 
-BtRemovePage::BtRemovePage(QWidget *parent)
-        : BtConfigPage(parent)
+BtRemovePage::BtRemovePage(BtModuleManagerDialog *parent)
+        : BtConfigDialog::Page(parent)
 {
     namespace DU = util::directory;
 
@@ -78,8 +79,7 @@ BtRemovePage::BtRemovePage(QWidget *parent)
     m_removeButton->setEnabled(false);
     uLayout->addWidget(m_removeButton, 0, Qt::AlignRight);
 
-    Q_ASSERT(qobject_cast<QVBoxLayout*>(layout()) != 0);
-    QVBoxLayout *mainLayout = static_cast<QVBoxLayout*>(layout());
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
     mainLayout->addWidget(m_worksGroupBox, 1);
     mainLayout->addWidget(m_uninstallGroupBox);
 

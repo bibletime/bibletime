@@ -13,38 +13,31 @@
 #include "frontend/bookshelfmanager/btconfigdialog.h"
 
 
-class QWidget;
-
 /**
 * The Bookshelf Manager dialog. Includes pages for Install, Remove, Indexes.
 */
-class BtModuleManagerDialog : public BtConfigDialog {
+class BtModuleManagerDialog: public BtConfigDialog {
+
         Q_OBJECT
 
     public:
-        static BtModuleManagerDialog* getInstance(QWidget* parent);
 
+        static BtModuleManagerDialog *getInstance(QWidget *parent = 0,
+                                                  Qt::WindowFlags flags = 0);
         ~BtModuleManagerDialog();
 
-
-        //void slotClose();
-    protected:
-        /** Reimplementation from QWidget. */
-        virtual void closeEvent(QCloseEvent* event);
-
-        /** Adds the pages and the button box. */
-        BtModuleManagerDialog(QWidget* parent);
-
     private:
-        // Load the settings from the resource file
+
+        BtModuleManagerDialog(QWidget *parent = 0, Qt::WindowFlags flags = 0);
+
+        void retranslateUi();
+
+        /** Loads the settings from the resource file. */
         void loadDialogSettings();
 
-        // Save the settings to the resource file
+        /** Saves the settings to the resource file. */
         void saveDialogSettings();
 
-
-//signals:
-//    void swordSetupChanged();
 };
 
 

@@ -18,12 +18,13 @@
 
 
 class BtFontChooserWidget;
+class CConfigurationDialog;
 class QCheckBox;
 class QComboBox;
 class QGroupBox;
 class QLabel;
 
-class BtFontSettingsPage : public BtConfigPage {
+class BtFontSettingsPage: public BtConfigDialog::Page {
 
         Q_OBJECT
 
@@ -33,7 +34,7 @@ class BtFontSettingsPage : public BtConfigPage {
 
     public: /* Methods: */
 
-        BtFontSettingsPage(QWidget *parent = 0);
+        BtFontSettingsPage(CConfigurationDialog *parent = 0);
 
         void save() const;
 

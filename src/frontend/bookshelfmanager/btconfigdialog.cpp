@@ -22,11 +22,13 @@
 #include <QVBoxLayout>
 
 
-BtConfigDialog::BtConfigDialog(QWidget* parent)
-        : QDialog(parent),
-        m_maxItemWidth(0),
-        m_previousPageIndex(-2) {
-    setWindowFlags(Qt::Window);
+BtConfigDialog::BtConfigDialog(QWidget* parent, Qt::WindowFlags flags)
+        : QDialog(parent, flags)
+        , m_buttonBoxRuler(0)
+        , m_buttonBox(0)
+        , m_maxItemWidth(0)
+        , m_previousPageIndex(-2)
+{
     m_contentsList = new QListWidget(this);
     m_contentsList->setViewMode(QListView::IconMode);
     m_contentsList->setMovement(QListView::Static);
@@ -34,29 +36,20 @@ BtConfigDialog::BtConfigDialog(QWidget* parent)
     m_pageWidget = new QStackedWidget(this);
     m_pageWidget->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
 
-    QHBoxLayout *mainLayout = new QHBoxLayout;
-    setLayout(mainLayout);
-    mainLayout->addWidget(m_contentsList);
     m_pageLayout = new QVBoxLayout;
-    mainLayout->addLayout(m_pageLayout);
-
     m_pageLayout->addWidget(m_pageWidget);
 
-    connect(m_contentsList,
-            SIGNAL(currentRowChanged(int)),
-            this, SLOT(slotChangePage(int))
-           );
+    QHBoxLayout *mainLayout = new QHBoxLayout(this);
+    mainLayout->addWidget(m_contentsList);
+    mainLayout->addLayout(m_pageLayout);
 
+    connect(m_contentsList, SIGNAL(currentRowChanged(int)),
+            this,           SLOT(slotChangePage(int)));
 }
 
-BtConfigDialog::~BtConfigDialog() {}
-
-void BtConfigDialog::addPage(BtConfigPage* pageWidget) {
-    // this is a friend
-    pageWidget->m_parentDialog = this;
+void BtConfigDialog::addPage(Page* pageWidget) {
 
     m_pageWidget->addWidget(pageWidget);
-
 
     QListWidgetItem* item = new QListWidgetItem(m_contentsList);
     item->setIcon(pageWidget->icon());
@@ -74,23 +67,29 @@ void BtConfigDialog::addPage(BtConfigPage* pageWidget) {
         m_contentsList->item(i)->setSizeHint(QSize(m_maxItemWidth, m_contentsList->visualItemRect(m_contentsList->item(i)).height()) );
     }
 
-    slotChangePage(m_contentsList->row(item));
+    setCurrentPage(m_contentsList->row(item));
 }
 
-void BtConfigDialog::addButtonBox(QDialogButtonBox* box) {
+void BtConfigDialog::setButtonBox(QDialogButtonBox *box) {
+    Q_ASSERT(box != 0);
+    Q_ASSERT(m_buttonBox == 0);
+    Q_ASSERT(m_buttonBoxRuler == 0);
+
+    m_buttonBox = box;
+
     // First add a horizontal ruler:
-    QFrame *line = new QFrame();
-    line->setGeometry(QRect(1, 1, 1, 3));
-    line->setFrameShape(QFrame::HLine);
-    line->setFrameShadow(QFrame::Sunken);
-    line->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
-    m_pageLayout->addWidget(line);
+    m_buttonBoxRuler = new QFrame(this);
+    m_buttonBoxRuler->setGeometry(QRect(1, 1, 1, 3));
+    m_buttonBoxRuler->setFrameShape(QFrame::HLine);
+    m_buttonBoxRuler->setFrameShadow(QFrame::Sunken);
+    m_buttonBoxRuler->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+    m_pageLayout->addWidget(m_buttonBoxRuler);
 
     // Add button box:
     m_pageLayout->addWidget(box);
 }
 
-void BtConfigDialog::slotChangePage(int newIndex) {
+void BtConfigDialog::setCurrentPage(int newIndex) {
     if (m_previousPageIndex != newIndex) {
         m_previousPageIndex = newIndex;
         m_contentsList->setCurrentRow(newIndex);
@@ -98,15 +97,13 @@ void BtConfigDialog::slotChangePage(int newIndex) {
     }
 }
 
-
-
-BtConfigPage::BtConfigPage(QWidget *parent)
-    : QWidget(parent)
-    , m_parentDialog(0)
-{
-    setLayout(new QVBoxLayout);
-}
-
-BtConfigPage::~BtConfigPage() {
-    // Intentionally empty
+void BtConfigDialog::slotChangePage(int newIndex) {
+    /*
+      This check is in place here because this slot is indirectly called by the
+      setCurrentPage method.
+    */
+    if (m_previousPageIndex != newIndex) {
+        m_previousPageIndex = newIndex;
+        m_pageWidget->setCurrentIndex(newIndex);
+    }
 }

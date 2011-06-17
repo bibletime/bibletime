@@ -17,16 +17,17 @@
 #include "backend/config/cbtconfig.h"
 
 
+class CConfigurationDialog;
 class QComboBox;
 class QLabel;
 
-class BtLanguageSettingsPage: public BtConfigPage {
+class BtLanguageSettingsPage: public BtConfigDialog::Page {
 
         Q_OBJECT
 
     public: /* Methods: */
 
-        BtLanguageSettingsPage(QWidget *parent = 0);
+        BtLanguageSettingsPage(CConfigurationDialog *parent = 0);
 
         void save();
 

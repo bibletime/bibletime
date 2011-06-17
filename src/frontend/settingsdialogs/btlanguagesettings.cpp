@@ -14,7 +14,7 @@
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QWidget>
-
+#include "frontend/settingsdialogs/cconfigurationdialog.h"
 #include "util/cresmgr.h"
 #include "util/tool.h"
 #include "util/directory.h"
@@ -24,8 +24,8 @@
 #include <swlocale.h>
 
 
-BtLanguageSettingsPage::BtLanguageSettingsPage(QWidget *parent)
-        : BtConfigPage(parent)
+BtLanguageSettingsPage::BtLanguageSettingsPage(CConfigurationDialog *parent)
+        : BtConfigDialog::Page(parent)
 {
     namespace DU = util::directory;
 
@@ -79,10 +79,8 @@ BtLanguageSettingsPage::BtLanguageSettingsPage(QWidget *parent)
     if (i >= 0)
         m_swordLocaleCombo->setCurrentIndex(i);
 
-    QFormLayout *formLayout = new QFormLayout;
+    QFormLayout *formLayout = new QFormLayout(this);
     formLayout->addRow(m_languageNamesLabel, m_swordLocaleCombo);
-    Q_ASSERT(qobject_cast<QVBoxLayout*>(layout()) != 0);
-    static_cast<QVBoxLayout*>(layout())->addLayout(formLayout);
 
     retranslateUi();
 }

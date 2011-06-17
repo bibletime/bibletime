@@ -26,15 +26,15 @@
 #include "frontend/displaywindow/ccommentaryreadwindow.h"
 #include "frontend/displaywindow/clexiconreadwindow.h"
 #include "frontend/displaywindow/creadwindow.h"
+#include "frontend/settingsdialogs/cconfigurationdialog.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
 
 
-CAcceleratorSettingsPage::CAcceleratorSettingsPage(QWidget *parent)
-        : BtConfigPage(parent)
+CAcceleratorSettingsPage::CAcceleratorSettingsPage(CConfigurationDialog *parent)
+        : BtConfigDialog::Page(parent)
 {
-    Q_ASSERT(qobject_cast<QVBoxLayout*>(layout()) != 0);
-    QVBoxLayout *mainLayout = static_cast<QVBoxLayout*>(layout());
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
 
     QHBoxLayout* layoutForWindowTypeChooser = new QHBoxLayout();
     mainLayout->addLayout(layoutForWindowTypeChooser);

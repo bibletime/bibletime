@@ -13,6 +13,7 @@
 #include "frontend/bookshelfmanager/btconfigdialog.h"
 
 
+class BtModuleManagerDialog;
 class QCheckBox;
 class QTreeWidget;
 class QTreeWidgetItem;
@@ -22,11 +23,13 @@ class QTreeWidgetItem;
 * Manager.  It allows for creation and deletion of search indicies for each
 * installed module.  It also allows for deletion of orphaned indices.
 */
-class BtIndexPage : public BtConfigPage {
+class BtIndexPage: public BtConfigDialog::Page {
+
         Q_OBJECT
 
     public:
-        BtIndexPage(QWidget *parent = 0);
+
+        BtIndexPage(BtModuleManagerDialog *parent = 0);
         ~BtIndexPage();
 
         /** Reimplemented from BtConfigPage. */

@@ -20,16 +20,16 @@
 #include <QVBoxLayout>
 #include <QWidget>
 #include "backend/config/cbtconfig.h"
+#include "frontend/settingsdialogs/cconfigurationdialog.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
 #include "util/tool.h"
 
 
-CSwordSettingsPage::CSwordSettingsPage(QWidget *parent)
-        : BtConfigPage(parent)
+CSwordSettingsPage::CSwordSettingsPage(CConfigurationDialog *parent)
+        : BtConfigDialog::Page(parent)
 {
-    Q_ASSERT(qobject_cast<QVBoxLayout*>(layout()) != 0);
-    QVBoxLayout *vbox = static_cast<QVBoxLayout*>(layout());
+    QVBoxLayout *vbox = new QVBoxLayout(this);
 
     QTabWidget* tabWidget = new QTabWidget();
     vbox->addWidget(tabWidget);

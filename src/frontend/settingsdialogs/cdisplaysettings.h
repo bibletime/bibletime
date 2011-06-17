@@ -15,14 +15,19 @@
 #include <QWidget>
 
 
+class CConfigurationDialog;
 class QCheckBox;
 class QComboBox;
 class QWebView;
 
-class CDisplaySettingsPage : public BtConfigPage {
+class CDisplaySettingsPage: public BtConfigDialog::Page {
+
         Q_OBJECT
+
     public:
-        CDisplaySettingsPage(QWidget *parent = 0);
+
+        CDisplaySettingsPage(CConfigurationDialog *parent = 0);
+
         void save();
 
         /** Reimplemented from BtConfigPage. */

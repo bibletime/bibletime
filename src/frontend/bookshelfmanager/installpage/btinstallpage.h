@@ -20,6 +20,7 @@ class InstallSource;
 }
 
 class BtInstallPageWorksWidget;
+class BtModuleManagerDialog;
 class QComboBox;
 class QGroupBox;
 class QLabel;
@@ -30,11 +31,13 @@ class QToolButton;
 /**
 * The Install page includes module path chooser, source/module handler and install button.
 */
-class BtInstallPage: public BtConfigPage {
+class BtInstallPage: public BtConfigDialog::Page {
+
         Q_OBJECT
 
     public:
-        BtInstallPage(QWidget *parent = 0);
+
+        BtInstallPage(BtModuleManagerDialog *parent = 0);
 
         /** Reimplemented from BtConfigPage. */
         virtual const QIcon &icon() const;

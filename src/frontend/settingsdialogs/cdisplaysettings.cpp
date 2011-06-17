@@ -18,6 +18,7 @@
 #include "backend/config/cbtconfig.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
 #include "backend/rendering/cdisplayrendering.h"
+#include "frontend/settingsdialogs/cconfigurationdialog.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
 #include "util/tool.h"
@@ -45,11 +46,10 @@ QSize CWebViewerWidget::sizeHint () const {
 // ************************
 
 /** Initializes the startup section of the OD. */
-CDisplaySettingsPage::CDisplaySettingsPage(QWidget *parent)
-        : BtConfigPage(parent)
+CDisplaySettingsPage::CDisplaySettingsPage(CConfigurationDialog *parent)
+        : BtConfigDialog::Page(parent)
 {
-    Q_ASSERT(qobject_cast<QVBoxLayout*>(layout()) != 0);
-    QVBoxLayout *mainLayout = static_cast<QVBoxLayout*>(layout());
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
 
     { //startup logo
         m_showLogoCheck = new QCheckBox(this);
