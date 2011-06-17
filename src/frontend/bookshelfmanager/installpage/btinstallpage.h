@@ -22,6 +22,7 @@ class InstallSource;
 class BtInstallPageWorksWidget;
 class QComboBox;
 class QGroupBox;
+class QLabel;
 class QPushButton;
 class QStackedLayout;
 class QToolButton;

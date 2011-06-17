@@ -21,6 +21,7 @@ class BtFontChooserWidget;
 class QCheckBox;
 class QComboBox;
 class QGroupBox;
+class QLabel;
 
 class BtFontSettingsPage : public BtConfigPage {
 
