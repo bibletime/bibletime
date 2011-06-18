@@ -12,15 +12,11 @@
 
 #include <QTreeWidgetItem>
 
-#include <QDropEvent>
-#include <QMimeData>
-#include <QString>
 
+class BtBookmarkItemBase: public QTreeWidgetItem {
 
-class CBookmarkIndex;
+    public: /* Types: */
 
-class BtBookmarkItemBase : public QTreeWidgetItem {
-    public:
         enum MenuAction {
             NewFolder = 0,
             ChangeFolder,
@@ -38,22 +34,19 @@ class BtBookmarkItemBase : public QTreeWidgetItem {
             ActionEnd = DeleteEntries
         };
 
-        /** Where to drop/create item(s): above, below or inside an item.*/
-        enum Location {Above, Below, Inside};
+    public: /* Methods: */
 
-        BtBookmarkItemBase();
-        BtBookmarkItemBase(QTreeWidgetItem* parent);
-
-        virtual QString toolTip() const = 0;
+        inline BtBookmarkItemBase(QTreeWidgetItem *parent = 0)
+            : QTreeWidgetItem(parent) {}
 
         /** Returns true if the given action should be enabled in the popup menu. */
-        virtual bool enableAction( MenuAction action ) = 0;
+        virtual bool enableAction(MenuAction action) = 0;
 
         /** Rename the item. */
         virtual void rename() = 0;
 
         /** Update the item (icon etc.) after creating or changing it. */
-        virtual void update() {}
+        virtual void update() = 0;
 
 };
 

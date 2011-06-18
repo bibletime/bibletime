@@ -180,7 +180,6 @@ SET(bibletime_SRC_FRONTEND_BOOKMARKS
     # Bookshelf/Bookmarks widget in main window:
     src/frontend/bookmarks/btbookmarkfolder.cpp
     src/frontend/bookmarks/btbookmarkitem.cpp
-    src/frontend/bookmarks/btbookmarkitembase.cpp
     src/frontend/bookmarks/btbookmarkloader.cpp
     src/frontend/bookmarks/bteditbookmarkdialog.cpp
     src/frontend/bookmarks/cbookmarkindex.cpp

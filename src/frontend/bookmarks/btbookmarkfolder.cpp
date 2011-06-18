@@ -57,10 +57,6 @@ void BtBookmarkFolder::importBookmarks() {
     };
 }
 
-QString BtBookmarkFolder::toolTip() const {
-    return QString::null;
-}
-
 void BtBookmarkFolder::newSubFolder() {
     if (dynamic_cast<BtBookmarkFolder*>(this)) {
         BtBookmarkFolder* f = new BtBookmarkFolder(QObject::tr("New folder"), this);
@@ -87,7 +83,6 @@ void BtBookmarkFolder::update() {
     namespace DU = util::directory;
 
     qDebug() << "BtBookmarkFolder::update()";
-    BtBookmarkItemBase::update();
     if (isExpanded() && childCount())
         setIcon(0, DU::getIcon(CResMgr::mainIndex::openedFolder::icon));
     else

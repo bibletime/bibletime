@@ -47,18 +47,19 @@ class BtBookmarkItem : public BtBookmarkItemBase {
             return m_title;
         }
 
-        /** Returns a tooltip for this bookmark. */
-        virtual QString toolTip() const;
-
         /** Returns whether the action is supported by this item. */
         virtual bool enableAction(MenuAction action);
 
         /** Changes this bookmark. */
         virtual void rename();
 
-        void update();
+        virtual void update();
 
     private:
+
+        /** Returns a tooltip for this bookmark. */
+        QString toolTip() const;
+
         /** Returns the english key.*/
         inline const QString &englishKey() const {
             return m_key;
