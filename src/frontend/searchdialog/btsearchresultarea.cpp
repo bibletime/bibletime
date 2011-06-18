@@ -155,11 +155,11 @@ void BtSearchResultArea::updatePreview(const QString& key) {
             vk.previous(CSwordVerseKey::UseVerse);
 
             //include Headings in display, they are indexed and searched too
-            if (vk.Verse() == 1) {
-                if (vk.Chapter() == 1) {
-                    vk.Chapter(0);
+            if (vk.getVerse() == 1) {
+                if (vk.getChapter() == 1) {
+                    vk.setChapter(0);
                 }
-                vk.Verse(0);
+                vk.setVerse(0);
             }
 
             const QString startKey = vk.key();
@@ -182,11 +182,11 @@ void BtSearchResultArea::updatePreview(const QString& key) {
             ((sword::VerseKey*)(module->module()->getKey()))->Headings(1); //HACK: enable headings for VerseKeys
 
             //include Headings in display, they are indexed and searched too
-            if (vk.Verse() == 1) {
-                if (vk.Chapter() == 1) {
-                    vk.Chapter(0);
+            if (vk.getVerse() == 1) {
+                if (vk.getChapter() == 1) {
+                    vk.setChapter(0);
                 }
-                vk.Verse(0);
+                vk.setVerse(0);
             }
             const QString startKey = vk.key();
 
@@ -568,7 +568,7 @@ StrongsResultList::StrongsResultList(const CSwordModuleInfo *module,
         progress.setValue(index);
         qApp->processEvents(QEventLoop::AllEvents, 1); //1 ms only
 
-        QString key = QString::fromUtf8(result.GetElement(index)->getText());
+        QString key = QString::fromUtf8(result.getElement(index)->getText());
         QString text = CDisplayRendering().renderSingleKey(key, modules, settings);
         for (int sIndex = 0;;) {
             continueloop:

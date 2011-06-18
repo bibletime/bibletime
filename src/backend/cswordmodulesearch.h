@@ -66,7 +66,7 @@ class CSwordModuleSearch: public QObject {
           Resets the search scope.
         */
         inline void resetSearchScope() {
-            m_searchScope.ClearList();
+            m_searchScope.clear();
         }
 
         /**

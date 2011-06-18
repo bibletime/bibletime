@@ -106,7 +106,7 @@ QString CSwordVerseKey::book( const QString& newBook ) {
         setBookName(newBook.toUtf8().constData());
     }
 
-    if ( (Testament() >= min + 1) && (Testament() <= max + 1) && (Book() <= BMAX[min]) ) {
+    if ((getTestament() >= min + 1) && (getTestament() <= max + 1) && (getBook() <= BMAX[min])) {
         return QString::fromUtf8( getBookName() );
     }
 
@@ -163,24 +163,24 @@ bool CSwordVerseKey::next( const JumpType type ) {
     switch (type) {
 
         case UseBook: {
-            const int currentTestament = Testament();
-            const int currentBook = Book();
+            const int currentTestament = getTestament();
+            const int currentBook = getBook();
 
             if ((currentTestament == 2) && (currentBook >= BMAX[currentTestament-1])) { //Revelation, i.e. end of navigation
                 return false;
             }
             else if ((currentTestament == 1) && (currentBook >= BMAX[currentTestament-1])) { //Malachi, switch to the NT
-                Testament(currentTestament + 1);
-                Book(1);
+                setTestament(currentTestament + 1);
+                setBook(1);
             }
             else {
-                Book(Book() + 1);
+                setBook(getBook() + 1);
             }
             break;
         }
 
         case UseChapter: {
-            Chapter(Chapter() + 1);
+            setChapter(getChapter() + 1);
             break;
         }
 
@@ -201,7 +201,7 @@ bool CSwordVerseKey::next( const JumpType type ) {
                 m_module->module()->setSkipConsecutiveLinks(oldStatus);
 
                 if (!m_module->module()->Error()) {
-                    setKey(QString::fromUtf8(m_module->module()->KeyText()));
+                    setKey(QString::fromUtf8(m_module->module()->getKeyText()));
                 }
                 else {
                     //         Verse(Verse()+1);
@@ -213,7 +213,7 @@ bool CSwordVerseKey::next( const JumpType type ) {
 
             }
             else {
-                Verse(Verse() + 1);
+                setVerse(getVerse() + 1);
             }
 
             break;
@@ -256,22 +256,22 @@ bool CSwordVerseKey::previous( const JumpType type ) {
     switch (type) {
 
         case UseBook: {
-            if ( (Book() == 1) && (Testament() == 1) ) { //Genesis
+            if ((getBook() == 1) && (getTestament() == 1)) { //Genesis
                 return false;
             }
-            else if ( (Book() == 1) && (Testament() == 2) ) { //Matthew
-                Testament(1);
-                Book(BMAX[0]);
+            else if ((getBook() == 1) && (getTestament() == 2)) { //Matthew
+                setTestament(1);
+                setBook(BMAX[0]);
             }
             else {
-                Book( Book() - 1 );
+                setBook(getBook() - 1);
             }
 
             break;
         }
 
         case UseChapter: {
-            Chapter(Chapter() - 1);
+            setChapter(getChapter() - 1);
             break;
         }
 
@@ -290,7 +290,7 @@ bool CSwordVerseKey::previous( const JumpType type ) {
                 m_module->module()->setSkipConsecutiveLinks(oldStatus);
 
                 if (!m_module->module()->Error()) {
-                    setKey(QString::fromUtf8(m_module->module()->KeyText()));//don't use fromUtf8
+                    setKey(QString::fromUtf8(m_module->module()->getKeyText())); // don't use fromUtf8
                 }
                 else {
                     ret = false;
@@ -299,7 +299,7 @@ bool CSwordVerseKey::previous( const JumpType type ) {
                 }
             }
             else {
-                Verse(Verse() - 1);
+                setVerse(getVerse() - 1);
             }
 
             break;

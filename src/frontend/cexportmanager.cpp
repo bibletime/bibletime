@@ -448,15 +448,15 @@ bool CExportManager::printByHyperlink(const QString &hyperlink,
             sword::ListKey verses = sword::VerseKey().ParseVerseList((const char*)keyName.toUtf8(), "Genesis 1:1", true);
 
             for (int i = 0; i < verses.Count(); ++i) {
-                sword::VerseKey* element = dynamic_cast<sword::VerseKey*>(verses.GetElement(i));
+                sword::VerseKey* element = dynamic_cast<sword::VerseKey*>(verses.getElement(i));
                 if (element) {
                     const QString startKey = QString::fromUtf8(element->LowerBound().getText());
                     const QString stopKey =  QString::fromUtf8(element->UpperBound().getText());
 
                     tree.append( new CPrinter::KeyTreeItem(startKey, stopKey, module, settings) );
                 }
-                else if (verses.GetElement(i)) {
-                    const QString key =  QString::fromUtf8(verses.GetElement(i)->getText());
+                else if (verses.getElement(i)) {
+                    const QString key =  QString::fromUtf8(verses.getElement(i)->getText());
 
                     tree.append( new CPrinter::KeyTreeItem(key, module, settings) );
                 }

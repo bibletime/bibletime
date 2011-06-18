@@ -213,7 +213,7 @@ unsigned int CSearchAnalysisScene::getCount(const QString &book,
     unsigned int count = 0;
     const unsigned int resultCount = result.Count();
     while (i < resultCount) {
-        if ( strncmp(book.toUtf8(), (const char*)*result.GetElement(i), length) )
+        if (strncmp(book.toUtf8(), (const char *) *result.getElement(i), length))
             break;
         i++;
         ++count;

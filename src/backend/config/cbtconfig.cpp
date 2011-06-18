@@ -428,7 +428,7 @@ StringMap getDefault(const stringMaps ID) {
         sword::ListKey list(vk.ParseVerseList(it.value().toLocal8Bit(), "Genesis 1:1", true));
         QString data;
         for (int i(0); i < list.Count(); i++) {
-            data.append(QString::fromUtf8(list.GetElement(i)->getRangeText()));
+            data.append(QString::fromUtf8(list.getElement(i)->getRangeText()));
             data.append("; ");
         }
         map[it.key()] = data;
@@ -526,7 +526,7 @@ StringMap get(const stringMaps ID) {
         sword::ListKey list(vk.ParseVerseList(b, "Genesis 1:1", true));
         QString data;
         for (int i = 0; i < list.Count(); i++) {
-            data.append(QString::fromUtf8(list.GetElement(i)->getRangeText()));
+            data.append(QString::fromUtf8(list.getElement(i)->getRangeText()));
             data.append("; ");
         }
         map[key] = data; // Set the new data
@@ -613,7 +613,7 @@ void set(const stringMaps ID, const StringMap &value) {
                 QString data;
                 ListKey list(vk.ParseVerseList(it.value().toUtf8(), "Genesis 1:1", true));
                 for (int i(0); i < list.Count(); i++) {
-                    VerseKey *range(dynamic_cast<VerseKey*>(list.GetElement(i)));
+                    VerseKey *range(dynamic_cast<VerseKey*>(list.getElement(i)));
                     if (range) {
                         range->setLocale("en");
                         data.append(QString::fromUtf8( range->getRangeText() ));

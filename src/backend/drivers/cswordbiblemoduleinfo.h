@@ -33,12 +33,6 @@ class CSwordBibleModuleInfo: public CSwordModuleInfo {
     public: /* Methods: */
         CSwordBibleModuleInfo(sword::SWModule *module, CSwordBackend * const,
                               ModuleType type = Bible);
-        CSwordBibleModuleInfo(const CSwordBibleModuleInfo &copy);
-
-        /* Reimplementation of CSwordModuleInfo::clone(). */
-        virtual inline CSwordModuleInfo *clone() const {
-            return new CSwordBibleModuleInfo(*this);
-        }
 
         inline ~CSwordBibleModuleInfo() {
             delete m_bookList;
@@ -103,6 +97,7 @@ class CSwordBibleModuleInfo: public CSwordModuleInfo {
         }
 
     private: /* Methods: */
+
         void initBounds();
 
     private:

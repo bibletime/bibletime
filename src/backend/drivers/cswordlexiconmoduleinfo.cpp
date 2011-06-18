@@ -86,12 +86,12 @@ const QStringList &CSwordLexiconModuleInfo::entries() const {
 
     do {
         if ( isUnicode() ) {
-            m_entries.append(QString::fromUtf8(module()->KeyText()));
+            m_entries.append(QString::fromUtf8(module()->getKeyText()));
         }
         else {
             //for latin1 modules use fromLatin1 because of speed
             QTextCodec* codec = QTextCodec::codecForName("Windows-1252");
-            m_entries.append(codec->toUnicode(module()->KeyText()));
+            m_entries.append(codec->toUnicode(module()->getKeyText()));
         }
 
         module()->increment();

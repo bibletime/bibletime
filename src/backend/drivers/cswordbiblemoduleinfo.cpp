@@ -30,35 +30,20 @@ CSwordBibleModuleInfo::CSwordBibleModuleInfo(sword::SWModule *module,
     initBounds();
 }
 
-CSwordBibleModuleInfo::CSwordBibleModuleInfo(const CSwordBibleModuleInfo &copy) :
-        CSwordModuleInfo(copy),
-        m_lowerBound(0),
-        m_upperBound(0),
-        m_bookList(0),
-        m_cachedLocale(copy.m_cachedLocale),
-        m_hasOT(copy.m_hasOT),
-        m_hasNT(copy.m_hasNT)
-{
-    if (copy.m_bookList) {
-        m_bookList = new QStringList();
-        *m_bookList = *copy.m_bookList;
-    }
-    initBounds();
-}
-
 void CSwordBibleModuleInfo::initBounds() {
-    const bool oldStatus = module()->getSkipConsecutiveLinks();
-    module()->setSkipConsecutiveLinks(true);
+    sword::SWModule *m = module();
+    const bool oldStatus = m->getSkipConsecutiveLinks();
+    m->setSkipConsecutiveLinks(true);
 
-    module()->setPosition(sword::TOP); // position to first entry
-    sword::VerseKey key(module()->KeyText());
-    m_hasOT = (key.Testament() == 1);
+    m->setPosition(sword::TOP); // position to first entry
+    sword::VerseKey key(module()->getKeyText());
+    m_hasOT = (key.getTestament() == 1);
 
-    module()->setPosition(sword::BOTTOM);
-    key = module()->KeyText();
-    m_hasNT = (key.Testament() == 2);
+    m->setPosition(sword::BOTTOM);
+    key = module()->getKeyText();
+    m_hasNT = (key.getTestament() == 2);
 
-    module()->setSkipConsecutiveLinks(oldStatus);
+    m->setSkipConsecutiveLinks(oldStatus);
 
     m_lowerBound.setKey(m_hasOT ? "Genesis 1:1" : "Matthew 1:1");
     m_upperBound.setKey(!m_hasNT ? "Malachi 4:6" : "Revelation of John 22:21");
@@ -101,7 +86,7 @@ QStringList *CSwordBibleModuleInfo::books() const {
         QSharedPointer<sword::VerseKey> key((sword::VerseKey *)module()->CreateKey());
         key->setPosition(sword::TOP);
 
-        for (key->setTestament(min); !key->Error() && key->getTestament() <= max; key->Book(key->Book() + 1)) {
+        for (key->setTestament(min); !key->Error() && key->getTestament() <= max; key->setBook(key->getBook() + 1)) {
             m_bookList->append( QString::fromUtf8(key->getBookName()) );
         }
 
@@ -118,9 +103,9 @@ unsigned int CSwordBibleModuleInfo::chapterCount(const unsigned int book) const 
     key->setPosition(sword::TOP);
 
     // works for old and new versions
-    key->Book(book);
+    key->setBook(book);
     key->setPosition(sword::MAXCHAPTER);
-    result = key->Chapter();
+    result = key->getChapter();
 
     return result;
 }
@@ -140,10 +125,10 @@ unsigned int CSwordBibleModuleInfo::verseCount(const unsigned int book,
     key->setPosition(sword::TOP);
 
     // works for old and new versions
-    key->Book(book);
-    key->Chapter(chapter);
+    key->setBook(book);
+    key->setChapter(chapter);
     key->setPosition(sword::MAXVERSE);
-    result = key->Verse();
+    result = key->getVerse();
 
     return result;
 }
@@ -162,7 +147,7 @@ unsigned int CSwordBibleModuleInfo::bookNumber(const QString &book) const {
 
     key->setBookName(book.toUtf8().constData());
 
-    bookNumber = ((key->getTestament() > 1) ? key->BMAX[0] : 0) + key->Book();
+    bookNumber = ((key->getTestament() > 1) ? key->BMAX[0] : 0) + key->getBook();
 
     return bookNumber;
 }

@@ -407,13 +407,13 @@ CSwordVerseKey* CBibleReadWindow::verseKey() {
 /** Copies the current chapter into the clipboard. */
 void CBibleReadWindow::copyDisplayedText() {
     CSwordVerseKey dummy(*verseKey());
-    dummy.Verse(1);
+    dummy.setVerse(1);
 
     CSwordVerseKey vk(*verseKey());
     vk.LowerBound(dummy);
 
     const CSwordBibleModuleInfo* bible = dynamic_cast<const CSwordBibleModuleInfo*>(modules().first());
-    dummy.Verse(bible->verseCount(dummy.book(), dummy.Chapter()));
+    dummy.setVerse(bible->verseCount(dummy.book(), dummy.getChapter()));
     vk.UpperBound(dummy);
 
     CExportManager mgr(tr("Copy chapter to clipboard ..."), false, tr("Copying"), filterOptions(), displayOptions());
@@ -427,12 +427,12 @@ void CBibleReadWindow::saveChapterHTML() {
     const CSwordBibleModuleInfo *bible = static_cast<const CSwordBibleModuleInfo*>(modules().first());
 
     CSwordVerseKey dummy(*verseKey());
-    dummy.Verse(1);
+    dummy.setVerse(1);
 
     CSwordVerseKey vk(*verseKey());
     vk.LowerBound(dummy);
 
-    dummy.Verse(bible->verseCount(dummy.book(), dummy.Chapter()));
+    dummy.setVerse(bible->verseCount(dummy.book(), dummy.getChapter()));
     vk.UpperBound(dummy);
 
     CExportManager mgr(tr("Saving chapter ..."), true, tr("Saving"), filterOptions(), displayOptions());
@@ -446,11 +446,11 @@ void CBibleReadWindow::saveChapterPlain() {
     CSwordVerseKey vk(*verseKey());
     CSwordVerseKey dummy(*verseKey());
 
-    dummy.Verse(1);
+    dummy.setVerse(1);
     vk.LowerBound(dummy);
 
     const CSwordBibleModuleInfo* bible = dynamic_cast<const CSwordBibleModuleInfo*>(modules().first());
-    dummy.Verse(bible->verseCount(dummy.book(), dummy.Chapter()));
+    dummy.setVerse(bible->verseCount(dummy.book(), dummy.getChapter()));
     vk.UpperBound(dummy);
 
     CExportManager mgr(tr("Saving chapter ..."), true, tr("Saving"), filterOptions(), displayOptions());

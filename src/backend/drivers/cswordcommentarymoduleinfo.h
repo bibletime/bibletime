@@ -27,11 +27,6 @@ class CSwordCommentaryModuleInfo: public CSwordBibleModuleInfo {
                 : CSwordBibleModuleInfo(module, usedBackend,
                                         CSwordModuleInfo::Commentary) {}
 
-        /* Reimplementation of CSwordModuleInfo::clone(). */
-        virtual inline CSwordModuleInfo* clone() const {
-            return new CSwordCommentaryModuleInfo(*this);
-        }
-
         /* Reimplementation of CSwordModuleInfo::isWritable(). */
         virtual bool isWritable() const;
 };

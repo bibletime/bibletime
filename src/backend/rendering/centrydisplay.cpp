@@ -49,16 +49,16 @@ const QString CEntryDisplay::text(
         // don't print the key
         CTextRendering::KeyTreeItem::Settings preverse_settings(false, CTextRendering::KeyTreeItem::Settings::NoKey);
 
-        if (k1.Verse() == 1) { //X:1, prepend X:0
-            if (k1.Chapter() == 1) { //1:1, also prepend 0:0 before that
-                k1.Chapter(0);
-                k1.Verse(0);
+        if (k1.getVerse() == 1) { // X:1, prepend X:0
+            if (k1.getChapter() == 1) { // 1:1, also prepend 0:0 before that
+                k1.setChapter(0);
+                k1.setVerse(0);
                 if ( k1.rawText().length() > 0 ) {
                     tree.append( new Rendering::CTextRendering::KeyTreeItem(k1.key(), modules, preverse_settings) );
                 }
-                k1.Chapter(1);
+                k1.setChapter(1);
             }
-            k1.Verse(0);
+            k1.setVerse(0);
             if ( k1.rawText().length() > 0 ) {
                 tree.append( new Rendering::CTextRendering::KeyTreeItem(k1.key(), modules, preverse_settings) );
             }

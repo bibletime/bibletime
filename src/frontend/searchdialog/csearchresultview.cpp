@@ -112,7 +112,7 @@ void CSearchResultView::setupTree(const CSwordModuleInfo *m,
     QTreeWidgetItem* item = 0;
     for (int index = 0; index < count; index++) {
         item = new QTreeWidgetItem(this, oldItem);
-        item->setText(0, QString::fromUtf8(result.GetElement(index)->getText()));
+        item->setText(0, QString::fromUtf8(result.getElement(index)->getText()));
         oldItem = item;
     }
 
