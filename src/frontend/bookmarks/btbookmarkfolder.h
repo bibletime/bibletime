@@ -17,7 +17,7 @@
 
 class BtBookmarkFolder : public BtBookmarkItemBase {
     public:
-        friend class BtBookmarkLoader;
+
         BtBookmarkFolder(const QString &name, QTreeWidgetItem *parent = 0);
 
         /** See the base class. */

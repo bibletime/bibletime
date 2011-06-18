@@ -392,7 +392,6 @@ wrong, or if the config file was write protected return false.
         }
 
     protected:
-        friend class CSwordBackend;
 
         inline CSwordBackend* backend() const {
             return m_backend;

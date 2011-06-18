@@ -158,7 +158,7 @@ class CKeyChooserWidget : public QWidget  {
 
 
     private:
-        friend class CLexiconKeyChooser;
+
         QStringList m_list;
         bool m_useNextPrevSignals;
         bool updatelock;
