@@ -771,6 +771,21 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
 </context>
 <context>
+    <name>BtFontChooserWidget</name>
+    <message>
+        <source>Font name:</source>
+        <translation type="unfinished">Schriftname:</translation>
+    </message>
+    <message>
+        <source>Font style:</source>
+        <translation type="unfinished">Schriftstil:</translation>
+    </message>
+    <message>
+        <source>Size:</source>
+        <translation type="unfinished">Größe:</translation>
+    </message>
+</context>
+<context>
     <name>BtFontSettingsPage</name>
     <message>
         <source>You can specify a custom font for each language.</source>
@@ -837,7 +852,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>KiB</source>
-        <translation>KiB</translation>
+        <translation type="obsolete">KiB</translation>
     </message>
     <message>
         <source>Create...</source>
@@ -850,6 +865,14 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <source>Unindexed Works</source>
         <translation>Werke ohne Index</translation>
+    </message>
+    <message>
+        <source>%1 KiB</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>0 KiB</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1892,11 +1915,11 @@ shortcut</source>
     </message>
     <message>
         <source>Zoom in</source>
-        <translation>Vergrößern</translation>
+        <translation type="obsolete">Vergrößern</translation>
     </message>
     <message>
         <source>Zoom out</source>
-        <translation>Verkleinern</translation>
+        <translation type="obsolete">Verkleinern</translation>
     </message>
     <message>
         <source>Select all</source>
@@ -1943,15 +1966,15 @@ shortcut</source>
     <name>CFontChooser</name>
     <message>
         <source>Size:</source>
-        <translation>Größe:</translation>
+        <translation type="obsolete">Größe:</translation>
     </message>
     <message>
         <source>Font name:</source>
-        <translation>Schriftname:</translation>
+        <translation type="obsolete">Schriftname:</translation>
     </message>
     <message>
         <source>Font style:</source>
-        <translation>Schriftstil:</translation>
+        <translation type="obsolete">Schriftstil:</translation>
     </message>
 </context>
 <context>
