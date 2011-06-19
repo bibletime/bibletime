@@ -44,6 +44,7 @@ QString getKey(const strings ID) {
         case bookshelfCurrentItem:
             return "bookshelfCurrentItem";
     }
+    return QString::null;
 }
 
 QString getKey(const modules ID) {
@@ -65,6 +66,7 @@ QString getKey(const modules ID) {
         case standardGreekMorphLexicon:
             return "standardGreekMorphLexicon";
     }
+    return QString::null;
 }
 
 QString getKey(const bools ID) {
@@ -212,6 +214,7 @@ QString getKey(const intLists ID) {
         case searchResultSplitterSizes:
             return "searchResultSplitterSizes";
     }
+    return QString::null;
 }
 
 QString getKey(const stringLists ID) {
@@ -675,7 +678,7 @@ FilterOptions getFilterOptionDefaults() {
 void setupAccelSettings(const keys type,
                         BtActionCollection * const actionCollection)
 {
-    const char *groupName;
+    const char *groupName ="";
     switch (type) {
         case allWindows:
             groupName = "Displaywindow shortcuts";
@@ -710,7 +713,7 @@ void setupAccelSettings(const keys type,
 void saveAccelSettings(const keys type,
                        BtActionCollection * const actionCollection)
 {
-    const char *groupName;
+    const char *groupName ="";
     switch (type) {
         case allWindows:
             groupName = "Displaywindow shortcuts";
