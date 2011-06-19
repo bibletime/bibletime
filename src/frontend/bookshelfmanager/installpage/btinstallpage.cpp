@@ -93,7 +93,7 @@ void BtInstallPage::initView() {
     m_sourceDeleteButton->setIcon(DU::getIcon(CResMgr::bookshelfmgr::installpage::delete_icon));
 
     QHBoxLayout *sourceChooserLayout = new QHBoxLayout();
-    sourceChooserLayout->setContentsMargins(0, 0, 0, 0);
+    sourceChooserLayout->setContentsMargins(0, 8, 0, 0);
     sourceChooserLayout->addWidget(m_sourceComboBox, 1);
     sourceChooserLayout->addWidget(m_sourceAddButton);
     sourceChooserLayout->addWidget(m_sourceDeleteButton);
