@@ -128,7 +128,7 @@ void BtInstallPage::initView() {
     m_installButton->setEnabled(false);
 
     QHBoxLayout *pathLayout = new QHBoxLayout();
-    pathLayout->setContentsMargins(0, 0, 0, 0);
+    pathLayout->setContentsMargins(0, 8, 0, 0);
     pathLayout->addWidget(m_pathLabel);
     pathLayout->addWidget(m_pathCombo);
     pathLayout->addWidget(m_configurePathButton);
