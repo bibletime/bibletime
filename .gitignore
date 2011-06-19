@@ -5,6 +5,7 @@
 /.project
 /.settings
 /bibletime.kdevelop
+/bibletime.kdev4
 /BibleTime.kdevelop
 /bibletime.kdevelop.filelist
 /BibleTime.kdevelop.filelist
@@ -17,6 +18,7 @@
 /CMakeLists.txt.user.*
 /CMakeFiles
 /dirlist
+/.kdev4
 /log
 /mine
 /qtcreator-build
