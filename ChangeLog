@@ -1,3 +1,8 @@
+2011-06-19 Gary Holmlund <gary.holmlund@gmail.com>
+    * Add close button to Bookshelf Manager dialog - needed because
+    * there is not a close at upper right of any dialog when working
+    * with Gnome 3 (Fedora 15)
+
 2011-05-28 Jaak Ristioja <jaak@ristioja.ee>
     * Fixed a cosmetic color bug in the font settings preview widget
 

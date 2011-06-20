@@ -14,6 +14,9 @@
 #include "frontend/bookshelfmanager/indexpage/btindexpage.h"
 #include "frontend/bookshelfmanager/installpage/btinstallpage.h"
 #include "frontend/bookshelfmanager/removepage/btremovepage.h"
+#include "util/dialogutil.h"
+#include <QDialogButtonBox>
+#include <QAbstractButton>
 
 
 static BtModuleManagerDialog *m_staticModuleManagerDialog = 0;
@@ -40,11 +43,24 @@ BtModuleManagerDialog::BtModuleManagerDialog(QWidget *parent,
     addPage(new BtRemovePage());
     addPage(new BtIndexPage());
 
+    // Dialog buttons
+    m_bbox = new QDialogButtonBox(this);
+    m_bbox->addButton(QDialogButtonBox::Close);
+    util::prepareDialogBox(m_bbox);
+    setButtonBox(m_bbox);
+    bool ok = connect(m_bbox, SIGNAL(clicked(QAbstractButton *)), SLOT(slotButtonClicked(QAbstractButton *)));
+    Q_ASSERT(ok);
+    
     retranslateUi();
 
     loadDialogSettings();
     setCurrentPage(0);
 
+}
+
+/** Called if close button was clicked*/
+void BtModuleManagerDialog::slotButtonClicked(QAbstractButton* button) {
+        close();
 }
 
 void BtModuleManagerDialog::retranslateUi() {

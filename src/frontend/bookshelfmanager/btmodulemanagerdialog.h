@@ -12,6 +12,7 @@
 
 #include "frontend/bookshelfmanager/btconfigdialog.h"
 
+class QAbstractButton;
 
 /**
 * The Bookshelf Manager dialog. Includes pages for Install, Remove, Indexes.
@@ -26,7 +27,10 @@ class BtModuleManagerDialog: public BtConfigDialog {
                                                   Qt::WindowFlags flags = 0);
         ~BtModuleManagerDialog();
 
-    private:
+protected slots:
+        void slotButtonClicked(QAbstractButton *);
+
+private:
 
         BtModuleManagerDialog(QWidget *parent = 0, Qt::WindowFlags flags = 0);
 
@@ -38,6 +42,7 @@ class BtModuleManagerDialog: public BtConfigDialog {
         /** Saves the settings to the resource file. */
         void saveDialogSettings();
 
+        QDialogButtonBox* m_bbox;
 };
 
 
