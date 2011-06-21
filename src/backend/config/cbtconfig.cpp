@@ -446,11 +446,9 @@ QFont &getDefault(const CLanguageMgr::Language * const) {
         return *m_defaultFont;
 
     /// \todo make the font name and size a configuration option
-    // int fontSize = QWebSettings::globalSettings()->fontSize(QWebSettings::DefaultFontSize);
-    const int fontSize = 12;
-    const QString fontName(QWebSettings::globalSettings()->fontFamily(QWebSettings::StandardFont));
 
-    m_defaultFont = new QFont(fontName, fontSize); /// \todo there may be a mem leak here!
+    m_defaultFont = new QFont();
+    m_defaultFont->setPointSize(12);
     return *m_defaultFont;
 }
 
