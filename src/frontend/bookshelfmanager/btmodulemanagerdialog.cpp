@@ -32,7 +32,9 @@ BtModuleManagerDialog* BtModuleManagerDialog::getInstance(QWidget *parent,
 
 BtModuleManagerDialog::BtModuleManagerDialog(QWidget *parent,
                                              Qt::WindowFlags flags)
-        : BtConfigDialog(parent)
+    : BtConfigDialog(parent,
+                     flags | Qt::CustomizeWindowHint | Qt::WindowTitleHint
+                           | Qt::WindowCloseButtonHint | Qt::WindowMaximizeButtonHint)
 {
     setAttribute(Qt::WA_DeleteOnClose);
 
