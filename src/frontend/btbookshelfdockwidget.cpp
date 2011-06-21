@@ -59,6 +59,7 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
     m_bookshelfWidget->setTreeModel(m_treeModel);
     m_bookshelfWidget->setSourceModel(bookshelfModel);
     m_bookshelfWidget->setItemContextMenu(m_itemContextMenu);
+    m_bookshelfWidget->treeView()->setMouseTracking(true); // required for moduleHovered
     /// \bug The correct grouping action is not selected on startup.
 
     // Setup welcome widgets:
@@ -84,6 +85,8 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
     // Connect signals:
     connect(m_bookshelfWidget->treeView(), SIGNAL(moduleActivated(CSwordModuleInfo*)),
             this,                          SLOT(slotModuleActivated(CSwordModuleInfo*)));
+    connect(m_bookshelfWidget->treeView(), SIGNAL(moduleHovered(CSwordModuleInfo*)),
+            this,                          SIGNAL(moduleHovered(CSwordModuleInfo*)));
     connect(m_treeModel, SIGNAL(moduleChecked(CSwordModuleInfo*, bool)),
             this,        SLOT(slotModuleChecked(CSwordModuleInfo*, bool)));
     connect(m_treeModel, SIGNAL(groupingOrderChanged(BtBookshelfTreeModel::Grouping)),

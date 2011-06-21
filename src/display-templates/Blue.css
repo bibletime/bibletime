@@ -268,7 +268,7 @@ td.entry + td.entry {
 	padding:0;
 }
 
-#infodisplay .footnoteinfo h3, #infodisplay .strongsinfo h3, #infodisplay .morphinfo h3, #infodisplay .translationinfo h3, #infodisplay .crossrefinfo h3 {
+#infodisplay .footnoteinfo h3, #infodisplay .strongsinfo h3, #infodisplay .morphinfo h3, #infodisplay .translationinfo h3, #infodisplay .crossrefinfo h3, #infodisplay .moduleinfo h3 {
 	padding:4px 4px 2px 0;
 	color:darkGray;
 	font-weight:bold;

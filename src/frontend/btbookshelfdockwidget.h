@@ -38,6 +38,7 @@ class BtBookshelfDockWidget: public QDockWidget {
         }
 
     signals:
+        void moduleHovered(CSwordModuleInfo *module);
         void moduleOpenTriggered(CSwordModuleInfo *module);
         void moduleSearchTriggered(CSwordModuleInfo *module);
         void moduleEditPlainTriggered(CSwordModuleInfo *module);

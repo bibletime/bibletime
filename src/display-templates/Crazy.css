@@ -269,7 +269,8 @@ so something like .alternative:before { content:"'"attr(alternative); } is possi
 #infodisplay .strongsinfo h3,
 #infodisplay .morphinfo h3,
 #infodisplay .translationinfo h3,
-#infodisplay .crossrefinfo h3 {
+#infodisplay .crossrefinfo h3,
+#infodisplay .moduleinfo h3 {
 	font-size:12pt;
 	font-weight:bold;
 	text-transform:uppercase;

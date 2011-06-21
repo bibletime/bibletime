@@ -1,3 +1,7 @@
+2011-06-21 Jaak Ristioja <jaak@ristioja.ee>
+    * Hovering over works in the bookshelf views shows tooltips.
+    * Hovering over works in the bookshelf dock shows info in the mag view.
+
 2011-05-28 Jaak Ristioja <jaak@ristioja.ee>
     * Fixed a cosmetic color bug in the font settings preview widget
 

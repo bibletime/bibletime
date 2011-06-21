@@ -77,6 +77,9 @@ void BibleTime::initView() {
     m_magDock->setWidget(m_infoDisplay);
     addDockWidget(Qt::LeftDockWidgetArea, m_magDock);
 
+    connect(m_bookshelfDock, SIGNAL(moduleHovered(CSwordModuleInfo*)),
+            m_infoDisplay,   SLOT(setInfo(CSwordModuleInfo*)));
+
     m_mdi->setMinimumSize(100, 100);
     m_mdi->setFocusPolicy(Qt::ClickFocus);
 }

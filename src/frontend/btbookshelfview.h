@@ -31,6 +31,7 @@ class BtBookshelfView: public QTreeView {
         void moduleContextMenuActivated(CSwordModuleInfo *item,
                                         QPoint pos);
         void moduleActivated(CSwordModuleInfo *item);
+        void moduleHovered(CSwordModuleInfo *item);
 
     protected:
         void keyPressEvent(QKeyEvent *event);
@@ -38,6 +39,7 @@ class BtBookshelfView: public QTreeView {
 
     protected slots:
         void slotItemActivated(const QModelIndex &index);
+        void slotItemHovered(const QModelIndex &index);
 };
 
 #endif // BTBOOKSHELFVIEW_H
