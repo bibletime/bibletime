@@ -53,11 +53,10 @@ BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
     Q_ASSERT(m_instance == 0);
     m_instance = this;
 
-    QSplashScreen splash;
-    bool showSplash = CBTConfig::get(CBTConfig::logo);
+    QSplashScreen *splash = 0;
     QString splashHtml;
 
-    if (showSplash) {
+    if (CBTConfig::get(CBTConfig::logo)) {
         splashHtml = "<div style='background:transparent;color:white;font-weight:bold'>%1"
                      "</div>";
         const QDate date(QDate::currentDate());
@@ -75,23 +74,27 @@ BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
         if (!pm.load(splashImage)) {
             qWarning("Can't load startuplogo! Check your installation.");
         }
-        splash.setPixmap(pm);
-        splash.show();
-
-        splash.showMessage(splashHtml.arg(tr("Initializing the SWORD engine...")),
-                           Qt::AlignCenter);
+        splash = new QSplashScreen(this, pm);
+        splash->setAttribute(Qt::WA_DeleteOnClose);
+        splash->finish(this);
+        splash->showMessage(splashHtml.arg(tr("Initializing the SWORD engine...")),
+                            Qt::AlignCenter);
+        splash->show();
+        qApp->processEvents();
     }
     initBackends();
 
-    if (showSplash) {
-        splash.showMessage(splashHtml.arg(tr("Creating BibleTime's user interface...")),
-                           Qt::AlignCenter);
+    if (splash != 0) {
+        splash->showMessage(splashHtml.arg(tr("Creating BibleTime's user interface...")),
+                            Qt::AlignCenter);
+        qApp->processEvents();
     }
     initView();
 
-    if (showSplash) {
-        splash.showMessage(splashHtml.arg(tr("Initializing menu- and toolbars...")),
-                           Qt::AlignCenter);
+    if (splash != 0) {
+        splash->showMessage(splashHtml.arg(tr("Initializing menu- and toolbars...")),
+                            Qt::AlignCenter);
+        qApp->processEvents();
     }
     initActions();
     initMenubar();
