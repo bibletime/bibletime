@@ -71,7 +71,6 @@ class CPlainWriteDisplay : public QTextEdit, public CWriteDisplay  {
 
     protected:
         friend class CDisplay;
-        friend class CHTMLWriteDisplay;
 
         CPlainWriteDisplay(CWriteWindow* parentWindow, QWidget* parent);
         virtual ~CPlainWriteDisplay();

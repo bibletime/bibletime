@@ -174,79 +174,108 @@ void CBibleReadWindow::initActions() {
 
     CBibleReadWindow::insertKeyboardActions(ac);
 
-    //cleanup, not a clean oo-solution
-    ac->action("nextEntry")->setEnabled(false);
-    ac->action("previousEntry")->setEnabled(false);
+    QAction * qaction;
 
-    QAction* qaction;
+    //cleanup, not a clean oo-solution
+    qaction = ac->action("nextEntry");
+    Q_ASSERT(qaction != 0);
+    qaction->setEnabled(false);
+    qaction = ac->action("previousEntry");
+    Q_ASSERT(qaction != 0);
+    qaction->setEnabled(false);
+
 
     qaction = m_actionCollection->action("nextBook");
+    Q_ASSERT(qaction != 0);
     QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(nextBook()) );
     addAction(qaction);
 
     qaction = m_actionCollection->action("previousBook");
+    Q_ASSERT(qaction != 0);
     QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(previousBook()) );
     addAction(qaction);
 
     qaction = m_actionCollection->action("nextChapter");
+    Q_ASSERT(qaction != 0);
     QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(nextChapter()) );
     addAction(qaction);
 
     qaction = m_actionCollection->action("previousChapter");
+    Q_ASSERT(qaction != 0);
     QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(previousChapter()) );
     addAction(qaction);
 
     qaction = m_actionCollection->action("nextVerse");
+    Q_ASSERT(qaction != 0);
     QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(nextVerse()) );
     addAction(qaction);
 
     qaction = m_actionCollection->action("previousVerse");
+    Q_ASSERT(qaction != 0);
     QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(previousVerse()) );
     addAction(qaction);
 
     m_actions.selectAll = ac->action("selectAll");
-    Q_ASSERT(m_actions.selectAll);
+    Q_ASSERT(m_actions.selectAll != 0);
 
     m_actions.findText = ac->action("findText");
-    Q_ASSERT(m_actions.findText);
+    Q_ASSERT(m_actions.findText != 0);
 
     m_actions.findStrongs = m_actionCollection->action(CResMgr::displaywindows::general::findStrongs::actionName);
+    Q_ASSERT(m_actions.findStrongs != 0);
 
     m_actions.copy.referenceOnly = m_actionCollection->action("copyReferenceOnly");
+    Q_ASSERT(m_actions.copy.referenceOnly != 0);
 
     m_actions.copy.referenceTextOnly = m_actionCollection->action("copyTextOfReference");
-    QObject::connect(m_actions.copy.referenceTextOnly, SIGNAL(triggered()), displayWidget()->connectionsProxy(), SLOT(copyAnchorTextOnly()) );
+    Q_ASSERT(m_actions.copy.referenceTextOnly != 0);
+    QObject::connect(m_actions.copy.referenceTextOnly,    SIGNAL(triggered()),
+                     displayWidget()->connectionsProxy(), SLOT(copyAnchorTextOnly()));
     addAction(m_actions.copy.referenceTextOnly);
 
     m_actions.copy.referenceAndText = m_actionCollection->action("copyReferenceWithText");
-    QObject::connect(m_actions.copy.referenceAndText, SIGNAL(triggered()), displayWidget()->connectionsProxy(), SLOT(copyAnchorWithText()) );
+    Q_ASSERT(m_actions.copy.referenceAndText != 0);
+    QObject::connect(m_actions.copy.referenceAndText,     SIGNAL(triggered()),
+                     displayWidget()->connectionsProxy(), SLOT(copyAnchorWithText()));
     addAction(m_actions.copy.referenceAndText);
 
     m_actions.copy.chapter = m_actionCollection->action("copyChapter");
-    QObject::connect(m_actions.copy.chapter, SIGNAL(triggered()), this, SLOT(copyDisplayedText()) );
+    Q_ASSERT(m_actions.copy.chapter != 0);
+    QObject::connect(m_actions.copy.chapter, SIGNAL(triggered()),
+                     this,                   SLOT(copyDisplayedText()));
     addAction(m_actions.copy.chapter);
 
     m_actions.copy.selectedText = ac->action("copySelectedText");
-    Q_ASSERT(m_actions.copy.selectedText);
+    Q_ASSERT(m_actions.copy.selectedText != 0);
 
     m_actions.save.referenceAndText = m_actionCollection->action("saveReferenceWithText");
-    QObject::connect(m_actions.save.referenceAndText, SIGNAL(triggered()), displayWidget()->connectionsProxy(), SLOT(saveAnchorWithText()) );
+    Q_ASSERT(m_actions.save.referenceAndText != 0);
+    QObject::connect(m_actions.save.referenceAndText,     SIGNAL(triggered()),
+                     displayWidget()->connectionsProxy(), SLOT(saveAnchorWithText()));
     addAction(m_actions.copy.chapter);
 
     m_actions.save.chapterAsPlain = m_actionCollection->action("saveChapterAsPlainText");
-    QObject::connect(m_actions.save.chapterAsPlain, SIGNAL(triggered()), this, SLOT(saveChapterPlain()) );
+    Q_ASSERT(m_actions.save.chapterAsPlain != 0);
+    QObject::connect(m_actions.save.chapterAsPlain, SIGNAL(triggered()),
+                     this,                          SLOT(saveChapterPlain()));
     addAction(m_actions.save.referenceAndText);
 
     m_actions.save.chapterAsHTML = m_actionCollection->action("saveChapterAsHTML");
-    QObject::connect(m_actions.save.chapterAsHTML, SIGNAL(triggered()), this, SLOT(saveChapterHTML()) );
+    Q_ASSERT(m_actions.save.chapterAsHTML != 0);
+    QObject::connect(m_actions.save.chapterAsHTML, SIGNAL(triggered()),
+                     this,                         SLOT(saveChapterHTML()));
     addAction(m_actions.save.chapterAsHTML);
 
     m_actions.print.reference = m_actionCollection->action("printReferenceWithText");
-    QObject::connect(m_actions.print.reference, SIGNAL(triggered()), this, SLOT(printAnchorWithText()) );
+    Q_ASSERT(m_actions.print.reference != 0);
+    QObject::connect(m_actions.print.reference, SIGNAL(triggered()),
+                     this,                      SLOT(printAnchorWithText()));
     addAction(m_actions.print.reference);
 
     m_actions.print.chapter = m_actionCollection->action("printChapter");
-    QObject::connect(m_actions.print.chapter, SIGNAL(triggered()), this, SLOT(printAll()) );
+    Q_ASSERT(m_actions.print.chapter != 0);
+    QObject::connect(m_actions.print.chapter, SIGNAL(triggered()),
+                     this,                    SLOT(printAll()));
     addAction(m_actions.print.chapter);
 
     ac->readShortcuts("Bible shortcuts");
@@ -312,7 +341,7 @@ void CBibleReadWindow::setupPopupMenu() {
 void CBibleReadWindow::updatePopupMenu() {
     qWarning("CBibleReadWindow::updatePopupMenu()");
 
-    m_actions.findStrongs->setEnabled( displayWidget()->getCurrentNodeInfo()[CDisplay::Lemma] != QString::null );
+    m_actions.findStrongs->setEnabled(!displayWidget()->getCurrentNodeInfo().isNull());
 
     m_actions.copy.referenceOnly->setEnabled( ((CReadDisplay*)displayWidget())->hasActiveAnchor() );
     m_actions.copy.referenceTextOnly->setEnabled( ((CReadDisplay*)displayWidget())->hasActiveAnchor() );
@@ -377,13 +406,13 @@ CSwordVerseKey* CBibleReadWindow::verseKey() {
 /** Copies the current chapter into the clipboard. */
 void CBibleReadWindow::copyDisplayedText() {
     CSwordVerseKey dummy(*verseKey());
-    dummy.Verse(1);
+    dummy.setVerse(1);
 
     CSwordVerseKey vk(*verseKey());
     vk.LowerBound(dummy);
 
     const CSwordBibleModuleInfo* bible = dynamic_cast<const CSwordBibleModuleInfo*>(modules().first());
-    dummy.Verse(bible->verseCount(dummy.book(), dummy.Chapter()));
+    dummy.setVerse(bible->verseCount(dummy.book(), dummy.getChapter()));
     vk.UpperBound(dummy);
 
     CExportManager mgr(tr("Copy chapter to clipboard ..."), false, tr("Copying"), filterOptions(), displayOptions());
@@ -397,12 +426,12 @@ void CBibleReadWindow::saveChapterHTML() {
     const CSwordBibleModuleInfo *bible = static_cast<const CSwordBibleModuleInfo*>(modules().first());
 
     CSwordVerseKey dummy(*verseKey());
-    dummy.Verse(1);
+    dummy.setVerse(1);
 
     CSwordVerseKey vk(*verseKey());
     vk.LowerBound(dummy);
 
-    dummy.Verse(bible->verseCount(dummy.book(), dummy.Chapter()));
+    dummy.setVerse(bible->verseCount(dummy.book(), dummy.getChapter()));
     vk.UpperBound(dummy);
 
     CExportManager mgr(tr("Saving chapter ..."), true, tr("Saving"), filterOptions(), displayOptions());
@@ -416,11 +445,11 @@ void CBibleReadWindow::saveChapterPlain() {
     CSwordVerseKey vk(*verseKey());
     CSwordVerseKey dummy(*verseKey());
 
-    dummy.Verse(1);
+    dummy.setVerse(1);
     vk.LowerBound(dummy);
 
     const CSwordBibleModuleInfo* bible = dynamic_cast<const CSwordBibleModuleInfo*>(modules().first());
-    dummy.Verse(bible->verseCount(dummy.book(), dummy.Chapter()));
+    dummy.setVerse(bible->verseCount(dummy.book(), dummy.getChapter()));
     vk.UpperBound(dummy);
 
     CExportManager mgr(tr("Saving chapter ..."), true, tr("Saving"), filterOptions(), displayOptions());
@@ -430,7 +459,7 @@ void CBibleReadWindow::saveChapterPlain() {
 void CBibleReadWindow::reload(CSwordBackend::SetupChangedReason reason) {
     CLexiconReadWindow::reload(reason);
 
-    if (m_modules.count() == 0) {
+    if (m_modules.isEmpty()) {
         close();
         return;
     }

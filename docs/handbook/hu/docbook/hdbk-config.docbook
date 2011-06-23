@@ -11,7 +11,7 @@ beállítása</guimenuitem> menüpont kiválasztásával.</para>
 
     <sect2 id="hdbk-config-bt-display">
       <title>
-        <guimenu>Display</guimenu>
+        <guimenu>Képernyő</guimenu>
       </title>
       <para>A kezdeti megjelenés is beállítható, választhat az alábbi lehetőségek közül: 
       <itemizedlist>
@@ -26,7 +26,7 @@ egyet, láthatja az előnézeti képét a jobb oldalon.</para>
 
     <sect2 id="hdbk-config-bt-desk">
       <title>
-        <guimenu>Desk</guimenu>
+        <guimenu>Munkaasztal</guimenu>
       </title>
       <para>Sok lehetőséget, melyet a &sword; keretprogram biztosít, testre lehet szabni
 a &bibletime; futtatása közben. Ezek a lehetőségek jelezve vannak a
@@ -127,7 +127,7 @@ tartalmaz.</entry>
                 <entry>
                   <ulink
 url="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;cat_id=FontDownloads">
-SIL unicode fonts</ulink>
+SIL unicode betűkészlet</ulink>
                 </entry>
                 <entry>Kiváló UNICODE készletek szerezhetőek be a Summer Institute of Linguistics
 -tól.</entry>
@@ -140,8 +140,8 @@ SIL unicode fonts</ulink>
               </row>
               <row>
                 <entry>
-                  <ulink url="ftp://ftp.crosswire.org/pub/sword/iso/latest/FONTS/">
-Crosswire's font directory</ulink>
+                  <ulink url="ftp://ftp.crosswire.org/pub/sword/iso/latest/FONTS/"> Crosswire
+betűkészlet mappája</ulink>
                 </entry>
 
                 <entry>További betűkészletek elérhetőek a &cbs; ftp oldaláról.</entry>
@@ -181,7 +181,7 @@ url="http://www.alanwood.net/unicode/fontsbyrange.html"> Unicode karakter
 
     <sect2 id="hdbk-config-bt-shortcuts">
       <title>
-        <guimenu>Shortcuts</guimenu>
+        <guimenu>Gyorslinkek</guimenu>
       </title>
 
       <para>A billentyűkombinációk (előzőleg gyorsbillentyűk) speciális

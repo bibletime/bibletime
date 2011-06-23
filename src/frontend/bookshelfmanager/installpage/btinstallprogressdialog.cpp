@@ -167,7 +167,7 @@ void BtInstallProgressDialog::oneItemStoppedOrCompleted(QString module, QString 
 
     //non-concurrent
     QMultiMap<QString, BtInstallThread*>::iterator threadIterator = m_waitingThreads.end();
-    if (m_runningThreads.size() == 0 && threadIterator != m_waitingThreads.begin()) {
+    if (m_runningThreads.isEmpty() && threadIterator != m_waitingThreads.begin()) {
         threadIterator--; // the last item
         QString sourceName = threadIterator.key();
         BtInstallThread* t = threadIterator.value();
@@ -239,5 +239,5 @@ void BtInstallProgressDialog::closeEvent(QCloseEvent* event) {
 }
 
 bool BtInstallProgressDialog::threadsDone() {
-    return (m_waitingThreads.count() == 0 && m_runningThreads.count() == 0);
+    return (m_waitingThreads.isEmpty() && m_runningThreads.isEmpty());
 }

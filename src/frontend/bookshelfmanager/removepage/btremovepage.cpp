@@ -13,6 +13,7 @@
 #include "frontend/bookshelfmanager/removepage/btremovepage.h"
 
 #include <QAction>
+#include <QDebug>
 #include <QGroupBox>
 #include <QHBoxLayout>
 #include <QHeaderView>
@@ -22,6 +23,7 @@
 #include <QVBoxLayout>
 #include "backend/bookshelfmodel/btbookshelffiltermodel.h"
 #include "backend/managers/cswordbackend.h"
+#include "frontend/bookshelfmanager/btmodulemanagerdialog.h"
 #include "frontend/btbookshelfview.h"
 #include "frontend/btbookshelfwidget.h"
 #include "util/cresmgr.h"
@@ -32,12 +34,12 @@
 #include <swmgr.h>
 #include <installmgr.h>
 
-BtRemovePage::BtRemovePage(QWidget *parent)
-        : BtConfigPage(parent)
+BtRemovePage::BtRemovePage(BtModuleManagerDialog *parent)
+        : BtConfigDialog::Page(util::directory::getIcon(CResMgr::bookshelfmgr::removepage::icon), parent)
 {
     namespace DU = util::directory;
 
-    m_worksGroupBox = new QGroupBox(tr("Select &works to uninstall:"), this);
+    m_worksGroupBox = new QGroupBox(this);
     m_worksGroupBox->setFlat(true);
     QVBoxLayout *wLayout = new QVBoxLayout;
     wLayout->setContentsMargins(0, 0, 0, 0);
@@ -60,20 +62,17 @@ BtRemovePage::BtRemovePage(QWidget *parent)
 
     m_uninstallGroupBox = new QGroupBox(this);
     m_uninstallGroupBox->setFlat(true);
-    retranslateUninstallGroupBox();
     QHBoxLayout *uLayout = new QHBoxLayout;
     uLayout->setContentsMargins(0, 0, 0, 0);
     m_uninstallGroupBox->setLayout(uLayout);
     uLayout->addStretch(1);
 
-    m_removeButton = new QPushButton(tr("&Remove..."), this);
-    m_removeButton->setToolTip(tr("Remove the selected works"));
+    m_removeButton = new QPushButton(this);
     m_removeButton->setIcon(DU::getIcon(CResMgr::bookshelfmgr::removepage::remove_icon));
     m_removeButton->setEnabled(false);
     uLayout->addWidget(m_removeButton, 0, Qt::AlignRight);
 
-    Q_ASSERT(qobject_cast<QVBoxLayout*>(layout()) != 0);
-    QVBoxLayout *mainLayout = static_cast<QVBoxLayout*>(layout());
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
     mainLayout->addWidget(m_worksGroupBox, 1);
     mainLayout->addWidget(m_uninstallGroupBox);
 
@@ -83,14 +82,19 @@ BtRemovePage::BtRemovePage(QWidget *parent)
             this,                           SLOT(slotResetRemoveButton()));
     connect(m_bookshelfWidget->treeModel(), SIGNAL(rowsRemoved(const QModelIndex&,int,int)),
             this,                           SLOT(slotResetRemoveButton()));
+
+    retranslateUi();
 }
 
-const QIcon &BtRemovePage::icon() const {
-    return util::directory::getIcon(CResMgr::bookshelfmgr::removepage::icon);
-}
+void BtRemovePage::retranslateUi() {
+    setHeaderText(tr("Remove"));
 
-QString BtRemovePage::header() const {
-    return tr("Remove");
+    m_worksGroupBox->setTitle(tr("Select &works to uninstall:"));
+
+    m_removeButton->setText(tr("&Remove..."));
+    m_removeButton->setToolTip(tr("Remove the selected works"));
+
+    retranslateUninstallGroupBox();
 }
 
 void BtRemovePage::retranslateUninstallGroupBox() {

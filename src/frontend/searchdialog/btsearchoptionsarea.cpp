@@ -247,7 +247,7 @@ void BtSearchOptionsArea::setModules(const QList<const CSwordModuleInfo*> &modul
         historyList.append(m_modulesCombo->itemText(i));
     }
     getBtConfig().setValue("history/searchModuleHistory", historyList);
-    emit sigSetSearchButtonStatus(modules.count() != 0);
+    emit sigSetSearchButtonStatus(!modules.isEmpty());
 }
 
 // Catch activated signal of module selector combobox

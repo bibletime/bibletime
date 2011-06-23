@@ -16,44 +16,29 @@
 #include <QWidget>
 
 
-//class CFontChooser;
-//class QCheckBox;
+class CConfigurationDialog;
 class QComboBox;
+class QLabel;
 
-/**
-    @author The BibleTime team <info@bibletime.info>
-*/
-class BtLanguageSettingsPage : public BtConfigPage {
+class BtLanguageSettingsPage: public BtConfigDialog::Page {
+
         Q_OBJECT
-    public:
-        BtLanguageSettingsPage(QWidget *parent = 0);
-        ~BtLanguageSettingsPage();
+
+    public: /* Methods: */
+
+        BtLanguageSettingsPage(CConfigurationDialog *parent = 0);
+
         void save();
 
-        /** Reimplemented from BtConfigPage. */
-        virtual const QIcon &icon() const;
+    private: /* Methods: */
 
-        /** Reimplemented from BtConfigPage. */
-        virtual QString header() const;
+        void retranslateUi();
 
-    protected slots:
+    private: /* Fields: */
 
-        // This slot is called when the "Use own font for language" button was clicked.
-        //void useOwnFontClicked(bool);
-
-        // Called when a new font in the fonts page was selected.
-        //void newDisplayWindowFontSelected(const QFont &);
-
-        // Called when the combobox contents is changed
-        //void newDisplayWindowFontAreaSelected(const QString&);
-
-    private:
+        QLabel *m_languageNamesLabel;
         QComboBox* m_swordLocaleCombo;
-        //QComboBox* m_usageCombo;
-        //QCheckBox* m_useOwnFontCheck;
-        //CFontChooser* m_fontChooser;
 
-        //QMap<QString, BtConfig::FontSettingsPair> m_fontMap;
 };
 
 #endif

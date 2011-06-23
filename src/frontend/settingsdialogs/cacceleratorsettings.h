@@ -19,25 +19,28 @@
 
 class BtActionCollection;
 class BtShortcutsEditor;
+class CConfigurationDialog;
 class QComboBox;
+class QLabel;
 class QStackedWidget;
 
 /**
  * @brief The shortcut settings page.
  * @author The BibleTime team <info@bibletime.info>
  */
-class CAcceleratorSettingsPage : public BtConfigPage {
+class CAcceleratorSettingsPage: public BtConfigDialog::Page {
+
         Q_OBJECT
-    public:
-        CAcceleratorSettingsPage(QWidget *parent = 0);
-        ~CAcceleratorSettingsPage();
+
+    public: /* Methods: */
+
+        CAcceleratorSettingsPage(CConfigurationDialog *parent = 0);
+
         void save();
 
-        /** Reimplemented from BtConfigPage. */
-        virtual const QIcon &icon() const;
+    protected: /* Methods: */
 
-        /** Reimplemented from BtConfigPage. */
-        virtual QString header() const;
+        void retranslateUi();
 
     protected slots:
 
@@ -75,6 +78,7 @@ class CAcceleratorSettingsPage : public BtConfigPage {
         WindowType m_lexicon;
         WindowType m_book;
 
+        QLabel *m_actionGroupLabel;
         QComboBox* m_typeChooser;
         QStackedWidget* m_keyChooserStack;
 

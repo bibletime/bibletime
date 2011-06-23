@@ -71,7 +71,6 @@ class BTModuleTreeItem {
         */
         struct Filter {
             virtual bool filter(CSwordModuleInfo*) = 0;
-            inline virtual ~Filter() {};
         };
 
         /**
@@ -82,7 +81,6 @@ class BTModuleTreeItem {
             inline bool filter(CSwordModuleInfo* mi) {
                 return !mi->isHidden();
             }
-            inline virtual ~HiddenOff() {};
         };
 
         /**

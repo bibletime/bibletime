@@ -77,6 +77,7 @@ void CHTMLWriteWindow::initToolbars() {
 void CHTMLWriteWindow::storeProfileSettings( CProfileWindow* profileWindow ) {
     CWriteWindow::storeProfileSettings(profileWindow);
     QAction* action = actionCollection()->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
+    Q_ASSERT(action != 0);
     profileWindow->setWindowSettings( action->isChecked() );
 }
 
@@ -84,6 +85,7 @@ void CHTMLWriteWindow::applyProfileSettings( CProfileWindow* profileWindow ) {
     CWriteWindow::applyProfileSettings(profileWindow);
     if (profileWindow->windowSettings()) {
         QAction* action = actionCollection()->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
+        Q_ASSERT(action != 0);
         action->setChecked(true);
     }
 }
@@ -91,8 +93,10 @@ void CHTMLWriteWindow::applyProfileSettings( CProfileWindow* profileWindow ) {
 /** Is called when the current text was changed. */
 void CHTMLWriteWindow::textChanged() {
     QAction* action = actionCollection()->action(CResMgr::displaywindows::writeWindow::saveText::actionName);
+    Q_ASSERT(action != 0);
     action->setEnabled( ((CWriteDisplay*)displayWidget())->isModified() );
     action = actionCollection()->action(CResMgr::displaywindows::writeWindow::restoreText::actionName);
+    Q_ASSERT(action != 0);
     action->setEnabled( ((CWriteDisplay*)displayWidget())->isModified() );
 }
 
@@ -105,6 +109,7 @@ void CHTMLWriteWindow::restoreText() {
 
 bool CHTMLWriteWindow::syncAllowed() const {
     QAction* action = actionCollection()->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
+    Q_ASSERT(action != 0);
     return action->isChecked();
 }
 

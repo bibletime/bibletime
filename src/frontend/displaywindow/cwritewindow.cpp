@@ -16,7 +16,7 @@
 #include "frontend/keychooser/ckeychooser.h"
 #include "frontend/profile/cprofilewindow.h"
 #include "util/dialogutil.h"
-
+#include "util/btsignal.h"
 
 using namespace Profile;
 
@@ -30,7 +30,7 @@ void CWriteWindow::insertKeyboardActions( BtActionCollection* const ) {}
 
 void CWriteWindow::initConnections() {
     Q_ASSERT(keyChooser());
-    QObject::connect(keyChooser(), SIGNAL(beforeKeyChange(const QString&)), this, SLOT(beforeKeyChange(const QString&)));
+    QObject::connect(key()->signaler(), SIGNAL(beforeChanged()), this, SLOT(beforeKeyChange()));
 }
 
 void CWriteWindow::initActions() {}
@@ -127,17 +127,25 @@ bool CWriteWindow::queryClose() {
     return true;
 }
 
-void CWriteWindow::beforeKeyChange(const QString& key) {
+void CWriteWindow::beforeKeyChange() {
     Q_ASSERT(displayWidget());
     Q_ASSERT(keyChooser());
-    if (!isReady()) return;
+    if (!isReady())
+        return;
 
+    // Get current key string for this window
+    QString thisWindowsKey;
+    CSwordKey* oldKey = key();
+    if (oldKey == 0)
+        return;
+    thisWindowsKey = oldKey->key();
+    
     //If the text changed and we'd do a lookup ask the user if the text should be saved
     if (modules().first() && ((CWriteDisplay*)displayWidget())->isModified()) {
 
         switch (util::showQuestion( this, tr("Save Text?"), tr("Save changed text?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes) ) {
             case QMessageBox::Yes: { //save the changes
-                saveCurrentText( key );
+                saveCurrentText( thisWindowsKey );
                 break;
             }
             default: {// set modified to false so it won't ask again

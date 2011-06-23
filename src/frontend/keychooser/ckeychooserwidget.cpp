@@ -180,7 +180,7 @@ void CKeyChooserWidget::reset(const QStringList *list, int index, bool do_emit) 
         emit changed(m_comboBox->currentIndex());
     }
 
-    const QSize dummySize = m_comboBox->sizeHint(); //without this function call the combo box won't be properly sized!
+    m_comboBox->sizeHint(); //without this function call the combo box won't be properly sized!
     //DON'T REMOVE OR MOVE THE show()! Otherwise QComboBox's sizeHint() function won't work properly!
     m_comboBox->show();
 

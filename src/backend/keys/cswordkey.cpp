@@ -153,8 +153,15 @@ QString CSwordKey::strippedText() {
     return QString::fromUtf8( m_module->module()->StripText() );
 }
 
+void CSwordKey::emitBeforeChanged() {
+    if (m_signal.isNull())
+        return;
+    m_signal->emitBeforeChanged();
+}
+
 void CSwordKey::emitChanged() {
-    if (m_signal.isNull()) return;
+    if (m_signal.isNull())
+        return;
     m_signal->emitChanged();
 }
 

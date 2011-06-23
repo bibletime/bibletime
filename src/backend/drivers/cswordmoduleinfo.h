@@ -138,7 +138,7 @@ class CSwordModuleInfo: public QObject {
             Cult            = 0x80, /**< Cult / sect / questionable module. */
             AllCategories   = 0xff
         };
-        Q_DECLARE_FLAGS(Categories, Category);
+        Q_DECLARE_FLAGS(Categories, Category)
 
         /**
         * Returns the base directory for search indices
@@ -167,11 +167,6 @@ class CSwordModuleInfo: public QObject {
                          ModuleType type = Unknown);
 
         CSwordModuleInfo(const CSwordModuleInfo &copy);
-
-        virtual CSwordModuleInfo *clone() const = 0;
-
-        virtual inline ~CSwordModuleInfo() {}
-
 
         /**
         * Returns the module object so all objects can access the original Sword module.
@@ -397,7 +392,6 @@ wrong, or if the config file was write protected return false.
         }
 
     protected:
-        friend class CSwordBackend;
 
         inline CSwordBackend* backend() const {
             return m_backend;

@@ -38,10 +38,9 @@ class CSearchDialog : public QDialog {
         static void closeDialog();
 
     protected:
+
         friend class CSearchAnalysisScene;
-        friend class CSearchResultArea;
         friend class BtSearchResultArea;
-        friend class BibleTime;
 
         /**
         * Only interesting for the class members! Useful to get the searched text etc.

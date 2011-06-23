@@ -77,6 +77,9 @@ void BibleTime::initView() {
     m_magDock->setWidget(m_infoDisplay);
     addDockWidget(Qt::LeftDockWidgetArea, m_magDock);
 
+    connect(m_bookshelfDock, SIGNAL(moduleHovered(CSwordModuleInfo*)),
+            m_infoDisplay,   SLOT(setInfo(CSwordModuleInfo*)));
+
     m_mdi->setMinimumSize(100, 100);
     m_mdi->setFocusPolicy(Qt::ClickFocus);
 }
@@ -353,12 +356,14 @@ void BibleTime::initActions() {
             this,             SLOT(createReadDisplayWindow(CSwordModuleInfo*)));
 
     m_quitAction = m_actionCollection->action("quit");
+    Q_ASSERT(m_quitAction != 0);
     connect(m_quitAction, SIGNAL(triggered()),
             this,         SLOT(quit()));
 
 
     // View menu actions:
     m_windowFullscreenAction = m_actionCollection->action("toggleFullscreen");
+    Q_ASSERT(m_windowFullscreenAction != 0);
     m_windowFullscreenAction->setCheckable(true);
     connect(m_windowFullscreenAction, SIGNAL(triggered()),
             this,                     SLOT(toggleFullscreen()));
@@ -379,42 +384,49 @@ void BibleTime::initActions() {
     m_actionCollection->addAction("showMag", m_showMagAction);
 
     m_showTextAreaHeadersAction = m_actionCollection->action("showParallelTextHeaders");
+    Q_ASSERT(m_showTextAreaHeadersAction != 0);
     m_showTextAreaHeadersAction->setCheckable(true);
     m_showTextAreaHeadersAction->setChecked(getBtConfig().getValue<bool>("gui/showTextWindowHeaders"));
     connect(m_showTextAreaHeadersAction, SIGNAL(toggled(bool)),
             this,                        SLOT(slotToggleTextWindowHeader()));
 
     m_showMainWindowToolbarAction = m_actionCollection->action("showToolbar");
+    Q_ASSERT(m_showMainWindowToolbarAction != 0);
     m_showMainWindowToolbarAction->setCheckable(true);
     m_showMainWindowToolbarAction->setChecked(getBtConfig().getValue<bool>("gui/showMainToolbar"));
     connect( m_showMainWindowToolbarAction, SIGNAL(triggered()),
             this,                SLOT(slotToggleMainToolbar()));
 
     m_showTextWindowNavigationAction = m_actionCollection->action("showNavigation");
+    Q_ASSERT(m_showTextWindowNavigationAction != 0);
     m_showTextWindowNavigationAction->setCheckable(true);
     m_showTextWindowNavigationAction->setChecked(getBtConfig().getValue<bool>("gui/showTextWindowNavigator"));
     connect(m_showTextWindowNavigationAction, SIGNAL(toggled(bool)),
             this,                             SLOT(slotToggleNavigatorToolbar()));
 
     m_showTextWindowModuleChooserAction = m_actionCollection->action("showWorks");
+    Q_ASSERT(m_showTextWindowModuleChooserAction != 0);
     m_showTextWindowModuleChooserAction->setCheckable(true);
     m_showTextWindowModuleChooserAction->setChecked(getBtConfig().getValue<bool>("gui/showTextWindowModuleSelectorButtons"));
     connect(m_showTextWindowModuleChooserAction, SIGNAL(toggled(bool)),
             this,                                SLOT(slotToggleWorksToolbar()));
 
     m_showTextWindowToolButtonsAction = m_actionCollection->action("showTools");
+    Q_ASSERT(m_showTextWindowToolButtonsAction != 0);
     m_showTextWindowToolButtonsAction->setCheckable(true);
     m_showTextWindowToolButtonsAction->setChecked(getBtConfig().getValue<bool>("gui/showTextWindowToolButtons"));
     connect(m_showTextWindowToolButtonsAction, SIGNAL(toggled(bool)),
             this,                              SLOT(slotToggleToolsToolbar()));
 
     m_showFormatToolbarAction = m_actionCollection->action("showFormat");
+    Q_ASSERT(m_showFormatToolbarAction != 0);
     m_showFormatToolbarAction->setCheckable(true);
     m_showFormatToolbarAction->setChecked(getBtConfig().getValue<bool>("gui/showFormatToolbarButtons"));
     bool ok = connect(m_showFormatToolbarAction, SIGNAL(toggled(bool)),
                       this,                      SLOT(slotToggleFormatToolbar()));
 
     m_toolbarsInEachWindow = m_actionCollection->action("showToolbarsInTextWindows");
+    Q_ASSERT(m_toolbarsInEachWindow != 0);
     m_toolbarsInEachWindow->setCheckable(true);
     m_toolbarsInEachWindow->setChecked(getBtConfig().getValue<bool>("gui/showToolbarsInEachWindow"));
     ok = connect(m_toolbarsInEachWindow, SIGNAL(toggled(bool)),
@@ -423,41 +435,50 @@ void BibleTime::initActions() {
 
     // Search menu actions:
     m_searchOpenWorksAction = m_actionCollection->action("searchOpenWorks");
+    Q_ASSERT(m_searchOpenWorksAction != 0);
     connect(m_searchOpenWorksAction, SIGNAL(triggered()),
             this,                    SLOT(slotSearchModules()));
 
     m_searchStandardBibleAction = m_actionCollection->action("searchStdBible");
+    Q_ASSERT(m_searchStandardBibleAction != 0);
     connect(m_searchStandardBibleAction, SIGNAL(triggered()),
             this,                        SLOT(slotSearchDefaultBible()));
 
     // Window menu actions:
     m_windowCloseAction = m_actionCollection->action("closeWindow");
+    Q_ASSERT(m_windowCloseAction != 0);
     connect(m_windowCloseAction, SIGNAL(triggered()),
             m_mdi,                SLOT(closeActiveSubWindow()));
 
     m_windowCloseAllAction = m_actionCollection->action("closeAllWindows");
+    Q_ASSERT(m_windowCloseAllAction != 0);
     connect(m_windowCloseAllAction, SIGNAL(triggered()),
             m_mdi,                   SLOT(closeAllSubWindows()));
 
     m_windowCascadeAction = m_actionCollection->action("cascade");
+    Q_ASSERT(m_windowCascadeAction != 0);
     connect(m_windowCascadeAction, SIGNAL(triggered()),
             this,                   SLOT(slotCascade()));
 
     m_windowTileAction = m_actionCollection->action("tile");
+    Q_ASSERT(m_windowTileAction != 0);
     connect(m_windowTileAction, SIGNAL(triggered()),
             this,                SLOT(slotTile()));
 
     m_windowTileVerticalAction = m_actionCollection->action("tileVertically");
+    Q_ASSERT(m_windowTileVerticalAction != 0);
     connect(m_windowTileVerticalAction, SIGNAL(triggered()),
             this,                        SLOT(slotTileVertical()));
 
     m_windowTileHorizontalAction = m_actionCollection->action("tileHorizontally");
+    Q_ASSERT(m_windowTileHorizontalAction != 0);
     connect(m_windowTileHorizontalAction, SIGNAL(triggered()),
             this,                          SLOT(slotTileHorizontal()));
 
     alignmentMode alignment = getBtConfig().getValue<alignmentMode>("gui/alignmentMode");
     
     m_windowManualModeAction = m_actionCollection->action("manualArrangement");
+    Q_ASSERT(m_windowManualModeAction != 0);
     m_windowManualModeAction->setCheckable(true);
     if(alignment == manual)
         m_windowManualModeAction->setChecked(true);
@@ -465,6 +486,7 @@ void BibleTime::initActions() {
             this,                      SLOT(slotManualArrangementMode()));
 
     m_windowAutoTabbedAction = m_actionCollection->action("autoTabbed");
+    Q_ASSERT(m_windowAutoTabbedAction != 0);
     m_windowAutoTabbedAction->setCheckable(true);
     if(alignment == autoTabbed)
         m_windowAutoTabbedAction->setChecked(true);
@@ -473,6 +495,7 @@ void BibleTime::initActions() {
 
     //: Vertical tiling means that windows are vertical, placed side by side
     m_windowAutoTileVerticalAction = m_actionCollection->action("autoVertical");
+    Q_ASSERT(m_windowAutoTileVerticalAction != 0);
     m_windowAutoTileVerticalAction->setCheckable(true);
     if(alignment == autoTileVertical)
         m_windowAutoTileVerticalAction->setChecked(true);
@@ -481,6 +504,7 @@ void BibleTime::initActions() {
 
     //: Horizontal tiling means that windows are horizontal, placed on top of each other
     m_windowAutoTileHorizontalAction = m_actionCollection->action("autoHorizontal");
+    Q_ASSERT(m_windowAutoTileHorizontalAction != 0);
     m_windowAutoTileHorizontalAction->setCheckable(true);
     if(alignment == autoTileHorizontal)
         m_windowAutoTileHorizontalAction->setChecked(true);
@@ -488,6 +512,7 @@ void BibleTime::initActions() {
             this,                              SLOT(slotAutoTileHorizontal()));
 
     m_windowAutoTileAction = m_actionCollection->action("autoTile");
+    Q_ASSERT(m_windowAutoTileAction != 0);
     m_windowAutoTileAction->setCheckable(true);
     if(alignment == autoTile)
         m_windowAutoTileAction->setChecked(true);
@@ -495,6 +520,7 @@ void BibleTime::initActions() {
             this,                    SLOT(slotAutoTile()));
 
     m_windowAutoCascadeAction = m_actionCollection->action("autoCascade");
+    Q_ASSERT(m_windowAutoCascadeAction != 0);
     m_windowAutoCascadeAction->setCheckable(true);
     if(alignment == autoCascade)
         m_windowAutoCascadeAction->setChecked(true);
@@ -525,30 +551,37 @@ void BibleTime::initActions() {
     }
 
     m_windowSaveToNewProfileAction = m_actionCollection->action("saveNewSession");
+    Q_ASSERT(m_windowSaveToNewProfileAction != 0);
     connect(m_windowSaveToNewProfileAction, SIGNAL(triggered()),
             this,                            SLOT(saveToNewProfile()));
 
     m_setPreferencesAction = m_actionCollection->action("setPreferences");
+    Q_ASSERT(m_setPreferencesAction != 0);
     connect(m_setPreferencesAction, SIGNAL(triggered()),
             this,                   SLOT(slotSettingsOptions()));
 
     m_bookshelfManagerAction = m_actionCollection->action("bookshelfManager");
+    Q_ASSERT(m_bookshelfManagerAction != 0);
     connect(m_bookshelfManagerAction, SIGNAL(triggered()),
             this,                     SLOT(slotSwordSetupDialog()));
 
     m_openHandbookAction = m_actionCollection->action("openHandbook");
+    Q_ASSERT(m_openHandbookAction != 0);
     connect(m_openHandbookAction, SIGNAL(triggered()),
             this,                 SLOT(openOnlineHelp_Handbook()));
 
     m_bibleStudyHowtoAction = m_actionCollection->action("bibleStudyHowto");
+    Q_ASSERT(m_bibleStudyHowtoAction != 0);
     connect(m_bibleStudyHowtoAction, SIGNAL(triggered()),
             this,                    SLOT(openOnlineHelp_Howto()));
 
     m_aboutBibleTimeAction = m_actionCollection->action("aboutBibleTime");
+    Q_ASSERT(m_aboutBibleTimeAction != 0);
     connect(m_aboutBibleTimeAction,  SIGNAL(triggered()),
             this,                    SLOT(slotOpenAboutDialog()) );
 
     m_tipOfTheDayAction = m_actionCollection->action("tipOfTheDay");
+    Q_ASSERT(m_tipOfTheDayAction != 0);
     connect(m_tipOfTheDayAction,  SIGNAL(triggered()),
             this,                    SLOT(slotOpenTipDialog()) );
 
@@ -663,9 +696,15 @@ void BibleTime::initToolbars() {
     m_mainToolBar->addWidget(openWorkButton);
 
     m_mainToolBar->addAction(m_windowFullscreenAction);
-    m_mainToolBar->addAction(m_actionCollection->action("showBookshelf"));
-    m_mainToolBar->addAction(m_actionCollection->action("showBookmarks"));
-    m_mainToolBar->addAction(m_actionCollection->action("showMag"));
+    QAction *a = m_actionCollection->action("showBookshelf");
+    Q_ASSERT(a != 0);
+    m_mainToolBar->addAction(a);
+    a = m_actionCollection->action("showBookmarks");
+    Q_ASSERT(a != 0);
+    m_mainToolBar->addAction(a);
+    a = m_actionCollection->action("showMag");
+    Q_ASSERT(a != 0);
+    m_mainToolBar->addAction(a);
     m_mainToolBar->addAction(m_searchOpenWorksAction);
     m_mainToolBar->addAction(m_openHandbookAction);
 }
@@ -706,16 +745,36 @@ void BibleTime::retranslateUi() {
 *   The second is used during the use of the configuration shortcut editor
 */
 void BibleTime::retranslateUiActions(BtActionCollection* ac) {
-    ac->action("showToolbarsInTextWindows")->setText(tr("Show toolbars in text windows"));
-    ac->action("showToolbar")->setText(tr("Show main toolbar"));
-    ac->action("showNavigation")->setText(tr("Show navigation bar"));
-    ac->action("showWorks")->setText(tr("Show works toolbar"));
-    ac->action("showTools")->setText(tr("Show tools toolbar"));
-    ac->action("showFormat")->setText(tr("Show formatting toolbar"));
-    ac->action("showBookshelf")->setText(tr("Show bookshelf"));
-    ac->action("showBookmarks")->setText(tr("Show bookmarks"));
-    ac->action("showMag")->setText(tr("Show mag"));
-    ac->action("showParallelTextHeaders")->setText(tr("Show parallel text headers"));
+    QAction *a = ac->action("showToolbarsInTextWindows");
+    Q_ASSERT(a != 0);
+    a->setText(tr("Show toolbars in text windows"));
+    a = ac->action("showToolbar");
+    Q_ASSERT(a != 0);
+    a->setText(tr("Show main toolbar"));
+    a = ac->action("showNavigation");
+    Q_ASSERT(a != 0);
+    a->setText(tr("Show navigation bar"));
+    a = ac->action("showWorks");
+    Q_ASSERT(a != 0);
+    a->setText(tr("Show works toolbar"));
+    a = ac->action("showTools");
+    Q_ASSERT(a != 0);
+    a->setText(tr("Show tools toolbar"));
+    a = ac->action("showFormat");
+    Q_ASSERT(a != 0);
+    a->setText(tr("Show formatting toolbar"));
+    a = ac->action("showBookshelf");
+    Q_ASSERT(a != 0);
+    a->setText(tr("Show bookshelf"));
+    a = ac->action("showBookmarks");
+    Q_ASSERT(a != 0);
+    a->setText(tr("Show bookmarks"));
+    a = ac->action("showMag");
+    Q_ASSERT(a != 0);
+    a->setText(tr("Show mag"));
+    a = ac->action("showParallelTextHeaders");
+    Q_ASSERT(a != 0);
+    a->setText(tr("Show parallel text headers"));
 }
 
 /** Initializes the SIGNAL / SLOT connections */

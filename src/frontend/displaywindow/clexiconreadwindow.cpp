@@ -86,61 +86,78 @@ void CLexiconReadWindow::initActions() {
     CReadWindow::initActions();
     CLexiconReadWindow::insertKeyboardActions(ac);
 
-    m_actions.backInHistory = dynamic_cast<BtToolBarPopupAction*>(
-                                  ac->action(CResMgr::displaywindows::general::backInHistory::actionName) );
+    QAction *qaction = ac->action(CResMgr::displaywindows::general::backInHistory::actionName);
+    Q_ASSERT(qaction != 0);
+    m_actions.backInHistory = dynamic_cast<BtToolBarPopupAction*>(qaction);
     Q_ASSERT(m_actions.backInHistory);
     addAction(m_actions.backInHistory);
 
-    m_actions.forwardInHistory = dynamic_cast<BtToolBarPopupAction*>(
-                                     ac->action(CResMgr::displaywindows::general::forwardInHistory::actionName) );
+    qaction = ac->action(CResMgr::displaywindows::general::forwardInHistory::actionName);
+    Q_ASSERT(qaction != 0);
+    m_actions.forwardInHistory = dynamic_cast<BtToolBarPopupAction*>(qaction);
     Q_ASSERT(m_actions.forwardInHistory);
     addAction(m_actions.forwardInHistory);
 
-    QAction* qaction;
-
     qaction = ac->action("nextEntry");
-    QObject::connect(qaction, SIGNAL(triggered()), this, SLOT( nextEntry() ) );
+    Q_ASSERT(qaction != 0);
+    connect(qaction, SIGNAL(triggered()),
+            this,    SLOT(nextEntry()));
     addAction(qaction);
 
     qaction = ac->action("previousEntry");
-    QObject::connect(qaction, SIGNAL(triggered()), this, SLOT( previousEntry() ) );
+    Q_ASSERT(qaction != 0);
+    connect(qaction, SIGNAL(triggered()),
+            this,   SLOT(previousEntry()));
     addAction(qaction);
 
     m_actions.selectAll = ac->action("selectAll");
-    Q_ASSERT(m_actions.selectAll);
+    Q_ASSERT(m_actions.selectAll != 0);
 
     m_actions.findText = ac->action("findText");
-    Q_ASSERT(m_actions.findText);
+    Q_ASSERT(m_actions.findText != 0);
 
     m_actions.findStrongs = ac->action(CResMgr::displaywindows::general::findStrongs::actionName);
-    QObject::connect(m_actions.findStrongs, SIGNAL(triggered()), this, SLOT(openSearchStrongsDialog()) );
+    Q_ASSERT(m_actions.findStrongs != 0);
+    connect(m_actions.findStrongs, SIGNAL(triggered()),
+            this,                  SLOT(openSearchStrongsDialog()) );
     addAction(m_actions.findStrongs);
 
     m_actions.copy.reference = ac->action("copyReferenceOnly");
-    QObject::connect(m_actions.copy.reference, SIGNAL(triggered()), displayWidget()->connectionsProxy(), SLOT(copyAnchorOnly()) );
+    Q_ASSERT(m_actions.copy.reference != 0);
+    connect(m_actions.copy.reference,            SIGNAL(triggered()),
+            displayWidget()->connectionsProxy(), SLOT(copyAnchorOnly()));
     addAction(m_actions.copy.reference);
 
     m_actions.copy.entry = ac->action("copyEntryWithText");
-    QObject::connect(m_actions.copy.entry, SIGNAL(triggered()), displayWidget()->connectionsProxy(), SLOT(copyAll()) );
+    Q_ASSERT(m_actions.copy.entry != 0);
+    connect(m_actions.copy.entry,                SIGNAL(triggered()),
+            displayWidget()->connectionsProxy(), SLOT(copyAll()));
     addAction(m_actions.copy.entry);
 
-    Q_ASSERT(ac->action("copySelectedText"));
     m_actions.copy.selectedText = ac->action("copySelectedText");
+    Q_ASSERT(m_actions.copy.selectedText != 0);
 
     m_actions.save.entryAsPlain = new QAction(tr("Entry as plain text"), ac );
-    QObject::connect(m_actions.save.entryAsPlain, SIGNAL(triggered()), this, SLOT(saveAsPlain()) );
+    connect(m_actions.save.entryAsPlain, SIGNAL(triggered()),
+            this,                        SLOT(saveAsPlain()));
     addAction(m_actions.save.entryAsPlain);
 
     m_actions.save.entryAsHTML = ac->action("saveHtml");
-    QObject::connect(m_actions.save.entryAsHTML, SIGNAL(triggered()), this, SLOT(saveAsHTML()));
+    Q_ASSERT(m_actions.save.entryAsHTML != 0);
+    connect(m_actions.save.entryAsHTML, SIGNAL(triggered()),
+            this,                       SLOT(saveAsHTML()));
     addAction(m_actions.save.entryAsHTML);
 
     m_actions.print.reference = ac->action("printReferenceOnly");
-    QObject::connect(m_actions.print.reference, SIGNAL(triggered()), this, SLOT(printAnchorWithText()));
+    Q_ASSERT(m_actions.print.reference != 0);
+    connect(m_actions.print.reference, SIGNAL(triggered()),
+            this,                      SLOT(printAnchorWithText()));
     addAction(m_actions.print.reference);
 
     m_actions.print.entry = ac->action("printEntryWithText");
-    QObject::connect(m_actions.print.entry, SIGNAL(triggered()), this, SLOT(printAll()));
+    Q_ASSERT(m_actions.print.entry != 0);
+    connect(m_actions.print.entry, SIGNAL(triggered()),
+            this,                  SLOT(printAll()));
     addAction(m_actions.print.entry);
 
     // init with the user defined settings
@@ -218,12 +235,10 @@ void CLexiconReadWindow::initToolbars() {
     mainToolBar()->addAction(m_actions.forwardInHistory); //2nd button
 
     //Tools toolbar
-    QAction* action = qobject_cast<QAction*>(actionCollection()->action(
-                          CResMgr::displaywindows::general::search::actionName));
-    Q_ASSERT( action );
-    if (action) {
-        buttonsToolBar()->addAction(action);
-    }
+    QAction *action = actionCollection()->action(CResMgr::displaywindows::general::search::actionName);
+    Q_ASSERT(action != 0);
+    buttonsToolBar()->addAction(action);
+
     BtDisplaySettingsButton* button = new BtDisplaySettingsButton(buttonsToolBar());
     setDisplaySettingsButton(button);
     buttonsToolBar()->addWidget(button);
@@ -248,12 +263,9 @@ void CLexiconReadWindow::setupMainWindowToolBars() {
     btMainWindow()->worksToolBar()->setModules(getModuleList(), modules().first()->type(), this);
 
     // Tools toolbar
-    QAction* action = actionCollection()->action(
-                          CResMgr::displaywindows::general::search::actionName);
-    Q_ASSERT( action );
-    if (action) {
-        btMainWindow()->toolsToolBar()->addAction(action);
-    }
+    QAction *action = actionCollection()->action(CResMgr::displaywindows::general::search::actionName);
+    Q_ASSERT(action != 0);
+    btMainWindow()->toolsToolBar()->addAction(action);
     BtDisplaySettingsButton* button = new BtDisplaySettingsButton(buttonsToolBar());
     setDisplaySettingsButton(button);
     btMainWindow()->toolsToolBar()->addWidget(button);
@@ -304,7 +316,7 @@ void CLexiconReadWindow::setupPopupMenu() {
 void CLexiconReadWindow::updatePopupMenu() {
     //enable the action depending on the supported module features
 
-    m_actions.findStrongs->setEnabled( displayWidget()->getCurrentNodeInfo()[CDisplay::Lemma] != QString::null );
+    m_actions.findStrongs->setEnabled(!displayWidget()->getCurrentNodeInfo().isNull());
 
     m_actions.copy.reference->setEnabled( ((CReadDisplay*)displayWidget())->hasActiveAnchor() );
     m_actions.copy.selectedText->setEnabled( displayWidget()->hasSelection() );

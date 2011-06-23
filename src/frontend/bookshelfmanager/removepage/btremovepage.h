@@ -22,35 +22,40 @@
 
 
 class BtBookshelfWidget;
+class BtModuleManagerDialog;
 class QGroupBox;
 class QPushButton;
 
-class BtRemovePage: public BtConfigPage {
+class BtRemovePage: public BtConfigDialog::Page {
+
         Q_OBJECT
 
-    public:
-        BtRemovePage(QWidget *parent = 0);
+    public: /* Methods: */
 
-        /** Reimplemented from BtConfigPage. */
-        virtual QString header() const;
+        BtRemovePage(BtModuleManagerDialog *parent = 0);
 
-        /** Reimplemented from BtConfigPage. */
-        virtual const QIcon &icon() const;
+    public: /* Methods: */
 
-    private:
+        void retranslateUi();
+
+    private: /* Methods: */
+
         void retranslateUninstallGroupBox();
 
     private slots:
+
         void slotRemoveModules();
         void slotResetRemoveButton();
         void slotGroupingOrderChanged(const BtBookshelfTreeModel::Grouping &g);
 
-    private:
+    private: /* Fields: */
+
         QGroupBox *m_worksGroupBox;
             BtBookshelfWidget *m_bookshelfWidget;
 
         QGroupBox *m_uninstallGroupBox;
             QPushButton       *m_removeButton;
+
 };
 
 #endif

@@ -21,8 +21,7 @@ class QToolBar;
   */
 class CWriteDisplay : public CDisplay  {
     protected:
-        friend class CDisplay;
-        friend class CPlainWriteDisplay;
+
         CWriteDisplay( CWriteWindow* writeWindow );
         ~CWriteDisplay();
 

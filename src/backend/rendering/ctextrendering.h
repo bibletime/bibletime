@@ -17,6 +17,8 @@
 class CSwordKey;
 class CSwordModuleInfo;
 
+namespace Rendering {
+
 /**
  * CTextRendering is BibleTime's place where the actual rendering takes place.
  * It provides several methods to convert an abstract tree of items
@@ -26,20 +28,19 @@ class CSwordModuleInfo;
  * @short Text rendering based on trees
  * @author The BibleTime team
 */
-
-namespace Rendering {
-
 class CTextRendering {
 
-    public:
+    public: /* Types: */
 
         class KeyTreeItem;
         typedef QList<KeyTreeItem*> KeyTree;
 
         class KeyTreeItem {
-            public:
+
+            public: /* Types: */
 
                 struct Settings {
+
                     enum KeyRenderingFace {
                         NoKey, //< means no key shown at all
                         SimpleKey, //< means only versenumber or only lexicon entry name
@@ -47,11 +48,18 @@ class CTextRendering {
                         CompleteLong //< means "Genesis 1:1"
                     };
 
-                    Settings(const bool highlight = false, KeyRenderingFace keyRendering = SimpleKey) : highlight(highlight), keyRenderingFace(keyRendering) {}
+                    Settings(const bool highlight = false,
+                             KeyRenderingFace keyRendering = SimpleKey)
+                        : highlight(highlight)
+                        , keyRenderingFace(keyRendering)
+                    {}
 
                     bool highlight;
                     KeyRenderingFace keyRenderingFace;
-                };
+
+                }; /* struct Settings */
+
+            public: /* Methods: */
 
                 KeyTreeItem(const QString &key,
                             const CSwordModuleInfo *module,
@@ -74,32 +82,39 @@ class CTextRendering {
                     qDeleteAll(m_childList);
                 }
 
-                const QString& getAlternativeContent() const;
+                inline const QString &getAlternativeContent() const {
+                    return m_alternativeContent;
+                }
+
                 inline void setAlternativeContent(const QString& newContent) {
                     m_alternativeContent = newContent;
-                };
+                }
 
                 inline bool hasAlternativeContent() const {
                     return !m_alternativeContent.isNull();
-                };
+                }
 
                 inline const QList<const CSwordModuleInfo*>& modules() const {
                     return m_moduleList;
-                };
+                }
 
                 inline const QString& key() const {
                     return m_key;
-                };
+                }
 
                 inline const Settings& settings() const {
                     return m_settings;
-                };
+                }
 
-                inline KeyTree* childList() const;
-//        inline const bool hasChildItems() const;
+                inline KeyTree* childList() const {
+                    return &m_childList;
+                }
 
-            protected:
+            protected: /* Methods: */
+
                 KeyTreeItem();
+
+            private: /* Fields: */
 
                 Settings m_settings;
                 QList<const CSwordModuleInfo*> m_moduleList;
@@ -108,11 +123,12 @@ class CTextRendering {
 
                 QString m_stopKey;
                 QString m_alternativeContent;
-        };
 
-        virtual ~CTextRendering() {}
+        }; /* class KeyTreeItem */
 
-        const QString renderKeyTree( KeyTree& );
+    public: /* Methods: */
+
+        const QString renderKeyTree(KeyTree &tree);
 
         const QString renderKeyRange(
                 const QString &start,
@@ -126,21 +142,15 @@ class CTextRendering {
                 const QList<const CSwordModuleInfo*> &modules,
                 const KeyTreeItem::Settings &settings = KeyTreeItem::Settings());
 
-    protected:
-        const QList<const CSwordModuleInfo*> collectModules(KeyTree* const tree) const;
+    protected: /* Methods: */
+
+        const QList<const CSwordModuleInfo*> collectModules(const KeyTree * const tree) const;
         virtual const QString renderEntry( const KeyTreeItem&, CSwordKey* = 0 ) = 0;
         virtual const QString finishText( const QString&, KeyTree& tree ) = 0;
         virtual void initRendering() = 0;
-};
 
-inline CTextRendering::KeyTree* CTextRendering::KeyTreeItem::childList() const {
-    return &m_childList;
-}
-//
-//inline const bool CTextRendering::KeyTreeItem::hasChildItems() const {
-//    return !m_childList.isEmpty();
-//}
+}; /* class CTextRendering */
 
-}
+} /* namespace Rendering */
 
 #endif

@@ -17,26 +17,26 @@
 #include "backend/config/btconfig.h"
 
 
-class CFontChooser;
+class BtFontChooserWidget;
+class CConfigurationDialog;
 class QCheckBox;
 class QComboBox;
 class QGroupBox;
+class QLabel;
 
-/**
-    @author The BibleTime team <info@bibletime.info>
-*/
-class BtFontSettingsPage : public BtConfigPage {
+class BtFontSettingsPage: public BtConfigDialog::Page {
+
         Q_OBJECT
-    public:
-        BtFontSettingsPage(QWidget *parent = 0);
-        ~BtFontSettingsPage();
-        void save();
 
-        /** Reimplemented from BtConfigPage. */
-        virtual const QIcon &icon() const;
+    private: /* Types: */
 
-        /** Reimplemented from BtConfigPage. */
-        virtual QString header() const;
+        typedef QMap<QString, BtConfig::FontSettingsPair> FontMap;
+
+    public: /* Methods: */
+
+        BtFontSettingsPage(CConfigurationDialog *parent = 0);
+
+        void save() const;
 
     protected slots:
 
@@ -49,14 +49,20 @@ class BtFontSettingsPage : public BtConfigPage {
         // Called when the combobox contents is changed
         void newDisplayWindowFontAreaSelected(const QString&);
 
-    private:
+    private: /* Methods: */
+
+        void retranslateUi();
+
+    private: /* Fields: */
+
         QGroupBox *m_fontsGroupBox;
         QLabel *m_languageLabel;
         QComboBox *m_languageComboBox;
         QCheckBox *m_languageCheckBox;
-        CFontChooser* m_fontChooser;
+        BtFontChooserWidget* m_fontChooser;
 
-        QMap<QString, BtConfig::FontSettingsPair> m_fontMap;
+        FontMap m_fontMap;
+
 };
 
 #endif

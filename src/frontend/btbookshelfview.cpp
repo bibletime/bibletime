@@ -33,6 +33,8 @@ BtBookshelfView::BtBookshelfView(QWidget *parent)
 
     connect(this, SIGNAL(activated(QModelIndex)),
             this, SLOT(slotItemActivated(QModelIndex)));
+    connect(this, SIGNAL(entered(QModelIndex)),
+            this, SLOT(slotItemHovered(QModelIndex)));
 }
 
 BtBookshelfView::~BtBookshelfView() {
@@ -105,4 +107,8 @@ void BtBookshelfView::slotItemActivated(const QModelIndex &index) {
     if (i != 0) {
         emit moduleActivated(i);
     }
+}
+
+void BtBookshelfView::slotItemHovered(const QModelIndex &index) {
+    emit moduleHovered(getModule(index));
 }

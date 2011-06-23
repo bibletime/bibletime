@@ -22,18 +22,16 @@ namespace Rendering {
   once.
 */
 class CChapterDisplay: public CEntryDisplay {
-    public: /* Methods: */
-        virtual inline ~CChapterDisplay() {}
 
-        /**
-          Reimplemented from CEntryDisplay.
-        */
+    public: /* Methods: */
+
         virtual const QString text(const QList<const CSwordModuleInfo*> &modules,
                                    const QString &key,
                                    const DisplayOptions &displayOptions,
                                    const FilterOptions &filterOptions);
-};
 
-} // namespace Rendering
+}; /* class CChapterDisplay */
+
+} /* namespace Rendering */
 
 #endif

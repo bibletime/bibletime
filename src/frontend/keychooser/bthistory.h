@@ -23,7 +23,6 @@ class BTHistory: public QObject {
         Q_OBJECT
     public:
         BTHistory(QWidget* parent);
-        ~BTHistory() {}
 
         /**
         * Return a list of Actions behind the current point, the first of the history list will be the

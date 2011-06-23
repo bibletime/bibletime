@@ -188,13 +188,11 @@ void CReadWindow::resizeEvent(QResizeEvent* /*e*/) {
 }
 
 void CReadWindow::openSearchStrongsDialog() {
-//    qWarning("looking for lemma %s",  displayWidget()->getCurrentNodeInfo()[CDisplay::Lemma].latin1() );
-    QString searchText = QString::null;
-
-    if (displayWidget()->getCurrentNodeInfo()[CDisplay::Lemma] != QString::null) {
-        Q_FOREACH(QString strongNumber, displayWidget()->getCurrentNodeInfo()[CDisplay::Lemma].split("|")) {
-            searchText.append("strong:").append( strongNumber ).append(" ");
-        }
+    QString searchText;
+    Q_FOREACH (const QString &strongNumber,
+               displayWidget()->getCurrentNodeInfo().split('|', QString::SkipEmptyParts))
+    {
+        searchText.append("strong:").append(strongNumber).append(' ');
     }
 
     Search::CSearchDialog::openDialog( modules(), searchText, 0 );

@@ -134,19 +134,19 @@ CTextRendering::KeyTreeItem::KeyTreeItem(const QString &startKey,
     else {
         sword::VerseKey vk(startKey.toUtf8().constData(), stopKey.toUtf8().constData());
 
-        if (vk.LowerBound().Book() != vk.UpperBound().Book()) {
+        if (vk.LowerBound().getBook() != vk.UpperBound().getBook()) {
             m_alternativeContent = QString::fromUtf8(vk.getRangeText());
         }
-        else if (vk.LowerBound().Chapter() != vk.UpperBound().Chapter()) {
+        else if (vk.LowerBound().getChapter() != vk.UpperBound().getChapter()) {
             m_alternativeContent = QString("%1 - %2:%3")
                                    .arg(QString::fromUtf8(vk.LowerBound().getText()))
-                                   .arg(vk.UpperBound().Chapter())
-                                   .arg(vk.UpperBound().Verse());
+                                   .arg(vk.UpperBound().getChapter())
+                                   .arg(vk.UpperBound().getVerse());
         }
         else { //only verses differ (same book, same chapter)
             m_alternativeContent = QString("%1 - %2")
                                    .arg(QString::fromUtf8(vk.LowerBound().getText()))
-                                   .arg(vk.UpperBound().Verse());
+                                   .arg(vk.UpperBound().getVerse());
         }
     }
 
@@ -154,17 +154,13 @@ CTextRendering::KeyTreeItem::KeyTreeItem(const QString &startKey,
     m_alternativeContent.prepend("<div class=\"rangeheading\" dir=\"ltr\">").append("</div>"); //insert the right tags
 }
 
-const QString& CTextRendering::KeyTreeItem::getAlternativeContent() const {
-    return m_alternativeContent;
-}
-
-const QList<const CSwordModuleInfo*> CTextRendering::collectModules(KeyTree* const tree) const {
+const QList<const CSwordModuleInfo*> CTextRendering::collectModules(const KeyTree * const tree) const {
     //collect all modules which are available and used by child items
     QList<const CSwordModuleInfo*> modules;
 
-    foreach (KeyTreeItem* c, (*tree)) {
-        Q_ASSERT(c);
-        foreach (const CSwordModuleInfo* mod, c->modules()) {
+    Q_FOREACH (const KeyTreeItem * const c, *tree) {
+        Q_ASSERT(c != 0);
+        Q_FOREACH (const CSwordModuleInfo * const mod, c->modules()) {
             if (!modules.contains(mod)) {
                 modules.append(mod);
             }
@@ -245,11 +241,11 @@ const QString CTextRendering::renderKeyRange(
                       it should be displayed as one entry with the caption 1-5.
             */
 
-            if (vk_start->Chapter() == 0) { //range was 0:0-1:x, render 0:0 first and jump to 1:0
-                vk_start->Verse(0);
+            if (vk_start->getChapter() == 0) { // range was 0:0-1:x, render 0:0 first and jump to 1:0
+                vk_start->setVerse(0);
                 tree.append( new KeyTreeItem(vk_start->key(), modules, settings) );
-                vk_start->Chapter(1);
-                vk_start->Verse(0);
+                vk_start->setChapter(1);
+                vk_start->setVerse(0);
             }
             tree.append( new KeyTreeItem(vk_start->key(), modules, settings) );
             ok = vk_start->next(CSwordVerseKey::UseVerse);

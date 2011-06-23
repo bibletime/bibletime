@@ -8,14 +8,14 @@
 # Joachim Ansorg <info@bibetime.info>, 2005.
 # Joachim Ansorg <info@bibletime.info>, 2005.
 # Martin Gruner <mg.pub@gmx.net>, 2004, 2005.
-# Roland Teschner <rolte@gmx.net>, 2009, 2010.
+# Roland Teschner <rolte@gmx.net>, 2009, 2010, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: handbook-de\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
 "POT-Creation-Date: 2011-01-13 23:27-0500\n"
-"PO-Revision-Date: 2010-11-17 17:53+0100\n"
-"Last-Translator: Roland Teschner <rolte@gmx.net>\n"
+"PO-Revision-Date: 2011-02-22 17:45+0100\n"
+"Last-Translator: \n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -1626,31 +1626,21 @@ msgstr "<guimenu>Datei</guimenu>"
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:24
-#, fuzzy
-#| msgid ""
-#| "<imageobject> <imagedata fileref=\"i_fileclose.png\" width=\"32\" depth="
-#| "\"32\" format=\"PNG\" /> </imageobject>"
 msgid ""
 "<imageobject> <imagedata fileref=\"i_folder_open.png\" width=\"32\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
-"<imageobject> <imagedata fileref=\"i_fileclose.png\" width=\"32\" depth="
+"<imageobject> <imagedata fileref=\"i_folder_open.png\" width=\"32\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:21
-#, fuzzy
-#| msgid ""
-#| "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
-#| ">Settings</guimenu> <guimenuitem>Configure &bibletime;</guimenuitem> </"
-#| "menuchoice>"
 msgid ""
 "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
 ">File</guimenu> <guimenuitem>Open work</guimenuitem> </menuchoice>"
 msgstr ""
 "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
-">Einstellungen</guimenu> <guimenuitem>&bibletime; konfigurieren</"
-"guimenuitem> </menuchoice>"
+">Datei</guimenu> <guimenuitem>Werk öffnen</guimenuitem> </menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:32
@@ -1658,6 +1648,8 @@ msgid ""
 "<action>Open work.</action> This will give you a menu that will allow you to "
 "open installed books."
 msgstr ""
+"<action>Werk öffnen.</action> Dies öffnet Ihnen ein Menü zum Öffnen "
+"installierter Bücher."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:46
@@ -2422,32 +2414,24 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:663
-#, fuzzy
-#| msgid ""
-#| "<imageobject> <imagedata fileref=\"i_bible.png\" width=\"32\" depth="
-#| "\"32\" format=\"PNG\" /> </imageobject>"
 msgid ""
 "<imageobject> <imagedata fileref=\"i_light_bulb.png\" width=\"22\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
-"<imageobject> <imagedata fileref=\"i_bible.png\" width=\"32\" depth=\"32\" "
-"format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_light_bulb.png\" width=\"22\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:655
-#, fuzzy
-#| msgid ""
-#| "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F1</keycap> </"
-#| "keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" "
-#| "id=\"0\"/>Help</guimenu> <guimenuitem>Handbook</guimenuitem> </menuchoice>"
 msgid ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F3</keycap> </"
 "keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id="
 "\"0\"/>Help</guimenu> <guimenuitem>Tip of the Day</guimenuitem> </menuchoice>"
 msgstr ""
-"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F1</keycap> </"
+"<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F3</keycap> </"
 "keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id="
-"\"0\"/>Hilfe</guimenu> <guimenuitem>Handbuch</guimenuitem> </menuchoice>"
+"\"0\"/>Hilfe</guimenu> <guimenuitem>Tipp des Tages</guimenuitem> </"
+"menuchoice>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:671
@@ -2455,6 +2439,9 @@ msgid ""
 "<action>Opens a helpful tip</action> The Tip of the Day provides a useful "
 "tip that will assist in the use of &bibletime;."
 msgstr ""
+"<action>Öffnet einen hilfreichen Tipp</action> Der Tipp des Tages liefert "
+"einen nützlichen Hinweis, der für die Benutzung von &bibletime; hilfreich "
+"ist."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
@@ -3125,24 +3112,19 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1337
-#, fuzzy
-#| msgid "<keycombo action=\"simul\"> <keycap>F1</keycap> </keycombo>"
 msgid "<keycombo action=\"simul\"> <keycap>F3</keycap> </keycombo>"
-msgstr "<keycombo action=\"simul\"> <keycap>F1</keycap> </keycombo>"
+msgstr "<keycombo action=\"simul\"> <keycap>F3</keycap> </keycombo>"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1342
-#, fuzzy
-#| msgid ""
-#| "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>About</guimenuitem> </"
-#| "menuchoice>"
 msgid ""
 "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Tip of the Day</"
 "guimenuitem> </menuchoice> Opens a helpful tip to use &bibletime;."
 msgstr ""
-"<menuchoice> <guimenu>Hilfe</guimenu> <guimenuitem>Über &bibletime;</"
-"guimenuitem> </menuchoice>"
+"<menuchoice> <guimenu>Hilfe</guimenu> <guimenuitem>Tipp des Tages</"
+"guimenuitem> </menuchoice> Öffnet einen hilfreichen Tipp zur Benutzung von "
+"&bibletime;."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1350
@@ -3443,10 +3425,6 @@ msgstr "Abthorpe"
 #.  TRANS:ROLES_OF_TRANSLATORS 
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:44
-#, fuzzy
-#| msgid ""
-#| "<copyright> <year>1999-2011</year> <holder>The &bibletime; Team</holder> "
-#| "</copyright>"
 msgid ""
 "<copyright> <year>1999-2011</year> <holder>The &bibletime; Team</holder> </"
 "copyright>"
@@ -3464,15 +3442,13 @@ msgstr ""
 
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:54
-#, fuzzy
-#| msgid "<date>August 2010</date>"
 msgid "<date>January 2011</date>"
-msgstr "<date>August 2010</date>"
+msgstr "<date>Januar 2011</date>"
 
 #. type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:56
 msgid "2.9.0"
-msgstr ""
+msgstr "2.9.0"
 
 # type: Content of: <book><bookinfo><abstract><para>
 #. type: Content of: <book><bookinfo><abstract><para>

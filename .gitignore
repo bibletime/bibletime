@@ -1,10 +1,11 @@
-# /
+*~
 /.cdtproject
 /.cproject
 /.externalToolBuilders
 /.project
 /.settings
 /bibletime.kdevelop
+/bibletime.kdev4
 /BibleTime.kdevelop
 /bibletime.kdevelop.filelist
 /BibleTime.kdevelop.filelist
@@ -14,8 +15,10 @@
 /BibleTime.kdevses
 /build
 /CMakeLists.txt.user
+/CMakeLists.txt.user.*
 /CMakeFiles
 /dirlist
+/.kdev4
 /log
 /mine
 /qtcreator-build

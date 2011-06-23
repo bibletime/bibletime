@@ -10,11 +10,11 @@
 #include "frontend/settingsdialogs/btlanguagesettings.h"
 
 #include <QComboBox>
-#include <QHBoxLayout>
+#include <QFormLayout>
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QWidget>
-
+#include "frontend/settingsdialogs/cconfigurationdialog.h"
 #include "util/cresmgr.h"
 #include "util/tool.h"
 #include "util/directory.h"
@@ -25,28 +25,14 @@
 #include <swlocale.h>
 
 
-BtLanguageSettingsPage::BtLanguageSettingsPage(QWidget *parent)
-        : BtConfigPage(parent)
+BtLanguageSettingsPage::BtLanguageSettingsPage(CConfigurationDialog *parent)
+        : BtConfigDialog::Page(util::directory::getIcon(CResMgr::settings::languages::icon), parent)
 {
     namespace DU = util::directory;
 
-    Q_ASSERT(qobject_cast<QVBoxLayout*>(layout()) != 0);
-    QVBoxLayout *mainLayout = static_cast<QVBoxLayout*>(layout());
-
-    //Sword locales
     m_swordLocaleCombo = new QComboBox(this);
-    QLabel* label = new QLabel( tr("Language for names of Bible books:"), this);
-    label->setBuddy(m_swordLocaleCombo);
-    m_swordLocaleCombo->setToolTip(tr("The languages which can be used for the biblical booknames"));
-
-
-    QHBoxLayout* hBoxLayout = new QHBoxLayout();
-    hBoxLayout->addWidget(label);
-    hBoxLayout->addWidget(m_swordLocaleCombo);
-    hBoxLayout->addStretch();
-    mainLayout->addLayout(hBoxLayout);
-
-    mainLayout->addSpacerItem(new QSpacerItem(1,1, QSizePolicy::Fixed, QSizePolicy::Expanding));
+    m_languageNamesLabel = new QLabel(this);
+    m_languageNamesLabel->setBuddy(m_swordLocaleCombo);
 
     QStringList languageNames;
     languageNames.append(CLanguageMgr::instance()->languageForAbbrev("en_US")->translatedName());
@@ -90,18 +76,14 @@ BtLanguageSettingsPage::BtLanguageSettingsPage(QWidget *parent)
         currentLanguageName = CLanguageMgr::instance()->languageForAbbrev("en_US")->translatedName();
     }
 
-    //now set the item with the right name as current item
-    for (int i = 0; i < m_swordLocaleCombo->count(); ++i) {
-        if (currentLanguageName == m_swordLocaleCombo->itemText(i)) {
-            m_swordLocaleCombo->setCurrentIndex(i);
-            break; //item found, finish the loop
-        }
-    }
+    int i = languageNames.indexOf(currentLanguageName);
+    if (i >= 0)
+        m_swordLocaleCombo->setCurrentIndex(i);
 
-}
+    QFormLayout *formLayout = new QFormLayout(this);
+    formLayout->addRow(m_languageNamesLabel, m_swordLocaleCombo);
 
-
-BtLanguageSettingsPage::~BtLanguageSettingsPage() {
+    retranslateUi();
 }
 
 void BtLanguageSettingsPage::save() {
@@ -137,10 +119,9 @@ void BtLanguageSettingsPage::save() {
     }
 }
 
-const QIcon &BtLanguageSettingsPage::icon() const {
-    return util::directory::getIcon(CResMgr::settings::languages::icon);
-}
+void BtLanguageSettingsPage::retranslateUi() {
+    setHeaderText(tr("Languages"));
 
-QString BtLanguageSettingsPage::header() const {
-    return tr("Languages");
+    m_languageNamesLabel->setText(tr("Language for names of Bible books:"));
+    m_swordLocaleCombo->setToolTip(tr("The languages which can be used for the biblical booknames"));
 }

@@ -75,23 +75,21 @@ void CSwordBackend::filterInit() {
     cleanupFilters.push_back(thmlplain);
 }
 
-QList<CSwordModuleInfo*> CSwordBackend::takeModulesFromList(QStringList names) {
-    int numberOfRemoved = 0;
+QList<CSwordModuleInfo*> CSwordBackend::takeModulesFromList(const QStringList &names) {
     QList<CSwordModuleInfo*> list;
-    foreach(QString name, names) {
+    Q_FOREACH (const QString &name, names) {
         CSwordModuleInfo* mInfo = findModuleByName(name);
         if (mInfo) {
             m_dataModel.removeModule(mInfo);
-            ++numberOfRemoved;
             list.append(mInfo);
         }
     }
-    if (numberOfRemoved > 0)
+    if (!list.isEmpty())
         emit sigSwordSetupChanged(RemovedModules);
     return list;
 }
 
-QList<CSwordModuleInfo*> CSwordBackend::getPointerList(const QStringList &names) {
+QList<CSwordModuleInfo*> CSwordBackend::getPointerList(const QStringList &names) const {
     QList<CSwordModuleInfo*> list;
     Q_FOREACH (const QString &name, names) {
         CSwordModuleInfo *mInfo = findModuleByName(name);
@@ -103,7 +101,7 @@ QList<CSwordModuleInfo*> CSwordBackend::getPointerList(const QStringList &names)
 }
 
 QList<const CSwordModuleInfo*> CSwordBackend::getConstPointerList(
-        const QStringList &names)
+        const QStringList &names) const
 {
     QList<const CSwordModuleInfo*> list;
     Q_FOREACH (const QString &name, names) {
@@ -133,19 +131,19 @@ CSwordBackend::LoadError CSwordBackend::initModules(SetupChangedReason reason) {
 
         if (!strcmp(curMod->Type(), "Biblical Texts")) {
             newModule = new CSwordBibleModuleInfo(curMod, this);
-            newModule->module()->Disp(&m_chapterDisplay);
+            newModule->module()->setDisplay(&m_chapterDisplay);
         }
         else if (!strcmp(curMod->Type(), "Commentaries")) {
             newModule = new CSwordCommentaryModuleInfo(curMod, this);
-            newModule->module()->Disp(&m_entryDisplay);
+            newModule->module()->setDisplay(&m_entryDisplay);
         }
         else if (!strcmp(curMod->Type(), "Lexicons / Dictionaries")) {
             newModule = new CSwordLexiconModuleInfo(curMod, this);
-            newModule->module()->Disp(&m_entryDisplay);
+            newModule->module()->setDisplay(&m_entryDisplay);
         }
         else if (!strcmp(curMod->Type(), "Generic Books")) {
             newModule = new CSwordBookModuleInfo(curMod, this);
-            newModule->module()->Disp(&m_bookDisplay);
+            newModule->module()->setDisplay(&m_bookDisplay);
         }
 
         if (newModule) {
@@ -279,7 +277,7 @@ void CSwordBackend::setFilterOptions(const FilterOptions &options) {
 }
 
 /** This function searches for a module with the specified description */
-CSwordModuleInfo* CSwordBackend::findModuleByDescription(const QString& description) {
+CSwordModuleInfo* CSwordBackend::findModuleByDescription(const QString &description) const {
     Q_FOREACH (CSwordModuleInfo *mod, m_dataModel.moduleList()) {
         if (mod->config(CSwordModuleInfo::Description) == description) return mod;
     }
@@ -287,16 +285,16 @@ CSwordModuleInfo* CSwordBackend::findModuleByDescription(const QString& descript
 }
 
 /** This function searches for a module with the specified name */
-CSwordModuleInfo* CSwordBackend::findModuleByName(const QString& name) {
+CSwordModuleInfo* CSwordBackend::findModuleByName(const QString &name) const {
     Q_FOREACH (CSwordModuleInfo *mod, m_dataModel.moduleList()) {
         if (mod->name() == name) return mod;
     }
     return 0;
 }
 
-CSwordModuleInfo* CSwordBackend::findSwordModuleByPointer(const sword::SWModule* const swmodule) {
+CSwordModuleInfo* CSwordBackend::findSwordModuleByPointer(const sword::SWModule * const swmodule) const {
     Q_FOREACH (CSwordModuleInfo *mod, m_dataModel.moduleList()) {
-        if (mod->module() == swmodule ) return mod;
+        if (mod->module() == swmodule) return mod;
     }
     return 0;
 }

@@ -21,10 +21,10 @@ format="PNG" /> </imageobject>
 
     <sect2 id="hdbk-start-custom">
       <title>Egyéni indítások</title>
-      <para>From a terminal you can use &bibletime; to open a random verse in the
-default bible: <screen>bibletime --open-default-bible "&lt;random&gt;"</screen> To open at a given
-passage like John 3:16, use: <screen>bibletime --open-default-bible "John 3:16"</screen> You can
-also use booknames in your current bookname language.</para>
+      <para>Terminálból is indítható a &bibletime; véletlenszerű verssel az
+alapértelmezett bibliából: <screen>bibletime --open-default-bible "&lt;random&gt;"</screen> Egy
+meghatározott verssel indításhoz (pl.  Jn 3:16), ezt írja be: <screen>bibletime --open-default-bible "John 3:16"</screen> Természetesen a könyvek neveit saját nyelvén is
+megadhatja.</para>
     </sect2>
   </sect1>
 

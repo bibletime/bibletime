@@ -60,7 +60,7 @@ const QString CrossRefRendering::entryLink(const KeyTreeItem &item,
         }
         case KeyTreeItem::Settings::SimpleKey: {
             if (isBible) {
-                linkText = QString::number(vk.Verse());
+                linkText = QString::number(vk.getVerse());
                 break;
             }
             //fall through for non-Bible modules

@@ -27,7 +27,6 @@ class CRangeChooserDialog : public QDialog {
         Q_OBJECT
     public:
         CRangeChooserDialog(QWidget* parentDialog);
-        ~CRangeChooserDialog() {}
 
     protected: // Protected methods
         class RangeItem : public QListWidgetItem {

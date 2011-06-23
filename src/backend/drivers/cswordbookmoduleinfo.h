@@ -33,11 +33,6 @@ class CSwordBookModuleInfo: public CSwordModuleInfo {
         inline CSwordBookModuleInfo(const CSwordBookModuleInfo &copy)
             : CSwordModuleInfo(copy), m_depth(copy.m_depth) {}
 
-        /* Reimplementation of CSwordModuleInfo::clone(). */
-        virtual inline CSwordModuleInfo *clone() const {
-            return new CSwordBookModuleInfo(*this);
-        }
-
         /**
           \returns the maximal depth of sections and subsections.
         */

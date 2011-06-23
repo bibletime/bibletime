@@ -1,4 +1,23 @@
-2011-02-07 Jaak Ristioja <ristioja@gmail.com>
+2011-06-21 Jaak Ristioja <jaak@ristioja.ee>
+    * Hovering over works in the bookshelf views shows tooltips.
+    * Hovering over works in the bookshelf dock shows info in the mag view.
+
+2011-05-28 Jaak Ristioja <jaak@ristioja.ee>
+    * Fixed a cosmetic color bug in the font settings preview widget
+
+2011-05-16 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix compile error on Fedora 15.
+
+2011-05-15 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix crash when printing from Works pane of search dialog.
+
+2011-02-28 Patrick Sebastian Zimmermann <patrick@zakweb.de>
+    * Fix restoring from fullscreen to a maximized window.
+
+2011-02-07 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fixed Personal Commentary. Text could be saved to wrong reference.
+
+2011-02-07 Jaak Ristioja <jaak@ristioja.ee>
     * Fixed an assert-crash caused by not catching indexing failures properly.
 
 2011-01-16 Gary Holmlund <gary.holmlund@gmail.com>
@@ -7,7 +26,7 @@
 2011-01-15 Gary Holmlund <gary.holmlund@gmail.com>
     * Add toolbar icons to toggle visibility of docking windows
 
-2011-01-15 Jaak Ristioja <ristioja@gmail.com>
+2011-01-15 Jaak Ristioja <jaak@ristioja.ee>
     * Fixed category detection for modules.
 
 2011-01-01 Gary Holmlund <gary.holmlund@gmail.com>
@@ -19,39 +38,39 @@
 2010-11-25 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix main window toolbar key changer to save a modified entry in Personal Commentary
 
-2010-11-19 Jaak Ristioja <ristioja@gmail.com>
+2010-11-19 Jaak Ristioja <jaak@ristioja.ee>
     * Fixed a crash triggered by an assertion in legacy code.
     * Fixed a crash caused by indirectly referencing unconstructed fields from
       the constructor of BtBibleKeyWidget.
 
-2010-11-12 Jaak Ristioja <ristioja@gmail.com>
+2010-11-12 Jaak Ristioja <jaak@ristioja.ee>
     * Temporary workaround for bug 2954856 causing wrong HTML code for headings.
 
 2010-10-31 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug in display of footnotes in mag window
 
-2010-10-29 Jaak Ristioja <ristioja@gmail.com>
+2010-10-29 Jaak Ristioja <jaak@ristioja.ee>
     * Made the "Remove modules" confirmation dialog a bit prettier.
     * Released 2.8 RC 1
 
-2010-10-19 Jaak Ristioja <ristioja@gmail.com>
+2010-10-19 Jaak Ristioja <jaak@ristioja.ee>
     * Made BibleTime handle missing default template gracefully.
 
-2010-10-15 Jaak Ristioja <ristioja@gmail.com>
+2010-10-15 Jaak Ristioja <jaak@ristioja.ee>
     * Released 2.8 beta
 
-2010-10-04 Jaak Ristioja <ristioja@gmail.com>
+2010-10-04 Jaak Ristioja <jaak@ristioja.ee>
     * Enhanced bookshelf manager remove works page.
     * Touches to configuration dialogs.
 
 2010-09-25 Gary Holmlund <gary.holmlund@gmail.com>
     * Implemented the Tip Of The Day dialog
 
-2010-09-25 Jaak Ristioja <ristioja@gmail.com>
+2010-09-25 Jaak Ristioja <jaak@ristioja.ee>
     * Removed "Close" button from bookshelf manager dialog to save screen space.
     * Redesigned and refactored the bookshelf manager install page.
 
-2010-09-16 Jaak Ristioja <ristioja@gmail.com>
+2010-09-16 Jaak Ristioja <jaak@ristioja.ee>
     * Removed confusing "Use grouping from bookshelf dock" feature.
     * Implemented saving of grouping setting for:
       * the page for removing works in the Bookshelf Manager.
@@ -59,20 +78,20 @@
       * the search module chooser dialog,
       * the main window "Open works" action in main menu and main toolbar.
 
-2010-09-15 Jaak Ristioja <ristioja@gmail.com>
+2010-09-15 Jaak Ristioja <jaak@ristioja.ee>
     * Integrated the wonderful BtBookshelfWidget into the install page of the
       bookshelf manager.
 
-2010-09-14 Jaak Ristioja <ristioja@gmail.com>
+2010-09-14 Jaak Ristioja <jaak@ristioja.ee>
     * In case no works are installed, the bookshelf dock now provides a label
       and "Install works..." button to guide the user to install new modules.
     * Made the install page confirmation dialog also show the versions of the
       modules to be installed / upgraded.
 
-2010-08-28 Jaak Ristioja <ristioja@gmail.com>
+2010-08-28 Jaak Ristioja <jaak@ristioja.ee>
     * Removed support for configuration migration from KDE3.
 
-2010-08-27 Jaak Ristioja <ristioja@gmail.com>
+2010-08-27 Jaak Ristioja <jaak@ristioja.ee>
     * Fixed creation of bibletimerc into current working directory when exiting
       BibleTime before the directory cache is initialized (e.g when using the
       command-line --help switch).
@@ -94,14 +113,14 @@
 2010-08-08 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix Windows startup crash
 
-2010-08-07 Jaak Ristioja <ristioja@gmail.com>
+2010-08-07 Jaak Ristioja <jaak@ristioja.ee>
     * Fixed a bug that caused some users home directories to be deleted.
 
-2010-07-22 Jaak Ristioja <ristioja@gmail.com>
+2010-07-22 Jaak Ristioja <jaak@ristioja.ee>
     * Enhanced parsing of command-line arguments, also fixing a bug which caused
       --help and friends still create a GUI before exiting.
 
-2010-07-20 Jaak Ristioja <ristioja@gmail.com>
+2010-07-20 Jaak Ristioja <jaak@ristioja.ee>
     * Enhanced module indexing dialog.
     * Fixed a crash when cancelling module indexing when invoked using search.
 
@@ -153,12 +172,12 @@
 2010-02-22 Martin Gruner <mgruner@crosswire.org>
     * Released 2.6.rc2
 
-2010-02-22 Jaak Ristioja <ristioja@gmail.com>
+2010-02-22 Jaak Ristioja <jaak@ristioja.ee>
     * Fixed an issue causing data loss when closing the main window, because
       open sub-windows were not properly queried for unsaved changes. Thanks
       Martin!
 
-2010-02-20 Jaak Ristioja <ristioja@gmail.com>
+2010-02-20 Jaak Ristioja <jaak@ristioja.ee>
     * Refactored the module unlocking GUI to provide more info on failures and
       made opening a locked module also initiate the unlocking procedure.
 
@@ -174,7 +193,7 @@
 2009-02-06 Martin Gruner <mgruner@crosswire.org>
     * Re-added (configurable) removal of orphaned indices, code relocated
 
-2010-02-04 Jaak Ristioja <ristioja@gmail.com>
+2010-02-04 Jaak Ristioja <jaak@ristioja.ee>
     * Fixed a bug that some display/filter settings were not applied on startup.
 
 2010-01-26 Martin Gruner <mgruner@crosswire.org>
@@ -184,26 +203,26 @@
     * Add tabbed window arrangement mode
     * Fix problems with manual arrangement mode
 
-2009-12-31 Jaak Ristioja <ristioja@gmail.com>
+2009-12-31 Jaak Ristioja <jaak@ristioja.ee>
     * Implemented a menu item and tool button for opening installed works.
 
 2009-12-30 Gary Holmlund <gary.holmlund@gmail.com>
     * Fixed bug ID: 1337338 "lexicon display window accepts illegal keys by drag&drop"
 
-2009-12-22 Jaak Ristioja <ristioja@gmail.com>
+2009-12-22 Jaak Ristioja <jaak@ristioja.ee>
     * Refactored a couple of other dialogs to use the new bookshelf model. This
       means they now also have search and grouping fields.
 
-2009-12-21 Jaak Ristioja <ristioja@gmail.com>
+2009-12-21 Jaak Ristioja <jaak@ristioja.ee>
     * Refactored search dialog module chooser dialog.
 
 2009-12-20 Martin Gruner <mgruner@crosswire.org>
     * Release 2.5
 
-2009-12-19 Jaak Ristioja <ristioja@gmail.com>
+2009-12-19 Jaak Ristioja <jaak@ristioja.ee>
     * Fixed tree nodes checking
 
-2009-12-18 Jaak Ristioja <ristioja@gmail.com>
+2009-12-18 Jaak Ristioja <jaak@ristioja.ee>
     * Refactored about dialog
 
 2009-12-09 Martin Gruner <mgruner@crosswire.org>
@@ -272,7 +291,7 @@
 2009-11-19 Gary Holmlund
     * Fix debug verbosity
 
-2009-11-19 Jaak Ristioja <ristioja@gmail.com>
+2009-11-19 Jaak Ristioja <jaak@ristioja.ee>
     * Made the remove page of the bookshelf manager prettier.
 
 2009-11-18 Martin Gruner <mgruner@crosswire.org>
@@ -281,7 +300,7 @@
 2009-11-16 Gary Holmlund
     * Fix window redraw errors in manual arrangement mode - ID: 2898356
 
-2009-11-16 Jaak Ristioja <ristioja@gmail.com>
+2009-11-16 Jaak Ristioja <jaak@ristioja.ee>
     * Fixed vertical tiling.
 
 2009-11-14 Kang Sun
@@ -321,7 +340,7 @@
 2009-11-1 Gary Holmlund
     * Fix bug id 2890011 - Crash when making book/chapter/verse change
 
-2009-10-24 Jaak Ristioja <ristioja@gmail.com>
+2009-10-24 Jaak Ristioja <jaak@ristioja.ee>
     * Fixed a crash on module installation/uninstall.
     * Fixed the wrong icon for lexicons.
     * Fixed some (not all) memory leaks.
@@ -341,7 +360,7 @@
     * Added first version of TEI -> HTML filter.
        BibleTime can now open TEI modules, though rendering has to be improved.
 
-2009-10-13 Jaak Ristioja <ristioja@gmail.com>
+2009-10-13 Jaak Ristioja <jaak@ristioja.ee>
     * Fixed new bookshelf model category sorting.
     * Fixed a CSwordModuleInfo bug, which had unknown effects.
     * Reimplemented saving of bookshelf model grouping state.
@@ -355,7 +374,7 @@
        correctly includes data from EntryAttributes as well as data from EntryAttributes
        of entries with verse == 0.
 
-2009-10-09 Jaak Ristioja <ristioja@gmail.com>
+2009-10-09 Jaak Ristioja <jaak@ristioja.ee>
     * Fixed compilation for Qt 4.4
 
 2009-10-09 Martin Gruner <mgruner@crosswire.org>
@@ -369,7 +388,7 @@
 2009-09-30 Martin Gruner <mgruner@crosswire.org>
     * Release 2.3.rc1
 
-2009-09-29 Jaak Ristioja <ristioja@gmail.com>
+2009-09-29 Jaak Ristioja <jaak@ristioja.ee>
     * Added a case-insensitive module filter to the bookshelf dock widget.
 
 2009-09-26 Martin Gruner <mgruner@crosswire.org>
@@ -382,7 +401,7 @@
 2009-09-20 Thomas Abthorpe <tabthorpe@FreeBSD.org>
     * Link Spanish Howto to the build
 
-2009-09-19 Jaak Ristioja <ristioja@gmail.com>
+2009-09-19 Jaak Ristioja <jaak@ristioja.ee>
     * Added a new bookshelf models implemented on top of the Qt Model/View
         framework.
     * Rewrote the bookshelf dock widget in the main window.
@@ -421,17 +440,17 @@
 2009-08-19 Martin Gruner <mgruner@crosswire.org>
     * Release 2.2.rc1
 
-2009-08-17 Jaak Ristioja <ristioja@gmail.com>
+2009-08-17 Jaak Ristioja <jaak@ristioja.ee>
     * Made the verse key chooser dropdown buttons appear on hover for better toolbar layout
     * Fixed template display problems on dark color schemes.
 
-2009-08-15 Jaak Ristioja <ristioja@gmail.com>
+2009-08-15 Jaak Ristioja <jaak@ristioja.ee>
     * Fixed mouse cursor vanishing problem when using the verse key chooser scroll buttons
 
 2009-08-12 Martin Gruner <mgruner@crosswire.org>
     * Release 2.2.beta1
 
-2009-08-09 Jaak Ristioja <ristioja@gmail.com>
+2009-08-09 Jaak Ristioja <jaak@ristioja.ee>
     * Fixed install manager performance issue on installing many works at once
 
 2009-08-03 Gary Holmlund

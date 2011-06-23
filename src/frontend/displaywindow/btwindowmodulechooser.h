@@ -39,8 +39,6 @@ class BtWindowModuleChooser {
                               CDisplayWindow *parentWindow)
                 : m_window(parentWindow), m_moduleType (moduleType) {}
 
-        virtual ~BtWindowModuleChooser() {}
-
         /**
         * The backend module list was updated, module list and widgets must be updated.
         * This expects that the window module list has already been updated, so

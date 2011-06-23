@@ -22,21 +22,24 @@ namespace Rendering {
  */
 
 class CDisplayRendering : public CHTMLExportRendering {
-    public:
+
+    public: /* Methods: */
+
         static const QString keyToHTMLAnchor(const QString& key);
 
         CDisplayRendering(
             const DisplayOptions &displayOptions = getBtConfig().getDisplayOptions(),
-            const FilterOptions &filterOptions = getBtConfig().getFilterOptions()
-        );
+            const FilterOptions &filterOptions = getBtConfig().getFilterOptions());
 
-    protected:
+    protected: /* Methods: */
+
         virtual const QString entryLink(const KeyTreeItem &item,
                                         const CSwordModuleInfo *module);
 
         virtual const QString finishText( const QString&, KeyTree& tree );
-};
 
-}
+}; /* class CDisplayRendering */
+
+} /* namespace Rendering */
 
 #endif

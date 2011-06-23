@@ -18,69 +18,71 @@
 #include "util/directory.h"
 
 
-class BtActionItem : public QObject {
-    public:
+class BtActionItem: public QObject {
+
+    public: /* Methods: */
+
         BtActionItem(QAction *action, QObject *parent = 0)
                 : QObject(parent), defaultKeys(action->shortcut()), action(action)
         {
             // Intentionally empty
         }
+
+    public: /* Fields: */
+
         QKeySequence defaultKeys;
         QAction* action;
+
 };
-
-BtActionCollection::BtActionCollection(QObject* parent)
-        : QObject(parent) {
-}
-
-BtActionCollection::~BtActionCollection() {
-}
 
 QList<QAction*> BtActionCollection::actions() {
     QList<QAction*> actionList;
-
-    QMap<QString, BtActionItem*>::const_iterator iter = m_actions.constBegin();
-    while (iter != m_actions.constEnd()) {
-        QAction* action = iter.value()->action;
-        actionList.append(action);
-        ++iter;
+    for (ActionMap::const_iterator iter = m_actions.constBegin();
+         iter != m_actions.constEnd();
+         iter++)
+    {
+        actionList.append(iter.value()->action);
     }
     return actionList;
 }
 
-QAction* BtActionCollection::action(const QString& name) {
-    if (m_actions.contains(name))
-        return m_actions[name]->action;
+QAction *BtActionCollection::action(const QString &name) const {
+    ActionMap::const_iterator it = m_actions.find(name);
+    if (it != m_actions.constEnd())
+        return (*it)->action;
+
     qWarning() << "A QAction for a shortcut named" << name << "was requested but it is not defined.";
-    return (new QAction(this)); // dummy QAction*
+    return 0;
 }
 
 QAction* BtActionCollection::addAction(const QString& name, QAction* action) {
     Q_ASSERT(action != 0);
-    if (m_actions.contains(name)) {
-        delete m_actions[name];
-    }
-    BtActionItem* item = new BtActionItem(action, this);
-    m_actions.insert(name, item);
+    ActionMap::iterator it = m_actions.find(name);
+    if (it != m_actions.constEnd())
+        delete *it;
+
+    m_actions.insert(name, new BtActionItem(action, this));
     return action;
 }
 
 QAction* BtActionCollection::addAction(const QString &name, const QObject *receiver, const char* member) {
     QAction* action = new QAction(name, this);
     if (receiver && member) {
-        bool ok = connect(action, SIGNAL(triggered()), receiver, SLOT(triggered()));
+        bool ok = connect(action,   SIGNAL(triggered()),
+                          receiver, SLOT(triggered()));
         Q_ASSERT(ok);
     }
     return addAction(name, action);
 }
 
 QKeySequence BtActionCollection::getDefaultShortcut(QAction* action) {
-    QMap<QString, BtActionItem*>::const_iterator iter = m_actions.constBegin();
-    while (iter != m_actions.constEnd()) {
-        if ( iter.value()->action == action) {
+    for (ActionMap::const_iterator iter = m_actions.constBegin();
+         iter != m_actions.constEnd();
+         iter++)
+    {
+        if (iter.value()->action == action) {
             return iter.value()->defaultKeys;
         }
-        iter++;
     }
     return QKeySequence();
 }

@@ -26,21 +26,22 @@ namespace Rendering {
   Sword.
 */
 class CBookDisplay: public CEntryDisplay {
-    public: /* Methods: */
-        virtual inline ~CBookDisplay() {}
 
-        /** Reimplemented from CEntryDisplay. */
+    public: /* Methods: */
+
         virtual const QString text(const QList<const CSwordModuleInfo*> &modules,
                                    const QString &key,
                                    const DisplayOptions &displayOptions,
                                    const FilterOptions &filterOptions);
 
     protected: /* Methods: */
+
         void setupRenderTree(CSwordTreeKey *swordTree,
                              CTextRendering::KeyTree *renderTree,
                              const QString &highlightKey);
-};
 
-} // namespace Rendering
+}; /* class CBookDisplay */
+
+} /* namespace Rendering */
 
 #endif

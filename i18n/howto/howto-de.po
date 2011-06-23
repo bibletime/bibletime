@@ -2,6 +2,7 @@
 # Copyright (C) 2010 The Bibletime Team, http://www.bibletime.info
 # This file is distributed under the same license as the Bibetime package.
 #
+#
 # Martin Gruner <mg.pub@gmx.net>, 2006.
 # Joachim Ansorg <info@bibetime.info>, 2005.
 # Joachim Ansorg, 2003.
@@ -10,21 +11,20 @@
 # Joachim Ansorg <info@bibletime.info>, 2005.
 # Martin Gruner <mg.pub@gmx.net>, 2004.
 # Martin Gruner <mg.pub@gmx.net>, 2004, 2005.
-# Roland Teschner <rolte@gmx.net>, 2009.
-#
+# Roland Teschner <rolte@gmx.net>, 2009, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: howto-de\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
 "POT-Creation-Date: 2010-11-22 23:08-0500\n"
-"PO-Revision-Date: 2009-08-14 20:05+0200\n"
-"Last-Translator: Roland Teschner <rolte@gmx.net>\n"
-"Language-Team: Deutsch <bibletime-translations@lists.sourceforge.net>\n"
+"PO-Revision-Date: 2011-02-22 17:34+0100\n"
+"Last-Translator: \n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 1.0\n"
 "X-Generator: KBabel 1.10.2\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 "X-Generator: KBabel 1.10.2\n"
@@ -438,7 +438,7 @@ msgstr "usw."
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-basics.docbook:135
 msgid "When you give <placeholder type=\"orderedlist\" id=\"0\"/>"
-msgstr ""
+msgstr "Wenn Sie geben <placeholder type=\"orderedlist\" id=\"0\"/>"
 
 #. type: Content of: <chapter><sect1><title>
 #: docs/howto/en/docbook/howto-basics.docbook:145
@@ -485,7 +485,7 @@ msgstr "Die Geschichte vom reichen Mann und Lazarus"
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/howto/en/docbook/howto-basics.docbook:154
 msgid "Find these verses: <placeholder type=\"orderedlist\" id=\"0\"/>"
-msgstr ""
+msgstr "Finden Sie diese Verse: <placeholder type=\"orderedlist\" id=\"0\"/>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/howto/en/docbook/howto-basics.docbook:163
@@ -1552,6 +1552,8 @@ msgid ""
 "<emphasis>Mary is already clinging to Jesus, and he is saying to stop "
 "holding him!</emphasis>"
 msgstr ""
+"<emphasis>Maria klammert sich bereits an Jesus und er sagt, dass man ihn "
+"nicht weiter festhalten solle!</emphasis>"
 
 #. type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:53
@@ -1625,7 +1627,7 @@ msgstr "Joh 12,3 [Sie] salbte Jesus die Füße und trocknete sie mit ihrem Haar.
 #: docs/howto/en/docbook/howto-interpretation.docbook:62
 msgid ""
 "Cross-references for aleipho: <placeholder type=\"orderedlist\" id=\"0\"/>"
-msgstr ""
+msgstr "Querverweise für aleipho: <placeholder type=\"orderedlist\" id=\"0\"/>"
 
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:74
@@ -1657,7 +1659,7 @@ msgstr "2Kor 1,21 Gott aber, ... der uns alle gesalbt hat, ..."
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:72
 msgid "Cross-references of chrio: <placeholder type=\"orderedlist\" id=\"0\"/>"
-msgstr ""
+msgstr "Querverweise für chrio: <placeholder type=\"orderedlist\" id=\"0\"/>"
 
 #. type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:82
@@ -2114,17 +2116,17 @@ msgstr "Die Anleitung zum Bibelstudium"
 #. type: Content of: <book><bookinfo><authorgroup><author><firstname>
 #: docs/howto/en/docbook/index.docbook:18
 msgid "Bob"
-msgstr ""
+msgstr "Bob"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
 #: docs/howto/en/docbook/index.docbook:19
 msgid "Harman"
-msgstr ""
+msgstr "Harman"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
 #: docs/howto/en/docbook/index.docbook:23
 msgid "The BibleTime team"
-msgstr ""
+msgstr "Das BibleTime-Team"
 
 #.  TRANS:ROLES_OF_TRANSLATORS 
 #. type: Content of: <book><bookinfo>
@@ -2133,6 +2135,8 @@ msgid ""
 "<copyright> <year>2001-2009</year> <holder>The team of &bibletime; "
 "(info@bibletime.info)</holder> </copyright>"
 msgstr ""
+"<copyright> <year>2001-2009</year> <holder>Das Team von &bibletime; "
+"(info@bibletime.info)</holder> </copyright>"
 
 # type: Content of: <book><bookinfo><legalnotice><para>
 #. type: Content of: <book><bookinfo><legalnotice><para>
@@ -2192,12 +2196,12 @@ msgstr ""
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/howto/en/docbook/index.docbook:64
 msgid "Bible"
-msgstr ""
+msgstr "Bibel"
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/howto/en/docbook/index.docbook:66
 msgid "HowTo"
-msgstr ""
+msgstr "Anleitung"
 
 #~ msgid "Find these verses:"
 #~ msgstr "Finden Sie diese Verse:"

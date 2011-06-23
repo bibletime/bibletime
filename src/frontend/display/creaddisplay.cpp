@@ -64,13 +64,13 @@ void CReadDisplay::print(const CDisplay::TextPart type,
                 CSwordVerseKey* vk = dynamic_cast<CSwordVerseKey*>(key);
 
                 CSwordVerseKey startKey(*vk);
-                startKey.Verse(1);
+                startKey.setVerse(1);
 
                 CSwordVerseKey stopKey(*vk);
 
                 const CSBiMI *bible = dynamic_cast<const CSBiMI*>(module);
                 if (bible) {
-                    stopKey.Verse( bible->verseCount( bible->bookNumber(startKey.book()), startKey.Chapter() ) );
+                    stopKey.setVerse(bible->verseCount(bible->bookNumber(startKey.book()), startKey.getChapter()));
                 }
 
                 mgr.printKey(module, startKey.key(), stopKey.key(), displayOptions, filterOptions);

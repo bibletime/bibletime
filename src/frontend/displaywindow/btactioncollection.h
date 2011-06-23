@@ -22,16 +22,26 @@ class QAction;
 class QKeySequence;
 class QString;
 
-class BtActionCollection : public QObject {
-        Q_OBJECT
-    public:
-        BtActionCollection(QObject* parent);
-        ~BtActionCollection();
-        QAction* addAction(const QString& name, QAction* action);
-        QAction* addAction(const QString &name, const QObject *receiver, const char* member = 0);
-        QList<QAction*> actions();
-        QAction* action(const QString& name);
+class BtActionCollection: public QObject {
 
+        Q_OBJECT
+
+    private: /* Types: */
+
+        typedef QMap<QString, BtActionItem*> ActionMap;
+
+    public: /* Methods: */
+
+        inline BtActionCollection(QObject *parent = 0) : QObject(parent) {}
+
+        QAction* addAction(const QString& name, QAction* action);
+
+        QAction* addAction(const QString &name, const QObject *receiver, const char* member = 0);
+
+        QList<QAction*> actions();
+
+        QAction *action(const QString &name) const;
+        
         /*!
          * \brief Read shortcuts from config.
          *
@@ -54,8 +64,10 @@ class BtActionCollection : public QObject {
         void writeShortcuts(const QString& group);
         QKeySequence getDefaultShortcut(QAction* action);
 
-    private:
-        QMap<QString, BtActionItem*> m_actions;
+    private: /* Fields: */
+
+        ActionMap m_actions;
+
 };
 
 #endif

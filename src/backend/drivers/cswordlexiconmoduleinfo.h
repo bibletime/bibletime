@@ -29,11 +29,6 @@ class CSwordLexiconModuleInfo: public CSwordModuleInfo {
         inline CSwordLexiconModuleInfo(const CSwordLexiconModuleInfo &copy)
             : CSwordModuleInfo(copy), m_entries(copy.m_entries) {}
 
-        /* Reimplementation of CSwordModuleInfo::clone(). */
-        virtual inline CSwordModuleInfo *clone() const {
-            return new CSwordLexiconModuleInfo(*this);
-        }
-
         /**
           This method returns the entries of the modules represented by this
           object. If this function is called for the first time the list is load

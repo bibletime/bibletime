@@ -43,11 +43,15 @@ class CProfile {
         /**
         * Returns the name of this profile.
         */
-        const QString& name();
+        inline const QString &name() const {
+            return m_name;
+        }
         /**
         * Returns the filename used for this profile.
         */
-        const QString& filename();
+        inline const QString &filename() const {
+            return m_filename;
+        }
         /**
         * Initializes the XML for the first time (use to create a new profile)
         */

@@ -83,18 +83,12 @@ class CKeyChooser : public QWidget {
         * is emitted if the @ref CKey was changed by the user
         */
         void keyChanged(CSwordKey* newKey);
-        /**
-        * Is emitted before the key is changed!
-        */
-        void beforeKeyChange(const QString& key);
 
     protected:
 
         CKeyChooser(const QList<const CSwordModuleInfo*> &info,
                     BTHistory *history, CSwordKey *key = 0,
                     QWidget *parent = 0);
-
-        virtual inline ~CKeyChooser() {}
 
         /**
           Resets the appropriate font to for the modules.

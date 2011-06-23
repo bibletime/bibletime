@@ -13,27 +13,26 @@
 #include "frontend/bookshelfmanager/btconfigdialog.h"
 
 
+class BtModuleManagerDialog;
 class QCheckBox;
 class QTreeWidget;
 class QTreeWidgetItem;
+
+/** \todo add void retranslateUi(); */
 
 /**
 * This class encapsulates the "Manage search indices" page of the Bookshelf
 * Manager.  It allows for creation and deletion of search indicies for each
 * installed module.  It also allows for deletion of orphaned indices.
 */
-class BtIndexPage : public BtConfigPage {
+class BtIndexPage: public BtConfigDialog::Page {
+
         Q_OBJECT
 
     public:
-        BtIndexPage(QWidget *parent = 0);
+
+        BtIndexPage(BtModuleManagerDialog *parent = 0);
         ~BtIndexPage();
-
-        /** Reimplemented from BtConfigPage. */
-        virtual QString header() const;
-
-        /** Reimplemented from BtConfigPage. */
-        virtual const QIcon &icon() const;
 
     public slots:
         void slotSwordSetupChanged();
@@ -45,7 +44,7 @@ class BtIndexPage : public BtConfigPage {
         */
         void populateModuleList();
 
-
+        void retranslateUi();
 
     public slots:
         /**
@@ -66,6 +65,7 @@ class BtIndexPage : public BtConfigPage {
 
         QTreeWidgetItem* m_modsWithIndices;
         QTreeWidgetItem* m_modsWithoutIndices;
+
 };
 
 

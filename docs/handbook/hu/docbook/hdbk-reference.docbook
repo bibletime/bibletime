@@ -11,7 +11,7 @@ linkend="hdbk-reference-shortcuts">ebben a részben</link> találja.</para>
 
     <sect2 id="hdbk-reference-menus-file">
       <title>
-        <guimenu>File</guimenu>
+        <guimenu>Fájl</guimenu>
       </title>
       <para>
         <variablelist>
@@ -33,7 +33,7 @@ open installed books.</para>
 <keycap>&Ctrl;+Q</keycap></keycombo> </shortcut> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_exit.png" width="32" depth="32"
 format="PNG" /> </imageobject></inlinemediaobject>File</guimenu>
-<guimenuitem>Quit</guimenuitem> </menuchoice>
+<guimenuitem>Kilépés</guimenuitem> </menuchoice>
             </term>
             <listitem>
               <para>
@@ -47,7 +47,7 @@ hogy elmentse -e a változtatásokat a lemezre.</para>
 
     <sect2 id="hdbk-reference-menus-view">
       <title>
-        <guimenu>View</guimenu>
+        <guimenu>Nézet</guimenu>
       </title>
 
       <variablelist>
@@ -56,7 +56,7 @@ hogy elmentse -e a változtatásokat a lemezre.</para>
             <menuchoice> <shortcut> <keycombo action="simul"> <keycap>F5</keycap>
 </keycombo> </shortcut> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_window_fullscreen.png" width="32"
-depth="32" format="PNG" /> </imageobject></inlinemediaobject>View</guimenu> <guimenuitem>Fullscreen mode</guimenuitem>
+depth="32" format="PNG" /> </imageobject></inlinemediaobject>View</guimenu> <guimenuitem>Teljes képernyő</guimenuitem>
 </menuchoice>
           </term>
           <listitem>
@@ -110,8 +110,8 @@ megjelenítését.</para>
           <term>
             <menuchoice> <shortcut> <keycombo action="simul"> <keycap>F6</keycap>
 </keycombo> </shortcut> <guimenu>View</guimenu>
-<guimenuitem>Toolbars</guimenuitem> <guimenuitem>Show main</guimenuitem>
-</menuchoice>
+<guimenuitem>Toolbars</guimenuitem> <guimenuitem>Fő eszköztár
+mutatása</guimenuitem> </menuchoice>
           </term>
           <listitem>
             <para><action>Toggles Main Toolbar display.</action> Toggle this setting to turn
@@ -189,7 +189,8 @@ remove the complete toolbar in open works.</para>
 <inlinemediaobject>
 <imageobject> <imagedata fileref="i_find.png" width="32" depth="32"
 format="PNG" /> </imageobject></inlinemediaobject>Search</guimenu>
-<guimenuitem>Search in standard bible</guimenuitem> </menuchoice>
+<guimenuitem>Keresés az alapértelmezett bibliában</guimenuitem>
+</menuchoice>
           </term>
 
           <listitem>
@@ -204,8 +205,8 @@ talál <link linkend="hdbk-op-search">itt</link>.</para>
             <menuchoice> <shortcut> <keycombo action="simul">
 <keycap>&Ctrl;+O</keycap></keycombo> </shortcut> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_find.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>Search</guimenu> <guimenuitem>Search in
-open work(s)</guimenuitem> </menuchoice>
+format="PNG" /> </imageobject></inlinemediaobject>Search</guimenu> <guimenuitem>Keresés a
+megnyitott munká(k)ban</guimenuitem> </menuchoice>
           </term>
 
           <listitem>
@@ -221,7 +222,7 @@ linkend="hdbk-op-search">itt</link>.</para>
 
     <sect2 id="hdbk-reference-menus-window">
       <title>
-        <guimenu>Window</guimenu>
+        <guimenu>Ablak</guimenu>
       </title>
 
       <variablelist>
@@ -230,8 +231,8 @@ linkend="hdbk-op-search">itt</link>.</para>
             <menuchoice> <shortcut> <keycombo action="simul">
 <keycap>&Ctrl;+W</keycap></keycombo> </shortcut> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_fileclose.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>Window</guimenu> <guimenuitem>Close
-window</guimenuitem> </menuchoice>
+format="PNG" /> </imageobject></inlinemediaobject>Ablak</guimenu> <guimenuitem>Ablak
+bezárása</guimenuitem> </menuchoice>
           </term>
 
           <listitem>
@@ -246,8 +247,8 @@ window</guimenuitem> </menuchoice>
 <keycap>&Ctrl;+&Alt;+W</keycap></keycombo> </shortcut> <guimenu>
 <inlinemediaobject>
 <imageobject> <imagedata fileref="i_fileclose.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>Window</guimenu>
-<guimenuitem>Close all</guimenuitem> </menuchoice>
+format="PNG" /> </imageobject></inlinemediaobject>Ablak</guimenu>
+<guimenuitem>Összes bezárása</guimenuitem> </menuchoice>
           </term>
 
           <listitem>
@@ -261,8 +262,8 @@ format="PNG" /> </imageobject></inlinemediaobject>Window</guimenu>
             <menuchoice> <shortcut> <keycombo action="simul">
 <keycap>&Ctrl;+J</keycap></keycombo> </shortcut> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_cascade.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>Window</guimenu>
-<guimenuitem>Cascade</guimenuitem> </menuchoice>
+format="PNG" /> </imageobject></inlinemediaobject>Ablak</guimenu>
+<guimenuitem>Átlapolt</guimenuitem> </menuchoice>
           </term>
 
           <listitem>
@@ -277,8 +278,8 @@ format="PNG" /> </imageobject></inlinemediaobject>Window</guimenu>
             <menuchoice> <shortcut> <keycombo action="simul">
 <keycap>&Ctrl;+I</keycap></keycombo> </shortcut> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_tile.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>Window</guimenu>
-<guimenuitem>Tile</guimenuitem> </menuchoice>
+format="PNG" /> </imageobject></inlinemediaobject>Ablak</guimenu>
+<guimenuitem>Mozaik</guimenuitem> </menuchoice>
           </term>
 
           <listitem>
@@ -293,8 +294,8 @@ format="PNG" /> </imageobject></inlinemediaobject>Window</guimenu>
             <menuchoice> <shortcut> <keycombo action="simul">
 <keycap>&Ctrl;+G</keycap></keycombo> </shortcut> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_tile_vert.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>Window</guimenu> <guimenuitem>Tile
-vertically</guimenuitem> </menuchoice>
+format="PNG" /> </imageobject></inlinemediaobject>Ablak</guimenu> <guimenuitem>Függőleges
+mozaik</guimenuitem> </menuchoice>
           </term>
 
           <listitem>
@@ -309,8 +310,8 @@ vertically</guimenuitem> </menuchoice>
             <menuchoice> <shortcut> <keycombo action="simul">
 <keycap>&Ctrl;+H</keycap></keycombo> </shortcut> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_tile_horiz.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>Window</guimenu> <guimenuitem>Tile
-horizontally</guimenuitem> </menuchoice>
+format="PNG" /> </imageobject></inlinemediaobject>Ablak</guimenu> <guimenuitem>Vízszintes
+mozaik</guimenuitem> </menuchoice>
           </term>
 
           <listitem>
@@ -355,8 +356,8 @@ kell menteni új folyamatot.</para>
           <term>
             <menuchoice> <shortcut> <keycombo action="simul">
 <keycap>&Ctrl;+&Alt;+S</keycap></keycombo> </shortcut>
-<guimenu>Window</guimenu> <guimenuitem>Save as new session</guimenuitem>
-</menuchoice>
+<guimenu>Ablak</guimenu> <guimenuitem>Mentés új
+munkafolyamatként</guimenuitem> </menuchoice>
           </term>
 
           <listitem>
@@ -401,15 +402,15 @@ munkafolyamatot.</para>
 
     <sect2 id="hdbk-reference-menus-settings">
       <title>
-        <guimenu>Settings</guimenu>
+        <guimenu>Beállítások</guimenu>
       </title>
       <variablelist>
         <varlistentry id="hdbk-reference-menus-settings-bibletime">
           <term>
             <menuchoice> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_configure.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>Settings</guimenu> <guimenuitem>Configure &bibletime;</guimenuitem>
-</menuchoice>
+format="PNG" /> </imageobject></inlinemediaobject>Beállítások</guimenu> <guimenuitem> &bibletime;
+beállítása</guimenuitem> </menuchoice>
           </term>
 
           <listitem>
@@ -426,8 +427,8 @@ részt</link> a részletekért.</para>
             <menuchoice> <shortcut> <keycombo action="simul"> <keycap>F4</keycap>
 </keycombo> </shortcut> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_configuresword.png" width="32"
-depth="32" format="PNG" /> </imageobject></inlinemediaobject>Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem>
-</menuchoice>
+depth="32" format="PNG" /> </imageobject></inlinemediaobject>Beállítások</guimenu> <guimenuitem>Könyvespolc
+menedzser</guimenuitem> </menuchoice>
           </term>
 
           <listitem>
@@ -441,7 +442,7 @@ linkend="hdbk-op-bookshelfmanager">ezt a fejezetet</link>.</para>
 
     <sect2 id="hdbk-reference-menus-help">
     <title>
-      <guimenu>Help</guimenu>
+      <guimenu>Segítség</guimenu>
     </title>
       <variablelist>
         <varlistentry id="hdbk-reference-menus-help-bibletime">
@@ -449,7 +450,8 @@ linkend="hdbk-op-bookshelfmanager">ezt a fejezetet</link>.</para>
             <menuchoice> <shortcut> <keycombo action="simul"> <keycap>F1</keycap>
 </keycombo> </shortcut> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_contents2.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>Help</guimenu> <guimenuitem>Handbook</guimenuitem> </menuchoice>
+format="PNG" /> </imageobject></inlinemediaobject>Segítség</guimenu> <guimenuitem>Kézikönyv</guimenuitem>
+</menuchoice>
           </term>
           <listitem>
             <para>
@@ -464,8 +466,8 @@ kézikönyvét</action>. Épp ezt olvassa.</para>
             <menuchoice> <shortcut> <keycombo action="simul"> <keycap>F2</keycap>
 </keycombo> </shortcut> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_contents2.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>Help</guimenu> <guimenuitem>Bible Study HowTo</guimenuitem>
-</menuchoice>
+format="PNG" /> </imageobject></inlinemediaobject>Segítség</guimenu> <guimenuitem>Hogyan tanulmányozza a
+Bibliát</guimenuitem> </menuchoice>
           </term>
           <listitem>
             <para>
@@ -769,13 +771,13 @@ linkend="hdbk-reference-menus">ebben a részben</link>.</para>
         <tbody>
           <row>
             <entry>
-              <keycombo action="simul"> <keycap>&Alt;+Left</keycap></keycombo>
+              <keycombo action="simul"> <keycap>&Alt;+Balra</keycap></keycombo>
             </entry>
             <entry>Visszalép az előzményekben az olvasó ablakban.</entry>
           </row>
           <row>
             <entry>
-              <keycombo action="simul"> <keycap>&Alt;+Right</keycap></keycombo>
+              <keycombo action="simul"> <keycap>&Alt;+Jobbra</keycap></keycombo>
             </entry>
             <entry>Előrelép az előzményekben.</entry>
           </row>

@@ -217,7 +217,7 @@ void CRangeChooserDialog::parseRange() {
     sword::VerseKey key;
     sword::ListKey verses = key.ParseVerseList((const char*)range.toUtf8(), "Genesis 1:1", true);
     for (int i = 0; i < verses.Count(); ++i) {
-        new QListWidgetItem(QString::fromUtf8(verses.GetElement(i)->getRangeText()), m_resultList );
+        new QListWidgetItem(QString::fromUtf8(verses.getElement(i)->getRangeText()), m_resultList);
         //    qWarning("range=%s, text=%s",verses.GetElement(i)->getRangeText(), verses.GetElement(i)->getText() );
     }
 

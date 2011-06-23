@@ -72,7 +72,7 @@ const QString CPrinter::entryLink(const KeyTreeItem &item,
 
             case KeyTreeItem::Settings::SimpleKey: //fall through
             default:
-                return QString::number(vk.Verse());
+                return QString::number(vk.getVerse());
         }
     }
     return item.key();

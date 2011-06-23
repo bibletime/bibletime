@@ -14,6 +14,7 @@
 
 #include <QList>
 
+
 class BibleTime;
 class CSwordModuleInfo;
 class CDisplayWindow;
@@ -22,10 +23,12 @@ class CDisplayWindow;
   A custom MDI area widget.
 */
 class CMDIArea: public QMdiArea {
+
         Q_OBJECT
         Q_PROPERTY(MDIArrangementMode m_mdiArrangementMode READ getMDIArrangementMode WRITE setMDIArrangementMode)
 
-    public:
+    public: /* Types: */
+
         /**
           Possible MDI subwindow arrangement modes.
         */
@@ -37,6 +40,8 @@ class CMDIArea: public QMdiArea {
             ArrangementModeTile = 5,
             ArrangementModeTabbed = 6
         };
+
+    public: /* Methods: */
 
         /**
           \param[in] parent BibleTime main window used for parent widget.
@@ -67,9 +72,9 @@ class CMDIArea: public QMdiArea {
         void triggerWindowUpdate();
 
         /**
-          Returns a lists of all subwindows which are not minimized or hidden.
+          \returns a lists of all subwindows which are not minimized or hidden.
         */
-        QList<QMdiSubWindow*> usableWindowList();
+        QList<QMdiSubWindow*> usableWindowList() const;
 
         /**
           Show or hide the sub-window min/max buttons.
@@ -77,6 +82,7 @@ class CMDIArea: public QMdiArea {
         void enableWindowMinMaxFlags(bool enable);
 
     public slots:
+
         /**
           Uses Qt's tileSubWindows function.
           \note This not set an automatic arrangement mode, it just arranges the
@@ -113,12 +119,14 @@ class CMDIArea: public QMdiArea {
         void myTileHorizontal();
 
     signals:
+
         /**
         * Emits a signal to set the caption of the toplevel widget.
         */
         void sigSetToplevelCaption(const QString&);
 
-    protected:
+    protected: /* Methods: */
+
         /**
           Reimplementation of QWidget::resizeEvent() to handle our automatic
           tiling properly.
@@ -132,20 +140,25 @@ class CMDIArea: public QMdiArea {
         bool eventFilter(QObject *o, QEvent *e);
 
         void emitWindowCaptionChanged();
+
         void fixSystemMenu(QMdiSubWindow* subWindow);
 
     protected slots:
+
         /**
           Called whan a subwindow was activated.
         */
         void slotSubWindowActivated(QMdiSubWindow *client);
 
-    protected:
+    protected: /* Fields: */
+
         MDIArrangementMode m_mdiArrangementMode;
 
-    private:
+    private: /* Fields: */
+
         CDisplayWindow* m_activeWindow;
         BibleTime* m_bibleTime;
-};
+
+}; /* class CMDIArea */
 
 #endif

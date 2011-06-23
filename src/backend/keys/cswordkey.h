@@ -100,13 +100,21 @@ class CSwordKey {
          */
         static CSwordKey* createInstance(const CSwordModuleInfo *module);
 
+        /**
+         * This is called before a key change to emit a signal
+         * */
+        void emitBeforeChanged();
+        /**
+         * This is called after a key change to emit a signal
+         * */
+        void emitChanged();
+
     protected:
         /**
          * Returns the encoded key appropriate for use directly with Sword.
          */
         virtual const char * rawKey() const = 0;
         static inline const QTextCodec *cp1252Codec() { return m_cp1252Codec; };
-        void emitChanged();
 
     private:
         /**

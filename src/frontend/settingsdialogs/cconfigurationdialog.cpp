@@ -63,13 +63,13 @@ CConfigurationDialog::CConfigurationDialog(QWidget * parent, BtActionCollection*
     m_bbox->addButton(QDialogButtonBox::Apply);
     m_bbox->addButton(QDialogButtonBox::Cancel);
     util::prepareDialogBox(m_bbox);
-    addButtonBox(m_bbox);
+    setButtonBox(m_bbox);
     bool ok = connect(m_bbox, SIGNAL(clicked(QAbstractButton *)), SLOT(slotButtonClicked(QAbstractButton *)));
     Q_ASSERT(ok);
 
     loadDialogSettings();
 
-    slotChangePage(0);
+    setCurrentPage(0);
 }
 
 CConfigurationDialog::~CConfigurationDialog() {

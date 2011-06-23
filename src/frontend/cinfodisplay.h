@@ -41,12 +41,15 @@ class CInfoDisplay : public QWidget {
         typedef QList<InfoData> ListInfoData;
 
         CInfoDisplay(QWidget *parent = 0);
-        virtual ~CInfoDisplay();
 
+        void unsetInfo();
+        void setInfo(const QString &data, const QString &lang = QString());
         void setInfo(const InfoType, const QString& data);
         void setInfo(const ListInfoData&);
-        void clearInfo();
         QSize sizeHint() const;
+
+    public slots:
+        void setInfo(CSwordModuleInfo *module);
 
     protected:
         const QString decodeAbbreviation( const QString& data );

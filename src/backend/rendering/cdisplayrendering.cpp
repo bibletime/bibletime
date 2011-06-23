@@ -42,7 +42,7 @@ const QString CDisplayRendering::entryLink(const KeyTreeItem &item,
         vk.setKey(item.key());
     }
 
-    if (isBible && (vk.Verse() == 0)) {
+    if (isBible && (vk.getVerse() == 0)) {
         return QString::null; //Warning: return already here
     }
 
@@ -73,7 +73,7 @@ const QString CDisplayRendering::entryLink(const KeyTreeItem &item,
 
         case KeyTreeItem::Settings::SimpleKey: {
             if (isBible) {
-                linkText = QString::number(vk.Verse());
+                linkText = QString::number(vk.getVerse());
                 break;
             }
 

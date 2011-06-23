@@ -43,7 +43,7 @@
 #include <versekey.h>
 
 
-#ifdef BT_DEBUG
+#if 0
 namespace {
 
 /** HELPER Method to dump all current EntryAttributes of a module. */
@@ -452,10 +452,10 @@ int CSwordModuleInfo::searchIndexed(const QString &searchedText,
     QList<sword::VerseKey*> list;
 
     if (s) {
-        m_module->SetKey(*s);
+        m_module->setKey(*s);
     }
 
-    results.ClearList();
+    results.clear();
 
     try {
         // do not use any stop words
@@ -701,14 +701,14 @@ CSwordModuleInfo::TextDirection CSwordModuleInfo::textDirection() const {
 }
 
 void CSwordModuleInfo::write(CSwordKey *key, const QString &newText) {
-    module()->KeyText(key->key().toUtf8().constData());
+    module()->setKey(key->key().toUtf8().constData());
 
     //don't store a pointer to the const char* value somewhere because QCString doesn't keep the value of it
     module()->setEntry(isUnicode() ? newText.toUtf8().constData() : newText.toLocal8Bit().constData());
 }
 
 bool CSwordModuleInfo::deleteEntry(CSwordKey * const key) {
-    module()->KeyText(isUnicode() ? key->key().toUtf8().constData() : key->key().toLocal8Bit().constData());
+    module()->setKey(isUnicode() ? key->key().toUtf8().constData() : key->key().toLocal8Bit().constData());
 
     if (module()) {
         module()->deleteEntry();
@@ -761,7 +761,7 @@ void CSwordModuleInfo::initCachedLanguage() {
 }
 
 Rendering::CEntryDisplay * CSwordModuleInfo::getDisplay() const {
-    return dynamic_cast < Rendering::CEntryDisplay * >(m_module->Disp());
+    return dynamic_cast<Rendering::CEntryDisplay *>(m_module->getDisplay());
 }
 
 QString CSwordModuleInfo::aboutText() const {

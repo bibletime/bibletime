@@ -288,7 +288,7 @@ class BibleTime : public QMainWindow {
         /**
         * Refreshes all presenter supporting at least in of the features given as parameter.
         */
-        void refreshDisplayWindows();
+        void refreshDisplayWindows() const;
         /**
         * Refresh main window accelerators
         */
@@ -432,9 +432,6 @@ class BibleTime : public QMainWindow {
 
     private:
         static BibleTime *m_instance;
-
-        //  True if window was maximized before last toggle to full screen.
-        bool m_WindowWasMaximizedBeforeFullScreen;
 
         // Docking widgets and their respective content widgets:
         BtBookshelfDockWidget* m_bookshelfDock;

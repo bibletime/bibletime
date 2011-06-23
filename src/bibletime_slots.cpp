@@ -12,6 +12,7 @@
 #include <QAction>
 #include <QApplication>
 #include <QClipboard>
+#include <QDebug>
 #include <QDesktopServices>
 #include <QInputDialog>
 #include <QList>
@@ -124,7 +125,7 @@ void BibleTime::slotOpenWindowsMenuAboutToShow() {
 
     QList<QMdiSubWindow*> windows = m_mdi->usableWindowList();
     m_openWindowsMenu->clear();
-    foreach (QMdiSubWindow *window, windows) {
+    Q_FOREACH (QMdiSubWindow * const window, windows) {
         QAction *openWindowAction = m_openWindowsMenu->addAction(window->windowTitle());
         openWindowAction->setCheckable(true);
         openWindowAction->setChecked(window == m_mdi->activeSubWindow());
@@ -387,8 +388,9 @@ void BibleTime::slotSearchModules() {
     //get the modules of the open windows
     QList<const CSwordModuleInfo*> modules;
 
-    foreach(QMdiSubWindow* subWindow, m_mdi->subWindowList()) {
-        if (CDisplayWindow* w = dynamic_cast<CDisplayWindow*>(subWindow->widget())) {
+    Q_FOREACH (const QMdiSubWindow * const subWindow, m_mdi->subWindowList()) {
+        const CDisplayWindow * const w = dynamic_cast<CDisplayWindow*>(subWindow->widget());
+        if (w != 0) {
             modules << w->modules();
         }
     }
@@ -449,13 +451,13 @@ void BibleTime::saveProfile(CProfile* profile) {
     storeProfileSettings(profile);
 
     QList<CProfileWindow*> profileWindows;
-    foreach (QMdiSubWindow* w, m_mdi->subWindowList(QMdiArea::StackingOrder)) {
-        CDisplayWindow* displayWindow = dynamic_cast<CDisplayWindow*>(w->widget());
-        if (!displayWindow) {
+    Q_FOREACH (const QMdiSubWindow * const w, m_mdi->subWindowList(QMdiArea::StackingOrder)) {
+        CDisplayWindow * const displayWindow = dynamic_cast<CDisplayWindow*>(w->widget());
+        if (displayWindow == 0) {
             continue;
         }
 
-        CProfileWindow* profileWindow = new CProfileWindow();
+        CProfileWindow * const profileWindow = new CProfileWindow();
         displayWindow->storeProfileSettings(profileWindow);
         profileWindows.append(profileWindow);
     }
@@ -491,17 +493,17 @@ void BibleTime::loadProfile(CProfile* p) {
     QWidget* focusWindow = 0;
 
     //   for (CProfileWindow* w = windows.last(); w; w = windows.prev()) { //from the last one to make sure the order is right in the mdi area
-    foreach (CProfileWindow* w, windows) {
-        const QString key = w->key();
-        QStringList usedModules = w->modules();
+    Q_FOREACH (CProfileWindow * w, windows) {
+        const QString &key = w->key();
 
         QList<CSwordModuleInfo*> modules;
-        for ( QStringList::Iterator it = usedModules.begin(); it != usedModules.end(); ++it ) {
-            if (CSwordModuleInfo* m = CSwordBackend::instance()->findModuleByName(*it)) {
+        Q_FOREACH (const QString &moduleName, w->modules()) {
+            CSwordModuleInfo * const m = CSwordBackend::instance()->findModuleByName(moduleName);
+            if (m != 0) {
                 modules.append(m);
             }
         }
-        if (!modules.count()) { //are the modules still installed? If not continue wih next session window
+        if (modules.isEmpty()) { //are the modules still installed? If not continue wih next session window
             continue;
         }
 
@@ -541,20 +543,7 @@ void BibleTime::deleteProfile(QAction* action) {
 }
 
 void BibleTime::toggleFullscreen() {
-    if (m_windowFullscreenAction->isChecked()) {
-        // set full screen mode
-        m_WindowWasMaximizedBeforeFullScreen = isMaximized();
-        showFullScreen();
-    }
-    else {
-        // restore previous non-full screen mode
-        if (m_WindowWasMaximizedBeforeFullScreen) {
-            showMaximized();
-        }
-        else {
-            showNormal();
-        }
-    }
+    setWindowState(windowState() ^ Qt::WindowFullScreen);
     m_mdi->triggerWindowUpdate();
 }
 
@@ -578,17 +567,18 @@ void BibleTime::refreshProfileMenus() {
 
     //refresh the load, save and delete profile menus
     m_profileMgr.refresh();
-    QList<CProfile*> profiles = m_profileMgr.profiles();
+    const QList<CProfile*> profiles = m_profileMgr.profiles();
 
-    const bool enableActions = bool(profiles.count() != 0);
+    const bool enableActions = !profiles.isEmpty();
     m_windowSaveProfileMenu->setEnabled(enableActions);
     m_windowLoadProfileMenu->setEnabled(enableActions);
     m_windowDeleteProfileMenu->setEnabled(enableActions);
 
-    foreach (CProfile* p, profiles) {
-        m_windowSaveProfileMenu->addAction(p->name());
-        m_windowLoadProfileMenu->addAction(p->name());
-        m_windowDeleteProfileMenu->addAction(p->name());
+    Q_FOREACH (const CProfile * const p, profiles) {
+        const QString &profileName = p->name();
+        m_windowSaveProfileMenu->addAction(profileName);
+        m_windowLoadProfileMenu->addAction(profileName);
+        m_windowDeleteProfileMenu->addAction(profileName);
     }
 }
 

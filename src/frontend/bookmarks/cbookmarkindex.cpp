@@ -536,7 +536,7 @@ void CBookmarkIndex::contextMenu(const QPoint& p) {
     if (i && !items.contains(i) && i != m_extraItem)
         items.append(i);
 
-    if (items.count() == 0) {
+    if (items.isEmpty()) {
         //special handling for no selection
         BtBookmarkItemBase::MenuAction actionType;
         for (int index = BtBookmarkItemBase::ActionBegin; index <= BtBookmarkItemBase::ActionEnd; ++index) {
@@ -705,7 +705,7 @@ void CBookmarkIndex::printBookmarks() {
         }
     }
 
-    if (items.count() == 0) {
+    if (items.isEmpty()) {
         qWarning("Tried to print empty bookmark list.");
         return;
     }

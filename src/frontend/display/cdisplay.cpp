@@ -94,14 +94,6 @@ void CDisplayConnections::clear() {
     m_display->setText(QString::null);
 }
 
-void CDisplayConnections::zoomIn() {
-    m_display->zoomIn();
-}
-
-void CDisplayConnections::zoomOut() {
-    m_display->zoomOut();
-}
-
 void CDisplayConnections::openFindTextDialog() {
     m_display->openFindTextDialog();
 }

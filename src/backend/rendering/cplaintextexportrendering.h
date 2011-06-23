@@ -21,22 +21,22 @@ namespace Rendering {
  * @short Text rendering as plain text.
  * @author The BibleTime team
  */
+class CPlainTextExportRendering: public CHTMLExportRendering {
 
-class CPlainTextExportRendering : public CHTMLExportRendering {
+    public: /* Methods: */
 
-    public:
         CPlainTextExportRendering(
             const Settings &settings,
             const DisplayOptions &displayOptions = getBtConfig().getDisplayOptions(),
-            const FilterOptions &filterOptions = getBtConfig().getFilterOptions()
-        );
-        virtual inline ~CPlainTextExportRendering() {};
+            const FilterOptions &filterOptions = getBtConfig().getFilterOptions());
 
-    protected:
+    protected: /* Methods: */
+
         virtual const QString renderEntry( const KeyTreeItem&, CSwordKey* = 0 );
         virtual const QString finishText( const QString&, KeyTree& tree );
-};
 
-}
+}; /* class CPlainTextExportRendering */
+
+} /* namespace Rendering */
 
 #endif

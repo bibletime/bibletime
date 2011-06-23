@@ -12,15 +12,13 @@
 
 #include <QDialog>
 
-#include <QDebug>
-#include <QWidget>
+#include <QIcon>
+#include <QListWidgetItem>
 
 
 class BtConfigPage;
 class QDialogButtonBox;
-class QLabel;
-class QListWidget;
-class QListWidgetItem;
+class QFrame;
 class QStackedWidget;
 class QVBoxLayout;
 
@@ -33,60 +31,78 @@ class QVBoxLayout;
 * an auto-destroying window.
 */
 class BtConfigDialog : public QDialog {
+
         Q_OBJECT
-    public:
-        BtConfigDialog(QWidget *parent = 0);
-        virtual ~BtConfigDialog();
+
+    public: /* Types: */
+
+        /** Base class for configuration dialog pages. */
+        class Page : public QWidget {
+
+            friend class BtConfigDialog;
+
+            public: /* Methods: */
+
+                inline Page(BtConfigDialog *parent)
+                    : QWidget(parent), m_listWidgetItem(0) {}
+                inline Page(const QIcon &icon, BtConfigDialog *parent)
+                    : QWidget(parent), m_icon(icon), m_listWidgetItem(0) {}
+
+                inline const QIcon &icon() const { return m_icon; }
+                inline void setIcon(const QIcon &icon) {
+                    m_icon = icon;
+                    if (m_listWidgetItem != 0)
+                        m_listWidgetItem->setIcon(icon);
+                }
+
+                inline const QString &headerText() const { return m_headerText; }
+                inline void setHeaderText(const QString &headerText) {
+                    m_headerText = headerText;
+                    if (m_listWidgetItem != 0)
+                        m_listWidgetItem->setText(headerText);
+                }
+
+            private: /* Methods: */
+
+                void setListWidgetItem(QListWidgetItem *item) {
+                    m_listWidgetItem = item;
+                }
+
+            private: /* Fields: */
+
+                QIcon m_icon;
+                QString m_headerText;
+                QListWidgetItem *m_listWidgetItem;
+
+        };
+
+    public: /* Methods: */
+
+        BtConfigDialog(QWidget *parent = 0, Qt::WindowFlags flags = 0);
 
         /** Adds a BtConfigPage to the paged widget stack. The new page will be the current page.*/
-        void addPage(BtConfigPage* pageWidget);
-        /** Adds a button box to the lower edge of the dialog. */
-        void addButtonBox(QDialogButtonBox* buttonBox);
+        void addPage(Page *pageWidget);
 
-    public slots:
+        /** Adds a button box to the lower edge of the dialog. */
+        void setButtonBox(QDialogButtonBox* buttonBox);
+
         /** Changes the current page using the given index number. */
+        void setCurrentPage(int newIndex);
+
+    private slots:
+
         void slotChangePage(int newIndex);
 
-    private:
+    private: /* Fields: */
+
         QListWidget* m_contentsList;
         QStackedWidget* m_pageWidget;
         QVBoxLayout* m_pageLayout;
+        QFrame *m_buttonBoxRuler;
+        QDialogButtonBox *m_buttonBox;
         int m_maxItemWidth;
         int m_previousPageIndex;
+
 };
-
-
-
-/**
-* Base class for configuration dialog pages.
-*/
-class BtConfigPage : public QWidget {
-        Q_OBJECT
-        friend class BtConfigDialog;
-
-    public:
-        /**
-          Constructs a configuration dialog base, with QVBoxLayout as layout() and a header
-          label as the first widget in this layout.
-          \param[in] parent The parent widget.
-        */
-        BtConfigPage(QWidget *parent = 0);
-        virtual ~BtConfigPage();
-
-        /** Implement these to return the correct values.
-        * For example: header(){return tr("General");}
-        */
-        virtual const QIcon &icon() const = 0;
-        virtual QString header() const = 0;
-
-        inline BtConfigDialog *parentDialog() const {
-            return m_parentDialog;
-        }
-
-    private:
-        BtConfigDialog *m_parentDialog;
-};
-
 
 #endif
-

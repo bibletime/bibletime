@@ -23,7 +23,9 @@ struct FilterOptions;
 namespace Rendering {
 
 class CEntryDisplay: public sword::SWDisplay {
-    public:
+
+    public: /* Methods: */
+
         /**
           \returns the rendered text using the modules in the list and using the
                    key parameter.
@@ -32,9 +34,9 @@ class CEntryDisplay: public sword::SWDisplay {
                                    const QString &key,
                                    const DisplayOptions &displayOptions,
                                    const FilterOptions &filterOptions);
-};
 
+}; /* class CEntryDisplay */
 
-}
+} /* namespace Rendering */
 
 #endif

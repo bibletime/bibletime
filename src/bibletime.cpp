@@ -47,18 +47,17 @@ using namespace Profile;
 BibleTime *BibleTime::m_instance = 0;
 
 BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
-    : QMainWindow(parent, flags), m_WindowWasMaximizedBeforeFullScreen(false)
+    : QMainWindow(parent, flags)
 {
     namespace DU = util::directory;
 
     Q_ASSERT(m_instance == 0);
     m_instance = this;
 
-    QSplashScreen splash;
-    bool showSplash = getBtConfig().getValue<bool>("gui/logo");
+    QSplashScreen *splash = 0;
     QString splashHtml;
 
-    if (showSplash) {
+    if (getBtConfig().getValue<bool>("gui/logo")) {
         splashHtml = "<div style='background:transparent;color:white;font-weight:bold'>%1"
                      "</div>";
         const QDate date(QDate::currentDate());
@@ -76,23 +75,27 @@ BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
         if (!pm.load(splashImage)) {
             qWarning("Can't load startuplogo! Check your installation.");
         }
-        splash.setPixmap(pm);
-        splash.show();
-
-        splash.showMessage(splashHtml.arg(tr("Initializing the SWORD engine...")),
-                           Qt::AlignCenter);
+        splash = new QSplashScreen(this, pm);
+        splash->setAttribute(Qt::WA_DeleteOnClose);
+        splash->finish(this);
+        splash->showMessage(splashHtml.arg(tr("Initializing the SWORD engine...")),
+                            Qt::AlignCenter);
+        splash->show();
+        qApp->processEvents();
     }
     initBackends();
 
-    if (showSplash) {
-        splash.showMessage(splashHtml.arg(tr("Creating BibleTime's user interface...")),
-                           Qt::AlignCenter);
+    if (splash != 0) {
+        splash->showMessage(splashHtml.arg(tr("Creating BibleTime's user interface...")),
+                            Qt::AlignCenter);
+        qApp->processEvents();
     }
     initView();
 
-    if (showSplash) {
-        splash.showMessage(splashHtml.arg(tr("Initializing menu- and toolbars...")),
-                           Qt::AlignCenter);
+    if (splash != 0) {
+        splash->showMessage(splashHtml.arg(tr("Initializing menu- and toolbars...")),
+                            Qt::AlignCenter);
+        qApp->processEvents();
     }
     initActions();
     initMenubar();
@@ -156,7 +159,7 @@ CDisplayWindow* BibleTime::createWriteDisplayWindow(CSwordModuleInfo* module, co
     if ( displayWindow ) {
         displayWindow->init();
         m_mdi->addSubWindow(displayWindow);
-        if (m_mdi->subWindowList().count() == 0)
+        if (m_mdi->subWindowList().isEmpty())
             displayWindow->showMaximized();
         else
             displayWindow->show();
@@ -234,8 +237,8 @@ void BibleTime::moduleAbout(CSwordModuleInfo *module) {
 }
 
 /** Refreshes all presenters.*/
-void BibleTime::refreshDisplayWindows() {
-    foreach (QMdiSubWindow* subWindow, m_mdi->subWindowList()) {
+void BibleTime::refreshDisplayWindows() const {
+    Q_FOREACH (const QMdiSubWindow * const subWindow, m_mdi->subWindowList()) {
         if (CDisplayWindow* window = dynamic_cast<CDisplayWindow*>(subWindow->widget())) {
             window->reload(CSwordBackend::OtherChange);
         }
@@ -253,8 +256,8 @@ void BibleTime::closeEvent(QCloseEvent *event) {
       window returns false, the querying is stopped and the close event is ignored. If all
       subwindows return true, the close event is accepted.
     */
-    Q_FOREACH(QMdiSubWindow *subWindow, m_mdi->subWindowList()) {
-        if (CDisplayWindow* window = dynamic_cast<CDisplayWindow*>(subWindow->widget())) {
+    Q_FOREACH (QMdiSubWindow * const subWindow, m_mdi->subWindowList()) {
+        if (CDisplayWindow * const window = dynamic_cast<CDisplayWindow*>(subWindow->widget())) {
             if (!window->queryClose()) {
                 event->ignore();
                 return;

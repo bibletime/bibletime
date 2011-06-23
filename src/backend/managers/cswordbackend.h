@@ -65,7 +65,7 @@ class CSwordBackend : public QObject, public sword::SWMgr {
             NoModules = 1
         };
         /**
-        * The constructor of the Sword backend. This is actually used nowhere.
+        * The constructor of the Sword backend. Used by BtInstallBackend only.
         * Notice that using augmentHome=false can mess up the system because it is true elsewhere.
         * @param path The path which is used to load modules
         * @param augmentHome True if the $HOME/.sword/ modules should be augmented with the other modules
@@ -132,20 +132,20 @@ class CSwordBackend : public QObject, public sword::SWMgr {
         * @param description The description of the desired module
         * @return pointer to the desired module; null if no module has the specified description
         */
-        CSwordModuleInfo* findModuleByDescription(const QString& description);
+        CSwordModuleInfo* findModuleByDescription(const QString &description) const;
 
         /**
         * This function searches for a module with the specified name
         * @param name The name of the desired module
         * @return Pointer to the desired module; null if no module has the specified name
         */
-        CSwordModuleInfo* findModuleByName(const QString& name);
+        CSwordModuleInfo* findModuleByName(const QString &name) const;
         /**
         * This function searches for a module with the specified sword module as module() object!
         * @param swmodule to a Sword module
         * @return pointer to the desired module; null if no module has the specified name
         */
-        CSwordModuleInfo* findSwordModuleByPointer(const sword::SWModule* const swmodule);
+        CSwordModuleInfo* findSwordModuleByPointer(const sword::SWModule * const swmodule) const;
 
         /**
         * @return Our global config object which contains the configs of all modules merged together.
@@ -177,19 +177,19 @@ class CSwordBackend : public QObject, public sword::SWMgr {
         * Takes off the given modules from the list and returns them.
         * User must take care of the deletion of the returned CSwordModuleInfo pointers.
         */
-        QList<CSwordModuleInfo*> takeModulesFromList(QStringList names);
+        QList<CSwordModuleInfo*> takeModulesFromList(const QStringList &names);
 
         /**
           \returns a list of pointers to modules, created from a list of module
                    names.
         */
-        QList<CSwordModuleInfo*> getPointerList(const QStringList &names);
+        QList<CSwordModuleInfo*> getPointerList(const QStringList &names) const;
 
         /**
           \returns a list of pointers to const modules, created from a list of
                    module names.
         */
-        QList<const CSwordModuleInfo*> getConstPointerList(const QStringList &names);
+        QList<const CSwordModuleInfo*> getConstPointerList(const QStringList &names) const;
 
         /** Sword prefix list.
         * @return A list of all known Sword prefix dirs

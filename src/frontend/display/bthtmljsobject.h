@@ -22,7 +22,7 @@ class BtHtmlJsObject: public QObject {
 
     public:
         BtHtmlJsObject(BtHtmlReadDisplay* display);
-        ~BtHtmlJsObject() {}
+
         void moveToAnchor(const QString& anchor);
         void clearPrevAttribute();
 

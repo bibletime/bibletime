@@ -19,22 +19,27 @@ class QTextEdit;
 
 /**
     Dialog to show the information about a module.
-
-    @author The BibleTime team <info@bibletime.info>
 */
 class BTAboutModuleDialog: public QDialog {
+
         Q_OBJECT
-    public:
-        BTAboutModuleDialog(CSwordModuleInfo *moduleInfo, QWidget *parent = 0,
+
+    public: /* Methods: */
+
+        BTAboutModuleDialog(const CSwordModuleInfo *moduleInfo,
+                            QWidget *parent = 0,
                             Qt::WindowFlags flags = 0);
 
-    protected:
+    protected: /* Methods: */
+
         void retranslateUi();
 
-    private:
-        CSwordModuleInfo *m_moduleInfo;
+    private: /* Fields: */
+
+        const CSwordModuleInfo *m_moduleInfo;
         QTextEdit        *m_textEdit;
         QDialogButtonBox *m_buttons;
-};
+
+}; /* class BTAboutModuleDialog */
 
 #endif

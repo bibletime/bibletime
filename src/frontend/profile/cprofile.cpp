@@ -298,16 +298,6 @@ bool CProfile::save() {
     return save(m_profileWindows);
 }
 
-/** Returns the filename used for this profile. */
-const QString& CProfile::filename() {
-    return m_filename;
-}
-
-/** Returns the name of this profile. */
-const QString& CProfile::name() {
-    return m_name;
-}
-
 /** Initializes the XML for the first time (use to create a new profile) */
 void CProfile::init(const QString file) {
     const QString oldFile = m_filename;

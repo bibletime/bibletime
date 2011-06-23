@@ -2323,19 +2323,3 @@ msgstr ""
 #: docs/howto/en/docbook/index.docbook:66
 msgid "HowTo"
 msgstr ""
-
-# type: Content of: <chapter><sect1><sect2><para>
-#~ msgid "Find these verses:"
-#~ msgstr "Keresse meg ezeket:"
-
-# type: Content of: <chapter><section><section><itemizedlist><listitem><para>
-#~ msgid "Cross-references for aleipho:"
-#~ msgstr "Az aleipho kereszthivatkozásai:"
-
-# type: Content of: <chapter><section><section><itemizedlist><listitem><para>
-#~ msgid "Cross-references of chrio:"
-#~ msgstr "Chrio kereszthivatkozásai:"
-
-# type: Content of: <book><bookinfo><copyright><holder>
-#~ msgid "The team of &bibletime; (info@bibletime.info)"
-#~ msgstr "A &bibletime; csapat (info@bibletime.info)"

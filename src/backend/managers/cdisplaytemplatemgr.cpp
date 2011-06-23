@@ -33,11 +33,11 @@ CDisplayTemplateMgr::CDisplayTemplateMgr(QString &errorMessage) {
 
     // Preload global display templates from disk:
     QDir td = DU::getDisplayTemplatesDir();
-    Q_FOREACH(QString file, td.entryList(filter, QDir::Files | QDir::Readable))
+    Q_FOREACH(const QString &file, td.entryList(filter, QDir::Files | QDir::Readable))
         loadTemplate(td.canonicalPath() + "/" + file);
         
     // Load app stylesheets
-    Q_FOREACH(QString file, td.entryList(cssfilter, QDir::Files | QDir::Readable))
+    Q_FOREACH(const QString &file, td.entryList(cssfilter, QDir::Files | QDir::Readable))
     	loadCSSTemplate(td.canonicalPath() + "/" + file);
 
     /*
@@ -45,7 +45,7 @@ CDisplayTemplateMgr::CDisplayTemplateMgr(QString &errorMessage) {
       with the same file name:
     */
     QDir utd = DU::getUserDisplayTemplatesDir();
-    Q_FOREACH(QString file, utd.entryList(filter, QDir::Files | QDir::Readable))
+    Q_FOREACH(const QString &file, utd.entryList(filter, QDir::Files | QDir::Readable))
         loadTemplate(utd.canonicalPath() + "/" + file);
 
     if (m_cssMap.contains(defaultTemplate())) {
@@ -56,7 +56,10 @@ CDisplayTemplateMgr::CDisplayTemplateMgr(QString &errorMessage) {
     }
 }
 
-const QString CDisplayTemplateMgr::fillTemplate( const QString& name, const QString& content, Settings& settings ) {
+QString CDisplayTemplateMgr::fillTemplate(const QString &name,
+                                          const QString &content,
+                                          const Settings &settings)
+{
     qDebug() << "CDisplayTemplateMgr::fillTemplate";
 
     const QString templateName = m_cssMap.contains(name) ? name : defaultTemplate();
@@ -102,13 +105,11 @@ const QString CDisplayTemplateMgr::fillTemplate( const QString& name, const QStr
         qDebug() << "There were more than 1 module, create headers";
         QString header;
 
-        QList<const CSwordModuleInfo*>::iterator end_it = settings.modules.end();
-
-        for (QList<const CSwordModuleInfo*>::iterator it(settings.modules.begin()); it != end_it; ++it) {
+        Q_FOREACH(const CSwordModuleInfo *mi, settings.modules) {
             header.append("<th style=\"width:")
             .append(QString::number(int( 100.0 / (float)moduleCount )))
             .append("%;\">")
-            .append((*it)->name())
+            .append(mi->name())
             .append("</th>");
         }
 

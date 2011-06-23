@@ -35,8 +35,6 @@ class BtSearchOptionsArea : public QWidget {
 
         enum SearchType {AndType, OrType, FullType};
 
-        friend class CSearchDialog;
-
         BtSearchOptionsArea(QWidget *parent = 0);
         ~BtSearchOptionsArea();
         /*

@@ -763,6 +763,21 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
 </context>
 <context>
+    <name>BtFontChooserWidget</name>
+    <message>
+        <source>Font name:</source>
+        <translation type="unfinished">Jméno písma:</translation>
+    </message>
+    <message>
+        <source>Font style:</source>
+        <translation type="unfinished">Styl písma:</translation>
+    </message>
+    <message>
+        <source>Size:</source>
+        <translation type="unfinished">Velikost:</translation>
+    </message>
+</context>
+<context>
     <name>BtFontSettingsPage</name>
     <message>
         <source>You can specify a custom font for each language.</source>
@@ -829,7 +844,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>KiB</source>
-        <translation>KiB</translation>
+        <translation type="obsolete">KiB</translation>
     </message>
     <message>
         <source>Create...</source>
@@ -841,6 +856,14 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Unindexed Works</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 KiB</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>0 KiB</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1864,11 +1887,11 @@ shortcut</source>
     </message>
     <message>
         <source>Zoom in</source>
-        <translation>Přiblížit</translation>
+        <translation type="obsolete">Přiblížit</translation>
     </message>
     <message>
         <source>Zoom out</source>
-        <translation>Oddálit</translation>
+        <translation type="obsolete">Oddálit</translation>
     </message>
     <message>
         <source>Select all</source>
@@ -1915,15 +1938,15 @@ shortcut</source>
     <name>CFontChooser</name>
     <message>
         <source>Size:</source>
-        <translation>Velikost:</translation>
+        <translation type="obsolete">Velikost:</translation>
     </message>
     <message>
         <source>Font name:</source>
-        <translation>Jméno písma:</translation>
+        <translation type="obsolete">Jméno písma:</translation>
     </message>
     <message>
         <source>Font style:</source>
-        <translation>Styl písma:</translation>
+        <translation type="obsolete">Styl písma:</translation>
     </message>
 </context>
 <context>

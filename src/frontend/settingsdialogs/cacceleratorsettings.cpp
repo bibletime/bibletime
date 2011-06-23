@@ -10,6 +10,7 @@
 #include "frontend/settingsdialogs/cacceleratorsettings.h"
 
 #include <QComboBox>
+#include <QDebug>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QList>
@@ -24,21 +25,21 @@
 #include "frontend/displaywindow/ccommentaryreadwindow.h"
 #include "frontend/displaywindow/clexiconreadwindow.h"
 #include "frontend/displaywindow/creadwindow.h"
+#include "frontend/settingsdialogs/cconfigurationdialog.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
 
 
-CAcceleratorSettingsPage::CAcceleratorSettingsPage(QWidget *parent)
-        : BtConfigPage(parent)
+CAcceleratorSettingsPage::CAcceleratorSettingsPage(CConfigurationDialog *parent)
+        : BtConfigDialog::Page(util::directory::getIcon(CResMgr::settings::keys::icon), parent)
 {
-    Q_ASSERT(qobject_cast<QVBoxLayout*>(layout()) != 0);
-    QVBoxLayout *mainLayout = static_cast<QVBoxLayout*>(layout());
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
 
     QHBoxLayout* layoutForWindowTypeChooser = new QHBoxLayout();
     mainLayout->addLayout(layoutForWindowTypeChooser);
 
-    QLabel* label = new QLabel(tr("Choose action group:"), this);
-    layoutForWindowTypeChooser->addWidget(label);
+    m_actionGroupLabel = new QLabel(this);
+    layoutForWindowTypeChooser->addWidget(m_actionGroupLabel);
 
     m_typeChooser = new QComboBox(this);
     layoutForWindowTypeChooser->addWidget(m_typeChooser);
@@ -48,13 +49,6 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(QWidget *parent)
     Q_ASSERT(ok);
 
     m_keyChooserStack = new QStackedWidget(this);
-
-    m_application.title = tr("Main Window");
-    m_general = WindowType(tr("All text windows"));
-    m_bible = WindowType(tr("Bible windows"));
-    m_commentary = WindowType(tr("Commentary windows"));
-    m_lexicon = WindowType(tr("Lexicon windows"));
-    m_book = WindowType(tr("Book windows"));
 
     m_typeChooser->addItem(m_application.title);
     m_typeChooser->addItem(m_general.title);
@@ -129,10 +123,23 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(QWidget *parent)
     slotKeyChooserTypeChanged(m_application.title);
 
     m_typeChooser->setFocus(Qt::MouseFocusReason);
+
+    retranslateUi();
+
     qDebug() << "CAcceleratorSettingsPage::CAcceleratorSettingsPage end";
 }
 
-CAcceleratorSettingsPage::~CAcceleratorSettingsPage() {
+void CAcceleratorSettingsPage::retranslateUi() {
+    setHeaderText(tr("Shortcuts"));
+
+    m_actionGroupLabel->setText(tr("Choose action group:"));
+
+    m_application.title = tr("Main Window");
+    m_general.title = tr("All text windows");
+    m_bible.title = tr("Bible windows");
+    m_commentary.title = tr("Commentary windows");
+    m_lexicon.title = tr("Lexicon windows");
+    m_book.title = tr("Book windows");
 }
 
 // complete the keyChangeRequest
@@ -245,12 +252,4 @@ void CAcceleratorSettingsPage::slotKeyChooserTypeChanged(const QString& title) {
     int index = m_typeChooser->currentIndex();
     m_keyChooserStack->setCurrentIndex(index);
 
-}
-
-const QIcon &CAcceleratorSettingsPage::icon() const {
-    return util::directory::getIcon(CResMgr::settings::keys::icon);
-}
-
-QString CAcceleratorSettingsPage::header() const {
-    return tr("Shortcuts");
 }

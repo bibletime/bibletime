@@ -370,22 +370,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Toggle visibility of the bookshelf window</source>
-        <translation type="unfinished"></translation>
+        <translation>Umschalten der Sichtbarkeit des Bücherregal-Fensters</translation>
     </message>
     <message>
         <source>Toggle visibility of the bookmarks window</source>
-        <translation type="unfinished"></translation>
+        <translation>Umschalten der Sichtbarkeit des Lesezeichen-Fensters</translation>
     </message>
     <message>
         <source>Toggle visibility of the mag window</source>
-        <translation type="unfinished"></translation>
+        <translation>Umschalten der Sichtbarkeit des Lupen-Fensters</translation>
     </message>
 </context>
 <context>
     <name>BibleTimeApp</name>
     <message>
         <source>Fatal error!</source>
-        <translation type="unfinished"></translation>
+        <translation>Schwerwiegender Fehler!</translation>
     </message>
 </context>
 <context>
@@ -748,7 +748,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Show footnotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Fußnoten anzeigen</translation>
     </message>
 </context>
 <context>
@@ -768,6 +768,21 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <source>Description:</source>
         <translation>Beschreibung:</translation>
+    </message>
+</context>
+<context>
+    <name>BtFontChooserWidget</name>
+    <message>
+        <source>Font name:</source>
+        <translation type="unfinished">Schriftname:</translation>
+    </message>
+    <message>
+        <source>Font style:</source>
+        <translation type="unfinished">Schriftstil:</translation>
+    </message>
+    <message>
+        <source>Size:</source>
+        <translation type="unfinished">Größe:</translation>
     </message>
 </context>
 <context>
@@ -837,7 +852,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>KiB</source>
-        <translation>KiB</translation>
+        <translation type="obsolete">KiB</translation>
     </message>
     <message>
         <source>Create...</source>
@@ -850,6 +865,14 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <source>Unindexed Works</source>
         <translation>Werke ohne Index</translation>
+    </message>
+    <message>
+        <source>%1 KiB</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>0 KiB</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1270,7 +1293,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Entfernen</translation>
     </message>
 </context>
 <context>
@@ -1481,7 +1504,7 @@ shortcut</source>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Entfernen</translation>
     </message>
 </context>
 <context>
@@ -1552,15 +1575,15 @@ shortcut</source>
     </message>
     <message>
         <source>The Bookshelf, Bookmark, and Mag windows can be moved to new locations by dragging them from the title at the top of each window. They can be placed to the left, right, above, or below the works windows. They can be placed on top of each other and tabs will appear so each window can be selected. They can be resized by dragging the border between the window and another window.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Bücherregal-, Lesezeichen- und Lupen-Fenster können an neue Positionen bewegt werden, indem sie am Titel an der Oberkante jedes Fensters gezogen werden. Sie können links, rechts, ober- oder unterhalb der Textfenster mit den Werken platziert werden. Auch können sie aufeinander platziert werden, wobei dann Tabs zur Auswahl jedes Fensters erscheinen. Ein Anpassen ihrer Größe ist durch Verschieben der zwischen den jeweiligen Fenstern befindlichen Grenzen möglich.</translation>
     </message>
     <message>
         <source>You can search for Strong&apos;s numbers in a work. Start with a work that has Strong&apos;s numbers and hover over a word. Right click the word and use the Strong&apos;s Search menu. A search dialog will appear that allows you to see the use of the same Strong&apos;s number in other locations of the work.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie können nach Strong-Nummern in einem Werk suchen. Beginnnen Sie mit einem Werk, das Strong-Nummern aufweist und gleiten Sie über ein Wort. Klicken Sie das Wort mit der rechten Maustaste an und benutzen Sie das Strong-Suchmenü. Ein Suchdialog erscheint, der Ihnen den Gebrauch derselben Strong-Nummer an anderen Stellen dieses Werks aufzeigt.</translation>
     </message>
     <message>
         <source>You can save your open windows in a session. Such a session can easily be restored later on. You can save as many sessions as you like. The session feature can be accessed under the Window menu entry.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie können Ihre geöffneten Fenster einer Sitzung speichern. Eine solche Sitzung kann später leicht wiederhergestellt werden. Sie können soviele Sitzungen speichern, wie Sie möchten. Auf die Sitzungs-Eigenschaft kann unter dem Menüeintrag &quot;Fenster&quot; zugegriffen werden.</translation>
     </message>
 </context>
 <context>
@@ -1892,11 +1915,11 @@ shortcut</source>
     </message>
     <message>
         <source>Zoom in</source>
-        <translation>Vergrößern</translation>
+        <translation type="obsolete">Vergrößern</translation>
     </message>
     <message>
         <source>Zoom out</source>
-        <translation>Verkleinern</translation>
+        <translation type="obsolete">Verkleinern</translation>
     </message>
     <message>
         <source>Select all</source>
@@ -1943,15 +1966,15 @@ shortcut</source>
     <name>CFontChooser</name>
     <message>
         <source>Size:</source>
-        <translation>Größe:</translation>
+        <translation type="obsolete">Größe:</translation>
     </message>
     <message>
         <source>Font name:</source>
-        <translation>Schriftname:</translation>
+        <translation type="obsolete">Schriftname:</translation>
     </message>
     <message>
         <source>Font style:</source>
-        <translation>Schriftstil:</translation>
+        <translation type="obsolete">Schriftstil:</translation>
     </message>
 </context>
 <context>
@@ -2547,7 +2570,7 @@ Möchten Sie fortfahren?</translation>
     </message>
     <message>
         <source>An internal error occurred while building the index: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ein interner Fehler traf auf, während der Erstellung des Index: %1</translation>
     </message>
 </context>
 <context>
@@ -3603,19 +3626,19 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Default template &quot;%1&quot; not found!</source>
-        <translation type="unfinished"></translation>
+        <translation>Standard-Vorlage &quot;%1&quot; nicht gefunden!</translation>
     </message>
     <message>
         <source>Replace</source>
-        <translation type="unfinished">Ersetzen</translation>
+        <translation>Ersetzen</translation>
     </message>
     <message>
         <source>Error: %1 expects an argument.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler: %1 erwartet ein Argument.</translation>
     </message>
     <message>
         <source>See --help for details.</source>
-        <translation type="unfinished"></translation>
+        <translation>Siehe --help für Details.</translation>
     </message>
 </context>
 <context>

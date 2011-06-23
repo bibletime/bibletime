@@ -102,17 +102,10 @@ class CDisplay {
         */
         QMenu* installedPopup();
 
-        virtual void zoomIn() {}
-        virtual void zoomOut() {}
         virtual void openFindTextDialog() {}
 
-        enum NodeInfoType {
-            Lemma
-        };
-
-
-        virtual QMap<NodeInfoType, QString> getCurrentNodeInfo() {
-            return QMap<NodeInfoType, QString>();
+        inline virtual QString getCurrentNodeInfo() const {
+            return QString::null;
         }
 
     protected:
@@ -164,9 +157,6 @@ class CDisplayConnections : public QObject {
         void copyAnchorOnly();
 
         void clear();
-
-        void zoomIn();
-        void zoomOut();
 
         void openFindTextDialog();
 

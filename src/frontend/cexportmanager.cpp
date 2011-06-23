@@ -342,29 +342,27 @@ bool CExportManager::printKeyList(const sword::ListKey &l,
     CPrinter::KeyTreeItem::Settings settings;
     CPrinter::KeyTree tree;
 
-    QString startKey, stopKey;
     setProgressRange(list.Count());
-
-    list.setPosition(sword::TOP);
-    while (!list.Error() && !progressWasCancelled()) {
-        if (dynamic_cast<const sword::VerseKey&>(l) != 0) {
-            const sword::VerseKey &vk = static_cast<const sword::VerseKey&>(l);
-            startKey = QString::fromUtf8((const char*) vk.LowerBound());
-            stopKey = QString::fromUtf8((const char*) vk.UpperBound());
+    for (int i=0; i< list.Count(); i++) {
+        const sword::SWKey* swKey = list.getElement(i);
+        const sword::VerseKey* vKey = dynamic_cast<const sword::VerseKey*>(swKey);
+        if (vKey != 0) {
+            QString startKey = vKey->getText();
             tree.append(new CTextRendering::KeyTreeItem(startKey,
-                                                        stopKey,
-                                                        module,
-                                                        settings));
+                startKey,
+                module,
+                settings));
         }
         else {
-            startKey = QString::fromUtf8((const char*) * list);
-            tree.append(new CTextRendering::KeyTreeItem(startKey,
-                                                        module,
-                                                        settings));
+            QString key = swKey->getText();
+            tree.append(new CTextRendering::KeyTreeItem(key,
+                key,
+                module,
+                settings));
         }
-
-        list.increment();
         incProgress();
+        if (progressWasCancelled())
+            break;
     }
 
     QSharedPointer<CPrinter> printer(new CPrinter(0, displayOptions, filterOptions));
@@ -450,15 +448,15 @@ bool CExportManager::printByHyperlink(const QString &hyperlink,
             sword::ListKey verses = sword::VerseKey().ParseVerseList((const char*)keyName.toUtf8(), "Genesis 1:1", true);
 
             for (int i = 0; i < verses.Count(); ++i) {
-                sword::VerseKey* element = dynamic_cast<sword::VerseKey*>(verses.GetElement(i));
+                sword::VerseKey* element = dynamic_cast<sword::VerseKey*>(verses.getElement(i));
                 if (element) {
                     const QString startKey = QString::fromUtf8(element->LowerBound().getText());
                     const QString stopKey =  QString::fromUtf8(element->UpperBound().getText());
 
                     tree.append( new CPrinter::KeyTreeItem(startKey, stopKey, module, settings) );
                 }
-                else if (verses.GetElement(i)) {
-                    const QString key =  QString::fromUtf8(verses.GetElement(i)->getText());
+                else if (verses.getElement(i)) {
+                    const QString key =  QString::fromUtf8(verses.getElement(i)->getText());
 
                     tree.append( new CPrinter::KeyTreeItem(key, module, settings) );
                 }

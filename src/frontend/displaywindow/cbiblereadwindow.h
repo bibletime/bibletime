@@ -125,7 +125,7 @@ class CBibleReadWindow : public CLexiconReadWindow  {
         void syncWindows();
 
     private:
-        friend class CCommentaryReadWindow;
+
         /**
         * Wrapper around key() to return the right type of key.
         */

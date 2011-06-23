@@ -25,37 +25,42 @@ namespace Rendering {
  * @short HTML rendering for export.
  * @author The BibleTime team
  */
+class CHTMLExportRendering: public CTextRendering {
 
-class CHTMLExportRendering : public CTextRendering {
+    public: /* Types: */
 
-    public:
         struct Settings {
-            Settings(const bool text = true) {
-                addText = text;
-            };
+
+            inline Settings(const bool text = true)
+                : addText(text) {}
 
             bool addText;
-        };
+
+        }; /* struct Settings */
+
+    public: /* Methods: */
 
         CHTMLExportRendering(
             const Settings &settings,
             const DisplayOptions &displayOptions = getBtConfig().getDisplayOptions(),
-            const FilterOptions &filterOptions = getBtConfig().getFilterOptions()
-        );
-        virtual inline ~CHTMLExportRendering() {};
+            const FilterOptions &filterOptions = getBtConfig().getFilterOptions());
 
-    protected:
+    protected: /* Methods: */
+
         virtual const QString renderEntry( const KeyTreeItem&, CSwordKey* = 0 );
         virtual const QString finishText( const QString&, KeyTree& tree );
         virtual const QString entryLink(const KeyTreeItem &item,
                                         const CSwordModuleInfo *module);
         virtual void initRendering();
 
+    protected: /* Fields: */
+
         DisplayOptions m_displayOptions;
         FilterOptions m_filterOptions;
         Settings m_settings;
-};
 
-}
+}; /* class CHTMLExportRendering */
+
+} /* namespace Rendering */
 
 #endif

@@ -225,7 +225,7 @@ class CDisplayWindow : public QMainWindow {
         void slotShowHeader(bool show);
 
     protected:
-        friend class CMDIArea;
+
         friend class CBibleReadWindow;
 
         CDisplayWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);

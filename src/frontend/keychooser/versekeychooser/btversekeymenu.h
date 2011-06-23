@@ -26,7 +26,6 @@ class BtVerseKeyMenu : public QMenu {
         Q_OBJECT
     public:
         BtVerseKeyMenu(QWidget* parent);
-        ~BtVerseKeyMenu() {}
     protected:
         virtual void mouseReleaseEvent(QMouseEvent* event);
         /** Frees the mouse button release after the delay has elapsed.*/

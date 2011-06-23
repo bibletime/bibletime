@@ -69,25 +69,36 @@ CInfoDisplay::CInfoDisplay(QWidget *parent) : QWidget(parent) {
 
     layout->addWidget(m_htmlPart->view());
 
-    CDisplayTemplateMgr *mgr = CDisplayTemplateMgr::instance();
-    CDisplayTemplateMgr::Settings settings;
-    settings.pageCSS_ID = "infodisplay";
-    QString divText("<div class=\"infodisplay\">%1</div>");
-    QString initialMagText(tr("<small>This is the Mag viewer area. Hover the "
-                              "mouse over links or other items which include "
-                              "some data and the contents appear in the Mag "
-                              "after a short delay. Move the mouse into Mag "
-                              "rapidly or lock the view by pressing and "
-                              "holding Shift while moving the mouse.</small>"));
-    QString content(mgr->fillTemplate(getBtConfig().getValue<QString>("gui/displayStyle"),
-                                      divText.arg(initialMagText),
-                                      settings)
-                   );
-    m_htmlPart->setText(content);
+    unsetInfo();
 }
 
+void CInfoDisplay::unsetInfo() {
+    setInfo(tr("<small>This is the Mag viewer area. Hover the mouse over links "
+               "or other items which include some data and the contents appear "
+               "in the Mag after a short delay. Move the mouse into Mag "
+               "rapidly or lock the view by pressing and holding Shift while "
+               "moving the mouse.</small>"));
+}
 
-CInfoDisplay::~CInfoDisplay() {
+void CInfoDisplay::setInfo(const QString &data, const QString &lang) {
+    CDisplayTemplateMgr *mgr = CDisplayTemplateMgr::instance();
+    Q_ASSERT(mgr != 0);
+
+    CDisplayTemplateMgr::Settings settings;
+    settings.pageCSS_ID = "infodisplay";
+
+    QString div = "<div class=\"infodisplay\"";
+    if (!lang.isEmpty()) {
+        div.append(" lang=\"");
+        div.append(lang);
+        div.append("\"");
+    }
+    div.append(">");
+
+    QString content(mgr->fillTemplate(getBtConfig().getValue<QString>("gui/displayStyle"),
+                                      div + data + "</div>",
+                                      settings));
+    m_htmlPart->setText(content);
 }
 
 void CInfoDisplay::lookupInfo(const QString &mod_name, const QString &key_text) {
@@ -100,22 +111,7 @@ void CInfoDisplay::lookupInfo(const QString &mod_name, const QString &key_text) 
     QSharedPointer<CSwordKey> key( CSwordKey::createInstance(m) );
     key->setKey(key_text);
 
-    CDisplayTemplateMgr *mgr = CDisplayTemplateMgr::instance();
-    CDisplayTemplateMgr::Settings settings;
-    settings.pageCSS_ID = "infodisplay";
-
-    // lookup text and wrap in a "div" with language set to module language
-    QString lang = m->language()->abbrev();
-    QString renderedText = key->renderedText();
-    QString divText = "<div class=\"infodisplay\" lang=\"";
-    divText.append(lang);
-    divText.append("\">");
-    divText.append(renderedText);
-    divText.append("</div>");
-
-    QString content = mgr->fillTemplate(getBtConfig().getValue<QString>("gui/displayStyle"), divText, settings);
-
-    m_htmlPart->setText(content);
+    setInfo(key->renderedText(), m->language()->abbrev());
 }
 
 void CInfoDisplay::setInfo(const InfoType type, const QString& data) {
@@ -132,7 +128,7 @@ void CInfoDisplay::setInfo(const ListInfoData& list) {
         return;
     }
 
-    if (list.count() == 0) {
+    if (list.isEmpty()) {
         m_htmlPart->setText("<html></html>");
         return;
     }
@@ -171,15 +167,18 @@ void CInfoDisplay::setInfo(const ListInfoData& list) {
         };
     }
 
-    CDisplayTemplateMgr *mgr = CDisplayTemplateMgr::instance();
-    CDisplayTemplateMgr::Settings settings;
-    settings.pageCSS_ID = "infodisplay";
-    //  settings.langAbbrev = "";
-    QString content = mgr->fillTemplate(getBtConfig().getValue<QString>("gui/displayStyle"), text, settings);
+    setInfo(text);
+}
 
-    //   qWarning("setting text:\n%s", content.latin1());
-
-    m_htmlPart->setText(content);
+void CInfoDisplay::setInfo(CSwordModuleInfo *module) {
+    if (module) {
+        setInfo(tr("<div class=\"moduleinfo\"><h3>%1</h3><p>%2</p><p>Version: %3</p></div>")
+                .arg(module->name())
+                .arg(module->config(CSwordModuleInfo::Description))
+                .arg(module->config(CSwordModuleInfo::ModuleVersion)));
+    } else {
+        unsetInfo();
+    }
 }
 
 void CInfoDisplay::selectAll() {
@@ -497,14 +496,6 @@ const QString CInfoDisplay::getWordTranslation( const QString& data ) {
                   .arg(key->renderedText());
 
     return ret;
-}
-
-void CInfoDisplay::clearInfo() {
-    CDisplayTemplateMgr *tmgr = CDisplayTemplateMgr::instance();
-    CDisplayTemplateMgr::Settings settings;
-    settings.pageCSS_ID = "infodisplay";
-
-    m_htmlPart->setText( tmgr->fillTemplate(getBtConfig().getValue<QString>("gui/displayStyle"), QString::null, settings) );
 }
 
 QSize CInfoDisplay::sizeHint() const {

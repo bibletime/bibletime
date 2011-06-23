@@ -126,7 +126,7 @@ void BtBookshelfWidget::initMenus() {
 
 void BtBookshelfWidget::initWidgets() {
     QVBoxLayout *layout(new QVBoxLayout);
-    layout->setContentsMargins(0, 0, 0, 0);
+    layout->setContentsMargins(0, 8, 0, 0);
     m_toolBar = new QHBoxLayout;
     // Add a small margin between the edge of the window and the label (looks better)
     m_toolBar->setContentsMargins(3, 0, 0, 0);

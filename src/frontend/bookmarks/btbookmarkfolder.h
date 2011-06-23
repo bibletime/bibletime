@@ -17,9 +17,8 @@
 
 class BtBookmarkFolder : public BtBookmarkItemBase {
     public:
-        friend class BtBookmarkLoader;
+
         BtBookmarkFolder(const QString &name, QTreeWidgetItem *parent = 0);
-        ~BtBookmarkFolder() {}
 
         /** See the base class. */
         virtual bool enableAction(const MenuAction action);
@@ -44,7 +43,6 @@ class BtBookmarkFolder : public BtBookmarkItemBase {
         void rename();
         void update();
 
-        QString toolTip() const;
 };
 
 #endif

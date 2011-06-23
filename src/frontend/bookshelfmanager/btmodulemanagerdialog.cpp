@@ -18,44 +18,44 @@
 
 static BtModuleManagerDialog *m_staticModuleManagerDialog = 0;
 
-BtModuleManagerDialog* BtModuleManagerDialog::getInstance(QWidget* parent) {
-    if (!m_staticModuleManagerDialog) {
-        m_staticModuleManagerDialog = new BtModuleManagerDialog(parent);
-    };
+BtModuleManagerDialog* BtModuleManagerDialog::getInstance(QWidget *parent,
+                                                          Qt::WindowFlags flags)
+{
+    if (m_staticModuleManagerDialog) {
+        m_staticModuleManagerDialog->setParent(parent, flags);
+    } else {
+        m_staticModuleManagerDialog = new BtModuleManagerDialog(parent, flags);
+    }
     Q_ASSERT(m_staticModuleManagerDialog);
     return m_staticModuleManagerDialog;
 }
 
-BtModuleManagerDialog::BtModuleManagerDialog(QWidget* parent)
-        : BtConfigDialog(parent) {
+BtModuleManagerDialog::BtModuleManagerDialog(QWidget *parent,
+                                             Qt::WindowFlags flags)
+    : BtConfigDialog(parent,
+                     flags | Qt::CustomizeWindowHint | Qt::WindowTitleHint
+                           | Qt::WindowCloseButtonHint | Qt::WindowMaximizeButtonHint)
+{
     setAttribute(Qt::WA_DeleteOnClose);
-    setWindowTitle(tr("Bookshelf Manager"));
 
-    // Install page
-    BtInstallPage* installPage = new BtInstallPage();
-    addPage(installPage);
+    addPage(new BtInstallPage());
+    addPage(new BtRemovePage());
+    addPage(new BtIndexPage());
 
-    //Uninstall page
-    BtRemovePage* removePage = new BtRemovePage();
-    addPage(removePage);
-
-    //Index page
-    BtIndexPage* indexPage = new BtIndexPage();
-    addPage(indexPage);
-
-    slotChangePage(0);
+    retranslateUi();
 
     loadDialogSettings();
+    setCurrentPage(0);
+
+}
+
+void BtModuleManagerDialog::retranslateUi() {
+    setWindowTitle(tr("Bookshelf Manager"));
 }
 
 BtModuleManagerDialog::~BtModuleManagerDialog() {
     saveDialogSettings();
     m_staticModuleManagerDialog = 0;
-}
-
-// The QWidget close() sends close event, so does closing by the window X button.
-void BtModuleManagerDialog::closeEvent(QCloseEvent*) {
-    qDebug() << "BtModuleManagerDialog::closeEvent";
 }
 
 void BtModuleManagerDialog::loadDialogSettings() {
