@@ -35,7 +35,7 @@ class CReadWindow : public CDisplayWindow  {
         static void insertKeyboardActions( BtActionCollection* const a );
 
         CReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
-        virtual ~CReadWindow();
+
         /**
         * Store the settings of this window in the given CProfileWindow object.
         */
