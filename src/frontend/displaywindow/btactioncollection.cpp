@@ -92,7 +92,12 @@ void BtActionCollection::readShortcuts(const QString &group) {
     for(QHash<QString, QList <QKeySequence> >::const_iterator iter = shortcuts.begin();
                                                              iter != shortcuts.end();
                                                              iter++)
+    {
+        QAction *a = action(iter.key());
+        if (a == 0)
+            continue;
         action(iter.key())->setShortcuts(iter.value());
+    }
 }
 
 void BtActionCollection::writeShortcuts(const QString &group) {
