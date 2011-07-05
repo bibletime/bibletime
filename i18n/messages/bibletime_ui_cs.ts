@@ -2515,6 +2515,10 @@ Do you want to continue?</source>
         <source>Select all</source>
         <translation type="unfinished">Vybrat vše</translation>
     </message>
+    <message>
+        <source>&lt;div class=&quot;moduleinfo&quot;&gt;&lt;h3&gt;%1&lt;/h3&gt;&lt;p&gt;%2&lt;/p&gt;&lt;p&gt;Version: %3&lt;/p&gt;&lt;/div&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QCoreApplication</name>
