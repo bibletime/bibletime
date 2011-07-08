@@ -22,132 +22,132 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BibleTime</name>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="719"/>
+        <location filename="../../src/bibletime_init.cpp" line="722"/>
         <source>&amp;File</source>
         <translation>檔案(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="720"/>
+        <location filename="../../src/bibletime_init.cpp" line="723"/>
         <source>&amp;View</source>
         <translation>檢視(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="723"/>
+        <location filename="../../src/bibletime_init.cpp" line="726"/>
         <source>&amp;Search</source>
         <translation>搜尋(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="724"/>
+        <location filename="../../src/bibletime_init.cpp" line="727"/>
         <source>&amp;Window</source>
         <translation>視窗(&amp;W)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="730"/>
+        <location filename="../../src/bibletime_init.cpp" line="733"/>
         <source>Se&amp;ttings</source>
         <translation>設定(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="731"/>
+        <location filename="../../src/bibletime_init.cpp" line="734"/>
         <source>&amp;Help</source>
         <translation>幫助(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="119"/>
+        <location filename="../../src/bibletime_init.cpp" line="122"/>
         <source>&amp;Show toolbar</source>
         <translation>顯示工具列(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="112"/>
+        <location filename="../../src/bibletime_init.cpp" line="115"/>
         <source>&amp;Fullscreen mode</source>
         <translation>全螢幕模式(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="105"/>
+        <location filename="../../src/bibletime_init.cpp" line="108"/>
         <source>&amp;Quit</source>
         <translation>離開(&amp;Q)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="252"/>
+        <location filename="../../src/bibletime_init.cpp" line="255"/>
         <source>Open the Bible study HowTo included with BibleTime.&lt;br/&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
         <translation>開啟BibleTime內附的聖經研讀幫助.&lt;br/&gt;這個幫助是用來幫助你更有效率地研讀聖經的簡介.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="257"/>
+        <location filename="../../src/bibletime_init.cpp" line="260"/>
         <source>Information about the BibleTime program</source>
         <translation>有關BibleTime程式的資訊</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="727"/>
+        <location filename="../../src/bibletime_init.cpp" line="730"/>
         <source>&amp;Save session</source>
         <translation>儲存工作階段(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="728"/>
+        <location filename="../../src/bibletime_init.cpp" line="731"/>
         <source>&amp;Load session</source>
         <translation>載入工作階段(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="729"/>
+        <location filename="../../src/bibletime_init.cpp" line="732"/>
         <source>&amp;Delete session</source>
         <translation>刪除工作階段(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="726"/>
+        <location filename="../../src/bibletime_init.cpp" line="729"/>
         <source>&amp;Arrangement mode</source>
         <translation>排列模式(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="145"/>
+        <location filename="../../src/bibletime_init.cpp" line="148"/>
         <source>&amp;Manual mode</source>
         <translation>手動模式(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="152"/>
+        <location filename="../../src/bibletime_init.cpp" line="155"/>
         <source>Auto-tile &amp;vertically</source>
         <translation>自動垂直並排(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="159"/>
+        <location filename="../../src/bibletime_init.cpp" line="162"/>
         <source>Auto-tile &amp;horizontally</source>
         <translation>自動水平並排(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="180"/>
+        <location filename="../../src/bibletime_init.cpp" line="183"/>
         <source>Auto-&amp;cascade</source>
         <translation>自動重疊顯示(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="187"/>
+        <location filename="../../src/bibletime_init.cpp" line="190"/>
         <source>&amp;Cascade</source>
         <translation>重疊顯示(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="201"/>
+        <location filename="../../src/bibletime_init.cpp" line="204"/>
         <source>Tile &amp;vertically</source>
         <translation>垂直並排(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="208"/>
+        <location filename="../../src/bibletime_init.cpp" line="211"/>
         <source>Tile &amp;horizontally</source>
         <translation>水平並排(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="222"/>
+        <location filename="../../src/bibletime_init.cpp" line="225"/>
         <source>Cl&amp;ose all windows</source>
         <translation>關閉所有視窗(&amp;o)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="225"/>
+        <location filename="../../src/bibletime_init.cpp" line="228"/>
         <source>Close all open windows inside BibleTime</source>
         <translation>關閉所有在BibleTime內開啟的視窗</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="242"/>
+        <location filename="../../src/bibletime_init.cpp" line="245"/>
         <source>&amp;Handbook</source>
         <translation>手冊(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="249"/>
+        <location filename="../../src/bibletime_init.cpp" line="252"/>
         <source>&amp;Bible Study Howto</source>
         <translation>如何研經(&amp;B)</translation>
     </message>
@@ -157,262 +157,262 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>請輸入新工作階段的名稱.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="108"/>
+        <location filename="../../src/bibletime_init.cpp" line="111"/>
         <source>Quit BibleTime</source>
         <translation>離開BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="115"/>
+        <location filename="../../src/bibletime_init.cpp" line="118"/>
         <source>Toggle fullscreen mode of the main window</source>
         <translation>切換主視窗的全螢幕模式</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="124"/>
+        <location filename="../../src/bibletime_init.cpp" line="127"/>
         <source>Search in &amp;open works...</source>
         <translation>在開啟的著作中搜尋(&amp;o)...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="131"/>
+        <location filename="../../src/bibletime_init.cpp" line="134"/>
         <source>Search in standard &amp;Bible...</source>
         <translation>在聖經中搜尋(&amp;B)...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="138"/>
+        <location filename="../../src/bibletime_init.cpp" line="141"/>
         <source>Save as &amp;new session...</source>
         <translation>儲存新工作階段(&amp;n)...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="141"/>
+        <location filename="../../src/bibletime_init.cpp" line="144"/>
         <source>Create and save a new session</source>
         <translation>建立並儲存新工作階段</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="148"/>
+        <location filename="../../src/bibletime_init.cpp" line="151"/>
         <source>Manually arrange the open windows</source>
         <translation>手動排列開啟的視窗</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="155"/>
+        <location filename="../../src/bibletime_init.cpp" line="158"/>
         <source>Automatically tile the open windows vertically (arrange side by side)</source>
         <translation>自動垂直堆列開啟的視窗 (邊與邊排列)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="162"/>
+        <location filename="../../src/bibletime_init.cpp" line="165"/>
         <source>Automatically tile the open windows horizontally (arrange on top of each other)</source>
         <translation>自動水平堆列開啟的視窗 (一個堆著一個排列)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="166"/>
+        <location filename="../../src/bibletime_init.cpp" line="169"/>
         <source>Auto-&amp;tile</source>
         <translation>自動堆列(&amp;t)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="169"/>
+        <location filename="../../src/bibletime_init.cpp" line="172"/>
         <source>Automatically tile the open windows</source>
         <translation>自動堆列開啟的視窗</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="173"/>
+        <location filename="../../src/bibletime_init.cpp" line="176"/>
         <source>Ta&amp;bbed</source>
         <translation>分頁(&amp;b)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="176"/>
+        <location filename="../../src/bibletime_init.cpp" line="179"/>
         <source>Automatically tab the open windows</source>
         <translation>自動分頁開啟的視窗</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="183"/>
+        <location filename="../../src/bibletime_init.cpp" line="186"/>
         <source>Automatically cascade the open windows</source>
         <translation>自動重疊開啟的視窗</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="190"/>
+        <location filename="../../src/bibletime_init.cpp" line="193"/>
         <source>Cascade the open windows</source>
         <translation>重疊顯示開啟的視窗</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="194"/>
+        <location filename="../../src/bibletime_init.cpp" line="197"/>
         <source>&amp;Tile</source>
         <translation>堆列(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="197"/>
+        <location filename="../../src/bibletime_init.cpp" line="200"/>
         <source>Tile the open windows</source>
         <translation>堆列開啟的視窗</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="204"/>
+        <location filename="../../src/bibletime_init.cpp" line="207"/>
         <source>Vertically tile (arrange side by side) the open windows</source>
         <translation>垂直堆列(邊靠邊排列)開啟的視窗</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="211"/>
+        <location filename="../../src/bibletime_init.cpp" line="214"/>
         <source>Horizontally tile (arrange on top of each other) the open windows</source>
         <translation>水平堆列(一個疊一個排列)開啟的視窗</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="215"/>
+        <location filename="../../src/bibletime_init.cpp" line="218"/>
         <source>Close &amp;window</source>
         <translation>關閉視窗(&amp;w)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="218"/>
+        <location filename="../../src/bibletime_init.cpp" line="221"/>
         <source>Close the current open window</source>
         <translation>關閉目前開啟的視窗</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="229"/>
+        <location filename="../../src/bibletime_init.cpp" line="232"/>
         <source>&amp;Configure BibleTime...</source>
         <translation>設定BibleTime(&amp;C)...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="231"/>
+        <location filename="../../src/bibletime_init.cpp" line="234"/>
         <source>Set BibleTime&apos;s preferences</source>
         <translation>設定 BibleTIme 的個人設定</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="235"/>
+        <location filename="../../src/bibletime_init.cpp" line="238"/>
         <source>Bookshelf &amp;Manager...</source>
         <translation>書架管理員(&amp;M)...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="238"/>
+        <location filename="../../src/bibletime_init.cpp" line="241"/>
         <source>Configure your bookshelf and install/update/remove/index works</source>
         <translation>設定你的書架並安裝/更新/移除/建立索引 書目</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="245"/>
+        <location filename="../../src/bibletime_init.cpp" line="248"/>
         <source>Open BibleTime&apos;s handbook</source>
         <translation>開啟 BibleTime 的使用手冊</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="261"/>
+        <location filename="../../src/bibletime_init.cpp" line="264"/>
         <source>&amp;Tip of the day...</source>
         <translation>每日秘訣(&amp;T)...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="264"/>
+        <location filename="../../src/bibletime_init.cpp" line="267"/>
         <source>Show tips about BibleTime</source>
         <translation>顯示 BibleTime 的小秘訣</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="372"/>
+        <location filename="../../src/bibletime_init.cpp" line="375"/>
         <source>Toggle visibility of the bookshelf window</source>
         <translation>書架視窗瀏覽切換</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="376"/>
+        <location filename="../../src/bibletime_init.cpp" line="379"/>
         <source>Toggle visibility of the bookmarks window</source>
         <translation>書籤視窗瀏覽切換</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="380"/>
+        <location filename="../../src/bibletime_init.cpp" line="383"/>
         <source>Toggle visibility of the mag window</source>
         <translation>雜誌視窗瀏覽切換</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="713"/>
+        <location filename="../../src/bibletime_init.cpp" line="716"/>
         <source>Main toolbar</source>
         <translation>主要工具列</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="714"/>
+        <location filename="../../src/bibletime_init.cpp" line="717"/>
         <source>Navigation toolbar</source>
         <translation>瀏覽工具列</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="715"/>
+        <location filename="../../src/bibletime_init.cpp" line="718"/>
         <source>Works toolbar</source>
         <translation>書目工具列</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="716"/>
+        <location filename="../../src/bibletime_init.cpp" line="719"/>
         <source>Tools toolbar</source>
         <translation>工具組工具列</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="717"/>
+        <location filename="../../src/bibletime_init.cpp" line="720"/>
         <source>Format toolbar</source>
         <translation>格式工具列</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="751"/>
+        <location filename="../../src/bibletime_init.cpp" line="754"/>
         <source>Show main toolbar</source>
         <translation>顯示主工具列</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="754"/>
+        <location filename="../../src/bibletime_init.cpp" line="757"/>
         <source>Show navigation bar</source>
         <translation>顯示瀏覽列</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="757"/>
+        <location filename="../../src/bibletime_init.cpp" line="760"/>
         <source>Show works toolbar</source>
         <translation>顯示書目工具列</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="760"/>
+        <location filename="../../src/bibletime_init.cpp" line="763"/>
         <source>Show tools toolbar</source>
         <translation>顯示工具組工具列</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="763"/>
+        <location filename="../../src/bibletime_init.cpp" line="766"/>
         <source>Show formatting toolbar</source>
         <translation>顯示格式化工具列</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="766"/>
+        <location filename="../../src/bibletime_init.cpp" line="769"/>
         <source>Show bookshelf</source>
         <translation>顯示書架</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="769"/>
+        <location filename="../../src/bibletime_init.cpp" line="772"/>
         <source>Show bookmarks</source>
         <translation>顯示書籤</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="772"/>
+        <location filename="../../src/bibletime_init.cpp" line="775"/>
         <source>Show mag</source>
         <translation>顯示雜誌</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="721"/>
+        <location filename="../../src/bibletime_init.cpp" line="724"/>
         <source>Toolbars</source>
         <translation>工具列</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="748"/>
+        <location filename="../../src/bibletime_init.cpp" line="751"/>
         <source>Show toolbars in text windows</source>
         <translation>以文字視窗顯示工具列</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="775"/>
+        <location filename="../../src/bibletime_init.cpp" line="778"/>
         <source>Show parallel text headers</source>
         <translation>顯示平行文字標題</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="725"/>
+        <location filename="../../src/bibletime_init.cpp" line="728"/>
         <source>O&amp;pen windows</source>
         <translation>開啟視窗(&amp;p)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="734"/>
+        <location filename="../../src/bibletime_init.cpp" line="737"/>
         <source>Show &quot;Whats this widget&quot; dialog</source>
         <translation>顯示 &quot;這是哪個工具面板&quot; 訊息</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="971"/>
+        <location filename="../../src/bibletime_init.cpp" line="974"/>
         <source>Whats this widget?</source>
         <translation>這是哪個工具面板?</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="127"/>
+        <location filename="../../src/bibletime_init.cpp" line="130"/>
         <source>Search in all works that are currently open</source>
         <translation>在目前開啟的所有著作中搜尋</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="134"/>
+        <location filename="../../src/bibletime_init.cpp" line="137"/>
         <source>Search in the standard Bible</source>
         <translation>在標準聖經中搜尋</translation>
     </message>
@@ -422,52 +422,52 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>新工作階段</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="81"/>
+        <location filename="../../src/bibletime.cpp" line="80"/>
         <source>Initializing the SWORD engine...</source>
         <translation>SWORD 引擎正在啟動...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="87"/>
+        <location filename="../../src/bibletime.cpp" line="88"/>
         <source>Creating BibleTime&apos;s user interface...</source>
         <translation>正在建立 BibleTime 的使用者介面...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="93"/>
+        <location filename="../../src/bibletime.cpp" line="95"/>
         <source>Initializing menu- and toolbars...</source>
         <translation>正在啟動 選單 和 工具列...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="197"/>
+        <location filename="../../src/bibletime.cpp" line="200"/>
         <source>Unlock Work</source>
         <translation>取消鎖定書目</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="197"/>
+        <location filename="../../src/bibletime.cpp" line="200"/>
         <source>Enter the unlock key for %1.</source>
         <translation>替 %1 輸入解鎖密碼.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="217"/>
+        <location filename="../../src/bibletime.cpp" line="220"/>
         <source>Warning: Invalid unlock key!</source>
         <translation>警告: 無效的解鎖密碼!</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="218"/>
+        <location filename="../../src/bibletime.cpp" line="221"/>
         <source>The unlock key you provided did not properly unlock this module. Please try again.</source>
         <translation>你提供的解鎖密碼無法正確取消鎖定該模組. 請重新試試.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="256"/>
+        <location filename="../../src/bibletime_init.cpp" line="259"/>
         <source>&amp;About BibleTime</source>
         <translation>關於 BibleTime (&amp;A)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="711"/>
+        <location filename="../../src/bibletime_init.cpp" line="714"/>
         <source>Bookmarks</source>
         <translation>書籤</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="712"/>
+        <location filename="../../src/bibletime_init.cpp" line="715"/>
         <source>Mag</source>
         <translation>雜誌</translation>
     </message>
@@ -702,62 +702,62 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtBookshelfDockWidget</name>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="149"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="152"/>
         <source>Bookshelf</source>
         <translation>書架</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="151"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="154"/>
         <source>&amp;Open</source>
         <translation>開啟(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="152"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="155"/>
         <source>&amp;Edit</source>
         <translation>編輯(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="153"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="156"/>
         <source>&amp;Plain text</source>
         <translation>純文字(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="154"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="157"/>
         <source>&amp;HTML</source>
         <translation>&amp;HTML</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="155"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="158"/>
         <source>&amp;Unlock...</source>
         <translation>取消鎖定(&amp;U)...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="156"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="159"/>
         <source>&amp;About...</source>
         <translation>關於(&amp;A)...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="158"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="161"/>
         <source>There are currently no works installed. Please click the button below to install new works.</source>
         <translation>現在沒有安裝任何書目.請點選下方案紐安裝新書目.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="160"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="163"/>
         <source>&amp;Install works...</source>
         <translation>安裝新書目&amp;I...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="172"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="175"/>
         <source>Warning: Module locked!</source>
         <translation>警告:模組鎖定!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="173"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="176"/>
         <source>You are trying to access an encrypted module. Please provide an unlock key in the following dialog to open the module.</source>
         <translation>你正試圖要存取一個加密的模組. 請在下方對話窗中提供一個解鎖鑰匙以便開啟該模組.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="222"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="225"/>
         <source>&amp;Search in %1...</source>
         <translation>搜尋(&amp;S)%1...</translation>
     </message>
@@ -793,7 +793,7 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtBookshelfModel</name>
     <message>
-        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="76"/>
+        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="80"/>
         <source>Module</source>
         <translation>模組</translation>
     </message>
@@ -1465,7 +1465,7 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtModuleManagerDialog</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/btmodulemanagerdialog.cpp" line="51"/>
+        <location filename="../../src/frontend/bookshelfmanager/btmodulemanagerdialog.cpp" line="53"/>
         <source>Bookshelf Manager</source>
         <translation>書架管理員</translation>
     </message>
@@ -2984,33 +2984,38 @@ Do you want to continue?</source>
 <context>
     <name>InfoDisplay::CInfoDisplay</name>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="198"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="175"/>
+        <source>&lt;div class=&quot;moduleinfo&quot;&gt;&lt;h3&gt;%1&lt;/h3&gt;&lt;p&gt;%2&lt;/p&gt;&lt;p&gt;Version: %3&lt;/p&gt;&lt;/div&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="195"/>
         <source>Abbreviation</source>
         <translation>縮寫</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="209"/>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="309"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="206"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="306"/>
         <source>Cross references</source>
         <translation>參照</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="365"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="362"/>
         <source>Footnote</source>
         <translation>注釋</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="396"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="393"/>
         <source>Strongs</source>
         <translation>Strongs</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="478"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="475"/>
         <source>Morphology</source>
         <translation>構詞學</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="502"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="499"/>
         <source>Word lookup</source>
         <translation>詞彙查詢</translation>
     </message>
@@ -4006,42 +4011,42 @@ Language name ppk</extracomment>
         <translation>遠端</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="414"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="417"/>
         <source>Old testament</source>
         <translation>舊約</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="415"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="418"/>
         <source>Moses/Pentateuch/Torah</source>
         <translation>摩西五經/律法書</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="416"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="419"/>
         <source>History</source>
         <translation>歷史書</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="417"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="420"/>
         <source>Prophets</source>
         <translation>先知書</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="418"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="421"/>
         <source>New testament</source>
         <translation>新約</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="419"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="422"/>
         <source>Gospels</source>
         <translation>四福音書</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="420"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="423"/>
         <source>Letters/Epistles</source>
         <translation>書信</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="421"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="424"/>
         <source>Paul&apos;s Epistles</source>
         <translation>保羅書信</translation>
     </message>
@@ -4105,7 +4110,7 @@ Language name ppk</extracomment>
         <translation type="obsolete">請為已選書籤輸入新描述.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/btbookmarkfolder.cpp" line="66"/>
+        <location filename="../../src/frontend/bookmarks/btbookmarkfolder.cpp" line="62"/>
         <source>New folder</source>
         <translation>新資料夾</translation>
     </message>

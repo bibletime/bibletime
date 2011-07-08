@@ -33,10 +33,6 @@ CReadWindow::CReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent)
     //   installEventFilter(this);
 }
 
-CReadWindow::~CReadWindow() {
-    //  qWarning("destructor of CReadWindow");
-}
-
 /** Sets the display widget of this display window. */
 void CReadWindow::setDisplayWidget( CDisplay* newDisplay ) {
     // Lets be orwellianly paranoid here:
