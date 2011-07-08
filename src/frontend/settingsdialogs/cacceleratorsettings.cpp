@@ -48,6 +48,8 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(CConfigurationDialog *parent)
                       SLOT(slotKeyChooserTypeChanged(const QString&)) );
     Q_ASSERT(ok);
 
+    retranslateUi();
+
     m_keyChooserStack = new QStackedWidget(this);
 
     m_typeChooser->addItem(m_application.title);
