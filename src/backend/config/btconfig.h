@@ -1,18 +1,20 @@
 #ifndef BTCONFIG_H
 #define BTCONFIG_H
 
+#include <QDataStream>
 #include <QHash>
+#include <QMetaType>
 #include <QSet>
+#include <QSettings>
 #include <QString>
 #include <QStringList>
 #include <QVariant>
-#include <QMetaType>
-#include <QSettings>
 
-#include "btglobal.h"
 #include "backend/btmoduletreeitem.h" // for BTModuleTreeItem::Grouping
-#include "frontend/searchdialog/btsearchoptionsarea.h" // for Search::BtSearchOptionsArea::SearchType
 #include "backend/drivers/cswordmoduleinfo.h"
+#include "btglobal.h"
+#include "frontend/searchdialog/btsearchoptionsarea.h" // for Search::BtSearchOptionsArea::SearchType
+
 
 /*!
  * \brief Class holding and managing the configuration of bibletime.
@@ -23,11 +25,10 @@
  * session specific or not is decided in this class and transparent to the users
  * of this class.
  *
- * TODO: preserve session order
+ * \todo preserve session order
  */
 class BtConfig
 {
-
     Q_DISABLE_COPY(BtConfig)
 
 public:
@@ -37,29 +38,8 @@ public:
     */
     typedef QPair<bool, QFont> FontSettingsPair;
     typedef QMap<QString, QString> StringMap;
-private:
-    explicit BtConfig(const QString& settingsFile); //!< used by BtConfigTest
-    friend class BtConfigTest;
 
-    static BtConfig* m_instance; //!< singleton instance
 
-    const static QString m_sessionsGroup;
-    const static QString m_currentSessionKey;
-    const static QString m_defaultSessionName;
-
-    QVector<QString> m_currentGroups;
-
-    QHash<QString,QVariant> m_defaults;
-    QSet<QString> m_sessionSettings;
-    QSettings m_settings;
-
-    QString m_currentSessionCache; //!< cache of the current session string, for speed
-    QFont m_defaultFont; //!< default font used when no special one is set
-    typedef QHash<const CLanguageMgr::Language*, FontSettingsPair> FontCacheMap;
-    FontCacheMap m_fontCache; //!< a cache for the fonts saved in the configuration file for speed
-public:
-
-    
     static BtConfig& getInstance();
     ~BtConfig();
 
@@ -95,8 +75,8 @@ public:
      */
     bool deleteSession(const QString& name);
 
-    //TODO: template this
-    //TODO: make session specific check also work for groups (check for / in path and check for sub parts in session qhash)
+    /// \todo: template this
+    /// \todo: make session specific check also work for groups (check for / in path and check for sub parts in session qhash)
     /*!
      * \brief Returns a value.
      *
@@ -250,7 +230,7 @@ public:
      */
     inline const QFont &getDefaultFont() const;
 
-    //TODO: put FontSettingsPair in QVariant directly
+    /// \todo: put FontSettingsPair in QVariant directly
     /*!
      * \brief Set font for a language.
      *
@@ -270,7 +250,7 @@ public:
      */
     FontSettingsPair getFontForLanguage(const CLanguageMgr::Language * const language);
 
-    //TODO: unit test these functions
+    /// \todo: unit test these functions
     /*!
      * Returns the searchScopes for the current locale.
      *
@@ -316,7 +296,32 @@ public:
     void setDefaultSwordModuleByType(const QString& moduleType, const CSwordModuleInfo* const module);
 
     void readSession();
+
+private: /* Fields: */
+    explicit BtConfig(const QString& settingsFile); //!< used by BtConfigTest
+    friend class BtConfigTest;
+
+    static BtConfig* m_instance; //!< singleton instance
+
+    const static QString m_sessionsGroup;
+    const static QString m_currentSessionKey;
+    const static QString m_defaultSessionName;
+
+    QVector<QString> m_currentGroups;
+
+    QHash<QString,QVariant> m_defaults;
+    QSet<QString> m_sessionSettings;
+    QSettings m_settings;
+
+    QString m_currentSessionCache; //!< cache of the current session string, for speed
+    QFont m_defaultFont; //!< default font used when no special one is set
+    typedef QHash<const CLanguageMgr::Language*, FontSettingsPair> FontCacheMap;
+    FontCacheMap m_fontCache; //!< a cache for the fonts saved in the configuration file for speed
 };
+
+// declare types used in configuration as metatype so they can be saved directly into the configuration
+Q_DECLARE_METATYPE(BtConfig::StringMap);
+Q_DECLARE_METATYPE(QList<int>);
 
 /*!
  * Returns the BtConfiguration singleton instance.
@@ -376,30 +381,36 @@ inline void BtConfig::setValue(const QString& key, const char* const value)
     setValue<QString>(key, QString(value));
 }
 
-void BtConfig::beginGroup(const QString& prefix)
+inline void BtConfig::beginGroup(const QString& prefix)
 {
     m_currentGroups.push_back(prefix + "/");
 }
 
-const QFont &BtConfig::getDefaultFont() const
+inline const QFont &BtConfig::getDefaultFont() const
 {
     return m_defaultFont;
 }
 
-// declare types used in configuration as metatype so they can be saved directly into the configuration
-Q_DECLARE_METATYPE(BTModuleTreeItem::Grouping);
-Q_DECLARE_METATYPE(Search::BtSearchOptionsArea::SearchType);
-Q_DECLARE_METATYPE(BtConfig::StringMap);
-Q_DECLARE_METATYPE(QList<int>);
-
 // operator<</operator>> are needed for QVariant to be able to save it's contents to a text file, see documentation for qRegisterMetaTypeStreamOperators()
-QDataStream &operator<<(QDataStream &out, const Search::BtSearchOptionsArea::SearchType &searchType);
-QDataStream &operator>>(QDataStream &in, Search::BtSearchOptionsArea::SearchType &searchType);
+inline QDataStream &operator<<(QDataStream &out, const Search::BtSearchOptionsArea::SearchType &searchType){
+    out.writeRawData(reinterpret_cast<const char*>(&searchType), sizeof(BTModuleTreeItem::Grouping));
+    return out;}
+inline QDataStream &operator>>(QDataStream &in, Search::BtSearchOptionsArea::SearchType &searchType){
+    in.readRawData(reinterpret_cast<char*>(&searchType), sizeof(Search::BtSearchOptionsArea::SearchType));
+    return in;}
 
-QDataStream &operator<<(QDataStream &out, const alignmentMode &x);
-QDataStream &operator>>(QDataStream &in, alignmentMode &x);
+inline QDataStream &operator<<(QDataStream &out, const alignmentMode &x){
+    out.writeRawData(reinterpret_cast<const char*>(&x), sizeof(BTModuleTreeItem::Grouping));
+    return out;}
+inline QDataStream &operator>>(QDataStream &in, alignmentMode &x){
+    in.readRawData(reinterpret_cast<char*>(&x), sizeof(alignmentMode));
+    return in;}
 
-QDataStream &operator<<(QDataStream &out, const BTModuleTreeItem::Grouping &x);
-QDataStream &operator>>(QDataStream &in, BTModuleTreeItem::Grouping &x);
+inline QDataStream &operator<<(QDataStream &out, const BTModuleTreeItem::Grouping &x){
+    out.writeRawData(reinterpret_cast<const char*>(&x), sizeof(BTModuleTreeItem::Grouping));
+    return out;}
+inline QDataStream &operator>>(QDataStream &in, BTModuleTreeItem::Grouping &x){
+    in.readRawData(reinterpret_cast<char*>(&x), sizeof(BTModuleTreeItem::Grouping));
+    return in;}
 
 #endif // BTCONFIG_H

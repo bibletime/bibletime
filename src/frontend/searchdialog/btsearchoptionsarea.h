@@ -145,4 +145,6 @@ class BtSearchOptionsArea : public QWidget {
 
 }
 
+Q_DECLARE_METATYPE(Search::BtSearchOptionsArea::SearchType);
+
 #endif

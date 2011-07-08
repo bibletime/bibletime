@@ -176,4 +176,6 @@ class BTModuleTreeItem {
         Grouping m_grouping;
 };
 
+Q_DECLARE_METATYPE(BTModuleTreeItem::Grouping);
+
 #endif

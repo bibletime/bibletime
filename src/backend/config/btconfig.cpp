@@ -1,25 +1,25 @@
 #include "btconfig.h"
-#include "util/directory.h" // DU::getUserBaseDir()
 
-#include <cstddef> // NULL macro
-#include <QLocale>
 #include <QDebug>
 #include <qglobal.h> // Q_ASSERT
+#include <QLocale>
 #include <QWebSettings>
 
-#include "backend/managers/cdisplaytemplatemgr.h"
 #include "backend/btmoduletreeitem.h"
+#include "backend/managers/cdisplaytemplatemgr.h"
 #include "frontend/searchdialog/btsearchoptionsarea.h"
+#include "util/directory.h" // DU::getUserBaseDir()
 
 // Sword includes:
+#include <backend/managers/cswordbackend.h>
 #include <versekey.h> // For search scope configuration
-#include "backend/managers/cswordbackend.h"
+
 
 /*
- * set the instance variable initially to NULL, so it can be safely checked
+ * set the instance variable initially to 0, so it can be safely checked
  * whether the variable has been initialized yet.
  */
-BtConfig* BtConfig::m_instance = NULL;
+BtConfig* BtConfig::m_instance = 0;
 const QString BtConfig::m_sessionsGroup = "sessions";
 const QString BtConfig::m_currentSessionKey = "currentSession";
 const QString BtConfig::m_defaultSessionName = QObject::tr("default session");
@@ -44,7 +44,7 @@ BtConfig::BtConfig(const QString& settingsFile) : m_currentGroups(), m_defaults(
 
     m_currentGroups.reserve(10);
     // construct defaults
-        m_defaults.reserve(512); //TODO: check whether this value can be calculated automatically...
+        m_defaults.reserve(512); /// \todo: check whether this value can be calculated automatically...
 
         m_defaults.insert("bibletimeVersion", "0.0");
         m_defaults.insert("language", QLocale::system().name());
@@ -95,7 +95,7 @@ BtConfig::BtConfig(const QString& settingsFile) : m_currentGroups(), m_defaults(
         m_defaults.insert("gui/showToolbarsInEachWindow", true);
         m_defaults.insert("gui/showTipAtStartup", true);
 
-        // TODO: are the following booleans or ints, what do they do? rename to: show***?
+        /// \todo: are the following booleans or ints, what do they do? rename to: show***?
         m_defaults.insert("gui/footnotes", true);
         m_defaults.insert("gui/strongNumbers", true);
         m_defaults.insert("gui/morphTags", true);
@@ -141,7 +141,7 @@ BtConfig::BtConfig(const QString& settingsFile) : m_currentGroups(), m_defaults(
             map.insert(QObject::tr("Paul's Epistles"),        QString("Rom - Phile"));
         m_defaults.insert("properties/searchScopes", QVariant::fromValue(map));
 
-        // TODO: these variables seem not to be used, check and remove
+        /// \todo: these variables seem not to be used, check and remove
         /*
         m _defaults.insert("firstSearchDialog", true);
         m_defaults.insert("readOldBookmars", false);
@@ -155,9 +155,9 @@ BtConfig::BtConfig(const QString& settingsFile) : m_currentGroups(), m_defaults(
         m_sessionSettings.insert("gui/childWindows/");
         m_sessionSettings.insert("presentation/");
         m_sessionSettings.insert("windows/");
-        //TODO: continue here
+        /// \todo: continue here
 
-    //TODO: save defaults somewhere so they can be loaded directly on next startup
+    /// \todo: save defaults somewhere so they can be loaded directly on next startup
 
     // make sure the current session key and cache are set
         if(m_settings.contains(m_currentSessionKey))
@@ -170,7 +170,7 @@ BtConfig::~BtConfig() {}
 
 BtConfig& BtConfig::getInstance()
 {
-    if(m_instance == NULL)
+    if(m_instance == 0)
         m_instance = new BtConfig(util::directory::getUserBaseDir().absolutePath() + "/bibletimerc.new");
     return *m_instance;
 }
@@ -566,41 +566,4 @@ void BtConfig::readSession()
      * 8. add gui for new session handling
      * 9. remove old gui for session handling
      */
-}
-
-// operators needed for QVariant to work
-QDataStream &operator<<(QDataStream &out, const Search::BtSearchOptionsArea::SearchType &x)
-{
-    out << x;
-    return out;
-}
-
-QDataStream &operator>>(QDataStream &in, Search::BtSearchOptionsArea::SearchType &x)
-{
-    in >> x;
-    return in;
-}
-
-QDataStream &operator<<(QDataStream &out, const alignmentMode &x)
-{
-    out << x;
-    return out;
-}
-
-QDataStream &operator>>(QDataStream &in, alignmentMode &x)
-{
-    in >> x;
-    return in;
-}
-
-QDataStream &operator<<(QDataStream &out, const BTModuleTreeItem::Grouping &x)
-{
-    out << x;
-    return out;
-}
-
-QDataStream &operator>>(QDataStream &in, BTModuleTreeItem::Grouping &x)
-{
-    in >> x;
-    return in;
 }

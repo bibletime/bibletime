@@ -455,7 +455,7 @@ const QString CInfoDisplay::decodeMorph( const QString& data ) {
             const bool isOk = key->setKey(skipFirstChar ? value.mid(1) : value);
             //Q_ASSERT(isOk);
             if (!isOk) { //try to use the other morph lexicon, because this one failed with the current morph code
-                key->setModule(getBtConfig().getDefaultSwordModuleByType("standardHebrewMorphLexicon")); //TODO: what if the module doesn't exist?
+                key->setModule(getBtConfig().getDefaultSwordModuleByType("standardHebrewMorphLexicon")); /// \todo: what if the module doesn't exist?
                 key->setKey(skipFirstChar ? value.mid(1) : value);
             }
 
