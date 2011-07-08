@@ -102,9 +102,11 @@ void BtActionCollection::readShortcuts(const QString &group) {
 
 void BtActionCollection::writeShortcuts(const QString &group) {
     QHash< QString, QList<QKeySequence> > shortcuts;
-    for(QMap<QString, BtActionItem*>::const_iterator iter = m_actions.begin();
-                                                             iter != m_actions.end();
-                                                             iter++)
+    for (ActionMap::const_iterator iter = m_actions.constBegin();
+        iter != m_actions.constEnd();
+        iter++)
+    {
         shortcuts.insert(iter.key(), iter.value()->action->shortcuts());
+    }
     getBtConfig().setShortcuts(group, shortcuts);
 }

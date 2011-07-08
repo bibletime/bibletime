@@ -340,14 +340,23 @@ QHash< QString, QList<QKeySequence> > BtConfig::getShortcuts( const QString& sho
         QStringList keyList = m_settings.childKeys();
         foreach(QString key, keyList) {
             QVariant variant = m_settings.value(key);
+
+            qDebug() << variant << " | " << variant.typeName();
+
             QList<QKeySequence> shortcuts;
-            if (variant != QVariant()) {
-                QList<QVariant> keyShortcuts = variant.toList();
-                foreach (QVariant shortcutVariant, keyShortcuts) {
-                    QKeySequence shortcut(shortcutVariant.toString());
+
+            if (variant.type() == QVariant::List) { // For BibleTime before 2.9
+                Q_FOREACH (const QVariant &shortcut, variant.toList()) {
+                    shortcuts.append(shortcut.toString());
+                }
+            } else if (variant.type() == QVariant::StringList || variant.type() == QVariant::String) { // a StringList with one element is recognized as a QVariant::String
+                Q_FOREACH (const QString &shortcut, variant.toStringList()) {
                     shortcuts.append(shortcut);
                 }
+            } else { // it's something we don't know, skip it
+                continue;
             }
+
             allShortcuts.insert(key, shortcuts);
         }
     m_settings.endGroup();
@@ -363,10 +372,17 @@ void BtConfig::setShortcuts( const QString& shortcutGroup, const QHash< QString,
                                                                  iter != shortcuts.end();
                                                                  iter++)
         {
-            QList<QVariant> varList;
-                foreach(QKeySequence seq, iter.value())
-                    varList.append(seq.toString());
-            m_settings.setValue(iter.key(), varList);
+            // Write beautiful string lists (since 2.9):
+            QStringList varList;
+                Q_FOREACH (const QKeySequence &shortcut, iter.value()) {
+                    /// \note saving QKeySequences directly doesn't appear to work!
+                    varList.append(shortcut.toString());
+                }
+            if (not varList.empty())
+            {
+                m_settings.setValue(iter.key(), varList);
+                qDebug() << ">>" << m_settings.value(iter.key()).typeName();
+            }
         }
     m_settings.endGroup();
     qDebug() << "BtConfig::setShortcuts end";
