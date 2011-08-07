@@ -141,6 +141,14 @@ void CAcceleratorSettingsPage::retranslateUi() {
     m_commentary.title = tr("Commentary windows");
     m_lexicon.title = tr("Lexicon windows");
     m_book.title = tr("Book windows");
+
+    m_typeChooser->clear();
+    m_typeChooser->addItem(m_application.title);
+    m_typeChooser->addItem(m_general.title);
+    m_typeChooser->addItem(m_bible.title);
+    m_typeChooser->addItem(m_commentary.title);
+    m_typeChooser->addItem(m_lexicon.title);
+    m_typeChooser->addItem(m_book.title);
 }
 
 // complete the keyChangeRequest
