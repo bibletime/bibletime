@@ -81,8 +81,8 @@ QString CSwordVerseKey::book( const QString& newBook ) {
 
     const CSBMI *bible = dynamic_cast<const CSBMI*>(module());
     if (bible != 0) {
-        const bool hasOT = bible->hasTestament(CSBMI::OldTestament);
-        const bool hasNT = bible->hasTestament(CSBMI::NewTestament);
+        const bool hasOT = bible->hasOldTestament();
+        const bool hasNT = bible->hasNewTestament();
 
         if (hasOT && hasNT) {
             min = 0;

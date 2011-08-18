@@ -24,12 +24,6 @@
 class CSwordBibleModuleInfo: public CSwordModuleInfo {
         Q_OBJECT
 
-    public: /* Types: */
-        enum Testament {
-            OldTestament = 1,
-            NewTestament = 2
-        };
-
     public: /* Methods: */
         CSwordBibleModuleInfo(sword::SWModule *module, CSwordBackend * const,
                               ModuleType type = Bible);
@@ -76,10 +70,17 @@ class CSwordBibleModuleInfo: public CSwordModuleInfo {
         unsigned int bookNumber(const QString &book) const;
 
         /**
-          \returns whether this module has the text of desired type of testament
+          \returns whether this module has the Old Testament texts.
         */
-        bool hasTestament(CSwordBibleModuleInfo::Testament type) const {
-            return type == OldTestament ? m_hasOT : m_hasNT;
+        inline bool hasOldTestament() const {
+            return m_hasOT;
+        }
+
+        /**
+          \returns whether this module has the New Testament texts.
+        */
+        inline bool hasNewTestament() const {
+            return m_hasNT;
         }
 
         /**
