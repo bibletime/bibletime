@@ -12,7 +12,6 @@
 #include <QSharedPointer>
 #include <QFile>
 #include "backend/managers/cswordbackend.h"
-#include "backend/keys/cswordversekey.h"
 
 // Sword includes:
 #include <versekey.h>
