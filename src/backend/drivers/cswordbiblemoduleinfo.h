@@ -73,6 +73,8 @@ class CSwordBibleModuleInfo: public CSwordModuleInfo {
           \returns whether this module has the Old Testament texts.
         */
         inline bool hasOldTestament() const {
+            if (!m_boundsInitialized)
+                initBounds();
             return m_hasOT;
         }
 
@@ -80,6 +82,8 @@ class CSwordBibleModuleInfo: public CSwordModuleInfo {
           \returns whether this module has the New Testament texts.
         */
         inline bool hasNewTestament() const {
+            if (!m_boundsInitialized)
+                initBounds();
             return m_hasNT;
         }
 
@@ -87,6 +91,8 @@ class CSwordBibleModuleInfo: public CSwordModuleInfo {
           \returns the key which represents the lower bound of this module.
         */
         inline const CSwordVerseKey &lowerBound() const {
+            if (!m_boundsInitialized)
+                initBounds();
             return m_lowerBound;
         }
 
@@ -94,21 +100,25 @@ class CSwordBibleModuleInfo: public CSwordModuleInfo {
           \returns the key which represents the upper bound of this module.
         */
         inline const CSwordVerseKey &upperBound() const {
+            if (!m_boundsInitialized)
+                initBounds();
             return m_upperBound;
         }
 
     private: /* Methods: */
 
-        void initBounds();
+        void initBounds() const;
 
-    private:
-        CSwordVerseKey m_lowerBound;
-        CSwordVerseKey m_upperBound;
+    private: /* Fields: */
+
+        mutable bool m_boundsInitialized;
+        mutable CSwordVerseKey m_lowerBound;
+        mutable CSwordVerseKey m_upperBound;
+        mutable bool m_hasOT;
+        mutable bool m_hasNT;
 
         mutable QStringList *m_bookList; //This booklist is cached
         mutable QString m_cachedLocale;
-        bool m_hasOT;
-        bool m_hasNT;
 };
 
 #endif
