@@ -13,12 +13,12 @@
 
 #include <QEvent>
 #include <QMdiSubWindow>
-#include <QTimer>
-#include <QToolBar>
-#include <QWindowStateChangeEvent>
 #include <QMenu>
 #include <QtGlobal>
 #include <QTabBar>
+#include <QTimer>
+#include <QToolBar>
+#include <QWindowStateChangeEvent>
 
 #define MOVESIZE 30
 
@@ -121,9 +121,12 @@ void CMDIArea::setMDIArrangementMode( const MDIArrangementMode newArrangementMod
             break;
     }
     Q_FOREACH (QTabBar* tab, findChildren<QTabBar *>()) {
-        tab->setTabsClosable(true);
-        disconnect(tab, SIGNAL(tabCloseRequested(int)), this, SLOT(closeTab(int)));
-        connect(tab, SIGNAL(tabCloseRequested(int)), this, SLOT(closeTab(int)));
+        QObject* parent = tab->parent();
+        if (parent == this) {
+            tab->setTabsClosable(true);
+            disconnect(tab, SIGNAL(tabCloseRequested(int)), this, SLOT(closeTab(int)));
+            connect(tab, SIGNAL(tabCloseRequested(int)), this, SLOT(closeTab(int)));
+        }
     }
 }
 
