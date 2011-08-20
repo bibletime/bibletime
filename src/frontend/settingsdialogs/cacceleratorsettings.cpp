@@ -48,14 +48,8 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(CConfigurationDialog *parent)
                       SLOT(slotKeyChooserTypeChanged(const QString&)) );
     Q_ASSERT(ok);
 
-    // m_*.title strings are empty here, they are filled and set in the retranslateUi() function
+    // m_*.title strings are empty here, they are filled and added to the stacked widget in the retranslateUi() function
     m_keyChooserStack = new QStackedWidget(this);
-        m_typeChooser->addItem(m_application.title);
-        m_typeChooser->addItem(m_general.title);
-        m_typeChooser->addItem(m_bible.title);
-        m_typeChooser->addItem(m_commentary.title);
-        m_typeChooser->addItem(m_lexicon.title);
-        m_typeChooser->addItem(m_book.title);
     retranslateUi();
 
     // create shortcuteditors
@@ -140,12 +134,13 @@ void CAcceleratorSettingsPage::retranslateUi() {
     m_lexicon.title = tr("Lexicon windows");
     m_book.title = tr("Book windows");
 
-    m_typeChooser->setItemText(0, m_application.title);
-    m_typeChooser->setItemText(1, m_general.title);
-    m_typeChooser->setItemText(2, m_bible.title);
-    m_typeChooser->setItemText(3, m_commentary.title);
-    m_typeChooser->setItemText(4, m_lexicon.title);
-    m_typeChooser->setItemText(5, m_book.title);
+    m_typeChooser->clear();
+    m_typeChooser->addItem(m_application.title);
+    m_typeChooser->addItem(m_general.title);
+    m_typeChooser->addItem(m_bible.title);
+    m_typeChooser->addItem(m_commentary.title);
+    m_typeChooser->addItem(m_lexicon.title);
+    m_typeChooser->addItem(m_book.title);
 }
 
 // complete the keyChangeRequest

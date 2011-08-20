@@ -24,12 +24,6 @@
 class CSwordBibleModuleInfo: public CSwordModuleInfo {
         Q_OBJECT
 
-    public: /* Types: */
-        enum Testament {
-            OldTestament = 1,
-            NewTestament = 2
-        };
-
     public: /* Methods: */
         CSwordBibleModuleInfo(sword::SWModule *module, CSwordBackend * const,
                               ModuleType type = Bible);
@@ -76,16 +70,29 @@ class CSwordBibleModuleInfo: public CSwordModuleInfo {
         unsigned int bookNumber(const QString &book) const;
 
         /**
-          \returns whether this module has the text of desired type of testament
+          \returns whether this module has the Old Testament texts.
         */
-        bool hasTestament(CSwordBibleModuleInfo::Testament type) const {
-            return type == OldTestament ? m_hasOT : m_hasNT;
+        inline bool hasOldTestament() const {
+            if (!m_boundsInitialized)
+                initBounds();
+            return m_hasOT;
+        }
+
+        /**
+          \returns whether this module has the New Testament texts.
+        */
+        inline bool hasNewTestament() const {
+            if (!m_boundsInitialized)
+                initBounds();
+            return m_hasNT;
         }
 
         /**
           \returns the key which represents the lower bound of this module.
         */
         inline const CSwordVerseKey &lowerBound() const {
+            if (!m_boundsInitialized)
+                initBounds();
             return m_lowerBound;
         }
 
@@ -93,21 +100,25 @@ class CSwordBibleModuleInfo: public CSwordModuleInfo {
           \returns the key which represents the upper bound of this module.
         */
         inline const CSwordVerseKey &upperBound() const {
+            if (!m_boundsInitialized)
+                initBounds();
             return m_upperBound;
         }
 
     private: /* Methods: */
 
-        void initBounds();
+        void initBounds() const;
 
-    private:
-        CSwordVerseKey m_lowerBound;
-        CSwordVerseKey m_upperBound;
+    private: /* Fields: */
+
+        mutable bool m_boundsInitialized;
+        mutable CSwordVerseKey m_lowerBound;
+        mutable CSwordVerseKey m_upperBound;
+        mutable bool m_hasOT;
+        mutable bool m_hasNT;
 
         mutable QStringList *m_bookList; //This booklist is cached
         mutable QString m_cachedLocale;
-        bool m_hasOT;
-        bool m_hasNT;
 };
 
 #endif

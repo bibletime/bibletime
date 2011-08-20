@@ -12,7 +12,6 @@
 #include <QSharedPointer>
 #include <QFile>
 #include "backend/managers/cswordbackend.h"
-#include "backend/keys/cswordversekey.h"
 
 // Sword includes:
 #include <versekey.h>
@@ -21,16 +20,18 @@
 CSwordBibleModuleInfo::CSwordBibleModuleInfo(sword::SWModule *module,
                                              CSwordBackend * const usedBackend,
                                              ModuleType type)
-        : CSwordModuleInfo(module, usedBackend, type),
-        m_lowerBound(0),
-        m_upperBound(0),
-        m_bookList(0),
-        m_cachedLocale("unknown")
+        : CSwordModuleInfo(module, usedBackend, type)
+        , m_boundsInitialized(false)
+        , m_lowerBound(0)
+        , m_upperBound(0)
+        , m_bookList(0)
 {
-    initBounds();
+    // Intentionally empty
 }
 
-void CSwordBibleModuleInfo::initBounds() {
+void CSwordBibleModuleInfo::initBounds() const {
+    Q_ASSERT(!m_boundsInitialized);
+
     sword::SWModule *m = module();
     const bool oldStatus = m->getSkipConsecutiveLinks();
     m->setSkipConsecutiveLinks(true);
@@ -47,12 +48,16 @@ void CSwordBibleModuleInfo::initBounds() {
 
     m_lowerBound.setKey(m_hasOT ? "Genesis 1:1" : "Matthew 1:1");
     m_upperBound.setKey(!m_hasNT ? "Malachi 4:6" : "Revelation of John 22:21");
+
+    m_boundsInitialized = true;
 }
 
 
 /** Returns the books available in this module */
 QStringList *CSwordBibleModuleInfo::books() const {
-    if (m_cachedLocale != backend()->booknameLanguage()) { //if the locale has changed
+    if (m_cachedLocale != backend()->booknameLanguage()) {
+        // Reset the booklist because the locale has changed
+        m_cachedLocale = backend()->booknameLanguage();
         delete m_bookList;
         m_bookList = 0;
     }
@@ -60,37 +65,29 @@ QStringList *CSwordBibleModuleInfo::books() const {
     if (!m_bookList) {
         m_bookList = new QStringList();
 
+        // Initialize m_hasOT and m_hasNT
+        if (!m_boundsInitialized)
+            initBounds();
+
         int min = 1; // 1 = OT
         int max = 2; // 2 = NT
 
-        //find out if we have ot and nt, only ot or only nt
+        if (!m_hasOT)
+            min++; // min == 2
 
-        if (m_hasOT && m_hasNT) { //both
-            min = 1;
-            max = 2;
-        }
-        else if (m_hasOT && !m_hasNT) { //only OT
-            min = 1;
-            max = 1;
-        }
-        else if (!m_hasOT && m_hasNT) { //only NT
-            min = 2;
-            max = 2;
-        }
-        else if (!m_hasOT && !m_hasNT) { //somethings wrong here! - no OT and no NT
+        if (!m_hasNT)
+            max--; // max == 1
+
+        if (min > max) {
             qWarning("CSwordBibleModuleInfo (%s) no OT and not NT! Check your config!", module()->Name());
-            min = 1;
-            max = 0;
+        } else {
+            QSharedPointer<sword::VerseKey> key((sword::VerseKey *)module()->CreateKey());
+            key->setPosition(sword::TOP);
+
+            for (key->setTestament(min); !key->Error() && key->getTestament() <= max; key->setBook(key->getBook() + 1)) {
+                m_bookList->append( QString::fromUtf8(key->getBookName()) );
+            }
         }
-
-        QSharedPointer<sword::VerseKey> key((sword::VerseKey *)module()->CreateKey());
-        key->setPosition(sword::TOP);
-
-        for (key->setTestament(min); !key->Error() && key->getTestament() <= max; key->setBook(key->getBook() + 1)) {
-            m_bookList->append( QString::fromUtf8(key->getBookName()) );
-        }
-
-        m_cachedLocale = backend()->booknameLanguage();
     }
 
     return m_bookList;

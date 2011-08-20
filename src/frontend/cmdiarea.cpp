@@ -13,11 +13,12 @@
 
 #include <QEvent>
 #include <QMdiSubWindow>
+#include <QMenu>
+#include <QtGlobal>
+#include <QTabBar>
 #include <QTimer>
 #include <QToolBar>
 #include <QWindowStateChangeEvent>
-#include <QMenu>
-
 
 #define MOVESIZE 30
 
@@ -119,6 +120,22 @@ void CMDIArea::setMDIArrangementMode( const MDIArrangementMode newArrangementMod
             triggerWindowUpdate();
             break;
     }
+    Q_FOREACH (QTabBar* tab, findChildren<QTabBar *>()) {
+        QObject* parent = tab->parent();
+        if (parent == this) {
+            tab->setTabsClosable(true);
+            disconnect(tab, SIGNAL(tabCloseRequested(int)), this, SLOT(closeTab(int)));
+            connect(tab, SIGNAL(tabCloseRequested(int)), this, SLOT(closeTab(int)));
+        }
+    }
+}
+
+void CMDIArea::closeTab(int i) {
+   QMdiSubWindow *sub = subWindowList()[i];
+   QWidget *win = sub->widget();
+   win->close();
+   setActiveSubWindow(sub);
+   closeActiveSubWindow();
 }
 
 void CMDIArea::myTileVertical() {
