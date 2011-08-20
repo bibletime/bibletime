@@ -1,3 +1,6 @@
+2011-08-18 Gary Holmlund <gary.holmlund@gmail.com>
+    *  Add close buttons to tabbed works windows. 
+
 2011-08-07 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug 3162615 where titles with unicode chars
     * within Bibles did not display correctly.

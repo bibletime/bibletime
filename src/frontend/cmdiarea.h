@@ -150,6 +150,11 @@ class CMDIArea: public QMdiArea {
         */
         void slotSubWindowActivated(QMdiSubWindow *client);
 
+        /**
+          Called whan a tabbed subwindow is closed from the tab
+        */
+        void closeTab(int i);
+
     protected: /* Fields: */
 
         MDIArrangementMode m_mdiArrangementMode;
