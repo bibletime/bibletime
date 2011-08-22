@@ -476,7 +476,7 @@ void BibleTime::initActions() {
             this,                          SLOT(slotTileHorizontal()));
 
     alignmentMode alignment = getBtConfig().getValue<alignmentMode>("gui/alignmentMode");
-    
+
     m_windowManualModeAction = m_actionCollection->action("manualArrangement");
     Q_ASSERT(m_windowManualModeAction != 0);
     m_windowManualModeAction->setCheckable(true);

@@ -209,7 +209,7 @@ public:
      *
      * Returns a structure containing the current
      * settings to be used for filtering.
-     * 
+     *
      * \returns FilterOptions structure containing filter settings.
      */
     FilterOptions getFilterOptions();
@@ -219,7 +219,7 @@ public:
      *
      * Returns a structure containing the current
      * settings to be used for displaying texts.
-     * 
+     *
      * \returns DisplayOptions structure containing display settings.
      */
     DisplayOptions getDisplayOptions();

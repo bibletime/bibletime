@@ -41,7 +41,7 @@ class BtActionCollection: public QObject {
         QList<QAction*> actions();
 
         QAction *action(const QString &name) const;
-        
+
         /*!
          * \brief Read shortcuts from config.
          *

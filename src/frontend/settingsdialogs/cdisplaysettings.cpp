@@ -169,7 +169,7 @@ void CDisplaySettingsPage::updateStylePreview() {
     //qDebug() << "new style name: " << getBtConfig().getValue<QString>("gui/displayStyle");
     CDisplayRendering render;
     m_stylePreviewViewer->setHtml( render.renderKeyTree(tree));
-    
+
     getBtConfig().setValue("gui/displayStyle", oldStyleName);
     qDebug() << "CDisplaySettingsPage::updateStylePreview end";
 }

@@ -32,13 +32,13 @@ BtConfig::BtConfig(const QString& settingsFile) : m_currentGroups(), m_defaults(
 
         qRegisterMetaType<alignmentMode>("alignmentMode");
         qRegisterMetaTypeStreamOperators<alignmentMode>("alignmentMode");
-        
+
         qRegisterMetaType<Search::BtSearchOptionsArea::SearchType>("SearchType");
         qRegisterMetaTypeStreamOperators<Search::BtSearchOptionsArea::SearchType>("SearchType");
-        
+
         qRegisterMetaType<StringMap>("StringMap");
         qRegisterMetaTypeStreamOperators<StringMap>("StringMap");
-        
+
         qRegisterMetaType< QList<int> >("QList<int>");
         qRegisterMetaTypeStreamOperators< QList<int> >("QList<int>");
 
@@ -549,7 +549,7 @@ void BtConfig::readSession()
      * -values are updated as they are changed, just like the rest of bibletime
      * -QMdiArea::subWindowActivated signal will trigger reading the window order and saving
      * it to the config.
-     * 
+     *
      */
     /*
      * Action Plan:

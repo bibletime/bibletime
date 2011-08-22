@@ -271,7 +271,7 @@ TextFiltersTab::TextFiltersTab(CSwordSettingsPage *parent)
     m_explanationLabel->setMinimumWidth(300);
     layout->setSpacing(2);
     layout->addWidget(m_explanationLabel);
-    
+
     getBtConfig().beginGroup("presentation");
 #define TEXT_FILTERS_TAB_ADD_ROW(name) \
         m_ ## name ## Check = new QCheckBox(this); \
@@ -288,8 +288,6 @@ TextFiltersTab::TextFiltersTab(CSwordSettingsPage *parent)
         TEXT_FILTERS_TAB_ADD_ROW(textualVariants);
         TEXT_FILTERS_TAB_ADD_ROW(scriptureReferences);
     getBtConfig().endGroup();
-
-    
 
     layout->addStretch(4);
 }
