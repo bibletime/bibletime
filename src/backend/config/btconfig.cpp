@@ -22,7 +22,9 @@ const QString BtConfig::m_sessionsGroup = "sessions";
 const QString BtConfig::m_currentSessionKey = "currentSession";
 const QString BtConfig::m_defaultSessionName = QObject::tr("default session");
 
-BtConfig::BtConfig(const QString& settingsFile) : m_currentGroups(), m_defaults(), m_sessionSettings(), m_settings(settingsFile, QSettings::IniFormat), m_currentSessionCache(), m_defaultFont(QWebSettings::globalSettings()->fontFamily(QWebSettings::StandardFont), 12)
+BtConfig::BtConfig(const QString &settingsFile)
+    : m_settings(settingsFile, QSettings::IniFormat)
+    , m_defaultFont(QWebSettings::globalSettings()->fontFamily(QWebSettings::StandardFont), 12)
 {
     // register all the types
         qRegisterMetaType<BTModuleTreeItem::Grouping>("Grouping");
