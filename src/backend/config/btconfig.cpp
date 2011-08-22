@@ -166,8 +166,6 @@ BtConfig::BtConfig(const QString &settingsFile)
             switchToSession(m_defaultSessionName);
 }
 
-BtConfig::~BtConfig() {}
-
 BtConfig& BtConfig::getInstance()
 {
     if(m_instance == 0)

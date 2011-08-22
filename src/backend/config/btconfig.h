@@ -41,7 +41,6 @@ public:
 
 
     static BtConfig& getInstance();
-    ~BtConfig();
 
     /*!
      * \brief Returns the name of the current session.
