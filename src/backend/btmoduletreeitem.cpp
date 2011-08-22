@@ -259,3 +259,15 @@ bool BTModuleTreeItem::localeAwareLessThan(BTModuleTreeItem* first, BTModuleTree
     }
     return (QString::localeAwareCompare(first->text(), second->text()) < 0 );
 }
+
+QDataStream &operator<<(QDataStream &out, const BTModuleTreeItem::Grouping &grouping) {
+    out << (qint8) grouping;
+    return out;
+}
+
+QDataStream &operator>>(QDataStream &in, BTModuleTreeItem::Grouping &grouping) {
+    qint8 i;
+    in >> i;
+    grouping = (BTModuleTreeItem::Grouping) i;
+    return in;
+}
