@@ -93,7 +93,13 @@ class BTModuleTreeItem {
         * CatLangMod: first category, second language, third module. Mod: don't use
         * Category or Language at all, Module is toplevel and tree is flat.
         */
-        enum Grouping {CatLangMod, CatMod, LangCatMod, LangMod, Mod};
+        enum Grouping {
+            CatLangMod = 0,
+            CatMod = 1,
+            LangCatMod = 2,
+            LangMod = 3,
+            Mod = 4
+        };
 
 
         /**
@@ -176,6 +182,9 @@ class BTModuleTreeItem {
         Grouping m_grouping;
 };
 
-Q_DECLARE_METATYPE(BTModuleTreeItem::Grouping);
+
+QDataStream &operator<<(QDataStream &out, const BTModuleTreeItem::Grouping &grouping);
+QDataStream &operator>>(QDataStream &in, BTModuleTreeItem::Grouping &grouping);
+Q_DECLARE_METATYPE(BTModuleTreeItem::Grouping)
 
 #endif

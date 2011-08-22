@@ -14,6 +14,7 @@ SET(bibletime_SRC
     src/bibletime_init.cpp
     src/bibletime_slots.cpp
     src/bibletimeapp.cpp
+    src/btglobal.cpp
 )
 
 SOURCE_GROUP("src" FILES ${bibletime_SRC})

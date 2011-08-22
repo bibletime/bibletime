@@ -391,26 +391,4 @@ inline const QFont &BtConfig::getDefaultFont() const
     return m_defaultFont;
 }
 
-// operator<</operator>> are needed for QVariant to be able to save it's contents to a text file, see documentation for qRegisterMetaTypeStreamOperators()
-inline QDataStream &operator<<(QDataStream &out, const Search::BtSearchOptionsArea::SearchType &searchType){
-    out.writeRawData(reinterpret_cast<const char*>(&searchType), sizeof(BTModuleTreeItem::Grouping));
-    return out;}
-inline QDataStream &operator>>(QDataStream &in, Search::BtSearchOptionsArea::SearchType &searchType){
-    in.readRawData(reinterpret_cast<char*>(&searchType), sizeof(Search::BtSearchOptionsArea::SearchType));
-    return in;}
-
-inline QDataStream &operator<<(QDataStream &out, const alignmentMode &x){
-    out.writeRawData(reinterpret_cast<const char*>(&x), sizeof(BTModuleTreeItem::Grouping));
-    return out;}
-inline QDataStream &operator>>(QDataStream &in, alignmentMode &x){
-    in.readRawData(reinterpret_cast<char*>(&x), sizeof(alignmentMode));
-    return in;}
-
-inline QDataStream &operator<<(QDataStream &out, const BTModuleTreeItem::Grouping &x){
-    out.writeRawData(reinterpret_cast<const char*>(&x), sizeof(BTModuleTreeItem::Grouping));
-    return out;}
-inline QDataStream &operator>>(QDataStream &in, BTModuleTreeItem::Grouping &x){
-    in.readRawData(reinterpret_cast<char*>(&x), sizeof(BTModuleTreeItem::Grouping));
-    return in;}
-
 #endif // BTCONFIG_H
