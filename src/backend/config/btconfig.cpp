@@ -1,10 +1,8 @@
 #include "btconfig.h"
 
 #include <QDebug>
-#include <qglobal.h> // Q_ASSERT
 #include <QLocale>
 #include <QWebSettings>
-
 #include "backend/btmoduletreeitem.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
 #include "frontend/searchdialog/btsearchoptionsarea.h"
