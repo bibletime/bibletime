@@ -33,7 +33,11 @@ class BtSearchOptionsArea : public QWidget {
         Q_OBJECT
     public:
 
-        enum SearchType {AndType, OrType, FullType};
+        enum SearchType { /* Values provided for serialization */
+            AndType = 0,
+            OrType = 1,
+            FullType = 2
+        };
 
         BtSearchOptionsArea(QWidget *parent = 0);
         ~BtSearchOptionsArea();
@@ -144,5 +148,9 @@ class BtSearchOptionsArea : public QWidget {
 };
 
 }
+
+QDataStream &operator<<(QDataStream &out, const Search::BtSearchOptionsArea::SearchType &searchType);
+QDataStream &operator>>(QDataStream &in, Search::BtSearchOptionsArea::SearchType &searchType);
+Q_DECLARE_METATYPE(Search::BtSearchOptionsArea::SearchType)
 
 #endif

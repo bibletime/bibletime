@@ -426,4 +426,16 @@ void BtSearchOptionsArea::slotValidateText(const QString& /*newText*/) {
 //}
 
 
+} // namespace Search
+
+QDataStream &operator<<(QDataStream &out, const Search::BtSearchOptionsArea::SearchType &searchType) {
+    out << (qint8) searchType;
+    return out;
+}
+
+QDataStream &operator>>(QDataStream &in, Search::BtSearchOptionsArea::SearchType &searchType) {
+    qint8 i;
+    in >> i;
+    searchType = (Search::BtSearchOptionsArea::SearchType) i;
+    return in;
 }

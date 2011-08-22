@@ -10,6 +10,12 @@
 #ifndef BTGLOBAL_H
 #define BTGLOBAL_H
 
+#include <QMetaType>
+
+
+class QDataStream;
+
+
 /**
   Filter options to control the text display of modules. Uses int and not bool
   because not all options have just two toggle values.
@@ -49,5 +55,21 @@ struct DisplayOptions {
 
 };
 Q_DECLARE_METATYPE(DisplayOptions)
+
+/*!
+ * Enumeration indicating the alignment mode
+ * used for child windows.
+ */
+enum alignmentMode { /* Values provided for serialization */
+    autoTileVertical = 0,
+    autoTileHorizontal = 1,
+    autoTile = 2,
+    autoTabbed = 3,
+    autoCascade = 4,
+    manual = 5
+};
+QDataStream &operator<<(QDataStream &out, const alignmentMode &mode);
+QDataStream &operator>>(QDataStream &in, alignmentMode &mode);
+Q_DECLARE_METATYPE(alignmentMode)
 
 #endif // BTGLOBAL_H
