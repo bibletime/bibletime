@@ -27,11 +27,14 @@
  *
  * \todo preserve session order
  */
-class BtConfig
-{
+class BtConfig {
+
     Q_DISABLE_COPY(BtConfig)
 
-public:
+    friend class BtConfigTest;
+
+public: /* Types: */
+
     /*!
     * The first parameter indicates whether the custom font should be used or not.
     * The second parameter is the custom font that has been set.
@@ -39,6 +42,11 @@ public:
     typedef QPair<bool, QFont> FontSettingsPair;
     typedef QMap<QString, QString> StringMap;
 
+private: /* Types: */
+
+    typedef QHash<const CLanguageMgr::Language *, FontSettingsPair> FontCacheMap;
+
+public: /* Methods: */
 
     static BtConfig& getInstance();
 
@@ -157,7 +165,6 @@ public:
      */
     QString getGroup();
 
-
     // helper functions
 
     /*!
@@ -227,7 +234,7 @@ public:
      * Returns a default font that is suitable for the current language.
      * \returns QFont suitable for current language.
      */
-    inline const QFont &getDefaultFont() const;
+    inline const QFont &getDefaultFont() const { return m_defaultFont; }
 
     /// \todo: put FontSettingsPair in QVariant directly
     /*!
@@ -296,9 +303,11 @@ public:
 
     void readSession();
 
-private: /* Fields: */
+private: /* Methods: */
+
     explicit BtConfig(const QString& settingsFile); //!< used by BtConfigTest
-    friend class BtConfigTest;
+
+private: /* Fields: */
 
     static BtConfig* m_instance; //!< singleton instance
 
@@ -308,27 +317,25 @@ private: /* Fields: */
 
     QVector<QString> m_currentGroups;
 
-    QHash<QString,QVariant> m_defaults;
+    QHash<QString, QVariant> m_defaults;
     QSet<QString> m_sessionSettings;
     QSettings m_settings;
 
     QString m_currentSessionCache; //!< cache of the current session string, for speed
     QFont m_defaultFont; //!< default font used when no special one is set
-    typedef QHash<const CLanguageMgr::Language*, FontSettingsPair> FontCacheMap;
     FontCacheMap m_fontCache; //!< a cache for the fonts saved in the configuration file for speed
+
 };
 
 // declare types used in configuration as metatype so they can be saved directly into the configuration
-Q_DECLARE_METATYPE(BtConfig::StringMap);
-Q_DECLARE_METATYPE(QList<int>);
+Q_DECLARE_METATYPE(BtConfig::StringMap)
+Q_DECLARE_METATYPE(QList<int>)
 
 /*!
- * Returns the BtConfiguration singleton instance.
- * This is a shortcut for BtConfig::getInstance().
- * \returns BtConfig instance
+ * \brief This is a shortchand for BtConfig::getInstance().
+ * \returns BtConfig singleton instance.
  */
-inline BtConfig& getBtConfig()
-{
+inline BtConfig &getBtConfig() {
     return BtConfig::getInstance();
 }
 
@@ -383,11 +390,6 @@ inline void BtConfig::setValue(const QString& key, const char* const value)
 inline void BtConfig::beginGroup(const QString& prefix)
 {
     m_currentGroups.push_back(prefix + "/");
-}
-
-inline const QFont &BtConfig::getDefaultFont() const
-{
-    return m_defaultFont;
 }
 
 #endif // BTCONFIG_H
