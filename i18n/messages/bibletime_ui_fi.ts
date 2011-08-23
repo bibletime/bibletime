@@ -1953,7 +1953,7 @@ pikanäppäin</translation>
         <translation>Kirjaikkunat</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="187"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="195"/>
         <source>
    &quot;%1&quot; in the &quot;%2&quot; group</source>
         <translation> 
@@ -4364,12 +4364,12 @@ Language name ppk</extracomment>
         <translation>Orya</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="154"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="162"/>
         <source>This shortcut conflicts with the shortcut for the following actions:</source>
         <translation>Tämä pikanäppäin on ristiriidassa seuraavien toimintojen pikanäppäinten kanssa:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="161"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="169"/>
         <source>Do you want to clear the conflicting shortcuts and continue?</source>
         <translation>Haluatko poistaa ristiriitaiset pikanäppäimet ja jatkaa?</translation>
     </message>

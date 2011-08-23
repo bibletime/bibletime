@@ -1966,7 +1966,7 @@ atalho</translation>
         <translation>Janela de Livro</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="187"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="195"/>
         <source>
    &quot;%1&quot; in the &quot;%2&quot; group</source>
         <translation>
@@ -4378,12 +4378,12 @@ Language name ppk</extracomment>
         <translation>Analisar Números Strong</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="154"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="162"/>
         <source>This shortcut conflicts with the shortcut for the following actions:</source>
         <translation>Este atalho conflita com o atalho para as seguintes ações:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="161"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="169"/>
         <source>Do you want to clear the conflicting shortcuts and continue?</source>
         <translation>Você quer limpar os atalhos em conflito e continuar?</translation>
     </message>

@@ -1931,7 +1931,7 @@ shortcut</source>
         <translation>نوافذ الكتب</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="187"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="195"/>
         <source>
    &quot;%1&quot; in the &quot;%2&quot; group</source>
         <translation>...&quot;%1&quot; في مجموعة &quot;%2&quot;</translation>
@@ -4242,12 +4242,12 @@ Language name ppk</extracomment>
         <translation>تحليل أرقام سترونج</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="154"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="162"/>
         <source>This shortcut conflicts with the shortcut for the following actions:</source>
         <translation>هذا الإختصار يتعارض مع إختصار الأفعال الآتية:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="161"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="169"/>
         <source>Do you want to clear the conflicting shortcuts and continue?</source>
         <translation>هل تريد مسح الإختصار المتعارض والمتابعة؟</translation>
     </message>
