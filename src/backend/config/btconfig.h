@@ -376,17 +376,6 @@ void BtConfig::setValue(const QString& key, T value)
         m_settings.setValue(fullKey, QVariant::fromValue<T>(value));
 }
 
-/*
- * This specialization allows implicit conversion of char* to QString.
- * Full function specializations have to be inline, since they are no template
- * functions anymore and would result in multiple definition errors.
- */
-template <>
-inline void BtConfig::setValue(const QString& key, const char* const value)
-{
-    setValue<QString>(key, QString(value));
-}
-
 inline void BtConfig::beginGroup(const QString& prefix)
 {
     m_currentGroups.push_back(prefix + "/");

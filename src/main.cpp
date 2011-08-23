@@ -261,7 +261,7 @@ int main(int argc, char* argv[]) {
 
     // a new BibleTime version was installed (maybe a completely new installation)
     if (getBtConfig().getValue<QString>("bibletimeVersion") != BT_VERSION) {
-        getBtConfig().setValue("bibletimeVersion", BT_VERSION);
+        getBtConfig().setValue("bibletimeVersion", QString::fromAscii(BT_VERSION));
         mainWindow->saveConfigSettings();
     }
 
