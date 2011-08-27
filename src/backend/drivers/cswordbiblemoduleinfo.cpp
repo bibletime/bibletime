@@ -30,6 +30,8 @@ CSwordBibleModuleInfo::CSwordBibleModuleInfo(sword::SWModule *module,
 }
 
 void CSwordBibleModuleInfo::initBounds() const {
+    /// \todo The fields calculated by this method could be cached to disk.
+
     Q_ASSERT(!m_boundsInitialized);
 
     sword::SWModule *m = module();
