@@ -11,6 +11,7 @@
 #ifndef NO_DBUS
 #include <QDBusConnection>
 #endif
+#include <QFile>
 #include <QLocale>
 #include <QTextCodec>
 #include <QTranslator>
@@ -117,49 +118,57 @@ int parseCommandLine(bool &showDebugMessages, bool &ignoreSession,
   Console messaging.
 *******************************************************************************/
 
+#if QT_VERSION >= 0x040600
+QScopedPointer<QFile> debugStream;
+#else
+struct DebugStreamPtr {
+    QFile * m_f;
+    inline DebugStreamPtr() : m_f(0) {}
+    inline ~DebugStreamPtr() { delete m_f; }
+    inline void reset(QFile * f) { m_f = f; }
+    inline QFile * operator->() const {
+        Q_ASSERT(m_f);
+        return m_f;
+    }
+} debugStream;
+#endif
 bool showDebugMessages = false;
 
-#ifdef Q_WS_WIN
-
-FILE *out_fd = 0;
-#define DEBUG_STREAM (out_fd != 0 ? out_fd :\
-    out_fd = fopen(QDir::homePath().append("/BibleTime Debug.txt").toLocal8Bit().data(),"w"))
-#define CLOSE_DEBUG_STREAM { if (out_fd != 0) fclose(out_fd); }
-
-#else
-
-#define DEBUG_STREAM (stderr)
-#define CLOSE_DEBUG_STREAM
-
-#endif
-
 void myMessageOutput( QtMsgType type, const char *msg ) {
-    //we use this messagehandler to switch debugging off in final releases
-    FILE* outFd = 0;
+    // We use this messagehandler to switch debugging off in final releases
     switch (type) {
         case QtDebugMsg:
-            if (showDebugMessages) { //only show messages if they are enabled!
-                outFd = DEBUG_STREAM;
-                if (outFd != 0)
-                    fprintf(outFd, "(BibleTime " BT_VERSION ") Debug: %s\n", msg);
+            if (showDebugMessages) { // Only show messages if they are enabled!
+                debugStream->write("(BibleTime " BT_VERSION ") Debug: ");
+                debugStream->write(msg);
+                debugStream->write("\n");
+                debugStream->flush();
             }
             break;
         case QtWarningMsg:
 #ifndef QT_NO_DEBUG  // don't show in release builds so users don't get our debug warnings
-            outFd = DEBUG_STREAM;
-            if (outFd != 0)
-                fprintf(outFd, "(BibleTime " BT_VERSION ") WARNING: %s\n", msg);
+            debugStream->write("(BibleTime " BT_VERSION ") WARNING: ");
+            debugStream->write(msg);
+            debugStream->write("\n");
+            debugStream->flush();
 #endif
             break;
-        case QtFatalMsg:
         case QtCriticalMsg:
-            outFd = DEBUG_STREAM;
-            if (outFd != 0)
-                fprintf(outFd,
-                        "(BibleTime " BT_VERSION ") _FATAL_: %s\nPlease report this bug! "
-                            "(http://www.bibletime.info/development_help.html)",
-                        msg);
-            abort(); // dump core on purpose
+            debugStream->write("(BibleTime " BT_VERSION ") CRITICAL: ");
+            debugStream->write(msg);
+            debugStream->write("\nPlease report this bug! "
+                              "(http://www.bibletime.info/development_help.html)");
+            debugStream->flush();
+            break;
+        case QtFatalMsg:
+            debugStream->write("(BibleTime " BT_VERSION ") FATAL: ");
+            debugStream->write(msg);
+            debugStream->write("\nPlease report this bug! "
+                              "(http://www.bibletime.info/development_help.html)");
+
+            // Dump core on purpose (see qInstallMsgHandler documentation):
+            debugStream->close();
+            abort();
     }
 }
 
@@ -196,12 +205,21 @@ int main(int argc, char* argv[]) {
         return EXIT_FAILURE;
     }
 
+    // Setup debugging:
 #ifdef Q_WS_WIN
     // Use the default Qt message handler if --debug is not specified
     // This works with Visual Studio debugger Output Window
-    if (showDebugMessages)
+    if (showDebugMessages) {
+        debugStream.reset(new QFile(QDir::homePath().append("/BibleTime Debug.txt")));
+        debugStream->open(QIODevice::WriteOnly | QIODevice::Text);
+#else
+        debugStream.reset(new QFile);
+        debugStream->open(stderr, QIODevice::WriteOnly | QIODevice::Text);
 #endif
-    qInstallMsgHandler(myMessageOutput);
+        qInstallMsgHandler(myMessageOutput);
+#ifdef Q_WS_WIN
+    }
+#endif
 
 #ifdef Q_WS_WIN
 
@@ -283,7 +301,6 @@ int main(int argc, char* argv[]) {
         mainWindow->slotOpenTipDialog();
 
     r = app.exec();
-    CLOSE_DEBUG_STREAM;
     return r;
 }
 
