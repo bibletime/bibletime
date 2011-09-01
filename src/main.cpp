@@ -7,7 +7,9 @@
 *
 **********/
 
+#include <cstdlib>
 #include <iostream>
+#include <QDateTime>
 #ifndef NO_DBUS
 #include <QDBusConnection>
 #endif
@@ -196,6 +198,11 @@ int main(int argc, char* argv[]) {
         return EXIT_FAILURE;
     }
 
+    // Initialize random number generator:
+    const QDateTime datetime(QDateTime::currentDateTime());
+    srand(datetime.currentMSecsSinceEpoch() + datetime.toTime_t());
+
+    // Setup debugging:
 #ifdef Q_WS_WIN
     // Use the default Qt message handler if --debug is not specified
     // This works with Visual Studio debugger Output Window
