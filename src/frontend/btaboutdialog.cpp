@@ -141,6 +141,7 @@ void BtAboutDialog::retranslateContributorsTab() {
 
     const QString developer(tr("developer"));
     const QString designer(tr("designer"));
+    const QString artist(tr("artist"));
 
     /****************************************************************************************
     ***               NB!!! Credits are sorted alphabetically by last name!               ***
@@ -163,12 +164,13 @@ void BtAboutDialog::retranslateContributorsTab() {
         MAKE_CONTR(content, "Bob Harman", tr("howto"))
         MAKE_CONTR(content, "Gary Holmlund", developer)
         MAKE_CONTR(content, "Nikolay Igotti", developer)
+        MAKE_CONTR(content, "Laurent Valentin Jospin", artist)
         MAKE_CONTR(content, "Eeli Kaikkonnen", developer)
         MAKE_CONTR(content, "Chris Kujawa", developer)
         MAKE_CONTR(content, "Mark Lybarger", developer)
         MAKE_CONTR(content, "Luke Mauldin", developer)
         MAKE_CONTR(content, "James Ots", designer)
-        MAKE_CONTR(content, "Andrus Raag", tr("artist"))
+        MAKE_CONTR(content, "Andrus Raag", artist)
         MAKE_CONTR2(content, "Jaak Ristioja", tr("project manager"), developer)
         MAKE_CONTR(content, "Fred Saalbach", tr("documentation"))
         MAKE_CONTR(content, "Gary Sims", developer)

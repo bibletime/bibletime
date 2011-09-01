@@ -61,7 +61,8 @@ BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
 
         static const char * const splashes[3] = {
             "startuplogo.png",
-            "startuplogo_christmas.png"
+            "startuplogo_christmas.png",
+            "startuplogo_easter.jpg"
         };
         QString splashImage = DU::getPicsDir().canonicalPath().append("/")
                                               .append(splashes[rand() % 3]);
