@@ -7,7 +7,9 @@
 *
 **********/
 
+#include <cstdlib>
 #include <iostream>
+#include <QDateTime>
 #ifndef NO_DBUS
 #include <QDBusConnection>
 #endif
@@ -204,6 +206,10 @@ int main(int argc, char* argv[]) {
         if (r < 0) return EXIT_SUCCESS;
         return EXIT_FAILURE;
     }
+
+    // Initialize random number generator:
+    const QDateTime datetime(QDateTime::currentDateTime());
+    srand(datetime.currentMSecsSinceEpoch() + datetime.toTime_t());
 
     // Setup debugging:
 #ifdef Q_WS_WIN
