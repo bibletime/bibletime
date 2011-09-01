@@ -229,7 +229,7 @@ INSTALL(FILES "docs/license.html"
     DESTINATION "${BT_SHARE_PATH}bibletime/license/"
 )
 # splash screen
-INSTALL(FILES "pics/startuplogo.png" "pics/startuplogo_christmas.png"
+INSTALL(FILES "pics/startuplogo.png" "pics/startuplogo_christmas.png" "pics/startuplogo_easter.jpg"
     DESTINATION "${BT_SHARE_PATH}bibletime/pics/"
 )
 #
