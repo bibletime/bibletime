@@ -9,61 +9,90 @@
 
 #include "backend/filters/plaintohtml.h"
 
+#include <QDebug>
 
-Filters::PlainToHtml::PlainToHtml() : sword::SWFilter() {
-}
+// Sword includes:
+#include <swbuf.h>
 
-/** No descriptions */
-char Filters::PlainToHtml::processText(sword::SWBuf& text, const sword::SWKey* /*key*/, const sword::SWModule* /*module*/) {
-    int count = 0;
 
+char Filters::PlainToHtml::processText(sword::SWBuf &text,
+                                       const sword::SWKey * /*key*/,
+                                       const sword::SWModule * /*module*/)
+{
     sword::SWBuf orig = text;
-    const char *from = orig.c_str();
-    for (text = ""; *from; from++) {
-        if ((*from == '\n') && (from[1] == '\n')) { // two newlinea are a paragraph
-            text += "<P>";
-            from++;
-            continue;
-        }
-        //This is a special case: Newlines in the plaintext editor are stored as <br />, not as \n
-        //we need to let them through
-        else if ((*from == '<') && (from[1] == 'b') && (from[2] == 'r') && (from[3] == ' ') && (from[4] == '/') && (from[5] == '>')) {
-            text += "<br />";
-            from += 5;
-            continue;
-        }
-        else if ((*from == '\n')) { // only one new line
-            text += "<br/>";
-            continue;
-        }
-        else if (*from == '<') {
-            text += "&lt;";
-            continue;
-        }
-        else if (*from == '>') {
-            text += "&gt;";
-            continue;
-        }
-        else if (*from == '&') {
-            text += "&amp;";
-            continue;
-        }
-        else if (*from == '{') { //footnote start
-            text += "<font color=\"#800000\"><small> ("; /// \bug Possible color conflict
-            continue;
-        }
-        else if (*from == '}') { //footnote end
-            text += ") </small></font>";
-            continue;
-        }
-        else if ((*from == ' ') && (count > 5000)) {
-            text += "<wbr/>";
-            count = 0;
-            continue;
-        }
+    const char * from = orig.c_str();
+    bool inFootNote = false;
 
-        text += *from;
-        count++;
+    for (text = "<p>"; *from; from++) {
+        switch (*from) {
+
+        case '\n':
+            if (text.size() > 3) { // ignore leading newlines
+                if (from[1] == '\n') { // two or more newlines denote a new paragraph
+                    text += "</p><p>";
+                    do {
+                        from++;
+                    } while (from[1] == '\n');
+                } else { // only one new line
+                    text += "<br/>";
+                }
+            }
+            break;
+
+        case '<':
+            // This is a special case: Newlines in the plaintext editor are stored as <br />, not as \n
+            // we need to let them through
+            /// \todo is this quirk necessary?
+            if ((from[1] == 'b')
+                && (from[2] == 'r')
+                && (from[3] == ' ')
+                && (from[4] == '/')
+                && (from[5] == '>'))
+            {
+                text += "<br/>";
+                from += 5;
+            } else {
+                text += "&lt;";
+            }
+            break;
+
+        case '>':
+            text += "&gt;";
+            break;
+
+        case '&':
+            text += "&amp;";
+            break;
+
+        case '{': // footnote start
+            if (inFootNote) {
+                text += *from;
+            } else {
+                text += "<span class=\"footnote\">";
+                inFootNote = true;
+            }
+            break;
+
+        case '}': // footnote end
+            if (inFootNote) {
+                text += "</span>";
+                inFootNote = false;
+            }
+            // fall through:
+
+        default:
+            text += *from;
+            break;
+
+        }
     }
+
+    // Handle missing footnode end:
+    if (inFootNote) {
+        qWarning() << "PlainToHtml filter detected missing footnote end.";
+        text += "</span>";
+    }
+
+    text += "</p>";
     return 0;
 }

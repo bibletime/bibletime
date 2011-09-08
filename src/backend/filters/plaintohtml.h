@@ -11,8 +11,8 @@
 #define FILTERS_PLAINTOHTML_H
 
 // Sword includes:
-#include <swbuf.h>
 #include <swfilter.h>
+
 
 namespace sword {
     class SWKey;
@@ -25,14 +25,14 @@ namespace Filters {
   \brief Plain text to HTML conversion filter.
 */
 class PlainToHtml: public sword::SWFilter {
-    public: /* Methods: */
-        PlainToHtml();
 
     protected: /* Methods: */
+
         /** Reimplemented from sword::SWFilter. */
         virtual char processText(sword::SWBuf &buf,
                                  const sword::SWKey *key,
                                  const sword::SWModule *module = 0);
+
 };
 
 } // namespace Filters
