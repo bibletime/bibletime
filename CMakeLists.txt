@@ -141,6 +141,9 @@ IF (MSVC)
     SOURCE_GROUP( "Icon Files"
         FILES "cmake/BTWinIcon.rc" }
     )
+    ADD_EXECUTABLE(${EXECUTABLE_NAME} WIN32 ${bibletime_MAIN})
+ELSE (MSVC)
+    ADD_EXECUTABLE(${EXECUTABLE_NAME} ${bibletime_MAIN})
 ENDIF (MSVC)
 
 # here we create a static library containing all compiled bibletime sources
@@ -150,11 +153,6 @@ ENDIF (MSVC)
 # and once for the library
 ADD_LIBRARY(${STATIC_LIB_NAME} STATIC EXCLUDE_FROM_ALL ${common_bibletime_SOURCES})
 
-IF (MSVC)
-    ADD_EXECUTABLE(${EXECUTABLE_NAME} WIN32 ${bibletime_MAIN})
-ELSE (MSVC)
-    ADD_EXECUTABLE(${EXECUTABLE_NAME} ${bibletime_MAIN})
-ENDIF (MSVC)
 INCLUDE(${QT_USE_FILE})
 TARGET_LINK_LIBRARIES(${EXECUTABLE_NAME}
     -Wl,-whole-archive # static libraries are included even though they aren't referenced
