@@ -1951,7 +1951,7 @@ sneltoets</translation>
         <translation>Boekenvensters</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="187"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="195"/>
         <source>
    &quot;%1&quot; in the &quot;%2&quot; group</source>
         <translatorcomment>Translation depends on de exact output of %1 and %2.</translatorcomment>
@@ -4378,12 +4378,12 @@ Language name ppk</extracomment>
         <translation>Bezig met verwerken van Strong&apos;s-nummers</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="154"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="162"/>
         <source>This shortcut conflicts with the shortcut for the following actions:</source>
         <translation>Deze sneltoets conflicteert met de sneltoets voor de volgende acties:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="161"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="169"/>
         <source>Do you want to clear the conflicting shortcuts and continue?</source>
         <translation>Wilt u de conflicterende sneltoetsen verwijderen en doorgaan?</translation>
     </message>

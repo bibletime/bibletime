@@ -9,18 +9,16 @@
 
 #include "bibletime.h"
 
+#include <cstdlib>
 #include <QAction>
 #include <QApplication>
 #include <QCloseEvent>
-#include <QDate>
 #include <QDebug>
 #include <QInputDialog>
 #include <QMdiSubWindow>
 #include <QMessageBox>
 #include <QSplashScreen>
 #include <QSplitter>
-#include <qglobal.h>
-#include <ctime>
 #include "backend/config/btconfig.h"
 #include "backend/drivers/cswordbiblemoduleinfo.h"
 #include "backend/drivers/cswordbookmoduleinfo.h"
@@ -60,17 +58,14 @@ BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
     if (getBtConfig().getValue<bool>("gui/logo")) {
         splashHtml = "<div style='background:transparent;color:white;font-weight:bold'>%1"
                      "</div>";
-        const QDate date(QDate::currentDate());
-        const int day = date.day();
-        const int month = date.month();
-        QString splashImage(DU::getPicsDir().canonicalPath().append("/"));
 
-        if ((month >= 12 && day >= 24) || (month <= 1 && day < 6)) {
-            splashImage.append("startuplogo_christmas.png");
-        } else {
-            splashImage.append("startuplogo.png");
-        }
-
+        static const char * const splashes[3] = {
+            "startuplogo.png",
+            "startuplogo_christmas.png",
+            "startuplogo_easter.jpg"
+        };
+        QString splashImage = DU::getPicsDir().canonicalPath().append("/")
+                                              .append(splashes[rand() % 3]);
         QPixmap pm;
         if (!pm.load(splashImage)) {
             qWarning("Can't load startuplogo! Check your installation.");
@@ -292,9 +287,6 @@ void BibleTime::processCommandline(bool ignoreSession, const QString &bibleKey) 
         if (bibleKey == "random") {
             CSwordVerseKey vk(0);
             const int maxIndex = 31100;
-            time_t seconds;
-            seconds = time (NULL);
-            srand(seconds);
             int newIndex = rand() % maxIndex;
             vk.setPosition(sword::TOP);
             vk.Index(newIndex);

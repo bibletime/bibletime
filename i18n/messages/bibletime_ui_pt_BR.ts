@@ -299,17 +299,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="375"/>
         <source>Toggle visibility of the bookshelf window</source>
-        <translation type="unfinished"></translation>
+        <translation>Mudar visibilidade da estante</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="379"/>
         <source>Toggle visibility of the bookmarks window</source>
-        <translation type="unfinished"></translation>
+        <translation>Mudar visibilidade da janela de favoritos</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="383"/>
         <source>Toggle visibility of the mag window</source>
-        <translation type="unfinished"></translation>
+        <translation>Mudar visibilidadea janela da lupa</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="716"/>
@@ -477,7 +477,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletimeapp.cpp" line="35"/>
         <source>Fatal error!</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro Fatal!</translation>
     </message>
 </context>
 <context>
@@ -905,7 +905,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="113"/>
         <source>Show footnotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar notas de rosapé</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="114"/>
@@ -951,17 +951,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontchooserwidget.cpp" line="97"/>
         <source>Font name:</source>
-        <translation type="unfinished">Nome da Fonte:</translation>
+        <translation>Fonte:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontchooserwidget.cpp" line="98"/>
         <source>Font style:</source>
-        <translation type="unfinished">Estilo da fonte:</translation>
+        <translation>Estilo da fonte:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontchooserwidget.cpp" line="99"/>
         <source>Size:</source>
-        <translation type="unfinished">Tamanho:</translation>
+        <translation>Tamanho:</translation>
     </message>
 </context>
 <context>
@@ -1002,12 +1002,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="108"/>
         <source>%1 KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 KiB</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="115"/>
         <source>0 KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>0 KiB</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="125"/>
@@ -1547,7 +1547,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="95"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Remover</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="108"/>
@@ -1807,7 +1807,7 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="157"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Remover</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="163"/>
@@ -1885,17 +1885,17 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="152"/>
         <source>The Bookshelf, Bookmark, and Mag windows can be moved to new locations by dragging them from the title at the top of each window. They can be placed to the left, right, above, or below the works windows. They can be placed on top of each other and tabs will appear so each window can be selected. They can be resized by dragging the border between the window and another window.</source>
-        <translation type="unfinished"></translation>
+        <translation>A Estante, os Marcadores e a janela da Lupa podem ser movidas para novos locais arrastado-as pelo título, no topo de cada janela. Elas podem ser colocadas à direita, esquerda, acima ou abaixo das janelas das obras.Elas podem ser colocados em cima, umas das outras e as abas aparecerão de forma que cada janela possa ser selecionada. Elas podem ser redimensionadas arrastando as bordas entre as janelas.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="158"/>
         <source>You can search for Strong&apos;s numbers in a work. Start with a work that has Strong&apos;s numbers and hover over a word. Right click the word and use the Strong&apos;s Search menu. A search dialog will appear that allows you to see the use of the same Strong&apos;s number in other locations of the work.</source>
-        <translation type="unfinished"></translation>
+        <translation>Você pode buscar por números Strong numa obra. Inicie com uma obra que possui números Strong e passe o cursor por cima de uma palavra. Clique com o botão direito sobre a palavra e utilize o menu Busca Strong. Um diálogo de busca aparecerá e permitirá que você veja o uso do mesmo número Strong em outros lugares da obra.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="173"/>
         <source>You can save your open windows in a session. Such a session can easily be restored later on. You can save as many sessions as you like. The session feature can be accessed under the Window menu entry.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vocẽ pode sarvar suas janelas abertas atualmente como uma sessão. Assim, a sessão pode ser facilmente restaurada depois. Você pode salvar quanta sessões desejar. Este recurso pode ser acessado abaixo do menu Janelas.</translation>
     </message>
     <message>
         <source>The Bookshelf, Bookmark, and Mag windows can be moved to new locations by dragging them from the title at the top of each window. They can be placed to the left, right, above, or below the works windows. They can be placed on top of each other and tabs will appear so each window can be selected. They can be resized by dragging theborder between the window and another window.</source>
@@ -1966,7 +1966,7 @@ atalho</translation>
         <translation>Janela de Livro</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="187"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="195"/>
         <source>
    &quot;%1&quot; in the &quot;%2&quot; group</source>
         <translation>
@@ -3065,7 +3065,7 @@ Deseja continuar?</translation>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="175"/>
         <source>&lt;div class=&quot;moduleinfo&quot;&gt;&lt;h3&gt;%1&lt;/h3&gt;&lt;p&gt;%2&lt;/p&gt;&lt;p&gt;Version: %3&lt;/p&gt;&lt;/div&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;div class=&quot;moduleinfo&quot;&gt;&lt;h3&gt;%1&lt;/h3&gt;&lt;p&gt;%2&lt;/p&gt;&lt;p&gt;Versão: %3&lt;/p&gt;&lt;/div&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="195"/>
@@ -3125,7 +3125,7 @@ Deseja continuar?</translation>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="411"/>
         <source>An internal error occurred while building the index: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocorreu um erro interno durante a construç/ao do índice. %1</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="418"/>
@@ -4378,12 +4378,12 @@ Language name ppk</extracomment>
         <translation>Analisar Números Strong</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="154"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="162"/>
         <source>This shortcut conflicts with the shortcut for the following actions:</source>
         <translation>Este atalho conflita com o atalho para as seguintes ações:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="161"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="169"/>
         <source>Do you want to clear the conflicting shortcuts and continue?</source>
         <translation>Você quer limpar os atalhos em conflito e continuar?</translation>
     </message>
@@ -4425,12 +4425,12 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/main.cpp" line="99"/>
         <source>Error: %1 expects an argument.</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro: %1 espera um argumento.</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="102"/>
         <source>See --help for details.</source>
-        <translation type="unfinished"></translation>
+        <translation>Veja --help para detalhes.</translation>
     </message>
     <message>
         <source>All command-line arguments not recognized by BibleTime or Qt will be silently ignored.</source>
@@ -4449,12 +4449,12 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="54"/>
         <source>Default template &quot;%1&quot; not found!</source>
-        <translation type="unfinished"></translation>
+        <translation>Modelo parão &quot;%1&quot; não encontrado!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="114"/>
         <source>Replace</source>
-        <translation type="unfinished">Substituir</translation>
+        <translation>Substituir</translation>
     </message>
 </context>
 <context>

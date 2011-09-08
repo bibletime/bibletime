@@ -1941,7 +1941,7 @@ shortcut</source>
         <translation>書目視窗</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="187"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="195"/>
         <source>
    &quot;%1&quot; in the &quot;%2&quot; group</source>
         <translation>   &quot;%1&quot; 位於 &quot;%2&quot; 群組</translation>
@@ -4290,12 +4290,12 @@ Language name ppk</extracomment>
         <translation>分析 Strong 的編號</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="154"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="162"/>
         <source>This shortcut conflicts with the shortcut for the following actions:</source>
         <translation>該捷徑與以下動作捷徑衝突:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="161"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="169"/>
         <source>Do you want to clear the conflicting shortcuts and continue?</source>
         <translation>你要清除衝突的捷徑並繼續?</translation>
     </message>

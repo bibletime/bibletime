@@ -117,6 +117,7 @@ void BtRemovePage::slotRemoveModules() {
     if (m_bookshelfWidget->treeModel()->checkedModules().empty()) return;
 
     QStringList moduleNames;
+    QStringList prettyModuleNames;
     const int textHeight = fontMetrics().height();
     /// \bug <nobr> is not working, Qt bug
     const QString moduleString("<nobr><img src=\"%1\" width=\"%2\" height=\"%3\"/>&nbsp;%4</nobr>");
@@ -126,15 +127,16 @@ void BtRemovePage::slotRemoveModules() {
     {
         const QIcon icon = CSwordModuleInfo::moduleIcon(m);
         const QSize iconSize = icon.actualSize(QSize(textHeight, textHeight));
-        moduleNames.append(moduleString
-                           .arg(iconDir + CSwordModuleInfo::moduleIconFilename(m))
-                           .arg(iconSize.width())
-                           .arg(iconSize.height())
-                           .arg(m->name()));
+        prettyModuleNames.append(moduleString
+                                 .arg(iconDir + CSwordModuleInfo::moduleIconFilename(m))
+                                 .arg(iconSize.width())
+                                 .arg(iconSize.height())
+                                 .arg(m->name()));
+        moduleNames.append(m->name());
     }
     const QString message = tr("You selected the following work(s): ")
                             .append("<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;")
-                            .append(moduleNames.join(",&nbsp; "))
+                            .append(prettyModuleNames.join(",&nbsp; "))
                             .append("<br/><br/>")
                             .append(tr("Do you really want to remove them from your system?"));
 
@@ -142,6 +144,7 @@ void BtRemovePage::slotRemoveModules() {
 
         // Update the module list before really removing. Remember deleting the pointers later.
         QList<CSwordModuleInfo*> toBeDeleted = CSwordBackend::instance()->takeModulesFromList(moduleNames);
+        Q_ASSERT(toBeDeleted.size() == moduleNames.size());
 
         sword::InstallMgr installMgr;
         QMap<QString, sword::SWMgr*> mgrDict; //maps config paths to SWMgr objects
