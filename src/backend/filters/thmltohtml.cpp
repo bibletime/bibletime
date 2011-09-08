@@ -62,7 +62,7 @@ char ThmlToHtml::processText(sword::SWBuf &buf, const sword::SWKey *key,
     int pos = tag.indexIn(t, 0);
 
     if (pos == -1) { //no strong or morph code found in this text
-        return 1; //WARNING: Return alread here
+        return 1; //WARNING: Return already here
     }
 
     while (pos != -1) {
