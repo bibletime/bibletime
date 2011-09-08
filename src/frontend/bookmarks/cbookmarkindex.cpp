@@ -462,7 +462,7 @@ void CBookmarkIndex::createBookmarkFromDrop(QDropEvent* event, QTreeWidgetItem* 
         QString keyText = mdata->bookmark().key();
         QString description = mdata->bookmark().description();
         CSwordModuleInfo *minfo = CSwordBackend::instance()->findModuleByName(moduleName);
-    QString title;  // TODO
+    QString title;  // \todo
 
         QTreeWidgetItem* newItem = new BtBookmarkItem(minfo, keyText, description, title);
         //  connect(newItem, SIGNAL(bookmarkModified()), this, SLOT(needToSaveBookmarks()) );
