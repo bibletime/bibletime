@@ -182,6 +182,21 @@ void registerMetaTypes() {
     qRegisterMetaType<FilterOptions>("FilterOptions");
     qRegisterMetaType<DisplayOptions>("DisplayOptions");
     qRegisterMetaTypeStreamOperators<BtBookshelfTreeModel::Grouping>("BtBookshelfTreeModel::Grouping");
+
+    qRegisterMetaType<BTModuleTreeItem::Grouping>("Grouping");
+    qRegisterMetaTypeStreamOperators<BTModuleTreeItem::Grouping>("Grouping");
+
+    qRegisterMetaType<alignmentMode>("alignmentMode");
+    qRegisterMetaTypeStreamOperators<alignmentMode>("alignmentMode");
+
+    qRegisterMetaType<Search::BtSearchOptionsArea::SearchType>("SearchType");
+    qRegisterMetaTypeStreamOperators<Search::BtSearchOptionsArea::SearchType>("SearchType");
+
+    qRegisterMetaType<BtConfig::StringMap>("StringMap");
+    qRegisterMetaTypeStreamOperators<BtConfig::StringMap>("StringMap");
+
+    qRegisterMetaType<QList<int> >("QList<int>");
+    qRegisterMetaTypeStreamOperators<QList<int> >("QList<int>");
 }
 
 } // anonymous namespace

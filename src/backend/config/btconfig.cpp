@@ -26,21 +26,6 @@ BtConfig::BtConfig(const QString &settingsFile)
     : m_settings(settingsFile, QSettings::IniFormat)
     , m_defaultFont(QWebSettings::globalSettings()->fontFamily(QWebSettings::StandardFont), 12)
 {
-    // register all the types
-        qRegisterMetaType<BTModuleTreeItem::Grouping>("Grouping");
-        qRegisterMetaTypeStreamOperators<BTModuleTreeItem::Grouping>("Grouping");
-
-        qRegisterMetaType<alignmentMode>("alignmentMode");
-        qRegisterMetaTypeStreamOperators<alignmentMode>("alignmentMode");
-
-        qRegisterMetaType<Search::BtSearchOptionsArea::SearchType>("SearchType");
-        qRegisterMetaTypeStreamOperators<Search::BtSearchOptionsArea::SearchType>("SearchType");
-
-        qRegisterMetaType<StringMap>("StringMap");
-        qRegisterMetaTypeStreamOperators<StringMap>("StringMap");
-
-        qRegisterMetaType< QList<int> >("QList<int>");
-        qRegisterMetaTypeStreamOperators< QList<int> >("QList<int>");
 
 #if QT_VERSION >= 0x040700
     m_currentGroups.reserve(10);
