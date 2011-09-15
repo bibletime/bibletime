@@ -127,7 +127,6 @@ SET(bibletime_SRC_FRONTEND
     src/frontend/btmodulechooserdialog.cpp
     src/frontend/btmoduleindexdialog.cpp
     src/frontend/btopenworkaction.cpp
-    src/frontend/cdragdrop.cpp
     src/frontend/cexportmanager.cpp
     src/frontend/cinfodisplay.cpp
     src/frontend/cmdiarea.cpp
