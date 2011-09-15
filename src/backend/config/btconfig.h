@@ -31,8 +31,6 @@ class BtConfig {
 
     Q_DISABLE_COPY(BtConfig)
 
-    friend class BtConfigTest;
-
 public: /* Types: */
 
     /*!
@@ -305,7 +303,7 @@ public: /* Methods: */
 
 private: /* Methods: */
 
-    explicit BtConfig(const QString& settingsFile); //!< used by BtConfigTest
+    explicit BtConfig(const QString& settingsFile);
 
 private: /* Fields: */
 

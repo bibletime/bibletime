@@ -2,10 +2,6 @@ SET(bibletime_UIS
     src/frontend/display/bthtmlfindtext.ui
 )
 
-SET(bibletime_MAIN
-    src/main.cpp
-)
-
 SET(bibletime_SRC
     # Toplevel files:
     src/bibletime.cpp
@@ -15,6 +11,7 @@ SET(bibletime_SRC
     src/bibletime_slots.cpp
     src/bibletimeapp.cpp
     src/btglobal.cpp
+    src/main.cpp
 )
 
 SOURCE_GROUP("src" FILES ${bibletime_SRC})
@@ -311,13 +308,6 @@ SET(bibletime_SRC_FRONTEND_DISPLAYWINDOW
 )
 
 SOURCE_GROUP("src\\frontend\\displaywindow" FILES ${bibletime_SRC_FRONTEND_DISPLAYWINDOW})
-
-SET(bibletime_SRC_TESTS
-    # unit tests:
-    src/tests/btconfigtest.cpp
-)
-
-SOURCE_GROUP("src\\tests" FILES ${bibletime_SRC_TESTS})
 
 # Mocable headers:
 SET(bibletime_MOCABLE_HEADERS

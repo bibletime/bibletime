@@ -8,8 +8,6 @@ SET(BT_VERSION_MINOR "9")
 SET(BT_VERSION_PATCH "0")
 #SET(BT_VERSION_BUILD "") # Temporarily uncomment this line for release procedures
 
-OPTION(BUILD_TESTS "build test applications " OFF)
-
 # Determine build, if needed:
 IF (NOT (DEFINED BT_VERSION_BUILD))
     SET(Git_FIND_QUIETLY TRUE)
@@ -47,13 +45,7 @@ SET(QT_MIN_VERSION 4.5.0)
 SET(QT_USE_QTXML 1)
 SET(QT_USE_QTWEBKIT 1)
 SET(QT_USE_QTMAIN 1)
-if(BUILD_TESTS)
-    SET(QT_USE_QTTEST 1)
-endif(BUILD_TESTS)
 FIND_PACKAGE(Qt4 REQUIRED)
-IF(QT_USE_QTTEST AND QT_QTTEST_FOUND)
-    MESSAGE(STATUS "Using QTest")
-ENDIF(QT_USE_QTTEST AND QT_QTTEST_FOUND)
 IF (QT_QTDBUS_FOUND AND NOT APPLE)
     SET(QT_USE_QTDBUS 1)
     MESSAGE(STATUS "Using DBUS")
@@ -116,8 +108,6 @@ SET(EXECUTABLE_NAME "bibletime")
 IF (APPLE)
     SET(EXECUTABLE_NAME "BibleTime")
 ENDIF (APPLE)
-SET(STATIC_LIB_NAME ${EXECUTABLE_NAME}_static)
-SET(DYNAMIC_LIB_NAME ${EXECUTABLE_NAME}_dynamic)
 
 
 # Define rules to generate ${bibletime_UI_translations} files
@@ -141,64 +131,28 @@ IF (MSVC)
     SOURCE_GROUP( "Icon Files"
         FILES "cmake/BTWinIcon.rc" }
     )
-    ADD_EXECUTABLE(${EXECUTABLE_NAME} WIN32 ${bibletime_MAIN})
+    ADD_EXECUTABLE(${EXECUTABLE_NAME} WIN32 ${common_bibletime_SOURCES})
 ELSE (MSVC)
-    ADD_EXECUTABLE(${EXECUTABLE_NAME} ${bibletime_MAIN})
+    ADD_EXECUTABLE(${EXECUTABLE_NAME} ${common_bibletime_SOURCES})
 ENDIF (MSVC)
 
-# here we create a static library containing all compiled bibletime sources
-# these will be used to create both, a bibletime executable and optionally a
-# dynamic library to be used by tests
-# This prevents compiling the complete source twice, once for the executable
-# and once for the library
-ADD_LIBRARY(${STATIC_LIB_NAME} STATIC EXCLUDE_FROM_ALL ${common_bibletime_SOURCES})
+#IF (CMAKE_BUILD_TYPE STREQUAL "Release")
+#    SET_TARGET_PROPERTIES(${EXECUTABLE_NAME}
+#        PROPERTIES
+#            COMPILE_FLAGS "${SWORD_CFLAGS}" #Enable exception handling
+#    )
+#ENDIF (CMAKE_BUILD_TYPE STREQUAL "Release")
 
 INCLUDE(${QT_USE_FILE})
 TARGET_LINK_LIBRARIES(${EXECUTABLE_NAME}
-    -Wl,-whole-archive # static libraries are included even though they aren't referenced
-        ${STATIC_LIB_NAME} # the actual bibletime compiled sources
-    -Wl,-no-whole-archive
     ${QT_LIBRARIES}
     ${CLUCENE_LIBRARY}
     ${CURL_LIBRARIES} # optional, empty if not found
     ${ICU_LIBRARIES} # optional, empty if not found
     ${ICU_I18N_LIBRARIES} # optional, empty if not found
+    ${ZLIB_LIBRARIES} # optional, empty if not found
     ${SWORD_LIBRARY}
 )
-
-IF (CMAKE_BUILD_TYPE STREQUAL "Release")
-#    SET_TARGET_PROPERTIES(${EXECUTABLE_NAME}
-#        PROPERTIES
-#            COMPILE_FLAGS "${SWORD_CFLAGS}" #Enable exception handling
-#    )
-    TARGET_LINK_LIBRARIES(${EXECUTABLE_NAME}
-        ${ZLIB_LIBRARIES} # optional, empty if not found
-    )
-ENDIF (CMAKE_BUILD_TYPE STREQUAL "Release")
-
-# Tests
-#
-if(BUILD_TESTS)
-    ADD_LIBRARY(${DYNAMIC_LIB_NAME} SHARED)
-    INCLUDE(${QT_USE_FILE})
-    TARGET_LINK_LIBRARIES(${DYNAMIC_LIB_NAME}
-        -Wl,-whole-archive # static libraries are included even though they aren't referenced
-            ${STATIC_LIB_NAME}
-        -Wl,-no-whole-archive
-        ${QT_LIBRARIES}
-        ${CLUCENE_LIBRARY}
-        ${CURL_LIBRARIES} # optional, empty if not found
-        ${ICU_LIBRARIES} # optional, empty if not found
-        ${ICU_I18N_LIBRARIES} # optional, empty if not found
-        ${ZLIB_LIBRARIES} # optional, empty if not found
-        ${SWORD_LIBRARY}
-    )
-    ENABLE_TESTING()
-    INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTTest.cmake")
-    SET(TEST_DIR "${CMAKE_CURRENT_SOURCE_DIR}/src/tests/")
-    add_unit_test(btconfig_test ${TEST_DIR}/btconfig_test.cpp)
-endif(BUILD_TESTS)
-
 
 IF (APPLE)
      # enable support MacOS 10.5+
