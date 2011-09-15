@@ -151,7 +151,10 @@ public: /* Methods: */
      * Call this function after you are done with a started group. Every call to
      * beginGroup() must be matched with a call to this function.
      */
-    void endGroup();
+    inline void endGroup() {
+        Q_ASSERT_X(!m_currentGroups.empty(), "BtConfig", "endGroup() called, but no beginGroup() active.");
+        m_currentGroups.pop_back();
+    }
 
     /*!
      * \brief Returns the current group.

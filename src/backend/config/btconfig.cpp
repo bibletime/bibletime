@@ -290,18 +290,6 @@ void BtConfig::syncConfig() {
     m_settings.sync();
 }
 
-void BtConfig::endGroup()
-{
-    if(m_currentGroups.size() > 0)
-    {
-        m_currentGroups.remove(m_currentGroups.size()-1);
-    }
-    else
-    {
-        Q_ASSERT_X(false, "BtConfig", "An endGroup() was called without a previous beginGroup().");
-    }
-}
-
 QString BtConfig::getGroup()
 {
     QString group;
