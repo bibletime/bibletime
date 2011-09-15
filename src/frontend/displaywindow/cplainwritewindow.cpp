@@ -32,9 +32,6 @@ CPlainWriteWindow::CPlainWriteWindow(QList<CSwordModuleInfo*> moduleList, CMDIAr
     setKey( CSwordKey::createInstance(moduleList.first()) );
 }
 
-
-CPlainWriteWindow::~CPlainWriteWindow() {}
-
 /** Initialize the state of this widget. */
 void CPlainWriteWindow::initView() {
     //  qWarning("CPlainWriteWindow::initView()");

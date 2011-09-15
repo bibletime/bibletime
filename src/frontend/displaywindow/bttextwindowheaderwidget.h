@@ -54,8 +54,6 @@ class BtTextWindowHeaderWidget : public QWidget {
         * A new empty widget. updateMenu() is needed to update the label, menu items etc.
         */
         BtTextWindowHeaderWidget(BtTextWindowHeader *parent, CSwordModuleInfo::ModuleType mtype);
-        /** Does nothing. All resources are freed and children deleted automatically.*/
-        ~BtTextWindowHeaderWidget();
 
     public:
         /**

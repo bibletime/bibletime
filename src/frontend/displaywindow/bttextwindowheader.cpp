@@ -38,8 +38,6 @@ BtTextWindowHeader::BtTextWindowHeader(CSwordModuleInfo::ModuleType modtype,
     connect(window, SIGNAL(sigModuleListChanged()), SLOT(slotWindowModulesChanged()));
 }
 
-BtTextWindowHeader::~BtTextWindowHeader() {}
-
 void BtTextWindowHeader::slotBackendModulesChanged() {
     m_modules = m_window->getModuleList();
 

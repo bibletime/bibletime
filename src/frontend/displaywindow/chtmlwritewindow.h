@@ -26,7 +26,6 @@ class CHTMLWriteWindow : public CPlainWriteWindow  {
         Q_OBJECT
     public:
         CHTMLWriteWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
-        virtual ~CHTMLWriteWindow();
 
         /**
         * Store the settings of this window in the given CProfileWindow object.

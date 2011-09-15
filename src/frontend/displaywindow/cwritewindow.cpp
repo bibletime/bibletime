@@ -23,9 +23,6 @@ using namespace Profile;
 CWriteWindow::CWriteWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent)
         : CDisplayWindow(modules, parent), m_writeDisplay(0) {}
 
-CWriteWindow::~CWriteWindow() {}
-
-
 void CWriteWindow::insertKeyboardActions( BtActionCollection* const ) {}
 
 void CWriteWindow::initConnections() {

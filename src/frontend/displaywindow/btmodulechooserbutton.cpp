@@ -30,8 +30,6 @@ BtModuleChooserButton::BtModuleChooserButton(BtModuleChooserBar *parent, CSwordM
     setPopupMode(QToolButton::InstantPopup);
 }
 
-BtModuleChooserButton::~BtModuleChooserButton() {}
-
 void BtModuleChooserButton::recreateMenu(QStringList newModulesToUse, QString thisModule, int newIndex, int leftLikeModules) {
     populateMenu();
     updateMenu(newModulesToUse, thisModule, newIndex, leftLikeModules);

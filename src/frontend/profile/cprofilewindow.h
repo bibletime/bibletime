@@ -31,7 +31,6 @@ class CProfileWindow {
         };
 
         CProfileWindow(CSwordModuleInfo::ModuleType type = CSwordModuleInfo::Unknown);
-        ~CProfileWindow();
         /**
         * Sets the modules.
         */

@@ -73,7 +73,6 @@ class CPlainWriteDisplay : public QTextEdit, public CWriteDisplay  {
         friend class CDisplay;
 
         CPlainWriteDisplay(CWriteWindow* parentWindow, QWidget* parent);
-        virtual ~CPlainWriteDisplay();
 
         /**
         * Reimplementation from QTextEdit to manage drops of our drag and drop objects.

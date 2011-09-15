@@ -50,7 +50,6 @@ class CReadDisplay :  public CDisplay {
         friend class BtHtmlJsObject;
 
         CReadDisplay( CReadWindow* readWindow );
-        ~CReadDisplay();
 
         /**
         * Sets the current anchor to the parameter.

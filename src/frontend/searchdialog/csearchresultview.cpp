@@ -33,8 +33,6 @@ CSearchResultView::CSearchResultView(QWidget* parent)
     initConnections();
 }
 
-CSearchResultView::~CSearchResultView() {}
-
 /** Initializes the view of this widget. */
 void CSearchResultView::initView() {
     namespace DU = util::directory;

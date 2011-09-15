@@ -54,8 +54,6 @@ BtTextWindowHeaderWidget::BtTextWindowHeaderWidget(BtTextWindowHeader *parent, C
     layout->addWidget(m_separator);
 }
 
-BtTextWindowHeaderWidget::~BtTextWindowHeaderWidget() {}
-
 void BtTextWindowHeaderWidget::recreateWidget(QStringList newModulesToUse, QString thisModule, int newIndex, int lefLikeModules) {
     populateMenu();
     updateWidget(newModulesToUse, thisModule, newIndex, lefLikeModules);

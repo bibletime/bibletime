@@ -23,7 +23,6 @@ class BtTextWindowHeader: public QWidget, public BtWindowModuleChooser {
         Q_OBJECT
     public:
         BtTextWindowHeader(CSwordModuleInfo::ModuleType modtype, QStringList modules, CDisplayWindow *window);
-        virtual ~BtTextWindowHeader();
 
     public slots:
         /**

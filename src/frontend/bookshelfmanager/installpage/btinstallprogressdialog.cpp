@@ -121,9 +121,6 @@ void BtInstallProgressDialog::startThreads() {
     qDebug() << "BtInstallProgressDialog::startThreads end";
 }
 
-BtInstallProgressDialog::~BtInstallProgressDialog() {}
-
-
 void BtInstallProgressDialog::slotOneItemCompleted(QString module, QString source, int status) {
     QString message;
     //status comes from the sword installer.
