@@ -28,8 +28,6 @@ class BtInstallProgressDialog : public QDialog {
                                 const QString &destination, QWidget *parent = 0,
                                 Qt::WindowFlags flags = 0);
 
-        ~BtInstallProgressDialog();
-
     public slots:
         void slotOneItemCompleted(QString module, QString source, int status);
         void slotOneItemStopped(QString module, QString source);

@@ -29,8 +29,6 @@ using namespace Profile;
 CHTMLWriteWindow::CHTMLWriteWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent)
         : CPlainWriteWindow(modules, parent) {}
 
-CHTMLWriteWindow::~CHTMLWriteWindow() {}
-
 void CHTMLWriteWindow::initView() {
     CWriteDisplay* writeDisplay = CDisplay::createWriteInstance(this, CDisplay::HTMLDisplay);
     Q_ASSERT(writeDisplay);

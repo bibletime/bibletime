@@ -28,7 +28,6 @@ class OSISMorphSegmentation : public sword::SWOptionFilter {
 
     public:
         OSISMorphSegmentation();
-        virtual ~OSISMorphSegmentation();
 
         virtual char processText(sword::SWBuf &text, const sword::SWKey *key = 0, const sword::SWModule *module = 0);
 };

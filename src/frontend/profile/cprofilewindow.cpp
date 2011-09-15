@@ -31,8 +31,6 @@ CProfileWindow::CProfileWindow(CSwordModuleInfo::ModuleType type)
     m_scrollbarPos.vertical = 0;
 }
 
-CProfileWindow::~CProfileWindow() {}
-
 /** Returns the size of the window including the x,y coordinates. */
 const QRect& CProfileWindow::geometry() const {
     return m_windowGeometry;

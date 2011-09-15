@@ -32,8 +32,6 @@ CPlainWriteDisplay::CPlainWriteDisplay(CWriteWindow* parentWindow, QWidget* pare
             connectionsProxy(), SLOT(emitTextChanged()));
 }
 
-CPlainWriteDisplay::~CPlainWriteDisplay() {}
-
 /** Reimplementation. */
 void CPlainWriteDisplay::selectAll() {
     QTextEdit::selectAll();

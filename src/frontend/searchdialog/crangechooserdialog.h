@@ -32,7 +32,7 @@ class CRangeChooserDialog : public QDialog {
         class RangeItem : public QListWidgetItem {
             public:
                 RangeItem(QListWidget*, QListWidgetItem* afterThis = 0, const QString caption = QString::null, const QString range = QString::null);
-                ~RangeItem();
+
                 const QString& range() const;
                 QString caption() const;
                 void setRange(QString range);

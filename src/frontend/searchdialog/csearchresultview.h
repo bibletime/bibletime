@@ -27,7 +27,6 @@ class CSearchResultView  : public QTreeWidget {
         Q_OBJECT
     public:
         CSearchResultView(QWidget* parent);
-        virtual ~CSearchResultView();
 
         /**
           \returns the module which is currently used.

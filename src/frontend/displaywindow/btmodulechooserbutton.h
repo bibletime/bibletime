@@ -44,8 +44,6 @@ class BtModuleChooserButton : public QToolButton  {
         * A new empty button. updateMenu() is needed to update the icon, menu items etc.
         */
         BtModuleChooserButton(BtModuleChooserBar *parent, CSwordModuleInfo::ModuleType mtype);
-        /** Does nothing. All resources are freed and children deleted automatically.*/
-        ~BtModuleChooserButton();
 
         // /** Returns the module name this button represents. Not needed?*/
         //QString module();
