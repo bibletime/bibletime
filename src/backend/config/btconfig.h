@@ -328,8 +328,6 @@ public: /* Methods: */
      */
     void setDefaultSwordModuleByType(const QString& moduleType, const CSwordModuleInfo* const module);
 
-    void readSession();
-
 private: /* Methods: */
 
     explicit BtConfig(const QString& settingsFile);
