@@ -290,7 +290,7 @@ void CRangeChooserDialog::slotOk() {
 void CRangeChooserDialog::slotDefault() {
     //qDebug() << "CRangeChooserDialog::slotDefault";
     m_rangeList->clear();
-    getBtConfig().deleteValue("properties/searchScopes");
+    getBtConfig().deleteSearchScopesWithCurrentLocale();
     BtConfig::StringMap map = getBtConfig().getSearchScopesForCurrentLocale();
     BtConfig::StringMap::Iterator it;
     for (it = map.begin(); it != map.end(); ++it) {

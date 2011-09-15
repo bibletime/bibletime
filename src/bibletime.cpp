@@ -308,7 +308,7 @@ void BibleTime::processCommandline(bool ignoreSession, const QString &bibleKey) 
     else {
         getBtConfig().setValue("state/crashedLastTime", true);
     }
-    getBtConfig().syncConfig();
+    getBtConfig().sync();
 }
 
 bool BibleTime::event(QEvent* event) {

@@ -96,7 +96,21 @@ public: /* Methods: */
      * \returns QVariant of the value.
      */
     template<typename T>
-    T getValue(const QString& key);
+    T getValue(const QString &key) {
+        const QString fullKey = group() + key;
+
+        Q_ASSERT_X(!fullKey.startsWith(m_sessionsGroup),
+                   "BtConfig", "Accessing session values directly is prohibited!");
+        Q_ASSERT_X(fullKey != m_currentSessionKey,
+                   "BtConfig", "Accessing session values directly is prohibited!");
+        Q_ASSERT_X(m_defaults.contains(fullKey),
+                   "BtConfig", "Tried to access unspecified key!");
+
+        const QString realKey = m_sessionSettings.contains(fullKey)
+                              ? m_currentSessionCache + fullKey
+                              : fullKey;
+        return m_settings.value(realKey, m_defaults.value(fullKey)).value<T>();
+    }
 
     /*!
      * \brief Set a value.
@@ -110,29 +124,29 @@ public: /* Methods: */
      * \tparam[in] value Value to set.
      */
     template<typename T>
-    void setValue(const QString& key, T value);
+    void setValue(const QString &key, const T &value) {
+        const QString fullKey = group() + key;
 
-    /*!
-     * \brief Checks whether a value has been manually set.
-     * \param[in] key Key to check for.
-     */
-    bool hasValue(const QString& key);
+        Q_ASSERT_X(!fullKey.startsWith(m_sessionsGroup),
+                   "BtConfig", "Accessing session values directly is prohibited!");
+        Q_ASSERT_X(fullKey != m_currentSessionKey,
+                   "BtConfig", "Accessing session values directly is prohibited!");
+        Q_ASSERT_X(m_defaults.contains(fullKey),
+                   "BtConfig", "Tried to accessing unspecified key!");
 
-    /*!
-     * \brief Delete a key.
-     *
-     * Deletes a key. It is unimportant whether a key has been set before.
-     * When a key is deleted the key will from then on return the default
-     * value again.
-     *
-     * \param[in] key Key to delete.
-     */
-    void deleteValue(const QString& key);
+
+        const QString realKey = m_sessionSettings.contains(fullKey)
+                              ? m_currentSessionCache + fullKey
+                              : fullKey;
+        m_settings.setValue(realKey, QVariant::fromValue<T>(value));
+    }
 
     /*!
      * \brief Synchronize the underlying QSettings.
      */
-    void syncConfig();
+    inline void sync() {
+        m_settings.sync();
+    }
 
     /*!
      * \brief Begin a configuration group.
@@ -143,7 +157,12 @@ public: /* Methods: */
      * you will mess up all calls to get/setValue() by others.
      * \param[in] prefix the prefix to use
      */
-    inline void beginGroup(const QString& prefix);
+    inline void beginGroup(const QString &prefix) {
+        Q_ASSERT(!prefix.isEmpty());
+        Q_ASSERT(!prefix.startsWith('/'));
+        Q_ASSERT(!prefix.endsWith('/'));
+        m_currentGroups.append(prefix);
+    }
 
     /*!
      * \brief Ends a previously set configuration group.
@@ -152,8 +171,8 @@ public: /* Methods: */
      * beginGroup() must be matched with a call to this function.
      */
     inline void endGroup() {
-        Q_ASSERT_X(!m_currentGroups.empty(), "BtConfig", "endGroup() called, but no beginGroup() active.");
-        m_currentGroups.pop_back();
+        Q_ASSERT_X(!m_currentGroups.isEmpty(), "BtConfig", "endGroup() called, but no beginGroup() active.");
+        m_currentGroups.removeLast();
     }
 
     /*!
@@ -164,7 +183,9 @@ public: /* Methods: */
      *
      * \returns group string or "" if group is empty
      */
-    QString getGroup();
+    inline QString group() const {
+        return (m_currentGroups.isEmpty() ? QString() : m_currentGroups.join("/") + '/');
+    }
 
     // helper functions
 
@@ -281,6 +302,11 @@ public: /* Methods: */
     void setSearchScopesWithCurrentLocale(StringMap searchScopes);
 
     /*!
+      * Deletes the searchScopes given in the current locale.
+      */
+    void deleteSearchScopesWithCurrentLocale();
+
+    /*!
      * \brief Returns default sword module info class for a given module type.
      *
      * This is basically a convenience function for getting the respective
@@ -316,7 +342,7 @@ private: /* Fields: */
     const static QString m_currentSessionKey;
     const static QString m_defaultSessionName;
 
-    QVector<QString> m_currentGroups;
+    QStringList m_currentGroups;
 
     QHash<QString, QVariant> m_defaults;
     QSet<QString> m_sessionSettings;
@@ -338,48 +364,6 @@ Q_DECLARE_METATYPE(QList<int>)
  */
 inline BtConfig &getBtConfig() {
     return BtConfig::getInstance();
-}
-
-template<typename T>
-T BtConfig::getValue(const QString& key)
-{
-    QString fullKey = getGroup() + key;
-    //accessing session values directly is prohibited
-        Q_ASSERT(not fullKey.startsWith(m_sessionsGroup));
-        Q_ASSERT(fullKey != m_currentSessionKey);
-
-    // accessing values not listed in defaults is prohibited (this effectively prevents typos)
-        Q_ASSERT_X(m_defaults.contains(fullKey), "BtConfig", QString(fullKey + " was read accessed, this is a nonexisting and thus prohibited key.").toLatin1());
-
-    // retrieve value from config
-        if(m_sessionSettings.contains(fullKey))
-        {
-            return m_settings.value(m_currentSessionCache + fullKey, m_defaults.value(fullKey)).value<T>();
-        }
-        else
-            return m_settings.value(fullKey, m_defaults.value(fullKey)).value<T>();
-}
-
-template<typename T>
-void BtConfig::setValue(const QString& key, T value)
-{
-    QString fullKey = getGroup() + key;
-    //accessing session values directly is prohibited
-        Q_ASSERT(not fullKey.startsWith(m_sessionsGroup));
-        Q_ASSERT(fullKey != m_currentSessionKey);
-
-    // accessing values not listed in defaults is prohibited (this effectively prevents typos)
-        Q_ASSERT_X(m_defaults.contains(fullKey), "BtConfig", QString(fullKey + " was write accessed, this is a nonexisting and thus prohibited key.").toLatin1());
-
-    if(m_sessionSettings.contains(fullKey))
-        m_settings.setValue(m_currentSessionCache + fullKey, QVariant::fromValue<T>(value));
-    else
-        m_settings.setValue(fullKey, QVariant::fromValue<T>(value));
-}
-
-inline void BtConfig::beginGroup(const QString& prefix)
-{
-    m_currentGroups.push_back(prefix + "/");
 }
 
 #endif // BTCONFIG_H
