@@ -11,7 +11,6 @@
 
 #include <QString>
 #include <QRegExp>
-#include <QDebug>
 #include "backend/keys/cswordkey.h"
 #include "backend/keys/cswordversekey.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
@@ -112,7 +111,6 @@ const QString CDisplayRendering::keyToHTMLAnchor(const QString& key) {
 
 const QString CDisplayRendering::finishText( const QString& oldText, KeyTree& tree ) {
     QList<const CSwordModuleInfo*> modules = collectModules(&tree);
-    qDebug() << "CDisplayRendering::finishText";
 
     //marking words is very slow, we have to find a better solution
 

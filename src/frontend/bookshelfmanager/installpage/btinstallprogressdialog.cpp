@@ -11,7 +11,6 @@
 
 #include <QApplication>
 #include <QCloseEvent>
-#include <QDebug>
 #include <QDialog>
 #include <QHeaderView>
 #include <QMultiMap>
@@ -91,13 +90,11 @@ void BtInstallProgressDialog::startThreads() {
     //foreach (QString mName, m_threadsByModule.keys()) {
     //}
     //QList<CSwordModuleInfo*> CSwordBackend::instance()()->takeModulesFromList(m_threadsByModule.keys());
-    qDebug() << "start threads...";
     //loop through the multimap of the waiting threads, start at most 3 threads for each source
     QMultiMap<QString, BtInstallThread*>::iterator threadIterator = m_waitingThreads.end();
 // concurrency is disabled for now
 //     while (threadIterator != m_waitingThreads.end()) {
 //         QString sourceName = threadIterator.key();
-//         qDebug() << sourceName;
 //         if (m_runningThreads.values(sourceName).count() < 3) {
 //             BtInstallThread* t = threadIterator.value();
 //             m_runningThreads.insert(sourceName, t);
@@ -117,8 +114,6 @@ void BtInstallProgressDialog::startThreads() {
         threadIterator = m_waitingThreads.erase(threadIterator);
         t->start();
     }
-
-    qDebug() << "BtInstallProgressDialog::startThreads end";
 }
 
 void BtInstallProgressDialog::slotOneItemCompleted(QString module, QString source, int status) {
@@ -153,9 +148,7 @@ void BtInstallProgressDialog::oneItemStoppedOrCompleted(QString module, QString 
 //concurrency is disabled for now
 //     //start a waiting thread if there are any
 //     QList<BtInstallThread*> threadsForSource = m_waitingThreads.values(source);
-//     qDebug() << threadsForSource;
 //     if (!threadsForSource.isEmpty()) {
-//         qDebug() << "Threads are waiting for turn";
 //         BtInstallThread* thread = threadsForSource.at(0);
 //         m_waitingThreads.remove(source, thread);
 //         m_runningThreads.insert(source, thread);
@@ -196,8 +189,6 @@ void BtInstallProgressDialog::slotStopInstall() {
 }
 
 void BtInstallProgressDialog::slotStatusUpdated(QString module, int status) {
-    //qDebug() << "BtInstallProgressDialog::slotStatusUpdated";
-    //qDebug() << "module:" << module << "status:" << status;
     // find the progress bar for this module and update the value
     QWidget* itemWidget = m_statusWidget->itemWidget(getItem(module) , 1);
     QProgressBar* bar = dynamic_cast<QProgressBar*>(itemWidget);
@@ -209,7 +200,6 @@ void BtInstallProgressDialog::slotInstallStarted(QString module, QString) {
 }
 
 void BtInstallProgressDialog::slotDownloadStarted(QString module) {
-    qDebug() << "BtInstallProgressDialog::slotDownloadStarted" << module;
     getItem(module)->setText(1, QString::null);
     //m_statusWidget->itemWidget(getItem(module), 1)->setVisible(true);
 
@@ -220,13 +210,10 @@ void BtInstallProgressDialog::slotDownloadStarted(QString module) {
 }
 
 QTreeWidgetItem* BtInstallProgressDialog::getItem(QString moduleName) {
-    //qDebug() << "BtInstallProgressDialog::getItem" << moduleName;
     return m_statusWidget->findItems(moduleName, Qt::MatchExactly).at(0);
 }
 
 void BtInstallProgressDialog::closeEvent(QCloseEvent* event) {
-    qDebug() << "BtInstallProgressDialog::closeEvent";
-
     if (event->spontaneous()) {
         event->ignore();
         return;

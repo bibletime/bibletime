@@ -9,7 +9,6 @@
 
 #include "frontend/bookmarks/btbookmarkloader.h"
 
-#include <QDebug>
 #include <QDomElement>
 #include <QDomNode>
 #include <QDomDocument>
@@ -27,7 +26,6 @@
 #define CURRENT_SYNTAX_VERSION 1
 
 QList<QTreeWidgetItem*> BtBookmarkLoader::loadTree(QString fileName) {
-    qDebug() << "BtBookmarkLoader::loadTree";
     QList<QTreeWidgetItem*> itemList;
 
     QDomDocument doc;
@@ -44,7 +42,6 @@ QList<QTreeWidgetItem*> BtBookmarkLoader::loadTree(QString fileName) {
     QDomElement child = document.firstChild().toElement();
 
     while ( !child.isNull() && child.parentNode() == document) {
-        qDebug() << "BtBookmarkLoader::loadTree while start";
         QTreeWidgetItem* i = handleXmlElement(child, 0);
         itemList.append(i);
         if (!child.nextSibling().isNull()) {
@@ -60,17 +57,14 @@ QList<QTreeWidgetItem*> BtBookmarkLoader::loadTree(QString fileName) {
 }
 
 QTreeWidgetItem* BtBookmarkLoader::handleXmlElement(QDomElement& element, QTreeWidgetItem* parent) {
-    qDebug() << "BtBookmarkLoader::handleXmlElement";
     QTreeWidgetItem* newItem = 0;
     if (element.tagName() == "Folder") {
-        qDebug() << "BtBookmarkLoader::handleXmlElement: found folder";
         BtBookmarkFolder* newFolder = new BtBookmarkFolder(QString::null, parent);
         if (element.hasAttribute("caption")) {
             newFolder->setText(0, element.attribute("caption"));
         }
         QDomNodeList childList = element.childNodes();
         for (unsigned int i = 0; i < childList.length(); i++) {
-            qDebug() << "BtBookmarkLoader::handleXmlElement: go through child list of folder";
             QDomElement newElement = childList.at(i).toElement();
             QTreeWidgetItem* newChildItem = handleXmlElement(newElement, newFolder);
             newFolder->addChild(newChildItem);
@@ -79,7 +73,6 @@ QTreeWidgetItem* BtBookmarkLoader::handleXmlElement(QDomElement& element, QTreeW
         newItem = newFolder;
     }
     else if (element.tagName() == "Bookmark") {
-        qDebug() << "BtBookmarkLoader::handleXmlElement: found bookmark";
         BtBookmarkItem* newBookmarkItem = new BtBookmarkItem(parent);
         if (element.hasAttribute("modulename")) {
             //we use the name in all cases, even if the module isn't installed anymore
@@ -97,7 +90,6 @@ QTreeWidgetItem* BtBookmarkLoader::handleXmlElement(QDomElement& element, QTreeW
         newBookmarkItem->update();
         newItem = newBookmarkItem;
     }
-    qDebug() << "BtBookmarkLoader::handleXmlElement: return new item";
     return newItem;
 }
 

@@ -11,7 +11,6 @@
 
 #include <QApplication>
 #include <QAction>
-#include <QDebug>
 #include <QTimer>
 #include <QToolButton>
 #include "backend/btinstallbackend.h"
@@ -56,8 +55,6 @@ BtInstallPageWorksWidget::BtInstallPageWorksWidget(
             , m_myModel(0)
 {
     namespace DU = util::directory;
-
-    qDebug() << "Creating new BtInstallPageWorksWidget for source" << source.caption;
 
     setTreeModel(new BtInstallPageModel(g, this));
 

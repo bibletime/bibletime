@@ -11,7 +11,6 @@
 
 #include <QApplication>
 #include <QClipboard>
-#include <QDebug>
 #include <QFileDialog>
 #include <QMenu>
 #include <QTimer>
@@ -38,8 +37,6 @@ void CDisplayConnections::saveAsPlain() {
 
 /** Emits the signal. */
 void CDisplayConnections::emitReferenceClicked( const QString& module, const QString& key) {
-    qDebug() << "CDisplayConnections::emitReferenceClicked";
-    qDebug() << "Module: " << module << " key: " << key;
     emit referenceClicked( module, key );
 }
 

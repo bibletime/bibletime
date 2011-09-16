@@ -60,7 +60,6 @@ void BtTextWindowHeader::slotWindowModulesChanged() {
 }
 
 void BtTextWindowHeader::adjustWidgetCount(bool adjustToZero) {
-    //qDebug() << "BtModuleChooserBar::ajustButtonCount";
     int widgetCountDifference = 0;
     if (adjustToZero) {
         widgetCountDifference = m_widgetList.count();
@@ -105,7 +104,6 @@ BtTextWindowHeaderWidget* BtTextWindowHeader::addWidget() {
 }
 
 void BtTextWindowHeader::setModules( QStringList useModules ) {
-    qDebug() << "BtModuleChooserBar::setModules";
     m_modules = useModules;
     adjustWidgetCount(true);
 
@@ -114,7 +112,6 @@ void BtTextWindowHeader::setModules( QStringList useModules ) {
         addWidget();
     }
     updateWidgets();
-    //qDebug() << "BtModuleChooserBar::setModules end";
 }
 
 void BtTextWindowHeader::updateWidgets() {
@@ -122,7 +119,6 @@ void BtTextWindowHeader::updateWidgets() {
     for (int i = 0; i < m_widgetList.count(); i++) {
         BtTextWindowHeaderWidget* w = m_widgetList.at(i);
         //QString moduleName = m_modules.at(i);
-        //qDebug() << "refresh button's menu:" << moduleName << i;
         w->updateWidget(m_modules, m_modules.at(i), i, leftLikeModules);
     }
 }

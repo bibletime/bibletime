@@ -205,8 +205,6 @@ void BtSearchOptionsArea::initConnections() {
 
 /** Sets the modules used by the search. */
 void BtSearchOptionsArea::setModules(const QList<const CSwordModuleInfo*> &modules) {
-    qDebug() << "BtSearchOptionsArea::setModules";
-    qDebug() << modules;
     QString t;
 
     m_modules.clear(); //remove old modules
@@ -251,10 +249,8 @@ void BtSearchOptionsArea::setModules(const QList<const CSwordModuleInfo*> &modul
 
 // Catch activated signal of module selector combobox
 void BtSearchOptionsArea::moduleListTextSelected(int index) {
-    qDebug() << "BtSearchOptionsArea::moduleListTextSelected";
     //create the module list
     QString text = m_modulesCombo->itemText(index);
-    qDebug() << text;
     QStringList moduleNamesList = text.split(", ");
     QList<const CSwordModuleInfo*> moduleList;
     foreach(QString name, moduleNamesList) {
@@ -377,16 +373,13 @@ void BtSearchOptionsArea::addToHistory(const QString& text) {
 }
 
 void BtSearchOptionsArea::slotSearchTextEditReturnPressed() {
-    qDebug() << "BtSearchOptionsArea::slotSearchTextEditReturnPressed";
     m_searchTextCombo->addToHistory( m_searchTextCombo->currentText() );
     emit sigStartSearch();
 }
 
 bool BtSearchOptionsArea::eventFilter(QObject* obj, QEvent* event) {
     if (event->type() == QEvent::KeyPress || event->type() == QEvent::KeyRelease) {
-        //qDebug() << "BtSearchOptionsArea::eventFilter" << obj << event;
         if (obj == m_searchTextCombo->view() || obj == m_searchTextCombo || obj == m_searchTextCombo->lineEdit()) {
-            //qDebug() << "BtSearchOptionsArea::eventFilter" << obj << event;
             obj->event(event);
             // don't handle this event in parent
             event->accept();
@@ -398,10 +391,7 @@ bool BtSearchOptionsArea::eventFilter(QObject* obj, QEvent* event) {
 
 void BtSearchOptionsArea::slotValidateText(const QString& /*newText*/) {
 //     static const QRegExp re("\\b(AND|OR)\\b");
-//     qDebug() << "new text:" << newText;
-//     qDebug() << "contains:" << (newText.contains(re));
 //     if (newText.isEmpty() || !newText.contains(re) ) {
-//         qDebug()<< "no AND/OR";
 //         if (!m_typeAndButton->isEnabled()) {
 //             m_typeOrButton->setEnabled(true);
 //             m_typeAndButton->setEnabled(true);
@@ -410,7 +400,6 @@ void BtSearchOptionsArea::slotValidateText(const QString& /*newText*/) {
 //         }
 //     }
 //     else {
-//         qDebug() << "AND/OR!";
 //         if (m_typeAndButton->isEnabled()) {
 //             m_typeOrButton->setChecked(true);
 //             m_typeOrButton->setEnabled(false);

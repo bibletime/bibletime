@@ -120,7 +120,6 @@ BtInstallPathDialog::~BtInstallPathDialog() {
 }
 
 void BtInstallPathDialog::updateTopLevelItems() {
-    qDebug() << "BtInstallPathDialog::updateTopLevelItems";
     if (m_writableItem->childCount()) {
         m_writableItem->setHidden(false);
         m_swordPathListBox->expandItem(m_writableItem);
@@ -209,18 +208,14 @@ void BtInstallPathDialog::slotAddClicked() {
 }
 
 void BtInstallPathDialog::slotRemoveClicked() {
-    qDebug() << "BtInstallPathDialog::slotRemoveClicked";
     QTreeWidgetItem* i = m_swordPathListBox->selectedItems().value(0);
-    qDebug() << i;
     if (i && i->parent() != m_swordPathListBox->invisibleRootItem()) {
-        qDebug() << "delete" << i;
         delete i;
     }
     updateTopLevelItems();
 }
 
 void BtInstallPathDialog::writeSwordConfig() {
-    qDebug() << "BtInstallPathDialog::writeSwordConfig";
     QStringList targets;
     QTreeWidgetItemIterator it(m_swordPathListBox, QTreeWidgetItemIterator::NoChildren | QTreeWidgetItemIterator::Enabled | QTreeWidgetItemIterator::NotHidden);
     while (*it) {

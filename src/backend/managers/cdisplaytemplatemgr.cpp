@@ -60,8 +60,6 @@ QString CDisplayTemplateMgr::fillTemplate(const QString &name,
                                           const QString &content,
                                           const Settings &settings)
 {
-    qDebug() << "CDisplayTemplateMgr::fillTemplate";
-
     const QString templateName = m_cssMap.contains(name) ? name : defaultTemplate();
 
     QString displayTypeString;
@@ -123,12 +121,8 @@ QString CDisplayTemplateMgr::fillTemplate(const QString &name,
     QString langCSS;
     CLanguageMgr::LangMap langMap = CLanguageMgr::instance()->availableLanguages();
 
-    qDebug() << "langMap length:" << langMap.count();
-    qDebug() << "loop through langMap";
     foreach(const CLanguageMgr::Language* lang, langMap) {
         //const CLanguageMgr::Language* lang = *it;
-        //qDebug() << "foreach, lang: ";
-        //qDebug() << lang;
 
         //if (lang->isValid() && CBTConfig::get(lang).first) {
         if (!lang->abbrev().isEmpty() && CBTConfig::get(lang).first) {
@@ -181,7 +175,6 @@ QString CDisplayTemplateMgr::fillTemplate(const QString &name,
                       .replace("#MODNAME#", moduleName)
                       .replace("#MODULE_STYLESHEET#", QString(""));	// Let's fix this!
 
-    //qDebug() << t;
     return t;
 }
 

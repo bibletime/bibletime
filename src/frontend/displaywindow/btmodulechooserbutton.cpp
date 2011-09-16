@@ -26,7 +26,6 @@ BtModuleChooserButton::BtModuleChooserButton(BtModuleChooserBar *parent, CSwordM
         : QToolButton(parent),
         m_moduleType(mtype),
         m_popup(0) {
-    //qDebug()<<"BtModuleChooserButton::BtModuleChooserButton";
     setPopupMode(QToolButton::InstantPopup);
 }
 
@@ -36,7 +35,6 @@ void BtModuleChooserButton::recreateMenu(QStringList newModulesToUse, QString th
 }
 
 const QString BtModuleChooserButton::iconName() {
-    qDebug() << "BtModuleChooserButton::iconName, has module:" << m_hasModule;
     switch (m_moduleType) {
         case CSwordModuleInfo::Bible:
             return (m_hasModule) ? CResMgr::modules::bible::icon_unlocked : CResMgr::modules::bible::icon_add;
@@ -52,7 +50,6 @@ const QString BtModuleChooserButton::iconName() {
 }
 
 void BtModuleChooserButton::updateMenu(QStringList newModulesToUse, QString thisModule, int newIndex, int leftLikeModules) {
-    //qDebug() << "BtModuleChooserButton::updateMenu" << newModulesToUse << thisModule << newIndex << this;
     m_id = newIndex;
 
     // create the menu if it doesn't exist
@@ -98,13 +95,10 @@ void BtModuleChooserButton::updateMenu(QStringList newModulesToUse, QString this
             }
         }
     }
-    //qDebug()<<"BtModuleChooserButton::modulesChanged end";
 }
 
 /** Is called after a module was selected in the popup */
 void BtModuleChooserButton::moduleChosen( QAction* action ) {
-    //qDebug() << "BtModuleChooserButton::moduleChosen";
-
     if (action->text() == tr("NONE")) { // note: this is for m_popup, the toplevel!
         if (m_hasModule) {
             qDebug() << "remove module" << m_id;
@@ -128,7 +122,6 @@ void BtModuleChooserButton::moduleChosen( QAction* action ) {
 
 
 void BtModuleChooserButton::populateMenu() {
-    //qDebug()<<"BtModuleChooserButton::populateMenu";
     qDeleteAll(m_submenus);
     m_submenus.clear();
     delete m_popup;
@@ -173,7 +166,6 @@ void BtModuleChooserButton::populateMenu() {
 }
 
 void BtModuleChooserButton::addItemToMenu(BTModuleTreeItem* item, QMenu* menu) {
-    qDebug() << "BtModuleChooserButton::addItemToMenu";
     foreach (BTModuleTreeItem* i, item->children()) {
 
         if (i->type() == BTModuleTreeItem::Language ||

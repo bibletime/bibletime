@@ -10,7 +10,6 @@
 #include "frontend/keychooser/ckeychooser.h"
 
 #include <QAction>
-#include <QDebug>
 #include "backend/drivers/cswordbiblemoduleinfo.h"
 #include "backend/drivers/cswordcommentarymoduleinfo.h"
 #include "backend/drivers/cswordlexiconmoduleinfo.h"
@@ -26,7 +25,6 @@ CKeyChooser::CKeyChooser(const QList<const CSwordModuleInfo*> &, BTHistory* hist
                          CSwordKey *, QWidget *parent)
         : QWidget(parent),
         m_history(historyPtr) {
-    //qDebug() << "CKeyChooser::CKeyChooser";
     bool ok = QObject::connect(history(), SIGNAL(historyMoved(QString&)), this, SLOT(setKey(QString&)));
     Q_ASSERT(ok);
 }

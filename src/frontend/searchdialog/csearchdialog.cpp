@@ -181,7 +181,6 @@ QString CSearchDialog::prepareSearchText(const QString& orig) {
     static const QRegExp orWords("\\bor\\b", Qt::CaseInsensitive);
     QString text("");
     if (m_searchOptionsArea->searchType() == BtSearchOptionsArea::AndType) {
-        qDebug() << "AND type";
         text = orig.simplified();
         text.remove(syntaxCharacters);
         qDebug() << "After syntax characters removed:" << text;

@@ -10,7 +10,6 @@
 #include "frontend/settingsdialogs/cacceleratorsettings.h"
 
 #include <QComboBox>
-#include <QDebug>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QList>
@@ -126,8 +125,6 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(CConfigurationDialog *parent)
     m_typeChooser->setFocus(Qt::MouseFocusReason);
 
     retranslateUi();
-
-    qDebug() << "CAcceleratorSettingsPage::CAcceleratorSettingsPage end";
 }
 
 void CAcceleratorSettingsPage::retranslateUi() {

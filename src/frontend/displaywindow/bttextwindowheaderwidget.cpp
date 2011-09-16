@@ -9,8 +9,6 @@
 
 #include "frontend/displaywindow/bttextwindowheaderwidget.h"
 
-#include <QDebug>
-//#include <QHash>
 #include <QMenu>
 #include <QString>
 #include <QToolButton>
@@ -61,7 +59,6 @@ void BtTextWindowHeaderWidget::recreateWidget(QStringList newModulesToUse, QStri
 
 // don't remove yet, maybe we'll add icons to buttons...
 // const QString BtTextWindowHeaderWidget::iconName() {
-//     qDebug() << "BtTextWindowHeaderWidget::iconName, has module:" << m_hasModule;
 //     switch (m_moduleType) {
 //         case CSwordModuleInfo::Bible:
 //             return (m_hasModule) ? CResMgr::modules::bible::icon_unlocked : CResMgr::modules::bible::icon_add;
@@ -77,7 +74,6 @@ void BtTextWindowHeaderWidget::recreateWidget(QStringList newModulesToUse, QStri
 // }
 
 void BtTextWindowHeaderWidget::updateWidget(QStringList newModulesToUse, QString thisModule, int newIndex, int leftLikeModules) {
-    //qDebug() << "BtTextWindowHeaderWidget::updateMenu" << newModulesToUse << thisModule << newIndex << this;
     m_label->setText(thisModule);
     m_id = newIndex;
     // create the menu if it doesn't exist
@@ -128,8 +124,6 @@ void BtTextWindowHeaderWidget::updateWidget(QStringList newModulesToUse, QString
 
 /** Is called after a module was selected in the popup */
 void BtTextWindowHeaderWidget::moduleChosen( QAction* action ) {
-    //qDebug() << "BtTextWindowHeaderWidget::moduleChosen";
-
     if (action->property(ActionType).toInt() == RemoveAction) { // note: this is for m_popup, the toplevel!
         emit sigModuleRemove(m_id);
         return;
@@ -145,7 +139,6 @@ void BtTextWindowHeaderWidget::moduleChosen( QAction* action ) {
 
 
 void BtTextWindowHeaderWidget::populateMenu() {
-    //qDebug()<<"BtTextWindowHeaderWidget::populateMenu";
     delete m_popup;
     m_popup = new QMenu(m_button);
 
@@ -204,7 +197,6 @@ void BtTextWindowHeaderWidget::populateMenu() {
 }
 
 void BtTextWindowHeaderWidget::addItemToMenu(BTModuleTreeItem* item, QMenu* menu, TypeOfAction actionType) {
-    qDebug() << "BtTextWindowHeaderWidget::addItemToMenu";
     foreach (BTModuleTreeItem* i, item->children()) {
 
         if (i->type() == BTModuleTreeItem::Language ||

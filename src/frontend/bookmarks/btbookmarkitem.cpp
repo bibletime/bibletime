@@ -10,7 +10,6 @@
 #include "frontend/bookmarks/btbookmarkitem.h"
 
 #include <QSharedPointer>
-#include <QDebug>
 #include "backend/config/cbtconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/keys/cswordversekey.h"
@@ -137,7 +136,6 @@ void BtBookmarkItem::rename() {
 void BtBookmarkItem::update() {
     namespace DU = util::directory;
 
-    qDebug() << "BtBookmarkItem::update";
     setIcon(0, DU::getIcon(CResMgr::mainIndex::bookmark::icon));
 
     if (m_title.isEmpty()) {

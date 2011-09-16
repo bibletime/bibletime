@@ -11,7 +11,6 @@
 
 #include <QCheckBox>
 #include <QComboBox>
-#include <QDebug>
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QWebView>
@@ -119,11 +118,9 @@ void CDisplaySettingsPage::retranslateUi() {
 
 void CDisplaySettingsPage::updateStylePreview() {
     //update the style preview widget
-    qDebug() << "CDisplaySettingsPage::updateStylePreview";
     using namespace Rendering;
 
     const QString styleName = m_styleChooserCombo->currentText();
-    qDebug() << "style name: " << styleName;
     CTextRendering::KeyTree tree;
 
     CTextRendering::KeyTreeItem::Settings settings;
@@ -165,16 +162,13 @@ void CDisplaySettingsPage::updateStylePreview() {
 
     const QString oldStyleName = CBTConfig::get
                                  (CBTConfig::displayStyle);
-    //qDebug() << "old style name: " << oldStyleName;
     CBTConfig::set
     (CBTConfig::displayStyle, styleName);
-    //qDebug() << "new style name: " << CBTConfig::get(CBTConfig::displayStyle);
     CDisplayRendering render;
     m_stylePreviewViewer->setHtml( render.renderKeyTree(tree));
 
     CBTConfig::set
     (CBTConfig::displayStyle, oldStyleName);
-    qDebug() << "CDisplaySettingsPage::updateStylePreview end";
 }
 
 void CDisplaySettingsPage::save() {

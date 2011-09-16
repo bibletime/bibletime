@@ -9,7 +9,6 @@
 
 #include "backend/btmoduletreeitem.h"
 
-#include <QDebug>
 #include <QList>
 #include <QString>
 #include "backend/drivers/cswordmoduleinfo.h"
@@ -65,12 +64,10 @@ BTModuleTreeItem::~BTModuleTreeItem() {
 }
 
 QList<BTModuleTreeItem*> BTModuleTreeItem::children() const {
-    //qDebug() << "BTModuleTreeItem::children";
     QList<BTModuleTreeItem*> childList;
     if (m_firstChild) {
         BTModuleTreeItem* child = m_firstChild;
         while (child) {
-            //qDebug() << "child:" << child->text();
             childList.append(child);
             child = child->m_next;
         }
@@ -125,7 +122,6 @@ bool BTModuleTreeItem::m_map_initialized = false;
 QMap<CSwordModuleInfo::Category, QString> BTModuleTreeItem::m_CategoryNamesMap;
 
 void BTModuleTreeItem::create_tree(QList<BTModuleTreeItem::Filter*>& filters) {
-    qDebug() << "BTModuleTreeItem::create_tree";
     if (!m_map_initialized) {
         m_CategoryNamesMap.insert(CSwordModuleInfo::Commentaries, QObject::tr("Commentaries"));
         m_CategoryNamesMap.insert(CSwordModuleInfo::Cult, QObject::tr("Cults/Unorthodox"));
@@ -152,8 +148,6 @@ void BTModuleTreeItem::add_items(QList<BTModuleTreeItem::Filter*>& filters) {
             }
         }
         if (included) {
-            //qDebug() << "a module will be included: " << info->name();
-
             BTModuleTreeItem* parentGroupForModule = this;
             BTModuleTreeItem* parentGroupForLanguage = this;
             BTModuleTreeItem* parentGroupForCategory = this;
@@ -216,8 +210,6 @@ BTModuleTreeItem* BTModuleTreeItem::create_parent_item(
 }
 
 void BTModuleTreeItem::sort_children(BTModuleTreeItem* parent) {
-    //qDebug() << "BTModuleTreeItem::sort_children";
-
     // sort each child recursively depth-first
     foreach(BTModuleTreeItem* item, parent->children()) {
         sort_children(item);

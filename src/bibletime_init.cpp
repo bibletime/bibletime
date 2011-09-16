@@ -844,8 +844,6 @@ void BibleTime::initSwordConfigFile() {
 
 /** Initializes the backend */
 void BibleTime::initBackends() {
-    qDebug() << "BibleTime::initBackends";
-
     initSwordConfigFile();
 
     sword::StringMgr::setSystemStringMgr( new BTStringMgr() );
@@ -911,7 +909,6 @@ void BibleTime::initBackends() {
 }
 
 void BibleTime::applyProfileSettings( CProfile* p ) {
-    qDebug() << "BibleTime::applyProfileSettings";
     Q_ASSERT(p);
     if (!p) return;
 

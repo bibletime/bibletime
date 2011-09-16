@@ -9,7 +9,6 @@
 
 #include "frontend/keychooser/versekeychooser/btdropdownchooserbutton.h"
 
-#include <QDebug>
 #include <QWheelEvent>
 #include "frontend/keychooser/versekeychooser/btversekeymenu.h"
 #include "frontend/keychooser/versekeychooser/btbiblekeywidget.h"
@@ -37,7 +36,6 @@ BtDropdownChooserButton::BtDropdownChooserButton(BtBibleKeyWidget* ref)
 
 
 void BtDropdownChooserButton::mousePressEvent(QMouseEvent* e) {
-    //qDebug() << "BtDropdownChooserButton::mousePressEvent";
     //recreate the menu
     menu()->clear();
     this->newList();
@@ -76,7 +74,6 @@ void BtBookDropdownChooserButton::newList() {
 }
 
 void BtBookDropdownChooserButton::slotMenuTriggered(QAction* action) {
-    qDebug() << "BtBookDropdownChooserButton::slotMenuTriggered" << action->text();
     m_ref->slotChangeBook(action->text());
 }
 

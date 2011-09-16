@@ -23,8 +23,6 @@ BtModuleChooserBar::BtModuleChooserBar(QWidget *parent)
         BtWindowModuleChooser(CSwordModuleInfo::Unknown, 0),
         m_idCounter(0),
         m_window(0) {
-
-    qDebug() << "BtModuleChooserBar::BtModuleChooserBar";
     setAllowedAreas(Qt::TopToolBarArea);
     setFloatable(false);
 }
@@ -45,7 +43,6 @@ void BtModuleChooserBar::slotBackendModulesChanged() {
 }
 
 void BtModuleChooserBar::adjustButtonCount(bool adjustToZero) {
-    //qDebug() << "BtModuleChooserBar::ajustButtonCount";
     int buttonCountDifference = 0;
     if (adjustToZero) {
         buttonCountDifference = m_buttonList.count();
@@ -71,14 +68,12 @@ void BtModuleChooserBar::adjustButtonCount(bool adjustToZero) {
 }
 
 void BtModuleChooserBar::slotWindowModulesChanged() {
-    //qDebug() << "BtModuleChooserBar::windowModulesChanged";
     m_modules = m_window->getModuleList();
     adjustButtonCount();
     updateButtonMenus();
 }
 
 BtModuleChooserButton* BtModuleChooserBar::addButton() {
-    //qDebug() << "BtModuleChooserBar::addButton";
     BtModuleChooserButton* b = new BtModuleChooserButton(this, m_moduleType);
     QAction* a = addWidget(b);
     m_buttonList.append(b);
@@ -96,7 +91,6 @@ BtModuleChooserButton* BtModuleChooserBar::addButton() {
 
 /** Sets the modules which are chosen in this module chooser bar. */
 void BtModuleChooserBar::setModules( QStringList useModules,CSwordModuleInfo::ModuleType type, CReadWindow* window) {
-    qDebug() << "BtModuleChooserBar::setModules";
     m_modules = useModules;
     m_window = window;
     m_moduleType = type;
@@ -113,20 +107,16 @@ void BtModuleChooserBar::setModules( QStringList useModules,CSwordModuleInfo::Mo
         addButton(); // for ADD button
     }
     updateButtonMenus();
-    qDebug() << "BtModuleChooserBar::setModules end";
 
     connect(m_window, SIGNAL(sigModuleListSet(QStringList)), SLOT(slotBackendModulesChanged()));
     connect(m_window, SIGNAL(sigModuleListChanged()), SLOT(slotWindowModulesChanged()));
 }
 
 void BtModuleChooserBar::updateButtonMenus() {
-    //qDebug() << "BtModuleChooserBar::updateMenuItems";
-
     int leftLikeModules = leftLikeParallelModules(m_modules);
     for (int i = 0; i < m_buttonList.count(); i++) {
         BtModuleChooserButton* button = m_buttonList.at(i);
         QString moduleName = (i >= m_modules.count()) ? QString::null : m_modules.at(i);
-        //qDebug() << "refresh button's menu:" << moduleName << i;
         button->updateMenu(m_modules, moduleName, i, leftLikeModules);
     }
 }
