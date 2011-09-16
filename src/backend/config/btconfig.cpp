@@ -166,7 +166,7 @@ QString BtConfig::getCurrentSessionName()
     // every session must have a name at any time, this is an error in the config if this is not the case
     if(m_settings.value(m_currentSessionCache + "name") == QVariant())
     {
-        qDebug() << "The session with key " << m_settings.value(m_currentSessionKey).toString() << " had no name associated, probably someone messed with the config. The default session name, \"" + m_defaultSessionName + "\", was set.";
+        qWarning() << "The session with key " << m_settings.value(m_currentSessionKey).toString() << " had no name associated, probably someone messed with the config. The default session name, \"" + m_defaultSessionName + "\", was set.";
         m_settings.setValue(m_currentSessionCache + "name", m_defaultSessionName);
     }
 
@@ -270,14 +270,11 @@ QString BtConfig::getModuleEncryptionKey(const QString& name)
 
 QHash< QString, QList<QKeySequence> > BtConfig::getShortcuts( const QString& shortcutGroup )
 {
-    qDebug() << "BtConfig::readShortcuts begin";
     m_settings.beginGroup(shortcutGroup);
         QHash< QString, QList<QKeySequence> > allShortcuts;
         QStringList keyList = m_settings.childKeys();
         foreach(QString key, keyList) {
             QVariant variant = m_settings.value(key);
-
-            qDebug() << variant << " | " << variant.typeName();
 
             QList<QKeySequence> shortcuts;
 
@@ -296,13 +293,11 @@ QHash< QString, QList<QKeySequence> > BtConfig::getShortcuts( const QString& sho
             allShortcuts.insert(key, shortcuts);
         }
     m_settings.endGroup();
-    qDebug() << "BtConfig::readShortcuts end";
     return allShortcuts;
 }
 
 void BtConfig::setShortcuts( const QString& shortcutGroup, const QHash< QString, QList<QKeySequence> >& shortcuts )
 {
-    qDebug() << "BtConfig::setShortcuts begin";
     m_settings.beginGroup(shortcutGroup);
         for(QHash<QString, QList<QKeySequence> >::const_iterator iter = shortcuts.begin();
                                                                  iter != shortcuts.end();
@@ -317,11 +312,9 @@ void BtConfig::setShortcuts( const QString& shortcutGroup, const QHash< QString,
             if (not varList.empty())
             {
                 m_settings.setValue(iter.key(), varList);
-                qDebug() << ">>" << m_settings.value(iter.key()).typeName();
             }
         }
     m_settings.endGroup();
-    qDebug() << "BtConfig::setShortcuts end";
 }
 
 FilterOptions BtConfig::getFilterOptions()
