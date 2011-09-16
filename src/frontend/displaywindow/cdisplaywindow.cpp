@@ -48,7 +48,6 @@ CDisplayWindow::CDisplayWindow(QList<CSwordModuleInfo*> modules, CMDIArea *paren
         m_popupMenu(0),
         m_displayWidget(0),
         m_history(0) {
-    qDebug() << "CDisplayWindow::CDisplayWindow";
     setAttribute(Qt::WA_DeleteOnClose); //we want to destroy this window when it is closed
     m_actionCollection = new BtActionCollection(this);
     setModules(modules);
@@ -108,15 +107,11 @@ const QString CDisplayWindow::windowCaption() {
 
 /** Returns the used modules as a pointer list */
 const QList<const CSwordModuleInfo*> CDisplayWindow::modules() const {
-    //qDebug() << "CDisplayWindow::modules";
-
     return CSwordBackend::instance()->getConstPointerList(m_modules);
 }
 
 void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
     namespace DU = util::directory;
-
-    qDebug() << "CDisplayWindow::insertKeyboardActions: ac: " << a;
 
     QAction* actn = new QAction(QIcon(), tr("Select all"), a);
     actn->setShortcut(QKeySequence::SelectAll);
@@ -157,8 +152,6 @@ void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
 }
 
 void CDisplayWindow::initActions() {
-    qDebug() << "CDisplayWindow::initActions";
-
     BtActionCollection* ac = actionCollection();
 
     CDisplayWindow::insertKeyboardActions(ac);
@@ -213,7 +206,6 @@ void CDisplayWindow::initActions() {
 
 /** Refresh the settings of this window. */
 void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
-    qDebug() << "CDisplayWindow::reload";
     //first make sure all used Sword modules are still present
     QMutableStringListIterator it(m_modules);
     while (it.hasNext()) {
@@ -233,12 +225,10 @@ void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
 
     actionCollection()->readShortcuts("DisplayWindow shortcuts");
     actionCollection()->readShortcuts("Readwindow shortcuts");
-    qDebug() << "CDisplayWindow::reload emits sigModuleListSet...";
     emit sigModuleListSet(m_modules);
 }
 
 void CDisplayWindow::slotAddModule(int index, QString module) {
-    qDebug() << "CDisplayWindow::slotAddModule";
     m_modules.insert(index, module);
     lookup();
     modulesChanged();
@@ -255,7 +245,6 @@ void CDisplayWindow::slotReplaceModule(int index, QString newModule) {
 }
 
 void CDisplayWindow::slotRemoveModule(int index) {
-    qDebug() << "CDisplayWindow::slotRemoveModule";
     m_modules.removeAt(index);
     lookup();
     modulesChanged();
@@ -318,7 +307,6 @@ void CDisplayWindow::modulesChanged() {
 
 /** Sets the module chooser bar. */
 void CDisplayWindow::setModuleChooserBar( BtModuleChooserBar* bar ) {
-    qDebug() << "CDisplayWindow::setModuleChooserBar";
     if (m_moduleChooserBar) {
         m_moduleChooserBar->deleteLater();
     }
@@ -342,7 +330,6 @@ void CDisplayWindow::setHeaderBar( QToolBar* header ) {
 
 /** Sets the modules. */
 void CDisplayWindow::setModules( const QList<CSwordModuleInfo*>& newModules ) {
-    qDebug() << "CDisplayWindow::setModules";
     m_modules.clear();
 
     foreach (CSwordModuleInfo* mod, newModules) {
@@ -352,7 +339,6 @@ void CDisplayWindow::setModules( const QList<CSwordModuleInfo*>& newModules ) {
 
 /** Initialize the window. Call this method from the outside, because calling this in the constructor is not possible! */
 bool CDisplayWindow::init() {
-    qDebug() << "CDisplayWindow::init";
     initView();
     setMinimumSize( 100, 100 );
 
@@ -488,7 +474,6 @@ void CDisplayWindow::lookupKey( const QString& keyName ) {
     */
     Q_ASSERT(modules().first());
 
-    qDebug() << "CDisplayWindow::lookupKey: " << keyName;
     lookupModKey(modules().first()->name(), keyName);
 }
 

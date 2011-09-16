@@ -57,8 +57,6 @@ BtInstallPageWorksWidget::BtInstallPageWorksWidget(
 {
     namespace DU = util::directory;
 
-    qDebug() << "Creating new BtInstallPageWorksWidget for source" << source.caption;
-
     setTreeModel(new BtInstallPageModel(g, this));
 
     treeView()->setHeaderHidden(false);
@@ -79,8 +77,6 @@ BtInstallPageWorksWidget::BtInstallPageWorksWidget(
 }
 
 BtInstallPageWorksWidget::~BtInstallPageWorksWidget() {
-    qDebug() << "Deleting BtInstallPageWorksWidget for source" << m_source.caption;
-
     delete m_backend;
 }
 

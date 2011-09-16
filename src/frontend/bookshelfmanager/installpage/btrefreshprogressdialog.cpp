@@ -1,7 +1,6 @@
 #include "frontend/bookshelfmanager/installpage/btrefreshprogressdialog.h"
 
 #include <QApplication>
-#include <QDebug>
 #include "backend/btinstallbackend.h"
 #include "util/dialogutil.h"
 
@@ -12,8 +11,6 @@ BtRefreshProgressDialog::BtRefreshProgressDialog(sword::InstallSource &source,
              : QProgressDialog(parent, flags)
              , m_source(source)
 {
-    qDebug() << "Creating BtRefreshProgressDialog for source" << source.caption;
-
     Q_ASSERT(BtInstallBackend::isRemote(source));
     setWindowTitle(tr("Refreshing source %1").arg(QString(source.caption)));
     setCancelButtonText(tr("&Cancel"));
@@ -31,21 +28,15 @@ BtRefreshProgressDialog::BtRefreshProgressDialog(sword::InstallSource &source,
 }
 
 void BtRefreshProgressDialog::slotPercentCompleted(int, int current) {
-    qDebug() << "BtRefreshProgressDialog progress:" << current;
-
     setValue(current);
     qApp->processEvents();
 }
 
 void BtRefreshProgressDialog::slotCanceled() {
-    qDebug() << "BtRefreshProgressDialog cancel clicked.";
-
     m_installMgr.terminate();
 }
 
 bool BtRefreshProgressDialog::runAndDelete() {
-    qDebug() << "BtRefreshProgressDialog runAndDelete()";
-
     show();
     qApp->processEvents();
     bool r = (m_installMgr.refreshRemoteSource(&m_source) == 0);

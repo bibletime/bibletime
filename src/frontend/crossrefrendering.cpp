@@ -24,7 +24,6 @@ CrossRefRendering::CrossRefRendering(const DisplayOptions &displayOptions,
 }
 
 const QString CrossRefRendering::finishText( const QString& text, KeyTree& ) {
-    //   qDebug() << "CrossRefRendering::finishText";
     return text;
 }
 

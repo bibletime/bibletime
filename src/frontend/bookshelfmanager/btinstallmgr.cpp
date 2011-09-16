@@ -11,7 +11,6 @@
 
 #include "backend/managers/cswordbackend.h"
 #include "backend/btinstallbackend.h"
-#include <QDebug>
 #include <QList>
 #include <QObject>
 #include <QString>
@@ -28,7 +27,6 @@ BtInstallMgr::BtInstallMgr()
         : InstallMgr(BtInstallBackend::configPath().toLatin1(), this),
         m_totalBytes(1), m_completedBytes(0), m_firstCallOfPreStatus(true)
 { //use this class also as status reporter
-    qDebug() << "BtInstallMgr::BtInstallMgr";
     this->setFTPPassive(true);
 }
 
@@ -44,7 +42,6 @@ bool BtInstallMgr::isUserDisclaimerConfirmed() const {
 }
 
 void BtInstallMgr::statusUpdate(double dltotal, double dlnow) {
-    //qDebug() << "BtInstallMgr::statusUpdate";
     if (dlnow > dltotal)
         dlnow = dltotal;
 
@@ -65,7 +62,6 @@ void BtInstallMgr::statusUpdate(double dltotal, double dlnow) {
         filePercent = 0;
     }
     //qApp->processEvents();
-    //qDebug() << "status: total"<<totalPercent<<"file"<<filePercent;
     emit percentCompleted(totalPercent, filePercent);
 }
 
@@ -75,7 +71,6 @@ void BtInstallMgr::preStatus(long totalBytes, long completedBytes, const char* m
         m_firstCallOfPreStatus = false;
         emit downloadStarted();
     }
-    qDebug() << "BtInstallMgr::preStatus:" << (int)totalBytes << "/" << (int)completedBytes << QString(message);
     m_completedBytes = completedBytes;
     m_totalBytes = (totalBytes > 0) ? totalBytes : 1; //avoid division by zero
 }

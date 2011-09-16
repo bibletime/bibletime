@@ -75,7 +75,6 @@ void BtInstallThread::run() {
     sword::SWMgr lMgr( m_destination.toLatin1() );
 
     if (BtInstallBackend::isRemote(*m_installSource)) {
-        qDebug() << "calling install";
         int status = m_iMgr->installModule(&lMgr, 0, m_module.toLatin1(), m_installSource.data());
         if (status != 0) {
             qWarning() << "Error with install: " << status << "module:" << m_module;
@@ -109,7 +108,6 @@ void BtInstallThread::slotStopInstall() {
         qDebug() << "*********************************\nBtInstallThread::slotStopInstall, installing" << m_module << "was cancelled\n**************************************";
         m_iMgr->terminate();
         //this->terminate(); // It's dangerous to forcibly stop, but we will clean up the files
-        qDebug() << "BtInstallThread::slotStopInstall 2";
         //qApp->processEvents();
         // wait to terminate for some secs. We rather let the execution go on and cleaning up to fail than the app to freeze
         int notRun = this->wait(25000);
@@ -120,11 +118,9 @@ void BtInstallThread::slotStopInstall() {
             delete m_iMgr; // this makes sure the ftp library will be cleaned up in the destroyer
             m_iMgr = 0;
         }
-        qDebug() << "BtInstallThread::slotStopInstall 3";
         // cleanup: remove the module, remove the temp files
         // if installation has already started
         if (m_installSource.data() != 0) {
-            qDebug() << "BtInstallThread::slotStopInstall 4";
             // remove the installed module, just to be sure because mgr may
             // have been terminated when copying files
             removeModule();
@@ -136,17 +132,14 @@ void BtInstallThread::slotStopInstall() {
 }
 
 void BtInstallThread::slotManagerStatusUpdated(int totalProgress, int /*fileProgress*/) {
-    //qDebug() << "BtInstallThread::slotManagerStatusUpdated";
     emit statusUpdated(m_module, totalProgress);
 }
 
 void BtInstallThread::slotDownloadStarted() {
-    qDebug() << "BtInstallThread::slotDownloadStarted";
     emit downloadStarted(m_module);
 }
 
 void BtInstallThread::removeModule() {
-    qDebug() << "BtInstallThread::removeModule start";
     CSwordModuleInfo* m;
     m = CSwordBackend::instance()->findModuleByName(m_module);
     if (!m) {
@@ -177,8 +170,6 @@ void BtInstallThread::removeModule() {
 }
 
 void BtInstallThread::removeTempFiles() {
-    qDebug() << "BtInstallThread::removeTempFiles start";
-
     // (take the remote conf file for this module, take DataPath,
     // take the absolute path of the InstallMgr)
 

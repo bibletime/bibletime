@@ -11,7 +11,6 @@
 
 #include <QApplication>
 #include <QComboBox>
-#include <QDebug>
 #include <QGroupBox>
 #include <QHBoxLayout>
 #include <QHeaderView>
@@ -61,7 +60,6 @@ BtInstallPage::BtInstallPage(BtModuleManagerDialog *parent)
 }
 
 void BtInstallPage::setInstallEnabled(bool b) {
-    qDebug() << "void BtInstallPage::setInstallEnabled(bool b) start";
     m_installButton->setEnabled(b);
 }
 
@@ -223,7 +221,6 @@ void BtInstallPage::initSourcesCombo() {
 }
 
 void BtInstallPage::activateSource(const sword::InstallSource &src) {
-    qDebug() << "Selected source" << src.caption;
     qApp->setOverrideCursor(Qt::WaitCursor);
     BtInstallPageWorksWidget *w = m_sourceMap.value(QString(src.caption), 0);
     if (w == 0) {
@@ -297,8 +294,6 @@ void BtInstallPage::slotHeaderChanged() {
 }
 
 void BtInstallPage::slotInstall() {
-    qDebug() << "BtInstallPage::slotInstall";
-
     // check that the destination path is writable, do nothing if not and user doesn't want to continue
     QDir dir = selectedInstallPath();
     bool canWrite = true;
@@ -348,7 +343,6 @@ void BtInstallPage::slotInstall() {
         // the progress dialog is now modal, it can be made modeless later.
         progressDialog->exec();
 
-        qDebug() << "BtSourceWidget::slotInstallAccepted end";
     }
     delete dlg;
 }

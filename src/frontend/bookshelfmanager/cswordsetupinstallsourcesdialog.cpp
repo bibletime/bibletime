@@ -24,7 +24,6 @@
 #include <QDialogButtonBox>
 #include <QProgressDialog>
 #include <QApplication>
-#include <QDebug>
 #include "backend/btinstallbackend.h"
 #include "util/dialogutil.h"
 
@@ -157,7 +156,6 @@ void CSwordSetupInstallSourcesDialog::slotGetListClicked() {
     if (answer == QMessageBox::No) {
         return;
     }
-    qDebug() << "Ok, create installmgr";
     BtInstallMgr iMgr;
 
     m_progressDialog = new QProgressDialog("", tr("Cancel"), 0 , 100, this);
@@ -174,11 +172,9 @@ void CSwordSetupInstallSourcesDialog::slotGetListClicked() {
     m_progressDialog->setLabelText(tr("Connecting..."));
     m_progressDialog->setValue(0);
     qApp->processEvents();
-    qWarning() << "Start downloading the list of sources";
     int ret = iMgr.refreshRemoteSourceConfiguration();
 
     if ( !ret ) { //make sure the sources were updated sucessfully
-        qDebug() << "download succeeded";
         m_progressDialog->setValue(100); //make sure the dialog closes
         m_remoteListAdded = true;
         accept();

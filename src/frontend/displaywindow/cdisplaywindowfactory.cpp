@@ -9,8 +9,6 @@
 
 #include "frontend/displaywindow/cdisplaywindowfactory.h"
 
-#include <QDebug>
-
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "frontend/displaywindow/cbiblereadwindow.h"
 #include "frontend/displaywindow/cbookreadwindow.h"
@@ -24,7 +22,6 @@
 
 
 CReadWindow* CDisplayWindowFactory::createReadInstance(QList<CSwordModuleInfo*> modules, CMDIArea* parent) {
-    qDebug() << "CDisplayWindowFactory::createReadInstance";
     CReadWindow* win = 0;
     switch (modules.first()->type()) {
         case CSwordModuleInfo::Bible:

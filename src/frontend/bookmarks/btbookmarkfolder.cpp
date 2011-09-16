@@ -9,7 +9,6 @@
 
 #include "frontend/bookmarks/btbookmarkfolder.h"
 
-#include <QDebug>
 #include <QFileDialog>
 #include "frontend/bookmarks/btbookmarkitembase.h"
 #include "frontend/bookmarks/btbookmarkitem.h"
@@ -39,7 +38,6 @@ void BtBookmarkFolder::exportBookmarks() {
     QString fileName = QFileDialog::getSaveFileName(0, QObject::tr("Export Bookmarks"), "", filter);
 
     if (!fileName.isEmpty()) {
-        qDebug() << "exportBookmarks()";
         BtBookmarkLoader loader;
         loader.saveTreeFromRootItem(this, fileName, false ); //false: don't overwrite without asking
     };
@@ -50,7 +48,6 @@ void BtBookmarkFolder::importBookmarks() {
     QString filter = QObject::tr("BibleTime bookmark files") + QString(" (*.btb);;") + QObject::tr("All files") + QString(" (*.*)");
     QString fileName = QFileDialog::getOpenFileName(0, QObject::tr("Import bookmarks"), "", filter);
     if (!fileName.isEmpty()) {
-        qDebug() << "import bookmarks";
         BtBookmarkLoader loader;
         QList<QTreeWidgetItem*> itemList = loader.loadTree(fileName);
         this->insertChildren(0, itemList);
@@ -82,7 +79,6 @@ void BtBookmarkFolder::rename() {
 void BtBookmarkFolder::update() {
     namespace DU = util::directory;
 
-    qDebug() << "BtBookmarkFolder::update()";
     if (isExpanded() && childCount())
         setIcon(0, DU::getIcon(CResMgr::mainIndex::openedFolder::icon));
     else
@@ -90,14 +86,10 @@ void BtBookmarkFolder::update() {
 }
 
 bool BtBookmarkFolder::hasDescendant(QTreeWidgetItem* item) const {
-    qDebug() << "BtBookmarkFolder::hasDescendant, this:" << this << "possible descendant:" << item;
-
     if (this == item) {
-        qDebug() << "it's this, return true";
         return true;
     }
     if (getChildList().indexOf(item) > -1) {
-        qDebug() << "direct child, return true";
         return true;
     }
     foreach(QTreeWidgetItem* childItem, getChildList()) {
@@ -108,16 +100,13 @@ bool BtBookmarkFolder::hasDescendant(QTreeWidgetItem* item) const {
         }
 
         if (subresult == true) {
-            qDebug() << "descendand child, return true";
             return true;
         }
     }
-    qDebug() << "no child, return false";
     return false;
 }
 
 BtBookmarkFolder* BtBookmarkFolder::deepCopy() {
-    qDebug() << "BtBookmarkFolder::deepCopy";
     BtBookmarkFolder* newFolder = new BtBookmarkFolder(this->text(0));
     foreach(QTreeWidgetItem* subitem, getChildList()) {
         if (BtBookmarkItem* bmItem = dynamic_cast<BtBookmarkItem*>(subitem)) {

@@ -34,10 +34,8 @@ namespace Search {
 
 BtSearchResultArea::BtSearchResultArea(QWidget *parent)
         : QWidget(parent) {
-    qDebug() << "BtSearchResultArea::BtSearchResultArea";
     initView();
     initConnections();
-    qDebug() << "BtSearchResultArea::BtSearchResultArea end";
 }
 
 void BtSearchResultArea::initView() {

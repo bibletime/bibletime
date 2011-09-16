@@ -11,7 +11,6 @@
 
 #include <algorithm>
 #include <QHBoxLayout>
-#include <QDebug>
 #include "backend/drivers/cswordlexiconmoduleinfo.h"
 #include "backend/keys/cswordldkey.h"
 #include "frontend/keychooser/bthistory.h"
@@ -76,8 +75,6 @@ void CLexiconKeyChooser::updateKey(CSwordKey* key) {
 }
 
 void CLexiconKeyChooser::setKey(CSwordKey* key) {
-    qDebug() << "CLexiconKeyChooser::setKey";
-
     if (!(m_key = dynamic_cast<CSwordLDKey*>(key))) {
         return;
     }

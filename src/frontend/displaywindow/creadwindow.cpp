@@ -9,7 +9,6 @@
 
 #include "frontend/displaywindow/creadwindow.h"
 
-#include <QDebug>
 #include <QMdiSubWindow>
 #include <QResizeEvent>
 #include "backend/keys/cswordkey.h"
@@ -29,7 +28,6 @@ using namespace Profile;
 CReadWindow::CReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent)
         : CDisplayWindow(modules, parent),
         m_readDisplayWidget(0) {
-    qDebug() << "CReadWindow::CReadWindow";
     //   installEventFilter(this);
 }
 
@@ -74,7 +72,6 @@ void CReadWindow::setDisplayWidget( CDisplay* newDisplay ) {
 
 /** Lookup the given entry. */
 void CReadWindow::lookupSwordKey( CSwordKey* newKey ) {
-    qDebug() << "CReadWindow::lookup newKey" << newKey->key();
     Q_ASSERT(newKey);
 
     using namespace Rendering;
@@ -105,12 +102,9 @@ void CReadWindow::lookupSwordKey( CSwordKey* newKey ) {
     setWindowTitle(windowCaption());
 
     // moving to anchor happens in slotMoveToAnchor which catches the completed() signal from KHTMLPart
-
-    qDebug() << "CReadWindow::lookup end, key is :" << newKey->key();
 }
 
 void CReadWindow::slotMoveToAnchor() {
-    qDebug() << "CReadWindow::slotMoveToAnchor";
     ((CReadDisplay*)displayWidget())->moveToAnchor( Rendering::CDisplayRendering::keyToHTMLAnchor(key()->key()) );
 }
 

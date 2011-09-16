@@ -10,7 +10,6 @@
 #include "frontend/keychooser/bthistory.h"
 
 #include <QAction>
-#include <QDebug>
 #include <QList>
 #include "backend/keys/cswordkey.h"
 
@@ -24,7 +23,6 @@ BTHistory::BTHistory(QWidget* parent)
 }
 
 void BTHistory::add(CSwordKey* newKey) {
-    qDebug() << "BTHistory::add";
     Q_ASSERT(newKey);
     // Add new key Action after current index if we were not using the history functions,
     // if it's not a duplicate and if it's not empty.
@@ -39,7 +37,6 @@ void BTHistory::add(CSwordKey* newKey) {
 }
 
 void BTHistory::move(QAction* historyItem) {
-    qDebug() << "BTHistory::move";
     //Q_ASSERT(historyItem);
     Q_ASSERT(m_historyList.count());
 
@@ -56,7 +53,6 @@ void BTHistory::move(QAction* historyItem) {
 }
 
 void BTHistory::back() {
-    qDebug() << "BTHistory::back";
     if ( m_index >= 1) {
         move(m_historyList.at(m_index - 1));
     }
@@ -64,7 +60,6 @@ void BTHistory::back() {
 }
 
 void BTHistory::fw() {
-    qDebug() << "BTHistory::fw";
     if (m_index < (m_historyList.size() - 1)) {
         move(m_historyList.at(m_index + 1));
     }
@@ -72,28 +67,21 @@ void BTHistory::fw() {
 }
 
 QList<QAction*> BTHistory::getBackList() {
-    qDebug() << "BTHistory::getBackList";
 
     QList<QAction*> list;
     for (int i = m_index - 1; i >= 0; --i) {
         list.append(m_historyList.at(i));
     }
 
-    qDebug() << "return:" << list;
     Q_ASSERT(class_invariant());
     return list;
 }
 
 QList<QAction*> BTHistory::getFwList() {
-    qDebug() << "BTHistory::getFwList";
-
     QList<QAction*> list;
-    //qDebug() << "historyList.size:" << m_historyList.size();
     for (int i = m_index + 1; i < m_historyList.size(); ++i) {
-        //qDebug() << "i:" << i;
         list.append(m_historyList.at(i));
     }
-    qDebug() << "return:" << list;
 
     Q_ASSERT(class_invariant());
     return list;
