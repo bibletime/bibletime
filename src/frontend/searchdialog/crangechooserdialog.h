@@ -16,6 +16,7 @@
 
 
 class QDialogButtonBox;
+class QLabel;
 class QLineEdit;
 class QListWidget;
 class QPushButton;
@@ -23,64 +24,121 @@ class QTextEdit;
 
 namespace Search {
 
-class CRangeChooserDialog : public QDialog {
+/** \todo Redesign this dialog and rename to have a Bt prefix. */
+class CRangeChooserDialog: public QDialog {
+
         Q_OBJECT
+
+private: /* Types: */
+
+    class RangeItem: public QListWidgetItem {
+
     public:
-        CRangeChooserDialog(QWidget* parentDialog);
 
-    protected: // Protected methods
-        class RangeItem : public QListWidgetItem {
-            public:
-                RangeItem(QListWidget*, QListWidgetItem* afterThis = 0, const QString caption = QString::null, const QString range = QString::null);
+        inline RangeItem(const QString &caption,
+                         const QString &range = QString::null,
+                         QListWidget * parent = 0)
+            : QListWidgetItem(caption, parent)
+            , m_range(range) {}
 
-                const QString& range() const;
-                QString caption() const;
-                void setRange(QString range);
-                void setCaption(const QString);
-            private:
-                QString m_range;
-        };
+        inline const QString caption() const { return text(); }
+        inline void setCaption(const QString &caption) { setText(caption); }
+        inline const QString &range() const { return m_range; }
+        inline void setRange(const QString &range) { m_range = range; }
 
-        /**
-        * Initializes the connections of this widget.
-        */
-        void initConnections();
-        /**
-        * Initializes the view of this object.
-        */
-        void initView();
+    private: /* Fields: */
 
-    protected slots: // Protected slots
-        /**
-        * Adds a new range to the list.
-        */
-        void addNewRange();
-        void editRange(QListWidgetItem*);
-        /**
-        * Parses the entered text and prints out the result in the list box below the edit area.
-        */
-        void parseRange();
-        void nameChanged(const QString&);
-        void rangeChanged();
-        /**
-        * Deletes the selected range.
-        */
-        void deleteCurrentRange();
-        virtual void slotDefault();
-        virtual void slotOk();
+        QString m_range;
 
-    private:
-        QListWidget* m_rangeList;
-        QListWidget* m_resultList;
-        QLineEdit* m_nameEdit;
-        QTextEdit* m_rangeEdit;
-        QPushButton* m_newRangeButton;
-        QPushButton* m_deleteRangeButton;
-        QDialogButtonBox* m_buttonBox;
-};
+    }; /* class RangeItem */
 
+public: /* Methods: */
 
-} //end of namespace Search
+    CRangeChooserDialog(QWidget *parentDialog = 0);
 
+    virtual void accept();
+
+private: /* Methods: */
+
+    /**
+      Initializes widgets.
+    */
+    void initView();
+
+    /**
+      Initializes connections.
+    */
+    void initConnections();
+
+    void retranslateUi();
+
+    /**
+      Stores the values from the current edit view to the given RangeItem.
+      \param[out] i The RangeItem object to store the values to.
+    */
+    void saveCurrentToRange(RangeItem * i);
+
+    /**
+      Resets the editing controls based on whether a range is selected in the
+      range list.
+    */
+    void resetEditControls();
+
+private slots:
+
+    /**
+      Adds a new range to the list.
+    */
+    void addNewRange();
+
+    /**
+      Handles changes in m_rangeList.
+    */
+    void selectedRangeChanged(QListWidgetItem * current,
+                              QListWidgetItem * previous);
+
+    /**
+      Parses the entered text and prints out the result in the list box below
+      the edit area.
+    */
+    void updateResultList();
+
+    /**
+      Deletes the selected range.
+    */
+    void deleteCurrentRange();
+
+    /**
+      Restores the default ranges.
+    */
+    void restoreDefaults();
+
+    /**
+      Called when m_nameEdit changes.
+    */
+    void nameEditTextChanged(const QString &newText);
+
+private:
+
+    QLabel      *m_rangeListLabel;
+    QListWidget *m_rangeList;
+
+    QLabel    *m_nameEditLabel;
+    QLineEdit *m_nameEdit;
+
+    QLabel    *m_rangeEditLabel;
+    QTextEdit *m_rangeEdit;
+
+    QLabel      *m_resultListLabel;
+    QListWidget *m_resultList;
+
+    QPushButton *m_newRangeButton;
+    QPushButton *m_deleteRangeButton;
+
+    QDialogButtonBox *m_buttonBox;
+
+}; /* class CRangeChooserDialog */
+
+} /* namespace Search */
 
 #endif
