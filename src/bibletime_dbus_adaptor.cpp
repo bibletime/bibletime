@@ -11,56 +11,78 @@
 
 #include "bibletime_dbus_adaptor.h"
 
+#include <QDebug>
+#include "backend/config/cbtconfig.h"
 
-BibleTimeDBusAdaptor::BibleTimeDBusAdaptor(BibleTime *bibletime_ptr) :
-        QDBusAbstractAdaptor(bibletime_ptr),
-        m_bibletime(bibletime_ptr) {
+BibleTimeDBusAdaptor::BibleTimeDBusAdaptor(BibleTime *pBibleTime)
+    : QDBusAbstractAdaptor(pBibleTime)
+    , m_bibletime(pBibleTime)
+{
+    // Intentionally empty
 }
 
-void BibleTimeDBusAdaptor::syncAllBibles(const QString& key) {
-    m_bibletime->syncAllBibles(key);
+void BibleTimeDBusAdaptor::syncAllBibles(const QString &key) {
+    qDebug() << "DBUS: syncing all bibles ...";
+    m_bibletime->syncAllModulesByType(CSwordModuleInfo::Bible, key);
 }
 
-void BibleTimeDBusAdaptor::syncAllCommentaries(const QString& key) {
-    m_bibletime->syncAllCommentaries(key);
+void BibleTimeDBusAdaptor::syncAllCommentaries(const QString &key) {
+    qDebug() << "DBUS: syncing all commentaries ...";
+    m_bibletime->syncAllModulesByType(CSwordModuleInfo::Commentary, key);
 }
-void BibleTimeDBusAdaptor::syncAllLexicons(const QString& key) {
-    m_bibletime->syncAllLexicons(key);
-}
-
-void BibleTimeDBusAdaptor::syncAllVerseBasedModules(const QString& key) {
-    m_bibletime->syncAllVerseBasedModules(key);
+void BibleTimeDBusAdaptor::syncAllLexicons(const QString &key) {
+    qDebug() << "DBUS: syncing all lexicons ...";
+    m_bibletime->syncAllModulesByType(CSwordModuleInfo::Lexicon, key);
 }
 
-void BibleTimeDBusAdaptor::openWindow(const QString& moduleName, const QString& key) {
-    m_bibletime->openWindow(moduleName, key);
+void BibleTimeDBusAdaptor::syncAllVerseBasedModules(const QString &key) {
+    qDebug() << "DBUS: syncing all verse based modules ...";
+    m_bibletime->syncAllModulesByType(CSwordModuleInfo::Bible, key);
+    m_bibletime->syncAllModulesByType(CSwordModuleInfo::Commentary, key);
 }
 
-void BibleTimeDBusAdaptor::openDefaultBible(const QString& key) {
-    m_bibletime->openDefaultBible(key);
+void BibleTimeDBusAdaptor::openWindow(const QString &moduleName, const QString &key) {
+    qDebug() << "DBUS: open window for module" << moduleName.toLatin1() << "and key" << key.toLatin1() << " ...";
+    CSwordModuleInfo *module = CSwordBackend::instance()->findModuleByName(moduleName);
+    if (module)
+        m_bibletime->createReadDisplayWindow(module, key);
+}
+
+void BibleTimeDBusAdaptor::openDefaultBible(const QString &key) {
+    qDebug() << "DBUS: open default bible ...";
+    CSwordModuleInfo *module = CBTConfig::get(CBTConfig::standardBible);
+    if (module)
+        m_bibletime->createReadDisplayWindow(module, key);
 }
 
 void BibleTimeDBusAdaptor::closeAllModuleWindows() {
+    qDebug() << "DBUS: close all windows now ...";
     m_bibletime->closeAllModuleWindows();
 }
 
 QString BibleTimeDBusAdaptor::getCurrentReference() {
+    qDebug() << "DBUS: getCurrentReference ...";
     return m_bibletime->getCurrentReference();
 }
 
-QStringList BibleTimeDBusAdaptor::searchInModule(const QString& moduleName, const QString& searchText) {
+QStringList BibleTimeDBusAdaptor::searchInModule(const QString &moduleName, const QString &searchText) {
+    qDebug() << "DBUS: searchInModule" << moduleName.toLatin1() << " ...";
     return m_bibletime->searchInModule(moduleName, searchText);
 }
 
-QStringList BibleTimeDBusAdaptor::searchInOpenModules(const QString& searchText) {
+QStringList BibleTimeDBusAdaptor::searchInOpenModules(const QString &searchText) {
+    qDebug() << "DBUS: search in open modules ...";
     return m_bibletime->searchInOpenModules(searchText);
 }
 
-QStringList BibleTimeDBusAdaptor::searchInDefaultBible(const QString& searchText) {
-    return m_bibletime->searchInDefaultBible(searchText);
+QStringList BibleTimeDBusAdaptor::searchInDefaultBible(const QString &searchText) {
+    qDebug() << "DBUS: search in default bible ...";
+    CSwordModuleInfo *bible = CBTConfig::get(CBTConfig::standardBible);
+    return m_bibletime->searchInModule(bible->name(), searchText);
 }
 
-QStringList BibleTimeDBusAdaptor::getModulesOfType(const QString& type) {
+QStringList BibleTimeDBusAdaptor::getModulesOfType(const QString &type) {
+    qDebug() << "DBUS: get modules of type ...";
     return m_bibletime->getModulesOfType(type);
 }
 
