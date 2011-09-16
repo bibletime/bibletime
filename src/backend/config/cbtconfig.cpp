@@ -510,10 +510,11 @@ StringMap get(const stringMaps ID) {
     QSettings *s = getConfig();
     s->beginGroup(getKey(ID));
     const QStringList keys = s->childKeys();
-    s->endGroup();
 
-    if (keys.isEmpty())
+    if (keys.isEmpty()) {
+        s->endGroup();
         return getDefault(ID);
+    }
 
     /**
       Make sure we return the scopes in the chosen language. saved
@@ -522,7 +523,9 @@ StringMap get(const stringMaps ID) {
     StringMap map;
     sword::VerseKey vk;
     Q_FOREACH (const QString &key, keys) {
-        Q_ASSERT(!key.isEmpty());
+        if (key.isEmpty())
+            continue;
+
         QByteArray b = s->value(key).toString().toUtf8();
         sword::ListKey list(vk.ParseVerseList(b, "Genesis 1:1", true));
         QString data;
@@ -532,6 +535,7 @@ StringMap get(const stringMaps ID) {
         }
         map[key] = data; // Set the new data
     }
+    s->endGroup();
     return map;
 }
 
