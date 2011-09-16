@@ -209,8 +209,7 @@ void CRangeChooserDialog::updateResultList() {
 
     /// \todo remove this hack:
     //HACK: repair range to work with Sword 1.5.6
-    QString range = m_rangeEdit->toPlainText();
-    range.replace(QRegExp("\\s{0,}-\\s{0,}"), "-");
+    const QString range = m_rangeEdit->toPlainText().replace(QRegExp("\\s{0,}-\\s{0,}"), "-");
 
     sword::ListKey verses = VK().ParseVerseList(range.toUtf8().constData(),
                                                 "Genesis 1:1", true);
@@ -242,7 +241,7 @@ void CRangeChooserDialog::accept() {
     CBTConfig::StringMap map;
     for (int i = 0; i < m_rangeList->count(); i++) {
         Q_ASSERT(dynamic_cast<RangeItem*>(m_rangeList->item(i)) != 0);
-        RangeItem * item = static_cast<RangeItem*>(m_rangeList->item(i));
+        const RangeItem * item = static_cast<RangeItem*>(m_rangeList->item(i));
         map[item->caption()] = item->range();
     }
     CBTConfig::set(CBTConfig::searchScopes, map);
@@ -254,7 +253,7 @@ void CRangeChooserDialog::restoreDefaults() {
     typedef CBTConfig::StringMap::ConstIterator SMCI;
 
     m_rangeList->clear();
-    CBTConfig::StringMap map = CBTConfig::getDefault(CBTConfig::searchScopes);
+    const CBTConfig::StringMap map = CBTConfig::getDefault(CBTConfig::searchScopes);
     for (SMCI it = map.begin(); it != map.end(); ++it) {
         new RangeItem(it.key(), it.value(), m_rangeList);
     };
@@ -263,7 +262,7 @@ void CRangeChooserDialog::restoreDefaults() {
 }
 
 void CRangeChooserDialog::nameEditTextChanged(const QString &newText) {
-    bool e = !newText.isEmpty() || m_rangeList->count() <= 0;
+    const bool e = !newText.isEmpty() || m_rangeList->count() <= 0;
     m_buttonBox->button(QDialogButtonBox::Ok)->setEnabled(e);
 }
 
