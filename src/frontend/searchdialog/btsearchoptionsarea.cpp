@@ -333,8 +333,9 @@ void BtSearchOptionsArea::aboutToShow() {
 }
 
 void BtSearchOptionsArea::setupRanges() {
-    CRangeChooserDialog* chooser = new CRangeChooserDialog(this);
+    CRangeChooserDialog * chooser = new CRangeChooserDialog(this);
     chooser->exec();
+    delete chooser;
 
     refreshRanges();
 }
