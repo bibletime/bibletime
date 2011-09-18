@@ -11,6 +11,7 @@
 
 #include <QApplication>
 #include <QCloseEvent>
+#include <QDebug>
 #include <QDialog>
 #include <QHeaderView>
 #include <QMultiMap>

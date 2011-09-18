@@ -11,6 +11,7 @@
 
 #include <QApplication>
 #include <QAction>
+#include <QDebug>
 #include <QTimer>
 #include <QToolButton>
 #include "backend/btinstallbackend.h"
