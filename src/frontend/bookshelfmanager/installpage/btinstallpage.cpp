@@ -368,7 +368,10 @@ void BtInstallPage::slotSourceAdd() {
 
     QSharedPointer<SSISD> dlg(new SSISD());
     if (dlg->exec() == QDialog::Accepted) {
-        if (!dlg->wasRemoteListAdded()) {
+        if (dlg->wasRemoteListAdded()) {
+            initSourcesCombo();
+        }
+        else {
             sword::InstallSource newSource = dlg->getSource();
             if ( !((QString)newSource.type.c_str()).isEmpty() ) { // we have a valid source to add
                 BtInstallBackend::addSource(newSource);
