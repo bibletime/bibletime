@@ -188,6 +188,8 @@ StandardWorksTab::StandardWorksTab(CSwordSettingsPage *parent)
             }
         }
     }
+
+    retranslateUi();
 }
 
 void StandardWorksTab::save() {
@@ -314,6 +316,8 @@ TextFiltersTab::TextFiltersTab(CSwordSettingsPage *parent)
     TEXT_FILTERS_TAB_ADD_ROW(scriptureReferences);
 
     layout->addStretch(4);
+
+    retranslateUi();
 }
 
 void TextFiltersTab::save() {
