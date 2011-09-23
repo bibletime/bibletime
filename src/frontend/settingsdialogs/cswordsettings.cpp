@@ -67,7 +67,13 @@ StandardWorksTab::StandardWorksTab(CSwordSettingsPage *parent)
     typedef QList<CSwordModuleInfo*>::const_iterator MLCI;
 
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
+    mainLayout->setMargin(5);
+    mainLayout->setSpacing(2);
+
     m_explanationLabel = new QLabel(this);
+    m_explanationLabel->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Preferred);
+    m_explanationLabel->setMaximumHeight(50);
+    m_explanationLabel->setMinimumWidth(300);
     mainLayout->addWidget(m_explanationLabel);
 
     QFormLayout *formLayout = new QFormLayout;
@@ -89,6 +95,7 @@ StandardWorksTab::StandardWorksTab(CSwordSettingsPage *parent)
     STANDARD_WORKS_TAB_ADD_ROW(standardGreekMorphLexicon);
 
     mainLayout->addLayout(formLayout);
+    mainLayout->addStretch();
 
     //fill the comboboxes with the right modules
 
@@ -266,12 +273,12 @@ TextFiltersTab::TextFiltersTab(CSwordSettingsPage *parent)
 {
     QVBoxLayout *layout = new QVBoxLayout(this);
     layout->setMargin(5);
+    layout->setSpacing(2);
 
     m_explanationLabel = new QLabel(this);
     m_explanationLabel->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Preferred);
     m_explanationLabel->setMaximumHeight(50);
     m_explanationLabel->setMinimumWidth(300);
-    layout->setSpacing(2);
     layout->addWidget(m_explanationLabel);
 
     getBtConfig().beginGroup("presentation");
