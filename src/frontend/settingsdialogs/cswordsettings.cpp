@@ -175,6 +175,8 @@ StandardWorksTab::StandardWorksTab(CSwordSettingsPage *parent)
             }
         }
     }
+
+    retranslateUi();
 }
 
 void StandardWorksTab::save() {
@@ -290,6 +292,8 @@ TextFiltersTab::TextFiltersTab(CSwordSettingsPage *parent)
     getBtConfig().endGroup();
 
     layout->addStretch(4);
+
+    retranslateUi();
 }
 
 void TextFiltersTab::save() {
