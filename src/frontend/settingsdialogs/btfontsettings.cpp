@@ -95,7 +95,7 @@ BtFontSettingsPage::BtFontSettingsPage(CConfigurationDialog *parent)
     fLayout->addLayout(hLayout);
     fLayout->addWidget(m_fontChooser);
 
-    m_fontsGroupBox = new QGroupBox(tr("Optionally specify a custom font for each language:"), this);
+    m_fontsGroupBox = new QGroupBox(this);
     m_fontsGroupBox->setFlat(true);
     m_fontsGroupBox->setLayout(fLayout);
 
