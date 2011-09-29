@@ -284,7 +284,7 @@ TextFiltersTab::TextFiltersTab(CSwordSettingsPage *parent)
     getBtConfig().beginGroup("presentation");
 #define TEXT_FILTERS_TAB_ADD_ROW(name) \
         m_ ## name ## Check = new QCheckBox(this); \
-        m_ ## name ## Check->setChecked(getBtConfig().getValue<bool>(#name)); \
+        m_ ## name ## Check->setChecked(getBtConfig().value<bool>(#name)); \
         layout->addWidget(m_ ## name ## Check);
 
         TEXT_FILTERS_TAB_ADD_ROW(lineBreaks);

@@ -61,7 +61,7 @@ void BibleTime::saveConfigSettings() {
 /** Is called when settings in the optionsdialog were changed (ok or apply) */
 void BibleTime::slotSettingsChanged() {
     qDebug() << "BibleTime::slotSettingsChanged";
-    const QString language = getBtConfig().getValue<QString>("language");
+    const QString language = getBtConfig().value<QString>("language");
     CSwordBackend::instance()->booknameLanguage(language);
 
 // \todo update the bookmarks after Bible bookname language has been changed
@@ -285,7 +285,7 @@ void BibleTime::slotAutoCascade() {
 /** Shows/hides the toolbar */
 void BibleTime::slotToggleMainToolbar() {
     Q_ASSERT(m_mainToolBar);
-    bool currentState = getBtConfig().getValue<bool>("gui/showMainToolbar");
+    bool currentState = getBtConfig().value<bool>("gui/showMainToolbar");
     getBtConfig().setValue("gui/showMainToolbar", !currentState);
     if ( m_showMainWindowToolbarAction->isChecked()) {
         m_mainToolBar->show();
@@ -296,61 +296,61 @@ void BibleTime::slotToggleMainToolbar() {
 }
 
 void BibleTime::slotToggleTextWindowHeader() {
-    bool currentState = getBtConfig().getValue<bool>("gui/showTextWindowHeaders");
+    bool currentState = getBtConfig().value<bool>("gui/showTextWindowHeaders");
     getBtConfig().setValue("gui/showTextWindowHeaders", !currentState);
     emit toggledTextWindowHeader(!currentState);
 }
 
 void BibleTime::slotToggleNavigatorToolbar() {
-    bool currentState = getBtConfig().getValue<bool>("gui/showTextWindowNavigator");
+    bool currentState = getBtConfig().value<bool>("gui/showTextWindowNavigator");
     getBtConfig().setValue("gui/showTextWindowNavigator", !currentState);
     showOrHideToolBars();
-    if (getBtConfig().getValue<bool>("gui/showToolbarsInEachWindow"))
+    if (getBtConfig().value<bool>("gui/showToolbarsInEachWindow"))
         emit toggledTextWindowNavigator(!currentState);
     else
         emit toggledTextWindowNavigator(false);
 }
 
 void BibleTime::slotToggleToolsToolbar() {
-    bool currentState = getBtConfig().getValue<bool>("gui/showTextWindowToolButtons");
+    bool currentState = getBtConfig().value<bool>("gui/showTextWindowToolButtons");
     getBtConfig().setValue("gui/showTextWindowToolButtons", !currentState);
     showOrHideToolBars();
-    if (getBtConfig().getValue<bool>("gui/showToolbarsInEachWindow"))
+    if (getBtConfig().value<bool>("gui/showToolbarsInEachWindow"))
         emit toggledTextWindowToolButtons(!currentState);
     else
         emit toggledTextWindowToolButtons(false);
 }
 
 void BibleTime::slotToggleWorksToolbar() {
-    bool currentState = getBtConfig().getValue<bool>("gui/showTextWindowModuleSelectorButtons");
+    bool currentState = getBtConfig().value<bool>("gui/showTextWindowModuleSelectorButtons");
     getBtConfig().setValue("gui/showTextWindowModuleSelectorButtons", !currentState);
     showOrHideToolBars();
-    if (getBtConfig().getValue<bool>("gui/showToolbarsInEachWindow"))
+    if (getBtConfig().value<bool>("gui/showToolbarsInEachWindow"))
         emit toggledTextWindowModuleChooser(!currentState);
     else
         emit toggledTextWindowModuleChooser(false);
 }
 
 void BibleTime::slotToggleFormatToolbar() {
-    bool currentState = getBtConfig().getValue<bool>("gui/showFormatToolbarButtons");
+    bool currentState = getBtConfig().value<bool>("gui/showFormatToolbarButtons");
     getBtConfig().setValue("gui/showFormatToolbarButtons", !currentState);
     showOrHideToolBars();
-    if (getBtConfig().getValue<bool>("gui/showToolbarsInEachWindow"))
+    if (getBtConfig().value<bool>("gui/showToolbarsInEachWindow"))
         emit toggledTextWindowFormatToolbar(!currentState);
     else
         emit toggledTextWindowFormatToolbar(false);
 }
 
 void BibleTime::slotToggleToolBarsInEachWindow() {
-    bool currentState = getBtConfig().getValue<bool>("gui/showToolbarsInEachWindow");
+    bool currentState = getBtConfig().value<bool>("gui/showToolbarsInEachWindow");
     getBtConfig().setValue("gui/showToolbarsInEachWindow", !currentState);
     showOrHideToolBars();
 
     if (!currentState) {
-        emit toggledTextWindowNavigator(getBtConfig().getValue<bool>("gui/showTextWindowNavigator"));
-        emit toggledTextWindowModuleChooser(getBtConfig().getValue<bool>("gui/showTextWindowModuleSelectorButtons"));
-        emit toggledTextWindowToolButtons(getBtConfig().getValue<bool>("gui/showTextWindowToolButtons"));
-        emit toggledTextWindowFormatToolbar(getBtConfig().getValue<bool>("gui/showFormatToolbarButtons"));
+        emit toggledTextWindowNavigator(getBtConfig().value<bool>("gui/showTextWindowNavigator"));
+        emit toggledTextWindowModuleChooser(getBtConfig().value<bool>("gui/showTextWindowModuleSelectorButtons"));
+        emit toggledTextWindowToolButtons(getBtConfig().value<bool>("gui/showTextWindowToolButtons"));
+        emit toggledTextWindowFormatToolbar(getBtConfig().value<bool>("gui/showFormatToolbarButtons"));
     }
     else {
         emit toggledTextWindowNavigator(false);
@@ -363,17 +363,17 @@ void BibleTime::slotToggleToolBarsInEachWindow() {
 }
 
 void BibleTime::showOrHideToolBars() {
-    if (getBtConfig().getValue<bool>("gui/showToolbarsInEachWindow")) {
+    if (getBtConfig().value<bool>("gui/showToolbarsInEachWindow")) {
         m_navToolBar->setVisible(false);
         m_worksToolBar->setVisible(false);
         m_toolsToolBar->setVisible(false);
         m_formatToolBar->setVisible(false);
     }
     else {
-        m_navToolBar->setVisible(getBtConfig().getValue<bool>("gui/showTextWindowNavigator"));
-        m_worksToolBar->setVisible(getBtConfig().getValue<bool>("gui/showTextWindowModuleSelectorButtons"));
-        m_toolsToolBar->setVisible(getBtConfig().getValue<bool>("gui/showTextWindowToolButtons"));
-        m_formatToolBar->setVisible(getBtConfig().getValue<bool>("gui/showFormatToolbarButtons"));
+        m_navToolBar->setVisible(getBtConfig().value<bool>("gui/showTextWindowNavigator"));
+        m_worksToolBar->setVisible(getBtConfig().value<bool>("gui/showTextWindowModuleSelectorButtons"));
+        m_toolsToolBar->setVisible(getBtConfig().value<bool>("gui/showTextWindowToolButtons"));
+        m_formatToolBar->setVisible(getBtConfig().value<bool>("gui/showFormatToolbarButtons"));
     }
 }
 

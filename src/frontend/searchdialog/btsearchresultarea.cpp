@@ -507,7 +507,7 @@ void BtSearchResultArea::initConnections() {
 * Load the settings from the resource file
 */
 void BtSearchResultArea::loadDialogSettings() {
-    QList<int> mainSplitterSizes = getBtConfig().getValue< QList<int> >("gui/windows/searchResultArea/mainSplitterSizes");
+    QList<int> mainSplitterSizes = getBtConfig().value< QList<int> >("gui/windows/searchResultArea/mainSplitterSizes");
     if (mainSplitterSizes.count() > 0)
         m_mainSplitter->setSizes(mainSplitterSizes);
     else
@@ -518,7 +518,7 @@ void BtSearchResultArea::loadDialogSettings() {
         m_mainSplitter->setSizes(mainSplitterSizes);
     }
 
-    QList<int> resultSplitterSizes = getBtConfig().getValue< QList<int> >("gui/windows/searchResultArea/resultSplitterSizes");
+    QList<int> resultSplitterSizes = getBtConfig().value< QList<int> >("gui/windows/searchResultArea/resultSplitterSizes");
     if (resultSplitterSizes.count() > 0)
         m_resultListSplitter->setSizes(resultSplitterSizes);
 }

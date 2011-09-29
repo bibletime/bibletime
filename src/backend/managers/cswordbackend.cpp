@@ -534,7 +534,7 @@ void CSwordBackend::deleteOrphanedIndices() {
                 }
             }
             else { //no module exists
-                if (getBtConfig().getValue<bool>("settings/behaviour/autoDeleteOrphanedIndices")) {
+                if (getBtConfig().value<bool>("settings/behaviour/autoDeleteOrphanedIndices")) {
                     qDebug() << "deleting orphaned index in directory" << dir[i];
                     CSwordModuleInfo::deleteIndexForModule( dir[i] );
                 }

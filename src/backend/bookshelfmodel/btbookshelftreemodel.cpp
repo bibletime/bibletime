@@ -26,7 +26,7 @@ using namespace BookshelfModel;
 
 bool BtBookshelfTreeModel::Grouping::loadFrom(const QString &configKey) {
     Q_ASSERT(!configKey.isNull());
-    QVariant v = getBtConfig().getValue<QVariant>(configKey);
+    QVariant v = getBtConfig().value<QVariant>(configKey);
     (*this) = v.value<Grouping>();
     return v.canConvert<Grouping>();
 }

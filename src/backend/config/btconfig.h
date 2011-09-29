@@ -96,7 +96,7 @@ public: /* Methods: */
      * \returns QVariant of the value.
      */
     template<typename T>
-    T getValue(const QString &key) {
+    T value(const QString &key) {
         const QString fullKey = group() + key;
 
         Q_ASSERT_X(!fullKey.startsWith(m_sessionsGroup),

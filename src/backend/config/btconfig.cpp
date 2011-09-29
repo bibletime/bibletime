@@ -164,7 +164,7 @@ BtConfig& BtConfig::getInstance()
 QString BtConfig::getCurrentSessionName()
 {
     // every session must have a name at any time, this is an error in the config if this is not the case
-    if(m_settings.value(m_currentSessionCache + "name") == QVariant())
+    if(!m_settings.value(m_currentSessionCache + "name").isValid())
     {
         qWarning() << "The session with key " << m_settings.value(m_currentSessionKey).toString() << " had no name associated, probably someone messed with the config. The default session name, \"" + m_defaultSessionName + "\", was set.";
         m_settings.setValue(m_currentSessionCache + "name", m_defaultSessionName);
@@ -323,16 +323,16 @@ FilterOptions BtConfig::getFilterOptions()
 
     options.footnotes           = true; // Required for the info display
     options.strongNumbers       = true; // get(strongNumbers);
-    options.headings            = getValue<int>("presentation/headings");
+    options.headings            = value<int>("presentation/headings");
     options.morphTags           = true; // Required for the info display
     options.lemmas              = true; // Required for the info display
     options.redLetterWords      = true;
-    options.hebrewPoints        = getValue<int>("presentation/hebrewPoints");
-    options.hebrewCantillation  = getValue<int>("presentation/hebrewCantillation");
-    options.greekAccents        = getValue<int>("presentation/greekAccents");
-    options.textualVariants     = getValue<int>("presentation/textualVariants");
-    options.scriptureReferences = getValue<int>("presentation/scriptureReferences");
-    options.morphSegmentation   = getValue<int>("presentation/morphSegmentation");
+    options.hebrewPoints        = value<int>("presentation/hebrewPoints");
+    options.hebrewCantillation  = value<int>("presentation/hebrewCantillation");
+    options.greekAccents        = value<int>("presentation/greekAccents");
+    options.textualVariants     = value<int>("presentation/textualVariants");
+    options.scriptureReferences = value<int>("presentation/scriptureReferences");
+    options.morphSegmentation   = value<int>("presentation/morphSegmentation");
 
     return options;
 }
@@ -340,8 +340,8 @@ FilterOptions BtConfig::getFilterOptions()
 DisplayOptions BtConfig::getDisplayOptions()
 {
     DisplayOptions options;
-    options.lineBreaks   = getValue<int>("presentation/lineBreaks");
-    options.verseNumbers = getValue<int>("presentation/verseNumbers");
+    options.lineBreaks   = value<int>("presentation/lineBreaks");
+    options.verseNumbers = value<int>("presentation/verseNumbers");
     return options;
 }
 
@@ -396,7 +396,7 @@ BtConfig::FontSettingsPair BtConfig::getFontForLanguage(const CLanguageMgr::Lang
 }
 
 BtConfig::StringMap BtConfig::getSearchScopesForCurrentLocale() {
-    StringMap map = getValue<BtConfig::StringMap>("properties/searchScopes");
+    StringMap map = value<BtConfig::StringMap>("properties/searchScopes");
 
     // Convert map to current locale:
     sword::VerseKey vk;
@@ -451,14 +451,14 @@ void BtConfig::deleteSearchScopesWithCurrentLocale() {
 }
 
 CSwordModuleInfo *BtConfig::getDefaultSwordModuleByType(const QString& moduleType) {
-    QString completeKey = "settings/defaults/" + moduleType;
-        CSwordModuleInfo *result(CSwordBackend::instance()->findModuleByName(getValue<QString>(completeKey)));
-    return result;
+    return CSwordBackend::instance()->findModuleByName(value<QString>("settings/defaults/" + moduleType));
 }
 
-void BtConfig::setDefaultSwordModuleByType(const QString& moduleType, const CSwordModuleInfo* const module) {
-    QString completeKey = "settings/defaults/" + moduleType;
-    setValue(completeKey, module != 0 ? module->name() : QString::null);
+void BtConfig::setDefaultSwordModuleByType(const QString &moduleType,
+                                           const CSwordModuleInfo * const module)
+{
+    setValue("settings/defaults/" + moduleType,
+             module != 0 ? module->name() : QString::null);
 }
 
 /**

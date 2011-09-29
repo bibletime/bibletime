@@ -284,8 +284,8 @@ void CSearchDialog::closeButtonClicked() {
 }
 
 void CSearchDialog::loadDialogSettings() {
-    resize(getBtConfig().getValue<QSize>("gui/windows/searchDialog/Size"));
-    move(getBtConfig().getValue<QPoint>("gui/windows/searchDialog/Pos"));
+    resize(getBtConfig().value<QSize>("gui/windows/searchDialog/Size"));
+    move(getBtConfig().value<QPoint>("gui/windows/searchDialog/Pos"));
 }
 
 void CSearchDialog::saveDialogSettings() {

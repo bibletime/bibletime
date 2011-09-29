@@ -55,7 +55,7 @@ BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
     QSplashScreen *splash = 0;
     QString splashHtml;
 
-    if (getBtConfig().getValue<bool>("gui/logo")) {
+    if (getBtConfig().value<bool>("gui/logo")) {
         splashHtml = "<div style='background:transparent;color:white;font-weight:bold'>%1"
                      "</div>";
 
@@ -270,7 +270,7 @@ void BibleTime::restoreWorkspace() {
 }
 
 void BibleTime::processCommandline(bool ignoreSession, const QString &bibleKey) {
-    if (getBtConfig().getValue<bool>("state/crashedTwoTimes")) {
+    if (getBtConfig().value<bool>("state/crashedTwoTimes")) {
         return;
     }
 
@@ -278,7 +278,7 @@ void BibleTime::processCommandline(bool ignoreSession, const QString &bibleKey) 
         restoreWorkspace();
     }
 
-    if (getBtConfig().getValue<bool>("state/crashedLastTime")) {
+    if (getBtConfig().value<bool>("state/crashedLastTime")) {
         return;
     }
 
@@ -302,7 +302,7 @@ void BibleTime::processCommandline(bool ignoreSession, const QString &bibleKey) 
         m_mdi->myTileVertical();
     }
 
-    if (getBtConfig().getValue<bool>("state/crashedLastTime")) {
+    if (getBtConfig().value<bool>("state/crashedLastTime")) {
         getBtConfig().setValue("state/crashedTwoTimes", true);
     }
     else {

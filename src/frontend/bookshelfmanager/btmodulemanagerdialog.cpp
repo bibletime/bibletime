@@ -59,8 +59,8 @@ BtModuleManagerDialog::~BtModuleManagerDialog() {
 }
 
 void BtModuleManagerDialog::loadDialogSettings() {
-    resize(getBtConfig().getValue<QSize>("gui/windows/bookshelf/Size"));
-    move(getBtConfig().getValue<QPoint>("gui/windows/bookshelf/Pos"));
+    resize(getBtConfig().value<QSize>("gui/windows/bookshelf/Size"));
+    move(getBtConfig().value<QPoint>("gui/windows/bookshelf/Pos"));
 }
 
 void BtModuleManagerDialog::saveDialogSettings() {

@@ -52,7 +52,7 @@ CBookmarkIndex::CBookmarkIndex(QWidget *parent)
         m_previousEventItem(0) {
     setMouseTracking(true);
     m_magTimer.setSingleShot(true);
-    m_magTimer.setInterval(getBtConfig().getValue<int>("gui/windows/magDelay"));
+    m_magTimer.setInterval(getBtConfig().value<int>("gui/windows/magDelay"));
     setContextMenuPolicy(Qt::CustomContextMenu);
     initView();
     initConnections();

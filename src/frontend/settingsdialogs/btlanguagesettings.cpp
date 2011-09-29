@@ -57,7 +57,7 @@ BtLanguageSettingsPage::BtLanguageSettingsPage(CConfigurationDialog *parent)
     m_swordLocaleCombo->addItems( languageNames );
 
     const CLanguageMgr::Language * const l =
-        CLanguageMgr::instance()->languageForAbbrev( getBtConfig().getValue<QString>("language") );
+        CLanguageMgr::instance()->languageForAbbrev( getBtConfig().value<QString>("language") );
 
     QString currentLanguageName;
     if ( l->isValid() && languageNames.contains(l->translatedName()) ) {     //tranlated language name is in the box
@@ -65,7 +65,7 @@ BtLanguageSettingsPage::BtLanguageSettingsPage(CConfigurationDialog *parent)
     }
     else {     //a language like "German Abbrevs" might be the language to set
         sword::SWLocale* locale =
-            sword::LocaleMgr::getSystemLocaleMgr()->getLocale( getBtConfig().getValue<QString>("language").toLocal8Bit() );
+            sword::LocaleMgr::getSystemLocaleMgr()->getLocale( getBtConfig().value<QString>("language").toLocal8Bit() );
         if (locale) {
             currentLanguageName = QString::fromLatin1(locale->getDescription());
         }

@@ -95,7 +95,7 @@ void CInfoDisplay::setInfo(const QString &data, const QString &lang) {
     }
     div.append(">");
 
-    QString content(mgr->fillTemplate(getBtConfig().getValue<QString>("gui/displayStyle"),
+    QString content(mgr->fillTemplate(getBtConfig().value<QString>("gui/displayStyle"),
                                       div + data + "</div>",
                                       settings));
     m_htmlPart->setText(content);
