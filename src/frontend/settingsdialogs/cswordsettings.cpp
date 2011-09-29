@@ -153,8 +153,9 @@ StandardWorksTab::StandardWorksTab(CSwordSettingsPage *parent)
 
 #define STANDARD_WORKS_COMBO_ADD(name) \
     comboList.append(m_ ## name ## Combo); \
-    m = getBtConfig().getDefaultSwordModuleByType(#name); \
+    m = btConfig().getDefaultSwordModuleByType(#name); \
     moduleList << (m != 0 ? m->config(CSwordModuleInfo::Description) : QString::null);
+
         STANDARD_WORKS_COMBO_ADD(standardBible);
         STANDARD_WORKS_COMBO_ADD(standardCommentary);
         STANDARD_WORKS_COMBO_ADD(standardLexicon);
@@ -186,12 +187,13 @@ StandardWorksTab::StandardWorksTab(CSwordSettingsPage *parent)
     retranslateUi();
 }
 
-void StandardWorksTab::save() {
 #define STANDARD_WORKS_SET_DEFAULT(name) \
-    getBtConfig().setDefaultSwordModuleByType(#name, \
-                                    CSwordBackend::instance()->findModuleByDescription(m_ ## name ## Combo->currentText()) \
-                                    );
+    btConfig().setDefaultSwordModuleByType(\
+        #name, \
+        CSwordBackend::instance()->findModuleByDescription(m_ ## name ## Combo->currentText()) \
+    );
 
+void StandardWorksTab::save() {
     STANDARD_WORKS_SET_DEFAULT(standardBible);
     STANDARD_WORKS_SET_DEFAULT(standardCommentary);
     STANDARD_WORKS_SET_DEFAULT(standardLexicon);
@@ -238,6 +240,8 @@ void StandardWorksTab::retranslateUi() {
   TextFiltersTab
 *******************************************************************************/
 
+#define TEXT_FILTERS_TAB_FIELD(name) QCheckBox *m_ ## name ## Check
+
 class TextFiltersTab: public QWidget {
 
     public: /* Methods: */
@@ -254,8 +258,6 @@ class TextFiltersTab: public QWidget {
 
         QLabel *m_explanationLabel;
 
-#define TEXT_FILTERS_TAB_FIELD(name) QCheckBox *m_ ## name ## Check
-
         TEXT_FILTERS_TAB_FIELD(lineBreaks);
         TEXT_FILTERS_TAB_FIELD(verseNumbers);
         TEXT_FILTERS_TAB_FIELD(headings);
@@ -267,6 +269,12 @@ class TextFiltersTab: public QWidget {
         TEXT_FILTERS_TAB_FIELD(scriptureReferences);
 
 };
+
+
+#define TEXT_FILTERS_TAB_ADD_ROW(name) \
+        m_ ## name ## Check = new QCheckBox(this); \
+        m_ ## name ## Check->setChecked(btConfig().value<bool>(#name)); \
+        layout->addWidget(m_ ## name ## Check);
 
 TextFiltersTab::TextFiltersTab(CSwordSettingsPage *parent)
     : QWidget(parent)
@@ -281,12 +289,7 @@ TextFiltersTab::TextFiltersTab(CSwordSettingsPage *parent)
     m_explanationLabel->setMinimumWidth(300);
     layout->addWidget(m_explanationLabel);
 
-    getBtConfig().beginGroup("presentation");
-#define TEXT_FILTERS_TAB_ADD_ROW(name) \
-        m_ ## name ## Check = new QCheckBox(this); \
-        m_ ## name ## Check->setChecked(getBtConfig().value<bool>(#name)); \
-        layout->addWidget(m_ ## name ## Check);
-
+    btConfig().beginGroup("presentation");
         TEXT_FILTERS_TAB_ADD_ROW(lineBreaks);
         TEXT_FILTERS_TAB_ADD_ROW(verseNumbers);
         TEXT_FILTERS_TAB_ADD_ROW(headings);
@@ -296,16 +299,18 @@ TextFiltersTab::TextFiltersTab(CSwordSettingsPage *parent)
         TEXT_FILTERS_TAB_ADD_ROW(greekAccents);
         TEXT_FILTERS_TAB_ADD_ROW(textualVariants);
         TEXT_FILTERS_TAB_ADD_ROW(scriptureReferences);
-    getBtConfig().endGroup();
+    btConfig().endGroup();
 
     layout->addStretch(4);
 
     retranslateUi();
 }
 
+#define TEXT_FILTERS_TAB_SAVE(name) \
+    btConfig().setValue(#name, m_ ## name ## Check->isChecked())
+
 void TextFiltersTab::save() {
-    getBtConfig().beginGroup("presentation");
-#define TEXT_FILTERS_TAB_SAVE(name) getBtConfig().setValue(#name, m_ ## name ## Check->isChecked())
+    btConfig().beginGroup("presentation");
         TEXT_FILTERS_TAB_SAVE(lineBreaks);
         TEXT_FILTERS_TAB_SAVE(verseNumbers);
         TEXT_FILTERS_TAB_SAVE(headings);
@@ -315,7 +320,7 @@ void TextFiltersTab::save() {
         TEXT_FILTERS_TAB_SAVE(greekAccents);
         TEXT_FILTERS_TAB_SAVE(textualVariants);
         TEXT_FILTERS_TAB_SAVE(scriptureReferences);
-    getBtConfig().endGroup();
+    btConfig().endGroup();
 }
 
 

@@ -95,7 +95,7 @@ void CInfoDisplay::setInfo(const QString &data, const QString &lang) {
     }
     div.append(">");
 
-    QString content(mgr->fillTemplate(getBtConfig().value<QString>("gui/displayStyle"),
+    QString content(mgr->fillTemplate(btConfig().value<QString>("gui/displayStyle"),
                                       div + data + "</div>",
                                       settings));
     m_htmlPart->setText(content);
@@ -224,7 +224,7 @@ const QString CInfoDisplay::decodeCrossReference( const QString& data ) {
     CTextRendering::KeyTree tree;
 
     //  const bool isBible = true;
-    CSwordModuleInfo* module = getBtConfig().getDefaultSwordModuleByType("standardBible");
+    CSwordModuleInfo* module = btConfig().getDefaultSwordModuleByType("standardBible");
 
     //a prefixed module gives the module to look into
     QRegExp re("^[^ ]+:");
@@ -239,7 +239,7 @@ const QString CInfoDisplay::decodeCrossReference( const QString& data ) {
         //     qWarning("found module %s", moduleName.latin1());
         module = CSwordBackend::instance()->findModuleByName(moduleName);
         if (!module) {
-            module = getBtConfig().getDefaultSwordModuleByType("standardBible");
+            module = btConfig().getDefaultSwordModuleByType("standardBible");
         }
         //   Q_ASSERT(module);
     }
@@ -369,7 +369,7 @@ const QString CInfoDisplay::decodeStrongs( const QString& data ) {
 
     QStringList::const_iterator end = strongs.end();
     for (QStringList::const_iterator it = strongs.begin(); it != end; ++it) {
-        CSwordModuleInfo* const module = getBtConfig().getDefaultSwordModuleByType
+        CSwordModuleInfo* const module = btConfig().getDefaultSwordModuleByType
                                          (
                                              ((*it).left(1) == QString("H")) ?
                                              "standardHebrewStrongsLexicon" :
@@ -426,11 +426,11 @@ const QString CInfoDisplay::decodeMorph( const QString& data ) {
             if (value.size() > 1 && value.at(1).isDigit()) {
                 switch (value.at(0).toLatin1()) {
                     case 'G':
-                        module = getBtConfig().getDefaultSwordModuleByType("standardGreekMorphLexicon");
+                        module = btConfig().getDefaultSwordModuleByType("standardGreekMorphLexicon");
                         skipFirstChar = true;
                         break;
                     case 'H':
-                        module = getBtConfig().getDefaultSwordModuleByType("standardHebrewMorphLexicon");
+                        module = btConfig().getDefaultSwordModuleByType("standardHebrewMorphLexicon");
                         skipFirstChar = true;
                         break;
                     default:
@@ -442,7 +442,7 @@ const QString CInfoDisplay::decodeMorph( const QString& data ) {
             }
             //if it is still not set use the default
             if (!module) {
-                module = getBtConfig().getDefaultSwordModuleByType("standardGreekMorphLexicon");
+                module = btConfig().getDefaultSwordModuleByType("standardGreekMorphLexicon");
             }
         }
 
@@ -455,7 +455,7 @@ const QString CInfoDisplay::decodeMorph( const QString& data ) {
             const bool isOk = key->setKey(skipFirstChar ? value.mid(1) : value);
             //Q_ASSERT(isOk);
             if (!isOk) { //try to use the other morph lexicon, because this one failed with the current morph code
-                key->setModule(getBtConfig().getDefaultSwordModuleByType("standardHebrewMorphLexicon")); /// \todo: what if the module doesn't exist?
+                key->setModule(btConfig().getDefaultSwordModuleByType("standardHebrewMorphLexicon")); /// \todo: what if the module doesn't exist?
                 key->setKey(skipFirstChar ? value.mid(1) : value);
             }
 
@@ -478,7 +478,7 @@ const QString CInfoDisplay::decodeMorph( const QString& data ) {
 }
 
 const QString CInfoDisplay::getWordTranslation( const QString& data ) {
-    CSwordModuleInfo* const module = getBtConfig().getDefaultSwordModuleByType("standardLexicon");
+    CSwordModuleInfo* const module = btConfig().getDefaultSwordModuleByType("standardLexicon");
     if (!module) {
         return QString::null;
     }

@@ -28,8 +28,8 @@ class CDisplayRendering : public CHTMLExportRendering {
         static const QString keyToHTMLAnchor(const QString& key);
 
         CDisplayRendering(
-            const DisplayOptions &displayOptions = getBtConfig().getDisplayOptions(),
-            const FilterOptions &filterOptions = getBtConfig().getFilterOptions());
+            const DisplayOptions &displayOptions = btConfig().getDisplayOptions(),
+            const FilterOptions &filterOptions = btConfig().getFilterOptions());
 
     protected: /* Methods: */
 

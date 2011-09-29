@@ -21,8 +21,8 @@ BibleTimeApp::~BibleTimeApp() {
     if (!m_init) return;
 
     //we can set this safely now because we close now (hopyfully without crash)
-    getBtConfig().setValue("state/crashedLastTime", false);
-    getBtConfig().setValue("state/crashedTwoTimes", false);
+    btConfig().setValue("state/crashedLastTime", false);
+    btConfig().setValue("state/crashedTwoTimes", false);
 
     delete CDisplayTemplateMgr::instance();
     CLanguageMgr::destroyInstance();

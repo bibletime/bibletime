@@ -109,7 +109,7 @@ void CBookTreeChooser::setModules(const QList<const CSwordModuleInfo*> &modules,
 /** From ckeychooser. */
 void CBookTreeChooser::adjustFont() {
     //Make sure the entries are displayed correctly.
-    m_treeView->setFont( getBtConfig().getFontForLanguage(m_modules.first()->language()).second );
+    m_treeView->setFont( btConfig().getFontForLanguage(m_modules.first()->language()).second );
 }
 
 

@@ -78,7 +78,7 @@ BtTipDialog::BtTipDialog(QWidget *parent, Qt::WindowFlags wflags)
 
     m_showTipsCheckBox = new QCheckBox;
     m_showTipsCheckBox->setText(tr("Show tips at startup"));
-    bool showTips = getBtConfig().value<bool>("gui/showTipAtStartup");
+    bool showTips = btConfig().value<bool>("gui/showTipAtStartup");
     m_showTipsCheckBox->setChecked(showTips);
     hLayout->addWidget(m_showTipsCheckBox);
 
@@ -110,7 +110,7 @@ BtTipDialog::BtTipDialog(QWidget *parent, Qt::WindowFlags wflags)
                      this,              SLOT(linkClicked(const QUrl&)));
     Q_ASSERT(ok);
 
-    m_tipNumber = getBtConfig().value<int>("state/tipNumber");
+    m_tipNumber = btConfig().value<int>("state/tipNumber");
     initTips();
     displayTip();
 }
@@ -180,7 +180,7 @@ void BtTipDialog::displayTip() {
 }
 
 void BtTipDialog::startupBoxChanged(bool checked) {
-    getBtConfig().setValue("gui/showTipAtStartup", checked);
+    btConfig().setValue("gui/showTipAtStartup", checked);
 }
 
 void BtTipDialog::nextTip() {
@@ -188,7 +188,7 @@ void BtTipDialog::nextTip() {
     if (m_tipNumber >= m_tips.count()) {
         m_tipNumber = 0;
     }
-    getBtConfig().setValue("state/tipNumber", m_tipNumber);
+    btConfig().setValue("state/tipNumber", m_tipNumber);
     displayTip();
 }
 

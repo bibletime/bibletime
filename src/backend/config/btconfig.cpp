@@ -129,15 +129,6 @@ BtConfig::BtConfig(const QString &settingsFile)
             map.insert(QObject::tr("Paul's Epistles"),        QString("Rom - Phile"));
         m_defaults.insert("properties/searchScopes", QVariant::fromValue(map));
 
-        /// \todo: these variables seem not to be used, check and remove
-        /*
-        m _defaults.insert("firstSearchDialog", true);
-        m_defaults.insert("readOldBookmars", false);
-        m_defaults.insert("mainIndex", true);
-        m_defaults.insert("infoDisplay", true);
-        */
-
-
     // initialize session settings
         m_sessionSettings.insert("gui/showTextWindowHeaders");
         m_sessionSettings.insert("gui/childWindows/");

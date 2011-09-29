@@ -42,8 +42,8 @@ class CHTMLExportRendering: public CTextRendering {
 
         CHTMLExportRendering(
             const Settings &settings,
-            const DisplayOptions &displayOptions = getBtConfig().getDisplayOptions(),
-            const FilterOptions &filterOptions = getBtConfig().getFilterOptions());
+            const DisplayOptions &displayOptions = btConfig().getDisplayOptions(),
+            const FilterOptions &filterOptions = btConfig().getFilterOptions());
 
     protected: /* Methods: */
 

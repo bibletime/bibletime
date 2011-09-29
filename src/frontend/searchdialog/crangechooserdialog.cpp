@@ -37,7 +37,7 @@ CRangeChooserDialog::CRangeChooserDialog(QWidget *parentDialog)
     retranslateUi();
 
     // Add the existing scopes
-    BtConfig::StringMap map = getBtConfig().getSearchScopesForCurrentLocale();
+    BtConfig::StringMap map = btConfig().getSearchScopesForCurrentLocale();
     BtConfig::StringMap::Iterator it;
     for (it = map.begin(); it != map.end(); ++it) {
         new RangeItem(it.key(), it.value(), m_rangeList);
@@ -244,7 +244,7 @@ void CRangeChooserDialog::accept() {
         const RangeItem * item = static_cast<RangeItem*>(m_rangeList->item(i));
         map[item->caption()] = item->range();
     }
-    getBtConfig().setSearchScopesWithCurrentLocale(map);
+    btConfig().setSearchScopesWithCurrentLocale(map);
 
     QDialog::accept();
 }
@@ -253,8 +253,8 @@ void CRangeChooserDialog::restoreDefaults() {
     typedef BtConfig::StringMap::ConstIterator SMCI;
 
     m_rangeList->clear();
-    getBtConfig().deleteSearchScopesWithCurrentLocale();
-    const BtConfig::StringMap map = getBtConfig().getSearchScopesForCurrentLocale();
+    btConfig().deleteSearchScopesWithCurrentLocale();
+    const BtConfig::StringMap map = btConfig().getSearchScopesForCurrentLocale();
     for (SMCI it = map.begin(); it != map.end(); ++it) {
         new RangeItem(it.key(), it.value(), m_rangeList);
     };

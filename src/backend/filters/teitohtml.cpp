@@ -109,7 +109,7 @@ void TeiToHtml::renderReference(const char *osisRef, sword::SWBuf &buf,
         //If the osisRef is something like "ModuleID:key comes here" then the
         // modulename is given, so we'll use that one
 
-        CSwordModuleInfo* mod = getBtConfig().getDefaultSwordModuleByType( "standardBible" );
+        CSwordModuleInfo* mod = btConfig().getDefaultSwordModuleByType( "standardBible" );
 
         // Q_ASSERT(mod); There's no necessarily a module or standard Bible
 

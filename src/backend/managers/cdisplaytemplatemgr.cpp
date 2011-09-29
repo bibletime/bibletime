@@ -125,8 +125,8 @@ QString CDisplayTemplateMgr::fillTemplate(const QString &name,
         //const CLanguageMgr::Language* lang = *it;
 
         //if (lang->isValid() && getBtConfig().getFontForLanguage(lang).first) {
-        if (!lang->abbrev().isEmpty() && getBtConfig().getFontForLanguage(lang).first) {
-            const QFont f = getBtConfig().getFontForLanguage(lang).second;
+        if (!lang->abbrev().isEmpty() && btConfig().getFontForLanguage(lang).first) {
+            const QFont f = btConfig().getFontForLanguage(lang).second;
 
             //don't use important, because it would reset the title formatting, etc. to the setup font
             QString css("{ ");
@@ -149,7 +149,7 @@ QString CDisplayTemplateMgr::fillTemplate(const QString &name,
     CLanguageMgr::Language* lang = &lang_v;
 
     if (lang && !lang->abbrev().isEmpty()/*&& lang->isValid()*/) {
-        const QFont standardFont = getBtConfig().getDefaultFont(); //we just need a dummy lang param
+        const QFont standardFont = btConfig().getDefaultFont(); //we just need a dummy lang param
         langCSS.prepend(
             QString("\n#content {font-family:%1; font-size:%2pt; font-weight:%3; font-style: %4;}\n")
             .arg(standardFont.family())

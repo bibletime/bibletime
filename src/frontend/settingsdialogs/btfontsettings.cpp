@@ -59,7 +59,7 @@ BtFontSettingsPage::BtFontSettingsPage(CConfigurationDialog *parent)
             ? &L::abbrev
             : &L::translatedName;
 
-        m_fontMap.insert((l->*f)(), getBtConfig().getFontForLanguage(l));
+        m_fontMap.insert((l->*f)(), btConfig().getFontForLanguage(l));
     }
 
     for (FontMap::ConstIterator it = m_fontMap.constBegin(); it != m_fontMap.constEnd(); ++it) {
@@ -118,11 +118,11 @@ void BtFontSettingsPage::save() const {
             if (!lang->abbrev().isEmpty()) {
                 // Create a temp language:
                 CLanguageMgr::Language l(k, k, k);
-                getBtConfig().setFontForLanguage(&l, it.value());
+                btConfig().setFontForLanguage(&l, it.value());
             }
         }
         else {
-            getBtConfig().setFontForLanguage(lang, it.value());
+            btConfig().setFontForLanguage(lang, it.value());
         }
     }
 }

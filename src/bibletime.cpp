@@ -55,7 +55,7 @@ BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
     QSplashScreen *splash = 0;
     QString splashHtml;
 
-    if (getBtConfig().value<bool>("gui/logo")) {
+    if (btConfig().value<bool>("gui/logo")) {
         splashHtml = "<div style='background:transparent;color:white;font-weight:bold'>%1"
                      "</div>";
 
@@ -270,7 +270,7 @@ void BibleTime::restoreWorkspace() {
 }
 
 void BibleTime::processCommandline(bool ignoreSession, const QString &bibleKey) {
-    if (getBtConfig().value<bool>("state/crashedTwoTimes")) {
+    if (btConfig().value<bool>("state/crashedTwoTimes")) {
         return;
     }
 
@@ -278,12 +278,12 @@ void BibleTime::processCommandline(bool ignoreSession, const QString &bibleKey) 
         restoreWorkspace();
     }
 
-    if (getBtConfig().value<bool>("state/crashedLastTime")) {
+    if (btConfig().value<bool>("state/crashedLastTime")) {
         return;
     }
 
     if (!bibleKey.isNull()) {
-        CSwordModuleInfo* bible = getBtConfig().getDefaultSwordModuleByType("standardBible");
+        CSwordModuleInfo* bible = btConfig().getDefaultSwordModuleByType("standardBible");
         if (bibleKey == "random") {
             CSwordVerseKey vk(0);
             const int maxIndex = 31100;
@@ -302,13 +302,13 @@ void BibleTime::processCommandline(bool ignoreSession, const QString &bibleKey) 
         m_mdi->myTileVertical();
     }
 
-    if (getBtConfig().value<bool>("state/crashedLastTime")) {
-        getBtConfig().setValue("state/crashedTwoTimes", true);
+    if (btConfig().value<bool>("state/crashedLastTime")) {
+        btConfig().setValue("state/crashedTwoTimes", true);
     }
     else {
-        getBtConfig().setValue("state/crashedLastTime", true);
+        btConfig().setValue("state/crashedLastTime", true);
     }
-    getBtConfig().sync();
+    btConfig().sync();
 }
 
 bool BibleTime::event(QEvent* event) {

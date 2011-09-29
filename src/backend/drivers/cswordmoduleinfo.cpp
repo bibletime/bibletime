@@ -90,7 +90,7 @@ CSwordModuleInfo::CSwordModuleInfo(sword::SWModule *module,
     initCachedCategory();
     initCachedLanguage();
 
-    m_hidden = getBtConfig().value<QStringList>("state/hiddenModules").contains(name());
+    m_hidden = btConfig().value<QStringList>("state/hiddenModules").contains(name());
 
     if (backend()) {
         if (hasVersion() && (minimumSwordVersion() > sword::SWVersion::currentVersion)) {
@@ -120,7 +120,7 @@ bool CSwordModuleInfo::unlock(const QString & unlockKey) {
 
     bool unlocked = unlockKeyIsValid();
 
-    getBtConfig().setModuleEncryptionKey(name(), unlockKey);
+    btConfig().setModuleEncryptionKey(name(), unlockKey);
 
     /// \todo remove this comment once it is no longer needed
     /* There is currently a deficiency in sword 1.6.1 in that backend->setCipherKey() does
@@ -229,7 +229,7 @@ bool CSwordModuleInfo::buildIndex() {
 
     try {
         //Without this we don't get strongs, lemmas, etc
-        backend()->setFilterOptions ( getBtConfig().getFilterOptions() );
+        backend()->setFilterOptions ( btConfig().getFilterOptions() );
         //make sure we reset all important filter options which influcence the plain filters.
         // turn on these options, they are needed for the EntryAttributes population
         backend()->setOption( CSwordModuleInfo::strongNumbers,  true );
@@ -522,11 +522,11 @@ QString CSwordModuleInfo::config(const CSwordModuleInfo::ConfigEntry entry) cons
             return getFormattedConfigEntry("About");
 
         case CipherKey: {
-            if (getBtConfig().getModuleEncryptionKey(name()).isNull()) { //fall back!
+            if (btConfig().getModuleEncryptionKey(name()).isNull()) { //fall back!
                 return QString(m_module->getConfigEntry("CipherKey"));
             }
             else {
-                return getBtConfig().getModuleEncryptionKey(name());
+                return btConfig().getModuleEncryptionKey(name());
             }
         }
 
@@ -1013,7 +1013,7 @@ bool CSwordModuleInfo::setHidden(bool hide) {
     if (m_hidden == hide) return false;
 
     m_hidden = hide;
-    QStringList hiddenModules(getBtConfig().value<QStringList>("state/hiddenModules"));
+    QStringList hiddenModules(btConfig().value<QStringList>("state/hiddenModules"));
     if (hide) {
         Q_ASSERT(!hiddenModules.contains(name()));
         hiddenModules.append(name());
@@ -1022,7 +1022,7 @@ bool CSwordModuleInfo::setHidden(bool hide) {
         Q_ASSERT(hiddenModules.contains(name()));
         hiddenModules.removeOne(name());
     }
-    getBtConfig().setValue("state/hiddenModules", hiddenModules);
+    btConfig().setValue("state/hiddenModules", hiddenModules);
     emit hiddenChanged(hide);
     return true;
 }

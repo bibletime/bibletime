@@ -61,7 +61,7 @@ void BibleTime::saveConfigSettings() {
 /** Is called when settings in the optionsdialog were changed (ok or apply) */
 void BibleTime::slotSettingsChanged() {
     qDebug() << "BibleTime::slotSettingsChanged";
-    const QString language = getBtConfig().value<QString>("language");
+    const QString language = btConfig().value<QString>("language");
     CSwordBackend::instance()->booknameLanguage(language);
 
 // \todo update the bookmarks after Bible bookname language has been changed
@@ -167,7 +167,7 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
         m_windowAutoTabbedAction->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(true);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeManual );
-        getBtConfig().setValue("gui/alignmentMode", manual);
+        btConfig().setValue("gui/alignmentMode", manual);
     }
     else if (clickedAction == m_windowAutoTileVerticalAction) {
         m_windowManualModeAction->setChecked(false);
@@ -177,7 +177,7 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
         m_windowAutoTabbedAction->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(false);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTileVertical );
-        getBtConfig().setValue("gui/alignmentMode", autoTileVertical);
+        btConfig().setValue("gui/alignmentMode", autoTileVertical);
     }
     else if (clickedAction == m_windowAutoTileHorizontalAction) {
         m_windowManualModeAction->setChecked(false);
@@ -187,7 +187,7 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
         m_windowAutoTabbedAction->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(false);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTileHorizontal );
-        getBtConfig().setValue("gui/alignmentMode", autoTileHorizontal);
+        btConfig().setValue("gui/alignmentMode", autoTileHorizontal);
     }
     else if (clickedAction == m_windowAutoTileAction) {
         m_windowManualModeAction->setChecked(false);
@@ -197,7 +197,7 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
         m_windowAutoCascadeAction->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(false);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTile );
-        getBtConfig().setValue("gui/alignmentMode", autoTile);
+        btConfig().setValue("gui/alignmentMode", autoTile);
     }
     else if (clickedAction == m_windowAutoTabbedAction) {
         m_windowManualModeAction->setChecked(false);
@@ -207,7 +207,7 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
         m_windowAutoCascadeAction->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(false);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTabbed );
-        getBtConfig().setValue("gui/alignmentMode", autoTabbed);
+        btConfig().setValue("gui/alignmentMode", autoTabbed);
     }
     else if (clickedAction == m_windowAutoCascadeAction) {
         m_windowManualModeAction->setChecked(false);
@@ -217,7 +217,7 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
         m_windowAutoTabbedAction->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(false);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeCascade );
-        getBtConfig().setValue("gui/alignmentMode", autoCascade);
+        btConfig().setValue("gui/alignmentMode", autoCascade);
     }
     else if (clickedAction == m_windowTileAction) {
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeManual );
@@ -285,8 +285,8 @@ void BibleTime::slotAutoCascade() {
 /** Shows/hides the toolbar */
 void BibleTime::slotToggleMainToolbar() {
     Q_ASSERT(m_mainToolBar);
-    bool currentState = getBtConfig().value<bool>("gui/showMainToolbar");
-    getBtConfig().setValue("gui/showMainToolbar", !currentState);
+    bool currentState = btConfig().value<bool>("gui/showMainToolbar");
+    btConfig().setValue("gui/showMainToolbar", !currentState);
     if ( m_showMainWindowToolbarAction->isChecked()) {
         m_mainToolBar->show();
     }
@@ -296,61 +296,61 @@ void BibleTime::slotToggleMainToolbar() {
 }
 
 void BibleTime::slotToggleTextWindowHeader() {
-    bool currentState = getBtConfig().value<bool>("gui/showTextWindowHeaders");
-    getBtConfig().setValue("gui/showTextWindowHeaders", !currentState);
+    bool currentState = btConfig().value<bool>("gui/showTextWindowHeaders");
+    btConfig().setValue("gui/showTextWindowHeaders", !currentState);
     emit toggledTextWindowHeader(!currentState);
 }
 
 void BibleTime::slotToggleNavigatorToolbar() {
-    bool currentState = getBtConfig().value<bool>("gui/showTextWindowNavigator");
-    getBtConfig().setValue("gui/showTextWindowNavigator", !currentState);
+    bool currentState = btConfig().value<bool>("gui/showTextWindowNavigator");
+    btConfig().setValue("gui/showTextWindowNavigator", !currentState);
     showOrHideToolBars();
-    if (getBtConfig().value<bool>("gui/showToolbarsInEachWindow"))
+    if (btConfig().value<bool>("gui/showToolbarsInEachWindow"))
         emit toggledTextWindowNavigator(!currentState);
     else
         emit toggledTextWindowNavigator(false);
 }
 
 void BibleTime::slotToggleToolsToolbar() {
-    bool currentState = getBtConfig().value<bool>("gui/showTextWindowToolButtons");
-    getBtConfig().setValue("gui/showTextWindowToolButtons", !currentState);
+    bool currentState = btConfig().value<bool>("gui/showTextWindowToolButtons");
+    btConfig().setValue("gui/showTextWindowToolButtons", !currentState);
     showOrHideToolBars();
-    if (getBtConfig().value<bool>("gui/showToolbarsInEachWindow"))
+    if (btConfig().value<bool>("gui/showToolbarsInEachWindow"))
         emit toggledTextWindowToolButtons(!currentState);
     else
         emit toggledTextWindowToolButtons(false);
 }
 
 void BibleTime::slotToggleWorksToolbar() {
-    bool currentState = getBtConfig().value<bool>("gui/showTextWindowModuleSelectorButtons");
-    getBtConfig().setValue("gui/showTextWindowModuleSelectorButtons", !currentState);
+    bool currentState = btConfig().value<bool>("gui/showTextWindowModuleSelectorButtons");
+    btConfig().setValue("gui/showTextWindowModuleSelectorButtons", !currentState);
     showOrHideToolBars();
-    if (getBtConfig().value<bool>("gui/showToolbarsInEachWindow"))
+    if (btConfig().value<bool>("gui/showToolbarsInEachWindow"))
         emit toggledTextWindowModuleChooser(!currentState);
     else
         emit toggledTextWindowModuleChooser(false);
 }
 
 void BibleTime::slotToggleFormatToolbar() {
-    bool currentState = getBtConfig().value<bool>("gui/showFormatToolbarButtons");
-    getBtConfig().setValue("gui/showFormatToolbarButtons", !currentState);
+    bool currentState = btConfig().value<bool>("gui/showFormatToolbarButtons");
+    btConfig().setValue("gui/showFormatToolbarButtons", !currentState);
     showOrHideToolBars();
-    if (getBtConfig().value<bool>("gui/showToolbarsInEachWindow"))
+    if (btConfig().value<bool>("gui/showToolbarsInEachWindow"))
         emit toggledTextWindowFormatToolbar(!currentState);
     else
         emit toggledTextWindowFormatToolbar(false);
 }
 
 void BibleTime::slotToggleToolBarsInEachWindow() {
-    bool currentState = getBtConfig().value<bool>("gui/showToolbarsInEachWindow");
-    getBtConfig().setValue("gui/showToolbarsInEachWindow", !currentState);
+    bool currentState = btConfig().value<bool>("gui/showToolbarsInEachWindow");
+    btConfig().setValue("gui/showToolbarsInEachWindow", !currentState);
     showOrHideToolBars();
 
     if (!currentState) {
-        emit toggledTextWindowNavigator(getBtConfig().value<bool>("gui/showTextWindowNavigator"));
-        emit toggledTextWindowModuleChooser(getBtConfig().value<bool>("gui/showTextWindowModuleSelectorButtons"));
-        emit toggledTextWindowToolButtons(getBtConfig().value<bool>("gui/showTextWindowToolButtons"));
-        emit toggledTextWindowFormatToolbar(getBtConfig().value<bool>("gui/showFormatToolbarButtons"));
+        emit toggledTextWindowNavigator(btConfig().value<bool>("gui/showTextWindowNavigator"));
+        emit toggledTextWindowModuleChooser(btConfig().value<bool>("gui/showTextWindowModuleSelectorButtons"));
+        emit toggledTextWindowToolButtons(btConfig().value<bool>("gui/showTextWindowToolButtons"));
+        emit toggledTextWindowFormatToolbar(btConfig().value<bool>("gui/showFormatToolbarButtons"));
     }
     else {
         emit toggledTextWindowNavigator(false);
@@ -363,17 +363,17 @@ void BibleTime::slotToggleToolBarsInEachWindow() {
 }
 
 void BibleTime::showOrHideToolBars() {
-    if (getBtConfig().value<bool>("gui/showToolbarsInEachWindow")) {
+    if (btConfig().value<bool>("gui/showToolbarsInEachWindow")) {
         m_navToolBar->setVisible(false);
         m_worksToolBar->setVisible(false);
         m_toolsToolBar->setVisible(false);
         m_formatToolBar->setVisible(false);
     }
     else {
-        m_navToolBar->setVisible(getBtConfig().value<bool>("gui/showTextWindowNavigator"));
-        m_worksToolBar->setVisible(getBtConfig().value<bool>("gui/showTextWindowModuleSelectorButtons"));
-        m_toolsToolBar->setVisible(getBtConfig().value<bool>("gui/showTextWindowToolButtons"));
-        m_formatToolBar->setVisible(getBtConfig().value<bool>("gui/showFormatToolbarButtons"));
+        m_navToolBar->setVisible(btConfig().value<bool>("gui/showTextWindowNavigator"));
+        m_worksToolBar->setVisible(btConfig().value<bool>("gui/showTextWindowModuleSelectorButtons"));
+        m_toolsToolBar->setVisible(btConfig().value<bool>("gui/showTextWindowToolButtons"));
+        m_formatToolBar->setVisible(btConfig().value<bool>("gui/showFormatToolbarButtons"));
     }
 }
 
@@ -402,7 +402,7 @@ void BibleTime::slotSearchModules() {
  */
 void BibleTime::slotSearchDefaultBible() {
     QList<const CSwordModuleInfo*> module;
-    CSwordModuleInfo* bible = getBtConfig().getDefaultSwordModuleByType("standardBible");
+    CSwordModuleInfo* bible = btConfig().getDefaultSwordModuleByType("standardBible");
     if (bible) {
         module.append(bible);
     }

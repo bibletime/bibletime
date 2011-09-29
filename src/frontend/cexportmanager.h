@@ -35,8 +35,8 @@ class CExportManager {
         CExportManager(const QString &caption,
                        const bool showProgress = true,
                        const QString &progressLabel = QString::null,
-                       const FilterOptions &filterOptions = getBtConfig().getFilterOptions(),
-                       const DisplayOptions &displayOptions = getBtConfig().getDisplayOptions());
+                       const FilterOptions &filterOptions = btConfig().getFilterOptions(),
+                       const DisplayOptions &displayOptions = btConfig().getDisplayOptions());
 
         bool saveKey(CSwordKey* key, const Format format, const bool addText);
 

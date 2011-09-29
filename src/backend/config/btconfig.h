@@ -360,7 +360,7 @@ Q_DECLARE_METATYPE(QList<int>)
  * \brief This is a shortchand for BtConfig::getInstance().
  * \returns BtConfig singleton instance.
  */
-inline BtConfig &getBtConfig() {
+inline BtConfig &btConfig() {
     return BtConfig::getInstance();
 }
 

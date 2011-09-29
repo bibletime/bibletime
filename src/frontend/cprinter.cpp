@@ -121,7 +121,7 @@ const QString CPrinter::finishText(const QString& text, KeyTree& tree) {
     }
 
     CDisplayTemplateMgr *tMgr = CDisplayTemplateMgr::instance();
-    return tMgr->fillTemplate(getBtConfig().value<QString>("gui/displayStyle"), text, settings);
+    return tMgr->fillTemplate(btConfig().value<QString>("gui/displayStyle"), text, settings);
 }
 
 } //end of namespace

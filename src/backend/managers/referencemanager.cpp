@@ -252,25 +252,25 @@ const QString ReferenceManager::preferredModule( const ReferenceManager::Type ty
     switch (type) {
 
         case ReferenceManager::Bible:
-            module = getBtConfig().getDefaultSwordModuleByType( "standardBible" );
+            module = btConfig().getDefaultSwordModuleByType( "standardBible" );
             break;
         case ReferenceManager::Commentary:
-            module = getBtConfig().getDefaultSwordModuleByType( "standardCommentary" );
+            module = btConfig().getDefaultSwordModuleByType( "standardCommentary" );
             break;
         case ReferenceManager::Lexicon:
-            module = getBtConfig().getDefaultSwordModuleByType( "standardLexicon" );
+            module = btConfig().getDefaultSwordModuleByType( "standardLexicon" );
             break;
         case ReferenceManager::StrongsHebrew:
-            module = getBtConfig().getDefaultSwordModuleByType( "standardHebrewStrongsLexicon" );
+            module = btConfig().getDefaultSwordModuleByType( "standardHebrewStrongsLexicon" );
             break;
         case ReferenceManager::StrongsGreek:
-            module = getBtConfig().getDefaultSwordModuleByType( "standardGreekStrongsLexicon" );
+            module = btConfig().getDefaultSwordModuleByType( "standardGreekStrongsLexicon" );
             break;
         case ReferenceManager::MorphHebrew:
-            module = getBtConfig().getDefaultSwordModuleByType( "standardHebrewMorphLexicon" );
+            module = btConfig().getDefaultSwordModuleByType( "standardHebrewMorphLexicon" );
             break;
         case ReferenceManager::MorphGreek:
-            module = getBtConfig().getDefaultSwordModuleByType( "standardGreekMorphLexicon" );
+            module = btConfig().getDefaultSwordModuleByType( "standardGreekMorphLexicon" );
             break;
         default:
             module = 0;

@@ -161,7 +161,7 @@ CSwordBackend::LoadError CSwordBackend::initModules(SetupChangedReason reason) {
     Q_FOREACH(CSwordModuleInfo* mod, m_dataModel.moduleList()) {
         //unlock modules if keys are present
         if ( mod->isEncrypted() ) {
-            const QString unlockKey = getBtConfig().getModuleEncryptionKey( mod->name() );
+            const QString unlockKey = btConfig().getModuleEncryptionKey( mod->name() );
             if (!unlockKey.isNull()) {
                 setCipherKey( mod->name().toUtf8().constData(), unlockKey.toUtf8().constData() );
             }
@@ -534,7 +534,7 @@ void CSwordBackend::deleteOrphanedIndices() {
                 }
             }
             else { //no module exists
-                if (getBtConfig().value<bool>("settings/behaviour/autoDeleteOrphanedIndices")) {
+                if (btConfig().value<bool>("settings/behaviour/autoDeleteOrphanedIndices")) {
                     qDebug() << "deleting orphaned index in directory" << dir[i];
                     CSwordModuleInfo::deleteIndexForModule( dir[i] );
                 }

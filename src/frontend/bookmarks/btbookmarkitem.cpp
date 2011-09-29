@@ -82,7 +82,7 @@ QString BtBookmarkItem::toolTip() const {
         return QString::null;
     }
 
-    FilterOptions filterOptions = getBtConfig().getFilterOptions();
+    FilterOptions filterOptions = btConfig().getFilterOptions();
     filterOptions.footnotes = false;
     filterOptions.scriptureReferences = false;
     CSwordBackend::instance()->setFilterOptions(filterOptions);

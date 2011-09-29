@@ -52,7 +52,7 @@ CDisplaySettingsPage::CDisplaySettingsPage(CConfigurationDialog *parent)
 
     { //startup logo
         m_showLogoCheck = new QCheckBox(this);
-        m_showLogoCheck->setChecked(getBtConfig().value<bool>("gui/logo"));
+        m_showLogoCheck->setChecked(btConfig().value<bool>("gui/logo"));
         mainLayout->addWidget(m_showLogoCheck);
     }
     mainLayout->addSpacing(20);
@@ -88,7 +88,7 @@ CDisplaySettingsPage::CDisplaySettingsPage(CConfigurationDialog *parent)
     );
 
     for (int i = 0; i < m_styleChooserCombo->count(); ++i) {
-        if ( m_styleChooserCombo->itemText(i) == getBtConfig().value<QString>("gui/displayStyle") ) {
+        if ( m_styleChooserCombo->itemText(i) == btConfig().value<QString>("gui/displayStyle") ) {
             m_styleChooserCombo->setCurrentIndex( i );
             break;
         }
@@ -160,15 +160,15 @@ void CDisplaySettingsPage::updateStylePreview() {
                      .arg(tr("But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.")),
                      settings));
 
-    const QString oldStyleName = getBtConfig().value<QString>("gui/displayStyle");
-    getBtConfig().setValue("gui/displayStyle", styleName);
+    const QString oldStyleName = btConfig().value<QString>("gui/displayStyle");
+    btConfig().setValue("gui/displayStyle", styleName);
     CDisplayRendering render;
     m_stylePreviewViewer->setHtml( render.renderKeyTree(tree));
 
-    getBtConfig().setValue("gui/displayStyle", oldStyleName);
+    btConfig().setValue("gui/displayStyle", oldStyleName);
 }
 
 void CDisplaySettingsPage::save() {
-    getBtConfig().setValue("gui/logo", m_showLogoCheck->isChecked() );
-    getBtConfig().setValue("gui/displayStyle", m_styleChooserCombo->currentText());
+    btConfig().setValue("gui/logo", m_showLogoCheck->isChecked() );
+    btConfig().setValue("gui/displayStyle", m_styleChooserCombo->currentText());
 }

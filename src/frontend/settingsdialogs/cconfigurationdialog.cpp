@@ -100,15 +100,15 @@ void CConfigurationDialog::slotButtonClicked(QAbstractButton* button) {
 }
 
 void CConfigurationDialog::loadDialogSettings() {
-    getBtConfig().beginGroup("gui/windows/configDialog");
-        resize(getBtConfig().value<QSize>("Size"));
-        move(getBtConfig().value<QPoint>("Pos"));
-    getBtConfig().endGroup();
+    btConfig().beginGroup("gui/windows/configDialog");
+        resize(btConfig().value<QSize>("Size"));
+        move(btConfig().value<QPoint>("Pos"));
+    btConfig().endGroup();
 }
 
 void CConfigurationDialog::saveDialogSettings() {
-    getBtConfig().beginGroup("gui/windows/configDialog");
-        getBtConfig().setValue("Size", size());
-        getBtConfig().setValue("Pos", pos());
-    getBtConfig().endGroup();
+    btConfig().beginGroup("gui/windows/configDialog");
+        btConfig().setValue("Size", size());
+        btConfig().setValue("Pos", pos());
+    btConfig().endGroup();
 }

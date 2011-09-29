@@ -244,7 +244,7 @@ void BtSearchOptionsArea::setModules(const QList<const CSwordModuleInfo*> &modul
     for (int i = 0; i < m_modulesCombo->count(); ++i) {
         historyList.append(m_modulesCombo->itemText(i));
     }
-    getBtConfig().setValue("history/searchModuleHistory", historyList);
+    btConfig().setValue("history/searchModuleHistory", historyList);
     emit sigSetSearchButtonStatus(!modules.isEmpty());
 }
 
@@ -285,7 +285,7 @@ void BtSearchOptionsArea::reset() {
 }
 
 void BtSearchOptionsArea::saveSettings() {
-    getBtConfig().setValue("properties/searchTexts", m_searchTextCombo->historyItems());
+    btConfig().setValue("properties/searchTexts", m_searchTextCombo->historyItems());
     SearchType t = FullType;
     if (m_typeAndButton->isChecked()) {
         t = AndType;
@@ -293,11 +293,11 @@ void BtSearchOptionsArea::saveSettings() {
     if (m_typeOrButton->isChecked()) {
         t = OrType;
     }
-    getBtConfig().setValue("gui/windows/searchType", t);
+    btConfig().setValue("gui/windows/searchType", t);
 }
 
 void BtSearchOptionsArea::readSettings() {
-    QStringList texts = getBtConfig().value<QStringList>("properties/searchTexts");
+    QStringList texts = btConfig().value<QStringList>("properties/searchTexts");
     //for some reason the slot was called when setting the upmost item
     disconnect(m_searchTextCombo, SIGNAL(editTextChanged(const QString&)), this, SLOT(slotValidateText(const QString&)));
     for (int i = 0; i < texts.size(); i++) {
@@ -306,12 +306,12 @@ void BtSearchOptionsArea::readSettings() {
     }
     connect(m_searchTextCombo, SIGNAL(editTextChanged(const QString&)), this, SLOT(slotValidateText(const QString&)));
 
-    m_modulesCombo->insertItems(0, getBtConfig().value<QStringList>("history/searchModuleHistory"));
+    m_modulesCombo->insertItems(0, btConfig().value<QStringList>("history/searchModuleHistory"));
     for (int i = 0; i < m_modulesCombo->count(); ++i) {
         m_modulesCombo->setItemData(i, m_modulesCombo->itemText(i), Qt::ToolTipRole);
     }
 
-    int stype = getBtConfig().value<int>("gui/windows/searchType");
+    int stype = btConfig().value<int>("gui/windows/searchType");
     switch (stype) {
         case AndType:
             m_typeAndButton->setChecked(true);
@@ -350,12 +350,12 @@ void BtSearchOptionsArea::refreshRanges() {
     //m_rangeChooserCombo->insertItem(tr("Last search result"));
 
     //insert the user-defined ranges
-    m_rangeChooserCombo->insertItems(1, getBtConfig().getSearchScopesForCurrentLocale().keys());
+    m_rangeChooserCombo->insertItems(1, btConfig().getSearchScopesForCurrentLocale().keys());
 }
 
 sword::ListKey BtSearchOptionsArea::searchScope() {
     if (m_rangeChooserCombo->currentIndex() > 0) { //is not "no scope"
-        BtConfig::StringMap map = getBtConfig().getSearchScopesForCurrentLocale();
+        BtConfig::StringMap map = btConfig().getSearchScopesForCurrentLocale();
         QString scope = map[ m_rangeChooserCombo->currentText() ];
         if (!scope.isEmpty()) {
             return sword::VerseKey().ParseVerseList( (const char*)scope.toUtf8(), "Genesis 1:1", true);

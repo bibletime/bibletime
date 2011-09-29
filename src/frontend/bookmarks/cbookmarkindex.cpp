@@ -52,7 +52,7 @@ CBookmarkIndex::CBookmarkIndex(QWidget *parent)
         m_previousEventItem(0) {
     setMouseTracking(true);
     m_magTimer.setSingleShot(true);
-    m_magTimer.setInterval(getBtConfig().value<int>("gui/windows/magDelay"));
+    m_magTimer.setInterval(btConfig().value<int>("gui/windows/magDelay"));
     setContextMenuPolicy(Qt::CustomContextMenu);
     initView();
     initConnections();
@@ -681,7 +681,7 @@ void CBookmarkIndex::printBookmarks() {
         return;
     }
     QSharedPointer<Printing::CPrinter> printer(
-        new Printing::CPrinter( this, getBtConfig().getDisplayOptions(), getBtConfig().getFilterOptions() )
+        new Printing::CPrinter( this, btConfig().getDisplayOptions(), btConfig().getFilterOptions() )
     );
     printer->printKeyTree(tree);
 }

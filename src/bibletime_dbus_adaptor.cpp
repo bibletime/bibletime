@@ -50,7 +50,7 @@ void BibleTimeDBusAdaptor::openWindow(const QString &moduleName, const QString &
 
 void BibleTimeDBusAdaptor::openDefaultBible(const QString &key) {
     qDebug() << "DBUS: open default bible ...";
-    CSwordModuleInfo *module = getBtConfig().getDefaultSwordModuleByType("standardBible");
+    CSwordModuleInfo *module = btConfig().getDefaultSwordModuleByType("standardBible");
     if (module)
         m_bibletime->createReadDisplayWindow(module, key);
 }
@@ -77,7 +77,7 @@ QStringList BibleTimeDBusAdaptor::searchInOpenModules(const QString &searchText)
 
 QStringList BibleTimeDBusAdaptor::searchInDefaultBible(const QString &searchText) {
     qDebug() << "DBUS: search in default bible ...";
-    CSwordModuleInfo *bible = getBtConfig().getDefaultSwordModuleByType("standardBible");
+    CSwordModuleInfo *bible = btConfig().getDefaultSwordModuleByType("standardBible");
     return m_bibletime->searchInModule(bible->name(), searchText);
 }
 
