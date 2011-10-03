@@ -46,7 +46,11 @@ private: /* Types: */
 
 public: /* Methods: */
 
+    inline ~BtConfig() { sync(); }
+
     static BtConfig& getInstance();
+
+    static void destroyInstance();
 
     /*!
      * \brief Returns the name of the current session.

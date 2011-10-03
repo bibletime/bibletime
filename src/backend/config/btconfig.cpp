@@ -140,7 +140,7 @@ BtConfig::BtConfig(const QString &settingsFile)
 
     // make sure the current session key and cache are set
         if(m_settings.contains(m_currentSessionKey))
-            m_currentSessionCache = m_sessionsGroup + "/" + m_settings.value(m_currentSessionKey).toString() + "/";
+            m_currentSessionCache = m_sessionsGroup + '/' + m_settings.value(m_currentSessionKey).toString() + '/';
         else
             switchToSession(m_defaultSessionName);
 }
@@ -150,6 +150,11 @@ BtConfig& BtConfig::getInstance()
     if(m_instance == 0)
         m_instance = new BtConfig(util::directory::getUserBaseDir().absolutePath() + "/bibletimerc.new");
     return *m_instance;
+}
+
+void BtConfig::destroyInstance() {
+    delete m_instance;
+    m_instance = 0;
 }
 
 QString BtConfig::getCurrentSessionName()
@@ -168,63 +173,56 @@ QStringList BtConfig::getAllSessionNames()
 {
     m_settings.beginGroup(m_sessionsGroup);
 
-    QStringList sessions = m_settings.childGroups();
     QStringList sessionNames;
-    foreach(QString session, sessions)
+    Q_FOREACH (const QString &session, m_settings.childGroups())
         sessionNames.append(m_settings.value(session + "/name").toString());
     m_settings.endGroup();
     return sessionNames;
 }
 
-void BtConfig::switchToSession(const QString& name)
-{
+void BtConfig::switchToSession(const QString &name) {
+    Q_ASSERT(!name.isEmpty());
+
     m_settings.beginGroup(m_sessionsGroup);
-    QStringList sessions = m_settings.childGroups();
-    QString sessionKey = "invalid";
+    const QStringList sessions = m_settings.childGroups();
+    QString sessionKey;
 
-    //check whether the session already exists
-        bool found = false;
-        foreach(QString session, sessions)
-        {
-            if(m_settings.value(session + "/name") == name)
-            {
-                found = true;
-                sessionKey = session;
+    // Check whether the session already exists:
+    bool found = false;
+    Q_FOREACH (const QString &session, sessions) {
+        if(m_settings.value(session + "/name").toString() == name) {
+            found = true;
+            sessionKey = session;
+            break;
+        }
+    }
+
+    // If the session doesn't exist yet, create it:
+    if (!found) {
+        /// \bug ULONG_MAX shouldn't be the limit here:
+        for (unsigned long i = 0; i != ULONG_MAX; i++) {
+            sessionKey = QString::number(i);
+            if (!sessions.contains(sessionKey))
                 break;
-            }
         }
 
-    // session doesn't exist yet, create it
-        if(not found)
-        {
-            for(int i = 0; i != 1000; i++) // noone will have 1000 sessions...
-            {
-                if(not sessions.contains(QString::number(i)))
-                {
-                    sessionKey = QString::number(i);
-                    break;
-                }
-            }
-            Q_ASSERT(sessionKey != "invalid");
-
-            m_settings.setValue(sessionKey + "/name", name);
-        }
+        m_settings.setValue(sessionKey + "/name", name);
+    }
 
     m_settings.endGroup();
 
-    // switch to the session
-        m_settings.setValue(m_currentSessionKey, sessionKey);
-        m_currentSessionCache = m_sessionsGroup + "/" + sessionKey + "/";
+    // Switch to the session:
+    m_settings.setValue(m_currentSessionKey, sessionKey);
+    m_currentSessionCache = m_sessionsGroup + "/" + sessionKey + "/";
 }
 
 bool BtConfig::deleteSession(const QString& name)
 {
     m_settings.beginGroup(m_sessionsGroup);
-        QStringList sessions = m_settings.childGroups();
+        const QStringList sessions = m_settings.childGroups();
     m_settings.endGroup();
 
-    foreach(QString session, sessions)
-    {
+    Q_FOREACH (const QString &session, sessions) {
         if(m_settings.value(m_sessionsGroup + "/" + session + "/name").toString() == name) // we found the session
         {
             if(m_settings.value(m_currentSessionKey) != session)
@@ -243,28 +241,21 @@ bool BtConfig::deleteSession(const QString& name)
 
 // Helper functions
 
-void BtConfig::setModuleEncryptionKey(const QString& name, const QString& key)
-{
-    m_settings.beginGroup("Module keys");
-        m_settings.setValue(name, key);
-    m_settings.endGroup();
+void BtConfig::setModuleEncryptionKey(const QString &name, const QString &key) {
+    Q_ASSERT(!name.isEmpty());
+    m_settings.setValue("Module keys/" + name, key);
 }
 
-QString BtConfig::getModuleEncryptionKey(const QString& name)
-{
-    Q_ASSERT(not name.isEmpty());
-    m_settings.beginGroup("Module keys");
-        QString result(m_settings.value(name, QVariant(QString::null)).toString());
-    m_settings.endGroup();
-    return result;
+QString BtConfig::getModuleEncryptionKey(const QString &name) {
+    Q_ASSERT(!name.isEmpty());
+    return m_settings.value("Module keys/" + name, QVariant(QString::null)).toString();
 }
 
 QHash< QString, QList<QKeySequence> > BtConfig::getShortcuts( const QString& shortcutGroup )
 {
     m_settings.beginGroup(shortcutGroup);
         QHash< QString, QList<QKeySequence> > allShortcuts;
-        QStringList keyList = m_settings.childKeys();
-        foreach(QString key, keyList) {
+        Q_FOREACH (const QString &key, m_settings.childKeys()) {
             QVariant variant = m_settings.value(key);
 
             QList<QKeySequence> shortcuts;
@@ -358,30 +349,27 @@ BtConfig::FontSettingsPair BtConfig::getFontForLanguage(const CLanguageMgr::Lang
     Q_ASSERT(not language->name().isEmpty());
 
     // Check the cache first:
-        FontCacheMap::const_iterator it(m_fontCache.find(language));
-        if (it != m_fontCache.end())
-            return *it;
+    FontCacheMap::const_iterator it(m_fontCache.find(language));
+    if (it != m_fontCache.end())
+        return *it;
 
     // Retrieve the font from the settings
-        FontSettingsPair fontSettings;
+    FontSettingsPair fontSettings;
 
-        m_settings.beginGroup("font standard settings");
-            fontSettings.first = m_settings.value(language->name(), false).toBool();
-        m_settings.endGroup();
+    fontSettings.first = m_settings.value("font standard settings/" + language->name(), false).toBool();
 
-        m_settings.beginGroup("fonts");
-            QFont font;
-            if (fontSettings.first) {
-                font.fromString(m_settings.value(language->name(), getDefaultFont()).toString());
-            }
-            else {
-                font = getDefaultFont();
-            }
-            fontSettings.second = font;
-        m_settings.endGroup();
+    QFont font;
+    if (fontSettings.first) {
+        if (!font.fromString(m_settings.value("fonts/" + language->name(), getDefaultFont()).toString())) {
+            /// \todo
+        }
+    } else {
+        font = getDefaultFont();
+    }
+    fontSettings.second = font;
 
-    // Cache the value
-        m_fontCache.insert(language, fontSettings);
+    // Cache the value:
+    m_fontCache.insert(language, fontSettings);
 
     return fontSettings;
 }
