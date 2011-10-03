@@ -56,7 +56,7 @@ CInfoDisplay::CInfoDisplay(QWidget *parent) : QWidget(parent) {
     copyAction->setShortcut( QKeySequence(Qt::CTRL + Qt::Key_C) );
     QObject::connect(copyAction, SIGNAL(triggered()), m_htmlPart->connectionsProxy(), SLOT(copySelection()) );
 
-    QMenu* menu = new QMenu();
+    QMenu* menu = new QMenu(this);
     menu->addAction(selectAllAction);
     menu->addAction(copyAction);
     m_htmlPart->installPopup(menu);
