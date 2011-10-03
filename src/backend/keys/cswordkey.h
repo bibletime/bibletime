@@ -81,14 +81,14 @@ class CSwordKey {
         /** Returns the raw, unchanged text. Returns the text without any filter modifications,
          * just in the way it comes out of the module.
          */
-        virtual QString rawText();
+        QString rawText();
         /** Returns the rendered text. Returns the text of the current key after passing it through the
          * modules filters.
          */
-        virtual QString renderedText( const CSwordKey::TextRenderType mode = CSwordKey::Normal );
+        QString renderedText( const CSwordKey::TextRenderType mode = CSwordKey::Normal );
         /** Stripped down text. Returns the text after removing all markup tags from it.
          */
-        virtual QString strippedText();
+        QString strippedText();
 
         const BtSignal *signaler();
 
