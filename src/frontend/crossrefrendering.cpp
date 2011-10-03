@@ -18,17 +18,18 @@ namespace InfoDisplay {
 
 CrossRefRendering::CrossRefRendering(const DisplayOptions &displayOptions,
                                      const FilterOptions &filterOptions)
-        : CHTMLExportRendering(Settings(), displayOptions, filterOptions)
+        : CHTMLExportRendering(true, displayOptions, filterOptions)
 {
     // Intentionally empty
 }
 
-const QString CrossRefRendering::finishText( const QString& text, KeyTree& ) {
+QString CrossRefRendering::finishText(const QString &text, const KeyTree &tree) {
+    Q_UNUSED(tree);
     return text;
 }
 
-const QString CrossRefRendering::entryLink(const KeyTreeItem &item,
-                                           const CSwordModuleInfo *module)
+QString CrossRefRendering::entryLink(const KeyTreeItem &item,
+                                     const CSwordModuleInfo *module)
 {
     QString linkText;
 

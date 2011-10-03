@@ -163,8 +163,7 @@ void CReadWindow::insertKeyboardActions( BtActionCollection* const ) {}
 
 /** No descriptions */
 void CReadWindow::copyDisplayedText() {
-    CExportManager mgr(QString::null);
-    mgr.copyKey(key(), CExportManager::Text, true);
+    CExportManager().copyKey(key(), CExportManager::Text, true);
 }
 
 

@@ -231,8 +231,7 @@ void CModuleResultView::contextMenuEvent( QContextMenuEvent * event ) {
 void CModuleResultView::copyResult() {
     CSwordModuleInfo *m = activeModule();
     if (m != 0) {
-        CExportManager mgr(tr("Copy search result..."), true,
-                           tr("Copying search result"));
+        CExportManager mgr(true, tr("Copying search result"));
 
         mgr.copyKeyList(m_results[m], m, CExportManager::Text, false);
     };
@@ -242,9 +241,7 @@ void CModuleResultView::copyResult() {
 void CModuleResultView::copyResultWithText() {
     CSwordModuleInfo *m = activeModule();
     if (m != 0) {
-        CExportManager mgr(tr("Copy search result..."), true,
-                           tr("Copying search result"));
-
+        CExportManager mgr(true, tr("Copying search result"));
         mgr.copyKeyList(m_results[m], m, CExportManager::Text, true);
     };
 }
@@ -253,9 +250,7 @@ void CModuleResultView::copyResultWithText() {
 void CModuleResultView::saveResult() {
     CSwordModuleInfo *m = activeModule();
     if (m != 0) {
-        CExportManager mgr(tr("Save search result..."), true,
-                           tr("Saving search result"));
-
+        CExportManager mgr(true, tr("Saving search result"));
         mgr.saveKeyList(m_results[m], m, CExportManager::Text, false);
     };
 }
@@ -264,9 +259,7 @@ void CModuleResultView::saveResult() {
 void CModuleResultView::saveResultWithText() {
     CSwordModuleInfo *m = activeModule();
     if (m != 0) {
-        CExportManager mgr(tr("Save search result..."), true,
-                           tr("Saving search result"));
-
+        CExportManager mgr(true, tr("Saving search result"));
         mgr.saveKeyList(m_results[m], m, CExportManager::Text, true);
     };
 }
@@ -275,9 +268,7 @@ void CModuleResultView::saveResultWithText() {
 void CModuleResultView::printResult() {
     CSwordModuleInfo *m = activeModule();
     if (m != 0) {
-        CExportManager mgr(tr("Print search result..."), true,
-                           tr("Printing search result"));
-
+        CExportManager mgr(true, tr("Printing search result"));
         mgr.printKeyList(m_results[m], m, CBTConfig::getDisplayOptionDefaults(),
                          CBTConfig::getFilterOptionDefaults());
     };

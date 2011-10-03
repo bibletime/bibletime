@@ -65,7 +65,5 @@ const QString CEntryDisplay::text(
         }
     }
     tree.append( new Rendering::CTextRendering::KeyTreeItem(keyName, modules, normal_settings) );
-    QString result(render.renderKeyTree(tree));
-    qDeleteAll(tree);
-    return result;
+    return render.renderKeyTree(tree);
 }

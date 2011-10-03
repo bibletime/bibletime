@@ -11,6 +11,7 @@
 #define CTEXTRENDERING_H
 
 #include <QList>
+#include <QSharedPointer>
 #include <QString>
 
 
@@ -33,7 +34,16 @@ class CTextRendering {
     public: /* Types: */
 
         class KeyTreeItem;
-        typedef QList<KeyTreeItem*> KeyTree;
+
+        class KeyTreeSharedPointer: public QSharedPointer<KeyTreeItem> {
+            public:
+                inline KeyTreeSharedPointer(KeyTreeItem * i)
+                    : QSharedPointer<KeyTreeItem>(i) {}
+
+                inline operator const KeyTreeItem * () const { return data(); }
+        };
+
+        typedef QList<KeyTreeSharedPointer> KeyTree;
 
         class KeyTreeItem {
 
@@ -77,10 +87,6 @@ class CTextRendering {
                 KeyTreeItem(const QString &content, const Settings &settings);
 
                 KeyTreeItem(const KeyTreeItem &i);
-
-                virtual inline ~KeyTreeItem() {
-                    qDeleteAll(m_childList);
-                }
 
                 inline const QString &getAlternativeContent() const {
                     return m_alternativeContent;
@@ -128,7 +134,7 @@ class CTextRendering {
 
     public: /* Methods: */
 
-        const QString renderKeyTree(KeyTree &tree);
+        const QString renderKeyTree(const KeyTree &tree);
 
         const QString renderKeyRange(
                 const QString &start,
@@ -144,9 +150,9 @@ class CTextRendering {
 
     protected: /* Methods: */
 
-        const QList<const CSwordModuleInfo*> collectModules(const KeyTree * const tree) const;
-        virtual const QString renderEntry( const KeyTreeItem&, CSwordKey* = 0 ) = 0;
-        virtual const QString finishText( const QString&, KeyTree& tree ) = 0;
+        QList<const CSwordModuleInfo*> collectModules(const KeyTree &tree) const;
+        virtual QString renderEntry(const KeyTreeItem &item, CSwordKey * key = 0) = 0;
+        virtual QString finishText(const QString &text, const KeyTree &tree) = 0;
         virtual void initRendering() = 0;
 
 }; /* class CTextRendering */

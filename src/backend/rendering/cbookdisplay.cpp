@@ -53,8 +53,6 @@ const QString Rendering::CBookDisplay::text(
 
         const QString renderedText = render.renderKeyTree(tree);
         key->setOffset( offset );
-
-        qDeleteAll(tree);      // Dispose of the heap allocated objects pointed to in tree.
         return renderedText;
     };
 
@@ -84,7 +82,6 @@ const QString Rendering::CBookDisplay::text(
 
         const QString renderedText = render.renderKeyTree(tree);
         key->setOffset( offset );
-        qDeleteAll(tree);      // Dispose of the heap allocated objects pointed to in tree.
         return renderedText;
     };
 
@@ -101,7 +98,6 @@ const QString Rendering::CBookDisplay::text(
 
             const QString renderedText = render.renderKeyTree(tree);
             key->setOffset( offset );
-            qDeleteAll(tree);      // Dispose of the heap allocated objects pointed to in tree.
             return renderedText;
         };
     };
@@ -119,8 +115,6 @@ const QString Rendering::CBookDisplay::text(
     const QString renderedText = render.renderKeyTree(tree);
 
     key->setOffset( offset ); //restore key
-
-    qDeleteAll(tree);      // Dispose of the heap allocated objects pointed to in tree.
     return renderedText;
 }
 

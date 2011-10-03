@@ -46,17 +46,17 @@ void dumpEntryAttributes(sword::SWModule *module) {
 namespace Rendering {
 
 CHTMLExportRendering::CHTMLExportRendering(
-        const CHTMLExportRendering::Settings &settings,
+        bool addText,
         const DisplayOptions &displayOptions,
         const FilterOptions &filterOptions)
     : m_displayOptions(displayOptions)
     , m_filterOptions(filterOptions)
-    , m_settings(settings)
+    , m_addText(addText)
 {
     // Intentionally empty
 }
 
-const QString CHTMLExportRendering::renderEntry( const KeyTreeItem& i, CSwordKey* k) {
+QString CHTMLExportRendering::renderEntry(const KeyTreeItem& i, CSwordKey* k) {
 
     if (i.hasAlternativeContent()) {
         QString ret = i.settings().highlight
@@ -67,7 +67,7 @@ const QString CHTMLExportRendering::renderEntry( const KeyTreeItem& i, CSwordKey
         //   Q_ASSERT(i.hasChildItems());
  
         if (!i.childList()->isEmpty()) {
-            const KeyTree * const tree = i.childList();
+            const KeyTree & tree = *i.childList();
 
             const QList<const CSwordModuleInfo*> modules = collectModules(tree);
 
@@ -75,7 +75,7 @@ const QString CHTMLExportRendering::renderEntry( const KeyTreeItem& i, CSwordKey
                 ret.insert( 5, QString("dir=\"%1\" ").arg((modules.first()->textDirection() == CSwordModuleInfo::LeftToRight) ? "ltr" : "rtl" ));
             }
 
-            Q_FOREACH (const KeyTreeItem * const item, *tree) {
+            Q_FOREACH (const KeyTreeItem * const item, tree) {
                 ret.append(renderEntry(*item));
             }
         }
@@ -179,7 +179,7 @@ const QString CHTMLExportRendering::renderEntry( const KeyTreeItem& i, CSwordKey
         //keys should normally be left-to-right, but this doesn't apply in all cases
         entry.append("<span class=\"entryname\" dir=\"ltr\">").append(entryLink(i, *mod_Itr)).append("</span>");
 
-        if (m_settings.addText) {
+        if (m_addText) {
             //entry.append( QString::fromLatin1("<span %1>%2</span>").arg(langAttr).arg(key_renderedText) );
             entry.append( key_renderedText );
         }
@@ -187,7 +187,7 @@ const QString CHTMLExportRendering::renderEntry( const KeyTreeItem& i, CSwordKey
         if (!i.childList()->isEmpty()) {
             KeyTree* tree(i.childList());
 
-            foreach (KeyTreeItem* c, (*tree)) {
+            Q_FOREACH (const KeyTreeItem * const c, *tree) {
                 entry.append( renderEntry(*c) );
             }
         }
@@ -223,11 +223,11 @@ void CHTMLExportRendering::initRendering() {
     CSwordBackend::instance()->setFilterOptions( m_filterOptions );
 }
 
-const QString CHTMLExportRendering::finishText( const QString& text, KeyTree& tree ) {
+QString CHTMLExportRendering::finishText(const QString &text, const KeyTree &tree) {
     typedef CDisplayTemplateMgr CDTM;
 
     CDTM::Settings settings;
-    settings.modules = collectModules(&tree);
+    settings.modules = collectModules(tree);
     if (settings.modules.count() == 1) {
         const CSwordModuleInfo * const firstModule = settings.modules.first();
         const CLanguageMgr::Language * const lang = firstModule->language();
@@ -246,8 +246,8 @@ const QString CHTMLExportRendering::finishText( const QString& text, KeyTree& tr
 /*!
     \fn CHTMLExportRendering::entryLink( KeyTreeItem& item )
  */
-const QString CHTMLExportRendering::entryLink(const KeyTreeItem& item,
-                                              const CSwordModuleInfo *module)
+QString CHTMLExportRendering::entryLink(const KeyTreeItem &item,
+                                        const CSwordModuleInfo * module)
 {
     Q_UNUSED(module);
 

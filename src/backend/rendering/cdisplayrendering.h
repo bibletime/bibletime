@@ -24,7 +24,7 @@ class CDisplayRendering : public CHTMLExportRendering {
 
     public: /* Methods: */
 
-        static const QString keyToHTMLAnchor(const QString& key);
+        static QString keyToHTMLAnchor(const QString &key);
 
         CDisplayRendering(
             const DisplayOptions &displayOptions = CBTConfig::getDisplayOptionDefaults(),
@@ -32,10 +32,10 @@ class CDisplayRendering : public CHTMLExportRendering {
 
     protected: /* Methods: */
 
-        virtual const QString entryLink(const KeyTreeItem &item,
-                                        const CSwordModuleInfo *module);
+        virtual QString entryLink(const KeyTreeItem &item,
+                                  const CSwordModuleInfo * module);
 
-        virtual const QString finishText( const QString&, KeyTree& tree );
+        virtual QString finishText(const QString &text, const KeyTree &tree);
 
 }; /* class CDisplayRendering */
 

@@ -9,7 +9,6 @@
 
 #include "frontend/cexportmanager.h"
 
-#include <QSharedPointer>
 #include <QApplication>
 #include <QClipboard>
 #include <QFileDialog>
@@ -35,18 +34,25 @@
 using namespace Rendering;
 using namespace Printing;
 
-CExportManager::CExportManager(const QString &caption,
-                               const bool showProgress,
+CExportManager::CExportManager(const bool showProgress,
                                const QString &progressLabel,
                                const FilterOptions &filterOptions,
                                const DisplayOptions &displayOptions)
 {
-    m_caption = !caption.isEmpty() ? caption : QString::fromLatin1("BibleTime");
-    m_progressLabel = progressLabel;
     m_filterOptions = filterOptions;
     m_displayOptions = displayOptions;
-    m_showProgress = showProgress;
-    m_progressDialog = 0;
+
+    if (showProgress) {
+        m_progressDialog = new QProgressDialog(0, Qt::Dialog);
+        m_progressDialog->setWindowTitle("BibleTime");
+        m_progressDialog->setLabelText(progressLabel);
+    } else {
+        m_progressDialog = 0;
+    }
+}
+
+CExportManager::~CExportManager() {
+    delete m_progressDialog;
 }
 
 bool CExportManager::saveKey(CSwordKey* key, const Format format, const bool addText) {
@@ -61,24 +67,9 @@ bool CExportManager::saveKey(CSwordKey* key, const Format format, const bool add
         return false;
     }
 
-    FilterOptions filterOptions = m_filterOptions;
-    filterOptions.footnotes = false;
-    filterOptions.strongNumbers = false;
-    filterOptions.morphTags = false;
-    filterOptions.lemmas = false;
-    filterOptions.scriptureReferences = false;
-    filterOptions.textualVariants = false;
-
-    CHTMLExportRendering::Settings settings(addText);
-    QSharedPointer<CTextRendering> render (
-        (format == HTML)
-        ? new CHTMLExportRendering(settings, m_displayOptions, filterOptions)
-        : new CPlainTextExportRendering(settings, m_displayOptions, filterOptions)
-    );
+    CTextRendering * render = newRenderer(format, addText);
 
     QString text;
-    QString startKey;
-    QString stopKey;
 
     QList<const CSwordModuleInfo*> modules;
     modules.append(key->module());
@@ -90,13 +81,13 @@ bool CExportManager::saveKey(CSwordKey* key, const Format format, const bool add
     else { //no range supported
         text = render->renderSingleKey(key->key(), modules);
     }
+    delete render;
 
-    if (!progressWasCancelled()) {
-        util::tool::savePlainFile(filename, text, false, (format == HTML) ? QTextCodec::codecForName("UTF-8") : QTextCodec::codecForLocale() );
-        closeProgressDialog();
-        return true;
-    }
-    return false;
+    util::tool::savePlainFile(filename, text, false,
+                              (format == HTML)
+                              ? QTextCodec::codecForName("UTF-8")
+                              : QTextCodec::codecForLocale());
+    return true;
 }
 
 bool CExportManager::saveKeyList(const sword::ListKey &l,
@@ -114,22 +105,7 @@ bool CExportManager::saveKeyList(const sword::ListKey &l,
         return false;
     }
 
-    FilterOptions filterOptions = m_filterOptions;
-    filterOptions.footnotes = false;
-    filterOptions.strongNumbers = false;
-    filterOptions.morphTags = false;
-    filterOptions.lemmas = false;
-    filterOptions.scriptureReferences = false;
-    filterOptions.textualVariants = false;
-
-    CHTMLExportRendering::Settings settings(addText);
-    QSharedPointer<CTextRendering> render (
-        (format == HTML)
-        ? new CHTMLExportRendering(settings, m_displayOptions, filterOptions)
-        : new CPlainTextExportRendering(settings, m_displayOptions, filterOptions)
-    );
-
-    CTextRendering::KeyTree tree;
+    CTextRendering::KeyTree tree; /// \todo Verify that items in tree are properly freed.
 
     setProgressRange(list.Count());
     CTextRendering::KeyTreeItem::Settings itemSettings;
@@ -143,7 +119,9 @@ bool CExportManager::saveKeyList(const sword::ListKey &l,
         list.increment();
     }
 
+    CTextRendering * render = newRenderer(format, addText);
     const QString text = render->renderKeyTree(tree);
+    delete render;
 
     if (!progressWasCancelled()) {
         util::tool::savePlainFile(filename, text, false, (format == HTML) ? QTextCodec::codecForName("UTF-8") : QTextCodec::codecForLocale() );
@@ -165,22 +143,7 @@ bool CExportManager::saveKeyList(const QList<CSwordKey*> &list,
         return false;
     }
 
-    FilterOptions filterOptions = m_filterOptions;
-    filterOptions.footnotes = false;
-    filterOptions.strongNumbers = false;
-    filterOptions.morphTags = false;
-    filterOptions.lemmas = false;
-    filterOptions.scriptureReferences = false;
-    filterOptions.textualVariants = false;
-
-    CHTMLExportRendering::Settings settings(addText);
-    QSharedPointer<CTextRendering> render (
-        (format == HTML)
-        ? new CHTMLExportRendering(settings, m_displayOptions, filterOptions)
-        : new CPlainTextExportRendering(settings, m_displayOptions, filterOptions)
-    );
-
-    CTextRendering::KeyTree tree;
+    CTextRendering::KeyTree tree; /// \todo Verify that items in tree are properly freed.
 
     setProgressRange(list.count());
     CTextRendering::KeyTreeItem::Settings itemSettings;
@@ -193,7 +156,9 @@ bool CExportManager::saveKeyList(const QList<CSwordKey*> &list,
         incProgress();
     };
 
+    CTextRendering * render = newRenderer(format, addText);
     const QString text = render->renderKeyTree(tree);
+    delete render;
 
     if (!progressWasCancelled()) {
         util::tool::savePlainFile(filename, text, false, (format == HTML) ? QTextCodec::codecForName("UTF-8") : QTextCodec::codecForLocale() );
@@ -204,36 +169,15 @@ bool CExportManager::saveKeyList(const QList<CSwordKey*> &list,
 }
 
 bool CExportManager::copyKey(CSwordKey* key, const Format format, const bool addText) {
-    if (!key) {
+    if (!key || !key->module())
         return false;
-    }
-    if (!key->module()) {
-        return false;
-    }
-
-    FilterOptions filterOptions = m_filterOptions;
-    filterOptions.footnotes = false;
-    filterOptions.strongNumbers = false;
-    filterOptions.morphTags = false;
-    filterOptions.lemmas = false;
-    filterOptions.scriptureReferences = false;
-    filterOptions.textualVariants = false;
-
-    CHTMLExportRendering::Settings settings(addText);
-    QSharedPointer<CTextRendering> render (
-        (format == HTML)
-        ? new CHTMLExportRendering(settings, m_displayOptions, filterOptions)
-        : new CPlainTextExportRendering(settings, m_displayOptions, filterOptions)
-    );
 
     QString text;
-    QString startKey;
-    QString stopKey;
-
     QList<const CSwordModuleInfo*> modules;
     modules.append(key->module());
 
-    CSwordVerseKey *vk = dynamic_cast<CSwordVerseKey*>(key);
+    CTextRendering * render = newRenderer(format, addText);
+    CSwordVerseKey * vk = dynamic_cast<CSwordVerseKey*>(key);
     if (vk && vk->isBoundSet()) {
         text = render->renderKeyRange(
                    QString::fromUtf8(vk->LowerBound()),
@@ -244,6 +188,8 @@ bool CExportManager::copyKey(CSwordKey* key, const Format format, const bool add
     else { //no range supported
         text = render->renderSingleKey(key->key(), modules);
     }
+
+    delete render;
 
     QApplication::clipboard()->setText(text);
     return true;
@@ -258,22 +204,7 @@ bool CExportManager::copyKeyList(const sword::ListKey &l,
     if (!list.Count())
         return false;
 
-    FilterOptions filterOptions = m_filterOptions;
-    filterOptions.footnotes = false;
-    filterOptions.strongNumbers = false;
-    filterOptions.morphTags = false;
-    filterOptions.lemmas = false;
-    filterOptions.scriptureReferences = false;
-    filterOptions.textualVariants = false;
-
-    CHTMLExportRendering::Settings settings(addText);
-    QSharedPointer<CTextRendering> render (
-        (format == HTML)
-        ? new CHTMLExportRendering(settings, m_displayOptions, filterOptions)
-        : new CPlainTextExportRendering(settings, m_displayOptions, filterOptions)
-    );
-
-    CTextRendering::KeyTree tree;
+    CTextRendering::KeyTree tree; /// \todo Verify that items in tree are properly freed.
     CTextRendering::KeyTreeItem::Settings itemSettings;
     itemSettings.highlight = false;
 
@@ -284,7 +215,9 @@ bool CExportManager::copyKeyList(const sword::ListKey &l,
         list.increment();
     }
 
+    CTextRendering * render = newRenderer(format, addText);
     const QString text = render->renderKeyTree(tree);
+    delete render;
     QApplication::clipboard()->setText(text);
     return true;
 }
@@ -297,22 +230,8 @@ bool CExportManager::copyKeyList(const QList<CSwordKey*> &list,
     if (!list.count())
         return false;
 
-    FilterOptions filterOptions = m_filterOptions;
-    filterOptions.footnotes = false;
-    filterOptions.strongNumbers = false;
-    filterOptions.morphTags = false;
-    filterOptions.lemmas = false;
-    filterOptions.scriptureReferences = false;
-    filterOptions.textualVariants = false;
 
-    CHTMLExportRendering::Settings settings(addText);
-    QSharedPointer<CTextRendering> render (
-        (format == HTML)
-        ? new CHTMLExportRendering(settings, m_displayOptions, filterOptions)
-        : new CPlainTextExportRendering(settings, m_displayOptions, filterOptions)
-    );
-
-    CTextRendering::KeyTree tree;
+    CTextRendering::KeyTree tree; /// \todo Verify that items in tree are properly freed.
 
     CTextRendering::KeyTreeItem::Settings itemSettings;
     itemSettings.highlight = false;
@@ -324,7 +243,10 @@ bool CExportManager::copyKeyList(const QList<CSwordKey*> &list,
         incProgress();
     };
 
+    CTextRendering * render = newRenderer(format, addText);
     const QString text = render->renderKeyTree(tree);
+    delete render;
+
     QApplication::clipboard()->setText(text);
     if (!progressWasCancelled()) {
         closeProgressDialog();
@@ -340,7 +262,7 @@ bool CExportManager::printKeyList(const sword::ListKey &l,
     /// \warning This is a workaround for Sword constness
     sword::ListKey list = l;
     CPrinter::KeyTreeItem::Settings settings;
-    CPrinter::KeyTree tree;
+    CPrinter::KeyTree tree; /// \todo Verify that items in tree are properly freed.
 
     setProgressRange(list.Count());
     for (int i=0; i< list.Count(); i++) {
@@ -365,10 +287,11 @@ bool CExportManager::printKeyList(const sword::ListKey &l,
             break;
     }
 
-    QSharedPointer<CPrinter> printer(new CPrinter(0, displayOptions, filterOptions));
 
     if (!progressWasCancelled()) {
+        CPrinter * printer = new CPrinter(0, displayOptions, filterOptions);
         printer->printKeyTree(tree);
+        delete printer;
         closeProgressDialog();
         return true;
     }
@@ -388,7 +311,7 @@ bool CExportManager::printKey(const CSwordModuleInfo *module,
         ? CPrinter::KeyTreeItem::Settings::SimpleKey
         : CPrinter::KeyTreeItem::Settings::NoKey;
 
-    CPrinter::KeyTree tree;
+    CPrinter::KeyTree tree; /// \todo Verify that items in tree are properly freed.
     if (startKey != stopKey) {
         tree.append( new CPrinter::KeyTreeItem(startKey, stopKey, module, settings) );
     }
@@ -396,8 +319,9 @@ bool CExportManager::printKey(const CSwordModuleInfo *module,
         tree.append( new CPrinter::KeyTreeItem(startKey, module, settings) );
     }
 
-    QSharedPointer<CPrinter> printer(new CPrinter(0, displayOptions, filterOptions));
+    CPrinter * printer = new CPrinter(0, displayOptions, filterOptions);
     printer->printKeyTree(tree);
+    delete printer;
     return true;
 }
 
@@ -411,11 +335,12 @@ bool CExportManager::printKey(const CSwordKey *key,
         ? CPrinter::KeyTreeItem::Settings::SimpleKey
         : CPrinter::KeyTreeItem::Settings::NoKey;
 
-    CPrinter::KeyTree tree;
+    CPrinter::KeyTree tree; /// \todo Verify that items in tree are properly freed.
     tree.append( new CPrinter::KeyTreeItem(key->key(), key->module(), settings) );
 
-    QSharedPointer<CPrinter> printer(new CPrinter(0, displayOptions, filterOptions));
+    CPrinter * printer = new CPrinter(0, displayOptions, filterOptions);
     printer->printKeyTree(tree);
+    delete printer;
     return true;
 }
 
@@ -432,7 +357,7 @@ bool CExportManager::printByHyperlink(const QString &hyperlink,
         moduleName = ReferenceManager::preferredModule(type);
     }
 
-    CPrinter::KeyTree tree;
+    CPrinter::KeyTree tree; /// \todo Verify that items in tree are properly freed.
     CPrinter::KeyTreeItem::Settings settings;
     settings.keyRenderingFace =
         displayOptions.verseNumbers
@@ -467,8 +392,9 @@ bool CExportManager::printByHyperlink(const QString &hyperlink,
         }
     }
 
-    QSharedPointer<CPrinter> printer(new CPrinter(0, displayOptions, filterOptions));
+    CPrinter * printer = new CPrinter(0, displayOptions, filterOptions);
     printer->printKeyTree(tree);
+    delete printer;
     return true;
 }
 
@@ -483,7 +409,7 @@ bool CExportManager::printKeyList(const QStringList &list,
         ? CPrinter::KeyTreeItem::Settings::SimpleKey
         : CPrinter::KeyTreeItem::Settings::NoKey;
 
-    CPrinter::KeyTree tree;
+    CPrinter::KeyTree tree; /// \todo Verify that items in tree are properly freed.
     setProgressRange(list.count());
 
     const QStringList::const_iterator end = list.constEnd();
@@ -492,10 +418,11 @@ bool CExportManager::printKeyList(const QStringList &list,
         incProgress();
     }
 
-    QSharedPointer<CPrinter> printer(new CPrinter(0, displayOptions, filterOptions));
 
     if (!progressWasCancelled()) {
+        CPrinter * printer = new CPrinter(0, displayOptions, filterOptions);
         printer->printKeyTree(tree);
+        delete printer;
         closeProgressDialog();
         return true;
     }
@@ -520,55 +447,53 @@ const QString CExportManager::getSaveFileName(const Format format) {
     return QFileDialog::getSaveFileName(0, QObject::tr("Save file"), "", filterString(format), 0);
 }
 
-/** No descriptions */
-void CExportManager::setProgressRange( const int items ) {
-    if (QProgressDialog* dlg = progressDialog()) {
-        dlg->setMaximum(items);
-        dlg->setValue(0);
-        dlg->setMinimumDuration(0);
-        dlg->show();
-        //     dlg->repaint();
-        qApp->processEvents(); //do not lock the GUI!
+CTextRendering * CExportManager::newRenderer(const Format format, bool addText) {
+    FilterOptions filterOptions = m_filterOptions;
+    filterOptions.footnotes = false;
+    filterOptions.strongNumbers = false;
+    filterOptions.morphTags = false;
+    filterOptions.lemmas = false;
+    filterOptions.scriptureReferences = false;
+    filterOptions.textualVariants = false;
+
+    if (format == HTML) {
+        return new CHTMLExportRendering(addText, m_displayOptions, filterOptions);
+    } else {
+        Q_ASSERT(format == Text);
+        return new CPlainTextExportRendering(addText, m_displayOptions, filterOptions);
     }
 }
 
-/** Creates the progress dialog with the correct settings. */
-QProgressDialog* CExportManager::progressDialog() {
-    if (!m_showProgress) {
-        return 0;
-    }
+void CExportManager::setProgressRange( const int items ) {
+    if (!m_progressDialog)
+        return;
 
-    if (!m_progressDialog) {
-        m_progressDialog = new QProgressDialog(0, Qt::Dialog );
-        m_progressDialog->setLabelText(m_progressLabel);
-
-        m_progressDialog->setWindowTitle("BibleTime");
-    }
-
-    return m_progressDialog;
+    m_progressDialog->setMaximum(items);
+    m_progressDialog->setValue(0);
+    m_progressDialog->setMinimumDuration(0);
+    m_progressDialog->show();
+    //     m_progressDialog->repaint();
+    qApp->processEvents(); //do not lock the GUI!
 }
 
 /** Increments the progress by one item. */
 void CExportManager::incProgress() {
-    if (QProgressDialog* dlg = progressDialog()) {
-        dlg->setValue( dlg->value() + 1 );
-    }
+    if (m_progressDialog)
+        m_progressDialog->setValue(m_progressDialog->value() + 1);
 }
 
-/** No descriptions */
 bool CExportManager::progressWasCancelled() {
-    if (QProgressDialog* dlg = progressDialog()) {
-        return dlg->wasCanceled();
-    }
+    if (m_progressDialog)
+        return m_progressDialog->wasCanceled();
 
-    return true;
+    return false;
 }
 
 /** Closes the progress dialog immediatly. */
 void CExportManager::closeProgressDialog() {
-    if (QProgressDialog* dlg = progressDialog()) {
-        dlg->close();
-        dlg->reset();
+    if (m_progressDialog) {
+        m_progressDialog->close();
+        m_progressDialog->reset();
     }
 
     qApp->processEvents(); //do not lock the GUI!

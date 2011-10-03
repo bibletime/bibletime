@@ -27,37 +27,26 @@ namespace Rendering {
  */
 class CHTMLExportRendering: public CTextRendering {
 
-    public: /* Types: */
-
-        struct Settings {
-
-            inline Settings(const bool text = true)
-                : addText(text) {}
-
-            bool addText;
-
-        }; /* struct Settings */
-
     public: /* Methods: */
 
         CHTMLExportRendering(
-            const Settings &settings,
+            bool addText,
             const DisplayOptions &displayOptions = CBTConfig::getDisplayOptionDefaults(),
             const FilterOptions &filterOptions = CBTConfig::getFilterOptionDefaults());
 
     protected: /* Methods: */
 
-        virtual const QString renderEntry( const KeyTreeItem&, CSwordKey* = 0 );
-        virtual const QString finishText( const QString&, KeyTree& tree );
-        virtual const QString entryLink(const KeyTreeItem &item,
-                                        const CSwordModuleInfo *module);
+        virtual QString renderEntry(const KeyTreeItem &item, CSwordKey * key = 0);
+        virtual QString finishText(const QString &text, const KeyTree &tree);
+        virtual QString entryLink(const KeyTreeItem &item,
+                                  const CSwordModuleInfo *module);
         virtual void initRendering();
 
     protected: /* Fields: */
 
         DisplayOptions m_displayOptions;
         FilterOptions m_filterOptions;
-        Settings m_settings;
+        bool m_addText;
 
 }; /* class CHTMLExportRendering */
 

@@ -16,33 +16,29 @@
 namespace Rendering {
 
 CPlainTextExportRendering::CPlainTextExportRendering(
-        const CPlainTextExportRendering::Settings &settings,
+        bool addText,
         const DisplayOptions &displayOptions,
         const FilterOptions &filterOptions)
-        : CHTMLExportRendering(settings, displayOptions, filterOptions)
+        : CHTMLExportRendering(addText, displayOptions, filterOptions)
 {
     // Intentionally empty
 }
 
-const QString CPlainTextExportRendering::renderEntry(const KeyTreeItem &i,
-                                                     CSwordKey *k)
+QString CPlainTextExportRendering::renderEntry(const KeyTreeItem &i,
+                                               CSwordKey * k)
 {
     Q_UNUSED(k);
 
-    if (!m_settings.addText) {
+    if (!m_addText)
         return QString(i.key()).append("\n");
-    }
 
-    QList<const CSwordModuleInfo*> modules = i.modules();
-    QSharedPointer<CSwordKey> key( CSwordKey::createInstance(modules.first()) );
+    const QList<const CSwordModuleInfo*> modules = i.modules();
+    CSwordKey * key = CSwordKey::createInstance(modules.first());
     QString renderedText = QString(i.key()).append(":\n");
 
     QString entry;
-    //   for (CSwordModuleInfo* m = modules.first(); m; m = modules.next()) {
-    QList<const CSwordModuleInfo*>::iterator end_it = modules.end();
-
-    for (QList<const CSwordModuleInfo*>::iterator it(modules.begin()); it != end_it; ++it) {
-        key->setModule(*it);
+    Q_FOREACH(const CSwordModuleInfo * module, modules) {
+        key->setModule(module);
         key->setKey(i.key());
 
         /// \todo Check this code
@@ -50,11 +46,13 @@ const QString CPlainTextExportRendering::renderEntry(const KeyTreeItem &i,
         renderedText.append( entry );
     }
 
+    delete key;
     return renderedText;
 }
 
-const QString CPlainTextExportRendering::finishText( const QString& oldText, KeyTree& ) {
-    return oldText;
+QString CPlainTextExportRendering::finishText(const QString &text, const KeyTree &tree) {
+    Q_UNUSED(tree);
+    return text;
 }
 
 }

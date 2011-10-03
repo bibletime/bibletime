@@ -163,7 +163,7 @@ void CSearchResultView::contextMenuEvent(QContextMenuEvent* event) {
 
 void CSearchResultView::printItems() {
     QList<QTreeWidgetItem*> items = selectedItems();
-    CExportManager mgr(tr("Print search result..."), true, tr("Printing search result"));
+    CExportManager mgr(true, tr("Printing search result"));
 
     QStringList list;
     foreach (QTreeWidgetItem* k, items) {
@@ -173,7 +173,7 @@ void CSearchResultView::printItems() {
 }
 
 void CSearchResultView::saveItems() {
-    CExportManager mgr(tr("Save search result..."), true, tr("Saving search result"));
+    CExportManager mgr(true, tr("Saving search result"));
 
     const CSwordModuleInfo *m = module();
     CSwordKey* k = 0;
@@ -191,7 +191,7 @@ void CSearchResultView::saveItems() {
 }
 
 void CSearchResultView::saveItemsWithText() {
-    CExportManager mgr(tr("Save search result..."), true, tr("Saving search result"));
+    CExportManager mgr(true, tr("Saving search result"));
 
     const CSwordModuleInfo *m = module();
     CSwordKey* k = 0;
@@ -209,7 +209,7 @@ void CSearchResultView::saveItemsWithText() {
 }
 
 void CSearchResultView::copyItems() {
-    CExportManager mgr(tr("Copy search result..."), true, tr("Copying search result"));
+    CExportManager mgr(true, tr("Copying search result"));
 
     const CSwordModuleInfo *m = module();
     CSwordKey* k = 0;
@@ -227,7 +227,7 @@ void CSearchResultView::copyItems() {
 }
 
 void CSearchResultView::copyItemsWithText() {
-    CExportManager mgr(tr("Copy search result..."), true, tr("Copying search result"));
+    CExportManager mgr(true, tr("Copying search result"));
 
     const CSwordModuleInfo *m = module();
     CSwordKey* k = 0;
