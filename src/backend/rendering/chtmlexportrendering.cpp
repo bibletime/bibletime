@@ -174,7 +174,7 @@ const QString CHTMLExportRendering::renderEntry( const KeyTreeItem& i, CSwordKey
             entry.append( i.settings().highlight  ? "class=\"currententry\" " : "class=\"entry\" " );
         }
 
-        entry.append(langAttr).append(isRTL ? " dir=\"rtl\"" : " dir=\"ltr\"").append(">");
+        entry.append(langAttr).append(isRTL ? " dir=\"rtl\">" : " dir=\"ltr\">");
 
         //keys should normally be left-to-right, but this doesn't apply in all cases
         entry.append("<span class=\"entryname\" dir=\"ltr\">").append(entryLink(i, *mod_Itr)).append("</span>");
