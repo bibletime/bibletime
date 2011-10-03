@@ -298,8 +298,7 @@ const QString CInfoDisplay::decodeCrossReference( const QString& data ) {
         lang = module->language()->abbrev();
     }
 
-    QString RenderedText = renderer.renderKeyTree(tree);
-    qDeleteAll(tree);
+    const QString RenderedText = renderer.renderKeyTree(tree);
 
     return QString("<div class=\"crossrefinfo\" lang=\"%1\"><h3>%2</h3><div class=\"para\" dir=\"%3\">%4</div></div>")
            .arg(lang)

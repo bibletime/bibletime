@@ -53,8 +53,8 @@ void CPrinter::printKeyTree( KeyTree& tree ) {
     }
 }
 
-const QString CPrinter::entryLink(const KeyTreeItem &item,
-                                  const CSwordModuleInfo *module)
+QString CPrinter::entryLink(const KeyTreeItem &item,
+                            const CSwordModuleInfo * module)
 {
     Q_ASSERT(module);
     if (module->type() == CSwordModuleInfo::Bible) {
@@ -78,7 +78,9 @@ const QString CPrinter::entryLink(const KeyTreeItem &item,
     return item.key();
 }
 
-const QString CPrinter::renderEntry( const KeyTreeItem& i, CSwordKey* ) {
+QString CPrinter::renderEntry(const KeyTreeItem &i, CSwordKey * key) {
+    Q_UNUSED(key);
+
     const CPrinter::KeyTreeItem* printItem = dynamic_cast<const CPrinter::KeyTreeItem*>(&i);
     Q_ASSERT(printItem);
 
@@ -88,7 +90,7 @@ const QString CPrinter::renderEntry( const KeyTreeItem& i, CSwordKey* ) {
         if (!i.childList()->isEmpty()) {
             KeyTree const * tree = i.childList();
 
-            foreach ( KeyTreeItem* c, (*tree)) {
+            Q_FOREACH (const KeyTreeItem * const c, *tree) {
                 ret.append( CDisplayRendering::renderEntry( *c ) );
             }
         }
@@ -99,8 +101,8 @@ const QString CPrinter::renderEntry( const KeyTreeItem& i, CSwordKey* ) {
     return CDisplayRendering::renderEntry(i);
 }
 
-const QString CPrinter::finishText(const QString& text, KeyTree& tree) {
-    QList<const CSwordModuleInfo*> modules = collectModules(&tree);
+QString CPrinter::finishText(const QString &text, const KeyTree &tree) {
+    QList<const CSwordModuleInfo*> modules = collectModules(tree);
     Q_ASSERT(modules.count() > 0);
 
     const CLanguageMgr::Language* const lang = modules.first()->language();

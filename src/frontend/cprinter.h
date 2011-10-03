@@ -33,11 +33,11 @@ class CPrinter : public QObject, public Rendering::CDisplayRendering {
         void printKeyTree( KeyTree& );
 
     protected:
-        virtual const QString entryLink(const KeyTreeItem &item,
-                                        const CSwordModuleInfo *module);
+        virtual QString entryLink(const KeyTreeItem &item,
+                                  const CSwordModuleInfo * module);
 
-        virtual const QString renderEntry( const KeyTreeItem&, CSwordKey* = 0 );
-        virtual const QString finishText(const QString& arg1, KeyTree& tree);
+        virtual QString renderEntry(const KeyTreeItem &item, CSwordKey * key = 0);
+        virtual QString finishText(const QString &text, const KeyTree &tree);
 
     private:
         QWebPage* m_htmlPage;

@@ -25,10 +25,10 @@ class CrossRefRendering : public Rendering::CHTMLExportRendering {
             const FilterOptions &filterOptions = btConfig().getFilterOptions()
         );
 
-        virtual const QString entryLink(const KeyTreeItem &item,
-                                        const CSwordModuleInfo *module);
+        virtual QString entryLink(const KeyTreeItem &item,
+                                  const CSwordModuleInfo *module);
 
-        virtual const QString finishText( const QString&, KeyTree& tree );
+        virtual QString finishText(const QString &text, const KeyTree &tree);
 };
 
 

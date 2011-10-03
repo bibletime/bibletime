@@ -74,8 +74,10 @@ CTextRendering::KeyTreeItem::KeyTreeItem(const KeyTreeItem& i)
         m_key( i.m_key ),
         m_childList(),
         m_stopKey( i.m_stopKey ),
-        m_alternativeContent( i.m_alternativeContent ) {
-    foreach(KeyTreeItem* item, (*i.childList())) {
+        m_alternativeContent( i.m_alternativeContent )
+{
+    const KeyTree &tree = *i.childList();
+    Q_FOREACH (const KeyTreeItem * const item, tree) {
         m_childList.append(new KeyTreeItem((*item))); //deep copy
     }
 
@@ -154,25 +156,24 @@ CTextRendering::KeyTreeItem::KeyTreeItem(const QString &startKey,
     m_alternativeContent.prepend("<div class=\"rangeheading\" dir=\"ltr\">").append("</div>"); //insert the right tags
 }
 
-const QList<const CSwordModuleInfo*> CTextRendering::collectModules(const KeyTree * const tree) const {
+QList<const CSwordModuleInfo*> CTextRendering::collectModules(const KeyTree &tree) const {
     //collect all modules which are available and used by child items
     QList<const CSwordModuleInfo*> modules;
 
-    Q_FOREACH (const KeyTreeItem * const c, *tree) {
+    Q_FOREACH (const KeyTreeItem * const c, tree) {
         Q_ASSERT(c != 0);
         Q_FOREACH (const CSwordModuleInfo * const mod, c->modules()) {
-            if (!modules.contains(mod)) {
+            if (!modules.contains(mod))
                 modules.append(mod);
-            }
         }
     }
     return modules;
 }
 
-const QString CTextRendering::renderKeyTree( KeyTree& tree ) {
+const QString CTextRendering::renderKeyTree(const KeyTree &tree) {
     initRendering();
 
-    QList<const CSwordModuleInfo*> modules = collectModules(&tree);
+    const QList<const CSwordModuleInfo*> modules = collectModules(tree);
     QString t;
 
     //optimization for entries with the same key
@@ -181,13 +182,13 @@ const QString CTextRendering::renderKeyTree( KeyTree& tree ) {
     );
 
     if (modules.count() == 1) { //this optimizes the rendering, only one key created for all items
-        foreach (KeyTreeItem* c, tree) {
+        Q_FOREACH (const KeyTreeItem * const c, tree) {
             key->setKey(c->key());
             t.append( renderEntry( *c, key.data()) );
         }
     }
     else {
-        foreach (KeyTreeItem* c, tree) {
+        Q_FOREACH (const KeyTreeItem * const c, tree) {
             t.append( renderEntry( *c ) );
         }
     }
@@ -250,9 +251,7 @@ const QString CTextRendering::renderKeyRange(
             tree.append( new KeyTreeItem(vk_start->key(), modules, settings) );
             ok = vk_start->next(CSwordVerseKey::UseVerse);
         }
-        const QString renderedText = renderKeyTree(tree);
-        qDeleteAll(tree);
-        return renderedText;
+        return renderKeyTree(tree);
     }
 
     return QString::null;
@@ -266,7 +265,5 @@ const QString CTextRendering::renderSingleKey(
     KeyTree tree;
     tree.append( new KeyTreeItem(key, modules, settings) );
 
-    const QString renderedText = renderKeyTree(tree);
-    qDeleteAll(tree);
-    return renderedText;
+    return renderKeyTree(tree);
 }

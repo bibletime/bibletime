@@ -339,7 +339,7 @@ CSwordLDKey* CLexiconReadWindow::ldKey() {
 
 /** This function saves the entry as html using the CExportMgr class. */
 void CLexiconReadWindow::saveAsHTML() {
-    CExportManager mgr(tr("Saving entry ..."), true, tr("Saving"), filterOptions(), displayOptions());
+    CExportManager mgr(true, tr("Saving"), filterOptions(), displayOptions());
     mgr.saveKey(key(), CExportManager::HTML, true);
 }
 
@@ -363,7 +363,7 @@ void CLexiconReadWindow::saveRawHTML() {
 
 /** This function saves the entry as html using the CExportMgr class. */
 void CLexiconReadWindow::saveAsPlain() {
-    CExportManager mgr(tr("Saving entry ..."), true, tr("Saving"), filterOptions(), displayOptions());
+    CExportManager mgr(true, tr("Saving"), filterOptions(), displayOptions());
     mgr.saveKey(key(), CExportManager::Text, true);
 }
 

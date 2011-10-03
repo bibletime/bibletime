@@ -22,14 +22,13 @@ namespace Rendering {
 
 CDisplayRendering::CDisplayRendering(const DisplayOptions &displayOptions,
                                      const FilterOptions &filterOptions)
-        : CHTMLExportRendering(CHTMLExportRendering::Settings(true),
-                               displayOptions, filterOptions)
+        : CHTMLExportRendering(true, displayOptions, filterOptions)
 {
     // Intentionally empty
 }
 
-const QString CDisplayRendering::entryLink(const KeyTreeItem &item,
-                                           const CSwordModuleInfo *module)
+QString CDisplayRendering::entryLink(const KeyTreeItem &item,
+                                     const CSwordModuleInfo * module)
 {
     QString linkText;
 
@@ -101,17 +100,14 @@ const QString CDisplayRendering::entryLink(const KeyTreeItem &item,
     return QString::null;
 }
 
-const QString CDisplayRendering::keyToHTMLAnchor(const QString& key) {
-    QString ret = key;
+QString CDisplayRendering::keyToHTMLAnchor(const QString& key) {
     // Be careful not to remove non-ASCII characters, this causes problems
     // with many languages.
-    ret = ret.trimmed().remove(QRegExp("\\s")).replace(QString(":"), QString("_"));
-
-    return ret;
+    return key.trimmed().remove(QRegExp("\\s")).replace(QString(":"), QString("_"));
 }
 
-const QString CDisplayRendering::finishText( const QString& oldText, KeyTree& tree ) {
-    QList<const CSwordModuleInfo*> modules = collectModules(&tree);
+QString CDisplayRendering::finishText(const QString &text, const KeyTree &tree) {
+    QList<const CSwordModuleInfo*> modules = collectModules(tree);
 
     //marking words is very slow, we have to find a better solution
 
@@ -159,6 +155,6 @@ const QString CDisplayRendering::finishText( const QString& oldText, KeyTree& tr
     else
         settings.pageDirection = QString::null;
 
-    return tMgr->fillTemplate(btConfig().value<QString>("gui/displayStyle"), oldText, settings);
+    return tMgr->fillTemplate(btConfig().value<QString>("gui/displayStyle"), text, settings);
 }
 }

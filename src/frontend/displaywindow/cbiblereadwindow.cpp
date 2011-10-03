@@ -410,7 +410,7 @@ void CBibleReadWindow::copyDisplayedText() {
     dummy.setVerse(bible->verseCount(dummy.book(), dummy.getChapter()));
     vk.UpperBound(dummy);
 
-    CExportManager mgr(tr("Copy chapter to clipboard ..."), false, tr("Copying"), filterOptions(), displayOptions());
+    CExportManager mgr(false, tr("Copying"), filterOptions(), displayOptions());
     mgr.copyKey(&vk, CExportManager::Text, true);
 }
 
@@ -429,7 +429,7 @@ void CBibleReadWindow::saveChapterHTML() {
     dummy.setVerse(bible->verseCount(dummy.book(), dummy.getChapter()));
     vk.UpperBound(dummy);
 
-    CExportManager mgr(tr("Saving chapter ..."), true, tr("Saving"), filterOptions(), displayOptions());
+    CExportManager mgr(true, tr("Saving"), filterOptions(), displayOptions());
     mgr.saveKey(&vk, CExportManager::HTML, true);
 }
 
@@ -447,7 +447,7 @@ void CBibleReadWindow::saveChapterPlain() {
     dummy.setVerse(bible->verseCount(dummy.book(), dummy.getChapter()));
     vk.UpperBound(dummy);
 
-    CExportManager mgr(tr("Saving chapter ..."), true, tr("Saving"), filterOptions(), displayOptions());
+    CExportManager mgr(true, tr("Saving"), filterOptions(), displayOptions());
     mgr.saveKey(&vk, CExportManager::Text, true);
 }
 
