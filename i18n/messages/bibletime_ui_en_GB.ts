@@ -299,17 +299,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="375"/>
         <source>Toggle visibility of the bookshelf window</source>
-        <translation type="unfinished"></translation>
+        <translation>Toggle visibility of the bookshelf window</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="379"/>
         <source>Toggle visibility of the bookmarks window</source>
-        <translation type="unfinished"></translation>
+        <translation>Toggle visibility of the bookmarks window</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="383"/>
         <source>Toggle visibility of the mag window</source>
-        <translation type="unfinished"></translation>
+        <translation>Toggle visibility of the mag window</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="716"/>
@@ -926,17 +926,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontchooserwidget.cpp" line="97"/>
         <source>Font name:</source>
-        <translation type="unfinished">Font name:</translation>
+        <translation>Font name:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontchooserwidget.cpp" line="98"/>
         <source>Font style:</source>
-        <translation type="unfinished">Font style:</translation>
+        <translation>Font style:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontchooserwidget.cpp" line="99"/>
         <source>Size:</source>
-        <translation type="unfinished">Size:</translation>
+        <translation>Size:</translation>
     </message>
 </context>
 <context>
@@ -1007,12 +1007,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="108"/>
         <source>%1 KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 KiB</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="115"/>
         <source>0 KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>0 KiB</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="123"/>
@@ -1028,10 +1028,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="97"/>
         <source>Unindexed Works</source>
         <translation>Unindexed Works</translation>
-    </message>
-    <message>
-        <source>KiB</source>
-        <translation type="obsolete">KiB</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="132"/>
@@ -1880,17 +1876,9 @@ shortcut</translation>
         <translation>Print...</translation>
     </message>
     <message>
-        <source>Copy chapter to clipboard ...</source>
-        <translation type="obsolete">Copy chapter to clipboard ...</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="414"/>
         <source>Copying</source>
         <translation>Copying</translation>
-    </message>
-    <message>
-        <source>Saving chapter ...</source>
-        <translation type="obsolete">Saving chapter ...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="433"/>
@@ -2133,14 +2121,6 @@ shortcut</translation>
         <translation>Forward in history</translation>
     </message>
     <message>
-        <source>Zoom in</source>
-        <translation type="obsolete">Zoom in</translation>
-    </message>
-    <message>
-        <source>Zoom out</source>
-        <translation type="obsolete">Zoom out</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="116"/>
         <source>Select all</source>
         <translation>Select all</translation>
@@ -2189,21 +2169,6 @@ shortcut</translation>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="389"/>
         <source>Format</source>
         <translation>Format</translation>
-    </message>
-</context>
-<context>
-    <name>CFontChooser</name>
-    <message>
-        <source>Size:</source>
-        <translation type="obsolete">Size:</translation>
-    </message>
-    <message>
-        <source>Font name:</source>
-        <translation type="obsolete">Font name:</translation>
-    </message>
-    <message>
-        <source>Font style:</source>
-        <translation type="obsolete">Font style:</translation>
     </message>
 </context>
 <context>
@@ -2372,10 +2337,6 @@ shortcut</translation>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="300"/>
         <source>Print...</source>
         <translation>Print...</translation>
-    </message>
-    <message>
-        <source>Saving entry ...</source>
-        <translation type="obsolete">Saving entry ...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="343"/>
@@ -2794,7 +2755,7 @@ Do you want to continue?</translation>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="175"/>
         <source>&lt;div class=&quot;moduleinfo&quot;&gt;&lt;h3&gt;%1&lt;/h3&gt;&lt;p&gt;%2&lt;/p&gt;&lt;p&gt;Version: %3&lt;/p&gt;&lt;/div&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;div class=&quot;moduleinfo&quot;&gt;&lt;h3&gt;%1&lt;/h3&gt;&lt;p&gt;%2&lt;/p&gt;&lt;p&gt;Version: %3&lt;/p&gt;&lt;/div&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="195"/>
@@ -2854,7 +2815,7 @@ Do you want to continue?</translation>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="411"/>
         <source>An internal error occurred while building the index: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>An internal error occurred while building the index: %1</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="418"/>
@@ -3892,10 +3853,6 @@ Language name ppk</extracomment>
         <translation>Save document ...</translation>
     </message>
     <message>
-        <source>Print keys</source>
-        <translation type="obsolete">Print keys</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookmarks/btbookmarkfolder.cpp" line="37"/>
         <location filename="../../src/frontend/bookmarks/btbookmarkfolder.cpp" line="48"/>
         <source>BibleTime bookmark files</source>
@@ -4657,28 +4614,16 @@ Language name ppk</extracomment>
         <translation>Print...</translation>
     </message>
     <message>
-        <source>Copy search result...</source>
-        <translation type="obsolete">Copy search result...</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="234"/>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="244"/>
         <source>Copying search result</source>
         <translation>Copying search result</translation>
     </message>
     <message>
-        <source>Save search result...</source>
-        <translation type="obsolete">Save search result...</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="253"/>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="262"/>
         <source>Saving search result</source>
         <translation>Saving search result</translation>
-    </message>
-    <message>
-        <source>Print search result...</source>
-        <translation type="obsolete">Print search result...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="271"/>
@@ -4701,7 +4646,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="137"/>
         <source>Select a scope from the list to edit the searchranges</source>
-        <translation type="unfinished"></translation>
+        <translation>Select a scope from the list to edit the search ranges</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="148"/>
@@ -4716,7 +4661,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="152"/>
         <source>Change the search ranges of the selected searchscope item. Have a look at the predefined search scopes to see how search ranges are constructed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Change the search ranges of the selected searchscope item. Have a look at the predefined search scopes to see how search ranges are constructed.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="157"/>
@@ -4727,14 +4672,6 @@ Language name ppk</extracomment>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="171"/>
         <source>New range</source>
         <translation>New range</translation>
-    </message>
-    <message>
-        <source>&lt;invalid name of search range&gt;</source>
-        <translation type="obsolete">&lt;invalid name of search range&gt;</translation>
-    </message>
-    <message>
-        <source>Select a scope from the list to edit the search ranges</source>
-        <translation type="obsolete">Select a scope from the list to edit the search ranges</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="140"/>
@@ -4760,10 +4697,6 @@ Language name ppk</extracomment>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="149"/>
         <source>Change the name of the selected search scope</source>
         <translation>Change the name of the selected search scope</translation>
-    </message>
-    <message>
-        <source>Change the search ranges of the selected search scope item. Have a look at the predefined search scopes to see how search ranges are constructed.</source>
-        <translation type="obsolete">Change the search ranges of the selected search scope item. Have a look at the predefined search scopes to see how search ranges are constructed.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="158"/>
@@ -4855,27 +4788,15 @@ Language name ppk</extracomment>
         <translation>Print...</translation>
     </message>
     <message>
-        <source>Print search result...</source>
-        <translation type="obsolete">Print search result...</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="166"/>
         <source>Printing search result</source>
         <translation>Printing search result</translation>
-    </message>
-    <message>
-        <source>Save search result...</source>
-        <translation type="obsolete">Save search result...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="176"/>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="194"/>
         <source>Saving search result</source>
         <translation>Saving search result</translation>
-    </message>
-    <message>
-        <source>Copy search result...</source>
-        <translation type="obsolete">Copy search result...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="212"/>
