@@ -1701,7 +1701,7 @@ shortcut</source>
     </message>
     <message>
         <source>Copy chapter to clipboard ...</source>
-        <translation>Kapitel in Zwischenablage kopieren...</translation>
+        <translation type="obsolete">Kapitel in Zwischenablage kopieren...</translation>
     </message>
     <message>
         <source>Copying</source>
@@ -1709,7 +1709,7 @@ shortcut</source>
     </message>
     <message>
         <source>Saving chapter ...</source>
-        <translation>Speichere das Kapitel ...</translation>
+        <translation type="obsolete">Speichere das Kapitel ...</translation>
     </message>
     <message>
         <source>Saving</source>
@@ -2155,7 +2155,7 @@ shortcut</source>
     </message>
     <message>
         <source>Saving entry ...</source>
-        <translation>Speichere den Eintrag ...</translation>
+        <translation type="obsolete">Speichere den Eintrag ...</translation>
     </message>
     <message>
         <source>Saving</source>
@@ -3191,7 +3191,7 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Print keys</source>
-        <translation>Einträge drucken</translation>
+        <translation type="obsolete">Einträge drucken</translation>
     </message>
     <message>
         <source>BibleTime bookmark files</source>
@@ -4048,7 +4048,7 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Copy search result...</source>
-        <translation>Suchergebnis kopieren...</translation>
+        <translation type="obsolete">Suchergebnis kopieren...</translation>
     </message>
     <message>
         <source>Copying search result</source>
@@ -4056,7 +4056,7 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Save search result...</source>
-        <translation>Suchergebnis speichern...</translation>
+        <translation type="obsolete">Suchergebnis speichern...</translation>
     </message>
     <message>
         <source>Saving search result</source>
@@ -4064,7 +4064,7 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Print search result...</source>
-        <translation>Suchergebnis drucken...</translation>
+        <translation type="obsolete">Suchergebnis drucken...</translation>
     </message>
     <message>
         <source>Printing search result</source>
@@ -4099,11 +4099,11 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>&lt;invalid name of search range&gt;</source>
-        <translation>&lt;ungültiger Name des Suchbereiches&gt;</translation>
+        <translation type="obsolete">&lt;ungültiger Name des Suchbereiches&gt;</translation>
     </message>
     <message>
         <source>Select a scope from the list to edit the search ranges</source>
-        <translation>Wählen Sie einen Bereich aus der Liste um die Suchgrenzen zu editieren</translation>
+        <translation type="obsolete">Wählen Sie einen Bereich aus der Liste um die Suchgrenzen zu editieren</translation>
     </message>
     <message>
         <source>&amp;Add new scope</source>
@@ -4127,7 +4127,7 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Change the search ranges of the selected search scope item. Have a look at the predefined search scopes to see how search ranges are constructed.</source>
-        <translation>Die Suchbereiche des aktuellen Eintrags bearbeiten. Schauen Sie sich die vordefinierten Suchbereiche an, um einen Eindruck davon zu bekommen, wie Suchbereiche aufgebaut sind.</translation>
+        <translation type="obsolete">Die Suchbereiche des aktuellen Eintrags bearbeiten. Schauen Sie sich die vordefinierten Suchbereiche an, um einen Eindruck davon zu bekommen, wie Suchbereiche aufgebaut sind.</translation>
     </message>
     <message>
         <source>The search ranges which will be used for the search, parsed to the canonical form</source>
@@ -4136,6 +4136,14 @@ Language name ppk</extracomment>
     <message>
         <source>Setup Search Scopes</source>
         <translation>Suchbereiche einstellen</translation>
+    </message>
+    <message>
+        <source>Select a scope from the list to edit the searchranges</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change the search ranges of the selected searchscope item. Have a look at the predefined search scopes to see how search ranges are constructed.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4207,7 +4215,7 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     </message>
     <message>
         <source>Print search result...</source>
-        <translation>Suchergebnis drucken...</translation>
+        <translation type="obsolete">Suchergebnis drucken...</translation>
     </message>
     <message>
         <source>Printing search result</source>
@@ -4215,7 +4223,7 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     </message>
     <message>
         <source>Save search result...</source>
-        <translation>Suchergebnis speichern...</translation>
+        <translation type="obsolete">Suchergebnis speichern...</translation>
     </message>
     <message>
         <source>Saving search result</source>
@@ -4223,7 +4231,7 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     </message>
     <message>
         <source>Copy search result...</source>
-        <translation>Suchergebnis kopieren...</translation>
+        <translation type="obsolete">Suchergebnis kopieren...</translation>
     </message>
     <message>
         <source>Copying search result</source>

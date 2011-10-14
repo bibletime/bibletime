@@ -1673,7 +1673,7 @@ shortcut</source>
     </message>
     <message>
         <source>Copy chapter to clipboard ...</source>
-        <translation>Kopírovat kapitolu do schránky...</translation>
+        <translation type="obsolete">Kopírovat kapitolu do schránky...</translation>
     </message>
     <message>
         <source>Copying</source>
@@ -1681,7 +1681,7 @@ shortcut</source>
     </message>
     <message>
         <source>Saving chapter ...</source>
-        <translation>Ukládám kapitolu...</translation>
+        <translation type="obsolete">Ukládám kapitolu...</translation>
     </message>
     <message>
         <source>Saving</source>
@@ -2123,7 +2123,7 @@ shortcut</source>
     </message>
     <message>
         <source>Saving entry ...</source>
-        <translation>Ukládám položku ...</translation>
+        <translation type="obsolete">Ukládám položku ...</translation>
     </message>
     <message>
         <source>Saving</source>
@@ -3373,7 +3373,7 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Print keys</source>
-        <translation>Tisknout odkazy</translation>
+        <translation type="obsolete">Tisknout odkazy</translation>
     </message>
     <message>
         <source>BibleTime bookmark files</source>
@@ -3999,7 +3999,7 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Copy search result...</source>
-        <translation>Kopírovat výsledek hledání...</translation>
+        <translation type="obsolete">Kopírovat výsledek hledání...</translation>
     </message>
     <message>
         <source>Copying search result</source>
@@ -4007,7 +4007,7 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Save search result...</source>
-        <translation>Uložit výsledek hledání...</translation>
+        <translation type="obsolete">Uložit výsledek hledání...</translation>
     </message>
     <message>
         <source>Saving search result</source>
@@ -4015,7 +4015,7 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Print search result...</source>
-        <translation>Tisknout výsledek hledání...</translation>
+        <translation type="obsolete">Tisknout výsledek hledání...</translation>
     </message>
     <message>
         <source>Printing search result</source>
@@ -4050,11 +4050,11 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>&lt;invalid name of search range&gt;</source>
-        <translation>&lt;špatný název rozsahu hledání&gt;</translation>
+        <translation type="obsolete">&lt;špatný název rozsahu hledání&gt;</translation>
     </message>
     <message>
         <source>Select a scope from the list to edit the search ranges</source>
-        <translation>Vyberte rozsah hledání ze seznamu.</translation>
+        <translation type="obsolete">Vyberte rozsah hledání ze seznamu.</translation>
     </message>
     <message>
         <source>&amp;Add new scope</source>
@@ -4078,7 +4078,7 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Change the search ranges of the selected search scope item. Have a look at the predefined search scopes to see how search ranges are constructed.</source>
-        <translation>Úprava rozsahu vyhledávání pro vybranou položku. Jak se definuje rozsah zjistíte z již předdefinovaných rozsahů.</translation>
+        <translation type="obsolete">Úprava rozsahu vyhledávání pro vybranou položku. Jak se definuje rozsah zjistíte z již předdefinovaných rozsahů.</translation>
     </message>
     <message>
         <source>The search ranges which will be used for the search, parsed to the canonical form</source>
@@ -4087,6 +4087,14 @@ Language name ppk</extracomment>
     <message>
         <source>Setup Search Scopes</source>
         <translation>Nastavení rozsahů hledání</translation>
+    </message>
+    <message>
+        <source>Select a scope from the list to edit the searchranges</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change the search ranges of the selected searchscope item. Have a look at the predefined search scopes to see how search ranges are constructed.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4158,7 +4166,7 @@ To může trvat dlouhou dobu. Pokračovat v indexování?</translation>
     </message>
     <message>
         <source>Print search result...</source>
-        <translation>Tisknout výsledek hledání...</translation>
+        <translation type="obsolete">Tisknout výsledek hledání...</translation>
     </message>
     <message>
         <source>Printing search result</source>
@@ -4166,7 +4174,7 @@ To může trvat dlouhou dobu. Pokračovat v indexování?</translation>
     </message>
     <message>
         <source>Save search result...</source>
-        <translation>Uložit výsledek hledání...</translation>
+        <translation type="obsolete">Uložit výsledek hledání...</translation>
     </message>
     <message>
         <source>Saving search result</source>
@@ -4174,7 +4182,7 @@ To může trvat dlouhou dobu. Pokračovat v indexování?</translation>
     </message>
     <message>
         <source>Copy search result...</source>
-        <translation>Kopírovat výsledek hledání...</translation>
+        <translation type="obsolete">Kopírovat výsledek hledání...</translation>
     </message>
     <message>
         <source>Copying search result</source>
