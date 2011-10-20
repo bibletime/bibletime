@@ -774,15 +774,15 @@ This file is distributed under the same license as the Bibetime package.</transl
     <name>BtFontChooserWidget</name>
     <message>
         <source>Font name:</source>
-        <translation type="unfinished">Schriftname:</translation>
+        <translation>Schriftname:</translation>
     </message>
     <message>
         <source>Font style:</source>
-        <translation type="unfinished">Schriftstil:</translation>
+        <translation>Schriftstil:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation type="unfinished">Größe:</translation>
+        <translation>Größe:</translation>
     </message>
 </context>
 <context>
@@ -868,11 +868,11 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>%1 KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 KiB</translation>
     </message>
     <message>
         <source>0 KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>0 KiB</translation>
     </message>
 </context>
 <context>
@@ -2551,7 +2551,7 @@ Möchten Sie fortfahren?</translation>
     </message>
     <message>
         <source>&lt;div class=&quot;moduleinfo&quot;&gt;&lt;h3&gt;%1&lt;/h3&gt;&lt;p&gt;%2&lt;/p&gt;&lt;p&gt;Version: %3&lt;/p&gt;&lt;/div&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;div class=&quot;moduleinfo&quot;&gt;&lt;h3&gt;%1&lt;/h3&gt;&lt;p&gt;%2&lt;/p&gt;&lt;p&gt;Version: %3&lt;/p&gt;&lt;/div&gt;</translation>
     </message>
 </context>
 <context>
@@ -4139,11 +4139,11 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Select a scope from the list to edit the searchranges</source>
-        <translation type="unfinished"></translation>
+        <translation>Wählen Sie einen Bereich aus der Liste, um die Suchgrenzen zu bearbeiten</translation>
     </message>
     <message>
         <source>Change the search ranges of the selected searchscope item. Have a look at the predefined search scopes to see how search ranges are constructed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Verändern Sie die Suchgrenzen des ausgewählten Suchbereichelements. Werfen Sie einen Blick auf die vordefinierten Suchbereiche, um zu sehen, wie Suchbereiche konstruiert werden.</translation>
     </message>
 </context>
 <context>
