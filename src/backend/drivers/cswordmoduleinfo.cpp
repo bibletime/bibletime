@@ -11,8 +11,6 @@
 
 #include <QSharedPointer>
 #include <CLucene.h>
-#include <CLucene/util/Misc.h>
-#include <CLucene/util/Reader.h>
 #include <QByteArray>
 #include <QCoreApplication>
 #include <QDebug>
@@ -260,7 +258,6 @@ bool CSwordModuleInfo::buildIndex() {
         QSharedPointer<lucene::index::IndexWriter> writer( new lucene::index::IndexWriter(index.toAscii().constData(), &an, true) ); //always create a new index
         writer->setMaxFieldLength(BT_MAX_LUCENE_FIELD_LENGTH);
         writer->setUseCompoundFile(true); //merge segments into a single file
-        writer->setMinMergeDocs(1000);
 
         m_module->setPosition(sword::TOP);
         unsigned long verseLowIndex = m_module->Index();
@@ -458,7 +455,11 @@ int CSwordModuleInfo::searchIndexed(const QString &searchedText,
         lucene_utf8towcs(wcharBuffer, searchedText.toUtf8().constData(), BT_MAX_LUCENE_FIELD_LENGTH);
         QSharedPointer<lucene::search::Query> q( lucene::queryParser::QueryParser::parse((const TCHAR*)wcharBuffer, (const TCHAR*)_T("content"), &analyzer) );
 
+#ifdef CLUCENE2
+        QSharedPointer<lucene::search::Hits> h( searcher.search(q.data(), lucene::search::Sort::INDEXORDER()) );
+#else
         QSharedPointer<lucene::search::Hits> h( searcher.search(q.data(), lucene::search::Sort::INDEXORDER) );
+#endif
 
         /// \warning This is a workaround for Sword constness
         const bool useScope = (const_cast<sword::ListKey&>(scope).Count() > 0);
@@ -468,7 +469,11 @@ int CSwordModuleInfo::searchIndexed(const QString &searchedText,
         QSharedPointer<sword::SWKey> swKey( module()->CreateKey() );
 
 
-        for (int i = 0; i < h->length(); ++i) {
+#ifdef CLUCENE2
+        for (unsigned int i = 0; i < h->length(); ++i) {
+#else
+	for (int i = 0; i < h->length(); ++i) {
+#endif
             doc = &h->doc(i);
             lucene_wcstoutf8(utfBuffer, (const wchar_t*)doc->get((const TCHAR*)_T("key")), BT_MAX_LUCENE_FIELD_LENGTH);
 

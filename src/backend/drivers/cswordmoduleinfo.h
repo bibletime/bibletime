@@ -23,6 +23,11 @@
 #include <swsearchable.h>
 #include <swversion.h>
 
+#ifdef CLUCENE2
+// CLucene no longer lists the following functions in its headers
+extern size_t lucene_utf8towcs(wchar_t *, const char *,  size_t maxslen);
+extern size_t lucene_wcstoutf8 (char *,  const wchar_t *, size_t maxslen);
+#endif
 
 class CSwordBackend;
 class CSwordKey;
