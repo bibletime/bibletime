@@ -277,7 +277,7 @@ void BibleTime::processCommandline(bool ignoreSession, const QString &bibleKey) 
             const int maxIndex = 31100;
             int newIndex = rand() % maxIndex;
             vk.setPosition(sword::TOP);
-            vk.Index(newIndex);
+            vk.setIndex(newIndex);
             createReadDisplayWindow(bible, vk.key());
         } else {
             createReadDisplayWindow(bible, bibleKey);
