@@ -48,15 +48,7 @@ BtConfig::BtConfig(const QString &settingsFile)
         m_defaults.insert("settings/defaults/standardHebrewMorphLexicon", "StrongsHebrew");
         m_defaults.insert("settings/defaults/standardGreekMorphLexicon", "StrongsGreek");
 
-        m_defaults.insert("gui/showMainToolbar", true); // rename: toolbar -> showMainToolbar
-
-        /*
-        m_defaults.insert("gui/autoTileVertical", true);
-        m_defaults.insert("gui/autoTileHorizontal", false);
-        m_defaults.insert("gui/autoTile", false);
-        m_defaults.insert("gui/autoTabbed", false);
-        m_defaults.insert("gui/autoCascade", false);
-        */
+        m_defaults.insert("gui/showMainToolbar", true);
         m_defaults.insert("gui/alignmentMode", QVariant::fromValue(autoTileVertical));
 
         m_defaults.insert("presentation/lineBreaks", false);
