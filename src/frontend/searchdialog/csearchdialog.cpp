@@ -14,7 +14,6 @@
 #include <QLabel>
 #include <QLineEdit>
 #include <QPushButton>
-#include <QSettings>
 #include <QSizePolicy>
 #include <QString>
 #include <QRegExp>

@@ -18,7 +18,6 @@
 #include <QMenu>
 #include <QMessageBox>
 #include <QPushButton>
-#include <QSettings>
 #include <QStackedWidget>
 #include <QVBoxLayout>
 #include "backend/config/cbtconfig.h"
