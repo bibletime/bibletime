@@ -523,7 +523,7 @@ void BtSearchResultArea::loadDialogSettings() {
 /**
 * Save the settings to the resource file
 */
-void BtSearchResultArea::saveDialogSettings() {
+void BtSearchResultArea::saveDialogSettings() const {
     CBTConfig::set(CBTConfig::searchMainSplitterSizes, m_mainSplitter->sizes());
     CBTConfig::set(CBTConfig::searchResultSplitterSizes, m_resultListSplitter->sizes());
 }

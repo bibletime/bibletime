@@ -63,7 +63,7 @@ void BtModuleManagerDialog::loadDialogSettings() {
     move(CBTConfig::get(CBTConfig::bookshelfPosX), CBTConfig::get(CBTConfig::bookshelfPosY));
 }
 
-void BtModuleManagerDialog::saveDialogSettings() {
+void BtModuleManagerDialog::saveDialogSettings() const {
     CBTConfig::set(CBTConfig::bookshelfWidth, size().width());
     CBTConfig::set(CBTConfig::bookshelfHeight, size().height());
     CBTConfig::set(CBTConfig::bookshelfPosX, x());

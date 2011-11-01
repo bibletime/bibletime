@@ -108,7 +108,7 @@ class CSearchDialog : public QDialog {
         /**
         * Save the settings to the resource file
         */
-        void saveDialogSettings();
+        void saveDialogSettings() const;
 
     protected slots:
         /**

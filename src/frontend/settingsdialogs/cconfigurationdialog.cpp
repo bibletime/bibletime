@@ -103,7 +103,7 @@ void CConfigurationDialog::loadDialogSettings() {
     move(CBTConfig::get(CBTConfig::configDialogPosX), CBTConfig::get(CBTConfig::configDialogPosY));
 }
 
-void CConfigurationDialog::saveDialogSettings() {
+void CConfigurationDialog::saveDialogSettings() const {
     CBTConfig::set(CBTConfig::configDialogWidth, size().width());
     CBTConfig::set(CBTConfig::configDialogHeight, size().height());
     CBTConfig::set(CBTConfig::configDialogPosX, x());

@@ -17,7 +17,8 @@
 
 BibleTimeApp::~BibleTimeApp() {
     // Prevent writing to the log file before the directory cache is init:
-    if (!m_init) return;
+    if (!m_init)
+        return;
 
     //we can set this safely now because we close now (hopyfully without crash)
     CBTConfig::set(CBTConfig::crashedLastTime, false);
@@ -31,7 +32,8 @@ BibleTimeApp::~BibleTimeApp() {
 bool BibleTimeApp::initDisplayTemplateManager() {
     QString errorMessage;
     new CDisplayTemplateMgr(errorMessage);
-    if (errorMessage.isNull()) return true;
+    if (errorMessage.isNull())
+        return true;
     QMessageBox::critical(0, tr("Fatal error!"), errorMessage);
     return false;
 }

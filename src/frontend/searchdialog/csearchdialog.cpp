@@ -288,7 +288,7 @@ void CSearchDialog::loadDialogSettings() {
     move(CBTConfig::get(CBTConfig::searchDialogX), CBTConfig::get(CBTConfig::searchDialogY));
 }
 
-void CSearchDialog::saveDialogSettings() {
+void CSearchDialog::saveDialogSettings() const {
     CBTConfig::set(CBTConfig::searchDialogWidth, size().width());
     CBTConfig::set(CBTConfig::searchDialogHeight, size().height());
     CBTConfig::set(CBTConfig::searchDialogX, x());

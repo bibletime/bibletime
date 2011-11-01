@@ -46,7 +46,7 @@ class CConfigurationDialog : public BtConfigDialog {
         void loadDialogSettings();
 
         // Save the settings to the resource file
-        void saveDialogSettings();
+        void saveDialogSettings() const;
 
     signals:
         void signalSettingsChanged();
