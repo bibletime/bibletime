@@ -10,24 +10,15 @@
 #include <QStringList>
 #include <QVariant>
 
+#include "backend/config/btconfigcore.h"
+
 #include "backend/btmoduletreeitem.h" // for BTModuleTreeItem::Grouping
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "btglobal.h"
 #include "frontend/searchdialog/btsearchoptionsarea.h" // for Search::BtSearchOptionsArea::SearchType
 
 
-/*!
- * \brief Class holding and managing the configuration of bibletime.
- *
- * This class manages the configuration of bibletime.
- * It is based on QSettings. It abstracts QSettings to automatically provide
- * default values for all values and manage sessions. Whether a variable is
- * session specific or not is decided in this class and transparent to the users
- * of this class.
- *
- * \todo preserve session order
- */
-class BtConfig {
+class BtConfig: public BtConfigCore {
 
     Q_DISABLE_COPY(BtConfig)
 
@@ -46,152 +37,9 @@ private: /* Types: */
 
 public: /* Methods: */
 
-    inline ~BtConfig() { sync(); }
-
     static BtConfig& getInstance();
 
     static void destroyInstance();
-
-    /*!
-     * \brief Returns the name of the current session.
-     * \returns Name of the current session.
-     */
-    QString getCurrentSessionName();
-
-    /*!
-     * \returns List of all session names.
-     */
-    QStringList getAllSessionNames();
-
-    /*!
-     * \brief Switches to a session.
-     *
-     * This function will switch to the session with the name given.
-     * If no such session exists the session will be created.
-     *
-     * \param[in] name Name of session to switch to.
-     */
-    void switchToSession(const QString& name);
-
-    /*!
-     * \brief Delete a session.
-     *
-     * Deletes the session with the given name.
-     * This function will not delete the current session and return false
-     * in that case. It also returns false if no session with the given name
-     * exists.
-     * \returns True if deletion was successful and false otherwise.
-     */
-    bool deleteSession(const QString& name);
-
-    /// \todo: template this
-    /// \todo: make session specific check also work for groups (check for / in path and check for sub parts in session qhash)
-    /*!
-     * \brief Returns a value.
-     *
-     * Returns the value for the given key. Whether the key is part of
-     * the session or not is determined automatically. If the value
-     * has not been set before the default value is returned.
-     * The type that is returned can be set via the template parameter,
-     * it is necessary, that the respective property can be cast to this
-     * type.
-     * \param[in] key Key to get the value for.
-     * \tparam T value type to return
-     * \returns QVariant of the value.
-     */
-    template<typename T>
-    T value(const QString &key) {
-        const QString fullKey = group() + key;
-
-        Q_ASSERT_X(!fullKey.startsWith(m_sessionsGroup),
-                   "BtConfig", "Accessing session values directly is prohibited!");
-        Q_ASSERT_X(fullKey != m_currentSessionKey,
-                   "BtConfig", "Accessing session values directly is prohibited!");
-        Q_ASSERT_X(m_defaults.contains(fullKey),
-                   "BtConfig", "Tried to access unspecified key!");
-
-        const QString realKey = m_sessionSettings.contains(fullKey)
-                              ? m_currentSessionCache + fullKey
-                              : fullKey;
-        return m_settings.value(realKey, m_defaults.value(fullKey)).value<T>();
-    }
-
-    /*!
-     * \brief Set a value.
-     *
-     * Sets a value for a key. Whether the key should be part of the session
-     * or not is determined automatically.
-     * The value type can be any type that is QVariant enabled. Those are the
-     * default ones of QVariant (look at the Qt documentation), and those declared
-     * in btglobal.h.
-     * \param[in] key Ket to set.
-     * \tparam[in] value Value to set.
-     */
-    template<typename T>
-    void setValue(const QString &key, const T &value) {
-        const QString fullKey = group() + key;
-
-        Q_ASSERT_X(!fullKey.startsWith(m_sessionsGroup),
-                   "BtConfig", "Accessing session values directly is prohibited!");
-        Q_ASSERT_X(fullKey != m_currentSessionKey,
-                   "BtConfig", "Accessing session values directly is prohibited!");
-        Q_ASSERT_X(m_defaults.contains(fullKey),
-                   "BtConfig", "Tried to accessing unspecified key!");
-
-
-        const QString realKey = m_sessionSettings.contains(fullKey)
-                              ? m_currentSessionCache + fullKey
-                              : fullKey;
-        m_settings.setValue(realKey, QVariant::fromValue<T>(value));
-    }
-
-    /*!
-     * \brief Synchronize the underlying QSettings.
-     */
-    inline void sync() {
-        m_settings.sync();
-    }
-
-    /*!
-     * \brief Begin a configuration group.
-     *
-     * All following calls to get/setValue() will have the given prefix automatically
-     * prefixed.
-     * \post You *must* call endGroup() after you are done with the group, otherwise
-     * you will mess up all calls to get/setValue() by others.
-     * \param[in] prefix the prefix to use
-     */
-    inline void beginGroup(const QString &prefix) {
-        Q_ASSERT(!prefix.isEmpty());
-        Q_ASSERT(!prefix.startsWith('/'));
-        Q_ASSERT(!prefix.endsWith('/'));
-        m_currentGroups.append(prefix);
-    }
-
-    /*!
-     * \brief Ends a previously set configuration group.
-     *
-     * Call this function after you are done with a started group. Every call to
-     * beginGroup() must be matched with a call to this function.
-     */
-    inline void endGroup() {
-        Q_ASSERT_X(!m_currentGroups.isEmpty(), "BtConfig", "endGroup() called, but no beginGroup() active.");
-        m_currentGroups.removeLast();
-    }
-
-    /*!
-     * \brief Returns the current group.
-     *
-     * Returns the group the BtConfig is currently set to. It will contain a trailing /
-     * so is suitable to be preprended to a key directly.
-     *
-     * \returns group string or "" if group is empty
-     */
-    inline QString group() const {
-        return (m_currentGroups.isEmpty() ? QString() : m_currentGroups.join("/") + '/');
-    }
-
-    // helper functions
 
     /*!
      * \brief Function to set a module decryption key.
@@ -334,25 +182,18 @@ public: /* Methods: */
 
 private: /* Methods: */
 
-    explicit BtConfig(const QString& settingsFile);
+    explicit BtConfig(const QString & settingsFile);
 
 private: /* Fields: */
 
     static BtConfig* m_instance; //!< singleton instance
 
-    const static QString m_sessionsGroup;
-    const static QString m_currentSessionKey;
-    const static QString m_defaultSessionName;
-
-    QStringList m_currentGroups;
-
-    QHash<QString, QVariant> m_defaults;
-    QSet<QString> m_sessionSettings;
     QSettings m_settings;
 
-    QString m_currentSessionCache; //!< cache of the current session string, for speed
     QFont m_defaultFont; //!< default font used when no special one is set
     FontCacheMap m_fontCache; //!< a cache for the fonts saved in the configuration file for speed
+
+    static StringMap m_defaultSearchScopes;
 
 };
 

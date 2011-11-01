@@ -16,7 +16,6 @@
 #include <QHeaderView>
 #include <QLabel>
 #include <QPushButton>
-#include <QSettings>
 #include <QSharedPointer>
 #include <QStackedLayout>
 #include <QToolButton>
@@ -50,7 +49,8 @@ BtInstallPage::BtInstallPage(BtModuleManagerDialog *parent)
         , m_modulesSelectedSources(0)
 {
     // Read settings:
-    m_headerState = btConfig().value<QByteArray>("gui/bookshelfManager/installPage/headerState");
+    m_headerState = btConfig().value<QByteArray>("gui/bookshelfManager/installPage/headerState",
+                                                 QByteArray());
 
     // Initialize widgets:
     initView();
@@ -172,7 +172,7 @@ void BtInstallPage::initPathCombo() {
     }
 
     // choose the current value from config but check whether we have so many items
-    int configValue = btConfig().value<int>("gui/installPathIndex");
+    int configValue = btConfig().value<int>("gui/installPathIndex", 0);
     int index = configValue > (m_pathCombo->count() - 1) ? m_pathCombo->count() - 1 : configValue;
     m_pathCombo->setCurrentIndex(index);
 }
@@ -199,7 +199,7 @@ void BtInstallPage::initSourcesCombo() {
     }
 
     // Read selected module from config:
-    QString selected = btConfig().value<QString>("gui/bookshelfManager/installPage/selectedModule");
+    const QString selected = btConfig().value<QString>("gui/bookshelfManager/installPage/selectedModule", QString());
 
     // Populate combo box
     bool selectionOk = false;

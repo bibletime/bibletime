@@ -14,7 +14,6 @@
 #include <QLabel>
 #include <QLineEdit>
 #include <QPushButton>
-#include <QSettings>
 #include <QSizePolicy>
 #include <QString>
 #include <QRegExp>
@@ -284,13 +283,11 @@ void CSearchDialog::closeButtonClicked() {
 }
 
 void CSearchDialog::loadDialogSettings() {
-    resize(btConfig().value<QSize>("gui/windows/searchDialog/Size"));
-    move(btConfig().value<QPoint>("gui/windows/searchDialog/Pos"));
+    restoreGeometry(btConfig().value<QByteArray>("gui/windows/searchDialog/geometry", QByteArray()));
 }
 
-void CSearchDialog::saveDialogSettings() {
-    btConfig().setValue("gui/windows/searchDialog/Size", size());
-    btConfig().setValue("gui/windows/searchDialog/Pos", pos());
+void CSearchDialog::saveDialogSettings() const {
+    btConfig().setValue("gui/windows/searchDialog/geometry", saveGeometry());
 }
 
 

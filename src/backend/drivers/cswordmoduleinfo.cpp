@@ -88,7 +88,7 @@ CSwordModuleInfo::CSwordModuleInfo(sword::SWModule *module,
     initCachedCategory();
     initCachedLanguage();
 
-    m_hidden = btConfig().value<QStringList>("state/hiddenModules").contains(name());
+    m_hidden = btConfig().value<QStringList>("state/hiddenModules", QStringList()).contains(name());
 
     if (backend()) {
         if (hasVersion() && (minimumSwordVersion() > sword::SWVersion::currentVersion)) {
@@ -1018,7 +1018,7 @@ bool CSwordModuleInfo::setHidden(bool hide) {
     if (m_hidden == hide) return false;
 
     m_hidden = hide;
-    QStringList hiddenModules(btConfig().value<QStringList>("state/hiddenModules"));
+    QStringList hiddenModules(btConfig().value<QStringList>("state/hiddenModules", QStringList()));
     if (hide) {
         Q_ASSERT(!hiddenModules.contains(name()));
         hiddenModules.append(name());

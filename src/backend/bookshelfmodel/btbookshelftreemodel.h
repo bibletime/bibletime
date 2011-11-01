@@ -59,13 +59,17 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
                   \warning Be careful using this constructor!
                 */
                 explicit inline Grouping(bool empty = false) {
-                    if (empty) return;
+                    if (empty)
+                        return;
                     push_back(GROUP_CATEGORY);
                     push_back(GROUP_LANGUAGE);
                 }
                 explicit inline Grouping(Group group) { push_back(group); }
                 explicit inline Grouping(const QString &configKey) {
-                    loadFrom(configKey);
+                    if (loadFrom(configKey))
+                        return;
+                    push_back(GROUP_CATEGORY);
+                    push_back(GROUP_LANGUAGE);
                 }
                 inline Grouping(const Grouping &copy)
                     : QList<Group>(copy) {}

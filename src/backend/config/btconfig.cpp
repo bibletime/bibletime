@@ -1,6 +1,5 @@
 #include "btconfig.h"
 
-#include <QDebug>
 #include <QLocale>
 #include <QWebSettings>
 #include "backend/btmoduletreeitem.h"
@@ -18,123 +17,23 @@
  * whether the variable has been initialized yet.
  */
 BtConfig* BtConfig::m_instance = 0;
-const QString BtConfig::m_sessionsGroup = "sessions";
-const QString BtConfig::m_currentSessionKey = "currentSession";
-const QString BtConfig::m_defaultSessionName = QObject::tr("default session");
+
+BtConfig::StringMap BtConfig::m_defaultSearchScopes;
+
 
 BtConfig::BtConfig(const QString &settingsFile)
-    : m_settings(settingsFile, QSettings::IniFormat)
-    , m_defaultFont(QWebSettings::globalSettings()->fontFamily(QWebSettings::StandardFont), 12)
+    : BtConfigCore(settingsFile)
 {
-
-#if QT_VERSION >= 0x040700
-    m_currentGroups.reserve(10);
-#endif
-
-    // construct defaults
-        m_defaults.reserve(512); /// \todo: check whether this value can be calculated automatically...
-
-        m_defaults.insert("bibletimeVersion", "0.0");
-        m_defaults.insert("language", QLocale::system().name());
-        m_defaults.insert("gui/displayStyle", QString(CDisplayTemplateMgr::defaultTemplate()));
-        m_defaults.insert("state/bookshelfCurrentItem", QVariant(QString::null));
-
-        m_defaults.insert("settings/defaults/standardBible", "KJV");
-        m_defaults.insert("settings/defaults/standardCommentary", "MHC");
-        m_defaults.insert("settings/defaults/standardLexicon", "ISBE");
-        m_defaults.insert("settings/defaults/standardDailyDevotional", "");
-        m_defaults.insert("settings/defaults/standardHebrewStrongsLexicon", "StrongsHebrew");
-        m_defaults.insert("settings/defaults/standardGreekStrongsLexicon", "StrongsGreek");
-        m_defaults.insert("settings/defaults/standardHebrewMorphLexicon", "StrongsHebrew");
-        m_defaults.insert("settings/defaults/standardGreekMorphLexicon", "StrongsGreek");
-
-        m_defaults.insert("gui/showMainToolbar", true);
-        m_defaults.insert("gui/alignmentMode", QVariant::fromValue(autoTileVertical));
-
-        m_defaults.insert("presentation/lineBreaks", false);
-        m_defaults.insert("presentation/verseNumbers", false);
-        m_defaults.insert("presentation/headings", true);
-        m_defaults.insert("presentation/hebrewPoints", true);
-        m_defaults.insert("presentation/hebrewCantillation", true);
-        m_defaults.insert("presentation/greekAccents", true);
-        m_defaults.insert("presentation/textualVariants", false);
-        m_defaults.insert("presentation/scriptureReferences", true);
-        m_defaults.insert("presentation/morphSegmentation", true);
-
-        m_defaults.insert("gui/logo", true);
-        m_defaults.insert("settings/behaviour/autoDeleteOrphanedIndices", true);
-        m_defaults.insert("state/crashedLastTime", false);
-        m_defaults.insert("state/crashedTwoTimes", false);
-        m_defaults.insert("gui/bookshelfShowHidden", false);
-        m_defaults.insert("settings/behaviour/allowNetworkConnection", false);
-        m_defaults.insert("gui/showTextWindowHeaders", true);
-        m_defaults.insert("gui/showTextWindowNavigator", true);
-        m_defaults.insert("gui/showTextWindowModuleSelectorButtons", true);
-        m_defaults.insert("gui/showTextWindowToolButtons", true);
-        m_defaults.insert("gui/showFormatToolbarButtons", true);
-        m_defaults.insert("gui/showToolbarsInEachWindow", true);
-        m_defaults.insert("gui/showTipAtStartup", true);
-
-        /// \todo: are the following booleans or ints, what do they do? rename to: show***?
-        m_defaults.insert("gui/footnotes", true);
-        m_defaults.insert("gui/strongNumbers", true);
-        m_defaults.insert("gui/morphTags", true);
-        m_defaults.insert("gui/lemmas", true);
-        m_defaults.insert("gui/windows/magDelay", 400);
-        m_defaults.insert("gui/windows/bookshelfGrouping", BTModuleTreeItem::CatLangMod);
-        m_defaults.insert("gui/windows/searchType", Search::BtSearchOptionsArea::AndType);
-        m_defaults.insert("gui/mainindexActiveTab", 0);
-        m_defaults.insert("gui/installPathIndex", 0);
-        m_defaults.insert("gui/bookshelfManager/installPage/selectedModule", "");
-        m_defaults.insert("gui/bookshelfManager/installPage/headerState", QByteArray());
-        m_defaults.insert("gui/bookshelfManager/installPage/grouping", QVariant());
-        m_defaults.insert("gui/searchDialog/moduleChooserDialog/grouping", QVariant());
-        m_defaults.insert("gui/mainWindow/docks/bookshelf/grouping", QVariant());
-        m_defaults.insert("gui/bookshelfManager/installConfirmDialog/grouping", QVariant());
-        m_defaults.insert("gui/bookshelfManager/removePage/grouping", QVariant());
-        m_defaults.insert("gui/mainWindow/openWorkAction/grouping", QVariant());
-        m_defaults.insert("gui/windows/bookshelf/Pos", QPoint(1,1));
-        m_defaults.insert("gui/windows/bookshelf/Size", QSize(1,1));
-        m_defaults.insert("gui/windows/configDialog/Pos", QPoint(1,1));
-        m_defaults.insert("gui/windows/configDialog/Size", QSize(1,1));
-        m_defaults.insert("gui/windows/searchDialog/Pos", QPoint(200,200));
-        m_defaults.insert("gui/windows/searchDialog/Size", QSize(200,400));
-        m_defaults.insert("gui/windows/bookshelfContents/Pos", QPoint(0,0));
-        m_defaults.insert("gui/windows/searchResultArea/mainSplitterSizes", QVariant::fromValue(QList<int>()));
-        m_defaults.insert("gui/windows/searchResultArea/resultSplitterSizes", QVariant::fromValue(QList<int>()));
-        m_defaults.insert("state/tipNumber", 0);
-            QStringList list;
-            list.append(QString::null);
-        m_defaults.insert("properties/searchTexts", list);
-        m_defaults.insert("history/searchCompletionTexts", QStringList());
-        m_defaults.insert("history/bookshelfOpenGroups", QStringList());
-        m_defaults.insert("state/hiddenModules", QStringList());
-        m_defaults.insert("history/searchModuleHistory", QStringList());
-            StringMap map;
-            map.insert(QObject::tr("Old testament"),          QString("Gen - Mal"));
-            map.insert(QObject::tr("Moses/Pentateuch/Torah"), QString("Gen - Deut"));
-            map.insert(QObject::tr("History"),                QString("Jos - Est"));
-            map.insert(QObject::tr("Prophets"),               QString("Isa - Mal"));
-            map.insert(QObject::tr("New testament"),          QString("Mat - Rev"));
-            map.insert(QObject::tr("Gospels"),                QString("Mat - Joh"));
-            map.insert(QObject::tr("Letters/Epistles"),       QString("Rom - Jude"));
-            map.insert(QObject::tr("Paul's Epistles"),        QString("Rom - Phile"));
-        m_defaults.insert("properties/searchScopes", QVariant::fromValue(map));
-
-    // initialize session settings
-        m_sessionSettings.insert("gui/showTextWindowHeaders");
-        m_sessionSettings.insert("gui/childWindows/");
-        m_sessionSettings.insert("presentation/");
-        m_sessionSettings.insert("windows/");
-        /// \todo: continue here
-
-    /// \todo: save defaults somewhere so they can be loaded directly on next startup
-
-    // make sure the current session key and cache are set
-        if(m_settings.contains(m_currentSessionKey))
-            m_currentSessionCache = m_sessionsGroup + '/' + m_settings.value(m_currentSessionKey).toString() + '/';
-        else
-            switchToSession(m_defaultSessionName);
+    if (m_defaultSearchScopes.isEmpty()) {
+        m_defaultSearchScopes.insert(QObject::tr("Old testament"),          QString("Gen - Mal"));
+        m_defaultSearchScopes.insert(QObject::tr("Moses/Pentateuch/Torah"), QString("Gen - Deut"));
+        m_defaultSearchScopes.insert(QObject::tr("History"),                QString("Jos - Est"));
+        m_defaultSearchScopes.insert(QObject::tr("Prophets"),               QString("Isa - Mal"));
+        m_defaultSearchScopes.insert(QObject::tr("New testament"),          QString("Mat - Rev"));
+        m_defaultSearchScopes.insert(QObject::tr("Gospels"),                QString("Mat - Joh"));
+        m_defaultSearchScopes.insert(QObject::tr("Letters/Epistles"),       QString("Rom - Jude"));
+        m_defaultSearchScopes.insert(QObject::tr("Paul's Epistles"),        QString("Rom - Phile"));
+    }
 }
 
 BtConfig& BtConfig::getInstance()
@@ -148,90 +47,6 @@ void BtConfig::destroyInstance() {
     delete m_instance;
     m_instance = 0;
 }
-
-QString BtConfig::getCurrentSessionName()
-{
-    // every session must have a name at any time, this is an error in the config if this is not the case
-    if(!m_settings.value(m_currentSessionCache + "name").isValid())
-    {
-        qWarning() << "The session with key " << m_settings.value(m_currentSessionKey).toString() << " had no name associated, probably someone messed with the config. The default session name, \"" + m_defaultSessionName + "\", was set.";
-        m_settings.setValue(m_currentSessionCache + "name", m_defaultSessionName);
-    }
-
-    return m_settings.value(m_currentSessionCache + "name").toString();
-}
-
-QStringList BtConfig::getAllSessionNames()
-{
-    m_settings.beginGroup(m_sessionsGroup);
-
-    QStringList sessionNames;
-    Q_FOREACH (const QString &session, m_settings.childGroups())
-        sessionNames.append(m_settings.value(session + "/name").toString());
-    m_settings.endGroup();
-    return sessionNames;
-}
-
-void BtConfig::switchToSession(const QString &name) {
-    Q_ASSERT(!name.isEmpty());
-
-    m_settings.beginGroup(m_sessionsGroup);
-    const QStringList sessions = m_settings.childGroups();
-    QString sessionKey;
-
-    // Check whether the session already exists:
-    bool found = false;
-    Q_FOREACH (const QString &session, sessions) {
-        if(m_settings.value(session + "/name").toString() == name) {
-            found = true;
-            sessionKey = session;
-            break;
-        }
-    }
-
-    // If the session doesn't exist yet, create it:
-    if (!found) {
-        /// \bug ULONG_MAX shouldn't be the limit here:
-        for (unsigned long i = 0; i != ULONG_MAX; i++) {
-            sessionKey = QString::number(i);
-            if (!sessions.contains(sessionKey))
-                break;
-        }
-
-        m_settings.setValue(sessionKey + "/name", name);
-    }
-
-    m_settings.endGroup();
-
-    // Switch to the session:
-    m_settings.setValue(m_currentSessionKey, sessionKey);
-    m_currentSessionCache = m_sessionsGroup + "/" + sessionKey + "/";
-}
-
-bool BtConfig::deleteSession(const QString& name)
-{
-    m_settings.beginGroup(m_sessionsGroup);
-        const QStringList sessions = m_settings.childGroups();
-    m_settings.endGroup();
-
-    Q_FOREACH (const QString &session, sessions) {
-        if(m_settings.value(m_sessionsGroup + "/" + session + "/name").toString() == name) // we found the session
-        {
-            if(m_settings.value(m_currentSessionKey) != session)
-            {
-                m_settings.remove(m_sessionsGroup + "/" + session);
-                return true;
-            }
-            else // it's was the current session, we don't do it
-                return false;
-        }
-    }
-
-    // no session with the name was found
-    return false;
-}
-
-// Helper functions
 
 void BtConfig::setModuleEncryptionKey(const QString &name, const QString &key) {
     Q_ASSERT(!name.isEmpty());
@@ -297,16 +112,16 @@ FilterOptions BtConfig::getFilterOptions()
 
     options.footnotes           = true; // Required for the info display
     options.strongNumbers       = true; // get(strongNumbers);
-    options.headings            = value<int>("presentation/headings");
+    options.headings            = sessionValue<int>("presentation/headings", true);
     options.morphTags           = true; // Required for the info display
     options.lemmas              = true; // Required for the info display
     options.redLetterWords      = true;
-    options.hebrewPoints        = value<int>("presentation/hebrewPoints");
-    options.hebrewCantillation  = value<int>("presentation/hebrewCantillation");
-    options.greekAccents        = value<int>("presentation/greekAccents");
-    options.textualVariants     = value<int>("presentation/textualVariants");
-    options.scriptureReferences = value<int>("presentation/scriptureReferences");
-    options.morphSegmentation   = value<int>("presentation/morphSegmentation");
+    options.hebrewPoints        = sessionValue<int>("presentation/hebrewPoints", true);
+    options.hebrewCantillation  = sessionValue<int>("presentation/hebrewCantillation", true);
+    options.greekAccents        = sessionValue<int>("presentation/greekAccents", true);
+    options.textualVariants     = sessionValue<int>("presentation/textualVariants", false);
+    options.scriptureReferences = sessionValue<int>("presentation/scriptureReferences", true);
+    options.morphSegmentation   = sessionValue<int>("presentation/morphSegmentation", true);
 
     return options;
 }
@@ -314,8 +129,8 @@ FilterOptions BtConfig::getFilterOptions()
 DisplayOptions BtConfig::getDisplayOptions()
 {
     DisplayOptions options;
-    options.lineBreaks   = value<int>("presentation/lineBreaks");
-    options.verseNumbers = value<int>("presentation/verseNumbers");
+    options.lineBreaks   = sessionValue<int>("presentation/lineBreaks", false);
+    options.verseNumbers = sessionValue<int>("presentation/verseNumbers", false);
     return options;
 }
 
@@ -367,7 +182,7 @@ BtConfig::FontSettingsPair BtConfig::getFontForLanguage(const CLanguageMgr::Lang
 }
 
 BtConfig::StringMap BtConfig::getSearchScopesForCurrentLocale() {
-    StringMap map = value<BtConfig::StringMap>("properties/searchScopes");
+    StringMap map = value<BtConfig::StringMap>("properties/searchScopes", m_defaultSearchScopes);
 
     // Convert map to current locale:
     sword::VerseKey vk;
@@ -421,8 +236,12 @@ void BtConfig::deleteSearchScopesWithCurrentLocale() {
     m_settings.remove("properties/searchScopes");
 }
 
-CSwordModuleInfo *BtConfig::getDefaultSwordModuleByType(const QString& moduleType) {
-    return CSwordBackend::instance()->findModuleByName(value<QString>("settings/defaults/" + moduleType));
+CSwordModuleInfo *BtConfig::getDefaultSwordModuleByType(const QString & moduleType) {
+    const QString moduleName = value<QString>("settings/defaults/" + moduleType, QString());
+    if (moduleName.isEmpty())
+        return 0;
+
+    return CSwordBackend::instance()->findModuleByName(moduleName);
 }
 
 void BtConfig::setDefaultSwordModuleByType(const QString &moduleType,

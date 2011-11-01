@@ -170,7 +170,7 @@ void BtTextWindowHeaderWidget::populateMenu() {
         // Filters: add only non-hidden, non-locked and correct type
         BTModuleTreeItem::HiddenOff hiddenFilter;
         QList<BTModuleTreeItem::Filter*> filters;
-        if (not btConfig().value<bool>("gui/bookshelfShowHidden")) {
+        if (!btConfig().value<bool>("gui/bookshelfShowHidden", false)) {
             filters.append(&hiddenFilter);
         }
         TypeFilter typeFilter(m_moduleType);
@@ -179,7 +179,7 @@ void BtTextWindowHeaderWidget::populateMenu() {
         if (m_moduleType == CSwordModuleInfo::Bible) {
             BTModuleTreeItem root(filters, BTModuleTreeItem::CatLangMod);
             QList<BTModuleTreeItem::Filter*> filters2;
-            if (not btConfig().value<bool>("gui/bookshelfShowHidden")) {
+            if (!btConfig().value<bool>("gui/bookshelfShowHidden", false)) {
                 filters2.append(&hiddenFilter);
             }
             if (menu == addItem || menu == replaceItem) {

@@ -52,7 +52,7 @@ CDisplaySettingsPage::CDisplaySettingsPage(CConfigurationDialog *parent)
 
     { //startup logo
         m_showLogoCheck = new QCheckBox(this);
-        m_showLogoCheck->setChecked(btConfig().value<bool>("gui/logo"));
+        m_showLogoCheck->setChecked(btConfig().value<bool>("gui/logo", true));
         mainLayout->addWidget(m_showLogoCheck);
     }
     mainLayout->addSpacing(20);
@@ -83,13 +83,12 @@ CDisplaySettingsPage::CDisplaySettingsPage(CConfigurationDialog *parent)
     webViewWidget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
     mainLayout->addWidget(webViewWidget);
 
-    m_styleChooserCombo->addItems(
-        CDisplayTemplateMgr::instance()->availableTemplates()
-    );
+    CDisplayTemplateMgr * tMgr = CDisplayTemplateMgr::instance();
+    m_styleChooserCombo->addItems(tMgr->availableTemplates());
 
     for (int i = 0; i < m_styleChooserCombo->count(); ++i) {
-        if ( m_styleChooserCombo->itemText(i) == btConfig().value<QString>("gui/displayStyle") ) {
-            m_styleChooserCombo->setCurrentIndex( i );
+        if (m_styleChooserCombo->itemText(i) == tMgr->activeTemplateName()) {
+            m_styleChooserCombo->setCurrentIndex(i);
             break;
         }
     }
@@ -160,7 +159,8 @@ void CDisplaySettingsPage::updateStylePreview() {
                      .arg(tr("But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.")),
                      settings));
 
-    const QString oldStyleName = btConfig().value<QString>("gui/displayStyle");
+    /// \todo Remove the following hack:
+    const QString oldStyleName = CDisplayTemplateMgr::instance()->activeTemplateName();
     btConfig().setValue("gui/displayStyle", styleName);
     CDisplayRendering render;
     m_stylePreviewViewer->setHtml( render.renderKeyTree(tree));

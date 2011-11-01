@@ -271,9 +271,9 @@ class TextFiltersTab: public QWidget {
 };
 
 
-#define TEXT_FILTERS_TAB_ADD_ROW(name) \
+#define TEXT_FILTERS_TAB_ADD_ROW(name,def) \
         m_ ## name ## Check = new QCheckBox(this); \
-        m_ ## name ## Check->setChecked(btConfig().value<bool>(#name)); \
+        m_ ## name ## Check->setChecked(btConfig().sessionValue<bool>(#name,(def))); \
         layout->addWidget(m_ ## name ## Check);
 
 TextFiltersTab::TextFiltersTab(CSwordSettingsPage *parent)
@@ -290,15 +290,15 @@ TextFiltersTab::TextFiltersTab(CSwordSettingsPage *parent)
     layout->addWidget(m_explanationLabel);
 
     btConfig().beginGroup("presentation");
-        TEXT_FILTERS_TAB_ADD_ROW(lineBreaks);
-        TEXT_FILTERS_TAB_ADD_ROW(verseNumbers);
-        TEXT_FILTERS_TAB_ADD_ROW(headings);
-        TEXT_FILTERS_TAB_ADD_ROW(hebrewPoints);
-        TEXT_FILTERS_TAB_ADD_ROW(hebrewCantillation);
-        TEXT_FILTERS_TAB_ADD_ROW(morphSegmentation);
-        TEXT_FILTERS_TAB_ADD_ROW(greekAccents);
-        TEXT_FILTERS_TAB_ADD_ROW(textualVariants);
-        TEXT_FILTERS_TAB_ADD_ROW(scriptureReferences);
+        TEXT_FILTERS_TAB_ADD_ROW(lineBreaks, false);
+        TEXT_FILTERS_TAB_ADD_ROW(verseNumbers, false);
+        TEXT_FILTERS_TAB_ADD_ROW(headings, true);
+        TEXT_FILTERS_TAB_ADD_ROW(hebrewPoints, true);
+        TEXT_FILTERS_TAB_ADD_ROW(hebrewCantillation, true);
+        TEXT_FILTERS_TAB_ADD_ROW(morphSegmentation, true);
+        TEXT_FILTERS_TAB_ADD_ROW(greekAccents, true);
+        TEXT_FILTERS_TAB_ADD_ROW(textualVariants, false);
+        TEXT_FILTERS_TAB_ADD_ROW(scriptureReferences, true);
     btConfig().endGroup();
 
     layout->addStretch(4);

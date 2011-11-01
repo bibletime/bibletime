@@ -297,21 +297,21 @@ void BtSearchOptionsArea::saveSettings() {
 }
 
 void BtSearchOptionsArea::readSettings() {
-    QStringList texts = btConfig().value<QStringList>("properties/searchTexts");
+    const QStringList texts = btConfig().value<QStringList>("properties/searchTexts", QStringList());
     //for some reason the slot was called when setting the upmost item
     disconnect(m_searchTextCombo, SIGNAL(editTextChanged(const QString&)), this, SLOT(slotValidateText(const QString&)));
-    for (int i = 0; i < texts.size(); i++) {
-        if (texts.at(i).size() > 0)
-            m_searchTextCombo->addItem(texts.at(i));
+    Q_FOREACH (const QString & text, texts) {
+        if (text.size() > 0)
+            m_searchTextCombo->addItem(text);
     }
     connect(m_searchTextCombo, SIGNAL(editTextChanged(const QString&)), this, SLOT(slotValidateText(const QString&)));
 
-    m_modulesCombo->insertItems(0, btConfig().value<QStringList>("history/searchModuleHistory"));
+    m_modulesCombo->insertItems(0, btConfig().value<QStringList>("history/searchModuleHistory", QStringList()));
     for (int i = 0; i < m_modulesCombo->count(); ++i) {
         m_modulesCombo->setItemData(i, m_modulesCombo->itemText(i), Qt::ToolTipRole);
     }
 
-    int stype = btConfig().value<int>("gui/windows/searchType");
+    int stype = btConfig().value<int>("gui/windows/searchType", AndType);
     switch (stype) {
         case AndType:
             m_typeAndButton->setChecked(true);

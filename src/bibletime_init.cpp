@@ -323,7 +323,7 @@ void BibleTime::createMenuAndToolBar()
     addToolBar(m_mainToolBar);
 
     // Set visibility of main window toolbars based on config
-    bool visible = ! btConfig().value<bool>("gui/showToolbarsInEachWindow");
+    bool visible = ! btConfig().value<bool>("gui/showToolbarsInEachWindow", true);
 
     m_navToolBar = createToolBar("NavToolBar", this, visible);
     addToolBar(m_navToolBar);
@@ -386,49 +386,49 @@ void BibleTime::initActions() {
     m_showTextAreaHeadersAction = m_actionCollection->action("showParallelTextHeaders");
     Q_ASSERT(m_showTextAreaHeadersAction != 0);
     m_showTextAreaHeadersAction->setCheckable(true);
-    m_showTextAreaHeadersAction->setChecked(btConfig().value<bool>("gui/showTextWindowHeaders"));
+    m_showTextAreaHeadersAction->setChecked(btConfig().value<bool>("gui/showTextWindowHeaders", true));
     connect(m_showTextAreaHeadersAction, SIGNAL(toggled(bool)),
             this,                        SLOT(slotToggleTextWindowHeader()));
 
     m_showMainWindowToolbarAction = m_actionCollection->action("showToolbar");
     Q_ASSERT(m_showMainWindowToolbarAction != 0);
     m_showMainWindowToolbarAction->setCheckable(true);
-    m_showMainWindowToolbarAction->setChecked(btConfig().value<bool>("gui/showMainToolbar"));
+    m_showMainWindowToolbarAction->setChecked(btConfig().value<bool>("gui/showMainToolbar", true));
     connect( m_showMainWindowToolbarAction, SIGNAL(triggered()),
             this,                SLOT(slotToggleMainToolbar()));
 
     m_showTextWindowNavigationAction = m_actionCollection->action("showNavigation");
     Q_ASSERT(m_showTextWindowNavigationAction != 0);
     m_showTextWindowNavigationAction->setCheckable(true);
-    m_showTextWindowNavigationAction->setChecked(btConfig().value<bool>("gui/showTextWindowNavigator"));
+    m_showTextWindowNavigationAction->setChecked(btConfig().value<bool>("gui/showTextWindowNavigator", true));
     connect(m_showTextWindowNavigationAction, SIGNAL(toggled(bool)),
             this,                             SLOT(slotToggleNavigatorToolbar()));
 
     m_showTextWindowModuleChooserAction = m_actionCollection->action("showWorks");
     Q_ASSERT(m_showTextWindowModuleChooserAction != 0);
     m_showTextWindowModuleChooserAction->setCheckable(true);
-    m_showTextWindowModuleChooserAction->setChecked(btConfig().value<bool>("gui/showTextWindowModuleSelectorButtons"));
+    m_showTextWindowModuleChooserAction->setChecked(btConfig().value<bool>("gui/showTextWindowModuleSelectorButtons", true));
     connect(m_showTextWindowModuleChooserAction, SIGNAL(toggled(bool)),
             this,                                SLOT(slotToggleWorksToolbar()));
 
     m_showTextWindowToolButtonsAction = m_actionCollection->action("showTools");
     Q_ASSERT(m_showTextWindowToolButtonsAction != 0);
     m_showTextWindowToolButtonsAction->setCheckable(true);
-    m_showTextWindowToolButtonsAction->setChecked(btConfig().value<bool>("gui/showTextWindowToolButtons"));
+    m_showTextWindowToolButtonsAction->setChecked(btConfig().value<bool>("gui/showTextWindowToolButtons", true));
     connect(m_showTextWindowToolButtonsAction, SIGNAL(toggled(bool)),
             this,                              SLOT(slotToggleToolsToolbar()));
 
     m_showFormatToolbarAction = m_actionCollection->action("showFormat");
     Q_ASSERT(m_showFormatToolbarAction != 0);
     m_showFormatToolbarAction->setCheckable(true);
-    m_showFormatToolbarAction->setChecked(btConfig().value<bool>("gui/showFormatToolbarButtons"));
+    m_showFormatToolbarAction->setChecked(btConfig().value<bool>("gui/showFormatToolbarButtons", true));
     bool ok = connect(m_showFormatToolbarAction, SIGNAL(toggled(bool)),
                       this,                      SLOT(slotToggleFormatToolbar()));
 
     m_toolbarsInEachWindow = m_actionCollection->action("showToolbarsInTextWindows");
     Q_ASSERT(m_toolbarsInEachWindow != 0);
     m_toolbarsInEachWindow->setCheckable(true);
-    m_toolbarsInEachWindow->setChecked(btConfig().value<bool>("gui/showToolbarsInEachWindow"));
+    m_toolbarsInEachWindow->setChecked(btConfig().value<bool>("gui/showToolbarsInEachWindow", true));
     ok = connect(m_toolbarsInEachWindow, SIGNAL(toggled(bool)),
                       this,                   SLOT(slotToggleToolBarsInEachWindow()));
     Q_ASSERT(ok);
@@ -475,7 +475,7 @@ void BibleTime::initActions() {
     connect(m_windowTileHorizontalAction, SIGNAL(triggered()),
             this,                          SLOT(slotTileHorizontal()));
 
-    alignmentMode alignment = btConfig().value<alignmentMode>("gui/alignmentMode");
+    alignmentMode alignment = btConfig().value<alignmentMode>("gui/alignmentMode", autoTileVertical);
 
     m_windowManualModeAction = m_actionCollection->action("manualArrangement");
     Q_ASSERT(m_windowManualModeAction != 0);
@@ -860,7 +860,7 @@ void BibleTime::initBackends() {
 #endif
 
     CSwordBackend *backend = CSwordBackend::createInstance();
-    backend->booknameLanguage(btConfig().value<QString>("language"));
+    backend->booknameLanguage(btConfig().value<QString>("language", QLocale::system().name()));
 
     const CSwordBackend::LoadError errorCode = CSwordBackend::instance()->initModules(CSwordBackend::OtherChange);
 

@@ -12,7 +12,6 @@
 #include <QAction>
 #include <QDebug>
 #include <QKeySequence>
-#include <QSettings>
 #include <QString>
 #include <QStringList>
 #include "util/directory.h"

@@ -155,6 +155,6 @@ QString CDisplayRendering::finishText(const QString &text, const KeyTree &tree) 
     else
         settings.pageDirection = QString::null;
 
-    return tMgr->fillTemplate(btConfig().value<QString>("gui/displayStyle"), text, settings);
+    return tMgr->fillTemplate(tMgr->activeTemplateName(), text, settings);
 }
 }

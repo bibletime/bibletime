@@ -60,7 +60,7 @@ BtIndexPage::BtIndexPage(BtModuleManagerDialog *parent)
     //m_moduleList->setTextAlignment(1, Qt::AlignRight); see doc...
     m_moduleList->setSortingEnabled(false);
 
-    m_autoDeleteOrphanedIndicesBox->setChecked( btConfig().value<bool>("settings/behaviour/autoDeleteOrphanedIndices") );
+    m_autoDeleteOrphanedIndicesBox->setChecked( btConfig().value<bool>("settings/behaviour/autoDeleteOrphanedIndices", true) );
 
     // icons for our buttons
     m_createButton->setIcon(DU::getIcon(CResMgr::bookshelfmgr::indexpage::create_icon));

@@ -151,7 +151,7 @@ class BtSearchResultArea : public QWidget {
         /**
         * Save the settings to the resource file
         */
-        void saveDialogSettings();
+        void saveDialogSettings() const;
 
     protected slots:
         /**

@@ -182,7 +182,6 @@ class BTModuleTreeItem {
         Grouping m_grouping;
 };
 
-
 QDataStream &operator<<(QDataStream &out, const BTModuleTreeItem::Grouping &grouping);
 QDataStream &operator>>(QDataStream &in, BTModuleTreeItem::Grouping &grouping);
 Q_DECLARE_METATYPE(BTModuleTreeItem::Grouping)

@@ -48,11 +48,11 @@ CDisplayTemplateMgr::CDisplayTemplateMgr(QString &errorMessage) {
     Q_FOREACH(const QString &file, utd.entryList(filter, QDir::Files | QDir::Readable))
         loadTemplate(utd.canonicalPath() + "/" + file);
 
-    if (m_cssMap.contains(defaultTemplate())) {
+    if (m_cssMap.contains(defaultTemplateName())) {
         errorMessage = QString::null;
     } else {
         errorMessage = QObject::tr("Default template \"%1\" not found!")
-                       .arg(defaultTemplate());
+                       .arg(defaultTemplateName());
     }
 }
 
@@ -60,7 +60,7 @@ QString CDisplayTemplateMgr::fillTemplate(const QString &name,
                                           const QString &content,
                                           const Settings &settings)
 {
-    const QString templateName = m_cssMap.contains(name) ? name : defaultTemplate();
+    const QString templateName = m_cssMap.contains(name) ? name : defaultTemplateName();
 
     QString displayTypeString;
     QString moduleName;
@@ -176,6 +176,14 @@ QString CDisplayTemplateMgr::fillTemplate(const QString &name,
                       .replace("#MODULE_STYLESHEET#", QString(""));	// Let's fix this!
 
     return t;
+}
+
+QString CDisplayTemplateMgr::activeTemplateName() const {
+    const QString tn = btConfig().value<QString>("gui/displayStyle", QString());
+    if (tn.isEmpty())
+        return defaultTemplateName();
+
+    return tn;
 }
 
 void CDisplayTemplateMgr::loadTemplate(const QString &filename) {

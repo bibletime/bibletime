@@ -299,7 +299,7 @@ int main(int argc, char* argv[]) {
     mainWindow->setAttribute(Qt::WA_DeleteOnClose);
 
     // a new BibleTime version was installed (maybe a completely new installation)
-    if (btConfig().value<QString>("bibletimeVersion") != BT_VERSION) {
+    if (btConfig().value<QString>("bibletimeVersion", BT_VERSION) != BT_VERSION) {
         btConfig().setValue("bibletimeVersion", QString::fromAscii(BT_VERSION));
         mainWindow->saveConfigSettings();
     }
@@ -318,7 +318,7 @@ int main(int argc, char* argv[]) {
     QDBusConnection::sessionBus().registerObject("/BibleTime", mainWindow);
 #endif
 
-    if (btConfig().value<bool>("gui/showTipAtStartup"))
+    if (btConfig().value<bool>("gui/showTipAtStartup", true))
         mainWindow->slotOpenTipDialog();
 
     r = app.exec();

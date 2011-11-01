@@ -105,7 +105,7 @@ void BtHtmlJsObject::mouseMoveEvent(const QString& attributes, const int& x, con
         // no mouse button pressed and tracking enabled
         // start timer that updates the mag window
         // Sets timer in javascript. See bthtml.js startTimer()
-        emit startTimer(btConfig().value<int>("gui/windows/magDelay"));
+        emit startTimer(btConfig().value<int>("gui/windows/magDelay", 400));
         m_prev_attributes = attributes;
         // When the javascript timer interupts, the see timerEvent() in bthtml.js
         // will call the timeOutEvent in this class
