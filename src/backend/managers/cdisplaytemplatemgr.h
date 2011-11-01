@@ -82,12 +82,12 @@ class CDisplayTemplateMgr {
         /**
           \returns the name of the default template.
         */
-        inline static const char *defaultTemplateName() { return "Blue.css"; }
+        static inline const char * defaultTemplateName() { return "Blue.css"; }
 
         /**
           \returns the name of the active template.
         */
-        QString activeTemplateName() const;
+        static QString activeTemplateName();
 
         /**
           \returns The singleton instance of the instance of this class.

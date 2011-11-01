@@ -87,7 +87,7 @@ CDisplaySettingsPage::CDisplaySettingsPage(CConfigurationDialog *parent)
     m_styleChooserCombo->addItems(tMgr->availableTemplates());
 
     for (int i = 0; i < m_styleChooserCombo->count(); ++i) {
-        if (m_styleChooserCombo->itemText(i) == tMgr->activeTemplateName()) {
+        if (m_styleChooserCombo->itemText(i) == CDisplayTemplateMgr::activeTemplateName()) {
             m_styleChooserCombo->setCurrentIndex(i);
             break;
         }
@@ -160,7 +160,7 @@ void CDisplaySettingsPage::updateStylePreview() {
                      settings));
 
     /// \todo Remove the following hack:
-    const QString oldStyleName = CDisplayTemplateMgr::instance()->activeTemplateName();
+    const QString oldStyleName = CDisplayTemplateMgr::activeTemplateName();
     btConfig().setValue("gui/displayStyle", styleName);
     CDisplayRendering render;
     m_stylePreviewViewer->setHtml( render.renderKeyTree(tree));

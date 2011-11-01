@@ -95,7 +95,7 @@ void CInfoDisplay::setInfo(const QString &data, const QString &lang) {
     }
     div.append(">");
 
-    QString content(mgr->fillTemplate(mgr->activeTemplateName(),
+    QString content(mgr->fillTemplate(CDisplayTemplateMgr::activeTemplateName(),
                                       div + data + "</div>",
                                       settings));
     m_htmlPart->setText(content);
