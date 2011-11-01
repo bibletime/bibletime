@@ -250,51 +250,35 @@ const QString ReferenceManager::preferredModule( const ReferenceManager::Type ty
     switch (type) {
 
         case ReferenceManager::Bible:
-
-            module = CBTConfig::get
-                     ( CBTConfig::standardBible );
-
+            module = CBTConfig::get(CBTConfig::standardBible);
             break;
 
         case ReferenceManager::Commentary:
-            module = CBTConfig::get
-                     ( CBTConfig::standardCommentary );
-
+            module = CBTConfig::get(CBTConfig::standardCommentary);
             break;
 
         case ReferenceManager::Lexicon:
-            module = CBTConfig::get
-                     ( CBTConfig::standardLexicon );
-
+            module = CBTConfig::get(CBTConfig::standardLexicon);
             break;
 
         case ReferenceManager::StrongsHebrew:
-            module = CBTConfig::get
-                     ( CBTConfig::standardHebrewStrongsLexicon );
-
+            module = CBTConfig::get(CBTConfig::standardHebrewStrongsLexicon);
             break;
 
         case ReferenceManager::StrongsGreek:
-            module = CBTConfig::get
-                     ( CBTConfig::standardGreekStrongsLexicon );
-
+            module = CBTConfig::get(CBTConfig::standardGreekStrongsLexicon);
             break;
 
         case ReferenceManager::MorphHebrew:
-            module = CBTConfig::get
-                     ( CBTConfig::standardHebrewMorphLexicon );
-
+            module = CBTConfig::get(CBTConfig::standardHebrewMorphLexicon);
             break;
 
         case ReferenceManager::MorphGreek:
-            module = CBTConfig::get
-                     ( CBTConfig::standardGreekMorphLexicon );
-
+            module = CBTConfig::get(CBTConfig::standardGreekMorphLexicon);
             break;
 
         default:
             module = 0;
-
             break;
     }
 

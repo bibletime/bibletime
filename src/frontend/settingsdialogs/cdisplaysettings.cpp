@@ -83,13 +83,12 @@ CDisplaySettingsPage::CDisplaySettingsPage(CConfigurationDialog *parent)
     webViewWidget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
     mainLayout->addWidget(webViewWidget);
 
-    m_styleChooserCombo->addItems(
-        CDisplayTemplateMgr::instance()->availableTemplates()
-    );
+    CDisplayTemplateMgr * tMgr = CDisplayTemplateMgr::instance();
+    m_styleChooserCombo->addItems(tMgr->availableTemplates());
 
     for (int i = 0; i < m_styleChooserCombo->count(); ++i) {
-        if ( m_styleChooserCombo->itemText(i) == CDisplayTemplateMgr::activeTemplateName() ) {
-            m_styleChooserCombo->setCurrentIndex( i );
+        if (m_styleChooserCombo->itemText(i) == CDisplayTemplateMgr::activeTemplateName()) {
+            m_styleChooserCombo->setCurrentIndex(i);
             break;
         }
     }
@@ -160,19 +159,16 @@ void CDisplaySettingsPage::updateStylePreview() {
                      .arg(tr("But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.")),
                      settings));
 
+    /// \todo Remove the following hack:
     const QString oldStyleName = CDisplayTemplateMgr::activeTemplateName();
-    CBTConfig::set
-    (CBTConfig::displayStyle, styleName);
+    CBTConfig::set(CBTConfig::displayStyle, styleName);
     CDisplayRendering render;
     m_stylePreviewViewer->setHtml( render.renderKeyTree(tree));
 
-    CBTConfig::set
-    (CBTConfig::displayStyle, oldStyleName);
+    CBTConfig::set(CBTConfig::displayStyle, oldStyleName);
 }
 
 void CDisplaySettingsPage::save() {
-    CBTConfig::set
-    ( CBTConfig::logo, m_showLogoCheck->isChecked() );
-    CBTConfig::set
-    ( CBTConfig::displayStyle, m_styleChooserCombo->currentText() );
+    CBTConfig::set(CBTConfig::logo, m_showLogoCheck->isChecked());
+    CBTConfig::set(CBTConfig::displayStyle, m_styleChooserCombo->currentText());
 }
