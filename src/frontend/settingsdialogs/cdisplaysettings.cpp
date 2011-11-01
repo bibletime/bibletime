@@ -88,7 +88,7 @@ CDisplaySettingsPage::CDisplaySettingsPage(CConfigurationDialog *parent)
     );
 
     for (int i = 0; i < m_styleChooserCombo->count(); ++i) {
-        if ( m_styleChooserCombo->itemText(i) == CBTConfig::get(CBTConfig::displayStyle) ) {
+        if ( m_styleChooserCombo->itemText(i) == CDisplayTemplateMgr::activeTemplateName() ) {
             m_styleChooserCombo->setCurrentIndex( i );
             break;
         }
@@ -160,8 +160,7 @@ void CDisplaySettingsPage::updateStylePreview() {
                      .arg(tr("But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.")),
                      settings));
 
-    const QString oldStyleName = CBTConfig::get
-                                 (CBTConfig::displayStyle);
+    const QString oldStyleName = CDisplayTemplateMgr::activeTemplateName();
     CBTConfig::set
     (CBTConfig::displayStyle, styleName);
     CDisplayRendering render;

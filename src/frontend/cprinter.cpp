@@ -122,7 +122,7 @@ QString CPrinter::finishText(const QString &text, const KeyTree &tree) {
     }
 
     CDisplayTemplateMgr *tMgr = CDisplayTemplateMgr::instance();
-    return tMgr->fillTemplate(CBTConfig::get(CBTConfig::displayStyle), text, settings);
+    return tMgr->fillTemplate(CDisplayTemplateMgr::activeTemplateName(), text, settings);
 }
 
 } //end of namespace

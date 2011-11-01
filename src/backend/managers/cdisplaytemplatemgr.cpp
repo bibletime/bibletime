@@ -178,6 +178,14 @@ QString CDisplayTemplateMgr::fillTemplate(const QString &name,
     return t;
 }
 
+QString CDisplayTemplateMgr::activeTemplateName() {
+    const QString tn = CBTConfig::get(CBTConfig::displayStyle);
+    if (tn.isEmpty())
+        return defaultTemplateName();
+
+    return tn;
+}
+
 void CDisplayTemplateMgr::loadTemplate(const QString &filename) {
     QFile f(filename);
     if (f.open(QIODevice::ReadOnly)) {

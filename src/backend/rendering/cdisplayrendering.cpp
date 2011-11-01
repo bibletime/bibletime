@@ -154,6 +154,6 @@ QString CDisplayRendering::finishText(const QString &text, const KeyTree &tree) 
     else
         settings.pageDirection = QString::null;
 
-    return tMgr->fillTemplate(CBTConfig::get(CBTConfig::displayStyle), text, settings);
+    return tMgr->fillTemplate(CDisplayTemplateMgr::activeTemplateName(), text, settings);
 }
 }
