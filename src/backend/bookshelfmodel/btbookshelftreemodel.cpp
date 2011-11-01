@@ -27,8 +27,11 @@ using namespace BookshelfModel;
 bool BtBookshelfTreeModel::Grouping::loadFrom(const QString &configKey) {
     Q_ASSERT(!configKey.isNull());
     QVariant v = CBTConfig::getConfig()->value(configKey);
+    if (!v.canConvert<Grouping>())
+        return false;
+
     (*this) = v.value<Grouping>();
-    return v.canConvert<Grouping>();
+    return true;
 }
 
 void BtBookshelfTreeModel::Grouping::saveTo(const QString &configKey) const {
