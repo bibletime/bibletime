@@ -289,7 +289,7 @@ QString getDefault(const strings ID) {
         case language:
             return QLocale::system().name();
         case displayStyle:
-            return CDisplayTemplateMgr::defaultTemplate();
+            return CDisplayTemplateMgr::defaultTemplateName();
         case bookshelfCurrentItem:
         default:
             return QString::null;

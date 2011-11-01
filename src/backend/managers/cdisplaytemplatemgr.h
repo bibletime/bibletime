@@ -82,7 +82,7 @@ class CDisplayTemplateMgr {
         /**
           \returns the name of the default template.
         */
-        inline static const char *defaultTemplate() { return "Blue.css"; }
+        static inline const char * defaultTemplateName() { return "Blue.css"; }
 
         /**
           \returns The singleton instance of the instance of this class.
