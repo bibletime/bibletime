@@ -21,7 +21,6 @@ const QString BtConfigCore::GROUP_SESSIONS      = "sessions/";
 const QString BtConfigCore::KEY_CURRENT_SESSION = "sessions/currentSession";
 const QString BtConfigCore::GROUP_SESSION       = "sessions/%1/";
 const QString BtConfigCore::KEY_SESSION_NAME    = "sessions/%1/name";
-const QString BtConfigCore::STRING_0u           = QString::number(0u);
 
 
 BtConfigCore::BtConfigCore(const QString & settingsFile)
@@ -32,110 +31,117 @@ BtConfigCore::BtConfigCore(const QString & settingsFile)
             strings.
     */
 
-    // Reset default session name:
-    m_settings.setValue(KEY_SESSION_NAME.arg(STRING_0u),
-                        tr("Default session"));
+    // Read all session keys and names:
+    m_settings.beginGroup(GROUP_SESSIONS);
+    const QStringList sessionKeys = m_settings.childGroups();
+    m_settings.endGroup();
+    Q_FOREACH (const QString & sessionKey, sessionKeys) {
+        // Skip empty//keys just in case:
+        if (sessionKey.isEmpty())
+            continue;
 
-    // Get current session index (or default to 0):
-    m_currentSession = m_settings.value(KEY_CURRENT_SESSION, STRING_0u).toString();
-
-    // If no name for an active non-default session is found, switch to default:
-    if (m_currentSession != STRING_0u
-        && !m_settings.contains(KEY_SESSION_NAME.arg(m_currentSession)))
-    {
-        m_currentSession = STRING_0u;
-        m_settings.setValue(KEY_CURRENT_SESSION, STRING_0u);
+        const QString fullKey = KEY_SESSION_NAME.arg(sessionKey);
+        const QString sessionName = m_settings.value(fullKey).toString();
+        if (!sessionName.isEmpty())
+            m_sessionNames.insert(sessionKey, sessionName);
     }
-}
 
-QString BtConfigCore::getCurrentSessionName() {
-    const QString sessionNameKey = KEY_SESSION_NAME.arg(m_currentSession);
-    const QString sessionName = m_settings.value(sessionNameKey).toString();
-    if (!sessionName.isEmpty())
-        return sessionName;
+    // Get current session key:
+    m_currentSessionKey = m_settings.value(KEY_CURRENT_SESSION).toString();
 
-    const QString newSessionName = tr("Session %1").arg(m_currentSession);
-    m_settings.setValue(sessionNameKey, newSessionName);
-    return newSessionName;
-}
-
-QStringList BtConfigCore::getAllSessionNames() {
-    QStringList sessionNames;
-    Q_FOREACH (const QString & sessionKey, getSessionKeys()) {
-        const QString sessionName = m_settings.value(KEY_SESSION_NAME.arg(sessionKey)).toString();
-        if (sessionName.isEmpty()) {
-            const QString newSessionName = tr("Session %1").arg(sessionKey);
-            m_settings.setValue(KEY_SESSION_NAME.arg(sessionKey), newSessionName);
-            sessionNames.append(newSessionName);
+    /*
+      If no session with the current session key exists, default to the first
+      session found. If no sessions were found, create a default session.
+    */
+    if (m_currentSessionKey.isEmpty()
+        || !m_sessionNames.contains(m_currentSessionKey))
+    {
+        if (m_sessionNames.isEmpty()) {
+            const QString &newSessionName = QString::number((qulonglong) 0u, 36);
+            m_currentSessionKey = newSessionName;
+            m_settings.setValue(KEY_CURRENT_SESSION, newSessionName);
+            m_settings.setValue(KEY_SESSION_NAME.arg(newSessionName),
+                                tr("Default Session"));
         } else {
-            sessionNames.append(sessionName);
+            m_currentSessionKey = m_sessionNames.keys().first();
         }
     }
-    return sessionNames;
+    m_cachedCurrentSessionGroup = GROUP_SESSION.arg(m_currentSessionKey);
 }
 
-void BtConfigCore::switchToSession(const QString & name) {
+void BtConfigCore::setCurrentSession(const QString & key) {
+    Q_ASSERT(!key.isEmpty());
+    Q_ASSERT(m_sessionNames.contains(key));
+    m_currentSessionKey = key;
+    m_cachedCurrentSessionGroup = GROUP_SESSION.arg(key);
+    m_settings.setValue(KEY_CURRENT_SESSION, key);
+    m_settings.sync();
+}
+
+void BtConfigCore::addSession(const QString & name) {
     Q_ASSERT(!name.isEmpty());
 
-    QStringList sessionKeys = getSessionKeys();
-
-    // If the session doesn't exist yet, create it:
-    QString sessionKey = getSessionKeyForName(name, sessionKeys);
-    if (sessionKey.isNull()) {
-        // The following key generation algorithm isn't optimal, but it can only
-        // fail due to system limits.
-        QString prefix;
+    // Generate a new session key:
+    QString key = QString::number(0u, 36);
+    if (m_sessionNames.contains(key)) {
+        QString keyPrefix;
+        size_t i = 1u;
         for (;;) {
-            bool found = false;
-            for (size_t i = 0; i != SIZE_MAX; i++) {
-                sessionKey = prefix + QString::number(i);
-                if (!sessionKeys.contains(sessionKey)) {
-                    found = true;
-                    break;
-                }
-            }
-            if (found)
+            key = QString::number(i, 36);
+            if (!m_sessionNames.contains(keyPrefix + key))
                 break;
-
-            prefix.append('0');
-        }
-
-        // Save new session name:
-        m_settings.setValue(KEY_SESSION_NAME.arg(sessionKey), name);
+            if (i == SIZE_MAX) {
+                i = 0u;
+                keyPrefix.append('_');
+            } else {
+                i++;
+            }
+        };
     }
-
-    // Switch to the session:
-    m_currentSession = sessionKey;
-    m_settings.setValue(KEY_CURRENT_SESSION, sessionKey);
+    Q_ASSERT(!m_sessionNames.contains(key));
+    m_sessionNames.insert(key, name);
+    m_settings.setValue(KEY_SESSION_NAME.arg(key), name);
+    m_settings.sync();
 }
 
-bool BtConfigCore::deleteSession(const QString & name) {
-    const QString sessionKey = getSessionKeyForName(name);
 
-    // If session was not found:
-    if (sessionKey.isNull())
-        return false;
-
-    // If session is current session:
-    if (sessionKey == m_currentSession)
-        return false;
-
-    m_settings.remove(GROUP_SESSIONS + sessionKey);
-    return true;
+void BtConfigCore::deleteSession(const QString & key) {
+    Q_ASSERT(m_sessionNames.contains(key));
+    Q_ASSERT(key != m_currentSessionKey);
+    m_sessionNames.remove(key);
+    m_settings.remove(GROUP_SESSIONS + key);
+    m_settings.sync();
 }
 
-QStringList BtConfigCore::getSessionKeys() {
-    m_settings.beginGroup(GROUP_SESSIONS);
-    const QStringList childGroups = m_settings.childGroups();
+QStringList BtConfigCore::childGroups() {
+    if (m_groups.isEmpty())
+        return m_settings.childGroups();
+
+    m_settings.beginGroup(group());
+    const QStringList gs = m_settings.childGroups();
     m_settings.endGroup();
-    return childGroups;
+    return gs;
 }
 
-QString BtConfigCore::getSessionKeyForName(const QString & name,
-                                           const QStringList & sessionKeys)
-{
-    Q_FOREACH (const QString & sessionKey, sessionKeys)
-        if (m_settings.value(KEY_SESSION_NAME.arg(sessionKey)).toString() == name)
-            return sessionKey;
-    return QString();
+QStringList BtConfigCore::sessionChildGroups() {
+    m_settings.beginGroup(m_cachedCurrentSessionGroup + group());
+    const QStringList gs = m_settings.childGroups();
+    m_settings.endGroup();
+    return gs;
+}
+
+void BtConfigCore::remove(const QString & key) {
+    if (m_groups.isEmpty()) {
+        m_settings.remove(key);
+    } else {
+        m_settings.remove(m_groups.join("/") + '/' + key);
+    }
+}
+
+void BtConfigCore::sessionRemove(const QString & key) {
+    if (m_groups.isEmpty()) {
+        m_settings.remove(m_cachedCurrentSessionGroup + key);
+    } else {
+        m_settings.remove(m_cachedCurrentSessionGroup + m_groups.join("/") + '/' + key);
+    }
 }
