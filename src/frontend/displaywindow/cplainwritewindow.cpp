@@ -103,12 +103,12 @@ void CPlainWriteWindow::storeProfileSettings( CProfileWindow* profileWindow ) {
     CWriteWindow::storeProfileSettings(profileWindow);
     QAction* action = actionCollection()->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
     Q_ASSERT(action != 0);
-    profileWindow->setWindowSettings( action->isChecked() );
+    profileWindow->windowSettings = action->isChecked();
 }
 
 void CPlainWriteWindow::applyProfileSettings( CProfileWindow* profileWindow ) {
     CWriteWindow::applyProfileSettings(profileWindow);
-    if (profileWindow->windowSettings()) {
+    if (profileWindow->windowSettings) {
         QAction* action = actionCollection()->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
         Q_ASSERT(action != 0);
         action->setChecked(true);

@@ -39,8 +39,7 @@ CBookReadWindow::~CBookReadWindow() {
 void CBookReadWindow::applyProfileSettings( CProfileWindow* profileWindow ) {
     CLexiconReadWindow::applyProfileSettings(profileWindow);
 
-    const bool enable = static_cast<bool>( profileWindow->windowSettings() );
-    if (enable) {
+    if (profileWindow->windowSettings) {
         m_treeAction->activate(QAction::Trigger);
     }
 }
@@ -49,7 +48,7 @@ void CBookReadWindow::storeProfileSettings( CProfileWindow* profileWindow ) {
     CLexiconReadWindow::storeProfileSettings(profileWindow);
 
     //store information about our show tree structure button
-    profileWindow->setWindowSettings( static_cast<int>( m_treeAction->isChecked() ) );
+    profileWindow->windowSettings = m_treeAction->isChecked();
 }
 
 void CBookReadWindow::initActions() {
