@@ -433,9 +433,9 @@ void BibleTime::slotOpenTipDialog() {
 void BibleTime::saveProfile(QAction* action) {
     m_mdi->setUpdatesEnabled(false);
 
-    const QString profileName = action->text().remove("&");
-    CProfile* p = m_profileMgr.profile( profileName );
+    CProfile * p = (CProfile *) action->property("CProfilePointer").value<void *>();
     Q_ASSERT(p);
+    Q_ASSERT(p == m_profileMgr.profile(action->text().remove("&")));
     if ( p ) {
         saveProfile(p);
     }
@@ -470,9 +470,9 @@ void BibleTime::saveProfile(CProfile* profile) {
 }
 
 void BibleTime::loadProfile(QAction* action) {
-    const QString profileName = action->text().remove("&");
-    CProfile* p = m_profileMgr.profile( profileName );
+    CProfile * p = (CProfile *) action->property("CProfilePointer").value<void *>();
     Q_ASSERT(p);
+    Q_ASSERT(p == m_profileMgr.profile(action->text().remove("&")));
     if ( p ) {
         m_mdi->closeAllSubWindows();
         loadProfile(p);
@@ -535,10 +535,11 @@ void BibleTime::loadProfile(CProfile* p) {
 
 void BibleTime::deleteProfile(QAction* action) {
     //HACK: work around the inserted & char by KPopupMenu
-    const QString profileName = action->text().remove("&");
-    CProfile* p = m_profileMgr.profile( profileName );
+    CProfile * p = (CProfile *) action->property("CProfilePointer").value<void *>();
     Q_ASSERT(p);
-    if ( p ) m_profileMgr.remove(p);
+    Q_ASSERT(p == m_profileMgr.profile(action->text().remove("&")));
+    if (p)
+        m_profileMgr.remove(p);
     refreshProfileMenus();
 }
 
@@ -576,9 +577,13 @@ void BibleTime::refreshProfileMenus() {
 
     Q_FOREACH (const CProfile * const p, profiles) {
         const QString &profileName = p->name();
-        m_windowSaveProfileMenu->addAction(profileName);
-        m_windowLoadProfileMenu->addAction(profileName);
-        m_windowDeleteProfileMenu->addAction(profileName);
+        QAction * a;
+        a = m_windowSaveProfileMenu->addAction(profileName);
+        a->setProperty("CProfilePointer", QVariant::fromValue((void *) p));
+        a = m_windowLoadProfileMenu->addAction(profileName);
+        a->setProperty("CProfilePointer", QVariant::fromValue((void *) p));
+        a = m_windowDeleteProfileMenu->addAction(profileName);
+        a->setProperty("CProfilePointer", QVariant::fromValue((void *) p));
     }
 }
 
