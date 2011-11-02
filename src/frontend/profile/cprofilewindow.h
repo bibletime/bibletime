@@ -13,7 +13,7 @@
 #include <QRect>
 #include <QString>
 #include <QStringList>
-#include "backend/managers/cswordbackend.h"
+#include "backend/drivers/cswordmoduleinfo.h"
 
 
 class CSwordModuleInfo;
