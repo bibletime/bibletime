@@ -262,20 +262,16 @@ void BibleTime::closeEvent(QCloseEvent *event) {
     event->accept();
 }
 
-/** Restores the workspace if the flag for this is set in the config. */
-void BibleTime::restoreWorkspace() {
-    if (CProfile* p = m_profileMgr.startupProfile()) {
-        loadProfile(p);
-    }
-}
-
 void BibleTime::processCommandline(bool ignoreSession, const QString &bibleKey) {
     if (btConfig().value<bool>("state/crashedTwoTimes", false)) {
         return;
     }
 
+    // Restore workspace if not not ignoring session data:
     if (!ignoreSession) {
-        restoreWorkspace();
+        CProfile * p = m_profileMgr.startupProfile();
+        if (p)
+            loadProfile(p);
     }
 
     if (btConfig().value<bool>("state/crashedLastTime", false)) {

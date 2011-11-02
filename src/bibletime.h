@@ -137,10 +137,6 @@ class BibleTime : public QMainWindow {
         static inline BibleTime *instance() { return m_instance; }
 
         /**
-        * Restores the workspace if the flaf for this is set in the config.
-        */
-        void restoreWorkspace();
-        /**
         * Apply the settings given by the profile p
         */
         void applyProfileSettings( Profile::CProfile* p );
