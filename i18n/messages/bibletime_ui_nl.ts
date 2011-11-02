@@ -152,7 +152,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>&amp;Bijbelstudie HowTo</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="558"/>
+        <location filename="../../src/bibletime_slots.cpp" line="559"/>
         <source>Please enter a name for the new session.</source>
         <translation>Voer een naam voor de nieuwe sessie in.</translation>
     </message>
@@ -417,7 +417,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Zoek in de standaardbijbel</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="557"/>
+        <location filename="../../src/bibletime_slots.cpp" line="558"/>
         <source>New Session</source>
         <translation>Nieuwe Sessie</translation>
     </message>
@@ -475,7 +475,7 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BibleTimeApp</name>
     <message>
-        <location filename="../../src/bibletimeapp.cpp" line="35"/>
+        <location filename="../../src/bibletimeapp.cpp" line="37"/>
         <source>Fatal error!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -702,62 +702,62 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtBookshelfDockWidget</name>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="152"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="151"/>
         <source>Bookshelf</source>
         <translation>Boekenplank</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="154"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="153"/>
         <source>&amp;Open</source>
         <translation>&amp;Open</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="155"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="154"/>
         <source>&amp;Edit</source>
         <translation>&amp;Bewerken</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="156"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="155"/>
         <source>&amp;Plain text</source>
         <translation>&amp;Platte tekst</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="157"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="156"/>
         <source>&amp;HTML</source>
         <translation>&amp;HTML</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="158"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="157"/>
         <source>&amp;Unlock...</source>
         <translation>Ont&amp;grendelen...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="159"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="158"/>
         <source>&amp;About...</source>
         <translation>O&amp;ver...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="161"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="160"/>
         <source>There are currently no works installed. Please click the button below to install new works.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="163"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="162"/>
         <source>&amp;Install works...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="175"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="174"/>
         <source>Warning: Module locked!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="176"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="175"/>
         <source>You are trying to access an encrypted module. Please provide an unlock key in the following dialog to open the module.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="225"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="224"/>
         <source>&amp;Search in %1...</source>
         <translation>&amp;Zoeken in %1...</translation>
     </message>
@@ -2228,67 +2228,67 @@ sneltoets</translation>
 <context>
     <name>CDisplaySettingsPage</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="105"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="104"/>
         <source>Display templates</source>
         <translation>Weergavesjablonen</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="112"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="111"/>
         <source>Available display styles:</source>
         <translation>Beschikbare weergavestijlen:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="113"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="112"/>
         <source>Style preview</source>
         <translation>Stijlvoorbeeld</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="131"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="130"/>
         <source>For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.</source>
         <translation>Want alzo lief heeft God de wereld gehad, dat Hij zijn eniggeboren Zoon gegeven heeft, opdat een ieder, die in Hem gelooft, niet verloren ga, maar eeuwig leven hebbe.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="138"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="137"/>
         <source>For God didn&apos;t send his Son into the world to judge the world, but that the world should be saved through him.</source>
         <translation>Want God heeft zijn Zoon niet in de wereld gezonden, opdat Hij de wereld veroordele, maar opdat de wereld door Hem behouden worde.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="145"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="144"/>
         <source>He who believes in him is not judged. He who doesn&apos;t believe has been judged already, because he has not believed in the name of the one and only Son of God.</source>
         <translation>Wie in Hem gelooft, wordt niet veroordeeld; wie niet gelooft, is reeds veroordeeld, omdat hij niet heeft geloofd in de naam van de eniggeboren Zoon van God.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="155"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="154"/>
         <source>For everyone who does evil hates the light, and doesn&apos;t come to the light, lest his works would be exposed.</source>
         <translation>Want een ieder, die kwaad bedrijft, haat het licht, en gaat niet tot het licht, opdat zijn werken niet aan de dag komen.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="160"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="159"/>
         <source>But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.</source>
         <translation>maar wie de waarheid doet, gaat tot het licht, opdat van zijn werken blijke, dat zij in God verricht zijn.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="106"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="105"/>
         <source>Display templates define how text is displayed.</source>
         <translation>Weergavesjablonen bepalen hoe tekst wordt weergegeven.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="110"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="109"/>
         <source>Show the BibleTime logo on startup</source>
         <translation>Toon het BibleTime logo bij het opstarten</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="109"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="108"/>
         <source>Show startup logo</source>
         <translation>Toon logo bij opstarten</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="150"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="149"/>
         <source>This is the judgement, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="101"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="100"/>
         <source>Display</source>
         <translation>Beeld</translation>
     </message>
@@ -2727,169 +2727,169 @@ sneltoets</translation>
 <context>
     <name>CSwordModuleInfo</name>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="772"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="777"/>
         <source>Version</source>
         <translation>Versie</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="773"/>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="778"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="783"/>
         <source>unknown</source>
         <translation>onbekend</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="776"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="781"/>
         <source>Markup</source>
         <translation>Opmaak</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="781"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="786"/>
         <source>Location</source>
         <translation>Locatie</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="785"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="790"/>
         <source>Language</source>
         <translation>Taal</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="790"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="795"/>
         <source>Category</source>
         <translation>Categorie</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="795"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="800"/>
         <source>LCSH</source>
         <translatorcomment>What does this stand for?</translatorcomment>
         <translation>LCSH</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="799"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="804"/>
         <source>Writable</source>
         <translation>Schrijfbaar</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="800"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="805"/>
         <source>yes</source>
         <translation>ja</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="800"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="805"/>
         <source>no</source>
         <translation>nee</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="804"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="809"/>
         <source>Unlock key</source>
         <translation>Sleutel voor ontgrendeling</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="823"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="828"/>
         <source>Features</source>
         <translation>Functies</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="831"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="836"/>
         <source>Take care, this work contains cult / questionable material!</source>
         <translation>Opgepast, deze module bevat sektarisch/bedenkelijk materiaal!</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="834"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="839"/>
         <source>About</source>
         <translation>Over</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="856"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="861"/>
         <source>Distribution license</source>
         <translation>Distributielicentie</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="857"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="862"/>
         <source>Distribution source</source>
         <translation>Distributiebron</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="858"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="863"/>
         <source>Distribution notes</source>
         <translation>Opmerkingen bij distributie</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="859"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="864"/>
         <source>Text source</source>
         <translation>Tekstbron</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="860"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="865"/>
         <source>Copyright notes</source>
         <translation>Opmerkingen bij copyright</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="861"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="866"/>
         <source>Copyright holder</source>
         <translation>Houder van het copyright</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="862"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="867"/>
         <source>Copyright date</source>
         <translation>Datum copyright</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="863"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="868"/>
         <source>Copyright contact name</source>
         <translation>Copyright contactnaam</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="864"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="869"/>
         <source>Copyright contact address</source>
         <translation>Copyright contactadres</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="865"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="870"/>
         <source>Copyright contact email</source>
         <translation>Copyright contact e-mail</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="973"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="978"/>
         <source>Bibles</source>
         <translation type="unfinished">Bijbels</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="975"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="980"/>
         <source>Commentaries</source>
         <translation type="unfinished">Kanttekeningen</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="977"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="982"/>
         <source>Books</source>
         <translation type="unfinished">Boeken</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="979"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="984"/>
         <source>Cults/Unorthodox</source>
         <translation type="unfinished">Sektarisch/Onorthodox</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="981"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="986"/>
         <source>Maps and Images</source>
         <translation type="unfinished">Kaarten en afbeeldingen</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="983"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="988"/>
         <source>Daily Devotionals</source>
         <translation type="unfinished">Dagelijkse overdenkingen</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="985"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="990"/>
         <source>Lexicons and Dictionaries</source>
         <translation type="unfinished">Lexicons en Woordenboeken</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="987"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="992"/>
         <source>Glossaries</source>
         <translation type="unfinished">Woordenlijsten</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="989"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="994"/>
         <source>Unknown</source>
         <translation type="unfinished">Onbekend</translation>
     </message>
@@ -3100,28 +3100,28 @@ Wilt u doorgaan?</translation>
 <context>
     <name>QCoreApplication</name>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="411"/>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="418"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="408"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="415"/>
         <source>Indexing aborted</source>
         <translation>Indexeren afgebroken</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="411"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="408"/>
         <source>An internal error occurred while building the index: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="418"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="415"/>
         <source>An internal error occurred while building the index.</source>
         <translation>Er is een interne fout opgetreden tijdens het bouwen van de index.</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="504"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="509"/>
         <source>Search aborted</source>
         <translation>Zoekopdracht afgebroken</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="504"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="509"/>
         <source>An internal error occurred while executing your search.</source>
         <translation>Er is een interne fout opgetreden tijdens het uitvoeren van uw zoekopdracht.</translation>
     </message>
@@ -5061,12 +5061,12 @@ Language name ppk</extracomment>
 <context>
     <name>Search::CSearchDialog</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="128"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="127"/>
         <source>Missing indices</source>
         <translation>Ontbrekende indices</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="85"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="84"/>
         <source>Search</source>
         <translation>Zoeken</translation>
     </message>
@@ -5077,32 +5077,32 @@ This could take a long time. Proceed with indexing?</source>
 Dit kan enige tijd duren. Doorgaan met indexeren?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="129"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="128"/>
         <source>The following modules need to be indexed before they can be searched in:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="130"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="129"/>
         <source>Indexing could take a long time. Click &quot;Yes&quot; to index the modules and start the search, or &quot;No&quot; to cancel the search.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="235"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="234"/>
         <source>Drag any verse reference onto an open Bible window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="240"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="239"/>
         <source>&amp;Analyze results...</source>
         <translation>&amp;Analyseer resultaten...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="241"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="240"/>
         <source>Show a graphical analysis of the search result</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="247"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="246"/>
         <source>&amp;Close</source>
         <translation>&amp;Sluiten</translation>
     </message>
