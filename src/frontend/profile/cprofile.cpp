@@ -122,13 +122,13 @@ QList<CProfileWindow*> CProfile::load() {
             m_profileWindows.append(p);
 
             if (elem.hasAttribute("windowSettings")) {
-                p->setWindowSettings( elem.attribute("windowSettings").toInt() );
+                p->windowSettings = elem.attribute("windowSettings").toInt();
             }
             if (elem.hasAttribute("writeWindowType")) {
-                p->setWriteWindowType( elem.attribute("writeWindowType").toInt() );
+                p->writeWindowType = elem.attribute("writeWindowType").toInt();
             }
             if (elem.hasAttribute("hasFocus")) {
-                p->setFocus( static_cast<bool>(elem.attribute("hasFocus").toInt()) );
+                p->hasFocus = elem.attribute("hasFocus").toInt();
             }
 
             QRect rect;
@@ -148,35 +148,33 @@ QList<CProfileWindow*> CProfile::load() {
                     rect.setHeight(object.attribute("height").toInt());
                 }
                 if (object.hasAttribute("isMaximized")) {
-                    p->setMaximized( static_cast<bool>(object.attribute("isMaximized").toInt()) );
+                    p->maximized = object.attribute("isMaximized").toInt();
                 }
             }
-            p->setGeometry(rect);
+            p->windowGeometry = rect;
 
             object = elem.namedItem("MODULES").toElement();
             if (!object.isNull()) {
                 if (object.hasAttribute("list")) {
                     const QString sep = object.hasAttribute("separator") ? object.attribute("separator") : "|";
-                    QStringList modules = object.attribute("list").split(sep);
-                    p->setModules(modules);
+                    p->modules = object.attribute("list").split(sep);
                 }
             }
 
             object = elem.namedItem("KEY").toElement();
             if (!object.isNull()) {
                 if (object.hasAttribute("name"))
-                    p->setKey(object.attribute("name"));
+                    p->key = object.attribute("name");
             }
 
             object = elem.namedItem("SCROLLBARS").toElement();
             if (!object.isNull()) {
-                int horizontal = 0, vertical = 0;
-                if (object.hasAttribute("horizontal"))
-                    horizontal = object.attribute("horizontal").toInt();
-                if (object.hasAttribute("vertical"))
-                    vertical = object.attribute("vertical").toInt();
-
-                p->setScrollbarPositions(horizontal, vertical);
+                p->scrollbarPosH = object.hasAttribute("horizontal")
+                                   ? object.attribute("horizontal").toInt()
+                                   : 0;
+                p->scrollbarPosV = object.hasAttribute("vertical")
+                                   ? object.attribute("vertical").toInt()
+                                   : 0;
             }
         }
         elem = elem.nextSibling().toElement();
@@ -185,12 +183,12 @@ QList<CProfileWindow*> CProfile::load() {
     // Are any windows maximized?
     bool maximized = false;
     for (int i = 0; i < m_profileWindows.count(); i++) {
-        if (m_profileWindows.at(i)->maximized())
+        if (m_profileWindows.at(i)->maximized)
             maximized = true;
     }
     // Set all windows the same for maximized
     for (int i = 0; i < m_profileWindows.count(); i++) {
-        m_profileWindows.at(i)->setMaximized(maximized);
+        m_profileWindows.at(i)->maximized = maximized;
     }
 
     return m_profileWindows;
@@ -230,7 +228,7 @@ bool CProfile::save(QList<CProfileWindow*> windows) {
     //for (CProfileWindow* p = windows.first(); p; p = windows.next()) {
     foreach(CProfileWindow* p, windows) {
         QDomElement window;
-        switch (p->type()) {
+        switch (p->type) {
             case CSwordModuleInfo::Bible:
                 window = doc.createElement("BIBLE");
                 break;
@@ -248,32 +246,32 @@ bool CProfile::save(QList<CProfileWindow*> windows) {
         }
         if (window.isNull())
             break;
-        window.setAttribute("windowSettings", p->windowSettings());
-        window.setAttribute("writeWindowType", p->writeWindowType());
-        window.setAttribute("hasFocus", p->hasFocus());
+        window.setAttribute("windowSettings", p->windowSettings);
+        window.setAttribute("writeWindowType", p->writeWindowType);
+        window.setAttribute("hasFocus", p->hasFocus);
 
         //save geomtery
-        const QRect r = p->geometry();
+        const QRect & r = p->windowGeometry;
         QDomElement geometry = doc.createElement("GEOMETRY");
         geometry.setAttribute("x", r.x());
         geometry.setAttribute("y", r.y());
         geometry.setAttribute("width", r.width());
         geometry.setAttribute("height", r.height());
-        geometry.setAttribute("isMaximized", static_cast<int>(p->maximized()));
+        geometry.setAttribute("isMaximized", static_cast<int>(p->maximized));
         window.appendChild( geometry );
 
         QDomElement modules = doc.createElement("MODULES");
         modules.setAttribute("separator", "|");
-        modules.setAttribute("list", p->modules().join("|"));
+        modules.setAttribute("list", p->modules.join("|"));
         window.appendChild( modules );
 
         QDomElement key = doc.createElement("KEY");
-        key.setAttribute("name", p->key());
+        key.setAttribute("name", p->key);
         window.appendChild( key );
 
         QDomElement scrollbars = doc.createElement("SCROLLBARS");
-        scrollbars.setAttribute("horizontal", p->scrollbarPositions().horizontal);
-        scrollbars.setAttribute("vertical", p->scrollbarPositions().vertical);
+        scrollbars.setAttribute("horizontal", p->scrollbarPosH);
+        scrollbars.setAttribute("vertical", p->scrollbarPosV);
         window.appendChild( scrollbars );
 
         content.appendChild( window );

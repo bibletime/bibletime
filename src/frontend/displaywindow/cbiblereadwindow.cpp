@@ -47,7 +47,7 @@ void CBibleReadWindow::applyProfileSettings(CProfileWindow* const settings) {
     */
     CLexiconReadWindow::applyProfileSettings(settings);
 
-    int result = settings->windowSettings();
+    int result = settings->windowSettings;
 
     filterOptions().footnotes           = (result & 0x0001) != 0;
     filterOptions().strongNumbers       = (result & 0x0002) != 0;
@@ -93,7 +93,7 @@ void CBibleReadWindow::storeProfileSettings( CProfileWindow * const settings) {
     if (displayOptions().lineBreaks)         result |= 0x1000;
     if (displayOptions().verseNumbers)       result |= 0x2000;
 
-    settings->setWindowSettings(result);
+    settings->windowSettings = result;
 
     CLexiconReadWindow::storeProfileSettings(settings);
 }

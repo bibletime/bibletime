@@ -35,18 +35,15 @@ void CWriteWindow::initActions() {}
 
 void CWriteWindow::storeProfileSettings(CProfileWindow * const settings) {
 
-    settings->setWriteWindowType( writeWindowType() );
-
-    QRect rect;
-    rect.setX(parentWidget()->x());
-    rect.setY(parentWidget()->y());
-    rect.setWidth(parentWidget()->width());
-    rect.setHeight(parentWidget()->height());
-    settings->setGeometry(rect);
+    settings->writeWindowType = writeWindowType();
+    settings->windowGeometry.setRect(parentWidget()->x(),
+                                     parentWidget()->y(),
+                                     parentWidget()->width(),
+                                     parentWidget()->height());
 
     // settings->setScrollbarPositions( m_htmlWidget->view()->horizontalScrollBar()->value(), m_htmlWidget->view()->verticalScrollBar()->value() );
-    settings->setType(modules().first()->type());
-    settings->setMaximized(isMaximized() || parentWidget()->isMaximized());
+    settings->type = modules().first()->type();
+    settings->maximized = isMaximized() || parentWidget()->isMaximized();
 
     if (key()) {
         sword::VerseKey* vk = dynamic_cast<sword::VerseKey*>(key());
@@ -55,7 +52,7 @@ void CWriteWindow::storeProfileSettings(CProfileWindow * const settings) {
             oldLang = QString::fromLatin1(vk->getLocale());
             vk->setLocale("en"); //save english locale names as default!
         }
-        settings->setKey( key()->key() );
+        settings->key = key()->key();
         if (vk) {
             vk->setLocale(oldLang.toLatin1());
         }
@@ -65,17 +62,17 @@ void CWriteWindow::storeProfileSettings(CProfileWindow * const settings) {
     Q_FOREACH(const CSwordModuleInfo *m, modules()) {
         mods.append(m->name());
     }
-    settings->setModules(mods);
+    settings->modules = mods;
 }
 
 void CWriteWindow::applyProfileSettings(CProfileWindow * const settings) {
     setUpdatesEnabled(false);
 
-    if (settings->maximized()) {
+    if (settings->maximized) {
         parentWidget()->showMaximized();
     }
     else {
-        const QRect rect = settings->geometry();
+        const QRect &rect = settings->windowGeometry;
         parentWidget()->resize(rect.width(), rect.height());
         parentWidget()->move(rect.x(), rect.y());
         //setGeometry( settings->geometry() );

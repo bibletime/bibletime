@@ -115,12 +115,12 @@ void CReadWindow::storeProfileSettings(CProfileWindow * const settings) {
     rect.setY(parentWidget()->y());
     rect.setWidth(parentWidget()->width());
     rect.setHeight(parentWidget()->height());
-    settings->setGeometry(rect);
+    settings->windowGeometry = rect;
 
     // settings->setScrollbarPositions( m_htmlWidget->view()->horizontalScrollBar()->value(), m_htmlWidget->view()->verticalScrollBar()->value() );
-    settings->setType(modules().first()->type());
-    settings->setMaximized(isMaximized() || parentWidget()->isMaximized());
-    settings->setFocus( (this == dynamic_cast<CReadWindow*>(mdi()->activeSubWindow()) ) ); //set property to true if this window is the active one.
+    settings->type = modules().first()->type();
+    settings->maximized = (isMaximized() || parentWidget()->isMaximized());
+    settings->hasFocus = (this == dynamic_cast<CReadWindow*>(mdi()->activeSubWindow()) ); //set property to true if this window is the active one.
 
     if (key()) {
         sword::VerseKey* vk = dynamic_cast<sword::VerseKey*>(key());
@@ -129,7 +129,7 @@ void CReadWindow::storeProfileSettings(CProfileWindow * const settings) {
             oldLang = QString(vk->getLocale());
             vk->setLocale("en"); //save english locale names as default!
         }
-        settings->setKey( key()->key() );
+        settings->key = key()->key();
         if (vk) {
             vk->setLocale(oldLang.toLatin1());
         }
@@ -139,19 +139,19 @@ void CReadWindow::storeProfileSettings(CProfileWindow * const settings) {
     Q_FOREACH (const CSwordModuleInfo *module, modules()) {
         mods.append(module->name());
     }
-    settings->setModules(mods);
+    settings->modules = mods;
 }
 
 void CReadWindow::applyProfileSettings(CProfileWindow * const settings) {
     //  parentWidget()->setUpdatesEnabled(false);
     setUpdatesEnabled(false);
 
-    if (settings->maximized()) { //maximize this window
+    if (settings->maximized) { //maximize this window
         // Use parentWidget() to call showMaximized. Otherwise we'd get lot's of X11 errors
         parentWidget()->showMaximized();
     }
     else {
-        const QRect rect = settings->geometry();
+        const QRect &rect = settings->windowGeometry;
         parentWidget()->resize(rect.width(), rect.height());
         parentWidget()->move(rect.x(), rect.y());
     }

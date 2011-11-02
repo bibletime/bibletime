@@ -494,10 +494,10 @@ void BibleTime::loadProfile(CProfile* p) {
 
     //   for (CProfileWindow* w = windows.last(); w; w = windows.prev()) { //from the last one to make sure the order is right in the mdi area
     Q_FOREACH (CProfileWindow * w, windows) {
-        const QString &key = w->key();
+        const QString &key = w->key;
 
         QList<CSwordModuleInfo*> modules;
-        Q_FOREACH (const QString &moduleName, w->modules()) {
+        Q_FOREACH (const QString &moduleName, w->modules) {
             CSwordModuleInfo * const m = CSwordBackend::instance()->findModuleByName(moduleName);
             if (m != 0) {
                 modules.append(m);
@@ -509,15 +509,15 @@ void BibleTime::loadProfile(CProfile* p) {
 
         //if w->isWriteWindow is true we create a write window, otherwise a read window
         CDisplayWindow* displayWindow = 0;
-        if (w->writeWindowType() > 0) { //create a write window
-            displayWindow = createWriteDisplayWindow(modules.first(), key, CWriteWindow::WriteWindowType(w->writeWindowType()) );
+        if (w->writeWindowType > 0) { //create a write window
+            displayWindow = createWriteDisplayWindow(modules.first(), key, CWriteWindow::WriteWindowType(w->writeWindowType) );
         }
         else { //create a read window
             displayWindow = createReadDisplayWindow(modules, key);
         }
 
         if (displayWindow) { //if a window was created initialize it.
-            if (w->hasFocus()) {
+            if (w->hasFocus) {
                 focusWindow = displayWindow;
             }
 
