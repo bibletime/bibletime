@@ -78,7 +78,7 @@ BtTipDialog::BtTipDialog(QWidget *parent, Qt::WindowFlags wflags)
 
     m_showTipsCheckBox = new QCheckBox;
     m_showTipsCheckBox->setText(tr("Show tips at startup"));
-    bool showTips = btConfig().value<bool>("gui/showTipAtStartup", true);
+    bool showTips = btConfig().value<bool>("GUI/showTipAtStartup", true);
     m_showTipsCheckBox->setChecked(showTips);
     hLayout->addWidget(m_showTipsCheckBox);
 
@@ -180,7 +180,7 @@ void BtTipDialog::displayTip() {
 }
 
 void BtTipDialog::startupBoxChanged(bool checked) {
-    btConfig().setValue("gui/showTipAtStartup", checked);
+    btConfig().setValue("GUI/showTipAtStartup", checked);
 }
 
 void BtTipDialog::nextTip() {

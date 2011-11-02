@@ -16,6 +16,10 @@
 #include "frontend/bookshelfmanager/removepage/btremovepage.h"
 
 
+namespace {
+const QString GeometryKey = "GUI/BookshelfManager/ModuleManagerDialog/geometry";
+} // anonymous namespace
+
 static BtModuleManagerDialog *m_staticModuleManagerDialog = 0;
 
 BtModuleManagerDialog* BtModuleManagerDialog::getInstance(QWidget *parent,
@@ -59,9 +63,9 @@ BtModuleManagerDialog::~BtModuleManagerDialog() {
 }
 
 void BtModuleManagerDialog::loadDialogSettings() {
-    restoreGeometry(btConfig().value<QByteArray>("gui/windows/bookshelf/geometry", QByteArray()));
+    restoreGeometry(btConfig().value<QByteArray>(GeometryKey, QByteArray()));
 }
 
 void BtModuleManagerDialog::saveDialogSettings() const {
-    btConfig().setValue("gui/windows/bookshelf/geometry", saveGeometry());
+    btConfig().setValue(GeometryKey, saveGeometry());
 }

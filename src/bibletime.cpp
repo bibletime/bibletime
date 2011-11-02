@@ -55,7 +55,7 @@ BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
     QSplashScreen *splash = 0;
     QString splashHtml;
 
-    if (btConfig().value<bool>("gui/logo", true)) {
+    if (btConfig().value<bool>("GUI/showSplashScreen", true)) {
         splashHtml = "<div style='background:transparent;color:white;font-weight:bold'>%1"
                      "</div>";
 

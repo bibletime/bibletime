@@ -179,7 +179,7 @@ QString CDisplayTemplateMgr::fillTemplate(const QString &name,
 }
 
 QString CDisplayTemplateMgr::activeTemplateName() {
-    const QString tn = btConfig().value<QString>("gui/displayStyle", QString());
+    const QString tn = btConfig().value<QString>("GUI/activeTemplateName", QString());
     if (tn.isEmpty())
         return defaultTemplateName();
 

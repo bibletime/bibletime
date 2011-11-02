@@ -52,7 +52,7 @@ CDisplaySettingsPage::CDisplaySettingsPage(CConfigurationDialog *parent)
 
     { //startup logo
         m_showLogoCheck = new QCheckBox(this);
-        m_showLogoCheck->setChecked(btConfig().value<bool>("gui/logo", true));
+        m_showLogoCheck->setChecked(btConfig().value<bool>("GUI/showSplashScreen", true));
         mainLayout->addWidget(m_showLogoCheck);
     }
     mainLayout->addSpacing(20);
@@ -161,14 +161,14 @@ void CDisplaySettingsPage::updateStylePreview() {
 
     /// \todo Remove the following hack:
     const QString oldStyleName = CDisplayTemplateMgr::activeTemplateName();
-    btConfig().setValue("gui/displayStyle", styleName);
+    btConfig().setValue("GUI/activeTemplateName", styleName);
     CDisplayRendering render;
     m_stylePreviewViewer->setHtml( render.renderKeyTree(tree));
 
-    btConfig().setValue("gui/displayStyle", oldStyleName);
+    btConfig().setValue("GUI/activeTemplateName", oldStyleName);
 }
 
 void CDisplaySettingsPage::save() {
-    btConfig().setValue("gui/logo", m_showLogoCheck->isChecked() );
-    btConfig().setValue("gui/displayStyle", m_styleChooserCombo->currentText());
+    btConfig().setValue("GUI/showSplashScreen", m_showLogoCheck->isChecked() );
+    btConfig().setValue("GUI/activeTemplateName", m_styleChooserCombo->currentText());
 }

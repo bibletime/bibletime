@@ -25,6 +25,10 @@
 #include "util/dialogutil.h"
 
 
+namespace {
+const QString GeometryKey = "GUI/SettingsDialog/geometry";
+} // anonymous namespace
+
 CConfigurationDialog::CConfigurationDialog(QWidget * parent, BtActionCollection* actionCollection )
         : BtConfigDialog(parent),
         m_actionCollection(actionCollection),
@@ -100,9 +104,9 @@ void CConfigurationDialog::slotButtonClicked(QAbstractButton* button) {
 }
 
 void CConfigurationDialog::loadDialogSettings() {
-    restoreGeometry(btConfig().value<QByteArray>("gui/windows/configDialog/geometry", QByteArray()));
+    restoreGeometry(btConfig().value<QByteArray>(GeometryKey, QByteArray()));
 }
 
 void CConfigurationDialog::saveDialogSettings() const {
-    btConfig().setValue("gui/windows/configDialog/geometry", saveGeometry());
+    btConfig().setValue(GeometryKey, saveGeometry());
 }

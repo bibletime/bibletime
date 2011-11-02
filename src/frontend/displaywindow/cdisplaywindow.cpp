@@ -316,7 +316,7 @@ void CDisplayWindow::setModuleChooserBar( BtModuleChooserBar* bar ) {
         m_moduleChooserBar = bar;
         bar->setWindowTitle(tr("Work chooser buttons"));
         bar->setLayoutDirection(Qt::LeftToRight);
-        bar->setVisible(btConfig().value<bool>("gui/showTextWindowModuleSelectorButtons", true));
+        bar->setVisible(btConfig().value<bool>("GUI/showTextWindowModuleSelectorButtons", true));
     }
 }
 
@@ -325,7 +325,7 @@ void CDisplayWindow::setHeaderBar( QToolBar* header ) {
     m_headerBar = header;
     header->setMovable(false);
     header->setWindowTitle(tr("Text area header"));
-    header->setVisible(btConfig().value<bool>("gui/showTextWindowHeaders", true));
+    header->setVisible(btConfig().value<bool>("GUI/showTextWindowHeaders", true));
 }
 
 /** Sets the modules. */
@@ -348,7 +348,7 @@ bool CDisplayWindow::init() {
     parentWidget()->setFocusPolicy(Qt::ClickFocus);
     initActions();
     initToolbars();
-    if (!btConfig().value<bool>("gui/showToolbarsInEachWindow", true))
+    if (!btConfig().value<bool>("GUI/showToolbarsInEachWindow", true))
         setToolBarsHidden();
     btMainWindow()->clearMdiToolBars();
     clearMainWindowToolBars();
@@ -374,13 +374,13 @@ static void prepareToolBar(QToolBar* bar, const QString& title, bool visible) {
 
 /** Setup the Navigation toolbar. */
 void CDisplayWindow::setMainToolBar( QToolBar* bar ) {
-    prepareToolBar(bar, tr("Navigation"), btConfig().value<bool>("gui/showTextWindowNavigator", true) );
+    prepareToolBar(bar, tr("Navigation"), btConfig().value<bool>("GUI/showTextWindowNavigator", true) );
     m_mainToolBar = bar;
 }
 
 /** Setup the Tools toolbar. */
 void CDisplayWindow::setButtonsToolBar( QToolBar* bar ) {
-    prepareToolBar(bar, tr("Tool"), btConfig().value<bool>("gui/showTextWindowToolButtons", true) );
+    prepareToolBar(bar, tr("Tool"), btConfig().value<bool>("GUI/showTextWindowToolButtons", true) );
     m_buttonsToolBar = bar;
 }
 

@@ -32,6 +32,10 @@
 #include "util/dialogutil.h"
 
 
+namespace {
+const QString GeometryKey = "GUI/SearchDialog/geometry";
+} // anonymous namespace
+
 namespace Search {
 
 static CSearchDialog* m_staticDialog = 0;
@@ -283,11 +287,11 @@ void CSearchDialog::closeButtonClicked() {
 }
 
 void CSearchDialog::loadDialogSettings() {
-    restoreGeometry(btConfig().value<QByteArray>("gui/windows/searchDialog/geometry", QByteArray()));
+    restoreGeometry(btConfig().value<QByteArray>(GeometryKey, QByteArray()));
 }
 
 void CSearchDialog::saveDialogSettings() const {
-    btConfig().setValue("gui/windows/searchDialog/geometry", saveGeometry());
+    btConfig().setValue(GeometryKey, saveGeometry());
 }
 
 

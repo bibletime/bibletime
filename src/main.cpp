@@ -318,7 +318,7 @@ int main(int argc, char* argv[]) {
     QDBusConnection::sessionBus().registerObject("/BibleTime", mainWindow);
 #endif
 
-    if (btConfig().value<bool>("gui/showTipAtStartup", true))
+    if (btConfig().value<bool>("GUI/showTipAtStartup", true))
         mainWindow->slotOpenTipDialog();
 
     r = app.exec();

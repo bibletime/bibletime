@@ -31,6 +31,10 @@
 #include "util/directory.h"
 
 
+namespace {
+const QString SearchTypeKey = "GUI/SearchDialog/searchType";
+} // anonymous namespace
+
 namespace Search {
 
 BtSearchOptionsArea::BtSearchOptionsArea(QWidget *parent )
@@ -293,7 +297,7 @@ void BtSearchOptionsArea::saveSettings() {
     if (m_typeOrButton->isChecked()) {
         t = OrType;
     }
-    btConfig().setValue("gui/windows/searchType", t);
+    btConfig().setValue(SearchTypeKey, t);
 }
 
 void BtSearchOptionsArea::readSettings() {
@@ -311,7 +315,7 @@ void BtSearchOptionsArea::readSettings() {
         m_modulesCombo->setItemData(i, m_modulesCombo->itemText(i), Qt::ToolTipRole);
     }
 
-    int stype = btConfig().value<int>("gui/windows/searchType", AndType);
+    int stype = btConfig().value<int>(SearchTypeKey, AndType);
     switch (stype) {
         case AndType:
             m_typeAndButton->setChecked(true);

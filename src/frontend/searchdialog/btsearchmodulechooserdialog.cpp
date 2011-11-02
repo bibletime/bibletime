@@ -18,12 +18,17 @@
 #include "backend/managers/cswordbackend.h"
 #include "util/tool.h"
 
+
+namespace {
+const QString groupingOrderKey("GUI/SearchDialog/ModuleChooserDialog/grouping");
+}
+
 BtSearchModuleChooserDialog::BtSearchModuleChooserDialog(QWidget *parent,
                                                          Qt::WindowFlags flags)
     : BtModuleChooserDialog(parent, flags)
 {
     // Initialize the tree model:
-    BtBookshelfTreeModel::Grouping grouping("gui/searchDialog/moduleChooserDialog/grouping");
+    BtBookshelfTreeModel::Grouping grouping(groupingOrderKey);
     BtBookshelfTreeModel *treeModel = new BtBookshelfTreeModel(grouping, this);
     treeModel->setCheckable(true);
     connect(treeModel, SIGNAL(groupingOrderChanged(BtBookshelfTreeModel::Grouping)),
@@ -49,5 +54,5 @@ void BtSearchModuleChooserDialog::retranslateUi() {
 }
 
 void BtSearchModuleChooserDialog::slotGroupingOrderChanged(const BtBookshelfTreeModel::Grouping &g) {
-    g.saveTo("gui/searchDialog/moduleChooserDialog/grouping");
+    g.saveTo(groupingOrderKey);
 }
