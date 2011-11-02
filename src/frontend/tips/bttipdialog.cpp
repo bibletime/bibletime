@@ -54,6 +54,8 @@ inline QString make_icon(const QString &icon) {
     return "<img src=\"" + iconUrl + "\" width=\"32\" />";
 }
 
+const QString LastTipNumberKey = "GUI/lastTipNumber";
+
 } // anonymous namespace
 
 
@@ -110,7 +112,7 @@ BtTipDialog::BtTipDialog(QWidget *parent, Qt::WindowFlags wflags)
                      this,              SLOT(linkClicked(const QUrl&)));
     Q_ASSERT(ok);
 
-    m_tipNumber = btConfig().value<int>("state/tipNumber", 0);
+    m_tipNumber = btConfig().value<int>(LastTipNumberKey, 0);
     initTips();
     displayTip();
 }
@@ -188,7 +190,7 @@ void BtTipDialog::nextTip() {
     if (m_tipNumber >= m_tips.count()) {
         m_tipNumber = 0;
     }
-    btConfig().setValue("state/tipNumber", m_tipNumber);
+    btConfig().setValue(LastTipNumberKey, m_tipNumber);
     displayTip();
 }
 
