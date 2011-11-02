@@ -79,15 +79,11 @@ bool CProfileMgr::remove( const QString& profile) {
 }
 
 /** Returns the profile with the desired name. If there's no such profile 0 is returned. */
-CProfile* CProfileMgr::profile(const QString& name) {
-    QListIterator<CProfile*> it(m_profiles);
-    while (it.hasNext()) {
-        CProfile* p = it.next();
-        if (p && p->name() == name) {
+CProfile * CProfileMgr::profile(const QString & name) const {
+    Q_FOREACH (CProfile * const p, m_profiles) {
+        if (p && p->name() == name)
             return p;
-        }
     }
-
     return 0;
 }
 

@@ -46,7 +46,7 @@ class CProfileMgr {
         /**
         * Returns the profile with the desired name. If there's no such profile 0 is returned.
         */
-        CProfile* profile(const QString&);
+        CProfile * profile(const QString & profileName) const;
         /**
         * Returns the startup profile if it exists, otherwise return 0.
         */
