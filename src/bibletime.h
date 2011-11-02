@@ -15,7 +15,6 @@
 #include <QList>
 #include "frontend/displaywindow/cdisplaywindow.h"
 #include "frontend/displaywindow/cwritewindow.h"
-#include "frontend/profile/cprofile.h"
 #include "frontend/profile/cprofilemgr.h"
 #include <QSignalMapper>
 #ifdef BT_DEBUG
