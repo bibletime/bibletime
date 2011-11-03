@@ -14,6 +14,7 @@
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QWidget>
+#include "backend/config/cbtconfig.h"
 #include "frontend/settingsdialogs/cconfigurationdialog.h"
 #include "util/cresmgr.h"
 #include "util/tool.h"
