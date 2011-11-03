@@ -14,7 +14,6 @@
 
 #include <QMap>
 #include <QWidget>
-#include "backend/config/cbtconfig.h"
 
 
 class CConfigurationDialog;
