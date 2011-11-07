@@ -9,7 +9,9 @@
 
 #include "btconfig.h"
 
+#include <QDebug>
 #include <QLocale>
+#include <QMessageBox>
 #include <QWebSettings>
 #include "backend/btmoduletreeitem.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
@@ -19,6 +21,11 @@
 // Sword includes:
 #include <backend/managers/cswordbackend.h>
 #include <versekey.h> // For search scope configuration
+
+
+namespace {
+const QString BTCONFIG_API_VERSION_KEY = "btconfig_api_version";
+}
 
 
 /*
@@ -33,6 +40,9 @@ BtConfig::StringMap BtConfig::m_defaultSearchScopes;
 BtConfig::BtConfig(const QString &settingsFile)
     : BtConfigCore(settingsFile)
 {
+    Q_ASSERT_X(m_instance == 0, "BtConfig", "Already initialized!");
+    m_instance = this;
+
     if (m_defaultSearchScopes.isEmpty()) {
         m_defaultSearchScopes.insert(QObject::tr("Old testament"),          QString("Gen - Mal"));
         m_defaultSearchScopes.insert(QObject::tr("Moses/Pentateuch/Torah"), QString("Gen - Deut"));
@@ -45,10 +55,53 @@ BtConfig::BtConfig(const QString &settingsFile)
     }
 }
 
-BtConfig& BtConfig::getInstance()
-{
-    if(m_instance == 0)
-        m_instance = new BtConfig(util::directory::getUserBaseDir().absolutePath() + "/bibletimerc.new");
+bool BtConfig::initBtConfig() {
+    const QString confFileName = util::directory::getUserBaseDir().absolutePath() + "/bibletimerc";
+    bool confExisted = QFile::exists(confFileName);
+    m_instance = new BtConfig(confFileName);
+    if (!confExisted) {
+        m_instance->setValue<int>(BTCONFIG_API_VERSION_KEY, BTCONFIG_API_VERSION);
+        return true;
+    }
+
+    int btConfigOldApi = m_instance->value<int>(BTCONFIG_API_VERSION_KEY, 0);
+    if (btConfigOldApi == BTCONFIG_API_VERSION)
+        return true;
+
+    bool cont;
+    if (btConfigOldApi < BTCONFIG_API_VERSION) {
+        /// \todo Migrate from btConfigOldApi to BTCONFIG_API_VERSION
+        qWarning() << "BibleTime configuration migration is not yet implemented!!!";
+        cont = QMessageBox::warning(
+                    0, "Warning!",
+                    "Migration to the new configuration system is not yet "
+                    "implemented. Proceeding might result in <b>loss of data"
+                    "</b>. Please backup your configuration files before you "
+                    "continue!<br/><br/>Do you want to continue? Press \"No\" "
+                    "to quit BibleTime immediately.",
+                    QMessageBox::Yes | QMessageBox::No,
+                    QMessageBox::No) == QMessageBox::Yes;
+    } else {
+        Q_ASSERT(btConfigOldApi > BTCONFIG_API_VERSION);
+        cont = QMessageBox::warning(
+                    0, tr("Error loading configuration!"),
+                    tr("Failed to load BibleTime's configuration, because it "
+                       "appears that the configuration file corresponds to a newer "
+                       "version of BibleTime. This is likely caused by BibleTime "
+                       "being downgraded. Loading the new configuration file may "
+                       "result in <b>loss of data</b>.<br/><br/>Do you still want "
+                       "to try to load the new configuration file? Press \"No\" to "
+                       "quit BibleTime immediately."),
+                    QMessageBox::Yes | QMessageBox::No,
+                    QMessageBox::No) == QMessageBox::Yes;
+    }
+    if (cont)
+        m_instance->setValue<int>(BTCONFIG_API_VERSION_KEY, BTCONFIG_API_VERSION);
+    return cont;
+}
+
+BtConfig& BtConfig::getInstance() {
+    Q_ASSERT_X(m_instance != 0, "BtConfig", "Not yet initialized!");
     return *m_instance;
 }
 

@@ -9,6 +9,7 @@
 
 #include "bibletimeapp.h"
 
+#include <QFile>
 #include <QMessageBox>
 #include "backend/config/btconfig.h"
 #include "backend/managers/cswordbackend.h"
@@ -16,9 +17,17 @@
 #include "util/cresmgr.h"
 
 
+BibleTimeApp::BibleTimeApp(int &argc, char **argv)
+    : QApplication(argc, argv)
+    , m_init(false)
+{
+    setApplicationName("bibletime");
+    setApplicationVersion(BT_VERSION);
+}
+
 BibleTimeApp::~BibleTimeApp() {
     // Prevent writing to the log file before the directory cache is init:
-    if (!m_init)
+    if (!m_init || BtConfig::m_instance == 0)
         return;
 
     //we can set this safely now because we close now (hopyfully without crash)
@@ -28,10 +37,19 @@ BibleTimeApp::~BibleTimeApp() {
     delete CDisplayTemplateMgr::instance();
     CLanguageMgr::destroyInstance();
     CSwordBackend::destroyInstance();
+
     BtConfig::destroyInstance();
 }
 
+bool BibleTimeApp::initBtConfig() {
+    Q_ASSERT(m_init);
+
+    return BtConfig::initBtConfig();
+}
+
 bool BibleTimeApp::initDisplayTemplateManager() {
+    Q_ASSERT(m_init);
+
     QString errorMessage;
     new CDisplayTemplateMgr(errorMessage);
     if (errorMessage.isNull())

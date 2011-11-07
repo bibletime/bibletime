@@ -27,9 +27,16 @@
 #include "frontend/searchdialog/btsearchoptionsarea.h" // for Search::BtSearchOptionsArea::SearchType
 
 
+#define BTCONFIG_API_VERSION 1
+
+
+class BibleTimeApp;
+
 class BtConfig: public BtConfigCore {
 
     Q_DISABLE_COPY(BtConfig)
+
+    friend class BibleTimeApp;
 
 public: /* Types: */
 
@@ -46,9 +53,7 @@ private: /* Types: */
 
 public: /* Methods: */
 
-    static BtConfig& getInstance();
-
-    static void destroyInstance();
+    static BtConfig & getInstance();
 
     /*!
      * \brief Function to set a module decryption key.
@@ -192,6 +197,10 @@ public: /* Methods: */
 private: /* Methods: */
 
     explicit BtConfig(const QString & settingsFile);
+
+    static bool initBtConfig();
+
+    static void destroyInstance();
 
 private: /* Fields: */
 

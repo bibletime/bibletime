@@ -210,8 +210,6 @@ int main(int argc, char* argv[]) {
     namespace DU = util::directory;
 
     BibleTimeApp app(argc, argv); //for QApplication
-    app.setApplicationName("bibletime");
-    app.setApplicationVersion(BT_VERSION);
 
     // Parse command line arguments:
     bool ignoreSession = false;
@@ -261,6 +259,9 @@ int main(int argc, char* argv[]) {
     }
 
     app.startInit();
+    if (!app.initBtConfig()) {
+        return EXIT_FAILURE;
+    }
 
 #ifdef Q_WS_WIN
     // change directory to the Sword or .sword directory in the $HOME dir so that
@@ -293,7 +294,10 @@ int main(int argc, char* argv[]) {
 
 //    setSignalHandler(signalHandler);
 
-    if (!app.initDisplayTemplateManager()) return EXIT_FAILURE;
+    if (!app.initDisplayTemplateManager()) {
+        qFatal("Error initializing display template manager!");
+        return EXIT_FAILURE;
+    }
 
     BibleTime *mainWindow = new BibleTime();
     mainWindow->setAttribute(Qt::WA_DeleteOnClose);
