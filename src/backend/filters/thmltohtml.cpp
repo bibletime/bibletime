@@ -13,10 +13,11 @@
 #include <QRegExp>
 #include <QUrl>
 #include <QTextCodec>
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/clanguagemgr.h"
 #include "backend/managers/referencemanager.h"
+#include "backend/managers/cswordbackend.h"
 
 // Sword includes:
 #include <swmodule.h>
@@ -259,7 +260,7 @@ bool ThmlToHtml::handleToken(sword::SWBuf &buf, const char *token,
                     }
                     else { // like "<scripRef>John 3:16</scripRef>"
 
-                        CSwordModuleInfo* mod = CBTConfig::get(CBTConfig::standardBible);
+                        CSwordModuleInfo* mod = btConfig().getDefaultSwordModuleByType("standardBible");
                         //Q_ASSERT(mod); tested later
                         if (mod) {
                             ReferenceManager::ParseOptions options;
@@ -318,7 +319,7 @@ bool ThmlToHtml::handleToken(sword::SWBuf &buf, const char *token,
                     const char* ref = tag.getAttribute("passage");
                     Q_ASSERT(ref);
 
-                    CSwordModuleInfo* mod = CBTConfig::get(CBTConfig::standardBible);
+                    CSwordModuleInfo* mod = btConfig().getDefaultSwordModuleByType("standardBible");
                     //Q_ASSERT(mod); tested later
 
                     ReferenceManager::ParseOptions options;

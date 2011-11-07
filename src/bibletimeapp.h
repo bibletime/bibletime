@@ -19,10 +19,11 @@
 */
 class BibleTimeApp : public QApplication {
     public:
-        inline BibleTimeApp(int &argc, char **argv) : QApplication(argc, argv), m_init(false) {}
+        BibleTimeApp(int &argc, char **argv);
         ~BibleTimeApp();
 
         inline void startInit() { m_init = true; }
+        bool initBtConfig();
         bool initDisplayTemplateManager();
 
     private:

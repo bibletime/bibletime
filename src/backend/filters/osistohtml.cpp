@@ -10,10 +10,11 @@
 #include "backend/filters/osistohtml.h"
 
 #include <QString>
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/clanguagemgr.h"
 #include "backend/managers/referencemanager.h"
+#include "backend/managers/cswordbackend.h"
 
 // Sword includes:
 #include <swbuf.h>
@@ -553,7 +554,7 @@ void Filters::OsisToHtml::renderReference(const char *osisRef, sword::SWBuf &buf
         if (!mod || (mod->type() != CSwordModuleInfo::Bible
                      && mod->type() != CSwordModuleInfo::Commentary)) {
 
-            mod = CBTConfig::get( CBTConfig::standardBible );
+            mod = btConfig().getDefaultSwordModuleByType("standardBible");
         }
 
         // Q_ASSERT(mod); There's no necessarily a module or standard Bible

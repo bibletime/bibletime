@@ -12,7 +12,7 @@
 
 #include "backend/rendering/ctextrendering.h"
 
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "backend/managers/cswordbackend.h"
 #include "btglobal.h"
 
@@ -31,8 +31,8 @@ class CHTMLExportRendering: public CTextRendering {
 
         CHTMLExportRendering(
             bool addText,
-            const DisplayOptions &displayOptions = CBTConfig::getDisplayOptionDefaults(),
-            const FilterOptions &filterOptions = CBTConfig::getFilterOptionDefaults());
+            const DisplayOptions &displayOptions = btConfig().getDisplayOptions(),
+            const FilterOptions &filterOptions = btConfig().getFilterOptions());
 
     protected: /* Methods: */
 

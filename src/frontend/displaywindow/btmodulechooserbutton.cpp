@@ -15,7 +15,7 @@
 #include <QString>
 #include <QToolButton>
 #include <QToolTip>
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "backend/managers/cswordbackend.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"
 #include "util/cresmgr.h"
@@ -141,7 +141,7 @@ void BtModuleChooserButton::populateMenu() {
     // Filters: add only non-hidden and right type
     BTModuleTreeItem::HiddenOff hiddenFilter;
     QList<BTModuleTreeItem::Filter*> filters;
-    if (!CBTConfig::get(CBTConfig::bookshelfShowHidden)) {
+    if (!btConfig().value<bool>("GUI/bookshelfShowHidden", false)) {
         filters.append(&hiddenFilter);
     }
     TypeFilter typeFilter(m_moduleType);
@@ -150,7 +150,7 @@ void BtModuleChooserButton::populateMenu() {
     if (m_moduleType == CSwordModuleInfo::Bible) {
       BTModuleTreeItem root(filters, BTModuleTreeItem::CatLangMod);
         QList<BTModuleTreeItem::Filter*> filters2;
-        if (!CBTConfig::get(CBTConfig::bookshelfShowHidden)) {
+        if (!btConfig().value<bool>("GUI/bookshelfShowHidden", false)) {
             filters2.append(&hiddenFilter);
         }
         TypeFilter typeFilter2(CSwordModuleInfo::Commentary);

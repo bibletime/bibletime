@@ -17,11 +17,16 @@
 #include <QSizePolicy>
 #include <QLabel>
 
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "backend/managers/cswordbackend.h"
 #include "frontend/displaywindow/bttextwindowheader.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
+
+
+namespace {
+const QString BookshelfShowHiddenKey = "GUI/bookshelfShowHidden";
+} // anonymous namespace
 
 const char* ActionType = "ActionType";
 
@@ -170,7 +175,7 @@ void BtTextWindowHeaderWidget::populateMenu() {
         // Filters: add only non-hidden, non-locked and correct type
         BTModuleTreeItem::HiddenOff hiddenFilter;
         QList<BTModuleTreeItem::Filter*> filters;
-        if (!CBTConfig::get(CBTConfig::bookshelfShowHidden)) {
+        if (!btConfig().value<bool>(BookshelfShowHiddenKey, false)) {
             filters.append(&hiddenFilter);
         }
         TypeFilter typeFilter(m_moduleType);
@@ -179,7 +184,7 @@ void BtTextWindowHeaderWidget::populateMenu() {
         if (m_moduleType == CSwordModuleInfo::Bible) {
             BTModuleTreeItem root(filters, BTModuleTreeItem::CatLangMod);
             QList<BTModuleTreeItem::Filter*> filters2;
-            if (!CBTConfig::get(CBTConfig::bookshelfShowHidden)) {
+            if (!btConfig().value<bool>(BookshelfShowHiddenKey, false)) {
                 filters2.append(&hiddenFilter);
             }
             if (menu == addItem || menu == replaceItem) {

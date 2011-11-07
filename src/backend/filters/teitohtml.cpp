@@ -10,10 +10,11 @@
 #include "backend/filters/teitohtml.h"
 
 #include <QString>
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/clanguagemgr.h"
 #include "backend/managers/referencemanager.h"
+#include "backend/managers/cswordbackend.h"
 
 // Sword includes:
 #include <swbuf.h>
@@ -108,7 +109,7 @@ void TeiToHtml::renderReference(const char *osisRef, sword::SWBuf &buf,
         //If the osisRef is something like "ModuleID:key comes here" then the
         // modulename is given, so we'll use that one
 
-        CSwordModuleInfo* mod = CBTConfig::get( CBTConfig::standardBible );
+        CSwordModuleInfo* mod = btConfig().getDefaultSwordModuleByType( "standardBible" );
 
         // Q_ASSERT(mod); There's no necessarily a module or standard Bible
 

@@ -22,7 +22,7 @@
 #include <QtGlobal>
 #include <QToolBar>
 #include <QUrl>
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "backend/keys/cswordversekey.h"
 #include "frontend/btaboutdialog.h"
 #include "frontend/cinfodisplay.h"
@@ -58,7 +58,7 @@ void BibleTime::saveConfigSettings() {
 /** Is called when settings in the optionsdialog were changed (ok or apply) */
 void BibleTime::slotSettingsChanged() {
     qDebug() << "BibleTime::slotSettingsChanged";
-    const QString language = CBTConfig::get(CBTConfig::language);
+    const QString language = btConfig().value<QString>("language", QLocale::system().name());
     CSwordBackend::instance()->booknameLanguage(language);
 
 // \todo update the bookmarks after Bible bookname language has been changed
@@ -164,11 +164,7 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
         m_windowAutoTabbedAction->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(true);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeManual );
-        CBTConfig::set(CBTConfig::autoTileVertical, false);
-        CBTConfig::set(CBTConfig::autoTileHorizontal, false);
-        CBTConfig::set(CBTConfig::autoTile, false);
-        CBTConfig::set(CBTConfig::autoTabbed, false);
-        CBTConfig::set(CBTConfig::autoCascade, false);
+        btConfig().setValue("GUI/alignmentMode", manual);
     }
     else if (clickedAction == m_windowAutoTileVerticalAction) {
         m_windowManualModeAction->setChecked(false);
@@ -178,7 +174,7 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
         m_windowAutoTabbedAction->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(false);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTileVertical );
-        CBTConfig::set(CBTConfig::autoTileVertical, true);
+        btConfig().setValue("GUI/alignmentMode", autoTileVertical);
     }
     else if (clickedAction == m_windowAutoTileHorizontalAction) {
         m_windowManualModeAction->setChecked(false);
@@ -188,7 +184,7 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
         m_windowAutoTabbedAction->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(false);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTileHorizontal );
-        CBTConfig::set(CBTConfig::autoTileHorizontal, true);
+        btConfig().setValue("GUI/alignmentMode", autoTileHorizontal);
     }
     else if (clickedAction == m_windowAutoTileAction) {
         m_windowManualModeAction->setChecked(false);
@@ -198,7 +194,7 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
         m_windowAutoCascadeAction->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(false);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTile );
-        CBTConfig::set(CBTConfig::autoTile, true);
+        btConfig().setValue("GUI/alignmentMode", autoTile);
     }
     else if (clickedAction == m_windowAutoTabbedAction) {
         m_windowManualModeAction->setChecked(false);
@@ -208,7 +204,7 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
         m_windowAutoCascadeAction->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(false);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTabbed );
-        CBTConfig::set(CBTConfig::autoTabbed, true);
+        btConfig().setValue("GUI/alignmentMode", autoTabbed);
     }
     else if (clickedAction == m_windowAutoCascadeAction) {
         m_windowManualModeAction->setChecked(false);
@@ -218,7 +214,7 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
         m_windowAutoTabbedAction->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(false);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeCascade );
-        CBTConfig::set(CBTConfig::autoCascade, true);
+        btConfig().setValue("GUI/alignmentMode", autoCascade);
     }
     else if (clickedAction == m_windowTileAction) {
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeManual );
@@ -286,8 +282,8 @@ void BibleTime::slotAutoCascade() {
 /** Shows/hides the toolbar */
 void BibleTime::slotToggleMainToolbar() {
     Q_ASSERT(m_mainToolBar);
-    bool currentState = CBTConfig::get(CBTConfig::showMainWindowToolbar);
-    CBTConfig::set(CBTConfig::showMainWindowToolbar, !currentState);
+    bool currentState = btConfig().value<bool>("GUI/showMainToolbar", true);
+    btConfig().setValue("GUI/showMainToolbar", !currentState);
     if ( m_showMainWindowToolbarAction->isChecked()) {
         m_mainToolBar->show();
     }
@@ -297,61 +293,61 @@ void BibleTime::slotToggleMainToolbar() {
 }
 
 void BibleTime::slotToggleTextWindowHeader() {
-    bool currentState = CBTConfig::get(CBTConfig::showTextWindowHeaders);
-    CBTConfig::set(CBTConfig::showTextWindowHeaders, !currentState);
+    bool currentState = btConfig().value<bool>("GUI/showTextWindowHeaders", true);
+    btConfig().setValue("GUI/showTextWindowHeaders", !currentState);
     emit toggledTextWindowHeader(!currentState);
 }
 
 void BibleTime::slotToggleNavigatorToolbar() {
-    bool currentState = CBTConfig::get(CBTConfig::showTextWindowNavigator);
-    CBTConfig::set(CBTConfig::showTextWindowNavigator, !currentState);
+    bool currentState = btConfig().value<bool>("GUI/showTextWindowNavigator", true);
+    btConfig().setValue("GUI/showTextWindowNavigator", !currentState);
     showOrHideToolBars();
-    if (CBTConfig::get(CBTConfig::showToolbarsInEachWindow))
+    if (btConfig().value<bool>("GUI/showToolbarsInEachWindow", true))
         emit toggledTextWindowNavigator(!currentState);
     else
         emit toggledTextWindowNavigator(false);
 }
 
 void BibleTime::slotToggleToolsToolbar() {
-    bool currentState = CBTConfig::get(CBTConfig::showTextWindowToolButtons);
-    CBTConfig::set(CBTConfig::showTextWindowToolButtons, !currentState);
+    bool currentState = btConfig().value<bool>("GUI/showTextWindowToolButtons", true);
+    btConfig().setValue("GUI/showTextWindowToolButtons", !currentState);
     showOrHideToolBars();
-    if (CBTConfig::get(CBTConfig::showToolbarsInEachWindow))
+    if (btConfig().value<bool>("GUI/showToolbarsInEachWindow", true))
         emit toggledTextWindowToolButtons(!currentState);
     else
         emit toggledTextWindowToolButtons(false);
 }
 
 void BibleTime::slotToggleWorksToolbar() {
-    bool currentState = CBTConfig::get(CBTConfig::showTextWindowModuleSelectorButtons);
-    CBTConfig::set(CBTConfig::showTextWindowModuleSelectorButtons, !currentState);
+    bool currentState = btConfig().value<bool>("GUI/showTextWindowModuleSelectorButtons", true);
+    btConfig().setValue("GUI/showTextWindowModuleSelectorButtons", !currentState);
     showOrHideToolBars();
-    if (CBTConfig::get(CBTConfig::showToolbarsInEachWindow))
+    if (btConfig().value<bool>("GUI/showToolbarsInEachWindow", true))
         emit toggledTextWindowModuleChooser(!currentState);
     else
         emit toggledTextWindowModuleChooser(false);
 }
 
 void BibleTime::slotToggleFormatToolbar() {
-    bool currentState = CBTConfig::get(CBTConfig::showFormatToolbarButtons);
-    CBTConfig::set(CBTConfig::showFormatToolbarButtons, !currentState);
+    bool currentState = btConfig().value<bool>("GUI/showFormatToolbarButtons", true);
+    btConfig().setValue("GUI/showFormatToolbarButtons", !currentState);
     showOrHideToolBars();
-    if (CBTConfig::get(CBTConfig::showToolbarsInEachWindow))
+    if (btConfig().value<bool>("GUI/showToolbarsInEachWindow", true))
         emit toggledTextWindowFormatToolbar(!currentState);
     else
         emit toggledTextWindowFormatToolbar(false);
 }
 
 void BibleTime::slotToggleToolBarsInEachWindow() {
-    bool currentState = CBTConfig::get(CBTConfig::showToolbarsInEachWindow);
-    CBTConfig::set(CBTConfig::showToolbarsInEachWindow, !currentState);
+    bool currentState = btConfig().value<bool>("GUI/showToolbarsInEachWindow", true);
+    btConfig().setValue("GUI/showToolbarsInEachWindow", !currentState);
     showOrHideToolBars();
 
     if (!currentState) {
-        emit toggledTextWindowNavigator(CBTConfig::get(CBTConfig::showTextWindowNavigator));
-        emit toggledTextWindowToolButtons(CBTConfig::get(CBTConfig::showTextWindowToolButtons));
-        emit toggledTextWindowModuleChooser(CBTConfig::get(CBTConfig::showTextWindowModuleSelectorButtons));
-        emit toggledTextWindowFormatToolbar(CBTConfig::get(CBTConfig::showFormatToolbarButtons));
+        emit toggledTextWindowNavigator(btConfig().value<bool>("GUI/showTextWindowNavigator", true));
+        emit toggledTextWindowModuleChooser(btConfig().value<bool>("GUI/showTextWindowModuleSelectorButtons", true));
+        emit toggledTextWindowToolButtons(btConfig().value<bool>("GUI/showTextWindowToolButtons", true));
+        emit toggledTextWindowFormatToolbar(btConfig().value<bool>("GUI/showFormatToolbarButtons", true));
     }
     else {
         emit toggledTextWindowNavigator(false);
@@ -364,17 +360,17 @@ void BibleTime::slotToggleToolBarsInEachWindow() {
 }
 
 void BibleTime::showOrHideToolBars() {
-    if (CBTConfig::get(CBTConfig::showToolbarsInEachWindow)) {
+    if (btConfig().value<bool>("GUI/showToolbarsInEachWindow", true)) {
         m_navToolBar->setVisible(false);
         m_worksToolBar->setVisible(false);
         m_toolsToolBar->setVisible(false);
         m_formatToolBar->setVisible(false);
     }
     else {
-        m_navToolBar->setVisible(CBTConfig::get(CBTConfig::showTextWindowNavigator));
-        m_worksToolBar->setVisible(CBTConfig::get(CBTConfig::showTextWindowModuleSelectorButtons));
-        m_toolsToolBar->setVisible(CBTConfig::get(CBTConfig::showTextWindowToolButtons));
-        m_formatToolBar->setVisible(CBTConfig::get(CBTConfig::showFormatToolbarButtons));
+        m_navToolBar->setVisible(btConfig().value<bool>("GUI/showTextWindowNavigator", true));
+        m_worksToolBar->setVisible(btConfig().value<bool>("GUI/showTextWindowModuleSelectorButtons", true));
+        m_toolsToolBar->setVisible(btConfig().value<bool>("GUI/showTextWindowToolButtons", true));
+        m_formatToolBar->setVisible(btConfig().value<bool>("GUI/showFormatToolbarButtons", true));
     }
 }
 
@@ -403,7 +399,7 @@ void BibleTime::slotSearchModules() {
  */
 void BibleTime::slotSearchDefaultBible() {
     QList<const CSwordModuleInfo*> module;
-    CSwordModuleInfo* bible = CBTConfig::get(CBTConfig::standardBible);
+    CSwordModuleInfo* bible = btConfig().getDefaultSwordModuleByType("standardBible");
     if (bible) {
         module.append(bible);
     }
@@ -508,7 +504,7 @@ void BibleTime::loadProfile(CProfile* p) {
             continue;
         }
 
-        //is w->isWriteWindow is false we create a write window, otherwise a read window
+        //if w->isWriteWindow is true we create a write window, otherwise a read window
         CDisplayWindow* displayWindow = 0;
         if (w->writeWindowType > 0) { //create a write window
             displayWindow = createWriteDisplayWindow(modules.first(), key, CWriteWindow::WriteWindowType(w->writeWindowType) );

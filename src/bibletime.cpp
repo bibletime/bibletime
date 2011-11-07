@@ -19,7 +19,7 @@
 #include <QMessageBox>
 #include <QSplashScreen>
 #include <QSplitter>
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "backend/drivers/cswordbiblemoduleinfo.h"
 #include "backend/drivers/cswordbookmoduleinfo.h"
 #include "backend/drivers/cswordcommentarymoduleinfo.h"
@@ -55,7 +55,7 @@ BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
     QSplashScreen *splash = 0;
     QString splashHtml;
 
-    if (CBTConfig::get(CBTConfig::logo)) {
+    if (btConfig().value<bool>("GUI/showSplashScreen", true)) {
         splashHtml = "<div style='background:transparent;color:white;font-weight:bold'>%1"
                      "</div>";
 
@@ -242,7 +242,7 @@ void BibleTime::refreshDisplayWindows() const {
 
 /** Refresh main window accelerators */
 void BibleTime::refreshBibleTimeAccel() {
-    CBTConfig::setupAccelSettings(CBTConfig::application, m_actionCollection);
+    m_actionCollection->readShortcuts("Application shortcuts");
 }
 
 void BibleTime::closeEvent(QCloseEvent *event) {
@@ -263,7 +263,7 @@ void BibleTime::closeEvent(QCloseEvent *event) {
 }
 
 void BibleTime::processCommandline(bool ignoreSession, const QString &bibleKey) {
-    if (CBTConfig::get(CBTConfig::crashedTwoTimes)) {
+    if (btConfig().value<bool>("state/crashedTwoTimes", false)) {
         return;
     }
 
@@ -274,12 +274,12 @@ void BibleTime::processCommandline(bool ignoreSession, const QString &bibleKey) 
             loadProfile(p);
     }
 
-    if (CBTConfig::get(CBTConfig::crashedLastTime)) {
+    if (btConfig().value<bool>("state/crashedLastTime", false)) {
         return;
     }
 
     if (!bibleKey.isNull()) {
-        CSwordModuleInfo* bible = CBTConfig::get(CBTConfig::standardBible);
+        CSwordModuleInfo* bible = btConfig().getDefaultSwordModuleByType("standardBible");
         if (bibleKey == "random") {
             CSwordVerseKey vk(0);
             const int maxIndex = 31100;
@@ -297,6 +297,14 @@ void BibleTime::processCommandline(bool ignoreSession, const QString &bibleKey) 
         */
         m_mdi->myTileVertical();
     }
+
+    if (btConfig().value<bool>("state/crashedLastTime", false)) {
+        btConfig().setValue("state/crashedTwoTimes", true);
+    }
+    else {
+        btConfig().setValue("state/crashedLastTime", true);
+    }
+    btConfig().sync();
 }
 
 bool BibleTime::event(QEvent* event) {

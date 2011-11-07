@@ -11,6 +11,7 @@
 #define RENDERINGCDISPLAYRENDERING_H
 
 #include "backend/rendering/chtmlexportrendering.h"
+#include "backend/config/btconfig.h"
 
 
 namespace Rendering {
@@ -27,8 +28,8 @@ class CDisplayRendering : public CHTMLExportRendering {
         static QString keyToHTMLAnchor(const QString &key);
 
         CDisplayRendering(
-            const DisplayOptions &displayOptions = CBTConfig::getDisplayOptionDefaults(),
-            const FilterOptions &filterOptions = CBTConfig::getFilterOptionDefaults());
+            const DisplayOptions &displayOptions = btConfig().getDisplayOptions(),
+            const FilterOptions &filterOptions = btConfig().getFilterOptions());
 
     protected: /* Methods: */
 

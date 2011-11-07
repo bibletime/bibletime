@@ -20,7 +20,7 @@
 #include <QVBoxLayout>
 #include <QWidget>
 
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "backend/cswordmodulesearch.h"
 #include "backend/keys/cswordkey.h"
 #include "backend/keys/cswordversekey.h"
@@ -31,6 +31,10 @@
 #include "util/directory.h"
 #include "util/dialogutil.h"
 
+
+namespace {
+const QString GeometryKey = "GUI/SearchDialog/geometry";
+} // anonymous namespace
 
 namespace Search {
 
@@ -283,15 +287,11 @@ void CSearchDialog::closeButtonClicked() {
 }
 
 void CSearchDialog::loadDialogSettings() {
-    resize(CBTConfig::get(CBTConfig::searchDialogWidth), CBTConfig::get(CBTConfig::searchDialogHeight));
-    move(CBTConfig::get(CBTConfig::searchDialogX), CBTConfig::get(CBTConfig::searchDialogY));
+    restoreGeometry(btConfig().value<QByteArray>(GeometryKey, QByteArray()));
 }
 
 void CSearchDialog::saveDialogSettings() const {
-    CBTConfig::set(CBTConfig::searchDialogWidth, size().width());
-    CBTConfig::set(CBTConfig::searchDialogHeight, size().height());
-    CBTConfig::set(CBTConfig::searchDialogX, x());
-    CBTConfig::set(CBTConfig::searchDialogY, y());
+    btConfig().setValue(GeometryKey, saveGeometry());
 }
 
 

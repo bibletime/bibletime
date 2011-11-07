@@ -28,7 +28,7 @@
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
 #include <QToolTip>
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/referencemanager.h"
 #include "frontend/cdragdrop.h"
@@ -52,7 +52,7 @@ CBookmarkIndex::CBookmarkIndex(QWidget *parent)
         m_previousEventItem(0) {
     setMouseTracking(true);
     m_magTimer.setSingleShot(true);
-    m_magTimer.setInterval(CBTConfig::get(CBTConfig::magDelay));
+    m_magTimer.setInterval(btConfig().value<int>("GUI/magDelay", 400));
     setContextMenuPolicy(Qt::CustomContextMenu);
     initView();
     initConnections();
@@ -681,7 +681,7 @@ void CBookmarkIndex::printBookmarks() {
         return;
     }
     QSharedPointer<Printing::CPrinter> printer(
-        new Printing::CPrinter( this, CBTConfig::getDisplayOptionDefaults(), CBTConfig::getFilterOptionDefaults() )
+        new Printing::CPrinter( this, btConfig().getDisplayOptions(), btConfig().getFilterOptions() )
     );
     printer->printKeyTree(tree);
 }

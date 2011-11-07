@@ -1,0 +1,147 @@
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2011 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
+
+#include "btconfigcore.h"
+
+#if __cplusplus >= 201103L
+#include <cstdint>
+#else
+#define __STDC_LIMIT_MACROS
+#include <stdint.h>
+#endif
+
+
+const QString BtConfigCore::GROUP_SESSIONS      = "sessions/";
+const QString BtConfigCore::KEY_CURRENT_SESSION = "sessions/currentSession";
+const QString BtConfigCore::GROUP_SESSION       = "sessions/%1/";
+const QString BtConfigCore::KEY_SESSION_NAME    = "sessions/%1/name";
+
+
+BtConfigCore::BtConfigCore(const QString & settingsFile)
+    : m_settings(settingsFile, QSettings::IniFormat)
+{
+    /**
+      \todo Read UI language from settings, and initialize translator for tr()
+            strings.
+    */
+
+    // Read all session keys and names:
+    m_settings.beginGroup(GROUP_SESSIONS);
+    const QStringList sessionKeys = m_settings.childGroups();
+    m_settings.endGroup();
+    Q_FOREACH (const QString & sessionKey, sessionKeys) {
+        // Skip empty//keys just in case:
+        if (sessionKey.isEmpty())
+            continue;
+
+        const QString fullKey = KEY_SESSION_NAME.arg(sessionKey);
+        const QString sessionName = m_settings.value(fullKey).toString();
+        if (!sessionName.isEmpty())
+            m_sessionNames.insert(sessionKey, sessionName);
+    }
+
+    // Get current session key:
+    m_currentSessionKey = m_settings.value(KEY_CURRENT_SESSION).toString();
+
+    /*
+      If no session with the current session key exists, default to the first
+      session found. If no sessions were found, create a default session.
+    */
+    if (m_currentSessionKey.isEmpty()
+        || !m_sessionNames.contains(m_currentSessionKey))
+    {
+        if (m_sessionNames.isEmpty()) {
+            const QString &newSessionName = QString::number((qulonglong) 0u, 36);
+            m_currentSessionKey = newSessionName;
+            m_settings.setValue(KEY_CURRENT_SESSION, newSessionName);
+            m_settings.setValue(KEY_SESSION_NAME.arg(newSessionName),
+                                tr("Default Session"));
+        } else {
+            m_currentSessionKey = m_sessionNames.keys().first();
+        }
+    }
+    m_cachedCurrentSessionGroup = GROUP_SESSION.arg(m_currentSessionKey);
+}
+
+void BtConfigCore::setCurrentSession(const QString & key) {
+    Q_ASSERT(!key.isEmpty());
+    Q_ASSERT(m_sessionNames.contains(key));
+    m_currentSessionKey = key;
+    m_cachedCurrentSessionGroup = GROUP_SESSION.arg(key);
+    m_settings.setValue(KEY_CURRENT_SESSION, key);
+    m_settings.sync();
+}
+
+void BtConfigCore::addSession(const QString & name) {
+    Q_ASSERT(!name.isEmpty());
+
+    // Generate a new session key:
+    QString key = QString::number(0u, 36);
+    if (m_sessionNames.contains(key)) {
+        QString keyPrefix;
+        size_t i = 1u;
+        for (;;) {
+            key = QString::number(i, 36);
+            if (!m_sessionNames.contains(keyPrefix + key))
+                break;
+            if (i == SIZE_MAX) {
+                i = 0u;
+                keyPrefix.append('_');
+            } else {
+                i++;
+            }
+        };
+    }
+    Q_ASSERT(!m_sessionNames.contains(key));
+    m_sessionNames.insert(key, name);
+    m_settings.setValue(KEY_SESSION_NAME.arg(key), name);
+    m_settings.sync();
+}
+
+
+void BtConfigCore::deleteSession(const QString & key) {
+    Q_ASSERT(m_sessionNames.contains(key));
+    Q_ASSERT(key != m_currentSessionKey);
+    m_sessionNames.remove(key);
+    m_settings.remove(GROUP_SESSIONS + key);
+    m_settings.sync();
+}
+
+QStringList BtConfigCore::childGroups() {
+    if (m_groups.isEmpty())
+        return m_settings.childGroups();
+
+    m_settings.beginGroup(group());
+    const QStringList gs = m_settings.childGroups();
+    m_settings.endGroup();
+    return gs;
+}
+
+QStringList BtConfigCore::sessionChildGroups() {
+    m_settings.beginGroup(m_cachedCurrentSessionGroup + group());
+    const QStringList gs = m_settings.childGroups();
+    m_settings.endGroup();
+    return gs;
+}
+
+void BtConfigCore::remove(const QString & key) {
+    if (m_groups.isEmpty()) {
+        m_settings.remove(key);
+    } else {
+        m_settings.remove(m_groups.join("/") + '/' + key);
+    }
+}
+
+void BtConfigCore::sessionRemove(const QString & key) {
+    if (m_groups.isEmpty()) {
+        m_settings.remove(m_cachedCurrentSessionGroup + key);
+    } else {
+        m_settings.remove(m_cachedCurrentSessionGroup + m_groups.join("/") + '/' + key);
+    }
+}

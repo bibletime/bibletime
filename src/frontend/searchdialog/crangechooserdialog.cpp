@@ -19,7 +19,7 @@
 #include <QPushButton>
 #include <QTextEdit>
 #include <QVBoxLayout>
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "util/dialogutil.h"
 
 // Sword includes:
@@ -37,8 +37,8 @@ CRangeChooserDialog::CRangeChooserDialog(QWidget *parentDialog)
     retranslateUi();
 
     // Add the existing scopes
-    CBTConfig::StringMap map = CBTConfig::get(CBTConfig::searchScopes);
-    CBTConfig::StringMap::Iterator it;
+    BtConfig::StringMap map = btConfig().getSearchScopesForCurrentLocale();
+    BtConfig::StringMap::Iterator it;
     for (it = map.begin(); it != map.end(); ++it) {
         new RangeItem(it.key(), it.value(), m_rangeList);
     }
@@ -238,22 +238,23 @@ void CRangeChooserDialog::accept() {
 
     // Save the new sorted map of search scopes:
     m_rangeList->sortItems();
-    CBTConfig::StringMap map;
+    BtConfig::StringMap map;
     for (int i = 0; i < m_rangeList->count(); i++) {
         Q_ASSERT(dynamic_cast<RangeItem*>(m_rangeList->item(i)) != 0);
         const RangeItem * item = static_cast<RangeItem*>(m_rangeList->item(i));
         map[item->caption()] = item->range();
     }
-    CBTConfig::set(CBTConfig::searchScopes, map);
+    btConfig().setSearchScopesWithCurrentLocale(map);
 
     QDialog::accept();
 }
 
 void CRangeChooserDialog::restoreDefaults() {
-    typedef CBTConfig::StringMap::ConstIterator SMCI;
+    typedef BtConfig::StringMap::ConstIterator SMCI;
 
     m_rangeList->clear();
-    const CBTConfig::StringMap map = CBTConfig::getDefault(CBTConfig::searchScopes);
+    btConfig().deleteSearchScopesWithCurrentLocale();
+    const BtConfig::StringMap map = btConfig().getSearchScopesForCurrentLocale();
     for (SMCI it = map.begin(); it != map.end(); ++it) {
         new RangeItem(it.key(), it.value(), m_rangeList);
     };

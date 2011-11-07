@@ -15,7 +15,7 @@
 #include <QSet>
 #include <QString>
 #include <QTextCodec>
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "backend/drivers/cswordbiblemoduleinfo.h"
 #include "backend/drivers/cswordbookmoduleinfo.h"
 #include "backend/drivers/cswordcommentarymoduleinfo.h"
@@ -161,7 +161,7 @@ CSwordBackend::LoadError CSwordBackend::initModules(SetupChangedReason reason) {
     Q_FOREACH(CSwordModuleInfo* mod, m_dataModel.moduleList()) {
         //unlock modules if keys are present
         if ( mod->isEncrypted() ) {
-            const QString unlockKey = CBTConfig::getModuleEncryptionKey( mod->name() );
+            const QString unlockKey = btConfig().getModuleEncryptionKey( mod->name() );
             if (!unlockKey.isNull()) {
                 setCipherKey( mod->name().toUtf8().constData(), unlockKey.toUtf8().constData() );
             }
@@ -534,7 +534,7 @@ void CSwordBackend::deleteOrphanedIndices() {
                 }
             }
             else { //no module exists
-                if (CBTConfig::get( CBTConfig::autoDeleteOrphanedIndices ) ) {
+                if (btConfig().value<bool>("settings/behaviour/autoDeleteOrphanedIndices", true)) {
                     qDebug() << "deleting orphaned index in directory" << dir[i];
                     CSwordModuleInfo::deleteIndexForModule( dir[i] );
                 }

@@ -16,7 +16,6 @@
 #include <QMenu>
 #include <QTimer>
 #include <QWidget>
-#include "backend/config/cbtconfig.h"
 #include "backend/drivers/cswordbiblemoduleinfo.h"
 #include "backend/keys/cswordversekey.h"
 #include "frontend/cexportmanager.h"
@@ -274,7 +273,7 @@ void CBibleReadWindow::initActions() {
                      this,                    SLOT(printAll()));
     addAction(m_actions.print.chapter);
 
-    CBTConfig::setupAccelSettings(CBTConfig::bibleWindow, ac);
+    ac->readShortcuts("Bible shortcuts");
 }
 
 void CBibleReadWindow::initConnections() {
@@ -464,7 +463,7 @@ void CBibleReadWindow::reload(CSwordBackend::SetupChangedReason reason) {
     verseKey()->setLocale( CSwordBackend::instance()->booknameLanguage().toLatin1() );
     keyChooser()->refreshContent();
 
-    CBTConfig::setupAccelSettings(CBTConfig::bibleWindow, actionCollection());
+    actionCollection()->readShortcuts("Bible shortcuts");
 }
 
 /** No descriptions */

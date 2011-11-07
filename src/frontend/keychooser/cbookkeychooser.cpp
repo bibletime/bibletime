@@ -13,7 +13,7 @@
 #include <QHBoxLayout>
 #include <QList>
 #include <QWidget>
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "backend/drivers/cswordbookmoduleinfo.h"
 #include "backend/keys/cswordtreekey.h"
 #include "frontend/keychooser/bthistory.h"
@@ -203,7 +203,7 @@ void CBookKeyChooser::adjustFont() {
     //Make sure the entries are displayed correctly.
     QListIterator<CKeyChooserWidget*> it(m_chooserWidgets);
     while (it.hasNext()) {
-        it.next()->comboBox()->setFont( CBTConfig::get( m_modules.first()->language() ).second );
+        it.next()->comboBox()->setFont( btConfig().getFontForLanguage( m_modules.first()->language() ).second );
     }
 }
 

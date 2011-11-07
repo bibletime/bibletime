@@ -15,6 +15,7 @@
 #include <QWebPage>
 #include "backend/keys/cswordversekey.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
+#include "backend/config/btconfig.h"
 
 
 namespace Printing {

@@ -10,6 +10,7 @@ SET(bibletime_SRC
     src/bibletime_init.cpp
     src/bibletime_slots.cpp
     src/bibletimeapp.cpp
+    src/btglobal.cpp
     src/main.cpp
 )
 
@@ -40,7 +41,8 @@ SOURCE_GROUP("src\\backend\\bookshelfmodel" FILES ${bibletime_SRC_BACKEND_BOOKSH
 
 SET(bibletime_SRC_BACKEND_CONFIG
     # Backend config:
-    src/backend/config/cbtconfig.cpp
+    src/backend/config/btconfig.cpp
+    src/backend/config/btconfigcore.cpp
 )
 
 SOURCE_GROUP("src\\backend\\config" FILES ${bibletime_SRC_BACKEND_CONFIG})

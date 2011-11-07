@@ -20,7 +20,7 @@
 #include <QToolBar>
 #include <QToolButton>
 #include <QVBoxLayout>
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "backend/managers/btstringmgr.h"
 #include "backend/managers/clanguagemgr.h"
 #include "backend/managers/cswordbackend.h"
@@ -321,7 +321,7 @@ void BibleTime::createMenuAndToolBar()
     addToolBar(m_mainToolBar);
 
     // Set visibility of main window toolbars based on config
-    bool visible = ! CBTConfig::get(CBTConfig::showToolbarsInEachWindow);
+    bool visible = ! btConfig().value<bool>("GUI/showToolbarsInEachWindow", true);
 
     m_navToolBar = createToolBar("NavToolBar", this, visible);
     addToolBar(m_navToolBar);
@@ -349,7 +349,7 @@ void BibleTime::initActions() {
             this,           SLOT(slotSetActiveSubWindow(QWidget*)));
 
     // File menu actions:
-    m_openWorkAction = new BtOpenWorkAction("GUI/MainWindow/OpenWorkAction/grouping", this);
+    m_openWorkAction = new BtOpenWorkAction("GUI/mainWindow/openWorkAction/grouping", this);
     connect(m_openWorkAction, SIGNAL(triggered(CSwordModuleInfo*)),
             this,             SLOT(createReadDisplayWindow(CSwordModuleInfo*)));
 
@@ -384,49 +384,49 @@ void BibleTime::initActions() {
     m_showTextAreaHeadersAction = m_actionCollection->action("showParallelTextHeaders");
     Q_ASSERT(m_showTextAreaHeadersAction != 0);
     m_showTextAreaHeadersAction->setCheckable(true);
-    m_showTextAreaHeadersAction->setChecked(CBTConfig::get(CBTConfig::showTextWindowHeaders));
+    m_showTextAreaHeadersAction->setChecked(btConfig().value<bool>("GUI/showTextWindowHeaders", true));
     connect(m_showTextAreaHeadersAction, SIGNAL(toggled(bool)),
             this,                        SLOT(slotToggleTextWindowHeader()));
 
     m_showMainWindowToolbarAction = m_actionCollection->action("showToolbar");
     Q_ASSERT(m_showMainWindowToolbarAction != 0);
     m_showMainWindowToolbarAction->setCheckable(true);
-    m_showMainWindowToolbarAction->setChecked(CBTConfig::get(CBTConfig::showMainWindowToolbar));
+    m_showMainWindowToolbarAction->setChecked(btConfig().value<bool>("GUI/showMainToolbar", true));
     connect( m_showMainWindowToolbarAction, SIGNAL(triggered()),
             this,                SLOT(slotToggleMainToolbar()));
 
     m_showTextWindowNavigationAction = m_actionCollection->action("showNavigation");
     Q_ASSERT(m_showTextWindowNavigationAction != 0);
     m_showTextWindowNavigationAction->setCheckable(true);
-    m_showTextWindowNavigationAction->setChecked(CBTConfig::get(CBTConfig::showTextWindowNavigator));
+    m_showTextWindowNavigationAction->setChecked(btConfig().value<bool>("GUI/showTextWindowNavigator", true));
     connect(m_showTextWindowNavigationAction, SIGNAL(toggled(bool)),
             this,                             SLOT(slotToggleNavigatorToolbar()));
 
     m_showTextWindowModuleChooserAction = m_actionCollection->action("showWorks");
     Q_ASSERT(m_showTextWindowModuleChooserAction != 0);
     m_showTextWindowModuleChooserAction->setCheckable(true);
-    m_showTextWindowModuleChooserAction->setChecked(CBTConfig::get(CBTConfig::showTextWindowModuleSelectorButtons));
+    m_showTextWindowModuleChooserAction->setChecked(btConfig().value<bool>("GUI/showTextWindowModuleSelectorButtons", true));
     connect(m_showTextWindowModuleChooserAction, SIGNAL(toggled(bool)),
             this,                                SLOT(slotToggleWorksToolbar()));
 
     m_showTextWindowToolButtonsAction = m_actionCollection->action("showTools");
     Q_ASSERT(m_showTextWindowToolButtonsAction != 0);
     m_showTextWindowToolButtonsAction->setCheckable(true);
-    m_showTextWindowToolButtonsAction->setChecked(CBTConfig::get(CBTConfig::showTextWindowToolButtons));
+    m_showTextWindowToolButtonsAction->setChecked(btConfig().value<bool>("GUI/showTextWindowToolButtons", true));
     connect(m_showTextWindowToolButtonsAction, SIGNAL(toggled(bool)),
             this,                              SLOT(slotToggleToolsToolbar()));
 
     m_showFormatToolbarAction = m_actionCollection->action("showFormat");
     Q_ASSERT(m_showFormatToolbarAction != 0);
     m_showFormatToolbarAction->setCheckable(true);
-    m_showFormatToolbarAction->setChecked(CBTConfig::get(CBTConfig::showFormatToolbarButtons));
+    m_showFormatToolbarAction->setChecked(btConfig().value<bool>("GUI/showFormatToolbarButtons", true));
     bool ok = connect(m_showFormatToolbarAction, SIGNAL(toggled(bool)),
                       this,                      SLOT(slotToggleFormatToolbar()));
 
     m_toolbarsInEachWindow = m_actionCollection->action("showToolbarsInTextWindows");
     Q_ASSERT(m_toolbarsInEachWindow != 0);
     m_toolbarsInEachWindow->setCheckable(true);
-    m_toolbarsInEachWindow->setChecked(CBTConfig::get(CBTConfig::showToolbarsInEachWindow));
+    m_toolbarsInEachWindow->setChecked(btConfig().value<bool>("GUI/showToolbarsInEachWindow", true));
     ok = connect(m_toolbarsInEachWindow, SIGNAL(toggled(bool)),
                       this,                   SLOT(slotToggleToolBarsInEachWindow()));
     Q_ASSERT(ok);
@@ -473,20 +473,21 @@ void BibleTime::initActions() {
     connect(m_windowTileHorizontalAction, SIGNAL(triggered()),
             this,                          SLOT(slotTileHorizontal()));
 
+    alignmentMode alignment = btConfig().value<alignmentMode>("GUI/alignmentMode", autoTileVertical);
+
     m_windowManualModeAction = m_actionCollection->action("manualArrangement");
     Q_ASSERT(m_windowManualModeAction != 0);
     m_windowManualModeAction->setCheckable(true);
-    m_windowManualModeAction->setChecked(true);
+    if(alignment == manual)
+        m_windowManualModeAction->setChecked(true);
     connect(m_windowManualModeAction, SIGNAL(triggered()),
             this,                      SLOT(slotManualArrangementMode()));
 
     m_windowAutoTabbedAction = m_actionCollection->action("autoTabbed");
     Q_ASSERT(m_windowAutoTabbedAction != 0);
     m_windowAutoTabbedAction->setCheckable(true);
-    if(CBTConfig::get(CBTConfig::autoTabbed) == true) {
-        m_windowManualModeAction->setChecked(false);
+    if(alignment == autoTabbed)
         m_windowAutoTabbedAction->setChecked(true);
-    }
     connect(m_windowAutoTabbedAction, SIGNAL(triggered()),
             this,                      SLOT(slotAutoTabbed()));
 
@@ -494,10 +495,8 @@ void BibleTime::initActions() {
     m_windowAutoTileVerticalAction = m_actionCollection->action("autoVertical");
     Q_ASSERT(m_windowAutoTileVerticalAction != 0);
     m_windowAutoTileVerticalAction->setCheckable(true);
-    if(CBTConfig::get(CBTConfig::autoTileVertical) == true) {
-        m_windowManualModeAction->setChecked(false);
+    if(alignment == autoTileVertical)
         m_windowAutoTileVerticalAction->setChecked(true);
-    }
     connect(m_windowAutoTileVerticalAction, SIGNAL(triggered()),
             this,                            SLOT(slotAutoTileVertical()));
 
@@ -505,30 +504,24 @@ void BibleTime::initActions() {
     m_windowAutoTileHorizontalAction = m_actionCollection->action("autoHorizontal");
     Q_ASSERT(m_windowAutoTileHorizontalAction != 0);
     m_windowAutoTileHorizontalAction->setCheckable(true);
-    if(CBTConfig::get(CBTConfig::autoTileHorizontal) == true) {
-        m_windowManualModeAction->setChecked(false);
+    if(alignment == autoTileHorizontal)
         m_windowAutoTileHorizontalAction->setChecked(true);
-    }
     connect(m_windowAutoTileHorizontalAction, SIGNAL(triggered()),
             this,                              SLOT(slotAutoTileHorizontal()));
 
     m_windowAutoTileAction = m_actionCollection->action("autoTile");
     Q_ASSERT(m_windowAutoTileAction != 0);
     m_windowAutoTileAction->setCheckable(true);
-    if(CBTConfig::get(CBTConfig::autoTile) == true) {
-        m_windowManualModeAction->setChecked(false);
+    if(alignment == autoTile)
         m_windowAutoTileAction->setChecked(true);
-    }
     connect(m_windowAutoTileAction, SIGNAL(triggered()),
             this,                    SLOT(slotAutoTile()));
 
     m_windowAutoCascadeAction = m_actionCollection->action("autoCascade");
     Q_ASSERT(m_windowAutoCascadeAction != 0);
     m_windowAutoCascadeAction->setCheckable(true);
-    if(CBTConfig::get(CBTConfig::autoCascade) == true) {
-        m_windowManualModeAction->setChecked(false);
+    if(alignment == autoCascade)
         m_windowAutoCascadeAction->setChecked(true);
-    }
     connect(m_windowAutoCascadeAction, SIGNAL(triggered()),
             this,                       SLOT(slotAutoCascade()));
 
@@ -536,18 +529,24 @@ void BibleTime::initActions() {
      * All actions related to arrangement modes have to be initialized before calling a slot on them,
      * thus we call them afterwards now.
      */
-    if(m_windowAutoTabbedAction->isChecked() == true)
-        slotAutoTabbed();
-    else if(m_windowAutoTileVerticalAction->isChecked() == true)
-        slotAutoTileVertical();
-    else if(m_windowAutoTileHorizontalAction->isChecked() == true)
-        slotAutoTileHorizontal();
-    else if(m_windowAutoTileAction->isChecked() == true)
-        slotAutoTile();
-    else if(m_windowAutoCascadeAction->isChecked() == true)
-        slotAutoCascade();
-    else
-        slotManualArrangementMode();
+    switch(alignment)
+    {
+        case autoTabbed:
+            slotAutoTabbed(); break;
+        case autoTileVertical:
+            slotAutoTileVertical(); break;
+        case autoTileHorizontal:
+            slotAutoTileHorizontal(); break;
+        case autoTile:
+            slotAutoTile(); break;
+        case autoCascade:
+            slotAutoCascade(); break;
+        case manual:
+            slotManualArrangementMode(); break;
+        default:
+            // not reachable
+            break;
+    }
 
     m_windowSaveToNewProfileAction = m_actionCollection->action("saveNewSession");
     Q_ASSERT(m_windowSaveToNewProfileAction != 0);
@@ -859,7 +858,7 @@ void BibleTime::initBackends() {
 #endif
 
     CSwordBackend *backend = CSwordBackend::createInstance();
-    backend->booknameLanguage(CBTConfig::get(CBTConfig::language) );
+    backend->booknameLanguage(btConfig().value<QString>("language", QLocale::system().name()));
 
     const CSwordBackend::LoadError errorCode = CSwordBackend::instance()->initModules(CSwordBackend::OtherChange);
 

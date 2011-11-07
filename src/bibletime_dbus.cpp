@@ -32,7 +32,6 @@ void BibleTime::syncAllModulesByType(const CSwordModuleInfo::ModuleType type, co
 void BibleTime::closeAllModuleWindows() {
     m_mdi->closeAllSubWindows();
 }
-
 QStringList BibleTime::searchInModule(const QString& moduleName, const QString& searchText) {
     QStringList ret;
     CSwordModuleInfo* mod = CSwordBackend::instance()->findModuleByName(moduleName);

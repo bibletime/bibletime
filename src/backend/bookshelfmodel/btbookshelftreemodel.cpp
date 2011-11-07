@@ -13,12 +13,11 @@
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
 
 #include <QSet>
-#include <QSettings>
 #include "backend/bookshelfmodel/categoryitem.h"
 #include "backend/bookshelfmodel/indexingitem.h"
 #include "backend/bookshelfmodel/languageitem.h"
 #include "backend/bookshelfmodel/moduleitem.h"
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "util/macros.h"
 
 
@@ -26,7 +25,7 @@ using namespace BookshelfModel;
 
 bool BtBookshelfTreeModel::Grouping::loadFrom(const QString &configKey) {
     Q_ASSERT(!configKey.isNull());
-    QVariant v = CBTConfig::getConfig()->value(configKey);
+    QVariant v = btConfig().value<QVariant>(configKey, QVariant());
     if (!v.canConvert<Grouping>())
         return false;
 
@@ -36,9 +35,8 @@ bool BtBookshelfTreeModel::Grouping::loadFrom(const QString &configKey) {
 
 void BtBookshelfTreeModel::Grouping::saveTo(const QString &configKey) const {
     Q_ASSERT(!configKey.isNull());
-    CBTConfig::getConfig()->setValue(configKey, QVariant::fromValue(*this));
+    btConfig().setValue(configKey, QVariant::fromValue(*this));
 }
-
 
 BtBookshelfTreeModel::BtBookshelfTreeModel(QObject *parent)
     : QAbstractItemModel(parent), m_sourceModel(0), m_rootItem(new RootItem),

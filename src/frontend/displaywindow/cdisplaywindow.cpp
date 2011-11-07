@@ -14,7 +14,7 @@
 #include <QMenu>
 #include <QStringList>
 #include <QWidget>
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "backend/keys/cswordkey.h"
 #include "bibletime.h"
 #include "frontend/cmdiarea.h"
@@ -201,7 +201,7 @@ void CDisplayWindow::initActions() {
     Q_ASSERT(ok);
     addAction(actn);
 
-    CBTConfig::setupAccelSettings(CBTConfig::allWindows, ac);
+    ac->readShortcuts("Displaywindow shortcuts");
 }
 
 /** Refresh the settings of this window. */
@@ -223,8 +223,8 @@ void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
 
     lookup();
 
-    CBTConfig::setupAccelSettings(CBTConfig::allWindows, actionCollection());
-    CBTConfig::setupAccelSettings(CBTConfig::readWindow, actionCollection());
+    actionCollection()->readShortcuts("DisplayWindow shortcuts");
+    actionCollection()->readShortcuts("Readwindow shortcuts");
     emit sigModuleListSet(m_modules);
 }
 
@@ -316,7 +316,7 @@ void CDisplayWindow::setModuleChooserBar( BtModuleChooserBar* bar ) {
         m_moduleChooserBar = bar;
         bar->setWindowTitle(tr("Work chooser buttons"));
         bar->setLayoutDirection(Qt::LeftToRight);
-        bar->setVisible(CBTConfig::get(CBTConfig::showTextWindowModuleSelectorButtons));
+        bar->setVisible(btConfig().value<bool>("GUI/showTextWindowModuleSelectorButtons", true));
     }
 }
 
@@ -325,7 +325,7 @@ void CDisplayWindow::setHeaderBar( QToolBar* header ) {
     m_headerBar = header;
     header->setMovable(false);
     header->setWindowTitle(tr("Text area header"));
-    header->setVisible(CBTConfig::get(CBTConfig::showTextWindowHeaders));
+    header->setVisible(btConfig().value<bool>("GUI/showTextWindowHeaders", true));
 }
 
 /** Sets the modules. */
@@ -348,15 +348,15 @@ bool CDisplayWindow::init() {
     parentWidget()->setFocusPolicy(Qt::ClickFocus);
     initActions();
     initToolbars();
-    if ( ! CBTConfig::get(CBTConfig::showToolbarsInEachWindow))
+    if (!btConfig().value<bool>("GUI/showToolbarsInEachWindow", true))
         setToolBarsHidden();
     btMainWindow()->clearMdiToolBars();
     clearMainWindowToolBars();
     initConnections();
     setupPopupMenu();
 
-    m_filterOptions = CBTConfig::getFilterOptionDefaults();
-    m_displayOptions = CBTConfig::getDisplayOptionDefaults();
+    m_filterOptions = btConfig().getFilterOptions();
+    m_displayOptions = btConfig().getDisplayOptions();
     emit sigDisplayOptionsChanged(m_displayOptions);
     emit sigFilterOptionsChanged(m_filterOptions);
     emit sigModulesChanged(modules());
@@ -374,13 +374,13 @@ static void prepareToolBar(QToolBar* bar, const QString& title, bool visible) {
 
 /** Setup the Navigation toolbar. */
 void CDisplayWindow::setMainToolBar( QToolBar* bar ) {
-    prepareToolBar(bar, tr("Navigation"), CBTConfig::get(CBTConfig::showTextWindowNavigator) );
+    prepareToolBar(bar, tr("Navigation"), btConfig().value<bool>("GUI/showTextWindowNavigator", true) );
     m_mainToolBar = bar;
 }
 
 /** Setup the Tools toolbar. */
 void CDisplayWindow::setButtonsToolBar( QToolBar* bar ) {
-    prepareToolBar(bar, tr("Tool"), CBTConfig::get(CBTConfig::showTextWindowToolButtons) );
+    prepareToolBar(bar, tr("Tool"), btConfig().value<bool>("GUI/showTextWindowToolButtons", true) );
     m_buttonsToolBar = bar;
 }
 

@@ -14,7 +14,7 @@
 #include <QFileInfo>
 #include <QStringList>
 #include <QTextStream>
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/clanguagemgr.h"
 #include "util/directory.h"
@@ -124,9 +124,9 @@ QString CDisplayTemplateMgr::fillTemplate(const QString &name,
     foreach(const CLanguageMgr::Language* lang, langMap) {
         //const CLanguageMgr::Language* lang = *it;
 
-        //if (lang->isValid() && CBTConfig::get(lang).first) {
-        if (!lang->abbrev().isEmpty() && CBTConfig::get(lang).first) {
-            const QFont f = CBTConfig::get(lang).second;
+        //if (lang->isValid() && getBtConfig().getFontForLanguage(lang).first) {
+        if (!lang->abbrev().isEmpty() && btConfig().getFontForLanguage(lang).first) {
+            const QFont f = btConfig().getFontForLanguage(lang).second;
 
             //don't use important, because it would reset the title formatting, etc. to the setup font
             QString css("{ ");
@@ -149,7 +149,7 @@ QString CDisplayTemplateMgr::fillTemplate(const QString &name,
     CLanguageMgr::Language* lang = &lang_v;
 
     if (lang && !lang->abbrev().isEmpty()/*&& lang->isValid()*/) {
-        const QFont standardFont = CBTConfig::getDefault(lang); //we just need a dummy lang param
+        const QFont standardFont = btConfig().getDefaultFont(); //we just need a dummy lang param
         langCSS.prepend(
             QString("\n#content {font-family:%1; font-size:%2pt; font-weight:%3; font-style: %4;}\n")
             .arg(standardFont.family())
@@ -179,7 +179,7 @@ QString CDisplayTemplateMgr::fillTemplate(const QString &name,
 }
 
 QString CDisplayTemplateMgr::activeTemplateName() {
-    const QString tn = CBTConfig::get(CBTConfig::displayStyle);
+    const QString tn = btConfig().value<QString>("GUI/activeTemplateName", QString());
     if (tn.isEmpty())
         return defaultTemplateName();
 

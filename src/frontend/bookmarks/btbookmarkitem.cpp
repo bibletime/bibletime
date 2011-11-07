@@ -10,7 +10,8 @@
 #include "frontend/bookmarks/btbookmarkitem.h"
 
 #include <QSharedPointer>
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
+#include "backend/managers/cswordbackend.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/keys/cswordversekey.h"
 #include "btglobal.h"
@@ -81,7 +82,7 @@ QString BtBookmarkItem::toolTip() const {
         return QString::null;
     }
 
-    FilterOptions filterOptions = CBTConfig::getFilterOptionDefaults();
+    FilterOptions filterOptions = btConfig().getFilterOptions();
     filterOptions.footnotes = false;
     filterOptions.scriptureReferences = false;
     CSwordBackend::instance()->setFilterOptions(filterOptions);
@@ -91,7 +92,7 @@ QString BtBookmarkItem::toolTip() const {
     k->setKey(key());
 
     // const CLanguageMgr::Language* lang = module()->language();
-    // CBTConfig::FontSettingsPair fontPair = CBTConfig::get(lang);
+    // BtConfig::FontSettingsPair fontPair = getBtConfig().getFontForLanguage(lang);
 
     Q_ASSERT(k.data());
     QString header = QString::fromLatin1("%1 (%2)")

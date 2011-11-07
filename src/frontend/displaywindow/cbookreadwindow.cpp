@@ -14,7 +14,6 @@
 #include <QSplitter>
 #include <QToolBar>
 #include "bibletime.h"
-#include "backend/config/cbtconfig.h"
 #include "backend/keys/cswordtreekey.h"
 #include "frontend/display/cdisplay.h"
 #include "frontend/displaywindow/bttoolbarpopupaction.h"
@@ -70,7 +69,7 @@ void CBookReadWindow::initActions() {
                      this,         SLOT(treeToggled()));
     addAction(m_treeAction);
 
-    CBTConfig::setupAccelSettings(CBTConfig::bookWindow, ac);
+    ac->readShortcuts("Book shortcuts");
 }
 
 void CBookReadWindow::insertKeyboardActions( BtActionCollection* const a ) {
