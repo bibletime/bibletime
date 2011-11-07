@@ -1,3 +1,9 @@
+2011-11-02 Jaak Ristioja <jaak@ristioja.ee>
+    * Fixed a bug with bookshelf items grouping initialization.
+
+2011-10-23 Gregory Hellings <greg.hellings@gmail.com>
+    * Fixed compilation against CLucene 2.
+
 2011-10-05 Jaak Ristioja <jaak@ristioja.ee>
     * Released 2.9 beta 2.
 
