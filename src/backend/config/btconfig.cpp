@@ -160,7 +160,7 @@ void BtConfig::setShortcuts( const QString& shortcutGroup, const QHash< QString,
                     /// \note saving QKeySequences directly doesn't appear to work!
                     varList.append(shortcut.toString());
                 }
-            if (not varList.empty())
+            if (! varList.empty())
             {
                 m_settings.setValue(iter.key(), varList);
             }
