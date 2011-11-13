@@ -75,6 +75,16 @@ void BtHtmlReadDisplay::initJavascript() {
 // When the QWebFrame is cleared, this function is called to install the
 // javascript object (BtHtmlJsObject class) into the Javascript model
 void BtHtmlReadDisplay::loadJSObject() {
+    // Starting with Qt 4.7.4 with QtWebKit 2.2 stronger security checking occurs.
+    // The BtHtmlJsObject that is associated with a given load of a page is rejected
+    // as causing a cross site security problem when a new page is loaded. Deleting
+    // the object and creating it new for each page loaded allows the object to access
+    // javascript variables without this security issue.
+    if (m_jsObject != 0)
+        delete m_jsObject;
+    m_jsObject = new BtHtmlJsObject(this);
+    m_jsObject->setObjectName("btHtmlJsObject");
+
     mainFrame()->addToJavaScriptWindowObject(m_jsObject->objectName(), m_jsObject);
 }
 
@@ -263,7 +273,7 @@ void BtHtmlReadDisplay::slotLoadFinished(bool) {
 }
 
 // For debugging javascript - set breakpoint in this function to catch javascript error messages
-#if DEBUG_JS
+#ifdef DEBUG_JS
 void BtHtmlReadDisplay::javaScriptConsoleMessage (const QString& message, int lineNumber, const QString& sourceID ) {
 }
 #endif
