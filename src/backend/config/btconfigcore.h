@@ -81,8 +81,9 @@ public: /* Methods: */
 
       \pre The given name must not be an empty string.
       \param[in] name the name of the session
+      \returns the key of the created session.
     */
-    void addSession(const QString & name);
+    QString addSession(const QString & name);
 
     /**
       \brief Deletes the session with the given key.
@@ -103,7 +104,7 @@ public: /* Methods: */
       \returns the value of type specified by the template parameter.
     */
     template<typename T>
-    inline T value(const QString & key, const T & defaultValue) {
+    inline T value(const QString & key, const T & defaultValue = T()) {
         return m_settings.value(group() + key,
                                 QVariant::fromValue(defaultValue)).value<T>();
     }
@@ -116,7 +117,7 @@ public: /* Methods: */
       \returns the value of type specified by the template parameter.
     */
     template<typename T>
-    inline T sessionValue(const QString & key, const T & defaultValue) {
+    inline T sessionValue(const QString & key, const T & defaultValue = T()) {
         return m_settings.value(m_cachedCurrentSessionGroup + group() + key,
                                 QVariant::fromValue(defaultValue)).value<T>();
     }
@@ -150,9 +151,23 @@ public: /* Methods: */
     QStringList childGroups();
 
     /**
+      \pre subkey is not empty
+      \param[in] subkey the subkey
+      \returns a list of groups under the current group and subkey in global settings.
+    */
+    QStringList childGroups(const QString &subkey);
+
+    /**
       \returns a list of first-level groups in the current group in session settings.
     */
     QStringList sessionChildGroups();
+
+    /**
+      \pre subkey is not empty
+      \param[in] subkey the subkey
+      \returns a list of groups under the current group and subkey in session settings.
+    */
+    QStringList sessionChildGroups(const QString &subkey);
 
     /**
       \brief removes a key all its children from global settings.
@@ -183,10 +198,15 @@ public: /* Methods: */
 
       \param[in] prefix the prefix to append
     */
-    inline void beginGroup(const QString & prefix) {
+    inline void beginGroup(QString prefix) {
         Q_ASSERT(!prefix.isEmpty());
-        Q_ASSERT(!prefix.startsWith('/'));
-        Q_ASSERT(!prefix.endsWith('/'));
+        while (prefix.startsWith('/'))
+            prefix.remove(0, 1);
+        Q_ASSERT(!prefix.isEmpty());
+        while (prefix.endsWith('/'))
+            prefix.chop(1);
+        Q_ASSERT(!prefix.isEmpty());
+
         m_groups.append(prefix);
         m_cachedGroup = QString();
     }

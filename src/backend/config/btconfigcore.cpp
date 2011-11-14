@@ -78,7 +78,7 @@ void BtConfigCore::setCurrentSession(const QString & key) {
     m_settings.sync();
 }
 
-void BtConfigCore::addSession(const QString & name) {
+QString BtConfigCore::addSession(const QString & name) {
     Q_ASSERT(!name.isEmpty());
 
     // Generate a new session key:
@@ -102,6 +102,7 @@ void BtConfigCore::addSession(const QString & name) {
     m_sessionNames.insert(key, name);
     m_settings.setValue(KEY_SESSION_NAME.arg(key), name);
     m_settings.sync();
+    return key;
 }
 
 
@@ -123,10 +124,24 @@ QStringList BtConfigCore::childGroups() {
     return gs;
 }
 
+QStringList BtConfigCore::childGroups(const QString &subkey) {
+    beginGroup(subkey);
+    QStringList gs = childGroups();
+    endGroup();
+    return gs;
+}
+
 QStringList BtConfigCore::sessionChildGroups() {
     m_settings.beginGroup(m_cachedCurrentSessionGroup + group());
     const QStringList gs = m_settings.childGroups();
     m_settings.endGroup();
+    return gs;
+}
+
+QStringList BtConfigCore::sessionChildGroups(const QString &subkey) {
+    beginGroup(subkey);
+    QStringList gs = sessionChildGroups();
+    endGroup();
     return gs;
 }
 
