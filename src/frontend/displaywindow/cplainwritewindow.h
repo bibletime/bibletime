@@ -30,14 +30,8 @@ class CPlainWriteWindow : public CWriteWindow  {
     public:
         CPlainWriteWindow( QList<CSwordModuleInfo*> modules, CMDIArea* parent);
 
-        /**
-        * Store the settings of this window in the given CProfileWindow object.
-        */
-        virtual void storeProfileSettings( Profile::CProfileWindow* profileWindow );
-        /**
-        * Store the settings of this window in the given profile window.
-        */
-        virtual void applyProfileSettings( Profile::CProfileWindow* profileWindow );
+        virtual void storeProfileSettings(const QString & windowGroup);
+        virtual void applyProfileSettings(const QString & windowGroup);
 
         /**
          * Setups the popup menu of this display widget.

@@ -18,6 +18,7 @@
 #include <QList>
 #include <QMdiSubWindow>
 #include <QMenu>
+#include <QMessageBox>
 #include <QProcess>
 #include <QtGlobal>
 #include <QToolBar>
@@ -34,9 +35,6 @@
 #include "frontend/settingsdialogs/cconfigurationdialog.h"
 #include "frontend/tips/bttipdialog.h"
 #include "util/directory.h"
-
-
-using namespace Profile;
 
 
 /** Opens the optionsdialog of BibleTime. */
@@ -426,117 +424,155 @@ void BibleTime::slotOpenTipDialog() {
     dlg->show();
 }
 
-/** Saves the current settings into the currently activated profile. */
-void BibleTime::saveProfile(QAction* action) {
-    m_mdi->setUpdatesEnabled(false);
+void BibleTime::saveProfile() {
+    // Save main window settings:
+    BtConfig & conf = btConfig();
+    conf.setSessionValue("MainWindow/geometry", saveGeometry());
+    conf.setSessionValue("MainWindow/state", saveState());
+    conf.setSessionValue("MainWindow/MDIArrangementMode", static_cast<int>(m_mdi->getMDIArrangementMode()));
 
-    CProfile * p = (CProfile *) action->property("CProfilePointer").value<void *>();
-    Q_ASSERT(p);
-    Q_ASSERT(p == m_profileMgr.profile(action->text().remove("&")));
-    if ( p ) {
-        saveProfile(p);
-    }
-
-    m_mdi->setUpdatesEnabled(true);
-}
-
-void BibleTime::saveProfile(CProfile* profile) {
-    if (!profile) {
-        return;
-    }
-    //save mainwindow settings
-    storeProfileSettings(profile);
-
-    QList<CProfileWindow*> profileWindows;
-    Q_FOREACH (const QMdiSubWindow * const w, m_mdi->subWindowList(QMdiArea::StackingOrder)) {
+    QStringList windowsList;
+    Q_FOREACH (const QMdiSubWindow * const w,
+               m_mdi->subWindowList(QMdiArea::StackingOrder))
+    {
         CDisplayWindow * const displayWindow = dynamic_cast<CDisplayWindow*>(w->widget());
-        if (displayWindow == 0) {
+        if (!displayWindow)
             continue;
-        }
 
-        CProfileWindow * const profileWindow = new CProfileWindow();
-        displayWindow->storeProfileSettings(profileWindow);
-        profileWindows.append(profileWindow);
+        const QString windowKey = QString::number(windowsList.size());
+        windowsList.append(windowKey);
+        const QString windowGroup = "window/" + windowKey + '/';
+        displayWindow->storeProfileSettings(windowGroup);
     }
-    profile->save(profileWindows);
-
-    //clean up memory - delete all created profile windows
-    //profileWindows.setAutoDelete(true);
-    qDeleteAll(profileWindows);
-    profileWindows.clear();
+    conf.setSessionValue("windowsList", windowsList);
 }
 
-void BibleTime::loadProfile(QAction* action) {
-    CProfile * p = (CProfile *) action->property("CProfilePointer").value<void *>();
-    Q_ASSERT(p);
-    Q_ASSERT(p == m_profileMgr.profile(action->text().remove("&")));
-    if ( p ) {
-        m_mdi->closeAllSubWindows();
-        loadProfile(p);
-    }
+void BibleTime::loadProfile(QAction * action) {
+    Q_ASSERT(action);
+    QVariant keyProperty = action->property("ProfileKey");
+    Q_ASSERT(keyProperty.type() == QVariant::String);
+    Q_ASSERT(btConfig().sessionNames().contains(keyProperty.toString()));
+    loadProfile(keyProperty.toString());
 }
 
-void BibleTime::loadProfile(CProfile* p) {
-    if (!p)
-        return;
+void BibleTime::loadProfile(const QString & profileKey) {
+    Q_ASSERT(btConfig().sessionNames().contains(profileKey));
 
-    QList<CProfileWindow*> windows = p->load();
+    // Close all open windows BEFORE switching profile:
+    m_mdi->closeAllSubWindows();
 
-    m_mdi->setUpdatesEnabled(false);//don't auto tile or auto cascade, this would mess up everything!!
+    // Switch prifle Activate profile:
+    btConfig().setCurrentSession(profileKey);
+    reloadProfile();
+    refreshProfileMenus();
+}
 
-    //load mainwindow setttings
-    applyProfileSettings(p);
+namespace {
 
-    QWidget* focusWindow = 0;
+/// Helper object for reloadProfile()
+struct WindowLoadStatus {
+    inline WindowLoadStatus() : window(0) {}
+    QStringList failedModules;
+    QList<CSwordModuleInfo*> okModules;
+    CDisplayWindow * window;
+};
 
-    //   for (CProfileWindow* w = windows.last(); w; w = windows.prev()) { //from the last one to make sure the order is right in the mdi area
-    Q_FOREACH (CProfileWindow * w, windows) {
-        const QString &key = w->key;
+} // anonymous namespace
 
-        QList<CSwordModuleInfo*> modules;
-        Q_FOREACH (const QString &moduleName, w->modules) {
+void BibleTime::reloadProfile() {
+    typedef CMDIArea::MDIArrangementMode MAM;
+    typedef CWriteWindow::WriteWindowType WWT;
+
+    // Cache pointer to config:
+    BtConfig & conf = btConfig();
+
+    // Disable updates while doing big changes:
+    setUpdatesEnabled(false);
+
+    // Close all open windows:
+    m_mdi->closeAllSubWindows();
+
+    // Reload main window settings:
+    restoreGeometry(conf.sessionValue<QByteArray>("MainWindow/geometry"));
+    restoreState(conf.sessionValue<QByteArray>("MainWindow/state"));
+    m_windowFullscreenAction->setChecked(isFullScreen());
+    m_mdi->setMDIArrangementMode(static_cast<MAM>(conf.sessionValue<int>("MainWindow/MDIArrangementMode")));
+
+    QWidget * focusWindow = 0;
+    QMap<QString, WindowLoadStatus> failedWindows;
+    Q_FOREACH (const QString & w,
+               conf.sessionValue<QStringList>("windowsList"))
+    {
+        const QString windowGroup = "window/" + w + '/';
+
+        // Try to determine window modules:
+        WindowLoadStatus wls;
+        Q_FOREACH (const QString &moduleName,
+                   conf.sessionValue<QStringList>(windowGroup + "modules"))
+        {
             CSwordModuleInfo * const m = CSwordBackend::instance()->findModuleByName(moduleName);
-            if (m != 0) {
-                modules.append(m);
+            if (m) {
+                wls.okModules.append(m);
+            } else {
+                wls.failedModules.append(moduleName);
             }
         }
-        if (modules.isEmpty()) { //are the modules still installed? If not continue wih next session window
+
+        // Check whether the window totally failed (no modules can be loaded):
+        if (wls.okModules.isEmpty()) {
+            failedWindows.insert(w, wls);
             continue;
         }
 
-        //if w->isWriteWindow is true we create a write window, otherwise a read window
-        CDisplayWindow* displayWindow = 0;
-        if (w->writeWindowType > 0) { //create a write window
-            displayWindow = createWriteDisplayWindow(modules.first(), key, CWriteWindow::WriteWindowType(w->writeWindowType) );
-        }
-        else { //create a read window
-            displayWindow = createReadDisplayWindow(modules, key);
+        // Check whether the window partially failed:
+        if (!wls.failedModules.isEmpty())
+            failedWindows.insert(w, wls);
+
+        // Try to respawn the window:
+        Q_ASSERT(!wls.window);
+        const QString key = conf.sessionValue<QString>(windowGroup + "key");
+        WWT wwt = static_cast<WWT>(conf.sessionValue<int>(windowGroup + "writeWindowType", 0));
+        if (wwt > 0) {
+            // Note, that we *might* lose the rest of wls.okModules here:
+            if (wls.okModules.size() > 1)
+                qWarning() << "Got more modules for a \"write window\" than expected from the profile!";
+
+            wls.window = createWriteDisplayWindow(wls.okModules.first(), key, wwt);
+        } else {
+            wls.window = createReadDisplayWindow(wls.okModules, key);
         }
 
-        if (displayWindow) { //if a window was created initialize it.
-            if (w->hasFocus) {
-                focusWindow = displayWindow;
-            }
-
-            displayWindow->applyProfileSettings(w);
+        if (wls.window) {
+            wls.window->applyProfileSettings(windowGroup);
+            if (conf.sessionValue<bool>(windowGroup + "hasFocus", false))
+                focusWindow = wls.window;
+        } else {
+            failedWindows.insert(w, wls);
         }
     }
 
-    m_mdi->setUpdatesEnabled(true);
+    // Re-arrange MDI:
     m_mdi->triggerWindowUpdate();
 
-    if (focusWindow) {
+    // Activate focused window:
+    if (focusWindow)
         focusWindow->setFocus();
-    }
+
+    // Re-enable updates and repaint:
+    setUpdatesEnabled(true);
+    repaint(); /// \bug The main window (except decors) is all black without this (not even hover over toolbar buttons works)
+
+    /// \todo For windows in failedWindows ask whether to keep the settings / close windows etc
 }
 
 void BibleTime::deleteProfile(QAction* action) {
-    //HACK: work around the inserted & char by KPopupMenu
-    CProfile * p = (CProfile *) action->property("CProfilePointer").value<void *>();
-    Q_ASSERT(p);
-    Q_ASSERT(p == m_profileMgr.profile(action->text().remove("&")));
-    if (p)
-        m_profileMgr.remove(p);
+    Q_ASSERT(action);
+    QVariant keyProperty = action->property("ProfileKey");
+    Q_ASSERT(keyProperty.type() == QVariant::String);
+    Q_ASSERT(btConfig().sessionNames().contains(keyProperty.toString()));
+
+    /// \todo Ask for confirmation
+    btConfig().deleteSession(keyProperty.toString());
     refreshProfileMenus();
 }
 
@@ -547,40 +583,70 @@ void BibleTime::toggleFullscreen() {
 
 /** Saves current settings into a new profile. */
 void BibleTime::saveToNewProfile() {
-    bool ok = false;
-    const QString name = QInputDialog::getText(this, tr("New Session"),
-                         tr("Please enter a name for the new session."), QLineEdit::Normal, QString::null, &ok);
-    if (ok && !name.isEmpty()) {
-        CProfile* profile = m_profileMgr.create(name);
-        saveProfile(profile);
+    BtConfig & conf = btConfig();
+
+    // Get new unique name:
+    QString name;
+    for (;;) {
+        bool ok;
+        name = QInputDialog::getText(
+                   this, tr("New Session"),
+                   tr("Please enter a name for the new session."),
+                   QLineEdit::Normal, name, &ok);
+        if (!ok)
+            return;
+
+        if (!name.isEmpty()) {
+            // Check whether name already exists:
+            if (conf.sessionNames().values().contains(name)) {
+                QMessageBox::information(this, tr("Session already exists"),
+                                         tr("Session with the name \"%1\" "
+                                            "already exists. Please provide a "
+                                            "different name."));
+            } else {
+                break;
+            }
+        }
     }
+
+    // Also save old profile:
+    saveProfile();
+
+    // Save new profile:
+    conf.setCurrentSession(conf.addSession(name));
+    saveProfile();
+
+    // Refresh profile menus:
     refreshProfileMenus();
 }
 
 /** Slot to refresh the save profile and load profile menus. */
 void BibleTime::refreshProfileMenus() {
-    m_windowSaveProfileMenu->clear();
+    typedef BtConfig::SessionNamesHashMap SNHM;
+    typedef SNHM::const_iterator SNHMCI;
+
     m_windowLoadProfileMenu->clear();
     m_windowDeleteProfileMenu->clear();
 
-    //refresh the load, save and delete profile menus
-    m_profileMgr.refresh();
-    const QList<CProfile*> profiles = m_profileMgr.profiles();
+    BtConfig & conf = btConfig();
+    const BtConfig::SessionNamesHashMap &sessions = conf.sessionNames();
 
-    const bool enableActions = !profiles.isEmpty();
-    m_windowSaveProfileMenu->setEnabled(enableActions);
+    const bool enableActions = sessions.size() > 1;
     m_windowLoadProfileMenu->setEnabled(enableActions);
     m_windowDeleteProfileMenu->setEnabled(enableActions);
 
-    Q_FOREACH (const CProfile * const p, profiles) {
-        const QString &profileName = p->name();
-        QAction * a;
-        a = m_windowSaveProfileMenu->addAction(profileName);
-        a->setProperty("CProfilePointer", QVariant::fromValue((void *) p));
-        a = m_windowLoadProfileMenu->addAction(profileName);
-        a->setProperty("CProfilePointer", QVariant::fromValue((void *) p));
-        a = m_windowDeleteProfileMenu->addAction(profileName);
-        a->setProperty("CProfilePointer", QVariant::fromValue((void *) p));
+
+    if (enableActions) {
+        for (SNHMCI it = sessions.constBegin(); it != sessions.constEnd(); ++it) {
+            if (it.key() == conf.currentSessionKey())
+                continue;
+
+            QAction * a;
+            a = m_windowLoadProfileMenu->addAction(it.value());
+            a->setProperty("ProfileKey", it.key());
+            a = m_windowDeleteProfileMenu->addAction(it.value());
+            a->setProperty("ProfileKey", it.key());
+        }
     }
 }
 

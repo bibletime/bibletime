@@ -1,3 +1,6 @@
+2011-11-14 Jaak Ristioja <jaak@ristioja.ee>
+    * Completely substituted the old profile system with a BtConfig-based one.
+
 2011-11-12 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug 3425828 where the Mag window does not work with
       new versions of Qt. (Qt 4.7.4 + QWebKit 2.2 or later)

@@ -27,15 +27,8 @@ class CHTMLWriteWindow : public CPlainWriteWindow  {
     public:
         CHTMLWriteWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
 
-        /**
-        * Store the settings of this window in the given CProfileWindow object.
-        */
-        virtual void storeProfileSettings( Profile::CProfileWindow* );
-
-        /**
-        * Store the settings of this window in the given profile window.
-        */
-        virtual void applyProfileSettings( Profile::CProfileWindow* );
+        virtual void storeProfileSettings(const QString & windowGroup);
+        virtual void applyProfileSettings(const QString & windowGroup);
 
         /**
          * Returns true if the sync toolbar is enabled.

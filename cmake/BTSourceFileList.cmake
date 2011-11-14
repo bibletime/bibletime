@@ -230,15 +230,6 @@ SET(bibletime_SRC_FRONTEND_SETTINGSDIALOG
 
 SOURCE_GROUP("src\\frontend\\settingsdialog" FILES ${bibletime_SRC_FRONTEND_SETTINGSDIALOG})
 
-SET(bibletime_SRC_FRONTEND_PROFILE
-    # Profile manager frontend:
-    src/frontend/profile/cprofile.cpp
-    src/frontend/profile/cprofilemgr.cpp
-    src/frontend/profile/cprofilewindow.cpp
-)
-
-SOURCE_GROUP("src\\frontend\\profile" FILES ${bibletime_SRC_FRONTEND_PROFILE})
-
 SET(bibletime_SRC_FRONTEND_TIPDIALOG
     # Tip dialog:
     src/frontend/tips/bttipdialog.cpp
@@ -436,7 +427,6 @@ SET(bibletime_SOURCES
     ${bibletime_SRC_FRONTEND_SEARCHDIALOG_ANALYSIS}
     ${bibletime_SRC_FRONTEND_SETTINGSDIALOG}
     ${bibletime_SRC_FRONTEND_TIPDIALOG}
-    ${bibletime_SRC_FRONTEND_PROFILE}
     ${bibletime_SRC_FRONTEND_KEYCHOOSER}
     ${bibletime_SRC_FRONTEND_KEYCHOOSER_VERSEKEYCHOOSER}
     ${bibletime_SRC_FRONTEND_DISPLAY}

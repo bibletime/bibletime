@@ -20,11 +20,9 @@
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"
 #include "frontend/keychooser/ckeychooser.h"
-#include "frontend/profile/cprofilewindow.h"
 #include "util/directory.h"
 #include "util/cresmgr.h"
 
-using namespace Profile;
 
 CCommentaryReadWindow::CCommentaryReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent) : CLexiconReadWindow(modules, parent) {
 }
@@ -122,16 +120,20 @@ void CCommentaryReadWindow::initActions() {
     actionCollection()->readShortcuts("Commentary shortcuts");
 }
 
-void CCommentaryReadWindow::applyProfileSettings( CProfileWindow* profileWindow ) {
-    CLexiconReadWindow::applyProfileSettings(profileWindow);
-    if (profileWindow->windowSettings) {
-        m_syncButton->setChecked(true);
-    }
+void CCommentaryReadWindow::applyProfileSettings(const QString & windowGroup) {
+    CLexiconReadWindow::applyProfileSettings(windowGroup);
+
+    Q_ASSERT(windowGroup.endsWith('/'));
+    Q_ASSERT(m_syncButton);
+    m_syncButton->setChecked(btConfig().sessionValue<bool>(windowGroup + "syncEnabled", false));
 }
 
-void CCommentaryReadWindow::storeProfileSettings( CProfileWindow* profileWindow ) {
-    CLexiconReadWindow::storeProfileSettings(profileWindow);
-    profileWindow->windowSettings = m_syncButton->isChecked();
+void CCommentaryReadWindow::storeProfileSettings(const QString & windowGroup) {
+    CLexiconReadWindow::storeProfileSettings(windowGroup);
+
+    Q_ASSERT(windowGroup.endsWith('/'));
+    Q_ASSERT(m_syncButton);
+    btConfig().setSessionValue(windowGroup + "syncEnabled", m_syncButton->isChecked());
 }
 
 void CCommentaryReadWindow::initToolbars() {

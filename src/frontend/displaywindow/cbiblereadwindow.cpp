@@ -25,44 +25,19 @@
 #include "frontend/displaywindow/ccommentaryreadwindow.h"
 #include "frontend/displaywindow/btdisplaysettingsbutton.h"
 #include "frontend/keychooser/ckeychooser.h"
-#include "frontend/profile/cprofilewindow.h"
 #include "util/directory.h"
 #include "util/cresmgr.h"
 #include "util/tool.h"
 
 
-using namespace Profile;
+void CBibleReadWindow::applyProfileSettings(const QString & windowGroup) {
+    CLexiconReadWindow::applyProfileSettings(windowGroup);
 
-CBibleReadWindow::CBibleReadWindow(QList<CSwordModuleInfo*> moduleList, CMDIArea* parent)
-        : CLexiconReadWindow(moduleList, parent) {
-}
-
-CBibleReadWindow::~CBibleReadWindow() {
-}
-
-void CBibleReadWindow::applyProfileSettings(CProfileWindow* const settings) {
-    /**
-      \todo Make CProfileWindow properly handle these things so we wouldn't have
-            to mess around with bits.
-    */
-    CLexiconReadWindow::applyProfileSettings(settings);
-
-    int result = settings->windowSettings;
-
-    filterOptions().footnotes           = (result & 0x0001) != 0;
-    filterOptions().strongNumbers       = (result & 0x0002) != 0;
-    filterOptions().headings            = (result & 0x0004) != 0;
-    filterOptions().morphTags           = (result & 0x0008) != 0;
-    filterOptions().lemmas              = (result & 0x0010) != 0;
-    filterOptions().hebrewPoints        = (result & 0x0020) != 0;
-    filterOptions().hebrewCantillation  = (result & 0x0040) != 0;
-    filterOptions().greekAccents        = (result & 0x0080) != 0;
-    filterOptions().textualVariants     = (result & 0x0100) != 0;
-    filterOptions().redLetterWords      = (result & 0x0200) != 0;
-    filterOptions().scriptureReferences = (result & 0x0400) != 0;
-    filterOptions().morphSegmentation   = (result & 0x0800) != 0;
-    displayOptions().lineBreaks         = (result & 0x1000) != 0;
-    displayOptions().verseNumbers       = (result & 0x2000) != 0;
+    BtConfig & conf = btConfig();
+    conf.beginGroup(windowGroup);
+    filterOptions() = conf.getFilterOptions();
+    displayOptions() = conf.getDisplayOptions();
+    conf.endGroup();
 
     emit sigFilterOptionsChanged(filterOptions());
     emit sigDisplayOptionsChanged(displayOptions());
@@ -71,31 +46,14 @@ void CBibleReadWindow::applyProfileSettings(CProfileWindow* const settings) {
     lookup();
 }
 
-void CBibleReadWindow::storeProfileSettings( CProfileWindow * const settings) {
-    /**
-      \todo Make CProfileWindow properly handle these things so we wouldn't have
-            to mess around with bits.
-    */
+void CBibleReadWindow::storeProfileSettings(const QString & windowGroup) {
+    BtConfig & conf = btConfig();
+    conf.beginGroup(windowGroup);
+    conf.setFilterOptions(filterOptions());
+    conf.setDisplayOptions(displayOptions());
+    conf.endGroup();
 
-    int result = 0x0000;
-    if (filterOptions().footnotes)           result |= 0x0001;
-    if (filterOptions().strongNumbers)       result |= 0x0002;
-    if (filterOptions().headings)            result |= 0x0004;
-    if (filterOptions().morphTags)           result |= 0x0008;
-    if (filterOptions().lemmas)              result |= 0x0010;
-    if (filterOptions().hebrewPoints)        result |= 0x0020;
-    if (filterOptions().hebrewCantillation)  result |= 0x0040;
-    if (filterOptions().greekAccents)        result |= 0x0080;
-    if (filterOptions().textualVariants)     result |= 0x0100;
-    if (filterOptions().redLetterWords)      result |= 0x0200;
-    if (filterOptions().scriptureReferences) result |= 0x0400;
-    if (filterOptions().morphSegmentation)   result |= 0x0800;
-    if (displayOptions().lineBreaks)         result |= 0x1000;
-    if (displayOptions().verseNumbers)       result |= 0x2000;
-
-    settings->windowSettings = result;
-
-    CLexiconReadWindow::storeProfileSettings(settings);
+    CLexiconReadWindow::storeProfileSettings(windowGroup);
 }
 
 

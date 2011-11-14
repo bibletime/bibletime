@@ -47,7 +47,6 @@
 
 
 using namespace InfoDisplay;
-using namespace Profile;
 
 /**Initializes the view of this widget*/
 void BibleTime::initView() {
@@ -648,8 +647,6 @@ void BibleTime::initMenubar() {
     m_windowArrangementMenu->addAction(m_windowAutoCascadeAction);
     m_windowMenu->addMenu(m_windowArrangementMenu);
     m_windowMenu->addSeparator();
-    m_windowSaveProfileMenu = new QMenu(this);
-    m_windowMenu->addMenu(m_windowSaveProfileMenu);
     m_windowMenu->addAction(m_windowSaveToNewProfileAction);
     m_windowLoadProfileMenu = new QMenu(this);
     m_windowMenu->addMenu(m_windowLoadProfileMenu);
@@ -657,8 +654,6 @@ void BibleTime::initMenubar() {
     m_windowMenu->addMenu(m_windowDeleteProfileMenu);
     connect(m_windowLoadProfileMenu, SIGNAL(triggered(QAction*)),
             this,                    SLOT(loadProfile(QAction*)));
-    connect(m_windowSaveProfileMenu, SIGNAL(triggered(QAction*)),
-            this,                    SLOT(saveProfile(QAction*)));
     connect(m_windowDeleteProfileMenu, SIGNAL(triggered(QAction*)),
             this,                      SLOT(deleteProfile(QAction*)));
     refreshProfileMenus();
@@ -724,7 +719,6 @@ void BibleTime::retranslateUi() {
     m_windowMenu->setTitle(tr("&Window"));
         m_openWindowsMenu->setTitle(tr("O&pen windows"));
         m_windowArrangementMenu->setTitle(tr("&Arrangement mode"));
-        m_windowSaveProfileMenu->setTitle(tr("&Save session"));
         m_windowLoadProfileMenu->setTitle(tr("&Load session"));
         m_windowDeleteProfileMenu->setTitle(tr("&Delete session"));
     m_settingsMenu->setTitle(tr("Se&ttings"));
@@ -903,53 +897,6 @@ void BibleTime::initBackends() {
     // - delete all indices of modules where hasIndex() returns false
     backend->deleteOrphanedIndices();
 
-}
-
-void BibleTime::applyProfileSettings( CProfile* p ) {
-    Q_ASSERT(p);
-    if (!p) return;
-
-    //first Main Window geometry
-    restoreGeometry(p->getMainwindowGeometry());
-    restoreState(p->getMainwindowState());
-    m_windowFullscreenAction->setChecked(isFullScreen());
-
-    const CMDIArea::MDIArrangementMode newArrangementMode = p->getMDIArrangementMode();
-    //make sure actions are updated by calling the slot functions
-    //updatesEnabled in the MDI area is false atm, so changes won't actually be displayed yet
-    switch (newArrangementMode) {
-        case CMDIArea::ArrangementModeTileVertical:
-            slotAutoTileVertical();
-            break;
-        case CMDIArea::ArrangementModeTileHorizontal:
-            slotAutoTileHorizontal();
-            break;
-        case CMDIArea::ArrangementModeCascade:
-            slotAutoCascade();
-            break;
-        case CMDIArea::ArrangementModeTile:
-            slotAutoTile();
-            break;
-        case CMDIArea::ArrangementModeTabbed:
-            slotAutoTabbed();
-            break;
-        case CMDIArea::ArrangementModeManual:
-            slotManualArrangementMode();
-            break;
-        default:
-            slotAutoTileVertical();
-            break;
-    }
-    layout()->invalidate();
-}
-
-void BibleTime::storeProfileSettings( CProfile* p ) {
-    Q_ASSERT(p && m_windowFullscreenAction);
-    if (!p || !m_windowFullscreenAction) return;
-
-    p->setMainwindowState(saveState());
-    p->setMainwindowGeometry(saveGeometry());
-    p->setMDIArrangementMode(m_mdi->getMDIArrangementMode());
 }
 
 #if BT_DEBUG

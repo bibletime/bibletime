@@ -37,14 +37,8 @@ class CWriteWindow : public CDisplayWindow  {
         static void insertKeyboardActions( BtActionCollection* const a );
 
         CWriteWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
-        /**
-        * Store the settings of this window in the given CProfileWindow object.
-        */
-        virtual void storeProfileSettings(Profile::CProfileWindow * const settings);
-        /**
-        * Load the settings the given CProfileWindow object into this window.
-        */
-        virtual void applyProfileSettings(Profile::CProfileWindow * const settings);
+
+        virtual void storeProfileSettings(const QString & windowGroup);
 
         /** Initializes the signal / slot connections of this display window.*/
         virtual void initConnections();

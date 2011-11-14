@@ -29,14 +29,9 @@ class CCommentaryReadWindow : public CLexiconReadWindow  {
         static void insertKeyboardActions( BtActionCollection* const a );
 
         CCommentaryReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
-        /**
-        * Store the settings of this window in the given CProfileWindow object.
-        */
-        virtual void storeProfileSettings( Profile::CProfileWindow* profileWindow );
-        /**
-        * Store the settings of this window in the given profile window.
-        */
-        virtual void applyProfileSettings( Profile::CProfileWindow* profileWindow );
+
+        virtual void storeProfileSettings(const QString & windowGroup);
+        virtual void applyProfileSettings(const QString & windowGroup);
         virtual bool syncAllowed() const;
 
     public slots: // Public slots

@@ -19,13 +19,10 @@
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"
 #include "frontend/keychooser/ckeychooser.h"
-#include "frontend/profile/cprofilewindow.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
 #include "util/dialogutil.h"
 
-
-using namespace Profile;
 
 CPlainWriteWindow::CPlainWriteWindow(QList<CSwordModuleInfo*> moduleList, CMDIArea* parent) :
         CWriteWindow(moduleList, parent) {
@@ -98,20 +95,22 @@ void CPlainWriteWindow::initConnections() {
     QObject::connect(displayWidget()->connectionsProxy(), SIGNAL(textChanged()), this, SLOT(textChanged()) );
 }
 
-void CPlainWriteWindow::storeProfileSettings( CProfileWindow* profileWindow ) {
-    CWriteWindow::storeProfileSettings(profileWindow);
-    QAction* action = actionCollection()->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
-    Q_ASSERT(action != 0);
-    profileWindow->windowSettings = action->isChecked();
+void CPlainWriteWindow::storeProfileSettings(const QString & windowGroup) {
+    CWriteWindow::storeProfileSettings(windowGroup);
+
+    QAction * action = actionCollection()->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
+    Q_ASSERT(action);
+    Q_ASSERT(windowGroup.endsWith('/'));
+    btConfig().setSessionValue(windowGroup + "syncWindowEnabled", action->isChecked());
 }
 
-void CPlainWriteWindow::applyProfileSettings( CProfileWindow* profileWindow ) {
-    CWriteWindow::applyProfileSettings(profileWindow);
-    if (profileWindow->windowSettings) {
-        QAction* action = actionCollection()->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
-        Q_ASSERT(action != 0);
-        action->setChecked(true);
-    }
+void CPlainWriteWindow::applyProfileSettings(const QString & windowGroup) {
+    CWriteWindow::applyProfileSettings(windowGroup);
+
+    QAction * action = actionCollection()->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
+    Q_ASSERT(action != 0);
+    Q_ASSERT(windowGroup.endsWith('/'));
+    action->setChecked(btConfig().sessionValue<bool>(windowGroup + "syncWindowEnabled", false));
 }
 
 /** Saves the text for the current key. Directly writes the changed text into the module. */

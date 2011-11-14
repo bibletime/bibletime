@@ -40,8 +40,6 @@
 #include "util/directory.h"
 
 
-using namespace Profile;
-
 BibleTime *BibleTime::m_instance = 0;
 
 BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
@@ -108,10 +106,7 @@ BibleTime::~BibleTime() {
 #ifdef BT_DEBUG
     deleteDebugWindow();
 #endif
-    CProfile* p = m_profileMgr.startupProfile();
-    if (p) {
-        saveProfile(p);
-    }
+    saveProfile();
 }
 
 /** Creates a new presenter in the MDI area according to the type of the module. */
@@ -268,11 +263,8 @@ void BibleTime::processCommandline(bool ignoreSession, const QString &bibleKey) 
     }
 
     // Restore workspace if not not ignoring session data:
-    if (!ignoreSession) {
-        CProfile * p = m_profileMgr.startupProfile();
-        if (p)
-            loadProfile(p);
-    }
+    if (!ignoreSession)
+        reloadProfile();
 
     if (btConfig().value<bool>("state/crashedLastTime", false)) {
         return;

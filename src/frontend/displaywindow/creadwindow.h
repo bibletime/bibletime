@@ -19,15 +19,10 @@
 class BtActionCollection;
 class QResizeEvent;
 
-/** The base class for all read-only display windows.
-  *
-  * Inherits CDisplayWindow.
-  *
-  * Inherited by CLexiconReadWindow
-  *
-  * @author The BibleTime team
-  */
-class CReadWindow : public CDisplayWindow  {
+/**
+  \brief The base class for all read-only display windows.
+*/
+class CReadWindow: public CDisplayWindow {
         Q_OBJECT
     public:
 
@@ -35,15 +30,6 @@ class CReadWindow : public CDisplayWindow  {
         static void insertKeyboardActions( BtActionCollection* const a );
 
         CReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
-
-        /**
-        * Store the settings of this window in the given CProfileWindow object.
-        */
-        virtual void storeProfileSettings(Profile::CProfileWindow * const settings);
-        /**
-        * Load the settings the given CProfileWindow object into this window.
-        */
-        virtual void applyProfileSettings(Profile::CProfileWindow * const settings);
 
     protected:
         /**
