@@ -168,32 +168,56 @@ void BtConfig::setShortcuts( const QString& shortcutGroup, const QHash< QString,
     m_settings.endGroup();
 }
 
-FilterOptions BtConfig::getFilterOptions()
-{
-    FilterOptions options;
-
-    options.footnotes           = true; // Required for the info display
-    options.strongNumbers       = true; // get(strongNumbers);
-    options.headings            = sessionValue<int>("presentation/headings", true);
-    options.morphTags           = true; // Required for the info display
-    options.lemmas              = true; // Required for the info display
-    options.redLetterWords      = true;
-    options.hebrewPoints        = sessionValue<int>("presentation/hebrewPoints", true);
-    options.hebrewCantillation  = sessionValue<int>("presentation/hebrewCantillation", true);
-    options.greekAccents        = sessionValue<int>("presentation/greekAccents", true);
-    options.textualVariants     = sessionValue<int>("presentation/textualVariants", false);
-    options.scriptureReferences = sessionValue<int>("presentation/scriptureReferences", true);
-    options.morphSegmentation   = sessionValue<int>("presentation/morphSegmentation", true);
-
-    return options;
+FilterOptions BtConfig::getFilterOptions() {
+    FilterOptions os;
+    beginGroup("presentation");
+    os.footnotes           = sessionValue<bool>("footnotes", true);
+    os.strongNumbers       = sessionValue<bool>("strongNumbers", true);
+    os.headings            = sessionValue<bool>("headings", true);
+    os.morphTags           = sessionValue<bool>("morphTags", true);
+    os.lemmas              = sessionValue<bool>("lemmas", true);
+    os.redLetterWords      = sessionValue<bool>("redLetterWords", true);
+    os.hebrewPoints        = sessionValue<bool>("hebrewPoints", true);
+    os.hebrewCantillation  = sessionValue<bool>("hebrewCantillation", true);
+    os.greekAccents        = sessionValue<bool>("greekAccents", true);
+    os.textualVariants     = sessionValue<bool>("textualVariants", false);
+    os.scriptureReferences = sessionValue<bool>("scriptureReferences", true);
+    os.morphSegmentation   = sessionValue<bool>("morphSegmentation", true);
+    endGroup();
+    return os;
 }
 
-DisplayOptions BtConfig::getDisplayOptions()
-{
-    DisplayOptions options;
-    options.lineBreaks   = sessionValue<int>("presentation/lineBreaks", false);
-    options.verseNumbers = sessionValue<int>("presentation/verseNumbers", false);
-    return options;
+void BtConfig::setFilterOptions(const FilterOptions & os) {
+    beginGroup("presentation");
+    setSessionValue("footnotes", static_cast<bool>(os.footnotes));
+    setSessionValue("strongNumbers", static_cast<bool>(os.strongNumbers));
+    setSessionValue("headings", static_cast<bool>(os.headings));
+    setSessionValue("morphTags", static_cast<bool>(os.morphTags));
+    setSessionValue("lemmas", static_cast<bool>(os.lemmas));
+    setSessionValue("redLetterWords", static_cast<bool>(os.redLetterWords));
+    setSessionValue("hebrewPoints", static_cast<bool>(os.hebrewPoints));
+    setSessionValue("hebrewCantillation", static_cast<bool>(os.hebrewCantillation));
+    setSessionValue("greekAccents", static_cast<bool>(os.greekAccents));
+    setSessionValue("textualVariants", static_cast<bool>(os.textualVariants));
+    setSessionValue("scriptureReferences", static_cast<bool>(os.scriptureReferences));
+    setSessionValue("morphSegmentation", static_cast<bool>(os.morphSegmentation));
+    endGroup();
+}
+
+DisplayOptions BtConfig::getDisplayOptions() {
+    DisplayOptions os;
+    beginGroup("presentation");
+    os.lineBreaks   = sessionValue<bool>("lineBreaks", false);
+    os.verseNumbers = sessionValue<bool>("verseNumbers", false);
+    endGroup();
+    return os;
+}
+
+void BtConfig::setDisplayOptions(const DisplayOptions & os) {
+    beginGroup("presentation");
+    setSessionValue("lineBreaks", static_cast<bool>(os.lineBreaks));
+    setSessionValue("verseNumbers", static_cast<bool>(os.verseNumbers));
+    endGroup();
 }
 
 void BtConfig::setFontForLanguage(const CLanguageMgr::Language* const language, const FontSettingsPair &fontSettings)

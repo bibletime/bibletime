@@ -109,6 +109,13 @@ public: /* Methods: */
     FilterOptions getFilterOptions();
 
     /*!
+     * \brief Saves the current filter options.
+     *
+     * \param[in] options The filter options to save.
+     */
+    void setFilterOptions(const FilterOptions & options);
+
+    /*!
      * \brief Returns current display options.
      *
      * Returns a structure containing the current
@@ -117,6 +124,13 @@ public: /* Methods: */
      * \returns DisplayOptions structure containing display settings.
      */
     DisplayOptions getDisplayOptions();
+
+    /*!
+     * \brief Saves the current display options.
+     *
+     * \param[in] options The display options to save.
+     */
+    void setDisplayOptions(const DisplayOptions & options);
 
     /*!
      * Returns a default font that is suitable for the current language.
