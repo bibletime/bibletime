@@ -1,3 +1,6 @@
+2011-11-21 Jaak Ristioja <jaak@ristioja.ee>
+    * Released 2.8.3
+
 2011-11-12 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug 3425828 where the Mag window does not work with
       new versions of Qt. (Qt 4.7.4 + QWebKit 2.2 or later)
