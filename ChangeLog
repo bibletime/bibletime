@@ -1,3 +1,7 @@
+2011-11-21 Jaak Ristioja <jaak@ristioja.ee>
+    * Fixed the dialog buttons of the Tip of the Day dialog not being
+      translated. Thanks to Novák Géza for reporting this.
+
 2011-11-20 Jaak Ristioja <jaak@ristioja.ee>
     * Released 2.9 RC 2.
 

@@ -11,6 +11,7 @@
 
 #include "backend/config/cbtconfig.h"
 #include "util/cresmgr.h"
+#include "util/dialogutil.h"
 #include "util/directory.h"
 
 #include <QCheckBox>
@@ -85,6 +86,8 @@ BtTipDialog::BtTipDialog(QWidget *parent, Qt::WindowFlags wflags)
     m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Close,
                                        Qt::Horizontal,
                                        this);
+    util::prepareDialogBox(m_buttonBox);
+
     QPushButton *nextButton;
     nextButton = m_buttonBox->addButton(tr("Next Tip"),
                                         QDialogButtonBox::ActionRole);
