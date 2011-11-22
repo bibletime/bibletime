@@ -37,6 +37,8 @@ class BtLanguageSettingsPage : public BtConfigPage {
         /** Reimplemented from BtConfigPage. */
         virtual QString header() const;
 
+        static void resetLanguage();
+
     protected slots:
 
         // This slot is called when the "Use own font for language" button was clicked.
@@ -44,6 +46,11 @@ class BtLanguageSettingsPage : public BtConfigPage {
 
         // Called when a new font in the fonts page was selected.
         //void newDisplayWindowFontSelected(const QFont &);
+
+    private: /* Methods: */
+
+        static QVector<QString> bookNameAbbreviationsTryVector();
+        void initSwordLocaleCombo();
 
         // Called when the combobox contents is changed
         //void newDisplayWindowFontAreaSelected(const QString&);

@@ -24,11 +24,12 @@
 #include <swlocale.h>
 
 
+typedef std::list<sword::SWBuf>::const_iterator SBLCI;
+
+
 BtLanguageSettingsPage::BtLanguageSettingsPage(QWidget *parent)
         : BtConfigPage(parent)
 {
-    namespace DU = util::directory;
-
     Q_ASSERT(qobject_cast<QVBoxLayout*>(layout()) != 0);
     QVBoxLayout *mainLayout = static_cast<QVBoxLayout*>(layout());
 
@@ -47,93 +48,95 @@ BtLanguageSettingsPage::BtLanguageSettingsPage(QWidget *parent)
 
     mainLayout->addSpacerItem(new QSpacerItem(1,1, QSizePolicy::Fixed, QSizePolicy::Expanding));
 
-    QStringList languageNames;
-    languageNames.append(CLanguageMgr::instance()->languageForAbbrev("en_US")->translatedName());
-
-    std::list<sword::SWBuf> locales = sword::LocaleMgr::getSystemLocaleMgr()->getAvailableLocales();
-    for (std::list<sword::SWBuf>::const_iterator it = locales.begin(); it != locales.end(); it++) {
-        //    qWarning("working on %s", (*it).c_str());
-        const CLanguageMgr::Language * const l =
-            CLanguageMgr::instance()->languageForAbbrev( sword::LocaleMgr::getSystemLocaleMgr()->getLocale((*it).c_str())->getName() );
-
-        if (l->isValid()) {
-            languageNames.append( l->translatedName() );
-        }
-        else {
-            languageNames.append(
-                sword::LocaleMgr::getSystemLocaleMgr()->getLocale((*it).c_str())->getDescription()
-            );
-        }
-    } //for
-
-    languageNames.sort();
-    m_swordLocaleCombo->addItems( languageNames );
-
-    const CLanguageMgr::Language * const l =
-        CLanguageMgr::instance()->languageForAbbrev( CBTConfig::get(CBTConfig::language) );
-
-    QString currentLanguageName;
-    if ( l->isValid() && languageNames.contains(l->translatedName()) ) {     //tranlated language name is in the box
-        currentLanguageName = l->translatedName();
-    }
-    else {     //a language like "German Abbrevs" might be the language to set
-        sword::SWLocale* locale =
-            sword::LocaleMgr::getSystemLocaleMgr()->getLocale( CBTConfig::get(CBTConfig::language).toLocal8Bit() );
-        if (locale) {
-            currentLanguageName = QString::fromLatin1(locale->getDescription());
-        }
-    }
-
-    if (currentLanguageName.isEmpty()) {     // set english as default if nothing was chosen
-        Q_ASSERT(CLanguageMgr::instance()->languageForAbbrev("en_US"));
-        currentLanguageName = CLanguageMgr::instance()->languageForAbbrev("en_US")->translatedName();
-    }
-
-    //now set the item with the right name as current item
-    for (int i = 0; i < m_swordLocaleCombo->count(); ++i) {
-        if (currentLanguageName == m_swordLocaleCombo->itemText(i)) {
-            m_swordLocaleCombo->setCurrentIndex(i);
-            break; //item found, finish the loop
-        }
-    }
-
+    initSwordLocaleCombo();
 }
-
 
 BtLanguageSettingsPage::~BtLanguageSettingsPage() {
 }
 
 void BtLanguageSettingsPage::save() {
+    CBTConfig::set(CBTConfig::language, m_swordLocaleCombo->itemData(m_swordLocaleCombo->currentIndex()).toString());
+}
 
-    QString languageAbbrev;
+void BtLanguageSettingsPage::resetLanguage() {
+    QVector<QString> atv = bookNameAbbreviationsTryVector();
 
-    const QString currentLanguageName = m_swordLocaleCombo->currentText();
-    const CLanguageMgr::Language * const l = CLanguageMgr::instance()->languageForTranslatedName( currentLanguageName );
-
-    if (l && l->isValid()) {
-        languageAbbrev = l->abbrev();
-    }
-    else {     //it can be the lang abbrev like de_abbrev or the Sword description
-        std::list <sword::SWBuf> locales = sword::LocaleMgr::getSystemLocaleMgr()->getAvailableLocales();
-
-        for (std::list <sword::SWBuf>::iterator it = locales.begin(); it != locales.end(); it++) {
-            sword::SWLocale* locale = sword::LocaleMgr::getSystemLocaleMgr()->getLocale((*it).c_str());
-            Q_ASSERT(locale);
-
-            if ( locale && (QString::fromLatin1(locale->getDescription()) == currentLanguageName) ) {
-                languageAbbrev = QString::fromLatin1(locale->getName()); //we found the abbrevation for the current language
-                break;
+    QString best = "en_US";
+    Q_ASSERT(atv.contains(best));
+    int i = atv.indexOf(best);
+    if (i > 0) {
+        atv.resize(i);
+        const std::list<sword::SWBuf> locales = sword::LocaleMgr::getSystemLocaleMgr()->getAvailableLocales();
+        for (SBLCI it = locales.begin(); it != locales.end(); ++it) {
+            const char * abbr = sword::LocaleMgr::getSystemLocaleMgr()->getLocale((*it).c_str())->getName();
+            i = atv.indexOf(abbr);
+            if (i >= 0) {
+                best = abbr;
+                if (i == 0)
+                    break;
+                atv.resize(i);
             }
         }
+    }
+    CBTConfig::set(CBTConfig::language, best);
+}
 
-        if (languageAbbrev.isEmpty()) {
-            languageAbbrev = currentLanguageName; //probably a non-standard locale name like de_abbrev
+QVector<QString> BtLanguageSettingsPage::bookNameAbbreviationsTryVector() {
+    QVector<QString> atv;
+    atv.reserve(4);
+    {
+        QString settingsLanguage = CBTConfig::get(CBTConfig::language);
+        if (!settingsLanguage.isEmpty())
+            atv.append(settingsLanguage);
+    }
+    {
+        const QString localeLanguageAndCountry = QLocale::system().name();
+        if (!localeLanguageAndCountry.isEmpty()) {
+            atv.append(localeLanguageAndCountry);
+            int i = localeLanguageAndCountry.indexOf('_');
+            if (i > 0)
+                atv.append(localeLanguageAndCountry.left(i));
+        }
+    }
+    Q_ASSERT(CLanguageMgr::instance()->languageForAbbrev("en_US"));
+    atv.append("en_US");
+    return atv;
+}
+
+void BtLanguageSettingsPage::initSwordLocaleCombo() {
+    typedef QMap<QString, QString>::const_iterator SSMCI;
+
+    QMap<QString, QString> languageNames;
+    Q_ASSERT(CLanguageMgr::instance()->languageForAbbrev("en_US"));
+    languageNames.insert(CLanguageMgr::instance()->languageForAbbrev("en_US")->translatedName(), "en_US");
+
+    const std::list<sword::SWBuf> locales = sword::LocaleMgr::getSystemLocaleMgr()->getAvailableLocales();
+    for (SBLCI it = locales.begin(); it != locales.end(); ++it) {
+        const char * abbreviation = sword::LocaleMgr::getSystemLocaleMgr()->getLocale((*it).c_str())->getName();
+        const CLanguageMgr::Language * const l = CLanguageMgr::instance()->languageForAbbrev(abbreviation);
+
+        if (l->isValid()) {
+            languageNames.insert(l->translatedName(), abbreviation);
+        } else {
+            languageNames.insert(
+                sword::LocaleMgr::getSystemLocaleMgr()->getLocale((*it).c_str())->getDescription(),
+                abbreviation);
         }
     }
 
-    if (!languageAbbrev.isEmpty()) {
-        CBTConfig::set(CBTConfig::language, languageAbbrev);
+    int index = 0;
+    QVector<QString> atv = bookNameAbbreviationsTryVector();
+    for (SSMCI it = languageNames.constBegin(); it != languageNames.constEnd(); ++it) {
+        if (!atv.isEmpty()) {
+            int i = atv.indexOf(it.value());
+            if (i >= 0) {
+                atv.resize(i);
+                index = m_swordLocaleCombo->count();
+            }
+        }
+        m_swordLocaleCombo->addItem(it.key(), it.value());
     }
+    m_swordLocaleCombo->setCurrentIndex(index);
 }
 
 const QIcon &BtLanguageSettingsPage::icon() const {
