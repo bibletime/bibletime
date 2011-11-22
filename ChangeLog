@@ -1,3 +1,6 @@
+2011-11-23 Jaak Ristioja <jaak@ristioja.ee>
+    * Fixed a bug where the book names language was not correctly set.
+
 2011-11-21 Jaak Ristioja <jaak@ristioja.ee>
     * Fixed the dialog buttons of the Tip of the Day dialog not being
       translated. Thanks to Novák Géza for reporting this.

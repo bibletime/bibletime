@@ -30,8 +30,12 @@ class BtLanguageSettingsPage: public BtConfigDialog::Page {
 
         void save();
 
+        static void resetLanguage();
+
     private: /* Methods: */
 
+        static QVector<QString> bookNameAbbreviationsTryVector();
+        void initSwordLocaleCombo();
         void retranslateUi();
 
     private: /* Fields: */
