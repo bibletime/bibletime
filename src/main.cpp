@@ -22,6 +22,7 @@
 #include "bibletime.h"
 #include "bibletime_dbus_adaptor.h"
 #include "bibletimeapp.h"
+#include "frontend/settingsdialogs/btlanguagesettings.h"
 #include "util/directory.h"
 
 
@@ -292,8 +293,15 @@ int main(int argc, char* argv[]) {
 
     app.setProperty("--debug", QVariant(showDebugMessages));
 
-//    setSignalHandler(signalHandler);
+    /*
+      Set book names language if not set. This is a hack. We do this call here,
+      because we need to keep the setting displayed in BtLanguageSettingsPage in
+      sync with the language of the book names displayed, so that both would
+      always use the same setting.
+    */
+    BtLanguageSettingsPage::resetLanguage(); /// \todo refactor this hack
 
+    // Initialize display template manager:
     if (!app.initDisplayTemplateManager()) {
         qFatal("Error initializing display template manager!");
         return EXIT_FAILURE;
