@@ -1,5 +1,6 @@
 2011-11-23 Jaak Ristioja <jaak@ristioja.ee>
     * Fixed a bug where the book names language was not correctly set.
+    * Fixed compatibility with Qt earlier than 4.7.
 
 2011-11-21 Jaak Ristioja <jaak@ristioja.ee>
     * Fixed the dialog buttons of the Tip of the Day dialog not being
