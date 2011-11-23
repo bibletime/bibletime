@@ -209,8 +209,7 @@ int main(int argc, char* argv[]) {
     }
 
     // Initialize random number generator:
-    const QDateTime datetime(QDateTime::currentDateTime());
-    srand(datetime.currentMSecsSinceEpoch() + datetime.toTime_t());
+    srand(qHash(QDateTime::currentDateTime().toString(Qt::ISODate)));
 
     // Setup debugging:
 #ifdef Q_WS_WIN
