@@ -124,7 +124,10 @@ void CDisplayWindow::storeProfileSettings(const QString & windowGroup) {
     conf.beginGroup(windowGroup);
 
     QWidget * w = getProfileWindow();
-    conf.setSessionValue("geometry", w->saveGeometry());
+
+    QRect rect(w->x(), w->y(), w->width(), w->height());
+    conf.setSessionValue<QRect>("windowRect", rect);
+
     conf.setSessionValue("maximized", w->isMaximized());
 
     bool hasFocus = (w == dynamic_cast<CDisplayWindow *>(mdi()->activeSubWindow()));
@@ -162,7 +165,11 @@ void CDisplayWindow::applyProfileSettings(const QString & windowGroup) {
     setUpdatesEnabled(false);
 
     QWidget * w = getProfileWindow();
-    w->restoreGeometry(conf.sessionValue<QByteArray>("geometry"));
+
+    QRect rect = conf.sessionValue<QRect>("windowRect");
+    w->resize(rect.width(), rect.height());
+    w->move(rect.x(), rect.y());
+
     if (conf.sessionValue<bool>("maximized"))
         w->showMaximized();
 
