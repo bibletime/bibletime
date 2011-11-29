@@ -125,7 +125,12 @@ void CDisplayWindow::storeProfileSettings(const QString & windowGroup) {
 
     QWidget * w = getProfileWindow();
 
-    QRect rect(w->x(), w->y(), w->width(), w->height());
+    /**
+      \note We don't use saveGeometry/restoreGeometry for MDI subwindows,
+            because they give slightly incorrect results with some window
+            managers. Might be related to Qt bug QTBUG-7634.
+    */
+    const QRect rect(w->x(), w->y(), w->width(), w->height());
     conf.setSessionValue<QRect>("windowRect", rect);
 
     conf.setSessionValue("maximized", w->isMaximized());
@@ -166,7 +171,12 @@ void CDisplayWindow::applyProfileSettings(const QString & windowGroup) {
 
     QWidget * w = getProfileWindow();
 
-    QRect rect = conf.sessionValue<QRect>("windowRect");
+    /**
+      \note We don't use restoreGeometry/saveGeometry for MDI subwindows,
+            because they give slightly incorrect results with some window
+            managers. Might be related to Qt bug QTBUG-7634.
+    */
+    const QRect rect = conf.sessionValue<QRect>("windowRect");
     w->resize(rect.width(), rect.height());
     w->move(rect.x(), rect.y());
 
