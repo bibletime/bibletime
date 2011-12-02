@@ -14,9 +14,9 @@
 #include <QWidget>
 
 
+class BtTextFiltersTab;
 class CConfigurationDialog;
 class StandardWorksTab;
-class TextFiltersTab;
 
 class CSwordSettingsPage: public BtConfigDialog::Page {
 
@@ -24,7 +24,7 @@ class CSwordSettingsPage: public BtConfigDialog::Page {
 
     public: /* Methods: */
 
-        CSwordSettingsPage(CConfigurationDialog *parent = 0);
+        CSwordSettingsPage(CConfigurationDialog * parent = 0);
 
         void save();
 
@@ -34,9 +34,9 @@ class CSwordSettingsPage: public BtConfigDialog::Page {
 
     private: /* Fields: */
 
-        QTabWidget *m_tabWidget;
-        StandardWorksTab *m_worksTab;
-        TextFiltersTab *m_filtersTab;
+        QTabWidget * m_tabWidget;
+        StandardWorksTab * m_worksTab;
+        BtTextFiltersTab * m_filtersTab;
 
 };
 

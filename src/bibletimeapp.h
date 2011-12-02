@@ -18,6 +18,9 @@
   delete all created module objects.
 */
 class BibleTimeApp : public QApplication {
+
+    Q_OBJECT
+
     public:
         BibleTimeApp(int &argc, char **argv);
         ~BibleTimeApp();

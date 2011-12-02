@@ -218,6 +218,8 @@ SET(bibletime_SRC_FRONTEND_SETTINGSDIALOG
     # Settings dialog (configuration):
     src/frontend/settingsdialogs/btshortcutsdialog.cpp
     src/frontend/settingsdialogs/btshortcutseditor.cpp
+    src/frontend/settingsdialogs/bttextfilterstab.cpp
+    src/frontend/settingsdialogs/btstandardworkstab.cpp
     src/frontend/settingsdialogs/cacceleratorsettings.cpp
     src/frontend/settingsdialogs/cconfigurationdialog.cpp
     src/frontend/settingsdialogs/cdisplaysettings.cpp
@@ -303,6 +305,7 @@ SOURCE_GROUP("src\\frontend\\displaywindow" FILES ${bibletime_SRC_FRONTEND_DISPL
 # Mocable headers:
 SET(bibletime_MOCABLE_HEADERS
     src/bibletime.h
+    src/bibletimeapp.h
     src/bibletime_dbus_adaptor.h
     src/backend/bookshelfmodel/btbookshelffiltermodel.h
     src/backend/bookshelfmodel/btbookshelfmodel.h
@@ -394,6 +397,8 @@ SET(bibletime_MOCABLE_HEADERS
     src/frontend/searchdialog/csearchresultview.h
     src/frontend/settingsdialogs/btshortcutsdialog.h
     src/frontend/settingsdialogs/btshortcutseditor.h
+    src/frontend/settingsdialogs/bttextfilterstab.h
+    src/frontend/settingsdialogs/btstandardworkstab.h
     src/frontend/settingsdialogs/cacceleratorsettings.h
     src/frontend/settingsdialogs/cconfigurationdialog.h
     src/frontend/settingsdialogs/cdisplaysettings.h
