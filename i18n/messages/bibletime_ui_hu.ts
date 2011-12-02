@@ -6,7 +6,7 @@
     <message>
         <source></source>
         <translatorcomment>Bibletime felhasználói felület fordítás
-Copyright (C) 2010 The Bibletime Team, http://www.bibletime.info
+Copyright (C) 2011 The Bibletime Team, http://www.bibletime.info
 Ez a  fájl a BibleTime licenszelésével megegyező licensszel terjeszthető.</translatorcomment>
         <translation></translation>
     </message>
@@ -4697,7 +4697,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="137"/>
         <source>Select a scope from the list to edit the searchranges</source>
-        <translation type="unfinished"></translation>
+        <translation>Válasszon hatókört a listából, hogy módosíthassa a keresési kört</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="148"/>
@@ -4712,7 +4712,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="152"/>
         <source>Change the search ranges of the selected searchscope item. Have a look at the predefined search scopes to see how search ranges are constructed.</source>
-        <translation type="unfinished"></translation>
+        <translation>A kiválasztott keresési kör megváltoztatása. Vessen egy pillantást az előre definiált hatókörökről, hogy lássa, hogyan épülnek fel a keresési körök.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="157"/>
