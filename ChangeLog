@@ -1,3 +1,6 @@
+2011-12-02 Jaak Ristioja <jaak@ristioja.ee>
+    * Added Portugese translation by Mário Castanheira.
+
 2011-11-23 Jaak Ristioja <jaak@ristioja.ee>
     * Fixed a bug where the book names language was not correctly set.
     * Fixed compatibility with Qt earlier than 4.7.
