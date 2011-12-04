@@ -158,12 +158,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_slots.cpp" line="602"/>
         <source>Session already exists</source>
-        <translation type="unfinished"></translation>
+        <translation>Session already exists</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_slots.cpp" line="603"/>
         <source>Session with the name &quot;%1&quot; already exists. Please provide a different name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Session with the name &quot;%1&quot; already exists. Please provide a different name.</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="108"/>
@@ -844,12 +844,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="87"/>
         <source>Error loading configuration!</source>
-        <translation type="unfinished"></translation>
+        <translation>Error loading configuration!</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="88"/>
         <source>Failed to load BibleTime&apos;s configuration, because it appears that the configuration file corresponds to a newer version of BibleTime. This is likely caused by BibleTime being downgraded. Loading the new configuration file may result in &lt;b&gt;loss of data&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Do you still want to try to load the new configuration file? Press &quot;No&quot; to quit BibleTime immediately.</source>
-        <translation type="unfinished"></translation>
+        <translation>Failed to load BibleTime&apos;s configuration, because it appears that the configuration file corresponds to a newer version of BibleTime. This is likely caused by BibleTime being downgraded. Loading the new configuration file may result in &lt;b&gt;loss of data&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Do you still want to try to load the new configuration file? Press &quot;No&quot; to quit BibleTime immediately.</translation>
     </message>
 </context>
 <context>
@@ -857,7 +857,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/backend/config/btconfigcore.cpp" line="64"/>
         <source>Default Session</source>
-        <translation type="unfinished"></translation>
+        <translation>Default Session</translation>
     </message>
 </context>
 <context>
@@ -1657,52 +1657,52 @@ shortcut</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="75"/>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
-        <translation type="unfinished">Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</translation>
+        <translation>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="79"/>
         <source>Insert line break after each verse</source>
-        <translation type="unfinished">Insert line break after each verse</translation>
+        <translation>Insert line break after each verse</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="80"/>
         <source>Show verse numbers</source>
-        <translation type="unfinished">Show verse numbers</translation>
+        <translation>Show verse numbers</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="81"/>
         <source>Show section headings</source>
-        <translation type="unfinished">Show section headings</translation>
+        <translation>Show section headings</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="82"/>
         <source>Show scripture cross-references</source>
-        <translation type="unfinished">Show scripture cross-references</translation>
+        <translation>Show scripture cross-references</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="83"/>
         <source>Show Greek accents</source>
-        <translation type="unfinished">Show Greek accents</translation>
+        <translation>Show Greek accents</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="84"/>
         <source>Show Hebrew vowel points</source>
-        <translation type="unfinished">Show Hebrew vowel points</translation>
+        <translation>Show Hebrew vowel points</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="85"/>
         <source>Show Hebrew cantillation marks</source>
-        <translation type="unfinished">Show Hebrew cantillation marks</translation>
+        <translation>Show Hebrew cantillation marks</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="86"/>
         <source>Show morph segmentation</source>
-        <translation type="unfinished">Show morph segmentation</translation>
+        <translation>Show morph segmentation</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="87"/>
         <source>Use textual variants</source>
-        <translation type="unfinished">Use textual variants</translation>
+        <translation>Use textual variants</translation>
     </message>
 </context>
 <context>
