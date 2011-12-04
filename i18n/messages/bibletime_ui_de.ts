@@ -54,7 +54,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>&amp;Save session</source>
-        <translation>Sitzung &amp;speichern</translation>
+        <translation type="obsolete">Sitzung &amp;speichern</translation>
     </message>
     <message>
         <source>&amp;Load session</source>
@@ -380,6 +380,14 @@ This file is distributed under the same license as the Bibetime package.</transl
         <source>Toggle visibility of the mag window</source>
         <translation>Umschalten der Sichtbarkeit des Lupen-Fensters</translation>
     </message>
+    <message>
+        <source>Session already exists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Session with the name &quot;%1&quot; already exists. Please provide a different name.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BibleTimeApp</name>
@@ -694,6 +702,24 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <source>Select chapter</source>
         <translation>Kapitel auswählen</translation>
+    </message>
+</context>
+<context>
+    <name>BtConfig</name>
+    <message>
+        <source>Error loading configuration!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to load BibleTime&apos;s configuration, because it appears that the configuration file corresponds to a newer version of BibleTime. This is likely caused by BibleTime being downgraded. Loading the new configuration file may result in &lt;b&gt;loss of data&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Do you still want to try to load the new configuration file? Press &quot;No&quot; to quit BibleTime immediately.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>BtConfigCore</name>
+    <message>
+        <source>Default Session</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1482,6 +1508,49 @@ shortcut</source>
     <message>
         <source>No sources were found in the SWORD configuration and BibleTime couldn&apos;t create a default source. Check your SWORD configuration and that the configuration path is writable. Then restart the Bookshelf Manager.</source>
         <translation type="obsolete">In der SWORD-Konfiguration wurden keine Quellen gefunden und BibleTime konnte keine Standard-Quelle erstellen. Überprüfen Sie Ihre SWORD-Konfiguration und dass der Konfigurations-Pfad beschreibbar ist. Dann starten Sie die Bücherregal-Verwaltung erneut.</translation>
+    </message>
+</context>
+<context>
+    <name>BtTextFiltersTab</name>
+    <message>
+        <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
+        <translation type="unfinished">Filter kontrollieren die Text-Erscheinung. Hier können Sie Standard-Einstellungen für alle Filter spezifizieren. Sie können diese Einstellungen in jedem Anzeige-Fenster übergehen.</translation>
+    </message>
+    <message>
+        <source>Insert line break after each verse</source>
+        <translation type="unfinished">Zeilenumbruch nach jedem Vers einfügen</translation>
+    </message>
+    <message>
+        <source>Show verse numbers</source>
+        <translation type="unfinished">Versnummern anzeigen</translation>
+    </message>
+    <message>
+        <source>Show section headings</source>
+        <translation type="unfinished">Abschnittsüberschriften anzeigen</translation>
+    </message>
+    <message>
+        <source>Show scripture cross-references</source>
+        <translation type="unfinished">Querverweise auf Bibelstellen anzeigen</translation>
+    </message>
+    <message>
+        <source>Show Greek accents</source>
+        <translation type="unfinished">Griechische Akzente anzeigen</translation>
+    </message>
+    <message>
+        <source>Show Hebrew vowel points</source>
+        <translation type="unfinished">Hebräische Vokalzeichen anzeigen</translation>
+    </message>
+    <message>
+        <source>Show Hebrew cantillation marks</source>
+        <translation type="unfinished">Hebräische Kantillationszeichen anzeigen</translation>
+    </message>
+    <message>
+        <source>Show morph segmentation</source>
+        <translation type="unfinished">Morphologische Segmentierung anzeigen</translation>
+    </message>
+    <message>
+        <source>Use textual variants</source>
+        <translation type="unfinished">Textvarianten verwenden</translation>
     </message>
 </context>
 <context>
@@ -4321,43 +4390,43 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     <name>TextFiltersTab</name>
     <message>
         <source>Insert line break after each verse</source>
-        <translation>Zeilenumbruch nach jedem Vers einfügen</translation>
+        <translation type="obsolete">Zeilenumbruch nach jedem Vers einfügen</translation>
     </message>
     <message>
         <source>Show verse numbers</source>
-        <translation>Versnummern anzeigen</translation>
+        <translation type="obsolete">Versnummern anzeigen</translation>
     </message>
     <message>
         <source>Show section headings</source>
-        <translation>Abschnittsüberschriften anzeigen</translation>
+        <translation type="obsolete">Abschnittsüberschriften anzeigen</translation>
     </message>
     <message>
         <source>Show scripture cross-references</source>
-        <translation>Querverweise auf Bibelstellen anzeigen</translation>
+        <translation type="obsolete">Querverweise auf Bibelstellen anzeigen</translation>
     </message>
     <message>
         <source>Show Greek accents</source>
-        <translation>Griechische Akzente anzeigen</translation>
+        <translation type="obsolete">Griechische Akzente anzeigen</translation>
     </message>
     <message>
         <source>Show Hebrew vowel points</source>
-        <translation>Hebräische Vokalzeichen anzeigen</translation>
+        <translation type="obsolete">Hebräische Vokalzeichen anzeigen</translation>
     </message>
     <message>
         <source>Show Hebrew cantillation marks</source>
-        <translation>Hebräische Kantillationszeichen anzeigen</translation>
+        <translation type="obsolete">Hebräische Kantillationszeichen anzeigen</translation>
     </message>
     <message>
         <source>Show morph segmentation</source>
-        <translation>Morphologische Segmentierung anzeigen</translation>
+        <translation type="obsolete">Morphologische Segmentierung anzeigen</translation>
     </message>
     <message>
         <source>Use textual variants</source>
-        <translation>Textvarianten verwenden</translation>
+        <translation type="obsolete">Textvarianten verwenden</translation>
     </message>
     <message>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
-        <translation>Filter kontrollieren die Text-Erscheinung. Hier können Sie Standard-Einstellungen für alle Filter spezifizieren. Sie können diese Einstellungen in jedem Anzeige-Fenster übergehen.</translation>
+        <translation type="obsolete">Filter kontrollieren die Text-Erscheinung. Hier können Sie Standard-Einstellungen für alle Filter spezifizieren. Sie können diese Einstellungen in jedem Anzeige-Fenster übergehen.</translation>
     </message>
     <message>
         <source></source>
