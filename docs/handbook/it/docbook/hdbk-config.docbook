@@ -11,7 +11,7 @@ selezionando <menuchoice> <guimenu>Impostazioni</guimenu> </menuchoice>
 
     <sect2 id="hdbk-config-bt-display">
       <title>
-        <guimenu>Display</guimenu>
+        <guimenu>Visualizzazione</guimenu>
       </title>
       <para>Il comportamento all'avvio può essere personalizzato. Seleziona tra le
 seguenti opzioni: 
@@ -27,7 +27,7 @@ vedrai un'anteprima nel pannello di destra.</para>
 
     <sect2 id="hdbk-config-bt-desk">
       <title>
-        <guimenu>Desk</guimenu>
+        <guimenu>Scrivania</guimenu>
       </title>
       <para>Molte caratteristiche fornite dal &sword; backend possono essere
 personalizzate in &bibletime;. Queste caratteristiche sono documentate nella
@@ -42,7 +42,7 @@ controllare l'aspetto del testo.</para>
 
     <sect2 id="hdbk-config-bt-languages">
       <title>
-        <guimenu>Languages</guimenu>
+        <guimenu>Lingue</guimenu>
       </title>
       <para>Qui puoi specificare che lingua deve essere usata per i nomi dei libri della
 Bibbia. Imposta la tua lingua nativa, se è disponibile, e ti sentirai a
@@ -56,7 +56,7 @@ specificare un carattere personalizzato per ogni lingua.</para>
         <imageobject> <imagedata fileref="ss_configfonts.png" width="100%"
 contentdepth="100%" scalefit="1" format="PNG" /> </imageobject>
         <textobject>
-          <phrase>Options Dialog - fonts</phrase>
+          <phrase>Finestra Opzioni - caratteri</phrase>
         </textobject>
         <caption>
           <para>La Finestra Opzioni - Caratteri.</para>
@@ -125,7 +125,7 @@ usare diversi caratteri per diverse lingue.</para>
                 <entry>
                   <ulink
 url="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;cat_id=FontDownloads">
-SIL unicode fonts</ulink>
+SIL caratteri unicode</ulink>
                 </entry>
                 <entry>Eccellenti caratteri Unicode dal Summer Institute of Linguistics.</entry>
               </row>
@@ -137,8 +137,8 @@ SIL unicode fonts</ulink>
               </row>
               <row>
                 <entry>
-                  <ulink url="ftp://ftp.crosswire.org/pub/sword/iso/latest/FONTS/">
-Crosswire's font directory</ulink>
+                  <ulink url="ftp://ftp.crosswire.org/pub/sword/iso/latest/FONTS/"> caratteri
+di Crosswire</ulink>
                 </entry>
 
                 <entry>Diversi caratteri disponibili dal sito ftp di &cbs;.</entry>
@@ -176,7 +176,7 @@ caratteri Unicode e i caratteri Unicode che le supportano</ulink>).</para>
 
     <sect2 id="hdbk-config-bt-shortcuts">
       <title>
-        <guimenu>Shortcuts</guimenu>
+        <guimenu>Scorciatoie</guimenu>
       </title>
 
       <para>Le scorciatoie sono speciali comandi da tastiera che possono essere usati al
@@ -191,8 +191,8 @@ maggiormente.</para>
 	<imagedata fileref="ss_shortcuts.png" width="100%" contentdepth="100%" scalefit="1" format="PNG" />
       </imageobject>
 
-      <para>In the preceding example, F2, Bible Study HowTo has a secondary shortcut
-defined, CTRL+2.</para>
+      <para>Nell'esempio precedente, F2, l'HowTo per lo studio della Bibbia ha una
+scorciatoia secondaria definita, CTRL+2.</para>
     </sect2>
   </sect1>
 </chapter>
