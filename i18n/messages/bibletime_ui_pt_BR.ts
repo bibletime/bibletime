@@ -22,452 +22,793 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BibleTime</name>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="722"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="714"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>&amp;File</source>
         <translation>&amp;Arquivo</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="723"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="715"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>&amp;View</source>
         <translation>E&amp;xibir</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="726"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="718"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>&amp;Search</source>
         <translation>&amp;Procurar</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="727"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="719"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>&amp;Window</source>
         <translation>&amp;Janela</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="733"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="724"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Se&amp;ttings</source>
         <translation>&amp;Configurações</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="734"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="725"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>&amp;Help</source>
         <translation>Aju&amp;da</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="122"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="119"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>&amp;Show toolbar</source>
         <translation>&amp;Exibir barra de ferramentas</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="115"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="112"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>&amp;Fullscreen mode</source>
         <translation>&amp;Modo tela cheia</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="108"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="105"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>&amp;Quit</source>
         <translation>&amp;Sair</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="255"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="252"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Open the Bible study HowTo included with BibleTime.&lt;br/&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
         <translation>Abra o estudo bíblico &quot;Como Fazer&quot; incluído no BibleTime. &lt;br/&gt; Este &quot;Como Fazer&quot; é uma introdução a o estudo bíblico de maneira eficiente.</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="260"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="257"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Information about the BibleTime program</source>
         <translation>Informações sobre o BibleTime</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="730"/>
+=======
+>>>>>>> 886b0ef... - Sync to recent development
         <source>&amp;Save session</source>
-        <translation>&amp;Salvar sessão</translation>
+        <translation type="obsolete">&amp;Salvar sessão</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="731"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="722"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>&amp;Load session</source>
         <translation>&amp;Carregar sessão</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="732"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="723"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>&amp;Delete session</source>
         <translation>&amp;Apagar sessão</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="729"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="721"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>&amp;Arrangement mode</source>
         <translation>Mod&amp;alidade do arranjo</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="148"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="145"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>&amp;Manual mode</source>
         <translation>&amp;Modo manual</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="155"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="152"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Auto-tile &amp;vertically</source>
         <translation>Titulo &amp;vertical automático</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="162"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="159"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Auto-tile &amp;horizontally</source>
         <translation>Titulo &amp;horizontal automático</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="183"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="180"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Auto-&amp;cascade</source>
         <translation>&amp;Cascata automática</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="190"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="187"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>&amp;Cascade</source>
         <translation>&amp;Cascata</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="204"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="201"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Tile &amp;vertically</source>
         <translation>Organizar &amp;verticalmente</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="211"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="208"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Tile &amp;horizontally</source>
         <translation>Organizar &amp;horizontalmente</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="225"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="222"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Cl&amp;ose all windows</source>
         <translation>Fechar t&amp;odas as janelas</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="228"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="225"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Close all open windows inside BibleTime</source>
         <translation>Fechar todas as janelas abetas no BibleTime</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="245"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="242"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>&amp;Handbook</source>
         <translation>&amp;Manual</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="252"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="249"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>&amp;Bible Study Howto</source>
         <translation>Estudo &amp;Bíblico HowTo</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_slots.cpp" line="559"/>
+=======
+        <location filename="../../src/bibletime_slots.cpp" line="594"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Please enter a name for the new session.</source>
         <translation>Por favor digite um nome para a nova sessão.</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="111"/>
+=======
+        <location filename="../../src/bibletime_slots.cpp" line="602"/>
+        <source>Session already exists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_slots.cpp" line="603"/>
+        <source>Session with the name &quot;%1&quot; already exists. Please provide a different name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="108"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Quit BibleTime</source>
         <translation>Sair do BibleTime</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="118"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="115"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Toggle fullscreen mode of the main window</source>
         <translation>Mudar a janela principal para o modo tela cheia</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="127"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="124"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Search in &amp;open works...</source>
         <translation>Procurar nas &amp;obras abertos...</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="134"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="131"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Search in standard &amp;Bible...</source>
         <translation>Procurar na &amp;Bíblia padrão...</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="141"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="138"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Save as &amp;new session...</source>
         <translation>Salvar como &amp;nova sassão...</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="144"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="141"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Create and save a new session</source>
         <translation>Criar e salvar uma nova sessão</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="151"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="148"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Manually arrange the open windows</source>
         <translation>Organizar manualmente as janelas abertas</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="158"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="155"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Automatically tile the open windows vertically (arrange side by side)</source>
         <translation>Organizar automaticamente as janelas abertas verticalmente (arranjar lado a lado)</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="165"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="162"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Automatically tile the open windows horizontally (arrange on top of each other)</source>
         <translation>Organizar automaticamente as janelas abertas horizontalmente (arranjo uma em cima da outra)</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="169"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="166"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Auto-&amp;tile</source>
         <translation>Au&amp;to-organizar</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="172"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="169"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Automatically tile the open windows</source>
         <translation>Organizar automaticamente as janelas abertas</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="176"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="173"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Ta&amp;bbed</source>
         <translation>Ta&amp;bulada</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="179"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="176"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Automatically tab the open windows</source>
         <translation>Tabelar automaticamente as janelas abertas</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="186"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="183"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Automatically cascade the open windows</source>
         <translation>Organizar automaticamente as janelas abertas em cascata</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="193"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="190"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Cascade the open windows</source>
         <translation>Janelas abertas em cascata</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="197"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="194"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>&amp;Tile</source>
         <translation>Organi&amp;zar</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="200"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="197"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Tile the open windows</source>
         <translation>Organizar as janelas abertas</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="207"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="204"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Vertically tile (arrange side by side) the open windows</source>
         <translation>Organizar verticalmente (lado a lado) as janelas abertas</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="214"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="211"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Horizontally tile (arrange on top of each other) the open windows</source>
         <translation>Organizar horizontalmente (uma acima da outra) as janelas abertas</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="218"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="215"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Close &amp;window</source>
         <translation>Fechar &amp;Janela</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="221"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="218"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Close the current open window</source>
         <translation>Fechar a janela ativa aberta</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="232"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="229"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>&amp;Configure BibleTime...</source>
         <translation>&amp;Configurar BibleTime...</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="234"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="231"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Set BibleTime&apos;s preferences</source>
         <translation>Preferências do BibleTime</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="238"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="235"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Bookshelf &amp;Manager...</source>
         <translation>Gere&amp;nciador de Livros...</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="241"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="238"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Configure your bookshelf and install/update/remove/index works</source>
         <translation>Configurar sua estante e instalar/atualizar/remover/indexar obras</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="248"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="245"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Open BibleTime&apos;s handbook</source>
         <translation>Abrir o Manual do BibleTime</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="264"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="261"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>&amp;Tip of the day...</source>
         <translation>&amp;Dica do dia...</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="267"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="264"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Show tips about BibleTime</source>
         <translation>Mostrar dicas do BibleTime</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="375"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="372"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Toggle visibility of the bookshelf window</source>
         <translation>Mudar visibilidade da estante</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="379"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="376"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Toggle visibility of the bookmarks window</source>
         <translation>Mudar visibilidade da janela de favoritos</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="383"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="380"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Toggle visibility of the mag window</source>
         <translation>Mudar visibilidadea janela da lupa</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="716"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="708"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Main toolbar</source>
         <translation>Barra de ferramentas principal</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="717"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="709"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Navigation toolbar</source>
         <translation>Barra de ferramentas navegação</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="718"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="710"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Works toolbar</source>
         <translation>Barra de ferramentas das obras</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="719"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="711"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Tools toolbar</source>
         <translation>Barra de ferramentas</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="720"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="712"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Format toolbar</source>
         <translation>Barra de ferramentas formatação</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="754"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="745"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Show main toolbar</source>
         <translation>Mostrar barra de ferramentas principal</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="757"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="748"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Show navigation bar</source>
         <translation>Mostrar barra de ferramentas navegação</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="760"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="751"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Show works toolbar</source>
         <translation>Mostrar barra de ferramentas das obras</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="763"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="754"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Show tools toolbar</source>
         <translation>Mostrar barra de ferramentas</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="766"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="757"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Show formatting toolbar</source>
         <translation>Mostrar barra de ferramentas formatação</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="769"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="760"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Show bookshelf</source>
         <translation>Mostrar Estante</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="772"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="763"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Show bookmarks</source>
         <translation>Mostrar marcadores</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="775"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="766"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Show mag</source>
         <translation>Mostrar Lupa</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="724"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="716"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Toolbars</source>
         <translation>Barras de ferramentas</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="751"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="742"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Show toolbars in text windows</source>
         <translation>Mostrar barras de ferramentas nas janelas de texto</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="778"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="769"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Show parallel text headers</source>
         <translation>Mostrar cabeçalhos paralelos ao texto</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="728"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="720"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>O&amp;pen windows</source>
         <translation>A&amp;brir janelas</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="737"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="728"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Show &quot;Whats this widget&quot; dialog</source>
         <translation>Mostrar diálogo &quot;Que widget é este&quot;</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="971"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="915"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Whats this widget?</source>
         <translation>Que widget é este?</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="130"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="127"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Search in all works that are currently open</source>
         <translation>Buscar em todas as obras que estão abertas agora</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="137"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="134"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Search in the standard Bible</source>
         <translation>Procurar na Bíblia padrão</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_slots.cpp" line="558"/>
+=======
+        <location filename="../../src/bibletime_slots.cpp" line="593"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>New Session</source>
         <translation>Nova sessão</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="76"/>
+        <location filename="../../src/bibletime.cpp" line="74"/>
         <source>Initializing the SWORD engine...</source>
         <translation>Inicializando o motor SWORD...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="84"/>
+        <location filename="../../src/bibletime.cpp" line="82"/>
         <source>Creating BibleTime&apos;s user interface...</source>
         <translation>Criando a interface com o usuário BibleTime...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="91"/>
+        <location filename="../../src/bibletime.cpp" line="89"/>
         <source>Initializing menu- and toolbars...</source>
         <translation>Inicializando menu e barras de ferramentas...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="196"/>
+        <location filename="../../src/bibletime.cpp" line="191"/>
         <source>Unlock Work</source>
         <translation>Obra Destravada</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="196"/>
+        <location filename="../../src/bibletime.cpp" line="191"/>
         <source>Enter the unlock key for %1.</source>
         <translation>Entre com a chave para %1.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="216"/>
+        <location filename="../../src/bibletime.cpp" line="211"/>
         <source>Warning: Invalid unlock key!</source>
         <translation>Atenção: Chave inválida!</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="217"/>
+        <location filename="../../src/bibletime.cpp" line="212"/>
         <source>The unlock key you provided did not properly unlock this module. Please try again.</source>
         <translation>A chave fornecida não destravou este módulo. Por favor, tente novamente.</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="259"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="256"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>&amp;About BibleTime</source>
         <translation>&amp;Sobre BibleTime</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="714"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="706"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Bookmarks</source>
         <translation>Marcadores</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/bibletime_init.cpp" line="715"/>
+=======
+        <location filename="../../src/bibletime_init.cpp" line="707"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Mag</source>
         <translation>Lupa</translation>
     </message>
@@ -1405,21 +1746,33 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtLanguageSettingsPage</name>
     <message>
+<<<<<<< HEAD
         <source>Select the language in which the Biblical book names are displayed.</source>
         <translation type="obsolete">Selecione o idioma no qual os nomes dos livros bíblicos são mostrados.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="124"/>
+=======
+        <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="135"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Language for names of Bible books:</source>
         <translation>Idioma para os nomes dos livros bíblicos:</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="125"/>
+=======
+        <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="136"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>The languages which can be used for the biblical booknames</source>
         <translation>Os idiomas que podem ser usados para os nomes dos livros da bíblia</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="122"/>
+=======
+        <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="133"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Languages</source>
         <translation>Idiomas</translation>
     </message>
@@ -1688,6 +2041,7 @@ atalho</translation>
     </message>
 </context>
 <context>
+<<<<<<< HEAD
     <name>BtSourceArea</name>
     <message>
         <source>Work</source>
@@ -1790,6 +2144,58 @@ atalho</translation>
     <message>
         <source>The destination directory is not writable or does not exist. Installation will fail unless this has first been fixed.</source>
         <translation type="obsolete">O diretório de destino não é gravável ou não existe. A instalação vai falhar se isto não for corrigido primeiro.</translation>
+=======
+    <name>BtTextFiltersTab</name>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="75"/>
+        <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
+        <translation type="unfinished">Filtros de controle a aparência do texto. Aqui você pode especificar configurações padrão para todos os filtros. Você pode substituir essas configurações em cada janela de visualização.</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="79"/>
+        <source>Insert line break after each verse</source>
+        <translation type="unfinished">Inserir quebra de linha após cada versículo</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="80"/>
+        <source>Show verse numbers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="81"/>
+        <source>Show section headings</source>
+        <translation type="unfinished">Mostrar seção de títulos</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="82"/>
+        <source>Show scripture cross-references</source>
+        <translation type="unfinished">Mostrar referências-cruzadas das escrituras</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="83"/>
+        <source>Show Greek accents</source>
+        <translation type="unfinished">Mostrar acentos gregos</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="84"/>
+        <source>Show Hebrew vowel points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="85"/>
+        <source>Show Hebrew cantillation marks</source>
+        <translation type="unfinished">Mostrar sinais da cantilena hebraica</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="86"/>
+        <source>Show morph segmentation</source>
+        <translation type="unfinished">Mostrar a segmentação dos morfemas</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="87"/>
+        <source>Use textual variants</source>
+        <translation type="unfinished">Usar variações textuais</translation>
+>>>>>>> 886b0ef... - Sync to recent development
     </message>
 </context>
 <context>
@@ -1822,81 +2228,142 @@ atalho</translation>
 <context>
     <name>BtTipDialog</name>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="66"/>
+=======
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="69"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Tip Of The Day</source>
         <translation>Dica do dia</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="80"/>
+=======
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="83"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Show tips at startup</source>
         <translation>Mostrar dicas na inicialização</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="89"/>
+=======
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="94"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Next Tip</source>
         <translation>Próxima dica</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="121"/>
+=======
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="126"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>To add multiple Bible works in parallel in your active Bible window select this icon and choose another Bible work.</source>
         <translation>Para adicionar várias bíblias em paralelo em sua janela ativa da Bíblia, selecione este ícone e escolha outra obra bíblia.</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="125"/>
+=======
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="130"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>To add multiple commentary works in parallel in your active commentary window select this icon and choose another commentary work.</source>
         <translation>Para adicionar vários comentários bíblicos em paralelo em sua janela ativa da Bíblia, ative a janela de comentários, selecione este ícone e escolha outro comentário bíblico.</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="129"/>
+=======
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="134"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>To learn more about the BibleTime project please go to our web site.</source>
         <translation>Para ler mais sobre o projeto BibleTime, por favor, visite nosso site.</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="132"/>
+=======
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="137"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>To synchronize a commentary window with the active Bible window, activate the commentary window and select this icon.</source>
         <translation>Para sincronizar a janela do comentário com a Bíblia ativa, ative a janela do comentário e selecione este ícone.</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="135"/>
+=======
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="140"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Select the icon again to stop the synchronization.</source>
         <translation>Selecione o ícone novamente para parar o sincronismo.</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="137"/>
+=======
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="142"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>To create a bookmark drag any verse reference from a Bible or commentary work into the Bookmarks window. An arrow will indicate the position that the bookmark will go when you release the cursor. Other works will have a reference in the upper left corner that can be used to create a bookmark.</source>
         <translation>Para criar um marcador, arraste qualquer versículo ou referễncia de uma Bíblia ou comentário para a janela de marcadores. Uma seta indicará a posição do indicador vai quando você liberar o cursor. Outras obras terão uma referência no canto superior esquerdo que podem ser usadas para criar um marcador.</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="142"/>
+=======
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="147"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>To change a bookmark title or description, right click on the bookmark and select the Edit Bookmark menu. After finishing the edit the description can be seen by hovering over the bookmark.</source>
         <translation>Para mudar um título de marcador ou descrição, clique com o botão direito no marcador e selecione o menu Editar Marcador. Depois de terminar a edição, a descrição pode ser vista ao passar o cursor sobre o marcador.</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="146"/>
+=======
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="151"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>To load multiple installation sources for works, go to the Bookshelf Manager, select the Add button, and then the Get List button.</source>
         <translation>Para carregar várias fontes de instalação de obras, vá ao Gerenciador de Livros, selecione o botão adicionar, e então o botão Obter Lista.</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="149"/>
+=======
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="154"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>To find more information about a work, go the the Bookshelf window, right click on the work, and select the About menu.</source>
         <translation>Para encontrar mais informação acerca de uma obra, vá à janela da Estante, clique com o botão direito, e selecione o menu Sobre.</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="152"/>
+=======
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="157"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>The Bookshelf, Bookmark, and Mag windows can be moved to new locations by dragging them from the title at the top of each window. They can be placed to the left, right, above, or below the works windows. They can be placed on top of each other and tabs will appear so each window can be selected. They can be resized by dragging the border between the window and another window.</source>
         <translation>A Estante, os Marcadores e a janela da Lupa podem ser movidas para novos locais arrastado-as pelo título, no topo de cada janela. Elas podem ser colocadas à direita, esquerda, acima ou abaixo das janelas das obras.Elas podem ser colocados em cima, umas das outras e as abas aparecerão de forma que cada janela possa ser selecionada. Elas podem ser redimensionadas arrastando as bordas entre as janelas.</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="158"/>
+=======
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="163"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>You can search for Strong&apos;s numbers in a work. Start with a work that has Strong&apos;s numbers and hover over a word. Right click the word and use the Strong&apos;s Search menu. A search dialog will appear that allows you to see the use of the same Strong&apos;s number in other locations of the work.</source>
         <translation>Você pode buscar por números Strong numa obra. Inicie com uma obra que possui números Strong e passe o cursor por cima de uma palavra. Clique com o botão direito sobre a palavra e utilize o menu Busca Strong. Um diálogo de busca aparecerá e permitirá que você veja o uso do mesmo número Strong em outros lugares da obra.</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="173"/>
+=======
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="178"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>You can save your open windows in a session. Such a session can easily be restored later on. You can save as many sessions as you like. The session feature can be accessed under the Window menu entry.</source>
         <translation>Vocẽ pode sarvar suas janelas abertas atualmente como uma sessão. Assim, a sessão pode ser facilmente restaurada depois. Você pode salvar quanta sessões desejar. Este recurso pode ser acessado abaixo do menu Janelas.</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <source>The Bookshelf, Bookmark, and Mag windows can be moved to new locations by dragging them from the title at the top of each window. They can be placed to the left, right, above, or below the works windows. They can be placed on top of each other and tabs will appear so each window can be selected. They can be resized by dragging theborder between the window and another window.</source>
         <translation type="obsolete">A Estante, os Marcadores e a janela da Lupa podem ser movidas para novos locais arrastado-as pelo título, no topo de cada janela. Elas podem ser colocadas à direita, esquerda, acima ou abaixo das janelas das obras.Elas podem ser colocados em cima, umas das outras e as abas aparecerão de forma que cada janela possa ser selecionada. Elas podem ser redimensionadas arrastando as bordas entre as janelas.</translation>
     </message>
@@ -1906,11 +2373,18 @@ atalho</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="163"/>
+=======
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="168"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>You can save personal notes for specific verses references. You must install the Personal commentary. Open the Bookshelf Manager, choose Crosswire as the source and look under Commentary and English. Once installed, use the Bookshelf window and right click the Personal commentary. Use either the Edit Plain Text menu or the Edit HTML menu to open the work in write mode.</source>
         <translation>Você pode salvar notas pessoais para referências específicas de versículos. Você precisa instalar o comentário Personal. Abra o Gerenciador de Livros, escolha Crosswire como fonte e procure em Commentários e Inglês. Uma vez instalado. use a janela da Estante e clique com o botão direito no comentário Personal. Use tanto o menu Editar Texto Puro quanto o Editar HTML para abrir a obra em modo escrita.</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="169"/>
+=======
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="174"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>You can view Strong&apos;s number information in the MAG window by hovering over a word in a Bible work that has Strong&apos;s numbers. You should have the StrongsGreek and StrongsHebrew lexicons from Crosswire installed.</source>
         <translation>Você pode visualizar a informação do número Strong na janela Lupa passando o cursor sobre uma palavra na Bíblia que possui os números Strong. Você deve ter os léxicos StrongsGreek e StrongsHebrew de Crosswire instalados.</translation>
     </message>
@@ -1980,103 +2454,178 @@ atalho</translation>
 <context>
     <name>CBibleReadWindow</name>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="107"/>
+=======
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="64"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Next book</source>
         <translation>Próximo livro</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="111"/>
+=======
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="68"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Previous book</source>
         <translation>Livro Anterior</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="115"/>
+=======
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="72"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Next chapter</source>
         <translation>Próximo capítulo</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="119"/>
+=======
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="76"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Previous chapter</source>
         <translation>Capítulo anterior</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="123"/>
+=======
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="80"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Next verse</source>
         <translation>Próximo versículo</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="127"/>
+=======
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="84"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Previous verse</source>
         <translation>Versículo anterior</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="132"/>
+=======
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="89"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Copy chapter</source>
         <translation>Copiar capítulo</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="135"/>
+=======
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="92"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Save chapter as plain text</source>
         <translation>Capítulo como texto puro</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="138"/>
+=======
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="95"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Save chapter as HTML</source>
         <translation>Capítulo como HTML</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="141"/>
+=======
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="98"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Print chapter</source>
         <translation>Imprimir capítulo</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="153"/>
+=======
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="110"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Text of reference</source>
         <translation>Texto da referência</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="156"/>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="159"/>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="162"/>
+=======
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="113"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="116"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="119"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Reference with text</source>
         <translation>Referencia com texto</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="296"/>
+=======
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="253"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Bible window</source>
         <translation>Janela da Bíblia</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="306"/>
+=======
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="263"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Copy...</source>
         <translation>Copiar...</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="317"/>
+=======
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="274"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Save...</source>
         <translation>Salvar...</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="330"/>
+=======
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="287"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Print...</source>
         <translation>Imprimir...</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <source>Copy chapter to clipboard ...</source>
         <translation type="obsolete">Copiar capítulo para a área de transferência...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="414"/>
+=======
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="371"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Copying</source>
         <translation>Copiando</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <source>Saving chapter ...</source>
         <translation type="obsolete">Salvando capítulo ...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="433"/>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="451"/>
+=======
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="390"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="408"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Saving</source>
         <translation>Salvando</translation>
     </message>
@@ -2084,7 +2633,11 @@ atalho</translation>
 <context>
     <name>CBookReadWindow</name>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="81"/>
+=======
+        <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="70"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Toggle tree view</source>
         <translation>Alternar visualização de árvore</translation>
     </message>
@@ -2190,42 +2743,74 @@ atalho</translation>
 <context>
     <name>CCommentaryReadWindow</name>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="37"/>
+=======
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="34"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Next book</source>
         <translation>Próximo livro</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="41"/>
+=======
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="38"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Previous book</source>
         <translation>Livro Anterior</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="45"/>
+=======
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="42"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Next chapter</source>
         <translation>Próximo capítulo</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="49"/>
+=======
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="46"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Previous chapter</source>
         <translation>Capítulo anterior</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="53"/>
+=======
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="50"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Next verse</source>
         <translation>Próximo versículo</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="57"/>
+=======
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="54"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Previous verse</source>
         <translation>Versículo anterior</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="62"/>
+=======
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="59"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Synchronize</source>
         <translation>Sincronizar</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="65"/>
+=======
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="62"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Synchronize the displayed entry of this work with the active Bible window</source>
         <translation>Sincronizar a entrada mostrada desta obra com a janela ativa da Bíblia</translation>
     </message>
@@ -2314,16 +2899,17 @@ atalho</translation>
 <context>
     <name>CDisplayWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="139"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="216"/>
         <source>Back in history</source>
         <translation>Voltar no histórico</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="147"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="224"/>
         <source>Forward in history</source>
         <translation>Adiante no histórico</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <source>Zoom in</source>
         <translation type="obsolete">ampliar zoom </translation>
     </message>
@@ -2333,51 +2919,54 @@ atalho</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="116"/>
+=======
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="193"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Select all</source>
         <translation>Selecionar tudo</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="120"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="197"/>
         <source>Copy</source>
         <translation>Copiar</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="124"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="201"/>
         <source>Find...</source>
         <translation>Procurar...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="128"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="205"/>
         <source>Change location</source>
         <translation>Mudar local</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="133"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="210"/>
         <source>Search with works of this window</source>
         <translation>Procurar em obras desta janela</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="317"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="394"/>
         <source>Work chooser buttons</source>
         <translation>Botões selecionadores de obras</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="327"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="404"/>
         <source>Text area header</source>
         <translation>Área do cabeçalho</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="377"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="454"/>
         <source>Navigation</source>
         <translation>Navegação</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="383"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="460"/>
         <source>Tool</source>
         <translation>Ferramenta</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="389"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="466"/>
         <source>Format</source>
         <translation>Formatar</translation>
     </message>
@@ -2462,17 +3051,17 @@ atalho</translation>
 <context>
     <name>CHTMLWriteWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="132"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="131"/>
         <source>Module not writable</source>
         <translation>Não é permitido escrever neste módulo</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="134"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="133"/>
         <source>Module is not writable.</source>
         <translation>Não é permitido escrever neste módulo.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="135"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="134"/>
         <source>Either the module may not be edited, or you do not have write permission.</source>
         <translation>Ou o módulo não pode ser editado, ou você não tem  permissão para escrever.</translation>
     </message>
@@ -2647,53 +3236,94 @@ atalho</translation>
 <context>
     <name>CPlainWriteWindow</name>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="210"/>
+=======
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="208"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Sync with active Bible</source>
         <translation>Sincronizar com bíblia ativa</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="220"/>
         <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="224"/>
+=======
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="218"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="222"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Save text</source>
         <translation>Salvar texto</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="229"/>
+=======
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="227"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Delete current entry</source>
         <translation>Deletar entrada atual</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="238"/>
+=======
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="236"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Restore original text</source>
         <translation>Restaurar texto original</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="135"/>
+=======
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="133"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Module not writable</source>
         <translation>Módulo não permite escrita</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="137"/>
+=======
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="135"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Module is not writable.</source>
         <translation>Módulo não permite escrita.</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="138"/>
+=======
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="136"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Either the module may not be edited, or you do not have write permission.</source>
         <translation>Ou o módulo não pode ser editado, ou você não tem  permissão para escrever. </translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="215"/>
+=======
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="213"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Synchronize (show the same verse) with the active Bible window</source>
         <translation>Sincronizar (mostrar o mesmo versículo) com a janela ativa da Bíblia</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="233"/>
+=======
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="231"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Delete current entry (no undo)</source>
         <translation>Apagar entrada atual (não será possível desfazer)</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="242"/>
+=======
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="240"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Restore original text, new text will be lost</source>
         <translation>Restaurar o texto original, novo texto será perdido</translation>
     </message>
@@ -2908,17 +3538,29 @@ atalho</translation>
 <context>
     <name>CSwordSettingsPage</name>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="388"/>
+=======
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="42"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Standard works</source>
         <translation>Obras padrão</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="389"/>
+=======
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="43"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Text filters</source>
         <translation>Filtros do texto</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="386"/>
+=======
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="40"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Desk</source>
         <translation>Mesa</translation>
     </message>
@@ -3038,18 +3680,31 @@ Deseja continuar?</translation>
 <context>
     <name>CWriteWindow</name>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/displaywindow/cwritewindow.cpp" line="113"/>
+=======
+        <location filename="../../src/frontend/displaywindow/cwritewindow.cpp" line="67"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Save text before closing?</source>
         <translation>Salvar texto antes de fechar?</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/displaywindow/cwritewindow.cpp" line="143"/>
+=======
+        <location filename="../../src/frontend/displaywindow/cwritewindow.cpp" line="97"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Save changed text?</source>
         <translation>Salvar texto alterado?</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/displaywindow/cwritewindow.cpp" line="113"/>
         <location filename="../../src/frontend/displaywindow/cwritewindow.cpp" line="143"/>
+=======
+        <location filename="../../src/frontend/displaywindow/cwritewindow.cpp" line="67"/>
+        <location filename="../../src/frontend/displaywindow/cwritewindow.cpp" line="97"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Save Text?</source>
         <translation>Salvar texto?</translation>
     </message>
@@ -4168,9 +4823,14 @@ Language name ppk</extracomment>
         <translation>Arquivos marcadores do BibleTime</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/bookmarks/btbookmarkitem.cpp" line="125"/>
         <location filename="../../src/frontend/bookmarks/btbookmarkitem.cpp" line="142"/>
         <location filename="../../src/frontend/profile/cprofile.cpp" line="24"/>
+=======
+        <location filename="../../src/frontend/bookmarks/btbookmarkitem.cpp" line="126"/>
+        <location filename="../../src/frontend/bookmarks/btbookmarkitem.cpp" line="143"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>unknown</source>
         <translation>Desconhecido</translation>
     </message>
@@ -4391,41 +5051,42 @@ Language name ppk</extracomment>
         <translation>Obrass não-indexadas</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="43"/>
+        <location filename="../../src/main.cpp" line="44"/>
         <source>Show this help message and exit</source>
         <translation>Mostrar esta mensagem de ajuda e sair</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="46"/>
+        <location filename="../../src/main.cpp" line="47"/>
         <source>Output BibleTime version and exit</source>
         <translation>Saída da versão do BibleTime e sair</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="49"/>
+        <location filename="../../src/main.cpp" line="50"/>
         <source>Open a clean session</source>
         <translation>Abrir uma sessão limpa</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="52"/>
+        <location filename="../../src/main.cpp" line="53"/>
         <source>Open the default Bible with the reference &lt;ref&gt;</source>
         <translation>Abrir a Bíblia padrão com referência &lt;ref&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="55"/>
+        <location filename="../../src/main.cpp" line="56"/>
         <source>For command-line arguments parsed by the Qt toolkit, see %1.</source>
         <translation>Para argumentos de linha de comando analisadas pelo kit de ferramentas Qt, veja %1.</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="102"/>
+        <location filename="../../src/main.cpp" line="103"/>
         <source>Error: %1 expects an argument.</source>
         <translation>Erro: %1 espera um argumento.</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="105"/>
+        <location filename="../../src/main.cpp" line="106"/>
         <source>See --help for details.</source>
         <translation>Veja --help para detalhes.</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <source>All command-line arguments not recognized by BibleTime or Qt will be silently ignored.</source>
         <translation type="obsolete">Todos os arguments de linha de comando não reconhecidos pelo BibleTime ou Qt serão silenciosamente ignorados.</translation>
     </message>
@@ -4436,6 +5097,9 @@ Language name ppk</extracomment>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="110"/>
+=======
+        <location filename="../../src/main.cpp" line="111"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Error: Invalid command-line argument: %1</source>
         <translation>Erro: Argumento de linha de comando ignorado: %1</translation>
     </message>
@@ -5189,87 +5853,155 @@ Isto pode levar um novo tempo. Iniciar indexação?</translation>
 <context>
     <name>StandardWorksTab</name>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="234"/>
+=======
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="169"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
         <translation>Obras padrão são usadas quando nenhuma obra é especificada, por exemplo, quando um link de uma Bíblia ou de um dicionário é clicado.</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="237"/>
+=======
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="172"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Bible:</source>
         <translation>Bíblia:</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="238"/>
+=======
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="173"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
         <translation>A Bíblia Padrão é usada quando um hiperlink dentro da Bíblia é clicada</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="240"/>
+=======
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="175"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Commentary:</source>
         <translation>Comentário:</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="241"/>
+=======
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="176"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
         <translation>O comentário padrão é usado quando um hiperlink de um comentário é clicado</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="243"/>
+=======
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="178"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Lexicon:</source>
         <translation>Léxico:</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="244"/>
+=======
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="179"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
         <translation>O léxico normal é usado quando um hiperlink em um léxico é clicado</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="246"/>
+=======
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="181"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Daily devotional:</source>
         <translation>Devociona diário:</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="247"/>
+=======
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="182"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>The standard devotional will be used to display a short start up devotional</source>
         <translation>O devocional padrão será usado para mostrar uma curta inicialização do devocional </translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="249"/>
+=======
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="184"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Hebrew Strong&apos;s lexicon:</source>
         <translation>Léxico hebraico Strong:</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="250"/>
+=======
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="185"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
         <translation>O léxico hebraico padrão é usado quando um hiperlink em um léxico hebraico é clicado</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="252"/>
+=======
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="187"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Greek Strong&apos;s lexicon:</source>
         <translation>Léxico grego Strong:</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="253"/>
+=======
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="188"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
         <translation>O léxico grego padrão é usado quando um hiperlink em um léxico grego é clicado</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="255"/>
+=======
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="190"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Hebrew morphological lexicon:</source>
         <translation>Léxico hebraico morfológico:</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="256"/>
+=======
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="191"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
         <translation>O léxico padrão morfológico dos textos hebraicos, é usado quando um hiperlink de um tag morfológico de um texto hebraico é clicado</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="258"/>
+=======
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="193"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Greek morphological lexicon:</source>
         <translation>Léxico morfológico Grego:</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="259"/>
+=======
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="194"/>
+>>>>>>> 886b0ef... - Sync to recent development
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
         <translation>O léxico padrão morfológico dos textos gregos é usado quando um hiperlink de um tag morfológica de um texto grego é clicado</translation>
     </message>
@@ -5282,54 +6014,84 @@ Isto pode levar um novo tempo. Iniciar indexação?</translation>
 <context>
     <name>TextFiltersTab</name>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="351"/>
+=======
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Insert line break after each verse</source>
-        <translation>Inserir quebra de linha após cada versículo</translation>
+        <translation type="obsolete">Inserir quebra de linha após cada versículo</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="352"/>
+=======
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Show verse numbers</source>
-        <translation> Mostrar número dos versículos</translation>
+        <translation type="obsolete"> Mostrar número dos versículos</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="353"/>
+=======
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Show section headings</source>
-        <translation>Mostrar seção de títulos</translation>
+        <translation type="obsolete">Mostrar seção de títulos</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="354"/>
+=======
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Show scripture cross-references</source>
-        <translation>Mostrar referências-cruzadas das escrituras</translation>
+        <translation type="obsolete">Mostrar referências-cruzadas das escrituras</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="355"/>
+=======
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Show Greek accents</source>
-        <translation>Mostrar acentos gregos</translation>
+        <translation type="obsolete">Mostrar acentos gregos</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="356"/>
+=======
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Show Hebrew vowel points</source>
-        <translation>Mostrar pontos Hebrew da vogal</translation>
+        <translation type="obsolete">Mostrar pontos Hebrew da vogal</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="357"/>
+=======
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Show Hebrew cantillation marks</source>
-        <translation>Mostrar sinais da cantilena hebraica</translation>
+        <translation type="obsolete">Mostrar sinais da cantilena hebraica</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="358"/>
+=======
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Show morph segmentation</source>
-        <translation>Mostrar a segmentação dos morfemas</translation>
+        <translation type="obsolete">Mostrar a segmentação dos morfemas</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="359"/>
+=======
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Use textual variants</source>
-        <translation>Usar variações textuais</translation>
+        <translation type="obsolete">Usar variações textuais</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="347"/>
+=======
+>>>>>>> 886b0ef... - Sync to recent development
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
-        <translation>Filtros de controle a aparência do texto. Aqui você pode especificar configurações padrão para todos os filtros. Você pode substituir essas configurações em cada janela de visualização.</translation>
+        <translation type="obsolete">Filtros de controle a aparência do texto. Aqui você pode especificar configurações padrão para todos os filtros. Você pode substituir essas configurações em cada janela de visualização.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="287"/>

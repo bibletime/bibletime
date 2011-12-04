@@ -54,7 +54,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>&amp;Save session</source>
-        <translation>U&amp;ložit relaci</translation>
+        <translation type="obsolete">U&amp;ložit relaci</translation>
     </message>
     <message>
         <source>&amp;Load session</source>
@@ -380,6 +380,14 @@ This file is distributed under the same license as the Bibetime package.</transl
         <source>Toggle visibility of the mag window</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Session already exists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Session with the name &quot;%1&quot; already exists. Please provide a different name.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BibleTimeApp</name>
@@ -686,6 +694,24 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <source>Select chapter</source>
         <translation>Vyberte kapitolu</translation>
+    </message>
+</context>
+<context>
+    <name>BtConfig</name>
+    <message>
+        <source>Error loading configuration!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to load BibleTime&apos;s configuration, because it appears that the configuration file corresponds to a newer version of BibleTime. This is likely caused by BibleTime being downgraded. Loading the new configuration file may result in &lt;b&gt;loss of data&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Do you still want to try to load the new configuration file? Press &quot;No&quot; to quit BibleTime immediately.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>BtConfigCore</name>
+    <message>
+        <source>Default Session</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1466,6 +1492,49 @@ shortcut</source>
     <message>
         <source>The destination directory is not writable or does not exist. Installation will fail unless this has first been fixed.</source>
         <translation type="obsolete">Do cílového adresáře nelze zapisovat nebo neexistuje. Instalace bude selhávat, dokud to nebude opraveno.</translation>
+    </message>
+</context>
+<context>
+    <name>BtTextFiltersTab</name>
+    <message>
+        <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
+        <translation type="unfinished">Filtry kontrolují vzhled textu. Zde můžete nastavit výchozí hodnoty pro všechny filtry. Toto nastavení můžete v každém zobrazeném okně anulovat.</translation>
+    </message>
+    <message>
+        <source>Insert line break after each verse</source>
+        <translation type="unfinished">Zalomit řádek po každém verši</translation>
+    </message>
+    <message>
+        <source>Show verse numbers</source>
+        <translation type="unfinished">Zobrazit čísla veršů</translation>
+    </message>
+    <message>
+        <source>Show section headings</source>
+        <translation type="unfinished">Zobrazit nadpisy částí</translation>
+    </message>
+    <message>
+        <source>Show scripture cross-references</source>
+        <translation type="unfinished">Ukázat odkaz v Bibli</translation>
+    </message>
+    <message>
+        <source>Show Greek accents</source>
+        <translation type="unfinished">Zobrazit řecké značky přízvuku</translation>
+    </message>
+    <message>
+        <source>Show Hebrew vowel points</source>
+        <translation type="unfinished">Zobrazit hebrejské značky samohlásek</translation>
+    </message>
+    <message>
+        <source>Show Hebrew cantillation marks</source>
+        <translation type="unfinished">Zobrazit hebrejské značky přízvuku</translation>
+    </message>
+    <message>
+        <source>Show morph segmentation</source>
+        <translation type="unfinished">Ukázat morfologické dělení</translation>
+    </message>
+    <message>
+        <source>Use textual variants</source>
+        <translation type="unfinished">Použít textové varianty</translation>
     </message>
 </context>
 <context>
@@ -4272,43 +4341,43 @@ To může trvat dlouhou dobu. Pokračovat v indexování?</translation>
     <name>TextFiltersTab</name>
     <message>
         <source>Insert line break after each verse</source>
-        <translation>Zalomit řádek po každém verši</translation>
+        <translation type="obsolete">Zalomit řádek po každém verši</translation>
     </message>
     <message>
         <source>Show verse numbers</source>
-        <translation>Zobrazit čísla veršů</translation>
+        <translation type="obsolete">Zobrazit čísla veršů</translation>
     </message>
     <message>
         <source>Show section headings</source>
-        <translation>Zobrazit nadpisy částí</translation>
+        <translation type="obsolete">Zobrazit nadpisy částí</translation>
     </message>
     <message>
         <source>Show scripture cross-references</source>
-        <translation>Ukázat odkaz v Bibli</translation>
+        <translation type="obsolete">Ukázat odkaz v Bibli</translation>
     </message>
     <message>
         <source>Show Greek accents</source>
-        <translation>Zobrazit řecké značky přízvuku</translation>
+        <translation type="obsolete">Zobrazit řecké značky přízvuku</translation>
     </message>
     <message>
         <source>Show Hebrew vowel points</source>
-        <translation>Zobrazit hebrejské značky samohlásek</translation>
+        <translation type="obsolete">Zobrazit hebrejské značky samohlásek</translation>
     </message>
     <message>
         <source>Show Hebrew cantillation marks</source>
-        <translation>Zobrazit hebrejské značky přízvuku</translation>
+        <translation type="obsolete">Zobrazit hebrejské značky přízvuku</translation>
     </message>
     <message>
         <source>Show morph segmentation</source>
-        <translation>Ukázat morfologické dělení</translation>
+        <translation type="obsolete">Ukázat morfologické dělení</translation>
     </message>
     <message>
         <source>Use textual variants</source>
-        <translation>Použít textové varianty</translation>
+        <translation type="obsolete">Použít textové varianty</translation>
     </message>
     <message>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
-        <translation>Filtry kontrolují vzhled textu. Zde můžete nastavit výchozí hodnoty pro všechny filtry. Toto nastavení můžete v každém zobrazeném okně anulovat.</translation>
+        <translation type="obsolete">Filtry kontrolují vzhled textu. Zde můžete nastavit výchozí hodnoty pro všechny filtry. Toto nastavení můžete v každém zobrazeném okně anulovat.</translation>
     </message>
     <message>
         <source></source>
