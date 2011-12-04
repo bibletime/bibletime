@@ -6,7 +6,7 @@
       <imageobject> <imagedata fileref="ss_mainterms.png" width="100%"
 contentdepth="100%" scalefit="1" format="PNG" /> </imageobject>
       <textobject>
-        <phrase>The &bibletime; application window</phrase>
+        <phrase>Finestra applicazione di &bibletime;</phrase>
       </textobject>
     </mediaobject> You can easily see the different parts of the
 application. The top left window is used to open installed works in the
@@ -245,7 +245,7 @@ spirito) AND Dio'.</para>
 di testo seguito da ':' e dal termine di ricerca. Fare riferimento alla
 tabella riportata di seguito per gli esempi.</para>
 
-        <para>Available text types: <table id="hd-op-search-config-syntax-table">
+        <para>Tipi di testo disponibili: <table id="hd-op-search-config-syntax-table">
 	  <title>Tipi di Ricerca</title>
           <tgroup cols="3">
             <thead>

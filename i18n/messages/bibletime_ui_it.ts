@@ -379,7 +379,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="754"/>
         <source>Show main toolbar</source>
-        <translation>Mostra barra degli strumenti</translation>
+        <translation>Mostra barra principale</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="757"/>
@@ -1574,7 +1574,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btopenworkaction.cpp" line="106"/>
         <source>&amp;Open work</source>
-        <translation>D&amp;ocumenti aperti</translation>
+        <translation>Apri d&amp;ocumento</translation>
     </message>
 </context>
 <context>

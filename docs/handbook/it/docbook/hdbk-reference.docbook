@@ -20,11 +20,12 @@ ogni elemento, una lista completa di tutte le scorciatoie la trovi nella
             <term>
               <menuchoice> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_folder_open.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>File</guimenu> <guimenuitem>Open work</guimenuitem> </menuchoice>
+format="PNG" /> </imageobject></inlinemediaobject>File</guimenu> <guimenuitem>Apri documento</guimenuitem>
+</menuchoice>
             </term>
             <listitem>
-              <para><action>Open work.</action> This will give you a menu that will allow you to
-open installed books.</para>
+              <para><action>Apri documento.</action> Si aprirà un menu che ti permetterà di
+aprire i libri installati.</para>
             </listitem>
           </varlistentry>
 
@@ -34,7 +35,7 @@ open installed books.</para>
 <keycap>&Ctrl;+Q</keycap></keycombo> </shortcut> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_exit.png" width="32" depth="32"
 format="PNG" /> </imageobject></inlinemediaobject>File</guimenu>
-<guimenuitem>Quit</guimenuitem> </menuchoice>
+<guimenuitem>Esci</guimenuitem> </menuchoice>
             </term>
             <listitem>
               <para>
@@ -48,7 +49,7 @@ scrivere i cambiamenti non salvati sul disco.</para>
 
     <sect2 id="hdbk-reference-menus-view">
       <title>
-        <guimenu>View</guimenu>
+        <guimenu>Vista</guimenu>
       </title>
 
       <variablelist>
@@ -57,7 +58,7 @@ scrivere i cambiamenti non salvati sul disco.</para>
             <menuchoice> <shortcut> <keycombo action="simul"> <keycap>F5</keycap>
 </keycombo> </shortcut> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_window_fullscreen.png" width="32"
-depth="32" format="PNG" /> </imageobject></inlinemediaobject>View</guimenu> <guimenuitem>Fullscreen mode</guimenuitem>
+depth="32" format="PNG" /> </imageobject></inlinemediaobject>Visualizza</guimenu> <guimenuitem>Schermo intero</guimenuitem>
 </menuchoice>
           </term>
           <listitem>
@@ -69,8 +70,8 @@ modificare la modalità fullscreen di &bibletime;.</para>
 
         <varlistentry id="hdbk-reference-menus-view-showbookshelf">
           <term>
-            <menuchoice> <guimenu>View</guimenu> <guimenuitem>Show
-Bookshelf</guimenuitem> </menuchoice>
+            <menuchoice> <guimenu>Visualizza</guimenu> <guimenuitem>Mostra
+libreria</guimenuitem> </menuchoice>
           </term>
           <listitem>
             <para>
@@ -82,8 +83,8 @@ se hai bisogno di di più spazio per la Lente.</para>
 
         <varlistentry id="hdbk-reference-menus-view-showbookmarks">
           <term>
-            <menuchoice> <guimenu>View</guimenu> <guimenuitem>Show
-Bookmarks</guimenuitem> </menuchoice>
+            <menuchoice> <guimenu>Visualizza</guimenu> <guimenuitem>Mostra
+segnalibri</guimenuitem> </menuchoice>
           </term>
           <listitem>
             <para>
@@ -95,8 +96,8 @@ utile se hai bisogno di di più spazio per la Lente.</para>
 
         <varlistentry id="hdbk-reference-menus-view-showmag">
           <term>
-            <menuchoice> <guimenu>View</guimenu> <guimenuitem>Show Mag</guimenuitem>
-</menuchoice>
+            <menuchoice> <guimenu>Visualizza</guimenu> <guimenuitem>Mostra
+lente</guimenuitem> </menuchoice>
           </term>
           <listitem>
             <para>
@@ -108,43 +109,49 @@ mostrare o nascodere la Lente nel pannello di sinistra.</para>
         <varlistentry id="hdbk-reference-menus-view-toolbars-showmain">
           <term>
             <menuchoice> <shortcut> <keycombo action="simul"> <keycap>F6</keycap>
-</keycombo> </shortcut> <guimenu>View</guimenu>
-<guimenuitem>Toolbars</guimenuitem> <guimenuitem>Show main</guimenuitem>
-</menuchoice>
+</keycombo> </shortcut> <guimenu>Visualizza</guimenu> <guimenuitem>Barre
+degli strumenti</guimenuitem> <guimenuitem>Mostra barra
+principale</guimenuitem> </menuchoice>
           </term>
           <listitem>
-            <para><action>Toggles Main Toolbar display.</action> Toggle this setting to turn
-the main toolbar on or off.</para>
+            <para><action>Mostra/nascondi barra degli strumenti principale.</action> Cambia
+questa impostazione per mostrare o nascondere la barra degli strumenti
+principale.</para>
           </listitem>
         </varlistentry>
 
         <varlistentry id="hdbk-reference-menus-view-toolbars-shownavigation">
           <term>
-            <menuchoice> <guimenu>View</guimenu> <guimenuitem>Toolbars</guimenuitem>
-<guimenuitem>Show navigation</guimenuitem> </menuchoice>
+            <menuchoice> <guimenu>Visualizza</guimenu> <guimenuitem>Barre degli
+strumenti</guimenuitem> <guimenuitem>Mostra barra di
+navigazione</guimenuitem> </menuchoice>
           </term>
           <listitem>
-            <para><action>Toggles Navigation in works.</action> Toggle this setting to add or
-remove the navigation combo box in works.  This can be handy to view the
-full toolbar in the open works</para>
+            <para><action>Mostra/nascondi Navigazione nei documenti.</action> Cambia questa
+impostazione per mostrare o nascondere la navigazione nei documenti. Può
+essere comodo per vedere la barra degli strumenti completa per i documenti
+aperti.</para>
           </listitem>
         </varlistentry>
 
         <varlistentry id="hdbk-reference-menus-view-toolbars-showworks">
           <term>
-            <menuchoice> <guimenu>View</guimenu> <guimenuitem>Toolbars</guimenuitem>
-<guimenuitem>Show works</guimenuitem> </menuchoice>
+            <menuchoice> <guimenu>Visualizza</guimenu> <guimenuitem>Barre degli
+strumenti</guimenuitem> <guimenuitem>Mostra barra dei
+documenti</guimenuitem> </menuchoice>
           </term>
           <listitem>
-            <para><action>Toggles Toolbars in works.</action> Toggle this setting to add or
-remove the works icons in the open works.</para>
+            <para><action>Mostra/nascondi barra degli strumenti nei documenti.</action> Cambia
+questa impostazione per mostrare o nascondere l'icona dei documenti nei
+documenti aperti.</para>
           </listitem>
         </varlistentry>
 
         <varlistentry id="hdbk-reference-menus-view-toolbars-showtools">
           <term>
-            <menuchoice> <guimenu>View</guimenu> <guimenuitem>Toolbars</guimenuitem>
-<guimenuitem>Show tools</guimenuitem> </menuchoice>
+            <menuchoice> <guimenu>Visualizza</guimenu> <guimenuitem>Barre degli
+strumenti</guimenuitem> <guimenuitem>Mostra barra degli
+strumenti</guimenuitem> </menuchoice>
           </term>
           <listitem>
             <para><action>Toggles tools in works.</action> Toggle this setting to add or
@@ -187,8 +194,8 @@ remove the complete toolbar in open works.</para>
 <keycap>&Ctrl;+&Alt;+F</keycap></keycombo> </shortcut> <guimenu>
 <inlinemediaobject>
 <imageobject> <imagedata fileref="i_find.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>Search</guimenu>
-<guimenuitem>Search in standard bible</guimenuitem> </menuchoice>
+format="PNG" /> </imageobject></inlinemediaobject>Cerca</guimenu>
+<guimenuitem>Cerca nellaBibbia standard</guimenuitem> </menuchoice>
           </term>
 
           <listitem>
@@ -204,8 +211,8 @@ sezione <link linkend="hdbk-op-search">Cercare nei documenti</link>.</para>
             <menuchoice> <shortcut> <keycombo action="simul">
 <keycap>&Ctrl;+O</keycap></keycombo> </shortcut> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_find.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>Search</guimenu> <guimenuitem>Search in
-open work(s)</guimenuitem> </menuchoice>
+format="PNG" /> </imageobject></inlinemediaobject>Cerca</guimenu> <guimenuitem>Cerca
+neidocumenti aperti</guimenuitem> </menuchoice>
           </term>
 
           <listitem>
@@ -221,7 +228,7 @@ nella sezione <link linkend="hdbk-op-search">Cercare nei documenti</link>.</para
 
     <sect2 id="hdbk-reference-menus-window">
       <title>
-        <guimenu>Window</guimenu>
+        <guimenu>Finestra</guimenu>
       </title>
 
       <variablelist>
@@ -230,8 +237,8 @@ nella sezione <link linkend="hdbk-op-search">Cercare nei documenti</link>.</para
             <menuchoice> <shortcut> <keycombo action="simul">
 <keycap>&Ctrl;+W</keycap></keycombo> </shortcut> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_fileclose.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>Window</guimenu> <guimenuitem>Close
-window</guimenuitem> </menuchoice>
+format="PNG" /> </imageobject></inlinemediaobject>Finestra</guimenu> <guimenuitem>Chiudi
+finestra</guimenuitem> </menuchoice>
           </term>
 
           <listitem>
@@ -246,8 +253,8 @@ window</guimenuitem> </menuchoice>
 <keycap>&Ctrl;+&Alt;+W</keycap></keycombo> </shortcut> <guimenu>
 <inlinemediaobject>
 <imageobject> <imagedata fileref="i_fileclose.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>Window</guimenu>
-<guimenuitem>Close all</guimenuitem> </menuchoice>
+format="PNG" /> </imageobject></inlinemediaobject>Finestra</guimenu>
+<guimenuitem>Chiudi tutte</guimenuitem> </menuchoice>
           </term>
 
           <listitem>
@@ -261,8 +268,8 @@ format="PNG" /> </imageobject></inlinemediaobject>Window</guimenu>
             <menuchoice> <shortcut> <keycombo action="simul">
 <keycap>&Ctrl;+J</keycap></keycombo> </shortcut> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_cascade.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>Window</guimenu>
-<guimenuitem>Cascade</guimenuitem> </menuchoice>
+format="PNG" /> </imageobject></inlinemediaobject>Finestra</guimenu>
+<guimenuitem>Cascata</guimenuitem> </menuchoice>
           </term>
 
           <listitem>
@@ -277,8 +284,8 @@ format="PNG" /> </imageobject></inlinemediaobject>Window</guimenu>
             <menuchoice> <shortcut> <keycombo action="simul">
 <keycap>&Ctrl;+I</keycap></keycombo> </shortcut> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_tile.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>Window</guimenu>
-<guimenuitem>Tile</guimenuitem> </menuchoice>
+format="PNG" /> </imageobject></inlinemediaobject>Finestra</guimenu>
+<guimenuitem>Affianca</guimenuitem> </menuchoice>
           </term>
 
           <listitem>
@@ -293,8 +300,8 @@ format="PNG" /> </imageobject></inlinemediaobject>Window</guimenu>
             <menuchoice> <shortcut> <keycombo action="simul">
 <keycap>&Ctrl;+G</keycap></keycombo> </shortcut> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_tile_vert.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>Window</guimenu> <guimenuitem>Tile
-vertically</guimenuitem> </menuchoice>
+format="PNG" /> </imageobject></inlinemediaobject>Finestra</guimenu>
+<guimenuitem>Affiancaverticalmente</guimenuitem> </menuchoice>
           </term>
 
           <listitem>
@@ -309,8 +316,8 @@ vertically</guimenuitem> </menuchoice>
             <menuchoice> <shortcut> <keycombo action="simul">
 <keycap>&Ctrl;+H</keycap></keycombo> </shortcut> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_tile_horiz.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>Window</guimenu> <guimenuitem>Tile
-horizontally</guimenuitem> </menuchoice>
+format="PNG" /> </imageobject></inlinemediaobject>Finestra</guimenu>
+<guimenuitem>Affiancaorizzontalmente</guimenuitem> </menuchoice>
           </term>
 
           <listitem>
@@ -353,8 +360,8 @@ salvare in una nuova sessione.</para>
           <term>
             <menuchoice> <shortcut> <keycombo action="simul">
 <keycap>&Ctrl;+&Alt;+S</keycap></keycombo> </shortcut>
-<guimenu>Window</guimenu> <guimenuitem>Save as new session</guimenuitem>
-</menuchoice>
+<guimenu>Finestra</guimenu> <guimenuitem>Salvacome nuova
+sessione</guimenuitem> </menuchoice>
           </term>
 
           <listitem>
@@ -394,15 +401,15 @@ contestuale dove potrai selezionare una sessione esistente da cancellare.</para>
 
     <sect2 id="hdbk-reference-menus-settings">
       <title>
-        <guimenu>Settings</guimenu>
+        <guimenu>Impostazioni</guimenu>
       </title>
       <variablelist>
         <varlistentry id="hdbk-reference-menus-settings-bibletime">
           <term>
             <menuchoice> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_configure.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>Settings</guimenu> <guimenuitem>Configure &bibletime;</guimenuitem>
-</menuchoice>
+format="PNG" /> </imageobject></inlinemediaobject>Impostazioni</guimenu> <guimenuitem>Configura
+&bibletime;</guimenuitem> </menuchoice>
           </term>
 
           <listitem>
@@ -419,7 +426,7 @@ esigenze. Guarda la sezione <link linkend="hdbk-config-bt">Configurare
             <menuchoice> <shortcut> <keycombo action="simul"> <keycap>F4</keycap>
 </keycombo> </shortcut> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_configuresword.png" width="32"
-depth="32" format="PNG" /> </imageobject></inlinemediaobject>Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem>
+depth="32" format="PNG" /> </imageobject></inlinemediaobject>Impostazioni</guimenu> <guimenuitem>Gestore Libreria</guimenuitem>
 </menuchoice>
           </term>
 
@@ -435,7 +442,7 @@ dettagli.</para>
 
     <sect2 id="hdbk-reference-menus-help">
     <title>
-      <guimenu>Help</guimenu>
+      <guimenu>Aiuto</guimenu>
     </title>
       <variablelist>
         <varlistentry id="hdbk-reference-menus-help-bibletime">
@@ -443,7 +450,7 @@ dettagli.</para>
             <menuchoice> <shortcut> <keycombo action="simul"> <keycap>F1</keycap>
 </keycombo> </shortcut> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_contents2.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>Help</guimenu> <guimenuitem>Handbook</guimenuitem> </menuchoice>
+format="PNG" /> </imageobject></inlinemediaobject>Aiuto</guimenu> <guimenuitem>Manuale</guimenuitem> </menuchoice>
           </term>
           <listitem>
             <para>
@@ -457,7 +464,7 @@ adesso.</para>
             <menuchoice> <shortcut> <keycombo action="simul"> <keycap>F2</keycap>
 </keycombo> </shortcut> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_contents2.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>Help</guimenu> <guimenuitem>Bible Study HowTo</guimenuitem>
+format="PNG" /> </imageobject></inlinemediaobject>Aiuto</guimenu> <guimenuitem>HowTo Studio Bibbia</guimenuitem>
 </menuchoice>
           </term>
           <listitem>
@@ -477,12 +484,13 @@ proprio cuore, Lui non ti deluderà.</para>
             <menuchoice> <shortcut> <keycombo action="simul"> <keycap>F3</keycap>
 </keycombo> </shortcut> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_light_bulb.png" width="22" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>Help</guimenu> <guimenuitem>Tip of the Day</guimenuitem>
+format="PNG" /> </imageobject></inlinemediaobject>Aiuto</guimenu> <guimenuitem>Suggerimento del giorno</guimenuitem>
 </menuchoice>
           </term>
           <listitem>
-            <para><action>Opens a helpful tip</action> The Tip of the Day provides a useful
-tip that will assist in the use of &bibletime;.</para>
+            <para><action>Apre un suggerimento utile</action> Il suggerimento del giorno
+fornisce un utile suggerimento che ti assisterà nell'utilizzo di
+&bibletime;.</para>
           </listitem>
         </varlistentry>
 
