@@ -44,14 +44,14 @@ BtConfig::BtConfig(const QString &settingsFile)
     m_instance = this;
 
     if (m_defaultSearchScopes.isEmpty()) {
-        m_defaultSearchScopes.insert(QObject::tr("Old testament"),          QString("Gen - Mal"));
-        m_defaultSearchScopes.insert(QObject::tr("Moses/Pentateuch/Torah"), QString("Gen - Deut"));
-        m_defaultSearchScopes.insert(QObject::tr("History"),                QString("Jos - Est"));
-        m_defaultSearchScopes.insert(QObject::tr("Prophets"),               QString("Isa - Mal"));
-        m_defaultSearchScopes.insert(QObject::tr("New testament"),          QString("Mat - Rev"));
-        m_defaultSearchScopes.insert(QObject::tr("Gospels"),                QString("Mat - Joh"));
-        m_defaultSearchScopes.insert(QObject::tr("Letters/Epistles"),       QString("Rom - Jude"));
-        m_defaultSearchScopes.insert(QObject::tr("Paul's Epistles"),        QString("Rom - Phile"));
+        m_defaultSearchScopes.insert(tr("Old testament"),          QString("Gen - Mal"));
+        m_defaultSearchScopes.insert(tr("Moses/Pentateuch/Torah"), QString("Gen - Deut"));
+        m_defaultSearchScopes.insert(tr("History"),                QString("Jos - Est"));
+        m_defaultSearchScopes.insert(tr("Prophets"),               QString("Isa - Mal"));
+        m_defaultSearchScopes.insert(tr("New testament"),          QString("Mat - Rev"));
+        m_defaultSearchScopes.insert(tr("Gospels"),                QString("Mat - Joh"));
+        m_defaultSearchScopes.insert(tr("Letters/Epistles"),       QString("Rom - Jude"));
+        m_defaultSearchScopes.insert(tr("Paul's Epistles"),        QString("Rom - Phile"));
     }
 }
 
