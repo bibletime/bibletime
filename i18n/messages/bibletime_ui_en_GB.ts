@@ -77,10 +77,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Information about the BibleTime program</translation>
     </message>
     <message>
-        <source>&amp;Save session</source>
-        <translation type="obsolete">&amp;Save session</translation>
-    </message>
-    <message>
         <location filename="../../src/bibletime_init.cpp" line="722"/>
         <source>&amp;Load session</source>
         <translation>&amp;Load session</translation>
@@ -4978,49 +4974,6 @@ Language name ppk</extracomment>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="194"/>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
         <translation>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</translation>
-    </message>
-</context>
-<context>
-    <name>TextFiltersTab</name>
-    <message>
-        <source>Insert line break after each verse</source>
-        <translation type="obsolete">Insert line break after each verse</translation>
-    </message>
-    <message>
-        <source>Show verse numbers</source>
-        <translation type="obsolete">Show verse numbers</translation>
-    </message>
-    <message>
-        <source>Show section headings</source>
-        <translation type="obsolete">Show section headings</translation>
-    </message>
-    <message>
-        <source>Show scripture cross-references</source>
-        <translation type="obsolete">Show scripture cross-references</translation>
-    </message>
-    <message>
-        <source>Show Greek accents</source>
-        <translation type="obsolete">Show Greek accents</translation>
-    </message>
-    <message>
-        <source>Show Hebrew vowel points</source>
-        <translation type="obsolete">Show Hebrew vowel points</translation>
-    </message>
-    <message>
-        <source>Show Hebrew cantillation marks</source>
-        <translation type="obsolete">Show Hebrew cantillation marks</translation>
-    </message>
-    <message>
-        <source>Show morph segmentation</source>
-        <translation type="obsolete">Show morph segmentation</translation>
-    </message>
-    <message>
-        <source>Use textual variants</source>
-        <translation type="obsolete">Use textual variants</translation>
-    </message>
-    <message>
-        <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
-        <translation type="obsolete">Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</translation>
     </message>
 </context>
 <context>
