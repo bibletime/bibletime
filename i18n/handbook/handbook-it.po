@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
 "POT-Creation-Date: 2011-01-13 23:27-0500\n"
-"PO-Revision-Date: 2011-12-03 19:35+0100\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2011-12-04 23:37-0500\n"
+"Last-Translator: Thomas Abthorpe <tabthorpe@FreeBSD.org>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: ENCODINGX-Generator: Lokalize 1.0\n"
+"Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 1.2\n"
 
 # type: Content of: <chapter><title>
@@ -688,16 +688,6 @@ msgstr "Finestra applicazione di &bibletime;"
 # type: Content of: <chapter><sect1><para>
 #. type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:5
-#, fuzzy
-#| msgid ""
-#| "You can easily see the different parts of the application. The top left "
-#| "window is used to open installed works in the Bookshelf tab, and with the "
-#| "Bookmarks tab you can manage your bookmarks. The little \"Mag\" window "
-#| "below the Bookshelf is used to display extra information that is embedded "
-#| "in documents. When you move your mouse over a footnote marker, for "
-#| "example, then the Mag will display the actual content of the footnote. "
-#| "The toolbar gives you quick access to important functions, and the Desk "
-#| "on the right side is where you do your real work."
 msgid ""
 "This is what a typical &bibletime; session looks like: <placeholder type="
 "\"mediaobject\" id=\"0\"/> You can easily see the different parts of the "
@@ -709,15 +699,16 @@ msgid ""
 "of the footnote. The toolbar gives you quick access to important functions, "
 "and the Desk on the right side is where you do your real work."
 msgstr ""
-"Puoi vedere facilmente le diverse parti dell'applicazione. La Finestra in "
-"alto a sinistra è utilizzata per aprire i documenti installati nella scheda "
-"Libreria, e con la scheda Segnalibri è possibile gestire i segnalibri. La "
-"piccola finestra \"Lente\" sottostante la Libreria viene utilizzata per "
-"visualizzare le informazioni aggiuntive incorporate nei documenti. Quando "
-"sposti il mouse su una nota, per esempio, allora la Lente visualizzerà il "
-"contenuto effettivo della nota. La barra degli strumenti consente di "
-"accedere rapidamente alle funzioni importanti, e la Scrivania sulla destra è "
-"dove fai il tuo vero lavoro."
+"Ecco come una tipica sessione di &bibletime; si presenta: <placeholder type="
+"\"mediaobject\" id=\"0\"/> Puoi facilmente vedere le diverse parti "
+"dell'applicazione. La finestra in alto a sinistra è utilizzata per aprire i "
+"documenti installati nella scheda della Libreria, e con la scheda dei "
+"Segnalibri puoi gestire i tuoi segnalibri. La piccola finestra della \"Lente"
+"\" sotto la Libreria è utilizzata per visualizzare informazioni aggiuntive "
+"inserite nei documenti. Quando muovi il mouse sopra una nota, per esempio, "
+"la Lente visualizzerà il contenuto della nota. La barra degli strumenti ti "
+"dà accesso veloce alle funzioni importanti, e la Scrivania sul lato destro è "
+"dove svolgi il tuo vero lavoro."
 
 # type: Content of: <chapter><sect1><para>
 #. type: Content of: <chapter><sect1><para>
@@ -1961,86 +1952,63 @@ msgstr ""
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:199
-#, fuzzy
-#| msgid ""
-#| "<action>Toggles Toolbar display.</action> Toggle this setting to turn the "
-#| "main toolbar on or off."
 msgid ""
 "<action>Toggles tools in works.</action> Toggle this setting to add or "
 "remove the tools icons in the open works."
 msgstr ""
-"<action>Mostra/nascondi barra degli strumenti.</action> Cambia questa "
-"impostazione per mostrare o nascodere la barra degli strumenti."
+"<action>Mostra/nascondi strumenti nei documenti.</action> Cambia questa "
+"impostazione per mostrare o nascondere le icone degli strumenti nei "
+"documenti aperti."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:207
-#, fuzzy
-#| msgid ""
-#| "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
-#| "guimenuitem> <guimenuitem>Auto-tile</guimenuitem> </menuchoice> "
-#| "equivalent; toggle automatic window tiling."
 msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Toolbars</guimenuitem> "
 "<guimenuitem>Show format</guimenuitem> </menuchoice>"
 msgstr ""
-"<menuchoice> <guimenu>Finestra</guimenu> <guimenuitem>Arrangiamento</"
-"guimenuitem> <guimenuitem>Disponi verticalmente automaticamente</"
-"guimenuitem> </menuchoice> equivalent; attiva/disattiva la disposizione "
-"automatica delle finestre."
+"<menuchoice> <guimenu>Visualizza</guimenu> <guimenuitem>Barre degli "
+"strumenti</guimenuitem> <guimenuitem>Mostra barra di formattazione</"
+"guimenuitem> </menuchoice>"
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:214
-#, fuzzy
-#| msgid ""
-#| "<action>Toggles Toolbar display.</action> Toggle this setting to turn the "
-#| "main toolbar on or off."
 msgid ""
 "<action>Toggles format.</action> Toggle this setting when editing HTML in "
 "Personal Commentaries. It will add or remove the formatting toolbar."
 msgstr ""
-"<action>Mostra/nascondi barra degli strumenti.</action> Cambia questa "
-"impostazione per mostrare o nascodere la barra degli strumenti."
+"<action>Mostra/nascondi formattazione.</action> Cambia questa impostazione "
+"quando modifichi del HTML nei Commenti Personali. Mostrerà o nasconderà la "
+"barra della formattazione."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:223
-#, fuzzy
-#| msgid ""
-#| "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
-#| "guimenuitem> <guimenuitem>Auto-tile</guimenuitem> </menuchoice> "
-#| "equivalent; toggle automatic window tiling."
 msgid ""
 "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Toolbars</guimenuitem> "
 "<guimenuitem>Show toolbars in text windows</guimenuitem> </menuchoice>"
 msgstr ""
-"<menuchoice> <guimenu>Finestra</guimenu> <guimenuitem>Arrangiamento</"
-"guimenuitem> <guimenuitem>Disponi verticalmente automaticamente</"
-"guimenuitem> </menuchoice> equivalent; attiva/disattiva la disposizione "
-"automatica delle finestre."
+"<menuchoice> <guimenu>Visualizza</guimenu> <guimenuitem>Barre degli "
+"strumenti</guimenuitem> <guimenuitem>Mostra barre degli strumenti nelle "
+"finestre di testo</guimenuitem> </menuchoice>"
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:230
-#, fuzzy
-#| msgid ""
-#| "<action>Toggles Toolbar display.</action> Toggle this setting to turn the "
-#| "main toolbar on or off."
 msgid ""
 "<action>Toggles toolbars in works.</action> Toggle this setting to add or "
 "remove the complete toolbar in open works."
 msgstr ""
-"<action>Mostra/nascondi barra degli strumenti.</action> Cambia questa "
-"impostazione per mostrare o nascodere la barra degli strumenti."
+"<action>Mostra/nascondi barre degli strumenti nei documenti.</action> Cambia "
+"questa impostazione per mostrare o nascondere l'intera barra degli strumenti "
+"nei documenti aperti."
 
 # type: Content of: <chapter><sect1><title>
 #. type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:239
-#, fuzzy
-#| msgid "The <guimenuitem>Bookshelf Manager</guimenuitem>"
 msgid "<guimenu>Search</guimenu>"
-msgstr "Il <guimenuitem>Gestore Libreria</guimenuitem>"
+msgstr "<guimenu>Cerca</guimenu>"
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:251
@@ -2138,10 +2106,8 @@ msgstr ""
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:322
-#, fuzzy
-#| msgid "<action>Closes all open windows</action>."
 msgid "<action>Closes active window</action>."
-msgstr "<action>Chiudi tutte le finestre aperte</action>."
+msgstr "<action>Chiudi finestra attiva</action>."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:328
@@ -2279,50 +2245,37 @@ msgstr ""
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:448
-#, fuzzy
-#| msgid ""
-#| "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> "
-#| "</menuchoice> equivalent; opens the handbook."
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> </menuchoice>"
 msgstr ""
-"<menuchoice> <guimenu>Aiuto</guimenu> <guimenuitem>Manuale</guimenuitem> </"
-"menuchoice> equivalent; apre il manuale."
+"<menuchoice> <guimenu>Finestra</guimenu> <guimenuitem>Arrangiamento</"
+"guimenuitem> </menuchoice>"
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:455
-#, fuzzy
-#| msgid ""
-#| "<action>Controls the basic window arrangement behaviour</action>. In the "
-#| "opening context menu, you can either specify that you want to take care "
-#| "of the window arrangement yourself (Manual mode) or have &bibletime; "
-#| "handle it for you (Automatic modes, just try them out!)."
 msgid ""
 "<action>Controls the basic window arrangement behaviour</action>. In the "
 "opening context menu, you can either specify that you want to take care of "
 "the window arrangement yourself (Manual mode), Tabbed, Auto-tile vertically, "
 "Auto-tile horizontally, Auto-tile or Auto-cascade.  Just try them out!"
 msgstr ""
-"<action>Controlla il comportamento base della disposizione delle finestre </"
+"<action>Controlla il comportamento base della disposizione delle finestre</"
 "action>. Nel menu contestuale, puoi specificare se vuoi gestire tu la "
-"disposizione delle finestre (modalità manuale) o lasciare che sia "
-"&bibletime; a gestirla (modalità automatica). Dacci un'occhiata!"
+"disposizione delle finestre (modalità Manuale), Schede, Affianca "
+"verticalmente, Affianca orizzontalmente, Auto-affianca o In cascata. Dacci "
+"un'occhiata!"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:466
-#, fuzzy
-#| msgid ""
-#| "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> "
-#| "</menuchoice> equivalent; opens the handbook."
 msgid ""
 "<menuchoice> <guimenu> Window</guimenu> <guimenuitem>Save session</"
 "guimenuitem> </menuchoice>"
 msgstr ""
-"<menuchoice> <guimenu>Aiuto</guimenu> <guimenuitem>Manuale</guimenuitem> </"
-"menuchoice> equivalent; apre il manuale."
+"<menuchoice> <guimenu> Finestra</guimenu> <guimenuitem>Salva sessione</"
+"guimenuitem> </menuchoice>"
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -2362,16 +2315,12 @@ msgstr ""
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:504
-#, fuzzy
-#| msgid ""
-#| "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> "
-#| "</menuchoice> equivalent; opens the handbook."
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Load session</"
 "guimenuitem> </menuchoice>"
 msgstr ""
-"<menuchoice> <guimenu>Aiuto</guimenu> <guimenuitem>Manuale</guimenuitem> </"
-"menuchoice> equivalent; apre il manuale."
+"<menuchoice> <guimenu> Finestra</guimenu> <guimenuitem>Carica sessione</"
+"guimenuitem> </menuchoice>"
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -2386,16 +2335,12 @@ msgstr ""
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:520
-#, fuzzy
-#| msgid ""
-#| "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> "
-#| "</menuchoice> equivalent; opens the handbook."
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Delete session</"
 "guimenuitem> </menuchoice>"
 msgstr ""
-"<menuchoice> <guimenu>Aiuto</guimenu> <guimenuitem>Manuale</guimenuitem> </"
-"menuchoice> equivalent; apre il manuale."
+"<menuchoice> <guimenu> Finestra</guimenu> <guimenuitem>Elimina sessione</"
+"guimenuitem> </menuchoice>"
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -2579,16 +2524,12 @@ msgstr ""
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:679
-#, fuzzy
-#| msgid ""
-#| "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> "
-#| "</menuchoice> equivalent; opens the handbook."
 msgid ""
 "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>About</guimenuitem> </"
 "menuchoice>"
 msgstr ""
-"<menuchoice> <guimenu>Aiuto</guimenu> <guimenuitem>Manuale</guimenuitem> </"
-"menuchoice> equivalent; apre il manuale."
+"<menuchoice> <guimenu>Aiuto</guimenu> <guimenuitem>About BibleTime</"
+"guimenuitem> </menuchoice>"
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -3250,16 +3191,12 @@ msgstr "<keycombo action=\"simul\"> <keycap>F2</keycap> </keycombo>"
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1328
-#, fuzzy
-#| msgid ""
-#| "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy Howto</"
-#| "guimenuitem> </menuchoice> equivalent; opens the BibleStudy Howto."
 msgid ""
 "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy HowTo</"
 "guimenuitem> </menuchoice> equivalent; opens the BibleStudy HowTo."
 msgstr ""
 "<menuchoice> <guimenu>Aiuto</guimenu> <guimenuitem>HowTo Studio Bibbia</"
-"guimenuitem> </menuchoice> equivalent; apre l'Howto per lo studio della "
+"guimenuitem> </menuchoice> equivalent; apre l'HowTo per lo studio della "
 "Bibbia."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
@@ -3270,16 +3207,12 @@ msgstr "<keycombo action=\"simul\"> <keycap>F3</keycap> </keycombo>"
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1342
-#, fuzzy
-#| msgid ""
-#| "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> "
-#| "</menuchoice> equivalent; opens the handbook."
 msgid ""
 "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Tip of the Day</"
 "guimenuitem> </menuchoice> Opens a helpful tip to use &bibletime;."
 msgstr ""
-"<menuchoice> <guimenu>Aiuto</guimenu> <guimenuitem>Manuale</guimenuitem> </"
-"menuchoice> equivalent; apre il manuale."
+"<menuchoice> <guimenu>Aiuto</guimenu> <guimenuitem>Suggerimento del giorno</"
+"guimenuitem> </menuchoice>Apre un utile suggerimento per usare &bibletime;."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1350
@@ -3358,25 +3291,20 @@ msgstr ""
 # type: Content of: <chapter><sect1><sect2><para><mediaobject><textobject>
 #. type: Content of: <chapter><sect1><sect2><para><mediaobject><textobject><phrase>
 #: docs/handbook/en/docbook/hdbk-start.docbook:17
-#, fuzzy
-#| msgid "<phrase>&bibletime; start icon</phrase>"
 msgid "&bibletime; start icon"
-msgstr "<phrase>&bibletime; start icon</phrase>"
+msgstr "&bibletime; start icon"
 
 # type: Content of: <chapter><sect1><sect2><para>
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-start.docbook:9
-#, fuzzy
-#| msgid ""
-#| "&bibletime; is an executable file that is integrated with the desktop. "
-#| "You can launch &bibletime; from the Start Menu with this icon:"
 msgid ""
 "&bibletime; is an executable file that is integrated with the desktop. You "
 "can launch &bibletime; from the Start Menu with this icon: <placeholder type="
 "\"mediaobject\" id=\"0\"/>"
 msgstr ""
 "&bibletime; è un file eseguibile integrato con il desktop. Puoi lanciare "
-"&bibletime; dal menu di avvio con questa icona:"
+"&bibletime; dal menu di avvio con questa icona: <placeholder type="
+"\"mediaobject\" id=\"0\"/>"
 
 # type: Content of: <chapter><sect1><sect2><para><screen>
 #. type: Content of: <chapter><sect1><sect2><para><screen>
@@ -3388,17 +3316,14 @@ msgstr "bibletime"
 # type: Content of: <chapter><sect1><sect2><para>
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-start.docbook:21
-#, fuzzy
-#| msgid ""
-#| "&bibletime; can also be launched from a terminal command prompt. To "
-#| "launch &bibletime;, open a terminal window and type:"
 msgid ""
 "&bibletime; can also be launched from a terminal command prompt. To launch "
 "&bibletime;, open a terminal window and type: <placeholder type=\"screen\" "
 "id=\"0\"/>"
 msgstr ""
-"&bibletime; può essere avviato da un prompt dei comandi. Per "
-"lanciare&bibletime;, apri una finestra di terminale e digita:"
+"&bibletime; può anche essere avviato da un prompt dei comandi. Per lanciare "
+"&bibletime;, apri una finestra di terminale e digita: <placeholder type="
+"\"screen\" id=\"0\"/>"
 
 # type: Content of: <chapter><sect1><sect2><title>
 #. type: Content of: <chapter><sect1><sect2><title>
@@ -3454,10 +3379,8 @@ msgstr ""
 # type: Content of: <chapter><sect1><title>
 #. type: Content of: <chapter><sect1><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-start.docbook:49
-#, fuzzy
-#| msgid "Configure &bibletime; Dialog"
 msgid "<interface>Configure &bibletime; dialog</interface>"
-msgstr "Configura &bibletime;"
+msgstr "<interface>Configura &bibletime;</interface>"
 
 # type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
@@ -3474,10 +3397,8 @@ msgstr ""
 # type: Content of: <chapter><sect1><title>
 #. type: Content of: <chapter><sect1><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-start.docbook:62
-#, fuzzy
-#| msgid "The <guimenuitem>Bookshelf Manager</guimenuitem>"
 msgid "<interface>Bookshelf Manager</interface>"
-msgstr "Il <guimenuitem>Gestore Libreria</guimenuitem>"
+msgstr "<interface>Gestore Libreria</interface>"
 
 # type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
@@ -3650,10 +3571,8 @@ msgstr "Qt4"
 # type: Content of: <chapter><sect1><sect2><para><screen>
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/handbook/en/docbook/index.docbook:69
-#, fuzzy
-#| msgid "bibletime"
 msgid "BibleTime"
-msgstr "bibletime"
+msgstr "BibleTime"
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/handbook/en/docbook/index.docbook:70
@@ -3669,51 +3588,3 @@ msgstr "Crosswire"
 #: docs/handbook/en/docbook/index.docbook:72
 msgid "Help dialog"
 msgstr "Finestra di aiuto"
-
-# type: Content of: <book><bookinfo><releaseinfo>
-#, fuzzy
-#~| msgid "2.7"
-#~ msgid "2.9"
-#~ msgstr "2.7"
-
-# type: Content of: <chapter><sect1><sect2><mediaobject><textobject>
-#~ msgid "<phrase>Options Dialog - fonts</phrase>"
-#~ msgstr "<phrase>Finestra Opzioni - caratteri</phrase>"
-
-# type: Content of: <chapter><sect1><para>
-#~ msgid "This is what a typical &bibletime; session looks like:"
-#~ msgstr "Così si presenta una tipica sessione di &bibletime;:"
-
-# type: Content of: <chapter><sect1><para><mediaobject><textobject>
-#~ msgid "<phrase>The &bibletime; application window</phrase>"
-#~ msgstr "<phrase>La finestra dell'applicazione &bibletime;</phrase>"
-
-# type: Content of: <chapter><sect1><sect2><sect3><para>
-#~ msgid "Available text types:"
-#~ msgstr "Tipi di testo disponibili:"
-
-# type: Content of: <chapter><sect1><sect2><para>
-#~ msgid ""
-#~ "From a terminal you can use &bibletime; to open a random verse in the "
-#~ "default bible:"
-#~ msgstr ""
-#~ "Da un terminale puoi usare &bibletime; per aprire un versetto casuale "
-#~ "nella Bibbia di default:"
-
-# type: Content of: <chapter><sect1><sect2><para>
-#~ msgid "To open at a given passage like John 3:16, use:"
-#~ msgstr "Per aprire ad un certo passaggio come Giovanni 3:16, usa:"
-
-# type: Content of: <chapter><sect1><sect2><para>
-#~ msgid "You can also use booknames in your current bookname language."
-#~ msgstr ""
-#~ "Puoi anche usare i nomi dei libri della Bibbia nella corrente per i nomi "
-#~ "dei libri della Bibbia."
-
-# type: Content of: <chapter><sect1><title>
-#~ msgid "The &bibletime; Team"
-#~ msgstr "Il Team di &bibletime;"
-
-# type: Content of: <book><bookinfo><date>
-#~ msgid "$LastChangedDate: 2010-02-25 12:20:19 -0500 (Thu, 25 Feb 2010) $"
-#~ msgstr "$LastChangedDate: 2010-02-25 12:20:19 -0500 (Thu, 25 Feb 2010) $"
