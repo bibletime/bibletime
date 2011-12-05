@@ -154,38 +154,43 @@ strumenti</guimenuitem> <guimenuitem>Mostra barra degli
 strumenti</guimenuitem> </menuchoice>
           </term>
           <listitem>
-            <para><action>Toggles tools in works.</action> Toggle this setting to add or
-remove the tools icons in the open works.</para>
+            <para><action>Mostra/nascondi strumenti nei documenti.</action> Cambia questa
+impostazione per mostrare o nascondere le icone degli strumenti nei
+documenti aperti.</para>
           </listitem>
         </varlistentry>
 
         <varlistentry id="hdbk-reference-menus-view-toolbars-showformat">
           <term>
-            <menuchoice> <guimenu>View</guimenu> <guimenuitem>Toolbars</guimenuitem>
-<guimenuitem>Show format</guimenuitem> </menuchoice>
+            <menuchoice> <guimenu>Visualizza</guimenu> <guimenuitem>Barre degli
+strumenti</guimenuitem> <guimenuitem>Mostra barra di
+formattazione</guimenuitem> </menuchoice>
           </term>
           <listitem>
-            <para><action>Toggles format.</action> Toggle this setting when editing HTML in
-Personal Commentaries. It will add or remove the formatting toolbar.</para>
+            <para><action>Mostra/nascondi formattazione.</action> Cambia questa impostazione
+quando modifichi del HTML nei Commenti Personali. Mostrerà o nasconderà la
+barra della formattazione.</para>
           </listitem>
         </varlistentry>
 
         <varlistentry
 	id="hdbk-reference-menus-view-toolbars-showtoolbarsintextwindows">
           <term>
-            <menuchoice> <guimenu>View</guimenu> <guimenuitem>Toolbars</guimenuitem>
-<guimenuitem>Show toolbars in text windows</guimenuitem> </menuchoice>
+            <menuchoice> <guimenu>Visualizza</guimenu> <guimenuitem>Barre degli
+strumenti</guimenuitem> <guimenuitem>Mostra barre degli strumenti nelle
+finestre di testo</guimenuitem> </menuchoice>
           </term>
           <listitem>
-            <para><action>Toggles toolbars in works.</action> Toggle this setting to add or
-remove the complete toolbar in open works.</para>
+            <para><action>Mostra/nascondi barre degli strumenti nei documenti.</action> Cambia
+questa impostazione per mostrare o nascondere l'intera barra degli strumenti
+nei documenti aperti.</para>
           </listitem>
         </varlistentry>
       </variablelist>
     </sect2>
     <sect2 id="hdbk-reference-menus-search">
       <title>
-        <guimenu>Search</guimenu>
+        <guimenu>Cerca</guimenu>
       </title>
       <variablelist>
         <varlistentry id="hdbk-reference-menus-search-defaultbible">
@@ -243,7 +248,7 @@ finestra</guimenuitem> </menuchoice>
 
           <listitem>
             <para>
-            <action>Closes active window</action>.</para>
+            <action>Chiudi finestra attiva</action>.</para>
           </listitem>
         </varlistentry>
 
@@ -329,22 +334,23 @@ format="PNG" /> </imageobject></inlinemediaobject>Finestra</guimenu>
 
         <varlistentry id="hdbk-reference-menus-window-arrangement_mode">
           <term>
-            <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement
-mode</guimenuitem> </menuchoice>
+            <menuchoice> <guimenu>Finestra</guimenu>
+<guimenuitem>Arrangiamento</guimenuitem> </menuchoice>
           </term>
 
           <listitem>
-            <para><action>Controls the basic window arrangement behaviour</action>. In the
-opening context menu, you can either specify that you want to take care of
-the window arrangement yourself (Manual mode), Tabbed, Auto-tile vertically,
-Auto-tile horizontally, Auto-tile or Auto-cascade.  Just try them out!</para>
+            <para><action>Controlla il comportamento base della disposizione delle
+finestre</action>. Nel menu contestuale, puoi specificare se vuoi gestire tu
+la disposizione delle finestre (modalità Manuale), Schede, Affianca
+verticalmente, Affianca orizzontalmente, Auto-affianca o In cascata. Dacci
+un'occhiata!</para>
           </listitem>
         </varlistentry>
 
         <varlistentry id="hdbk-reference-menus-window-savesession">
           <term>
-            <menuchoice> <guimenu> Window</guimenu> <guimenuitem>Save
-session</guimenuitem> </menuchoice>
+            <menuchoice> <guimenu> Finestra</guimenu> <guimenuitem>Salva
+sessione</guimenuitem> </menuchoice>
           </term>
 
           <listitem>
@@ -373,8 +379,8 @@ nuovo nome per salvare la sessione.</para>
 
         <varlistentry id="hdbk-reference-menus-window-loadsession">
           <term>
-            <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Load
-session</guimenuitem> </menuchoice>
+            <menuchoice> <guimenu> Finestra</guimenu> <guimenuitem>Carica
+sessione</guimenuitem> </menuchoice>
           </term>
 
           <listitem>
@@ -386,8 +392,8 @@ contestuale dove potrai selezionare una sessione esistente da caricare.</para>
 
         <varlistentry id="hdbk-reference-menus-window-deletesession">
           <term>
-            <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Delete
-session</guimenuitem> </menuchoice>
+            <menuchoice> <guimenu> Finestra</guimenu> <guimenuitem>Elimina
+sessione</guimenuitem> </menuchoice>
           </term>
 
           <listitem>
@@ -496,8 +502,8 @@ fornisce un utile suggerimento che ti assisterà nell'utilizzo di
 
         <varlistentry id="hdbk-reference-menus-help-about">
           <term>
-            <menuchoice> <guimenu>Help</guimenu> <guimenuitem>About</guimenuitem>
-</menuchoice>
+            <menuchoice> <guimenu>Aiuto</guimenu> <guimenuitem>About
+BibleTime</guimenuitem> </menuchoice>
           </term>
           <listitem>
             <para>
@@ -1006,8 +1012,9 @@ ricerca per cercare in tutti i documenti aperti.</entry>
               <keycombo action="simul"> <keycap>F2</keycap> </keycombo>
             </entry>
             <entry>
-            <menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy
-HowTo</guimenuitem> </menuchoice> equivalent; opens the BibleStudy HowTo.</entry>
+            <menuchoice> <guimenu>Aiuto</guimenu> <guimenuitem>HowTo Studio
+Bibbia</guimenuitem> </menuchoice> equivalent; apre l'HowTo per lo studio
+della Bibbia.</entry>
           </row>
 
           <row>
@@ -1015,8 +1022,9 @@ HowTo</guimenuitem> </menuchoice> equivalent; opens the BibleStudy HowTo.</entry
               <keycombo action="simul"> <keycap>F3</keycap> </keycombo>
             </entry>
             <entry>
-            <menuchoice> <guimenu>Help</guimenu> <guimenuitem>Tip of the
-Day</guimenuitem> </menuchoice> Opens a helpful tip to use &bibletime;.</entry>
+            <menuchoice> <guimenu>Aiuto</guimenu> <guimenuitem>Suggerimento del
+giorno</guimenuitem> </menuchoice>Apre un utile suggerimento per usare
+&bibletime;.</entry>
           </row>
 
           <row>
