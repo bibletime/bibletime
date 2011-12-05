@@ -62,10 +62,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>&amp;Schermo intero</translation>
     </message>
     <message>
-        <source>Main Toolbar</source>
-        <translation type="obsolete">Barra degli strumenti principale</translation>
-    </message>
-    <message>
         <location filename="../../src/bibletime_init.cpp" line="105"/>
         <source>&amp;Quit</source>
         <translation>&amp;Esci</translation>
@@ -79,46 +75,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/bibletime_init.cpp" line="257"/>
         <source>Information about the BibleTime program</source>
         <translation>Informazioni sul programma BibleTime</translation>
-    </message>
-    <message>
-        <source>Show Bookshelf</source>
-        <translation type="obsolete">Mostra Libreria</translation>
-    </message>
-    <message>
-        <source>Show Bookmarks</source>
-        <translation type="obsolete">Mostra segnalibri</translation>
-    </message>
-    <message>
-        <source>Show Mag</source>
-        <translation type="obsolete">Mostra Lente</translation>
-    </message>
-    <message>
-        <source>Text windows</source>
-        <translation type="obsolete">Finestre testo</translation>
-    </message>
-    <message>
-        <source>Show text area headers</source>
-        <translation type="obsolete">Mostra intestazioni area testo</translation>
-    </message>
-    <message>
-        <source>Show navigation</source>
-        <translation type="obsolete">Mostra navigazione</translation>
-    </message>
-    <message>
-        <source>Show work chooser buttons</source>
-        <translation type="obsolete">Mostra pulsanti scelta documento</translation>
-    </message>
-    <message>
-        <source>Show tools</source>
-        <translation type="obsolete">Mostra strumenti</translation>
-    </message>
-    <message>
-        <source>O&amp;pen Windows</source>
-        <translation type="obsolete">A&amp;pri Finestre</translation>
-    </message>
-    <message>
-        <source>&amp;Save session</source>
-        <translation type="obsolete">&amp;Salva sessione</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="722"/>
@@ -431,18 +387,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Barre degli strumenti</translation>
     </message>
     <message>
-        <source>Show main</source>
-        <translation type="obsolete">Mostra principale</translation>
-    </message>
-    <message>
-        <source>Show works</source>
-        <translation type="obsolete">Mostra documenti</translation>
-    </message>
-    <message>
-        <source>Show format</source>
-        <translation type="obsolete">Mostra formato</translation>
-    </message>
-    <message>
         <location filename="../../src/bibletime_init.cpp" line="742"/>
         <source>Show toolbars in text windows</source>
         <translation>Mostra barre degli strumenti nelle finestre di testo</translation>
@@ -518,10 +462,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>La chiave di sblocco fornita non blocca correttamente questo modulo. Per favore riprova.</translation>
     </message>
     <message>
-        <source>Enter the unlock key for this work.</source>
-        <translation type="obsolete">Inserisci la chiave per sbloccare questo documento.</translation>
-    </message>
-    <message>
         <location filename="../../src/bibletime_init.cpp" line="256"/>
         <source>&amp;About BibleTime</source>
         <translation>&amp;About BibleTime</translation>
@@ -576,10 +516,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/btaboutdialog.cpp" line="129"/>
         <source>We are looking for developers and translators. If you would like to join our team, please send an email to %1.</source>
         <translation>Stiamo cercando sviluppatori e traduttori. Se vuoi far parte del nostro team, invia una mail a %1.</translation>
-    </message>
-    <message>
-        <source>(c)1999-2010, The BibleTime Team</source>
-        <translation type="obsolete">(c)1999-2010, The BibleTime Team</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="140"/>
@@ -866,42 +802,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <source>Module</source>
         <translation>Modulo</translation>
     </message>
-    <message>
-        <source>Bibles</source>
-        <translation type="obsolete">Bibbie</translation>
-    </message>
-    <message>
-        <source>Commentaries</source>
-        <translation type="obsolete">Commenti</translation>
-    </message>
-    <message>
-        <source>Books</source>
-        <translation type="obsolete">Libri</translation>
-    </message>
-    <message>
-        <source>Cults/Unorthodox</source>
-        <translation type="obsolete">Culti/Non ortodossi</translation>
-    </message>
-    <message>
-        <source>Maps and Images</source>
-        <translation type="obsolete">Mappe e Immagini</translation>
-    </message>
-    <message>
-        <source>Daily Devotionals</source>
-        <translation type="obsolete">Letture di devozione giornaliere</translation>
-    </message>
-    <message>
-        <source>Lexicons and Dictionaries</source>
-        <translation type="obsolete">Lessici e Dizionari</translation>
-    </message>
-    <message>
-        <source>Glossaries</source>
-        <translation type="obsolete">Glossari</translation>
-    </message>
-    <message>
-        <source>Unknown</source>
-        <translation type="obsolete">Sconosciuto</translation>
-    </message>
 </context>
 <context>
     <name>BtBookshelfWidget</name>
@@ -920,30 +820,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/btbookshelfwidget.cpp" line="162"/>
         <source>Change the grouping of items in the bookshelf.</source>
         <translation>Cambia il raggruppamento degli elementi nella libreria.</translation>
-    </message>
-    <message>
-        <source>Use grouping from bookshelf dock</source>
-        <translation type="obsolete">Usa raggruppamento dalla libreria</translation>
-    </message>
-    <message>
-        <source>Category/Language</source>
-        <translation type="obsolete">Categoria/Lingua</translation>
-    </message>
-    <message>
-        <source>Category</source>
-        <translation type="obsolete">Categoria</translation>
-    </message>
-    <message>
-        <source>Language/Category</source>
-        <translation type="obsolete">Lingua/Categoria</translation>
-    </message>
-    <message>
-        <source>Language</source>
-        <translation type="obsolete">Lingua</translation>
-    </message>
-    <message>
-        <source>No grouping</source>
-        <translation type="obsolete">Nessun raggruppamento</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfwidget.cpp" line="164"/>
@@ -1092,10 +968,6 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtFontSettingsPage</name>
     <message>
-        <source>You can specify a custom font for each language.</source>
-        <translation type="obsolete">Puoi specificare un carattere personalizzato per ogni lingua.</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="154"/>
         <source>&amp;Language:</source>
         <translation>&amp;Lingua:</translation>
@@ -1169,10 +1041,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Dimensione indice</translation>
     </message>
     <message>
-        <source>Create new search indexes and delete created indexes for the installed works.</source>
-        <translation type="obsolete">Crea un nuovo indice di ricerca ed elimina gli indici creati per i documenti installati.</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="123"/>
         <source>Search Indexes</source>
         <translation>Ricerca Indici</translation>
@@ -1186,10 +1054,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="97"/>
         <source>Unindexed Works</source>
         <translation>Documenti non indicizzati</translation>
-    </message>
-    <message>
-        <source>KiB</source>
-        <translation type="obsolete">KiB</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="132"/>
@@ -1239,14 +1103,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="263"/>
         <source>Install/Update</source>
         <translation>Installa/Aggiorna</translation>
-    </message>
-    <message>
-        <source>Install and update works. Add remote or local sources, refresh them, select the works to be installed/updated and click Install.&lt;br/&gt;&lt;b&gt;WARNING:&lt;/b&gt; If you live in a persecuted country and don&apos;t want to risk detection don&apos;t use remote sources.</source>
-        <translation type="obsolete">Installa e aggiorna documenti. Aggiungi fonti remote o locali, aggiornale, seleziona i documenti che devono essere installati/aggiornati e clicca Installa.&lt;br/&gt;&lt;b&gt;ATTENZIONE:&lt;/b&gt; Se vivi in un paese perseguitato e non vuoi rischiare di essere rilevato non usare origini remote.</translation>
-    </message>
-    <message>
-        <source>Install folder:</source>
-        <translation type="obsolete">Cartella d&apos;installazione:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="265"/>
@@ -1337,10 +1193,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="394"/>
         <source>Do you really want to delete this source?</source>
         <translation>Vuoi davvero eliminare questa fonte?</translation>
-    </message>
-    <message>
-        <source>Install...</source>
-        <translation type="obsolete">Installa...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="281"/>
@@ -1530,10 +1382,6 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtLanguageSettingsPage</name>
     <message>
-        <source>Select the language in which the Biblical book names are displayed.</source>
-        <translation type="obsolete">Seleziona la lingua in cui i nomi dei libri della Bibbia sono visualizzati.</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="135"/>
         <source>Language for names of Bible books:</source>
         <translation>Lingua per i nomi dei libri della Bibbia:</translation>
@@ -1651,14 +1499,6 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtRemovePage</name>
     <message>
-        <source>&amp;Remove</source>
-        <translation type="obsolete">&amp;Rimuovi</translation>
-    </message>
-    <message>
-        <source>Remove installed works. Select the works and click Remove button.</source>
-        <translation type="obsolete">Rimuovi i documenti installati. Seleziona i documenti e clicca il tasto Rimuovi.</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="97"/>
         <source>Select &amp;works to uninstall:</source>
         <translation>Seleziona &amp;documenti da disinstallare:</translation>
@@ -1692,10 +1532,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="146"/>
         <source>Do you really want to remove them from your system?</source>
         <translation>Vuoi veramente rimuoverle dal sistema?</translation>
-    </message>
-    <message>
-        <source>Remove...</source>
-        <translation type="obsolete">Rimuovi...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="100"/>
@@ -1813,111 +1649,6 @@ scorciatoia</translation>
     </message>
 </context>
 <context>
-    <name>BtSourceArea</name>
-    <message>
-        <source>Work</source>
-        <translation type="obsolete">Documento</translation>
-    </message>
-    <message>
-        <source>Description</source>
-        <translation type="obsolete">Descrizione</translation>
-    </message>
-    <message>
-        <source>&amp;Add...</source>
-        <translation type="obsolete">Aggiungi...</translation>
-    </message>
-    <message>
-        <source>Refresh...</source>
-        <translation type="obsolete">Aggiorna...</translation>
-    </message>
-    <message>
-        <source>Refresh the list of works from this source</source>
-        <translation type="obsolete">Aggiorna la lista dei documenti da questa fonte</translation>
-    </message>
-    <message>
-        <source>&amp;Delete...</source>
-        <translation type="obsolete">Elimina...</translation>
-    </message>
-    <message>
-        <source>Delete this source</source>
-        <translation type="obsolete">Elimina questa fonte</translation>
-    </message>
-    <message>
-        <source>Add new source</source>
-        <translation type="obsolete">Aggiungi nuova fonte</translation>
-    </message>
-</context>
-<context>
-    <name>BtSourceAreaModel</name>
-    <message>
-        <source>Work</source>
-        <translation type="obsolete">Documento</translation>
-    </message>
-    <message>
-        <source>Version</source>
-        <translation type="obsolete">Versione</translation>
-    </message>
-    <message>
-        <source>Description</source>
-        <translation type="obsolete">Descrizione</translation>
-    </message>
-</context>
-<context>
-    <name>BtSourceWidget</name>
-    <message>
-        <source>Delete Source?</source>
-        <translation type="obsolete">Eliminare Fonte?</translation>
-    </message>
-    <message>
-        <source>Do you really want to delete this source?</source>
-        <translation type="obsolete">Vuoi davvero eliminare questa fonte?</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="obsolete">Annulla</translation>
-    </message>
-    <message>
-        <source>Refreshing source</source>
-        <translation type="obsolete">Aggiornamento Fonte</translation>
-    </message>
-    <message>
-        <source>Connecting...</source>
-        <translation type="obsolete">Connessione...</translation>
-    </message>
-    <message>
-        <source>Refreshing...</source>
-        <translation type="obsolete">Aggiornamento...</translation>
-    </message>
-    <message>
-        <source>No sources were found in the SWORD configuration and BibleTime couldn&apos;t create a default source. Check your SWORD configuration and that the configuration path is writable. Then restart the Bookshelf Manager.</source>
-        <translation type="obsolete">Nessuna fonte trovata nella configurazione di SWORD e BibleTime non può creare una fonte di default. Controlla la configurazione di SWORD e che il percorso di configurazione sia scrivibile. Quindi riavvia il Gestore dei Segnalibri.</translation>
-    </message>
-    <message>
-        <source>Remote:</source>
-        <translation type="obsolete">Remoto:</translation>
-    </message>
-    <message>
-        <source>Local:</source>
-        <translation type="obsolete">Locale:</translation>
-    </message>
-    <message>
-        <source>Not a directory!</source>
-        <translation type="obsolete">Non è una cartella!</translation>
-    </message>
-    <message>
-        <source>Not readable!</source>
-        <translation type="obsolete">Non leggibile!</translation>
-    </message>
-    <message>
-        <source>Warning</source>
-        <translation type="obsolete">Attenzione</translation>
-    </message>
-    <message>
-        <source>The destination directory is not writable or does not exist. Installation will fail unless this has first been fixed.</source>
-        <translation type="obsolete">La cartella di destinazione non è scrivibile o non esiste. L&apos;installazione fallirà se questo non viene risolto prima.</translation>
-    </message>
-</context>
-<context>
     <name>BtTextFiltersTab</name>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="75"/>
@@ -1976,10 +1707,6 @@ scorciatoia</translation>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="51"/>
         <source>Add/remove/replace</source>
         <translation>Aggiungi/rimuovi/sostituisci</translation>
-    </message>
-    <message>
-        <source>&amp;Remove</source>
-        <translation type="obsolete">&amp;Rimuovi</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="153"/>
@@ -2073,14 +1800,6 @@ scorciatoia</translation>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="178"/>
         <source>You can save your open windows in a session. Such a session can easily be restored later on. You can save as many sessions as you like. The session feature can be accessed under the Window menu entry.</source>
         <translation>Puoi salvare le tue finestre aperte in una sessione. Tale sessione può essere facilmente ripristinata in seguito. Puoi salvare tante sessioni quante ne vuoi. Puoi accedere alla funzione sessione dal menu Finestra.</translation>
-    </message>
-    <message>
-        <source>The Bookshelf, Bookmark, and Mag windows can be moved to new locations by dragging them from the title at the top of each window. They can be placed to the left, right, above, or below the works windows. They can be placed on top of each other and tabs will appear so each window can be selected. They can be resized by dragging theborder between the window and another window.</source>
-        <translation type="obsolete">La finestre Libreria, Segnalibri, e Lente possono essere spostate in nuove posizioni trascinandole dal titolo nella parte superiore della finestra. Possono essere posizionate a sinistra, destra, sopra o sotto della finestra dei documenti. Possono essere posizionate una sopra l&apos;altra e delle linguette appariranno affinchè ogni finestra possa essere selezionata. Possono essere ridimensionate trascinando il bordo tra le finestre.</translation>
-    </message>
-    <message>
-        <source>You can search for Strong&apos;s numbers in a work. Start with a work that has Strong&apos;s numbers and hover over a word. Right click the word and use the Strong&apos;s Search menu. A search dialog will appear that allows you to see the use of the sameStrong&apos;s number in other locations of the work.</source>
-        <translation type="obsolete">Puoi cercare i numeri Strong in un documento. Parti da un documento che ha i numeri Strong e vai su una parola. Clicca di destro la parola e usa la Ricerca Strong. Una finestra di dialogo si aprirà permettendoti di vedere l&apos;utilizzo dello stesso numero Strong in altre parti del documento.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="168"/>
@@ -2236,17 +1955,9 @@ scorciatoia</translation>
         <translation>Stampa...</translation>
     </message>
     <message>
-        <source>Copy chapter to clipboard ...</source>
-        <translation type="obsolete">Copia capitolo negli appunti...</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="371"/>
         <source>Copying</source>
         <translation>Copia in corso</translation>
-    </message>
-    <message>
-        <source>Saving chapter ...</source>
-        <translation type="obsolete">Salvataggio capitolo ...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="390"/>
@@ -2295,10 +2006,6 @@ scorciatoia</translation>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="813"/>
         <source>The work to which the bookmark points to is not installed.</source>
         <translation>Il documento a cui il segnalibro punta non è installatos.</translation>
-    </message>
-    <message>
-        <source>Change bookmark description...</source>
-        <translation type="obsolete">Cambia descrizione del segnalibro...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/cbookmarkindex.cpp" line="99"/>
@@ -2498,14 +2205,6 @@ scorciatoia</translation>
         <translation>Avanti nella storia</translation>
     </message>
     <message>
-        <source>Zoom in</source>
-        <translation type="obsolete">Zoom in</translation>
-    </message>
-    <message>
-        <source>Zoom out</source>
-        <translation type="obsolete">Zoom out</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="193"/>
         <source>Select all</source>
         <translation>Seleziona tutto</translation>
@@ -2555,25 +2254,6 @@ scorciatoia</translation>
         <source>Format</source>
         <translation>Formato</translation>
     </message>
-    <message>
-        <source>Tools</source>
-        <translation type="obsolete">Strumenti</translation>
-    </message>
-</context>
-<context>
-    <name>CFontChooser</name>
-    <message>
-        <source>Size:</source>
-        <translation type="obsolete">Dimensione:</translation>
-    </message>
-    <message>
-        <source>Font name:</source>
-        <translation type="obsolete">Nome carattere:</translation>
-    </message>
-    <message>
-        <source>Font style:</source>
-        <translation type="obsolete">Stile carattere:</translation>
-    </message>
 </context>
 <context>
     <name>CHTMLWriteDisplay</name>
@@ -2612,14 +2292,6 @@ scorciatoia</translation>
         <translation>Destra</translation>
     </message>
     <message>
-        <source>Select all</source>
-        <translation type="obsolete">Seleziona tutto</translation>
-    </message>
-    <message>
-        <source>HTML editor window</source>
-        <translation type="obsolete">Finestra dell&apos;editor HTML</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="198"/>
         <source>Font</source>
         <translation>Carattere</translation>
@@ -2648,22 +2320,6 @@ scorciatoia</translation>
 <context>
     <name>CHTMLWriteWindow</name>
     <message>
-        <source>Sync with active Bible</source>
-        <translation type="obsolete">Sincronizza con la Bibbia attiva</translation>
-    </message>
-    <message>
-        <source>Save text</source>
-        <translation type="obsolete">Salva testo</translation>
-    </message>
-    <message>
-        <source>Delete current entry</source>
-        <translation type="obsolete">Cancella voce attuale</translation>
-    </message>
-    <message>
-        <source>Restore original text</source>
-        <translation type="obsolete">Ripristina il testo originale</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="131"/>
         <source>Module not writable</source>
         <translation>Modulo non scrivibile</translation>
@@ -2678,91 +2334,9 @@ scorciatoia</translation>
         <source>Either the module may not be edited, or you do not have write permission.</source>
         <translation>Il modulo non può essere modificato o non hai i permessi di scrittura.</translation>
     </message>
-    <message>
-        <source>Synchronize (show the same verse) with the active Bible window</source>
-        <translation type="obsolete">Sincronizza (mostra lo stesso versetto) con la finestra della Bibbia attiva</translation>
-    </message>
-    <message>
-        <source>Delete current entry (no undo)</source>
-        <translation type="obsolete">Cancella voce attuale (no annulla)</translation>
-    </message>
-    <message>
-        <source>Restore original text, new text will be lost</source>
-        <translation type="obsolete">Ripristina il testo originale, il testo nuovo andrà perso</translation>
-    </message>
-</context>
-<context>
-    <name>CInputDialog</name>
-    <message>
-        <source>Clear</source>
-        <translation type="obsolete">Pulisci</translation>
-    </message>
-</context>
-<context>
-    <name>CKeyReferenceWidget</name>
-    <message>
-        <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
-        <translation type="obsolete">Scorri tra le voci della lista. Premi il tasto e muovi il mouse per aumentare o diminuire l&apos;elemento.</translation>
-    </message>
-    <message>
-        <source>Next book</source>
-        <translation type="obsolete">Libro successivo </translation>
-    </message>
-    <message>
-        <source>Previous book</source>
-        <translation type="obsolete">Libro precedente </translation>
-    </message>
-    <message>
-        <source>Next chapter</source>
-        <translation type="obsolete">Capitolo successivo </translation>
-    </message>
-    <message>
-        <source>Previous chapter</source>
-        <translation type="obsolete">Capitolo precedente</translation>
-    </message>
-    <message>
-        <source>Next verse</source>
-        <translation type="obsolete">Versetto successivo</translation>
-    </message>
-    <message>
-        <source>Previous verse</source>
-        <translation type="obsolete">Versetto precedente</translation>
-    </message>
 </context>
 <context>
     <name>CLanguageSettingsPage</name>
-    <message>
-        <source>Use custom font</source>
-        <translation type="obsolete">Usa carattere personalizzato</translation>
-    </message>
-    <message>
-        <source>Language for names of Bible books:</source>
-        <translation type="obsolete">Lingua per i nomi dei libri della Bibbia:</translation>
-    </message>
-    <message>
-        <source>The languages which can be used for the biblical booknames</source>
-        <translation type="obsolete">Lingue che possono essere utilizzate per i nomi dei libri della Bibbia</translation>
-    </message>
-    <message>
-        <source>The font selection below will apply to all texts in this language</source>
-        <translation type="obsolete">Il carattere selezionatto sotto sarà applicato a tutto il testo in questa lingua</translation>
-    </message>
-    <message>
-        <source>Select the language in which the Biblical book names are displayed.</source>
-        <translation type="obsolete">Seleziona la lingua in cui i nomi dei libri della Bibbia sono visualizzati.</translation>
-    </message>
-    <message>
-        <source>Fonts</source>
-        <translation type="obsolete">Caratteri</translation>
-    </message>
-    <message>
-        <source>You can specify a custom font for each language.</source>
-        <translation type="obsolete">Puoi specificare un carattere personalizzato per ogni lingua.</translation>
-    </message>
-    <message>
-        <source>Languages</source>
-        <translation type="obsolete">Lingue</translation>
-    </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="297"/>
         <source></source>
@@ -2857,37 +2431,10 @@ scorciatoia</translation>
         <translation>Stampa...</translation>
     </message>
     <message>
-        <source>Saving entry ...</source>
-        <translation type="obsolete">Salvataggio voce...</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="342"/>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="366"/>
         <source>Saving</source>
         <translation>Salvataggio</translation>
-    </message>
-</context>
-<context>
-    <name>CModuleIndexDialog</name>
-    <message>
-        <source>Cancel</source>
-        <translation type="obsolete">Annulla</translation>
-    </message>
-    <message>
-        <source>Creating indices</source>
-        <translation type="obsolete">Creazione indici</translation>
-    </message>
-    <message>
-        <source>Creating index for work: %1</source>
-        <translation type="obsolete">Creazione indici per il documento: %1</translation>
-    </message>
-    <message>
-        <source>Indexing Is Cancelled</source>
-        <translation type="obsolete">Indicizzazione Annullata</translation>
-    </message>
-    <message>
-        <source>Indexing is cancelled because modules are removed.</source>
-        <translation type="obsolete">Indicizzazione annullato perchè i moduli sono rimossi.</translation>
     </message>
 </context>
 <context>
@@ -4408,10 +3955,6 @@ Language name ppk</extracomment>
         <translation>Salva documento...</translation>
     </message>
     <message>
-        <source>Print keys</source>
-        <translation type="obsolete">Stampa chiavi</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookmarks/btbookmarkfolder.cpp" line="37"/>
         <location filename="../../src/frontend/bookmarks/btbookmarkfolder.cpp" line="48"/>
         <source>BibleTime bookmark files</source>
@@ -4422,14 +3965,6 @@ Language name ppk</extracomment>
         <location filename="../../src/frontend/bookmarks/btbookmarkitem.cpp" line="143"/>
         <source>unknown</source>
         <translation>sconosciuto</translation>
-    </message>
-    <message>
-        <source>Change description ...</source>
-        <translation type="obsolete">Cambia la descrizione ...</translation>
-    </message>
-    <message>
-        <source>Enter a new description for the chosen bookmark.</source>
-        <translation type="obsolete">Immetti una nuova descrizione per il segnalibro selezionato.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookmarks/btbookmarkfolder.cpp" line="59"/>
@@ -4467,33 +4002,9 @@ Language name ppk</extracomment>
         <translation>Fai attenzione, questo documento contiene materiale di culto discutibile!</translation>
     </message>
     <message>
-        <source>Language</source>
-        <translation type="obsolete">Lingua</translation>
-    </message>
-    <message>
-        <source>Unlock key</source>
-        <translation type="obsolete">Chiave di sblocco</translation>
-    </message>
-    <message>
-        <source>not set</source>
-        <translation type="obsolete">non impostato</translation>
-    </message>
-    <message>
         <location filename="../../src/util/tool.cpp" line="198"/>
         <source>Version</source>
         <translation>Versione</translation>
-    </message>
-    <message>
-        <source>Options</source>
-        <translation type="obsolete">Opzioni</translation>
-    </message>
-    <message>
-        <source>Settings Migration</source>
-        <translation type="obsolete">Impostazioni Migrazione</translation>
-    </message>
-    <message>
-        <source>It appears you have a BibleTime configuration from KDE 3 stored in %1, and you have not migrated it to this version.  Would you like to import it?</source>
-        <translation type="obsolete">Sembra che tu abbia una configurazione di BibleTime per KDE 3 in %1, e non l&apos;hai migrata a questa versione. Vuoi importarla?</translation>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="187"/>
@@ -4689,14 +4200,6 @@ Language name ppk</extracomment>
         <location filename="../../src/main.cpp" line="106"/>
         <source>See --help for details.</source>
         <translation>Vedi --help per dettagli.</translation>
-    </message>
-    <message>
-        <source>All command-line arguments not recognized by BibleTime or Qt will be silently ignored.</source>
-        <translation type="obsolete">Tutti gli argomenti da linea di comando non riconosciuti da BibleTime o Qt saranno ignorati.</translation>
-    </message>
-    <message>
-        <source>Error: %1 expects an argument. See --help for details.</source>
-        <translation type="obsolete">Errore: %1 aspetta un argomento. Vedi --help per dettagli.</translation>
     </message>
     <message>
         <location filename="../../src/main.cpp" line="111"/>
@@ -5212,28 +4715,16 @@ Language name ppk</extracomment>
         <translation>Stampa...</translation>
     </message>
     <message>
-        <source>Copy search result...</source>
-        <translation type="obsolete">Copia il risultato della ricerca...</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="235"/>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="245"/>
         <source>Copying search result</source>
         <translation>Copia del risultato della ricerca in atto</translation>
     </message>
     <message>
-        <source>Save search result...</source>
-        <translation type="obsolete">Salva il risultato della ricerca...</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="254"/>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="263"/>
         <source>Saving search result</source>
         <translation>Salvataggio del risultato di ricerca</translation>
-    </message>
-    <message>
-        <source>Print search result...</source>
-        <translation type="obsolete">Stampa il risultato della ricerca...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="272"/>
@@ -5284,14 +4775,6 @@ Language name ppk</extracomment>
         <translation>Nuovo intervallo</translation>
     </message>
     <message>
-        <source>&lt;invalid name of search range&gt;</source>
-        <translation type="obsolete">&lt;nome dell&apos;intervallo di ricerca non valido&gt;</translation>
-    </message>
-    <message>
-        <source>Select a scope from the list to edit the search ranges</source>
-        <translation type="obsolete">Selezionare un campo dalla lista per modificare gli intervalli di ricerca</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="140"/>
         <source>&amp;Add new scope</source>
         <translation>&amp;Aggiungi nuovo campo</translation>
@@ -5317,10 +4800,6 @@ Language name ppk</extracomment>
         <translation>Rinomina il campo di ricerca selezionato</translation>
     </message>
     <message>
-        <source>Change the search ranges of the selected search scope item. Have a look at the predefined search scopes to see how search ranges are constructed.</source>
-        <translation type="obsolete">Cambia gli intervalli di ricerca del campo selezionato. Guarda i campi di ricerca predefiniti per vedere come gli intervalli di ricerca sono costruiti.</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="158"/>
         <source>The search ranges which will be used for the search, parsed to the canonical form</source>
         <translation>Gli intervalli che verranno utilizzati per la ricerca, analizzata la forma canonica</translation>
@@ -5342,12 +4821,6 @@ Language name ppk</extracomment>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="88"/>
         <source>Search</source>
         <translation>Cerca</translation>
-    </message>
-    <message>
-        <source>One or more works need indexing before they can be searched.
-This could take a long time. Proceed with indexing?</source>
-        <translation type="obsolete">Uno o più documenti devono essere indicizzati prima che vi si possa effetture una ricerca.
-Questo potrebbe richiedere parecchio tempo. Procedere all&apos;indicizzazione?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="132"/>
@@ -5416,27 +4889,15 @@ Questo potrebbe richiedere parecchio tempo. Procedere all&apos;indicizzazione?</
         <translation>Stampa...</translation>
     </message>
     <message>
-        <source>Print search result...</source>
-        <translation type="obsolete">Stampa il risultato della ricerca...</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="167"/>
         <source>Printing search result</source>
         <translation>Stampa del risultao della ricerca</translation>
-    </message>
-    <message>
-        <source>Save search result...</source>
-        <translation type="obsolete">Salva il risultato della ricerca...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="177"/>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="195"/>
         <source>Saving search result</source>
         <translation>Salvataggio del risultato di ricerca</translation>
-    </message>
-    <message>
-        <source>Copy search result...</source>
-        <translation type="obsolete">Copia il risultato della ricerca...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="213"/>
@@ -5452,14 +4913,6 @@ Questo potrebbe richiedere parecchio tempo. Procedere all&apos;indicizzazione?</
 </context>
 <context>
     <name>StandardWorksTab</name>
-    <message>
-        <source>Standard works are used when no particular work is specified,   for example when a hyperlink into a Bible or lexicon was clicked .</source>
-        <translation type="obsolete">I documenti predefiniti vengono usati in caso non vengano specificati altri documenti, ad esempio quando un collegamento ipertestuale dentro una Bibbia od un lessico viene cliccato.</translation>
-    </message>
-    <message>
-        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked .</source>
-        <translation type="obsolete">I documenti standard sono utilizzati quando nessun documento particolare viene specificato, per esempio quando un collegamento ipertestuale in una Bibbia o lessico viene cliccato.</translation>
-    </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="169"/>
         <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
@@ -5553,46 +5006,6 @@ Questo potrebbe richiedere parecchio tempo. Procedere all&apos;indicizzazione?</
 </context>
 <context>
     <name>TextFiltersTab</name>
-    <message>
-        <source>Insert line break after each verse</source>
-        <translation type="obsolete">Inserisci interruzione di riga dopo ciascun versetto</translation>
-    </message>
-    <message>
-        <source>Show verse numbers</source>
-        <translation type="obsolete">Mostra i numeri dei versetti</translation>
-    </message>
-    <message>
-        <source>Show section headings</source>
-        <translation type="obsolete">Mostra le intestazioni</translation>
-    </message>
-    <message>
-        <source>Show scripture cross-references</source>
-        <translation type="obsolete">Mostra i riferimenti incrociati</translation>
-    </message>
-    <message>
-        <source>Show Greek accents</source>
-        <translation type="obsolete">Mostra gli accenti greci</translation>
-    </message>
-    <message>
-        <source>Show Hebrew vowel points</source>
-        <translation type="obsolete">Mostra la punteggiatura vocale ebrea</translation>
-    </message>
-    <message>
-        <source>Show Hebrew cantillation marks</source>
-        <translation type="obsolete">Mostra i segni di cantillazione ebraica</translation>
-    </message>
-    <message>
-        <source>Show morph segmentation</source>
-        <translation type="obsolete">Mostra la segmentazione morfologica</translation>
-    </message>
-    <message>
-        <source>Use textual variants</source>
-        <translation type="obsolete">Usa le varianti testuali</translation>
-    </message>
-    <message>
-        <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
-        <translation type="obsolete">I filtri controllano l&apos;aspetto del testo. Qui puoi specificare le impostazioni predefinites per tutti i filtri. Puoi ignorare queste impostazioni in ogni finestra.</translation>
-    </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="287"/>
         <source></source>
