@@ -9,12 +9,8 @@
 
 #include "btconfigcore.h"
 
-#if __cplusplus >= 201103L
-#include <cstdint>
-#else
-#define __STDC_LIMIT_MACROS
-#include <stdint.h>
-#endif
+#include <cstddef>
+#include <limits>
 
 
 const QString BtConfigCore::GROUP_SESSIONS      = "sessions/";
@@ -85,12 +81,12 @@ QString BtConfigCore::addSession(const QString & name) {
     QString key = QString::number(0u, 36);
     if (m_sessionNames.contains(key)) {
         QString keyPrefix;
-        size_t i = 1u;
+        std::size_t i = 1u;
         for (;;) {
             key = QString::number(i, 36);
             if (!m_sessionNames.contains(keyPrefix + key))
                 break;
-            if (i == SIZE_MAX) {
+            if (i == std::numeric_limits<std::size_t>::max()) {
                 i = 0u;
                 keyPrefix.append('_');
             } else {
