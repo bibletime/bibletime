@@ -77,10 +77,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Informações sobre o BibleTime</translation>
     </message>
     <message>
-        <source>&amp;Save session</source>
-        <translation type="obsolete">&amp;Salvar sessão</translation>
-    </message>
-    <message>
         <location filename="../../src/bibletime_init.cpp" line="722"/>
         <source>&amp;Load session</source>
         <translation>&amp;Carregar sessão</translation>
@@ -5007,46 +5003,6 @@ Language name ppk</extracomment>
 </context>
 <context>
     <name>TextFiltersTab</name>
-    <message>
-        <source>Insert line break after each verse</source>
-        <translation type="obsolete">Inserir quebra de linha após cada versículo</translation>
-    </message>
-    <message>
-        <source>Show verse numbers</source>
-        <translation type="obsolete"> Mostrar número dos versículos</translation>
-    </message>
-    <message>
-        <source>Show section headings</source>
-        <translation type="obsolete">Mostrar seção de títulos</translation>
-    </message>
-    <message>
-        <source>Show scripture cross-references</source>
-        <translation type="obsolete">Mostrar referências-cruzadas das escrituras</translation>
-    </message>
-    <message>
-        <source>Show Greek accents</source>
-        <translation type="obsolete">Mostrar acentos gregos</translation>
-    </message>
-    <message>
-        <source>Show Hebrew vowel points</source>
-        <translation type="obsolete">Mostrar pontos Hebrew da vogal</translation>
-    </message>
-    <message>
-        <source>Show Hebrew cantillation marks</source>
-        <translation type="obsolete">Mostrar sinais da cantilena hebraica</translation>
-    </message>
-    <message>
-        <source>Show morph segmentation</source>
-        <translation type="obsolete">Mostrar a segmentação dos morfemas</translation>
-    </message>
-    <message>
-        <source>Use textual variants</source>
-        <translation type="obsolete">Usar variações textuais</translation>
-    </message>
-    <message>
-        <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
-        <translation type="obsolete">Filtros de controle a aparência do texto. Aqui você pode especificar configurações padrão para todos os filtros. Você pode substituir essas configurações em cada janela de visualização.</translation>
-    </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="287"/>
         <source></source>
