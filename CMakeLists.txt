@@ -2,11 +2,23 @@ PROJECT(bibletime CXX C)
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6.2)
 SET(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
+
+################################################################################
 # BibleTime version
+################################################################################
+# Note: for pre-#.#.0 versions, use the following suffixes:
+#   _dev      if pre-beta1
+#   _beta1    if post-beta1
+#   _beta2    if post-beta2
+#   _rc1    if post-rc1
+#   _rc2    if post-rc2
+# For post-full-release versions, no suffix is used.
+
 SET(BT_VERSION_MAJOR "2")
 SET(BT_VERSION_MINOR "10")
-SET(BT_VERSION_PATCH "0")
+SET(BT_VERSION_PATCH "0_dev")
 #SET(BT_VERSION_BUILD "") # Temporarily uncomment this line for release procedures
+
 
 # Determine build, if needed:
 IF (NOT (DEFINED BT_VERSION_BUILD))
