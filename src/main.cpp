@@ -231,13 +231,12 @@ int main(int argc, char* argv[]) {
     if (showDebugMessages) {
         debugStream.reset(new QFile(QDir::homePath().append("/BibleTime Debug.txt")));
         debugStream->open(QIODevice::WriteOnly | QIODevice::Text);
-#else
-        debugStream.reset(new QFile);
-        debugStream->open(stderr, QIODevice::WriteOnly | QIODevice::Text);
-#endif
         qInstallMsgHandler(myMessageOutput);
-#ifdef Q_WS_WIN
     }
+#else
+    debugStream.reset(new QFile);
+    debugStream->open(stderr, QIODevice::WriteOnly | QIODevice::Text);
+    qInstallMsgHandler(myMessageOutput);
 #endif
 
 #ifdef Q_WS_WIN
