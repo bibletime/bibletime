@@ -707,6 +707,38 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtConfig</name>
     <message>
+        <source>Old testament</source>
+        <translation type="unfinished">Altes Testament</translation>
+    </message>
+    <message>
+        <source>Moses/Pentateuch/Torah</source>
+        <translation type="unfinished">Mose/Pentateuch/Torah</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation type="unfinished">Geschichte</translation>
+    </message>
+    <message>
+        <source>Prophets</source>
+        <translation type="unfinished">Propheten</translation>
+    </message>
+    <message>
+        <source>New testament</source>
+        <translation type="unfinished">Neues Testament</translation>
+    </message>
+    <message>
+        <source>Gospels</source>
+        <translation type="unfinished">Evangelien</translation>
+    </message>
+    <message>
+        <source>Letters/Epistles</source>
+        <translation type="unfinished">Briefe/Episteln</translation>
+    </message>
+    <message>
+        <source>Paul&apos;s Epistles</source>
+        <translation type="unfinished">Paulus-Briefe</translation>
+    </message>
+    <message>
         <source>Error loading configuration!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3208,35 +3240,35 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Old testament</source>
-        <translation>Altes Testament</translation>
+        <translation type="obsolete">Altes Testament</translation>
     </message>
     <message>
         <source>Moses/Pentateuch/Torah</source>
-        <translation>Mose/Pentateuch/Torah</translation>
+        <translation type="obsolete">Mose/Pentateuch/Torah</translation>
     </message>
     <message>
         <source>History</source>
-        <translation>Geschichte</translation>
+        <translation type="obsolete">Geschichte</translation>
     </message>
     <message>
         <source>Prophets</source>
-        <translation>Propheten</translation>
+        <translation type="obsolete">Propheten</translation>
     </message>
     <message>
         <source>New testament</source>
-        <translation>Neues Testament</translation>
+        <translation type="obsolete">Neues Testament</translation>
     </message>
     <message>
         <source>Gospels</source>
-        <translation>Evangelien</translation>
+        <translation type="obsolete">Evangelien</translation>
     </message>
     <message>
         <source>Letters/Epistles</source>
-        <translation>Briefe/Episteln</translation>
+        <translation type="obsolete">Briefe/Episteln</translation>
     </message>
     <message>
         <source>Paul&apos;s Epistles</source>
-        <translation>Paulus-Briefe</translation>
+        <translation type="obsolete">Paulus-Briefe</translation>
     </message>
     <message>
         <source>HTML files</source>

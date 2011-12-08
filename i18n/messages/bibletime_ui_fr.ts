@@ -868,6 +868,46 @@ Ce fichier est distribué sous la même licence que le paquet BibleTime.</transl
 <context>
     <name>BtConfig</name>
     <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="47"/>
+        <source>Old testament</source>
+        <translation type="unfinished">Ancien Testament</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="48"/>
+        <source>Moses/Pentateuch/Torah</source>
+        <translation type="unfinished">Moïse/Pentateuque/Torah</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="49"/>
+        <source>History</source>
+        <translation type="unfinished">Livres historiques</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="50"/>
+        <source>Prophets</source>
+        <translation type="unfinished">Prophètes</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="51"/>
+        <source>New testament</source>
+        <translation type="unfinished">Nouveau Testament</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="52"/>
+        <source>Gospels</source>
+        <translation type="unfinished">Évangiles</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="53"/>
+        <source>Letters/Epistles</source>
+        <translation type="unfinished">Lettres/Épîtres</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="54"/>
+        <source>Paul&apos;s Epistles</source>
+        <translation type="unfinished">Épîtres de Paul</translation>
+    </message>
+    <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="87"/>
         <source>Error loading configuration!</source>
         <translation type="unfinished"></translation>
@@ -881,7 +921,7 @@ Ce fichier est distribué sous la même licence que le paquet BibleTime.</transl
 <context>
     <name>BtConfigCore</name>
     <message>
-        <location filename="../../src/backend/config/btconfigcore.cpp" line="64"/>
+        <location filename="../../src/backend/config/btconfigcore.cpp" line="60"/>
         <source>Default Session</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4144,44 +4184,36 @@ Language name ppk</extracomment>
         <translation>Distant</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="47"/>
         <source>Old testament</source>
-        <translation>Ancien Testament</translation>
+        <translation type="obsolete">Ancien Testament</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="48"/>
         <source>Moses/Pentateuch/Torah</source>
-        <translation>Moïse/Pentateuque/Torah</translation>
+        <translation type="obsolete">Moïse/Pentateuque/Torah</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="49"/>
         <source>History</source>
-        <translation>Livres historiques</translation>
+        <translation type="obsolete">Livres historiques</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="50"/>
         <source>Prophets</source>
-        <translation>Prophètes</translation>
+        <translation type="obsolete">Prophètes</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="51"/>
         <source>New testament</source>
-        <translation>Nouveau Testament</translation>
+        <translation type="obsolete">Nouveau Testament</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="52"/>
         <source>Gospels</source>
-        <translation>Évangiles</translation>
+        <translation type="obsolete">Évangiles</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="53"/>
         <source>Letters/Epistles</source>
-        <translation>Lettres/Épîtres</translation>
+        <translation type="obsolete">Lettres/Épîtres</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="54"/>
         <source>Paul&apos;s Epistles</source>
-        <translation>Épîtres de Paul</translation>
+        <translation type="obsolete">Épîtres de Paul</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cexportmanager.cpp" line="437"/>

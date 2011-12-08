@@ -862,6 +862,46 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtConfig</name>
     <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="47"/>
+        <source>Old testament</source>
+        <translation type="unfinished">Gamle testamente</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="48"/>
+        <source>Moses/Pentateuch/Torah</source>
+        <translation type="unfinished">Moses/Pentateuch/Torah</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="49"/>
+        <source>History</source>
+        <translation type="unfinished">Historie</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="50"/>
+        <source>Prophets</source>
+        <translation type="unfinished">Profeter</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="51"/>
+        <source>New testament</source>
+        <translation type="unfinished">Nye Testamente</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="52"/>
+        <source>Gospels</source>
+        <translation type="unfinished">Evangelier</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="53"/>
+        <source>Letters/Epistles</source>
+        <translation type="unfinished">Breve</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="54"/>
+        <source>Paul&apos;s Epistles</source>
+        <translation type="unfinished">Paulus&apos; Breve</translation>
+    </message>
+    <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="87"/>
         <source>Error loading configuration!</source>
         <translation type="unfinished"></translation>
@@ -875,7 +915,7 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtConfigCore</name>
     <message>
-        <location filename="../../src/backend/config/btconfigcore.cpp" line="64"/>
+        <location filename="../../src/backend/config/btconfigcore.cpp" line="60"/>
         <source>Default Session</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4145,44 +4185,36 @@ Language name ppk</extracomment>
         <translation>Online</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="47"/>
         <source>Old testament</source>
-        <translation>Gamle testamente</translation>
+        <translation type="obsolete">Gamle testamente</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="48"/>
         <source>Moses/Pentateuch/Torah</source>
-        <translation>Moses/Pentateuch/Torah</translation>
+        <translation type="obsolete">Moses/Pentateuch/Torah</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="49"/>
         <source>History</source>
-        <translation>Historie</translation>
+        <translation type="obsolete">Historie</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="50"/>
         <source>Prophets</source>
-        <translation>Profeter</translation>
+        <translation type="obsolete">Profeter</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="51"/>
         <source>New testament</source>
-        <translation>Nye Testamente</translation>
+        <translation type="obsolete">Nye Testamente</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="52"/>
         <source>Gospels</source>
-        <translation>Evangelier</translation>
+        <translation type="obsolete">Evangelier</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="53"/>
         <source>Letters/Epistles</source>
-        <translation>Breve</translation>
+        <translation type="obsolete">Breve</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="54"/>
         <source>Paul&apos;s Epistles</source>
-        <translation>Paulus&apos; Breve</translation>
+        <translation type="obsolete">Paulus&apos; Breve</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cexportmanager.cpp" line="437"/>

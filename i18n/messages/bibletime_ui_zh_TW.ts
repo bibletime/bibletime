@@ -850,6 +850,46 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtConfig</name>
     <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="47"/>
+        <source>Old testament</source>
+        <translation type="unfinished">舊約</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="48"/>
+        <source>Moses/Pentateuch/Torah</source>
+        <translation type="unfinished">摩西五經/律法書</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="49"/>
+        <source>History</source>
+        <translation type="unfinished">歷史書</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="50"/>
+        <source>Prophets</source>
+        <translation type="unfinished">先知書</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="51"/>
+        <source>New testament</source>
+        <translation type="unfinished">新約</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="52"/>
+        <source>Gospels</source>
+        <translation type="unfinished">四福音書</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="53"/>
+        <source>Letters/Epistles</source>
+        <translation type="unfinished">書信</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="54"/>
+        <source>Paul&apos;s Epistles</source>
+        <translation type="unfinished">保羅書信</translation>
+    </message>
+    <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="87"/>
         <source>Error loading configuration!</source>
         <translation type="unfinished"></translation>
@@ -863,7 +903,7 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtConfigCore</name>
     <message>
-        <location filename="../../src/backend/config/btconfigcore.cpp" line="64"/>
+        <location filename="../../src/backend/config/btconfigcore.cpp" line="60"/>
         <source>Default Session</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4088,44 +4128,36 @@ Language name ppk</extracomment>
         <translation>遠端</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="47"/>
         <source>Old testament</source>
-        <translation>舊約</translation>
+        <translation type="obsolete">舊約</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="48"/>
         <source>Moses/Pentateuch/Torah</source>
-        <translation>摩西五經/律法書</translation>
+        <translation type="obsolete">摩西五經/律法書</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="49"/>
         <source>History</source>
-        <translation>歷史書</translation>
+        <translation type="obsolete">歷史書</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="50"/>
         <source>Prophets</source>
-        <translation>先知書</translation>
+        <translation type="obsolete">先知書</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="51"/>
         <source>New testament</source>
-        <translation>新約</translation>
+        <translation type="obsolete">新約</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="52"/>
         <source>Gospels</source>
-        <translation>四福音書</translation>
+        <translation type="obsolete">四福音書</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="53"/>
         <source>Letters/Epistles</source>
-        <translation>書信</translation>
+        <translation type="obsolete">書信</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="54"/>
         <source>Paul&apos;s Epistles</source>
-        <translation>保羅書信</translation>
+        <translation type="obsolete">保羅書信</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cexportmanager.cpp" line="437"/>

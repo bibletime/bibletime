@@ -699,6 +699,38 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtConfig</name>
     <message>
+        <source>Old testament</source>
+        <translation type="unfinished">Stará Smlouva</translation>
+    </message>
+    <message>
+        <source>Moses/Pentateuch/Torah</source>
+        <translation type="unfinished">Mojžíš/Pentateuch/Tóra</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation type="unfinished">Spisy</translation>
+    </message>
+    <message>
+        <source>Prophets</source>
+        <translation type="unfinished">Proroci</translation>
+    </message>
+    <message>
+        <source>New testament</source>
+        <translation type="unfinished">Nová Smlouva</translation>
+    </message>
+    <message>
+        <source>Gospels</source>
+        <translation type="unfinished">Evangelia</translation>
+    </message>
+    <message>
+        <source>Letters/Epistles</source>
+        <translation type="unfinished">Dopisy/Epištoly</translation>
+    </message>
+    <message>
+        <source>Paul&apos;s Epistles</source>
+        <translation type="unfinished">Pavlovy epištoly</translation>
+    </message>
+    <message>
         <source>Error loading configuration!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3390,35 +3422,35 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Old testament</source>
-        <translation>Stará Smlouva</translation>
+        <translation type="obsolete">Stará Smlouva</translation>
     </message>
     <message>
         <source>Moses/Pentateuch/Torah</source>
-        <translation>Mojžíš/Pentateuch/Tóra</translation>
+        <translation type="obsolete">Mojžíš/Pentateuch/Tóra</translation>
     </message>
     <message>
         <source>History</source>
-        <translation>Spisy</translation>
+        <translation type="obsolete">Spisy</translation>
     </message>
     <message>
         <source>Prophets</source>
-        <translation>Proroci</translation>
+        <translation type="obsolete">Proroci</translation>
     </message>
     <message>
         <source>New testament</source>
-        <translation>Nová Smlouva</translation>
+        <translation type="obsolete">Nová Smlouva</translation>
     </message>
     <message>
         <source>Gospels</source>
-        <translation>Evangelia</translation>
+        <translation type="obsolete">Evangelia</translation>
     </message>
     <message>
         <source>Letters/Epistles</source>
-        <translation>Dopisy/Epištoly</translation>
+        <translation type="obsolete">Dopisy/Epištoly</translation>
     </message>
     <message>
         <source>Paul&apos;s Epistles</source>
-        <translation>Pavlovy epištoly</translation>
+        <translation type="obsolete">Pavlovy epištoly</translation>
     </message>
     <message>
         <source>HTML files</source>

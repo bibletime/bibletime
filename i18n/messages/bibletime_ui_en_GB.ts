@@ -154,12 +154,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_slots.cpp" line="602"/>
         <source>Session already exists</source>
-        <translation>Session already exists</translation>
+        <translation type="unfinished">Session already exists</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_slots.cpp" line="603"/>
         <source>Session with the name &quot;%1&quot; already exists. Please provide a different name.</source>
-        <translation>Session with the name &quot;%1&quot; already exists. Please provide a different name.</translation>
+        <translation type="unfinished">Session with the name &quot;%1&quot; already exists. Please provide a different name.</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="108"/>
@@ -838,22 +838,62 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtConfig</name>
     <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="47"/>
+        <source>Old testament</source>
+        <translation type="unfinished">Old testament</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="48"/>
+        <source>Moses/Pentateuch/Torah</source>
+        <translation type="unfinished">Moses/Pentateuch/Torah</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="49"/>
+        <source>History</source>
+        <translation type="unfinished">History</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="50"/>
+        <source>Prophets</source>
+        <translation type="unfinished">Prophets</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="51"/>
+        <source>New testament</source>
+        <translation type="unfinished">New testament</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="52"/>
+        <source>Gospels</source>
+        <translation type="unfinished">Gospels</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="53"/>
+        <source>Letters/Epistles</source>
+        <translation type="unfinished">Letters/Epistles</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="54"/>
+        <source>Paul&apos;s Epistles</source>
+        <translation type="unfinished">Paul&apos;s Epistles</translation>
+    </message>
+    <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="87"/>
         <source>Error loading configuration!</source>
-        <translation>Error loading configuration!</translation>
+        <translation type="unfinished">Error loading configuration!</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="88"/>
         <source>Failed to load BibleTime&apos;s configuration, because it appears that the configuration file corresponds to a newer version of BibleTime. This is likely caused by BibleTime being downgraded. Loading the new configuration file may result in &lt;b&gt;loss of data&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Do you still want to try to load the new configuration file? Press &quot;No&quot; to quit BibleTime immediately.</source>
-        <translation>Failed to load BibleTime&apos;s configuration, because it appears that the configuration file corresponds to a newer version of BibleTime. This is likely caused by BibleTime being downgraded. Loading the new configuration file may result in &lt;b&gt;loss of data&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Do you still want to try to load the new configuration file? Press &quot;No&quot; to quit BibleTime immediately.</translation>
+        <translation type="unfinished">Failed to load BibleTime&apos;s configuration, because it appears that the configuration file corresponds to a newer version of BibleTime. This is likely caused by BibleTime being downgraded. Loading the new configuration file may result in &lt;b&gt;loss of data&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Do you still want to try to load the new configuration file? Press &quot;No&quot; to quit BibleTime immediately.</translation>
     </message>
 </context>
 <context>
     <name>BtConfigCore</name>
     <message>
-        <location filename="../../src/backend/config/btconfigcore.cpp" line="64"/>
+        <location filename="../../src/backend/config/btconfigcore.cpp" line="60"/>
         <source>Default Session</source>
-        <translation>Default Session</translation>
+        <translation type="unfinished">Default Session</translation>
     </message>
 </context>
 <context>
@@ -1653,52 +1693,52 @@ shortcut</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="75"/>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
-        <translation>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</translation>
+        <translation type="unfinished">Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="79"/>
         <source>Insert line break after each verse</source>
-        <translation>Insert line break after each verse</translation>
+        <translation type="unfinished">Insert line break after each verse</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="80"/>
         <source>Show verse numbers</source>
-        <translation>Show verse numbers</translation>
+        <translation type="unfinished">Show verse numbers</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="81"/>
         <source>Show section headings</source>
-        <translation>Show section headings</translation>
+        <translation type="unfinished">Show section headings</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="82"/>
         <source>Show scripture cross-references</source>
-        <translation>Show scripture cross-references</translation>
+        <translation type="unfinished">Show scripture cross-references</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="83"/>
         <source>Show Greek accents</source>
-        <translation>Show Greek accents</translation>
+        <translation type="unfinished">Show Greek accents</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="84"/>
         <source>Show Hebrew vowel points</source>
-        <translation>Show Hebrew vowel points</translation>
+        <translation type="unfinished">Show Hebrew vowel points</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="85"/>
         <source>Show Hebrew cantillation marks</source>
-        <translation>Show Hebrew cantillation marks</translation>
+        <translation type="unfinished">Show Hebrew cantillation marks</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="86"/>
         <source>Show morph segmentation</source>
-        <translation>Show morph segmentation</translation>
+        <translation type="unfinished">Show morph segmentation</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="87"/>
         <source>Use textual variants</source>
-        <translation>Use textual variants</translation>
+        <translation type="unfinished">Use textual variants</translation>
     </message>
 </context>
 <context>
@@ -3859,44 +3899,36 @@ Language name ppk</extracomment>
         <translation>Remote</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="47"/>
         <source>Old testament</source>
-        <translation>Old testament</translation>
+        <translation type="obsolete">Old testament</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="48"/>
         <source>Moses/Pentateuch/Torah</source>
-        <translation>Moses/Pentateuch/Torah</translation>
+        <translation type="obsolete">Moses/Pentateuch/Torah</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="49"/>
         <source>History</source>
-        <translation>History</translation>
+        <translation type="obsolete">History</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="50"/>
         <source>Prophets</source>
-        <translation>Prophets</translation>
+        <translation type="obsolete">Prophets</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="51"/>
         <source>New testament</source>
-        <translation>New testament</translation>
+        <translation type="obsolete">New testament</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="52"/>
         <source>Gospels</source>
-        <translation>Gospels</translation>
+        <translation type="obsolete">Gospels</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="53"/>
         <source>Letters/Epistles</source>
-        <translation>Letters/Epistles</translation>
+        <translation type="obsolete">Letters/Epistles</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="54"/>
         <source>Paul&apos;s Epistles</source>
-        <translation>Paul&apos;s Epistles</translation>
+        <translation type="obsolete">Paul&apos;s Epistles</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cexportmanager.cpp" line="437"/>
@@ -4974,6 +5006,49 @@ Language name ppk</extracomment>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="194"/>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
         <translation>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</translation>
+    </message>
+</context>
+<context>
+    <name>TextFiltersTab</name>
+    <message>
+        <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
+        <translation type="obsolete">Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</translation>
+    </message>
+    <message>
+        <source>Insert line break after each verse</source>
+        <translation type="obsolete">Insert line break after each verse</translation>
+    </message>
+    <message>
+        <source>Show verse numbers</source>
+        <translation type="obsolete">Show verse numbers</translation>
+    </message>
+    <message>
+        <source>Show section headings</source>
+        <translation type="obsolete">Show section headings</translation>
+    </message>
+    <message>
+        <source>Show scripture cross-references</source>
+        <translation type="obsolete">Show scripture cross-references</translation>
+    </message>
+    <message>
+        <source>Show Greek accents</source>
+        <translation type="obsolete">Show Greek accents</translation>
+    </message>
+    <message>
+        <source>Show Hebrew vowel points</source>
+        <translation type="obsolete">Show Hebrew vowel points</translation>
+    </message>
+    <message>
+        <source>Show Hebrew cantillation marks</source>
+        <translation type="obsolete">Show Hebrew cantillation marks</translation>
+    </message>
+    <message>
+        <source>Show morph segmentation</source>
+        <translation type="obsolete">Show morph segmentation</translation>
+    </message>
+    <message>
+        <source>Use textual variants</source>
+        <translation type="obsolete">Use textual variants</translation>
     </message>
 </context>
 <context>

@@ -838,6 +838,46 @@ Ez a  fájl a BibleTime licenszelésével megegyező licensszel terjeszthető.</
 <context>
     <name>BtConfig</name>
     <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="47"/>
+        <source>Old testament</source>
+        <translation type="unfinished">Ószövetség</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="48"/>
+        <source>Moses/Pentateuch/Torah</source>
+        <translation type="unfinished">Mózes/Tóra</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="49"/>
+        <source>History</source>
+        <translation type="unfinished">Előzmény</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="50"/>
+        <source>Prophets</source>
+        <translation type="unfinished">Próféták</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="51"/>
+        <source>New testament</source>
+        <translation type="unfinished">Újszövetség</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="52"/>
+        <source>Gospels</source>
+        <translation type="unfinished">Evangéliumok</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="53"/>
+        <source>Letters/Epistles</source>
+        <translation type="unfinished">Levelek</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="54"/>
+        <source>Paul&apos;s Epistles</source>
+        <translation type="unfinished">Pál levelei</translation>
+    </message>
+    <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="87"/>
         <source>Error loading configuration!</source>
         <translation type="unfinished"></translation>
@@ -851,7 +891,7 @@ Ez a  fájl a BibleTime licenszelésével megegyező licensszel terjeszthető.</
 <context>
     <name>BtConfigCore</name>
     <message>
-        <location filename="../../src/backend/config/btconfigcore.cpp" line="64"/>
+        <location filename="../../src/backend/config/btconfigcore.cpp" line="60"/>
         <source>Default Session</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3855,44 +3895,36 @@ Language name ppk</extracomment>
         <translation>Távoli</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="47"/>
         <source>Old testament</source>
-        <translation>Ószövetség</translation>
+        <translation type="obsolete">Ószövetség</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="48"/>
         <source>Moses/Pentateuch/Torah</source>
-        <translation>Mózes/Tóra</translation>
+        <translation type="obsolete">Mózes/Tóra</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="49"/>
         <source>History</source>
-        <translation>Előzmény</translation>
+        <translation type="obsolete">Előzmény</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="50"/>
         <source>Prophets</source>
-        <translation>Próféták</translation>
+        <translation type="obsolete">Próféták</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="51"/>
         <source>New testament</source>
-        <translation>Újszövetség</translation>
+        <translation type="obsolete">Újszövetség</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="52"/>
         <source>Gospels</source>
-        <translation>Evangéliumok</translation>
+        <translation type="obsolete">Evangéliumok</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="53"/>
         <source>Letters/Epistles</source>
-        <translation>Levelek</translation>
+        <translation type="obsolete">Levelek</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="54"/>
         <source>Paul&apos;s Epistles</source>
-        <translation>Pál levelei</translation>
+        <translation type="obsolete">Pál levelei</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cexportmanager.cpp" line="437"/>
@@ -4970,6 +5002,49 @@ Language name ppk</extracomment>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="194"/>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
         <translation>Az alap görög morfológiai lexikont használjuk, ha nincs egyéb kiválasztva, például, ha  egy morfológiai hivatkozásra kattintunk egy görög szövegben</translation>
+    </message>
+</context>
+<context>
+    <name>TextFiltersTab</name>
+    <message>
+        <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
+        <translation type="obsolete">A szűrők szabályozzák a szövegek megjelenését. Itt adhatja meg az alapértelmezett beállításokat. Ablakonként felülírhatja ezeket a beállításokat.</translation>
+    </message>
+    <message>
+        <source>Insert line break after each verse</source>
+        <translation type="obsolete">Sortörés alkalmazása minden vers után</translation>
+    </message>
+    <message>
+        <source>Show verse numbers</source>
+        <translation type="obsolete">Vers számok mutatása</translation>
+    </message>
+    <message>
+        <source>Show section headings</source>
+        <translation type="obsolete">Fejléc mutatása</translation>
+    </message>
+    <message>
+        <source>Show scripture cross-references</source>
+        <translation type="obsolete">Kereszthivatkozások mutatása</translation>
+    </message>
+    <message>
+        <source>Show Greek accents</source>
+        <translation type="obsolete">Görög kiejtés mutatása</translation>
+    </message>
+    <message>
+        <source>Show Hebrew vowel points</source>
+        <translation type="obsolete">Héber magánhangzó pontok mutatása</translation>
+    </message>
+    <message>
+        <source>Show Hebrew cantillation marks</source>
+        <translation type="obsolete">Héber hangsúlyozás jelzése</translation>
+    </message>
+    <message>
+        <source>Show morph segmentation</source>
+        <translation type="obsolete">Szótő elválasztás mutatása</translation>
+    </message>
+    <message>
+        <source>Use textual variants</source>
+        <translation type="obsolete">Szöveges változatok használata</translation>
     </message>
 </context>
 <context>
