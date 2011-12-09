@@ -6,6 +6,11 @@ SET(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 ################################################################################
 # BibleTime version
 ################################################################################
+# NOTICE! The version number must only be changed during the release procedures
+#  A N D   N O T  during development or bug-fixing. This guarantees that all
+# versions of BibleTime between OLDVERSION and NEXTVERSION have version strings
+# in the form of OLDVERSION+githash where githash is the git commit hash ID.
+#
 # Note: for pre-#.#.0 versions, use the following suffixes:
 #   _dev      if pre-beta1
 #   _beta1    if post-beta1
