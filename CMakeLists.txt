@@ -5,7 +5,7 @@ SET(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 # BibleTime version
 SET(BT_VERSION_MAJOR "2")
 SET(BT_VERSION_MINOR "9")
-SET(BT_VERSION_PATCH "0")
+SET(BT_VERSION_PATCH "1")
 #SET(BT_VERSION_BUILD "") # Temporarily uncomment this line for release procedures
 
 # Determine build, if needed:
@@ -34,7 +34,7 @@ ELSE (NOT CMAKE_BUILD_TYPE STREQUAL "Release")
 ENDIF (NOT CMAKE_BUILD_TYPE STREQUAL "Release")
 
 #Non-English locales to be processed and installed for UI, handbook and howto
-LIST(APPEND MESSAGE_LOCALE_LANGS ar cs da de en_GB es et fi fr hu it nl nn_NO pl pt_BR ro ru sk zh_TW)
+LIST(APPEND MESSAGE_LOCALE_LANGS ar cs da de en_GB es et fi fr hu it nl nn_NO pl pt pt_BR ro ru sk zh_TW)
 #WARNING: If you modify HANDBOOK_LOCALE_LANGS or HOWTO_LOCALE_LANGS,
 #also modify the po4a conf files in cmake/docs/ to make sure all languages are processed.
 LIST(APPEND HANDBOOK_LOCALE_LANGS ar cs de es fi fr hu it nl pt_BR)

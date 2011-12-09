@@ -193,6 +193,7 @@ void BtAboutDialog::retranslateContributorsTab() {
                    "<li>Andrew Alfy</li>"
                    "<li>Luis Barron</li>"
                    "<li>Jan B&#x11B;lohoubek</li>"
+                   "<li>M&aacute;rio Castanheira</li>"
                    "<li>Chun-shek Chan</li>"
                    "<li>Nouhoun Y. Diarra</li>"
                    "<li>Rafael Fagundes</li>"
