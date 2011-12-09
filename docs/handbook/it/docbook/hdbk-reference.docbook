@@ -70,8 +70,10 @@ modificare la modalità fullscreen di &bibletime;.</para>
 
         <varlistentry id="hdbk-reference-menus-view-showbookshelf">
           <term>
-            <menuchoice> <guimenu>Visualizza</guimenu> <guimenuitem>Mostra
-libreria</guimenuitem> </menuchoice>
+            <menuchoice> <guimenu> <inlinemediaobject>
+<imageobject> <imagedata fileref="i_books.png" width="32" depth="32"
+format="PNG" /> </imageobject></inlinemediaobject>View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem>
+</menuchoice>
           </term>
           <listitem>
             <para>
@@ -83,8 +85,10 @@ se hai bisogno di di più spazio per la Lente.</para>
 
         <varlistentry id="hdbk-reference-menus-view-showbookmarks">
           <term>
-            <menuchoice> <guimenu>Visualizza</guimenu> <guimenuitem>Mostra
-segnalibri</guimenuitem> </menuchoice>
+            <menuchoice> <guimenu> <inlinemediaobject>
+<imageobject> <imagedata fileref="i_bookmark.png" width="32" depth="32"
+format="PNG" /> </imageobject></inlinemediaobject>View</guimenu> <guimenuitem>Show Bookmarks</guimenuitem>
+</menuchoice>
           </term>
           <listitem>
             <para>
@@ -96,13 +100,28 @@ utile se hai bisogno di di più spazio per la Lente.</para>
 
         <varlistentry id="hdbk-reference-menus-view-showmag">
           <term>
-            <menuchoice> <guimenu>Visualizza</guimenu> <guimenuitem>Mostra
-lente</guimenuitem> </menuchoice>
+            <menuchoice> <guimenu> <inlinemediaobject>
+<imageobject> <imagedata fileref="i_document_magnifier.png" width="32"
+depth="32" format="PNG" /> </imageobject></inlinemediaobject>View</guimenu> <guimenuitem>Show Mag</guimenuitem> </menuchoice>
           </term>
           <listitem>
             <para>
             <action>Mostra/nascondi Lente.</action> Cambia questa impostazione per
 mostrare o nascodere la Lente nel pannello di sinistra.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry id="hdbk-reference-menus-view-showparalleltextheaders">
+          <term>
+            <menuchoice> <guimenu> <inlinemediaobject>
+<imageobject> <imagedata fileref="i_checkbox.png" width="32" depth="32"
+format="PNG" /> </imageobject></inlinemediaobject>View</guimenu> <guimenuitem>Show parallel text headers</guimenuitem>
+</menuchoice>
+          </term>
+          <listitem>
+            <para>
+            <action>Toggles viewing of additional works</action> Toggle this setting to
+allow you to view additional works in parallel to your current open books.</para>
           </listitem>
         </varlistentry>
 

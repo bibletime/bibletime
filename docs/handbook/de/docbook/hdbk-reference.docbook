@@ -69,8 +69,10 @@ das &bibletime;-Fenster.</para>
 
         <varlistentry id="hdbk-reference-menus-view-showbookshelf">
           <term>
-            <menuchoice> <guimenu>Ansicht</guimenu> <guimenuitem>Bücherregal
-anzeigen</guimenuitem> </menuchoice>
+            <menuchoice> <guimenu> <inlinemediaobject>
+<imageobject> <imagedata fileref="i_books.png" width="32" depth="32"
+format="PNG" /> </imageobject></inlinemediaobject>View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem>
+</menuchoice>
           </term>
           <listitem>
             <para>
@@ -82,8 +84,10 @@ kann nützlich sein, wenn Sie mehr Platz für das Lupenfenster benötigen.</para
 
         <varlistentry id="hdbk-reference-menus-view-showbookmarks">
           <term>
-            <menuchoice> <guimenu>Ansicht</guimenu> <guimenuitem>Lesezeichen
-anzeigen</guimenuitem> </menuchoice>
+            <menuchoice> <guimenu> <inlinemediaobject>
+<imageobject> <imagedata fileref="i_bookmark.png" width="32" depth="32"
+format="PNG" /> </imageobject></inlinemediaobject>View</guimenu> <guimenuitem>Show Bookmarks</guimenuitem>
+</menuchoice>
           </term>
           <listitem>
             <para>
@@ -95,13 +99,28 @@ sein, wenn Sie mehr Platz für das Lupenfenster benötigen.</para>
 
         <varlistentry id="hdbk-reference-menus-view-showmag">
           <term>
-            <menuchoice> <guimenu>Ansicht</guimenu> <guimenuitem>Lupe
-anzeigen</guimenuitem> </menuchoice>
+            <menuchoice> <guimenu> <inlinemediaobject>
+<imageobject> <imagedata fileref="i_document_magnifier.png" width="32"
+depth="32" format="PNG" /> </imageobject></inlinemediaobject>View</guimenu> <guimenuitem>Show Mag</guimenuitem> </menuchoice>
           </term>
           <listitem>
             <para>
             <action>Lupenfenster anzeigen.</action> Dieser Umschalter zeigt das
 Lupenfenster im linken Abschnitt oder verbirgt es.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry id="hdbk-reference-menus-view-showparalleltextheaders">
+          <term>
+            <menuchoice> <guimenu> <inlinemediaobject>
+<imageobject> <imagedata fileref="i_checkbox.png" width="32" depth="32"
+format="PNG" /> </imageobject></inlinemediaobject>View</guimenu> <guimenuitem>Show parallel text headers</guimenuitem>
+</menuchoice>
+          </term>
+          <listitem>
+            <para>
+            <action>Toggles viewing of additional works</action> Toggle this setting to
+allow you to view additional works in parallel to your current open books.</para>
           </listitem>
         </varlistentry>
 
