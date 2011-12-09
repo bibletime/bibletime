@@ -12,33 +12,41 @@ FIND_PROGRAM(QT_LRELEASE_EXECUTABLE
     NO_DEFAULT_PATH
 )
 
-FOREACH(MESSAGE_LOCALE_LANG ${MESSAGE_LOCALE_LANGS})
-    ADD_CUSTOM_COMMAND(OUTPUT "bibletime_ui_${MESSAGE_LOCALE_LANG}.qm"
+SET(TS_DIR "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages")
+FILE(GLOB TS_FILES "${TS_DIR}/bibletime_ui_*.ts")
+FOREACH(TSFILE_FULLPATH ${TS_FILES})
+    STRING(REGEX REPLACE "${TS_DIR}/bibletime_ui_(..(_..)?).ts" "\\1"
+           TS_LANG "${TSFILE_FULLPATH}")
+    SET(TS_LANGS ${TS_LANGS} ${TS_LANG})
+    SET(QMFILE "bibletime_ui_${TS_LANG}.qm")
+    ADD_CUSTOM_COMMAND(OUTPUT "${QMFILE}"
         PRE_BUILD
-        COMMAND ${QT_LRELEASE_EXECUTABLE} "bibletime_ui_${MESSAGE_LOCALE_LANG}.ts" -qm "${CMAKE_CURRENT_BINARY_DIR}/bibletime_ui_${MESSAGE_LOCALE_LANG}.qm"
-        WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/"
-        COMMENT "Updating UI translation for ${MESSAGE_LOCALE_LANG}"
+        COMMAND ${QT_LRELEASE_EXECUTABLE} "${TSFILE_FULLPATH}" -qm "${QMFILE}"
+        WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+        COMMENT "Updating UI translation for ${TS_LANG}"
         VERBATIM
     )
     SET(bibletime_UI_translations
         ${bibletime_UI_translations}
-        "bibletime_ui_${MESSAGE_LOCALE_LANG}.qm"
+        "${QMFILE}"
     )
-    INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}/bibletime_ui_${MESSAGE_LOCALE_LANG}.qm"
+    INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}/${QMFILE}"
         DESTINATION "${BT_SHARE_PATH}bibletime/locale/"
     )
-ENDFOREACH(MESSAGE_LOCALE_LANG)
+ENDFOREACH(TSFILE_FULLPATH)
 
 
 # Update source catalog files (this is the basis for the translator's work)
 # Invoke this with "make messages"
 ADD_CUSTOM_TARGET("messages")
-FOREACH(MESSAGE_LOCALE_LANG ${MESSAGE_LOCALE_LANGS})
-    ADD_CUSTOM_TARGET("messages_${MESSAGE_LOCALE_LANG}"
-        COMMAND ${QT_LUPDATE_EXECUTABLE} "${CMAKE_CURRENT_SOURCE_DIR}/src" -ts "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/bibletime_ui_${MESSAGE_LOCALE_LANG}.ts")
-    ADD_DEPENDENCIES("messages" "messages_${MESSAGE_LOCALE_LANG}")
-ENDFOREACH(MESSAGE_LOCALE_LANG)
+FOREACH(TS_LANG ${TS_LANGS})
+    ADD_CUSTOM_TARGET("messages_${TS_LANG}"
+        COMMAND ${QT_LUPDATE_EXECUTABLE} "${CMAKE_CURRENT_SOURCE_DIR}/src" -ts "${TS_DIR}/bibletime_ui_${TS_LANG}.ts")
+    ADD_DEPENDENCIES("messages" "messages_${TS_LANG}")
+ENDFOREACH(TS_LANG)
+
+
 # Template file for translators
 ADD_CUSTOM_TARGET("messages_default"
-    COMMAND ${QT_LUPDATE_EXECUTABLE} "${CMAKE_CURRENT_SOURCE_DIR}/src" -ts "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/bibletime_ui.ts")
+    COMMAND ${QT_LUPDATE_EXECUTABLE} "${CMAKE_CURRENT_SOURCE_DIR}/src" -ts "${TS_DIR}/bibletime_ui.ts")
 ADD_DEPENDENCIES(messages "messages_default")
