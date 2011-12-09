@@ -69,8 +69,10 @@ opción para maximizar la ventana de &bibletime;.</para>
 
         <varlistentry id="hdbk-reference-menus-view-showbookshelf">
           <term>
-            <menuchoice> <guimenu>Ver</guimenu> <guimenuitem>Mostrar
-Biblioteca</guimenuitem> </menuchoice>
+            <menuchoice> <guimenu> <inlinemediaobject>
+<imageobject> <imagedata fileref="i_books.png" width="32" depth="32"
+format="PNG" /> </imageobject></inlinemediaobject>View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem>
+</menuchoice>
           </term>
           <listitem>
             <para>
@@ -82,8 +84,10 @@ ser útil si necesita más espacio para el Lente.</para>
 
         <varlistentry id="hdbk-reference-menus-view-showbookmarks">
           <term>
-            <menuchoice> <guimenu>Ver</guimenu> <guimenuitem>Mostrar
-Marcadores</guimenuitem> </menuchoice>
+            <menuchoice> <guimenu> <inlinemediaobject>
+<imageobject> <imagedata fileref="i_bookmark.png" width="32" depth="32"
+format="PNG" /> </imageobject></inlinemediaobject>View</guimenu> <guimenuitem>Show Bookmarks</guimenuitem>
+</menuchoice>
           </term>
           <listitem>
             <para>
@@ -95,13 +99,28 @@ puede ser útil si necesita más espacio para el Lente.</para>
 
         <varlistentry id="hdbk-reference-menus-view-showmag">
           <term>
-            <menuchoice> <guimenu>Ver</guimenu> <guimenuitem>Mostrar Lente</guimenuitem>
-</menuchoice>
+            <menuchoice> <guimenu> <inlinemediaobject>
+<imageobject> <imagedata fileref="i_document_magnifier.png" width="32"
+depth="32" format="PNG" /> </imageobject></inlinemediaobject>View</guimenu> <guimenuitem>Show Mag</guimenuitem> </menuchoice>
           </term>
           <listitem>
             <para>
             <action>Aciva la presentación del Lente (Lupa).</action> Activar esta opción
 para agrgar o quitar el Lente en el panel izquierdo.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry id="hdbk-reference-menus-view-showparalleltextheaders">
+          <term>
+            <menuchoice> <guimenu> <inlinemediaobject>
+<imageobject> <imagedata fileref="i_checkbox.png" width="32" depth="32"
+format="PNG" /> </imageobject></inlinemediaobject>View</guimenu> <guimenuitem>Show parallel text headers</guimenuitem>
+</menuchoice>
+          </term>
+          <listitem>
+            <para>
+            <action>Toggles viewing of additional works</action> Toggle this setting to
+allow you to view additional works in parallel to your current open books.</para>
           </listitem>
         </varlistentry>
 
