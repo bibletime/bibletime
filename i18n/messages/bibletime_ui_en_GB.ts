@@ -152,14 +152,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Please enter a name for the new session.</translation>
     </message>
     <message>
-        <source>Session already exists</source>
-        <translation type="obsolete">Session already exists</translation>
-    </message>
-    <message>
-        <source>Session with the name &quot;%1&quot; already exists. Please provide a different name.</source>
-        <translation type="obsolete">Session with the name &quot;%1&quot; already exists. Please provide a different name.</translation>
-    </message>
-    <message>
         <location filename="../../src/bibletime_init.cpp" line="109"/>
         <source>Quit BibleTime</source>
         <translation>Quit BibleTime</translation>
@@ -342,7 +334,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="728"/>
         <source>&amp;Save session</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Save session</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="752"/>
@@ -496,12 +488,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>BibleTime is an easy to use but powerful Bible study tool.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="269"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="270"/>
         <source>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</source>
         <translation>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="275"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="276"/>
         <source>The complete legally binding license is below.</source>
         <translation>The complete legally binding license is below.</translation>
     </message>
@@ -556,37 +548,37 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>usability expert</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="218"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="219"/>
         <source>Some names may be missing, please email %1 if you notice errors or omissions.</source>
         <translation>Some names may be missing, please email %1 if you notice errors or omissions.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="235"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="236"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
         <translation>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="241"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="242"/>
         <source>The SWORD Project: </source>
         <translation>The SWORD Project: </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="249"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="250"/>
         <source>&amp;Qt</source>
         <translation>&amp;Qt</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="252"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="253"/>
         <source>Qt toolkit version %1</source>
         <translation>Qt toolkit version %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="258"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="259"/>
         <source>More info...</source>
         <translation>More info...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="263"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="264"/>
         <source>&amp;License</source>
         <translation>&amp;License</translation>
     </message>
@@ -641,22 +633,22 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>The following people translated BibleTime into their language:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="229"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="230"/>
         <source>&amp;SWORD</source>
         <translation>&amp;SWORD</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="233"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="234"/>
         <source>SWORD library version %1</source>
         <translation>SWORD library version %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="254"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="255"/>
         <source>This program uses Qt version %1.</source>
         <translation>This program uses Qt version %1.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="256"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="257"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
         <translation>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</translation>
     </message>
@@ -836,24 +828,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/keychooser/versekeychooser/btdropdownchooserbutton.cpp" line="85"/>
         <source>Select chapter</source>
         <translation>Select chapter</translation>
-    </message>
-</context>
-<context>
-    <name>BtConfig</name>
-    <message>
-        <source>Error loading configuration!</source>
-        <translation type="obsolete">Error loading configuration!</translation>
-    </message>
-    <message>
-        <source>Failed to load BibleTime&apos;s configuration, because it appears that the configuration file corresponds to a newer version of BibleTime. This is likely caused by BibleTime being downgraded. Loading the new configuration file may result in &lt;b&gt;loss of data&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Do you still want to try to load the new configuration file? Press &quot;No&quot; to quit BibleTime immediately.</source>
-        <translation type="obsolete">Failed to load BibleTime&apos;s configuration, because it appears that the configuration file corresponds to a newer version of BibleTime. This is likely caused by BibleTime being downgraded. Loading the new configuration file may result in &lt;b&gt;loss of data&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Do you still want to try to load the new configuration file? Press &quot;No&quot; to quit BibleTime immediately.</translation>
-    </message>
-</context>
-<context>
-    <name>BtConfigCore</name>
-    <message>
-        <source>Default Session</source>
-        <translation type="obsolete">Default Session</translation>
     </message>
 </context>
 <context>
@@ -1646,49 +1620,6 @@ shortcut</translation>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="280"/>
         <source>Default key:</source>
         <translation>Default key:</translation>
-    </message>
-</context>
-<context>
-    <name>BtTextFiltersTab</name>
-    <message>
-        <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
-        <translation type="obsolete">Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</translation>
-    </message>
-    <message>
-        <source>Insert line break after each verse</source>
-        <translation type="obsolete">Insert line break after each verse</translation>
-    </message>
-    <message>
-        <source>Show verse numbers</source>
-        <translation type="obsolete">Show verse numbers</translation>
-    </message>
-    <message>
-        <source>Show section headings</source>
-        <translation type="obsolete">Show section headings</translation>
-    </message>
-    <message>
-        <source>Show scripture cross-references</source>
-        <translation type="obsolete">Show scripture cross-references</translation>
-    </message>
-    <message>
-        <source>Show Greek accents</source>
-        <translation type="obsolete">Show Greek accents</translation>
-    </message>
-    <message>
-        <source>Show Hebrew vowel points</source>
-        <translation type="obsolete">Show Hebrew vowel points</translation>
-    </message>
-    <message>
-        <source>Show Hebrew cantillation marks</source>
-        <translation type="obsolete">Show Hebrew cantillation marks</translation>
-    </message>
-    <message>
-        <source>Show morph segmentation</source>
-        <translation type="obsolete">Show morph segmentation</translation>
-    </message>
-    <message>
-        <source>Use textual variants</source>
-        <translation type="obsolete">Use textual variants</translation>
     </message>
 </context>
 <context>
@@ -4972,52 +4903,52 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="347"/>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
-        <translation type="unfinished">Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</translation>
+        <translation>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="351"/>
         <source>Insert line break after each verse</source>
-        <translation type="unfinished">Insert line break after each verse</translation>
+        <translation>Insert line break after each verse</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="352"/>
         <source>Show verse numbers</source>
-        <translation type="unfinished">Show verse numbers</translation>
+        <translation>Show verse numbers</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="353"/>
         <source>Show section headings</source>
-        <translation type="unfinished">Show section headings</translation>
+        <translation>Show section headings</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="354"/>
         <source>Show scripture cross-references</source>
-        <translation type="unfinished">Show scripture cross-references</translation>
+        <translation>Show scripture cross-references</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="355"/>
         <source>Show Greek accents</source>
-        <translation type="unfinished">Show Greek accents</translation>
+        <translation>Show Greek accents</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="356"/>
         <source>Show Hebrew vowel points</source>
-        <translation type="unfinished">Show Hebrew vowel points</translation>
+        <translation>Show Hebrew vowel points</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="357"/>
         <source>Show Hebrew cantillation marks</source>
-        <translation type="unfinished">Show Hebrew cantillation marks</translation>
+        <translation>Show Hebrew cantillation marks</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="358"/>
         <source>Show morph segmentation</source>
-        <translation type="unfinished">Show morph segmentation</translation>
+        <translation>Show morph segmentation</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="359"/>
         <source>Use textual variants</source>
-        <translation type="unfinished">Use textual variants</translation>
+        <translation>Use textual variants</translation>
     </message>
 </context>
 <context>
