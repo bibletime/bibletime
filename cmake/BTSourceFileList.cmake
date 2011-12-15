@@ -303,7 +303,7 @@ SET(bibletime_SRC_FRONTEND_DISPLAYWINDOW
 SOURCE_GROUP("src\\frontend\\displaywindow" FILES ${bibletime_SRC_FRONTEND_DISPLAYWINDOW})
 
 # Mocable headers:
-SET(bibletime_MOCABLE_HEADERS
+SET(bibletime_COMMON_MOCABLE_HEADERS
     src/bibletime.h
     src/bibletimeapp.h
     src/bibletime_dbus_adaptor.h
@@ -317,6 +317,10 @@ SET(bibletime_MOCABLE_HEADERS
     src/backend/drivers/cswordlexiconmoduleinfo.h
     src/backend/drivers/cswordmoduleinfo.h
     src/backend/managers/cswordbackend.h
+    src/util/btsignal.h
+)
+
+SET(bibletime_FRONTEND_DESKTOP_MOCABLE_HEADERS
     src/frontend/bookmarks/bteditbookmarkdialog.h
     src/frontend/bookmarks/cbookmarkindex.h
     src/frontend/bookshelfmanager/btconfigdialog.h
@@ -408,10 +412,9 @@ SET(bibletime_MOCABLE_HEADERS
     src/frontend/settingsdialogs/clistwidget.h
     src/frontend/settingsdialogs/cswordsettings.h
     src/frontend/tips/bttipdialog.h
-    src/util/btsignal.h
 )
 
-SET(bibletime_SOURCES
+SET(bibletime_COMMON_SOURCES
     ${bibletime_SRC}
     ${bibletime_SRC_BACKEND}
     ${bibletime_SRC_BACKEND_BOOKSHELFMODEL}
@@ -421,7 +424,9 @@ SET(bibletime_SOURCES
     ${bibletime_SRC_BACKEND_KEYS}
     ${bibletime_SRC_BACKEND_RENDERING}
     ${bibletime_SRC_BACKEND_MANAGERS}
-    ${bibletime_SRC_UTIL}
+    ${bibletime_SRC_UTIL})
+
+SET(bibletime_FRONTEND_DESKTOP_SOURCES
     ${bibletime_SRC_FRONTEND}
     ${bibletime_SRC_FRONTEND_BOOKMARKS}
     ${bibletime_SRC_FRONTEND_BOOKSHELFMANAGER}
@@ -437,3 +442,29 @@ SET(bibletime_SOURCES
     ${bibletime_SRC_FRONTEND_DISPLAY}
     ${bibletime_SRC_FRONTEND_DISPLAYWINDOW}
 )
+
+# Default to building a desktop frontend:
+IF(NOT (DEFINED BIBLETIME_FRONTEND))
+  SET(BIBLETIME_FRONTEND "DESKTOP")
+ENDIF(NOT (DEFINED BIBLETIME_FRONTEND))
+
+# Check for valid frontend:
+SET(bibletime_AVAILABLE_FRONTENDS DESKTOP)
+#SET(bibletime_AVAILABLE_FRONTENDS DESKTOP QML_SYMBIAN)
+LIST(FIND bibletime_AVAILABLE_FRONTENDS ${BIBLETIME_FRONTEND} bibletime_FRONTEND_INDEX)
+IF(${bibletime_FRONTEND_INDEX} EQUAL -1)
+  MESSAGE(STATUS "Invalid frontend specified: ${BIBLETIME_FRONTEND}.")
+  MESSAGE(STATUS "Available frontends are:")
+  FOREACH(frontend ${bibletime_AVAILABLE_FRONTENDS})
+    MESSAGE(STATUS "    ${frontend}")
+  ENDFOREACH(frontend ${bibletime_AVAILABLE_FRONTENDS})
+  MESSAGE(FATAL_ERROR "Aborting processing because of invalid BIBLETIME_FRONTEND")
+ENDIF(${bibletime_FRONTEND_INDEX} EQUAL -1)
+MESSAGE(STATUS "Selected frontend: ${BIBLETIME_FRONTEND}")
+
+SET(bibletime_SOURCES
+    ${bibletime_COMMON_SOURCES}
+    ${bibletime_FRONTEND_${BIBLETIME_FRONTEND}_SOURCES})
+SET(bibletime_MOCABLE_HEADERS
+    ${bibletime_COMMON_MOCABLE_HEADERS}
+    ${bibletime_FRONTEND_${BIBLETIME_FRONTEND}_MOCABLE_HEADERS})
