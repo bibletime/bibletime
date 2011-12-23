@@ -79,7 +79,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="728"/>
         <source>&amp;Save session</source>
-        <translation type="unfinished">Сохранить &amp;сессию</translation>
+        <translation>Сохранить &amp;сессию</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="729"/>
@@ -934,17 +934,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontchooserwidget.cpp" line="97"/>
         <source>Font name:</source>
-        <translation type="unfinished">Имя шрифта:</translation>
+        <translation>Имя шрифта:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontchooserwidget.cpp" line="98"/>
         <source>Font style:</source>
-        <translation type="unfinished">Стиль шрифта:</translation>
+        <translation>Стиль шрифта:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontchooserwidget.cpp" line="99"/>
         <source>Size:</source>
-        <translation type="unfinished">Размер:</translation>
+        <translation>Размер:</translation>
     </message>
 </context>
 <context>
@@ -1015,12 +1015,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="108"/>
         <source>%1 KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 КБ</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="115"/>
         <source>0 KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>0 КБ</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="123"/>
@@ -2906,7 +2906,7 @@ Do you want to continue?</source>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="175"/>
         <source>&lt;div class=&quot;moduleinfo&quot;&gt;&lt;h3&gt;%1&lt;/h3&gt;&lt;p&gt;%2&lt;/p&gt;&lt;p&gt;Version: %3&lt;/p&gt;&lt;/div&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;div class=&quot;moduleinfo&quot;&gt;&lt;h3&gt;%1&lt;/h3&gt;&lt;p&gt;%2&lt;/p&gt;&lt;p&gt;Версия: %3&lt;/p&gt;&lt;/div&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="195"/>
@@ -4466,7 +4466,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="138"/>
         <source> (&lt;a href=&apos;syntax_help&apos;&gt;full syntax&lt;/a&gt;)</source>
-        <translation type="unfinished"></translation>
+        <translation> (&lt;a href=&apos;syntax_help&apos;&gt;синтаксис&lt;/a&gt;)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="139"/>
@@ -4826,7 +4826,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="137"/>
         <source>Select a scope from the list to edit the searchranges</source>
-        <translation type="unfinished"></translation>
+        <translation>Выберите диапазон для редактирования из списка</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="148"/>
@@ -4841,7 +4841,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="152"/>
         <source>Change the search ranges of the selected searchscope item. Have a look at the predefined search scopes to see how search ranges are constructed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Редактировать поисковые диапазоны выборного элемента. Можно посмотреть предустановленные поисковые диапазоны, чтобы понять, как они устроены.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="157"/>
@@ -5114,52 +5114,52 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="351"/>
         <source>Insert line break after each verse</source>
-        <translation type="unfinished">Вставлять перенос строки после каждого стиха</translation>
+        <translation>Вставлять перенос строки после каждого стиха</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="352"/>
         <source>Show verse numbers</source>
-        <translation type="unfinished">Показывать номера стихов</translation>
+        <translation>Показывать номера стихов</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="353"/>
         <source>Show section headings</source>
-        <translation type="unfinished">Показывать подзаголовки</translation>
+        <translation>Показывать подзаголовки</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="354"/>
         <source>Show scripture cross-references</source>
-        <translation type="unfinished">Показать перекрёстные ссылки Писания</translation>
+        <translation>Показать перекрёстные ссылки Писания</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="355"/>
         <source>Show Greek accents</source>
-        <translation type="unfinished">Показывать греческие ударения</translation>
+        <translation>Показывать греческие ударения</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="356"/>
         <source>Show Hebrew vowel points</source>
-        <translation type="unfinished">Показывать точки еврейских гласных</translation>
+        <translation>Показывать точки еврейских гласных</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="357"/>
         <source>Show Hebrew cantillation marks</source>
-        <translation type="unfinished">Показывать знаки еврейской кантиляции</translation>
+        <translation>Показывать знаки еврейской кантиляции</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="358"/>
         <source>Show morph segmentation</source>
-        <translation type="unfinished">Показывать морфологическое деление</translation>
+        <translation>Показывать морфологическое деление</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="359"/>
         <source>Use textual variants</source>
-        <translation type="unfinished">Использовать текстуальные варианты</translation>
+        <translation>Использовать текстовые варианты</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="347"/>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
-        <translation type="unfinished">Фильтры влияют на представление текста. Здесь вы можете указать настройки по-умолчанию для фильтров. Вы можете отдельно указать эти настройки для каждого окна.</translation>
+        <translation>Фильтры влияют на представление текста. Здесь вы можете указать настройки по-умолчанию для фильтров. Вы можете отдельно указать эти настройки для каждого окна.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="287"/>
