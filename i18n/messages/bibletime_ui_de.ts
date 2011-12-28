@@ -4344,7 +4344,7 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     </message>
 </context>
 <context>
-    <name>StandardWorksTab</name>
+    <name>BtStandardWorksTab</name>
     <message>
         <source>Bible:</source>
         <translation>Bibel:</translation>

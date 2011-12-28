@@ -5292,7 +5292,7 @@ Dit kan enige tijd duren. Doorgaan met indexeren?</translation>
     </message>
 </context>
 <context>
-    <name>StandardWorksTab</name>
+    <name>BtStandardWorksTab</name>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="169"/>
         <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>

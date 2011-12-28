@@ -23,7 +23,7 @@ CSwordSettingsPage::CSwordSettingsPage(CConfigurationDialog * parent)
     static const QString nullString;
 
     m_tabWidget = new QTabWidget(this);
-        m_worksTab = new StandardWorksTab(this);
+        m_worksTab = new BtStandardWorksTab(this);
         m_tabWidget->addTab(m_worksTab, nullString);
 
         m_filtersTab = new BtTextFiltersTab(this);

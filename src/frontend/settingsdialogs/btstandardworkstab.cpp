@@ -20,7 +20,7 @@
 #include "util/tool.h"
 
 
-StandardWorksTab::StandardWorksTab(CSwordSettingsPage *parent)
+BtStandardWorksTab::BtStandardWorksTab(CSwordSettingsPage *parent)
     : QWidget(parent)
 {
     typedef QList<CSwordModuleInfo*>::const_iterator MLCI;
@@ -152,7 +152,7 @@ StandardWorksTab::StandardWorksTab(CSwordSettingsPage *parent)
         CSwordBackend::instance()->findModuleByDescription(m_ ## name ## Combo->currentText()) \
     );
 
-void StandardWorksTab::save() {
+void BtStandardWorksTab::save() {
     STANDARD_WORKS_SET_DEFAULT(standardBible);
     STANDARD_WORKS_SET_DEFAULT(standardCommentary);
     STANDARD_WORKS_SET_DEFAULT(standardLexicon);
@@ -163,7 +163,7 @@ void StandardWorksTab::save() {
     STANDARD_WORKS_SET_DEFAULT(standardGreekMorphLexicon);
 }
 
-void StandardWorksTab::retranslateUi() {
+void BtStandardWorksTab::retranslateUi() {
     util::tool::initExplanationLabel(
         m_explanationLabel, "",
         tr("Standard works are used when no particular work is specified, for example "

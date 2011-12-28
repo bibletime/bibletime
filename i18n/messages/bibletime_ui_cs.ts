@@ -4295,7 +4295,7 @@ To může trvat dlouhou dobu. Pokračovat v indexování?</translation>
     </message>
 </context>
 <context>
-    <name>StandardWorksTab</name>
+    <name>BtStandardWorksTab</name>
     <message>
         <source>Bible:</source>
         <translation>Bible:</translation>

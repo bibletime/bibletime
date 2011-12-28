@@ -18,13 +18,13 @@ class QCheckBox;
 class QComboBox;
 class QLabel;
 
-class StandardWorksTab: public QWidget {
+class BtStandardWorksTab: public QWidget {
 
     Q_OBJECT
 
     public: /* Methods: */
 
-        StandardWorksTab(CSwordSettingsPage * parent);
+        BtStandardWorksTab(CSwordSettingsPage * parent);
 
         void save();
 

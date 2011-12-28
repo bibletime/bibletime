@@ -16,7 +16,7 @@
 
 class BtTextFiltersTab;
 class CConfigurationDialog;
-class StandardWorksTab;
+class BtStandardWorksTab;
 
 class CSwordSettingsPage: public BtConfigDialog::Page {
 
@@ -35,7 +35,7 @@ class CSwordSettingsPage: public BtConfigDialog::Page {
     private: /* Fields: */
 
         QTabWidget * m_tabWidget;
-        StandardWorksTab * m_worksTab;
+        BtStandardWorksTab * m_worksTab;
         BtTextFiltersTab * m_filtersTab;
 
 };

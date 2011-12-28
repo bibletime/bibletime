@@ -5483,7 +5483,7 @@ Questo potrebbe richiedere parecchio tempo. Procedere all&apos;indicizzazione?</
     </message>
 </context>
 <context>
-    <name>StandardWorksTab</name>
+    <name>BtStandardWorksTab</name>
     <message>
         <source>Standard works are used when no particular work is specified,   for example when a hyperlink into a Bible or lexicon was clicked .</source>
         <translation type="obsolete">I documenti predefiniti vengono usati in caso non vengano specificati altri documenti, ad esempio quando un collegamento ipertestuale dentro una Bibbia od un lessico viene cliccato.</translation>
