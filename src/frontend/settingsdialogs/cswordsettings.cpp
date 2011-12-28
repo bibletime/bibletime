@@ -30,36 +30,6 @@
   StandardWorksTab
 *******************************************************************************/
 
-class StandardWorksTab: public QWidget {
-
-    public: /* Methods: */
-
-        StandardWorksTab(CSwordSettingsPage *parent);
-
-        void save();
-
-    protected: /* Methods: */
-
-        void retranslateUi();
-
-    private: /* Fields: */
-
-        QLabel *m_explanationLabel;
-
-#define STANDARD_WORKS_TAB_FIELD(name) \
-        QLabel *m_ ## name ## Label; \
-        QComboBox *m_ ## name ## Combo
-
-        STANDARD_WORKS_TAB_FIELD(standardBible);
-        STANDARD_WORKS_TAB_FIELD(standardCommentary);
-        STANDARD_WORKS_TAB_FIELD(standardLexicon);
-        STANDARD_WORKS_TAB_FIELD(standardDailyDevotional);
-        STANDARD_WORKS_TAB_FIELD(standardHebrewStrongsLexicon);
-        STANDARD_WORKS_TAB_FIELD(standardGreekStrongsLexicon);
-        STANDARD_WORKS_TAB_FIELD(standardHebrewMorphLexicon);
-        STANDARD_WORKS_TAB_FIELD(standardGreekMorphLexicon);
-};
-
 StandardWorksTab::StandardWorksTab(CSwordSettingsPage *parent)
     : QWidget(parent)
 {
@@ -264,36 +234,6 @@ void StandardWorksTab::retranslateUi() {
   TextFiltersTab
 *******************************************************************************/
 
-class TextFiltersTab: public QWidget {
-
-    public: /* Methods: */
-
-        TextFiltersTab(CSwordSettingsPage *parent);
-
-        void save();
-
-    protected: /* Methods: */
-
-        void retranslateUi();
-
-    private: /* Fields: */
-
-        QLabel *m_explanationLabel;
-
-#define TEXT_FILTERS_TAB_FIELD(name) QCheckBox *m_ ## name ## Check
-
-        TEXT_FILTERS_TAB_FIELD(lineBreaks);
-        TEXT_FILTERS_TAB_FIELD(verseNumbers);
-        TEXT_FILTERS_TAB_FIELD(headings);
-        TEXT_FILTERS_TAB_FIELD(hebrewPoints);
-        TEXT_FILTERS_TAB_FIELD(hebrewCantillation);
-        TEXT_FILTERS_TAB_FIELD(morphSegmentation);
-        TEXT_FILTERS_TAB_FIELD(greekAccents);
-        TEXT_FILTERS_TAB_FIELD(textualVariants);
-        TEXT_FILTERS_TAB_FIELD(scriptureReferences);
-
-};
-
 TextFiltersTab::TextFiltersTab(CSwordSettingsPage *parent)
     : QWidget(parent)
 {
@@ -358,6 +298,7 @@ void TextFiltersTab::retranslateUi() {
     m_morphSegmentationCheck->setText(tr("Show morph segmentation"));
     m_textualVariantsCheck->setText(tr("Use textual variants"));
 }
+
 
 /*******************************************************************************
   CSwordSettingsPage
