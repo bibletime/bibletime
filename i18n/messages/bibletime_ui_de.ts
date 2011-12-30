@@ -1543,6 +1543,81 @@ shortcut</source>
     </message>
 </context>
 <context>
+    <name>BtStandardWorksTab</name>
+    <message>
+        <source>Bible:</source>
+        <translation>Bibel:</translation>
+    </message>
+    <message>
+        <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
+        <translation>Die Standard-Bibel wird genutzt, wenn ein Verweis auf eine Bibel betätigt wird</translation>
+    </message>
+    <message>
+        <source>Commentary:</source>
+        <translation>Kommentar:</translation>
+    </message>
+    <message>
+        <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
+        <translation>Der Standard-Kommentar wird genutzt, wenn ein Verweis auf einen Kommentar betätigt wird</translation>
+    </message>
+    <message>
+        <source>Lexicon:</source>
+        <translation>Lexikon:</translation>
+    </message>
+    <message>
+        <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
+        <translation>Das Standard-Lexikon wird genutzt, wenn ein Verweis auf ein Lexikon betätigt wird</translation>
+    </message>
+    <message>
+        <source>Daily devotional:</source>
+        <translation>Andachtsbuch:</translation>
+    </message>
+    <message>
+        <source>The standard devotional will be used to display a short start up devotional</source>
+        <translation>Die Standard-Andacht wird für die Anzeige einer kurzen Start-Andacht genutzt</translation>
+    </message>
+    <message>
+        <source>Hebrew Strong&apos;s lexicon:</source>
+        <translation>Hebräisches Strong-Lexikon:</translation>
+    </message>
+    <message>
+        <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
+        <translation>Das Standard-Hebräisch-Lexikon wird genutzt, wenn ein Verweis auf ein Hebräisch-Lexikon betätigt wird</translation>
+    </message>
+    <message>
+        <source>Greek Strong&apos;s lexicon:</source>
+        <translation>Griechisches Strong-Lexikon:</translation>
+    </message>
+    <message>
+        <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
+        <translation>Das Standard-Griechisch-Lexikon wird genutzt, wenn ein Verweis auf ein Griechisch-Lexikon betätigt wird</translation>
+    </message>
+    <message>
+        <source>Hebrew morphological lexicon:</source>
+        <translation>Hebräisches Morphologie-Lexikon:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
+        <translation>Das Standard-Morphologie-Lexikon für hebräische Texte wird genutzt, wenn ein Verweis auf eine morphologische Markierung in einem Hebräisch-Text betätigt wird</translation>
+    </message>
+    <message>
+        <source>Greek morphological lexicon:</source>
+        <translation>Griechisches Morphologie-Lexikon:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
+        <translation>Das Standard-Morphologie-Lexikon für griechische Texte wird genutzt, wenn ein Verweis auf eine morphologische Markierung in einem Griechisch-Text betätigt wird</translation>
+    </message>
+    <message>
+        <source></source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
+        <translation>Standard-Werke werden genutzt, wenn kein bestimmtes Werk festgelegt wurde, zum Beispiel wenn ein Verweis auf eine Bibel oder ein Lexikon angeklickt wurde.</translation>
+    </message>
+</context>
+<context>
     <name>BtTextFiltersTab</name>
     <message>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
@@ -4341,81 +4416,6 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     <message>
         <source>Search result of the selected work</source>
         <translation>Suchergebnis des ausgewählten Werks</translation>
-    </message>
-</context>
-<context>
-    <name>BtStandardWorksTab</name>
-    <message>
-        <source>Bible:</source>
-        <translation>Bibel:</translation>
-    </message>
-    <message>
-        <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
-        <translation>Die Standard-Bibel wird genutzt, wenn ein Verweis auf eine Bibel betätigt wird</translation>
-    </message>
-    <message>
-        <source>Commentary:</source>
-        <translation>Kommentar:</translation>
-    </message>
-    <message>
-        <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
-        <translation>Der Standard-Kommentar wird genutzt, wenn ein Verweis auf einen Kommentar betätigt wird</translation>
-    </message>
-    <message>
-        <source>Lexicon:</source>
-        <translation>Lexikon:</translation>
-    </message>
-    <message>
-        <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
-        <translation>Das Standard-Lexikon wird genutzt, wenn ein Verweis auf ein Lexikon betätigt wird</translation>
-    </message>
-    <message>
-        <source>Daily devotional:</source>
-        <translation>Andachtsbuch:</translation>
-    </message>
-    <message>
-        <source>The standard devotional will be used to display a short start up devotional</source>
-        <translation>Die Standard-Andacht wird für die Anzeige einer kurzen Start-Andacht genutzt</translation>
-    </message>
-    <message>
-        <source>Hebrew Strong&apos;s lexicon:</source>
-        <translation>Hebräisches Strong-Lexikon:</translation>
-    </message>
-    <message>
-        <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
-        <translation>Das Standard-Hebräisch-Lexikon wird genutzt, wenn ein Verweis auf ein Hebräisch-Lexikon betätigt wird</translation>
-    </message>
-    <message>
-        <source>Greek Strong&apos;s lexicon:</source>
-        <translation>Griechisches Strong-Lexikon:</translation>
-    </message>
-    <message>
-        <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
-        <translation>Das Standard-Griechisch-Lexikon wird genutzt, wenn ein Verweis auf ein Griechisch-Lexikon betätigt wird</translation>
-    </message>
-    <message>
-        <source>Hebrew morphological lexicon:</source>
-        <translation>Hebräisches Morphologie-Lexikon:</translation>
-    </message>
-    <message>
-        <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
-        <translation>Das Standard-Morphologie-Lexikon für hebräische Texte wird genutzt, wenn ein Verweis auf eine morphologische Markierung in einem Hebräisch-Text betätigt wird</translation>
-    </message>
-    <message>
-        <source>Greek morphological lexicon:</source>
-        <translation>Griechisches Morphologie-Lexikon:</translation>
-    </message>
-    <message>
-        <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
-        <translation>Das Standard-Morphologie-Lexikon für griechische Texte wird genutzt, wenn ein Verweis auf eine morphologische Markierung in einem Griechisch-Text betätigt wird</translation>
-    </message>
-    <message>
-        <source></source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
-        <translation>Standard-Werke werden genutzt, wenn kein bestimmtes Werk festgelegt wurde, zum Beispiel wenn ein Verweis auf eine Bibel oder ein Lexikon angeklickt wurde.</translation>
     </message>
 </context>
 <context>

@@ -1527,6 +1527,81 @@ shortcut</source>
     </message>
 </context>
 <context>
+    <name>BtStandardWorksTab</name>
+    <message>
+        <source>Bible:</source>
+        <translation>Bible:</translation>
+    </message>
+    <message>
+        <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
+        <translation>Standardní Bible je použita, když kliknete na odkaz směřující na Bibli</translation>
+    </message>
+    <message>
+        <source>Commentary:</source>
+        <translation>Kometář:</translation>
+    </message>
+    <message>
+        <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
+        <translation>Standardní komentář je použit, když kliknete na odkaz směřující na komentář</translation>
+    </message>
+    <message>
+        <source>Lexicon:</source>
+        <translation>Lexikon:</translation>
+    </message>
+    <message>
+        <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
+        <translation>Standardní lexikon je použit, když kliknete na odkaz směřující na lexikon</translation>
+    </message>
+    <message>
+        <source>Daily devotional:</source>
+        <translation>Denní zamyšlení:</translation>
+    </message>
+    <message>
+        <source>The standard devotional will be used to display a short start up devotional</source>
+        <translation>Standardní zamyšlení bude použito k zobrazení krátkého zamyslení po startu</translation>
+    </message>
+    <message>
+        <source>Hebrew Strong&apos;s lexicon:</source>
+        <translation>Hebrejský Strongův lexikon:</translation>
+    </message>
+    <message>
+        <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
+        <translation>Standardní hebrejský lexikon je použit, když kliknete na odkaz směřující na hebrejský lexikon</translation>
+    </message>
+    <message>
+        <source>Greek Strong&apos;s lexicon:</source>
+        <translation>řecká Strongův lexikon</translation>
+    </message>
+    <message>
+        <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
+        <translation>Standardní řecký lexikon je použit, když kliknete na odkaz směřující na řecký lexikon</translation>
+    </message>
+    <message>
+        <source>Hebrew morphological lexicon:</source>
+        <translation>Hebrejský monografický lexikon:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
+        <translation>Standardní monografický lexikon pro hebrejské texty je použit, když kliknete na odkaz monografické značky v hebrejském textu</translation>
+    </message>
+    <message>
+        <source>Greek morphological lexicon:</source>
+        <translation>řecký monografický lexikon:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
+        <translation>Standardní monografický lexikon pro řecké texty je použit, když kliknete na odkaz monografické značky v řeckém textu</translation>
+    </message>
+    <message>
+        <source></source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>BtTextFiltersTab</name>
     <message>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
@@ -4292,81 +4367,6 @@ To může trvat dlouhou dobu. Pokračovat v indexování?</translation>
     <message>
         <source>Search result of the selected work</source>
         <translation>Výsledky hledání z vybraného díla</translation>
-    </message>
-</context>
-<context>
-    <name>BtStandardWorksTab</name>
-    <message>
-        <source>Bible:</source>
-        <translation>Bible:</translation>
-    </message>
-    <message>
-        <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
-        <translation>Standardní Bible je použita, když kliknete na odkaz směřující na Bibli</translation>
-    </message>
-    <message>
-        <source>Commentary:</source>
-        <translation>Kometář:</translation>
-    </message>
-    <message>
-        <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
-        <translation>Standardní komentář je použit, když kliknete na odkaz směřující na komentář</translation>
-    </message>
-    <message>
-        <source>Lexicon:</source>
-        <translation>Lexikon:</translation>
-    </message>
-    <message>
-        <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
-        <translation>Standardní lexikon je použit, když kliknete na odkaz směřující na lexikon</translation>
-    </message>
-    <message>
-        <source>Daily devotional:</source>
-        <translation>Denní zamyšlení:</translation>
-    </message>
-    <message>
-        <source>The standard devotional will be used to display a short start up devotional</source>
-        <translation>Standardní zamyšlení bude použito k zobrazení krátkého zamyslení po startu</translation>
-    </message>
-    <message>
-        <source>Hebrew Strong&apos;s lexicon:</source>
-        <translation>Hebrejský Strongův lexikon:</translation>
-    </message>
-    <message>
-        <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
-        <translation>Standardní hebrejský lexikon je použit, když kliknete na odkaz směřující na hebrejský lexikon</translation>
-    </message>
-    <message>
-        <source>Greek Strong&apos;s lexicon:</source>
-        <translation>řecká Strongův lexikon</translation>
-    </message>
-    <message>
-        <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
-        <translation>Standardní řecký lexikon je použit, když kliknete na odkaz směřující na řecký lexikon</translation>
-    </message>
-    <message>
-        <source>Hebrew morphological lexicon:</source>
-        <translation>Hebrejský monografický lexikon:</translation>
-    </message>
-    <message>
-        <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
-        <translation>Standardní monografický lexikon pro hebrejské texty je použit, když kliknete na odkaz monografické značky v hebrejském textu</translation>
-    </message>
-    <message>
-        <source>Greek morphological lexicon:</source>
-        <translation>řecký monografický lexikon:</translation>
-    </message>
-    <message>
-        <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
-        <translation>Standardní monografický lexikon pro řecké texty je použit, když kliknete na odkaz monografické značky v řeckém textu</translation>
-    </message>
-    <message>
-        <source></source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
