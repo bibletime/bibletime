@@ -488,12 +488,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>BibleTime on helppokäyttöinen ja tehokas Raamatun opiskelun työkalu.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="269"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="270"/>
         <source>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</source>
         <translation>BibleTime on julkaistu GPL-lisenssin alla. Voit ladata ohjelman ja käyttää sitä henkilökohtaisessa, yksityisessä, julkisessa tai kaupallisessa käytössä ilman rajoituksia, mutta voit jakaa ohjelmaa edelleen vain jos jaat myös vastaavan lähdekoodin.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="275"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="276"/>
         <source>The complete legally binding license is below.</source>
         <translation>Täydellinen, laillisesti sitova lisenssi on alla.</translation>
     </message>
@@ -548,37 +548,37 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>käytettävyysasiantuntija</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="218"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="219"/>
         <source>Some names may be missing, please email %1 if you notice errors or omissions.</source>
         <translation>Joitain nimiä voi puuttua, lähetä sähköpostia osoitteeseen %1, jos huomaat puutteita.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="235"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="236"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
         <translation>BibleTime käyttää SWORD-projektia. SWORD-projekti on CrossWire Bible Societyn avoin raamattuohjelmistoprojekti. Sen tarkoitus on luoda alustariippumattomia GPL-lisenssoituja avoimen lähdekoodin työkaluja, jotka antavat ohjelmoijille ja raamattuseuroille mahdollisuuden tehdä uusia Raamattuun liittyviä ohjelmistoja nopeasti ja helposti.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="241"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="242"/>
         <source>The SWORD Project: </source>
         <translation>SWORD-projekti: </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="249"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="250"/>
         <source>&amp;Qt</source>
         <translation>&amp;Qt</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="252"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="253"/>
         <source>Qt toolkit version %1</source>
         <translation>Qt ohjelmistoalusta versio %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="258"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="259"/>
         <source>More info...</source>
         <translation>Lisätietoa...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="263"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="264"/>
         <source>&amp;License</source>
         <translation>&amp;Lisenssi</translation>
     </message>
@@ -633,22 +633,22 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Seuraavat henkilöt ovat kääntäneet BibleTimen omalle kielelleen:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="229"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="230"/>
         <source>&amp;SWORD</source>
         <translation>&amp;SWORD</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="233"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="234"/>
         <source>SWORD library version %1</source>
         <translation>SWORD-kirjaston versio %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="254"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="255"/>
         <source>This program uses Qt version %1.</source>
         <translation>Tämä ohjelma käyttää Qt:n versiota %1.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="256"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="257"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
         <translation>Qt on C++-kielellä tehty alustariippumaton sovellus- ja käyttöliittymäkehikko. Se on julkaistu LGPL-lisenssin alla.</translation>
     </message>
@@ -2938,17 +2938,17 @@ pikanäppäin</translation>
 <context>
     <name>CSwordSettingsPage</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="388"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="329"/>
         <source>Standard works</source>
         <translation>Oletusteokset</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="389"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="330"/>
         <source>Text filters</source>
         <translation>Tekstisuotimet</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="386"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="327"/>
         <source>Desk</source>
         <translation>Työpöytä</translation>
     </message>
@@ -5209,87 +5209,87 @@ Tämä voi viedä pitkän ajan. Haluatko indeksoida?</translation>
 <context>
     <name>StandardWorksTab</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="234"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="204"/>
         <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="237"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="207"/>
         <source>Bible:</source>
         <translation>Raamattu:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="238"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="208"/>
         <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
         <translation>Oletusraamattua käytetään kun hyperlinkki Raamattuun valitaan</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="240"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="210"/>
         <source>Commentary:</source>
         <translation>Kommentaari:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="241"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="211"/>
         <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
         <translation>Oletuskommentaaria käytetään kun hyperlinkki kommentaariin valitaan</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="243"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="213"/>
         <source>Lexicon:</source>
         <translation>Sanakirja:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="244"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="214"/>
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
         <translation>Oletussanakirjaa käytetään kun hyperlinkki sanakirjaan valitaan</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="246"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="216"/>
         <source>Daily devotional:</source>
         <translation>Päivittäinen hartaus:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="247"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="217"/>
         <source>The standard devotional will be used to display a short start up devotional</source>
         <translation>Oletushartauskirjasta näytetään päivittäinen Raamatun jae käynnistettäessä</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="249"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="219"/>
         <source>Hebrew Strong&apos;s lexicon:</source>
         <translation>Hepreankielinen Strongin sanasto:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="250"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="220"/>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
         <translation>Standardia hepreankielistä sanastoa käyteään kun hyperlinkki hepreankieliseen sanastoon valitaan</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="252"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="222"/>
         <source>Greek Strong&apos;s lexicon:</source>
         <translation>Kreikankielinen Strongin sanasto:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="253"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="223"/>
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
         <translation>Standardia kreikankielistä sanastoa käytetään kun hyperlinkki kreikankielen sanastoon valitaan</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="255"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="225"/>
         <source>Hebrew morphological lexicon:</source>
         <translation>Heprealainen morfologinen sanasto:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="256"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="226"/>
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
         <translation>Standardia hepreankielen morfologista sanastoa käytetään kun morfologinen linkki valitaan heprealaisissa teksteissä</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="258"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="228"/>
         <source>Greek morphological lexicon:</source>
         <translation>Kreikkalainen morfologinen sanasto:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="259"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="229"/>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
         <translation>Standardia kreikankielen morfologista sanastoa käytetään kun morfologinen linkki valitaan kreikkalaisissa teksteissä</translation>
     </message>
@@ -5302,52 +5302,52 @@ Tämä voi viedä pitkän ajan. Haluatko indeksoida?</translation>
 <context>
     <name>TextFiltersTab</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="351"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="291"/>
         <source>Insert line break after each verse</source>
         <translation type="unfinished">Lisää rivinvaihto jokaisen jakeen perään</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="352"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="292"/>
         <source>Show verse numbers</source>
         <translation type="unfinished">Näytä jaenumerot</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="353"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="293"/>
         <source>Show section headings</source>
         <translation type="unfinished">Näytä kappaleiden otsikot</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="354"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="294"/>
         <source>Show scripture cross-references</source>
         <translation type="unfinished">Näytä kirjoitusten ristiviitteet</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="355"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="295"/>
         <source>Show Greek accents</source>
         <translation type="unfinished">Näytä kreikan korkomerkit</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="356"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="296"/>
         <source>Show Hebrew vowel points</source>
         <translation type="unfinished">Näytä heprean vokaalipisteet</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="357"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="297"/>
         <source>Show Hebrew cantillation marks</source>
         <translation type="unfinished">Näytä heprean kantillaatiomerkit</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="358"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="298"/>
         <source>Show morph segmentation</source>
         <translation type="unfinished">Näytä morfologinen segmentointi</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="359"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="299"/>
         <source>Use textual variants</source>
         <translation type="unfinished">Käytä tekstivariantteja</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="347"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="287"/>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
         <translation type="unfinished">Näyttösuotimet määrittelevät millä tavoin teksti näytetään. Tässä voit asettaa oletusasetukset kaikille suotimille. Voit kuitenkin ohittaa nämä ja määritellä erikseen jokaiselle ikkunalle omat asetukset.</translation>
     </message>

@@ -488,12 +488,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>بيبل تايم هو برنامج قوي وسهل الإستخدام لدراسة الكتاب المقدس.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="269"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="270"/>
         <source>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</source>
         <translation>يصدر بيبل تايم تحت رخصة GPL. تستطيع تحميل وإستخدام البرنامج للأغراض الشخصية،الخاصة،العامة أو التجارية بدون قيود، لكنك تستطيع إعطاء أو توزيع البرنامج فقط إذا قمت أيضاً بتوزيع شفرة المصدر الخاصة به.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="275"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="276"/>
         <source>The complete legally binding license is below.</source>
         <translation>الرخصة الكاملة الملزمة قانونياً أدناه.</translation>
     </message>
@@ -548,37 +548,37 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>خبير سهولة إستخدام</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="218"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="219"/>
         <source>Some names may be missing, please email %1 if you notice errors or omissions.</source>
         <translation>قد تكون بعض الاسماء غير موجودة، يرجى مراسلتنا على %1 إذا لاحظت أخطاء أو سهوات.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="235"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="236"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
         <translation>يستخدم بيبل تايم مشروع سورد. مشروع سورد هو مشروع برنامج الكتاب المقدس الخاص بجمعية الكتاب المقدس كروس وير، والذي يهدف إلى توفير أدوات مفتوحة المصدر تعمل على مختلف المنصات &amp;mdash; وتستعمل رخصة جنو العمومية &amp;mdash; والتي تتيح للمبرمجين وجمعيات الكتاب المقدس كتابة برامج جديدة للكتاب المقدس بطريقة أكثر سرعة وسهولة.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="241"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="242"/>
         <source>The SWORD Project: </source>
         <translation>مشروع سورد: </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="249"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="250"/>
         <source>&amp;Qt</source>
         <translation>&amp;كيوت</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="252"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="253"/>
         <source>Qt toolkit version %1</source>
         <translation>مجموعة أدوات كيوت النسخة %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="258"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="259"/>
         <source>More info...</source>
         <translation>مزيد من المعلومات...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="263"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="264"/>
         <source>&amp;License</source>
         <translation>ال&amp;رخصة</translation>
     </message>
@@ -634,22 +634,22 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>الأشخاص التالي اسماءهم قاموا بترجمة بيبل تايم إلى لغتهم:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="229"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="230"/>
         <source>&amp;SWORD</source>
         <translation>&amp;سورد</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="233"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="234"/>
         <source>SWORD library version %1</source>
         <translation>مكتبة سورد النسخة %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="254"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="255"/>
         <source>This program uses Qt version %1.</source>
         <translation>هذا البرنامج يستخدم كيوت النسخة %1.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="256"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="257"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
         <translation>كيوت هو تطبيق وإطار عمل واجهة مستخدم متعدد المنصات،مبني بلغة سي++.وتم إصداره تحت رخصة LGPL.</translation>
     </message>
@@ -2833,17 +2833,17 @@ shortcut</source>
 <context>
     <name>CSwordSettingsPage</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="388"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="329"/>
         <source>Standard works</source>
         <translation>كتب قياسية</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="389"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="330"/>
         <source>Text filters</source>
         <translation>فلترة نصوص</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="386"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="327"/>
         <source>Desk</source>
         <translation>المكتب</translation>
     </message>
@@ -5085,87 +5085,87 @@ Language name ppk</extracomment>
 <context>
     <name>StandardWorksTab</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="234"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="204"/>
         <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
         <translation>يتم إستخدام الكتب الإفتراضية حين لايتم تحديد كتاب محدد، على سبيل المثال حينما يتم الضغط على رابط في الكتاب المقدس أو التفسير.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="237"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="207"/>
         <source>Bible:</source>
         <translation>الكتاب المقدس:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="238"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="208"/>
         <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
         <translation>تستخدم ترجمة الكتاب المقدس الإفتراضية عندما يتم الضغط على رابط للكتاب المقدس</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="240"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="210"/>
         <source>Commentary:</source>
         <translation>التفسير:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="241"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="211"/>
         <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
         <translation>يستخدم التفسير الإفتراضي عندما يتم الضغط على رابط لتفسير</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="243"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="213"/>
         <source>Lexicon:</source>
         <translation>المعجم:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="244"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="214"/>
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
         <translation>يستخدم المعجم الإفتراضي عندما يتم الضغط على رابط لمعجم</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="246"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="216"/>
         <source>Daily devotional:</source>
         <translation>التأمل اليومي:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="247"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="217"/>
         <source>The standard devotional will be used to display a short start up devotional</source>
         <translation>سيتم إستخدام التأمل اليومي الإفتراضي في عرض تأمل قصير في البداية</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="249"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="219"/>
         <source>Hebrew Strong&apos;s lexicon:</source>
         <translation>معجم سترونج العبري:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="250"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="220"/>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
         <translation>يستخدم المعجم العبري الإفتراضي عندما يتم الضغط على رابط لمعجم عبري</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="252"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="222"/>
         <source>Greek Strong&apos;s lexicon:</source>
         <translation>معجم سترونج اليوناني:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="253"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="223"/>
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
         <translation>يستخدم المعجم اليوناني الإفتراضي عندما يتم الضغط على رابط لمعجم يوناني</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="255"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="225"/>
         <source>Hebrew morphological lexicon:</source>
         <translation>المعجم الصرفي العبري:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="256"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="226"/>
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
         <translation>يتم إستخدام المعجم الصرفي الإفتراضي للنصوص العبرية عندما يتم الضغط على رابط لوسم صرفي في النص العبري</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="258"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="228"/>
         <source>Greek morphological lexicon:</source>
         <translation>المعجم الصرفي اليوناني:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="259"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="229"/>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
         <translation>يتم إستخدام المعجم الصرفي الإفتراضي للنصوص اليونانية عندما يتم الضغط على رابط لوسم صرفي في النص اليوناني</translation>
     </message>
@@ -5173,52 +5173,52 @@ Language name ppk</extracomment>
 <context>
     <name>TextFiltersTab</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="351"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="291"/>
         <source>Insert line break after each verse</source>
         <translation type="unfinished">إضافة سطر فاصل بعد كل عدد</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="352"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="292"/>
         <source>Show verse numbers</source>
         <translation type="unfinished">إظهار أعداد الآيات</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="353"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="293"/>
         <source>Show section headings</source>
         <translation type="unfinished">إظهار عناوين الفقرات</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="354"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="294"/>
         <source>Show scripture cross-references</source>
         <translation type="unfinished">إظهار المراجع ذات الصلة بالنص</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="355"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="295"/>
         <source>Show Greek accents</source>
         <translation type="unfinished">إظهار accents في اليونانية</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="356"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="296"/>
         <source>Show Hebrew vowel points</source>
         <translation type="unfinished">إظهار نقاط الحروف المتحركة في العبرية</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="357"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="297"/>
         <source>Show Hebrew cantillation marks</source>
         <translation type="unfinished">إظهار علامات cantillation في العبرية</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="358"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="298"/>
         <source>Show morph segmentation</source>
         <translation type="unfinished">إظهار التجزئة الصرفية</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="359"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="299"/>
         <source>Use textual variants</source>
         <translation type="unfinished">إستخدام تنويعات نصية</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="347"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="287"/>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
         <translation type="unfinished">الفلاتر تتحكم بمظهر النص. وهنا يمكنك تحديد الإعدادات الإفتراضية لجميع الفلاتر. تستطيع أن توقف هذه الإعدادات في أي نافذة عرض.</translation>
     </message>
