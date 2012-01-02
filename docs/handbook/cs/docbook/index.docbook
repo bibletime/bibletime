@@ -42,16 +42,16 @@
   </authorgroup>
   
   <!-- TRANS:ROLES_OF_TRANSLATORS -->
-<copyright> <year>1999-2011</year> <holder>The &bibletime; Team</holder>
+<copyright> <year>1999-2012</year> <holder>The &bibletime; Team</holder>
 </copyright>
 
   <legalnotice>
     <para>The &bibletime; Handbook is distributed with the &bibletime; study program.</para>
   </legalnotice>
 
-  <date>December 2011</date>
+  <date>January 2012</date>
 
-  <releaseinfo>2.9.1</releaseinfo>
+  <releaseinfo>2.9.2</releaseinfo>
 
   <abstract>
     <para>&bibletime; is a completely free Bible study program. The program's user
