@@ -6,7 +6,7 @@
     <message>
         <source></source>
         <translatorcomment>Bibletime User Interface translation
-Copyright (C) 2010 The Bibletime Team, http://www.bibletime.info
+Copyright (C) 2012 The Bibletime Team, http://www.bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
         <translation></translation>
     </message>
@@ -569,8 +569,8 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Stiamo cercando sviluppatori e traduttori. Se vuoi far parte del nostro team, invia una mail a %1.</translation>
     </message>
     <message>
-        <source>(c)1999-2010, The BibleTime Team</source>
-        <translation type="obsolete">(c)1999-2010, The BibleTime Team</translation>
+        <source>(c)1999-2012, The BibleTime Team</source>
+        <translation type="obsolete">(c)1999-2012, The BibleTime Team</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="140"/>
