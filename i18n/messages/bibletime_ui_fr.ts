@@ -6,10 +6,10 @@
     <message>
         <source></source>
         <translatorcomment>Bibletime User Interface translation
-Copyright (C) 2010 The Bibletime Team, http://www.bibletime.info
+Copyright (C) 2012 The Bibletime Team, http://www.bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
         <translation>Interface utilisateur BibleTime
-Copyright (C) 2010 L&apos;équipe de BibleTime, http://www.bibletime.info
+Copyright (C) 2012 L&apos;équipe de BibleTime, http://www.bibletime.info
 Ce fichier est distribué sous la même licence que le paquet BibleTime.</translation>
     </message>
 </context>
@@ -524,8 +524,8 @@ Ce fichier est distribué sous la même licence que le paquet BibleTime.</transl
         <translation type="unfinished">Nous recherchons des développeurs et des traducteurs. Si vous souhaitez rejoindre l&apos;équipe, envoyez un e-mail à %1.</translation>
     </message>
     <message>
-        <source>(c)1999-2010, The BibleTime Team</source>
-        <translation type="obsolete">(c)1999-2010, L&apos;équipe de BibleTime</translation>
+        <source>(c)1999-2012, The BibleTime Team</source>
+        <translation type="obsolete">(c)1999-2012, L&apos;équipe de BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="140"/>
@@ -600,7 +600,7 @@ Ce fichier est distribué sous la même licence que le paquet BibleTime.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="133"/>
         <source>(c)1999-2011, The BibleTime Team</source>
-        <translation type="unfinished">(c)1999-2010, L&apos;équipe de BibleTime {1999-2011,?}</translation>
+        <translation type="unfinished">(c)1999-2012, L&apos;équipe de BibleTime {1999-2011,?}</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="142"/>
