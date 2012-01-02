@@ -210,6 +210,7 @@ void BtAboutDialog::retranslateContributorsTab() {
                    "<li>Vlad Savitsky</li>"
                    "<li>Henrik Sonesson</li>"
                    "<li>Johan van der Lingen</li>"
+                   "<li>Konstantin Maslyuk</li>"
                    "<li>Jean Van Schaftingen</li>"
                    "<li>Roland Teschner</li>"
                    "<li>Giovanni Tedaldi</li>"
