@@ -3686,27 +3686,3 @@ msgstr "Crosswire"
 #: docs/handbook/en/docbook/index.docbook:72
 msgid "Help dialog"
 msgstr "Finestra di aiuto"
-
-# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#~ msgid ""
-#~ "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Show Bookshelf</"
-#~ "guimenuitem> </menuchoice>"
-#~ msgstr ""
-#~ "<menuchoice> <guimenu>Visualizza</guimenu> <guimenuitem>Mostra libreria</"
-#~ "guimenuitem> </menuchoice>"
-
-# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#~ msgid ""
-#~ "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Show Bookmarks</"
-#~ "guimenuitem> </menuchoice>"
-#~ msgstr ""
-#~ "<menuchoice> <guimenu>Visualizza</guimenu> <guimenuitem>Mostra "
-#~ "segnalibri</guimenuitem> </menuchoice>"
-
-# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#~ msgid ""
-#~ "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Show Mag</guimenuitem> "
-#~ "</menuchoice>"
-#~ msgstr ""
-#~ "<menuchoice> <guimenu>Visualizza</guimenu> <guimenuitem>Mostra lente</"
-#~ "guimenuitem> </menuchoice>"
