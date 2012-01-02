@@ -3346,27 +3346,3 @@ msgstr "كروس وير"
 #: docs/handbook/en/docbook/index.docbook:72
 msgid "Help dialog"
 msgstr "نافذة المساعدة"
-
-#~ msgid ""
-#~ "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Show Bookshelf</"
-#~ "guimenuitem> </menuchoice>"
-#~ msgstr ""
-#~ "<menuchoice> <guimenu>عرض</guimenu> <guimenuitem>إظهار رف الكتب </"
-#~ "guimenuitem> </menuchoice>"
-
-#~ msgid ""
-#~ "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Show Bookmarks</"
-#~ "guimenuitem> </menuchoice>"
-#~ msgstr ""
-#~ "<menuchoice> <guimenu>عرض</guimenu> <guimenuitem>إظهار العلامات </"
-#~ "guimenuitem> </menuchoice>"
-
-#~ msgid ""
-#~ "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Show Mag</guimenuitem> "
-#~ "</menuchoice>"
-#~ msgstr ""
-#~ "<menuchoice> <guimenu>عرض</guimenu> <guimenuitem>إظهار المكبر  </"
-#~ "guimenuitem> </menuchoice>"
-
-#~ msgid "2.9"
-#~ msgstr "2.9"

@@ -3706,27 +3706,3 @@ msgstr "Crosswire"
 #: docs/handbook/en/docbook/index.docbook:72
 msgid "Help dialog"
 msgstr "Segítség párbeszédablak"
-
-# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#~ msgid ""
-#~ "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Show Bookshelf</"
-#~ "guimenuitem> </menuchoice>"
-#~ msgstr ""
-#~ "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Könyvespolc mutatása</"
-#~ "guimenuitem> </menuchoice>"
-
-# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#~ msgid ""
-#~ "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Show Bookmarks</"
-#~ "guimenuitem> </menuchoice>"
-#~ msgstr ""
-#~ "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Könyvjelzők mutatása</"
-#~ "guimenuitem> </menuchoice>"
-
-# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#~ msgid ""
-#~ "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Show Mag</guimenuitem> "
-#~ "</menuchoice>"
-#~ msgstr ""
-#~ "<menuchoice> <guimenu>View</guimenu> <guimenuitem>Nagyító mutatása</"
-#~ "guimenuitem> </menuchoice>"
