@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
-"POT-Creation-Date: 2011-12-08 23:54-0500\n"
+"POT-Creation-Date: 2012-01-02 03:09-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2598,7 +2598,7 @@ msgstr ""
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:44
 msgid ""
-"<copyright> <year>1999-2011</year> <holder>The &bibletime; Team</holder> "
+"<copyright> <year>1999-2012</year> <holder>The &bibletime; Team</holder> "
 "</copyright>"
 msgstr ""
 
@@ -2609,12 +2609,12 @@ msgstr ""
 
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:54
-msgid "<date>December 2011</date>"
+msgid "<date>January 2012</date>"
 msgstr ""
 
 #. type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:56
-msgid "2.9.1"
+msgid "2.9.2"
 msgstr ""
 
 #. type: Content of: <book><bookinfo><abstract><para>
