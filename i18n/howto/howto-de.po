@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: howto-de\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
-"POT-Creation-Date: 2010-11-22 23:08-0500\n"
+"POT-Creation-Date: 2012-01-08 01:07-0500\n"
 "PO-Revision-Date: 2011-02-22 17:34+0100\n"
 "Last-Translator: \n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -181,7 +181,7 @@ msgstr ""
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/howto/en/docbook/howto-basics.docbook:49
-#: docs/howto/en/docbook/index.docbook:65
+#: docs/howto/en/docbook/index.docbook:53
 msgid "Study"
 msgstr "Studium"
 
@@ -2098,13 +2098,13 @@ msgstr ""
 
 # type: Content of the bibletime entity
 #. type: Content of the bibletime entity
-#: docs/howto/en/docbook/index.docbook:3
+#: docs/howto/en/docbook/index.docbook:5
 msgid "<application>BibleTime</application>"
 msgstr "<application>BibleTime</application>"
 
 # type: Content of the kapp entity
 #. type: Content of the kapp entity
-#: docs/howto/en/docbook/index.docbook:4
+#: docs/howto/en/docbook/index.docbook:6
 msgid "&bibletimehandbook;"
 msgstr "&bibletimehandbook;"
 
@@ -2114,33 +2114,37 @@ msgid "The Biblestudy HowTo"
 msgstr "Die Anleitung zum Bibelstudium"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><firstname>
-#: docs/howto/en/docbook/index.docbook:18
+#: docs/howto/en/docbook/index.docbook:17
 msgid "Bob"
 msgstr "Bob"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
-#: docs/howto/en/docbook/index.docbook:19
+#: docs/howto/en/docbook/index.docbook:18
 msgid "Harman"
 msgstr "Harman"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
-#: docs/howto/en/docbook/index.docbook:23
+#: docs/howto/en/docbook/index.docbook:22
 msgid "The BibleTime team"
 msgstr "Das BibleTime-Team"
 
 #.  TRANS:ROLES_OF_TRANSLATORS 
 #. type: Content of: <book><bookinfo>
-#: docs/howto/en/docbook/index.docbook:29
+#: docs/howto/en/docbook/index.docbook:26
+#, fuzzy
+#| msgid ""
+#| "<copyright> <year>2001-2009</year> <holder>The team of &bibletime; "
+#| "(info@bibletime.info)</holder> </copyright>"
 msgid ""
-"<copyright> <year>2001-2009</year> <holder>The team of &bibletime; "
-"(info@bibletime.info)</holder> </copyright>"
+"<copyright> <year>2001-2012</year> <holder>The team of &bibletime; (bt-"
+"devel@crosswire.org)</holder> </copyright>"
 msgstr ""
 "<copyright> <year>2001-2009</year> <holder>Das Team von &bibletime; "
 "(info@bibletime.info)</holder> </copyright>"
 
 # type: Content of: <book><bookinfo><legalnotice><para>
 #. type: Content of: <book><bookinfo><legalnotice><para>
-#: docs/howto/en/docbook/index.docbook:36
+#: docs/howto/en/docbook/index.docbook:31
 msgid ""
 "This document was originally created by Mr. Bob Harman and is licensed under "
 "the terms of the license <link url=\"http://creativecommons.org/licenses/by-"
@@ -2152,7 +2156,7 @@ msgstr ""
 "gestellt."
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
-#: docs/howto/en/docbook/index.docbook:42
+#: docs/howto/en/docbook/index.docbook:35
 msgid ""
 "Scripture quotes are from the New American Standard Bible unless otherwise "
 "indicated."
@@ -2162,26 +2166,39 @@ msgstr ""
 "entnommen. Die Originalfassung in Englisch wird mit BibleTime mitgeliefert."
 
 #. type: Content of: <book><bookinfo><abstract><title>
-#: docs/howto/en/docbook/index.docbook:47
+#: docs/howto/en/docbook/index.docbook:39
 msgid "Abstract"
 msgstr "Zusammenfassung"
 
 #. type: Content of: <book><bookinfo><abstract><para>
-#: docs/howto/en/docbook/index.docbook:50
+#: docs/howto/en/docbook/index.docbook:40
+#, fuzzy
+#| msgid ""
+#| "The <application>Biblestudy HowTo</application> is a guide for studying "
+#| "the Bible."
 msgid ""
-"The <application>Biblestudy HowTo</application> is a guide for studying the "
+"The <application>Biblestudy HowTo</application>is a guide for studying the "
 "Bible."
 msgstr ""
 "Die <application>Anleitung zum Bibelstudium (Das Biblestudy HowTo)</"
 "application> ist ein Handbuch zum Studieren der Bibel."
 
 #. type: Content of: <book><bookinfo><abstract><para>
-#: docs/howto/en/docbook/index.docbook:53
+#: docs/howto/en/docbook/index.docbook:43
+#, fuzzy
+#| msgid ""
+#| "It is the hope of the &bibletime; team that this HowTo will provoke the "
+#| "readers to study the scriptures to see what they say.  This particular "
+#| "study guide has been chosen as it takes care not to advocate any "
+#| "particular denominational doctrine.  We recommend you to read and study "
+#| "the scriptures to understand what they say. If you start with the "
+#| "attitude that you want to have the Lord sow his word in your heart He "
+#| "will not disappoint you."
 msgid ""
 "It is the hope of the &bibletime; team that this HowTo will provoke the "
-"readers to study the scriptures to see what they say.  This particular study "
+"readers to study the scriptures to see what they say. This particular study "
 "guide has been chosen as it takes care not to advocate any particular "
-"denominational doctrine.  We recommend you to read and study the scriptures "
+"denominational doctrine. We recommend you to read and study the scriptures "
 "to understand what they say. If you start with the attitude that you want to "
 "have the Lord sow his word in your heart He will not disappoint you."
 msgstr ""
@@ -2194,23 +2211,11 @@ msgstr ""
 "enttäuschen."
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
-#: docs/howto/en/docbook/index.docbook:64
+#: docs/howto/en/docbook/index.docbook:52
 msgid "Bible"
 msgstr "Bibel"
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
-#: docs/howto/en/docbook/index.docbook:66
+#: docs/howto/en/docbook/index.docbook:54
 msgid "HowTo"
 msgstr "Anleitung"
-
-#~ msgid "Find these verses:"
-#~ msgstr "Finden Sie diese Verse:"
-
-#~ msgid "Cross-references for aleipho:"
-#~ msgstr "Querverweise für aleipho:"
-
-#~ msgid "Cross-references of chrio:"
-#~ msgstr "Querverweise für chrio:"
-
-#~ msgid "The team of &bibletime; (info@bibletime.info)"
-#~ msgstr "Das &bibletime;-Team (info@bibletime.info)"
