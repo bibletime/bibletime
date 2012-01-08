@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: full\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
-"POT-Creation-Date: 2010-11-22 23:08-0500\n"
+"POT-Creation-Date: 2012-01-08 01:07-0500\n"
 "PO-Revision-Date: 2004-02-04 11:05+0545\n"
 "Last-Translator:  <s970501@ku.edu.np>\n"
 "Language-Team:  <ko@li.org>\n"
@@ -153,7 +153,7 @@ msgstr ""
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
 #: docs/howto/en/docbook/howto-basics.docbook:49
-#: docs/howto/en/docbook/index.docbook:65
+#: docs/howto/en/docbook/index.docbook:53
 msgid "Study"
 msgstr "공부"
 
@@ -2019,13 +2019,13 @@ msgstr ""
 
 # type: Content of the bibletime entity
 #. type: Content of the bibletime entity
-#: docs/howto/en/docbook/index.docbook:3
+#: docs/howto/en/docbook/index.docbook:5
 msgid "<application>BibleTime</application>"
 msgstr ""
 
 # type: Content of the kapp entity
 #. type: Content of the kapp entity
-#: docs/howto/en/docbook/index.docbook:4
+#: docs/howto/en/docbook/index.docbook:6
 msgid "&bibletimehandbook;"
 msgstr ""
 
@@ -2035,31 +2035,31 @@ msgid "The Biblestudy HowTo"
 msgstr "바이블스터디 하우투"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><firstname>
-#: docs/howto/en/docbook/index.docbook:18
+#: docs/howto/en/docbook/index.docbook:17
 msgid "Bob"
 msgstr ""
 
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
-#: docs/howto/en/docbook/index.docbook:19
+#: docs/howto/en/docbook/index.docbook:18
 msgid "Harman"
 msgstr ""
 
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
-#: docs/howto/en/docbook/index.docbook:23
+#: docs/howto/en/docbook/index.docbook:22
 msgid "The BibleTime team"
 msgstr ""
 
 #.  TRANS:ROLES_OF_TRANSLATORS 
 #. type: Content of: <book><bookinfo>
-#: docs/howto/en/docbook/index.docbook:29
+#: docs/howto/en/docbook/index.docbook:26
 msgid ""
-"<copyright> <year>2001-2009</year> <holder>The team of &bibletime; "
-"(info@bibletime.info)</holder> </copyright>"
+"<copyright> <year>2001-2012</year> <holder>The team of &bibletime; (bt-"
+"devel@crosswire.org)</holder> </copyright>"
 msgstr ""
 
 # type: Content of: <book><bookinfo><legalnotice><para>
 #. type: Content of: <book><bookinfo><legalnotice><para>
-#: docs/howto/en/docbook/index.docbook:36
+#: docs/howto/en/docbook/index.docbook:31
 msgid ""
 "This document was originally created by Mr. Bob Harman and is licensed under "
 "the terms of the license <link url=\"http://creativecommons.org/licenses/by-"
@@ -2067,7 +2067,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
-#: docs/howto/en/docbook/index.docbook:42
+#: docs/howto/en/docbook/index.docbook:35
 #, fuzzy
 msgid ""
 "Scripture quotes are from the New American Standard Bible unless otherwise "
@@ -2077,28 +2077,28 @@ msgstr ""
 "American Standard Bible)의 것들입니다."
 
 #. type: Content of: <book><bookinfo><abstract><title>
-#: docs/howto/en/docbook/index.docbook:47
+#: docs/howto/en/docbook/index.docbook:39
 msgid "Abstract"
 msgstr "개요"
 
 #. type: Content of: <book><bookinfo><abstract><para>
-#: docs/howto/en/docbook/index.docbook:50
+#: docs/howto/en/docbook/index.docbook:40
 #, fuzzy
 msgid ""
-"The <application>Biblestudy HowTo</application> is a guide for studying the "
+"The <application>Biblestudy HowTo</application>is a guide for studying the "
 "Bible."
 msgstr ""
 "<application>바이블스터디 하우투</application>는 성경공부를 위한 길잡이입니"
 "다."
 
 #. type: Content of: <book><bookinfo><abstract><para>
-#: docs/howto/en/docbook/index.docbook:53
+#: docs/howto/en/docbook/index.docbook:43
 #, fuzzy
 msgid ""
 "It is the hope of the &bibletime; team that this HowTo will provoke the "
-"readers to study the scriptures to see what they say.  This particular study "
+"readers to study the scriptures to see what they say. This particular study "
 "guide has been chosen as it takes care not to advocate any particular "
-"denominational doctrine.  We recommend you to read and study the scriptures "
+"denominational doctrine. We recommend you to read and study the scriptures "
 "to understand what they say. If you start with the attitude that you want to "
 "have the Lord sow his word in your heart He will not disappoint you."
 msgstr ""
@@ -2109,27 +2109,11 @@ msgstr ""
 "는 마음으로 시작하신다면, 그분께서는 당신을 실망시키지 않을 것 입니다."
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
-#: docs/howto/en/docbook/index.docbook:64
+#: docs/howto/en/docbook/index.docbook:52
 msgid "Bible"
 msgstr ""
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
-#: docs/howto/en/docbook/index.docbook:66
+#: docs/howto/en/docbook/index.docbook:54
 msgid "HowTo"
 msgstr ""
-
-#, fuzzy
-#~ msgid "Find these verses:"
-#~ msgstr "출판물에서"
-
-#, fuzzy
-#~ msgid "Cross-references for aleipho:"
-#~ msgstr "겹참조(Cross-reference)"
-
-#, fuzzy
-#~ msgid "Cross-references of chrio:"
-#~ msgstr "겹참조(Cross-reference)"
-
-#, fuzzy
-#~ msgid "The team of &bibletime; (info@bibletime.info)"
-#~ msgstr "&bibletime;팀, info@bibletime.info"
