@@ -279,7 +279,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="235"/>
         <source>Bookshelf &amp;Manager...</source>
-        <translation>Ge&amp;storr de Livros...</translation>
+        <translation>Ge&amp;stor de Estante...</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="238"/>
@@ -493,12 +493,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>BibleTime é uma poderosa ferramenta de estudo Bíblico e fácil de usar.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="270"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="271"/>
         <source>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</source>
         <translation>Bibletime é lançado sob a licença GPL. Você pode descarregar e usar o programa para propósitos pessoais, privados, públicos ou comerciais, sem restrições, mas para ceder ou distribuir o programa, você tem que necessariamente distribuir o correspondente código fonte.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="276"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="277"/>
         <source>The complete legally binding license is below.</source>
         <translation>Abaixo está a licença completa vinculada juridicamente.</translation>
     </message>
@@ -553,37 +553,37 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>especialista em usabilidade</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="219"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="220"/>
         <source>Some names may be missing, please email %1 if you notice errors or omissions.</source>
         <translation>Alguns nomes podem ter sido esquecidos, por favor, envie um e-mail %1 para nos avisar erros e omissões.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="236"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="237"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
         <translation>BibleTime faz uso do SWORD Project. O SWORD Project é um projecto de software livre da sociedade bíblica Crosswire. O seu propósito é criar ferramentas de código aberto e independentes de plataforma &amp;mdash; cobertas pela Licença Pública Geral GNU &amp;mdash; que permite programadores e sociedades bíblicas escreverem novos softwares bíblicos de maneira rápida e fácil.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="242"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="243"/>
         <source>The SWORD Project: </source>
         <translation>O projecto SWORD:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="250"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="251"/>
         <source>&amp;Qt</source>
         <translation>&amp;Qt</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="253"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="254"/>
         <source>Qt toolkit version %1</source>
         <translation>Qt kit de ferramentas versão %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="259"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="260"/>
         <source>More info...</source>
         <translation>Mais informações...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="264"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="265"/>
         <source>&amp;License</source>
         <translation>&amp;Licença</translation>
     </message>
@@ -639,22 +639,22 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>As seguintes pessoas traduziram o BibleTime para as suas línguas:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="230"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="231"/>
         <source>&amp;SWORD</source>
         <translation>&amp;SWORD</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="234"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="235"/>
         <source>SWORD library version %1</source>
         <translation>versão da biblioteca SWORD %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="255"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="256"/>
         <source>This program uses Qt version %1.</source>
         <translation>Este programa usa o Qt versão %1.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="257"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="258"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
         <translation>Qt é uma aplicação multiplataforma e um framework de interface gráfica, criado com a linguagem C++. Foi lançado sob licença LGPL.</translation>
     </message>
@@ -1153,7 +1153,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="266"/>
         <source>If you live in a persecuted country and don&apos;t want to risk detection don&apos;t use remote sources.</source>
-        <translation>Se você vive Num país perseguido e não quer correr o risco de ser detectado, não use fontes remotas.</translation>
+        <translation>Se você vive num país perseguido e não quer correr o risco de ser detectado, não use fontes remotas.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="269"/>
@@ -1188,7 +1188,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="277"/>
         <source>Install &amp;folder:</source>
-        <translation>Instalar &amp;pasta:</translation>
+        <translation>&amp;Pasta de instalação:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="278"/>
@@ -1595,7 +1595,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepagetreemodel.cpp" line="55"/>
         <source>Install path</source>
-        <translation>Instalar Caminho</translation>
+        <translation>Caminho da Instalação</translation>
     </message>
 </context>
 <context>
@@ -1694,92 +1694,87 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="169"/>
         <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
-        <translation>Obras padrão são usadas quando nenhuma obra é especificada, por exemplo, quando uma hiperligação de uma Bíblia ou de um Léxico é clicado.</translation>
+        <translation type="unfinished">Obras padrão são usadas quando nenhuma obra é especificada, por exemplo, quando uma hiperligação de uma Bíblia ou de um Léxico é clicado.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="172"/>
         <source>Bible:</source>
-        <translation>Bíblia:</translation>
+        <translation type="unfinished">Bíblia:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="173"/>
         <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
-        <translation>A Bíblia Padrão é usada quando um hiperligação para dentro da Bíblia é clicado</translation>
+        <translation type="unfinished">A Bíblia Padrão é usada quando um hiperligação para dentro da Bíblia é clicado</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="175"/>
         <source>Commentary:</source>
-        <translation>Comentário:</translation>
+        <translation type="unfinished">Comentário:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="176"/>
         <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
-        <translation>O comentário padrão é usado quando uma hiperligação de um comentário é clicado</translation>
+        <translation type="unfinished">O comentário padrão é usado quando uma hiperligação de um comentário é clicado</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="178"/>
         <source>Lexicon:</source>
-        <translation>Léxico:</translation>
+        <translation type="unfinished">Léxico:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="179"/>
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
-        <translation>O léxico normal é usado quando uma hiperligação em um léxico é clicado</translation>
+        <translation type="unfinished">O léxico normal é usado quando uma hiperligação em um léxico é clicado</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="181"/>
         <source>Daily devotional:</source>
-        <translation>Devocional diário:</translation>
+        <translation type="unfinished">Devocional diário:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="182"/>
         <source>The standard devotional will be used to display a short start up devotional</source>
-        <translation>O devocional padrão será usado para mostrar uma curta inicialização do devocional </translation>
+        <translation type="unfinished">O devocional padrão será usado para mostrar uma curta inicialização do devocional </translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="184"/>
         <source>Hebrew Strong&apos;s lexicon:</source>
-        <translation>Léxico hebraico Strong:</translation>
+        <translation type="unfinished">Léxico hebraico Strong:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="185"/>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
-        <translation>O léxico hebraico padrão é usado quando uma hiperligação em um léxico hebraico é clicado</translation>
+        <translation type="unfinished">O léxico hebraico padrão é usado quando uma hiperligação em um léxico hebraico é clicado</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="187"/>
         <source>Greek Strong&apos;s lexicon:</source>
-        <translation>Léxico grego Strong:</translation>
+        <translation type="unfinished">Léxico grego Strong:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="188"/>
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
-        <translation>O léxico grego padrão é usado quando uma hiperligação em um léxico grego é clicado</translation>
+        <translation type="unfinished">O léxico grego padrão é usado quando uma hiperligação em um léxico grego é clicado</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="190"/>
         <source>Hebrew morphological lexicon:</source>
-        <translation>Léxico hebraico morfológico:</translation>
+        <translation type="unfinished">Léxico hebraico morfológico:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="191"/>
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
-        <translation>O léxico padrão morfológico dos textos hebraicos, é usado quando uma hiperligação de uma tag morfológica de um texto hebraico é clicada</translation>
+        <translation type="unfinished">O léxico padrão morfológico dos textos hebraicos, é usado quando uma hiperligação de uma tag morfológica de um texto hebraico é clicada</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="193"/>
         <source>Greek morphological lexicon:</source>
-        <translation>Léxico morfológico Grego:</translation>
+        <translation type="unfinished">Léxico morfológico Grego:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="194"/>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
-        <translation>O léxico padrão morfológico para os textos gregos é usado quando uma hiperligação de uma tag morfológica de um texto grego é clicada</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="62"/>
-        <source></source>
-        <translation></translation>
+        <translation type="unfinished">O léxico padrão morfológico para os textos gregos é usado quando uma hiperligação de uma tag morfológica de um texto grego é clicada</translation>
     </message>
 </context>
 <context>
@@ -1797,7 +1792,7 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="80"/>
         <source>Show verse numbers</source>
-        <translation type="unfinished">Mostrar número dos versículos</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="81"/>
@@ -1817,7 +1812,7 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="84"/>
         <source>Show Hebrew vowel points</source>
-        <translation type="unfinished">Mostrar pontos da vogal hebraica</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="85"/>
@@ -4012,38 +4007,6 @@ Language name ppk</extracomment>
         <translation>Remoto</translation>
     </message>
     <message>
-        <source>Old testament</source>
-        <translation type="obsolete">Antigo testamento</translation>
-    </message>
-    <message>
-        <source>Moses/Pentateuch/Torah</source>
-        <translation type="obsolete">Moisés/Pentateuco/Torá</translation>
-    </message>
-    <message>
-        <source>History</source>
-        <translation type="obsolete">História</translation>
-    </message>
-    <message>
-        <source>Prophets</source>
-        <translation type="obsolete">Profetas</translation>
-    </message>
-    <message>
-        <source>New testament</source>
-        <translation type="obsolete">Novo testamento</translation>
-    </message>
-    <message>
-        <source>Gospels</source>
-        <translation type="obsolete">Evangelhos</translation>
-    </message>
-    <message>
-        <source>Letters/Epistles</source>
-        <translation type="obsolete">Cartas/Epístolas</translation>
-    </message>
-    <message>
-        <source>Paul&apos;s Epistles</source>
-        <translation type="obsolete">Epístolas de Paulo</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/cexportmanager.cpp" line="437"/>
         <location filename="../../src/frontend/display/cdisplay.cpp" line="137"/>
         <source>HTML files</source>
@@ -5031,6 +4994,14 @@ Language name ppk</extracomment>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="39"/>
         <source>Search result of the selected work</source>
         <translation>Resultado da pesquisa da obra seleccionada</translation>
+    </message>
+</context>
+<context>
+    <name>StandardWorksTab</name>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="62"/>
+        <source></source>
+        <translation></translation>
     </message>
 </context>
 <context>
