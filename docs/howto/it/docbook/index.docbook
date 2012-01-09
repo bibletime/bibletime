@@ -19,12 +19,12 @@
     </author>
     <author>
       <firstname></firstname>
-      <surname>Il team di BibleTime</surname>
+      <surname>The BibleTime Team</surname>
     </author>
   </authorgroup>
   
   <!-- TRANS:ROLES_OF_TRANSLATORS -->
-<copyright> <year>2001-2012</year> <holder>The team of &bibletime;
+<copyright> <year>2001-2012</year> <holder>The &bibletime; Team
 (bt-devel@crosswire.org)</holder> </copyright>
   <legalnotice>
     <para>Questo documento è stato originariamente creato da Mr. Bob Harman ed è sotto
@@ -35,7 +35,7 @@ Attribution-Share Alike"</link>.</para>
   </legalnotice>
   <abstract>
     <title>Sommario</title>
-    <para>The <application>Biblestudy HowTo</application>is a guide for studying the
+    <para>The <application>Biblestudy HowTo</application> is a guide for studying the
 Bible.</para>
     <para>It is the hope of the &bibletime; team that this HowTo will provoke the
 readers to study the scriptures to see what they say. This particular study

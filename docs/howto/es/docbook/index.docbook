@@ -19,12 +19,12 @@
     </author>
     <author>
       <firstname></firstname>
-      <surname>The BibleTime team</surname>
+      <surname>The BibleTime Team</surname>
     </author>
   </authorgroup>
   
   <!-- TRANS:ROLES_OF_TRANSLATORS -->
-<copyright> <year>2001-2012</year> <holder>The team of &bibletime;
+<copyright> <year>2001-2012</year> <holder>The &bibletime; Team
 (bt-devel@crosswire.org)</holder> </copyright>
   <legalnotice>
     <para>Este documento fue creado originalmente por el Sr. Bob Harman y está
@@ -37,7 +37,7 @@ SpaRVG2004]</para>
   </legalnotice>
   <abstract>
     <title>Resumen</title>
-    <para>The <application>Biblestudy HowTo</application>is a guide for studying the
+    <para>The <application>Biblestudy HowTo</application> is a guide for studying the
 Bible.</para>
     <para>It is the hope of the &bibletime; team that this HowTo will provoke the
 readers to study the scriptures to see what they say. This particular study
