@@ -187,7 +187,12 @@ void BtMenuView::slotAboutToShow() {
 }
 
 void BtMenuView::slotAboutToHide() {
+    // QMenu::clear() is documented only to delete direct child actions:
     clear();
+
+    // Delete submenus also:
+    Q_FOREACH (QObject * const child, children())
+        delete qobject_cast<QMenu *>(child);
 }
 
 void BtMenuView::slotActionTriggered(QAction *action) {
