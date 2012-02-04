@@ -150,14 +150,9 @@ void BtMenuView::buildMenu(QMenu *parentMenu, const QModelIndex &parentIndex) {
             QMenu *childMenu = newMenu(parentMenu, childIndex);
 
             if (childMenu != 0) {
-                // Add to menu:
+                // Add the child menu and populate it:
                 parentMenu->addMenu(childMenu);
-
-                // Populate the menu if not prohibited:
-                QVariant populate(childMenu->property("BtMenuView_NoPopulate"));
-                if (!populate.isValid() || populate.toBool()) {
-                    buildMenu(childMenu, childIndex);
-                }
+                buildMenu(childMenu, childIndex);
             }
         } else {
             QAction *childAction = newAction(parentMenu, childIndex);
