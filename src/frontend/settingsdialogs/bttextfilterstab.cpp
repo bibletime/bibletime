@@ -32,7 +32,6 @@ BtTextFiltersTab::BtTextFiltersTab(CSwordSettingsPage *parent)
     m_explanationLabel = new QLabel(this);
     m_explanationLabel->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Preferred);
     m_explanationLabel->setMaximumHeight(50);
-    m_explanationLabel->setMinimumWidth(300);
     layout->addWidget(m_explanationLabel);
 
     btConfig().beginGroup("presentation");
