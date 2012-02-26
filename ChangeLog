@@ -1,3 +1,6 @@
+2012-02-25 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix bug 3483206 where duplicate works menus appear on ubuntu with its Global Menus
+
 2011-12-28 Jaak Ristioja <jaak@ristioja.ee>
     * Fixed settings dialog tab contents not being translated.
 
