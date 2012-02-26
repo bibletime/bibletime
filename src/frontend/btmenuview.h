@@ -130,10 +130,10 @@ class BtMenuView: public QMenu {
 
     private:
         void buildMenu(QMenu *parentMenu, const QModelIndex &parentIndex);
+        void removeMenus();
 
     private slots:
         void slotAboutToShow();
-        void slotAboutToHide();
         void slotActionTriggered(QAction *action);
 
     protected:

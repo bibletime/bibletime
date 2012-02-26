@@ -1,3 +1,6 @@
+2012-02-25 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix bug 3483206 where duplicate works menus appear on ubuntu with its Global Menus
+
 2012-02-12 Gary Holmlund <gary.holmlund@gmail.com>
     * Allow comboxboxes on config dialog desk page to resize.
       Idea from Timothy Whitehead
