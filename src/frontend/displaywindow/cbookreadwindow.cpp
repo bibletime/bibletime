@@ -14,7 +14,6 @@
 #include <QSplitter>
 #include <QToolBar>
 #include "bibletime.h"
-#include "backend/config/cbtconfig.h"
 #include "backend/keys/cswordtreekey.h"
 #include "frontend/display/cdisplay.h"
 #include "frontend/displaywindow/bttoolbarpopupaction.h"
@@ -22,34 +21,24 @@
 #include "frontend/displaywindow/btmodulechooserbar.h"
 #include "frontend/displaywindow/btdisplaysettingsbutton.h"
 #include "frontend/keychooser/cbooktreechooser.h"
-#include "frontend/profile/cprofilewindow.h"
 #include "util/cresmgr.h"
 #include "util/tool.h"
 
 
-using namespace Profile;
+void CBookReadWindow::applyProfileSettings(const QString & windowGroup) {
+    CLexiconReadWindow::applyProfileSettings(windowGroup);
 
-CBookReadWindow::CBookReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent)
-        : CLexiconReadWindow(modules, parent), m_treeAction(0), m_treeChooser(0) {
-}
-
-CBookReadWindow::~CBookReadWindow() {
-}
-
-void CBookReadWindow::applyProfileSettings( CProfileWindow* profileWindow ) {
-    CLexiconReadWindow::applyProfileSettings(profileWindow);
-
-    const bool enable = static_cast<bool>( profileWindow->windowSettings() );
-    if (enable) {
+    Q_ASSERT(m_treeAction);
+    Q_ASSERT(windowGroup.endsWith('/'));
+    if (btConfig().sessionValue<bool>(windowGroup + "treeShown", true) != m_treeAction->isChecked())
         m_treeAction->activate(QAction::Trigger);
-    }
 }
 
-void CBookReadWindow::storeProfileSettings( CProfileWindow* profileWindow ) {
-    CLexiconReadWindow::storeProfileSettings(profileWindow);
+void CBookReadWindow::storeProfileSettings(const QString & windowGroup) {
+    CLexiconReadWindow::storeProfileSettings(windowGroup);
 
-    //store information about our show tree structure button
-    profileWindow->setWindowSettings( static_cast<int>( m_treeAction->isChecked() ) );
+    Q_ASSERT(windowGroup.endsWith('/'));
+    btConfig().setSessionValue(windowGroup + "treeShown", m_treeAction->isChecked());
 }
 
 void CBookReadWindow::initActions() {
@@ -71,7 +60,7 @@ void CBookReadWindow::initActions() {
                      this,         SLOT(treeToggled()));
     addAction(m_treeAction);
 
-    CBTConfig::setupAccelSettings(CBTConfig::bookWindow, ac);
+    ac->readShortcuts("Book shortcuts");
 }
 
 void CBookReadWindow::insertKeyboardActions( BtActionCollection* const a ) {

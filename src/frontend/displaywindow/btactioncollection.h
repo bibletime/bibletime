@@ -15,10 +15,12 @@
 #include <QList>
 #include <QMap>
 
+#include "backend/config/btconfig.h"
 
 class BtActionItem;
 class QAction;
 class QKeySequence;
+class QString;
 
 class BtActionCollection: public QObject {
 
@@ -40,20 +42,31 @@ class BtActionCollection: public QObject {
 
         QAction *action(const QString &name) const;
 
-        inline void setConfigGroup(const QString &group) {
-            m_groupName = group;
-        }
+        /*!
+         * \brief Read shortcuts from config.
+         *
+         * Read the shortcuts for the given group
+         * from the configuration and add them to
+         * this action collection.
+         *
+         * \param[in] group Shortcut group to read actions from.
+         */
+        void readShortcuts(const QString &group);
 
-        void readSettings();
-
-        void writeSettings();
-
+        /*!
+         * \brief Write shortcuts to config.
+         *
+         * Write the shortcuts of this action collection
+         * to the given group in the configuration.
+         *
+         * \param[in] group Shortcut group to write actions to.
+         */
+        void writeShortcuts(const QString& group);
         QKeySequence getDefaultShortcut(QAction* action);
 
     private: /* Fields: */
 
         ActionMap m_actions;
-        QString m_groupName;
 
 };
 

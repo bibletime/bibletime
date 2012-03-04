@@ -9,8 +9,9 @@
 
 #include "bttipdialog.h"
 
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "util/cresmgr.h"
+#include "util/dialogutil.h"
 #include "util/directory.h"
 
 #include <QCheckBox>
@@ -54,6 +55,8 @@ inline QString make_icon(const QString &icon) {
     return "<img src=\"" + iconUrl + "\" width=\"32\" />";
 }
 
+const QString LastTipNumberKey = "GUI/lastTipNumber";
+
 } // anonymous namespace
 
 
@@ -78,13 +81,15 @@ BtTipDialog::BtTipDialog(QWidget *parent, Qt::WindowFlags wflags)
 
     m_showTipsCheckBox = new QCheckBox;
     m_showTipsCheckBox->setText(tr("Show tips at startup"));
-    bool showTips = CBTConfig::get(CBTConfig::showTipAtStartup);
+    bool showTips = btConfig().value<bool>("GUI/showTipAtStartup", true);
     m_showTipsCheckBox->setChecked(showTips);
     hLayout->addWidget(m_showTipsCheckBox);
 
     m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Close,
                                        Qt::Horizontal,
                                        this);
+    util::prepareDialogBox(m_buttonBox);
+
     QPushButton *nextButton;
     nextButton = m_buttonBox->addButton(tr("Next Tip"),
                                         QDialogButtonBox::ActionRole);
@@ -110,7 +115,7 @@ BtTipDialog::BtTipDialog(QWidget *parent, Qt::WindowFlags wflags)
                      this,              SLOT(linkClicked(const QUrl&)));
     Q_ASSERT(ok);
 
-    m_tipNumber = CBTConfig::get(CBTConfig::tipNumber);
+    m_tipNumber = btConfig().value<int>(LastTipNumberKey, 0);
     initTips();
     displayTip();
 }
@@ -180,7 +185,7 @@ void BtTipDialog::displayTip() {
 }
 
 void BtTipDialog::startupBoxChanged(bool checked) {
-    CBTConfig::set(CBTConfig::showTipAtStartup, checked);
+    btConfig().setValue("GUI/showTipAtStartup", checked);
 }
 
 void BtTipDialog::nextTip() {
@@ -188,7 +193,7 @@ void BtTipDialog::nextTip() {
     if (m_tipNumber >= m_tips.count()) {
         m_tipNumber = 0;
     }
-    CBTConfig::set(CBTConfig::tipNumber, m_tipNumber);
+    btConfig().setValue(LastTipNumberKey, m_tipNumber);
     displayTip();
 }
 

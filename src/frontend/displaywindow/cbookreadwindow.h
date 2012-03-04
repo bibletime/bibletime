@@ -17,33 +17,30 @@ class BtActionCollection;
 class CBookTreeChooser;
 class QAction;
 
-/**
-  * @author The BibleTime team
-  */
-class CBookReadWindow : public CLexiconReadWindow  {
+class CBookReadWindow: public CLexiconReadWindow {
+
         Q_OBJECT
-    public:
-        static void insertKeyboardActions( BtActionCollection* const a );
 
-        CBookReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
+    public: /* Methods: */
 
-        virtual ~CBookReadWindow();
-        /**
-        * Store the settings of this window in the given CProfileWindow object.
-        */
-        virtual void storeProfileSettings( Profile::CProfileWindow* profileWindow );
-        /**
-        * Store the settings of this window in the given profile window.
-        */
-        virtual void applyProfileSettings( Profile::CProfileWindow* profileWindow );
+        inline CBookReadWindow(QList<CSwordModuleInfo *> modules, CMDIArea * parent)
+            : CLexiconReadWindow(modules, parent)
+            , m_treeAction(0)
+            , m_treeChooser(0) {}
+
+        virtual void storeProfileSettings(const QString & windowGroup);
+        virtual void applyProfileSettings(const QString & windowGroup);
+        static void insertKeyboardActions(BtActionCollection * const a);
 
     public slots:
+
         /**
         * Refreshes the content of this display window and the content of the keychooser.
         */
         virtual void reload(CSwordBackend::SetupChangedReason reason);
 
-    protected:
+    protected: /* Methods: */
+
         virtual void initActions();
         virtual void initToolbars();
         virtual void initConnections();
@@ -53,21 +50,24 @@ class CBookReadWindow : public CLexiconReadWindow  {
 
         virtual void setupPopupMenu();
 
-    protected slots: // Protected slots
+    protected slots:
+
         /**
          * Reimplementation to take care of the tree chooser.
          */
         virtual void modulesChanged();
 
-    private:
-        QAction* m_treeAction;
-        CBookTreeChooser* m_treeChooser;
+    private slots:
 
-    private slots: // Private slots
         /**
         * Is called when the action was executed to toggle the tree view.
         */
         void treeToggled();
+
+    private: /* Fields: */
+
+        QAction * m_treeAction;
+        CBookTreeChooser * m_treeChooser;
 };
 
 #endif

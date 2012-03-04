@@ -12,10 +12,8 @@
 #include <QAction>
 #include <QDebug>
 #include <QKeySequence>
-#include <QSettings>
 #include <QString>
 #include <QStringList>
-#include "backend/config/cbtconfig.h"
 #include "util/directory.h"
 
 
@@ -88,57 +86,26 @@ QKeySequence BtActionCollection::getDefaultShortcut(QAction* action) {
     return QKeySequence();
 }
 
-void BtActionCollection::readSettings() {
-    QSettings* settings = CBTConfig::getConfig();
-    settings->beginGroup(m_groupName);
-
-    Q_FOREACH (const QString &key, settings->childKeys()) {
-        QAction *a = action(key);
+void BtActionCollection::readShortcuts(const QString &group) {
+    QHash<QString, QList <QKeySequence > > shortcuts = btConfig().getShortcuts(group);
+    for(QHash<QString, QList <QKeySequence> >::const_iterator iter = shortcuts.begin();
+                                                             iter != shortcuts.end();
+                                                             iter++)
+    {
+        QAction *a = action(iter.key());
         if (a == 0)
             continue;
-
-        QVariant variant = settings->value(key);
-        qDebug() << variant << " | " << variant.typeName();
-        if (variant.type() != QVariant::List
-            && variant.type() != QVariant::StringList)
-        {
-            continue;
-        }
-
-        QList<QKeySequence> shortcuts;
-        if (variant.type() == QVariant::List) { // For BibleTime before 2.9
-            Q_FOREACH (const QVariant &shortcut, variant.toList()) {
-                shortcuts.append(shortcut.toString());
-            }
-        } else {
-            Q_ASSERT(variant.type() == QVariant::StringList);
-            Q_FOREACH (const QString &shortcut, variant.toStringList()) {
-                shortcuts.append(shortcut);
-            }
-        }
-        a->setShortcuts(shortcuts);
+        action(iter.key())->setShortcuts(iter.value());
     }
-
-    settings->endGroup();
 }
 
-void BtActionCollection::writeSettings() {
-    QSettings* settings = CBTConfig::getConfig();
-    settings->beginGroup(m_groupName);
-
+void BtActionCollection::writeShortcuts(const QString &group) {
+    QHash< QString, QList<QKeySequence> > shortcuts;
     for (ActionMap::const_iterator iter = m_actions.constBegin();
-         iter != m_actions.constEnd();
-         iter++)
+        iter != m_actions.constEnd();
+        iter++)
     {
-        // Write beautiful string lists (since 2.9):
-        QStringList varList;
-        Q_FOREACH (const QKeySequence &shortcut, iter.value()->action->shortcuts()) {
-            /// \note saving QKeySequences directly doesn't appear to work!
-            varList.append(shortcut.toString());
-        }
-        settings->setValue(iter.key(), varList);
-        qDebug() << ">>" << settings->value(iter.key()).typeName();
+        shortcuts.insert(iter.key(), iter.value()->action->shortcuts());
     }
-
-    settings->endGroup();
+    btConfig().setShortcuts(group, shortcuts);
 }

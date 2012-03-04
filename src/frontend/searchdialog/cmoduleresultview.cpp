@@ -22,6 +22,7 @@
 #include "util/cresmgr.h"
 #include "util/tool.h"
 #include "util/directory.h"
+#include "backend/config/btconfig.h"
 
 
 namespace Search {
@@ -269,8 +270,8 @@ void CModuleResultView::printResult() {
     CSwordModuleInfo *m = activeModule();
     if (m != 0) {
         CExportManager mgr(true, tr("Printing search result"));
-        mgr.printKeyList(m_results[m], m, CBTConfig::getDisplayOptionDefaults(),
-                         CBTConfig::getFilterOptionDefaults());
+        mgr.printKeyList(m_results[m], m, btConfig().getDisplayOptions(),
+                         btConfig().getFilterOptions());
     };
 }
 

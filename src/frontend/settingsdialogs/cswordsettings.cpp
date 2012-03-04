@@ -19,11 +19,12 @@
 #include <QTabWidget>
 #include <QVBoxLayout>
 #include <QWidget>
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "frontend/settingsdialogs/cconfigurationdialog.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
 #include "util/tool.h"
+#include "backend/managers/cswordbackend.h"
 
 
 /*******************************************************************************
@@ -147,35 +148,22 @@ StandardWorksTab::StandardWorksTab(CSwordSettingsPage *parent)
     QList<QComboBox*> comboList;
     QStringList moduleList;
 
-#define STANDARD_WORKS_TAB_CASE(name) \
-    case CBTConfig::name: \
-        comboList.append(m_ ## name ## Combo); \
-        break
+    // fill combobox and modulelist
+        const CSwordModuleInfo*  m;
 
-    for (int i = 0; i <= (int)CBTConfig::lastModuleType; ++i) {
-        //fill the combobox list in the right order (i.e. same order as the CBTConfig::module enum list)
-        CBTConfig::modules moduleType = (CBTConfig::modules)(i);
-        switch (moduleType) {
-            STANDARD_WORKS_TAB_CASE(standardBible);
-            STANDARD_WORKS_TAB_CASE(standardCommentary);
-            STANDARD_WORKS_TAB_CASE(standardLexicon);
-            STANDARD_WORKS_TAB_CASE(standardDailyDevotional);
-            STANDARD_WORKS_TAB_CASE(standardHebrewStrongsLexicon);
-            STANDARD_WORKS_TAB_CASE(standardGreekStrongsLexicon);
-            STANDARD_WORKS_TAB_CASE(standardHebrewMorphLexicon);
-            STANDARD_WORKS_TAB_CASE(standardGreekMorphLexicon);
-        }
-        ; //switch
+#define STANDARD_WORKS_COMBO_ADD(name) \
+    comboList.append(m_ ## name ## Combo); \
+    m = btConfig().getDefaultSwordModuleByType(#name); \
+    moduleList << (m != 0 ? m->config(CSwordModuleInfo::Description) : QString::null);
 
-        //fill the module list
-        CSwordModuleInfo* const m = CBTConfig::get( (CBTConfig::modules)(i) );
-        if (m) {
-            moduleList << m->config(CSwordModuleInfo::Description);
-        }
-        else {
-            moduleList << QString::null;
-        }
-    } //for
+        STANDARD_WORKS_COMBO_ADD(standardBible);
+        STANDARD_WORKS_COMBO_ADD(standardCommentary);
+        STANDARD_WORKS_COMBO_ADD(standardLexicon);
+        STANDARD_WORKS_COMBO_ADD(standardDailyDevotional);
+        STANDARD_WORKS_COMBO_ADD(standardHebrewStrongsLexicon);
+        STANDARD_WORKS_COMBO_ADD(standardGreekStrongsLexicon);
+        STANDARD_WORKS_COMBO_ADD(standardHebrewMorphLexicon);
+        STANDARD_WORKS_COMBO_ADD(standardGreekMorphLexicon);
 
     QString module = QString::null;
     int item = 0;
@@ -199,33 +187,21 @@ StandardWorksTab::StandardWorksTab(CSwordSettingsPage *parent)
     retranslateUi();
 }
 
+#define STANDARD_WORKS_SET_DEFAULT(name) \
+    btConfig().setDefaultSwordModuleByType(\
+        #name, \
+        CSwordBackend::instance()->findModuleByDescription(m_ ## name ## Combo->currentText()) \
+    );
+
 void StandardWorksTab::save() {
-    for (int i = 0; i <= (int)CBTConfig::lastModuleType; ++i) {
-        QString moduleDescription;
-
-
-#define STANDARD_WORKS_TAB_SCASE(name) \
-        case CBTConfig::name: \
-            moduleDescription = m_ ## name ## Combo->currentText(); \
-            break;
-
-        CBTConfig::modules moduleType = (CBTConfig::modules)(i);
-        switch (moduleType) {
-            STANDARD_WORKS_TAB_SCASE(standardBible);
-            STANDARD_WORKS_TAB_SCASE(standardCommentary);
-            STANDARD_WORKS_TAB_SCASE(standardLexicon);
-            STANDARD_WORKS_TAB_SCASE(standardDailyDevotional);
-            STANDARD_WORKS_TAB_SCASE(standardHebrewStrongsLexicon);
-            STANDARD_WORKS_TAB_SCASE(standardGreekStrongsLexicon);
-            STANDARD_WORKS_TAB_SCASE(standardHebrewMorphLexicon);
-            STANDARD_WORKS_TAB_SCASE(standardGreekMorphLexicon);
-            default:
-                qWarning("Unhandled module type.");
-        };
-
-        CSwordModuleInfo * const module = CSwordBackend::instance()->findModuleByDescription(moduleDescription);
-        CBTConfig::set(moduleType, module);
-    }
+    STANDARD_WORKS_SET_DEFAULT(standardBible);
+    STANDARD_WORKS_SET_DEFAULT(standardCommentary);
+    STANDARD_WORKS_SET_DEFAULT(standardLexicon);
+    STANDARD_WORKS_SET_DEFAULT(standardDailyDevotional);
+    STANDARD_WORKS_SET_DEFAULT(standardHebrewStrongsLexicon);
+    STANDARD_WORKS_SET_DEFAULT(standardGreekStrongsLexicon);
+    STANDARD_WORKS_SET_DEFAULT(standardHebrewMorphLexicon);
+    STANDARD_WORKS_SET_DEFAULT(standardGreekMorphLexicon);
 }
 
 void StandardWorksTab::retranslateUi() {
@@ -264,6 +240,8 @@ void StandardWorksTab::retranslateUi() {
   TextFiltersTab
 *******************************************************************************/
 
+#define TEXT_FILTERS_TAB_FIELD(name) QCheckBox *m_ ## name ## Check
+
 class TextFiltersTab: public QWidget {
 
     public: /* Methods: */
@@ -280,8 +258,6 @@ class TextFiltersTab: public QWidget {
 
         QLabel *m_explanationLabel;
 
-#define TEXT_FILTERS_TAB_FIELD(name) QCheckBox *m_ ## name ## Check
-
         TEXT_FILTERS_TAB_FIELD(lineBreaks);
         TEXT_FILTERS_TAB_FIELD(verseNumbers);
         TEXT_FILTERS_TAB_FIELD(headings);
@@ -293,6 +269,12 @@ class TextFiltersTab: public QWidget {
         TEXT_FILTERS_TAB_FIELD(scriptureReferences);
 
 };
+
+
+#define TEXT_FILTERS_TAB_ADD_ROW(name,def) \
+        m_ ## name ## Check = new QCheckBox(this); \
+        m_ ## name ## Check->setChecked(btConfig().sessionValue<bool>(#name,(def))); \
+        layout->addWidget(m_ ## name ## Check);
 
 TextFiltersTab::TextFiltersTab(CSwordSettingsPage *parent)
     : QWidget(parent)
@@ -307,38 +289,38 @@ TextFiltersTab::TextFiltersTab(CSwordSettingsPage *parent)
     m_explanationLabel->setMinimumWidth(300);
     layout->addWidget(m_explanationLabel);
 
-#define TEXT_FILTERS_TAB_ADD_ROW(name) \
-    m_ ## name ## Check = new QCheckBox(this); \
-    m_ ## name ## Check->setChecked(CBTConfig::get(CBTConfig::name)); \
-    layout->addWidget(m_ ## name ## Check);
-
-    TEXT_FILTERS_TAB_ADD_ROW(lineBreaks);
-    TEXT_FILTERS_TAB_ADD_ROW(verseNumbers);
-    TEXT_FILTERS_TAB_ADD_ROW(headings);
-    TEXT_FILTERS_TAB_ADD_ROW(hebrewPoints);
-    TEXT_FILTERS_TAB_ADD_ROW(hebrewCantillation);
-    TEXT_FILTERS_TAB_ADD_ROW(morphSegmentation);
-    TEXT_FILTERS_TAB_ADD_ROW(greekAccents);
-    TEXT_FILTERS_TAB_ADD_ROW(textualVariants);
-    TEXT_FILTERS_TAB_ADD_ROW(scriptureReferences);
+    btConfig().beginGroup("presentation");
+        TEXT_FILTERS_TAB_ADD_ROW(lineBreaks, false);
+        TEXT_FILTERS_TAB_ADD_ROW(verseNumbers, false);
+        TEXT_FILTERS_TAB_ADD_ROW(headings, true);
+        TEXT_FILTERS_TAB_ADD_ROW(hebrewPoints, true);
+        TEXT_FILTERS_TAB_ADD_ROW(hebrewCantillation, true);
+        TEXT_FILTERS_TAB_ADD_ROW(morphSegmentation, true);
+        TEXT_FILTERS_TAB_ADD_ROW(greekAccents, true);
+        TEXT_FILTERS_TAB_ADD_ROW(textualVariants, false);
+        TEXT_FILTERS_TAB_ADD_ROW(scriptureReferences, true);
+    btConfig().endGroup();
 
     layout->addStretch(4);
 
     retranslateUi();
 }
 
-void TextFiltersTab::save() {
-#define TEXT_FILTERS_TAB_SAVE(name) CBTConfig::set(CBTConfig::name, m_ ## name ## Check->isChecked())
+#define TEXT_FILTERS_TAB_SAVE(name) \
+    btConfig().setValue(#name, m_ ## name ## Check->isChecked())
 
-    TEXT_FILTERS_TAB_SAVE(lineBreaks);
-    TEXT_FILTERS_TAB_SAVE(verseNumbers);
-    TEXT_FILTERS_TAB_SAVE(headings);
-    TEXT_FILTERS_TAB_SAVE(hebrewPoints);
-    TEXT_FILTERS_TAB_SAVE(hebrewCantillation);
-    TEXT_FILTERS_TAB_SAVE(morphSegmentation);
-    TEXT_FILTERS_TAB_SAVE(greekAccents);
-    TEXT_FILTERS_TAB_SAVE(textualVariants);
-    TEXT_FILTERS_TAB_SAVE(scriptureReferences);
+void TextFiltersTab::save() {
+    btConfig().beginGroup("presentation");
+        TEXT_FILTERS_TAB_SAVE(lineBreaks);
+        TEXT_FILTERS_TAB_SAVE(verseNumbers);
+        TEXT_FILTERS_TAB_SAVE(headings);
+        TEXT_FILTERS_TAB_SAVE(hebrewPoints);
+        TEXT_FILTERS_TAB_SAVE(hebrewCantillation);
+        TEXT_FILTERS_TAB_SAVE(morphSegmentation);
+        TEXT_FILTERS_TAB_SAVE(greekAccents);
+        TEXT_FILTERS_TAB_SAVE(textualVariants);
+        TEXT_FILTERS_TAB_SAVE(scriptureReferences);
+    btConfig().endGroup();
 }
 
 

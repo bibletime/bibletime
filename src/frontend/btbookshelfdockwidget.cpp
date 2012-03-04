@@ -18,10 +18,8 @@
 #include <QMenu>
 #include <QMessageBox>
 #include <QPushButton>
-#include <QSettings>
 #include <QStackedWidget>
 #include <QVBoxLayout>
-#include "backend/config/cbtconfig.h"
 #include "backend/managers/cswordbackend.h"
 #include "bibletime.h"
 #include "frontend/btbookshelfview.h"

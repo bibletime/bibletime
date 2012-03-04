@@ -9,7 +9,7 @@
 
 #include "backend/cswordmodulesearch.h"
 
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "backend/managers/cswordbackend.h"
 #include "btglobal.h"
 
@@ -20,7 +20,7 @@ void CSwordModuleSearch::startSearch() {
     m_foundItems = 0;
 
     /// \todo What is the purpose of the following statement?
-    CSwordBackend::instance()->setFilterOptions(CBTConfig::getFilterOptionDefaults());
+    CSwordBackend::instance()->setFilterOptions(btConfig().getFilterOptions());
 
     // Search module-by-module:
     Q_FOREACH(const CSwordModuleInfo *m, m_searchModules) {

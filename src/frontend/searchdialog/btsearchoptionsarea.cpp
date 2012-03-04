@@ -20,7 +20,8 @@
 #include <QPushButton>
 #include <QRadioButton>
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
+#include "backend/managers/cswordbackend.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "frontend/searchdialog/btsearchmodulechooserdialog.h"
 #include "frontend/searchdialog/btsearchsyntaxhelpdialog.h"
@@ -29,6 +30,10 @@
 #include "util/tool.h"
 #include "util/directory.h"
 
+
+namespace {
+const QString SearchTypeKey = "GUI/SearchDialog/searchType";
+} // anonymous namespace
 
 namespace Search {
 
@@ -243,7 +248,7 @@ void BtSearchOptionsArea::setModules(const QList<const CSwordModuleInfo*> &modul
     for (int i = 0; i < m_modulesCombo->count(); ++i) {
         historyList.append(m_modulesCombo->itemText(i));
     }
-    CBTConfig::set(CBTConfig::searchModulesHistory, historyList);
+    btConfig().setValue("history/searchModuleHistory", historyList);
     emit sigSetSearchButtonStatus(!modules.isEmpty());
 }
 
@@ -284,7 +289,7 @@ void BtSearchOptionsArea::reset() {
 }
 
 void BtSearchOptionsArea::saveSettings() {
-    CBTConfig::set(CBTConfig::searchTexts, m_searchTextCombo->historyItems());
+    btConfig().setValue("properties/searchTexts", m_searchTextCombo->historyItems());
     SearchType t = FullType;
     if (m_typeAndButton->isChecked()) {
         t = AndType;
@@ -292,25 +297,25 @@ void BtSearchOptionsArea::saveSettings() {
     if (m_typeOrButton->isChecked()) {
         t = OrType;
     }
-    CBTConfig::set(CBTConfig::searchType, t);
+    btConfig().setValue(SearchTypeKey, t);
 }
 
 void BtSearchOptionsArea::readSettings() {
-    QStringList texts = CBTConfig::get(CBTConfig::searchTexts);
+    const QStringList texts = btConfig().value<QStringList>("properties/searchTexts", QStringList());
     //for some reason the slot was called when setting the upmost item
     disconnect(m_searchTextCombo, SIGNAL(editTextChanged(const QString&)), this, SLOT(slotValidateText(const QString&)));
-    for (int i = 0; i < texts.size(); i++) {
-        if (texts.at(i).size() > 0)
-            m_searchTextCombo->addItem(texts.at(i));
+    Q_FOREACH (const QString & text, texts) {
+        if (text.size() > 0)
+            m_searchTextCombo->addItem(text);
     }
     connect(m_searchTextCombo, SIGNAL(editTextChanged(const QString&)), this, SLOT(slotValidateText(const QString&)));
 
-    m_modulesCombo->insertItems(0, CBTConfig::get(CBTConfig::searchModulesHistory));
+    m_modulesCombo->insertItems(0, btConfig().value<QStringList>("history/searchModuleHistory", QStringList()));
     for (int i = 0; i < m_modulesCombo->count(); ++i) {
         m_modulesCombo->setItemData(i, m_modulesCombo->itemText(i), Qt::ToolTipRole);
     }
 
-    int stype = CBTConfig::get(CBTConfig::searchType);
+    int stype = btConfig().value<int>(SearchTypeKey, AndType);
     switch (stype) {
         case AndType:
             m_typeAndButton->setChecked(true);
@@ -349,13 +354,12 @@ void BtSearchOptionsArea::refreshRanges() {
     //m_rangeChooserCombo->insertItem(tr("Last search result"));
 
     //insert the user-defined ranges
-    m_rangeChooserCombo->insertItems(1, CBTConfig::get(CBTConfig::searchScopes).keys());
-
+    m_rangeChooserCombo->insertItems(1, btConfig().getSearchScopesForCurrentLocale().keys());
 }
 
 sword::ListKey BtSearchOptionsArea::searchScope() {
     if (m_rangeChooserCombo->currentIndex() > 0) { //is not "no scope"
-        CBTConfig::StringMap map = CBTConfig::get(CBTConfig::searchScopes);
+        BtConfig::StringMap map = btConfig().getSearchScopesForCurrentLocale();
         QString scope = map[ m_rangeChooserCombo->currentText() ];
         if (!scope.isEmpty()) {
             return sword::VerseKey().ParseVerseList( (const char*)scope.toUtf8(), "Genesis 1:1", true);

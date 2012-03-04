@@ -77,8 +77,6 @@ BtInstallPageWorksWidget::BtInstallPageWorksWidget(
 }
 
 BtInstallPageWorksWidget::~BtInstallPageWorksWidget() {
-    qDebug() << "Deleting BtInstallPageWorksWidget for source" << m_source.caption;
-
     delete m_backend;
 }
 

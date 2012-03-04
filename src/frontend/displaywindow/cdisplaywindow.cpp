@@ -11,10 +11,11 @@
 
 #include <QCloseEvent>
 #include <QDebug>
+#include <QMdiSubWindow>
 #include <QMenu>
 #include <QStringList>
 #include <QWidget>
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "backend/keys/cswordkey.h"
 #include "bibletime.h"
 #include "frontend/cmdiarea.h"
@@ -25,13 +26,10 @@
 #include "frontend/displaywindow/btdisplaysettingsbutton.h"
 #include "frontend/keychooser/ckeychooser.h"
 #include "frontend/keychooser/bthistory.h"
-#include "frontend/profile/cprofilewindow.h"
 #include "frontend/searchdialog/csearchdialog.h"
 #include "util/directory.h"
 #include "util/cresmgr.h"
 
-
-using namespace Profile;
 
 CDisplayWindow::CDisplayWindow(QList<CSwordModuleInfo*> modules, CMDIArea *parent)
         : QMainWindow(parent),
@@ -67,6 +65,15 @@ CDisplayWindow::CDisplayWindow(QList<CSwordModuleInfo*> modules, CMDIArea *paren
 CDisplayWindow::~CDisplayWindow() {
     delete m_swordKey;
     m_swordKey = 0;
+}
+
+QWidget * CDisplayWindow::getProfileWindow() const {
+    for (QWidget * w = parentWidget(); w; w = w->parentWidget()) {
+        QMdiSubWindow * sw = qobject_cast<QMdiSubWindow *>(w);
+        if (sw)
+            return sw;
+    }
+    return const_cast<CDisplayWindow *>(this);
 }
 
 BibleTime* CDisplayWindow::btMainWindow() {
@@ -108,6 +115,59 @@ const QString CDisplayWindow::windowCaption() {
 /** Returns the used modules as a pointer list */
 const QList<const CSwordModuleInfo*> CDisplayWindow::modules() const {
     return CSwordBackend::instance()->getConstPointerList(m_modules);
+}
+
+/** Store the settings of this window in the given CProfileWindow object. */
+void CDisplayWindow::storeProfileSettings(const QString & windowGroup) {
+    BtConfig & conf = btConfig();
+
+    conf.beginGroup(windowGroup);
+
+    QWidget * w = getProfileWindow();
+    conf.setSessionValue("geometry", w->saveGeometry());
+    conf.setSessionValue("maximized", w->isMaximized());
+
+    bool hasFocus = (w == dynamic_cast<CDisplayWindow *>(mdi()->activeSubWindow()));
+    conf.setSessionValue("hasFocus", hasFocus);
+    // conf.setSessionValue("type", static_cast<int>(modules().first()->type()));
+
+    // Save current key:
+    if (key()) {
+        CSwordKey * k = key();
+        sword::VerseKey * vk = dynamic_cast<sword::VerseKey*>(k);
+        QString oldLang;
+        if (vk) {
+            // Save keys in english only:
+            const QString oldLang = QString::fromLatin1(vk->getLocale());
+            vk->setLocale("en");
+            conf.setSessionValue("key", k->key());
+            vk->setLocale(oldLang.toLatin1());
+        } else {
+            conf.setSessionValue("key", k->key());
+        }
+    }
+
+    // Save list of modules:
+    QStringList mods;
+    Q_FOREACH (const CSwordModuleInfo * module, modules())
+        mods.append(module->name());
+    conf.setSessionValue("modules", mods);
+
+    conf.endGroup();
+}
+
+void CDisplayWindow::applyProfileSettings(const QString & windowGroup) {
+    BtConfig & conf = btConfig();
+    conf.beginGroup(windowGroup);
+    setUpdatesEnabled(false);
+
+    QWidget * w = getProfileWindow();
+    w->restoreGeometry(conf.sessionValue<QByteArray>("geometry"));
+    if (conf.sessionValue<bool>("maximized"))
+        w->showMaximized();
+
+    setUpdatesEnabled(true);
+    conf.endGroup();
 }
 
 void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
@@ -201,7 +261,7 @@ void CDisplayWindow::initActions() {
     Q_ASSERT(ok);
     addAction(actn);
 
-    CBTConfig::setupAccelSettings(CBTConfig::allWindows, ac);
+    ac->readShortcuts("Displaywindow shortcuts");
 }
 
 /** Refresh the settings of this window. */
@@ -223,8 +283,8 @@ void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
 
     lookup();
 
-    CBTConfig::setupAccelSettings(CBTConfig::allWindows, actionCollection());
-    CBTConfig::setupAccelSettings(CBTConfig::readWindow, actionCollection());
+    actionCollection()->readShortcuts("DisplayWindow shortcuts");
+    actionCollection()->readShortcuts("Readwindow shortcuts");
     emit sigModuleListSet(m_modules);
 }
 
@@ -316,7 +376,7 @@ void CDisplayWindow::setModuleChooserBar( BtModuleChooserBar* bar ) {
         m_moduleChooserBar = bar;
         bar->setWindowTitle(tr("Work chooser buttons"));
         bar->setLayoutDirection(Qt::LeftToRight);
-        bar->setVisible(CBTConfig::get(CBTConfig::showTextWindowModuleSelectorButtons));
+        bar->setVisible(btConfig().value<bool>("GUI/showTextWindowModuleSelectorButtons", true));
     }
 }
 
@@ -325,7 +385,7 @@ void CDisplayWindow::setHeaderBar( QToolBar* header ) {
     m_headerBar = header;
     header->setMovable(false);
     header->setWindowTitle(tr("Text area header"));
-    header->setVisible(CBTConfig::get(CBTConfig::showTextWindowHeaders));
+    header->setVisible(btConfig().value<bool>("GUI/showTextWindowHeaders", true));
 }
 
 /** Sets the modules. */
@@ -348,15 +408,15 @@ bool CDisplayWindow::init() {
     parentWidget()->setFocusPolicy(Qt::ClickFocus);
     initActions();
     initToolbars();
-    if ( ! CBTConfig::get(CBTConfig::showToolbarsInEachWindow))
+    if (!btConfig().value<bool>("GUI/showToolbarsInEachWindow", true))
         setToolBarsHidden();
     btMainWindow()->clearMdiToolBars();
     clearMainWindowToolBars();
     initConnections();
     setupPopupMenu();
 
-    m_filterOptions = CBTConfig::getFilterOptionDefaults();
-    m_displayOptions = CBTConfig::getDisplayOptionDefaults();
+    m_filterOptions = btConfig().getFilterOptions();
+    m_displayOptions = btConfig().getDisplayOptions();
     emit sigDisplayOptionsChanged(m_displayOptions);
     emit sigFilterOptionsChanged(m_filterOptions);
     emit sigModulesChanged(modules());
@@ -374,13 +434,13 @@ static void prepareToolBar(QToolBar* bar, const QString& title, bool visible) {
 
 /** Setup the Navigation toolbar. */
 void CDisplayWindow::setMainToolBar( QToolBar* bar ) {
-    prepareToolBar(bar, tr("Navigation"), CBTConfig::get(CBTConfig::showTextWindowNavigator) );
+    prepareToolBar(bar, tr("Navigation"), btConfig().value<bool>("GUI/showTextWindowNavigator", true) );
     m_mainToolBar = bar;
 }
 
 /** Setup the Tools toolbar. */
 void CDisplayWindow::setButtonsToolBar( QToolBar* bar ) {
-    prepareToolBar(bar, tr("Tool"), CBTConfig::get(CBTConfig::showTextWindowToolButtons) );
+    prepareToolBar(bar, tr("Tool"), btConfig().value<bool>("GUI/showTextWindowToolButtons", true) );
     m_buttonsToolBar = bar;
 }
 

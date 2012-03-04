@@ -22,28 +22,21 @@ class QEvent;
 class QMenu;
 class QObject;
 
-/** The read display window for Bibles.
-  *@author The BibleTime team
-  */
-class CBibleReadWindow : public CLexiconReadWindow  {
+class CBibleReadWindow: public CLexiconReadWindow  {
+
         Q_OBJECT
-    public:
-        CBibleReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
-        virtual ~CBibleReadWindow();
-        /**
-        * Store the settings of this window in the given CProfileWindow object.
-        */
-        virtual void storeProfileSettings( Profile::CProfileWindow* const settings );
-        /**
-        * Store the settings of this window in the given profile window.
-        */
-        virtual void applyProfileSettings( Profile::CProfileWindow* const settings );
-        /**
-        * Reimplementation.
-        */
+
+    public: /* Methods: */
+
+        inline CBibleReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent)
+            : CLexiconReadWindow(modules, parent) {}
+
+        virtual void storeProfileSettings(const QString & windowGroup);
+        virtual void applyProfileSettings(const QString & windowGroup);
         static void insertKeyboardActions( BtActionCollection* const a );
 
-    protected:
+    protected: /* Methods: */
+
         virtual void initActions();
         virtual void initToolbars();
         virtual void initConnections();
@@ -97,6 +90,7 @@ class CBibleReadWindow : public CLexiconReadWindow  {
 
 
     public slots:
+
         void nextBook();
         void previousBook();
         void nextChapter();
@@ -108,7 +102,8 @@ class CBibleReadWindow : public CLexiconReadWindow  {
         */
         virtual void reload(CSwordBackend::SetupChangedReason reason);
 
-    protected slots: // Protected slots
+    protected slots:
+
         /**
         * Copies the current chapter into the clipboard.
         */
@@ -124,14 +119,13 @@ class CBibleReadWindow : public CLexiconReadWindow  {
         virtual void lookupSwordKey( CSwordKey* newKey );
         void syncWindows();
 
-    private:
+    private: /* Methods: */
 
         /**
         * Wrapper around key() to return the right type of key.
         */
         CSwordVerseKey* verseKey();
 
-        //  CTransliterationButton* m_transliterationButton;
 };
 
-#endif
+#endif /* CBIBLEREADWINDOW_H */

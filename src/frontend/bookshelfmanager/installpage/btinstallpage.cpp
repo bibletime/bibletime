@@ -16,11 +16,10 @@
 #include <QHeaderView>
 #include <QLabel>
 #include <QPushButton>
-#include <QSettings>
 #include <QSharedPointer>
 #include <QStackedLayout>
 #include <QToolButton>
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "backend/btinstallbackend.h"
 #include "frontend/bookshelfmanager/btmodulemanagerdialog.h"
 #include "frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.h"
@@ -39,6 +38,7 @@ namespace {
 const QString groupingOrderKey ("GUI/BookshelfManager/InstallPage/grouping");
 const QString headerStateKey   ("GUI/BookshelfManager/InstallPage/headerState");
 const QString selectedModuleKey("GUI/BookshelfManager/InstallPage/selectedModule");
+const QString installPathKey   ("GUI/BookshelfManager/InstallPage/installPathIndex");
 } // anonymous namespace
 
 
@@ -53,7 +53,7 @@ BtInstallPage::BtInstallPage(BtModuleManagerDialog *parent)
         , m_modulesSelectedSources(0)
 {
     // Read settings:
-    m_headerState = CBTConfig::getConfig()->value(headerStateKey).toByteArray();
+    m_headerState = btConfig().value<QByteArray>(headerStateKey, QByteArray());
 
     // Initialize widgets:
     initView();
@@ -175,7 +175,7 @@ void BtInstallPage::initPathCombo() {
     }
 
     // choose the current value from config but check whether we have so many items
-    int configValue = CBTConfig::get(CBTConfig::installPathIndex);
+    int configValue = btConfig().value<int>(installPathKey, 0);
     int index = configValue > (m_pathCombo->count() - 1) ? m_pathCombo->count() - 1 : configValue;
     m_pathCombo->setCurrentIndex(index);
 }
@@ -202,7 +202,7 @@ void BtInstallPage::initSourcesCombo() {
     }
 
     // Read selected module from config:
-    QString selected = CBTConfig::getConfig()->value(selectedModuleKey).toString();
+    const QString selected = btConfig().value<QString>(selectedModuleKey, QString());
 
     // Populate combo box
     bool selectionOk = false;
@@ -219,7 +219,7 @@ void BtInstallPage::initSourcesCombo() {
     // Set selection, if it wasn't properly configured:
     if (!selectionOk) {
         m_sourceComboBox->setCurrentIndex(0);
-        CBTConfig::getConfig()->setValue(selectedModuleKey, sourceList.at(0));
+        btConfig().setValue(selectedModuleKey, sourceList.at(0));
     }
 }
 
@@ -293,7 +293,7 @@ void BtInstallPage::slotHeaderChanged() {
     Q_ASSERT(qobject_cast<IPWW*>(m_worksLayout->currentWidget()) != 0);
     IPWW *w = static_cast<IPWW*>(m_worksLayout->currentWidget());
     m_headerState = w->treeView()->header()->saveState();
-    CBTConfig::getConfig()->setValue(headerStateKey, m_headerState);
+    btConfig().setValue(headerStateKey, m_headerState);
 }
 
 void BtInstallPage::slotInstall() {
@@ -351,7 +351,7 @@ void BtInstallPage::slotInstall() {
 }
 
 void BtInstallPage::slotPathChanged(const QString& /*pathText*/) {
-    CBTConfig::set(CBTConfig::installPathIndex, m_pathCombo->currentIndex( ) );
+    btConfig().setValue(installPathKey, m_pathCombo->currentIndex());
 }
 
 void BtInstallPage::slotEditPaths() {
@@ -409,7 +409,7 @@ void BtInstallPage::slotSourceIndexChanged(int index) {
 
     /// \todo use pointers instead of text
     QString moduleName = m_sourceComboBox->itemText(index);
-    CBTConfig::getConfig()->setValue(selectedModuleKey, moduleName);
+    btConfig().setValue(selectedModuleKey, moduleName);
     activateSource(BtInstallBackend::source(moduleName));
 }
 

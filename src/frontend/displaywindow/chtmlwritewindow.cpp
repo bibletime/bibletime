@@ -18,13 +18,10 @@
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"
 #include "frontend/keychooser/ckeychooser.h"
-#include "frontend/profile/cprofilewindow.h"
 #include "util/directory.h"
 #include "util/dialogutil.h"
 #include "util/cresmgr.h"
 
-
-using namespace Profile;
 
 CHTMLWriteWindow::CHTMLWriteWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent)
         : CPlainWriteWindow(modules, parent) {}
@@ -72,20 +69,22 @@ void CHTMLWriteWindow::initToolbars() {
     ((CWriteDisplay*)displayWidget())->setupToolbar( formatToolBar(), actionCollection() );
 }
 
-void CHTMLWriteWindow::storeProfileSettings( CProfileWindow* profileWindow ) {
-    CWriteWindow::storeProfileSettings(profileWindow);
-    QAction* action = actionCollection()->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
+void CHTMLWriteWindow::storeProfileSettings(const QString & windowGroup) {
+    CWriteWindow::storeProfileSettings(windowGroup);
+
+    QAction * action = actionCollection()->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
     Q_ASSERT(action != 0);
-    profileWindow->setWindowSettings( action->isChecked() );
+    Q_ASSERT(windowGroup.endsWith('/'));
+    btConfig().setSessionValue(windowGroup + "syncWindowEnabled", action->isChecked());
 }
 
-void CHTMLWriteWindow::applyProfileSettings( CProfileWindow* profileWindow ) {
-    CWriteWindow::applyProfileSettings(profileWindow);
-    if (profileWindow->windowSettings()) {
-        QAction* action = actionCollection()->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
-        Q_ASSERT(action != 0);
-        action->setChecked(true);
-    }
+void CHTMLWriteWindow::applyProfileSettings(const QString & windowGroup) {
+    CWriteWindow::applyProfileSettings(windowGroup);
+
+    QAction* action = actionCollection()->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
+    Q_ASSERT(action != 0);
+    Q_ASSERT(windowGroup.endsWith('/'));
+    action->setChecked(btConfig().sessionValue<bool>(windowGroup + "syncWindowEnabled", false));
 }
 
 /** Is called when the current text was changed. */

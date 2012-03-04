@@ -10,15 +10,14 @@
 
 #include "frontend/displaywindow/cwritewindow.h"
 
+#include "backend/config/btconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/keys/cswordversekey.h"
 #include "frontend/display/cwritedisplay.h"
 #include "frontend/keychooser/ckeychooser.h"
-#include "frontend/profile/cprofilewindow.h"
 #include "util/dialogutil.h"
 #include "util/btsignal.h"
 
-using namespace Profile;
 
 CWriteWindow::CWriteWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent)
         : CDisplayWindow(modules, parent), m_writeDisplay(0) {}
@@ -33,57 +32,12 @@ void CWriteWindow::initConnections() {
 void CWriteWindow::initActions() {}
 
 
-void CWriteWindow::storeProfileSettings(CProfileWindow * const settings) {
+void CWriteWindow::storeProfileSettings(const QString & windowGroup) {
+    CDisplayWindow::storeProfileSettings(windowGroup);
 
-    settings->setWriteWindowType( writeWindowType() );
-
-    QRect rect;
-    rect.setX(parentWidget()->x());
-    rect.setY(parentWidget()->y());
-    rect.setWidth(parentWidget()->width());
-    rect.setHeight(parentWidget()->height());
-    settings->setGeometry(rect);
-
-    // settings->setScrollbarPositions( m_htmlWidget->view()->horizontalScrollBar()->value(), m_htmlWidget->view()->verticalScrollBar()->value() );
-    settings->setType(modules().first()->type());
-    settings->setMaximized(isMaximized() || parentWidget()->isMaximized());
-
-    if (key()) {
-        sword::VerseKey* vk = dynamic_cast<sword::VerseKey*>(key());
-        QString oldLang;
-        if (vk) {
-            oldLang = QString::fromLatin1(vk->getLocale());
-            vk->setLocale("en"); //save english locale names as default!
-        }
-        settings->setKey( key()->key() );
-        if (vk) {
-            vk->setLocale(oldLang.toLatin1());
-        }
-    }
-
-    QStringList mods;
-    Q_FOREACH(const CSwordModuleInfo *m, modules()) {
-        mods.append(m->name());
-    }
-    settings->setModules(mods);
-}
-
-void CWriteWindow::applyProfileSettings(CProfileWindow * const settings) {
-    setUpdatesEnabled(false);
-
-    if (settings->maximized()) {
-        parentWidget()->showMaximized();
-    }
-    else {
-        const QRect rect = settings->geometry();
-        parentWidget()->resize(rect.width(), rect.height());
-        parentWidget()->move(rect.x(), rect.y());
-        //setGeometry( settings->geometry() );
-    }
-    // displayWidget()->view()->horizontalScrollBar()->setValue( settings->scrollbarPositions().horizontal );
-    // m_htmlWidget->view()->verticalScrollBar()->setValue( settings->scrollbarPositions().vertical );
-
-    setUpdatesEnabled(true);
+    Q_ASSERT(windowGroup.endsWith('/'));
+    btConfig().setSessionValue(windowGroup + "writeWindowType",
+                               static_cast<int>(writeWindowType()));
 }
 
 void CWriteWindow::setDisplayWidget( CDisplay* display ) {

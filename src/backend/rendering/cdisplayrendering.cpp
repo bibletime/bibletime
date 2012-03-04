@@ -15,6 +15,7 @@
 #include "backend/keys/cswordversekey.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
 #include "backend/managers/referencemanager.h"
+#include "backend/config/btconfig.h"
 
 
 namespace Rendering {
@@ -154,6 +155,6 @@ QString CDisplayRendering::finishText(const QString &text, const KeyTree &tree) 
     else
         settings.pageDirection = QString::null;
 
-    return tMgr->fillTemplate(CBTConfig::get(CBTConfig::displayStyle), text, settings);
+    return tMgr->fillTemplate(CDisplayTemplateMgr::activeTemplateName(), text, settings);
 }
 }

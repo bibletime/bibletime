@@ -15,7 +15,6 @@
 #include <QStringList>
 #include "backend/managers/cswordbackend.h"
 #include "btglobal.h"
-#include "frontend/profile/cprofilewindow.h"
 
 
 class BtActionCollection;
@@ -46,6 +45,9 @@ class CDisplayWindow : public QMainWindow {
         /** Insert the keyboard accelerators of this window into the given actioncollection.*/
         static void insertKeyboardActions( BtActionCollection* const a );
 
+        /** Returns a pointer to the parent widget of type QMdiSubWindow or pointer to self if none found. */
+        QWidget * getProfileWindow() const;
+
         /** Returns pointer to the mdi area object.*/
         inline CMDIArea *mdi() const {
             return m_mdi;
@@ -63,10 +65,10 @@ class CDisplayWindow : public QMainWindow {
         }
 
         /** Store the settings of this window in the given CProfileWindow object.*/
-        virtual void storeProfileSettings( Profile::CProfileWindow* profileWindow ) = 0;
+        virtual void storeProfileSettings(const QString & windowGroup);
 
         /** Load the settings the given CProfileWindow object into this window.*/
-        virtual void applyProfileSettings( Profile::CProfileWindow* profileWindow ) = 0;
+        virtual void applyProfileSettings(const QString & windowGroup);
 
         /** Returns the display options used by this display window. */
         inline const DisplayOptions &displayOptions() const {

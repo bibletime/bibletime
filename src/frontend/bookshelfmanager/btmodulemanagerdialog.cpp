@@ -9,12 +9,16 @@
 
 #include "frontend/bookshelfmanager/btmodulemanagerdialog.h"
 
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "backend/managers/cswordbackend.h"
 #include "frontend/bookshelfmanager/indexpage/btindexpage.h"
 #include "frontend/bookshelfmanager/installpage/btinstallpage.h"
 #include "frontend/bookshelfmanager/removepage/btremovepage.h"
 
+
+namespace {
+const QString GeometryKey = "GUI/BookshelfManager/ModuleManagerDialog/geometry";
+} // anonymous namespace
 
 static BtModuleManagerDialog *m_staticModuleManagerDialog = 0;
 
@@ -59,13 +63,9 @@ BtModuleManagerDialog::~BtModuleManagerDialog() {
 }
 
 void BtModuleManagerDialog::loadDialogSettings() {
-    resize(CBTConfig::get(CBTConfig::bookshelfWidth), CBTConfig::get(CBTConfig::bookshelfHeight));
-    move(CBTConfig::get(CBTConfig::bookshelfPosX), CBTConfig::get(CBTConfig::bookshelfPosY));
+    restoreGeometry(btConfig().value<QByteArray>(GeometryKey, QByteArray()));
 }
 
-void BtModuleManagerDialog::saveDialogSettings() {
-    CBTConfig::set(CBTConfig::bookshelfWidth, size().width());
-    CBTConfig::set(CBTConfig::bookshelfHeight, size().height());
-    CBTConfig::set(CBTConfig::bookshelfPosX, x());
-    CBTConfig::set(CBTConfig::bookshelfPosY, y());
+void BtModuleManagerDialog::saveDialogSettings() const {
+    btConfig().setValue(GeometryKey, saveGeometry());
 }

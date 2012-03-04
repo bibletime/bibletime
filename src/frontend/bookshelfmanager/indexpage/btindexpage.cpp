@@ -16,7 +16,7 @@
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
 #include <QVBoxLayout>
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
 #include "frontend/bookshelfmanager/btmodulemanagerdialog.h"
@@ -60,7 +60,7 @@ BtIndexPage::BtIndexPage(BtModuleManagerDialog *parent)
     //m_moduleList->setTextAlignment(1, Qt::AlignRight); see doc...
     m_moduleList->setSortingEnabled(false);
 
-    m_autoDeleteOrphanedIndicesBox->setChecked( CBTConfig::get( CBTConfig::autoDeleteOrphanedIndices ) );
+    m_autoDeleteOrphanedIndicesBox->setChecked( btConfig().value<bool>("settings/behaviour/autoDeleteOrphanedIndices", true) );
 
     // icons for our buttons
     m_createButton->setIcon(DU::getIcon(CResMgr::bookshelfmgr::indexpage::create_icon));
@@ -78,7 +78,7 @@ BtIndexPage::BtIndexPage(BtModuleManagerDialog *parent)
 }
 
 BtIndexPage::~BtIndexPage() {
-    CBTConfig::set( CBTConfig::autoDeleteOrphanedIndices, m_autoDeleteOrphanedIndicesBox->isChecked() );
+    btConfig().setValue("settings/behaviour/autoDeleteOrphanedIndices", m_autoDeleteOrphanedIndicesBox->isChecked() );
 }
 
 /** Populates the module list with installed modules and orphaned indices */

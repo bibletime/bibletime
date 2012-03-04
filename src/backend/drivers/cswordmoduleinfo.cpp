@@ -19,7 +19,7 @@
 #include <QList>
 #include <QRegExp>
 #include <QSettings>
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "backend/drivers/cswordlexiconmoduleinfo.h"
 #include "backend/keys/cswordkey.h"
 #include "backend/managers/clanguagemgr.h"
@@ -88,7 +88,7 @@ CSwordModuleInfo::CSwordModuleInfo(sword::SWModule *module,
     initCachedCategory();
     initCachedLanguage();
 
-    m_hidden = CBTConfig::get(CBTConfig::hiddenModules).contains(name());
+    m_hidden = btConfig().value<QStringList>("state/hiddenModules", QStringList()).contains(name());
 
     if (backend()) {
         if (hasVersion() && (minimumSwordVersion() > sword::SWVersion::currentVersion)) {
@@ -118,7 +118,7 @@ bool CSwordModuleInfo::unlock(const QString & unlockKey) {
 
     bool unlocked = unlockKeyIsValid();
 
-    CBTConfig::setModuleEncryptionKey(name(), unlockKey);
+    btConfig().setModuleEncryptionKey(name(), unlockKey);
 
     /// \todo remove this comment once it is no longer needed
     /* There is currently a deficiency in sword 1.6.1 in that backend->setCipherKey() does
@@ -136,7 +136,7 @@ bool CSwordModuleInfo::unlock(const QString & unlockKey) {
 }
 
 bool CSwordModuleInfo::isLocked() const {
-    //still works, but the cipherkey is stored in CBTConfig.
+    //still works, but the cipherkey is stored in BtConfig.
     //Works because it is set in sword on program startup.
 
     return isEncrypted() && !unlockKeyIsValid();
@@ -227,7 +227,7 @@ bool CSwordModuleInfo::buildIndex() {
 
     try {
         //Without this we don't get strongs, lemmas, etc
-        backend()->setFilterOptions ( CBTConfig::getFilterOptionDefaults() );
+        backend()->setFilterOptions ( btConfig().getFilterOptions() );
         //make sure we reset all important filter options which influcence the plain filters.
         // turn on these options, they are needed for the EntryAttributes population
         backend()->setOption( CSwordModuleInfo::strongNumbers,  true );
@@ -527,11 +527,11 @@ QString CSwordModuleInfo::config(const CSwordModuleInfo::ConfigEntry entry) cons
             return getFormattedConfigEntry("About");
 
         case CipherKey: {
-            if (CBTConfig::getModuleEncryptionKey(name()).isNull()) { //fall back!
+            if (btConfig().getModuleEncryptionKey(name()).isNull()) { //fall back!
                 return QString(m_module->getConfigEntry("CipherKey"));
             }
             else {
-                return CBTConfig::getModuleEncryptionKey(name());
+                return btConfig().getModuleEncryptionKey(name());
             }
         }
 
@@ -1018,7 +1018,7 @@ bool CSwordModuleInfo::setHidden(bool hide) {
     if (m_hidden == hide) return false;
 
     m_hidden = hide;
-    QStringList hiddenModules(CBTConfig::get(CBTConfig::hiddenModules));
+    QStringList hiddenModules(btConfig().value<QStringList>("state/hiddenModules", QStringList()));
     if (hide) {
         Q_ASSERT(!hiddenModules.contains(name()));
         hiddenModules.append(name());
@@ -1027,7 +1027,7 @@ bool CSwordModuleInfo::setHidden(bool hide) {
         Q_ASSERT(hiddenModules.contains(name()));
         hiddenModules.removeOne(name());
     }
-    CBTConfig::set(CBTConfig::hiddenModules, hiddenModules);
+    btConfig().setValue("state/hiddenModules", hiddenModules);
     emit hiddenChanged(hide);
     return true;
 }

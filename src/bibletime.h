@@ -15,8 +15,6 @@
 #include <QList>
 #include "frontend/displaywindow/cdisplaywindow.h"
 #include "frontend/displaywindow/cwritewindow.h"
-#include "frontend/profile/cprofile.h"
-#include "frontend/profile/cprofilemgr.h"
 #include <QSignalMapper>
 #ifdef BT_DEBUG
 #include <QMutex>
@@ -136,18 +134,6 @@ class BibleTime : public QMainWindow {
 
         static inline BibleTime *instance() { return m_instance; }
 
-        /**
-        * Restores the workspace if the flaf for this is set in the config.
-        */
-        void restoreWorkspace();
-        /**
-        * Apply the settings given by the profile p
-        */
-        void applyProfileSettings( Profile::CProfile* p );
-        /**
-        * Stores the settings of the mainwindow in the profile p
-        */
-        void storeProfileSettings( Profile::CProfile* p );
         /**
         *  Save the configuration dialog settings, don't open dialog
         */
@@ -372,13 +358,9 @@ class BibleTime : public QMainWindow {
          */
         void slotSetActiveSubWindow(QWidget* window);
         /**
-        * Saves to the profile with the menu id ID
+        * Saves the current settings into the currently activated profile.
         */
-        void saveProfile(QAction* action);
-        /**
-        * Saves the current settings into the currently activatred profile.
-        */
-        void saveProfile(Profile::CProfile* p);
+        void saveProfile();
         /**
         * Deletes the chosen session from the menu and from disk.
         */
@@ -386,11 +368,15 @@ class BibleTime : public QMainWindow {
         /**
         * Loads the profile with the menu id ID
         */
-        void loadProfile(QAction* action);
+        void loadProfile(QAction * action);
         /**
-        * Loads the profile with the menu ID id
+        * Loads the profile with the given key
         */
-        void loadProfile(Profile::CProfile* p);
+        void loadProfile(const QString & profileKey);
+        /**
+        * Reloads the current profile
+        */
+        void reloadProfile();
         /**
         * Toggles between normal and fullscreen mode.
         */
@@ -501,7 +487,6 @@ class BibleTime : public QMainWindow {
 
         BtActionCollection* m_actionCollection;
 
-        QMenu* m_windowSaveProfileMenu;
         QAction* m_windowSaveToNewProfileAction;
         QMenu* m_windowLoadProfileMenu;
         QMenu* m_windowDeleteProfileMenu;
@@ -515,8 +500,6 @@ class BibleTime : public QMainWindow {
         // QList<QAction*> m_windowOpenWindowsList;
 
         CMDIArea* m_mdi;
-
-        Profile::CProfileMgr m_profileMgr;
 
 
     protected: //DBUS interface implementation

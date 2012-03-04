@@ -18,10 +18,11 @@
 #include <QTextCodec>
 #include <QTranslator>
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "bibletime.h"
 #include "bibletime_dbus_adaptor.h"
 #include "bibletimeapp.h"
+#include "frontend/settingsdialogs/btlanguagesettings.h"
 #include "util/directory.h"
 
 
@@ -182,6 +183,21 @@ void registerMetaTypes() {
     qRegisterMetaType<FilterOptions>("FilterOptions");
     qRegisterMetaType<DisplayOptions>("DisplayOptions");
     qRegisterMetaTypeStreamOperators<BtBookshelfTreeModel::Grouping>("BtBookshelfTreeModel::Grouping");
+
+    qRegisterMetaType<BTModuleTreeItem::Grouping>("Grouping");
+    qRegisterMetaTypeStreamOperators<BTModuleTreeItem::Grouping>("Grouping");
+
+    qRegisterMetaType<alignmentMode>("alignmentMode");
+    qRegisterMetaTypeStreamOperators<alignmentMode>("alignmentMode");
+
+    qRegisterMetaType<Search::BtSearchOptionsArea::SearchType>("SearchType");
+    qRegisterMetaTypeStreamOperators<Search::BtSearchOptionsArea::SearchType>("SearchType");
+
+    qRegisterMetaType<BtConfig::StringMap>("StringMap");
+    qRegisterMetaTypeStreamOperators<BtConfig::StringMap>("StringMap");
+
+    qRegisterMetaType<QList<int> >("QList<int>");
+    qRegisterMetaTypeStreamOperators<QList<int> >("QList<int>");
 }
 
 } // anonymous namespace
@@ -195,8 +211,6 @@ int main(int argc, char* argv[]) {
     namespace DU = util::directory;
 
     BibleTimeApp app(argc, argv); //for QApplication
-    app.setApplicationName("bibletime");
-    app.setApplicationVersion(BT_VERSION);
 
     // Parse command line arguments:
     bool ignoreSession = false;
@@ -208,8 +222,7 @@ int main(int argc, char* argv[]) {
     }
 
     // Initialize random number generator:
-    const QDateTime datetime(QDateTime::currentDateTime());
-    srand(datetime.currentMSecsSinceEpoch() + datetime.toTime_t());
+    srand(qHash(QDateTime::currentDateTime().toString(Qt::ISODate)));
 
     // Setup debugging:
 #ifdef Q_WS_WIN
@@ -246,6 +259,9 @@ int main(int argc, char* argv[]) {
     }
 
     app.startInit();
+    if (!app.initBtConfig()) {
+        return EXIT_FAILURE;
+    }
 
 #ifdef Q_WS_WIN
     // change directory to the Sword or .sword directory in the $HOME dir so that
@@ -276,16 +292,26 @@ int main(int argc, char* argv[]) {
 
     app.setProperty("--debug", QVariant(showDebugMessages));
 
-//    setSignalHandler(signalHandler);
+    /*
+      Set book names language if not set. This is a hack. We do this call here,
+      because we need to keep the setting displayed in BtLanguageSettingsPage in
+      sync with the language of the book names displayed, so that both would
+      always use the same setting.
+    */
+    BtLanguageSettingsPage::resetLanguage(); /// \todo refactor this hack
 
-    if (!app.initDisplayTemplateManager()) return EXIT_FAILURE;
+    // Initialize display template manager:
+    if (!app.initDisplayTemplateManager()) {
+        qFatal("Error initializing display template manager!");
+        return EXIT_FAILURE;
+    }
 
     BibleTime *mainWindow = new BibleTime();
     mainWindow->setAttribute(Qt::WA_DeleteOnClose);
 
     // a new BibleTime version was installed (maybe a completely new installation)
-    if (CBTConfig::get(CBTConfig::bibletimeVersion) != BT_VERSION) {
-        CBTConfig::set(CBTConfig::bibletimeVersion, BT_VERSION);
+    if (btConfig().value<QString>("bibletimeVersion", BT_VERSION) != BT_VERSION) {
+        btConfig().setValue("bibletimeVersion", QString::fromAscii(BT_VERSION));
         mainWindow->saveConfigSettings();
     }
 
@@ -303,7 +329,7 @@ int main(int argc, char* argv[]) {
     QDBusConnection::sessionBus().registerObject("/BibleTime", mainWindow);
 #endif
 
-    if (CBTConfig::get(CBTConfig::showTipAtStartup))
+    if (btConfig().value<bool>("GUI/showTipAtStartup", true))
         mainWindow->slotOpenTipDialog();
 
     r = app.exec();

@@ -17,7 +17,6 @@
 #include <QDebug>
 
 #include "bibletime.h"
-#include "backend/config/cbtconfig.h"
 #include "backend/keys/cswordldkey.h"
 #include "backend/keys/cswordkey.h"
 #include "frontend/cexportmanager.h"
@@ -158,7 +157,7 @@ void CLexiconReadWindow::initActions() {
     addAction(m_actions.print.entry);
 
     // init with the user defined settings
-    CBTConfig::setupAccelSettings(CBTConfig::lexiconWindow, ac);
+    ac->readShortcuts("Lexicon shortcuts");
 }
 
 /** No descriptions */
@@ -320,7 +319,7 @@ void CLexiconReadWindow::updatePopupMenu() {
 void CLexiconReadWindow::reload(CSwordBackend::SetupChangedReason reason) {
     CReadWindow::reload(reason);
 
-    CBTConfig::setupAccelSettings(CBTConfig::lexiconWindow, actionCollection());
+    actionCollection()->readShortcuts("Lexicon shortcuts");
 }
 
 /** No descriptions */

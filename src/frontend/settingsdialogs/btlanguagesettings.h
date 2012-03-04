@@ -14,7 +14,6 @@
 
 #include <QMap>
 #include <QWidget>
-#include "backend/config/cbtconfig.h"
 
 
 class CConfigurationDialog;
@@ -31,8 +30,12 @@ class BtLanguageSettingsPage: public BtConfigDialog::Page {
 
         void save();
 
+        static void resetLanguage();
+
     private: /* Methods: */
 
+        static QVector<QString> bookNameAbbreviationsTryVector();
+        void initSwordLocaleCombo();
         void retranslateUi();
 
     private: /* Fields: */

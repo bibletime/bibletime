@@ -12,8 +12,10 @@
 #include <algorithm>
 #include <QRegExp>
 #include <QDebug>
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "backend/keys/cswordversekey.h"
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "backend/managers/cswordbackend.h"
 
 
 /** Returns a hyperlink used to be imbedded in the display windows. At the moment the format is sword://module/key */
@@ -250,51 +252,28 @@ const QString ReferenceManager::preferredModule( const ReferenceManager::Type ty
     switch (type) {
 
         case ReferenceManager::Bible:
-
-            module = CBTConfig::get
-                     ( CBTConfig::standardBible );
-
+            module = btConfig().getDefaultSwordModuleByType( "standardBible" );
             break;
-
         case ReferenceManager::Commentary:
-            module = CBTConfig::get
-                     ( CBTConfig::standardCommentary );
-
+            module = btConfig().getDefaultSwordModuleByType( "standardCommentary" );
             break;
-
         case ReferenceManager::Lexicon:
-            module = CBTConfig::get
-                     ( CBTConfig::standardLexicon );
-
+            module = btConfig().getDefaultSwordModuleByType( "standardLexicon" );
             break;
-
         case ReferenceManager::StrongsHebrew:
-            module = CBTConfig::get
-                     ( CBTConfig::standardHebrewStrongsLexicon );
-
+            module = btConfig().getDefaultSwordModuleByType( "standardHebrewStrongsLexicon" );
             break;
-
         case ReferenceManager::StrongsGreek:
-            module = CBTConfig::get
-                     ( CBTConfig::standardGreekStrongsLexicon );
-
+            module = btConfig().getDefaultSwordModuleByType( "standardGreekStrongsLexicon" );
             break;
-
         case ReferenceManager::MorphHebrew:
-            module = CBTConfig::get
-                     ( CBTConfig::standardHebrewMorphLexicon );
-
+            module = btConfig().getDefaultSwordModuleByType( "standardHebrewMorphLexicon" );
             break;
-
         case ReferenceManager::MorphGreek:
-            module = CBTConfig::get
-                     ( CBTConfig::standardGreekMorphLexicon );
-
+            module = btConfig().getDefaultSwordModuleByType( "standardGreekMorphLexicon" );
             break;
-
         default:
             module = 0;
-
             break;
     }
 

@@ -11,6 +11,7 @@
 #define RENDERINGCPLAINTEXTEXPORTRENDERING_H
 
 #include "backend/rendering/chtmlexportrendering.h"
+#include "backend/config/btconfig.h"
 
 
 namespace Rendering {
@@ -26,8 +27,8 @@ class CPlainTextExportRendering: public CHTMLExportRendering {
 
         CPlainTextExportRendering(
             bool addText,
-            const DisplayOptions &displayOptions = CBTConfig::getDisplayOptionDefaults(),
-            const FilterOptions &filterOptions = CBTConfig::getFilterOptionDefaults());
+            const DisplayOptions &displayOptions = btConfig().getDisplayOptions(),
+            const FilterOptions &filterOptions = btConfig().getFilterOptions());
 
     protected: /* Methods: */
 

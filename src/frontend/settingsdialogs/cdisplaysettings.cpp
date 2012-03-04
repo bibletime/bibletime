@@ -14,7 +14,7 @@
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QWebView>
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
 #include "backend/rendering/cdisplayrendering.h"
 #include "frontend/settingsdialogs/cconfigurationdialog.h"
@@ -52,7 +52,7 @@ CDisplaySettingsPage::CDisplaySettingsPage(CConfigurationDialog *parent)
 
     { //startup logo
         m_showLogoCheck = new QCheckBox(this);
-        m_showLogoCheck->setChecked(CBTConfig::get(CBTConfig::logo));
+        m_showLogoCheck->setChecked(btConfig().value<bool>("GUI/showSplashScreen", true));
         mainLayout->addWidget(m_showLogoCheck);
     }
     mainLayout->addSpacing(20);
@@ -83,13 +83,12 @@ CDisplaySettingsPage::CDisplaySettingsPage(CConfigurationDialog *parent)
     webViewWidget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
     mainLayout->addWidget(webViewWidget);
 
-    m_styleChooserCombo->addItems(
-        CDisplayTemplateMgr::instance()->availableTemplates()
-    );
+    CDisplayTemplateMgr * tMgr = CDisplayTemplateMgr::instance();
+    m_styleChooserCombo->addItems(tMgr->availableTemplates());
 
     for (int i = 0; i < m_styleChooserCombo->count(); ++i) {
-        if ( m_styleChooserCombo->itemText(i) == CBTConfig::get(CBTConfig::displayStyle) ) {
-            m_styleChooserCombo->setCurrentIndex( i );
+        if (m_styleChooserCombo->itemText(i) == CDisplayTemplateMgr::activeTemplateName()) {
+            m_styleChooserCombo->setCurrentIndex(i);
             break;
         }
     }
@@ -160,20 +159,16 @@ void CDisplaySettingsPage::updateStylePreview() {
                      .arg(tr("But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.")),
                      settings));
 
-    const QString oldStyleName = CBTConfig::get
-                                 (CBTConfig::displayStyle);
-    CBTConfig::set
-    (CBTConfig::displayStyle, styleName);
+    /// \todo Remove the following hack:
+    const QString oldStyleName = CDisplayTemplateMgr::activeTemplateName();
+    btConfig().setValue("GUI/activeTemplateName", styleName);
     CDisplayRendering render;
     m_stylePreviewViewer->setHtml( render.renderKeyTree(tree));
 
-    CBTConfig::set
-    (CBTConfig::displayStyle, oldStyleName);
+    btConfig().setValue("GUI/activeTemplateName", oldStyleName);
 }
 
 void CDisplaySettingsPage::save() {
-    CBTConfig::set
-    ( CBTConfig::logo, m_showLogoCheck->isChecked() );
-    CBTConfig::set
-    ( CBTConfig::displayStyle, m_styleChooserCombo->currentText() );
+    btConfig().setValue("GUI/showSplashScreen", m_showLogoCheck->isChecked() );
+    btConfig().setValue("GUI/activeTemplateName", m_styleChooserCombo->currentText());
 }

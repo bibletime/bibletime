@@ -19,11 +19,8 @@
 #include "frontend/cmdiarea.h"
 #include "frontend/display/bthtmlreaddisplay.h"
 #include "frontend/displaywindow/btactioncollection.h"
-#include "frontend/profile/cprofilewindow.h"
 #include "frontend/searchdialog/csearchdialog.h"
 
-
-using namespace Profile;
 
 CReadWindow::CReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent)
         : CDisplayWindow(modules, parent),
@@ -106,57 +103,6 @@ void CReadWindow::lookupSwordKey( CSwordKey* newKey ) {
 
 void CReadWindow::slotMoveToAnchor() {
     ((CReadDisplay*)displayWidget())->moveToAnchor( Rendering::CDisplayRendering::keyToHTMLAnchor(key()->key()) );
-}
-
-/** Store the settings of this window in the given CProfileWindow object. */
-void CReadWindow::storeProfileSettings(CProfileWindow * const settings) {
-    QRect rect;
-    rect.setX(parentWidget()->x());
-    rect.setY(parentWidget()->y());
-    rect.setWidth(parentWidget()->width());
-    rect.setHeight(parentWidget()->height());
-    settings->setGeometry(rect);
-
-    // settings->setScrollbarPositions( m_htmlWidget->view()->horizontalScrollBar()->value(), m_htmlWidget->view()->verticalScrollBar()->value() );
-    settings->setType(modules().first()->type());
-    settings->setMaximized(isMaximized() || parentWidget()->isMaximized());
-    settings->setFocus( (this == dynamic_cast<CReadWindow*>(mdi()->activeSubWindow()) ) ); //set property to true if this window is the active one.
-
-    if (key()) {
-        sword::VerseKey* vk = dynamic_cast<sword::VerseKey*>(key());
-        QString oldLang;
-        if (vk) {
-            oldLang = QString(vk->getLocale());
-            vk->setLocale("en"); //save english locale names as default!
-        }
-        settings->setKey( key()->key() );
-        if (vk) {
-            vk->setLocale(oldLang.toLatin1());
-        }
-    }
-
-    QStringList mods;
-    Q_FOREACH (const CSwordModuleInfo *module, modules()) {
-        mods.append(module->name());
-    }
-    settings->setModules(mods);
-}
-
-void CReadWindow::applyProfileSettings(CProfileWindow * const settings) {
-    //  parentWidget()->setUpdatesEnabled(false);
-    setUpdatesEnabled(false);
-
-    if (settings->maximized()) { //maximize this window
-        // Use parentWidget() to call showMaximized. Otherwise we'd get lot's of X11 errors
-        parentWidget()->showMaximized();
-    }
-    else {
-        const QRect rect = settings->geometry();
-        parentWidget()->resize(rect.width(), rect.height());
-        parentWidget()->move(rect.x(), rect.y());
-    }
-
-    setUpdatesEnabled(true);
 }
 
 void CReadWindow::insertKeyboardActions( BtActionCollection* const ) {}

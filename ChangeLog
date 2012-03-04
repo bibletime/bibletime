@@ -1,3 +1,30 @@
+2011-11-23 Jaak Ristioja <jaak@ristioja.ee>
+    * Fixed a bug where the book names language was not correctly set.
+    * Fixed compatibility with Qt earlier than 4.7.
+
+2011-11-21 Jaak Ristioja <jaak@ristioja.ee>
+    * Fixed the dialog buttons of the Tip of the Day dialog not being
+      translated. Thanks to Novák Géza for reporting this.
+
+2011-11-14 Jaak Ristioja <jaak@ristioja.ee>
+    * Completely substituted the old profile system with a BtConfig-based one.
+
+2011-11-12 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix bug 3425828 where the Mag window does not work with
+      new versions of Qt. (Qt 4.7.4 + QWebKit 2.2 or later)
+
+2011-11-08 Jaak Ristioja <jaak@ristioja.ee>
+    * Merged the the new configuration based on the work of Patrick Zimmermann.
+
+2011-11-07 Jaak Ristioja <jaak@ristioja.ee>
+    * Released 2.9 RC 1.
+
+2011-11-02 Jaak Ristioja <jaak@ristioja.ee>
+    * Fixed a bug with bookshelf items grouping initialization.
+
+2011-10-23 Gregory Hellings <greg.hellings@gmail.com>
+    * Fixed compilation against CLucene 2.
+
 2011-10-05 Jaak Ristioja <jaak@ristioja.ee>
     * Released 2.9 beta 2.
 

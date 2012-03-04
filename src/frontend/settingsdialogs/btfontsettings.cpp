@@ -21,6 +21,7 @@
 #include "util/cresmgr.h"
 #include "util/tool.h"
 #include "util/directory.h"
+#include <backend/config/btconfig.h>
 
 // Sword includes:
 #include <localemgr.h>
@@ -58,7 +59,7 @@ BtFontSettingsPage::BtFontSettingsPage(CConfigurationDialog *parent)
             ? &L::abbrev
             : &L::translatedName;
 
-        m_fontMap.insert((l->*f)(), CBTConfig::get(l));
+        m_fontMap.insert((l->*f)(), btConfig().getFontForLanguage(l));
     }
 
     for (FontMap::ConstIterator it = m_fontMap.constBegin(); it != m_fontMap.constEnd(); ++it) {
@@ -84,7 +85,7 @@ BtFontSettingsPage::BtFontSettingsPage(CConfigurationDialog *parent)
     connect(m_languageComboBox, SIGNAL(activated(const QString&)),
             this,               SLOT(newDisplayWindowFontAreaSelected(const QString&)));
 
-    const CBTConfig::FontSettingsPair &v = m_fontMap.value(m_languageComboBox->currentText());
+    const BtConfig::FontSettingsPair &v = m_fontMap.value(m_languageComboBox->currentText());
     m_fontChooser->setFont(v.second);
     useOwnFontClicked(v.first);
     m_languageCheckBox->setChecked(v.first);
@@ -117,11 +118,11 @@ void BtFontSettingsPage::save() const {
             if (!lang->abbrev().isEmpty()) {
                 // Create a temp language:
                 CLanguageMgr::Language l(k, k, k);
-                CBTConfig::set(&l, it.value());
+                btConfig().setFontForLanguage(&l, it.value());
             }
         }
         else {
-            CBTConfig::set(lang, it.value());
+            btConfig().setFontForLanguage(lang, it.value());
         }
     }
 }
@@ -129,11 +130,11 @@ void BtFontSettingsPage::save() const {
 void BtFontSettingsPage::newDisplayWindowFontSelected(const QFont &newFont) {
     const QString languageName = m_languageComboBox->currentText();
     m_fontMap.insert(languageName,
-                     CBTConfig::FontSettingsPair(m_fontMap[languageName].first, newFont));
+                     BtConfig::FontSettingsPair(m_fontMap[languageName].first, newFont));
 }
 
 void BtFontSettingsPage::newDisplayWindowFontAreaSelected(const QString &usage) {
-    const CBTConfig::FontSettingsPair &p = m_fontMap[usage];
+    const BtConfig::FontSettingsPair &p = m_fontMap[usage];
     useOwnFontClicked(p.first);
     m_languageCheckBox->setChecked(p.first);
     m_fontChooser->setFont(p.second);

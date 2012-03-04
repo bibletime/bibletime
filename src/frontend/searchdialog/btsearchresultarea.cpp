@@ -22,12 +22,18 @@
 #include <QWidget>
 #include "backend/keys/cswordversekey.h"
 #include "backend/rendering/cdisplayrendering.h"
+#include "backend/config/btconfig.h"
 #include "frontend/display/cdisplay.h"
 #include "frontend/searchdialog/cmoduleresultview.h"
 #include "frontend/searchdialog/csearchdialog.h"
 #include "frontend/searchdialog/csearchresultview.h"
 #include "util/tool.h"
 
+
+namespace {
+const QString MainSplitterSizesKey = "GUI/SearchDialog/SearchResultsArea/mainSplitterSizes";
+const QString ResultSplitterSizesKey = "GUI/SearchDialog/SearchResultsArea/resultSplitterSizes";
+} // anonymous namespace
 
 namespace Search {
 
@@ -506,26 +512,28 @@ void BtSearchResultArea::initConnections() {
 * Load the settings from the resource file
 */
 void BtSearchResultArea::loadDialogSettings() {
-    QList<int> mainSplitterSizes = CBTConfig::get(CBTConfig::searchMainSplitterSizes);
-    if (mainSplitterSizes.count() > 0) {
+    QList<int> mainSplitterSizes = btConfig().value< QList<int> >(MainSplitterSizesKey, QList<int>());
+    if (mainSplitterSizes.count() > 0)
         m_mainSplitter->setSizes(mainSplitterSizes);
-    }
-    else {
+    else
+    {
         int w = this->size().width();
         int w2 = m_moduleListBox->sizeHint().width();
         mainSplitterSizes << w2 << w - w2;
         m_mainSplitter->setSizes(mainSplitterSizes);
     }
-    QList<int> resultSplitterSizes = CBTConfig::get(CBTConfig::searchResultSplitterSizes);
-    if (resultSplitterSizes.count() > 0) m_resultListSplitter->setSizes(resultSplitterSizes);
+
+    QList<int> resultSplitterSizes = btConfig().value< QList<int> >(ResultSplitterSizesKey, QList<int>());
+    if (resultSplitterSizes.count() > 0)
+        m_resultListSplitter->setSizes(resultSplitterSizes);
 }
 
 /**
 * Save the settings to the resource file
 */
-void BtSearchResultArea::saveDialogSettings() {
-    CBTConfig::set(CBTConfig::searchMainSplitterSizes, m_mainSplitter->sizes());
-    CBTConfig::set(CBTConfig::searchResultSplitterSizes, m_resultListSplitter->sizes());
+void BtSearchResultArea::saveDialogSettings() const {
+    btConfig().setValue(MainSplitterSizesKey, m_mainSplitter->sizes());
+    btConfig().setValue(ResultSplitterSizesKey, m_resultListSplitter->sizes());
 }
 
 /******************************************************************************

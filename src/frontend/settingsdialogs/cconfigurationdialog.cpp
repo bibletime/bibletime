@@ -14,6 +14,7 @@
 #include <QLayout>
 #include <QPushButton>
 #include <QWidget>
+#include "backend/config/btconfig.h"
 #include "frontend/settingsdialogs/cacceleratorsettings.h"
 #include "frontend/settingsdialogs/cdisplaysettings.h"
 #include "frontend/settingsdialogs/btfontsettings.h"
@@ -23,6 +24,10 @@
 #include "util/directory.h"
 #include "util/dialogutil.h"
 
+
+namespace {
+const QString GeometryKey = "GUI/SettingsDialog/geometry";
+} // anonymous namespace
 
 CConfigurationDialog::CConfigurationDialog(QWidget * parent, BtActionCollection* actionCollection )
         : BtConfigDialog(parent),
@@ -99,13 +104,9 @@ void CConfigurationDialog::slotButtonClicked(QAbstractButton* button) {
 }
 
 void CConfigurationDialog::loadDialogSettings() {
-    resize(CBTConfig::get(CBTConfig::configDialogWidth), CBTConfig::get(CBTConfig::configDialogHeight));
-    move(CBTConfig::get(CBTConfig::configDialogPosX), CBTConfig::get(CBTConfig::configDialogPosY));
+    restoreGeometry(btConfig().value<QByteArray>(GeometryKey, QByteArray()));
 }
 
-void CConfigurationDialog::saveDialogSettings() {
-    CBTConfig::set(CBTConfig::configDialogWidth, size().width());
-    CBTConfig::set(CBTConfig::configDialogHeight, size().height());
-    CBTConfig::set(CBTConfig::configDialogPosX, x());
-    CBTConfig::set(CBTConfig::configDialogPosY, y());
+void CConfigurationDialog::saveDialogSettings() const {
+    btConfig().setValue(GeometryKey, saveGeometry());
 }

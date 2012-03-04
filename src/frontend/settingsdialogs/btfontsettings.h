@@ -14,7 +14,7 @@
 
 #include <QMap>
 #include <QWidget>
-#include "backend/config/cbtconfig.h"
+#include "backend/config/btconfig.h"
 
 
 class BtFontChooserWidget;
@@ -30,7 +30,7 @@ class BtFontSettingsPage: public BtConfigDialog::Page {
 
     private: /* Types: */
 
-        typedef QMap<QString, CBTConfig::FontSettingsPair> FontMap;
+        typedef QMap<QString, BtConfig::FontSettingsPair> FontMap;
 
     public: /* Methods: */
 

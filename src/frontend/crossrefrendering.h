@@ -11,6 +11,7 @@
 #define INFODISPLAYCROSSREFRENDERING_H
 
 #include "backend/rendering/chtmlexportrendering.h"
+#include "backend/config/btconfig.h"
 
 
 namespace InfoDisplay {
@@ -20,8 +21,8 @@ class CrossRefRendering : public Rendering::CHTMLExportRendering {
         friend class CInfoDisplay;
 
         CrossRefRendering(
-            const DisplayOptions &displayOptions = CBTConfig::getDisplayOptionDefaults(),
-            const FilterOptions &filterOptions = CBTConfig::getFilterOptionDefaults()
+            const DisplayOptions &displayOptions = btConfig().getDisplayOptions(),
+            const FilterOptions &filterOptions = btConfig().getFilterOptions()
         );
 
         virtual QString entryLink(const KeyTreeItem &item,
