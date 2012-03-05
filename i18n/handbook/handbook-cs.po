@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: handbook-cs\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
-"POT-Creation-Date: 2011-01-13 23:27-0500\n"
+"POT-Creation-Date: 2012-01-02 03:09-0500\n"
 "PO-Revision-Date: 2009-12-11 21:06+0100\n"
 "Last-Translator: Jan Belohoubek <j.bel@atlas.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -1715,18 +1715,18 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:18
-#: docs/handbook/en/docbook/hdbk-reference.docbook:706
-#: docs/handbook/en/docbook/hdbk-reference.docbook:729
-#: docs/handbook/en/docbook/hdbk-reference.docbook:752
-#: docs/handbook/en/docbook/hdbk-reference.docbook:775
-#: docs/handbook/en/docbook/hdbk-reference.docbook:798
-#: docs/handbook/en/docbook/hdbk-reference.docbook:821
-#: docs/handbook/en/docbook/hdbk-reference.docbook:844
-#: docs/handbook/en/docbook/hdbk-reference.docbook:867
-#: docs/handbook/en/docbook/hdbk-reference.docbook:890
-#: docs/handbook/en/docbook/hdbk-reference.docbook:913
-#: docs/handbook/en/docbook/hdbk-reference.docbook:936
-#: docs/handbook/en/docbook/hdbk-reference.docbook:959
+#: docs/handbook/en/docbook/hdbk-reference.docbook:741
+#: docs/handbook/en/docbook/hdbk-reference.docbook:764
+#: docs/handbook/en/docbook/hdbk-reference.docbook:787
+#: docs/handbook/en/docbook/hdbk-reference.docbook:810
+#: docs/handbook/en/docbook/hdbk-reference.docbook:833
+#: docs/handbook/en/docbook/hdbk-reference.docbook:856
+#: docs/handbook/en/docbook/hdbk-reference.docbook:879
+#: docs/handbook/en/docbook/hdbk-reference.docbook:902
+#: docs/handbook/en/docbook/hdbk-reference.docbook:925
+#: docs/handbook/en/docbook/hdbk-reference.docbook:948
+#: docs/handbook/en/docbook/hdbk-reference.docbook:971
+#: docs/handbook/en/docbook/hdbk-reference.docbook:994
 msgid "<placeholder type=\"variablelist\" id=\"0\"/>"
 msgstr ""
 
@@ -1761,6 +1761,13 @@ msgstr ""
 "<action>Přepíná zobrazení přes celou obrazovku.</action> Aktivujte tuto "
 "možnost pokud chcete maximalizovat okno &bibletime;."
 
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:98
+msgid ""
+"<imageobject> <imagedata fileref=\"i_books.png\" width=\"32\" depth=\"32\" "
+"format=\"PNG\" /> </imageobject>"
+msgstr ""
+
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:95
@@ -1769,15 +1776,15 @@ msgstr ""
 #| "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> "
 #| "</menuchoice> equivalent; opens the handbook."
 msgid ""
-"<menuchoice> <guimenu>View</guimenu> <guimenuitem>Show Bookshelf</"
-"guimenuitem> </menuchoice>"
+"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
+">View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem> </menuchoice>"
 msgstr ""
 "<menuchoice> <guimenu>Nápověda</guimenu> <guimenuitem>Příručka</guimenuitem> "
 "</menuchoice> otevře příručku."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:102
+#: docs/handbook/en/docbook/hdbk-reference.docbook:107
 msgid ""
 "<action>Toggles display of the Bookshelf.</action> Toggle this setting to "
 "turn the Bookshelf on the left pane on or off. This can be handy if you need "
@@ -1787,23 +1794,30 @@ msgstr ""
 "nebo vypnutí zobrazení knihovny vlevo. To může být praktické pokud "
 "potřebujete více času pro časopis."
 
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:119
+msgid ""
+"<imageobject> <imagedata fileref=\"i_bookmark.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
+msgstr ""
+
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:111
+#: docs/handbook/en/docbook/hdbk-reference.docbook:116
 #, fuzzy
 #| msgid ""
 #| "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> "
 #| "</menuchoice> equivalent; opens the handbook."
 msgid ""
-"<menuchoice> <guimenu>View</guimenu> <guimenuitem>Show Bookmarks</"
-"guimenuitem> </menuchoice>"
+"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
+">View</guimenu> <guimenuitem>Show Bookmarks</guimenuitem> </menuchoice>"
 msgstr ""
 "<menuchoice> <guimenu>Nápověda</guimenu> <guimenuitem>Příručka</guimenuitem> "
 "</menuchoice> otevře příručku."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:118
+#: docs/handbook/en/docbook/hdbk-reference.docbook:128
 msgid ""
 "<action>Toggles display of the Bookmarks.</action> Toggle this setting to "
 "turn the Bookmarks on the left pane on or off. This can be handy if you need "
@@ -1813,23 +1827,30 @@ msgstr ""
 "nebo vypnutí zobrazení knihovny vlevo. To může být praktické pokud "
 "potřebujete více místa pro časopis."
 
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:140
+msgid ""
+"<imageobject> <imagedata fileref=\"i_document_magnifier.png\" width=\"32\" "
+"depth=\"32\" format=\"PNG\" /> </imageobject>"
+msgstr ""
+
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:127
+#: docs/handbook/en/docbook/hdbk-reference.docbook:137
 #, fuzzy
 #| msgid ""
 #| "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> "
 #| "</menuchoice> equivalent; opens the handbook."
 msgid ""
-"<menuchoice> <guimenu>View</guimenu> <guimenuitem>Show Mag</guimenuitem> </"
-"menuchoice>"
+"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
+">View</guimenu> <guimenuitem>Show Mag</guimenuitem> </menuchoice>"
 msgstr ""
 "<menuchoice> <guimenu>Nápověda</guimenu> <guimenuitem>Příručka</guimenuitem> "
 "</menuchoice> otevře příručku."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:134
+#: docs/handbook/en/docbook/hdbk-reference.docbook:149
 msgid ""
 "<action>Toggles display of the Mag(nifying glass).</action> Toggle this "
 "setting to turn the Mag on the left pane on or off."
@@ -1837,8 +1858,41 @@ msgstr ""
 "<action>Zapne zobrazení časopisu.</action> Zvolte tuto možnost pro zapnutí "
 "nebo vypnutí zobrazení časopisu na levé straně."
 
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:160
+msgid ""
+"<imageobject> <imagedata fileref=\"i_checkbox.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
+msgstr ""
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:142
+#: docs/handbook/en/docbook/hdbk-reference.docbook:157
+#, fuzzy
+#| msgid ""
+#| "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> "
+#| "</menuchoice> equivalent; opens the handbook."
+msgid ""
+"<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
+">View</guimenu> <guimenuitem>Show parallel text headers</guimenuitem> </"
+"menuchoice>"
+msgstr ""
+"<menuchoice> <guimenu>Nápověda</guimenu> <guimenuitem>Příručka</guimenuitem> "
+"</menuchoice> otevře příručku."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:169
+#, fuzzy
+msgid ""
+"<action>Toggles viewing of additional works</action> Toggle this setting to "
+"allow you to view additional works in parallel to your current open books."
+msgstr ""
+"<action>Přepíná zobrazení nástrojů.</action> Aktivujte tuto možnost pokud si "
+"přejete zapnout nebo vypnout Hlavní nástrojovou lištu."
+
+#. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:177
 msgid ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F6</keycap> </"
 "keycombo> </shortcut> <guimenu>View</guimenu> <guimenuitem>Toolbars</"
@@ -1847,7 +1901,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:154
+#: docs/handbook/en/docbook/hdbk-reference.docbook:189
 #, fuzzy
 msgid ""
 "<action>Toggles Main Toolbar display.</action> Toggle this setting to turn "
@@ -1858,7 +1912,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:161
+#: docs/handbook/en/docbook/hdbk-reference.docbook:196
 #, fuzzy
 #| msgid ""
 #| "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
@@ -1874,7 +1928,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:168
+#: docs/handbook/en/docbook/hdbk-reference.docbook:203
 #, fuzzy
 msgid ""
 "<action>Toggles Navigation in works.</action> Toggle this setting to add or "
@@ -1887,7 +1941,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:177
+#: docs/handbook/en/docbook/hdbk-reference.docbook:212
 #, fuzzy
 #| msgid ""
 #| "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
@@ -1903,7 +1957,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:184
+#: docs/handbook/en/docbook/hdbk-reference.docbook:219
 #, fuzzy
 msgid ""
 "<action>Toggles Toolbars in works.</action> Toggle this setting to add or "
@@ -1914,7 +1968,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:192
+#: docs/handbook/en/docbook/hdbk-reference.docbook:227
 #, fuzzy
 #| msgid ""
 #| "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
@@ -1930,7 +1984,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:199
+#: docs/handbook/en/docbook/hdbk-reference.docbook:234
 #, fuzzy
 msgid ""
 "<action>Toggles tools in works.</action> Toggle this setting to add or "
@@ -1941,7 +1995,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:207
+#: docs/handbook/en/docbook/hdbk-reference.docbook:242
 #, fuzzy
 #| msgid ""
 #| "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
@@ -1957,7 +2011,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:214
+#: docs/handbook/en/docbook/hdbk-reference.docbook:249
 #, fuzzy
 msgid ""
 "<action>Toggles format.</action> Toggle this setting when editing HTML in "
@@ -1968,7 +2022,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:223
+#: docs/handbook/en/docbook/hdbk-reference.docbook:258
 #, fuzzy
 #| msgid ""
 #| "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
@@ -1984,7 +2038,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:230
+#: docs/handbook/en/docbook/hdbk-reference.docbook:265
 #, fuzzy
 msgid ""
 "<action>Toggles toolbars in works.</action> Toggle this setting to add or "
@@ -1995,23 +2049,23 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><title>
 #. type: Content of: <chapter><sect1><sect2><title>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:239
+#: docs/handbook/en/docbook/hdbk-reference.docbook:274
 #, fuzzy
 #| msgid "The <guimenuitem>Bookshelf Manager</guimenuitem>"
 msgid "<guimenu>Search</guimenu>"
 msgstr "<guimenuitem>Správa knih</guimenuitem>"
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:251
-#: docs/handbook/en/docbook/hdbk-reference.docbook:277
-#: docs/handbook/en/docbook/hdbk-reference.docbook:804
+#: docs/handbook/en/docbook/hdbk-reference.docbook:286
+#: docs/handbook/en/docbook/hdbk-reference.docbook:312
+#: docs/handbook/en/docbook/hdbk-reference.docbook:839
 msgid ""
 "<imageobject> <imagedata fileref=\"i_find.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:244
+#: docs/handbook/en/docbook/hdbk-reference.docbook:279
 msgid ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</"
 "keycap></keycombo> </shortcut> <guimenu> <placeholder type="
@@ -2021,7 +2075,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:260
+#: docs/handbook/en/docbook/hdbk-reference.docbook:295
 msgid ""
 "<action>Opens the Search Dialog to search in the standard Bible only</"
 "action>. More works can be added in the Search Dialog. A more detailed "
@@ -2034,7 +2088,7 @@ msgstr ""
 "\">Vyhledávání v dílech</link>."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:270
+#: docs/handbook/en/docbook/hdbk-reference.docbook:305
 msgid ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+O</"
 "keycap></keycombo> </shortcut> <guimenu> <placeholder type="
@@ -2044,7 +2098,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:286
+#: docs/handbook/en/docbook/hdbk-reference.docbook:321
 msgid ""
 "<action>Opens the Search Dialog to search in all open works</action>. Works "
 "can be added or removed in the Search Dialog. A more detailed search "
@@ -2057,20 +2111,20 @@ msgstr ""
 "search\">Vyhledávání v dílech</link>."
 
 #. type: Content of: <chapter><sect1><sect2><title>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:299
+#: docs/handbook/en/docbook/hdbk-reference.docbook:334
 msgid "<guimenu>Window</guimenu>"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:312
-#: docs/handbook/en/docbook/hdbk-reference.docbook:335
+#: docs/handbook/en/docbook/hdbk-reference.docbook:347
+#: docs/handbook/en/docbook/hdbk-reference.docbook:370
 msgid ""
 "<imageobject> <imagedata fileref=\"i_fileclose.png\" width=\"32\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:305
+#: docs/handbook/en/docbook/hdbk-reference.docbook:340
 msgid ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+W</"
 "keycap></keycombo> </shortcut> <guimenu> <placeholder type="
@@ -2080,13 +2134,13 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:322
+#: docs/handbook/en/docbook/hdbk-reference.docbook:357
 #, fuzzy
 msgid "<action>Closes active window</action>."
 msgstr "<action>Zavře všechna otevřená okna</action>."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:328
+#: docs/handbook/en/docbook/hdbk-reference.docbook:363
 msgid ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+W</"
 "keycap></keycombo> </shortcut> <guimenu> <placeholder type="
@@ -2096,19 +2150,19 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:345
+#: docs/handbook/en/docbook/hdbk-reference.docbook:380
 msgid "<action>Closes all open windows</action>."
 msgstr "<action>Zavře všechna otevřená okna</action>."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:358
+#: docs/handbook/en/docbook/hdbk-reference.docbook:393
 msgid ""
 "<imageobject> <imagedata fileref=\"i_cascade.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:351
+#: docs/handbook/en/docbook/hdbk-reference.docbook:386
 msgid ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+J</"
 "keycap></keycombo> </shortcut> <guimenu> <placeholder type="
@@ -2118,19 +2172,19 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:368
+#: docs/handbook/en/docbook/hdbk-reference.docbook:403
 msgid "<action>Cascades all open windows</action>."
 msgstr "<action>Všechna otevřená okna do kaskády</action>."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:382
+#: docs/handbook/en/docbook/hdbk-reference.docbook:417
 msgid ""
 "<imageobject> <imagedata fileref=\"i_tile.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:375
+#: docs/handbook/en/docbook/hdbk-reference.docbook:410
 msgid ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+I</"
 "keycap></keycombo> </shortcut> <guimenu> <placeholder type="
@@ -2140,19 +2194,19 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:392
+#: docs/handbook/en/docbook/hdbk-reference.docbook:427
 msgid "<action>Tiles all open windows</action>."
 msgstr "<action>Rozmístit všechna otevřená okna jako dlaždice</action>."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:406
+#: docs/handbook/en/docbook/hdbk-reference.docbook:441
 msgid ""
 "<imageobject> <imagedata fileref=\"i_tile_vert.png\" width=\"32\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:399
+#: docs/handbook/en/docbook/hdbk-reference.docbook:434
 msgid ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+G</"
 "keycap></keycombo> </shortcut> <guimenu> <placeholder type="
@@ -2162,19 +2216,19 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:416
+#: docs/handbook/en/docbook/hdbk-reference.docbook:451
 msgid "<action>Automatically tiles all open windows vertically</action>."
 msgstr "<action>Automaticky dláždí všechna otevřená okna vertikálně</action>."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:430
+#: docs/handbook/en/docbook/hdbk-reference.docbook:465
 msgid ""
 "<imageobject> <imagedata fileref=\"i_tile_horiz.png\" width=\"32\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:423
+#: docs/handbook/en/docbook/hdbk-reference.docbook:458
 msgid ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+H</"
 "keycap></keycombo> </shortcut> <guimenu> <placeholder type="
@@ -2184,14 +2238,14 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:440
+#: docs/handbook/en/docbook/hdbk-reference.docbook:475
 msgid "<action>Automatically tiles all open windows horizontally</action>."
 msgstr ""
 "<action>Automaticky dláždí všechna otevřená okna horizontálně.</action>."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:448
+#: docs/handbook/en/docbook/hdbk-reference.docbook:483
 #, fuzzy
 #| msgid ""
 #| "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> "
@@ -2205,7 +2259,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:455
+#: docs/handbook/en/docbook/hdbk-reference.docbook:490
 #, fuzzy
 msgid ""
 "<action>Controls the basic window arrangement behaviour</action>. In the "
@@ -2220,7 +2274,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:466
+#: docs/handbook/en/docbook/hdbk-reference.docbook:501
 #, fuzzy
 #| msgid ""
 #| "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> "
@@ -2234,7 +2288,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:474
+#: docs/handbook/en/docbook/hdbk-reference.docbook:509
 msgid ""
 "<action>Directly saves the current session</action>. This will open a "
 "context menu where you can select an existing session to save to. It will be "
@@ -2246,7 +2300,7 @@ msgstr ""
 "na další položku jak uložit nové sezení."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:484
+#: docs/handbook/en/docbook/hdbk-reference.docbook:519
 msgid ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+S</"
 "keycap></keycombo> </shortcut> <guimenu>Window</guimenu> <guimenuitem>Save "
@@ -2255,7 +2309,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:496
+#: docs/handbook/en/docbook/hdbk-reference.docbook:531
 msgid ""
 "<action>Saves the current session under a new name</action>. This will ask "
 "for a new name to save the session to."
@@ -2265,7 +2319,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:504
+#: docs/handbook/en/docbook/hdbk-reference.docbook:539
 #, fuzzy
 #| msgid ""
 #| "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> "
@@ -2279,7 +2333,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:512
+#: docs/handbook/en/docbook/hdbk-reference.docbook:547
 msgid ""
 "<action>Loads an existing session</action>. This will open a context menu "
 "where you can select an existing session to load."
@@ -2289,7 +2343,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:520
+#: docs/handbook/en/docbook/hdbk-reference.docbook:555
 #, fuzzy
 #| msgid ""
 #| "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> "
@@ -2303,7 +2357,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:528
+#: docs/handbook/en/docbook/hdbk-reference.docbook:563
 msgid ""
 "<action>Deletes an existing session</action>. This will open a context menu "
 "where you can select an existing session that should be deleted."
@@ -2312,19 +2366,19 @@ msgstr ""
 "můžete vybrat existující sezení, které má být vymazáno."
 
 #. type: Content of: <chapter><sect1><sect2><title>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:538
+#: docs/handbook/en/docbook/hdbk-reference.docbook:573
 msgid "<guimenu>Settings</guimenu>"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:546
+#: docs/handbook/en/docbook/hdbk-reference.docbook:581
 msgid ""
 "<imageobject> <imagedata fileref=\"i_configure.png\" width=\"32\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:543
+#: docs/handbook/en/docbook/hdbk-reference.docbook:578
 msgid ""
 "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
 ">Settings</guimenu> <guimenuitem>Configure &bibletime;</guimenuitem> </"
@@ -2333,7 +2387,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:555
+#: docs/handbook/en/docbook/hdbk-reference.docbook:590
 msgid ""
 "<action>Opens &bibletime;'s main configuration dialog</action>. You can "
 "configure all kinds of nice settings there to adapt &bibletime; to your "
@@ -2346,14 +2400,14 @@ msgstr ""
 "link> pro více informací."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:575
+#: docs/handbook/en/docbook/hdbk-reference.docbook:610
 msgid ""
 "<imageobject> <imagedata fileref=\"i_configuresword.png\" width=\"32\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:567
+#: docs/handbook/en/docbook/hdbk-reference.docbook:602
 msgid ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F4</keycap> </"
 "keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id="
@@ -2363,7 +2417,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:584
+#: docs/handbook/en/docbook/hdbk-reference.docbook:619
 msgid ""
 "<action>Opens a dialog where you can change your &sword; configuration and "
 "manage your bookshelf</action>. Please see the <link linkend=\"hdbk-op-"
@@ -2374,20 +2428,20 @@ msgstr ""
 "\"hdbk-op-bookshelfmanager\">Správce knihovny</link>."
 
 #. type: Content of: <chapter><sect1><sect2><title>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:595
+#: docs/handbook/en/docbook/hdbk-reference.docbook:630
 msgid "<guimenu>Help</guimenu>"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:608
-#: docs/handbook/en/docbook/hdbk-reference.docbook:632
+#: docs/handbook/en/docbook/hdbk-reference.docbook:643
+#: docs/handbook/en/docbook/hdbk-reference.docbook:667
 msgid ""
 "<imageobject> <imagedata fileref=\"i_contents2.png\" width=\"32\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:600
+#: docs/handbook/en/docbook/hdbk-reference.docbook:635
 msgid ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F1</keycap> </"
 "keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id="
@@ -2396,12 +2450,12 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:617
+#: docs/handbook/en/docbook/hdbk-reference.docbook:652
 msgid "<action>Opens &bibletime;'s user guide</action> You are reading it now."
 msgstr "<action>Otevře příručku &bibletime;</action>, kterou právě čtete."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:624
+#: docs/handbook/en/docbook/hdbk-reference.docbook:659
 msgid ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F2</keycap> </"
 "keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id="
@@ -2411,7 +2465,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:641
+#: docs/handbook/en/docbook/hdbk-reference.docbook:676
 msgid ""
 "<action>Opens a guide on how to study the Bible</action> It is the hope of "
 "the &bibletime; team that this HowTo will provoke the readers to study the "
@@ -2429,14 +2483,14 @@ msgstr ""
 "Páně v srdci, On vás nezklame."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:663
+#: docs/handbook/en/docbook/hdbk-reference.docbook:698
 msgid ""
 "<imageobject> <imagedata fileref=\"i_light_bulb.png\" width=\"22\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:655
+#: docs/handbook/en/docbook/hdbk-reference.docbook:690
 msgid ""
 "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>F3</keycap> </"
 "keycombo> </shortcut> <guimenu> <placeholder type=\"inlinemediaobject\" id="
@@ -2444,7 +2498,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:671
+#: docs/handbook/en/docbook/hdbk-reference.docbook:706
 msgid ""
 "<action>Opens a helpful tip</action> The Tip of the Day provides a useful "
 "tip that will assist in the use of &bibletime;."
@@ -2452,7 +2506,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:679
+#: docs/handbook/en/docbook/hdbk-reference.docbook:714
 #, fuzzy
 #| msgid ""
 #| "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> "
@@ -2466,7 +2520,7 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:686
+#: docs/handbook/en/docbook/hdbk-reference.docbook:721
 msgid ""
 "<action>Opens a window about &bibletime; project information</action> "
 "contains information about &bibletime; software version, project "
@@ -2479,38 +2533,38 @@ msgstr ""
 
 # type: Content of: <chapter><title>
 #. type: Content of: <chapter><sect1><title>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:698
+#: docs/handbook/en/docbook/hdbk-reference.docbook:733
 msgid "Works reference"
 msgstr "Odkazy"
 
 # type: Content of: <chapter><sect1><para>
 #. type: Content of: <chapter><sect1><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:700
+#: docs/handbook/en/docbook/hdbk-reference.docbook:735
 msgid ""
 "In this section you can find descriptions of the icons associated with open "
 "works."
 msgstr "V této sekci najdete popis ikon přiřazených k otevřeným dílům."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:712
+#: docs/handbook/en/docbook/hdbk-reference.docbook:747
 msgid ""
 "<imageobject> <imagedata fileref=\"i_forward.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:709
-#: docs/handbook/en/docbook/hdbk-reference.docbook:732
-#: docs/handbook/en/docbook/hdbk-reference.docbook:755
-#: docs/handbook/en/docbook/hdbk-reference.docbook:778
-#: docs/handbook/en/docbook/hdbk-reference.docbook:801
-#: docs/handbook/en/docbook/hdbk-reference.docbook:824
-#: docs/handbook/en/docbook/hdbk-reference.docbook:847
-#: docs/handbook/en/docbook/hdbk-reference.docbook:870
-#: docs/handbook/en/docbook/hdbk-reference.docbook:893
-#: docs/handbook/en/docbook/hdbk-reference.docbook:916
-#: docs/handbook/en/docbook/hdbk-reference.docbook:939
-#: docs/handbook/en/docbook/hdbk-reference.docbook:962
+#: docs/handbook/en/docbook/hdbk-reference.docbook:744
+#: docs/handbook/en/docbook/hdbk-reference.docbook:767
+#: docs/handbook/en/docbook/hdbk-reference.docbook:790
+#: docs/handbook/en/docbook/hdbk-reference.docbook:813
+#: docs/handbook/en/docbook/hdbk-reference.docbook:836
+#: docs/handbook/en/docbook/hdbk-reference.docbook:859
+#: docs/handbook/en/docbook/hdbk-reference.docbook:882
+#: docs/handbook/en/docbook/hdbk-reference.docbook:905
+#: docs/handbook/en/docbook/hdbk-reference.docbook:928
+#: docs/handbook/en/docbook/hdbk-reference.docbook:951
+#: docs/handbook/en/docbook/hdbk-reference.docbook:974
+#: docs/handbook/en/docbook/hdbk-reference.docbook:997
 msgid ""
 "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/></"
 "guimenu> </menuchoice>"
@@ -2518,12 +2572,12 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:721
+#: docs/handbook/en/docbook/hdbk-reference.docbook:756
 msgid "Scrolls forward through history."
 msgstr "Posouvá vpřed historií."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:735
+#: docs/handbook/en/docbook/hdbk-reference.docbook:770
 msgid ""
 "<imageobject> <imagedata fileref=\"i_back.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
@@ -2531,12 +2585,12 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:744
+#: docs/handbook/en/docbook/hdbk-reference.docbook:779
 msgid "Scrolls back through history."
 msgstr "Posouvá zpět historií."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:758
+#: docs/handbook/en/docbook/hdbk-reference.docbook:793
 msgid ""
 "<imageobject> <imagedata fileref=\"i_bible.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
@@ -2544,12 +2598,12 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:767
+#: docs/handbook/en/docbook/hdbk-reference.docbook:802
 msgid "Select an installed bible."
 msgstr "Vyberte nainstalovanou bibli."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:781
+#: docs/handbook/en/docbook/hdbk-reference.docbook:816
 msgid ""
 "<imageobject> <imagedata fileref=\"i_bible_add.png\" width=\"32\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
@@ -2557,18 +2611,18 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:790
+#: docs/handbook/en/docbook/hdbk-reference.docbook:825
 msgid "Select an additional bible."
 msgstr "Vyberte další bible."
 
 # type: Content of: <chapter><sect1><title>
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:813
+#: docs/handbook/en/docbook/hdbk-reference.docbook:848
 msgid "Search in selected works."
 msgstr "Vyhledávání ve vybraných dílech"
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:827
+#: docs/handbook/en/docbook/hdbk-reference.docbook:862
 msgid ""
 "<imageobject> <imagedata fileref=\"i_displayconfig.png\" width=\"32\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
@@ -2576,12 +2630,12 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><title>
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:836
+#: docs/handbook/en/docbook/hdbk-reference.docbook:871
 msgid "Display configuration."
 msgstr "Nastavení zobrazení"
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:850
+#: docs/handbook/en/docbook/hdbk-reference.docbook:885
 msgid ""
 "<imageobject> <imagedata fileref=\"i_commentary.png\" width=\"32\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
@@ -2589,12 +2643,12 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:859
+#: docs/handbook/en/docbook/hdbk-reference.docbook:894
 msgid "Select an installed commentary."
 msgstr "Vyberte nainstalované komentáře."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:873
+#: docs/handbook/en/docbook/hdbk-reference.docbook:908
 msgid ""
 "<imageobject> <imagedata fileref=\"i_commentary_add.png\" width=\"32\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
@@ -2602,12 +2656,12 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><sect3><title>
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:882
+#: docs/handbook/en/docbook/hdbk-reference.docbook:917
 msgid "Select additional commentary."
 msgstr "Vyberte další komentáře."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:896
+#: docs/handbook/en/docbook/hdbk-reference.docbook:931
 msgid ""
 "<imageobject> <imagedata fileref=\"i_sync.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
@@ -2615,12 +2669,12 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:905
+#: docs/handbook/en/docbook/hdbk-reference.docbook:940
 msgid "Synchronize displayed entry with active Bible window."
 msgstr "Synchronizovat zobrazený údaj s aktivním oknem Bible."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:919
+#: docs/handbook/en/docbook/hdbk-reference.docbook:954
 msgid ""
 "<imageobject> <imagedata fileref=\"i_book.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
@@ -2628,12 +2682,12 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><sect3><title>
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:928
+#: docs/handbook/en/docbook/hdbk-reference.docbook:963
 msgid "Select a book."
 msgstr "Vber knihu."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:942
+#: docs/handbook/en/docbook/hdbk-reference.docbook:977
 msgid ""
 "<imageobject> <imagedata fileref=\"i_lexicon.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
@@ -2641,12 +2695,12 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:951
+#: docs/handbook/en/docbook/hdbk-reference.docbook:986
 msgid "Select an installed glossary or devotional."
 msgstr "Vyberte nainstalovaný glosář nebo modlitbu."
 
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:965
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1000
 msgid ""
 "<imageobject> <imagedata fileref=\"i_lexicon_add.png\" width=\"32\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
@@ -2654,19 +2708,19 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:974
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1009
 msgid "Select an additional glossary or devotional."
 msgstr "Vyberte další glosář nebo modlitbu."
 
 # type: Content of: <chapter><sect1><title>
 #. type: Content of: <chapter><sect1><title>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:984
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1019
 msgid "Shortcuts index"
 msgstr "Seznam horkých kláves"
 
 # type: Content of: <chapter><sect1><para>
 #. type: Content of: <chapter><sect1><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:986
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1021
 msgid ""
 "This is an index of all shortcuts and their corresponding description in the "
 "handbook. The shortcuts are sorted (roughly)  alphabetical. If you want to "
@@ -2684,46 +2738,46 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><thead><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><thead><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1001
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1036
 msgid "Shortcut"
 msgstr "Horká klávesa"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><thead><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><thead><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1002
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1037
 msgid "Description"
 msgstr "Popis"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1008
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1043
 msgid "<keycombo action=\"simul\"> <keycap>&Alt;+Left</keycap></keycombo>"
 msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1011
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1046
 msgid "Moves back in the history of read windows."
 msgstr "Posune zpět v historii aktivního okna."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1015
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1050
 msgid "<keycombo action=\"simul\"> <keycap>&Alt;+Right</keycap></keycombo>"
 msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1018
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1053
 msgid "Moves forward in the history of read windows."
 msgstr "Posune vpřed v historii aktivního okna."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1023
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1058
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+F</keycap></keycombo>"
 msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1027
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1062
 msgid ""
 "<link linkend=\"hdbk-reference-menus-search-defaultbible\"> <menuchoice> "
 "<guimenu>Search</guimenu> <guimenuitem>Search in default bible</guimenuitem> "
@@ -2736,13 +2790,13 @@ msgstr ""
 "bibli."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1038
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1073
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+G</keycap></keycombo>"
 msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1043
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1078
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> <guimenuitem>Auto-tile vertically</guimenuitem> </menuchoice> "
@@ -2753,13 +2807,13 @@ msgstr ""
 "menuchoice> zapnout automatické skládání oken."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1053
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1088
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+H</keycap></keycombo>"
 msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1057
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1092
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> <guimenuitem>Auto-tile horizontally</guimenuitem> </menuchoice> "
@@ -2770,13 +2824,13 @@ msgstr ""
 "menuchoice> zapne automatické skládání oken."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1067
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1102
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+I</keycap></keycombo>"
 msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1072
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1107
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> <guimenuitem>Auto-tile</guimenuitem> </menuchoice> equivalent; "
@@ -2787,13 +2841,13 @@ msgstr ""
 "menuchoice> ekvivalent k zapnout automatické skládání oken."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1082
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1117
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+J</keycap></keycombo>"
 msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1086
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1121
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> <guimenuitem>Auto-cascade</guimenuitem> </menuchoice> "
@@ -2804,13 +2858,13 @@ msgstr ""
 "zapne automatické skládání oken do kaskády."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1096
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1131
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+M</keycap></keycombo>"
 msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1101
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1136
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> <guimenuitem>Manual mode</guimenuitem> </menuchoice> "
@@ -2821,13 +2875,13 @@ msgstr ""
 "manuální skládání oken."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1111
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1146
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+T</keycap></keycombo>"
 msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1115
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1150
 #, fuzzy
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
@@ -2839,13 +2893,13 @@ msgstr ""
 "manuální skládání oken."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1125
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1160
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+S</keycap></keycombo>"
 msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1129
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1164
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-savenewsession\"> <menuchoice> "
 "<guimenu>Window</guimenu> <guimenuitem>Save as new session</guimenuitem> </"
@@ -2856,13 +2910,13 @@ msgstr ""
 "</menuchoice> </link> uloží aktuální náhled jako novou relaci."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1139
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1174
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+&Alt;+W</keycap></keycombo>"
 msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1143
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1178
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-closeall\"> <menuchoice> "
 "<guimenu>Window</guimenu> <guimenuitem>Close all</guimenuitem> </menuchoice> "
@@ -2873,68 +2927,68 @@ msgstr ""
 "</link> zavře všechna otevřená okna."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1152
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1187
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+-</keycap></keycombo>"
 msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1155
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1190
 msgid "Zoom out. This decreases the font size of read windows."
 msgstr "Oddálit. Zmenší velikost písma v aktivním okně."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1160
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1195
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;++</keycap></keycombo>"
 msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1163
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1198
 msgid "Zoom in. This increases the font size of read windows."
 msgstr "Přiblížit. Zvětší velikost písma v aktivním okně."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1168
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1203
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+A</keycap></keycombo>"
 msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1171
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1206
 msgid "Select all. This selects all text in read windows."
 msgstr "Vybrat vše. Vybere všechen text v aktivním okně."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1176
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1211
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+C</keycap></keycombo>"
 msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1179
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1214
 msgid "Copy. This copies the selected text to the clipboard."
 msgstr "Kopírovat. Zkopíruje vybraný text do schránky."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1185
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1220
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+F</keycap></keycombo>"
 msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1188
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1223
 msgid "Search. This lets you search within the text of a read window."
 msgstr "Hledat. Vyhledává v textu aktivního okna"
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1194
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1229
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+G</keycap></keycombo>"
 msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1199
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1234
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-tilevertically\"> <menuchoice> "
 "<guimenu>Window</guimenu> <guimenuitem>Tile vertically</guimenuitem> </"
@@ -2945,13 +2999,13 @@ msgstr ""
 "menuchoice> </link>."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1210
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1245
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+H</keycap></keycombo>"
 msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1215
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1250
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-tilehorizontally\"> <menuchoice> "
 "<guimenu>Window</guimenu> <guimenuitem>Tile horizontally</guimenuitem> </"
@@ -2962,13 +3016,13 @@ msgstr ""
 "menuchoice> </link>."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1226
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1261
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+I</keycap></keycombo>"
 msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1231
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1266
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-tile\"> <menuchoice> "
 "<guimenu>Window</guimenu> <guimenuitem>Tile</guimenuitem> </menuchoice> </"
@@ -2979,13 +3033,13 @@ msgstr ""
 "</link> ekvivalent oken."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1242
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1277
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+J</keycap></keycombo>"
 msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1247
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1282
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-cascade\"> <menuchoice> "
 "<guimenu>Window</guimenu> <guimenuitem>Cascade</guimenuitem> </menuchoice> </"
@@ -2996,36 +3050,36 @@ msgstr ""
 "link> obdoba oken."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1258
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1293
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+L</keycap></keycombo>"
 msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1261
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1296
 msgid ""
 "Change location. Changes focus to the toolbar field for the selected work."
 msgstr "Změnit umístění. Pro vybrané dílo změní zaměření na nástrojovou lištu."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1267
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1302
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+N</keycap></keycombo>"
 msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1270
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1305
 msgid "Search with works of this window."
 msgstr "Vyhledávat s díly tohoto okna."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1275
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1310
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+O</keycap></keycombo>"
 msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1279
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1314
 msgid ""
 "<link linkend=\"hdbk-reference-menus-search-openworks\"> <menuchoice> "
 "<guimenu>Search</guimenu> <guimenuitem>Search in open work(s)</guimenuitem> "
@@ -3038,13 +3092,13 @@ msgstr ""
 "otevřených dílech."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1290
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1325
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+Q</keycap></keycombo>"
 msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1294
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1329
 msgid ""
 "<link linkend=\"hdbk-reference-menus-file-quit\"> <menuchoice> "
 "<guimenu>File</guimenu> <guimenuitem>Quit</guimenuitem> </menuchoice> </"
@@ -3055,24 +3109,24 @@ msgstr ""
 "link> ukončí &bibletime;."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1303
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1338
 msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+W</keycap></keycombo>"
 msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1306
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1341
 msgid "Closes the current window."
 msgstr "Zavře aktuální okno."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1310
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1345
 msgid "<keycombo action=\"simul\"> <keycap>F1</keycap> </keycombo>"
 msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1315
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1350
 msgid ""
 "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> </"
 "menuchoice> equivalent; opens the handbook."
@@ -3081,13 +3135,13 @@ msgstr ""
 "</menuchoice> otevře příručku."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1323
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1358
 msgid "<keycombo action=\"simul\"> <keycap>F2</keycap> </keycombo>"
 msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1328
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1363
 #, fuzzy
 msgid ""
 "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy HowTo</"
@@ -3097,13 +3151,13 @@ msgstr ""
 "Bibli</guimenuitem> </menuchoice> otevře Návod, jak studovat Bibli."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1337
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1372
 msgid "<keycombo action=\"simul\"> <keycap>F3</keycap> </keycombo>"
 msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1342
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1377
 #, fuzzy
 #| msgid ""
 #| "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> "
@@ -3116,13 +3170,13 @@ msgstr ""
 "</menuchoice> otevře příručku."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1350
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1385
 msgid "<keycombo action=\"simul\"> <keycap>F4</keycap> </keycombo>"
 msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1355
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1390
 msgid ""
 "<link linkend=\"hdbk-reference-menus-settings-bookshelf_manager\"> "
 "<menuchoice> <guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</"
@@ -3133,13 +3187,13 @@ msgstr ""
 "guimenuitem> </menuchoice> </link>otevře správce knih."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1365
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1400
 msgid "<keycombo action=\"simul\"> <keycap>F8</keycap> </keycombo>"
 msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1370
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1405
 msgid ""
 "<link linkend=\"hdbk-reference-menus-view-showbookshelf\"> <menuchoice> "
 "<guimenu>View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem> </"
@@ -3150,13 +3204,13 @@ msgstr ""
 "menuchoice> </link>zapne zobrazení knihovny."
 
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1380
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1415
 msgid "<keycombo action=\"simul\"> <keycap>F9</keycap> </keycombo>"
 msgstr ""
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1385
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1420
 msgid ""
 "<link linkend=\"hdbk-reference-menus-view-showmag\"> <menuchoice> "
 "<guimenu>View</guimenu> <guimenuitem>Show mag</guimenuitem> </menuchoice> </"
@@ -3427,7 +3481,7 @@ msgstr ""
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:44
 msgid ""
-"<copyright> <year>1999-2011</year> <holder>The &bibletime; Team</holder> </"
+"<copyright> <year>1999-2012</year> <holder>The &bibletime; Team</holder> </"
 "copyright>"
 msgstr ""
 
@@ -3441,12 +3495,12 @@ msgstr "Příručka &bibletime; je součástí &bibletime; studijní nápovědy.
 
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:54
-msgid "<date>January 2011</date>"
+msgid "<date>January 2012</date>"
 msgstr ""
 
 #. type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:56
-msgid "2.9.0"
+msgid "2.9.2"
 msgstr ""
 
 # type: Content of: <book><bookinfo><abstract><para>
@@ -3488,81 +3542,5 @@ msgstr ""
 msgid "Help dialog"
 msgstr ""
 
-# type: Content of: <book><bookinfo><releaseinfo>
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #, fuzzy
-#~ msgid "2.9"
-#~ msgstr "2.5"
-
-# type: Content of: <chapter><sect1><sect2><mediaobject><textobject>
-#~ msgid "<phrase>Options Dialog - fonts</phrase>"
-#~ msgstr "<phrase>Dialog nastavení - písma</phrase>"
-
-# type: Content of: <chapter><sect1><para>
-#~ msgid "This is what a typical &bibletime; session looks like:"
-#~ msgstr "Takto vypadá typická relace &bibletime;:"
-
-# type: Content of: <chapter><sect1><para><mediaobject><textobject>
-#~ msgid "<phrase>The &bibletime; application window</phrase>"
-#~ msgstr "<phrase>Okno aplikace &bibletime;</phrase>"
-
-# type: Content of: <chapter><sect1><sect2><sect3><para>
-#~ msgid "Available text types:"
-#~ msgstr "Dostupné předpony:"
-
-# type: Content of: <chapter><sect1><sect2><para>
-#~ msgid ""
-#~ "From a terminal you can use &bibletime; to open a random verse in the "
-#~ "default bible:"
-#~ msgstr ""
-#~ "Z terminálu můžete použít &bibletime; k otevření příslušného verše ve "
-#~ "výchozí bibli:"
-
-# type: Content of: <chapter><sect1><sect2><para>
-#~ msgid "To open at a given passage like John 3:16, use:"
-#~ msgstr "Pro otevření v dané pasáži, jako například Jan 3:16, použijte:"
-
-# type: Content of: <chapter><sect1><sect2><para>
-#~ msgid "You can also use booknames in your current bookname language."
-#~ msgstr ""
-#~ "Můžete použít jména knih ve svém aktuálním jazyce pro pojmenování knih."
-
-# type: Content of: <book><bookinfo><copyright><holder>
-#~ msgid "The &bibletime; Team"
-#~ msgstr "Tým &bibletime;"
-
-# type: Content of the sword entity
-#~ msgid "<application>Sword</application>"
-#~ msgstr "<application>Sword</application>"
-
-# type: Content of: <chapter><sect1><title>
-#~ msgid "Startup sequence"
-#~ msgstr "Spouštěcí sekvence."
-
-# type: Content of: <chapter><sect1><para>
-#~ msgid ""
-#~ "As &bibletime; launches you may see the following screens before the main "
-#~ "&bibletime; window opens:"
-#~ msgstr ""
-#~ "Když se &bibletime; spouští, můžete vidět následující obrazovky předtím, "
-#~ "než se otevře hlavní okno &bibletime;:"
-
-# type: Content of: <book><bookinfo><abstract><para>
-#~ msgid "&bibletime; is a Bible study tool based on the &sword; framework."
-#~ msgstr ""
-#~ "&bibletime; je nástroj pro studium Bible založený na frameworku &sword;."
-
-# type: Content of: <book><bookinfo><date>
-#, fuzzy
-#~ msgid "2009-10"
-#~ msgstr "2009-04"
-
-# type: Content of: <chapter><sect1><sect2><sect3><para>
-#~ msgid ""
-#~ "Enter search terms separated by spaces. By default the search function "
-#~ "will return results that match any of the search terms (OR). To search "
-#~ "for all the terms separate the terms by AND."
-#~ msgstr ""
-#~ "Vložte výrazy a oddělte je mezerami. Při výchozím nastavení, vyhledávání "
-#~ "vrátí výsledky, které odpovídají libovolnému z vyhledávaných výrazů "
-#~ "(logická spojka NEBO). pro vyhledání všech výrazů oddělte jednotlivá "
-#~ "slova spojkou AND."

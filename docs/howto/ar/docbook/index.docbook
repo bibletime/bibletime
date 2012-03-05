@@ -1,5 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+ "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd"
+[
   <!ENTITY bibletime '<application>بيبل تايم</application>'>
   <!ENTITY kapp "دليل استخدام بيبل تايم">
   <!ENTITY % addindex "IGNORE">
@@ -7,66 +9,46 @@
   <!ENTITY howto-chap2 SYSTEM "howto-basics.docbook">
   <!ENTITY howto-chap3 SYSTEM "howto-interpretation.docbook">
 ]>
-
 <book>
-
 <bookinfo>
-	<title>كيفية دراسة الكتاب المقدس</title>
-	
-	<authorgroup>
-		<author>
-			<firstname>بوب</firstname>
-			<surname>هارمان</surname>
-		</author>
-		<author>
-			<firstname></firstname>
-			<surname>فريق بيبل تايم</surname>
-		</author>
-	</authorgroup>
-	
-	
-	
-	<!-- TRANS:ROLES_OF_TRANSLATORS -->
-<copyright> <year>2001-2009</year> <holder>فريق بيبل تايم ;
-(info@bibletime.info)</holder> </copyright>
-	
-	<legalnotice>
-		<para>
-			كتبت هذه الوثيقة بواسطة السيد/ بوب هارمان ومرخصة بموجب شروط الترخيص <link
+  <title>كيفية دراسة الكتاب المقدس</title>
+  <authorgroup>
+    <author>
+      <firstname>بوب</firstname>
+      <surname>هارمان</surname>
+    </author>
+    <author>
+      <firstname></firstname>
+      <surname>The BibleTime Team</surname>
+    </author>
+  </authorgroup>
+  
+  <!-- TRANS:ROLES_OF_TRANSLATORS -->
+<copyright> <year>2001-2012</year> <holder>The &bibletime; Team
+(bt-devel@crosswire.org)</holder> </copyright>
+  <legalnotice>
+    <para>This document was originally created by Mr. Bob Harman and is licensed under
+the terms of the license <ulink
 url="http://creativecommons.org/licenses/by-sa/3.0/"> "Creative Commons
-Attribution-Share Alike"</link>.
-		</para>
-		<para>
-			نصوص الكتاب المقدس العربية مقتبسة من ترجمة سميث فان دايك مالم يذكر غير ذلك.
-		</para>
-	</legalnotice>
-	
-	<abstract>
-		<title>تلخيص</title>
-		
-		<para>
-			<application>كيفية دراسة الكتاب المقدس</application> .هو دليل لدراسة الكتاب
-المقدس
-		</para>
-		<para>
-			يتمنى فريق بيبل تايم أن يكون "كيفية دراسة الكتاب المقدس" سبباً في تشجيع
-القراء على دراسة الكتاب المقدس والتعرف إلى تعاليمه. لقد تم إختيار هذا الدليل
-بشكل خاص لحرصه على البعد عن الدعوة لأفكار تخص مذهب معين بذاته. نشجعكم على
-قراءة ودراسة الكتاب المقدس لفهم ما يقوله. إذا بدأت وأنت تشتاق إلى أن يزرع
-الرب كلمته بقلبك فهو لن يدعك تخذل.
-		</para>
-	</abstract>
-	
-	<keywordset>
-		<keyword>الكتاب المقدس</keyword>
-		<keyword>ادرس</keyword>
-		<keyword>كيفية دراسة</keyword>
-	</keywordset>
-
+Attribution-Share Alike"</ulink>.</para>
+    <para>نصوص الكتاب المقدس العربية مقتبسة من ترجمة سميث فان دايك مالم يذكر غير ذلك.</para>
+  </legalnotice>
+  <abstract>
+    <title>تلخيص</title>
+    <para>The <application>Biblestudy HowTo</application> is a guide for studying the
+Bible.</para>
+    <para>It is the hope of the &bibletime; team that this HowTo will provoke the
+readers to study the scriptures to see what they say. This particular study
+guide has been chosen as it takes care not to advocate any particular
+denominational doctrine. We recommend you to read and study the scriptures
+to understand what they say. If you start with the attitude that you want to
+have the Lord sow his word in your heart He will not disappoint you.</para>
+  </abstract>
+  <keywordset>
+    <keyword>الكتاب المقدس</keyword>
+    <keyword>ادرس</keyword>
+    <keyword>كيفية دراسة</keyword>
+  </keywordset>
 </bookinfo>
-
-&howto-chap1;
-&howto-chap2;
-&howto-chap3;
-
+&howto-chap1; &howto-chap2; &howto-chap3;
 </book>

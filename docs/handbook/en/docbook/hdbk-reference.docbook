@@ -93,7 +93,12 @@
         <varlistentry id="hdbk-reference-menus-view-showbookshelf">
           <term>
             <menuchoice>
-              <guimenu>View</guimenu>
+              <guimenu>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="i_books.png" width="32" depth="32" format="PNG" />
+                </imageobject>
+              </inlinemediaobject>View</guimenu>
               <guimenuitem>Show Bookshelf</guimenuitem>
             </menuchoice>
           </term>
@@ -109,7 +114,12 @@
         <varlistentry id="hdbk-reference-menus-view-showbookmarks">
           <term>
             <menuchoice>
-              <guimenu>View</guimenu>
+              <guimenu>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="i_bookmark.png" width="32" depth="32" format="PNG" />
+                </imageobject>
+              </inlinemediaobject>View</guimenu>
               <guimenuitem>Show Bookmarks</guimenuitem>
             </menuchoice>
           </term>
@@ -125,7 +135,12 @@
         <varlistentry id="hdbk-reference-menus-view-showmag">
           <term>
             <menuchoice>
-              <guimenu>View</guimenu>
+              <guimenu>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="i_document_magnifier.png" width="32" depth="32" format="PNG" />
+                </imageobject>
+              </inlinemediaobject>View</guimenu>
               <guimenuitem>Show Mag</guimenuitem>
             </menuchoice>
           </term>
@@ -134,6 +149,26 @@
             <action>Toggles display of the Mag(nifying
             glass).</action> Toggle this setting to turn the Mag on the
             left pane on or off.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry id="hdbk-reference-menus-view-showparalleltextheaders">
+          <term>
+            <menuchoice>
+              <guimenu>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="i_checkbox.png" width="32" depth="32" format="PNG" />
+                </imageobject>
+              </inlinemediaobject>View</guimenu>
+              <guimenuitem>Show parallel text headers</guimenuitem>
+            </menuchoice>
+          </term>
+          <listitem>
+            <para>
+            <action>Toggles viewing of additional works</action> Toggle this
+	    setting to allow you to view additional works in parallel
+	    to your current open books.</para>
           </listitem>
         </varlistentry>
 

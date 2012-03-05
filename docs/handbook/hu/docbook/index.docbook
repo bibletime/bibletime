@@ -42,16 +42,16 @@
   </authorgroup>
   
   <!-- TRANS:ROLES_OF_TRANSLATORS -->
-<copyright> <year>1999-2011</year> <holder>The &bibletime; Team</holder>
+<copyright> <year>1999-2012</year> <holder>The &bibletime; Team</holder>
 </copyright>
 
   <legalnotice>
     <para>A &bibletime; kézikönyv a &bibletime; programmal együtt terjesztve.</para>
   </legalnotice>
 
-  <date>Január 2011</date>
+  <date>January 2012</date>
 
-  <releaseinfo>2.9.0</releaseinfo>
+  <releaseinfo>2.9.2</releaseinfo>
 
   <abstract>
     <para>A &bibletime; egy teljesen ingyenes és szabad Biblia tanulmányozó program. A

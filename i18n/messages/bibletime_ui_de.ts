@@ -6,7 +6,7 @@
     <message>
         <source></source>
         <translatorcomment>Bibletime User Interface translation
-Copyright (C) 2010 The Bibletime Team, http://www.bibletime.info
+Copyright (C) 2012 The Bibletime Team, http://www.bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
         <translation></translation>
     </message>
@@ -54,7 +54,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>&amp;Save session</source>
-        <translation>Sitzung &amp;speichern</translation>
+        <translation type="obsolete">Sitzung &amp;speichern</translation>
     </message>
     <message>
         <source>&amp;Load session</source>
@@ -380,6 +380,14 @@ This file is distributed under the same license as the Bibetime package.</transl
         <source>Toggle visibility of the mag window</source>
         <translation>Umschalten der Sichtbarkeit des Lupen-Fensters</translation>
     </message>
+    <message>
+        <source>Session already exists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Session with the name &quot;%1&quot; already exists. Please provide a different name.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BibleTimeApp</name>
@@ -694,6 +702,56 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <source>Select chapter</source>
         <translation>Kapitel auswählen</translation>
+    </message>
+</context>
+<context>
+    <name>BtConfig</name>
+    <message>
+        <source>Old testament</source>
+        <translation type="unfinished">Altes Testament</translation>
+    </message>
+    <message>
+        <source>Moses/Pentateuch/Torah</source>
+        <translation type="unfinished">Mose/Pentateuch/Torah</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation type="unfinished">Geschichte</translation>
+    </message>
+    <message>
+        <source>Prophets</source>
+        <translation type="unfinished">Propheten</translation>
+    </message>
+    <message>
+        <source>New testament</source>
+        <translation type="unfinished">Neues Testament</translation>
+    </message>
+    <message>
+        <source>Gospels</source>
+        <translation type="unfinished">Evangelien</translation>
+    </message>
+    <message>
+        <source>Letters/Epistles</source>
+        <translation type="unfinished">Briefe/Episteln</translation>
+    </message>
+    <message>
+        <source>Paul&apos;s Epistles</source>
+        <translation type="unfinished">Paulus-Briefe</translation>
+    </message>
+    <message>
+        <source>Error loading configuration!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to load BibleTime&apos;s configuration, because it appears that the configuration file corresponds to a newer version of BibleTime. This is likely caused by BibleTime being downgraded. Loading the new configuration file may result in &lt;b&gt;loss of data&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Do you still want to try to load the new configuration file? Press &quot;No&quot; to quit BibleTime immediately.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>BtConfigCore</name>
+    <message>
+        <source>Default Session</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1482,6 +1540,124 @@ shortcut</source>
     <message>
         <source>No sources were found in the SWORD configuration and BibleTime couldn&apos;t create a default source. Check your SWORD configuration and that the configuration path is writable. Then restart the Bookshelf Manager.</source>
         <translation type="obsolete">In der SWORD-Konfiguration wurden keine Quellen gefunden und BibleTime konnte keine Standard-Quelle erstellen. Überprüfen Sie Ihre SWORD-Konfiguration und dass der Konfigurations-Pfad beschreibbar ist. Dann starten Sie die Bücherregal-Verwaltung erneut.</translation>
+    </message>
+</context>
+<context>
+    <name>BtStandardWorksTab</name>
+    <message>
+        <source>Bible:</source>
+        <translation>Bibel:</translation>
+    </message>
+    <message>
+        <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
+        <translation>Die Standard-Bibel wird genutzt, wenn ein Verweis auf eine Bibel betätigt wird</translation>
+    </message>
+    <message>
+        <source>Commentary:</source>
+        <translation>Kommentar:</translation>
+    </message>
+    <message>
+        <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
+        <translation>Der Standard-Kommentar wird genutzt, wenn ein Verweis auf einen Kommentar betätigt wird</translation>
+    </message>
+    <message>
+        <source>Lexicon:</source>
+        <translation>Lexikon:</translation>
+    </message>
+    <message>
+        <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
+        <translation>Das Standard-Lexikon wird genutzt, wenn ein Verweis auf ein Lexikon betätigt wird</translation>
+    </message>
+    <message>
+        <source>Daily devotional:</source>
+        <translation>Andachtsbuch:</translation>
+    </message>
+    <message>
+        <source>The standard devotional will be used to display a short start up devotional</source>
+        <translation>Die Standard-Andacht wird für die Anzeige einer kurzen Start-Andacht genutzt</translation>
+    </message>
+    <message>
+        <source>Hebrew Strong&apos;s lexicon:</source>
+        <translation>Hebräisches Strong-Lexikon:</translation>
+    </message>
+    <message>
+        <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
+        <translation>Das Standard-Hebräisch-Lexikon wird genutzt, wenn ein Verweis auf ein Hebräisch-Lexikon betätigt wird</translation>
+    </message>
+    <message>
+        <source>Greek Strong&apos;s lexicon:</source>
+        <translation>Griechisches Strong-Lexikon:</translation>
+    </message>
+    <message>
+        <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
+        <translation>Das Standard-Griechisch-Lexikon wird genutzt, wenn ein Verweis auf ein Griechisch-Lexikon betätigt wird</translation>
+    </message>
+    <message>
+        <source>Hebrew morphological lexicon:</source>
+        <translation>Hebräisches Morphologie-Lexikon:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
+        <translation>Das Standard-Morphologie-Lexikon für hebräische Texte wird genutzt, wenn ein Verweis auf eine morphologische Markierung in einem Hebräisch-Text betätigt wird</translation>
+    </message>
+    <message>
+        <source>Greek morphological lexicon:</source>
+        <translation>Griechisches Morphologie-Lexikon:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
+        <translation>Das Standard-Morphologie-Lexikon für griechische Texte wird genutzt, wenn ein Verweis auf eine morphologische Markierung in einem Griechisch-Text betätigt wird</translation>
+    </message>
+    <message>
+        <source></source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
+        <translation>Standard-Werke werden genutzt, wenn kein bestimmtes Werk festgelegt wurde, zum Beispiel wenn ein Verweis auf eine Bibel oder ein Lexikon angeklickt wurde.</translation>
+    </message>
+</context>
+<context>
+    <name>BtTextFiltersTab</name>
+    <message>
+        <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
+        <translation type="unfinished">Filter kontrollieren die Text-Erscheinung. Hier können Sie Standard-Einstellungen für alle Filter spezifizieren. Sie können diese Einstellungen in jedem Anzeige-Fenster übergehen.</translation>
+    </message>
+    <message>
+        <source>Insert line break after each verse</source>
+        <translation type="unfinished">Zeilenumbruch nach jedem Vers einfügen</translation>
+    </message>
+    <message>
+        <source>Show verse numbers</source>
+        <translation type="unfinished">Versnummern anzeigen</translation>
+    </message>
+    <message>
+        <source>Show section headings</source>
+        <translation type="unfinished">Abschnittsüberschriften anzeigen</translation>
+    </message>
+    <message>
+        <source>Show scripture cross-references</source>
+        <translation type="unfinished">Querverweise auf Bibelstellen anzeigen</translation>
+    </message>
+    <message>
+        <source>Show Greek accents</source>
+        <translation type="unfinished">Griechische Akzente anzeigen</translation>
+    </message>
+    <message>
+        <source>Show Hebrew vowel points</source>
+        <translation type="unfinished">Hebräische Vokalzeichen anzeigen</translation>
+    </message>
+    <message>
+        <source>Show Hebrew cantillation marks</source>
+        <translation type="unfinished">Hebräische Kantillationszeichen anzeigen</translation>
+    </message>
+    <message>
+        <source>Show morph segmentation</source>
+        <translation type="unfinished">Morphologische Segmentierung anzeigen</translation>
+    </message>
+    <message>
+        <source>Use textual variants</source>
+        <translation type="unfinished">Textvarianten verwenden</translation>
     </message>
 </context>
 <context>
@@ -3139,35 +3315,35 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Old testament</source>
-        <translation>Altes Testament</translation>
+        <translation type="obsolete">Altes Testament</translation>
     </message>
     <message>
         <source>Moses/Pentateuch/Torah</source>
-        <translation>Mose/Pentateuch/Torah</translation>
+        <translation type="obsolete">Mose/Pentateuch/Torah</translation>
     </message>
     <message>
         <source>History</source>
-        <translation>Geschichte</translation>
+        <translation type="obsolete">Geschichte</translation>
     </message>
     <message>
         <source>Prophets</source>
-        <translation>Propheten</translation>
+        <translation type="obsolete">Propheten</translation>
     </message>
     <message>
         <source>New testament</source>
-        <translation>Neues Testament</translation>
+        <translation type="obsolete">Neues Testament</translation>
     </message>
     <message>
         <source>Gospels</source>
-        <translation>Evangelien</translation>
+        <translation type="obsolete">Evangelien</translation>
     </message>
     <message>
         <source>Letters/Epistles</source>
-        <translation>Briefe/Episteln</translation>
+        <translation type="obsolete">Briefe/Episteln</translation>
     </message>
     <message>
         <source>Paul&apos;s Epistles</source>
-        <translation>Paulus-Briefe</translation>
+        <translation type="obsolete">Paulus-Briefe</translation>
     </message>
     <message>
         <source>HTML files</source>
@@ -4243,121 +4419,46 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     </message>
 </context>
 <context>
-    <name>StandardWorksTab</name>
-    <message>
-        <source>Bible:</source>
-        <translation>Bibel:</translation>
-    </message>
-    <message>
-        <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
-        <translation>Die Standard-Bibel wird genutzt, wenn ein Verweis auf eine Bibel betätigt wird</translation>
-    </message>
-    <message>
-        <source>Commentary:</source>
-        <translation>Kommentar:</translation>
-    </message>
-    <message>
-        <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
-        <translation>Der Standard-Kommentar wird genutzt, wenn ein Verweis auf einen Kommentar betätigt wird</translation>
-    </message>
-    <message>
-        <source>Lexicon:</source>
-        <translation>Lexikon:</translation>
-    </message>
-    <message>
-        <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
-        <translation>Das Standard-Lexikon wird genutzt, wenn ein Verweis auf ein Lexikon betätigt wird</translation>
-    </message>
-    <message>
-        <source>Daily devotional:</source>
-        <translation>Andachtsbuch:</translation>
-    </message>
-    <message>
-        <source>The standard devotional will be used to display a short start up devotional</source>
-        <translation>Die Standard-Andacht wird für die Anzeige einer kurzen Start-Andacht genutzt</translation>
-    </message>
-    <message>
-        <source>Hebrew Strong&apos;s lexicon:</source>
-        <translation>Hebräisches Strong-Lexikon:</translation>
-    </message>
-    <message>
-        <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
-        <translation>Das Standard-Hebräisch-Lexikon wird genutzt, wenn ein Verweis auf ein Hebräisch-Lexikon betätigt wird</translation>
-    </message>
-    <message>
-        <source>Greek Strong&apos;s lexicon:</source>
-        <translation>Griechisches Strong-Lexikon:</translation>
-    </message>
-    <message>
-        <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
-        <translation>Das Standard-Griechisch-Lexikon wird genutzt, wenn ein Verweis auf ein Griechisch-Lexikon betätigt wird</translation>
-    </message>
-    <message>
-        <source>Hebrew morphological lexicon:</source>
-        <translation>Hebräisches Morphologie-Lexikon:</translation>
-    </message>
-    <message>
-        <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
-        <translation>Das Standard-Morphologie-Lexikon für hebräische Texte wird genutzt, wenn ein Verweis auf eine morphologische Markierung in einem Hebräisch-Text betätigt wird</translation>
-    </message>
-    <message>
-        <source>Greek morphological lexicon:</source>
-        <translation>Griechisches Morphologie-Lexikon:</translation>
-    </message>
-    <message>
-        <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
-        <translation>Das Standard-Morphologie-Lexikon für griechische Texte wird genutzt, wenn ein Verweis auf eine morphologische Markierung in einem Griechisch-Text betätigt wird</translation>
-    </message>
-    <message>
-        <source></source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
-        <translation>Standard-Werke werden genutzt, wenn kein bestimmtes Werk festgelegt wurde, zum Beispiel wenn ein Verweis auf eine Bibel oder ein Lexikon angeklickt wurde.</translation>
-    </message>
-</context>
-<context>
     <name>TextFiltersTab</name>
     <message>
         <source>Insert line break after each verse</source>
-        <translation>Zeilenumbruch nach jedem Vers einfügen</translation>
+        <translation type="obsolete">Zeilenumbruch nach jedem Vers einfügen</translation>
     </message>
     <message>
         <source>Show verse numbers</source>
-        <translation>Versnummern anzeigen</translation>
+        <translation type="obsolete">Versnummern anzeigen</translation>
     </message>
     <message>
         <source>Show section headings</source>
-        <translation>Abschnittsüberschriften anzeigen</translation>
+        <translation type="obsolete">Abschnittsüberschriften anzeigen</translation>
     </message>
     <message>
         <source>Show scripture cross-references</source>
-        <translation>Querverweise auf Bibelstellen anzeigen</translation>
+        <translation type="obsolete">Querverweise auf Bibelstellen anzeigen</translation>
     </message>
     <message>
         <source>Show Greek accents</source>
-        <translation>Griechische Akzente anzeigen</translation>
+        <translation type="obsolete">Griechische Akzente anzeigen</translation>
     </message>
     <message>
         <source>Show Hebrew vowel points</source>
-        <translation>Hebräische Vokalzeichen anzeigen</translation>
+        <translation type="obsolete">Hebräische Vokalzeichen anzeigen</translation>
     </message>
     <message>
         <source>Show Hebrew cantillation marks</source>
-        <translation>Hebräische Kantillationszeichen anzeigen</translation>
+        <translation type="obsolete">Hebräische Kantillationszeichen anzeigen</translation>
     </message>
     <message>
         <source>Show morph segmentation</source>
-        <translation>Morphologische Segmentierung anzeigen</translation>
+        <translation type="obsolete">Morphologische Segmentierung anzeigen</translation>
     </message>
     <message>
         <source>Use textual variants</source>
-        <translation>Textvarianten verwenden</translation>
+        <translation type="obsolete">Textvarianten verwenden</translation>
     </message>
     <message>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
-        <translation>Filter kontrollieren die Text-Erscheinung. Hier können Sie Standard-Einstellungen für alle Filter spezifizieren. Sie können diese Einstellungen in jedem Anzeige-Fenster übergehen.</translation>
+        <translation type="obsolete">Filter kontrollieren die Text-Erscheinung. Hier können Sie Standard-Einstellungen für alle Filter spezifizieren. Sie können diese Einstellungen in jedem Anzeige-Fenster übergehen.</translation>
     </message>
     <message>
         <source></source>

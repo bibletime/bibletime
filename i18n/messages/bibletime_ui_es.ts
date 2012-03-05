@@ -6,7 +6,7 @@
     <message>
         <source></source>
         <translatorcomment>Bibletime User Interface translation
-Copyright (C) 2010 The Bibletime Team, http://www.bibletime.info
+Copyright (C) 2012 The Bibletime Team, http://www.bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
         <translation></translation>
     </message>
@@ -22,452 +22,461 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BibleTime</name>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="722"/>
+        <location filename="../../src/bibletime_init.cpp" line="714"/>
         <source>&amp;File</source>
         <translation>&amp;Archivo</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="723"/>
+        <location filename="../../src/bibletime_init.cpp" line="715"/>
         <source>&amp;View</source>
         <translation>&amp;Ver</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="726"/>
+        <location filename="../../src/bibletime_init.cpp" line="718"/>
         <source>&amp;Search</source>
         <translation>&amp;Buscar</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="727"/>
+        <location filename="../../src/bibletime_init.cpp" line="719"/>
         <source>&amp;Window</source>
         <translation>V&amp;entana</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="733"/>
+        <location filename="../../src/bibletime_init.cpp" line="724"/>
         <source>Se&amp;ttings</source>
         <translation>Pre&amp;ferencias</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="734"/>
+        <location filename="../../src/bibletime_init.cpp" line="725"/>
         <source>&amp;Help</source>
         <translation>A&amp;yuda</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="122"/>
+        <location filename="../../src/bibletime_init.cpp" line="119"/>
         <source>&amp;Show toolbar</source>
         <translation>&amp;Mostrar Barra de Herramientas</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="115"/>
+        <location filename="../../src/bibletime_init.cpp" line="112"/>
         <source>&amp;Fullscreen mode</source>
         <translation>Modo de &amp;pantalla completa</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="108"/>
+        <location filename="../../src/bibletime_init.cpp" line="105"/>
         <source>&amp;Quit</source>
         <translation>&amp;Salir</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="255"/>
+        <location filename="../../src/bibletime_init.cpp" line="252"/>
         <source>Open the Bible study HowTo included with BibleTime.&lt;br/&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
         <translation>Abra el tutorial para el estudio de la Biblia incluido en BibleTime.&lt;br/&gt;Este tutorial es una introducción de cómo estudiar la Biblia de manera eficiente.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="260"/>
+        <location filename="../../src/bibletime_init.cpp" line="257"/>
         <source>Information about the BibleTime program</source>
         <translation>Información acerca de BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="730"/>
         <source>&amp;Save session</source>
-        <translation>&amp;Guardar sesión</translation>
+        <translation type="obsolete">&amp;Guardar sesión</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="731"/>
+        <location filename="../../src/bibletime_init.cpp" line="722"/>
         <source>&amp;Load session</source>
         <translation>&amp;Cargar sesión</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="732"/>
+        <location filename="../../src/bibletime_init.cpp" line="723"/>
         <source>&amp;Delete session</source>
         <translation>&amp;Eliminar sesión</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="729"/>
+        <location filename="../../src/bibletime_init.cpp" line="721"/>
         <source>&amp;Arrangement mode</source>
         <translation>Modo de arre&amp;glo</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="148"/>
+        <location filename="../../src/bibletime_init.cpp" line="145"/>
         <source>&amp;Manual mode</source>
         <translation>&amp;Modo manual</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="155"/>
+        <location filename="../../src/bibletime_init.cpp" line="152"/>
         <source>Auto-tile &amp;vertically</source>
         <translation>Mosaico automatico &amp;Vertical</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="162"/>
+        <location filename="../../src/bibletime_init.cpp" line="159"/>
         <source>Auto-tile &amp;horizontally</source>
         <translation>Mosaico automatico &amp;horizontal</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="183"/>
+        <location filename="../../src/bibletime_init.cpp" line="180"/>
         <source>Auto-&amp;cascade</source>
         <translation>&amp;Cascada Automática</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="190"/>
+        <location filename="../../src/bibletime_init.cpp" line="187"/>
         <source>&amp;Cascade</source>
         <translation>En &amp;cascada</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="204"/>
+        <location filename="../../src/bibletime_init.cpp" line="201"/>
         <source>Tile &amp;vertically</source>
         <translation>Mosaico &amp;vertical</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="211"/>
+        <location filename="../../src/bibletime_init.cpp" line="208"/>
         <source>Tile &amp;horizontally</source>
         <translation>Mosaico &amp;horizontal</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="225"/>
+        <location filename="../../src/bibletime_init.cpp" line="222"/>
         <source>Cl&amp;ose all windows</source>
         <translation>Ce&amp;rrar todas las ventanas</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="228"/>
+        <location filename="../../src/bibletime_init.cpp" line="225"/>
         <source>Close all open windows inside BibleTime</source>
         <translation>Cerrar todas las ventanas abiertas dentro de BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="245"/>
+        <location filename="../../src/bibletime_init.cpp" line="242"/>
         <source>&amp;Handbook</source>
         <translation>&amp;Manual de referencia</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="252"/>
+        <location filename="../../src/bibletime_init.cpp" line="249"/>
         <source>&amp;Bible Study Howto</source>
         <translation>Cómo estudiar la &amp;Biblia</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="559"/>
+        <location filename="../../src/bibletime_slots.cpp" line="594"/>
         <source>Please enter a name for the new session.</source>
         <translation>Por favor, introduzca un nombre para la sesión nueva.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="111"/>
+        <location filename="../../src/bibletime_slots.cpp" line="602"/>
+        <source>Session already exists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_slots.cpp" line="603"/>
+        <source>Session with the name &quot;%1&quot; already exists. Please provide a different name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="108"/>
         <source>Quit BibleTime</source>
         <translation>Salir de BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="118"/>
+        <location filename="../../src/bibletime_init.cpp" line="115"/>
         <source>Toggle fullscreen mode of the main window</source>
         <translation>Cambiar a pantalla completa</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="127"/>
+        <location filename="../../src/bibletime_init.cpp" line="124"/>
         <source>Search in &amp;open works...</source>
         <translation>Buscar en A&amp;brir obras...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="134"/>
+        <location filename="../../src/bibletime_init.cpp" line="131"/>
         <source>Search in standard &amp;Bible...</source>
         <translation>Buscar en &amp;Biblia Estandar...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="141"/>
+        <location filename="../../src/bibletime_init.cpp" line="138"/>
         <source>Save as &amp;new session...</source>
         <translation>Guardar como.&amp;Nueva Sesión...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="144"/>
+        <location filename="../../src/bibletime_init.cpp" line="141"/>
         <source>Create and save a new session</source>
         <translation>Crear y guardar nueva Sesión</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="151"/>
+        <location filename="../../src/bibletime_init.cpp" line="148"/>
         <source>Manually arrange the open windows</source>
         <translation>Ordenar manualmente las ventanas abiertas</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="158"/>
+        <location filename="../../src/bibletime_init.cpp" line="155"/>
         <source>Automatically tile the open windows vertically (arrange side by side)</source>
         <translation>Ordenar automáticamente las ventanas abiertas verticalmente (ordenadas lado a lado)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="165"/>
+        <location filename="../../src/bibletime_init.cpp" line="162"/>
         <source>Automatically tile the open windows horizontally (arrange on top of each other)</source>
         <translation>Ordenar automáticamente las ventanas abiertas horizontalmente (ordenar una arriba de la otra)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="169"/>
+        <location filename="../../src/bibletime_init.cpp" line="166"/>
         <source>Auto-&amp;tile</source>
         <translation>Auto-&amp;Acomodar</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="172"/>
+        <location filename="../../src/bibletime_init.cpp" line="169"/>
         <source>Automatically tile the open windows</source>
         <translation>Acomodar automáticamente las ventanas abiertas</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="176"/>
+        <location filename="../../src/bibletime_init.cpp" line="173"/>
         <source>Ta&amp;bbed</source>
         <translation>En &amp;pestañas</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="179"/>
+        <location filename="../../src/bibletime_init.cpp" line="176"/>
         <source>Automatically tab the open windows</source>
         <translation>Automáticamente abrir la ventana en pestañas</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="186"/>
+        <location filename="../../src/bibletime_init.cpp" line="183"/>
         <source>Automatically cascade the open windows</source>
         <translation>Ordenar automáticamente en cascada las ventanas abiertas</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="193"/>
+        <location filename="../../src/bibletime_init.cpp" line="190"/>
         <source>Cascade the open windows</source>
         <translation>Ordenar en cascada las ventanas abiertas</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="197"/>
+        <location filename="../../src/bibletime_init.cpp" line="194"/>
         <source>&amp;Tile</source>
         <translation>&amp;Acomodar</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="200"/>
+        <location filename="../../src/bibletime_init.cpp" line="197"/>
         <source>Tile the open windows</source>
         <translation>Acomodar las ventanas abiertas</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="207"/>
+        <location filename="../../src/bibletime_init.cpp" line="204"/>
         <source>Vertically tile (arrange side by side) the open windows</source>
         <translation>Ordenar verticalmente (ordenadas lado a lado) las ventanas abiertas</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="214"/>
+        <location filename="../../src/bibletime_init.cpp" line="211"/>
         <source>Horizontally tile (arrange on top of each other) the open windows</source>
         <translation>Ordenar horizontalmente (ordenadas una arriba de la otra) las ventanas abiertas</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="218"/>
+        <location filename="../../src/bibletime_init.cpp" line="215"/>
         <source>Close &amp;window</source>
         <translation>Cerrar &amp;ventana</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="221"/>
+        <location filename="../../src/bibletime_init.cpp" line="218"/>
         <source>Close the current open window</source>
         <translation>Cerrar la ventana actual</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="232"/>
+        <location filename="../../src/bibletime_init.cpp" line="229"/>
         <source>&amp;Configure BibleTime...</source>
         <translation>&amp;Configurar BibleTime...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="234"/>
+        <location filename="../../src/bibletime_init.cpp" line="231"/>
         <source>Set BibleTime&apos;s preferences</source>
         <translation>Preferencias de BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="238"/>
+        <location filename="../../src/bibletime_init.cpp" line="235"/>
         <source>Bookshelf &amp;Manager...</source>
         <translation>Ad&amp;ministrador de &amp;biblioteca...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="241"/>
+        <location filename="../../src/bibletime_init.cpp" line="238"/>
         <source>Configure your bookshelf and install/update/remove/index works</source>
         <translation>Configurar su biblioteca e instalar/actualizar/remover/indexar obras</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="248"/>
+        <location filename="../../src/bibletime_init.cpp" line="245"/>
         <source>Open BibleTime&apos;s handbook</source>
         <translation>Abrir Manual de BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="264"/>
+        <location filename="../../src/bibletime_init.cpp" line="261"/>
         <source>&amp;Tip of the day...</source>
         <translation>&amp;Consejo del día...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="267"/>
+        <location filename="../../src/bibletime_init.cpp" line="264"/>
         <source>Show tips about BibleTime</source>
         <translation>Mostrar consejos sobre Bible</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="375"/>
+        <location filename="../../src/bibletime_init.cpp" line="372"/>
         <source>Toggle visibility of the bookshelf window</source>
         <translation>Activar la visibilidad de la ventana de la biblioteca</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="379"/>
+        <location filename="../../src/bibletime_init.cpp" line="376"/>
         <source>Toggle visibility of the bookmarks window</source>
         <translation>Activar la visibilidad de la ventana de los marcadores</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="383"/>
+        <location filename="../../src/bibletime_init.cpp" line="380"/>
         <source>Toggle visibility of the mag window</source>
         <translation>Activar la visibilidad de la ventana de la lupa</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="716"/>
+        <location filename="../../src/bibletime_init.cpp" line="708"/>
         <source>Main toolbar</source>
         <translation>Barra principal</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="717"/>
+        <location filename="../../src/bibletime_init.cpp" line="709"/>
         <source>Navigation toolbar</source>
         <translation>Barra de Navegación</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="718"/>
+        <location filename="../../src/bibletime_init.cpp" line="710"/>
         <source>Works toolbar</source>
         <translation>Barra de Obras</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="719"/>
+        <location filename="../../src/bibletime_init.cpp" line="711"/>
         <source>Tools toolbar</source>
         <translation>Barra de herramientas</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="720"/>
+        <location filename="../../src/bibletime_init.cpp" line="712"/>
         <source>Format toolbar</source>
         <translation>Barra de Formato</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="754"/>
+        <location filename="../../src/bibletime_init.cpp" line="745"/>
         <source>Show main toolbar</source>
         <translation>Mostrar barra de herramientas principal</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="757"/>
+        <location filename="../../src/bibletime_init.cpp" line="748"/>
         <source>Show navigation bar</source>
         <translation>Mostrar barra de navegacion</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="760"/>
+        <location filename="../../src/bibletime_init.cpp" line="751"/>
         <source>Show works toolbar</source>
         <translation>Mostrar barra de obras</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="763"/>
+        <location filename="../../src/bibletime_init.cpp" line="754"/>
         <source>Show tools toolbar</source>
         <translation>Mostrar barade herramientas</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="766"/>
+        <location filename="../../src/bibletime_init.cpp" line="757"/>
         <source>Show formatting toolbar</source>
         <translation>Mostrar barra de formateo</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="769"/>
+        <location filename="../../src/bibletime_init.cpp" line="760"/>
         <source>Show bookshelf</source>
         <translation>Mostrar biblioteca</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="772"/>
+        <location filename="../../src/bibletime_init.cpp" line="763"/>
         <source>Show bookmarks</source>
         <translation>Mostrar marcadores</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="775"/>
+        <location filename="../../src/bibletime_init.cpp" line="766"/>
         <source>Show mag</source>
         <translation>Mostrar lupa</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="724"/>
+        <location filename="../../src/bibletime_init.cpp" line="716"/>
         <source>Toolbars</source>
         <translation>Barra de herramientas</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="751"/>
+        <location filename="../../src/bibletime_init.cpp" line="742"/>
         <source>Show toolbars in text windows</source>
         <translation>Mostrar barra de herramientas en las ventanas de texto</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="778"/>
+        <location filename="../../src/bibletime_init.cpp" line="769"/>
         <source>Show parallel text headers</source>
         <translation>Mostrar encabezados de texto paralelo</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="728"/>
+        <location filename="../../src/bibletime_init.cpp" line="720"/>
         <source>O&amp;pen windows</source>
         <translation>A&amp;brir Ventanas</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="737"/>
+        <location filename="../../src/bibletime_init.cpp" line="728"/>
         <source>Show &quot;Whats this widget&quot; dialog</source>
         <translation>Mostrar dialogo &quot;Que es este widget&quot;</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="971"/>
+        <location filename="../../src/bibletime_init.cpp" line="915"/>
         <source>Whats this widget?</source>
         <translation>Qué es este widget?</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="130"/>
+        <location filename="../../src/bibletime_init.cpp" line="127"/>
         <source>Search in all works that are currently open</source>
         <translation>Buscar en todas las obras que están abiertas</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="137"/>
+        <location filename="../../src/bibletime_init.cpp" line="134"/>
         <source>Search in the standard Bible</source>
         <translation>Buscar en Biblia estandar</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="558"/>
+        <location filename="../../src/bibletime_slots.cpp" line="593"/>
         <source>New Session</source>
         <translation>Nueva Sesión</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="76"/>
+        <location filename="../../src/bibletime.cpp" line="74"/>
         <source>Initializing the SWORD engine...</source>
         <translation>Inicializando el motor SWORD...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="84"/>
+        <location filename="../../src/bibletime.cpp" line="82"/>
         <source>Creating BibleTime&apos;s user interface...</source>
         <translation>Creando interfaz de usuario de BibleTime...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="91"/>
+        <location filename="../../src/bibletime.cpp" line="89"/>
         <source>Initializing menu- and toolbars...</source>
         <translation>Inicializando menu y barras de herramientas...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="196"/>
+        <location filename="../../src/bibletime.cpp" line="191"/>
         <source>Unlock Work</source>
         <translation>Desbloquear obra</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="196"/>
+        <location filename="../../src/bibletime.cpp" line="191"/>
         <source>Enter the unlock key for %1.</source>
         <translation>Introduzca la clave de desbloqueo de.%1.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="216"/>
+        <location filename="../../src/bibletime.cpp" line="211"/>
         <source>Warning: Invalid unlock key!</source>
         <translation>Advertencia: Error de clave de desbloqueo!</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="217"/>
+        <location filename="../../src/bibletime.cpp" line="212"/>
         <source>The unlock key you provided did not properly unlock this module. Please try again.</source>
         <translation>La clave de desbloqueo que nos ha facilitado no pudo desbloquear este módulo. Por favor, inténtelo de nuevo.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="259"/>
+        <location filename="../../src/bibletime_init.cpp" line="256"/>
         <source>&amp;About BibleTime</source>
         <translation>&amp;Acerca de BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="714"/>
+        <location filename="../../src/bibletime_init.cpp" line="706"/>
         <source>Bookmarks</source>
         <translation>Marcadores</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="715"/>
+        <location filename="../../src/bibletime_init.cpp" line="707"/>
         <source>Mag</source>
         <translation>Lente</translation>
     </message>
@@ -475,7 +484,7 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BibleTimeApp</name>
     <message>
-        <location filename="../../src/bibletimeapp.cpp" line="37"/>
+        <location filename="../../src/bibletimeapp.cpp" line="57"/>
         <source>Fatal error!</source>
         <translation>Error fatal</translation>
     </message>
@@ -488,12 +497,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>BibleTime es una herramienta  de estudio de la Biblia poderosa pero fácil de usar.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="269"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="270"/>
         <source>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</source>
         <translation>BibleTime está publicado bajo la licencia GPL. Usted puede descargar y utilizar el programa para fines personales, privados, públicos o comerciales sin restricciones, pero se puede entregar o distribuir el programa sólo si también distribuir el código fuente correspondiente.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="275"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="276"/>
         <source>The complete legally binding license is below.</source>
         <translation>La licencia legalmente vinculada esta debajo.</translation>
     </message>
@@ -548,37 +557,37 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Experto de usabilidad</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="218"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="219"/>
         <source>Some names may be missing, please email %1 if you notice errors or omissions.</source>
         <translation>Algunos nombres pueden no encontrarse, mandanos un email a %1 si notas errores u omisiones.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="235"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="236"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
         <translation>BibleTime hace uso del proyecto SWORD. El proyecto SWORD es un proyecto de software libre de CrossWire Bible Society. Su proposito es crear herramientas multiplataforma de codigo abierto &amp;mdash; cubiertas por la licencia GNU General Public License &amp;mdash; que permite a los programadores y sociedades biblicas escribir software biblico mas rapida y facilmente.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="241"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="242"/>
         <source>The SWORD Project: </source>
         <translation>El proyecto SWORD: </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="249"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="250"/>
         <source>&amp;Qt</source>
         <translation>&amp;Qt</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="252"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="253"/>
         <source>Qt toolkit version %1</source>
         <translation>Qt toolkit versión %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="258"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="259"/>
         <source>More info...</source>
         <translation>Mas informacion...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="263"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="264"/>
         <source>&amp;License</source>
         <translation>&amp;License</translation>
     </message>
@@ -633,22 +642,22 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Las siguientes personas tradujeron BibleTime a su idioma:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="229"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="230"/>
         <source>&amp;SWORD</source>
         <translation>&amp;SWORD</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="233"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="234"/>
         <source>SWORD library version %1</source>
         <translation>versión de biblioteca SWORD %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="254"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="255"/>
         <source>This program uses Qt version %1.</source>
         <translation>Este programa usa la versión %1 de Qt.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="256"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="257"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
         <translation>Qt es una aplicación multiplataforma y un framework de interfaz de usuario, creado con el lenguaje C++, Ha sido liberado bajo la licencia LGPL.</translation>
     </message>
@@ -656,37 +665,37 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtBibleKeyWidget</name>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="113"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="112"/>
         <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
         <translation>Desplázate a través de la entradas de la lista. Presione el botón y mueva el ratón para aumentar o disminuir el elemento.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="115"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="114"/>
         <source>Next book</source>
         <translation>Libro siguiente</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="117"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="116"/>
         <source>Previous book</source>
         <translation>Libro anterior</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="120"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="119"/>
         <source>Next chapter</source>
         <translation>Capí­tulo siguiente</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="122"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="121"/>
         <source>Previous chapter</source>
         <translation>Capí­tulo anterior</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="125"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="124"/>
         <source>Next verse</source>
         <translation>Versículo siguiente</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="127"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btbiblekeywidget.cpp" line="126"/>
         <source>Previous verse</source>
         <translation>Versículo anterior</translation>
     </message>
@@ -702,62 +711,62 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtBookshelfDockWidget</name>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="151"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="150"/>
         <source>Bookshelf</source>
         <translation>Biblioteca</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="153"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="152"/>
         <source>&amp;Open</source>
         <translation>&amp;Abrir</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="154"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="153"/>
         <source>&amp;Edit</source>
         <translation>&amp;Editar</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="155"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="154"/>
         <source>&amp;Plain text</source>
         <translation>&amp;Texto sin formato</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="156"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="155"/>
         <source>&amp;HTML</source>
         <translation>&amp;HTML</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="157"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="156"/>
         <source>&amp;Unlock...</source>
         <translation>&amp;Desbloquear...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="158"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="157"/>
         <source>&amp;About...</source>
         <translation>&amp;Acerca de...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="160"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="159"/>
         <source>There are currently no works installed. Please click the button below to install new works.</source>
         <translation>Actualmente no hay obras instaladas. Por favor, haga clic en el botón de abajo para instalar nuevas obras.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="162"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="161"/>
         <source>&amp;Install works...</source>
         <translation type="unfinished">&amp;Instalar obras...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="174"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="173"/>
         <source>Warning: Module locked!</source>
         <translation>Advertencia: Módulo bloqueado!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="175"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="174"/>
         <source>You are trying to access an encrypted module. Please provide an unlock key in the following dialog to open the module.</source>
         <translation>Usted está intentando acceder a un módulo de cifrado. Sírvanse proporcionar una clave de desbloqueo en el siguiente cuadro de diálogo para abrir el módulo.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="224"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="223"/>
         <source>&amp;Search in %1...</source>
         <translation>&amp;Buscar en %1...</translation>
     </message>
@@ -828,6 +837,67 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/keychooser/versekeychooser/btdropdownchooserbutton.cpp" line="85"/>
         <source>Select chapter</source>
         <translation>Seleccione capítulo</translation>
+    </message>
+</context>
+<context>
+    <name>BtConfig</name>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="47"/>
+        <source>Old testament</source>
+        <translation type="unfinished">Antiguo Testamento</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="48"/>
+        <source>Moses/Pentateuch/Torah</source>
+        <translation type="unfinished">Moisés/Pentateuco/Torá</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="49"/>
+        <source>History</source>
+        <translation type="unfinished">Historia</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="50"/>
+        <source>Prophets</source>
+        <translation type="unfinished">Profetas</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="51"/>
+        <source>New testament</source>
+        <translation type="unfinished">Nuevo Testamento</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="52"/>
+        <source>Gospels</source>
+        <translation type="unfinished">Evangelios</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="53"/>
+        <source>Letters/Epistles</source>
+        <translation type="unfinished">Cartas/Epí­stolas</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="54"/>
+        <source>Paul&apos;s Epistles</source>
+        <translation type="unfinished">Las Epí­stolas de Pablo</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="87"/>
+        <source>Error loading configuration!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/config/btconfig.cpp" line="88"/>
+        <source>Failed to load BibleTime&apos;s configuration, because it appears that the configuration file corresponds to a newer version of BibleTime. This is likely caused by BibleTime being downgraded. Loading the new configuration file may result in &lt;b&gt;loss of data&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Do you still want to try to load the new configuration file? Press &quot;No&quot; to quit BibleTime immediately.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>BtConfigCore</name>
+    <message>
+        <location filename="../../src/backend/config/btconfigcore.cpp" line="60"/>
+        <source>Default Session</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -942,27 +1012,27 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtFontSettingsPage</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="153"/>
+        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="154"/>
         <source>&amp;Language:</source>
         <translation>&amp;Idioma:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="154"/>
+        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="155"/>
         <source>The font selection below will apply to all texts in this language</source>
         <translation>La selección de fuente debajo se va a aplicar a todos los textos de este idioma</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="155"/>
+        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="156"/>
         <source>Use custom font</source>
         <translation>Usar fuente personalizada</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="156"/>
+        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="157"/>
         <source>Optionally specify a custom font for each language:</source>
         <translation>Opcionalmente especifique una fuente personalizada para cada idioma:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="152"/>
+        <location filename="../../src/frontend/settingsdialogs/btfontsettings.cpp" line="153"/>
         <source>Fonts</source>
         <translation>Fuentes</translation>
     </message>
@@ -1356,17 +1426,17 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtLanguageSettingsPage</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="124"/>
+        <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="135"/>
         <source>Language for names of Bible books:</source>
         <translation>Idioma para los nombres de los libros de la Bíblia:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="125"/>
+        <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="136"/>
         <source>The languages which can be used for the biblical booknames</source>
         <translation>Idiomas que pueden ser usados para nombres de los libros bíblicos</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="122"/>
+        <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="133"/>
         <source>Languages</source>
         <translation>Idiomas</translation>
     </message>
@@ -1416,7 +1486,7 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtModuleManagerDialog</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/btmodulemanagerdialog.cpp" line="53"/>
+        <location filename="../../src/frontend/bookshelfmanager/btmodulemanagerdialog.cpp" line="57"/>
         <source>Bookshelf Manager</source>
         <translation>Administrador de biblioteca</translation>
     </message>
@@ -1623,24 +1693,170 @@ atajo</translation>
     </message>
 </context>
 <context>
+    <name>BtStandardWorksTab</name>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="169"/>
+        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
+        <translation>Las obras predeterminadas son utilizadas cuando ninguna obra es especificada, por ejemplo cuando se hace clic en un hipervínculo dentro de una Biblia.</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="172"/>
+        <source>Bible:</source>
+        <translation>Biblia:</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="173"/>
+        <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
+        <translation>La Biblia estandar es usada cuando un hipervínculo dentro de la Biblia es cliqueado</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="175"/>
+        <source>Commentary:</source>
+        <translation>Comentario:</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="176"/>
+        <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
+        <translation>El comentario estandar es usado cuando un hipervínculo dentro del comentario es cliqueado</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="178"/>
+        <source>Lexicon:</source>
+        <translation>Léxico:</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="179"/>
+        <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
+        <translation>El léxico estandar es usado cuando un hipervínculo dentro del léxico es cliqueado</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="181"/>
+        <source>Daily devotional:</source>
+        <translation>Devocional diario:</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="182"/>
+        <source>The standard devotional will be used to display a short start up devotional</source>
+        <translation>El devocional estandar será usado para mostrar un devocional de inicio</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="184"/>
+        <source>Hebrew Strong&apos;s lexicon:</source>
+        <translation>Léxico Hebreo de Strong:</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="185"/>
+        <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
+        <translation>El léxico Hebreo estandar es utilizado cuando un hipervínculo es cliqueado</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="187"/>
+        <source>Greek Strong&apos;s lexicon:</source>
+        <translation>Léxico Griego de Strong:</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="188"/>
+        <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
+        <translation>El léxico Griego estandar es utilizado cuando un hipervínculo en un léxico Griego es cliqueado</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="190"/>
+        <source>Hebrew morphological lexicon:</source>
+        <translation>Léxico Hebreo morfológico:</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="191"/>
+        <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
+        <translation>El léxico morfológico para textos Hebreos es utilizado cuando un hipervínculo de una etiqueta morfológica en texto Hebreo es cliqueado</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="193"/>
+        <source>Greek morphological lexicon:</source>
+        <translation>Diccionario léxico griego morfológico:</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="194"/>
+        <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
+        <translation>El léxico morfológico para textos Griegos es utilizado cuando un hipervínculo de una etiqueta morfológica en texto Griego es cliqueado</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="62"/>
+        <source></source>
+        <translation></translation>
+    </message>
+</context>
+<context>
+    <name>BtTextFiltersTab</name>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="75"/>
+        <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
+        <translation type="unfinished">Los filtros controlan la apariencia del texto. Aquí puedes especificar las configuraciones predeterminadas para todos los filtros. Puedes anular estas configuraciones en cada ventana mostrada.</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="79"/>
+        <source>Insert line break after each verse</source>
+        <translation type="unfinished">Insertar salto de lí­nea después de cada versículo</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="80"/>
+        <source>Show verse numbers</source>
+        <translation type="unfinished">Mostrar números de versículos</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="81"/>
+        <source>Show section headings</source>
+        <translation type="unfinished">Mostrar cabeceras de las secciones</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="82"/>
+        <source>Show scripture cross-references</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="83"/>
+        <source>Show Greek accents</source>
+        <translation type="unfinished">Mostrar acentos griegos</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="84"/>
+        <source>Show Hebrew vowel points</source>
+        <translation type="unfinished">Mostrar puntos de vocales hebreas</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="85"/>
+        <source>Show Hebrew cantillation marks</source>
+        <translation type="unfinished">Mostrar los acentos de &quot;cantilación&quot; hebreas</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="86"/>
+        <source>Show morph segmentation</source>
+        <translation type="unfinished">Mostrar segmentación de morfología</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="87"/>
+        <source>Use textual variants</source>
+        <translation type="unfinished">Usar varientes textuales</translation>
+    </message>
+</context>
+<context>
     <name>BtTextWindowHeaderWidget</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="46"/>
+        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="51"/>
         <source>Add/remove/replace</source>
         <translation>Agregar/eliminar/reemplazar</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="148"/>
+        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="153"/>
         <source>Remove</source>
         <translation type="unfinished">Eliminar</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="154"/>
+        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="159"/>
         <source>Replace</source>
         <translation>Reemplazar</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="159"/>
+        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="164"/>
         <source>Add</source>
         <translation>Agregar</translation>
     </message>
@@ -1648,87 +1864,87 @@ atajo</translation>
 <context>
     <name>BtTipDialog</name>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="66"/>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="69"/>
         <source>Tip Of The Day</source>
         <translation type="unfinished">Sugerencia del día</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="80"/>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="83"/>
         <source>Show tips at startup</source>
         <translation type="unfinished">Mostrar sugerencias al inicio</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="89"/>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="94"/>
         <source>Next Tip</source>
         <translation type="unfinished">Siguiente sugerencia</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="121"/>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="126"/>
         <source>To add multiple Bible works in parallel in your active Bible window select this icon and choose another Bible work.</source>
         <translation type="unfinished">Para agregar varias obras bíblicas en paralelo en su ventana Biblia activa seleccione el icono y seleccione otra obra bíblica.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="125"/>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="130"/>
         <source>To add multiple commentary works in parallel in your active commentary window select this icon and choose another commentary work.</source>
         <translation type="unfinished">Para agregar varios comentarios en paralelo en su ventana de comentarios activa seleccione el icono y seleccione otro comentario.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="129"/>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="134"/>
         <source>To learn more about the BibleTime project please go to our web site.</source>
         <translation>Para obtener más información sobre el proyecto BibleTime por favor visite nuestro sitio web.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="132"/>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="137"/>
         <source>To synchronize a commentary window with the active Bible window, activate the commentary window and select this icon.</source>
         <translation type="unfinished">Para sincronizar una ventana de comentario con la ventana activa de la Biblia, activar la ventana de comentario y seleccione el icono.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="135"/>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="140"/>
         <source>Select the icon again to stop the synchronization.</source>
         <translation type="unfinished">Seleccione el icono de nuevo para detener la sincronización.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="137"/>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="142"/>
         <source>To create a bookmark drag any verse reference from a Bible or commentary work into the Bookmarks window. An arrow will indicate the position that the bookmark will go when you release the cursor. Other works will have a reference in the upper left corner that can be used to create a bookmark.</source>
         <translation>Para crear un marcador arrastre la referencia del versículo de una Biblia o comentario en la ventana Marcadores. Una flecha indicará la posición donde quedará el marcador cuando suelte el cursor. Otras obras podrán tener referencia en la esquina superior izquierda con la cual se puede crear un marcador.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="142"/>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="147"/>
         <source>To change a bookmark title or description, right click on the bookmark and select the Edit Bookmark menu. After finishing the edit the description can be seen by hovering over the bookmark.</source>
         <translation>Para cambiar el título o descripción de un marcador, haga clic con el botón derecho en el marcador y seleccione el menú Editar marcador. Después de terminar la edición de la descripción se puede ver colocando el ratón sobre el marcador.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="146"/>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="151"/>
         <source>To load multiple installation sources for works, go to the Bookshelf Manager, select the Add button, and then the Get List button.</source>
         <translation type="unfinished">Para cargar múltiples fuentes de instalación de las obras, vaya al Administrador de biblioteca, seleccione el botón Agregar y, a continuación, el botón Obtener lista.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="149"/>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="154"/>
         <source>To find more information about a work, go the the Bookshelf window, right click on the work, and select the About menu.</source>
         <translation>Para obtener más información acerca de una obra, ir a la ventana de la biblioteca, haga clic derecho en la obra, y seleccionar el menú Acerca de.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="152"/>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="157"/>
         <source>The Bookshelf, Bookmark, and Mag windows can be moved to new locations by dragging them from the title at the top of each window. They can be placed to the left, right, above, or below the works windows. They can be placed on top of each other and tabs will appear so each window can be selected. They can be resized by dragging the border between the window and another window.</source>
         <translation type="unfinished">Las ventanas Biblioteca, Marcadores, y Lente se puede mover a lugares nuevos arrastrándolos desde el título ubicado en la parte superior de cada ventana. Se pueden colocar a la izquierda, derecha, arriba o debajo de las ventanas de obras. Se pueden colocar en la parte superior de cada uno y pestañas aparecerán por lo que cada ventana se puede seleccionar. Se puede cambiar el tamaño arrastrando el borde entre la ventana y la otra ventana.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="158"/>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="163"/>
         <source>You can search for Strong&apos;s numbers in a work. Start with a work that has Strong&apos;s numbers and hover over a word. Right click the word and use the Strong&apos;s Search menu. A search dialog will appear that allows you to see the use of the same Strong&apos;s number in other locations of the work.</source>
         <translation type="unfinished">Puede buscar por número de Strong en una obra. Inicie con una obra que tiene números de Strong y posicione el cursor sobre una palabra. Haga clic en la palabra y el uso de Strong del menú de búsqueda. Un diálogo de búsqueda aparecerá que le permite ver el uso del mismo número Strong en otros lugares de la obra.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="173"/>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="178"/>
         <source>You can save your open windows in a session. Such a session can easily be restored later on. You can save as many sessions as you like. The session feature can be accessed under the Window menu entry.</source>
         <translation type="unfinished">Puede guardar las ventanas abiertas en una sesión. Ese período de sesiones pueden ser fácilmente restaurados posteriormente. Puede guardar tantas sesiones como quiera. La característica de la sesión se puede acceder en la entrada del menú Ventana.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="163"/>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="168"/>
         <source>You can save personal notes for specific verses references. You must install the Personal commentary. Open the Bookshelf Manager, choose Crosswire as the source and look under Commentary and English. Once installed, use the Bookshelf window and right click the Personal commentary. Use either the Edit Plain Text menu or the Edit HTML menu to open the work in write mode.</source>
         <translation type="unfinished">Puede guardar notas personales de referencias versículos específicos. Debe instalar el comentario personal. Abra el Administrador de biblioteca, elegir Crosswire como la fuente y busque en comentario e Inglés. Una vez instalado, use la ventana de biblioteca y haga clic derecho en el comentario personal. Utilice el menú Editar texto o HTML en el menú Editar para abrir el trabajo en modo de escritura.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="169"/>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="174"/>
         <source>You can view Strong&apos;s number information in the MAG window by hovering over a word in a Bible work that has Strong&apos;s numbers. You should have the StrongsGreek and StrongsHebrew lexicons from Crosswire installed.</source>
         <translation type="unfinished">Puede ver la información del número de Strong en la ventana del Lente colocando el cursor sobre una palabra en una obra bíblica que tiene números de Strong. Usted debe tener los léxicos StrongsGreek y StrongsHebrew de Crosswire instalados.</translation>
     </message>
@@ -1744,49 +1960,49 @@ atajo</translation>
 <context>
     <name>CAcceleratorSettingsPage</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="133"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="127"/>
         <source>Choose action group:</source>
         <translation>Elige grupo de acción:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="135"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="129"/>
         <source>Main Window</source>
         <translation>Ventana principal</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="136"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="130"/>
         <source>All text windows</source>
         <translation>Todas las ventanas de texto</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="137"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="131"/>
         <source>Bible windows</source>
         <translation>Ventanas de Biblias</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="138"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="132"/>
         <source>Commentary windows</source>
         <translation>Ventanas de comentario</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="139"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="133"/>
         <source>Lexicon windows</source>
         <translation>Ventanas de diccionarios léxicos</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="140"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="134"/>
         <source>Book windows</source>
         <translation>Ventanas de Libros</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="192"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="186"/>
         <source>
    &quot;%1&quot; in the &quot;%2&quot; group</source>
         <translation>
    &quot;%1&quot; en el &quot;%2&quot; grupo</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="131"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="125"/>
         <source>Shortcuts</source>
         <translation>Atajos</translation>
     </message>
@@ -1794,95 +2010,95 @@ atajo</translation>
 <context>
     <name>CBibleReadWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="107"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="64"/>
         <source>Next book</source>
         <translation>Libro siguiente</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="111"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="68"/>
         <source>Previous book</source>
         <translation>Libro anterior</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="115"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="72"/>
         <source>Next chapter</source>
         <translation>Capí­tulo siguiente</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="119"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="76"/>
         <source>Previous chapter</source>
         <translation>Capí­tulo anterior</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="123"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="80"/>
         <source>Next verse</source>
         <translation>Versículo siguiente</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="127"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="84"/>
         <source>Previous verse</source>
         <translation>Versículo anterior</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="132"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="89"/>
         <source>Copy chapter</source>
         <translation>Copiar Capí­tulo</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="135"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="92"/>
         <source>Save chapter as plain text</source>
         <translation>Guardar Capí­tulo como texto sin formato</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="138"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="95"/>
         <source>Save chapter as HTML</source>
         <translation>Guardar Capí­tulo como HTML</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="141"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="98"/>
         <source>Print chapter</source>
         <translation>Imprimir Capí­tulo</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="153"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="110"/>
         <source>Text of reference</source>
         <translation>Texto de referencia</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="156"/>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="159"/>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="162"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="113"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="116"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="119"/>
         <source>Reference with text</source>
         <translation>Referencia con texto</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="296"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="253"/>
         <source>Bible window</source>
         <translation>Ventana de Biblia</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="306"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="263"/>
         <source>Copy...</source>
         <translation>Copiar...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="317"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="274"/>
         <source>Save...</source>
         <translation>Guardar...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="330"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="287"/>
         <source>Print...</source>
         <translation>Imprimir...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="414"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="371"/>
         <source>Copying</source>
         <translation>Copiando</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="433"/>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="451"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="390"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="408"/>
         <source>Saving</source>
         <translation>Guardando</translation>
     </message>
@@ -1890,7 +2106,7 @@ atajo</translation>
 <context>
     <name>CBookReadWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="81"/>
+        <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="70"/>
         <source>Toggle tree view</source>
         <translation>Cambiar a vista de arbol</translation>
     </message>
@@ -1992,42 +2208,42 @@ atajo</translation>
 <context>
     <name>CCommentaryReadWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="37"/>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="34"/>
         <source>Next book</source>
         <translation>Libro siguiente</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="41"/>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="38"/>
         <source>Previous book</source>
         <translation>Libro anterior</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="45"/>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="42"/>
         <source>Next chapter</source>
         <translation>Capí­tulo siguiente</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="49"/>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="46"/>
         <source>Previous chapter</source>
         <translation>Capí­tulo anterior</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="53"/>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="50"/>
         <source>Next verse</source>
         <translation>Versículo siguiente</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="57"/>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="54"/>
         <source>Previous verse</source>
         <translation>Versículo anterior</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="62"/>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="59"/>
         <source>Synchronize</source>
         <translation>Sincronizar</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="65"/>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="62"/>
         <source>Synchronize the displayed entry of this work with the active Bible window</source>
         <translation>Sincronizar la entrada desplegada de esta obra con la ventana activa de la Biblia</translation>
     </message>
@@ -2035,7 +2251,7 @@ atajo</translation>
 <context>
     <name>CConfigurationDialog</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="36"/>
+        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="41"/>
         <source>Configure BibleTime</source>
         <translation>Configurar BibleTime</translation>
     </message>
@@ -2116,62 +2332,62 @@ atajo</translation>
 <context>
     <name>CDisplayWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="139"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="216"/>
         <source>Back in history</source>
         <translation>Volver en el historial</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="147"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="224"/>
         <source>Forward in history</source>
         <translation>Adelantar en el Historial</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="116"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="193"/>
         <source>Select all</source>
         <translation>Seleccionar todo</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="120"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="197"/>
         <source>Copy</source>
         <translation>Copiar</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="124"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="201"/>
         <source>Find...</source>
         <translation>Encontrar...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="128"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="205"/>
         <source>Change location</source>
         <translation>Cambiar ubicación</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="133"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="210"/>
         <source>Search with works of this window</source>
         <translation>Buscar con obras de esta ventana</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="317"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="394"/>
         <source>Work chooser buttons</source>
         <translation>Botones del seleccionador de obras</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="327"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="404"/>
         <source>Text area header</source>
         <translation>Encabezado del area de texto</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="377"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="454"/>
         <source>Navigation</source>
         <translation>Navegación</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="383"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="460"/>
         <source>Tool</source>
         <translation>Herramienta</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="389"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="466"/>
         <source>Format</source>
         <translation>Formato</translation>
     </message>
@@ -2241,17 +2457,17 @@ atajo</translation>
 <context>
     <name>CHTMLWriteWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="132"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="131"/>
         <source>Module not writable</source>
         <translation>El módulo no es escribible</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="134"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="133"/>
         <source>Module is not writable.</source>
         <translation>Módulo no escribible.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="135"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="134"/>
         <source>Either the module may not be edited, or you do not have write permission.</source>
         <translation>El módulo no puede ser editado, o no tienes permisos de escritura sobre él.</translation>
     </message>
@@ -2267,22 +2483,22 @@ atajo</translation>
 <context>
     <name>CLexiconKeyChooser</name>
     <message>
-        <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="48"/>
+        <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="47"/>
         <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
         <translation>Desplázate a través de la entradas de la lista. Presione el botón y mueva el ratón para aumentar o disminuir el elemento.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="46"/>
+        <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="45"/>
         <source>Entries of the current work</source>
         <translation>Entradas en la obra actual</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="47"/>
+        <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="46"/>
         <source>Next entry</source>
         <translation>Entrada siguiente</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="49"/>
+        <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="48"/>
         <source>Previous entry</source>
         <translation>Entrada anterior</translation>
     </message>
@@ -2290,70 +2506,70 @@ atajo</translation>
 <context>
     <name>CLexiconReadWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="50"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="49"/>
         <source>Next entry</source>
         <translation>Entrada siguiente</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="54"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="53"/>
         <source>Previous entry</source>
         <translation>Entrada anterior</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="58"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="57"/>
         <source>Copy reference only</source>
         <translation>Sólo copiar referencia</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="61"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="60"/>
         <source>Save entry as HTML</source>
         <translation>Guardar entrada como HTML</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="64"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="63"/>
         <source>Print reference only</source>
         <translation>Solo imprimir referencia</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="76"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="75"/>
         <source>Strong&apos;s Search</source>
         <translation>Búsqueda en Strong</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="67"/>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="73"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="66"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="72"/>
         <source>Entry with text</source>
         <translation>Entrada con texto</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="70"/>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="137"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="69"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="136"/>
         <source>Entry as plain text</source>
         <translation>Entrada como texto sin formato</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="268"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="267"/>
         <source>Lexicon window</source>
         <translation>Ventana del diccionario léxico</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="275"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="274"/>
         <source>Copy...</source>
         <translation>Copiar...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="284"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="283"/>
         <source>Save...</source>
         <translation>Guardar...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="300"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="299"/>
         <source>Print...</source>
         <translation>Imprimir...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="343"/>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="367"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="342"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="366"/>
         <source>Saving</source>
         <translation>Guardando</translation>
     </message>
@@ -2361,53 +2577,53 @@ atajo</translation>
 <context>
     <name>CPlainWriteWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="210"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="208"/>
         <source>Sync with active Bible</source>
         <translation>Sincronizar con Biblia activa</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="220"/>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="224"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="218"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="222"/>
         <source>Save text</source>
         <translation>Guardar texto</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="229"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="227"/>
         <source>Delete current entry</source>
         <translation>Borrar entrada actual</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="238"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="236"/>
         <source>Restore original text</source>
         <translation>Restaurar texto original</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="135"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="133"/>
         <source>Module not writable</source>
         <translation>La obra no es escribible</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="137"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="135"/>
         <source>Module is not writable.</source>
         <translation>Módulo no escribible.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="138"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="136"/>
         <source>Either the module may not be edited, or you do not have write permission.</source>
         <translation>El módulo no puede ser editado, o no tienes permisos de escritura sobre él.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="215"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="213"/>
         <source>Synchronize (show the same verse) with the active Bible window</source>
         <translation>Sincronizar (mostrar el mismo versículo) con la ventana de la Biblia activa</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="233"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="231"/>
         <source>Delete current entry (no undo)</source>
         <translation>Eliminar entrada actual (No se puede deshacer)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="242"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="240"/>
         <source>Restore original text, new text will be lost</source>
         <translation>Restaurar texto original, el texto nuevo se perderá</translation>
     </message>
@@ -2622,17 +2838,17 @@ atajo</translation>
 <context>
     <name>CSwordSettingsPage</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="388"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="42"/>
         <source>Standard works</source>
         <translation>Obras Estándar</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="389"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="43"/>
         <source>Text filters</source>
         <translation>Filtros de texto</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="386"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="40"/>
         <source>Desk</source>
         <translation>Escritorio</translation>
     </message>
@@ -2752,18 +2968,18 @@ Deseas continuar?</translation>
 <context>
     <name>CWriteWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cwritewindow.cpp" line="113"/>
+        <location filename="../../src/frontend/displaywindow/cwritewindow.cpp" line="67"/>
         <source>Save text before closing?</source>
         <translation>¿Guardar texto antes de cerrar?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cwritewindow.cpp" line="143"/>
+        <location filename="../../src/frontend/displaywindow/cwritewindow.cpp" line="97"/>
         <source>Save changed text?</source>
         <translation>¿Guardar texto modificado?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cwritewindow.cpp" line="113"/>
-        <location filename="../../src/frontend/displaywindow/cwritewindow.cpp" line="143"/>
+        <location filename="../../src/frontend/displaywindow/cwritewindow.cpp" line="67"/>
+        <location filename="../../src/frontend/displaywindow/cwritewindow.cpp" line="97"/>
         <source>Save Text?</source>
         <translation>Guardar texto?</translation>
     </message>
@@ -2797,12 +3013,12 @@ Deseas continuar?</translation>
         <translation>Números de Strong</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="474"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="470"/>
         <source>Morphology</source>
         <translation>Etiquetas morfológicas</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="498"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="493"/>
         <source>Word lookup</source>
         <translation>Buscar palabra</translation>
     </message>
@@ -2887,7 +3103,7 @@ Deseas continuar?</translation>
         <location filename="../../src/backend/btmoduletreeitem.cpp" line="131"/>
         <location filename="../../src/backend/btmoduletreeitem.cpp" line="239"/>
         <location filename="../../src/frontend/displaywindow/btmodulechooserbutton.cpp" line="93"/>
-        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="117"/>
+        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="122"/>
         <source>Bibles</source>
         <translation>Biblias</translation>
     </message>
@@ -2904,7 +3120,7 @@ Deseas continuar?</translation>
         <translation>Libros</translation>
     </message>
     <message>
-        <location filename="../../src/backend/filters/osistohtml.cpp" line="391"/>
+        <location filename="../../src/backend/filters/osistohtml.cpp" line="392"/>
         <source>Added text</source>
         <translation>Texto agregado</translation>
     </message>
@@ -3799,44 +4015,36 @@ Language name ppk</extracomment>
         <translation>Remoto</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="417"/>
         <source>Old testament</source>
-        <translation>Antiguo Testamento</translation>
+        <translation type="obsolete">Antiguo Testamento</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="418"/>
         <source>Moses/Pentateuch/Torah</source>
-        <translation>Moisés/Pentateuco/Torá</translation>
+        <translation type="obsolete">Moisés/Pentateuco/Torá</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="419"/>
         <source>History</source>
-        <translation>Historia</translation>
+        <translation type="obsolete">Historia</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="420"/>
         <source>Prophets</source>
-        <translation>Profetas</translation>
+        <translation type="obsolete">Profetas</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="421"/>
         <source>New testament</source>
-        <translation>Nuevo Testamento</translation>
+        <translation type="obsolete">Nuevo Testamento</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="422"/>
         <source>Gospels</source>
-        <translation>Evangelios</translation>
+        <translation type="obsolete">Evangelios</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="423"/>
         <source>Letters/Epistles</source>
-        <translation>Cartas/Epí­stolas</translation>
+        <translation type="obsolete">Cartas/Epí­stolas</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="424"/>
         <source>Paul&apos;s Epistles</source>
-        <translation>Las Epí­stolas de Pablo</translation>
+        <translation type="obsolete">Las Epí­stolas de Pablo</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cexportmanager.cpp" line="437"/>
@@ -3878,9 +4086,8 @@ Language name ppk</extracomment>
         <translation>Archivos de marcadores de BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookmarks/btbookmarkitem.cpp" line="125"/>
-        <location filename="../../src/frontend/bookmarks/btbookmarkitem.cpp" line="142"/>
-        <location filename="../../src/frontend/profile/cprofile.cpp" line="24"/>
+        <location filename="../../src/frontend/bookmarks/btbookmarkitem.cpp" line="126"/>
+        <location filename="../../src/frontend/bookmarks/btbookmarkitem.cpp" line="143"/>
         <source>unknown</source>
         <translation>desconocido</translation>
     </message>
@@ -4030,7 +4237,7 @@ Language name ppk</extracomment>
         <translation>Yoryba</translation>
     </message>
     <message>
-        <location filename="../../src/backend/filters/osistohtml.cpp" line="408"/>
+        <location filename="../../src/backend/filters/osistohtml.cpp" line="409"/>
         <source>Verb tense changed</source>
         <translation>El tiempo del verbo cambio</translation>
     </message>
@@ -4060,17 +4267,17 @@ Language name ppk</extracomment>
         <translation>Sobreescribir Archivo?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="556"/>
+        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="564"/>
         <source>Parsing Strong&apos;s Numbers</source>
         <translation>Ordenando Números de Strong</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="159"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="153"/>
         <source>This shortcut conflicts with the shortcut for the following actions:</source>
         <translation>Este atajo tiene conflictos con el atajo para las siguientes acciones:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="166"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="160"/>
         <source>Do you want to clear the conflicting shortcuts and continue?</source>
         <translation>Deseas eliminar atajos con conflictos y continuar?</translation>
     </message>
@@ -4085,42 +4292,42 @@ Language name ppk</extracomment>
         <translation>Obras no indexadas</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="43"/>
+        <location filename="../../src/main.cpp" line="44"/>
         <source>Show this help message and exit</source>
         <translation>Mostrar este mensaje de ayuda y salir</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="46"/>
+        <location filename="../../src/main.cpp" line="47"/>
         <source>Output BibleTime version and exit</source>
         <translation>Mostrar la versión BibleTime y salir</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="49"/>
+        <location filename="../../src/main.cpp" line="50"/>
         <source>Open a clean session</source>
         <translation>Abrir una sesión limpia</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="52"/>
+        <location filename="../../src/main.cpp" line="53"/>
         <source>Open the default Bible with the reference &lt;ref&gt;</source>
         <translation>Abrir la Biblia predeterminada con la referencia &lt;ref&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="55"/>
+        <location filename="../../src/main.cpp" line="56"/>
         <source>For command-line arguments parsed by the Qt toolkit, see %1.</source>
         <translation>Para los argumentos pasados por línea de comandos de herramientas Qt, consulte %1.</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="102"/>
+        <location filename="../../src/main.cpp" line="103"/>
         <source>Error: %1 expects an argument.</source>
         <translation type="unfinished">Error: %1 espera un argumento.</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="105"/>
+        <location filename="../../src/main.cpp" line="106"/>
         <source>See --help for details.</source>
         <translation>Vea --help para mas detalles.</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="110"/>
+        <location filename="../../src/main.cpp" line="111"/>
         <source>Error: Invalid command-line argument: %1</source>
         <translation type="unfinished">Error: Argumento Inválido en la linea de comandos: %1</translation>
     </message>
@@ -4130,7 +4337,7 @@ Language name ppk</extracomment>
         <translation>¡Plantilla predeterminada &quot;%1&quot; no se encuentra!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="108"/>
+        <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="113"/>
         <source>Replace</source>
         <translation type="unfinished">Reemplazar</translation>
     </message>
@@ -4231,104 +4438,104 @@ Language name ppk</extracomment>
 <context>
     <name>Search::BtSearchOptionsArea</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="98"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="103"/>
         <source>Search for:</source>
         <translation>Buscar por:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="105"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="110"/>
         <source>&amp;Search</source>
         <translation>&amp;Buscar</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="107"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="112"/>
         <source>Start to search the text in the chosen works</source>
         <translation>Comenzar a buscar el texto en las obras escogidas</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="110"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="115"/>
         <source>Ch&amp;oose...</source>
         <translation>Es&amp;coger...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="112"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="117"/>
         <source>Choose works for the search</source>
         <translation>Selecciona obras para la búsqueda</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="115"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="120"/>
         <source>S&amp;etup...</source>
         <translation>C&amp;onfigurar...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="134"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="139"/>
         <source>All of the words (AND is added between the words)</source>
         <translatorcomment>AND es palabra clave, no se traduce aquí</translatorcomment>
         <translation>Todas las palabras (AND es agregado entre las palabras)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="138"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="143"/>
         <source> (&lt;a href=&apos;syntax_help&apos;&gt;full syntax&lt;/a&gt;)</source>
         <translation> (&lt;a href=&apos;syntax_help&apos;&gt;sintaxis completa&lt;/a&gt;)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="149"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="154"/>
         <source>Scope:</source>
         <translation>Criterio:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="170"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="175"/>
         <source>The text you want to search for</source>
         <translation>El texto que deseas buscar</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="174"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="179"/>
         <source>Works:</source>
         <translation>Obras:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="347"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="352"/>
         <source>No search scope</source>
         <translation>No hay un criterio de búsqueda</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="129"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="134"/>
         <source>All words</source>
         <translation>Todas las palabras</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="117"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="122"/>
         <source>Configure predefined scopes for search</source>
         <translation>Configurar criterios predefinidos para buscar</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="131"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="136"/>
         <source>Some words</source>
         <translation>Algunas palabras</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="132"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="137"/>
         <source>Free</source>
         <translation>Libre</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="135"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="140"/>
         <source>Some of the words (OR is added between the words)</source>
         <translatorcomment>OR es palabra clave, no se traduce aquí</translatorcomment>
         <translation>Algunas de las palabras (OR es agregado entre las palabras)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="136"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="141"/>
         <source>Full lucene syntax</source>
         <translation>Sintaxis Lucena Completa</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="139"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="144"/>
         <source>Click the link to get help for search syntax</source>
         <translation>Haz Click en el enlace para obtener ayuda para la sintaxis de búsqueda</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="160"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="165"/>
         <source>Choose the scope (books/chapters/verses to search in).&lt;br /&gt;Applicable for Bibles and commentaries.</source>
         <translation>Selecciona el criterio (libros/capitulos/versículos donde buscar).&lt;br /&gt;Aplicable en Biblias y comentarios.</translation>
     </message>
@@ -4336,17 +4543,17 @@ Language name ppk</extracomment>
 <context>
     <name>Search::BtSearchResultArea</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="80"/>
+        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="86"/>
         <source>Text of the selected search result item</source>
         <translation>Texto del elemento de la búsqueda seleccionada</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="83"/>
+        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="89"/>
         <source>Select all</source>
         <translation>Seleccionar todo</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="87"/>
+        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="93"/>
         <source>Copy</source>
         <translation>Copiar</translation>
     </message>
@@ -4597,62 +4804,62 @@ Language name ppk</extracomment>
 <context>
     <name>Search::CModuleResultView</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="50"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="51"/>
         <source>Work</source>
         <translation>Obra</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="50"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="51"/>
         <source>Hits</source>
         <translation>Coincidencias</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="64"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="65"/>
         <source>Copy...</source>
         <translation>Copiar...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="66"/>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="76"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="67"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="77"/>
         <source>Reference only</source>
         <translation>Referencia solomente</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="69"/>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="79"/>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="86"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="70"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="80"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="87"/>
         <source>Reference with text</source>
         <translation>Referencia con texto</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="74"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="75"/>
         <source>Save...</source>
         <translation>Guardar...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="84"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="85"/>
         <source>Print...</source>
         <translation>Imprimir...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="234"/>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="244"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="235"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="245"/>
         <source>Copying search result</source>
         <translation>Copiando resultado de búsqueda</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="253"/>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="262"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="254"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="263"/>
         <source>Saving search result</source>
         <translation>Guardando el resultado de búsqueda</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="271"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="272"/>
         <source>Printing search result</source>
         <translation>Imprimiendo resultados de búsqueda</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="49"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="50"/>
         <source>Works chosen for the search and the number of the hits in each work</source>
         <translation>Obras escogidas para la búsqueda y el número de coincidencias en cada obra</translation>
     </message>
@@ -4733,42 +4940,42 @@ Language name ppk</extracomment>
 <context>
     <name>Search::CSearchDialog</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="84"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="88"/>
         <source>Search</source>
         <translation>Buscar</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="127"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="131"/>
         <source>Missing indices</source>
         <translation>Índices perdidos</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="128"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="132"/>
         <source>The following modules need to be indexed before they can be searched in:</source>
         <translation type="unfinished">Los siguientes módulos deben ser indexados antes de que se pueden buscar en:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="129"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="133"/>
         <source>Indexing could take a long time. Click &quot;Yes&quot; to index the modules and start the search, or &quot;No&quot; to cancel the search.</source>
         <translation type="unfinished">La indexación podría tomar un largo tiempo. Clic en &quot;Si&quot; para indexar los modulos e iniciar la búsqueda, o &quot;No&quot; para cancelar la búsqueda.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="234"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="238"/>
         <source>Drag any verse reference onto an open Bible window</source>
         <translation type="unfinished">Arrastre cualquier referencia del verso en una ventana abierta de la Biblia</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="239"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="243"/>
         <source>&amp;Analyze results...</source>
         <translation>&amp;Analizar resultados...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="240"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="244"/>
         <source>Show a graphical analysis of the search result</source>
         <translation>Mostrar un analisis grafico de un resultado de búsqueda</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="246"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="250"/>
         <source>&amp;Close</source>
         <translation>&amp;Cerrar</translation>
     </message>
@@ -4776,205 +4983,102 @@ Language name ppk</extracomment>
 <context>
     <name>Search::CSearchResultView</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="39"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="40"/>
         <source>Results</source>
         <translation>Resultados</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="47"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="48"/>
         <source>Copy...</source>
         <translation>Copiar...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="50"/>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="64"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="51"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="65"/>
         <source>Reference only</source>
         <translation>Solo referencia</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="54"/>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="68"/>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="76"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="55"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="69"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="77"/>
         <source>Reference with text</source>
         <translation>Referencia con texto</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="61"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="62"/>
         <source>Save...</source>
         <translation>Guardar...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="73"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="74"/>
         <source>Print...</source>
         <translation>Imprimir...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="166"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="167"/>
         <source>Printing search result</source>
         <translation>Imprimiendo resultos de búsqueda</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="176"/>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="194"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="177"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="195"/>
         <source>Saving search result</source>
         <translation>Guardando el resultado de búsqueda</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="212"/>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="230"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="213"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="231"/>
         <source>Copying search result</source>
         <translation>Copiando resultado de búsqueda</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="38"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="39"/>
         <source>Search result of the selected work</source>
         <translation>Resultado de la búsqueda en la obra seleccionada</translation>
     </message>
 </context>
 <context>
-    <name>StandardWorksTab</name>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="234"/>
-        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
-        <translation>Las obras predeterminadas son utilizadas cuando ninguna obra es especificada, por ejemplo cuando se hace clic en un hipervínculo dentro de una Biblia.</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="237"/>
-        <source>Bible:</source>
-        <translation>Biblia:</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="238"/>
-        <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
-        <translation>La Biblia estandar es usada cuando un hipervínculo dentro de la Biblia es cliqueado</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="240"/>
-        <source>Commentary:</source>
-        <translation>Comentario:</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="241"/>
-        <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
-        <translation>El comentario estandar es usado cuando un hipervínculo dentro del comentario es cliqueado</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="243"/>
-        <source>Lexicon:</source>
-        <translation>Léxico:</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="244"/>
-        <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
-        <translation>El léxico estandar es usado cuando un hipervínculo dentro del léxico es cliqueado</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="246"/>
-        <source>Daily devotional:</source>
-        <translation>Devocional diario:</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="247"/>
-        <source>The standard devotional will be used to display a short start up devotional</source>
-        <translation>El devocional estandar será usado para mostrar un devocional de inicio</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="249"/>
-        <source>Hebrew Strong&apos;s lexicon:</source>
-        <translation>Léxico Hebreo de Strong:</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="250"/>
-        <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
-        <translation>El léxico Hebreo estandar es utilizado cuando un hipervínculo es cliqueado</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="252"/>
-        <source>Greek Strong&apos;s lexicon:</source>
-        <translation>Léxico Griego de Strong:</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="253"/>
-        <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
-        <translation>El léxico Griego estandar es utilizado cuando un hipervínculo en un léxico Griego es cliqueado</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="255"/>
-        <source>Hebrew morphological lexicon:</source>
-        <translation>Léxico Hebreo morfológico:</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="256"/>
-        <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
-        <translation>El léxico morfológico para textos Hebreos es utilizado cuando un hipervínculo de una etiqueta morfológica en texto Hebreo es cliqueado</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="258"/>
-        <source>Greek morphological lexicon:</source>
-        <translation>Diccionario léxico griego morfológico:</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="259"/>
-        <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
-        <translation>El léxico morfológico para textos Griegos es utilizado cuando un hipervínculo de una etiqueta morfológica en texto Griego es cliqueado</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="62"/>
-        <source></source>
-        <translation></translation>
-    </message>
-</context>
-<context>
     <name>TextFiltersTab</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="351"/>
         <source>Insert line break after each verse</source>
-        <translation>Insertar salto de lí­nea después de cada versículo</translation>
+        <translation type="obsolete">Insertar salto de lí­nea después de cada versículo</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="352"/>
         <source>Show verse numbers</source>
-        <translation>Mostrar números de versículos</translation>
+        <translation type="obsolete">Mostrar números de versículos</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="353"/>
         <source>Show section headings</source>
-        <translation>Mostrar cabeceras de las secciones</translation>
+        <translation type="obsolete">Mostrar cabeceras de las secciones</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="354"/>
         <source>Show scripture cross-references</source>
-        <translation>Mostrar las referencias cruzadas de las escrituras</translation>
+        <translation type="obsolete">Mostrar las referencias cruzadas de las escrituras</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="355"/>
         <source>Show Greek accents</source>
-        <translation>Mostrar acentos griegos</translation>
+        <translation type="obsolete">Mostrar acentos griegos</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="356"/>
         <source>Show Hebrew vowel points</source>
-        <translation>Mostrar puntos de vocales hebreas</translation>
+        <translation type="obsolete">Mostrar puntos de vocales hebreas</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="357"/>
         <source>Show Hebrew cantillation marks</source>
-        <translation>Mostrar los acentos de &quot;cantilación&quot; hebreas</translation>
+        <translation type="obsolete">Mostrar los acentos de &quot;cantilación&quot; hebreas</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="358"/>
         <source>Show morph segmentation</source>
-        <translation>Mostrar segmentación de morfología</translation>
+        <translation type="obsolete">Mostrar segmentación de morfología</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="359"/>
         <source>Use textual variants</source>
-        <translation>Usar varientes textuales</translation>
+        <translation type="obsolete">Usar varientes textuales</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="347"/>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
-        <translation>Los filtros controlan la apariencia del texto. Aquí puedes especificar las configuraciones predeterminadas para todos los filtros. Puedes anular estas configuraciones en cada ventana mostrada.</translation>
+        <translation type="obsolete">Los filtros controlan la apariencia del texto. Aquí puedes especificar las configuraciones predeterminadas para todos los filtros. Puedes anular estas configuraciones en cada ventana mostrada.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="287"/>

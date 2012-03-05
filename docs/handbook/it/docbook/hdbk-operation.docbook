@@ -2,20 +2,21 @@
   <title>Funzionamento Programma</title>
   <sect1 id="hdbk-op-overview">
     <title>Panoramica del Programma</title>
-    <para>This is what a typical &bibletime; session looks like: <mediaobject>
+    <para>Ecco come una tipica sessione di &bibletime; si presenta: <mediaobject>
       <imageobject> <imagedata fileref="ss_mainterms.png" width="100%"
 contentdepth="100%" scalefit="1" format="PNG" /> </imageobject>
       <textobject>
-        <phrase>The &bibletime; application window</phrase>
+        <phrase>Finestra applicazione di &bibletime;</phrase>
       </textobject>
-    </mediaobject> You can easily see the different parts of the
-application. The top left window is used to open installed works in the
-Bookshelf tab, and with the Bookmarks tab you can manage your bookmarks. The
-little "Mag" window below the Bookshelf is used to display extra information
-that is embedded in documents. When you move your mouse over a footnote
-marker, for example, then the Mag will display the actual content of the
-footnote. The toolbar gives you quick access to important functions, and the
-Desk on the right side is where you do your real work.</para>
+    </mediaobject> Puoi facilmente vedere le diverse parti
+dell'applicazione. La finestra in alto a sinistra è utilizzata per aprire i
+documenti installati nella scheda della Libreria, e con la scheda dei
+Segnalibri puoi gestire i tuoi segnalibri. La piccola finestra della "Lente"
+sotto la Libreria è utilizzata per visualizzare informazioni aggiuntive
+inserite nei documenti. Quando muovi il mouse sopra una nota, per esempio,
+la Lente visualizzerà il contenuto della nota. La barra degli strumenti ti
+dà accesso veloce alle funzioni importanti, e la Scrivania sul lato destro è
+dove svolgi il tuo vero lavoro.</para>
 
     <para>Procediamo a guardare alle diverse parti dell'applicazione individualmente.</para>
   </sect1>
@@ -245,7 +246,7 @@ spirito) AND Dio'.</para>
 di testo seguito da ':' e dal termine di ricerca. Fare riferimento alla
 tabella riportata di seguito per gli esempi.</para>
 
-        <para>Available text types: <table id="hd-op-search-config-syntax-table">
+        <para>Tipi di testo disponibili: <table id="hd-op-search-config-syntax-table">
 	  <title>Tipi di Ricerca</title>
           <tgroup cols="3">
             <thead>

@@ -1,0 +1,19 @@
+
+0	CDisplayTemplateMgr::fillTemplate		cdisplaytemplatemgr.cpp	63	0x815bc38	
+1	Rendering::CDisplayRendering::finishText	cdisplayrendering.cpp	158	0x8156eed	
+2	Rendering::CTextRendering::renderKeyTree	ctextrendering.cpp	196	0x815a6a4	
+3	Rendering::CTextRendering::renderKeyRange	ctextrendering.cpp	254	0x815ac9c	
+4	Rendering::CChapterDisplay::text		cchapterdisplay.cpp	69	0x8156614	
+5	CReadWindow::lookupSwordKey			creadwindow.cpp	96	0x81ff48e	
+6	CBibleReadWindow::lookupSwordKey		cbiblereadwindow.cpp	450	0x81f25b0	
+7	CBibleReadWindow::qt_static_metacall		moc_cbiblereadwindow.cxx	77	0x8209303	
+8	QMetaObject::activate(QObject*, QMetaObject const*, int, void**)	/usr/lib/libQtCore.so.4	0	0x4e911ea1	
+9	CKeyChooser::keyChanged				moc_ckeychooser.cxx	124	0x820b514	
+10	CBibleKeyChooser::setKey			cbiblekeychooser.cpp	70	0x81de8fc	
+11	CDisplayWindow::lookupModKey			cdisplaywindow.cpp	534	0x81f7e76	
+12	CDisplayWindow::lookupKey			cdisplaywindow.cpp	554	0x81f801c	
+13	BibleTime::createReadDisplayWindow		bibletime.cpp	122	0x8108275	
+14	BibleTime::reloadProfile			bibletime_slots.cpp	542	0x811830e	
+15	BibleTime::processCommandline			bibletime.cpp	267	0x8108e9b	
+16	main						main.cpp	322	0x811c504	
+

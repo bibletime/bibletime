@@ -29,14 +29,8 @@ BtOpenWorkActionMenu::BtOpenWorkActionMenu(const QString &groupingConfigKey,
     m_postFilterModel->setSourceModel(m_treeModel);
     setModel(m_postFilterModel);
 
-    m_groupingMenu = new BtBookshelfGroupingMenu(false, this);
-
     connect(this, SIGNAL(triggered(QModelIndex)),
             this, SLOT(slotIndexTriggered(QModelIndex)));
-    connect(m_groupingMenu, SIGNAL(signalGroupingOrderChanged(BtBookshelfTreeModel::Grouping)),
-            this,           SLOT(slotGroupingActionTriggered(BtBookshelfTreeModel::Grouping)));
-
-    retranslateUi();
 }
 
 BtOpenWorkActionMenu::~BtOpenWorkActionMenu() {
@@ -55,6 +49,12 @@ void BtOpenWorkActionMenu::retranslateUi() {
 
 void BtOpenWorkActionMenu::postBuildMenu() {
     addSeparator();
+    m_groupingMenu = new BtBookshelfGroupingMenu(false, this);
+
+    connect(m_groupingMenu, SIGNAL(signalGroupingOrderChanged(BtBookshelfTreeModel::Grouping)),
+            this,           SLOT(slotGroupingActionTriggered(BtBookshelfTreeModel::Grouping)));
+
+    retranslateUi();
     addMenu(m_groupingMenu);
 }
 

@@ -2,11 +2,28 @@ PROJECT(bibletime CXX C)
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6.2)
 SET(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
+
+################################################################################
 # BibleTime version
+################################################################################
+# NOTICE! The version number must only be changed during the release procedures
+#  A N D   N O T  during development or bug-fixing. This guarantees that all
+# versions of BibleTime between OLDVERSION and NEXTVERSION have version strings
+# in the form of OLDVERSION+githash where githash is the git commit hash ID.
+#
+# Note: for pre-#.#.0 versions, use the following suffixes:
+#   _dev      if pre-beta1
+#   _beta1    if post-beta1
+#   _beta2    if post-beta2
+#   _rc1    if post-rc1
+#   _rc2    if post-rc2
+# For post-full-release versions, no suffix is used.
+
 SET(BT_VERSION_MAJOR "2")
-SET(BT_VERSION_MINOR "9")
-SET(BT_VERSION_PATCH "0_rc1")
+SET(BT_VERSION_MINOR "10")
+SET(BT_VERSION_PATCH "0_dev")
 #SET(BT_VERSION_BUILD "") # Temporarily uncomment this line for release procedures
+
 
 # Determine build, if needed:
 IF (NOT (DEFINED BT_VERSION_BUILD))
@@ -33,8 +50,7 @@ ELSE (NOT CMAKE_BUILD_TYPE STREQUAL "Release")
     ADD_DEFINITIONS(-DBT_NO_DEBUG -DNDEBUG -DQT_NO_DEBUG)
 ENDIF (NOT CMAKE_BUILD_TYPE STREQUAL "Release")
 
-#Non-English locales to be processed and installed for UI, handbook and howto
-LIST(APPEND MESSAGE_LOCALE_LANGS ar cs da de en_GB es et fi fr hu it nl nn_NO pl pt_BR ro ru sk zh_TW)
+#Non-English locales to be processed and installed for handbook and howto
 #WARNING: If you modify HANDBOOK_LOCALE_LANGS or HOWTO_LOCALE_LANGS,
 #also modify the po4a conf files in cmake/docs/ to make sure all languages are processed.
 LIST(APPEND HANDBOOK_LOCALE_LANGS ar cs de es fi fr hu it nl pt_BR)

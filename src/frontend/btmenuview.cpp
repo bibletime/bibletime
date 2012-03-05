@@ -20,8 +20,6 @@ BtMenuView::BtMenuView(QWidget *parent)
 {
     connect(this, SIGNAL(aboutToShow()),
             this, SLOT(slotAboutToShow()));
-    connect(this, SIGNAL(aboutToHide()),
-            this, SLOT(slotAboutToHide()));
     connect(this, SIGNAL(triggered(QAction*)),
             this, SLOT(slotActionTriggered(QAction*)));
 }
@@ -150,14 +148,9 @@ void BtMenuView::buildMenu(QMenu *parentMenu, const QModelIndex &parentIndex) {
             QMenu *childMenu = newMenu(parentMenu, childIndex);
 
             if (childMenu != 0) {
-                // Add to menu:
+                // Add the child menu and populate it:
                 parentMenu->addMenu(childMenu);
-
-                // Populate the menu if not prohibited:
-                QVariant populate(childMenu->property("BtMenuView_NoPopulate"));
-                if (!populate.isValid() || populate.toBool()) {
-                    buildMenu(childMenu, childIndex);
-                }
+                buildMenu(childMenu, childIndex);
             }
         } else {
             QAction *childAction = newAction(parentMenu, childIndex);
@@ -177,6 +170,10 @@ void BtMenuView::buildMenu(QMenu *parentMenu, const QModelIndex &parentIndex) {
 }
 
 void BtMenuView::slotAboutToShow() {
+    // The signal "aboutToHide" comes before the signal "triggered" and
+    // leads to executing a deleted action and a crash. It is much safer
+    // to remove the menus here.
+    removeMenus();
     delete m_actions;
     m_actions = 0;
     m_indexMap.clear();
@@ -191,8 +188,13 @@ void BtMenuView::slotAboutToShow() {
     postBuildMenu();
 }
 
-void BtMenuView::slotAboutToHide() {
+void BtMenuView::removeMenus() {
+    // QMenu::clear() is documented only to delete direct child actions:
     clear();
+
+    // Delete submenus also:
+    Q_FOREACH (QObject * const child, children())
+        delete qobject_cast<QMenu *>(child);
 }
 
 void BtMenuView::slotActionTriggered(QAction *action) {

@@ -6,7 +6,7 @@
     <message>
         <source></source>
         <translatorcomment>Bibletime User Interface translation
-Copyright (C) 2010 The Bibletime Team, http://www.bibletime.info
+Copyright (C) 2012 The Bibletime Team, http://www.bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
         <translation></translation>
     </message>
@@ -54,7 +54,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>&amp;Save session</source>
-        <translation>U&amp;ložit relaci</translation>
+        <translation type="obsolete">U&amp;ložit relaci</translation>
     </message>
     <message>
         <source>&amp;Load session</source>
@@ -380,6 +380,14 @@ This file is distributed under the same license as the Bibetime package.</transl
         <source>Toggle visibility of the mag window</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Session already exists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Session with the name &quot;%1&quot; already exists. Please provide a different name.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BibleTimeApp</name>
@@ -686,6 +694,56 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <source>Select chapter</source>
         <translation>Vyberte kapitolu</translation>
+    </message>
+</context>
+<context>
+    <name>BtConfig</name>
+    <message>
+        <source>Old testament</source>
+        <translation type="unfinished">Stará Smlouva</translation>
+    </message>
+    <message>
+        <source>Moses/Pentateuch/Torah</source>
+        <translation type="unfinished">Mojžíš/Pentateuch/Tóra</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation type="unfinished">Spisy</translation>
+    </message>
+    <message>
+        <source>Prophets</source>
+        <translation type="unfinished">Proroci</translation>
+    </message>
+    <message>
+        <source>New testament</source>
+        <translation type="unfinished">Nová Smlouva</translation>
+    </message>
+    <message>
+        <source>Gospels</source>
+        <translation type="unfinished">Evangelia</translation>
+    </message>
+    <message>
+        <source>Letters/Epistles</source>
+        <translation type="unfinished">Dopisy/Epištoly</translation>
+    </message>
+    <message>
+        <source>Paul&apos;s Epistles</source>
+        <translation type="unfinished">Pavlovy epištoly</translation>
+    </message>
+    <message>
+        <source>Error loading configuration!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to load BibleTime&apos;s configuration, because it appears that the configuration file corresponds to a newer version of BibleTime. This is likely caused by BibleTime being downgraded. Loading the new configuration file may result in &lt;b&gt;loss of data&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Do you still want to try to load the new configuration file? Press &quot;No&quot; to quit BibleTime immediately.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>BtConfigCore</name>
+    <message>
+        <source>Default Session</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1466,6 +1524,124 @@ shortcut</source>
     <message>
         <source>The destination directory is not writable or does not exist. Installation will fail unless this has first been fixed.</source>
         <translation type="obsolete">Do cílového adresáře nelze zapisovat nebo neexistuje. Instalace bude selhávat, dokud to nebude opraveno.</translation>
+    </message>
+</context>
+<context>
+    <name>BtStandardWorksTab</name>
+    <message>
+        <source>Bible:</source>
+        <translation>Bible:</translation>
+    </message>
+    <message>
+        <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
+        <translation>Standardní Bible je použita, když kliknete na odkaz směřující na Bibli</translation>
+    </message>
+    <message>
+        <source>Commentary:</source>
+        <translation>Kometář:</translation>
+    </message>
+    <message>
+        <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
+        <translation>Standardní komentář je použit, když kliknete na odkaz směřující na komentář</translation>
+    </message>
+    <message>
+        <source>Lexicon:</source>
+        <translation>Lexikon:</translation>
+    </message>
+    <message>
+        <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
+        <translation>Standardní lexikon je použit, když kliknete na odkaz směřující na lexikon</translation>
+    </message>
+    <message>
+        <source>Daily devotional:</source>
+        <translation>Denní zamyšlení:</translation>
+    </message>
+    <message>
+        <source>The standard devotional will be used to display a short start up devotional</source>
+        <translation>Standardní zamyšlení bude použito k zobrazení krátkého zamyslení po startu</translation>
+    </message>
+    <message>
+        <source>Hebrew Strong&apos;s lexicon:</source>
+        <translation>Hebrejský Strongův lexikon:</translation>
+    </message>
+    <message>
+        <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
+        <translation>Standardní hebrejský lexikon je použit, když kliknete na odkaz směřující na hebrejský lexikon</translation>
+    </message>
+    <message>
+        <source>Greek Strong&apos;s lexicon:</source>
+        <translation>řecká Strongův lexikon</translation>
+    </message>
+    <message>
+        <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
+        <translation>Standardní řecký lexikon je použit, když kliknete na odkaz směřující na řecký lexikon</translation>
+    </message>
+    <message>
+        <source>Hebrew morphological lexicon:</source>
+        <translation>Hebrejský monografický lexikon:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
+        <translation>Standardní monografický lexikon pro hebrejské texty je použit, když kliknete na odkaz monografické značky v hebrejském textu</translation>
+    </message>
+    <message>
+        <source>Greek morphological lexicon:</source>
+        <translation>řecký monografický lexikon:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
+        <translation>Standardní monografický lexikon pro řecké texty je použit, když kliknete na odkaz monografické značky v řeckém textu</translation>
+    </message>
+    <message>
+        <source></source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>BtTextFiltersTab</name>
+    <message>
+        <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
+        <translation type="unfinished">Filtry kontrolují vzhled textu. Zde můžete nastavit výchozí hodnoty pro všechny filtry. Toto nastavení můžete v každém zobrazeném okně anulovat.</translation>
+    </message>
+    <message>
+        <source>Insert line break after each verse</source>
+        <translation type="unfinished">Zalomit řádek po každém verši</translation>
+    </message>
+    <message>
+        <source>Show verse numbers</source>
+        <translation type="unfinished">Zobrazit čísla veršů</translation>
+    </message>
+    <message>
+        <source>Show section headings</source>
+        <translation type="unfinished">Zobrazit nadpisy částí</translation>
+    </message>
+    <message>
+        <source>Show scripture cross-references</source>
+        <translation type="unfinished">Ukázat odkaz v Bibli</translation>
+    </message>
+    <message>
+        <source>Show Greek accents</source>
+        <translation type="unfinished">Zobrazit řecké značky přízvuku</translation>
+    </message>
+    <message>
+        <source>Show Hebrew vowel points</source>
+        <translation type="unfinished">Zobrazit hebrejské značky samohlásek</translation>
+    </message>
+    <message>
+        <source>Show Hebrew cantillation marks</source>
+        <translation type="unfinished">Zobrazit hebrejské značky přízvuku</translation>
+    </message>
+    <message>
+        <source>Show morph segmentation</source>
+        <translation type="unfinished">Ukázat morfologické dělení</translation>
+    </message>
+    <message>
+        <source>Use textual variants</source>
+        <translation type="unfinished">Použít textové varianty</translation>
     </message>
 </context>
 <context>
@@ -3321,35 +3497,35 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Old testament</source>
-        <translation>Stará Smlouva</translation>
+        <translation type="obsolete">Stará Smlouva</translation>
     </message>
     <message>
         <source>Moses/Pentateuch/Torah</source>
-        <translation>Mojžíš/Pentateuch/Tóra</translation>
+        <translation type="obsolete">Mojžíš/Pentateuch/Tóra</translation>
     </message>
     <message>
         <source>History</source>
-        <translation>Spisy</translation>
+        <translation type="obsolete">Spisy</translation>
     </message>
     <message>
         <source>Prophets</source>
-        <translation>Proroci</translation>
+        <translation type="obsolete">Proroci</translation>
     </message>
     <message>
         <source>New testament</source>
-        <translation>Nová Smlouva</translation>
+        <translation type="obsolete">Nová Smlouva</translation>
     </message>
     <message>
         <source>Gospels</source>
-        <translation>Evangelia</translation>
+        <translation type="obsolete">Evangelia</translation>
     </message>
     <message>
         <source>Letters/Epistles</source>
-        <translation>Dopisy/Epištoly</translation>
+        <translation type="obsolete">Dopisy/Epištoly</translation>
     </message>
     <message>
         <source>Paul&apos;s Epistles</source>
-        <translation>Pavlovy epištoly</translation>
+        <translation type="obsolete">Pavlovy epištoly</translation>
     </message>
     <message>
         <source>HTML files</source>
@@ -4194,121 +4370,46 @@ To může trvat dlouhou dobu. Pokračovat v indexování?</translation>
     </message>
 </context>
 <context>
-    <name>StandardWorksTab</name>
-    <message>
-        <source>Bible:</source>
-        <translation>Bible:</translation>
-    </message>
-    <message>
-        <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
-        <translation>Standardní Bible je použita, když kliknete na odkaz směřující na Bibli</translation>
-    </message>
-    <message>
-        <source>Commentary:</source>
-        <translation>Kometář:</translation>
-    </message>
-    <message>
-        <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
-        <translation>Standardní komentář je použit, když kliknete na odkaz směřující na komentář</translation>
-    </message>
-    <message>
-        <source>Lexicon:</source>
-        <translation>Lexikon:</translation>
-    </message>
-    <message>
-        <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
-        <translation>Standardní lexikon je použit, když kliknete na odkaz směřující na lexikon</translation>
-    </message>
-    <message>
-        <source>Daily devotional:</source>
-        <translation>Denní zamyšlení:</translation>
-    </message>
-    <message>
-        <source>The standard devotional will be used to display a short start up devotional</source>
-        <translation>Standardní zamyšlení bude použito k zobrazení krátkého zamyslení po startu</translation>
-    </message>
-    <message>
-        <source>Hebrew Strong&apos;s lexicon:</source>
-        <translation>Hebrejský Strongův lexikon:</translation>
-    </message>
-    <message>
-        <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
-        <translation>Standardní hebrejský lexikon je použit, když kliknete na odkaz směřující na hebrejský lexikon</translation>
-    </message>
-    <message>
-        <source>Greek Strong&apos;s lexicon:</source>
-        <translation>řecká Strongův lexikon</translation>
-    </message>
-    <message>
-        <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
-        <translation>Standardní řecký lexikon je použit, když kliknete na odkaz směřující na řecký lexikon</translation>
-    </message>
-    <message>
-        <source>Hebrew morphological lexicon:</source>
-        <translation>Hebrejský monografický lexikon:</translation>
-    </message>
-    <message>
-        <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
-        <translation>Standardní monografický lexikon pro hebrejské texty je použit, když kliknete na odkaz monografické značky v hebrejském textu</translation>
-    </message>
-    <message>
-        <source>Greek morphological lexicon:</source>
-        <translation>řecký monografický lexikon:</translation>
-    </message>
-    <message>
-        <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
-        <translation>Standardní monografický lexikon pro řecké texty je použit, když kliknete na odkaz monografické značky v řeckém textu</translation>
-    </message>
-    <message>
-        <source></source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>TextFiltersTab</name>
     <message>
         <source>Insert line break after each verse</source>
-        <translation>Zalomit řádek po každém verši</translation>
+        <translation type="obsolete">Zalomit řádek po každém verši</translation>
     </message>
     <message>
         <source>Show verse numbers</source>
-        <translation>Zobrazit čísla veršů</translation>
+        <translation type="obsolete">Zobrazit čísla veršů</translation>
     </message>
     <message>
         <source>Show section headings</source>
-        <translation>Zobrazit nadpisy částí</translation>
+        <translation type="obsolete">Zobrazit nadpisy částí</translation>
     </message>
     <message>
         <source>Show scripture cross-references</source>
-        <translation>Ukázat odkaz v Bibli</translation>
+        <translation type="obsolete">Ukázat odkaz v Bibli</translation>
     </message>
     <message>
         <source>Show Greek accents</source>
-        <translation>Zobrazit řecké značky přízvuku</translation>
+        <translation type="obsolete">Zobrazit řecké značky přízvuku</translation>
     </message>
     <message>
         <source>Show Hebrew vowel points</source>
-        <translation>Zobrazit hebrejské značky samohlásek</translation>
+        <translation type="obsolete">Zobrazit hebrejské značky samohlásek</translation>
     </message>
     <message>
         <source>Show Hebrew cantillation marks</source>
-        <translation>Zobrazit hebrejské značky přízvuku</translation>
+        <translation type="obsolete">Zobrazit hebrejské značky přízvuku</translation>
     </message>
     <message>
         <source>Show morph segmentation</source>
-        <translation>Ukázat morfologické dělení</translation>
+        <translation type="obsolete">Ukázat morfologické dělení</translation>
     </message>
     <message>
         <source>Use textual variants</source>
-        <translation>Použít textové varianty</translation>
+        <translation type="obsolete">Použít textové varianty</translation>
     </message>
     <message>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
-        <translation>Filtry kontrolují vzhled textu. Zde můžete nastavit výchozí hodnoty pro všechny filtry. Toto nastavení můžete v každém zobrazeném okně anulovat.</translation>
+        <translation type="obsolete">Filtry kontrolují vzhled textu. Zde můžete nastavit výchozí hodnoty pro všechny filtry. Toto nastavení můžete v každém zobrazeném okně anulovat.</translation>
     </message>
     <message>
         <source></source>

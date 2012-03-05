@@ -602,7 +602,7 @@ void BibleTime::saveToNewProfile() {
                 QMessageBox::information(this, tr("Session already exists"),
                                          tr("Session with the name \"%1\" "
                                             "already exists. Please provide a "
-                                            "different name."));
+                                            "different name.").arg(name));
             } else {
                 break;
             }

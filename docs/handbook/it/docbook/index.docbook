@@ -42,7 +42,7 @@
   </authorgroup>
   
   <!-- TRANS:ROLES_OF_TRANSLATORS -->
-<copyright> <year>1999-2011</year> <holder>The &bibletime; Team</holder>
+<copyright> <year>1999-2012</year> <holder>The &bibletime; Team</holder>
 </copyright>
 
   <legalnotice>
@@ -50,9 +50,9 @@
 &bibletime;.</para>
   </legalnotice>
 
-  <date>January 2011</date>
+  <date>January 2012</date>
 
-  <releaseinfo>2.9.0</releaseinfo>
+  <releaseinfo>2.9.2</releaseinfo>
 
   <abstract>
     <para>&bibletime; è un programma di studio della Bibbia completamente
@@ -68,7 +68,7 @@ da &cbs;.</para>
     <keyword>BibleTime</keyword>
     <keyword>SWORD</keyword>
     <keyword>Crosswire</keyword>
-    <keyword>Help dialog</keyword>
+    <keyword>Finestra di aiuto</keyword>
   </keywordset>
 </bookinfo>
 &hdbkchap1; &hdbkchap2; &hdbkchap3; &hdbkchap4; &hdbkchap5;
