@@ -727,7 +727,7 @@ void BibleTime::retranslateUi() {
     m_windowMenu->setTitle(tr("&Window"));
         m_openWindowsMenu->setTitle(tr("O&pen windows"));
         m_windowArrangementMenu->setTitle(tr("&Arrangement mode"));
-        m_windowLoadProfileMenu->setTitle(tr("&Load session"));
+        m_windowLoadProfileMenu->setTitle(tr("Sw&itch session"));
         m_windowDeleteProfileMenu->setTitle(tr("&Delete session"));
     m_settingsMenu->setTitle(tr("Se&ttings"));
     m_helpMenu->setTitle(tr("&Help"));
