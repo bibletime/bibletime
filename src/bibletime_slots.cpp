@@ -139,77 +139,33 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
     m_windowCascadeAction->setEnabled( m_windowManualModeAction->isChecked() );
     m_windowTileAction->setEnabled( m_windowManualModeAction->isChecked() );
 
-    if (clickedAction) {
-        m_windowManualModeAction->setEnabled(
-            m_windowManualModeAction != clickedAction
-            && m_windowTileHorizontalAction != clickedAction
-            && m_windowTileVerticalAction != clickedAction
-            && m_windowCascadeAction != clickedAction
-            && m_windowTileAction != clickedAction
-        );
-        m_windowAutoTileVerticalAction->setEnabled( m_windowAutoTileVerticalAction != clickedAction );
-        m_windowAutoTileHorizontalAction->setEnabled( m_windowAutoTileHorizontalAction != clickedAction );
-        m_windowAutoCascadeAction->setEnabled( m_windowAutoCascadeAction != clickedAction );
-        m_windowAutoTileAction->setEnabled( m_windowAutoTileAction != clickedAction );
-        m_windowAutoTabbedAction->setEnabled( m_windowAutoTabbedAction != clickedAction );
-    }
-
     if (clickedAction == m_windowManualModeAction) {
-        m_windowAutoTileVerticalAction->setChecked(false);
-        m_windowAutoTileHorizontalAction->setChecked(false);
-        m_windowAutoCascadeAction->setChecked(false);
-        m_windowAutoTileAction->setChecked(false);
-        m_windowAutoTabbedAction->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(true);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeManual );
         btConfig().setValue("GUI/alignmentMode", manual);
     }
     else if (clickedAction == m_windowAutoTileVerticalAction) {
-        m_windowManualModeAction->setChecked(false);
-        m_windowAutoTileHorizontalAction->setChecked(false);
-        m_windowAutoCascadeAction->setChecked(false);
-        m_windowAutoTileAction->setChecked(false);
-        m_windowAutoTabbedAction->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(false);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTileVertical );
         btConfig().setValue("GUI/alignmentMode", autoTileVertical);
     }
     else if (clickedAction == m_windowAutoTileHorizontalAction) {
-        m_windowManualModeAction->setChecked(false);
-        m_windowAutoTileVerticalAction->setChecked(false);
-        m_windowAutoCascadeAction->setChecked(false);
-        m_windowAutoTileAction->setChecked(false);
-        m_windowAutoTabbedAction->setChecked(false);
+
         m_mdi->enableWindowMinMaxFlags(false);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTileHorizontal );
         btConfig().setValue("GUI/alignmentMode", autoTileHorizontal);
     }
     else if (clickedAction == m_windowAutoTileAction) {
-        m_windowManualModeAction->setChecked(false);
-        m_windowAutoTileHorizontalAction->setChecked(false);
-        m_windowAutoTileVerticalAction->setChecked(false);
-        m_windowAutoTabbedAction->setChecked(false);
-        m_windowAutoCascadeAction->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(false);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTile );
         btConfig().setValue("GUI/alignmentMode", autoTile);
     }
     else if (clickedAction == m_windowAutoTabbedAction) {
-        m_windowManualModeAction->setChecked(false);
-        m_windowAutoTileHorizontalAction->setChecked(false);
-        m_windowAutoTileVerticalAction->setChecked(false);
-        m_windowAutoTileAction->setChecked(false);
-        m_windowAutoCascadeAction->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(false);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTabbed );
         btConfig().setValue("GUI/alignmentMode", autoTabbed);
     }
     else if (clickedAction == m_windowAutoCascadeAction) {
-        m_windowManualModeAction->setChecked(false);
-        m_windowAutoTileHorizontalAction->setChecked(false);
-        m_windowAutoTileVerticalAction->setChecked(false);
-        m_windowAutoTileAction->setChecked(false);
-        m_windowAutoTabbedAction->setChecked(false);
         m_mdi->enableWindowMinMaxFlags(false);
         m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeCascade );
         btConfig().setValue("GUI/alignmentMode", autoCascade);

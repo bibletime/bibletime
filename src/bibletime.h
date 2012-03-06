@@ -34,6 +34,7 @@ class CSwordModuleInfo;
 class QAction;
 class QLabel;
 class QMenu;
+class QActionGroup;
 class QToolBar;
 class QSplitter;
 class QSignalMapper;
@@ -465,6 +466,7 @@ class BibleTime : public QMainWindow {
         QAction *m_windowTileVerticalAction;
         QAction *m_windowManualModeAction;
         QMenu *m_windowArrangementMenu;
+        QActionGroup *m_windowArrangementActionGroup;
         QAction *m_windowAutoCascadeAction;
         QAction *m_windowAutoTileAction;
         QAction *m_windowAutoTabbedAction;
