@@ -523,7 +523,8 @@ void BibleTime::reloadProfile() {
 
     // Re-enable updates and repaint:
     setUpdatesEnabled(true);
-    repaint(); /// \bug The main window (except decors) is all black without this (not even hover over toolbar buttons works)
+    repaint(); /// \bug The main window (except decors) is all black without this (not even hover over toolbar buttons work)
+    raise(); /// \bug The main window would not refresh at all. A call to this function or adjustSize() seems to fix this
 
     /// \todo For windows in failedWindows ask whether to keep the settings / close windows etc
 }
