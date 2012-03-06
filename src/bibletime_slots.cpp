@@ -458,10 +458,13 @@ void BibleTime::loadProfile(QAction * action) {
 void BibleTime::loadProfile(const QString & profileKey) {
     Q_ASSERT(btConfig().sessionNames().contains(profileKey));
 
+    // Save old profile:
+    saveProfile();
+
     // Close all open windows BEFORE switching profile:
     m_mdi->closeAllSubWindows();
 
-    // Switch prifle Activate profile:
+    // Switch profile Activate profile:
     btConfig().setCurrentSession(profileKey);
     reloadProfile();
     refreshProfileMenus();
