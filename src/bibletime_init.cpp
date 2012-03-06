@@ -656,6 +656,7 @@ void BibleTime::initMenubar() {
     m_windowMenu->addSeparator();
     m_windowMenu->addAction(m_windowSaveToNewProfileAction);
     m_windowLoadProfileMenu = new QMenu(this);
+    m_windowLoadProfileActionGroup = new QActionGroup(m_windowLoadProfileMenu);
     m_windowMenu->addMenu(m_windowLoadProfileMenu);
     m_windowDeleteProfileMenu = new QMenu(this);
     m_windowMenu->addMenu(m_windowDeleteProfileMenu);

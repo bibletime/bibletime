@@ -474,6 +474,10 @@ class BibleTime : public QMainWindow {
         QAction *m_windowAutoTileHorizontalAction;
         QAction *m_windowCloseAction;
         QAction *m_windowCloseAllAction;
+        QAction* m_windowSaveToNewProfileAction;
+        QMenu* m_windowLoadProfileMenu;
+        QActionGroup* m_windowLoadProfileActionGroup;
+        QMenu* m_windowDeleteProfileMenu;
 
         // Settings menu:
         QMenu *m_settingsMenu;
@@ -489,9 +493,7 @@ class BibleTime : public QMainWindow {
 
         BtActionCollection* m_actionCollection;
 
-        QAction* m_windowSaveToNewProfileAction;
-        QMenu* m_windowLoadProfileMenu;
-        QMenu* m_windowDeleteProfileMenu;
+
         QAction* m_windowFullscreenAction;
 
         /**
