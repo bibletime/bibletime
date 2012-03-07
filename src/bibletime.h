@@ -308,34 +308,12 @@ class BibleTime : public QMainWindow {
          * Is called when the open windows menu is about to show ;-)
          */
         void slotOpenWindowsMenuAboutToShow();
-        /**
-         * This slot is connected with the windowAutoTileVerticalAction object
-         */
-        void slotAutoTileVertical();
-        /**
-         * This slot is connected with the windowAutoTileHorizontalAction object
-         */
-        void slotAutoTileHorizontal();
-        /**
-         * This slot is connected with the windowAutoTileAction object
-         */
-        void slotAutoTile();
-        /**
-         * This slot is connected with the windowAutoTabbedAction object
-         */
-        void slotAutoTabbed();
-        /**
-         * This slot is connected with the windowAutoCascadeAction object
-         */
-        void slotAutoCascade();
-        void slotUpdateWindowArrangementActions( QAction* );
+        void slotUpdateWindowArrangementActions(QAction * trigerredAction);
 
         void slotCascade();
         void slotTile();
         void slotTileVertical();
         void slotTileHorizontal();
-
-        void slotManualArrangementMode();
 
         /**
          * Shows/hides the main toolbar
