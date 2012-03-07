@@ -603,14 +603,14 @@ void BibleTime::refreshProfileMenus() {
     if (enableActions) {
         for (SNHMCI it = sessions.constBegin(); it != sessions.constEnd(); ++it) {
             QAction * a;
-            
+
             a = m_windowLoadProfileMenu->addAction(it.value());
             a->setProperty("ProfileKey", it.key());
             a->setActionGroup(m_windowLoadProfileActionGroup);
             a->setCheckable(true);
             if (it.key() == conf.currentSessionKey())
                 a->setChecked(true);
-            
+
             a = m_windowDeleteProfileMenu->addAction(it.value());
             a->setProperty("ProfileKey", it.key());
             if (it.key() == conf.currentSessionKey())
