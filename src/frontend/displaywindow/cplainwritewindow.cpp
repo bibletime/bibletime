@@ -15,7 +15,7 @@
 #include <QToolBar>
 #include "bibletime.h"
 #include "backend/keys/cswordkey.h"
-#include "frontend/display/cwritedisplay.h"
+#include "frontend/display/cplainwritedisplay.h"
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"
 #include "frontend/keychooser/ckeychooser.h"
@@ -32,8 +32,9 @@ CPlainWriteWindow::CPlainWriteWindow(QList<CSwordModuleInfo*> moduleList, CMDIAr
 /** Initialize the state of this widget. */
 void CPlainWriteWindow::initView() {
     //  qWarning("CPlainWriteWindow::initView()");
-    setDisplayWidget( CDisplay::createWriteInstance(this) );
-    setCentralWidget( displayWidget()->view() );
+    CPlainWriteDisplay * d = new CPlainWriteDisplay(this, this);
+    setDisplayWidget(d);
+    setCentralWidget(d->view());
 
     // Create Navigation toolbar
     setMainToolBar( new QToolBar(this) );

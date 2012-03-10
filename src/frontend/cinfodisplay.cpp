@@ -27,8 +27,7 @@
 #include "backend/managers/referencemanager.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
 #include "frontend/crossrefrendering.h"
-#include "frontend/display/cdisplay.h"
-#include "frontend/display/creaddisplay.h"
+#include "frontend/display/bthtmlreaddisplay.h"
 
 // Sword includes:
 #include <listkey.h>
@@ -44,7 +43,7 @@ CInfoDisplay::CInfoDisplay(QWidget *parent) : QWidget(parent) {
     layout->setContentsMargins(2, 2, 2, 2); // Leave small border
     setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 
-    m_htmlPart = CDisplay::createReadInstance(0, this);
+    m_htmlPart = new BtHtmlReadDisplay(0, this);
     m_htmlPart->setMouseTracking(false); //we don't want strong/lemma/note mouse infos
     m_htmlPart->view()->setAcceptDrops(false);
 

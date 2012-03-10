@@ -14,7 +14,6 @@
 #include "bibletime.h"
 #include "backend/keys/cswordkey.h"
 #include "frontend/display/chtmlwritedisplay.h"
-#include "frontend/display/cwritedisplay.h"
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"
 #include "frontend/keychooser/ckeychooser.h"
@@ -27,7 +26,7 @@ CHTMLWriteWindow::CHTMLWriteWindow(QList<CSwordModuleInfo*> modules, CMDIArea* p
         : CPlainWriteWindow(modules, parent) {}
 
 void CHTMLWriteWindow::initView() {
-    CWriteDisplay* writeDisplay = CDisplay::createWriteInstance(this, CDisplay::HTMLDisplay);
+    CHTMLWriteDisplay * writeDisplay = new CHTMLWriteDisplay(this, this);
     Q_ASSERT(writeDisplay);
     setDisplayWidget( writeDisplay );
     setCentralWidget( displayWidget()->view() );

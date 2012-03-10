@@ -38,6 +38,10 @@ class BtHtmlReadDisplay : public QWebPage, public CReadDisplay {
         friend class BtHtmlReadDisplayView;
 
     public:
+
+        BtHtmlReadDisplay( CReadWindow* readWindow, QWidget* parent = 0 );
+        virtual ~BtHtmlReadDisplay();
+
         //reimplemented functions from CDisplay
         // Returns the right text part in the specified format.
         virtual const QString text( const CDisplay::TextType format = CDisplay::HTMLText,
@@ -68,9 +72,7 @@ class BtHtmlReadDisplay : public QWebPage, public CReadDisplay {
         void completed();
 
     protected:
-        friend class CDisplay;
-        BtHtmlReadDisplay( CReadWindow* readWindow, QWidget* parent = 0 );
-        virtual ~BtHtmlReadDisplay();
+
         void slotGoToAnchor(const QString& anchor);
         struct DNDData {
             bool mousePressed;

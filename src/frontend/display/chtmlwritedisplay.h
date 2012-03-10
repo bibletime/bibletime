@@ -29,6 +29,9 @@ class QWidget;
 class CHTMLWriteDisplay : public CPlainWriteDisplay {
         Q_OBJECT
     public:
+
+        CHTMLWriteDisplay(CWriteWindow * parentWindow, QWidget * parent = 0);
+
         /**
         * Sets the new text for this display widget. (CPlainWriteDisplay).
         */
@@ -45,8 +48,6 @@ class CHTMLWriteDisplay : public CPlainWriteDisplay {
         virtual void setupToolbar(QToolBar * bar, BtActionCollection * actionCollection);
 
     protected:
-        friend class CDisplay;
-        CHTMLWriteDisplay(CWriteWindow* parentWindow, QWidget* parent);
 
         void alignmentChanged(int);
 

@@ -27,6 +27,9 @@ class QWidget;
   */
 class CPlainWriteDisplay : public QTextEdit, public CWriteDisplay  {
     public:
+
+        CPlainWriteDisplay(CWriteWindow * parentWindow, QWidget * parent = 0);
+
         /**
         * Reimplementation.
         */
@@ -70,9 +73,6 @@ class CPlainWriteDisplay : public QTextEdit, public CWriteDisplay  {
         virtual void setupToolbar(QToolBar*, BtActionCollection*);
 
     protected:
-        friend class CDisplay;
-
-        CPlainWriteDisplay(CWriteWindow* parentWindow, QWidget* parent);
 
         /**
         * Reimplementation from QTextEdit to manage drops of our drag and drop objects.
