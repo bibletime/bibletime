@@ -16,10 +16,6 @@
 
 class CDisplayConnections;
 class CDisplayWindow;
-class CReadDisplay;
-class CReadWindow;
-class CWriteDisplay;
-class CWriteWindow;
 class QMenu;
 
 /** The base class for all display widgets.

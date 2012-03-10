@@ -32,9 +32,9 @@ CPlainWriteWindow::CPlainWriteWindow(QList<CSwordModuleInfo*> moduleList, CMDIAr
 /** Initialize the state of this widget. */
 void CPlainWriteWindow::initView() {
     //  qWarning("CPlainWriteWindow::initView()");
-    CPlainWriteDisplay * d = new CPlainWriteDisplay(this, this);
-    setDisplayWidget(d);
-    setCentralWidget(d->view());
+    m_writeDisplay = new CPlainWriteDisplay(this, this);
+    setDisplayWidget(m_writeDisplay);
+    setCentralWidget(m_writeDisplay->view());
 
     // Create Navigation toolbar
     setMainToolBar( new QToolBar(this) );
@@ -116,7 +116,7 @@ void CPlainWriteWindow::applyProfileSettings(const QString & windowGroup) {
 
 /** Saves the text for the current key. Directly writes the changed text into the module. */
 void CPlainWriteWindow::saveCurrentText( const QString& /*key*/ ) {
-    QString t = ((CWriteDisplay*)displayWidget())->plainText();
+    QString t = m_writeDisplay->plainText();
     //since t is a complete HTML page at the moment, strip away headers and footers of a HTML page
     QRegExp re("(?:<html.*>.+<body.*>)", Qt::CaseInsensitive); //remove headers, case insensitive
     re.setMinimal(true);
@@ -126,7 +126,7 @@ void CPlainWriteWindow::saveCurrentText( const QString& /*key*/ ) {
     const QString& oldKey = this->key()->key();
     if ( modules().first()->isWritable() ) {
         const_cast<CSwordModuleInfo*>(modules().first())->write(this->key(), t);
-        ((CWriteDisplay*)displayWidget())->setModified(false);
+        m_writeDisplay->setModified(false);
         this->key()->setKey(oldKey);
         textChanged();
     }
@@ -142,7 +142,7 @@ void CPlainWriteWindow::saveCurrentText( const QString& /*key*/ ) {
 /** Loads the original text from the module. */
 void CPlainWriteWindow::restoreText() {
     lookupSwordKey(key());
-    ((CWriteDisplay*)displayWidget())->setModified(false);
+    m_writeDisplay->setModified(false);
     textChanged();
 }
 
@@ -150,17 +150,17 @@ void CPlainWriteWindow::restoreText() {
 void CPlainWriteWindow::textChanged() {
     QAction* action = actionCollection()->action(CResMgr::displaywindows::writeWindow::saveText::actionName);
     Q_ASSERT(action != 0);
-    action->setEnabled( ((CWriteDisplay*)displayWidget())->isModified() );
+    action->setEnabled(m_writeDisplay->isModified());
     action = actionCollection()->action(CResMgr::displaywindows::writeWindow::restoreText::actionName);
     Q_ASSERT(action != 0);
-    action->setEnabled( ((CWriteDisplay*)displayWidget())->isModified() );
+    action->setEnabled(m_writeDisplay->isModified());
 }
 
 /** Deletes the module entry and clears the edit widget, */
 void CPlainWriteWindow::deleteEntry() {
     const_cast<CSwordModuleInfo*>(modules().first())->deleteEntry(key());
     lookupSwordKey( key() );
-    ((CWriteDisplay*)displayWidget())->setModified(false);
+    m_writeDisplay->setModified(false);
 }
 
 /** Setups the popup menu of this display widget. */

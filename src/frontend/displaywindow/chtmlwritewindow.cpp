@@ -26,10 +26,10 @@ CHTMLWriteWindow::CHTMLWriteWindow(QList<CSwordModuleInfo*> modules, CMDIArea* p
         : CPlainWriteWindow(modules, parent) {}
 
 void CHTMLWriteWindow::initView() {
-    CHTMLWriteDisplay * writeDisplay = new CHTMLWriteDisplay(this, this);
-    Q_ASSERT(writeDisplay);
-    setDisplayWidget( writeDisplay );
-    setCentralWidget( displayWidget()->view() );
+    m_writeDisplay = new CHTMLWriteDisplay(this, this);
+    Q_ASSERT(m_writeDisplay);
+    setDisplayWidget(m_writeDisplay);
+    setCentralWidget(m_writeDisplay->view() );
 
     // Create Navigation toolbar
     setMainToolBar( new QToolBar(this) );
@@ -56,7 +56,7 @@ void CHTMLWriteWindow::initConnections() {
     CWriteWindow::initConnections();
 
     connect(keyChooser(), SIGNAL(keyChanged(CSwordKey*)), this, SLOT(lookupSwordKey(CSwordKey*)));
-    connect(displayWidget()->connectionsProxy(), SIGNAL(textChanged()), this, SLOT(textChanged()) );
+    connect(m_writeDisplay->connectionsProxy(), SIGNAL(textChanged()), this, SLOT(textChanged()) );
 }
 
 void CHTMLWriteWindow::initToolbars() {
@@ -65,7 +65,7 @@ void CHTMLWriteWindow::initToolbars() {
     CPlainWriteWindow::initToolbars();
 
     //Formatting toolbar
-    ((CWriteDisplay*)displayWidget())->setupToolbar( formatToolBar(), actionCollection() );
+    m_writeDisplay->setupToolbar( formatToolBar(), actionCollection() );
 }
 
 void CHTMLWriteWindow::storeProfileSettings(const QString & windowGroup) {
@@ -90,16 +90,16 @@ void CHTMLWriteWindow::applyProfileSettings(const QString & windowGroup) {
 void CHTMLWriteWindow::textChanged() {
     QAction* action = actionCollection()->action(CResMgr::displaywindows::writeWindow::saveText::actionName);
     Q_ASSERT(action != 0);
-    action->setEnabled( ((CWriteDisplay*)displayWidget())->isModified() );
+    action->setEnabled(m_writeDisplay->isModified());
     action = actionCollection()->action(CResMgr::displaywindows::writeWindow::restoreText::actionName);
     Q_ASSERT(action != 0);
-    action->setEnabled( ((CWriteDisplay*)displayWidget())->isModified() );
+    action->setEnabled(m_writeDisplay->isModified());
 }
 
 /** Loads the original text from the module. */
 void CHTMLWriteWindow::restoreText() {
     lookupSwordKey(key());
-    ((CWriteDisplay*)displayWidget())->setModified(false);
+    m_writeDisplay->setModified(false);
     textChanged();
 }
 
@@ -111,7 +111,7 @@ bool CHTMLWriteWindow::syncAllowed() const {
 
 /** Saves the text for the current key. Directly writes the changed text into the module. */
 void CHTMLWriteWindow::saveCurrentText( const QString& /*key*/ ) {
-    QString t = ((CHTMLWriteDisplay*)displayWidget())->toHtml();
+    QString t = m_writeDisplay->toHtml();
     //since t is a complete HTML page at the moment, strip away headers and footers of a HTML page
     QRegExp re("(?:<html.*>.+<body.*>)", Qt::CaseInsensitive); //remove headers, case insensitive
     re.setMinimal(true);
@@ -123,7 +123,7 @@ void CHTMLWriteWindow::saveCurrentText( const QString& /*key*/ ) {
         const_cast<CSwordModuleInfo*>(modules().first())->write(this->key(), t);
         this->key()->setKey(oldKey);
 
-        ((CWriteDisplay*)displayWidget())->setModified(false);
+        m_writeDisplay->setModified(false);
         textChanged();
     }
     else {
@@ -137,5 +137,5 @@ void CHTMLWriteWindow::saveCurrentText( const QString& /*key*/ ) {
 void CHTMLWriteWindow::setupMainWindowToolBars() {
     CPlainWriteWindow::setupMainWindowToolBars();
     //Formatting toolbar
-    ((CWriteDisplay*)displayWidget())->setupToolbar( btMainWindow()->formatToolBar(), actionCollection() );
+    m_writeDisplay->setupToolbar( btMainWindow()->formatToolBar(), actionCollection() );
 }

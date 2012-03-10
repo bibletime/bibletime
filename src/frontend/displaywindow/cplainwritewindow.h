@@ -14,8 +14,7 @@
 
 
 class BtActionCollection;
-class QAction;
-class QString;
+class CPlainWriteDisplay;
 
 /** The write window class which offers a plain text editor for creating a personal commentary.
   *
@@ -82,6 +81,11 @@ class CPlainWriteWindow : public CWriteWindow  {
         * Deletes the module entry and clears the edit widget.
         */
         virtual void deleteEntry();
+
+    protected: /* Fields: */
+
+        CPlainWriteDisplay * m_writeDisplay;
+
 };
 
 #endif

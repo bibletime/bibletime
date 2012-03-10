@@ -13,8 +13,6 @@
 #include "frontend/displaywindow/cplainwritewindow.h"
 
 
-class QAction;
-
 /** 
  * The write window class which offers a WYSIWYG text editor for creating a personal commentary.
   *
@@ -70,6 +68,7 @@ class CHTMLWriteWindow : public CPlainWriteWindow  {
         * Saves the text for the current key. Directly writes the changed text into the module.
         */
         virtual void saveCurrentText( const QString& );
+
 };
 
 #endif

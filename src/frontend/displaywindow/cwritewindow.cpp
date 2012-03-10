@@ -13,7 +13,7 @@
 #include "backend/config/btconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/keys/cswordversekey.h"
-#include "frontend/display/cwritedisplay.h"
+#include "frontend/display/cplainwritedisplay.h"
 #include "frontend/keychooser/ckeychooser.h"
 #include "util/dialogutil.h"
 #include "util/btsignal.h"
@@ -41,9 +41,9 @@ void CWriteWindow::storeProfileSettings(const QString & windowGroup) {
 }
 
 void CWriteWindow::setDisplayWidget( CDisplay* display ) {
-    Q_ASSERT(dynamic_cast<CWriteDisplay*>(display));
-    CDisplayWindow::setDisplayWidget((CWriteDisplay*)display);
-    m_writeDisplay = (CWriteDisplay*)display;
+    Q_ASSERT(dynamic_cast<CPlainWriteDisplay *>(display));
+    CDisplayWindow::setDisplayWidget(static_cast<CPlainWriteDisplay *>(display));
+    m_writeDisplay = static_cast<CPlainWriteDisplay *>(display);
 }
 
 void CWriteWindow::lookupSwordKey( CSwordKey* newKey ) {
@@ -92,7 +92,7 @@ void CWriteWindow::beforeKeyChange() {
     thisWindowsKey = oldKey->key();
     
     //If the text changed and we'd do a lookup ask the user if the text should be saved
-    if (modules().first() && ((CWriteDisplay*)displayWidget())->isModified()) {
+    if (modules().first() && m_writeDisplay->isModified()) {
 
         switch (util::showQuestion( this, tr("Save Text?"), tr("Save changed text?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes) ) {
             case QMessageBox::Yes: { //save the changes
@@ -100,7 +100,7 @@ void CWriteWindow::beforeKeyChange() {
                 break;
             }
             default: {// set modified to false so it won't ask again
-                ((CWriteDisplay*)displayWidget())->setModified(false);
+                m_writeDisplay->setModified(false);
                 break;
             }
         }

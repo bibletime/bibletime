@@ -24,7 +24,6 @@ class CKeyChooser;
 class CMDIArea;
 class BtModuleChooserBar;
 class CSwordModuleInfo;
-class QCloseEvent;
 class QMenu;
 class QToolBar;
 class BTHistory;

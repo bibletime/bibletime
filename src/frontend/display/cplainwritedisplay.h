@@ -11,21 +11,17 @@
 #define CPLAINWRITEDISPLAY_H
 
 #include <QTextEdit>
-#include "frontend/display/cwritedisplay.h"
+#include "frontend/display/cdisplay.h"
 
 
 class BtActionCollection;
-class CHTMLWriteDisplay;
-class QDragEnterEvent;
-class QDragMoveEvent;
-class QDropEvent;
-class QMenu;
-class QWidget;
+class CWriteWindow;
+class QToolBar;
 
 /** The write display implementation for plain source code editing.
   * @author The BibleTime team
   */
-class CPlainWriteDisplay : public QTextEdit, public CWriteDisplay  {
+class CPlainWriteDisplay : public QTextEdit, public CDisplay  {
     public:
 
         CPlainWriteDisplay(CWriteWindow * parentWindow, QWidget * parent = 0);
@@ -55,20 +51,17 @@ class CPlainWriteDisplay : public QTextEdit, public CWriteDisplay  {
                                   const DisplayOptions &,
                                   const FilterOptions &) {}
 
-        /**
-        * Reimplementation (CWriteDisplay).
-        */
         virtual bool isModified() const;
         /**
-        * Sets the current status of the edit widget (CWriteDisplay).
+        * Sets the current status of the edit widget.
         */
         virtual void setModified( const bool modified );
         /**
-        * Returns the text of this edit widget (CWriteDisplay).
+        * Returns the text of this edit widget.
         */
         virtual const QString plainText();
         /**
-        * Creates the necessary action objects and puts them on the toolbar (CWriteDisplay).
+        * Creates the necessary action objects and puts them on the toolbar.
         */
         virtual void setupToolbar(QToolBar*, BtActionCollection*);
 

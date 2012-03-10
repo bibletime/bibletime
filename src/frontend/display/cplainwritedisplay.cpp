@@ -22,7 +22,10 @@
 #include "frontend/displaywindow/cwritewindow.h"
 
 
-CPlainWriteDisplay::CPlainWriteDisplay(CWriteWindow* parentWindow, QWidget* parent) : QTextEdit(parentWindow ? parentWindow : parent), CWriteDisplay(parentWindow) {
+CPlainWriteDisplay::CPlainWriteDisplay(CWriteWindow* parentWindow, QWidget* parent)
+    : QTextEdit(parentWindow ? parentWindow : parent)
+    , CDisplay(parentWindow)
+{
     setAcceptRichText(false);
     setAcceptDrops(true);
     viewport()->setAcceptDrops(true);

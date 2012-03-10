@@ -23,11 +23,6 @@
 
 
 class BtHtmlReadDisplayView;
-class QScrollArea;
-class QWidget;
-class QString;
-class BtHtmlReadDisplay;
-class QEvent;
 
 /** The implementation for the HTML read display.
   * @author The BibleTime team

@@ -274,7 +274,6 @@ SET(bibletime_SRC_FRONTEND_DISPLAY
     src/frontend/display/chtmlwritedisplay.cpp
     src/frontend/display/cplainwritedisplay.cpp
     src/frontend/display/creaddisplay.cpp
-    src/frontend/display/cwritedisplay.cpp
 )
 
 SOURCE_GROUP("src\\frontend\\display" FILES ${bibletime_SRC_FRONTEND_DISPLAY})

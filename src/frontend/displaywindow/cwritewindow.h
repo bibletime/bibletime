@@ -14,8 +14,7 @@
 
 
 class BtActionCollection;
-class CWriteDisplay;
-class QString;
+class CPlainWriteDisplay;
 
 /** The base class for all write-only display windows.
   *
@@ -80,7 +79,9 @@ class CWriteWindow : public CDisplayWindow  {
         virtual void beforeKeyChange();
 
     private:
-        CWriteDisplay* m_writeDisplay;
+
+        CPlainWriteDisplay * m_writeDisplay;
+
 };
 
 #endif
