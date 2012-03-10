@@ -1,3 +1,8 @@
+2012-03-10 Jaak Ristioja <jaak@ristioja.ee>
+    * Implemented saving of font family and size in HTML commentary editor.
+    * Fixed a bug in the HTML commentary editor which resulted in text
+      formatting from the cursor to be applied to the whole selection.
+
 2012-02-25 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug 3483206 where duplicate works menus appear on ubuntu with its Global Menus
 
