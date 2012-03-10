@@ -47,7 +47,6 @@ class CHTMLWriteDisplay : public CPlainWriteDisplay {
     protected:
         friend class CDisplay;
         CHTMLWriteDisplay(CWriteWindow* parentWindow, QWidget* parent);
-        ~CHTMLWriteDisplay();
 
         void alignmentChanged(int);
 

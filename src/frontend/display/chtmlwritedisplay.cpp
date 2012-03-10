@@ -116,12 +116,6 @@ CHTMLWriteDisplay::CHTMLWriteDisplay(CWriteWindow* parentWindow, QWidget* parent
             this, SLOT(slotCurrentCharFormatChanged(QTextCharFormat)), Qt::DirectConnection);
 }
 
-CHTMLWriteDisplay::~CHTMLWriteDisplay() {
-    BtConfig & conf = btConfig();
-    conf.setSessionValue(CHTMLWriteDisplayFontKey, currentFont());
-    conf.setSessionValue(CHTMLWriteDisplayFontColorKey, textColor());
-}
-
 void CHTMLWriteDisplay::setText(const QString & newText) {
     QTextEdit::setHtml(newText);
 }
@@ -204,6 +198,10 @@ void CHTMLWriteDisplay::slotCurrentCharFormatChanged(const QTextCharFormat &) {
     m_actions.italic->setChecked(f.italic());
     m_actions.underline->setChecked(f.underline());
     m_handingFormatChangeFromEditor = false;
+
+    BtConfig & conf = btConfig();
+    conf.setSessionValue(CHTMLWriteDisplayFontKey, currentFont());
+    conf.setSessionValue(CHTMLWriteDisplayFontColorKey, textColor());
 }
 
 void CHTMLWriteDisplay::slotFontSizeChosen(int newSize) {
