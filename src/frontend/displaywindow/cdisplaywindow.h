@@ -229,7 +229,7 @@ class CDisplayWindow : public QMainWindow {
 
         friend class CBibleReadWindow;
 
-        CDisplayWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
+        CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent);
         virtual ~CDisplayWindow();
 
         /**

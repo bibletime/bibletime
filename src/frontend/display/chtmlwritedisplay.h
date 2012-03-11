@@ -16,7 +16,7 @@
 class BtActionCollection;
 class BtColorWidget;
 class BtFontSizeWidget;
-class CWriteWindow;
+class CHTMLWriteWindow;
 class QAction;
 class QFontComboBox;
 class QMenu;
@@ -30,7 +30,7 @@ class CHTMLWriteDisplay : public CPlainWriteDisplay {
         Q_OBJECT
     public:
 
-        CHTMLWriteDisplay(CWriteWindow * parentWindow, QWidget * parent = 0);
+        CHTMLWriteDisplay(CHTMLWriteWindow * parentWindow, QWidget * parent = 0);
 
         /**
         * Sets the new text for this display widget. (CPlainWriteDisplay).

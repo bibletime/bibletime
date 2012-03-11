@@ -31,7 +31,7 @@
 #include "util/cresmgr.h"
 
 
-CDisplayWindow::CDisplayWindow(QList<CSwordModuleInfo*> modules, CMDIArea *parent)
+CDisplayWindow::CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent)
         : QMainWindow(parent),
         m_actionCollection(0),
         m_mdi(parent),

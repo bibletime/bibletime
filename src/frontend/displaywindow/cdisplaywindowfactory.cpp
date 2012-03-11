@@ -17,7 +17,6 @@
 #include "frontend/displaywindow/clexiconreadwindow.h"
 #include "frontend/displaywindow/cplainwritewindow.h"
 #include "frontend/displaywindow/creadwindow.h"
-#include "frontend/displaywindow/cwritewindow.h"
 #include "frontend/cmdiarea.h"
 
 
@@ -43,8 +42,8 @@ CReadWindow* CDisplayWindowFactory::createReadInstance(QList<CSwordModuleInfo*> 
     return win;
 }
 
-CWriteWindow* CDisplayWindowFactory::createWriteInstance(QList<CSwordModuleInfo*> modules, CMDIArea* parent, const CWriteWindow::WriteWindowType type) {
-    if (type == CWriteWindow::HTMLWindow) {
+CPlainWriteWindow * CDisplayWindowFactory::createWriteInstance(QList<CSwordModuleInfo *> modules, CMDIArea * parent, CPlainWriteWindow::WriteWindowType type) {
+    if (type == CPlainWriteWindow::HTMLWindow) {
         return new CHTMLWriteWindow(modules, parent);
     }
     else {

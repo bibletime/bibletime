@@ -19,14 +19,41 @@
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"
 #include "frontend/keychooser/ckeychooser.h"
+#include "util/btsignal.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
 #include "util/dialogutil.h"
 
 
-CPlainWriteWindow::CPlainWriteWindow(QList<CSwordModuleInfo*> moduleList, CMDIArea* parent) :
-        CWriteWindow(moduleList, parent) {
+CPlainWriteWindow::CPlainWriteWindow(const QList<CSwordModuleInfo*> & moduleList, CMDIArea * parent)
+    : CDisplayWindow(moduleList, parent)
+    , m_writeDisplay(0)
+{
     setKey( CSwordKey::createInstance(moduleList.first()) );
+}
+
+void CPlainWriteWindow::setDisplayWidget(CDisplay * display) {
+    Q_ASSERT(dynamic_cast<CPlainWriteDisplay *>(display));
+    CDisplayWindow::setDisplayWidget(static_cast<CPlainWriteDisplay *>(display));
+    m_writeDisplay = static_cast<CPlainWriteDisplay *>(display);
+}
+
+void CPlainWriteWindow::lookupSwordKey(CSwordKey * newKey) {
+    //set the raw text to the display widget
+    if (!newKey)
+        return;
+
+    /*
+      Set passage of newKey to key() if they're different, otherwise we'd get
+      mixed up if we look up newkey which may have a different module set.
+    */
+    if (key() != newKey)
+        key()->setKey(newKey->key());
+
+    if (modules().count())
+        displayWidget()->setText(key()->rawText());
+
+    setWindowTitle(windowCaption());
 }
 
 /** Initialize the state of this widget. */
@@ -91,22 +118,25 @@ void CPlainWriteWindow::setupMainWindowToolBars() {
 }
 
 void CPlainWriteWindow::initConnections() {
-    CWriteWindow::initConnections();
+    Q_ASSERT(keyChooser());
+    QObject::connect(key()->signaler(), SIGNAL(beforeChanged()), this, SLOT(beforeKeyChange()));
     QObject::connect(keyChooser(), SIGNAL(keyChanged(CSwordKey*)), this, SLOT(lookupSwordKey(CSwordKey*)));
     QObject::connect(displayWidget()->connectionsProxy(), SIGNAL(textChanged()), this, SLOT(textChanged()) );
 }
 
 void CPlainWriteWindow::storeProfileSettings(const QString & windowGroup) {
-    CWriteWindow::storeProfileSettings(windowGroup);
+    CDisplayWindow::storeProfileSettings(windowGroup);
 
     QAction * action = actionCollection()->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
     Q_ASSERT(action);
     Q_ASSERT(windowGroup.endsWith('/'));
+    btConfig().setSessionValue(windowGroup + "writeWindowType",
+                               static_cast<int>(writeWindowType()));
     btConfig().setSessionValue(windowGroup + "syncWindowEnabled", action->isChecked());
 }
 
 void CPlainWriteWindow::applyProfileSettings(const QString & windowGroup) {
-    CWriteWindow::applyProfileSettings(windowGroup);
+    CDisplayWindow::applyProfileSettings(windowGroup);
 
     QAction * action = actionCollection()->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
     Q_ASSERT(action != 0);
@@ -240,4 +270,56 @@ void CPlainWriteWindow::insertKeyboardActions( BtActionCollection* const a) {
     action->setShortcut(CResMgr::displaywindows::writeWindow::restoreText::accel);
     action->setToolTip( tr("Restore original text, new text will be lost") );
     a->addAction(CResMgr::displaywindows::writeWindow::restoreText::actionName, action);
+}
+
+void CPlainWriteWindow::saveCurrentText() {
+    if (key())
+        saveCurrentText(key()->key());
+}
+
+
+bool CPlainWriteWindow::queryClose() {
+    //save the text if it has changed
+    if (m_writeDisplay->isModified()) {
+        switch (util::showQuestion( this, tr("Save Text?"), tr("Save text before closing?"), QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel, QMessageBox::Yes) ) {
+            case QMessageBox::Yes: //save and close
+                saveCurrentText();
+                m_writeDisplay->setModified( false );
+                return true;
+            case QMessageBox::No: //don't save and close
+                return true;
+            default: // cancel, don't close
+                return false;
+        }
+    }
+    return true;
+}
+
+void CPlainWriteWindow::beforeKeyChange() {
+    Q_ASSERT(displayWidget());
+    Q_ASSERT(keyChooser());
+    if (!isReady())
+        return;
+
+    // Get current key string for this window
+    QString thisWindowsKey;
+    CSwordKey* oldKey = key();
+    if (oldKey == 0)
+        return;
+    thisWindowsKey = oldKey->key();
+
+    //If the text changed and we'd do a lookup ask the user if the text should be saved
+    if (modules().first() && m_writeDisplay->isModified()) {
+
+        switch (util::showQuestion( this, tr("Save Text?"), tr("Save changed text?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes) ) {
+            case QMessageBox::Yes: { //save the changes
+                saveCurrentText( thisWindowsKey );
+                break;
+            }
+            default: {// set modified to false so it won't ask again
+                m_writeDisplay->setModified(false);
+                break;
+            }
+        }
+    }
 }

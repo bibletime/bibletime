@@ -18,7 +18,7 @@
 #include "frontend/display/btcolorwidget.h"
 #include "frontend/display/btfontsizewidget.h"
 #include "frontend/displaywindow/btactioncollection.h"
-#include "frontend/displaywindow/cwritewindow.h"
+#include "frontend/displaywindow/chtmlwritewindow.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
 
@@ -30,7 +30,7 @@ const QString CHTMLWriteDisplayFontKey = "HtmlWriteDisplay/font";
 const QString CHTMLWriteDisplayFontColorKey = "HtmlWriteDisplay/fontColor";
 }
 
-CHTMLWriteDisplay::CHTMLWriteDisplay(CWriteWindow* parentWindow, QWidget* parent)
+CHTMLWriteDisplay::CHTMLWriteDisplay(CHTMLWriteWindow * parentWindow, QWidget* parent)
     : CPlainWriteDisplay(parentWindow, parent)
     , m_handingFormatChangeFromEditor(false)
 {

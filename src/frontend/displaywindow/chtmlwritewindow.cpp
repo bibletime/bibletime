@@ -53,7 +53,7 @@ void CHTMLWriteWindow::insertKeyboardActions( BtActionCollection* const a) {
 }
 
 void CHTMLWriteWindow::initConnections() {
-    CWriteWindow::initConnections();
+    CPlainWriteWindow::initConnections();
 
     connect(keyChooser(), SIGNAL(keyChanged(CSwordKey*)), this, SLOT(lookupSwordKey(CSwordKey*)));
     connect(m_writeDisplay->connectionsProxy(), SIGNAL(textChanged()), this, SLOT(textChanged()) );
@@ -69,7 +69,7 @@ void CHTMLWriteWindow::initToolbars() {
 }
 
 void CHTMLWriteWindow::storeProfileSettings(const QString & windowGroup) {
-    CWriteWindow::storeProfileSettings(windowGroup);
+    CPlainWriteWindow::storeProfileSettings(windowGroup);
 
     QAction * action = actionCollection()->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
     Q_ASSERT(action != 0);
@@ -78,7 +78,7 @@ void CHTMLWriteWindow::storeProfileSettings(const QString & windowGroup) {
 }
 
 void CHTMLWriteWindow::applyProfileSettings(const QString & windowGroup) {
-    CWriteWindow::applyProfileSettings(windowGroup);
+    CPlainWriteWindow::applyProfileSettings(windowGroup);
 
     QAction* action = actionCollection()->action(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName);
     Q_ASSERT(action != 0);

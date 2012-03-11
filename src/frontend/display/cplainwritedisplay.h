@@ -15,7 +15,7 @@
 
 
 class BtActionCollection;
-class CWriteWindow;
+class CPlainWriteWindow;
 class QToolBar;
 
 /** The write display implementation for plain source code editing.
@@ -24,7 +24,7 @@ class QToolBar;
 class CPlainWriteDisplay : public QTextEdit, public CDisplay  {
     public:
 
-        CPlainWriteDisplay(CWriteWindow * parentWindow, QWidget * parent = 0);
+        CPlainWriteDisplay(CPlainWriteWindow * parentWindow, QWidget * parent = 0);
 
         /**
         * Reimplementation.
