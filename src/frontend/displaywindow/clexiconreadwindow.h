@@ -33,7 +33,7 @@ class QMenu;
 class CLexiconReadWindow : public CReadWindow  {
         Q_OBJECT
     public:
-        CLexiconReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
+        CLexiconReadWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent);
         virtual ~CLexiconReadWindow();
 
         /** Insert the keyboard accelerators of this window into the given actioncollection.*/

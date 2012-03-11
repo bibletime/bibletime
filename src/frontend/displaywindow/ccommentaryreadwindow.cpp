@@ -24,9 +24,6 @@
 #include "util/cresmgr.h"
 
 
-CCommentaryReadWindow::CCommentaryReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent) : CLexiconReadWindow(modules, parent) {
-}
-
 void CCommentaryReadWindow::insertKeyboardActions(BtActionCollection* const a) {
     namespace DU = util::directory;
     QAction* qaction;

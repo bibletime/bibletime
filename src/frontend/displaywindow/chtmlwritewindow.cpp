@@ -22,7 +22,7 @@
 #include "util/cresmgr.h"
 
 
-CHTMLWriteWindow::CHTMLWriteWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent)
+CHTMLWriteWindow::CHTMLWriteWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent)
         : CPlainWriteWindow(modules, parent) {}
 
 void CHTMLWriteWindow::initView() {

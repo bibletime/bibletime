@@ -33,7 +33,7 @@
 #include "util/tool.h"
 
 
-CLexiconReadWindow::CLexiconReadWindow(QList<CSwordModuleInfo*> moduleList, CMDIArea* parent)
+CLexiconReadWindow::CLexiconReadWindow(const QList<CSwordModuleInfo *> & moduleList, CMDIArea * parent)
         : CReadWindow(moduleList, parent) {
     moduleList.first();
     setKey( CSwordKey::createInstance(moduleList.first()) );

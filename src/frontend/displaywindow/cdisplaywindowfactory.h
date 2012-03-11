@@ -20,8 +20,8 @@ class CSwordModuleInfo;
 /// \todo Make CDisplayWindowFactory a namespace instead?
 class CDisplayWindowFactory {
     public:
-        static CReadWindow* createReadInstance(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
-        static CPlainWriteWindow* createWriteInstance(QList<CSwordModuleInfo*> modules, CMDIArea* parent, const CPlainWriteWindow::WriteWindowType type = CPlainWriteWindow::HTMLWindow);
+        static CReadWindow* createReadInstance(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent);
+        static CPlainWriteWindow* createWriteInstance(const QList<CSwordModuleInfo*> & modules, CMDIArea * parent, CPlainWriteWindow::WriteWindowType type = CPlainWriteWindow::HTMLWindow);
         static const CSwordModuleInfo::ModuleType getModuleType(QObject* widget);
 
     private:

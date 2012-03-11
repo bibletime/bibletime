@@ -20,7 +20,7 @@
 #include "frontend/cmdiarea.h"
 
 
-CReadWindow* CDisplayWindowFactory::createReadInstance(QList<CSwordModuleInfo*> modules, CMDIArea* parent) {
+CReadWindow* CDisplayWindowFactory::createReadInstance(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent) {
     CReadWindow* win = 0;
     switch (modules.first()->type()) {
         case CSwordModuleInfo::Bible:
@@ -42,7 +42,7 @@ CReadWindow* CDisplayWindowFactory::createReadInstance(QList<CSwordModuleInfo*> 
     return win;
 }
 
-CPlainWriteWindow * CDisplayWindowFactory::createWriteInstance(QList<CSwordModuleInfo *> modules, CMDIArea * parent, CPlainWriteWindow::WriteWindowType type) {
+CPlainWriteWindow * CDisplayWindowFactory::createWriteInstance(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent, CPlainWriteWindow::WriteWindowType type) {
     if (type == CPlainWriteWindow::HTMLWindow) {
         return new CHTMLWriteWindow(modules, parent);
     }

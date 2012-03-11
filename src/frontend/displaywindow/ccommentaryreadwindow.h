@@ -28,7 +28,8 @@ class CCommentaryReadWindow : public CLexiconReadWindow  {
         */
         static void insertKeyboardActions( BtActionCollection* const a );
 
-        CCommentaryReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
+        inline CCommentaryReadWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent)
+            : CLexiconReadWindow(modules, parent) {}
 
         virtual void storeProfileSettings(const QString & windowGroup);
         virtual void applyProfileSettings(const QString & windowGroup);

@@ -23,7 +23,7 @@
 class CHTMLWriteWindow : public CPlainWriteWindow  {
         Q_OBJECT
     public:
-        CHTMLWriteWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
+        CHTMLWriteWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent);
 
         virtual void storeProfileSettings(const QString & windowGroup);
         virtual void applyProfileSettings(const QString & windowGroup);
