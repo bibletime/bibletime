@@ -148,7 +148,7 @@ const QString CSearchAnalysisItem::getToolTip() {
 
     /// \todo Fix that loop
     int i = 0;
-    for (RCI it = m_results.begin(); it != m_results.end(); it++) {
+    for (RCI it = m_results.begin(); it != m_results.end(); ++it) {
         const CSwordModuleInfo *info = it.key();
 
         /// \warning This is a workaround for sword constness

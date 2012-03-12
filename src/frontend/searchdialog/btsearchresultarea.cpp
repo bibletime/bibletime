@@ -313,7 +313,7 @@ QStringList BtSearchResultArea::queryParser(const QString& queryString) {
 
     cnt = 0;
     QStringList::iterator it;
-    for ( it = tokenList.begin(); it != tokenList.end(); it++ ) {
+    for (it = tokenList.begin(); it != tokenList.end(); ++it) {
         //-----------------------------------------------------------
         // remove all the NOT(!) tokens - these do not need to be
         // highlighted in the highlighter
@@ -325,7 +325,7 @@ QStringList BtSearchResultArea::queryParser(const QString& queryString) {
             it = tokenList.erase(it);
             if (it == tokenList.end())
                 break;
-            it--;
+            --it;
         }
         //-----------------------------------------------------------
         // remove all the operator tokens - these do not need to be
@@ -336,7 +336,7 @@ QStringList BtSearchResultArea::queryParser(const QString& queryString) {
             it = tokenList.erase(it);
             if (it == tokenList.end())
                 break;
-            it--;
+            --it;
         }
         // if the token contains a ^ then trim the remainder of the
         // token from the ^

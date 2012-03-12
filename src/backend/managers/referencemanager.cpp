@@ -348,7 +348,7 @@ const QString ReferenceManager::parseVerseReference( const QString& ref, const R
 
 //     qDebug("Parsing '%s' in '%s' using '%s' as base, source lang '%s', dest lang '%s'", ref.latin1(), options.refDestinationModule.latin1(), baseKey.key().latin1(), sourceLanguage.latin1(), destinationLanguage.latin1());
 
-    for (QStringList::iterator it = refList.begin(); it != refList.end(); it++) {
+    for (QStringList::iterator it = refList.begin(); it != refList.end(); ++it) {
         //The listkey may contain more than one item, because a ref lik "Gen 1:3,5" is parsed into two single refs
         sword::ListKey lk = dummy.ParseVerseList((*it).toUtf8().constData(), baseKey.key().toUtf8().constData(), true);
         Q_ASSERT(!dummy.Error());

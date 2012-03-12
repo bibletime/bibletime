@@ -327,7 +327,7 @@ bool CSwordModuleInfo::buildIndex() {
             // Footnotes
             for (attListI = m_module->getEntryAttributes()["Footnote"].begin();
                     attListI != m_module->getEntryAttributes()["Footnote"].end();
-                    attListI++) {
+                    ++attListI) {
                 lucene_utf8towcs(wcharBuffer, attListI->second["body"], BT_MAX_LUCENE_FIELD_LENGTH);
                 //doc->add(*lucene::document::Field::UnStored((const TCHAR*)_T("footnote"), wcharBuffer));
                 doc->add(*(new lucene::document::Field((const TCHAR*)_T("footnote"), (const TCHAR*)wcharBuffer, lucene::document::Field::STORE_NO | lucene::document::Field::INDEX_TOKENIZED)));
@@ -336,7 +336,7 @@ bool CSwordModuleInfo::buildIndex() {
             // Headings
             for (attValueI = m_module->getEntryAttributes()["Heading"]["Preverse"].begin();
                     attValueI != m_module->getEntryAttributes()["Heading"]["Preverse"].end();
-                    attValueI++) {
+                    ++attValueI) {
                 lucene_utf8towcs(wcharBuffer, attValueI->second, BT_MAX_LUCENE_FIELD_LENGTH);
                 //doc->add(*lucene::document::Field::UnStored((const TCHAR*)_T("heading"), wcharBuffer));
                 doc->add(*(new lucene::document::Field((const TCHAR*)_T("heading"), (const TCHAR*)wcharBuffer, lucene::document::Field::STORE_NO | lucene::document::Field::INDEX_TOKENIZED)));
@@ -345,7 +345,7 @@ bool CSwordModuleInfo::buildIndex() {
             // Strongs/Morphs
             for (attListI = m_module->getEntryAttributes()["Word"].begin();
                     attListI != m_module->getEntryAttributes()["Word"].end();
-                    attListI++) {
+                    ++attListI) {
                 // for each attribute
                 if (attListI->second["LemmaClass"] == "strong") {
                     lucene_utf8towcs(wcharBuffer, attListI->second["Lemma"], BT_MAX_LUCENE_FIELD_LENGTH);

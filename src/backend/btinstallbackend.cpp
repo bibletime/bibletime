@@ -68,7 +68,7 @@ sword::InstallSource source(const QString &name) {
                     return is;
                 }
 
-                sourceBegin++;//next source
+                ++sourceBegin; //next source
             }
         }
     }
@@ -217,7 +217,7 @@ QStringList sourceNameList() {
     QStringList names;
 
     //add Sword remote sources
-    for (InstallSourceMap::iterator it = mgr.sources.begin(); it != mgr.sources.end(); it++) {
+    for (InstallSourceMap::iterator it = mgr.sources.begin(); it != mgr.sources.end(); ++it) {
         names << QString::fromLocal8Bit(it->second->caption);
     }
 
@@ -232,7 +232,7 @@ QStringList sourceNameList() {
             InstallSource is("DIR", sourceBegin->second.c_str());
             names << QString::fromLatin1(is.caption.c_str());
 
-            sourceBegin++;
+            ++sourceBegin;
         }
     }
 

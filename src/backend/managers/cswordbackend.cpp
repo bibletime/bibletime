@@ -125,7 +125,7 @@ CSwordBackend::LoadError CSwordBackend::initModules(SetupChangedReason reason) {
     sword::ModMap::iterator end = Modules.end();
     ret = LoadError( Load() );
 
-    for (sword::ModMap::iterator it = Modules.begin(); it != end; it++) {
+    for (sword::ModMap::iterator it = Modules.begin(); it != end; ++it) {
         sword::SWModule* const curMod = (*it).second;
         CSwordModuleInfo* newModule = 0;
 
@@ -222,7 +222,7 @@ bool CSwordBackend::shutdownModules() {
      * so that they are re-created for the new module objects.
      */
     sword::FilterMap::iterator cipher_it;
-    for (cipher_it = cipherFilters.begin(); cipher_it != cipherFilters.end(); cipher_it++) {
+    for (cipher_it = cipherFilters.begin(); cipher_it != cipherFilters.end(); ++cipher_it) {
         //Delete the Filter and remove it from the cleanup list
         cleanupFilters.remove(cipher_it->second);
         delete cipher_it->second;
@@ -491,7 +491,7 @@ QStringList CSwordBackend::swordDirList() const {
     }
 
     // Search the sword.conf file(s) for sword directories that could contain modules
-    for (SLCI it(configs.begin()); it != configs.end(); it++) {
+    for (SLCI it(configs.begin()); it != configs.end(); ++it) {
         if (!QFileInfo(*it).exists()) {
             continue;
         }
@@ -507,7 +507,7 @@ QStringList CSwordBackend::swordDirList() const {
         const sword::ConfigEntMap::iterator start(group.equal_range("AugmentPath").first);
         const sword::ConfigEntMap::iterator end(group.equal_range("AugmentPath").second);
 
-        for (CEMCI it(start); it != end; it++) {
+        for (CEMCI it(start); it != end; ++it) {
             QDir(QTextCodec::codecForLocale()->toUnicode(it->second.c_str())).absolutePath();
             // Added augment path:
             swordDirSet << QDir(QTextCodec::codecForLocale()->toUnicode(it->second.c_str())).absolutePath();
