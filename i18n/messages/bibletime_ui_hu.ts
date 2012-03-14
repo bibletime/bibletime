@@ -488,12 +488,12 @@ Ez a  fájl a BibleTime licenszelésével megegyező licensszel terjeszthető.</
         <translation>BibleTime egy könnyen használható Bibliatanulmányozó eszköz.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="270"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="271"/>
         <source>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</source>
         <translation>A BibleTime GPL licensz alatt lett kiadva. Letöltheti, használhatja a programot magán, nyilvános vagy akár üzleti célra is korlátozások nélkül, de csak akkor adhatja el, vagy terjesztheti a programot, ha a hozzá tartozó forráskódot is közzéteszi.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="276"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="277"/>
         <source>The complete legally binding license is below.</source>
         <translation>A teljes jogilag érvényes licensz lentebb található. </translation>
     </message>
@@ -543,17 +543,17 @@ Ez a  fájl a BibleTime licenszelésével megegyező licensszel terjeszthető.</
         <translation>hasznáhatósági szakértő</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="219"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="220"/>
         <source>Some names may be missing, please email %1 if you notice errors or omissions.</source>
         <translation>Néhány név hiányozhat a felsorolásból, Küldjön egy emailt %1 ha hibátvagy hiányosságot fedezett fel.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="259"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="260"/>
         <source>More info...</source>
         <translation>További információk...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="264"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="265"/>
         <source>&amp;License</source>
         <translation>&amp;Licensz</translation>
     </message>
@@ -613,42 +613,42 @@ Ez a  fájl a BibleTime licenszelésével megegyező licensszel terjeszthető.</
         <translation>A következő emberek vettek részt a BibleTime fordításában:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="230"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="231"/>
         <source>&amp;SWORD</source>
         <translation>&amp;SWORD</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="234"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="235"/>
         <source>SWORD library version %1</source>
         <translation>Sword verzió: %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="236"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="237"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
         <translation>A BibleTime a SWORD Projekt használatára készült. A SWORD Projekt a Crosswire Bible Society ingyenes Biblia szoftver projektje. Célja, hogy olyan keresztplatformos, nyílt forrású &amp;mdash; GNU General Public License által kiadott &amp;mdash; szoftvereket hozzon létre, amelyek lehetővé teszik a programozóknak és a Bibliatársaságoknak, hogy sokkal könnyebben és gyorsabban írhassanak Bibliaszoftvereket.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="242"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="243"/>
         <source>The SWORD Project: </source>
         <translation>A SWORD Projekt:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="250"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="251"/>
         <source>&amp;Qt</source>
         <translation>&amp;Qt</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="253"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="254"/>
         <source>Qt toolkit version %1</source>
         <translation>Qt eszközkészlet verziója: %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="255"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="256"/>
         <source>This program uses Qt version %1.</source>
         <translation>Ez a program a Qt %1 verzióját használja.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="257"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="258"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
         <translation>A Qt egy keresztplatformos alkalmazás és keretrendszer, C++ nyelven megírva, LGPL licensz alatt kiadva.</translation>
     </message>
@@ -1432,12 +1432,12 @@ Ez a  fájl a BibleTime licenszelésével megegyező licensszel terjeszthető.</
 <context>
     <name>BtOpenWorkActionMenu</name>
     <message>
-        <location filename="../../src/frontend/btopenworkaction.cpp" line="51"/>
+        <location filename="../../src/frontend/btopenworkaction.cpp" line="45"/>
         <source>&amp;Grouping order</source>
         <translation>&amp;Csoportok rendezése</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btopenworkaction.cpp" line="52"/>
+        <location filename="../../src/frontend/btopenworkaction.cpp" line="46"/>
         <source>Sets the grouping order for the items in this menu.</source>
         <translation>A menü csoportosításának beállítása.</translation>
     </message>

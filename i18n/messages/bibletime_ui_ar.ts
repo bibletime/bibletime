@@ -488,12 +488,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>بيبل تايم هو برنامج قوي وسهل الإستخدام لدراسة الكتاب المقدس.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="270"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="271"/>
         <source>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</source>
         <translation>يصدر بيبل تايم تحت رخصة GPL. تستطيع تحميل وإستخدام البرنامج للأغراض الشخصية،الخاصة،العامة أو التجارية بدون قيود، لكنك تستطيع إعطاء أو توزيع البرنامج فقط إذا قمت أيضاً بتوزيع شفرة المصدر الخاصة به.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="276"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="277"/>
         <source>The complete legally binding license is below.</source>
         <translation>الرخصة الكاملة الملزمة قانونياً أدناه.</translation>
     </message>
@@ -548,37 +548,37 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>خبير سهولة إستخدام</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="219"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="220"/>
         <source>Some names may be missing, please email %1 if you notice errors or omissions.</source>
         <translation>قد تكون بعض الاسماء غير موجودة، يرجى مراسلتنا على %1 إذا لاحظت أخطاء أو سهوات.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="236"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="237"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
         <translation>يستخدم بيبل تايم مشروع سورد. مشروع سورد هو مشروع برنامج الكتاب المقدس الخاص بجمعية الكتاب المقدس كروس وير، والذي يهدف إلى توفير أدوات مفتوحة المصدر تعمل على مختلف المنصات &amp;mdash; وتستعمل رخصة جنو العمومية &amp;mdash; والتي تتيح للمبرمجين وجمعيات الكتاب المقدس كتابة برامج جديدة للكتاب المقدس بطريقة أكثر سرعة وسهولة.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="242"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="243"/>
         <source>The SWORD Project: </source>
         <translation>مشروع سورد: </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="250"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="251"/>
         <source>&amp;Qt</source>
         <translation>&amp;كيوت</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="253"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="254"/>
         <source>Qt toolkit version %1</source>
         <translation>مجموعة أدوات كيوت النسخة %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="259"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="260"/>
         <source>More info...</source>
         <translation>مزيد من المعلومات...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="264"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="265"/>
         <source>&amp;License</source>
         <translation>ال&amp;رخصة</translation>
     </message>
@@ -634,22 +634,22 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>الأشخاص التالي اسماءهم قاموا بترجمة بيبل تايم إلى لغتهم:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="230"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="231"/>
         <source>&amp;SWORD</source>
         <translation>&amp;سورد</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="234"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="235"/>
         <source>SWORD library version %1</source>
         <translation>مكتبة سورد النسخة %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="255"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="256"/>
         <source>This program uses Qt version %1.</source>
         <translation>هذا البرنامج يستخدم كيوت النسخة %1.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="257"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="258"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
         <translation>كيوت هو تطبيق وإطار عمل واجهة مستخدم متعدد المنصات،مبني بلغة سي++.وتم إصداره تحت رخصة LGPL.</translation>
     </message>
@@ -1461,12 +1461,12 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtOpenWorkActionMenu</name>
     <message>
-        <location filename="../../src/frontend/btopenworkaction.cpp" line="51"/>
+        <location filename="../../src/frontend/btopenworkaction.cpp" line="45"/>
         <source>&amp;Grouping order</source>
         <translation>&amp;ترتيب المجموعات</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btopenworkaction.cpp" line="52"/>
+        <location filename="../../src/frontend/btopenworkaction.cpp" line="46"/>
         <source>Sets the grouping order for the items in this menu.</source>
         <translation>إعداد ترتيب المجموعات للبنود في هذه القائمة.</translation>
     </message>
