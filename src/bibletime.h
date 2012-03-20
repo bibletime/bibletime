@@ -502,7 +502,8 @@ class BibleTime : public QMainWindow {
         void syncAllModulesByType(const CSwordModuleInfo::ModuleType type, const QString& key);
 
     private:
-        void showOrHideToolBars();
+        void showOrHideToolBarsInMainWindow();
+        void showOrHideToolBarsInSubWindows();
 #ifdef BT_DEBUG
         void deleteDebugWindow();
     private slots:

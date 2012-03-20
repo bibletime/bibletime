@@ -207,7 +207,7 @@ void BibleTime::slotToggleTextWindowHeader() {
 void BibleTime::slotToggleNavigatorToolbar() {
     bool currentState = btConfig().value<bool>("GUI/showTextWindowNavigator", true);
     btConfig().setValue("GUI/showTextWindowNavigator", !currentState);
-    showOrHideToolBars();
+    showOrHideToolBarsInMainWindow();
     if (btConfig().value<bool>("GUI/showToolbarsInEachWindow", true))
         emit toggledTextWindowNavigator(!currentState);
     else
@@ -217,7 +217,7 @@ void BibleTime::slotToggleNavigatorToolbar() {
 void BibleTime::slotToggleToolsToolbar() {
     bool currentState = btConfig().value<bool>("GUI/showTextWindowToolButtons", true);
     btConfig().setValue("GUI/showTextWindowToolButtons", !currentState);
-    showOrHideToolBars();
+    showOrHideToolBarsInMainWindow();
     if (btConfig().value<bool>("GUI/showToolbarsInEachWindow", true))
         emit toggledTextWindowToolButtons(!currentState);
     else
@@ -227,7 +227,7 @@ void BibleTime::slotToggleToolsToolbar() {
 void BibleTime::slotToggleWorksToolbar() {
     bool currentState = btConfig().value<bool>("GUI/showTextWindowModuleSelectorButtons", true);
     btConfig().setValue("GUI/showTextWindowModuleSelectorButtons", !currentState);
-    showOrHideToolBars();
+    showOrHideToolBarsInMainWindow();
     if (btConfig().value<bool>("GUI/showToolbarsInEachWindow", true))
         emit toggledTextWindowModuleChooser(!currentState);
     else
@@ -237,7 +237,7 @@ void BibleTime::slotToggleWorksToolbar() {
 void BibleTime::slotToggleFormatToolbar() {
     bool currentState = btConfig().value<bool>("GUI/showFormatToolbarButtons", true);
     btConfig().setValue("GUI/showFormatToolbarButtons", !currentState);
-    showOrHideToolBars();
+    showOrHideToolBarsInMainWindow();
     if (btConfig().value<bool>("GUI/showToolbarsInEachWindow", true))
         emit toggledTextWindowFormatToolbar(!currentState);
     else
@@ -247,25 +247,11 @@ void BibleTime::slotToggleFormatToolbar() {
 void BibleTime::slotToggleToolBarsInEachWindow() {
     bool currentState = btConfig().value<bool>("GUI/showToolbarsInEachWindow", true);
     btConfig().setValue("GUI/showToolbarsInEachWindow", !currentState);
-    showOrHideToolBars();
-
-    if (!currentState) {
-        emit toggledTextWindowNavigator(btConfig().value<bool>("GUI/showTextWindowNavigator", true));
-        emit toggledTextWindowModuleChooser(btConfig().value<bool>("GUI/showTextWindowModuleSelectorButtons", true));
-        emit toggledTextWindowToolButtons(btConfig().value<bool>("GUI/showTextWindowToolButtons", true));
-        emit toggledTextWindowFormatToolbar(btConfig().value<bool>("GUI/showFormatToolbarButtons", true));
-    }
-    else {
-        emit toggledTextWindowNavigator(false);
-        emit toggledTextWindowToolButtons(false);
-        emit toggledTextWindowModuleChooser(false);
-        emit toggledTextWindowFormatToolbar(false);
-    }
-
-
+    showOrHideToolBarsInMainWindow();
+    showOrHideToolBarsInSubWindows();
 }
 
-void BibleTime::showOrHideToolBars() {
+void BibleTime::showOrHideToolBarsInMainWindow() {
     if (btConfig().value<bool>("GUI/showToolbarsInEachWindow", true)) {
         m_navToolBar->setVisible(false);
         m_worksToolBar->setVisible(false);
@@ -277,6 +263,21 @@ void BibleTime::showOrHideToolBars() {
         m_worksToolBar->setVisible(btConfig().value<bool>("GUI/showTextWindowModuleSelectorButtons", true));
         m_toolsToolBar->setVisible(btConfig().value<bool>("GUI/showTextWindowToolButtons", true));
         m_formatToolBar->setVisible(btConfig().value<bool>("GUI/showFormatToolbarButtons", true));
+    }
+}
+
+void BibleTime::showOrHideToolBarsInSubWindows() {
+    if (btConfig().value<bool>("GUI/showToolbarsInEachWindow", true)) {
+        emit toggledTextWindowNavigator(btConfig().value<bool>("GUI/showTextWindowNavigator", true));
+        emit toggledTextWindowModuleChooser(btConfig().value<bool>("GUI/showTextWindowModuleSelectorButtons", true));
+        emit toggledTextWindowToolButtons(btConfig().value<bool>("GUI/showTextWindowToolButtons", true));
+        emit toggledTextWindowFormatToolbar(btConfig().value<bool>("GUI/showFormatToolbarButtons", true));
+    }
+    else {
+        emit toggledTextWindowNavigator(false);
+        emit toggledTextWindowToolButtons(false);
+        emit toggledTextWindowModuleChooser(false);
+        emit toggledTextWindowFormatToolbar(false);
     }
 }
 
@@ -408,8 +409,11 @@ void BibleTime::reloadProfile() {
     m_mdi->closeAllSubWindows();
 
     // Reload main window settings:
-    restoreGeometry(conf.sessionValue<QByteArray>("MainWindow/geometry"));
+    //restoreGeometry(conf.sessionValue<QByteArray>("MainWindow/geometry"));
     restoreState(conf.sessionValue<QByteArray>("MainWindow/state"));
+    // This call is necessary, because the restoreState() method restores the visibility of the toolbars. This is not wanted, since it should not be session specific.
+    showOrHideToolBarsInMainWindow();
+    
     m_windowFullscreenAction->setChecked(isFullScreen());
     m_mdi->setMDIArrangementMode(static_cast<MAM>(conf.sessionValue<int>("MainWindow/MDIArrangementMode")));
 
@@ -536,7 +540,7 @@ void BibleTime::saveToNewProfile() {
     refreshProfileMenus();
 }
 
-/** Slot to refresh the save profile and load profile menus. */
+/** Slot to refresh the saved profile and load profile menus. */
 void BibleTime::refreshProfileMenus() {
     typedef BtConfig::SessionNamesHashMap SNHM;
     typedef SNHM::const_iterator SNHMCI;
