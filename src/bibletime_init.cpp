@@ -824,7 +824,7 @@ void BibleTime::initSwordConfigFile() {
 void BibleTime::initBackends() {
     initSwordConfigFile();
 
-    sword::StringMgr::setSystemStringMgr( new BTStringMgr() );
+    sword::StringMgr::setSystemStringMgr( new BtStringMgr() );
     sword::SWLog::getSystemLog()->setLogLevel(sword::SWLog::LOG_ERROR);
 
     if (qApp->property("--debug").toBool()) {
