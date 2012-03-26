@@ -409,7 +409,7 @@ void BibleTime::reloadProfile() {
     m_mdi->closeAllSubWindows();
 
     // Reload main window settings:
-    //restoreGeometry(conf.sessionValue<QByteArray>("MainWindow/geometry"));
+    restoreGeometry(conf.sessionValue<QByteArray>("MainWindow/geometry"));
     restoreState(conf.sessionValue<QByteArray>("MainWindow/state"));
     // This call is necessary, because the restoreState() method restores the visibility of the toolbars. This is not wanted, since it should not be session specific.
     showOrHideToolBarsInMainWindow();
