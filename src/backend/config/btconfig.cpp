@@ -147,23 +147,21 @@ QHash< QString, QList<QKeySequence> > BtConfig::getShortcuts( const QString& sho
     return allShortcuts;
 }
 
-void BtConfig::setShortcuts( const QString& shortcutGroup, const QHash< QString, QList<QKeySequence> >& shortcuts )
+void BtConfig::setShortcuts(const QString & shortcutGroup,
+                            const QHash<QString, QList<QKeySequence> > & shortcuts)
 {
+    typedef QHash<QString, QList<QKeySequence> >::const_iterator SHMCI;
+
     m_settings.beginGroup(shortcutGroup);
-        for(QHash<QString, QList<QKeySequence> >::const_iterator iter = shortcuts.begin();
-                                                                 iter != shortcuts.end();
-                                                                 iter++)
-        {
+        for(SHMCI it = shortcuts.begin(); it != shortcuts.end(); ++it) {
             // Write beautiful string lists (since 2.9):
+            /// \note saving QKeySequences directly doesn't appear to work!
             QStringList varList;
-                Q_FOREACH (const QKeySequence &shortcut, iter.value()) {
-                    /// \note saving QKeySequences directly doesn't appear to work!
-                    varList.append(shortcut.toString());
-                }
-            if (! varList.empty())
-            {
-                m_settings.setValue(iter.key(), varList);
-            }
+            Q_FOREACH (const QKeySequence &shortcut, it.value())
+                varList.append(shortcut.toString());
+
+            if (!varList.empty())
+                m_settings.setValue(it.key(), varList);
         }
     m_settings.endGroup();
 }

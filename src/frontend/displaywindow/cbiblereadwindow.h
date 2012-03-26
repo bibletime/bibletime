@@ -28,7 +28,7 @@ class CBibleReadWindow: public CLexiconReadWindow  {
 
     public: /* Methods: */
 
-        inline CBibleReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent)
+        inline CBibleReadWindow(const QList<CSwordModuleInfo*> & modules, CMDIArea* parent)
             : CLexiconReadWindow(modules, parent) {}
 
         virtual void storeProfileSettings(const QString & windowGroup);

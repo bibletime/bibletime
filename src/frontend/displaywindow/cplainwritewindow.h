@@ -10,12 +10,11 @@
 #ifndef CPLAINWRITEWINDOW_H
 #define CPLAINWRITEWINDOW_H
 
-#include "frontend/displaywindow/cwritewindow.h"
+#include "frontend/displaywindow/cdisplaywindow.h"
 
 
 class BtActionCollection;
-class QAction;
-class QString;
+class CPlainWriteDisplay;
 
 /** The write window class which offers a plain text editor for creating a personal commentary.
   *
@@ -25,10 +24,21 @@ class QString;
   *
   * @author The BibleTime team
   */
-class CPlainWriteWindow : public CWriteWindow  {
+class CPlainWriteWindow : public CDisplayWindow {
         Q_OBJECT
     public:
-        CPlainWriteWindow( QList<CSwordModuleInfo*> modules, CMDIArea* parent);
+
+        enum WriteWindowType {
+            HTMLWindow = 1,
+            PlainTextWindow = 2
+        };
+
+        CPlainWriteWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent);
+
+        /**
+        * Set the displayWidget which is a subclass of QWebPage.
+        */
+        void setDisplayWidget( CDisplay* display );
 
         virtual void storeProfileSettings(const QString & windowGroup);
         virtual void applyProfileSettings(const QString & windowGroup);
@@ -43,6 +53,13 @@ class CPlainWriteWindow : public CWriteWindow  {
          */
         virtual bool syncAllowed() const;
 
+    public slots:
+
+        /**
+          Look up the given key and display the text. In our case we offer to edit the text.
+        */
+        virtual void lookupSwordKey(CSwordKey * key);
+
     protected: // Protected methods
         /**
         * Initialize the state of this widget.
@@ -50,9 +67,9 @@ class CPlainWriteWindow : public CWriteWindow  {
         virtual void initView();
         virtual void initConnections();
         virtual void initToolbars();
-        virtual CWriteWindow::WriteWindowType writeWindowType() {
-            return CWriteWindow::PlainTextWindow;
-        };
+        virtual WriteWindowType writeWindowType() const {
+            return PlainTextWindow;
+        }
 
         /** Called to add actions to mainWindow toolbars */
         virtual void setupMainWindowToolBars();
@@ -65,7 +82,13 @@ class CPlainWriteWindow : public CWriteWindow  {
         */
         static void insertKeyboardActions( BtActionCollection* const a );
 
+        /** \returns whether the window may be closed.*/
+        virtual bool queryClose();
+
     protected slots: // Protected slots
+
+        void saveCurrentText();
+
         /**
         * Saves the text for the current key. Directly writes the changed text into the module.
         */
@@ -82,6 +105,13 @@ class CPlainWriteWindow : public CWriteWindow  {
         * Deletes the module entry and clears the edit widget.
         */
         virtual void deleteEntry();
+
+        virtual void beforeKeyChange();
+
+    protected: /* Fields: */
+
+        CPlainWriteDisplay * m_writeDisplay;
+
 };
 
 #endif

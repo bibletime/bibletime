@@ -21,8 +21,6 @@
 #include "backend/keys/cswordkey.h"
 #include "frontend/cexportmanager.h"
 #include "frontend/display/bthtmlreaddisplay.h"
-#include "frontend/display/cdisplay.h"
-#include "frontend/display/creaddisplay.h"
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/bttoolbarpopupaction.h"
 #include "frontend/displaywindow/btdisplaysettingsbutton.h"
@@ -35,7 +33,7 @@
 #include "util/tool.h"
 
 
-CLexiconReadWindow::CLexiconReadWindow(QList<CSwordModuleInfo*> moduleList, CMDIArea* parent)
+CLexiconReadWindow::CLexiconReadWindow(const QList<CSwordModuleInfo *> & moduleList, CMDIArea * parent)
         : CReadWindow(moduleList, parent) {
     moduleList.first();
     setKey( CSwordKey::createInstance(moduleList.first()) );
@@ -193,7 +191,7 @@ void CLexiconReadWindow::initConnections() {
 
 void CLexiconReadWindow::initView() {
     // Create display widget for this window
-    setDisplayWidget( CDisplay::createReadInstance(this) );
+    setDisplayWidget(new BtHtmlReadDisplay(this, this));
     setCentralWidget( displayWidget()->view() );
     setWindowIcon(util::tool::getIconForModule(modules().first()));
 

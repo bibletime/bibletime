@@ -23,7 +23,7 @@ class CBookReadWindow: public CLexiconReadWindow {
 
     public: /* Methods: */
 
-        inline CBookReadWindow(QList<CSwordModuleInfo *> modules, CMDIArea * parent)
+        inline CBookReadWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent)
             : CLexiconReadWindow(modules, parent)
             , m_treeAction(0)
             , m_treeChooser(0) {}

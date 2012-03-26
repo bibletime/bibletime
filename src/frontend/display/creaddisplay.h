@@ -16,6 +16,8 @@
 #include "backend/managers/cswordbackend.h"
 
 
+class CReadWindow;
+
 /** The base class for all read-only widgets like KHTMLView.
   *@author The BibleTime team
   */

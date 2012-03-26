@@ -19,10 +19,13 @@
 #include "frontend/cdragdrop.h"
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
-#include "frontend/displaywindow/cwritewindow.h"
+#include "frontend/displaywindow/cplainwritewindow.h"
 
 
-CPlainWriteDisplay::CPlainWriteDisplay(CWriteWindow* parentWindow, QWidget* parent) : QTextEdit(parentWindow ? parentWindow : parent), CWriteDisplay(parentWindow) {
+CPlainWriteDisplay::CPlainWriteDisplay(CPlainWriteWindow * parentWindow, QWidget * parent)
+    : QTextEdit(parentWindow ? parentWindow : parent)
+    , CDisplay(parentWindow)
+{
     setAcceptRichText(false);
     setAcceptDrops(true);
     viewport()->setAcceptDrops(true);

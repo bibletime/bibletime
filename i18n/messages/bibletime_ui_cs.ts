@@ -58,7 +58,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>&amp;Load session</source>
-        <translation>&amp;Otevřít relaci</translation>
+        <translation type="obsolete">&amp;Otevřít relaci</translation>
     </message>
     <message>
         <source>&amp;Delete session</source>
@@ -386,6 +386,10 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Session with the name &quot;%1&quot; already exists. Please provide a different name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sw&amp;itch session</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2371,6 +2375,18 @@ shortcut</source>
         <source>Restore original text, new text will be lost</source>
         <translation>Obnovit originální text, nový text bude ztracen</translation>
     </message>
+    <message>
+        <source>Save Text?</source>
+        <translation type="unfinished">Uložit text?</translation>
+    </message>
+    <message>
+        <source>Save text before closing?</source>
+        <translation type="unfinished">Uložit text před ukončením?</translation>
+    </message>
+    <message>
+        <source>Save changed text?</source>
+        <translation type="unfinished">Uložit změněný text?</translation>
+    </message>
 </context>
 <context>
     <name>CSearchAnalysisScene</name>
@@ -2642,15 +2658,15 @@ Do you want to continue?</source>
     <name>CWriteWindow</name>
     <message>
         <source>Save text before closing?</source>
-        <translation>Uložit text před ukončením?</translation>
+        <translation type="obsolete">Uložit text před ukončením?</translation>
     </message>
     <message>
         <source>Save changed text?</source>
-        <translation>Uložit změněný text?</translation>
+        <translation type="obsolete">Uložit změněný text?</translation>
     </message>
     <message>
         <source>Save Text?</source>
-        <translation>Uložit text?</translation>
+        <translation type="obsolete">Uložit text?</translation>
     </message>
 </context>
 <context>

@@ -98,20 +98,6 @@ void CDisplayConnections::openFindTextDialog() {
 
 /*----------------------*/
 
-CReadDisplay* CDisplay::createReadInstance( CReadWindow* readWindow, QWidget* parent ) {
-    return new BtHtmlReadDisplay(readWindow, parent);
-}
-
-CWriteDisplay* CDisplay::createWriteInstance( CWriteWindow* writeWindow, const CWriteDisplay::WriteDisplayType& type, QWidget* parent ) {
-    //  qWarning("CDisplay::createWriteInstance");
-    if (type == PlainTextDisplay) {
-        return new CPlainWriteDisplay(writeWindow, parent);
-    }
-    else {
-        return new CHTMLWriteDisplay(writeWindow, parent);
-    };
-}
-
 
 CDisplay::CDisplay(CDisplayWindow* parent) :
         m_parentWindow(parent),

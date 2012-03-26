@@ -23,7 +23,7 @@
 #include "backend/keys/cswordversekey.h"
 #include "backend/rendering/cdisplayrendering.h"
 #include "backend/config/btconfig.h"
-#include "frontend/display/cdisplay.h"
+#include "frontend/display/bthtmlreaddisplay.h"
 #include "frontend/searchdialog/cmoduleresultview.h"
 #include "frontend/searchdialog/csearchdialog.h"
 #include "frontend/searchdialog/csearchresultview.h"
@@ -82,7 +82,7 @@ void BtSearchResultArea::initView() {
 
     QVBoxLayout* frameLayout = new QVBoxLayout(m_displayFrame);
     frameLayout->setContentsMargins(0, 0, 0, 0);
-    m_previewDisplay = CDisplay::createReadInstance(0, m_displayFrame);
+    m_previewDisplay = new BtHtmlReadDisplay(0, m_displayFrame);
     m_previewDisplay->view()->setToolTip(tr("Text of the selected search result item"));
     frameLayout->addWidget(m_previewDisplay->view());
 
@@ -313,7 +313,7 @@ QStringList BtSearchResultArea::queryParser(const QString& queryString) {
 
     cnt = 0;
     QStringList::iterator it;
-    for ( it = tokenList.begin(); it != tokenList.end(); it++ ) {
+    for (it = tokenList.begin(); it != tokenList.end(); ++it) {
         //-----------------------------------------------------------
         // remove all the NOT(!) tokens - these do not need to be
         // highlighted in the highlighter
@@ -325,7 +325,7 @@ QStringList BtSearchResultArea::queryParser(const QString& queryString) {
             it = tokenList.erase(it);
             if (it == tokenList.end())
                 break;
-            it--;
+            --it;
         }
         //-----------------------------------------------------------
         // remove all the operator tokens - these do not need to be
@@ -336,7 +336,7 @@ QStringList BtSearchResultArea::queryParser(const QString& queryString) {
             it = tokenList.erase(it);
             if (it == tokenList.end())
                 break;
-            it--;
+            --it;
         }
         // if the token contains a ^ then trim the remainder of the
         // token from the ^

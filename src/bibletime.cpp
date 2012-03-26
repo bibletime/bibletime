@@ -33,7 +33,6 @@
 #include "frontend/displaywindow/cdisplaywindow.h"
 #include "frontend/displaywindow/cdisplaywindowfactory.h"
 #include "frontend/displaywindow/creadwindow.h"
-#include "frontend/displaywindow/cwritewindow.h"
 #include "frontend/keychooser/ckeychooser.h"
 #include "frontend/searchdialog/csearchdialog.h"
 #include "util/cresmgr.h"
@@ -139,7 +138,7 @@ CDisplayWindow* BibleTime::createReadDisplayWindow(CSwordModuleInfo* module, con
     return createReadDisplayWindow(list, key);
 }
 
-CDisplayWindow* BibleTime::createWriteDisplayWindow(CSwordModuleInfo* module, const QString& key, const CWriteWindow::WriteWindowType& type) {
+CDisplayWindow * BibleTime::createWriteDisplayWindow(CSwordModuleInfo * module, const QString & key, CPlainWriteWindow::WriteWindowType type) {
     qApp->setOverrideCursor( QCursor(Qt::WaitCursor) );
 
     QList<CSwordModuleInfo*> modules;
@@ -164,14 +163,14 @@ CDisplayWindow* BibleTime::moduleEditPlain(CSwordModuleInfo *module) {
     /// \todo Refactor this.
     return createWriteDisplayWindow(module,
                                     QString::null,
-                                    CWriteWindow::PlainTextWindow);
+                                    CPlainWriteWindow::PlainTextWindow);
 }
 
 CDisplayWindow* BibleTime::moduleEditHtml(CSwordModuleInfo *module) {
     /// \todo Refactor this.
     return createWriteDisplayWindow(module,
                                     QString::null,
-                                    CWriteWindow::HTMLWindow);
+                                    CPlainWriteWindow::HTMLWindow);
 }
 
 

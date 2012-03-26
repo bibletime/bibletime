@@ -13,8 +13,6 @@
 #include "frontend/displaywindow/cplainwritewindow.h"
 
 
-class QAction;
-
 /** 
  * The write window class which offers a WYSIWYG text editor for creating a personal commentary.
   *
@@ -25,7 +23,7 @@ class QAction;
 class CHTMLWriteWindow : public CPlainWriteWindow  {
         Q_OBJECT
     public:
-        CHTMLWriteWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
+        CHTMLWriteWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent);
 
         virtual void storeProfileSettings(const QString & windowGroup);
         virtual void applyProfileSettings(const QString & windowGroup);
@@ -49,8 +47,8 @@ class CHTMLWriteWindow : public CPlainWriteWindow  {
         */
         static void insertKeyboardActions( BtActionCollection* const a );
 
-        virtual CWriteWindow::WriteWindowType writeWindowType() {
-            return CWriteWindow::HTMLWindow;
+        virtual WriteWindowType writeWindowType() const {
+            return HTMLWindow;
         }
         /** 
          * Called to add actions to mainWindow toolbars 
@@ -70,6 +68,7 @@ class CHTMLWriteWindow : public CPlainWriteWindow  {
         * Saves the text for the current key. Directly writes the changed text into the module.
         */
         virtual void saveCurrentText( const QString& );
+
 };
 
 #endif

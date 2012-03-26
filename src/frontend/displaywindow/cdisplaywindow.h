@@ -24,7 +24,6 @@ class CKeyChooser;
 class CMDIArea;
 class BtModuleChooserBar;
 class CSwordModuleInfo;
-class QCloseEvent;
 class QMenu;
 class QToolBar;
 class BTHistory;
@@ -230,7 +229,7 @@ class CDisplayWindow : public QMainWindow {
 
         friend class CBibleReadWindow;
 
-        CDisplayWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
+        CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent);
         virtual ~CDisplayWindow();
 
         /**

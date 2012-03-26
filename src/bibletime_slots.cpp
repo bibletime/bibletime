@@ -397,7 +397,7 @@ struct WindowLoadStatus {
 
 void BibleTime::reloadProfile() {
     typedef CMDIArea::MDIArrangementMode MAM;
-    typedef CWriteWindow::WriteWindowType WWT;
+    typedef CPlainWriteWindow::WriteWindowType WWT;
 
     // Cache pointer to config:
     BtConfig & conf = btConfig();

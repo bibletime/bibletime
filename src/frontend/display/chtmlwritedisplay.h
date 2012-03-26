@@ -16,7 +16,7 @@
 class BtActionCollection;
 class BtColorWidget;
 class BtFontSizeWidget;
-class CWriteWindow;
+class CHTMLWriteWindow;
 class QAction;
 class QFontComboBox;
 class QMenu;
@@ -29,6 +29,9 @@ class QWidget;
 class CHTMLWriteDisplay : public CPlainWriteDisplay {
         Q_OBJECT
     public:
+
+        CHTMLWriteDisplay(CHTMLWriteWindow * parentWindow, QWidget * parent = 0);
+
         /**
         * Sets the new text for this display widget. (CPlainWriteDisplay).
         */
@@ -45,41 +48,29 @@ class CHTMLWriteDisplay : public CPlainWriteDisplay {
         virtual void setupToolbar(QToolBar * bar, BtActionCollection * actionCollection);
 
     protected:
-        friend class CDisplay;
-        CHTMLWriteDisplay(CWriteWindow* parentWindow, QWidget* parent);
-        ~CHTMLWriteDisplay();
+
+        void alignmentChanged(int);
 
     protected slots:
-        void toggleBold(bool);
-        void toggleItalic(bool);
-        void toggleUnderline(bool);
+        void toggleBold(bool checked);
+        void toggleItalic(bool checked);
+        void toggleUnderline(bool checked);
 
         void alignLeft(bool);
         void alignCenter(bool);
         void alignRight(bool);
 
-        void changeFontSize(int);
+        void slotFontFamilyChosen(const QFont&);
+        void slotFontSizeChosen(int);
+        void slotFontColorChosen( const QColor& );
 
-        void slotFontChanged( const QFont& );
-        void slotFontFamilyChoosen(const QFont&);
-
-        /**
-        * The text's alignment changed. Enable the right buttons.
-        */
-        void slotAlignmentChanged( int );
-        /**
-        * Is called when a new color was selected.
-        */
-        void slotColorSelected( const QColor& );
-        /**
-        * Is called when a text with another color was selected.
-        */
-        void slotColorChanged( const QColor& );
+        void slotCurrentCharFormatChanged(const QTextCharFormat &);
 
     signals:
-        void fontChanged(const QFont& font);
-        void fontSizeChanged(int);
-        void setColor(const QColor&);
+
+        void signalFontChanged(const QFont &);
+        void signalFontSizeChanged(int);
+        void signalFontColorChanged(const QColor &);
 
     private:
         struct {
@@ -90,11 +81,10 @@ class CHTMLWriteDisplay : public CPlainWriteDisplay {
             QAction* alignLeft;
             QAction* alignCenter;
             QAction* alignRight;
-
-            //popup menu
-            QAction* selectAll;
         }
         m_actions;
+
+        bool m_handingFormatChangeFromEditor;
 };
 
 #endif

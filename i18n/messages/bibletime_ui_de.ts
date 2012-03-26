@@ -58,7 +58,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>&amp;Load session</source>
-        <translation>Sitzung &amp;laden</translation>
+        <translation type="obsolete">Sitzung &amp;laden</translation>
     </message>
     <message>
         <source>&amp;Delete session</source>
@@ -386,6 +386,10 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Session with the name &quot;%1&quot; already exists. Please provide a different name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sw&amp;itch session</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2403,6 +2407,18 @@ shortcut</source>
         <source>Restore original text, new text will be lost</source>
         <translation>Original-Text wiederherstellen, neuer Text geht verloren</translation>
     </message>
+    <message>
+        <source>Save Text?</source>
+        <translation type="unfinished">Text speichern?</translation>
+    </message>
+    <message>
+        <source>Save text before closing?</source>
+        <translation type="unfinished">Den Text vor dem Schließen speichern?</translation>
+    </message>
+    <message>
+        <source>Save changed text?</source>
+        <translation type="unfinished">Geänderten Text speichern?</translation>
+    </message>
 </context>
 <context>
     <name>CSearchAnalysisScene</name>
@@ -2676,15 +2692,15 @@ Möchten Sie fortfahren?</translation>
     <name>CWriteWindow</name>
     <message>
         <source>Save text before closing?</source>
-        <translation>Den Text vor dem Schließen speichern?</translation>
+        <translation type="obsolete">Den Text vor dem Schließen speichern?</translation>
     </message>
     <message>
         <source>Save changed text?</source>
-        <translation>Geänderten Text speichern?</translation>
+        <translation type="obsolete">Geänderten Text speichern?</translation>
     </message>
     <message>
         <source>Save Text?</source>
-        <translation>Text speichern?</translation>
+        <translation type="obsolete">Text speichern?</translation>
     </message>
 </context>
 <context>

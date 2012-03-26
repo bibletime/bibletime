@@ -108,7 +108,7 @@ void BtInstallProgressDialog::startThreads() {
     if (threadIterator != m_waitingThreads.begin()) {
         // go to the last item which is actually the first in the visible list
         // because the iterator is reversed compared to insert order
-        threadIterator--;
+        --threadIterator;
         QString sourceName = threadIterator.key();
         BtInstallThread* t = threadIterator.value();
         m_runningThreads.insert(sourceName, t);
@@ -159,7 +159,7 @@ void BtInstallProgressDialog::oneItemStoppedOrCompleted(QString module, QString 
     //non-concurrent
     QMultiMap<QString, BtInstallThread*>::iterator threadIterator = m_waitingThreads.end();
     if (m_runningThreads.isEmpty() && threadIterator != m_waitingThreads.begin()) {
-        threadIterator--; // the last item
+        --threadIterator; // the last item
         QString sourceName = threadIterator.key();
         BtInstallThread* t = threadIterator.value();
         m_runningThreads.insert(sourceName, t);
