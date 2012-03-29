@@ -23,23 +23,23 @@
 * have the signals work. Certain multiple inheritance classes which cannot
 * have QObject as the first derived class, cannot use Qt signals.
 */
-class BtSignal : public QObject {
-        Q_OBJECT
+class BtSignal: public QObject {
 
-    public:
-        inline BtSignal(QObject *parent = 0) : QObject(parent) {};
+    Q_OBJECT
 
-        /**
-          Immediately emits the beforeChanged() signal.
-        */
-        inline void emitBeforeChanged() { emit beforeChanged(); }
-        /**
-          Immediately emits the changed() signal.
-        */
-        inline void emitChanged() { emit changed(); }
+public:
 
-    signals:
-        void beforeChanged();
-        void changed();
+    inline BtSignal(QObject *parent = 0)
+        : QObject(parent) {}
+
+    /**
+      Immediately emits the beforeChanged() signal.
+    */
+    inline void emitSignal() { emit signal(); }
+
+signals:
+
+    void signal();
+
 };
 #endif

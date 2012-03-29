@@ -119,7 +119,7 @@ void CPlainWriteWindow::setupMainWindowToolBars() {
 
 void CPlainWriteWindow::initConnections() {
     Q_ASSERT(keyChooser());
-    QObject::connect(key()->signaler(), SIGNAL(beforeChanged()), this, SLOT(beforeKeyChange()));
+    QObject::connect(key()->beforeChangedSignaller(), SIGNAL(signal()), this, SLOT(beforeKeyChange()));
     QObject::connect(keyChooser(), SIGNAL(keyChanged(CSwordKey*)), this, SLOT(lookupSwordKey(CSwordKey*)));
     QObject::connect(displayWidget()->connectionsProxy(), SIGNAL(textChanged()), this, SLOT(textChanged()) );
 }

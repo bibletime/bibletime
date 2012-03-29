@@ -12,120 +12,127 @@
 
 #include <QPointer>
 #include <QString>
+#include "util/btsignal.h"
 
 
 class CSwordModuleInfo;
 class QTextCodec;
-class BtSignal;
 
-/** Base class for all keys.
- * The base class for all Sword based keys.
- * @author The BibleTime team
- * @version $Id: cswordkey.h,v 1.27 2006/10/30 19:53:32 mgruner Exp $
- */
+/** Base class for all Sword based keys. */
 class CSwordKey {
-    protected:
-        /**
-          \param module The module which belongs to this key, may be NULL
-        */
-        CSwordKey(const CSwordModuleInfo * const module = 0);
 
-        CSwordKey(const CSwordKey &copy);
+public: /* Types: */
 
-    public:
-        enum TextRenderType {
-            Normal = 0,
-            HTMLEscaped = 1,
-            ProcessEntryAttributesOnly = 2    // in this case, renderText() will not return text, but only cause EntryAttribute processing
-        };
+    enum TextRenderType {
+        Normal = 0,
+        HTMLEscaped = 1,
+        ProcessEntryAttributesOnly = 2    // in this case, renderText() will not return text, but only cause EntryAttribute processing
+    };
 
-        virtual ~CSwordKey();
+    virtual inline ~CSwordKey() { delete m_beforeChangedSignaller; }
 
-        /** Returns the current key.
-         * @return The key which belongs to the current object.
-         */
-        virtual QString key() const = 0;
+    /**
+      \returns The key which belongs to the current object.
+    */
+    virtual QString key() const = 0;
 
-        /**
-          Sets the current key. Sets the key using a utf8 enabled QString.
-          \param key The key which should be used to set the current one.
-        */
-        virtual bool setKey(const QString &key) = 0;
+    /**
+      Sets the current key using a utf8 enabled QString.
+      \param[in] key The key which should be used to set the current one.
+    */
+    virtual bool setKey(const QString & key) = 0;
 
-        /**
-          Set the key using a utf8-decoded c-string.
-          \param key The key which should be used to set the current one.
-        */
-        virtual bool setKey(const char *key) = 0;
+    /**
+      Set the key using a utf8-decoded c-string.
+      \param[in] key The key which should be used to set the current one.
+    */
+    virtual bool setKey(const char * key) = 0;
 
-        /** Clone this object. Clone this current object and return it.
-         * @return A clone of the current object.
-         */
-        virtual CSwordKey* copy() const = 0;
+    /**
+      \returns a clone of this object.
+    */
+    virtual CSwordKey * copy() const = 0;
 
-        /**
-          \returns the module which belongs to this key.
-        */
-        inline const CSwordModuleInfo *module() const {
-            return m_module;
-        }
+    /**
+      \returns the module which belongs to this key.
+    */
+    inline const CSwordModuleInfo * module() const {
+        return m_module;
+    }
 
-        /**
-          Sets the module which belongs to this key.
-          \param[in] newModule the module to set.
-        */
-        virtual inline void setModule(const CSwordModuleInfo *newModule) {
-            m_module = newModule;
-        }
+    /**
+      Sets the module which belongs to this key.
+      \param[in] newModule the module to set.
+    */
+    virtual inline void setModule(const CSwordModuleInfo * newModule) {
+        m_module = newModule;
+    }
 
-        /** Returns the raw, unchanged text. Returns the text without any filter modifications,
-         * just in the way it comes out of the module.
-         */
-        QString rawText();
-        /** Returns the rendered text. Returns the text of the current key after passing it through the
-         * modules filters.
-         */
-        QString renderedText( const CSwordKey::TextRenderType mode = CSwordKey::Normal );
-        /** Stripped down text. Returns the text after removing all markup tags from it.
-         */
-        QString strippedText();
+    /**
+      \returns the raw, unchanged text from the module (i.e. without any filter
+               modifications).
+    */
+    QString rawText();
 
-        const BtSignal *signaler();
+    /**
+      \returns the rendered text by passing the text under the current key
+               through the filters.
+    */
+    QString renderedText(const CSwordKey::TextRenderType mode = CSwordKey::Normal);
 
-        /**
-         * This returns a new object of the right CSwordKey* implementation
-         * (e.g. CSwordVerseKey or CSwordLDKey)
-         * The type is determined by the type of the module.
-         * @see CSwordModuleInfo, CSwordBibleModuleInfo, CSwordCommentaryModuleInfo, CSwordLexiconModukleInfo
-         */
-        static CSwordKey* createInstance(const CSwordModuleInfo *module);
+    /**
+      \returns the text after removing all markup tags from it.
+    */
+    QString strippedText();
 
-        /**
-         * This is called before a key change to emit a signal
-         * */
-        void emitBeforeChanged();
-        /**
-         * This is called after a key change to emit a signal
-         * */
-        void emitChanged();
+    const BtSignal * beforeChangedSignaller();
+    const BtSignal * afterChangedSignaller();
 
-    protected:
-        /**
-         * Returns the encoded key appropriate for use directly with Sword.
-         */
-        virtual const char * rawKey() const = 0;
-        static inline const QTextCodec *cp1252Codec() { return m_cp1252Codec; };
+    /**
+      \returns a new CSwordkey subclass instance for the given module, depending
+               on the type of the module.
+    */
+    static CSwordKey * createInstance(const CSwordModuleInfo * module);
 
-    private:
-        /**
-         * Disable the assignment operator
-         */
-        CSwordKey& operator= ( const CSwordKey & );
+    /**
+      This is called before a key change to emit a signal
+    */
+    void emitBeforeChanged();
 
-    protected:
-        static const QTextCodec *m_cp1252Codec;
-        const CSwordModuleInfo *m_module;
-        QPointer<BtSignal> m_signal;
+    /**
+      This is called after a key change to emit a signal
+    */
+    void emitAfterChanged();
+
+protected: /* Methods: */
+
+    inline CSwordKey(const CSwordModuleInfo * const module = 0)
+        : m_module(module) {}
+
+    inline CSwordKey(const CSwordKey & copy)
+        : m_module(copy.m_module) {}
+
+    /**
+      \returns the encoded key appropriate for use directly with Sword.
+    */
+    virtual const char * rawKey() const = 0;
+
+    static inline const QTextCodec * cp1252Codec() { return m_cp1252Codec; }
+
+private: /* Methods: */
+
+    /**
+      Disable the assignment operator
+    */
+    CSwordKey & operator=(const CSwordKey &);
+
+protected: /* Fields: */
+
+    static const QTextCodec * m_cp1252Codec;
+    const CSwordModuleInfo * m_module;
+    QPointer<BtSignal> m_beforeChangedSignaller;
+    QPointer<BtSignal> m_afterChangedSignaller;
+
 };
 
 #endif
