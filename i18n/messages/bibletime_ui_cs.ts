@@ -5,9 +5,6 @@
     <name></name>
     <message>
         <source></source>
-        <translatorcomment>Bibletime User Interface translation
-Copyright (C) 2012 The Bibletime Team, http://www.bibletime.info
-This file is distributed under the same license as the Bibetime package.</translatorcomment>
         <translation></translation>
     </message>
 </context>
@@ -54,7 +51,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>&amp;Save session</source>
-        <translation type="unfinished">U&amp;ložit relaci</translation>
+        <translation>U&amp;ložit relaci</translation>
     </message>
     <message>
         <source>&amp;Load session</source>
@@ -226,166 +223,166 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Manually arrange the open windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozmístit otevřená okna manuálně</translation>
     </message>
     <message>
         <source>Information about the BibleTime program</source>
-        <translation type="unfinished"></translation>
+        <translation>Informace o programu BibleTime</translation>
     </message>
     <message>
         <source>Unlock Work</source>
-        <translation type="unfinished">Odemknout dílo</translation>
+        <translation>Odemknout dílo</translation>
     </message>
     <message>
         <source>Close &amp;window</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Zavřít okno</translation>
     </message>
     <message>
         <source>Close the current open window</source>
-        <translation type="unfinished"></translation>
+        <translation>Zavřít otevřené okno</translation>
     </message>
     <message>
         <source>Open the Bible study HowTo included with BibleTime.&lt;br/&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřít příručku jak studovat Bibli obsaženou v BibleTime. &lt;br/&gt;Tato příručka je úvod do efektivního studia Bible.</translation>
     </message>
     <message>
         <source>Auto-&amp;tile</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Dlaždice automaticky</translation>
     </message>
     <message>
         <source>Automatically tile the open windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Automaticky rozmístit otevřená okna dlaždicově</translation>
     </message>
     <message>
         <source>&amp;Tile</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Dlaždice</translation>
     </message>
     <message>
         <source>Tile the open windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozmístit otevřená okna dlaždicově</translation>
     </message>
     <message>
         <source>Show &quot;Whats this widget&quot; dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit dialog &quot;Co je toto&quot;</translation>
     </message>
     <message>
         <source>Whats this widget?</source>
-        <translation type="unfinished"></translation>
+        <translation>Co je toto?</translation>
     </message>
     <message>
         <source>Ta&amp;bbed</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Karty</translation>
     </message>
     <message>
         <source>Automatically tab the open windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Automaticky umístit okna do karet</translation>
     </message>
     <message>
         <source>Enter the unlock key for %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vložte klíč pro %1.</translation>
     </message>
     <message>
         <source>Warning: Invalid unlock key!</source>
-        <translation type="unfinished"></translation>
+        <translation>Varování neplatný klíč!</translation>
     </message>
     <message>
         <source>The unlock key you provided did not properly unlock this module. Please try again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vámi vložený klíč neodemkl tento modul. Prosím zkuste to znovu.</translation>
     </message>
     <message>
         <source>Main toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Hlavní nástrojová lišta</translation>
     </message>
     <message>
         <source>Navigation toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Navigační lišta</translation>
     </message>
     <message>
         <source>Works toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Lišta děl</translation>
     </message>
     <message>
         <source>Tools toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Nástrojová lišta</translation>
     </message>
     <message>
         <source>Format toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Lišta formátování</translation>
     </message>
     <message>
         <source>Show bookshelf</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit knihovnu</translation>
     </message>
     <message>
         <source>Show bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit záložky</translation>
     </message>
     <message>
         <source>Show mag</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit časopis</translation>
     </message>
     <message>
         <source>Toolbars</source>
-        <translation type="unfinished"></translation>
+        <translation>Nástrojové lišty</translation>
     </message>
     <message>
         <source>Show toolbars in text windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit nástrojové lišty v textových oknech</translation>
     </message>
     <message>
         <source>Show parallel text headers</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit paralelní záhlaví textů</translation>
     </message>
     <message>
         <source>O&amp;pen windows</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Otevřít okna</translation>
     </message>
     <message>
         <source>Show main toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit hlavní nástrojovou lištu</translation>
     </message>
     <message>
         <source>Show navigation bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit navigační lištu</translation>
     </message>
     <message>
         <source>Show works toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit lištu děl</translation>
     </message>
     <message>
         <source>Show tools toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit lištu nástrojů</translation>
     </message>
     <message>
         <source>Show formatting toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit lištu formátování</translation>
     </message>
     <message>
         <source>&amp;Tip of the day...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Tip dne...</translation>
     </message>
     <message>
         <source>Show tips about BibleTime</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit tipy BibleTime</translation>
     </message>
     <message>
         <source>Toggle visibility of the bookshelf window</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit/skrýt okno knihovny</translation>
     </message>
     <message>
         <source>Toggle visibility of the bookmarks window</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit/skrýt okno záložek</translation>
     </message>
     <message>
         <source>Toggle visibility of the mag window</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit/skrýt okno časopisu</translation>
     </message>
 </context>
 <context>
     <name>BibleTimeApp</name>
     <message>
         <source>Fatal error!</source>
-        <translation type="unfinished"></translation>
+        <translation>Kritická chyba!</translation>
     </message>
 </context>
 <context>
@@ -396,7 +393,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>The complete legally binding license is below.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kompletní závazná licence je níže.</translation>
     </message>
     <message>
         <source>About BibleTime</source>
@@ -432,7 +429,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>howto</source>
-        <translation type="unfinished"></translation>
+        <translation>howto</translation>
     </message>
     <message>
         <source>documentation</source>
@@ -448,83 +445,83 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>This program uses Qt version %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tento program využívá Qt verze %1.</translation>
     </message>
     <message>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
-        <translation type="unfinished"></translation>
+        <translation>Qt je multiplatformní aplikační framework pro tvorbu uživatelských rozhraní vytvořený v jazyce C++. Je poskytována za podmínek licence LGPL.</translation>
     </message>
     <message>
         <source>&amp;BibleTime</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;BibleTime</translation>
     </message>
     <message>
         <source>We are looking for developers and translators. If you would like to join our team, please send an email to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hledáme vývojáře a překladatele. Pokud se chcete přidat, prosím pošlete e-mail %1.</translation>
     </message>
     <message>
         <source>&amp;Contributors</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Přispěvatelé</translation>
     </message>
     <message>
         <source>project founder</source>
-        <translation type="unfinished"></translation>
+        <translation>zakladatel projektu</translation>
     </message>
     <message>
         <source>project manager</source>
-        <translation type="unfinished"></translation>
+        <translation>manažer projektu</translation>
     </message>
     <message>
         <source>artist</source>
-        <translation type="unfinished"></translation>
+        <translation>designér</translation>
     </message>
     <message>
         <source>tester</source>
-        <translation type="unfinished"></translation>
+        <translation>tester</translation>
     </message>
     <message>
         <source>usability expert</source>
-        <translation type="unfinished"></translation>
+        <translation>expert na použitelnost</translation>
     </message>
     <message>
         <source>Some names may be missing, please email %1 if you notice errors or omissions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Některá jména mohou chybět, prosím napište nám na %1, pokud něco chybí nebo najdete chybu.</translation>
     </message>
     <message>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
-        <translation type="unfinished"></translation>
+        <translation>BibleTime použivá SWORD projekt. Projekt SWORD je softwarový projekt CrossWire Bible Society. Jeho cílem je vytvořit multiplatformní softwarové nástroje &amp;mdash; pod licencí GNU GPL &amp;mdash;, které umožní programátorům a společenstvím kolem Bible vytvářet &quot;Biblický software&quot; snáze a efektivněji.</translation>
     </message>
     <message>
         <source>The SWORD Project: </source>
-        <translation type="unfinished"></translation>
+        <translation>Projekt SWORD:</translation>
     </message>
     <message>
         <source>&amp;Qt</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Qt</translation>
     </message>
     <message>
         <source>Qt toolkit version %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Qt toolkit verze %1</translation>
     </message>
     <message>
         <source>More info...</source>
-        <translation type="unfinished"></translation>
+        <translation>Více informací...</translation>
     </message>
     <message>
         <source>&amp;License</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Licence</translation>
     </message>
     <message>
         <source>(c)1999-2011, The BibleTime Team</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>&amp;SWORD</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;SWORD</translation>
     </message>
     <message>
         <source>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</source>
-        <translation type="unfinished"></translation>
+        <translation>BibleTime je uvolněn pod licencí GPL. Můžete si tento program stáhnout a používat jej pro osobní, privátní, veřejné nebo i komerční účely bez omezení. Pokud však program distribuujete dále, musíte spolu s ním distribuovat i jeho zdrojové kódy.</translation>
     </message>
 </context>
 <context>
@@ -535,27 +532,27 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Next book</source>
-        <translation type="unfinished">Další kniha</translation>
+        <translation>Další kniha</translation>
     </message>
     <message>
         <source>Previous book</source>
-        <translation type="unfinished">Předchozí kniha</translation>
+        <translation>Předchozí kniha</translation>
     </message>
     <message>
         <source>Next chapter</source>
-        <translation type="unfinished">Další kapitola</translation>
+        <translation>Další kapitola</translation>
     </message>
     <message>
         <source>Previous chapter</source>
-        <translation type="unfinished">Předchozí kapitola</translation>
+        <translation>Předchozí kapitola</translation>
     </message>
     <message>
         <source>Next verse</source>
-        <translation type="unfinished">Další verš</translation>
+        <translation>Další verš</translation>
     </message>
     <message>
         <source>Previous verse</source>
-        <translation type="unfinished">Předchozí verš</translation>
+        <translation>Předchozí verš</translation>
     </message>
 </context>
 <context>
@@ -569,116 +566,100 @@ This file is distributed under the same license as the Bibetime package.</transl
     <name>BtBookshelfDockWidget</name>
     <message>
         <source>Bookshelf</source>
-        <translation type="unfinished">Knihovna</translation>
+        <translation>Knihovna</translation>
     </message>
     <message>
         <source>&amp;Open</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Otevřít</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Upravit</translation>
     </message>
     <message>
         <source>&amp;Plain text</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Prostý text</translation>
     </message>
     <message>
         <source>&amp;HTML</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;HTML</translation>
     </message>
     <message>
         <source>&amp;Unlock...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Odemknout...</translation>
     </message>
     <message>
         <source>&amp;About...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;O ...</translation>
     </message>
     <message>
         <source>&amp;Search in %1...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Vyhledat v %1...</translation>
     </message>
     <message>
         <source>Warning: Module locked!</source>
-        <translation type="unfinished"></translation>
+        <translation>Varování: modul uzamčen!</translation>
     </message>
     <message>
         <source>You are trying to access an encrypted module. Please provide an unlock key in the following dialog to open the module.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zkoušíte přistoupit k uzamčenému modulu. K odemčení modulu vložte prosím v následujícím dialogu klíč.</translation>
     </message>
     <message>
         <source>There are currently no works installed. Please click the button below to install new works.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktuálně nejsou nainstalována žádná díla. Pro instalaci děl klikněte prosím na tlačítko níže.</translation>
     </message>
     <message>
         <source>&amp;Install works...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Instalovat díla...</translation>
     </message>
 </context>
 <context>
     <name>BtBookshelfGroupingMenu</name>
     <message>
         <source>Category/Language</source>
-        <translation type="unfinished">Kategorie/Jazyk</translation>
+        <translation>Kategorie/Jazyk</translation>
     </message>
     <message>
         <source>Category</source>
-        <translation type="unfinished">Kategorie</translation>
+        <translation>Kategorie</translation>
     </message>
     <message>
         <source>Language/Category</source>
-        <translation type="unfinished">Jazyk/kategorie</translation>
+        <translation>Jazyk/kategorie</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation type="unfinished">Jazyk</translation>
+        <translation>Jazyk</translation>
     </message>
     <message>
         <source>No grouping</source>
-        <translation type="unfinished"></translation>
+        <translation>Neseskupovat</translation>
     </message>
 </context>
 <context>
     <name>BtBookshelfModel</name>
     <message>
         <source>Module</source>
-        <translation type="unfinished"></translation>
+        <translation>Modul</translation>
     </message>
 </context>
 <context>
     <name>BtBookshelfWidget</name>
     <message>
         <source>Fi&amp;lter:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fi&amp;ltr:</translation>
     </message>
     <message>
         <source>Grouping</source>
-        <translation type="unfinished">Seskupování</translation>
+        <translation>Seskupování</translation>
     </message>
     <message>
         <source>Change the grouping of items in the bookshelf.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Category/Language</source>
-        <translation type="obsolete">Kategorie/Jazyk</translation>
-    </message>
-    <message>
-        <source>Category</source>
-        <translation type="obsolete">Kategorie</translation>
-    </message>
-    <message>
-        <source>Language/Category</source>
-        <translation type="obsolete">Jazyk/kategorie</translation>
-    </message>
-    <message>
-        <source>Language</source>
-        <translation type="obsolete">Jazyk</translation>
+        <translation>Změnit seskupování položek v knihovně.</translation>
     </message>
     <message>
         <source>Show/hide works</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit/skrýt díla</translation>
     </message>
 </context>
 <context>
@@ -692,116 +673,112 @@ This file is distributed under the same license as the Bibetime package.</transl
     <name>BtDisplaySettingsButton</name>
     <message>
         <source>Use linebreaks after each verse</source>
-        <translation type="unfinished">Zalomit řádek po každém verši</translation>
+        <translation>Zalomit řádek po každém verši</translation>
     </message>
     <message>
         <source>Show verse numbers</source>
-        <translation type="unfinished">Zobrazit čísla veršů</translation>
+        <translation>Zobrazit čísla veršů</translation>
     </message>
     <message>
         <source>Show headings</source>
-        <translation type="unfinished">Zobrazit nadpisy</translation>
+        <translation>Zobrazit nadpisy</translation>
     </message>
     <message>
         <source>Highlight words of Jesus</source>
-        <translation type="unfinished">Zvýraznit Ježíšova slova</translation>
+        <translation>Zvýraznit Ježíšova slova</translation>
     </message>
     <message>
         <source>Show Hebrew vowel points</source>
-        <translation type="unfinished">Zobrazit hebrejské značky samohlásek</translation>
+        <translation>Zobrazit hebrejské značky samohlásek</translation>
     </message>
     <message>
         <source>Show Hebrew cantillation marks</source>
-        <translation type="unfinished">Zobrazit hebrejské značky přízvuku</translation>
+        <translation>Zobrazit hebrejské značky přízvuku</translation>
     </message>
     <message>
         <source>Show Greek accents</source>
-        <translation type="unfinished">Zobrazit řecké značky přízvuku</translation>
+        <translation>Zobrazit řecké značky přízvuku</translation>
     </message>
     <message>
         <source>Use alternative textual variant</source>
-        <translation type="unfinished">Použít alternativní varianty textu</translation>
+        <translation>Použít alternativní varianty textu</translation>
     </message>
     <message>
         <source>Show scripture cross-references</source>
-        <translation type="unfinished">Ukázat odkaz v Bibli</translation>
+        <translation>Ukázat odkaz v Bibli</translation>
     </message>
     <message>
         <source>Show morph segmentation</source>
-        <translation type="unfinished">Ukázat morfologické dělení</translation>
+        <translation>Ukázat morfologické dělení</translation>
     </message>
     <message>
         <source>Display settings</source>
-        <translation type="unfinished">Nastavení zobrazení</translation>
+        <translation>Nastavení zobrazení</translation>
     </message>
     <message>
         <source>Display settings: No options available</source>
-        <translation type="unfinished">Zobrazit nastavení: Žádné volby k dispozici</translation>
+        <translation>Nastavení zobrazení: Žádné volby k dispozici</translation>
     </message>
     <message>
         <source>Show footnotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit poznámky</translation>
     </message>
 </context>
 <context>
     <name>BtEditBookmarkDialog</name>
     <message>
         <source>Edit Bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Upravit záložku</translation>
     </message>
     <message>
         <source>Location:</source>
-        <translation type="unfinished"></translation>
+        <translation>Umístění:</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nadpis:</translation>
     </message>
     <message>
         <source>Description:</source>
-        <translation type="unfinished"></translation>
+        <translation>Popis:</translation>
     </message>
 </context>
 <context>
     <name>BtFontChooserWidget</name>
     <message>
         <source>Font name:</source>
-        <translation type="unfinished">Jméno písma:</translation>
+        <translation>Jméno písma:</translation>
     </message>
     <message>
         <source>Font style:</source>
-        <translation type="unfinished">Styl písma:</translation>
+        <translation>Styl písma:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation type="unfinished">Velikost:</translation>
+        <translation>Velikost:</translation>
     </message>
 </context>
 <context>
     <name>BtFontSettingsPage</name>
     <message>
-        <source>You can specify a custom font for each language.</source>
-        <translation type="obsolete">Můžete vybrat vlastní písmo pro každý jazyk.</translation>
-    </message>
-    <message>
         <source>The font selection below will apply to all texts in this language</source>
-        <translation type="unfinished"></translation>
+        <translation>Výběr písma bude použit pro všechna díla v tomto jazyce</translation>
     </message>
     <message>
         <source>Use custom font</source>
-        <translation type="unfinished">Použít vlastní písmo</translation>
+        <translation>Použít vlastní písmo</translation>
     </message>
     <message>
         <source>Fonts</source>
-        <translation type="unfinished">Písma</translation>
+        <translation>Písma</translation>
     </message>
     <message>
         <source>&amp;Language:</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Jazyky:</translation>
     </message>
     <message>
         <source>Optionally specify a custom font for each language:</source>
-        <translation type="unfinished"></translation>
+        <translation>Volitelně zvolte vlastní písmo pro každý jazyk:</translation>
     </message>
 </context>
 <context>
@@ -835,16 +812,8 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Velikost rejstříku</translation>
     </message>
     <message>
-        <source>Create new search indexes and delete created indexes for the installed works.</source>
-        <translation type="obsolete">Vytvořit nové vyhledávací rejstříky a smazat dříve vytvořené rejstříky u nainstalovaných děl.</translation>
-    </message>
-    <message>
         <source>Search Indexes</source>
         <translation>Vyhledávací rejstříky</translation>
-    </message>
-    <message>
-        <source>KiB</source>
-        <translation type="obsolete">KiB</translation>
     </message>
     <message>
         <source>Create...</source>
@@ -852,49 +821,49 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Indexed Works</source>
-        <translation type="unfinished"></translation>
+        <translation>Indexovaná díla</translation>
     </message>
     <message>
         <source>Unindexed Works</source>
-        <translation type="unfinished"></translation>
+        <translation>Neindexovaná díla</translation>
     </message>
     <message>
         <source>%1 KiB</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>0 KiB</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
     <name>BtInstallModuleChooserDialog</name>
     <message>
         <source>Install/Update works?</source>
-        <translation type="unfinished">Instalovat/Aktualizovat díla?</translation>
+        <translation>Instalovat/Aktualizovat díla?</translation>
     </message>
     <message>
         <source>Do you really want to install these works?</source>
-        <translation type="unfinished">Opravdu si přejete nainstalovat tato díla?</translation>
+        <translation>Opravdu si přejete nainstalovat tato díla?</translation>
     </message>
     <message>
         <source>Only one version of a work can be installed at the same time. Select only one if there are items marked with red.</source>
-        <translation type="unfinished">Zároveň může být nainstalována pouze jedna verze daného díla. Vyberte pouze jednu položku, pokud jsou některé označené červeně.</translation>
+        <translation>Zároveň může být nainstalována pouze jedna verze daného díla. Vyberte pouze jednu položku, pokud jsou některé označené červeně.</translation>
     </message>
 </context>
 <context>
     <name>BtInstallModuleChooserDialogModel</name>
     <message>
         <source>Work</source>
-        <translation type="unfinished">Dílo</translation>
+        <translation>Dílo</translation>
     </message>
     <message>
         <source>Installation source</source>
-        <translation type="unfinished"></translation>
+        <translation>Zdroj instalace</translation>
     </message>
     <message>
         <source>Version</source>
-        <translation type="unfinished">Verze</translation>
+        <translation>Verze</translation>
     </message>
 </context>
 <context>
@@ -902,14 +871,6 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <source>Install/Update</source>
         <translation>Instalovat/Aktualizovat</translation>
-    </message>
-    <message>
-        <source>Install and update works. Add remote or local sources, refresh them, select the works to be installed/updated and click Install.&lt;br/&gt;&lt;b&gt;WARNING:&lt;/b&gt; If you live in a persecuted country and don&apos;t want to risk detection don&apos;t use remote sources.</source>
-        <translation type="obsolete">Instalovat a aktualizovat díla. Přidejte vzdálené nebo lokální zdroje, obnovte je, vyberte díla k instalaci/aktualizaci a klikněte na Instalovat. &lt;br/&gt;&lt;b&gt;VAROVÁNÍ:&lt;/b&gt; Pokud žijete v nesvobodné zemi a nechcete riskovat odhalení, nepoužívejte vzdálené zdroje.</translation>
-    </message>
-    <message>
-        <source>Install...</source>
-        <translation type="obsolete">Instalovat...</translation>
     </message>
     <message>
         <source>Install or update selected works</source>
@@ -992,22 +953,22 @@ This file is distributed under the same license as the Bibetime package.</transl
     <name>BtInstallPageModel</name>
     <message>
         <source>Work</source>
-        <translation type="unfinished">Dílo</translation>
+        <translation>Dílo</translation>
     </message>
     <message>
         <source>Version</source>
-        <translation type="unfinished">Verze</translation>
+        <translation>Verze</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation type="unfinished">Popis</translation>
+        <translation>Popis</translation>
     </message>
 </context>
 <context>
     <name>BtInstallPageWorksWidget</name>
     <message>
         <source>Refresh the list of works from this source</source>
-        <translation type="unfinished">Obnovit seznam děl z tohoto zdroje</translation>
+        <translation>Obnovit seznam děl z tohoto zdroje</translation>
     </message>
 </context>
 <context>
@@ -1136,49 +1097,49 @@ This file is distributed under the same license as the Bibetime package.</transl
     <name>BtLanguageSettingsPage</name>
     <message>
         <source>Language for names of Bible books:</source>
-        <translation type="unfinished">Jazyk jmen biblických knih:</translation>
+        <translation>Jazyk jmen biblických knih:</translation>
     </message>
     <message>
         <source>The languages which can be used for the biblical booknames</source>
-        <translation type="unfinished">Jazyky, které je možno použít pro jména biblických knih</translation>
+        <translation>Jazyky, které je možno použít pro jména biblických knih</translation>
     </message>
     <message>
         <source>Languages</source>
-        <translation type="unfinished">Jazyky</translation>
+        <translation>Jazyky</translation>
     </message>
 </context>
 <context>
     <name>BtModuleChooserButton</name>
     <message>
         <source>Select a work [%1]</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte dílo [%1]</translation>
     </message>
     <message>
         <source>Select an additional work</source>
-        <translation type="unfinished">Vyberte další dílo</translation>
+        <translation>Vyberte další dílo</translation>
     </message>
     <message>
         <source>NONE</source>
-        <translation type="unfinished">Žádný modul</translation>
+        <translation>Žádný modul</translation>
     </message>
 </context>
 <context>
     <name>BtModuleIndexDialog</name>
     <message>
         <source>Preparing to index modules...</source>
-        <translation type="unfinished"></translation>
+        <translation>Připravuji indexaci mudulů...</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Zrušit</translation>
     </message>
     <message>
         <source>Creating indices</source>
-        <translation type="unfinished">Vytváření rejstříků</translation>
+        <translation>Vytváření rejstříků</translation>
     </message>
     <message>
         <source>Creating index for work: %1</source>
-        <translation type="unfinished">Vytváření rejstříku pro dílo %1</translation>
+        <translation>Vytváření rejstříku pro dílo %1</translation>
     </message>
 </context>
 <context>
@@ -1192,53 +1153,45 @@ This file is distributed under the same license as the Bibetime package.</transl
     <name>BtOpenWorkAction</name>
     <message>
         <source>&amp;Open work</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Otevřít dílo</translation>
     </message>
 </context>
 <context>
     <name>BtOpenWorkActionMenu</name>
     <message>
         <source>&amp;Grouping order</source>
-        <translation type="unfinished"></translation>
+        <translation>Pořadí &amp;seskupování</translation>
     </message>
     <message>
         <source>Sets the grouping order for the items in this menu.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastaví pořadí seskupování pro položky v tomto menu.</translation>
     </message>
 </context>
 <context>
     <name>BtRefreshProgressDialog</name>
     <message>
         <source>Refreshing source %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktualizovat zdroj %1</translation>
     </message>
     <message>
         <source>&amp;Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Z&amp;rušit</translation>
     </message>
     <message>
         <source>Connecting...</source>
-        <translation type="unfinished">Připojování...</translation>
+        <translation>Připojování...</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Varování</translation>
+        <translation>Varování</translation>
     </message>
     <message>
         <source>Failed to refresh source %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba při aktualizaci zdroje %1</translation>
     </message>
 </context>
 <context>
     <name>BtRemovePage</name>
-    <message>
-        <source>&amp;Remove</source>
-        <translation type="obsolete">Odebrat</translation>
-    </message>
-    <message>
-        <source>Remove installed works. Select the works and click Remove button.</source>
-        <translation type="obsolete">Odebrat nainstalovaná díla. Vyberte díla a klikněte na tlačítko Odebrat.</translation>
-    </message>
     <message>
         <source>You selected the following work(s): </source>
         <translation>Vybrali jste následující dílo(a):</translation>
@@ -1246,10 +1199,6 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <source>Do you really want to remove them from your system?</source>
         <translation>Opravdu si přejete je odebrat z vašeho systému?</translation>
-    </message>
-    <message>
-        <source>Remove...</source>
-        <translation type="obsolete">Odstranit...</translation>
     </message>
     <message>
         <source>Remove the selected works</source>
@@ -1261,64 +1210,64 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Select &amp;works to uninstall:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte &amp;díla k odstranění:</translation>
     </message>
     <message>
         <source>&amp;Remove...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Odstranit...</translation>
     </message>
     <message>
         <source>Start removal of %1 works:</source>
-        <translation type="unfinished"></translation>
+        <translation>Začít s odstraněním %1 děl:</translation>
     </message>
     <message>
         <source>Start removal:</source>
-        <translation type="unfinished"></translation>
+        <translation>Začít s odstraněním:</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Odstranit</translation>
     </message>
 </context>
 <context>
     <name>BtRemovePageTreeModel</name>
     <message>
         <source>Work</source>
-        <translation type="unfinished">Dílo</translation>
+        <translation>Dílo</translation>
     </message>
     <message>
         <source>Install path</source>
-        <translation type="unfinished">Instalační umístění</translation>
+        <translation>Instalační umístění</translation>
     </message>
 </context>
 <context>
     <name>BtSearchModuleChooserDialog</name>
     <message>
         <source>Works to Search in</source>
-        <translation type="unfinished">Díla k prohledání</translation>
+        <translation>Díla k prohledání</translation>
     </message>
     <message>
         <source>Select the works which should be searched.</source>
-        <translation type="unfinished">Vyberte díla která mají být prohledána.</translation>
+        <translation>Vyberte díla která mají být prohledána.</translation>
     </message>
 </context>
 <context>
     <name>BtShortcutsDialog</name>
     <message>
         <source>Configure shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavit zkratky</translation>
     </message>
     <message>
         <source>First shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation>Primární zkratka</translation>
     </message>
     <message>
         <source>Second shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation>Sekundární zkratka</translation>
     </message>
     <message>
         <source>Select first or second shortcut and type the shortcut with keyboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Zvolte primární nebo sekundární zkratku a stiskněte příslušné klávesy</translation>
     </message>
 </context>
 <context>
@@ -1364,185 +1313,37 @@ shortcut</source>
     </message>
 </context>
 <context>
-    <name>BtSourceArea</name>
-    <message>
-        <source>Work</source>
-        <translation type="obsolete">Dílo</translation>
-    </message>
-    <message>
-        <source>Description</source>
-        <translation type="obsolete">Popis</translation>
-    </message>
-    <message>
-        <source>&amp;Add...</source>
-        <translation type="obsolete">Přidat...</translation>
-    </message>
-    <message>
-        <source>Refresh...</source>
-        <translation type="obsolete">Obnovit...</translation>
-    </message>
-    <message>
-        <source>Refresh the list of works from this source</source>
-        <translation type="obsolete">Obnovit seznam děl z tohoto zdroje</translation>
-    </message>
-    <message>
-        <source>&amp;Delete...</source>
-        <translation type="obsolete">Smazat...</translation>
-    </message>
-    <message>
-        <source>Delete this source</source>
-        <translation type="obsolete">Smazat tento zdroj</translation>
-    </message>
-    <message>
-        <source>Add new source</source>
-        <translation type="obsolete">Přidat nový zdroj</translation>
-    </message>
-</context>
-<context>
-    <name>BtSourceAreaModel</name>
-    <message>
-        <source>Work</source>
-        <translation type="obsolete">Dílo</translation>
-    </message>
-    <message>
-        <source>Version</source>
-        <translation type="obsolete">Verze</translation>
-    </message>
-    <message>
-        <source>Description</source>
-        <translation type="obsolete">Popis</translation>
-    </message>
-</context>
-<context>
-    <name>BtSourceWidget</name>
-    <message>
-        <source>Delete Source?</source>
-        <translation type="obsolete">Smazat zdroj?</translation>
-    </message>
-    <message>
-        <source>Do you really want to delete this source?</source>
-        <translation type="obsolete">Opravdu si přejete smazat tento zdroj?</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="obsolete">Zrušit</translation>
-    </message>
-    <message>
-        <source>Refreshing source</source>
-        <translation type="obsolete">Obnovuji zdroje</translation>
-    </message>
-    <message>
-        <source>Connecting...</source>
-        <translation type="obsolete">Připojování...</translation>
-    </message>
-    <message>
-        <source>Refreshing...</source>
-        <translation type="obsolete">Obnovování...</translation>
-    </message>
-    <message>
-        <source>No sources were found in the SWORD configuration and BibleTime couldn&apos;t create a default source. Check your SWORD configuration and that the configuration path is writable. Then restart the Bookshelf Manager.</source>
-        <translation type="obsolete">Nebyly nalezeny žádné zdroje v nastavení SWORD a BibleTime nemůže vytvořit výchozí zdroj. Skontrolujte nastavení SWORD a také jestli lze do konfiguračního umístění zapisovat. Potom restartujte Správce knihovny.</translation>
-    </message>
-    <message>
-        <source>Remote:</source>
-        <translation type="obsolete">Vzdálené:</translation>
-    </message>
-    <message>
-        <source>Local:</source>
-        <translation type="obsolete">Místní:</translation>
-    </message>
-    <message>
-        <source>Not a directory!</source>
-        <translation type="obsolete">Není adresářem!</translation>
-    </message>
-    <message>
-        <source>Not readable!</source>
-        <translation type="obsolete">Nečitelné!</translation>
-    </message>
-    <message>
-        <source>Warning</source>
-        <translation type="obsolete">Varování</translation>
-    </message>
-    <message>
-        <source>The destination directory is not writable or does not exist. Installation will fail unless this has first been fixed.</source>
-        <translation type="obsolete">Do cílového adresáře nelze zapisovat nebo neexistuje. Instalace bude selhávat, dokud to nebude opraveno.</translation>
-    </message>
-</context>
-<context>
-    <name>BtTextFiltersTab</name>
-    <message>
-        <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
-        <translation type="obsolete">Filtry kontrolují vzhled textu. Zde můžete nastavit výchozí hodnoty pro všechny filtry. Toto nastavení můžete v každém zobrazeném okně anulovat.</translation>
-    </message>
-    <message>
-        <source>Insert line break after each verse</source>
-        <translation type="obsolete">Zalomit řádek po každém verši</translation>
-    </message>
-    <message>
-        <source>Show verse numbers</source>
-        <translation type="obsolete">Zobrazit čísla veršů</translation>
-    </message>
-    <message>
-        <source>Show section headings</source>
-        <translation type="obsolete">Zobrazit nadpisy částí</translation>
-    </message>
-    <message>
-        <source>Show scripture cross-references</source>
-        <translation type="obsolete">Ukázat odkaz v Bibli</translation>
-    </message>
-    <message>
-        <source>Show Greek accents</source>
-        <translation type="obsolete">Zobrazit řecké značky přízvuku</translation>
-    </message>
-    <message>
-        <source>Show Hebrew vowel points</source>
-        <translation type="obsolete">Zobrazit hebrejské značky samohlásek</translation>
-    </message>
-    <message>
-        <source>Show Hebrew cantillation marks</source>
-        <translation type="obsolete">Zobrazit hebrejské značky přízvuku</translation>
-    </message>
-    <message>
-        <source>Show morph segmentation</source>
-        <translation type="obsolete">Ukázat morfologické dělení</translation>
-    </message>
-    <message>
-        <source>Use textual variants</source>
-        <translation type="obsolete">Použít textové varianty</translation>
-    </message>
-</context>
-<context>
     <name>BtTextWindowHeaderWidget</name>
     <message>
         <source>Add/remove/replace</source>
-        <translation type="unfinished"></translation>
+        <translation>Přidat/odstranit/nahradit</translation>
     </message>
     <message>
         <source>Replace</source>
-        <translation type="unfinished"></translation>
+        <translation>Nahradit</translation>
     </message>
     <message>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Přidat</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Odstranit</translation>
     </message>
 </context>
 <context>
     <name>BtTipDialog</name>
     <message>
         <source>Tip Of The Day</source>
-        <translation type="unfinished"></translation>
+        <translation>Tip dne</translation>
     </message>
     <message>
         <source>Show tips at startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazovat tipy při startu</translation>
     </message>
     <message>
         <source>Next Tip</source>
-        <translation type="unfinished"></translation>
+        <translation>Další tip</translation>
     </message>
     <message>
         <source>To add multiple Bible works in parallel in your active Bible window select this icon and choose another Bible work.</source>
@@ -1612,40 +1413,41 @@ shortcut</source>
     <name>CAcceleratorSettingsPage</name>
     <message>
         <source>Main Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Hlavní okno</translation>
     </message>
     <message>
         <source>All text windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Všechna okna s texty</translation>
     </message>
     <message>
         <source>Bible windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Okna biblí</translation>
     </message>
     <message>
         <source>Commentary windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Okna komentářů</translation>
     </message>
     <message>
         <source>Lexicon windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Okna lexikonů</translation>
     </message>
     <message>
         <source>Book windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Okna knih</translation>
     </message>
     <message>
         <source>Shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Zkratky</translation>
     </message>
     <message>
         <source>Choose action group:</source>
-        <translation type="unfinished"></translation>
+        <translation>Zvolte skupinu akcí:</translation>
     </message>
     <message>
         <source>
    &quot;%1&quot; in the &quot;%2&quot; group</source>
-        <translation type="unfinished"></translation>
+        <translation>
+   &quot;%1&quot; ve skupině &quot;%2&quot;</translation>
     </message>
 </context>
 <context>
@@ -1715,16 +1517,8 @@ shortcut</source>
         <translation>Tisknout...</translation>
     </message>
     <message>
-        <source>Copy chapter to clipboard ...</source>
-        <translation type="obsolete">Kopírovat kapitolu do schránky...</translation>
-    </message>
-    <message>
         <source>Copying</source>
         <translation>Kopíruji</translation>
-    </message>
-    <message>
-        <source>Saving chapter ...</source>
-        <translation type="obsolete">Ukládám kapitolu...</translation>
     </message>
     <message>
         <source>Saving</source>
@@ -1765,10 +1559,6 @@ shortcut</source>
         <translation>Dílo na které záložka odkazuje není nainstalováno.</translation>
     </message>
     <message>
-        <source>Change bookmark description...</source>
-        <translation type="obsolete">Změnit popis záložky...</translation>
-    </message>
-    <message>
         <source>Print bookmarks...</source>
         <translation>Tisknout záložky...</translation>
     </message>
@@ -1802,19 +1592,19 @@ shortcut</source>
     </message>
     <message>
         <source>Drag references from text views to this view</source>
-        <translation type="unfinished"></translation>
+        <translation>Přetáhněte odkazy z textu do tohoto zobrazení</translation>
     </message>
     <message>
         <source>Edit bookmark...</source>
-        <translation type="unfinished"></translation>
+        <translation>Upravit záložku...</translation>
     </message>
     <message>
         <source>Sort folder bookmarks...</source>
-        <translation type="unfinished"></translation>
+        <translation>Třídit záložky v adresáři...</translation>
     </message>
     <message>
         <source>Sort all bookmarks...</source>
-        <translation type="unfinished"></translation>
+        <translation>Třídit všechny záložky...</translation>
     </message>
 </context>
 <context>
@@ -1849,7 +1639,7 @@ shortcut</source>
     </message>
     <message>
         <source>Synchronize the displayed entry of this work with the active Bible window</source>
-        <translation type="unfinished"></translation>
+        <translation>Synchronizovat zobrazený vstup tohoto díla s aktivním oknem s Biblí</translation>
     </message>
 </context>
 <context>
@@ -1895,7 +1685,7 @@ shortcut</source>
     </message>
     <message>
         <source>Display templates define how text is displayed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Šablona zobrazení určuje jak se zobrazí text.</translation>
     </message>
     <message>
         <source>Show the BibleTime logo on startup</source>
@@ -1929,14 +1719,6 @@ shortcut</source>
         <translation>Dopředu v historii</translation>
     </message>
     <message>
-        <source>Zoom in</source>
-        <translation type="obsolete">Přiblížit</translation>
-    </message>
-    <message>
-        <source>Zoom out</source>
-        <translation type="obsolete">Oddálit</translation>
-    </message>
-    <message>
         <source>Select all</source>
         <translation>Vybrat vše</translation>
     </message>
@@ -1950,46 +1732,31 @@ shortcut</source>
     </message>
     <message>
         <source>Change location</source>
-        <translation type="unfinished"></translation>
+        <translation>Změnit umístění</translation>
     </message>
     <message>
         <source>Search with works of this window</source>
-        <translation type="unfinished"></translation>
+        <translation>Hledat v dilech v tomto okně</translation>
     </message>
     <message>
         <source>Work chooser buttons</source>
-        <translation type="unfinished"></translation>
+        <translation>Tlaćítka pro výběr děl</translation>
     </message>
     <message>
         <source>Navigation</source>
-        <translation type="unfinished"></translation>
+        <translation>Navigace</translation>
     </message>
     <message>
         <source>Text area header</source>
-        <translation type="unfinished"></translation>
+        <translation>Hlavička textu</translation>
     </message>
     <message>
         <source>Tool</source>
-        <translation type="unfinished"></translation>
+        <translation>Nástroj</translation>
     </message>
     <message>
         <source>Format</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>CFontChooser</name>
-    <message>
-        <source>Size:</source>
-        <translation type="obsolete">Velikost:</translation>
-    </message>
-    <message>
-        <source>Font name:</source>
-        <translation type="obsolete">Jméno písma:</translation>
-    </message>
-    <message>
-        <source>Font style:</source>
-        <translation type="obsolete">Styl písma:</translation>
+        <translation>Formát</translation>
     </message>
 </context>
 <context>
@@ -2055,40 +1822,6 @@ shortcut</source>
     </message>
 </context>
 <context>
-    <name>CInputDialog</name>
-    <message>
-        <source>Clear</source>
-        <translation type="obsolete">Vyprázdnit</translation>
-    </message>
-</context>
-<context>
-    <name>CKeyReferenceWidget</name>
-    <message>
-        <source>Next book</source>
-        <translation type="obsolete">Další kniha</translation>
-    </message>
-    <message>
-        <source>Previous book</source>
-        <translation type="obsolete">Předchozí kniha</translation>
-    </message>
-    <message>
-        <source>Next chapter</source>
-        <translation type="obsolete">Další kapitola</translation>
-    </message>
-    <message>
-        <source>Previous chapter</source>
-        <translation type="obsolete">Předchozí kapitola</translation>
-    </message>
-    <message>
-        <source>Next verse</source>
-        <translation type="obsolete">Další verš</translation>
-    </message>
-    <message>
-        <source>Previous verse</source>
-        <translation type="obsolete">Předchozí verš</translation>
-    </message>
-</context>
-<context>
     <name>CLanguageSettingsPage</name>
     <message>
         <source></source>
@@ -2103,7 +1836,7 @@ shortcut</source>
     </message>
     <message>
         <source>Entries of the current work</source>
-        <translation type="unfinished"></translation>
+        <translation>Položky aktuálního díla</translation>
     </message>
     <message>
         <source>Next entry</source>
@@ -2165,35 +1898,8 @@ shortcut</source>
         <translation>Tisknout...</translation>
     </message>
     <message>
-        <source>Saving entry ...</source>
-        <translation type="obsolete">Ukládám položku ...</translation>
-    </message>
-    <message>
         <source>Saving</source>
         <translation>Ukládám</translation>
-    </message>
-</context>
-<context>
-    <name>CModuleIndexDialog</name>
-    <message>
-        <source>Cancel</source>
-        <translation type="obsolete">Zpět</translation>
-    </message>
-    <message>
-        <source>Creating indices</source>
-        <translation type="obsolete">Vytváření rejstříků</translation>
-    </message>
-    <message>
-        <source>Creating index for work: %1</source>
-        <translation type="obsolete">Vytváření rejstříku pro dílo %1</translation>
-    </message>
-    <message>
-        <source>Indexing Is Cancelled</source>
-        <translation type="obsolete">Indexování bylo zrušeno</translation>
-    </message>
-    <message>
-        <source>Indexing is cancelled because modules are removed.</source>
-        <translation type="obsolete">Indexování bylo zrušeno, protože moduly byly odstraněny.</translation>
     </message>
 </context>
 <context>
@@ -2232,7 +1938,7 @@ shortcut</source>
     </message>
     <message>
         <source>Delete current entry (no undo)</source>
-        <translation type="unfinished"></translation>
+        <translation>Smazat aktuální položku (bez možnosti návratu)</translation>
     </message>
     <message>
         <source>Restore original text, new text will be lost</source>
@@ -2556,7 +2262,7 @@ Do you want to continue?</source>
     </message>
     <message>
         <source>Select all</source>
-        <translation type="unfinished">Vybrat vše</translation>
+        <translation>Vybrat vše</translation>
     </message>
     <message>
         <source>&lt;div class=&quot;moduleinfo&quot;&gt;&lt;h3&gt;%1&lt;/h3&gt;&lt;p&gt;%2&lt;/p&gt;&lt;p&gt;Version: %3&lt;/p&gt;&lt;/div&gt;</source>
@@ -2583,7 +2289,7 @@ Do you want to continue?</source>
     </message>
     <message>
         <source>An internal error occurred while building the index: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Při vytváření indexu se vyskytla vnitřní chyba: %1</translation>
     </message>
 </context>
 <context>
@@ -3415,24 +3121,12 @@ Language name ppk</extracomment>
         <translation>Uložit dokument...</translation>
     </message>
     <message>
-        <source>Print keys</source>
-        <translation type="obsolete">Tisknout odkazy</translation>
-    </message>
-    <message>
         <source>BibleTime bookmark files</source>
         <translation>Soubory záložek BibleTime</translation>
     </message>
     <message>
         <source>unknown</source>
         <translation>neznámý</translation>
-    </message>
-    <message>
-        <source>Change description ...</source>
-        <translation type="obsolete">Změnit popis ...</translation>
-    </message>
-    <message>
-        <source>Enter a new description for the chosen bookmark.</source>
-        <translation type="obsolete">Vložte nový popis pro zvolenou záložku.</translation>
     </message>
     <message>
         <source>New folder</source>
@@ -3465,10 +3159,6 @@ Language name ppk</extracomment>
     <message>
         <source>Version</source>
         <translation>Verze</translation>
-    </message>
-    <message>
-        <source>Settings Migration</source>
-        <translation type="obsolete">Přesun nastavení</translation>
     </message>
     <message>
         <source>Encrypted - needs unlock key</source>
@@ -3583,31 +3273,31 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Parsing Strong&apos;s Numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Analýza Strongových čísel</translation>
     </message>
     <message>
         <source>This shortcut conflicts with the shortcut for the following actions:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tato zkratka koliduje se zkratkou pro následující akce:</translation>
     </message>
     <message>
         <source>Do you want to clear the conflicting shortcuts and continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Pŕejete si odstranit kolidující zkratky a pokračovat?</translation>
     </message>
     <message>
         <source>Indexed works</source>
-        <translation type="unfinished"></translation>
+        <translation>Indexovaná díla</translation>
     </message>
     <message>
         <source>Unindexed works</source>
-        <translation type="unfinished"></translation>
+        <translation>Neindexovaná díla</translation>
     </message>
     <message>
         <source>Show this help message and exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit tuto nápovědu a skončit</translation>
     </message>
     <message>
         <source>Open a clean session</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřít prázdnou relaci</translation>
     </message>
     <message>
         <source>Open the default Bible with the reference &lt;ref&gt;</source>
@@ -3631,7 +3321,7 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Replace</source>
-        <translation type="unfinished"></translation>
+        <translation>Nahradit</translation>
     </message>
     <message>
         <source>Error: %1 expects an argument.</source>
@@ -3639,7 +3329,7 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>See --help for details.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pro podrobnosti použijte --help.</translation>
     </message>
 </context>
 <context>
@@ -3796,7 +3486,7 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Click the link to get help for search syntax</source>
-        <translation type="unfinished"></translation>
+        <translation>Pro nápovědu k syntaxi vyhledávání klikněte na odkaz</translation>
     </message>
     <message>
         <source>Choose the scope (books/chapters/verses to search in).&lt;br /&gt;Applicable for Bibles and commentaries.</source>
@@ -3807,22 +3497,22 @@ Language name ppk</extracomment>
     <name>Search::BtSearchResultArea</name>
     <message>
         <source>Text of the selected search result item</source>
-        <translation type="unfinished"></translation>
+        <translation>Text vybraná položky výsledků hledání</translation>
     </message>
     <message>
         <source>Select all</source>
-        <translation type="unfinished">Vybrat vše</translation>
+        <translation>Vybrat vše</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">Kopírovat</translation>
+        <translation>Kopírovat</translation>
     </message>
 </context>
 <context>
     <name>Search::BtSearchSyntaxHelpDialog</name>
     <message>
         <source>Search Syntax Help</source>
-        <translation type="unfinished">Nápověda k syntaxi vyhledávání</translation>
+        <translation>Nápověda k syntaxi vyhledávání</translation>
     </message>
     <message>
         <source>This help is mainly for &apos;Full syntax&apos; option. &apos;All words&apos; and &apos;Some words&apos; options have more limited syntax; &lt;a href=&apos;#wildcards&apos;&gt;wildcards&lt;/a&gt; and &lt;a href=&apos;#fields&apos;&gt;text fields&lt;/a&gt; are supported for them. Some other syntax features may give strange or wrong results with All words/Some words.</source>
@@ -4041,24 +3731,12 @@ Language name ppk</extracomment>
         <translation>Tisknout...</translation>
     </message>
     <message>
-        <source>Copy search result...</source>
-        <translation type="obsolete">Kopírovat výsledek hledání...</translation>
-    </message>
-    <message>
         <source>Copying search result</source>
         <translation>Kopíruji výsledek hledání</translation>
     </message>
     <message>
-        <source>Save search result...</source>
-        <translation type="obsolete">Uložit výsledek hledání...</translation>
-    </message>
-    <message>
         <source>Saving search result</source>
         <translation>Ukládám výsledek hledání</translation>
-    </message>
-    <message>
-        <source>Print search result...</source>
-        <translation type="obsolete">Tisknout výsledek hledání...</translation>
     </message>
     <message>
         <source>Printing search result</source>
@@ -4066,7 +3744,7 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Works chosen for the search and the number of the hits in each work</source>
-        <translation type="unfinished"></translation>
+        <translation>Díla zvolená pro vyhledávání a počet nalezených položek v každém z nich</translation>
     </message>
 </context>
 <context>
@@ -4092,14 +3770,6 @@ Language name ppk</extracomment>
         <translation>Nový rozsah</translation>
     </message>
     <message>
-        <source>&lt;invalid name of search range&gt;</source>
-        <translation type="obsolete">&lt;špatný název rozsahu hledání&gt;</translation>
-    </message>
-    <message>
-        <source>Select a scope from the list to edit the search ranges</source>
-        <translation type="obsolete">Vyberte rozsah hledání ze seznamu.</translation>
-    </message>
-    <message>
         <source>&amp;Add new scope</source>
         <translation>&amp;Přidat nový rozsah</translation>
     </message>
@@ -4118,10 +3788,6 @@ Language name ppk</extracomment>
     <message>
         <source>Change the name of the selected search scope</source>
         <translation>Změnit jméno vybraného rozsahu vyhledávání</translation>
-    </message>
-    <message>
-        <source>Change the search ranges of the selected search scope item. Have a look at the predefined search scopes to see how search ranges are constructed.</source>
-        <translation type="obsolete">Úprava rozsahu vyhledávání pro vybranou položku. Jak se definuje rozsah zjistíte z již předdefinovaných rozsahů.</translation>
     </message>
     <message>
         <source>The search ranges which will be used for the search, parsed to the canonical form</source>
@@ -4151,12 +3817,6 @@ Language name ppk</extracomment>
         <translation>Hledat</translation>
     </message>
     <message>
-        <source>One or more works need indexing before they can be searched.
-This could take a long time. Proceed with indexing?</source>
-        <translation type="obsolete">Jedno nebo více děl potřebuje sestavit rejstřík předtím než může být prohledáno. 
-To může trvat dlouhou dobu. Pokračovat v indexování?</translation>
-    </message>
-    <message>
         <source>&amp;Analyze results...</source>
         <translation>&amp;Analyzovat výsledky...</translation>
     </message>
@@ -4166,7 +3826,7 @@ To může trvat dlouhou dobu. Pokračovat v indexování?</translation>
     </message>
     <message>
         <source>Show a graphical analysis of the search result</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit grafickou analýzu výsledků vyhledávání</translation>
     </message>
     <message>
         <source>The following modules need to be indexed before they can be searched in:</source>
@@ -4208,24 +3868,12 @@ To může trvat dlouhou dobu. Pokračovat v indexování?</translation>
         <translation>Tisknout...</translation>
     </message>
     <message>
-        <source>Print search result...</source>
-        <translation type="obsolete">Tisknout výsledek hledání...</translation>
-    </message>
-    <message>
         <source>Printing search result</source>
         <translation>Tisknu výsledek hledání</translation>
     </message>
     <message>
-        <source>Save search result...</source>
-        <translation type="obsolete">Uložit výsledek hledání...</translation>
-    </message>
-    <message>
         <source>Saving search result</source>
         <translation>Ukládám výsledek hledání</translation>
-    </message>
-    <message>
-        <source>Copy search result...</source>
-        <translation type="obsolete">Kopírovat výsledek hledání...</translation>
     </message>
     <message>
         <source>Copying search result</source>
@@ -4370,7 +4018,7 @@ To může trvat dlouhou dobu. Pokračovat v indexování?</translation>
     </message>
     <message>
         <source>Case &amp;sensitive</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Rozlišovat velikost písmen</translation>
     </message>
     <message>
         <source>Find the previous location of the text</source>
@@ -4398,7 +4046,7 @@ To může trvat dlouhou dobu. Pokračovat v indexování?</translation>
     </message>
     <message>
         <source>Search with case sensitivity</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozlišovat velikost písmen</translation>
     </message>
 </context>
 </TS>
