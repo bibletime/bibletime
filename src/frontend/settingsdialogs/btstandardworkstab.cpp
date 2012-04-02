@@ -36,6 +36,7 @@ BtStandardWorksTab::BtStandardWorksTab(CSwordSettingsPage *parent)
     mainLayout->addWidget(m_explanationLabel);
 
     QFormLayout *formLayout = new QFormLayout;
+    formLayout->setFieldGrowthPolicy(QFormLayout::AllNonFixedFieldsGrow);
 
 #define STANDARD_WORKS_TAB_ADD_ROW(name) \
     if (true) { \
