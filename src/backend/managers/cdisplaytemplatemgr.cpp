@@ -142,22 +142,14 @@ QString CDisplayTemplateMgr::fillTemplate(const QString &name,
                 .arg(css);
         }
     }
-
-    //at first append the font standard settings for all languages without configured font
-    // Create a dummy language (the langmap may be empty)
-    CLanguageMgr::Language lang_v(QString("en"), QString("English"), QString::null);
-    CLanguageMgr::Language* lang = &lang_v;
-
-    if (lang && !lang->abbrev().isEmpty()/*&& lang->isValid()*/) {
-        const QFont standardFont = btConfig().getDefaultFont(); //we just need a dummy lang param
-        langCSS.prepend(
-            QString("\n#content {font-family:%1; font-size:%2pt; font-weight:%3; font-style: %4;}\n")
-            .arg(standardFont.family())
-            .arg(standardFont.pointSize())
-            .arg(standardFont.bold() ? "bold" : "normal")
-            .arg(standardFont.italic() ? "italic" : "normal")
-        );
-    }
+    const QFont & defaultFont = btConfig().getDefaultFont();
+    langCSS.prepend(
+        QString("\n#content {font-family:%1; font-size:%2pt; font-weight:%3; font-style: %4;}\n")
+        .arg(defaultFont.family())
+        .arg(defaultFont.pointSize())
+        .arg(defaultFont.bold() ? "bold" : "normal")
+        .arg(defaultFont.italic() ? "italic" : "normal")
+    );
     
     // Template stylesheet
     
