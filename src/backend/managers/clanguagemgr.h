@@ -57,7 +57,7 @@ class CLanguageMgr {
                 /**
                   \returns the english name of this language.
                 */
-                inline const QString & name() const {
+                inline const QString & englishName() const {
                     return m_englishName;
                 }
 

@@ -220,15 +220,15 @@ void BtConfig::setDisplayOptions(const DisplayOptions & os) {
 
 void BtConfig::setFontForLanguage(const CLanguageMgr::Language* const language, const FontSettingsPair &fontSettings)
 {
-    Q_ASSERT(not language->name().isEmpty());
+    Q_ASSERT(!language->englishName().isEmpty());
 
     // write the language to the settings
         m_settings.beginGroup("fonts");
-            m_settings.setValue(language->name(), fontSettings.second.toString());
+            m_settings.setValue(language->englishName(), fontSettings.second.toString());
         m_settings.endGroup();
 
         m_settings.beginGroup("font standard settings");
-            m_settings.setValue(language->name(), fontSettings.first);
+            m_settings.setValue(language->englishName(), fontSettings.first);
         m_settings.endGroup();
 
     // Remove language from the cache:
@@ -237,7 +237,7 @@ void BtConfig::setFontForLanguage(const CLanguageMgr::Language* const language, 
 
 BtConfig::FontSettingsPair BtConfig::getFontForLanguage(const CLanguageMgr::Language* const language)
 {
-    Q_ASSERT(not language->name().isEmpty());
+    Q_ASSERT(!language->englishName().isEmpty());
 
     // Check the cache first:
     FontCacheMap::const_iterator it(m_fontCache.find(language));
@@ -247,11 +247,11 @@ BtConfig::FontSettingsPair BtConfig::getFontForLanguage(const CLanguageMgr::Lang
     // Retrieve the font from the settings
     FontSettingsPair fontSettings;
 
-    fontSettings.first = m_settings.value("font standard settings/" + language->name(), false).toBool();
+    fontSettings.first = m_settings.value("font standard settings/" + language->englishName(), false).toBool();
 
     QFont font;
     if (fontSettings.first) {
-        if (!font.fromString(m_settings.value("fonts/" + language->name(), getDefaultFont()).toString())) {
+        if (!font.fromString(m_settings.value("fonts/" + language->englishName(), getDefaultFont()).toString())) {
             /// \todo
         }
     } else {
