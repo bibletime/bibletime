@@ -122,10 +122,6 @@ const CLanguageMgr::Language* CLanguageMgr::languageForTranslatedName( const QSt
 
 void CLanguageMgr::init() {
 
-    // The main() sets string literal codec to utf8:
-    // QTextCodec::setCodecForTr(QTextCodec::codecForName("UTF-8"));
-    // The language names include escape sequences \uxxxx
-
     //if we've already inserted all items we do not proceed
     if (m_langMap.count() > 0) return;
 
