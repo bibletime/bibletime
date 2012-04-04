@@ -128,7 +128,7 @@ QString CDisplayTemplateMgr::fillTemplate(const QString &name,
         if (lang->abbrev().isEmpty())
             continue;
 
-        BtConfig::FontSettingsPair fp = btConfig().getFontForLanguage(lang);
+        BtConfig::FontSettingsPair fp = btConfig().getFontForLanguage(*lang);
         if (!fp.first)
             continue;
 

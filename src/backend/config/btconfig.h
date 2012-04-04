@@ -146,7 +146,8 @@ public: /* Methods: */
      * \param[in] language pointer to a language to set the font for
      * \param[in] fontSettings FontSettingsPair to set
      */
-    void setFontForLanguage(const CLanguageMgr::Language * const language, const FontSettingsPair &fontSettings);
+    void setFontForLanguage(const CLanguageMgr::Language & language,
+                            const FontSettingsPair & fontSettings);
 
     /*!
      * \brief Get font for a language.
@@ -156,7 +157,7 @@ public: /* Methods: */
      * \param[in] language pointer to a language to get the font for.
      * \returns FontSettingsPair for given language
      */
-    FontSettingsPair getFontForLanguage(const CLanguageMgr::Language * const language);
+    FontSettingsPair getFontForLanguage(const CLanguageMgr::Language & language);
 
     /// \todo: unit test these functions
     /*!
