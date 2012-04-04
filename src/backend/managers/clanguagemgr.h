@@ -23,67 +23,94 @@
 class CLanguageMgr {
 
     public:
-        /** Language container.
-         * This class (Language) contains the information about the chosen language.
-         */
+
+        /**
+          \brief A language descriptor for CLanguageMgr.
+
+          This class (Language) contains the information about the a language.
+        */
         class Language {
-            public:
+
+            friend class CLanguageMgr;
+            friend class BtFontSettingsPage;
+
+            public: /* Methods: */
+
                 /**
-                  Uses the abbreviation parameter to lookup the language name
-                  and to be able to return the name, flag etc. Possible values
-                  for abbrev are de, en, fr, it etc.
-                 */
-                Language();
-
-                Language(const Language &copy);
-
-                Language(const QString &abbrev, const QString &englishName,
-                         const QString &translatedName,
-                         const QStringList &altAbbrevs = QStringList());
-
-                ~Language();
-
-                /** Returns the abbreviation.
-                 * @return The abbreviation of the chosen language.
-                 */
-                inline const QString& abbrev() const {
-                    if (m_abbrev.isEmpty() && m_altAbbrevs.count()) { //no standard abbrev but alternative ones
+                  \returns the abbreviation of the this language.
+                */
+                inline const QString & abbrev() const {
+                    if (m_abbrev.isEmpty() && m_altAbbrevs.count()) {
+                        /* No standard abbrev but alternative ones */
                         return m_altAbbrevs.first();
                     }
                     return m_abbrev;
                 }
-                /** Returns the translated name.
-                 * @return The translated name of the language.
-                 */
-                inline const QString& translatedName() const {
+
+                /**
+                  \returns the translated name of this language.
+                */
+                inline const QString & translatedName() const {
                     return m_translatedName;
                 }
-                /** The english name of the language.
-                 * @return The english name of the chosen language.
-                 */
-                inline const QString& name() const {
+
+                /**
+                  \returns the english name of this language.
+                */
+                inline const QString & name() const {
                     return m_englishName;
                 }
-                /** The alternative abbreviations which are avalable for this language.
-                 * @return The List of alternate abbreviations
-                 */
-                inline const QStringList alternativeAbbrevs() const {
+
+                /**
+                  \returns a list of alternative abbreviations for this language.
+                */
+                inline const QStringList & alternativeAbbrevs() const {
                     return m_altAbbrevs;
                 }
+
                 /**
-                 * Returns true if this language object is valid, i.e. has an abbrev and name.
-                 * @return True if the data is valid for this language.
-                 */
+                  \returns whether this language object is valid, i.e. has an
+                           abbreviation and an english name.
+                */
                 inline bool isValid() const {
-                    return (!abbrev().isEmpty() && !name().isEmpty());
+                    return (!m_abbrev.isEmpty() && !m_englishName.isEmpty());
                 }
 
-            private:
-                QString m_abbrev;
-                QString m_englishName;
-                QString m_translatedName;
-                QStringList m_altAbbrevs;
-        };
+            private: /* Methods: */
+
+                inline Language() {}
+
+                inline Language(const char * abbrev,
+                                const char * englishName,
+                                const QString & translatedName)
+                    : m_abbrev(abbrev)
+                    , m_englishName(QString::fromUtf8(englishName))
+                    , m_translatedName(translatedName) {}
+
+                inline Language(const QString & abbrev,
+                                const QString & englishName,
+                                const QString & translatedName)
+                    : m_abbrev(abbrev)
+                    , m_englishName(englishName)
+                    , m_translatedName(translatedName) {}
+
+                inline Language(const char * abbrev,
+                                const char * englishName,
+                                const QString & translatedName,
+                                const QStringList & altAbbrevs)
+                    : m_abbrev(abbrev)
+                    , m_englishName(QString::fromUtf8(englishName))
+                    , m_translatedName(translatedName)
+                    , m_altAbbrevs(altAbbrevs) {}
+
+            private: /* Fields: */
+
+                const QString m_abbrev;
+                const QString m_englishName;
+                const QString m_translatedName;
+                const QStringList m_altAbbrevs;
+
+        }; /* class Language { */
 
         typedef QList<Language*> LanguageList;
         typedef QHash<QString, const Language*> LangMap;

@@ -13,26 +13,6 @@
 #include "backend/managers/cswordbackend.h"
 
 
-CLanguageMgr::Language::Language() {}
-
-CLanguageMgr::Language::Language(const Language& l) {
-    m_abbrev = l.m_abbrev;
-    m_englishName = l.m_englishName;
-    m_translatedName = l.m_translatedName;
-    m_altAbbrevs = l.m_altAbbrevs;
-}
-
-CLanguageMgr::Language::Language( const QString& abbrev, const QString& name, const QString& translatedName, const QStringList& altAbbrevs ) {
-    m_abbrev = abbrev;
-    m_englishName = name;
-    m_translatedName = translatedName;
-    m_altAbbrevs =  altAbbrevs;
-}
-
-CLanguageMgr::Language::~Language() {
-}
-
-
 /****************************************************/
 /******************** CLanguageMgr ******************/
 /****************************************************/
@@ -52,7 +32,10 @@ CLanguageMgr *CLanguageMgr::instance() {
     return m_instance;
 }
 
-CLanguageMgr::CLanguageMgr() : m_langMap() {
+CLanguageMgr::CLanguageMgr()
+    : m_defaultLanguage("", "", QString::null)
+    , m_langMap()
+{
     m_availableModulesCache.moduleCount = 0;
     init();
 }
