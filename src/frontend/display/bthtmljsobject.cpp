@@ -9,8 +9,8 @@
 
 #include "frontend/display/bthtmljsobject.h"
 
+#include <QDrag>
 #include <QSharedPointer>
-#include <QObject>
 #include "backend/config/cbtconfig.h"
 #include "backend/keys/cswordkey.h"
 #include "backend/managers/referencemanager.h"
