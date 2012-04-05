@@ -51,7 +51,7 @@ bool CSwordTreeKey::setKey(const QString &newKey) {
         return setKey(newKey.toUtf8().constData());
     }
     else {
-        return setKey((const char*)cp1252Codec()->fromUnicode(newKey));
+        return setKey(cp1252Codec()->fromUnicode(newKey).constData());
     }
 }
 

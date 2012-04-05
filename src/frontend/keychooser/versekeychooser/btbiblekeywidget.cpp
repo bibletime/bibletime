@@ -138,7 +138,7 @@ BtBibleKeyWidget::BtBibleKeyWidget(const CSwordBibleModuleInfo *mod,
     connect(m_verseScroller, SIGNAL(change(int)), SLOT(slotStepVerse(int)));
     connect(m_verseScroller, SIGNAL(scroller_pressed()), SLOT(slotUpdateLock()));
     connect(m_verseScroller, SIGNAL(scroller_released()), SLOT(slotUpdateUnlock()));
-    bool ok = connect(m_key->signaler(), SIGNAL(changed()), this, SLOT(updateText()));
+    bool ok = connect(m_key->afterChangedSignaller(), SIGNAL(signal()), this, SLOT(updateText()));
     Q_ASSERT(ok);
 
     setKey(key);    // The order of these two functions is important.
@@ -287,7 +287,7 @@ void BtBibleKeyWidget::slotChangeVerse(int n) {
         emit beforeChange(m_key);
         m_key->emitBeforeChanged();
         m_key->setVerse(n);
-        m_key->emitChanged();
+        m_key->emitAfterChanged();
         setKey( m_key );
     }
     if (!updatelock) emit changed(m_key);
@@ -298,7 +298,7 @@ void BtBibleKeyWidget::slotChangeChapter(int n) {
         emit beforeChange(m_key);
         m_key->emitBeforeChanged();
         m_key->setChapter(n);
-        m_key->emitChanged();
+        m_key->emitAfterChanged();
         setKey( m_key );
     }
     if (!updatelock)
@@ -310,7 +310,7 @@ void BtBibleKeyWidget::slotChangeBook(QString bookname) {
         emit beforeChange(m_key);
         m_key->emitBeforeChanged();
         m_key->book( bookname );
-        m_key->emitChanged();
+        m_key->emitAfterChanged();
         setKey( m_key );
     }
     if (!updatelock)

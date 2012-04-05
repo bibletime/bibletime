@@ -4272,37 +4272,37 @@ Language name ppk</extracomment>
         <translation>Director nou</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="35"/>
+        <location filename="../../src/util/tool.cpp" line="46"/>
         <source>The file already exists.</source>
         <translation>Fişierul există deja.</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="36"/>
+        <location filename="../../src/util/tool.cpp" line="47"/>
         <source>Do you want to overwrite it?</source>
         <translation>Vrei să-l suprascri?</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="55"/>
+        <location filename="../../src/util/tool.cpp" line="67"/>
+        <location filename="../../src/util/tool.cpp" line="73"/>
         <source>Error</source>
         <translation>Eroare</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="57"/>
         <source>The file couldn&apos;t be saved.</source>
-        <translation>Fişierul nu a putut fi salvat.</translation>
+        <translation type="obsolete">Fişierul nu a putut fi salvat.</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="58"/>
+        <location filename="../../src/util/tool.cpp" line="76"/>
         <source>Please check permissions etc.</source>
         <translation>Te rog verifică permisiunile etc.</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="177"/>
+        <location filename="../../src/util/tool.cpp" line="196"/>
         <source>Take care, this work contains cult / questionable material!</source>
         <translation>Atenţie, acest modul conţine material sectant / chestionabil!</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="198"/>
+        <location filename="../../src/util/tool.cpp" line="217"/>
         <source>Version</source>
         <translation>Versiune</translation>
     </message>
@@ -4315,22 +4315,37 @@ Language name ppk</extracomment>
         <translation type="obsolete">Se pare că ai deja o configurare de KDE 3 pentru BibleTime. Ea se află în %1, însă nu este folosită pentru această versiune. Vrei să o imporţi?</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="187"/>
+        <location filename="../../src/util/tool.cpp" line="206"/>
         <source>Encrypted - needs unlock key</source>
         <translation>Codată - este nevoie de o cheie pentru a o putea folosi</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="211"/>
+        <location filename="../../src/util/tool.cpp" line="230"/>
         <source>Double click for more information</source>
         <translation>Dublu-clic pentru mai multe informaţii</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="193"/>
+        <location filename="../../src/util/tool.cpp" line="212"/>
         <source>Updated version available!</source>
         <translation>O versiune nouă este disponibilă!</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="206"/>
+        <location filename="../../src/util/tool.cpp" line="69"/>
+        <source>Error while writing to file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/tool.cpp" line="70"/>
+        <source>Please check that enough disk space is available.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/tool.cpp" line="75"/>
+        <source>The file couldn&apos;t be opened for saving.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/tool.cpp" line="225"/>
         <source>Installed version</source>
         <translation>Versiune instalată</translation>
     </message>
@@ -4445,7 +4460,7 @@ Language name ppk</extracomment>
         <translation type="unfinished">Importă semne de carte</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="33"/>
+        <location filename="../../src/util/tool.cpp" line="44"/>
         <source>Overwrite File?</source>
         <translation type="unfinished"></translation>
     </message>

@@ -3419,7 +3419,7 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>The file couldn&apos;t be saved.</source>
-        <translation>Die Datei konnte nicht gespeichert werden.</translation>
+        <translation type="obsolete">Die Datei konnte nicht gespeichert werden.</translation>
     </message>
     <message>
         <source>Please check permissions etc.</source>
@@ -3835,6 +3835,18 @@ Language name ppk</extracomment>
     <message>
         <source>See --help for details.</source>
         <translation>Siehe --help für Details.</translation>
+    </message>
+    <message>
+        <source>Error while writing to file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please check that enough disk space is available.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file couldn&apos;t be opened for saving.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

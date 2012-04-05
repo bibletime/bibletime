@@ -193,7 +193,7 @@ IF (MSVC)
     SET(CMAKE_CXX_FLAGS_DEBUG   "-DNO_DBUS -DSWUSINGDLL /MDd /Zc:wchar_t- /W1 /D_UNICODE /DUNICODE /ZI")
 ELSE (MSVC)
     SET(CMAKE_CXX_FLAGS_RELEASE "-Wall -O2 -fexceptions")
-    SET(CMAKE_CXX_FLAGS_DEBUG   "-Wall -Werror -O2 -ggdb -fexceptions")
+    SET(CMAKE_CXX_FLAGS_DEBUG   "-Wall -Werror -ggdb -fexceptions")
 ENDIF (MSVC)
 
 

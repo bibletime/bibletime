@@ -4085,57 +4085,72 @@ Language name ppk</extracomment>
         <translation>New folder</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="35"/>
+        <location filename="../../src/util/tool.cpp" line="46"/>
         <source>The file already exists.</source>
         <translation>The file already exists.</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="36"/>
+        <location filename="../../src/util/tool.cpp" line="47"/>
         <source>Do you want to overwrite it?</source>
         <translation>Do you want to overwrite it?</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="55"/>
+        <location filename="../../src/util/tool.cpp" line="67"/>
+        <location filename="../../src/util/tool.cpp" line="73"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="57"/>
         <source>The file couldn&apos;t be saved.</source>
-        <translation>The file couldn&apos;t be saved.</translation>
+        <translation type="obsolete">The file couldn&apos;t be saved.</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="58"/>
+        <location filename="../../src/util/tool.cpp" line="76"/>
         <source>Please check permissions etc.</source>
         <translation>Please check permissions etc.</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="177"/>
+        <location filename="../../src/util/tool.cpp" line="196"/>
         <source>Take care, this work contains cult / questionable material!</source>
         <translation>Take care, this work contains cult / questionable material!</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="198"/>
+        <location filename="../../src/util/tool.cpp" line="217"/>
         <source>Version</source>
         <translation>Version</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="187"/>
+        <location filename="../../src/util/tool.cpp" line="206"/>
         <source>Encrypted - needs unlock key</source>
         <translation>Encrypted - needs unlock key</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="211"/>
+        <location filename="../../src/util/tool.cpp" line="69"/>
+        <source>Error while writing to file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/tool.cpp" line="70"/>
+        <source>Please check that enough disk space is available.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/tool.cpp" line="75"/>
+        <source>The file couldn&apos;t be opened for saving.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/tool.cpp" line="230"/>
         <source>Double click for more information</source>
         <translation>Double click for more information</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="193"/>
+        <location filename="../../src/util/tool.cpp" line="212"/>
         <source>Updated version available!</source>
         <translation>Updated version available!</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="206"/>
+        <location filename="../../src/util/tool.cpp" line="225"/>
         <source>Installed version</source>
         <translation>Installed version</translation>
     </message>
@@ -4250,7 +4265,7 @@ Language name ppk</extracomment>
         <translation>Import bookmarks</translation>
     </message>
     <message>
-        <location filename="../../src/util/tool.cpp" line="33"/>
+        <location filename="../../src/util/tool.cpp" line="44"/>
         <source>Overwrite File?</source>
         <translation>Overwrite File?</translation>
     </message>

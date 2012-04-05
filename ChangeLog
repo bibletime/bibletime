@@ -1,3 +1,6 @@
+2012-03-30 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix crash when closing window with tab.
+
 2012-03-10 Jaak Ristioja <jaak@ristioja.ee>
     * Implemented saving of font family and size in HTML commentary editor.
     * Fixed a bug in the HTML commentary editor which resulted in text
