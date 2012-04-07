@@ -106,9 +106,8 @@ void BibleTime::slotWindowMenuAboutToShow() {
 void BibleTime::slotOpenWindowsMenuAboutToShow() {
     Q_ASSERT(m_openWindowsMenu);
 
-    QList<QMdiSubWindow*> windows = m_mdi->usableWindowList();
     m_openWindowsMenu->clear();
-    Q_FOREACH (QMdiSubWindow * const window, windows) {
+    Q_FOREACH (QMdiSubWindow * const window, m_mdi->usableWindowList()) {
         QAction *openWindowAction = m_openWindowsMenu->addAction(window->windowTitle());
         openWindowAction->setCheckable(true);
         openWindowAction->setChecked(window == m_mdi->activeSubWindow());
