@@ -13,7 +13,7 @@
 #include "frontend/displaywindow/cplainwritewindow.h"
 
 
-/** 
+/**
  * The write window class which offers a WYSIWYG text editor for creating a personal commentary.
   *
   * Inherits CPlainWriteWindow.
@@ -50,8 +50,8 @@ class CHTMLWriteWindow : public CPlainWriteWindow  {
         virtual WriteWindowType writeWindowType() const {
             return HTMLWindow;
         }
-        /** 
-         * Called to add actions to mainWindow toolbars 
+        /**
+         * Called to add actions to mainWindow toolbars
          */
         virtual void setupMainWindowToolBars();
 

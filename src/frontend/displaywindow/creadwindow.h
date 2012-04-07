@@ -58,7 +58,7 @@ class CReadWindow: public CDisplayWindow {
         * Update the status of the popup menu entries.
         */
         virtual void copyDisplayedText();
-        /** 
+        /**
          * Open the search dialog with the strong info of the last clicked word.
         */
         void openSearchStrongsDialog();

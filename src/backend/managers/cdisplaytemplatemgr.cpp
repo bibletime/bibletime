@@ -35,7 +35,7 @@ CDisplayTemplateMgr::CDisplayTemplateMgr(QString &errorMessage) {
     QDir td = DU::getDisplayTemplatesDir();
     Q_FOREACH(const QString &file, td.entryList(filter, QDir::Files | QDir::Readable))
         loadTemplate(td.canonicalPath() + "/" + file);
-        
+
     // Load app stylesheets
     Q_FOREACH(const QString &file, td.entryList(cssfilter, QDir::Files | QDir::Readable))
     	loadCSSTemplate(td.canonicalPath() + "/" + file);

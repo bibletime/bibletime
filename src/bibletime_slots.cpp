@@ -426,7 +426,7 @@ void BibleTime::reloadProfile() {
     setQActionCheckedNoTrigger(m_showTextWindowToolButtonsAction, conf.sessionValue<bool>("GUI/showTextWindowToolButtons", true));
     setQActionCheckedNoTrigger(m_showFormatToolbarAction, conf.sessionValue<bool>("GUI/showFormatToolbarButtons", true));
     setQActionCheckedNoTrigger(m_toolbarsInEachWindow, conf.sessionValue<bool>("GUI/showToolbarsInEachWindow", true));
-    
+
     m_mdi->setMDIArrangementMode(static_cast<MAM>(conf.sessionValue<int>("MainWindow/MDIArrangementMode")));
 
     QWidget * focusWindow = 0;

@@ -29,8 +29,8 @@ class QToolBar;
 class BTHistory;
 class BibleTime;
 
-/** The base class for all display windows of BibleTime. 
-  * 
+/** The base class for all display windows of BibleTime.
+  *
   * Inherits QMainWindow.
   *
   * Inherited by CReadWindow and CWriteWindow.
