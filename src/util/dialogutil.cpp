@@ -9,10 +9,10 @@
 
 #include "util/dialogutil.h"
 
-#include <QMessageBox>
 #include <QDialogButtonBox>
+#include <QMessageBox>
 #include <QPushButton>
-#include <QDebug>
+
 
 namespace util {
 
