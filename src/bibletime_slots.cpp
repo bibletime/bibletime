@@ -35,6 +35,7 @@
 #include "frontend/settingsdialogs/cconfigurationdialog.h"
 #include "frontend/tips/bttipdialog.h"
 #include "util/directory.h"
+#include "util/dialogutil.h"
 
 
 /** Opens the optionsdialog of BibleTime. */
@@ -273,14 +274,6 @@ void BibleTime::showOrHideToolBars() {
     }
 }
 
-void BibleTime::setQActionCheckedNoTrigger(QAction * const action, const bool checked)
-{
-    Q_ASSERT(action);
-    const bool signalsWereBlocked = action->blockSignals(true);
-    action->setChecked(checked);
-    action->blockSignals(signalsWereBlocked);
-}
-
 /** Sets the active window. */
 void BibleTime::slotSetActiveSubWindow(QWidget* window) {
     if (!window)
@@ -398,6 +391,7 @@ struct WindowLoadStatus {
 void BibleTime::reloadProfile() {
     typedef CMDIArea::MDIArrangementMode MAM;
     typedef CPlainWriteWindow::WriteWindowType WWT;
+    using util::setQActionCheckedNoTrigger;
 
     // Cache pointer to config:
     BtConfig & conf = btConfig();

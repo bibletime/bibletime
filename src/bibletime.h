@@ -508,12 +508,6 @@ class BibleTime : public QMainWindow {
          */
         void showOrHideToolBars();
 
-        /**
-         * Change the state of a QAction without triggering their signals.
-         * @param action action to set the state for
-         * @param checked the state so set the action to
-         */
-        void setQActionCheckedNoTrigger(QAction * const action, const bool checked = true);
 #ifdef BT_DEBUG
         void deleteDebugWindow();
     private slots:

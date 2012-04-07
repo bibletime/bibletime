@@ -12,9 +12,17 @@
 
 #include <QMessageBox>
 
+class QAction;
 class QDialogButtonBox;
 
 namespace util {
+
+/**
+  Change the state of a QAction without triggering their signals.
+  \param action The QAction instance to set the state for.
+  \param[in] checked The new state.
+*/
+void setQActionCheckedNoTrigger(QAction * const action, const bool checked = true);
 
 /**
   Translates standard buttons in a QDialogButtonBox.
