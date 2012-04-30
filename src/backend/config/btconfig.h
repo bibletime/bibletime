@@ -221,8 +221,6 @@ private: /* Fields: */
 
     static BtConfig* m_instance; //!< singleton instance
 
-    QSettings m_settings;
-
     QFont m_defaultFont; //!< default font used when no special one is set
     FontCacheMap m_fontCache; //!< a cache for the fonts saved in the configuration file for speed
 

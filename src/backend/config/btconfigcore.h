@@ -240,10 +240,12 @@ public: /* Methods: */
         return m_cachedGroup;
     }
 
-private: /* Fields: */
+protected: /* Fields: */
 
     /** Underlying backend */
     QSettings m_settings;
+
+private: /* Fields: */
 
     /** List of active group prefixes */
     QStringList m_groups;
