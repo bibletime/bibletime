@@ -34,6 +34,8 @@ class CHTMLExportRendering: public CTextRendering {
             const DisplayOptions &displayOptions = btConfig().getDisplayOptions(),
             const FilterOptions &filterOptions = btConfig().getFilterOptions());
 
+        ~CHTMLExportRendering() {};
+
     protected: /* Methods: */
 
         virtual QString renderEntry(const KeyTreeItem &item, CSwordKey * key = 0);
