@@ -71,7 +71,7 @@ das &bibletime;-Fenster.</para>
           <term>
             <menuchoice> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_books.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem>
+format="PNG" /> </imageobject></inlinemediaobject>Ansicht</guimenu> <guimenuitem>Bücherregal anzeigen</guimenuitem>
 </menuchoice>
           </term>
           <listitem>
@@ -86,7 +86,7 @@ kann nützlich sein, wenn Sie mehr Platz für das Lupenfenster benötigen.</para
           <term>
             <menuchoice> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_bookmark.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>View</guimenu> <guimenuitem>Show Bookmarks</guimenuitem>
+format="PNG" /> </imageobject></inlinemediaobject>Ansicht</guimenu> <guimenuitem>Lesezeichen anzeigen</guimenuitem>
 </menuchoice>
           </term>
           <listitem>
@@ -101,7 +101,8 @@ sein, wenn Sie mehr Platz für das Lupenfenster benötigen.</para>
           <term>
             <menuchoice> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_document_magnifier.png" width="32"
-depth="32" format="PNG" /> </imageobject></inlinemediaobject>View</guimenu> <guimenuitem>Show Mag</guimenuitem> </menuchoice>
+depth="32" format="PNG" /> </imageobject></inlinemediaobject>Ansicht</guimenu> <guimenuitem>Lupe anzeigen</guimenuitem>
+</menuchoice>
           </term>
           <listitem>
             <para>
@@ -114,13 +115,14 @@ Lupenfenster im linken Abschnitt oder verbirgt es.</para>
           <term>
             <menuchoice> <guimenu> <inlinemediaobject>
 <imageobject> <imagedata fileref="i_checkbox.png" width="32" depth="32"
-format="PNG" /> </imageobject></inlinemediaobject>View</guimenu> <guimenuitem>Show parallel text headers</guimenuitem>
-</menuchoice>
+format="PNG" /> </imageobject></inlinemediaobject>Ansicht</guimenu> <guimenuitem>Paralleltext-Kopfzeilen anzeigen
+</guimenuitem> </menuchoice>
           </term>
           <listitem>
             <para>
-            <action>Toggles viewing of additional works</action> Toggle this setting to
-allow you to view additional works in parallel to your current open books.</para>
+            <action>An- / Abstellen der Anzeige zusätzlicher Werke</action> Benutzen Sie
+diesen Schalter, um zusätzliche Werke parallel zu Ihren gerade geöffneten
+Büchern anzusehen.</para>
           </listitem>
         </varlistentry>
 

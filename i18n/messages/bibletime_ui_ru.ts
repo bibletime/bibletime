@@ -1731,92 +1731,87 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="169"/>
         <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
-        <translation>Стандартные книги используются, когда не указана конкретная книга, к примеру, нажатие на ссылку в Библии или лексиконе.</translation>
+        <translation type="unfinished">Стандартные книги используются, когда не указана конкретная книга, к примеру, нажатие на ссылку в Библии или лексиконе.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="172"/>
         <source>Bible:</source>
-        <translation>Библия:</translation>
+        <translation type="unfinished">Библия:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="174"/>
         <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
-        <translation>Стандартная Библия используется, когда нажата ссылка на Библию</translation>
+        <translation type="unfinished">Стандартная Библия используется, когда нажата ссылка на Библию</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="176"/>
         <source>Commentary:</source>
-        <translation>Комментарий:</translation>
+        <translation type="unfinished">Комментарий:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="178"/>
         <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
-        <translation>Стандартный комментарий используется, когда нажата ссылка на комментарии</translation>
+        <translation type="unfinished">Стандартный комментарий используется, когда нажата ссылка на комментарии</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="180"/>
         <source>Lexicon:</source>
-        <translation>Лексикон:</translation>
+        <translation type="unfinished">Лексикон:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="182"/>
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
-        <translation>Стандартный лексикон используется, когда нажата ссылка на лексикон</translation>
+        <translation type="unfinished">Стандартный лексикон используется, когда нажата ссылка на лексикон</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="184"/>
         <source>Daily devotional:</source>
-        <translation>Наставления:</translation>
+        <translation type="unfinished">Наставления:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="186"/>
         <source>The standard devotional will be used to display a short start up devotional</source>
-        <translation>Используется для короткого наставления при старте программы</translation>
+        <translation type="unfinished">Используется для короткого наставления при старте программы</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="188"/>
         <source>Hebrew Strong&apos;s lexicon:</source>
-        <translation>Еврейский лексикон Стронга:</translation>
+        <translation type="unfinished">Еврейский лексикон Стронга:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="190"/>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
-        <translation>Стандартный лексикон используется, когда нажата ссылка на Еврейский лексикон</translation>
+        <translation type="unfinished">Стандартный лексикон используется, когда нажата ссылка на Еврейский лексикон</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="192"/>
         <source>Greek Strong&apos;s lexicon:</source>
-        <translation>Греческий лексикон Стронга:</translation>
+        <translation type="unfinished">Греческий лексикон Стронга:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="194"/>
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
-        <translation>Стандартный лексикон используется, когда нажата ссылка на Греческий лексикон</translation>
+        <translation type="unfinished">Стандартный лексикон используется, когда нажата ссылка на Греческий лексикон</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="196"/>
         <source>Hebrew morphological lexicon:</source>
-        <translation>Еврейский морфологический лексикон:</translation>
+        <translation type="unfinished">Еврейский морфологический лексикон:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="198"/>
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
-        <translation>Стандартный морфологический лексикон используется, когда нажата ссылка на морфологический тэг в Еврейском тексте</translation>
+        <translation type="unfinished">Стандартный морфологический лексикон используется, когда нажата ссылка на морфологический тэг в Еврейском тексте</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="200"/>
         <source>Greek morphological lexicon:</source>
-        <translation>Греческий морфологический лексикон:</translation>
+        <translation type="unfinished">Греческий морфологический лексикон:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="202"/>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
-        <translation>Стандартный морфологический лексикон используется, когда нажата ссылка на морфологический тэг в Греческом тексте</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="62"/>
-        <source></source>
-        <translation></translation>
+        <translation type="unfinished">Стандартный морфологический лексикон используется, когда нажата ссылка на морфологический тэг в Греческом тексте</translation>
     </message>
 </context>
 <context>
@@ -5213,6 +5208,82 @@ Language name ppk</extracomment>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="39"/>
         <source>Search result of the selected work</source>
         <translation>Результаты поиска выбранных книг</translation>
+    </message>
+</context>
+<context>
+    <name>StandardWorksTab</name>
+    <message>
+        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
+        <translation type="obsolete">Стандартные книги используются, когда не указана конкретная книга, к примеру, нажатие на ссылку в Библии или лексиконе.</translation>
+    </message>
+    <message>
+        <source>Bible:</source>
+        <translation type="obsolete">Библия:</translation>
+    </message>
+    <message>
+        <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
+        <translation type="obsolete">Стандартная Библия используется, когда нажата ссылка на Библию</translation>
+    </message>
+    <message>
+        <source>Commentary:</source>
+        <translation type="obsolete">Комментарий:</translation>
+    </message>
+    <message>
+        <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
+        <translation type="obsolete">Стандартный комментарий используется, когда нажата ссылка на комментарии</translation>
+    </message>
+    <message>
+        <source>Lexicon:</source>
+        <translation type="obsolete">Лексикон:</translation>
+    </message>
+    <message>
+        <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
+        <translation type="obsolete">Стандартный лексикон используется, когда нажата ссылка на лексикон</translation>
+    </message>
+    <message>
+        <source>Daily devotional:</source>
+        <translation type="obsolete">Наставления:</translation>
+    </message>
+    <message>
+        <source>The standard devotional will be used to display a short start up devotional</source>
+        <translation type="obsolete">Используется для короткого наставления при старте программы</translation>
+    </message>
+    <message>
+        <source>Hebrew Strong&apos;s lexicon:</source>
+        <translation type="obsolete">Еврейский лексикон Стронга:</translation>
+    </message>
+    <message>
+        <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
+        <translation type="obsolete">Стандартный лексикон используется, когда нажата ссылка на Еврейский лексикон</translation>
+    </message>
+    <message>
+        <source>Greek Strong&apos;s lexicon:</source>
+        <translation type="obsolete">Греческий лексикон Стронга:</translation>
+    </message>
+    <message>
+        <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
+        <translation type="obsolete">Стандартный лексикон используется, когда нажата ссылка на Греческий лексикон</translation>
+    </message>
+    <message>
+        <source>Hebrew morphological lexicon:</source>
+        <translation type="obsolete">Еврейский морфологический лексикон:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
+        <translation type="obsolete">Стандартный морфологический лексикон используется, когда нажата ссылка на морфологический тэг в Еврейском тексте</translation>
+    </message>
+    <message>
+        <source>Greek morphological lexicon:</source>
+        <translation type="obsolete">Греческий морфологический лексикон:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
+        <translation type="obsolete">Стандартный морфологический лексикон используется, когда нажата ссылка на морфологический тэг в Греческом тексте</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="62"/>
+        <source></source>
+        <translation></translation>
     </message>
 </context>
 <context>

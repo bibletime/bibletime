@@ -77,6 +77,10 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Informações sobre o BibleTime</translation>
     </message>
     <message>
+        <source>&amp;Save session</source>
+        <translation type="obsolete">&amp;Salvar sessão</translation>
+    </message>
+    <message>
         <source>&amp;Load session</source>
         <translation type="obsolete">&amp;Carregar sessão</translation>
     </message>
@@ -1698,92 +1702,87 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="169"/>
         <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
-        <translation>Obras padrão são usadas quando nenhuma obra é especificada, por exemplo, quando um link de uma Bíblia ou de um dicionário é clicado.</translation>
+        <translation type="unfinished">Obras padrão são usadas quando nenhuma obra é especificada, por exemplo, quando um link de uma Bíblia ou de um dicionário é clicado.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="172"/>
         <source>Bible:</source>
-        <translation>Bíblia:</translation>
+        <translation type="unfinished">Bíblia:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="174"/>
         <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
-        <translation>A Bíblia Padrão é usada quando um hiperlink dentro da Bíblia é clicada</translation>
+        <translation type="unfinished">A Bíblia Padrão é usada quando um hiperlink dentro da Bíblia é clicada</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="176"/>
         <source>Commentary:</source>
-        <translation>Comentário:</translation>
+        <translation type="unfinished">Comentário:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="178"/>
         <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
-        <translation>O comentário padrão é usado quando um hiperlink de um comentário é clicado</translation>
+        <translation type="unfinished">O comentário padrão é usado quando um hiperlink de um comentário é clicado</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="180"/>
         <source>Lexicon:</source>
-        <translation>Léxico:</translation>
+        <translation type="unfinished">Léxico:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="182"/>
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
-        <translation>O léxico normal é usado quando um hiperlink em um léxico é clicado</translation>
+        <translation type="unfinished">O léxico normal é usado quando um hiperlink em um léxico é clicado</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="184"/>
         <source>Daily devotional:</source>
-        <translation>Devociona diário:</translation>
+        <translation type="unfinished">Devociona diário:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="186"/>
         <source>The standard devotional will be used to display a short start up devotional</source>
-        <translation>O devocional padrão será usado para mostrar uma curta inicialização do devocional </translation>
+        <translation type="unfinished">O devocional padrão será usado para mostrar uma curta inicialização do devocional </translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="188"/>
         <source>Hebrew Strong&apos;s lexicon:</source>
-        <translation>Léxico hebraico Strong:</translation>
+        <translation type="unfinished">Léxico hebraico Strong:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="190"/>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
-        <translation>O léxico hebraico padrão é usado quando um hiperlink em um léxico hebraico é clicado</translation>
+        <translation type="unfinished">O léxico hebraico padrão é usado quando um hiperlink em um léxico hebraico é clicado</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="192"/>
         <source>Greek Strong&apos;s lexicon:</source>
-        <translation>Léxico grego Strong:</translation>
+        <translation type="unfinished">Léxico grego Strong:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="194"/>
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
-        <translation>O léxico grego padrão é usado quando um hiperlink em um léxico grego é clicado</translation>
+        <translation type="unfinished">O léxico grego padrão é usado quando um hiperlink em um léxico grego é clicado</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="196"/>
         <source>Hebrew morphological lexicon:</source>
-        <translation>Léxico hebraico morfológico:</translation>
+        <translation type="unfinished">Léxico hebraico morfológico:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="198"/>
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
-        <translation>O léxico padrão morfológico dos textos hebraicos, é usado quando um hiperlink de um tag morfológico de um texto hebraico é clicado</translation>
+        <translation type="unfinished">O léxico padrão morfológico dos textos hebraicos, é usado quando um hiperlink de um tag morfológico de um texto hebraico é clicado</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="200"/>
         <source>Greek morphological lexicon:</source>
-        <translation>Léxico morfológico Grego:</translation>
+        <translation type="unfinished">Léxico morfológico Grego:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="202"/>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
-        <translation>O léxico padrão morfológico dos textos gregos é usado quando um hiperlink de um tag morfológica de um texto grego é clicado</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="62"/>
-        <source></source>
-        <translation></translation>
+        <translation type="unfinished">O léxico padrão morfológico dos textos gregos é usado quando um hiperlink de um tag morfológica de um texto grego é clicado</translation>
     </message>
 </context>
 <context>
@@ -1801,7 +1800,7 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="79"/>
         <source>Show verse numbers</source>
-        <translation type="unfinished">Mostrar número dos versículos</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="80"/>
@@ -1821,7 +1820,7 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="83"/>
         <source>Show Hebrew vowel points</source>
-        <translation type="unfinished">Mostrar pontos da vogal hebraica</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="84"/>
@@ -5065,7 +5064,123 @@ Language name ppk</extracomment>
     </message>
 </context>
 <context>
+    <name>StandardWorksTab</name>
+    <message>
+        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
+        <translation type="obsolete">Obras padrão são usadas quando nenhuma obra é especificada, por exemplo, quando um link de uma Bíblia ou de um dicionário é clicado.</translation>
+    </message>
+    <message>
+        <source>Bible:</source>
+        <translation type="obsolete">Bíblia:</translation>
+    </message>
+    <message>
+        <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
+        <translation type="obsolete">A Bíblia Padrão é usada quando um hiperlink dentro da Bíblia é clicada</translation>
+    </message>
+    <message>
+        <source>Commentary:</source>
+        <translation type="obsolete">Comentário:</translation>
+    </message>
+    <message>
+        <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
+        <translation type="obsolete">O comentário padrão é usado quando um hiperlink de um comentário é clicado</translation>
+    </message>
+    <message>
+        <source>Lexicon:</source>
+        <translation type="obsolete">Léxico:</translation>
+    </message>
+    <message>
+        <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
+        <translation type="obsolete">O léxico normal é usado quando um hiperlink em um léxico é clicado</translation>
+    </message>
+    <message>
+        <source>Daily devotional:</source>
+        <translation type="obsolete">Devociona diário:</translation>
+    </message>
+    <message>
+        <source>The standard devotional will be used to display a short start up devotional</source>
+        <translation type="obsolete">O devocional padrão será usado para mostrar uma curta inicialização do devocional </translation>
+    </message>
+    <message>
+        <source>Hebrew Strong&apos;s lexicon:</source>
+        <translation type="obsolete">Léxico hebraico Strong:</translation>
+    </message>
+    <message>
+        <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
+        <translation type="obsolete">O léxico hebraico padrão é usado quando um hiperlink em um léxico hebraico é clicado</translation>
+    </message>
+    <message>
+        <source>Greek Strong&apos;s lexicon:</source>
+        <translation type="obsolete">Léxico grego Strong:</translation>
+    </message>
+    <message>
+        <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
+        <translation type="obsolete">O léxico grego padrão é usado quando um hiperlink em um léxico grego é clicado</translation>
+    </message>
+    <message>
+        <source>Hebrew morphological lexicon:</source>
+        <translation type="obsolete">Léxico hebraico morfológico:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
+        <translation type="obsolete">O léxico padrão morfológico dos textos hebraicos, é usado quando um hiperlink de um tag morfológico de um texto hebraico é clicado</translation>
+    </message>
+    <message>
+        <source>Greek morphological lexicon:</source>
+        <translation type="obsolete">Léxico morfológico Grego:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
+        <translation type="obsolete">O léxico padrão morfológico dos textos gregos é usado quando um hiperlink de um tag morfológica de um texto grego é clicado</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="62"/>
+        <source></source>
+        <translation></translation>
+    </message>
+</context>
+<context>
     <name>TextFiltersTab</name>
+    <message>
+        <source>Insert line break after each verse</source>
+        <translation type="obsolete">Inserir quebra de linha após cada versículo</translation>
+    </message>
+    <message>
+        <source>Show verse numbers</source>
+        <translation type="obsolete"> Mostrar número dos versículos</translation>
+    </message>
+    <message>
+        <source>Show section headings</source>
+        <translation type="obsolete">Mostrar seção de títulos</translation>
+    </message>
+    <message>
+        <source>Show scripture cross-references</source>
+        <translation type="obsolete">Mostrar referências-cruzadas das escrituras</translation>
+    </message>
+    <message>
+        <source>Show Greek accents</source>
+        <translation type="obsolete">Mostrar acentos gregos</translation>
+    </message>
+    <message>
+        <source>Show Hebrew vowel points</source>
+        <translation type="obsolete">Mostrar pontos Hebrew da vogal</translation>
+    </message>
+    <message>
+        <source>Show Hebrew cantillation marks</source>
+        <translation type="obsolete">Mostrar sinais da cantilena hebraica</translation>
+    </message>
+    <message>
+        <source>Show morph segmentation</source>
+        <translation type="obsolete">Mostrar a segmentação dos morfemas</translation>
+    </message>
+    <message>
+        <source>Use textual variants</source>
+        <translation type="obsolete">Usar variações textuais</translation>
+    </message>
+    <message>
+        <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
+        <translation type="obsolete">Filtros de controle a aparência do texto. Aqui você pode especificar configurações padrão para todos os filtros. Você pode substituir essas configurações em cada janela de visualização.</translation>
+    </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="287"/>
         <source></source>

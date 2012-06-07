@@ -1858,87 +1858,87 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="169"/>
         <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
-        <translation>沒有選定特定書目時將顯示標準書目，例如連結到聖經或辭典的超連結被點選時。</translation>
+        <translation type="unfinished">沒有選定特定書目時將顯示標準書目，例如連結到聖經或辭典的超連結被點選時。</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="172"/>
         <source>Bible:</source>
-        <translation>聖經:</translation>
+        <translation type="unfinished">聖經:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="174"/>
         <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
-        <translation>將顯示標準聖經，當點選連結到聖經的超連結時</translation>
+        <translation type="unfinished">將顯示標準聖經，當點選連結到聖經的超連結時</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="176"/>
         <source>Commentary:</source>
-        <translation>評論:</translation>
+        <translation type="unfinished">評論:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="178"/>
         <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
-        <translation>將顯示標準評論，當點選連結到評論的超連結時</translation>
+        <translation type="unfinished">將顯示標準評論，當點選連結到評論的超連結時</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="180"/>
         <source>Lexicon:</source>
-        <translation>詞彙:</translation>
+        <translation type="unfinished">詞彙:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="182"/>
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
-        <translation>將顯示標準辭典，當點選連結到辭典的超連結時</translation>
+        <translation type="unfinished">將顯示標準辭典，當點選連結到辭典的超連結時</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="184"/>
         <source>Daily devotional:</source>
-        <translation>每日靈修:</translation>
+        <translation type="unfinished">每日靈修:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="186"/>
         <source>The standard devotional will be used to display a short start up devotional</source>
-        <translation>標準靈修將用來作為啟動顯示的簡短靈修內容</translation>
+        <translation type="unfinished">標準靈修將用來作為啟動顯示的簡短靈修內容</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="188"/>
         <source>Hebrew Strong&apos;s lexicon:</source>
-        <translation>希伯來文的強調詞彙:</translation>
+        <translation type="unfinished">希伯來文的強調詞彙:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="190"/>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
-        <translation>將顯示標準希伯來文辭典，當點選連結到希伯來文辭典的超連結時</translation>
+        <translation type="unfinished">將顯示標準希伯來文辭典，當點選連結到希伯來文辭典的超連結時</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="192"/>
         <source>Greek Strong&apos;s lexicon:</source>
-        <translation>希臘文的強調詞彙:</translation>
+        <translation type="unfinished">希臘文的強調詞彙:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="194"/>
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
-        <translation>將顯示希臘文字典，當點選連結到希臘文字典的超連結時</translation>
+        <translation type="unfinished">將顯示希臘文字典，當點選連結到希臘文字典的超連結時</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="196"/>
         <source>Hebrew morphological lexicon:</source>
-        <translation>希伯來文構詞字彙:</translation>
+        <translation type="unfinished">希伯來文構詞字彙:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="198"/>
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
-        <translation>將顯示希臘文字的標準構詞字典，當希臘文文本中的構詞學標籤超連結被點選時</translation>
+        <translation type="unfinished">將顯示希臘文字的標準構詞字典，當希臘文文本中的構詞學標籤超連結被點選時</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="200"/>
         <source>Greek morphological lexicon:</source>
-        <translation>希臘文構詞學詞彙:</translation>
+        <translation type="unfinished">希臘文構詞學詞彙:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="202"/>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
-        <translation>將顯示希臘文文本的標準構詞學詞彙，當希臘文文本中的構詞學標籤超連結被點選</translation>
+        <translation type="unfinished">將顯示希臘文文本的標準構詞學詞彙，當希臘文文本中的構詞學標籤超連結被點選</translation>
     </message>
 </context>
 <context>
@@ -5327,6 +5327,77 @@ Language name ppk</extracomment>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="39"/>
         <source>Search result of the selected work</source>
         <translation>選定書目的搜尋結果</translation>
+    </message>
+</context>
+<context>
+    <name>StandardWorksTab</name>
+    <message>
+        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
+        <translation type="obsolete">沒有選定特定書目時將顯示標準書目，例如連結到聖經或辭典的超連結被點選時。</translation>
+    </message>
+    <message>
+        <source>Bible:</source>
+        <translation type="obsolete">聖經:</translation>
+    </message>
+    <message>
+        <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
+        <translation type="obsolete">將顯示標準聖經，當點選連結到聖經的超連結時</translation>
+    </message>
+    <message>
+        <source>Commentary:</source>
+        <translation type="obsolete">評論:</translation>
+    </message>
+    <message>
+        <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
+        <translation type="obsolete">將顯示標準評論，當點選連結到評論的超連結時</translation>
+    </message>
+    <message>
+        <source>Lexicon:</source>
+        <translation type="obsolete">詞彙:</translation>
+    </message>
+    <message>
+        <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
+        <translation type="obsolete">將顯示標準辭典，當點選連結到辭典的超連結時</translation>
+    </message>
+    <message>
+        <source>Daily devotional:</source>
+        <translation type="obsolete">每日靈修:</translation>
+    </message>
+    <message>
+        <source>The standard devotional will be used to display a short start up devotional</source>
+        <translation type="obsolete">標準靈修將用來作為啟動顯示的簡短靈修內容</translation>
+    </message>
+    <message>
+        <source>Hebrew Strong&apos;s lexicon:</source>
+        <translation type="obsolete">希伯來文的強調詞彙:</translation>
+    </message>
+    <message>
+        <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
+        <translation type="obsolete">將顯示標準希伯來文辭典，當點選連結到希伯來文辭典的超連結時</translation>
+    </message>
+    <message>
+        <source>Greek Strong&apos;s lexicon:</source>
+        <translation type="obsolete">希臘文的強調詞彙:</translation>
+    </message>
+    <message>
+        <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
+        <translation type="obsolete">將顯示希臘文字典，當點選連結到希臘文字典的超連結時</translation>
+    </message>
+    <message>
+        <source>Hebrew morphological lexicon:</source>
+        <translation type="obsolete">希伯來文構詞字彙:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
+        <translation type="obsolete">將顯示希臘文字的標準構詞字典，當希臘文文本中的構詞學標籤超連結被點選時</translation>
+    </message>
+    <message>
+        <source>Greek morphological lexicon:</source>
+        <translation type="obsolete">希臘文構詞學詞彙:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
+        <translation type="obsolete">將顯示希臘文文本的標準構詞學詞彙，當希臘文文本中的構詞學標籤超連結被點選</translation>
     </message>
 </context>
 <context>

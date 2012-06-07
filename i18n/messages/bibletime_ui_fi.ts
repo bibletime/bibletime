@@ -1875,87 +1875,82 @@ pikanäppäin</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="172"/>
         <source>Bible:</source>
-        <translation>Raamattu:</translation>
+        <translation type="unfinished">Raamattu:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="174"/>
         <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
-        <translation>Oletusraamattua käytetään kun hyperlinkki Raamattuun valitaan</translation>
+        <translation type="unfinished">Oletusraamattua käytetään kun hyperlinkki Raamattuun valitaan</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="176"/>
         <source>Commentary:</source>
-        <translation>Kommentaari:</translation>
+        <translation type="unfinished">Kommentaari:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="178"/>
         <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
-        <translation>Oletuskommentaaria käytetään kun hyperlinkki kommentaariin valitaan</translation>
+        <translation type="unfinished">Oletuskommentaaria käytetään kun hyperlinkki kommentaariin valitaan</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="180"/>
         <source>Lexicon:</source>
-        <translation>Sanakirja:</translation>
+        <translation type="unfinished">Sanakirja:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="182"/>
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
-        <translation>Oletussanakirjaa käytetään kun hyperlinkki sanakirjaan valitaan</translation>
+        <translation type="unfinished">Oletussanakirjaa käytetään kun hyperlinkki sanakirjaan valitaan</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="184"/>
         <source>Daily devotional:</source>
-        <translation>Päivittäinen hartaus:</translation>
+        <translation type="unfinished">Päivittäinen hartaus:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="186"/>
         <source>The standard devotional will be used to display a short start up devotional</source>
-        <translation>Oletushartauskirjasta näytetään päivittäinen Raamatun jae käynnistettäessä</translation>
+        <translation type="unfinished">Oletushartauskirjasta näytetään päivittäinen Raamatun jae käynnistettäessä</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="188"/>
         <source>Hebrew Strong&apos;s lexicon:</source>
-        <translation>Hepreankielinen Strongin sanasto:</translation>
+        <translation type="unfinished">Hepreankielinen Strongin sanasto:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="190"/>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
-        <translation>Standardia hepreankielistä sanastoa käyteään kun hyperlinkki hepreankieliseen sanastoon valitaan</translation>
+        <translation type="unfinished">Standardia hepreankielistä sanastoa käyteään kun hyperlinkki hepreankieliseen sanastoon valitaan</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="192"/>
         <source>Greek Strong&apos;s lexicon:</source>
-        <translation>Kreikankielinen Strongin sanasto:</translation>
+        <translation type="unfinished">Kreikankielinen Strongin sanasto:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="194"/>
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
-        <translation>Standardia kreikankielistä sanastoa käytetään kun hyperlinkki kreikankielen sanastoon valitaan</translation>
+        <translation type="unfinished">Standardia kreikankielistä sanastoa käytetään kun hyperlinkki kreikankielen sanastoon valitaan</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="196"/>
         <source>Hebrew morphological lexicon:</source>
-        <translation>Heprealainen morfologinen sanasto:</translation>
+        <translation type="unfinished">Heprealainen morfologinen sanasto:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="198"/>
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
-        <translation>Standardia hepreankielen morfologista sanastoa käytetään kun morfologinen linkki valitaan heprealaisissa teksteissä</translation>
+        <translation type="unfinished">Standardia hepreankielen morfologista sanastoa käytetään kun morfologinen linkki valitaan heprealaisissa teksteissä</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="200"/>
         <source>Greek morphological lexicon:</source>
-        <translation>Kreikkalainen morfologinen sanasto:</translation>
+        <translation type="unfinished">Kreikkalainen morfologinen sanasto:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="202"/>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
-        <translation>Standardia kreikankielen morfologista sanastoa käytetään kun morfologinen linkki valitaan kreikkalaisissa teksteissä</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="53"/>
-        <source></source>
-        <translation></translation>
+        <translation type="unfinished">Standardia kreikankielen morfologista sanastoa käytetään kun morfologinen linkki valitaan kreikkalaisissa teksteissä</translation>
     </message>
 </context>
 <context>
@@ -5399,6 +5394,78 @@ Tämä voi viedä pitkän ajan. Haluatko indeksoida?</translation>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="39"/>
         <source>Search result of the selected work</source>
         <translation>Valittujen teosten hakutulokset</translation>
+    </message>
+</context>
+<context>
+    <name>StandardWorksTab</name>
+    <message>
+        <source>Bible:</source>
+        <translation type="obsolete">Raamattu:</translation>
+    </message>
+    <message>
+        <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
+        <translation type="obsolete">Oletusraamattua käytetään kun hyperlinkki Raamattuun valitaan</translation>
+    </message>
+    <message>
+        <source>Commentary:</source>
+        <translation type="obsolete">Kommentaari:</translation>
+    </message>
+    <message>
+        <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
+        <translation type="obsolete">Oletuskommentaaria käytetään kun hyperlinkki kommentaariin valitaan</translation>
+    </message>
+    <message>
+        <source>Lexicon:</source>
+        <translation type="obsolete">Sanakirja:</translation>
+    </message>
+    <message>
+        <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
+        <translation type="obsolete">Oletussanakirjaa käytetään kun hyperlinkki sanakirjaan valitaan</translation>
+    </message>
+    <message>
+        <source>Daily devotional:</source>
+        <translation type="obsolete">Päivittäinen hartaus:</translation>
+    </message>
+    <message>
+        <source>The standard devotional will be used to display a short start up devotional</source>
+        <translation type="obsolete">Oletushartauskirjasta näytetään päivittäinen Raamatun jae käynnistettäessä</translation>
+    </message>
+    <message>
+        <source>Hebrew Strong&apos;s lexicon:</source>
+        <translation type="obsolete">Hepreankielinen Strongin sanasto:</translation>
+    </message>
+    <message>
+        <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
+        <translation type="obsolete">Standardia hepreankielistä sanastoa käyteään kun hyperlinkki hepreankieliseen sanastoon valitaan</translation>
+    </message>
+    <message>
+        <source>Greek Strong&apos;s lexicon:</source>
+        <translation type="obsolete">Kreikankielinen Strongin sanasto:</translation>
+    </message>
+    <message>
+        <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
+        <translation type="obsolete">Standardia kreikankielistä sanastoa käytetään kun hyperlinkki kreikankielen sanastoon valitaan</translation>
+    </message>
+    <message>
+        <source>Hebrew morphological lexicon:</source>
+        <translation type="obsolete">Heprealainen morfologinen sanasto:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
+        <translation type="obsolete">Standardia hepreankielen morfologista sanastoa käytetään kun morfologinen linkki valitaan heprealaisissa teksteissä</translation>
+    </message>
+    <message>
+        <source>Greek morphological lexicon:</source>
+        <translation type="obsolete">Kreikkalainen morfologinen sanasto:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
+        <translation type="obsolete">Standardia kreikankielen morfologista sanastoa käytetään kun morfologinen linkki valitaan kreikkalaisissa teksteissä</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="53"/>
+        <source></source>
+        <translation></translation>
     </message>
 </context>
 <context>

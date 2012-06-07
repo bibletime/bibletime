@@ -1873,87 +1873,82 @@ sneltoets</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="172"/>
         <source>Bible:</source>
-        <translation>Bijbel:</translation>
+        <translation type="unfinished">Bijbel:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="174"/>
         <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
-        <translation>De standaardbijbel wordt gebruikt wanneer er een hyperlink naar een bijbel wordt aangeklikt</translation>
+        <translation type="unfinished">De standaardbijbel wordt gebruikt wanneer er een hyperlink naar een bijbel wordt aangeklikt</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="176"/>
         <source>Commentary:</source>
-        <translation>Kanttekeningen:</translation>
+        <translation type="unfinished">Kanttekeningen:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="178"/>
         <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
-        <translation>De standaardkanttekeningen worden gebruikt wanneer een hyperlink naar kanttekeningen wordt aangeklikt</translation>
+        <translation type="unfinished">De standaardkanttekeningen worden gebruikt wanneer een hyperlink naar kanttekeningen wordt aangeklikt</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="180"/>
         <source>Lexicon:</source>
-        <translation>Lexicon:</translation>
+        <translation type="unfinished">Lexicon:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="182"/>
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
-        <translation>Het standaardlexicon wordt gebruikt wanneer een hyperlink naar een lexicon wordt aangeklikt</translation>
+        <translation type="unfinished">Het standaardlexicon wordt gebruikt wanneer een hyperlink naar een lexicon wordt aangeklikt</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="184"/>
         <source>Daily devotional:</source>
-        <translation>Dagelijkse overdenking:</translation>
+        <translation type="unfinished">Dagelijkse overdenking:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="186"/>
         <source>The standard devotional will be used to display a short start up devotional</source>
-        <translation>De standaard dagelijkse overdenking wordt gebruikt om een korte overdenking te tonen bij het opstarten</translation>
+        <translation type="unfinished">De standaard dagelijkse overdenking wordt gebruikt om een korte overdenking te tonen bij het opstarten</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="188"/>
         <source>Hebrew Strong&apos;s lexicon:</source>
-        <translation>Hebreeuws Strong&apos;s lexicon:</translation>
+        <translation type="unfinished">Hebreeuws Strong&apos;s lexicon:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="190"/>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
-        <translation>Het standaard Hebreeuwse lexicon wordt gebruikt wanneer een hyperlink naar een Hebreeuws lexicon wordt aangeklikt</translation>
+        <translation type="unfinished">Het standaard Hebreeuwse lexicon wordt gebruikt wanneer een hyperlink naar een Hebreeuws lexicon wordt aangeklikt</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="192"/>
         <source>Greek Strong&apos;s lexicon:</source>
-        <translation>Grieks Strong&apos;s lexicon:</translation>
+        <translation type="unfinished">Grieks Strong&apos;s lexicon:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="194"/>
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
-        <translation>Het standaard Griekse lexicon wordt gebruikt wanneer een hyperlink naar een Grieks lexicon wordt aangeklikt</translation>
+        <translation type="unfinished">Het standaard Griekse lexicon wordt gebruikt wanneer een hyperlink naar een Grieks lexicon wordt aangeklikt</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="196"/>
         <source>Hebrew morphological lexicon:</source>
-        <translation>Hebreeuws morfologisch lexicon:</translation>
+        <translation type="unfinished">Hebreeuws morfologisch lexicon:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="198"/>
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
-        <translation>Het standaard morfologische lexicon voor Hebreeuwse teksten wordt gebruikt wanneer een hyperlink of een morfologische tag in een Hebreeuwse tekst wordt aangeklikt</translation>
+        <translation type="unfinished">Het standaard morfologische lexicon voor Hebreeuwse teksten wordt gebruikt wanneer een hyperlink of een morfologische tag in een Hebreeuwse tekst wordt aangeklikt</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="200"/>
         <source>Greek morphological lexicon:</source>
-        <translation>Grieks morfologisch lexicon:</translation>
+        <translation type="unfinished">Grieks morfologisch lexicon:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="202"/>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
-        <translation>Het standaard morfologische lexicon voor Griekse teksten wordt gebruikt wanneer een hyperlink of een morfologische tag in een Griekse tekst wordt aangeklikt</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="62"/>
-        <source></source>
-        <translation></translation>
+        <translation type="unfinished">Het standaard morfologische lexicon voor Griekse teksten wordt gebruikt wanneer een hyperlink of een morfologische tag in een Griekse tekst wordt aangeklikt</translation>
     </message>
 </context>
 <context>
@@ -5413,6 +5408,78 @@ Dit kan enige tijd duren. Doorgaan met indexeren?</translation>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="39"/>
         <source>Search result of the selected work</source>
         <translation>Zoekresultaat van geselecteerde module</translation>
+    </message>
+</context>
+<context>
+    <name>StandardWorksTab</name>
+    <message>
+        <source>Bible:</source>
+        <translation type="obsolete">Bijbel:</translation>
+    </message>
+    <message>
+        <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
+        <translation type="obsolete">De standaardbijbel wordt gebruikt wanneer er een hyperlink naar een bijbel wordt aangeklikt</translation>
+    </message>
+    <message>
+        <source>Commentary:</source>
+        <translation type="obsolete">Kanttekeningen:</translation>
+    </message>
+    <message>
+        <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
+        <translation type="obsolete">De standaardkanttekeningen worden gebruikt wanneer een hyperlink naar kanttekeningen wordt aangeklikt</translation>
+    </message>
+    <message>
+        <source>Lexicon:</source>
+        <translation type="obsolete">Lexicon:</translation>
+    </message>
+    <message>
+        <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
+        <translation type="obsolete">Het standaardlexicon wordt gebruikt wanneer een hyperlink naar een lexicon wordt aangeklikt</translation>
+    </message>
+    <message>
+        <source>Daily devotional:</source>
+        <translation type="obsolete">Dagelijkse overdenking:</translation>
+    </message>
+    <message>
+        <source>The standard devotional will be used to display a short start up devotional</source>
+        <translation type="obsolete">De standaard dagelijkse overdenking wordt gebruikt om een korte overdenking te tonen bij het opstarten</translation>
+    </message>
+    <message>
+        <source>Hebrew Strong&apos;s lexicon:</source>
+        <translation type="obsolete">Hebreeuws Strong&apos;s lexicon:</translation>
+    </message>
+    <message>
+        <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
+        <translation type="obsolete">Het standaard Hebreeuwse lexicon wordt gebruikt wanneer een hyperlink naar een Hebreeuws lexicon wordt aangeklikt</translation>
+    </message>
+    <message>
+        <source>Greek Strong&apos;s lexicon:</source>
+        <translation type="obsolete">Grieks Strong&apos;s lexicon:</translation>
+    </message>
+    <message>
+        <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
+        <translation type="obsolete">Het standaard Griekse lexicon wordt gebruikt wanneer een hyperlink naar een Grieks lexicon wordt aangeklikt</translation>
+    </message>
+    <message>
+        <source>Hebrew morphological lexicon:</source>
+        <translation type="obsolete">Hebreeuws morfologisch lexicon:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
+        <translation type="obsolete">Het standaard morfologische lexicon voor Hebreeuwse teksten wordt gebruikt wanneer een hyperlink of een morfologische tag in een Hebreeuwse tekst wordt aangeklikt</translation>
+    </message>
+    <message>
+        <source>Greek morphological lexicon:</source>
+        <translation type="obsolete">Grieks morfologisch lexicon:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
+        <translation type="obsolete">Het standaard morfologische lexicon voor Griekse teksten wordt gebruikt wanneer een hyperlink of een morfologische tag in een Griekse tekst wordt aangeklikt</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="62"/>
+        <source></source>
+        <translation></translation>
     </message>
 </context>
 <context>

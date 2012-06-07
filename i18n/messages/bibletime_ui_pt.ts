@@ -77,6 +77,10 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Informações sobre o programa BibleTime</translation>
     </message>
     <message>
+        <source>&amp;Save session</source>
+        <translation type="obsolete">&amp;Guardar sessão</translation>
+    </message>
+    <message>
         <source>&amp;Load session</source>
         <translation type="obsolete">&amp;Carregar sessão</translation>
     </message>
@@ -1796,7 +1800,7 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="79"/>
         <source>Show verse numbers</source>
-        <translation type="unfinished">Mostrar número dos versículos</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="80"/>
@@ -1816,7 +1820,7 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="83"/>
         <source>Show Hebrew vowel points</source>
-        <translation type="unfinished">Mostrar pontos da vogal hebraica</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="84"/>
@@ -4023,6 +4027,38 @@ Language name ppk</extracomment>
         <translation>Remoto</translation>
     </message>
     <message>
+        <source>Old testament</source>
+        <translation type="obsolete">Antigo testamento</translation>
+    </message>
+    <message>
+        <source>Moses/Pentateuch/Torah</source>
+        <translation type="obsolete">Moisés/Pentateuco/Torá</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation type="obsolete">História</translation>
+    </message>
+    <message>
+        <source>Prophets</source>
+        <translation type="obsolete">Profetas</translation>
+    </message>
+    <message>
+        <source>New testament</source>
+        <translation type="obsolete">Novo testamento</translation>
+    </message>
+    <message>
+        <source>Gospels</source>
+        <translation type="obsolete">Evangelhos</translation>
+    </message>
+    <message>
+        <source>Letters/Epistles</source>
+        <translation type="obsolete">Cartas/Epístolas</translation>
+    </message>
+    <message>
+        <source>Paul&apos;s Epistles</source>
+        <translation type="obsolete">Epístolas de Paulo</translation>
+    </message>
+    <message>
         <location filename="../../src/frontend/cexportmanager.cpp" line="437"/>
         <location filename="../../src/frontend/display/cdisplay.cpp" line="123"/>
         <source>HTML files</source>
@@ -5030,6 +5066,74 @@ Language name ppk</extracomment>
 <context>
     <name>StandardWorksTab</name>
     <message>
+        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
+        <translation type="obsolete">Obras padrão são usadas quando nenhuma obra é especificada, por exemplo, quando uma hiperligação de uma Bíblia ou de um Léxico é clicado.</translation>
+    </message>
+    <message>
+        <source>Bible:</source>
+        <translation type="obsolete">Bíblia:</translation>
+    </message>
+    <message>
+        <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
+        <translation type="obsolete">A Bíblia Padrão é usada quando um hiperligação para dentro da Bíblia é clicado</translation>
+    </message>
+    <message>
+        <source>Commentary:</source>
+        <translation type="obsolete">Comentário:</translation>
+    </message>
+    <message>
+        <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
+        <translation type="obsolete">O comentário padrão é usado quando uma hiperligação de um comentário é clicado</translation>
+    </message>
+    <message>
+        <source>Lexicon:</source>
+        <translation type="obsolete">Léxico:</translation>
+    </message>
+    <message>
+        <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
+        <translation type="obsolete">O léxico normal é usado quando uma hiperligação em um léxico é clicado</translation>
+    </message>
+    <message>
+        <source>Daily devotional:</source>
+        <translation type="obsolete">Devocional diário:</translation>
+    </message>
+    <message>
+        <source>The standard devotional will be used to display a short start up devotional</source>
+        <translation type="obsolete">O devocional padrão será usado para mostrar uma curta inicialização do devocional </translation>
+    </message>
+    <message>
+        <source>Hebrew Strong&apos;s lexicon:</source>
+        <translation type="obsolete">Léxico hebraico Strong:</translation>
+    </message>
+    <message>
+        <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
+        <translation type="obsolete">O léxico hebraico padrão é usado quando uma hiperligação em um léxico hebraico é clicado</translation>
+    </message>
+    <message>
+        <source>Greek Strong&apos;s lexicon:</source>
+        <translation type="obsolete">Léxico grego Strong:</translation>
+    </message>
+    <message>
+        <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
+        <translation type="obsolete">O léxico grego padrão é usado quando uma hiperligação em um léxico grego é clicado</translation>
+    </message>
+    <message>
+        <source>Hebrew morphological lexicon:</source>
+        <translation type="obsolete">Léxico hebraico morfológico:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
+        <translation type="obsolete">O léxico padrão morfológico dos textos hebraicos, é usado quando uma hiperligação de uma tag morfológica de um texto hebraico é clicada</translation>
+    </message>
+    <message>
+        <source>Greek morphological lexicon:</source>
+        <translation type="obsolete">Léxico morfológico Grego:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
+        <translation type="obsolete">O léxico padrão morfológico para os textos gregos é usado quando uma hiperligação de uma tag morfológica de um texto grego é clicada</translation>
+    </message>
+    <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="62"/>
         <source></source>
         <translation></translation>
@@ -5037,6 +5141,46 @@ Language name ppk</extracomment>
 </context>
 <context>
     <name>TextFiltersTab</name>
+    <message>
+        <source>Insert line break after each verse</source>
+        <translation type="obsolete">Inserir quebra de linha após cada versículo</translation>
+    </message>
+    <message>
+        <source>Show verse numbers</source>
+        <translation type="obsolete"> Mostrar número dos versículos</translation>
+    </message>
+    <message>
+        <source>Show section headings</source>
+        <translation type="obsolete">Mostrar titulos de secção</translation>
+    </message>
+    <message>
+        <source>Show scripture cross-references</source>
+        <translation type="obsolete">Mostrar referências-cruzadas das escrituras</translation>
+    </message>
+    <message>
+        <source>Show Greek accents</source>
+        <translation type="obsolete">Mostrar acentos gregos</translation>
+    </message>
+    <message>
+        <source>Show Hebrew vowel points</source>
+        <translation type="obsolete">Mostrar pontos vogais Hebreus</translation>
+    </message>
+    <message>
+        <source>Show Hebrew cantillation marks</source>
+        <translation type="obsolete">Mostrar sinais da cantilena hebraica</translation>
+    </message>
+    <message>
+        <source>Show morph segmentation</source>
+        <translation type="obsolete">Mostrar a segmentação dos morfemas</translation>
+    </message>
+    <message>
+        <source>Use textual variants</source>
+        <translation type="obsolete">Usar variações textuais</translation>
+    </message>
+    <message>
+        <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
+        <translation type="obsolete">Filtros de controle da aparência do texto. Aqui você pode especificar configurações padrão para todos os filtros. Você pode substituir essas configurações em cada janela de visualização.</translation>
+    </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="287"/>
         <source></source>

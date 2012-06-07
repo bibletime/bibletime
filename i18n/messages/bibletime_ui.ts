@@ -42,6 +42,11 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../../src/bibletime_init.cpp" line="709"/>
+        <source>Sw&amp;itch session</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../src/bibletime_init.cpp" line="711"/>
         <source>Se&amp;ttings</source>
         <translation type="unfinished"></translation>
@@ -334,11 +339,6 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="699"/>
         <source>Format toolbar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/bibletime_init.cpp" line="709"/>
-        <source>Sw&amp;itch session</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

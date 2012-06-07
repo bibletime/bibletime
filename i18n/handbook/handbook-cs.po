@@ -3541,6 +3541,3 @@ msgstr ""
 #: docs/handbook/en/docbook/index.docbook:72
 msgid "Help dialog"
 msgstr ""
-
-# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#, fuzzy

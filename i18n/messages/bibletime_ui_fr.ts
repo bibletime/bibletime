@@ -1873,87 +1873,82 @@ raccourci</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="172"/>
         <source>Bible:</source>
-        <translation>Bible:</translation>
+        <translation type="unfinished">Bible:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="174"/>
         <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
-        <translation>La Bible par défaut est utilisée lors d&apos;un clic sur un lien hypertexte vers une Bible</translation>
+        <translation type="unfinished">La Bible par défaut est utilisée lors d&apos;un clic sur un lien hypertexte vers une Bible</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="176"/>
         <source>Commentary:</source>
-        <translation>Commentaire:</translation>
+        <translation type="unfinished">Commentaire:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="178"/>
         <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
-        <translation>Le commentaire par défaut est utilisé quand un lien sur un commentaire est cliqué</translation>
+        <translation type="unfinished">Le commentaire par défaut est utilisé quand un lien sur un commentaire est cliqué</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="180"/>
         <source>Lexicon:</source>
-        <translation>Lexique:</translation>
+        <translation type="unfinished">Lexique:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="182"/>
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
-        <translation>Le lexique par défaut est utilisé quand un lien hypertexte sur un lexique est cliqué</translation>
+        <translation type="unfinished">Le lexique par défaut est utilisé quand un lien hypertexte sur un lexique est cliqué</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="184"/>
         <source>Daily devotional:</source>
-        <translation>Lectures quotidiennes:</translation>
+        <translation type="unfinished">Lectures quotidiennes:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="186"/>
         <source>The standard devotional will be used to display a short start up devotional</source>
-        <translation>La lecture quotidienne par défaut sera utilisée pour afficher une courte lecture au démarrage</translation>
+        <translation type="unfinished">La lecture quotidienne par défaut sera utilisée pour afficher une courte lecture au démarrage</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="188"/>
         <source>Hebrew Strong&apos;s lexicon:</source>
-        <translation>Lexique des numéros Strong Hébreux:</translation>
+        <translation type="unfinished">Lexique des numéros Strong Hébreux:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="190"/>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
-        <translation>Le lexique Hébreu par défaut est utilisé quand un lien hypertexte sur un lexique Hébreu est cliqué</translation>
+        <translation type="unfinished">Le lexique Hébreu par défaut est utilisé quand un lien hypertexte sur un lexique Hébreu est cliqué</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="192"/>
         <source>Greek Strong&apos;s lexicon:</source>
-        <translation>Lexique des numéros Strong grecs:</translation>
+        <translation type="unfinished">Lexique des numéros Strong grecs:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="194"/>
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
-        <translation>Le lexique grec par défaut est utilisé quand un lien hypertexte sur un lexique grec est cliqué</translation>
+        <translation type="unfinished">Le lexique grec par défaut est utilisé quand un lien hypertexte sur un lexique grec est cliqué</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="196"/>
         <source>Hebrew morphological lexicon:</source>
-        <translation>Lexique morphologique Hébreu:</translation>
+        <translation type="unfinished">Lexique morphologique Hébreu:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="198"/>
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
-        <translation>Le lexique morphologique standard pour l&apos;Hébreu est utilisé quand un lien sur une marque morphologique dans un texte Hébreu est suivit</translation>
+        <translation type="unfinished">Le lexique morphologique standard pour l&apos;Hébreu est utilisé quand un lien sur une marque morphologique dans un texte Hébreu est suivit</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="200"/>
         <source>Greek morphological lexicon:</source>
-        <translation>Lexique morphologique grec:</translation>
+        <translation type="unfinished">Lexique morphologique grec:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="202"/>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
-        <translation>Le lexique morphologique standard pour le grec est utilisé quand un lien sur une marque morphologique dans un texte grec est suivit</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="62"/>
-        <source></source>
-        <translation></translation>
+        <translation type="unfinished">Le lexique morphologique standard pour le grec est utilisé quand un lien sur une marque morphologique dans un texte grec est suivit</translation>
     </message>
 </context>
 <context>
@@ -5390,6 +5385,82 @@ Cette opération peut prendre du temps. Procéder à l&apos;indexation ?</transl
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="39"/>
         <source>Search result of the selected work</source>
         <translation>Résultat de la recherche pour le module sélectionné</translation>
+    </message>
+</context>
+<context>
+    <name>StandardWorksTab</name>
+    <message>
+        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
+        <translation type="obsolete">Les modules standards sont utilisés lorsqu&apos;aucun module n&apos;est spécifié en particulier, par exemple lorsque l&apos;on clique sur un lien dans une Bible ou un lexique</translation>
+    </message>
+    <message>
+        <source>Bible:</source>
+        <translation type="obsolete">Bible:</translation>
+    </message>
+    <message>
+        <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
+        <translation type="obsolete">La Bible par défaut est utilisée lors d&apos;un clic sur un lien hypertexte vers une Bible</translation>
+    </message>
+    <message>
+        <source>Commentary:</source>
+        <translation type="obsolete">Commentaire:</translation>
+    </message>
+    <message>
+        <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
+        <translation type="obsolete">Le commentaire par défaut est utilisé quand un lien sur un commentaire est cliqué</translation>
+    </message>
+    <message>
+        <source>Lexicon:</source>
+        <translation type="obsolete">Lexique:</translation>
+    </message>
+    <message>
+        <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
+        <translation type="obsolete">Le lexique par défaut est utilisé quand un lien hypertexte sur un lexique est cliqué</translation>
+    </message>
+    <message>
+        <source>Daily devotional:</source>
+        <translation type="obsolete">Lectures quotidiennes:</translation>
+    </message>
+    <message>
+        <source>The standard devotional will be used to display a short start up devotional</source>
+        <translation type="obsolete">La lecture quotidienne par défaut sera utilisée pour afficher une courte lecture au démarrage</translation>
+    </message>
+    <message>
+        <source>Hebrew Strong&apos;s lexicon:</source>
+        <translation type="obsolete">Lexique des numéros Strong Hébreux:</translation>
+    </message>
+    <message>
+        <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
+        <translation type="obsolete">Le lexique Hébreu par défaut est utilisé quand un lien hypertexte sur un lexique Hébreu est cliqué</translation>
+    </message>
+    <message>
+        <source>Greek Strong&apos;s lexicon:</source>
+        <translation type="obsolete">Lexique des numéros Strong grecs:</translation>
+    </message>
+    <message>
+        <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
+        <translation type="obsolete">Le lexique grec par défaut est utilisé quand un lien hypertexte sur un lexique grec est cliqué</translation>
+    </message>
+    <message>
+        <source>Hebrew morphological lexicon:</source>
+        <translation type="obsolete">Lexique morphologique Hébreu:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
+        <translation type="obsolete">Le lexique morphologique standard pour l&apos;Hébreu est utilisé quand un lien sur une marque morphologique dans un texte Hébreu est suivit</translation>
+    </message>
+    <message>
+        <source>Greek morphological lexicon:</source>
+        <translation type="obsolete">Lexique morphologique grec:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
+        <translation type="obsolete">Le lexique morphologique standard pour le grec est utilisé quand un lien sur une marque morphologique dans un texte grec est suivit</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="62"/>
+        <source></source>
+        <translation></translation>
     </message>
 </context>
 <context>

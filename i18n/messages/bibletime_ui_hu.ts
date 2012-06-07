@@ -42,6 +42,11 @@ Ez a  fájl a BibleTime licenszelésével megegyező licensszel terjeszthető.</
         <translation>&amp;Ablak</translation>
     </message>
     <message>
+        <location filename="../../src/bibletime_init.cpp" line="709"/>
+        <source>Sw&amp;itch session</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../src/bibletime_init.cpp" line="711"/>
         <source>Se&amp;ttings</source>
         <translation>Beállí&amp;tások</translation>
@@ -339,11 +344,6 @@ Ez a  fájl a BibleTime licenszelésével megegyező licensszel terjeszthető.</
         <location filename="../../src/bibletime_init.cpp" line="699"/>
         <source>Format toolbar</source>
         <translation>Formátum eszköztár</translation>
-    </message>
-    <message>
-        <location filename="../../src/bibletime_init.cpp" line="709"/>
-        <source>Sw&amp;itch session</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="732"/>
@@ -1694,87 +1694,87 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="169"/>
         <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
-        <translation>Az alapértelmezett munkákat akkor használjuk, amikor nincs egyéb munka megnyitva, például amikor egy hivatkozásra kattint egy Biblában vagy lexikonban.</translation>
+        <translation type="unfinished">Az alapértelmezett munkákat akkor használjuk, amikor nincs egyéb munka megnyitva, például amikor egy hivatkozásra kattint egy Biblában vagy lexikonban.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="172"/>
         <source>Bible:</source>
-        <translation>Biblia:</translation>
+        <translation type="unfinished">Biblia:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="174"/>
         <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
-        <translation>Az alapértelmezett Bibliát használjuk, ha egy kereszthivatkozásra kattintunk a Bibliában</translation>
+        <translation type="unfinished">Az alapértelmezett Bibliát használjuk, ha egy kereszthivatkozásra kattintunk a Bibliában</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="176"/>
         <source>Commentary:</source>
-        <translation>Kommentár:</translation>
+        <translation type="unfinished">Kommentár:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="178"/>
         <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
-        <translation>Az alapértelmezett kommentárt használjuk, ha egy kereszthivatkozásra kattintunk egy kommentárban</translation>
+        <translation type="unfinished">Az alapértelmezett kommentárt használjuk, ha egy kereszthivatkozásra kattintunk egy kommentárban</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="180"/>
         <source>Lexicon:</source>
-        <translation>Lexikon:</translation>
+        <translation type="unfinished">Lexikon:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="182"/>
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
-        <translation>Az alapértelmezett lexikont használjuk, ha egy kereszthivatkozásra kattintunk egy lexikonban</translation>
+        <translation type="unfinished">Az alapértelmezett lexikont használjuk, ha egy kereszthivatkozásra kattintunk egy lexikonban</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="184"/>
         <source>Daily devotional:</source>
-        <translation>Napi áhitat:</translation>
+        <translation type="unfinished">Napi áhitat:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="186"/>
         <source>The standard devotional will be used to display a short start up devotional</source>
-        <translation>Az alapértelmezett áhitat lesz használva, egy gyors áhitat mutatásához</translation>
+        <translation type="unfinished">Az alapértelmezett áhitat lesz használva, egy gyors áhitat mutatásához</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="188"/>
         <source>Hebrew Strong&apos;s lexicon:</source>
-        <translation>Héber Strong&apos;s lexikon:</translation>
+        <translation type="unfinished">Héber Strong&apos;s lexikon:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="190"/>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
-        <translation>Az alapértelmezett Héber lexikont használjuk, ha egy kereszthivatkozásra kattintunk egy Héber lexikonban</translation>
+        <translation type="unfinished">Az alapértelmezett Héber lexikont használjuk, ha egy kereszthivatkozásra kattintunk egy Héber lexikonban</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="192"/>
         <source>Greek Strong&apos;s lexicon:</source>
-        <translation>Görög Strong&apos;s lexikon:</translation>
+        <translation type="unfinished">Görög Strong&apos;s lexikon:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="194"/>
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
-        <translation>Az alapértelmezett Görög lexikont használjuk, ha egy kereszthivatkozásra kattintunk egy Görög lexikonban</translation>
+        <translation type="unfinished">Az alapértelmezett Görög lexikont használjuk, ha egy kereszthivatkozásra kattintunk egy Görög lexikonban</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="196"/>
         <source>Hebrew morphological lexicon:</source>
-        <translation>Héber morfológiai lexikon:</translation>
+        <translation type="unfinished">Héber morfológiai lexikon:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="198"/>
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
-        <translation>Az alap héber morfológiai lexikont használjuk, ha nincs egyéb kiválasztva, például, ha  egy morfológiai hivatkozásra kattintunk egy héber szövegben</translation>
+        <translation type="unfinished">Az alap héber morfológiai lexikont használjuk, ha nincs egyéb kiválasztva, például, ha  egy morfológiai hivatkozásra kattintunk egy héber szövegben</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="200"/>
         <source>Greek morphological lexicon:</source>
-        <translation>Görög morfológiai lexikon:</translation>
+        <translation type="unfinished">Görög morfológiai lexikon:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="202"/>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
-        <translation>Az alap görög morfológiai lexikont használjuk, ha nincs egyéb kiválasztva, például, ha  egy morfológiai hivatkozásra kattintunk egy görög szövegben</translation>
+        <translation type="unfinished">Az alap görög morfológiai lexikont használjuk, ha nincs egyéb kiválasztva, például, ha  egy morfológiai hivatkozásra kattintunk egy görög szövegben</translation>
     </message>
 </context>
 <context>
@@ -5033,6 +5033,77 @@ Language name ppk</extracomment>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="39"/>
         <source>Search result of the selected work</source>
         <translation>Találatok a választott dokumentumban</translation>
+    </message>
+</context>
+<context>
+    <name>StandardWorksTab</name>
+    <message>
+        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
+        <translation type="obsolete">Az alapértelmezett munkákat akkor használjuk, amikor nincs egyéb munka megnyitva, például amikor egy hivatkozásra kattint egy Biblában vagy lexikonban.</translation>
+    </message>
+    <message>
+        <source>Bible:</source>
+        <translation type="obsolete">Biblia:</translation>
+    </message>
+    <message>
+        <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
+        <translation type="obsolete">Az alapértelmezett Bibliát használjuk, ha egy kereszthivatkozásra kattintunk a Bibliában</translation>
+    </message>
+    <message>
+        <source>Commentary:</source>
+        <translation type="obsolete">Kommentár:</translation>
+    </message>
+    <message>
+        <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
+        <translation type="obsolete">Az alapértelmezett kommentárt használjuk, ha egy kereszthivatkozásra kattintunk egy kommentárban</translation>
+    </message>
+    <message>
+        <source>Lexicon:</source>
+        <translation type="obsolete">Lexikon:</translation>
+    </message>
+    <message>
+        <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
+        <translation type="obsolete">Az alapértelmezett lexikont használjuk, ha egy kereszthivatkozásra kattintunk egy lexikonban</translation>
+    </message>
+    <message>
+        <source>Daily devotional:</source>
+        <translation type="obsolete">Napi áhitat:</translation>
+    </message>
+    <message>
+        <source>The standard devotional will be used to display a short start up devotional</source>
+        <translation type="obsolete">Az alapértelmezett áhitat lesz használva, egy gyors áhitat mutatásához</translation>
+    </message>
+    <message>
+        <source>Hebrew Strong&apos;s lexicon:</source>
+        <translation type="obsolete">Héber Strong&apos;s lexikon:</translation>
+    </message>
+    <message>
+        <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
+        <translation type="obsolete">Az alapértelmezett Héber lexikont használjuk, ha egy kereszthivatkozásra kattintunk egy Héber lexikonban</translation>
+    </message>
+    <message>
+        <source>Greek Strong&apos;s lexicon:</source>
+        <translation type="obsolete">Görög Strong&apos;s lexikon:</translation>
+    </message>
+    <message>
+        <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
+        <translation type="obsolete">Az alapértelmezett Görög lexikont használjuk, ha egy kereszthivatkozásra kattintunk egy Görög lexikonban</translation>
+    </message>
+    <message>
+        <source>Hebrew morphological lexicon:</source>
+        <translation type="obsolete">Héber morfológiai lexikon:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
+        <translation type="obsolete">Az alap héber morfológiai lexikont használjuk, ha nincs egyéb kiválasztva, például, ha  egy morfológiai hivatkozásra kattintunk egy héber szövegben</translation>
+    </message>
+    <message>
+        <source>Greek morphological lexicon:</source>
+        <translation type="obsolete">Görög morfológiai lexikon:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
+        <translation type="obsolete">Az alap görög morfológiai lexikont használjuk, ha nincs egyéb kiválasztva, például, ha  egy morfológiai hivatkozásra kattintunk egy görög szövegben</translation>
     </message>
 </context>
 <context>

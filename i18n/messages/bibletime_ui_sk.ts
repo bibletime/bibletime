@@ -1868,87 +1868,82 @@ skratka</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="172"/>
         <source>Bible:</source>
-        <translation>Biblia:</translation>
+        <translation type="unfinished">Biblia:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="174"/>
         <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
-        <translation>Štandardná Biblia sa použije, keď sa klikne na hyperodkaz do Biblie</translation>
+        <translation type="unfinished">Štandardná Biblia sa použije, keď sa klikne na hyperodkaz do Biblie</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="176"/>
         <source>Commentary:</source>
-        <translation>Komentár:</translation>
+        <translation type="unfinished">Komentár:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="178"/>
         <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
-        <translation>Štandardný komentár sa použije, keď sa klikne na hyperodkaz do komentára</translation>
+        <translation type="unfinished">Štandardný komentár sa použije, keď sa klikne na hyperodkaz do komentára</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="180"/>
         <source>Lexicon:</source>
-        <translation>Lexikón:</translation>
+        <translation type="unfinished">Lexikón:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="182"/>
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
-        <translation>Štandardný lexikón sa použije, keď sa klikne na hyperodkaz do lexikónu</translation>
+        <translation type="unfinished">Štandardný lexikón sa použije, keď sa klikne na hyperodkaz do lexikónu</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="184"/>
         <source>Daily devotional:</source>
-        <translation>Denné zamyslenie:</translation>
+        <translation type="unfinished">Denné zamyslenie:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="186"/>
         <source>The standard devotional will be used to display a short start up devotional</source>
-        <translation>Štandardné denné zamyslenie sa použije na zobrazenie krátkeho zamyslenie pri spustení</translation>
+        <translation type="unfinished">Štandardné denné zamyslenie sa použije na zobrazenie krátkeho zamyslenie pri spustení</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="188"/>
         <source>Hebrew Strong&apos;s lexicon:</source>
-        <translation>Lexikón hebrejských strongových čísel:</translation>
+        <translation type="unfinished">Lexikón hebrejských strongových čísel:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="190"/>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
-        <translation>Štandardný hebrejský lexikón sa použije, keď sa klikne na hyperodkaz do hebrejského lexikónu</translation>
+        <translation type="unfinished">Štandardný hebrejský lexikón sa použije, keď sa klikne na hyperodkaz do hebrejského lexikónu</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="192"/>
         <source>Greek Strong&apos;s lexicon:</source>
-        <translation>Lexikón gréckych strongových čísel:</translation>
+        <translation type="unfinished">Lexikón gréckych strongových čísel:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="194"/>
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
-        <translation>Štandardný grécky lexikón sa použije, keď sa klikne na hyperodkaz do gréckeho lexikónu</translation>
+        <translation type="unfinished">Štandardný grécky lexikón sa použije, keď sa klikne na hyperodkaz do gréckeho lexikónu</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="196"/>
         <source>Hebrew morphological lexicon:</source>
-        <translation>Hebrejský morfologický lexikón:</translation>
+        <translation type="unfinished">Hebrejský morfologický lexikón:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="198"/>
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
-        <translation>Štandardný morfologický lexikón pre hebrejský text sa použije, keď sa klikne na hyperodkaz morfologickej značky v hebrejskom texte</translation>
+        <translation type="unfinished">Štandardný morfologický lexikón pre hebrejský text sa použije, keď sa klikne na hyperodkaz morfologickej značky v hebrejskom texte</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="200"/>
         <source>Greek morphological lexicon:</source>
-        <translation>Grécky morfologický lexikón:</translation>
+        <translation type="unfinished">Grécky morfologický lexikón:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="202"/>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
-        <translation>Štandardný morfologický lexikón pre grécky text sa použije, keď sa klikne na hyperodkaz morfologickej značky v gréckom texte</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="62"/>
-        <source></source>
-        <translation></translation>
+        <translation type="unfinished">Štandardný morfologický lexikón pre grécky text sa použije, keď sa klikne na hyperodkaz morfologickej značky v gréckom texte</translation>
     </message>
 </context>
 <context>
@@ -5390,6 +5385,78 @@ Toto môže dlho trvať. Pokračovať s indexovaním?</translation>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="39"/>
         <source>Search result of the selected work</source>
         <translation>Výsledky hľadania vo zvolenom diele</translation>
+    </message>
+</context>
+<context>
+    <name>StandardWorksTab</name>
+    <message>
+        <source>Bible:</source>
+        <translation type="obsolete">Biblia:</translation>
+    </message>
+    <message>
+        <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
+        <translation type="obsolete">Štandardná Biblia sa použije, keď sa klikne na hyperodkaz do Biblie</translation>
+    </message>
+    <message>
+        <source>Commentary:</source>
+        <translation type="obsolete">Komentár:</translation>
+    </message>
+    <message>
+        <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
+        <translation type="obsolete">Štandardný komentár sa použije, keď sa klikne na hyperodkaz do komentára</translation>
+    </message>
+    <message>
+        <source>Lexicon:</source>
+        <translation type="obsolete">Lexikón:</translation>
+    </message>
+    <message>
+        <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
+        <translation type="obsolete">Štandardný lexikón sa použije, keď sa klikne na hyperodkaz do lexikónu</translation>
+    </message>
+    <message>
+        <source>Daily devotional:</source>
+        <translation type="obsolete">Denné zamyslenie:</translation>
+    </message>
+    <message>
+        <source>The standard devotional will be used to display a short start up devotional</source>
+        <translation type="obsolete">Štandardné denné zamyslenie sa použije na zobrazenie krátkeho zamyslenie pri spustení</translation>
+    </message>
+    <message>
+        <source>Hebrew Strong&apos;s lexicon:</source>
+        <translation type="obsolete">Lexikón hebrejských strongových čísel:</translation>
+    </message>
+    <message>
+        <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
+        <translation type="obsolete">Štandardný hebrejský lexikón sa použije, keď sa klikne na hyperodkaz do hebrejského lexikónu</translation>
+    </message>
+    <message>
+        <source>Greek Strong&apos;s lexicon:</source>
+        <translation type="obsolete">Lexikón gréckych strongových čísel:</translation>
+    </message>
+    <message>
+        <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
+        <translation type="obsolete">Štandardný grécky lexikón sa použije, keď sa klikne na hyperodkaz do gréckeho lexikónu</translation>
+    </message>
+    <message>
+        <source>Hebrew morphological lexicon:</source>
+        <translation type="obsolete">Hebrejský morfologický lexikón:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
+        <translation type="obsolete">Štandardný morfologický lexikón pre hebrejský text sa použije, keď sa klikne na hyperodkaz morfologickej značky v hebrejskom texte</translation>
+    </message>
+    <message>
+        <source>Greek morphological lexicon:</source>
+        <translation type="obsolete">Grécky morfologický lexikón:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
+        <translation type="obsolete">Štandardný morfologický lexikón pre grécky text sa použije, keď sa klikne na hyperodkaz morfologickej značky v gréckom texte</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="62"/>
+        <source></source>
+        <translation></translation>
     </message>
 </context>
 <context>

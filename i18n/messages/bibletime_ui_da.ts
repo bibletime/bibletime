@@ -1861,92 +1861,87 @@ genvej</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="169"/>
         <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
-        <translation>Standard værker bliver benyttet når intet bestemt værk er angivet, for eksempel når et link til en Bibel eller et leksikon bliver åbnet.</translation>
+        <translation type="unfinished">Standard værker bliver benyttet når intet bestemt værk er angivet, for eksempel når et link til en Bibel eller et leksikon bliver åbnet.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="172"/>
         <source>Bible:</source>
-        <translation>Bibel:</translation>
+        <translation type="unfinished">Bibel:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="174"/>
         <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
-        <translation>Standard-Bibelen der bliver anvendt når der trykkes på et link til en Bibel</translation>
+        <translation type="unfinished">Standard-Bibelen der bliver anvendt når der trykkes på et link til en Bibel</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="176"/>
         <source>Commentary:</source>
-        <translation>Kommentar:</translation>
+        <translation type="unfinished">Kommentar:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="178"/>
         <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
-        <translation>Standard-kommentaren der bliver anvendt når der trykkes på et link til en kommentar</translation>
+        <translation type="unfinished">Standard-kommentaren der bliver anvendt når der trykkes på et link til en kommentar</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="180"/>
         <source>Lexicon:</source>
-        <translation>Leksikon:</translation>
+        <translation type="unfinished">Leksikon:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="182"/>
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
-        <translation>Standard-leksikonet der bliver anvendt når der trykkes på et link til et leksikon</translation>
+        <translation type="unfinished">Standard-leksikonet der bliver anvendt når der trykkes på et link til et leksikon</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="184"/>
         <source>Daily devotional:</source>
-        <translation>Daglig andagt:</translation>
+        <translation type="unfinished">Daglig andagt:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="186"/>
         <source>The standard devotional will be used to display a short start up devotional</source>
-        <translation>Standard-andagten der bliver anvendt når der trykkes på et hyperlink til en andagt</translation>
+        <translation type="unfinished">Standard-andagten der bliver anvendt når der trykkes på et hyperlink til en andagt</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="188"/>
         <source>Hebrew Strong&apos;s lexicon:</source>
-        <translation>Hebraisk Strong&apos;s-leksikon:</translation>
+        <translation type="unfinished">Hebraisk Strong&apos;s-leksikon:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="190"/>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
-        <translation>Det hebraiske standard-leksikon der bliver anvendt når der trykkes på et link til et hebraisk leksikon</translation>
+        <translation type="unfinished">Det hebraiske standard-leksikon der bliver anvendt når der trykkes på et link til et hebraisk leksikon</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="192"/>
         <source>Greek Strong&apos;s lexicon:</source>
-        <translation>Græsk Strong&apos;s-leksikon:</translation>
+        <translation type="unfinished">Græsk Strong&apos;s-leksikon:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="194"/>
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
-        <translation>Det græske standard-leksikon der bliver anvendt når der trykkes på et link til et græsk leksikon</translation>
+        <translation type="unfinished">Det græske standard-leksikon der bliver anvendt når der trykkes på et link til et græsk leksikon</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="196"/>
         <source>Hebrew morphological lexicon:</source>
-        <translation>Hebraisk morfologisk leksikon:</translation>
+        <translation type="unfinished">Hebraisk morfologisk leksikon:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="198"/>
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
-        <translation>Det morfologiske standard-leksikon for hebraiske tekster der bliver anvendt når der trykkes på et link til et morfologisk mærke i en hebraisk tekst</translation>
+        <translation type="unfinished">Det morfologiske standard-leksikon for hebraiske tekster der bliver anvendt når der trykkes på et link til et morfologisk mærke i en hebraisk tekst</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="200"/>
         <source>Greek morphological lexicon:</source>
-        <translation>Græsk morfologisk leksikon:</translation>
+        <translation type="unfinished">Græsk morfologisk leksikon:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="202"/>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
-        <translation>Det morfologiske standard-leksikon for græske tekster der bliver anvendt når der trykkes på et link til et morfologisk mærke i en græsk tekst</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="62"/>
-        <source></source>
-        <translation></translation>
+        <translation type="unfinished">Det morfologiske standard-leksikon for græske tekster der bliver anvendt når der trykkes på et link til et morfologisk mærke i en græsk tekst</translation>
     </message>
 </context>
 <context>
@@ -5386,6 +5381,82 @@ Dette kan tage lang tid. Fortsæt med indekserering?</translation>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="39"/>
         <source>Search result of the selected work</source>
         <translation>Søge-resultater for det valgte værk</translation>
+    </message>
+</context>
+<context>
+    <name>StandardWorksTab</name>
+    <message>
+        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
+        <translation type="obsolete">Standard værker bliver benyttet når intet bestemt værk er angivet, for eksempel når et link til en Bibel eller et leksikon bliver åbnet.</translation>
+    </message>
+    <message>
+        <source>Bible:</source>
+        <translation type="obsolete">Bibel:</translation>
+    </message>
+    <message>
+        <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
+        <translation type="obsolete">Standard-Bibelen der bliver anvendt når der trykkes på et link til en Bibel</translation>
+    </message>
+    <message>
+        <source>Commentary:</source>
+        <translation type="obsolete">Kommentar:</translation>
+    </message>
+    <message>
+        <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
+        <translation type="obsolete">Standard-kommentaren der bliver anvendt når der trykkes på et link til en kommentar</translation>
+    </message>
+    <message>
+        <source>Lexicon:</source>
+        <translation type="obsolete">Leksikon:</translation>
+    </message>
+    <message>
+        <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
+        <translation type="obsolete">Standard-leksikonet der bliver anvendt når der trykkes på et link til et leksikon</translation>
+    </message>
+    <message>
+        <source>Daily devotional:</source>
+        <translation type="obsolete">Daglig andagt:</translation>
+    </message>
+    <message>
+        <source>The standard devotional will be used to display a short start up devotional</source>
+        <translation type="obsolete">Standard-andagten der bliver anvendt når der trykkes på et hyperlink til en andagt</translation>
+    </message>
+    <message>
+        <source>Hebrew Strong&apos;s lexicon:</source>
+        <translation type="obsolete">Hebraisk Strong&apos;s-leksikon:</translation>
+    </message>
+    <message>
+        <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
+        <translation type="obsolete">Det hebraiske standard-leksikon der bliver anvendt når der trykkes på et link til et hebraisk leksikon</translation>
+    </message>
+    <message>
+        <source>Greek Strong&apos;s lexicon:</source>
+        <translation type="obsolete">Græsk Strong&apos;s-leksikon:</translation>
+    </message>
+    <message>
+        <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
+        <translation type="obsolete">Det græske standard-leksikon der bliver anvendt når der trykkes på et link til et græsk leksikon</translation>
+    </message>
+    <message>
+        <source>Hebrew morphological lexicon:</source>
+        <translation type="obsolete">Hebraisk morfologisk leksikon:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
+        <translation type="obsolete">Det morfologiske standard-leksikon for hebraiske tekster der bliver anvendt når der trykkes på et link til et morfologisk mærke i en hebraisk tekst</translation>
+    </message>
+    <message>
+        <source>Greek morphological lexicon:</source>
+        <translation type="obsolete">Græsk morfologisk leksikon:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
+        <translation type="obsolete">Det morfologiske standard-leksikon for græske tekster der bliver anvendt når der trykkes på et link til et morfologisk mærke i en græsk tekst</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="62"/>
+        <source></source>
+        <translation></translation>
     </message>
 </context>
 <context>

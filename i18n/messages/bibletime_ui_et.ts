@@ -307,17 +307,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="372"/>
         <source>Toggle visibility of the bookshelf window</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuva raamaturiiuli akent/paneeli</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="376"/>
         <source>Toggle visibility of the bookmarks window</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuva järjehoidjate akent/paneeli</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="380"/>
         <source>Toggle visibility of the mag window</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuva infokuva akent/paneeli</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="695"/>
@@ -978,7 +978,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="113"/>
         <source>Show footnotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuva allmärkusi</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/btdisplaysettingsbutton.cpp" line="114"/>
@@ -1024,17 +1024,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontchooserwidget.cpp" line="97"/>
         <source>Font name:</source>
-        <translation type="unfinished">Kirjatüüp:</translation>
+        <translation>Kirjatüüp:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontchooserwidget.cpp" line="98"/>
         <source>Font style:</source>
-        <translation type="unfinished">Kirja stiil:</translation>
+        <translation>Kirjastiil:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btfontchooserwidget.cpp" line="99"/>
         <source>Size:</source>
-        <translation type="unfinished">Suurus:</translation>
+        <translation>Suurus:</translation>
     </message>
 </context>
 <context>
@@ -1074,12 +1074,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="108"/>
         <source>%1 KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 KiB</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="115"/>
         <source>0 KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>0 KiB</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="125"/>
@@ -1875,92 +1875,87 @@ kiirklahv</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="169"/>
         <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
-        <translation>Eelistatud teoseid kasutatake kui ei ole määratud konkreetset teost, näiteks kui kasutatakse hüperlinki, mis viitab Piiblisse või mõnda leksikoni.</translation>
+        <translation type="unfinished">Eelistatud teoseid kasutatake kui ei ole määratud konkreetset teost, näiteks kui kasutatakse hüperlinki, mis viitab Piiblisse või mõnda leksikoni.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="172"/>
         <source>Bible:</source>
-        <translation>Piibel:</translation>
+        <translation type="unfinished">Piibel:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="174"/>
         <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
-        <translation>Eelistatud Piiblit kasutatakse siis kui vajutatakse mõnele Piibli kirjakohale viitavale hüperlingile</translation>
+        <translation type="unfinished">Eelistatud Piiblit kasutatakse siis kui vajutatakse mõnele Piibli kirjakohale viitavale hüperlingile</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="176"/>
         <source>Commentary:</source>
-        <translation>Kommentaarid:</translation>
+        <translation type="unfinished">Kommentaarid:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="178"/>
         <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
-        <translation>Eelistatud kommentaare kasutatakse siis kui vajutatakse mõnele kommentaaridele viitavale hüperlingile</translation>
+        <translation type="unfinished">Eelistatud kommentaare kasutatakse siis kui vajutatakse mõnele kommentaaridele viitavale hüperlingile</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="180"/>
         <source>Lexicon:</source>
-        <translation>Leksikon:</translation>
+        <translation type="unfinished">Leksikon:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="182"/>
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
-        <translation>Eelistatud leksikoni kasutatakse siis kui vajutatakse mõnele leksikoni viitavale hüperlingile</translation>
+        <translation type="unfinished">Eelistatud leksikoni kasutatakse siis kui vajutatakse mõnele leksikoni viitavale hüperlingile</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="184"/>
         <source>Daily devotional:</source>
-        <translation>Igapäevane harduskirjandus:</translation>
+        <translation type="unfinished">Igapäevane harduskirjandus:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="186"/>
         <source>The standard devotional will be used to display a short start up devotional</source>
-        <translation>Eelistatud igapäevast harduskirjanduse teost kasutatakse sellest lühikeste lõikude kuvamiseks BibleTime käivitamisel</translation>
+        <translation type="unfinished">Eelistatud igapäevast harduskirjanduse teost kasutatakse sellest lühikeste lõikude kuvamiseks BibleTime käivitamisel</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="188"/>
         <source>Hebrew Strong&apos;s lexicon:</source>
-        <translation>Heebreakeelne Strongi leksikon:</translation>
+        <translation type="unfinished">Heebreakeelne Strongi leksikon:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="190"/>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
-        <translation>Eelistatud heebreakeelset leksikoni kasutatakse, kui klikitakse hüperlingil, mis viitab heebreakeelsesse leksikoni</translation>
+        <translation type="unfinished">Eelistatud heebreakeelset leksikoni kasutatakse, kui klikitakse hüperlingil, mis viitab heebreakeelsesse leksikoni</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="192"/>
         <source>Greek Strong&apos;s lexicon:</source>
-        <translation>Kreekakeelne Strongi leksikon:</translation>
+        <translation type="unfinished">Kreekakeelne Strongi leksikon:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="194"/>
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
-        <translation>Eelistatud kreekakeelset leksikoni kasutatakse, kui klikitakse hüperlingil, mis viitab kreekakeelsesse leksikoni</translation>
+        <translation type="unfinished">Eelistatud kreekakeelset leksikoni kasutatakse, kui klikitakse hüperlingil, mis viitab kreekakeelsesse leksikoni</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="196"/>
         <source>Hebrew morphological lexicon:</source>
-        <translation>Heebreakeelne morfoloogiline leksikon:</translation>
+        <translation type="unfinished">Heebreakeelne morfoloogiline leksikon:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="198"/>
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
-        <translation>Eelistatud heebreakeelset morfoloogilist leksikoni kasutatakse, kui klikitakse morfoloogilise märgendi hüperlingil heebreakeelses tekstis</translation>
+        <translation type="unfinished">Eelistatud heebreakeelset morfoloogilist leksikoni kasutatakse, kui klikitakse morfoloogilise märgendi hüperlingil heebreakeelses tekstis</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="200"/>
         <source>Greek morphological lexicon:</source>
-        <translation>Kreekakeelne morfoloogiline leksikon:</translation>
+        <translation type="unfinished">Kreekakeelne morfoloogiline leksikon:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="202"/>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
-        <translation>Eelistatud kreekakeelset morfoloogilist leksikoni kasutatakse, kui klikitakse morfoloogilise märgendi hüperlingil kreekakeelses tekstis</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="62"/>
-        <source></source>
-        <translation></translation>
+        <translation type="unfinished">Eelistatud kreekakeelset morfoloogilist leksikoni kasutatakse, kui klikitakse morfoloogilise märgendi hüperlingil kreekakeelses tekstis</translation>
     </message>
 </context>
 <context>
@@ -2118,7 +2113,7 @@ kiirklahv</translation>
     <message>
         <location filename="../../src/frontend/tips/bttipdialog.cpp" line="178"/>
         <source>You can save your open windows in a session. Such a session can easily be restored later on. You can save as many sessions as you like. The session feature can be accessed under the Window menu entry.</source>
-        <translation type="unfinished"></translation>
+        <translation>Oma avatud aknad võite salvestada sessiooniks. Taolist sessiooni saab hiljem hõlpsasti taastada. Salvestatavate sessioonide hulk pole piiratud. Sessioone saab hallata &quot;Aken&quot;-menüü alt.</translation>
     </message>
     <message>
         <source>The Bookshelf, Bookmark, and Mag windows can be moved to new locations by dragging them from the title at the top of each window. They can be placed to the left, right, above, or below the works windows. They can be placed on top of each other and tabs will appear so each window can be selected. They can be resized by dragging theborder between the window and another window.</source>
@@ -3313,7 +3308,7 @@ Kas soovite jätkata?</translation>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="174"/>
         <source>&lt;div class=&quot;moduleinfo&quot;&gt;&lt;h3&gt;%1&lt;/h3&gt;&lt;p&gt;%2&lt;/p&gt;&lt;p&gt;Version: %3&lt;/p&gt;&lt;/div&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;div class=&quot;moduleinfo&quot;&gt;&lt;h3&gt;%1&lt;/h3&gt;&lt;p&gt;%2&lt;/p&gt;&lt;p&gt;Versioon: %3&lt;/p&gt;&lt;/div&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="194"/>
@@ -3358,7 +3353,7 @@ Kas soovite jätkata?</translation>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="408"/>
         <source>An internal error occurred while building the index: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Indekseerimisel esines programmisisene viga: %1</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="415"/>
@@ -4690,7 +4685,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/displaywindow/bttextwindowheaderwidget.cpp" line="113"/>
         <source>Replace</source>
-        <translation type="unfinished">Asenda</translation>
+        <translation>Asenda</translation>
     </message>
 </context>
 <context>
@@ -5236,7 +5231,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="137"/>
         <source>Select a scope from the list to edit the searchranges</source>
-        <translation type="unfinished"></translation>
+        <translation>Otsingu ulatuse muutmiseks valige nimekirjast vastav skoop</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="148"/>
@@ -5251,17 +5246,17 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="152"/>
         <source>Change the search ranges of the selected searchscope item. Have a look at the predefined search scopes to see how search ranges are constructed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Muuda valitud otsinguskoobi ulatusi. Nende konstrueerimise näidiseks vaata eeldefineeritud otsinguskoopide ulatusi.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="157"/>
         <source>Parsed search range:</source>
-        <translation>Parsitud otsinguskoop:</translation>
+        <translation>Parsitud ulatus:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="171"/>
         <source>New range</source>
-        <translation>Uus skoop</translation>
+        <translation>Uus ulatus</translation>
     </message>
     <message>
         <source>&lt;invalid name of search range&gt;</source>
@@ -5428,6 +5423,82 @@ See võib võtta kaua aega. Kas jätkata indekseerimisega?</translation>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="39"/>
         <source>Search result of the selected work</source>
         <translation>Valitud teostest otsimise tulemused</translation>
+    </message>
+</context>
+<context>
+    <name>StandardWorksTab</name>
+    <message>
+        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
+        <translation type="obsolete">Eelistatud teoseid kasutatake kui ei ole määratud konkreetset teost, näiteks kui kasutatakse hüperlinki, mis viitab Piiblisse või mõnda leksikoni.</translation>
+    </message>
+    <message>
+        <source>Bible:</source>
+        <translation type="obsolete">Piibel:</translation>
+    </message>
+    <message>
+        <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
+        <translation type="obsolete">Eelistatud Piiblit kasutatakse siis kui vajutatakse mõnele Piibli kirjakohale viitavale hüperlingile</translation>
+    </message>
+    <message>
+        <source>Commentary:</source>
+        <translation type="obsolete">Kommentaarid:</translation>
+    </message>
+    <message>
+        <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
+        <translation type="obsolete">Eelistatud kommentaare kasutatakse siis kui vajutatakse mõnele kommentaaridele viitavale hüperlingile</translation>
+    </message>
+    <message>
+        <source>Lexicon:</source>
+        <translation type="obsolete">Leksikon:</translation>
+    </message>
+    <message>
+        <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
+        <translation type="obsolete">Eelistatud leksikoni kasutatakse siis kui vajutatakse mõnele leksikoni viitavale hüperlingile</translation>
+    </message>
+    <message>
+        <source>Daily devotional:</source>
+        <translation type="obsolete">Igapäevane harduskirjandus:</translation>
+    </message>
+    <message>
+        <source>The standard devotional will be used to display a short start up devotional</source>
+        <translation type="obsolete">Eelistatud igapäevast harduskirjanduse teost kasutatakse sellest lühikeste lõikude kuvamiseks BibleTime käivitamisel</translation>
+    </message>
+    <message>
+        <source>Hebrew Strong&apos;s lexicon:</source>
+        <translation type="obsolete">Heebreakeelne Strongi leksikon:</translation>
+    </message>
+    <message>
+        <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
+        <translation type="obsolete">Eelistatud heebreakeelset leksikoni kasutatakse, kui klikitakse hüperlingil, mis viitab heebreakeelsesse leksikoni</translation>
+    </message>
+    <message>
+        <source>Greek Strong&apos;s lexicon:</source>
+        <translation type="obsolete">Kreekakeelne Strongi leksikon:</translation>
+    </message>
+    <message>
+        <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
+        <translation type="obsolete">Eelistatud kreekakeelset leksikoni kasutatakse, kui klikitakse hüperlingil, mis viitab kreekakeelsesse leksikoni</translation>
+    </message>
+    <message>
+        <source>Hebrew morphological lexicon:</source>
+        <translation type="obsolete">Heebreakeelne morfoloogiline leksikon:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
+        <translation type="obsolete">Eelistatud heebreakeelset morfoloogilist leksikoni kasutatakse, kui klikitakse morfoloogilise märgendi hüperlingil heebreakeelses tekstis</translation>
+    </message>
+    <message>
+        <source>Greek morphological lexicon:</source>
+        <translation type="obsolete">Kreekakeelne morfoloogiline leksikon:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
+        <translation type="obsolete">Eelistatud kreekakeelset morfoloogilist leksikoni kasutatakse, kui klikitakse morfoloogilise märgendi hüperlingil kreekakeelses tekstis</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="62"/>
+        <source></source>
+        <translation></translation>
     </message>
 </context>
 <context>

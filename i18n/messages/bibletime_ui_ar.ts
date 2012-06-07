@@ -1836,87 +1836,87 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="169"/>
         <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
-        <translation>يتم إستخدام الكتب الإفتراضية حين لايتم تحديد كتاب محدد، على سبيل المثال حينما يتم الضغط على رابط في الكتاب المقدس أو التفسير.</translation>
+        <translation type="unfinished">يتم إستخدام الكتب الإفتراضية حين لايتم تحديد كتاب محدد، على سبيل المثال حينما يتم الضغط على رابط في الكتاب المقدس أو التفسير.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="172"/>
         <source>Bible:</source>
-        <translation>الكتاب المقدس:</translation>
+        <translation type="unfinished">الكتاب المقدس:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="174"/>
         <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
-        <translation>تستخدم ترجمة الكتاب المقدس الإفتراضية عندما يتم الضغط على رابط للكتاب المقدس</translation>
+        <translation type="unfinished">تستخدم ترجمة الكتاب المقدس الإفتراضية عندما يتم الضغط على رابط للكتاب المقدس</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="176"/>
         <source>Commentary:</source>
-        <translation>التفسير:</translation>
+        <translation type="unfinished">التفسير:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="178"/>
         <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
-        <translation>يستخدم التفسير الإفتراضي عندما يتم الضغط على رابط لتفسير</translation>
+        <translation type="unfinished">يستخدم التفسير الإفتراضي عندما يتم الضغط على رابط لتفسير</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="180"/>
         <source>Lexicon:</source>
-        <translation>المعجم:</translation>
+        <translation type="unfinished">المعجم:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="182"/>
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
-        <translation>يستخدم المعجم الإفتراضي عندما يتم الضغط على رابط لمعجم</translation>
+        <translation type="unfinished">يستخدم المعجم الإفتراضي عندما يتم الضغط على رابط لمعجم</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="184"/>
         <source>Daily devotional:</source>
-        <translation>التأمل اليومي:</translation>
+        <translation type="unfinished">التأمل اليومي:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="186"/>
         <source>The standard devotional will be used to display a short start up devotional</source>
-        <translation>سيتم إستخدام التأمل اليومي الإفتراضي في عرض تأمل قصير في البداية</translation>
+        <translation type="unfinished">سيتم إستخدام التأمل اليومي الإفتراضي في عرض تأمل قصير في البداية</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="188"/>
         <source>Hebrew Strong&apos;s lexicon:</source>
-        <translation>معجم سترونج العبري:</translation>
+        <translation type="unfinished">معجم سترونج العبري:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="190"/>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
-        <translation>يستخدم المعجم العبري الإفتراضي عندما يتم الضغط على رابط لمعجم عبري</translation>
+        <translation type="unfinished">يستخدم المعجم العبري الإفتراضي عندما يتم الضغط على رابط لمعجم عبري</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="192"/>
         <source>Greek Strong&apos;s lexicon:</source>
-        <translation>معجم سترونج اليوناني:</translation>
+        <translation type="unfinished">معجم سترونج اليوناني:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="194"/>
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
-        <translation>يستخدم المعجم اليوناني الإفتراضي عندما يتم الضغط على رابط لمعجم يوناني</translation>
+        <translation type="unfinished">يستخدم المعجم اليوناني الإفتراضي عندما يتم الضغط على رابط لمعجم يوناني</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="196"/>
         <source>Hebrew morphological lexicon:</source>
-        <translation>المعجم الصرفي العبري:</translation>
+        <translation type="unfinished">المعجم الصرفي العبري:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="198"/>
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
-        <translation>يتم إستخدام المعجم الصرفي الإفتراضي للنصوص العبرية عندما يتم الضغط على رابط لوسم صرفي في النص العبري</translation>
+        <translation type="unfinished">يتم إستخدام المعجم الصرفي الإفتراضي للنصوص العبرية عندما يتم الضغط على رابط لوسم صرفي في النص العبري</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="200"/>
         <source>Greek morphological lexicon:</source>
-        <translation>المعجم الصرفي اليوناني:</translation>
+        <translation type="unfinished">المعجم الصرفي اليوناني:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="202"/>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
-        <translation>يتم إستخدام المعجم الصرفي الإفتراضي للنصوص اليونانية عندما يتم الضغط على رابط لوسم صرفي في النص اليوناني</translation>
+        <translation type="unfinished">يتم إستخدام المعجم الصرفي الإفتراضي للنصوص اليونانية عندما يتم الضغط على رابط لوسم صرفي في النص اليوناني</translation>
     </message>
 </context>
 <context>
@@ -5274,6 +5274,77 @@ Language name ppk</extracomment>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="39"/>
         <source>Search result of the selected work</source>
         <translation>نتيجة بحث الكتاب المختار</translation>
+    </message>
+</context>
+<context>
+    <name>StandardWorksTab</name>
+    <message>
+        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
+        <translation type="obsolete">يتم إستخدام الكتب الإفتراضية حين لايتم تحديد كتاب محدد، على سبيل المثال حينما يتم الضغط على رابط في الكتاب المقدس أو التفسير.</translation>
+    </message>
+    <message>
+        <source>Bible:</source>
+        <translation type="obsolete">الكتاب المقدس:</translation>
+    </message>
+    <message>
+        <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
+        <translation type="obsolete">تستخدم ترجمة الكتاب المقدس الإفتراضية عندما يتم الضغط على رابط للكتاب المقدس</translation>
+    </message>
+    <message>
+        <source>Commentary:</source>
+        <translation type="obsolete">التفسير:</translation>
+    </message>
+    <message>
+        <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
+        <translation type="obsolete">يستخدم التفسير الإفتراضي عندما يتم الضغط على رابط لتفسير</translation>
+    </message>
+    <message>
+        <source>Lexicon:</source>
+        <translation type="obsolete">المعجم:</translation>
+    </message>
+    <message>
+        <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
+        <translation type="obsolete">يستخدم المعجم الإفتراضي عندما يتم الضغط على رابط لمعجم</translation>
+    </message>
+    <message>
+        <source>Daily devotional:</source>
+        <translation type="obsolete">التأمل اليومي:</translation>
+    </message>
+    <message>
+        <source>The standard devotional will be used to display a short start up devotional</source>
+        <translation type="obsolete">سيتم إستخدام التأمل اليومي الإفتراضي في عرض تأمل قصير في البداية</translation>
+    </message>
+    <message>
+        <source>Hebrew Strong&apos;s lexicon:</source>
+        <translation type="obsolete">معجم سترونج العبري:</translation>
+    </message>
+    <message>
+        <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
+        <translation type="obsolete">يستخدم المعجم العبري الإفتراضي عندما يتم الضغط على رابط لمعجم عبري</translation>
+    </message>
+    <message>
+        <source>Greek Strong&apos;s lexicon:</source>
+        <translation type="obsolete">معجم سترونج اليوناني:</translation>
+    </message>
+    <message>
+        <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
+        <translation type="obsolete">يستخدم المعجم اليوناني الإفتراضي عندما يتم الضغط على رابط لمعجم يوناني</translation>
+    </message>
+    <message>
+        <source>Hebrew morphological lexicon:</source>
+        <translation type="obsolete">المعجم الصرفي العبري:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
+        <translation type="obsolete">يتم إستخدام المعجم الصرفي الإفتراضي للنصوص العبرية عندما يتم الضغط على رابط لوسم صرفي في النص العبري</translation>
+    </message>
+    <message>
+        <source>Greek morphological lexicon:</source>
+        <translation type="obsolete">المعجم الصرفي اليوناني:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
+        <translation type="obsolete">يتم إستخدام المعجم الصرفي الإفتراضي للنصوص اليونانية عندما يتم الضغط على رابط لوسم صرفي في النص اليوناني</translation>
     </message>
 </context>
 <context>

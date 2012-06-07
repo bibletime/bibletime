@@ -42,6 +42,11 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>&amp;Window</translation>
     </message>
     <message>
+        <location filename="../../src/bibletime_init.cpp" line="709"/>
+        <source>Sw&amp;itch session</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../src/bibletime_init.cpp" line="711"/>
         <source>Se&amp;ttings</source>
         <translation>Se&amp;ttings</translation>
@@ -153,12 +158,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_slots.cpp" line="532"/>
         <source>Session already exists</source>
-        <translation type="unfinished">Session already exists</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/bibletime_slots.cpp" line="533"/>
         <source>Session with the name &quot;%1&quot; already exists. Please provide a different name.</source>
-        <translation type="unfinished">Session with the name &quot;%1&quot; already exists. Please provide a different name.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="108"/>
@@ -341,9 +346,8 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Format toolbar</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="709"/>
-        <source>Sw&amp;itch session</source>
-        <translation type="unfinished"></translation>
+        <source>&amp;Save session</source>
+        <translation type="obsolete">&amp;Save session</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="732"/>
@@ -884,12 +888,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="87"/>
         <source>Error loading configuration!</source>
-        <translation type="unfinished">Error loading configuration!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="88"/>
         <source>Failed to load BibleTime&apos;s configuration, because it appears that the configuration file corresponds to a newer version of BibleTime. This is likely caused by BibleTime being downgraded. Loading the new configuration file may result in &lt;b&gt;loss of data&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Do you still want to try to load the new configuration file? Press &quot;No&quot; to quit BibleTime immediately.</source>
-        <translation type="unfinished">Failed to load BibleTime&apos;s configuration, because it appears that the configuration file corresponds to a newer version of BibleTime. This is likely caused by BibleTime being downgraded. Loading the new configuration file may result in &lt;b&gt;loss of data&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Do you still want to try to load the new configuration file? Press &quot;No&quot; to quit BibleTime immediately.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -897,7 +901,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/backend/config/btconfigcore.cpp" line="60"/>
         <source>Default Session</source>
-        <translation type="unfinished">Default Session</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1133,7 +1137,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialogmodel.cpp" line="93"/>
         <source>Installation source</source>
-        <translation></translation>
+        <translation>Installation source</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialogmodel.cpp" line="94"/>
@@ -1697,87 +1701,87 @@ shortcut</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="169"/>
         <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
-        <translation>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</translation>
+        <translation type="unfinished">Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="172"/>
         <source>Bible:</source>
-        <translation>Bible:</translation>
+        <translation type="unfinished">Bible:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="174"/>
         <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
-        <translation>The standard Bible is used when a hyperlink into a Bible is clicked</translation>
+        <translation type="unfinished">The standard Bible is used when a hyperlink into a Bible is clicked</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="176"/>
         <source>Commentary:</source>
-        <translation>Commentary:</translation>
+        <translation type="unfinished">Commentary:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="178"/>
         <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
-        <translation>The standard commentary is used when a hyperlink into a commentary is clicked</translation>
+        <translation type="unfinished">The standard commentary is used when a hyperlink into a commentary is clicked</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="180"/>
         <source>Lexicon:</source>
-        <translation>Lexicon:</translation>
+        <translation type="unfinished">Lexicon:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="182"/>
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
-        <translation>The standard lexicon is used when a hyperlink into a lexicon is clicked</translation>
+        <translation type="unfinished">The standard lexicon is used when a hyperlink into a lexicon is clicked</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="184"/>
         <source>Daily devotional:</source>
-        <translation>Daily devotional:</translation>
+        <translation type="unfinished">Daily devotional:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="186"/>
         <source>The standard devotional will be used to display a short start up devotional</source>
-        <translation>The standard devotional will be used to display a short start up devotional</translation>
+        <translation type="unfinished">The standard devotional will be used to display a short start up devotional</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="188"/>
         <source>Hebrew Strong&apos;s lexicon:</source>
-        <translation>Hebrew Strong&apos;s lexicon:</translation>
+        <translation type="unfinished">Hebrew Strong&apos;s lexicon:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="190"/>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
-        <translation>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</translation>
+        <translation type="unfinished">The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="192"/>
         <source>Greek Strong&apos;s lexicon:</source>
-        <translation>Greek Strong&apos;s lexicon:</translation>
+        <translation type="unfinished">Greek Strong&apos;s lexicon:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="194"/>
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
-        <translation>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</translation>
+        <translation type="unfinished">The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="196"/>
         <source>Hebrew morphological lexicon:</source>
-        <translation>Hebrew morphological lexicon:</translation>
+        <translation type="unfinished">Hebrew morphological lexicon:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="198"/>
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
-        <translation>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</translation>
+        <translation type="unfinished">The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="200"/>
         <source>Greek morphological lexicon:</source>
-        <translation>Greek morphological lexicon:</translation>
+        <translation type="unfinished">Greek morphological lexicon:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="202"/>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
-        <translation>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</translation>
+        <translation type="unfinished">The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</translation>
     </message>
 </context>
 <context>
@@ -5037,6 +5041,77 @@ Language name ppk</extracomment>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="39"/>
         <source>Search result of the selected work</source>
         <translation>Search result of the selected work</translation>
+    </message>
+</context>
+<context>
+    <name>StandardWorksTab</name>
+    <message>
+        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
+        <translation type="obsolete">Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</translation>
+    </message>
+    <message>
+        <source>Bible:</source>
+        <translation type="obsolete">Bible:</translation>
+    </message>
+    <message>
+        <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
+        <translation type="obsolete">The standard Bible is used when a hyperlink into a Bible is clicked</translation>
+    </message>
+    <message>
+        <source>Commentary:</source>
+        <translation type="obsolete">Commentary:</translation>
+    </message>
+    <message>
+        <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
+        <translation type="obsolete">The standard commentary is used when a hyperlink into a commentary is clicked</translation>
+    </message>
+    <message>
+        <source>Lexicon:</source>
+        <translation type="obsolete">Lexicon:</translation>
+    </message>
+    <message>
+        <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
+        <translation type="obsolete">The standard lexicon is used when a hyperlink into a lexicon is clicked</translation>
+    </message>
+    <message>
+        <source>Daily devotional:</source>
+        <translation type="obsolete">Daily devotional:</translation>
+    </message>
+    <message>
+        <source>The standard devotional will be used to display a short start up devotional</source>
+        <translation type="obsolete">The standard devotional will be used to display a short start up devotional</translation>
+    </message>
+    <message>
+        <source>Hebrew Strong&apos;s lexicon:</source>
+        <translation type="obsolete">Hebrew Strong&apos;s lexicon:</translation>
+    </message>
+    <message>
+        <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
+        <translation type="obsolete">The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</translation>
+    </message>
+    <message>
+        <source>Greek Strong&apos;s lexicon:</source>
+        <translation type="obsolete">Greek Strong&apos;s lexicon:</translation>
+    </message>
+    <message>
+        <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
+        <translation type="obsolete">The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</translation>
+    </message>
+    <message>
+        <source>Hebrew morphological lexicon:</source>
+        <translation type="obsolete">Hebrew morphological lexicon:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
+        <translation type="obsolete">The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</translation>
+    </message>
+    <message>
+        <source>Greek morphological lexicon:</source>
+        <translation type="obsolete">Greek morphological lexicon:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
+        <translation type="obsolete">The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</translation>
     </message>
 </context>
 <context>

@@ -1964,102 +1964,89 @@ scorciatoia</translation>
 <context>
     <name>BtStandardWorksTab</name>
     <message>
-        <source>Standard works are used when no particular work is specified,   for example when a hyperlink into a Bible or lexicon was clicked .</source>
-        <translation type="obsolete">I documenti predefiniti vengono usati in caso non vengano specificati altri documenti, ad esempio quando un collegamento ipertestuale dentro una Bibbia od un lessico viene cliccato.</translation>
-    </message>
-    <message>
-        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked .</source>
-        <translation type="obsolete">I documenti standard sono utilizzati quando nessun documento particolare viene specificato, per esempio quando un collegamento ipertestuale in una Bibbia o lessico viene cliccato.</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="169"/>
         <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
-        <translation>I documenti standard sono utilizzati quando nessun documento particolare viene specificato, per esempio quando un collegamento ipertestuale in una Bibbia o lessico viene cliccato.</translation>
+        <translation type="unfinished">I documenti standard sono utilizzati quando nessun documento particolare viene specificato, per esempio quando un collegamento ipertestuale in una Bibbia o lessico viene cliccato.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="172"/>
         <source>Bible:</source>
-        <translation>Bibbia:</translation>
+        <translation type="unfinished">Bibbia:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="174"/>
         <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
-        <translation>La Bibbia standard viene usata quando un ipertesto è cliccato in una Bibbia</translation>
+        <translation type="unfinished">La Bibbia standard viene usata quando un ipertesto è cliccato in una Bibbia</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="176"/>
         <source>Commentary:</source>
-        <translation>Commento:</translation>
+        <translation type="unfinished">Commento:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="178"/>
         <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
-        <translation>I commenti standard sono usati quando un ipertesto in un commento viene cliccato</translation>
+        <translation type="unfinished">I commenti standard sono usati quando un ipertesto in un commento viene cliccato</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="180"/>
         <source>Lexicon:</source>
-        <translation>Lessico:</translation>
+        <translation type="unfinished">Lessico:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="182"/>
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
-        <translation>Il lessico standard viene usato quando un ipertesto è cliccato in un lessico</translation>
+        <translation type="unfinished">Il lessico standard viene usato quando un ipertesto è cliccato in un lessico</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="184"/>
         <source>Daily devotional:</source>
-        <translation>Lettura di devozione giornaliera:</translation>
+        <translation type="unfinished">Lettura di devozione giornaliera:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="186"/>
         <source>The standard devotional will be used to display a short start up devotional</source>
-        <translation>Le letture di devozione standard saranno usate per visualizzare uno start up devozionale breve</translation>
+        <translation type="unfinished">Le letture di devozione standard saranno usate per visualizzare uno start up devozionale breve</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="188"/>
         <source>Hebrew Strong&apos;s lexicon:</source>
-        <translation>Lessico Ebraico Strong:</translation>
+        <translation type="unfinished">Lessico Ebraico Strong:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="190"/>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
-        <translation>Il lessico standard Ebraico è usato quando un ipertesto dentro a lessico Ebraico è cliccato</translation>
+        <translation type="unfinished">Il lessico standard Ebraico è usato quando un ipertesto dentro a lessico Ebraico è cliccato</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="192"/>
         <source>Greek Strong&apos;s lexicon:</source>
-        <translation>Lessico Greco Strong:</translation>
+        <translation type="unfinished">Lessico Greco Strong:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="194"/>
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
-        <translation>Il lessico standard Greco è usato quando un ipertesto dentro a lessico Greco è cliccato</translation>
+        <translation type="unfinished">Il lessico standard Greco è usato quando un ipertesto dentro a lessico Greco è cliccato</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="196"/>
         <source>Hebrew morphological lexicon:</source>
-        <translation>Lessico Ebraico morfologico:</translation>
+        <translation type="unfinished">Lessico Ebraico morfologico:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="198"/>
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
-        <translation>Il lessico standard morfologico per testi Ebraici è usato quando un ipertesto di una nota morfologica in un testo Ebraico è cliccato</translation>
+        <translation type="unfinished">Il lessico standard morfologico per testi Ebraici è usato quando un ipertesto di una nota morfologica in un testo Ebraico è cliccato</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="200"/>
         <source>Greek morphological lexicon:</source>
-        <translation>Lessico Greco morfologico:</translation>
+        <translation type="unfinished">Lessico Greco morfologico:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="202"/>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
-        <translation>Il lessico standard morfologico per testi Grechi è usato quando un ipertesto di una nota morfologica in un testo Greco è cliccato</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="62"/>
-        <source></source>
-        <translation></translation>
+        <translation type="unfinished">Il lessico standard morfologico per testi Grechi è usato quando un ipertesto di una nota morfologica in un testo Greco è cliccato</translation>
     </message>
 </context>
 <context>
@@ -5612,6 +5599,90 @@ Questo potrebbe richiedere parecchio tempo. Procedere all&apos;indicizzazione?</
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="39"/>
         <source>Search result of the selected work</source>
         <translation>Risultato della ricerca del documento selezionato</translation>
+    </message>
+</context>
+<context>
+    <name>StandardWorksTab</name>
+    <message>
+        <source>Standard works are used when no particular work is specified,   for example when a hyperlink into a Bible or lexicon was clicked .</source>
+        <translation type="obsolete">I documenti predefiniti vengono usati in caso non vengano specificati altri documenti, ad esempio quando un collegamento ipertestuale dentro una Bibbia od un lessico viene cliccato.</translation>
+    </message>
+    <message>
+        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked .</source>
+        <translation type="obsolete">I documenti standard sono utilizzati quando nessun documento particolare viene specificato, per esempio quando un collegamento ipertestuale in una Bibbia o lessico viene cliccato.</translation>
+    </message>
+    <message>
+        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
+        <translation type="obsolete">I documenti standard sono utilizzati quando nessun documento particolare viene specificato, per esempio quando un collegamento ipertestuale in una Bibbia o lessico viene cliccato.</translation>
+    </message>
+    <message>
+        <source>Bible:</source>
+        <translation type="obsolete">Bibbia:</translation>
+    </message>
+    <message>
+        <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
+        <translation type="obsolete">La Bibbia standard viene usata quando un ipertesto è cliccato in una Bibbia</translation>
+    </message>
+    <message>
+        <source>Commentary:</source>
+        <translation type="obsolete">Commento:</translation>
+    </message>
+    <message>
+        <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
+        <translation type="obsolete">I commenti standard sono usati quando un ipertesto in un commento viene cliccato</translation>
+    </message>
+    <message>
+        <source>Lexicon:</source>
+        <translation type="obsolete">Lessico:</translation>
+    </message>
+    <message>
+        <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
+        <translation type="obsolete">Il lessico standard viene usato quando un ipertesto è cliccato in un lessico</translation>
+    </message>
+    <message>
+        <source>Daily devotional:</source>
+        <translation type="obsolete">Lettura di devozione giornaliera:</translation>
+    </message>
+    <message>
+        <source>The standard devotional will be used to display a short start up devotional</source>
+        <translation type="obsolete">Le letture di devozione standard saranno usate per visualizzare uno start up devozionale breve</translation>
+    </message>
+    <message>
+        <source>Hebrew Strong&apos;s lexicon:</source>
+        <translation type="obsolete">Lessico Ebraico Strong:</translation>
+    </message>
+    <message>
+        <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
+        <translation type="obsolete">Il lessico standard Ebraico è usato quando un ipertesto dentro a lessico Ebraico è cliccato</translation>
+    </message>
+    <message>
+        <source>Greek Strong&apos;s lexicon:</source>
+        <translation type="obsolete">Lessico Greco Strong:</translation>
+    </message>
+    <message>
+        <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
+        <translation type="obsolete">Il lessico standard Greco è usato quando un ipertesto dentro a lessico Greco è cliccato</translation>
+    </message>
+    <message>
+        <source>Hebrew morphological lexicon:</source>
+        <translation type="obsolete">Lessico Ebraico morfologico:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
+        <translation type="obsolete">Il lessico standard morfologico per testi Ebraici è usato quando un ipertesto di una nota morfologica in un testo Ebraico è cliccato</translation>
+    </message>
+    <message>
+        <source>Greek morphological lexicon:</source>
+        <translation type="obsolete">Lessico Greco morfologico:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
+        <translation type="obsolete">Il lessico standard morfologico per testi Grechi è usato quando un ipertesto di una nota morfologica in un testo Greco è cliccato</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="62"/>
+        <source></source>
+        <translation></translation>
     </message>
 </context>
 <context>

@@ -1701,92 +1701,87 @@ atajo</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="169"/>
         <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
-        <translation>Las obras predeterminadas son utilizadas cuando ninguna obra es especificada, por ejemplo cuando se hace clic en un hipervínculo dentro de una Biblia.</translation>
+        <translation type="unfinished">Las obras predeterminadas son utilizadas cuando ninguna obra es especificada, por ejemplo cuando se hace clic en un hipervínculo dentro de una Biblia.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="172"/>
         <source>Bible:</source>
-        <translation>Biblia:</translation>
+        <translation type="unfinished">Biblia:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="174"/>
         <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
-        <translation>La Biblia estandar es usada cuando un hipervínculo dentro de la Biblia es cliqueado</translation>
+        <translation type="unfinished">La Biblia estandar es usada cuando un hipervínculo dentro de la Biblia es cliqueado</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="176"/>
         <source>Commentary:</source>
-        <translation>Comentario:</translation>
+        <translation type="unfinished">Comentario:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="178"/>
         <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
-        <translation>El comentario estandar es usado cuando un hipervínculo dentro del comentario es cliqueado</translation>
+        <translation type="unfinished">El comentario estandar es usado cuando un hipervínculo dentro del comentario es cliqueado</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="180"/>
         <source>Lexicon:</source>
-        <translation>Léxico:</translation>
+        <translation type="unfinished">Léxico:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="182"/>
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
-        <translation>El léxico estandar es usado cuando un hipervínculo dentro del léxico es cliqueado</translation>
+        <translation type="unfinished">El léxico estandar es usado cuando un hipervínculo dentro del léxico es cliqueado</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="184"/>
         <source>Daily devotional:</source>
-        <translation>Devocional diario:</translation>
+        <translation type="unfinished">Devocional diario:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="186"/>
         <source>The standard devotional will be used to display a short start up devotional</source>
-        <translation>El devocional estandar será usado para mostrar un devocional de inicio</translation>
+        <translation type="unfinished">El devocional estandar será usado para mostrar un devocional de inicio</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="188"/>
         <source>Hebrew Strong&apos;s lexicon:</source>
-        <translation>Léxico Hebreo de Strong:</translation>
+        <translation type="unfinished">Léxico Hebreo de Strong:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="190"/>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
-        <translation>El léxico Hebreo estandar es utilizado cuando un hipervínculo es cliqueado</translation>
+        <translation type="unfinished">El léxico Hebreo estandar es utilizado cuando un hipervínculo es cliqueado</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="192"/>
         <source>Greek Strong&apos;s lexicon:</source>
-        <translation>Léxico Griego de Strong:</translation>
+        <translation type="unfinished">Léxico Griego de Strong:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="194"/>
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
-        <translation>El léxico Griego estandar es utilizado cuando un hipervínculo en un léxico Griego es cliqueado</translation>
+        <translation type="unfinished">El léxico Griego estandar es utilizado cuando un hipervínculo en un léxico Griego es cliqueado</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="196"/>
         <source>Hebrew morphological lexicon:</source>
-        <translation>Léxico Hebreo morfológico:</translation>
+        <translation type="unfinished">Léxico Hebreo morfológico:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="198"/>
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
-        <translation>El léxico morfológico para textos Hebreos es utilizado cuando un hipervínculo de una etiqueta morfológica en texto Hebreo es cliqueado</translation>
+        <translation type="unfinished">El léxico morfológico para textos Hebreos es utilizado cuando un hipervínculo de una etiqueta morfológica en texto Hebreo es cliqueado</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="200"/>
         <source>Greek morphological lexicon:</source>
-        <translation>Diccionario léxico griego morfológico:</translation>
+        <translation type="unfinished">Diccionario léxico griego morfológico:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="202"/>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
-        <translation>El léxico morfológico para textos Griegos es utilizado cuando un hipervínculo de una etiqueta morfológica en texto Griego es cliqueado</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="62"/>
-        <source></source>
-        <translation></translation>
+        <translation type="unfinished">El léxico morfológico para textos Griegos es utilizado cuando un hipervínculo de una etiqueta morfológica en texto Griego es cliqueado</translation>
     </message>
 </context>
 <context>
@@ -5067,6 +5062,82 @@ Language name ppk</extracomment>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="39"/>
         <source>Search result of the selected work</source>
         <translation>Resultado de la búsqueda en la obra seleccionada</translation>
+    </message>
+</context>
+<context>
+    <name>StandardWorksTab</name>
+    <message>
+        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
+        <translation type="obsolete">Las obras predeterminadas son utilizadas cuando ninguna obra es especificada, por ejemplo cuando se hace clic en un hipervínculo dentro de una Biblia.</translation>
+    </message>
+    <message>
+        <source>Bible:</source>
+        <translation type="obsolete">Biblia:</translation>
+    </message>
+    <message>
+        <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
+        <translation type="obsolete">La Biblia estandar es usada cuando un hipervínculo dentro de la Biblia es cliqueado</translation>
+    </message>
+    <message>
+        <source>Commentary:</source>
+        <translation type="obsolete">Comentario:</translation>
+    </message>
+    <message>
+        <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
+        <translation type="obsolete">El comentario estandar es usado cuando un hipervínculo dentro del comentario es cliqueado</translation>
+    </message>
+    <message>
+        <source>Lexicon:</source>
+        <translation type="obsolete">Léxico:</translation>
+    </message>
+    <message>
+        <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
+        <translation type="obsolete">El léxico estandar es usado cuando un hipervínculo dentro del léxico es cliqueado</translation>
+    </message>
+    <message>
+        <source>Daily devotional:</source>
+        <translation type="obsolete">Devocional diario:</translation>
+    </message>
+    <message>
+        <source>The standard devotional will be used to display a short start up devotional</source>
+        <translation type="obsolete">El devocional estandar será usado para mostrar un devocional de inicio</translation>
+    </message>
+    <message>
+        <source>Hebrew Strong&apos;s lexicon:</source>
+        <translation type="obsolete">Léxico Hebreo de Strong:</translation>
+    </message>
+    <message>
+        <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
+        <translation type="obsolete">El léxico Hebreo estandar es utilizado cuando un hipervínculo es cliqueado</translation>
+    </message>
+    <message>
+        <source>Greek Strong&apos;s lexicon:</source>
+        <translation type="obsolete">Léxico Griego de Strong:</translation>
+    </message>
+    <message>
+        <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
+        <translation type="obsolete">El léxico Griego estandar es utilizado cuando un hipervínculo en un léxico Griego es cliqueado</translation>
+    </message>
+    <message>
+        <source>Hebrew morphological lexicon:</source>
+        <translation type="obsolete">Léxico Hebreo morfológico:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
+        <translation type="obsolete">El léxico morfológico para textos Hebreos es utilizado cuando un hipervínculo de una etiqueta morfológica en texto Hebreo es cliqueado</translation>
+    </message>
+    <message>
+        <source>Greek morphological lexicon:</source>
+        <translation type="obsolete">Diccionario léxico griego morfológico:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
+        <translation type="obsolete">El léxico morfológico para textos Griegos es utilizado cuando un hipervínculo de una etiqueta morfológica en texto Griego es cliqueado</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="62"/>
+        <source></source>
+        <translation></translation>
     </message>
 </context>
 <context>
