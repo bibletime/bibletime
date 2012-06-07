@@ -54,7 +54,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>&amp;Save session</source>
-        <translation type="unfinished">Sitzung &amp;speichern</translation>
+        <translation>Sitzung &amp;speichern</translation>
     </message>
     <message>
         <source>&amp;Load session</source>
@@ -4364,43 +4364,43 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     <name>TextFiltersTab</name>
     <message>
         <source>Insert line break after each verse</source>
-        <translation type="unfinished">Zeilenumbruch nach jedem Vers einfügen</translation>
+        <translation>Zeilenumbruch nach jedem Vers einfügen</translation>
     </message>
     <message>
         <source>Show verse numbers</source>
-        <translation type="unfinished">Versnummern anzeigen</translation>
+        <translation>Versnummern anzeigen</translation>
     </message>
     <message>
         <source>Show section headings</source>
-        <translation type="unfinished">Abschnittsüberschriften anzeigen</translation>
+        <translation>Abschnittsüberschriften anzeigen</translation>
     </message>
     <message>
         <source>Show scripture cross-references</source>
-        <translation type="unfinished">Querverweise auf Bibelstellen anzeigen</translation>
+        <translation>Querverweise auf Bibelstellen anzeigen</translation>
     </message>
     <message>
         <source>Show Greek accents</source>
-        <translation type="unfinished">Griechische Akzente anzeigen</translation>
+        <translation>Griechische Akzente anzeigen</translation>
     </message>
     <message>
         <source>Show Hebrew vowel points</source>
-        <translation type="unfinished">Hebräische Vokalzeichen anzeigen</translation>
+        <translation>Hebräische Vokalzeichen anzeigen</translation>
     </message>
     <message>
         <source>Show Hebrew cantillation marks</source>
-        <translation type="unfinished">Hebräische Kantillationszeichen anzeigen</translation>
+        <translation>Hebräische Kantillationszeichen anzeigen</translation>
     </message>
     <message>
         <source>Show morph segmentation</source>
-        <translation type="unfinished">Morphologische Segmentierung anzeigen</translation>
+        <translation>Morphologische Segmentierung anzeigen</translation>
     </message>
     <message>
         <source>Use textual variants</source>
-        <translation type="unfinished">Textvarianten verwenden</translation>
+        <translation>Textvarianten verwenden</translation>
     </message>
     <message>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
-        <translation type="unfinished">Filter kontrollieren die Text-Erscheinung. Hier können Sie Standard-Einstellungen für alle Filter spezifizieren. Sie können diese Einstellungen in jedem Anzeige-Fenster übergehen.</translation>
+        <translation>Filter kontrollieren die Text-Erscheinung. Hier können Sie Standard-Einstellungen für alle Filter spezifizieren. Sie können diese Einstellungen in jedem Anzeige-Fenster übergehen.</translation>
     </message>
     <message>
         <source></source>
