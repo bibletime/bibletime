@@ -303,3 +303,13 @@ bool BibleTime::event(QEvent* event) {
         Search::CSearchDialog::closeDialog();
     return QMainWindow::event(event);
 }
+
+const CSwordModuleInfo* BibleTime::getCurrentModule() {
+    QMdiSubWindow* activeSubWindow = m_mdi->activeSubWindow();
+    if (!activeSubWindow)
+        return 0;
+    CDisplayWindow* w = dynamic_cast<CDisplayWindow*>(activeSubWindow->widget());
+    if (!w)
+        return 0;
+    return w->modules().first();
+}

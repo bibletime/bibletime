@@ -1,3 +1,6 @@
+2012-07-18 Gary Holmlund <gary.holmlund@gmail.com>
+    * Mag Window uses current module if no default cross reference is set
+
 2012-03-30 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix crash when closing window with tab.
 

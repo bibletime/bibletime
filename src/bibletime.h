@@ -186,7 +186,12 @@ class BibleTime : public QMainWindow {
         */
         static bool moduleUnlock(CSwordModuleInfo *module, QWidget *parent = 0);
 
-    public slots:
+        /**
+          Get a pointer to the module associated with the current window
+        */
+        const CSwordModuleInfo* getCurrentModule();
+
+public slots:
         /**
         * Opens the optionsdialog of BibleTime.
         */
