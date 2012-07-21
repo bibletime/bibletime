@@ -231,8 +231,8 @@ const QString CTextRendering::renderKeyRange(
         CSwordVerseKey* vk_stop = dynamic_cast<CSwordVerseKey*>(upperBound.data());
         Q_ASSERT(vk_stop);
 
-        bool ok = true;
-        while (ok && ((*vk_start < *vk_stop) || (*vk_start == *vk_stop))) {
+        while ((*vk_start < *vk_stop) || (*vk_start == *vk_stop)) {
+
             //make sure the key given by highlightKey gets marked as current key
             settings.highlight = (!highlightKey.isEmpty() ? (vk_start->key() == highlightKey) : false);
 
@@ -249,7 +249,10 @@ const QString CTextRendering::renderKeyRange(
                 vk_start->setVerse(0);
             }
             tree.append( new KeyTreeItem(vk_start->key(), modules, settings) );
-            ok = vk_start->next(CSwordVerseKey::UseVerse);
+            if (!vk_start->next(CSwordVerseKey::UseVerse)) {
+                /// \todo Notify the user about this failure.
+                break;
+            }
         }
         return renderKeyTree(tree);
     }
