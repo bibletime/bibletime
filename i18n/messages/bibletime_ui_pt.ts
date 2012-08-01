@@ -590,7 +590,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="142"/>
         <source>developer</source>
-        <translation>desenvolvedor</translation>
+        <translation>programador</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="154"/>
@@ -2552,27 +2552,27 @@ atalho</translation>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="866"/>
         <source>Copyright holder</source>
-        <translation>Detentor dos direitos autorais</translation>
+        <translation>Detentor dos direitos de autor</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="867"/>
         <source>Copyright date</source>
-        <translation>Data do copyright</translation>
+        <translation>Data dos direitos de autor</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="868"/>
         <source>Copyright contact name</source>
-        <translation>Nome do contacto do copyright</translation>
+        <translation>Nome do contacto dos direitos de autor</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="869"/>
         <source>Copyright contact address</source>
-        <translation>Endereço do contacto do copyright</translation>
+        <translation>Endereço do contacto dos direitos de autor</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="870"/>
         <source>Copyright contact email</source>
-        <translation>Email do contacto do copyright</translation>
+        <translation>Email do contacto dos direitos de autor</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="978"/>
@@ -2697,7 +2697,7 @@ Deseja continuar?</translation>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="162"/>
         <source>Downloading List</source>
-        <translation>A descarregar a Lista</translation>
+        <translation>A transferir a Lista</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="172"/>
@@ -4184,7 +4184,7 @@ Language name ppk</extracomment>
         <location filename="../../src/util/dialogutil.cpp" line="57"/>
         <source>Reset</source>
         <comment>Dialog Button</comment>
-        <translation>Reset</translation>
+        <translation>Reiniciar</translation>
     </message>
     <message>
         <location filename="../../src/util/dialogutil.cpp" line="58"/>
@@ -5001,8 +5001,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="54"/>
         <source>Case &amp;sensitive</source>
-        <translatorcomment>Termo de uso generalizado no português brasileiro</translatorcomment>
-        <translation>Case &amp;sensitive</translation>
+        <translation>Sensivel a maiusculas</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="92"/>
