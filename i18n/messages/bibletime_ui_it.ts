@@ -3447,55 +3447,55 @@ Vuoi continuare?</translation>
 <context>
     <name>InfoDisplay::CInfoDisplay</name>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="174"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="175"/>
         <source>&lt;div class=&quot;moduleinfo&quot;&gt;&lt;h3&gt;%1&lt;/h3&gt;&lt;p&gt;%2&lt;/p&gt;&lt;p&gt;Version: %3&lt;/p&gt;&lt;/div&gt;</source>
         <translation>&lt;div class=&quot;moduleinfo&quot;&gt;&lt;h3&gt;%1&lt;/h3&gt;&lt;p&gt;%2&lt;/p&gt;&lt;p&gt;Versione: %3&lt;/p&gt;&lt;/div&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="194"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="195"/>
         <source>Abbreviation</source>
         <translation>Abbreviazione</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="205"/>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="304"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="206"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="308"/>
         <source>Cross references</source>
         <translation>Riferimenti incrociati</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="360"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="364"/>
         <source>Footnote</source>
         <translation>Nota</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="391"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="395"/>
         <source>Strongs</source>
         <translatorcomment>Numeri di Strong </translatorcomment>
         <translation>Strongs</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="469"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="473"/>
         <source>Morphology</source>
         <translatorcomment>Note Morfologiche</translatorcomment>
         <translation>Morfologia</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="492"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="496"/>
         <source>Word lookup</source>
         <translation>Ricerca parola</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="54"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="55"/>
         <source>Copy</source>
         <translation>Copia</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="50"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="51"/>
         <source>Select all</source>
         <translation>Seleziona tutto</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="75"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="76"/>
         <source>&lt;small&gt;This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.&lt;/small&gt;</source>
         <translation>&lt;small&gt;Questo è lo spazio della Lente. Porta il mouse sopra links o altri elementi che includono dati e il contenuto apparirà nella Lente dopo poco. Muovi il mouse nella Lente rapidamente o blocca la vista tenendo premuto Shift mentri muovi il mouse.&lt;/small&gt;</translation>
     </message>

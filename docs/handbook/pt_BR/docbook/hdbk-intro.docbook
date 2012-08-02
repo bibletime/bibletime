@@ -3,12 +3,12 @@
   <sect1 id="hdbk-intro-about">
     <title>Sobre &bibletime;</title>
 
-    <para>&bibletime; is a Bible study tool with support for different types of texts
-and languages. Even large amounts of works modules are easy to install and
-manage. It is built on the <ulink
-url="http://www.crosswire.org/sword/">&sword;</ulink> library, which
-provides the back-end functionality for &bibletime;, such as viewing Bible
-text, searching etc. &sword; is the flagship product of the <ulink
+    <para>&bibletime;  é uma ferramenta de estudo bíblico com suporte para diferentes
+tipos de textos e idiomas. Mesmo grandes quantidades de módulos de obras são
+fáceis de instalar e gerenciar. Ele foi feito sobre a biblioteca<ulink
+url="http://www.crosswire.org/sword/">&sword;</ulink>, que provê a
+funcionalidade de back-end para o &bibletime;, tal como visualizar texto
+bíblico, pesquisar, etc. &sword; é o produto carro-chefe da <ulink
 url="http://www.crosswire.org">&cbs;</ulink>.</para>
 
     <para>&bibletime; foi desenhado para ser usado com obras codificadas em um dos
@@ -19,8 +19,8 @@ desenvolvimento</ulink> do Projeto Sword, Crosswire Bible Society.</para>
 
     <sect2 id="hdbk-intro-works">
       <title>Obras disponíveis</title>
-      <para>Over 200 documents in 50 languages are available from the <ulink
-url="http://www.crosswire.org">&cbs;</ulink>.  These include: <variablelist>
+      <para>Mais de 200 documentos em 50 idiomas esto disponíveis da <ulink
+url="http://www.crosswire.org">&cbs;</ulink>. Estão inclusos: <variablelist>
         <varlistentry>
           <term>Bíblias</term>
           <listitem>
@@ -59,11 +59,11 @@ disponíveis incluem Daily Light on the Daily Path, e o Losungen (inglês).</par
         <varlistentry>
           <term>Léxicos/Dicionários</term>
           <listitem>
-            <para>Lexicons available include: Robinson's Morphological Analysis Codes, and the
-International Standard Bible Encyclopaedia. Dictionaries available include
-Strong's Hebrew Bible Dictionary, Strong's Greek Bible Dictionary, Webster's
-Revised Unabridged Dictionary of the English Language 1913, Nave's Topical
-Bible.</para>
+            <para>Léxicos disponíveis incluem: Códigos de Análise Morfológicos de Robinson, e
+a Enciclopédia da International Standard Bible. Dicionários disponíveis
+incluem o Dicionário Bíblico Hebraico de Strong, o Dicionário Bíblico Grego
+de Strong, Dicionário Integral Revisado da língua Inglesa de Webster 1913,
+Bíblia em Tópicos de Nave.</para>
           </listitem>
         </varlistentry>
       </variablelist></para>

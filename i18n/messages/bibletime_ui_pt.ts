@@ -603,7 +603,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="142"/>
         <source>developer</source>
-        <translation>desenvolvedor</translation>
+        <translation>programador</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="154"/>
@@ -2783,27 +2783,27 @@ atalho</translation>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="866"/>
         <source>Copyright holder</source>
-        <translation>Detentor dos direitos autorais</translation>
+        <translation>Detentor dos direitos de autor</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="867"/>
         <source>Copyright date</source>
-        <translation>Data do copyright</translation>
+        <translation>Data dos direitos de autor</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="868"/>
         <source>Copyright contact name</source>
-        <translation>Nome do contacto do copyright</translation>
+        <translation>Nome do contacto dos direitos de autor</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="869"/>
         <source>Copyright contact address</source>
-        <translation>Endereço do contacto do copyright</translation>
+        <translation>Endereço do contacto dos direitos de autor</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="870"/>
         <source>Copyright contact email</source>
-        <translation>Email do contacto do copyright</translation>
+        <translation>Email do contacto dos direitos de autor</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="978"/>
@@ -2928,7 +2928,7 @@ Deseja continuar?</translation>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="162"/>
         <source>Downloading List</source>
-        <translation>A descarregar a Lista</translation>
+        <translation>A transferir a Lista</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="172"/>
@@ -2999,53 +2999,53 @@ Deseja continuar?</translation>
 <context>
     <name>InfoDisplay::CInfoDisplay</name>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="174"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="175"/>
         <source>&lt;div class=&quot;moduleinfo&quot;&gt;&lt;h3&gt;%1&lt;/h3&gt;&lt;p&gt;%2&lt;/p&gt;&lt;p&gt;Version: %3&lt;/p&gt;&lt;/div&gt;</source>
         <translation>&lt;div class=&quot;moduleinfo&quot;&gt;&lt;h3&gt;%1&lt;/h3&gt;&lt;p&gt;%2&lt;/p&gt;&lt;p&gt;Versão: %3&lt;/p&gt;&lt;/div&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="194"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="195"/>
         <source>Abbreviation</source>
         <translation>Abreviação</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="205"/>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="304"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="206"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="308"/>
         <source>Cross references</source>
         <translation>Referências Cruzadas</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="360"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="364"/>
         <source>Footnote</source>
         <translation>Notas de rodapé</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="391"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="395"/>
         <source>Strongs</source>
         <translation>Negritos</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="469"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="473"/>
         <source>Morphology</source>
         <translation>Marcações morfológicas</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="492"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="496"/>
         <source>Word lookup</source>
         <translation>Pesquisa de palavras</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="54"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="55"/>
         <source>Copy</source>
         <translation>Copiar</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="50"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="51"/>
         <source>Select all</source>
         <translation>Seleccionar tudo</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="75"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="76"/>
         <source>&lt;small&gt;This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.&lt;/small&gt;</source>
         <translation>&lt;small&gt;Esta é a área da visualização da Lupa. Passe o rato por cima de links ou outros items que incluem alguma informação e o conteúdo aparecerá na Lupa depois de um pequeno atraso. Movimente o rato para dentro da Lupa rapidamente ou bloquear a visualização pressionando e soltando a tecla Shift enquanto movimenta o rato.&lt;/small&gt;</translation>
     </message>
@@ -4417,7 +4417,7 @@ Language name ppk</extracomment>
         <location filename="../../src/util/dialogutil.cpp" line="65"/>
         <source>Reset</source>
         <comment>Dialog Button</comment>
-        <translation>Reset</translation>
+        <translation>Reiniciar</translation>
     </message>
     <message>
         <location filename="../../src/util/dialogutil.cpp" line="66"/>
@@ -5207,8 +5207,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="54"/>
         <source>Case &amp;sensitive</source>
-        <translatorcomment>Termo de uso generalizado no português brasileiro</translatorcomment>
-        <translation>Case &amp;sensitive</translation>
+        <translation>Sensivel a maiusculas</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="92"/>
