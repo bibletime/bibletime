@@ -12,16 +12,20 @@
 
 #include <QString>
 
-// Sword includes:
+/* Sword includes: */
 #include <stringmgr.h>
 
 
-/** Unicode string manager implementation.
- * This is the StringManager implementation which works with QString.
- * @author The BibleTime developers
- */
+/**
+  Unicode string manager implementation.
 
-class BTStringMgr : public sword::StringMgr {
+  A Qt-based sword::StringMgr is better than the default one in Sword, in case
+  Sword is not compiled against ICU regarding this. However, we have no good
+  means to check this, so let's use this class as default. This is currently
+  done in BibleTime::initBackends() as follows:
+    sword::StringMgr::setSystemStringMgr(new BtStringMgr());
+*/
+class BtStringMgr : public sword::StringMgr {
 
     public:
         /** Converts the param to an upper case Utf8 string
@@ -50,4 +54,4 @@ class BTStringMgr : public sword::StringMgr {
         bool isUtf8(const char *buf) const;
 };
 
-#endif
+#endif /* BTSTRINGMGR_H */

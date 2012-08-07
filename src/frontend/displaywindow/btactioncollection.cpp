@@ -38,7 +38,7 @@ QList<QAction*> BtActionCollection::actions() {
     QList<QAction*> actionList;
     for (ActionMap::const_iterator iter = m_actions.constBegin();
          iter != m_actions.constEnd();
-         iter++)
+         ++iter)
     {
         actionList.append(iter.value()->action);
     }
@@ -77,7 +77,7 @@ QAction* BtActionCollection::addAction(const QString &name, const QObject *recei
 QKeySequence BtActionCollection::getDefaultShortcut(QAction* action) {
     for (ActionMap::const_iterator iter = m_actions.constBegin();
          iter != m_actions.constEnd();
-         iter++)
+         ++iter)
     {
         if (iter.value()->action == action) {
             return iter.value()->defaultKeys;
@@ -90,7 +90,7 @@ void BtActionCollection::readShortcuts(const QString &group) {
     QHash<QString, QList <QKeySequence > > shortcuts = btConfig().getShortcuts(group);
     for(QHash<QString, QList <QKeySequence> >::const_iterator iter = shortcuts.begin();
                                                              iter != shortcuts.end();
-                                                             iter++)
+                                                             ++iter)
     {
         QAction *a = action(iter.key());
         if (a == 0)
@@ -103,7 +103,7 @@ void BtActionCollection::writeShortcuts(const QString &group) {
     QHash< QString, QList<QKeySequence> > shortcuts;
     for (ActionMap::const_iterator iter = m_actions.constBegin();
         iter != m_actions.constEnd();
-        iter++)
+        ++iter)
     {
         shortcuts.insert(iter.key(), iter.value()->action->shortcuts());
     }

@@ -274,7 +274,6 @@ SET(bibletime_SRC_FRONTEND_DISPLAY
     src/frontend/display/chtmlwritedisplay.cpp
     src/frontend/display/cplainwritedisplay.cpp
     src/frontend/display/creaddisplay.cpp
-    src/frontend/display/cwritedisplay.cpp
 )
 
 SOURCE_GROUP("src\\frontend\\display" FILES ${bibletime_SRC_FRONTEND_DISPLAY})
@@ -297,7 +296,6 @@ SET(bibletime_SRC_FRONTEND_DISPLAYWINDOW
     src/frontend/displaywindow/clexiconreadwindow.cpp
     src/frontend/displaywindow/cplainwritewindow.cpp
     src/frontend/displaywindow/creadwindow.cpp
-    src/frontend/displaywindow/cwritewindow.cpp
 )
 
 SOURCE_GROUP("src\\frontend\\displaywindow" FILES ${bibletime_SRC_FRONTEND_DISPLAYWINDOW})
@@ -375,7 +373,6 @@ SET(bibletime_FRONTEND_DESKTOP_MOCABLE_HEADERS
     src/frontend/displaywindow/clexiconreadwindow.h
     src/frontend/displaywindow/cplainwritewindow.h
     src/frontend/displaywindow/creadwindow.h
-    src/frontend/displaywindow/cwritewindow.h
     src/frontend/keychooser/bthistory.h
     src/frontend/keychooser/cbookkeychooser.h
     src/frontend/keychooser/cbooktreechooser.h

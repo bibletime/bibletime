@@ -9,10 +9,11 @@
 
 #include "util/dialogutil.h"
 
-#include <QMessageBox>
+#include <QAction>
 #include <QDialogButtonBox>
+#include <QMessageBox>
 #include <QPushButton>
-#include <QDebug>
+
 
 namespace util {
 
@@ -45,6 +46,13 @@ QMessageBox::StandardButton bt_messageBox(QMessageBox::Icon icon,
 }
 
 } // anonymous namespace
+
+void setQActionCheckedNoTrigger(QAction * const action, const bool checked) {
+    Q_ASSERT(action);
+    const bool signalsWereBlocked = action->blockSignals(true);
+    action->setChecked(checked);
+    action->blockSignals(signalsWereBlocked);
+}
 
 void prepareDialogBox(QDialogButtonBox *box) {
     replaceText(box, QDialogButtonBox::Ok      , QPushButton::tr("OK"        , "Dialog Button"));

@@ -9,45 +9,52 @@
 
 #include "backend/managers/btstringmgr.h"
 
+#include <cstring>
+#include "util/macros.h"
 
-char* BTStringMgr::upperUTF8(char* text, unsigned int maxlen) const {
-    const int max = (maxlen > 0) ? maxlen : strlen(text);
 
-    if (isUtf8(text)) {
-        strncpy(text, (const char*)QString::fromUtf8(text).toUpper().toUtf8(), max);
+char * BtStringMgr::upperUTF8(char * const text, unsigned int maxlen) const {
+    size_t max = (maxlen > 0u) ? maxlen : strlen(text);
 
-        return text;
-    }
-    else {
-        char* ret = text;
-
-        while (*text) {
-            *text = toupper(*text);
-            text++;
+    if (LIKELY(max > 1u)) {
+        max--;
+        if (isUtf8(text)) {
+            strncpy(text, QString::fromUtf8(text).toUpper().toUtf8().constData(), max);
         }
-
-        return ret;
+        else {
+            strncpy(text, QString::fromLatin1(text).toUpper().toLatin1().constData(), max);
+        }
+        text[max] = '\0';
+    } else if (max == 1u) {
+        text[0u] = '\0';
+    } else {
+        Q_ASSERT(max == 0u);
     }
 
     return text;
 }
 
-char* BTStringMgr::upperLatin1(char* text, unsigned int /*max*/) const {
-    char* ret = text;
+char * BtStringMgr::upperLatin1(char * const text, unsigned int maxlen) const {
+    size_t max = (maxlen > 0u) ? maxlen : strlen(text);
 
-    while (*text) {
-        *text = toupper(*text);
-        text++;
+    if (LIKELY(max > 1u)) {
+        max--;
+        strncpy(text, QString::fromLatin1(text).toUpper().toLatin1().constData(), max);
+        text[max] = '\0';
+    } else if (max == 1u) {
+        text[0u] = '\0';
+    } else {
+        Q_ASSERT(max == 0u);
     }
 
-    return ret;
+    return text;
 }
 
-bool BTStringMgr::supportsUnicode() const {
+bool BtStringMgr::supportsUnicode() const {
     return true;
 }
 
-bool BTStringMgr::isUtf8(const char *buf) const {
+bool BtStringMgr::isUtf8(const char *buf) const {
     int i, n;
     register unsigned char c;
     bool gotone = false;

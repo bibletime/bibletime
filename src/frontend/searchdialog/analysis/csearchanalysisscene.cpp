@@ -88,7 +88,7 @@ void CSearchAnalysisScene::analyse(
     bool ok = true;
     while (ok && analysisItem) {
         moduleIndex = 0;
-        for (RCI it = m_results.begin(); it != m_results.end(); it++) {
+        for (RCI it = m_results.begin(); it != m_results.end(); ++it) {
             qApp->processEvents( QEventLoop::AllEvents );
             if (!m_lastPosList.contains(it.key())) {
                 m_lastPosList.insert(it.key(), 0);
@@ -120,7 +120,7 @@ void CSearchAnalysisScene::setResults(
     typedef CSwordModuleSearch::Results::const_iterator RCI;
 
     m_results.clear();
-    for (RCI it = results.begin(); it != results.end(); it++) {
+    for (RCI it = results.begin(); it != results.end(); ++it) {
         const CSwordModuleInfo *m = it.key();
         if ( (m->type() == CSwordModuleInfo::Bible) || (m->type() == CSwordModuleInfo::Commentary) ) { //a Bible or an commentary
             m_results.insert(m, it.value());
@@ -248,7 +248,7 @@ void CSearchAnalysisScene::saveAsHTML() {
     tableTitle = "<tr><th align=\"left\">" + tr("Book") + "</th>";
     tableTotals = "<tr><td align=\"left\">" + tr("Total hits") + "</td>";
 
-    for (RCI it = m_results.begin(); it != m_results.end(); it++) {
+    for (RCI it = m_results.begin(); it != m_results.end(); ++it) {
         const CSwordModuleInfo *mod = it.key();
         tableTitle += QString("<th align=\"left\">") + mod->name() + QString("</th>");
 
@@ -268,7 +268,7 @@ void CSearchAnalysisScene::saveAsHTML() {
         analysisItem = m_itemList.value( key.book() );
 
         int moduleIndex = 0;
-        for (RCI it = m_results.begin(); it != m_results.end(); it++) {
+        for (RCI it = m_results.begin(); it != m_results.end(); ++it) {
             count = analysisItem->getCountForModule(moduleIndex);
             countStr.setNum(count);
             m_searchAnalysisHTML += QString("<td align=\"right\">") + countStr + QString("</td>");

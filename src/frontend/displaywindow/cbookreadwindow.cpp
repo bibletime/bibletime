@@ -15,7 +15,7 @@
 #include <QToolBar>
 #include "bibletime.h"
 #include "backend/keys/cswordtreekey.h"
-#include "frontend/display/cdisplay.h"
+#include "frontend/display/bthtmlreaddisplay.h"
 #include "frontend/displaywindow/bttoolbarpopupaction.h"
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"
@@ -86,7 +86,7 @@ void CBookReadWindow::initConnections() {
 void CBookReadWindow::initView() {
     QSplitter* splitter = new QSplitter(this);
     m_treeChooser = new CBookTreeChooser(modules(), history(), key(), splitter);
-    setDisplayWidget( CDisplay::createReadInstance(this, splitter) );
+    setDisplayWidget(new BtHtmlReadDisplay(this, splitter));
     m_treeChooser->hide();
 
     // Create Navigation toolbar

@@ -124,8 +124,11 @@ void CMDIArea::setMDIArrangementMode( const MDIArrangementMode newArrangementMod
         QObject* parent = tab->parent();
         if (parent == this) {
             tab->setTabsClosable(true);
+// As of version 4.8, Qt does the close for us.
+#if QT_VERSION < 0x040800
             disconnect(tab, SIGNAL(tabCloseRequested(int)), this, SLOT(closeTab(int)));
             connect(tab, SIGNAL(tabCloseRequested(int)), this, SLOT(closeTab(int)));
+#endif
         }
     }
 }

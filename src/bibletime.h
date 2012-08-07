@@ -14,7 +14,7 @@
 
 #include <QList>
 #include "frontend/displaywindow/cdisplaywindow.h"
-#include "frontend/displaywindow/cwritewindow.h"
+#include "frontend/displaywindow/cplainwritewindow.h"
 #include <QSignalMapper>
 #ifdef BT_DEBUG
 #include <QMutex>
@@ -34,6 +34,7 @@ class CSwordModuleInfo;
 class QAction;
 class QLabel;
 class QMenu;
+class QActionGroup;
 class QToolBar;
 class QSplitter;
 class QSignalMapper;
@@ -185,7 +186,12 @@ class BibleTime : public QMainWindow {
         */
         static bool moduleUnlock(CSwordModuleInfo *module, QWidget *parent = 0);
 
-    public slots:
+        /**
+          Get a pointer to the module associated with the current window
+        */
+        const CSwordModuleInfo* getCurrentModule();
+
+public slots:
         /**
         * Opens the optionsdialog of BibleTime.
         */
@@ -291,7 +297,7 @@ class BibleTime : public QMainWindow {
          */
         CDisplayWindow* createReadDisplayWindow(QList<CSwordModuleInfo*> modules, const QString& key);
         CDisplayWindow* createReadDisplayWindow(CSwordModuleInfo* module, const QString& key = QString::null);
-        CDisplayWindow* createWriteDisplayWindow(CSwordModuleInfo* module, const QString& key, const CWriteWindow::WriteWindowType& type);
+        CDisplayWindow* createWriteDisplayWindow(CSwordModuleInfo * module, const QString & key, CPlainWriteWindow::WriteWindowType type);
         CDisplayWindow* moduleEditPlain(CSwordModuleInfo *module);
         CDisplayWindow* moduleEditHtml(CSwordModuleInfo *module);
         void searchInModule(CSwordModuleInfo *module);
@@ -307,34 +313,12 @@ class BibleTime : public QMainWindow {
          * Is called when the open windows menu is about to show ;-)
          */
         void slotOpenWindowsMenuAboutToShow();
-        /**
-         * This slot is connected with the windowAutoTileVerticalAction object
-         */
-        void slotAutoTileVertical();
-        /**
-         * This slot is connected with the windowAutoTileHorizontalAction object
-         */
-        void slotAutoTileHorizontal();
-        /**
-         * This slot is connected with the windowAutoTileAction object
-         */
-        void slotAutoTile();
-        /**
-         * This slot is connected with the windowAutoTabbedAction object
-         */
-        void slotAutoTabbed();
-        /**
-         * This slot is connected with the windowAutoCascadeAction object
-         */
-        void slotAutoCascade();
-        void slotUpdateWindowArrangementActions( QAction* );
+        void slotUpdateWindowArrangementActions(QAction * trigerredAction);
 
         void slotCascade();
         void slotTile();
         void slotTileVertical();
         void slotTileHorizontal();
-
-        void slotManualArrangementMode();
 
         /**
          * Shows/hides the main toolbar
@@ -465,6 +449,7 @@ class BibleTime : public QMainWindow {
         QAction *m_windowTileVerticalAction;
         QAction *m_windowManualModeAction;
         QMenu *m_windowArrangementMenu;
+        QActionGroup *m_windowArrangementActionGroup;
         QAction *m_windowAutoCascadeAction;
         QAction *m_windowAutoTileAction;
         QAction *m_windowAutoTabbedAction;
@@ -472,6 +457,10 @@ class BibleTime : public QMainWindow {
         QAction *m_windowAutoTileHorizontalAction;
         QAction *m_windowCloseAction;
         QAction *m_windowCloseAllAction;
+        QAction* m_windowSaveToNewProfileAction;
+        QMenu* m_windowLoadProfileMenu;
+        QActionGroup* m_windowLoadProfileActionGroup;
+        QMenu* m_windowDeleteProfileMenu;
 
         // Settings menu:
         QMenu *m_settingsMenu;
@@ -487,9 +476,7 @@ class BibleTime : public QMainWindow {
 
         BtActionCollection* m_actionCollection;
 
-        QAction* m_windowSaveToNewProfileAction;
-        QMenu* m_windowLoadProfileMenu;
-        QMenu* m_windowDeleteProfileMenu;
+
         QAction* m_windowFullscreenAction;
 
         /**
@@ -520,7 +507,12 @@ class BibleTime : public QMainWindow {
         void syncAllModulesByType(const CSwordModuleInfo::ModuleType type, const QString& key);
 
     private:
+        /**
+         * Set the visibility of all tool bars according to the configuration
+         * taking the toolbarsInEachWindow setting into account.
+         */
         void showOrHideToolBars();
+
 #ifdef BT_DEBUG
         void deleteDebugWindow();
     private slots:

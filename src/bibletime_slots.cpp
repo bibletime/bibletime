@@ -35,6 +35,7 @@
 #include "frontend/settingsdialogs/cconfigurationdialog.h"
 #include "frontend/tips/bttipdialog.h"
 #include "util/directory.h"
+#include "util/dialogutil.h"
 
 
 /** Opens the optionsdialog of BibleTime. */
@@ -89,38 +90,24 @@ void BibleTime::slotSwordSetupDialog() {
 void BibleTime::slotWindowMenuAboutToShow() {
     Q_ASSERT(m_windowMenu);
 
-    if ( m_mdi->subWindowList().isEmpty() ) {
-        m_windowCascadeAction->setEnabled(false);
-        m_windowTileVerticalAction->setEnabled(false);
-        m_windowTileHorizontalAction->setEnabled(false);
-        m_windowCloseAction->setEnabled(false);
-        m_windowCloseAllAction->setEnabled(false);
-        m_openWindowsMenu->setEnabled(false);
-    }
-    else if (m_mdi->subWindowList().count() == 1) {
-        m_windowTileVerticalAction->setEnabled(false);
-        m_windowTileHorizontalAction->setEnabled(false);
-        m_windowCascadeAction->setEnabled(false);
-        m_windowCloseAction->setEnabled(true);
-        m_windowCloseAllAction->setEnabled(true);
-        m_openWindowsMenu->setEnabled(true);
-        //   m_windowMenu->insertSeparator();
-    }
-    else {
-        slotUpdateWindowArrangementActions(0); //update the window tile/cascade states
-        m_windowCloseAction->setEnabled(true);
-        m_windowCloseAllAction->setEnabled(true);
-        m_openWindowsMenu->setEnabled(true);
-    }
+    const int numSubWindows = m_mdi->subWindowList().count();
+    m_windowCloseAction->setEnabled(numSubWindows);
+    m_windowCloseAllAction->setEnabled(numSubWindows);
+    m_openWindowsMenu->setEnabled(numSubWindows);
+
+    const bool enableManualArrangeActions = numSubWindows > 1;
+    m_windowCascadeAction->setEnabled(enableManualArrangeActions);
+    m_windowTileAction->setEnabled(enableManualArrangeActions);
+    m_windowTileVerticalAction->setEnabled(enableManualArrangeActions);
+    m_windowTileHorizontalAction->setEnabled(enableManualArrangeActions);
 }
 
 /** Is called just before the open windows menu is shown. */
 void BibleTime::slotOpenWindowsMenuAboutToShow() {
     Q_ASSERT(m_openWindowsMenu);
 
-    QList<QMdiSubWindow*> windows = m_mdi->usableWindowList();
     m_openWindowsMenu->clear();
-    Q_FOREACH (QMdiSubWindow * const window, windows) {
+    Q_FOREACH (QMdiSubWindow * const window, m_mdi->usableWindowList()) {
         QAction *openWindowAction = m_openWindowsMenu->addAction(window->windowTitle());
         openWindowAction->setCheckable(true);
         openWindowAction->setChecked(window == m_mdi->activeSubWindow());
@@ -130,130 +117,56 @@ void BibleTime::slotOpenWindowsMenuAboutToShow() {
 }
 
 /** This slot is connected with the windowAutoTileAction object */
-void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
-    /* If a toggle action was clicked we see if it is checked or unchecked and
-    * enable/disable the simple cascade and tile options accordingly
-    */
-    m_windowTileVerticalAction->setEnabled( m_windowManualModeAction->isChecked() );
-    m_windowTileHorizontalAction->setEnabled( m_windowManualModeAction->isChecked() );
-    m_windowCascadeAction->setEnabled( m_windowManualModeAction->isChecked() );
-    m_windowTileAction->setEnabled( m_windowManualModeAction->isChecked() );
+void BibleTime::slotUpdateWindowArrangementActions(QAction * trigerredAction) {
+    Q_ASSERT(trigerredAction);
 
-    if (clickedAction) {
-        m_windowManualModeAction->setEnabled(
-            m_windowManualModeAction != clickedAction
-            && m_windowTileHorizontalAction != clickedAction
-            && m_windowTileVerticalAction != clickedAction
-            && m_windowCascadeAction != clickedAction
-            && m_windowTileAction != clickedAction
-        );
-        m_windowAutoTileVerticalAction->setEnabled( m_windowAutoTileVerticalAction != clickedAction );
-        m_windowAutoTileHorizontalAction->setEnabled( m_windowAutoTileHorizontalAction != clickedAction );
-        m_windowAutoCascadeAction->setEnabled( m_windowAutoCascadeAction != clickedAction );
-        m_windowAutoTileAction->setEnabled( m_windowAutoTileAction != clickedAction );
-        m_windowAutoTabbedAction->setEnabled( m_windowAutoTabbedAction != clickedAction );
+    if (trigerredAction == m_windowAutoTileVerticalAction) {
+        m_mdi->setMDIArrangementMode(CMDIArea::ArrangementModeTileVertical);
+        btConfig().setSessionValue("GUI/alignmentMode", autoTileVertical);
     }
+    else if (trigerredAction == m_windowAutoTileHorizontalAction) {
+        m_mdi->setMDIArrangementMode(CMDIArea::ArrangementModeTileHorizontal);
+        btConfig().setSessionValue("GUI/alignmentMode", autoTileHorizontal);
+    }
+    else if (trigerredAction == m_windowAutoTileAction) {
+        m_mdi->setMDIArrangementMode(CMDIArea::ArrangementModeTile);
+        btConfig().setSessionValue("GUI/alignmentMode", autoTile);
+    }
+    else if (trigerredAction == m_windowAutoTabbedAction) {
+        m_mdi->setMDIArrangementMode(CMDIArea::ArrangementModeTabbed);
+        btConfig().setSessionValue("GUI/alignmentMode", autoTabbed);
+    }
+    else if (trigerredAction == m_windowAutoCascadeAction) {
+        m_mdi->setMDIArrangementMode(CMDIArea::ArrangementModeCascade);
+        btConfig().setSessionValue("GUI/alignmentMode", autoCascade);
+    }
+    else {
+        Q_ASSERT(trigerredAction == m_windowManualModeAction
+                 || trigerredAction == m_windowTileAction
+                 || trigerredAction == m_windowCascadeAction
+                 || trigerredAction == m_windowTileVerticalAction
+                 || trigerredAction == m_windowTileHorizontalAction);
 
-    if (clickedAction == m_windowManualModeAction) {
-        m_windowAutoTileVerticalAction->setChecked(false);
-        m_windowAutoTileHorizontalAction->setChecked(false);
-        m_windowAutoCascadeAction->setChecked(false);
-        m_windowAutoTileAction->setChecked(false);
-        m_windowAutoTabbedAction->setChecked(false);
+        if (trigerredAction != m_windowManualModeAction)
+            m_windowManualModeAction->setChecked(true);
+
         m_mdi->enableWindowMinMaxFlags(true);
-        m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeManual );
-        btConfig().setValue("GUI/alignmentMode", manual);
-    }
-    else if (clickedAction == m_windowAutoTileVerticalAction) {
-        m_windowManualModeAction->setChecked(false);
-        m_windowAutoTileHorizontalAction->setChecked(false);
-        m_windowAutoCascadeAction->setChecked(false);
-        m_windowAutoTileAction->setChecked(false);
-        m_windowAutoTabbedAction->setChecked(false);
-        m_mdi->enableWindowMinMaxFlags(false);
-        m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTileVertical );
-        btConfig().setValue("GUI/alignmentMode", autoTileVertical);
-    }
-    else if (clickedAction == m_windowAutoTileHorizontalAction) {
-        m_windowManualModeAction->setChecked(false);
-        m_windowAutoTileVerticalAction->setChecked(false);
-        m_windowAutoCascadeAction->setChecked(false);
-        m_windowAutoTileAction->setChecked(false);
-        m_windowAutoTabbedAction->setChecked(false);
-        m_mdi->enableWindowMinMaxFlags(false);
-        m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTileHorizontal );
-        btConfig().setValue("GUI/alignmentMode", autoTileHorizontal);
-    }
-    else if (clickedAction == m_windowAutoTileAction) {
-        m_windowManualModeAction->setChecked(false);
-        m_windowAutoTileHorizontalAction->setChecked(false);
-        m_windowAutoTileVerticalAction->setChecked(false);
-        m_windowAutoTabbedAction->setChecked(false);
-        m_windowAutoCascadeAction->setChecked(false);
-        m_mdi->enableWindowMinMaxFlags(false);
-        m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTile );
-        btConfig().setValue("GUI/alignmentMode", autoTile);
-    }
-    else if (clickedAction == m_windowAutoTabbedAction) {
-        m_windowManualModeAction->setChecked(false);
-        m_windowAutoTileHorizontalAction->setChecked(false);
-        m_windowAutoTileVerticalAction->setChecked(false);
-        m_windowAutoTileAction->setChecked(false);
-        m_windowAutoCascadeAction->setChecked(false);
-        m_mdi->enableWindowMinMaxFlags(false);
-        m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTabbed );
-        btConfig().setValue("GUI/alignmentMode", autoTabbed);
-    }
-    else if (clickedAction == m_windowAutoCascadeAction) {
-        m_windowManualModeAction->setChecked(false);
-        m_windowAutoTileHorizontalAction->setChecked(false);
-        m_windowAutoTileVerticalAction->setChecked(false);
-        m_windowAutoTileAction->setChecked(false);
-        m_windowAutoTabbedAction->setChecked(false);
-        m_mdi->enableWindowMinMaxFlags(false);
-        m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeCascade );
-        btConfig().setValue("GUI/alignmentMode", autoCascade);
-    }
-    else if (clickedAction == m_windowTileAction) {
-        m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeManual );
-        m_mdi->myTile();
-    }
-    else if (clickedAction == m_windowCascadeAction) {
-        m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeManual );
-        m_mdi->myCascade();
-    }
-    else if (clickedAction == m_windowTileVerticalAction) {
-        m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeManual );
-        m_mdi->myTileVertical();
-    }
-    else if (clickedAction == m_windowTileHorizontalAction) {
-        m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeManual );
-        m_mdi->myTileHorizontal();
-    }
-}
+        m_mdi->setMDIArrangementMode(CMDIArea::ArrangementModeManual);
+        btConfig().setSessionValue("GUI/alignmentMode", manual);
 
-void BibleTime::slotManualArrangementMode() {
-    slotUpdateWindowArrangementActions( m_windowManualModeAction );
-}
+        if (trigerredAction == m_windowTileAction)
+            m_mdi->myTile();
+        else if (trigerredAction == m_windowCascadeAction)
+            m_mdi->myCascade();
+        else if (trigerredAction == m_windowTileVerticalAction)
+            m_mdi->myTileVertical();
+        else if (trigerredAction == m_windowTileHorizontalAction)
+            m_mdi->myTileHorizontal();
 
-/** This slot is connected with the windowAutoTileAction object */
-void BibleTime::slotAutoTileHorizontal() {
-    slotUpdateWindowArrangementActions( m_windowAutoTileHorizontalAction );
-}
+        return;
+    }
 
-/** This slot is connected with the windowAutoTileAction object */
-void BibleTime::slotAutoTileVertical() {
-    slotUpdateWindowArrangementActions( m_windowAutoTileVerticalAction );
-}
-
-/** This slot is connected with the windowAutoTileAction object */
-void BibleTime::slotAutoTile() {
-    slotUpdateWindowArrangementActions( m_windowAutoTileAction );
-}
-
-/** This slot is connected with the windowAutoTabbedAction object */
-void BibleTime::slotAutoTabbed() {
-    slotUpdateWindowArrangementActions( m_windowAutoTabbedAction );
+    m_mdi->enableWindowMinMaxFlags(false);
 }
 
 void BibleTime::slotTile() {
@@ -272,16 +185,11 @@ void BibleTime::slotTileHorizontal() {
     slotUpdateWindowArrangementActions( m_windowTileHorizontalAction );
 }
 
-/** This slot is connected with the windowAutoCascadeAction object */
-void BibleTime::slotAutoCascade() {
-    slotUpdateWindowArrangementActions( m_windowAutoCascadeAction );
-}
-
 /** Shows/hides the toolbar */
 void BibleTime::slotToggleMainToolbar() {
     Q_ASSERT(m_mainToolBar);
-    bool currentState = btConfig().value<bool>("GUI/showMainToolbar", true);
-    btConfig().setValue("GUI/showMainToolbar", !currentState);
+    bool currentState = btConfig().sessionValue<bool>("GUI/showMainToolbar", true);
+    btConfig().setSessionValue("GUI/showMainToolbar", !currentState);
     if ( m_showMainWindowToolbarAction->isChecked()) {
         m_mainToolBar->show();
     }
@@ -291,84 +199,77 @@ void BibleTime::slotToggleMainToolbar() {
 }
 
 void BibleTime::slotToggleTextWindowHeader() {
-    bool currentState = btConfig().value<bool>("GUI/showTextWindowHeaders", true);
-    btConfig().setValue("GUI/showTextWindowHeaders", !currentState);
+    bool currentState = btConfig().sessionValue<bool>("GUI/showTextWindowHeaders", true);
+    btConfig().setSessionValue("GUI/showTextWindowHeaders", !currentState);
     emit toggledTextWindowHeader(!currentState);
 }
 
 void BibleTime::slotToggleNavigatorToolbar() {
-    bool currentState = btConfig().value<bool>("GUI/showTextWindowNavigator", true);
-    btConfig().setValue("GUI/showTextWindowNavigator", !currentState);
-    showOrHideToolBars();
-    if (btConfig().value<bool>("GUI/showToolbarsInEachWindow", true))
+    bool currentState = btConfig().sessionValue<bool>("GUI/showTextWindowNavigator", true);
+    btConfig().setSessionValue("GUI/showTextWindowNavigator", !currentState);
+    if (btConfig().sessionValue<bool>("GUI/showToolbarsInEachWindow", true))
         emit toggledTextWindowNavigator(!currentState);
     else
-        emit toggledTextWindowNavigator(false);
+        m_navToolBar->setVisible(btConfig().sessionValue<bool>("GUI/showTextWindowNavigator", true));
 }
 
 void BibleTime::slotToggleToolsToolbar() {
-    bool currentState = btConfig().value<bool>("GUI/showTextWindowToolButtons", true);
-    btConfig().setValue("GUI/showTextWindowToolButtons", !currentState);
-    showOrHideToolBars();
-    if (btConfig().value<bool>("GUI/showToolbarsInEachWindow", true))
+    bool currentState = btConfig().sessionValue<bool>("GUI/showTextWindowToolButtons", true);
+    btConfig().setSessionValue("GUI/showTextWindowToolButtons", !currentState);
+    if (btConfig().sessionValue<bool>("GUI/showToolbarsInEachWindow", true))
         emit toggledTextWindowToolButtons(!currentState);
     else
-        emit toggledTextWindowToolButtons(false);
+        m_toolsToolBar->setVisible(btConfig().sessionValue<bool>("GUI/showTextWindowToolButtons", true));
 }
 
 void BibleTime::slotToggleWorksToolbar() {
-    bool currentState = btConfig().value<bool>("GUI/showTextWindowModuleSelectorButtons", true);
-    btConfig().setValue("GUI/showTextWindowModuleSelectorButtons", !currentState);
-    showOrHideToolBars();
-    if (btConfig().value<bool>("GUI/showToolbarsInEachWindow", true))
+    bool currentState = btConfig().sessionValue<bool>("GUI/showTextWindowModuleSelectorButtons", true);
+    btConfig().setSessionValue("GUI/showTextWindowModuleSelectorButtons", !currentState);
+    if (btConfig().sessionValue<bool>("GUI/showToolbarsInEachWindow", true))
         emit toggledTextWindowModuleChooser(!currentState);
     else
-        emit toggledTextWindowModuleChooser(false);
+        m_worksToolBar->setVisible(btConfig().sessionValue<bool>("GUI/showTextWindowModuleSelectorButtons", true));
 }
 
 void BibleTime::slotToggleFormatToolbar() {
-    bool currentState = btConfig().value<bool>("GUI/showFormatToolbarButtons", true);
-    btConfig().setValue("GUI/showFormatToolbarButtons", !currentState);
-    showOrHideToolBars();
-    if (btConfig().value<bool>("GUI/showToolbarsInEachWindow", true))
+    bool currentState = btConfig().sessionValue<bool>("GUI/showFormatToolbarButtons", true);
+    btConfig().setSessionValue("GUI/showFormatToolbarButtons", !currentState);
+    if (btConfig().sessionValue<bool>("GUI/showToolbarsInEachWindow", true))
         emit toggledTextWindowFormatToolbar(!currentState);
     else
-        emit toggledTextWindowFormatToolbar(false);
+        m_formatToolBar->setVisible(!currentState);
 }
 
 void BibleTime::slotToggleToolBarsInEachWindow() {
-    bool currentState = btConfig().value<bool>("GUI/showToolbarsInEachWindow", true);
-    btConfig().setValue("GUI/showToolbarsInEachWindow", !currentState);
+    bool currentState = btConfig().sessionValue<bool>("GUI/showToolbarsInEachWindow", true);
+    btConfig().setSessionValue("GUI/showToolbarsInEachWindow", !currentState);
     showOrHideToolBars();
-
-    if (!currentState) {
-        emit toggledTextWindowNavigator(btConfig().value<bool>("GUI/showTextWindowNavigator", true));
-        emit toggledTextWindowModuleChooser(btConfig().value<bool>("GUI/showTextWindowModuleSelectorButtons", true));
-        emit toggledTextWindowToolButtons(btConfig().value<bool>("GUI/showTextWindowToolButtons", true));
-        emit toggledTextWindowFormatToolbar(btConfig().value<bool>("GUI/showFormatToolbarButtons", true));
-    }
-    else {
-        emit toggledTextWindowNavigator(false);
-        emit toggledTextWindowToolButtons(false);
-        emit toggledTextWindowModuleChooser(false);
-        emit toggledTextWindowFormatToolbar(false);
-    }
-
-
 }
 
 void BibleTime::showOrHideToolBars() {
-    if (btConfig().value<bool>("GUI/showToolbarsInEachWindow", true)) {
+    if (btConfig().sessionValue<bool>("GUI/showToolbarsInEachWindow", true)) {
+        // set main window widgets invisible
         m_navToolBar->setVisible(false);
         m_worksToolBar->setVisible(false);
         m_toolsToolBar->setVisible(false);
         m_formatToolBar->setVisible(false);
+        // set state of sub window widets
+        emit toggledTextWindowNavigator(btConfig().sessionValue<bool>("GUI/showTextWindowNavigator", true));
+        emit toggledTextWindowModuleChooser(btConfig().sessionValue<bool>("GUI/showTextWindowModuleSelectorButtons", true));
+        emit toggledTextWindowToolButtons(btConfig().sessionValue<bool>("GUI/showTextWindowToolButtons", true));
+        emit toggledTextWindowFormatToolbar(btConfig().sessionValue<bool>("GUI/showFormatToolbarButtons", true));
     }
     else {
-        m_navToolBar->setVisible(btConfig().value<bool>("GUI/showTextWindowNavigator", true));
-        m_worksToolBar->setVisible(btConfig().value<bool>("GUI/showTextWindowModuleSelectorButtons", true));
-        m_toolsToolBar->setVisible(btConfig().value<bool>("GUI/showTextWindowToolButtons", true));
-        m_formatToolBar->setVisible(btConfig().value<bool>("GUI/showFormatToolbarButtons", true));
+        // set state of main window widgets
+        m_navToolBar->setVisible(btConfig().sessionValue<bool>("GUI/showTextWindowNavigator", true));
+        m_worksToolBar->setVisible(btConfig().sessionValue<bool>("GUI/showTextWindowModuleSelectorButtons", true));
+        m_toolsToolBar->setVisible(btConfig().sessionValue<bool>("GUI/showTextWindowToolButtons", true));
+        m_formatToolBar->setVisible(btConfig().sessionValue<bool>("GUI/showFormatToolbarButtons", true));
+        //set sub window widgets invisible
+        emit toggledTextWindowNavigator(false);
+        emit toggledTextWindowToolButtons(false);
+        emit toggledTextWindowModuleChooser(false);
+        emit toggledTextWindowFormatToolbar(false);
     }
 }
 
@@ -458,10 +359,17 @@ void BibleTime::loadProfile(QAction * action) {
 void BibleTime::loadProfile(const QString & profileKey) {
     Q_ASSERT(btConfig().sessionNames().contains(profileKey));
 
+    // do nothing if requested session is the current session
+    if (profileKey == btConfig().currentSessionKey())
+        return;
+
+    // Save old profile:
+    saveProfile();
+
     // Close all open windows BEFORE switching profile:
     m_mdi->closeAllSubWindows();
 
-    // Switch prifle Activate profile:
+    // Switch profile Activate profile:
     btConfig().setCurrentSession(profileKey);
     reloadProfile();
     refreshProfileMenus();
@@ -481,7 +389,8 @@ struct WindowLoadStatus {
 
 void BibleTime::reloadProfile() {
     typedef CMDIArea::MDIArrangementMode MAM;
-    typedef CWriteWindow::WriteWindowType WWT;
+    typedef CPlainWriteWindow::WriteWindowType WWT;
+    using util::setQActionCheckedNoTrigger;
 
     // Cache pointer to config:
     BtConfig & conf = btConfig();
@@ -495,7 +404,22 @@ void BibleTime::reloadProfile() {
     // Reload main window settings:
     restoreGeometry(conf.sessionValue<QByteArray>("MainWindow/geometry"));
     restoreState(conf.sessionValue<QByteArray>("MainWindow/state"));
-    m_windowFullscreenAction->setChecked(isFullScreen());
+
+    /*
+     * restoreState includes visibility of child widgets, the manually added
+     * qactions (so not including bookmark, bookshelf and mag) are not restored
+     * though, so we restore their state here.
+     */
+    setQActionCheckedNoTrigger(m_windowFullscreenAction, isFullScreen());
+    setQActionCheckedNoTrigger(m_showTextAreaHeadersAction, conf.sessionValue<bool>("GUI/showTextWindowHeaders", true));
+    setQActionCheckedNoTrigger(m_showTextAreaHeadersAction, conf.sessionValue<bool>("GUI/showTextWindowHeaders", true));
+    setQActionCheckedNoTrigger(m_showMainWindowToolbarAction, conf.sessionValue<bool>("GUI/showMainToolbar", true));
+    setQActionCheckedNoTrigger(m_showTextWindowNavigationAction, conf.sessionValue<bool>("GUI/showTextWindowNavigator", true));
+    setQActionCheckedNoTrigger(m_showTextWindowModuleChooserAction, conf.sessionValue<bool>("GUI/showTextWindowModuleSelectorButtons", true));
+    setQActionCheckedNoTrigger(m_showTextWindowToolButtonsAction, conf.sessionValue<bool>("GUI/showTextWindowToolButtons", true));
+    setQActionCheckedNoTrigger(m_showFormatToolbarAction, conf.sessionValue<bool>("GUI/showFormatToolbarButtons", true));
+    setQActionCheckedNoTrigger(m_toolbarsInEachWindow, conf.sessionValue<bool>("GUI/showToolbarsInEachWindow", true));
+
     m_mdi->setMDIArrangementMode(static_cast<MAM>(conf.sessionValue<int>("MainWindow/MDIArrangementMode")));
 
     QWidget * focusWindow = 0;
@@ -551,6 +475,11 @@ void BibleTime::reloadProfile() {
         }
     }
 
+    /* This call is necessary to restore the visibility of the toolbars in the child
+     * windows, since their state is not saved automatically.
+     */
+    showOrHideToolBars();
+
     // Re-arrange MDI:
     m_mdi->triggerWindowUpdate();
 
@@ -560,7 +489,8 @@ void BibleTime::reloadProfile() {
 
     // Re-enable updates and repaint:
     setUpdatesEnabled(true);
-    repaint(); /// \bug The main window (except decors) is all black without this (not even hover over toolbar buttons works)
+    repaint(); /// \bug The main window (except decors) is all black without this (not even hover over toolbar buttons work)
+    raise(); /// \bug The main window would not refresh at all. A call to this function or adjustSize() seems to fix this
 
     /// \todo For windows in failedWindows ask whether to keep the settings / close windows etc
 }
@@ -620,7 +550,7 @@ void BibleTime::saveToNewProfile() {
     refreshProfileMenus();
 }
 
-/** Slot to refresh the save profile and load profile menus. */
+/** Slot to refresh the saved profile and load profile menus. */
 void BibleTime::refreshProfileMenus() {
     typedef BtConfig::SessionNamesHashMap SNHM;
     typedef SNHM::const_iterator SNHMCI;
@@ -638,14 +568,19 @@ void BibleTime::refreshProfileMenus() {
 
     if (enableActions) {
         for (SNHMCI it = sessions.constBegin(); it != sessions.constEnd(); ++it) {
-            if (it.key() == conf.currentSessionKey())
-                continue;
-
             QAction * a;
+
             a = m_windowLoadProfileMenu->addAction(it.value());
             a->setProperty("ProfileKey", it.key());
+            a->setActionGroup(m_windowLoadProfileActionGroup);
+            a->setCheckable(true);
+            if (it.key() == conf.currentSessionKey())
+                a->setChecked(true);
+
             a = m_windowDeleteProfileMenu->addAction(it.value());
             a->setProperty("ProfileKey", it.key());
+            if (it.key() == conf.currentSessionKey())
+                a->setDisabled(true);
         }
     }
 }

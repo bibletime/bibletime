@@ -150,7 +150,7 @@ bool CSwordVerseKey::setKey(const char *newKey) {
     }
 
     /// \todo Do we ALWAYS need to emit this signal and check for errors?
-    emitChanged();
+    emitAfterChanged();
     return !Error();
 }
 
@@ -237,14 +237,14 @@ bool CSwordVerseKey::next( const JumpType type ) {
             ret = false;
         }
 
-        emitChanged();
+        emitAfterChanged();
         return ret;
     }
     else if (Error()) { //we have no module, so take care of VerseKey::Error()
         return false;
     }
 
-    emitChanged();
+    emitAfterChanged();
     return ret;
 }
 
@@ -323,13 +323,13 @@ bool CSwordVerseKey::previous( const JumpType type ) {
             ret = false;
         }
 
-        emitChanged();
+        emitAfterChanged();
         return ret;
     }
     else if (Error()) {
         return false;
     }
 
-    emitChanged();
+    emitAfterChanged();
     return ret;
 }

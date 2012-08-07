@@ -58,7 +58,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>&amp;Load session</source>
-        <translation>Sitzung &amp;laden</translation>
+        <translation type="obsolete">Sitzung &amp;laden</translation>
     </message>
     <message>
         <source>&amp;Delete session</source>
@@ -379,6 +379,10 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <source>Toggle visibility of the mag window</source>
         <translation>Umschalten der Sichtbarkeit des Lupen-Fensters</translation>
+    </message>
+    <message>
+        <source>Sw&amp;itch session</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Session already exists</source>
@@ -1545,76 +1549,72 @@ shortcut</source>
 <context>
     <name>BtStandardWorksTab</name>
     <message>
+        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
+        <translation type="unfinished">Standard-Werke werden genutzt, wenn kein bestimmtes Werk festgelegt wurde, zum Beispiel wenn ein Verweis auf eine Bibel oder ein Lexikon angeklickt wurde.</translation>
+    </message>
+    <message>
         <source>Bible:</source>
-        <translation>Bibel:</translation>
+        <translation type="unfinished">Bibel:</translation>
     </message>
     <message>
         <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
-        <translation>Die Standard-Bibel wird genutzt, wenn ein Verweis auf eine Bibel betätigt wird</translation>
+        <translation type="unfinished">Die Standard-Bibel wird genutzt, wenn ein Verweis auf eine Bibel betätigt wird</translation>
     </message>
     <message>
         <source>Commentary:</source>
-        <translation>Kommentar:</translation>
+        <translation type="unfinished">Kommentar:</translation>
     </message>
     <message>
         <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
-        <translation>Der Standard-Kommentar wird genutzt, wenn ein Verweis auf einen Kommentar betätigt wird</translation>
+        <translation type="unfinished">Der Standard-Kommentar wird genutzt, wenn ein Verweis auf einen Kommentar betätigt wird</translation>
     </message>
     <message>
         <source>Lexicon:</source>
-        <translation>Lexikon:</translation>
+        <translation type="unfinished">Lexikon:</translation>
     </message>
     <message>
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
-        <translation>Das Standard-Lexikon wird genutzt, wenn ein Verweis auf ein Lexikon betätigt wird</translation>
+        <translation type="unfinished">Das Standard-Lexikon wird genutzt, wenn ein Verweis auf ein Lexikon betätigt wird</translation>
     </message>
     <message>
         <source>Daily devotional:</source>
-        <translation>Andachtsbuch:</translation>
+        <translation type="unfinished">Andachtsbuch:</translation>
     </message>
     <message>
         <source>The standard devotional will be used to display a short start up devotional</source>
-        <translation>Die Standard-Andacht wird für die Anzeige einer kurzen Start-Andacht genutzt</translation>
+        <translation type="unfinished">Die Standard-Andacht wird für die Anzeige einer kurzen Start-Andacht genutzt</translation>
     </message>
     <message>
         <source>Hebrew Strong&apos;s lexicon:</source>
-        <translation>Hebräisches Strong-Lexikon:</translation>
+        <translation type="unfinished">Hebräisches Strong-Lexikon:</translation>
     </message>
     <message>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
-        <translation>Das Standard-Hebräisch-Lexikon wird genutzt, wenn ein Verweis auf ein Hebräisch-Lexikon betätigt wird</translation>
+        <translation type="unfinished">Das Standard-Hebräisch-Lexikon wird genutzt, wenn ein Verweis auf ein Hebräisch-Lexikon betätigt wird</translation>
     </message>
     <message>
         <source>Greek Strong&apos;s lexicon:</source>
-        <translation>Griechisches Strong-Lexikon:</translation>
+        <translation type="unfinished">Griechisches Strong-Lexikon:</translation>
     </message>
     <message>
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
-        <translation>Das Standard-Griechisch-Lexikon wird genutzt, wenn ein Verweis auf ein Griechisch-Lexikon betätigt wird</translation>
+        <translation type="unfinished">Das Standard-Griechisch-Lexikon wird genutzt, wenn ein Verweis auf ein Griechisch-Lexikon betätigt wird</translation>
     </message>
     <message>
         <source>Hebrew morphological lexicon:</source>
-        <translation>Hebräisches Morphologie-Lexikon:</translation>
+        <translation type="unfinished">Hebräisches Morphologie-Lexikon:</translation>
     </message>
     <message>
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
-        <translation>Das Standard-Morphologie-Lexikon für hebräische Texte wird genutzt, wenn ein Verweis auf eine morphologische Markierung in einem Hebräisch-Text betätigt wird</translation>
+        <translation type="unfinished">Das Standard-Morphologie-Lexikon für hebräische Texte wird genutzt, wenn ein Verweis auf eine morphologische Markierung in einem Hebräisch-Text betätigt wird</translation>
     </message>
     <message>
         <source>Greek morphological lexicon:</source>
-        <translation>Griechisches Morphologie-Lexikon:</translation>
+        <translation type="unfinished">Griechisches Morphologie-Lexikon:</translation>
     </message>
     <message>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
-        <translation>Das Standard-Morphologie-Lexikon für griechische Texte wird genutzt, wenn ein Verweis auf eine morphologische Markierung in einem Griechisch-Text betätigt wird</translation>
-    </message>
-    <message>
-        <source></source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
-        <translation>Standard-Werke werden genutzt, wenn kein bestimmtes Werk festgelegt wurde, zum Beispiel wenn ein Verweis auf eine Bibel oder ein Lexikon angeklickt wurde.</translation>
+        <translation type="unfinished">Das Standard-Morphologie-Lexikon für griechische Texte wird genutzt, wenn ein Verweis auf eine morphologische Markierung in einem Griechisch-Text betätigt wird</translation>
     </message>
 </context>
 <context>
@@ -2403,6 +2403,18 @@ shortcut</source>
         <source>Restore original text, new text will be lost</source>
         <translation>Original-Text wiederherstellen, neuer Text geht verloren</translation>
     </message>
+    <message>
+        <source>Save Text?</source>
+        <translation type="unfinished">Text speichern?</translation>
+    </message>
+    <message>
+        <source>Save text before closing?</source>
+        <translation type="unfinished">Den Text vor dem Schließen speichern?</translation>
+    </message>
+    <message>
+        <source>Save changed text?</source>
+        <translation type="unfinished">Geänderten Text speichern?</translation>
+    </message>
 </context>
 <context>
     <name>CSearchAnalysisScene</name>
@@ -2676,15 +2688,15 @@ Möchten Sie fortfahren?</translation>
     <name>CWriteWindow</name>
     <message>
         <source>Save text before closing?</source>
-        <translation>Den Text vor dem Schließen speichern?</translation>
+        <translation type="obsolete">Den Text vor dem Schließen speichern?</translation>
     </message>
     <message>
         <source>Save changed text?</source>
-        <translation>Geänderten Text speichern?</translation>
+        <translation type="obsolete">Geänderten Text speichern?</translation>
     </message>
     <message>
         <source>Save Text?</source>
-        <translation>Text speichern?</translation>
+        <translation type="obsolete">Text speichern?</translation>
     </message>
 </context>
 <context>
@@ -3403,7 +3415,7 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>The file couldn&apos;t be saved.</source>
-        <translation>Die Datei konnte nicht gespeichert werden.</translation>
+        <translation type="obsolete">Die Datei konnte nicht gespeichert werden.</translation>
     </message>
     <message>
         <source>Please check permissions etc.</source>
@@ -3819,6 +3831,18 @@ Language name ppk</extracomment>
     <message>
         <source>See --help for details.</source>
         <translation>Siehe --help für Details.</translation>
+    </message>
+    <message>
+        <source>Error while writing to file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please check that enough disk space is available.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file couldn&apos;t be opened for saving.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4416,6 +4440,81 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     <message>
         <source>Search result of the selected work</source>
         <translation>Suchergebnis des ausgewählten Werks</translation>
+    </message>
+</context>
+<context>
+    <name>StandardWorksTab</name>
+    <message>
+        <source>Bible:</source>
+        <translation type="obsolete">Bibel:</translation>
+    </message>
+    <message>
+        <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
+        <translation type="obsolete">Die Standard-Bibel wird genutzt, wenn ein Verweis auf eine Bibel betätigt wird</translation>
+    </message>
+    <message>
+        <source>Commentary:</source>
+        <translation type="obsolete">Kommentar:</translation>
+    </message>
+    <message>
+        <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
+        <translation type="obsolete">Der Standard-Kommentar wird genutzt, wenn ein Verweis auf einen Kommentar betätigt wird</translation>
+    </message>
+    <message>
+        <source>Lexicon:</source>
+        <translation type="obsolete">Lexikon:</translation>
+    </message>
+    <message>
+        <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
+        <translation type="obsolete">Das Standard-Lexikon wird genutzt, wenn ein Verweis auf ein Lexikon betätigt wird</translation>
+    </message>
+    <message>
+        <source>Daily devotional:</source>
+        <translation type="obsolete">Andachtsbuch:</translation>
+    </message>
+    <message>
+        <source>The standard devotional will be used to display a short start up devotional</source>
+        <translation type="obsolete">Die Standard-Andacht wird für die Anzeige einer kurzen Start-Andacht genutzt</translation>
+    </message>
+    <message>
+        <source>Hebrew Strong&apos;s lexicon:</source>
+        <translation type="obsolete">Hebräisches Strong-Lexikon:</translation>
+    </message>
+    <message>
+        <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
+        <translation type="obsolete">Das Standard-Hebräisch-Lexikon wird genutzt, wenn ein Verweis auf ein Hebräisch-Lexikon betätigt wird</translation>
+    </message>
+    <message>
+        <source>Greek Strong&apos;s lexicon:</source>
+        <translation type="obsolete">Griechisches Strong-Lexikon:</translation>
+    </message>
+    <message>
+        <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
+        <translation type="obsolete">Das Standard-Griechisch-Lexikon wird genutzt, wenn ein Verweis auf ein Griechisch-Lexikon betätigt wird</translation>
+    </message>
+    <message>
+        <source>Hebrew morphological lexicon:</source>
+        <translation type="obsolete">Hebräisches Morphologie-Lexikon:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
+        <translation type="obsolete">Das Standard-Morphologie-Lexikon für hebräische Texte wird genutzt, wenn ein Verweis auf eine morphologische Markierung in einem Hebräisch-Text betätigt wird</translation>
+    </message>
+    <message>
+        <source>Greek morphological lexicon:</source>
+        <translation type="obsolete">Griechisches Morphologie-Lexikon:</translation>
+    </message>
+    <message>
+        <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
+        <translation type="obsolete">Das Standard-Morphologie-Lexikon für griechische Texte wird genutzt, wenn ein Verweis auf eine morphologische Markierung in einem Griechisch-Text betätigt wird</translation>
+    </message>
+    <message>
+        <source></source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
+        <translation type="obsolete">Standard-Werke werden genutzt, wenn kein bestimmtes Werk festgelegt wurde, zum Beispiel wenn ein Verweis auf eine Bibel oder ein Lexikon angeklickt wurde.</translation>
     </message>
 </context>
 <context>

@@ -477,75 +477,51 @@ void BibleTime::initActions() {
     m_windowManualModeAction = m_actionCollection->action("manualArrangement");
     Q_ASSERT(m_windowManualModeAction != 0);
     m_windowManualModeAction->setCheckable(true);
-    if(alignment == manual)
-        m_windowManualModeAction->setChecked(true);
-    connect(m_windowManualModeAction, SIGNAL(triggered()),
-            this,                      SLOT(slotManualArrangementMode()));
 
     m_windowAutoTabbedAction = m_actionCollection->action("autoTabbed");
     Q_ASSERT(m_windowAutoTabbedAction != 0);
     m_windowAutoTabbedAction->setCheckable(true);
-    if(alignment == autoTabbed)
-        m_windowAutoTabbedAction->setChecked(true);
-    connect(m_windowAutoTabbedAction, SIGNAL(triggered()),
-            this,                      SLOT(slotAutoTabbed()));
 
     //: Vertical tiling means that windows are vertical, placed side by side
     m_windowAutoTileVerticalAction = m_actionCollection->action("autoVertical");
     Q_ASSERT(m_windowAutoTileVerticalAction != 0);
     m_windowAutoTileVerticalAction->setCheckable(true);
-    if(alignment == autoTileVertical)
-        m_windowAutoTileVerticalAction->setChecked(true);
-    connect(m_windowAutoTileVerticalAction, SIGNAL(triggered()),
-            this,                            SLOT(slotAutoTileVertical()));
 
     //: Horizontal tiling means that windows are horizontal, placed on top of each other
     m_windowAutoTileHorizontalAction = m_actionCollection->action("autoHorizontal");
     Q_ASSERT(m_windowAutoTileHorizontalAction != 0);
     m_windowAutoTileHorizontalAction->setCheckable(true);
-    if(alignment == autoTileHorizontal)
-        m_windowAutoTileHorizontalAction->setChecked(true);
-    connect(m_windowAutoTileHorizontalAction, SIGNAL(triggered()),
-            this,                              SLOT(slotAutoTileHorizontal()));
 
     m_windowAutoTileAction = m_actionCollection->action("autoTile");
     Q_ASSERT(m_windowAutoTileAction != 0);
     m_windowAutoTileAction->setCheckable(true);
-    if(alignment == autoTile)
-        m_windowAutoTileAction->setChecked(true);
-    connect(m_windowAutoTileAction, SIGNAL(triggered()),
-            this,                    SLOT(slotAutoTile()));
 
     m_windowAutoCascadeAction = m_actionCollection->action("autoCascade");
     Q_ASSERT(m_windowAutoCascadeAction != 0);
     m_windowAutoCascadeAction->setCheckable(true);
-    if(alignment == autoCascade)
-        m_windowAutoCascadeAction->setChecked(true);
-    connect(m_windowAutoCascadeAction, SIGNAL(triggered()),
-            this,                       SLOT(slotAutoCascade()));
 
     /*
      * All actions related to arrangement modes have to be initialized before calling a slot on them,
      * thus we call them afterwards now.
      */
-    switch(alignment)
-    {
+    QAction * alignmentAction;
+    switch (alignment) {
         case autoTabbed:
-            slotAutoTabbed(); break;
+            alignmentAction = m_windowAutoTabbedAction; break;
         case autoTileVertical:
-            slotAutoTileVertical(); break;
+            alignmentAction = m_windowAutoTileVerticalAction; break;
         case autoTileHorizontal:
-            slotAutoTileHorizontal(); break;
+            alignmentAction = m_windowAutoTileHorizontalAction; break;
         case autoTile:
-            slotAutoTile(); break;
+            alignmentAction = m_windowAutoTileAction; break;
         case autoCascade:
-            slotAutoCascade(); break;
+            alignmentAction = m_windowAutoCascadeAction; break;
         case manual:
-            slotManualArrangementMode(); break;
         default:
-            // not reachable
-            break;
+            alignmentAction = m_windowManualModeAction; break;
     }
+    alignmentAction->setChecked(true);
+    slotUpdateWindowArrangementActions(alignmentAction);
 
     m_windowSaveToNewProfileAction = m_actionCollection->action("saveNewSession");
     Q_ASSERT(m_windowSaveToNewProfileAction != 0);
@@ -639,16 +615,27 @@ void BibleTime::initMenubar() {
     m_windowMenu->addAction(m_windowTileVerticalAction);
     m_windowMenu->addAction(m_windowTileHorizontalAction);
     m_windowArrangementMenu = new QMenu(this);
+    m_windowArrangementActionGroup = new QActionGroup(m_windowArrangementMenu);
     m_windowArrangementMenu->addAction(m_windowManualModeAction);
+    m_windowArrangementActionGroup->addAction(m_windowManualModeAction);
     m_windowArrangementMenu->addAction(m_windowAutoTabbedAction);
+    m_windowArrangementActionGroup->addAction(m_windowAutoTabbedAction);
     m_windowArrangementMenu->addAction(m_windowAutoTileVerticalAction);
+    m_windowArrangementActionGroup->addAction(m_windowAutoTileVerticalAction);
     m_windowArrangementMenu->addAction(m_windowAutoTileHorizontalAction);
+    m_windowArrangementActionGroup->addAction(m_windowAutoTileHorizontalAction);
     m_windowArrangementMenu->addAction(m_windowAutoTileAction);
+    m_windowArrangementActionGroup->addAction(m_windowAutoTileAction);
     m_windowArrangementMenu->addAction(m_windowAutoCascadeAction);
+    m_windowArrangementActionGroup->addAction(m_windowAutoCascadeAction);
+    connect(m_windowArrangementActionGroup, SIGNAL(triggered(QAction *)),
+            this,                           SLOT(slotUpdateWindowArrangementActions(QAction *)));
+
     m_windowMenu->addMenu(m_windowArrangementMenu);
     m_windowMenu->addSeparator();
     m_windowMenu->addAction(m_windowSaveToNewProfileAction);
     m_windowLoadProfileMenu = new QMenu(this);
+    m_windowLoadProfileActionGroup = new QActionGroup(m_windowLoadProfileMenu);
     m_windowMenu->addMenu(m_windowLoadProfileMenu);
     m_windowDeleteProfileMenu = new QMenu(this);
     m_windowMenu->addMenu(m_windowDeleteProfileMenu);
@@ -719,7 +706,7 @@ void BibleTime::retranslateUi() {
     m_windowMenu->setTitle(tr("&Window"));
         m_openWindowsMenu->setTitle(tr("O&pen windows"));
         m_windowArrangementMenu->setTitle(tr("&Arrangement mode"));
-        m_windowLoadProfileMenu->setTitle(tr("&Load session"));
+        m_windowLoadProfileMenu->setTitle(tr("Sw&itch session"));
         m_windowDeleteProfileMenu->setTitle(tr("&Delete session"));
     m_settingsMenu->setTitle(tr("Se&ttings"));
     m_helpMenu->setTitle(tr("&Help"));
@@ -837,7 +824,7 @@ void BibleTime::initSwordConfigFile() {
 void BibleTime::initBackends() {
     initSwordConfigFile();
 
-    sword::StringMgr::setSystemStringMgr( new BTStringMgr() );
+    sword::StringMgr::setSystemStringMgr( new BtStringMgr() );
     sword::SWLog::getSystemLog()->setLogLevel(sword::SWLog::LOG_ERROR);
 
     if (qApp->property("--debug").toBool()) {

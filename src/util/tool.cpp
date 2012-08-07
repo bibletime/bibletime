@@ -23,20 +23,31 @@
 #include "util/dialogutil.h"
 
 
+namespace util {
+namespace tool {
+
+
 /** Creates the file filename and put text into the file.
  */
-bool util::tool::savePlainFile( const QString& filename, const QString& text, const bool& forceOverwrite, QTextCodec* fileCodec) {
+bool savePlainFile(const QString & filename,
+                   const QString & text,
+                   const bool forceOverwrite,
+                   QTextCodec * const fileCodec)
+{
+    Q_ASSERT(fileCodec);
+    Q_ASSERT(!filename.isEmpty());
+
     QFile saveFile(filename);
-    bool ret;
 
     if (saveFile.exists()) {
-        if (!forceOverwrite && util::showQuestion(0, QObject::tr("Overwrite File?"),
+        if (!forceOverwrite
+            && util::showQuestion(0, QObject::tr("Overwrite File?"),
                 QString::fromLatin1("<qt><b>%1</b><br/>%2</qt>")
                 .arg( QObject::tr("The file already exists.") )
                 .arg( QObject::tr("Do you want to overwrite it?")),
                 QMessageBox::Yes | QMessageBox::No,
-                QMessageBox::No) == QMessageBox::No
-           ) {
+                QMessageBox::No) == QMessageBox::No)
+        {
             return false;
         }
         else { //either the user chose yes or forceOverwrite is set
@@ -44,37 +55,43 @@ bool util::tool::savePlainFile( const QString& filename, const QString& text, co
         }
     }
 
-    if ( saveFile.open(QIODevice::ReadWrite) ) {
-        QTextStream textstream( &saveFile );
+    if (saveFile.open(QIODevice::ReadWrite)) {
+        QTextStream textstream(&saveFile);
         textstream.setCodec(fileCodec);
         textstream << text;
+        textstream.flush();
         saveFile.close();
-        ret = true;
+        if (saveFile.error() == QFile::NoError)
+            return true;
+
+        QMessageBox::critical(0, QObject::tr("Error"),
+                              QString::fromLatin1("<qt>%1<br/><b>%2</b></qt>")
+                                  .arg(QObject::tr("Error while writing to file."))
+                                  .arg(QObject::tr("Please check that enough disk space is available.")));
     }
     else {
         QMessageBox::critical(0, QObject::tr("Error"),
                               QString::fromLatin1("<qt>%1<br/><b>%2</b></qt>")
-                              .arg( QObject::tr("The file couldn't be saved.") )
-                              .arg( QObject::tr("Please check permissions etc.")));
-        saveFile.close();
-        ret = false;
+                                  .arg(QObject::tr("The file couldn't be opened for saving."))
+                                  .arg(QObject::tr("Please check permissions etc.")));
     }
-    return ret;
+
+    return false;
 }
 
 
-QIcon util::tool::getIconForModule(const CSwordModuleInfo *module) {
+QIcon getIconForModule(const CSwordModuleInfo * const module) {
     namespace DU = util::directory;
     return DU::getIcon(getIconNameForModule(module));
 }
 
-QString util::tool::getIconNameForModule(const CSwordModuleInfo *module) {
+QString getIconNameForModule(const CSwordModuleInfo * const module) {
     //qDebug() << "util::tool::getIconNameForModule";
-    if (!module) return CResMgr::modules::book::icon_locked;
+    if (!module)
+        return CResMgr::modules::book::icon_locked;
 
-    if (module->category() == CSwordModuleInfo::Cult) {
+    if (module->category() == CSwordModuleInfo::Cult)
         return "stop.svg";
-    }
 
     switch (module->type()) {
         case CSwordModuleInfo::Bible:
@@ -116,13 +133,19 @@ QString util::tool::getIconNameForModule(const CSwordModuleInfo *module) {
     return CResMgr::modules::book::icon_unlocked;
 }
 
-QLabel* util::tool::explanationLabel(QWidget *parent, const QString &heading, const QString &text) {
-    QLabel *label = new QLabel(parent);
+QLabel * explanationLabel(QWidget * const parent,
+                          const QString & heading,
+                          const QString & text)
+{
+    QLabel * const label = new QLabel(parent);
     initExplanationLabel(label, heading, text);
     return label;
 }
 
-void util::tool::initExplanationLabel(QLabel *label, const QString &heading, const QString &text) {
+void initExplanationLabel(QLabel * const label,
+                          const QString & heading,
+                          const QString & text)
+{
     QString labelText;
     if (!heading.isEmpty()) {
         labelText += "<b>";
@@ -143,8 +166,7 @@ void util::tool::initExplanationLabel(QLabel *label, const QString &heading, con
     label->setFrameStyle(QFrame::Box | QFrame::Sunken);
 }
 
-/** No descriptions */
-bool util::tool::inHTMLTag(int pos, QString & text) {
+bool inHTMLTag(const int pos, const QString & text) {
     int i1 = text.lastIndexOf("<", pos);
     int i2 = text.lastIndexOf(">", pos);
     int i3 = text.indexOf(">", pos);
@@ -159,14 +181,11 @@ bool util::tool::inHTMLTag(int pos, QString & text) {
 
     //  qWarning("%d > %d && %d < %d",i1,i2,i3,i4);
 
-    if ( (i1 > i2) && (i3 < i4) )
-        return true; //yes, we're in a tag
-
-    return false;
+    return (i1 > i2) && (i3 < i4);
 }
 
-QString util::tool::remoteModuleToolTip(const CSwordModuleInfo &module,
-                                        const QString &localVer)
+QString remoteModuleToolTip(const CSwordModuleInfo & module,
+                            const QString & localVer)
 {
     QString text = "<p style='white-space:pre'><b>";
     text += module.name();
@@ -215,7 +234,13 @@ QString util::tool::remoteModuleToolTip(const CSwordModuleInfo &module,
 }
 
 
-int util::tool::mWidth(const QWidget* widget, int m) {
-    if (widget) return widget->fontMetrics().width(QString(m, 'M'));
-    return QApplication::fontMetrics().width(QString(m, 'M'));
+int mWidth(const QWidget * const widget, const int mCount) {
+    const QString mString(mCount, 'M');
+    if (widget)
+        return widget->fontMetrics().width(mString);
+    return QApplication::fontMetrics().width(mString);
 }
+
+
+} // namespace tool {
+} // namespace util {

@@ -35,7 +35,7 @@ CDisplayTemplateMgr::CDisplayTemplateMgr(QString &errorMessage) {
     QDir td = DU::getDisplayTemplatesDir();
     Q_FOREACH(const QString &file, td.entryList(filter, QDir::Files | QDir::Readable))
         loadTemplate(td.canonicalPath() + "/" + file);
-        
+
     // Load app stylesheets
     Q_FOREACH(const QString &file, td.entryList(cssfilter, QDir::Files | QDir::Readable))
     	loadCSSTemplate(td.canonicalPath() + "/" + file);
@@ -119,48 +119,39 @@ QString CDisplayTemplateMgr::fillTemplate(const QString &name,
     }
 
     QString langCSS;
-    CLanguageMgr::LangMap langMap = CLanguageMgr::instance()->availableLanguages();
+    const CLanguageMgr::LangMap & langMap = CLanguageMgr::instance()->availableLanguages();
 
-    foreach(const CLanguageMgr::Language* lang, langMap) {
-        //const CLanguageMgr::Language* lang = *it;
+    static const QString langStyleString = "*[lang=%1]{font-family:%2;"
+                                           "font-size:%3pt;font-weight:%4;"
+                                           "font-style:%5}";
+    Q_FOREACH (const CLanguageMgr::Language * const lang, langMap) {
+        if (lang->abbrev().isEmpty())
+            continue;
 
-        //if (lang->isValid() && getBtConfig().getFontForLanguage(lang).first) {
-        if (!lang->abbrev().isEmpty() && btConfig().getFontForLanguage(lang).first) {
-            const QFont f = btConfig().getFontForLanguage(lang).second;
+        BtConfig::FontSettingsPair fp = btConfig().getFontForLanguage(*lang);
+        if (!fp.first)
+            continue;
 
-            //don't use important, because it would reset the title formatting, etc. to the setup font
-            QString css("{ ");
-            css.append("font-family:").append(f.family())/*.append(" !important")*/;
-            css.append("; font-size:").append(QString::number(f.pointSize())).append("pt /*!important*/");
-            css.append("; font-weight:").append(f.bold() ? "bold" : "normal /*!important*/");
-            css.append("; font-style:").append(f.italic() ? "italic" : "normal /*!important*/");
-            css.append("; }\n");
+        const QFont & f = fp.second;
 
-            langCSS +=
-                QString("\n*[lang=%1] %2")
-                .arg(lang->abbrev())
-                .arg(css);
-        }
+        langCSS.append(langStyleString.arg(lang->abbrev(),
+                                           f.family(),
+                                           QString::number(f.pointSize()),
+                                           f.bold() ? "bold" : "normal",
+                                           f.italic() ? "italic" : "normal"));
     }
+    const QFont & defaultFont = btConfig().getDefaultFont();
+    static const QString contentStyleString = "#content{font-family:%1;"
+                                              "font-size:%2pt;font-weight:%3;"
+                                              "font-style:%4;}";
+    langCSS.prepend(contentStyleString.arg(
+            defaultFont.family(),
+            QString::number(defaultFont.pointSize()),
+            defaultFont.bold() ? "bold" : "normal",
+            defaultFont.italic() ? "italic" : "normal"));
 
-    //at first append the font standard settings for all languages without configured font
-    // Create a dummy language (the langmap may be empty)
-    CLanguageMgr::Language lang_v(QString("en"), QString("English"), QString::null);
-    CLanguageMgr::Language* lang = &lang_v;
-
-    if (lang && !lang->abbrev().isEmpty()/*&& lang->isValid()*/) {
-        const QFont standardFont = btConfig().getDefaultFont(); //we just need a dummy lang param
-        langCSS.prepend(
-            QString("\n#content {font-family:%1; font-size:%2pt; font-weight:%3; font-style: %4;}\n")
-            .arg(standardFont.family())
-            .arg(standardFont.pointSize())
-            .arg(standardFont.bold() ? "bold" : "normal")
-            .arg(standardFont.italic() ? "italic" : "normal")
-        );
-    }
-    
     // Template stylesheet
-    
+
 
 //     qWarning("Outputing unformated text");
     const QString t = QString(m_templateMap[ "Basic.tmpl" ]) //don't change the map's content directly, use  a copy

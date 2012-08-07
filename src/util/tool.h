@@ -23,55 +23,89 @@ namespace util {
 namespace tool {
 
 /**
-* Creates the file filename and put the text of parameter "text" into the file.
-* @return True if saving was sucessful, otherwise false
+  Creates the file filename and save the given text into the file.
+
+  \param[in] filename the filename to save to.
+  \param[in] text the string data to save.
+  \param[in] forceOverwrite whether to force the overwrite.
+  \param[in] fileCodec the codec to use to save the given string data.
+  \note if the file exists, and forceOverwrite is false, a confirmation dialog
+        is shown to ask the user whether to overwrite the existing file.
+  \returns whether the file was properly saved.
 */
-bool savePlainFile( const QString& filename, const QString& text, const bool& forceOverwrite = false, QTextCodec* fileCodec = QTextCodec::codecForLocale());
+bool savePlainFile(const QString & filename,
+                   const QString & text,
+                   bool forceOverwrite = false,
+                   QTextCodec * fileCodec = QTextCodec::codecForLocale());
 
 /**
   \param[in] module the module whose icon to return.
   \returns the icon used for the a module.
 */
-QIcon getIconForModule(const CSwordModuleInfo *module);
+QIcon getIconForModule(const CSwordModuleInfo * module);
 
 /**
   \param[in] module the module whose icon name to return.
   \returns the icon name used for the a module.
 */
-QString getIconNameForModule(const CSwordModuleInfo *module);
+QString getIconNameForModule(const CSwordModuleInfo * module);
 
 /**
-  Returns a new QLabel initialized by initExplanationLabel().
+  Creates a new explanation label.
+
+  \param[in] parent the parent widget.
+  \param[in] heading the heading of the label.
+  \param[in] text the text of the label.
+  \returns a new QLabel initialized by initExplanationLabel().
 */
-QLabel *explanationLabel(QWidget *parent, const QString &heading, const QString &text);
+QLabel * explanationLabel(QWidget * parent,
+                          const QString & heading,
+                          const QString & text);
 
 /**
-  Initializes a QLabel to explain difficult things of dialogs. The label should be used to
-  explain difficult things of the GUI, e.g. in the options dialog pages.
+  \brief Initializes a QLabel to explain difficult things of dialogs.
+
+  The label should be used to explain difficult things of the GUI, e.g. in the
+  options dialog pages.
+
   \param[in] label The label to initialize
   \param[in] heading The heading for the label.
   \param[in] text The text for the label.
 */
-void initExplanationLabel(QLabel *label, const QString &heading, const QString &text);
+void initExplanationLabel(QLabel * label,
+                          const QString & heading,
+                          const QString & text);
 
 /**
-* Returns true if the character at position "pos" of text is inside an HTML tag. Returns false if it's not inside an HTML tag.
+  \returns whether the character at position "pos" of text is inside an HTML tag.
 */
-bool inHTMLTag(int pos, QString & text);
-
-/** Return the module's tooltip text for a remote module
-* @param module The module required for the tooltip
-* @return The tooltip text for the passed module
-*/
-QString remoteModuleToolTip(const CSwordModuleInfo &module,
-                            const QString &localVer);
+bool inHTMLTag(int pos, const QString & text);
 
 /**
-* Returns the width in pixels for a string which has mCount 'M' letters, using the specified widget's font.
-* This can be used when setting the size for a widget. It may be better to roughly calculate the size based on some text width rather than use pixels directly.
+  \param[in] module The module required for the tooltip
+  \returns the remote module's tooltip text.
 */
-int mWidth(const QWidget* widget, int mCount);
-}
-}
+QString remoteModuleToolTip(const CSwordModuleInfo & module,
+                            const QString & localVer);
+
+/**
+  \brief Calculates a maximum rendered text width for a widget and a string with
+         the a given length.
+
+  This function can be used for setting the size for a widget. It may be better
+  to roughly calculate the size based on some text width rather than use a hard-
+  coded value.
+
+  \param[in] widget the widget whose font metrics to use. If 0, then the font
+                    metrics of the application are used.
+  \param[in] mCount the length of the string of 'M' characters to use for
+                    calculating the width.
+
+  \returns the width in pixels.
+*/
+int mWidth(const QWidget * widget, int mCount);
+
+} /* namespace tool { */
+} /* namespace util { */
 
 #endif

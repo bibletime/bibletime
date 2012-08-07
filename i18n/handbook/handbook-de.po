@@ -8,20 +8,20 @@
 # Joachim Ansorg <info@bibetime.info>, 2005.
 # Joachim Ansorg <info@bibletime.info>, 2005.
 # Martin Gruner <mg.pub@gmx.net>, 2004, 2005.
-# Roland Teschner <rolte@gmx.net>, 2009, 2010, 2011.
+# Roland Teschner <rolte@gmx.net>, 2009, 2010, 2011, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: handbook-de\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
 "POT-Creation-Date: 2012-01-02 03:09-0500\n"
-"PO-Revision-Date: 2011-02-22 17:45+0100\n"
+"PO-Revision-Date: 2012-05-25 22:22+0200\n"
 "Last-Translator: \n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
+"X-Generator: Lokalize 1.1\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #. type: Content of: <chapter><title>
@@ -1738,29 +1738,22 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:98
-#, fuzzy
-#| msgid ""
-#| "<imageobject> <imagedata fileref=\"i_book.png\" width=\"32\" depth=\"32\" "
-#| "format=\"PNG\" /> </imageobject>"
 msgid ""
 "<imageobject> <imagedata fileref=\"i_books.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
 msgstr ""
-"<imageobject> <imagedata fileref=\"i_book.png\" width=\"32\" depth=\"32\" "
+"<imageobject> <imagedata fileref=\"i_books.png\" width=\"32\" depth=\"32\" "
 "format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:95
-#, fuzzy
-#| msgid ""
-#| "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
-#| ">File</guimenu> <guimenuitem>Open work</guimenuitem> </menuchoice>"
 msgid ""
 "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
 ">View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem> </menuchoice>"
 msgstr ""
 "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
-">Datei</guimenu> <guimenuitem>Werk öffnen</guimenuitem> </menuchoice>"
+">Ansicht</guimenu> <guimenuitem>Bücherregal anzeigen</guimenuitem> </"
+"menuchoice>"
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -1776,29 +1769,22 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:119
-#, fuzzy
-#| msgid ""
-#| "<imageobject> <imagedata fileref=\"i_book.png\" width=\"32\" depth=\"32\" "
-#| "format=\"PNG\" /> </imageobject>"
 msgid ""
 "<imageobject> <imagedata fileref=\"i_bookmark.png\" width=\"32\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
-"<imageobject> <imagedata fileref=\"i_book.png\" width=\"32\" depth=\"32\" "
-"format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_bookmark.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:116
-#, fuzzy
-#| msgid ""
-#| "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
-#| ">File</guimenu> <guimenuitem>Open work</guimenuitem> </menuchoice>"
 msgid ""
 "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
 ">View</guimenu> <guimenuitem>Show Bookmarks</guimenuitem> </menuchoice>"
 msgstr ""
 "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
-">Datei</guimenu> <guimenuitem>Werk öffnen</guimenuitem> </menuchoice>"
+">Ansicht</guimenu> <guimenuitem>Lesezeichen anzeigen</guimenuitem> </"
+"menuchoice>"
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -1814,29 +1800,21 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:140
-#, fuzzy
-#| msgid ""
-#| "<imageobject> <imagedata fileref=\"i_commentary.png\" width=\"32\" depth="
-#| "\"32\" format=\"PNG\" /> </imageobject>"
 msgid ""
 "<imageobject> <imagedata fileref=\"i_document_magnifier.png\" width=\"32\" "
 "depth=\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
-"<imageobject> <imagedata fileref=\"i_commentary.png\" width=\"32\" depth="
-"\"32\" format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_document_magnifier.png\" width=\"32\" "
+"depth=\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:137
-#, fuzzy
-#| msgid ""
-#| "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
-#| ">File</guimenu> <guimenuitem>Open work</guimenuitem> </menuchoice>"
 msgid ""
 "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
 ">View</guimenu> <guimenuitem>Show Mag</guimenuitem> </menuchoice>"
 msgstr ""
 "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
-">Datei</guimenu> <guimenuitem>Werk öffnen</guimenuitem> </menuchoice>"
+">Ansicht</guimenu> <guimenuitem>Lupe anzeigen</guimenuitem> </menuchoice>"
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -1850,44 +1828,34 @@ msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:160
-#, fuzzy
-#| msgid ""
-#| "<imageobject> <imagedata fileref=\"i_exit.png\" width=\"32\" depth=\"32\" "
-#| "format=\"PNG\" /> </imageobject>"
 msgid ""
 "<imageobject> <imagedata fileref=\"i_checkbox.png\" width=\"32\" depth="
 "\"32\" format=\"PNG\" /> </imageobject>"
 msgstr ""
-"<imageobject> <imagedata fileref=\"i_exit.png\" width=\"32\" depth=\"32\" "
-"format=\"PNG\" /> </imageobject>"
+"<imageobject> <imagedata fileref=\"i_checkbox.png\" width=\"32\" depth="
+"\"32\" format=\"PNG\" /> </imageobject>"
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:157
-#, fuzzy
-#| msgid ""
-#| "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
-#| ">File</guimenu> <guimenuitem>Open work</guimenuitem> </menuchoice>"
 msgid ""
 "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
 ">View</guimenu> <guimenuitem>Show parallel text headers</guimenuitem> </"
 "menuchoice>"
 msgstr ""
 "<menuchoice> <guimenu> <placeholder type=\"inlinemediaobject\" id=\"0\"/"
-">Datei</guimenu> <guimenuitem>Werk öffnen</guimenuitem> </menuchoice>"
+">Ansicht</guimenu> <guimenuitem>Paralleltext-Kopfzeilen anzeigen </"
+"guimenuitem> </menuchoice>"
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:169
-#, fuzzy
-#| msgid ""
-#| "<action>Toggles Toolbars in works.</action> Toggle this setting to add or "
-#| "remove the works icons in the open works."
 msgid ""
 "<action>Toggles viewing of additional works</action> Toggle this setting to "
 "allow you to view additional works in parallel to your current open books."
 msgstr ""
-"<action>Werkzeugleisten in Werken an- / abstellen.</action> Diese Funktion "
-"stellt die Ansicht der Werke-Symbole in geöffneten Werken an oder aus."
+"<action>An- / Abstellen der Anzeige zusätzlicher Werke</action> Benutzen Sie "
+"diesen Schalter, um zusätzliche Werke parallel zu Ihren gerade geöffneten "
+"Büchern anzusehen."
 
 #. type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:177
@@ -3514,15 +3482,11 @@ msgstr "Abthorpe"
 #.  TRANS:ROLES_OF_TRANSLATORS 
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:44
-#, fuzzy
-#| msgid ""
-#| "<copyright> <year>1999-2011</year> <holder>The &bibletime; Team</holder> "
-#| "</copyright>"
 msgid ""
 "<copyright> <year>1999-2012</year> <holder>The &bibletime; Team</holder> </"
 "copyright>"
 msgstr ""
-"<copyright> <year>1999-2011</year> <holder>Das &bibletime;-Team</holder> </"
+"<copyright> <year>1999-2012</year> <holder>Das &bibletime;-Team</holder> </"
 "copyright>"
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
@@ -3535,17 +3499,13 @@ msgstr ""
 
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:54
-#, fuzzy
-#| msgid "<date>January 2011</date>"
 msgid "<date>January 2012</date>"
-msgstr "<date>Januar 2011</date>"
+msgstr "<date>Januar 2012</date>"
 
 #. type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:56
-#, fuzzy
-#| msgid "2.9.0"
 msgid "2.9.2"
-msgstr "2.9.0"
+msgstr "2.9.2"
 
 # type: Content of: <book><bookinfo><abstract><para>
 #. type: Content of: <book><bookinfo><abstract><para>

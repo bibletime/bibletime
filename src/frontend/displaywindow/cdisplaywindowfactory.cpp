@@ -17,11 +17,10 @@
 #include "frontend/displaywindow/clexiconreadwindow.h"
 #include "frontend/displaywindow/cplainwritewindow.h"
 #include "frontend/displaywindow/creadwindow.h"
-#include "frontend/displaywindow/cwritewindow.h"
 #include "frontend/cmdiarea.h"
 
 
-CReadWindow* CDisplayWindowFactory::createReadInstance(QList<CSwordModuleInfo*> modules, CMDIArea* parent) {
+CReadWindow* CDisplayWindowFactory::createReadInstance(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent) {
     CReadWindow* win = 0;
     switch (modules.first()->type()) {
         case CSwordModuleInfo::Bible:
@@ -43,8 +42,8 @@ CReadWindow* CDisplayWindowFactory::createReadInstance(QList<CSwordModuleInfo*> 
     return win;
 }
 
-CWriteWindow* CDisplayWindowFactory::createWriteInstance(QList<CSwordModuleInfo*> modules, CMDIArea* parent, const CWriteWindow::WriteWindowType type) {
-    if (type == CWriteWindow::HTMLWindow) {
+CPlainWriteWindow * CDisplayWindowFactory::createWriteInstance(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent, CPlainWriteWindow::WriteWindowType type) {
+    if (type == CPlainWriteWindow::HTMLWindow) {
         return new CHTMLWriteWindow(modules, parent);
     }
     else {

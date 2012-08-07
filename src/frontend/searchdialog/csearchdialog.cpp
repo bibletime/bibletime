@@ -189,7 +189,7 @@ QString CSearchDialog::prepareSearchText(const QString& orig) {
         qDebug() << "After syntax characters removed:" << text;
         text.replace(andWords, "\"and\"");
         text.replace(orWords, "\"or\"");
-        qDebug() << "After andor repclaced:" << text;
+        qDebug() << "After \"and\" and \"or\" replaced:" << text;
         text.replace(" ", " AND ");
     }
     if (m_searchOptionsArea->searchType() == BtSearchOptionsArea::OrType) {

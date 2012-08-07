@@ -16,10 +16,6 @@
 
 class CDisplayConnections;
 class CDisplayWindow;
-class CReadDisplay;
-class CReadWindow;
-class CWriteDisplay;
-class CWriteWindow;
 class QMenu;
 
 /** The base class for all display widgets.
@@ -27,15 +23,6 @@ class QMenu;
   */
 class CDisplay {
     public:
-        enum WriteDisplayType {
-            HTMLDisplay = 0,
-            PlainTextDisplay
-        };
-
-        static CReadDisplay* createReadInstance(CReadWindow* readWindow, QWidget* parent = 0);
-        static CWriteDisplay* createWriteInstance( CWriteWindow* writeWindow,
-                                                   const WriteDisplayType& type = PlainTextDisplay,
-                                                   QWidget* parent = 0 );
 
         enum TextType {
             HTMLText, /* Used for HTML markup */

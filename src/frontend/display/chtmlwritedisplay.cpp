@@ -14,22 +14,32 @@
 #include <QTextEdit>
 #include <QToolBar>
 #include <QToolTip>
+#include "backend/config/btconfig.h"
 #include "frontend/display/btcolorwidget.h"
 #include "frontend/display/btfontsizewidget.h"
 #include "frontend/displaywindow/btactioncollection.h"
-#include "frontend/displaywindow/cwritewindow.h"
+#include "frontend/displaywindow/chtmlwritewindow.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
 
 
 class BtActionCollection;
 
-CHTMLWriteDisplay::CHTMLWriteDisplay(CWriteWindow* parentWindow, QWidget* parent)
-: CPlainWriteDisplay(parentWindow, parent) {
-    m_actions.bold = 0;
-    m_actions.italic = 0;
-    m_actions.underline = 0;
-    m_actions.selectAll = 0;
+namespace {
+const QString CHTMLWriteDisplayFontKey = "HtmlWriteDisplay/font";
+const QString CHTMLWriteDisplayFontColorKey = "HtmlWriteDisplay/fontColor";
+}
+
+CHTMLWriteDisplay::CHTMLWriteDisplay(CHTMLWriteWindow * parentWindow, QWidget* parent)
+    : CPlainWriteDisplay(parentWindow, parent)
+    , m_handingFormatChangeFromEditor(false)
+{
+
+    BtConfig & conf = btConfig();
+    setTextColor(conf.sessionValue(CHTMLWriteDisplayFontColorKey, textColor()));
+    QFont f = conf.sessionValue(CHTMLWriteDisplayFontKey, currentFont());
+    setCurrentFont(f);
+
 
     //--------------------bold toggle-------------------------
     namespace DU = util::directory;
@@ -38,9 +48,11 @@ CHTMLWriteDisplay::CHTMLWriteDisplay(CWriteWindow* parentWindow, QWidget* parent
         tr("Bold"),
         this);
     m_actions.bold->setCheckable(true);
+    m_actions.bold->setChecked(f.bold());
     m_actions.bold->setShortcut(CResMgr::displaywindows::writeWindow::boldText::accel);
     m_actions.bold->setToolTip( tr("Bold") );
-    connect(m_actions.bold, SIGNAL(toggled(bool)), this, SLOT(toggleBold(bool)));
+    connect(m_actions.bold, SIGNAL(toggled(bool)),
+            this,           SLOT(toggleBold(bool)), Qt::DirectConnection);
 
     //--------------------italic toggle-------------------------
     m_actions.italic = new QAction(
@@ -48,8 +60,10 @@ CHTMLWriteDisplay::CHTMLWriteDisplay(CWriteWindow* parentWindow, QWidget* parent
         tr("Italic"),
         this );
     m_actions.italic->setCheckable(true);
+    m_actions.italic->setChecked(f.italic());
     m_actions.bold->setShortcut(CResMgr::displaywindows::writeWindow::italicText::accel);
-    connect(m_actions.italic, SIGNAL(toggled(bool)), this, SLOT(toggleItalic(bool)));
+    connect(m_actions.italic, SIGNAL(toggled(bool)),
+            this,             SLOT(toggleItalic(bool)), Qt::DirectConnection);
     m_actions.italic->setToolTip( tr("Italic") );
 
     //--------------------underline toggle-------------------------
@@ -58,8 +72,10 @@ CHTMLWriteDisplay::CHTMLWriteDisplay(CWriteWindow* parentWindow, QWidget* parent
         tr("Underline"),
         this );
     m_actions.underline->setCheckable(true);
+    m_actions.underline->setChecked(f.underline());
     m_actions.underline->setShortcut(CResMgr::displaywindows::writeWindow::underlinedText::accel);
-    connect(m_actions.underline, SIGNAL(toggled(bool)), this, SLOT(toggleUnderline(bool)));
+    connect(m_actions.underline, SIGNAL(toggled(bool)),
+            this,                SLOT(toggleUnderline(bool)), Qt::DirectConnection);
     m_actions.underline->setToolTip( tr("Underline") );
 
     //--------------------align left toggle-------------------------
@@ -68,7 +84,8 @@ CHTMLWriteDisplay::CHTMLWriteDisplay(CWriteWindow* parentWindow, QWidget* parent
         tr("Left"), this);
     m_actions.alignLeft->setCheckable(true);
     m_actions.alignLeft->setShortcut(CResMgr::displaywindows::writeWindow::alignLeft::accel);
-    connect(m_actions.alignLeft, SIGNAL(toggled(bool)), this, SLOT(alignLeft(bool)));
+    connect(m_actions.alignLeft, SIGNAL(toggled(bool)),
+            this,                SLOT(alignLeft(bool)), Qt::DirectConnection);
     m_actions.alignLeft->setToolTip( tr("Align left") );
 
     //--------------------align center toggle-------------------------
@@ -77,7 +94,8 @@ CHTMLWriteDisplay::CHTMLWriteDisplay(CWriteWindow* parentWindow, QWidget* parent
         tr("Center"), this);
     m_actions.alignCenter->setCheckable(true);
     m_actions.alignCenter->setShortcut(CResMgr::displaywindows::writeWindow::alignCenter::accel);
-    connect(m_actions.alignCenter, SIGNAL(toggled(bool)), this, SLOT(alignCenter(bool)));
+    connect(m_actions.alignCenter, SIGNAL(toggled(bool)),
+            this,                  SLOT(alignCenter(bool)), Qt::DirectConnection);
     m_actions.alignCenter->setToolTip( tr("Center") );
 
     //--------------------align right toggle-------------------------
@@ -86,18 +104,19 @@ CHTMLWriteDisplay::CHTMLWriteDisplay(CWriteWindow* parentWindow, QWidget* parent
         tr("Right"), this);
     m_actions.alignRight->setCheckable(true);
     m_actions.alignRight->setShortcut(CResMgr::displaywindows::writeWindow::alignRight::accel);
-    connect(m_actions.alignRight, SIGNAL(toggled(bool)), this, SLOT(alignRight(bool)));
+    connect(m_actions.alignRight, SIGNAL(toggled(bool)),
+            this,                 SLOT(alignRight(bool)), Qt::DirectConnection);
     m_actions.alignRight->setToolTip( tr("Align right") );
 
     setAcceptRichText(true);
     setAcceptDrops(true);
     viewport()->setAcceptDrops(true);
+
+    connect(this, SIGNAL(currentCharFormatChanged(QTextCharFormat)),
+            this, SLOT(slotCurrentCharFormatChanged(QTextCharFormat)), Qt::DirectConnection);
 }
 
-CHTMLWriteDisplay::~CHTMLWriteDisplay() {
-}
-
-void CHTMLWriteDisplay::setText( const QString& newText ) {
+void CHTMLWriteDisplay::setText(const QString & newText) {
     QTextEdit::setHtml(newText);
 }
 
@@ -105,42 +124,45 @@ const QString CHTMLWriteDisplay::plainText() {
     return QTextEdit::toPlainText();
 }
 
-void CHTMLWriteDisplay::toggleBold(bool) {
-    setFontWeight( m_actions.bold->isChecked() ? QFont::Bold : QFont::Normal );
+void CHTMLWriteDisplay::toggleBold(bool checked) {
+    if (!m_handingFormatChangeFromEditor)
+        setFontWeight(checked ? QFont::Bold : QFont::Normal);
 }
 
-void CHTMLWriteDisplay::toggleItalic(bool) {
-    setFontItalic( m_actions.italic->isChecked() );
+void CHTMLWriteDisplay::toggleItalic(bool checked) {
+    if (!m_handingFormatChangeFromEditor)
+        setFontItalic(checked);
 }
 
-void CHTMLWriteDisplay::toggleUnderline(bool) {
-    setFontUnderline( m_actions.underline->isChecked() );
+void CHTMLWriteDisplay::toggleUnderline(bool checked) {
+    if (!m_handingFormatChangeFromEditor)
+        setFontUnderline(checked);
 }
-
 
 void CHTMLWriteDisplay::alignLeft(bool set) {
-    if (set && (alignment() != Qt::AlignLeft)) {
+    if (!m_handingFormatChangeFromEditor && set && (alignment() != Qt::AlignLeft)) {
         setAlignment(Qt::AlignLeft);
-        slotAlignmentChanged(Qt::AlignLeft);
+        alignmentChanged(Qt::AlignLeft);
     }
 }
 
 void CHTMLWriteDisplay::alignCenter(bool set) {
-    if (set && (alignment() != Qt::AlignHCenter)) {
+    if (!m_handingFormatChangeFromEditor && set && (alignment() != Qt::AlignHCenter)) {
         setAlignment(Qt::AlignHCenter);
-        slotAlignmentChanged(Qt::AlignHCenter);
+        alignmentChanged(Qt::AlignHCenter);
     }
 }
 
 void CHTMLWriteDisplay::alignRight(bool set) {
-    if (set && (alignment() != Qt::AlignRight)) {
+    if (!m_handingFormatChangeFromEditor && set && (alignment() != Qt::AlignRight)) {
         setAlignment(Qt::AlignRight);
-        slotAlignmentChanged(Qt::AlignRight);
+        alignmentChanged(Qt::AlignRight);
     }
 }
 
 /** The text's alignment changed. Enable the right buttons. */
-void CHTMLWriteDisplay::slotAlignmentChanged( int a ) {
+void CHTMLWriteDisplay::alignmentChanged( int a ) {
+    Q_ASSERT(!m_handingFormatChangeFromEditor);
     bool alignLeft = false;
     bool alignCenter = false;
     bool alignRight = false;
@@ -164,61 +186,78 @@ void CHTMLWriteDisplay::slotAlignmentChanged( int a ) {
     m_actions.alignRight->setChecked( alignRight );
 }
 
-void CHTMLWriteDisplay::changeFontSize(int newSize) {
-    setFontPointSize((qreal)newSize);
+void CHTMLWriteDisplay::slotCurrentCharFormatChanged(const QTextCharFormat &) {
+    Q_ASSERT(!m_handingFormatChangeFromEditor);
+    m_handingFormatChangeFromEditor = true;
+    QFont f = currentFont();
+    emit signalFontChanged(f);
+    emit signalFontSizeChanged(f.pointSize());
+    emit signalFontColorChanged(textColor());
+
+    m_actions.bold->setChecked(f.bold());
+    m_actions.italic->setChecked(f.italic());
+    m_actions.underline->setChecked(f.underline());
+    m_handingFormatChangeFromEditor = false;
+
+    BtConfig & conf = btConfig();
+    conf.setSessionValue(CHTMLWriteDisplayFontKey, currentFont());
+    conf.setSessionValue(CHTMLWriteDisplayFontColorKey, textColor());
+}
+
+void CHTMLWriteDisplay::slotFontSizeChosen(int newSize) {
+    if (!m_handingFormatChangeFromEditor)
+        setFontPointSize((qreal)newSize);
 }
 
 /** Is called when a new color was selected. */
-void CHTMLWriteDisplay::slotColorSelected( const QColor& c) {
-    setTextColor( c );
+void CHTMLWriteDisplay::slotFontColorChosen( const QColor& c) {
+    if (!m_handingFormatChangeFromEditor)
+        setTextColor( c );
 }
 
-/** Is called when a text with another color was selected. */
-void CHTMLWriteDisplay::slotColorChanged(const QColor& c) {
-    emit setColor(c);
-}
-
-void CHTMLWriteDisplay::slotFontChanged( const QFont& font ) {
-    emit fontChanged(font);
-    emit fontSizeChanged(font.pointSize());
-
-    m_actions.bold->setChecked( font.bold() );
-    m_actions.italic->setChecked( font.italic() );
-    m_actions.underline->setChecked( font.underline() );
-}
-
-void CHTMLWriteDisplay::slotFontFamilyChoosen(const QFont& font) {
-    setFontFamily(font.family());
+void CHTMLWriteDisplay::slotFontFamilyChosen(const QFont& font) {
+    if (!m_handingFormatChangeFromEditor)
+        setFontFamily(font.family());
 }
 
 void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, BtActionCollection * actions) {
 
+    QFont f = currentFont();
+
     //--------------------font chooser-------------------------
     QFontComboBox* fontFamilyCombo = new QFontComboBox(this);
+    fontFamilyCombo->setCurrentFont(f);
     fontFamilyCombo->setToolTip( tr("Font") );
     bar->addWidget(fontFamilyCombo);
     bool ok = connect(fontFamilyCombo, SIGNAL(currentFontChanged(const QFont&)),
-                      this, SLOT(slotFontFamilyChoosen(const QFont&)));
+                      this,            SLOT(slotFontFamilyChosen(const QFont&)), Qt::DirectConnection);
     Q_ASSERT(ok);
-    ok = connect(this, SIGNAL(fontChanged(const QFont&)), fontFamilyCombo, SLOT(setCurrentFont(const QFont&)));
+    ok = connect(this,            SIGNAL(signalFontChanged(const QFont&)),
+                 fontFamilyCombo, SLOT(setCurrentFont(const QFont&)), Qt::DirectConnection);
     Q_ASSERT(ok);
 
     //--------------------font size chooser-------------------------
     BtFontSizeWidget* fontSizeChooser = new BtFontSizeWidget(this);
+    fontSizeChooser->setFontSize(f.pointSize());
     fontSizeChooser->setToolTip( tr("Font size") );
     bar->addWidget(fontSizeChooser);
-    ok = connect(fontSizeChooser, SIGNAL(fontSizeChanged(int)), this, SLOT(changeFontSize(int)));
+    ok = connect(fontSizeChooser, SIGNAL(fontSizeChanged(int)),
+                 this,            SLOT(slotFontSizeChosen(int)), Qt::DirectConnection);
     Q_ASSERT(ok);
-    ok = connect(this, SIGNAL(fontSizeChanged(int)), fontSizeChooser, SLOT(setFontSize(int)));
+    ok = connect(this,            SIGNAL(signalFontSizeChanged(int)),
+                 fontSizeChooser, SLOT(setFontSize(int)), Qt::DirectConnection);
     Q_ASSERT(ok);
 
     //--------------------color button-------------------------
-    BtColorWidget* colorChooser = new BtColorWidget();
-    colorChooser->setToolTip(tr("Font color"));
-    bar->addWidget(colorChooser);
-    ok = connect(colorChooser, SIGNAL(changed(const QColor&)), this, SLOT(slotColorSelected(const QColor&)));
+    BtColorWidget* fontColorChooser = new BtColorWidget();
+    fontColorChooser->setColor(textColor());
+    fontColorChooser->setToolTip(tr("Font color"));
+    bar->addWidget(fontColorChooser);
+    ok = connect(fontColorChooser, SIGNAL(changed(const QColor&)),
+                 this,             SLOT(slotFontColorChosen(const QColor&)), Qt::DirectConnection);
     Q_ASSERT(ok);
-    ok = connect(this, SIGNAL(setColor(const QColor&)), colorChooser, SLOT(setColor(const QColor&)));
+    ok = connect(this,             SIGNAL(signalFontColorChanged(const QColor&)),
+                 fontColorChooser, SLOT(setColor(QColor)), Qt::DirectConnection);
     Q_ASSERT(ok);
 
     bar->addSeparator();
@@ -233,13 +272,4 @@ void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, BtActionCollection * action
     bar->addAction(m_actions.alignLeft);
     bar->addAction(m_actions.alignCenter);
     bar->addAction(m_actions.alignRight);
-
-    connect(this, SIGNAL(currentFontChanged(const QFont&)), SLOT(slotFontChanged(const QFont&)));
-    connect(this, SIGNAL(currentAlignmentChanged(int)), SLOT(slotAlignmentChanged(int)));
-    connect(this, SIGNAL(currentColorChanged(const QColor&)), SLOT(slotColorChanged(const QColor&)));
-
-    //set initial values for toolbar items
-    slotFontChanged( font() );
-    slotAlignmentChanged( alignment() );
-    slotColorChanged( textColor() );
 }

@@ -20,6 +20,7 @@
 class CReadDisplay;
 class QAction;
 class QSize;
+class BibleTime;
 
 namespace InfoDisplay {
 
@@ -40,7 +41,7 @@ class CInfoDisplay : public QWidget {
         typedef QPair<InfoType, QString> InfoData;
         typedef QList<InfoData> ListInfoData;
 
-        CInfoDisplay(QWidget *parent = 0);
+        CInfoDisplay(BibleTime *parent = 0);
 
         void unsetInfo();
         void setInfo(const QString &data, const QString &lang = QString());
@@ -65,6 +66,7 @@ class CInfoDisplay : public QWidget {
 
     private:
         CReadDisplay* m_htmlPart;
+        BibleTime* m_mainWindow;
 };
 
 } //end of InfoDisplay namespace

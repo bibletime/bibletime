@@ -65,7 +65,7 @@ QString CHTMLExportRendering::renderEntry(const KeyTreeItem& i, CSwordKey* k) {
         ret.append(i.getAlternativeContent());
 
         //   Q_ASSERT(i.hasChildItems());
- 
+
         if (!i.childList()->isEmpty()) {
             const KeyTree & tree = *i.childList();
 

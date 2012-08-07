@@ -24,14 +24,13 @@ class CKeyChooser;
 class CMDIArea;
 class BtModuleChooserBar;
 class CSwordModuleInfo;
-class QCloseEvent;
 class QMenu;
 class QToolBar;
 class BTHistory;
 class BibleTime;
 
-/** The base class for all display windows of BibleTime. 
-  * 
+/** The base class for all display windows of BibleTime.
+  *
   * Inherits QMainWindow.
   *
   * Inherited by CReadWindow and CWriteWindow.
@@ -230,7 +229,7 @@ class CDisplayWindow : public QMainWindow {
 
         friend class CBibleReadWindow;
 
-        CDisplayWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
+        CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent);
         virtual ~CDisplayWindow();
 
         /**

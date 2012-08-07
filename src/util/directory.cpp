@@ -240,14 +240,14 @@ void removeRecursive(const QString &dir) {
     //remove all files in this dir
     d.setFilter( QDir::Files | QDir::Hidden | QDir::NoSymLinks );
     const QFileInfoList fileList = d.entryInfoList();
-    for (QFileInfoList::const_iterator it_file = fileList.begin(); it_file != fileList.end(); it_file++) {
+    for (QFileInfoList::const_iterator it_file = fileList.begin(); it_file != fileList.end(); ++it_file) {
         d.remove( it_file->fileName() );
     }
 
     //remove all subdirs recursively
     d.setFilter( QDir::Dirs | QDir::NoSymLinks );
     const QFileInfoList dirList = d.entryInfoList();
-    for (QFileInfoList::const_iterator it_dir = dirList.begin(); it_dir != dirList.end(); it_dir++) {
+    for (QFileInfoList::const_iterator it_dir = dirList.begin(); it_dir != dirList.end(); ++it_dir) {
         if ( !it_dir->isDir() || it_dir->fileName() == "." || it_dir->fileName() == ".." ) {
             continue;
         }
@@ -268,14 +268,14 @@ unsigned long getDirSizeRecursive(const QString &dir) {
     //First get the size of all files int this folder
     d.setFilter(QDir::Files);
     const QFileInfoList infoList = d.entryInfoList();
-    for (QFileInfoList::const_iterator it = infoList.begin(); it != infoList.end(); it++) {
+    for (QFileInfoList::const_iterator it = infoList.begin(); it != infoList.end(); ++it) {
         size += it->size();
     }
 
     //Then add the sizes of all subdirectories
     d.setFilter(QDir::Dirs);
     const QFileInfoList dirInfoList = d.entryInfoList();
-    for (QFileInfoList::const_iterator it_dir = dirInfoList.begin(); it_dir != dirInfoList.end(); it_dir++) {
+    for (QFileInfoList::const_iterator it_dir = dirInfoList.begin(); it_dir != dirInfoList.end(); ++it_dir) {
         if ( !it_dir->isDir() || it_dir->fileName() == "." || it_dir->fileName() == ".." ) {
             continue;
         }
