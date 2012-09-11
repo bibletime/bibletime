@@ -157,12 +157,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_slots.cpp" line="532"/>
         <source>Session already exists</source>
-        <translation type="unfinished"></translation>
+        <translation>Sessão já existente</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_slots.cpp" line="533"/>
         <source>Session with the name &quot;%1&quot; already exists. Please provide a different name.</source>
-        <translation type="unfinished"></translation>
+        <translation>A sessão com o nome &quot;%1&quot; já existe. Por favor forneça um nome diferente.</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="108"/>
@@ -347,7 +347,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="709"/>
         <source>Sw&amp;itch session</source>
-        <translation type="unfinished"></translation>
+        <translation>Mu&amp;dar de sessão</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="732"/>
@@ -849,52 +849,52 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="47"/>
         <source>Old testament</source>
-        <translation type="unfinished">Antigo testamento</translation>
+        <translation>Antigo testamento</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="48"/>
         <source>Moses/Pentateuch/Torah</source>
-        <translation type="unfinished">Moisés/Pentateuco/Torá</translation>
+        <translation>Moisés/Pentateuco/Torá</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="49"/>
         <source>History</source>
-        <translation type="unfinished">História</translation>
+        <translation>História</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="50"/>
         <source>Prophets</source>
-        <translation type="unfinished">Profetas</translation>
+        <translation>Profetas</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="51"/>
         <source>New testament</source>
-        <translation type="unfinished">Novo testamento</translation>
+        <translation>Novo testamento</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="52"/>
         <source>Gospels</source>
-        <translation type="unfinished">Evangelhos</translation>
+        <translation>Evangelhos</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="53"/>
         <source>Letters/Epistles</source>
-        <translation type="unfinished">Cartas/Epístolas</translation>
+        <translation>Cartas/Epístolas</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="54"/>
         <source>Paul&apos;s Epistles</source>
-        <translation type="unfinished">Epístolas de Paulo</translation>
+        <translation>Epístolas de Paulo</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="87"/>
         <source>Error loading configuration!</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro a carregar configuração!</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="88"/>
         <source>Failed to load BibleTime&apos;s configuration, because it appears that the configuration file corresponds to a newer version of BibleTime. This is likely caused by BibleTime being downgraded. Loading the new configuration file may result in &lt;b&gt;loss of data&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Do you still want to try to load the new configuration file? Press &quot;No&quot; to quit BibleTime immediately.</source>
-        <translation type="unfinished"></translation>
+        <translation>Falha ao carregar a configuração do BibleTime, porque aparentemente o ficheiro de configuração pertence a uma versão mais recente do BibleTime.Isto deve-se provavelmente a uma desactualização feita ao BibleTime. Carregar o novo ficheiro de configuração poderá resultar na &lt;b&gt;perca de dados&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Ainda pretende tentar carregar o novo ficheiro de configuração? Prima &quot;Não&quot; para sair do BibleTime imediatamente.</translation>
     </message>
 </context>
 <context>
@@ -902,7 +902,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/backend/config/btconfigcore.cpp" line="60"/>
         <source>Default Session</source>
-        <translation type="unfinished"></translation>
+        <translation>Sessão Padrão</translation>
     </message>
 </context>
 <context>
@@ -1702,87 +1702,87 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="169"/>
         <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
-        <translation type="unfinished">Obras padrão são usadas quando nenhuma obra é especificada, por exemplo, quando uma hiperligação de uma Bíblia ou de um Léxico é clicado.</translation>
+        <translation>Obras padrão são usadas quando nenhuma obra é especificada, por exemplo, quando uma hiperligação de uma Bíblia ou de um Léxico é clicado.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="172"/>
         <source>Bible:</source>
-        <translation type="unfinished">Bíblia:</translation>
+        <translation>Bíblia:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="174"/>
         <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
-        <translation type="unfinished">A Bíblia Padrão é usada quando um hiperligação para dentro da Bíblia é clicado</translation>
+        <translation>A Bíblia Padrão é usada quando um hiperligação para dentro da Bíblia é clicado</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="176"/>
         <source>Commentary:</source>
-        <translation type="unfinished">Comentário:</translation>
+        <translation>Comentário:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="178"/>
         <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
-        <translation type="unfinished">O comentário padrão é usado quando uma hiperligação de um comentário é clicado</translation>
+        <translation>O comentário padrão é usado quando uma hiperligação de um comentário é clicado</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="180"/>
         <source>Lexicon:</source>
-        <translation type="unfinished">Léxico:</translation>
+        <translation>Léxico:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="182"/>
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
-        <translation type="unfinished">O léxico normal é usado quando uma hiperligação em um léxico é clicado</translation>
+        <translation>O léxico normal é usado quando uma hiperligação em um léxico é clicado</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="184"/>
         <source>Daily devotional:</source>
-        <translation type="unfinished">Devocional diário:</translation>
+        <translation>Devocional diário:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="186"/>
         <source>The standard devotional will be used to display a short start up devotional</source>
-        <translation type="unfinished">O devocional padrão será usado para mostrar uma curta inicialização do devocional </translation>
+        <translation>O devocional padrão será usado para mostrar uma curta inicialização do devocional </translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="188"/>
         <source>Hebrew Strong&apos;s lexicon:</source>
-        <translation type="unfinished">Léxico hebraico Strong:</translation>
+        <translation>Léxico Hebraico Strong:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="190"/>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
-        <translation type="unfinished">O léxico hebraico padrão é usado quando uma hiperligação em um léxico hebraico é clicado</translation>
+        <translation>O léxico Hebraico padrão é usado quando uma hiperligação em um léxico Hebraico é clicado</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="192"/>
         <source>Greek Strong&apos;s lexicon:</source>
-        <translation type="unfinished">Léxico grego Strong:</translation>
+        <translation>Léxico Grego Strong:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="194"/>
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
-        <translation type="unfinished">O léxico grego padrão é usado quando uma hiperligação em um léxico grego é clicado</translation>
+        <translation>O léxico Grego padrão é usado quando uma hiperligação em um léxico Grego é clicado</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="196"/>
         <source>Hebrew morphological lexicon:</source>
-        <translation type="unfinished">Léxico hebraico morfológico:</translation>
+        <translation>Léxico Hebraico morfológico:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="198"/>
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
-        <translation type="unfinished">O léxico padrão morfológico dos textos hebraicos, é usado quando uma hiperligação de uma tag morfológica de um texto hebraico é clicada</translation>
+        <translation>O léxico padrão morfológico dos textos Hebraicos, é usado quando uma hiperligação de uma tag morfológica de um texto Hebraico é clicada</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="200"/>
         <source>Greek morphological lexicon:</source>
-        <translation type="unfinished">Léxico morfológico Grego:</translation>
+        <translation>Léxico morfológico Grego:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="202"/>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
-        <translation type="unfinished">O léxico padrão morfológico para os textos gregos é usado quando uma hiperligação de uma tag morfológica de um texto grego é clicada</translation>
+        <translation>O léxico padrão morfológico para os textos Gregos é usado quando uma hiperligação de uma tag morfológica de um texto Grego é clicada</translation>
     </message>
 </context>
 <context>
@@ -1790,52 +1790,52 @@ atalho</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="74"/>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
-        <translation type="unfinished">Filtros de controle da aparência do texto. Aqui você pode especificar configurações padrão para todos os filtros. Você pode substituir essas configurações em cada janela de visualização.</translation>
+        <translation>Filtros de controle da aparência do texto. Aqui você pode especificar configurações padrão para todos os filtros. Você pode substituir essas configurações em cada janela de visualização.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="78"/>
         <source>Insert line break after each verse</source>
-        <translation type="unfinished">Inserir quebra de linha após cada versículo</translation>
+        <translation>Inserir quebra de linha após cada versículo</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="79"/>
         <source>Show verse numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar o número dos versos</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="80"/>
         <source>Show section headings</source>
-        <translation type="unfinished">Mostrar titulos de secção</translation>
+        <translation>Mostrar titulos de secção</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="81"/>
         <source>Show scripture cross-references</source>
-        <translation type="unfinished">Mostrar referências-cruzadas das escrituras</translation>
+        <translation>Mostrar referências-cruzadas das escrituras</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="82"/>
         <source>Show Greek accents</source>
-        <translation type="unfinished">Mostrar acentos gregos</translation>
+        <translation>Mostrar acentos gregos</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="83"/>
         <source>Show Hebrew vowel points</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar pontos vogais Hebraicos</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="84"/>
         <source>Show Hebrew cantillation marks</source>
-        <translation type="unfinished">Mostrar sinais da cantilena hebraica</translation>
+        <translation>Mostrar sinais da cantilena hebraica</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="85"/>
         <source>Show morph segmentation</source>
-        <translation type="unfinished">Mostrar a segmentação dos morfemas</translation>
+        <translation>Mostrar a segmentação dos morfemas</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="86"/>
         <source>Use textual variants</source>
-        <translation type="unfinished">Usar variações textuais</translation>
+        <translation>Usar variações textuais</translation>
     </message>
 </context>
 <context>
@@ -2631,17 +2631,17 @@ atalho</translation>
         <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="284"/>
         <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="314"/>
         <source>Save Text?</source>
-        <translation type="unfinished">Guardar texto?</translation>
+        <translation>Guardar texto?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="284"/>
         <source>Save text before closing?</source>
-        <translation type="unfinished">Guardar texto antes de fechar?</translation>
+        <translation>Guardar texto antes de fechar?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="314"/>
         <source>Save changed text?</source>
-        <translation type="unfinished">Guardar texto alterado?</translation>
+        <translation>Guardar texto alterado?</translation>
     </message>
 </context>
 <context>
@@ -4151,17 +4151,17 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/util/tool.cpp" line="69"/>
         <source>Error while writing to file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro ao escrever para o ficheiro.</translation>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="70"/>
         <source>Please check that enough disk space is available.</source>
-        <translation type="unfinished"></translation>
+        <translation>Por favor verifique se tem espaço de disco suficiente disponível.</translation>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="75"/>
         <source>The file couldn&apos;t be opened for saving.</source>
-        <translation type="unfinished"></translation>
+        <translation>O ficheiro não pode ser aberto para guardar.</translation>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="230"/>
@@ -5207,7 +5207,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="54"/>
         <source>Case &amp;sensitive</source>
-        <translation>Sensivel a maiusculas</translation>
+        <translation>Sensivel a &amp;maiusculas</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="92"/>

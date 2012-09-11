@@ -56,12 +56,26 @@ ENDIF (NOT CMAKE_BUILD_TYPE STREQUAL "Release")
 LIST(APPEND HANDBOOK_LOCALE_LANGS ar cs de es fi fr hu it nl pt_BR)
 LIST(APPEND HOWTO_LOCALE_LANGS ar bg cs da de es fi fr it hu ko nl pt_BR ru)
 
+# Automatically use Qt5 if available
+FIND_PACKAGE(Qt5Core QUIET)
+
 # Find required packages
-SET(QT_MIN_VERSION 4.5.0)
-SET(QT_USE_QTXML 1)
-SET(QT_USE_QTWEBKIT 1)
-SET(QT_USE_QTMAIN 1)
-FIND_PACKAGE(Qt4 REQUIRED)
+IF (Qt5Core_FOUND)
+    FIND_PACKAGE(Qt5LinguistTools REQUIRED)
+    FIND_PACKAGE(Qt5PrintSupport REQUIRED)
+    FIND_PACKAGE(Qt5WebKit REQUIRED)
+    FIND_PACKAGE(Qt5Widgets REQUIRED)
+    FIND_PACKAGE(Qt5Xml REQUIRED)
+    MESSAGE( "-- Found Qt5")
+ELSE (Qt5Core_FOUND)
+    SET(QT_MIN_VERSION 4.5.0)
+    SET(QT_USE_QTXML 1)
+    SET(QT_USE_QTWEBKIT 1)
+    SET(QT_USE_QTMAIN 1)
+    FIND_PACKAGE(Qt4 REQUIRED)
+    MESSAGE( "-- Found Qt4")
+ENDIF (Qt5Core_FOUND)
+
 IF (QT_QTDBUS_FOUND AND NOT APPLE)
     SET(QT_USE_QTDBUS 1)
     MESSAGE(STATUS "Using DBUS")
@@ -98,19 +112,34 @@ INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTSourceFileList.cmake")
 #
 # The actual build options
 #
-INCLUDE_DIRECTORIES(
-    ${CMAKE_CURRENT_BINARY_DIR}        #for .h files generated from .ui
-    ${CMAKE_CURRENT_SOURCE_DIR}/src    # so that include paths like "frontend/..." work
-    ${CLUCENE_INCLUDE_DIR}            #CLucene headers
-    ${CLUCENE_LIBRARY_DIR}            #CLucene/clucene-config.h
-    ${SWORD_INCLUDE_DIR}
-)
+IF (Qt5Core_FOUND)
+    INCLUDE_DIRECTORIES(
+        ${CMAKE_CURRENT_BINARY_DIR}        #for .h files generated from .ui
+        ${CMAKE_CURRENT_SOURCE_DIR}/src    # so that include paths like "frontend/..." work
+        ${CLUCENE_INCLUDE_DIR}            #CLucene headers
+        ${CLUCENE_LIBRARY_DIR}            #CLucene/clucene-config.h
+        ${SWORD_INCLUDE_DIR}
+        ${Qt5PrintSupport_INCLUDE_DIRS}
+        ${Qt5Widgets_INCLUDE_DIRS}
+        ${Qt5Xml_INCLUDE_DIRS}
+    )
+ELSE (Qt5Core_FOUND)
+    INCLUDE_DIRECTORIES(
+        ${CMAKE_CURRENT_BINARY_DIR}        #for .h files generated from .ui
+        ${CMAKE_CURRENT_SOURCE_DIR}/src    # so that include paths like "frontend/..." work
+        ${CLUCENE_INCLUDE_DIR}            #CLucene headers
+        ${CLUCENE_LIBRARY_DIR}            #CLucene/clucene-config.h
+        ${SWORD_INCLUDE_DIR}
+    )
+ENDIF (Qt5Core_FOUND)
 
-# this will run uic on .ui files:
-QT4_WRAP_UI(bibletime_UIS_H ${bibletime_UIS})
-
-# this will run moc on source files
-QT4_WRAP_CPP(bibletime_MOC_SOURCES ${bibletime_MOCABLE_HEADERS})
+IF (Qt5Core_FOUND)
+    QT5_WRAP_UI(bibletime_UIS_H ${bibletime_UIS})
+    QT5_WRAP_CPP(bibletime_MOC_SOURCES ${bibletime_MOCABLE_HEADERS})
+ELSE (Qt5Core_FOUND)
+    QT4_WRAP_UI(bibletime_UIS_H ${bibletime_UIS})
+    QT4_WRAP_CPP(bibletime_MOC_SOURCES ${bibletime_MOCABLE_HEADERS})
+ENDIF (Qt5Core_FOUND)
 
 SOURCE_GROUP("QM Files" REGULAR_EXPRESSION ".*\\.qm")
 
@@ -159,16 +188,33 @@ ENDIF (MSVC)
 #    )
 #ENDIF (CMAKE_BUILD_TYPE STREQUAL "Release")
 
-INCLUDE(${QT_USE_FILE})
-TARGET_LINK_LIBRARIES(${EXECUTABLE_NAME}
-    ${QT_LIBRARIES}
-    ${CLUCENE_LIBRARY}
-    ${CURL_LIBRARIES} # optional, empty if not found
-    ${ICU_LIBRARIES} # optional, empty if not found
-    ${ICU_I18N_LIBRARIES} # optional, empty if not found
-    ${ZLIB_LIBRARIES} # optional, empty if not found
-    ${SWORD_LIBRARY}
-)
+IF (Qt5Core_FOUND)
+    TARGET_LINK_LIBRARIES(${EXECUTABLE_NAME}
+        ${Qt5Widgets_LIBRARIES}
+        ${Qt5Xml_LIBRARIES}
+        ${Qt5Core_LIBRARIES}
+        ${Qt5WebKit_LIBRARIES}
+        ${Qt5PrintSupport_LIBRARIES}
+        ${CLUCENE_LIBRARY}
+        ${CURL_LIBRARIES} # optional, empty if not found
+        ${ICU_LIBRARIES} # optional, empty if not found
+        ${ICU_I18N_LIBRARIES} # optional, empty if not found
+        ${ZLIB_LIBRARIES} # optional, empty if not found
+        ${SWORD_LIBRARY}
+    )
+    qt5_use_modules(${EXECUTABLE_NAME} Widgets WebKit Network)
+ELSE (Qt5Core_FOUND)
+    INCLUDE(${QT_USE_FILE})
+    TARGET_LINK_LIBRARIES(${EXECUTABLE_NAME}
+        ${QT_LIBRARIES}
+        ${CLUCENE_LIBRARY}
+        ${CURL_LIBRARIES} # optional, empty if not found
+        ${ICU_LIBRARIES} # optional, empty if not found
+        ${ICU_I18N_LIBRARIES} # optional, empty if not found
+        ${ZLIB_LIBRARIES} # optional, empty if not found
+        ${SWORD_LIBRARY}
+    )
+ENDIF (Qt5Core_FOUND)
 
 IF (APPLE)
      # enable support MacOS 10.5+

@@ -1,3 +1,9 @@
+2012-09-10 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix bug 14 - Headers displayed as plain text in some modules
+
+2012-08-25 Gary Holmlund <gary.holmlund@gmail.com>
+    * Add support for Qt5
+
 2012-07-18 Gary Holmlund <gary.holmlund@gmail.com>
     * Mag Window uses current module if no default cross reference is set
 
