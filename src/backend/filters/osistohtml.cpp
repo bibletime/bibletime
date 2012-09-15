@@ -74,7 +74,7 @@ bool Filters::OsisToHtml::handleToken(sword::SWBuf &buf, const char *token, swor
                     buf.append("<div class=\"introduction\">");
                 }
                 else if (type == "chapter") {
-                    buf.append("<div class=\"chapter\" />"); //don't open a div here, that would lead to a broken XML structure
+                    buf.append("<div class=\"chapter\" ></div>"); //don't open a div here, that would lead to a broken XML structure
                 }
                 else {
                     buf.append("<div>");
