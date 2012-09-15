@@ -150,12 +150,16 @@ QString CHTMLExportRendering::renderEntry(const KeyTreeItem& i, CSwordKey* k) {
                 QString unfiltered = QString::fromUtf8(it->second.c_str());
 
                 /// \todo This is only a preliminary workaround to strip the tags:
-                QRegExp filter("<title>(.*)</title>");
-                if (unfiltered.indexOf(filter) >= 0) {
-                    preverseHeading = filter.cap(1);
-                } else {
-                    preverseHeading = unfiltered;
+                QRegExp filter("(.*)<title[^>]*>(.*)</title>(.*)");
+                while(filter.indexIn(unfiltered) >= 0) {
+                    unfiltered = filter.cap(1) + filter.cap(2) + filter.cap(3);
                 }
+                // Fiter out offending self-closing div tags, which are bad HTML
+                QRegExp ofilter("(.*)<div[^>]*/>(.*)");
+                while(ofilter.indexIn(unfiltered) >= 0) {
+                    unfiltered = ofilter.cap(1) + ofilter.cap(2);
+                }
+                preverseHeading = unfiltered;
 
                 /// \todo Take care of the heading type!
                 if (!preverseHeading.isEmpty()) {
