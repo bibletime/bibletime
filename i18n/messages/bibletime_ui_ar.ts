@@ -4177,7 +4177,7 @@ Language name ppk</extracomment>
         <translation>تجزئة صرفية</translation>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/chtmlexportrendering.cpp" line="243"/>
+        <location filename="../../src/backend/rendering/chtmlexportrendering.cpp" line="247"/>
         <source>Export</source>
         <translation>تصدير</translation>
     </message>

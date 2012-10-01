@@ -4464,7 +4464,7 @@ Language name ppk</extracomment>
         <translation>Segmentazione morfologica</translation>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/chtmlexportrendering.cpp" line="243"/>
+        <location filename="../../src/backend/rendering/chtmlexportrendering.cpp" line="247"/>
         <source>Export</source>
         <translation>Esporta</translation>
     </message>
