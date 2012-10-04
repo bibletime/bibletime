@@ -54,6 +54,13 @@ class CMDIArea: public QMdiArea {
         QMdiSubWindow *addSubWindow(QWidget *widget, Qt::WindowFlags windowFlags = 0);
 
         /**
+          Returns the BibleTime main window
+        */
+        BibleTime* bibleTimeWindow() {
+            return m_bibleTime;
+        }
+
+        /**
           Resets the MDI arrangement mode and arranges the windows.
           \param[in] mode new MDI arrangement mode.
          */

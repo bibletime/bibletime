@@ -227,6 +227,12 @@ extern const char* actionName;
 }
 }  //end of main menu
 
+namespace findWidget {
+extern const QString close_icon;
+extern const QString previous_icon;
+extern const QString next_icon;
+}
+
 namespace searchdialog {
 extern const QString icon;
 extern const QString close_icon;

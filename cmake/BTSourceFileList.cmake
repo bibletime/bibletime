@@ -266,6 +266,7 @@ SOURCE_GROUP("src\\frontend\\keychooser\\versekeychooser" FILES ${bibletime_SRC_
 SET(bibletime_SRC_FRONTEND_DISPLAY
     # Behaviour for display areas:
     src/frontend/display/btcolorwidget.cpp
+    src/frontend/display/btfindwidget.cpp
     src/frontend/display/btfontsizewidget.cpp
     src/frontend/display/bthtmlfindtext.cpp
     src/frontend/display/bthtmljsobject.cpp
@@ -352,6 +353,7 @@ SET(bibletime_FRONTEND_DESKTOP_MOCABLE_HEADERS
     src/frontend/cmdiarea.h
     src/frontend/cprinter.h
     src/frontend/display/btcolorwidget.h
+    src/frontend/display/btfindwidget.h
     src/frontend/display/btfontsizewidget.h
     src/frontend/display/bthtmlfindtext.h
     src/frontend/display/bthtmljsobject.h

@@ -26,6 +26,7 @@ class CInfoDisplay;
 }
 class BtActionClass;
 class BtBookshelfDockWidget;
+class BtFindWidget;
 class BtOpenWorkAction;
 class CBookmarkIndex;
 class CDisplayWindow;
@@ -191,6 +192,11 @@ class BibleTime : public QMainWindow {
         */
         const CSwordModuleInfo* getCurrentModule();
 
+        /**
+          Open the BtFindWidget below the mdi area
+        */
+        void openFindWidget();
+
 public slots:
         /**
         * Opens the optionsdialog of BibleTime.
@@ -236,6 +242,10 @@ public slots:
         * Create the main window menu and toolbar
         */
         void createMenuAndToolBar();
+        /**
+          Creates mdi and and BtFindWidget
+        */
+        void createCentralWidget();
         /**
         * Initializes the sword.conf in the $HOME\Sword directory
         */
@@ -487,6 +497,7 @@ public slots:
         // QList<QAction*> m_windowOpenWindowsList;
 
         CMDIArea* m_mdi;
+        BtFindWidget* m_findWidget;
 
 
     protected: //DBUS interface implementation

@@ -29,6 +29,7 @@
 #include "backend/keys/cswordversekey.h"
 #include "frontend/btaboutmoduledialog.h"
 #include "frontend/cmdiarea.h"
+#include "frontend/display/btfindwidget.h"
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
 #include "frontend/displaywindow/cdisplaywindowfactory.h"
@@ -312,4 +313,9 @@ const CSwordModuleInfo* BibleTime::getCurrentModule() {
     if (!w)
         return 0;
     return w->modules().first();
+}
+
+void BibleTime::openFindWidget()
+{
+    m_findWidget->setVisible(true);
 }
