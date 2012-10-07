@@ -350,6 +350,17 @@ void BibleTime::createCentralWidget()
     QWidget* widget = new QWidget(this);
     widget->setLayout(layout);
     setCentralWidget(widget);
+
+    bool ok = connect(m_findWidget, SIGNAL(findNext(const QString&,bool)),
+        m_mdi, SLOT(findNextTextInActiveWindow(const QString &, bool)));
+    Q_ASSERT(ok);
+
+    ok = connect(m_findWidget, SIGNAL(findPrevious(const QString&,bool)),
+        m_mdi, SLOT(findPreviousTextInActiveWindow(const QString &, bool)));
+    Q_ASSERT(ok);
+    ok = connect(m_findWidget, SIGNAL(highlightText(const QString&,bool)),
+        m_mdi, SLOT(highlightTextInActiveWindow(const QString &, bool)));
+    Q_ASSERT(ok);
 }
 
 /** Initializes the action objects of the GUI */

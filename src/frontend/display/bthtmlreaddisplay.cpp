@@ -27,8 +27,6 @@
 
 using namespace InfoDisplay;
 
-void showBtHtmlFindText(CMDIArea*);
-
 static QString javascript; // Initialized from file bthtml.js
 
 BtHtmlReadDisplay::BtHtmlReadDisplay(CReadWindow* readWindow, QWidget* parentWidget)
@@ -266,7 +264,6 @@ void BtHtmlReadDisplay::setLemma(const QString& lemma) {
 void BtHtmlReadDisplay::openFindTextDialog() {
     BibleTime* bibleTime = parentWindow()->mdi()->bibleTimeWindow();
     bibleTime->openFindWidget();
-    //showBtHtmlFindText(mdiArea);
 }
 
 // Send "completed" signal when the text is finished loading into the viewer

@@ -318,4 +318,5 @@ const CSwordModuleInfo* BibleTime::getCurrentModule() {
 void BibleTime::openFindWidget()
 {
     m_findWidget->setVisible(true);
+    m_findWidget->showAndSelect();
 }

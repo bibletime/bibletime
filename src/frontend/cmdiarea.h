@@ -18,6 +18,7 @@
 class BibleTime;
 class CSwordModuleInfo;
 class CDisplayWindow;
+class QWebView;
 
 /**
   A custom MDI area widget.
@@ -125,6 +126,12 @@ class CMDIArea: public QMdiArea {
         */
         void myTileHorizontal();
 
+        void findNextTextInActiveWindow(const QString& text, bool caseSensitive);
+
+        void findPreviousTextInActiveWindow(const QString& text, bool caseSensitive);
+
+        void highlightTextInActiveWindow(const QString& text, bool caseSensitive);
+
     signals:
 
         /**
@@ -149,6 +156,8 @@ class CMDIArea: public QMdiArea {
         void emitWindowCaptionChanged();
 
         void fixSystemMenu(QMdiSubWindow* subWindow);
+
+        QWebView* getActiveWebView();
 
     protected slots:
 
