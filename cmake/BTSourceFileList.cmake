@@ -1,6 +1,3 @@
-SET(bibletime_UIS
-    src/frontend/display/bthtmlfindtext.ui
-)
 
 SET(bibletime_SRC
     # Toplevel files:
@@ -268,7 +265,6 @@ SET(bibletime_SRC_FRONTEND_DISPLAY
     src/frontend/display/btcolorwidget.cpp
     src/frontend/display/btfindwidget.cpp
     src/frontend/display/btfontsizewidget.cpp
-    src/frontend/display/bthtmlfindtext.cpp
     src/frontend/display/bthtmljsobject.cpp
     src/frontend/display/bthtmlreaddisplay.cpp
     src/frontend/display/cdisplay.cpp
@@ -355,7 +351,6 @@ SET(bibletime_FRONTEND_DESKTOP_MOCABLE_HEADERS
     src/frontend/display/btcolorwidget.h
     src/frontend/display/btfindwidget.h
     src/frontend/display/btfontsizewidget.h
-    src/frontend/display/bthtmlfindtext.h
     src/frontend/display/bthtmljsobject.h
     src/frontend/display/bthtmlreaddisplay.h
     src/frontend/display/cdisplay.h
