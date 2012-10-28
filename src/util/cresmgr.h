@@ -80,6 +80,9 @@ extern const QString icon;
 namespace showMag {
 extern const QString icon;
 }
+namespace showFind {
+extern const QString icon;
+}
 namespace showMainIndex {
 extern const QString icon;
 extern const QKeySequence accel;
@@ -226,6 +229,11 @@ extern const char* actionName;
 }
 }
 }  //end of main menu
+
+namespace findWidget {
+extern const QString previous_icon;
+extern const QString next_icon;
+}
 
 namespace searchdialog {
 extern const QString icon;

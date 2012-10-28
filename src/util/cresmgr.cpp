@@ -77,6 +77,9 @@ const QString icon        = "bookmark.svg";
 namespace showMag {
 const QString icon        = "document_magnifier.svg";
 }
+namespace showFind {
+const QString icon        = "find_in_window.svg";
+}
 namespace showMainIndex {
 const QString icon        = "view_index.svg";
 const QKeySequence accel(Qt::Key_F9);
@@ -220,6 +223,11 @@ const char* actionName    = "tipOfTheDay_action";
 }
 }//mainMenu::help
 }  //end of mainMenu
+
+namespace findWidget {
+const QString previous_icon = "back.svg";
+const QString next_icon = "forward.svg";
+}
 
 namespace searchdialog {
 const QString icon = "find.svg";
