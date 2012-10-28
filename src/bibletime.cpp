@@ -19,6 +19,7 @@
 #include <QMessageBox>
 #include <QSplashScreen>
 #include <QSplitter>
+#include <QWebView>
 #include "backend/config/btconfig.h"
 #include "backend/drivers/cswordbiblemoduleinfo.h"
 #include "backend/drivers/cswordbookmoduleinfo.h"
@@ -305,11 +306,28 @@ bool BibleTime::event(QEvent* event) {
 }
 
 const CSwordModuleInfo* BibleTime::getCurrentModule() {
+    CDisplayWindow* w = getCurrentWindow();
+    if (!w)
+        return 0;
+    return w->modules().first();
+}
+
+QWebView* BibleTime::getCurrentWebView() {
+    CDisplayWindow* displayWindow = getCurrentWindow();
+    if (displayWindow == 0)
+        return 0;
+    CDisplay* display = displayWindow->displayWidget();
+    if (display == 0)
+        return 0;
+    QWidget* view = display->view();
+    QWebView* webView = qobject_cast<QWebView*>(view);
+    return webView;
+}
+
+CDisplayWindow* BibleTime::getCurrentWindow() {
     QMdiSubWindow* activeSubWindow = m_mdi->activeSubWindow();
     if (!activeSubWindow)
         return 0;
     CDisplayWindow* w = dynamic_cast<CDisplayWindow*>(activeSubWindow->widget());
-    if (!w)
-        return 0;
-    return w->modules().first();
+    return w;
 }

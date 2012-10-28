@@ -23,6 +23,7 @@
 #include <QtGlobal>
 #include <QToolBar>
 #include <QUrl>
+#include <QWebView>
 #include "backend/config/btconfig.h"
 #include "backend/keys/cswordversekey.h"
 #include "frontend/btaboutdialog.h"
@@ -589,4 +590,35 @@ void BibleTime::refreshProfileMenus() {
 void BibleTime::quit() {
     Search::CSearchDialog::closeDialog();
     close();
+}
+
+void BibleTime::findNextTextInCurrentWindow(const QString& text, bool caseSensitive) {
+    QWebView* currentWebView = getCurrentWebView();
+    if (currentWebView == 0)
+        return;
+    QWebPage::FindFlags options = QWebPage::FindWrapsAroundDocument;
+    if (caseSensitive)
+        options |= QWebPage::FindCaseSensitively;
+    currentWebView->findText(text, options);
+}
+
+void BibleTime::findPreviousTextInCurrentWindow(const QString& text, bool caseSensitive) {
+    QWebView* currentWebView = getCurrentWebView();
+    if (currentWebView == 0)
+        return;
+    QWebPage::FindFlags options = QWebPage::FindWrapsAroundDocument;
+    if (caseSensitive)
+        options |= QWebPage::FindCaseSensitively;
+    currentWebView->findText(text, options);
+}
+
+void BibleTime::highlightTextInCurrentWindow(const QString& text, bool caseSensitive) {
+    QWebView* currentWebView = getCurrentWebView();
+    if (currentWebView == 0)
+        return;
+    QWebPage::FindFlags options = QWebPage::HighlightAllOccurrences;
+    if (caseSensitive)
+        options |= QWebPage::FindCaseSensitively;
+    currentWebView->findText("", options); // clear old highlight
+    currentWebView->findText(text, options);
 }
