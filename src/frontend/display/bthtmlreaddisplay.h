@@ -52,7 +52,6 @@ class BtHtmlReadDisplay : public QWebPage, public CReadDisplay {
         // Reimplementation.
         virtual void selectAll();
         virtual void moveToAnchor( const QString& anchor );
-        virtual void openFindTextDialog();
         inline virtual QString getCurrentNodeInfo() const {
             return m_nodeInfo;
         }
