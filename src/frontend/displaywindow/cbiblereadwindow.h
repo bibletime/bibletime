@@ -58,6 +58,7 @@ class CBibleReadWindow: public CLexiconReadWindow  {
 
         struct {
             QAction* selectAll;
+            QAction* findText;
             QAction* findStrongs;
 
             QMenu* copyMenu;

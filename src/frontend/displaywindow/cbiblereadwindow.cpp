@@ -249,6 +249,9 @@ void CBibleReadWindow::initView() {
 void CBibleReadWindow::setupPopupMenu() {
     popup()->setTitle(tr("Bible window"));
     popup()->setIcon(util::tool::getIconForModule(modules().first()) );
+    popup()->addAction(m_actions.findText);
+    QKeySequence ks = m_actions.findText->shortcut();
+    QString keys = ks.toString();
     popup()->addAction(m_actions.findStrongs);
     popup()->addAction(m_actions.selectAll);
 
