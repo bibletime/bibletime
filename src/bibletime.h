@@ -34,6 +34,7 @@ class CMDIArea;
 class CSwordModuleInfo;
 class QAction;
 class QLabel;
+class QMdiSubWindow;
 class QMenu;
 class QActionGroup;
 class QToolBar;
@@ -351,6 +352,10 @@ public slots:
          * Used to set the active menu
          */
         void slotSetActiveSubWindow(QWidget* window);
+        /**
+         * The active window was changed
+         */
+        void slotActiveWindowChanged(QMdiSubWindow* window);
         /**
         * Saves the current settings into the currently activated profile.
         */

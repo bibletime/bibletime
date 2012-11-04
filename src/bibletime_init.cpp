@@ -361,6 +361,10 @@ void BibleTime::createCentralWidget()
     ok = connect(m_findWidget, SIGNAL(highlightText(const QString&,bool)),
         m_mdi, SLOT(highlightTextInActiveWindow(const QString &, bool)));
     Q_ASSERT(ok);
+
+    ok = connect(m_mdi, SIGNAL(subWindowActivated(QMdiSubWindow*)),
+            this, SLOT(slotActiveWindowChanged(QMdiSubWindow*)));
+    Q_ASSERT(ok);
 }
 
 /** Initializes the action objects of the GUI */

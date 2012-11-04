@@ -66,7 +66,7 @@ void BtFindWidget::createTextEditor() {
 }
 
 void BtFindWidget::createCaseCheckBox() {
-    m_caseCheckBox = new QCheckBox(tr("Case Sensitive"), this);
+    m_caseCheckBox = new QCheckBox(tr("Match case"), this);
     m_layout->addWidget(m_caseCheckBox);
 }
 

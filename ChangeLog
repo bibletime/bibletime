@@ -1,3 +1,6 @@
+2012-11-03 Gary Holmlund <gary.holmlund@gmail.com>
+    * Add Find widget at bottom of MDI area
+
 2012-09-10 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug 14 - Headers displayed as plain text in some modules
 

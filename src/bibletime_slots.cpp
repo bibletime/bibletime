@@ -294,6 +294,12 @@ void BibleTime::slotSearchModules() {
     Search::CSearchDialog::openDialog(modules, QString::null);
 }
 
+void BibleTime::slotActiveWindowChanged(QMdiSubWindow* window)
+{
+    if (window == 0)
+        m_findWidget->setVisible(false);
+}
+
 /* Search default Bible slot
  * Call CSearchDialog::openDialog with only the default bible module
  */
