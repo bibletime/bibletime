@@ -1,6 +1,3 @@
-2012-11-02 Gary Holmlund <gary.holmlund@gmail.com>
-    * Change Find dialog into a Find docking window with extra features
-
 2012-09-10 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix bug 14 - Headers displayed as plain text in some modules
 
