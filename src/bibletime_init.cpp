@@ -13,7 +13,6 @@
 #include <QDebug>
 #include <QDockWidget>
 #include <QLabel>
-#include <QLayout>
 #include <QMenu>
 #include <QMenuBar>
 #include <QPointer>
@@ -26,7 +25,6 @@
 #include "backend/managers/clanguagemgr.h"
 #include "backend/managers/cswordbackend.h"
 #include "frontend/btbookshelfdockwidget.h"
-#include "frontend/btfindwidget.h"
 #include "frontend/btopenworkaction.h"
 #include "frontend/cinfodisplay.h"
 #include "frontend/cmdiarea.h"
@@ -75,14 +73,6 @@ void BibleTime::initView() {
     m_infoDisplay->resize(150, 150);
     m_magDock->setWidget(m_infoDisplay);
     addDockWidget(Qt::LeftDockWidgetArea, m_magDock);
-
-    m_findWidgetDock = new QDockWidget(this);
-    m_findWidgetDock->layout()->setContentsMargins(0,0,0,0);
-    m_findWidgetDock->setObjectName("FindDock");
-    m_findWidget = new BtFindWidget(this);
-    m_findWidget->layout()->setContentsMargins(0,0,0,0);
-    m_findWidgetDock->setWidget(m_findWidget);
-    addDockWidget(Qt::BottomDockWidgetArea, m_findWidgetDock);
 
     connect(m_bookshelfDock, SIGNAL(moduleHovered(CSwordModuleInfo*)),
             m_infoDisplay,   SLOT(setInfo(CSwordModuleInfo*)));
@@ -301,9 +291,6 @@ void BibleTime::insertKeyboardActions( BtActionCollection* const a ) {
     action = new QAction(a);
     a->addAction("showMag", action);
 
-    action = new QAction(a);
-    a->addAction("showFind", action);
-
     retranslateUiActions(a);
 }
 
@@ -392,10 +379,6 @@ void BibleTime::initActions() {
     m_showMagAction->setIcon(DU::getIcon(CResMgr::mainMenu::view::showMag::icon));
     m_showMagAction->setToolTip(tr("Toggle visibility of the mag window"));
     m_actionCollection->addAction("showMag", m_showMagAction);
-    m_showFindAction = m_findWidgetDock->toggleViewAction();
-    m_showFindAction->setIcon(DU::getIcon(CResMgr::mainMenu::view::showFind::icon));
-    m_showFindAction->setToolTip(tr("Toggle visibility of the find window"));
-    m_actionCollection->addAction("showFind", m_showFindAction);
 
     m_showTextAreaHeadersAction = m_actionCollection->action("showParallelTextHeaders");
     Q_ASSERT(m_showTextAreaHeadersAction != 0);
@@ -599,7 +582,6 @@ void BibleTime::initMenubar() {
     m_viewMenu->addAction(m_showBookshelfAction);
     m_viewMenu->addAction(m_showBookmarksAction);
     m_viewMenu->addAction(m_showMagAction);
-    m_viewMenu->addAction(m_showFindAction);
     m_viewMenu->addAction(m_showTextAreaHeadersAction);
     m_viewMenu->addSeparator();
     m_toolBarsMenu = new QMenu(this);
@@ -703,9 +685,6 @@ void BibleTime::initToolbars() {
     a = m_actionCollection->action("showMag");
     Q_ASSERT(a != 0);
     m_mainToolBar->addAction(a);
-    a = m_actionCollection->action("showFind");
-    Q_ASSERT(a != 0);
-    m_mainToolBar->addAction(a);
     m_mainToolBar->addAction(m_searchOpenWorksAction);
     m_mainToolBar->addAction(m_openHandbookAction);
 }
@@ -713,7 +692,6 @@ void BibleTime::initToolbars() {
 void BibleTime::retranslateUi() {
     m_bookmarksDock->setWindowTitle(tr("Bookmarks"));
     m_magDock->setWindowTitle(tr("Mag"));
-    m_findWidgetDock->setWindowTitle(tr("Find"));
     m_mainToolBar->setWindowTitle(tr("Main toolbar"));
     m_navToolBar->setWindowTitle(tr("Navigation toolbar"));
     m_worksToolBar->setWindowTitle(tr("Works toolbar"));
@@ -773,9 +751,6 @@ void BibleTime::retranslateUiActions(BtActionCollection* ac) {
     a = ac->action("showMag");
     Q_ASSERT(a != 0);
     a->setText(tr("Show mag"));
-    a = ac->action("showFind");
-    Q_ASSERT(a != 0);
-    a->setText(tr("Show find"));
     a = ac->action("showParallelTextHeaders");
     Q_ASSERT(a != 0);
     a->setText(tr("Show parallel text headers"));

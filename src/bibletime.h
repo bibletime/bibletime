@@ -26,7 +26,6 @@ class CInfoDisplay;
 }
 class BtActionClass;
 class BtBookshelfDockWidget;
-class BtFindWidget;
 class BtOpenWorkAction;
 class CBookmarkIndex;
 class CDisplayWindow;
@@ -409,8 +408,6 @@ public slots:
         QDockWidget* m_bookmarksDock;
         CBookmarkIndex* m_bookmarksPage;
         QDockWidget* m_magDock;
-        QDockWidget* m_findWidgetDock;
-        BtFindWidget* m_findWidget;
         InfoDisplay::CInfoDisplay* m_infoDisplay;
 
         QToolBar* m_mainToolBar;
@@ -429,7 +426,6 @@ public slots:
         QAction *m_showBookshelfAction;
         QAction *m_showBookmarksAction;
         QAction *m_showMagAction;
-        QAction *m_showFindAction;
         QMenu *m_toolBarsMenu;
         QAction* m_showMainWindowToolbarAction;
         QAction *m_showTextAreaHeadersAction;

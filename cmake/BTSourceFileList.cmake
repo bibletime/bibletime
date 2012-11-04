@@ -124,7 +124,6 @@ SET(bibletime_SRC_FRONTEND
     src/frontend/btbookshelfgroupingmenu.cpp
     src/frontend/btbookshelfview.cpp
     src/frontend/btbookshelfwidget.cpp
-    src/frontend/btfindwidget.cpp
     src/frontend/btmenuview.cpp
     src/frontend/btmodulechooserdialog.cpp
     src/frontend/btmoduleindexdialog.cpp
@@ -134,7 +133,6 @@ SET(bibletime_SRC_FRONTEND
     src/frontend/cmdiarea.cpp
     src/frontend/cprinter.cpp
     src/frontend/crossrefrendering.cpp
-    src/frontend/btfindwidgetlayout.cpp
 )
 
 SOURCE_GROUP("src\\frontend" FILES ${bibletime_SRC_FRONTEND})
@@ -345,7 +343,6 @@ SET(bibletime_FRONTEND_DESKTOP_MOCABLE_HEADERS
     src/frontend/btbookshelfgroupingmenu.h
     src/frontend/btbookshelfview.h
     src/frontend/btbookshelfwidget.h
-    src/frontend/btfindwidget.h
     src/frontend/btmenuview.h
     src/frontend/btmodulechooserdialog.h
     src/frontend/btmoduleindexdialog.h
