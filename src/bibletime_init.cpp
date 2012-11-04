@@ -80,10 +80,9 @@ void BibleTime::initView() {
     m_findWidgetDock->layout()->setContentsMargins(0,0,0,0);
     m_findWidgetDock->setObjectName("FindDock");
     m_findWidget = new BtFindWidget(this);
-    m_findWidget->layout()->setContentsMargins(6,0,6,4);
+    m_findWidget->layout()->setContentsMargins(0,0,0,0);
     m_findWidgetDock->setWidget(m_findWidget);
-    addDockWidget(Qt::LeftDockWidgetArea, m_findWidgetDock);
-    tabifyDockWidget(m_bookmarksDock, m_findWidgetDock);
+    addDockWidget(Qt::BottomDockWidgetArea, m_findWidgetDock);
 
     connect(m_bookshelfDock, SIGNAL(moduleHovered(CSwordModuleInfo*)),
             m_infoDisplay,   SLOT(setInfo(CSwordModuleInfo*)));

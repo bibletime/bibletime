@@ -21,7 +21,8 @@
 class BtFindWidgetLayout : public QLayout {
 
 public:
-    BtFindWidgetLayout(QWidget *parent);
+    BtFindWidgetLayout(QWidget *parent, int margin = -1, int hSpacing = -1, int vSpacing = -1);
+    BtFindWidgetLayout(int margin = -1, int hSpacing = -1, int vSpacing = -1);
     ~BtFindWidgetLayout();
 
     void addItem(QLayoutItem *item);
@@ -44,6 +45,8 @@ private:
     int ySpacing(QWidget* wid) const;
 
     QList<QLayoutItem *> itemList;
+    int m_hSpace;
+    int m_vSpace;
 };
 
 #endif

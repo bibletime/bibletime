@@ -35,6 +35,7 @@ class BtFindWidget : public QWidget {
     private:
         void createCaseCheckBox();
         void createLayout();
+        void createSpacer();
         void createTextEditor();
         void createToolButton(const QString& iconName, const QString& text, const char* slot);
         void highlightText(const QString& searchText);

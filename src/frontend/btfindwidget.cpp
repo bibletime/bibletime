@@ -28,6 +28,7 @@ BtFindWidget::BtFindWidget(QWidget* parent) : QWidget(parent) {
     createToolButton(CResMgr::findWidget::previous_icon, tr("Previous"), SLOT(findPrevious()));
     createToolButton(CResMgr::findWidget::next_icon, tr("Next"), SLOT(findNext()));
     createCaseCheckBox();
+    createSpacer();
     setFocusProxy(m_textEditor);
 }
 
@@ -36,6 +37,8 @@ BtFindWidget::~BtFindWidget() {
 
 void BtFindWidget::createLayout() {
     m_layout = new BtFindWidgetLayout(this);
+    m_layout->setMargin(0);
+    m_layout->setSpacing(4);
 }
 
 void BtFindWidget::createToolButton(const QString& iconName, const QString& text, const char* slot) {
@@ -52,7 +55,7 @@ void BtFindWidget::createToolButton(const QString& iconName, const QString& text
 
 void BtFindWidget::createTextEditor() {
     m_textEditor = new QLineEdit(this);
-    m_textEditor->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
+    m_textEditor->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
 
     m_textEditor->setToolTip(QApplication::translate("findWidget",
         "The text you want to search for", 0, QApplication::UnicodeUTF8));
@@ -67,6 +70,11 @@ void BtFindWidget::createTextEditor() {
 void BtFindWidget::createCaseCheckBox() {
     m_caseCheckBox = new QCheckBox(tr("Case Sensitive"), this);
     m_layout->addWidget(m_caseCheckBox);
+}
+
+void BtFindWidget::createSpacer() {
+    QSpacerItem* spacer = new QSpacerItem(0,0,QSizePolicy::Expanding, QSizePolicy::Minimum);
+    m_layout->addItem(spacer);
 }
 
 void BtFindWidget::highlightText(const QString& text) {
