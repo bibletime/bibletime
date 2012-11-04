@@ -89,6 +89,8 @@ class CDisplay {
         */
         QMenu* installedPopup();
 
+        virtual void openFindTextDialog() {}
+
         inline virtual QString getCurrentNodeInfo() const {
             return QString::null;
         }
@@ -142,6 +144,8 @@ class CDisplayConnections : public QObject {
         void copyAnchorOnly();
 
         void clear();
+
+        void openFindTextDialog();
 
     signals:
         void referenceClicked(const QString& module, const QString& key);

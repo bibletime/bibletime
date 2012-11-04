@@ -198,6 +198,10 @@ void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
     actn->setShortcut(QKeySequence::Copy);
     a->addAction("copySelectedText", actn);
 
+    actn = new QAction(QIcon(), tr("Find..."), a);
+    actn->setShortcut(QKeySequence::Find);
+    a->addAction("findText", actn);
+
     actn = new QAction(QIcon(), tr("Change location"), a);
     actn->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_L));
     a->addAction("openLocation", actn);
@@ -252,6 +256,12 @@ void CDisplayWindow::initActions() {
     Q_ASSERT(actn != 0);
     QObject::connect(actn, SIGNAL(triggered()),
                      conn, SLOT(copySelection()));
+    addAction(actn);
+
+    actn = ac->action("findText");
+    Q_ASSERT(actn != 0);
+    QObject::connect(actn, SIGNAL(triggered()),
+                     conn, SLOT(openFindTextDialog()));
     addAction(actn);
 
     actn = ac->action(CResMgr::displaywindows::general::backInHistory::actionName);

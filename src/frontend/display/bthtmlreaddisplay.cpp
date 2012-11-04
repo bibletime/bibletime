@@ -25,6 +25,8 @@
 
 using namespace InfoDisplay;
 
+void showBtHtmlFindText(CMDIArea*);
+
 static QString javascript; // Initialized from file bthtml.js
 
 BtHtmlReadDisplay::BtHtmlReadDisplay(CReadWindow* readWindow, QWidget* parentWidget)
@@ -256,6 +258,12 @@ void BtHtmlReadDisplay::slotGoToAnchor(const QString& anchor) {
 // Save the Lemma (Strongs number) attribute
 void BtHtmlReadDisplay::setLemma(const QString& lemma) {
     m_nodeInfo = lemma;
+}
+
+// Open the Find text dialog
+void BtHtmlReadDisplay::openFindTextDialog() {
+    CMDIArea* mdiArea = parentWindow()->mdi();
+    showBtHtmlFindText(mdiArea);
 }
 
 // Send "completed" signal when the text is finished loading into the viewer

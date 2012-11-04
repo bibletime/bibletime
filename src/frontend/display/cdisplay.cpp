@@ -91,6 +91,10 @@ void CDisplayConnections::clear() {
     m_display->setText(QString::null);
 }
 
+void CDisplayConnections::openFindTextDialog() {
+    m_display->openFindTextDialog();
+}
+
 
 /*----------------------*/
 

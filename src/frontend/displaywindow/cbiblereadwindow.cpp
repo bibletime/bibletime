@@ -171,6 +171,9 @@ void CBibleReadWindow::initActions() {
     m_actions.selectAll = ac->action("selectAll");
     Q_ASSERT(m_actions.selectAll != 0);
 
+    m_actions.findText = ac->action("findText");
+    Q_ASSERT(m_actions.findText != 0);
+
     m_actions.findStrongs = m_actionCollection->action(CResMgr::displaywindows::general::findStrongs::actionName);
     Q_ASSERT(m_actions.findStrongs != 0);
 
