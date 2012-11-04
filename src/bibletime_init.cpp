@@ -489,18 +489,6 @@ void BibleTime::initActions() {
     connect(m_windowTileHorizontalAction, SIGNAL(triggered()),
             this,                          SLOT(slotTileHorizontal()));
 
-    ok = connect(m_findWidget, SIGNAL(findNext(const QString&,bool)),
-                      this, SLOT(findNextTextInCurrentWindow(const QString &, bool)));
-    Q_ASSERT(ok);
-
-    ok = connect(m_findWidget, SIGNAL(findPrevious(const QString&,bool)),
-                 this, SLOT(findPreviousTextInCurrentWindow(const QString &, bool)));
-    Q_ASSERT(ok);
-    ok = connect(m_findWidget, SIGNAL(highlightText(const QString&,bool)),
-                 this, SLOT(highlightTextInCurrentWindow(const QString &, bool)));
-    Q_ASSERT(ok);
-
-
     alignmentMode alignment = btConfig().value<alignmentMode>("GUI/alignmentMode", autoTileVertical);
 
     m_windowManualModeAction = m_actionCollection->action("manualArrangement");
