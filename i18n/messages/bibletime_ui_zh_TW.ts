@@ -4217,7 +4217,7 @@ Language name ppk</extracomment>
         <translation>構詞學分割</translation>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/chtmlexportrendering.cpp" line="243"/>
+        <location filename="../../src/backend/rendering/chtmlexportrendering.cpp" line="247"/>
         <source>Export</source>
         <translation></translation>
     </message>

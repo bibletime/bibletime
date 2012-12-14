@@ -29,6 +29,7 @@
 #include "frontend/cinfodisplay.h"
 #include "frontend/cmdiarea.h"
 #include "frontend/bookshelfmanager/btmodulemanagerdialog.h"
+#include "frontend/display/btfindwidget.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
 #include "frontend/searchdialog/csearchdialog.h"
@@ -293,6 +294,12 @@ void BibleTime::slotSearchModules() {
     Search::CSearchDialog::openDialog(modules, QString::null);
 }
 
+void BibleTime::slotActiveWindowChanged(QMdiSubWindow* window)
+{
+    if (window == 0)
+        m_findWidget->setVisible(false);
+}
+
 /* Search default Bible slot
  * Call CSearchDialog::openDialog with only the default bible module
  */
@@ -331,6 +338,8 @@ void BibleTime::saveProfile() {
     conf.setSessionValue("MainWindow/geometry", saveGeometry());
     conf.setSessionValue("MainWindow/state", saveState());
     conf.setSessionValue("MainWindow/MDIArrangementMode", static_cast<int>(m_mdi->getMDIArrangementMode()));
+
+    conf.setSessionValue("FindIsVisible", m_findWidget->isVisibleTo(this));
 
     QStringList windowsList;
     Q_FOREACH (const QMdiSubWindow * const w,
@@ -421,6 +430,8 @@ void BibleTime::reloadProfile() {
     setQActionCheckedNoTrigger(m_toolbarsInEachWindow, conf.sessionValue<bool>("GUI/showToolbarsInEachWindow", true));
 
     m_mdi->setMDIArrangementMode(static_cast<MAM>(conf.sessionValue<int>("MainWindow/MDIArrangementMode")));
+
+    m_findWidget->setVisible(conf.sessionValue<bool>("FindIsVisible", false));
 
     QWidget * focusWindow = 0;
     QMap<QString, WindowLoadStatus> failedWindows;

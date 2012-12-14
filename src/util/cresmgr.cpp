@@ -221,6 +221,12 @@ const char* actionName    = "tipOfTheDay_action";
 }//mainMenu::help
 }  //end of mainMenu
 
+namespace findWidget {
+const QString close_icon = "stop.svg";
+const QString previous_icon = "back.svg";
+const QString next_icon = "forward.svg";
+}
+
 namespace searchdialog {
 const QString icon = "find.svg";
 const QString close_icon = "stop.svg";

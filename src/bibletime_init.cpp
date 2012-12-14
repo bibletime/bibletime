@@ -29,6 +29,7 @@
 #include "frontend/cinfodisplay.h"
 #include "frontend/cmdiarea.h"
 #include "frontend/cprinter.h"
+#include "frontend/display/btfindwidget.h"
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"
 #include "frontend/bookmarks/cbookmarkindex.h"
@@ -54,8 +55,7 @@ void BibleTime::initView() {
     // Create menu and toolbar before the mdi area
     createMenuAndToolBar();
 
-    m_mdi = new CMDIArea(this);
-    setCentralWidget(m_mdi);
+    createCentralWidget();
 
     m_bookshelfDock = new BtBookshelfDockWidget(this);
     addDockWidget(Qt::LeftDockWidgetArea, m_bookshelfDock);
@@ -335,6 +335,36 @@ void BibleTime::createMenuAndToolBar()
 
     m_formatToolBar = createToolBar("FormatToolBar", this, visible);
     addToolBar(m_formatToolBar);
+}
+
+void BibleTime::createCentralWidget()
+{
+    m_mdi = new CMDIArea(this);
+    m_findWidget = new BtFindWidget(this);
+    m_findWidget->setVisible(false);
+
+    QVBoxLayout* layout = new QVBoxLayout();
+    layout->addWidget(m_mdi);
+    layout->addWidget(m_findWidget);
+
+    QWidget* widget = new QWidget(this);
+    widget->setLayout(layout);
+    setCentralWidget(widget);
+
+    bool ok = connect(m_findWidget, SIGNAL(findNext(const QString&,bool)),
+        m_mdi, SLOT(findNextTextInActiveWindow(const QString &, bool)));
+    Q_ASSERT(ok);
+
+    ok = connect(m_findWidget, SIGNAL(findPrevious(const QString&,bool)),
+        m_mdi, SLOT(findPreviousTextInActiveWindow(const QString &, bool)));
+    Q_ASSERT(ok);
+    ok = connect(m_findWidget, SIGNAL(highlightText(const QString&,bool)),
+        m_mdi, SLOT(highlightTextInActiveWindow(const QString &, bool)));
+    Q_ASSERT(ok);
+
+    ok = connect(m_mdi, SIGNAL(subWindowActivated(QMdiSubWindow*)),
+            this, SLOT(slotActiveWindowChanged(QMdiSubWindow*)));
+    Q_ASSERT(ok);
 }
 
 /** Initializes the action objects of the GUI */

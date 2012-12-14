@@ -14,8 +14,10 @@
 #include <QString>
 #include "backend/keys/cswordkey.h"
 #include "backend/managers/referencemanager.h"
+#include "bibletime.h"
 #include "frontend/cdragdrop.h"
 #include "frontend/cinfodisplay.h"
+#include "frontend/cmdiarea.h"
 #include "frontend/display/bthtmljsobject.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
 #include "frontend/displaywindow/cdisplaywindowfactory.h"
@@ -24,8 +26,6 @@
 
 
 using namespace InfoDisplay;
-
-void showBtHtmlFindText(CMDIArea*);
 
 static QString javascript; // Initialized from file bthtml.js
 
@@ -262,8 +262,8 @@ void BtHtmlReadDisplay::setLemma(const QString& lemma) {
 
 // Open the Find text dialog
 void BtHtmlReadDisplay::openFindTextDialog() {
-    CMDIArea* mdiArea = parentWindow()->mdi();
-    showBtHtmlFindText(mdiArea);
+    BibleTime* bibleTime = parentWindow()->mdi()->bibleTimeWindow();
+    bibleTime->openFindWidget();
 }
 
 // Send "completed" signal when the text is finished loading into the viewer

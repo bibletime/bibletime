@@ -4326,7 +4326,7 @@ Language name ppk</extracomment>
         <translation>Morfologinen segmentointi</translation>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/chtmlexportrendering.cpp" line="243"/>
+        <location filename="../../src/backend/rendering/chtmlexportrendering.cpp" line="247"/>
         <source>Export</source>
         <translation>Vie</translation>
     </message>

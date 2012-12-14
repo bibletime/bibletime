@@ -10,7 +10,7 @@
 #include "bibletime.h"
 #include "frontend/cmdiarea.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"
-
+#include "frontend/display/cdisplay.h"
 #include <QEvent>
 #include <QMdiSubWindow>
 #include <QMenu>
@@ -18,6 +18,7 @@
 #include <QTabBar>
 #include <QTimer>
 #include <QToolBar>
+#include <QWebView>
 #include <QWindowStateChangeEvent>
 
 #define MOVESIZE 30
@@ -285,6 +286,30 @@ QList<QMdiSubWindow*> CMDIArea::usableWindowList() const {
     return ret;
 }
 
+static CDisplayWindow* getDisplayWindow(QMdiSubWindow* mdiWindow) {
+    QWidget* widget = mdiWindow->widget();
+    return qobject_cast<CDisplayWindow*>(widget);
+}
+
+static QWebView* getWebViewFromDisplayWindow(CDisplayWindow* displayWindow) {
+    if (displayWindow == 0)
+        return 0;
+    CDisplay* display = displayWindow->displayWidget();
+    if (display == 0)
+        return 0;
+    QWidget* view = display->view();
+    QWebView* webView = qobject_cast<QWebView*>(view);
+    return webView;
+}
+
+QWebView* CMDIArea::getActiveWebView()
+{
+    QMdiSubWindow* activeMdiWindow = activeSubWindow();
+    CDisplayWindow* const activeWindow = getDisplayWindow(activeMdiWindow);
+    QWebView* webView = getWebViewFromDisplayWindow(activeWindow);
+    return webView;
+}
+
 void CMDIArea::slotSubWindowActivated(QMdiSubWindow* client) {
     if (subWindowList().isEmpty())
         m_bibleTime->clearMdiToolBars();
@@ -295,11 +320,42 @@ void CMDIArea::slotSubWindowActivated(QMdiSubWindow* client) {
     emit sigSetToplevelCaption( client->windowTitle().trimmed() );
 
     // Notify child window it is active
-    CDisplayWindow * const activeWindow = qobject_cast<CDisplayWindow*>(client->widget());
+    CDisplayWindow* const activeWindow = getDisplayWindow(client);
     if (activeWindow != 0 && activeWindow != m_activeWindow) {
         m_activeWindow = activeWindow;
         activeWindow->windowActivated();
     }
+}
+
+void CMDIArea::findNextTextInActiveWindow(const QString& text, bool caseSensitive) {
+    QWebView* activeWebView = getActiveWebView();
+    if (activeWebView == 0)
+        return;
+    QWebPage::FindFlags options = QWebPage::FindWrapsAroundDocument;
+    if (caseSensitive)
+        options |= QWebPage::FindCaseSensitively;
+    activeWebView->findText(text, options);
+}
+
+void CMDIArea::findPreviousTextInActiveWindow(const QString& text, bool caseSensitive) {
+    QWebView* activeWebView = getActiveWebView();
+    if (activeWebView == 0)
+        return;
+    QWebPage::FindFlags options = QWebPage::FindWrapsAroundDocument;
+    if (caseSensitive)
+        options |= QWebPage::FindCaseSensitively;
+    activeWebView->findText(text, options);
+}
+
+void CMDIArea::highlightTextInActiveWindow(const QString& text, bool caseSensitive) {
+    QWebView* activeWebView = getActiveWebView();
+    if (activeWebView == 0)
+        return;
+    QWebPage::FindFlags options = QWebPage::HighlightAllOccurrences;
+    if (caseSensitive)
+        options |= QWebPage::FindCaseSensitively;
+    activeWebView->findText("", options); // clear old highlight
+    activeWebView->findText(text, options);
 }
 
 void CMDIArea::resizeEvent(QResizeEvent* e) {

@@ -4104,7 +4104,7 @@ Language name ppk</extracomment>
         <translation>Морфологическое деление</translation>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/chtmlexportrendering.cpp" line="243"/>
+        <location filename="../../src/backend/rendering/chtmlexportrendering.cpp" line="247"/>
         <source>Export</source>
         <translation></translation>
     </message>

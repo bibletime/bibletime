@@ -77,7 +77,7 @@ QWidget * CDisplayWindow::getProfileWindow() const {
 }
 
 BibleTime* CDisplayWindow::btMainWindow() {
-    return dynamic_cast<BibleTime*>(m_mdi->parent());
+    return dynamic_cast<BibleTime*>(m_mdi->parent()->parent());
 }
 
 void CDisplayWindow::setToolBarsHidden() {

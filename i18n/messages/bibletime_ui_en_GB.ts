@@ -3992,7 +3992,7 @@ Language name ppk</extracomment>
         <translation>Morph segmentation</translation>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/chtmlexportrendering.cpp" line="243"/>
+        <location filename="../../src/backend/rendering/chtmlexportrendering.cpp" line="247"/>
         <source>Export</source>
         <translation>Export</translation>
     </message>
