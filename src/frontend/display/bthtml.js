@@ -21,20 +21,6 @@ function gotoAnchor(anchor)
 	document.location=document.location + "#" + anchor;
 }
 
-// Set body editable
-function setEditable()
-{
-	var theBody = document.getElementsByTagName('body')[0];
-	theBody.setAttribute('contenteditable','true');
-}
-
-// Set body not editable
-function setNotEditable()
-{
-	var theBody = document.getElementsByTagName('body')[0]; 
-	theBody.setAttribute('contenteditable','false');
-}
-
 // Mouse button clicked handler
 function mouseClickHandler (mEvent)
 {
@@ -139,8 +125,6 @@ document.getElementsByTagName("body")[0].addEventListener ('click',     function
 
 btHtmlJsObject.startTimer.connect(this, this.startTimer);
 btHtmlJsObject.gotoAnchor.connect(this, this.gotoAnchor);
-btHtmlJsObject.setDocumentEditable.connect(this, this.setEditable);
-btHtmlJsObject.setDocumentNotEditable.connect(this, this.setNotEditable);
 
 ;
 
