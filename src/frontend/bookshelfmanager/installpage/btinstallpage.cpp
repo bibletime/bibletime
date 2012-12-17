@@ -21,6 +21,7 @@
 #include <QToolButton>
 #include "backend/config/btconfig.h"
 #include "backend/btinstallbackend.h"
+#include "bibletimeapp.h"
 #include "frontend/bookshelfmanager/btmodulemanagerdialog.h"
 #include "frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.h"
 #include "frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.h"
@@ -47,7 +48,7 @@ const QString installPathKey   ("GUI/BookshelfManager/InstallPage/installPathInd
 // *********************************************************
 
 BtInstallPage::BtInstallPage(BtModuleManagerDialog *parent)
-        : BtConfigDialog::Page(util::directory::getIcon(CResMgr::bookshelfmgr::installpage::icon), parent)
+        : BtConfigDialog::Page(bApp->getIcon(CResMgr::bookshelfmgr::installpage::icon), parent)
         , m_groupingOrder(groupingOrderKey)
         , m_modulesSelected(0)
         , m_modulesSelectedSources(0)
@@ -71,8 +72,6 @@ QString BtInstallPage::selectedInstallPath() {
 }
 
 void BtInstallPage::initView() {
-    namespace DU = util::directory;
-
     // Warning label:
     m_warningLabel = new QLabel(this);
 
@@ -85,10 +84,10 @@ void BtInstallPage::initView() {
     initSourcesCombo();
 
     m_sourceAddButton = new QPushButton(this);
-    m_sourceAddButton ->setIcon(DU::getIcon(CResMgr::bookshelfmgr::installpage::add_icon));
+    m_sourceAddButton ->setIcon(bApp->getIcon(CResMgr::bookshelfmgr::installpage::add_icon));
 
     m_sourceDeleteButton = new QPushButton(this);
-    m_sourceDeleteButton->setIcon(DU::getIcon(CResMgr::bookshelfmgr::installpage::delete_icon));
+    m_sourceDeleteButton->setIcon(bApp->getIcon(CResMgr::bookshelfmgr::installpage::delete_icon));
 
     QHBoxLayout *sourceChooserLayout = new QHBoxLayout();
     sourceChooserLayout->setContentsMargins(0, 8, 0, 0);
@@ -119,10 +118,10 @@ void BtInstallPage::initView() {
     initPathCombo();
 
     m_configurePathButton = new QToolButton(this);
-    m_configurePathButton->setIcon(DU::getIcon(CResMgr::bookshelfmgr::installpage::path_icon));
+    m_configurePathButton->setIcon(bApp->getIcon(CResMgr::bookshelfmgr::installpage::path_icon));
 
     m_installButton = new QPushButton(this);
-    m_installButton->setIcon(DU::getIcon(CResMgr::bookshelfmgr::installpage::install_icon));
+    m_installButton->setIcon(bApp->getIcon(CResMgr::bookshelfmgr::installpage::install_icon));
     m_installButton->setEnabled(false);
 
     QHBoxLayout *pathLayout = new QHBoxLayout();

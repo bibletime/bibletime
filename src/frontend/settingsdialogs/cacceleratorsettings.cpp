@@ -18,6 +18,7 @@
 #include <QVBoxLayout>
 #include <QWidget>
 #include "bibletime.h"
+#include "bibletimeapp.h"
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/cbiblereadwindow.h"
 #include "frontend/displaywindow/cbookreadwindow.h"
@@ -26,11 +27,10 @@
 #include "frontend/displaywindow/creadwindow.h"
 #include "frontend/settingsdialogs/cconfigurationdialog.h"
 #include "util/cresmgr.h"
-#include "util/directory.h"
 
 
 CAcceleratorSettingsPage::CAcceleratorSettingsPage(CConfigurationDialog *parent)
-        : BtConfigDialog::Page(util::directory::getIcon(CResMgr::settings::keys::icon), parent)
+        : BtConfigDialog::Page(bApp->getIcon(CResMgr::settings::keys::icon), parent)
 {
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
 

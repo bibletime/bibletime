@@ -15,13 +15,13 @@
 #include <QToolBar>
 #include "bibletime.h"
 #include "backend/keys/cswordkey.h"
+#include "bibletimeapp.h"
 #include "frontend/display/cplainwritedisplay.h"
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"
 #include "frontend/keychooser/ckeychooser.h"
 #include "util/btsignal.h"
 #include "util/cresmgr.h"
-#include "util/directory.h"
 #include "util/dialogutil.h"
 
 
@@ -73,8 +73,6 @@ void CPlainWriteWindow::initView() {
 }
 
 void CPlainWriteWindow::initToolbars() {
-    namespace DU = util::directory;
-
     // Navigation toolbar
     setKeyChooser( CKeyChooser::createInstance(modules(),
         history(), key(), mainToolBar()) );
@@ -231,11 +229,8 @@ void CPlainWriteWindow::initActions() {
 }
 
 void CPlainWriteWindow::insertKeyboardActions( BtActionCollection* const a) {
-
-    namespace DU = util::directory;
-
     QAction* action = new QAction(
-        DU::getIcon(CResMgr::displaywindows::commentaryWindow::syncWindow::icon),
+        bApp->getIcon(CResMgr::displaywindows::commentaryWindow::syncWindow::icon),
         tr("Sync with active Bible"),
         a
     );
@@ -245,7 +240,7 @@ void CPlainWriteWindow::insertKeyboardActions( BtActionCollection* const a) {
     a->addAction(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName, action);
 
     action = new QAction(
-        DU::getIcon(CResMgr::displaywindows::writeWindow::saveText::icon),
+        bApp->getIcon(CResMgr::displaywindows::writeWindow::saveText::icon),
         tr("Save text"),
         a
     );
@@ -254,7 +249,7 @@ void CPlainWriteWindow::insertKeyboardActions( BtActionCollection* const a) {
     a->addAction(CResMgr::displaywindows::writeWindow::saveText::actionName, action);
 
     action = new QAction(
-        DU::getIcon(CResMgr::displaywindows::writeWindow::deleteEntry::icon),
+        bApp->getIcon(CResMgr::displaywindows::writeWindow::deleteEntry::icon),
         tr("Delete current entry"),
         a
     );
@@ -263,7 +258,7 @@ void CPlainWriteWindow::insertKeyboardActions( BtActionCollection* const a) {
     a->addAction(CResMgr::displaywindows::writeWindow::deleteEntry::actionName, action);
 
     action = new QAction(
-        DU::getIcon(CResMgr::displaywindows::writeWindow::restoreText::icon),
+        bApp->getIcon(CResMgr::displaywindows::writeWindow::restoreText::icon),
         tr("Restore original text"),
         a
     );

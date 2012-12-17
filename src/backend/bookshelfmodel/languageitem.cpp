@@ -12,6 +12,8 @@
 
 #include "backend/bookshelfmodel/languageitem.h"
 
+#include "bibletimeapp.h"
+
 
 namespace BookshelfModel {
 
@@ -25,7 +27,7 @@ QVariant LanguageItem::data(int role) const {
         case Qt::DisplayRole:
             return m_language->translatedName();
         case Qt::DecorationRole:
-            return util::directory::getIcon("flag.svg");
+            return bApp->getIcon("flag.svg");
         default:
             return Item::data(role);
     }

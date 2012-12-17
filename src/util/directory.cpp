@@ -350,44 +350,6 @@ const QDir &getLicenseDir() {
     return cachedLicenseDir;
 }
 
-const QIcon &getIcon(const QString &name) {
-    static QMap<QString, QIcon> iconCache;
-    static QIcon nullIcon;
-
-    QString plainName = name;
-    if (plainName.endsWith(".svg", Qt::CaseInsensitive)) {
-        plainName.chop(4);
-    }
-
-    QMap<QString, QIcon>::const_iterator i = iconCache.find(plainName);
-    if (i != iconCache.end()) {
-        return *i;
-    }
-
-    QString iconDir = getIconDir().canonicalPath();
-    QString iconFileName = iconDir + "/" + plainName + ".svg";
-    if (QFile(iconFileName).exists()) {
-        return *iconCache.insert(plainName, QIcon(iconFileName));
-    }
-    else {
-        iconFileName = iconDir + "/" + plainName + ".png";
-        if (QFile(iconFileName).exists()) {
-            return *iconCache.insert(plainName, QIcon(iconFileName));
-        }
-        else {
-            if (plainName != "default") {
-                qWarning() << "Cannot find icon file" << iconFileName
-                           << ", using default icon.";
-                return getIcon("default");
-            } else {
-                qWarning() << "Cannot find default icon" << iconFileName
-                           << ", using null icon.";
-                return nullIcon;
-            }
-        }
-    }
-}
-
 const QDir &getPicsDir() {
     return cachedPicsDir;
 }

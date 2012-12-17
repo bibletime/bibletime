@@ -93,9 +93,6 @@ const QDir &getJavascriptDir();
 /** Return the path to the license. */
 const QDir &getLicenseDir();
 
-/** Returns an icon with the given name */
-const QIcon &getIcon(const QString &name);
-
 /** Return the path to the pictures. */
 const QDir &getPicsDir();
 

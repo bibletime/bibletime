@@ -16,12 +16,12 @@
 #include <QToolButton>
 #include "backend/btinstallbackend.h"
 #include "backend/managers/cswordbackend.h"
+#include "bibletimeapp.h"
 #include "frontend/bookshelfmanager/installpage/btinstallpage.h"
 #include "frontend/bookshelfmanager/installpage/btinstallpagemodel.h"
 #include "frontend/bookshelfmanager/installpage/btrefreshprogressdialog.h"
 #include "frontend/btbookshelfview.h"
 #include "util/cresmgr.h"
-#include "util/directory.h"
 
 
 namespace {
@@ -55,7 +55,6 @@ BtInstallPageWorksWidget::BtInstallPageWorksWidget(
             , m_backend(0)
             , m_myModel(0)
 {
-    namespace DU = util::directory;
 
     setTreeModel(new BtInstallPageModel(g, this));
 
@@ -66,7 +65,7 @@ BtInstallPageWorksWidget::BtInstallPageWorksWidget(
     m_sourceRefreshButton = new QToolButton(this);
     m_sourceRefreshButton->setAutoRaise(true);
     m_sourceRefreshButton ->setToolTip(tr("Refresh the list of works from this source"));
-    m_sourceRefreshButton ->setIcon(DU::getIcon(CResMgr::bookshelfmgr::installpage::refresh_icon));
+    m_sourceRefreshButton ->setIcon(bApp->getIcon(CResMgr::bookshelfmgr::installpage::refresh_icon));
     setRightCornerWidget(m_sourceRefreshButton);
 
     connect(m_sourceRefreshButton, SIGNAL(clicked()),

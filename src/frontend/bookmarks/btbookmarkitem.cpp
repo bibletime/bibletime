@@ -14,11 +14,11 @@
 #include "backend/managers/cswordbackend.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/keys/cswordversekey.h"
+#include "bibletimeapp.h"
 #include "btglobal.h"
 #include "frontend/bookmarks/btbookmarkfolder.h"
 #include "frontend/bookmarks/bteditbookmarkdialog.h"
 #include "util/cresmgr.h"
-#include "util/directory.h"
 
 
 BtBookmarkItem::BtBookmarkItem(const CSwordModuleInfo *module,
@@ -135,9 +135,7 @@ void BtBookmarkItem::rename() {
 }
 
 void BtBookmarkItem::update() {
-    namespace DU = util::directory;
-
-    setIcon(0, DU::getIcon(CResMgr::mainIndex::bookmark::icon));
+    setIcon(0, bApp->getIcon(CResMgr::mainIndex::bookmark::icon));
 
     if (m_title.isEmpty()) {
       m_title = QString::fromLatin1("%1 (%2)").arg(key()).arg(module() ? module()->name() : QObject::tr("unknown"));

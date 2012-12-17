@@ -15,17 +15,16 @@
 #include <QToolBar>
 #include "backend/keys/cswordversekey.h"
 #include "bibletime.h"
+#include "bibletimeapp.h"
 #include "frontend/display/cdisplay.h"
 #include "frontend/display/creaddisplay.h"
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"
 #include "frontend/keychooser/ckeychooser.h"
-#include "util/directory.h"
 #include "util/cresmgr.h"
 
 
 void CCommentaryReadWindow::insertKeyboardActions(BtActionCollection* const a) {
-    namespace DU = util::directory;
     QAction* qaction;
 
     qaction = new QAction(tr("Next book"), a);
@@ -52,7 +51,7 @@ void CCommentaryReadWindow::insertKeyboardActions(BtActionCollection* const a) {
     qaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousVerse::accel);
     a->addAction("previousVerse", qaction);
 
-    qaction = new QAction(QIcon(DU::getIcon(CResMgr::displaywindows::commentaryWindow::syncWindow::icon)),
+    qaction = new QAction(QIcon(bApp->getIcon(CResMgr::displaywindows::commentaryWindow::syncWindow::icon)),
         tr("Synchronize"), a);
     qaction->setCheckable(true);
     qaction->setShortcut(CResMgr::displaywindows::commentaryWindow::syncWindow::accel);

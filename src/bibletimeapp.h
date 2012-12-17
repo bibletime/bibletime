@@ -11,6 +11,8 @@
 #define BIBLETIMEAPP_H
 
 #include <QApplication>
+#include <QIcon>
+#include <QMap>
 
 
 /**
@@ -21,7 +23,8 @@ class BibleTimeApp : public QApplication {
 
     Q_OBJECT
 
-    public:
+    public: /* Methods: */
+
         BibleTimeApp(int &argc, char **argv);
         ~BibleTimeApp();
 
@@ -29,8 +32,21 @@ class BibleTimeApp : public QApplication {
         bool initBtConfig();
         bool initDisplayTemplateManager();
 
-    private:
+        /**
+           \param[in] name the name of the icon to return.
+           \returns a reference to the icon with the given name or to a NULL
+                    icon if no such icon is found.
+         */
+        const QIcon & getIcon(const QString & name) const;
+
+    private: /* Fields: */
+
+        mutable QMap<QString, QIcon> m_iconCache;
+        const QIcon m_nullIcon;
         bool m_init;
+
 };
+
+#define bApp (static_cast<BibleTimeApp *>(QCoreApplication::instance()))
 
 #endif

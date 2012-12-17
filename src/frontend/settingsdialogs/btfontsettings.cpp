@@ -16,12 +16,12 @@
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QWidget>
+#include "backend/config/btconfig.h"
+#include "bibletimeapp.h"
 #include "frontend/settingsdialogs/btfontchooserwidget.h"
 #include "frontend/settingsdialogs/cconfigurationdialog.h"
 #include "util/cresmgr.h"
 #include "util/tool.h"
-#include "util/directory.h"
-#include <backend/config/btconfig.h>
 
 // Sword includes:
 #include <localemgr.h>
@@ -29,10 +29,8 @@
 
 
 BtFontSettingsPage::BtFontSettingsPage(CConfigurationDialog *parent)
-        : BtConfigDialog::Page(util::directory::getIcon(CResMgr::settings::fonts::icon), parent)
+        : BtConfigDialog::Page(bApp->getIcon(CResMgr::settings::fonts::icon), parent)
 {
-    namespace DU = util::directory;
-
     m_languageLabel = new QLabel(this);
     m_languageComboBox = new QComboBox(this);
     m_languageLabel->setBuddy(m_languageComboBox);
@@ -65,7 +63,7 @@ BtFontSettingsPage::BtFontSettingsPage(CConfigurationDialog *parent)
     for (FontMap::ConstIterator it = m_fontMap.constBegin(); it != m_fontMap.constEnd(); ++it) {
         const QString &k = it.key();
         if (m_fontMap[k].first) { // show font icon
-            m_languageComboBox->addItem(DU::getIcon("fonts.svg"), k);
+            m_languageComboBox->addItem(bApp->getIcon("fonts.svg"), k);
         } else { // don't show icon for font
             m_languageComboBox->addItem(k);
         }
@@ -141,12 +139,10 @@ void BtFontSettingsPage::newDisplayWindowFontAreaSelected(const QString &usage) 
 }
 
 void BtFontSettingsPage::useOwnFontClicked(bool isOn) {
-    namespace DU = util::directory;
-
     m_fontChooser->setEnabled(isOn);
     m_fontMap[m_languageComboBox->currentText()].first = isOn;
     m_languageComboBox->setItemIcon(m_languageComboBox->currentIndex(),
-                                    isOn ? DU::getIcon("fonts.svg") : QIcon());
+                                    isOn ? bApp->getIcon("fonts.svg") : QIcon());
 }
 
 void BtFontSettingsPage::retranslateUi() {

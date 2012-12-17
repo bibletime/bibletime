@@ -26,6 +26,7 @@
 #include "backend/managers/cswordbackend.h"
 #include "backend/rendering/centrydisplay.h"
 #include "backend/cswordmodulesearch.h"
+#include "bibletimeapp.h"
 #include "btglobal.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
@@ -890,7 +891,7 @@ QString CSwordModuleInfo::aboutText() const {
 QIcon CSwordModuleInfo::moduleIcon(const CSwordModuleInfo *module) {
     const QString &filename = moduleIconFilename(module);
     if (filename.isEmpty()) return QIcon();
-    return util::directory::getIcon(filename);
+    return bApp->getIcon(filename);
 }
 
 const QString &CSwordModuleInfo::moduleIconFilename(
@@ -940,7 +941,7 @@ QIcon CSwordModuleInfo::categoryIcon(const CSwordModuleInfo::Category &category)
 {
     QString filename = categoryIconFilename(category);
     if (filename.isEmpty()) return QIcon();
-    return util::directory::getIcon(filename);
+    return bApp->getIcon(filename);
 }
 
 const QString &CSwordModuleInfo::categoryIconFilename(

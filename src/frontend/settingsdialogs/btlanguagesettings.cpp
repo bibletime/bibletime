@@ -15,11 +15,10 @@
 #include <QVBoxLayout>
 #include <QWidget>
 #include "backend/config/btconfig.h"
+#include "bibletimeapp.h"
 #include "frontend/settingsdialogs/cconfigurationdialog.h"
 #include "util/cresmgr.h"
 #include "util/tool.h"
-#include "util/directory.h"
-#include "backend/config/btconfig.h"
 
 // Sword includes:
 #include <localemgr.h>
@@ -30,7 +29,7 @@ typedef std::list<sword::SWBuf>::const_iterator SBLCI;
 
 
 BtLanguageSettingsPage::BtLanguageSettingsPage(CConfigurationDialog *parent)
-        : BtConfigDialog::Page(util::directory::getIcon(CResMgr::settings::languages::icon), parent)
+        : BtConfigDialog::Page(bApp->getIcon(CResMgr::settings::languages::icon), parent)
 {
     m_swordLocaleCombo = new QComboBox(this);
     m_languageNamesLabel = new QLabel(this);

@@ -19,18 +19,16 @@
 #include "backend/config/btconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
+#include "bibletimeapp.h"
 #include "frontend/bookshelfmanager/btmodulemanagerdialog.h"
 #include "frontend/btmoduleindexdialog.h"
-#include "util/directory.h"
 #include "util/cresmgr.h"
 #include "util/tool.h"
 
 
 BtIndexPage::BtIndexPage(BtModuleManagerDialog *parent)
-        : BtConfigDialog::Page(util::directory::getIcon(CResMgr::bookshelfmgr::indexpage::icon), parent)
+        : BtConfigDialog::Page(bApp->getIcon(CResMgr::bookshelfmgr::indexpage::icon), parent)
 {
-    namespace DU = util::directory;
-
     QVBoxLayout *vboxLayout = new QVBoxLayout(this);
     QHBoxLayout *hboxLayout;
 
@@ -63,8 +61,8 @@ BtIndexPage::BtIndexPage(BtModuleManagerDialog *parent)
     m_autoDeleteOrphanedIndicesBox->setChecked( btConfig().value<bool>("settings/behaviour/autoDeleteOrphanedIndices", true) );
 
     // icons for our buttons
-    m_createButton->setIcon(DU::getIcon(CResMgr::bookshelfmgr::indexpage::create_icon));
-    m_deleteButton->setIcon(DU::getIcon(CResMgr::bookshelfmgr::indexpage::delete_icon));
+    m_createButton->setIcon(bApp->getIcon(CResMgr::bookshelfmgr::indexpage::create_icon));
+    m_deleteButton->setIcon(bApp->getIcon(CResMgr::bookshelfmgr::indexpage::delete_icon));
 
     // connect our signals/slots
     connect(m_createButton, SIGNAL(clicked()),

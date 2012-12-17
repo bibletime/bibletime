@@ -16,9 +16,9 @@
 #include <QLineEdit>
 #include <QTextEdit>
 #include <QWidget>
+#include "bibletimeapp.h"
 #include "util/cresmgr.h"
 #include "util/dialogutil.h"
-#include "util/directory.h"
 
 
 BtEditBookmarkDialog::BtEditBookmarkDialog(const QString &key,
@@ -28,12 +28,10 @@ BtEditBookmarkDialog::BtEditBookmarkDialog(const QString &key,
                                            Qt::WindowFlags wflags)
     : QDialog(parent, wflags)
 {
-    namespace DU = util::directory;
-
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
 
     resize(400, 300);
-    setWindowIcon(DU::getIcon(CResMgr::mainIndex::bookmark::icon));
+    setWindowIcon(bApp->getIcon(CResMgr::mainIndex::bookmark::icon));
 
     m_layout = new QFormLayout;
 
