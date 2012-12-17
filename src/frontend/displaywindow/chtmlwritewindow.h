@@ -40,12 +40,6 @@ class CHTMLWriteWindow : public CPlainWriteWindow  {
         virtual void initView();
         virtual void initConnections();
         virtual void initToolbars();
-        virtual void initActions();
-
-        /**
-        * Insert the keyboard accelerators of this window into the given KAccel object.
-        */
-        static void insertKeyboardActions( BtActionCollection* const a );
 
         virtual WriteWindowType writeWindowType() const {
             return HTMLWindow;

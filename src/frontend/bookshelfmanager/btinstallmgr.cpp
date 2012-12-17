@@ -67,6 +67,7 @@ void BtInstallMgr::statusUpdate(double dltotal, double dlnow) {
 
 
 void BtInstallMgr::preStatus(long totalBytes, long completedBytes, const char* message) {
+    Q_UNUSED(message);
     if (m_firstCallOfPreStatus) {
         m_firstCallOfPreStatus = false;
         emit downloadStarted();

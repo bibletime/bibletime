@@ -44,7 +44,7 @@ class BtBookshelfFilterModel: public QSortFilterProxyModel {
             return m_nameFilter;
         }
 
-        inline const Qt::CaseSensitivity nameFilterCase() const {
+        inline Qt::CaseSensitivity nameFilterCase() const {
             return m_nameFilterCase;
         }
 

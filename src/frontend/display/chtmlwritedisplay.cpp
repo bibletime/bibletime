@@ -220,6 +220,7 @@ void CHTMLWriteDisplay::slotFontFamilyChosen(const QFont& font) {
 }
 
 void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, BtActionCollection * actions) {
+    Q_UNUSED(actions);
 
     QFont f = currentFont();
 

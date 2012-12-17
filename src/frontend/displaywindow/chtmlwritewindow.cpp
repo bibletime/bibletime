@@ -44,14 +44,6 @@ void CHTMLWriteWindow::initView() {
     addToolBar(formatToolBar());
 }
 
-void CHTMLWriteWindow::initActions() {
-    insertKeyboardActions(actionCollection());
-    CPlainWriteWindow::initActions();
-}
-
-void CHTMLWriteWindow::insertKeyboardActions( BtActionCollection* const a) {
-}
-
 void CHTMLWriteWindow::initConnections() {
     CPlainWriteWindow::initConnections();
 
