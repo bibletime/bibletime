@@ -204,7 +204,11 @@ QTableWidget* BtShortcutsEditor::createShortcutsTable() {
     QStringList headerList;
     headerList << tr("Action\nname") << tr("First\nshortcut") << tr("Second\nshortcut");
     table->setHorizontalHeaderLabels(headerList);
+#if QT_VERSION < 0x050000
     table->horizontalHeader()->setResizeMode(QHeaderView::Interactive);
+#else
+    table->horizontalHeader()->setSectionResizeMode(QHeaderView::Interactive);
+#endif
     table->horizontalHeader()->resizeSection(0, 180);
     table->horizontalHeader()->resizeSection(1, 100);
     table->horizontalHeader()->setStretchLastSection(true);
@@ -223,7 +227,7 @@ void BtShortcutsEditor::changeRow(int row, int column) {
     m_currentRow = row;
     QKeySequence defaultKeys = item->getDefaultKeys();
 
-    m_defaultLabelValue->setText(defaultKeys);
+    m_defaultLabelValue->setText(defaultKeys.toString());
 
     QTableWidgetItem* item1 = m_table->item(row, 1);
     QString shortcut = item1->text();
@@ -314,8 +318,8 @@ void BtShortcutsEditor::defaultButtonClicked(bool checked) {
     QKeySequence defaultKeys = item->getDefaultKeys();
     item->deleteHotkeys();
     item->setFirstHotkey(defaultKeys);
-    m_customPushButton->setText(defaultKeys);
-    m_table->item(m_currentRow, 1)->setText(defaultKeys);
+    m_customPushButton->setText(defaultKeys.toString());
+    m_table->item(m_currentRow, 1)->setText(defaultKeys.toString());
     m_table->item(m_currentRow, 2)->setText("");
 }
 
@@ -370,7 +374,7 @@ void BtShortcutsEditor::clearConflictWithKeys(const QString& keys) {
         }
         if (m_table->item(row, 2)->text() == keys) {
             m_table->item(row, 2)->setText("");
-            item->setSecondHotkey(QKeySequence(""));
+            item->setSecondHotkey(QKeySequence("").toString());
         }
     }
 }

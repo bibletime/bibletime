@@ -55,8 +55,13 @@ void BtFindWidget::createToolButton(const QString& iconName, const QString& text
 
 void BtFindWidget::createTextEditor() {
     m_textEditor = new QLineEdit(this);
+#if QT_VERSION < 0x050000
     m_textEditor->setToolTip(QApplication::translate("findWidget",
         "The text you want to search for", 0, QApplication::UnicodeUTF8));
+#else
+    m_textEditor->setToolTip(QApplication::translate("findWidget",
+        "The text you want to search for", 0));
+#endif
     m_layout->addWidget(m_textEditor);
     bool ok = connect(m_textEditor, SIGNAL(textChanged(const QString&)),
         this, SLOT(textChanged(const QString&)));

@@ -37,8 +37,13 @@ BtInstallProgressDialog::BtInstallProgressDialog(
     m_statusWidget->setRootIsDecorated(false);
     m_statusWidget->setHeaderLabels(QStringList(tr("Work")) << tr("Progress") << QString::null);
     m_statusWidget->header()->setStretchLastSection(false);
+#if QT_VERSION < 0x050000
     m_statusWidget->header()->setResizeMode(1, QHeaderView::Stretch);
     m_statusWidget->header()->setMovable(false);
+#else
+    m_statusWidget->header()->setSectionResizeMode(1, QHeaderView::Stretch);
+    m_statusWidget->header()->setSectionsMovable(false);
+#endif
     //m_statusWidget->setColumnWidth(1, util::tool::mWidth(m_statusWidget, 2));
 
     Q_FOREACH(const CSwordModuleInfo *module, modules) {

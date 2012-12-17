@@ -59,27 +59,27 @@ QAction *BtMenuView::newAction(QMenu *parentMenu, const QModelIndex &itemIndex) 
     QAction *childAction = new QAction(parentMenu);
 
     // Set text:
-    if (qVariantCanConvert<QString>(displayData)) {
+    if (displayData.canConvert(QVariant::String)) {
         childAction->setText(displayData.toString());
     }
 
     // Set icon:
-    if (qVariantCanConvert<QIcon>(iconData)) {
+    if (iconData.canConvert(QVariant::Icon)) {
         childAction->setIcon(iconData.value<QIcon>());
     }
 
     // Set tooltip:
-    if (qVariantCanConvert<QString>(toolTipData)) {
+    if (toolTipData.canConvert(QVariant::String)) {
         childAction->setToolTip(toolTipData.toString());
     }
 
     // Set status tip:
-    if (qVariantCanConvert<QString>(statusTipData)) {
+    if (statusTipData.canConvert(QVariant::String)) {
         childAction->setStatusTip(statusTipData.toString());
     }
 
     // Set whatsthis:
-    if (qVariantCanConvert<QString>(whatsThisData)) {
+    if (whatsThisData.canConvert(QVariant::String)) {
         childAction->setWhatsThis(whatsThisData.toString());
     }
 
@@ -109,27 +109,27 @@ QMenu *BtMenuView::newMenu(QMenu *parentMenu, const QModelIndex &itemIndex) {
     QMenu *childMenu = new QMenu(parentMenu);
 
     // Set text:
-    if (qVariantCanConvert<QString>(displayData)) {
+    if (displayData.canConvert(QVariant::String)) {
         childMenu->setTitle(displayData.toString());
     }
 
     // Set icon:
-    if (qVariantCanConvert<QIcon>(iconData)) {
+    if (iconData.canConvert(QVariant::Icon)) {
         childMenu->setIcon(iconData.value<QIcon>());
     }
 
     // Set tooltip:
-    if (qVariantCanConvert<QString>(toolTipData)) {
+    if (toolTipData.canConvert(QVariant::String)) {
         childMenu->setToolTip(toolTipData.toString());
     }
 
     // Set status tip:
-    if (qVariantCanConvert<QString>(statusTipData)) {
+    if (statusTipData.canConvert(QVariant::String)) {
         childMenu->setStatusTip(statusTipData.toString());
     }
 
     // Set whatsthis:
-    if (qVariantCanConvert<QString>(whatsThisData)) {
+    if (whatsThisData.canConvert(QVariant::String)) {
         childMenu->setWhatsThis(whatsThisData.toString());
     }
 

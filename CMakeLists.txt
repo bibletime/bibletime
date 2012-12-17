@@ -64,6 +64,7 @@ IF (Qt5Core_FOUND)
     FIND_PACKAGE(Qt5LinguistTools REQUIRED)
     FIND_PACKAGE(Qt5PrintSupport REQUIRED)
     FIND_PACKAGE(Qt5WebKit REQUIRED)
+    FIND_PACKAGE(Qt5WebKitWidgets REQUIRED)
     FIND_PACKAGE(Qt5Widgets REQUIRED)
     FIND_PACKAGE(Qt5Xml REQUIRED)
     MESSAGE( "-- Found Qt5")
@@ -120,6 +121,7 @@ IF (Qt5Core_FOUND)
         ${CLUCENE_LIBRARY_DIR}            #CLucene/clucene-config.h
         ${SWORD_INCLUDE_DIR}
         ${Qt5PrintSupport_INCLUDE_DIRS}
+        ${Qt5WebKitWidgets_INCLUDE_DIRS}
         ${Qt5Widgets_INCLUDE_DIRS}
         ${Qt5Xml_INCLUDE_DIRS}
     )
@@ -193,6 +195,7 @@ IF (Qt5Core_FOUND)
         ${Qt5Widgets_LIBRARIES}
         ${Qt5Xml_LIBRARIES}
         ${Qt5Core_LIBRARIES}
+        ${Qt5WebKitWidgets_LIBRARIES}
         ${Qt5WebKit_LIBRARIES}
         ${Qt5PrintSupport_LIBRARIES}
         ${CLUCENE_LIBRARY}
