@@ -4,7 +4,20 @@
 <dict>
 	<key>CFBundleIconFile</key>
 	<string>BibleTime.icns</string>
+
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
+
+    <key>CFBundleName</key>
+    <string>BibleTime</string>
+
+    <key>CFBundleDisplayName</key>
+    <string>BibleTime</string>
+
+    <key>CFBundleIdentifier</key>
+    <string>info.bibletime.BibleTime</string>
+
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
 </dict>
 </plist>
