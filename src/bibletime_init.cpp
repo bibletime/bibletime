@@ -820,8 +820,8 @@ void BibleTime::initSwordConfigFile() {
     QTextStream out(&file);
     out << "\n";
     out << "[Install]\n";
-    out << "DataPath="   << DU::convertDirSeparators( DU::getSharedSwordDir().absolutePath()) << "\n";
-    out << "LocalePath=" << DU::convertDirSeparators(DU::getApplicationSwordDir().absolutePath()) << "\n";
+    out << "DataPath="   << util::directory::convertDirSeparators( util::directory::getSharedSwordDir().absolutePath()) << "\n";
+    out << "LocalePath=" << util::directory::convertDirSeparators(util::directory::getApplicationSwordDir().absolutePath()) << "\n";
     out << "\n";
     file.close();
 #endif
@@ -838,7 +838,7 @@ void BibleTime::initSwordConfigFile() {
     QTextStream out(&file);
     out << "\n";
     out << "[Install]\n";
-    out << "DataPath="   << DU::convertDirSeparators( DU::getUserHomeSwordDir().absolutePath()) << "\n";
+    out << "DataPath="   << util::directory::convertDirSeparators( util::directory::getUserHomeSwordDir().absolutePath()) << "\n";
     out << "\n";
     file.close();
 #endif
