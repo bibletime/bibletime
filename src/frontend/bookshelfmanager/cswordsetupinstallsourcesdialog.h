@@ -41,6 +41,7 @@ class CSwordSetupInstallSourcesDialog : public QDialog  {
         void slotRefreshProgress(const int, const int current);
 
     private:
+    	bool isRemote(const QString&);
         QLabel    *m_serverLabel;
         QLineEdit *m_captionEdit, *m_serverEdit, *m_pathEdit;
         QComboBox *m_protocolCombo;
