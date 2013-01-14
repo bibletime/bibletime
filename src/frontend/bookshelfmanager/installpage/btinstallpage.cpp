@@ -398,6 +398,7 @@ void BtInstallPage::slotSourceDelete() {
         window()->setEnabled(false);
         Q_ASSERT(qobject_cast<IPWW*>(m_worksLayout->currentWidget()));
         IPWW *w = static_cast<IPWW*>(m_worksLayout->currentWidget());
+        m_sourceMap.remove(QString(w->installSource().caption));
         w->deleteSource();
         initSourcesCombo();
         slotSourceIndexChanged(m_sourceComboBox->currentIndex());

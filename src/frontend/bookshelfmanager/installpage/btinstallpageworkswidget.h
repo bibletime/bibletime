@@ -41,12 +41,8 @@ class BtInstallPageWorksWidget: public BtBookshelfWidget {
 
         void updateTree();
 
-        /** Reimplemented from QWidget. */
-        virtual void paintEvent(QPaintEvent *e);
-
     private slots:
 
-        void slotDelayedInit();
         void slotSourceRefresh();
 
     private: /* Fields: */
