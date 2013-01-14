@@ -394,12 +394,16 @@ void BtInstallPage::slotSourceDelete() {
                                 QMessageBox::Yes | QMessageBox::No);
 
     if (ret == QMessageBox::Yes) {
+        qApp->setOverrideCursor(Qt::WaitCursor);
+        window()->setEnabled(false);
         Q_ASSERT(qobject_cast<IPWW*>(m_worksLayout->currentWidget()));
         IPWW *w = static_cast<IPWW*>(m_worksLayout->currentWidget());
         w->deleteSource();
         initSourcesCombo();
         slotSourceIndexChanged(m_sourceComboBox->currentIndex());
         delete w;
+        window()->setEnabled(true);
+        qApp->restoreOverrideCursor();
     }
 }
 

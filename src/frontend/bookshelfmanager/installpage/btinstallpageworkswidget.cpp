@@ -82,7 +82,6 @@ BtInstallPageWorksWidget::~BtInstallPageWorksWidget() {
 void BtInstallPageWorksWidget::deleteSource() {
     qDebug() << "Deleting source" << m_source.caption;
 
-    setEnabled(false);
     m_myModel->clear();
     BtInstallBackend::deleteSource(QString(m_source.caption));
 }
