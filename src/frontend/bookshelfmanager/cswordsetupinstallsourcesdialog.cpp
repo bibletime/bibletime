@@ -28,7 +28,10 @@
 #include "util/dialogutil.h"
 
 const QString PROTO_FILE( QObject::tr("Local") ); //Local path
-const QString PROTO_FTP( QObject::tr("Remote") ); //Remote path
+const QString PROTO_FTP( QObject::tr("Remote FTP") ); //Remote path
+const QString PROTO_SFTP( QObject::tr("Remote SFTP") );
+const QString PROTO_HTTP( QObject::tr("Remote HTTP") );
+const QString PROTO_HTTPS( QObject::tr("Remote HTTPS") );
 
 CSwordSetupInstallSourcesDialog::CSwordSetupInstallSourcesDialog(/*QWidget *parent*/)
         : QDialog(),
@@ -68,6 +71,9 @@ CSwordSetupInstallSourcesDialog::CSwordSetupInstallSourcesDialog(/*QWidget *pare
     m_protocolCombo = new QComboBox( this );
     layout->addWidget(m_protocolCombo, 1, 0);
     m_protocolCombo->addItem( PROTO_FTP  );
+    m_protocolCombo->addItem( PROTO_SFTP );
+    m_protocolCombo->addItem( PROTO_HTTP );
+    m_protocolCombo->addItem( PROTO_HTTPS);
     m_protocolCombo->addItem( PROTO_FILE );
 
     m_serverEdit = new QLineEdit( this );
@@ -108,7 +114,7 @@ void CSwordSetupInstallSourcesDialog::slotOk() {
         return;
     }
 
-    if ( m_protocolCombo->currentText() == PROTO_FTP &&
+    if ( this->isRemote(m_protocolCombo->currentText()) &&
             m_serverEdit->text().trimmed().isEmpty() ) { //no server name
         util::showInformation( this, tr( "Error" ), tr("Please provide a server name."));
         return;
@@ -130,7 +136,7 @@ void CSwordSetupInstallSourcesDialog::slotOk() {
 }
 
 void CSwordSetupInstallSourcesDialog::slotProtocolChanged() {
-    if (m_protocolCombo->currentText() == PROTO_FTP) { //REMOTE
+    if (this->isRemote(m_protocolCombo->currentText())) { //REMOTE
         m_serverLabel->setEnabled(true);
         m_serverEdit->setEnabled(true);
     }
@@ -206,13 +212,24 @@ void CSwordSetupInstallSourcesDialog::slotRefreshCanceled() {
 
 sword::InstallSource CSwordSetupInstallSourcesDialog::getSource() {
     sword::InstallSource newSource(""); //empty, invalid Source
-    if (m_protocolCombo->currentText() == PROTO_FTP) {
-        newSource.type = "FTP";
-        newSource.source = m_serverEdit->text().toUtf8();
-        //a message to the user would be nice, but we're in message freeze right now (1.5.1)
-        if (m_serverEdit->text().right(1) == "/") { //remove a trailing slash
-            newSource.source  = m_serverEdit->text().mid(0, m_serverEdit->text().length() - 1).toUtf8();
-        }
+    if (this->isRemote(m_protocolCombo->currentText())) {
+	    if (m_protocolCombo->currentText() == PROTO_FTP) {
+        	newSource.type = "FTP";
+            }
+            else if (m_protocolCombo->currentText() == PROTO_SFTP) {
+            	newSource.type = "SFTP";
+            }
+            else if (m_protocolCombo->currentText() == PROTO_HTTP) {
+            	newSource.type = "HTTP";
+            }
+            else if (m_protocolCombo->currentText() == PROTO_HTTPS) {
+            	newSource.type = "HTTPS";
+            }
+            newSource.source = m_serverEdit->text().toUtf8();
+	    //a message to the user would be nice, but we're in message freeze right now (1.5.1)
+	    if (m_serverEdit->text().right(1) == "/") { //remove a trailing slash
+	    	newSource.source  = m_serverEdit->text().mid(0, m_serverEdit->text().length() - 1).toUtf8();
+	    }
     }
     else {
         newSource.type = "DIR";
@@ -225,4 +242,7 @@ sword::InstallSource CSwordSetupInstallSourcesDialog::getSource() {
     return newSource;
 }
 
-
+bool CSwordSetupInstallSourcesDialog::isRemote(const QString& sourceType) {
+	return sourceType == PROTO_FTP || sourceType == PROTO_SFTP ||
+		sourceType == PROTO_HTTP || sourceType == PROTO_HTTPS;
+}

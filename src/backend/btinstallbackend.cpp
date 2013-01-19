@@ -31,13 +31,22 @@ namespace BtInstallBackend {
 /** Adds the source described by Source to the backend. */
 bool addSource(sword::InstallSource& source) {
     SWConfig config(configFilename().toLatin1());
-    if (!strcmp(source.type, "FTP")) {
-        //make sure the path doesn't have a trailing slash, sword doesn't like it
-        if (source.directory[ source.directory.length()-1 ] == '/') {
-            source.directory--; //make one char shorter
+    if (isRemote(source)) {
+    	if (source.directory[ source.directory.length()-1 ] == '/') {
+    	    source.directory--;
+    	}
+	if (!strcmp(source.type, "FTP")) {
+        	config["Sources"].insert( std::make_pair(SWBuf("FTPSource"), source.getConfEnt()) );
         }
-
-        config["Sources"].insert( std::make_pair(SWBuf("FTPSource"), source.getConfEnt()) );
+        else if (!strcmp(source.type, "SFTP")) {
+        	config["Sources"].insert( std::make_pair(SWBuf("SFTPSource"), source.getConfEnt()) );
+        }
+        else if (!strcmp(source.type, "HTTP")) {
+        	config["Sources"].insert( std::make_pair(SWBuf("HTTPSource"), source.getConfEnt()) );
+        }
+        else if (!strcmp(source.type, "HTTPS")) {
+        	config["Sources"].insert( std::make_pair(SWBuf("HTTPSSource"), source.getConfEnt()) );
+        }
     }
     else if (!strcmp(source.type, "DIR")) {
         config["Sources"].insert( std::make_pair(SWBuf("DIRSource"), source.getConfEnt()) );
@@ -87,15 +96,10 @@ bool deleteSource(const QString &name) {
     SWConfig config(configFilename().toLatin1());
 
     //this code can probably be shortened by using the stl remove_if functionality
-    std::pair< ConfigEntMap::iterator, ConfigEntMap::iterator > range =
-        isRemote(is)
-        ? config["Sources"].equal_range("FTPSource")
-        : config["Sources"].equal_range("DIRSource");
-
-    ConfigEntMap::iterator it = range.first;
     SWBuf sourceConfigEntry = is.getConfEnt();
     bool notFound = true;
-    while (it != range.second) {
+    ConfigEntMap::iterator it = config["Sources"].begin();
+    while (it != config["Sources"].end()) {
         //SWORD lib gave us a "nice" surprise: getConfEnt() adds uid, so old sources added by BT are not recognized here
         if (it->second == sourceConfigEntry) {
             config["Sources"].erase(it);
@@ -111,8 +115,8 @@ bool deleteSource(const QString &name) {
         QStringList l = sce.split('|');
         l.removeLast();
         sce = l.join("|").append("|");
-        it = range.first;
-        while (it != range.second) {
+        it = config["Sources"].begin();
+        while (it != config["Sources"].end()) {
             if (it->second == sce) {
                 config["Sources"].erase(it);
                 break;
@@ -132,7 +136,10 @@ QList<CSwordModuleInfo*> moduleList(QString /*name*/) {
 }
 
 bool isRemote(const sword::InstallSource& source) {
-    return !strcmp(source.type, "FTP");
+    return !strcmp(source.type, "FTP") ||
+    		!strcmp(source.type, "SFTP") ||
+    		!strcmp(source.type, "HTTP") ||
+    		!strcmp(source.type, "HTTPS");
 }
 
 QString configPath() {
