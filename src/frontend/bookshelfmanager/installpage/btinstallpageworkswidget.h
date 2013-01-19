@@ -1,5 +1,7 @@
 /*********
 *
+* In the name of the Father, and of the Son, and of the Holy Spirit.
+*
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
 * Copyright 1999-2011 by the BibleTime developers.
@@ -39,12 +41,8 @@ class BtInstallPageWorksWidget: public BtBookshelfWidget {
 
         void updateTree();
 
-        /** Reimplemented from QWidget. */
-        virtual void paintEvent(QPaintEvent *e);
-
     private slots:
 
-        void slotDelayedInit();
         void slotSourceRefresh();
 
     private: /* Fields: */

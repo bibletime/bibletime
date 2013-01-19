@@ -42,7 +42,7 @@ CSwordSetupInstallSourcesDialog::CSwordSetupInstallSourcesDialog(/*QWidget *pare
     mainLayout->setMargin( 10 );
     mainLayout->setSpacing( 5 );
 
-    QHBoxLayout *captionLayout = new QHBoxLayout( this );
+    QHBoxLayout *captionLayout = new QHBoxLayout;
     mainLayout->addLayout(captionLayout);
     QLabel *label = new QLabel( tr("Caption"), this );
     captionLayout->addWidget( label );
@@ -53,7 +53,7 @@ CSwordSetupInstallSourcesDialog::CSwordSetupInstallSourcesDialog(/*QWidget *pare
 
     mainLayout->addSpacing( 10 );
 
-    QGridLayout* layout = new QGridLayout( this );
+    QGridLayout* layout = new QGridLayout;
     layout->setSpacing(3);
     layout->setMargin(3);
     mainLayout->addLayout(layout);
