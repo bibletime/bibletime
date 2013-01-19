@@ -10,15 +10,15 @@
 #include "frontend/settingsdialogs/cswordsettings.h"
 
 #include <QVBoxLayout>
+#include "bibletimeapp.h"
 #include "frontend/settingsdialogs/btstandardworkstab.h"
 #include "frontend/settingsdialogs/bttextfilterstab.h"
 #include "frontend/settingsdialogs/cconfigurationdialog.h"
 #include "util/cresmgr.h"
-#include "util/directory.h"
 
 
 CSwordSettingsPage::CSwordSettingsPage(CConfigurationDialog * parent)
-        : BtConfigDialog::Page(util::directory::getIcon(CResMgr::settings::sword::icon), parent)
+        : BtConfigDialog::Page(bApp->getIcon(CResMgr::settings::sword::icon), parent)
 {
     static const QString nullString;
 

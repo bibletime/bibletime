@@ -14,8 +14,8 @@
 
 #include "backend/bookshelfmodel/btbookshelffiltermodel.h"
 #include "backend/managers/cswordbackend.h"
+#include "bibletimeapp.h"
 #include "frontend/btbookshelfgroupingmenu.h"
-#include "util/directory.h"
 
 
 BtOpenWorkActionMenu::BtOpenWorkActionMenu(const QString &groupingConfigKey,
@@ -81,7 +81,7 @@ BtOpenWorkAction::BtOpenWorkAction(const QString &groupingConfigKey,
     m_menu->setSourceModel(CSwordBackend::instance()->model());
 
     setMenu(m_menu);
-    setIcon(util::directory::getIcon("folder-open.svg"));
+    setIcon(bApp->getIcon("folder-open.svg"));
     retranslateUi();
     slotModelChanged();
 

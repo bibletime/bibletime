@@ -1,5 +1,7 @@
 /*********
 *
+* In the name of the Father, and of the Son, and of the Holy Spirit.
+*
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
 * Copyright 1999-2011 by the BibleTime developers.
@@ -43,7 +45,7 @@ class CModuleResultView : public QTreeWidget {
         */
         CSwordModuleInfo* activeModule();
 
-        virtual QSize sizeHint() {
+        virtual QSize sizeHint() const {
             return m_size;
         }
 

@@ -21,11 +21,11 @@
 #include <QStringList>
 #include <QToolButton>
 #include "backend/keys/cswordversekey.h"
+#include "bibletimeapp.h"
 #include "frontend/keychooser/cscrollerwidgetset.h"
 #include "frontend/keychooser/versekeychooser/btdropdownchooserbutton.h"
 #include "util/btsignal.h"
 #include "util/cresmgr.h"
-#include "util/directory.h"
 
 
 class BtLineEdit : public QLineEdit {
@@ -52,16 +52,13 @@ BtBibleKeyWidget::BtBibleKeyWidget(const CSwordBibleModuleInfo *mod,
 {
     Q_UNUSED(name);
 
-    namespace DU = util::directory;
-
-
     updatelock = false;
     m_module = mod;
 
     setFocusPolicy(Qt::WheelFocus);
 
     QToolButton* clearRef = new QToolButton(this);
-    clearRef->setIcon(DU::getIcon("edit_clear_locationbar"));
+    clearRef->setIcon(bApp->getIcon("edit_clear_locationbar"));
     clearRef->setAutoRaise(true);
     clearRef->setStyleSheet("QToolButton{margin:0px;}");
     connect(clearRef, SIGNAL(clicked()), SLOT(slotClearRef()) );

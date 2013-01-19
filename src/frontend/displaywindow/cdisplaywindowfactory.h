@@ -1,5 +1,7 @@
 /*********
 *
+* In the name of the Father, and of the Son, and of the Holy Spirit.
+*
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
 * Copyright 1999-2011 by the BibleTime developers.
@@ -22,7 +24,7 @@ class CDisplayWindowFactory {
     public:
         static CReadWindow* createReadInstance(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent);
         static CPlainWriteWindow* createWriteInstance(const QList<CSwordModuleInfo*> & modules, CMDIArea * parent, CPlainWriteWindow::WriteWindowType type = CPlainWriteWindow::HTMLWindow);
-        static const CSwordModuleInfo::ModuleType getModuleType(QObject* widget);
+        static CSwordModuleInfo::ModuleType getModuleType(QObject* widget);
 
     private:
         CDisplayWindowFactory();

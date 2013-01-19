@@ -460,13 +460,13 @@ QString BtSearchResultArea::highlightSearchedText(const QString& content, const 
             length = word.length() - 1;
             word.replace('*', "\\S*"); //match within a word
             findExp = QRegExp(word);
-            findExp.setMinimal(TRUE);
+            findExp.setMinimal(true);
         }
         else if (word.contains("?")) {
             length = word.length() - 1;
             word.replace('?', "\\S?"); //match within a word
             findExp = QRegExp(word);
-            findExp.setMinimal(TRUE);
+            findExp.setMinimal(true);
         }
         else {
             length = word.length();

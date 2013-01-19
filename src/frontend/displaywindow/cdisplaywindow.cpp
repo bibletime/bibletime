@@ -18,6 +18,7 @@
 #include "backend/config/btconfig.h"
 #include "backend/keys/cswordkey.h"
 #include "bibletime.h"
+#include "bibletimeapp.h"
 #include "frontend/cmdiarea.h"
 #include "frontend/display/cdisplay.h"
 #include "frontend/displaywindow/bttoolbarpopupaction.h"
@@ -27,7 +28,6 @@
 #include "frontend/keychooser/ckeychooser.h"
 #include "frontend/keychooser/bthistory.h"
 #include "frontend/searchdialog/csearchdialog.h"
-#include "util/directory.h"
 #include "util/cresmgr.h"
 
 
@@ -188,8 +188,6 @@ void CDisplayWindow::applyProfileSettings(const QString & windowGroup) {
 }
 
 void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
-    namespace DU = util::directory;
-
     QAction* actn = new QAction(QIcon(), tr("Select all"), a);
     actn->setShortcut(QKeySequence::SelectAll);
     a->addAction("selectAll", actn);
@@ -206,13 +204,13 @@ void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
     actn->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_L));
     a->addAction("openLocation", actn);
 
-    actn = new QAction(QIcon(DU::getIcon(CResMgr::displaywindows::general::search::icon)),
+    actn = new QAction(QIcon(bApp->getIcon(CResMgr::displaywindows::general::search::icon)),
                        tr("Search with works of this window"), a);
     actn->setShortcut(CResMgr::displaywindows::general::search::accel);
     a->addAction(CResMgr::displaywindows::general::search::actionName, actn);
 
     BtToolBarPopupAction* action = new BtToolBarPopupAction(
-        QIcon(DU::getIcon(CResMgr::displaywindows::general::backInHistory::icon)),
+        QIcon(bApp->getIcon(CResMgr::displaywindows::general::backInHistory::icon)),
         tr("Back in history"),
         a
     );
@@ -220,7 +218,7 @@ void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
     a->addAction(CResMgr::displaywindows::general::backInHistory::actionName, action);
 
     action = new BtToolBarPopupAction(
-        QIcon(DU::getIcon(CResMgr::displaywindows::general::forwardInHistory::icon)),
+        QIcon(bApp->getIcon(CResMgr::displaywindows::general::forwardInHistory::icon)),
         tr("Forward in history"),
         a
     );

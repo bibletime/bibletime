@@ -1,5 +1,7 @@
 /*********
 *
+* In the name of the Father, and of the Son, and of the Holy Spirit.
+*
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
 * Copyright 1999-2011 by the BibleTime developers.
@@ -106,7 +108,7 @@ public: /* Methods: */
     template<typename T>
     inline T value(const QString & key, const T & defaultValue = T()) {
         return m_settings.value(group() + key,
-                                QVariant::fromValue(defaultValue)).value<T>();
+                                QVariant::fromValue(defaultValue)).template value<T>();
     }
 
     /**
@@ -119,7 +121,7 @@ public: /* Methods: */
     template<typename T>
     inline T sessionValue(const QString & key, const T & defaultValue = T()) {
         return m_settings.value(m_cachedCurrentSessionGroup + group() + key,
-                                QVariant::fromValue(defaultValue)).value<T>();
+                                QVariant::fromValue(defaultValue)).template value<T>();
     }
 
     /**

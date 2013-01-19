@@ -17,9 +17,9 @@
 #include "backend/config/btconfig.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
 #include "backend/rendering/cdisplayrendering.h"
+#include "bibletimeapp.h"
 #include "frontend/settingsdialogs/cconfigurationdialog.h"
 #include "util/cresmgr.h"
-#include "util/directory.h"
 #include "util/tool.h"
 
 
@@ -46,7 +46,7 @@ QSize CWebViewerWidget::sizeHint () const {
 
 /** Initializes the startup section of the OD. */
 CDisplaySettingsPage::CDisplaySettingsPage(CConfigurationDialog *parent)
-        : BtConfigDialog::Page(util::directory::getIcon(CResMgr::settings::startup::icon), parent)
+        : BtConfigDialog::Page(bApp->getIcon(CResMgr::settings::startup::icon), parent)
 {
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
 

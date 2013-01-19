@@ -26,6 +26,7 @@
 #include "backend/managers/cswordbackend.h"
 #include "backend/rendering/centrydisplay.h"
 #include "backend/cswordmodulesearch.h"
+#include "bibletimeapp.h"
 #include "btglobal.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
@@ -218,7 +219,7 @@ bool CSwordModuleInfo::hasIndex() const {
     }
 
     //then check if the index is there
-    return lucene::index::IndexReader::indexExists(getModuleStandardIndexLocation().toAscii().constData());
+    return lucene::index::IndexReader::indexExists(getModuleStandardIndexLocation().toLatin1().constData());
 }
 
 bool CSwordModuleInfo::buildIndex() {
@@ -249,13 +250,13 @@ bool CSwordModuleInfo::buildIndex() {
         dir.mkpath( getModuleBaseIndexLocation() );
         dir.mkpath( getModuleStandardIndexLocation() );
 
-        if (lucene::index::IndexReader::indexExists(index.toAscii().constData())) {
-            if (lucene::index::IndexReader::isLocked(index.toAscii().constData()) ) {
-                lucene::index::IndexReader::unlock(index.toAscii().constData());
+        if (lucene::index::IndexReader::indexExists(index.toLatin1().constData())) {
+            if (lucene::index::IndexReader::isLocked(index.toLatin1().constData()) ) {
+                lucene::index::IndexReader::unlock(index.toLatin1().constData());
             }
         }
 
-        QSharedPointer<lucene::index::IndexWriter> writer( new lucene::index::IndexWriter(index.toAscii().constData(), &an, true) ); //always create a new index
+        QSharedPointer<lucene::index::IndexWriter> writer( new lucene::index::IndexWriter(index.toLatin1().constData(), &an, true) ); //always create a new index
         writer->setMaxFieldLength(BT_MAX_LUCENE_FIELD_LENGTH);
         writer->setUseCompoundFile(true); //merge segments into a single file
 
@@ -458,7 +459,7 @@ int CSwordModuleInfo::searchIndexed(const QString &searchedText,
         // do not use any stop words
         const TCHAR* stop_words[]  = { NULL };
         lucene::analysis::standard::StandardAnalyzer analyzer( stop_words );
-        lucene::search::IndexSearcher searcher(getModuleStandardIndexLocation().toAscii().constData());
+        lucene::search::IndexSearcher searcher(getModuleStandardIndexLocation().toLatin1().constData());
         lucene_utf8towcs(wcharBuffer, searchedText.toUtf8().constData(), BT_MAX_LUCENE_FIELD_LENGTH);
         QSharedPointer<lucene::search::Query> q( lucene::queryParser::QueryParser::parse((const TCHAR*)wcharBuffer, (const TCHAR*)_T("content"), &analyzer) );
 
@@ -890,7 +891,7 @@ QString CSwordModuleInfo::aboutText() const {
 QIcon CSwordModuleInfo::moduleIcon(const CSwordModuleInfo *module) {
     const QString &filename = moduleIconFilename(module);
     if (filename.isEmpty()) return QIcon();
-    return util::directory::getIcon(filename);
+    return bApp->getIcon(filename);
 }
 
 const QString &CSwordModuleInfo::moduleIconFilename(
@@ -940,7 +941,7 @@ QIcon CSwordModuleInfo::categoryIcon(const CSwordModuleInfo::Category &category)
 {
     QString filename = categoryIconFilename(category);
     if (filename.isEmpty()) return QIcon();
-    return util::directory::getIcon(filename);
+    return bApp->getIcon(filename);
 }
 
 const QString &CSwordModuleInfo::categoryIconFilename(

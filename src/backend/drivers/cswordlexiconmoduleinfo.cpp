@@ -100,8 +100,9 @@ const QStringList &CSwordLexiconModuleInfo::entries() const {
     module()->setPosition(sword::TOP); // back to the first entry
     module()->setSkipConsecutiveLinks(false);
 
-    if (m_entries.count()) {
-        m_entries.first().simplified();
+    /// \todo Document why the following code is here:
+    if (!m_entries.empty()) {
+        // m_entries.first().simplified();
 
         if (m_entries.first().trimmed().isEmpty()) {
             m_entries.erase( m_entries.begin() );

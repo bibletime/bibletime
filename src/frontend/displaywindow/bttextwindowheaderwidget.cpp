@@ -19,9 +19,9 @@
 
 #include "backend/config/btconfig.h"
 #include "backend/managers/cswordbackend.h"
+#include "bibletimeapp.h"
 #include "frontend/displaywindow/bttextwindowheader.h"
 #include "util/cresmgr.h"
-#include "util/directory.h"
 
 
 namespace {
@@ -86,7 +86,6 @@ void BtTextWindowHeaderWidget::updateWidget(QStringList newModulesToUse, QString
         populateMenu();
 
     m_module = thisModule;
-    namespace DU = util::directory;
 
     //All items are iterated and the state is changed properly
     QListIterator<QMenu*> it(m_submenus);
@@ -152,18 +151,18 @@ void BtTextWindowHeaderWidget::populateMenu() {
 
     m_removeAction = new QAction(tr("Remove"), m_popup);
     m_removeAction->setProperty(ActionType, RemoveAction);
-    m_removeAction->setIcon(util::directory::getIcon(CResMgr::displaywindows::general::removemoduleicon));
+    m_removeAction->setIcon(bApp->getIcon(CResMgr::displaywindows::general::removemoduleicon));
     m_popup->addAction(m_removeAction);
 
     // Add Replace and Add menus, both have all modules in them
     QMenu* replaceItem = new QMenu(tr("Replace"), m_popup);
-    replaceItem->setIcon(util::directory::getIcon(CResMgr::displaywindows::general::replacemoduleicon));
+    replaceItem->setIcon(bApp->getIcon(CResMgr::displaywindows::general::replacemoduleicon));
     replaceItem->setProperty(ActionType, ReplaceAction);
     m_popup->addMenu(replaceItem);
 
     QMenu* addItem = new QMenu(tr("Add"), m_popup);
     addItem->setProperty(ActionType, AddAction);
-    addItem->setIcon(util::directory::getIcon(CResMgr::displaywindows::general::addmoduleicon));
+    addItem->setIcon(bApp->getIcon(CResMgr::displaywindows::general::addmoduleicon));
     m_popup->addMenu(addItem);
 
     QList<QMenu*> toplevelMenus;

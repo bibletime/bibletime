@@ -31,6 +31,7 @@
 #include "backend/config/btconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/referencemanager.h"
+#include "bibletimeapp.h"
 #include "frontend/cdragdrop.h"
 #include "frontend/cinfodisplay.h"
 #include "frontend/cprinter.h"
@@ -126,12 +127,11 @@ void CBookmarkIndex::initView() {
 * than to modify all QAction constructors.
 */
 QAction* CBookmarkIndex::newQAction(const QString& text, const QString& pix, const int /*shortcut*/, const QObject* receiver, const char* slot, QObject* parent) {
-    namespace DU = util::directory;
     QAction *action;
     if (pix.isEmpty()) {
         action = new QAction(text, parent);
     } else {
-        action = new QAction(DU::getIcon(pix), text, parent);
+        action = new QAction(bApp->getIcon(pix), text, parent);
     }
     QObject::connect(action, SIGNAL(triggered()), receiver, slot);
     return action;

@@ -24,11 +24,11 @@
 #include "backend/cswordmodulesearch.h"
 #include "backend/keys/cswordkey.h"
 #include "backend/keys/cswordversekey.h"
+#include "bibletimeapp.h"
 #include "frontend/btmoduleindexdialog.h"
 #include "frontend/searchdialog/btsearchoptionsarea.h"
 #include "frontend/searchdialog/btsearchresultarea.h"
 #include "util/cresmgr.h"
-#include "util/directory.h"
 #include "util/dialogutil.h"
 
 
@@ -82,9 +82,7 @@ CSearchDialog* CSearchDialog::getSearchDialog() {
 CSearchDialog::CSearchDialog(QWidget *parent)
         : QDialog(parent), /*m_searchButton(0),*/ m_closeButton(0),
         m_searchResultArea(0), m_searchOptionsArea(0) {
-    namespace DU = util::directory;
-
-    setWindowIcon(DU::getIcon(CResMgr::searchdialog::icon));
+    setWindowIcon(bApp->getIcon(CResMgr::searchdialog::icon));
     setWindowTitle(tr("Search"));
     setAttribute(Qt::WA_DeleteOnClose);
 
@@ -223,7 +221,6 @@ void CSearchDialog::setSearchText( const QString &searchText ) {
 
 /** Initializes this object. */
 void CSearchDialog::initView() {
-    namespace DU = util::directory;
 
     QVBoxLayout* verticalLayout = new QVBoxLayout(this);
     setLayout(verticalLayout);
@@ -248,7 +245,7 @@ void CSearchDialog::initView() {
 
     m_closeButton = new QPushButton(this);
     m_closeButton->setText(tr("&Close"));
-    m_closeButton->setIcon(DU::getIcon(CResMgr::searchdialog::close_icon));
+    m_closeButton->setIcon(bApp->getIcon(CResMgr::searchdialog::close_icon));
     horizontalLayout->addWidget(m_closeButton);
 
     verticalLayout->addLayout(horizontalLayout);

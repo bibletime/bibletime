@@ -12,6 +12,7 @@
 
 #include "frontend/btbookshelfgroupingmenu.h"
 
+#include "bibletimeapp.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
 
@@ -48,12 +49,11 @@ inline const BtBookshelfTreeModel::Grouping &getActionRef(const QAction *a) {
 
 
 void BtBookshelfGroupingMenu::initMenu(bool showNoGrouping) {
-    namespace DU = util::directory;
     namespace RM = CResMgr::mainIndex;
 
     if (!groupsInitialized) initializeGroups();
 
-    setIcon(DU::getIcon(RM::grouping::icon));
+    setIcon(bApp->getIcon(RM::grouping::icon));
 
     m_groupingActionGroup = new QActionGroup(this);
     m_groupingActionGroup->setExclusive(true);

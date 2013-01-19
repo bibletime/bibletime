@@ -27,6 +27,7 @@
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/keys/cswordldkey.h"
 #include "backend/keys/cswordversekey.h"
+#include "bibletimeapp.h"
 #include "frontend/btaboutmoduledialog.h"
 #include "frontend/cmdiarea.h"
 #include "frontend/display/btfindwidget.h"
@@ -96,7 +97,7 @@ BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
     initConnections();
 
     setWindowTitle("BibleTime " BT_VERSION);
-    setWindowIcon(DU::getIcon(CResMgr::mainWindow::icon));
+    setWindowIcon(bApp->getIcon(CResMgr::mainWindow::icon));
     retranslateUi();
 }
 

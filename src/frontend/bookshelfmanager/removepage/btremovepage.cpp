@@ -23,6 +23,7 @@
 #include <QVBoxLayout>
 #include "backend/bookshelfmodel/btbookshelffiltermodel.h"
 #include "backend/managers/cswordbackend.h"
+#include "bibletimeapp.h"
 #include "frontend/bookshelfmanager/btmodulemanagerdialog.h"
 #include "frontend/btbookshelfview.h"
 #include "frontend/btbookshelfwidget.h"
@@ -40,10 +41,8 @@ const QString groupingOrderKey("GUI/BookshelfManager/RemovePage/grouping");
 }
 
 BtRemovePage::BtRemovePage(BtModuleManagerDialog *parent)
-        : BtConfigDialog::Page(util::directory::getIcon(CResMgr::bookshelfmgr::removepage::icon), parent)
+        : BtConfigDialog::Page(bApp->getIcon(CResMgr::bookshelfmgr::removepage::icon), parent)
 {
-    namespace DU = util::directory;
-
     m_worksGroupBox = new QGroupBox(this);
     m_worksGroupBox->setFlat(true);
     QVBoxLayout *wLayout = new QVBoxLayout;
@@ -62,7 +61,11 @@ BtRemovePage::BtRemovePage(BtModuleManagerDialog *parent)
     m_bookshelfWidget->showHideAction()->setVisible(false);
     m_bookshelfWidget->showHideButton()->hide();
     m_bookshelfWidget->treeView()->header()->show();
+#if QT_VERSION < 0x050000
     m_bookshelfWidget->treeView()->header()->setResizeMode(QHeaderView::ResizeToContents);
+#else
+    m_bookshelfWidget->treeView()->header()->setSectionResizeMode(QHeaderView::ResizeToContents);
+#endif
     wLayout->addWidget(m_bookshelfWidget);
 
     m_uninstallGroupBox = new QGroupBox(this);
@@ -73,7 +76,7 @@ BtRemovePage::BtRemovePage(BtModuleManagerDialog *parent)
     uLayout->addStretch(1);
 
     m_removeButton = new QPushButton(this);
-    m_removeButton->setIcon(DU::getIcon(CResMgr::bookshelfmgr::removepage::remove_icon));
+    m_removeButton->setIcon(bApp->getIcon(CResMgr::bookshelfmgr::removepage::remove_icon));
     m_removeButton->setEnabled(false);
     uLayout->addWidget(m_removeButton, 0, Qt::AlignRight);
 

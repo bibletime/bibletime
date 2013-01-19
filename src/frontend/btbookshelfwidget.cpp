@@ -24,6 +24,7 @@
 #include <QToolButton>
 #include <QVBoxLayout>
 #include "backend/bookshelfmodel/btbookshelffiltermodel.h"
+#include "bibletimeapp.h"
 #include "frontend/bookshelfmanager/installpage/btinstallmodulechooserdialogmodel.h"
 #include "frontend/bookshelfmanager/removepage/btremovepagetreemodel.h"
 #include "frontend/btbookshelfdockwidget.h"
@@ -96,11 +97,10 @@ void BtBookshelfWidget::setRightCornerWidget(QWidget *w) {
 }
 
 void BtBookshelfWidget::initActions() {
-    namespace DU = util::directory;
     namespace RM = CResMgr::mainIndex;
 
     m_showHideAction = new QAction(this);
-    m_showHideAction->setIcon(DU::getIcon("layer-visible-on.svg"));
+    m_showHideAction->setIcon(bApp->getIcon("layer-visible-on.svg"));
     m_showHideAction->setCheckable(true);
     connect(m_showHideAction, SIGNAL(toggled(bool)),
             m_postFilterModel, SLOT(setShowHidden(bool)));

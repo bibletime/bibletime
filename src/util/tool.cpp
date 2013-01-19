@@ -18,6 +18,7 @@
 #include <QWidget>
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
+#include "bibletimeapp.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
 #include "util/dialogutil.h"
@@ -81,8 +82,7 @@ bool savePlainFile(const QString & filename,
 
 
 QIcon getIconForModule(const CSwordModuleInfo * const module) {
-    namespace DU = util::directory;
-    return DU::getIcon(getIconNameForModule(module));
+    return bApp->getIcon(getIconNameForModule(module));
 }
 
 QString getIconNameForModule(const CSwordModuleInfo * const module) {

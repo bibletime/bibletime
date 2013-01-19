@@ -10,11 +10,11 @@
 #include "frontend/bookmarks/btbookmarkfolder.h"
 
 #include <QFileDialog>
+#include "bibletimeapp.h"
 #include "frontend/bookmarks/btbookmarkitembase.h"
 #include "frontend/bookmarks/btbookmarkitem.h"
 #include "frontend/bookmarks/btbookmarkloader.h"
 #include "util/cresmgr.h"
-#include "util/directory.h"
 
 
 BtBookmarkFolder::BtBookmarkFolder(const QString &name, QTreeWidgetItem *parent)
@@ -77,12 +77,9 @@ void BtBookmarkFolder::rename() {
 }
 
 void BtBookmarkFolder::update() {
-    namespace DU = util::directory;
-
-    if (isExpanded() && childCount())
-        setIcon(0, DU::getIcon(CResMgr::mainIndex::openedFolder::icon));
-    else
-        setIcon(0, DU::getIcon(CResMgr::mainIndex::closedFolder::icon));
+    setIcon(0, bApp->getIcon(isExpanded() && childCount()
+                             ? CResMgr::mainIndex::openedFolder::icon
+                             : CResMgr::mainIndex::closedFolder::icon));
 }
 
 bool BtBookmarkFolder::hasDescendant(QTreeWidgetItem* item) const {

@@ -9,11 +9,6 @@
 
 #include "bttipdialog.h"
 
-#include "backend/config/btconfig.h"
-#include "util/cresmgr.h"
-#include "util/dialogutil.h"
-#include "util/directory.h"
-
 #include <QCheckBox>
 #include <QDesktopServices>
 #include <QDialogButtonBox>
@@ -21,6 +16,11 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <QWebView>
+#include "backend/config/btconfig.h"
+#include "bibletimeapp.h"
+#include "util/cresmgr.h"
+#include "util/dialogutil.h"
+#include "util/directory.h"
 
 
 namespace {
@@ -63,11 +63,9 @@ const QString LastTipNumberKey = "GUI/lastTipNumber";
 BtTipDialog::BtTipDialog(QWidget *parent, Qt::WindowFlags wflags)
         : QDialog(parent, wflags)
 {
-    namespace DU = util::directory;
-
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setWindowTitle(tr("Tip Of The Day"));
-    setWindowIcon(DU::getIcon(CResMgr::mainMenu::help::tipOfTheDay::icon));
+    setWindowIcon(bApp->getIcon(CResMgr::mainMenu::help::tipOfTheDay::icon));
     resize(450, 240);
 
     QVBoxLayout *mainLayout = new QVBoxLayout;

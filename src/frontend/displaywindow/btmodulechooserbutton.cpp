@@ -17,9 +17,9 @@
 #include <QToolTip>
 #include "backend/config/btconfig.h"
 #include "backend/managers/cswordbackend.h"
+#include "bibletimeapp.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"
 #include "util/cresmgr.h"
-#include "util/directory.h"
 
 
 BtModuleChooserButton::BtModuleChooserButton(BtModuleChooserBar *parent, CSwordModuleInfo::ModuleType mtype)
@@ -58,7 +58,6 @@ void BtModuleChooserButton::updateMenu(QStringList newModulesToUse, QString this
 
     m_module = thisModule;
     m_hasModule = thisModule.isEmpty() ? false : true;
-    namespace DU = util::directory;
 
     //All items are iterated and the state is changed properly
     QListIterator<QMenu*> it(m_submenus);
@@ -70,7 +69,7 @@ void BtModuleChooserButton::updateMenu(QStringList newModulesToUse, QString this
         }
     }
     m_noneAction->setChecked(m_hasModule ? false : true);
-    setIcon(DU::getIcon(iconName()));
+    setIcon(bApp->getIcon(iconName()));
 
     if (m_hasModule) {
         setToolTip( QString(tr("Select a work [%1]")).arg(m_module) );

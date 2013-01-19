@@ -16,12 +16,12 @@
 #include <QToolButton>
 #include "backend/btinstallbackend.h"
 #include "backend/managers/cswordbackend.h"
+#include "bibletimeapp.h"
 #include "frontend/bookshelfmanager/installpage/btinstallpage.h"
 #include "frontend/bookshelfmanager/installpage/btinstallpagemodel.h"
 #include "frontend/bookshelfmanager/installpage/btrefreshprogressdialog.h"
 #include "frontend/btbookshelfview.h"
 #include "util/cresmgr.h"
-#include "util/directory.h"
 
 
 namespace {
@@ -55,7 +55,6 @@ BtInstallPageWorksWidget::BtInstallPageWorksWidget(
             , m_backend(0)
             , m_myModel(0)
 {
-    namespace DU = util::directory;
 
     setTreeModel(new BtInstallPageModel(g, this));
 
@@ -66,14 +65,19 @@ BtInstallPageWorksWidget::BtInstallPageWorksWidget(
     m_sourceRefreshButton = new QToolButton(this);
     m_sourceRefreshButton->setAutoRaise(true);
     m_sourceRefreshButton ->setToolTip(tr("Refresh the list of works from this source"));
-    m_sourceRefreshButton ->setIcon(DU::getIcon(CResMgr::bookshelfmgr::installpage::refresh_icon));
+    m_sourceRefreshButton ->setIcon(bApp->getIcon(CResMgr::bookshelfmgr::installpage::refresh_icon));
     setRightCornerWidget(m_sourceRefreshButton);
 
     connect(m_sourceRefreshButton, SIGNAL(clicked()),
             this,                  SLOT(slotSourceRefresh()));
 
-    // Delayed init, part 1 - disable parent:
-    parent->setEnabled(false);
+    m_backend = BtInstallBackend::backend(m_source);
+    Q_ASSERT(m_backend != 0);
+    m_myModel = new BtBookshelfModel(this);
+    Q_FOREACH(CSwordModuleInfo *module, m_backend->moduleList()) {
+        if (filter(module)) m_myModel->addModule(module);
+    }
+    setSourceModel(m_myModel);
 }
 
 BtInstallPageWorksWidget::~BtInstallPageWorksWidget() {
@@ -83,7 +87,6 @@ BtInstallPageWorksWidget::~BtInstallPageWorksWidget() {
 void BtInstallPageWorksWidget::deleteSource() {
     qDebug() << "Deleting source" << m_source.caption;
 
-    setEnabled(false);
     m_myModel->clear();
     BtInstallBackend::deleteSource(QString(m_source.caption));
 }
@@ -101,28 +104,6 @@ void BtInstallPageWorksWidget::updateTree() {
     Q_FOREACH(CSwordModuleInfo *module, m_backend->moduleList()) {
         if (filter(module)) m_myModel->addModule(module);
     }
-}
-
-void BtInstallPageWorksWidget::paintEvent(QPaintEvent *e) {
-    // Delayed init, part 2 - queue init when painted:
-    if (m_myModel == 0) {
-        QTimer::singleShot(0, this, SLOT(slotDelayedInit()));
-    }
-    BtBookshelfWidget::paintEvent(e);
-}
-
-void BtInstallPageWorksWidget::slotDelayedInit() {
-    // Delayed init, part 3 - initialize + reenable parent
-    qApp->setOverrideCursor(Qt::WaitCursor);
-    m_backend = BtInstallBackend::backend(m_source);
-    Q_ASSERT(m_backend != 0);
-    m_myModel = new BtBookshelfModel(this);
-    Q_FOREACH(CSwordModuleInfo *module, m_backend->moduleList()) {
-        if (filter(module)) m_myModel->addModule(module);
-    }
-    setSourceModel(m_myModel);
-    m_parent->setEnabled(true);
-    qApp->restoreOverrideCursor();
 }
 
 void BtInstallPageWorksWidget::slotSourceRefresh() {

@@ -15,10 +15,9 @@
 #include "QLineEdit"
 #include "QSpacerItem"
 #include "QToolButton"
+#include "bibletimeapp.h"
 #include "util/cresmgr.h"
-#include "util/directory.h"
 
-namespace DU = util::directory;
 
 BtFindWidget::BtFindWidget(QWidget* parent)
         : QWidget(parent) {
@@ -43,7 +42,7 @@ void BtFindWidget::createLayout() {
 
 void BtFindWidget::createToolButton(const QString& iconName, const QString& text, const char* slot) {
     QToolButton* button = new QToolButton(this);
-    button->setIcon(DU::getIcon(iconName));
+    button->setIcon(bApp->getIcon(iconName));
     button->setIconSize(QSize(16,16));
     button->setText(text);
     button->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
@@ -55,8 +54,13 @@ void BtFindWidget::createToolButton(const QString& iconName, const QString& text
 
 void BtFindWidget::createTextEditor() {
     m_textEditor = new QLineEdit(this);
+#if QT_VERSION < 0x050000
     m_textEditor->setToolTip(QApplication::translate("findWidget",
         "The text you want to search for", 0, QApplication::UnicodeUTF8));
+#else
+    m_textEditor->setToolTip(QApplication::translate("findWidget",
+        "The text you want to search for", 0));
+#endif
     m_layout->addWidget(m_textEditor);
     bool ok = connect(m_textEditor, SIGNAL(textChanged(const QString&)),
         this, SLOT(textChanged(const QString&)));

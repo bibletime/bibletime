@@ -17,7 +17,6 @@
 
 #include "backend/bookshelfmodel/btbookshelfmodel.h"
 #include "backend/drivers/cswordmoduleinfo.h"
-#include "util/directory.h"
 
 
 namespace BookshelfModel {

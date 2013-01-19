@@ -52,7 +52,7 @@ CPlainWriteWindow * CDisplayWindowFactory::createWriteInstance(const QList<CSwor
     return 0;
 }
 
-const CSwordModuleInfo::ModuleType CDisplayWindowFactory::getModuleType(QObject* widget) {
+CSwordModuleInfo::ModuleType CDisplayWindowFactory::getModuleType(QObject* widget) {
     if (qobject_cast<CBibleReadWindow*>(widget) != 0 )
         return CSwordModuleInfo::Bible;
     if (qobject_cast<CCommentaryReadWindow*>(widget) != 0 )

@@ -1,3 +1,9 @@
+2013-01-15 Jaak Ristioja <jaak@ristioja.ee>
+    * Fixed widget ending up disabled after removing install source.
+
+2012-12-16 Gary Holmlund <gary.holmlund@gmail.com>
+    * More Qt5 updates needed by Qt5 rc2 version
+
 2012-11-03 Gary Holmlund <gary.holmlund@gmail.com>
     * Add Find widget at bottom of MDI area
 

@@ -1,5 +1,7 @@
 /*********
 *
+* In the name of the Father, and of the Son, and of the Holy Spirit.
+*
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
 * Copyright 1999-2011 by the BibleTime developers.
@@ -92,9 +94,6 @@ const QDir &getJavascriptDir();
 
 /** Return the path to the license. */
 const QDir &getLicenseDir();
-
-/** Returns an icon with the given name */
-const QIcon &getIcon(const QString &name);
 
 /** Return the path to the pictures. */
 const QDir &getPicsDir();

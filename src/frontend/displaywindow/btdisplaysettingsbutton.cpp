@@ -14,17 +14,15 @@
 #include <QString>
 #include <QToolTip>
 #include <QToolButton>
-#include "util/directory.h"
+#include "bibletimeapp.h"
 #include "util/cresmgr.h"
 
 
 BtDisplaySettingsButton::BtDisplaySettingsButton(QWidget *parent)
         : QToolButton(parent) {
-    namespace DU = util::directory;
-
     initMenu();
 
-    setIcon(DU::getIcon(CResMgr::displaywindows::displaySettings::icon));
+    setIcon(bApp->getIcon(CResMgr::displaywindows::displaySettings::icon));
     setPopupMode(QToolButton::InstantPopup);
     setEnabled(false);
 

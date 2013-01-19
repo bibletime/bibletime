@@ -137,7 +137,15 @@ struct DebugStreamPtr {
 #endif
 bool showDebugMessages = false;
 
-void myMessageOutput( QtMsgType type, const char *msg ) {
+void myMessageOutput(
+        QtMsgType type,
+#if QT_VERSION >= 0x050000
+        const QMessageLogContext&,
+        const QString& message ) {
+    QByteArray msg = message.toLatin1();
+#else
+        const char *msg ) {
+#endif
     // We use this messagehandler to switch debugging off in final releases
     switch (type) {
         case QtDebugMsg:
@@ -231,12 +239,20 @@ int main(int argc, char* argv[]) {
     if (showDebugMessages) {
         debugStream.reset(new QFile(QDir::homePath().append("/BibleTime Debug.txt")));
         debugStream->open(QIODevice::WriteOnly | QIODevice::Text);
+#if QT_VERSION >= 0x050000
+        qInstallMessageHandler(myMessageOutput);
+#else
         qInstallMsgHandler(myMessageOutput);
+#endif
     }
 #else
     debugStream.reset(new QFile);
     debugStream->open(stderr, QIODevice::WriteOnly | QIODevice::Text);
-    qInstallMsgHandler(myMessageOutput);
+#if QT_VERSION >= 0x050000
+        qInstallMessageHandler(myMessageOutput);
+#else
+        qInstallMsgHandler(myMessageOutput);
+#endif
 #endif
 
 #ifdef Q_WS_WIN
@@ -308,7 +324,7 @@ int main(int argc, char* argv[]) {
 
     // a new BibleTime version was installed (maybe a completely new installation)
     if (btConfig().value<QString>("bibletimeVersion", BT_VERSION) != BT_VERSION) {
-        btConfig().setValue("bibletimeVersion", QString::fromAscii(BT_VERSION));
+        btConfig().setValue("bibletimeVersion", QString(BT_VERSION));
         mainWindow->saveConfigSettings();
     }
 
