@@ -136,19 +136,19 @@ CTextRendering::KeyTreeItem::KeyTreeItem(const QString &startKey,
     else {
         sword::VerseKey vk(startKey.toUtf8().constData(), stopKey.toUtf8().constData());
 
-        if (vk.LowerBound().getBook() != vk.UpperBound().getBook()) {
+        if (vk.getLowerBound().getBook() != vk.getUpperBound().getBook()) {
             m_alternativeContent = QString::fromUtf8(vk.getRangeText());
         }
-        else if (vk.LowerBound().getChapter() != vk.UpperBound().getChapter()) {
+        else if (vk.getLowerBound().getChapter() != vk.getUpperBound().getChapter()) {
             m_alternativeContent = QString("%1 - %2:%3")
-                                   .arg(QString::fromUtf8(vk.LowerBound().getText()))
-                                   .arg(vk.UpperBound().getChapter())
-                                   .arg(vk.UpperBound().getVerse());
+                                   .arg(QString::fromUtf8(vk.getLowerBound().getText()))
+                                   .arg(vk.getUpperBound().getChapter())
+                                   .arg(vk.getUpperBound().getVerse());
         }
         else { //only verses differ (same book, same chapter)
             m_alternativeContent = QString("%1 - %2")
-                                   .arg(QString::fromUtf8(vk.LowerBound().getText()))
-                                   .arg(vk.UpperBound().getVerse());
+                                   .arg(QString::fromUtf8(vk.getLowerBound().getText()))
+                                   .arg(vk.getUpperBound().getVerse());
         }
     }
 

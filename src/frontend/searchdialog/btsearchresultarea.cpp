@@ -149,10 +149,10 @@ void BtSearchResultArea::updatePreview(const QString& key) {
         //for bibles render 5 context verses
         if (module->type() == CSwordModuleInfo::Bible) {
             CSwordVerseKey vk(module);
-            vk.Headings(1);
+            vk.setIntros(true);
             vk.setKey(key);
 
-            ((sword::VerseKey*)(module->module()->getKey()))->Headings(1); //HACK: enable headings for VerseKeys
+            ((sword::VerseKey*)(module->module()->getKey()))->setIntros(true); //HACK: enable headings for VerseKeys
 
             //first go back and then go forward the keys to be in context
             vk.previous(CSwordVerseKey::UseVerse);
@@ -180,10 +180,10 @@ void BtSearchResultArea::updatePreview(const QString& key) {
         //for commentaries only one verse, but with heading
         else if (module->type() == CSwordModuleInfo::Commentary) {
             CSwordVerseKey vk(module);
-            vk.Headings(1);
+            vk.setIntros(true);
             vk.setKey(key);
 
-            ((sword::VerseKey*)(module->module()->getKey()))->Headings(1); //HACK: enable headings for VerseKeys
+            ((sword::VerseKey*)(module->module()->getKey()))->setIntros(true); //HACK: enable headings for VerseKeys
 
             //include Headings in display, they are indexed and searched too
             if (vk.getVerse() == 1) {

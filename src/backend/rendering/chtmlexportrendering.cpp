@@ -97,7 +97,7 @@ QString CHTMLExportRendering::renderEntry(const KeyTreeItem& i, CSwordKey* k) {
     CSwordVerseKey* myVK = dynamic_cast<CSwordVerseKey*>(key);
 
     if (myVK) {
-        myVK->Headings(1);
+        myVK->setIntros(true);
     }
 
     QString renderedText( (modules.count() > 1) ? "\n\t\t<tr>\n" : "\n" );
@@ -128,9 +128,9 @@ QString CHTMLExportRendering::renderEntry(const KeyTreeItem& i, CSwordKey* k) {
         }
         else {
             langAttr = QString("xml:lang=\"")
-                       .append((*mod_Itr)->module()->Lang())
+                       .append((*mod_Itr)->module()->getLanguage())
                        .append("\" lang=\"")
-                       .append((*mod_Itr)->module()->Lang())
+                       .append((*mod_Itr)->module()->getLanguage())
                        .append("\"");
         }
 

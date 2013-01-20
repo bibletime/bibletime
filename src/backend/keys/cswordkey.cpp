@@ -49,7 +49,7 @@ QString CSwordKey::renderedText(const CSwordKey::TextRenderType mode) {
     if (k) {
         sword::VerseKey * vk_mod = dynamic_cast<sword::VerseKey *>(m_module->module()->getKey());
         if (vk_mod)
-            vk_mod->Headings(1);
+            vk_mod->setIntros(true);
 
         m_module->module()->getKey()->setText(rawKey());
 

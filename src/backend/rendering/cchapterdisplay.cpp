@@ -42,13 +42,13 @@ const QString Rendering::CChapterDisplay::text(
     Q_ASSERT((module->type() == CSwordModuleInfo::Bible));
 
     if (module->type() == CSwordModuleInfo::Bible) {
-        ((sword::VerseKey*)(module->module()->getKey()))->Headings(1); //HACK: enable headings for VerseKeys
+        ((sword::VerseKey*)(module->module()->getKey()))->setIntros(true); //HACK: enable headings for VerseKeys
 
         Q_ASSERT(dynamic_cast<const CSBMI*>(module) != 0);
         const CSBMI *bible = static_cast<const CSBMI*>(module);
 
         CSwordVerseKey k1(module);
-        k1.Headings(1);
+        k1.setIntros(true);
         k1.setKey(keyName);
 
         if (k1.getChapter() == 1)

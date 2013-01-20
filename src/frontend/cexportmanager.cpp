@@ -76,7 +76,7 @@ bool CExportManager::saveKey(CSwordKey* key, const Format format, const bool add
 
     CSwordVerseKey *vk = dynamic_cast<CSwordVerseKey*>(key);
     if (vk && vk->isBoundSet()) {
-        text = render->renderKeyRange( QString::fromUtf8(vk->LowerBound()), QString::fromUtf8(vk->UpperBound()), modules );
+        text = render->renderKeyRange( QString::fromUtf8(vk->getLowerBound()), QString::fromUtf8(vk->getUpperBound()), modules );
     }
     else { //no range supported
         text = render->renderSingleKey(key->key(), modules);
@@ -112,7 +112,7 @@ bool CExportManager::saveKeyList(const sword::ListKey &l,
     itemSettings.highlight = false;
 
     list.setPosition(sword::TOP);
-    while (!list.Error() && !progressWasCancelled()) {
+    while (!list.popError() && !progressWasCancelled()) {
         tree.append( new CTextRendering::KeyTreeItem(QString::fromLocal8Bit((const char*)list) , module, itemSettings) );
         incProgress();
 
@@ -180,8 +180,8 @@ bool CExportManager::copyKey(CSwordKey* key, const Format format, const bool add
     CSwordVerseKey * vk = dynamic_cast<CSwordVerseKey*>(key);
     if (vk && vk->isBoundSet()) {
         text = render->renderKeyRange(
-                   QString::fromUtf8(vk->LowerBound()),
-                   QString::fromUtf8(vk->UpperBound()),
+                   QString::fromUtf8(vk->getLowerBound()),
+                   QString::fromUtf8(vk->getUpperBound()),
                    modules
                );
     }
@@ -209,7 +209,7 @@ bool CExportManager::copyKeyList(const sword::ListKey &l,
     itemSettings.highlight = false;
 
     list.setPosition(sword::TOP);
-    while (!list.Error() && !progressWasCancelled()) {
+    while (!list.popError() && !progressWasCancelled()) {
         tree.append( new CTextRendering::KeyTreeItem(QString::fromLocal8Bit((const char*)list) , module, itemSettings) );
 
         list.increment();
@@ -370,13 +370,13 @@ bool CExportManager::printByHyperlink(const QString &hyperlink,
     if (module) {
         //check if we have a range of entries or a single one
         if ((module->type() == CSwordModuleInfo::Bible) || (module->type() == CSwordModuleInfo::Commentary)) {
-            sword::ListKey verses = sword::VerseKey().ParseVerseList((const char*)keyName.toUtf8(), "Genesis 1:1", true);
+            sword::ListKey verses = sword::VerseKey().parseVerseList((const char*)keyName.toUtf8(), "Genesis 1:1", true);
 
             for (int i = 0; i < verses.Count(); ++i) {
                 sword::VerseKey* element = dynamic_cast<sword::VerseKey*>(verses.getElement(i));
                 if (element) {
-                    const QString startKey = QString::fromUtf8(element->LowerBound().getText());
-                    const QString stopKey =  QString::fromUtf8(element->UpperBound().getText());
+                    const QString startKey = QString::fromUtf8(element->getLowerBound().getText());
+                    const QString stopKey =  QString::fromUtf8(element->getUpperBound().getText());
 
                     tree.append( new CPrinter::KeyTreeItem(startKey, stopKey, module, settings) );
                 }

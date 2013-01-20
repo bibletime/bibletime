@@ -360,7 +360,7 @@ sword::ListKey BtSearchOptionsArea::searchScope() {
         BtConfig::StringMap map = btConfig().getSearchScopesForCurrentLocale();
         QString scope = map[ m_rangeChooserCombo->currentText() ];
         if (!scope.isEmpty()) {
-            return sword::VerseKey().ParseVerseList( (const char*)scope.toUtf8(), "Genesis 1:1", true);
+            return sword::VerseKey().parseVerseList( (const char*)scope.toUtf8(), "Genesis 1:1", true);
         }
     }
     return sword::ListKey();

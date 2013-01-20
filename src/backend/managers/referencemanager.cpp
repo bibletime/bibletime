@@ -350,8 +350,8 @@ const QString ReferenceManager::parseVerseReference( const QString& ref, const R
 
     for (QStringList::iterator it = refList.begin(); it != refList.end(); ++it) {
         //The listkey may contain more than one item, because a ref lik "Gen 1:3,5" is parsed into two single refs
-        sword::ListKey lk = dummy.ParseVerseList((*it).toUtf8().constData(), baseKey.key().toUtf8().constData(), true);
-        Q_ASSERT(!dummy.Error());
+        sword::ListKey lk = dummy.parseVerseList((*it).toUtf8().constData(), baseKey.key().toUtf8().constData(), true);
+        Q_ASSERT(!dummy.popError());
 
         //Q_ASSERT(lk.Count());
         if (!lk.Count()) {

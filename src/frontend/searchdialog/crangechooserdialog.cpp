@@ -212,7 +212,7 @@ void CRangeChooserDialog::updateResultList() {
     //HACK: repair range to work with Sword 1.5.6
     const QString range = m_rangeEdit->toPlainText().replace(QRegExp("\\s{0,}-\\s{0,}"), "-");
 
-    sword::ListKey verses = VK().ParseVerseList(range.toUtf8().constData(),
+    sword::ListKey verses = VK().parseVerseList(range.toUtf8().constData(),
                                                 "Genesis 1:1", true);
     for (int i = 0; i < verses.Count(); ++i) {
         new QListWidgetItem(QString::fromUtf8(verses.getElement(i)->getRangeText()),

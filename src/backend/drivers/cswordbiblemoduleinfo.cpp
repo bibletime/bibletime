@@ -35,7 +35,7 @@ void CSwordBibleModuleInfo::initBounds() const {
     Q_ASSERT(!m_boundsInitialized);
 
     sword::SWModule *m = module();
-    const bool oldStatus = m->getSkipConsecutiveLinks();
+    const bool oldStatus = m->isSkipConsecutiveLinks();
     m->setSkipConsecutiveLinks(true);
 
     m->setPosition(sword::TOP); // position to first entry
@@ -81,12 +81,12 @@ QStringList *CSwordBibleModuleInfo::books() const {
             max--; // max == 1
 
         if (min > max) {
-            qWarning("CSwordBibleModuleInfo (%s) no OT and not NT! Check your config!", module()->Name());
+            qWarning("CSwordBibleModuleInfo (%s) no OT and not NT! Check your config!", module()->getName());
         } else {
-            QSharedPointer<sword::VerseKey> key((sword::VerseKey *)module()->CreateKey());
+            QSharedPointer<sword::VerseKey> key((sword::VerseKey *)module()->createKey());
             key->setPosition(sword::TOP);
 
-            for (key->setTestament(min); !key->Error() && key->getTestament() <= max; key->setBook(key->getBook() + 1)) {
+            for (key->setTestament(min); !key->popError() && key->getTestament() <= max; key->setBook(key->getBook() + 1)) {
                 m_bookList->append( QString::fromUtf8(key->getBookName()) );
             }
         }
@@ -98,7 +98,7 @@ QStringList *CSwordBibleModuleInfo::books() const {
 unsigned int CSwordBibleModuleInfo::chapterCount(const unsigned int book) const {
     int result = 0;
 
-    QSharedPointer<sword::VerseKey> key((sword::VerseKey *)module()->CreateKey());
+    QSharedPointer<sword::VerseKey> key((sword::VerseKey *)module()->createKey());
     key->setPosition(sword::TOP);
 
     // works for old and new versions
@@ -120,7 +120,7 @@ unsigned int CSwordBibleModuleInfo::verseCount(const unsigned int book,
 {
     unsigned int result = 0;
 
-    QSharedPointer<sword::VerseKey> key((sword::VerseKey *)module()->CreateKey());
+    QSharedPointer<sword::VerseKey> key((sword::VerseKey *)module()->createKey());
     key->setPosition(sword::TOP);
 
     // works for old and new versions
@@ -141,7 +141,7 @@ unsigned int CSwordBibleModuleInfo::verseCount(const QString &book,
 unsigned int CSwordBibleModuleInfo::bookNumber(const QString &book) const {
     unsigned int bookNumber = 0;
 
-    QSharedPointer<sword::VerseKey> key((sword::VerseKey *)module()->CreateKey());
+    QSharedPointer<sword::VerseKey> key((sword::VerseKey *)module()->createKey());
     key->setPosition(sword::TOP);
 
     key->setBookName(book.toUtf8().constData());

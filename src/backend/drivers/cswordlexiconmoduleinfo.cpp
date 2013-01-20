@@ -95,7 +95,7 @@ const QStringList &CSwordLexiconModuleInfo::entries() const {
         }
 
         module()->increment();
-    } while (!module()->Error());
+    } while (!module()->popError());
 
     module()->setPosition(sword::TOP); // back to the first entry
     module()->setSkipConsecutiveLinks(false);

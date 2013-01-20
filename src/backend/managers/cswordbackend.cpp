@@ -129,19 +129,19 @@ CSwordBackend::LoadError CSwordBackend::initModules(SetupChangedReason reason) {
         sword::SWModule* const curMod = (*it).second;
         CSwordModuleInfo* newModule = 0;
 
-        if (!strcmp(curMod->Type(), "Biblical Texts")) {
+        if (!strcmp(curMod->getType(), "Biblical Texts")) {
             newModule = new CSwordBibleModuleInfo(curMod, this);
             newModule->module()->setDisplay(&m_chapterDisplay);
         }
-        else if (!strcmp(curMod->Type(), "Commentaries")) {
+        else if (!strcmp(curMod->getType(), "Commentaries")) {
             newModule = new CSwordCommentaryModuleInfo(curMod, this);
             newModule->module()->setDisplay(&m_entryDisplay);
         }
-        else if (!strcmp(curMod->Type(), "Lexicons / Dictionaries")) {
+        else if (!strcmp(curMod->getType(), "Lexicons / Dictionaries")) {
             newModule = new CSwordLexiconModuleInfo(curMod, this);
             newModule->module()->setDisplay(&m_entryDisplay);
         }
-        else if (!strcmp(curMod->Type(), "Generic Books")) {
+        else if (!strcmp(curMod->getType(), "Generic Books")) {
             newModule = new CSwordBookModuleInfo(curMod, this);
             newModule->module()->setDisplay(&m_bookDisplay);
         }
@@ -182,29 +182,29 @@ void CSwordBackend::AddRenderFilters(sword::SWModule *module, sword::ConfigEntMa
     moduleDriver = ((entry = section.find("ModDrv")) != section.end()) ? (*entry).second : (sword::SWBuf) "";
 
     if (sourceformat == "OSIS") {
-        module->AddRenderFilter(&m_osisFilter);
+        module->addRenderFilter(&m_osisFilter);
         noDriver = false;
     }
     else if (sourceformat == "ThML") {
-        module->AddRenderFilter(&m_thmlFilter);
+        module->addRenderFilter(&m_thmlFilter);
         noDriver = false;
     }
     else if (sourceformat == "TEI") {
-        module->AddRenderFilter(&m_teiFilter);
+        module->addRenderFilter(&m_teiFilter);
         noDriver = false;
     }
     else if (sourceformat == "GBF") {
-        module->AddRenderFilter(&m_gbfFilter);
+        module->addRenderFilter(&m_gbfFilter);
         noDriver = false;
     }
     else if (sourceformat == "PLAIN") {
-        module->AddRenderFilter(&m_plainFilter);
+        module->addRenderFilter(&m_plainFilter);
         noDriver = false;
     }
 
     if (noDriver) { //no driver found
         if ( (moduleDriver == "RawCom") || (moduleDriver == "RawLD") ) {
-            module->AddRenderFilter(&m_plainFilter);
+            module->addRenderFilter(&m_plainFilter);
             noDriver = false;
         }
     }

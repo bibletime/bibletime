@@ -47,7 +47,7 @@ char ThmlToHtml::processText(sword::SWBuf &buf, const sword::SWKey *key,
 {
     sword::ThMLHTML::processText(buf, key, module);
 
-    CSwordModuleInfo* m = CSwordBackend::instance()->findModuleByName( module->Name() );
+    CSwordModuleInfo* m = CSwordBackend::instance()->findModuleByName( module->getName() );
 
     if (m && !(m->has(CSwordModuleInfo::lemmas) || m->has(CSwordModuleInfo::strongNumbers))) { //only parse if the module has strongs or lemmas
         return 1;
@@ -231,7 +231,7 @@ bool ThmlToHtml::handleToken(sword::SWBuf &buf, const char *token,
             if (!tag.isEndTag() && !tag.isEmpty()) {
                 //appending is faster than appendFormatted
                 buf.append(" <span class=\"footnote\" note=\"");
-                buf.append(myModule->Name());
+                buf.append(myModule->getName());
                 buf.append('/');
                 buf.append(myUserData->key->getShortText());
                 buf.append('/');
@@ -266,7 +266,7 @@ bool ThmlToHtml::handleToken(sword::SWBuf &buf, const char *token,
                             ReferenceManager::ParseOptions options;
                             options.refBase = QString::fromUtf8(myUserData->key->getText()); //current module key
                             options.refDestinationModule = QString(mod->name());
-                            options.sourceLanguage = QString(myModule->Lang());
+                            options.sourceLanguage = QString(myModule->getLanguage());
                             options.destinationLanguage = QString("en");
 
                             //it's ok to split the reference, because to descriptive text is given
@@ -325,7 +325,7 @@ bool ThmlToHtml::handleToken(sword::SWBuf &buf, const char *token,
                     ReferenceManager::ParseOptions options;
                     options.refBase = QString::fromUtf8(myUserData->key->getText());
 
-                    options.sourceLanguage = myModule->Lang();
+                    options.sourceLanguage = myModule->getLanguage();
                     options.destinationLanguage = QString("en");
 
                     const QString completeRef = ReferenceManager::parseVerseReference(QString::fromUtf8(ref), options);

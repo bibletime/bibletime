@@ -65,7 +65,7 @@ bool CSwordTreeKey::setKey(const char *newKey) {
         root();
     }
 
-    return !Error();
+    return !popError();
 }
 
 QString CSwordTreeKey::getLocalNameUnicode() {

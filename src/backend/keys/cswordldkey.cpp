@@ -90,7 +90,7 @@ bool CSwordLDKey::setKey(const char *newKey) {
         m_module->snap();
     }
 
-    return !Error();
+    return !popError();
 }
 
 /** Uses the parameter to returns the next entry afer this key. */

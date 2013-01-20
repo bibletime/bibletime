@@ -129,7 +129,7 @@ void TeiToHtml::renderReference(const char *osisRef, sword::SWBuf &buf,
             ReferenceManager::ParseOptions options;
             options.refBase = QString::fromUtf8(myUserData->key->getText());
             options.refDestinationModule = QString(mod->name());
-            options.sourceLanguage = QString(mod->module()->Lang());
+            options.sourceLanguage = QString(mod->module()->getLanguage());
             options.destinationLanguage = QString("en");
 
             buf.append("<a href=\"");

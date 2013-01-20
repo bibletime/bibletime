@@ -80,8 +80,8 @@ CSwordModuleInfo::CSwordModuleInfo(sword::SWModule *module,
       m_backend(usedBackend ? usedBackend : CSwordBackend::instance()),
       m_type(type),
       m_cancelIndexing(false),
-      m_cachedName(QString::fromUtf8(module->Name())),
-      m_cachedHasVersion(!QString((*m_backend->getConfig())[module->Name()]["Version"]).isEmpty())
+      m_cachedName(QString::fromUtf8(module->getName())),
+      m_cachedHasVersion(!QString((*m_backend->getConfig())[module->getName()]["Version"]).isEmpty())
 {
     Q_ASSERT(module != 0);
     Q_ASSERT(usedBackend != 0);
@@ -126,7 +126,7 @@ bool CSwordModuleInfo::unlock(const QString & unlockKey) {
      * not work correctly for modules from which data was already fetched. Therefore we have to
      * reload the modules in bibletime.cpp
      */
-    backend()->setCipherKey(m_module->Name(), unlockKey.toUtf8().constData());
+    backend()->setCipherKey(m_module->getName(), unlockKey.toUtf8().constData());
 
     /// \todo write to Sword config as well
 
@@ -261,9 +261,9 @@ bool CSwordModuleInfo::buildIndex() {
         writer->setUseCompoundFile(true); //merge segments into a single file
 
         m_module->setPosition(sword::TOP);
-        unsigned long verseLowIndex = m_module->Index();
+        unsigned long verseLowIndex = m_module->getIndex();
         m_module->setPosition(sword::BOTTOM);
-        unsigned long verseHighIndex = m_module->Index();
+        unsigned long verseHighIndex = m_module->getIndex();
 
         //verseLowIndex is not 0 in all cases (i.e. NT-only modules)
         unsigned long verseIndex = verseLowIndex + 1;
@@ -287,7 +287,7 @@ bool CSwordModuleInfo::buildIndex() {
             // we have to be sure to insert the english key into the index, otherwise we'd be in trouble if the language changes
             vk->setLocale("en_US");
             //If we have a verse based module, we want to include the pre-chapter etc. headings in the search
-            vk->Headings(1);
+            vk->setIntros(true);
         }
 
         //holds UTF-8 data and is faster than QString.
@@ -300,7 +300,7 @@ bool CSwordModuleInfo::buildIndex() {
         wchar_t wcharBuffer[BT_MAX_LUCENE_FIELD_LENGTH + 1];
 
         m_module->setPosition(sword::TOP);
-        while (!(m_module->Error()) && !m_cancelIndexing) {
+        while (!(m_module->popError()) && !m_cancelIndexing) {
 
             // Also index Chapter 0 and Verse 0, because they might have information in the entry attributes
             // We used to just put their content into the textBuffer and continue to the next verse, but
@@ -368,7 +368,7 @@ bool CSwordModuleInfo::buildIndex() {
                 verseIndex++;
             }
             else {
-                verseIndex = m_module->Index();
+                verseIndex = m_module->getIndex();
             }
 
             if (verseIndex % 200 == 0) {
@@ -474,7 +474,7 @@ int CSwordModuleInfo::searchIndexed(const QString &searchedText,
 //        const bool isVerseModule = (type() == CSwordModuleInfo::Bible) || (type() == CSwordModuleInfo::Commentary);
 
         lucene::document::Document* doc = 0;
-        QSharedPointer<sword::SWKey> swKey( module()->CreateKey() );
+        QSharedPointer<sword::SWKey> swKey( module()->createKey() );
 
 
 #ifdef CLUCENE2
@@ -495,7 +495,7 @@ int CSwordModuleInfo::searchIndexed(const QString &searchedText,
                     /// \warning This is a workaround for sword constness
                     sword::ListKey &scope2 = const_cast<sword::ListKey&>(scope);
                     sword::VerseKey* vkey = dynamic_cast<sword::VerseKey*>(scope2.getElement(j));
-                    if (vkey->LowerBound().compare(*swKey) <= 0 && vkey->UpperBound().compare(*swKey) >= 0) {
+                    if (vkey->getLowerBound().compare(*swKey) <= 0 && vkey->getUpperBound().compare(*swKey) >= 0) {
                         results.add(*swKey);
                     }
                 }
@@ -762,7 +762,7 @@ void CSwordModuleInfo::initCachedLanguage() {
         */
         m_cachedLanguage = lm->languageForAbbrev(config(GlossaryFrom));
     } else {
-        m_cachedLanguage = lm->languageForAbbrev(m_module->Lang());
+        m_cachedLanguage = lm->languageForAbbrev(m_module->getLanguage());
     }
 }
 

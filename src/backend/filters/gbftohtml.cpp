@@ -78,7 +78,7 @@ char Filters::GbfToHtml::processText(sword::SWBuf& buf, const sword::SWKey * key
         return 1; //no processing should be done, may happen in a search
     }
 
-    CSwordModuleInfo* m = CSwordBackend::instance()->findModuleByName( module->Name() );
+    CSwordModuleInfo* m = CSwordBackend::instance()->findModuleByName( module->getName() );
 
     if (m && !(m->has(CSwordModuleInfo::lemmas) || m->has(CSwordModuleInfo::morphTags) || m->has(CSwordModuleInfo::strongNumbers))) { //only parse if the module has strongs or lemmas
         return 1; //WARNING: Return alread here
@@ -254,7 +254,7 @@ bool Filters::GbfToHtml::handleToken(sword::SWBuf &buf, const char *token, sword
             }
 
             buf.append(" <span class=\"footnote\" note=\"");
-            buf.append(myModule->Name());
+            buf.append(myModule->getName());
             buf.append('/');
             buf.append(myUserData->key->getShortText());
             buf.append('/');

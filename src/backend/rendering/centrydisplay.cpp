@@ -39,10 +39,10 @@ const QString CEntryDisplay::text(
 
     //in Bibles and Commentaries we need to check if 0:0 and X:0 contain something
     if (module->type() == CSwordModuleInfo::Bible || module->type() == CSwordModuleInfo::Commentary) {
-        ((sword::VerseKey*)(module->module()->getKey()))->Headings(1); //HACK: enable headings for VerseKeys
+        ((sword::VerseKey*)(module->module()->getKey()))->setIntros(true); //HACK: enable headings for VerseKeys
 
         CSwordVerseKey k1(module);
-        k1.Headings(1);
+        k1.setIntros(true);
         k1.setKey(keyName);
 
         // don't print the key

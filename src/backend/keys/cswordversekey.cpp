@@ -151,13 +151,13 @@ bool CSwordVerseKey::setKey(const char *newKey) {
 
     /// \todo Do we ALWAYS need to emit this signal and check for errors?
     emitAfterChanged();
-    return !Error();
+    return !popError();
 }
 
 bool CSwordVerseKey::next( const JumpType type ) {
     typedef CSwordBibleModuleInfo CSBMI;
 
-    Error(); //clear Error status
+    popError(); //clear Error status
     bool ret = true;
 
     switch (type) {
@@ -186,21 +186,22 @@ bool CSwordVerseKey::next( const JumpType type ) {
 
         case UseVerse: {
             if (m_module && m_module->module()) {
-                const bool oldStatus = m_module->module()->getSkipConsecutiveLinks();
+                const bool oldStatus = m_module->module()->isSkipConsecutiveLinks();
                 m_module->module()->setSkipConsecutiveLinks(true);
 
                 //disable headings for next verse
                 const bool useHeaders = 1; //(Verse() == 0);
-                const bool oldHeadingsStatus = ((VerseKey*)(m_module->module()->getKey()))->Headings( useHeaders );
+                const bool oldHeadingsStatus = ((VerseKey*)(m_module->module()->getKey()))->isIntros();
+                ((VerseKey*)(m_module->module()->getKey()))->setIntros( useHeaders );
                 //don't use setKey(), that would create a new key without Headings set
                 m_module->module()->getKey()->setText( key().toUtf8().constData() );
 
                 (*(m_module->module()) )++;
 
-                ((VerseKey*)(m_module->module()->getKey()))->Headings(oldHeadingsStatus);
+                ((VerseKey*)(m_module->module()->getKey()))->setIntros(oldHeadingsStatus);
                 m_module->module()->setSkipConsecutiveLinks(oldStatus);
 
-                if (!m_module->module()->Error()) {
+                if (!m_module->module()->popError()) {
                     setKey(QString::fromUtf8(m_module->module()->getKeyText()));
                 }
                 else {
@@ -240,7 +241,7 @@ bool CSwordVerseKey::next( const JumpType type ) {
         emitAfterChanged();
         return ret;
     }
-    else if (Error()) { //we have no module, so take care of VerseKey::Error()
+    else if (popError()) { //we have no module, so take care of VerseKey::Error()
         return false;
     }
 
@@ -278,18 +279,19 @@ bool CSwordVerseKey::previous( const JumpType type ) {
         case UseVerse: {
             if (m_module && m_module->module()) {
                 const bool useHeaders = 1; //(Verse() == 0);
-                const bool oldHeadingsStatus = ((VerseKey*)(m_module->module()->getKey()))->Headings( useHeaders );
+                const bool oldHeadingsStatus = ((VerseKey*)(m_module->module()->getKey()))->isIntros();
+                ((VerseKey*)(m_module->module()->getKey()))->setIntros( useHeaders );
 
                 m_module->module()->getKey()->setText( key().toUtf8().constData() );
 
-                const bool oldStatus = m_module->module()->getSkipConsecutiveLinks();
+                const bool oldStatus = m_module->module()->isSkipConsecutiveLinks();
                 m_module->module()->setSkipConsecutiveLinks(true);
                 ( *( m_module->module() ) )--;
 
-                ((VerseKey*)(m_module->module()->getKey()))->Headings( oldHeadingsStatus );
+                ((VerseKey*)(m_module->module()->getKey()))->setIntros( oldHeadingsStatus );
                 m_module->module()->setSkipConsecutiveLinks(oldStatus);
 
-                if (!m_module->module()->Error()) {
+                if (!m_module->module()->popError()) {
                     setKey(QString::fromUtf8(m_module->module()->getKeyText())); // don't use fromUtf8
                 }
                 else {
@@ -326,7 +328,7 @@ bool CSwordVerseKey::previous( const JumpType type ) {
         emitAfterChanged();
         return ret;
     }
-    else if (Error()) {
+    else if (popError()) {
         return false;
     }
 

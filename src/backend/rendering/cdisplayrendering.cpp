@@ -34,7 +34,7 @@ QString CDisplayRendering::entryLink(const KeyTreeItem &item,
 
     const bool isBible = module && (module->type() == CSwordModuleInfo::Bible);
     CSwordVerseKey vk(module); //only valid for bible modules, i.e. isBible == true
-    vk.Headings(true);
+    vk.setIntros(true);
 
     if (isBible) {
         vk.setKey(item.key());

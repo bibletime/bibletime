@@ -58,8 +58,8 @@ const CLanguageMgr::LangMap& CLanguageMgr::availableLanguages() {
         QStringList abbrevs;
 
         foreach (const CSwordModuleInfo* mod,  mods) {
-            if (!abbrevs.contains(mod->module()->Lang())) {
-                abbrevs.append(mod->module()->Lang());
+            if (!abbrevs.contains(mod->module()->getLanguage())) {
+                abbrevs.append(mod->module()->getLanguage());
             }
         }
 

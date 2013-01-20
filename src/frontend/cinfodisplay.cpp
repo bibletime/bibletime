@@ -255,7 +255,7 @@ const QString CInfoDisplay::decodeCrossReference( const QString& data ) {
 
     if (module && (module->type() == CSwordModuleInfo::Bible)) {
         VerseKey vk;
-        sword::ListKey refs = vk.ParseVerseList((const char*)data.mid((pos == -1) ? 0 : pos + 1).toUtf8(), "Gen 1:1", true);
+        sword::ListKey refs = vk.parseVerseList((const char*)data.mid((pos == -1) ? 0 : pos + 1).toUtf8(), "Gen 1:1", true);
 
         for (int i = 0; i < refs.Count(); ++i) {
             SWKey* key = refs.getElement(i);
@@ -265,8 +265,8 @@ const QString CInfoDisplay::decodeCrossReference( const QString& data ) {
             CTextRendering::KeyTreeItem* itm = (CTextRendering::KeyTreeItem*)0; //explicit conversion for MS VS
             if (vk && vk->isBoundSet()) { //render a range of keys
                 itm = new CTextRendering::KeyTreeItem(
-                    QString::fromUtf8(vk->LowerBound().getText()),
-                    QString::fromUtf8(vk->UpperBound().getText()),
+                    QString::fromUtf8(vk->getLowerBound().getText()),
+                    QString::fromUtf8(vk->getUpperBound().getText()),
                     module,
                     settings
                 );

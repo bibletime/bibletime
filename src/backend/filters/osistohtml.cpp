@@ -258,7 +258,7 @@ bool Filters::OsisToHtml::handleToken(sword::SWBuf &buf, const char *token, swor
                 else {
                     //           qWarning("found note in %s", myUserData->key->getShortText());
                     buf.append(" <span class=\"footnote\" note=\"");
-                    buf.append(myModule->Name());
+                    buf.append(myModule->getName());
                     buf.append('/');
                     buf.append(myUserData->key->getShortText());
                     buf.append('/');
@@ -576,7 +576,7 @@ void Filters::OsisToHtml::renderReference(const char *osisRef, sword::SWBuf &buf
             ReferenceManager::ParseOptions options;
             options.refBase = QString::fromUtf8(myUserData->key->getText());
             options.refDestinationModule = QString(mod->name());
-            options.sourceLanguage = QString(myModule->Lang());
+            options.sourceLanguage = QString(myModule->getLanguage());
             options.destinationLanguage = QString("en");
 
             buf.append("<a href=\"");
