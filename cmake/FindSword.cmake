@@ -8,7 +8,11 @@ SET (REQUIRED_SWORD_VERSION 1.6.0)
 # SWORD_LIBRARY_DIR
 
 IF(MSVC)
-    SET(SWORD_WIN32_LIBRARY_PATH ../sword/lib/vcppmake/vc8/ICUDebug)
+    IF(CMAKE_BUILD_TYPE STREQUAL "Release")
+	    SET(SWORD_WIN32_LIBRARY_PATH ../sword/lib/vcppmake/vc8/Release)
+    ELSE(CMAKE_BUILD_TYPE STREQUAL "Release")
+	    SET(SWORD_WIN32_LIBRARY_PATH ../sword/lib/vcppmake/vc8/Debug)
+    ENDIF(CMAKE_BUILD_TYPE STREQUAL "Release")
     SET(SWORD_WIN32_INCLUDE_PATH ../sword/include)
 ENDIF(MSVC)
 
