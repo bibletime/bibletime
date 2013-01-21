@@ -224,7 +224,7 @@ IF (APPLE)
     SET_TARGET_PROPERTIES(${EXECUTABLE_NAME}
         PROPERTIES
             COMPILE_FLAGS   "-mmacosx-version-min=10.5 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/"
-            LINK_FLAGS      "-mmacosx-version-min=10.5 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/"
+            LINK_FLAGS      "-mmacosx-version-min=10.5 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/ -F /Library/Frameworks/"
     )
 ENDIF (APPLE)
 
