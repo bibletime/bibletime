@@ -13,8 +13,49 @@ IF(WIN32 AND NOT UNIX)
     # sure there is at least one set of four (4) backlasshes.
 
     # We need the libraries, and they're not pulled in automatically
-    INCLUDE(${QT_USE_FILE})
     SET(CMAKE_INSTALL_DEBUG_LIBRARIES TRUE)
+
+IF (Qt5Core_FOUND)
+    SET(QT_BINARY_DIR "${Qt5Core_DIR}/../../../bin")
+    INSTALL(FILES
+        "${QT_BINARY_DIR}/Qt5WebKitd.dll"
+        "${QT_BINARY_DIR}/Qt5Guid.dll"
+        "${QT_BINARY_DIR}/Qt5Xmld.dll"
+        "${QT_BINARY_DIR}/Qt5Networkd.dll"
+        "${QT_BINARY_DIR}/Qt5Cored.dll"
+        "${QT_BINARY_DIR}/Qt5Svgd.dll"
+        "${QT_BINARY_DIR}/Qt5XmlPatternsd.dll"
+        DESTINATION "${BT_DESTINATION}"
+        CONFIGURATIONS "Debug"
+    )
+    INSTALL(FILES
+        "${QT_BINARY_DIR}/Qt5WebKit.dll"
+        "${QT_BINARY_DIR}/Qt5Gui.dll"
+        "${QT_BINARY_DIR}/Qt5Xml.dll"
+        "${QT_BINARY_DIR}/Qt5Network.dll"
+        "${QT_BINARY_DIR}/Qt5Core.dll"
+        "${QT_BINARY_DIR}/Qt5Svg.dll"
+        "${QT_BINARY_DIR}/Qt5XmlPatterns.dll"
+        DESTINATION "${BT_DESTINATION}"
+        CONFIGURATIONS "Release"
+    )
+    SET(QT_PLUGINS_DIR "${Qt5Core_DIR}/../../../plugins")
+    INSTALL(FILES
+        "${QT_PLUGINS_DIR}/iconengines/qsvgicon4.dll"
+        DESTINATION "${BT_DESTINATION}/plugins/iconengines"
+        CONFIGURATIONS "Release"
+    )
+    INSTALL(FILES
+        "${QT_PLUGINS_DIR}/imageformats/qgif4.dll"
+        "${QT_PLUGINS_DIR}/imageformats/qico4.dll"
+        "${QT_PLUGINS_DIR}/imageformats/qjpeg4.dll"
+        "${QT_PLUGINS_DIR}/imageformats/qmng4.dll"
+        "${QT_PLUGINS_DIR}/imageformats/qsvg4.dll"
+        "${QT_PLUGINS_DIR}/imageformats/qtiff4.dll"
+        DESTINATION "${BT_DESTINATION}/plugins/imageformats"
+        CONFIGURATIONS "Release"
+    )
+ELSE (Qt5Core_FOUND)
     SET(QT_BINARY_DIR "${QT_LIBRARY_DIR}/../bin")
     INSTALL(FILES
         "${QT_BINARY_DIR}/QtWebKitd4.dll"
@@ -42,7 +83,6 @@ IF(WIN32 AND NOT UNIX)
         DESTINATION "${BT_DESTINATION}"
         CONFIGURATIONS "Release"
     )
-
     # Qt Plugins
     INSTALL(FILES
         "${QT_PLUGINS_DIR}/iconengines/qsvgicon4.dll"
@@ -59,17 +99,27 @@ IF(WIN32 AND NOT UNIX)
         DESTINATION "${BT_DESTINATION}/plugins/imageformats"
         CONFIGURATIONS "Release"
     )
+ENDIF (Qt5Core_FOUND)
 
     # This adds in the required Windows system libraries
     INSTALL(PROGRAMS ${MSVC_REDIST} DESTINATION bin)
     SET(CPACK_NSIS_EXTRA_INSTALL_COMMANDS "
-        ExecWait \\\"$INSTDIR\\\\bin\\\\vcredist_x86.exe  /q:a\\\"
+        ExecWait \\\"$INSTDIR\\\\bin\\\\vcredist_x86.exe  /q\\\"
         Delete   \\\"$INSTDIR\\\\bin\\\\vcredist_x86.exe\\\"
     ")
 
     # add the libsword.dll
     STRING(REPLACE ".lib" ".dll" SWORD_DLL "${SWORD_LIBRARY}")
     INSTALL(FILES ${SWORD_DLL} DESTINATION ${BT_DESTINATION}) # This will also take effect in the regular install
+
+    STRING(REPLACE ".lib" ".dll" CLUCENE_DLL "${CLUCENE_LIBRARY}")
+    INSTALL(FILES ${CLUCENE_DLL} DESTINATION ${BT_DESTINATION})
+
+    STRING(REPLACE ".lib" ".dll" CLUCENE_SHARED_DLL "${CLUCENE_SHARED_LIB}")
+    INSTALL(FILES ${CLUCENE_SHARED_DLL} DESTINATION ${BT_DESTINATION})
+
+    STRING(REPLACE ".lib" ".dll" ZLIB_DLL "${ZLIB_LIBRARY}")
+    INSTALL(FILES ${ZLIB_DLL} DESTINATION ${BT_DESTINATION}) # This will also take effect in the regular install
 
     # Some options for the CPack system.  These should be pretty self-evident
     SET(CPACK_PACKAGE_ICON "${CMAKE_CURRENT_SOURCE_DIR}\\\\pics\\\\icons\\\\bibletime.png")
