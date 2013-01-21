@@ -54,6 +54,7 @@ SET(TRIAL_INCLUDE_PATHS
     $ENV{CLUCENE_HOME}/include
     ${CMAKE_INSTALL_PREFIX}/include
     /usr/local/include
+    /opt/local/include
     /usr/include
     /sw/include
     /usr/pkg/include
