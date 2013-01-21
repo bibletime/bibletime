@@ -380,6 +380,7 @@ void BibleTime::initActions() {
             this,             SLOT(createReadDisplayWindow(CSwordModuleInfo*)));
 
     m_quitAction = m_actionCollection->action("quit");
+    m_quitAction->setMenuRole(QAction::QuitRole);
     Q_ASSERT(m_quitAction != 0);
     connect(m_quitAction, SIGNAL(triggered()),
             this,         SLOT(quit()));
@@ -556,11 +557,13 @@ void BibleTime::initActions() {
 
     m_setPreferencesAction = m_actionCollection->action("setPreferences");
     Q_ASSERT(m_setPreferencesAction != 0);
+    m_setPreferencesAction->setMenuRole( QAction::PreferencesRole );
     connect(m_setPreferencesAction, SIGNAL(triggered()),
             this,                   SLOT(slotSettingsOptions()));
 
     m_bookshelfManagerAction = m_actionCollection->action("bookshelfManager");
     Q_ASSERT(m_bookshelfManagerAction != 0);
+    //m_bookshelfManagerAction->setMenuRole( QAction::ApplicationSpecificRole );
     connect(m_bookshelfManagerAction, SIGNAL(triggered()),
             this,                     SLOT(slotSwordSetupDialog()));
 
@@ -576,6 +579,7 @@ void BibleTime::initActions() {
 
     m_aboutBibleTimeAction = m_actionCollection->action("aboutBibleTime");
     Q_ASSERT(m_aboutBibleTimeAction != 0);
+    m_aboutBibleTimeAction->setMenuRole( QAction::AboutRole );
     connect(m_aboutBibleTimeAction,  SIGNAL(triggered()),
             this,                    SLOT(slotOpenAboutDialog()) );
 
