@@ -105,6 +105,7 @@ SET(BT_SHARE_PATH "share/")
 IF (APPLE)
     SET(BT_DESTINATION "../MacOS/")
     SET(BT_SHARE_PATH "../share/")
+    SET(CMAKE_CXX_COMPILER "/usr/bin/g++")
 ENDIF (APPLE)
 
 # Define $bibletime_SOURCES
