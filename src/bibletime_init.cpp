@@ -376,6 +376,7 @@ void BibleTime::initActions() {
 
     // File menu actions:
     m_openWorkAction = new BtOpenWorkAction("GUI/mainWindow/openWorkAction/grouping", this);
+    Q_ASSERT(m_openWorkAction != 0);
     connect(m_openWorkAction, SIGNAL(triggered(CSwordModuleInfo*)),
             this,             SLOT(createReadDisplayWindow(CSwordModuleInfo*)));
 
@@ -563,7 +564,7 @@ void BibleTime::initActions() {
 
     m_bookshelfManagerAction = m_actionCollection->action("bookshelfManager");
     Q_ASSERT(m_bookshelfManagerAction != 0);
-    //m_bookshelfManagerAction->setMenuRole( QAction::ApplicationSpecificRole );
+    m_bookshelfManagerAction->setMenuRole( QAction::ApplicationSpecificRole );
     connect(m_bookshelfManagerAction, SIGNAL(triggered()),
             this,                     SLOT(slotSwordSetupDialog()));
 
@@ -678,12 +679,16 @@ void BibleTime::initMenubar() {
     connect(m_windowMenu, SIGNAL(aboutToShow()),
             this,         SLOT(slotWindowMenuAboutToShow()));
 
-    // Settings menu:
     m_settingsMenu = new QMenu(this);
     m_settingsMenu->addAction(m_setPreferencesAction);
     m_settingsMenu->addSeparator();
     m_settingsMenu->addAction(m_bookshelfManagerAction);
+
+    #ifndef Q_WS_MAC
+    // On MAC OS, the settings actions will be moved to a system menu item.
+    // Therefore the settings menu would be empty, so we do not show it.
     menuBar()->addMenu(m_settingsMenu);
+    #endif
 
     // Help menu:
     m_helpMenu = new QMenu(this);
@@ -730,14 +735,14 @@ void BibleTime::retranslateUi() {
 
     m_fileMenu->setTitle(tr("&File"));
     m_viewMenu->setTitle(tr("&View"));
-        m_toolBarsMenu->setTitle(tr("Toolbars"));
+    m_toolBarsMenu->setTitle(tr("Toolbars"));
 
     m_searchMenu->setTitle(tr("&Search"));
     m_windowMenu->setTitle(tr("&Window"));
-        m_openWindowsMenu->setTitle(tr("O&pen windows"));
-        m_windowArrangementMenu->setTitle(tr("&Arrangement mode"));
-        m_windowLoadProfileMenu->setTitle(tr("Sw&itch session"));
-        m_windowDeleteProfileMenu->setTitle(tr("&Delete session"));
+    m_openWindowsMenu->setTitle(tr("O&pen windows"));
+    m_windowArrangementMenu->setTitle(tr("&Arrangement mode"));
+    m_windowLoadProfileMenu->setTitle(tr("Sw&itch session"));
+    m_windowDeleteProfileMenu->setTitle(tr("&Delete session"));
     m_settingsMenu->setTitle(tr("Se&ttings"));
     m_helpMenu->setTitle(tr("&Help"));
 
