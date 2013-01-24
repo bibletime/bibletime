@@ -34,6 +34,7 @@
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"
 #include "frontend/bookmarks/cbookmarkindex.h"
+#include "frontend/settingsdialogs/btlanguagesettings.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
 
@@ -877,6 +878,15 @@ void BibleTime::initBackends() {
     qDebug() << "Using sword locales dir: " << util::directory::getSwordLocalesDir().absolutePath().toUtf8();
     sword::LocaleMgr::setSystemLocaleMgr(new sword::LocaleMgr(util::directory::getSwordLocalesDir().absolutePath().toUtf8()));
 #endif
+
+    /*
+      Set book names language if not set. This is a hack. We do this call here,
+      because we need to keep the setting displayed in BtLanguageSettingsPage in
+      sync with the language of the book names displayed, so that both would
+      always use the same setting.
+    */
+    BtLanguageSettingsPage::resetLanguage(); /// \todo refactor this hack
+
 
     CSwordBackend *backend = CSwordBackend::createInstance();
     backend->booknameLanguage(btConfig().value<QString>("language", QLocale::system().name()));

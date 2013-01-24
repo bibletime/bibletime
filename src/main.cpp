@@ -22,7 +22,6 @@
 #include "bibletime.h"
 #include "bibletime_dbus_adaptor.h"
 #include "bibletimeapp.h"
-#include "frontend/settingsdialogs/btlanguagesettings.h"
 #include "util/directory.h"
 
 
