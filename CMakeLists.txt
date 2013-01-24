@@ -56,8 +56,10 @@ ENDIF (NOT CMAKE_BUILD_TYPE STREQUAL "Release")
 LIST(APPEND HANDBOOK_LOCALE_LANGS ar cs de es fi fr hu it nl pt_BR)
 LIST(APPEND HOWTO_LOCALE_LANGS ar bg cs da de es fi fr it hu ko nl pt_BR ru)
 
+IF(NOT BT_FORCE_USE_QT4)
 # Automatically use Qt5 if available
 FIND_PACKAGE(Qt5Core QUIET)
+ENDIF()
 
 # Find required packages
 IF (Qt5Core_FOUND)
