@@ -382,15 +382,15 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Sw&amp;itch session</source>
-        <translation type="unfinished"></translation>
+        <translation>Sitzung &amp;wechseln</translation>
     </message>
     <message>
         <source>Session already exists</source>
-        <translation type="unfinished"></translation>
+        <translation>Sitzung existiert bereits</translation>
     </message>
     <message>
         <source>Session with the name &quot;%1&quot; already exists. Please provide a different name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Sitzung mit dem namen &quot;%1&quot; existiert bereits. Bitte geben Sie einen anderen Namen an.</translation>
     </message>
 </context>
 <context>
@@ -712,50 +712,50 @@ This file is distributed under the same license as the Bibetime package.</transl
     <name>BtConfig</name>
     <message>
         <source>Old testament</source>
-        <translation type="unfinished">Altes Testament</translation>
+        <translation>Altes Testament</translation>
     </message>
     <message>
         <source>Moses/Pentateuch/Torah</source>
-        <translation type="unfinished">Mose/Pentateuch/Torah</translation>
+        <translation>Mose/Pentateuch/Torah</translation>
     </message>
     <message>
         <source>History</source>
-        <translation type="unfinished">Geschichte</translation>
+        <translation>Geschichte</translation>
     </message>
     <message>
         <source>Prophets</source>
-        <translation type="unfinished">Propheten</translation>
+        <translation>Propheten</translation>
     </message>
     <message>
         <source>New testament</source>
-        <translation type="unfinished">Neues Testament</translation>
+        <translation>Neues Testament</translation>
     </message>
     <message>
         <source>Gospels</source>
-        <translation type="unfinished">Evangelien</translation>
+        <translation>Evangelien</translation>
     </message>
     <message>
         <source>Letters/Epistles</source>
-        <translation type="unfinished">Briefe/Episteln</translation>
+        <translation>Briefe/Episteln</translation>
     </message>
     <message>
         <source>Paul&apos;s Epistles</source>
-        <translation type="unfinished">Paulus-Briefe</translation>
+        <translation>Paulus-Briefe</translation>
     </message>
     <message>
         <source>Error loading configuration!</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler beim Laden der Konfiguration!</translation>
     </message>
     <message>
         <source>Failed to load BibleTime&apos;s configuration, because it appears that the configuration file corresponds to a newer version of BibleTime. This is likely caused by BibleTime being downgraded. Loading the new configuration file may result in &lt;b&gt;loss of data&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Do you still want to try to load the new configuration file? Press &quot;No&quot; to quit BibleTime immediately.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Konfiguration von BibleTime konnte nicht geladen werden, denn es scheint, dass die Konfiguration zu einer neueren Version von BibleTime gehört. Wahrscheinlich wurde eine ältere Version wieder installiert. Laden der Konfiguration &lt;b&gt;kann zu Datenverlust führen&lt;/b&gt;. Möchten Sie die Konfiguration trotzdem laden? Wählren Sie &quot;Nein&quot;, um BibleTime sofort zu beenden.</translation>
     </message>
 </context>
 <context>
     <name>BtConfigCore</name>
     <message>
         <source>Default Session</source>
-        <translation type="unfinished"></translation>
+        <translation>Standardsitzung</translation>
     </message>
 </context>
 <context>
@@ -830,6 +830,21 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <source>Description:</source>
         <translation>Beschreibung:</translation>
+    </message>
+</context>
+<context>
+    <name>BtFindWidget</name>
+    <message>
+        <source>Previous</source>
+        <translation>Voriger</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Nächster</translation>
+    </message>
+    <message>
+        <source>Match case</source>
+        <translation>Groß-/Kleinschreibung beachten</translation>
     </message>
 </context>
 <context>
@@ -1550,114 +1565,114 @@ shortcut</source>
     <name>BtStandardWorksTab</name>
     <message>
         <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
-        <translation type="unfinished">Standard-Werke werden genutzt, wenn kein bestimmtes Werk festgelegt wurde, zum Beispiel wenn ein Verweis auf eine Bibel oder ein Lexikon angeklickt wurde.</translation>
+        <translation>Standard-Werke werden genutzt, wenn kein bestimmtes Werk festgelegt wurde, zum Beispiel wenn ein Verweis auf eine Bibel oder ein Lexikon angeklickt wurde.</translation>
     </message>
     <message>
         <source>Bible:</source>
-        <translation type="unfinished">Bibel:</translation>
+        <translation>Bibel:</translation>
     </message>
     <message>
         <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
-        <translation type="unfinished">Die Standard-Bibel wird genutzt, wenn ein Verweis auf eine Bibel betätigt wird</translation>
+        <translation>Die Standard-Bibel wird genutzt, wenn ein Verweis auf eine Bibel betätigt wird</translation>
     </message>
     <message>
         <source>Commentary:</source>
-        <translation type="unfinished">Kommentar:</translation>
+        <translation>Kommentar:</translation>
     </message>
     <message>
         <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
-        <translation type="unfinished">Der Standard-Kommentar wird genutzt, wenn ein Verweis auf einen Kommentar betätigt wird</translation>
+        <translation>Der Standard-Kommentar wird genutzt, wenn ein Verweis auf einen Kommentar betätigt wird</translation>
     </message>
     <message>
         <source>Lexicon:</source>
-        <translation type="unfinished">Lexikon:</translation>
+        <translation>Lexikon:</translation>
     </message>
     <message>
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
-        <translation type="unfinished">Das Standard-Lexikon wird genutzt, wenn ein Verweis auf ein Lexikon betätigt wird</translation>
+        <translation>Das Standard-Lexikon wird genutzt, wenn ein Verweis auf ein Lexikon betätigt wird</translation>
     </message>
     <message>
         <source>Daily devotional:</source>
-        <translation type="unfinished">Andachtsbuch:</translation>
+        <translation>Andachtsbuch:</translation>
     </message>
     <message>
         <source>The standard devotional will be used to display a short start up devotional</source>
-        <translation type="unfinished">Die Standard-Andacht wird für die Anzeige einer kurzen Start-Andacht genutzt</translation>
+        <translation>Die Standard-Andacht wird für die Anzeige einer kurzen Start-Andacht genutzt</translation>
     </message>
     <message>
         <source>Hebrew Strong&apos;s lexicon:</source>
-        <translation type="unfinished">Hebräisches Strong-Lexikon:</translation>
+        <translation>Hebräisches Strong-Lexikon:</translation>
     </message>
     <message>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
-        <translation type="unfinished">Das Standard-Hebräisch-Lexikon wird genutzt, wenn ein Verweis auf ein Hebräisch-Lexikon betätigt wird</translation>
+        <translation>Das Standard-Hebräisch-Lexikon wird genutzt, wenn ein Verweis auf ein Hebräisch-Lexikon betätigt wird</translation>
     </message>
     <message>
         <source>Greek Strong&apos;s lexicon:</source>
-        <translation type="unfinished">Griechisches Strong-Lexikon:</translation>
+        <translation>Griechisches Strong-Lexikon:</translation>
     </message>
     <message>
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
-        <translation type="unfinished">Das Standard-Griechisch-Lexikon wird genutzt, wenn ein Verweis auf ein Griechisch-Lexikon betätigt wird</translation>
+        <translation>Das Standard-Griechisch-Lexikon wird genutzt, wenn ein Verweis auf ein Griechisch-Lexikon betätigt wird</translation>
     </message>
     <message>
         <source>Hebrew morphological lexicon:</source>
-        <translation type="unfinished">Hebräisches Morphologie-Lexikon:</translation>
+        <translation>Hebräisches Morphologie-Lexikon:</translation>
     </message>
     <message>
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
-        <translation type="unfinished">Das Standard-Morphologie-Lexikon für hebräische Texte wird genutzt, wenn ein Verweis auf eine morphologische Markierung in einem Hebräisch-Text betätigt wird</translation>
+        <translation>Das Standard-Morphologie-Lexikon für hebräische Texte wird genutzt, wenn ein Verweis auf eine morphologische Markierung in einem Hebräisch-Text betätigt wird</translation>
     </message>
     <message>
         <source>Greek morphological lexicon:</source>
-        <translation type="unfinished">Griechisches Morphologie-Lexikon:</translation>
+        <translation>Griechisches Morphologie-Lexikon:</translation>
     </message>
     <message>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
-        <translation type="unfinished">Das Standard-Morphologie-Lexikon für griechische Texte wird genutzt, wenn ein Verweis auf eine morphologische Markierung in einem Griechisch-Text betätigt wird</translation>
+        <translation>Das Standard-Morphologie-Lexikon für griechische Texte wird genutzt, wenn ein Verweis auf eine morphologische Markierung in einem Griechisch-Text betätigt wird</translation>
     </message>
 </context>
 <context>
     <name>BtTextFiltersTab</name>
     <message>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
-        <translation type="unfinished">Filter kontrollieren die Text-Erscheinung. Hier können Sie Standard-Einstellungen für alle Filter spezifizieren. Sie können diese Einstellungen in jedem Anzeige-Fenster übergehen.</translation>
+        <translation>Filter kontrollieren die Text-Erscheinung. Hier können Sie Standard-Einstellungen für alle Filter spezifizieren. Sie können diese Einstellungen in jedem Anzeige-Fenster übergehen.</translation>
     </message>
     <message>
         <source>Insert line break after each verse</source>
-        <translation type="unfinished">Zeilenumbruch nach jedem Vers einfügen</translation>
+        <translation>Zeilenumbruch nach jedem Vers einfügen</translation>
     </message>
     <message>
         <source>Show verse numbers</source>
-        <translation type="unfinished">Versnummern anzeigen</translation>
+        <translation>Versnummern anzeigen</translation>
     </message>
     <message>
         <source>Show section headings</source>
-        <translation type="unfinished">Abschnittsüberschriften anzeigen</translation>
+        <translation>Abschnittsüberschriften anzeigen</translation>
     </message>
     <message>
         <source>Show scripture cross-references</source>
-        <translation type="unfinished">Querverweise auf Bibelstellen anzeigen</translation>
+        <translation>Querverweise auf Bibelstellen anzeigen</translation>
     </message>
     <message>
         <source>Show Greek accents</source>
-        <translation type="unfinished">Griechische Akzente anzeigen</translation>
+        <translation>Griechische Akzente anzeigen</translation>
     </message>
     <message>
         <source>Show Hebrew vowel points</source>
-        <translation type="unfinished">Hebräische Vokalzeichen anzeigen</translation>
+        <translation>Hebräische Vokalzeichen anzeigen</translation>
     </message>
     <message>
         <source>Show Hebrew cantillation marks</source>
-        <translation type="unfinished">Hebräische Kantillationszeichen anzeigen</translation>
+        <translation>Hebräische Kantillationszeichen anzeigen</translation>
     </message>
     <message>
         <source>Show morph segmentation</source>
-        <translation type="unfinished">Morphologische Segmentierung anzeigen</translation>
+        <translation>Morphologische Segmentierung anzeigen</translation>
     </message>
     <message>
         <source>Use textual variants</source>
-        <translation type="unfinished">Textvarianten verwenden</translation>
+        <translation>Textvarianten verwenden</translation>
     </message>
 </context>
 <context>
@@ -2405,15 +2420,15 @@ shortcut</source>
     </message>
     <message>
         <source>Save Text?</source>
-        <translation type="unfinished">Text speichern?</translation>
+        <translation>Text speichern?</translation>
     </message>
     <message>
         <source>Save text before closing?</source>
-        <translation type="unfinished">Den Text vor dem Schließen speichern?</translation>
+        <translation>Den Text vor dem Schließen speichern?</translation>
     </message>
     <message>
         <source>Save changed text?</source>
-        <translation type="unfinished">Geänderten Text speichern?</translation>
+        <translation>Geänderten Text speichern?</translation>
     </message>
 </context>
 <context>
@@ -3834,15 +3849,15 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Error while writing to file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler beim Schreiben der Datei.</translation>
     </message>
     <message>
         <source>Please check that enough disk space is available.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bitte prüfen Sie, ob ausreichend Festplattenplatz verfügbar ist.</translation>
     </message>
     <message>
         <source>The file couldn&apos;t be opened for saving.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei konnte nicht zum Schreiben geöffnet werden.</translation>
     </message>
 </context>
 <context>
@@ -4568,43 +4583,50 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     <name>findTextDialog</name>
     <message>
         <source>Find Text</source>
-        <translation>Text finden</translation>
+        <translation type="obsolete">Text finden</translation>
     </message>
     <message>
         <source>The text you want to search for</source>
-        <translation>Der zu suchende Text</translation>
+        <translation type="obsolete">Der zu suchende Text</translation>
     </message>
     <message>
         <source>Case &amp;sensitive</source>
-        <translation>Groß-/Kleinschreibung berück&amp;sichtigen</translation>
+        <translation type="obsolete">Groß-/Kleinschreibung berück&amp;sichtigen</translation>
     </message>
     <message>
         <source>Find the previous location of the text</source>
-        <translation>Die vorherige Textstelle aufsuchen</translation>
+        <translation type="obsolete">Die vorherige Textstelle aufsuchen</translation>
     </message>
     <message>
         <source>&amp;Previous</source>
-        <translation>&amp;Vorherige</translation>
+        <translation type="obsolete">&amp;Vorherige</translation>
     </message>
     <message>
         <source>Find the next location of the text</source>
-        <translation>Die folgende Textstelle aufsuchen</translation>
+        <translation type="obsolete">Die folgende Textstelle aufsuchen</translation>
     </message>
     <message>
         <source>&amp;Next</source>
-        <translation>&amp;Folgende</translation>
+        <translation type="obsolete">&amp;Folgende</translation>
     </message>
     <message>
         <source>Close the dialog</source>
-        <translation>Dialog schließen</translation>
+        <translation type="obsolete">Dialog schließen</translation>
     </message>
     <message>
         <source>&amp;Close</source>
-        <translation>&amp;Schließen</translation>
+        <translation type="obsolete">&amp;Schließen</translation>
     </message>
     <message>
         <source>Search with case sensitivity</source>
-        <translation>Suche mit Unterscheidung von Klein- und Großbuchstaben</translation>
+        <translation type="obsolete">Suche mit Unterscheidung von Klein- und Großbuchstaben</translation>
+    </message>
+</context>
+<context>
+    <name>findWidget</name>
+    <message>
+        <source>The text you want to search for</source>
+        <translation>Der Text, nach dem Sie suchen möchten</translation>
     </message>
 </context>
 </TS>

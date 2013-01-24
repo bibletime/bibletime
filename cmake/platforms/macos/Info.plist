@@ -19,5 +19,8 @@
 
     <key>CFBundlePackageType</key>
     <string>APPL</string>
+
+    <key>MDItemKeywords</key>
+    <string>BibleTime Bible bible time study</string>
 </dict>
 </plist>

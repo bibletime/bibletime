@@ -376,10 +376,12 @@ void BibleTime::initActions() {
 
     // File menu actions:
     m_openWorkAction = new BtOpenWorkAction("GUI/mainWindow/openWorkAction/grouping", this);
+    Q_ASSERT(m_openWorkAction != 0);
     connect(m_openWorkAction, SIGNAL(triggered(CSwordModuleInfo*)),
             this,             SLOT(createReadDisplayWindow(CSwordModuleInfo*)));
 
     m_quitAction = m_actionCollection->action("quit");
+    m_quitAction->setMenuRole(QAction::QuitRole);
     Q_ASSERT(m_quitAction != 0);
     connect(m_quitAction, SIGNAL(triggered()),
             this,         SLOT(quit()));
@@ -556,11 +558,13 @@ void BibleTime::initActions() {
 
     m_setPreferencesAction = m_actionCollection->action("setPreferences");
     Q_ASSERT(m_setPreferencesAction != 0);
+    m_setPreferencesAction->setMenuRole( QAction::PreferencesRole );
     connect(m_setPreferencesAction, SIGNAL(triggered()),
             this,                   SLOT(slotSettingsOptions()));
 
     m_bookshelfManagerAction = m_actionCollection->action("bookshelfManager");
     Q_ASSERT(m_bookshelfManagerAction != 0);
+    m_bookshelfManagerAction->setMenuRole( QAction::ApplicationSpecificRole );
     connect(m_bookshelfManagerAction, SIGNAL(triggered()),
             this,                     SLOT(slotSwordSetupDialog()));
 
@@ -576,6 +580,7 @@ void BibleTime::initActions() {
 
     m_aboutBibleTimeAction = m_actionCollection->action("aboutBibleTime");
     Q_ASSERT(m_aboutBibleTimeAction != 0);
+    m_aboutBibleTimeAction->setMenuRole( QAction::AboutRole );
     connect(m_aboutBibleTimeAction,  SIGNAL(triggered()),
             this,                    SLOT(slotOpenAboutDialog()) );
 
@@ -674,12 +679,18 @@ void BibleTime::initMenubar() {
     connect(m_windowMenu, SIGNAL(aboutToShow()),
             this,         SLOT(slotWindowMenuAboutToShow()));
 
-    // Settings menu:
+    #ifndef Q_WS_MAC
     m_settingsMenu = new QMenu(this);
     m_settingsMenu->addAction(m_setPreferencesAction);
     m_settingsMenu->addSeparator();
     m_settingsMenu->addAction(m_bookshelfManagerAction);
     menuBar()->addMenu(m_settingsMenu);
+    #else
+    // On MAC OS, the settings actions will be moved to a system menu item.
+    // Therefore the settings menu would be empty, so we do not show it.
+    m_fileMenu->addAction(m_setPreferencesAction);
+    m_fileMenu->addAction(m_bookshelfManagerAction);
+    #endif
 
     // Help menu:
     m_helpMenu = new QMenu(this);
@@ -726,15 +737,20 @@ void BibleTime::retranslateUi() {
 
     m_fileMenu->setTitle(tr("&File"));
     m_viewMenu->setTitle(tr("&View"));
-        m_toolBarsMenu->setTitle(tr("Toolbars"));
+    m_toolBarsMenu->setTitle(tr("Toolbars"));
 
     m_searchMenu->setTitle(tr("&Search"));
     m_windowMenu->setTitle(tr("&Window"));
-        m_openWindowsMenu->setTitle(tr("O&pen windows"));
-        m_windowArrangementMenu->setTitle(tr("&Arrangement mode"));
-        m_windowLoadProfileMenu->setTitle(tr("Sw&itch session"));
-        m_windowDeleteProfileMenu->setTitle(tr("&Delete session"));
+    m_openWindowsMenu->setTitle(tr("O&pen windows"));
+    m_windowArrangementMenu->setTitle(tr("&Arrangement mode"));
+    m_windowLoadProfileMenu->setTitle(tr("Sw&itch session"));
+    m_windowDeleteProfileMenu->setTitle(tr("&Delete session"));
+
+    #ifndef Q_WS_MAC
+    // This item is not present on Mac OS
     m_settingsMenu->setTitle(tr("Se&ttings"));
+    #endif
+
     m_helpMenu->setTitle(tr("&Help"));
 
     #ifdef BT_DEBUG

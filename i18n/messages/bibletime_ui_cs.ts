@@ -806,6 +806,21 @@
     </message>
 </context>
 <context>
+    <name>BtFindWidget</name>
+    <message>
+        <source>Previous</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Match case</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>BtFontChooserWidget</name>
     <message>
         <source>Font name:</source>
@@ -4206,43 +4221,50 @@ Language name ppk</extracomment>
     <name>findTextDialog</name>
     <message>
         <source>Find Text</source>
-        <translation>Najíd text</translation>
+        <translation type="obsolete">Najíd text</translation>
     </message>
     <message>
         <source>The text you want to search for</source>
-        <translation>Text, který chcete hledat</translation>
+        <translation type="obsolete">Text, který chcete hledat</translation>
     </message>
     <message>
         <source>Case &amp;sensitive</source>
-        <translation>&amp;Rozlišovat velikost písmen</translation>
+        <translation type="obsolete">&amp;Rozlišovat velikost písmen</translation>
     </message>
     <message>
         <source>Find the previous location of the text</source>
-        <translation>Najít předchozí umístění textu</translation>
+        <translation type="obsolete">Najít předchozí umístění textu</translation>
     </message>
     <message>
         <source>&amp;Previous</source>
-        <translation>&amp;Předchozí</translation>
+        <translation type="obsolete">&amp;Předchozí</translation>
     </message>
     <message>
         <source>Find the next location of the text</source>
-        <translation>Najít další umístění textu</translation>
+        <translation type="obsolete">Najít další umístění textu</translation>
     </message>
     <message>
         <source>&amp;Next</source>
-        <translation>&amp;Další</translation>
+        <translation type="obsolete">&amp;Další</translation>
     </message>
     <message>
         <source>Close the dialog</source>
-        <translation>Uzavře dialog</translation>
+        <translation type="obsolete">Uzavře dialog</translation>
     </message>
     <message>
         <source>&amp;Close</source>
-        <translation>&amp;Zavřít</translation>
+        <translation type="obsolete">&amp;Zavřít</translation>
     </message>
     <message>
         <source>Search with case sensitivity</source>
-        <translation>Rozlišovat velikost písmen</translation>
+        <translation type="obsolete">Rozlišovat velikost písmen</translation>
+    </message>
+</context>
+<context>
+    <name>findWidget</name>
+    <message>
+        <source>The text you want to search for</source>
+        <translation type="unfinished">Text, který chcete hledat</translation>
     </message>
 </context>
 </TS>

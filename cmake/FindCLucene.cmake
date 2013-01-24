@@ -29,11 +29,11 @@ ENDIF(EXISTS ${PROJECT_CMAKE}/CLuceneConfig.cmake)
 
 IF(MSVC)
     IF(CMAKE_BUILD_TYPE STREQUAL "Release")
-        SET(WIN_CLUCENE_SEARCH_PATH ../clucene-core/src/CLucene/Release)
+        SET(WIN_CLUCENE_SEARCH_PATH ../clucene-core/bin/Release ../clucene-core/src/CLucene/Release)
     ELSE(CMAKE_BUILD_TYPE STREQUAL "Release")
-        SET(WIN_CLUCENE_SEARCH_PATH ../clucene-core/src/CLucene/debug)
+        SET(WIN_CLUCENE_SEARCH_PATH ../clucene-core/bin/Debug ../clucene-core/src/CLucene/Debug)
     ENDIF(CMAKE_BUILD_TYPE STREQUAL "Release")
-    SET(WIN_CLUCENE_INCLUDE_PATH ../clucene-core/src)
+    SET(WIN_CLUCENE_INCLUDE_PATH ../clucene-core/src ../clucene-core/src/core)
 ELSE(MSVC)
     SET(WIN_CLUCENE_SEARCH_PATH "")
     SET(WIN_CLUCENE_INCLUDE_PATH "")
@@ -54,13 +54,15 @@ SET(TRIAL_INCLUDE_PATHS
     $ENV{CLUCENE_HOME}/include
     ${CMAKE_INSTALL_PREFIX}/include
     /usr/local/include
+    /opt/local/include
     /usr/include
     /sw/include
     /usr/pkg/include
     ${WIN_CLUCENE_INCLUDE_PATH}
+    ../clucene-core/src/shared
     )
 FIND_LIBRARY_WITH_DEBUG(CLUCENE_LIBRARY
-    NAMES clucene clucene-core
+    NAMES clucene clucene-core clucene-cored
     PATHS ${TRIAL_LIBRARY_PATHS})
 IF (CLUCENE_LIBRARY)
     MESSAGE(STATUS "Found CLucene library: ${CLUCENE_LIBRARY}")
@@ -72,10 +74,6 @@ FIND_PATH(CLUCENE_INCLUDE_DIR
 IF (CLUCENE_INCLUDE_DIR)
     MESSAGE(STATUS "Found CLucene include dir: ${CLUCENE_INCLUDE_DIR}")
 ENDIF (CLUCENE_INCLUDE_DIR)
-
-IF(WIN32)
-    SET(TRIAL_LIBRARY_PATHS ${CLUCENE_INCLUDE_DIR})
-ENDIF(WIN32)
 
 SET(CLUCENE_GOOD_VERSION TRUE)
 
@@ -97,8 +95,9 @@ IF (CLUCENE_LIBRARY_DIR)
         ENDIF (CLUCENE_VERSION STREQUAL "0.9.17")
         IF (CLUCENE_VERSION VERSION_GREATER "2.0.0")
 	    ADD_DEFINITIONS(-DCLUCENE2)
+		    MESSAGE(STATUS "Trial: ${TRIAL_LIBRARY_PATHS}")
             FIND_LIBRARY_WITH_DEBUG(CLUCENE_SHARED_LIB
-                NAMES clucene-shared
+                NAMES clucene-shared clucene-sharedd
                 PATHS ${TRIAL_LIBRARY_PATHS})
 
             IF (CLUCENE_SHARED_LIB)

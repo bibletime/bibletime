@@ -105,6 +105,7 @@ SET(BT_SHARE_PATH "share/")
 IF (APPLE)
     SET(BT_DESTINATION "../MacOS/")
     SET(BT_SHARE_PATH "../share/")
+    SET(CMAKE_CXX_COMPILER "/usr/bin/g++")
 ENDIF (APPLE)
 
 # Define $bibletime_SOURCES
@@ -223,8 +224,8 @@ IF (APPLE)
      # enable support MacOS 10.5+
     SET_TARGET_PROPERTIES(${EXECUTABLE_NAME}
         PROPERTIES
-            COMPILE_FLAGS   "-mmacosx-version-min=10.5 -isysroot /Developer/SDKs/MacOSX10.5.sdk"
-            LINK_FLAGS      "-mmacosx-version-min=10.5 -isysroot /Developer/SDKs/MacOSX10.5.sdk"
+            COMPILE_FLAGS   "-mmacosx-version-min=10.5 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/"
+            LINK_FLAGS      "-mmacosx-version-min=10.5 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/ -F /Library/Frameworks/"
     )
 ENDIF (APPLE)
 
@@ -238,8 +239,10 @@ IF (APPLE)
 ENDIF (APPLE)
 
 IF (MSVC)
-    SET(CMAKE_CXX_FLAGS_RELEASE "-DNO_DBUS -DSWUSINGDLL /MD  /Zc:wchar_t- /W1 /D_UNICODE /DUNICODE ")
-    SET(CMAKE_CXX_FLAGS_DEBUG   "-DNO_DBUS -DSWUSINGDLL /MDd /Zc:wchar_t- /W1 /D_UNICODE /DUNICODE /ZI")
+    SET(CMAKE_CXX_FLAGS_RELEASE "-DNO_DBUS -DSWUSINGDLL /MD  /Zc:wchar_t- /W1 /D_UNICODE /DUNICODE /Zc:wchar_t")
+    SET(CMAKE_CXX_FLAGS_DEBUG   "-DNO_DBUS -DSWUSINGDLL /MDd /Zc:wchar_t- /W1 /D_UNICODE /DUNICODE /Zc:wchar_t /Od")
+    SET_TARGET_PROPERTIES(${EXECUTABLE_NAME} PROPERTIES LINK_FLAGS_DEBUG "/SUBSYSTEM:WINDOWS")
+    SET_TARGET_PROPERTIES(${EXECUTABLE_NAME} PROPERTIES LINK_FLAGS_RELEASE "/SUBSYSTEM:WINDOWS")
 ELSE (MSVC)
     SET(CMAKE_CXX_FLAGS_RELEASE "-Wall -O2 -fexceptions")
     SET(CMAKE_CXX_FLAGS_DEBUG   "-Wall -Wextra -ggdb -fexceptions")
