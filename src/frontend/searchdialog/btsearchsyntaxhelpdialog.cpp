@@ -22,7 +22,6 @@ namespace Search {
 BtSearchSyntaxHelpDialog::BtSearchSyntaxHelpDialog(QWidget *parent, Qt::WindowFlags wflags)
     : QDialog(parent, wflags)
 {
-    setAttribute(Qt::WA_DeleteOnClose);
     resize(550, 340);
 
     QVBoxLayout *l = new QVBoxLayout;

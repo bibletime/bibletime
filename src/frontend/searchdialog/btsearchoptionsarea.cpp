@@ -339,8 +339,8 @@ void BtSearchOptionsArea::setupRanges() {
 }
 
 void BtSearchOptionsArea::syntaxHelp() {
-    // The dialog is deleted on close:
-    BtSearchSyntaxHelpDialog *dlg = new BtSearchSyntaxHelpDialog(this);
+    BtSearchSyntaxHelpDialog * dlg = new BtSearchSyntaxHelpDialog(this);
+    dlg->setAttribute(Qt::WA_DeleteOnClose);
     dlg->show();
 }
 
