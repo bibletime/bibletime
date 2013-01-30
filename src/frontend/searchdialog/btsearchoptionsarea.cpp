@@ -62,10 +62,6 @@ BtSearchOptionsArea::SearchType BtSearchOptionsArea::searchType() {
     return BtSearchOptionsArea::FullType;
 }
 
-QPushButton* BtSearchOptionsArea::searchButton() const {
-    return m_searchButton;
-}
-
 void BtSearchOptionsArea::setSearchText(const QString& text) {
     bool found = false;
     int i = 0;

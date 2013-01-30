@@ -58,7 +58,7 @@ class BtSearchOptionsArea : public QWidget {
 
         SearchType searchType();
 
-        QPushButton* searchButton() const;
+        inline QPushButton * searchButton() const { return m_searchButton; }
 
         /**
           Returns the list of used modules.
