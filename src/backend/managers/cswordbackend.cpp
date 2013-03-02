@@ -117,13 +117,12 @@ QList<const CSwordModuleInfo*> CSwordBackend::getConstPointerList(
 /** Initializes the Sword modules. */
 CSwordBackend::LoadError CSwordBackend::initModules(SetupChangedReason reason) {
     //  qWarning("globalSwordConfigPath is %s", globalConfPath);
-    LoadError ret = NoError;
 
     shutdownModules(); //remove previous modules
     m_dataModel.clear();
 
     sword::ModMap::iterator end = Modules.end();
-    ret = LoadError( Load() );
+    const LoadError ret = static_cast<LoadError>(Load());
 
     for (sword::ModMap::iterator it = Modules.begin(); it != end; ++it) {
         sword::SWModule* const curMod = (*it).second;
