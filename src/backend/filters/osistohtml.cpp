@@ -193,8 +193,7 @@ bool Filters::OsisToHtml::handleToken(sword::SWBuf &buf, const char *token, swor
                         }
                         else { //no prefix given
                             val = attrib;
-                            /// \bug  Same expression on both sides of '||':
-                            const bool skipFirst = ((val[0] == 'T') && ((val[1] == 'H') || (val[1] == 'H')));
+                            const bool skipFirst = ((val[0] == 'T') && ((val[1] == 'H') || (val[1] == 'G')));
                             attrValue.append( skipFirst ? val + 1 : val );
                         }
                     }
