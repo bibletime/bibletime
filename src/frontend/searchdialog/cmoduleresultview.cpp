@@ -95,48 +95,45 @@ void CModuleResultView::initConnections() {
             this, SLOT(executed(QTreeWidgetItem*, QTreeWidgetItem*)));
 }
 
-void CModuleResultView::setupTree(
-        const CSwordModuleSearch::Results &results,
-        const QString &searchedText)
+void CModuleResultView::setupTree(const CSwordModuleSearch::Results & results,
+                                  const QString & searchedText)
 {
+    /// \todo implement sorting in this method.
+
     clear();
 
     m_results = results;
-
-    /// \todo this class is for sorting
-    //util::CSortListViewItem* item = 0;
-    //util::CSortListViewItem* oldItem = 0;
-    QTreeWidgetItem* item = 0;
 
     qDeleteAll(m_strongsResults);
     m_strongsResults.clear();
 
     bool strongsAvailable = false;
 
-    Q_FOREACH(const CSwordModuleInfo *m, results.keys()) {
-        sword::ListKey result = results.value(m);
+    Q_FOREACH(const CSwordModuleInfo * m, results.keys()) {
+        /// \todo Remove this constructor hack once sword gets it right:
+        const int count = sword::ListKey(results.value(m)).Count();
+        QTreeWidgetItem * item = new QTreeWidgetItem(this,
+                                                     QStringList(m->name())
+                                                       << QString::number(count));
 
-        item = new QTreeWidgetItem(this, QStringList(m->name()) << QString::number(result.Count()) );
-        /// \todo item->setColumnSorting(1, util::CSortListViewItem::Number);
+        item->setIcon(0, util::tool::getIconForModule(m));
+        /*
+          We need to make a decision here.  Either don't show any Strong's
+          number translations, or show the first one in the search text, or
+          figure out how to show them all. I choose option number 2 at this time.
+        */
 
-        item->setIcon(0, util::tool::getIconForModule(m) );
-        //----------------------------------------------------------------------
-        // we need to make a decision here.  Either don't show any Strong's
-        // number translations, or show the first one in the search text, or
-        // figure out how to show them all.
-        // I choose option number 2 at this time.
-        //----------------------------------------------------------------------
-        int sstIndex, sTokenIndex; // strong search text index for finding "strong:"
-        if ((sstIndex = searchedText.indexOf("strong:", 0)) != -1) {
-            QString sNumber;
-            //--------------------------------------------------
-            // get the strongs number from the search text
-            //--------------------------------------------------
-            // first find the first space after "strong:"
-            //    this should indicate a change in search token
-            sstIndex = sstIndex + 7;
-            sTokenIndex = searchedText.indexOf(" ", sstIndex);
-            sNumber = searchedText.mid(sstIndex, sTokenIndex - sstIndex);
+        // strong search text index for finding "strong:"
+        int sstIndex = searchedText.indexOf("strong:", 0);
+        if (sstIndex != -1) {
+            /*
+              Get the strongs number from the search text. First find the first
+              space after "strong:". This should indicate a change in search
+              token
+            */
+            sstIndex += 7;
+            const int sTokenIndex = searchedText.indexOf(" ", sstIndex);
+            const QString sNumber(searchedText.mid(sstIndex, sTokenIndex - sstIndex));
 
             setupStrongsResults(m, results[m], item, sNumber);
 
@@ -145,7 +142,7 @@ void CModuleResultView::setupTree(
         }
     };
 
-    //Allow to hide the module strongs if there are any available
+    // Allow to hide the module strongs if there are any available
     setRootIsDecorated( strongsAvailable );
 }
 
