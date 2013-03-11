@@ -71,7 +71,7 @@ QString CSwordKey::renderedText(const CSwordKey::TextRenderType mode) {
         return QString::null;
 
     bool DoRender = mode != ProcessEntryAttributesOnly;
-    QString text = QString::fromUtf8(m_module->module()->RenderText(0, -1, DoRender));
+    QString text = QString::fromUtf8(m_module->module()->renderText(0, -1, DoRender));
     if (!DoRender)
         return QString::null;
 
@@ -133,7 +133,7 @@ QString CSwordKey::strippedText() {
         delete [] buffer;
     }
 
-    return QString::fromUtf8(m_module->module()->StripText());
+    return QString::fromUtf8(m_module->module()->stripText());
 }
 
 void CSwordKey::emitBeforeChanged() {

@@ -238,7 +238,7 @@ bool Filters::OsisToHtml::handleToken(sword::SWBuf &buf, const char *token, swor
                     buf.append("<span class=\"crossreference\">");
                     sword::SWBuf footnoteNumber = tag.getAttribute("swordFootnote");
                     sword::SWBuf footnoteBody = myUserData->entryAttributes["Footnote"][footnoteNumber]["body"];
-                    buf += myModule->RenderText(footnoteBody);
+                    buf += myModule->renderText(footnoteBody);
                 }
 
                 /* else if (type == "explanation") {

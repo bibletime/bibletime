@@ -139,7 +139,7 @@ QString CHTMLExportRendering::renderEntry(const KeyTreeItem& i, CSwordKey* k) {
         if (m_filterOptions.headings) {
 
             // only process EntryAttributes, do not render, this might destroy the EntryAttributes again
-            (*mod_Itr)->module()->RenderText(0, -1, 0);
+            (*mod_Itr)->module()->renderText(0, -1, 0);
 
             sword::AttributeValue::const_iterator it =
                 (*mod_Itr)->module()->getEntryAttributes()["Heading"]["Preverse"].begin();

@@ -37,6 +37,8 @@ class CEntryDisplay: public sword::SWDisplay {
                                    const DisplayOptions &displayOptions,
                                    const FilterOptions &filterOptions);
 
+        virtual char display(sword::SWModule& mod) { (void)mod; return 'c';}
+
 }; /* class CEntryDisplay */
 
 } /* namespace Rendering */

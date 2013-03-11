@@ -353,7 +353,7 @@ const QString CInfoDisplay::decodeFootnote( const QString& data ) {
         ["Footnote"][swordFootnote.toLatin1().data()]["body"].c_str();
 
     QString text = module->isUnicode() ? QString::fromUtf8(note) : QString(note);
-    text = QString::fromUtf8(module->module()->RenderText(
+    text = QString::fromUtf8(module->module()->renderText(
                                  module->isUnicode()
                                  ? (const char*)text.toUtf8()
                                  : (const char*)text.toLatin1()

@@ -318,7 +318,7 @@ bool CSwordModuleInfo::buildIndex() {
             // index the main text
             //at this point we have to make sure we disabled the strongs and the other options
             //so the plain filters won't include the numbers somehow.
-            lucene_utf8towcs(wcharBuffer, (const char*) textBuffer.append(m_module->StripText()), BT_MAX_LUCENE_FIELD_LENGTH);
+            lucene_utf8towcs(wcharBuffer, (const char*) textBuffer.append(m_module->stripText()), BT_MAX_LUCENE_FIELD_LENGTH);
             doc->add(*(new lucene::document::Field((const TCHAR*)_T("content"), (const TCHAR*)wcharBuffer, lucene::document::Field::STORE_NO | lucene::document::Field::INDEX_TOKENIZED)));
             textBuffer.resize(0); //clean up
 
