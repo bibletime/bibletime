@@ -1,3 +1,8 @@
+2013-03-02 Jaak Ristioja <jaak@ristioja.ee>
+    * Fixed search analysis save dialog filters.
+    * Fixed search analysis save asking for overwrite confirmation twice.
+    * Optimized and enhanced search analysis to output proper XHTML.
+
 2013-01-19 Greg Hellings <greg.hellings@gmail.com>
     * Added support for HTTP, HTTPS, SFTP transports in BibleTime
 

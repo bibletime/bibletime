@@ -62,10 +62,6 @@ BtSearchOptionsArea::SearchType BtSearchOptionsArea::searchType() {
     return BtSearchOptionsArea::FullType;
 }
 
-QPushButton* BtSearchOptionsArea::searchButton() const {
-    return m_searchButton;
-}
-
 void BtSearchOptionsArea::setSearchText(const QString& text) {
     bool found = false;
     int i = 0;
@@ -339,8 +335,8 @@ void BtSearchOptionsArea::setupRanges() {
 }
 
 void BtSearchOptionsArea::syntaxHelp() {
-    // The dialog is deleted on close:
-    BtSearchSyntaxHelpDialog *dlg = new BtSearchSyntaxHelpDialog(this);
+    BtSearchSyntaxHelpDialog * dlg = new BtSearchSyntaxHelpDialog(this);
+    dlg->setAttribute(Qt::WA_DeleteOnClose);
     dlg->show();
 }
 
@@ -421,7 +417,7 @@ void BtSearchOptionsArea::slotValidateText(const QString& /*newText*/) {
 } // namespace Search
 
 QDataStream &operator<<(QDataStream &out, const Search::BtSearchOptionsArea::SearchType &searchType) {
-    out << (qint8) searchType;
+    out << static_cast<qint8>(searchType);
     return out;
 }
 

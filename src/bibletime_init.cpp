@@ -450,6 +450,7 @@ void BibleTime::initActions() {
     m_showFormatToolbarAction->setChecked(btConfig().value<bool>("GUI/showFormatToolbarButtons", true));
     bool ok = connect(m_showFormatToolbarAction, SIGNAL(toggled(bool)),
                       this,                      SLOT(slotToggleFormatToolbar()));
+    Q_ASSERT(ok);
 
     m_toolbarsInEachWindow = m_actionCollection->action("showToolbarsInTextWindows");
     Q_ASSERT(m_toolbarsInEachWindow != 0);

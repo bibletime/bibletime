@@ -61,17 +61,6 @@ CSearchAnalysisItem::~CSearchAnalysisItem() {
     delete m_bufferPixmap;
 }
 
-/** Sets the resultcount of this item for the given module */
-void CSearchAnalysisItem::setCountForModule( const int moduleIndex, const int count) {
-    m_resultCountArray[moduleIndex] = count;
-}
-
-/** Returns the resultcount of this item for the given module */
-int CSearchAnalysisItem::getCountForModule( const int moduleIndex) {
-    return m_resultCountArray[moduleIndex];
-}
-
-
 bool CSearchAnalysisItem::hasHitsInAnyModule() {
     foreach (const int hits, m_resultCountArray) {
         if (hits) return true;

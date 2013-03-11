@@ -13,6 +13,7 @@
 #include <QFileDialog>
 #include <QHashIterator>
 #include <QTextCodec>
+#include <QTextDocument>
 #include "backend/keys/cswordversekey.h"
 #include "frontend/searchdialog/analysis/csearchanalysisitem.h"
 #include "frontend/searchdialog/analysis/csearchanalysislegenditem.h"
@@ -225,65 +226,83 @@ unsigned int CSearchAnalysisScene::getCount(const QString &book,
 void CSearchAnalysisScene::saveAsHTML() {
     typedef CSwordModuleSearch::Results::const_iterator RCI;
 
-    const QString fileName = QFileDialog::getSaveFileName(0, tr("Save Search Analysis"), QString::null, tr("HTML files (*.html;*.HTML;*.HTM;*.htm)") );
-    if (fileName.isEmpty()) return;
+    const QString fileName = QFileDialog::getSaveFileName(0,
+                                                          tr("Save Search Analysis"),
+                                                          QString::null,
+                                                          tr("XHTML files (*.html *.HTML *.HTM *.htm);;All files (*)"));
+    if (fileName.isEmpty())
+        return;
 
-    int count = 0;
-    QString countStr = "";
-    QString m_searchAnalysisHTML = "";
-    QString tableTitle = "";
-    QString tableTotals = "";
-    QString VerseRange = "";
-    const QString txtCSS = QString("<style type=\"text/css\">\ntd {border:1px solid black;}\nth {font-size: 130%; text-align:left; vertical-align:top;}\n</style>\n");
-    const QString metaEncoding = QString("<META http-equiv=Content-Type content=\"text/html; charset=utf-8\">");
-    CSwordVerseKey key(0);
-
-    key.setKey("Genesis 1:1");
-
-    CSearchAnalysisItem* analysisItem = m_itemList.value( key.book() );
-
-    QString text = "<html>\n<head>\n<title>" + tr("BibleTime Search Analysis") + "</title>\n" + txtCSS + metaEncoding + "</head>\n<body>\n";
-    text += "<table>\n<tr><th>" + tr("Search text :") + "</th><th>" + CSearchDialog::getSearchDialog()->searchText() + "</th></tr>\n";
-
-    tableTitle = "<tr><th align=\"left\">" + tr("Book") + "</th>";
-    tableTotals = "<tr><td align=\"left\">" + tr("Total hits") + "</td>";
+    QString text("<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+                 "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" "
+                 "\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">"
+                 "<html xmlns=\"http://www.w3.org/1999/xhtml\"><head><title>");
+    {
+        const QString title(tr("BibleTime Search Analysis"));
+        text += title;
+        text += "</title>"
+                "<style type=\"text/css\">"
+                    "body{background-color:#fff;color:#000}"
+                    "table{border-collapse:collapse}"
+                    "td{border:1px solid #333}"
+                    "th{font-size:130%;text-align:left;vertical-align:top}"
+                    "td,th{text-align:left;padding:0.2em 0.5em}"
+                    ".r{text-align:right}"
+                "</style>"
+                "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"/>"
+            "</head><body><h1>";
+        text += title;
+    }
+    text += "</h1><p><span style=\"font-weight:bold\">";
+    text += tr("Search text:");
+    text += "</span>&nbsp;";
+    text += Qt::escape(CSearchDialog::getSearchDialog()->searchText());
+    text += "</p><table><caption>";
+    text += tr("Results by work and book");
+    text += "</caption><tr><th>";
+    text += tr("Book");
+    text += "</th>";
 
     for (RCI it = m_results.begin(); it != m_results.end(); ++it) {
-        const CSwordModuleInfo *mod = it.key();
-        tableTitle += QString("<th align=\"left\">") + mod->name() + QString("</th>");
-
-        /// \warning This is a workaround for sword constness
-        sword::ListKey searchResult = it.value();
-        countStr.setNum(searchResult.Count());
-
-        tableTotals += QString("<td align=\"right\">") + countStr + QString("</td>");
+        text += "<th>";
+        text += Qt::escape(it.key()->name());
+        text += "</th>";
     }
-    tableTitle += QString("</tr>\n");
-    tableTotals += QString("</tr>\n");
+    text += "</tr>";
 
-    m_searchAnalysisHTML = "";
-    bool ok = true;
-    while (ok) {
-        m_searchAnalysisHTML += QString("<tr><td>") + key.book() + QString("</td>");
-        analysisItem = m_itemList.value( key.book() );
+    CSwordVerseKey key(0);
+    key.setKey("Genesis 1:1");
 
-        int moduleIndex = 0;
-        for (RCI it = m_results.begin(); it != m_results.end(); ++it) {
-            count = analysisItem->getCountForModule(moduleIndex);
-            countStr.setNum(count);
-            m_searchAnalysisHTML += QString("<td align=\"right\">") + countStr + QString("</td>");
+    do {
+        text += "<tr><td>";
+        const QString keyBook(key.book());
+        text += Qt::escape(keyBook);
+        text += "</td>";
 
-            ++moduleIndex;
+        int mi = 0; // Module index
+        for (RCI it = m_results.begin(); it != m_results.end(); ++it, ++mi) {
+            text += "<td class=\"r\">";
+            text += QString::number(m_itemList.value(keyBook)->getCountForModule(mi));
+            text += "</td>";
         }
-        m_searchAnalysisHTML += QString("</tr>\n");
-        ok = key.next(CSwordVerseKey::UseBook);
+        text += "</tr>";
+    } while (key.next(CSwordVerseKey::UseBook));
+    text += "<tr><th class=\"r\">";
+    text += tr("Total hits");
+    text += "</th>";
+
+    for (RCI it = m_results.begin(); it != m_results.end(); ++it) {
+        text += "<td class=\"r\">";
+        /// \warning This const_cast is a workaround for the sword Count() bug:
+        text += QString::number(const_cast<sword::ListKey &>(it.value()).Count());
+        text += "</td>";
     }
 
-    text += QString("<table>\n") + tableTitle + tableTotals + m_searchAnalysisHTML + QString("</table>\n");
-    text += QString("<center>") + tr("Created by <a href=\"http://www.bibletime.info/\">BibleTime</a>") + QString("</center>");
-    text += QString("</body></html>");
+    text += "</tr></table><p style=\"text-align:center;font-size:x-small\">";
+    text += tr("Created by <a href=\"http://www.bibletime.info/\">BibleTime</a>");
+    text += "</p></body></html>";
 
-    util::tool::savePlainFile(fileName, text, false, QTextCodec::codecForName("UTF8"));
+    util::tool::savePlainFile(fileName, text, true, QTextCodec::codecForName("UTF8"));
 }
 
 void CSearchAnalysisScene::resizeHeight(int height) {
@@ -291,4 +310,4 @@ void CSearchAnalysisScene::resizeHeight(int height) {
     slotResized();
 }
 
-}
+} // namespace Search {

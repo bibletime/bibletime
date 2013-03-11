@@ -29,15 +29,21 @@ class CSearchAnalysisItem : public QGraphicsRectItem {
                             const CSwordModuleSearch::Results &results);
 
         ~CSearchAnalysisItem();
-        /**
-        * Sets the resultcount of this item
-        */
-        void setCountForModule( const int moduleIndex, const int count);
 
         /**
-        * Returns the resultcount of this item
+          Sets the resultcount of this item.
         */
-        int getCountForModule( const int moduleIndex);
+        inline void setCountForModule(const int moduleIndex, const int count) {
+            m_resultCountArray[moduleIndex] = count;
+        }
+
+        /**
+          Returns the resultcount of this item.
+        */
+        inline int getCountForModule(const int moduleIndex) const {
+            return m_resultCountArray[moduleIndex];
+        }
+
         /**
         * Does one of the modules contain hits?
         */

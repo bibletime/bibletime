@@ -117,13 +117,12 @@ QList<const CSwordModuleInfo*> CSwordBackend::getConstPointerList(
 /** Initializes the Sword modules. */
 CSwordBackend::LoadError CSwordBackend::initModules(SetupChangedReason reason) {
     //  qWarning("globalSwordConfigPath is %s", globalConfPath);
-    LoadError ret = NoError;
 
     shutdownModules(); //remove previous modules
     m_dataModel.clear();
 
     sword::ModMap::iterator end = Modules.end();
-    ret = LoadError( Load() );
+    const LoadError ret = static_cast<LoadError>(Load());
 
     for (sword::ModMap::iterator it = Modules.begin(); it != end; ++it) {
         sword::SWModule* const curMod = (*it).second;
@@ -173,40 +172,31 @@ CSwordBackend::LoadError CSwordBackend::initModules(SetupChangedReason reason) {
 }
 
 void CSwordBackend::AddRenderFilters(sword::SWModule *module, sword::ConfigEntMap &section) {
-    sword::SWBuf moduleDriver;
-    sword::SWBuf sourceformat;
-    sword::ConfigEntMap::iterator entry;
-    bool noDriver = true;
-
-    sourceformat = ((entry = section.find("SourceType")) != section.end()) ? (*entry).second : (sword::SWBuf) "";
-    moduleDriver = ((entry = section.find("ModDrv")) != section.end()) ? (*entry).second : (sword::SWBuf) "";
-
-    if (sourceformat == "OSIS") {
-        module->addRenderFilter(&m_osisFilter);
-        noDriver = false;
-    }
-    else if (sourceformat == "ThML") {
-        module->addRenderFilter(&m_thmlFilter);
-        noDriver = false;
-    }
-    else if (sourceformat == "TEI") {
-        module->addRenderFilter(&m_teiFilter);
-        noDriver = false;
-    }
-    else if (sourceformat == "GBF") {
-        module->addRenderFilter(&m_gbfFilter);
-        noDriver = false;
-    }
-    else if (sourceformat == "PLAIN") {
-        module->addRenderFilter(&m_plainFilter);
-        noDriver = false;
-    }
-
-    if (noDriver) { //no driver found
-        if ( (moduleDriver == "RawCom") || (moduleDriver == "RawLD") ) {
+    sword::ConfigEntMap::const_iterator entry = section.find("SourceType");
+    if (entry != section.end()) {
+        if (entry->second == "OSIS") {
+            module->addRenderFilter(&m_osisFilter);
+            return;
+        } else if (entry->second == "ThML") {
+            module->addRenderFilter(&m_thmlFilter);
+            return;
+        } else if (entry->second == "TEI") {
+            module->addRenderFilter(&m_teiFilter);
+            return;
+        } else if (entry->second == "GBF") {
+            module->addRenderFilter(&m_gbfFilter);
+            return;
+        } else if (entry->second == "PLAIN") {
             module->addRenderFilter(&m_plainFilter);
-            noDriver = false;
+            return;
         }
+    }
+
+    // No driver found
+    entry = section.find("ModDrv");
+    if (entry != section.end()) {
+        if (entry->second == "RawCom" || entry->second == "RawLD")
+            module->addRenderFilter(&m_plainFilter);
     }
 }
 
