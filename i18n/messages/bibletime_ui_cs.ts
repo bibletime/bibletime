@@ -2155,15 +2155,7 @@ shortcut</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>HTML files (*.html;*.HTML;*.HTM;*.htm)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>BibleTime Search Analysis</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Search text :</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2176,6 +2168,18 @@ shortcut</source>
     </message>
     <message>
         <source>Created by &lt;a href=&quot;http://www.bibletime.info/&quot;&gt;BibleTime&lt;/a&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>XHTML files (*.html *.HTML *.HTM *.htm);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Results by work and book</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
