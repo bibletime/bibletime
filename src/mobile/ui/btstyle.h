@@ -1,0 +1,119 @@
+#ifndef BT_STYLE_H
+#define BT_STYLE_H
+
+#include <QObject>
+#include <QColor>
+
+namespace btm {
+
+class BtStyle : public QObject {
+    Q_OBJECT
+
+    Q_PROPERTY(QColor button   READ getButton NOTIFY changed)
+    Q_PROPERTY(QColor buttonBackground   READ getButtonBackground NOTIFY changed)
+    Q_PROPERTY(QColor buttonText   READ getButtonText NOTIFY changed)
+    Q_PROPERTY(QColor buttonHighlightedText   READ getButtonHighlightedText NOTIFY changed)
+    Q_PROPERTY(QColor buttonBorder   READ getButtonBorder NOTIFY changed)
+    Q_PROPERTY(int    buttonRadius   READ getButtonRadius NOTIFY changed)
+
+    Q_PROPERTY(QColor buttonGradient0   READ getButtonGradient0 NOTIFY changed)
+    Q_PROPERTY(QColor buttonGradient1   READ getButtonGradient1 NOTIFY changed)
+    Q_PROPERTY(QColor buttonGradient2   READ getButtonGradient2 NOTIFY changed)
+    Q_PROPERTY(QColor buttonGradient3   READ getButtonGradient3 NOTIFY changed)
+
+
+    Q_PROPERTY(QColor windowTab READ getWindowTab NOTIFY changed)
+    Q_PROPERTY(QColor windowTabSelected READ getWindowTabSelected NOTIFY changed)
+    Q_PROPERTY(QColor windowTabText READ getWindowTabText NOTIFY changed)
+    Q_PROPERTY(QColor windowTabTextSelected READ getWindowTabTextSelected NOTIFY changed)
+
+    Q_PROPERTY(QColor menu   READ getMenu NOTIFY changed)
+    Q_PROPERTY(QColor menuBorder   READ getMenuBorder NOTIFY changed)
+    Q_PROPERTY(QColor menuText   READ getMenuText NOTIFY changed)
+    Q_PROPERTY(int    menuHeight   READ getMenuHeight() NOTIFY changed)
+
+    Q_PROPERTY(QColor toolbar   READ getToolbar NOTIFY changed)
+    Q_PROPERTY(QColor toolbarButton   READ getToolbarButton NOTIFY changed)
+    Q_PROPERTY(QColor toolbarButtonText   READ getToolbarButtonText NOTIFY changed)
+
+public:
+
+    enum Style {
+        gnome = 1,
+        android = 2
+    };
+
+    Q_INVOKABLE void setStyle(int style);
+
+    BtStyle(QObject *parent = 0);
+
+    QColor getButton() const;
+    void setButton(const QColor& color);
+
+    QColor getButtonBackground() const;
+    void setButtonBackground(const QColor& color);
+
+    QColor getButtonText() const;
+    void setButtonText(const QColor& color);
+
+    QColor getButtonHighlightedText() const;
+    void setButtonHighlightedText(const QColor& color);
+
+    QColor getButtonBorder() const;
+    void setButtonBorder(const QColor& color);
+
+    int getButtonRadius() const;
+    void setButtonRadius(int radius);
+
+    QColor getButtonGradient0() const;
+    void setButtonGradient0(const QColor& color);
+
+    QColor getButtonGradient1() const;
+    void setButtonGradient1(const QColor& color);
+
+    QColor getButtonGradient2() const;
+    void setButtonGradient2(const QColor& color);
+
+    QColor getButtonGradient3() const;
+    void setButtonGradient3(const QColor& color);
+
+    QColor getWindowTab() const;
+    void setWindowTab(const QColor& color);
+
+    QColor getWindowTabSelected() const;
+    void setWindowTabSelected(const QColor& color);
+
+    QColor getWindowTabText() const;
+    void setWindowTabText(const QColor& color);
+
+    QColor getWindowTabTextSelected() const;
+    void setWindowTabTextSelected(const QColor& color);
+
+    QColor getMenu() const;
+    void setMenu(const QColor& color);
+
+    QColor getMenuBorder() const;
+    void setMenuBorder(const QColor& color);
+
+    QColor getMenuText() const;
+    void setMenuText(const QColor& color);
+
+    int getMenuHeight() const;
+    void setMenuHeight(int height);
+
+    QColor getToolbar() const;
+    void setToolbar(const QColor& color);
+
+    QColor getToolbarButton() const;
+    void setToolbarButton(const QColor& color);
+
+    QColor getToolbarButtonText() const;
+    void setToolbarButtonText(const QColor& color);
+
+signals:
+    void changed();
+};
+
+} // end namespace
+
+#endif
