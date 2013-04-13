@@ -77,6 +77,19 @@ CDisplayTemplateMgr::CDisplayTemplateMgr(QString & errorMessage) {
     errorMessage = QString::null;
 }
 
+static QString readTemplate(const QString& templateFilePath)
+{
+    QFile file(templateFilePath);
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+        return "";
+    QString templateText;
+    while (!file.atEnd()) {
+        QByteArray line = file.readLine();
+        templateText += line;
+    }
+    return templateText;
+}
+
 QString CDisplayTemplateMgr::fillTemplate(const QString & name,
                                           const QString & content,
                                           const Settings & settings) const
@@ -186,8 +199,11 @@ QString CDisplayTemplateMgr::fillTemplate(const QString & name,
           .replace("#MODNAME#", moduleName)
           .replace("#DISPLAY_TEMPLATES_PATH#", DU::getDisplayTemplatesDir().absolutePath());
 
-    if (templateIsCss)
-        output.replace("#THEME_STYLE#", m_cssMap[name]);
+    if (templateIsCss) {
+        QString templateFilePath = m_cssMap[ name ];
+        QString templateText = readTemplate(templateFilePath);
+        output.replace("#THEME_STYLE#", templateText);
+    }
 
     return output;
 }
@@ -216,5 +232,5 @@ void CDisplayTemplateMgr::loadCSSTemplate(const QString & filename) {
     const QFileInfo fi(filename);
     Q_ASSERT(fi.isFile());
     if (fi.isReadable())
-        m_cssMap.insert(fi.fileName(), fi.absoluteFilePath());
+        m_cssMap.insert(fi.fileName(), filename);
 }
