@@ -154,10 +154,14 @@ LINK_DIRECTORIES(
     ${SWORD_LIBRARY_DIR}
 )
 
-SET(EXECUTABLE_NAME "bibletime")
-IF (APPLE)
-    SET(EXECUTABLE_NAME "BibleTime")
-ENDIF (APPLE)
+IF (${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
+    SET(EXECUTABLE_NAME "btm")
+ELSE (${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
+    SET(EXECUTABLE_NAME "bibletime")
+    IF (APPLE)
+        SET(EXECUTABLE_NAME "BibleTime")
+    ENDIF (APPLE)
+ENDIF (${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
 
 
 # Define rules to generate ${bibletime_UI_translations} files
@@ -167,6 +171,7 @@ SET(common_bibletime_SOURCES
     ${bibletime_SOURCES}
     ${bibletime_UIS_H}
     ${bibletime_MOC_SOURCES}
+    ${bibletime_QML_FILES}
     ${bibletime_RC}
     ${bibletime_UI_translations}
 )
@@ -246,8 +251,8 @@ IF (MSVC)
     SET_TARGET_PROPERTIES(${EXECUTABLE_NAME} PROPERTIES LINK_FLAGS_DEBUG "/SUBSYSTEM:WINDOWS")
     SET_TARGET_PROPERTIES(${EXECUTABLE_NAME} PROPERTIES LINK_FLAGS_RELEASE "/SUBSYSTEM:WINDOWS")
 ELSE (MSVC)
-    SET(CMAKE_CXX_FLAGS_RELEASE "-Wall -O2 -fexceptions")
-    SET(CMAKE_CXX_FLAGS_DEBUG   "-Wall -Wextra -ggdb -fexceptions")
+    SET(CMAKE_CXX_FLAGS_RELEASE "-Wall -O2 -fpie -fexceptions")
+    SET(CMAKE_CXX_FLAGS_DEBUG   "-Wall -Wextra -ggdb -fpie -fexceptions")
 ENDIF (MSVC)
 
 
@@ -278,6 +283,10 @@ INSTALL(FILES "src/frontend/display/bthtml.js"
 # license.html
 INSTALL(FILES "docs/license.html"
     DESTINATION "${BT_SHARE_PATH}bibletime/license/"
+)
+# qml files
+INSTALL(FILES ${bibletime_QML_FILES}
+    DESTINATION "${BT_SHARE_PATH}qml/"
 )
 # splash screen
 INSTALL(FILES "pics/startuplogo.png" "pics/startuplogo_christmas.png" "pics/startuplogo_easter.jpg"
