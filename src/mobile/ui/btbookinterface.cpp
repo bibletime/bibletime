@@ -2,7 +2,6 @@
 #include "btbookinterface.h"
 
 #include "backend/config/btconfig.h"
-//#include "backend/drivers/cswordbiblemoduleinfo.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/drivers/cswordbookmoduleinfo.h"
 #include "backend/keys/cswordkey.h"
@@ -12,7 +11,7 @@
 #include "backend/rendering/cdisplayrendering.h"
 #include "mobile/btmmain.h"
 #include "mobile/ui/bookmodulechooser.h"
-//#include "mobile/ui/versechooser.h"
+#include "mobile/ui/bookkeychooser.h"
 #include "mobile/ui/viewmanager.h"
 #include <QDebug>
 #include <QFile>
@@ -45,8 +44,11 @@ QString BtBookInterface::getText() const {
         CSwordBackend::instance()->getConstPointerList(moduleList);
     Rendering::CEntryDisplay* display = modules.first()->getDisplay();
 
-    QString key;
-    if (m_key) {
+    if (m_key == 0)
+        return "";
+
+    QString key = m_key->key();
+    if (key.isEmpty()) {
         m_key->firstChild();
         key = m_key->key();
     }
@@ -78,8 +80,6 @@ QString BtBookInterface::getText() const {
     text.replace(body, bodyGoto);
 
     outputText(text, "out.html");
-
-//    qDebug() << text;
     return text;
 }
 
@@ -109,54 +109,6 @@ void BtBookInterface::setModuleName(const QString& moduleName) {
     emit displayedChanged();
     emit textChanged();
 }
-
-//QString BtBookInterface::getBook() const {
-//    QString book;
-//    if (m_key)
-//        book = m_key->book();
-//    return book;
-//}
-
-//void BtBookInterface::setBook(const QString& book) {
-//    if (m_key) {
-//        m_key->book(book);
-//        emit displayedChanged();
-//        emit textChanged();
-//    }
-//}
-
-//QString BtBookInterface::getChapter() const {
-//    QString chapter;
-//    if (m_key)
-//        chapter = QString::number(m_key->Chapter());
-//    return chapter;
-//}
-
-//void BtBookInterface::setChapter(const QString& chapter)  {
-//    if (m_key) {
-//        int iChapter = chapter.toInt();
-//        m_key->setChapter(iChapter);
-//        emit displayedChanged();
-//        emit textChanged();
-//    }
-//}
-
-//QString BtBookInterface::getVerse() const {
-//    QString verse;
-//    if (m_key) {
-//        verse = QString::number(m_key->Verse());
-//    }
-//    return verse;
-//}
-
-//void BtBookInterface::setVerse(const QString& verse) {
-//    if (m_key) {
-//        int iVerse = verse.toInt();
-//        m_key->setVerse(iVerse);
-//        emit displayedChanged();
-//        emit textChanged();
-//    }
-//}
 
 QString BtBookInterface::getDisplayed() const {
     QString displayed;
@@ -226,17 +178,18 @@ static void parseKey(CSwordTreeKey* currentKey, QStringList* keyPath, QStringLis
     }
 }
 
-void BtBookInterface::changeReference() {
+void BtBookInterface::chooseKey() {
     QtQuick2ApplicationViewer* viewer = getViewManager()->getViewer();
     QStringList keyPath;
     QStringList children;
     parseKey(m_key, &keyPath, &children);
-//    VerseChooser* dlg = new VerseChooser(viewer, this);
-//    dlg->open();
+    BookKeyChooser* dlg = new BookKeyChooser(viewer, this);
+    dlg->open();
 }
 
 void BtBookInterface::setDisplayed(const QString& text) {
     emit displayedChanged();
+    emit textChanged();
 }
 
 const CSwordBookModuleInfo* BtBookInterface::module() const {
@@ -245,35 +198,9 @@ const CSwordBookModuleInfo* BtBookInterface::module() const {
     return bibleModule;
 }
 
-//QStringList BtBookInterface::getBooks() const {
-//    QStringList books;
-//    const CSwordBibleModuleInfo* bibleModule = module();
-//    if (bibleModule)
-//        books = *bibleModule->books();
-//    return books;
-//}
+CSwordTreeKey* BtBookInterface::getKey() const {
+    return m_key;
+}
 
-//QStringList BtBookInterface::getChapters() const {
-//    QStringList chapters;
-//    const CSwordBibleModuleInfo* m = module();
-//    QString book = m_key->book();
-//    int count = m->chapterCount(book);
-//    for (int i = 1; i <= count; i++) {
-//        chapters << QString::number(i);
-//    }
-//    return chapters;
-//}
-
-//QStringList BtBookInterface::getVerses() const {
-//    QStringList verses;
-//    const CSwordBibleModuleInfo* m = module();
-//    QString book = m_key->book();
-//    int chapter = m_key->Chapter();
-//    int count = m->verseCount(book,chapter);
-//    for (int i = 1; i <= count; i++) {
-//        verses << QString::number(i);
-//    }
-//    return verses;
-//}
 
 } // end namespace

@@ -53,7 +53,8 @@ Rectangle {
                 id: text
 
                 anchors.centerIn: parent
-                font.pointSize: 12
+                font.pointSize: 11
+                elide: Text.ElideMiddle
                 color: btStyle.toolbarButtonText
                 text: btBookInterface.moduleName
             }
@@ -72,10 +73,15 @@ Rectangle {
             id: referenceDisplay
 
             function createDialog() {
-                btBookInterface.changeReference()
+                btBookInterface.chooseKey()
             }
 
-            width:referenceText.width + 10
+            width: {
+                var w1 = 300
+                var w2 = toolbar.width - moduleDisplay.width;
+                var w = Math.min(w1,w2);
+                return w - 15;
+            }
             radius: btStyle.buttonRadius
             anchors.left: moduleDisplay.right
             anchors.top: parent.top
@@ -90,7 +96,9 @@ Rectangle {
             Text {
                 id: referenceText
                 anchors.centerIn: parent
-                font.pointSize: 12
+                width: referenceDisplay.width
+                font.pointSize: 11
+                elide: Text.ElideMiddle
                 color: btStyle.toolbarButtonText
                 text: btBookInterface.displayed
             }

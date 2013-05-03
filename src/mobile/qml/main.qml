@@ -94,8 +94,10 @@ Rectangle {
         }
     }
 
-    width: 1280
-    height: 800
+//    width: 1280
+//    height: 800
+    width: 980
+    height: 500
     color: "black"
     rotation: 0
 
@@ -222,7 +224,7 @@ Rectangle {
                                 anchors.fill: parent
                                 anchors.topMargin: 6
                                 text: tabbedWindowsStack.children[index].title
-                                elide: Text.ElideRight
+                                elide: Text.ElideLeft
                                 color: {
                                     if (tabbedWindows.current == index)
                                         return btStyle.windowTabTextSelected
@@ -271,7 +273,6 @@ Rectangle {
             Component.onCompleted: menuSelected.connect(mainMenus.doAction)
 
             function doAction(action) {
-                console.log("selected action", action)
                 mainMenus.visible = false;
                 if (action == "newBibleWindow") {
                     root.newWindow("bible");
@@ -349,4 +350,16 @@ Rectangle {
         id: btStyle
     }
 
+    TreeChooser {
+        id: treeChooser
+
+        objectName: "treeChooser"
+        width:650
+        height: parent.height
+        anchors.top: parent.top
+        anchors.horizontalCenter: parent.horizontalCenter
+        path: ""
+        visible: false
+        z: 100
+    }
 }
