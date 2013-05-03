@@ -1,17 +1,16 @@
 
 #include "versechooser.h"
 
-#include "qtquick2applicationviewer.h"
-
 #include <cmath>
+#include "mobile/ui/btwindowinterface.h"
+#include "mobile/ui/gridchooser.h"
+#include "mobile/ui/qtquick2applicationviewer.h"
 #include <QQuickItem>
 #include <QQmlProperty>
 #include <QQmlContext>
 #include <QDebug>
 #include <QQmlProperty>
 #include <QCoreApplication>
-#include "btwindowinterface.h"
-#include "gridchooser.h"
 
 namespace btm {
 

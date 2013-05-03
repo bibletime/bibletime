@@ -5,6 +5,7 @@
 
 #include "btstyle.h"
 #include <cmath>
+#include "mobile/keychooser/versechooser.h"
 #include <QGuiApplication>
 #include <QJsonValue>
 #include <QQuickItem>
@@ -12,7 +13,6 @@
 #include <QQmlContext>
 #include <QUrl>
 #include <QDebug>
-#include "versechooser.h"
 
 namespace btm {
 

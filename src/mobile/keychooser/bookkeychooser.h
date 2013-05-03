@@ -6,7 +6,7 @@
 #include <QList>
 #include <QStringList>
 #include <QStandardItemModel>
-#include "roleitemmodel.h"
+#include "mobile/ui/roleitemmodel.h"
 
 class QtQuick2ApplicationViewer;
 class QQmlComponent;

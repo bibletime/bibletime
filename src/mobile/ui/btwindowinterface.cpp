@@ -9,8 +9,8 @@
 #include "backend/rendering/centrydisplay.h"
 #include "backend/rendering/cdisplayrendering.h"
 #include "mobile/btmmain.h"
+#include "mobile/keychooser/versechooser.h"
 #include "mobile/ui/modulechooser.h"
-#include "mobile/ui/versechooser.h"
 #include "mobile/ui/viewmanager.h"
 #include <QDebug>
 #include <QFile>

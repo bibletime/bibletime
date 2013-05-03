@@ -447,10 +447,12 @@ SET(bibletime_SRC_MOBILE_SOURCES
 )
 
 SET(bibletime_SRC_MOBILE_UI_SOURCES
+    src/mobile/keychooser/bookkeychooser.cpp
+    src/mobile/keychooser/bookkeychooser.h
+    src/mobile/keychooser/versechooser.cpp
+    src/mobile/keychooser/versechooser.h
     src/mobile/ui/bookmodulechooser.cpp
     src/mobile/ui/bookmodulechooser.h
-    src/mobile/ui/bookkeychooser.cpp
-    src/mobile/ui/bookkeychooser.h
     src/mobile/ui/btstyle.cpp
     src/mobile/ui/btstyle.h
     src/mobile/ui/btbookinterface.cpp
@@ -465,24 +467,22 @@ SET(bibletime_SRC_MOBILE_UI_SOURCES
     src/mobile/ui/gridchooser.h
     src/mobile/ui/roleitemmodel.cpp
     src/mobile/ui/roleitemmodel.h
-    src/mobile/ui/versechooser.cpp
-    src/mobile/ui/versechooser.h
     src/mobile/ui/viewmanager.cpp
     src/mobile/ui/viewmanager.h
 )
 
 SET(bibletime_SRC_MOBILE_MOCABLE_HEADERS
+    src/mobile/keychooser/bookkeychooser.h
+    src/mobile/keychooser/versechooser.h
     src/mobile/bibletime.h
     src/mobile/bibletimeapp.h
     src/mobile/ui/bookmodulechooser.h
-    src/mobile/ui/bookkeychooser.h
     src/mobile/ui/btstyle.h
     src/mobile/ui/btbookinterface.h
     src/mobile/ui/btwindowinterface.h
     src/mobile/ui/modulechooser.h
     src/mobile/ui/qtquick2applicationviewer.h
     src/mobile/ui/gridchooser.h
-    src/mobile/ui/versechooser.h
     src/mobile/ui/viewmanager.h
 )
 

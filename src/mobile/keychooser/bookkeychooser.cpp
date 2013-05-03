@@ -1,8 +1,8 @@
 #include "bookkeychooser.h"
 
-#include "btbookinterface.h"
 #include <cmath>
-#include "qtquick2applicationviewer.h"
+#include "mobile/ui/btbookinterface.h"
+#include "mobile/ui/qtquick2applicationviewer.h"
 #include <QCoreApplication>
 #include <QDebug>
 #include <QQmlProperty>

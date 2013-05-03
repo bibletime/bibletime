@@ -10,8 +10,8 @@
 #include "backend/rendering/centrydisplay.h"
 #include "backend/rendering/cdisplayrendering.h"
 #include "mobile/btmmain.h"
+#include "mobile/keychooser/bookkeychooser.h"
 #include "mobile/ui/bookmodulechooser.h"
-#include "mobile/ui/bookkeychooser.h"
 #include "mobile/ui/viewmanager.h"
 #include <QDebug>
 #include <QFile>
