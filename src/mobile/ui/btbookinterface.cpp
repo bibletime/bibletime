@@ -99,6 +99,7 @@ void BtBookInterface::setModuleName(const QString& moduleName) {
     else {
         m_key->setModule(m);
     }
+    m_key->firstChild();
 ////    BtConfig & conf = btConfig();
 ////    conf.beginGroup(windowGroup);
 //    FilterOptions filterOptions;// = conf.getFilterOptions();
