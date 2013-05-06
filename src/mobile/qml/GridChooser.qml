@@ -97,10 +97,10 @@ Rectangle {
                     if (text == gridChooser.selected)
                         return btStyle.buttonHighlightedText
                     else
-                        return btStyle.buttonText
+                        return btStyle.buttonTextColor
                 }
-                buttonColor: btStyle.button
-                activeButtonColor: btStyle.buttonText
+                buttonColor: btStyle.buttonColor
+                activeButtonColor: btStyle.buttonTextColor
                 onClicked: gridChooser.accept(text)
             }
         }

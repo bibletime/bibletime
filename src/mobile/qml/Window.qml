@@ -32,7 +32,7 @@ Rectangle {
 
         width: parent.width
         height: 36
-        color: btStyle.toolbar
+        color: btStyle.toolbarColor
 
         Rectangle {
             id: moduleDisplay
@@ -53,7 +53,7 @@ Rectangle {
                 id: text
 
                 anchors.centerIn: parent
-                font.pointSize: 12
+                font.pointSize: btStyle.toolbarTextPointSize
                 color: btStyle.toolbarButtonText
                 text: btWindowInterface.moduleName
             }
@@ -90,7 +90,7 @@ Rectangle {
             Text {
                 id: referenceText
                 anchors.centerIn: parent
-                font.pointSize: 12
+                font.pointSize: btStyle.toolbarTextPointSize
                 color: btStyle.toolbarButtonText
                 text: btWindowInterface.displayed
             }
@@ -113,6 +113,5 @@ Rectangle {
         anchors.bottom: htmlView.bottom
         anchors.left: htmlView.left
         anchors.right: htmlView.right
-//        url: "file:///home/gary/gen1.html"
     }
 }

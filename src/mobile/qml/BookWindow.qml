@@ -32,7 +32,7 @@ Rectangle {
 
         width: parent.width
         height: 36
-        color: btStyle.toolbar
+        color: btStyle.toolbarColor
 
         Rectangle {
             id: moduleDisplay
@@ -53,7 +53,9 @@ Rectangle {
                 id: text
 
                 anchors.centerIn: parent
-                font.pointSize: 11
+                anchors.leftMargin: 4
+                anchors.rightMargin: 4
+                font.pointSize: btStyle.toolbarTextPointSize
                 elide: Text.ElideMiddle
                 color: btStyle.toolbarButtonText
                 text: btBookInterface.moduleName
@@ -96,8 +98,10 @@ Rectangle {
             Text {
                 id: referenceText
                 anchors.centerIn: parent
-                width: referenceDisplay.width
-                font.pointSize: 11
+                anchors.leftMargin: 4
+                anchors.rightMargin: 4
+                width: referenceDisplay.width - 4
+                font.pointSize: btStyle.toolbarTextPointSize
                 elide: Text.ElideMiddle
                 color: btStyle.toolbarButtonText
                 text: btBookInterface.displayed

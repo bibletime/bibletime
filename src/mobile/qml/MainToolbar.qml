@@ -10,7 +10,7 @@ Rectangle {
         id: btStyle
     }
 
-    color: btStyle.toolbar
+    color: btStyle.toolbarColor
     z:0
 
     MenuButton {

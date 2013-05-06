@@ -22,9 +22,9 @@
 namespace btm {
 
 // Only one copy of properties so they are the same everywhere used.
-static QColor button                  = QColor();
+static QColor buttonColor             = QColor();
 static QColor buttonBackground        = QColor();
-static QColor buttonText              = QColor();
+static QColor buttonTextColor         = QColor();
 static QColor buttonHighlightedText   = QColor();
 static QColor buttonBorder            = QColor();
 static int buttonRadius               = 0;
@@ -43,25 +43,26 @@ static QColor menuBorder              = QColor();
 static QColor menuText                = QColor();
 static int menuHeight                 = 0;
 
-static QColor toolbar                 = QColor();
+static QColor toolbarColor            = QColor();
 static QColor toolbarButton           = QColor();
 static QColor toolbarButtonText       = QColor();
+static double toolbarTextPointSize    = 6;
 
 
 static QList<QPointer<BtStyle> > styles;
 
 void BtStyle::setStyle(int style) {
     if (style == BtStyle::gnome) {
-        setButton(QColor(0,0,0));
-        setButtonBackground(QColor(187, 187, 237));
-        setButtonText(QColor(255,210,0));
-        setButtonHighlightedText(QColor(255,255,0));
+        setButtonColor(QColor(0,0,0));
+        setButtonBackground(QColor(237, 237, 237));
+        setButtonTextColor(QColor(0,0,0));
+        setButtonHighlightedText(QColor(0,0,255));
         setButtonBorder(QColor(80,80,0));
         setButtonRadius(3);
-        setButtonGradient0(QColor(100,100,100));
-        setButtonGradient1(QColor(50,50,50));
-        setButtonGradient2(QColor(50,50,50));
-        setButtonGradient3(QColor(10,10,10));
+        setButtonGradient0(QColor(200,200,200));
+        setButtonGradient1(QColor(246,246,246));
+        setButtonGradient2(QColor(246,246,246));
+        setButtonGradient3(QColor(200,200,200));
 
         setWindowTab(QColor(206,206,206));
         setWindowTabSelected(QColor(255,255,255));
@@ -73,14 +74,15 @@ void BtStyle::setStyle(int style) {
         setMenuText(QColor(0,0,0));
         setMenuHeight(40);
 
-        setToolbar(QColor(237,237,237));
+        setToolbarColor(QColor(237,237,237));
         setToolbarButton(QColor(237,237,237));
         setToolbarButtonText(QColor(0,0,0));
+        setToolbarTextPointSize(10);
     }
     else if (style == BtStyle::android) {
-        setButton(QColor(0,0,0));
+        setButtonColor(QColor(0,0,0));
         setButtonBackground(QColor(35,35,100));
-        setButtonText(QColor(255,210,0));
+        setButtonTextColor(QColor(255,210,0));
         setButtonHighlightedText(QColor(255,255,0));
         setButtonBorder(QColor(80,80,0));
         setButtonRadius(3);
@@ -99,9 +101,10 @@ void BtStyle::setStyle(int style) {
         setMenuText(QColor(0,0,0));
         setMenuHeight(34);
 
-        setToolbar(QColor(120,120,120));
+        setToolbarColor(QColor(120,120,120));
         setToolbarButton(QColor(255,210,0));
         setToolbarButtonText(QColor(0,0,0));
+        setToolbarTextPointSize(10);
     }
 
     for (int i=0; i<styles.count(); ++i) {
@@ -116,11 +119,11 @@ BtStyle::BtStyle(QObject* parent)
     styles.append(this);
 }
 
-QColor BtStyle::getButton() const {
-    return button;
+QColor BtStyle::getButtonColor() const {
+    return buttonColor;
 }
-void BtStyle::setButton(const QColor& color) {
-    button = color;
+void BtStyle::setButtonColor(const QColor& color) {
+    buttonColor = color;
     emit changed();
 }
 
@@ -134,11 +137,11 @@ void BtStyle::setButtonBackground(const QColor& color) {
 }
 
 
-QColor BtStyle::getButtonText() const {
-    return buttonText;
+QColor BtStyle::getButtonTextColor() const {
+    return buttonTextColor;
 }
-void BtStyle::setButtonText(const QColor& color) {
-    buttonText = color;
+void BtStyle::setButtonTextColor(const QColor& color) {
+    buttonTextColor = color;
     emit changed();
 }
 
@@ -271,11 +274,11 @@ void BtStyle::setMenuHeight(int height) {
     emit changed();
 }
 
-QColor BtStyle::getToolbar() const {
-    return toolbar;
+QColor BtStyle::getToolbarColor() const {
+    return toolbarColor;
 }
-void BtStyle::setToolbar(const QColor& color) {
-    toolbar = color;
+void BtStyle::setToolbarColor(const QColor& color) {
+    toolbarColor = color;
     emit changed();
 }
 
@@ -293,6 +296,14 @@ QColor BtStyle::getToolbarButtonText() const {
 void BtStyle::setToolbarButtonText(const QColor& color) {
     toolbarButtonText = color;
     emit changed();
+}
+
+double BtStyle::getToolbarTextPointSize() const {
+    return toolbarTextPointSize;
+}
+
+void BtStyle::setToolbarTextPointSize(double pointSize) {
+    toolbarTextPointSize = pointSize;
 }
 
 } // end namespace

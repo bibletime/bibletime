@@ -98,7 +98,6 @@ Rectangle {
 //    height: 800
     width: 980
     height: 500
-    color: "black"
     rotation: 0
 
     MainToolbar {
@@ -118,7 +117,7 @@ Rectangle {
         anchors.top: mainToolbar.bottom
         height:2
         width: parent.width
-        color: "black"
+        color: "#646464"
     }
 
     Rectangle {
@@ -128,7 +127,7 @@ Rectangle {
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.bottom: parent.bottom
-        color: "black"
+        color: "#646464"
 
         Grid {
             id: gridWindows
