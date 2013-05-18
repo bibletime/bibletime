@@ -247,7 +247,11 @@ void BtHtmlReadDisplay::selectAll() {
 
 // Scroll QWebView to the correct location as specified by the anchor
 void BtHtmlReadDisplay::moveToAnchor( const QString& anchor ) {
+#if QT_VERSION >= 0x040700
+    mainFrame()->scrollToAnchor(anchor);
+#else
     slotGoToAnchor(anchor);
+#endif
 }
 
 // Scroll the QWebView to the correct location specified by anchor
