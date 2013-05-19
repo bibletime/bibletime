@@ -1,4 +1,7 @@
 2013-05-18 Gary Holmlund <gary.holmlund@gmail.com>
+    * Changes needed for Qt5
+
+2013-05-18 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix problem with text not displaying when using QtWebKit 2.3
 
 2012-09-10 Gary Holmlund <gary.holmlund@gmail.com>
