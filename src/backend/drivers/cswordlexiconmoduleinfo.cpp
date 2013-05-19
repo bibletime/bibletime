@@ -100,13 +100,8 @@ const QStringList &CSwordLexiconModuleInfo::entries() const {
     module()->setPosition(sword::TOP); // back to the first entry
     module()->setSkipConsecutiveLinks(false);
 
-    if (m_entries.count()) {
-        m_entries.first().simplified();
-
-        if (m_entries.first().trimmed().isEmpty()) {
-            m_entries.erase( m_entries.begin() );
-        }
-    }
+    if (!m_entries.empty() && m_entries.front().simplified().isEmpty())
+        m_entries.pop_front();
 
     qDebug() << "Writing cache file for lexicon module" << name();
 
