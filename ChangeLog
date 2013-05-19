@@ -1,3 +1,6 @@
+2013-05-19 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix multi-arch path issue in FindCLucene.cmake
+
 2013-05-18 Gary Holmlund <gary.holmlund@gmail.com>
     * Changes needed for Qt5
 
