@@ -42,6 +42,8 @@ ENDIF(MSVC)
 SET(TRIAL_LIBRARY_PATHS
     $ENV{CLUCENE_HOME}/lib${LIB_SUFFIX}
     ${CMAKE_INSTALL_PREFIX}/lib${LIB_SUFFIX}
+    /usr/lib/i386-linux-gnu
+    /usr/lib/x86_64-linux-gnu
     /usr/local/lib${LIB_SUFFIX}
     /opt/local/lib${LIB_SUFFIX}
     /usr/lib${LIB_SUFFIX}
