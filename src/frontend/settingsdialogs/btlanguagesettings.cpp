@@ -101,7 +101,7 @@ void BtLanguageSettingsPage::initSwordLocaleCombo() {
 
     const std::list<sword::SWBuf> locales = sword::LocaleMgr::getSystemLocaleMgr()->getAvailableLocales();
     for (SBLCI it = locales.begin(); it != locales.end(); ++it) {
-        const char * abbreviation = sword::LocaleMgr::getSystemLocaleMgr()->getLocale((*it).c_str())->getName();
+        const char * const abbreviation = sword::LocaleMgr::getSystemLocaleMgr()->getLocale((*it).c_str())->getName();
         const CLanguageMgr::Language * const l = CLanguageMgr::instance()->languageForAbbrev(abbreviation);
 
         if (l->isValid()) {
