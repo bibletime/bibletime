@@ -132,5 +132,7 @@ void BtLanguageSettingsPage::retranslateUi() {
     setHeaderText(tr("Languages"));
 
     m_languageNamesLabel->setText(tr("Language for names of Bible books:"));
-    m_swordLocaleCombo->setToolTip(tr("The languages which can be used for the biblical booknames"));
+    const QString toolTip(tr("The languages which can be used for the biblical book names. Translations are provided by the Sword library."));
+    m_languageNamesLabel->setToolTip(toolTip);
+    m_swordLocaleCombo->setToolTip(toolTip);
 }
