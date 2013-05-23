@@ -176,6 +176,7 @@ QString CDisplayTemplateMgr::fillTemplate(const QString &name,
     // Template stylesheet
 
 //     qWarning("Outputing unformated text");
+    namespace DU = util::directory;
     QString t = QString(m_templateMap[templateIsCss
                                       ? QString(CSSTEMPLATEBASE)
                                       : name]) // don't change the map's content directly, use a copy
@@ -187,6 +188,7 @@ QString CDisplayTemplateMgr::fillTemplate(const QString &name,
                       .replace("#CONTENT#", newContent)
                       .replace("#MODTYPE#", displayTypeString)
                       .replace("#MODNAME#", moduleName)
+                      .replace("#DISPLAY_TEMPLATES_PATH#", DU::getDisplayTemplatesDir().absolutePath())
                       .replace("#MODULE_STYLESHEET#", QString(""));	// Let's fix this!
 
     if (templateIsCss)
