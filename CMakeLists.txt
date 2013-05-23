@@ -269,14 +269,8 @@ INSTALL(FILES ${INSTALL_ICONS_LIST_PNG}
     DESTINATION "${BT_SHARE_PATH}bibletime/icons/"
 )
 # display templates
-FILE(GLOB INSTALL_DISPLAY_TEMPLATES_LIST ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/*.tmpl)
-INSTALL(FILES ${INSTALL_DISPLAY_TEMPLATES_LIST}
-    DESTINATION "${BT_SHARE_PATH}bibletime/display-templates/"
-)
-FILE(GLOB INSTALL_DISPLAY_CSS_LIST ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/*.css)
-INSTALL(FILES ${INSTALL_DISPLAY_CSS_LIST}
-    DESTINATION "${BT_SHARE_PATH}bibletime/display-templates/"
-)
+INSTALL(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/
+        DESTINATION "${BT_SHARE_PATH}bibletime/display-templates/")
 # javascript
 INSTALL(FILES "src/frontend/display/bthtml.js"
     DESTINATION "${BT_SHARE_PATH}bibletime/javascript/"
