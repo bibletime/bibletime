@@ -20,6 +20,8 @@
 #include "util/directory.h"
 
 
+#define CSSTEMPLATEBASE "Basic.tmpl"
+
 CDisplayTemplateMgr *CDisplayTemplateMgr::m_instance = 0;
 
 CDisplayTemplateMgr::CDisplayTemplateMgr(QString &errorMessage) {
@@ -48,19 +50,31 @@ CDisplayTemplateMgr::CDisplayTemplateMgr(QString &errorMessage) {
     Q_FOREACH(const QString &file, utd.entryList(filter, QDir::Files | QDir::Readable))
         loadTemplate(utd.canonicalPath() + "/" + file);
 
-    if (m_cssMap.contains(defaultTemplateName())) {
-        errorMessage = QString::null;
-    } else {
+    if (!m_templateMap.contains(CSSTEMPLATEBASE)) {
+        errorMessage = QObject::tr("CSS base template not found!");
+    } else if (!m_cssMap.contains(defaultTemplateName())) {
         errorMessage = QObject::tr("Default template \"%1\" not found!")
                        .arg(defaultTemplateName());
+    } else {
+        errorMessage = QString::null;
     }
+}
+
+QStringList CDisplayTemplateMgr::availableTemplates() const {
+    QStringList r = m_templateMap.keys();
+    const bool b = r.removeOne(CSSTEMPLATEBASE);
+    Q_ASSERT(b);
+    r.append(m_cssMap.keys());
+    qSort(r);
+    return r;
 }
 
 QString CDisplayTemplateMgr::fillTemplate(const QString &name,
                                           const QString &content,
                                           const Settings &settings)
 {
-    const QString templateName = m_cssMap.contains(name) ? name : defaultTemplateName();
+    Q_ASSERT(name != CSSTEMPLATEBASE);
+    const bool templateIsCss = !m_templateMap.contains(name);
 
     QString displayTypeString;
     QString moduleName;
@@ -160,20 +174,23 @@ QString CDisplayTemplateMgr::fillTemplate(const QString &name,
     }
     
     // Template stylesheet
-    
 
 //     qWarning("Outputing unformated text");
-    const QString t = QString(m_templateMap[ "Basic.tmpl" ]) //don't change the map's content directly, use  a copy
+    QString t = QString(m_templateMap[templateIsCss
+                                      ? QString(CSSTEMPLATEBASE)
+                                      : name]) // don't change the map's content directly, use a copy
                       .replace("#TITLE#", settings.title)
                       .replace("#LANG_ABBREV#", settings.langAbbrev.isEmpty() ? QString("en") : settings.langAbbrev)
                       .replace("#DISPLAYTYPE#", displayTypeString)
                       .replace("#LANG_CSS#", langCSS)
                       .replace("#PAGE_DIRECTION#", settings.pageDirection)
                       .replace("#CONTENT#", newContent)
-                      .replace("#THEME_STYLE#", m_cssMap[ templateName ])
                       .replace("#MODTYPE#", displayTypeString)
                       .replace("#MODNAME#", moduleName)
                       .replace("#MODULE_STYLESHEET#", QString(""));	// Let's fix this!
+
+    if (templateIsCss)
+        return t.replace("#THEME_STYLE#", m_cssMap[name]);
 
     return t;
 }
