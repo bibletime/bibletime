@@ -62,9 +62,7 @@ class CDisplayTemplateMgr {
         /**
           \returns the list of available templates.
         */
-        inline const QStringList availableTemplates() const {
-            return m_cssMap.keys();
-        }
+        QStringList availableTemplates() const;
 
         /**
           \brief Fills the template.
