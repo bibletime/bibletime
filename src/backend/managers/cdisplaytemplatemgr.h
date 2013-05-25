@@ -30,7 +30,17 @@ class CDisplayTemplateMgr {
         */
         struct Settings {
 
-            inline Settings() : pageDirection("ltr") {}
+            enum TextDirection { Automatic, LeftToRight, RightToLeft };
+
+            inline Settings() : textDirection(Automatic) {}
+
+            inline const char * textDirectionAsHtmlDirAttr() const {
+                switch (textDirection) {
+                    case Automatic:   return "auto";
+                    case LeftToRight: return "ltr";
+                    case RightToLeft: return "rtl";
+                }
+            }
 
             /** The list of modules */
             QList<const CSwordModuleInfo*> modules;
@@ -41,11 +51,11 @@ class CDisplayTemplateMgr {
             /** The language for the HTML page. */
             QString langAbbrev;
 
-            /** The language direction for the HTML page. */
-            QString pageDirection;
-
             /** The CSS ID which is used in the content part of the page */
             QString pageCSS_ID;
+
+            /** The language direction for the HTML page. */
+            TextDirection textDirection;
 
         };
 
