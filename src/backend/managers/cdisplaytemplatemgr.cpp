@@ -21,12 +21,12 @@
 
 #define CSSTEMPLATEBASE "Basic.tmpl"
 
-CDisplayTemplateMgr *CDisplayTemplateMgr::m_instance = 0;
+CDisplayTemplateMgr * CDisplayTemplateMgr::m_instance = 0;
 
-CDisplayTemplateMgr::CDisplayTemplateMgr(QString &errorMessage) {
+CDisplayTemplateMgr::CDisplayTemplateMgr(QString & errorMessage) {
     Q_ASSERT(m_instance == 0);
-
     m_instance = this;
+
     {
         namespace DU = util::directory;
         const QDir::Filters readableFileFilter(QDir::Files | QDir::Readable);
@@ -37,10 +37,10 @@ CDisplayTemplateMgr::CDisplayTemplateMgr(QString &errorMessage) {
         {
             const QStringList filter("*.tmpl");
             // Preload global display templates from disk:
-            Q_FOREACH(const QString &file, td.entryList(filter, readableFileFilter))
+            Q_FOREACH(const QString & file, td.entryList(filter, readableFileFilter))
                 loadTemplate(td.canonicalPath() + "/" + file);
             // Preload user display templates from disk:
-            Q_FOREACH(const QString &file, utd.entryList(filter, readableFileFilter))
+            Q_FOREACH(const QString & file, utd.entryList(filter, readableFileFilter))
                 loadTemplate(utd.canonicalPath() + "/" + file);
         }
 
@@ -53,10 +53,10 @@ CDisplayTemplateMgr::CDisplayTemplateMgr(QString &errorMessage) {
         {
             const QStringList cssfilter("*.css");
             // Load global app stylesheets
-            Q_FOREACH(const QString &file, td.entryList(cssfilter, readableFileFilter))
+            Q_FOREACH(const QString & file, td.entryList(cssfilter, readableFileFilter))
                 loadCSSTemplate(td.canonicalPath() + "/" + file);
             // Load user app stylesheets
-            Q_FOREACH(const QString &file, utd.entryList(cssfilter, readableFileFilter))
+            Q_FOREACH(const QString & file, utd.entryList(cssfilter, readableFileFilter))
                 loadCSSTemplate(td.canonicalPath() + "/" + file);
         }
     }
@@ -174,8 +174,8 @@ QString CDisplayTemplateMgr::fillTemplate(const QString & name,
 
     namespace DU = util::directory;
     QString output(m_templateMap[templateIsCss
-              ? QString(CSSTEMPLATEBASE)
-              : name]); // don't change the map's content directly, use a copy
+                                 ? QString(CSSTEMPLATEBASE)
+                                 : name]); // don't change the map's content directly, use a copy
     output.replace("#TITLE#", settings.title)
           .replace("#LANG_ABBREV#", settings.langAbbrev)
           .replace("#DISPLAYTYPE#", displayTypeString)
@@ -200,7 +200,7 @@ QString CDisplayTemplateMgr::activeTemplateName() {
     return tn;
 }
 
-void CDisplayTemplateMgr::loadTemplate(const QString &filename) {
+void CDisplayTemplateMgr::loadTemplate(const QString & filename) {
     Q_ASSERT(filename.endsWith(".tmpl"));
     Q_ASSERT(QFileInfo(filename).isFile());
     QFile f(filename);
@@ -211,7 +211,7 @@ void CDisplayTemplateMgr::loadTemplate(const QString &filename) {
     }
 }
 
-void CDisplayTemplateMgr::loadCSSTemplate(const QString &filename) {
+void CDisplayTemplateMgr::loadCSSTemplate(const QString & filename) {
     Q_ASSERT(filename.endsWith(".css"));
     const QFileInfo fi(filename);
     Q_ASSERT(fi.isFile());

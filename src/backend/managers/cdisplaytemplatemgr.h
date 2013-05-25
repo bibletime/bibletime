@@ -61,7 +61,7 @@ class CDisplayTemplateMgr {
           \param[out] errorMessage Set to error string on error, otherwise set
                                    to QString::null.
         */
-        explicit CDisplayTemplateMgr(QString &errorMessage);
+        explicit CDisplayTemplateMgr(QString & errorMessage);
 
         /**
           \returns the list of available templates.
@@ -107,8 +107,8 @@ class CDisplayTemplateMgr {
     private: /* Methods: */
 
         /** Preloads a single template from disk: */
-        void loadTemplate(const QString &filename);
-        void loadCSSTemplate(const QString &filename);
+        void loadTemplate(const QString & filename);
+        void loadCSSTemplate(const QString & filename);
 
     private: /* Fields: */
 
