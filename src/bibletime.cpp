@@ -117,7 +117,7 @@ BibleTime::~BibleTime() {
 /** Creates a new presenter in the MDI area according to the type of the module. */
 CDisplayWindow* BibleTime::createReadDisplayWindow(QList<CSwordModuleInfo*> modules, const QString& key) {
     qApp->setOverrideCursor( QCursor(Qt::WaitCursor) );
-    qDebug() << "BibleTime::createReadDisplayWindow(QList<CSwordModuleInfo*> modules, const QString& key)";
+    // qDebug() << "BibleTime::createReadDisplayWindow(QList<CSwordModuleInfo*> modules, const QString& key)";
     CDisplayWindow* displayWindow = CDisplayWindowFactory::createReadInstance(modules, m_mdi);
     if ( displayWindow ) {
         displayWindow->init();

@@ -98,7 +98,7 @@ void BtActionCollection::readSettings() {
             continue;
 
         QVariant variant = settings->value(key);
-        qDebug() << variant << " | " << variant.typeName();
+        // qDebug() << variant << " | " << variant.typeName();
         if (variant.type() != QVariant::List
             && variant.type() != QVariant::StringList)
         {
@@ -137,7 +137,7 @@ void BtActionCollection::writeSettings() {
             varList.append(shortcut.toString());
         }
         settings->setValue(iter.key(), varList);
-        qDebug() << ">>" << settings->value(iter.key()).typeName();
+        // qDebug() << ">>" << settings->value(iter.key()).typeName();
     }
 
     settings->endGroup();

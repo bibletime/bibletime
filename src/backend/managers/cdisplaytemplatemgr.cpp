@@ -126,7 +126,7 @@ QString CDisplayTemplateMgr::fillTemplate(const QString & name,
 
     if (moduleCount >= 2) {
         //create header for the modules
-        qDebug() << "There were more than 1 module, create headers";
+        // qDebug() << "There were more than 1 module, create headers";
         QString header;
 
         Q_FOREACH(const CSwordModuleInfo *mi, settings.modules) {
