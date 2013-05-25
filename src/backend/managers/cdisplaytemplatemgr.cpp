@@ -30,8 +30,8 @@ CDisplayTemplateMgr::CDisplayTemplateMgr(QString &errorMessage) {
     m_instance = this;
     namespace DU = util::directory;
 
-    QStringList filter("*.tmpl");
-    QStringList cssfilter("*.css");
+    const QStringList filter("*.tmpl");
+    const QStringList cssfilter("*.css");
 
     // Preload global display templates from disk:
     QDir td = DU::getDisplayTemplatesDir();
