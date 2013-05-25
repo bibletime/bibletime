@@ -57,7 +57,7 @@ CDisplayTemplateMgr::CDisplayTemplateMgr(QString &errorMessage) {
             Q_FOREACH(const QString &file, td.entryList(cssfilter, readableFileFilter))
                 loadCSSTemplate(td.canonicalPath() + "/" + file);
             // Load user app stylesheets
-            Q_FOREACH(const QString &file, td.entryList(cssfilter, readableFileFilter))
+            Q_FOREACH(const QString &file, utd.entryList(cssfilter, readableFileFilter))
                 loadCSSTemplate(td.canonicalPath() + "/" + file);
         }
     }
