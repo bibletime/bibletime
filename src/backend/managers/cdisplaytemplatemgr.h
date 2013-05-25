@@ -34,7 +34,9 @@ class CDisplayTemplateMgr {
 
             enum TextDirection { Automatic, LeftToRight, RightToLeft };
 
-            inline Settings() : textDirection(Automatic) {}
+            inline Settings()
+                : langAbbrev("en")
+                , textDirection(Automatic) {}
 
             inline const char * textDirectionAsHtmlDirAttr() const {
                 switch (textDirection) {

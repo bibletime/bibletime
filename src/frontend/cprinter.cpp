@@ -111,7 +111,8 @@ QString CPrinter::finishText(const QString &text, const KeyTree &tree) {
     CDisplayTemplateMgr::Settings settings;
     //settings.modules = modules;
     settings.pageCSS_ID = "printer";
-    settings.langAbbrev = ( lang && (modules.count() == 1) && lang->isValid() ) ? lang->abbrev() : "unknown";
+    if (modules.count() == 1 && lang->isValid())
+        settings.langAbbrev = lang->abbrev();
 
     //the previous version gave compiler error for some strange reason
     //(well, I don't like ?: anyway, let alone nested)
