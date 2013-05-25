@@ -133,40 +133,34 @@ QString CDisplayTemplateMgr::fillTemplate(const QString &name,
     }
 
     QString langCSS;
-    const CLanguageMgr::LangMap & langMap = CLanguageMgr::instance()->availableLanguages();
-
-    static const QString langStyleString = "*[lang=%1]{font-family:%2;"
-                                           "font-size:%3pt;font-weight:%4;"
-                                           "font-style:%5}";
-    Q_FOREACH (const CLanguageMgr::Language * const lang, langMap) {
-        if (lang->abbrev().isEmpty())
-            continue;
-
-        BtConfig::FontSettingsPair fp = btConfig().getFontForLanguage(*lang);
-        if (!fp.first)
-            continue;
-
-        const QFont & f = fp.second;
-
-        langCSS.append(langStyleString.arg(lang->abbrev(),
-                                           f.family(),
-                                           QString::number(f.pointSize()),
-                                           f.bold() ? "bold" : "normal",
-                                           f.italic() ? "italic" : "normal"));
+    {
+        const QFont & f = btConfig().getDefaultFont();
+        langCSS.append("#content{font-family:").append(f.family())
+               .append(";font-size:").append(QString::number(f.pointSizeF(), 'f'))
+               .append("pt;font-weight:").append(f.bold() ? "bold" : "normal")
+               .append(";font-style:").append(f.italic() ? "italic" : "normal")
+               .append('}');
     }
-    const QFont & defaultFont = btConfig().getDefaultFont();
-    static const QString contentStyleString = "#content{font-family:%1;"
-                                              "font-size:%2pt;font-weight:%3;"
-                                              "font-style:%4;}";
-    langCSS.prepend(contentStyleString.arg(
-            defaultFont.family(),
-            QString::number(defaultFont.pointSize()),
-            defaultFont.bold() ? "bold" : "normal",
-            defaultFont.italic() ? "italic" : "normal"));
+    {
+        const CLanguageMgr::LangMap & langMap = CLanguageMgr::instance()->availableLanguages();
+        Q_FOREACH (const CLanguageMgr::Language * lang, langMap) {
+            if (!lang->abbrev().isEmpty())
+                continue;
 
-    // Template stylesheet
+            BtConfig::FontSettingsPair fp = btConfig().getFontForLanguage(*lang);
+            if (fp.first) {
+                const QFont & f = fp.second;
 
-//     qWarning("Outputing unformated text");
+                langCSS.append("*[lang=").append(lang->abbrev()).append("]{")
+                       .append("font-family:").append(f.family())
+                       .append(";font-size:").append(QString::number(f.pointSizeF(), 'f'))
+                       .append("pt;font-weight:").append(f.bold() ? "bold" : "normal")
+                       .append(";font-style:").append(f.italic() ? "italic" : "normal")
+                       .append('}');
+            }
+        }
+    }
+
     namespace DU = util::directory;
     QString output(m_templateMap[templateIsCss
               ? QString(CSSTEMPLATEBASE)
