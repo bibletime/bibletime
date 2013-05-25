@@ -37,7 +37,7 @@ class CDisplayTemplateMgr {
             }
 
             /** The list of modules */
-            QList<const CSwordModuleInfo*> modules;
+            QList<const CSwordModuleInfo *> modules;
 
             /** The title which is used for the new processed HTML page */
             QString title;
@@ -97,7 +97,7 @@ class CDisplayTemplateMgr {
         /**
           \returns The singleton instance of the instance of this class.
         */
-        static inline CDisplayTemplateMgr *instance() {
+        static inline CDisplayTemplateMgr * instance() {
             Q_ASSERT(m_instance != 0);
             return m_instance;
         }
@@ -112,7 +112,7 @@ class CDisplayTemplateMgr {
 
         QHash<QString, QString> m_templateMap;
         QHash<QString, QString> m_cssMap;
-        static CDisplayTemplateMgr *m_instance;
+        static CDisplayTemplateMgr * m_instance;
         QStringList m_availableTemplateNamesCache;
 
 };
