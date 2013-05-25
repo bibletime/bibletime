@@ -128,7 +128,7 @@ QString CDisplayTemplateMgr::fillTemplate(const QString & name,
         // qDebug() << "There were more than 1 module, create headers";
         QString header;
 
-        Q_FOREACH(const CSwordModuleInfo *mi, settings.modules) {
+        Q_FOREACH(const CSwordModuleInfo * mi, settings.modules) {
             header.append("<th style=\"width:")
             .append(QString::number(int( 100.0 / (float)moduleCount )))
             .append("%;\">")
