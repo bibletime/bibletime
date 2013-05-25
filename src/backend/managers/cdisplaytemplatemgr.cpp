@@ -133,49 +133,35 @@ QString CDisplayTemplateMgr::fillTemplate(const QString &name,
     }
 
     QString langCSS;
-    CLanguageMgr::LangMap langMap = CLanguageMgr::instance()->availableLanguages();
+    {
+        /*
+          At first append the font standard settings for all languages without
+          configured font. Create a dummy language (the langmap may be empty).
+        */
+        const CLanguageMgr::Language lang(QString("en"), QString("English"), QString::null);
+        const QFont f = CBTConfig::getDefault(&lang);
+        langCSS.append("#content{font-family:").append(f.family())
+               .append(";font-size:").append(QString::number(f.pointSizeF(), 'f'))
+               .append("pt;font-weight:").append(f.bold() ? "bold" : "normal")
+               .append(";font-style:").append(f.italic() ? "italic" : "normal")
+               .append('}');
+    }
+    {
+        const CLanguageMgr::LangMap & langMap = CLanguageMgr::instance()->availableLanguages();
+        Q_FOREACH (const CLanguageMgr::Language * lang, langMap) {
+            if (!lang->abbrev().isEmpty() && CBTConfig::get(lang).first) {
+                const QFont f = CBTConfig::get(lang).second;
 
-    foreach(const CLanguageMgr::Language* lang, langMap) {
-        //const CLanguageMgr::Language* lang = *it;
-
-        //if (lang->isValid() && CBTConfig::get(lang).first) {
-        if (!lang->abbrev().isEmpty() && CBTConfig::get(lang).first) {
-            const QFont f = CBTConfig::get(lang).second;
-
-            //don't use important, because it would reset the title formatting, etc. to the setup font
-            QString css("{ ");
-            css.append("font-family:").append(f.family())/*.append(" !important")*/;
-            css.append("; font-size:").append(QString::number(f.pointSize())).append("pt /*!important*/");
-            css.append("; font-weight:").append(f.bold() ? "bold" : "normal /*!important*/");
-            css.append("; font-style:").append(f.italic() ? "italic" : "normal /*!important*/");
-            css.append("; }\n");
-
-            langCSS +=
-                QString("\n*[lang=%1] %2")
-                .arg(lang->abbrev())
-                .arg(css);
+                langCSS.append("*[lang=").append(lang->abbrev()).append("]{")
+                       .append("font-family:").append(f.family())
+                       .append(";font-size:").append(QString::number(f.pointSizeF(), 'f'))
+                       .append("pt;font-weight:").append(f.bold() ? "bold" : "normal")
+                       .append(";font-style:").append(f.italic() ? "italic" : "normal")
+                       .append('}');
+            }
         }
     }
 
-    //at first append the font standard settings for all languages without configured font
-    // Create a dummy language (the langmap may be empty)
-    CLanguageMgr::Language lang_v(QString("en"), QString("English"), QString::null);
-    CLanguageMgr::Language* lang = &lang_v;
-
-    if (lang && !lang->abbrev().isEmpty()/*&& lang->isValid()*/) {
-        const QFont standardFont = CBTConfig::getDefault(lang); //we just need a dummy lang param
-        langCSS.prepend(
-            QString("\n#content {font-family:%1; font-size:%2pt; font-weight:%3; font-style: %4;}\n")
-            .arg(standardFont.family())
-            .arg(standardFont.pointSize())
-            .arg(standardFont.bold() ? "bold" : "normal")
-            .arg(standardFont.italic() ? "italic" : "normal")
-        );
-    }
-    
-    // Template stylesheet
-
-//     qWarning("Outputing unformated text");
     namespace DU = util::directory;
     QString output(m_templateMap[templateIsCss
               ? QString(CSSTEMPLATEBASE)
