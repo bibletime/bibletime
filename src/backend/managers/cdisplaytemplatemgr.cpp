@@ -168,24 +168,24 @@ QString CDisplayTemplateMgr::fillTemplate(const QString &name,
 
 //     qWarning("Outputing unformated text");
     namespace DU = util::directory;
-    QString t = QString(m_templateMap[templateIsCss
-                                      ? QString(CSSTEMPLATEBASE)
-                                      : name]) // don't change the map's content directly, use a copy
-                      .replace("#TITLE#", settings.title)
-                      .replace("#LANG_ABBREV#", settings.langAbbrev.isEmpty() ? QString("en") : settings.langAbbrev)
-                      .replace("#DISPLAYTYPE#", displayTypeString)
-                      .replace("#LANG_CSS#", langCSS)
-                      .replace("#PAGE_DIRECTION#", settings.textDirectionAsHtmlDirAttr())
-                      .replace("#CONTENT#", newContent)
-                      .replace("#MODTYPE#", displayTypeString)
-                      .replace("#MODNAME#", moduleName)
-                      .replace("#DISPLAY_TEMPLATES_PATH#", DU::getDisplayTemplatesDir().absolutePath())
-                      .replace("#MODULE_STYLESHEET#", QString(""));	// Let's fix this!
+    QString output(m_templateMap[templateIsCss
+              ? QString(CSSTEMPLATEBASE)
+              : name]); // don't change the map's content directly, use a copy
+    output.replace("#TITLE#", settings.title)
+          .replace("#LANG_ABBREV#", settings.langAbbrev.isEmpty() ? QString("en") : settings.langAbbrev)
+          .replace("#DISPLAYTYPE#", displayTypeString)
+          .replace("#LANG_CSS#", langCSS)
+          .replace("#PAGE_DIRECTION#", settings.textDirectionAsHtmlDirAttr())
+          .replace("#CONTENT#", newContent)
+          .replace("#MODTYPE#", displayTypeString)
+          .replace("#MODNAME#", moduleName)
+          .replace("#DISPLAY_TEMPLATES_PATH#", DU::getDisplayTemplatesDir().absolutePath())
+          .replace("#MODULE_STYLESHEET#", QString(""));	// Let's fix this!
 
     if (templateIsCss)
-        return t.replace("#THEME_STYLE#", m_cssMap[name]);
+        output.replace("#THEME_STYLE#", m_cssMap[name]);
 
-    return t;
+    return output;
 }
 
 QString CDisplayTemplateMgr::activeTemplateName() {
