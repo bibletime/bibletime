@@ -13,7 +13,6 @@
 #define CDISPLAYTEMPLATEMGR_H
 
 #include <QHash>
-#include <QString>
 #include <QStringList>
 #include "../drivers/cswordmoduleinfo.h"
 
