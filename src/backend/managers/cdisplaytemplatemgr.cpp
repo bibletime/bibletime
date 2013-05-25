@@ -28,53 +28,65 @@ CDisplayTemplateMgr::CDisplayTemplateMgr(QString &errorMessage) {
     Q_ASSERT(m_instance == 0);
 
     m_instance = this;
-    namespace DU = util::directory;
+    {
+        namespace DU = util::directory;
+        const QDir::Filters readableFileFilter(QDir::Files | QDir::Readable);
+        const QDir td = DU::getDisplayTemplatesDir(); // Global template directory
+        const QDir utd = DU::getUserDisplayTemplatesDir(); // User template directory
 
-    const QStringList filter("*.tmpl");
-    const QStringList cssfilter("*.css");
+        // Load regular templates:
+        {
+            const QStringList filter("*.tmpl");
+            // Preload global display templates from disk:
+            Q_FOREACH(const QString &file, td.entryList(filter, readableFileFilter))
+                loadTemplate(td.canonicalPath() + "/" + file);
+            // Preload user display templates from disk:
+            Q_FOREACH(const QString &file, utd.entryList(filter, readableFileFilter))
+                loadTemplate(utd.canonicalPath() + "/" + file);
+        }
 
-    // Preload global display templates from disk:
-    QDir td = DU::getDisplayTemplatesDir();
-    Q_FOREACH(const QString &file, td.entryList(filter, QDir::Files | QDir::Readable))
-        loadTemplate(td.canonicalPath() + "/" + file);
-        
-    // Load app stylesheets
-    Q_FOREACH(const QString &file, td.entryList(cssfilter, QDir::Files | QDir::Readable))
-    	loadCSSTemplate(td.canonicalPath() + "/" + file);
+        if (!m_templateMap.contains(CSSTEMPLATEBASE)) {
+            errorMessage = QObject::tr("CSS base template not found!");
+            return;
+        }
 
-    /*
-      Preload user display templates from disk, overriding any global templates
-      with the same file name:
-    */
-    QDir utd = DU::getUserDisplayTemplatesDir();
-    Q_FOREACH(const QString &file, utd.entryList(filter, QDir::Files | QDir::Readable))
-        loadTemplate(utd.canonicalPath() + "/" + file);
+        // Load CSS templates:
+        {
+            const QStringList cssfilter("*.css");
+            // Load global app stylesheets
+            Q_FOREACH(const QString &file, td.entryList(cssfilter, readableFileFilter))
+                loadCSSTemplate(td.canonicalPath() + "/" + file);
+            // Load user app stylesheets
+            Q_FOREACH(const QString &file, td.entryList(cssfilter, readableFileFilter))
+                loadCSSTemplate(td.canonicalPath() + "/" + file);
+        }
+    }
 
-    if (!m_templateMap.contains(CSSTEMPLATEBASE)) {
-        errorMessage = QObject::tr("CSS base template not found!");
-    } else if (!m_cssMap.contains(defaultTemplateName())) {
+    if (!m_cssMap.contains(defaultTemplateName())) {
         errorMessage = QObject::tr("Default template \"%1\" not found!")
                        .arg(defaultTemplateName());
-    } else {
-        errorMessage = QString::null;
+        return;
     }
-}
 
-QStringList CDisplayTemplateMgr::availableTemplates() const {
-    QStringList r = m_templateMap.keys();
-    const bool b = r.removeOne(CSSTEMPLATEBASE);
+    // Create template names cache:
+    m_availableTemplateNamesCache = m_templateMap.keys();
+    const bool b = m_availableTemplateNamesCache.removeOne(CSSTEMPLATEBASE);
     Q_ASSERT(b);
-    r.append(m_cssMap.keys());
-    qSort(r);
-    return r;
+    m_availableTemplateNamesCache.append(m_cssMap.keys());
+    qSort(m_availableTemplateNamesCache);
+
+    errorMessage = QString::null;
 }
 
-QString CDisplayTemplateMgr::fillTemplate(const QString &name,
-                                          const QString &content,
-                                          const Settings &settings)
+QString CDisplayTemplateMgr::fillTemplate(const QString & name,
+                                          const QString & content,
+                                          const Settings & settings) const
 {
     Q_ASSERT(name != CSSTEMPLATEBASE);
-    const bool templateIsCss = !m_templateMap.contains(name);
+    Q_ASSERT(name.endsWith(".css") || name.endsWith(".tmpl"));
+    Q_ASSERT(!name.endsWith(".css") || m_cssMap.contains(name));
+    Q_ASSERT(!name.endsWith(".tmpl") || m_templateMap.contains(name));
+    const bool templateIsCss = name.endsWith(".css");
 
     QString displayTypeString;
     QString moduleName;
@@ -191,6 +203,7 @@ QString CDisplayTemplateMgr::activeTemplateName() {
 }
 
 void CDisplayTemplateMgr::loadTemplate(const QString &filename) {
+    Q_ASSERT(filename.endsWith(".tmpl"));
     QFile f(filename);
     if (f.open(QIODevice::ReadOnly)) {
         QString fileContent = QTextStream(&f).readAll();
@@ -202,6 +215,7 @@ void CDisplayTemplateMgr::loadTemplate(const QString &filename) {
 }
 
 void CDisplayTemplateMgr::loadCSSTemplate(const QString &filename) {
+    Q_ASSERT(filename.endsWith(".css"));
     QFile f(filename);
     m_cssMap[QFileInfo(f).fileName()] = QString("file://") + filename;
 }
