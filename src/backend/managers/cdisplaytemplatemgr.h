@@ -12,7 +12,7 @@
 #ifndef CDISPLAYTEMPLATEMGR_H
 #define CDISPLAYTEMPLATEMGR_H
 
-#include <QMap>
+#include <QHash>
 #include <QString>
 #include <QStringList>
 #include "../drivers/cswordmoduleinfo.h"
@@ -67,7 +67,9 @@ class CDisplayTemplateMgr {
         /**
           \returns the list of available templates.
         */
-        QStringList availableTemplates() const;
+        inline const QStringList & availableTemplates() const {
+            return m_availableTemplateNamesCache;
+        }
 
         /**
           \brief Fills the template.
@@ -81,8 +83,9 @@ class CDisplayTemplateMgr {
 
           \returns The full HTML template HTML code including the CSS data.
         */
-        QString fillTemplate(const QString &name, const QString &content,
-                             const Settings &settings);
+        QString fillTemplate(const QString & name,
+                             const QString & content,
+                             const Settings & settings) const;
 
         /**
           \returns the name of the default template.
@@ -110,9 +113,10 @@ class CDisplayTemplateMgr {
 
     private: /* Fields: */
 
-        QMap<QString, QString> m_templateMap;
-        QMap<QString, QString> m_cssMap;
+        QHash<QString, QString> m_templateMap;
+        QHash<QString, QString> m_cssMap;
         static CDisplayTemplateMgr *m_instance;
+        QStringList m_availableTemplateNamesCache;
 
 };
 
