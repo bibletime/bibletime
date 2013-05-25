@@ -31,8 +31,8 @@ CDisplayTemplateMgr::CDisplayTemplateMgr(QString &errorMessage) {
     {
         namespace DU = util::directory;
         const QDir::Filters readableFileFilter(QDir::Files | QDir::Readable);
-        const QDir td = DU::getDisplayTemplatesDir(); // Global template directory
-        const QDir utd = DU::getUserDisplayTemplatesDir(); // User template directory
+        const QDir & td = DU::getDisplayTemplatesDir(); // Global template directory
+        const QDir & utd = DU::getUserDisplayTemplatesDir(); // User template directory
 
         // Load regular templates:
         {
