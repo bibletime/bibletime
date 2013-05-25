@@ -108,6 +108,7 @@ SET(BT_SHARE_PATH "share/")
 IF (APPLE)
     SET(BT_DESTINATION "../MacOS/")
     SET(BT_SHARE_PATH "../share/")
+    SET(CMAKE_CXX_COMPILER "/usr/bin/g++")
 ENDIF (APPLE)
 
 # Define $bibletime_SOURCES
@@ -226,11 +227,10 @@ IF (APPLE)
      # enable support MacOS 10.5+
     SET_TARGET_PROPERTIES(${EXECUTABLE_NAME}
         PROPERTIES
-            COMPILE_FLAGS   "-mmacosx-version-min=10.5 -isysroot /Developer/SDKs/MacOSX10.5.sdk"
-            LINK_FLAGS      "-mmacosx-version-min=10.5 -isysroot /Developer/SDKs/MacOSX10.5.sdk"
+            COMPILE_FLAGS   "-mmacosx-version-min=10.5 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/"
+            LINK_FLAGS      "-mmacosx-version-min=10.5 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/ -F /Library/Frameworks/"
     )
 ENDIF (APPLE)
-
 
 IF (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
     SET(CMAKE_INSTALL_PREFIX "install/") #install to ./build/install, allow override
