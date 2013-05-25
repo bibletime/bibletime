@@ -236,12 +236,11 @@ QString CHTMLExportRendering::finishText(const QString &text, const KeyTree &tre
         const CSwordModuleInfo * const firstModule = settings.modules.first();
         const CLanguageMgr::Language * const lang = firstModule->language();
         settings.langAbbrev = lang->isValid() ? lang->abbrev() : "unknown";
-        if (firstModule->textDirection() == CSwordModuleInfo::RightToLeft) {
-            settings.pageDirection = "rtl";
-        }
+        settings.textDirection = firstModule->textDirection() == CSwordModuleInfo::LeftToRight
+                               ? CDTM::Settings::LeftToRight
+                               : CDTM::Settings::RightToLeft;
     } else {
         settings.langAbbrev = "unknown";
-        settings.pageDirection = QString::null;
     }
 
     return CDTM::instance()->fillTemplate(QObject::tr("Export"), text, settings);

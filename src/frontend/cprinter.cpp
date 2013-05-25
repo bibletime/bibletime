@@ -115,12 +115,10 @@ QString CPrinter::finishText(const QString &text, const KeyTree &tree) {
 
     //the previous version gave compiler error for some strange reason
     //(well, I don't like ?: anyway, let alone nested)
-    if (modules.count() != 1) {
-        settings.pageDirection = QString::null;
-    }
-    else {
-        settings.pageDirection = ( modules.first()->textDirection() == CSwordModuleInfo::LeftToRight ) ? "ltr" : "rtl";
-    }
+    if (modules.count() == 1)
+        settings.textDirection = modules.first()->textDirection() == CSwordModuleInfo::LeftToRight
+                                 ? CDisplayTemplateMgr::Settings::LeftToRight
+                                 : CDisplayTemplateMgr::Settings::RightToLeft;
 
     CDisplayTemplateMgr *tMgr = CDisplayTemplateMgr::instance();
     return tMgr->fillTemplate(CDisplayTemplateMgr::activeTemplateName(), text, settings);
