@@ -216,6 +216,7 @@ void CDisplayTemplateMgr::loadTemplate(const QString &filename) {
 
 void CDisplayTemplateMgr::loadCSSTemplate(const QString &filename) {
     Q_ASSERT(filename.endsWith(".css"));
-    QFile f(filename);
-    m_cssMap[QFileInfo(f).fileName()] = QString("file://") + filename;
+    const QFileInfo fi(filename);
+    if (fi.isReadable())
+        m_cssMap.insert(fi.fileName(), fi.absoluteFilePath());
 }
