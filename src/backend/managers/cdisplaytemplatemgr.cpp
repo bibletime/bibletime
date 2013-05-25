@@ -9,7 +9,6 @@
 
 #include "backend/managers/cdisplaytemplatemgr.h"
 
-#include <QDebug>
 #include <QFile>
 #include <QFileInfo>
 #include <QStringList>
@@ -204,19 +203,19 @@ QString CDisplayTemplateMgr::activeTemplateName() {
 
 void CDisplayTemplateMgr::loadTemplate(const QString &filename) {
     Q_ASSERT(filename.endsWith(".tmpl"));
+    Q_ASSERT(QFileInfo(filename).isFile());
     QFile f(filename);
     if (f.open(QIODevice::ReadOnly)) {
-        QString fileContent = QTextStream(&f).readAll();
-
-        if (!fileContent.isEmpty()) {
-            m_templateMap[QFileInfo(f).fileName()] = fileContent;
-        }
+        const QString fileContent(QTextStream(&f).readAll());
+        if (!fileContent.isEmpty())
+            m_templateMap.insert(QFileInfo(f).fileName(), fileContent);
     }
 }
 
 void CDisplayTemplateMgr::loadCSSTemplate(const QString &filename) {
     Q_ASSERT(filename.endsWith(".css"));
     const QFileInfo fi(filename);
+    Q_ASSERT(fi.isFile());
     if (fi.isReadable())
         m_cssMap.insert(fi.fileName(), fi.absoluteFilePath());
 }
