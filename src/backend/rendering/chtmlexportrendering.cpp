@@ -232,9 +232,7 @@ QString CHTMLExportRendering::finishText(const QString &text, const KeyTree &tre
         const CSwordModuleInfo * const firstModule = settings.modules.first();
         const CLanguageMgr::Language * const lang = firstModule->language();
         settings.langAbbrev = lang->isValid() ? lang->abbrev() : "unknown";
-        settings.textDirection = firstModule->textDirection() == CSwordModuleInfo::LeftToRight
-                               ? CDTM::Settings::LeftToRight
-                               : CDTM::Settings::RightToLeft;
+        settings.textDirection = firstModule->textDirection();
     } else {
         settings.langAbbrev = "unknown";
     }

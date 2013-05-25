@@ -151,9 +151,7 @@ QString CDisplayRendering::finishText(const QString &text, const KeyTree &tree) 
         settings.langAbbrev = lang->abbrev();
 
     if (modules.count() == 1)
-        settings.textDirection = (modules.first()->textDirection() == CSwordModuleInfo::LeftToRight)
-                               ? CDisplayTemplateMgr::Settings::LeftToRight
-                               : CDisplayTemplateMgr::Settings::RightToLeft;
+        settings.textDirection = modules.first()->textDirection();
 
     return tMgr->fillTemplate(CDisplayTemplateMgr::activeTemplateName(), text, settings);
 }

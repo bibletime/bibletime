@@ -13,9 +13,8 @@
 #include <QMap>
 #include <QString>
 #include <QStringList>
+#include "../drivers/cswordmoduleinfo.h"
 
-
-class CSwordModuleInfo;
 
 /**
   Manages the display templates used in the filters and display classes.
@@ -30,18 +29,12 @@ class CDisplayTemplateMgr {
         */
         struct Settings {
 
-            enum TextDirection { Automatic, LeftToRight, RightToLeft };
-
             inline Settings()
                 : langAbbrev("en")
-                , textDirection(Automatic) {}
+                , textDirection(CSwordModuleInfo::LeftToRight) {}
 
             inline const char * textDirectionAsHtmlDirAttr() const {
-                switch (textDirection) {
-                    case Automatic:   return "auto";
-                    case LeftToRight: return "ltr";
-                    case RightToLeft: return "rtl";
-                }
+                return textDirection == CSwordModuleInfo::LeftToRight ? "ltr" : "rtl";
             }
 
             /** The list of modules */
@@ -57,7 +50,7 @@ class CDisplayTemplateMgr {
             QString pageCSS_ID;
 
             /** The language direction for the HTML page. */
-            TextDirection textDirection;
+            CSwordModuleInfo::TextDirection textDirection;
 
         };
 
