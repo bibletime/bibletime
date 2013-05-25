@@ -181,7 +181,7 @@ QString CDisplayTemplateMgr::fillTemplate(const QString &name,
               ? QString(CSSTEMPLATEBASE)
               : name]); // don't change the map's content directly, use a copy
     output.replace("#TITLE#", settings.title)
-          .replace("#LANG_ABBREV#", settings.langAbbrev.isEmpty() ? QString("en") : settings.langAbbrev)
+          .replace("#LANG_ABBREV#", settings.langAbbrev)
           .replace("#DISPLAYTYPE#", displayTypeString)
           .replace("#LANG_CSS#", langCSS)
           .replace("#PAGE_DIRECTION#", settings.textDirectionAsHtmlDirAttr())
