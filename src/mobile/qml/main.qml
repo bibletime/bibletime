@@ -378,61 +378,11 @@ Rectangle {
         id: installManagerChooser
 
         objectName: "installManagerChooser"
-        sourceModel: dummyModel
-        categoryModel: dummyModel
-        languageModel: dummyModel
-        worksModel: dummyModel2
         width: 600
         height: parent.height
         anchors.centerIn: parent
         anchors.top: parent.top
         visible: false
     }
-
-    ListModel {
-        id: dummyModel2
-        ListElement { title: "ESV"; desc: "Now is the time for all good men" }
-        ListElement { title: "ESV"; desc: "Now is the time for all good men" }
-        ListElement { title: "ESV"; desc: "Now is the time for all good men" }
-        ListElement { title: "ESV"; desc: "Now is the time for all good men" }
-        ListElement { title: "ESV"; desc: "Now is the time for all good men" }
-        ListElement { title: "ESV"; desc: "Now is the time for all good men" }
-        ListElement { title: "ESV"; desc: "Now is the time for all good men" }
-        ListElement { title: "ESV"; desc: "Now is the time for all good men" }
-        ListElement { title: "ESV"; desc: "Now is the time for all good men" }
-        ListElement { title: "ESV"; desc: "Now is the time for all good men" }
-        ListElement { title: "ESV"; desc: "Now is the time for all good men" }
-    }
-
-    ListModel {
-        id: dummyModel
-        ListElement { modelText: "george"; }
-        ListElement { modelText: "gary holmlund"; }
-        ListElement { modelText: "george"; }
-        ListElement { modelText: "gary holmlund"; }
-        ListElement { modelText: "george"; }
-        ListElement { modelText: "gary holmlund"; }
-        ListElement { modelText: "george"; }
-        ListElement { modelText: "gary holmlund"; }
-        ListElement { modelText: "george"; }
-        ListElement { modelText: "gary holmlund"; }
-        ListElement { modelText: "george"; }
-        ListElement { modelText: "gary holmlund"; }
-        ListElement { modelText: "george"; }
-        ListElement { modelText: "gary holmlund"; }
-        ListElement { modelText: "george"; }
-        ListElement { modelText: "gary holmlund"; }
-        ListElement { modelText: "george"; }
-        ListElement { modelText: "gary holmlund"; }
-        ListElement { modelText: "george"; }
-        ListElement { modelText: "gary holmlund"; }
-        ListElement { modelText: "george"; }
-        ListElement { modelText: "gary holmlund"; }
-        ListElement { modelText: "george"; }
-        ListElement { modelText: "gary holmlund"; }
-        ListElement { modelText: "george"; }
-        ListElement { modelText: "gary holmlund"; }
-    }
-
 
 }
