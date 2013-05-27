@@ -94,10 +94,14 @@ Rectangle {
         }
     }
 
-//    width: 1280
-//    height: 800
-    width: 980
-    height: 500
+    function installModules() {
+        installManager.openChooser();
+    }
+
+    width: 1280
+    height: 600
+//    width: 980
+//    height: 500
     rotation: 0
 
     MainToolbar {
@@ -260,8 +264,9 @@ Rectangle {
 
             ListElement { title: QT_TR_NOOP("New Bible Window");        action: "newBibleWindow" }
             ListElement { title: QT_TR_NOOP("New Book Window");         action: "newBookWindow" }
-            ListElement { title: QT_TR_NOOP("Window Arrangement");      action: "windowArrangement" }
             ListElement { title: QT_TR_NOOP("Settings");                action: "settings" }
+            ListElement { title: QT_TR_NOOP("Bookshelf Manager");       action: "install" }
+            ListElement { title: QT_TR_NOOP("Window Arrangement");      action: "windowArrangement" }
             ListElement { title: QT_TR_NOOP("Gnome Style");             action: "gnomeStyle" }
             ListElement { title: QT_TR_NOOP("Android Style");           action: "androidStyle" }
         }
@@ -287,6 +292,9 @@ Rectangle {
                 }
                 else if (action == "androidStyle") {
                     btStyle.setStyle(2)
+                }
+                else if (action == "install") {
+                    installModules();
                 }
 
             }
@@ -349,6 +357,10 @@ Rectangle {
         id: btStyle
     }
 
+    InstallManager {
+        id: installManager
+    }
+
     TreeChooser {
         id: treeChooser
 
@@ -361,4 +373,66 @@ Rectangle {
         visible: false
         z: 100
     }
+
+    InstallManagerChooser {
+        id: installManagerChooser
+
+        objectName: "installManagerChooser"
+        sourceModel: dummyModel
+        categoryModel: dummyModel
+        languageModel: dummyModel
+        worksModel: dummyModel2
+        width: 600
+        height: parent.height
+        anchors.centerIn: parent
+        anchors.top: parent.top
+        visible: false
+    }
+
+    ListModel {
+        id: dummyModel2
+        ListElement { title: "ESV"; desc: "Now is the time for all good men" }
+        ListElement { title: "ESV"; desc: "Now is the time for all good men" }
+        ListElement { title: "ESV"; desc: "Now is the time for all good men" }
+        ListElement { title: "ESV"; desc: "Now is the time for all good men" }
+        ListElement { title: "ESV"; desc: "Now is the time for all good men" }
+        ListElement { title: "ESV"; desc: "Now is the time for all good men" }
+        ListElement { title: "ESV"; desc: "Now is the time for all good men" }
+        ListElement { title: "ESV"; desc: "Now is the time for all good men" }
+        ListElement { title: "ESV"; desc: "Now is the time for all good men" }
+        ListElement { title: "ESV"; desc: "Now is the time for all good men" }
+        ListElement { title: "ESV"; desc: "Now is the time for all good men" }
+    }
+
+    ListModel {
+        id: dummyModel
+        ListElement { modelText: "george"; }
+        ListElement { modelText: "gary holmlund"; }
+        ListElement { modelText: "george"; }
+        ListElement { modelText: "gary holmlund"; }
+        ListElement { modelText: "george"; }
+        ListElement { modelText: "gary holmlund"; }
+        ListElement { modelText: "george"; }
+        ListElement { modelText: "gary holmlund"; }
+        ListElement { modelText: "george"; }
+        ListElement { modelText: "gary holmlund"; }
+        ListElement { modelText: "george"; }
+        ListElement { modelText: "gary holmlund"; }
+        ListElement { modelText: "george"; }
+        ListElement { modelText: "gary holmlund"; }
+        ListElement { modelText: "george"; }
+        ListElement { modelText: "gary holmlund"; }
+        ListElement { modelText: "george"; }
+        ListElement { modelText: "gary holmlund"; }
+        ListElement { modelText: "george"; }
+        ListElement { modelText: "gary holmlund"; }
+        ListElement { modelText: "george"; }
+        ListElement { modelText: "gary holmlund"; }
+        ListElement { modelText: "george"; }
+        ListElement { modelText: "gary holmlund"; }
+        ListElement { modelText: "george"; }
+        ListElement { modelText: "gary holmlund"; }
+    }
+
+
 }

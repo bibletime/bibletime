@@ -447,6 +447,8 @@ SET(bibletime_SRC_MOBILE_SOURCES
 )
 
 SET(bibletime_SRC_MOBILE_UI_SOURCES
+    src/mobile/bookshelfmanager/installmanager.cpp
+    src/mobile/bookshelfmanager/installmanager.h
     src/mobile/keychooser/bookkeychooser.cpp
     src/mobile/keychooser/bookkeychooser.h
     src/mobile/keychooser/versechooser.cpp
@@ -472,6 +474,7 @@ SET(bibletime_SRC_MOBILE_UI_SOURCES
 )
 
 SET(bibletime_SRC_MOBILE_MOCABLE_HEADERS
+    src/mobile/bookshelfmanager/installmanager.h
     src/mobile/keychooser/bookkeychooser.h
     src/mobile/keychooser/versechooser.h
     src/mobile/bibletime.h
@@ -489,6 +492,9 @@ SET(bibletime_SRC_MOBILE_MOCABLE_HEADERS
 SET(bibletime_MOBILE_QML_FILES
     src/mobile/qml/BookWindow.qml
     src/mobile/qml/ImageButton.qml
+    src/mobile/qml/InstallManagerChooser.qml
+    src/mobile/qml/ListTextView.qml
+    src/mobile/qml/ListWorksView.qml
     src/mobile/qml/main.qml
     src/mobile/qml/MainToolbar.qml
     src/mobile/qml/Menus.qml
