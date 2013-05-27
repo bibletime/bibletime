@@ -378,7 +378,7 @@ Rectangle {
         id: installManagerChooser
 
         objectName: "installManagerChooser"
-        width: 600
+        width: 750
         height: parent.height
         anchors.centerIn: parent
         anchors.top: parent.top

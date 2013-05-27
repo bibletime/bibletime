@@ -12,17 +12,17 @@ ListView {
             border.width: 1
             border.color: ListView.isCurrentItem ? "#c0c0c0" : "#a0a0a0"
             width: parent.width
-            height: 48
+            height: 44
 
             Rectangle {
                 id: button
 
-                height: parent.height -16
-                width: entry.height * 1.5
+                height: parent.height -8
+                width: 80
                 color: "lightgray"
                 anchors.right: entry.right
                 anchors.top: entry.top
-                anchors.topMargin: 8
+                anchors.topMargin: 4
                 anchors.rightMargin: 6
 
                 gradient: Gradient {
@@ -47,7 +47,7 @@ ListView {
                 MouseArea {
                     anchors.fill: parent
                     onClicked: {
-                        console.log("Install me")
+                        console.log("Install " + title)
                     }
                 }
 
@@ -71,11 +71,12 @@ ListView {
                 anchors.right: entry.right
                 width: parent.width
                 height: parent.height/2 -4
-                anchors.leftMargin: 15
-                anchors.rightMargin: 10
+                anchors.leftMargin: 35
+                anchors.rightMargin: button.width + 10
                 anchors.topMargin: 25
                 text: desc
-                font.pointSize: 10
+                elide: Text.ElideMiddle
+                font.pointSize: 11
             }
         }
     }

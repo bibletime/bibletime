@@ -17,25 +17,35 @@ public:
     Q_INVOKABLE void openChooser();
 
 private slots:
+    void categoryIndexChanged(int index);
+    void languageIndexChanged(int index);
     void sourceIndexChanged(int index);
 
 private:
-    QString getCurrentListItem(const char* propertyName, const QStringList& list);
+    QString getCurrentListItem(const char* propertyName,
+                               const QStringList& list);
     void findInstallManagerObject();
     void makeConnections();
     void setProperties();
     void setupSourceModel();
     void setCurrentListItem(const char* propertyName,
-                            const QStringList& list, const QString& itemName);
-    void updateCategoryAndLanguageModels(const QString& sourceName);
+                            const QStringList& list,
+                            const QString& itemName);
+    void updateCategoryAndLanguageModels();
+    void updateWorksModel();
 
     QQuickItem* installManagerChooserObject_;
+
     QStringList m_sourceList;
     QStringList m_categoryList;
     QStringList m_languageList;
-        RoleItemModel m_sourceModel;
+    QStringList m_worksTitleList;
+    QStringList m_worksDescList;
+
+    RoleItemModel m_sourceModel;
     RoleItemModel m_categoryModel;
     RoleItemModel m_languageModel;
+    RoleItemModel m_worksModel;
 };
 
 } // end namespace
