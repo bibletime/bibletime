@@ -49,7 +49,6 @@ ListView {
 
         function itemSelected() {
             listView.selectItem(mouseX, mouseY);
-            console.log(listView.currentIndex);
         }
     }
 }

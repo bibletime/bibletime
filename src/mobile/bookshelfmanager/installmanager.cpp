@@ -8,6 +8,7 @@
 #include "mobile/ui/qtquick2applicationviewer.h"
 #include "mobile/ui/viewmanager.h"
 #include <QQuickItem>
+#include <QDebug>
 
 namespace btm {
 
@@ -17,8 +18,14 @@ enum TextRoles {
 
 enum WorksRoles {
     TitleRole = Qt::UserRole + 1,
-    DescriptionRole = Qt::UserRole + 2
+    DescriptionRole = Qt::UserRole + 2,
+    InstalledRole = Qt::UserRole + 3
 };
+
+static bool moduleInstalled(const CSwordModuleInfo& moduleInfo) {
+    const CSwordModuleInfo *installedModule = CSwordBackend::instance()->findModuleByName(moduleInfo.name());
+    return installedModule != 0;
+}
 
 static void setupTextModel(const QStringList& modelList, RoleItemModel* model) {
     QHash<int, QByteArray> roleNames;
@@ -36,12 +43,15 @@ static void setupTextModel(const QStringList& modelList, RoleItemModel* model) {
 
 static void setupWorksModel(const QStringList& titleList,
                             const QStringList& descriptionList,
+                            const QList<int>& installedList,
                             RoleItemModel* model) {
     Q_ASSERT(titleList.count() == descriptionList.count());
+    Q_ASSERT(titleList.count() == installedList.count());
 
     QHash<int, QByteArray> roleNames;
     roleNames[TitleRole] =  "title";
     roleNames[DescriptionRole] = "desc";
+    roleNames[InstalledRole] = "installed";
     model->setRoleNames(roleNames);
 
     model->clear();
@@ -51,6 +61,8 @@ static void setupWorksModel(const QStringList& titleList,
         item->setData(title, TitleRole);
         QString description = descriptionList.at(i);
         item->setData(description, DescriptionRole);
+        int installed = installedList.at(i);
+        item->setData(installed, InstalledRole);
         model->appendRow(item);
     }
 }
@@ -102,15 +114,21 @@ void InstallManager::makeConnections()
     ok = connect(installManagerChooserObject_, SIGNAL(languageChanged(int)),
                       this, SLOT(languageIndexChanged(int)));
     Q_ASSERT(ok);
+
+    ok = connect(installManagerChooserObject_, SIGNAL(workSelected(int)),
+                      this, SLOT(workSelected(int)));
+    Q_ASSERT(ok);
+
+    ok = connect(installManagerChooserObject_, SIGNAL(cancel()),
+                      this, SLOT(cancel()));
+    Q_ASSERT(ok);
+
+    ok = connect(installManagerChooserObject_, SIGNAL(installRemove()),
+                      this, SLOT(installRemove()));
+    Q_ASSERT(ok);
 }
 
 void InstallManager::setProperties() {
-
-    QtQuick2ApplicationViewer* viewer = getViewManager()->getViewer();
-    if (viewer == 0 || installManagerChooserObject_ == 0)
-        return;
-
-    QQmlContext* ctx = viewer->rootContext();
     installManagerChooserObject_->setProperty("sourceModel", QVariant::fromValue(&m_sourceModel));
     installManagerChooserObject_->setProperty("categoryModel", QVariant::fromValue(&m_categoryModel));
     installManagerChooserObject_->setProperty("languageModel", QVariant::fromValue(&m_languageModel));
@@ -140,6 +158,44 @@ void InstallManager::languageIndexChanged(int index)
     if (index < 0 || index >= m_languageList.count())
         return;
     updateWorksModel();
+}
+
+void InstallManager::workSelected(int index) {
+    QStandardItem* item = m_worksModel.item(index,0);
+    QVariant vInstalled = item->data(InstalledRole);
+    int installed = vInstalled.toInt();
+    installed = installed == 0 ? 1 : 0;
+    item->setData(installed, InstalledRole);
+
+    CSwordModuleInfo* moduleInfo = m_worksList.at(index);
+    m_modulesToInstallRemove[moduleInfo] = installed == 1;
+}
+
+void InstallManager::cancel() {
+    installManagerChooserObject_->setProperty("visible", false);
+}
+
+void InstallManager::installRemove() {
+    installManagerChooserObject_->setProperty("visible", false);
+
+    QList<CSwordModuleInfo*> modulesToRemove;
+    QList<CSwordModuleInfo*> modulesToInstall;
+    QMap<CSwordModuleInfo*, bool>::const_iterator it;
+    for(it=m_modulesToInstallRemove.constBegin();
+        it!=m_modulesToInstallRemove.constEnd();
+        ++it) {
+        CSwordModuleInfo* moduleInfo = it.key();
+        bool install = it.value();
+        QString name = moduleInfo->name();
+        if (moduleInstalled(*moduleInfo) && install == false) {
+            modulesToRemove.append(moduleInfo);
+        }
+        else if ( ! moduleInstalled(*moduleInfo) && install == true) {
+            modulesToInstall.append(moduleInfo);
+        }
+    }
+    removeModules(modulesToRemove);
+    installModules(modulesToInstall);
 }
 
 void InstallManager::updateCategoryAndLanguageModels()
@@ -208,23 +264,36 @@ void InstallManager::updateWorksModel()
 
     m_worksTitleList.clear();
     m_worksDescList.clear();
+    m_worksList.clear();
+    m_worksInstalledList.clear();
     for (int moduleIndex=0; moduleIndex<modules.count(); ++moduleIndex) {
         CSwordModuleInfo* module = modules.at(moduleIndex);
         CSwordModuleInfo::Category category = module->category();
-        //QString name = module->name();
         QString moduleCategoryName = module->categoryName(category);
         const CLanguageMgr::Language* language = module->language();
         QString moduleLanguageName = language->englishName();
         if (moduleCategoryName == categoryName &&
             moduleLanguageName == languageName ) {
-            m_worksTitleList.append(module->name());
+            QString name = module->name();
             QString description = module->config(CSwordModuleInfo::Description);
             QString version = module->config(CSwordModuleInfo::ModuleVersion);
-            QString info = description + ": " + version;
+            QString info = description + ": " + version;\
+            int installed = moduleInstalled(*module) ? 1 : 0;
+            m_worksTitleList.append(name);
             m_worksDescList.append(info);
+            m_worksList.append(module);
+            m_worksInstalledList.append(installed);
         }
     }
-    setupWorksModel(m_worksTitleList, m_worksDescList, &m_worksModel);
+    setupWorksModel(m_worksTitleList, m_worksDescList, m_worksInstalledList, &m_worksModel);
+}
+
+void InstallManager::removeModules(const QList<CSwordModuleInfo*>& modules) {
+
+}
+
+void InstallManager::installModules(const QList<CSwordModuleInfo*>& modules) {
+
 }
 
 } // end namespace

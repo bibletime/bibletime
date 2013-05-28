@@ -2,7 +2,10 @@ import QtQuick 2.0
 import BibleTime 1.0
 
 ListView {
+    id: listView
     clip: true
+
+    signal itemSelected(int index)
 
     delegate {
         Rectangle {
@@ -14,47 +17,29 @@ ListView {
             width: parent.width
             height: 44
 
-            Rectangle {
-                id: button
+            Image {
+                id: installedCheckmark
 
-                height: parent.height -8
-                width: 80
-                color: "lightgray"
-                anchors.right: entry.right
-                anchors.top: entry.top
-                anchors.topMargin: 4
-                anchors.rightMargin: 6
+                source: "checkmark.svg"
+                height: entry.height - 15
+                width:  25
+                anchors.left: parent.left
+                anchors.top: parent.top
+                anchors.leftMargin: 5
+                anchors.topMargin: 5
+                visible: installed == 1
+            }
 
-                gradient: Gradient {
-                    GradientStop { position: 0.0;  color: btStyle.buttonGradient0 }
-                    GradientStop { position: 0.15; color: btStyle.buttonGradient1 }
-                    GradientStop { position: 0.85; color: btStyle.buttonGradient2 }
-                    GradientStop { position: 1.0;  color: btStyle.buttonGradient3 }
-                }
-                smooth: true
-
-                border {
-                    width: 1
-                    color: btStyle.buttonBorder
-                }
-
-                Text {
-
-                    text: "Install"
-                    anchors.centerIn: parent
-                }
-
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: {
-                        console.log("Install " + title)
-                    }
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    onClicked: listView.itemSelected(index);
                 }
 
             }
             Text {
                 anchors.top: entry.top
-                anchors.left: entry.left
+                anchors.left: installedCheckmark.right
                 anchors.right: entry.right
                 width: parent.width
                 height: parent.height/2 -4
@@ -67,12 +52,12 @@ ListView {
 
             Text {
                 anchors.bottom: entry.bottom
-                anchors.left: entry.left
+                anchors.left: installedCheckmark.right
                 anchors.right: entry.right
                 width: parent.width
                 height: parent.height/2 -4
                 anchors.leftMargin: 35
-                anchors.rightMargin: button.width + 10
+                anchors.rightMargin: 10
                 anchors.topMargin: 25
                 text: desc
                 elide: Text.ElideMiddle

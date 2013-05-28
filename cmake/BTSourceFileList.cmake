@@ -504,6 +504,7 @@ SET(bibletime_MOBILE_QML_FILES
     src/mobile/qml/GridChooser.qml
     src/mobile/qml/TreeChooser.qml
     src/mobile/qml/Window.qml
+    src/mobile/qml/checkmark.svg
     src/mobile/qml/leftarrow.svg
     src/mobile/qml/rightarrow.svg
 )

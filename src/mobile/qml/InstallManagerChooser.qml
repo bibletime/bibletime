@@ -17,6 +17,9 @@ Rectangle {
     signal sourceChanged(int index)
     signal categoryChanged(int index)
     signal languageChanged(int index)
+    signal workSelected(int index)
+    signal cancel();
+    signal installRemove();
 
     Grid {
         id:  grid
@@ -24,7 +27,6 @@ Rectangle {
         rows: 2
         spacing: 3
         width: parent.width
-//        height: parent.height / 2.5
         anchors.left: parent.left
         anchors.leftMargin: 3
 
@@ -111,7 +113,6 @@ Rectangle {
         }
     }
 
-
     Rectangle {
         id: spacer
 
@@ -127,14 +128,61 @@ Rectangle {
         }
     }
 
-
     ListWorksView {
         id: worksView
 
         width: parent.width
         anchors.top: spacer.bottom
         anchors.left: parent.left
+        anchors.bottom: installRemoveButton.top
+        anchors.bottomMargin: 10
+        onItemSelected: {
+            workSelected(index)
+        }
+    }
+
+    Rectangle {
+        id: "installRemoveButton"
+        width:150
+        height: 40
         anchors.bottom: parent.bottom
+        anchors.bottomMargin: 10
+        anchors.right: cancelButton.left
+        anchors.rightMargin: 10
+        border.width: 1
+        border.color: "black"
+
+        Text {
+            text: "Install / Remove"
+            anchors.centerIn: parent
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: installManager.installRemove()
+            }
+        }
+    }
+
+    Rectangle {
+        id: "cancelButton"
+        width: installRemoveButton.width
+        height: installRemoveButton.height
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: 10
+        anchors.right: parent.right
+        anchors.rightMargin: 10
+        border.width: 1
+        border.color: "black"
+
+        Text {
+            text: "Cancel"
+            anchors.centerIn: parent
+        }
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: installManager.cancel();
+        }
     }
 
 }
