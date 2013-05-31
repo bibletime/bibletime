@@ -1450,8 +1450,12 @@ Ez a  fájl a BibleTime licenszelésével megegyező licensszel terjeszthető.</
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="135"/>
+        <source>The languages which can be used for the biblical book names. Translations are provided by the Sword library.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>The languages which can be used for the biblical booknames</source>
-        <translation>A nyelvek, amelyeket választhatja a Biblia könyvcímeihez</translation>
+        <translation type="obsolete">A nyelvek, amelyeket választhatja a Biblia könyvcímeihez</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="132"/>
@@ -4015,7 +4019,7 @@ Language name ppk</extracomment>
         <translation>Szótő elválasztás</translation>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/chtmlexportrendering.cpp" line="247"/>
+        <location filename="../../src/backend/rendering/chtmlexportrendering.cpp" line="244"/>
         <source>Export</source>
         <translation>Exportálás</translation>
     </message>
@@ -4322,7 +4326,12 @@ Language name ppk</extracomment>
         <translation>Nem indexelt dokumentumok</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="54"/>
+        <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="48"/>
+        <source>CSS base template not found!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="65"/>
         <source>Default template &quot;%1&quot; not found!</source>
         <translation>Alapértelmezett &quot;%1&quot; sablon nem található!</translation>
     </message>
