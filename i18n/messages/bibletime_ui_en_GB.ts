@@ -4108,7 +4108,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="48"/>
         <source>CSS base template not found!</source>
-        <translation type="unfinished"></translation>
+        <translation>CSS base template not found!</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="65"/>
