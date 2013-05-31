@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: full\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
-"POT-Creation-Date: 2012-01-09 16:07-0500\n"
+"POT-Creation-Date: 2013-05-31 11:03-0300\n"
 "PO-Revision-Date: 2004-02-04 11:05+0545\n"
 "Last-Translator:  <s970501@ku.edu.np>\n"
 "Language-Team:  <ko@li.org>\n"
@@ -2108,7 +2108,7 @@ msgstr ""
 #. type: Content of: <book><bookinfo>
 #: docs/howto/en/docbook/index.docbook:26
 msgid ""
-"<copyright> <year>2001-2012</year> <holder>The &bibletime; Team (bt-"
+"<copyright> <year>2001-2013</year> <holder>The &bibletime; Team (bt-"
 "devel@crosswire.org)</holder> </copyright>"
 msgstr ""
 
