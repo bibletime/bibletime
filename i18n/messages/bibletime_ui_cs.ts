@@ -3331,6 +3331,10 @@ Language name ppk</extracomment>
         <source>See --help for details.</source>
         <translation>Pro podrobnosti použijte --help.</translation>
     </message>
+    <message>
+        <source>CSS base template not found!</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QPushButton</name>
