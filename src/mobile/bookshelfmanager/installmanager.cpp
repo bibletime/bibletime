@@ -293,7 +293,7 @@ void InstallManager::removeModules(const QList<CSwordModuleInfo*>& modules) {
 }
 
 void InstallManager::installModules(const QList<CSwordModuleInfo*>& modules) {
-
+    installProgress_.openProgress(modules);
 }
 
 } // end namespace

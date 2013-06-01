@@ -155,11 +155,11 @@ Rectangle {
         Text {
             text: "Install / Remove"
             anchors.centerIn: parent
+        }
 
-            MouseArea {
-                anchors.fill: parent
-                onClicked: installManager.installRemove()
-            }
+        MouseArea {
+            anchors.fill: parent
+            onClicked: installManager.installRemove()
         }
     }
 

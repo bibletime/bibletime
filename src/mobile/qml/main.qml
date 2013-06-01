@@ -264,11 +264,11 @@ Rectangle {
 
             ListElement { title: QT_TR_NOOP("New Bible Window");        action: "newBibleWindow" }
             ListElement { title: QT_TR_NOOP("New Book Window");         action: "newBookWindow" }
-            ListElement { title: QT_TR_NOOP("Settings");                action: "settings" }
             ListElement { title: QT_TR_NOOP("Bookshelf Manager");       action: "install" }
             ListElement { title: QT_TR_NOOP("Window Arrangement");      action: "windowArrangement" }
             ListElement { title: QT_TR_NOOP("Gnome Style");             action: "gnomeStyle" }
             ListElement { title: QT_TR_NOOP("Android Style");           action: "androidStyle" }
+            ListElement { title: QT_TR_NOOP("Settings");                action: "settings" }
         }
 
         Menus {
@@ -385,4 +385,18 @@ Rectangle {
         visible: false
     }
 
+    Progress {
+        id: progress
+
+        objectName: "progress"
+        value: 0.25
+        minimumValue: 0
+        maximumValue: 1
+        width:550
+        height: 200
+        anchors.centerIn: parent
+        anchors.top: parent.top
+        visible: false
+        text: "Hello World..."
+    }
 }

@@ -19,6 +19,7 @@ SET(bibletime_SRC_BACKEND
     src/backend/cswordmodulesearch.cpp
     src/backend/btinstallbackend.cpp
     src/frontend/bookshelfmanager/btinstallmgr.cpp
+    src/frontend/bookshelfmanager/installpage/btinstallthread.cpp
 )
 
 SOURCE_GROUP("src\\backend" FILES ${bibletime_SRC_BACKEND})
@@ -159,7 +160,6 @@ SET(bibletime_SRC_FRONTEND_BOOKSHELFMANAGER_INSTALLPAGE
     src/frontend/bookshelfmanager/installpage/btinstallpageworkswidget.cpp
     src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp
     src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp
-    src/frontend/bookshelfmanager/installpage/btinstallthread.cpp
     src/frontend/bookshelfmanager/installpage/btinstallpagemodel.cpp
     src/frontend/bookshelfmanager/installpage/btrefreshprogressdialog.cpp
 )
@@ -311,6 +311,7 @@ SET(bibletime_COMMON_MOCABLE_HEADERS
     src/backend/managers/cswordbackend.h
     src/util/btsignal.h
     src/frontend/bookshelfmanager/btinstallmgr.h
+    src/frontend/bookshelfmanager/installpage/btinstallthread.h
 )
 
 SET(bibletime_FRONTEND_DESKTOP_MOCABLE_HEADERS
@@ -329,7 +330,6 @@ SET(bibletime_FRONTEND_DESKTOP_MOCABLE_HEADERS
     src/frontend/bookshelfmanager/installpage/btinstallpageworkswidget.h
     src/frontend/bookshelfmanager/installpage/btinstallpathdialog.h
     src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.h
-    src/frontend/bookshelfmanager/installpage/btinstallthread.h
     src/frontend/bookshelfmanager/installpage/btinstallpagemodel.h
     src/frontend/bookshelfmanager/installpage/btrefreshprogressdialog.h
     src/frontend/bookshelfmanager/removepage/btremovepage.h
@@ -449,6 +449,8 @@ SET(bibletime_SRC_MOBILE_SOURCES
 SET(bibletime_SRC_MOBILE_UI_SOURCES
     src/mobile/bookshelfmanager/installmanager.cpp
     src/mobile/bookshelfmanager/installmanager.h
+    src/mobile/bookshelfmanager/installprogress.cpp
+    src/mobile/bookshelfmanager/installprogress.h
     src/mobile/keychooser/bookkeychooser.cpp
     src/mobile/keychooser/bookkeychooser.h
     src/mobile/keychooser/versechooser.cpp
@@ -475,6 +477,7 @@ SET(bibletime_SRC_MOBILE_UI_SOURCES
 
 SET(bibletime_SRC_MOBILE_MOCABLE_HEADERS
     src/mobile/bookshelfmanager/installmanager.h
+    src/mobile/bookshelfmanager/installprogress.h
     src/mobile/keychooser/bookkeychooser.h
     src/mobile/keychooser/versechooser.h
     src/mobile/bibletime.h
@@ -491,6 +494,8 @@ SET(bibletime_SRC_MOBILE_MOCABLE_HEADERS
 
 SET(bibletime_MOBILE_QML_FILES
     src/mobile/qml/BookWindow.qml
+    src/mobile/qml/GridChooserButton.qml
+    src/mobile/qml/GridChooser.qml
     src/mobile/qml/ImageButton.qml
     src/mobile/qml/InstallManagerChooser.qml
     src/mobile/qml/ListTextView.qml
@@ -500,8 +505,7 @@ SET(bibletime_MOBILE_QML_FILES
     src/mobile/qml/Menus.qml
     src/mobile/qml/MenuButton.qml
     src/mobile/qml/MenuView.qml
-    src/mobile/qml/GridChooserButton.qml
-    src/mobile/qml/GridChooser.qml
+    src/mobile/qml/Progress.qml
     src/mobile/qml/TreeChooser.qml
     src/mobile/qml/Window.qml
     src/mobile/qml/checkmark.svg

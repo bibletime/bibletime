@@ -2,6 +2,7 @@
 #define INSTALL_MODULE_CHOOSER_H
 
 #include "mobile/ui/roleitemmodel.h"
+#include "installprogress.h"
 #include <QMap>
 #include <QObject>
 
@@ -42,6 +43,7 @@ private:
     void updateWorksModel();
 
     QQuickItem* installManagerChooserObject_;
+    InstallProgress installProgress_;
 
     QStringList m_sourceList;
     QStringList m_categoryList;
