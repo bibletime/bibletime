@@ -397,6 +397,5 @@ Rectangle {
         anchors.centerIn: parent
         anchors.top: parent.top
         visible: false
-        text: "Hello World..."
     }
 }

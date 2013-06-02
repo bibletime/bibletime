@@ -2,9 +2,12 @@
 #define INSTALL_PROGRESS_H
 
 #include <QObject>
+#include <QMultiMap>
+#include <QMap>
 
 class QQuickItem;
 class CSwordModuleInfo;
+class BtInstallThread;
 
 namespace btm {
 
@@ -18,14 +21,26 @@ public:
 
 private slots:
     void cancel();
+    void close();
+    void slotOneItemCompleted(QString module, QString source, int status);
+    void slotOneItemStopped(QString module, QString source);
+    void slotStopInstall();
+    void slotStatusUpdated(QString module, int status);
+    void slotDownloadStarted(QString module);
+    void slotInstallStarted(QString module, QString);
+    bool threadsDone();
 
 private:
     void findProgressObject();
-    void makeConnections();
+    QString getSourcePath();
+    void oneItemStoppedOrCompleted(QString module, QString source, QString message);
     void setProperties();
+    void startThreads();
 
     QQuickItem* progressObject_;
-
+    QMultiMap<QString, BtInstallThread*> m_waitingThreads;
+    QMultiMap<QString, BtInstallThread*> m_runningThreads;
+    QMap<QString, BtInstallThread*> m_threadsByModule;
 };
 
 
