@@ -21,7 +21,7 @@ SET(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 SET(BT_VERSION_MAJOR "2")
 SET(BT_VERSION_MINOR "9")
-SET(BT_VERSION_PATCH "1")
+SET(BT_VERSION_PATCH "2")
 #SET(BT_VERSION_BUILD "") # Temporarily uncomment this line for release procedures
 
 

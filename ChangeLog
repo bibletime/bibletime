@@ -1,3 +1,6 @@
+2013-06-03 Jaak Ristioja <jaak@ristioja.ee>
+    * Released 2.9.2.
+
 2013-05-19 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix multi-arch path issue in FindCLucene.cmake
 
