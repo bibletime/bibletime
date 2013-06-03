@@ -8,6 +8,7 @@
 
 class QQuickItem;
 class CSwordModuleInfo;
+class BtInstallMgr;
 
 namespace btm {
 
@@ -24,6 +25,11 @@ private slots:
     void categoryIndexChanged(int index);
     void installRemove();
     void languageIndexChanged(int index);
+    void refreshLists();
+    void refreshWorksCancel();
+    void refreshWorksProgress(const int, const int current);
+    void refreshSourceListCancel();
+    void refreshSourceListProgress(const int, const int current);
     void sourceIndexChanged(int index);
     void workSelected(int index);
 
@@ -31,8 +37,11 @@ private:
     QString getCurrentListItem(const char* propertyName,
                                const QStringList& list);
     void findInstallManagerObject();
+    void findProgressObject();
     void installModules(const QList<CSwordModuleInfo*>& modules);
     void makeConnections();
+    void refreshSourceList();
+    void refreshWorks(const QStringList& sourceNames);
     void removeModules(const QList<CSwordModuleInfo*>& modules);
     void setProperties();
     void setupSourceModel();
@@ -43,8 +52,10 @@ private:
     void updateWorksModel();
 
     QQuickItem* installManagerChooserObject_;
-    InstallProgress installProgress_;
+    QQuickItem* progressObject_;
+    BtInstallMgr* btInstallMgr_;
 
+    InstallProgress installProgress_;
     QStringList m_sourceList;
     QStringList m_categoryList;
     QStringList m_languageList;
@@ -53,7 +64,6 @@ private:
     QList<CSwordModuleInfo*> m_worksList;
     QList<int> m_worksInstalledList;
     QMap<CSwordModuleInfo*, bool> m_modulesToInstallRemove;
-
     RoleItemModel m_sourceModel;
     RoleItemModel m_categoryModel;
     RoleItemModel m_languageModel;

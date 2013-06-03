@@ -4,6 +4,7 @@
 
 #include "backend/btinstallbackend.h"
 #include "backend/managers/clanguagemgr.h"
+#include "frontend/bookshelfmanager/btinstallmgr.h"
 #include "mobile/btmmain.h"
 #include "mobile/ui/qtquick2applicationviewer.h"
 #include "mobile/ui/viewmanager.h"
@@ -69,7 +70,8 @@ static void setupWorksModel(const QStringList& titleList,
 }
 
 InstallManager::InstallManager(QObject* parent)
-    : installManagerChooserObject_(0) {
+    : installManagerChooserObject_(0),
+      btInstallMgr_(0) {
 }
 
 void InstallManager::openChooser() {
@@ -94,6 +96,16 @@ void InstallManager::findInstallManagerObject() {
     if (rootObject != 0)
         installManagerChooserObject_ = rootObject->findChild<QQuickItem*>("installManagerChooser");
 }
+
+void InstallManager::findProgressObject() {
+    QtQuick2ApplicationViewer* viewer = getViewManager()->getViewer();
+    QQuickItem * rootObject = 0;
+    if (viewer != 0)
+        rootObject = viewer->rootObject();
+    if (rootObject != 0)
+        progressObject_ = rootObject->findChild<QQuickItem*>("progress");
+}
+
 
 void InstallManager::setupSourceModel() {
     m_sourceList = BtInstallBackend::sourceNameList();
@@ -126,6 +138,10 @@ void InstallManager::makeConnections()
 
     ok = connect(installManagerChooserObject_, SIGNAL(installRemove()),
                       this, SLOT(installRemove()));
+    Q_ASSERT(ok);
+
+    ok = connect(installManagerChooserObject_, SIGNAL(refreshLists()),
+                      this, SLOT(refreshLists()));
     Q_ASSERT(ok);
 }
 
@@ -337,5 +353,107 @@ void InstallManager::removeModules(const QList<CSwordModuleInfo*>& modules) {
 void InstallManager::installModules(const QList<CSwordModuleInfo*>& modules) {
     installProgress_.openProgress(modules);
 }
+
+void InstallManager::refreshLists() {
+    refreshSourceList();
+    setupSourceModel();
+
+    QStringList sourceNames = BtInstallBackend::sourceNameList();
+    refreshWorks(sourceNames);
+
+    //    foreach ( QString sourceName, sourceList) {
+//       refreshWorks(sourceName);
+//    }
+}
+
+void InstallManager::refreshSourceList() {
+    findProgressObject();
+    Q_ASSERT(progressObject_ != 0);
+    if (progressObject_ == 0)
+        return;
+
+    progressObject_->setProperty("minimumValue", 0.0);
+    progressObject_->setProperty("maximumValue", 100.0);
+    progressObject_->setProperty("value", 0.0);
+
+    connect(progressObject_, SIGNAL(cancel()), this, SLOT(refreshSourceListCancel()));
+
+    BtInstallMgr* btInstallMgr_ = new BtInstallMgr;
+
+    connect(btInstallMgr_, SIGNAL(percentCompleted(const int, const int)),
+            this, SLOT(refreshSourceListProgress(const int, const int)));
+
+    progressObject_->setProperty("visible", true);
+    progressObject_->setProperty("title", "Refreshing Source List");
+
+    int ret = btInstallMgr_->refreshRemoteSourceConfiguration();
+    if ( !ret ) { //make sure the sources were updated sucessfully
+        progressObject_->setProperty("visible", false);
+        delete btInstallMgr_;
+        btInstallMgr_ = 0;
+    }
+    else {
+        qWarning("InstallMgr: getting remote list returned an error.");
+    }
+}
+
+void InstallManager::refreshSourceListCancel() {
+    delete btInstallMgr_;
+    btInstallMgr_ = 0;
+    progressObject_->setProperty("visible", false);
+}
+
+void InstallManager::refreshSourceListProgress(const int, const int current) {
+    progressObject_->setProperty("value", current);
+}
+
+
+void InstallManager::refreshWorks(const QStringList& sourceNames) {
+    findProgressObject();
+    Q_ASSERT(progressObject_ != 0);
+    if (progressObject_ == 0)
+        return;
+
+    progressObject_->setProperty("minimumValue", 0.0);
+    progressObject_->setProperty("maximumValue", 100.0);
+    progressObject_->setProperty("value", 0.0);
+
+    BtInstallMgr* btInstallMgr_ = new BtInstallMgr;
+    connect(btInstallMgr_, SIGNAL(percentCompleted(const int, const int)),
+            this, SLOT(refreshWorksProgress(const int, const int)));
+    connect(progressObject_, SIGNAL(cancel()), this, SLOT(refreshWorksCancel()));
+
+    progressObject_->setProperty("visible", true);
+
+    foreach ( QString sourceName, sourceNames) {
+
+        QString title = "Refreshing " + sourceName;
+        qDebug() << title;
+        progressObject_->setProperty("title", title);
+        sword::InstallSource source = BtInstallBackend::source(sourceName);
+        bool result = (btInstallMgr_->refreshRemoteSource(&source) == 0);
+        qDebug() << result;
+        if (result) {
+            progressObject_->setProperty("value", 100.0);
+        } else {
+//        util::showWarning(this, tr("Warning"),
+//                          tr("Failed to refresh source %1")
+//                              .arg(QString(m_source.caption)));
+        }
+    }
+    progressObject_->setProperty("visible", false);
+}
+
+void InstallManager::refreshWorksCancel() {
+    delete btInstallMgr_;
+    btInstallMgr_ = 0;
+    progressObject_->setProperty("visible", false);
+}
+
+void InstallManager::refreshWorksProgress(const int, const int current) {
+    progressObject_->setProperty("value", current);
+    qDebug() << "value: " << current;
+}
+
 
 } // end namespace

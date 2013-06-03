@@ -14,12 +14,13 @@ Rectangle {
     objectName: "installManager"
     color: "lightgray"
 
-    signal sourceChanged(int index)
-    signal categoryChanged(int index)
-    signal languageChanged(int index)
-    signal workSelected(int index)
+    signal sourceChanged(int index);
+    signal categoryChanged(int index);
+    signal languageChanged(int index);
+    signal workSelected(int index);
     signal cancel();
     signal installRemove();
+    signal refreshLists();
 
     Grid {
         id:  grid
@@ -138,6 +139,28 @@ Rectangle {
         anchors.bottomMargin: 10
         onItemSelected: {
             workSelected(index)
+        }
+    }
+
+    Rectangle {
+        id: "refreshButton"
+        width:150
+        height: 40
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: 10
+        anchors.right: installRemoveButton.left
+        anchors.rightMargin: 10
+        border.width: 1
+        border.color: "black"
+
+        Text {
+            text: "Refresh Lists"
+            anchors.centerIn: parent
+        }
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: installManager.refreshLists()
         }
     }
 
