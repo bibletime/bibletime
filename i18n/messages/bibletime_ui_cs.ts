@@ -512,7 +512,7 @@
         <translation>&amp;Licence</translation>
     </message>
     <message>
-        <source>(c)1999-2011, The BibleTime Team</source>
+        <source>(c)1999-2013, The BibleTime Team</source>
         <translation></translation>
     </message>
     <message>

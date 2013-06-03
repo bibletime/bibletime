@@ -569,8 +569,8 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Stiamo cercando sviluppatori e traduttori. Se vuoi far parte del nostro team, invia una mail a %1.</translation>
     </message>
     <message>
-        <source>(c)1999-2012, The BibleTime Team</source>
-        <translation type="obsolete">(c)1999-2012, The BibleTime Team</translation>
+        <source>(c)1999-2013, The BibleTime Team</source>
+        <translation type="obsolete">(c)1999-2013, The BibleTime Team</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="140"/>
@@ -644,8 +644,8 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="133"/>
-        <source>(c)1999-2011, The BibleTime Team</source>
-        <translation>(c)1999-2011, The BibleTime Team</translation>
+        <source>(c)1999-2013, The BibleTime Team</source>
+        <translation>(c)1999-2013, The BibleTime Team</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="142"/>

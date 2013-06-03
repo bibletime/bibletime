@@ -564,8 +564,8 @@ Ez a  fájl a BibleTime licenszelésével megegyező licensszel terjeszthető.</
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="133"/>
-        <source>(c)1999-2011, The BibleTime Team</source>
-        <translation>(c)1999-2011, The BibleTime Team </translation>
+        <source>(c)1999-2013, The BibleTime Team</source>
+        <translation>(c)1999-2013, The BibleTime Team </translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="142"/>

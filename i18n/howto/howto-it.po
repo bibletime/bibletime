@@ -2495,13 +2495,13 @@ msgstr "Il team di BibleTime"
 #: docs/howto/en/docbook/index.docbook:26
 #, fuzzy
 #| msgid ""
-#| "<copyright> <year>2001-2009</year> <holder>The team of &bibletime; "
+#| "<copyright> <year>1999-2013</year> <holder>The team of &bibletime; "
 #| "(info@bibletime.info)</holder> </copyright>"
 msgid ""
-"<copyright> <year>2001-2013</year> <holder>The &bibletime; Team (bt-"
+"<copyright> <year>1999-2013</year> <holder>The &bibletime; Team (bt-"
 "devel@crosswire.org)</holder> </copyright>"
 msgstr ""
-"<copyright> <year>2001-2009</year> <holder>Il team di &bibletime; "
+"<copyright> <year>1999-2013</year> <holder>Il team di &bibletime; "
 "(info@bibletime.info)</holder> </copyright>"
 
 # type: Content of: <book><bookinfo><legalnotice><para>

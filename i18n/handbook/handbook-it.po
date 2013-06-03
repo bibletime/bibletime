@@ -3617,13 +3617,13 @@ msgstr "Abthorpe"
 #: docs/handbook/en/docbook/index.docbook:44
 #, fuzzy
 #| msgid ""
-#| "<copyright> <year>1999-2011</year> <holder>The &bibletime; Team</holder> "
+#| "<copyright> <year>1999-2013</year> <holder>The &bibletime; Team</holder> "
 #| "</copyright>"
 msgid ""
 "<copyright> <year>1999-2013</year> <holder>The &bibletime; Team</holder> </"
 "copyright>"
 msgstr ""
-"<copyright> <year>1999-2011</year> <holder>Il Team di &bibletime;</holder> </"
+"<copyright> <year>1999-2013</year> <holder>Il Team di &bibletime;</holder> </"
 "copyright>"
 
 # type: Content of: <book><bookinfo><legalnotice><para>
