@@ -528,8 +528,8 @@ Ce fichier est distribué sous la même licence que le paquet BibleTime.</transl
         <translation type="unfinished">Nous recherchons des développeurs et des traducteurs. Si vous souhaitez rejoindre l&apos;équipe, envoyez un e-mail à %1.</translation>
     </message>
     <message>
-        <source>(c)1999-2012, The BibleTime Team</source>
-        <translation type="obsolete">(c)1999-2012, L&apos;équipe de BibleTime</translation>
+        <source>(c)1999-2013, The BibleTime Team</source>
+        <translation type="obsolete">(c)1999-2013, L&apos;équipe de BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="141"/>
@@ -603,8 +603,8 @@ Ce fichier est distribué sous la même licence que le paquet BibleTime.</transl
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="134"/>
-        <source>(c)1999-2011, The BibleTime Team</source>
-        <translation type="unfinished">(c)1999-2012, L&apos;équipe de BibleTime {1999-2011,?}</translation>
+        <source>(c)1999-2013, The BibleTime Team</source>
+        <translation type="unfinished">(c)1999-2013, L&apos;équipe de BibleTime {1999-2013,?}</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="143"/>
