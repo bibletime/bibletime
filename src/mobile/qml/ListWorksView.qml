@@ -7,6 +7,15 @@ ListView {
 
     signal itemSelected(int index)
 
+    Rectangle {
+        id: scrollbar
+        anchors.right: listView.right
+        y: listView.visibleArea.yPosition * listView.height
+        width: 6
+        height: listView.visibleArea.heightRatio * listView.height
+        color: "darkgray"
+    }
+
     delegate {
         Rectangle {
             id: entry

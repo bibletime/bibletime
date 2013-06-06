@@ -15,15 +15,24 @@ ListView {
         itemSelected(index);
     }
 
+    Rectangle {
+        id: scrollbar
+        anchors.right: listView.right
+        y: listView.visibleArea.yPosition * listView.height
+        width: 6
+        height: listView.visibleArea.heightRatio * listView.height
+        color: "darkgray"
+    }
+
     delegate {
         Rectangle {
             id: entry
 
             property bool selected: ListView.isCurrentItem ? true : false
             objectName: "entry"
-            color: ListView.isCurrentItem ? "#ffffdd" : "white"
-            border.width: selected ? 3 : 1
-            border.color: ListView.isCurrentItem ? "black" : "#a0a0a0"
+            color: ListView.isCurrentItem ? "#ffeeaa" : "white"
+            border.width: 1
+            border.color: "darkgray"
             width: parent.width
             height: 40
 
