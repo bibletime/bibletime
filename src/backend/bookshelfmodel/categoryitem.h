@@ -23,27 +23,33 @@
 namespace BookshelfModel {
 
 class CategoryItem: public Item {
-        Q_DECLARE_TR_FUNCTIONS(CategoryItem);
 
-    public:
-        static const Item::Type GROUP_TYPE = Item::ITEM_CATEGORY;
+public: /* Types: */
 
-        CategoryItem(CSwordModuleInfo *module);
+    static const Item::Type GROUP_TYPE = Item::ITEM_CATEGORY;
 
-        inline const CSwordModuleInfo::Category &category() const {
-            return m_category;
-        }
+public: /* Methods: */
 
-        QVariant data(int role = Qt::DisplayRole) const;
+    inline CategoryItem(CSwordModuleInfo * module)
+        : Item(ITEM_CATEGORY)
+        , m_category(module->category()) {}
 
-        inline bool fitFor(CSwordModuleInfo *module) const {
-            return module->category() == m_category;
-        }
+    inline const CSwordModuleInfo::Category & category() const {
+        return m_category;
+    }
 
-        bool operator<(const Item &other) const;
+    QVariant data(int role = Qt::DisplayRole) const;
 
-    protected:
-        CSwordModuleInfo::Category m_category;
+    inline bool fitFor(CSwordModuleInfo * module) const {
+        return module->category() == m_category;
+    }
+
+    bool operator<(const Item & other) const;
+
+private: /* Fields: */
+
+    CSwordModuleInfo::Category m_category;
+
 };
 
 } // namespace BookshelfModel
