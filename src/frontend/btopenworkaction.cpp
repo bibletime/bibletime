@@ -33,10 +33,6 @@ BtOpenWorkActionMenu::BtOpenWorkActionMenu(const QString &groupingConfigKey,
             this, SLOT(slotIndexTriggered(QModelIndex)));
 }
 
-BtOpenWorkActionMenu::~BtOpenWorkActionMenu() {
-    // Intentionally empty
-}
-
 void BtOpenWorkActionMenu::setSourceModel(QAbstractItemModel *model) {
     m_treeModel->setSourceModel(model);
 }
