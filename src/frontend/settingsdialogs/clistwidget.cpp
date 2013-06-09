@@ -17,10 +17,6 @@ CListWidget::CListWidget(QWidget* parent)
     // Intentionally empty
 }
 
-CListWidget::~CListWidget() {
-    // Intentionally empty
-}
-
 QSize CListWidget::sizeHint () const {
     return QSize(100, 120);
 }
