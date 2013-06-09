@@ -41,10 +41,6 @@ BtSearchSyntaxHelpDialog::BtSearchSyntaxHelpDialog(QWidget *parent, Qt::WindowFl
     retranslateUi();
 }
 
-BtSearchSyntaxHelpDialog::~BtSearchSyntaxHelpDialog() {
-    // Intentionally empty
-}
-
 void BtSearchSyntaxHelpDialog::retranslateUi() {
     namespace DU = util::directory;
 
