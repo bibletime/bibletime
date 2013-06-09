@@ -62,10 +62,6 @@ BtBookshelfWidget::BtBookshelfWidget(QWidget *parent, Qt::WindowFlags flags)
             this,       SLOT(slotShowItemContextMenu(CSwordModuleInfo*, QPoint)));
 }
 
-BtBookshelfWidget::~BtBookshelfWidget() {
-    // Intentionally empty
-}
-
 void BtBookshelfWidget::setSourceModel(QAbstractItemModel *model) {
     Q_ASSERT(model != 0);
     m_sourceModel = model;
