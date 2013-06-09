@@ -32,10 +32,6 @@ BtInstallModuleChooserDialogModel::BtInstallModuleChooserDialogModel(
             Qt::DirectConnection);
 }
 
-BtInstallModuleChooserDialogModel::~BtInstallModuleChooserDialogModel() {
-    // Intentionally empty
-}
-
 QVariant BtInstallModuleChooserDialogModel::data(const QModelIndex &i, int role) const {
     switch (role) {
         case Qt::BackgroundRole:
