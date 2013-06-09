@@ -38,28 +38,30 @@ void BtBookshelfTreeModel::Grouping::saveTo(const QString &configKey) const {
     btConfig().setValue(configKey, QVariant::fromValue(*this));
 }
 
-BtBookshelfTreeModel::BtBookshelfTreeModel(QObject *parent)
-    : QAbstractItemModel(parent), m_sourceModel(0), m_rootItem(new RootItem),
-    m_defaultChecked(MODULE_HIDDEN), m_checkable(false)
-{
-    // Intentionally empty
-}
+BtBookshelfTreeModel::BtBookshelfTreeModel(QObject * parent)
+    : QAbstractItemModel(parent)
+    , m_sourceModel(0)
+    , m_rootItem(new RootItem)
+    , m_defaultChecked(MODULE_HIDDEN)
+    , m_checkable(false) {}
 
-BtBookshelfTreeModel::BtBookshelfTreeModel(const QString &configKey,
-                                           QObject *parent)
-       : QAbstractItemModel(parent), m_sourceModel(0), m_rootItem(new RootItem),
-       m_groupingOrder(configKey), m_defaultChecked(MODULE_HIDDEN),
-       m_checkable(false)
-{
-    // Intentionally empty
-}
+BtBookshelfTreeModel::BtBookshelfTreeModel(const QString & configKey,
+                                           QObject * parent)
+       : QAbstractItemModel(parent)
+       , m_sourceModel(0)
+       , m_rootItem(new RootItem)
+       , m_groupingOrder(configKey)
+       , m_defaultChecked(MODULE_HIDDEN)
+       , m_checkable(false) {}
 
-BtBookshelfTreeModel::BtBookshelfTreeModel(const Grouping &g, QObject *parent)
-        : QAbstractItemModel(parent), m_sourceModel(0), m_rootItem(new RootItem),
-        m_groupingOrder(g), m_defaultChecked(MODULE_HIDDEN), m_checkable(false)
-{
-    // Intentionally empty
-}
+BtBookshelfTreeModel::BtBookshelfTreeModel(const Grouping & grouping,
+                                           QObject * parent)
+        : QAbstractItemModel(parent)
+        , m_sourceModel(0)
+        , m_rootItem(new RootItem)
+        , m_groupingOrder(grouping)
+        , m_defaultChecked(MODULE_HIDDEN)
+        , m_checkable(false) {}
 
 BtBookshelfTreeModel::~BtBookshelfTreeModel() {
     delete m_rootItem;
