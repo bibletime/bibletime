@@ -22,7 +22,6 @@ class BtInstallPageModel: public BtBookshelfTreeModel {
     Q_OBJECT
     public:
         BtInstallPageModel(const Grouping &grouping, QObject *parent = 0);
-        ~BtInstallPageModel();
 
         QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
         int columnCount(const QModelIndex &parent = QModelIndex()) const;
