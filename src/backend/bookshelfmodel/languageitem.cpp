@@ -17,19 +17,18 @@
 
 namespace BookshelfModel {
 
-LanguageItem::LanguageItem(CSwordModuleInfo *module)
-        : Item(ITEM_LANGUAGE), m_language(module->language()) {
-    // Intentionally empty
-}
-
 QVariant LanguageItem::data(int role) const {
     switch (role) {
+
         case Qt::DisplayRole:
             return m_language->translatedName();
+
         case Qt::DecorationRole:
             return bApp->getIcon("flag.svg");
+
         default:
             return Item::data(role);
+
     }
 }
 
