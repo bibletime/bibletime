@@ -42,7 +42,9 @@ class BtBookshelfModel: public QAbstractListModel {
         };
 
     public:
-        BtBookshelfModel(QObject *parent = 0);
+
+        inline BtBookshelfModel(QObject * const parent = 0)
+            : QAbstractListModel(parent) {}
 
         // Virtual methods implemented from QAbstractListModel:
         int rowCount(const QModelIndex &parent = QModelIndex()) const;

@@ -17,11 +17,6 @@
 #include "util/macros.h"
 
 
-BtBookshelfModel::BtBookshelfModel(QObject *parent)
-        : QAbstractListModel(parent) {
-    // Intentionally empty
-}
-
 int BtBookshelfModel::rowCount(const QModelIndex &parent) const {
     if (parent.isValid()) return 0;
 
