@@ -88,10 +88,6 @@ BtAboutDialog::BtAboutDialog(QWidget *parent, Qt::WindowFlags wflags)
     retranslateUi();
 }
 
-BtAboutDialog::~BtAboutDialog() {
-    // Intentionally empty
-}
-
 void BtAboutDialog::resizeEvent(QResizeEvent* event) {
     Q_UNUSED(event);
     QString version = "BibleTime " BT_VERSION;
