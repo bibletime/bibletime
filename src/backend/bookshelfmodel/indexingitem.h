@@ -21,19 +21,27 @@
 namespace BookshelfModel {
 
 class IndexingItem: public Item {
-    public:
-        static const Item::Type GROUP_TYPE = Item::ITEM_INDEXING;
 
-        IndexingItem(CSwordModuleInfo *module);
+public: /* Types: */
 
-        QVariant data(int role = Qt::DisplayRole) const;
+    static const Item::Type GROUP_TYPE = Item::ITEM_INDEXING;
 
-        inline bool fitFor(CSwordModuleInfo *module) const {
-            return module->hasIndex() == m_indexed;
-        }
+public: /* Methods: */
 
-    protected:
-        bool m_indexed;
+    inline IndexingItem(CSwordModuleInfo * module)
+        : Item(Item::ITEM_INDEXING)
+        , m_indexed(module->hasIndex()) {}
+
+    QVariant data(int role = Qt::DisplayRole) const;
+
+    inline bool fitFor(CSwordModuleInfo * module) const {
+        return module->hasIndex() == m_indexed;
+    }
+
+private: /* Fields: */
+
+    bool m_indexed;
+
 };
 
 } // namespace BookshelfModel
