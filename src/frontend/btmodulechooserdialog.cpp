@@ -49,10 +49,6 @@ BtModuleChooserDialog::BtModuleChooserDialog(QWidget *parent, Qt::WindowFlags fl
     retranslateUi();
 }
 
-BtModuleChooserDialog::~BtModuleChooserDialog() {
-    // Intentionally empty
-}
-
 void BtModuleChooserDialog::retranslateUi() {
     util::prepareDialogBox(m_buttonBox);
 }
