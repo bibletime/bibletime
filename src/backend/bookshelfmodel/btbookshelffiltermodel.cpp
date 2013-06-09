@@ -28,10 +28,6 @@ BtBookshelfFilterModel::BtBookshelfFilterModel(QObject *parent)
     setDynamicSortFilter(true);
 }
 
-BtBookshelfFilterModel::~BtBookshelfFilterModel() {
-    // Intentionally empty
-}
-
 void BtBookshelfFilterModel::setEnabled(bool enable) {
     if (enable == m_enabled) return;
     m_enabled = enable;

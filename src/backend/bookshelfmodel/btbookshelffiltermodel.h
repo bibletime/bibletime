@@ -22,7 +22,6 @@ class BtBookshelfFilterModel: public QSortFilterProxyModel {
     Q_OBJECT
     public:
         BtBookshelfFilterModel(QObject *parent = 0);
-        virtual ~BtBookshelfFilterModel();
 
         // Common methods:
         inline bool enabled() const {
