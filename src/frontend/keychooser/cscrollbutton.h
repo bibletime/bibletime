@@ -27,7 +27,6 @@ class CScrollButton: public QToolButton {
         Q_OBJECT
     public:
         CScrollButton(QWidget *parent = 0);
-        virtual ~CScrollButton();
 
     signals:
         /**

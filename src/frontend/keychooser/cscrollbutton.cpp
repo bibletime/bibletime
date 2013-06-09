@@ -24,10 +24,6 @@ CScrollButton::CScrollButton(QWidget *parent)
     setCursor(Qt::SplitVCursor);
 }
 
-CScrollButton::~CScrollButton() {
-    // Intentionally empty
-}
-
 void CScrollButton::mousePressEvent(QMouseEvent *e) {
     if (m_isLocked) return;
     if (e->button() != Qt::LeftButton) return;
