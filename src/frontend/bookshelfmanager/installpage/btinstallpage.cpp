@@ -84,7 +84,7 @@ void BtInstallPage::initView() {
     initSourcesCombo();
 
     m_sourceAddButton = new QPushButton(this);
-    m_sourceAddButton ->setIcon(bApp->getIcon(CResMgr::bookshelfmgr::installpage::add_icon));
+    m_sourceAddButton->setIcon(bApp->getIcon(CResMgr::bookshelfmgr::installpage::add_icon));
 
     m_sourceDeleteButton = new QPushButton(this);
     m_sourceDeleteButton->setIcon(bApp->getIcon(CResMgr::bookshelfmgr::installpage::delete_icon));
@@ -267,7 +267,7 @@ void BtInstallPage::retranslateUi() {
 
     m_sourceGroupBox->setTitle(tr("Select installation &source:"));
     m_sourceAddButton->setText(tr("&Add..."));
-    m_sourceAddButton ->setToolTip(tr("Add new source"));
+    m_sourceAddButton->setToolTip(tr("Add new source"));
     m_sourceDeleteButton->setText(tr("&Delete..."));
     m_sourceDeleteButton->setToolTip(tr("Delete this source"));
 

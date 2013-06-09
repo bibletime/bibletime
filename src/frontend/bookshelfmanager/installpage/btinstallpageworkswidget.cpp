@@ -64,8 +64,8 @@ BtInstallPageWorksWidget::BtInstallPageWorksWidget(
 
     m_sourceRefreshButton = new QToolButton(this);
     m_sourceRefreshButton->setAutoRaise(true);
-    m_sourceRefreshButton ->setToolTip(tr("Refresh the list of works from this source"));
-    m_sourceRefreshButton ->setIcon(bApp->getIcon(CResMgr::bookshelfmgr::installpage::refresh_icon));
+    m_sourceRefreshButton->setToolTip(tr("Refresh the list of works from this source"));
+    m_sourceRefreshButton->setIcon(bApp->getIcon(CResMgr::bookshelfmgr::installpage::refresh_icon));
     setRightCornerWidget(m_sourceRefreshButton);
 
     connect(m_sourceRefreshButton, SIGNAL(clicked()),
