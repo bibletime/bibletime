@@ -22,10 +22,6 @@ BtBookshelfModel::BtBookshelfModel(QObject *parent)
     // Intentionally empty
 }
 
-BtBookshelfModel::~BtBookshelfModel() {
-    // Intentionally empty
-}
-
 int BtBookshelfModel::rowCount(const QModelIndex &parent) const {
     if (parent.isValid()) return 0;
 
