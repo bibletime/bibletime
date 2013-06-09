@@ -26,13 +26,13 @@ class CategoryItem: public Item {
 
 public: /* Types: */
 
-    static const Item::Type GROUP_TYPE = Item::ITEM_CATEGORY;
+    enum { GROUP_TYPE = Item::ITEM_CATEGORY };
 
 public: /* Methods: */
 
-    inline CategoryItem(CSwordModuleInfo * module)
+    inline CategoryItem(const CSwordModuleInfo & module)
         : Item(ITEM_CATEGORY)
-        , m_category(module->category()) {}
+        , m_category(module.category()) {}
 
     inline const CSwordModuleInfo::Category & category() const {
         return m_category;
@@ -40,15 +40,15 @@ public: /* Methods: */
 
     QVariant data(int role = Qt::DisplayRole) const;
 
-    inline bool fitFor(CSwordModuleInfo * module) const {
-        return module->category() == m_category;
+    inline bool fitFor(const CSwordModuleInfo & module) const {
+        return module.category() == m_category;
     }
 
     bool operator<(const Item & other) const;
 
 private: /* Fields: */
 
-    CSwordModuleInfo::Category m_category;
+    const CSwordModuleInfo::Category m_category;
 
 };
 

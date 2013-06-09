@@ -20,7 +20,7 @@ namespace BookshelfModel {
 
 QVariant ModuleItem::data(int role) const {
     // Dispatch request to tree model:
-    return m_parentModel->data(m_moduleInfo, role);
+    return m_parentModel.data(m_moduleInfo, role);
 }
 
 } // namespace BookshelfModel

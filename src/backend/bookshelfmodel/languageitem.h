@@ -25,18 +25,18 @@ class LanguageItem: public Item {
 
 public: /* Types: */
 
-        static const Item::Type GROUP_TYPE = Item::ITEM_LANGUAGE;
+    enum { GROUP_TYPE = Item::ITEM_LANGUAGE };
 
 public: /* Methods: */
 
-    inline LanguageItem(CSwordModuleInfo * module)
+    inline LanguageItem(const CSwordModuleInfo & module)
         : Item(ITEM_LANGUAGE)
-        , m_language(module->language()) {}
+        , m_language(module.language()) {}
 
     QVariant data(int role = Qt::DisplayRole) const;
 
-    inline bool fitFor(CSwordModuleInfo * module) const {
-        return module->language() == m_language;
+    inline bool fitFor(const CSwordModuleInfo & module) const {
+        return module.language() == m_language;
     }
 
 private: /* Fields: */

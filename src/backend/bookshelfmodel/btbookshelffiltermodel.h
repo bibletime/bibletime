@@ -19,108 +19,113 @@
 
 
 class BtBookshelfFilterModel: public QSortFilterProxyModel {
+
     Q_OBJECT
-    public:
-        BtBookshelfFilterModel(QObject *parent = 0);
 
-        // Common methods:
-        inline bool enabled() const {
-            return m_enabled;
-        }
+public: /* Methods: */
 
-        virtual bool filterAcceptsRow(int row, const QModelIndex &parent) const;
+    BtBookshelfFilterModel(QObject * parent = 0);
 
-        // Name filter:
-        inline int nameFilterRole() const {
-            return m_nameFilterRole;
-        }
+    inline bool enabled() const {
+        return m_enabled;
+    }
 
-        inline int nameFilterKeyColumn() const {
-            return m_nameFilterColumn;
-        }
+    virtual bool filterAcceptsRow(int row, const QModelIndex & parent) const;
 
-        inline const QString &nameFilter() const {
-            return m_nameFilter;
-        }
+    // Name filter:
+    inline int nameFilterRole() const {
+        return m_nameFilterRole;
+    }
 
-        inline Qt::CaseSensitivity nameFilterCase() const {
-            return m_nameFilterCase;
-        }
+    inline int nameFilterKeyColumn() const {
+        return m_nameFilterColumn;
+    }
 
-        // Hidden filter:
-        int hiddenFilterRole() const {
-            return m_hiddenFilterRole;
-        }
+    inline const QString &nameFilter() const {
+        return m_nameFilter;
+    }
 
-        int hiddenFilterKeyColumn() const {
-            return m_hiddenFilterColumn;
-        }
+    inline Qt::CaseSensitivity nameFilterCase() const {
+        return m_nameFilterCase;
+    }
 
-        inline bool showHidden() const {
-            return m_showHidden;
-        }
+    // Hidden filter:
+    int hiddenFilterRole() const {
+        return m_hiddenFilterRole;
+    }
 
-        inline bool showShown() const {
-            return m_showShown;
-        }
+    int hiddenFilterKeyColumn() const {
+        return m_hiddenFilterColumn;
+    }
 
-        // Category filter:
-        int categoryFilterRole() const {
-            return m_categoryFilterRole;
-        }
+    inline bool showHidden() const {
+        return m_showHidden;
+    }
 
-        int categoryFilterKeyColumn() const {
-            return m_categoryFilterColumn;
-        }
+    inline bool showShown() const {
+        return m_showShown;
+    }
 
-        inline CSwordModuleInfo::Categories shownCategories() const {
-            return m_categoryFilter;
-        }
+    // Category filter:
+    int categoryFilterRole() const {
+        return m_categoryFilterRole;
+    }
 
-    public slots:
-        void setEnabled(bool enable);
+    int categoryFilterKeyColumn() const {
+        return m_categoryFilterColumn;
+    }
 
-        // Name filter:
-        void setNameFilterRole(int role);
-        void setNameFilterKeyColumn(int column);
-        void setNameFilterFixedString(const QString &nameFilter);
-        void setNameFilterCase(Qt::CaseSensitivity value);
+    inline CSwordModuleInfo::Categories shownCategories() const {
+        return m_categoryFilter;
+    }
 
-        // Hidden filter:
-        void setHiddenFilterRole(int role);
-        void setHiddenFilterKeyColumn(int column);
-        void setShowHidden(bool show);
-        void setShowShown(bool show);
+public slots:
+    void setEnabled(bool enable);
 
-        // Category filter:
-        void setCategoryFilterRole(int role);
-        void setCategoryFilterKeyColumn(int column);
-        void setShownCategories(const CSwordModuleInfo::Categories &categories);
+    // Name filter:
+    void setNameFilterRole(int role);
+    void setNameFilterKeyColumn(int column);
+    void setNameFilterFixedString(const QString & nameFilter);
+    void setNameFilterCase(Qt::CaseSensitivity value);
 
-    protected:
-        bool nameFilterAcceptsRow(int row, const QModelIndex &parent) const;
-        bool hiddenFilterAcceptsRow(int row, const QModelIndex &parent) const;
-        bool categoryFilterAcceptsRow(int row, const QModelIndex &parent) const;
+    // Hidden filter:
+    void setHiddenFilterRole(int role);
+    void setHiddenFilterKeyColumn(int column);
+    void setShowHidden(bool show);
+    void setShowShown(bool show);
 
-    protected:
-        bool m_enabled;
+    // Category filter:
+    void setCategoryFilterRole(int role);
+    void setCategoryFilterKeyColumn(int column);
+    void setShownCategories(const CSwordModuleInfo::Categories & categories);
 
-        // Name filter:
-        QString m_nameFilter;
-        int m_nameFilterRole;
-        int m_nameFilterColumn;
-        Qt::CaseSensitivity  m_nameFilterCase;
+private: /* Methods: */
 
-        // Hidden filter:
-        int m_hiddenFilterRole;
-        int m_hiddenFilterColumn;
-        bool m_showHidden;
-        bool m_showShown;
+    bool nameFilterAcceptsRow(int row, const QModelIndex & parent) const;
+    bool hiddenFilterAcceptsRow(int row, const QModelIndex & parent) const;
+    bool categoryFilterAcceptsRow(int row, const QModelIndex & parent) const;
 
-        // Categories filter:
-        CSwordModuleInfo::Categories m_categoryFilter;
-        int m_categoryFilterRole;
-        int m_categoryFilterColumn;
+private: /* Fields: */
+
+    bool m_enabled;
+
+    // Name filter:
+    QString m_nameFilter;
+    int m_nameFilterRole;
+    int m_nameFilterColumn;
+    Qt::CaseSensitivity  m_nameFilterCase;
+
+    // Hidden filter:
+    int m_hiddenFilterRole;
+    int m_hiddenFilterColumn;
+    bool m_showHidden;
+    bool m_showShown;
+
+    // Categories filter:
+    CSwordModuleInfo::Categories m_categoryFilter;
+    int m_categoryFilterRole;
+    int m_categoryFilterColumn;
+
 };
 
 #endif // BTBOOKSHELFFILTERMODEL_H

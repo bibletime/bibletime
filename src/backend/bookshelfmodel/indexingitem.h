@@ -24,18 +24,18 @@ class IndexingItem: public Item {
 
 public: /* Types: */
 
-    static const Item::Type GROUP_TYPE = Item::ITEM_INDEXING;
+    enum { GROUP_TYPE = Item::ITEM_INDEXING };
 
 public: /* Methods: */
 
-    inline IndexingItem(CSwordModuleInfo * module)
+    inline IndexingItem(const CSwordModuleInfo & module)
         : Item(Item::ITEM_INDEXING)
-        , m_indexed(module->hasIndex()) {}
+        , m_indexed(module.hasIndex()) {}
 
     QVariant data(int role = Qt::DisplayRole) const;
 
-    inline bool fitFor(CSwordModuleInfo * module) const {
-        return module->hasIndex() == m_indexed;
+    inline bool fitFor(const CSwordModuleInfo & module) const {
+        return module.hasIndex() == m_indexed;
     }
 
 private: /* Fields: */

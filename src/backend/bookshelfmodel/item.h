@@ -98,7 +98,7 @@ public: /* Methods: */
     }
 
     template <class T>
-    inline T * getGroupItem(CSwordModuleInfo * module, int & outIndex) {
+    inline T * getGroupItem(CSwordModuleInfo & module, int & outIndex) {
         for (int i = 0; i < m_children.size(); i++) {
             Q_ASSERT(m_children.at(i)->type() == T::GROUP_TYPE);
             T * item = static_cast<T *>(m_children.at(i));
@@ -136,10 +136,7 @@ public: /* Methods: */
       \retval true If this item is a group and can contain the given module.
       \retval false This item is not a group or is a wrong group.
     */
-    inline virtual bool fitFor(CSwordModuleInfo * module) const {
-        Q_UNUSED(module);
-        return false;
-    }
+    inline virtual bool fitFor(const CSwordModuleInfo & module) const = 0;
 
     /**
       \brief Comparsion operator used sorting child items.
@@ -168,6 +165,10 @@ public: /* Methods: */
 
     inline RootItem()
         : Item(Item::ITEM_ROOT) {}
+
+    inline virtual bool fitFor(const CSwordModuleInfo &) const {
+        return true;
+    }
 
 };
 

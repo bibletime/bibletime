@@ -27,15 +27,11 @@ class ModuleItem: public Item {
 
 public: /* Methods: */
 
-    ModuleItem(CSwordModuleInfo * module,
-               BtBookshelfTreeModel * parentModel)
+    ModuleItem(CSwordModuleInfo & module,
+               BtBookshelfTreeModel & parentModel)
         : Item(ITEM_MODULE)
         , m_moduleInfo(module)
-        , m_parentModel(parentModel)
-    {
-        Q_ASSERT(module);
-        Q_ASSERT(parentModel);
-    }
+        , m_parentModel(parentModel) {}
 
     /**
       Reimplementation of Item::data() which dispatches all
@@ -43,14 +39,18 @@ public: /* Methods: */
     */
     virtual QVariant data(int role = Qt::DisplayRole) const;
 
-    inline CSwordModuleInfo * moduleInfo() const {
+    inline CSwordModuleInfo & moduleInfo() const {
         return m_moduleInfo;
+    }
+
+    inline virtual bool fitFor(const CSwordModuleInfo &) const {
+        return false;
     }
 
 private: /* Fields: */
 
-    CSwordModuleInfo * m_moduleInfo;
-    BtBookshelfTreeModel * m_parentModel;
+    CSwordModuleInfo & m_moduleInfo;
+    BtBookshelfTreeModel & m_parentModel;
 
 };
 
