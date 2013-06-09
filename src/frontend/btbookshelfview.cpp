@@ -41,9 +41,10 @@ BtBookshelfView::~BtBookshelfView() {
     // Intentionally empty
 }
 
-CSwordModuleInfo *BtBookshelfView::getModule(const QModelIndex &index) const {
-    return (CSwordModuleInfo *) model()
-           ->data(index, BtBookshelfModel::ModulePointerRole).value<void*>();
+CSwordModuleInfo * BtBookshelfView::getModule(const QModelIndex & index) const {
+    void * const module = model()->data(index,
+                                        BtBookshelfModel::ModulePointerRole).value<void *>();
+    return static_cast<CSwordModuleInfo *>(module);
 }
 
 void BtBookshelfView::keyPressEvent(QKeyEvent *event) {
