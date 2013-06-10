@@ -14,6 +14,7 @@
 
 #include "backend/managers/clanguagemgr.h"
 
+#include <QIcon>
 #include <QList>
 #include <QMetaType>
 #include <QString>

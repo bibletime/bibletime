@@ -13,10 +13,7 @@
 #ifndef ITEM_H
 #define ITEM_H
 
-#include <QIcon>
 #include <QList>
-#include <QString>
-#include <QtGlobal>
 #include <QVariant>
 
 
