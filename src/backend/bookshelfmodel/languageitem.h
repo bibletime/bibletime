@@ -21,17 +21,12 @@
 
 namespace BookshelfModel {
 
-class LanguageItem: public Item {
-
-public: /* Types: */
-
-    enum { GROUP_TYPE = Item::ITEM_LANGUAGE };
+class LanguageItem: public GroupItem<Item::ITEM_LANGUAGE> {
 
 public: /* Methods: */
 
     inline LanguageItem(const CSwordModuleInfo & module)
-        : Item(ITEM_LANGUAGE)
-        , m_language(module.language()) {}
+        : m_language(module.language()) {}
 
     QVariant data(int role = Qt::DisplayRole) const;
 

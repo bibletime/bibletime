@@ -20,17 +20,12 @@
 
 namespace BookshelfModel {
 
-class IndexingItem: public Item {
-
-public: /* Types: */
-
-    enum { GROUP_TYPE = Item::ITEM_INDEXING };
+class IndexingItem: public GroupItem<Item::ITEM_INDEXING> {
 
 public: /* Methods: */
 
     inline IndexingItem(const CSwordModuleInfo & module)
-        : Item(Item::ITEM_INDEXING)
-        , m_indexed(module.hasIndex()) {}
+        : m_indexed(module.hasIndex()) {}
 
     QVariant data(int role = Qt::DisplayRole) const;
 

@@ -172,6 +172,20 @@ public: /* Methods: */
 
 };
 
+template <Item::Type TYPE>
+class GroupItem: public Item {
+
+public: /* Types: */
+
+    enum { GROUP_TYPE = TYPE };
+
+public: /* Methods: */
+
+    inline GroupItem()
+        : Item(TYPE) {}
+
+};
+
 } // Namespace BookshelfModel
 
 #endif // ITEM_H

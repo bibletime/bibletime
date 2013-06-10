@@ -22,17 +22,12 @@
 
 namespace BookshelfModel {
 
-class CategoryItem: public Item {
-
-public: /* Types: */
-
-    enum { GROUP_TYPE = Item::ITEM_CATEGORY };
+class CategoryItem: public GroupItem<Item::ITEM_CATEGORY> {
 
 public: /* Methods: */
 
     inline CategoryItem(const CSwordModuleInfo & module)
-        : Item(ITEM_CATEGORY)
-        , m_category(module.category()) {}
+        : m_category(module.category()) {}
 
     inline const CSwordModuleInfo::Category & category() const {
         return m_category;
