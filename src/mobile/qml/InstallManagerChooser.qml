@@ -10,9 +10,12 @@ Rectangle {
     property alias sourceIndex: sourceView.currentIndex
     property alias categoryIndex: categoryView.currentIndex
     property alias languageIndex: languageView.currentIndex
+    property int spacing: 8
 
     objectName: "installManager"
     color: "lightgray"
+    border.color: "black"
+    border.width: 2
 
     signal sourceChanged(int index);
     signal categoryChanged(int index);
@@ -25,62 +28,13 @@ Rectangle {
     Grid {
         id:  grid
         columns: 3
-        rows: 2
-        spacing: 3
-        width: parent.width
+        rows: 1
+        spacing: installManager.spacing
+        width: parent.width - installManager.spacing
+        height: installManager.height/3
         anchors.left: parent.left
-        anchors.leftMargin: 3
-
-        Rectangle {
-
-            height: 25
-            width: parent.width/3 - grid.spacing
-            color: "lightgray"
-
-            Text {
-                id: sourceText
-
-                text: "Source"
-                anchors.centerIn: parent
-                horizontalAlignment: Text.AlignLeft
-                verticalAlignment: Text.AlignBottom
-                style: Text.Sunken
-            }
-        }
-
-        Rectangle {
-
-            height: 25
-            width: parent.width/3 - grid.spacing
-            color: "lightgray"
-
-            Text {
-                id: categoryText
-
-                text: "Category"
-                anchors.centerIn: parent
-                horizontalAlignment: Text.AlignLeft
-                verticalAlignment: Text.AlignBottom
-                style: Text.Sunken
-            }
-        }
-
-        Rectangle {
-
-            height: 25
-            width: parent.width/3 - grid.spacing
-            color: "lightgray"
-
-            Text {
-                id: languageText
-
-                text: "Language"
-                anchors.centerIn: parent
-                horizontalAlignment: Text.AlignLeft
-                verticalAlignment: Text.AlignBottom
-                style: Text.Sunken
-            }
-        }
+        anchors.top: parent.top
+        anchors.margins: installManager.spacing
 
         ListTextView {
             id: sourceView
@@ -88,7 +42,7 @@ Rectangle {
                 sourceChanged(currentIndex)
             }
 
-
+            title: "Source"
             width: parent.width/3 - grid.spacing
             height: installManager.height/3
         }
@@ -96,6 +50,7 @@ Rectangle {
         ListTextView {
             id: categoryView
 
+            title: "Category"
             width: parent.width/3 - grid.spacing
             height: installManager.height/3
             onItemSelected: {
@@ -106,6 +61,7 @@ Rectangle {
         ListTextView {
             id: languageView
 
+            title: "Language"
             width: parent.width/3 - grid.spacing
             height: installManager.height/3
             onItemSelected: {
@@ -114,29 +70,15 @@ Rectangle {
         }
     }
 
-    Rectangle {
-        id: spacer
-
-        width: parent.width
-        height: 40
-        anchors.top: grid.bottom
-        color: "lightgray"
-
-        Text {
-            text: "Works"
-            anchors.centerIn: parent
-            style: Text.Sunken
-        }
-    }
-
     ListWorksView {
         id: worksView
 
-        width: parent.width
-        anchors.top: spacer.bottom
+        title: "Works"
+        width: parent.width - 2 * installManager.spacing
+        anchors.top: grid.bottom
         anchors.left: parent.left
         anchors.bottom: installRemoveButton.top
-        anchors.bottomMargin: 10
+        anchors.margins: installManager.spacing
         onItemSelected: {
             workSelected(index)
         }

@@ -1,6 +1,7 @@
 #ifndef INSTALL_MODULE_CHOOSER_H
 #define INSTALL_MODULE_CHOOSER_H
 
+#include "installsourcesmanager.h"
 #include "mobile/ui/roleitemmodel.h"
 #include "installprogress.h"
 #include <QMap>
@@ -54,6 +55,7 @@ private:
     QQuickItem* installManagerChooserObject_;
     QQuickItem* progressObject_;
     BtInstallMgr* btInstallMgr_;
+    InstallSourcesManager installSourcesManager_;
 
     InstallProgress installProgress_;
     QStringList m_sourceList;

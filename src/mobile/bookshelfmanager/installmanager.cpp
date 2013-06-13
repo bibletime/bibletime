@@ -355,15 +355,13 @@ void InstallManager::installModules(const QList<CSwordModuleInfo*>& modules) {
 }
 
 void InstallManager::refreshLists() {
-    refreshSourceList();
-    setupSourceModel();
+    installSourcesManager_.refreshSources();
+//    refreshSourceList();
+//    setupSourceModel();
 
-    QStringList sourceNames = BtInstallBackend::sourceNameList();
-    refreshWorks(sourceNames);
-
-    //    foreach ( QString sourceName, sourceList) {
-//       refreshWorks(sourceName);
-//    }
+//    QStringList sourceNames = BtInstallBackend::sourceNameList();
+//    refreshWorks(sourceNames);
+//    qDebug() << "lists refreshed";
 }
 
 void InstallManager::refreshSourceList() {
@@ -405,9 +403,11 @@ void InstallManager::refreshSourceListCancel() {
 
 void InstallManager::refreshSourceListProgress(const int, const int current) {
     progressObject_->setProperty("value", current);
+    qDebug() << "source: " << current;
 }
 
-
+// TODO - change this to use a thread to do the work so the progress bar
+// will work.
 void InstallManager::refreshWorks(const QStringList& sourceNames) {
     findProgressObject();
     Q_ASSERT(progressObject_ != 0);
@@ -435,6 +435,7 @@ void InstallManager::refreshWorks(const QStringList& sourceNames) {
         qDebug() << result;
         if (result) {
             progressObject_->setProperty("value", 100.0);
+            qDebug() << "work \"" << sourceName << "\" refreshed";
         } else {
 //        util::showWarning(this, tr("Warning"),
 //                          tr("Failed to refresh source %1")
@@ -452,7 +453,7 @@ void InstallManager::refreshWorksCancel() {
 
 void InstallManager::refreshWorksProgress(const int, const int current) {
     progressObject_->setProperty("value", current);
-    qDebug() << "value: " << current;
+    qDebug() << "works: " << current;
 }
 
 
