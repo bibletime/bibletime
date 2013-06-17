@@ -12,29 +12,27 @@
 #ifndef INSTALLSOURCESTHREAD_H
 #define INSTALLSOURCESTHREAD_H
 
-#include <QThread>
+#include <QObject>
 
 class BtInstallMgr;
 
 namespace btm {
 
-class InstallSourcesThread : public QThread {
+class InstallSources : public QObject {
         Q_OBJECT
     public:
-        InstallSourcesThread(QObject *parent = 0);
+        InstallSources(QObject *parent = 0);
 
-        ~InstallSourcesThread();
+        ~InstallSources();
 
     public slots:
-        void slotStopInstall();
-        void slotManagerStatusUpdated(int totalProgress, int fileProgress);
-        void slotDownloadStarted();
+        void process();
+        void cancel();
 
-    public: // data member
+    public:
         bool done;
 
     protected:
-        virtual void run();
         void refreshSourceList();
         void refreshWorks(const QStringList& sourceNames);
 
@@ -42,7 +40,12 @@ class InstallSourcesThread : public QThread {
         BtInstallMgr* m_iMgr;
 
     signals:
+        void finished();
+        void error(QString err);
         void percentComplete(int percent, const QString& title);
+
+private:
+        bool m_canceled;
 };
 
 }

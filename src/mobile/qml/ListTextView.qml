@@ -8,7 +8,7 @@ Rectangle {
     property alias title: title.text
 
     border.color: "black"
-    border.width: 1
+    border.width: 2
 
     signal itemSelected(int index)
 
@@ -16,11 +16,14 @@ Rectangle {
         id: titleRect
 
         border.color: "black"
-        border.width: 2
+        border.width: 1
         height:25
-        width: parent.width
         anchors.left: parent.left
+        anchors.right: parent.right
         anchors.top: parent.top
+        anchors.leftMargin: 3
+        anchors.rightMargin: 3
+        anchors.topMargin: 3
 
         Text {
             id: title
@@ -39,7 +42,9 @@ Rectangle {
         anchors.bottom: parent.bottom
         anchors.left: parent.left
         anchors.right: parent.right
-        anchors.margins: 2
+        anchors.leftMargin: 3
+        anchors.rightMargin: 3
+        anchors.bottomMargin: 3
         clip: true
         highlightFollowsCurrentItem: true
         currentIndex: 2
@@ -54,7 +59,7 @@ Rectangle {
             id: scrollbar
             anchors.right: listView.right
             y: listView.visibleArea.yPosition * listView.height
-            width: 5
+            width: 7
             height: listView.visibleArea.heightRatio * listView.height
             color: "black"
             visible: listView.visibleArea.heightRatio < 0.99

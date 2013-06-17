@@ -6,7 +6,7 @@
 
 namespace btm {
 
-class InstallSourcesThread;
+class InstallSources;
 
 class InstallSourcesManager :public QObject {
     Q_OBJECT
@@ -26,7 +26,7 @@ private:
     void runThread();
 
     QQuickItem* progressObject_;
-    InstallSourcesThread* installSourcesThread_;
+    InstallSources* m_worker;
 };
 
 } // end namespace

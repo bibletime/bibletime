@@ -6,17 +6,23 @@ Rectangle {
     property alias model: listView.model
     property alias title: title.text
 
+    border.color: "black"
+    border.width: 2
+
     signal itemSelected(int index)
 
     Rectangle {
         id: titleRect
 
         border.color: "black"
-        border.width: 2
+        border.width: 1
         height:25
-        width: parent.width
         anchors.left: parent.left
+        anchors.right: parent.right
         anchors.top: parent.top
+        anchors.leftMargin: 3
+        anchors.rightMargin: 3
+        anchors.topMargin: 3
 
         Text {
             id: title
