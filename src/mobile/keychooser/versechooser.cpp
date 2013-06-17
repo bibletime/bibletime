@@ -15,44 +15,44 @@
 namespace btm {
 
 VerseChooser::VerseChooser(QtQuick2ApplicationViewer* viewer, BtWindowInterface* bibleVerse)
-    : viewer_(viewer),
-      gridChooser_(0),
+    : m_viewer(viewer),
+      m_gridChooser(0),
       bibleVerse_(bibleVerse),
-      state_(CLOSED ) {
-    gridChooser_ = new GridChooser(viewer_);
-    bool ok = connect(gridChooser_, SIGNAL(accepted(const QString&)),
+      m_state(CLOSED ) {
+    m_gridChooser = new GridChooser(m_viewer);
+    bool ok = connect(m_gridChooser, SIGNAL(accepted(const QString&)),
                       this, SLOT(stringAccepted(const QString&)));
     Q_ASSERT(ok);
 }
 
 void VerseChooser::open() {
-    oldBook_ = bibleVerse_->getBook();
-    oldChapter_ = bibleVerse_->getChapter();
-    oldVerse_ = bibleVerse_->getVerse();
-    state_ = BOOK;
+    m_oldBook = bibleVerse_->getBook();
+    m_oldChapter = bibleVerse_->getChapter();
+    m_oldVerse = bibleVerse_->getVerse();
+    m_state = BOOK;
     QStringList books = bibleVerse_->getBooks();
-    gridChooser_->open(books, oldBook_);
+    m_gridChooser->open(books, m_oldBook);
 }
 
 void VerseChooser::stringAccepted(const QString& value) {
-    if (state_ == BOOK) {
-        newBook_ = value;
-        state_ = CHAPTER;
+    if (m_state == BOOK) {
+        m_newBook = value;
+        m_state = CHAPTER;
         bibleVerse_->setBook(value);
         QStringList chapters = bibleVerse_->getChapters();
-        gridChooser_->open(chapters, oldChapter_);
+        m_gridChooser->open(chapters, m_oldChapter);
     }
-    else if (state_ == CHAPTER) {
-        newChapter_ = value;
-        state_ = VERSE;
+    else if (m_state == CHAPTER) {
+        m_newChapter = value;
+        m_state = VERSE;
         bibleVerse_->setChapter(value);
         QStringList verses = bibleVerse_->getVerses();
-        gridChooser_->open(verses, oldVerse_);
+        m_gridChooser->open(verses, m_oldVerse);
     }
-    else if (state_ == VERSE) {
-        newVerse_ = value;
-        state_ = CLOSED;
-        bibleVerse_->setVerse(newVerse_);
+    else if (m_state == VERSE) {
+        m_newVerse = value;
+        m_state = CLOSED;
+        bibleVerse_->setVerse(m_newVerse);
     }
 }
 

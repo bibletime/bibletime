@@ -38,16 +38,16 @@ private:
     void setProperties(const QStringList& list);
 
 
-    QtQuick2ApplicationViewer* viewer_;
-    GridChooser* gridChooser_;
+    QtQuick2ApplicationViewer* m_viewer;
+    GridChooser* m_gridChooser;
     BtWindowInterface* bibleVerse_;
-    int state_;
-    QString oldBook_;
-    QString oldChapter_;
-    QString oldVerse_;
-    QString newBook_;
-    QString newChapter_;
-    QString newVerse_;
+    int m_state;
+    QString m_oldBook;
+    QString m_oldChapter;
+    QString m_oldVerse;
+    QString m_newBook;
+    QString m_newChapter;
+    QString m_newVerse;
 };
 
 } // end namespace

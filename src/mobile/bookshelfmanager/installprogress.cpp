@@ -10,20 +10,19 @@
 #include <QQuickItem>
 #include <QDebug>
 
-// TODO implement updating modules
 namespace btm {
 
 InstallProgress::InstallProgress(QObject* parent)
-    : QObject(parent), progressObject_(0) {
+    : QObject(parent), m_progressObject(0) {
 }
 
 void InstallProgress::openProgress(const QList<CSwordModuleInfo*>& modules) {
     if (modules.count() == 0)
         return;
 
-    if (progressObject_ == 0)
+    if (m_progressObject == 0)
         findProgressObject();
-    if (progressObject_ == 0)
+    if (m_progressObject == 0)
         return;
 
     QString destination = getSourcePath();
@@ -51,16 +50,16 @@ void InstallProgress::openProgress(const QList<CSwordModuleInfo*>& modules) {
                          this, SLOT(slotInstallStarted(QString, QString)), Qt::QueuedConnection);
     }
 
-    connect(progressObject_, SIGNAL(cancel()), this, SLOT(slotStopInstall()));
+    connect(m_progressObject, SIGNAL(cancel()), this, SLOT(slotStopInstall()));
     startThreads();
 }
 
 void InstallProgress::cancel() {
-    progressObject_->setProperty("visible", false);
+    m_progressObject->setProperty("visible", false);
 }
 
 void InstallProgress::close() {
-    progressObject_->setProperty("visible", false);
+    m_progressObject->setProperty("visible", false);
     CSwordBackend::instance()->reloadModules(CSwordBackend::AddedModules);
 }
 
@@ -120,7 +119,7 @@ void InstallProgress::slotStopInstall() {
 }
 
 void InstallProgress::slotStatusUpdated(QString module, int status) {
-    progressObject_->setProperty("value", status);
+    m_progressObject->setProperty("value", status);
 }
 
 void InstallProgress::slotInstallStarted(QString module, QString) {
@@ -128,8 +127,8 @@ void InstallProgress::slotInstallStarted(QString module, QString) {
 
 void InstallProgress::slotDownloadStarted(QString module) {
     QString message = "Installing " + module;
-    progressObject_->setProperty("text", message);
-    progressObject_->setProperty("value", 0);
+    m_progressObject->setProperty("text", message);
+    m_progressObject->setProperty("value", 0);
 }
 
 void InstallProgress::startThreads() {
@@ -156,14 +155,14 @@ void InstallProgress::findProgressObject() {
     if (viewer != 0)
         rootObject = viewer->rootObject();
     if (rootObject != 0)
-        progressObject_ = rootObject->findChild<QQuickItem*>("progress");
+        m_progressObject = rootObject->findChild<QQuickItem*>("progress");
 }
 
 void InstallProgress::setProperties() {
-    progressObject_->setProperty("visible", true);
-    progressObject_->setProperty("minimumValue", 0.0);
-    progressObject_->setProperty("maximumValue", 100.0);
-    progressObject_->setProperty("value", 0.0);
+    m_progressObject->setProperty("visible", true);
+    m_progressObject->setProperty("minimumValue", 0.0);
+    m_progressObject->setProperty("maximumValue", 100.0);
+    m_progressObject->setProperty("value", 0.0);
 }
 
 QString InstallProgress::getSourcePath() {

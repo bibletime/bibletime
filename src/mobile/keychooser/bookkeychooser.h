@@ -50,14 +50,14 @@ private:
     void openChooser(bool open);
 
 
-    QtQuick2ApplicationViewer* viewer_;
-    BtBookInterface* bookInterface_;
-    CSwordTreeKey* key_;
-    QQuickItem* treeChooserObject_;
-    int state_;
-    QString backPath_;
-    QStringList sibblings_;
-    QStandardItemModel model_;
+    QtQuick2ApplicationViewer* m_viewer;
+    BtBookInterface* m_bookInterface;
+    CSwordTreeKey* m_key;
+    QQuickItem* m_treeChooserObject;
+    int m_state;
+    QString m_backPath;
+    QStringList m_sibblings;
+    QStandardItemModel m_model;
     RoleItemModel m_roleItemModel;
 };
 

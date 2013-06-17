@@ -25,7 +25,7 @@ private:
     void findProgressObject();
     void runThread();
 
-    QQuickItem* progressObject_;
+    QQuickItem* m_progressObject;
     InstallSources* m_worker;
 };
 

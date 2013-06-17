@@ -23,25 +23,25 @@ struct BookEntry {
 
 BookKeyChooser::BookKeyChooser(QtQuick2ApplicationViewer* viewer,
                                BtBookInterface* bookInterface)
-    : viewer_(viewer),
-      bookInterface_(bookInterface),
-      key_(0),
-      treeChooserObject_(0),
-      state_(CLOSED ) {
+    : m_viewer(viewer),
+      m_bookInterface(bookInterface),
+      m_key(0),
+      m_treeChooserObject(0),
+      m_state(CLOSED ) {
     findTreeChooserObject();
     initializeRoleNameModel();
 }
 
 void BookKeyChooser::copyKey()
 {
-    CSwordTreeKey* bookKey = bookInterface_->getKey();
-    key_ = new CSwordTreeKey(*bookKey);
+    CSwordTreeKey* bookKey = m_bookInterface->getKey();
+    m_key = new CSwordTreeKey(*bookKey);
 }
 
 void BookKeyChooser::findTreeChooserObject() {
-    QQuickItem * rootObject = viewer_->rootObject();
+    QQuickItem * rootObject = m_viewer->rootObject();
     if (rootObject != 0)
-        treeChooserObject_ = rootObject->findChild<QQuickItem*>("treeChooser");
+        m_treeChooserObject = rootObject->findChild<QQuickItem*>("treeChooser");
 }
 
 void BookKeyChooser::initializeRoleNameModel() {
@@ -93,18 +93,18 @@ void BookKeyChooser::select(QString value) {
     keyPathList.removeLast();
     keyPathList.append(value);
     QString newPath = constructPath(keyPathList);
-    key_->setKey(newPath);
+    m_key->setKey(newPath);
 
-    CSwordTreeKey* bookKey = bookInterface_->getKey();
-    bookKey->setKey(*key_);
-    bookInterface_->setDisplayed("");
+    CSwordTreeKey* bookKey = m_bookInterface->getKey();
+    bookKey->setKey(*m_key);
+    m_bookInterface->setDisplayed("");
 }
 
 void BookKeyChooser::open() {
     copyKey();
 
-    CSwordTreeKey tmpKey(*key_);
-    backPath_ = getBackPath(tmpKey);
+    CSwordTreeKey tmpKey(*m_key);
+    m_backPath = getBackPath(tmpKey);
     QStringList siblings;
     QList<int> hasChildrenList;
     parseKey(&siblings, &hasChildrenList, &tmpKey);
@@ -120,18 +120,18 @@ void BookKeyChooser::next(QString value) {
     keyPathList.append(value);
 
     QString newPath = constructPath(keyPathList);
-    key_->setKey(newPath);
-    key_->firstChild();
+    m_key->setKey(newPath);
+    m_key->firstChild();
 
-    CSwordTreeKey tmpKey(*key_);
-    backPath_ = getBackPath(tmpKey);
+    CSwordTreeKey tmpKey(*m_key);
+    m_backPath = getBackPath(tmpKey);
     QStringList siblings;
     QList<int> counts;
     parseKey(&siblings, &counts, &tmpKey);
     populateRoleNameModel(siblings, counts);
     openChooser(true);
 
-    key_->setKey(tmpKey);
+    m_key->setKey(tmpKey);
 }
 
 void BookKeyChooser::back() {
@@ -142,10 +142,10 @@ void BookKeyChooser::back() {
 
     QString newPath = constructPath(keyPathList);
     keyPathList.removeLast();
-    key_->setKey(newPath);
+    m_key->setKey(newPath);
 
-    CSwordTreeKey tmpKey(*key_);
-    backPath_ = getBackPath(tmpKey);
+    CSwordTreeKey tmpKey(*m_key);
+    m_backPath = getBackPath(tmpKey);
     QStringList siblings;
     QList<int> counts;
     parseKey(&siblings, &counts, &tmpKey);
@@ -158,41 +158,41 @@ void BookKeyChooser::stringCanceled() {
 }
 
 void BookKeyChooser::setProperties() {
-    QQmlContext* ctx = viewer_->rootContext();
-    treeChooserObject_->setProperty("path",backPath_);
-    treeChooserObject_->setProperty("model", QVariant::fromValue(&m_roleItemModel));
+    QQmlContext* ctx = m_viewer->rootContext();
+    m_treeChooserObject->setProperty("path",m_backPath);
+    m_treeChooserObject->setProperty("model", QVariant::fromValue(&m_roleItemModel));
 }
 
 void BookKeyChooser::openChooser(bool open) {
-    Q_ASSERT(treeChooserObject_ != 0);
-    if (treeChooserObject_ == 0)
+    Q_ASSERT(m_treeChooserObject != 0);
+    if (m_treeChooserObject == 0)
         return;
 
-    treeChooserObject_->disconnect();
-    bool ok = connect(treeChooserObject_, SIGNAL(select(QString)),
+    m_treeChooserObject->disconnect();
+    bool ok = connect(m_treeChooserObject, SIGNAL(select(QString)),
                       this, SLOT(select(QString)));
     Q_ASSERT(ok);
 
-    ok = connect(treeChooserObject_, SIGNAL(next(QString)),
+    ok = connect(m_treeChooserObject, SIGNAL(next(QString)),
                  this, SLOT(next(QString)));
     Q_ASSERT(ok);
 
-    ok = connect(treeChooserObject_, SIGNAL(back()),
+    ok = connect(m_treeChooserObject, SIGNAL(back()),
                  this, SLOT(back()));
     Q_ASSERT(ok);
 
     setProperties();
 
-    QQmlContext* ctx = viewer_->rootContext();
-    treeChooserObject_->setProperty("visible",open);
+    QQmlContext* ctx = m_viewer->rootContext();
+    m_treeChooserObject->setProperty("visible",open);
 }
 
 QStringList BookKeyChooser::getKeyPath() const {
-    QString oldKey = key_->key(); //string backup of key
+    QString oldKey = m_key->key(); //string backup of key
 
     if (oldKey.isEmpty()) { //don't set keys equal to "/", always use a key which may have content
-        key_->firstChild();
-        oldKey = key_->key();
+        m_key->firstChild();
+        oldKey = m_key->key();
     }
 
     QStringList siblings; //split up key
@@ -260,9 +260,9 @@ void BookKeyChooser::parseKey(QStringList * siblings,
 
 void BookKeyChooser::createModel()
 {
-    model_.clear();
+    m_model.clear();
 
-    QStandardItem *parentItem = model_.invisibleRootItem();
+    QStandardItem *parentItem = m_model.invisibleRootItem();
     for (int i = 0; i < 4; ++i) {
         QStandardItem *item = new QStandardItem("item1");
         parentItem->appendRow(item);

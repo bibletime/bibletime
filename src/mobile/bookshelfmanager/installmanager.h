@@ -27,10 +27,6 @@ private slots:
     void installRemove();
     void languageIndexChanged(int index);
     void refreshLists();
-    void refreshWorksCancel();
-    void refreshWorksProgress(const int, const int current);
-    void refreshSourceListCancel();
-    void refreshSourceListProgress(const int, const int current);
     void sourceIndexChanged(int index);
     void workSelected(int index);
 
@@ -41,8 +37,6 @@ private:
     void findProgressObject();
     void installModules(const QList<CSwordModuleInfo*>& modules);
     void makeConnections();
-    void refreshSourceList();
-    void refreshWorks(const QStringList& sourceNames);
     void removeModules(const QList<CSwordModuleInfo*>& modules);
     void setProperties();
     void setupSourceModel();
@@ -52,12 +46,12 @@ private:
     void updateCategoryAndLanguageModels();
     void updateWorksModel();
 
-    QQuickItem* installManagerChooserObject_;
-    QQuickItem* progressObject_;
-    BtInstallMgr* btInstallMgr_;
-    InstallSourcesManager installSourcesManager_;
+    QQuickItem* m_installManagerChooserObject;
+    QQuickItem* m_progressObject;
+    BtInstallMgr* m_btInstallMgr;
+    InstallSourcesManager m_installSourcesManager;
 
-    InstallProgress installProgress_;
+    InstallProgress m_installProgress;
     QStringList m_sourceList;
     QStringList m_categoryList;
     QStringList m_languageList;

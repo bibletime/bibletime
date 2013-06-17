@@ -20,24 +20,24 @@ InstallSourcesManager::~InstallSourcesManager() {
 
 void InstallSourcesManager::refreshSources() {
     findProgressObject();
-    Q_ASSERT(progressObject_ != 0);
-    if (progressObject_ == 0)
+    Q_ASSERT(m_progressObject != 0);
+    if (m_progressObject == 0)
         return;
-    progressObject_->disconnect(this);
-    connect(progressObject_, SIGNAL(cancel()), this, SLOT(cancel()));
+    m_progressObject->disconnect(this);
+    connect(m_progressObject, SIGNAL(cancel()), this, SLOT(cancel()));
 
-    progressObject_->setProperty("minimumValue", 0.0);
-    progressObject_->setProperty("maximumValue", 100.0);
-    progressObject_->setProperty("value", 0.0);
-    progressObject_->setProperty("visible", true);
-    progressObject_->setProperty("text", "Refreshing Source List");
+    m_progressObject->setProperty("minimumValue", 0.0);
+    m_progressObject->setProperty("maximumValue", 100.0);
+    m_progressObject->setProperty("value", 0.0);
+    m_progressObject->setProperty("visible", true);
+    m_progressObject->setProperty("text", "Refreshing Source List");
 
     runThread();
 }
 
 void InstallSourcesManager::cancel() {
     m_worker->cancel();
-    progressObject_->setProperty("visible", false);
+    m_progressObject->setProperty("visible", false);
 }
 
 void InstallSourcesManager::runThread() {
@@ -55,10 +55,10 @@ void InstallSourcesManager::runThread() {
 }
 
 void InstallSourcesManager::percentComplete(int percent, const QString& title) {
-    progressObject_->setProperty("value", percent);
-    progressObject_->setProperty("text", title);
+    m_progressObject->setProperty("value", percent);
+    m_progressObject->setProperty("text", title);
     if (percent == 100)
-        progressObject_->setProperty("visible", false);
+        m_progressObject->setProperty("visible", false);
 }
 
 void InstallSourcesManager::findProgressObject() {
@@ -67,7 +67,7 @@ void InstallSourcesManager::findProgressObject() {
     if (viewer != 0)
         rootObject = viewer->rootObject();
     if (rootObject != 0)
-        progressObject_ = rootObject->findChild<QQuickItem*>("progress");
+        m_progressObject = rootObject->findChild<QQuickItem*>("progress");
 }
 
 } // end namespace

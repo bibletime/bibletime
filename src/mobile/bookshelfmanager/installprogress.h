@@ -37,7 +37,7 @@ private:
     void setProperties();
     void startThreads();
 
-    QQuickItem* progressObject_;
+    QQuickItem* m_progressObject;
     QMultiMap<QString, BtInstallThread*> m_waitingThreads;
     QMultiMap<QString, BtInstallThread*> m_runningThreads;
     QMap<QString, BtInstallThread*> m_threadsByModule;
