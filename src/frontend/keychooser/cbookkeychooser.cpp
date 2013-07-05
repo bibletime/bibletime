@@ -163,8 +163,8 @@ void CBookKeyChooser::setModules(const QList<const CSwordModuleInfo*> &modules,
 
             int maxWidth = (int) ((float) totalWidth / (float) m_modules.first()->depth());
 
-            w->comboBox()->setMaximumWidth(maxWidth);
-            w->comboBox()->setCurrentIndex(0);
+            w->comboBox().setMaximumWidth(maxWidth);
+            w->comboBox().setCurrentIndex(0);
 
             connect(w, SIGNAL(changed(int)), SLOT(keyChooserChanged(int)));
             connect(w, SIGNAL(focusOut(int)), SLOT(keyChooserChanged(int)));
@@ -202,7 +202,7 @@ void CBookKeyChooser::adjustFont() {
     //Make sure the entries are displayed correctly.
     QListIterator<CKeyChooserWidget*> it(m_chooserWidgets);
     while (it.hasNext())
-        it.next()->comboBox()->setFont(btConfig().getFontForLanguage(*m_modules.first()->language()).second);
+        it.next()->comboBox().setFont(btConfig().getFontForLanguage(*m_modules.first()->language()).second);
 }
 
 /** Refreshes the content. */
@@ -239,7 +239,7 @@ void CBookKeyChooser::keyChooserChanged(int /*newIndex*/) {
 
     for (int i = 0; i < m_chooserWidgets.count(); ++i) {
         chooser = m_chooserWidgets.at(i);
-        const QString currentText = (chooser && chooser->comboBox()) ? chooser->comboBox()->currentText() : QString::null;
+        const QString currentText(chooser->comboBox()->currentText());
 
         if (currentText.isEmpty() || i > activeID) {
             break;

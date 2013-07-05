@@ -107,9 +107,10 @@ class CKeyChooserWidget : public QWidget  {
         /**
         * Return the combobox of this key chooser widget.
         */
-        QComboBox* comboBox() {
-            return m_comboBox;
-        };
+        QComboBox & comboBox() const {
+            Q_ASSERT(m_comboBox);
+            return *m_comboBox;
+        }
 
     public slots:
         /**

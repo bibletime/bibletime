@@ -39,7 +39,7 @@ CLexiconKeyChooser::CLexiconKeyChooser(
 
     //don't allow a too high width, try to keep as narrow as possible
     //to aid users with smaller screen resolutions
-    m_widget->comboBox()->setMaximumWidth(200);
+    m_widget->comboBox().setMaximumWidth(200);
 
     m_widget->setToolTips(
         tr("Entries of the current work"),
@@ -70,8 +70,8 @@ void CLexiconKeyChooser::updateKey(CSwordKey* key) {
     }
 
     QString newKey = m_key->key();
-    const int index = m_widget->comboBox()->findText(newKey);
-    m_widget->comboBox()->setCurrentIndex(index);
+    const int index = m_widget->comboBox().findText(newKey);
+    m_widget->comboBox().setCurrentIndex(index);
 }
 
 void CLexiconKeyChooser::setKey(CSwordKey* key) {
@@ -87,7 +87,7 @@ void CLexiconKeyChooser::setKey(CSwordKey* key) {
 
 void CLexiconKeyChooser::activated(int index) {
     //  qWarning("activated");
-    const QString text = m_widget->comboBox()->itemText(index);
+    const QString text = m_widget->comboBox().itemText(index);
 
     // To prevent from eternal loop, because activated() is emitted again
     if (m_key && m_key->key() != text) {
