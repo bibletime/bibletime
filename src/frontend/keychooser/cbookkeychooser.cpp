@@ -65,13 +65,12 @@ void CBookKeyChooser::setKey(CSwordKey* newKey, const bool emitSignal) {
     }
 
     int depth = 0;
-    int index = 0;
 
     m_key->root(); //start iteration at root node
 
     while ( m_key->firstChild() && (depth < siblings.count()) ) {
         QString key = m_key->key();
-        index = (depth == 0) ? -1 : 0;
+        int index = (depth == 0) ? -1 : 0;
 
         bool found = false;
 
