@@ -133,10 +133,10 @@ void BtRemovePage::slotRemoveModules() {
     Q_FOREACH(const CSwordModuleInfo * m,
               m_bookshelfWidget->treeModel()->checkedModules())
     {
-        const QIcon icon = CSwordModuleInfo::moduleIcon(m);
+        const QIcon icon = CSwordModuleInfo::moduleIcon(*m);
         const QSize iconSize = icon.actualSize(QSize(textHeight, textHeight));
         prettyModuleNames.append(moduleString
-                                 .arg(iconDir + CSwordModuleInfo::moduleIconFilename(m))
+                                 .arg(iconDir + CSwordModuleInfo::moduleIconFilename(*m))
                                  .arg(iconSize.width())
                                  .arg(iconSize.height())
                                  .arg(m->name()));
