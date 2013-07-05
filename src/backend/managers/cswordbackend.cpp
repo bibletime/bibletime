@@ -129,19 +129,19 @@ CSwordBackend::LoadError CSwordBackend::initModules(SetupChangedReason reason) {
         CSwordModuleInfo* newModule = 0;
 
         if (!strcmp(curMod->Type(), "Biblical Texts")) {
-            newModule = new CSwordBibleModuleInfo(curMod, this);
+            newModule = new CSwordBibleModuleInfo(curMod, *this);
             newModule->module()->setDisplay(&m_chapterDisplay);
         }
         else if (!strcmp(curMod->Type(), "Commentaries")) {
-            newModule = new CSwordCommentaryModuleInfo(curMod, this);
+            newModule = new CSwordCommentaryModuleInfo(curMod, *this);
             newModule->module()->setDisplay(&m_entryDisplay);
         }
         else if (!strcmp(curMod->Type(), "Lexicons / Dictionaries")) {
-            newModule = new CSwordLexiconModuleInfo(curMod, this);
+            newModule = new CSwordLexiconModuleInfo(curMod, *this);
             newModule->module()->setDisplay(&m_entryDisplay);
         }
         else if (!strcmp(curMod->Type(), "Generic Books")) {
-            newModule = new CSwordBookModuleInfo(curMod, this);
+            newModule = new CSwordBookModuleInfo(curMod, *this);
             newModule->module()->setDisplay(&m_bookDisplay);
         }
 

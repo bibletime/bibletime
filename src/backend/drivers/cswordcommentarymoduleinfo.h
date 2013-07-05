@@ -24,10 +24,12 @@ class CSwordCommentaryModuleInfo: public CSwordBibleModuleInfo {
         Q_OBJECT
 
     public: /* Methods: */
-        inline CSwordCommentaryModuleInfo(sword::SWModule *module,
-                                          CSwordBackend * const usedBackend)
-                : CSwordBibleModuleInfo(module, usedBackend,
-                                        CSwordModuleInfo::Commentary) {}
+
+        inline CSwordCommentaryModuleInfo(sword::SWModule * module,
+                                          CSwordBackend & backend)
+            : CSwordBibleModuleInfo(module,
+                                    backend,
+                                    CSwordModuleInfo::Commentary) {}
 
         /* Reimplementation of CSwordModuleInfo::isWritable(). */
         virtual bool isWritable() const;

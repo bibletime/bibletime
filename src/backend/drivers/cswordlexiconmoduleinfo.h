@@ -24,8 +24,8 @@ class CSwordLexiconModuleInfo: public CSwordModuleInfo {
         Q_OBJECT
 
     public: /* Methods: */
-        inline CSwordLexiconModuleInfo(sword::SWModule *module,
-                                       CSwordBackend * const backend)
+        inline CSwordLexiconModuleInfo(sword::SWModule * module,
+                                       CSwordBackend & backend)
                 : CSwordModuleInfo(module, backend, Lexicon) {}
 
         inline CSwordLexiconModuleInfo(const CSwordLexiconModuleInfo &copy)

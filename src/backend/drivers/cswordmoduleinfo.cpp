@@ -49,16 +49,14 @@ const unsigned int INDEX_VERSION = 7;
 const unsigned long BT_MAX_LUCENE_FIELD_LENGTH = 1024 * 1024;
 
 CSwordModuleInfo::CSwordModuleInfo(sword::SWModule * module,
-                                   CSwordBackend * const usedBackend,
+                                   CSwordBackend & backend,
                                    ModuleType type)
     : m_module((Q_ASSERT(module), module)),
-      m_backend((Q_ASSERT(usedBackend), (usedBackend
-                                         ? usedBackend
-                                         : CSwordBackend::instance()))),
+      m_backend(backend),
       m_type(type),
       m_cancelIndexing(false),
       m_cachedName(QString::fromUtf8(module->Name())),
-      m_cachedHasVersion(!QString((*m_backend->getConfig())[module->Name()]["Version"]).isEmpty())
+      m_cachedHasVersion(!QString((*m_backend.getConfig())[module->Name()]["Version"]).isEmpty())
 {
     initCachedCategory();
     initCachedLanguage();
@@ -66,8 +64,7 @@ CSwordModuleInfo::CSwordModuleInfo(sword::SWModule * module,
     m_hidden = btConfig().value<QStringList>("state/hiddenModules",
                                              QStringList()).contains(m_cachedName);
 
-    if (m_backend
-        && m_cachedHasVersion
+    if (m_cachedHasVersion
         && (minimumSwordVersion() > sword::SWVersion::currentVersion))
     {
         qWarning("The module \"%s\" requires a newer Sword library. Please "
@@ -107,7 +104,7 @@ bool CSwordModuleInfo::unlock(const QString & unlockKey) {
        backend->setCipherKey() does not work correctly for modules from which
        data was already fetched. Therefore we have to reload the modules in
        bibletime.cpp */
-    m_backend->setCipherKey(m_module->Name(), unlockKey.toUtf8().constData());
+    m_backend.setCipherKey(m_module->Name(), unlockKey.toUtf8().constData());
 
     /// \todo write to Sword config as well
 
@@ -132,8 +129,8 @@ bool CSwordModuleInfo::isEncrypted() const {
     /* This code is still right, though we do no longer write to the module
        config files any more. */
     typedef sword::SectionMap::const_iterator SMCI;
-    SMCI it = m_backend->getConfig()->Sections.find(m_cachedName.toUtf8().constData());
-    if (it == m_backend->getConfig()->Sections.end())
+    SMCI it = m_backend.getConfig()->Sections.find(m_cachedName.toUtf8().constData());
+    if (it == m_backend.getConfig()->Sections.end())
         return false;
 
     const sword::ConfigEntMap & config = it->second;
@@ -210,19 +207,19 @@ bool CSwordModuleInfo::buildIndex() {
 
     try {
         // Without this we don't get strongs, lemmas, etc.
-        m_backend->setFilterOptions(btConfig().getFilterOptions());
+        m_backend.setFilterOptions(btConfig().getFilterOptions());
         /* Make sure we reset all important filter options which influcence the
            plain filters. Turn on these options, they are needed for the
            EntryAttributes population */
-        m_backend->setOption(CSwordModuleInfo::strongNumbers, true);
-        m_backend->setOption(CSwordModuleInfo::morphTags, true);
-        m_backend->setOption(CSwordModuleInfo::footnotes, true);
-        m_backend->setOption(CSwordModuleInfo::headings, true);
+        m_backend.setOption(CSwordModuleInfo::strongNumbers, true);
+        m_backend.setOption(CSwordModuleInfo::morphTags, true);
+        m_backend.setOption(CSwordModuleInfo::footnotes, true);
+        m_backend.setOption(CSwordModuleInfo::headings, true);
         /* We don't want the following in the text, the do not carry searchable
            information. */
-        m_backend->setOption(CSwordModuleInfo::morphSegmentation, false);
-        m_backend->setOption(CSwordModuleInfo::scriptureReferences, false);
-        m_backend->setOption(CSwordModuleInfo::redLetterWords, false);
+        m_backend.setOption(CSwordModuleInfo::morphSegmentation, false);
+        m_backend.setOption(CSwordModuleInfo::scriptureReferences, false);
+        m_backend.setOption(CSwordModuleInfo::redLetterWords, false);
 
         // Do not use any stop words:
         static const TCHAR * stop_words[1u]  = { NULL };
@@ -657,7 +654,7 @@ bool CSwordModuleInfo::has(const CSwordModuleInfo::Feature feature) const {
 
 bool CSwordModuleInfo::has(const CSwordModuleInfo::FilterTypes option) const {
     /// \todo This is a BAD workaround to see if the filter is GBF, OSIS or ThML!
-    const QString name = m_backend->configOptionName(option);
+    const QString name = m_backend.configOptionName(option);
     return m_module->getConfig().has("GlobalOptionFilter",
                                      QString("OSIS").append(name).toUtf8().constData())
         || m_module->getConfig().has("GlobalOptionFilter",

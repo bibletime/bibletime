@@ -29,8 +29,8 @@ class CSwordBookModuleInfo: public CSwordModuleInfo {
           \param module The module which belongs to this object
           \param backend The parent backend for this book module.
         */
-        CSwordBookModuleInfo(sword::SWModule *module,
-                             CSwordBackend * const usedBackend);
+        CSwordBookModuleInfo(sword::SWModule * module,
+                             CSwordBackend & usedBackend);
 
         inline CSwordBookModuleInfo(const CSwordBookModuleInfo &copy)
             : CSwordModuleInfo(copy), m_depth(copy.m_depth) {}

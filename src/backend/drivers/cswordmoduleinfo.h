@@ -406,18 +406,13 @@ public slots:
 protected: /* Methods: */
 
     CSwordModuleInfo(sword::SWModule * module,
-                     CSwordBackend * const,
+                     CSwordBackend & backend,
                      ModuleType type);
 
     CSwordModuleInfo(const CSwordModuleInfo & copy);
 
-    inline CSwordBackend * backend() const {
+    inline CSwordBackend & backend() const {
         return m_backend;
-    }
-
-    inline void setBackend(CSwordBackend * newBackend) {
-        if (newBackend)
-            m_backend = newBackend;
     }
 
     QString getSimpleConfigEntry(const QString & name) const;
@@ -449,7 +444,7 @@ signals:
 private: /* Fields: */
 
     sword::SWModule * const m_module;
-    CSwordBackend * m_backend;
+    CSwordBackend & m_backend;
     ModuleType m_type;
     bool m_hidden;
     bool m_cancelIndexing;

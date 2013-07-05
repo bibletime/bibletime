@@ -18,9 +18,9 @@
 
 
 CSwordBibleModuleInfo::CSwordBibleModuleInfo(sword::SWModule *module,
-                                             CSwordBackend * const usedBackend,
+                                             CSwordBackend & backend,
                                              ModuleType type)
-        : CSwordModuleInfo(module, usedBackend, type)
+        : CSwordModuleInfo(module, backend, type)
         , m_boundsInitialized(false)
         , m_lowerBound(0)
         , m_upperBound(0)
@@ -57,11 +57,14 @@ void CSwordBibleModuleInfo::initBounds() const {
 
 /** Returns the books available in this module */
 QStringList *CSwordBibleModuleInfo::books() const {
-    if (m_cachedLocale != backend()->booknameLanguage()) {
-        // Reset the booklist because the locale has changed
-        m_cachedLocale = backend()->booknameLanguage();
-        delete m_bookList;
-        m_bookList = 0;
+    {
+        CSwordBackend & b = backend();
+        if (m_cachedLocale != b.booknameLanguage()) {
+            // Reset the booklist because the locale has changed
+            m_cachedLocale = b.booknameLanguage();
+            delete m_bookList;
+            m_bookList = 0;
+        }
     }
 
     if (!m_bookList) {
