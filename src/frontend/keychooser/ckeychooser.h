@@ -98,7 +98,8 @@ class CKeyChooser : public QWidget {
         virtual void adjustFont() = 0;
 
     protected slots:
-        virtual void setKey(QString &newKey) = 0;
+
+        virtual void setKey(const QString & newKey) = 0;
 
     private:
         BTHistory *m_history;

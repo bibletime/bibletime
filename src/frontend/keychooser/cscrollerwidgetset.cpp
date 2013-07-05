@@ -16,64 +16,69 @@
 #include "frontend/keychooser/cscrollbutton.h"
 
 
-const unsigned int WIDTH = 16;
-const unsigned int ARROW_HEIGHT = 12;
-const unsigned int MOVER_HEIGHT = 6;
+#define WIDTH (static_cast<unsigned int>(16))
+#define ARROW_HEIGHT (static_cast<unsigned int>(12))
+#define MOVER_HEIGHT (static_cast<unsigned int>(6))
 
-CScrollerWidgetSet::CScrollerWidgetSet(QWidget *parent) : QWidget(parent) {
+
+CScrollerWidgetSet::CScrollerWidgetSet(QWidget * parent)
+    : QWidget(parent)
+{
     m_layout = new QVBoxLayout(this);
     m_layout->setSpacing(0);
     m_layout->setContentsMargins(0, 0, 0, 0);
     m_layout->setAlignment(this, Qt::AlignHCenter | Qt::AlignCenter);
 
-    btn_up = new QToolButton(this);
-    btn_up->setArrowType(Qt::UpArrow);
+    m_buttonUp = new QToolButton(this);
+    m_buttonUp->setArrowType(Qt::UpArrow);
 
-    btn_up->setFixedSize(WIDTH, ARROW_HEIGHT);
-    btn_up->setFocusPolicy(Qt::NoFocus);
-    btn_up->setAutoRaise(true);
+    m_buttonUp->setFixedSize(WIDTH, ARROW_HEIGHT);
+    m_buttonUp->setFocusPolicy(Qt::NoFocus);
+    m_buttonUp->setAutoRaise(true);
 
-    btn_fx = new CScrollButton(this);
-    btn_fx->setFixedSize(WIDTH, MOVER_HEIGHT);
-    btn_fx->setFocusPolicy(Qt::NoFocus);
+    m_scrollButton = new CScrollButton(this);
+    m_scrollButton->setFixedSize(WIDTH, MOVER_HEIGHT);
+    m_scrollButton->setFocusPolicy(Qt::NoFocus);
 
-    btn_down = new QToolButton(this);
-    btn_down->setArrowType(Qt::DownArrow);
-    btn_down->setFixedSize(WIDTH, ARROW_HEIGHT);
-    btn_down->setFocusPolicy(Qt::NoFocus);
-    btn_down->setAutoRaise(true);
+    m_buttonDown = new QToolButton(this);
+    m_buttonDown->setArrowType(Qt::DownArrow);
+    m_buttonDown->setFixedSize(WIDTH, ARROW_HEIGHT);
+    m_buttonDown->setFocusPolicy(Qt::NoFocus);
+    m_buttonDown->setAutoRaise(true);
 
-    m_layout->addWidget( btn_up, 0 );
-    m_layout->addWidget( btn_fx, 0 );
-    m_layout->addWidget( btn_down, 0 );
+    m_layout->addWidget(m_buttonUp, 0);
+    m_layout->addWidget(m_scrollButton, 0);
+    m_layout->addWidget(m_buttonDown, 0);
     setMinimumWidth(WIDTH); // Kludge to add some spacing but seems to work.
 
-    connect(btn_fx, SIGNAL(lock()), SLOT(slotLock()));
-    connect(btn_fx, SIGNAL(unlock()), SLOT(slotUnlock()));
-    connect(btn_fx, SIGNAL(change_requested(int)), SLOT(slotScroller(int)));
-    connect(btn_up, SIGNAL(clicked()), SLOT(slotUpClick()));
-    connect(btn_down, SIGNAL(clicked()), SLOT(slotDownClick()));
+    connect(m_scrollButton, SIGNAL(lock()),                SLOT(slotLock()));
+    connect(m_scrollButton, SIGNAL(unlock()),              SLOT(slotUnlock()));
+    connect(m_scrollButton, SIGNAL(change_requested(int)), SLOT(slotScroller(int)));
+    connect(m_buttonUp,     SIGNAL(clicked()),             SLOT(slotUpClick()));
+    connect(m_buttonDown,   SIGNAL(clicked()),             SLOT(slotDownClick()));
 }
 
 /** Sets the tooltips for the given entries using the parameters as text. */
-void CScrollerWidgetSet::setToolTips( const QString nextEntryTip, const QString scrollButtonTip, const QString previousEntryTip) {
-    btn_fx->setToolTip(scrollButtonTip);
-    btn_down->setToolTip(nextEntryTip);
-    btn_up->setToolTip(previousEntryTip);
+void CScrollerWidgetSet::setToolTips(const QString & nextEntryTip,
+                                     const QString & scrollButtonTip,
+                                     const QString & previousEntryTip)
+{
+    m_scrollButton->setToolTip(scrollButtonTip);
+    m_buttonDown->setToolTip(nextEntryTip);
+    m_buttonUp->setToolTip(previousEntryTip);
 }
 
 
-void CScrollerWidgetSet::wheelEvent( QWheelEvent* e ) {
+void CScrollerWidgetSet::wheelEvent(QWheelEvent * e) {
     /**
     * The problem is, that wheel events do everytime have the delta value 120
     */
-    const int vchange = ((e->delta() > 0) ? (-1) : (1));
+    const int vchange = ((e->delta() > 0) ? -1 : 1);
 
-    if (vchange != 0) {//do not emit a change with value 0
+    if (vchange != 0) { // Do not emit a change with value 0
         emit change(vchange);
         e->accept();
-    }
-    else {
+    } else {
         e->ignore();
     }
 }
@@ -81,15 +86,19 @@ void CScrollerWidgetSet::wheelEvent( QWheelEvent* e ) {
 void CScrollerWidgetSet::slotLock() {
     emit scroller_pressed();
 }
+
 void CScrollerWidgetSet::slotUnlock() {
     emit scroller_released();
 }
+
 void CScrollerWidgetSet::slotScroller(int n) {
     emit change(n);
 }
+
 void CScrollerWidgetSet::slotUpClick() {
     slotScroller(-1);
 }
+
 void CScrollerWidgetSet::slotDownClick() {
     slotScroller(1);
 }

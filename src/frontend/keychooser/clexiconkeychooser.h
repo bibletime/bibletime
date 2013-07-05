@@ -79,7 +79,7 @@ class CLexiconKeyChooser : public CKeyChooser {
         virtual void updateKey(CSwordKey* key);
 
     protected slots:
-        virtual void setKey(QString& newKey);
+        virtual void setKey(const QString & newKey);
 
 };
 

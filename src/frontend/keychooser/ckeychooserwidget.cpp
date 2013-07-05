@@ -19,58 +19,60 @@
 
 
 class BtKeyLineEdit : public QLineEdit {
-    public:
-        BtKeyLineEdit(QWidget* parent)
-                : QLineEdit(parent) {
-        }
-    protected:
-        void focusInEvent(QFocusEvent* event) {
-            Qt::FocusReason reason = event->reason();
-            if (reason == Qt::OtherFocusReason) {
-                selectAll();
-            }
-            QWidget::focusInEvent(event);
-        }
+
+public: /* Methods: */
+
+    BtKeyLineEdit(QWidget * parent)
+        : QLineEdit(parent) {}
+
+protected: /* Methods: */
+
+    virtual void focusInEvent(QFocusEvent * event) {
+        const Qt::FocusReason reason = event->reason();
+        if (reason == Qt::OtherFocusReason)
+            selectAll();
+        QWidget::focusInEvent(event);
+    }
+
 };
 
 
-
-CKCComboBox::CKCComboBox()
-        : QComboBox() {
+CKCComboBox::CKCComboBox(QWidget * parent)
+    : QComboBox(parent)
+{
     setFocusPolicy(Qt::WheelFocus);
     setLineEdit(new BtKeyLineEdit(this));
-    if (lineEdit()) {
-        installEventFilter( lineEdit() );
-    }
+    if (lineEdit())
+        installEventFilter(lineEdit());
 }
 
-/** Reimplementation. */
-bool CKCComboBox::eventFilter( QObject *o, QEvent *e ) {
+bool CKCComboBox::eventFilter(QObject * o, QEvent * e) {
     if (e->type() == QEvent::FocusOut) {
-        QFocusEvent* f = static_cast<QFocusEvent*>(e);
+        QFocusEvent * const f = static_cast<QFocusEvent *>(e);
 
         if (o == lineEdit() && f->reason() == Qt::TabFocusReason) {
             int index = findText(currentText());
-            if (index == -1) {
-                index = 0;// return 0 if not found
-            }
-            setCurrentIndex( index );
-            emit focusOut( index );
+            if (index == -1)
+                index = 0; // return 0 if not found
+            setCurrentIndex(index);
+            emit focusOut(index);
+            return false;
+        }
 
+        if (f->reason() == Qt::PopupFocusReason)
             return false;
-        }
-        else if (f->reason() == Qt::PopupFocusReason) {
-            return false;
-        }
-        else if (f->reason() == Qt::ActiveWindowFocusReason) {
+
+        if (f->reason() == Qt::ActiveWindowFocusReason) {
             emit activated(currentText());
             return false;
         }
-        else if (f->reason() == Qt::MouseFocusReason) {
+
+        if (f->reason() == Qt::MouseFocusReason) {
             emit activated(currentText());
             return false;
         }
-        else if (o == this) {
+
+        if (o == this) {
             emit activated(currentText());
             return false;
         }
@@ -80,7 +82,7 @@ bool CKCComboBox::eventFilter( QObject *o, QEvent *e ) {
 }
 
 /** Scrolls in the list if the wheel of the mouse was used. */
-void CKCComboBox::wheelEvent( QWheelEvent* e ) {
+void CKCComboBox::wheelEvent(QWheelEvent * e) {
     return QComboBox::wheelEvent(e); /// \bug rest method won't get executed.
 
     const signed int change = (int)((float)e->delta() / (float)120);
@@ -89,18 +91,17 @@ void CKCComboBox::wheelEvent( QWheelEvent* e ) {
     if ((current + change >= 0) && (current + change < count()) ) {
         setCurrentIndex(current + change);
         e->accept();
-        emit activated( currentIndex() );
-    }
-    else {
+        emit activated(currentIndex());
+    } else {
         e->ignore();
     }
 }
 
 //**********************************************************************************/
 
-CKeyChooserWidget::CKeyChooserWidget(int count, const bool useNextPrevSignals,  QWidget *parent ) : QWidget(parent) {
-    m_useNextPrevSignals = useNextPrevSignals;
-
+CKeyChooserWidget::CKeyChooserWidget(int count, QWidget * parent)
+    : QWidget(parent)
+{
     for (int index = 1; index <= count; index++) {
         m_list.append( QString::number(index) );
     }
@@ -108,15 +109,11 @@ CKeyChooserWidget::CKeyChooserWidget(int count, const bool useNextPrevSignals,  
     reset(m_list, 0, false);
 }
 
-CKeyChooserWidget::CKeyChooserWidget(QStringList *list, const bool useNextPrevSignals, QWidget *parent ) : QWidget(parent) {
-    m_useNextPrevSignals = useNextPrevSignals;
-
-    if (list) {
-        m_list = *list; //deep copy the items of list
-    }
-    else {
-        m_list.clear();
-    }
+CKeyChooserWidget::CKeyChooserWidget(QStringList * list, QWidget * parent )
+    : QWidget(parent)
+{
+    if (list)
+        m_list = *list;
 
     init();
     reset(m_list, 0, false);
@@ -129,14 +126,13 @@ void CKeyChooserWidget::reset(const int count, int index, bool do_emit) {
     //    return;
 
     m_list.clear();
-    for (int i = 1; i <= count; i++) { /// \todo CHECK
-        m_list.append( QString::number(i) );
-    }
+    for (int i = 1; i <= count; i++) /// \todo CHECK
+        m_list.append(QString::number(i));
 
     reset(&m_list, index, do_emit);
 }
 
-void CKeyChooserWidget::reset(const QStringList &list, int index, bool do_emit) {
+void CKeyChooserWidget::reset(const QStringList & list, int index, bool do_emit) {
     //This prevents the widget from resetting during application load, which
     //produces undesirable behavior.
     //if (!updatesEnabled())
@@ -147,37 +143,34 @@ void CKeyChooserWidget::reset(const QStringList &list, int index, bool do_emit) 
 }
 
 
-void CKeyChooserWidget::reset(const QStringList *list, int index, bool do_emit) {
+void CKeyChooserWidget::reset(const QStringList * list, int index, bool do_emit) {
     //if (isResetting || !updatesEnabled())
-    if (isResetting)
+    if (m_isResetting)
         return;
 
     //  qWarning("starting insert");
-    isResetting = true;
+    m_isResetting = true;
 
-    oldKey = QString::null;
+    m_oldKey = QString::null;
 
     //  m_comboBox->setUpdatesEnabled(false);
     //DON'T REMOVE THE HIDE: Otherwise QComboBox's sizeHint() function won't work properly
     m_comboBox->hide();
     m_comboBox->clear();
-    if (list) {
+    if (list)
         m_comboBox->insertItems(-1, *list);
-    }
 
-    if (!list || (list && !list->count())) { //nothing in the combobox
+    if (!list || (list && !list->count())) { // nothing in the combobox
         setEnabled(false);
-    }
-    else if (!isEnabled()) { //was disabled
+    } else if (!isEnabled()) { // was disabled
         setEnabled(true);
     }
 
-    if (list->count()) {
+    if (list->count())
         m_comboBox->setCurrentIndex(index);
-    }
-    if (do_emit) {
+
+    if (do_emit)
         emit changed(m_comboBox->currentIndex());
-    }
 
     m_comboBox->sizeHint(); //without this function call the combo box won't be properly sized!
     //DON'T REMOVE OR MOVE THE show()! Otherwise QComboBox's sizeHint() function won't work properly!
@@ -186,51 +179,51 @@ void CKeyChooserWidget::reset(const QStringList *list, int index, bool do_emit) 
     //  m_comboBox->setFont( m_comboBox->font() );
     //  m_comboBox->setUpdatesEnabled(true);
 
-    isResetting = false;
+    m_isResetting = false;
     //  qWarning("inserted");
 }
 
 /** Initializes this widget. We need this function because we have more than one constructor. */
 void CKeyChooserWidget::init() {
-    oldKey = QString::null;
+    m_oldKey = QString::null;
 
     setFocusPolicy(Qt::WheelFocus);
 
-    m_comboBox = new CKCComboBox();
+    m_comboBox = new CKCComboBox(this);
     setFocusProxy(m_comboBox);
-    m_comboBox->setAutoCompletion( true );
+    m_comboBox->setAutoCompletion(true);
     m_comboBox->setEditable(true);
     m_comboBox->setInsertPolicy(QComboBox::NoInsert);
     m_comboBox->setFocusPolicy(Qt::WheelFocus);
 
-    m_mainLayout = new QHBoxLayout( this );
+    m_mainLayout = new QHBoxLayout(this);
     m_mainLayout->setSpacing(0);
     m_mainLayout->setContentsMargins(0, 0, 0, 0);
     m_mainLayout->addWidget(m_comboBox);
 
     m_scroller = new CScrollerWidgetSet(this);
 
-    m_mainLayout->addWidget( m_scroller );
+    m_mainLayout->addWidget(m_scroller);
     m_mainLayout->addSpacing(0);
 
     setTabOrder(m_comboBox, 0);
     setFocusProxy(m_comboBox);
 
-    connect(m_scroller, SIGNAL(scroller_pressed()), SLOT(lock()));
+    connect(m_scroller, SIGNAL(scroller_pressed()),  SLOT(lock()));
     connect(m_scroller, SIGNAL(scroller_released()), SLOT(unlock()));
-    connect(m_scroller, SIGNAL(change(int)), SLOT(changeCombo(int)) );
-
-    connect(m_comboBox, SIGNAL(activated(int)), SLOT(slotComboChanged(int)));
+    connect(m_scroller, SIGNAL(change(int)),         SLOT(changeCombo(int)));
+    connect(m_comboBox, SIGNAL(activated(int)),      SLOT(slotComboChanged(int)));
     //  connect(m_comboBox, SIGNAL(activated(const QString&)), SLOT(slotReturnPressed(const QString&)));
-    connect(m_comboBox->lineEdit(), SIGNAL(returnPressed()), SLOT(slotReturnPressed()));
+    connect(m_comboBox->lineEdit(), SIGNAL(returnPressed()),
+                                    SLOT(slotReturnPressed()));
     connect(m_comboBox, SIGNAL(focusOut(int)), SIGNAL(focusOut(int)));
 
     updatelock = false;
-    isResetting = false;
+    m_isResetting = false;
 }
 
 /** Is called when the return key was presed in the combobox. */
-void CKeyChooserWidget::slotReturnPressed( /*const QString& text*/) {
+void CKeyChooserWidget::slotReturnPressed() {
     Q_ASSERT(m_comboBox->lineEdit());
 
     const QString text(m_comboBox->lineEdit()->text());
@@ -251,22 +244,26 @@ void CKeyChooserWidget::slotComboChanged(int index) {
     setUpdatesEnabled(false);
 
     const QString key(m_comboBox->itemText(index));
-    if (oldKey.isNull() || (oldKey != key))
+    if (m_oldKey.isNull() || (m_oldKey != key))
         emit changed(index);
 
-    oldKey = key;
+    m_oldKey = key;
 
     setUpdatesEnabled(true);
 }
 
 /** Sets the tooltips for the given entries using the parameters as text. */
-void CKeyChooserWidget::setToolTips( const QString comboTip, const QString nextEntryTip, const QString scrollButtonTip, const QString previousEntryTip) {
+void CKeyChooserWidget::setToolTips(const QString & comboTip,
+                                    const QString & nextEntryTip,
+                                    const QString & scrollButtonTip,
+                                    const QString & previousEntryTip)
+{
     m_comboBox->setToolTip(comboTip);
     m_scroller->setToolTips(nextEntryTip, scrollButtonTip, previousEntryTip);
 }
 
 /** Sets the current item to the one with the given text */
-bool CKeyChooserWidget::setItem( const QString item ) {
+bool CKeyChooserWidget::setItem(const QString & item) {
     bool ret = false;
     const int count = m_comboBox->count();
     for (int i = 0; i < count; ++i) {
@@ -285,14 +282,14 @@ bool CKeyChooserWidget::setItem( const QString item ) {
 void CKeyChooserWidget::lock() {
     updatelock = true;
     m_comboBox->setEditable(false);
-    oldKey = m_comboBox->currentText();
+    m_oldKey = m_comboBox->currentText();
 }
 
 void CKeyChooserWidget::unlock() {
     updatelock = false;
     m_comboBox->setEditable(true);
     m_comboBox->setEditText(m_comboBox->itemText(m_comboBox->currentIndex()));
-    if (m_comboBox->currentText() != oldKey)
+    if (m_comboBox->currentText() != m_oldKey)
         emit changed(m_comboBox->currentIndex());
 }
 
@@ -302,8 +299,10 @@ void CKeyChooserWidget::changeCombo(int n) {
 
     //index of highest Item
     const int max = m_comboBox->count() - 1;
-    if (new_index > max) new_index = max;
-    if (new_index < 0) new_index = 0;
+    if (new_index > max)
+        new_index = max;
+    if (new_index < 0)
+        new_index = 0;
 
     if (new_index != old_index) {
         m_comboBox->setCurrentIndex(new_index);

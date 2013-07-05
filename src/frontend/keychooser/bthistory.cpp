@@ -44,8 +44,7 @@ void BTHistory::move(QAction* historyItem) {
     //find the action in the list
     m_index = m_historyList.indexOf(historyItem);
     //move to the selected item in the list, it will be the current item
-    QString newKey = m_historyList.at(m_index)->text();
-    emit historyMoved(newKey); // signal to "outsiders"; key has been changed
+    emit historyMoved(m_historyList.at(m_index)->text()); // signal to "outsiders"; key has been changed
     sendChangedSignal();
 
     m_inHistoryFunction = false;

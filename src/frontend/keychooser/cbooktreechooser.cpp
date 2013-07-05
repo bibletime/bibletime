@@ -182,7 +182,7 @@ void CBookTreeChooser::addKeyChildren(CSwordTreeKey* key, QTreeWidgetItem* item)
     }
 }
 
-void CBookTreeChooser::setKey(QString& newKey) {
+void CBookTreeChooser::setKey(const QString & newKey) {
     m_key->setKey(newKey);
     setKey(m_key);
 }

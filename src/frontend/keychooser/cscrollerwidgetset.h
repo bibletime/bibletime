@@ -23,51 +23,53 @@ class QVBoxLayout;
 /**
  * This class implements the Scroller Widget-set, which
  * consists of two normal ref @QToolButton and a enhanced @ref CScrollButton
- *
-  * @author The BibleTime team
-  */
-class CScrollerWidgetSet : public QWidget {
-        Q_OBJECT
+ */
+class CScrollerWidgetSet: public QWidget {
 
-    public:
-        CScrollerWidgetSet(QWidget *parent = 0);
+    Q_OBJECT
 
-        /**
-        * Sets the tooltips for the given entries using the parameters as text.
-        */
-        void setToolTips( const QString nextEntry, const QString scrollButton, const QString previousEntry);
+public: /* Methods: */
 
-    signals:
-        /**
-        * Is emitted to proceed to some other entry relative to the
-        * current, indicated by the int value.
-        * \param count offset to change to
-        */
-        void change(int count);
+    CScrollerWidgetSet(QWidget * parent = 0);
 
-        /**
-        * These emit when the scroll button is pressed or released
-        */
-        void scroller_pressed();
-        void scroller_released();
+    /**
+    * Sets the tooltips for the given entries using the parameters as text.
+    */
+    void setToolTips(const QString & nextEntry,
+                     const QString & scrollButton,
+                     const QString & previousEntry);
 
-    protected:
+signals:
 
-        virtual void wheelEvent( QWheelEvent* e );
+    /**
+    * Is emitted to proceed to some other entry relative to the
+    * current, indicated by the int value.
+    * \param count offset to change to
+    */
+    void change(int count);
 
-        QToolButton* btn_up;
-        QToolButton* btn_down;
-        CScrollButton* btn_fx;
+    void scroller_pressed();
 
-    protected slots:
-        void slotLock();
-        void slotUnlock();
-        void slotUpClick();
-        void slotDownClick();
-        void slotScroller(int);
+    void scroller_released();
 
-    private:
-        QVBoxLayout *m_layout;
+protected: /* Methods: */
+
+    virtual void wheelEvent(QWheelEvent * e);
+
+protected slots:
+
+    void slotLock();
+    void slotUnlock();
+    void slotUpClick();
+    void slotDownClick();
+    void slotScroller(int);
+
+private: /* Fields: */
+
+    QVBoxLayout * m_layout;
+    QToolButton * m_buttonUp;
+    QToolButton * m_buttonDown;
+    CScrollButton * m_scrollButton;
 
 };
 

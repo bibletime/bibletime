@@ -34,7 +34,7 @@ CLexiconKeyChooser::CLexiconKeyChooser(
     m_layout->setDirection(QBoxLayout::LeftToRight);
     m_layout->setSizeConstraint(QLayout::SetNoConstraint);
 
-    m_widget = new CKeyChooserWidget(0, false, this);
+    m_widget = new CKeyChooserWidget(0, this);
     setFocusProxy(m_widget);
 
     //don't allow a too high width, try to keep as narrow as possible
@@ -169,7 +169,7 @@ void CLexiconKeyChooser::setModules(const QList<const CSwordModuleInfo*> &module
     }
 }
 
-void CLexiconKeyChooser::setKey(QString& newKey) {
+void CLexiconKeyChooser::setKey(const QString & newKey) {
     m_key->setKey(newKey);
     setKey(m_key);
 }

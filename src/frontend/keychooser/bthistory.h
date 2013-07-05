@@ -62,7 +62,7 @@ class BTHistory: public QObject {
         /**
         * Signal will be sent when the current point in history has moved
         */
-        void historyMoved(QString& newKey);
+        void historyMoved(QString newKey);
 
     private:
 

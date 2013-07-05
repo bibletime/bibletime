@@ -126,7 +126,7 @@ void CBibleKeyChooser::updateKey(CSwordKey* /*key*/) {
 
 void CBibleKeyChooser::adjustFont() {}
 
-void CBibleKeyChooser::setKey(QString& newKey) {
+void CBibleKeyChooser::setKey(const QString & newKey) {
     m_key->setKey(newKey);
     setKey(m_key);
 }

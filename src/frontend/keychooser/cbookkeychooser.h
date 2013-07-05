@@ -22,71 +22,79 @@ class CSwordBookModuleInfo;
 class CSwordKey;
 class CSwordTreeKey;
 
-namespace sword {
-class TreeKeyIdx;
-}
+/**
+  \brief The keychooser implementation for books.
+*/
+class CBookKeyChooser: public CKeyChooser {
 
-/** The keychooser implementation for books.
-  * @author The BibleTime team
-  */
-class CBookKeyChooser : public CKeyChooser {
-        Q_OBJECT
-    public:
-        CBookKeyChooser(const QList<const CSwordModuleInfo*> &modules,
-                        BTHistory *history, CSwordKey *key = 0,
-                        QWidget *parent = 0);
+    Q_OBJECT
 
-        /**
-          Reimplemented from CKeyChooser.
-        */
-        virtual void refreshContent();
+public:
 
-        /**
-        * Sets another module to this keychooser
-        */
-        virtual void setModules(const QList<const CSwordModuleInfo*> &modules,
-                                bool refresh = false);
-        /**
-        * Returns the key of this keychooser
-        */
-        virtual CSwordKey*  key();
-        /**
-        * Sets a new key to this keychooser
-        */
-        virtual void setKey(CSwordKey*);
-        /**
-        * Sets a new key to this keychooser
-        */
-        void setKey(CSwordKey*, const bool emitSignal);
+    CBookKeyChooser(const QList<const CSwordModuleInfo *> & modules,
+                    BTHistory * history,
+                    CSwordKey * key = 0,
+                    QWidget * parent = 0);
 
+    /**
+      Reimplemented from CKeyChooser.
+    */
+    virtual void refreshContent();
 
-    public slots: // Public slots
-        /**
-        * Updates the keychoosers for the given key but emit no signal.
-        */
-        void updateKey(CSwordKey*);
+    /**
+    * Sets another module to this keychooser
+    */
+    virtual void setModules(const QList<const CSwordModuleInfo *> & modules,
+                            bool refresh = false);
+    /**
+    * Returns the key of this keychooser
+    */
+    virtual CSwordKey * key();
 
-    protected: // Protected methods
-        /**
-        * Fills the combo given by depth with the items from the key having depth "depth".
-        * The parent sibling is given by key.
-        */
-        void setupCombo(const QString & key, const int depth, const int currentItem);
-        /** No descriptions */
-        virtual void adjustFont();
+    /**
+    * Sets a new key to this keychooser
+    */
+    virtual void setKey(CSwordKey * key);
 
-    protected slots:
-        /**
-        * A keychooser changed. Update and emit a signal if necessary.
-        */
-        void keyChooserChanged(int);
-        virtual void setKey(QString& newKey);
+    /**
+    * Sets a new key to this keychooser
+    */
+    void setKey(CSwordKey * key, const bool emitSignal);
 
-    private:
-        QList<CKeyChooserWidget*> m_chooserWidgets;
-        QList<const CSwordBookModuleInfo*> m_modules;
-        CSwordTreeKey *m_key;
-        QHBoxLayout* m_layout;
+public slots: // Public slots
+
+    /**
+    * Updates the keychoosers for the given key but emit no signal.
+    */
+    void updateKey(CSwordKey * key);
+
+protected: /* Methods: */
+
+    /**
+    * Fills the combo given by depth with the items from the key having depth "depth".
+    * The parent sibling is given by key.
+    */
+    void setupCombo(const QString & key, const int depth, const int currentItem);
+
+    /** No descriptions */
+    virtual void adjustFont();
+
+protected slots:
+
+    /**
+    * A keychooser changed. Update and emit a signal if necessary.
+    */
+    void keyChooserChanged(int);
+
+    virtual void setKey(const QString & newKey);
+
+private: /* Fields: */
+
+    QList<CKeyChooserWidget *> m_chooserWidgets;
+    QList<const CSwordBookModuleInfo *> m_modules;
+    CSwordTreeKey * m_key;
+    QHBoxLayout * m_layout;
+
 };
 
 #endif
