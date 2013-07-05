@@ -50,9 +50,11 @@ class CEntryDisplay;
  */
 
 class CSwordModuleInfo: public QObject {
+
         Q_OBJECT
 
-    public:
+    public: /* Methods: */
+
         /**
          * These are the options which could be supported by modules and by this backend.
          * It's used in @ref CSwordBackend::setOption.
@@ -169,12 +171,6 @@ class CSwordModuleInfo: public QObject {
         * Returns the config entry which is pecified by the parameter.
         */
         QString config( const CSwordModuleInfo::ConfigEntry entry ) const;
-
-        CSwordModuleInfo(sword::SWModule *module,
-                         CSwordBackend * const = 0,
-                         ModuleType type = Unknown);
-
-        CSwordModuleInfo(const CSwordModuleInfo &copy);
 
         /**
         * Returns the module object so all objects can access the original Sword module.
@@ -395,11 +391,18 @@ wrong, or if the config file was write protected return false.
         static QString categoryName(const CSwordModuleInfo::Category &category);
 
     public slots:
+
         inline void cancelIndexing() {
             m_cancelIndexing = true;
         }
 
-    protected:
+    protected: /* Methods: */
+
+        CSwordModuleInfo(sword::SWModule * module,
+                         CSwordBackend * const,
+                         ModuleType type);
+
+        CSwordModuleInfo(const CSwordModuleInfo &copy);
 
         inline CSwordBackend* backend() const {
             return m_backend;
@@ -429,13 +432,15 @@ wrong, or if the config file was write protected return false.
         void initCachedLanguage();
 
     signals:
+
         void hasIndexChanged(bool hasIndex);
         void hiddenChanged(bool hidden);
         void unlockedChanged(bool unlocked);
         void indexingFinished();
         void indexingProgress(int);
 
-    private:
+    private: /* Fields: */
+
         sword::SWModule * const m_module;
         CSwordBackend *m_backend;
         ModuleType m_type;
@@ -447,6 +452,7 @@ wrong, or if the config file was write protected return false.
         CSwordModuleInfo::Category m_cachedCategory;
         const CLanguageMgr::Language *m_cachedLanguage;
         bool m_cachedHasVersion;
+
 };
 
 Q_DECLARE_METATYPE(CSwordModuleInfo::Category);

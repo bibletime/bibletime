@@ -89,12 +89,15 @@ CSwordModuleInfo::CSwordModuleInfo(sword::SWModule *module,
     initCachedCategory();
     initCachedLanguage();
 
-    m_hidden = btConfig().value<QStringList>("state/hiddenModules", QStringList()).contains(name());
+    m_hidden = btConfig().value<QStringList>("state/hiddenModules", QStringList()).contains(m_cachedName);
 
-    if (backend()) {
-        if (hasVersion() && (minimumSwordVersion() > sword::SWVersion::currentVersion)) {
+    if (m_backend) {
+        if (m_cachedHasVersion
+            && (minimumSwordVersion() > sword::SWVersion::currentVersion))
+        {
             qWarning("The module \"%s\" requires a newer Sword library. Please update to \"Sword %s\".",
-                     name().toUtf8().constData(), (const char *)minimumSwordVersion());
+                     m_cachedName.toUtf8().constData(),
+                     (const char *)minimumSwordVersion());
 
             /// \todo if this is the case, can we use the module at all?
         }
@@ -119,14 +122,14 @@ bool CSwordModuleInfo::unlock(const QString & unlockKey) {
 
     bool unlocked = unlockKeyIsValid();
 
-    btConfig().setModuleEncryptionKey(name(), unlockKey);
+    btConfig().setModuleEncryptionKey(m_cachedName, unlockKey);
 
     /// \todo remove this comment once it is no longer needed
     /* There is currently a deficiency in sword 1.6.1 in that backend->setCipherKey() does
      * not work correctly for modules from which data was already fetched. Therefore we have to
      * reload the modules in bibletime.cpp
      */
-    backend()->setCipherKey(m_module->Name(), unlockKey.toUtf8().constData());
+    m_backend->setCipherKey(m_module->Name(), unlockKey.toUtf8().constData());
 
     /// \todo write to Sword config as well
 
@@ -151,8 +154,8 @@ bool CSwordModuleInfo::isEncrypted() const {
 
     //This code is still right, though we do no longer write to the module config files any more
     std::map < sword::SWBuf, sword::ConfigEntMap, std::less < sword::SWBuf > >::iterator SectionMapIter;
-    SectionMapIter = backend()->getConfig()->Sections.find(name().toUtf8().constData());
-    if (SectionMapIter == backend()->getConfig()->Sections.end())
+    SectionMapIter = m_backend->getConfig()->Sections.find(m_cachedName.toUtf8().constData());
+    if (SectionMapIter == m_backend->getConfig()->Sections.end())
         return false;
     sword::ConfigEntMap config = SectionMapIter->second;
     sword::ConfigEntMap::iterator it = config.find("CipherKey");
@@ -189,7 +192,7 @@ QString CSwordModuleInfo::getGlobalBaseIndexLocation() {
 }
 
 QString CSwordModuleInfo::getModuleBaseIndexLocation() const {
-    return getGlobalBaseIndexLocation() + QString("/") + name().toLocal8Bit();
+    return getGlobalBaseIndexLocation() + QString("/") + m_cachedName.toLocal8Bit();
 }
 
 QString CSwordModuleInfo::getModuleStandardIndexLocation() const { //this for now returns the location of the main index
@@ -207,14 +210,15 @@ bool CSwordModuleInfo::hasIndex() const {
     //first check if the index version and module version are ok
     QSettings module_config(getModuleBaseIndexLocation() + QString("/bibletime-index.conf"), QSettings::IniFormat);
 
-    if (hasVersion() &&
+    if (m_cachedHasVersion &&
         module_config.value("module-version").toString() != config(CSwordModuleInfo::ModuleVersion))
     {
         return false;
     }
 
     if (module_config.value("index-version").toUInt() != INDEX_VERSION) {
-        qDebug("%s: INDEX_VERSION is not compatible with this version of BibleTime.", name().toUtf8().constData());
+        qDebug("%s: INDEX_VERSION is not compatible with this version of BibleTime.",
+               m_cachedName.toUtf8().constData());
         return false;
     }
 
@@ -228,17 +232,17 @@ bool CSwordModuleInfo::buildIndex() {
 
     try {
         //Without this we don't get strongs, lemmas, etc
-        backend()->setFilterOptions ( btConfig().getFilterOptions() );
+        m_backend->setFilterOptions(btConfig().getFilterOptions());
         //make sure we reset all important filter options which influcence the plain filters.
         // turn on these options, they are needed for the EntryAttributes population
-        backend()->setOption( CSwordModuleInfo::strongNumbers,  true );
-        backend()->setOption( CSwordModuleInfo::morphTags,  true );
-        backend()->setOption( CSwordModuleInfo::footnotes,  true );
-        backend()->setOption( CSwordModuleInfo::headings,  true );
+        m_backend->setOption(CSwordModuleInfo::strongNumbers, true);
+        m_backend->setOption(CSwordModuleInfo::morphTags, true);
+        m_backend->setOption(CSwordModuleInfo::footnotes, true);
+        m_backend->setOption(CSwordModuleInfo::headings, true);
         // we don't want the following in the text, the do not carry searchable information
-        backend()->setOption( CSwordModuleInfo::morphSegmentation,  false );
-        backend()->setOption( CSwordModuleInfo::scriptureReferences,  false );
-        backend()->setOption( CSwordModuleInfo::redLetterWords,  false );
+        m_backend->setOption(CSwordModuleInfo::morphSegmentation, false);
+        m_backend->setOption(CSwordModuleInfo::scriptureReferences, false);
+        m_backend->setOption(CSwordModuleInfo::redLetterWords, false);
 
         // do not use any stop words
         const TCHAR* stop_words[]  = { NULL };
@@ -271,7 +275,7 @@ bool CSwordModuleInfo::buildIndex() {
 
         //Index() is not implemented properly for lexicons, so we use a
         //workaround.
-        if (type() == CSwordModuleInfo::Lexicon) {
+        if (m_type == CSwordModuleInfo::Lexicon) {
             verseIndex = 0;
             verseLowIndex = 0;
             verseSpan = ((CSwordLexiconModuleInfo*)this)->entries().size();
@@ -364,7 +368,7 @@ bool CSwordModuleInfo::buildIndex() {
             writer->addDocument(doc.data());
             //Index() is not implemented properly for lexicons, so we use a
             //workaround.
-            if (type() == CSwordModuleInfo::Lexicon) {
+            if (m_type == CSwordModuleInfo::Lexicon) {
                 verseIndex++;
             }
             else {
@@ -398,8 +402,11 @@ bool CSwordModuleInfo::buildIndex() {
             m_cancelIndexing = false;
         }
         else {
-            QSettings module_config(getModuleBaseIndexLocation() + QString("/bibletime-index.conf"), QSettings::IniFormat);
-            if (hasVersion()) module_config.setValue("module-version", config(CSwordModuleInfo::ModuleVersion) );
+            QSettings module_config(getModuleBaseIndexLocation() + QString("/bibletime-index.conf"),
+                                    QSettings::IniFormat);
+            if (m_cachedHasVersion)
+                module_config.setValue("module-version",
+                                       config(CSwordModuleInfo::ModuleVersion));
             module_config.setValue("index-version", INDEX_VERSION);
             emit hasIndexChanged(true);
         }
@@ -423,7 +430,7 @@ bool CSwordModuleInfo::buildIndex() {
 }
 
 void CSwordModuleInfo::deleteIndex() {
-    deleteIndexForModule(name());
+    deleteIndexForModule(m_cachedName);
     emit hasIndexChanged(false);
 }
 
@@ -471,10 +478,10 @@ int CSwordModuleInfo::searchIndexed(const QString &searchedText,
 
         /// \warning This is a workaround for Sword constness
         const bool useScope = (const_cast<sword::ListKey&>(scope).Count() > 0);
-//        const bool isVerseModule = (type() == CSwordModuleInfo::Bible) || (type() == CSwordModuleInfo::Commentary);
+//        const bool isVerseModule = (m_type == CSwordModuleInfo::Bible) || (m_type == CSwordModuleInfo::Commentary);
 
         lucene::document::Document* doc = 0;
-        QSharedPointer<sword::SWKey> swKey( module()->CreateKey() );
+        QSharedPointer<sword::SWKey> swKey(m_module->CreateKey());
 
 
 #ifdef CLUCENE2
@@ -528,11 +535,11 @@ QString CSwordModuleInfo::config(const CSwordModuleInfo::ConfigEntry entry) cons
             return getFormattedConfigEntry("About");
 
         case CipherKey: {
-            if (btConfig().getModuleEncryptionKey(name()).isNull()) { //fall back!
+            if (btConfig().getModuleEncryptionKey(m_cachedName).isNull()) { // fall back!
                 return QString(m_module->getConfigEntry("CipherKey"));
             }
             else {
-                return btConfig().getModuleEncryptionKey(name());
+                return btConfig().getModuleEncryptionKey(m_cachedName);
             }
         }
 
@@ -551,7 +558,9 @@ QString CSwordModuleInfo::config(const CSwordModuleInfo::ConfigEntry entry) cons
         case DataPath: { //make sure we remove the dataFile part if it's a Lexicon
             QString path(getSimpleConfigEntry("DataPath"));
 
-            if ((type() == CSwordModuleInfo::GenericBook) || (type() == CSwordModuleInfo::Lexicon)) {
+            if (m_type == CSwordModuleInfo::GenericBook
+                || m_type == CSwordModuleInfo::Lexicon)
+            {
                 int pos = path.lastIndexOf("/"); //last slash in the string
 
                 if (pos != -1) {
@@ -591,7 +600,7 @@ QString CSwordModuleInfo::config(const CSwordModuleInfo::ConfigEntry entry) cons
         }
 
         case GlossaryFrom: {
-            if (category() != Glossary) {
+            if (m_cachedCategory != Glossary) {
                 return QString::null;
             };
 
@@ -601,7 +610,7 @@ QString CSwordModuleInfo::config(const CSwordModuleInfo::ConfigEntry entry) cons
         }
 
         case GlossaryTo: {
-            if (category() != Glossary) {
+            if (m_cachedCategory != Glossary) {
                 return QString::null;
             };
 
@@ -674,7 +683,7 @@ bool CSwordModuleInfo::has(const CSwordModuleInfo::Feature feature) const {
 
 bool CSwordModuleInfo::has(const CSwordModuleInfo::FilterTypes option) const {
     //BAD workaround to see if the filter is GBF, OSIS or ThML!
-    const QString name = backend()->configOptionName(option);
+    const QString name = m_backend->configOptionName(option);
 
     if (m_module->getConfig().has("GlobalOptionFilter", QString("OSIS").append(name).toUtf8().constData())) {
         return true;
@@ -707,17 +716,17 @@ CSwordModuleInfo::TextDirection CSwordModuleInfo::textDirection() const {
 }
 
 void CSwordModuleInfo::write(CSwordKey *key, const QString &newText) {
-    module()->setKey(key->key().toUtf8().constData());
+    m_module->setKey(key->key().toUtf8().constData());
 
     //don't store a pointer to the const char* value somewhere because QCString doesn't keep the value of it
-    module()->setEntry(isUnicode() ? newText.toUtf8().constData() : newText.toLocal8Bit().constData());
+    m_module->setEntry(isUnicode() ? newText.toUtf8().constData() : newText.toLocal8Bit().constData());
 }
 
 bool CSwordModuleInfo::deleteEntry(CSwordKey * const key) {
-    module()->setKey(isUnicode() ? key->key().toUtf8().constData() : key->key().toLocal8Bit().constData());
+    m_module->setKey(isUnicode() ? key->key().toUtf8().constData() : key->key().toLocal8Bit().constData());
 
-    if (module()) {
-        module()->deleteEntry();
+    if (m_module) {
+        m_module->deleteEntry();
         return true;
     }
 
@@ -728,7 +737,7 @@ void CSwordModuleInfo::initCachedCategory() {
     /// \todo Maybe we can use raw string comparsion instead of QString?
     const QString cat(m_module->getConfigEntry("Category"));
 
-    /// \warning cat has to be checked before type() !!!
+    /// \warning cat has to be checked before m_type !!!
     if (cat == "Cults / Unorthodox / Questionable Material") {
         m_cachedCategory = Cult;
     } else if (cat == "Daily Devotional"
@@ -742,7 +751,7 @@ void CSwordModuleInfo::initCachedCategory() {
     } else if (cat == "Images" || cat == "Maps") {
         m_cachedCategory = Images;
     } else {
-        switch (type()) {
+        switch (m_type) {
             case Bible:       m_cachedCategory = Bibles; break;
             case Commentary:  m_cachedCategory = Commentaries; break;
             case Lexicon:     m_cachedCategory = Lexicons; break;
@@ -755,7 +764,7 @@ void CSwordModuleInfo::initCachedCategory() {
 
 void CSwordModuleInfo::initCachedLanguage() {
     CLanguageMgr *lm = CLanguageMgr::instance();
-    if (category() == Glossary) {
+    if (m_cachedCategory == Glossary) {
         /*
           Special handling for glossaries, we use the "from language" as
           language for the module.
@@ -776,7 +785,9 @@ QString CSwordModuleInfo::aboutText() const {
 
     text += QString("<tr><td><b>%1</b></td><td>%2</td><tr>")
             .arg(tr("Version"))
-            .arg(hasVersion() ? config(CSwordModuleInfo::ModuleVersion) : tr("unknown"));
+            .arg(m_cachedHasVersion
+                 ? config(CSwordModuleInfo::ModuleVersion)
+                 : tr("unknown"));
 
     text += QString("<tr><td><b>%1</b></td><td>%2</td></tr>")
             .arg(tr("Markup"))
@@ -789,7 +800,7 @@ QString CSwordModuleInfo::aboutText() const {
 
     text += QString("<tr><td><b>%1</b></td><td>%2</td></tr>")
             .arg(tr("Language"))
-            .arg(language()->translatedName());
+            .arg(m_cachedLanguage->translatedName());
 
     if (m_module->getConfigEntry("Category"))
         text += QString("<tr><td><b>%1</b></td><td>%2</td></tr>")
@@ -832,7 +843,7 @@ QString CSwordModuleInfo::aboutText() const {
 
     text += "</table><hr>";
 
-    if (category() == Cult) //clearly say the module contains cult/questionable materials
+    if (m_cachedCategory == Cult) // Clearly say the module contains cult/questionable materials
         text += QString("<br/><b>%1</b><br/><br/>")
                 .arg(tr("Take care, this work contains cult / questionable material!"));
 
@@ -897,7 +908,7 @@ QIcon CSwordModuleInfo::moduleIcon(const CSwordModuleInfo *module) {
 const QString &CSwordModuleInfo::moduleIconFilename(
         const CSwordModuleInfo *module)
 {
-    const CSwordModuleInfo::Category cat(module->category());
+    const CSwordModuleInfo::Category cat(module->m_cachedCategory);
     switch (cat) {
         case CSwordModuleInfo::Bibles:
             if (module->isLocked()) {
@@ -1021,12 +1032,12 @@ bool CSwordModuleInfo::setHidden(bool hide) {
     m_hidden = hide;
     QStringList hiddenModules(btConfig().value<QStringList>("state/hiddenModules", QStringList()));
     if (hide) {
-        Q_ASSERT(!hiddenModules.contains(name()));
-        hiddenModules.append(name());
+        Q_ASSERT(!hiddenModules.contains(m_cachedName));
+        hiddenModules.append(m_cachedName);
     }
     else {
-        Q_ASSERT(hiddenModules.contains(name()));
-        hiddenModules.removeOne(name());
+        Q_ASSERT(hiddenModules.contains(m_cachedName));
+        hiddenModules.removeOne(m_cachedName);
     }
     btConfig().setValue("state/hiddenModules", hiddenModules);
     emit hiddenChanged(hide);
