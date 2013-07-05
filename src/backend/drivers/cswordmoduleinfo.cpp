@@ -9,16 +9,14 @@
 
 #include "backend/drivers/cswordmoduleinfo.h"
 
-#include <QSharedPointer>
 #include <CLucene.h>
 #include <QByteArray>
 #include <QCoreApplication>
 #include <QDebug>
 #include <QDir>
 #include <QFileInfo>
-#include <QList>
-#include <QRegExp>
 #include <QSettings>
+#include <QSharedPointer>
 #include "backend/config/btconfig.h"
 #include "backend/drivers/cswordlexiconmoduleinfo.h"
 #include "backend/keys/cswordkey.h"
