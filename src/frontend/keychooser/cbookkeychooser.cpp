@@ -214,7 +214,7 @@ void CBookKeyChooser::refreshContent() {
     }
 }
 
-void CBookKeyChooser::setupCombo(const QString key, const int depth, const int currentItem) {
+void CBookKeyChooser::setupCombo(const QString & key, const int depth, const int currentItem) {
     CKeyChooserWidget* chooserWidget = m_chooserWidgets.at(depth);
 
     CSwordTreeKey tmpKey(*m_key);

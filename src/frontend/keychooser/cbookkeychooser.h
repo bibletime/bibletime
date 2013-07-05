@@ -71,7 +71,7 @@ class CBookKeyChooser : public CKeyChooser {
         * Fills the combo given by depth with the items from the key having depth "depth".
         * The parent sibling is given by key.
         */
-        void setupCombo(const QString key, const int depth, const int currentItem);
+        void setupCombo(const QString & key, const int depth, const int currentItem);
         /** No descriptions */
         virtual void adjustFont();
 
