@@ -201,16 +201,14 @@ void CBookKeyChooser::setModules(const QList<const CSwordModuleInfo*> &modules,
 void CBookKeyChooser::adjustFont() {
     //Make sure the entries are displayed correctly.
     QListIterator<CKeyChooserWidget*> it(m_chooserWidgets);
-    while (it.hasNext()) {
-        it.next()->comboBox()->setFont( btConfig().getFontForLanguage(*m_modules.first()->language()).second );
-    }
+    while (it.hasNext())
+        it.next()->comboBox()->setFont(btConfig().getFontForLanguage(*m_modules.first()->language()).second);
 }
 
 /** Refreshes the content. */
 void CBookKeyChooser::refreshContent() {
-    if (m_key) {
-        updateKey( m_key ); //refresh with current key
-    }
+    if (m_key)
+        updateKey(m_key); // Refresh with current key
 }
 
 void CBookKeyChooser::setupCombo(const QString & key, const int depth, const int currentItem) {

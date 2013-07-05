@@ -231,11 +231,11 @@ void CKeyChooserWidget::init() {
 
 /** Is called when the return key was presed in the combobox. */
 void CKeyChooserWidget::slotReturnPressed( /*const QString& text*/) {
-    Q_ASSERT(comboBox()->lineEdit());
+    Q_ASSERT(m_comboBox->lineEdit());
 
-    QString text = comboBox()->lineEdit()->text();
-    for (int index = 0; index < comboBox()->count(); ++index) {
-        if (comboBox()->itemText(index) == text) {
+    const QString text(m_comboBox->lineEdit()->text());
+    for (int index = 0; index < m_comboBox->count(); ++index) {
+        if (m_comboBox->itemText(index) == text) {
 //            emit changed(index);
             emit focusOut(index); // a workaround because focusOut is not checked, the slot connected to changed to check
             break;
@@ -245,16 +245,14 @@ void CKeyChooserWidget::slotReturnPressed( /*const QString& text*/) {
 
 /** Is called when the current item of the combo box was changed. */
 void CKeyChooserWidget::slotComboChanged(int index) {
-    if (!updatesEnabled()) {
+    if (!updatesEnabled())
         return;
-    }
 
     setUpdatesEnabled(false);
 
-    const QString key = comboBox()->itemText( index );
-    if (oldKey.isNull() || (oldKey != key)) {
+    const QString key(m_comboBox->itemText(index));
+    if (oldKey.isNull() || (oldKey != key))
         emit changed(index);
-    }
 
     oldKey = key;
 
@@ -263,53 +261,52 @@ void CKeyChooserWidget::slotComboChanged(int index) {
 
 /** Sets the tooltips for the given entries using the parameters as text. */
 void CKeyChooserWidget::setToolTips( const QString comboTip, const QString nextEntryTip, const QString scrollButtonTip, const QString previousEntryTip) {
-    comboBox()->setToolTip(comboTip);
+    m_comboBox->setToolTip(comboTip);
     m_scroller->setToolTips(nextEntryTip, scrollButtonTip, previousEntryTip);
 }
 
 /** Sets the current item to the one with the given text */
 bool CKeyChooserWidget::setItem( const QString item ) {
     bool ret = false;
-    const int count = comboBox()->count();
+    const int count = m_comboBox->count();
     for (int i = 0; i < count; ++i) {
-        if (comboBox()->itemText(i) == item) {
-            comboBox()->setCurrentIndex(i);
+        if (m_comboBox->itemText(i) == item) {
+            m_comboBox->setCurrentIndex(i);
             ret = true;
             break;
         }
     }
     if (!ret)
-        comboBox()->setCurrentIndex(-1);
+        m_comboBox->setCurrentIndex(-1);
     return ret;
 }
 
 /* Handlers for the various scroller widgetset. */
 void CKeyChooserWidget::lock() {
     updatelock = true;
-    comboBox()->setEditable(false);
-    oldKey = comboBox()->currentText();
+    m_comboBox->setEditable(false);
+    oldKey = m_comboBox->currentText();
 }
 
 void CKeyChooserWidget::unlock() {
     updatelock = false;
-    comboBox()->setEditable(true);
-    comboBox()->setEditText(comboBox()->itemText(comboBox()->currentIndex()));
-    if (comboBox()->currentText() != oldKey) {
-        emit changed(comboBox()->currentIndex());
-    }
+    m_comboBox->setEditable(true);
+    m_comboBox->setEditText(m_comboBox->itemText(m_comboBox->currentIndex()));
+    if (m_comboBox->currentText() != oldKey)
+        emit changed(m_comboBox->currentIndex());
 }
 
 void CKeyChooserWidget::changeCombo(int n) {
-    const int old_index = comboBox()->currentIndex();
+    const int old_index = m_comboBox->currentIndex();
     int new_index = old_index + n;
 
     //index of highest Item
-    const int max = comboBox()->count() - 1;
+    const int max = m_comboBox->count() - 1;
     if (new_index > max) new_index = max;
     if (new_index < 0) new_index = 0;
 
     if (new_index != old_index) {
-        comboBox()->setCurrentIndex(new_index);
+        m_comboBox->setCurrentIndex(new_index);
         if (!updatelock)
             emit changed(new_index);
     }
