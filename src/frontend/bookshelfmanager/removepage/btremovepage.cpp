@@ -130,7 +130,7 @@ void BtRemovePage::slotRemoveModules() {
     /// \bug <nobr> is not working, Qt bug
     const QString moduleString("<nobr><img src=\"%1\" width=\"%2\" height=\"%3\"/>&nbsp;%4</nobr>");
     const QString iconDir = util::directory::getIconDir().canonicalPath() + '/';
-    Q_FOREACH(const CSwordModuleInfo *m,
+    Q_FOREACH(const CSwordModuleInfo * m,
               m_bookshelfWidget->treeModel()->checkedModules())
     {
         const QIcon icon = CSwordModuleInfo::moduleIcon(m);
