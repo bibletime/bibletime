@@ -1,3 +1,6 @@
+2013-07-04 Gary Holmlund <gary.holmlund@gmail.com>
+    * Fix bug 27, Control Panel version was wrong on Windows
+
 2013-05-19 Gary Holmlund <gary.holmlund@gmail.com>
     * Fix multi-arch path issue in FindCLucene.cmake
 
