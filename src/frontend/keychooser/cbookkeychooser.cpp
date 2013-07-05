@@ -19,7 +19,7 @@
 #include "frontend/keychooser/bthistory.h"
 
 
-QMap<QObject*, int> boxes;
+#define ID_PROPERTY_NAME "CBookKeyChooser_ID"
 
 CBookKeyChooser::CBookKeyChooser(const QList<const CSwordModuleInfo*> &modules,
                                  BTHistory *historyPtr, CSwordKey *key,
@@ -170,8 +170,7 @@ void CBookKeyChooser::setModules(const QList<const CSwordModuleInfo*> &modules,
             connect(w, SIGNAL(focusOut(int)), SLOT(keyChooserChanged(int)));
 
             m_layout->addWidget(w);
-            boxes[w] = i;
-
+            w->setProperty(ID_PROPERTY_NAME, i);
             w->show();
         }
 
@@ -232,20 +231,18 @@ void CBookKeyChooser::setupCombo(const QString & key, const int depth, const int
 
 /** A keychooser changed. Update and emit a signal if necessary. */
 void CBookKeyChooser::keyChooserChanged(int /*newIndex*/) {
-    const int activeID = boxes[const_cast<QObject*>(sender())]; //no so good code!
-
     QStringList items;
-    CKeyChooserWidget* chooser;
 
-    for (int i = 0; i < m_chooserWidgets.count(); ++i) {
-        chooser = m_chooserWidgets.at(i);
-        const QString currentText(chooser->comboBox()->currentText());
-
-        if (currentText.isEmpty() || i > activeID) {
+    const int max = std::min(m_chooserWidgets.count(),
+                             sender()->property(ID_PROPERTY_NAME).toInt());
+    for (int i = 0; i < max; i++) {
+        CKeyChooserWidget * const chooser = m_chooserWidgets.at(i);
+        Q_ASSERT(chooser);
+        const QString currentText = chooser->comboBox().currentText();
+        if (currentText.isEmpty())
             break;
-        }
 
-        items << currentText;
+        items.append(currentText);
     }
 
     QString newKey("/");
