@@ -25,7 +25,7 @@ CBookKeyChooser::CBookKeyChooser(const QList<const CSwordModuleInfo *> & modules
                                  BTHistory * historyPtr,
                                  CSwordKey * key,
                                  QWidget * parent)
-    : CKeyChooser(modules, historyPtr, key, parent)
+    : CKeyChooser(modules, historyPtr, parent)
     , m_layout(0)
 {
     setModules(modules, false);
