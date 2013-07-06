@@ -24,6 +24,24 @@
 #define MOVESIZE 30
 
 
+namespace {
+
+inline CDisplayWindow * getDisplayWindow(const QMdiSubWindow * const mdiWindow) {
+    return qobject_cast<CDisplayWindow *>(mdiWindow->widget());
+}
+
+inline QWebView * getWebViewFromDisplayWindow(const CDisplayWindow * const displayWindow) {
+    if (!displayWindow)
+        return NULL;
+    CDisplay * const display = displayWindow->displayWidget();
+    if (!display)
+        return NULL;
+    return qobject_cast<QWebView *>(display->view());
+}
+
+} // anonymous namespace
+
+
 CMDIArea::CMDIArea(BibleTime *parent)
         : QMdiArea(parent)
         , m_mdiArrangementMode(ArrangementModeManual)
@@ -284,22 +302,6 @@ QList<QMdiSubWindow*> CMDIArea::usableWindowList() const {
         }
     }
     return ret;
-}
-
-static CDisplayWindow* getDisplayWindow(QMdiSubWindow* mdiWindow) {
-    QWidget* widget = mdiWindow->widget();
-    return qobject_cast<CDisplayWindow*>(widget);
-}
-
-static QWebView* getWebViewFromDisplayWindow(CDisplayWindow* displayWindow) {
-    if (displayWindow == 0)
-        return 0;
-    CDisplay* display = displayWindow->displayWidget();
-    if (display == 0)
-        return 0;
-    QWidget* view = display->view();
-    QWebView* webView = qobject_cast<QWebView*>(view);
-    return webView;
 }
 
 QWebView* CMDIArea::getActiveWebView()
