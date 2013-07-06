@@ -237,7 +237,9 @@ QString CHTMLExportRendering::finishText(const QString &text, const KeyTree &tre
         settings.langAbbrev = "unknown";
     }
 
-    return CDTM::instance()->fillTemplate(QObject::tr("Export"), text, settings);
+    return CDTM::instance()->fillTemplate(CDisplayTemplateMgr::activeTemplateName(),
+                                          text,
+                                          settings);
 }
 
 /*!
