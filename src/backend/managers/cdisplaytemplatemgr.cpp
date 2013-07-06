@@ -155,7 +155,7 @@ QString CDisplayTemplateMgr::fillTemplate(const QString & name,
     {
         const CLanguageMgr::LangMap & langMap = CLanguageMgr::instance()->availableLanguages();
         Q_FOREACH (const CLanguageMgr::Language * lang, langMap) {
-            if (!lang->abbrev().isEmpty())
+            if (lang->abbrev().isEmpty())
                 continue;
 
             BtConfig::FontSettingsPair fp = btConfig().getFontForLanguage(*lang);
