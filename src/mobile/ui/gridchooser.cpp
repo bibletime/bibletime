@@ -23,7 +23,7 @@ GridChooser::GridChooser(QtQuick2ApplicationViewer* viewer)
 GridChooser::~GridChooser() {
 }
 
-void GridChooser::open(const QStringList& stringList, const QString& highlight) {
+void GridChooser::open(const QStringList& stringList, const QString& highlight, const QString& title) {
     Q_ASSERT(gridChooserObject_ != 0);
     if (gridChooserObject_ == 0)
         return;
@@ -32,14 +32,15 @@ void GridChooser::open(const QStringList& stringList, const QString& highlight) 
     bool ok = connect(gridChooserObject_, SIGNAL(accepted(QString)),
                       this, SLOT(gridChooserAccepted(QString)));
     Q_ASSERT(ok);
-    setProperties(stringList, highlight);
+    setProperties(stringList, highlight, title);
 }
 
-void GridChooser::setProperties(const QStringList& list, const QString& hightlight) {
+void GridChooser::setProperties(const QStringList& list, const QString& hightlight, const QString& title) {
     QQmlContext* ctx = viewer_->rootContext();
     ctx->setContextProperty("gridChooserModel",list);
     gridChooserObject_->setProperty("opacity",1);
     gridChooserObject_->setProperty("selected",hightlight);
+    gridChooserObject_->setProperty("titleText",title);
 }
 
 void GridChooser::gridChooserAccepted(QString value) {

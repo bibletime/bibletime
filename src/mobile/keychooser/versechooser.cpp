@@ -42,7 +42,7 @@ void VerseChooser::open() {
     m_oldVerse = bibleVerse_->getVerse();
     m_state = BOOK;
     QStringList books = bibleVerse_->getBooks();
-    m_gridChooser->open(books, m_oldBook);
+    m_gridChooser->open(books, m_oldBook, "Book");
 }
 
 void VerseChooser::stringAccepted(const QString& value) {
@@ -51,14 +51,14 @@ void VerseChooser::stringAccepted(const QString& value) {
         m_state = CHAPTER;
         bibleVerse_->setBook(value);
         QStringList chapters = bibleVerse_->getChapters();
-        m_gridChooser->open(chapters, m_oldChapter);
+        m_gridChooser->open(chapters, m_oldChapter, "Chapter");
     }
     else if (m_state == CHAPTER) {
         m_newChapter = value;
         m_state = VERSE;
         bibleVerse_->setChapter(value);
         QStringList verses = bibleVerse_->getVerses();
-        m_gridChooser->open(verses, m_oldVerse);
+        m_gridChooser->open(verses, m_oldVerse, "Verse");
     }
     else if (m_state == VERSE) {
         m_newVerse = value;

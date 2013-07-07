@@ -20,7 +20,7 @@ class GridChooser : public QObject {
 public:
     GridChooser(QtQuick2ApplicationViewer* viewer);
     ~GridChooser();
-    void open(const QStringList& stringList, const QString& highlight = QString());
+    void open(const QStringList& stringList, const QString& highlight = QString(), const QString& title = QString());
 
 signals:
     void accepted(const QString& value);
@@ -31,7 +31,7 @@ private slots:
     void gridChooserCanceled();
 
 private:
-    void setProperties(const QStringList& list, const QString& hightlight);
+    void setProperties(const QStringList& list, const QString& hightlight, const QString& title);
 
     QtQuick2ApplicationViewer* viewer_;
     QQuickItem* gridChooserObject_;

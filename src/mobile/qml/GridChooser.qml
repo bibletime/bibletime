@@ -9,8 +9,10 @@ Rectangle {
     property int buttonHeight: 30
     property int topMargin: 10
     property int leftMargin: 10
+    property int titleHeight: 20
     property int space:5
     property string selected: ""
+    property string titleText: ""
 
     signal accepted(string choosenText);
     signal canceled();
@@ -21,7 +23,7 @@ Rectangle {
         if (count < 36)
             count = 36;
         width = root.width
-        height = root.height
+        height = root.height -titleHeight
 
         var columnsF = Math.sqrt(count*0.85*height/width);
         columns = Math.ceil(columnsF);
@@ -30,7 +32,7 @@ Rectangle {
         buttonWidth = (width-50)/columns;
         buttonHeight = Math.floor((height-(rows*5))/rows);
 
-        topMargin = (height - rows*(buttonHeight+space) + space)/2;
+        topMargin = (height - rows*(buttonHeight+space) + space)/2 +titleHeight;
         leftMargin = (width - columns*(buttonWidth+space) + space)/2;
 
         if (opacity == 0)
@@ -46,6 +48,17 @@ Rectangle {
     }
 
     z: 1000
+
+    Text {
+        id: title
+
+        text: titleText
+        font.pointSize: 14
+        height: titleHeight
+        anchors.top: parent.top
+        anchors.horizontalCenter: parent.horizontalCenter
+        z:6000
+    }
 
     BtStyle {
         id: btStyle
