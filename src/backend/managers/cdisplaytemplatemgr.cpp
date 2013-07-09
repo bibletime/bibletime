@@ -21,6 +21,15 @@
 
 #define CSSTEMPLATEBASE "Basic.tmpl"
 
+namespace {
+
+inline QString readFileToString(const QString & filename) {
+    QFile f(filename);
+    return f.open(QIODevice::ReadOnly) ? QTextStream(&f).readAll() : QString();
+}
+
+} // anonymous namespace
+
 CDisplayTemplateMgr * CDisplayTemplateMgr::m_instance = 0;
 
 CDisplayTemplateMgr::CDisplayTemplateMgr(QString & errorMessage) {
@@ -75,19 +84,6 @@ CDisplayTemplateMgr::CDisplayTemplateMgr(QString & errorMessage) {
     qSort(m_availableTemplateNamesCache);
 
     errorMessage = QString::null;
-}
-
-static QString readTemplate(const QString& templateFilePath)
-{
-    QFile file(templateFilePath);
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-        return "";
-    QString templateText;
-    while (!file.atEnd()) {
-        QByteArray line = file.readLine();
-        templateText += line;
-    }
-    return templateText;
 }
 
 QString CDisplayTemplateMgr::fillTemplate(const QString & name,
@@ -199,11 +195,8 @@ QString CDisplayTemplateMgr::fillTemplate(const QString & name,
           .replace("#MODNAME#", moduleName)
           .replace("#DISPLAY_TEMPLATES_PATH#", DU::getDisplayTemplatesDir().absolutePath());
 
-    if (templateIsCss) {
-        QString templateFilePath = m_cssMap[ name ];
-        QString templateText = readTemplate(templateFilePath);
-        output.replace("#THEME_STYLE#", templateText);
-    }
+    if (templateIsCss)
+        output.replace("#THEME_STYLE#", readFileToString(m_cssMap[name]));
 
     return output;
 }
@@ -219,12 +212,9 @@ QString CDisplayTemplateMgr::activeTemplateName() {
 void CDisplayTemplateMgr::loadTemplate(const QString & filename) {
     Q_ASSERT(filename.endsWith(".tmpl"));
     Q_ASSERT(QFileInfo(filename).isFile());
-    QFile f(filename);
-    if (f.open(QIODevice::ReadOnly)) {
-        const QString fileContent(QTextStream(&f).readAll());
-        if (!fileContent.isEmpty())
-            m_templateMap.insert(QFileInfo(f).fileName(), fileContent);
-    }
+    const QString templateString = readFileToString(filename);
+    if (!templateString.isEmpty())
+        m_templateMap.insert(QFileInfo(filename).fileName(), templateString);
 }
 
 void CDisplayTemplateMgr::loadCSSTemplate(const QString & filename) {
