@@ -11,6 +11,11 @@ Rectangle {
         btBookInterface.changeModule();
     }
 
+    function setModule(module) {
+        btBookInterface.moduleName = module;
+    }
+
+
     color: "black"
 
     BtBookInterface {

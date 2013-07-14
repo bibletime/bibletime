@@ -88,7 +88,6 @@ Rectangle {
 
         function select(index, name) {
             treeChooser.select(name);
-            console.log("select: ", index, name)
         }
 
         anchors.top: pathArea.bottom

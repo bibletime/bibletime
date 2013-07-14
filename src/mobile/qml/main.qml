@@ -74,14 +74,26 @@ Rectangle {
         }
     }
 
-    function newWindow(type) {
-        if (type == "bible")
+    function newWindow() {
+        moduleChooser.visible = true;
+    }
+
+    function openWindow(category, module) {
+        if (category == "Bibles")
             component = Qt.createComponent("Window.qml");
-        else
+        else if (category == "Commentaries")
+            component = Qt.createComponent("Window.qml");
+        else if (category == "Books")
             component = Qt.createComponent("BookWindow.qml");
+        else {
+            console.log(category, " are not yet supported.");
+            return;
+        }
 
         window = component.createObject(null, {"width": 250, "height": 200});
-        window.changeModule();
+
+        window.setModule(module);
+
         if (window == null) {
             // Error Handling
             console.log("Error creating object");
@@ -99,9 +111,7 @@ Rectangle {
     }
 
     width: 1280
-    height: 600
-//    width: 980
-//    height: 500
+    height: 800
     rotation: 0
 
     MainToolbar {
@@ -262,13 +272,11 @@ Rectangle {
         ListModel {
             id: mainMenusModel
 
-            ListElement { title: QT_TR_NOOP("New Bible Window");        action: "newBibleWindow" }
-            ListElement { title: QT_TR_NOOP("New Book Window");         action: "newBookWindow" }
+            ListElement { title: QT_TR_NOOP("New Window");              action: "newWindow" }
             ListElement { title: QT_TR_NOOP("Bookshelf Manager");       action: "install" }
             ListElement { title: QT_TR_NOOP("Window Arrangement");      action: "windowArrangement" }
-            ListElement { title: QT_TR_NOOP("Gnome Style");             action: "gnomeStyle" }
-            ListElement { title: QT_TR_NOOP("Android Style");           action: "androidStyle" }
-            ListElement { title: QT_TR_NOOP("Settings");                action: "settings" }
+//            ListElement { title: QT_TR_NOOP("Gnome Style");             action: "gnomeStyle" }
+//            ListElement { title: QT_TR_NOOP("Android Style");           action: "androidStyle" }
         }
 
         Menus {
@@ -278,11 +286,8 @@ Rectangle {
 
             function doAction(action) {
                 mainMenus.visible = false;
-                if (action == "newBibleWindow") {
-                    root.newWindow("bible");
-                }
-                else if (action == "newBookWindow") {
-                    root.newWindow("book");
+                if (action == "newWindow") {
+                    root.newWindow();
                 }
                 else if (action == "windowArrangement") {
                     windowArrangementMenus.visible = true;
@@ -317,7 +322,6 @@ Rectangle {
             Component.onCompleted: menuSelected.connect(windowArrangementMenus.doAction)
 
             function doAction(action) {
-                console.log("selected action", action)
                 windowArrangementMenus.visible = false;
                 if (action == "tabbed") {
                     windowLayout = tabLayout;
@@ -359,6 +363,19 @@ Rectangle {
 
     InstallManager {
         id: installManager
+    }
+
+    ModuleChooser {
+        id: moduleChooser
+
+        objectName: "moduleChooser"
+        visible: false
+        width:400
+        height: parent.height
+        anchors.centerIn: parent
+        onModuleSelected: {
+            root.openWindow(selectedCategory, selectedModule);
+        }
     }
 
     TreeChooser {

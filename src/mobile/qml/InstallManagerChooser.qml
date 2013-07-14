@@ -73,7 +73,7 @@ Rectangle {
     ListWorksView {
         id: worksView
 
-        title: "Works"
+        title: "Work"
         width: parent.width - 2 * installManager.spacing
         anchors.top: grid.bottom
         anchors.left: parent.left

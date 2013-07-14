@@ -18,6 +18,7 @@
 #include "mobile/ui/btstyle.h"
 #include "mobile/ui/btwindowinterface.h"
 #include "mobile/ui/btbookinterface.h"
+#include "mobile/ui/moduleinterface.h"
 #include "mobile/ui/qtquick2applicationviewer.h"
 #include "mobile/ui/viewmanager.h"
 #include <QBrush>
@@ -39,6 +40,7 @@ void register_gml_classes() {
     qmlRegisterType<btm::BtWindowInterface>("BibleTime", 1, 0, "BtWindowInterface");
     qmlRegisterType<btm::BtStyle>("BibleTime", 1, 0, "BtStyle");
     qmlRegisterType<btm::InstallManager>("BibleTime", 1, 0, "InstallManager");
+    qmlRegisterType<btm::ModuleInterface>("BibleTime", 1, 0, "ModuleInterface");
 }
 
 btm::ViewManager* getViewManager() {

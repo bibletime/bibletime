@@ -446,6 +446,11 @@ SET(bibletime_SRC_MOBILE_SOURCES
     src/mobile/bibletimeapp.cpp
 )
 
+SET(bibletime_SRC_MOBILE_UTIL_SOURCES
+    src/mobile/util/findqmlobject.cpp
+    src/mobile/util/findqmlobject.h
+)
+
 SET(bibletime_SRC_MOBILE_UI_SOURCES
     src/mobile/bookshelfmanager/installmanager.cpp
     src/mobile/bookshelfmanager/installmanager.h
@@ -469,6 +474,8 @@ SET(bibletime_SRC_MOBILE_UI_SOURCES
     src/mobile/ui/btwindowinterface.h
     src/mobile/ui/modulechooser.cpp
     src/mobile/ui/modulechooser.h
+    src/mobile/ui/moduleinterface.cpp
+    src/mobile/ui/moduleinterface.h
     src/mobile/ui/qtquick2applicationviewer.cpp
     src/mobile/ui/qtquick2applicationviewer.h
     src/mobile/ui/gridchooser.cpp
@@ -493,6 +500,7 @@ SET(bibletime_SRC_MOBILE_MOCABLE_HEADERS
     src/mobile/ui/btbookinterface.h
     src/mobile/ui/btwindowinterface.h
     src/mobile/ui/modulechooser.h
+    src/mobile/ui/moduleinterface.h
     src/mobile/ui/qtquick2applicationviewer.h
     src/mobile/ui/gridchooser.h
     src/mobile/ui/viewmanager.h
@@ -511,6 +519,7 @@ SET(bibletime_MOBILE_QML_FILES
     src/mobile/qml/Menus.qml
     src/mobile/qml/MenuButton.qml
     src/mobile/qml/MenuView.qml
+    src/mobile/qml/ModuleChooser.qml
     src/mobile/qml/Progress.qml
     src/mobile/qml/TreeChooser.qml
     src/mobile/qml/Window.qml
@@ -523,6 +532,7 @@ SET(bibletime_FRONTEND_MOBILE_SOURCES
     ${bibletime_SRC_MOBILE_SOURCES}
     ${bibletime_SRC_MOBILE_MOCABLE_HEADERS}
     ${bibletime_SRC_MOBILE_UI_SOURCES}
+    ${bibletime_SRC_MOBILE_UTIL_SOURCES}
 )
 
 SET(bibletime_FRONTEND_MOBILE_MOCABLE_HEADERS

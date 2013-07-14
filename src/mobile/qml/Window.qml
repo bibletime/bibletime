@@ -11,6 +11,10 @@ Rectangle {
         btWindowInterface.changeModule();
     }
 
+    function setModule(module) {
+        btWindowInterface.moduleName = module;
+    }
+
     color: "black"
 
     BtWindowInterface {
