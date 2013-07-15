@@ -19,7 +19,7 @@ SET(bibletime_SRC_BACKEND
     src/backend/cswordmodulesearch.cpp
     src/backend/btinstallbackend.cpp
     src/backend/btinstallmgr.cpp
-    src/frontend/bookshelfmanager/installpage/btinstallthread.cpp
+    src/backend/btinstallthread.cpp
 )
 
 SOURCE_GROUP("src\\backend" FILES ${bibletime_SRC_BACKEND})
@@ -311,7 +311,7 @@ SET(bibletime_COMMON_MOCABLE_HEADERS
     src/backend/managers/cswordbackend.h
     src/util/btsignal.h
     src/backend/btinstallmgr.h
-    src/frontend/bookshelfmanager/installpage/btinstallthread.h
+    src/backend/btinstallthread.h
 )
 
 SET(bibletime_FRONTEND_DESKTOP_MOCABLE_HEADERS

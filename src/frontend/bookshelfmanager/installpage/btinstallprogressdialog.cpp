@@ -21,7 +21,7 @@
 #include <QTreeWidgetItem>
 #include <QVBoxLayout>
 #include "backend/managers/cswordbackend.h"
-#include "frontend/bookshelfmanager/installpage/btinstallthread.h"
+#include "backend/btinstallthread.h"
 
 
 BtInstallProgressDialog::BtInstallProgressDialog(

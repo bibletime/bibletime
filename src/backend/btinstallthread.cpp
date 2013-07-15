@@ -7,9 +7,8 @@
 *
 **********/
 
-#include "frontend/bookshelfmanager/installpage/btinstallthread.h"
+#include "backend/btinstallthread.h"
 
-#include <QApplication>
 #include <QDebug>
 #include <QDir>
 #include <QString>

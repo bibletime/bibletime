@@ -14,7 +14,7 @@
 
 #include "backend/btinstallbackend.h"
 #include "backend/managers/cswordbackend.h"
-#include "frontend/bookshelfmanager/installpage/btinstallthread.h"
+#include "backend/btinstallthread.h"
 #include "mobile/btmmain.h"
 #include "mobile/ui/qtquick2applicationviewer.h"
 #include "mobile/ui/viewmanager.h"
