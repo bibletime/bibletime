@@ -30,6 +30,7 @@
 #include "util/directory.h"
 #include "util/exceptions.h"
 #include "util/dialogutil.h"
+#include "util/geticon.h"
 
 // Sword includes:
 #include <listkey.h>
@@ -864,7 +865,7 @@ QIcon CSwordModuleInfo::moduleIcon(const CSwordModuleInfo & module) {
     const QString & filename = moduleIconFilename(module);
     if (filename.isEmpty())
         return QIcon();
-    return bApp->getIcon(filename);
+    return util::getIcon(filename);
 }
 
 const QString & CSwordModuleInfo::moduleIconFilename(const CSwordModuleInfo & module) {
@@ -904,7 +905,7 @@ QIcon CSwordModuleInfo::categoryIcon(const CSwordModuleInfo::Category & category
     const QString filename(categoryIconFilename(category));
     if (filename.isEmpty())
         return QIcon();
-    return bApp->getIcon(filename);
+    return util::getIcon(filename);
 }
 
 const QString & CSwordModuleInfo::categoryIconFilename(const CSwordModuleInfo::Category & category) {

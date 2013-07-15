@@ -44,6 +44,7 @@
 #include "util/tool.h"
 #include "util/directory.h"
 #include "util/dialogutil.h"
+#include "util/geticon.h"
 #include "bibletime.h"
 
 
@@ -131,7 +132,7 @@ QAction* CBookmarkIndex::newQAction(const QString& text, const QString& pix, con
     if (pix.isEmpty()) {
         action = new QAction(text, parent);
     } else {
-        action = new QAction(bApp->getIcon(pix), text, parent);
+        action = new QAction(util::getIcon(pix), text, parent);
     }
     QObject::connect(action, SIGNAL(triggered()), receiver, slot);
     return action;

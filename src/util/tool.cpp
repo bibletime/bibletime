@@ -22,6 +22,7 @@
 #include "util/cresmgr.h"
 #include "util/directory.h"
 #include "util/dialogutil.h"
+#include "util/geticon.h"
 
 
 namespace util {
@@ -82,7 +83,7 @@ bool savePlainFile(const QString & filename,
 
 
 QIcon getIconForModule(const CSwordModuleInfo * const module) {
-    return bApp->getIcon(getIconNameForModule(module));
+    return util::getIcon(getIconNameForModule(module));
 }
 
 QString getIconNameForModule(const CSwordModuleInfo * const module) {

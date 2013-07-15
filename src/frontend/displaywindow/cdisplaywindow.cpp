@@ -29,6 +29,7 @@
 #include "frontend/keychooser/bthistory.h"
 #include "frontend/searchdialog/csearchdialog.h"
 #include "util/cresmgr.h"
+#include "util/geticon.h"
 
 
 CDisplayWindow::CDisplayWindow(const QList<CSwordModuleInfo *> & modules, CMDIArea * parent)
@@ -204,13 +205,13 @@ void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
     actn->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_L));
     a->addAction("openLocation", actn);
 
-    actn = new QAction(QIcon(bApp->getIcon(CResMgr::displaywindows::general::search::icon)),
+    actn = new QAction(QIcon(util::getIcon(CResMgr::displaywindows::general::search::icon)),
                        tr("Search with works of this window"), a);
     actn->setShortcut(CResMgr::displaywindows::general::search::accel);
     a->addAction(CResMgr::displaywindows::general::search::actionName, actn);
 
     BtToolBarPopupAction* action = new BtToolBarPopupAction(
-        QIcon(bApp->getIcon(CResMgr::displaywindows::general::backInHistory::icon)),
+        QIcon(util::getIcon(CResMgr::displaywindows::general::backInHistory::icon)),
         tr("Back in history"),
         a
     );
@@ -218,7 +219,7 @@ void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
     a->addAction(CResMgr::displaywindows::general::backInHistory::actionName, action);
 
     action = new BtToolBarPopupAction(
-        QIcon(bApp->getIcon(CResMgr::displaywindows::general::forwardInHistory::icon)),
+        QIcon(util::getIcon(CResMgr::displaywindows::general::forwardInHistory::icon)),
         tr("Forward in history"),
         a
     );

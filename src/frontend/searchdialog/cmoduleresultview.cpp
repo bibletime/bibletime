@@ -21,6 +21,7 @@
 #include "bibletimeapp.h"
 #include "frontend/cexportmanager.h"
 #include "util/cresmgr.h"
+#include "util/geticon.h"
 #include "util/tool.h"
 #include "backend/config/btconfig.h"
 
@@ -61,7 +62,7 @@ void CModuleResultView::initView() {
     m_popup = new QMenu(this);
 
     m_actions.copyMenu = new QMenu(tr("Copy..."), m_popup);
-    m_actions.copyMenu->setIcon(bApp->getIcon( CResMgr::searchdialog::result::moduleList::copyMenu::icon) );
+    m_actions.copyMenu->setIcon(util::getIcon( CResMgr::searchdialog::result::moduleList::copyMenu::icon) );
     m_actions.copy.result = new QAction(tr("Reference only"), this);
     QObject::connect(m_actions.copy.result, SIGNAL(triggered()), this, SLOT(copyResult()) );
     m_actions.copyMenu->addAction(m_actions.copy.result);
@@ -71,7 +72,7 @@ void CModuleResultView::initView() {
     m_popup->addMenu(m_actions.copyMenu);
 
     m_actions.saveMenu = new QMenu(tr("Save..."), m_popup);
-    m_actions.saveMenu->setIcon(bApp->getIcon( CResMgr::searchdialog::result::moduleList::saveMenu::icon) );
+    m_actions.saveMenu->setIcon(util::getIcon( CResMgr::searchdialog::result::moduleList::saveMenu::icon) );
     m_actions.save.result = new QAction(tr("Reference only"), this);
     QObject::connect(m_actions.save.result, SIGNAL(triggered()), this, SLOT(saveResult()) );
     m_actions.saveMenu->addAction(m_actions.save.result);
@@ -81,7 +82,7 @@ void CModuleResultView::initView() {
     m_popup->addMenu(m_actions.saveMenu);
 
     m_actions.printMenu = new QMenu(tr("Print..."), m_popup);
-    m_actions.printMenu->setIcon(bApp->getIcon(CResMgr::searchdialog::result::moduleList::printMenu::icon));
+    m_actions.printMenu->setIcon(util::getIcon(CResMgr::searchdialog::result::moduleList::printMenu::icon));
     m_actions.print.result = new QAction(tr("Reference with text"), this);
     QObject::connect(m_actions.print.result, SIGNAL(triggered()), this, SLOT(printResult()) );
     m_actions.printMenu->addAction(m_actions.print.result);

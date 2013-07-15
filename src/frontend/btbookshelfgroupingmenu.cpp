@@ -15,6 +15,7 @@
 #include "bibletimeapp.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
+#include "util/geticon.h"
 
 
 namespace {
@@ -53,7 +54,7 @@ void BtBookshelfGroupingMenu::initMenu(bool showNoGrouping) {
 
     if (!groupsInitialized) initializeGroups();
 
-    setIcon(bApp->getIcon(RM::grouping::icon));
+    setIcon(util::getIcon(RM::grouping::icon));
 
     m_groupingActionGroup = new QActionGroup(this);
     m_groupingActionGroup->setExclusive(true);

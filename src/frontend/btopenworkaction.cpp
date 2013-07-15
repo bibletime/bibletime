@@ -16,6 +16,7 @@
 #include "backend/managers/cswordbackend.h"
 #include "bibletimeapp.h"
 #include "frontend/btbookshelfgroupingmenu.h"
+#include "util/geticon.h"
 
 
 BtOpenWorkActionMenu::BtOpenWorkActionMenu(const QString &groupingConfigKey,
@@ -77,7 +78,7 @@ BtOpenWorkAction::BtOpenWorkAction(const QString &groupingConfigKey,
     m_menu->setSourceModel(CSwordBackend::instance()->model());
 
     setMenu(m_menu);
-    setIcon(bApp->getIcon("folder-open.svg"));
+    setIcon(util::getIcon("folder-open.svg"));
     retranslateUi();
     slotModelChanged();
 

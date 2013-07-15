@@ -30,6 +30,7 @@
 #include "util/cresmgr.h"
 #include "util/dialogutil.h"
 #include "util/directory.h"
+#include "util/geticon.h"
 
 // Sword includes:
 #include <swmgr.h>
@@ -41,7 +42,7 @@ const QString groupingOrderKey("GUI/BookshelfManager/RemovePage/grouping");
 }
 
 BtRemovePage::BtRemovePage(BtModuleManagerDialog *parent)
-        : BtConfigDialog::Page(bApp->getIcon(CResMgr::bookshelfmgr::removepage::icon), parent)
+        : BtConfigDialog::Page(util::getIcon(CResMgr::bookshelfmgr::removepage::icon), parent)
 {
     m_worksGroupBox = new QGroupBox(this);
     m_worksGroupBox->setFlat(true);
@@ -76,7 +77,7 @@ BtRemovePage::BtRemovePage(BtModuleManagerDialog *parent)
     uLayout->addStretch(1);
 
     m_removeButton = new QPushButton(this);
-    m_removeButton->setIcon(bApp->getIcon(CResMgr::bookshelfmgr::removepage::remove_icon));
+    m_removeButton->setIcon(util::getIcon(CResMgr::bookshelfmgr::removepage::remove_icon));
     m_removeButton->setEnabled(false);
     uLayout->addWidget(m_removeButton, 0, Qt::AlignRight);
 

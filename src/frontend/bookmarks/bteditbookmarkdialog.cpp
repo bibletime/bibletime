@@ -19,6 +19,7 @@
 #include "bibletimeapp.h"
 #include "util/cresmgr.h"
 #include "util/dialogutil.h"
+#include "util/geticon.h"
 
 
 BtEditBookmarkDialog::BtEditBookmarkDialog(const QString &key,
@@ -31,7 +32,7 @@ BtEditBookmarkDialog::BtEditBookmarkDialog(const QString &key,
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
 
     resize(400, 300);
-    setWindowIcon(bApp->getIcon(CResMgr::mainIndex::bookmark::icon));
+    setWindowIcon(util::getIcon(CResMgr::mainIndex::bookmark::icon));
 
     m_layout = new QFormLayout;
 
