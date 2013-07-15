@@ -16,6 +16,7 @@
 #include "backend/managers/btstringmgr.h"
 #include "backend/managers/clanguagemgr.h"
 #include "backend/managers/cswordbackend.h"
+#include <QLocale>
 #include <stringmgr.h>
 #include <swlog.h>
 

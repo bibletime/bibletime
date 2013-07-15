@@ -15,7 +15,6 @@
 #include <QWebSettings>
 #include "backend/btmoduletreeitem.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
-#include "frontend/searchdialog/btsearchoptionsarea.h"
 #include "util/directory.h" // DU::getUserBaseDir()
 
 // Sword includes:

@@ -13,6 +13,7 @@
 #define BTCONFIG_H
 
 #include <QDataStream>
+#include <QFont>
 #include <QHash>
 #include <QMetaType>
 #include <QSet>
@@ -26,7 +27,6 @@
 #include "backend/btmoduletreeitem.h" // for BTModuleTreeItem::Grouping
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "btglobal.h"
-#include "frontend/searchdialog/btsearchoptionsarea.h" // for Search::BtSearchOptionsArea::SearchType
 
 
 #define BTCONFIG_API_VERSION 1
