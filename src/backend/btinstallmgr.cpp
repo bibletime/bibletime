@@ -7,10 +7,10 @@
 *
 **********/
 
-#include "frontend/bookshelfmanager/btinstallmgr.h"
 
-#include "backend/managers/cswordbackend.h"
 #include "backend/btinstallbackend.h"
+#include "backend/btinstallmgr.h"
+#include "backend/managers/cswordbackend.h"
 #include <QList>
 #include <QObject>
 #include <QString>

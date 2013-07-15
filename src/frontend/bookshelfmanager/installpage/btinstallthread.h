@@ -15,7 +15,7 @@
 #include <QThread>
 
 #include <QSharedPointer>
-#include "frontend/bookshelfmanager/btinstallmgr.h"
+#include "backend/btinstallmgr.h"
 
 
 class BtInstallProgressDialog;

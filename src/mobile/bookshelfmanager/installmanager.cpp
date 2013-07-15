@@ -14,7 +14,7 @@
 
 #include "backend/btinstallbackend.h"
 #include "backend/managers/clanguagemgr.h"
-#include "frontend/bookshelfmanager/btinstallmgr.h"
+#include "backend/btinstallmgr.h"
 #include "mobile/btmmain.h"
 #include "mobile/ui/qtquick2applicationviewer.h"
 #include "mobile/ui/viewmanager.h"

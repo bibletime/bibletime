@@ -10,7 +10,7 @@
 #include "installsources.h"
 
 #include "backend/btinstallbackend.h"
-#include "frontend/bookshelfmanager/btinstallmgr.h"
+#include "backend/btinstallmgr.h"
 #include <QDebug>
 
 namespace btm {

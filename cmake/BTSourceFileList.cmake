@@ -18,7 +18,7 @@ SET(bibletime_SRC_BACKEND
     src/backend/btmoduletreeitem.cpp
     src/backend/cswordmodulesearch.cpp
     src/backend/btinstallbackend.cpp
-    src/frontend/bookshelfmanager/btinstallmgr.cpp
+    src/backend/btinstallmgr.cpp
     src/frontend/bookshelfmanager/installpage/btinstallthread.cpp
 )
 
@@ -310,7 +310,7 @@ SET(bibletime_COMMON_MOCABLE_HEADERS
     src/backend/drivers/cswordmoduleinfo.h
     src/backend/managers/cswordbackend.h
     src/util/btsignal.h
-    src/frontend/bookshelfmanager/btinstallmgr.h
+    src/backend/btinstallmgr.h
     src/frontend/bookshelfmanager/installpage/btinstallthread.h
 )
 
