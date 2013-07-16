@@ -19,6 +19,7 @@
 #include "backend/managers/cswordbackend.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
 #include "util/cresmgr.h"
+#include "util/geticon.h"
 #include "util/directory.h"
 
 
@@ -41,6 +42,7 @@ BibleTimeApp::~BibleTimeApp() {
     delete CDisplayTemplateMgr::instance();
     CLanguageMgr::destroyInstance();
     CSwordBackend::destroyInstance();
+    util::clearIconCache();
 
     BtConfig::destroyInstance();
 }

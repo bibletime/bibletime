@@ -15,6 +15,7 @@
 #include "backend/config/btconfig.h"
 #include "backend/managers/cswordbackend.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
+#include "util/geticon.h"
 
 
 BibleTimeApp::BibleTimeApp(int &argc, char **argv)
@@ -37,6 +38,7 @@ BibleTimeApp::~BibleTimeApp() {
     delete CDisplayTemplateMgr::instance();
     CLanguageMgr::destroyInstance();
     CSwordBackend::destroyInstance();
+    util::clearIconCache();
 
     BtConfig::destroyInstance();
 }

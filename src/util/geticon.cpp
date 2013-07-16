@@ -48,4 +48,7 @@ const QIcon& getIcon(const QString & name) {
     return nullIcon;
 }
 
+void clearIconCache() {
+    iconCache.clear();
+}
 }

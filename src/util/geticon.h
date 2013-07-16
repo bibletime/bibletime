@@ -23,6 +23,8 @@ namespace util {
                     icon if no such icon is found.
          */
         const QIcon & getIcon(const QString & name);
+
+        void clearIconCache();
 }
 
 #endif
