@@ -13,6 +13,7 @@ Rectangle {
     property int lastCategoryIndex: 0
     property int lastLanguageIndex: 0
     property int spacing: 5
+    property string categoryLimit: ""
     property string selectedModule: ""
     property string selectedCategory: ""
 
@@ -26,6 +27,9 @@ Rectangle {
             moduleInterface.updateCategoryAndLanguageModels();
             categoryIndex = lastCategoryIndex;
             languageIndex = lastLanguageIndex;
+        }
+        else {
+            categoryLimit = "";
         }
     }
 

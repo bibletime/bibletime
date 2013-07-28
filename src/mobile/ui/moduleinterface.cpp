@@ -56,12 +56,13 @@ static CSwordModuleInfo* getModule(BtBookshelfModel* bookshelfModel, const QMode
 }
 
 void ModuleInterface::updateCategoryAndLanguageModels() {
-    getCategoriesAndLanguages();
-    setupTextModel(m_categories, &m_categoryModel);
-    setupTextModel(m_languages, &m_languageModel);
     QQuickItem* object = findQmlObject("moduleChooser");
     if (object == 0)
         return;
+
+    getCategoriesAndLanguages();
+    setupTextModel(m_categories, &m_categoryModel);
+    setupTextModel(m_languages, &m_languageModel);
     object->setProperty("categoryModel", QVariant::fromValue(&m_categoryModel));
     object->setProperty("languageModel", QVariant::fromValue(&m_languageModel));
 }
@@ -70,6 +71,11 @@ void ModuleInterface::getCategoriesAndLanguages() {
 
     m_categories.clear();
     m_languages.clear();
+
+    QQuickItem* object = findQmlObject("moduleChooser");
+    if (object == 0)
+        return;
+    QString categoryLimit = object->property("categoryLimit").toString();
 
     BtBookshelfModel* bookshelfModel = CSwordBackend::instance()->model();
     if (bookshelfModel == 0)
@@ -82,6 +88,12 @@ void ModuleInterface::getCategoriesAndLanguages() {
         QString categoryName = module->categoryName(category);
         const CLanguageMgr::Language* language = module->language();
         QString languageName = language->translatedName();
+
+        QStringList categoryLimitList = categoryLimit.split(",");
+
+        if ( ! categoryLimit.isEmpty() && ! categoryLimitList.contains(categoryName))
+            continue;
+
         m_categories.insert(categoryName);
         m_languages.insert(languageName);
     }

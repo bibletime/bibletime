@@ -75,7 +75,13 @@ Rectangle {
     }
 
     function newWindow() {
+        moduleChooser.moduleSelected.connect(openWindowSlot);
         moduleChooser.visible = true;
+    }
+
+    function openWindowSlot() {
+        moduleChooser.moduleSelected.disconnect(openWindowSlot);
+        openWindow(moduleChooser.selectedCategory, moduleChooser.selectedModule)
     }
 
     function openWindow(category, module) {
@@ -91,7 +97,6 @@ Rectangle {
         }
 
         window = component.createObject(null, {"width": 250, "height": 200});
-
         window.setModule(module);
 
         if (window == null) {
@@ -111,7 +116,7 @@ Rectangle {
     }
 
     width: 1280
-    height: 800
+    height: 650
     rotation: 0
 
     MainToolbar {
@@ -373,9 +378,6 @@ Rectangle {
         width:400
         height: parent.height
         anchors.centerIn: parent
-        onModuleSelected: {
-            root.openWindow(selectedCategory, selectedModule);
-        }
     }
 
     TreeChooser {
