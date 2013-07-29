@@ -106,54 +106,6 @@ void BtWindowInterface::setModuleName(const QString& moduleName) {
     emit textChanged();
 }
 
-QString BtWindowInterface::getBook() const {
-    QString book;
-    if (m_key)
-        book = m_key->book();
-    return book;
-}
-
-void BtWindowInterface::setBook(const QString& book) {
-    if (m_key) {
-        m_key->book(book);
-        emit displayedChanged();
-        emit textChanged();
-    }
-}
-
-QString BtWindowInterface::getChapter() const {
-    QString chapter;
-    if (m_key)
-        chapter = QString::number(m_key->Chapter());
-    return chapter;
-}
-
-void BtWindowInterface::setChapter(const QString& chapter)  {
-    if (m_key) {
-        int iChapter = chapter.toInt();
-        m_key->setChapter(iChapter);
-        emit displayedChanged();
-        emit textChanged();
-    }
-}
-
-QString BtWindowInterface::getVerse() const {
-    QString verse;
-    if (m_key) {
-        verse = QString::number(m_key->Verse());
-    }
-    return verse;
-}
-
-void BtWindowInterface::setVerse(const QString& verse) {
-    if (m_key) {
-        int iVerse = verse.toInt();
-        m_key->setVerse(iVerse);
-        emit displayedChanged();
-        emit textChanged();
-    }
-}
-
 QString BtWindowInterface::getDisplayed() const {
     QString displayed;
     if (m_key)
@@ -170,8 +122,20 @@ void BtWindowInterface::changeModule() {
 
 void BtWindowInterface::changeReference() {
     QtQuick2ApplicationViewer* viewer = getViewManager()->getViewer();
-    VerseChooser* dlg = new VerseChooser(viewer, this);
-    dlg->open();
+
+    CSwordVerseKey* key = dynamic_cast<CSwordVerseKey*>(m_key);
+    if (key != 0) {
+        VerseChooser* dlg = new VerseChooser(viewer, this);
+        bool ok = connect(dlg, SIGNAL(referenceChanged()), this, SLOT(referenceChanged()));
+        Q_ASSERT(ok);
+        dlg->open(key);
+    }
+
+}
+
+void BtWindowInterface::referenceChanged() {
+    emit displayedChanged();
+    emit textChanged();
 }
 
 void BtWindowInterface::setDisplayed(const QString& text) {
@@ -182,37 +146,6 @@ const CSwordBibleModuleInfo* BtWindowInterface::module() const {
     const CSwordModuleInfo* module = m_key->module();
     const CSwordBibleModuleInfo* bibleModule = qobject_cast<const CSwordBibleModuleInfo*>(module);
     return bibleModule;
-}
-
-QStringList BtWindowInterface::getBooks() const {
-    QStringList books;
-    const CSwordBibleModuleInfo* bibleModule = module();
-    if (bibleModule)
-        books = *bibleModule->books();
-    return books;
-}
-
-QStringList BtWindowInterface::getChapters() const {
-    QStringList chapters;
-    const CSwordBibleModuleInfo* m = module();
-    QString book = m_key->book();
-    int count = m->chapterCount(book);
-    for (int i = 1; i <= count; i++) {
-        chapters << QString::number(i);
-    }
-    return chapters;
-}
-
-QStringList BtWindowInterface::getVerses() const {
-    QStringList verses;
-    const CSwordBibleModuleInfo* m = module();
-    QString book = m_key->book();
-    int chapter = m_key->Chapter();
-    int count = m->verseCount(book,chapter);
-    for (int i = 1; i <= count; i++) {
-        verses << QString::number(i);
-    }
-    return verses;
 }
 
 } // end namespace

@@ -16,6 +16,7 @@
 #include <QObject>
 #include <QList>
 
+class CSwordVerseKey;
 class QtQuick2ApplicationViewer;
 class QQmlComponent;
 class QQuickItem;
@@ -39,13 +40,29 @@ class VerseChooser : public QObject {
 
 public:
     VerseChooser(QtQuick2ApplicationViewer* viewer, BtWindowInterface* bibleVerse);
-    void open();
+    void open(CSwordVerseKey* key);
+
+signals:
+    void referenceChanged();
 
 private slots:
     void stringAccepted(const QString& value);
     void stringCanceled();
 
 private:
+    QString getBook() const;
+    void setBook(const QString& book);
+
+    QString getChapter() const;
+    void setChapter(const QString& chapter);
+
+    QString getVerse() const;
+    void setVerse(const QString& chapter);
+
+    QStringList getBooks() const;
+    QStringList getChapters() const;
+    QStringList getVerses() const;
+
     void showGridChooser(const QStringList& list);
     void setProperties(const QStringList& list);
 
@@ -53,7 +70,9 @@ private:
     QtQuick2ApplicationViewer* m_viewer;
     GridChooser* m_gridChooser;
     BtWindowInterface* bibleVerse_;
+    CSwordVerseKey* m_key;
     int m_state;
+
     QString m_oldBook;
     QString m_oldChapter;
     QString m_oldVerse;
