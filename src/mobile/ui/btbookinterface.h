@@ -17,6 +17,9 @@ class BtBookInterface : public QObject {
     Q_PROPERTY(QString text READ getText NOTIFY textChanged)
 
 public:
+    Q_INVOKABLE void changeModule();
+    Q_INVOKABLE void chooseKey();
+
     BtBookInterface(QObject *parent = 0);
 
     CSwordTreeKey* getKey() const;
@@ -29,9 +32,6 @@ public:
     QString getDisplayed() const;
 
     void setDisplayed(const QString& text);
-
-    Q_INVOKABLE void changeModule();
-    Q_INVOKABLE void chooseKey();
 
 signals:
     void displayedChanged();

@@ -10,6 +10,7 @@ class CSwordBibleModuleInfo;
 namespace btm {
 
 class BtWindowInterface : public QObject {
+
     Q_OBJECT
 
     Q_PROPERTY(QString moduleName READ getModuleName WRITE setModuleName NOTIFY moduleChanged)
@@ -20,6 +21,9 @@ class BtWindowInterface : public QObject {
     Q_PROPERTY(QString text READ getText NOTIFY textChanged)
 
 public:
+    Q_INVOKABLE void changeModule();
+    Q_INVOKABLE void changeReference();
+
     BtWindowInterface(QObject *parent = 0);
 
     QString getText() const;
@@ -39,9 +43,6 @@ public:
     QString getDisplayed() const;
 
     void setDisplayed(const QString& text);
-
-    Q_INVOKABLE void changeModule();
-    Q_INVOKABLE void changeReference();
 
     QStringList getBooks() const;
     QStringList getChapters() const;

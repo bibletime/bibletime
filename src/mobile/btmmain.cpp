@@ -59,12 +59,6 @@ void registerMetaTypes() {
     qRegisterMetaType<BTModuleTreeItem::Grouping>("Grouping");
     qRegisterMetaTypeStreamOperators<BTModuleTreeItem::Grouping>("Grouping");
 
-//    qRegisterMetaType<alignmentMode>("alignmentMode");
-//    qRegisterMetaTypeStreamOperators<alignmentMode>("alignmentMode");
-
-//    qRegisterMetaType<Search::BtSearchOptionsArea::SearchType>("SearchType");
-//    qRegisterMetaTypeStreamOperators<Search::BtSearchOptionsArea::SearchType>("SearchType");
-
     qRegisterMetaType<BtConfig::StringMap>("StringMap");
     qRegisterMetaTypeStreamOperators<BtConfig::StringMap>("StringMap");
 
@@ -98,9 +92,6 @@ int main(int argc, char *argv[]) {
     QTranslator BibleTimeTranslator;
     BibleTimeTranslator.load( QString("bibletime_ui_").append(QLocale::system().name()), DU::getLocaleDir().canonicalPath());
     app.installTranslator(&BibleTimeTranslator);
-
-
-//    app.setProperty("--debug", QVariant(showDebugMessages));
 
     // Initialize display template manager:
     if (!app.initDisplayTemplateManager()) {

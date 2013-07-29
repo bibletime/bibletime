@@ -28,8 +28,6 @@ public:
     Q_INVOKABLE QString language(int index);
     Q_INVOKABLE QString module(int index);
 
-private slots:
-
 private:
     void getCategoriesAndLanguages();
     void setProperties(const QStringList& list);
