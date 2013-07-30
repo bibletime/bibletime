@@ -11,10 +11,10 @@
 
 #include <QDebug>
 #include <QLocale>
-#include <QMessageBox>
 #include <QWebSettings>
 #include "backend/btmoduletreeitem.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
+#include "util/dialogutil.h"
 #include "util/directory.h" // DU::getUserBaseDir()
 
 // Sword includes:
@@ -71,7 +71,7 @@ bool BtConfig::initBtConfig() {
     if (btConfigOldApi < BTCONFIG_API_VERSION) {
         /// \todo Migrate from btConfigOldApi to BTCONFIG_API_VERSION
         qWarning() << "BibleTime configuration migration is not yet implemented!!!";
-        cont = QMessageBox::warning(
+        cont = util::showWarning(
                     0, "Warning!",
                     "Migration to the new configuration system is not yet "
                     "implemented. Proceeding might result in <b>loss of data"
@@ -82,7 +82,7 @@ bool BtConfig::initBtConfig() {
                     QMessageBox::No) == QMessageBox::Yes;
     } else {
         Q_ASSERT(btConfigOldApi > BTCONFIG_API_VERSION);
-        cont = QMessageBox::warning(
+        cont = util::showWarning(
                     0, tr("Error loading configuration!"),
                     tr("Failed to load BibleTime's configuration, because it "
                        "appears that the configuration file corresponds to a newer "
