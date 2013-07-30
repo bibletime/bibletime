@@ -29,9 +29,6 @@
 #include "btglobal.h"
 
 
-#define BTCONFIG_API_VERSION 1
-
-
 class BibleTimeApp;
 
 class BtConfig: public BtConfigCore {

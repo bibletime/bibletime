@@ -22,6 +22,7 @@
 #include <versekey.h> // For search scope configuration
 
 
+#define BTCONFIG_API_VERSION 1
 namespace {
 const QString BTCONFIG_API_VERSION_KEY = "btconfig_api_version";
 }
