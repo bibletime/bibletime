@@ -7,71 +7,93 @@
 *
 **********/
 
+#include "backend/btinstallmgr.h"
 
 #include "backend/btinstallbackend.h"
-#include "backend/btinstallmgr.h"
-#include "backend/managers/cswordbackend.h"
-#include <QList>
-#include <QObject>
-#include <QString>
-#include <QStringList>
 
-// Sword includes:
-#include <installmgr.h>
-#include <ftptrans.h>
 
+namespace {
+
+template <typename T>
+inline T normalizeCompletionPercentage(const T value) {
+    if (value < 0)
+        return 0;
+    if (value > 100)
+        return 100;
+    return value;
+}
+
+template <typename T>
+inline int calculateIntPercentage(T done, T total) {
+    Q_ASSERT(done >= 0);
+    Q_ASSERT(total >= 0);
+
+    // Special care (see warning in BtInstallMgr::statusUpdate()).
+    if (done > total)
+        done = total;
+    if (total == 0)
+        return 100;
+
+    return normalizeCompletionPercentage<int>((done / total) * 100);
+}
+
+} // anonymous namespace
 
 using namespace sword;
 
-BtInstallMgr::BtInstallMgr()
-        : InstallMgr(BtInstallBackend::configPath().toLatin1(), this),
-        m_totalBytes(1), m_completedBytes(0), m_firstCallOfPreStatus(true)
-{ //use this class also as status reporter
+BtInstallMgr::BtInstallMgr(QObject * parent)
+        : QObject(parent)
+        , InstallMgr(BtInstallBackend::configPath().toLatin1(), this)
+        , m_totalBytes(1)
+        , m_completedBytes(0)
+        , m_firstCallOfPreStatus(true)
+{ // Use this class also as status reporter:
     this->setFTPPassive(true);
 }
 
 BtInstallMgr::~BtInstallMgr() {
     //doesn't really help because it only sets a flag
-    terminate(); //make sure to close the connection
+    this->terminate(); // make sure to close the connection
 }
 
 bool BtInstallMgr::isUserDisclaimerConfirmed() const {
-    // \todo Check from config if it's been confirmed with "don't show this anymore" checked.
+    //// \todo Check from config if it's been confirmed with "don't show this anymore" checked.
     // Create a dialog with the message, checkbox and Continue/Cancel, Cancel as default.
     return true;
 }
 
 void BtInstallMgr::statusUpdate(double dltotal, double dlnow) {
-    if (dlnow > dltotal)
-        dlnow = dltotal;
+    /**
+      \warning Note that these *might be* rough measures due to the double data
+               type being used by Sword to store the number of bytes. Special
+               care must be taken to work around this, since the arguments may
+               contain weird values which would otherwise break this logic.
+    */
 
-    int totalPercent = (int)((float)(dlnow + m_completedBytes) / (float)(m_totalBytes) * 100.0);
+    if (dltotal < 0.0) // Special care (see warning above)
+        dltotal = 0.0;
+    if (dlnow < 0.0) // Special care (see warning above)
+        dlnow = 0.0;
 
-    if (totalPercent > 100) {
-        totalPercent = 100;
-    }
-    else if (totalPercent < 0) {
-        totalPercent = 0;
-    }
+    const int totalPercent = calculateIntPercentage<double>(dlnow + m_completedBytes,
+                                                            m_totalBytes);
+    const int filePercent  = calculateIntPercentage(dlnow, dltotal);
 
-    int filePercent  = (int)((float)(dlnow) / (float)(dltotal + 1) * 100.0);
-    if (filePercent > 100) {
-        filePercent = 100;
-    }
-    else if (filePercent < 0) {
-        filePercent = 0;
-    }
     //qApp->processEvents();
     emit percentCompleted(totalPercent, filePercent);
 }
 
 
-void BtInstallMgr::preStatus(long totalBytes, long completedBytes, const char* message) {
+void BtInstallMgr::preStatus(long totalBytes,
+                             long completedBytes,
+                             const char * message)
+{
     Q_UNUSED(message);
+    Q_ASSERT(completedBytes <= totalBytes);
     if (m_firstCallOfPreStatus) {
         m_firstCallOfPreStatus = false;
         emit downloadStarted();
     }
     m_completedBytes = completedBytes;
-    m_totalBytes = (totalBytes > 0) ? totalBytes : 1; //avoid division by zero
+    m_totalBytes = totalBytes;
 }
