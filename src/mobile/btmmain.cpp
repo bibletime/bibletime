@@ -17,7 +17,6 @@
 #include "mobile/bookshelfmanager/installmanager.h"
 #include "mobile/ui/btstyle.h"
 #include "mobile/ui/btwindowinterface.h"
-#include "mobile/ui/btbookinterface.h"
 #include "mobile/ui/moduleinterface.h"
 #include "mobile/ui/qtquick2applicationviewer.h"
 #include "mobile/ui/viewmanager.h"
@@ -36,7 +35,6 @@ btm::ViewManager* mgr = 0;
 void register_gml_classes() {
     QQmlDebuggingEnabler enabler;
 
-    qmlRegisterType<btm::BtBookInterface>("BibleTime", 1, 0, "BtBookInterface");
     qmlRegisterType<btm::BtWindowInterface>("BibleTime", 1, 0, "BtWindowInterface");
     qmlRegisterType<btm::BtStyle>("BibleTime", 1, 0, "BtStyle");
     qmlRegisterType<btm::InstallManager>("BibleTime", 1, 0, "InstallManager");
