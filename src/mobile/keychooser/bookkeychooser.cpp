@@ -13,7 +13,7 @@
 #include "bookkeychooser.h"
 
 #include <cmath>
-#include "mobile/ui/btbookinterface.h"
+#include "mobile/ui/btwindowinterface.h"
 #include "mobile/ui/qtquick2applicationviewer.h"
 #include <QCoreApplication>
 #include <QDebug>
@@ -34,9 +34,9 @@ struct BookEntry {
 };
 
 BookKeyChooser::BookKeyChooser(QtQuick2ApplicationViewer* viewer,
-                               BtBookInterface* bookInterface)
+                               BtWindowInterface* windowInterface)
     : m_viewer(viewer),
-      m_bookInterface(bookInterface),
+      m_windowInterface(windowInterface),
       m_key(0),
       m_treeChooserObject(0),
       m_state(CLOSED ) {
@@ -46,7 +46,8 @@ BookKeyChooser::BookKeyChooser(QtQuick2ApplicationViewer* viewer,
 
 void BookKeyChooser::copyKey()
 {
-    CSwordTreeKey* bookKey = m_bookInterface->getKey();
+    CSwordKey* key = m_windowInterface->getKey();
+    CSwordTreeKey* bookKey = dynamic_cast<CSwordTreeKey*>(key);
     m_key = new CSwordTreeKey(*bookKey);
 }
 
@@ -105,11 +106,13 @@ void BookKeyChooser::select(QString value) {
     keyPathList.removeLast();
     keyPathList.append(value);
     QString newPath = constructPath(keyPathList);
-    m_key->setKey(newPath);
+    CSwordTreeKey* tmpBookKey = dynamic_cast<CSwordTreeKey*>(m_key);
+    tmpBookKey->setKey(newPath);
 
-    CSwordTreeKey* bookKey = m_bookInterface->getKey();
-    bookKey->setKey(*m_key);
-    m_bookInterface->setDisplayed("");
+    CSwordKey* key = m_windowInterface->getKey();
+    CSwordTreeKey* bookKey = dynamic_cast<CSwordTreeKey*>(key);
+    bookKey->setKey(*tmpBookKey);
+    m_windowInterface->setDisplayed("");
 }
 
 void BookKeyChooser::open() {

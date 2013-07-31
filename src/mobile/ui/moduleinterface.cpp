@@ -75,7 +75,6 @@ void ModuleInterface::getCategoriesAndLanguages() {
     QQuickItem* object = findQmlObject("moduleChooser");
     if (object == 0)
         return;
-    QString categoryLimit = object->property("categoryLimit").toString();
 
     BtBookshelfModel* bookshelfModel = CSwordBackend::instance()->model();
     if (bookshelfModel == 0)
@@ -88,12 +87,6 @@ void ModuleInterface::getCategoriesAndLanguages() {
         QString categoryName = module->categoryName(category);
         const CLanguageMgr::Language* language = module->language();
         QString languageName = language->translatedName();
-
-        QStringList categoryLimitList = categoryLimit.split(",");
-
-        if ( ! categoryLimit.isEmpty() && ! categoryLimitList.contains(categoryName))
-            continue;
-
         m_categories.insert(categoryName);
         m_languages.insert(languageName);
     }

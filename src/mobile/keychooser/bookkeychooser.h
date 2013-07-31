@@ -10,8 +10,8 @@
 *
 **********/
 
-#ifndef VERSE_CHOOSER_H
-#define VERSE_CHOOSER_H
+#ifndef BOOK_KEY_CHOOSER_H
+#define BOOK_KEY_CHOOSER_H
 
 #include "backend/keys/cswordtreekey.h"
 #include <QObject>
@@ -26,7 +26,7 @@ class QQuickItem;
 
 namespace btm {
 
-class BtBookInterface;
+class BtWindowInterface;
 
 class BookKeyChooser : public QObject {
     Q_OBJECT
@@ -39,7 +39,7 @@ class BookKeyChooser : public QObject {
     };
 
 public:
-    BookKeyChooser(QtQuick2ApplicationViewer* viewer, BtBookInterface* bookInterface);
+    BookKeyChooser(QtQuick2ApplicationViewer* viewer, BtWindowInterface* windowInterface);
     void open();
 
 private slots:
@@ -63,7 +63,7 @@ private:
 
 
     QtQuick2ApplicationViewer* m_viewer;
-    BtBookInterface* m_bookInterface;
+    BtWindowInterface* m_windowInterface;
     CSwordTreeKey* m_key;
     QQuickItem* m_treeChooserObject;
     int m_state;

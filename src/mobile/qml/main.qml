@@ -90,7 +90,7 @@ Rectangle {
         else if (category == "Commentaries")
             component = Qt.createComponent("Window.qml");
         else if (category == "Books")
-            component = Qt.createComponent("BookWindow.qml");
+            component = Qt.createComponent("Window.qml");
         else {
             console.log(category, " are not yet supported.");
             return;

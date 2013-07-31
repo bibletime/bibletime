@@ -184,8 +184,8 @@ void BtBookInterface::chooseKey() {
     QStringList keyPath;
     QStringList children;
     parseKey(m_key, &keyPath, &children);
-    BookKeyChooser* dlg = new BookKeyChooser(viewer, this);
-    dlg->open();
+//    BookKeyChooser* dlg = new BookKeyChooser(viewer, this);
+//    dlg->open();
 }
 
 void BtBookInterface::setDisplayed(const QString& text) {

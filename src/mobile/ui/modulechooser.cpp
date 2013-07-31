@@ -24,7 +24,6 @@ void ModuleChooser::open() {
     if (item == 0)
         return;
 
-    item->setProperty("categoryLimit", "Bibles,Commentaries");
     item->setProperty("visible", true);
     bool ok = connect(item, SIGNAL(moduleSelected()), this, SLOT(moduleSelectedSlot()));
     Q_ASSERT(ok);

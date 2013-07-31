@@ -6,7 +6,7 @@
 
 class CSwordKey;
 class CSwordVerseKey;
-class CSwordBibleModuleInfo;
+class CSwordModuleInfo;
 
 namespace btm {
 
@@ -23,6 +23,8 @@ public:
     Q_INVOKABLE void changeReference();
 
     BtWindowInterface(QObject *parent = 0);
+
+    CSwordKey* getKey() const;
 
     QString getText() const;
 
@@ -41,7 +43,7 @@ signals:
 private slots:
     void referenceChanged();
 private:
-    const CSwordBibleModuleInfo* module() const;
+    const CSwordModuleInfo* module() const;
 
     CSwordKey* m_key;
 };

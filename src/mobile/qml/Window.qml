@@ -7,10 +7,6 @@ Rectangle {
 
     property string title: toolbar.title
 
-    function changeModule() {
-        btWindowInterface.changeModule();
-    }
-
     function setModule(module) {
         btWindowInterface.moduleName = module;
     }
@@ -57,7 +53,10 @@ Rectangle {
                 id: text
 
                 anchors.centerIn: parent
+                anchors.leftMargin: 4
+                anchors.rightMargin: 4
                 font.pointSize: btStyle.toolbarTextPointSize
+                elide: Text.ElideMiddle
                 color: btStyle.toolbarButtonText
                 text: btWindowInterface.moduleName
             }
@@ -75,11 +74,12 @@ Rectangle {
         Rectangle {
             id: referenceDisplay
 
-            function createDialog() {
-                btWindowInterface.changeReference()
+            width: {
+                var w1 = 300
+                var w2 = toolbar.width - moduleDisplay.width;
+                var w = Math.min(w1,w2);
+                return w - 15;
             }
-
-            width:referenceText.width + 10
             radius: btStyle.buttonRadius
             anchors.left: moduleDisplay.right
             anchors.top: parent.top
@@ -94,7 +94,11 @@ Rectangle {
             Text {
                 id: referenceText
                 anchors.centerIn: parent
+                anchors.leftMargin: 4
+                anchors.rightMargin: 4
+                width: referenceDisplay.width - 4
                 font.pointSize: btStyle.toolbarTextPointSize
+                elide: Text.ElideMiddle
                 color: btStyle.toolbarButtonText
                 text: btWindowInterface.displayed
             }
@@ -104,7 +108,7 @@ Rectangle {
 
                 anchors.fill: parent
                 onClicked: {
-                    referenceDisplay.createDialog()
+                    btWindowInterface.changeReference();
                 }
             }
         }
