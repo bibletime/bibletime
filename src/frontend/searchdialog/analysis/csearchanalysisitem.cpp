@@ -139,10 +139,6 @@ const QString CSearchAnalysisItem::getToolTip() {
     int i = 0;
     for (RCI it = m_results.begin(); it != m_results.end(); ++it) {
         const CSwordModuleInfo *info = it.key();
-
-        /// \warning This is a workaround for sword constness
-        sword::ListKey &results = const_cast<sword::ListKey &>(it.value());
-
         const QColor c = CSearchAnalysisScene::getColor(i);
 
         toolTipString.append(
@@ -150,7 +146,7 @@ const QString CSearchAnalysisItem::getToolTip() {
             .arg(c.name())
             .arg(info ? info->name() : QString::null)
             .arg( m_resultCountArray[i] )
-            .arg( (info && m_resultCountArray[i]) ? ((double)m_resultCountArray[i] / (double)results.Count())*(double)100 : 0.0, 0, 'g', 2)
+            .arg( (info && m_resultCountArray[i]) ? ((double)m_resultCountArray[i] / (double)it.value().getCount())*(double)100 : 0.0, 0, 'g', 2)
         );
         ++i;
     }

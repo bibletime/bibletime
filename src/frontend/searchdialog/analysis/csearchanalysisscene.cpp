@@ -206,13 +206,12 @@ QColor CSearchAnalysisScene::getColor(int index) {
 unsigned int CSearchAnalysisScene::getCount(const QString &book,
                                             const CSwordModuleInfo* module)
 {
-    /// \warning This is a workaround for sword constness
-    sword::ListKey result = m_results[module];
+    const sword::ListKey & result = m_results[module];
 
     const int length = book.length();
     unsigned int i = m_lastPosList[module];
     unsigned int count = 0;
-    const unsigned int resultCount = result.Count();
+    const unsigned int resultCount = result.getCount();
     while (i < resultCount) {
         if (strncmp(book.toUtf8(), (const char *) *result.getElement(i), length))
             break;
@@ -293,8 +292,7 @@ void CSearchAnalysisScene::saveAsHTML() {
 
     for (RCI it = m_results.begin(); it != m_results.end(); ++it) {
         text += "<td class=\"r\">";
-        /// \warning This const_cast is a workaround for the sword Count() bug:
-        text += QString::number(const_cast<sword::ListKey &>(it.value()).Count());
+        text += QString::number(it.value().getCount());
         text += "</td>";
     }
 

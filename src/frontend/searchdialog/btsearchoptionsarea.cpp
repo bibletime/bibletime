@@ -364,7 +364,7 @@ sword::ListKey BtSearchOptionsArea::searchScope() {
 }
 
 bool BtSearchOptionsArea::hasSearchScope() {
-    return (searchScope().Count() > 0);
+    return (searchScope().getCount() > 0);
 }
 
 void BtSearchOptionsArea::addToHistory(const QString& text) {

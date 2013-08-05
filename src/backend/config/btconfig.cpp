@@ -278,8 +278,8 @@ BtConfig::StringMap BtConfig::getSearchScopesForCurrentLocale() {
         QString &s = it.value();
         sword::ListKey list(vk.parseVerseList(QByteArray(s.toUtf8()), "Genesis 1:1", true));
         s.clear();
-        for (int i = 0; i < list.Count(); i++) {
-            s.append(QString::fromUtf8(list.GetElement(i)->getRangeText()));
+        for (int i = 0; i < list.getCount(); i++) {
+            s.append(QString::fromUtf8(list.getElement(i)->getRangeText()));
             s.append("; ");
         }
     }
@@ -298,7 +298,7 @@ void BtConfig::setSearchScopesWithCurrentLocale(StringMap searchScopes) {
         bool parsingWorked = true;
         sword::ListKey list(vk.parseVerseList(data.toUtf8(), "Genesis 1:1", true));
         data.clear();
-        for (int i = 0; i < list.Count(); i++) {
+        for (int i = 0; i < list.getCount(); i++) {
             sword::VerseKey * verse(dynamic_cast<sword::VerseKey *>(list.getElement(i)));
 
             if (verse != 0) {

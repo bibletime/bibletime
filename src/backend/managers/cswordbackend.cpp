@@ -128,7 +128,7 @@ CSwordBackend::LoadError CSwordBackend::initModules(SetupChangedReason reason) {
         sword::SWModule * const curMod = (*it).second;
         CSwordModuleInfo * newModule;
 
-        const char * const modType = curMod->Type();
+        const char * const modType = curMod->getType();
         if (!strcmp(modType, "Biblical Texts")) {
             newModule = new CSwordBibleModuleInfo(curMod, *this);
             newModule->module()->setDisplay(&m_chapterDisplay);

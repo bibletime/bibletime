@@ -15,7 +15,7 @@
 #include <QObject>
 // Sword includes:
 #include <installmgr.h>
-#include <ftptrans.h>
+#include <remotetrans.h>
 
 
 /**

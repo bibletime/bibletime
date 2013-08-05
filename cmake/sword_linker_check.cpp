@@ -15,13 +15,13 @@
 
 #include <swmgr.h>
 #include <installmgr.h>
-#include <ftptrans.h>
+#include <remotetrans.h>
 
 int main(int argc, char* argv[])
 {
     sword::SWMgr mgr;
     sword::InstallMgr imgr;
-    sword::FTPTransport trans("example.com");
+    sword::RemoteTransport trans("example.com");
 
     return 0;
 }

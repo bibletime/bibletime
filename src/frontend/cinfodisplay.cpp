@@ -257,7 +257,7 @@ const QString CInfoDisplay::decodeCrossReference( const QString& data ) {
         VerseKey vk;
         sword::ListKey refs = vk.parseVerseList((const char*)data.mid((pos == -1) ? 0 : pos + 1).toUtf8(), "Gen 1:1", true);
 
-        for (int i = 0; i < refs.Count(); ++i) {
+        for (int i = 0; i < refs.getCount(); i++) {
             SWKey* key = refs.getElement(i);
             Q_ASSERT(key);
             VerseKey* vk = dynamic_cast<VerseKey*>(key);

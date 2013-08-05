@@ -91,16 +91,14 @@ void CSearchResultView::initConnections() {
 
 /** Setups the list with the given module. */
 void CSearchResultView::setupTree(const CSwordModuleInfo *m,
-                                  const sword::ListKey &results)
+                                  const sword::ListKey & result)
 {
     clear();
 
     if (!m) return;
 
     m_module = m;
-    /// \warning This is a workaround for Sword constness
-    sword::ListKey &result = const_cast<sword::ListKey&>(results);
-    const int count = result.Count();
+    const int count = result.getCount();
     if (!count) return;
 
     setUpdatesEnabled(false);

@@ -541,15 +541,12 @@ void BtSearchResultArea::saveDialogSettings() const {
 ******************************************************************************/
 
 StrongsResultList::StrongsResultList(const CSwordModuleInfo *module,
-                                     const sword::ListKey &results,
+                                     const sword::ListKey & result,
                                      const QString &strongsNumber)
 {
     using namespace Rendering;
 
-    /// \warning This is a workaround for Sword constness
-    sword::ListKey result = results;
-
-    int count = result.Count();
+    int count = result.getCount();
     if (!count)
         return;
 

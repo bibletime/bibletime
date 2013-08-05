@@ -45,7 +45,7 @@ QStringList BibleTime::searchInModule(const QString& moduleName, const QString& 
 
         const QString lead = QString("[%1] ").arg(moduleName);
 
-        for ( int i = 0; i < result.Count(); ++i ) {
+        for (int i = 0; i < result.getCount(); i++) {
             sword::SWKey* key = result.getElement(i);
             Q_ASSERT(key);
 

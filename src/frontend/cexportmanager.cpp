@@ -90,14 +90,12 @@ bool CExportManager::saveKey(CSwordKey* key, const Format format, const bool add
     return true;
 }
 
-bool CExportManager::saveKeyList(const sword::ListKey &l,
+bool CExportManager::saveKeyList(const sword::ListKey & l,
                                  const CSwordModuleInfo *module,
                                  Format format,
                                  bool addText)
 {
-    /// \warning This is a workaround for Sword constness
-    sword::ListKey list = l;
-    if (!list.Count())
+    if (!l.getCount())
         return false;
 
     const QString filename = getSaveFileName(format);
@@ -107,10 +105,11 @@ bool CExportManager::saveKeyList(const sword::ListKey &l,
 
     CTextRendering::KeyTree tree; /// \todo Verify that items in tree are properly freed.
 
-    setProgressRange(list.Count());
+    setProgressRange(l.getCount());
     CTextRendering::KeyTreeItem::Settings itemSettings;
     itemSettings.highlight = false;
 
+    sword::ListKey list(l);
     list.setPosition(sword::TOP);
     while (!list.popError() && !progressWasCancelled()) {
         tree.append( new CTextRendering::KeyTreeItem(QString::fromLocal8Bit((const char*)list) , module, itemSettings) );
@@ -201,7 +200,7 @@ bool CExportManager::copyKeyList(const sword::ListKey &l,
                                  bool addText)
 {
     sword::ListKey list = l;
-    if (!list.Count())
+    if (!list.getCount())
         return false;
 
     CTextRendering::KeyTree tree; /// \todo Verify that items in tree are properly freed.
@@ -254,18 +253,16 @@ bool CExportManager::copyKeyList(const QList<CSwordKey*> &list,
     return true;
 }
 
-bool CExportManager::printKeyList(const sword::ListKey &l,
+bool CExportManager::printKeyList(const sword::ListKey & list,
                                   const CSwordModuleInfo *module,
                                   const DisplayOptions &displayOptions,
                                   const FilterOptions &filterOptions)
 {
-    /// \warning This is a workaround for Sword constness
-    sword::ListKey list = l;
     CPrinter::KeyTreeItem::Settings settings;
     CPrinter::KeyTree tree; /// \todo Verify that items in tree are properly freed.
 
-    setProgressRange(list.Count());
-    for (int i=0; i< list.Count(); i++) {
+    setProgressRange(list.getCount());
+    for (int i=0; i< list.getCount(); i++) {
         const sword::SWKey* swKey = list.getElement(i);
         const sword::VerseKey* vKey = dynamic_cast<const sword::VerseKey*>(swKey);
         if (vKey != 0) {
@@ -372,7 +369,7 @@ bool CExportManager::printByHyperlink(const QString &hyperlink,
         if ((module->type() == CSwordModuleInfo::Bible) || (module->type() == CSwordModuleInfo::Commentary)) {
             sword::ListKey verses = sword::VerseKey().parseVerseList((const char*)keyName.toUtf8(), "Genesis 1:1", true);
 
-            for (int i = 0; i < verses.Count(); ++i) {
+            for (int i = 0; i < verses.getCount(); i++) {
                 sword::VerseKey* element = dynamic_cast<sword::VerseKey*>(verses.getElement(i));
                 if (element) {
                     const QString startKey = QString::fromUtf8(element->getLowerBound().getText());

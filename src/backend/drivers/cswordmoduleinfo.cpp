@@ -57,7 +57,7 @@ CSwordModuleInfo::CSwordModuleInfo(sword::SWModule * module,
       m_type(type),
       m_cancelIndexing(false),
       m_cachedName(QString::fromUtf8(module->getName())),
-      m_cachedHasVersion(!QString((*m_backend->getConfig())[module->getName()]["Version"]).isEmpty())
+      m_cachedHasVersion(!QString((*m_backend.getConfig())[module->getName()]["Version"]).isEmpty())
 {
     initCachedCategory();
     initCachedLanguage();
@@ -302,7 +302,7 @@ bool CSwordModuleInfo::buildIndex() {
             /* At this point we have to make sure we disabled the strongs and
                the other options, so the plain filters won't include the numbers
                somehow. */
-            textBuffer.append(m_module->StripText());
+            textBuffer.append(m_module->stripText());
             lucene_utf8towcs(wcharBuffer,
                              static_cast<const char *>(textBuffer),
                              BT_MAX_LUCENE_FIELD_LENGTH);
@@ -470,8 +470,7 @@ int CSwordModuleInfo::searchIndexed(const QString & searchedText,
                                                                lucene::search::Sort::INDEXORDER));
                                                                #endif
 
-        /// \todo This is a workaround for Sword constness
-        const bool useScope = (const_cast<sword::ListKey &>(scope).Count() > 0);
+        const bool useScope = (scope.getCount() > 0);
 
         lucene::document::Document * doc = 0;
         QSharedPointer<sword::SWKey> swKey(m_module->createKey());
@@ -490,14 +489,11 @@ int CSwordModuleInfo::searchIndexed(const QString & searchedText,
 
             // Limit results based on scope:
             if (useScope) {
-                /// \todo This is a workaround for sword constness
-                for (int j = 0; j < const_cast<sword::ListKey &>(scope).Count(); j++) {
-                    /// \todo This is a workaround for sword constness
-                    sword::ListKey & scope2 = const_cast<sword::ListKey &>(scope);
-                    Q_ASSERT(dynamic_cast<sword::VerseKey *>(scope2.getElement(j)));
-                    const sword::VerseKey * const vkey = static_cast<sword::VerseKey *>(scope2.getElement(j));
-                    if (vkey->LowerBound().compare(*swKey) <= 0
-                        && vkey->UpperBound().compare(*swKey) >= 0)
+                for (int j = 0; j < scope.getCount(); j++) {
+                    Q_ASSERT(dynamic_cast<const sword::VerseKey *>(scope.getElement(j)));
+                    const sword::VerseKey * const vkey = static_cast<const sword::VerseKey *>(scope.getElement(j));
+                    if (vkey->getLowerBound().compare(*swKey) <= 0
+                        && vkey->getUpperBound().compare(*swKey) >= 0)
                     {
                         results.add(*swKey);
                     }
@@ -518,7 +514,7 @@ int CSwordModuleInfo::searchIndexed(const QString & searchedText,
     qDeleteAll(list);
     list.clear();
 
-    return results.Count();
+    return results.getCount();
 }
 
 sword::SWVersion CSwordModuleInfo::minimumSwordVersion() const {

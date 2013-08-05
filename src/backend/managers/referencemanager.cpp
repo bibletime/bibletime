@@ -354,12 +354,12 @@ const QString ReferenceManager::parseVerseReference( const QString& ref, const R
         Q_ASSERT(!dummy.popError());
 
         //Q_ASSERT(lk.Count());
-        if (!lk.Count()) {
+        if (!lk.getCount()) {
             ret.append( *it ); //don't change the original
             continue;
         }
 
-        for (int i = 0; i < lk.Count(); ++i) {
+        for (int i = 0; i < lk.getCount(); ++i) {
             if (dynamic_cast<sword::VerseKey*>(lk.getElement(i))) { // a range
                 sword::VerseKey* k = dynamic_cast<sword::VerseKey*>(lk.getElement(i));
                 Q_ASSERT(k);
