@@ -22,5 +22,5 @@ Name[it]=BibleTime ${BT_VERSION}
 GenericName=Bible Study Tool
 Terminal=false
 Type=Application
-Categories=X-Bible;X-Religion;Literature;Education;Dictionary;Qt
+Categories=X-Bible;X-Religion;Literature;Education;Dictionary;Qt;
 DocPath=bibletime/handbook/index.html

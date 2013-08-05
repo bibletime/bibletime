@@ -9,7 +9,6 @@
 
 #include "backend/managers/cdisplaytemplatemgr.h"
 
-#include <QDebug>
 #include <QFile>
 #include <QFileInfo>
 #include <QStringList>
@@ -20,47 +19,82 @@
 #include "util/directory.h"
 
 
-CDisplayTemplateMgr *CDisplayTemplateMgr::m_instance = 0;
+#define CSSTEMPLATEBASE "Basic.tmpl"
 
-CDisplayTemplateMgr::CDisplayTemplateMgr(QString &errorMessage) {
-    Q_ASSERT(m_instance == 0);
+namespace {
 
-    m_instance = this;
-    namespace DU = util::directory;
-
-    QStringList filter("*.tmpl");
-    QStringList cssfilter("*.css");
-
-    // Preload global display templates from disk:
-    QDir td = DU::getDisplayTemplatesDir();
-    Q_FOREACH(const QString &file, td.entryList(filter, QDir::Files | QDir::Readable))
-        loadTemplate(td.canonicalPath() + "/" + file);
-
-    // Load app stylesheets
-    Q_FOREACH(const QString &file, td.entryList(cssfilter, QDir::Files | QDir::Readable))
-    	loadCSSTemplate(td.canonicalPath() + "/" + file);
-
-    /*
-      Preload user display templates from disk, overriding any global templates
-      with the same file name:
-    */
-    QDir utd = DU::getUserDisplayTemplatesDir();
-    Q_FOREACH(const QString &file, utd.entryList(filter, QDir::Files | QDir::Readable))
-        loadTemplate(utd.canonicalPath() + "/" + file);
-
-    if (m_cssMap.contains(defaultTemplateName())) {
-        errorMessage = QString::null;
-    } else {
-        errorMessage = QObject::tr("Default template \"%1\" not found!")
-                       .arg(defaultTemplateName());
-    }
+inline QString readFileToString(const QString & filename) {
+    QFile f(filename);
+    return f.open(QIODevice::ReadOnly) ? QTextStream(&f).readAll() : QString();
 }
 
-QString CDisplayTemplateMgr::fillTemplate(const QString &name,
-                                          const QString &content,
-                                          const Settings &settings)
+} // anonymous namespace
+
+CDisplayTemplateMgr * CDisplayTemplateMgr::m_instance = 0;
+
+CDisplayTemplateMgr::CDisplayTemplateMgr(QString & errorMessage) {
+    Q_ASSERT(m_instance == 0);
+    m_instance = this;
+
+    {
+        namespace DU = util::directory;
+        const QDir::Filters readableFileFilter(QDir::Files | QDir::Readable);
+        const QDir & td = DU::getDisplayTemplatesDir(); // Global template directory
+        const QDir & utd = DU::getUserDisplayTemplatesDir(); // User template directory
+
+        // Load regular templates:
+        {
+            const QStringList filter("*.tmpl");
+            // Preload global display templates from disk:
+            Q_FOREACH(const QString & file, td.entryList(filter, readableFileFilter))
+                loadTemplate(td.canonicalPath() + "/" + file);
+            // Preload user display templates from disk:
+            Q_FOREACH(const QString & file, utd.entryList(filter, readableFileFilter))
+                loadTemplate(utd.canonicalPath() + "/" + file);
+        }
+
+        if (!m_templateMap.contains(CSSTEMPLATEBASE)) {
+            errorMessage = QObject::tr("CSS base template not found!");
+            return;
+        }
+
+        // Load CSS templates:
+        {
+            const QStringList cssfilter("*.css");
+            // Load global app stylesheets
+            Q_FOREACH(const QString & file, td.entryList(cssfilter, readableFileFilter))
+                loadCSSTemplate(td.canonicalPath() + "/" + file);
+            // Load user app stylesheets
+            Q_FOREACH(const QString & file, utd.entryList(cssfilter, readableFileFilter))
+                loadCSSTemplate(utd.canonicalPath() + "/" + file);
+        }
+    }
+
+    if (!m_cssMap.contains(defaultTemplateName())) {
+        errorMessage = QObject::tr("Default template \"%1\" not found!")
+                       .arg(defaultTemplateName());
+        return;
+    }
+
+    // Create template names cache:
+    m_availableTemplateNamesCache = m_templateMap.keys();
+    const bool b = m_availableTemplateNamesCache.removeOne(CSSTEMPLATEBASE);
+    Q_ASSERT(b);
+    m_availableTemplateNamesCache.append(m_cssMap.keys());
+    qSort(m_availableTemplateNamesCache);
+
+    errorMessage = QString::null;
+}
+
+QString CDisplayTemplateMgr::fillTemplate(const QString & name,
+                                          const QString & content,
+                                          const Settings & settings) const
 {
-    const QString templateName = m_cssMap.contains(name) ? name : defaultTemplateName();
+    Q_ASSERT(name != CSSTEMPLATEBASE);
+    Q_ASSERT(name.endsWith(".css") || name.endsWith(".tmpl"));
+    Q_ASSERT(!name.endsWith(".css") || m_cssMap.contains(name));
+    Q_ASSERT(!name.endsWith(".tmpl") || m_templateMap.contains(name));
+    const bool templateIsCss = name.endsWith(".css");
 
     QString displayTypeString;
     QString moduleName;
@@ -100,10 +134,10 @@ QString CDisplayTemplateMgr::fillTemplate(const QString &name,
 
     if (moduleCount >= 2) {
         //create header for the modules
-        qDebug() << "There were more than 1 module, create headers";
+        // qDebug() << "There were more than 1 module, create headers";
         QString header;
 
-        Q_FOREACH(const CSwordModuleInfo *mi, settings.modules) {
+        Q_FOREACH(const CSwordModuleInfo * mi, settings.modules) {
             header.append("<th style=\"width:")
             .append(QString::number(int( 100.0 / (float)moduleCount )))
             .append("%;\">")
@@ -119,76 +153,71 @@ QString CDisplayTemplateMgr::fillTemplate(const QString &name,
     }
 
     QString langCSS;
-    const CLanguageMgr::LangMap & langMap = CLanguageMgr::instance()->availableLanguages();
-
-    static const QString langStyleString = "*[lang=%1]{font-family:%2;"
-                                           "font-size:%3pt;font-weight:%4;"
-                                           "font-style:%5}";
-    Q_FOREACH (const CLanguageMgr::Language * const lang, langMap) {
-        if (lang->abbrev().isEmpty())
-            continue;
-
-        BtConfig::FontSettingsPair fp = btConfig().getFontForLanguage(*lang);
-        if (!fp.first)
-            continue;
-
-        const QFont & f = fp.second;
-
-        langCSS.append(langStyleString.arg(lang->abbrev(),
-                                           f.family(),
-                                           QString::number(f.pointSize()),
-                                           f.bold() ? "bold" : "normal",
-                                           f.italic() ? "italic" : "normal"));
+    {
+        const QFont & f = btConfig().getDefaultFont();
+        langCSS.append("#content{font-family:").append(f.family())
+               .append(";font-size:").append(QString::number(f.pointSizeF(), 'f'))
+               .append("pt;font-weight:").append(f.bold() ? "bold" : "normal")
+               .append(";font-style:").append(f.italic() ? "italic" : "normal")
+               .append('}');
     }
-    const QFont & defaultFont = btConfig().getDefaultFont();
-    static const QString contentStyleString = "#content{font-family:%1;"
-                                              "font-size:%2pt;font-weight:%3;"
-                                              "font-style:%4;}";
-    langCSS.prepend(contentStyleString.arg(
-            defaultFont.family(),
-            QString::number(defaultFont.pointSize()),
-            defaultFont.bold() ? "bold" : "normal",
-            defaultFont.italic() ? "italic" : "normal"));
+    {
+        const CLanguageMgr::LangMap & langMap = CLanguageMgr::instance()->availableLanguages();
+        Q_FOREACH (const CLanguageMgr::Language * lang, langMap) {
+            if (lang->abbrev().isEmpty())
+                continue;
 
-    // Template stylesheet
+            BtConfig::FontSettingsPair fp = btConfig().getFontForLanguage(*lang);
+            if (fp.first) {
+                const QFont & f = fp.second;
 
+                langCSS.append("*[lang=").append(lang->abbrev()).append("]{")
+                       .append("font-family:").append(f.family())
+                       .append(";font-size:").append(QString::number(f.pointSizeF(), 'f'))
+                       .append("pt;font-weight:").append(f.bold() ? "bold" : "normal")
+                       .append(";font-style:").append(f.italic() ? "italic" : "normal")
+                       .append('}');
+            }
+        }
+    }
 
-//     qWarning("Outputing unformated text");
-    const QString t = QString(m_templateMap[ "Basic.tmpl" ]) //don't change the map's content directly, use  a copy
-                      .replace("#TITLE#", settings.title)
-                      .replace("#LANG_ABBREV#", settings.langAbbrev.isEmpty() ? QString("en") : settings.langAbbrev)
-                      .replace("#DISPLAYTYPE#", displayTypeString)
-                      .replace("#LANG_CSS#", langCSS)
-                      .replace("#PAGE_DIRECTION#", settings.pageDirection)
-                      .replace("#CONTENT#", newContent)
-                      .replace("#THEME_STYLE#", m_cssMap[ templateName ])
-                      .replace("#MODTYPE#", displayTypeString)
-                      .replace("#MODNAME#", moduleName)
-                      .replace("#MODULE_STYLESHEET#", QString(""));	// Let's fix this!
+    namespace DU = util::directory;
+    QString output(m_templateMap[templateIsCss
+                                 ? QString(CSSTEMPLATEBASE)
+                                 : name]); // don't change the map's content directly, use a copy
+    output.replace("#TITLE#", settings.title)
+          .replace("#LANG_ABBREV#", settings.langAbbrev)
+          .replace("#DISPLAYTYPE#", displayTypeString)
+          .replace("#LANG_CSS#", langCSS)
+          .replace("#PAGE_DIRECTION#", settings.textDirectionAsHtmlDirAttr())
+          .replace("#CONTENT#", newContent)
+          .replace("#MODTYPE#", displayTypeString)
+          .replace("#MODNAME#", moduleName)
+          .replace("#DISPLAY_TEMPLATES_PATH#", DU::getDisplayTemplatesDir().absolutePath());
 
-    return t;
+    if (templateIsCss)
+        output.replace("#THEME_STYLE#", readFileToString(m_cssMap[name]));
+
+    return output;
 }
 
 QString CDisplayTemplateMgr::activeTemplateName() {
     const QString tn = btConfig().value<QString>("GUI/activeTemplateName", QString());
-    if (tn.isEmpty())
-        return defaultTemplateName();
-
-    return tn;
+    return tn.isEmpty() ? defaultTemplateName() : tn;
 }
 
-void CDisplayTemplateMgr::loadTemplate(const QString &filename) {
-    QFile f(filename);
-    if (f.open(QIODevice::ReadOnly)) {
-        QString fileContent = QTextStream(&f).readAll();
-
-        if (!fileContent.isEmpty()) {
-            m_templateMap[QFileInfo(f).fileName()] = fileContent;
-        }
-    }
+void CDisplayTemplateMgr::loadTemplate(const QString & filename) {
+    Q_ASSERT(filename.endsWith(".tmpl"));
+    Q_ASSERT(QFileInfo(filename).isFile());
+    const QString templateString = readFileToString(filename);
+    if (!templateString.isEmpty())
+        m_templateMap.insert(QFileInfo(filename).fileName(), templateString);
 }
 
-void CDisplayTemplateMgr::loadCSSTemplate(const QString &filename) {
-    QFile f(filename);
-    m_cssMap[QFileInfo(f).fileName()] = QString("file://") + filename;
+void CDisplayTemplateMgr::loadCSSTemplate(const QString & filename) {
+    Q_ASSERT(filename.endsWith(".css"));
+    const QFileInfo fi(filename);
+    Q_ASSERT(fi.isFile());
+    if (fi.isReadable())
+        m_cssMap.insert(fi.fileName(), filename);
 }

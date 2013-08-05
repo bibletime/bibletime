@@ -21,6 +21,7 @@
 #include "frontend/settingsdialogs/btfontchooserwidget.h"
 #include "frontend/settingsdialogs/cconfigurationdialog.h"
 #include "util/cresmgr.h"
+#include "util/geticon.h"
 #include "util/tool.h"
 
 // Sword includes:
@@ -29,7 +30,7 @@
 
 
 BtFontSettingsPage::BtFontSettingsPage(CConfigurationDialog *parent)
-        : BtConfigDialog::Page(bApp->getIcon(CResMgr::settings::fonts::icon), parent)
+        : BtConfigDialog::Page(util::getIcon(CResMgr::settings::fonts::icon), parent)
 {
     m_languageLabel = new QLabel(this);
     m_languageComboBox = new QComboBox(this);
@@ -63,7 +64,7 @@ BtFontSettingsPage::BtFontSettingsPage(CConfigurationDialog *parent)
     for (FontMap::ConstIterator it = m_fontMap.constBegin(); it != m_fontMap.constEnd(); ++it) {
         const QString &k = it.key();
         if (m_fontMap[k].first) { // show font icon
-            m_languageComboBox->addItem(bApp->getIcon("fonts.svg"), k);
+            m_languageComboBox->addItem(util::getIcon("fonts.svg"), k);
         } else { // don't show icon for font
             m_languageComboBox->addItem(k);
         }
@@ -142,7 +143,7 @@ void BtFontSettingsPage::useOwnFontClicked(bool isOn) {
     m_fontChooser->setEnabled(isOn);
     m_fontMap[m_languageComboBox->currentText()].first = isOn;
     m_languageComboBox->setItemIcon(m_languageComboBox->currentIndex(),
-                                    isOn ? bApp->getIcon("fonts.svg") : QIcon());
+                                    isOn ? util::getIcon("fonts.svg") : QIcon());
 }
 
 void BtFontSettingsPage::retranslateUi() {

@@ -27,10 +27,11 @@
 #include "frontend/displaywindow/creadwindow.h"
 #include "frontend/settingsdialogs/cconfigurationdialog.h"
 #include "util/cresmgr.h"
+#include "util/geticon.h"
 
 
 CAcceleratorSettingsPage::CAcceleratorSettingsPage(CConfigurationDialog *parent)
-        : BtConfigDialog::Page(bApp->getIcon(CResMgr::settings::keys::icon), parent)
+        : BtConfigDialog::Page(util::getIcon(CResMgr::settings::keys::icon), parent)
 {
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
 

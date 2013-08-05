@@ -24,8 +24,6 @@ class QLabel;
 
 class BtModuleChooserDialog : public QDialog {
     Q_OBJECT
-    public:
-        virtual ~BtModuleChooserDialog();
 
     protected:
         explicit BtModuleChooserDialog(QWidget *parent = 0, Qt::WindowFlags flags = 0);

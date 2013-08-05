@@ -14,7 +14,7 @@
 #include <QFile>
 #include <QFileInfo>
 #include "backend/managers/cswordbackend.h"
-#include "frontend/bookshelfmanager/btinstallmgr.h"
+#include "backend/btinstallmgr.h"
 #include "util/directory.h"
 #include "util/dialogutil.h"
 

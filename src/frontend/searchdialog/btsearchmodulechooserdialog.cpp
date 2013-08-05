@@ -43,10 +43,6 @@ BtSearchModuleChooserDialog::BtSearchModuleChooserDialog(QWidget *parent,
     retranslateUi();
 }
 
-BtSearchModuleChooserDialog::~BtSearchModuleChooserDialog() {
-    // Intentionally empty
-}
-
 void BtSearchModuleChooserDialog::retranslateUi() {
     setWindowTitle(tr("Works to Search in"));
     util::tool::initExplanationLabel(label(), QString::null,

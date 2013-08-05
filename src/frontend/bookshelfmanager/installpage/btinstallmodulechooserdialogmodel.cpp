@@ -32,10 +32,6 @@ BtInstallModuleChooserDialogModel::BtInstallModuleChooserDialogModel(
             Qt::DirectConnection);
 }
 
-BtInstallModuleChooserDialogModel::~BtInstallModuleChooserDialogModel() {
-    // Intentionally empty
-}
-
 QVariant BtInstallModuleChooserDialogModel::data(const QModelIndex &i, int role) const {
     switch (role) {
         case Qt::BackgroundRole:
@@ -111,14 +107,11 @@ void BtInstallModuleChooserDialogModel::parentDataChanged(const QModelIndex &top
     m_dataChangedFired = false;
 }
 
-bool BtInstallModuleChooserDialogModel::isMulti(CSwordModuleInfo *m1) const {
-    if (m1 != 0 && checkedModules().contains(m1)) {
-        Q_FOREACH(CSwordModuleInfo *m2, m_modules.keys()) {
-            if (m1 != m2 && checkedModules().contains(m2) && m1->name() == m2->name()) {
+bool BtInstallModuleChooserDialogModel::isMulti(CSwordModuleInfo * m1) const {
+    if (m1 != 0 && checkedModules().contains(m1))
+        Q_FOREACH (CSwordModuleInfo * m2, modules())
+            if (m1 != m2 && checkedModules().contains(m2) && m1->name() == m2->name())
                 return true;
-            }
-        }
-    }
     return false;
 }
 

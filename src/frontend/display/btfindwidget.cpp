@@ -17,6 +17,7 @@
 #include "QToolButton"
 #include "bibletimeapp.h"
 #include "util/cresmgr.h"
+#include "util/geticon.h"
 
 
 BtFindWidget::BtFindWidget(QWidget* parent)
@@ -42,7 +43,7 @@ void BtFindWidget::createLayout() {
 
 void BtFindWidget::createToolButton(const QString& iconName, const QString& text, const char* slot) {
     QToolButton* button = new QToolButton(this);
-    button->setIcon(bApp->getIcon(iconName));
+    button->setIcon(util::getIcon(iconName));
     button->setIconSize(QSize(16,16));
     button->setText(text);
     button->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);

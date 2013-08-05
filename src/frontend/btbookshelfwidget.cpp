@@ -32,6 +32,7 @@
 #include "frontend/btbookshelfview.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
+#include "util/geticon.h"
 
 
 BtBookshelfWidget::BtBookshelfWidget(QWidget *parent, Qt::WindowFlags flags)
@@ -60,10 +61,6 @@ BtBookshelfWidget::BtBookshelfWidget(QWidget *parent, Qt::WindowFlags flags)
             this,       SLOT(slotShowContextMenu(QPoint)));
     connect(m_treeView, SIGNAL(moduleContextMenuActivated(CSwordModuleInfo*, QPoint)),
             this,       SLOT(slotShowItemContextMenu(CSwordModuleInfo*, QPoint)));
-}
-
-BtBookshelfWidget::~BtBookshelfWidget() {
-    // Intentionally empty
 }
 
 void BtBookshelfWidget::setSourceModel(QAbstractItemModel *model) {
@@ -100,7 +97,7 @@ void BtBookshelfWidget::initActions() {
     namespace RM = CResMgr::mainIndex;
 
     m_showHideAction = new QAction(this);
-    m_showHideAction->setIcon(bApp->getIcon("layer-visible-on.svg"));
+    m_showHideAction->setIcon(util::getIcon("layer-visible-on.svg"));
     m_showHideAction->setCheckable(true);
     connect(m_showHideAction, SIGNAL(toggled(bool)),
             m_postFilterModel, SLOT(setShowHidden(bool)));

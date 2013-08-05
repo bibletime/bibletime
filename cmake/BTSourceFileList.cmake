@@ -18,6 +18,8 @@ SET(bibletime_SRC_BACKEND
     src/backend/btmoduletreeitem.cpp
     src/backend/cswordmodulesearch.cpp
     src/backend/btinstallbackend.cpp
+    src/backend/btinstallmgr.cpp
+    src/backend/btinstallthread.cpp
 )
 
 SOURCE_GROUP("src\\backend" FILES ${bibletime_SRC_BACKEND})
@@ -108,6 +110,7 @@ SET(bibletime_SRC_UTIL
     src/util/dialogutil.cpp
     src/util/directory.cpp
     src/util/btmodules.cpp
+    src/util/geticon.cpp
     src/util/tool.cpp
 )
 
@@ -137,7 +140,6 @@ SOURCE_GROUP("src\\frontend" FILES ${bibletime_SRC_FRONTEND})
 SET(bibletime_SRC_FRONTEND_BOOKSHELFMANAGER
     # Bookshelf manager frontend:
     src/frontend/bookshelfmanager/btconfigdialog.cpp
-    src/frontend/bookshelfmanager/btinstallmgr.cpp
     src/frontend/bookshelfmanager/btmodulemanagerdialog.cpp
     src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp
 )
@@ -159,7 +161,6 @@ SET(bibletime_SRC_FRONTEND_BOOKSHELFMANAGER_INSTALLPAGE
     src/frontend/bookshelfmanager/installpage/btinstallpageworkswidget.cpp
     src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp
     src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp
-    src/frontend/bookshelfmanager/installpage/btinstallthread.cpp
     src/frontend/bookshelfmanager/installpage/btinstallpagemodel.cpp
     src/frontend/bookshelfmanager/installpage/btrefreshprogressdialog.cpp
 )
@@ -299,9 +300,6 @@ SOURCE_GROUP("src\\frontend\\displaywindow" FILES ${bibletime_SRC_FRONTEND_DISPL
 
 # Mocable headers:
 SET(bibletime_COMMON_MOCABLE_HEADERS
-    src/bibletime.h
-    src/bibletimeapp.h
-    src/bibletime_dbus_adaptor.h
     src/backend/bookshelfmodel/btbookshelffiltermodel.h
     src/backend/bookshelfmodel/btbookshelfmodel.h
     src/backend/bookshelfmodel/btbookshelftreemodel.h
@@ -313,13 +311,17 @@ SET(bibletime_COMMON_MOCABLE_HEADERS
     src/backend/drivers/cswordmoduleinfo.h
     src/backend/managers/cswordbackend.h
     src/util/btsignal.h
+    src/backend/btinstallmgr.h
+    src/backend/btinstallthread.h
 )
 
 SET(bibletime_FRONTEND_DESKTOP_MOCABLE_HEADERS
+    src/bibletime.h
+    src/bibletimeapp.h
+    src/bibletime_dbus_adaptor.h
     src/frontend/bookmarks/bteditbookmarkdialog.h
     src/frontend/bookmarks/cbookmarkindex.h
     src/frontend/bookshelfmanager/btconfigdialog.h
-    src/frontend/bookshelfmanager/btinstallmgr.h
     src/frontend/bookshelfmanager/btmodulemanagerdialog.h
     src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.h
     src/frontend/bookshelfmanager/indexpage/btindexpage.h
@@ -329,7 +331,6 @@ SET(bibletime_FRONTEND_DESKTOP_MOCABLE_HEADERS
     src/frontend/bookshelfmanager/installpage/btinstallpageworkswidget.h
     src/frontend/bookshelfmanager/installpage/btinstallpathdialog.h
     src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.h
-    src/frontend/bookshelfmanager/installpage/btinstallthread.h
     src/frontend/bookshelfmanager/installpage/btinstallpagemodel.h
     src/frontend/bookshelfmanager/installpage/btrefreshprogressdialog.h
     src/frontend/bookshelfmanager/removepage/btremovepage.h
@@ -409,7 +410,6 @@ SET(bibletime_FRONTEND_DESKTOP_MOCABLE_HEADERS
 )
 
 SET(bibletime_COMMON_SOURCES
-    ${bibletime_SRC}
     ${bibletime_SRC_BACKEND}
     ${bibletime_SRC_BACKEND_BOOKSHELFMODEL}
     ${bibletime_SRC_BACKEND_CONFIG}
@@ -421,6 +421,7 @@ SET(bibletime_COMMON_SOURCES
     ${bibletime_SRC_UTIL})
 
 SET(bibletime_FRONTEND_DESKTOP_SOURCES
+    ${bibletime_SRC}
     ${bibletime_SRC_FRONTEND}
     ${bibletime_SRC_FRONTEND_BOOKMARKS}
     ${bibletime_SRC_FRONTEND_BOOKSHELFMANAGER}
@@ -437,13 +438,115 @@ SET(bibletime_FRONTEND_DESKTOP_SOURCES
     ${bibletime_SRC_FRONTEND_DISPLAYWINDOW}
 )
 
+
+
+SET(bibletime_SRC_MOBILE_SOURCES
+    src/mobile/bibletime.cpp
+    src/mobile/bibletime.h
+    src/mobile/btmmain.cpp
+    src/mobile/bibletimeapp.cpp
+)
+
+SET(bibletime_SRC_MOBILE_UTIL_SOURCES
+    src/mobile/util/findqmlobject.cpp
+    src/mobile/util/findqmlobject.h
+)
+
+SET(bibletime_SRC_MOBILE_UI_SOURCES
+    src/mobile/bookshelfmanager/installmanager.cpp
+    src/mobile/bookshelfmanager/installmanager.h
+    src/mobile/bookshelfmanager/installprogress.cpp
+    src/mobile/bookshelfmanager/installprogress.h
+    src/mobile/bookshelfmanager/installsourcesmanager.cpp
+    src/mobile/bookshelfmanager/installsourcesmanager.h
+    src/mobile/bookshelfmanager/installsources.cpp
+    src/mobile/bookshelfmanager/installsources.h
+    src/mobile/keychooser/bookkeychooser.cpp
+    src/mobile/keychooser/bookkeychooser.h
+    src/mobile/keychooser/versechooser.cpp
+    src/mobile/keychooser/versechooser.h
+    src/mobile/ui/bookmodulechooser.cpp
+    src/mobile/ui/bookmodulechooser.h
+    src/mobile/ui/btstyle.cpp
+    src/mobile/ui/btstyle.h
+    src/mobile/ui/btbookinterface.cpp
+    src/mobile/ui/btbookinterface.h
+    src/mobile/ui/btwindowinterface.cpp
+    src/mobile/ui/btwindowinterface.h
+    src/mobile/ui/modulechooser.cpp
+    src/mobile/ui/modulechooser.h
+    src/mobile/ui/moduleinterface.cpp
+    src/mobile/ui/moduleinterface.h
+    src/mobile/ui/qtquick2applicationviewer.cpp
+    src/mobile/ui/qtquick2applicationviewer.h
+    src/mobile/ui/gridchooser.cpp
+    src/mobile/ui/gridchooser.h
+    src/mobile/ui/roleitemmodel.cpp
+    src/mobile/ui/roleitemmodel.h
+    src/mobile/ui/viewmanager.cpp
+    src/mobile/ui/viewmanager.h
+)
+
+SET(bibletime_SRC_MOBILE_MOCABLE_HEADERS
+    src/mobile/bookshelfmanager/installmanager.h
+    src/mobile/bookshelfmanager/installprogress.h
+    src/mobile/bookshelfmanager/installsourcesmanager.h
+    src/mobile/bookshelfmanager/installsources.h
+    src/mobile/keychooser/bookkeychooser.h
+    src/mobile/keychooser/versechooser.h
+    src/mobile/bibletime.h
+    src/mobile/bibletimeapp.h
+    src/mobile/ui/bookmodulechooser.h
+    src/mobile/ui/btstyle.h
+    src/mobile/ui/btbookinterface.h
+    src/mobile/ui/btwindowinterface.h
+    src/mobile/ui/modulechooser.h
+    src/mobile/ui/moduleinterface.h
+    src/mobile/ui/qtquick2applicationviewer.h
+    src/mobile/ui/gridchooser.h
+    src/mobile/ui/viewmanager.h
+)
+
+SET(bibletime_MOBILE_QML_FILES
+    src/mobile/qml/BookWindow.qml
+    src/mobile/qml/GridChooserButton.qml
+    src/mobile/qml/GridChooser.qml
+    src/mobile/qml/ImageButton.qml
+    src/mobile/qml/InstallManagerChooser.qml
+    src/mobile/qml/ListTextView.qml
+    src/mobile/qml/ListWorksView.qml
+    src/mobile/qml/main.qml
+    src/mobile/qml/MainToolbar.qml
+    src/mobile/qml/Menus.qml
+    src/mobile/qml/MenuButton.qml
+    src/mobile/qml/MenuView.qml
+    src/mobile/qml/ModuleChooser.qml
+    src/mobile/qml/Progress.qml
+    src/mobile/qml/TreeChooser.qml
+    src/mobile/qml/Window.qml
+    src/mobile/qml/checkmark.svg
+    src/mobile/qml/leftarrow.svg
+    src/mobile/qml/rightarrow.svg
+)
+
+SET(bibletime_FRONTEND_MOBILE_SOURCES
+    ${bibletime_SRC_MOBILE_SOURCES}
+    ${bibletime_SRC_MOBILE_MOCABLE_HEADERS}
+    ${bibletime_SRC_MOBILE_UI_SOURCES}
+    ${bibletime_SRC_MOBILE_UTIL_SOURCES}
+)
+
+SET(bibletime_FRONTEND_MOBILE_MOCABLE_HEADERS
+    ${bibletime_SRC_MOBILE_MOCABLE_HEADERS}
+)
+
 # Default to building a desktop frontend:
 IF(NOT (DEFINED BIBLETIME_FRONTEND))
   SET(BIBLETIME_FRONTEND "DESKTOP")
 ENDIF(NOT (DEFINED BIBLETIME_FRONTEND))
 
 # Check for valid frontend:
-SET(bibletime_AVAILABLE_FRONTENDS DESKTOP)
+SET(bibletime_AVAILABLE_FRONTENDS DESKTOP MOBILE)
 #SET(bibletime_AVAILABLE_FRONTENDS DESKTOP QML_SYMBIAN)
 LIST(FIND bibletime_AVAILABLE_FRONTENDS ${BIBLETIME_FRONTEND} bibletime_FRONTEND_INDEX)
 IF(${bibletime_FRONTEND_INDEX} EQUAL -1)
@@ -462,3 +565,6 @@ SET(bibletime_SOURCES
 SET(bibletime_MOCABLE_HEADERS
     ${bibletime_COMMON_MOCABLE_HEADERS}
     ${bibletime_FRONTEND_${BIBLETIME_FRONTEND}_MOCABLE_HEADERS})
+SET(bibletime_QML_FILES
+    ${bibletime_${BIBLETIME_FRONTEND}_QML_FILES})
+

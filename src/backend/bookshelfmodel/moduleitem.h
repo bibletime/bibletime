@@ -24,22 +24,34 @@ class BtBookshelfTreeModel;
 namespace BookshelfModel {
 
 class ModuleItem: public Item {
-    public:
-        ModuleItem(CSwordModuleInfo *module, BtBookshelfTreeModel *parentModel);
 
-        /**
-          Reimplementation of Item::data() which dispatches all
-          requests to the parent model (BtBookshelfTreeModel).
-        */
-        virtual QVariant data(int role = Qt::DisplayRole) const;
+public: /* Methods: */
 
-        inline CSwordModuleInfo *moduleInfo() const {
-            return m_moduleInfo;
-        }
+    ModuleItem(CSwordModuleInfo & module,
+               BtBookshelfTreeModel & parentModel)
+        : Item(ITEM_MODULE)
+        , m_moduleInfo(module)
+        , m_parentModel(parentModel) {}
 
-    protected:
-        CSwordModuleInfo     *m_moduleInfo;
-        BtBookshelfTreeModel *m_parentModel;
+    /**
+      Reimplementation of Item::data() which dispatches all
+      requests to the parent model (BtBookshelfTreeModel).
+    */
+    virtual QVariant data(int role = Qt::DisplayRole) const;
+
+    inline CSwordModuleInfo & moduleInfo() const {
+        return m_moduleInfo;
+    }
+
+    inline virtual bool fitFor(const CSwordModuleInfo &) const {
+        return false;
+    }
+
+private: /* Fields: */
+
+    CSwordModuleInfo & m_moduleInfo;
+    BtBookshelfTreeModel & m_parentModel;
+
 };
 
 } // namespace BookshelfModel

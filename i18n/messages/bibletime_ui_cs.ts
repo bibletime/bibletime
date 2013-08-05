@@ -524,7 +524,7 @@
         <translation>&amp;Licence</translation>
     </message>
     <message>
-        <source>(c)1999-2011, The BibleTime Team</source>
+        <source>(c)1999-2013, The BibleTime Team</source>
         <translation></translation>
     </message>
     <message>
@@ -1178,11 +1178,15 @@
     </message>
     <message>
         <source>The languages which can be used for the biblical booknames</source>
-        <translation>Jazyky, které je možno použít pro jména biblických knih</translation>
+        <translation type="obsolete">Jazyky, které je možno použít pro jména biblických knih</translation>
     </message>
     <message>
         <source>Languages</source>
         <translation>Jazyky</translation>
+    </message>
+    <message>
+        <source>The languages which can be used for the biblical book names. Translations are provided by the Sword library.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2155,15 +2159,7 @@ shortcut</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>HTML files (*.html;*.HTML;*.HTM;*.htm)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>BibleTime Search Analysis</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Search text :</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2176,6 +2172,18 @@ shortcut</source>
     </message>
     <message>
         <source>Created by &lt;a href=&quot;http://www.bibletime.info/&quot;&gt;BibleTime&lt;/a&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>XHTML files (*.html *.HTML *.HTM *.htm);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search text:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Results by work and book</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3533,6 +3541,10 @@ Language name ppk</extracomment>
     <message>
         <source>See --help for details.</source>
         <translation>Pro podrobnosti použijte --help.</translation>
+    </message>
+    <message>
+        <source>CSS base template not found!</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Error while writing to file.</source>

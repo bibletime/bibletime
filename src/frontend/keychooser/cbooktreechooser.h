@@ -81,7 +81,7 @@ class CBookTreeChooser : public CKeyChooser {
 
     protected slots: // Protected slots
         void itemActivated( QTreeWidgetItem* item );
-        void setKey(QString& newKey);
+        void setKey(const QString & newKey);
 
     private:
         QList<const CSwordBookModuleInfo*> m_modules;

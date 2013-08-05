@@ -23,6 +23,7 @@
 #include "util/btsignal.h"
 #include "util/cresmgr.h"
 #include "util/dialogutil.h"
+#include "util/geticon.h"
 
 
 CPlainWriteWindow::CPlainWriteWindow(const QList<CSwordModuleInfo*> & moduleList, CMDIArea * parent)
@@ -230,7 +231,7 @@ void CPlainWriteWindow::initActions() {
 
 void CPlainWriteWindow::insertKeyboardActions( BtActionCollection* const a) {
     QAction* action = new QAction(
-        bApp->getIcon(CResMgr::displaywindows::commentaryWindow::syncWindow::icon),
+        util::getIcon(CResMgr::displaywindows::commentaryWindow::syncWindow::icon),
         tr("Sync with active Bible"),
         a
     );
@@ -240,7 +241,7 @@ void CPlainWriteWindow::insertKeyboardActions( BtActionCollection* const a) {
     a->addAction(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName, action);
 
     action = new QAction(
-        bApp->getIcon(CResMgr::displaywindows::writeWindow::saveText::icon),
+        util::getIcon(CResMgr::displaywindows::writeWindow::saveText::icon),
         tr("Save text"),
         a
     );
@@ -249,7 +250,7 @@ void CPlainWriteWindow::insertKeyboardActions( BtActionCollection* const a) {
     a->addAction(CResMgr::displaywindows::writeWindow::saveText::actionName, action);
 
     action = new QAction(
-        bApp->getIcon(CResMgr::displaywindows::writeWindow::deleteEntry::icon),
+        util::getIcon(CResMgr::displaywindows::writeWindow::deleteEntry::icon),
         tr("Delete current entry"),
         a
     );
@@ -258,7 +259,7 @@ void CPlainWriteWindow::insertKeyboardActions( BtActionCollection* const a) {
     a->addAction(CResMgr::displaywindows::writeWindow::deleteEntry::actionName, action);
 
     action = new QAction(
-        bApp->getIcon(CResMgr::displaywindows::writeWindow::restoreText::icon),
+        util::getIcon(CResMgr::displaywindows::writeWindow::restoreText::icon),
         tr("Restore original text"),
         a
     );

@@ -256,7 +256,7 @@ void CSearchAnalysisScene::saveAsHTML() {
     text += "</h1><p><span style=\"font-weight:bold\">";
     text += tr("Search text:");
     text += "</span>&nbsp;";
-    text += Qt::escape(CSearchDialog::getSearchDialog()->searchText());
+    text += QRegExp::escape(CSearchDialog::getSearchDialog()->searchText());
     text += "</p><table><caption>";
     text += tr("Results by work and book");
     text += "</caption><tr><th>";
@@ -265,7 +265,7 @@ void CSearchAnalysisScene::saveAsHTML() {
 
     for (RCI it = m_results.begin(); it != m_results.end(); ++it) {
         text += "<th>";
-        text += Qt::escape(it.key()->name());
+        text += QRegExp::escape(it.key()->name());
         text += "</th>";
     }
     text += "</tr>";
@@ -276,7 +276,7 @@ void CSearchAnalysisScene::saveAsHTML() {
     do {
         text += "<tr><td>";
         const QString keyBook(key.book());
-        text += Qt::escape(keyBook);
+        text += QRegExp::escape(keyBook);
         text += "</td>";
 
         int mi = 0; // Module index

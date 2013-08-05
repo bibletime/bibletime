@@ -14,7 +14,7 @@
 
 #include <QProgressDialog>
 
-#include "frontend/bookshelfmanager/btinstallmgr.h"
+#include "backend/btinstallmgr.h"
 
 
 class BtRefreshProgressDialog: public QProgressDialog {

@@ -20,6 +20,7 @@
 #include "bibletimeapp.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"
 #include "util/cresmgr.h"
+#include "util/geticon.h"
 
 
 BtModuleChooserButton::BtModuleChooserButton(BtModuleChooserBar *parent, CSwordModuleInfo::ModuleType mtype)
@@ -69,7 +70,7 @@ void BtModuleChooserButton::updateMenu(QStringList newModulesToUse, QString this
         }
     }
     m_noneAction->setChecked(m_hasModule ? false : true);
-    setIcon(bApp->getIcon(iconName()));
+    setIcon(util::getIcon(iconName()));
 
     if (m_hasModule) {
         setToolTip( QString(tr("Select a work [%1]")).arg(m_module) );

@@ -18,6 +18,7 @@
 #include "bibletimeapp.h"
 #include "frontend/settingsdialogs/cconfigurationdialog.h"
 #include "util/cresmgr.h"
+#include "util/geticon.h"
 #include "util/tool.h"
 
 // Sword includes:
@@ -29,7 +30,7 @@ typedef std::list<sword::SWBuf>::const_iterator SBLCI;
 
 
 BtLanguageSettingsPage::BtLanguageSettingsPage(CConfigurationDialog *parent)
-        : BtConfigDialog::Page(bApp->getIcon(CResMgr::settings::languages::icon), parent)
+        : BtConfigDialog::Page(util::getIcon(CResMgr::settings::languages::icon), parent)
 {
     m_swordLocaleCombo = new QComboBox(this);
     m_languageNamesLabel = new QLabel(this);
@@ -101,7 +102,7 @@ void BtLanguageSettingsPage::initSwordLocaleCombo() {
 
     const std::list<sword::SWBuf> locales = sword::LocaleMgr::getSystemLocaleMgr()->getAvailableLocales();
     for (SBLCI it = locales.begin(); it != locales.end(); ++it) {
-        const char * abbreviation = sword::LocaleMgr::getSystemLocaleMgr()->getLocale((*it).c_str())->getName();
+        const char * const abbreviation = sword::LocaleMgr::getSystemLocaleMgr()->getLocale((*it).c_str())->getName();
         const CLanguageMgr::Language * const l = CLanguageMgr::instance()->languageForAbbrev(abbreviation);
 
         if (l->isValid()) {
@@ -132,5 +133,7 @@ void BtLanguageSettingsPage::retranslateUi() {
     setHeaderText(tr("Languages"));
 
     m_languageNamesLabel->setText(tr("Language for names of Bible books:"));
-    m_swordLocaleCombo->setToolTip(tr("The languages which can be used for the biblical booknames"));
+    const QString toolTip(tr("The languages which can be used for the biblical book names. Translations are provided by the Sword library."));
+    m_languageNamesLabel->setToolTip(toolTip);
+    m_swordLocaleCombo->setToolTip(toolTip);
 }

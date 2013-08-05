@@ -72,10 +72,8 @@ class CBibleKeyChooser : public CKeyChooser  {
         void refreshContent();
 
     protected slots:
-        /**
-          Reimplemented from CKeyChooser::setModules().
-        */
-        virtual void setKey(QString& newKey);
+
+        virtual void setKey(const QString & newKey);
 
     private:
         BtBibleKeyWidget* w_ref;

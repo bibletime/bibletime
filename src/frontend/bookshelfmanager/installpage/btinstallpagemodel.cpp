@@ -27,10 +27,6 @@ BtInstallPageModel::BtInstallPageModel(const Grouping &grouping, QObject *parent
     setCheckable(true);
 }
 
-BtInstallPageModel::~BtInstallPageModel() {
-    // Intentionally empty
-}
-
 QVariant BtInstallPageModel::data(const QModelIndex &i, int role) const {
     switch (role) {
         case Qt::DisplayRole:

@@ -22,57 +22,57 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BibleTime</name>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="738"/>
+        <location filename="../../src/bibletime_init.cpp" line="740"/>
         <source>&amp;File</source>
         <translation>檔案(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="739"/>
+        <location filename="../../src/bibletime_init.cpp" line="741"/>
         <source>&amp;View</source>
         <translation>檢視(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="742"/>
+        <location filename="../../src/bibletime_init.cpp" line="744"/>
         <source>&amp;Search</source>
         <translation>搜尋(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="743"/>
+        <location filename="../../src/bibletime_init.cpp" line="745"/>
         <source>&amp;Window</source>
         <translation>視窗(&amp;W)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="751"/>
+        <location filename="../../src/bibletime_init.cpp" line="753"/>
         <source>Se&amp;ttings</source>
         <translation>設定(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="754"/>
+        <location filename="../../src/bibletime_init.cpp" line="756"/>
         <source>&amp;Help</source>
         <translation>幫助(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="116"/>
+        <location filename="../../src/bibletime_init.cpp" line="117"/>
         <source>&amp;Show toolbar</source>
         <translation>顯示工具列(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="109"/>
+        <location filename="../../src/bibletime_init.cpp" line="110"/>
         <source>&amp;Fullscreen mode</source>
         <translation>全螢幕模式(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="102"/>
+        <location filename="../../src/bibletime_init.cpp" line="103"/>
         <source>&amp;Quit</source>
         <translation>離開(&amp;Q)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="249"/>
+        <location filename="../../src/bibletime_init.cpp" line="250"/>
         <source>Open the Bible study HowTo included with BibleTime.&lt;br/&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
         <translation>開啟BibleTime內附的聖經研讀幫助.&lt;br/&gt;這個幫助是用來幫助你更有效率地研讀聖經的簡介.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="254"/>
+        <location filename="../../src/bibletime_init.cpp" line="255"/>
         <source>Information about the BibleTime program</source>
         <translation>有關BibleTime程式的資訊</translation>
     </message>
@@ -85,67 +85,67 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="obsolete">載入工作階段(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="747"/>
+        <location filename="../../src/bibletime_init.cpp" line="749"/>
         <source>&amp;Delete session</source>
         <translation>刪除工作階段(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="745"/>
+        <location filename="../../src/bibletime_init.cpp" line="747"/>
         <source>&amp;Arrangement mode</source>
         <translation>排列模式(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="142"/>
+        <location filename="../../src/bibletime_init.cpp" line="143"/>
         <source>&amp;Manual mode</source>
         <translation>手動模式(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="149"/>
+        <location filename="../../src/bibletime_init.cpp" line="150"/>
         <source>Auto-tile &amp;vertically</source>
         <translation>自動垂直並排(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="156"/>
+        <location filename="../../src/bibletime_init.cpp" line="157"/>
         <source>Auto-tile &amp;horizontally</source>
         <translation>自動水平並排(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="177"/>
+        <location filename="../../src/bibletime_init.cpp" line="178"/>
         <source>Auto-&amp;cascade</source>
         <translation>自動重疊顯示(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="184"/>
+        <location filename="../../src/bibletime_init.cpp" line="185"/>
         <source>&amp;Cascade</source>
         <translation>重疊顯示(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="198"/>
+        <location filename="../../src/bibletime_init.cpp" line="199"/>
         <source>Tile &amp;vertically</source>
         <translation>垂直並排(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="205"/>
+        <location filename="../../src/bibletime_init.cpp" line="206"/>
         <source>Tile &amp;horizontally</source>
         <translation>水平並排(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="219"/>
+        <location filename="../../src/bibletime_init.cpp" line="220"/>
         <source>Cl&amp;ose all windows</source>
         <translation>關閉所有視窗(&amp;o)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="222"/>
+        <location filename="../../src/bibletime_init.cpp" line="223"/>
         <source>Close all open windows inside BibleTime</source>
         <translation>關閉所有在BibleTime內開啟的視窗</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="239"/>
+        <location filename="../../src/bibletime_init.cpp" line="240"/>
         <source>&amp;Handbook</source>
         <translation>手冊(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="246"/>
+        <location filename="../../src/bibletime_init.cpp" line="247"/>
         <source>&amp;Bible Study Howto</source>
         <translation>如何研經(&amp;B)</translation>
     </message>
@@ -165,267 +165,267 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="105"/>
+        <location filename="../../src/bibletime_init.cpp" line="106"/>
         <source>Quit BibleTime</source>
         <translation>離開BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="112"/>
+        <location filename="../../src/bibletime_init.cpp" line="113"/>
         <source>Toggle fullscreen mode of the main window</source>
         <translation>切換主視窗的全螢幕模式</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="121"/>
+        <location filename="../../src/bibletime_init.cpp" line="122"/>
         <source>Search in &amp;open works...</source>
         <translation>在開啟的著作中搜尋(&amp;o)...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="128"/>
+        <location filename="../../src/bibletime_init.cpp" line="129"/>
         <source>Search in standard &amp;Bible...</source>
         <translation>在聖經中搜尋(&amp;B)...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="135"/>
+        <location filename="../../src/bibletime_init.cpp" line="136"/>
         <source>Save as &amp;new session...</source>
         <translation>儲存新工作階段(&amp;n)...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="138"/>
+        <location filename="../../src/bibletime_init.cpp" line="139"/>
         <source>Create and save a new session</source>
         <translation>建立並儲存新工作階段</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="145"/>
+        <location filename="../../src/bibletime_init.cpp" line="146"/>
         <source>Manually arrange the open windows</source>
         <translation>手動排列開啟的視窗</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="152"/>
+        <location filename="../../src/bibletime_init.cpp" line="153"/>
         <source>Automatically tile the open windows vertically (arrange side by side)</source>
         <translation>自動垂直堆列開啟的視窗 (邊與邊排列)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="159"/>
+        <location filename="../../src/bibletime_init.cpp" line="160"/>
         <source>Automatically tile the open windows horizontally (arrange on top of each other)</source>
         <translation>自動水平堆列開啟的視窗 (一個堆著一個排列)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="163"/>
+        <location filename="../../src/bibletime_init.cpp" line="164"/>
         <source>Auto-&amp;tile</source>
         <translation>自動堆列(&amp;t)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="166"/>
+        <location filename="../../src/bibletime_init.cpp" line="167"/>
         <source>Automatically tile the open windows</source>
         <translation>自動堆列開啟的視窗</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="170"/>
+        <location filename="../../src/bibletime_init.cpp" line="171"/>
         <source>Ta&amp;bbed</source>
         <translation>分頁(&amp;b)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="173"/>
+        <location filename="../../src/bibletime_init.cpp" line="174"/>
         <source>Automatically tab the open windows</source>
         <translation>自動分頁開啟的視窗</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="180"/>
+        <location filename="../../src/bibletime_init.cpp" line="181"/>
         <source>Automatically cascade the open windows</source>
         <translation>自動重疊開啟的視窗</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="187"/>
+        <location filename="../../src/bibletime_init.cpp" line="188"/>
         <source>Cascade the open windows</source>
         <translation>重疊顯示開啟的視窗</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="191"/>
+        <location filename="../../src/bibletime_init.cpp" line="192"/>
         <source>&amp;Tile</source>
         <translation>堆列(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="194"/>
+        <location filename="../../src/bibletime_init.cpp" line="195"/>
         <source>Tile the open windows</source>
         <translation>堆列開啟的視窗</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="201"/>
+        <location filename="../../src/bibletime_init.cpp" line="202"/>
         <source>Vertically tile (arrange side by side) the open windows</source>
         <translation>垂直堆列(邊靠邊排列)開啟的視窗</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="208"/>
+        <location filename="../../src/bibletime_init.cpp" line="209"/>
         <source>Horizontally tile (arrange on top of each other) the open windows</source>
         <translation>水平堆列(一個疊一個排列)開啟的視窗</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="212"/>
+        <location filename="../../src/bibletime_init.cpp" line="213"/>
         <source>Close &amp;window</source>
         <translation>關閉視窗(&amp;w)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="215"/>
+        <location filename="../../src/bibletime_init.cpp" line="216"/>
         <source>Close the current open window</source>
         <translation>關閉目前開啟的視窗</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="226"/>
+        <location filename="../../src/bibletime_init.cpp" line="227"/>
         <source>&amp;Configure BibleTime...</source>
         <translation>設定BibleTime(&amp;C)...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="228"/>
+        <location filename="../../src/bibletime_init.cpp" line="229"/>
         <source>Set BibleTime&apos;s preferences</source>
         <translation>設定 BibleTIme 的個人設定</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="232"/>
+        <location filename="../../src/bibletime_init.cpp" line="233"/>
         <source>Bookshelf &amp;Manager...</source>
         <translation>書架管理員(&amp;M)...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="235"/>
+        <location filename="../../src/bibletime_init.cpp" line="236"/>
         <source>Configure your bookshelf and install/update/remove/index works</source>
         <translation>設定你的書架並安裝/更新/移除/建立索引 書目</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="242"/>
+        <location filename="../../src/bibletime_init.cpp" line="243"/>
         <source>Open BibleTime&apos;s handbook</source>
         <translation>開啟 BibleTime 的使用手冊</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="258"/>
+        <location filename="../../src/bibletime_init.cpp" line="259"/>
         <source>&amp;Tip of the day...</source>
         <translation>每日秘訣(&amp;T)...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="261"/>
+        <location filename="../../src/bibletime_init.cpp" line="262"/>
         <source>Show tips about BibleTime</source>
         <translation>顯示 BibleTime 的小秘訣</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="400"/>
+        <location filename="../../src/bibletime_init.cpp" line="401"/>
         <source>Toggle visibility of the bookshelf window</source>
         <translation>書架視窗瀏覽切換</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="404"/>
+        <location filename="../../src/bibletime_init.cpp" line="405"/>
         <source>Toggle visibility of the bookmarks window</source>
         <translation>書籤視窗瀏覽切換</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="408"/>
+        <location filename="../../src/bibletime_init.cpp" line="409"/>
         <source>Toggle visibility of the mag window</source>
         <translation>雜誌視窗瀏覽切換</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="732"/>
+        <location filename="../../src/bibletime_init.cpp" line="734"/>
         <source>Main toolbar</source>
         <translation>主要工具列</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="733"/>
+        <location filename="../../src/bibletime_init.cpp" line="735"/>
         <source>Navigation toolbar</source>
         <translation>瀏覽工具列</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="734"/>
+        <location filename="../../src/bibletime_init.cpp" line="736"/>
         <source>Works toolbar</source>
         <translation>書目工具列</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="735"/>
+        <location filename="../../src/bibletime_init.cpp" line="737"/>
         <source>Tools toolbar</source>
         <translation>工具組工具列</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="736"/>
+        <location filename="../../src/bibletime_init.cpp" line="738"/>
         <source>Format toolbar</source>
         <translation>格式工具列</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="746"/>
+        <location filename="../../src/bibletime_init.cpp" line="748"/>
         <source>Sw&amp;itch session</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="774"/>
+        <location filename="../../src/bibletime_init.cpp" line="776"/>
         <source>Show main toolbar</source>
         <translation>顯示主工具列</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="777"/>
+        <location filename="../../src/bibletime_init.cpp" line="779"/>
         <source>Show navigation bar</source>
         <translation>顯示瀏覽列</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="780"/>
+        <location filename="../../src/bibletime_init.cpp" line="782"/>
         <source>Show works toolbar</source>
         <translation>顯示書目工具列</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="783"/>
+        <location filename="../../src/bibletime_init.cpp" line="785"/>
         <source>Show tools toolbar</source>
         <translation>顯示工具組工具列</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="786"/>
+        <location filename="../../src/bibletime_init.cpp" line="788"/>
         <source>Show formatting toolbar</source>
         <translation>顯示格式化工具列</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="789"/>
+        <location filename="../../src/bibletime_init.cpp" line="791"/>
         <source>Show bookshelf</source>
         <translation>顯示書架</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="792"/>
+        <location filename="../../src/bibletime_init.cpp" line="794"/>
         <source>Show bookmarks</source>
         <translation>顯示書籤</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="795"/>
+        <location filename="../../src/bibletime_init.cpp" line="797"/>
         <source>Show mag</source>
         <translation>顯示雜誌</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="740"/>
+        <location filename="../../src/bibletime_init.cpp" line="742"/>
         <source>Toolbars</source>
         <translation>工具列</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="771"/>
+        <location filename="../../src/bibletime_init.cpp" line="773"/>
         <source>Show toolbars in text windows</source>
         <translation>以文字視窗顯示工具列</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="798"/>
+        <location filename="../../src/bibletime_init.cpp" line="800"/>
         <source>Show parallel text headers</source>
         <translation>顯示平行文字標題</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="744"/>
+        <location filename="../../src/bibletime_init.cpp" line="746"/>
         <source>O&amp;pen windows</source>
         <translation>開啟視窗(&amp;p)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="757"/>
+        <location filename="../../src/bibletime_init.cpp" line="759"/>
         <source>Show &quot;Whats this widget&quot; dialog</source>
         <translation>顯示 &quot;這是哪個工具面板&quot; 訊息</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="942"/>
+        <location filename="../../src/bibletime_init.cpp" line="953"/>
         <source>Whats this widget?</source>
         <translation>這是哪個工具面板?</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="124"/>
+        <location filename="../../src/bibletime_init.cpp" line="125"/>
         <source>Search in all works that are currently open</source>
         <translation>在目前開啟的所有著作中搜尋</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="131"/>
+        <location filename="../../src/bibletime_init.cpp" line="132"/>
         <source>Search in the standard Bible</source>
         <translation>在標準聖經中搜尋</translation>
     </message>
@@ -470,17 +470,17 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>你提供的解鎖密碼無法正確取消鎖定該模組. 請重新試試.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="253"/>
+        <location filename="../../src/bibletime_init.cpp" line="254"/>
         <source>&amp;About BibleTime</source>
         <translation>關於 BibleTime (&amp;A)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="730"/>
+        <location filename="../../src/bibletime_init.cpp" line="732"/>
         <source>Bookmarks</source>
         <translation>書籤</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="731"/>
+        <location filename="../../src/bibletime_init.cpp" line="733"/>
         <source>Mag</source>
         <translation>雜誌</translation>
     </message>
@@ -527,8 +527,8 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="134"/>
-        <source>(c)1999-2011, The BibleTime Team</source>
-        <translation>(c)1999-2011, BibleTime 團隊</translation>
+        <source>(c)1999-2013, The BibleTime Team</source>
+        <translation>(c)1999-2013, BibleTime 團隊</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="141"/>
@@ -1502,8 +1502,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="135"/>
+        <source>The languages which can be used for the biblical book names. Translations are provided by the Sword library.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>The languages which can be used for the biblical booknames</source>
-        <translation>可以用來當作聖經書名的語言</translation>
+        <translation type="obsolete">可以用來當作聖經書名的語言</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="132"/>
@@ -2873,37 +2877,50 @@ shortcut</source>
 <context>
     <name>CSearchAnalysisScene</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="228"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="230"/>
         <source>Save Search Analysis</source>
         <translation>儲存搜尋分析</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="228"/>
         <source>HTML files (*.html;*.HTML;*.HTM;*.htm)</source>
-        <translation>HTML 檔案 (*.html;*.HTML;*.HTM;*.htm)</translation>
+        <translation type="obsolete">HTML 檔案 (*.html;*.HTML;*.HTM;*.htm)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="245"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="241"/>
         <source>BibleTime Search Analysis</source>
         <translation>BibleTimee搜尋分析</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="246"/>
         <source>Search text :</source>
-        <translation>搜索文字 :</translation>
+        <translation type="obsolete">搜索文字 :</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="248"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="232"/>
+        <source>XHTML files (*.html *.HTML *.HTM *.htm);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="257"/>
+        <source>Search text:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="261"/>
+        <source>Results by work and book</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="263"/>
         <source>Book</source>
         <translation>書目</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="249"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="291"/>
         <source>Total hits</source>
         <translation>總點閱次數</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="283"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="302"/>
         <source>Created by &lt;a href=&quot;http://www.bibletime.info/&quot;&gt;BibleTime&lt;/a&gt;</source>
         <translation>由&lt;a href=&quot;http://www.bibletime.info/&quot;&gt;BibleTime&lt;/a&gt;建立</translation>
     </message>
@@ -3356,7 +3373,7 @@ Do you want to continue?</source>
         <translation>書籍</translation>
     </message>
     <message>
-        <location filename="../../src/backend/filters/osistohtml.cpp" line="393"/>
+        <location filename="../../src/backend/filters/osistohtml.cpp" line="392"/>
         <source>Added text</source>
         <translation>附加文字</translation>
     </message>
@@ -4175,67 +4192,67 @@ Language name ppk</extracomment>
         <translation>祖魯文</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="337"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="327"/>
         <source>Footnotes</source>
         <translation>注釋</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="339"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="329"/>
         <source>Strong&apos;s numbers</source>
         <translation>Strong&apos;s numbers</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="341"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="331"/>
         <source>Headings</source>
         <translation>標題</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="343"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="333"/>
         <source>Morphological tags</source>
         <translation>構詞學標記</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="345"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="335"/>
         <source>Lemmas</source>
         <translation>詞形</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="347"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="337"/>
         <source>Hebrew vowel points</source>
         <translation>希伯來文元音符號</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="349"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="339"/>
         <source>Hebrew cantillation marks</source>
         <translation>希伯來文詠誦標記</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="351"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="341"/>
         <source>Greek accents</source>
         <translation>希臘文變音符號</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="353"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="343"/>
         <source>Red letter words</source>
         <translation>紅字版本</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="355"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="345"/>
         <source>Textual variants</source>
         <translation>文字變體</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="357"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="347"/>
         <source>Scripture cross-references</source>
         <translation>經文參照</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="359"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="349"/>
         <source>Morph segmentation</source>
         <translation>構詞學分割</translation>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/chtmlexportrendering.cpp" line="247"/>
+        <location filename="../../src/backend/rendering/chtmlexportrendering.cpp" line="244"/>
         <source>Export</source>
         <translation></translation>
     </message>
@@ -4499,7 +4516,7 @@ Language name ppk</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/filters/osistohtml.cpp" line="410"/>
+        <location filename="../../src/backend/filters/osistohtml.cpp" line="409"/>
         <source>Verb tense changed</source>
         <translation>動詞時態變更過</translation>
     </message>
@@ -4554,27 +4571,27 @@ Language name ppk</extracomment>
         <translation>未建立索引書目</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="44"/>
+        <location filename="../../src/main.cpp" line="43"/>
         <source>Show this help message and exit</source>
         <translation>顯示本幫助訊息然後離開</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="47"/>
+        <location filename="../../src/main.cpp" line="46"/>
         <source>Output BibleTime version and exit</source>
         <translation>輸出 BibleTime 版本 然後離開</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="50"/>
+        <location filename="../../src/main.cpp" line="49"/>
         <source>Open a clean session</source>
         <translation>開啟一個全新的工作階段</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="103"/>
+        <location filename="../../src/main.cpp" line="102"/>
         <source>Error: %1 expects an argument.</source>
         <translation>錯誤: %1 需要接受一個參數.</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="106"/>
+        <location filename="../../src/main.cpp" line="105"/>
         <source>See --help for details.</source>
         <translation>參照&apos; --幫助以獲得細節.</translation>
     </message>
@@ -4583,12 +4600,12 @@ Language name ppk</extracomment>
         <translation type="obsolete">開啟一個捷徑的工作階段</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="53"/>
+        <location filename="../../src/main.cpp" line="52"/>
         <source>Open the default Bible with the reference &lt;ref&gt;</source>
         <translation>以參考資料 &lt;ref&gt; 開啟預設聖經</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="56"/>
+        <location filename="../../src/main.cpp" line="55"/>
         <source>For command-line arguments parsed by the Qt toolkit, see %1.</source>
         <translation>要知道 Qt 工具組解析的命令列參數, 請參照 %1.</translation>
     </message>
@@ -4601,12 +4618,17 @@ Language name ppk</extracomment>
         <translation type="obsolete">錯誤: %1 需要接受一個參數. 參照 --幫助 以獲得細節.</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="111"/>
+        <location filename="../../src/main.cpp" line="110"/>
         <source>Error: Invalid command-line argument: %1</source>
         <translation>錯誤: 無效的命令列參數: %1</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="54"/>
+        <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="48"/>
+        <source>CSS base template not found!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="65"/>
         <source>Default template &quot;%1&quot; not found!</source>
         <translation>預設模板 &quot;%1&quot; 沒有找到!</translation>
     </message>
@@ -4713,102 +4735,102 @@ Language name ppk</extracomment>
 <context>
     <name>Search::BtSearchOptionsArea</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="101"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="97"/>
         <source>Search for:</source>
         <translation>搜索:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="108"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="104"/>
         <source>&amp;Search</source>
         <translation>搜尋(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="110"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="106"/>
         <source>Start to search the text in the chosen works</source>
         <translation>開始在選定的書目中搜尋字串</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="113"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="109"/>
         <source>Ch&amp;oose...</source>
         <translation>挑選(&amp;o)...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="115"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="111"/>
         <source>Choose works for the search</source>
         <translation>選擇要搜尋的書目</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="118"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="114"/>
         <source>S&amp;etup...</source>
         <translation>設定(&amp;e)...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="137"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="133"/>
         <source>All of the words (AND is added between the words)</source>
         <translation>所有文字(在詞和詞中間加入 AND)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="141"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="137"/>
         <source> (&lt;a href=&apos;syntax_help&apos;&gt;full syntax&lt;/a&gt;)</source>
         <translation> (&lt;a href=&apos;syntax_help&apos;&gt;全文&lt;/a&gt;)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="152"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="148"/>
         <source>Scope:</source>
         <translation>區塊:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="173"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="169"/>
         <source>The text you want to search for</source>
         <translation>你想要搜尋的文字</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="177"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="173"/>
         <source>Works:</source>
         <translation>書目:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="350"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="346"/>
         <source>No search scope</source>
         <translation>沒有搜尋範圍</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="132"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="128"/>
         <source>All words</source>
         <translation>所有字詞</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="120"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="116"/>
         <source>Configure predefined scopes for search</source>
         <translation>為搜尋設定預先定義的區塊</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="134"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="130"/>
         <source>Some words</source>
         <translation>部份字詞</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="135"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="131"/>
         <source>Free</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="138"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="134"/>
         <source>Some of the words (OR is added between the words)</source>
         <translation>一些字詞 (在詞與詞中間加入 OR)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="139"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="135"/>
         <source>Full lucene syntax</source>
         <translation>全 lucene 語法</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="142"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="138"/>
         <source>Click the link to get help for search syntax</source>
         <translation>點選連結獲得搜尋語法的幫助</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="163"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="159"/>
         <source>Choose the scope (books/chapters/verses to search in).&lt;br /&gt;Applicable for Bibles and commentaries.</source>
         <translation>選擇區塊. (要搜尋的書目/章節/行數). &lt;br /&gt;適用於 聖經 和 評論.</translation>
     </message>
@@ -4834,242 +4856,242 @@ Language name ppk</extracomment>
 <context>
     <name>Search::BtSearchSyntaxHelpDialog</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="52"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="51"/>
         <source>Search Syntax Help</source>
         <translation>搜尋語法幫助</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="99"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="98"/>
         <source>This help is mainly for &apos;Full syntax&apos; option. &apos;All words&apos; and &apos;Some words&apos; options have more limited syntax; &lt;a href=&apos;#wildcards&apos;&gt;wildcards&lt;/a&gt; and &lt;a href=&apos;#fields&apos;&gt;text fields&lt;/a&gt; are supported for them. Some other syntax features may give strange or wrong results with All words/Some words.</source>
         <translation>這個幫助主要用來說明&quot;全語法&quot;選項.所有字詞及部分字詞選項有比較限定的使用語法;有支援&lt;a href=&apos;#wildcards&apos;&gt;萬用字元&lt;/a&gt;及 &lt;a href=&apos;#fields&apos;&gt;文字區塊&lt;/a&gt;. 部分其他語法與所有字詞/部分字詞合併使用，則會查出奇怪或錯誤的結果.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="104"/>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="115"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="103"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="114"/>
         <source>Which words to find</source>
         <translation>想找哪個字</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="106"/>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="141"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="105"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="140"/>
         <source>Grouping and order</source>
         <translation>分組與排序</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="108"/>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="159"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="107"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="158"/>
         <source>Wildcards (partial words)</source>
         <translation>萬用字元(部份字詞)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="110"/>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="182"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="109"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="181"/>
         <source>Text fields (different parts of text)</source>
         <translation>文字區塊 (字的不同部份)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="112"/>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="213"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="111"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="212"/>
         <source>Other syntax features</source>
         <translation>其他語法特色</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="117"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="116"/>
         <source>Search terms are separated by spaces. &lt;strong&gt;AND&lt;/strong&gt; (all words), &lt;strong&gt;OR&lt;/strong&gt; (some words) and &lt;strong&gt;NOT&lt;/strong&gt; (not the following word) can be added between the words. If none is added explicitly OR is used automatically. &apos;&lt;strong&gt;+&lt;/strong&gt;word&apos; means the word must be in the results, &apos;&lt;strong&gt;-&lt;/strong&gt;word&apos; means it must not be in the results.</source>
         <comment>Do not translate &quot;AND&quot;, &quot;OR&quot; or &quot;NOT&quot;.</comment>
         <translation>搜尋選項以空格分開. &lt;strong&gt;AND&lt;/strong&gt; (所有字)、&lt;strong&gt;OR&lt;/strong&gt; (一些字) 、 &lt;strong&gt;NOT&lt;/strong&gt; (不包含其後的字) 能在字之間添加做搜尋.. 如果沒有添加任何搜尋選項,自動會使用 OR. &apos;&lt;strong&gt;+&lt;/strong&gt;表示接在其後的字也需要在搜尋結果內, &apos;&lt;strong&gt;-&lt;/strong&gt;表示接在其後的字不能在結果之內.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="124"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="123"/>
         <source>jesus AND god</source>
         <comment>Do not translate &quot;AND&quot;.</comment>
         <translation>耶穌 AND 神</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="126"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="125"/>
         <source>Finds verses with both &apos;Jesus&apos; and &apos;God&apos;</source>
         <translation>搜尋具有&apos;耶穌&apos; 和神&apos; 的經文</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="128"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="127"/>
         <source>jesus OR god</source>
         <comment>Do not translate &quot;OR&quot;.</comment>
         <translation>耶穌 OR 神</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="130"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="129"/>
         <source>Finds verses with &apos;Jesus&apos; or &apos;God&apos; or both</source>
         <translation>搜尋具有&apos;耶穌&apos; 或 &apos;神&apos; 或 兩者的經文</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="132"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="131"/>
         <source>jesus NOT god</source>
         <comment>Do not translate &quot;NOT&quot;.</comment>
         <translation>耶穌 NOT 神</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="134"/>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="138"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="133"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="137"/>
         <source>Finds verses with &apos;Jesus&apos; but with no &apos;God&apos;</source>
         <translation>搜尋有寫到&apos;耶穌&apos;卻沒有寫到&apos;神&apos;的經文</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="136"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="135"/>
         <source>+jesus -god</source>
         <translation>+耶穌 -神</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="143"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="142"/>
         <source>Words can be grouped with &lt;strong&gt;parenthesis&lt;/strong&gt;. Strict word order can be defined with &lt;strong&gt;quotes&lt;/strong&gt;.</source>
         <translation>要合併成同一組搜尋可以使用&lt;strong&gt;括弧&lt;/strong&gt;. 若要限定字的順序則可以使用 &lt;strong&gt;引號&lt;/strong&gt;.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="146"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="145"/>
         <source>(a AND b) OR c</source>
         <comment>Do not translate &quot;AND&quot; or &quot;OR&quot;.</comment>
         <translation>(a AND b) OR c</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="148"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="147"/>
         <source>Finds verses with both &apos;a&apos; AND &apos;b&apos;, and verses with &apos;c&apos;</source>
         <translation>(a AND b) OR c</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="150"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="149"/>
         <source>&quot;says lord&quot;</source>
         <translation>&quot;主說&quot;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="154"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="153"/>
         <source>&quot;says the lord&quot;</source>
         <translation>&quot;主說&quot;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="156"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="155"/>
         <source>Finds all verses with &apos;says the LORD&apos;</source>
         <translation>搜尋所有有寫到&apos;主這麼說&apos;的經文</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="161"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="160"/>
         <source>&apos;&lt;strong&gt;*&lt;/strong&gt;&apos; matches any sequence of 0 or more characters, while &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; matches any single character. A wildcard can not be used in the beginning of a word.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="165"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="164"/>
         <source>a*</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="167"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="166"/>
         <source>All words beginning with &apos;a&apos;</source>
         <translation>所有 &apos;a&apos;開頭的字</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="169"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="168"/>
         <source>a*a</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="171"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="170"/>
         <source>&apos;Assyria&apos;, &apos;aroma&apos;, &apos;abba&apos; etc.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="173"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="172"/>
         <source>a?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="175"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="174"/>
         <source>&apos;at&apos; and &apos;an&apos;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="177"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="176"/>
         <source>a??a</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="179"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="178"/>
         <source>&apos;abba&apos;, &apos;area&apos;, &apos;Asia&apos; etc.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="184"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="183"/>
         <source>Available text fields:</source>
         <translation>可用的文字區塊:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="186"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="185"/>
         <source>Searches headings</source>
         <translation>搜尋標題</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="188"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="187"/>
         <source>Searches footnotes</source>
         <translation>搜尋註解</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="190"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="189"/>
         <source>Searches Strong&apos;s numbers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="192"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="191"/>
         <source>Searches morphology codes</source>
         <translation>搜尋構詞編碼</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="194"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="193"/>
         <source>Examples:</source>
         <translation>例子:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="196"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="195"/>
         <source>heading:Jesus</source>
         <comment>Do not translate &quot;heading:&quot;.</comment>
         <translation>標題:耶穌</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="198"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="197"/>
         <source>Finds headings with &apos;Jesus&apos;</source>
         <translation>搜尋有&apos;耶穌&apos;的標題</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="200"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="199"/>
         <source>footnote:Jesus AND footnote:said</source>
         <comment>Do not translate &quot;footnote:&quot; or &quot;AND&quot;.</comment>
         <translation>footnote:耶穌 AND footnote:說</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="203"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="202"/>
         <source>Finds footnotes with &apos;Jesus&apos; and &apos;said&apos;</source>
         <translation>搜尋具有&apos;耶穌&apos; 和說&apos; 的註腳</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="205"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="204"/>
         <source>strong:G846</source>
         <comment>Do not translate &quot;strong:&quot;.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="207"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="206"/>
         <source>Finds verses with Strong&apos;s Greek number 846</source>
         <translation>搜尋具有 Strong&apos;s Greek number 846的經文</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="209"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="208"/>
         <source>morph:&quot;N-NSF&quot;</source>
         <comment>Do not translate &quot;morph:&quot;.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="211"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="210"/>
         <source>Finds verses with morphology code &apos;N-NSF&apos;</source>
         <translation>搜尋具有 構詞編碼 &apos;N-NSF&apos;的經文</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="215"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="214"/>
         <source>BibleTime uses the CLucene search engine. You can read more on the &lt;a href=&apos;%1&apos;&gt;lucene syntax web page&lt;/a&gt; (in external browser).</source>
         <translation>BibleTime 使用 CLucene 搜尋引擎. 你可以到 &lt;a href=&apos;%1&apos;&gt;lucene syntax web page&lt;/a&gt; 獲得更多資訊。(用外部瀏覽器開啟).</translation>
     </message>
@@ -5119,8 +5141,8 @@ Language name ppk</extracomment>
         <translation type="obsolete">複製搜尋結果...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="233"/>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="243"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="230"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="240"/>
         <source>Copying search result</source>
         <translation>正在複製搜尋結果</translation>
     </message>
@@ -5129,8 +5151,8 @@ Language name ppk</extracomment>
         <translation type="obsolete">儲存搜尋結果...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="252"/>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="261"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="249"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="258"/>
         <source>Saving search result</source>
         <translation>正在儲存搜尋結果</translation>
     </message>
@@ -5139,7 +5161,7 @@ Language name ppk</extracomment>
         <translation type="obsolete">列印搜尋結果...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="270"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="267"/>
         <source>Printing search result</source>
         <translation>正在列印搜尋結果</translation>
     </message>

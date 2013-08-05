@@ -22,7 +22,6 @@ class BtBookshelfView: public QTreeView {
         Q_OBJECT
     public:
         BtBookshelfView(QWidget *parent = 0);
-        virtual ~BtBookshelfView();
 
         CSwordModuleInfo *getModule(const QModelIndex &index) const;
 

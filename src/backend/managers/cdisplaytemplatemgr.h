@@ -12,12 +12,10 @@
 #ifndef CDISPLAYTEMPLATEMGR_H
 #define CDISPLAYTEMPLATEMGR_H
 
-#include <QMap>
-#include <QString>
+#include <QHash>
 #include <QStringList>
+#include "../drivers/cswordmoduleinfo.h"
 
-
-class CSwordModuleInfo;
 
 /**
   Manages the display templates used in the filters and display classes.
@@ -32,10 +30,16 @@ class CDisplayTemplateMgr {
         */
         struct Settings {
 
-            inline Settings() : pageDirection("ltr") {}
+            inline Settings()
+                : langAbbrev("en")
+                , textDirection(CSwordModuleInfo::LeftToRight) {}
+
+            inline const char * textDirectionAsHtmlDirAttr() const {
+                return textDirection == CSwordModuleInfo::LeftToRight ? "ltr" : "rtl";
+            }
 
             /** The list of modules */
-            QList<const CSwordModuleInfo*> modules;
+            QList<const CSwordModuleInfo *> modules;
 
             /** The title which is used for the new processed HTML page */
             QString title;
@@ -43,11 +47,11 @@ class CDisplayTemplateMgr {
             /** The language for the HTML page. */
             QString langAbbrev;
 
-            /** The language direction for the HTML page. */
-            QString pageDirection;
-
             /** The CSS ID which is used in the content part of the page */
             QString pageCSS_ID;
+
+            /** The language direction for the HTML page. */
+            CSwordModuleInfo::TextDirection textDirection;
 
         };
 
@@ -57,13 +61,13 @@ class CDisplayTemplateMgr {
           \param[out] errorMessage Set to error string on error, otherwise set
                                    to QString::null.
         */
-        explicit CDisplayTemplateMgr(QString &errorMessage);
+        explicit CDisplayTemplateMgr(QString & errorMessage);
 
         /**
           \returns the list of available templates.
         */
-        inline const QStringList availableTemplates() const {
-            return m_cssMap.keys();
+        inline const QStringList & availableTemplates() const {
+            return m_availableTemplateNamesCache;
         }
 
         /**
@@ -78,8 +82,9 @@ class CDisplayTemplateMgr {
 
           \returns The full HTML template HTML code including the CSS data.
         */
-        QString fillTemplate(const QString &name, const QString &content,
-                             const Settings &settings);
+        QString fillTemplate(const QString & name,
+                             const QString & content,
+                             const Settings & settings) const;
 
         /**
           \returns the name of the default template.
@@ -94,7 +99,7 @@ class CDisplayTemplateMgr {
         /**
           \returns The singleton instance of the instance of this class.
         */
-        static inline CDisplayTemplateMgr *instance() {
+        static inline CDisplayTemplateMgr * instance() {
             Q_ASSERT(m_instance != 0);
             return m_instance;
         }
@@ -102,14 +107,15 @@ class CDisplayTemplateMgr {
     private: /* Methods: */
 
         /** Preloads a single template from disk: */
-        void loadTemplate(const QString &filename);
-        void loadCSSTemplate(const QString &filename);
+        void loadTemplate(const QString & filename);
+        void loadCSSTemplate(const QString & filename);
 
     private: /* Fields: */
 
-        QMap<QString, QString> m_templateMap;
-        QMap<QString, QString> m_cssMap;
-        static CDisplayTemplateMgr *m_instance;
+        QHash<QString, QString> m_templateMap;
+        QHash<QString, QString> m_cssMap;
+        static CDisplayTemplateMgr * m_instance;
+        QStringList m_availableTemplateNamesCache;
 
 };
 

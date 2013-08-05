@@ -26,6 +26,7 @@
 #include "frontend/keychooser/versekeychooser/btdropdownchooserbutton.h"
 #include "util/btsignal.h"
 #include "util/cresmgr.h"
+#include "util/geticon.h"
 
 
 class BtLineEdit : public QLineEdit {
@@ -58,7 +59,7 @@ BtBibleKeyWidget::BtBibleKeyWidget(const CSwordBibleModuleInfo *mod,
     setFocusPolicy(Qt::WheelFocus);
 
     QToolButton* clearRef = new QToolButton(this);
-    clearRef->setIcon(bApp->getIcon("edit_clear_locationbar"));
+    clearRef->setIcon(util::getIcon("edit_clear_locationbar"));
     clearRef->setAutoRaise(true);
     clearRef->setStyleSheet("QToolButton{margin:0px;}");
     connect(clearRef, SIGNAL(clicked()), SLOT(slotClearRef()) );

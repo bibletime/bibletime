@@ -148,12 +148,11 @@ QString CDisplayRendering::finishText(const QString &text, const KeyTree &tree) 
 
     CDisplayTemplateMgr::Settings settings;
     settings.modules = modules;
-    settings.langAbbrev = ((modules.count() == 1) && lang->isValid()) ? lang->abbrev() : QString::null;
+    if (modules.count() == 1 && lang->isValid())
+        settings.langAbbrev = lang->abbrev();
 
     if (modules.count() == 1)
-        settings.pageDirection = (modules.first()->textDirection() == CSwordModuleInfo::LeftToRight) ? "ltr"  : "rtl";
-    else
-        settings.pageDirection = QString::null;
+        settings.textDirection = modules.first()->textDirection();
 
     return tMgr->fillTemplate(CDisplayTemplateMgr::activeTemplateName(), text, settings);
 }

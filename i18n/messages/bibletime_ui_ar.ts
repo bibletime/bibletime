@@ -22,57 +22,57 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BibleTime</name>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="738"/>
+        <location filename="../../src/bibletime_init.cpp" line="740"/>
         <source>&amp;File</source>
         <translation>&amp;ملف</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="739"/>
+        <location filename="../../src/bibletime_init.cpp" line="741"/>
         <source>&amp;View</source>
         <translation>&amp;عرض</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="742"/>
+        <location filename="../../src/bibletime_init.cpp" line="744"/>
         <source>&amp;Search</source>
         <translation>&amp;بحث</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="743"/>
+        <location filename="../../src/bibletime_init.cpp" line="745"/>
         <source>&amp;Window</source>
         <translation>&amp;نافذة</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="751"/>
+        <location filename="../../src/bibletime_init.cpp" line="753"/>
         <source>Se&amp;ttings</source>
         <translation>إع&amp;دادات</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="754"/>
+        <location filename="../../src/bibletime_init.cpp" line="756"/>
         <source>&amp;Help</source>
         <translation>م&amp;ساعدة</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="116"/>
+        <location filename="../../src/bibletime_init.cpp" line="117"/>
         <source>&amp;Show toolbar</source>
         <translation>&amp;إظهار شريط الأدوات</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="109"/>
+        <location filename="../../src/bibletime_init.cpp" line="110"/>
         <source>&amp;Fullscreen mode</source>
         <translation>&amp;نمط ملء الشاشة</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="102"/>
+        <location filename="../../src/bibletime_init.cpp" line="103"/>
         <source>&amp;Quit</source>
         <translation>&amp;خروج</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="249"/>
+        <location filename="../../src/bibletime_init.cpp" line="250"/>
         <source>Open the Bible study HowTo included with BibleTime.&lt;br/&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
         <translation>فتح كيفية دراسة الكتاب المقدس ببيبل تايم.&lt;br/&gt;هذا الملف عبارة عن مقدمة في كيفية دراسة الكتاب المقدس بطريقة فعالة.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="254"/>
+        <location filename="../../src/bibletime_init.cpp" line="255"/>
         <source>Information about the BibleTime program</source>
         <translation>معلومات عن برنامج بيبل تايم</translation>
     </message>
@@ -85,67 +85,67 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="obsolete">&amp;تحميل جلسة</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="747"/>
+        <location filename="../../src/bibletime_init.cpp" line="749"/>
         <source>&amp;Delete session</source>
         <translation>ح&amp;ذف جلسة</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="745"/>
+        <location filename="../../src/bibletime_init.cpp" line="747"/>
         <source>&amp;Arrangement mode</source>
         <translation>&amp;نمط الترتيب</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="142"/>
+        <location filename="../../src/bibletime_init.cpp" line="143"/>
         <source>&amp;Manual mode</source>
         <translation>ال&amp;نمط اليدوي</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="149"/>
+        <location filename="../../src/bibletime_init.cpp" line="150"/>
         <source>Auto-tile &amp;vertically</source>
         <translation>ترتيب &amp;عمودي تلقائي</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="156"/>
+        <location filename="../../src/bibletime_init.cpp" line="157"/>
         <source>Auto-tile &amp;horizontally</source>
         <translation>ترتيب &amp;أفقي تلقائي</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="177"/>
+        <location filename="../../src/bibletime_init.cpp" line="178"/>
         <source>Auto-&amp;cascade</source>
         <translation>ت&amp;دريج تلقائي</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="184"/>
+        <location filename="../../src/bibletime_init.cpp" line="185"/>
         <source>&amp;Cascade</source>
         <translation>ت&amp;دريج</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="198"/>
+        <location filename="../../src/bibletime_init.cpp" line="199"/>
         <source>Tile &amp;vertically</source>
         <translation>ترتيب &amp;عمودي</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="205"/>
+        <location filename="../../src/bibletime_init.cpp" line="206"/>
         <source>Tile &amp;horizontally</source>
         <translation>ترتيب &amp;أفقي</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="219"/>
+        <location filename="../../src/bibletime_init.cpp" line="220"/>
         <source>Cl&amp;ose all windows</source>
         <translation>إغلاق &amp;كل النوافذ</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="222"/>
+        <location filename="../../src/bibletime_init.cpp" line="223"/>
         <source>Close all open windows inside BibleTime</source>
         <translation>إغلاق كل النوافذ المفتوحة داخل بيبل تايم</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="239"/>
+        <location filename="../../src/bibletime_init.cpp" line="240"/>
         <source>&amp;Handbook</source>
         <translation>&amp;دليل الإستخدام</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="246"/>
+        <location filename="../../src/bibletime_init.cpp" line="247"/>
         <source>&amp;Bible Study Howto</source>
         <translation>&amp;كيفية دراسة الكتاب المقدس</translation>
     </message>
@@ -165,267 +165,267 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="105"/>
+        <location filename="../../src/bibletime_init.cpp" line="106"/>
         <source>Quit BibleTime</source>
         <translation>الخروج من بيبل تايم</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="112"/>
+        <location filename="../../src/bibletime_init.cpp" line="113"/>
         <source>Toggle fullscreen mode of the main window</source>
         <translation>تبديل نمط ملء الشاشة للنافذة الرئيسية</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="121"/>
+        <location filename="../../src/bibletime_init.cpp" line="122"/>
         <source>Search in &amp;open works...</source>
         <translation>ابحث في الكتب ال&amp;مفتوحة...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="128"/>
+        <location filename="../../src/bibletime_init.cpp" line="129"/>
         <source>Search in standard &amp;Bible...</source>
         <translation>ابحث في ترجمة ال&amp;كتاب المقدس الإفتراضية...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="135"/>
+        <location filename="../../src/bibletime_init.cpp" line="136"/>
         <source>Save as &amp;new session...</source>
         <translation>حفظ كجلسة &amp;جديدة...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="138"/>
+        <location filename="../../src/bibletime_init.cpp" line="139"/>
         <source>Create and save a new session</source>
         <translation>إنشاء وحفظ جلسة جديدة</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="145"/>
+        <location filename="../../src/bibletime_init.cpp" line="146"/>
         <source>Manually arrange the open windows</source>
         <translation>ترتيب يدوي للنوافذ المفتوحة</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="152"/>
+        <location filename="../../src/bibletime_init.cpp" line="153"/>
         <source>Automatically tile the open windows vertically (arrange side by side)</source>
         <translation>ترتيب تلقائي للنوافذ المفتوحة عمودياً (ترتيب جنباً إلى جنب)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="159"/>
+        <location filename="../../src/bibletime_init.cpp" line="160"/>
         <source>Automatically tile the open windows horizontally (arrange on top of each other)</source>
         <translation>ترتيب تلقائي للنوافذ المفتوحة أفقياً (ترتيب على رأس بعضهم بعضاً)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="163"/>
+        <location filename="../../src/bibletime_init.cpp" line="164"/>
         <source>Auto-&amp;tile</source>
         <translation>ت&amp;رتيب تلقائي</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="166"/>
+        <location filename="../../src/bibletime_init.cpp" line="167"/>
         <source>Automatically tile the open windows</source>
         <translation>ترتيب النوافذ المفتوحة تلقائياً</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="170"/>
+        <location filename="../../src/bibletime_init.cpp" line="171"/>
         <source>Ta&amp;bbed</source>
         <translation>وضع الأ&amp;لسنة</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="173"/>
+        <location filename="../../src/bibletime_init.cpp" line="174"/>
         <source>Automatically tab the open windows</source>
         <translation>وضع الألسنة تلقائي للنوافذ المفتوحة</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="180"/>
+        <location filename="../../src/bibletime_init.cpp" line="181"/>
         <source>Automatically cascade the open windows</source>
         <translation>تدريج تلقائي للنوافذ المفتوحة</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="187"/>
+        <location filename="../../src/bibletime_init.cpp" line="188"/>
         <source>Cascade the open windows</source>
         <translation>تدريج النوافذ المفتوحة</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="191"/>
+        <location filename="../../src/bibletime_init.cpp" line="192"/>
         <source>&amp;Tile</source>
         <translation>&amp;ترتيب</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="194"/>
+        <location filename="../../src/bibletime_init.cpp" line="195"/>
         <source>Tile the open windows</source>
         <translation>ترتيب النوافذ المفتوحة</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="201"/>
+        <location filename="../../src/bibletime_init.cpp" line="202"/>
         <source>Vertically tile (arrange side by side) the open windows</source>
         <translation>رتب عمودياً (جنباً إلى جنب) النوافذ المفتوحة</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="208"/>
+        <location filename="../../src/bibletime_init.cpp" line="209"/>
         <source>Horizontally tile (arrange on top of each other) the open windows</source>
         <translation>رتب أفقياً (على رأس بعض) النوافذ المفتوحة</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="212"/>
+        <location filename="../../src/bibletime_init.cpp" line="213"/>
         <source>Close &amp;window</source>
         <translation>إ&amp;غلاق النافذة</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="215"/>
+        <location filename="../../src/bibletime_init.cpp" line="216"/>
         <source>Close the current open window</source>
         <translation>اغلق النافذة المفتوحة حالياً</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="226"/>
+        <location filename="../../src/bibletime_init.cpp" line="227"/>
         <source>&amp;Configure BibleTime...</source>
         <translation>&amp;ضبط بيبل تايم...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="228"/>
+        <location filename="../../src/bibletime_init.cpp" line="229"/>
         <source>Set BibleTime&apos;s preferences</source>
         <translation>ضبط تفضيلات بيبل تايم</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="232"/>
+        <location filename="../../src/bibletime_init.cpp" line="233"/>
         <source>Bookshelf &amp;Manager...</source>
         <translation>مدير &amp;رف الكتب...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="235"/>
+        <location filename="../../src/bibletime_init.cpp" line="236"/>
         <source>Configure your bookshelf and install/update/remove/index works</source>
         <translation>ضبط إعدادات رف الكتب وتثبيت/تحديث/إزالة/فهرسة الكتب</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="242"/>
+        <location filename="../../src/bibletime_init.cpp" line="243"/>
         <source>Open BibleTime&apos;s handbook</source>
         <translation>فتح دليل إستخدام بيبل تايم</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="258"/>
+        <location filename="../../src/bibletime_init.cpp" line="259"/>
         <source>&amp;Tip of the day...</source>
         <translation>&amp;تلميح اليوم...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="261"/>
+        <location filename="../../src/bibletime_init.cpp" line="262"/>
         <source>Show tips about BibleTime</source>
         <translation>عرض تلميحات عن بيبل تايم</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="400"/>
+        <location filename="../../src/bibletime_init.cpp" line="401"/>
         <source>Toggle visibility of the bookshelf window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="404"/>
+        <location filename="../../src/bibletime_init.cpp" line="405"/>
         <source>Toggle visibility of the bookmarks window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="408"/>
+        <location filename="../../src/bibletime_init.cpp" line="409"/>
         <source>Toggle visibility of the mag window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="732"/>
+        <location filename="../../src/bibletime_init.cpp" line="734"/>
         <source>Main toolbar</source>
         <translation>شريط الأدوات الرئيسي</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="733"/>
+        <location filename="../../src/bibletime_init.cpp" line="735"/>
         <source>Navigation toolbar</source>
         <translation>شريط التصفح</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="734"/>
+        <location filename="../../src/bibletime_init.cpp" line="736"/>
         <source>Works toolbar</source>
         <translation>شريط الكتب</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="735"/>
+        <location filename="../../src/bibletime_init.cpp" line="737"/>
         <source>Tools toolbar</source>
         <translation>شريط أدوات</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="736"/>
+        <location filename="../../src/bibletime_init.cpp" line="738"/>
         <source>Format toolbar</source>
         <translation>شريط تنسيق</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="746"/>
+        <location filename="../../src/bibletime_init.cpp" line="748"/>
         <source>Sw&amp;itch session</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="774"/>
+        <location filename="../../src/bibletime_init.cpp" line="776"/>
         <source>Show main toolbar</source>
         <translation>إظهار شريط الأدوات الرئيسي</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="777"/>
+        <location filename="../../src/bibletime_init.cpp" line="779"/>
         <source>Show navigation bar</source>
         <translation>إظهار شريط التصفح</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="780"/>
+        <location filename="../../src/bibletime_init.cpp" line="782"/>
         <source>Show works toolbar</source>
         <translation>إظهار شريط الكتب</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="783"/>
+        <location filename="../../src/bibletime_init.cpp" line="785"/>
         <source>Show tools toolbar</source>
         <translation>إظهار شريط أدوات</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="786"/>
+        <location filename="../../src/bibletime_init.cpp" line="788"/>
         <source>Show formatting toolbar</source>
         <translation>إظهار شريط التنسيق</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="789"/>
+        <location filename="../../src/bibletime_init.cpp" line="791"/>
         <source>Show bookshelf</source>
         <translation>إظهار رف الكتب</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="792"/>
+        <location filename="../../src/bibletime_init.cpp" line="794"/>
         <source>Show bookmarks</source>
         <translation>إظهار العلامات</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="795"/>
+        <location filename="../../src/bibletime_init.cpp" line="797"/>
         <source>Show mag</source>
         <translation>إظهار المكبر</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="740"/>
+        <location filename="../../src/bibletime_init.cpp" line="742"/>
         <source>Toolbars</source>
         <translation>أشرطة الأدوات</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="771"/>
+        <location filename="../../src/bibletime_init.cpp" line="773"/>
         <source>Show toolbars in text windows</source>
         <translation>إظهار أشرطة الأدوات في النوافذ النصية</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="798"/>
+        <location filename="../../src/bibletime_init.cpp" line="800"/>
         <source>Show parallel text headers</source>
         <translation>إظهار عناوين نصية متوازية</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="744"/>
+        <location filename="../../src/bibletime_init.cpp" line="746"/>
         <source>O&amp;pen windows</source>
         <translation>&amp;فتح نوافذ</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="757"/>
+        <location filename="../../src/bibletime_init.cpp" line="759"/>
         <source>Show &quot;Whats this widget&quot; dialog</source>
         <translation>إظهار مربع حوار &quot;ما هذه القطعة&quot;</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="942"/>
+        <location filename="../../src/bibletime_init.cpp" line="953"/>
         <source>Whats this widget?</source>
         <translation>ما هذه القطعة؟</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="124"/>
+        <location filename="../../src/bibletime_init.cpp" line="125"/>
         <source>Search in all works that are currently open</source>
         <translation>البحث في جميع الكتب المفتوحة حالياً</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="131"/>
+        <location filename="../../src/bibletime_init.cpp" line="132"/>
         <source>Search in the standard Bible</source>
         <translation>البحث في ترجمة الكتاب المقدس الإفتراضية</translation>
     </message>
@@ -470,17 +470,17 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>المفتاح الذي أدخلته لم يفتح قفل هذا العنصر. يرجى المحاولة مرة أخرى.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="253"/>
+        <location filename="../../src/bibletime_init.cpp" line="254"/>
         <source>&amp;About BibleTime</source>
         <translation>&amp;عن بيبل تايم</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="730"/>
+        <location filename="../../src/bibletime_init.cpp" line="732"/>
         <source>Bookmarks</source>
         <translation>علامات</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="731"/>
+        <location filename="../../src/bibletime_init.cpp" line="733"/>
         <source>Mag</source>
         <translation>المكبر</translation>
     </message>
@@ -527,8 +527,8 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="134"/>
-        <source>(c)1999-2011, The BibleTime Team</source>
-        <translation>(c)1999-2011, فريق بيبل تايم</translation>
+        <source>(c)1999-2013, The BibleTime Team</source>
+        <translation>(c)1999-2013, فريق بيبل تايم</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="141"/>
@@ -1483,8 +1483,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="135"/>
+        <source>The languages which can be used for the biblical book names. Translations are provided by the Sword library.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>The languages which can be used for the biblical booknames</source>
-        <translation>اللغات المتاح إستخدامها لعرض اسماء أسفار الكتاب المقدس</translation>
+        <translation type="obsolete">اللغات المتاح إستخدامها لعرض اسماء أسفار الكتاب المقدس</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="132"/>
@@ -2836,37 +2840,50 @@ shortcut</source>
 <context>
     <name>CSearchAnalysisScene</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="228"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="230"/>
         <source>Save Search Analysis</source>
         <translation>حفظ تحليل البحث</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="228"/>
         <source>HTML files (*.html;*.HTML;*.HTM;*.htm)</source>
-        <translation>ملفات النص الفائق (*.html;*.HTML;*.HTM;*.htm)</translation>
+        <translation type="obsolete">ملفات النص الفائق (*.html;*.HTML;*.HTM;*.htm)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="245"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="241"/>
         <source>BibleTime Search Analysis</source>
         <translation>تحليل بحث بيبل تايم</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="246"/>
         <source>Search text :</source>
-        <translation>بحث نص:</translation>
+        <translation type="obsolete">بحث نص:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="248"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="232"/>
+        <source>XHTML files (*.html *.HTML *.HTM *.htm);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="257"/>
+        <source>Search text:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="261"/>
+        <source>Results by work and book</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="263"/>
         <source>Book</source>
         <translation>كتاب</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="249"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="291"/>
         <source>Total hits</source>
         <translation>إجمالي المرات</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="283"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="302"/>
         <source>Created by &lt;a href=&quot;http://www.bibletime.info/&quot;&gt;BibleTime&lt;/a&gt;</source>
         <translation>تم الإنشاء بواسطة &lt;a href=&quot;http://www.bibletime.info/&quot;&gt;بيبل تايم&lt;/a&gt;</translation>
     </message>
@@ -3316,7 +3333,7 @@ Do you want to continue?</source>
         <translation>كتب</translation>
     </message>
     <message>
-        <location filename="../../src/backend/filters/osistohtml.cpp" line="393"/>
+        <location filename="../../src/backend/filters/osistohtml.cpp" line="392"/>
         <source>Added text</source>
         <translation>نص مضاف</translation>
     </message>
@@ -4135,67 +4152,67 @@ Language name ppk</extracomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="337"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="327"/>
         <source>Footnotes</source>
         <translation>حواشي</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="339"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="329"/>
         <source>Strong&apos;s numbers</source>
         <translation>أرقام سترونج</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="341"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="331"/>
         <source>Headings</source>
         <translation>عناوين</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="343"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="333"/>
         <source>Morphological tags</source>
         <translation>وسوم صرفية</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="345"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="335"/>
         <source>Lemmas</source>
         <translation>مبرهنات</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="347"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="337"/>
         <source>Hebrew vowel points</source>
         <translation>نقاط الحروف المتحركة في العبرية</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="349"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="339"/>
         <source>Hebrew cantillation marks</source>
         <translation>علامات cantillation العبرية</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="351"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="341"/>
         <source>Greek accents</source>
         <translation>accents في اليونانية</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="353"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="343"/>
         <source>Red letter words</source>
         <translation>كلمات الحرف الأحمر</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="355"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="345"/>
         <source>Textual variants</source>
         <translation>تنويعات نصية</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="357"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="347"/>
         <source>Scripture cross-references</source>
         <translation>مراجع ذات صلة بالنص</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="359"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="349"/>
         <source>Morph segmentation</source>
         <translation>تجزئة صرفية</translation>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/chtmlexportrendering.cpp" line="247"/>
+        <location filename="../../src/backend/rendering/chtmlexportrendering.cpp" line="244"/>
         <source>Export</source>
         <translation>تصدير</translation>
     </message>
@@ -4451,7 +4468,7 @@ Language name ppk</extracomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/backend/filters/osistohtml.cpp" line="410"/>
+        <location filename="../../src/backend/filters/osistohtml.cpp" line="409"/>
         <source>Verb tense changed</source>
         <translation>زمن الفعل تغير</translation>
     </message>
@@ -4506,37 +4523,37 @@ Language name ppk</extracomment>
         <translation>كتب غير مفهرسة</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="44"/>
+        <location filename="../../src/main.cpp" line="43"/>
         <source>Show this help message and exit</source>
         <translation>إظهار رسالة المساعدة هذه الخروج</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="47"/>
+        <location filename="../../src/main.cpp" line="46"/>
         <source>Output BibleTime version and exit</source>
         <translation>إظهار نسخة بيبل تايم والخروج</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="50"/>
+        <location filename="../../src/main.cpp" line="49"/>
         <source>Open a clean session</source>
         <translation>فتح جلسة خالية</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="53"/>
+        <location filename="../../src/main.cpp" line="52"/>
         <source>Open the default Bible with the reference &lt;ref&gt;</source>
         <translation>فتح نسخة الكتاب المقدس الإفتراضية مع المرجع.&lt;ref&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="56"/>
+        <location filename="../../src/main.cpp" line="55"/>
         <source>For command-line arguments parsed by the Qt toolkit, see %1.</source>
         <translation>لمعطيات سطر الأوامر المدعمة من مجموعة أدوات كيوت، انظر %1.</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="103"/>
+        <location filename="../../src/main.cpp" line="102"/>
         <source>Error: %1 expects an argument.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="106"/>
+        <location filename="../../src/main.cpp" line="105"/>
         <source>See --help for details.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4549,12 +4566,17 @@ Language name ppk</extracomment>
         <translation type="obsolete">خطأ: %1 يتوقع معطى. انظر --مساعدة للتفاصيل.</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="111"/>
+        <location filename="../../src/main.cpp" line="110"/>
         <source>Error: Invalid command-line argument: %1</source>
         <translation>خطأ: معطى سطر الأوامر غير صالح: %1</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="54"/>
+        <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="48"/>
+        <source>CSS base template not found!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="65"/>
         <source>Default template &quot;%1&quot; not found!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4660,102 +4682,102 @@ Language name ppk</extracomment>
 <context>
     <name>Search::BtSearchOptionsArea</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="101"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="97"/>
         <source>Search for:</source>
         <translation>بحث عن:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="108"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="104"/>
         <source>&amp;Search</source>
         <translation>&amp;بحث</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="110"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="106"/>
         <source>Start to search the text in the chosen works</source>
         <translation>بدء بحث النص في الكتب المختارة</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="113"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="109"/>
         <source>Ch&amp;oose...</source>
         <translation>ا&amp;ختر...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="115"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="111"/>
         <source>Choose works for the search</source>
         <translation>اختر كتباً للبحث</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="118"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="114"/>
         <source>S&amp;etup...</source>
         <translation>إ&amp;عداد...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="137"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="133"/>
         <source>All of the words (AND is added between the words)</source>
         <translation>جميع الكلمات (تضاف AND بين الكلمات)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="141"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="137"/>
         <source> (&lt;a href=&apos;syntax_help&apos;&gt;full syntax&lt;/a&gt;)</source>
         <translation> (&lt;a href=&apos;syntax_help&apos;&gt;الصيغ جميع&lt;/a&gt;)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="152"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="148"/>
         <source>Scope:</source>
         <translation>المجال:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="173"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="169"/>
         <source>The text you want to search for</source>
         <translation>النص الذي تريد البحث عنه</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="177"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="173"/>
         <source>Works:</source>
         <translation>الكتب:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="350"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="346"/>
         <source>No search scope</source>
         <translation>لم يتم تحديد مجال للبحث</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="132"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="128"/>
         <source>All words</source>
         <translation>جميع الكلمات</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="120"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="116"/>
         <source>Configure predefined scopes for search</source>
         <translation>ضبط المجالات المعدة مسبقاً للبحث</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="134"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="130"/>
         <source>Some words</source>
         <translation>بعض الكلمات</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="135"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="131"/>
         <source>Free</source>
         <translation>حر</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="138"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="134"/>
         <source>Some of the words (OR is added between the words)</source>
         <translation>بعض الكلمات (تضاف OR بين الكلمات)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="139"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="135"/>
         <source>Full lucene syntax</source>
         <translation>جميع صيغ lucene</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="142"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="138"/>
         <source>Click the link to get help for search syntax</source>
         <translation>اضغط على الرابط للحصول على مساعدة بصيغ البحث</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="163"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="159"/>
         <source>Choose the scope (books/chapters/verses to search in).&lt;br /&gt;Applicable for Bibles and commentaries.</source>
         <translation>اختر مجال البحث (أسفار/اصحاحات/أعداد). &lt;br /&gt; يستخدم لنسخ الكتاب المقدس والتفاسير.</translation>
     </message>
@@ -4781,242 +4803,242 @@ Language name ppk</extracomment>
 <context>
     <name>Search::BtSearchSyntaxHelpDialog</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="52"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="51"/>
         <source>Search Syntax Help</source>
         <translation>مساعدة صيغ البحث</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="99"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="98"/>
         <source>This help is mainly for &apos;Full syntax&apos; option. &apos;All words&apos; and &apos;Some words&apos; options have more limited syntax; &lt;a href=&apos;#wildcards&apos;&gt;wildcards&lt;/a&gt; and &lt;a href=&apos;#fields&apos;&gt;text fields&lt;/a&gt; are supported for them. Some other syntax features may give strange or wrong results with All words/Some words.</source>
         <translation>صفحة المساعدة هذه مخصصة لخيار &quot;جميع الصيغ&quot;. تتضمن خيارات &apos;جميع الكلمات&apos; و &apos;بعض الكلمات&apos; محدودية في الصيغ؛ ففي الوقت الذي نجد فيه دعماً لكل من &lt;a href=&apos;#wildcards&apos;&gt;حروف البدل&lt;/a&gt; و &lt;a href=&apos;#fields&apos;&gt;مجالات النص&lt;/a&gt; يظل ممكناً أن ينتج عن إستخدام بعض الصيغ الأخرى نتائج غريبة أو خاطئة مع جميع/بعض الكلمات.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="104"/>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="115"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="103"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="114"/>
         <source>Which words to find</source>
         <translation>أي الكلمات تريد البحث عنها</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="106"/>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="141"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="105"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="140"/>
         <source>Grouping and order</source>
         <translation>التصنيف والترتيب</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="108"/>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="159"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="107"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="158"/>
         <source>Wildcards (partial words)</source>
         <translation>حروف البدل (أجزاء الكلمات)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="110"/>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="182"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="109"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="181"/>
         <source>Text fields (different parts of text)</source>
         <translation>مجالات النص (أجزاء مختلفة من النص)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="112"/>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="213"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="111"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="212"/>
         <source>Other syntax features</source>
         <translation>صيغ أخرى</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="117"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="116"/>
         <source>Search terms are separated by spaces. &lt;strong&gt;AND&lt;/strong&gt; (all words), &lt;strong&gt;OR&lt;/strong&gt; (some words) and &lt;strong&gt;NOT&lt;/strong&gt; (not the following word) can be added between the words. If none is added explicitly OR is used automatically. &apos;&lt;strong&gt;+&lt;/strong&gt;word&apos; means the word must be in the results, &apos;&lt;strong&gt;-&lt;/strong&gt;word&apos; means it must not be in the results.</source>
         <comment>Do not translate &quot;AND&quot;, &quot;OR&quot; or &quot;NOT&quot;.</comment>
         <translation>تكون عناصر البحث مفصولة بالمسافات. يمكنك إضافة إما &lt;strong&gt;AND&lt;/strong&gt; (جميع الكلمات)، &lt;strong&gt;OR&lt;/strong&gt; (بعض الكلمات) و &lt;strong&gt;NOT&lt;/strong&gt; (لا تتضمن الكلمات الآتية) بين الكلمات. إذا لم تضع شيئاً بين الكلمات فالمسافات يتم إعتبارها OR بشكل تلقائي.إستخدام &apos;&lt;strong&gt;+&lt;/strong&gt;الكلمة&apos; يعني أن الكلمة يجب ان تكون موجودة في النتائج، بينما &apos;&lt;strong&gt;-&lt;/strong&gt;الكلمة&apos; يعني أن الكلمة يجب وألا توجد ضمن النتائج.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="124"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="123"/>
         <source>jesus AND god</source>
         <comment>Do not translate &quot;AND&quot;.</comment>
         <translation>يسوع AND الله</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="126"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="125"/>
         <source>Finds verses with both &apos;Jesus&apos; and &apos;God&apos;</source>
         <translation>إيجاد الأعداد التي تحتوي على كلاً من يسوع و الله</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="128"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="127"/>
         <source>jesus OR god</source>
         <comment>Do not translate &quot;OR&quot;.</comment>
         <translation>يسوع OR الله</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="130"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="129"/>
         <source>Finds verses with &apos;Jesus&apos; or &apos;God&apos; or both</source>
         <translation>إيجاد الأعداد التي تحتوي على يسوع أو الله</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="132"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="131"/>
         <source>jesus NOT god</source>
         <comment>Do not translate &quot;NOT&quot;.</comment>
         <translation>يسوع NOT الله</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="134"/>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="138"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="133"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="137"/>
         <source>Finds verses with &apos;Jesus&apos; but with no &apos;God&apos;</source>
         <translation>إيجاد الأعداد التي تحتوي على يسوع ولكن لا تحتوي على الله</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="136"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="135"/>
         <source>+jesus -god</source>
         <translation>+يسوع -الله</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="143"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="142"/>
         <source>Words can be grouped with &lt;strong&gt;parenthesis&lt;/strong&gt;. Strict word order can be defined with &lt;strong&gt;quotes&lt;/strong&gt;.</source>
         <translation>يمكن تصنيف الكلمات في مجموعات بإستخدام &lt;strong&gt;الأقواس&lt;/strong&gt;. للحصول على نفس ترتيب الكلمات بالضبط يتم تحديد العبارة &lt;strong&gt;بعلامات الإقتباس&lt;/strong&gt;.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="146"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="145"/>
         <source>(a AND b) OR c</source>
         <comment>Do not translate &quot;AND&quot; or &quot;OR&quot;.</comment>
         <translation>(أ AND ب) OR ج</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="148"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="147"/>
         <source>Finds verses with both &apos;a&apos; AND &apos;b&apos;, and verses with &apos;c&apos;</source>
         <translation>إيجاد الأعداد التي تحتوي على كلاً من &apos;أ&apos; AND &apos;ب&apos; معاً، والأعداد التي تحتوي على &apos;ج&apos;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="150"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="149"/>
         <source>&quot;says lord&quot;</source>
         <translation>&quot;يقول الرب&quot;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="154"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="153"/>
         <source>&quot;says the lord&quot;</source>
         <translation>&quot;يقول السيد الرب&quot;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="156"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="155"/>
         <source>Finds all verses with &apos;says the LORD&apos;</source>
         <translation>إيجاد كل الأعداد التي تحتوي على &apos;يقول السيد الرب&apos;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="161"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="160"/>
         <source>&apos;&lt;strong&gt;*&lt;/strong&gt;&apos; matches any sequence of 0 or more characters, while &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; matches any single character. A wildcard can not be used in the beginning of a word.</source>
         <translation>&apos;&lt;strong&gt;*&lt;/strong&gt;&apos;تحل محل أي عدد من الحروف بما في ذلك 0، بينما تحل &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; محل حرف واحد. ولا يمكن إستخدام حرف البدل في أول الكلمة.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="165"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="164"/>
         <source>a*</source>
         <translation>ا*</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="167"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="166"/>
         <source>All words beginning with &apos;a&apos;</source>
         <translation>جميع الكلمات التي تبدأ بحرف ا</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="169"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="168"/>
         <source>a*a</source>
         <translation>ا*ا</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="171"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="170"/>
         <source>&apos;Assyria&apos;, &apos;aroma&apos;, &apos;abba&apos; etc.</source>
         <translation>&apos;اسمها&apos;, &apos;الرضا&apos;, &apos;ابديا&apos; إلخ.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="173"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="172"/>
         <source>a?</source>
         <translation>ا؟</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="175"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="174"/>
         <source>&apos;at&apos; and &apos;an&apos;</source>
         <translation>اي و ام</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="177"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="176"/>
         <source>a??a</source>
         <translation>ا??ا</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="179"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="178"/>
         <source>&apos;abba&apos;, &apos;area&apos;, &apos;Asia&apos; etc.</source>
         <translation>&apos;اكلا&apos;, &apos;ايضا&apos;, &apos;ابنا&apos; إلخ.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="184"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="183"/>
         <source>Available text fields:</source>
         <translation>مجالات النص المتاحة:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="186"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="185"/>
         <source>Searches headings</source>
         <translation>يبحث العناوين</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="188"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="187"/>
         <source>Searches footnotes</source>
         <translation>يبحث الحواشي</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="190"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="189"/>
         <source>Searches Strong&apos;s numbers</source>
         <translation>يبحث أرقام سترونج</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="192"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="191"/>
         <source>Searches morphology codes</source>
         <translation>يبحث الرموز الصرفية</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="194"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="193"/>
         <source>Examples:</source>
         <translation>أمثلة:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="196"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="195"/>
         <source>heading:Jesus</source>
         <comment>Do not translate &quot;heading:&quot;.</comment>
         <translation>heading:يسوع</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="198"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="197"/>
         <source>Finds headings with &apos;Jesus&apos;</source>
         <translation>إيجاد العناوين التي تحتوي على يسوع</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="200"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="199"/>
         <source>footnote:Jesus AND footnote:said</source>
         <comment>Do not translate &quot;footnote:&quot; or &quot;AND&quot;.</comment>
         <translation>footnote:يسوع AND footnote:قال</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="203"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="202"/>
         <source>Finds footnotes with &apos;Jesus&apos; and &apos;said&apos;</source>
         <translation>إيجاد الحواشي التي تحتوي على &apos;يسوع&apos; و &apos;قال&apos;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="205"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="204"/>
         <source>strong:G846</source>
         <comment>Do not translate &quot;strong:&quot;.</comment>
         <translation>strong:G846</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="207"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="206"/>
         <source>Finds verses with Strong&apos;s Greek number 846</source>
         <translation>إيجاد الأعداد التي تحتوي على رقم سترونج اليوناني 846</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="209"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="208"/>
         <source>morph:&quot;N-NSF&quot;</source>
         <comment>Do not translate &quot;morph:&quot;.</comment>
         <translation>morph:&quot;N-NSF&quot;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="211"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="210"/>
         <source>Finds verses with morphology code &apos;N-NSF&apos;</source>
         <translation>إيجاد الأعداد التي تحتوي على الرمز الصرفي &apos;N-NSF&apos;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="215"/>
+        <location filename="../../src/frontend/searchdialog/btsearchsyntaxhelpdialog.cpp" line="214"/>
         <source>BibleTime uses the CLucene search engine. You can read more on the &lt;a href=&apos;%1&apos;&gt;lucene syntax web page&lt;/a&gt; (in external browser).</source>
         <translation>يستخدم بيبل تايم محرك البحث CLucene. بإمكانك قراءة المزيد على &lt;a href=&apos;%1&apos;&gt;صفحة صيغ Lucene&lt;/a&gt;.(في متصفح خارجي).</translation>
     </message>
@@ -5066,8 +5088,8 @@ Language name ppk</extracomment>
         <translation type="obsolete">نسخ نتيجة البحث...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="233"/>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="243"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="230"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="240"/>
         <source>Copying search result</source>
         <translation>جار نسخ نتيجة البحث</translation>
     </message>
@@ -5076,8 +5098,8 @@ Language name ppk</extracomment>
         <translation type="obsolete">حفظ نتيجة البحث...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="252"/>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="261"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="249"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="258"/>
         <source>Saving search result</source>
         <translation>جار حفظ نتيجة البحث</translation>
     </message>
@@ -5086,7 +5108,7 @@ Language name ppk</extracomment>
         <translation type="obsolete">طباعة نتيجة البحث...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="270"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="267"/>
         <source>Printing search result</source>
         <translation>جار طباعة نتيجة البحث</translation>
     </message>

@@ -32,6 +32,7 @@
 #include "util/cresmgr.h"
 #include "util/dialogutil.h"
 #include "util/directory.h"
+#include "util/geticon.h"
 #include "util/tool.h"
 
 
@@ -48,7 +49,7 @@ const QString installPathKey   ("GUI/BookshelfManager/InstallPage/installPathInd
 // *********************************************************
 
 BtInstallPage::BtInstallPage(BtModuleManagerDialog *parent)
-        : BtConfigDialog::Page(bApp->getIcon(CResMgr::bookshelfmgr::installpage::icon), parent)
+        : BtConfigDialog::Page(util::getIcon(CResMgr::bookshelfmgr::installpage::icon), parent)
         , m_groupingOrder(groupingOrderKey)
         , m_modulesSelected(0)
         , m_modulesSelectedSources(0)
@@ -84,10 +85,10 @@ void BtInstallPage::initView() {
     initSourcesCombo();
 
     m_sourceAddButton = new QPushButton(this);
-    m_sourceAddButton ->setIcon(bApp->getIcon(CResMgr::bookshelfmgr::installpage::add_icon));
+    m_sourceAddButton->setIcon(util::getIcon(CResMgr::bookshelfmgr::installpage::add_icon));
 
     m_sourceDeleteButton = new QPushButton(this);
-    m_sourceDeleteButton->setIcon(bApp->getIcon(CResMgr::bookshelfmgr::installpage::delete_icon));
+    m_sourceDeleteButton->setIcon(util::getIcon(CResMgr::bookshelfmgr::installpage::delete_icon));
 
     QHBoxLayout *sourceChooserLayout = new QHBoxLayout();
     sourceChooserLayout->setContentsMargins(0, 8, 0, 0);
@@ -118,10 +119,10 @@ void BtInstallPage::initView() {
     initPathCombo();
 
     m_configurePathButton = new QToolButton(this);
-    m_configurePathButton->setIcon(bApp->getIcon(CResMgr::bookshelfmgr::installpage::path_icon));
+    m_configurePathButton->setIcon(util::getIcon(CResMgr::bookshelfmgr::installpage::path_icon));
 
     m_installButton = new QPushButton(this);
-    m_installButton->setIcon(bApp->getIcon(CResMgr::bookshelfmgr::installpage::install_icon));
+    m_installButton->setIcon(util::getIcon(CResMgr::bookshelfmgr::installpage::install_icon));
     m_installButton->setEnabled(false);
 
     QHBoxLayout *pathLayout = new QHBoxLayout();
@@ -267,7 +268,7 @@ void BtInstallPage::retranslateUi() {
 
     m_sourceGroupBox->setTitle(tr("Select installation &source:"));
     m_sourceAddButton->setText(tr("&Add..."));
-    m_sourceAddButton ->setToolTip(tr("Add new source"));
+    m_sourceAddButton->setToolTip(tr("Add new source"));
     m_sourceDeleteButton->setText(tr("&Delete..."));
     m_sourceDeleteButton->setToolTip(tr("Delete this source"));
 

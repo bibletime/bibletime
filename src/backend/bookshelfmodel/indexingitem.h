@@ -20,20 +20,23 @@
 
 namespace BookshelfModel {
 
-class IndexingItem: public Item {
-    public:
-        static const Item::Type GROUP_TYPE = Item::ITEM_INDEXING;
+class IndexingItem: public GroupItem<Item::ITEM_INDEXING> {
 
-        IndexingItem(CSwordModuleInfo *module);
+public: /* Methods: */
 
-        QVariant data(int role = Qt::DisplayRole) const;
+    inline IndexingItem(const CSwordModuleInfo & module)
+        : m_indexed(module.hasIndex()) {}
 
-        inline bool fitFor(CSwordModuleInfo *module) const {
-            return module->hasIndex() == m_indexed;
-        }
+    QVariant data(int role = Qt::DisplayRole) const;
 
-    protected:
-        bool m_indexed;
+    inline bool fitFor(const CSwordModuleInfo & module) const {
+        return module.hasIndex() == m_indexed;
+    }
+
+private: /* Fields: */
+
+    bool m_indexed;
+
 };
 
 } // namespace BookshelfModel

@@ -111,16 +111,11 @@ QString CPrinter::finishText(const QString &text, const KeyTree &tree) {
     CDisplayTemplateMgr::Settings settings;
     //settings.modules = modules;
     settings.pageCSS_ID = "printer";
-    settings.langAbbrev = ( lang && (modules.count() == 1) && lang->isValid() ) ? lang->abbrev() : "unknown";
+    if (modules.count() == 1 && lang->isValid())
+        settings.langAbbrev = lang->abbrev();
 
-    //the previous version gave compiler error for some strange reason
-    //(well, I don't like ?: anyway, let alone nested)
-    if (modules.count() != 1) {
-        settings.pageDirection = QString::null;
-    }
-    else {
-        settings.pageDirection = ( modules.first()->textDirection() == CSwordModuleInfo::LeftToRight ) ? "ltr" : "rtl";
-    }
+    if (modules.count() == 1)
+        settings.textDirection = modules.first()->textDirection();
 
     CDisplayTemplateMgr *tMgr = CDisplayTemplateMgr::instance();
     return tMgr->fillTemplate(CDisplayTemplateMgr::activeTemplateName(), text, settings);

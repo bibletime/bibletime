@@ -19,6 +19,7 @@
 #include "frontend/bookmarks/btbookmarkfolder.h"
 #include "frontend/bookmarks/bteditbookmarkdialog.h"
 #include "util/cresmgr.h"
+#include "util/geticon.h"
 
 
 BtBookmarkItem::BtBookmarkItem(const CSwordModuleInfo *module,
@@ -135,7 +136,7 @@ void BtBookmarkItem::rename() {
 }
 
 void BtBookmarkItem::update() {
-    setIcon(0, bApp->getIcon(CResMgr::mainIndex::bookmark::icon));
+    setIcon(0, util::getIcon(CResMgr::mainIndex::bookmark::icon));
 
     if (m_title.isEmpty()) {
       m_title = QString::fromLatin1("%1 (%2)").arg(key()).arg(module() ? module()->name() : QObject::tr("unknown"));

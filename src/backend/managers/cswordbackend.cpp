@@ -125,45 +125,44 @@ CSwordBackend::LoadError CSwordBackend::initModules(SetupChangedReason reason) {
     const LoadError ret = static_cast<LoadError>(Load());
 
     for (sword::ModMap::iterator it = Modules.begin(); it != end; ++it) {
-        sword::SWModule* const curMod = (*it).second;
-        CSwordModuleInfo* newModule = 0;
+        sword::SWModule * const curMod = (*it).second;
+        CSwordModuleInfo * newModule;
 
-        if (!strcmp(curMod->getType(), "Biblical Texts")) {
-            newModule = new CSwordBibleModuleInfo(curMod, this);
+        const char * const modType = curMod->Type();
+        if (!strcmp(modType, "Biblical Texts")) {
+            newModule = new CSwordBibleModuleInfo(curMod, *this);
             newModule->module()->setDisplay(&m_chapterDisplay);
-        }
-        else if (!strcmp(curMod->getType(), "Commentaries")) {
-            newModule = new CSwordCommentaryModuleInfo(curMod, this);
+        } else if (!strcmp(modType, "Commentaries")) {
+            newModule = new CSwordCommentaryModuleInfo(curMod, *this);
             newModule->module()->setDisplay(&m_entryDisplay);
-        }
-        else if (!strcmp(curMod->getType(), "Lexicons / Dictionaries")) {
-            newModule = new CSwordLexiconModuleInfo(curMod, this);
+        } else if (!strcmp(modType, "Lexicons / Dictionaries")) {
+            newModule = new CSwordLexiconModuleInfo(curMod, *this);
             newModule->module()->setDisplay(&m_entryDisplay);
-        }
-        else if (!strcmp(curMod->getType(), "Generic Books")) {
-            newModule = new CSwordBookModuleInfo(curMod, this);
+        } else if (!strcmp(modType, "Generic Books")) {
+            newModule = new CSwordBookModuleInfo(curMod, *this);
             newModule->module()->setDisplay(&m_bookDisplay);
+        } else {
+            continue;
         }
 
-        if (newModule) {
-            //Append the new modules to our list, but only if it's supported
-            //The constructor of CSwordModuleInfo prints a warning on stdout
-            if (!newModule->hasVersion() || (newModule->minimumSwordVersion() <= sword::SWVersion::currentVersion)) {
-                m_dataModel.addModule(newModule);
-            }
-            else {
-                delete newModule;
-            }
+        // Append the new modules to our list, but only if it's supported
+        // The constructor of CSwordModuleInfo prints a warning on stdout
+        if (!newModule->hasVersion()
+            || (newModule->minimumSwordVersion() <= sword::SWVersion::currentVersion))
+        {
+            m_dataModel.addModule(newModule);
+        } else {
+            delete newModule;
         }
     }
 
-    Q_FOREACH(CSwordModuleInfo* mod, m_dataModel.moduleList()) {
-        //unlock modules if keys are present
-        if ( mod->isEncrypted() ) {
-            const QString unlockKey = btConfig().getModuleEncryptionKey( mod->name() );
-            if (!unlockKey.isNull()) {
-                setCipherKey( mod->name().toUtf8().constData(), unlockKey.toUtf8().constData() );
-            }
+    // Unlock modules if keys are present:
+    Q_FOREACH(CSwordModuleInfo * mod, m_dataModel.moduleList()) {
+        if (mod->isEncrypted()) {
+            const QString unlockKey = btConfig().getModuleEncryptionKey(mod->name());
+            if (!unlockKey.isNull())
+                setCipherKey(mod->name().toUtf8().constData(),
+                             unlockKey.toUtf8().constData());
         }
     }
 

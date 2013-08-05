@@ -11,11 +11,10 @@
 
 #include <QDebug>
 #include <QLocale>
-#include <QMessageBox>
 #include <QWebSettings>
 #include "backend/btmoduletreeitem.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
-#include "frontend/searchdialog/btsearchoptionsarea.h"
+#include "util/dialogutil.h"
 #include "util/directory.h" // DU::getUserBaseDir()
 
 // Sword includes:
@@ -23,6 +22,7 @@
 #include <versekey.h> // For search scope configuration
 
 
+#define BTCONFIG_API_VERSION 1
 namespace {
 const QString BTCONFIG_API_VERSION_KEY = "btconfig_api_version";
 }
@@ -72,7 +72,7 @@ bool BtConfig::initBtConfig() {
     if (btConfigOldApi < BTCONFIG_API_VERSION) {
         /// \todo Migrate from btConfigOldApi to BTCONFIG_API_VERSION
         qWarning() << "BibleTime configuration migration is not yet implemented!!!";
-        cont = QMessageBox::warning(
+        cont = util::showWarning(
                     0, "Warning!",
                     "Migration to the new configuration system is not yet "
                     "implemented. Proceeding might result in <b>loss of data"
@@ -83,7 +83,7 @@ bool BtConfig::initBtConfig() {
                     QMessageBox::No) == QMessageBox::Yes;
     } else {
         Q_ASSERT(btConfigOldApi > BTCONFIG_API_VERSION);
-        cont = QMessageBox::warning(
+        cont = util::showWarning(
                     0, tr("Error loading configuration!"),
                     tr("Failed to load BibleTime's configuration, because it "
                        "appears that the configuration file corresponds to a newer "

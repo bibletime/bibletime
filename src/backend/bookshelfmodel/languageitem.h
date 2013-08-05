@@ -21,20 +21,23 @@
 
 namespace BookshelfModel {
 
-class LanguageItem: public Item {
-    public:
-        static const Item::Type GROUP_TYPE = Item::ITEM_LANGUAGE;
+class LanguageItem: public GroupItem<Item::ITEM_LANGUAGE> {
 
-        LanguageItem(CSwordModuleInfo *module);
+public: /* Methods: */
 
-        QVariant data(int role = Qt::DisplayRole) const;
+    inline LanguageItem(const CSwordModuleInfo & module)
+        : m_language(module.language()) {}
 
-        inline bool fitFor(CSwordModuleInfo *module) const {
-            return module->language() == m_language;
-        }
+    QVariant data(int role = Qt::DisplayRole) const;
 
-    protected:
-        const CLanguageMgr::Language *m_language;
+    inline bool fitFor(const CSwordModuleInfo & module) const {
+        return module.language() == m_language;
+    }
+
+private: /* Fields: */
+
+    const CLanguageMgr::Language * m_language;
+
 };
 
 } // namespace BookshelfModel

@@ -7,15 +7,14 @@
 *
 **********/
 
-#include "frontend/bookshelfmanager/installpage/btinstallthread.h"
+#include "backend/btinstallthread.h"
 
-#include <QApplication>
 #include <QDebug>
 #include <QDir>
 #include <QString>
 #include <QThread>
 #include "backend/managers/cswordbackend.h"
-#include "frontend/bookshelfmanager/btinstallmgr.h"
+#include "backend/btinstallmgr.h"
 #include "backend/btinstallbackend.h"
 
 // Sword includes:

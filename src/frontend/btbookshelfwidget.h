@@ -35,7 +35,6 @@ class BtBookshelfWidget: public QWidget {
     Q_OBJECT
     public:
         explicit BtBookshelfWidget(QWidget *parent = 0, Qt::WindowFlags flags = 0);
-        ~BtBookshelfWidget();
 
         void setSourceModel(QAbstractItemModel *model);
 

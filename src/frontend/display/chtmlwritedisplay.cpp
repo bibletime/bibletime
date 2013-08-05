@@ -21,6 +21,7 @@
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/chtmlwritewindow.h"
 #include "util/cresmgr.h"
+#include "util/geticon.h"
 
 
 class BtActionCollection;
@@ -43,7 +44,7 @@ CHTMLWriteDisplay::CHTMLWriteDisplay(CHTMLWriteWindow * parentWindow, QWidget* p
 
     //--------------------bold toggle-------------------------
     m_actions.bold = new QAction(
-        bApp->getIcon(CResMgr::displaywindows::writeWindow::boldText::icon),
+        util::getIcon(CResMgr::displaywindows::writeWindow::boldText::icon),
         tr("Bold"),
         this);
     m_actions.bold->setCheckable(true);
@@ -55,7 +56,7 @@ CHTMLWriteDisplay::CHTMLWriteDisplay(CHTMLWriteWindow * parentWindow, QWidget* p
 
     //--------------------italic toggle-------------------------
     m_actions.italic = new QAction(
-        bApp->getIcon(CResMgr::displaywindows::writeWindow::italicText::icon),
+        util::getIcon(CResMgr::displaywindows::writeWindow::italicText::icon),
         tr("Italic"),
         this );
     m_actions.italic->setCheckable(true);
@@ -67,7 +68,7 @@ CHTMLWriteDisplay::CHTMLWriteDisplay(CHTMLWriteWindow * parentWindow, QWidget* p
 
     //--------------------underline toggle-------------------------
     m_actions.underline = new QAction(
-        bApp->getIcon(CResMgr::displaywindows::writeWindow::underlinedText::icon),
+        util::getIcon(CResMgr::displaywindows::writeWindow::underlinedText::icon),
         tr("Underline"),
         this );
     m_actions.underline->setCheckable(true);
@@ -79,7 +80,7 @@ CHTMLWriteDisplay::CHTMLWriteDisplay(CHTMLWriteWindow * parentWindow, QWidget* p
 
     //--------------------align left toggle-------------------------
     m_actions.alignLeft = new QAction(
-        bApp->getIcon(CResMgr::displaywindows::writeWindow::alignLeft::icon),
+        util::getIcon(CResMgr::displaywindows::writeWindow::alignLeft::icon),
         tr("Left"), this);
     m_actions.alignLeft->setCheckable(true);
     m_actions.alignLeft->setShortcut(CResMgr::displaywindows::writeWindow::alignLeft::accel);
@@ -89,7 +90,7 @@ CHTMLWriteDisplay::CHTMLWriteDisplay(CHTMLWriteWindow * parentWindow, QWidget* p
 
     //--------------------align center toggle-------------------------
     m_actions.alignCenter = new QAction(
-        bApp->getIcon(CResMgr::displaywindows::writeWindow::alignCenter::icon),
+        util::getIcon(CResMgr::displaywindows::writeWindow::alignCenter::icon),
         tr("Center"), this);
     m_actions.alignCenter->setCheckable(true);
     m_actions.alignCenter->setShortcut(CResMgr::displaywindows::writeWindow::alignCenter::accel);
@@ -99,7 +100,7 @@ CHTMLWriteDisplay::CHTMLWriteDisplay(CHTMLWriteWindow * parentWindow, QWidget* p
 
     //--------------------align right toggle-------------------------
     m_actions.alignRight = new QAction(
-        bApp->getIcon(CResMgr::displaywindows::writeWindow::alignRight::icon),
+        util::getIcon(CResMgr::displaywindows::writeWindow::alignRight::icon),
         tr("Right"), this);
     m_actions.alignRight->setCheckable(true);
     m_actions.alignRight->setShortcut(CResMgr::displaywindows::writeWindow::alignRight::accel);

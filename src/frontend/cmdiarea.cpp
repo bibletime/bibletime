@@ -21,7 +21,23 @@
 #include <QWebView>
 #include <QWindowStateChangeEvent>
 
-#define MOVESIZE 30
+
+namespace {
+
+inline CDisplayWindow * getDisplayWindow(const QMdiSubWindow * const mdiWindow) {
+    return qobject_cast<CDisplayWindow *>(mdiWindow->widget());
+}
+
+inline QWebView * getWebViewFromDisplayWindow(const CDisplayWindow * const displayWindow) {
+    if (!displayWindow)
+        return NULL;
+    CDisplay * const display = displayWindow->displayWidget();
+    if (!display)
+        return NULL;
+    return qobject_cast<QWebView *>(display->view());
+}
+
+} // anonymous namespace
 
 
 CMDIArea::CMDIArea(BibleTime *parent)
@@ -62,8 +78,10 @@ void CMDIArea::fixSystemMenu(QMdiSubWindow* subWindow) {
     }
 }
 
-QMdiSubWindow* CMDIArea::addSubWindow(QWidget * widget, Qt::WindowFlags windowFlags) {
-    QMdiSubWindow* subWindow = QMdiArea::addSubWindow(widget, windowFlags);
+QMdiSubWindow * CMDIArea::addSubWindow(QWidget * widget,
+                                       Qt::WindowFlags windowFlags)
+{
+    QMdiSubWindow * const subWindow = QMdiArea::addSubWindow(widget, windowFlags);
     subWindow->installEventFilter(this);
     fixSystemMenu(subWindow);
 
@@ -74,28 +92,24 @@ QMdiSubWindow* CMDIArea::addSubWindow(QWidget * widget, Qt::WindowFlags windowFl
         // If we already have an active window, make the new one simular to it
         if (activeSubWindow()) {
             if (activeSubWindow()->isMaximized()) {
-                // Maximize the new window
-                subWindow->showMaximized();
-            }
-            else {
+                subWindow->showMaximized(); // Maximize the new window
+            } else {
                 // Make new window the same size as the active window and move it slightly.
                 subWindow->resize(activeSubWindow()->size());
                 QRect subWinGeom = activeSubWindow()->geometry();
+                static const int MOVESIZE = 30;
                 subWinGeom.translate(MOVESIZE, MOVESIZE);
                 // If it goes off screen, move it almost to the top left
-                if ( ! frameRect().contains(subWinGeom)) {
+                if (!frameRect().contains(subWinGeom))
                     subWinGeom.moveTo(MOVESIZE, MOVESIZE);
-                }
                 subWindow->setGeometry(subWinGeom);
             }
-        }
-        else {
+        } else {
             //set the window to be big enough
             subWindow->resize(400, 400);
         }
         subWindow->raise();
-    }
-    else {
+    } else {
         // Automatic arrangement modes
         enableWindowMinMaxFlags(false);
         triggerWindowUpdate();
@@ -284,22 +298,6 @@ QList<QMdiSubWindow*> CMDIArea::usableWindowList() const {
         }
     }
     return ret;
-}
-
-static CDisplayWindow* getDisplayWindow(QMdiSubWindow* mdiWindow) {
-    QWidget* widget = mdiWindow->widget();
-    return qobject_cast<CDisplayWindow*>(widget);
-}
-
-static QWebView* getWebViewFromDisplayWindow(CDisplayWindow* displayWindow) {
-    if (displayWindow == 0)
-        return 0;
-    CDisplay* display = displayWindow->displayWidget();
-    if (display == 0)
-        return 0;
-    QWidget* view = display->view();
-    QWebView* webView = qobject_cast<QWebView*>(view);
-    return webView;
 }
 
 QWebView* CMDIArea::getActiveWebView()

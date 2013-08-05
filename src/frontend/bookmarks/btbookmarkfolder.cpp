@@ -15,6 +15,7 @@
 #include "frontend/bookmarks/btbookmarkitem.h"
 #include "frontend/bookmarks/btbookmarkloader.h"
 #include "util/cresmgr.h"
+#include "util/geticon.h"
 
 
 BtBookmarkFolder::BtBookmarkFolder(const QString &name, QTreeWidgetItem *parent)
@@ -77,7 +78,7 @@ void BtBookmarkFolder::rename() {
 }
 
 void BtBookmarkFolder::update() {
-    setIcon(0, bApp->getIcon(isExpanded() && childCount()
+    setIcon(0, util::getIcon(isExpanded() && childCount()
                              ? CResMgr::mainIndex::openedFolder::icon
                              : CResMgr::mainIndex::closedFolder::icon));
 }

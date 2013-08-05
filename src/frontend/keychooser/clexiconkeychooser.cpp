@@ -19,11 +19,12 @@
 #include "util/cresmgr.h"
 
 
-CLexiconKeyChooser::CLexiconKeyChooser(
-        const QList<const CSwordModuleInfo*> &modules,
-        BTHistory *historyPtr, CSwordKey *key, QWidget *parent)
-        : CKeyChooser(modules, historyPtr, key, parent),
-          m_key(dynamic_cast<CSwordLDKey*>(key))
+CLexiconKeyChooser::CLexiconKeyChooser(const QList<const CSwordModuleInfo *> & modules,
+                                       BTHistory * historyPtr,
+                                       CSwordKey * key,
+                                       QWidget * parent)
+    : CKeyChooser(modules, historyPtr, parent)
+    , m_key(dynamic_cast<CSwordLDKey *>(key))
 {
     setModules(modules, false);
 
@@ -34,12 +35,12 @@ CLexiconKeyChooser::CLexiconKeyChooser(
     m_layout->setDirection(QBoxLayout::LeftToRight);
     m_layout->setSizeConstraint(QLayout::SetNoConstraint);
 
-    m_widget = new CKeyChooserWidget(0, false, this);
+    m_widget = new CKeyChooserWidget(0, this);
     setFocusProxy(m_widget);
 
     //don't allow a too high width, try to keep as narrow as possible
     //to aid users with smaller screen resolutions
-    m_widget->comboBox()->setMaximumWidth(200);
+    m_widget->comboBox().setMaximumWidth(200);
 
     m_widget->setToolTips(
         tr("Entries of the current work"),
@@ -70,8 +71,8 @@ void CLexiconKeyChooser::updateKey(CSwordKey* key) {
     }
 
     QString newKey = m_key->key();
-    const int index = m_widget->comboBox()->findText(newKey);
-    m_widget->comboBox()->setCurrentIndex(index);
+    const int index = m_widget->comboBox().findText(newKey);
+    m_widget->comboBox().setCurrentIndex(index);
 }
 
 void CLexiconKeyChooser::setKey(CSwordKey* key) {
@@ -87,7 +88,7 @@ void CLexiconKeyChooser::setKey(CSwordKey* key) {
 
 void CLexiconKeyChooser::activated(int index) {
     //  qWarning("activated");
-    const QString text = m_widget->comboBox()->itemText(index);
+    const QString text = m_widget->comboBox().itemText(index);
 
     // To prevent from eternal loop, because activated() is emitted again
     if (m_key && m_key->key() != text) {
@@ -169,7 +170,7 @@ void CLexiconKeyChooser::setModules(const QList<const CSwordModuleInfo*> &module
     }
 }
 
-void CLexiconKeyChooser::setKey(QString& newKey) {
+void CLexiconKeyChooser::setKey(const QString & newKey) {
     m_key->setKey(newKey);
     setKey(m_key);
 }

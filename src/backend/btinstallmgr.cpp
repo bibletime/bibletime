@@ -1,0 +1,99 @@
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2011 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
+
+#include "backend/btinstallmgr.h"
+
+#include "backend/btinstallbackend.h"
+
+
+namespace {
+
+template <typename T>
+inline T normalizeCompletionPercentage(const T value) {
+    if (value < 0)
+        return 0;
+    if (value > 100)
+        return 100;
+    return value;
+}
+
+template <typename T>
+inline int calculateIntPercentage(T done, T total) {
+    Q_ASSERT(done >= 0);
+    Q_ASSERT(total >= 0);
+
+    // Special care (see warning in BtInstallMgr::statusUpdate()).
+    if (done > total)
+        done = total;
+    if (total == 0)
+        return 100;
+
+    return normalizeCompletionPercentage<int>((done / total) * 100);
+}
+
+} // anonymous namespace
+
+using namespace sword;
+
+BtInstallMgr::BtInstallMgr(QObject * parent)
+        : QObject(parent)
+        , InstallMgr(BtInstallBackend::configPath().toLatin1(), this)
+        , m_totalBytes(1)
+        , m_completedBytes(0)
+        , m_firstCallOfPreStatus(true)
+{ // Use this class also as status reporter:
+    this->setFTPPassive(true);
+}
+
+BtInstallMgr::~BtInstallMgr() {
+    //doesn't really help because it only sets a flag
+    this->terminate(); // make sure to close the connection
+}
+
+bool BtInstallMgr::isUserDisclaimerConfirmed() const {
+    //// \todo Check from config if it's been confirmed with "don't show this anymore" checked.
+    // Create a dialog with the message, checkbox and Continue/Cancel, Cancel as default.
+    return true;
+}
+
+void BtInstallMgr::statusUpdate(double dltotal, double dlnow) {
+    /**
+      \warning Note that these *might be* rough measures due to the double data
+               type being used by Sword to store the number of bytes. Special
+               care must be taken to work around this, since the arguments may
+               contain weird values which would otherwise break this logic.
+    */
+
+    if (dltotal < 0.0) // Special care (see warning above)
+        dltotal = 0.0;
+    if (dlnow < 0.0) // Special care (see warning above)
+        dlnow = 0.0;
+
+    const int totalPercent = calculateIntPercentage<double>(dlnow + m_completedBytes,
+                                                            m_totalBytes);
+    const int filePercent  = calculateIntPercentage(dlnow, dltotal);
+
+    //qApp->processEvents();
+    emit percentCompleted(totalPercent, filePercent);
+}
+
+
+void BtInstallMgr::preStatus(long totalBytes,
+                             long completedBytes,
+                             const char * message)
+{
+    Q_UNUSED(message);
+    Q_ASSERT(completedBytes <= totalBytes);
+    if (m_firstCallOfPreStatus) {
+        m_firstCallOfPreStatus = false;
+        emit downloadStarted();
+    }
+    m_completedBytes = completedBytes;
+    m_totalBytes = totalBytes;
+}

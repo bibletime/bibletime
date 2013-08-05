@@ -30,6 +30,7 @@
 #include "util/cresmgr.h"
 #include "util/dialogutil.h"
 #include "util/directory.h"
+#include "util/geticon.h"
 
 // Sword includes:
 #include <swmgr.h>
@@ -41,7 +42,7 @@ const QString groupingOrderKey("GUI/BookshelfManager/RemovePage/grouping");
 }
 
 BtRemovePage::BtRemovePage(BtModuleManagerDialog *parent)
-        : BtConfigDialog::Page(bApp->getIcon(CResMgr::bookshelfmgr::removepage::icon), parent)
+        : BtConfigDialog::Page(util::getIcon(CResMgr::bookshelfmgr::removepage::icon), parent)
 {
     m_worksGroupBox = new QGroupBox(this);
     m_worksGroupBox->setFlat(true);
@@ -76,7 +77,7 @@ BtRemovePage::BtRemovePage(BtModuleManagerDialog *parent)
     uLayout->addStretch(1);
 
     m_removeButton = new QPushButton(this);
-    m_removeButton->setIcon(bApp->getIcon(CResMgr::bookshelfmgr::removepage::remove_icon));
+    m_removeButton->setIcon(util::getIcon(CResMgr::bookshelfmgr::removepage::remove_icon));
     m_removeButton->setEnabled(false);
     uLayout->addWidget(m_removeButton, 0, Qt::AlignRight);
 
@@ -130,13 +131,13 @@ void BtRemovePage::slotRemoveModules() {
     /// \bug <nobr> is not working, Qt bug
     const QString moduleString("<nobr><img src=\"%1\" width=\"%2\" height=\"%3\"/>&nbsp;%4</nobr>");
     const QString iconDir = util::directory::getIconDir().canonicalPath() + '/';
-    Q_FOREACH(const CSwordModuleInfo *m,
+    Q_FOREACH(const CSwordModuleInfo * m,
               m_bookshelfWidget->treeModel()->checkedModules())
     {
-        const QIcon icon = CSwordModuleInfo::moduleIcon(m);
+        const QIcon icon = CSwordModuleInfo::moduleIcon(*m);
         const QSize iconSize = icon.actualSize(QSize(textHeight, textHeight));
         prettyModuleNames.append(moduleString
-                                 .arg(iconDir + CSwordModuleInfo::moduleIconFilename(m))
+                                 .arg(iconDir + CSwordModuleInfo::moduleIconFilename(*m))
                                  .arg(iconSize.width())
                                  .arg(iconSize.height())
                                  .arg(m->name()));

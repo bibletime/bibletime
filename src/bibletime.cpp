@@ -39,6 +39,7 @@
 #include "frontend/searchdialog/csearchdialog.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
+#include "util/geticon.h"
 
 
 BibleTime *BibleTime::m_instance = 0;
@@ -97,7 +98,7 @@ BibleTime::BibleTime(QWidget *parent, Qt::WindowFlags flags)
     initConnections();
 
     setWindowTitle("BibleTime " BT_VERSION);
-    setWindowIcon(bApp->getIcon(CResMgr::mainWindow::icon));
+    setWindowIcon(util::getIcon(CResMgr::mainWindow::icon));
     retranslateUi();
 }
 
@@ -113,7 +114,7 @@ BibleTime::~BibleTime() {
 /** Creates a new presenter in the MDI area according to the type of the module. */
 CDisplayWindow* BibleTime::createReadDisplayWindow(QList<CSwordModuleInfo*> modules, const QString& key) {
     qApp->setOverrideCursor( QCursor(Qt::WaitCursor) );
-    qDebug() << "BibleTime::createReadDisplayWindow(QList<CSwordModuleInfo*> modules, const QString& key)";
+    // qDebug() << "BibleTime::createReadDisplayWindow(QList<CSwordModuleInfo*> modules, const QString& key)";
     CDisplayWindow* displayWindow = CDisplayWindowFactory::createReadInstance(modules, m_mdi);
     if ( displayWindow ) {
         displayWindow->init();

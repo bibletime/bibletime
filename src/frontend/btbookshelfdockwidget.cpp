@@ -26,6 +26,7 @@
 #include "frontend/btbookshelfview.h"
 #include "frontend/btbookshelfwidget.h"
 #include "util/cresmgr.h"
+#include "util/geticon.h"
 
 
 namespace {
@@ -114,30 +115,30 @@ void BtBookshelfDockWidget::initMenus() {
     m_itemContextMenu->addAction(m_itemOpenAction);
 
     m_itemSearchAction = new QAction(this);
-    m_itemSearchAction->setIcon(bApp->getIcon(RM::search::icon));
+    m_itemSearchAction->setIcon(util::getIcon(RM::search::icon));
     m_itemActionGroup->addAction(m_itemSearchAction);
     m_itemContextMenu->addAction(m_itemSearchAction);
 
     m_itemEditMenu = new QMenu(this);
-    m_itemEditMenu->setIcon(bApp->getIcon(RM::editModuleMenu::icon));
+    m_itemEditMenu->setIcon(util::getIcon(RM::editModuleMenu::icon));
     m_itemContextMenu->addMenu(m_itemEditMenu);
     m_itemEditPlainAction = new QAction(this);
-    m_itemEditPlainAction->setIcon(bApp->getIcon(RM::editModulePlain::icon));
+    m_itemEditPlainAction->setIcon(util::getIcon(RM::editModulePlain::icon));
     m_itemActionGroup->addAction(m_itemEditPlainAction);
     m_itemEditMenu->addAction(m_itemEditPlainAction);
 
     m_itemEditHtmlAction = new QAction(this);
-    m_itemEditHtmlAction->setIcon(bApp->getIcon(RM::editModuleHTML::icon));
+    m_itemEditHtmlAction->setIcon(util::getIcon(RM::editModuleHTML::icon));
     m_itemActionGroup->addAction(m_itemEditHtmlAction);
     m_itemEditMenu->addAction(m_itemEditHtmlAction);
 
     m_itemUnlockAction = new QAction(this);
-    m_itemUnlockAction->setIcon(bApp->getIcon(RM::unlockModule::icon));
+    m_itemUnlockAction->setIcon(util::getIcon(RM::unlockModule::icon));
     m_itemActionGroup->addAction(m_itemUnlockAction);
     m_itemContextMenu->addAction(m_itemUnlockAction);
 
     m_itemAboutAction = new QAction(this);
-    m_itemAboutAction->setIcon(bApp->getIcon(RM::aboutModule::icon));
+    m_itemAboutAction->setIcon(util::getIcon(RM::aboutModule::icon));
     m_itemActionGroup->addAction(m_itemAboutAction);
     m_itemContextMenu->addAction(m_itemAboutAction);
 

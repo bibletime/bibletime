@@ -29,7 +29,6 @@ class BtOpenWorkActionMenu: public BtMenuView {
     public:
         BtOpenWorkActionMenu(const QString &groupingConfigKey,
                              QWidget *parent = 0);
-        ~BtOpenWorkActionMenu();
 
         void setSourceModel(QAbstractItemModel *model);
         inline QAbstractItemModel *sourceModel() const { return m_treeModel->sourceModel(); }

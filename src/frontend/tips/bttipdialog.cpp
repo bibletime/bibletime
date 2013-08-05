@@ -21,6 +21,7 @@
 #include "util/cresmgr.h"
 #include "util/dialogutil.h"
 #include "util/directory.h"
+#include "util/geticon.h"
 
 
 namespace {
@@ -65,7 +66,7 @@ BtTipDialog::BtTipDialog(QWidget *parent, Qt::WindowFlags wflags)
 {
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setWindowTitle(tr("Tip Of The Day"));
-    setWindowIcon(bApp->getIcon(CResMgr::mainMenu::help::tipOfTheDay::icon));
+    setWindowIcon(util::getIcon(CResMgr::mainMenu::help::tipOfTheDay::icon));
     resize(450, 240);
 
     QVBoxLayout *mainLayout = new QVBoxLayout;
