@@ -9,6 +9,9 @@
     * Fixed search analysis save asking for overwrite confirmation twice.
     * Optimized and enhanced search analysis to output proper XHTML.
 
+2013-01-19 Greg Hellings <greg.hellings@gmail.com>
+    * Added support for HTTP, HTTPS, SFTP transports in BibleTime
+
 2013-01-15 Jaak Ristioja <jaak@ristioja.ee>
     * Fixed widget ending up disabled after removing install source.
 
