@@ -12,20 +12,42 @@ Rectangle {
     property QtObject component: null;
     property Item window: null;
     property var windows: []
+    property int single: 0
     property int tabLayout: 1
     property int autoTile: 2
     property int autoTileHor: 3
     property int autoTileVer: 4
-    property int windowLayout: tabLayout
+    property int windowLayout: single
+
+    ListModel {
+        id: windowsModel
+
+        ListElement { title: ""; action: "" }
+    }
+
+    function createWindowMenus() {
+        windowsModel.clear();
+        for (var i=0; i<windows.length; ++i) {
+            var window = windows[i];
+            console.log(window.title)
+            windowsModel.append (
+                        { title: window.title, action: i.toString() }
+                        )
+        }
+        windowTitlesMenus.model = windowsModel
+        windowTitlesMenus.visible = true;
+    }
 
     function layoutTiles(rows, columns)
     {
+        console.log("layoutTitles");
         gridWindows.columns = columns;
         gridWindows.rows = rows;
         var width = gridWindows.width/columns -2;
         var height = gridWindows.height/rows -2;
 
         for (var i=0; i<windows.length; ++i) {
+            console.log("xxxxx");
             var window = windows[i];
             window.anchors.fill = undefined
             window.height = height;
@@ -34,45 +56,70 @@ Rectangle {
         }
     }
 
-    function layout() {
-        if (windowLayout == tabLayout) {
-            tabbedWindows.z = 1;
-            gridWindows.z = -1;
-            for (var i=0; i<windows.length; ++i) {
-                var window = windows[i];
-                window.parent = tabbedWindowsStack;
-                window.anchors.fill = tabbedWindowsStack
+    function arrangeSingleWindow() {
+        tabbedWindows.z = 1;
+        tabbedWindows.tabVisible = false;
+        for (var i=0; i<windows.length; ++i) {
+            var window = windows[i];
+//            console.log(window, i)
+            window.parent = tabbedWindowsStack;
+            console.log("w ",window, tabbedWindowsStack)
+            window.anchors.fill = tabbedWindowsStack
+        }
+    }
+
+    function arrangeTabbedWindows() {
+        tabbedWindows.z = 1;
+        tabbedWindows.tabVisible = true;
+        for (var i=0; i<windows.length; ++i) {
+            var window = windows[i];
+            window.parent = tabbedWindowsStack;
+            window.anchors.fill = tabbedWindowsStack
+        }
+    }
+
+    function arrangeTiledWindows() {
+        gridWindows.z = 1;
+        var columns = 1;
+        var rows = 1;
+        var count = windows.length;
+
+        if (windowLayout == autoTile) {
+            if (count > 1) {
+                columns = 2
+                rows = Math.floor((count+1)/2);
             }
         }
-        else
+        else if (windowLayout == autoTileHor)
         {
-            tabbedWindows.z = -1;
-            gridWindows.z = 1;
-            var columns = 1;
-            var rows = 1;
-            var count = windows.length;
+            rows = count;
+        }
+        else if (windowLayout == autoTileVer)
+        {
+            columns = count;
+        }
+        layoutTiles(rows, columns);
+    }
 
-            if (windowLayout == autoTile) {
-                if (count > 1) {
-                    columns = 2
-                    rows = Math.floor((count+1)/2);
-                }
-            }
-            else if (windowLayout == autoTileHor)
-            {
-                rows = count;
-            }
-            else if (windowLayout == autoTileVer)
-            {
-                columns = count;
-            }
-            layoutTiles(rows, columns);
+    function layoutWindows() {
+        tabbedWindows.z = -2;
+        gridWindows.z = -3;
+
+//        console.log("layoutWindows")
+        if (windowLayout == single) {
+            arrangeSingleWindow();
+        }
+        else if (windowLayout == tabLayout) {
+            arrangeTabbedWindows();
+        }
+        else {
+            arrangeTiledWindows();
         }
     }
 
 
     function selectWindow(n) {
-        if (windowLayout == tabLayout) {
+        if (windowLayout == tabLayout || windowLayout == single) {
             tabbedWindows.current = n;
         }
     }
@@ -108,7 +155,7 @@ Rectangle {
         }
         else {
             windows.push(window)
-            layout();
+            layoutWindows();
             var curWindow = windows.length -1;
             selectWindow(curWindow);
         }
@@ -118,8 +165,12 @@ Rectangle {
         installManager.openChooser();
     }
 
-    width: 1280
-    height: 650
+    //    width: 1280 // Nexus 7 (2012)
+    //    height: 800
+
+    width:  480   // Phone
+    height: 800
+
     rotation: 0
 
     MainToolbar {
@@ -165,6 +216,7 @@ Rectangle {
             id: tabbedWindows
 
             default property alias content: tabbedWindowsStack.children
+            property bool tabVisible: true
             property int current: 0
 
             function changeTabs() {
@@ -210,7 +262,7 @@ Rectangle {
                             return tabWidth;
                         }
 
-
+                        visible: tabbedWindows.tabVisible
                         //width: (tabbedWindows.width) / tabbedWindowsStack.children.length;
                         width: {
                             calculateTabWidth()
@@ -282,9 +334,10 @@ Rectangle {
 
             ListElement { title: QT_TR_NOOP("New Window");              action: "newWindow" }
             ListElement { title: QT_TR_NOOP("Bookshelf Manager");       action: "install" }
+            ListElement { title: QT_TR_NOOP("Windows");                 action: "windows" }
             ListElement { title: QT_TR_NOOP("Window Arrangement");      action: "windowArrangement" }
-//            ListElement { title: QT_TR_NOOP("Gnome Style");             action: "gnomeStyle" }
-//            ListElement { title: QT_TR_NOOP("Android Style");           action: "androidStyle" }
+            //            ListElement { title: QT_TR_NOOP("Gnome Style");             action: "gnomeStyle" }
+            //            ListElement { title: QT_TR_NOOP("Android Style");           action: "androidStyle" }
         }
 
         Menus {
@@ -296,6 +349,9 @@ Rectangle {
                 mainMenus.visible = false;
                 if (action == "newWindow") {
                     root.newWindow();
+                }
+                else if (action == "windows") {
+                    createWindowMenus();
                 }
                 else if (action == "windowArrangement") {
                     windowArrangementMenus.visible = true;
@@ -318,6 +374,7 @@ Rectangle {
         ListModel {
             id: windowArrangementModel
 
+            ListElement { title: QT_TR_NOOP("Single");                  action: "single" }
             ListElement { title: QT_TR_NOOP("Tabbed");                  action: "tabbed" }
             ListElement { title: QT_TR_NOOP("Auto-tile");               action: "autoTile" }
             ListElement { title: QT_TR_NOOP("Auto-tile horizontally");  action: "autoTileHor" }
@@ -327,31 +384,61 @@ Rectangle {
         Menus {
             id: windowArrangementMenus
 
+            menusWidth: 350
+
             Component.onCompleted: menuSelected.connect(windowArrangementMenus.doAction)
 
             function doAction(action) {
                 windowArrangementMenus.visible = false;
-                if (action == "tabbed") {
+                if (action == "single") {
+                    windowLayout = single
+                    layoutWindows();
+                }
+                else if (action == "tabbed") {
                     windowLayout = tabLayout;
-                    layout();
+                    layoutWindows();
                 }
                 else if (action == "autoTile") {
                     windowLayout = autoTile;
-                    layout();
+                    layoutWindows();
                 }
                 else if (action == "autoTileHor") {
                     windowLayout = autoTileHor;
-                    layout();
+                    layoutWindows();
                 }
                 else if (action == "autoTileVer") {
                     windowLayout = autoTileVer;
-                    layout();
+                    layoutWindows();
                 }
             }
 
             model: windowArrangementModel
             anchors.top: parent.bottom
             anchors.right: parent.right
+        }
+
+        Menus {
+            id: windowTitlesMenus
+
+            model: windowsModel
+            menusWidth: 350
+            anchors.top: parent.bottom
+            anchors.right: parent.right
+            visible: false
+            Component.onCompleted: menuSelected.connect(windowTitlesMenus.doAction)
+
+            function doAction(action) {
+                windowTitlesMenus.visible = false;
+                var index = Number(action)
+                if (index == 0)
+                    return;
+                var windowList = root.windows;
+                var window = windowList.slice(index, index+1);
+                windowList.splice(index,1);
+                windowList.unshift(window);
+                root.windows = windowList;
+                layoutWindows();
+            }
         }
     }
 
