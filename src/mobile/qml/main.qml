@@ -76,16 +76,12 @@ Rectangle {
         id: btStyle
     }
 
-    InstallManager {
-        id: installManager
-    }
-
     ModuleChooser {
         id: moduleChooser
 
         objectName: "moduleChooser"
         visible: false
-        width:400
+        width: Math.min(parent.height, parent.width);
         height: parent.height
         anchors.centerIn: parent
     }
@@ -103,11 +99,15 @@ Rectangle {
         z: 100
     }
 
+    InstallManager {
+        id: installManager
+    }
+
     InstallManagerChooser {
         id: installManagerChooser
 
         objectName: "installManagerChooser"
-        width: 750
+        width: Math.min(parent.height, parent.width);
         height: parent.height
         anchors.centerIn: parent
         anchors.top: parent.top
