@@ -36,9 +36,11 @@ Rectangle {
     Text {
         id: buttonText
 
+        width: buttonWidth-8
         anchors.centerIn: parent
         color: button.textColor
         font.pixelSize: parent.textHeight
+        elide: Text.ElideRight
     }
 
     MouseArea {

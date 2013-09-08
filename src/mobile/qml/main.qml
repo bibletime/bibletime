@@ -22,8 +22,8 @@ Rectangle {
         installManager.openChooser();
     }
 
-    //    width: 1280 // Nexus 7 (2012)
-    //    height: 800
+//    width: 1280 // Nexus 7 (2012)
+//    height: 800
 
     width:  480   // Phone
     height: 800
@@ -68,7 +68,6 @@ Rectangle {
         objectName: "gridChooser"
         width: parent.width
         height: parent.height
-        z:-5000
         opacity: 0
     }
 

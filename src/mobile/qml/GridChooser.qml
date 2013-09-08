@@ -13,6 +13,7 @@ Rectangle {
     property int space:5
     property string selected: ""
     property string titleText: ""
+    property int maxLength: 0
 
     signal accepted(string choosenText);
     signal canceled();
@@ -22,32 +23,26 @@ Rectangle {
         var count = gridChooserModel.length
         if (count < 36)
             count = 36;
-        width = root.width
-        height = root.height -titleHeight
 
-        var columnsF = Math.sqrt(count*0.85*height/width);
-        columns = Math.ceil(columnsF);
+        calculateColumns(count);
 
-        var rows = Math.ceil((count-0.01)/columns);
         buttonWidth = (width-50)/columns;
         buttonHeight = Math.floor((height-(rows*5))/rows);
 
         topMargin = (height - rows*(buttonHeight+space) + space)/2 +titleHeight;
         leftMargin = (width - columns*(buttonWidth+space) + space)/2;
+    }
 
-        if (opacity == 0)
-            z = -5000
-        else
-            z = 5000
+    function calculateColumns(count) {
+        var aspectRatio = 0.175;
+        var columnsF = Math.sqrt(count * width * aspectRatio / height);
+        columns = Math.ceil(columnsF);
     }
 
     function accept(value) {
-        z = -5000
         opacity = 0
         gridChooser.accepted(value);
     }
-
-    z: 1000
 
     Text {
         id: title
@@ -57,7 +52,6 @@ Rectangle {
         height: titleHeight
         anchors.top: parent.top
         anchors.horizontalCenter: parent.horizontalCenter
-        z:6000
     }
 
     BtStyle {
@@ -103,7 +97,7 @@ Rectangle {
                 id: buttonX
 
                 text: modelData
-                textHeight: gridChooser.width/60
+                textHeight: gridChooser.width/(Math.max(15, maxLength) * 1.8)
                 buttonWidth: gridChooser.buttonWidth
                 buttonHeight: gridChooser.buttonHeight
                 textColor: {

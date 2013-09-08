@@ -3,6 +3,7 @@
 
 #include "qtquick2applicationviewer.h"
 
+#include <algorithm>
 #include <cmath>
 #include <QEventLoop>
 #include <QQuickItem>
@@ -41,6 +42,13 @@ void GridChooser::setProperties(const QStringList& list, const QString& hightlig
     gridChooserObject_->setProperty("opacity",1);
     gridChooserObject_->setProperty("selected",hightlight);
     gridChooserObject_->setProperty("titleText",title);
+
+    int maxLength = 0;
+    for (int i = 0; i < list.count(); ++i) {
+        QString text = list.at(i);
+        maxLength = std::max(maxLength, text.length());
+    }
+    gridChooserObject_->setProperty("maxLength", maxLength);
 }
 
 void GridChooser::gridChooserAccepted(QString value) {
