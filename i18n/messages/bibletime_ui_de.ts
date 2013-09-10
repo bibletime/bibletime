@@ -528,7 +528,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>(c)1999-2013, The BibleTime Team</source>
-        <translation>(c)1999-2013, das BibleTime Team</translation>
+        <translation type="obsolete">(c)1999-2013, das BibleTime Team</translation>
     </message>
     <message>
         <source>&amp;SWORD</source>
@@ -537,6 +537,10 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <source>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</source>
         <translation>BibleTime ist unter der GPL-Lizenz verfügbar. Sie können das Programm für persönliche, private, öffentliche oder kommerzielle Zwecke ohne Beschränkungen einsetzen, aber Sie können es nur weitergeben, wenn Sie auch den dazugehörigen Quellcode mit weitergeben.</translation>
+    </message>
+    <message>
+        <source>(c)1999-2011, The BibleTime Team</source>
+        <translation type="unfinished">(c)1999-2013, das BibleTime Team {1999-2011,?}</translation>
     </message>
 </context>
 <context>
@@ -3346,7 +3350,7 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Export</source>
-        <translation>Exportieren</translation>
+        <translation type="obsolete">Exportieren</translation>
     </message>
     <message>
         <source>Local</source>
@@ -4600,6 +4604,28 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     </message>
 </context>
 <context>
+    <name>btm::InstallProgress</name>
+    <message>
+        <source>Failed</source>
+        <translation type="unfinished">Fehler</translation>
+    </message>
+    <message>
+        <source>Completed</source>
+        <translation type="unfinished">Abgeschlossen</translation>
+    </message>
+    <message>
+        <source>Cancelled</source>
+        <translation type="unfinished">Abgebrochen</translation>
+    </message>
+</context>
+<context>
+    <name>btm::InstallSources</name>
+    <message>
+        <source>Failed to refresh source %1</source>
+        <translation type="unfinished">Konnte Quelle %1 nicht aktualisieren</translation>
+    </message>
+</context>
+<context>
     <name>findTextDialog</name>
     <message>
         <source>Find Text</source>
@@ -4646,6 +4672,45 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     <name>findWidget</name>
     <message>
         <source>The text you want to search for</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>main</name>
+    <message>
+        <source>New Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bookshelf Manager</source>
+        <translation type="unfinished">Bücherregal-Verwaltung</translation>
+    </message>
+    <message>
+        <source>Windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Window Arrangement</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Single</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tabbed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto-tile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto-tile horizontally</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto-tile vertically</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

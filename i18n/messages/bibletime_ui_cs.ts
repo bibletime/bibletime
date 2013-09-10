@@ -524,16 +524,16 @@
         <translation>&amp;Licence</translation>
     </message>
     <message>
-        <source>(c)1999-2013, The BibleTime Team</source>
-        <translation></translation>
-    </message>
-    <message>
         <source>&amp;SWORD</source>
         <translation>&amp;SWORD</translation>
     </message>
     <message>
         <source>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</source>
         <translation>BibleTime je uvolněn pod licencí GPL. Můžete si tento program stáhnout a používat jej pro osobní, privátní, veřejné nebo i komerční účely bez omezení. Pokud však program distribuujete dále, musíte spolu s ním distribuovat i jeho zdrojové kódy.</translation>
+    </message>
+    <message>
+        <source>(c)1999-2011, The BibleTime Team</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3269,7 +3269,7 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Export</source>
-        <translation>Export</translation>
+        <translation type="obsolete">Export</translation>
     </message>
     <message>
         <source>Local</source>
@@ -4230,6 +4230,28 @@ Language name ppk</extracomment>
     </message>
 </context>
 <context>
+    <name>btm::InstallProgress</name>
+    <message>
+        <source>Failed</source>
+        <translation type="unfinished">Selhalo</translation>
+    </message>
+    <message>
+        <source>Completed</source>
+        <translation type="unfinished">Dokončeno</translation>
+    </message>
+    <message>
+        <source>Cancelled</source>
+        <translation type="unfinished">Zrušeno</translation>
+    </message>
+</context>
+<context>
+    <name>btm::InstallSources</name>
+    <message>
+        <source>Failed to refresh source %1</source>
+        <translation type="unfinished">Chyba při aktualizaci zdroje %1</translation>
+    </message>
+</context>
+<context>
     <name>findTextDialog</name>
     <message>
         <source>Find Text</source>
@@ -4277,6 +4299,45 @@ Language name ppk</extracomment>
     <message>
         <source>The text you want to search for</source>
         <translation type="unfinished">Text, který chcete hledat</translation>
+    </message>
+</context>
+<context>
+    <name>main</name>
+    <message>
+        <source>New Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bookshelf Manager</source>
+        <translation type="unfinished">Správce knihovny</translation>
+    </message>
+    <message>
+        <source>Windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Window Arrangement</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Single</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tabbed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto-tile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto-tile horizontally</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto-tile vertically</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
