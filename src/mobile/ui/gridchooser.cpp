@@ -39,7 +39,6 @@ void GridChooser::open(const QStringList& stringList, const QString& highlight, 
 void GridChooser::setProperties(const QStringList& list, const QString& hightlight, const QString& title) {
     QQmlContext* ctx = viewer_->rootContext();
     ctx->setContextProperty("gridChooserModel",list);
-    gridChooserObject_->setProperty("opacity",1);
     gridChooserObject_->setProperty("selected",hightlight);
     gridChooserObject_->setProperty("titleText",title);
 
@@ -49,6 +48,8 @@ void GridChooser::setProperties(const QStringList& list, const QString& hightlig
         maxLength = std::max(maxLength, text.length());
     }
     gridChooserObject_->setProperty("maxLength", maxLength);
+
+    gridChooserObject_->setProperty("visible",true);
 }
 
 void GridChooser::gridChooserAccepted(QString value) {

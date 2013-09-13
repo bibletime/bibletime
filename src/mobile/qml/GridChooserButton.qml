@@ -39,7 +39,7 @@ Rectangle {
         width: buttonWidth-8
         anchors.centerIn: parent
         color: button.textColor
-        font.pixelSize: parent.textHeight
+        font.pointSize: parent.textHeight
         elide: Text.ElideRight
     }
 

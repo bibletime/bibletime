@@ -2,6 +2,7 @@
 #include "btstyle.h"
 #include <QList>
 #include <QPointer>
+#include "backend/config/btconfig.h"
 
 // BtStyle is a class that is registered at a QML item. It can be placed into
 // QML files and its properties are available to be used in QML. It contains
@@ -50,6 +51,14 @@ static double toolbarTextPointSize    = 6;
 
 
 static QList<QPointer<BtStyle> > styles;
+
+static void emitChanged() {
+    for (int i=0; i<styles.count(); ++i) {
+        QPointer<BtStyle> style = styles.at(i);
+        if (style != 0)
+            style->changed();
+    }
+}
 
 void BtStyle::setStyle(int style) {
     if (style == BtStyle::gnome) {
@@ -107,11 +116,7 @@ void BtStyle::setStyle(int style) {
         setToolbarTextPointSize(10);
     }
 
-    for (int i=0; i<styles.count(); ++i) {
-        QPointer<BtStyle> style = styles.at(i);
-        if (style != 0)
-            style->changed();
-    }
+    emitChanged();
 }
 
 BtStyle::BtStyle(QObject* parent)
@@ -124,7 +129,7 @@ QColor BtStyle::getButtonColor() const {
 }
 void BtStyle::setButtonColor(const QColor& color) {
     buttonColor = color;
-    emit changed();
+    emitChanged();
 }
 
 
@@ -133,7 +138,7 @@ QColor BtStyle::getButtonBackground() const {
 }
 void BtStyle::setButtonBackground(const QColor& color) {
     buttonBackground = color;
-    emit changed();
+    emitChanged();
 }
 
 
@@ -142,7 +147,7 @@ QColor BtStyle::getButtonTextColor() const {
 }
 void BtStyle::setButtonTextColor(const QColor& color) {
     buttonTextColor = color;
-    emit changed();
+    emitChanged();
 }
 
 
@@ -151,7 +156,7 @@ QColor BtStyle::getButtonHighlightedText() const {
 }
 void BtStyle::setButtonHighlightedText(const QColor& color) {
     buttonHighlightedText = color;
-    emit changed();
+    emitChanged();
 }
 
 
@@ -160,7 +165,7 @@ QColor BtStyle::getButtonBorder() const {
 }
 void BtStyle::setButtonBorder(const QColor& color) {
     buttonBorder = color;
-    emit changed();
+    emitChanged();
 }
 
 int BtStyle::getButtonRadius() const {
@@ -168,7 +173,7 @@ int BtStyle::getButtonRadius() const {
 }
 void BtStyle::setButtonRadius(int radius) {
     buttonRadius = radius;
-    emit changed();
+    emitChanged();
 }
 
 QColor BtStyle::getButtonGradient0() const {
@@ -176,7 +181,7 @@ QColor BtStyle::getButtonGradient0() const {
 }
 void BtStyle::setButtonGradient0(const QColor& color) {
     buttonGradient0 = color;
-    emit changed();
+    emitChanged();
 }
 
 QColor BtStyle::getButtonGradient1() const {
@@ -184,7 +189,7 @@ QColor BtStyle::getButtonGradient1() const {
 }
 void BtStyle::setButtonGradient1(const QColor& color) {
     buttonGradient1 = color;
-    emit changed();
+    emitChanged();
 }
 
 QColor BtStyle::getButtonGradient2() const {
@@ -192,7 +197,7 @@ QColor BtStyle::getButtonGradient2() const {
 }
 void BtStyle::setButtonGradient2(const QColor& color) {
     buttonGradient2 = color;
-    emit changed();
+    emitChanged();
 }
 
 QColor BtStyle::getButtonGradient3() const {
@@ -200,7 +205,7 @@ QColor BtStyle::getButtonGradient3() const {
 }
 void BtStyle::setButtonGradient3(const QColor& color) {
     buttonGradient3 = color;
-    emit changed();
+    emitChanged();
 }
 
 QColor BtStyle::getWindowTab() const {
@@ -209,7 +214,7 @@ QColor BtStyle::getWindowTab() const {
 
 void BtStyle::setWindowTab(const QColor& color) {
     windowTab = color;
-    emit changed();
+    emitChanged();
 }
 
 QColor BtStyle::getWindowTabSelected() const {
@@ -218,7 +223,7 @@ QColor BtStyle::getWindowTabSelected() const {
 
 void BtStyle::setWindowTabSelected(const QColor& color) {
     windowTabSelected = color;
-    emit changed();
+    emitChanged();
 }
 
 QColor BtStyle::getWindowTabText() const {
@@ -227,7 +232,7 @@ QColor BtStyle::getWindowTabText() const {
 
 void BtStyle::setWindowTabText(const QColor& color) {
     windowTabText = color;
-    emit changed();
+    emitChanged();
 }
 
 QColor BtStyle::getWindowTabTextSelected() const {
@@ -236,7 +241,7 @@ QColor BtStyle::getWindowTabTextSelected() const {
 
 void BtStyle::setWindowTabTextSelected(const QColor& color) {
     windowTabTextSelected = color;
-    emit changed();
+    emitChanged();
 }
 
 QColor BtStyle::getMenu() const {
@@ -245,7 +250,7 @@ QColor BtStyle::getMenu() const {
 
 void BtStyle::setMenu(const QColor& color) {
     menu = color;
-    emit changed();
+    emitChanged();
 }
 
 QColor BtStyle::getMenuBorder() const {
@@ -254,7 +259,7 @@ QColor BtStyle::getMenuBorder() const {
 
 void BtStyle::setMenuBorder(const QColor& color) {
     menuBorder = color;
-    emit changed();
+    emitChanged();
 }
 
 QColor BtStyle::getMenuText() const {
@@ -263,7 +268,7 @@ QColor BtStyle::getMenuText() const {
 
 void BtStyle::setMenuText(const QColor& color) {
     menuText = color;
-    emit changed();
+    emitChanged();
 }
 
 int BtStyle::getMenuHeight() const {
@@ -271,7 +276,7 @@ int BtStyle::getMenuHeight() const {
 }
 void BtStyle::setMenuHeight(int height) {
     menuHeight = height;
-    emit changed();
+    emitChanged();
 }
 
 QColor BtStyle::getToolbarColor() const {
@@ -279,7 +284,7 @@ QColor BtStyle::getToolbarColor() const {
 }
 void BtStyle::setToolbarColor(const QColor& color) {
     toolbarColor = color;
-    emit changed();
+    emitChanged();
 }
 
 QColor BtStyle::getToolbarButton() const {
@@ -287,7 +292,7 @@ QColor BtStyle::getToolbarButton() const {
 }
 void BtStyle::setToolbarButton(const QColor& color) {
     toolbarButton = color;
-    emit changed();
+    emitChanged();
 }
 
 QColor BtStyle::getToolbarButtonText() const {
@@ -295,7 +300,7 @@ QColor BtStyle::getToolbarButtonText() const {
 }
 void BtStyle::setToolbarButtonText(const QColor& color) {
     toolbarButtonText = color;
-    emit changed();
+    emitChanged();
 }
 
 double BtStyle::getToolbarTextPointSize() const {
@@ -304,6 +309,16 @@ double BtStyle::getToolbarTextPointSize() const {
 
 void BtStyle::setToolbarTextPointSize(double pointSize) {
     toolbarTextPointSize = pointSize;
+    emitChanged();
+}
+
+double BtStyle::getUiTextPointSize() const {
+    return btConfig().value<int>("ui/textSize",14);
+}
+
+void BtStyle::setUiTextPointSize(double pointSize) {
+    btConfig().setValue<int>("ui/textSize", pointSize);
+    emitChanged();
 }
 
 } // end namespace

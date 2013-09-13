@@ -57,7 +57,7 @@ Rectangle {
                 anchors.centerIn: parent
                 anchors.leftMargin: 4
                 anchors.rightMargin: 4
-                font.pointSize: btStyle.toolbarTextPointSize
+                font.pointSize: btStyle.uiTextPointSize
                 elide: Text.ElideMiddle
                 color: btStyle.toolbarButtonText
                 text: btWindowInterface.moduleName
@@ -99,7 +99,7 @@ Rectangle {
                 anchors.leftMargin: 6
                 anchors.rightMargin: 4
                 width: referenceDisplay.width - 4
-                font.pointSize: btStyle.toolbarTextPointSize
+                font.pointSize: btStyle.uiTextPointSize
                 elide: Text.ElideMiddle
                 color: btStyle.toolbarButtonText
                 text: btWindowInterface.displayed
@@ -123,5 +123,59 @@ Rectangle {
         anchors.bottom: htmlView.bottom
         anchors.left: htmlView.left
         anchors.right: htmlView.right
+
+        function contextMenus() {
+            contextMenu.visible = true;
+        }
+
+        MouseArea {
+            id: mouseWebView
+
+            anchors.fill: parent
+
+            onDoubleClicked: {
+                webView.contextMenus();
+            }
+
+            onPressAndHold: {
+                webView.contextMenus();
+            }
+        }
     }
+
+    ListModel {
+        id: contextMenuModel
+
+        ListElement { title: "Text Font Size"; action: "textSize" }
+    }
+
+    ContextMenu {
+        id: contextMenu
+
+        function doAction(action) {
+            fontPointSize.visible = true;
+        }
+
+        model: contextMenuModel
+        visible: false
+        Component.onCompleted: contextMenu.accepted.connect(contextMenu.doAction)
+    }
+
+    FontSizeSlider {
+        id: fontPointSize
+        visible: false
+        title: "Text Font Point Size"
+
+        onVisibleChanged: {
+            if (visible)
+                fontPointSize.current = btWindowInterface.fontSize
+        }
+
+        onAccepted: {
+            console.log("text: ",fontPointSize.current);
+            btWindowInterface.fontSize = fontPointSize.current;
+        }
+    }
+
+
 }

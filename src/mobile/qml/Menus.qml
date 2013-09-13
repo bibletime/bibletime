@@ -7,7 +7,7 @@ MouseArea {
     id: menus
 
     property alias model: menusRepeater.model
-    property int menusWidth: 200
+    property int menusWidth: 15 * btStyle.uiTextPointSize
 
     signal menuSelected(string action)
 
@@ -44,7 +44,6 @@ MouseArea {
                 delegate: Rectangle {
 
                     width:menus.menusWidth-4
-//                    width:parent.width-4
                     height:btStyle.menuHeight
                     color: btStyle.menu
                     border.color: btStyle.menuBorder
@@ -55,7 +54,7 @@ MouseArea {
                         anchors.left: parent.left
                         anchors.leftMargin: 6
                         text: title
-                        font.pointSize: 12
+                        font.pointSize: btStyle.uiTextPointSize
                         color: btStyle.menuText
                     }
 

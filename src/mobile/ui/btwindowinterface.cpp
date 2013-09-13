@@ -268,4 +268,20 @@ CSwordKey* BtWindowInterface::getKey() const {
     return m_key;
 }
 
+int BtWindowInterface::getFontSize() const {
+    const CLanguageMgr::Language* lang = module()->language();
+    BtConfig::FontSettingsPair fontPair = btConfig().getFontForLanguage(*lang);
+    QFont font = fontPair.second;
+    return font.pointSize();
+}
+
+void BtWindowInterface::setFontSize(int size) {
+    const CLanguageMgr::Language* lang = module()->language();
+    BtConfig::FontSettingsPair fontPair = btConfig().getFontForLanguage(*lang);
+    fontPair.second.setPointSize(size);
+    btConfig().setFontForLanguage(*lang, fontPair);
+    emit textChanged();
+}
+
+
 } // end namespace

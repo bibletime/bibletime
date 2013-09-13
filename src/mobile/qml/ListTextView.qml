@@ -33,6 +33,7 @@ Rectangle {
             horizontalAlignment: Text.AlignCenter
             verticalAlignment: Text.AlignBottom
             style: Text.Sunken
+            font.pointSize: btStyle.uiTextPointSize
         }
     }
 
@@ -89,6 +90,7 @@ Rectangle {
                     anchors.rightMargin: 10
                     anchors.topMargin: 10
                     text: modelText
+                    font.pointSize: btStyle.uiTextPointSize
                     font.bold: highlight && entry.selected
                 }
             }

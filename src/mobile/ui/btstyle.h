@@ -37,6 +37,8 @@ class BtStyle : public QObject {
     Q_PROPERTY(QColor toolbarButtonText     READ getToolbarButtonText NOTIFY changed)
     Q_PROPERTY(double toolbarTextPointSize  READ getToolbarTextPointSize NOTIFY changed);
 
+    Q_PROPERTY(double uiTextPointSize       READ getUiTextPointSize WRITE setUiTextPointSize NOTIFY changed);
+
 public:
     Q_INVOKABLE void setStyle(int style);
 
@@ -113,6 +115,9 @@ public:
 
     double getToolbarTextPointSize() const;
     void setToolbarTextPointSize(double pointSize);
+
+    double getUiTextPointSize() const;
+    void setUiTextPointSize(double pointSize);
 
 signals:
     void changed();

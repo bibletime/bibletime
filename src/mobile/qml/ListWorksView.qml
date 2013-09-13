@@ -31,6 +31,7 @@ Rectangle {
             horizontalAlignment: Text.AlignCenter
             verticalAlignment: Text.AlignBottom
             style: Text.Sunken
+            font.pointSize: btStyle.uiTextPointSize
         }
     }
 
@@ -95,7 +96,7 @@ Rectangle {
                     anchors.rightMargin: 10
                     anchors.topMargin: 5
                     text: title
-                    font.pointSize: 11
+                    font.pointSize: btStyle.uiTextPointSize
                 }
 
                 Text {
@@ -109,7 +110,7 @@ Rectangle {
                     anchors.topMargin: 25
                     text: desc
                     elide: Text.ElideMiddle
-                    font.pointSize: 11
+                    font.pointSize: btStyle.uiTextPointSize
                 }
             }
         }

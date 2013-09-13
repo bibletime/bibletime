@@ -62,13 +62,19 @@ Rectangle {
 
     }
 
+    Settings {
+        id: settings
+
+        visible: false;
+    }
+
     GridChooser {
         id: gridChooser
 
         objectName: "gridChooser"
         width: parent.width
         height: parent.height
-        opacity: 0
+        visible: false
     }
 
     BtStyle {
@@ -89,7 +95,7 @@ Rectangle {
         id: treeChooser
 
         objectName: "treeChooser"
-        width:650
+        width:480
         height: parent.height
         anchors.top: parent.top
         anchors.horizontalCenter: parent.horizontalCenter
@@ -131,6 +137,7 @@ Rectangle {
         id: mainMenusModel
 
         ListElement { title: QT_TR_NOOP("New Window");              action: "newWindow" }
+        ListElement { title: QT_TR_NOOP("Settings");                action: "settings" }
         ListElement { title: QT_TR_NOOP("Bookshelf Manager");       action: "install" }
         ListElement { title: QT_TR_NOOP("Windows");                 action: "windows" }
         ListElement { title: QT_TR_NOOP("Window Arrangement");      action: "windowArrangement" }
@@ -162,6 +169,9 @@ Rectangle {
             }
             else if (action == "install") {
                 installModules();
+            }
+            else if (action == "settings") {
+                settings.visible = true;
             }
 
         }

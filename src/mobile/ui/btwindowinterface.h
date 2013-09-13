@@ -17,6 +17,7 @@ class BtWindowInterface : public QObject {
     Q_PROPERTY(QString moduleName READ getModuleName WRITE setModuleName NOTIFY moduleChanged)
     Q_PROPERTY(QString displayed READ getDisplayed WRITE setDisplayed NOTIFY displayedChanged)
     Q_PROPERTY(QString text READ getText NOTIFY textChanged)
+    Q_PROPERTY(int fontSize READ getFontSize WRITE setFontSize NOTIFY textChanged)
 
 public:
     Q_INVOKABLE void changeModule();
@@ -32,8 +33,10 @@ public:
     void setModuleName(const QString& moduleName);
 
     QString getDisplayed() const;
-
     void setDisplayed(const QString& text);
+
+    int getFontSize() const;
+    void setFontSize(int size);
 
 signals:
     void displayedChanged();

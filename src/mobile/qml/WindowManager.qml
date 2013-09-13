@@ -28,7 +28,6 @@ Rectangle {
         windowsModel.clear();
         for (var i=0; i<windows.length; ++i) {
             var window = windows[i];
-            console.log(window.title)
             windowsModel.append (
                         { title: window.title, action: i.toString() }
                         )
@@ -77,14 +76,12 @@ Rectangle {
 
     function layoutTiles(rows, columns)
     {
-        console.log("layoutTitles");
         gridWindows.columns = columns;
         gridWindows.rows = rows;
         var width = gridWindows.width/columns -2;
         var height = gridWindows.height/rows -2;
 
         for (var i=0; i<windows.length; ++i) {
-            console.log("xxxxx");
             var window = windows[i];
             window.anchors.fill = undefined
             window.height = height;
@@ -99,7 +96,6 @@ Rectangle {
         for (var i=0; i<windows.length; ++i) {
             var window = windows[i];
             window.parent = tabbedWindowsStack;
-            console.log("w ",window, tabbedWindowsStack)
             window.anchors.fill = tabbedWindowsStack
         }
     }
@@ -141,7 +137,6 @@ Rectangle {
         tabbedWindows.z = -2;
         gridWindows.z = -3;
 
-//        console.log("layoutWindows")
         if (windowLayout == single) {
             arrangeSingleWindow();
         }

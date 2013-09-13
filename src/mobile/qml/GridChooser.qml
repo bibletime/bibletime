@@ -5,6 +5,7 @@ Rectangle {
     id: gridChooser
 
     property int columns: 5
+    property int rows: 5
     property int buttonWidth: 100
     property int buttonHeight: 30
     property int topMargin: 10
@@ -18,7 +19,7 @@ Rectangle {
     signal accepted(string choosenText);
     signal canceled();
 
-    onOpacityChanged: {
+    onVisibleChanged: {
 
         var count = gridChooserModel.length
         if (count < 36)
@@ -37,10 +38,11 @@ Rectangle {
         var aspectRatio = 0.175;
         var columnsF = Math.sqrt(count * width * aspectRatio / height);
         columns = Math.ceil(columnsF);
+        rows = Math.ceil((count-0.01)/columns);
     }
 
     function accept(value) {
-        opacity = 0
+        visible = false;
         gridChooser.accepted(value);
     }
 
@@ -48,7 +50,7 @@ Rectangle {
         id: title
 
         text: titleText
-        font.pointSize: 14
+        font.pointSize: btStyle.uiTextPointSize
         height: titleHeight
         anchors.top: parent.top
         anchors.horizontalCenter: parent.horizontalCenter
@@ -97,7 +99,7 @@ Rectangle {
                 id: buttonX
 
                 text: modelData
-                textHeight: gridChooser.width/(Math.max(15, maxLength) * 1.8)
+                textHeight: btStyle.uiTextPointSize
                 buttonWidth: gridChooser.buttonWidth
                 buttonHeight: gridChooser.buttonHeight
                 textColor: {
