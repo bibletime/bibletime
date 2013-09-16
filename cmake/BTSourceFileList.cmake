@@ -502,6 +502,7 @@ SET(bibletime_SRC_MOBILE_MOCABLE_HEADERS
 )
 
 SET(bibletime_MOBILE_QML_FILES
+    src/mobile/qml/ContextMenu.qml
     src/mobile/qml/GridChooserButton.qml
     src/mobile/qml/GridChooser.qml
     src/mobile/qml/ImageButton.qml
@@ -515,6 +516,8 @@ SET(bibletime_MOBILE_QML_FILES
     src/mobile/qml/MenuView.qml
     src/mobile/qml/ModuleChooser.qml
     src/mobile/qml/Progress.qml
+    src/mobile/qml/Settings.qml
+    src/mobile/qml/FontSizeSlider.qml
     src/mobile/qml/TreeChooser.qml
     src/mobile/qml/Window.qml
     src/mobile/qml/WindowManager.qml
