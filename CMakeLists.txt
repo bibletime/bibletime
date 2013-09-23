@@ -64,11 +64,7 @@ ENDIF()
 # Find required packages
 IF (Qt5Core_FOUND)
     FIND_PACKAGE(Qt5LinguistTools REQUIRED)
-    FIND_PACKAGE(Qt5PrintSupport REQUIRED)
-    FIND_PACKAGE(Qt5WebKit REQUIRED)
-    FIND_PACKAGE(Qt5WebKitWidgets REQUIRED)
     FIND_PACKAGE(Qt5Widgets REQUIRED)
-    FIND_PACKAGE(Qt5Xml REQUIRED)
     MESSAGE( "-- Found Qt " ${Qt5Core_VERSION})
 ELSE (Qt5Core_FOUND)
     SET(QT_MIN_VERSION 4.5.0)
@@ -123,10 +119,6 @@ IF (Qt5Core_FOUND)
         ${CLUCENE_INCLUDE_DIR}            #CLucene headers
         ${CLUCENE_LIBRARY_DIR}            #CLucene/clucene-config.h
         ${SWORD_INCLUDE_DIR}
-        ${Qt5PrintSupport_INCLUDE_DIRS}
-        ${Qt5WebKitWidgets_INCLUDE_DIRS}
-        ${Qt5Widgets_INCLUDE_DIRS}
-        ${Qt5Xml_INCLUDE_DIRS}
     )
 ELSE (Qt5Core_FOUND)
     INCLUDE_DIRECTORIES(
@@ -198,14 +190,14 @@ ENDIF (MSVC)
 #    )
 #ENDIF (CMAKE_BUILD_TYPE STREQUAL "Release")
 
+IF (${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
+    SET (Qt5RequiredModules Widgets Qml Quick Network)
+ELSE (${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
+    SET (Qt5RequiredModules Widgets WebKit Network)
+ENDIF (${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
+
 IF (Qt5Core_FOUND)
     TARGET_LINK_LIBRARIES(${EXECUTABLE_NAME}
-        ${Qt5Widgets_LIBRARIES}
-        ${Qt5Xml_LIBRARIES}
-        ${Qt5Core_LIBRARIES}
-        ${Qt5WebKitWidgets_LIBRARIES}
-        ${Qt5WebKit_LIBRARIES}
-        ${Qt5PrintSupport_LIBRARIES}
         ${CLUCENE_LIBRARY}
         ${CURL_LIBRARIES} # optional, empty if not found
         ${ICU_LIBRARIES} # optional, empty if not found
@@ -213,7 +205,7 @@ IF (Qt5Core_FOUND)
         ${ZLIB_LIBRARIES} # optional, empty if not found
         ${SWORD_LIBRARY}
     )
-    qt5_use_modules(${EXECUTABLE_NAME} Widgets WebKit Network)
+    qt5_use_modules(${EXECUTABLE_NAME} ${Qt5RequiredModules})
 ELSE (Qt5Core_FOUND)
     INCLUDE(${QT_USE_FILE})
     TARGET_LINK_LIBRARIES(${EXECUTABLE_NAME}
