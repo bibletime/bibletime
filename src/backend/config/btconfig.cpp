@@ -11,7 +11,6 @@
 
 #include <QDebug>
 #include <QLocale>
-#include <QWebSettings>
 #include "backend/btmoduletreeitem.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
 #include "util/dialogutil.h"
