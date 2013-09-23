@@ -1,8 +1,4 @@
 import QtQuick 2.1
-import QtQuick.Controls 1.0
-import QtQuick.Layouts 1.0
-import QtQuick.Window 2.0
-import QtWebKit 3.0
 import BibleTime 1.0
 
 Rectangle {
