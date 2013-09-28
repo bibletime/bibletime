@@ -447,6 +447,11 @@ SET(bibletime_SRC_MOBILE_SOURCES
     src/mobile/bibletimeapp.cpp
 )
 
+SET(bibletime_SRC_MOBILE_MODEL_SOURCES
+    src/mobile/models/bibletextmodel.cpp
+    src/mobile/models/bibletextmodel.h
+)
+
 SET(bibletime_SRC_MOBILE_UTIL_SOURCES
     src/mobile/util/findqmlobject.cpp
     src/mobile/util/findqmlobject.h
@@ -529,6 +534,7 @@ SET(bibletime_MOBILE_QML_FILES
 SET(bibletime_FRONTEND_MOBILE_SOURCES
     ${bibletime_SRC_MOBILE_SOURCES}
     ${bibletime_SRC_MOBILE_MOCABLE_HEADERS}
+    ${bibletime_SRC_MOBILE_MODEL_SOURCES}
     ${bibletime_SRC_MOBILE_UI_SOURCES}
     ${bibletime_SRC_MOBILE_UTIL_SOURCES}
 )

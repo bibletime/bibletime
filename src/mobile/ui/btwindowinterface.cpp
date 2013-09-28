@@ -17,6 +17,9 @@
 #include <QDebug>
 #include <QFile>
 #include <QObject>
+#include <QQmlContext>
+#include <QQmlEngine>
+#include <QQuickItem>
 #include <QStringList>
 
 
@@ -24,7 +27,9 @@ namespace btm {
 
 BtWindowInterface::BtWindowInterface(QObject* parent)
     : QObject(parent),
-      m_key(0) {
+      m_key(0),
+      m_textModel(new RoleItemModel()),
+      m_bibleTextModelBuilder(m_textModel) {
 }
 
 static void outputText(const QString& text, const QString& filename)
@@ -57,46 +62,18 @@ static QString getKeyText(CSwordKey* key) {
     return keyText;
 }
 
-QString BtWindowInterface::getText() const {
+void BtWindowInterface::updateModel() {
     QString moduleName= getModuleName();
     QStringList moduleList = QStringList() << moduleName;
-
     QList<const CSwordModuleInfo*> modules =
         CSwordBackend::instance()->getConstPointerList(moduleList);
-    Rendering::CEntryDisplay* display = modules.first()->getDisplay();
+    QString keyText = getKeyText(m_key);
+    m_bibleTextModelBuilder.updateModel(modules, keyText);
+    emit currentModelIndexChanged();
+}
 
-    QString key = getKeyText(m_key);
-
-    QString anchor = Rendering::CDisplayRendering::keyToHTMLAnchor(key);
-
-    QString gotoFunction = "function gotoAnchor(anchor) {document.location=document.location + \"#\" + anchor;}";
-    QString beginScript = "<script  type=\"text/javascript\">";
-    QString endScript = "</script>";
-    QString script = beginScript + gotoFunction + endScript;
-    QString endHeader = "</head>";
-    QString body = "<body";
-    QString bodyGoto = "<body onload=\"gotoAnchor('" +anchor + "')\"  ";
-
-//    BtConfig & conf = btConfig();
-//    conf.beginGroup(windowGroup);
-    FilterOptions filterOptions;// = conf.getFilterOptions();
-    DisplayOptions displayOptions;// = conf.getDisplayOptions();
-    displayOptions.verseNumbers =1;
-    displayOptions.lineBreaks = 1;
-//    conf.endGroup();
-
-    QString text;
-    if (display) {
-        text = display->text(modules, key, displayOptions, filterOptions);
-    }
-
-    text.replace(endHeader, script + endHeader);
-    text.replace(body, bodyGoto);
-
-    outputText(text, "out.html");
-
-//    qDebug() << text;
-    return text;
+int BtWindowInterface::getCurrentModelIndex() const {
+    return m_bibleTextModelBuilder.getCurrentModelIndex();
 }
 
 static bool moduleIsBibleOrCommentary(const CSwordModuleInfo* module) {
@@ -147,15 +124,9 @@ void BtWindowInterface::setModuleName(const QString& moduleName) {
     if (treeKey)
         treeKey->firstChild();
 
-////    BtConfig & conf = btConfig();
-////    conf.beginGroup(windowGroup);
-//    FilterOptions filterOptions;// = conf.getFilterOptions();
-//    DisplayOptions displayOptions;// = conf.getDisplayOptions();
-////    conf.endGroup();
-
     emit moduleChanged();
     emit displayedChanged();
-    emit textChanged();
+    updateModel();
 }
 
 QString BtWindowInterface::getDisplayed() const {
@@ -169,7 +140,6 @@ void BtWindowInterface::changeModule() {
     QtQuick2ApplicationViewer* viewer = getViewManager()->getViewer();
     ModuleChooser* dlg = new ModuleChooser(viewer, this);
     dlg->open();
-
 }
 
 static void parseKey(CSwordTreeKey* currentKey, QStringList* keyPath, QStringList* children)
@@ -251,12 +221,11 @@ void BtWindowInterface::changeReference() {
 
 void BtWindowInterface::referenceChanged() {
     emit displayedChanged();
-    emit textChanged();
+    updateModel();
 }
 
 void BtWindowInterface::setDisplayed(const QString& text) {
     emit displayedChanged();
-    emit textChanged();
 }
 
 const CSwordModuleInfo* BtWindowInterface::module() const {
@@ -283,5 +252,10 @@ void BtWindowInterface::setFontSize(int size) {
     emit textChanged();
 }
 
+QVariant BtWindowInterface::getTextModel() {
+    QVariant var;
+    var.setValue(m_textModel);
+    return var;
+}
 
 } // end namespace

@@ -1,9 +1,8 @@
 import QtQuick 2.1
-import QtWebKit 3.0
 import BibleTime 1.0
 
 Rectangle {
-    id: htmlView
+    id: windowView
 
     property string title: toolbar.title
 
@@ -11,14 +10,14 @@ Rectangle {
         btWindowInterface.moduleName = module;
     }
 
+    function contextMenus() {
+        contextMenu.visible = true;
+    }
+
     color: "black"
 
     BtWindowInterface {
         id: btWindowInterface
-
-        onTextChanged: {
-            webView.loadHtml(btWindowInterface.text)
-        }
     }
 
     BtStyle {
@@ -73,6 +72,7 @@ Rectangle {
             }
         }
 
+
         Rectangle {
             id: referenceDisplay
 
@@ -114,31 +114,46 @@ Rectangle {
                 }
             }
         }
+
     }
 
-    WebView {
-        id: webView
+    Rectangle {
+        id: mainTextView
 
+        color: "white"
         anchors.top: toolbar.bottom
-        anchors.bottom: htmlView.bottom
-        anchors.left: htmlView.left
-        anchors.right: htmlView.right
+        anchors.left: windowView.left
+        anchors.right: windowView.right
+        anchors.bottom: windowView.bottom
 
-        function contextMenus() {
-            contextMenu.visible = true;
-        }
+        ListView {
+            id: listView
 
-        MouseArea {
-            id: mouseWebView
-
+            clip: true
             anchors.fill: parent
-
-            onDoubleClicked: {
-                webView.contextMenus();
+            anchors.leftMargin: 8
+            anchors.rightMargin: 8
+            model: btWindowInterface.textModel
+            currentIndex: btWindowInterface.currentModelIndex
+            delegate: Text {
+                text: "<font color=\"blue\">" + ref + "</font> " + line
+                width: parent.width
+                color: "black"
+                font.pointSize: btWindowInterface.fontSize
+                wrapMode: Text.WordWrap
             }
 
-            onPressAndHold: {
-                webView.contextMenus();
+            MouseArea {
+
+                anchors.fill: parent
+                onDoubleClicked: {
+                    windowView.contextMenus();
+                }
+
+                onPressAndHold: {
+                    windowView.contextMenus();
+
+                }
             }
         }
     }
@@ -176,6 +191,4 @@ Rectangle {
             btWindowInterface.fontSize = fontPointSize.current;
         }
     }
-
-
 }
