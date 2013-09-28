@@ -193,7 +193,7 @@ ENDIF (MSVC)
 IF (${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
     SET (Qt5RequiredModules Widgets Qml Quick Network)
 ELSE (${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
-    SET (Qt5RequiredModules Widgets WebKit Network)
+    SET (Qt5RequiredModules Widgets WebKit WebKitWidgets Xml Network)
 ENDIF (${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
 
 IF (Qt5Core_FOUND)
