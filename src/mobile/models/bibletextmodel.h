@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "mobile/ui/roleitemmodel.h"
+#include "mobile/models/roleitemmodel.h"
 #include <QList>
 #include <QString>
 #include "backend/drivers/cswordmoduleinfo.h"

@@ -14,7 +14,7 @@
 #define INSTALL_MODULE_CHOOSER_H
 
 #include "installsourcesmanager.h"
-#include "mobile/ui/roleitemmodel.h"
+#include "mobile/models/roleitemmodel.h"
 #include "installprogress.h"
 #include <QMap>
 #include <QObject>

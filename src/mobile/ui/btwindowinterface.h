@@ -3,7 +3,7 @@
 
 #include <QObject>
 #include <QString>
-#include "mobile/ui/roleitemmodel.h"
+#include "mobile/models/roleitemmodel.h"
 #include "mobile/models/bibletextmodel.h"
 
 class CSwordKey;

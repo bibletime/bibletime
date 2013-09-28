@@ -1,7 +1,7 @@
 #ifndef MODULE_INTERFACE_H
 #define MODULE_INTERFACE_H
 
-#include "mobile/ui/roleitemmodel.h"
+#include "mobile/models/roleitemmodel.h"
 #include <QObject>
 #include <QList>
 #include <QSet>

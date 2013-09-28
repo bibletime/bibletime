@@ -450,6 +450,8 @@ SET(bibletime_SRC_MOBILE_SOURCES
 SET(bibletime_SRC_MOBILE_MODEL_SOURCES
     src/mobile/models/bibletextmodel.cpp
     src/mobile/models/bibletextmodel.h
+    src/mobile/models/roleitemmodel.cpp
+    src/mobile/models/roleitemmodel.h
 )
 
 SET(bibletime_SRC_MOBILE_UTIL_SOURCES
@@ -482,8 +484,6 @@ SET(bibletime_SRC_MOBILE_UI_SOURCES
     src/mobile/ui/qtquick2applicationviewer.h
     src/mobile/ui/gridchooser.cpp
     src/mobile/ui/gridchooser.h
-    src/mobile/ui/roleitemmodel.cpp
-    src/mobile/ui/roleitemmodel.h
     src/mobile/ui/viewmanager.cpp
     src/mobile/ui/viewmanager.h
 )
