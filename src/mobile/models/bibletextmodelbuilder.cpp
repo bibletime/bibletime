@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "bibletextmodel.h"
+#include "bibletextmodelbuilder.h"
 
 #include "btglobal.h"
 #include "backend/keys/cswordversekey.h"

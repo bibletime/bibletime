@@ -29,18 +29,19 @@ BtWindowInterface::BtWindowInterface(QObject* parent)
     : QObject(parent),
       m_key(0),
       m_textModel(new RoleItemModel()),
-      m_bibleTextModelBuilder(m_textModel) {
-}
+      m_bookKeyChooser(0),
+      m_verseKeyChooser(0),
+      m_bibleTextModelBuilder(m_textModel),
+      m_bookTextModelBuilder(m_textModel){
 
-static void outputText(const QString& text, const QString& filename)
-{
-    QFile file(filename);
-    if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
-        return;
+    QtQuick2ApplicationViewer* viewer = getViewManager()->getViewer();
+    m_verseKeyChooser = new VerseChooser(viewer, this);
+    bool ok = connect(m_verseKeyChooser, SIGNAL(referenceChanged()), this, SLOT(referenceChanged()));
+    Q_ASSERT(ok);
 
-    QTextStream out(&file);
-    out << text;
-    file.close();
+    m_bookKeyChooser = new BookKeyChooser(viewer, this);
+    ok = connect(m_bookKeyChooser, SIGNAL(referenceChanged()), this, SLOT(referenceChanged()));
+    Q_ASSERT(ok);
 }
 
 static QString getKeyText(CSwordKey* key) {
@@ -68,7 +69,13 @@ void BtWindowInterface::updateModel() {
     QList<const CSwordModuleInfo*> modules =
         CSwordBackend::instance()->getConstPointerList(moduleList);
     QString keyText = getKeyText(m_key);
-    m_bibleTextModelBuilder.updateModel(modules, keyText);
+
+    m_textModel->clear();
+    if (modules.at(0)->type() == CSwordModuleInfo::Bible)
+        m_bibleTextModelBuilder.updateModel(modules, keyText);
+    else if (modules.at(0)->type() == CSwordModuleInfo::GenericBook)
+        m_bookTextModelBuilder.updateModel(modules, keyText);
+
     emit currentModelIndexChanged();
 }
 
@@ -125,15 +132,15 @@ void BtWindowInterface::setModuleName(const QString& moduleName) {
         treeKey->firstChild();
 
     emit moduleChanged();
-    emit displayedChanged();
+    emit referenceChange();
     updateModel();
 }
 
-QString BtWindowInterface::getDisplayed() const {
-    QString displayed;
+QString BtWindowInterface::getReference() const {
+    QString reference;
     if (m_key)
-        displayed = m_key->key();
-    return displayed;
+        reference = m_key->key();
+    return reference;
 }
 
 void BtWindowInterface::changeModule() {
@@ -202,10 +209,7 @@ void BtWindowInterface::changeReference() {
 
     CSwordVerseKey* verseKey = dynamic_cast<CSwordVerseKey*>(m_key);
     if (verseKey != 0) {
-        VerseChooser* dlg = new VerseChooser(viewer, this);
-        bool ok = connect(dlg, SIGNAL(referenceChanged()), this, SLOT(referenceChanged()));
-        Q_ASSERT(ok);
-        dlg->open(verseKey);
+        m_verseKeyChooser->open(verseKey);
     }
 
     CSwordTreeKey* treeKey = dynamic_cast<CSwordTreeKey*>(m_key);
@@ -214,18 +218,13 @@ void BtWindowInterface::changeReference() {
         QStringList children;
         parseKey(treeKey, &keyPath, &children);
         int x = 0;
-        BookKeyChooser* dlg = new BookKeyChooser(viewer, this);
-        dlg->open();
+        m_bookKeyChooser->open();
     }
 }
 
 void BtWindowInterface::referenceChanged() {
-    emit displayedChanged();
+    emit referenceChange();
     updateModel();
-}
-
-void BtWindowInterface::setDisplayed(const QString& text) {
-    emit displayedChanged();
 }
 
 const CSwordModuleInfo* BtWindowInterface::module() const {

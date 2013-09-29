@@ -102,7 +102,7 @@ Rectangle {
                 font.pointSize: btStyle.uiTextPointSize
                 elide: Text.ElideMiddle
                 color: btStyle.toolbarButtonText
-                text: btWindowInterface.displayed
+                text: btWindowInterface.reference
             }
 
             MouseArea {

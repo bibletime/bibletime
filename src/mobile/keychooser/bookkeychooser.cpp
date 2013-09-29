@@ -112,7 +112,8 @@ void BookKeyChooser::select(QString value) {
     CSwordKey* key = m_windowInterface->getKey();
     CSwordTreeKey* bookKey = dynamic_cast<CSwordTreeKey*>(key);
     bookKey->setKey(*tmpBookKey);
-    m_windowInterface->setDisplayed("");
+
+    emit referenceChanged();
 }
 
 void BookKeyChooser::open() {

@@ -448,8 +448,10 @@ SET(bibletime_SRC_MOBILE_SOURCES
 )
 
 SET(bibletime_SRC_MOBILE_MODEL_SOURCES
-    src/mobile/models/bibletextmodel.cpp
-    src/mobile/models/bibletextmodel.h
+    src/mobile/models/bibletextmodelbuilder.cpp
+    src/mobile/models/bibletextmodelbuilder.h
+    src/mobile/models/booktextmodelbuilder.cpp
+    src/mobile/models/booktextmodelbuilder.h
     src/mobile/models/roleitemmodel.cpp
     src/mobile/models/roleitemmodel.h
 )

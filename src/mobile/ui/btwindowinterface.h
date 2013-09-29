@@ -4,7 +4,8 @@
 #include <QObject>
 #include <QString>
 #include "mobile/models/roleitemmodel.h"
-#include "mobile/models/bibletextmodel.h"
+#include "mobile/models/bibletextmodelbuilder.h"
+#include "mobile/models/booktextmodelbuilder.h"
 
 class CSwordKey;
 class CSwordVerseKey;
@@ -12,12 +13,15 @@ class CSwordModuleInfo;
 
 namespace btm {
 
+class BookKeyChooser;
+class VerseChooser;
+
 class BtWindowInterface : public QObject {
 
     Q_OBJECT
 
     Q_PROPERTY(QString moduleName READ getModuleName WRITE setModuleName NOTIFY moduleChanged)
-    Q_PROPERTY(QString displayed READ getDisplayed WRITE setDisplayed NOTIFY displayedChanged)
+    Q_PROPERTY(QString reference READ getReference NOTIFY referenceChange)
     Q_PROPERTY(int fontSize READ getFontSize WRITE setFontSize NOTIFY textChanged)
     Q_PROPERTY(QVariant textModel READ getTextModel NOTIFY textModelChanged)
     Q_PROPERTY(int currentModelIndex READ getCurrentModelIndex NOTIFY currentModelIndexChanged)
@@ -33,8 +37,7 @@ public:
     QString getModuleName() const;
     void setModuleName(const QString& moduleName);
 
-    QString getDisplayed() const;
-    void setDisplayed(const QString& text);
+    QString getReference() const;
 
     int getCurrentModelIndex() const;
 
@@ -44,7 +47,7 @@ public:
     QVariant getTextModel();
 
 signals:
-    void displayedChanged();
+    void referenceChange();
     void moduleChanged();
     void textChanged();
     void textModelChanged();
@@ -52,13 +55,17 @@ signals:
 
 private slots:
     void referenceChanged();
+
 private:
     const CSwordModuleInfo* module() const;
     void updateModel();
 
     CSwordKey* m_key;
     RoleItemModel* m_textModel;
+    BookKeyChooser* m_bookKeyChooser;
+    VerseChooser* m_verseKeyChooser;
     BibleTextModelBuilder m_bibleTextModelBuilder;
+    BookTextModelBuilder m_bookTextModelBuilder;
 };
 
 } // end namespace

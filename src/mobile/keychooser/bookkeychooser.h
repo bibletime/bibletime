@@ -42,6 +42,9 @@ public:
     BookKeyChooser(QtQuick2ApplicationViewer* viewer, BtWindowInterface* windowInterface);
     void open();
 
+signals:
+    void referenceChanged();
+
 private slots:
     void select(QString value);
     void next(QString value);
