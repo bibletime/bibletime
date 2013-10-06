@@ -1,75 +1,61 @@
 import QtQuick 2.1
 import BibleTime 1.0
 
-
-
-MouseArea {
-    id: menus
+Rectangle {
+    id: menu
 
     property alias model: menusRepeater.model
-    property int menusWidth: 15 * btStyle.uiTextPointSize
+    property int fontPointSize: 15
+    property int menuHeight: 70
+    property int topMenuMargin: 150
+    property int leftMenuMargin: 50
 
     signal menuSelected(string action)
 
-    z:50
     visible: false
     anchors.fill: parent
-    enabled: menus.visible
-    onClicked: {
-        menus.visible = false;
+    color: "#f0f0f0"
+
+    BtStyle {
+        id: btStyle
     }
 
-    Rectangle {
+    Component {
+        id: eachMenu
 
-        width:menus.menusWidth
-        height: btStyle.menuHeight * model.count+6
-        color: btStyle.menu
-        border.color: "black"
-        border.width: 2
-        z: 100
-        anchors.right: parent.right
-        anchors.top: parent.top
+        Rectangle {
+            width: menu.width
+            height: menuHeight
+            color: "white"
+            border.color: "#f0f0f0"
+            border.width: 2
 
-        Column {
-            id: menuColumn
+            Text {
+                text: title
+                font.pointSize: btStyle.uiTextPointSize
+                color: "black"
+                anchors.fill: parent
+                anchors.leftMargin: leftMenuMargin
+                verticalAlignment: Text.AlignVCenter
 
-            width:parent.width-4
-            anchors.right: parent.right
-            anchors.top: parent.top
-            anchors.topMargin: 3
-
-            Repeater {
-                id: menusRepeater
-
-                delegate: Rectangle {
-
-                    width:menus.menusWidth-4
-                    height:btStyle.menuHeight
-                    color: btStyle.menu
-                    border.color: btStyle.menuBorder
-                    border.width: 1
-
-                    Text {
-                        anchors.verticalCenter: parent.verticalCenter
-                        anchors.left: parent.left
-                        anchors.leftMargin: 6
-                        text: title
-                        font.pointSize: btStyle.uiTextPointSize
-                        color: btStyle.menuText
-                    }
-
-                    MouseArea {
-                        anchors.fill: parent
-                        onClicked: {
-                            menus.menuSelected(action);
-                        }
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: {
+                        menu.menuSelected(action);
                     }
                 }
             }
         }
     }
+
+    ListView {
+        id: menusRepeater
+
+        delegate: eachMenu
+        width: parent.width
+        anchors.fill: parent
+        anchors.topMargin: topMenuMargin
+
+    }
 }
-
-
-
 

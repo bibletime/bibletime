@@ -27,7 +27,7 @@ Rectangle {
     Rectangle {
         id: toolbar
 
-        property string title: btWindowInterface.moduleName + " (" + btWindowInterface.displayed + ")"
+        property string title: btWindowInterface.moduleName + " (" + btWindowInterface.reference + ")"
 
         width: parent.width
         height: 36

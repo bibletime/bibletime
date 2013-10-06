@@ -13,6 +13,10 @@ Rectangle {
     property int autoTileVer: 4
     property int windowLayout: single
 
+    function setCurrentTabbedWindow(index) {
+        tabbedWindows.current = index;
+    }
+
     function setWindowArrangement(arrangement) {
         if (arrangement < single || arrangement > autoTileVer)
             return;
@@ -250,6 +254,7 @@ Rectangle {
                             verticalAlignment: Qt.AlignVCenter
                             anchors.fill: parent
                             anchors.topMargin: 6
+                            font.pointSize: btStyle.uiTextPointSize -3
                             text: tabbedWindowsStack.children[index].title
                             elide: Text.ElideLeft
                             color: {

@@ -17,7 +17,7 @@ Rectangle {
         property: "opacity"
         from: 0
         to: 1
-        duration: 400
+        duration: 200
         easing.type: Easing.InOutCubic
     }
 
@@ -29,6 +29,7 @@ Rectangle {
         id: settingsModel
 
         ListElement { title: "Ui Font Size";   action: "uiSize" }
+        ListElement { title: "Window Arrangement";   action: "arrangement" }
     }
 
     ListView {
@@ -57,8 +58,15 @@ Rectangle {
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    if (action == "uiSize")
+                    if (action == "arrangement") {
+                        windowArrangementMenus.visible = true;
+                        settings.visible = false;
+                    }
+                    else if (action == "uiSize") {
                         uiFontPointSize.visible = true;
+//                        settings.visible = false;
+                        console.log("y")
+                    }
                 }
             }
         }
@@ -96,6 +104,7 @@ Rectangle {
         onAccepted: {
             btStyle.uiTextPointSize = uiFontPointSize.current;
             settings.visible = false;
+            visible = false;
         }
     }
 }

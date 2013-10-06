@@ -133,10 +133,9 @@ Rectangle {
         id: mainMenusModel
 
         ListElement { title: QT_TR_NOOP("New Window");              action: "newWindow" }
+        ListElement { title: QT_TR_NOOP("View Window");             action: "windows" }
         ListElement { title: QT_TR_NOOP("Settings");                action: "settings" }
         ListElement { title: QT_TR_NOOP("Bookshelf Manager");       action: "install" }
-        ListElement { title: QT_TR_NOOP("Windows");                 action: "windows" }
-        ListElement { title: QT_TR_NOOP("Window Arrangement");      action: "windowArrangement" }
         //            ListElement { title: QT_TR_NOOP("Gnome Style");             action: "gnomeStyle" }
         //            ListElement { title: QT_TR_NOOP("Android Style");           action: "androidStyle" }
     }
@@ -154,9 +153,6 @@ Rectangle {
             else if (action == "windows") {
                 windowManager.createWindowMenus();
             }
-            else if (action == "windowArrangement") {
-                windowArrangementMenus.visible = true;
-            }
             else if (action == "gnomeStyle") {
                 btStyle.setStyle(1)
             }
@@ -173,6 +169,7 @@ Rectangle {
         }
 
         model: mainMenusModel
+        topMenuMargin: 100
     }
 
     ListModel {
@@ -187,8 +184,6 @@ Rectangle {
 
     Menus {
         id: windowArrangementMenus
-
-        menusWidth: 350
 
         Component.onCompleted: menuSelected.connect(windowArrangementMenus.doAction)
 
@@ -212,31 +207,19 @@ Rectangle {
         }
 
         model: windowArrangementModel
-        anchors.top: parent.bottom
-        anchors.right: parent.right
     }
 
     Menus {
         id: windowTitlesMenus
 
         model: windowsModel
-        menusWidth: 350
-        anchors.top: parent.bottom
-        anchors.right: parent.right
         visible: false
         Component.onCompleted: menuSelected.connect(windowTitlesMenus.doAction)
 
         function doAction(action) {
             windowTitlesMenus.visible = false;
             var index = Number(action)
-            if (index == 0)
-                return;
-            var windowList = windowManager.windows;
-            var window = windowList.slice(index, index+1);
-            windowList.splice(index,1);
-            windowList.unshift(window);
-            windowManager.windows = windowList;
-            windowManager.layoutWindows();
+            windowManager.setCurrentTabbedWindow(index);
         }
     }
 }
