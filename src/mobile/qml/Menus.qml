@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 2.1
 import BibleTime 1.0
 
 
@@ -7,6 +7,7 @@ MouseArea {
     id: menus
 
     property alias model: menusRepeater.model
+    property int menusWidth: 200
 
     signal menuSelected(string action)
 
@@ -20,7 +21,7 @@ MouseArea {
 
     Rectangle {
 
-        width:190
+        width:menus.menusWidth
         height: btStyle.menuHeight * model.count+6
         color: btStyle.menu
         border.color: "black"
@@ -42,7 +43,8 @@ MouseArea {
 
                 delegate: Rectangle {
 
-                    width:parent.width-4
+                    width:menus.menusWidth-4
+//                    width:parent.width-4
                     height:btStyle.menuHeight
                     color: btStyle.menu
                     border.color: btStyle.menuBorder

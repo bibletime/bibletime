@@ -465,12 +465,8 @@ SET(bibletime_SRC_MOBILE_UI_SOURCES
     src/mobile/keychooser/bookkeychooser.h
     src/mobile/keychooser/versechooser.cpp
     src/mobile/keychooser/versechooser.h
-    src/mobile/ui/bookmodulechooser.cpp
-    src/mobile/ui/bookmodulechooser.h
     src/mobile/ui/btstyle.cpp
     src/mobile/ui/btstyle.h
-    src/mobile/ui/btbookinterface.cpp
-    src/mobile/ui/btbookinterface.h
     src/mobile/ui/btwindowinterface.cpp
     src/mobile/ui/btwindowinterface.h
     src/mobile/ui/modulechooser.cpp
@@ -496,9 +492,7 @@ SET(bibletime_SRC_MOBILE_MOCABLE_HEADERS
     src/mobile/keychooser/versechooser.h
     src/mobile/bibletime.h
     src/mobile/bibletimeapp.h
-    src/mobile/ui/bookmodulechooser.h
     src/mobile/ui/btstyle.h
-    src/mobile/ui/btbookinterface.h
     src/mobile/ui/btwindowinterface.h
     src/mobile/ui/modulechooser.h
     src/mobile/ui/moduleinterface.h
@@ -508,7 +502,6 @@ SET(bibletime_SRC_MOBILE_MOCABLE_HEADERS
 )
 
 SET(bibletime_MOBILE_QML_FILES
-    src/mobile/qml/BookWindow.qml
     src/mobile/qml/GridChooserButton.qml
     src/mobile/qml/GridChooser.qml
     src/mobile/qml/ImageButton.qml
@@ -524,6 +517,7 @@ SET(bibletime_MOBILE_QML_FILES
     src/mobile/qml/Progress.qml
     src/mobile/qml/TreeChooser.qml
     src/mobile/qml/Window.qml
+    src/mobile/qml/WindowManager.qml
     src/mobile/qml/checkmark.svg
     src/mobile/qml/leftarrow.svg
     src/mobile/qml/rightarrow.svg

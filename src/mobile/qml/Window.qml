@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 2.1
 import QtWebKit 3.0
 import BibleTime 1.0
 
@@ -6,10 +6,6 @@ Rectangle {
     id: htmlView
 
     property string title: toolbar.title
-
-    function changeModule() {
-        btWindowInterface.changeModule();
-    }
 
     function setModule(module) {
         btWindowInterface.moduleName = module;
@@ -32,11 +28,13 @@ Rectangle {
     Rectangle {
         id: toolbar
 
-        property string title: btWindowInterface.displayed + " (" + btWindowInterface.moduleName + ")"
+        property string title: btWindowInterface.moduleName + " (" + btWindowInterface.displayed + ")"
 
         width: parent.width
         height: 36
         color: btStyle.toolbarColor
+        border.width: 1
+        border.color: "black"
 
         Rectangle {
             id: moduleDisplay
@@ -46,9 +44,9 @@ Rectangle {
             anchors.left: parent.left
             anchors.top: parent.top
             anchors.bottom: parent.bottom
-            anchors.topMargin: 2
+            anchors.topMargin: 4
             anchors.leftMargin: 5
-            anchors.bottomMargin: 2
+            anchors.bottomMargin: 4
             color: btStyle.toolbarButton
             border.color: btStyle.buttonBorder
             border.width: 1
@@ -57,7 +55,10 @@ Rectangle {
                 id: text
 
                 anchors.centerIn: parent
+                anchors.leftMargin: 4
+                anchors.rightMargin: 4
                 font.pointSize: btStyle.toolbarTextPointSize
+                elide: Text.ElideMiddle
                 color: btStyle.toolbarButtonText
                 text: btWindowInterface.moduleName
             }
@@ -75,17 +76,18 @@ Rectangle {
         Rectangle {
             id: referenceDisplay
 
-            function createDialog() {
-                btWindowInterface.changeReference()
+            width: {
+                var w1 = 300
+                var w2 = toolbar.width - moduleDisplay.width;
+                var w = Math.min(w1,w2);
+                return w - 15;
             }
-
-            width:referenceText.width + 10
             radius: btStyle.buttonRadius
             anchors.left: moduleDisplay.right
             anchors.top: parent.top
             anchors.bottom: parent.bottom
-            anchors.topMargin: 2
-            anchors.bottomMargin: 2
+            anchors.topMargin: 4
+            anchors.bottomMargin: 4
             anchors.leftMargin: 5
             color: btStyle.toolbarButton
             border.color: btStyle.buttonBorder
@@ -94,7 +96,11 @@ Rectangle {
             Text {
                 id: referenceText
                 anchors.centerIn: parent
+                anchors.leftMargin: 6
+                anchors.rightMargin: 4
+                width: referenceDisplay.width - 4
                 font.pointSize: btStyle.toolbarTextPointSize
+                elide: Text.ElideMiddle
                 color: btStyle.toolbarButtonText
                 text: btWindowInterface.displayed
             }
@@ -104,7 +110,7 @@ Rectangle {
 
                 anchors.fill: parent
                 onClicked: {
-                    referenceDisplay.createDialog()
+                    btWindowInterface.changeReference();
                 }
             }
         }

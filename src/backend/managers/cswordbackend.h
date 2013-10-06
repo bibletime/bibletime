@@ -16,6 +16,7 @@
 #include <QObject>
 #include <QString>
 #include <QStringList>
+#include <QVariant>
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/bookshelfmodel/btbookshelfmodel.h"
 #include "backend/filters/gbftohtml.h"

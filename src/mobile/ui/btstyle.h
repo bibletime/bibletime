@@ -38,13 +38,13 @@ class BtStyle : public QObject {
     Q_PROPERTY(double toolbarTextPointSize  READ getToolbarTextPointSize NOTIFY changed);
 
 public:
+    Q_INVOKABLE void setStyle(int style);
 
     enum Style {
         gnome = 1,
         android = 2
     };
 
-    Q_INVOKABLE void setStyle(int style);
 
     BtStyle(QObject *parent = 0);
 

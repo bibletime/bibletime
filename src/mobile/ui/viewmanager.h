@@ -20,7 +20,6 @@ public:
     ViewManager();
 
     void show();
-    void showBibleVerseDialog(BtWindowInterface* verse);
     QtQuick2ApplicationViewer* getViewer() const;
 
 private:

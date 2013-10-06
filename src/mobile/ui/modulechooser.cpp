@@ -8,73 +8,37 @@
 #include <cmath>
 #include <QQuickItem>
 #include <QQmlProperty>
-#include <QQmlContext>
-#include <QDebug>
-#include <QQmlProperty>
-#include <QCoreApplication>
 #include "btwindowinterface.h"
-#include "gridchooser.h"
+#include "mobile/util/findqmlobject.h"
 
 namespace btm {
 
 ModuleChooser::ModuleChooser(QtQuick2ApplicationViewer* viewer, BtWindowInterface* bibleVerse)
     : viewer_(viewer),
-      gridChooser_(0),
-      bibleVerse_(bibleVerse),
-      state_(CLOSED ) {
-    gridChooser_ = new GridChooser(viewer_);
-    bool ok = connect(gridChooser_, SIGNAL(accepted(const QString&)),
-                      this, SLOT(stringAccepted(const QString&)));
-    Q_ASSERT(ok);
+      bibleVerse_(bibleVerse) {
 }
 
 void ModuleChooser::open() {
-    state_ = MODULE;
-    BtBookshelfModel* bookshelfModel = CSwordBackend::instance()->model();
-    int count = bookshelfModel->rowCount();
-    QStringList moduleNames;
-    typedef BtBookshelfModel::ModuleRole MRole;
-    static const MRole HR(BtBookshelfModel::ModuleHiddenRole);
-    static const MRole PR(BtBookshelfModel::ModulePointerRole);
-    static const MRole IR(BtBookshelfModel::ModuleHasIndexRole);
-    static const MRole CR(BtBookshelfModel::ModuleCategoryRole);
+    QQuickItem* item = findQmlObject("moduleChooser");
+    Q_ASSERT(item != 0);
+    if (item == 0)
+        return;
 
-    for (int row=0; row<count; ++row) {
-        QModelIndex index = bookshelfModel->index(row);
-
-        CSwordModuleInfo *module(
-            static_cast<CSwordModuleInfo *>(
-                bookshelfModel->data(index, PR).value<void*>()
-            )
-        );
-        if (module->category() != CSwordModuleInfo::Bibles &&
-                module->category() != CSwordModuleInfo::Commentaries)
-            continue;
-
-//        QString lang = module->language()->abbrev();
-//        if (lang != "en")
-//            continue;
-
-        QString text = index.data().toString();
-        moduleNames << text;
-    }
-    gridChooser_->open(moduleNames, "");
+    item->setProperty("visible", true);
+    bool ok = connect(item, SIGNAL(moduleSelected()), this, SLOT(moduleSelectedSlot()));
+    Q_ASSERT(ok);
 }
 
-QString ModuleChooser::moduleName() const {
-    return moduleName_;
-}
+void ModuleChooser::moduleSelectedSlot() {
+    QQuickItem* item = findQmlObject("moduleChooser");
+    Q_ASSERT(item != 0);
+    if (item == 0)
+        return;
 
-void ModuleChooser::stringAccepted(const QString& value) {
-    if (state_ == MODULE)
-    {
-        moduleName_ = value;
-        bibleVerse_->setModuleName(value);
-        state_ = CLOSED;
-    }
-}
-
-void ModuleChooser::stringCanceled() {
+    item->setProperty("visible", false);
+    QVariant v = item->property("selectedModule");
+    QString moduleName = v.toString();
+    bibleVerse_->setModuleName(moduleName);
 }
 
 } // end namespace

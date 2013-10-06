@@ -5,7 +5,6 @@
 
 #include "btstyle.h"
 #include <cmath>
-#include "mobile/keychooser/versechooser.h"
 #include <QGuiApplication>
 #include <QJsonValue>
 #include <QQuickItem>
@@ -44,11 +43,6 @@ void ViewManager::initialize_main_qml() {
 
 void ViewManager::show() {
     viewer_->showExpanded();
-}
-
-void ViewManager::showBibleVerseDialog(BtWindowInterface* bibleVerse) {
-    VerseChooser* dlg = new VerseChooser(viewer_, bibleVerse);
-    dlg->open();
 }
 
 QtQuick2ApplicationViewer* ViewManager::getViewer() const {
