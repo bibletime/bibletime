@@ -66,7 +66,7 @@ Rectangle {
                 border.width: 1
                 border.color: ListView.isCurrentItem ? "#c0c0c0" : "#a0a0a0"
                 width: parent.width
-                height: 44
+                height: 60
 
                 Image {
                     id: installedCheckmark
