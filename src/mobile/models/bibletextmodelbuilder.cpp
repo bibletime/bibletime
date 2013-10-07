@@ -67,14 +67,14 @@ void BibleTextModelBuilder::updateModel(
     Q_ASSERT((module->type() == CSwordModuleInfo::Bible));
 
     if (module->type() == CSwordModuleInfo::Bible) {
-        ((sword::VerseKey*)(module->module()->getKey()))->Headings(1);
+        ((sword::VerseKey*)(module->module()->getKey()))->setIntros(true);
 
         Q_ASSERT(dynamic_cast<const CSwordBibleModuleInfo*>(module) != 0);
         const CSwordBibleModuleInfo* bible =
                 static_cast<const CSwordBibleModuleInfo*>(module);
 
         CSwordVerseKey k1(module);
-        k1.Headings(1);
+        k1.setIntros(true);
         k1.setKey(keyName);
 
         if (k1.getChapter() == 1)

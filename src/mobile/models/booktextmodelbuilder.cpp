@@ -65,7 +65,7 @@ void BookTextModelBuilder::updateModel(
     );
     key->setKey(keyName); //set the key to position we'd like to get
 
-    const unsigned long offset = key->getOffset();
+//    const unsigned long offset = key->getOffset();
 
     //check whether there's an intro we have to include
     Q_ASSERT((module->type() == CSwordModuleInfo::GenericBook));

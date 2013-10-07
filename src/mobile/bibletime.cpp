@@ -52,6 +52,9 @@ void BibleTime::initBackends() {
     backend->booknameLanguage(language);
 
     const CSwordBackend::LoadError errorCode = CSwordBackend::instance()->initModules(CSwordBackend::OtherChange);
+    if (errorCode != CSwordBackend::NoError) {
+        ; // TODO
+    }
 }
 
 void BibleTime::initSwordConfigFile() {

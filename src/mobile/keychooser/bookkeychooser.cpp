@@ -174,7 +174,6 @@ void BookKeyChooser::stringCanceled() {
 }
 
 void BookKeyChooser::setProperties() {
-    QQmlContext* ctx = m_viewer->rootContext();
     m_treeChooserObject->setProperty("path",m_backPath);
     m_treeChooserObject->setProperty("model", QVariant::fromValue(&m_roleItemModel));
 }
@@ -199,7 +198,6 @@ void BookKeyChooser::openChooser(bool open) {
 
     setProperties();
 
-    QQmlContext* ctx = m_viewer->rootContext();
     m_treeChooserObject->setProperty("visible",open);
 }
 
@@ -237,19 +235,6 @@ static int findEntry(const QString& sibling, bool* found,
     return foundIndex;
 }
 
-static QStringList getSiblings(CSwordTreeKey* key) {
-    QStringList siblings;
-    if ( ! key->hasChildren())
-            return siblings;
-    key->firstChild();
-
-    do {
-        siblings << key->getLocalNameUnicode();
-    }
-    while (key->nextSibling());
-    return siblings;
-}
-
 void BookKeyChooser::parseKey(QStringList * siblings,
             QList<int>* hasChildrenList, CSwordTreeKey* key) {
     QString oldKey = key->key();
@@ -260,13 +245,12 @@ void BookKeyChooser::parseKey(QStringList * siblings,
     while ( key->firstChild() && (depth < pathDepthList.count()) ) {
         QString localName = key->getLocalNameUnicode();
         QString savedKey = key->key();
-        int index = (depth == 0) ? -1 : 0;
         bool found = false;
         QString path = pathDepthList[depth];
         siblings->clear();
         hasChildrenList->clear();
         QString matchingKey;
-        index = findEntry(path, &found, key, &matchingKey, siblings, hasChildrenList);
+        findEntry(path, &found, key, &matchingKey, siblings, hasChildrenList);
         if (found) {
             key->setKey(matchingKey);
         }

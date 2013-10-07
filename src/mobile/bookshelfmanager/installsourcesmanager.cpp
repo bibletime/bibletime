@@ -23,7 +23,7 @@
 
 namespace btm {
 
-InstallSourcesManager::InstallSourcesManager(QObject* parent)
+InstallSourcesManager::InstallSourcesManager(QObject* /* parent */)
     : m_worker(0) {
 }
 

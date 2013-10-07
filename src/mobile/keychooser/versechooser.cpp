@@ -93,7 +93,7 @@ void VerseChooser::setBook(const QString& book) {
 QString VerseChooser::getChapter() const {
     QString chapter;
     if (m_key)
-        chapter = QString::number(m_key->Chapter());
+        chapter = QString::number(m_key->getChapter());
     return chapter;
 }
 
@@ -107,7 +107,7 @@ void VerseChooser::setChapter(const QString& chapter)  {
 QString VerseChooser::getVerse() const {
     QString verse;
     if (m_key) {
-        verse = QString::number(m_key->Verse());
+        verse = QString::number(m_key->getVerse());
     }
     return verse;
 }
@@ -147,7 +147,7 @@ QStringList VerseChooser::getVerses() const {
     const CSwordModuleInfo* module = m_key->module();
     const CSwordBibleModuleInfo* m = qobject_cast<const CSwordBibleModuleInfo*>(module);
     QString book = m_key->book();
-    int chapter = m_key->Chapter();
+    int chapter = m_key->getChapter();
     int count = m->verseCount(book,chapter);
     for (int i = 1; i <= count; i++) {
         verses << QString::number(i);

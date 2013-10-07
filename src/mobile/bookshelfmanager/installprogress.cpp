@@ -129,11 +129,11 @@ void InstallProgress::slotStopInstall() {
     }
 }
 
-void InstallProgress::slotStatusUpdated(QString module, int status) {
+void InstallProgress::slotStatusUpdated(QString /* module */, int status) {
     m_progressObject->setProperty("value", status);
 }
 
-void InstallProgress::slotInstallStarted(QString module, QString) {
+void InstallProgress::slotInstallStarted(QString /* module */, QString) {
 }
 
 void InstallProgress::slotDownloadStarted(QString module) {

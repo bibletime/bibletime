@@ -79,7 +79,7 @@ static void setupWorksModel(const QStringList& titleList,
     }
 }
 
-InstallManager::InstallManager(QObject* parent)
+InstallManager::InstallManager(QObject* /* parent */)
     : m_installManagerChooserObject(0),
       m_btInstallMgr(0) {
 }
@@ -351,7 +351,7 @@ void InstallManager::removeModules(const QList<CSwordModuleInfo*>& modules) {
             mgr = mgrDict[ prefixPath ];
         }
         qDebug() << "Removing the module" << mInfo->name() << "...";
-        installMgr.removeModule(mgr, mInfo->module()->Name());
+        installMgr.removeModule(mgr, mInfo->module()->getName());
     }
     //delete the removed moduleinfo pointers
     qDeleteAll(modules);

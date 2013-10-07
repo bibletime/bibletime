@@ -162,7 +162,7 @@ static void parseKey(CSwordTreeKey* currentKey, QStringList* keyPath, QStringLis
         localKey.firstChild();
         oldKey = localKey.key();
     }
-    const int oldOffset = localKey.getOffset(); //backup key position
+//    const int oldOffset = localKey.getOffset(); //backup key position
 
     QStringList siblings; //split up key
     if (!oldKey.isEmpty()) {
@@ -205,8 +205,6 @@ static void parseKey(CSwordTreeKey* currentKey, QStringList* keyPath, QStringLis
 }
 
 void BtWindowInterface::changeReference() {
-    QtQuick2ApplicationViewer* viewer = getViewManager()->getViewer();
-
     CSwordVerseKey* verseKey = dynamic_cast<CSwordVerseKey*>(m_key);
     if (verseKey != 0) {
         m_verseKeyChooser->open(verseKey);
@@ -217,7 +215,6 @@ void BtWindowInterface::changeReference() {
         QStringList keyPath;
         QStringList children;
         parseKey(treeKey, &keyPath, &children);
-        int x = 0;
         m_bookKeyChooser->open();
     }
 }
