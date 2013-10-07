@@ -50,7 +50,7 @@ Rectangle {
         id: title
 
         text: titleText
-        font.pointSize: btStyle.uiTextPointSize
+        font.pointSize: btStyle.uiFontPointSize
         height: titleHeight
         anchors.top: parent.top
         anchors.horizontalCenter: parent.horizontalCenter
@@ -99,7 +99,7 @@ Rectangle {
                 id: buttonX
 
                 text: modelData
-                textHeight: btStyle.uiTextPointSize
+                textHeight: btStyle.uiFontPointSize
                 buttonWidth: gridChooser.buttonWidth
                 buttonHeight: gridChooser.buttonHeight
                 textColor: {

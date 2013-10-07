@@ -47,7 +47,7 @@ Rectangle {
                 anchors.verticalCenter: parent.verticalCenter
                 text: title
                 color: "black"
-                font.pointSize: btStyle.uiTextPointSize
+                font.pointSize: btStyle.uiFontPointSize
             }
 
             MouseArea {

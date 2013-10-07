@@ -52,7 +52,7 @@ Rectangle {
                 anchors.verticalCenter: parent.verticalCenter
                 text: title
                 color: "black"
-                font.pointSize: btStyle.uiTextPointSize
+                font.pointSize: btStyle.uiFontPointSize
             }
 
             MouseArea {
@@ -64,7 +64,7 @@ Rectangle {
                     }
                     else if (action == "uiSize") {
                         uiFontPointSize.visible = true;
-//                        settings.visible = false;
+                        settings.visible = false;
                         console.log("y")
                     }
                 }
@@ -88,23 +88,6 @@ Rectangle {
             onClicked: {
                 settings.visible = false;
             }
-        }
-    }
-
-    FontSizeSlider {
-        id: uiFontPointSize
-        visible: false
-        title: "UI Font Point Size"
-
-        onVisibleChanged: {
-            if (visible)
-                uiFontPointSize.current = btStyle.uiTextPointSize
-        }
-
-        onAccepted: {
-            btStyle.uiTextPointSize = uiFontPointSize.current;
-            settings.visible = false;
-            visible = false;
         }
     }
 }

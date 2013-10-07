@@ -32,7 +32,7 @@ Rectangle {
 
             Text {
                 text: title
-                font.pointSize: btStyle.uiTextPointSize
+                font.pointSize: btStyle.uiFontPointSize
                 color: "black"
                 anchors.fill: parent
                 anchors.leftMargin: leftMenuMargin

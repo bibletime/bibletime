@@ -8,6 +8,7 @@ Rectangle {
     property int min: 10
     property int max: 22
     property int current: 12
+    property int previous: 12
 
     signal accepted(int pointSize);
 
@@ -16,7 +17,7 @@ Rectangle {
     border.width: 1
     anchors.centerIn: parent
     width: parent.width * 0.85
-    height: 180
+    height: 140
 
     Text {
         text: title
@@ -24,15 +25,7 @@ Rectangle {
         anchors.top: parent.top
         anchors.topMargin: 10
         height: 40
-        font.pointSize: btStyle.uiTextPointSize
-    }
-
-    Text {
-        text: "Sample text"
-        font.pointSize: fontPointSize.current
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.bottom: bar.top
-        anchors.bottomMargin: 20
+        font.pointSize: btStyle.uiFontPointSize
     }
 
     Rectangle {
@@ -42,7 +35,6 @@ Rectangle {
         width: parent.width *.80
         height: 3
         anchors.centerIn: parent
-
     }
 
     Rectangle {
@@ -86,7 +78,8 @@ Rectangle {
                 value = min;
             if (value > fontPointSize.max)
                 value = max;
-            fontPointSize.current = value
+            fontPointSize.current = value;
+            accepted(value);
         }
 
     }
@@ -110,14 +103,12 @@ Rectangle {
             Text {
                 text: "Ok"
                 anchors.centerIn: parent
-                font.pointSize: btStyle.uiTextPointSize
+                font.pointSize: btStyle.uiFontPointSize
             }
 
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    fontPointSize.visible = false;
-                    accepted(current);
                     fontPointSize.visible = false;
                 }
             }
@@ -132,12 +123,13 @@ Rectangle {
             Text {
                 text: "Cancel"
                 anchors.centerIn: parent
-                font.pointSize: btStyle.uiTextPointSize
+                font.pointSize: btStyle.uiFontPointSize
             }
 
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
+                    accepted(previous);
                     fontPointSize.visible = false;
                 }
             }

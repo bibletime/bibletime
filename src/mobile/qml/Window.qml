@@ -11,7 +11,7 @@ Rectangle {
     }
 
     function contextMenus() {
-        contextMenu.visible = true;
+//        contextMenu.visible = true;
     }
 
     color: "black"
@@ -56,7 +56,7 @@ Rectangle {
                 anchors.centerIn: parent
                 anchors.leftMargin: 4
                 anchors.rightMargin: 4
-                font.pointSize: btStyle.uiTextPointSize
+                font.pointSize: btStyle.uiFontPointSize
                 elide: Text.ElideMiddle
                 color: btStyle.toolbarButtonText
                 text: btWindowInterface.moduleName
@@ -99,7 +99,7 @@ Rectangle {
                 anchors.leftMargin: 6
                 anchors.rightMargin: 4
                 width: referenceDisplay.width - 4
-                font.pointSize: btStyle.uiTextPointSize
+                font.pointSize: btStyle.uiFontPointSize
                 elide: Text.ElideMiddle
                 color: btStyle.toolbarButtonText
                 text: btWindowInterface.reference
@@ -139,7 +139,7 @@ Rectangle {
                 text: "<font color=\"blue\">" + ref + "</font> " + line
                 width: parent.width
                 color: "black"
-                font.pointSize: btWindowInterface.fontSize
+                font.pointSize: btStyle.textFontPointSize
                 wrapMode: Text.WordWrap
             }
 
@@ -168,7 +168,6 @@ Rectangle {
         id: contextMenu
 
         function doAction(action) {
-            fontPointSize.visible = true;
         }
 
         model: contextMenuModel
@@ -176,19 +175,4 @@ Rectangle {
         Component.onCompleted: contextMenu.accepted.connect(contextMenu.doAction)
     }
 
-    FontSizeSlider {
-        id: fontPointSize
-        visible: false
-        title: "Text Font Point Size"
-
-        onVisibleChanged: {
-            if (visible)
-                fontPointSize.current = btWindowInterface.fontSize
-        }
-
-        onAccepted: {
-            console.log("text: ",fontPointSize.current);
-            btWindowInterface.fontSize = fontPointSize.current;
-        }
-    }
 }

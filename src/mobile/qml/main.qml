@@ -134,7 +134,10 @@ Rectangle {
 
         ListElement { title: QT_TR_NOOP("New Window");              action: "newWindow" }
         ListElement { title: QT_TR_NOOP("View Window");             action: "windows" }
-        ListElement { title: QT_TR_NOOP("Settings");                action: "settings" }
+        ListElement { title: QT_TR_NOOP("Text Font Size");          action: "textFontSize"}
+        ListElement { title: QT_TR_NOOP("User Interface Font Size");action: "uiFontSize"}
+
+        //ListElement { title: QT_TR_NOOP("Settings");                action: "settings" }
         ListElement { title: QT_TR_NOOP("Bookshelf Manager");       action: "install" }
         //            ListElement { title: QT_TR_NOOP("Gnome Style");             action: "gnomeStyle" }
         //            ListElement { title: QT_TR_NOOP("Android Style");           action: "androidStyle" }
@@ -164,6 +167,12 @@ Rectangle {
             }
             else if (action == "settings") {
                 settings.visible = true;
+            }
+            else if (action == "textFontSize") {
+                textFontPointSize.visible = true;
+            }
+            else if (action == "uiFontSize") {
+                uiFontPointSize.visible = true;
             }
 
         }
@@ -220,6 +229,42 @@ Rectangle {
             windowTitlesMenus.visible = false;
             var index = Number(action)
             windowManager.setCurrentTabbedWindow(index);
+        }
+    }
+
+    FontSizeSlider {
+        id: uiFontPointSize
+        visible: false
+        title: "User Interface Font Size"
+
+        onVisibleChanged: {
+            if (visible)
+            {
+                uiFontPointSize.current = btStyle.uiFontPointSize;
+                uiFontPointSize.previous = btStyle.uiFontPointSize;
+            }
+        }
+
+        onAccepted: {
+            btStyle.uiFontPointSize = pointSize
+        }
+    }
+
+    FontSizeSlider {
+        id: textFontPointSize
+        visible: false
+        title: "Text Font Size"
+
+        onVisibleChanged: {
+            if (visible)
+            {
+                textFontPointSize.current = btStyle.textFontPointSize;
+                textFontPointSize.previous = btStyle.textFontPointSize;
+            }
+        }
+
+        onAccepted: {
+            btStyle.textFontPointSize = pointSize;
         }
     }
 }
