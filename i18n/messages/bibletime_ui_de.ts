@@ -3358,7 +3358,7 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Remote</source>
-        <translation>Internet</translation>
+        <translation type="obsolete">Internet</translation>
     </message>
     <message>
         <source>Old testament</source>
@@ -3881,6 +3881,22 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>The file couldn&apos;t be opened for saving.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remote FTP</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remote SFTP</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remote HTTP</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remote HTTPS</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4686,14 +4702,6 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
         <translation type="unfinished">Bücherregal-Verwaltung</translation>
     </message>
     <message>
-        <source>Windows</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Window Arrangement</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Single</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4711,6 +4719,18 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     </message>
     <message>
         <source>Auto-tile vertically</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Text Font Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User Interface Font Size</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
