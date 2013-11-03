@@ -16,24 +16,6 @@ IF(MSVC)
     SET(SWORD_WIN32_INCLUDE_PATH ../sword/include)
 ENDIF(MSVC)
 
-SET(TRIAL_INCLUDE_PATHS
-    $ENV{SWORD_HOME}/include/sword
-    $ENV{SWORD_HOME}/include
-    ${CMAKE_INSTALL_PREFIX}/include/sword
-    ${CMAKE_INSTALL_PREFIX}/include
-    /usr/local/include/sword
-    /usr/local/include
-    /opt/local/include/sword
-    /opt/local/include
-    /usr/include/sword
-    /usr/include
-    /sw/include/sword
-    /sw/include
-    /usr/pkg/include/sword
-    /usr/pkg/include
-    ${SWORD_WIN32_INCLUDE_PATH}
-)
-
 IF(MSVC)
     FIND_LIBRARY(SWORD_LIBRARY NAMES libsword)
 ELSE(MSVC)
@@ -47,8 +29,9 @@ ELSE (SWORD_LIBRARY)
 ENDIF (SWORD_LIBRARY)
 GET_FILENAME_COMPONENT(SWORD_LIBRARY_DIR "${SWORD_LIBRARY}" ABSOLUTE)
 
-FIND_PATH(SWORD_INCLUDE_DIR    NAMES swmgr.h PATHS ${TRIAL_INCLUDE_PATHS})
+FIND_PATH(SWORD_INCLUDE_DIR NAMES "sword/swmgr.h")
 IF (SWORD_INCLUDE_DIR)
+    SET(SWORD_INCLUDE_DIR "${SWORD_INCLUDE_DIR}/sword")
     MESSAGE(STATUS "Found Sword include dir: ${SWORD_INCLUDE_DIR}")
 ELSE (SWORD_INCLUDE_DIR)
     MESSAGE(FATAL_ERROR "Sword include dir could not be found.")
