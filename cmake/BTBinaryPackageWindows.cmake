@@ -109,7 +109,7 @@ ENDIF (Qt5Core_FOUND)
     ")
 
     # add the libsword.dll
-    STRING(REPLACE ".lib" ".dll" SWORD_DLL "${SWORD_LIBRARY}")
+    STRING(REPLACE ".lib" ".dll" SWORD_DLL "${Sword_LIBRARIES}")
     INSTALL(FILES ${SWORD_DLL} DESTINATION ${BT_DESTINATION}) # This will also take effect in the regular install
 
     STRING(REPLACE ".lib" ".dll" CLUCENE_DLL "${CLUCENE_LIBRARY}")

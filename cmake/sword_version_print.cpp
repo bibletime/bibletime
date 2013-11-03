@@ -12,12 +12,9 @@
  */
 
 #include <iostream>
-
 #include <swversion.h>
 
-int main(int argc, char* argv[])
-{
-    sword::SWVersion testversion(argv[1]);
-    std::cout << "Your installed Sword version is: " << sword::SWVersion::currentVersion.getText();
-    return (sword::SWVersion::currentVersion >= testversion) ? 0 : 1;
+int main() {
+    std::cout << (SWORD_VERSION_STR) << std::endl;
+    return 0;
 }

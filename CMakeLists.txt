@@ -95,7 +95,11 @@ FIND_PACKAGE(CURL)
 FIND_PACKAGE(ICU)
 FIND_PACKAGE(ZLIB)
 
-FIND_PACKAGE(Sword REQUIRED)
+
+FIND_PACKAGE(Sword 1.7.0 REQUIRED)
+IF(Sword_FOUND)
+  MESSAGE(STATUS "Found Sword ${Sword_VERSION}")
+ENDIF()
 
 # directory layout settings up front, needed in various places
 SET(BT_DESTINATION "bin/")
@@ -118,7 +122,7 @@ IF (Qt5Core_FOUND)
         ${CMAKE_CURRENT_SOURCE_DIR}/src    # so that include paths like "frontend/..." work
         ${CLUCENE_INCLUDE_DIR}            #CLucene headers
         ${CLUCENE_LIBRARY_DIR}            #CLucene/clucene-config.h
-        ${SWORD_INCLUDE_DIR}
+        ${Sword_INCLUDE_DIRS}
     )
 ELSE (Qt5Core_FOUND)
     INCLUDE_DIRECTORIES(
@@ -126,7 +130,7 @@ ELSE (Qt5Core_FOUND)
         ${CMAKE_CURRENT_SOURCE_DIR}/src    # so that include paths like "frontend/..." work
         ${CLUCENE_INCLUDE_DIR}            #CLucene headers
         ${CLUCENE_LIBRARY_DIR}            #CLucene/clucene-config.h
-        ${SWORD_INCLUDE_DIR}
+        ${Sword_INCLUDE_DIRS}
     )
 ENDIF (Qt5Core_FOUND)
 
@@ -143,7 +147,7 @@ SOURCE_GROUP("QM Files" REGULAR_EXPRESSION ".*\\.qm")
 #This must come before the target definition!
 LINK_DIRECTORIES(
     ${CLUCENE_LIBRARY_DIR}
-    ${SWORD_LIBRARY_DIR}
+    ${Sword_LIBRARIES}
 )
 
 IF (${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
@@ -203,7 +207,7 @@ IF (Qt5Core_FOUND)
         ${ICU_LIBRARIES} # optional, empty if not found
         ${ICU_I18N_LIBRARIES} # optional, empty if not found
         ${ZLIB_LIBRARIES} # optional, empty if not found
-        ${SWORD_LIBRARY}
+        ${Sword_LIBRARIES}
     )
     qt5_use_modules(${EXECUTABLE_NAME} ${Qt5RequiredModules})
 ELSE (Qt5Core_FOUND)
@@ -215,7 +219,7 @@ ELSE (Qt5Core_FOUND)
         ${ICU_LIBRARIES} # optional, empty if not found
         ${ICU_I18N_LIBRARIES} # optional, empty if not found
         ${ZLIB_LIBRARIES} # optional, empty if not found
-        ${SWORD_LIBRARY}
+        ${Sword_LIBRARIES}
     )
 ENDIF (Qt5Core_FOUND)
 
@@ -298,7 +302,7 @@ INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop"
 )
 IF (MSVC)
     # sword locale information
-    FILE(GLOB INSTALL_SWORD_LOCALE_LIST ${SWORD_INCLUDE_DIR}/../locales.d/*)
+    FILE(GLOB INSTALL_SWORD_LOCALE_LIST ${Sword_INCLUDE_DIRS}/../locales.d/*)
     INSTALL(FILES ${INSTALL_SWORD_LOCALE_LIST}
         DESTINATION "${BT_SHARE_PATH}sword/locales.d/"
     )
@@ -314,7 +318,7 @@ ENDIF (MSVC)
 
 IF (APPLE)
     # sword locale information, needed for DMG image
-    FILE(GLOB INSTALL_SWORD_LOCALE_LIST ${SWORD_INCLUDE_DIR}/../../share/sword/locales.d/*)
+    FILE(GLOB INSTALL_SWORD_LOCALE_LIST ${Sword_INCLUDE_DIRS}/../../share/sword/locales.d/*)
     INSTALL(FILES ${INSTALL_SWORD_LOCALE_LIST}
         DESTINATION "${BT_SHARE_PATH}sword/locales.d/"
     )
