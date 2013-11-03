@@ -52,7 +52,6 @@ ENDIF(MSVC)
 
 IF (SWORD_LIBRARY)
     MESSAGE(STATUS "Found Sword library: ${SWORD_LIBRARY}")
-#    SET(SWORD_LIBRARY "sword")
 ELSE (SWORD_LIBRARY)
     MESSAGE(FATAL_ERROR "Could not find the Sword library.")
 ENDIF (SWORD_LIBRARY)
