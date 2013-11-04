@@ -49,4 +49,5 @@ FIND_PACKAGE_HANDLE_STANDARD_ARGS(Sword
                                   FOUND_VAR Sword_FOUND
                                   REQUIRED_VARS Sword_LIBRARIES
                                                 Sword_INCLUDE_DIRS
-                                                Sword_VERSION)
+                                                Sword_VERSION
+                                  VERSION_VAR Sword_VERSION)

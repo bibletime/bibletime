@@ -14,7 +14,11 @@
 #include <iostream>
 #include <swversion.h>
 
+#ifndef SWORD_VERSION_STR
+#error SWORD_VERSION_STR not defined!
+#endif
+
 int main() {
-    std::cout << (SWORD_VERSION_STR) << std::endl;
+    std::cout << (SWORD_VERSION_STR);
     return 0;
 }
