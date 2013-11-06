@@ -116,23 +116,13 @@ INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTSourceFileList.cmake")
 #
 # The actual build options
 #
-IF (Qt5Core_FOUND)
-    INCLUDE_DIRECTORIES(
-        ${CMAKE_CURRENT_BINARY_DIR}        #for .h files generated from .ui
-        ${CMAKE_CURRENT_SOURCE_DIR}/src    # so that include paths like "frontend/..." work
-        ${CLUCENE_INCLUDE_DIR}            #CLucene headers
-        ${CLUCENE_LIBRARY_DIR}            #CLucene/clucene-config.h
-        ${Sword_INCLUDE_DIRS}
-    )
-ELSE (Qt5Core_FOUND)
-    INCLUDE_DIRECTORIES(
-        ${CMAKE_CURRENT_BINARY_DIR}        #for .h files generated from .ui
-        ${CMAKE_CURRENT_SOURCE_DIR}/src    # so that include paths like "frontend/..." work
-        ${CLUCENE_INCLUDE_DIR}            #CLucene headers
-        ${CLUCENE_LIBRARY_DIR}            #CLucene/clucene-config.h
-        ${Sword_INCLUDE_DIRS}
-    )
-ENDIF (Qt5Core_FOUND)
+INCLUDE_DIRECTORIES(
+    ${CMAKE_CURRENT_BINARY_DIR}        #for .h files generated from .ui
+    ${CMAKE_CURRENT_SOURCE_DIR}/src    # so that include paths like "frontend/..." work
+    ${CLUCENE_INCLUDE_DIR}            #CLucene headers
+    ${CLUCENE_LIBRARY_DIR}            #CLucene/clucene-config.h
+    ${Sword_INCLUDE_DIRS}
+)
 
 IF (Qt5Core_FOUND)
     QT5_WRAP_UI(bibletime_UIS_H ${bibletime_UIS})
