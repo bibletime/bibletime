@@ -94,12 +94,7 @@ FIND_PACKAGE(CLucene REQUIRED)
 FIND_PACKAGE(CURL)
 FIND_PACKAGE(ICU)
 FIND_PACKAGE(ZLIB)
-
-
 FIND_PACKAGE(Sword 1.7.0 REQUIRED)
-IF(Sword_FOUND)
-  MESSAGE(STATUS "Found Sword ${Sword_VERSION}")
-ENDIF()
 
 # directory layout settings up front, needed in various places
 SET(BT_DESTINATION "bin/")
@@ -135,10 +130,7 @@ ENDIF (Qt5Core_FOUND)
 SOURCE_GROUP("QM Files" REGULAR_EXPRESSION ".*\\.qm")
 
 #This must come before the target definition!
-LINK_DIRECTORIES(
-    ${CLUCENE_LIBRARY_DIR}
-    ${Sword_LIBRARIES}
-)
+LINK_DIRECTORIES(${CLUCENE_LIBRARY_DIR})
 
 IF (${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
     SET(EXECUTABLE_NAME "btm")
@@ -197,7 +189,7 @@ IF (Qt5Core_FOUND)
         ${ICU_LIBRARIES} # optional, empty if not found
         ${ICU_I18N_LIBRARIES} # optional, empty if not found
         ${ZLIB_LIBRARIES} # optional, empty if not found
-        ${Sword_LIBRARIES}
+        ${Sword_LDFLAGS}
     )
     qt5_use_modules(${EXECUTABLE_NAME} ${Qt5RequiredModules})
 ELSE (Qt5Core_FOUND)
@@ -209,19 +201,25 @@ ELSE (Qt5Core_FOUND)
         ${ICU_LIBRARIES} # optional, empty if not found
         ${ICU_I18N_LIBRARIES} # optional, empty if not found
         ${ZLIB_LIBRARIES} # optional, empty if not found
-        ${Sword_LIBRARIES}
+        ${Sword_LDFLAGS}
     )
 ENDIF (Qt5Core_FOUND)
 
-IF (APPLE)
-     # enable support MacOS 10.5+
-    SET_TARGET_PROPERTIES(${EXECUTABLE_NAME}
-        PROPERTIES
-            COMPILE_FLAGS   "-mmacosx-version-min=10.5 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/"
-            LINK_FLAGS      "-mmacosx-version-min=10.5 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/ -F /Library/Frameworks/"
-    )
-ENDIF (APPLE)
+SET(BibleTime_CFLAGS "${Sword_CFLAGS_OTHER}")
+SET(BibleTime_LDFLAGS "")
 
+IF(APPLE)
+  # enable support MacOS 10.5+
+  SET(T "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/")
+     LIST(APPEND BibleTime_CFLAGS "-mmacosx-version-min=10.5" "-isysroot" "${T}")
+     LIST(APPEND BibleTime_LDFLAGS "-mmacosx-version-min=10.5" "-isysroot" "${T}"
+                                   "-F" "/Library/Frameworks/")
+  UNSET(T)
+ENDIF()
+
+SET_TARGET_PROPERTIES(${EXECUTABLE_NAME} PROPERTIES
+                                         COMPILE_FLAGS "${BibleTime_CFLAGS}"
+                                         LINK_FLAGS "${BibleTime_LDFLAGS}")
 
 IF (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
     SET(CMAKE_INSTALL_PREFIX "install/") #install to ./build/install, allow override
