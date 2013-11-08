@@ -210,10 +210,9 @@ SET(BibleTime_LDFLAGS "")
 
 IF(APPLE)
   # enable support MacOS 10.5+
-  SET(T "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/")
-     LIST(APPEND BibleTime_CFLAGS "-mmacosx-version-min=10.5" "-isysroot" "${T}")
-     LIST(APPEND BibleTime_LDFLAGS "-mmacosx-version-min=10.5" "-isysroot" "${T}"
-                                   "-F" "/Library/Frameworks/")
+  SET(T "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/")
+  LIST(APPEND BibleTime_CFLAGS "-mmacosx-version-min=10.5 -isysroot ${T}")
+  LIST(APPEND BibleTime_LDFLAGS "-mmacosx-version-min=10.5 -isysroot ${T} -F /Library/Frameworks/")
   UNSET(T)
 ENDIF()
 
