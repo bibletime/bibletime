@@ -26,51 +26,13 @@ IF(EXISTS ${PROJECT_CMAKE}/CLuceneConfig.cmake)
     INCLUDE(${PROJECT_CMAKE}/CLuceneConfig.cmake)
 ENDIF(EXISTS ${PROJECT_CMAKE}/CLuceneConfig.cmake)
 
-IF(MSVC)
-    IF(CMAKE_BUILD_TYPE STREQUAL "Release")
-        SET(WIN_CLUCENE_SEARCH_PATH ../clucene-core/bin/Release ../clucene-core/src/CLucene/Release)
-    ELSE(CMAKE_BUILD_TYPE STREQUAL "Release")
-        SET(WIN_CLUCENE_SEARCH_PATH ../clucene-core/bin/Debug ../clucene-core/src/CLucene/Debug)
-    ENDIF(CMAKE_BUILD_TYPE STREQUAL "Release")
-    SET(WIN_CLUCENE_INCLUDE_PATH ../clucene-core/src ../clucene-core/src/core)
-ELSE(MSVC)
-    SET(WIN_CLUCENE_SEARCH_PATH "")
-    SET(WIN_CLUCENE_INCLUDE_PATH "")
-ENDIF(MSVC)
-
-SET(TRIAL_LIBRARY_PATHS
-    $ENV{CLUCENE_HOME}/lib${LIB_SUFFIX}
-    ${CMAKE_INSTALL_PREFIX}/lib${LIB_SUFFIX}
-    /usr/lib/i386-linux-gnu
-    /usr/lib/x86_64-linux-gnu
-    /usr/local/lib${LIB_SUFFIX}
-    /opt/local/lib${LIB_SUFFIX}
-    /usr/lib${LIB_SUFFIX}
-    /usr/lib64
-    /sw/lib${LIB_SUFFIX}
-    /usr/pkg/lib${LIB_SUFFIX}
-    ${WIN_CLUCENE_SEARCH_PATH}
-    )
-SET(TRIAL_INCLUDE_PATHS
-    $ENV{CLUCENE_HOME}/include
-    ${CMAKE_INSTALL_PREFIX}/include
-    /usr/local/include
-    /opt/local/include
-    /usr/include
-    /sw/include
-    /usr/pkg/include
-    ${WIN_CLUCENE_INCLUDE_PATH}
-    ../clucene-core/src/shared
-    )
 FIND_LIBRARY_WITH_DEBUG(CLUCENE_LIBRARY
-    NAMES clucene clucene-core clucene-cored
-    PATHS ${TRIAL_LIBRARY_PATHS})
+    NAMES clucene clucene-core clucene-cored)
 IF (CLUCENE_LIBRARY)
     MESSAGE(STATUS "Found CLucene library: ${CLUCENE_LIBRARY}")
 ENDIF (CLUCENE_LIBRARY)
 FIND_PATH(CLUCENE_INCLUDE_DIR
-    NAMES CLucene.h
-    PATHS ${TRIAL_INCLUDE_PATHS})
+    NAMES CLucene.h)
 
 IF (CLUCENE_INCLUDE_DIR)
     MESSAGE(STATUS "Found CLucene include dir: ${CLUCENE_INCLUDE_DIR}")
@@ -78,8 +40,7 @@ ENDIF (CLUCENE_INCLUDE_DIR)
 
 SET(CLUCENE_GOOD_VERSION TRUE)
 
-FIND_PATH(CLUCENE_LIBRARY_DIR
-    NAMES CLucene/clucene-config.h PATHS ${TRIAL_LIBRARY_PATHS} ${TRIAL_INCLUDE_PATHS} NO_DEFAULT_PATH)
+FIND_PATH(CLUCENE_LIBRARY_DIR NAMES "CLucene/clucene-config.h")
 IF (CLUCENE_LIBRARY_DIR)
     MESSAGE(STATUS "Found CLucene library dir: ${CLUCENE_LIBRARY_DIR}")
     FILE(READ ${CLUCENE_LIBRARY_DIR}/CLucene/clucene-config.h CLCONTENT)
@@ -95,11 +56,9 @@ IF (CLUCENE_LIBRARY_DIR)
             SET(CLUCENE_GOOD_VERSION FALSE)
         ENDIF (CLUCENE_VERSION STREQUAL "0.9.17")
         IF (CLUCENE_VERSION VERSION_GREATER "2.0.0")
-	    ADD_DEFINITIONS(-DCLUCENE2)
-		    MESSAGE(STATUS "Trial: ${TRIAL_LIBRARY_PATHS}")
+        ADD_DEFINITIONS(-DCLUCENE2)
             FIND_LIBRARY_WITH_DEBUG(CLUCENE_SHARED_LIB
-                NAMES clucene-shared clucene-sharedd
-                PATHS ${TRIAL_LIBRARY_PATHS})
+                NAMES clucene-shared clucene-sharedd)
 
             IF (CLUCENE_SHARED_LIB)
                 MESSAGE(STATUS "Found CLucene shared library: ${CLUCENE_SHARED_LIB}")
