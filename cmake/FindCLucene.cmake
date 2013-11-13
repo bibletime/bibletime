@@ -15,7 +15,7 @@
 # CLucene_FOUND        = set to 1 if clucene is found
 #
 
-INCLUDE(FindLibraryWithDebug)
+INCLUDE(KDE4FindLibraryWithDebug)
 
 IF(NOT CLucene_MIN_VERSION)
   SET(CLucene_MIN_VERSION "0.9.19")
