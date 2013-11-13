@@ -8,53 +8,53 @@
 # This module looks for clucene (http://clucene.sf.net) support
 # It will define the following values
 #
-# CLUCENE_INCLUDE_DIR  = where CLucene/StdHeader.h can be found
-# CLUCENE_LIBRARY_DIR  = where CLucene/clucene-config.h can be found
-# CLUCENE_LIBRARY      = the library to link against CLucene
-# CLUCENE_VERSION      = The CLucene version string
+# CLucene_INCLUDE_DIR  = where CLucene/StdHeader.h can be found
+# CLucene_LIBRARY_DIR  = where CLucene/clucene-config.h can be found
+# CLucene_LIBRARY      = the library to link against CLucene
+# CLucene_VERSION      = The CLucene version string
 # CLucene_FOUND        = set to 1 if clucene is found
 #
 
 INCLUDE(FindLibraryWithDebug)
 
-IF(NOT CLUCENE_MIN_VERSION)
-  SET(CLUCENE_MIN_VERSION "0.9.19")
+IF(NOT CLucene_MIN_VERSION)
+  SET(CLucene_MIN_VERSION "0.9.19")
 ENDIF()
 
-FIND_LIBRARY_WITH_DEBUG(CLUCENE_LIBRARY
+FIND_LIBRARY_WITH_DEBUG(CLucene_LIBRARY
                         NAMES clucene clucene-core clucene-cored)
-IF(CLUCENE_LIBRARY)
-  MESSAGE(STATUS "Found CLucene library: ${CLUCENE_LIBRARY}")
+IF(CLucene_LIBRARY)
+  MESSAGE(STATUS "Found CLucene library: ${CLucene_LIBRARY}")
 ENDIF()
-FIND_PATH(CLUCENE_INCLUDE_DIR NAMES CLucene.h)
+FIND_PATH(CLucene_INCLUDE_DIR NAMES CLucene.h)
 
-IF(CLUCENE_INCLUDE_DIR)
-  MESSAGE(STATUS "Found CLucene include dir: ${CLUCENE_INCLUDE_DIR}")
+IF(CLucene_INCLUDE_DIR)
+  MESSAGE(STATUS "Found CLucene include dir: ${CLucene_INCLUDE_DIR}")
 ENDIF()
 
-SET(CLUCENE_GOOD_VERSION TRUE)
+SET(CLucene_GOOD_VERSION TRUE)
 
-FIND_PATH(CLUCENE_LIBRARY_DIR NAMES "CLucene/clucene-config.h")
-IF(CLUCENE_LIBRARY_DIR)
-  MESSAGE(STATUS "Found CLucene library dir: ${CLUCENE_LIBRARY_DIR}")
-  FILE(READ ${CLUCENE_LIBRARY_DIR}/CLucene/clucene-config.h CLCONTENT)
+FIND_PATH(CLucene_LIBRARY_DIR NAMES "CLucene/clucene-config.h")
+IF(CLucene_LIBRARY_DIR)
+  MESSAGE(STATUS "Found CLucene library dir: ${CLucene_LIBRARY_DIR}")
+  FILE(READ ${CLucene_LIBRARY_DIR}/CLucene/clucene-config.h CLCONTENT)
   STRING(REGEX MATCH "_CL_VERSION +\".*\"" CLMATCH ${CLCONTENT})
   IF(CLMATCH)
-    STRING(REGEX REPLACE "_CL_VERSION +\"(.*)\"" "\\1" CLUCENE_VERSION ${CLMATCH})
-    IF(CLUCENE_VERSION VERSION_LESS "${CLUCENE_MIN_VERSION}")
-      MESSAGE(ERROR " CLucene version ${CLUCENE_VERSION} is less than the required minimum ${CLUCENE_MIN_VERSION}")
-      SET(CLUCENE_GOOD_VERSION FALSE)
+    STRING(REGEX REPLACE "_CL_VERSION +\"(.*)\"" "\\1" CLucene_VERSION ${CLMATCH})
+    IF(CLucene_VERSION VERSION_LESS "${CLucene_MIN_VERSION}")
+      MESSAGE(ERROR " CLucene version ${CLucene_VERSION} is less than the required minimum ${CLucene_MIN_VERSION}")
+      SET(CLucene_GOOD_VERSION FALSE)
     ENDIF()
-    IF(CLUCENE_VERSION VERSION_GREATER "2.0.0")
+    IF(CLucene_VERSION VERSION_GREATER "2.0.0")
       ADD_DEFINITIONS(-DCLUCENE2)
-      FIND_LIBRARY_WITH_DEBUG(CLUCENE_SHARED_LIB
+      FIND_LIBRARY_WITH_DEBUG(CLucene_SHARED_LIB
                               NAMES clucene-shared clucene-sharedd)
-      IF(CLUCENE_SHARED_LIB)
-        MESSAGE(STATUS "Found CLucene shared library: ${CLUCENE_SHARED_LIB}")
-        SET(CLUCENE_LIBRARY ${CLUCENE_LIBRARY} ${CLUCENE_SHARED_LIB})
+      IF(CLucene_SHARED_LIB)
+        MESSAGE(STATUS "Found CLucene shared library: ${CLucene_SHARED_LIB}")
+        SET(CLucene_LIBRARY ${CLucene_LIBRARY} ${CLucene_SHARED_LIB})
       ELSE()
         MESSAGE(FATAL_ERROR "Unable to find CLucene shared library.")
-        SET(CLUCENE_GOOD_VERSION FALSE)
+        SET(CLucene_GOOD_VERSION FALSE)
       ENDIF()
     ENDIF()
   ENDIF()
@@ -62,13 +62,13 @@ ELSE()
   MESSAGE(STATUS "CLucene library dir not found.")
 ENDIF()
 
-IF(CLUCENE_INCLUDE_DIR AND CLUCENE_LIBRARY AND CLUCENE_LIBRARY_DIR AND CLUCENE_GOOD_VERSION)
+IF(CLucene_INCLUDE_DIR AND CLucene_LIBRARY AND CLucene_LIBRARY_DIR AND CLucene_GOOD_VERSION)
   SET(CLucene_FOUND TRUE)
 ENDIF()
 
 IF(CLucene_FOUND)
   IF(NOT CLucene_FIND_QUIETLY)
-    MESSAGE(STATUS "Found CLucene: ${CLUCENE_LIBRARY}")
+    MESSAGE(STATUS "Found CLucene: ${CLucene_LIBRARY}")
   ENDIF()
 ELSE()
   IF(CLucene_FIND_REQUIRED)
@@ -76,4 +76,4 @@ ELSE()
   ENDIF()
 ENDIF()
 
-MARK_AS_ADVANCED(CLUCENE_INCLUDE_DIR CLUCENE_LIBRARY_DIR CLUCENE_LIBRARY)
+MARK_AS_ADVANCED(CLucene_INCLUDE_DIR CLucene_LIBRARY_DIR CLucene_LIBRARY)

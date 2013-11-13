@@ -106,8 +106,8 @@ INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTSourceFileList.cmake")
 INCLUDE_DIRECTORIES(
     ${CMAKE_CURRENT_BINARY_DIR}        #for .h files generated from .ui
     ${CMAKE_CURRENT_SOURCE_DIR}/src    # so that include paths like "frontend/..." work
-    ${CLUCENE_INCLUDE_DIR}            #CLucene headers
-    ${CLUCENE_LIBRARY_DIR}            #CLucene/clucene-config.h
+    ${CLucene_INCLUDE_DIR}            #CLucene headers
+    ${CLucene_LIBRARY_DIR}            #CLucene/clucene-config.h
     ${Sword_INCLUDE_DIRS}
 )
 
@@ -122,7 +122,7 @@ ENDIF (Qt5Core_FOUND)
 SOURCE_GROUP("QM Files" REGULAR_EXPRESSION ".*\\.qm")
 
 #This must come before the target definition!
-LINK_DIRECTORIES(${CLUCENE_LIBRARY_DIR})
+LINK_DIRECTORIES(${CLucene_LIBRARY_DIR})
 
 IF (${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
     SET(EXECUTABLE_NAME "btm")
@@ -176,7 +176,7 @@ ENDIF (${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
 
 IF (Qt5Core_FOUND)
     TARGET_LINK_LIBRARIES(${EXECUTABLE_NAME}
-        ${CLUCENE_LIBRARY}
+        ${CLucene_LIBRARY}
         ${Sword_LDFLAGS}
     )
     qt5_use_modules(${EXECUTABLE_NAME} ${Qt5RequiredModules})
@@ -184,7 +184,7 @@ ELSE (Qt5Core_FOUND)
     INCLUDE(${QT_USE_FILE})
     TARGET_LINK_LIBRARIES(${EXECUTABLE_NAME}
         ${QT_LIBRARIES}
-        ${CLUCENE_LIBRARY}
+        ${CLucene_LIBRARY}
         ${Sword_LDFLAGS}
     )
 ENDIF (Qt5Core_FOUND)
