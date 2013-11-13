@@ -85,15 +85,7 @@ ENDIF (QT_QTDBUS_FOUND AND NOT APPLE)
 # If cmake says that qdbusxml2cpp is missing, uncomment the following line
 #SET(QT_DBUSXML2CPP_EXECUTABLE "/usr/bin/qdbusxml2cpp") #TEMP HACK?
 
-#
-#custom includes
-#
 FIND_PACKAGE(CLucene REQUIRED)
-
-# optional: Try to detect CURL, ICU and ZLib and add it to the linker flags if found, maybe Sword needs it
-FIND_PACKAGE(CURL)
-FIND_PACKAGE(ICU)
-FIND_PACKAGE(ZLIB)
 FIND_PACKAGE(Sword 1.7.0 REQUIRED)
 
 # directory layout settings up front, needed in various places
@@ -185,10 +177,6 @@ ENDIF (${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
 IF (Qt5Core_FOUND)
     TARGET_LINK_LIBRARIES(${EXECUTABLE_NAME}
         ${CLUCENE_LIBRARY}
-        ${CURL_LIBRARIES} # optional, empty if not found
-        ${ICU_LIBRARIES} # optional, empty if not found
-        ${ICU_I18N_LIBRARIES} # optional, empty if not found
-        ${ZLIB_LIBRARIES} # optional, empty if not found
         ${Sword_LDFLAGS}
     )
     qt5_use_modules(${EXECUTABLE_NAME} ${Qt5RequiredModules})
@@ -197,10 +185,6 @@ ELSE (Qt5Core_FOUND)
     TARGET_LINK_LIBRARIES(${EXECUTABLE_NAME}
         ${QT_LIBRARIES}
         ${CLUCENE_LIBRARY}
-        ${CURL_LIBRARIES} # optional, empty if not found
-        ${ICU_LIBRARIES} # optional, empty if not found
-        ${ICU_I18N_LIBRARIES} # optional, empty if not found
-        ${ZLIB_LIBRARIES} # optional, empty if not found
         ${Sword_LDFLAGS}
     )
 ENDIF (Qt5Core_FOUND)
