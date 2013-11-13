@@ -16,7 +16,6 @@
 # CLucene_FOUND        = set to 1 if clucene is found
 #
 
-INCLUDE(CheckSymbolExists)
 INCLUDE(FindLibraryWithDebug)
 
 if(NOT CLUCENE_MIN_VERSION)
