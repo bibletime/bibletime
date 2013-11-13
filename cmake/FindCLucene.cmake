@@ -21,10 +21,6 @@ IF(NOT CLUCENE_MIN_VERSION)
   SET(CLUCENE_MIN_VERSION "0.9.19")
 ENDIF()
 
-IF(EXISTS ${PROJECT_CMAKE}/CLuceneConfig.cmake)
-  INCLUDE(${PROJECT_CMAKE}/CLuceneConfig.cmake)
-ENDIF()
-
 FIND_LIBRARY_WITH_DEBUG(CLUCENE_LIBRARY
                         NAMES clucene clucene-core clucene-cored)
 IF(CLUCENE_LIBRARY)
