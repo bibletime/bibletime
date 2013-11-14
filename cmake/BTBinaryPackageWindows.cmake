@@ -41,17 +41,17 @@ IF (Qt5Core_FOUND)
     )
     SET(QT_PLUGINS_DIR "${Qt5Core_DIR}/../../../plugins")
     INSTALL(FILES
-        "${QT_PLUGINS_DIR}/iconengines/qsvgicon4.dll"
+        "${QT_PLUGINS_DIR}/iconengines/qsvgicon.dll"
         DESTINATION "${BT_DESTINATION}/plugins/iconengines"
         CONFIGURATIONS "Release"
     )
     INSTALL(FILES
-        "${QT_PLUGINS_DIR}/imageformats/qgif4.dll"
-        "${QT_PLUGINS_DIR}/imageformats/qico4.dll"
-        "${QT_PLUGINS_DIR}/imageformats/qjpeg4.dll"
-        "${QT_PLUGINS_DIR}/imageformats/qmng4.dll"
-        "${QT_PLUGINS_DIR}/imageformats/qsvg4.dll"
-        "${QT_PLUGINS_DIR}/imageformats/qtiff4.dll"
+        "${QT_PLUGINS_DIR}/imageformats/qgif.dll"
+        "${QT_PLUGINS_DIR}/imageformats/qico.dll"
+        "${QT_PLUGINS_DIR}/imageformats/qjpeg.dll"
+        "${QT_PLUGINS_DIR}/imageformats/qmng.dll"
+        "${QT_PLUGINS_DIR}/imageformats/qsvg.dll"
+        "${QT_PLUGINS_DIR}/imageformats/qtiff.dll"
         DESTINATION "${BT_DESTINATION}/plugins/imageformats"
         CONFIGURATIONS "Release"
     )
@@ -108,18 +108,14 @@ ENDIF (Qt5Core_FOUND)
         Delete   \\\"$INSTDIR\\\\bin\\\\vcredist_x86.exe\\\"
     ")
 
-    # add the libsword.dll
-    STRING(REPLACE ".lib" ".dll" SWORD_DLL "${Sword_LIBRARIES}")
-    INSTALL(FILES ${SWORD_DLL} DESTINATION ${BT_DESTINATION}) # This will also take effect in the regular install
-
     STRING(REPLACE ".lib" ".dll" CLUCENE_DLL "${CLUCENE_LIBRARY}")
     INSTALL(FILES ${CLUCENE_DLL} DESTINATION ${BT_DESTINATION})
 
     STRING(REPLACE ".lib" ".dll" CLUCENE_SHARED_DLL "${CLUCENE_SHARED_LIB}")
     INSTALL(FILES ${CLUCENE_SHARED_DLL} DESTINATION ${BT_DESTINATION})
 
-    STRING(REPLACE ".lib" ".dll" ZLIB_DLL "${ZLIB_LIBRARY}")
-    INSTALL(FILES ${ZLIB_DLL} DESTINATION ${BT_DESTINATION}) # This will also take effect in the regular install
+    STRING(REPLACE "_imp.lib" ".dll" CURL_DLL "${CURL_LIBRARY}")
+    INSTALL(FILES ${CURL_DLL} DESTINATION ${BT_DESTINATION}) # This will also take effect in the regular install
 
     # Some options for the CPack system.  These should be pretty self-evident
     SET(CPACK_PACKAGE_ICON "${CMAKE_CURRENT_SOURCE_DIR}\\\\pics\\\\icons\\\\bibletime.png")
