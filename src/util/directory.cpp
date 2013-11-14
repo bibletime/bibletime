@@ -40,20 +40,20 @@ QDir cachedUserSessionsDir;
 QDir cachedUserCacheDir;
 QDir cachedUserIndexDir;
 QDir cachedSwordPathDir;
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
 QDir cachedApplicationSwordDir; // Only Windows installs the sword directory which contains locales.d
 QDir cachedSharedSwordDir;
 #endif
 
-#ifdef Q_WS_MAC
+#ifdef Q_OS_MAC
 QDir cachedSwordLocalesDir;
 #endif
 
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
 static const char* BIBLETIME = "Bibletime";
 static const char* SWORD_DIR = "Sword";
 #else
-#ifdef Q_WS_MAC
+#ifdef Q_OS_MAC
 static const char* BIBLETIME = "Library/Application Support/BibleTime";
 static const char* SWORD_DIR = "Library/Application Support/Sword";
 #else
@@ -74,7 +74,7 @@ bool initDirectoryCache() {
         return false;
     }
 
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
 
     cachedApplicationSwordDir = wDir; // application sword dir for Windows only
     if (!cachedApplicationSwordDir.cd("share/sword") || !cachedApplicationSwordDir.isReadable()) {
@@ -95,7 +95,7 @@ bool initDirectoryCache() {
     }
 #endif
 
-#ifdef Q_WS_MAC
+#ifdef Q_OS_MAC
     cachedSwordLocalesDir = wDir; // application sword dir for Windows only
     if (!cachedSwordLocalesDir.cd("share/sword/locales.d") || !cachedSwordLocalesDir.isReadable()) {
         qWarning() << "Cannot find sword locales directory relative to" << QCoreApplication::applicationDirPath();
@@ -309,7 +309,7 @@ void copyRecursive(const QString &src, const QString &dest) {
 
 QString convertDirSeparators(const QString& path) {
     QString result = path;
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
     result.replace("/", "\\");
 #else
     result.replace("\\", "/");
@@ -317,7 +317,7 @@ QString convertDirSeparators(const QString& path) {
     return result;
 }
 
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
 const QDir &getApplicationSwordDir() {
     return cachedApplicationSwordDir;
 }
@@ -328,7 +328,7 @@ const QDir &getSharedSwordDir() {
 
 #endif
 
-#ifdef Q_WS_MAC
+#ifdef Q_OS_MAC
 const QDir &getSwordLocalesDir() {
     return cachedSwordLocalesDir;
 }

@@ -186,7 +186,7 @@ bool setTargetList( const QStringList& targets ) {
     SWConfig conf(filename.toLocal8Bit());
     conf.Sections.clear();
 
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
     // On Windows, add the sword directory to the config file.
     QString swordPath = DU::convertDirSeparators( DU::getApplicationSwordDir().absolutePath());
     conf["Install"].insert(
@@ -197,7 +197,7 @@ bool setTargetList( const QStringList& targets ) {
     bool setDataPath = false;
     for (QStringList::const_iterator it = targets.begin(); it != targets.end(); ++it) {
         QString t = DU::convertDirSeparators(*it);
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
         if (t.contains(DU::convertDirSeparators(DU::getUserHomeDir().canonicalPath().append("\\Sword")))) {
 #else
         if (t.contains(DU::getUserHomeDir().canonicalPath().append("/.sword"))) {
@@ -256,7 +256,7 @@ QString swordConfigFilename() {
     namespace DU = util::directory;
 
     qDebug() << "Sword config:"
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
              << DU::getUserHomeDir().absolutePath().append("/Sword/sword.conf");
     return DU::getUserHomeDir().absolutePath().append("/Sword/sword.conf");
 //    return DU::getApplicationDir().absolutePath().append("/sword.conf");
@@ -269,7 +269,7 @@ QString swordConfigFilename() {
 QDir swordDir() {
     namespace DU = util::directory;
 
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
     return QDir(DU::getUserHomeDir().absolutePath().append("/Sword/"));
 #else
     return QDir(DU::getUserHomeDir().absolutePath().append("/.sword/"));

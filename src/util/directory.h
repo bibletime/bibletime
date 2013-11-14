@@ -62,7 +62,7 @@ void copyRecursive(const QString &src, const QString &dest);
  */
 QString convertDirSeparators(const QString& path);
 
-#ifdef Q_WS_WIN  // Windows only directories
+#ifdef Q_OS_WIN  // Windows only directories
 
 /** Return the path to the sword dir., Windows only
     C:\Program Files\BibleTime\share\sword
@@ -74,7 +74,7 @@ const QDir &getSharedSwordDir();
 
 #endif
 
-#ifdef Q_WS_MAC  // Mac only directories
+#ifdef Q_OS_MAC  // Mac only directories
 
 /**
  * Path to the Sword locales

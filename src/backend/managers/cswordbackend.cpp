@@ -425,7 +425,7 @@ void CSwordBackend::reloadModules(SetupChangedReason reason) {
 // Get one or more shared sword config (sword.conf) files
 QStringList CSwordBackend::getSharedSwordConfigFiles() const {
     QStringList configPath;
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
     //  %ALLUSERSPROFILE%\Sword\sword.conf
     QString tmp = util::directory::getSharedSwordDir().filePath("sword.conf");
     QString globalPath = util::directory::convertDirSeparators(QString(getenv("SWORD_PATH")));
@@ -469,7 +469,7 @@ QStringList CSwordBackend::swordDirList() const {
         */
         configs = getSharedSwordConfigFiles();
 
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
         /*
           On Windows, add the shared sword directory to the set so the new
           private sword.conf will have it. The user could decide to delete this

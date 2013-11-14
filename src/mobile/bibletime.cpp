@@ -39,7 +39,7 @@ void BibleTime::initBackends() {
         sword::SWLog::getSystemLog()->setLogLevel(sword::SWLog::LOG_DEBUG);
     }
 
-#ifdef Q_WS_MAC
+#ifdef Q_OS_MAC
     // set a LocaleMgr with a fixed path to the locales.d of the DMG image on MacOS
     // note: this must be done after setting the BTStringMgr, because this will reset the LocaleMgr
     qDebug() << "Using sword locales dir: " << util::directory::getSwordLocalesDir().absolutePath().toUtf8();
@@ -62,7 +62,7 @@ void BibleTime::initSwordConfigFile() {
 // It will contain the LocalePath which is used for sword locales
 // It also contains a DataPath to the %ALLUSERSPROFILE%\Sword directory
 // If this is not done here, the sword locales.d won't be found
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
     QString configFile = util::directory::getUserHomeSwordDir().filePath("sword.conf");
     QFile file(configFile);
     if (file.exists()) {
@@ -80,7 +80,7 @@ void BibleTime::initSwordConfigFile() {
     file.close();
 #endif
 
-#ifdef Q_WS_MAC
+#ifdef Q_OS_MAC
     QString configFile = util::directory::getUserHomeSwordDir().filePath("sword.conf");
     QFile file(configFile);
     if (file.exists()) {

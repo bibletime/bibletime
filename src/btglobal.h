@@ -53,7 +53,7 @@ struct DisplayOptions {
   caused by BtConfig::getDisplayOptions.
   \todo Properly identify this bug and remove the #ifdef when fix is available.
 */
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
     int notUsed;
 #endif
 

@@ -233,7 +233,7 @@ int main(int argc, char* argv[]) {
     srand(qHash(QDateTime::currentDateTime().toString(Qt::ISODate)));
 
     // Setup debugging:
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
     // Use the default Qt message handler if --debug is not specified
     // This works with Visual Studio debugger Output Window
     if (showDebugMessages) {
@@ -255,7 +255,7 @@ int main(int argc, char* argv[]) {
 #endif
 #endif
 
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
 
     // On Windows, add a path for Qt plugins to be loaded from
     app.addLibraryPath(app.applicationDirPath() + "/plugins");
@@ -278,7 +278,7 @@ int main(int argc, char* argv[]) {
         return EXIT_FAILURE;
     }
 
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
     // change directory to the Sword or .sword directory in the $HOME dir so that
     // the sword.conf is found. It points to the sword/locales.d directory
     QString homeSwordDir = util::directory::getUserHomeDir().absolutePath();
@@ -286,7 +286,7 @@ int main(int argc, char* argv[]) {
     dir.setCurrent(homeSwordDir);
 #endif
 
-#ifdef Q_WS_MAC
+#ifdef Q_OS_MAC
     // change to the user's sword dir containing the sword.conf config file, so that
     // Sword will correctly find it.
     QString homeSwordDir = util::directory::getUserHomeSwordDir().absolutePath();
