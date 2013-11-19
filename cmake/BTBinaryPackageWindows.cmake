@@ -102,13 +102,14 @@ ELSE (Qt5Core_FOUND)
 ENDIF (Qt5Core_FOUND)
 
     # This adds in the required Windows system libraries
+    MESSAGE(STATUS  "INSTALL Microsoft Redist ${MSVC_REDIST}" )
     INSTALL(PROGRAMS ${MSVC_REDIST} DESTINATION bin)
     SET(CPACK_NSIS_EXTRA_INSTALL_COMMANDS "
         ExecWait \\\"$INSTDIR\\\\bin\\\\vcredist_x86.exe  /q\\\"
         Delete   \\\"$INSTDIR\\\\bin\\\\vcredist_x86.exe\\\"
     ")
 
-    MESSAGE(STATUS  "INSTALL CLucene_LIBRARY ${Clucene_LIBRARY}" )
+    MESSAGE(STATUS  "INSTALL CLucene_LIBRARY ${CLucene_LIBRARY}" )
     STRING(REPLACE ".lib" ".dll" CLUCENE_DLL "${CLucene_LIBRARY}")
     INSTALL(FILES ${CLUCENE_DLL} DESTINATION ${BT_DESTINATION})
 
