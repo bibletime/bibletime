@@ -16,7 +16,7 @@
 
 // Sword includes:
 #include <swdisp.h>
-
+#include <swmodule.h>
 
 class CSwordModuleInfo;
 struct DisplayOptions;
