@@ -219,17 +219,19 @@ void registerMetaTypes() {
 *******************************************************************************/
 
 #ifdef Q_OS_WIN
-int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
-	char* lpCmdLine, int nCmdShow) {
-	int argc = 0;
-	char** argv = 0;
+int WinMain(HINSTANCE hInstance,
+            HINSTANCE hPrevInstance,
+            char * lpCmdLine,
+            int nCmdShow)
+{
+    int argc = 0;
+    char ** argv = 0;
 #else
-int main(int argc, char* argv[]) {
+int main(int argc, char * argv[]) {
 #endif
+    BibleTimeApp app(argc, argv); // for QApplication
 
-    BibleTimeApp app(argc, argv); //for QApplication
-
-	namespace DU = util::directory;
+    namespace DU = util::directory;
 
     // Parse command line arguments:
     bool ignoreSession = false;
