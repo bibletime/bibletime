@@ -7,7 +7,7 @@ BibleTime is a Bible study application based on Qt.
 
 1.1 BUILD REQUIREMENTS
 	-QT 4.5+
-	-Sword 1.6.0+ (http://crosswire.org/sword)
+	-Sword 1.7.0+ (http://crosswire.org/sword)
 	-CLucene 0.9.16a+ (http://clucene.sf.net)
 	-cmake 2.6.0+ (http://cmake.org)
 
@@ -45,8 +45,8 @@ for building on *nix and Windows.
 
 2. FEEDBACK
 
-Please report any bugs your find to bt-devel@crosswire.org or
-use the links on our webpage at http://www.bibletime.info.
+Please report any bugs your find to http://bugs.bibletime.info/
+or see http://www.bibletime.info/ for additional information.
 
 3. DOCUMENTATION
 
