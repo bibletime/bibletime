@@ -12,7 +12,6 @@
 
 #include "backend/bookshelfmodel/languageitem.h"
 
-#include "bibletimeapp.h"
 #include "util/geticon.h"
 
 
