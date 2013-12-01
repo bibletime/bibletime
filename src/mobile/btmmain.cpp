@@ -91,12 +91,6 @@ int main(int argc, char *argv[]) {
     BibleTimeTranslator.load( QString("bibletime_ui_").append(QLocale::system().name()), DU::getLocaleDir().canonicalPath());
     app.installTranslator(&BibleTimeTranslator);
 
-    // Initialize display template manager:
-    if (!app.initDisplayTemplateManager()) {
-        qFatal("Error initializing display template manager!");
-        return EXIT_FAILURE;
-    }
-
 //    // a new BibleTime version was installed (maybe a completely new installation)
 //    if (btConfig().value<QString>("bibletimeVersion", BT_VERSION) != BT_VERSION) {
 //        btConfig().setValue("bibletimeVersion", QString(BT_VERSION));
