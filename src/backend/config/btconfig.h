@@ -15,6 +15,7 @@
 #include <QDataStream>
 #include <QFont>
 #include <QHash>
+#include <QKeySequence>
 #include <QMetaType>
 #include <QSet>
 #include <QSettings>
