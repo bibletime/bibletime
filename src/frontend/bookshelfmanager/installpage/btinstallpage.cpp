@@ -29,8 +29,8 @@
 #include "frontend/bookshelfmanager/installpage/btinstallpathdialog.h"
 #include "frontend/bookshelfmanager/installpage/btinstallprogressdialog.h"
 #include "frontend/btbookshelfview.h"
+#include "frontend/messagedialog.h"
 #include "util/cresmgr.h"
-#include "util/dialogutil.h"
 #include "util/directory.h"
 #include "util/geticon.h"
 #include "util/tool.h"
@@ -310,7 +310,7 @@ void BtInstallPage::slotInstall() {
         canWrite = false;
     }
     if (!canWrite) {
-        const int result = util::showWarning(this, tr("Warning"), tr("The destination directory is not writable or does not exist. Installation will fail unless this has first been fixed."), QMessageBox::Ignore | QMessageBox::Cancel, QMessageBox::Cancel);
+        const int result = message::showWarning(this, tr("Warning"), tr("The destination directory is not writable or does not exist. Installation will fail unless this has first been fixed."), QMessageBox::Ignore | QMessageBox::Cancel, QMessageBox::Cancel);
         if (result != QMessageBox::Ignore) {
             return;
         }
@@ -390,7 +390,7 @@ void BtInstallPage::slotSourceAdd() {
 void BtInstallPage::slotSourceDelete() {
     typedef BtInstallPageWorksWidget IPWW;
 
-    int ret = util::showWarning(this, tr("Delete Source?"),
+    int ret = message::showWarning(this, tr("Delete Source?"),
                                 tr("Do you really want to delete this source?"),
                                 QMessageBox::Yes | QMessageBox::No);
 

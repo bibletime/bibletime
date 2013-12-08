@@ -7,7 +7,7 @@
 *
 **********/
 
-#include "util/dialogutil.h"
+#include "messagedialog.h"
 
 #include <QAction>
 #include <QDialogButtonBox>
@@ -15,7 +15,7 @@
 #include <QPushButton>
 
 
-namespace util {
+namespace message {
 
 namespace {
 
@@ -88,4 +88,4 @@ QMessageBox::StandardButton showQuestion(QWidget * parent, const QString & title
     return bt_messageBox(QMessageBox::Question, parent, title, text, buttons, defaultButton);
 }
 
-} // namespace util
+} // namespace message

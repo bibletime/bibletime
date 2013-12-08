@@ -20,9 +20,9 @@
 #include "frontend/settingsdialogs/btfontsettings.h"
 #include "frontend/settingsdialogs/btlanguagesettings.h"
 #include "frontend/settingsdialogs/cswordsettings.h"
+#include "frontend/messagedialog.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
-#include "util/dialogutil.h"
 
 
 namespace {
@@ -66,7 +66,7 @@ CConfigurationDialog::CConfigurationDialog(QWidget * parent, BtActionCollection*
     m_bbox->addButton(QDialogButtonBox::Ok);
     m_bbox->addButton(QDialogButtonBox::Apply);
     m_bbox->addButton(QDialogButtonBox::Cancel);
-    util::prepareDialogBox(m_bbox);
+    message::prepareDialogBox(m_bbox);
     setButtonBox(m_bbox);
     bool ok = connect(m_bbox, SIGNAL(clicked(QAbstractButton *)), SLOT(slotButtonClicked(QAbstractButton *)));
     Q_ASSERT(ok);

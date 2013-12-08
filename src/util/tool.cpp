@@ -19,9 +19,9 @@
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
 #include "bibletimeapp.h"
+#include "frontend/messagedialog.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
-#include "util/dialogutil.h"
 #include "util/geticon.h"
 
 
@@ -43,7 +43,7 @@ bool savePlainFile(const QString & filename,
 
     if (saveFile.exists()) {
         if (!forceOverwrite
-            && util::showQuestion(0, QObject::tr("Overwrite File?"),
+            && message::showQuestion(0, QObject::tr("Overwrite File?"),
                 QString::fromLatin1("<qt><b>%1</b><br/>%2</qt>")
                 .arg( QObject::tr("The file already exists.") )
                 .arg( QObject::tr("Do you want to overwrite it?")),

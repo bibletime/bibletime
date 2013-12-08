@@ -2,7 +2,7 @@
 
 #include <QApplication>
 #include "backend/btinstallbackend.h"
-#include "util/dialogutil.h"
+#include "frontend/messagedialog.h"
 
 
 BtRefreshProgressDialog::BtRefreshProgressDialog(sword::InstallSource &source,
@@ -44,7 +44,7 @@ bool BtRefreshProgressDialog::runAndDelete() {
         setValue(100);
         qApp->processEvents();
     } else {
-        util::showWarning(this, tr("Warning"),
+        message::showWarning(this, tr("Warning"),
                           tr("Failed to refresh source %1")
                               .arg(QString(m_source.caption)));
     }

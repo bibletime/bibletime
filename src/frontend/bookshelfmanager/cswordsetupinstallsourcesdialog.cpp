@@ -25,7 +25,7 @@
 #include <QProgressDialog>
 #include <QApplication>
 #include "backend/btinstallbackend.h"
-#include "util/dialogutil.h"
+#include "frontend/messagedialog.h"
 
 const QString PROTO_FILE( QObject::tr("Local") ); //Local path
 const QString PROTO_FTP( QObject::tr("Remote FTP") ); //Remote path
@@ -87,7 +87,7 @@ CSwordSetupInstallSourcesDialog::CSwordSetupInstallSourcesDialog(/*QWidget *pare
     mainLayout->addSpacing( 10 );
 
     QDialogButtonBox* buttonBox = new QDialogButtonBox(QDialogButtonBox::Cancel | QDialogButtonBox::Save, Qt::Horizontal, this);
-    util::prepareDialogBox(buttonBox);
+    message::prepareDialogBox(buttonBox);
     QPushButton* getListButton = new QPushButton(tr("Get list..."), this);
     getListButton->setToolTip(tr("Download a list of sources from CrossWire server and add sources"));
     buttonBox->addButton(getListButton, QDialogButtonBox::ActionRole);
@@ -101,7 +101,7 @@ CSwordSetupInstallSourcesDialog::CSwordSetupInstallSourcesDialog(/*QWidget *pare
 void CSwordSetupInstallSourcesDialog::slotOk() {
     //run a few tests to validate the input first
     if ( m_captionEdit->text().trimmed().isEmpty() ) { //no caption
-        util::showInformation( this, tr( "Error" ), tr("Please provide a caption."));
+        message::showInformation( this, tr( "Error" ), tr("Please provide a caption."));
         return;
     }
 
@@ -109,25 +109,25 @@ void CSwordSetupInstallSourcesDialog::slotOk() {
     //sword::InstallSource is = BTInstallMgr::Tool::RemoteConfig::source( &iMgr, m_captionEdit->text() );
     sword::InstallSource is = BtInstallBackend::source(m_captionEdit->text());
     if ( (QString)is.caption.c_str() == m_captionEdit->text() ) { //source already exists
-        util::showInformation( this, tr( "Error" ),
+        message::showInformation( this, tr( "Error" ),
                                tr("A source with this caption already exists. Please provide a different caption."));
         return;
     }
 
     if ( this->isRemote(m_protocolCombo->currentText()) &&
             m_serverEdit->text().trimmed().isEmpty() ) { //no server name
-        util::showInformation( this, tr( "Error" ), tr("Please provide a server name."));
+        message::showInformation( this, tr( "Error" ), tr("Please provide a server name."));
         return;
     }
 
     if ( m_protocolCombo->currentText() == PROTO_FILE) {
         const QFileInfo fi( m_pathEdit->text() );
         if (!fi.exists() || !fi.isReadable()) { //no valid and readable path
-            util::showInformation( this, tr( "Error" ), tr("Please provide a valid, readable path."));
+            message::showInformation( this, tr( "Error" ), tr("Please provide a valid, readable path."));
             return;
         }
         else if ( m_pathEdit->text().isEmpty() ) {
-            util::showInformation( this, tr( "Error" ), tr("Please provide a path."));
+            message::showInformation( this, tr( "Error" ), tr("Please provide a path."));
 
         }
     }
@@ -158,7 +158,7 @@ void CSwordSetupInstallSourcesDialog::slotProtocolChanged() {
 
 void CSwordSetupInstallSourcesDialog::slotGetListClicked() {
     QString message(tr("List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don't want to keep.\n\nDo you want to continue?"));
-    QMessageBox::StandardButton answer = util::showQuestion(this, tr("Get source list from remote server?"), message, QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+    QMessageBox::StandardButton answer = message::showQuestion(this, tr("Get source list from remote server?"), message, QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
     if (answer == QMessageBox::No) {
         return;
     }

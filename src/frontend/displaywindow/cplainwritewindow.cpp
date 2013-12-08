@@ -20,9 +20,9 @@
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"
 #include "frontend/keychooser/ckeychooser.h"
+#include "frontend/messagedialog.h"
 #include "util/btsignal.h"
 #include "util/cresmgr.h"
-#include "util/dialogutil.h"
 #include "util/geticon.h"
 
 
@@ -160,7 +160,7 @@ void CPlainWriteWindow::saveCurrentText( const QString& /*key*/ ) {
         textChanged();
     }
     else {
-        util::showCritical( this, tr("Module not writable"),
+        message::showCritical( this, tr("Module not writable"),
                             QString::fromLatin1("<qt><b>%1</b><br/>%2</qt>")
                             .arg( tr("Module is not writable.") )
                             .arg( tr("Either the module may not be edited, or "
@@ -277,7 +277,7 @@ void CPlainWriteWindow::saveCurrentText() {
 bool CPlainWriteWindow::queryClose() {
     //save the text if it has changed
     if (m_writeDisplay->isModified()) {
-        switch (util::showQuestion( this, tr("Save Text?"), tr("Save text before closing?"), QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel, QMessageBox::Yes) ) {
+        switch (message::showQuestion( this, tr("Save Text?"), tr("Save text before closing?"), QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel, QMessageBox::Yes) ) {
             case QMessageBox::Yes: //save and close
                 saveCurrentText();
                 m_writeDisplay->setModified( false );
@@ -307,7 +307,7 @@ void CPlainWriteWindow::beforeKeyChange() {
     //If the text changed and we'd do a lookup ask the user if the text should be saved
     if (modules().first() && m_writeDisplay->isModified()) {
 
-        switch (util::showQuestion( this, tr("Save Text?"), tr("Save changed text?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes) ) {
+        switch (message::showQuestion( this, tr("Save Text?"), tr("Save changed text?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes) ) {
             case QMessageBox::Yes: { //save the changes
                 saveCurrentText( thisWindowsKey );
                 break;

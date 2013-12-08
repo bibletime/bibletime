@@ -19,7 +19,7 @@
 #include "frontend/btaboutmoduledialog.h"
 #include "frontend/btbookshelfview.h"
 #include "frontend/btbookshelfwidget.h"
-#include "util/dialogutil.h"
+#include "frontend/messagedialog.h"
 #include "util/tool.h"
 
 
@@ -50,7 +50,7 @@ BtModuleChooserDialog::BtModuleChooserDialog(QWidget *parent, Qt::WindowFlags fl
 }
 
 void BtModuleChooserDialog::retranslateUi() {
-    util::prepareDialogBox(m_buttonBox);
+    message::prepareDialogBox(m_buttonBox);
 }
 
 void BtModuleChooserDialog::slotModuleAbout(CSwordModuleInfo *module) {

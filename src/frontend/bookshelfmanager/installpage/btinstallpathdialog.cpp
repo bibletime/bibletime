@@ -22,7 +22,7 @@
 #include <QTreeWidgetItem>
 #include "backend/btinstallbackend.h"
 #include "bibletimeapp.h"
-#include "util/dialogutil.h"
+#include "frontend/messagedialog.h"
 #include "util/directory.h"
 #include "util/cresmgr.h"
 #include "util/geticon.h"
@@ -104,7 +104,7 @@ BtInstallPathDialog::BtInstallPathDialog() {
     QDialogButtonBox* buttonBox = new QDialogButtonBox(this);
     buttonBox->setOrientation(Qt::Horizontal);
     buttonBox->setStandardButtons(QDialogButtonBox::Cancel | QDialogButtonBox::NoButton | QDialogButtonBox::Ok);
-    util::prepareDialogBox(buttonBox);
+    message::prepareDialogBox(buttonBox);
     mainLayout->addWidget(buttonBox);
     connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
     connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
@@ -179,7 +179,7 @@ void BtInstallPathDialog::slotEditClicked() {
         if (dir.isReadable()) {
             const QFileInfo fi( dir.canonicalPath() );
             if (!fi.exists() || !fi.isWritable()) {
-                const int result = util::showWarning(this, tr("Use Folder?"), tr("This folder is not writable, so works can not be installed here using BibleTime. Do you want to use this folder instead of the previous value?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+                const int result = message::showWarning(this, tr("Use Folder?"), tr("This folder is not writable, so works can not be installed here using BibleTime. Do you want to use this folder instead of the previous value?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
                 if (result != QMessageBox::Yes) return;
             }
             //i->setText(0, dir.absolutePath()); // absolute, not canonical
@@ -199,7 +199,7 @@ void BtInstallPathDialog::slotAddClicked() {
     if (dir.isReadable()) {
         const QFileInfo fi( dir.canonicalPath() );
         if (!fi.exists() || !fi.isWritable()) {
-            const int result = util::showWarning(this, tr("Use Folder?"), tr("This folder is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of bookshelf folders?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+            const int result = message::showWarning(this, tr("Use Folder?"), tr("This folder is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of bookshelf folders?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
             if (result != QMessageBox::Yes) {
                 return;
             }

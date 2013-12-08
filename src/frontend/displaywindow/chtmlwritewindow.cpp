@@ -17,8 +17,8 @@
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"
 #include "frontend/keychooser/ckeychooser.h"
+#include "frontend/messagedialog.h"
 #include "util/directory.h"
-#include "util/dialogutil.h"
 #include "util/cresmgr.h"
 
 
@@ -119,7 +119,7 @@ void CHTMLWriteWindow::saveCurrentText( const QString& /*key*/ ) {
         textChanged();
     }
     else {
-        util::showCritical( this, tr("Module not writable"),
+        message::showCritical( this, tr("Module not writable"),
                             QString::fromLatin1("<qt><b>%1</b><br />%2</qt>")
                             .arg( tr("Module is not writable.") )
                             .arg( tr("Either the module may not be edited, or you do not have write permission.") ) );

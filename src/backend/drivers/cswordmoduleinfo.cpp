@@ -26,10 +26,10 @@
 #include "backend/cswordmodulesearch.h"
 #include "bibletimeapp.h"
 #include "btglobal.h"
+#include "frontend/messagedialog.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
 #include "util/exceptions.h"
-#include "util/dialogutil.h"
 #include "util/geticon.h"
 
 // Sword includes:
@@ -400,7 +400,7 @@ bool CSwordModuleInfo::buildIndex() {
         }
     } catch (CLuceneError & e) {
         qWarning() << "CLucene exception occurred while indexing:" << e.what();
-        util::showWarning(0,
+        message::showWarning(0,
                           QCoreApplication::tr("Indexing aborted"),
                           QCoreApplication::tr("An internal error occurred "
                                                "while building the index: %1")
@@ -410,7 +410,7 @@ bool CSwordModuleInfo::buildIndex() {
         return false;
     } catch (...) {
         qWarning("CLucene exception occurred while indexing");
-        util::showWarning(0,
+        message::showWarning(0,
                           QCoreApplication::tr("Indexing aborted"),
                           QCoreApplication::tr("An internal error occurred "
                                                "while building the index."));
@@ -504,7 +504,7 @@ int CSwordModuleInfo::searchIndexed(const QString & searchedText,
         }
     } catch (...) {
         qWarning("CLucene exception occurred");
-        util::showWarning(0,
+        message::showWarning(0,
                           QCoreApplication::tr("Search aborted"),
                           QCoreApplication::tr("An internal error occurred "
                                                "while executing your search."));

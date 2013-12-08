@@ -9,6 +9,7 @@
 
 #include "frontend/btaboutdialog.h"
 
+#include "frontend/messagedialog.h"
 #include <QApplication>
 #include <QDesktopServices>
 #include <QDialogButtonBox>
@@ -18,7 +19,6 @@
 #include <QTextStream>
 #include <QVBoxLayout>
 #include <QWebView>
-#include "util/dialogutil.h"
 #include "util/directory.h"
 
 // Sword includes:
@@ -114,7 +114,7 @@ void BtAboutDialog::retranslateUi() {
     retranslateQtTab();
     retranslateLicenceTab();
 
-    util::prepareDialogBox(m_buttonBox);
+    message::prepareDialogBox(m_buttonBox);
 }
 
 void BtAboutDialog::retranslateBtTab() {

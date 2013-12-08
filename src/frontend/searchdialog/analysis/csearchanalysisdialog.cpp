@@ -18,7 +18,7 @@
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "frontend/searchdialog/analysis/csearchanalysisscene.h"
 #include "frontend/searchdialog/analysis/csearchanalysisview.h"
-#include "util/dialogutil.h"
+#include "frontend/messagedialog.h"
 
 
 namespace Search {
@@ -59,7 +59,7 @@ void CSearchAnalysisDialog::initView() {
     m_buttonBox->setStandardButtons(QDialogButtonBox::Close);
     m_buttonBox->addButton(QDialogButtonBox::Save);
     //tr("Save as HTML"),
-    util::prepareDialogBox(m_buttonBox);
+    message::prepareDialogBox(m_buttonBox);
     vboxLayout->addWidget(m_buttonBox);
 
     bool ok = QObject::connect(m_buttonBox, SIGNAL(rejected()), this, SLOT(reject()));

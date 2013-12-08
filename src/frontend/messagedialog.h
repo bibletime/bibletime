@@ -17,7 +17,7 @@
 class QAction;
 class QDialogButtonBox;
 
-namespace util {
+namespace message {
 
 /**
   Change the state of a QAction without triggering their signals.
@@ -44,6 +44,6 @@ QMessageBox::StandardButton showInformation(QWidget * parent, const QString & ti
 
 QMessageBox::StandardButton showQuestion(QWidget * parent, const QString & title, const QString & text, QMessageBox::StandardButtons buttons = QMessageBox::Ok, QMessageBox::StandardButton defaultButton = QMessageBox::NoButton);
 
-} // namespace util
+} // namespace message
 
 #endif

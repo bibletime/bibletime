@@ -107,7 +107,6 @@ SOURCE_GROUP("src\\backend\\managers" FILES ${bibletime_SRC_BACKEND_MANAGERS})
 SET(bibletime_SRC_UTIL
     # Utilities:
     src/util/cresmgr.cpp
-    src/util/dialogutil.cpp
     src/util/directory.cpp
     src/util/btmodules.cpp
     src/util/geticon.cpp
@@ -133,6 +132,7 @@ SET(bibletime_SRC_FRONTEND
     src/frontend/cmdiarea.cpp
     src/frontend/cprinter.cpp
     src/frontend/crossrefrendering.cpp
+    src/frontend/messagedialog.cpp
 )
 
 SOURCE_GROUP("src\\frontend" FILES ${bibletime_SRC_FRONTEND})
@@ -459,6 +459,8 @@ SET(bibletime_SRC_MOBILE_MODEL_SOURCES
 SET(bibletime_SRC_MOBILE_UTIL_SOURCES
     src/mobile/util/findqmlobject.cpp
     src/mobile/util/findqmlobject.h
+    src/mobile/util/messagedialog.cpp
+    src/mobile/util/messagedialog.h
 )
 
 SET(bibletime_SRC_MOBILE_UI_SOURCES

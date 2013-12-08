@@ -18,7 +18,7 @@
 #include <QWidget>
 #include "bibletimeapp.h"
 #include "util/cresmgr.h"
-#include "util/dialogutil.h"
+#include "frontend/messagedialog.h"
 #include "util/geticon.h"
 
 
@@ -56,7 +56,7 @@ BtEditBookmarkDialog::BtEditBookmarkDialog(const QString &key,
                                        | QDialogButtonBox::Ok,
                                        Qt::Horizontal,
                                        this);
-    util::prepareDialogBox(m_buttonBox);
+    message::prepareDialogBox(m_buttonBox);
     mainLayout->addWidget(m_buttonBox);
 
     QObject::connect(m_buttonBox, SIGNAL(accepted()), this, SLOT(accept()));

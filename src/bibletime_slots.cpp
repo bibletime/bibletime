@@ -32,11 +32,11 @@
 #include "frontend/display/btfindwidget.h"
 #include "frontend/displaywindow/btmodulechooserbar.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
+#include "frontend/messagedialog.h"
 #include "frontend/searchdialog/csearchdialog.h"
 #include "frontend/settingsdialogs/cconfigurationdialog.h"
 #include "frontend/tips/bttipdialog.h"
 #include "util/directory.h"
-#include "util/dialogutil.h"
 
 
 /** Opens the optionsdialog of BibleTime. */
@@ -399,7 +399,7 @@ struct WindowLoadStatus {
 void BibleTime::reloadProfile() {
     typedef CMDIArea::MDIArrangementMode MAM;
     typedef CPlainWriteWindow::WriteWindowType WWT;
-    using util::setQActionCheckedNoTrigger;
+    using message::setQActionCheckedNoTrigger;
 
     // Cache pointer to config:
     BtConfig & conf = btConfig();

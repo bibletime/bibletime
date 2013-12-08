@@ -39,11 +39,11 @@
 #include "frontend/bookmarks/btbookmarkitem.h"
 #include "frontend/bookmarks/btbookmarkfolder.h"
 #include "frontend/bookmarks/btbookmarkloader.h"
+#include "frontend/messagedialog.h"
 #include "frontend/searchdialog/csearchdialog.h"
 #include "util/cresmgr.h"
 #include "util/tool.h"
 #include "util/directory.h"
-#include "util/dialogutil.h"
 #include "util/geticon.h"
 #include "bibletime.h"
 
@@ -700,7 +700,7 @@ void CBookmarkIndex::deleteEntries(bool confirm) {
             }
         }
 
-        if (util::showQuestion(this, tr("Delete Items"),
+        if (message::showQuestion(this, tr("Delete Items"),
                                tr("Do you really want to delete the selected items and child-items?"),
                                QMessageBox::Yes | QMessageBox::No, QMessageBox::No )
                 != QMessageBox::Yes) {

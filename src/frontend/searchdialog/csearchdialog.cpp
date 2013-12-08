@@ -28,8 +28,8 @@
 #include "frontend/btmoduleindexdialog.h"
 #include "frontend/searchdialog/btsearchoptionsarea.h"
 #include "frontend/searchdialog/btsearchresultarea.h"
+#include "frontend/messagedialog.h"
 #include "util/cresmgr.h"
-#include "util/dialogutil.h"
 #include "util/geticon.h"
 
 
@@ -126,7 +126,7 @@ void CSearchDialog::startSearch() {
         moduleNames.append("</center><br>");
 
         // Ask the user about unindexed modules:
-        int result = util::showQuestion(
+        int result = message::showQuestion(
                 this, tr("Missing indices"),
                 tr("The following modules need to be indexed before they can be"
                    " searched in:") + moduleNames + tr("Indexing could take a l"

@@ -20,7 +20,7 @@
 #include <QTextEdit>
 #include <QVBoxLayout>
 #include "backend/config/btconfig.h"
-#include "util/dialogutil.h"
+#include "frontend/messagedialog.h"
 
 // Sword includes:
 #include "versekey.h"
@@ -74,7 +74,7 @@ void CRangeChooserDialog::initView() {
     m_buttonBox->setStandardButtons(QDialogButtonBox::Ok
                                     | QDialogButtonBox::Cancel
                                     | QDialogButtonBox::RestoreDefaults);
-    util::prepareDialogBox(m_buttonBox);
+    message::prepareDialogBox(m_buttonBox);
 
     QHBoxLayout *rangeButtonsLayout = new QHBoxLayout();
     rangeButtonsLayout->addWidget(m_newRangeButton);

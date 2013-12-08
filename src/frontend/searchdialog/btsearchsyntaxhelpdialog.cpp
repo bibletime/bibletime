@@ -13,7 +13,7 @@
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 #include <QWebView>
-#include "util/dialogutil.h"
+#include "frontend/messagedialog.h"
 #include "util/directory.h"
 
 
@@ -214,7 +214,7 @@ void BtSearchSyntaxHelpDialog::retranslateUi() {
 
     m_webView->setHtml(html, QUrl::fromLocalFile(DU::getIconDir().path()));
 
-    util::prepareDialogBox(m_buttons);
+    message::prepareDialogBox(m_buttons);
 }
 
 void BtSearchSyntaxHelpDialog::linkClicked(const QUrl &url) {

@@ -14,7 +14,7 @@
 #include <QWidget>
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "frontend/btaboutmoduledialog.h"
-#include "util/dialogutil.h"
+#include "frontend/messagedialog.h"
 
 
 BTAboutModuleDialog::BTAboutModuleDialog(const CSwordModuleInfo *moduleInfo,
@@ -44,5 +44,5 @@ BTAboutModuleDialog::BTAboutModuleDialog(const CSwordModuleInfo *moduleInfo,
 void BTAboutModuleDialog::retranslateUi() {
     setWindowTitle(tr("Information About %1").arg(m_moduleInfo->name()));
     m_textEdit->setHtml(m_moduleInfo->aboutText());
-    util::prepareDialogBox(m_buttons);
+    message::prepareDialogBox(m_buttons);
 }

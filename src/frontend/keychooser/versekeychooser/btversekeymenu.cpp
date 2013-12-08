@@ -25,13 +25,15 @@ BtVerseKeyMenu::BtVerseKeyMenu(QWidget* parent)
 
 void BtVerseKeyMenu::startFirstClickDelayTimer() {
     m_firstClickLock = true;
-    killTimer(m_timerId);
+    if (m_timerId)
+        killTimer(m_timerId);
     m_timerId = startTimer(300);
 }
 
 void BtVerseKeyMenu::timerEvent(QTimerEvent* e) {
     if (e->timerId() == m_timerId) {
-        killTimer(m_timerId);
+        if (m_timerId)
+            killTimer(m_timerId);
         m_firstClickLock = false;
     }
     else {

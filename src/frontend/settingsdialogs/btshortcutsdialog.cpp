@@ -8,7 +8,7 @@
 **********/
 
 #include "frontend/settingsdialogs/btshortcutsdialog.h"
-#include "util/dialogutil.h"
+#include "frontend/messagedialog.h"
 
 #include <QDialogButtonBox>
 #include <QGridLayout>
@@ -56,7 +56,7 @@ BtShortcutsDialog::BtShortcutsDialog(QWidget* parent)
     gridLayout->addWidget(m_alternateLabel, 1, 1);
 
     QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
-    util::prepareDialogBox(buttons);
+    message::prepareDialogBox(buttons);
     vLayout->addWidget(buttons);
 
     connect(buttons, SIGNAL(accepted()), this, SLOT(accept()));

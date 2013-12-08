@@ -16,7 +16,7 @@
 #include "backend/managers/cswordbackend.h"
 #include "backend/btinstallmgr.h"
 #include "util/directory.h"
-#include "util/dialogutil.h"
+#include "frontend/messagedialog.h"
 
 // Sword includes:
 #include <filemgr.h>
@@ -178,7 +178,7 @@ bool setTargetList( const QStringList& targets ) {
     if (!i.exists() || !i.isWritable()) {
         // There is no way to save to the file
         qWarning() << "The Sword config file is not writable!";
-        util::showWarning(0, QObject::tr("Can't write file"), QObject::tr("The Sword config file can't be written!"));
+        message::showWarning(0, QObject::tr("Can't write file"), QObject::tr("The Sword config file can't be written!"));
         return false;
     }
 
