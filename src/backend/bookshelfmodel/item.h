@@ -97,7 +97,7 @@ public: /* Methods: */
     template <class T>
     inline T * getGroupItem(CSwordModuleInfo & module, int & outIndex) {
         for (int i = 0; i < m_children.size(); i++) {
-            Q_ASSERT(m_children.at(i)->type() == T::GROUP_TYPE);
+            Q_ASSERT(m_children.at(i)->type() == T::staticItemType());
             T * item = static_cast<T *>(m_children.at(i));
             if (item->fitFor(module)) {
                 outIndex = i;
@@ -172,14 +172,14 @@ public: /* Methods: */
 template <Item::Type TYPE>
 class GroupItem: public Item {
 
-public: /* Types: */
-
-    enum { GROUP_TYPE = TYPE };
-
 public: /* Methods: */
 
     inline GroupItem()
         : Item(TYPE) {}
+
+    inline static Item::Type staticItemType() {
+        return TYPE;
+    }
 
 };
 
