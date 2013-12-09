@@ -218,14 +218,14 @@ ELSE (Qt5Core_FOUND)
     )
 ENDIF (Qt5Core_FOUND)
 
-SET(BibleTime_CFLAGS "${Sword_CFLAGS_OTHER}")
+SET(BibleTime_CFLAGS "-Wall -Wextra ${Sword_CFLAGS_OTHER}")
 SET(BibleTime_LDFLAGS "")
 
 IF(APPLE)
   # enable support MacOS 10.5+
   SET(T "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/")
-  LIST(APPEND BibleTime_CFLAGS "-mmacosx-version-min=10.5 -isysroot ${T}")
-  LIST(APPEND BibleTime_LDFLAGS "-mmacosx-version-min=10.5 -isysroot ${T} -F /Library/Frameworks/")
+  SET(BibleTime_CFLAGS "${BibleTime_CFLAGS} -mmacosx-version-min=10.5 -isysroot ${T}")
+  SET(BibleTime_LDFLAGS "${BibleTime_LDFLAGS} -mmacosx-version-min=10.5 -isysroot ${T} -F /Library/Frameworks/")
   UNSET(T)
 ENDIF()
 
@@ -247,8 +247,8 @@ IF (MSVC)
     SET_TARGET_PROPERTIES(${EXECUTABLE_NAME} PROPERTIES LINK_FLAGS_DEBUG "/SUBSYSTEM:WINDOWS")
     SET_TARGET_PROPERTIES(${EXECUTABLE_NAME} PROPERTIES LINK_FLAGS_RELEASE "/SUBSYSTEM:WINDOWS")
 ELSE (MSVC)
-    SET(CMAKE_CXX_FLAGS_RELEASE "-Wall -O2 -fpie -fexceptions")
-    SET(CMAKE_CXX_FLAGS_DEBUG   "-Wall -Wextra -ggdb -fpie -fexceptions")
+    SET(CMAKE_CXX_FLAGS_RELEASE "-O2 -fpie -fexceptions")
+    SET(CMAKE_CXX_FLAGS_DEBUG   "-ggdb -fpie -fexceptions")
 ENDIF (MSVC)
 
 
