@@ -118,12 +118,12 @@ FIND_PACKAGE(CLucene REQUIRED)
 FIND_PACKAGE(Sword 1.7.0 REQUIRED)
 
 # directory layout settings up front, needed in various places
-SET(BT_DESTINATION "bin")
-SET(BT_SHARE_PATH "share")
 IF(APPLE)
-  SET(BT_DESTINATION "../MacOS/")
-  SET(BT_SHARE_PATH "../share/")
-  SET(CMAKE_CXX_COMPILER "/usr/bin/g++")
+  SET(BT_DESTINATION "../MacOS")
+  SET(BT_SHARE_PATH "../share")
+ELSE()
+  SET(BT_DESTINATION "bin")
+  SET(BT_SHARE_PATH "share")
 ENDIF()
 
 # Define $bibletime_SOURCES
