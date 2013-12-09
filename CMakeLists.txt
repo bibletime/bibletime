@@ -118,8 +118,8 @@ FIND_PACKAGE(CLucene REQUIRED)
 FIND_PACKAGE(Sword 1.7.0 REQUIRED)
 
 # directory layout settings up front, needed in various places
-SET(BT_DESTINATION "bin/")
-SET(BT_SHARE_PATH "share/")
+SET(BT_DESTINATION "bin")
+SET(BT_SHARE_PATH "share")
 IF(APPLE)
   SET(BT_DESTINATION "../MacOS/")
   SET(BT_SHARE_PATH "../share/")
@@ -254,50 +254,50 @@ INSTALL(TARGETS "${EXECUTABLE_NAME}" DESTINATION "${BT_DESTINATION}")
 # icons
 FILE(GLOB INSTALL_ICONS_LIST "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/*.svg")
 INSTALL(FILES ${INSTALL_ICONS_LIST}
-        DESTINATION "${BT_SHARE_PATH}bibletime/icons/")
+        DESTINATION "${BT_SHARE_PATH}/bibletime/icons/")
 
 # icons - png, needed for About Dialog
 FILE(GLOB INSTALL_ICONS_LIST_PNG "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/bibletime.png")
 INSTALL(FILES ${INSTALL_ICONS_LIST_PNG}
-        DESTINATION "${BT_SHARE_PATH}bibletime/icons/")
+        DESTINATION "${BT_SHARE_PATH}/bibletime/icons/")
 
 # display templates
 INSTALL(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/
-        DESTINATION "${BT_SHARE_PATH}bibletime/display-templates/")
+        DESTINATION "${BT_SHARE_PATH}/bibletime/display-templates/")
 
 # javascript
 INSTALL(FILES "src/frontend/display/bthtml.js"
-        DESTINATION "${BT_SHARE_PATH}bibletime/javascript/")
+        DESTINATION "${BT_SHARE_PATH}/bibletime/javascript/")
 
 # license.html
 INSTALL(FILES "docs/license.html"
-        DESTINATION "${BT_SHARE_PATH}bibletime/license/")
+        DESTINATION "${BT_SHARE_PATH}/bibletime/license/")
 
 # qml files
 INSTALL(FILES ${bibletime_QML_FILES}
-        DESTINATION "${BT_SHARE_PATH}qml/")
+        DESTINATION "${BT_SHARE_PATH}/qml/")
 
 # splash screen
 INSTALL(FILES "pics/startuplogo.png" "pics/startuplogo_christmas.png" "pics/startuplogo_easter.jpg"
-        DESTINATION "${BT_SHARE_PATH}bibletime/pics/")
+        DESTINATION "${BT_SHARE_PATH}/bibletime/pics/")
 
 #
 # Platform specific installation
 #
 # LINUX: application icon
 INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/bibletime.svg"
-        DESTINATION "${BT_SHARE_PATH}icons/")
+        DESTINATION "${BT_SHARE_PATH}/icons/")
 
 # LINUX: desktop file
 CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/linux/bibletime.desktop.cmake" "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop")
 INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop"
-        DESTINATION "${BT_SHARE_PATH}applications/")
+        DESTINATION "${BT_SHARE_PATH}/applications/")
 
 IF(MSVC)
   # sword locale information
   FILE(GLOB INSTALL_SWORD_LOCALE_LIST ${Sword_INCLUDE_DIRS}/../locales.d/*)
   INSTALL(FILES ${INSTALL_SWORD_LOCALE_LIST}
-          DESTINATION "${BT_SHARE_PATH}sword/locales.d/")
+          DESTINATION "${BT_SHARE_PATH}/sword/locales.d/")
 
   # install pdb file for debugging purposes
   IF(CMAKE_BUILD_TYPE STREQUAL "Debug")
@@ -310,7 +310,7 @@ IF(APPLE)
   # sword locale information, needed for DMG image
   FILE(GLOB INSTALL_SWORD_LOCALE_LIST ${Sword_INCLUDE_DIRS}/../../share/sword/locales.d/*)
   INSTALL(FILES ${INSTALL_SWORD_LOCALE_LIST}
-          DESTINATION "${BT_SHARE_PATH}sword/locales.d/")
+          DESTINATION "${BT_SHARE_PATH}/sword/locales.d/")
 ENDIF()
 
 
