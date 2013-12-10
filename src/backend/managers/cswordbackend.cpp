@@ -20,8 +20,8 @@
 #include "backend/drivers/cswordbookmoduleinfo.h"
 #include "backend/drivers/cswordcommentarymoduleinfo.h"
 #include "backend/drivers/cswordlexiconmoduleinfo.h"
+#include "backend/filters/btosismorphsegmentation.h"
 #include "backend/filters/thmltoplain.h"
-#include "backend/filters/osismorphsegmentation.h"
 #include "btglobal.h"
 #include "util/directory.h"
 
@@ -63,7 +63,7 @@ void CSwordBackend::filterInit() {
         optionFilters.erase("OSISMorphSegmentation");
         delete filter;
     }
-    sword::SWOptionFilter *tmpFilter = new Filters::OSISMorphSegmentation();
+    sword::SWOptionFilter *tmpFilter = new Filters::BtOSISMorphSegmentation();
     optionFilters.insert(sword::OptionFilterMap::value_type("OSISMorphSegmentation", tmpFilter));
     cleanupFilters.push_back(tmpFilter);
 
