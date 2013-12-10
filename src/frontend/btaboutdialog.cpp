@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2011 by the BibleTime developers.
+* Copyright 1999-2013 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -127,7 +127,7 @@ void BtAboutDialog::retranslateBtTab() {
                   "our team, please send an email to %1.")
                .arg(MAKE_LINK_STATIC("mailto:info@bibletime.info", "info@bibletime.info"));
     content += "</p><p>";
-    content += tr("(c)1999-2011, The BibleTime Team");
+    content += tr("(c)1999-2013, The BibleTime Team");
     content += "</p><p>" MAKE_LINK_STATIC("http://www.bibletime.info", "www.bibletime.info")
                "</p>";
     m_bibletimeTab->setHtml(MAKE_HTML(m_bibletimeTab, content));
