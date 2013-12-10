@@ -590,8 +590,8 @@ Ce fichier est distribué sous la même licence que le paquet BibleTime.</transl
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="133"/>
-        <source>(c)1999-2013, The BibleTime Team</source>
-        <translation type="unfinished">(c)1999-2013, L&apos;équipe de BibleTime {1999-2013,?}</translation>
+        <source>(c)1999-2011, The BibleTime Team</source>
+        <translation type="unfinished">(c)1999-2013, L&apos;équipe de BibleTime {1999-2011,?}</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="142"/>
@@ -4089,9 +4089,8 @@ Language name ppk</extracomment>
         <translation>Segmentation morphologique</translation>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/chtmlexportrendering.cpp" line="240"/>
         <source>Export</source>
-        <translation>Exporter</translation>
+        <translation type="obsolete">Exporter</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="30"/>

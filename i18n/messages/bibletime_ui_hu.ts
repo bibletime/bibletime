@@ -513,6 +513,11 @@ Ez a  fájl a BibleTime licenszelésével megegyező licensszel terjeszthető.</
         <translation>Fejlesztőket és fordítókat keresünk. Amennyiben csatlakozna hozzzánk, küldjön egy emailt ide: %1.</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="133"/>
+        <source>(c)1999-2011, The BibleTime Team</source>
+        <translation type="unfinished">(c)1999-2013, The BibleTime Team  {1999-2011,?}</translation>
+    </message>
+    <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="140"/>
         <source>&amp;Contributors</source>
         <translation>&amp;Közreműködők</translation>
@@ -563,9 +568,8 @@ Ez a  fájl a BibleTime licenszelésével megegyező licensszel terjeszthető.</
         <translation>tervező</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="133"/>
         <source>(c)1999-2013, The BibleTime Team</source>
-        <translation>(c)1999-2013, The BibleTime Team </translation>
+        <translation type="obsolete">(c)1999-2013, The BibleTime Team </translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="142"/>
@@ -3804,9 +3808,8 @@ Language name ppk</extracomment>
         <translation>Szótő elválasztás</translation>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/chtmlexportrendering.cpp" line="240"/>
         <source>Export</source>
-        <translation>Exportálás</translation>
+        <translation type="obsolete">Exportálás</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="30"/>

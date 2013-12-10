@@ -513,9 +513,8 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Etsimme kehittäjiä ja kääntäjiä. Jos haluat liittyä tiimiimme, lähetä sähköpostia osoitteeseen %1.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="133"/>
         <source>(c)1999-2013, The BibleTime Team</source>
-        <translation>(c)1999-2013, BibleTime-tiimi</translation>
+        <translation type="obsolete">(c)1999-2013, BibleTime-tiimi</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="140"/>
@@ -586,6 +585,11 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/btaboutdialog.cpp" line="143"/>
         <source>designer</source>
         <translation>suunnittelija</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="133"/>
+        <source>(c)1999-2011, The BibleTime Team</source>
+        <translation type="unfinished">(c)1999-2013, BibleTime-tiimi {1999-2011,?}</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="142"/>
@@ -4142,9 +4146,8 @@ Language name ppk</extracomment>
         <translation>Morfologinen segmentointi</translation>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/chtmlexportrendering.cpp" line="240"/>
         <source>Export</source>
-        <translation>Vie</translation>
+        <translation type="obsolete">Vie</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="30"/>

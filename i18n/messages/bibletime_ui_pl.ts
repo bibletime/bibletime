@@ -513,11 +513,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="133"/>
-        <source>(c)1999-2013, The BibleTime Team</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="140"/>
         <source>&amp;Contributors</source>
         <translation type="unfinished"></translation>
@@ -585,6 +580,11 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="143"/>
         <source>designer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="133"/>
+        <source>(c)1999-2011, The BibleTime Team</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4047,9 +4047,8 @@ Language name ppk</extracomment>
         <translation>Podział morfologiczny</translation>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/chtmlexportrendering.cpp" line="240"/>
         <source>Export</source>
-        <translation>Eksportuj</translation>
+        <translation type="obsolete">Eksportuj</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="30"/>

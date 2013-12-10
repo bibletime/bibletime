@@ -644,8 +644,8 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="133"/>
-        <source>(c)1999-2013, The BibleTime Team</source>
-        <translation>(c)1999-2013, The BibleTime Team</translation>
+        <source>(c)1999-2011, The BibleTime Team</source>
+        <translation type="unfinished">(c)1999-2013, The BibleTime Team {1999-2011,?}</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="142"/>
@@ -4237,9 +4237,8 @@ Language name ppk</extracomment>
         <translation>Segmentazione morfologica</translation>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/chtmlexportrendering.cpp" line="240"/>
         <source>Export</source>
-        <translation>Esporta</translation>
+        <translation type="obsolete">Esporta</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="30"/>

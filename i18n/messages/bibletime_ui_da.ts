@@ -513,9 +513,8 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Vi søger udviklere og oversættere. Hvis du gerne vil slutte dig til vores hold, så send en email til %1.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="133"/>
         <source>(c)1999-2013, The BibleTime Team</source>
-        <translation>(c)1999-2013, BibleTime holdet</translation>
+        <translation type="obsolete">(c)1999-2013, BibleTime holdet</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="140"/>
@@ -586,6 +585,11 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/btaboutdialog.cpp" line="143"/>
         <source>designer</source>
         <translation>designer</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="133"/>
+        <source>(c)1999-2011, The BibleTime Team</source>
+        <translation type="unfinished">(c)1999-2013, BibleTime holdet {1999-2011,?}</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="142"/>
@@ -4086,9 +4090,8 @@ Language name ppk</extracomment>
         <translation>Morf-segmentering</translation>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/chtmlexportrendering.cpp" line="240"/>
         <source>Export</source>
-        <translation>Eksport</translation>
+        <translation type="obsolete">Eksport</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="30"/>

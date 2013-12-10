@@ -516,7 +516,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>(c)1999-2013, The BibleTime Team</source>
-        <translation>(c)1999-2013, das BibleTime Team</translation>
+        <translation type="obsolete">(c)1999-2013, das BibleTime Team</translation>
     </message>
     <message>
         <source>&amp;SWORD</source>
@@ -525,6 +525,10 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <source>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</source>
         <translation>BibleTime ist unter der GPL-Lizenz verfügbar. Sie können das Programm für persönliche, private, öffentliche oder kommerzielle Zwecke ohne Beschränkungen einsetzen, aber Sie können es nur weitergeben, wenn Sie auch den dazugehörigen Quellcode mit weitergeben.</translation>
+    </message>
+    <message>
+        <source>(c)1999-2011, The BibleTime Team</source>
+        <translation type="unfinished">(c)1999-2013, das BibleTime Team {1999-2011,?}</translation>
     </message>
 </context>
 <context>
@@ -3170,7 +3174,7 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Export</source>
-        <translation>Exportieren</translation>
+        <translation type="obsolete">Exportieren</translation>
     </message>
     <message>
         <source>Local</source>

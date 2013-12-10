@@ -513,9 +513,8 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>نحن نبحث عن مطورين ومترجمين. إذا كنت تود الإنضمام إلى فريقنا، يرجى إرسال رسالة إلكترونية إلى %1.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="133"/>
         <source>(c)1999-2013, The BibleTime Team</source>
-        <translation>(c)1999-2013, فريق بيبل تايم</translation>
+        <translation type="obsolete">(c)1999-2013, فريق بيبل تايم</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="140"/>
@@ -586,6 +585,11 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/btaboutdialog.cpp" line="143"/>
         <source>designer</source>
         <translation>مصمم</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="133"/>
+        <source>(c)1999-2011, The BibleTime Team</source>
+        <translation type="unfinished">(c)1999-2013, فريق بيبل تايم {1999-2011,?}</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="142"/>
@@ -3989,9 +3993,8 @@ Language name ppk</extracomment>
         <translation>تجزئة صرفية</translation>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/chtmlexportrendering.cpp" line="240"/>
         <source>Export</source>
-        <translation>تصدير</translation>
+        <translation type="obsolete">تصدير</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="30"/>

@@ -512,16 +512,16 @@
         <translation>&amp;Licence</translation>
     </message>
     <message>
-        <source>(c)1999-2013, The BibleTime Team</source>
-        <translation></translation>
-    </message>
-    <message>
         <source>&amp;SWORD</source>
         <translation>&amp;SWORD</translation>
     </message>
     <message>
         <source>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</source>
         <translation>BibleTime je uvolněn pod licencí GPL. Můžete si tento program stáhnout a používat jej pro osobní, privátní, veřejné nebo i komerční účely bez omezení. Pokud však program distribuujete dále, musíte spolu s ním distribuovat i jeho zdrojové kódy.</translation>
+    </message>
+    <message>
+        <source>(c)1999-2011, The BibleTime Team</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3058,7 +3058,7 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Export</source>
-        <translation>Export</translation>
+        <translation type="obsolete">Export</translation>
     </message>
     <message>
         <source>Local</source>
