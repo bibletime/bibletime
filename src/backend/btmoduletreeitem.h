@@ -117,8 +117,8 @@ class BTModuleTreeItem {
         /** When the root item is deleted the whole tree is deleted. */
         ~BTModuleTreeItem();
 
-	/** Adds filtered items to the tree */
-	void add_items(QList<BTModuleTreeItem::Filter*>& filters);
+    /** Adds filtered items to the tree */
+    void add_items(QList<BTModuleTreeItem::Filter*>& filters);
 
         /**
         * Returns the item type.
@@ -170,10 +170,10 @@ class BTModuleTreeItem {
         /** Helper function for creating a group item while creating the tree. */
         BTModuleTreeItem* create_parent_item(BTModuleTreeItem* parent, const QString& text, BTModuleTreeItem::Type type, CSwordModuleInfo::Category category = CSwordModuleInfo::UnknownCategory);
 
-	static bool m_map_initialized;
-	static QMap<CSwordModuleInfo::Category, QString> m_CategoryNamesMap;
-	
-	
+    static bool m_map_initialized;
+    static QMap<CSwordModuleInfo::Category, QString> m_CategoryNamesMap;
+
+
         CSwordModuleInfo* m_moduleInfo;
         QString m_text;
         BTModuleTreeItem* m_firstChild;

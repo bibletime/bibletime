@@ -2,173 +2,173 @@
  * Theme by BibleTime - www.bibletime.info *
  */
 body {
-	background-color: white;
-	color: black;
+    background-color: white;
+    color: black;
 }
 #content {
-	margin:10px;
+    margin:10px;
 }
 
 #content > table {
-	margin: 0;
-	padding: 0;
-	border-spacing:10px;
-	vertical-align:top;
+    margin: 0;
+    padding: 0;
+    border-spacing:10px;
+    vertical-align:top;
 }
 
 #content > table th {
-	padding: 0 0 2px 0;
-	text-align: center;
-	font-weight: bold;
-	font-size: 110%;
-	border-bottom: 1px solid #6B6B6B;
+    padding: 0 0 2px 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 110%;
+    border-bottom: 1px solid #6B6B6B;
 }
 
 a {
-	text-decoration:none;
-	font-weight:normal;
-	color: #3B11AE;
-	padding:0 2px;
+    text-decoration:none;
+    font-weight:normal;
+    color: #3B11AE;
+    padding:0 2px;
 }
 a:hover {
-	color: #AE1518;
-	padding:0 2px;
+    color: #AE1518;
+    padding:0 2px;
 }
 
 
 /* Settings which apply to all entries in all modules */
 .entry {
-	padding: 3px;
- 	vertical-align: middle;
-	text-align: justify;
+    padding: 3px;
+     vertical-align: middle;
+    text-align: justify;
 }
 #printer .entry {
-	font-size:90%;
-	text-align:left;
+    font-size:90%;
+    text-align:left;
 }
 .entry[dir=rtl] {
-	text-align:right !important;
+    text-align:right !important;
 }
 #printer .entry[dir=rtl] {
-	text-align:right !important;
+    text-align:right !important;
 }
 td.entry, td.currententry {
-	vertical-align:top;
+    vertical-align:top;
 }
 
 /* Keep the values the same as in .entry (take the border into account!) */
 .currententry {
-	padding:3px;
-	text-align:justify;
+    padding:3px;
+    text-align:justify;
 }
 .currententry[dir=rtl] {
-	text-align:right !important;
+    text-align:right !important;
 }
 div.currententry {
 }
 span.currententry {
-	background-color:#D4FFCB;
+    background-color:#D4FFCB;
 }
 
 
 /*Space between the columns of modules displayed side by side*/
 td.entry + td.entry {
-	margin-left: 5px;
+    margin-left: 5px;
 }
 
 /* Several additional settings for display of modules*/
 #bible div.currententry, #bible td.currententry {
-	border:1px solid black;
-	padding:2px;
-	background-color:#F6FFF7;
+    border:1px solid black;
+    padding:2px;
+    background-color:#F6FFF7;
 }
 #bible span.currententry {
-	background-color:#C8FFB6;
+    background-color:#C8FFB6;
 }
 
 /*Same for books!*/
 #book div.currententry, #book td.currententry {
-	border:1px solid black;
-	background-color:#F6FFF7;
+    border:1px solid black;
+    background-color:#F6FFF7;
 }
 #book span.currententry {
-	background-color:#C8FFB6;
+    background-color:#C8FFB6;
 }
 
 
 .entryname {
-	font-size:80%;
-	padding:0 2px 0 0;
-	vertical-align:super;
+    font-size:80%;
+    padding:0 2px 0 0;
+    vertical-align:super;
 }
 .entry[dir=rtl] .entryname, .currententry[dir=rtl] .entryname {
-	padding: 0 0 0 2px;
-	font-size: 80%;
-	vertical-align:super;
+    padding: 0 0 0 2px;
+    font-size: 80%;
+    vertical-align:super;
 }
 .entryname a, #printer .entryname  {
-	vertical-align: middle
+    vertical-align: middle
 }
 
 #printer .entry  .entry, #printer .entry .sectiontitle , #printer .entry .booktitle {
-	padding-top: 0.05em;
-	margin-left: 10px;
+    padding-top: 0.05em;
+    margin-left: 10px;
 }
 
 .footnote {
-	vertical-align:super;
-	color: blue;
-	font-size: 70%;
+    vertical-align:super;
+    color: blue;
+    font-size: 70%;
 }
 .footnote:before { content:"("; }
 .footnote:after { content:")"; }
 
 .crossreference {
-	font-size: 80%;
-	/*vertical-align:middle;*/
-	color: blue;
+    font-size: 80%;
+    /*vertical-align:middle;*/
+    color: blue;
 }
 
 .crossreference a {
-	font-size: 80%;
-	/*vertical-align:middle;*/
-	color: blue;
+    font-size: 80%;
+    /*vertical-align:middle;*/
+    color: blue;
 }
 
 .crossreference a:hover {
-	font-size: 80%;
-	/*vertical-align:middle;*/
-	color: blue;
+    font-size: 80%;
+    /*vertical-align:middle;*/
+    color: blue;
 }
 
 
 
 .sectiontitle {
-	font-weight: bold;
-	font-size: 110%;
+    font-weight: bold;
+    font-size: 110%;
 }
 #printer .sectiontitle {
-	font-weight: bold;
-	font-size: 100%;
+    font-weight: bold;
+    font-size: 100%;
 }
 * + .sectiontitle {
-	margin-top:15px;
+    margin-top:15px;
 }
 
 .booktitle {
-	font-weight: bold;
-	font-size: 120%;
-	font-variant: small-caps;
+    font-weight: bold;
+    font-size: 120%;
+    font-variant: small-caps;
 }
 #printer .booktitle {
-	font-weight: bold;
-	font-size: 120%;
-	font-variant: small-caps;
+    font-weight: bold;
+    font-size: 120%;
+    font-variant: small-caps;
 }
 .foreign {
 }
 .jesuswords {
-	color:#9C2323;
+    color:#9C2323;
 }
 
 .quotation {
@@ -176,25 +176,25 @@ td.entry + td.entry {
 .poetry {
 }
 .sup {
-	vertical-align: super;
+    vertical-align: super;
 }
 .sub {
-	vertical-align: sub;
+    vertical-align: sub;
 }
 .right {
-	text-align: right;
+    text-align: right;
 }
 .center {
-	text-align: center;
+    text-align: center;
 }
 
 .bold {
-	font-weight:bold;
+    font-weight:bold;
 }
 .illuminated {
 }
 .italic {
-	font-style:italic;
+    font-style:italic;
 }
 .line-through {
     text-decoration: line-through;
@@ -205,7 +205,7 @@ td.entry + td.entry {
    font-variant: small-caps;
 }
 .underline {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
 .inscription {
@@ -227,10 +227,10 @@ td.entry + td.entry {
 }
 
 .transchange {
-	font-style:italic;
+    font-style:italic;
 }
 .transchange > .added {
-	background-color:inherit;
+    background-color:inherit;
 }
 .transchange > .amplified {
 }
@@ -244,57 +244,57 @@ td.entry + td.entry {
 }
 
 .morphSegmentation {
-	border: 1px solid gray;
-	margin-top: 1px; /* Don`t let the boxes touch here, between the lines */
-	margin-left: -1px; /* But here, for better reading of the text,
-											this will only occur within a word consisting of several segments.*/
-	margin-right: 0px;
+    border: 1px solid gray;
+    margin-top: 1px; /* Don`t let the boxes touch here, between the lines */
+    margin-left: -1px; /* But here, for better reading of the text,
+                                            this will only occur within a word consisting of several segments.*/
+    margin-right: 0px;
 }
 
 #infodisplay {
-	margin:0;
-	padding:0;
+    margin:0;
+    padding:0;
 }
 
 #infodisplay .footnoteinfo h3, #infodisplay .strongsinfo h3, #infodisplay .morphinfo h3, #infodisplay .translationinfo h3, #infodisplay .crossrefinfo h3, #infodisplay .moduleinfo h3 {
-	padding:4px 4px 2px 0;
-	color:darkGray;
-	font-weight:bold;
-	border-bottom:1px solid gray;
-	text-align:left !important;
+    padding:4px 4px 2px 0;
+    color:darkGray;
+    font-weight:bold;
+    border-bottom:1px solid gray;
+    text-align:left !important;
 }
 
 #infodisplay > p, #infodisplay  * > p { /* We only format the first p child in a special way */
-	text-align:justify;
-	color:black;
-	margin:0px;
-	padding:0px;
+    text-align:justify;
+    color:black;
+    margin:0px;
+    padding:0px;
 }
 
 /*Required for cross references*/
 #infodisplay .entry {
-	padding:2px;
-	text-align:justify;
-	margin-bottom:10px;
-	margin-left:15px;
+    padding:2px;
+    text-align:justify;
+    margin-bottom:10px;
+    margin-left:15px;
 }
 #infodisplay .entry .entry { /*No smaller font size for nested entries*/
-	margin:0px;
+    margin:0px;
 }
 #infodisplay .entryname {
-	padding:2px;
-	margin:0px;
-	text-align:left;
-	font-weight:bold;
+    padding:2px;
+    margin:0px;
+    text-align:left;
+    font-weight:bold;
 }
 
 #infodisplay .rangeheading {
-	color:black;
-	font-weight:bold;
-	margin-left:-10px;
+    color:black;
+    font-weight:bold;
+    margin-left:-10px;
 }
 
 #printer .rangeheading {
-	border-bottom:1px solid black;
-	color:black;
+    border-bottom:1px solid black;
+    color:black;
 }

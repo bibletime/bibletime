@@ -13,7 +13,7 @@ public:
     };
 
     TreeChooserModel(QObject *parent = 0);
-    QHash<int, QByteArray>	TreeChooserModel::roleNames() const;
+    QHash<int, QByteArray>    TreeChooserModel::roleNames() const;
 
 };
 

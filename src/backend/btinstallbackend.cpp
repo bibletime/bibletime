@@ -32,20 +32,20 @@ namespace BtInstallBackend {
 bool addSource(sword::InstallSource& source) {
     SWConfig config(configFilename().toLatin1());
     if (isRemote(source)) {
-    	if (source.directory[ source.directory.length()-1 ] == '/') {
-    	    source.directory--;
-    	}
-	if (!strcmp(source.type, "FTP")) {
-        	config["Sources"].insert( std::make_pair(SWBuf("FTPSource"), source.getConfEnt()) );
+        if (source.directory[ source.directory.length()-1 ] == '/') {
+            source.directory--;
+        }
+    if (!strcmp(source.type, "FTP")) {
+            config["Sources"].insert( std::make_pair(SWBuf("FTPSource"), source.getConfEnt()) );
         }
         else if (!strcmp(source.type, "SFTP")) {
-        	config["Sources"].insert( std::make_pair(SWBuf("SFTPSource"), source.getConfEnt()) );
+            config["Sources"].insert( std::make_pair(SWBuf("SFTPSource"), source.getConfEnt()) );
         }
         else if (!strcmp(source.type, "HTTP")) {
-        	config["Sources"].insert( std::make_pair(SWBuf("HTTPSource"), source.getConfEnt()) );
+            config["Sources"].insert( std::make_pair(SWBuf("HTTPSource"), source.getConfEnt()) );
         }
         else if (!strcmp(source.type, "HTTPS")) {
-        	config["Sources"].insert( std::make_pair(SWBuf("HTTPSSource"), source.getConfEnt()) );
+            config["Sources"].insert( std::make_pair(SWBuf("HTTPSSource"), source.getConfEnt()) );
         }
     }
     else if (!strcmp(source.type, "DIR")) {
@@ -137,9 +137,9 @@ QList<CSwordModuleInfo*> moduleList(QString /*name*/) {
 
 bool isRemote(const sword::InstallSource& source) {
     return !strcmp(source.type, "FTP") ||
-    		!strcmp(source.type, "SFTP") ||
-    		!strcmp(source.type, "HTTP") ||
-    		!strcmp(source.type, "HTTPS");
+            !strcmp(source.type, "SFTP") ||
+            !strcmp(source.type, "HTTP") ||
+            !strcmp(source.type, "HTTPS");
 }
 
 QString configPath() {

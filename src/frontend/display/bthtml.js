@@ -18,105 +18,105 @@ var timeOutId = -1;
 // Scroll window to html anchor
 function gotoAnchor(anchor)
 {
-	document.location=document.location + "#" + anchor;
+    document.location=document.location + "#" + anchor;
 }
 
 // Mouse button clicked handler
 function mouseClickHandler (mEvent)
 {
-	var mTarget = mEvent.target;
-	if (mTarget)
-	{
-		var url = "";
-		var tmpUrl = mEvent.target.getAttribute("href");
-		if (tmpUrl)
-			url = tmpUrl;
-		btHtmlJsObject.mouseClick(url);
-	}
+    var mTarget = mEvent.target;
+    if (mTarget)
+    {
+        var url = "";
+        var tmpUrl = mEvent.target.getAttribute("href");
+        if (tmpUrl)
+            url = tmpUrl;
+        btHtmlJsObject.mouseClick(url);
+    }
 }
 
 // Mouse button pressed down handler
 function mouseDownHandler (mEvent)
 {
-	var node;
-	var url = "";
-	var lemma = "";
-	var mTarget = mEvent.target;
-	if (mTarget)
-	{
-		var tmpUrl = mEvent.target.getAttribute("href");
-		if (tmpUrl)
-			url = tmpUrl;
-		var tmpLemma = mEvent.target.getAttribute("lemma");
-		if (tmpLemma)
-			lemma = tmpLemma;
-	}
+    var node;
+    var url = "";
+    var lemma = "";
+    var mTarget = mEvent.target;
+    if (mTarget)
+    {
+        var tmpUrl = mEvent.target.getAttribute("href");
+        if (tmpUrl)
+            url = tmpUrl;
+        var tmpLemma = mEvent.target.getAttribute("lemma");
+        if (tmpLemma)
+            lemma = tmpLemma;
+    }
 
-	if (mEvent.button === 2) // Right mouse button
-	{
-		btHtmlJsObject.mouseDownRight(url, lemma);
-	}
-	if (mEvent.button === 0) // Left mouse button
-	{
-		if (!(mEvent.target === undefined)) 
-		{
-			var X = mEvent.clientX;
-			var Y = mEvent.clientY;
-			btHtmlJsObject.mouseDownLeft(url, X, Y);
-		} 
-	}
+    if (mEvent.button === 2) // Right mouse button
+    {
+        btHtmlJsObject.mouseDownRight(url, lemma);
+    }
+    if (mEvent.button === 0) // Left mouse button
+    {
+        if (!(mEvent.target === undefined))
+        {
+            var X = mEvent.clientX;
+            var Y = mEvent.clientY;
+            btHtmlJsObject.mouseDownLeft(url, X, Y);
+        }
+    }
 }
 
 // Mouse moved event handler
 function mouseMoveHandler (mEvent)
 {
-	currentNode = mEvent.target;
-	var shiftKey = mEvent.shiftKey;
-	var x = mEvent.clientX;
-	var y = mEvent.clientY;
-	var node = mEvent.target;
-	if ( node != undefined && node != prevNode ) 
-	{
-		prevNode = node;
+    currentNode = mEvent.target;
+    var shiftKey = mEvent.shiftKey;
+    var x = mEvent.clientX;
+    var y = mEvent.clientY;
+    var node = mEvent.target;
+    if ( node != undefined && node != prevNode )
+    {
+        prevNode = node;
 
-		if (node.attributes.length > 0) 
-		{
-			attribList = getNodeAttributes(node);
-			btHtmlJsObject.mouseMoveEvent(attribList, x, y, shiftKey);
-		}
-	}
+        if (node.attributes.length > 0)
+        {
+            attribList = getNodeAttributes(node);
+            btHtmlJsObject.mouseMoveEvent(attribList, x, y, shiftKey);
+        }
+    }
 }
 
 // Get attributes of a DOM node and put into a single string
 function getNodeAttributes(node)
 {
-	var attribList = '';
-	if (node.attributes.length > 0) 
-	{
-		for (i = 0; i < node.attributes.length; i++)
-		{
-			attribList = attribList + node.attributes[i].nodeName + '=' + node.attributes[i].nodeValue + '||';
-		}
-	}
-	return attribList;
+    var attribList = '';
+    if (node.attributes.length > 0)
+    {
+        for (i = 0; i < node.attributes.length; i++)
+        {
+            attribList = attribList + node.attributes[i].nodeName + '=' + node.attributes[i].nodeValue + '||';
+        }
+    }
+    return attribList;
 }
 
 // Start a timer event
 function startTimer(time)
 {
-	clearTimeout(timeOutId);
-	timeOutId = setTimeout("timerEvent()",time);
+    clearTimeout(timeOutId);
+    timeOutId = setTimeout("timerEvent()",time);
 }
 
 // Handles a timer event
 function timerEvent()
 {
-	timeOutId = -1;
-	if (currentNode != 0  && currentNode == prevNode)
-	{
-		var attributes = getNodeAttributes(currentNode);
-		btHtmlJsObject.timeOutEvent(attributes);
-	}
+    timeOutId = -1;
+    if (currentNode != 0  && currentNode == prevNode)
+    {
+        var attributes = getNodeAttributes(currentNode);
+        btHtmlJsObject.timeOutEvent(attributes);
+    }
 }
 
 document.getElementsByTagName("body")[0].addEventListener ('mousedown', function (eve) { mouseDownHandler (eve); }, true);

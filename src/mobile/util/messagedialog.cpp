@@ -15,19 +15,19 @@
 
 namespace message {
 
-int showWarning(QWidget * /*parent*/, 
-                const QString & /*title*/, 
-                const QString & /*text*/, 
-                QMessageBox::StandardButtons /*buttons*/, 
+int showWarning(QWidget * /*parent*/,
+                const QString & /*title*/,
+                const QString & /*text*/,
+                QMessageBox::StandardButtons /*buttons*/,
                 QMessageBox::StandardButton /*defaultButton*/) {
     // TODO - implement showWarning
     return 0;
 }
 
-int showQuestion(QWidget * /*parent*/, 
-                const QString & /*title*/, 
-                const QString & /*text*/, 
-                QMessageBox::StandardButtons /*buttons*/, 
+int showQuestion(QWidget * /*parent*/,
+                const QString & /*title*/,
+                const QString & /*text*/,
+                QMessageBox::StandardButtons /*buttons*/,
                 QMessageBox::StandardButton /*defaultButton*/) {
     // TODO - implement showQuestion
     return 0;

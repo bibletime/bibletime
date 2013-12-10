@@ -19,16 +19,16 @@ class QWidget;
 
 namespace message {
 
-int showWarning(QWidget * parent, 
-                const QString & title, 
-                const QString & text, 
-                QMessageBox::StandardButtons buttons = QMessageBox::Ok, 
+int showWarning(QWidget * parent,
+                const QString & title,
+                const QString & text,
+                QMessageBox::StandardButtons buttons = QMessageBox::Ok,
                 QMessageBox::StandardButton defaultButton = QMessageBox::NoButton);
 
-int showQuestion(QWidget * parent, 
-                const QString & title, 
-                const QString & text, 
-                QMessageBox::StandardButtons buttons = QMessageBox::Ok, 
+int showQuestion(QWidget * parent,
+                const QString & title,
+                const QString & text,
+                QMessageBox::StandardButtons buttons = QMessageBox::Ok,
                 QMessageBox::StandardButton defaultButton = QMessageBox::NoButton);
 
 } // namespace message

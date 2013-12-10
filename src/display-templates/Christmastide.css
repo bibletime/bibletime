@@ -2,100 +2,100 @@
  * Theme by tabthorpe@FreeBSD.org *
  */
 body {
-	background-color: #FDF5E6; /* OldeLaceWhite */
-	color: #006400; /* # DarkGreen */
+    background-color: #FDF5E6; /* OldeLaceWhite */
+    color: #006400; /* # DarkGreen */
 }
 
 #content {
-	margin: 5px;
+    margin: 5px;
 }
 
 #content table {
-	margin:0;
-	padding:0;
-	border-spacing:10px;
-	border-collapse: collapse;
-	vertical-align: top;
+    margin:0;
+    padding:0;
+    border-spacing:10px;
+    border-collapse: collapse;
+    vertical-align: top;
 }
 
 #content table th {
-	padding: 0 0 2px 0;
-	text-align: center;
-	font-weight: bold;
-	font-size: 115%;
+    padding: 0 0 2px 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 115%;
 }
 
 a {
-	text-decoration:none;
-	font-weight:normal;
-	color: #4A766E; /* # DarkGreenCopper */
-	padding:2px;
+    text-decoration:none;
+    font-weight:normal;
+    color: #4A766E; /* # DarkGreenCopper */
+    padding:2px;
 }
 
 td.entry, div.entry {
-	padding: 5px;
-	vertical-align: top;
+    padding: 5px;
+    vertical-align: top;
 }
 
 div.entry {
-	padding: 5px;
+    padding: 5px;
 }
 
 td.currententry, div.currententry {
-	padding: 5px;
-	vertical-align: top;
-	font-weight:bold;
+    padding: 5px;
+    vertical-align: top;
+    font-weight:bold;
 }
 
 td.entry + td.entry {
-	margin-left: 5px;
+    margin-left: 5px;
 }
 
 div.currententry {
-	font-weight:bold;
-	padding: 5px;
+    font-weight:bold;
+    padding: 5px;
 }
 
 .footnote {
-	color: #2E8B57; /* #SeaGreen */
+    color: #2E8B57; /* #SeaGreen */
 }
 
 .strongnumber {
-	vertical-align: top;
-	font-size: 60%;
-	color: #20B2AA; /* #LightSeaGreen */
+    vertical-align: top;
+    font-size: 60%;
+    color: #20B2AA; /* #LightSeaGreen */
 }
 
 .morphcode {
-	vertical-align: top;
-	font-size: 60%;
-	color: #20B2AA; /* #LightSeaGreen */
+    vertical-align: top;
+    font-size: 60%;
+    color: #20B2AA; /* #LightSeaGreen */
 }
 
 .lemma {
 }
 
 .sectiontitle {
-	font-weight: bold;
-	font-size: 120%;
+    font-weight: bold;
+    font-size: 120%;
 }
 
 .entry + .sectiontitle {
-	margin-top:35px;
-	padding-top:35px;
+    margin-top:35px;
+    padding-top:35px;
 }
 
 .booktitle {
-	font-weight: bold;
-	font-size: 140%;
+    font-weight: bold;
+    font-size: 140%;
 }
 
 .foreign {
 }
 
 .jesuswords {
-	color: red;
-	font-size: 0.9em;
+    color: red;
+    font-size: 0.9em;
 }
 
 .name > .divine {
@@ -109,25 +109,25 @@ div.currententry {
 }
 
 .sup {
-	vertical-align: super;
+    vertical-align: super;
 }
 
 .sub {
-	vertical-align: sub;
+    vertical-align: sub;
 }
 
 .right {
-	text-align: right;
+    text-align: right;
 }
 
 .center {
-	text-align: center;
+    text-align: center;
 }
 
 .bold {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 .italic {
-	font-style: italic;
+    font-style: italic;
 }

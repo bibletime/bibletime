@@ -11,7 +11,7 @@ Edited the file  /usr/share/apps/ksgmltools2/customization/entities/general.enti
 also known as "-//KDE//ENTITIES DocBook XML General Entity Declarations V1.0//EN"
 
 to read
-<!ENTITY XML		'<trademark class="registered">XML</trademark>'>
+<!ENTITY XML        '<trademark class="registered">XML</trademark>'>
 
 Also did this with all trademark tags that had no class.  Class is required for this tag, see
 

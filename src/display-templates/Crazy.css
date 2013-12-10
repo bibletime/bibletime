@@ -2,36 +2,36 @@
  * Theme by BibleTime - www.bibletime.info *
  */
 body {
-	background-color: white;
-	color: black;
-	margin:0px;
-	padding:0;
-	padding:1em;
+    background-color: white;
+    color: black;
+    margin:0px;
+    padding:0;
+    padding:1em;
 }
 
 /* content wraps all of the displayed elements */
 #content {
-	margin:0px;
-	padding:0px;
-	font-size:12pt;
-	text-align:justify;
+    margin:0px;
+    padding:0px;
+    font-size:12pt;
+    text-align:justify;
 }
 
 /* The table contains the Bible verses, each verse on an own row, each Bible module in an own column */
 #content > table {
-	margin:0;
-	padding:3px;
-	border-spacing:0;
-	vertical-align:top;
-	text-align:justify;
+    margin:0;
+    padding:3px;
+    border-spacing:0;
+    vertical-align:top;
+    text-align:justify;
 }
 /* The heading contains the name of the module and may contain additional information like the display keys */
 #content > table th {
-	text-shadow:black 1px 1px 3px;
-	font-size:1.3em;
-	background-color:#F0F0F0;
-	padding:8px;
-	border-bottom:1px solid black;
+    text-shadow:black 1px 1px 3px;
+    font-size:1.3em;
+    background-color:#F0F0F0;
+    padding:8px;
+    border-bottom:1px solid black;
 }
 
 #content tr:nth-child(odd) { background-color: white; }
@@ -50,14 +50,14 @@ a:hover { }
  If more than one module (Bibles) was chosen, the entry class applies to "td" elements, one column for a verse
  */
 .entry {
-	padding:0.3em;
+    padding:0.3em;
 }
 table .entry:nth-child(odd) {
-	border-left:10px solid #DEE6F6;
+    border-left:10px solid #DEE6F6;
 }
 
 table .entry:nth-child(even) {
-	border-left:10px solid #E6EEFF;
+    border-left:10px solid #E6EEFF;
 }
 
 #printer .entry { text-indent:15px; }
@@ -68,24 +68,24 @@ table .entry:nth-child(even) {
 /* Special formatting for the block element entries */
 div.entry, td.entry { }
 td.entry, td.currententry {
-	vertical-align:top;
+    vertical-align:top;
 }
 
 /* Currententry is chosen when the entry should be highlighted as the current entry chosen by the user
  currententry may apply to span, div, td (just like .entry)
  */
 .currententry {
-	padding:0.3em;
-	line-height:1.6em;
-	background-color:#D3E5FF;
-	/*border: thin solid black;*/
+    padding:0.3em;
+    line-height:1.6em;
+    background-color:#D3E5FF;
+    /*border: thin solid black;*/
 
 }
 
 table .currententry:nth-child(1) {
-	margin-left:0;
-	border-left:10px solid #99B4FF;
-	/*border-left:10px solid #F5FF6A;*/
+    margin-left:0;
+    border-left:10px solid #99B4FF;
+    /*border-left:10px solid #F5FF6A;*/
 }
 /* .currententry[dir=rtl] { */
 /* } */
@@ -94,24 +94,24 @@ span.currententry { }
 
 /* You may use this to format the space between two columns */
 td.entry + td.entry {
-	margin:0;
+    margin:0;
 }
 
 /* Several additional settings for displaying Bible modules*/
 #bible div.entry {
-	border-left:10px solid white;
+    border-left:10px solid white;
 }
 #bible div.entry[dir=rtl] {
-	border-left:none;
-	border-right:10px solid white;
-	text-align:right;
+    border-left:none;
+    border-right:10px solid white;
+    text-align:right;
 }
 #bible div.currententry {
-	border-left:10px solid #99B4FF;
+    border-left:10px solid #99B4FF;
 }
 #bible div.currententry[dir=rtl] {
-	border-left:none;
-	border-right:10px solid #99B4FF;
+    border-left:none;
+    border-right:10px solid #99B4FF;
 }
 #bible div.currententry, #bible td.currententry { }
 #bible td.currententry { }
@@ -170,12 +170,12 @@ so something like .alternative:before { content:"'"attr(alternative); } is possi
 
 /* A title within the text. This is the formatting which applies to a title of a section, as you can find them in Bibles */
 .sectiontitle {
-	 padding:0.3em;
-	 /*text-shadow:gray 0px 0px 3px;*/
-	 font-size:1.3em;
-	 font-weight:bold;
-	 text-transform:uppercase;
-	 padding-bottom:2px;
+     padding:0.3em;
+     /*text-shadow:gray 0px 0px 3px;*/
+     font-size:1.3em;
+     font-weight:bold;
+     text-transform:uppercase;
+     padding-bottom:2px;
 }
 #printer .sectiontitle { }
 /* You may want to format elements before section titles in a special way. */
@@ -258,7 +258,7 @@ so something like .alternative:before { content:"'"attr(alternative); } is possi
 /* Morph segmentation is a special feature for hebrew to markup the word divisions in the text */
 /* .morphSegmentation { border-left:1px solid red; } */
 .morphSegmentation + .morphSegmentation {
-	border-right: 1px red solid;
+    border-right: 1px red solid;
 }
 
 /* The formatting of all things displayed in the information window */
@@ -271,13 +271,13 @@ so something like .alternative:before { content:"'"attr(alternative); } is possi
 #infodisplay .translationinfo h3,
 #infodisplay .crossrefinfo h3,
 #infodisplay .moduleinfo h3 {
-	font-size:12pt;
-	font-weight:bold;
-	text-transform:uppercase;
-	text-align:right;
-	color:gray;
-	border-bottom:1px solid black;
-	padding:4px;
+    font-size:12pt;
+    font-weight:bold;
+    text-transform:uppercase;
+    text-align:right;
+    color:gray;
+    border-bottom:1px solid black;
+    padding:4px;
 }
 
 #infodisplay > p, #infodisplay * > p { /* We only format the first p child in a special way */
@@ -289,10 +289,10 @@ so something like .alternative:before { content:"'"attr(alternative); } is possi
 #infodisplay .entry .entry { /* No smaller font size for nested entries */
 }
 #infodisplay .entryname {
-	font-weight:bold;
+    font-weight:bold;
 }
 #infodisplay .rangeheading {
-	font-weight:bold;
+    font-weight:bold;
 }
 
 #printer .rangeheading {}
