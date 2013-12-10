@@ -382,15 +382,15 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Sw&amp;itch session</source>
-        <translation type="unfinished"></translation>
+        <translation>Si&amp;tzung umschalten</translation>
     </message>
     <message>
         <source>Session already exists</source>
-        <translation type="unfinished"></translation>
+        <translation>Sitzung existiert bereits</translation>
     </message>
     <message>
         <source>Session with the name &quot;%1&quot; already exists. Please provide a different name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Sitzung mit dem Namen &quot;%1&quot; existiert bereits. Bitte geben Sie einen anderen Namen an.</translation>
     </message>
 </context>
 <context>
@@ -540,7 +540,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>(c)1999-2011, The BibleTime Team</source>
-        <translation type="unfinished">(c)1999-2013, das BibleTime Team {1999-2011,?}</translation>
+        <translation>(c)1999-2011, das BibleTime Team</translation>
     </message>
 </context>
 <context>
@@ -716,50 +716,50 @@ This file is distributed under the same license as the Bibetime package.</transl
     <name>BtConfig</name>
     <message>
         <source>Old testament</source>
-        <translation type="unfinished">Altes Testament</translation>
+        <translation>Altes Testament</translation>
     </message>
     <message>
         <source>Moses/Pentateuch/Torah</source>
-        <translation type="unfinished">Mose/Pentateuch/Torah</translation>
+        <translation>Mose/Pentateuch/Torah</translation>
     </message>
     <message>
         <source>History</source>
-        <translation type="unfinished">Geschichte</translation>
+        <translation>Geschichte</translation>
     </message>
     <message>
         <source>Prophets</source>
-        <translation type="unfinished">Propheten</translation>
+        <translation>Propheten</translation>
     </message>
     <message>
         <source>New testament</source>
-        <translation type="unfinished">Neues Testament</translation>
+        <translation>Neues Testament</translation>
     </message>
     <message>
         <source>Gospels</source>
-        <translation type="unfinished">Evangelien</translation>
+        <translation>Evangelien</translation>
     </message>
     <message>
         <source>Letters/Epistles</source>
-        <translation type="unfinished">Briefe/Episteln</translation>
+        <translation>Briefe/Episteln</translation>
     </message>
     <message>
         <source>Paul&apos;s Epistles</source>
-        <translation type="unfinished">Paulus-Briefe</translation>
+        <translation>Paulus-Briefe</translation>
     </message>
     <message>
         <source>Error loading configuration!</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler beim Laden der Konfiguration!</translation>
     </message>
     <message>
         <source>Failed to load BibleTime&apos;s configuration, because it appears that the configuration file corresponds to a newer version of BibleTime. This is likely caused by BibleTime being downgraded. Loading the new configuration file may result in &lt;b&gt;loss of data&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Do you still want to try to load the new configuration file? Press &quot;No&quot; to quit BibleTime immediately.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Konfiguration konnte nicht geladen werden, weil sie von einer neueren Version von BibleTime erstellt wurde. Das Laden der Konfiguration kann daher zu Datenverlust führen. Wollen Sie trotzdem fortfahren? Wählen Sie &quot;Nein&quot; um BibleTime sofort zu beenden.</translation>
     </message>
 </context>
 <context>
     <name>BtConfigCore</name>
     <message>
         <source>Default Session</source>
-        <translation type="unfinished"></translation>
+        <translation>Standard-Sitzung</translation>
     </message>
 </context>
 <context>
@@ -840,15 +840,15 @@ This file is distributed under the same license as the Bibetime package.</transl
     <name>BtFindWidget</name>
     <message>
         <source>Previous</source>
-        <translation type="unfinished"></translation>
+        <translation>Voriger</translation>
     </message>
     <message>
         <source>Next</source>
-        <translation type="unfinished"></translation>
+        <translation>Nächster</translation>
     </message>
     <message>
         <source>Match case</source>
-        <translation type="unfinished"></translation>
+        <translation>Groß-/Kleinbuchstaben berücksichtigen</translation>
     </message>
 </context>
 <context>
@@ -1245,7 +1245,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>The languages which can be used for the biblical book names. Translations are provided by the Sword library.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Sprachen, welche für die Namen der Bibelbücher verwendet werden können. Übersetzungen werden von der Sword-Bibliothek bereitgestellt.</translation>
     </message>
 </context>
 <context>
@@ -1573,114 +1573,114 @@ shortcut</source>
     <name>BtStandardWorksTab</name>
     <message>
         <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
-        <translation type="unfinished">Standard-Werke werden genutzt, wenn kein bestimmtes Werk festgelegt wurde, zum Beispiel wenn ein Verweis auf eine Bibel oder ein Lexikon angeklickt wurde.</translation>
+        <translation>Standard-Werke werden genutzt, wenn kein bestimmtes Werk festgelegt wurde, zum Beispiel wenn ein Verweis auf eine Bibel oder ein Lexikon angeklickt wurde.</translation>
     </message>
     <message>
         <source>Bible:</source>
-        <translation type="unfinished">Bibel:</translation>
+        <translation>Bibel:</translation>
     </message>
     <message>
         <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
-        <translation type="unfinished">Die Standard-Bibel wird genutzt, wenn ein Verweis auf eine Bibel betätigt wird</translation>
+        <translation>Die Standard-Bibel wird genutzt, wenn ein Verweis auf eine Bibel betätigt wird</translation>
     </message>
     <message>
         <source>Commentary:</source>
-        <translation type="unfinished">Kommentar:</translation>
+        <translation>Kommentar:</translation>
     </message>
     <message>
         <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
-        <translation type="unfinished">Der Standard-Kommentar wird genutzt, wenn ein Verweis auf einen Kommentar betätigt wird</translation>
+        <translation>Der Standard-Kommentar wird genutzt, wenn ein Verweis auf einen Kommentar betätigt wird</translation>
     </message>
     <message>
         <source>Lexicon:</source>
-        <translation type="unfinished">Lexikon:</translation>
+        <translation>Lexikon:</translation>
     </message>
     <message>
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
-        <translation type="unfinished">Das Standard-Lexikon wird genutzt, wenn ein Verweis auf ein Lexikon betätigt wird</translation>
+        <translation>Das Standard-Lexikon wird genutzt, wenn ein Verweis auf ein Lexikon betätigt wird</translation>
     </message>
     <message>
         <source>Daily devotional:</source>
-        <translation type="unfinished">Andachtsbuch:</translation>
+        <translation>Andachtsbuch:</translation>
     </message>
     <message>
         <source>The standard devotional will be used to display a short start up devotional</source>
-        <translation type="unfinished">Die Standard-Andacht wird für die Anzeige einer kurzen Start-Andacht genutzt</translation>
+        <translation>Die Standard-Andacht wird für die Anzeige einer kurzen Start-Andacht genutzt</translation>
     </message>
     <message>
         <source>Hebrew Strong&apos;s lexicon:</source>
-        <translation type="unfinished">Hebräisches Strong-Lexikon:</translation>
+        <translation>Hebräisches Strong-Lexikon:</translation>
     </message>
     <message>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
-        <translation type="unfinished">Das Standard-Hebräisch-Lexikon wird genutzt, wenn ein Verweis auf ein Hebräisch-Lexikon betätigt wird</translation>
+        <translation>Das Standard-Hebräisch-Lexikon wird genutzt, wenn ein Verweis auf ein Hebräisch-Lexikon betätigt wird</translation>
     </message>
     <message>
         <source>Greek Strong&apos;s lexicon:</source>
-        <translation type="unfinished">Griechisches Strong-Lexikon:</translation>
+        <translation>Griechisches Strong-Lexikon:</translation>
     </message>
     <message>
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
-        <translation type="unfinished">Das Standard-Griechisch-Lexikon wird genutzt, wenn ein Verweis auf ein Griechisch-Lexikon betätigt wird</translation>
+        <translation>Das Standard-Griechisch-Lexikon wird genutzt, wenn ein Verweis auf ein Griechisch-Lexikon betätigt wird</translation>
     </message>
     <message>
         <source>Hebrew morphological lexicon:</source>
-        <translation type="unfinished">Hebräisches Morphologie-Lexikon:</translation>
+        <translation>Hebräisches Morphologie-Lexikon:</translation>
     </message>
     <message>
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
-        <translation type="unfinished">Das Standard-Morphologie-Lexikon für hebräische Texte wird genutzt, wenn ein Verweis auf eine morphologische Markierung in einem Hebräisch-Text betätigt wird</translation>
+        <translation>Das Standard-Morphologie-Lexikon für hebräische Texte wird genutzt, wenn ein Verweis auf eine morphologische Markierung in einem Hebräisch-Text betätigt wird</translation>
     </message>
     <message>
         <source>Greek morphological lexicon:</source>
-        <translation type="unfinished">Griechisches Morphologie-Lexikon:</translation>
+        <translation>Griechisches Morphologie-Lexikon:</translation>
     </message>
     <message>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
-        <translation type="unfinished">Das Standard-Morphologie-Lexikon für griechische Texte wird genutzt, wenn ein Verweis auf eine morphologische Markierung in einem Griechisch-Text betätigt wird</translation>
+        <translation>Das Standard-Morphologie-Lexikon für griechische Texte wird genutzt, wenn ein Verweis auf eine morphologische Markierung in einem Griechisch-Text betätigt wird</translation>
     </message>
 </context>
 <context>
     <name>BtTextFiltersTab</name>
     <message>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
-        <translation type="unfinished">Filter kontrollieren die Text-Erscheinung. Hier können Sie Standard-Einstellungen für alle Filter spezifizieren. Sie können diese Einstellungen in jedem Anzeige-Fenster übergehen.</translation>
+        <translation>Filter kontrollieren die Text-Erscheinung. Hier können Sie Standard-Einstellungen für alle Filter spezifizieren. Sie können diese Einstellungen in jedem Anzeige-Fenster übergehen.</translation>
     </message>
     <message>
         <source>Insert line break after each verse</source>
-        <translation type="unfinished">Zeilenumbruch nach jedem Vers einfügen</translation>
+        <translation>Zeilenumbruch nach jedem Vers einfügen</translation>
     </message>
     <message>
         <source>Show verse numbers</source>
-        <translation type="unfinished">Versnummern anzeigen</translation>
+        <translation>Versnummern anzeigen</translation>
     </message>
     <message>
         <source>Show section headings</source>
-        <translation type="unfinished">Abschnittsüberschriften anzeigen</translation>
+        <translation>Abschnittsüberschriften anzeigen</translation>
     </message>
     <message>
         <source>Show scripture cross-references</source>
-        <translation type="unfinished">Querverweise auf Bibelstellen anzeigen</translation>
+        <translation>Querverweise auf Bibelstellen anzeigen</translation>
     </message>
     <message>
         <source>Show Greek accents</source>
-        <translation type="unfinished">Griechische Akzente anzeigen</translation>
+        <translation>Griechische Akzente anzeigen</translation>
     </message>
     <message>
         <source>Show Hebrew vowel points</source>
-        <translation type="unfinished">Hebräische Vokalzeichen anzeigen</translation>
+        <translation>Hebräische Vokalzeichen anzeigen</translation>
     </message>
     <message>
         <source>Show Hebrew cantillation marks</source>
-        <translation type="unfinished">Hebräische Kantillationszeichen anzeigen</translation>
+        <translation>Hebräische Kantillationszeichen anzeigen</translation>
     </message>
     <message>
         <source>Show morph segmentation</source>
-        <translation type="unfinished">Morphologische Segmentierung anzeigen</translation>
+        <translation>Morphologische Segmentierung anzeigen</translation>
     </message>
     <message>
         <source>Use textual variants</source>
-        <translation type="unfinished">Textvarianten verwenden</translation>
+        <translation>Textvarianten verwenden</translation>
     </message>
 </context>
 <context>
@@ -2428,15 +2428,15 @@ shortcut</source>
     </message>
     <message>
         <source>Save Text?</source>
-        <translation type="unfinished">Text speichern?</translation>
+        <translation>Text speichern?</translation>
     </message>
     <message>
         <source>Save text before closing?</source>
-        <translation type="unfinished">Den Text vor dem Schließen speichern?</translation>
+        <translation>Den Text vor dem Schließen speichern?</translation>
     </message>
     <message>
         <source>Save changed text?</source>
-        <translation type="unfinished">Geänderten Text speichern?</translation>
+        <translation>Geänderten Text speichern?</translation>
     </message>
 </context>
 <context>
@@ -2471,15 +2471,15 @@ shortcut</source>
     </message>
     <message>
         <source>XHTML files (*.html *.HTML *.HTM *.htm);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>XHTML-Dateien (*.html *.HTML *.HTM *.htm);;Alle Dateien (*)</translation>
     </message>
     <message>
         <source>Search text:</source>
-        <translation type="unfinished"></translation>
+        <translation>Suchtext:</translation>
     </message>
     <message>
         <source>Results by work and book</source>
-        <translation type="unfinished"></translation>
+        <translation>Ergebnisse nach Werk und Buch</translation>
     </message>
 </context>
 <context>
@@ -3869,35 +3869,35 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>CSS base template not found!</source>
-        <translation type="unfinished"></translation>
+        <translation>CSS-Basis-Template nicht gefunden!</translation>
     </message>
     <message>
         <source>Error while writing to file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler beim Schreiben der Datei.</translation>
     </message>
     <message>
         <source>Please check that enough disk space is available.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bitte prüfen Sie, dass genug Speicherplatz verfügbar ist.</translation>
     </message>
     <message>
         <source>The file couldn&apos;t be opened for saving.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei konnte nicht zum Speichern geöffnet werden.</translation>
     </message>
     <message>
         <source>Remote FTP</source>
-        <translation type="unfinished"></translation>
+        <translation>Entferntes FTP</translation>
     </message>
     <message>
         <source>Remote SFTP</source>
-        <translation type="unfinished"></translation>
+        <translation>Entferntes SFTP</translation>
     </message>
     <message>
         <source>Remote HTTP</source>
-        <translation type="unfinished"></translation>
+        <translation>Entferntes HTTP</translation>
     </message>
     <message>
         <source>Remote HTTPS</source>
-        <translation type="unfinished"></translation>
+        <translation>Entferntes HTTPS</translation>
     </message>
 </context>
 <context>
@@ -4623,22 +4623,22 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     <name>btm::InstallProgress</name>
     <message>
         <source>Failed</source>
-        <translation type="unfinished">Fehler</translation>
+        <translation>Fehlgeschlagen</translation>
     </message>
     <message>
         <source>Completed</source>
-        <translation type="unfinished">Abgeschlossen</translation>
+        <translation>Abgeschlossen</translation>
     </message>
     <message>
         <source>Cancelled</source>
-        <translation type="unfinished">Abgebrochen</translation>
+        <translation>Abgebrochen</translation>
     </message>
 </context>
 <context>
     <name>btm::InstallSources</name>
     <message>
         <source>Failed to refresh source %1</source>
-        <translation type="unfinished">Konnte Quelle %1 nicht aktualisieren</translation>
+        <translation>Konnte Quelle %1 nicht aktualisieren</translation>
     </message>
 </context>
 <context>
@@ -4688,50 +4688,50 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     <name>findWidget</name>
     <message>
         <source>The text you want to search for</source>
-        <translation type="unfinished"></translation>
+        <translation>Ihr Suchtext</translation>
     </message>
 </context>
 <context>
     <name>main</name>
     <message>
         <source>New Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Neues Fenster</translation>
     </message>
     <message>
         <source>Bookshelf Manager</source>
-        <translation type="unfinished">Bücherregal-Verwaltung</translation>
+        <translation>Bücherregal-Verwaltung</translation>
     </message>
     <message>
         <source>Single</source>
-        <translation type="unfinished"></translation>
+        <translation>Einzeln</translation>
     </message>
     <message>
         <source>Tabbed</source>
-        <translation type="unfinished"></translation>
+        <translation>Tabs</translation>
     </message>
     <message>
         <source>Auto-tile</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatisch kacheln</translation>
     </message>
     <message>
         <source>Auto-tile horizontally</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatisches Horizontal-Kacheln</translation>
     </message>
     <message>
         <source>Auto-tile vertically</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatisches Vertikal-Kacheln</translation>
     </message>
     <message>
         <source>View Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Ansichtsfenster</translation>
     </message>
     <message>
         <source>Text Font Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Text-Schriftgröße</translation>
     </message>
     <message>
         <source>User Interface Font Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Schriftgröße der Benutzeroberfläche</translation>
     </message>
 </context>
 </TS>
