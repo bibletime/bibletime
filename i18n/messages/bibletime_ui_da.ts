@@ -4655,42 +4655,42 @@ Language name ppk</extracomment>
         <translation>Ikke-indekserede værker</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="44"/>
+        <location filename="../../src/main.cpp" line="47"/>
         <source>Show this help message and exit</source>
         <translation>Vis denne hjælpebesked og luk</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="47"/>
+        <location filename="../../src/main.cpp" line="50"/>
         <source>Output BibleTime version and exit</source>
         <translation>Vis BibleTime&apos;s version og luk</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="50"/>
+        <location filename="../../src/main.cpp" line="53"/>
         <source>Open a clean session</source>
         <translation>Åben en ren session</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="53"/>
+        <location filename="../../src/main.cpp" line="56"/>
         <source>Open the default Bible with the reference &lt;ref&gt;</source>
         <translation>Åben standardbibelen med henvisningen &lt;ref&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="56"/>
+        <location filename="../../src/main.cpp" line="59"/>
         <source>For command-line arguments parsed by the Qt toolkit, see %1.</source>
         <translation>For kommandolinje-argumenter fortolket af Qt toolkittet, se %1.</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="103"/>
+        <location filename="../../src/main.cpp" line="106"/>
         <source>Error: %1 expects an argument.</source>
         <translation>Fejl: %1 forventer et parameter.</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="106"/>
+        <location filename="../../src/main.cpp" line="109"/>
         <source>See --help for details.</source>
         <translation>Se --help for flere detaljer.</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="111"/>
+        <location filename="../../src/main.cpp" line="114"/>
         <source>Error: Invalid command-line argument: %1</source>
         <translation>Fejl: Forkert kommandolinje-parameter: %1</translation>
     </message>
@@ -4713,91 +4713,91 @@ Language name ppk</extracomment>
 <context>
     <name>QPushButton</name>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="58"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="58"/>
         <source>OK</source>
         <comment>Dialog Button</comment>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="59"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="59"/>
         <source>Open</source>
         <comment>Dialog Button</comment>
         <translation>Åben</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="60"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="60"/>
         <source>Save</source>
         <comment>Dialog Button</comment>
         <translation>Gem</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="61"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="61"/>
         <source>Cancel</source>
         <comment>Dialog Button</comment>
         <translation>Anullér</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="62"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="62"/>
         <source>Close</source>
         <comment>Dialog Button</comment>
         <translation>Luk</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="63"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="63"/>
         <source>Discard</source>
         <comment>Dialog Button</comment>
         <translation>Kassér</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="64"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="64"/>
         <source>Apply</source>
         <comment>Dialog Button</comment>
         <translation>Anvend</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="65"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="65"/>
         <source>Reset</source>
         <comment>Dialog Button</comment>
         <translation>Nulstil</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="66"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="66"/>
         <source>Restore defaults</source>
         <comment>Dialog Button</comment>
         <translation>Genopret standard-værdier</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="67"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="67"/>
         <source>Help</source>
         <comment>Dialog Button</comment>
         <translation>Hjælp</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="68"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="68"/>
         <source>Save All</source>
         <comment>Dialog Button</comment>
         <translation>Gem alle</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="69"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="69"/>
         <source>Yes</source>
         <comment>Dialog Button</comment>
         <translation>Ja</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="70"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="70"/>
         <source>Yes to all</source>
         <comment>Dialog Button</comment>
         <translation>Ja til alle</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="71"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="71"/>
         <source>No</source>
         <comment>Dialog Button</comment>
         <translation>Nej</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="72"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="72"/>
         <source>No to all</source>
         <comment>Dialog Button</comment>
         <translation>Nej til alle</translation>

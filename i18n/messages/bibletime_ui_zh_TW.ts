@@ -4590,27 +4590,27 @@ Language name ppk</extracomment>
         <translation>未建立索引書目</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="44"/>
+        <location filename="../../src/main.cpp" line="47"/>
         <source>Show this help message and exit</source>
         <translation>顯示本幫助訊息然後離開</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="47"/>
+        <location filename="../../src/main.cpp" line="50"/>
         <source>Output BibleTime version and exit</source>
         <translation>輸出 BibleTime 版本 然後離開</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="50"/>
+        <location filename="../../src/main.cpp" line="53"/>
         <source>Open a clean session</source>
         <translation>開啟一個全新的工作階段</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="103"/>
+        <location filename="../../src/main.cpp" line="106"/>
         <source>Error: %1 expects an argument.</source>
         <translation>錯誤: %1 需要接受一個參數.</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="106"/>
+        <location filename="../../src/main.cpp" line="109"/>
         <source>See --help for details.</source>
         <translation>參照&apos; --幫助以獲得細節.</translation>
     </message>
@@ -4619,12 +4619,12 @@ Language name ppk</extracomment>
         <translation type="obsolete">開啟一個捷徑的工作階段</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="53"/>
+        <location filename="../../src/main.cpp" line="56"/>
         <source>Open the default Bible with the reference &lt;ref&gt;</source>
         <translation>以參考資料 &lt;ref&gt; 開啟預設聖經</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="56"/>
+        <location filename="../../src/main.cpp" line="59"/>
         <source>For command-line arguments parsed by the Qt toolkit, see %1.</source>
         <translation>要知道 Qt 工具組解析的命令列參數, 請參照 %1.</translation>
     </message>
@@ -4637,7 +4637,7 @@ Language name ppk</extracomment>
         <translation type="obsolete">錯誤: %1 需要接受一個參數. 參照 --幫助 以獲得細節.</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="111"/>
+        <location filename="../../src/main.cpp" line="114"/>
         <source>Error: Invalid command-line argument: %1</source>
         <translation>錯誤: 無效的命令列參數: %1</translation>
     </message>
@@ -4660,92 +4660,92 @@ Language name ppk</extracomment>
 <context>
     <name>QPushButton</name>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="58"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="58"/>
         <source>OK</source>
         <comment>Dialog Button</comment>
         <translation>好</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="59"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="59"/>
         <source>Open</source>
         <comment>Dialog Button</comment>
         <translation>開啟</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="60"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="60"/>
         <source>Save</source>
         <comment>Dialog Button</comment>
         <translation>儲存</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="61"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="61"/>
         <source>Cancel</source>
         <comment>Dialog Button</comment>
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="62"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="62"/>
         <source>Close</source>
         <comment>Dialog Button</comment>
         <translation>關閉</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="63"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="63"/>
         <source>Discard</source>
         <comment>Dialog Button</comment>
         <translation>捨棄</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="64"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="64"/>
         <source>Apply</source>
         <comment>Dialog Button</comment>
         <translation>套用</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="65"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="65"/>
         <source>Reset</source>
         <comment>Dialog Button</comment>
         <translation>重設</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="66"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="66"/>
         <source>Restore defaults</source>
         <comment>Dialog Button</comment>
         <translation>回復預設值</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="67"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="67"/>
         <source>Help</source>
         <comment>Dialog Button</comment>
         <translation>幫助</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="68"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="68"/>
         <source>Save All</source>
         <comment>Dialog Button</comment>
         <translation>全部儲存</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="69"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="69"/>
         <source>Yes</source>
         <comment>Dialog Button</comment>
         <translation>是</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="70"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="70"/>
         <source>Yes to all</source>
         <comment>Dialog Button</comment>
         <translation>全部皆是</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="71"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="71"/>
         <source>No</source>
         <comment>Dialog Button</comment>
         <translation>不
 </translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="72"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="72"/>
         <source>No to all</source>
         <comment>Dialog Button</comment>
         <translation>全部不要</translation>

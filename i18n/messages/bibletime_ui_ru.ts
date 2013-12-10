@@ -4477,42 +4477,42 @@ Language name ppk</extracomment>
         <translation>Не индексированные книги</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="44"/>
+        <location filename="../../src/main.cpp" line="47"/>
         <source>Show this help message and exit</source>
         <translation>Показать это сообщение и выйти</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="47"/>
+        <location filename="../../src/main.cpp" line="50"/>
         <source>Output BibleTime version and exit</source>
         <translation>Вывести версию BibleTime и выйти</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="50"/>
+        <location filename="../../src/main.cpp" line="53"/>
         <source>Open a clean session</source>
         <translation>Открыть чистую сессию</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="53"/>
+        <location filename="../../src/main.cpp" line="56"/>
         <source>Open the default Bible with the reference &lt;ref&gt;</source>
         <translation>Открыть Стандартную Библию с ссылки &lt;ref&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="56"/>
+        <location filename="../../src/main.cpp" line="59"/>
         <source>For command-line arguments parsed by the Qt toolkit, see %1.</source>
         <translation>Для аргументов передаваемых Qt через командную строку, см. %1.</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="103"/>
+        <location filename="../../src/main.cpp" line="106"/>
         <source>Error: %1 expects an argument.</source>
         <translation>Ошибка: %1 нужен аргумент.</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="106"/>
+        <location filename="../../src/main.cpp" line="109"/>
         <source>See --help for details.</source>
         <translation>Смотри --help для дополнительной информации.</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="111"/>
+        <location filename="../../src/main.cpp" line="114"/>
         <source>Error: Invalid command-line argument: %1</source>
         <translation>Ошибка: неправильный аргумент: %1</translation>
     </message>
@@ -4535,91 +4535,91 @@ Language name ppk</extracomment>
 <context>
     <name>QPushButton</name>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="58"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="58"/>
         <source>OK</source>
         <comment>Dialog Button</comment>
         <translation>ОК</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="59"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="59"/>
         <source>Open</source>
         <comment>Dialog Button</comment>
         <translation>Открыть</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="60"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="60"/>
         <source>Save</source>
         <comment>Dialog Button</comment>
         <translation>Сохранить</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="61"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="61"/>
         <source>Cancel</source>
         <comment>Dialog Button</comment>
         <translation>Отмена</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="62"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="62"/>
         <source>Close</source>
         <comment>Dialog Button</comment>
         <translation>Закрыть</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="63"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="63"/>
         <source>Discard</source>
         <comment>Dialog Button</comment>
         <translation>Сбросить</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="64"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="64"/>
         <source>Apply</source>
         <comment>Dialog Button</comment>
         <translation>Применить</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="65"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="65"/>
         <source>Reset</source>
         <comment>Dialog Button</comment>
         <translation>Сбросить</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="66"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="66"/>
         <source>Restore defaults</source>
         <comment>Dialog Button</comment>
         <translation>Восстановить стандартные настройки</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="67"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="67"/>
         <source>Help</source>
         <comment>Dialog Button</comment>
         <translation>Помощь</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="68"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="68"/>
         <source>Save All</source>
         <comment>Dialog Button</comment>
         <translation>Сохранить все</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="69"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="69"/>
         <source>Yes</source>
         <comment>Dialog Button</comment>
         <translation>Да</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="70"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="70"/>
         <source>Yes to all</source>
         <comment>Dialog Button</comment>
         <translation>Да для всех</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="71"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="71"/>
         <source>No</source>
         <comment>Dialog Button</comment>
         <translation>Нет</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="72"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="72"/>
         <source>No to all</source>
         <comment>Dialog Button</comment>
         <translation>Нет для всех</translation>
