@@ -50,18 +50,18 @@ QScopedPointer<QDir> cachedSwordLocalesDir;
 #endif
 
 #ifdef Q_OS_WIN
-static const char* BIBLETIME = "Bibletime";
-static const char* SWORD_DIR = "Sword";
+static const char BIBLETIME[] = "Bibletime";
+static const char SWORD_DIR[] = "Sword";
 #else
 #ifdef Q_OS_MAC
-static const char* BIBLETIME = "Library/Application Support/BibleTime";
-static const char* SWORD_DIR = "Library/Application Support/Sword";
+static const char BIBLETIME[] = "Library/Application Support/BibleTime";
+static const char SWORD_DIR[] = "Library/Application Support/Sword";
 #else
-static const char* BIBLETIME = ".bibletime";
-static const char* SWORD_DIR = ".sword";
+static const char BIBLETIME[] = ".bibletime";
+static const char SWORD_DIR[] = ".sword";
 #endif
 #endif
-static const char* SWORD_PATH = "SWORD_PATH";
+static const char SWORD_PATH[] = "SWORD_PATH";
 } // anonymous namespace
 
 bool initDirectoryCache() {
