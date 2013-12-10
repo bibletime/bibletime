@@ -532,7 +532,7 @@
         <translation>BibleTime je uvolněn pod licencí GPL. Můžete si tento program stáhnout a používat jej pro osobní, privátní, veřejné nebo i komerční účely bez omezení. Pokud však program distribuujete dále, musíte spolu s ním distribuovat i jeho zdrojové kódy.</translation>
     </message>
     <message>
-        <source>(c)1999-2011, The BibleTime Team</source>
+        <source>(c)1999-2013, The BibleTime Team</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

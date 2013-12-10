@@ -435,37 +435,37 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>جلسة جديدة</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="76"/>
+        <location filename="../../src/bibletime.cpp" line="77"/>
         <source>Initializing the SWORD engine...</source>
         <translation>تهيئة محرك سورد...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="84"/>
+        <location filename="../../src/bibletime.cpp" line="85"/>
         <source>Creating BibleTime&apos;s user interface...</source>
         <translation>إنشاء واجهة مستخدم بيبل تايم...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="91"/>
+        <location filename="../../src/bibletime.cpp" line="92"/>
         <source>Initializing menu- and toolbars...</source>
         <translation>تهيئة القائمة وأشرطة الأدوات...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="193"/>
+        <location filename="../../src/bibletime.cpp" line="194"/>
         <source>Unlock Work</source>
         <translation>فتح قفل الكتاب</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="193"/>
+        <location filename="../../src/bibletime.cpp" line="194"/>
         <source>Enter the unlock key for %1.</source>
         <translation>ادخل مفتاح فك القفل %1.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="213"/>
+        <location filename="../../src/bibletime.cpp" line="214"/>
         <source>Warning: Invalid unlock key!</source>
         <translation>تحذير: المفتاح غير صالح!</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="214"/>
+        <location filename="../../src/bibletime.cpp" line="215"/>
         <source>The unlock key you provided did not properly unlock this module. Please try again.</source>
         <translation>المفتاح الذي أدخلته لم يفتح قفل هذا العنصر. يرجى المحاولة مرة أخرى.</translation>
     </message>
@@ -527,8 +527,9 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>نحن نبحث عن مطورين ومترجمين. إذا كنت تود الإنضمام إلى فريقنا، يرجى إرسال رسالة إلكترونية إلى %1.</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="130"/>
         <source>(c)1999-2013, The BibleTime Team</source>
-        <translation type="obsolete">(c)1999-2013, فريق بيبل تايم</translation>
+        <translation type="unfinished">(c)1999-2013, فريق بيبل تايم</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="137"/>
@@ -601,9 +602,8 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>مصمم</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="130"/>
         <source>(c)1999-2011, The BibleTime Team</source>
-        <translation type="unfinished">(c)1999-2013, فريق بيبل تايم {1999-2011,?}</translation>
+        <translation type="obsolete">(c)1999-2013, فريق بيبل تايم {1999-2011,?}</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="139"/>

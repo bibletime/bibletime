@@ -487,37 +487,37 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Nuova Sessione</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="76"/>
+        <location filename="../../src/bibletime.cpp" line="77"/>
         <source>Initializing the SWORD engine...</source>
         <translation>Inizializzazione di SWORD...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="84"/>
+        <location filename="../../src/bibletime.cpp" line="85"/>
         <source>Creating BibleTime&apos;s user interface...</source>
         <translation>Creazione dell&apos;interfaccia di BibleTime...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="91"/>
+        <location filename="../../src/bibletime.cpp" line="92"/>
         <source>Initializing menu- and toolbars...</source>
         <translation>Inizializzazione menu e barre degli strumenti...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="193"/>
+        <location filename="../../src/bibletime.cpp" line="194"/>
         <source>Unlock Work</source>
         <translation>Sblocca Documento</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="193"/>
+        <location filename="../../src/bibletime.cpp" line="194"/>
         <source>Enter the unlock key for %1.</source>
         <translation>Inserisci la chiave di sblocco per %1.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="213"/>
+        <location filename="../../src/bibletime.cpp" line="214"/>
         <source>Warning: Invalid unlock key!</source>
         <translation>Attenzione: Chiave di sblocco non valida!</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="214"/>
+        <location filename="../../src/bibletime.cpp" line="215"/>
         <source>The unlock key you provided did not properly unlock this module. Please try again.</source>
         <translation>La chiave di sblocco fornita non blocca correttamente questo modulo. Per favore riprova.</translation>
     </message>
@@ -583,8 +583,9 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Stiamo cercando sviluppatori e traduttori. Se vuoi far parte del nostro team, invia una mail a %1.</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="130"/>
         <source>(c)1999-2013, The BibleTime Team</source>
-        <translation type="obsolete">(c)1999-2013, The BibleTime Team</translation>
+        <translation type="unfinished">(c)1999-2013, The BibleTime Team</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="137"/>
@@ -657,9 +658,8 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>designer</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="130"/>
         <source>(c)1999-2011, The BibleTime Team</source>
-        <translation type="unfinished">(c)1999-2013, The BibleTime Team {1999-2011,?}</translation>
+        <translation type="obsolete">(c)1999-2013, The BibleTime Team {1999-2011,?}</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="139"/>
