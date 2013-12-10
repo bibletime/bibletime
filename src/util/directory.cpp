@@ -103,7 +103,7 @@ bool initDirectoryCache() {
 #endif
 
     cachedSwordPathDir.reset(new QDir(wDir));
-    char* swordPath = qgetenv(SWORD_PATH);
+    char* swordPath = qgetenv(SWORD_PATH).data();
     if (swordPath != 0) {
         cachedSwordPathDir.reset(new QDir(swordPath));
         // We unset the SWORD_PATH so libsword finds paths correctly
