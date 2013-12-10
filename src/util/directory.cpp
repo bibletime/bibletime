@@ -62,7 +62,6 @@ static const char* SWORD_DIR = ".sword";
 #endif
 #endif
 static const char* SWORD_PATH = "SWORD_PATH";
-static const char* UNSET_SWORD_PATH = "SWORD_PATH=";
 } // anonymous namespace
 
 bool initDirectoryCache() {
@@ -104,11 +103,11 @@ bool initDirectoryCache() {
 #endif
 
     cachedSwordPathDir = QDir();
-    char* swordPath = getenv(SWORD_PATH);
+    char* swordPath = qgetenv(SWORD_PATH);
     if (swordPath != 0) {
         cachedSwordPathDir = QDir(swordPath);
         // We unset the SWORD_PATH so libsword finds paths correctly
-        putenv((char*)UNSET_SWORD_PATH);
+        qputenv(SWORD_PATH, "");
     }
 
     cachedIconDir = wDir; // Icon dir
@@ -170,7 +169,7 @@ bool initDirectoryCache() {
         return false;
     }
 
-    cachedUserHomeDir = QDir(getenv("HOME"));
+    cachedUserHomeDir = QDir(qgetenv("HOME"));
 
     cachedUserBaseDir = cachedUserHomeDir;
     if (!cachedUserBaseDir.cd(BIBLETIME)) {
