@@ -112,31 +112,31 @@ bool initDirectoryCache() {
 
     cachedIconDir.reset(new QDir(wDir)); // Icon dir
     if (!cachedIconDir->cd("share/bibletime/icons") || !cachedIconDir->isReadable()) {
-        qWarning() << "Cannot find icon directory relative to" << QCoreApplication::applicationDirPath();
+        qWarning() << "Cannot find icon directory relative to" << wDir.absolutePath();
         return false;
     }
 
     cachedJavascriptDir.reset(new QDir(wDir));
     if (!cachedJavascriptDir->cd("share/bibletime/javascript") || !cachedJavascriptDir->isReadable()) {
-        qWarning() << "Cannot find javascript directory relative to" << QCoreApplication::applicationDirPath();
+        qWarning() << "Cannot find javascript directory relative to" << wDir.absolutePath();
         return false;
     }
 
     cachedLicenseDir.reset(new QDir(wDir));
     if (!cachedLicenseDir->cd("share/bibletime/license") || !cachedLicenseDir->isReadable()) {
-        qWarning() << "Cannot find license directory relative to" << QCoreApplication::applicationDirPath();
+        qWarning() << "Cannot find license directory relative to" << wDir.absolutePath();
         return false;
     }
 
     cachedPicsDir.reset(new QDir(wDir));
     if (!cachedPicsDir->cd("share/bibletime/pics") || !cachedPicsDir->isReadable()) {
-        qWarning() << "Cannot find icon directory relative to" << QCoreApplication::applicationDirPath();
+        qWarning() << "Cannot find pics directory relative to" << wDir.absolutePath();
         return false;
     }
 
     cachedLocaleDir.reset(new QDir(wDir));
     if (!cachedLocaleDir->cd("share/bibletime/locale")) {
-        qWarning() << "Cannot find locale directory relative to" << QCoreApplication::applicationDirPath();
+        qWarning() << "Cannot find locale directory relative to" << wDir.absolutePath();
         return false;
     }
 
@@ -147,7 +147,7 @@ bool initDirectoryCache() {
     if (!cachedHandbookDir->cd("share/bibletime/docs/handbook/" + localeName)) {
         if (!cachedHandbookDir->cd("share/bibletime/docs/handbook/" + langCode)) {
             if (!cachedHandbookDir->cd("share/bibletime/docs/handbook/en/")) {
-                qWarning() << "Cannot find handbook directory relative to" << QCoreApplication::applicationDirPath();
+                qWarning() << "Cannot find handbook directory relative to" << wDir.absolutePath();
                 return false;
             }
         }
@@ -157,7 +157,7 @@ bool initDirectoryCache() {
     if (!cachedHowtoDir->cd("share/bibletime/docs/howto/" + localeName)) {
         if (!cachedHowtoDir->cd("share/bibletime/docs/howto/" + langCode)) {
             if (!cachedHowtoDir->cd("share/bibletime/docs/howto/en/")) {
-                qWarning() << "Cannot find handbook directory relative to" << QCoreApplication::applicationDirPath();
+                qWarning() << "Cannot find handbook directory relative to" << wDir.absolutePath();
                 return false;
             }
         }
@@ -165,7 +165,7 @@ bool initDirectoryCache() {
 
     cachedDisplayTemplatesDir.reset(new QDir(wDir)); //display templates dir
     if (!cachedDisplayTemplatesDir->cd("share/bibletime/display-templates/")) {
-        qWarning() << "Cannot find display template directory relative to" << QCoreApplication::applicationDirPath();
+        qWarning() << "Cannot find display template directory relative to" << wDir.absolutePath();
         return false;
     }
 
@@ -174,7 +174,7 @@ bool initDirectoryCache() {
     cachedUserBaseDir.reset(new QDir(*cachedUserHomeDir));
     if (!cachedUserBaseDir->cd(BIBLETIME)) {
         if (!cachedUserBaseDir->mkpath(BIBLETIME) || !cachedUserBaseDir->cd(BIBLETIME)) {
-            qWarning() << "Could not create user setting directory.";
+            qWarning() << "Could not create user settings directory relative to" << cachedUserHomeDir->absolutePath();
             return false;
         }
     }
