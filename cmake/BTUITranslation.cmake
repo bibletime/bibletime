@@ -36,7 +36,7 @@ FOREACH(TSFILE_FULLPATH ${TS_FILES})
         "${QMFILE}"
     )
     INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}/${QMFILE}"
-        DESTINATION "${BT_SHARE_PATH}bibletime/locale/"
+        DESTINATION "${BT_SHARE_PATH}/bibletime/locale/"
     )
 ENDFOREACH(TSFILE_FULLPATH)
 
