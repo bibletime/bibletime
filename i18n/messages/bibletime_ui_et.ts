@@ -157,12 +157,12 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_slots.cpp" line="543"/>
         <source>Session already exists</source>
-        <translation type="unfinished"></translation>
+        <translation>Sessioon juba eksisteerib</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_slots.cpp" line="544"/>
         <source>Session with the name &quot;%1&quot; already exists. Please provide a different name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sessioon nimega &quot;%1&quot; juba eksisteerib. Palun sisestage erinev nimi.</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="107"/>
@@ -347,7 +347,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/bibletime_init.cpp" line="749"/>
         <source>Sw&amp;itch session</source>
-        <translation type="unfinished"></translation>
+        <translation>Vahe&amp;ta sessiooni</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="777"/>
@@ -527,8 +527,9 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Me otsime arendajaid ja tõlkijaid. Kui Te soovite meie meeskonnaga ühineda, palun saatke e-mail aadressile %1.</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="130"/>
         <source>(c)1999-2013, The BibleTime Team</source>
-        <translation type="obsolete">(c)1999-2013, The BibleTime&apos;i meeskond</translation>
+        <translation>(c)1999-2013, The BibleTime&apos;i meeskond</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="137"/>
@@ -601,9 +602,8 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>disainer</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="130"/>
         <source>(c)1999-2011, The BibleTime Team</source>
-        <translation type="unfinished">(c)1999-2013, The BibleTime&apos;i meeskond {1999-2011,?}</translation>
+        <translation type="obsolete">(c)1999-2013, The BibleTime&apos;i meeskond {1999-2011,?}</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="139"/>
@@ -877,52 +877,52 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="46"/>
         <source>Old testament</source>
-        <translation type="unfinished">Vana Testament</translation>
+        <translation>Vana Testament</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="47"/>
         <source>Moses/Pentateuch/Torah</source>
-        <translation type="unfinished">Viis Moosese raamatut/Pentateuh/Toora</translation>
+        <translation>Viis Moosese raamatut/Pentateuh/Toora</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="48"/>
         <source>History</source>
-        <translation type="unfinished">Ajalugu</translation>
+        <translation>Ajalugu</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="49"/>
         <source>Prophets</source>
-        <translation type="unfinished">Prohvetid</translation>
+        <translation>Prohvetid</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="50"/>
         <source>New testament</source>
-        <translation type="unfinished">Uus Testament</translation>
+        <translation>Uus Testament</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="51"/>
         <source>Gospels</source>
-        <translation type="unfinished">Evangeeliumid</translation>
+        <translation>Evangeeliumid</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="52"/>
         <source>Letters/Epistles</source>
-        <translation type="unfinished">Kirjad/epistlid</translation>
+        <translation>Kirjad/epistlid</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="53"/>
         <source>Paul&apos;s Epistles</source>
-        <translation type="unfinished">Pauluse kirjad</translation>
+        <translation>Pauluse kirjad</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="86"/>
         <source>Error loading configuration!</source>
-        <translation type="unfinished"></translation>
+        <translation>Viga seadistuse laadimisel!</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/btconfig.cpp" line="87"/>
         <source>Failed to load BibleTime&apos;s configuration, because it appears that the configuration file corresponds to a newer version of BibleTime. This is likely caused by BibleTime being downgraded. Loading the new configuration file may result in &lt;b&gt;loss of data&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Do you still want to try to load the new configuration file? Press &quot;No&quot; to quit BibleTime immediately.</source>
-        <translation type="unfinished"></translation>
+        <translation>BibleTime seadistusi ei õnnestunud laadida, sest näib nagu oleks konfiguratsioonifaili oleks salvestatud uuema versiooni BibleTime programmiga. Selle põhjuseks on tõenäoliselt vanemale BibleTime versiooni paigaldusele tagasiminek. Uue konfiguratsioonifaili laadimine võib põhjustada &lt;b&gt;andmekadu&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Kas soovite siiski üritada laadida uut konfiguratsioonifaili? Vajutage &quot;Ei&quot; väljumaks BibleTime-st.</translation>
     </message>
 </context>
 <context>
@@ -930,7 +930,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/backend/config/btconfigcore.cpp" line="61"/>
         <source>Default Session</source>
-        <translation type="unfinished"></translation>
+        <translation>Vaikesessioon</translation>
     </message>
 </context>
 <context>
@@ -1029,17 +1029,17 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/display/btfindwidget.cpp" line="28"/>
         <source>Previous</source>
-        <translation type="unfinished"></translation>
+        <translation>Eelmine</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/btfindwidget.cpp" line="29"/>
         <source>Next</source>
-        <translation type="unfinished"></translation>
+        <translation>Järgmine</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/btfindwidget.cpp" line="74"/>
         <source>Match case</source>
-        <translation type="unfinished"></translation>
+        <translation>Tõstutundlik</translation>
     </message>
 </context>
 <context>
@@ -1513,7 +1513,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/settingsdialogs/btlanguagesettings.cpp" line="136"/>
         <source>The languages which can be used for the biblical book names. Translations are provided by the Sword library.</source>
-        <translation type="unfinished"></translation>
+        <translation>Keeled, mida saab kasutada Piibli raamatute nimede jaoks. Tõlkeid pakub Sword teek.</translation>
     </message>
     <message>
         <source>The languages which can be used for the biblical booknames</source>
@@ -1902,87 +1902,87 @@ kiirklahv</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="169"/>
         <source>Standard works are used when no particular work is specified, for example when a hyperlink into a Bible or lexicon was clicked.</source>
-        <translation type="unfinished">Eelistatud teoseid kasutatake kui ei ole määratud konkreetset teost, näiteks kui kasutatakse hüperlinki, mis viitab Piiblisse või mõnda leksikoni.</translation>
+        <translation>Eelistatud teoseid kasutatake kui ei ole määratud konkreetset teost, näiteks kui kasutatakse hüperlinki, mis viitab Piiblisse või mõnda leksikoni.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="172"/>
         <source>Bible:</source>
-        <translation type="unfinished">Piibel:</translation>
+        <translation>Piibel:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="174"/>
         <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
-        <translation type="unfinished">Eelistatud Piiblit kasutatakse siis kui vajutatakse mõnele Piibli kirjakohale viitavale hüperlingile</translation>
+        <translation>Eelistatud Piiblit kasutatakse siis kui vajutatakse mõnele Piibli kirjakohale viitavale hüperlingile</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="176"/>
         <source>Commentary:</source>
-        <translation type="unfinished">Kommentaarid:</translation>
+        <translation>Kommentaarid:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="178"/>
         <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
-        <translation type="unfinished">Eelistatud kommentaare kasutatakse siis kui vajutatakse mõnele kommentaaridele viitavale hüperlingile</translation>
+        <translation>Eelistatud kommentaare kasutatakse siis kui vajutatakse mõnele kommentaaridele viitavale hüperlingile</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="180"/>
         <source>Lexicon:</source>
-        <translation type="unfinished">Leksikon:</translation>
+        <translation>Leksikon:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="182"/>
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
-        <translation type="unfinished">Eelistatud leksikoni kasutatakse siis kui vajutatakse mõnele leksikoni viitavale hüperlingile</translation>
+        <translation>Eelistatud leksikoni kasutatakse siis kui vajutatakse mõnele leksikoni viitavale hüperlingile</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="184"/>
         <source>Daily devotional:</source>
-        <translation type="unfinished">Igapäevane harduskirjandus:</translation>
+        <translation>Igapäevane harduskirjandus:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="186"/>
         <source>The standard devotional will be used to display a short start up devotional</source>
-        <translation type="unfinished">Eelistatud igapäevast harduskirjanduse teost kasutatakse sellest lühikeste lõikude kuvamiseks BibleTime käivitamisel</translation>
+        <translation>Eelistatud igapäevast harduskirjanduse teost kasutatakse sellest lühikeste lõikude kuvamiseks BibleTime käivitamisel</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="188"/>
         <source>Hebrew Strong&apos;s lexicon:</source>
-        <translation type="unfinished">Heebreakeelne Strongi leksikon:</translation>
+        <translation>Heebreakeelne Strongi leksikon:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="190"/>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
-        <translation type="unfinished">Eelistatud heebreakeelset leksikoni kasutatakse, kui klikitakse hüperlingil, mis viitab heebreakeelsesse leksikoni</translation>
+        <translation>Eelistatud heebreakeelset leksikoni kasutatakse, kui klikitakse hüperlingil, mis viitab heebreakeelsesse leksikoni</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="192"/>
         <source>Greek Strong&apos;s lexicon:</source>
-        <translation type="unfinished">Kreekakeelne Strongi leksikon:</translation>
+        <translation>Kreekakeelne Strongi leksikon:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="194"/>
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
-        <translation type="unfinished">Eelistatud kreekakeelset leksikoni kasutatakse, kui klikitakse hüperlingil, mis viitab kreekakeelsesse leksikoni</translation>
+        <translation>Eelistatud kreekakeelset leksikoni kasutatakse, kui klikitakse hüperlingil, mis viitab kreekakeelsesse leksikoni</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="196"/>
         <source>Hebrew morphological lexicon:</source>
-        <translation type="unfinished">Heebreakeelne morfoloogiline leksikon:</translation>
+        <translation>Heebreakeelne morfoloogiline leksikon:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="198"/>
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
-        <translation type="unfinished">Eelistatud heebreakeelset morfoloogilist leksikoni kasutatakse, kui klikitakse morfoloogilise märgendi hüperlingil heebreakeelses tekstis</translation>
+        <translation>Eelistatud heebreakeelset morfoloogilist leksikoni kasutatakse, kui klikitakse morfoloogilise märgendi hüperlingil heebreakeelses tekstis</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="200"/>
         <source>Greek morphological lexicon:</source>
-        <translation type="unfinished">Kreekakeelne morfoloogiline leksikon:</translation>
+        <translation>Kreekakeelne morfoloogiline leksikon:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btstandardworkstab.cpp" line="202"/>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
-        <translation type="unfinished">Eelistatud kreekakeelset morfoloogilist leksikoni kasutatakse, kui klikitakse morfoloogilise märgendi hüperlingil kreekakeelses tekstis</translation>
+        <translation>Eelistatud kreekakeelset morfoloogilist leksikoni kasutatakse, kui klikitakse morfoloogilise märgendi hüperlingil kreekakeelses tekstis</translation>
     </message>
 </context>
 <context>
@@ -1990,52 +1990,52 @@ kiirklahv</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="74"/>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
-        <translation type="unfinished">Filtrid reguleerivad teksti välimust. Siin võite Te seadistada vaikimisi sätteid kõikidele filtritele. Te saate filtrite sätteid ka igas aknas eraldi muuta.</translation>
+        <translation>Filtrid reguleerivad teksti välimust. Siin võite Te seadistada vaikimisi sätteid kõikidele filtritele. Te saate filtrite sätteid ka igas aknas eraldi muuta.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="78"/>
         <source>Insert line break after each verse</source>
-        <translation type="unfinished">Alusta iga salmi uuelt realt</translation>
+        <translation>Alusta iga salmi uuelt realt</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="79"/>
         <source>Show verse numbers</source>
-        <translation type="unfinished">Kuva salmide numbreid</translation>
+        <translation>Kuva salmide numbreid</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="80"/>
         <source>Show section headings</source>
-        <translation type="unfinished">Kuva tekstiosade pealkirju</translation>
+        <translation>Kuva tekstiosade pealkirju</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="81"/>
         <source>Show scripture cross-references</source>
-        <translation type="unfinished">Kuva pühakirjade ristviiteid</translation>
+        <translation>Kuva pühakirjade ristviiteid</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="82"/>
         <source>Show Greek accents</source>
-        <translation type="unfinished">Kuva kreeka keele rõhumärke</translation>
+        <translation>Kuva kreeka keele rõhumärke</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="83"/>
         <source>Show Hebrew vowel points</source>
-        <translation type="unfinished">Kuva heebrea keele vokaalimärke</translation>
+        <translation>Kuva heebrea keele vokaalimärke</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="84"/>
         <source>Show Hebrew cantillation marks</source>
-        <translation type="unfinished">Kuva heebrea keele laulumärke</translation>
+        <translation>Kuva heebrea keele laulumärke</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="85"/>
         <source>Show morph segmentation</source>
-        <translation type="unfinished">Kuva morfoloogilist segmentatsiooni</translation>
+        <translation>Kuva morfoloogilist segmentatsiooni</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/bttextfilterstab.cpp" line="86"/>
         <source>Use textual variants</source>
-        <translation type="unfinished">Kasuta tekstivariante</translation>
+        <translation>Kasuta tekstivariante</translation>
     </message>
 </context>
 <context>
@@ -2950,17 +2950,17 @@ kiirklahv</translation>
         <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="280"/>
         <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="310"/>
         <source>Save Text?</source>
-        <translation type="unfinished">Salvestada tekst?</translation>
+        <translation>Salvestada tekst?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="280"/>
         <source>Save text before closing?</source>
-        <translation type="unfinished">Salvestada tekst enne sulgemist?</translation>
+        <translation>Salvestada tekst enne sulgemist?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="310"/>
         <source>Save changed text?</source>
-        <translation type="unfinished">Salvestada muudetud tekst?</translation>
+        <translation>Salvestada muudetud tekst?</translation>
     </message>
 </context>
 <context>
@@ -2986,17 +2986,17 @@ kiirklahv</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="231"/>
         <source>XHTML files (*.html *.HTML *.HTM *.htm);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>XHTML failid (*.html;*.HTML;*.HTM;*.htm);;Kõik failid (*)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="256"/>
         <source>Search text:</source>
-        <translation type="unfinished"></translation>
+        <translation>Otsingutekst:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="260"/>
         <source>Results by work and book</source>
-        <translation type="unfinished"></translation>
+        <translation>Tulemused teose ja raamatu järgi</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="262"/>
@@ -4354,22 +4354,22 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="31"/>
         <source>Remote FTP</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP server</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="32"/>
         <source>Remote SFTP</source>
-        <translation type="unfinished"></translation>
+        <translation>SFTP server</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="33"/>
         <source>Remote HTTP</source>
-        <translation type="unfinished"></translation>
+        <translation>HTTP server</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="34"/>
         <source>Remote HTTPS</source>
-        <translation type="unfinished"></translation>
+        <translation>HTTPS server</translation>
     </message>
     <message>
         <source>Remote</source>
@@ -4508,17 +4508,17 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/util/tool.cpp" line="71"/>
         <source>Error while writing to file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Viga faili kirjutamisel.</translation>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="72"/>
         <source>Please check that enough disk space is available.</source>
-        <translation type="unfinished"></translation>
+        <translation>Palun kontrollige, kas on saadaval piisavalt kettaruumi.</translation>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="77"/>
         <source>The file couldn&apos;t be opened for saving.</source>
-        <translation type="unfinished"></translation>
+        <translation>Faili ei õnnestunud salvestamiseks avada.</translation>
     </message>
     <message>
         <location filename="../../src/util/tool.cpp" line="213"/>
@@ -4738,7 +4738,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="57"/>
         <source>CSS base template not found!</source>
-        <translation type="unfinished"></translation>
+        <translation>CSS baasmalli ei leitud!</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/cdisplaytemplatemgr.cpp" line="74"/>
@@ -5617,17 +5617,17 @@ See võib võtta kaua aega. Kas jätkata indekseerimisega?</translation>
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="81"/>
         <source>Failed</source>
-        <translation type="unfinished">Ebaõnnestus</translation>
+        <translation>Ebaõnnestus</translation>
     </message>
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="84"/>
         <source>Completed</source>
-        <translation type="unfinished">Valmis</translation>
+        <translation>Valmis</translation>
     </message>
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="90"/>
         <source>Cancelled</source>
-        <translation type="unfinished">Katkestatud</translation>
+        <translation>Katkestatud</translation>
     </message>
 </context>
 <context>
@@ -5635,7 +5635,7 @@ See võib võtta kaua aega. Kas jätkata indekseerimisega?</translation>
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installsources.cpp" line="63"/>
         <source>Failed to refresh source %1</source>
-        <translation type="unfinished">Allika %1 värskendamine ebaõnnestus</translation>
+        <translation>Allika %1 värskendamine ebaõnnestus</translation>
     </message>
 </context>
 <context>
@@ -5687,7 +5687,7 @@ See võib võtta kaua aega. Kas jätkata indekseerimisega?</translation>
         <location filename="../../src/frontend/display/btfindwidget.cpp" line="59"/>
         <location filename="../../src/frontend/display/btfindwidget.cpp" line="62"/>
         <source>The text you want to search for</source>
-        <translation type="unfinished">Tekst, mida soovite otsida</translation>
+        <translation>Tekst, mida soovite otsida</translation>
     </message>
 </context>
 <context>
@@ -5695,52 +5695,52 @@ See võib võtta kaua aega. Kas jätkata indekseerimisega?</translation>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="135"/>
         <source>New Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Uus aken</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="136"/>
         <source>View Window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kuva aken</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="137"/>
         <source>Text Font Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Teksti kirja suurus</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="138"/>
         <source>User Interface Font Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Kasutajaliidese kirja suurus</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="141"/>
         <source>Bookshelf Manager</source>
-        <translation type="unfinished">Raamaturiiuli haldamine</translation>
+        <translation>Raamaturiiuli haldamine</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="187"/>
         <source>Single</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Üksik</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="188"/>
         <source>Tabbed</source>
-        <translation type="unfinished"></translation>
+        <translation>Sakkidesse</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="189"/>
         <source>Auto-tile</source>
-        <translation type="unfinished"></translation>
+        <translation>Automaatne asutus ruudustikku</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="190"/>
         <source>Auto-tile horizontally</source>
-        <translation type="unfinished"></translation>
+        <translation>Automaatne horisontaalasetus</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="191"/>
         <source>Auto-tile vertically</source>
-        <translation type="unfinished"></translation>
+        <translation>Automaatne vertikaalasetus</translation>
     </message>
 </context>
 </TS>
