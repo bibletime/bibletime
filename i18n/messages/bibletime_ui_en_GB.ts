@@ -513,10 +513,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>We are looking for developers and translators. If you would like to join our team, please send an email to %1.</translation>
     </message>
     <message>
-        <source>(c)1999-2013, The BibleTime Team</source>
-        <translation type="obsolete">(c)1999-2013, The BibleTime Team</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="140"/>
         <source>&amp;Contributors</source>
         <translation>&amp;Contributors</translation>
@@ -3767,10 +3763,6 @@ Language name ppk</extracomment>
         <location filename="../../src/backend/managers/cswordbackend.cpp" line="359"/>
         <source>Morph segmentation</source>
         <translation>Morph segmentation</translation>
-    </message>
-    <message>
-        <source>Export</source>
-        <translation type="obsolete">Export</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="30"/>
