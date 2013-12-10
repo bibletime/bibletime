@@ -519,10 +519,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>We are looking for developers and translators. If you would like to join our team, please send an email to %1.</translation>
     </message>
     <message>
-        <source>(c)1999-2013, The BibleTime Team</source>
-        <translation type="obsolete">(c)1999-2013, The BibleTime Team</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="137"/>
         <source>&amp;Contributors</source>
         <translation>&amp;Contributors</translation>
@@ -595,7 +591,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="130"/>
         <source>(c)1999-2011, The BibleTime Team</source>
-        <translation type="unfinished">(c)1999-2013, The BibleTime Team {1999-2011,?}</translation>
+        <translation>(c)1999-2011, The BibleTime Team</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="139"/>
@@ -3997,10 +3993,6 @@ Language name ppk</extracomment>
         <translation>Morph segmentation</translation>
     </message>
     <message>
-        <source>Export</source>
-        <translation type="obsolete">Export</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="30"/>
         <source>Local</source>
         <translation>Local</translation>
@@ -4008,26 +4000,22 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="31"/>
         <source>Remote FTP</source>
-        <translation type="unfinished"></translation>
+        <translation>Remote FTP</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="32"/>
         <source>Remote SFTP</source>
-        <translation type="unfinished"></translation>
+        <translation>Remote SFTP</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="33"/>
         <source>Remote HTTP</source>
-        <translation type="unfinished"></translation>
+        <translation>Remote HTTP</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="34"/>
         <source>Remote HTTPS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Remote</source>
-        <translation type="obsolete">Remote</translation>
+        <translation>Remote HTTPS</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cexportmanager.cpp" line="434"/>
@@ -5040,17 +5028,17 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="81"/>
         <source>Failed</source>
-        <translation type="unfinished">Failed</translation>
+        <translation>Failed</translation>
     </message>
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="84"/>
         <source>Completed</source>
-        <translation type="unfinished">Completed</translation>
+        <translation>Completed</translation>
     </message>
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installprogress.cpp" line="90"/>
         <source>Cancelled</source>
-        <translation type="unfinished">Cancelled</translation>
+        <translation>Cancelled</translation>
     </message>
 </context>
 <context>
@@ -5058,7 +5046,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/mobile/bookshelfmanager/installsources.cpp" line="63"/>
         <source>Failed to refresh source %1</source>
-        <translation type="unfinished">Failed to refresh source %1</translation>
+        <translation>Failed to refresh source %1</translation>
     </message>
 </context>
 <context>
@@ -5075,52 +5063,52 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="135"/>
         <source>New Window</source>
-        <translation type="unfinished"></translation>
+        <translation>New Window</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="136"/>
         <source>View Window</source>
-        <translation type="unfinished"></translation>
+        <translation>View Window</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="137"/>
         <source>Text Font Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Text Font Size</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="138"/>
         <source>User Interface Font Size</source>
-        <translation type="unfinished"></translation>
+        <translation>User Interface Font Size</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="141"/>
         <source>Bookshelf Manager</source>
-        <translation type="unfinished">Bookshelf Manager</translation>
+        <translation>Bookshelf Manager</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="187"/>
         <source>Single</source>
-        <translation type="unfinished"></translation>
+        <translation>Single</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="188"/>
         <source>Tabbed</source>
-        <translation type="unfinished"></translation>
+        <translation>Tabbed</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="189"/>
         <source>Auto-tile</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto-tile</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="190"/>
         <source>Auto-tile horizontally</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto-tile horizontally</translation>
     </message>
     <message>
         <location filename="../../src/mobile/qml/main.qml" line="191"/>
         <source>Auto-tile vertically</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto-tile vertically</translation>
     </message>
 </context>
 </TS>
