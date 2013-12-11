@@ -6,7 +6,7 @@
     <message>
         <source></source>
         <translatorcomment>Bibletime User Interface translation
-Copyright (C) 2012 The Bibletime Team, http://www.bibletime.info
+Copyright (C) 1999-2013 The Bibletime Team, http://www.bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
         <translation>بيبل تايم</translation>
     </message>
