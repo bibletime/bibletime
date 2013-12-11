@@ -49,17 +49,17 @@
     <para>O Manual do &bibletime; é distribuído como parte do programa &bibletime;.</para>
   </legalnotice>
 
-  <date>Janeiro 2012</date>
+  <date>December 2013</date>
 
-  <releaseinfo>2.9.2</releaseinfo>
+  <releaseinfo>2.10.0</releaseinfo>
 
   <abstract>
-    <para>&bibletime; é um programa de estudo da Bíblia completamente livre. A
-interface com o usuário é construída com o framework &qt;, que pode ser
-executado em vários sistemas operacionais, incluindo Linux, Windows, FreeBSD
-e Mac OS X. O software utiliza o &sword; biblioteca de programação que
-trabalha com mais de 200 textos bíblicos livres, comentários, dicionários e
-livros providos pela &cbs;.</para>
+    <para>&bibletime; is a completely free Bible study program. The program's user
+interface is built with &qt; framework, which makes it run on several
+operating systems including Linux, Windows, FreeBSD and Mac OS X. The
+software uses the &sword; programming library to work with over 200 free
+Bible texts, commentaries, dictionaries and books in over 50 languages
+provided by the &cbs;.</para>
   </abstract>
 
   <keywordset>

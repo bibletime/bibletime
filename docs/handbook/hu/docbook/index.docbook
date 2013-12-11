@@ -49,17 +49,17 @@
     <para>A &bibletime; kézikönyv a &bibletime; programmal együtt terjesztve.</para>
   </legalnotice>
 
-  <date>January 2012</date>
+  <date>December 2013</date>
 
-  <releaseinfo>2.9.2</releaseinfo>
+  <releaseinfo>2.10.0</releaseinfo>
 
   <abstract>
-    <para>A &bibletime; egy teljesen ingyenes és szabad Biblia tanulmányozó program. A
-program kezelőfelülete a &qt; keretrendszerre épült, ami lehetővé teszi
-többféle operációs rendszeren való futtatását, mint Linux, Windows, FreeBSD
-és Mac OS X rendszeren. A szoftver a &sword; programozási könyvtárat
-használja, több, mint 200 ingyenes Bibliaváltozattal, kommentárokkal,
-szótárakkal és könyvekkel, amit a &cbs; biztosít.</para>
+    <para>&bibletime; is a completely free Bible study program. The program's user
+interface is built with &qt; framework, which makes it run on several
+operating systems including Linux, Windows, FreeBSD and Mac OS X. The
+software uses the &sword; programming library to work with over 200 free
+Bible texts, commentaries, dictionaries and books in over 50 languages
+provided by the &cbs;.</para>
   </abstract>
 
   <keywordset>

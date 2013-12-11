@@ -50,17 +50,17 @@
 ausgeliefert.</para>
   </legalnotice>
 
-  <date>Januar 2012</date>
+  <date>December 2013</date>
 
-  <releaseinfo>2.9.2</releaseinfo>
+  <releaseinfo>2.10.0</releaseinfo>
 
   <abstract>
-    <para>&bibletime; ist ein absolut freies Bibelarbeits-Programm. Seine
-Benutzeroberfläche ist mit dem &qt;-Rahmenwerk erstellt, das es auf mehreren
-Betriebssystemen lauffähig macht, darunter Linux, Windows, FreeBSD und Mac
-OS X. Die Software nutzt die &sword;-Programmierbibliothek, um mit über 200
-freien Bibeltexten, Kommentaren, Wörterbüchern und Büchern zu laufen, die
-von der &cbs; zur Verfügung gestellt werden.</para>
+    <para>&bibletime; is a completely free Bible study program. The program's user
+interface is built with &qt; framework, which makes it run on several
+operating systems including Linux, Windows, FreeBSD and Mac OS X. The
+software uses the &sword; programming library to work with over 200 free
+Bible texts, commentaries, dictionaries and books in over 50 languages
+provided by the &cbs;.</para>
   </abstract>
 
   <keywordset>

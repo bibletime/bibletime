@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
-"POT-Creation-Date: 2012-01-02 03:09-0500\n"
+"POT-Creation-Date: 2013-12-10 21:20-0500\n"
 "PO-Revision-Date: 2011-12-04 23:37-0500\n"
 "Last-Translator: Thomas Abthorpe <tabthorpe@FreeBSD.org>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -1018,9 +1018,9 @@ msgid ""
 "read mode. You will not be able to edit it in this mode. Should you wish to "
 "write annotations into the personal commentary, you have to open it with the "
 "<mousebutton>right</mousebutton> mouse button and then select <guimenu>Edit "
-"this work</guimenu> and then either <guimenuitem>Plain text</guimenuitem>"
-"(source code editor) or <guimenuitem>HTML</guimenuitem>(basic gui wysiwyg "
-"editor)."
+"this work</guimenu> and then either <guimenuitem>Plain text</"
+"guimenuitem>(source code editor) or <guimenuitem>HTML</guimenuitem>(basic "
+"gui wysiwyg editor)."
 msgstr ""
 "Se apri i commenti personali cliccando sul suo simbolo nella Libreria con il "
 "pulsante <mousebutton>sinistro</mousebutton> del mouse, si apre in lettura. "
@@ -1166,10 +1166,10 @@ msgstr "Selezione documenti"
 #. type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:252
 msgid ""
-"At the top of the options tab you will find <guibutton>Choose</guibutton>"
-"(works). If you would like to search in multiple works, click on this button "
-"and you will be offered a menu where you can select the works you want to "
-"search in."
+"At the top of the options tab you will find <guibutton>Choose</"
+"guibutton>(works). If you would like to search in multiple works, click on "
+"this button and you will be offered a menu where you can select the works "
+"you want to search in."
 msgstr ""
 "In cima alla scheda delle opzioni troverai <guibutton>Scegli</guibutton> "
 "(documenti). Se volessi cercare in più documenti, clicca su questo pulsante "
@@ -3639,25 +3639,31 @@ msgstr ""
 #: docs/handbook/en/docbook/index.docbook:54
 #, fuzzy
 #| msgid "<date>January 2011</date>"
-msgid "<date>January 2012</date>"
+msgid "<date>December 2013</date>"
 msgstr "<date>Gennaio 2011</date>"
 
 #. type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:56
-#, fuzzy
-#| msgid "2.9.0"
-msgid "2.9.2"
-msgstr "2.9.0"
+msgid "2.10.0"
+msgstr ""
 
 # type: Content of: <book><bookinfo><abstract><para>
 #. type: Content of: <book><bookinfo><abstract><para>
 #: docs/handbook/en/docbook/index.docbook:59
+#, fuzzy
+#| msgid ""
+#| "&bibletime; is a completely free Bible study program. The program's user "
+#| "interface is built with &qt; framework, which makes it run on several "
+#| "operating systems including Linux, Windows, FreeBSD and Mac OS X. The "
+#| "software uses the &sword; programming library to work with over 200 free "
+#| "Bible texts, commentaries, dictionaries and books provided by the &cbs;."
 msgid ""
 "&bibletime; is a completely free Bible study program. The program's user "
 "interface is built with &qt; framework, which makes it run on several "
 "operating systems including Linux, Windows, FreeBSD and Mac OS X. The "
 "software uses the &sword; programming library to work with over 200 free "
-"Bible texts, commentaries, dictionaries and books provided by the &cbs;."
+"Bible texts, commentaries, dictionaries and books in over 50 languages "
+"provided by the &cbs;."
 msgstr ""
 "&bibletime; è un programma di studio della Bibbia completamente gratuito. "
 "L'interfaccia del programma è costruita con il framework &qt;, che lo fa "
@@ -3690,3 +3696,8 @@ msgstr "Crosswire"
 #: docs/handbook/en/docbook/index.docbook:72
 msgid "Help dialog"
 msgstr "Finestra di aiuto"
+
+#, fuzzy
+#~| msgid "2.9.0"
+#~ msgid "2.9.2"
+#~ msgstr "2.9.0"
