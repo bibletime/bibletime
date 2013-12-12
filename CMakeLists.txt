@@ -199,49 +199,35 @@ ELSE()
 ENDIF()
 
 INSTALL(TARGETS "bibletime" DESTINATION "${BT_DESTINATION}")
-
-# icons
 FILE(GLOB INSTALL_ICONS_LIST "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/*.svg")
 INSTALL(FILES ${INSTALL_ICONS_LIST}
         DESTINATION "${BT_SHARE_PATH}/bibletime/icons/")
-
-# icons - png, needed for About Dialog
 FILE(GLOB INSTALL_ICONS_LIST_PNG "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/bibletime.png")
 INSTALL(FILES ${INSTALL_ICONS_LIST_PNG}
         DESTINATION "${BT_SHARE_PATH}/bibletime/icons/")
-
-# display templates
 INSTALL(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/"
         DESTINATION "${BT_SHARE_PATH}/bibletime/display-templates/")
-
-# javascript
 INSTALL(FILES "src/frontend/display/bthtml.js"
         DESTINATION "${BT_SHARE_PATH}/bibletime/javascript/")
-
-# license.html
 INSTALL(FILES "docs/license.html"
         DESTINATION "${BT_SHARE_PATH}/bibletime/license/")
-
-# qml files
-INSTALL(FILES ${bibletime_QML_FILES}
-        DESTINATION "${BT_SHARE_PATH}/qml/")
-
-# splash screen
-INSTALL(FILES "pics/startuplogo.png" "pics/startuplogo_christmas.png" "pics/startuplogo_easter.jpg"
+INSTALL(FILES ${bibletime_QML_FILES} DESTINATION "${BT_SHARE_PATH}/qml/")
+INSTALL(FILES "pics/startuplogo.png" "pics/startuplogo_christmas.png"
+              "pics/startuplogo_easter.jpg"
         DESTINATION "${BT_SHARE_PATH}/bibletime/pics/")
 
 #
 # Platform specific installation
 #
-# LINUX: application icon
+
+# Linux: application icon and desktop file:
 INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/bibletime.svg"
         DESTINATION "${BT_SHARE_PATH}/icons/")
-
-# LINUX: desktop file
 CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/linux/bibletime.desktop.cmake"
                "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop" @ONLY)
 INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop"
         DESTINATION "${BT_SHARE_PATH}/applications/")
+
 
 IF(MSVC)
   # sword locale information
