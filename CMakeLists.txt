@@ -98,15 +98,6 @@ ELSE()
   MESSAGE( "-- Found Qt " ${QTVERSION})
 ENDIF()
 
-IF(QT_QTDBUS_FOUND AND NOT APPLE)
-  MESSAGE(STATUS "Using DBUS")
-ELSE()
-  ADD_DEFINITIONS("-DNO_DBUS")
-  MESSAGE(STATUS "No DBUS found")
-ENDIF()
-# If cmake says that qdbusxml2cpp is missing, uncomment the following line
-#SET(QT_DBUSXML2CPP_EXECUTABLE "/usr/bin/qdbusxml2cpp") #TEMP HACK?
-
 FIND_PACKAGE(CLucene REQUIRED)
 FIND_PACKAGE(Sword 1.7.0 REQUIRED)
 
@@ -157,6 +148,15 @@ IF(Qt5Core_FOUND)
   )
   qt5_use_modules("bibletime" ${Qt5RequiredModules})
 ELSE()
+  IF(QT_QTDBUS_FOUND AND NOT APPLE)
+    SET(QT_USE_QTDBUS 1) # Required by INCLUDE(${QT_USE_FILE}) below
+    MESSAGE(STATUS "Using DBUS")
+  ELSE()
+    ADD_DEFINITIONS("-DNO_DBUS")
+    MESSAGE(STATUS "No DBUS found")
+  ENDIF()
+  # If cmake says that qdbusxml2cpp is missing, uncomment the following line
+  #SET(QT_DBUSXML2CPP_EXECUTABLE "/usr/bin/qdbusxml2cpp") #TEMP HACK?
   INCLUDE(${QT_USE_FILE})
   TARGET_LINK_LIBRARIES("bibletime"
       ${QT_LIBRARIES}
