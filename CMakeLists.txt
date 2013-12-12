@@ -124,35 +124,13 @@ INCLUDE_DIRECTORIES(
     ${Sword_INCLUDE_DIRS}
 )
 
-IF(Qt5Core_FOUND)
-  QT5_WRAP_UI(bibletime_UIS_H ${bibletime_UIS})
-  QT5_WRAP_CPP(bibletime_MOC_SOURCES ${bibletime_MOCABLE_HEADERS})
-ELSE()
-  QT4_WRAP_UI(bibletime_UIS_H ${bibletime_UIS})
-  QT4_WRAP_CPP(bibletime_MOC_SOURCES ${bibletime_MOCABLE_HEADERS})
-ENDIF()
-
-SOURCE_GROUP("QM Files" REGULAR_EXPRESSION ".*\\.qm")
-
 #This must come before the target definition!
 LINK_DIRECTORIES(${CLucene_LIBRARY_DIR})
 
 # Define rules to generate ${bibletime_UI_translations} files
 INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTUITranslation.cmake")
 
-SET(common_bibletime_SOURCES
-    ${bibletime_SOURCES}
-    ${bibletime_UIS_H}
-    ${bibletime_MOC_SOURCES}
-    ${bibletime_QML_FILES}
-    ${bibletime_RC}
-    ${bibletime_UI_translations}
-)
-
-# For the Windows Application Icon
 IF(MSVC)
-  LIST(APPEND common_bibletime_SOURCES "cmake/BTWinIcon.rc")
-  SOURCE_GROUP("Icon Files" FILES "cmake/BTWinIcon.rc")
   ADD_EXECUTABLE("bibletime" WIN32 ${common_bibletime_SOURCES})
 ELSE()
   ADD_EXECUTABLE("bibletime" ${common_bibletime_SOURCES})

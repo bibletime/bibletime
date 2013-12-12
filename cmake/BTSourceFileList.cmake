@@ -575,3 +575,27 @@ SET(bibletime_MOCABLE_HEADERS
 SET(bibletime_QML_FILES
     ${bibletime_${BIBLETIME_FRONTEND}_QML_FILES})
 
+IF(Qt5Core_FOUND)
+  QT5_WRAP_UI(bibletime_UIS_H ${bibletime_UIS})
+  QT5_WRAP_CPP(bibletime_MOC_SOURCES ${bibletime_MOCABLE_HEADERS})
+ELSE()
+  QT4_WRAP_UI(bibletime_UIS_H ${bibletime_UIS})
+  QT4_WRAP_CPP(bibletime_MOC_SOURCES ${bibletime_MOCABLE_HEADERS})
+ENDIF()
+
+SET(common_bibletime_SOURCES
+    ${bibletime_SOURCES}
+    ${bibletime_UIS_H}
+    ${bibletime_MOC_SOURCES}
+    ${bibletime_QML_FILES}
+    ${bibletime_RC}
+    ${bibletime_UI_translations}
+)
+
+# For the Windows Application Icon
+IF(MSVC)
+  LIST(APPEND common_bibletime_SOURCES "cmake/BTWinIcon.rc")
+  SOURCE_GROUP("Icon Files" FILES "cmake/BTWinIcon.rc")
+ENDIF()
+
+SOURCE_GROUP("QM Files" REGULAR_EXPRESSION ".*\\.qm")
