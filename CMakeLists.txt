@@ -210,30 +210,28 @@ ELSE()
   )
 ENDIF()
 
-SET(BibleTime_CFLAGS "-Wall ${Sword_CFLAGS_OTHER}")
+SET(BibleTime_CFLAGS "-Wall")
 SET(BibleTime_LDFLAGS "")
-
-IF(APPLE)
-  # enable support MacOS 10.5+
-  SET(T "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/")
-  SET(BibleTime_CFLAGS "${BibleTime_CFLAGS} -mmacosx-version-min=10.5 -isysroot ${T}")
-  SET(BibleTime_LDFLAGS "${BibleTime_LDFLAGS} -mmacosx-version-min=10.5 -isysroot ${T} -F /Library/Frameworks/")
-  UNSET(T)
-ENDIF()
-
-SET_TARGET_PROPERTIES("bibletime" PROPERTIES
-                      COMPILE_FLAGS "${BibleTime_CFLAGS}"
-                      LINK_FLAGS "${BibleTime_LDFLAGS}")
-
 IF(MSVC)
   SET(CMAKE_CXX_FLAGS_RELEASE "-DNO_DBUS -DSWUSINGDLL /MD  /Zc:wchar_t- /W1 /D_UNICODE /DUNICODE /Zc:wchar_t")
   SET(CMAKE_CXX_FLAGS_DEBUG   "-DNO_DBUS -DSWUSINGDLL /MDd /Zc:wchar_t- /W1 /D_UNICODE /DUNICODE /Zc:wchar_t /Od")
-  SET_TARGET_PROPERTIES("bibletime" PROPERTIES LINK_FLAGS "/SUBSYSTEM:WINDOWS")
+  SET(BibleTime_LDFLAGS "${BibleTime_LDFLAGS} /SUBSYSTEM:WINDOWS")
 ELSE()
-  SET(CMAKE_CXX_FLAGS_RELEASE "-Wextra -O2 -fpie -fexceptions")
-  SET(CMAKE_CXX_FLAGS_DEBUG   "-Wextra -ggdb -fpie -fexceptions")
+  SET(BibleTime_CFLAGS "${BibleTime_CFLAGS} -Wextra -fpie -fexceptions")
+  SET(CMAKE_CXX_FLAGS_RELEASE "-O2")
+  SET(CMAKE_CXX_FLAGS_DEBUG "-ggdb")
+  IF(APPLE)
+    # enable support MacOS 10.5+
+    SET(T "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/")
+    SET(BibleTime_CFLAGS "${BibleTime_CFLAGS} -mmacosx-version-min=10.5 -isysroot ${T}")
+    SET(BibleTime_LDFLAGS "${BibleTime_LDFLAGS} -mmacosx-version-min=10.5 -isysroot ${T} -F /Library/Frameworks/")
+    UNSET(T)
+  ENDIF()
 ENDIF()
 
+SET_TARGET_PROPERTIES("bibletime" PROPERTIES
+                      COMPILE_FLAGS "${Sword_CFLAGS_OTHER} ${BibleTime_CFLAGS}"
+                      LINK_FLAGS "${BibleTime_LDFLAGS}")
 
 # Install files
 #
