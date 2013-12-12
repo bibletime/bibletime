@@ -117,15 +117,6 @@ ENDIF()
 FIND_PACKAGE(CLucene REQUIRED)
 FIND_PACKAGE(Sword 1.7.0 REQUIRED)
 
-# directory layout settings up front, needed in various places
-IF(APPLE)
-  SET(BT_DESTINATION "../MacOS")
-  SET(BT_SHARE_PATH "../share")
-ELSE()
-  SET(BT_DESTINATION "bin")
-  SET(BT_SHARE_PATH "share")
-ENDIF()
-
 # Define $bibletime_SOURCES
 INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTSourceFileList.cmake")
 
@@ -228,6 +219,13 @@ SET_TARGET_PROPERTIES("bibletime" PROPERTIES
 
 # Install files
 #
+IF(APPLE)
+  SET(BT_DESTINATION "../MacOS")
+  SET(BT_SHARE_PATH "../share")
+ELSE()
+  SET(BT_DESTINATION "bin")
+  SET(BT_SHARE_PATH "share")
+ENDIF()
 
 INSTALL(TARGETS "bibletime" DESTINATION "${BT_DESTINATION}")
 
