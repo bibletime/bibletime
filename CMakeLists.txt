@@ -66,11 +66,11 @@ MESSAGE(STATUS "Setting up build environment for BibleTime version ${BT_VERSION_
 ADD_DEFINITIONS(-DBT_VERSION="${BT_VERSION_FULL}")
 
 # Define debug flags
-IF(NOT CMAKE_BUILD_TYPE STREQUAL "Release")
+IF(NOT (CMAKE_BUILD_TYPE STREQUAL "Release"))
   SET(CMAKE_BUILD_TYPE "Debug")
-  ADD_DEFINITIONS(-DBT_DEBUG)
+  ADD_DEFINITIONS("-DBT_DEBUG")
 ELSE()
-  ADD_DEFINITIONS(-DBT_NO_DEBUG -DNDEBUG -DQT_NO_DEBUG)
+  ADD_DEFINITIONS("-DBT_NO_DEBUG" "-DNDEBUG" "-DQT_NO_DEBUG")
 ENDIF()
 
 #Non-English locales to be processed and installed for handbook and howto
@@ -99,32 +99,16 @@ ELSE()
 ENDIF()
 
 IF(QT_QTDBUS_FOUND AND NOT APPLE)
-  SET(QT_USE_QTDBUS 1)
   MESSAGE(STATUS "Using DBUS")
 ELSE()
-  ADD_DEFINITIONS(-DNO_DBUS)
+  ADD_DEFINITIONS("-DNO_DBUS")
   MESSAGE(STATUS "No DBUS found")
 ENDIF()
 # If cmake says that qdbusxml2cpp is missing, uncomment the following line
 #SET(QT_DBUSXML2CPP_EXECUTABLE "/usr/bin/qdbusxml2cpp") #TEMP HACK?
 
-# Libs needed for packaging
-IF(WIN32 AND NOT UNIX)
-  FIND_PACKAGE(ZLIB REQUIRED)
-  FIND_PACKAGE(CURL REQUIRED)
-ENDIF()
-
 FIND_PACKAGE(CLucene REQUIRED)
 FIND_PACKAGE(Sword 1.7.0 REQUIRED)
-
-# directory layout settings up front, needed in various places
-IF(APPLE)
-  SET(BT_DESTINATION "../MacOS")
-  SET(BT_SHARE_PATH "../share")
-ELSE()
-  SET(BT_DESTINATION "bin")
-  SET(BT_SHARE_PATH "share")
-ENDIF()
 
 # Define $bibletime_SOURCES
 INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTSourceFileList.cmake")
@@ -140,56 +124,25 @@ INCLUDE_DIRECTORIES(
     ${Sword_INCLUDE_DIRS}
 )
 
-IF(Qt5Core_FOUND)
-  QT5_WRAP_UI(bibletime_UIS_H ${bibletime_UIS})
-  QT5_WRAP_CPP(bibletime_MOC_SOURCES ${bibletime_MOCABLE_HEADERS})
-ELSE()
-  QT4_WRAP_UI(bibletime_UIS_H ${bibletime_UIS})
-  QT4_WRAP_CPP(bibletime_MOC_SOURCES ${bibletime_MOCABLE_HEADERS})
-ENDIF()
-
-SOURCE_GROUP("QM Files" REGULAR_EXPRESSION ".*\\.qm")
-
 #This must come before the target definition!
 LINK_DIRECTORIES(${CLucene_LIBRARY_DIR})
-
-IF(${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
-  SET(EXECUTABLE_NAME "btm")
-ELSE()
-  SET(EXECUTABLE_NAME "bibletime")
-  IF(APPLE)
-    SET(EXECUTABLE_NAME "BibleTime")
-  ENDIF()
-ENDIF()
-
 
 # Define rules to generate ${bibletime_UI_translations} files
 INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTUITranslation.cmake")
 
-SET(common_bibletime_SOURCES
-    ${bibletime_SOURCES}
-    ${bibletime_UIS_H}
-    ${bibletime_MOC_SOURCES}
-    ${bibletime_QML_FILES}
-    ${bibletime_RC}
-    ${bibletime_UI_translations}
-)
-
-# For the Windows Application Icon
 IF(MSVC)
-  SET(common_bibletime_SOURCES ${common_bibletime_SOURCES} "cmake/BTWinIcon.rc")
-  SOURCE_GROUP("Icon Files" FILES "cmake/BTWinIcon.rc")
-  ADD_EXECUTABLE(${EXECUTABLE_NAME} WIN32 ${common_bibletime_SOURCES})
+  ADD_EXECUTABLE("bibletime" WIN32 ${common_bibletime_SOURCES})
 ELSE()
-  ADD_EXECUTABLE(${EXECUTABLE_NAME} ${common_bibletime_SOURCES})
+  ADD_EXECUTABLE("bibletime" ${common_bibletime_SOURCES})
 ENDIF()
 
-#IF(CMAKE_BUILD_TYPE STREQUAL "Release")
-#    SET_TARGET_PROPERTIES(${EXECUTABLE_NAME}
-#        PROPERTIES
-#            COMPILE_FLAGS "${SWORD_CFLAGS}" #Enable exception handling
-#    )
-#ENDIF()
+IF(${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
+  SET_TARGET_PROPERTIES("bibletime" PROPERTIES OUTPUT_NAME "btm")
+ELSEIF(APPLE)
+  SET_TARGET_PROPERTIES("bibletime" PROPERTIES OUTPUT_NAME "BibleTime")
+ELSE()
+  SET_TARGET_PROPERTIES("bibletime" PROPERTIES OUTPUT_NAME "bibletime")
+ENDIF()
 
 IF(${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
   SET(Qt5RequiredModules Widgets Qml Quick Network)
@@ -198,124 +151,105 @@ ELSE()
 ENDIF()
 
 IF(Qt5Core_FOUND)
-  TARGET_LINK_LIBRARIES(${EXECUTABLE_NAME}
+  TARGET_LINK_LIBRARIES("bibletime"
       ${CLucene_LIBRARY}
       ${Sword_LDFLAGS}
   )
-  qt5_use_modules(${EXECUTABLE_NAME} ${Qt5RequiredModules})
+  qt5_use_modules("bibletime" ${Qt5RequiredModules})
 ELSE()
   INCLUDE(${QT_USE_FILE})
-  TARGET_LINK_LIBRARIES(${EXECUTABLE_NAME}
+  TARGET_LINK_LIBRARIES("bibletime"
       ${QT_LIBRARIES}
       ${CLucene_LIBRARY}
       ${Sword_LDFLAGS}
   )
 ENDIF()
 
-SET(BibleTime_CFLAGS "-Wall ${Sword_CFLAGS_OTHER}")
+SET(BibleTime_CFLAGS "-Wall")
 SET(BibleTime_LDFLAGS "")
-
-IF(APPLE)
-  # enable support MacOS 10.5+
-  SET(T "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/")
-  SET(BibleTime_CFLAGS "${BibleTime_CFLAGS} -mmacosx-version-min=10.5 -isysroot ${T}")
-  SET(BibleTime_LDFLAGS "${BibleTime_LDFLAGS} -mmacosx-version-min=10.5 -isysroot ${T} -F /Library/Frameworks/")
-  UNSET(T)
-ENDIF()
-
-SET_TARGET_PROPERTIES(${EXECUTABLE_NAME} PROPERTIES
-                      COMPILE_FLAGS "${BibleTime_CFLAGS}"
-                      LINK_FLAGS "${BibleTime_LDFLAGS}")
-
-IF(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
-  SET(CMAKE_INSTALL_PREFIX "install/") #install to ./build/install, allow override
-ENDIF()
-
-IF(APPLE)
-  SET(CMAKE_INSTALL_PREFIX "install/BibleTime.app/Contents/Resources")
-ENDIF()
-
 IF(MSVC)
   SET(CMAKE_CXX_FLAGS_RELEASE "-DNO_DBUS -DSWUSINGDLL /MD  /Zc:wchar_t- /W1 /D_UNICODE /DUNICODE /Zc:wchar_t")
   SET(CMAKE_CXX_FLAGS_DEBUG   "-DNO_DBUS -DSWUSINGDLL /MDd /Zc:wchar_t- /W1 /D_UNICODE /DUNICODE /Zc:wchar_t /Od")
-  SET_TARGET_PROPERTIES(${EXECUTABLE_NAME} PROPERTIES LINK_FLAGS_DEBUG "/SUBSYSTEM:WINDOWS")
-  SET_TARGET_PROPERTIES(${EXECUTABLE_NAME} PROPERTIES LINK_FLAGS_RELEASE "/SUBSYSTEM:WINDOWS")
+  SET(BibleTime_LDFLAGS "${BibleTime_LDFLAGS} /SUBSYSTEM:WINDOWS")
 ELSE()
-  SET(CMAKE_CXX_FLAGS_RELEASE "-Wextra -O2 -fpie -fexceptions")
-  SET(CMAKE_CXX_FLAGS_DEBUG   "-Wextra -ggdb -fpie -fexceptions")
+  SET(BibleTime_CFLAGS "${BibleTime_CFLAGS} -Wextra -fpie -fexceptions")
+  SET(CMAKE_CXX_FLAGS_RELEASE "-O2")
+  SET(CMAKE_CXX_FLAGS_DEBUG "-ggdb")
+  IF(APPLE)
+    # enable support MacOS 10.5+
+    SET(T "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/")
+    SET(BibleTime_CFLAGS "${BibleTime_CFLAGS} -mmacosx-version-min=10.5 -isysroot ${T}")
+    SET(BibleTime_LDFLAGS "${BibleTime_LDFLAGS} -mmacosx-version-min=10.5 -isysroot ${T} -F /Library/Frameworks/")
+    UNSET(T)
+  ENDIF()
 ENDIF()
 
+SET_TARGET_PROPERTIES("bibletime" PROPERTIES
+                      COMPILE_FLAGS "${Sword_CFLAGS_OTHER} ${BibleTime_CFLAGS}"
+                      LINK_FLAGS "${BibleTime_LDFLAGS}")
 
 # Install files
 #
+IF(APPLE)
+  SET(BT_DESTINATION "../MacOS")
+  SET(BT_SHARE_PATH "../share")
+ELSE()
+  SET(BT_DESTINATION "bin")
+  SET(BT_SHARE_PATH "share")
+ENDIF()
 
-INSTALL(TARGETS "${EXECUTABLE_NAME}" DESTINATION "${BT_DESTINATION}")
-
-# icons
+INSTALL(TARGETS "bibletime" DESTINATION "${BT_DESTINATION}")
 FILE(GLOB INSTALL_ICONS_LIST "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/*.svg")
 INSTALL(FILES ${INSTALL_ICONS_LIST}
         DESTINATION "${BT_SHARE_PATH}/bibletime/icons/")
-
-# icons - png, needed for About Dialog
 FILE(GLOB INSTALL_ICONS_LIST_PNG "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/bibletime.png")
 INSTALL(FILES ${INSTALL_ICONS_LIST_PNG}
         DESTINATION "${BT_SHARE_PATH}/bibletime/icons/")
-
-# display templates
-INSTALL(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/
+INSTALL(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/"
         DESTINATION "${BT_SHARE_PATH}/bibletime/display-templates/")
-
-# javascript
 INSTALL(FILES "src/frontend/display/bthtml.js"
         DESTINATION "${BT_SHARE_PATH}/bibletime/javascript/")
-
-# license.html
 INSTALL(FILES "docs/license.html"
         DESTINATION "${BT_SHARE_PATH}/bibletime/license/")
-
-# qml files
-INSTALL(FILES ${bibletime_QML_FILES}
-        DESTINATION "${BT_SHARE_PATH}/qml/")
-
-# splash screen
-INSTALL(FILES "pics/startuplogo.png" "pics/startuplogo_christmas.png" "pics/startuplogo_easter.jpg"
+INSTALL(FILES ${bibletime_QML_FILES} DESTINATION "${BT_SHARE_PATH}/qml/")
+INSTALL(FILES "pics/startuplogo.png" "pics/startuplogo_christmas.png"
+              "pics/startuplogo_easter.jpg"
         DESTINATION "${BT_SHARE_PATH}/bibletime/pics/")
 
 #
 # Platform specific installation
 #
-# LINUX: application icon
+
+# Linux: application icon and desktop file:
 INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/bibletime.svg"
         DESTINATION "${BT_SHARE_PATH}/icons/")
-
-# LINUX: desktop file
-CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/linux/bibletime.desktop.cmake" "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop")
+CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/linux/bibletime.desktop.cmake"
+               "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop" @ONLY)
 INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop"
         DESTINATION "${BT_SHARE_PATH}/applications/")
 
+
 IF(MSVC)
   # sword locale information
-  FILE(GLOB INSTALL_SWORD_LOCALE_LIST ${Sword_INCLUDE_DIRS}/../locales.d/*)
+  FILE(GLOB INSTALL_SWORD_LOCALE_LIST "${Sword_INCLUDE_DIRS}/../locales.d/*")
   INSTALL(FILES ${INSTALL_SWORD_LOCALE_LIST}
           DESTINATION "${BT_SHARE_PATH}/sword/locales.d/")
 
   # install pdb file for debugging purposes
   IF(CMAKE_BUILD_TYPE STREQUAL "Debug")
-    SET( bibletime_PDB ${bibletime_BINARY_DIR}/Debug/bibletime.pdb)
+    SET(bibletime_PDB "${bibletime_BINARY_DIR}/Debug/bibletime.pdb")
     INSTALL(FILES "${bibletime_PDB}" DESTINATION "${BT_DESTINATION}")
   ENDIF()
 ENDIF()
 
 IF(APPLE)
   # sword locale information, needed for DMG image
-  FILE(GLOB INSTALL_SWORD_LOCALE_LIST ${Sword_INCLUDE_DIRS}/../../share/sword/locales.d/*)
+  FILE(GLOB INSTALL_SWORD_LOCALE_LIST "${Sword_INCLUDE_DIRS}/../../share/sword/locales.d/*")
   INSTALL(FILES ${INSTALL_SWORD_LOCALE_LIST}
           DESTINATION "${BT_SHARE_PATH}/sword/locales.d/")
 ENDIF()
 
-
 INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTDocumentation.cmake")
-INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTDeveloper.cmake")
 
 IF(WIN32 AND NOT UNIX)
   INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTBinaryPackageWindows.cmake")
