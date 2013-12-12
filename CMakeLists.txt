@@ -238,7 +238,8 @@ INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/bibletime.svg"
         DESTINATION "${BT_SHARE_PATH}/icons/")
 
 # LINUX: desktop file
-CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/linux/bibletime.desktop.cmake" "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop")
+CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/linux/bibletime.desktop.cmake"
+               "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop" @ONLY)
 INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop"
         DESTINATION "${BT_SHARE_PATH}/applications/")
 
