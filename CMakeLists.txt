@@ -249,9 +249,7 @@ IF(APPLE)
           DESTINATION "${BT_SHARE_PATH}/sword/locales.d/")
 ENDIF()
 
-
 INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTDocumentation.cmake")
-INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTDeveloper.cmake")
 
 IF(WIN32 AND NOT UNIX)
   INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTBinaryPackageWindows.cmake")
