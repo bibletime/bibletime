@@ -1,5 +1,9 @@
 IF(WIN32 AND NOT UNIX)
 
+    # Libs needed for packaging
+    FIND_PACKAGE(ZLIB REQUIRED)
+    FIND_PACKAGE(CURL REQUIRED)
+
     SET(CPACK_PACKAGE_DESCRIPTION_SUMMARY "BibleTime for Windows svn")
     SET(CPACK_PACKAGE_VENDOR "http://www.bibletime.info")
     SET(CPACK_PACKAGE_VERSION_MAJOR ${BT_VERSION_MAJOR})

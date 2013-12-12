@@ -108,12 +108,6 @@ ENDIF()
 # If cmake says that qdbusxml2cpp is missing, uncomment the following line
 #SET(QT_DBUSXML2CPP_EXECUTABLE "/usr/bin/qdbusxml2cpp") #TEMP HACK?
 
-# Libs needed for packaging
-IF(WIN32 AND NOT UNIX)
-  FIND_PACKAGE(ZLIB REQUIRED)
-  FIND_PACKAGE(CURL REQUIRED)
-ENDIF()
-
 FIND_PACKAGE(CLucene REQUIRED)
 FIND_PACKAGE(Sword 1.7.0 REQUIRED)
 
