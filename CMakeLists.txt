@@ -155,13 +155,11 @@ LINK_DIRECTORIES(${CLucene_LIBRARY_DIR})
 
 IF(${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
   SET(EXECUTABLE_NAME "btm")
+ELSEIF(APPLE)
+  SET(EXECUTABLE_NAME "BibleTime")
 ELSE()
   SET(EXECUTABLE_NAME "bibletime")
-  IF(APPLE)
-    SET(EXECUTABLE_NAME "BibleTime")
-  ENDIF()
 ENDIF()
-
 
 # Define rules to generate ${bibletime_UI_translations} files
 INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTUITranslation.cmake")
