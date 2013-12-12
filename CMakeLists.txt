@@ -182,13 +182,6 @@ ELSE()
   SET_TARGET_PROPERTIES("bibletime" PROPERTIES OUTPUT_NAME "bibletime")
 ENDIF()
 
-#IF(CMAKE_BUILD_TYPE STREQUAL "Release")
-#    SET_TARGET_PROPERTIES("bibletime"
-#        PROPERTIES
-#            COMPILE_FLAGS "${SWORD_CFLAGS}" #Enable exception handling
-#    )
-#ENDIF()
-
 IF(${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
   SET(Qt5RequiredModules Widgets Qml Quick Network)
 ELSE()
