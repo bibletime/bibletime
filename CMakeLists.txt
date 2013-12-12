@@ -227,14 +227,6 @@ SET_TARGET_PROPERTIES(${EXECUTABLE_NAME} PROPERTIES
                       COMPILE_FLAGS "${BibleTime_CFLAGS}"
                       LINK_FLAGS "${BibleTime_LDFLAGS}")
 
-IF(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
-  SET(CMAKE_INSTALL_PREFIX "install/") #install to ./build/install, allow override
-ENDIF()
-
-IF(APPLE)
-  SET(CMAKE_INSTALL_PREFIX "install/BibleTime.app/Contents/Resources")
-ENDIF()
-
 IF(MSVC)
   SET(CMAKE_CXX_FLAGS_RELEASE "-DNO_DBUS -DSWUSINGDLL /MD  /Zc:wchar_t- /W1 /D_UNICODE /DUNICODE /Zc:wchar_t")
   SET(CMAKE_CXX_FLAGS_DEBUG   "-DNO_DBUS -DSWUSINGDLL /MDd /Zc:wchar_t- /W1 /D_UNICODE /DUNICODE /Zc:wchar_t /Od")
