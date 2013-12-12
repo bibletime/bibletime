@@ -177,7 +177,7 @@ SET(common_bibletime_SOURCES
 
 # For the Windows Application Icon
 IF(MSVC)
-  SET(common_bibletime_SOURCES ${common_bibletime_SOURCES} "cmake/BTWinIcon.rc")
+  LIST(APPEND common_bibletime_SOURCES "cmake/BTWinIcon.rc")
   SOURCE_GROUP("Icon Files" FILES "cmake/BTWinIcon.rc")
   ADD_EXECUTABLE(${EXECUTABLE_NAME} WIN32 ${common_bibletime_SOURCES})
 ELSE()
