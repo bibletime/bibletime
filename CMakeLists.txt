@@ -66,11 +66,11 @@ MESSAGE(STATUS "Setting up build environment for BibleTime version ${BT_VERSION_
 ADD_DEFINITIONS(-DBT_VERSION="${BT_VERSION_FULL}")
 
 # Define debug flags
-IF(NOT CMAKE_BUILD_TYPE STREQUAL "Release")
+IF(NOT (CMAKE_BUILD_TYPE STREQUAL "Release"))
   SET(CMAKE_BUILD_TYPE "Debug")
-  ADD_DEFINITIONS(-DBT_DEBUG)
+  ADD_DEFINITIONS("-DBT_DEBUG")
 ELSE()
-  ADD_DEFINITIONS(-DBT_NO_DEBUG -DNDEBUG -DQT_NO_DEBUG)
+  ADD_DEFINITIONS("-DBT_NO_DEBUG" "-DNDEBUG" "-DQT_NO_DEBUG")
 ENDIF()
 
 #Non-English locales to be processed and installed for handbook and howto
@@ -102,7 +102,7 @@ IF(QT_QTDBUS_FOUND AND NOT APPLE)
   SET(QT_USE_QTDBUS 1)
   MESSAGE(STATUS "Using DBUS")
 ELSE()
-  ADD_DEFINITIONS(-DNO_DBUS)
+  ADD_DEFINITIONS("-DNO_DBUS")
   MESSAGE(STATUS "No DBUS found")
 ENDIF()
 # If cmake says that qdbusxml2cpp is missing, uncomment the following line
@@ -252,7 +252,7 @@ INSTALL(FILES ${INSTALL_ICONS_LIST_PNG}
         DESTINATION "${BT_SHARE_PATH}/bibletime/icons/")
 
 # display templates
-INSTALL(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/
+INSTALL(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/"
         DESTINATION "${BT_SHARE_PATH}/bibletime/display-templates/")
 
 # javascript
@@ -285,20 +285,20 @@ INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop"
 
 IF(MSVC)
   # sword locale information
-  FILE(GLOB INSTALL_SWORD_LOCALE_LIST ${Sword_INCLUDE_DIRS}/../locales.d/*)
+  FILE(GLOB INSTALL_SWORD_LOCALE_LIST "${Sword_INCLUDE_DIRS}/../locales.d/*")
   INSTALL(FILES ${INSTALL_SWORD_LOCALE_LIST}
           DESTINATION "${BT_SHARE_PATH}/sword/locales.d/")
 
   # install pdb file for debugging purposes
   IF(CMAKE_BUILD_TYPE STREQUAL "Debug")
-    SET( bibletime_PDB ${bibletime_BINARY_DIR}/Debug/bibletime.pdb)
+    SET(bibletime_PDB "${bibletime_BINARY_DIR}/Debug/bibletime.pdb")
     INSTALL(FILES "${bibletime_PDB}" DESTINATION "${BT_DESTINATION}")
   ENDIF()
 ENDIF()
 
 IF(APPLE)
   # sword locale information, needed for DMG image
-  FILE(GLOB INSTALL_SWORD_LOCALE_LIST ${Sword_INCLUDE_DIRS}/../../share/sword/locales.d/*)
+  FILE(GLOB INSTALL_SWORD_LOCALE_LIST "${Sword_INCLUDE_DIRS}/../../share/sword/locales.d/*")
   INSTALL(FILES ${INSTALL_SWORD_LOCALE_LIST}
           DESTINATION "${BT_SHARE_PATH}/sword/locales.d/")
 ENDIF()
