@@ -25,9 +25,6 @@
 #include "frontend/searchdialog/btsearchoptionsarea.h"
 #include "util/directory.h"
 
-#ifdef Q_OS_WIN
-#include "windows.h"
-#endif
 
 /// \todo Reimplement signal handler which handles consecutive crashes.
 
@@ -218,20 +215,10 @@ void registerMetaTypes() {
   Program main entry point.
 *******************************************************************************/
 
-#ifdef Q_OS_WIN
-int WinMain(HINSTANCE hInstance,
-            HINSTANCE hPrevInstance,
-            char * lpCmdLine,
-            int nCmdShow)
-{
-    int argc = 0;
-    char ** argv = 0;
-#else
-int main(int argc, char * argv[]) {
-#endif
-    BibleTimeApp app(argc, argv); // for QApplication
-
+int main(int argc, char* argv[]) {
     namespace DU = util::directory;
+
+    BibleTimeApp app(argc, argv); //for QApplication
 
     // Parse command line arguments:
     bool ignoreSession = false;
