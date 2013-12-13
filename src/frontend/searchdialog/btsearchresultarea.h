@@ -136,16 +136,6 @@ class BtSearchResultArea : public QWidget {
         void initConnections();
 
         /**
-        * This function breakes the queryString into clucene tokens
-        */
-        QStringList queryParser(const QString& queryString);
-
-        /**
-        * This function highlights the searched text in the content using the search type given by search flags
-        */
-        QString highlightSearchedText(const QString& content, const QString& searchedText);
-
-        /**
         * Load the settings from the resource file
         */
         void loadDialogSettings();

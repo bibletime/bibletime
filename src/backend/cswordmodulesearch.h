@@ -103,6 +103,17 @@ class CSwordModuleSearch: public QObject {
         static QList<const CSwordModuleInfo*> unindexedModules(
                 const QList<const CSwordModuleInfo*> &modules);
 
+        /**
+        * This function highlights the searched text in the content using the search type given by search flags
+        */
+        static QString highlightSearchedText(const QString& content, const QString& searchedText);
+
+    protected:
+        /**
+        * This function breakes the queryString into clucene tokens
+        */
+        static QStringList queryParser(const QString& queryString);
+
     private: /* Fields: */
         QString                        m_searchText;
         sword::ListKey                 m_searchScope;
