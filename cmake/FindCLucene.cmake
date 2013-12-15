@@ -34,7 +34,7 @@ ENDIF()
 
 SET(CLucene_GOOD_VERSION TRUE)
 
-FIND_PATH(CLucene_LIBRARY_DIR NAMES "CLucene/clucene-config.h")
+FIND_PATH(CLucene_LIBRARY_DIR NAMES "CLucene/clucene-config.h" "CLucene/CLConfig.h")
 IF(CLucene_LIBRARY_DIR)
   MESSAGE(STATUS "Found CLucene library dir: ${CLucene_LIBRARY_DIR}")
   FILE(READ ${CLucene_LIBRARY_DIR}/CLucene/clucene-config.h CLCONTENT)
