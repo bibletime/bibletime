@@ -64,7 +64,7 @@ public: /* Methods: */
      * \param[in] name Name of module to set the key for
      * \param[in] key Decryption key to set as string
      */
-    void setModuleEncryptionKey(const QString &name, const QString &key);
+    void setModuleEncryptionKey(const QString & name, const QString & key);
 
     /*!
      * \brief Function to get a module decryption key.
@@ -76,7 +76,7 @@ public: /* Methods: */
      * \param[in] name Name of module to retrieve the key for
      * \returns Decryption key as a string
      */
-    QString getModuleEncryptionKey(const QString &name);
+    QString getModuleEncryptionKey(const QString & name);
 
     /*!
      * \brief Gets the shortcuts for the given group.
@@ -86,7 +86,7 @@ public: /* Methods: */
      * \param[in] shortcutGroup The group to retrieve shortcuts for.
      * \returns Hash of strings and lists of shortcuts.
      */
-    QHash< QString, QList<QKeySequence> > getShortcuts(const QString& shortcutGroup);
+    QHash<QString, QList<QKeySequence> > getShortcuts(const QString & shortcutGroup);
 
     /*!
      * \brief Sets the shortcuts for the given group.
@@ -96,7 +96,8 @@ public: /* Methods: */
      * \param[in] shortcutGroup The group to retrieve shortcuts for.
      * \param[in] Hash of strings and lists of shortcuts to write.
      */
-    void setShortcuts( const QString& shortcutGroup, const QHash< QString, QList< QKeySequence > >& shortcuts);
+    void setShortcuts(const QString & shortcutGroup,
+                      const QHash<QString, QList<QKeySequence> > & shortcuts);
 
     /*!
      * \brief Returns current filter options.
@@ -136,7 +137,10 @@ public: /* Methods: */
      * Returns a default font that is suitable for the current language.
      * \returns QFont suitable for current language.
      */
-    inline const QFont &getDefaultFont() const { return m_defaultFont; }
+    inline const QFont & getDefaultFont() const {
+        QMutexLocker lock(&this->m_mutex);
+        return m_defaultFont;
+    }
 
     /// \todo: put FontSettingsPair in QVariant directly
     /*!
@@ -196,7 +200,7 @@ public: /* Methods: */
      * \param[in] moduleType module type to return the default sword module info for
      * \returns sword module info pointer or 0
      */
-    CSwordModuleInfo* getDefaultSwordModuleByType(const QString& moduleType);
+    CSwordModuleInfo * getDefaultSwordModuleByType(const QString & moduleType);
 
     /*!
      * \brief Sets the default sword module for a module type.
@@ -207,7 +211,8 @@ public: /* Methods: */
      * \param[in] moduleType module type to set
      * \param[in] module the sword module info to set as default module
      */
-    void setDefaultSwordModuleByType(const QString& moduleType, const CSwordModuleInfo* const module);
+    void setDefaultSwordModuleByType(const QString & moduleType,
+                                     const CSwordModuleInfo * const module);
 
 private: /* Methods: */
 
@@ -219,7 +224,7 @@ private: /* Methods: */
 
 private: /* Fields: */
 
-    static BtConfig* m_instance; //!< singleton instance
+    static BtConfig * m_instance; //!< singleton instance
 
     QFont m_defaultFont; //!< default font used when no special one is set
     FontCacheMap m_fontCache; //!< a cache for the fonts saved in the configuration file for speed
@@ -236,7 +241,7 @@ Q_DECLARE_METATYPE(QList<int>)
  * \brief This is a shortchand for BtConfig::getInstance().
  * \returns BtConfig singleton instance.
  */
-inline BtConfig &btConfig() {
+inline BtConfig & btConfig() {
     return BtConfig::getInstance();
 }
 

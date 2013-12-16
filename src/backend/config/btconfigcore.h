@@ -16,6 +16,7 @@
 
 #include <QCoreApplication>
 #include <QHash>
+#include <QMutex>
 #include <QStringList>
 
 
@@ -47,6 +48,7 @@ public: /* Methods: */
       \returns the key of the current session.
     */
     inline const QString & currentSessionKey() const {
+        QMutexLocker lock(&m_mutex);
         return m_currentSessionKey;
     }
 
@@ -54,6 +56,7 @@ public: /* Methods: */
       \returns the name of the current session.
     */
     inline const QString & currentSessionName() const {
+        QMutexLocker lock(&m_mutex);
         typedef QHash<QString, QString>::const_iterator SSHCI;
         SSHCI it = m_sessionNames.constFind(m_currentSessionKey);
         Q_ASSERT(it != m_sessionNames.constEnd());
@@ -64,6 +67,7 @@ public: /* Methods: */
       \returns a hashmap with the keys and printable names of the sessions.
     */
     inline const SessionNamesHashMap & sessionNames() const {
+        QMutexLocker lock(&m_mutex);
         return m_sessionNames;
     }
 
@@ -107,8 +111,24 @@ public: /* Methods: */
     */
     template<typename T>
     inline T value(const QString & key, const T & defaultValue = T()) {
+        QMutexLocker lock(&m_mutex);
         return m_settings.value(group() + key,
                                 QVariant::fromValue(defaultValue)).template value<T>();
+    }
+
+    /**
+      \brief Returns the settings value for the given global key as a QVariant.
+
+      \param[in] key Key to get the value for.
+      \param[in] defaultValue The value to return if no saved value is found.
+      \returns the value.
+    */
+    inline QVariant qVariantValue(const QString & key,
+                                  const QVariant & defaultValue = QVariant())
+    {
+        QMutexLocker lock(&m_mutex);
+        return m_settings.value(group() + key,
+                                QVariant::fromValue(defaultValue));
     }
 
     /**
@@ -120,6 +140,7 @@ public: /* Methods: */
     */
     template<typename T>
     inline T sessionValue(const QString & key, const T & defaultValue = T()) {
+        QMutexLocker lock(&m_mutex);
         return m_settings.value(m_cachedCurrentSessionGroup + group() + key,
                                 QVariant::fromValue(defaultValue)).template value<T>();
     }
@@ -132,6 +153,7 @@ public: /* Methods: */
     */
     template<typename T>
     inline void setValue(const QString & key, const T & value) {
+        QMutexLocker lock(&m_mutex);
         m_settings.setValue(group() + key, QVariant::fromValue<T>(value));
     }
 
@@ -143,9 +165,22 @@ public: /* Methods: */
     */
     template<typename T>
     inline void setSessionValue(const QString & key, const T & value) {
+        QMutexLocker lock(&m_mutex);
         m_settings.setValue(m_cachedCurrentSessionGroup + group() + key,
                             QVariant::fromValue<T>(value));
     }
+
+    /**
+      \returns a list of first-level keys in the current group in global settings.
+    */
+    QStringList childKeys();
+
+    /**
+      \pre subkey is not empty
+      \param[in] subkey the subkey
+      \returns a list of keys under the current group and subkey in global settings.
+    */
+    QStringList childKeys(const QString & subkey);
 
     /**
       \returns a list of first-level groups in the current group in global settings.
@@ -157,7 +192,7 @@ public: /* Methods: */
       \param[in] subkey the subkey
       \returns a list of groups under the current group and subkey in global settings.
     */
-    QStringList childGroups(const QString &subkey);
+    QStringList childGroups(const QString & subkey);
 
     /**
       \returns a list of first-level groups in the current group in session settings.
@@ -169,7 +204,7 @@ public: /* Methods: */
       \param[in] subkey the subkey
       \returns a list of groups under the current group and subkey in session settings.
     */
-    QStringList sessionChildGroups(const QString &subkey);
+    QStringList sessionChildGroups(const QString & subkey);
 
     /**
       \brief removes a key all its children from global settings.
@@ -189,6 +224,7 @@ public: /* Methods: */
       \brief Synchronize the underlying QSettings.
     */
     inline void sync() {
+        QMutexLocker lock(&m_mutex);
         m_settings.sync();
     }
 
@@ -197,6 +233,8 @@ public: /* Methods: */
 
       The current group is automatically prepended to all keys when reading or
       writing settings values. The behaviour is similar to QSettings::beginGroup().
+
+      \warning Locks the object (recursively) until endGroup().
 
       \param[in] prefix the prefix to append
     */
@@ -209,6 +247,7 @@ public: /* Methods: */
             prefix.chop(1);
         Q_ASSERT(!prefix.isEmpty());
 
+        m_mutex.lock();
         m_groups.append(prefix);
         m_cachedGroup = QString();
     }
@@ -217,12 +256,16 @@ public: /* Methods: */
       \brief Resets the current group to its previous value.
 
       Call this function after you are done with a started group. Every call to
-      beginGroup() must be matched with a call to this function.
+      beginGroup() must be matched with a call to this function in the same
+      thread.
+
+      \warning Locks the object (recursively) until endGroup().
     */
     inline void endGroup() {
         Q_ASSERT_X(!m_groups.isEmpty(), "BtConfig", "endGroup() called, but no beginGroup() active.");
         m_groups.removeLast();
         m_cachedGroup = QString();
+        m_mutex.unlock();
     }
 
     /**
@@ -234,6 +277,7 @@ public: /* Methods: */
       \returns the group string or an empty string if no group is set.
     */
     inline QString group() const {
+        QMutexLocker lock(&m_mutex);
         if (m_cachedGroup.isNull()) {
             m_cachedGroup = m_groups.isEmpty()
                             ? ""
@@ -242,12 +286,35 @@ public: /* Methods: */
         return m_cachedGroup;
     }
 
+private: /* Methods: */
+
+    /**
+      \Brief Same childKeys(), but not thread-safe.
+      \returns a list of first-level keys in the current group in global settings.
+    */
+    QStringList childKeys__();
+
+    /**
+      \Brief Same childGroups(), but not thread-safe.
+      \returns a list of first-level groups in the current group in global settings.
+    */
+    QStringList childGroups__();
+
+    /**
+      \Brief Same sessionChildGroups(), but not thread-safe.
+      \returns a list of first-level groups in the current group in session settings.
+    */
+    QStringList sessionChildGroups__();
+
 protected: /* Fields: */
+
+    /** Required for asynchronous access */
+    mutable QMutex m_mutex;
+
+private: /* Fields: */
 
     /** Underlying backend */
     QSettings m_settings;
-
-private: /* Fields: */
 
     /** List of active group prefixes */
     QStringList m_groups;

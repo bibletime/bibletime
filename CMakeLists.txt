@@ -1,5 +1,10 @@
 PROJECT(bibletime CXX C)
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8.9)
+
+IF("${CMAKE_CURRENT_BINARY_DIR}" STREQUAL "${CMAKE_CURRENT_SOURCE_DIR}")
+  MESSAGE(FATAL_ERROR "You probably didn't mean to run CMake from this directory. Now you have all messed up! You'd better delete CMakeFiles/ and CMakeCache.txt or things will break!")
+ENDIF()
+
 SET(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 
@@ -127,9 +132,6 @@ INCLUDE_DIRECTORIES(
 #This must come before the target definition!
 LINK_DIRECTORIES(${CLucene_LIBRARY_DIR})
 
-# Define rules to generate ${bibletime_UI_translations} files
-INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTUITranslation.cmake")
-
 IF(MSVC)
   ADD_EXECUTABLE("bibletime" WIN32 ${common_bibletime_SOURCES})
 ELSE()
@@ -144,18 +146,19 @@ ELSE()
   SET_TARGET_PROPERTIES("bibletime" PROPERTIES OUTPUT_NAME "bibletime")
 ENDIF()
 
-IF(${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
-  SET(Qt5RequiredModules Widgets Qml Quick Network)
-ELSE()
-  SET(Qt5RequiredModules Widgets WebKit WebKitWidgets Xml Network)
-ENDIF()
+# Define rules to generate ${bibletime_UI_translations} files
+INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTUITranslation.cmake")
 
 IF(Qt5Core_FOUND)
   TARGET_LINK_LIBRARIES("bibletime"
       ${CLucene_LIBRARY}
       ${Sword_LDFLAGS}
   )
-  qt5_use_modules("bibletime" ${Qt5RequiredModules})
+  IF(${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
+    qt5_use_modules("bibletime" Widgets Qml Quick Network)
+  ELSE()
+    qt5_use_modules("bibletime" Widgets WebKit WebKitWidgets Xml Network)
+  ENDIF()
 ELSE()
   IF(QT_QTDBUS_FOUND AND NOT APPLE)
     SET(QT_USE_QTDBUS 1) # Required by INCLUDE(${QT_USE_FILE}) below
