@@ -111,16 +111,19 @@ void BtConfig::destroyInstance() {
 
 void BtConfig::setModuleEncryptionKey(const QString &name, const QString &key) {
     Q_ASSERT(!name.isEmpty());
+    QMutexLocker l(&m_mutex);
     m_settings.setValue("Module keys/" + name, key);
 }
 
 QString BtConfig::getModuleEncryptionKey(const QString &name) {
     Q_ASSERT(!name.isEmpty());
+    QMutexLocker l(&m_mutex);
     return m_settings.value("Module keys/" + name, QVariant(QString::null)).toString();
 }
 
 QHash< QString, QList<QKeySequence> > BtConfig::getShortcuts( const QString& shortcutGroup )
 {
+    QMutexLocker l(&m_mutex);
     m_settings.beginGroup(shortcutGroup);
         QHash< QString, QList<QKeySequence> > allShortcuts;
         Q_FOREACH (const QString &key, m_settings.childKeys()) {
@@ -151,6 +154,7 @@ void BtConfig::setShortcuts(const QString & shortcutGroup,
 {
     typedef QHash<QString, QList<QKeySequence> >::const_iterator SHMCI;
 
+    QMutexLocker l(&m_mutex);
     m_settings.beginGroup(shortcutGroup);
         for(SHMCI it = shortcuts.begin(); it != shortcuts.end(); ++it) {
             // Write beautiful string lists (since 2.9):
@@ -223,6 +227,7 @@ void BtConfig::setFontForLanguage(const CLanguageMgr::Language & language,
     const QString & englishName = language.englishName();
     Q_ASSERT(!englishName.isEmpty());
 
+    QMutexLocker l(&m_mutex);
     // write the language to the settings
         m_settings.beginGroup("fonts");
             m_settings.setValue(englishName, fontSettings.second.toString());
@@ -242,6 +247,7 @@ BtConfig::FontSettingsPair BtConfig::getFontForLanguage(
     const QString & englishName = language.englishName();
     Q_ASSERT(!englishName.isEmpty());
 
+    QMutexLocker l(&m_mutex);
     // Check the cache first:
     FontCacheMap::const_iterator it(m_fontCache.find(&language));
     if (it != m_fontCache.end())
@@ -320,6 +326,7 @@ void BtConfig::setSearchScopesWithCurrentLocale(StringMap searchScopes) {
 }
 
 void BtConfig::deleteSearchScopesWithCurrentLocale() {
+    QMutexLocker l(&m_mutex);
     m_settings.remove("properties/searchScopes");
 }
 

@@ -71,6 +71,8 @@ void BtConfigCore::setCurrentSession(const QString & key) {
     Q_ASSERT(m_sessionNames.contains(key));
     m_currentSessionKey = key;
     m_cachedCurrentSessionGroup = GROUP_SESSION.arg(key);
+
+    QMutexLocker l(&m_mutex);
     m_settings.setValue(KEY_CURRENT_SESSION, key);
     m_settings.sync();
 }
@@ -97,6 +99,8 @@ QString BtConfigCore::addSession(const QString & name) {
     }
     Q_ASSERT(!m_sessionNames.contains(key));
     m_sessionNames.insert(key, name);
+
+    QMutexLocker l(&m_mutex);
     m_settings.setValue(KEY_SESSION_NAME.arg(key), name);
     m_settings.sync();
     return key;
@@ -107,11 +111,14 @@ void BtConfigCore::deleteSession(const QString & key) {
     Q_ASSERT(m_sessionNames.contains(key));
     Q_ASSERT(key != m_currentSessionKey);
     m_sessionNames.remove(key);
+
+    QMutexLocker l(&m_mutex);
     m_settings.remove(GROUP_SESSIONS + key);
     m_settings.sync();
 }
 
 QStringList BtConfigCore::childGroups() {
+    QMutexLocker l(&m_mutex);
     if (m_groups.isEmpty())
         return m_settings.childGroups();
 
@@ -129,6 +136,7 @@ QStringList BtConfigCore::childGroups(const QString &subkey) {
 }
 
 QStringList BtConfigCore::sessionChildGroups() {
+    QMutexLocker l(&m_mutex);
     m_settings.beginGroup(m_cachedCurrentSessionGroup + group());
     const QStringList gs = m_settings.childGroups();
     m_settings.endGroup();
@@ -143,6 +151,7 @@ QStringList BtConfigCore::sessionChildGroups(const QString &subkey) {
 }
 
 void BtConfigCore::remove(const QString & key) {
+    QMutexLocker l(&m_mutex);
     if (m_groups.isEmpty()) {
         m_settings.remove(key);
     } else {
@@ -151,6 +160,7 @@ void BtConfigCore::remove(const QString & key) {
 }
 
 void BtConfigCore::sessionRemove(const QString & key) {
+    QMutexLocker l(&m_mutex);
     if (m_groups.isEmpty()) {
         m_settings.remove(m_cachedCurrentSessionGroup + key);
     } else {

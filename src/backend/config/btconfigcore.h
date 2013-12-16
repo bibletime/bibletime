@@ -16,6 +16,7 @@
 
 #include <QCoreApplication>
 #include <QHash>
+#include <QMutex>
 #include <QStringList>
 
 
@@ -107,6 +108,7 @@ public: /* Methods: */
     */
     template<typename T>
     inline T value(const QString & key, const T & defaultValue = T()) {
+        QMutexLocker l(&m_mutex);
         return m_settings.value(group() + key,
                                 QVariant::fromValue(defaultValue)).template value<T>();
     }
@@ -120,6 +122,7 @@ public: /* Methods: */
     */
     template<typename T>
     inline T sessionValue(const QString & key, const T & defaultValue = T()) {
+        QMutexLocker l(&m_mutex);
         return m_settings.value(m_cachedCurrentSessionGroup + group() + key,
                                 QVariant::fromValue(defaultValue)).template value<T>();
     }
@@ -132,6 +135,7 @@ public: /* Methods: */
     */
     template<typename T>
     inline void setValue(const QString & key, const T & value) {
+        QMutexLocker l(&m_mutex);
         m_settings.setValue(group() + key, QVariant::fromValue<T>(value));
     }
 
@@ -143,6 +147,7 @@ public: /* Methods: */
     */
     template<typename T>
     inline void setSessionValue(const QString & key, const T & value) {
+        QMutexLocker l(&m_mutex);
         m_settings.setValue(m_cachedCurrentSessionGroup + group() + key,
                             QVariant::fromValue<T>(value));
     }
@@ -189,6 +194,7 @@ public: /* Methods: */
       \brief Synchronize the underlying QSettings.
     */
     inline void sync() {
+        QMutexLocker l(&m_mutex);
         m_settings.sync();
     }
 
@@ -246,6 +252,9 @@ protected: /* Fields: */
 
     /** Underlying backend */
     QSettings m_settings;
+
+    /** Requider for asynchronous access */
+    QMutex m_mutex;
 
 private: /* Fields: */
 
