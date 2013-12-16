@@ -241,6 +241,9 @@ bool CSwordModuleInfo::buildIndex() {
         QSharedPointer<IW> writer(new IW(index.toLatin1().constData(), &an, true));
         writer->setMaxFieldLength(BT_MAX_LUCENE_FIELD_LENGTH);
         writer->setUseCompoundFile(true); // Merge segments into a single file
+#ifndef CLUCENE2
+        writer->setMinMergeDocs(1000);
+#endif
 
         m_module->setPosition(sword::TOP);
         unsigned long verseLowIndex = m_module->getIndex();
