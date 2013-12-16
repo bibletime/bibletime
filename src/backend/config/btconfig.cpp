@@ -31,15 +31,15 @@ const QString BTCONFIG_API_VERSION_KEY = "btconfig_api_version";
  * set the instance variable initially to 0, so it can be safely checked
  * whether the variable has been initialized yet.
  */
-BtConfig* BtConfig::m_instance = 0;
+BtConfig * BtConfig::m_instance = NULL;
 
 BtConfig::StringMap BtConfig::m_defaultSearchScopes;
 
 
-BtConfig::BtConfig(const QString &settingsFile)
+BtConfig::BtConfig(const QString & settingsFile)
     : BtConfigCore(settingsFile)
 {
-    Q_ASSERT_X(m_instance == 0, "BtConfig", "Already initialized!");
+    Q_ASSERT_X(!m_instance, "BtConfig", "Already initialized!");
     m_instance = this;
 
     if (m_defaultSearchScopes.isEmpty()) {
@@ -55,7 +55,10 @@ BtConfig::BtConfig(const QString &settingsFile)
 }
 
 bool BtConfig::initBtConfig() {
-    const QString confFileName = util::directory::getUserBaseDir().absolutePath() + "/bibletimerc";
+    Q_ASSERT(!m_instance);
+
+    const QString confFileName = util::directory::getUserBaseDir().absolutePath()
+                                 + "/bibletimerc";
     bool confExisted = QFile::exists(confFileName);
     m_instance = new BtConfig(confFileName);
     if (!confExisted) {
@@ -85,12 +88,13 @@ bool BtConfig::initBtConfig() {
         cont = message::showWarning(
                     0, tr("Error loading configuration!"),
                     tr("Failed to load BibleTime's configuration, because it "
-                       "appears that the configuration file corresponds to a newer "
-                       "version of BibleTime. This is likely caused by BibleTime "
-                       "being downgraded. Loading the new configuration file may "
-                       "result in <b>loss of data</b>.<br/><br/>Do you still want "
-                       "to try to load the new configuration file? Press \"No\" to "
-                       "quit BibleTime immediately."),
+                       "appears that the configuration file corresponds to a "
+                       "newer version of BibleTime. This is likely caused by "
+                       "BibleTime being downgraded. Loading the new "
+                       "configuration file may result in <b>loss of data</b>."
+                       "<br/><br/>Do you still want to try to load the new "
+                       "configuration file? Press \"No\" to quit BibleTime "
+                       "immediately."),
                     QMessageBox::Yes | QMessageBox::No,
                     QMessageBox::No) == QMessageBox::Yes;
     }
@@ -100,52 +104,50 @@ bool BtConfig::initBtConfig() {
 }
 
 BtConfig& BtConfig::getInstance() {
-    Q_ASSERT_X(m_instance != 0, "BtConfig", "Not yet initialized!");
+    Q_ASSERT_X(m_instance, "BtConfig", "Not yet initialized!");
     return *m_instance;
 }
 
 void BtConfig::destroyInstance() {
     delete m_instance;
-    m_instance = 0;
+    m_instance = NULL;
 }
 
-void BtConfig::setModuleEncryptionKey(const QString &name, const QString &key) {
-    Q_ASSERT(!name.isEmpty());
-    QMutexLocker lock(&this->m_mutex);
-    m_settings.setValue("Module keys/" + name, key);
-}
-
-QString BtConfig::getModuleEncryptionKey(const QString &name) {
-    Q_ASSERT(!name.isEmpty());
-    QMutexLocker lock(&this->m_mutex);
-    return m_settings.value("Module keys/" + name, QVariant(QString::null)).toString();
-}
-
-QHash< QString, QList<QKeySequence> > BtConfig::getShortcuts( const QString& shortcutGroup )
+void BtConfig::setModuleEncryptionKey(const QString & name,
+                                      const QString & key)
 {
-    QMutexLocker lock(&this->m_mutex);
-    m_settings.beginGroup(shortcutGroup);
-        QHash< QString, QList<QKeySequence> > allShortcuts;
-        Q_FOREACH (const QString &key, m_settings.childKeys()) {
-            QVariant variant = m_settings.value(key);
+    Q_ASSERT(!name.isEmpty());
+    setValue("Module keys/" + name, key);
+}
+
+QString BtConfig::getModuleEncryptionKey(const QString & name) {
+    Q_ASSERT(!name.isEmpty());
+    return value<QString>("Module keys/" + name, QString::null);
+}
+
+QHash<QString, QList<QKeySequence> > BtConfig::getShortcuts(const QString & shortcutGroup) {
+    beginGroup(shortcutGroup);
+        QHash<QString, QList<QKeySequence> > allShortcuts;
+        Q_FOREACH (const QString & key, childKeys()) {
+            QVariant variant = qVariantValue(key);
 
             QList<QKeySequence> shortcuts;
 
             if (variant.type() == QVariant::List) { // For BibleTime before 2.9
-                Q_FOREACH (const QVariant &shortcut, variant.toList()) {
+                Q_FOREACH (const QVariant & shortcut, variant.toList())
                     shortcuts.append(shortcut.toString());
-                }
-            } else if (variant.type() == QVariant::StringList || variant.type() == QVariant::String) { // a StringList with one element is recognized as a QVariant::String
-                Q_FOREACH (const QString &shortcut, variant.toStringList()) {
+            } else if (variant.type() == QVariant::StringList
+                       || variant.type() == QVariant::String)
+            { // a StringList with one element is recognized as a QVariant::String
+                Q_FOREACH (const QString & shortcut, variant.toStringList())
                     shortcuts.append(shortcut);
-                }
             } else { // it's something we don't know, skip it
                 continue;
             }
 
             allShortcuts.insert(key, shortcuts);
         }
-    m_settings.endGroup();
+    endGroup();
     return allShortcuts;
 }
 
@@ -154,19 +156,18 @@ void BtConfig::setShortcuts(const QString & shortcutGroup,
 {
     typedef QHash<QString, QList<QKeySequence> >::const_iterator SHMCI;
 
-    QMutexLocker lock(&this->m_mutex);
-    m_settings.beginGroup(shortcutGroup);
-        for(SHMCI it = shortcuts.begin(); it != shortcuts.end(); ++it) {
+    beginGroup(shortcutGroup);
+        for (SHMCI it = shortcuts.begin(); it != shortcuts.end(); ++it) {
             // Write beautiful string lists (since 2.9):
             /// \note saving QKeySequences directly doesn't appear to work!
             QStringList varList;
-            Q_FOREACH (const QKeySequence &shortcut, it.value())
+            Q_FOREACH (const QKeySequence & shortcut, it.value())
                 varList.append(shortcut.toString());
 
             if (!varList.empty())
-                m_settings.setValue(it.key(), varList);
+                setValue(it.key(), varList);
         }
-    m_settings.endGroup();
+    endGroup();
 }
 
 FilterOptions BtConfig::getFilterOptions() {
@@ -229,16 +230,11 @@ void BtConfig::setFontForLanguage(const CLanguageMgr::Language & language,
 
     QMutexLocker lock(&this->m_mutex);
     // write the language to the settings
-        m_settings.beginGroup("fonts");
-            m_settings.setValue(englishName, fontSettings.second.toString());
-        m_settings.endGroup();
-
-        m_settings.beginGroup("font standard settings");
-            m_settings.setValue(englishName, fontSettings.first);
-        m_settings.endGroup();
+    setValue("fonts/" + englishName, fontSettings.second.toString());
+    setValue("font standard settings/" + englishName, fontSettings.first);
 
     // Remove language from the cache:
-        m_fontCache.remove(&language);
+    m_fontCache.remove(&language);
 }
 
 BtConfig::FontSettingsPair BtConfig::getFontForLanguage(
@@ -256,11 +252,11 @@ BtConfig::FontSettingsPair BtConfig::getFontForLanguage(
     // Retrieve the font from the settings
     FontSettingsPair fontSettings;
 
-    fontSettings.first = m_settings.value("font standard settings/" + englishName, false).toBool();
+    fontSettings.first = value<bool>("font standard settings/" + englishName, false);
 
     QFont font;
     if (fontSettings.first) {
-        if (!font.fromString(m_settings.value("fonts/" + englishName, getDefaultFont()).toString())) {
+        if (!font.fromString(value<QString>("fonts/" + englishName, getDefaultFont().toString()))) {
             /// \todo
         }
     } else {
@@ -310,8 +306,7 @@ void BtConfig::setSearchScopesWithCurrentLocale(StringMap searchScopes) {
                 verse->setLocale("en");
                 data.append(QString::fromUtf8(verse->getRangeText()));
                 data.append(";");
-            }
-            else {
+            } else {
                 parsingWorked = false;
                 break;
             }
@@ -326,8 +321,7 @@ void BtConfig::setSearchScopesWithCurrentLocale(StringMap searchScopes) {
 }
 
 void BtConfig::deleteSearchScopesWithCurrentLocale() {
-    QMutexLocker lock(&this->m_mutex);
-    m_settings.remove("properties/searchScopes");
+    remove("properties/searchScopes");
 }
 
 CSwordModuleInfo *BtConfig::getDefaultSwordModuleByType(const QString & moduleType) {
