@@ -153,7 +153,7 @@ bool CSwordModuleInfo::unlockKeyIsValid() const {
     if (test.isEmpty())
         return false;
 
-    for (int i = 0; i <= test.length() && i < 100; i++)
+    for (int i = 0; i < test.length() && i < 100; i++)
         if (!test[i].isPrint() && !test[i].isNull())
             return false;
     return true;
