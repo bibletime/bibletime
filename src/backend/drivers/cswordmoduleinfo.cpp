@@ -278,7 +278,12 @@ bool CSwordModuleInfo::buildIndex() {
         // because key is a pointer to the modules key
         m_module->setSkipConsecutiveLinks(true);
 
-        wchar_t wcharBuffer[BT_MAX_LUCENE_FIELD_LENGTH + 1];
+        QScopedPointer<wchar_t, QScopedPointerArrayDeleter<wchar_t> > sPwcharBuffer(new wchar_t[BT_MAX_LUCENE_FIELD_LENGTH  + 1]);
+        wchar_t *wcharBuffer = sPwcharBuffer.data();
+        if(!wcharBuffer) {
+            qDebug() << "buildIndex: can't allocate buffer" << m_module;
+            return false;
+        }
 
         m_module->setPosition(sword::TOP);
         while (!(m_module->popError()) && !m_cancelIndexing) {
@@ -439,8 +444,14 @@ int CSwordModuleInfo::searchIndexed(const QString & searchedText,
                                     const sword::ListKey & scope,
                                     sword::ListKey & results) const
 {
-    char utfBuffer[BT_MAX_LUCENE_FIELD_LENGTH  + 1];
-    wchar_t wcharBuffer[BT_MAX_LUCENE_FIELD_LENGTH + 1];
+    QScopedPointer<char, QScopedPointerArrayDeleter<char> > sPutfBuffer(new char[BT_MAX_LUCENE_FIELD_LENGTH  + 1]);
+    QScopedPointer<wchar_t, QScopedPointerArrayDeleter<wchar_t> > sPwcharBuffer(new wchar_t[BT_MAX_LUCENE_FIELD_LENGTH  + 1]);
+    char *utfBuffer = sPutfBuffer.data();
+    wchar_t *wcharBuffer = sPwcharBuffer.data();
+    if(!utfBuffer || !wcharBuffer) {
+        qDebug() << "searchIndexed: can't allocate" << (!utfBuffer ? "utfBuffer" : "") << (!wcharBuffer ? "wcharBuffer" : "");
+        return 0;
+    }
 
     // work around Swords thread insafety for Bibles and Commentaries
     QSharedPointer<CSwordKey> key(CSwordKey::createInstance(this));
