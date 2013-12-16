@@ -1,5 +1,10 @@
 PROJECT(bibletime CXX C)
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8.9)
+
+IF("${CMAKE_CURRENT_BINARY_DIR}" STREQUAL "${CMAKE_CURRENT_SOURCE_DIR}")
+  MESSAGE(FATAL_ERROR "You probably didn't mean to run CMake from this directory. Now you have all messed up! You'd better delete CMakeFiles/ and CMakeCache.txt or things will break!")
+ENDIF()
+
 SET(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 
