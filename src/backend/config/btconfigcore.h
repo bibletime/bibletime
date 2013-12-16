@@ -253,7 +253,7 @@ protected: /* Fields: */
     /** Underlying backend */
     QSettings m_settings;
 
-    /** Requider for asynchronous access */
+    /** Required for asynchronous access */
     QMutex m_mutex;
 
 private: /* Fields: */
