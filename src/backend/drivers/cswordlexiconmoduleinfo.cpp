@@ -31,17 +31,6 @@ const QStringList &CSwordLexiconModuleInfo::entries() const {
         return m_entries;
     }
 
-    // Initialize cache:
-    //Check for buggy modules! They will not be loaded any more.
-    if ( name() == QString("ZhEnglish")) {
-        qWarning() << "Module ZhEnglish is buggy and will not be loaded.";
-        return m_entries;
-    }
-    if ( name() == QString("EReo_en")) {
-        qWarning() << "Module EReo_en is buggy and will not be loaded.";
-        return m_entries;
-    }
-
     QString dir(DU::getUserCacheDir().absolutePath());
     QFile f1( QString(dir).append("/").append(name()));
 
