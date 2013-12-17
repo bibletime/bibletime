@@ -278,7 +278,8 @@ bool CSwordModuleInfo::buildIndex() {
         // because key is a pointer to the modules key
         m_module->setSkipConsecutiveLinks(true);
 
-        QScopedPointer<wchar_t, QScopedPointerArrayDeleter<wchar_t> > sPwcharBuffer(new wchar_t[BT_MAX_LUCENE_FIELD_LENGTH  + 1]);
+        QScopedPointer<wchar_t, QScopedPointerArrayDeleter<wchar_t> >
+            sPwcharBuffer(new wchar_t[BT_MAX_LUCENE_FIELD_LENGTH  + 1]);
         wchar_t *wcharBuffer = sPwcharBuffer.data();
         if(!wcharBuffer) {
             qDebug() << "buildIndex: can't allocate buffer" << m_module;
@@ -444,8 +445,10 @@ int CSwordModuleInfo::searchIndexed(const QString & searchedText,
                                     const sword::ListKey & scope,
                                     sword::ListKey & results) const
 {
-    QScopedPointer<char, QScopedPointerArrayDeleter<char> > sPutfBuffer(new char[BT_MAX_LUCENE_FIELD_LENGTH  + 1]);
-    QScopedPointer<wchar_t, QScopedPointerArrayDeleter<wchar_t> > sPwcharBuffer(new wchar_t[BT_MAX_LUCENE_FIELD_LENGTH  + 1]);
+    QScopedPointer<char, QScopedPointerArrayDeleter<char> >
+        sPutfBuffer(new char[BT_MAX_LUCENE_FIELD_LENGTH  + 1]);
+    QScopedPointer<wchar_t, QScopedPointerArrayDeleter<wchar_t> >
+        sPwcharBuffer(new wchar_t[BT_MAX_LUCENE_FIELD_LENGTH  + 1]);
     char *utfBuffer = sPutfBuffer.data();
     wchar_t *wcharBuffer = sPwcharBuffer.data();
     if(!utfBuffer || !wcharBuffer) {
