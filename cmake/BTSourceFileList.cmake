@@ -315,10 +315,14 @@ SET(bibletime_COMMON_MOCABLE_HEADERS
     src/backend/btinstallthread.h
 )
 
+IF(QT_QTDBUS_FOUND AND NOT APPLE)
+    SET(bibletime_FRONTEND_DESKTOP_DBUS_MOCABLE_HEADERS src/bibletime_dbus_adaptor.h)
+ENDIF()
+
 SET(bibletime_FRONTEND_DESKTOP_MOCABLE_HEADERS
+    ${bibletime_FRONTEND_DESKTOP_DBUS_MOCABLE_HEADERS}
     src/bibletime.h
     src/bibletimeapp.h
-    src/bibletime_dbus_adaptor.h
     src/frontend/bookmarks/bteditbookmarkdialog.h
     src/frontend/bookmarks/cbookmarkindex.h
     src/frontend/bookshelfmanager/btconfigdialog.h
