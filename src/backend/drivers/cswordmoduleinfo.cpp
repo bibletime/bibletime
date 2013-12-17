@@ -280,7 +280,7 @@ bool CSwordModuleInfo::buildIndex() {
 
         QScopedPointer<wchar_t, QScopedPointerArrayDeleter<wchar_t> >
             sPwcharBuffer(new wchar_t[BT_MAX_LUCENE_FIELD_LENGTH  + 1]);
-        wchar_t *wcharBuffer = sPwcharBuffer.data();
+        wchar_t * const wcharBuffer = sPwcharBuffer.data();
         if(!wcharBuffer) {
             qDebug() << "buildIndex: can't allocate buffer" << m_module;
             return false;
@@ -449,8 +449,8 @@ int CSwordModuleInfo::searchIndexed(const QString & searchedText,
         sPutfBuffer(new char[BT_MAX_LUCENE_FIELD_LENGTH  + 1]);
     QScopedPointer<wchar_t, QScopedPointerArrayDeleter<wchar_t> >
         sPwcharBuffer(new wchar_t[BT_MAX_LUCENE_FIELD_LENGTH  + 1]);
-    char *utfBuffer = sPutfBuffer.data();
-    wchar_t *wcharBuffer = sPwcharBuffer.data();
+    char * const utfBuffer = sPutfBuffer.data();
+    wchar_t * const wcharBuffer = sPwcharBuffer.data();
     if(!utfBuffer || !wcharBuffer) {
         qDebug() << "searchIndexed: can't allocate" << (!utfBuffer ? "utfBuffer" : "") << (!wcharBuffer ? "wcharBuffer" : "");
         return 0;
