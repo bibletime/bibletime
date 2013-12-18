@@ -915,12 +915,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Pauluse kirjad</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="86"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="89"/>
         <source>Error loading configuration!</source>
         <translation>Viga seadistuse laadimisel!</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="87"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="90"/>
         <source>Failed to load BibleTime&apos;s configuration, because it appears that the configuration file corresponds to a newer version of BibleTime. This is likely caused by BibleTime being downgraded. Loading the new configuration file may result in &lt;b&gt;loss of data&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Do you still want to try to load the new configuration file? Press &quot;No&quot; to quit BibleTime immediately.</source>
         <translation>BibleTime seadistusi ei õnnestunud laadida, sest näib nagu oleks konfiguratsioonifaili oleks salvestatud uuema versiooni BibleTime programmiga. Selle põhjuseks on tõenäoliselt vanemale BibleTime versiooni paigaldusele tagasiminek. Uue konfiguratsioonifaili laadimine võib põhjustada &lt;b&gt;andmekadu&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Kas soovite siiski üritada laadida uut konfiguratsioonifaili? Vajutage &quot;Ei&quot; väljumaks BibleTime-st.</translation>
     </message>
@@ -928,7 +928,7 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtConfigCore</name>
     <message>
-        <location filename="../../src/backend/config/btconfigcore.cpp" line="61"/>
+        <location filename="../../src/backend/config/btconfigcore.cpp" line="62"/>
         <source>Default Session</source>
         <translation>Vaikesessioon</translation>
     </message>
@@ -3017,168 +3017,168 @@ kiirklahv</translation>
 <context>
     <name>CSwordModuleInfo</name>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="745"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="757"/>
         <source>Version</source>
         <translation>Versioon</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="748"/>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="754"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="760"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="766"/>
         <source>unknown</source>
         <translation>teadmata</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="751"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="763"/>
         <source>Markup</source>
         <translation>Märgendus</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="757"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="769"/>
         <source>Location</source>
         <translation>Asukoht</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="761"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="773"/>
         <source>Language</source>
         <translation>Keel</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="766"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="778"/>
         <source>Category</source>
         <translation>Kategooria</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="771"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="783"/>
         <source>LCSH</source>
         <translation>LCSH</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="775"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="787"/>
         <source>Writable</source>
         <translation>Kirjutamisõigustega</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="776"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="788"/>
         <source>yes</source>
         <translation>jah</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="776"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="788"/>
         <source>no</source>
         <translation>ei</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="780"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="792"/>
         <source>Unlock key</source>
         <translation>Avamiskood</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="801"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="813"/>
         <source>Features</source>
         <translation>Funktsionaalsus</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="809"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="821"/>
         <source>Take care, this work contains cult / questionable material!</source>
         <translation>Hoiatus, see teos sisaldab kultuslikku või küsitavat materjali!</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="813"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="825"/>
         <source>About</source>
         <translation>Info</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="835"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="847"/>
         <source>Distribution license</source>
         <translation>Distributsiooni litsents</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="836"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="848"/>
         <source>Distribution source</source>
         <translation>Distributsiooni allikas</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="837"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="849"/>
         <source>Distribution notes</source>
         <translation>Distributsiooni märkmed</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="838"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="850"/>
         <source>Text source</source>
         <translation>Teksti allikas</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="839"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="851"/>
         <source>Copyright notes</source>
         <translation>Autoriõiguste märkmed</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="840"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="852"/>
         <source>Copyright holder</source>
         <translation>Autoriõiguste omanik</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="841"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="853"/>
         <source>Copyright date</source>
         <translation>Autoriõiguste kuupäev</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="842"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="854"/>
         <source>Copyright contact name</source>
         <translation>Autoriõiguste omaniku kontaktisiku nimi</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="843"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="855"/>
         <source>Copyright contact address</source>
         <translation>Autoriõiguste omaniku kontaktisiku aadress</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="844"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="856"/>
         <source>Copyright contact email</source>
         <translation>Autoriõiguste omaniku kontaktisiku e-post</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="935"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="947"/>
         <source>Bibles</source>
         <translation>Piiblid</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="937"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="949"/>
         <source>Commentaries</source>
         <translation>Kommentaarid</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="939"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="951"/>
         <source>Books</source>
         <translation>Raamatud</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="941"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="953"/>
         <source>Cults/Unorthodox</source>
         <translation>Kultuslik/mitteortodoksne</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="943"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="955"/>
         <source>Maps and Images</source>
         <translation>Kaardid ja pildid</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="945"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="957"/>
         <source>Daily Devotionals</source>
         <translation>Igapäevane harduskirjandus</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="947"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="959"/>
         <source>Lexicons and Dictionaries</source>
         <translation>Leksikonid ja sõnaraamatud</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="949"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="961"/>
         <source>Glossaries</source>
         <translation>Sõnastikud</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="951"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="963"/>
         <source>Unknown</source>
         <translation>Teadmata</translation>
     </message>
@@ -3385,28 +3385,28 @@ Kas soovite jätkata?</translation>
 <context>
     <name>QCoreApplication</name>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="404"/>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="414"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="410"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="420"/>
         <source>Indexing aborted</source>
         <translation>Indekseerimine katkestatud</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="405"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="411"/>
         <source>An internal error occurred while building the index: %1</source>
         <translation>Indekseerimisel esines programmisisene viga: %1</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="415"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="421"/>
         <source>An internal error occurred while building the index.</source>
         <translation>Indekseerimisel esines programmisisene viga.</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="508"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="520"/>
         <source>Search aborted</source>
         <translation>Otsing katkestatud</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="509"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="521"/>
         <source>An internal error occurred while executing your search.</source>
         <translation>Otsimisel esines programmisisene viga.</translation>
     </message>
@@ -4659,7 +4659,7 @@ Language name ppk</extracomment>
         <translation>Kirjutada fail üle?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="561"/>
+        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="276"/>
         <source>Parsing Strong&apos;s Numbers</source>
         <translation>Strongi numbrite parsimine</translation>
     </message>
@@ -4684,27 +4684,27 @@ Language name ppk</extracomment>
         <translation>Indekseerimata teosed</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="47"/>
+        <location filename="../../src/main.cpp" line="44"/>
         <source>Show this help message and exit</source>
         <translation>Näita seda abiteksti ja välju</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="50"/>
+        <location filename="../../src/main.cpp" line="47"/>
         <source>Output BibleTime version and exit</source>
         <translation>Väljasta BibleTime&apos;i versioon ja välju</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="53"/>
+        <location filename="../../src/main.cpp" line="50"/>
         <source>Open a clean session</source>
         <translation>ava puhas sessioon</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="106"/>
+        <location filename="../../src/main.cpp" line="103"/>
         <source>Error: %1 expects an argument.</source>
         <translation>Viga: %1 vajab argumenti.</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="109"/>
+        <location filename="../../src/main.cpp" line="106"/>
         <source>See --help for details.</source>
         <translation>Täpsema info jaoks kasutage --help võtit.</translation>
     </message>
@@ -4713,12 +4713,12 @@ Language name ppk</extracomment>
         <translation type="obsolete">Ava puhas sessioon</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="56"/>
+        <location filename="../../src/main.cpp" line="53"/>
         <source>Open the default Bible with the reference &lt;ref&gt;</source>
         <translation>Ava vaikimisi piibel kohalt &lt;ref&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="59"/>
+        <location filename="../../src/main.cpp" line="56"/>
         <source>For command-line arguments parsed by the Qt toolkit, see %1.</source>
         <translation>Qt raamistiku poolt toetatud käsurea argumentide jaoks vaadake %1.</translation>
     </message>
@@ -4731,7 +4731,7 @@ Language name ppk</extracomment>
         <translation type="obsolete">Viga: %1 vajab argumenti. Vaata --help detailide kohta.</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="114"/>
+        <location filename="../../src/main.cpp" line="111"/>
         <source>Error: Invalid command-line argument: %1</source>
         <translation>Viga: Vale käsureaargument: %1</translation>
     </message>
@@ -4951,17 +4951,17 @@ Language name ppk</extracomment>
 <context>
     <name>Search::BtSearchResultArea</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="86"/>
+        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="85"/>
         <source>Text of the selected search result item</source>
         <translation>Valitud otsingutulemuse elemendi tekst</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="89"/>
+        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="88"/>
         <source>Select all</source>
         <translation>Vali kõik</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="93"/>
+        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="92"/>
         <source>Copy</source>
         <translation>Kopeeri</translation>
     </message>

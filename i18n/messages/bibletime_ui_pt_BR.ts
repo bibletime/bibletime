@@ -888,12 +888,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="unfinished">Epístolas de Paulo</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="86"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="89"/>
         <source>Error loading configuration!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="87"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="90"/>
         <source>Failed to load BibleTime&apos;s configuration, because it appears that the configuration file corresponds to a newer version of BibleTime. This is likely caused by BibleTime being downgraded. Loading the new configuration file may result in &lt;b&gt;loss of data&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Do you still want to try to load the new configuration file? Press &quot;No&quot; to quit BibleTime immediately.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -901,7 +901,7 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtConfigCore</name>
     <message>
-        <location filename="../../src/backend/config/btconfigcore.cpp" line="61"/>
+        <location filename="../../src/backend/config/btconfigcore.cpp" line="62"/>
         <source>Default Session</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2721,168 +2721,168 @@ atalho</translation>
 <context>
     <name>CSwordModuleInfo</name>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="745"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="757"/>
         <source>Version</source>
         <translation>Versão</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="748"/>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="754"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="760"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="766"/>
         <source>unknown</source>
         <translation>Desconhecido</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="751"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="763"/>
         <source>Markup</source>
         <translation>Marcação</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="757"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="769"/>
         <source>Location</source>
         <translation>Localização</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="761"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="773"/>
         <source>Language</source>
         <translation>Idioma</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="766"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="778"/>
         <source>Category</source>
         <translation>Categoria</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="771"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="783"/>
         <source>LCSH</source>
         <translation>LCSH</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="775"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="787"/>
         <source>Writable</source>
         <translation>Gravável</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="776"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="788"/>
         <source>yes</source>
         <translation>sim</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="776"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="788"/>
         <source>no</source>
         <translation>não</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="780"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="792"/>
         <source>Unlock key</source>
         <translation>Chave de Desbloqueio</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="801"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="813"/>
         <source>Features</source>
         <translation>Características</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="809"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="821"/>
         <source>Take care, this work contains cult / questionable material!</source>
         <translation>Cuidado, esta obra contém material questionável / cultural!</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="813"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="825"/>
         <source>About</source>
         <translation>Sobre</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="835"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="847"/>
         <source>Distribution license</source>
         <translation>Licença da distribuição</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="836"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="848"/>
         <source>Distribution source</source>
         <translation>Fonte da distribuição</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="837"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="849"/>
         <source>Distribution notes</source>
         <translation>Notas da distribuição</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="838"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="850"/>
         <source>Text source</source>
         <translation>Fonte do texto </translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="839"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="851"/>
         <source>Copyright notes</source>
         <translation>Notas do copyright</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="840"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="852"/>
         <source>Copyright holder</source>
         <translation>Detentor dos direitos autorais</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="841"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="853"/>
         <source>Copyright date</source>
         <translation>Data do copyright</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="842"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="854"/>
         <source>Copyright contact name</source>
         <translation>Nome do contato do copyright</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="843"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="855"/>
         <source>Copyright contact address</source>
         <translation>Endereço do contato do copyright</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="844"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="856"/>
         <source>Copyright contact email</source>
         <translation>Email do contato do copyright</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="935"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="947"/>
         <source>Bibles</source>
         <translation>Bíblias</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="937"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="949"/>
         <source>Commentaries</source>
         <translation>Comentários</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="939"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="951"/>
         <source>Books</source>
         <translation>Livros</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="941"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="953"/>
         <source>Cults/Unorthodox</source>
         <translation>Cultos/Heterodoxos</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="943"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="955"/>
         <source>Maps and Images</source>
         <translation>Mapas e Imagens</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="945"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="957"/>
         <source>Daily Devotionals</source>
         <translation>Devocionais Diários</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="947"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="959"/>
         <source>Lexicons and Dictionaries</source>
         <translation>Léxicos e Dicionários</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="949"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="961"/>
         <source>Glossaries</source>
         <translation>Glossários</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="951"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="963"/>
         <source>Unknown</source>
         <translation>Desconhecido</translation>
     </message>
@@ -3089,28 +3089,28 @@ Deseja continuar?</translation>
 <context>
     <name>QCoreApplication</name>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="404"/>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="414"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="410"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="420"/>
         <source>Indexing aborted</source>
         <translation>Indexação abortada</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="405"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="411"/>
         <source>An internal error occurred while building the index: %1</source>
         <translation>Ocorreu um erro interno durante a construç/ao do índice. %1</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="415"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="421"/>
         <source>An internal error occurred while building the index.</source>
         <translation>Ocorreu um erro interno durante a construç/ao do índice.</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="508"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="520"/>
         <source>Search aborted</source>
         <translation>Busca abortada</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="509"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="521"/>
         <source>An internal error occurred while executing your search.</source>
         <translation>Um ero interno ocorreu durante a execução da busca.</translation>
     </message>
@@ -4348,7 +4348,7 @@ Language name ppk</extracomment>
         <translation>Sobrescrever Arquivo?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="561"/>
+        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="276"/>
         <source>Parsing Strong&apos;s Numbers</source>
         <translation>Analisar Números Strong</translation>
     </message>
@@ -4373,42 +4373,42 @@ Language name ppk</extracomment>
         <translation>Obrass não-indexadas</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="47"/>
+        <location filename="../../src/main.cpp" line="44"/>
         <source>Show this help message and exit</source>
         <translation>Mostrar esta mensagem de ajuda e sair</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="50"/>
+        <location filename="../../src/main.cpp" line="47"/>
         <source>Output BibleTime version and exit</source>
         <translation>Saída da versão do BibleTime e sair</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="53"/>
+        <location filename="../../src/main.cpp" line="50"/>
         <source>Open a clean session</source>
         <translation>Abrir uma sessão limpa</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="56"/>
+        <location filename="../../src/main.cpp" line="53"/>
         <source>Open the default Bible with the reference &lt;ref&gt;</source>
         <translation>Abrir a Bíblia padrão com referência &lt;ref&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="59"/>
+        <location filename="../../src/main.cpp" line="56"/>
         <source>For command-line arguments parsed by the Qt toolkit, see %1.</source>
         <translation>Para argumentos de linha de comando analisadas pelo kit de ferramentas Qt, veja %1.</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="106"/>
+        <location filename="../../src/main.cpp" line="103"/>
         <source>Error: %1 expects an argument.</source>
         <translation>Erro: %1 espera um argumento.</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="109"/>
+        <location filename="../../src/main.cpp" line="106"/>
         <source>See --help for details.</source>
         <translation>Veja --help para detalhes.</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="114"/>
+        <location filename="../../src/main.cpp" line="111"/>
         <source>Error: Invalid command-line argument: %1</source>
         <translation>Erro: Argumento de linha de comando ignorado: %1</translation>
     </message>
@@ -4627,17 +4627,17 @@ Language name ppk</extracomment>
 <context>
     <name>Search::BtSearchResultArea</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="86"/>
+        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="85"/>
         <source>Text of the selected search result item</source>
         <translation>Texto do item selecionado do resultados de pesquisa</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="89"/>
+        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="88"/>
         <source>Select all</source>
         <translation>Selecionar tudo</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="93"/>
+        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="92"/>
         <source>Copy</source>
         <translation>Copiar</translation>
     </message>

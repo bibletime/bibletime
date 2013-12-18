@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ru_RU" sourcelanguage="ru_RU">
+<TS version="2.0" language="ru_RU" sourcelanguage="ru_RU">
 <context>
     <name></name>
     <message>
@@ -435,37 +435,37 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Новая Сессия</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="76"/>
+        <location filename="../../src/bibletime.cpp" line="77"/>
         <source>Initializing the SWORD engine...</source>
         <translation>Инициализация движка SWORD...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="84"/>
+        <location filename="../../src/bibletime.cpp" line="85"/>
         <source>Creating BibleTime&apos;s user interface...</source>
         <translation>Создание пользовательского интерфейса&lt;br/&gt;BibleTime...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="91"/>
+        <location filename="../../src/bibletime.cpp" line="92"/>
         <source>Initializing menu- and toolbars...</source>
         <translation>Создание меню и панелей...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="193"/>
+        <location filename="../../src/bibletime.cpp" line="194"/>
         <source>Unlock Work</source>
         <translation>Разблокировать Книгу</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="193"/>
+        <location filename="../../src/bibletime.cpp" line="194"/>
         <source>Enter the unlock key for %1.</source>
         <translation>Введите ключ разблокировки для %1.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="213"/>
+        <location filename="../../src/bibletime.cpp" line="214"/>
         <source>Warning: Invalid unlock key!</source>
         <translation>Предупреждение: Неправильный ключ разблокировки!</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="214"/>
+        <location filename="../../src/bibletime.cpp" line="215"/>
         <source>The unlock key you provided did not properly unlock this module. Please try again.</source>
         <translation>Введенный вами ключ разблокировки не соответствует данному модулю. Пожалуйста, попробуйте еще раз.</translation>
     </message>
@@ -527,8 +527,9 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Мы ищем разработчиков и переводчиков. Если вы желаете присоединиться к нашей команде, пришлите, пожалуйста, сообщение на %1.</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="130"/>
         <source>(c)1999-2013, The BibleTime Team</source>
-        <translation type="obsolete">(c)1999-2013, Команда BibleTime</translation>
+        <translation type="unfinished">(c)1999-2013, Команда BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="137"/>
@@ -601,9 +602,8 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>дизайнер</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="130"/>
         <source>(c)1999-2011, The BibleTime Team</source>
-        <translation>(c)1999-2013, Команда BibleTime</translation>
+        <translation type="obsolete">(c)1999-2013, Команда BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="139"/>
@@ -899,12 +899,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Послания ап. Павла</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="86"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="89"/>
         <source>Error loading configuration!</source>
         <translation>Ошибка при загрузке конфигурации!</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="87"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="90"/>
         <source>Failed to load BibleTime&apos;s configuration, because it appears that the configuration file corresponds to a newer version of BibleTime. This is likely caused by BibleTime being downgraded. Loading the new configuration file may result in &lt;b&gt;loss of data&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Do you still want to try to load the new configuration file? Press &quot;No&quot; to quit BibleTime immediately.</source>
         <translation>Не удалось загрузить конфигурацию BibleTime, кажется, имеющаяся конфигурация соответствует более новой версии. Это могло быть вызвано установкой более ранней версии BibleTime. Если вы продолжите, информация может быть &lt;b&gt;потеряна&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Вы хотите продолжить и загрузить файл конфигурации? Нажмите &quot;Нет&quot; чтобы выйти из BibleTime немедленно.</translation>
     </message>
@@ -912,7 +912,7 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtConfigCore</name>
     <message>
-        <location filename="../../src/backend/config/btconfigcore.cpp" line="61"/>
+        <location filename="../../src/backend/config/btconfigcore.cpp" line="62"/>
         <source>Default Session</source>
         <translation>Сессия по-умолчанию</translation>
     </message>
@@ -2818,168 +2818,168 @@ shortcut</source>
 <context>
     <name>CSwordModuleInfo</name>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="745"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="757"/>
         <source>Version</source>
         <translation>Версия</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="748"/>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="754"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="760"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="766"/>
         <source>unknown</source>
         <translation>неизвестно</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="751"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="763"/>
         <source>Markup</source>
         <translation>Разметка</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="757"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="769"/>
         <source>Location</source>
         <translation>Размещение</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="761"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="773"/>
         <source>Language</source>
         <translation>Язык</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="766"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="778"/>
         <source>Category</source>
         <translation>Категория</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="771"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="783"/>
         <source>LCSH</source>
         <translation>LCSH</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="775"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="787"/>
         <source>Writable</source>
         <translation>Доступный для записи</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="776"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="788"/>
         <source>yes</source>
         <translation>да</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="776"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="788"/>
         <source>no</source>
         <translation>нет</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="780"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="792"/>
         <source>Unlock key</source>
         <translation>Ключ разблокировки</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="801"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="813"/>
         <source>Features</source>
         <translation>Специальные возможности</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="809"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="821"/>
         <source>Take care, this work contains cult / questionable material!</source>
         <translation>Будьте осторожны, модуль содержит конфессиональный или спорный материал!</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="813"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="825"/>
         <source>About</source>
         <translation>О Модуле</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="835"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="847"/>
         <source>Distribution license</source>
         <translation>Лицензия распространения</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="836"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="848"/>
         <source>Distribution source</source>
         <translation>Источник распространения</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="837"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="849"/>
         <source>Distribution notes</source>
         <translation>Комментарии распространения</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="838"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="850"/>
         <source>Text source</source>
         <translation>Источник текста</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="839"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="851"/>
         <source>Copyright notes</source>
         <translation>Примечания об авторском праве</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="840"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="852"/>
         <source>Copyright holder</source>
         <translation>Правообладатель</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="841"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="853"/>
         <source>Copyright date</source>
         <translation>Дата авторского права</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="842"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="854"/>
         <source>Copyright contact name</source>
         <translation>Контактное лицо по авторскому праву</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="843"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="855"/>
         <source>Copyright contact address</source>
         <translation>Контактный адрес по авторскому праву</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="844"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="856"/>
         <source>Copyright contact email</source>
         <translation>Контактный e-mail по авторскому праву</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="935"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="947"/>
         <source>Bibles</source>
         <translation>Тексты Библии</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="937"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="949"/>
         <source>Commentaries</source>
         <translation>Комментарии</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="939"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="951"/>
         <source>Books</source>
         <translation>Книги</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="941"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="953"/>
         <source>Cults/Unorthodox</source>
         <translation>Необщепринятые</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="943"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="955"/>
         <source>Maps and Images</source>
         <translation>Карты и Изображения</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="945"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="957"/>
         <source>Daily Devotionals</source>
         <translation>Наставления</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="947"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="959"/>
         <source>Lexicons and Dictionaries</source>
         <translation>Лексиконы и Словари</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="949"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="961"/>
         <source>Glossaries</source>
         <translation>Глоссарии</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="951"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="963"/>
         <source>Unknown</source>
         <translation>Неизвестный</translation>
     </message>
@@ -3186,28 +3186,28 @@ Do you want to continue?</source>
 <context>
     <name>QCoreApplication</name>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="404"/>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="414"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="410"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="420"/>
         <source>Indexing aborted</source>
         <translation>Индексация отменена</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="405"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="411"/>
         <source>An internal error occurred while building the index: %1</source>
         <translation>Внутренняя ошибка во время индексации: %1</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="415"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="421"/>
         <source>An internal error occurred while building the index.</source>
         <translation>Произошла внутренняя ошибка во время создания индекса.</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="508"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="520"/>
         <source>Search aborted</source>
         <translation>Поиск отменен</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="509"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="521"/>
         <source>An internal error occurred while executing your search.</source>
         <translation>Произошла внутренняя ошибка во время выполнения поиска.</translation>
     </message>
@@ -4452,7 +4452,7 @@ Language name ppk</extracomment>
         <translation>Перезаписать Файл?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="561"/>
+        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="276"/>
         <source>Parsing Strong&apos;s Numbers</source>
         <translation>Обработка Номеров Стронга</translation>
     </message>
@@ -4535,91 +4535,91 @@ Language name ppk</extracomment>
 <context>
     <name>QPushButton</name>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="58"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="58"/>
         <source>OK</source>
         <comment>Dialog Button</comment>
         <translation>ОК</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="59"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="59"/>
         <source>Open</source>
         <comment>Dialog Button</comment>
         <translation>Открыть</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="60"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="60"/>
         <source>Save</source>
         <comment>Dialog Button</comment>
         <translation>Сохранить</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="61"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="61"/>
         <source>Cancel</source>
         <comment>Dialog Button</comment>
         <translation>Отмена</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="62"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="62"/>
         <source>Close</source>
         <comment>Dialog Button</comment>
         <translation>Закрыть</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="63"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="63"/>
         <source>Discard</source>
         <comment>Dialog Button</comment>
         <translation>Сбросить</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="64"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="64"/>
         <source>Apply</source>
         <comment>Dialog Button</comment>
         <translation>Применить</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="65"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="65"/>
         <source>Reset</source>
         <comment>Dialog Button</comment>
         <translation>Сбросить</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="66"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="66"/>
         <source>Restore defaults</source>
         <comment>Dialog Button</comment>
         <translation>Восстановить стандартные настройки</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="67"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="67"/>
         <source>Help</source>
         <comment>Dialog Button</comment>
         <translation>Помощь</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="68"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="68"/>
         <source>Save All</source>
         <comment>Dialog Button</comment>
         <translation>Сохранить все</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="69"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="69"/>
         <source>Yes</source>
         <comment>Dialog Button</comment>
         <translation>Да</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="70"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="70"/>
         <source>Yes to all</source>
         <comment>Dialog Button</comment>
         <translation>Да для всех</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="71"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="71"/>
         <source>No</source>
         <comment>Dialog Button</comment>
         <translation>Нет</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="72"/>
+        <location filename="../../src/frontend/messagedialog.cpp" line="72"/>
         <source>No to all</source>
         <comment>Dialog Button</comment>
         <translation>Нет для всех</translation>
@@ -4735,17 +4735,17 @@ Language name ppk</extracomment>
 <context>
     <name>Search::BtSearchResultArea</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="86"/>
+        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="85"/>
         <source>Text of the selected search result item</source>
         <translation>Текст выбранного результата поиска</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="89"/>
+        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="88"/>
         <source>Select all</source>
         <translation>Выделить всё</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="93"/>
+        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="92"/>
         <source>Copy</source>
         <translation>Копировать</translation>
     </message>

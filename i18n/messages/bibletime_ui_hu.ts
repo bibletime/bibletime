@@ -887,12 +887,12 @@ Ez a  fájl a BibleTime licenszelésével megegyező licensszel terjeszthető.</
         <translation type="unfinished">Pál levelei</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="86"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="89"/>
         <source>Error loading configuration!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/btconfig.cpp" line="87"/>
+        <location filename="../../src/backend/config/btconfig.cpp" line="90"/>
         <source>Failed to load BibleTime&apos;s configuration, because it appears that the configuration file corresponds to a newer version of BibleTime. This is likely caused by BibleTime being downgraded. Loading the new configuration file may result in &lt;b&gt;loss of data&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt;Do you still want to try to load the new configuration file? Press &quot;No&quot; to quit BibleTime immediately.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -900,7 +900,7 @@ Ez a  fájl a BibleTime licenszelésével megegyező licensszel terjeszthető.</
 <context>
     <name>BtConfigCore</name>
     <message>
-        <location filename="../../src/backend/config/btconfigcore.cpp" line="61"/>
+        <location filename="../../src/backend/config/btconfigcore.cpp" line="62"/>
         <source>Default Session</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2703,168 +2703,168 @@ shortcut</source>
 <context>
     <name>CSwordModuleInfo</name>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="745"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="757"/>
         <source>Version</source>
         <translation>Verzió</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="748"/>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="754"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="760"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="766"/>
         <source>unknown</source>
         <translation>ismeretlen</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="751"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="763"/>
         <source>Markup</source>
         <translation>Jelzés</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="757"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="769"/>
         <source>Location</source>
         <translation>Hely</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="761"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="773"/>
         <source>Language</source>
         <translation>Nyelv</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="766"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="778"/>
         <source>Category</source>
         <translation>Kategória</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="771"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="783"/>
         <source>LCSH</source>
         <translation>LCSH</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="775"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="787"/>
         <source>Writable</source>
         <translation>Írható</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="776"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="788"/>
         <source>yes</source>
         <translation>igen</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="776"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="788"/>
         <source>no</source>
         <translation>nem</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="780"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="792"/>
         <source>Unlock key</source>
         <translation>Feloldó kulcs</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="801"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="813"/>
         <source>Features</source>
         <translation>Lehetőségek</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="809"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="821"/>
         <source>Take care, this work contains cult / questionable material!</source>
         <translation>Legyen óvatos, a dokumentum kultikus / megkérdőjelezhető anyagot tartalmaz!</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="813"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="825"/>
         <source>About</source>
         <translation>Leírás</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="835"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="847"/>
         <source>Distribution license</source>
         <translation>Disztribúciós Licensz</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="836"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="848"/>
         <source>Distribution source</source>
         <translation>Disztribúció forrása</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="837"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="849"/>
         <source>Distribution notes</source>
         <translation>Disztribúció megjegyzései</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="838"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="850"/>
         <source>Text source</source>
         <translation>Szöveg forrás</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="839"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="851"/>
         <source>Copyright notes</source>
         <translation>Szerzői jogi megjegyzések</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="840"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="852"/>
         <source>Copyright holder</source>
         <translation>Szerzői jog tulajdonosa</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="841"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="853"/>
         <source>Copyright date</source>
         <translation>Szerzői jogvédelem dátuma</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="842"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="854"/>
         <source>Copyright contact name</source>
         <translation>Szerzői jogi kapcsolattartó neve</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="843"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="855"/>
         <source>Copyright contact address</source>
         <translation>Szerzői jogi kapcsolattartó címe</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="844"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="856"/>
         <source>Copyright contact email</source>
         <translation>Szerzői jogi kapcsolattartó emailcíme</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="935"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="947"/>
         <source>Bibles</source>
         <translation>Bibliák</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="937"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="949"/>
         <source>Commentaries</source>
         <translation>Kommentárok</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="939"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="951"/>
         <source>Books</source>
         <translation>Könyvek</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="941"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="953"/>
         <source>Cults/Unorthodox</source>
         <translation>Kultikus/Unortodox</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="943"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="955"/>
         <source>Maps and Images</source>
         <translation>Térképek és képek</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="945"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="957"/>
         <source>Daily Devotionals</source>
         <translation>Napi áhitatok</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="947"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="959"/>
         <source>Lexicons and Dictionaries</source>
         <translation>Lexikonok és szótárak</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="949"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="961"/>
         <source>Glossaries</source>
         <translation>Szójegyzékek</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="951"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="963"/>
         <source>Unknown</source>
         <translation>IsmeretlenEgyéb</translation>
     </message>
@@ -3066,28 +3066,28 @@ Folytatja?</translation>
 <context>
     <name>QCoreApplication</name>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="404"/>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="414"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="410"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="420"/>
         <source>Indexing aborted</source>
         <translation>Indexelés megszakítva</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="405"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="411"/>
         <source>An internal error occurred while building the index: %1</source>
         <translation>Egy belső hiba történt a(z) %1 indexének készítése közben.</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="415"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="421"/>
         <source>An internal error occurred while building the index.</source>
         <translation>Belső hiba történt az indexelés közben.</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="508"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="520"/>
         <source>Search aborted</source>
         <translation>Keresésé megszakítva</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="509"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="521"/>
         <source>An internal error occurred while executing your search.</source>
         <translation>Keresés közben belső hiba történt.</translation>
     </message>
@@ -4324,7 +4324,7 @@ Language name ppk</extracomment>
         <translation>Felülírja a fájlt?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="561"/>
+        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="276"/>
         <source>Parsing Strong&apos;s Numbers</source>
         <translation>Strong&apos;s számok követése</translation>
     </message>
@@ -4364,42 +4364,42 @@ Language name ppk</extracomment>
         <translation>Áthelyezés</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="47"/>
+        <location filename="../../src/main.cpp" line="44"/>
         <source>Show this help message and exit</source>
         <translation>Mutassa ezt a súgóüzenetet és lépjen ki</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="50"/>
+        <location filename="../../src/main.cpp" line="47"/>
         <source>Output BibleTime version and exit</source>
         <translation>Jelezze ki a BibleTime verziót és lépjen ki</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="53"/>
+        <location filename="../../src/main.cpp" line="50"/>
         <source>Open a clean session</source>
         <translation>Új folyamat indítása</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="56"/>
+        <location filename="../../src/main.cpp" line="53"/>
         <source>Open the default Bible with the reference &lt;ref&gt;</source>
         <translation>Alapértelmezett Biblia megnyitása ezen a helyen &lt;ref&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="59"/>
+        <location filename="../../src/main.cpp" line="56"/>
         <source>For command-line arguments parsed by the Qt toolkit, see %1.</source>
         <translation>A Qt eszközkészlet parancssori beállításaival kapcsolatban tekintse meg ezt: %1.</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="106"/>
+        <location filename="../../src/main.cpp" line="103"/>
         <source>Error: %1 expects an argument.</source>
         <translation>Hiba: %1 paramétert vár.</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="109"/>
+        <location filename="../../src/main.cpp" line="106"/>
         <source>See --help for details.</source>
         <translation>Tekintse meg a --help kapcsolóval a részletekért.</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="114"/>
+        <location filename="../../src/main.cpp" line="111"/>
         <source>Error: Invalid command-line argument: %1</source>
         <translation>Hiba: nem megfelelő parancssori paraméter: %1</translation>
     </message>
@@ -4603,17 +4603,17 @@ Language name ppk</extracomment>
 <context>
     <name>Search::BtSearchResultArea</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="86"/>
+        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="85"/>
         <source>Text of the selected search result item</source>
         <translation>A választott keresési eredmény szövege</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="89"/>
+        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="88"/>
         <source>Select all</source>
         <translation>Összes kijelölése</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="93"/>
+        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="92"/>
         <source>Copy</source>
         <translation>Másolás</translation>
     </message>
