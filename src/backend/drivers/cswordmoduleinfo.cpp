@@ -618,34 +618,34 @@ QString CSwordModuleInfo::config(const CSwordModuleInfo::ConfigEntry entry) cons
         }
 
         case DistributionLicense:
-            return getSimpleConfigEntry("DistributionLicense");
+            return getFormattedConfigEntry("DistributionLicense");
 
         case DistributionSource:
-            return getSimpleConfigEntry("DistributionSource");
+            return getFormattedConfigEntry("DistributionSource");
 
         case DistributionNotes:
-            return getSimpleConfigEntry("DistributionNotes");
+            return getFormattedConfigEntry("DistributionNotes");
 
         case TextSource:
-            return getSimpleConfigEntry("TextSource");
+            return getFormattedConfigEntry("TextSource");
 
         case CopyrightNotes:
-            return getSimpleConfigEntry("CopyrightNotes");
+            return getFormattedConfigEntry("CopyrightNotes");
 
         case CopyrightHolder:
-            return getSimpleConfigEntry("CopyrightHolder");
+            return getFormattedConfigEntry("CopyrightHolder");
 
         case CopyrightDate:
-            return getSimpleConfigEntry("CopyrightDate");
+            return getFormattedConfigEntry("CopyrightDate");
 
         case CopyrightContactName:
-            return getSimpleConfigEntry("CopyrightContactName");
+            return getFormattedConfigEntry("CopyrightContactName");
 
         case CopyrightContactAddress:
-            return getSimpleConfigEntry("CopyrightContactAddress");
+            return getFormattedConfigEntry("CopyrightContactAddress");
 
         case CopyrightContactEmail:
-            return getSimpleConfigEntry("CopyrightContactEmail");
+            return getFormattedConfigEntry("CopyrightContactEmail");
 
         default:
             return QString::null;
@@ -980,7 +980,13 @@ QString CSwordModuleInfo::getSimpleConfigEntry(const QString & name) const {
 }
 
 QString CSwordModuleInfo::getFormattedConfigEntry(const QString & name) const {
-    sword::SWBuf RTF_Buffer(m_module->getConfigEntry(name.toUtf8().constData()));
+    sword::SWBuf RTF_Buffer;
+    QStringList localeNames(QLocale(CSwordBackend::instance()->booknameLanguage()).uiLanguages());
+    for(int i = localeNames.size() - 1; i >= -1; --i) {
+        QString field(i >= 0 ? name + "_" + localeNames[i] : name);
+        if((RTF_Buffer = m_module->getConfigEntry((field.toUtf8().constData()))).length() > 0)
+            break;
+    }
     sword::RTFHTML RTF_Filter;
     RTF_Filter.processText(RTF_Buffer, 0, 0);
     const QString ret = isUnicode()
