@@ -169,7 +169,16 @@ bool initDirectoryCache() {
         return false;
     }
 
+#if defined Q_OS_ANDROID
+    cachedUserHomeDir.reset(new QDir(qgetenv("EXTERNAL_STORAGE")));
+    if(!cachedUserHomeDir->exists() || !cachedUserHomeDir->isReadable())
+    {
+        qWarning() << "No external storage found, use application home.";
+        cachedUserHomeDir->setPath(QDir::homePath());
+    }
+#else
     cachedUserHomeDir.reset(new QDir(qgetenv("HOME")));
+#endif
 
     cachedUserBaseDir.reset(new QDir(*cachedUserHomeDir));
     if (!cachedUserBaseDir->cd(BIBLETIME)) {
@@ -186,6 +195,11 @@ bool initDirectoryCache() {
             return false;
         }
     }
+
+#if defined Q_OS_ANDROID
+    // help for SWMgr to find the right place
+    qputenv(SWORD_PATH, cachedUserHomeSwordDir->absolutePath().toLocal8Bit());
+#endif
 
     cachedUserHomeSwordModsDir.reset(new QDir(*cachedUserHomeSwordDir));
     if (!cachedUserHomeSwordModsDir->cd("mods.d")) {
