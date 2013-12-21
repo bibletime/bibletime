@@ -510,23 +510,20 @@ QStringList CSwordBackend::swordDirList() const {
 }
 
 void CSwordBackend::deleteOrphanedIndices() {
-    QDir dir(CSwordModuleInfo::getGlobalBaseIndexLocation());
-    dir.setFilter(QDir::Dirs);
-    CSwordModuleInfo* module;
-
-    for (unsigned int i = 0; i < dir.count(); i++) {
-        if (dir[i] != "." && dir[i] != "..") {
-            if ( (module = this->findModuleByName(dir[i])) ) { //mod exists
-                if (!module->hasIndex()) { //index files found, but wrong version etc.
-                    qDebug() << "deleting outdated index for module" << dir[i];
-                    CSwordModuleInfo::deleteIndexForModule( dir[i] );
-                }
+    const QStringList entries = QDir(CSwordModuleInfo::getGlobalBaseIndexLocation()).entryList(QDir::Dirs);
+    Q_FOREACH(const QString & entry, entries) {
+        if (entry == "." || entry == "..")
+            continue;
+        CSwordModuleInfo * const module = findModuleByName(entry);
+        if (module) { //mod exists
+            if (!module->hasIndex()) { //index files found, but wrong version etc.
+                qDebug() << "deleting outdated index for module" << entry;
+                CSwordModuleInfo::deleteIndexForModule(entry);
             }
-            else { //no module exists
-                if (btConfig().value<bool>("settings/behaviour/autoDeleteOrphanedIndices", true)) {
-                    qDebug() << "deleting orphaned index in directory" << dir[i];
-                    CSwordModuleInfo::deleteIndexForModule( dir[i] );
-                }
+        } else { //no module exists
+            if (btConfig().value<bool>("settings/behaviour/autoDeleteOrphanedIndices", true)) {
+                qDebug() << "deleting orphaned index in directory" << entry;
+                CSwordModuleInfo::deleteIndexForModule(entry);
             }
         }
     }
