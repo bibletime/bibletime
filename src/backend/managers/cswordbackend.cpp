@@ -477,9 +477,8 @@ QStringList CSwordBackend::swordDirList() const {
 
     // Search the sword.conf file(s) for sword directories that could contain modules
     for (SLCI it(configs.begin()); it != configs.end(); ++it) {
-        if (!QFileInfo(*it).exists()) {
+        if (!QFileInfo(*it).exists())
             continue;
-        }
 
         /*
           Get all DataPath and AugmentPath entries from the config file and add
@@ -488,21 +487,21 @@ QStringList CSwordBackend::swordDirList() const {
         sword::SWConfig conf((*it).toUtf8().constData());
         swordDirSet << QDir(QTextCodec::codecForLocale()->toUnicode(conf["Install"]["DataPath"].c_str())).absolutePath();
 
-        sword::ConfigEntMap group(conf["Install"]);
-        const sword::ConfigEntMap::iterator start(group.equal_range("AugmentPath").first);
-        const sword::ConfigEntMap::iterator end(group.equal_range("AugmentPath").second);
-
-        for (CEMCI it(start); it != end; ++it) {
-            QDir(QTextCodec::codecForLocale()->toUnicode(it->second.c_str())).absolutePath();
+        const sword::ConfigEntMap group(conf["Install"]);
+        typedef sword::ConfigEntMap::const_iterator CEMCI;
+        for (std::pair<CEMCI, CEMCI> its = group.equal_range("AugmentPath");
+             its.first != its.second;
+             ++(its.first))
+        {
             // Added augment path:
-            swordDirSet << QDir(QTextCodec::codecForLocale()->toUnicode(it->second.c_str())).absolutePath();
+            swordDirSet << QDir(QTextCodec::codecForLocale()->toUnicode(its.first->second.c_str())).absolutePath();
         }
     }
 
     // Add the private sword path to the set if not there already:
     swordDirSet << getPrivateSwordConfigPath();
 
-    return swordDirSet.values();
+    return QStringList::fromSet(swordDirSet);
 }
 
 void CSwordBackend::deleteOrphanedIndices() {
