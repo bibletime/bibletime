@@ -65,12 +65,16 @@ static const char SWORD_PATH[] = "SWORD_PATH";
 } // anonymous namespace
 
 bool initDirectoryCache() {
-    QDir wDir(QCoreApplication::applicationDirPath());
-    wDir.makeAbsolute();
-
-    if (!wDir.cdUp()) { // Installation prefix
-        qWarning() << "Cannot cd up from directory " << QCoreApplication::applicationDirPath();
-        return false;
+    QDir wDir(":/share/bibletime"); // check if resources would be read from qrc
+    if(wDir.exists())
+        wDir = ":/";
+    else {
+        wDir = QCoreApplication::applicationDirPath();
+        wDir.makeAbsolute();
+        if (!wDir.cdUp()) { // Installation prefix
+            qWarning() << "Cannot cd up from directory " << QCoreApplication::applicationDirPath();
+            return false;
+        }
     }
 
 #ifdef Q_OS_WIN
