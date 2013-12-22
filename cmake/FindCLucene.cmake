@@ -35,7 +35,7 @@ ENDIF()
 SET(CLucene_GOOD_VERSION TRUE)
 
 # Work around clucene-config.h being installed in weird places on some distros:
-GET_FILENAME_COMPONENT(CLucene_LIBRARY_DIR_HINTS "${CLucene_LIBRARY}" ABSOLUTE)
+GET_FILENAME_COMPONENT(CLucene_LIBRARY_DIR_HINTS "${CLucene_LIBRARY}" DIRECTORY)
 
 FIND_PATH(CLucene_LIBRARY_DIR
           NAMES "CLucene/clucene-config.h"
