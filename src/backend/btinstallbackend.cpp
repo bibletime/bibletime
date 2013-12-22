@@ -276,20 +276,13 @@ QDir swordDir() {
 #endif
 }
 
-CSwordBackend* backend( const sword::InstallSource& is) {
-    CSwordBackend* ret = 0;
+CSwordBackend * backend(const sword::InstallSource & is) {
     /// \anchor BackendNotSingleton
-    if (isRemote(is)) {
-        ret = new CSwordBackend( QString(is.localShadow.c_str()), false );
-    }
-    else {
-        ret = new CSwordBackend( QString(is.directory.c_str()), false);
-    }
-
-    Q_ASSERT(ret);
-    if (ret) {
-        ret->initModules(CSwordBackend::OtherChange);
-    }
+    CSwordBackend * const ret = new CSwordBackend(isRemote(is)
+                                                  ? is.localShadow.c_str()
+                                                  : is.directory.c_str(),
+                                                  false);
+    ret->initModules(CSwordBackend::OtherChange);
     return ret;
 }
 
