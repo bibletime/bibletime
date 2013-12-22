@@ -315,7 +315,7 @@ SET(bibletime_COMMON_MOCABLE_HEADERS
     src/backend/btinstallthread.h
 )
 
-IF(QT_QTDBUS_FOUND AND NOT APPLE)
+IF(BT_Use_DBus)
     SET(bibletime_FRONTEND_DESKTOP_DBUS_MOCABLE_HEADERS src/bibletime_dbus_adaptor.h)
 ENDIF()
 
