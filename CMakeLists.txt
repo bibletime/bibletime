@@ -85,7 +85,9 @@ LIST(APPEND HANDBOOK_LOCALE_LANGS ar cs de es fi fr hu it nl pt_BR)
 LIST(APPEND HOWTO_LOCALE_LANGS ar bg cs da de es fi fr it hu ko nl pt_BR ru)
 
 # Automatically link Qt executables to qtmain target on Windows
-cmake_policy(SET CMP0020 NEW)
+IF(MSVC)
+  cmake_policy(SET CMP0020 NEW)
+ENDIF()
 
 # SET INSTALLATION PATHS
 IF(APPLE)
