@@ -19,6 +19,7 @@
 
 class BtInstallThread;
 class CSwordModuleInfo;
+class QProgressBar;
 class QTreeWidget;
 class QTreeWidgetItem;
 
@@ -53,6 +54,8 @@ protected: /* Methods: */
 
 private: /* Methods: */
 
+    QProgressBar * getOrCreateProgressBar(int moduleIndex);
+    QProgressBar * getOrCreateProgressBar(QTreeWidgetItem * item);
 
 private: /* Fields: */
 

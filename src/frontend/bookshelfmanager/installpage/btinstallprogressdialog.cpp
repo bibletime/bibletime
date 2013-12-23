@@ -112,19 +112,12 @@ void BtInstallProgressDialog::slotInstallStarted(int moduleIndex) {
 void BtInstallProgressDialog::slotDownloadStarted(int moduleIndex) {
     QTreeWidgetItem * const item = m_statusWidget->topLevelItem(moduleIndex);
     item->setText(1, QString::null);
-    QProgressBar * const progressBar = new QProgressBar(m_statusWidget);
-    progressBar->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
-    progressBar->setValue(0);
-    m_statusWidget->setItemWidget(item, 1, progressBar);
+    getOrCreateProgressBar(item)->setValue(0);
 }
 
 void BtInstallProgressDialog::slotStatusUpdated(int moduleIndex, int status) {
     // find the progress bar for this module and update the value
-    QTreeWidgetItem * const item = m_statusWidget->topLevelItem(moduleIndex);
-    QWidget * const itemWidget = m_statusWidget->itemWidget(item, 1);
-    QProgressBar * const bar = dynamic_cast<QProgressBar *>(itemWidget);
-    if (bar)
-        bar->setValue(status);
+    getOrCreateProgressBar(moduleIndex)->setValue(status);
 }
 
 void BtInstallProgressDialog::slotOneItemCompleted(int moduleIndex, bool successful) {
@@ -147,4 +140,19 @@ void BtInstallProgressDialog::closeEvent(QCloseEvent * event) {
     }
     // other parts of the UI/engine must be updated
     CSwordBackend::instance()->reloadModules(CSwordBackend::AddedModules);
+}
+
+QProgressBar * BtInstallProgressDialog::getOrCreateProgressBar(int moduleIndex) {
+    return getOrCreateProgressBar(m_statusWidget->topLevelItem(moduleIndex));
+}
+
+QProgressBar * BtInstallProgressDialog::getOrCreateProgressBar(QTreeWidgetItem * item) {
+    QWidget * const itemWidget = m_statusWidget->itemWidget(item, 1);
+    QProgressBar * progressBar = dynamic_cast<QProgressBar *>(itemWidget);
+    if (!progressBar) {
+        progressBar = new QProgressBar(m_statusWidget);
+        progressBar->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+        m_statusWidget->setItemWidget(item, 1, progressBar);
+    }
+    return progressBar;
 }
