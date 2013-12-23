@@ -327,22 +327,17 @@ void BtInstallPage::slotInstall() {
     }
 
     if (dlg->exec() == QDialog::Accepted) {
-        QSet<const CSwordModuleInfo*> cm;
-        Q_FOREACH(const CSwordModuleInfo *m, dlg->checkedModules()) {
-            cm.insert(m);
-        }
-
-        if (cm.empty())
+        QList<CSwordModuleInfo *> modules(dlg->checkedModules().toList());
+        if (modules.empty())
             return;
 
         /// \todo first remove all modules which will be updated from the module list
         // but what modules? all with the same real name? (there may be _n modules...)
 
         // progressDialog is WA_DeleteOnClose
-        BtInstallProgressDialog *progressDialog = new BtInstallProgressDialog(cm, selectedInstallPath(), this);
-
+        typedef BtInstallProgressDialog BIPD;
+        BIPD * const progressDialog = new BIPD(modules, selectedInstallPath(), this);
         m_installButton->setEnabled(false);
-
         // the progress dialog is now modal, it can be made modeless later.
         progressDialog->exec();
 

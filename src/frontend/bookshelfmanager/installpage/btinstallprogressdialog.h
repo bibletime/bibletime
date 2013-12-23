@@ -14,7 +14,6 @@
 
 #include <QDialog>
 
-#include <QMultiMap>
 #include <QString>
 
 
@@ -23,47 +22,46 @@ class CSwordModuleInfo;
 class QTreeWidget;
 class QTreeWidgetItem;
 
-class BtInstallProgressDialog : public QDialog {
-        Q_OBJECT
-    public:
-        BtInstallProgressDialog(const QSet<const CSwordModuleInfo*> &modules,
-                                const QString &destination, QWidget *parent = 0,
-                                Qt::WindowFlags flags = 0);
+class BtInstallProgressDialog: public QDialog {
 
-    public slots:
-        void slotOneItemCompleted(QString module, QString source, int status);
-        void slotOneItemStopped(QString module, QString source);
-        void slotStopInstall();
-        void slotStatusUpdated(QString module, int status);
-        void slotDownloadStarted(QString module);
-        void slotInstallStarted(QString module, QString);
+    Q_OBJECT
 
-    protected:
-        /**
-        * Handles closing by the window close button, Cancel (Stop) All button, or completing
-        * the downloads.
-        */
-        virtual void closeEvent(QCloseEvent* event);
+public: /* Methods: */
 
-//signals:
-//    void swordSetupChanged();
+    BtInstallProgressDialog(const QList<CSwordModuleInfo *> & modules,
+                            const QString & destination,
+                            QWidget * parent = 0,
+                            Qt::WindowFlags flags = 0);
+    ~BtInstallProgressDialog();
 
-    private:
+public slots:
 
-        /// \todo using maps is tedious and error prone. Find better solution for handling the modules
-        // and their states.
-        QMultiMap<QString, BtInstallThread*> m_waitingThreads;
-        QMultiMap<QString, BtInstallThread*> m_runningThreads;
-        QMap<QString, BtInstallThread*> m_threadsByModule;
-        //QList<BtInstallThread*> m_doneThreads;
+    void slotStopInstall();
+    void slotInstallStarted(int moduleIndex);
+    void slotDownloadStarted(int moduleIndex);
+    void slotStatusUpdated(int moduleIndex, int status);
+    void slotOneItemCompleted(int moduleIndex, bool status);
+    void slotThreadFinished();
 
-        QTreeWidget* m_statusWidget;
+protected: /* Methods: */
 
-    private:
-        QTreeWidgetItem* getItem(QString moduleName);
-        bool threadsDone();
-        void startThreads();
-        void oneItemStoppedOrCompleted(QString module, QString source, QString message);
+    /**
+      Handles closing by the window close button, Cancel (Stop) All button, or
+      completing the downloads.
+    */
+    virtual void closeEvent(QCloseEvent * event);
+
+private: /* Methods: */
+
+    void oneItemStoppedOrCompleted(int moduleIndex, const QString & message);
+
+private: /* Fields: */
+
+    QTreeWidget * m_statusWidget;
+    QPushButton * m_stopAllButton;
+    BtInstallThread * m_thread;
+    int m_nextInstallIndex;
+
 };
 
 #endif
