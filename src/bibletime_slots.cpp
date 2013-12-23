@@ -18,7 +18,6 @@
 #include <QList>
 #include <QMdiSubWindow>
 #include <QMenu>
-#include <QMessageBox>
 #include <QProcess>
 #include <QtGlobal>
 #include <QToolBar>
@@ -540,7 +539,7 @@ void BibleTime::saveToNewProfile() {
         if (!name.isEmpty()) {
             // Check whether name already exists:
             if (conf.sessionNames().values().contains(name)) {
-                QMessageBox::information(this, tr("Session already exists"),
+                message::showInformation(this, tr("Session already exists"),
                                          tr("Session with the name \"%1\" "
                                             "already exists. Please provide a "
                                             "different name.").arg(name));

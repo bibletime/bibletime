@@ -66,7 +66,7 @@ QString swordConfigFilename();
 QDir swordDir();
 
 /** Returns backend Sword manager for the source. */
-CSwordBackend* backend( const sword::InstallSource& is);
+CSwordBackend * backend(const sword::InstallSource & is);
 
 } // namespace BtInstallBackend
 

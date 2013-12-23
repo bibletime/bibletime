@@ -34,7 +34,12 @@ ENDIF()
 
 SET(CLucene_GOOD_VERSION TRUE)
 
-FIND_PATH(CLucene_LIBRARY_DIR NAMES "CLucene/clucene-config.h")
+# Work around clucene-config.h being installed in weird places on some distros:
+GET_FILENAME_COMPONENT(CLucene_LIBRARY_DIR_HINTS "${CLucene_LIBRARY}" PATH)
+
+FIND_PATH(CLucene_LIBRARY_DIR
+          NAMES "CLucene/clucene-config.h"
+          HINTS "${CLucene_LIBRARY_DIR_HINTS}")
 IF(CLucene_LIBRARY_DIR)
   MESSAGE(STATUS "Found CLucene library dir: ${CLucene_LIBRARY_DIR}")
   FILE(READ ${CLucene_LIBRARY_DIR}/CLucene/clucene-config.h CLCONTENT)

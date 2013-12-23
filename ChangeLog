@@ -1,3 +1,6 @@
+2013-12-22 Jaak Ristioja <jaak@ristioja.ee>
+    * Fixed some settings not being properly loaded on startup.
+
 2013-12-18 Jaak Ristioja <jaak@ristioja.ee>
     * Released 2.10 RC 1.
 

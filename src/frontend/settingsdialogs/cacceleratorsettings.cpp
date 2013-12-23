@@ -13,7 +13,6 @@
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QList>
-#include <QMessageBox>
 #include <QStackedWidget>
 #include <QVBoxLayout>
 #include <QWidget>
@@ -25,6 +24,7 @@
 #include "frontend/displaywindow/ccommentaryreadwindow.h"
 #include "frontend/displaywindow/clexiconreadwindow.h"
 #include "frontend/displaywindow/creadwindow.h"
+#include "frontend/messagedialog.h"
 #include "frontend/settingsdialogs/cconfigurationdialog.h"
 #include "util/cresmgr.h"
 #include "util/geticon.h"
@@ -152,17 +152,12 @@ void CAcceleratorSettingsPage::completeKeyChangeRequest(BtShortcutsEditor* short
     QString conflicts = findConflictsWithKeys(keys, list);
     if (!conflicts.isEmpty()) {
         QString message = QObject::tr("This shortcut conflicts with the shortcut for the following actions:");
-        message.append("\n");
+        message.append("<br/><br/>");
         message.append(conflicts);
 
-        QMessageBox msgBox(this);
-        msgBox.setIcon(QMessageBox::Question);
-        msgBox.setText(message);
-        msgBox.setInformativeText(QObject::tr("Do you want to clear the conflicting shortcuts and continue?"));
-        msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
-        msgBox.setDefaultButton(QMessageBox::Yes);
-        int ret = msgBox.exec();
-        if ( ret == QMessageBox::Yes) {
+        if (message::showQuestion(this,
+            QObject::tr("Do you want to clear the conflicting shortcuts and continue?"),
+            message, QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes) == QMessageBox::Yes) {
             clearConflictsWithKeys(keys, list);
             shortcutsEditor->changeShortcutInDialog(keys);
         }
