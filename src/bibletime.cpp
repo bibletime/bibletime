@@ -16,7 +16,6 @@
 #include <QDebug>
 #include <QInputDialog>
 #include <QMdiSubWindow>
-#include <QMessageBox>
 #include <QSplashScreen>
 #include <QSplitter>
 #include "backend/config/btconfig.h"
@@ -36,6 +35,7 @@
 #include "frontend/displaywindow/cdisplaywindowfactory.h"
 #include "frontend/displaywindow/creadwindow.h"
 #include "frontend/keychooser/ckeychooser.h"
+#include "frontend/messagedialog.h"
 #include "frontend/searchdialog/csearchdialog.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
@@ -211,7 +211,7 @@ bool BibleTime::moduleUnlock(CSwordModuleInfo *module, QWidget *parent) {
         }
 
         if (!module->isLocked()) break;
-        QMessageBox::warning(parent, tr("Warning: Invalid unlock key!"),
+        message::showWarning(parent, tr("Warning: Invalid unlock key!"),
                              tr("The unlock key you provided did not properly unlock this "
                                 "module. Please try again."));
     }
