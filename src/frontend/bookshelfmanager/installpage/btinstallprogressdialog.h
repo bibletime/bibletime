@@ -53,7 +53,6 @@ protected: /* Methods: */
 
 private: /* Methods: */
 
-    void oneItemStoppedOrCompleted(int moduleIndex, const QString & message);
 
 private: /* Fields: */
 
