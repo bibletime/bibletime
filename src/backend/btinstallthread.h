@@ -37,7 +37,15 @@ class BtInstallThread: public QThread {
             : QThread(parent)
             , m_modules(modules)
             , m_destination(destination)
-            , m_stopRequested(false) {}
+            , m_stopRequested(false)
+        {
+            connect(&m_iMgr, SIGNAL(percentCompleted(int, int)),
+                    this,    SLOT(slotManagerStatusUpdated(int, int)),
+                    Qt::QueuedConnection);
+            connect(&m_iMgr, SIGNAL(downloadStarted()),
+                    this,    SLOT(slotDownloadStarted()),
+                    Qt::QueuedConnection);
+        }
 
         void stopInstall() {
             const QMutexLocker lock(&m_stopRequestedMutex);
