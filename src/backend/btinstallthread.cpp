@@ -81,9 +81,7 @@ void BtInstallThread::installModule() {
 
     // Check whether it's an update. If yes, remove existing module first:
     /// \todo silently removing without undo if the user cancels the update is WRONG!!!
-    removeModule();
-
-    {
+    if (!removeModule()) {
        QMutexLocker lock(&m_stopRequestedMutex);
        if (m_stopRequested)
            return;
@@ -125,26 +123,28 @@ void BtInstallThread::slotDownloadStarted() {
     emit downloadStarted(m_currentModuleIndex);
 }
 
-void BtInstallThread::removeModule() {
+bool BtInstallThread::removeModule() {
     CSwordModuleInfo * const installedModule = m_modules.at(m_currentModuleIndex);
     CSwordModuleInfo * m = CSwordBackend::instance()->findModuleByName(installedModule->name());
     if (!m)
         m = BtInstallBackend::backend(BtInstallBackend::source(m_destination.toLatin1()))->findModuleByName(installedModule->name());
 
-    if (m) { //module found?
-        qDebug() << "Removing module" << installedModule->name();
-        QString prefixPath = m->config(CSwordModuleInfo::AbsoluteDataPath) + "/";
-        QString dataPath = m->config(CSwordModuleInfo::DataPath);
-        if (dataPath.left(2) == "./")
-            dataPath = dataPath.mid(2);
+    if (!m)
+        return false;
 
-        if (prefixPath.contains(dataPath)) {
-            prefixPath.remove(prefixPath.indexOf(dataPath), dataPath.length());
-        } else {
-            prefixPath = QString::fromLatin1(CSwordBackend::instance()->prefixPath);
-        }
+    qDebug() << "Removing module" << installedModule->name();
+    QString prefixPath = m->config(CSwordModuleInfo::AbsoluteDataPath) + "/";
+    QString dataPath = m->config(CSwordModuleInfo::DataPath);
+    if (dataPath.left(2) == "./")
+        dataPath = dataPath.mid(2);
 
-        sword::SWMgr mgr(prefixPath.toLatin1());
-        BtInstallMgr().removeModule(&mgr, m->name().toLatin1());
+    if (prefixPath.contains(dataPath)) {
+        prefixPath.remove(prefixPath.indexOf(dataPath), dataPath.length());
+    } else {
+        prefixPath = QString::fromLatin1(CSwordBackend::instance()->prefixPath);
     }
+
+    sword::SWMgr mgr(prefixPath.toLatin1());
+    BtInstallMgr().removeModule(&mgr, m->name().toLatin1());
+    return true;
 }

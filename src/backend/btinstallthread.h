@@ -65,7 +65,7 @@ class BtInstallThread: public QThread {
     private: /* Methods: */
 
         void installModule();
-        void removeModule();
+        bool removeModule();
 
     private slots:
 
