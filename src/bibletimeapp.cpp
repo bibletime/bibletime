@@ -11,7 +11,7 @@
 
 #include <QDebug>
 #include <QFile>
-#include <QMessageBox>
+#include "frontend/messagedialog.h"
 #include "backend/config/btconfig.h"
 #include "backend/managers/cswordbackend.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
@@ -56,7 +56,7 @@ bool BibleTimeApp::initDisplayTemplateManager() {
     new CDisplayTemplateMgr(errorMessage);
     if (errorMessage.isNull())
         return true;
-    QMessageBox::critical(0, tr("Fatal error!"), errorMessage);
+    message::showCritical(0, tr("Fatal error!"), errorMessage);
     return false;
 }
 
