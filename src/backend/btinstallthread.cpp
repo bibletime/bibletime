@@ -14,171 +14,137 @@
 #include <QString>
 #include <QThread>
 #include "backend/managers/cswordbackend.h"
-#include "backend/btinstallmgr.h"
+
 #include "backend/btinstallbackend.h"
 
 // Sword includes:
 #include <filemgr.h>
 
 
-BtInstallThread::BtInstallThread(const QString &moduleName, const QString &sourceName,
-                                 const QString &destinationName, QObject *parent)
-        : QThread(parent),
-        done(false),
-        m_module(moduleName),
-        m_destination(destinationName),
-        m_source(sourceName),
-        m_cancelled(false) {
-    m_iMgr = new BtInstallMgr();
+namespace {
+
+inline bool runMkdir(QDir & dir, const QString & dirName) {
+    if (!dir.exists(dirName)) {
+        if (!dir.mkpath(dirName)) {
+            qDebug() << "failed to make directory" << dirName;
+            return false;
+        }
+        qDebug() << "made directory" << dirName;
+    }
+    return true;
 }
 
-
-BtInstallThread::~BtInstallThread() {
-    delete m_iMgr;
 }
 
 void BtInstallThread::run() {
-    qDebug() << "****************************************\nBtInstallThread::run, mod:" << m_module << "\n************************************";
-
-
-    emit preparingInstall(m_module, m_source);
-    //This is 0 before set here - remember when using the value when cancelling
-    // the installation before this has been run
-    m_installSource = QSharedPointer<sword::InstallSource>(new sword::InstallSource(BtInstallBackend::source(m_source)));
-    m_backendForSource = QSharedPointer<CSwordBackend>(BtInstallBackend::backend(*m_installSource));
-
-    //make sure target/mods.d and target/modules exist
+    // Make sure target/mods.d and target/modules exist
     /// \todo move this to some common precondition
     QDir dir(m_destination);
-    if (!dir.exists()) {
-        dir.mkdir(m_destination);
-        qDebug() << "made directory" << m_destination;
-    }
-    if (!dir.exists("modules")) {
-        dir.mkdir("modules");
-        qDebug() << "made directory" << m_destination << "/modules";
-    }
-    if (!dir.exists("mods.d")) {
-        dir.mkdir("mods.d");
-        qDebug() << "made directory" << m_destination << "/mods.d";
+    if (!runMkdir(dir, m_destination)
+        || !runMkdir(dir, "modules")
+        || !runMkdir(dir, "mods.d"))
+    {
+        return;
     }
 
-    QObject::connect(m_iMgr, SIGNAL(percentCompleted(int, int)), this, SLOT(slotManagerStatusUpdated(int, int)), Qt::QueuedConnection);
-    QObject::connect(m_iMgr, SIGNAL(downloadStarted()), this, SLOT(slotDownloadStarted()), Qt::QueuedConnection);
+    m_stopRequestedMutex.lock();
+    try {
+        for (m_currentModuleIndex = 0;
+             !m_stopRequested && (m_currentModuleIndex < m_modules.size());
+             m_currentModuleIndex++)
+        {
+            m_stopRequestedMutex.unlock();
+            installModule();
+            m_stopRequestedMutex.lock();
+        }
+    } catch (...) {
+        m_stopRequestedMutex.unlock();
+        throw;
+    }
+    m_stopRequestedMutex.unlock();
+}
 
-    //check whether it's an update. If yes, remove existing module first
+void BtInstallThread::installModule() {
+    emit preparingInstall(m_currentModuleIndex);
+
+    const CSwordModuleInfo * const module = m_modules.at(m_currentModuleIndex);
+
+    sword::InstallSource installSource = BtInstallBackend::source(module->property("installSourceName").toString());
+    QScopedPointer<CSwordBackend> backendForSource(BtInstallBackend::backend(installSource));
+
+    connect(&m_iMgr, SIGNAL(percentCompleted(int, int)),
+            this,    SLOT(slotManagerStatusUpdated(int, int)),
+            Qt::QueuedConnection);
+    connect(&m_iMgr, SIGNAL(downloadStarted()),
+            this,    SLOT(slotDownloadStarted()),
+            Qt::QueuedConnection);
+
+    // Check whether it's an update. If yes, remove existing module first:
     /// \todo silently removing without undo if the user cancels the update is WRONG!!!
     removeModule();
 
+    {
+       QMutexLocker lock(&m_stopRequestedMutex);
+       if (m_stopRequested)
+           return;
+    }
+
     // manager for the destination path
-    sword::SWMgr lMgr( m_destination.toLatin1() );
-
-    if (BtInstallBackend::isRemote(*m_installSource)) {
-        int status = m_iMgr->installModule(&lMgr, 0, m_module.toLatin1(), m_installSource.data());
-        if (status != 0) {
-            qWarning() << "Error with install: " << status << "module:" << m_module;
+    sword::SWMgr lMgr(m_destination.toLatin1());
+    if (BtInstallBackend::isRemote(installSource)) {
+        int status = m_iMgr.installModule(&lMgr,
+                                          0,
+                                          module->name().toLatin1(),
+                                          &installSource);
+        if (status == 0) {
+            emit statusUpdated(m_currentModuleIndex, 100);
+        } else {
+            qWarning() << "Error with install: " << status
+                       << "module:" << module->name();
         }
-        else {
-            done = true;
-            emit installCompleted(m_module, m_source, status);
+        emit installCompleted(m_currentModuleIndex, status == 0);
+    } else { // Local source
+        int status = m_iMgr.installModule(&lMgr,
+                                          installSource.directory.c_str(),
+                                          module->name().toLatin1());
+        if (status == 0) {
+            emit statusUpdated(m_currentModuleIndex, 100);
+        } else if (status != -1) {
+            qWarning() << "Error with install: " << status
+                       << "module:" << module->name();
         }
-    }
-    else { //local source
-        emit statusUpdated(m_module, 0);
-        int status = m_iMgr->installModule(&lMgr, m_installSource->directory.c_str(), m_module.toLatin1());
-        if (status > 0) {
-            qWarning() << "Error with install: " << status << "module:" << m_module;
-        }
-        else if (status == -1) {
-            // it was terminated, do nothing
-        }
-        else {
-            emit statusUpdated(m_module, 100);
-            done = true;
-            emit installCompleted(m_module, m_source, status);
-        }
-    }
-}
-
-void BtInstallThread::slotStopInstall() {
-    qDebug() << "*************************************\nBtInstallThread::slotStopInstall" << m_module << "\n********************************";
-    if (!done) {
-        done = true;
-        qDebug() << "*********************************\nBtInstallThread::slotStopInstall, installing" << m_module << "was cancelled\n**************************************";
-        m_iMgr->terminate();
-        //this->terminate(); // It's dangerous to forcibly stop, but we will clean up the files
-        //qApp->processEvents();
-        // wait to terminate for some secs. We rather let the execution go on and cleaning up to fail than the app to freeze
-        int notRun = this->wait(25000);
-        if (notRun) {
-            this->terminate();
-            this->wait(10000);
-            qDebug() << "installthread (" << m_module << ") terminated, delete m_iMgr";
-            delete m_iMgr; // this makes sure the ftp library will be cleaned up in the destroyer
-            m_iMgr = 0;
-        }
-        // cleanup: remove the module, remove the temp files
-        // if installation has already started
-        if (m_installSource.data() != 0) {
-            // remove the installed module, just to be sure because mgr may
-            // have been terminated when copying files
-            removeModule();
-            removeTempFiles();
-            qDebug() << "BtInstallThread::slotStopInstall will emit installStopped...";
-        }
-        emit installStopped(m_module, m_source);
+        emit installCompleted(m_currentModuleIndex, status == 0);
     }
 }
 
 void BtInstallThread::slotManagerStatusUpdated(int totalProgress, int /*fileProgress*/) {
-    emit statusUpdated(m_module, totalProgress);
+    emit statusUpdated(m_currentModuleIndex, totalProgress);
 }
 
 void BtInstallThread::slotDownloadStarted() {
-    emit downloadStarted(m_module);
+    emit downloadStarted(m_currentModuleIndex);
 }
 
 void BtInstallThread::removeModule() {
-    CSwordModuleInfo* m;
-    m = CSwordBackend::instance()->findModuleByName(m_module);
-    if (!m) {
-        m = BtInstallBackend::backend(BtInstallBackend::source(m_destination.toLatin1()))->findModuleByName(m_module);
-    }
+    CSwordModuleInfo * const installedModule = m_modules.at(m_currentModuleIndex);
+    CSwordModuleInfo * m = CSwordBackend::instance()->findModuleByName(installedModule->name());
+    if (!m)
+        m = BtInstallBackend::backend(BtInstallBackend::source(m_destination.toLatin1()))->findModuleByName(installedModule->name());
+
     if (m) { //module found?
-        qDebug() << "BtInstallThread::removeModule, module" << m_module << "found";
+        qDebug() << "Removing module" << installedModule->name();
         QString prefixPath = m->config(CSwordModuleInfo::AbsoluteDataPath) + "/";
         QString dataPath = m->config(CSwordModuleInfo::DataPath);
-        if (dataPath.left(2) == "./") {
+        if (dataPath.left(2) == "./")
             dataPath = dataPath.mid(2);
-        }
 
         if (prefixPath.contains(dataPath)) {
-            prefixPath.remove( prefixPath.indexOf(dataPath), dataPath.length() );
-        }
-        else {
+            prefixPath.remove(prefixPath.indexOf(dataPath), dataPath.length());
+        } else {
             prefixPath = QString::fromLatin1(CSwordBackend::instance()->prefixPath);
         }
 
         sword::SWMgr mgr(prefixPath.toLatin1());
-        BtInstallMgr iMgr;
-        iMgr.removeModule(&mgr, m->name().toLatin1());
-    }
-    else {
-        qDebug() << "BtInstallThread::removeModule, module" << m_module << "not found";
-    }
-}
-
-void BtInstallThread::removeTempFiles() {
-    // (take the remote conf file for this module, take DataPath,
-    // take the absolute path of the InstallMgr)
-
-    //sword::InstallSource is = BtInstallBackend::source(m_source);
-    if (BtInstallBackend::isRemote(*m_installSource)) {
-        // get the path for the module temp files
-        CSwordModuleInfo* mInfo = m_backendForSource->findModuleByName(m_module);
-        QString dataPath = mInfo->config(CSwordModuleInfo::AbsoluteDataPath);
-        qDebug() << "Delete path:" << dataPath;
-        // it's easier to use sword than qt
-        sword::FileMgr::removeDir(dataPath.toLatin1().data());
+        BtInstallMgr().removeModule(&mgr, m->name().toLatin1());
     }
 }
