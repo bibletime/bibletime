@@ -72,13 +72,6 @@ void BtInstallThread::installModule() {
     sword::InstallSource installSource = BtInstallBackend::source(module->property("installSourceName").toString());
     QScopedPointer<CSwordBackend> backendForSource(BtInstallBackend::backend(installSource));
 
-    connect(&m_iMgr, SIGNAL(percentCompleted(int, int)),
-            this,    SLOT(slotManagerStatusUpdated(int, int)),
-            Qt::QueuedConnection);
-    connect(&m_iMgr, SIGNAL(downloadStarted()),
-            this,    SLOT(slotDownloadStarted()),
-            Qt::QueuedConnection);
-
     // Check whether it's an update. If yes, remove existing module first:
     /// \todo silently removing without undo if the user cancels the update is WRONG!!!
     if (!removeModule()) {
