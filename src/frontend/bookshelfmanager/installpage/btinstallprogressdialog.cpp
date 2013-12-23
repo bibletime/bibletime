@@ -51,6 +51,7 @@ BtInstallProgressDialog::BtInstallProgressDialog(const QList<CSwordModuleInfo *>
     Q_FOREACH(const CSwordModuleInfo * module, modules) {
         QTreeWidgetItem * progressItem = new QTreeWidgetItem(m_statusWidget);
         progressItem->setText(0, module->name());
+        progressItem->setIcon(0, module->moduleIcon());
         progressItem->setText(1, tr("Waiting for turn..."));
         progressItem->setFlags(Qt::ItemIsEnabled);
     }
