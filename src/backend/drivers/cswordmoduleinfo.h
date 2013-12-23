@@ -368,6 +368,13 @@ wrong, or if the config file was write protected return false.
     }
 
     /**
+      Returns an icon for this module.
+    */
+    inline QIcon moduleIcon() const {
+        return CSwordModuleInfo::moduleIcon(*this);
+    }
+
+    /**
       Returns an icon for the given module.
       \param[in] module The module whose icon to return.
     */
