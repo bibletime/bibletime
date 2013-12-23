@@ -16,7 +16,6 @@
 #include <QActionGroup>
 #include <QLabel>
 #include <QMenu>
-#include <QMessageBox>
 #include <QPushButton>
 #include <QStackedWidget>
 #include <QVBoxLayout>
@@ -25,6 +24,7 @@
 #include "bibletimeapp.h"
 #include "frontend/btbookshelfview.h"
 #include "frontend/btbookshelfwidget.h"
+#include "frontend/messagedialog.h"
 #include "util/cresmgr.h"
 #include "util/geticon.h"
 
@@ -170,7 +170,7 @@ void BtBookshelfDockWidget::slotModuleActivated(CSwordModuleInfo *module) {
                 warning message. Actually the whole case when the user tries to open a locked
                 module needs to be rethought and refactored.
         */
-        QMessageBox::warning(this, tr("Warning: Module locked!"),
+        message::showWarning(this, tr("Warning: Module locked!"),
                              tr("You are trying to access an encrypted module. Please "
                                 "provide an unlock key in the following dialog to open the "
                                 "module."));

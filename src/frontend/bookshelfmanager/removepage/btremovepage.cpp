@@ -17,7 +17,6 @@
 #include <QGroupBox>
 #include <QHBoxLayout>
 #include <QHeaderView>
-#include <QMessageBox>
 #include <QPushButton>
 #include <QToolButton>
 #include <QVBoxLayout>
