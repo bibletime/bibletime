@@ -1,3 +1,7 @@
+2013-12-23 Jaak Ristioja <jaak@ristioja.ee>
+    * Fixed some bugs in the install progress dialog, removed support for
+      forced install thread termination which was error-prone.
+
 2013-12-22 Jaak Ristioja <jaak@ristioja.ee>
     * Fixed some settings not being properly loaded on startup.
 
