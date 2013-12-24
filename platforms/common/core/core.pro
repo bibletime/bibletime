@@ -2,6 +2,9 @@
 BT_VERSION = 2.10.0
 DEFINES += BT_VERSION=\\\"$${BT_VERSION}\\\"
 
+# Useless warnings
+gcc:QMAKE_CXXFLAGS_DEBUG += -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-reorder -Wno-missing-field-initializers
+
 INCLUDEPATH += ../../../src
 
 SOURCES += \
