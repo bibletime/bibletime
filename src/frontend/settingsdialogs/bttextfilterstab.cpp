@@ -52,7 +52,7 @@ BtTextFiltersTab::BtTextFiltersTab(CSwordSettingsPage *parent)
 }
 
 #define TEXT_FILTERS_TAB_SAVE(name) \
-    btConfig().setValue(#name, m_ ## name ## Check->isChecked())
+    btConfig().setSessionValue(#name, m_ ## name ## Check->isChecked())
 
 void BtTextFiltersTab::save() {
     btConfig().beginGroup("presentation");
