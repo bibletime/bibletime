@@ -1194,7 +1194,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Stop</source>
-        <translation>Anhalten</translation>
+        <translation type="obsolete">Anhalten</translation>
     </message>
     <message>
         <source>Stop All</source>
@@ -1206,7 +1206,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>Cancelled</source>
-        <translation>Abgebrochen</translation>
+        <translation type="obsolete">Abgebrochen</translation>
     </message>
     <message>
         <source>Waiting for turn...</source>
