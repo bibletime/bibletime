@@ -1139,7 +1139,7 @@
     </message>
     <message>
         <source>Stop</source>
-        <translation>Zastavit</translation>
+        <translation type="obsolete">Zastavit</translation>
     </message>
     <message>
         <source>Stop All</source>
@@ -1151,7 +1151,7 @@
     </message>
     <message>
         <source>Cancelled</source>
-        <translation>Zrušeno</translation>
+        <translation type="obsolete">Zrušeno</translation>
     </message>
     <message>
         <source>Waiting for turn...</source>

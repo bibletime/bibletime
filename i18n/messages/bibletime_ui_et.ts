@@ -150,17 +150,17 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>&amp;Piibli uurimise õpetus</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="535"/>
+        <location filename="../../src/bibletime_slots.cpp" line="534"/>
         <source>Please enter a name for the new session.</source>
         <translation>Palun sisestage nimetus uue sessiooni jaoks.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="543"/>
+        <location filename="../../src/bibletime_slots.cpp" line="542"/>
         <source>Session already exists</source>
         <translation>Sessioon juba eksisteerib</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="544"/>
+        <location filename="../../src/bibletime_slots.cpp" line="543"/>
         <source>Session with the name &quot;%1&quot; already exists. Please provide a different name.</source>
         <translation>Sessioon nimega &quot;%1&quot; juba eksisteerib. Palun sisestage erinev nimi.</translation>
     </message>
@@ -430,7 +430,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Otsi eelistatud Piiblist</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="534"/>
+        <location filename="../../src/bibletime_slots.cpp" line="533"/>
         <source>New Session</source>
         <translation>Uus sessioon</translation>
     </message>
@@ -502,12 +502,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>BibleTime on võimas, kuid lihtne tööriist Piibli uurimiseks.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="268"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="269"/>
         <source>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</source>
         <translation>BibleTime on välja antud GPL litsentsi all. Te võite programmi alla laadida ja kasutada (kuid mitte levitada) personaalsetel, privaatsetel, avalikel või kommertseesmärkidel ilma piiranguteta, aga te võite programmi edasi anda või levitada ainult kui Te sellega samuti programmi lähtekoodi levitate.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="274"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="275"/>
         <source>The complete legally binding license is below.</source>
         <translation>Täielik juriidiliselt siduv litsents on toodud allpool.</translation>
     </message>
@@ -562,37 +562,37 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>kasutusekspert</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="217"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="218"/>
         <source>Some names may be missing, please email %1 if you notice errors or omissions.</source>
         <translation>Mõned nimed võivad puududa, palun saatke e-mail aadressile %1 kui märkate vigu või puuduvaid nimesid.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="234"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="235"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
         <translation>BibleTime kasutab SWORD projekti. Projekt SWORD on CrossWire Bible Society vaba piiblitarkvara projekt, mille eesmärk on luua mitmeplatvormilisi vaba tarkvara tööriistu &amp;mdash; litsenseeritud GNU General Public Licence all &amp;mdash; mis võimaldavad programmeerijatel ja piibliühingutel kirjutada uut piiblitarkvara kiiremini ja lihtsamalt.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="240"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="241"/>
         <source>The SWORD Project: </source>
         <translation>Projekt SWORD: </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="248"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="249"/>
         <source>&amp;Qt</source>
         <translation>&amp;Qt</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="251"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="252"/>
         <source>Qt toolkit version %1</source>
         <translation>Qt raamistik, versioon %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="257"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="258"/>
         <source>More info...</source>
         <translation>Rohkem infot...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="262"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="263"/>
         <source>&amp;License</source>
         <translation>&amp;Litsents</translation>
     </message>
@@ -651,22 +651,22 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Järgnevad inimesed tõlkisid BibleTime&apos; enda keelde:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="228"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="229"/>
         <source>&amp;SWORD</source>
         <translation>&amp;SWORD</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="232"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="233"/>
         <source>SWORD library version %1</source>
         <translation>SWORD teek, versioon %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="253"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="254"/>
         <source>This program uses Qt version %1.</source>
         <translation>See programm kasutab Qt versiooni %1.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="255"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="256"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
         <translation>Qt on multiplatvormne rakenduste ja graafiliste kasutajaliideste raamistik, C++ programmeerimiskeele jaoks. Qt on publitseeritud LGPL litsentsi all.</translation>
     </message>
@@ -1291,12 +1291,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Sihtkataloog pole kirjutatav või ei eksisteeri. Paigaldus ebaõnnestub kui seda probleemi eelnevalt ei lahendata.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="393"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="388"/>
         <source>Delete Source?</source>
         <translation>Eemaldada allikas?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="394"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="389"/>
         <source>Do you really want to delete this source?</source>
         <translation>Kas soovite tõesti selle allika BibleTime&apos;st eemaldada?</translation>
     </message>
@@ -1449,47 +1449,45 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtInstallProgressDialog</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="38"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="41"/>
         <source>Work</source>
         <translation>Teos</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="38"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="41"/>
         <source>Progress</source>
         <translation>Progress</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="56"/>
         <source>Stop</source>
-        <translation>Peata</translation>
+        <translation type="obsolete">Peata</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="80"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="60"/>
         <source>Stop All</source>
         <translation>Peata kõik</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="133"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="130"/>
         <source>Completed</source>
         <translation>Valmis</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="139"/>
         <source>Cancelled</source>
-        <translation>Katkestatud</translation>
+        <translation type="obsolete">Katkestatud</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="66"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="55"/>
         <source>Waiting for turn...</source>
         <translation>Ootel...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="205"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="111"/>
         <source>Preparing install...</source>
         <translation>Paigaldamiseks valmistumine...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="34"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="37"/>
         <source>Install Progress</source>
         <translation>Paigalduse edenemine</translation>
     </message>
@@ -1639,37 +1637,37 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="obsolete">Paigaldatud teoste eemaldamine. Valige teosed ja vajutage eemaldamisnupul.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="101"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="100"/>
         <source>Select &amp;works to uninstall:</source>
         <translation>Valige &amp;teosed eemaldamiseks:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="103"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="102"/>
         <source>&amp;Remove...</source>
         <translation>&amp;Eemalda...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="99"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="98"/>
         <source>Remove</source>
         <translation>Eemalda</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="112"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="111"/>
         <source>Start removal of %1 works:</source>
         <translation>Alusta %1 teose eemaldamist:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="115"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="114"/>
         <source>Start removal:</source>
         <translation>Alusta eemaldamist:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="146"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="145"/>
         <source>You selected the following work(s): </source>
         <translation>Valisite järgmised teos(ed): </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="150"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="149"/>
         <source>Do you really want to remove them from your system?</source>
         <translation>Kas soovite need tõesti enda süsteemist eemaldada?</translation>
     </message>
@@ -1678,12 +1676,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="obsolete">Eemalda...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="104"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="103"/>
         <source>Remove the selected works</source>
         <translation>Eemalda valitud teosed</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="152"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="151"/>
         <source>Remove Works?</source>
         <translation>Eemaldada teosed?</translation>
     </message>
@@ -2207,7 +2205,7 @@ kiirklahv</translation>
         <translation>Raamatute aknad</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="187"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="182"/>
         <source>
    &quot;%1&quot; in the &quot;%2&quot; group</source>
         <translation>
@@ -4283,62 +4281,62 @@ Language name ppk</extracomment>
         <translation>suulu</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="326"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="314"/>
         <source>Footnotes</source>
         <translation>Allmärkused</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="328"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="316"/>
         <source>Strong&apos;s numbers</source>
         <translation>Strongi numbrid</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="330"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="318"/>
         <source>Headings</source>
         <translation>Pealkirjad</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="332"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="320"/>
         <source>Morphological tags</source>
         <translation>Morfoloogilised märgised</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="334"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="322"/>
         <source>Lemmas</source>
         <translation>Lemmad</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="336"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="324"/>
         <source>Hebrew vowel points</source>
         <translation>Heebrea keele vokaalimärgid</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="338"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="326"/>
         <source>Hebrew cantillation marks</source>
         <translation>Heebrea keele laulumärgid</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="340"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="328"/>
         <source>Greek accents</source>
         <translation>Kreeka keele rõhumärgid</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="342"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="330"/>
         <source>Red letter words</source>
         <translation>Jeesuse sõnad</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="344"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="332"/>
         <source>Textual variants</source>
         <translation>Tekstivariandid</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="346"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="334"/>
         <source>Scripture cross-references</source>
         <translation>Pühakirjade ristviited</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="348"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="336"/>
         <source>Morph segmentation</source>
         <translation>Morfoloogiline segmentatsioon</translation>
     </message>
@@ -4669,7 +4667,7 @@ Language name ppk</extracomment>
         <translation>See kiirklahv on vastuolus järgnevate tegevuste kiirklahvidega:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="161"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="159"/>
         <source>Do you want to clear the conflicting shortcuts and continue?</source>
         <translation>Kas tühistada vastuolulised kiirklahvide seadistused ja jätkata?</translation>
     </message>
@@ -4847,103 +4845,103 @@ Language name ppk</extracomment>
 <context>
     <name>Search::BtSearchOptionsArea</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="98"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="97"/>
         <source>Search for:</source>
         <translatorcomment>&quot;Päring:&quot; is estonian for &quot;query&quot;</translatorcomment>
         <translation>Päring:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="105"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="104"/>
         <source>&amp;Search</source>
         <translation>&amp;Otsi</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="107"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="106"/>
         <source>Start to search the text in the chosen works</source>
         <translation>Alusta otsingut valitud teostest</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="110"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="109"/>
         <source>Ch&amp;oose...</source>
         <translation>&amp;Vali...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="112"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="111"/>
         <source>Choose works for the search</source>
         <translation>Vali teosed, millest otsida</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="115"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="114"/>
         <source>S&amp;etup...</source>
         <translation>&amp;Häälestus...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="134"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="133"/>
         <source>All of the words (AND is added between the words)</source>
         <translation>Otsib kõiki sisestatud sõnu (justkui oleks täieliku otsingusüntaksi korral sõnade vahel AND)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="138"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="137"/>
         <source> (&lt;a href=&apos;syntax_help&apos;&gt;full syntax&lt;/a&gt;)</source>
         <translation> (kasutab &lt;a href=&apos;syntax_help&apos;&gt;täielikku otsingusüntaksit&lt;/a&gt;)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="149"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="148"/>
         <source>Scope:</source>
         <translation>Otsingu skoop:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="170"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="169"/>
         <source>The text you want to search for</source>
         <translation>Tekst, mida soovite otsida</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="174"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="173"/>
         <source>Works:</source>
         <translation>Teosed:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="347"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="346"/>
         <source>No search scope</source>
         <translation>Otsingu skoop on määramata</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="129"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="128"/>
         <source>All words</source>
         <translation>Kõik sõnad</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="117"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="116"/>
         <source>Configure predefined scopes for search</source>
         <translation>Halda otsingu skoope</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="131"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="130"/>
         <source>Some words</source>
         <translation>Mõned sõnad</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="132"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="131"/>
         <source>Free</source>
         <translation>Vaba</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="135"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="134"/>
         <source>Some of the words (OR is added between the words)</source>
         <translation>Otsib salme, kus esinevad vaid osad sisestatud sõnadest (justkui oleks täieliku otsingusüntaksi korral sõnade vahel OR)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="136"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="135"/>
         <source>Full lucene syntax</source>
         <translation>Täielik Lucene&apos; süntaks</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="139"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="138"/>
         <source>Click the link to get help for search syntax</source>
         <translation>Klikkige siia, et saada abi otsingusüntaksi kasutamiseks</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="160"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="159"/>
         <source>Choose the scope (books/chapters/verses to search in).&lt;br /&gt;Applicable for Bibles and commentaries.</source>
         <translation>Valige otsinguskoop (raamatud/peatükid/salmid mille hulgast otsida).&lt;br /&gt;Kehtib piiblite ja kommentaaride puhul.</translation>
     </message>

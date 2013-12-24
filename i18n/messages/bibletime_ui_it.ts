@@ -190,17 +190,17 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>HowTo Studio &amp;Bibbia</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="535"/>
+        <location filename="../../src/bibletime_slots.cpp" line="534"/>
         <source>Please enter a name for the new session.</source>
         <translation>Per favore, inserisci un nome per la nuova sessione.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="543"/>
+        <location filename="../../src/bibletime_slots.cpp" line="542"/>
         <source>Session already exists</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="544"/>
+        <location filename="../../src/bibletime_slots.cpp" line="543"/>
         <source>Session with the name &quot;%1&quot; already exists. Please provide a different name.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -482,7 +482,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Cerca nella Bibbia standard</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="534"/>
+        <location filename="../../src/bibletime_slots.cpp" line="533"/>
         <source>New Session</source>
         <translation>Nuova Sessione</translation>
     </message>
@@ -558,12 +558,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>BibleTime è un semplice, ma potente strumento per studiare la Bibbia.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="268"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="269"/>
         <source>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</source>
         <translation>BibleTime è rilasciato sotto la licenza GPL. Puoi scaricare e utilizzare il programma a scopo personale, privato, pubblico o commerciale senza restrizioni, ma puoi regalare o distribuire il programma solo se distribuisci anche il corrispondente codice sorgente.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="274"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="275"/>
         <source>The complete legally binding license is below.</source>
         <translation>La licenza completa, giuridicamente vincolante, è sotto.</translation>
     </message>
@@ -618,37 +618,37 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>esperto di usabilità</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="217"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="218"/>
         <source>Some names may be missing, please email %1 if you notice errors or omissions.</source>
         <translation>Potrebbero mancare alcuni nomi, per favore manda una mail %1 se noti errori o omissioni.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="234"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="235"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
         <translation>BibleTime da uso del Progetto SWORD. Il Progetto SWORD è software biblico libero della CrossWire Bible Society. Il suo scopo è creare uno strumento open-source cross-platform &amp;mdash; coperto dalla GNU General Public License &amp;mdash; che permette a programmatori e società di scrivere nuovo software sulla Bibbia più facilmente e velocemente.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="240"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="241"/>
         <source>The SWORD Project: </source>
         <translation>Il Progetto SWORD: </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="248"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="249"/>
         <source>&amp;Qt</source>
         <translation>&amp;Qt</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="251"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="252"/>
         <source>Qt toolkit version %1</source>
         <translation>Qt toolkit versione %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="257"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="258"/>
         <source>More info...</source>
         <translation>Più informazioni...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="262"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="263"/>
         <source>&amp;License</source>
         <translation>&amp;Licenza</translation>
     </message>
@@ -707,22 +707,22 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Le seguenti persone hanno tradotto BibleTime nella loro lingua:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="228"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="229"/>
         <source>&amp;SWORD</source>
         <translation>&amp;SWORD</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="232"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="233"/>
         <source>SWORD library version %1</source>
         <translation>Versione libreria Sword %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="253"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="254"/>
         <source>This program uses Qt version %1.</source>
         <translation>Questo programma usa le Qt versione %1.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="255"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="256"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
         <translation>Qt è un&apos;applicazione multipiattaforma e UI framework, scritta in C++. È rilasciato sotto la licenza LGPL.</translation>
     </message>
@@ -1392,12 +1392,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>La cartella di destinazione non è scrivibile o non esiste. L&apos;installazione fallirà se questo non viene risolto prima.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="393"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="388"/>
         <source>Delete Source?</source>
         <translation>Eliminare Fonte?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="394"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="389"/>
         <source>Do you really want to delete this source?</source>
         <translation>Vuoi davvero eliminare questa fonte?</translation>
     </message>
@@ -1540,47 +1540,45 @@ This file is distributed under the same license as the Bibetime package.</transl
 <context>
     <name>BtInstallProgressDialog</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="38"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="41"/>
         <source>Work</source>
         <translation>Documento</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="38"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="41"/>
         <source>Progress</source>
         <translation>Progresso</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="56"/>
         <source>Stop</source>
-        <translation>Ferma</translation>
+        <translation type="obsolete">Ferma</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="80"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="60"/>
         <source>Stop All</source>
         <translation>Ferma tutti</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="133"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="130"/>
         <source>Completed</source>
         <translation>Completato</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="139"/>
         <source>Cancelled</source>
-        <translation>Cancellato</translation>
+        <translation type="obsolete">Cancellato</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="66"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="55"/>
         <source>Waiting for turn...</source>
         <translation>In attesa del turno...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="205"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="111"/>
         <source>Preparing install...</source>
         <translation>Preparazione installazione...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="34"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="37"/>
         <source>Install Progress</source>
         <translation>Progresso dell&apos;Installazione</translation>
     </message>
@@ -1726,37 +1724,37 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="obsolete">Rimuovi i documenti installati. Seleziona i documenti e clicca il tasto Rimuovi.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="101"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="100"/>
         <source>Select &amp;works to uninstall:</source>
         <translation>Seleziona &amp;documenti da disinstallare:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="103"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="102"/>
         <source>&amp;Remove...</source>
         <translation>&amp;Rimuovi...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="99"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="98"/>
         <source>Remove</source>
         <translation>Rimuovi</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="112"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="111"/>
         <source>Start removal of %1 works:</source>
         <translation>Inizio rimozione di %1 documenti:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="115"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="114"/>
         <source>Start removal:</source>
         <translation>Inizia rimozione:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="146"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="145"/>
         <source>You selected the following work(s): </source>
         <translation>Hai selezioni i seguenti documenti: </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="150"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="149"/>
         <source>Do you really want to remove them from your system?</source>
         <translation>Vuoi veramente rimuoverle dal sistema?</translation>
     </message>
@@ -1765,12 +1763,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation type="obsolete">Rimuovi...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="104"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="103"/>
         <source>Remove the selected works</source>
         <translation>Rimuovi i documenti selezionati</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="152"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="151"/>
         <source>Remove Works?</source>
         <translation>Rimuovere i Documenti?</translation>
     </message>
@@ -2294,7 +2292,7 @@ scorciatoia</translation>
         <translation>Finestre di Libri</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="187"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="182"/>
         <source>
    &quot;%1&quot; in the &quot;%2&quot; group</source>
         <translation>
@@ -4437,64 +4435,64 @@ Language name ppk</extracomment>
         <translation>Zulu</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="326"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="314"/>
         <source>Footnotes</source>
         <translatorcomment> a piè di pagina</translatorcomment>
         <translation>Note</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="328"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="316"/>
         <source>Strong&apos;s numbers</source>
         <translatorcomment>Numeri di Strong</translatorcomment>
         <translation>Numeri di Strong</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="330"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="318"/>
         <source>Headings</source>
         <translation>Intestazioni</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="332"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="320"/>
         <source>Morphological tags</source>
         <translation>Note morfologiche</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="334"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="322"/>
         <source>Lemmas</source>
         <translation>Lemmi</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="336"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="324"/>
         <source>Hebrew vowel points</source>
         <translation>Punteggiatura vocale ebraica</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="338"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="326"/>
         <source>Hebrew cantillation marks</source>
         <translation>Segni di cantillazione ebraica</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="340"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="328"/>
         <source>Greek accents</source>
         <translation>Accenti greci</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="342"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="330"/>
         <source>Red letter words</source>
         <translation>Parole in rosso</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="344"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="332"/>
         <source>Textual variants</source>
         <translation>Varianti testuali</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="346"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="334"/>
         <source>Scripture cross-references</source>
         <translation>Riferimenti incrociati scrittura</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="348"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="336"/>
         <source>Morph segmentation</source>
         <translatorcomment>Documentazione</translatorcomment>
         <translation>Segmentazione morfologica</translation>
@@ -4846,7 +4844,7 @@ Language name ppk</extracomment>
         <translation>Questa scorciatoia è in conflitto con la scorciatoia per le seguenti azioni:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="161"/>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="159"/>
         <source>Do you want to clear the conflicting shortcuts and continue?</source>
         <translation>Vuoi pulire le scorciatoie in conflitto e continuare?</translation>
     </message>
@@ -5020,102 +5018,102 @@ Language name ppk</extracomment>
 <context>
     <name>Search::BtSearchOptionsArea</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="98"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="97"/>
         <source>Search for:</source>
         <translation>Ricerca per:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="105"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="104"/>
         <source>&amp;Search</source>
         <translation>&amp;Cerca</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="107"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="106"/>
         <source>Start to search the text in the chosen works</source>
         <translation>Inizia a cercare il testo nel documento selezionato</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="110"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="109"/>
         <source>Ch&amp;oose...</source>
         <translation>S&amp;cegli...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="112"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="111"/>
         <source>Choose works for the search</source>
         <translation>Scegli documenti per la ricerca</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="115"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="114"/>
         <source>S&amp;etup...</source>
         <translation>S&amp;etup...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="134"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="133"/>
         <source>All of the words (AND is added between the words)</source>
         <translation>Tutte le parole (AND è aggiunto tra le parole)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="138"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="137"/>
         <source> (&lt;a href=&apos;syntax_help&apos;&gt;full syntax&lt;/a&gt;)</source>
         <translation> (&lt;a href=&apos;syntax_help&apos;&gt;sintassi completa&lt;/a&gt;)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="149"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="148"/>
         <source>Scope:</source>
         <translation>Ambito:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="170"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="169"/>
         <source>The text you want to search for</source>
         <translation>Il testo che vuoi cercare</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="174"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="173"/>
         <source>Works:</source>
         <translation>Documenti:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="347"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="346"/>
         <source>No search scope</source>
         <translation>Non limitare la ricerca</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="129"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="128"/>
         <source>All words</source>
         <translation>Tutte le parole</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="117"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="116"/>
         <source>Configure predefined scopes for search</source>
         <translation>Configurare ambiti predefiniti per la ricerca</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="131"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="130"/>
         <source>Some words</source>
         <translation>Alcune parole</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="132"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="131"/>
         <source>Free</source>
         <translation>Libero</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="135"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="134"/>
         <source>Some of the words (OR is added between the words)</source>
         <translation>Qualcuna delle parole (OR è aggiunto tra le parole)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="136"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="135"/>
         <source>Full lucene syntax</source>
         <translation>Sintassi lucene completa</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="139"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="138"/>
         <source>Click the link to get help for search syntax</source>
         <translation>Clicca il link per avere l&apos;aiuto per la sintassi della ricerca</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="160"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="159"/>
         <source>Choose the scope (books/chapters/verses to search in).&lt;br /&gt;Applicable for Bibles and commentaries.</source>
         <translation>Scegli l&apos;ambito (libri/capitoli/versetti in cui cercare).&lt;br /&gt;Applicabile a Bibbie e commenti.</translation>
     </message>
