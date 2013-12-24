@@ -83,6 +83,9 @@ BtInstallProgressDialog::BtInstallProgressDialog(const QList<CSwordModuleInfo *>
     connect(m_thread, SIGNAL(finished()),
             this,     SLOT(slotThreadFinished()),
             Qt::QueuedConnection);
+    connect(m_thread, SIGNAL(terminated()),
+            this,     SLOT(slotThreadFinished()),
+            Qt::QueuedConnection);
     m_thread->start();
 }
 
