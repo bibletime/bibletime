@@ -435,7 +435,6 @@ QString CSwordBackend::getPrivateSwordConfigFile() const {
 QStringList CSwordBackend::swordDirList() const {
     namespace DU = util::directory;
     typedef QStringList::const_iterator SLCI;
-    typedef sword::ConfigEntMap::const_iterator CEMCI;
 
     // Get the set of sword directories that could contain modules:
     QSet<QString> swordDirSet;
