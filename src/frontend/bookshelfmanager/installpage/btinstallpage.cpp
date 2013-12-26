@@ -431,9 +431,10 @@ void BtInstallPage::slotSelectedModulesChanged() {
 void BtInstallPage::slotSwordSetupChanged() {
     QString moduleName = m_sourceComboBox->currentText();
 
-    initSourcesCombo();
+    // clean m_sourceMap before initSourcesCombo() make too much work
     qDeleteAll(m_sourceMap.values());
     m_sourceMap.clear();
+    initSourcesCombo();
     m_sourceComboBox->setCurrentIndex(m_sourceComboBox->findText(moduleName));
     initPathCombo();
     m_modulesSelected = 0;
