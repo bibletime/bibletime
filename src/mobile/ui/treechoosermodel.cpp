@@ -14,9 +14,3 @@ QHash<int, QByteArray>    TreeChooserModel::roleNames() const {
     return roles;
 }
 
-void TreeChooserModel::addEntry(const QString& name, int childCount) {
-    int count = rowCount();
-    beginInsertRows(count, count);
-    insertRow(count);
-    endInsertRows();
-}
