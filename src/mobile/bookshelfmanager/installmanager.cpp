@@ -205,8 +205,8 @@ void InstallManager::cancel() {
 void InstallManager::installRemove() {
     m_installManagerChooserObject->setProperty("visible", false);
 
-    QList<CSwordModuleInfo*> modulesToRemove;
-    QList<CSwordModuleInfo*> modulesToInstall;
+    m_modulesToRemove.clear();
+    m_modulesToInstall.clear();
     QMap<CSwordModuleInfo*, bool>::const_iterator it;
     for(it=m_modulesToInstallRemove.constBegin();
         it!=m_modulesToInstallRemove.constEnd();
@@ -215,14 +215,14 @@ void InstallManager::installRemove() {
         bool install = it.value();
         QString name = moduleInfo->name();
         if (moduleInstalled(*moduleInfo) && install == false) {
-            modulesToRemove.append(moduleInfo);
+            m_modulesToRemove.append(moduleInfo);
         }
         else if ( ! moduleInstalled(*moduleInfo) && install == true) {
-            modulesToInstall.append(moduleInfo);
+            m_modulesToInstall.append(moduleInfo);
         }
     }
-    removeModules(modulesToRemove);
-    installModules(modulesToInstall);
+    removeModules(m_modulesToRemove);
+    installModules(m_modulesToInstall);
 }
 
 void InstallManager::updateCategoryAndLanguageModels()

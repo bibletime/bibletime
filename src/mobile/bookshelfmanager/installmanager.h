@@ -16,6 +16,7 @@
 #include "installsourcesmanager.h"
 #include "mobile/models/roleitemmodel.h"
 #include "installprogress.h"
+#include <QList>
 #include <QMap>
 #include <QObject>
 
@@ -76,6 +77,8 @@ private:
     RoleItemModel m_categoryModel;
     RoleItemModel m_languageModel;
     RoleItemModel m_worksModel;
+    QList<CSwordModuleInfo*> m_modulesToRemove;
+    QList<CSwordModuleInfo*> m_modulesToInstall;
 };
 
 } // end namespace

@@ -13,6 +13,7 @@
 #ifndef INSTALL_PROGRESS_H
 #define INSTALL_PROGRESS_H
 
+#include <QList>
 #include <QObject>
 #include <QMultiMap>
 #include <QMap>
@@ -34,27 +35,25 @@ public:
 private slots:
     void cancel();
     void close();
-    void slotOneItemCompleted(QString module, QString source, int status);
-    void slotOneItemStopped(QString module, QString source);
     void slotStopInstall();
-    void slotStatusUpdated(QString module, int status);
-    void slotDownloadStarted(QString module);
-    void slotInstallStarted(QString module, QString);
-    bool threadsDone();
+    void slotInstallStarted(int moduleIndex);
+    void slotDownloadStarted(int moduleIndex);
+    void slotStatusUpdated(int moduleIndex, int status);
+    void slotOneItemCompleted(int moduleIndex, bool status);
+    void slotThreadFinished();
 
 private:
     void findProgressObject();
+    QString getModuleName(int moduleIndex);
     QString getSourcePath();
     void oneItemStoppedOrCompleted(QString module, QString source, QString message);
     void setProperties();
-    void startThreads();
 
     QQuickItem* m_progressObject;
-    QMultiMap<QString, BtInstallThread*> m_waitingThreads;
-    QMultiMap<QString, BtInstallThread*> m_runningThreads;
-    QMap<QString, BtInstallThread*> m_threadsByModule;
+    BtInstallThread * m_thread;
+    int m_nextInstallIndex;
+    QList<CSwordModuleInfo*> m_modules;
 };
-
 
 }
 
