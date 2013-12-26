@@ -24,6 +24,15 @@ int showWarning(QWidget * /*parent*/,
     return 0;
 }
 
+int showCritical(QWidget * /*parent*/,
+                const QString & /*title*/,
+                const QString & /*text*/,
+                QMessageBox::StandardButtons /*buttons*/,
+                QMessageBox::StandardButton /*defaultButton*/) {
+    // TODO - implement showCritical
+    return 0;
+}
+
 int showQuestion(QWidget * /*parent*/,
                 const QString & /*title*/,
                 const QString & /*text*/,

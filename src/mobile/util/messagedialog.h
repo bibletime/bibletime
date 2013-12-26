@@ -25,6 +25,12 @@ int showWarning(QWidget * parent,
                 QMessageBox::StandardButtons buttons = QMessageBox::Ok,
                 QMessageBox::StandardButton defaultButton = QMessageBox::NoButton);
 
+int showCritical(QWidget * parent,
+                const QString & title,
+                const QString & text,
+                QMessageBox::StandardButtons buttons = QMessageBox::Ok,
+                QMessageBox::StandardButton defaultButton = QMessageBox::NoButton);
+
 int showQuestion(QWidget * parent,
                 const QString & title,
                 const QString & text,
