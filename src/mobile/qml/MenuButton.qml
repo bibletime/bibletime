@@ -13,11 +13,11 @@ Rectangle {
     }
 
     Column {
-        spacing:3
+        spacing:8
 
-        Rectangle { color: "white"; width:2; height:2 }
-        Rectangle { color: "white"; width:2; height:2 }
-        Rectangle { color: "white"; width:2; height:2 }
+        Rectangle { color: "white"; width:5; height:5 }
+        Rectangle { color: "white"; width:5; height:5 }
+        Rectangle { color: "white"; width:5; height:5 }
 
         anchors.centerIn: parent
     }

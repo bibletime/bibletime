@@ -1,7 +1,9 @@
 
 #include "btstyle.h"
+#include <QGuiApplication>
 #include <QList>
 #include <QPointer>
+#include <QScreen>
 #include "backend/config/btconfig.h"
 
 // BtStyle is a class that is registered at a QML item. It can be placed into
@@ -51,6 +53,8 @@ static double toolbarTextPointSize    = 6;
 
 
 static QList<QPointer<BtStyle> > styles;
+
+static double millimeterPerInch = 25.4;
 
 static void emitChanged() {
     for (int i=0; i<styles.count(); ++i) {
@@ -328,6 +332,16 @@ double BtStyle::getUiFontPointSize() const {
 void BtStyle::setUiFontPointSize(double pointSize) {
     btConfig().setValue<int>("ui/uiFontSize", pointSize);
     emitChanged();
+}
+
+int BtStyle::pixelsPerMillimeterX() const {
+    QScreen* screen = QGuiApplication::screens().at(0);
+    return screen->physicalDotsPerInchX() / millimeterPerInch;
+}
+
+int BtStyle::pixelsPerMillimeterY() const {
+    QScreen* screen = QGuiApplication::screens().at(0);
+    return screen->physicalDotsPerInchY() / millimeterPerInch;
 }
 
 } // end namespace

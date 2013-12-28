@@ -18,7 +18,7 @@ Rectangle {
 
         border.color: "black"
         border.width: 1
-        height:25
+        height:btStyle.pixelsPerMillimeterY * 6
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.top: parent.top
@@ -77,7 +77,7 @@ Rectangle {
                 border.width: 1
                 border.color: "darkgray"
                 width: parent.width
-                height: 40
+                height: btStyle.pixelsPerMillimeterY * 12
 
                 Text {
                     id: entryText

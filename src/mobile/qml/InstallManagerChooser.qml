@@ -86,8 +86,8 @@ Rectangle {
 
     Rectangle {
         id: "refreshButton"
-        width:150
-        height: 40
+        width: btStyle.pixelsPerMillimeterY * 30
+        height: btStyle.pixelsPerMillimeterY * 8
         anchors.bottom: parent.bottom
         anchors.bottomMargin: 10
         anchors.right: installRemoveButton.left
@@ -108,8 +108,8 @@ Rectangle {
 
     Rectangle {
         id: "installRemoveButton"
-        width:150
-        height: 40
+        width: btStyle.pixelsPerMillimeterY * 30
+        height: btStyle.pixelsPerMillimeterY * 8
         anchors.bottom: parent.bottom
         anchors.bottomMargin: 10
         anchors.right: cancelButton.left

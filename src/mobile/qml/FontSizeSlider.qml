@@ -5,10 +5,10 @@ Rectangle {
     id: fontPointSize
 
     property string title: ""
-    property int min: 10
-    property int max: 22
-    property int current: 12
-    property int previous: 12
+    property int min: 16
+    property int max: 40
+    property int current: 20
+    property int previous: 20
 
     signal accepted(int pointSize);
 
@@ -17,14 +17,14 @@ Rectangle {
     border.width: 1
     anchors.centerIn: parent
     width: parent.width * 0.85
-    height: 140
+    height: btStyle.pixelsPerMillimeterY * 24
 
     Text {
         text: title
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: parent.top
         anchors.topMargin: 10
-        height: 40
+        height: btStyle.pixelsPerMillimeterY * 7
         font.pointSize: btStyle.uiFontPointSize
     }
 
@@ -57,7 +57,7 @@ Rectangle {
         property bool active: false
         width: bar.width
         anchors.left: bar.left
-        height: 40
+        height: btStyle.pixelsPerMillimeterY * 7
         anchors.verticalCenter: bar.verticalCenter
 
         onPressed: {
@@ -87,7 +87,7 @@ Rectangle {
     Grid {
         id: buttons
 
-        spacing: 10
+        spacing: btStyle.pixelsPerMillimeterY * 4
         columns: 2
         anchors.right: parent.right
         anchors.bottom: parent.bottom
@@ -95,8 +95,8 @@ Rectangle {
         anchors.bottomMargin: 10
 
         Rectangle {
-            height: 40
-            width: 120
+            height: btStyle.pixelsPerMillimeterY * 7
+            width: btStyle.pixelsPerMillimeterY * 18
             border.color: "black"
             border.width: 1
 
@@ -115,8 +115,8 @@ Rectangle {
         }
 
         Rectangle {
-            height: 40
-            width: 120
+            height: btStyle.pixelsPerMillimeterY * 7
+            width: btStyle.pixelsPerMillimeterY * 18
             border.color: "black"
             border.width: 1
 

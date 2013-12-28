@@ -16,7 +16,7 @@ Rectangle {
 
         border.color: "black"
         border.width: 1
-        height:25
+        height: btStyle.pixelsPerMillimeterY * 7
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.top: parent.top
@@ -66,14 +66,14 @@ Rectangle {
                 border.width: 1
                 border.color: ListView.isCurrentItem ? "#c0c0c0" : "#a0a0a0"
                 width: parent.width
-                height: 60
+                height: btStyle.pixelsPerMillimeterY * 15
 
                 Image {
                     id: installedCheckmark
 
                     source: "checkmark.svg"
                     height: entry.height - 15
-                    width:  25
+                    width:  btStyle.pixelsPerMillimeterX * 6
                     anchors.left: parent.left
                     anchors.top: parent.top
                     anchors.leftMargin: 5

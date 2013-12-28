@@ -32,7 +32,7 @@ Rectangle {
         anchors.left: parent.left
         anchors.top: parent.top
         anchors.right: parent.right
-        height: 30
+        height: btStyle.pixelsPerMillimeterY * 6
         onButtonClicked: {
             mainMenus.visible = ! mainMenus.visible;
         }

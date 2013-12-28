@@ -30,7 +30,7 @@ Rectangle {
         property string title: btWindowInterface.moduleName + " (" + btWindowInterface.reference + ")"
 
         width: parent.width
-        height: 36
+        height: btStyle.pixelsPerMillimeterY * 6
         color: btStyle.toolbarColor
         border.width: 1
         border.color: "black"
