@@ -420,7 +420,6 @@ void BibleTime::reloadProfile() {
      */
     setQActionCheckedNoTrigger(m_windowFullscreenAction, isFullScreen());
     setQActionCheckedNoTrigger(m_showTextAreaHeadersAction, conf.sessionValue<bool>("GUI/showTextWindowHeaders", true));
-    setQActionCheckedNoTrigger(m_showTextAreaHeadersAction, conf.sessionValue<bool>("GUI/showTextWindowHeaders", true));
     setQActionCheckedNoTrigger(m_showMainWindowToolbarAction, conf.sessionValue<bool>("GUI/showMainToolbar", true));
     setQActionCheckedNoTrigger(m_showTextWindowNavigationAction, conf.sessionValue<bool>("GUI/showTextWindowNavigator", true));
     setQActionCheckedNoTrigger(m_showTextWindowModuleChooserAction, conf.sessionValue<bool>("GUI/showTextWindowModuleSelectorButtons", true));
