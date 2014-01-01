@@ -4,6 +4,7 @@
 #include "qtquick2applicationviewer.h"
 
 #include "btstyle.h"
+#include "util/directory.h"
 #include <cmath>
 #include <QGuiApplication>
 #include <QJsonValue>
@@ -14,13 +15,6 @@
 #include <QDebug>
 
 namespace btm {
-
-static QString qmlFilePath(const QString& parentName, const QString& fileName) {
-    QString filePath = QCoreApplication::applicationDirPath() + "/../share/";
-    filePath += parentName + "/";
-    filePath += fileName;
-    return filePath;
-}
 
 ViewManager::ViewManager()
     : viewer_(new QtQuick2ApplicationViewer()) {
@@ -37,8 +31,7 @@ void ViewManager::initialize_string_list_chooser_model() {
 }
 
 void ViewManager::initialize_main_qml() {
-    QString mainQml = qmlFilePath("qml", "main.qml");
-    viewer_->setMainQmlFile(mainQml);
+    viewer_->setMainQmlFile(util::directory::getQmlDir().filePath("main.qml"));
 }
 
 void ViewManager::show() {

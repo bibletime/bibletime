@@ -47,7 +47,11 @@ QtQuick2ApplicationViewer::~QtQuick2ApplicationViewer() {
 
 void QtQuick2ApplicationViewer::setMainQmlFile(const QString &file) {
     d->mainQmlFile = QtQuick2ApplicationViewerPrivate::adjustPath(file);
-    setSource(QUrl::fromLocalFile(d->mainQmlFile));
+
+    if(d->mainQmlFile[0] == ':')
+        setSource(QUrl("qrc:/" + d->mainQmlFile.mid(1))); // QUrl can not be constructed correctly from :share/...
+    else
+        setSource(QUrl::fromLocalFile(d->mainQmlFile));
 }
 
 void QtQuick2ApplicationViewer::addImportPath(const QString &path) {

@@ -31,6 +31,7 @@ QScopedPointer<QDir> cachedLocaleDir;
 QScopedPointer<QDir> cachedHandbookDir;
 QScopedPointer<QDir> cachedHowtoDir;
 QScopedPointer<QDir> cachedDisplayTemplatesDir;
+QScopedPointer<QDir> cachedQmlDir;
 QScopedPointer<QDir> cachedUserDisplayTemplatesDir;
 QScopedPointer<QDir> cachedUserBaseDir;
 QScopedPointer<QDir> cachedUserHomeDir;
@@ -49,7 +50,7 @@ QScopedPointer<QDir> cachedSharedSwordDir;
 QScopedPointer<QDir> cachedSwordLocalesDir;
 #endif
 
-#ifdef Q_OS_WIN
+#if defined Q_OS_WIN || defined Q_OS_SYMBIAN
 static const char BIBLETIME[] = "Bibletime";
 static const char SWORD_DIR[] = "Sword";
 #else
@@ -78,13 +79,15 @@ bool initDirectoryCache() {
     }
 
 #ifdef Q_OS_WIN
-
     cachedApplicationSwordDir.reset(new QDir(wDir)); // application sword dir for Windows only
+#ifndef BT_MINI
     if (!cachedApplicationSwordDir->cd("share/sword") || !cachedApplicationSwordDir->isReadable()) {
         qWarning() << "Cannot find sword directory relative to" << QCoreApplication::applicationDirPath();
         return false;
     }
+#endif
 
+#ifndef Q_OS_WINCE
     cachedSharedSwordDir.reset(new QDir(qgetenv("ALLUSERSPROFILE"))); // sword dir for Windows only
     if (!cachedSharedSwordDir->cd("Application Data")) {
         qWarning() << "Cannot find ALLUSERSPROFILE\\Application Data";
@@ -97,6 +100,7 @@ bool initDirectoryCache() {
         }
     }
 #endif
+#endif
 
 #ifdef Q_OS_MAC
     cachedSwordLocalesDir.reset(new QDir(wDir)); // application sword dir for Windows only
@@ -106,13 +110,18 @@ bool initDirectoryCache() {
     }
 #endif
 
+#ifdef Q_OS_WINCE
     cachedSwordPathDir.reset(new QDir(wDir));
+#elif defined (ANDROID)
+#else
+    cachedSwordPathDir.reset(new QDir());
     char* swordPath = qgetenv(SWORD_PATH).data();
     if (swordPath != 0) {
         cachedSwordPathDir.reset(new QDir(swordPath));
         // We unset the SWORD_PATH so libsword finds paths correctly
         qputenv(SWORD_PATH, "");
     }
+#endif
 
     cachedIconDir.reset(new QDir(wDir)); // Icon dir
     if (!cachedIconDir->cd("share/bibletime/icons") || !cachedIconDir->isReadable()) {
@@ -120,6 +129,7 @@ bool initDirectoryCache() {
         return false;
     }
 
+#ifndef BT_MINI
     cachedJavascriptDir.reset(new QDir(wDir));
     if (!cachedJavascriptDir->cd("share/bibletime/javascript") || !cachedJavascriptDir->isReadable()) {
         qWarning() << "Cannot find javascript directory relative to" << wDir.absolutePath();
@@ -137,6 +147,7 @@ bool initDirectoryCache() {
         qWarning() << "Cannot find pics directory relative to" << wDir.absolutePath();
         return false;
     }
+#endif
 
     cachedLocaleDir.reset(new QDir(wDir));
     if (!cachedLocaleDir->cd("share/bibletime/locale")) {
@@ -147,6 +158,7 @@ bool initDirectoryCache() {
     QString localeName(QLocale::system().name());
     QString langCode(localeName.section('_', 0, 0));
 
+#ifndef BT_MINI
     cachedHandbookDir.reset(new QDir(wDir));
     if (!cachedHandbookDir->cd("share/bibletime/docs/handbook/" + localeName)) {
         if (!cachedHandbookDir->cd("share/bibletime/docs/handbook/" + langCode)) {
@@ -166,6 +178,7 @@ bool initDirectoryCache() {
             }
         }
     }
+#endif
 
     cachedDisplayTemplatesDir.reset(new QDir(wDir)); //display templates dir
     if (!cachedDisplayTemplatesDir->cd("share/bibletime/display-templates/")) {
@@ -173,12 +186,30 @@ bool initDirectoryCache() {
         return false;
     }
 
-#if defined Q_OS_ANDROID
+#ifdef BT_MOBILE
+    cachedQmlDir.reset(new QDir(wDir)); //qml files dir
+    if (!cachedQmlDir->cd("share/bibletime/qml/")) {
+        qWarning() << "Cannot find qml relative to" << wDir.absolutePath();
+        return false;
+    }
+#endif
+
+#ifdef Q_OS_WIN
+    cachedUserHomeDir.reset(new QDir(QCoreApplication::applicationDirPath()));
+#elif defined(ANDROID)
     cachedUserHomeDir.reset(new QDir(qgetenv("EXTERNAL_STORAGE")));
     if(!cachedUserHomeDir->exists() || !cachedUserHomeDir->isReadable())
     {
         qWarning() << "No external storage found, use application home.";
         cachedUserHomeDir->setPath(QDir::homePath());
+    }
+#elif defined Q_OS_SYMBIAN
+    cachedUserHomeDir.reset(new QDir(QCoreApplication::applicationDirPath()[0] + ":\\"));
+    if (!cachedUserHomeDir->cd("data")) {
+        if(!cachedUserHomeDir->mkpath("data") || !cachedUserHomeDir->cd("data")) {
+            qWarning() << "Could not create user home directory" << cachedUserHomeDir->absolutePath();
+            return false;
+        }
     }
 #else
     cachedUserHomeDir.reset(new QDir(qgetenv("HOME")));
@@ -193,14 +224,16 @@ bool initDirectoryCache() {
     }
 
     cachedUserHomeSwordDir.reset(new QDir(*cachedUserHomeDir));
+#ifndef Q_OS_WIN
     if (!cachedUserHomeSwordDir->cd(SWORD_DIR)) {
         if (!cachedUserHomeSwordDir->mkpath(SWORD_DIR) || !cachedUserHomeSwordDir->cd(SWORD_DIR)) {
             qWarning() << "Could not create user home " << SWORD_DIR << " directory.";
             return false;
         }
     }
+#endif
 
-#if defined Q_OS_ANDROID
+#if defined Q_OS_ANDROID || defined Q_OS_SYMBIAN
     // help for SWMgr to find the right place
     qputenv(SWORD_PATH, cachedUserHomeSwordDir->absolutePath().toLocal8Bit());
 #endif
@@ -385,6 +418,13 @@ const QDir &getHowtoDir() {
 
 const QDir &getDisplayTemplatesDir() {
     return *cachedDisplayTemplatesDir;
+}
+
+const QDir &getQmlDir() {
+#ifndef BT_MOBILE
+    Q_ASSERT(false && "Qml files currently required for BibleTime Mobile frontend only.");
+#endif
+    return *cachedQmlDir;
 }
 
 const QDir &getUserBaseDir() {
