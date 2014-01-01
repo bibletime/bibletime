@@ -16,7 +16,7 @@ Rectangle {
 
         border.color: "black"
         border.width: 1
-        height: btStyle.pixelsPerMillimeterY * 7
+        height: btStyle.uiFontPointSize * 2;
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.top: parent.top
@@ -28,6 +28,7 @@ Rectangle {
             id: title
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.centerIn: parent
+            anchors.topMargin: 5
             horizontalAlignment: Text.AlignCenter
             verticalAlignment: Text.AlignBottom
             style: Text.Sunken
@@ -52,7 +53,7 @@ Rectangle {
             id: scrollbar
             anchors.right: listView.right
             y: listView.visibleArea.yPosition * listView.height
-            width: 5
+            width: 7
             height: listView.visibleArea.heightRatio * listView.height
             color: "black"
             visible: listView.visibleArea.heightRatio < 0.99
@@ -66,14 +67,14 @@ Rectangle {
                 border.width: 1
                 border.color: ListView.isCurrentItem ? "#c0c0c0" : "#a0a0a0"
                 width: parent.width
-                height: btStyle.pixelsPerMillimeterY * 15
+                height: btStyle.uiFontPointSize * 4;
 
                 Image {
                     id: installedCheckmark
 
                     source: "checkmark.svg"
                     height: entry.height - 15
-                    width:  btStyle.pixelsPerMillimeterX * 6
+                    width:  entry.height -15
                     anchors.left: parent.left
                     anchors.top: parent.top
                     anchors.leftMargin: 5
@@ -92,11 +93,11 @@ Rectangle {
                     anchors.right: entry.right
                     width: parent.width
                     height: parent.height/2 -4
-                    anchors.leftMargin: 10
+                    anchors.leftMargin: 5
                     anchors.rightMargin: 10
                     anchors.topMargin: 5
                     text: title
-                    font.pointSize: btStyle.textFontPointSize
+                    font.pointSize: btStyle.uiFontPointSize
                 }
 
                 Text {
@@ -105,12 +106,12 @@ Rectangle {
                     anchors.right: entry.right
                     width: parent.width
                     height: parent.height/2 -4
-                    anchors.leftMargin: 35
+                    anchors.leftMargin: 15
                     anchors.rightMargin: 10
-                    anchors.topMargin: 25
+                    anchors.bottomMargin: 5
                     text: desc
                     elide: Text.ElideMiddle
-                    font.pointSize: btStyle.textFontPointSize
+                    font.pointSize: btStyle.uiFontPointSize- 2
                 }
             }
         }

@@ -86,8 +86,8 @@ Rectangle {
 
     Rectangle {
         id: "refreshButton"
-        width: btStyle.pixelsPerMillimeterY * 30
-        height: btStyle.pixelsPerMillimeterY * 8
+        width: installManager.width * 3.4 / 10;
+        height: btStyle.pixelsPerMillimeterY * 5
         anchors.bottom: parent.bottom
         anchors.bottomMargin: 10
         anchors.right: installRemoveButton.left
@@ -98,6 +98,7 @@ Rectangle {
         Text {
             text: "Refresh Lists"
             anchors.centerIn: parent
+            font.pointSize: btStyle.uiFontPointSize
         }
 
         MouseArea {
@@ -108,8 +109,8 @@ Rectangle {
 
     Rectangle {
         id: "installRemoveButton"
-        width: btStyle.pixelsPerMillimeterY * 30
-        height: btStyle.pixelsPerMillimeterY * 8
+        width: installManager.width * 3.8 / 10;
+        height: refreshButton.height
         anchors.bottom: parent.bottom
         anchors.bottomMargin: 10
         anchors.right: cancelButton.left
@@ -120,6 +121,7 @@ Rectangle {
         Text {
             text: "Install / Remove"
             anchors.centerIn: parent
+            font.pointSize: btStyle.uiFontPointSize
         }
 
         MouseArea {
@@ -130,7 +132,7 @@ Rectangle {
 
     Rectangle {
         id: "cancelButton"
-        width: installRemoveButton.width
+        width: installManager.width * 2.4 / 12;
         height: installRemoveButton.height
         anchors.bottom: parent.bottom
         anchors.bottomMargin: 10
@@ -142,6 +144,7 @@ Rectangle {
         Text {
             text: "Cancel"
             anchors.centerIn: parent
+            font.pointSize: btStyle.uiFontPointSize
         }
 
         MouseArea {

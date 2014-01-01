@@ -6,7 +6,7 @@ Rectangle {
 
     property alias model: menusRepeater.model
     property int fontPointSize: 15
-    property int menuHeight: btStyle.pixelsPerMillimeterY * 12
+    property int menuHeight: btStyle.pixelsPerMillimeterY * 7
     property int topMenuMargin: 150
     property int leftMenuMargin: 50
 

@@ -5,7 +5,7 @@ Rectangle {
     id: fontPointSize
 
     property string title: ""
-    property int min: 16
+    property int min: 10
     property int max: 40
     property int current: 20
     property int previous: 20
@@ -95,7 +95,7 @@ Rectangle {
         anchors.bottomMargin: 10
 
         Rectangle {
-            height: btStyle.pixelsPerMillimeterY * 7
+            height: btStyle.pixelsPerMillimeterY * 5
             width: btStyle.pixelsPerMillimeterY * 18
             border.color: "black"
             border.width: 1
@@ -115,7 +115,7 @@ Rectangle {
         }
 
         Rectangle {
-            height: btStyle.pixelsPerMillimeterY * 7
+            height: btStyle.pixelsPerMillimeterY * 5
             width: btStyle.pixelsPerMillimeterY * 18
             border.color: "black"
             border.width: 1

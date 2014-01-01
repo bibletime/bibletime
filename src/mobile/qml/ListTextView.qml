@@ -18,7 +18,7 @@ Rectangle {
 
         border.color: "black"
         border.width: 1
-        height:btStyle.pixelsPerMillimeterY * 6
+        height: btStyle.uiFontPointSize * 2;
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.top: parent.top
@@ -77,7 +77,7 @@ Rectangle {
                 border.width: 1
                 border.color: "darkgray"
                 width: parent.width
-                height: btStyle.pixelsPerMillimeterY * 12
+                height: btStyle.uiFontPointSize * 3;
 
                 Text {
                     id: entryText

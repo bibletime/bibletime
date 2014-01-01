@@ -341,7 +341,8 @@ int BtStyle::pixelsPerMillimeterX() const {
 
 int BtStyle::pixelsPerMillimeterY() const {
     QScreen* screen = QGuiApplication::screens().at(0);
-    return screen->physicalDotsPerInchY() / millimeterPerInch;
+    int dpm = screen->physicalDotsPerInchY() / millimeterPerInch;
+    return dpm;
 }
 
 } // end namespace

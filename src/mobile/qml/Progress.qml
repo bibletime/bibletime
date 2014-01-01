@@ -27,6 +27,7 @@ Rectangle {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: progressBar.top
         anchors.bottomMargin: 20
+        font.pointSize: btStyle.uiFontPointSize
     }
 
     ProgressBar {
@@ -41,8 +42,8 @@ Rectangle {
         color: "white"
         border.color: "black"
         border.width: 1
-        width: 100
-        height:30
+        width: btStyle.pixelsPerMillimeterX * 25
+        height: btStyle.pixelsPerMillimeterY * 7
         anchors.top: progressBar.bottom
         anchors.topMargin: 20
         anchors.horizontalCenter: parent.horizontalCenter
@@ -50,6 +51,7 @@ Rectangle {
         Text {
             anchors.centerIn: parent
             text: "Cancel"
+            font.pointSize: btStyle.uiFontPointSize
 
         }
 
