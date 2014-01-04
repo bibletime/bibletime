@@ -6,7 +6,7 @@
     <message>
         <source></source>
         <translatorcomment>Bibletime User Interface translation
-Copyright (C) 1999-2013 The Bibletime Team, http://www.bibletime.info
+Copyright (C) 1999-2014 The Bibletime Team, http://www.bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
         <translation></translation>
     </message>
@@ -150,17 +150,17 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>&amp;Piibli uurimise õpetus</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="534"/>
+        <location filename="../../src/bibletime_slots.cpp" line="533"/>
         <source>Please enter a name for the new session.</source>
         <translation>Palun sisestage nimetus uue sessiooni jaoks.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="542"/>
+        <location filename="../../src/bibletime_slots.cpp" line="541"/>
         <source>Session already exists</source>
         <translation>Sessioon juba eksisteerib</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="543"/>
+        <location filename="../../src/bibletime_slots.cpp" line="542"/>
         <source>Session with the name &quot;%1&quot; already exists. Please provide a different name.</source>
         <translation>Sessioon nimega &quot;%1&quot; juba eksisteerib. Palun sisestage erinev nimi.</translation>
     </message>
@@ -430,7 +430,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Otsi eelistatud Piiblist</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="533"/>
+        <location filename="../../src/bibletime_slots.cpp" line="532"/>
         <source>New Session</source>
         <translation>Uus sessioon</translation>
     </message>
@@ -502,12 +502,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>BibleTime on võimas, kuid lihtne tööriist Piibli uurimiseks.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="269"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="271"/>
         <source>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</source>
         <translation>BibleTime on välja antud GPL litsentsi all. Te võite programmi alla laadida ja kasutada (kuid mitte levitada) personaalsetel, privaatsetel, avalikel või kommertseesmärkidel ilma piiranguteta, aga te võite programmi edasi anda või levitada ainult kui Te sellega samuti programmi lähtekoodi levitate.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="275"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="277"/>
         <source>The complete legally binding license is below.</source>
         <translation>Täielik juriidiliselt siduv litsents on toodud allpool.</translation>
     </message>
@@ -527,9 +527,8 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Me otsime arendajaid ja tõlkijaid. Kui Te soovite meie meeskonnaga ühineda, palun saatke e-mail aadressile %1.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="130"/>
         <source>(c)1999-2013, The BibleTime Team</source>
-        <translation>(c)1999-2013, The BibleTime&apos;i meeskond</translation>
+        <translation type="obsolete">(c)1999-2013, The BibleTime&apos;i meeskond</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="137"/>
@@ -547,52 +546,52 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>dokumentatsiooni ja tõlgete haldaja</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="171"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="172"/>
         <source>project manager</source>
         <translation>projektijuht</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="174"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="175"/>
         <source>tester</source>
         <translation>testija</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="174"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="175"/>
         <source>usability expert</source>
         <translation>kasutusekspert</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="218"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="220"/>
         <source>Some names may be missing, please email %1 if you notice errors or omissions.</source>
         <translation>Mõned nimed võivad puududa, palun saatke e-mail aadressile %1 kui märkate vigu või puuduvaid nimesid.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="235"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="237"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
         <translation>BibleTime kasutab SWORD projekti. Projekt SWORD on CrossWire Bible Society vaba piiblitarkvara projekt, mille eesmärk on luua mitmeplatvormilisi vaba tarkvara tööriistu &amp;mdash; litsenseeritud GNU General Public Licence all &amp;mdash; mis võimaldavad programmeerijatel ja piibliühingutel kirjutada uut piiblitarkvara kiiremini ja lihtsamalt.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="241"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="243"/>
         <source>The SWORD Project: </source>
         <translation>Projekt SWORD: </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="249"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="251"/>
         <source>&amp;Qt</source>
         <translation>&amp;Qt</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="252"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="254"/>
         <source>Qt toolkit version %1</source>
         <translation>Qt raamistik, versioon %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="258"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="260"/>
         <source>More info...</source>
         <translation>Rohkem infot...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="263"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="265"/>
         <source>&amp;License</source>
         <translation>&amp;Litsents</translation>
     </message>
@@ -641,32 +640,37 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>kunstnik</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="172"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="130"/>
+        <source>(c)1999-2014, The BibleTime Team</source>
+        <translation type="unfinished">(c)1999-2013, The BibleTime&apos;i meeskond {1999-2011,?} {1999-2014,?}</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="173"/>
         <source>documentation</source>
         <translation>dokumentatsioon</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="186"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="188"/>
         <source>The following people translated BibleTime into their language:</source>
         <translation>Järgnevad inimesed tõlkisid BibleTime&apos; enda keelde:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="229"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="231"/>
         <source>&amp;SWORD</source>
         <translation>&amp;SWORD</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="233"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="235"/>
         <source>SWORD library version %1</source>
         <translation>SWORD teek, versioon %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="254"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="256"/>
         <source>This program uses Qt version %1.</source>
         <translation>See programm kasutab Qt versiooni %1.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="256"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="258"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
         <translation>Qt on multiplatvormne rakenduste ja graafiliste kasutajaliideste raamistik, C++ programmeerimiskeele jaoks. Qt on publitseeritud LGPL litsentsi all.</translation>
     </message>
@@ -1468,7 +1472,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Peata kõik</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="130"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="132"/>
         <source>Completed</source>
         <translation>Valmis</translation>
     </message>
@@ -1482,7 +1486,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Ootel...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="111"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="113"/>
         <source>Preparing install...</source>
         <translation>Paigaldamiseks valmistumine...</translation>
     </message>
@@ -1492,7 +1496,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>Paigalduse edenemine</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="130"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="132"/>
         <source>Failed</source>
         <translation>Ebaõnnestus</translation>
     </message>

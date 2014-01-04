@@ -6,7 +6,7 @@
     <message>
         <source></source>
         <translatorcomment>Bibletime User Interface translation
-Copyright (C) 1999-2013 The Bibletime Team, http://www.bibletime.info
+Copyright (C) 1999-2014 The Bibletime Team, http://www.bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
         <translation></translation>
     </message>
@@ -150,17 +150,17 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>如何研經(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="534"/>
+        <location filename="../../src/bibletime_slots.cpp" line="533"/>
         <source>Please enter a name for the new session.</source>
         <translation>請輸入新工作階段的名稱.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="542"/>
+        <location filename="../../src/bibletime_slots.cpp" line="541"/>
         <source>Session already exists</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="543"/>
+        <location filename="../../src/bibletime_slots.cpp" line="542"/>
         <source>Session with the name &quot;%1&quot; already exists. Please provide a different name.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -430,7 +430,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>在標準聖經中搜尋</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="533"/>
+        <location filename="../../src/bibletime_slots.cpp" line="532"/>
         <source>New Session</source>
         <translation>新工作階段</translation>
     </message>
@@ -502,12 +502,12 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>BibleTime 是個好上手又好用的聖經研讀工具.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="269"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="271"/>
         <source>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</source>
         <translation>BibleTime 採用GPL 授權釋出. 你可以無限制的下載並使用該程式供個人個人,私人,大眾,或商業用途使用.但只有當你願意公開發對應的原始碼方可發布或傳送該程式.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="275"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="277"/>
         <source>The complete legally binding license is below.</source>
         <translation>完整合法榜定授權如下.</translation>
     </message>
@@ -527,9 +527,8 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>我們正在招募開發者和翻譯者. 如果你想要參與我們的團隊, 請發個電子郵件到  %1.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="130"/>
         <source>(c)1999-2013, The BibleTime Team</source>
-        <translation type="unfinished">(c)1999-2013, BibleTime 團隊</translation>
+        <translation type="obsolete">(c)1999-2013, BibleTime 團隊</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="137"/>
@@ -547,52 +546,52 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>手冊與翻譯管理員</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="171"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="172"/>
         <source>project manager</source>
         <translation>專案管理</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="174"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="175"/>
         <source>tester</source>
         <translation>測試者</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="174"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="175"/>
         <source>usability expert</source>
         <translation>可用性專家</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="218"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="220"/>
         <source>Some names may be missing, please email %1 if you notice errors or omissions.</source>
         <translation>有些名字可能消失了, 請寄電子郵件給給 %1 如果你發現任何錯誤或闕漏.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="235"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="237"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
         <translation>BibleTime 使用SWORD 專案. SWORD 專案是CrossWire Bible Society的 免費聖經軟體專案. 它的目標是要建立跨平台的開放原始碼工具 &amp;mdash; 以GNU General Public License授權釋出 &amp;mdash; 允許程式設計師和聖經族群能更快也更輕易的撰寫新的聖經軟體.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="241"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="243"/>
         <source>The SWORD Project: </source>
         <translation>The SWORD 專案:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="249"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="251"/>
         <source>&amp;Qt</source>
         <translation>&amp;Qt</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="252"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="254"/>
         <source>Qt toolkit version %1</source>
         <translation>Qt 工具組版本 %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="258"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="260"/>
         <source>More info...</source>
         <translation>更多資訊...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="263"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="265"/>
         <source>&amp;License</source>
         <translation>授權&amp;L</translation>
     </message>
@@ -641,32 +640,37 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>美工</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="172"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="130"/>
+        <source>(c)1999-2014, The BibleTime Team</source>
+        <translation type="unfinished">(c)1999-2013, BibleTime 團隊 {1999-2011,?} {1999-2014,?}</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="173"/>
         <source>documentation</source>
         <translation>手冊</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="186"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="188"/>
         <source>The following people translated BibleTime into their language:</source>
         <translation>以下人員將BibleTime翻譯成他們的語言:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="229"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="231"/>
         <source>&amp;SWORD</source>
         <translation>&amp;SWORD</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="233"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="235"/>
         <source>SWORD library version %1</source>
         <translation>SWORD 程式庫版本 %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="254"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="256"/>
         <source>This program uses Qt version %1.</source>
         <translation>這個程式使用Qt 版本 %1.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="256"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="258"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
         <translation>Qt 是一個跨平台程式與介面架構, 以C++ 建立. 採用LGPL 授權釋出.</translation>
     </message>
@@ -1463,7 +1467,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>全部停止</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="130"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="132"/>
         <source>Completed</source>
         <translation>完成</translation>
     </message>
@@ -1477,7 +1481,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>等著...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="111"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="113"/>
         <source>Preparing install...</source>
         <translation>正在準備安裝...</translation>
     </message>
@@ -1487,7 +1491,7 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>安裝進度</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="130"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="132"/>
         <source>Failed</source>
         <translation>失敗</translation>
     </message>

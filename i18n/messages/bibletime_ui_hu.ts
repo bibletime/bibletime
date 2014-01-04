@@ -5,9 +5,9 @@
     <name></name>
     <message>
         <source></source>
-        <translatorcomment>Bibletime felhasználói felület fordítás
-Copyright (C) 2011 The Bibletime Team, http://www.bibletime.info
-Ez a  fájl a BibleTime licenszelésével megegyező licensszel terjeszthető.</translatorcomment>
+        <translatorcomment>Bibletime User Interface translation
+Copyright (C) 1999-2014 The Bibletime Team, http://www.bibletime.info
+This file is distributed under the same license as the Bibetime package.</translatorcomment>
         <translation></translation>
     </message>
 </context>
@@ -151,17 +151,17 @@ Ez a  fájl a BibleTime licenszelésével megegyező licensszel terjeszthető.</
         <translation>Hogyan tanulmányozza a &amp;Bibliát</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="534"/>
+        <location filename="../../src/bibletime_slots.cpp" line="533"/>
         <source>Please enter a name for the new session.</source>
         <translation>Adjon nevet az új folyamatnak.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="542"/>
+        <location filename="../../src/bibletime_slots.cpp" line="541"/>
         <source>Session already exists</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="543"/>
+        <location filename="../../src/bibletime_slots.cpp" line="542"/>
         <source>Session with the name &quot;%1&quot; already exists. Please provide a different name.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -426,7 +426,7 @@ Ez a  fájl a BibleTime licenszelésével megegyező licensszel terjeszthető.</
         <translation>Keresés az alapértelmezett Bibliában</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="533"/>
+        <location filename="../../src/bibletime_slots.cpp" line="532"/>
         <source>New Session</source>
         <translation>Új folyamat</translation>
     </message>
@@ -498,12 +498,12 @@ Ez a  fájl a BibleTime licenszelésével megegyező licensszel terjeszthető.</
         <translation>BibleTime egy könnyen használható Bibliatanulmányozó eszköz.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="269"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="271"/>
         <source>BibleTime is released under the GPL license. You can download and use the program for personal, private, public or commercial purposes without restrictions, but can give away or distribute the program only if you also distribute the corresponding source code.</source>
         <translation>A BibleTime GPL licensz alatt lett kiadva. Letöltheti, használhatja a programot magán, nyilvános vagy akár üzleti célra is korlátozások nélkül, de csak akkor adhatja el, vagy terjesztheti a programot, ha a hozzá tartozó forráskódot is közzéteszi.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="275"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="277"/>
         <source>The complete legally binding license is below.</source>
         <translation>A teljes jogilag érvényes licensz lentebb található. </translation>
     </message>
@@ -542,32 +542,32 @@ Ez a  fájl a BibleTime licenszelésével megegyező licensszel terjeszthető.</
         <translation>dokumentációs és fordítási menedzser</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="171"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="172"/>
         <source>project manager</source>
         <translation>projekt menedzser</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="174"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="175"/>
         <source>tester</source>
         <translation>tesztelő</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="174"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="175"/>
         <source>usability expert</source>
         <translation>hasznáhatósági szakértő</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="218"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="220"/>
         <source>Some names may be missing, please email %1 if you notice errors or omissions.</source>
         <translation>Néhány név hiányozhat a felsorolásból, Küldjön egy emailt %1 ha hibátvagy hiányosságot fedezett fel.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="258"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="260"/>
         <source>More info...</source>
         <translation>További információk...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="263"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="265"/>
         <source>&amp;License</source>
         <translation>&amp;Licensz</translation>
     </message>
@@ -577,9 +577,8 @@ Ez a  fájl a BibleTime licenszelésével megegyező licensszel terjeszthető.</
         <translation>tervező</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="130"/>
         <source>(c)1999-2013, The BibleTime Team</source>
-        <translation type="unfinished">(c)1999-2013, The BibleTime Team </translation>
+        <translation type="obsolete">(c)1999-2013, The BibleTime Team </translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="139"/>
@@ -617,52 +616,57 @@ Ez a  fájl a BibleTime licenszelésével megegyező licensszel terjeszthető.</
         <translation>művész</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="172"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="130"/>
+        <source>(c)1999-2014, The BibleTime Team</source>
+        <translation type="unfinished">(c)1999-2013, The BibleTime Team  {1999-2014,?}</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="173"/>
         <source>documentation</source>
         <translation>dokumentáció</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="186"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="188"/>
         <source>The following people translated BibleTime into their language:</source>
         <translation>A következő emberek vettek részt a BibleTime fordításában:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="229"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="231"/>
         <source>&amp;SWORD</source>
         <translation>&amp;SWORD</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="233"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="235"/>
         <source>SWORD library version %1</source>
         <translation>Sword verzió: %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="235"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="237"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools &amp;mdash; covered by the GNU General Public License &amp;mdash; that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
         <translation>A BibleTime a SWORD Projekt használatára készült. A SWORD Projekt a Crosswire Bible Society ingyenes Biblia szoftver projektje. Célja, hogy olyan keresztplatformos, nyílt forrású &amp;mdash; GNU General Public License által kiadott &amp;mdash; szoftvereket hozzon létre, amelyek lehetővé teszik a programozóknak és a Bibliatársaságoknak, hogy sokkal könnyebben és gyorsabban írhassanak Bibliaszoftvereket.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="241"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="243"/>
         <source>The SWORD Project: </source>
         <translation>A SWORD Projekt:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="249"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="251"/>
         <source>&amp;Qt</source>
         <translation>&amp;Qt</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="252"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="254"/>
         <source>Qt toolkit version %1</source>
         <translation>Qt eszközkészlet verziója: %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="254"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="256"/>
         <source>This program uses Qt version %1.</source>
         <translation>Ez a program a Qt %1 verzióját használja.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="256"/>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="258"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
         <translation>A Qt egy keresztplatformos alkalmazás és keretrendszer, C++ nyelven megírva, LGPL licensz alatt kiadva.</translation>
     </message>
@@ -1415,7 +1419,7 @@ Ez a  fájl a BibleTime licenszelésével megegyező licensszel terjeszthető.</
         <translation>Minden folyamat leállítása</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="130"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="132"/>
         <source>Completed</source>
         <translation>Kész</translation>
     </message>
@@ -1429,7 +1433,7 @@ Ez a  fájl a BibleTime licenszelésével megegyező licensszel terjeszthető.</
         <translation>Válaszra vár...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="111"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="113"/>
         <source>Preparing install...</source>
         <translation>Telepítés előkészítése...</translation>
     </message>
@@ -1439,7 +1443,7 @@ Ez a  fájl a BibleTime licenszelésével megegyező licensszel terjeszthető.</
         <translation>Telepítési folyamat</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="130"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="132"/>
         <source>Failed</source>
         <translation>Sikertelen</translation>
     </message>
