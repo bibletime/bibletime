@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: handbook-cs\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
-"POT-Creation-Date: 2013-12-10 21:20-0500\n"
+"POT-Creation-Date: 2014-01-04 00:43-0500\n"
 "PO-Revision-Date: 2009-12-11 21:06+0100\n"
 "Last-Translator: Jan Belohoubek <j.bel@atlas.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -3481,7 +3481,7 @@ msgstr ""
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:44
 msgid ""
-"<copyright> <year>1999-2013</year> <holder>The &bibletime; Team</holder> </"
+"<copyright> <year>1999-2014</year> <holder>The &bibletime; Team</holder> </"
 "copyright>"
 msgstr ""
 
@@ -3495,12 +3495,12 @@ msgstr "Příručka &bibletime; je součástí &bibletime; studijní nápovědy.
 
 #. type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:54
-msgid "<date>December 2013</date>"
+msgid "<date>January 2014</date>"
 msgstr ""
 
 #. type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:56
-msgid "2.10.0"
+msgid "2.10.1"
 msgstr ""
 
 #. type: Content of: <book><bookinfo><abstract><para>

@@ -42,7 +42,7 @@
   </authorgroup>
   
   <!-- TRANS:ROLES_OF_TRANSLATORS -->
-<copyright> <year>1999-2013</year> <holder>Das &bibletime;-Team</holder>
+<copyright> <year>1999-2014</year> <holder>The &bibletime; Team</holder>
 </copyright>
 
   <legalnotice>
@@ -50,9 +50,9 @@
 ausgeliefert.</para>
   </legalnotice>
 
-  <date>December 2013</date>
+  <date>January 2014</date>
 
-  <releaseinfo>2.10.0</releaseinfo>
+  <releaseinfo>2.10.1</releaseinfo>
 
   <abstract>
     <para>&bibletime; is a completely free Bible study program. The program's user
