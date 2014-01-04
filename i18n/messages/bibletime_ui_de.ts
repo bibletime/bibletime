@@ -6,7 +6,7 @@
     <message>
         <source></source>
         <translatorcomment>Bibletime User Interface translation
-Copyright (C) 1999-2013 The Bibletime Team, http://www.bibletime.info
+Copyright (C) 1999-2014 The Bibletime Team, http://www.bibletime.info
 This file is distributed under the same license as the Bibetime package.</translatorcomment>
         <translation></translation>
     </message>
@@ -527,8 +527,8 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>&amp;Lizenz</translation>
     </message>
     <message>
-        <source>(c)1999-2013, The BibleTime Team</source>
-        <translation type="unfinished">(c)1999-2013, das BibleTime Team</translation>
+        <source>(c)1999-2014, The BibleTime Team</source>
+        <translation type="unfinished">(c)1999-2014, das BibleTime Team</translation>
     </message>
     <message>
         <source>&amp;SWORD</source>
@@ -4623,15 +4623,15 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     <name>btm::InstallProgress</name>
     <message>
         <source>Failed</source>
-        <translation>Fehlgeschlagen</translation>
+        <translation type="obsolete">Fehlgeschlagen</translation>
     </message>
     <message>
         <source>Completed</source>
-        <translation>Abgeschlossen</translation>
+        <translation type="obsolete">Abgeschlossen</translation>
     </message>
     <message>
         <source>Cancelled</source>
-        <translation>Abgebrochen</translation>
+        <translation type="obsolete">Abgebrochen</translation>
     </message>
 </context>
 <context>
