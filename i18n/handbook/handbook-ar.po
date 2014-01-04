@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
-"POT-Creation-Date: 2013-12-10 21:20-0500\n"
+"POT-Creation-Date: 2014-01-04 00:43-0500\n"
 "PO-Revision-Date: 2010-12-14 15:56+0200\n"
 "Last-Translator: Andrew Alfy <andrewalfy@yahoo.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3283,7 +3283,7 @@ msgstr "Abthorpe"
 #| "<copyright> <year>1999-2013</year> <holder>The &bibletime; Team</holder> "
 #| "</copyright>"
 msgid ""
-"<copyright> <year>1999-2013</year> <holder>The &bibletime; Team</holder> </"
+"<copyright> <year>1999-2014</year> <holder>The &bibletime; Team</holder> </"
 "copyright>"
 msgstr ""
 "<copyright> <year>1999-2013</year> <holder>فريق بيبل تايم</holder> </"
@@ -3299,12 +3299,12 @@ msgstr "يوزع دليل إستخدام بيبل تايم مع برنامج د�
 #: docs/handbook/en/docbook/index.docbook:54
 #, fuzzy
 #| msgid "<date>December 2010</date>"
-msgid "<date>December 2013</date>"
+msgid "<date>January 2014</date>"
 msgstr "<date>ديسمبر 2010 </date>"
 
 #. type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:56
-msgid "2.10.0"
+msgid "2.10.1"
 msgstr ""
 
 #. type: Content of: <book><bookinfo><abstract><para>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: handbook-hu\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
-"POT-Creation-Date: 2013-12-10 21:20-0500\n"
+"POT-Creation-Date: 2014-01-04 00:43-0500\n"
 "PO-Revision-Date: 2011-10-17 13:54+0100\n"
 "Last-Translator: Geza Novak <geza.novak@gmail.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -3641,7 +3641,7 @@ msgstr "Abthorpe"
 #| "<copyright> <year>1999-2013</year> <holder>The &bibletime; Team</holder> "
 #| "</copyright>"
 msgid ""
-"<copyright> <year>1999-2013</year> <holder>The &bibletime; Team</holder> </"
+"<copyright> <year>1999-2014</year> <holder>The &bibletime; Team</holder> </"
 "copyright>"
 msgstr ""
 "<copyright> <year>1999-2013</year> <holder>The &bibletime; Team</holder> </"
@@ -3658,12 +3658,12 @@ msgstr "A &bibletime; kézikönyv a &bibletime; programmal együtt terjesztve."
 #: docs/handbook/en/docbook/index.docbook:54
 #, fuzzy
 #| msgid "<date>January 2011</date>"
-msgid "<date>December 2013</date>"
+msgid "<date>January 2014</date>"
 msgstr "<date>Január 2011</date>"
 
 #. type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:56
-msgid "2.10.0"
+msgid "2.10.1"
 msgstr ""
 
 # type: Content of: <book><bookinfo><abstract><para>
