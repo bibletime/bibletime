@@ -514,6 +514,10 @@ SET(bibletime_SRC_MOBILE_MOCABLE_HEADERS
     src/mobile/ui/viewmanager.h
 )
 
+SET(bibletime_MOBILE_RESOURCE_FILES
+    src/mobile/btm.qrc
+)
+
 SET(bibletime_MOBILE_QML_FILES
     src/mobile/qml/ContextMenu.qml
     src/mobile/qml/GridChooserButton.qml
@@ -576,12 +580,15 @@ SET(bibletime_SOURCES
 SET(bibletime_MOCABLE_HEADERS
     ${bibletime_COMMON_MOCABLE_HEADERS}
     ${bibletime_FRONTEND_${BIBLETIME_FRONTEND}_MOCABLE_HEADERS})
+SET(bibletime_RESOURCE_FILES
+    ${bibletime_${BIBLETIME_FRONTEND}_RESOURCE_FILES})
 SET(bibletime_QML_FILES
     ${bibletime_${BIBLETIME_FRONTEND}_QML_FILES})
 
 IF(Qt5Core_FOUND)
   QT5_WRAP_UI(bibletime_UIS_H ${bibletime_UIS})
   QT5_WRAP_CPP(bibletime_MOC_SOURCES ${bibletime_MOCABLE_HEADERS})
+  QT5_ADD_RESOURCES(bibletime_RESOURCE_SOURCES ${bibletime_RESOURCE_FILES})
 ELSE()
   QT4_WRAP_UI(bibletime_UIS_H ${bibletime_UIS})
   QT4_WRAP_CPP(bibletime_MOC_SOURCES ${bibletime_MOCABLE_HEADERS})
@@ -589,6 +596,7 @@ ENDIF()
 
 SET(common_bibletime_SOURCES
     ${bibletime_SOURCES}
+    ${bibletime_RESOURCE_SOURCES}
     ${bibletime_UIS_H}
     ${bibletime_MOC_SOURCES}
     ${bibletime_QML_FILES}
