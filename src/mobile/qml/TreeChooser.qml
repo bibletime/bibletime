@@ -23,7 +23,7 @@ Rectangle {
         border.width: 0
         color: "white"
 
-        height: {20 * pathCount }
+        height: btStyle.uiFontPointSize * (5 + pathCount *3);
         anchors.right: parent.right
         anchors.left: parent.left
         anchors.top: parent.top
@@ -49,8 +49,8 @@ Rectangle {
             id: backButton
 
             icon: "leftarrow.svg"
-            height: 36
-            width:  56
+            height: btStyle.uiFontPointSize * 4;
+            width:  btStyle.uiFontPointSize * 4;
             anchors.verticalCenter: parent.verticalCenter
             anchors.right : parent.right
             anchors.topMargin: 2
@@ -68,9 +68,7 @@ Rectangle {
             id: pathText
 
             text: pathArea.splitPath(treeChooser.path)
-            font.pointSize: 12
-            height: parent.height
-//            width: parent.width - backButton.width -50
+            height: btStyle.uiFontPointSize * 5;
             anchors.top: parent.top
             anchors.left: parent.left
             anchors.right: backButton.left
@@ -101,6 +99,7 @@ Rectangle {
         boundsBehavior: Flickable.StopAtBounds
         width: pathArea.width
         model: treeChooser.model
+
         delegate:
             Rectangle {
             id: entry
@@ -111,13 +110,12 @@ Rectangle {
             border.color: "#eeeeee"
             border.width: 1
             width: parent.width
-            height: 40
+            height: btStyle.uiFontPointSize * 5;
 
             Text {
                 id: entryText
 
-                font.pointSize: 12
-//                anchors.fill: entry
+                font.pointSize: btStyle.uiFontPointSize
                 anchors.top: entry.top
                 anchors.left: entry.left
                 anchors.right: entry.right
@@ -133,8 +131,8 @@ Rectangle {
                 id: imageButton
                 icon: "rightarrow.svg"
 
-                height: parent.height-4
-                width:  56
+                height: btStyle.uiFontPointSize * 4;
+                width:  btStyle.uiFontPointSize * 4;
                 anchors.right: parent.right
                 anchors.top: parent.top
                 anchors.topMargin: 2

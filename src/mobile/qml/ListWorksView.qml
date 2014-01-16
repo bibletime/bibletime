@@ -16,7 +16,7 @@ Rectangle {
 
         border.color: "black"
         border.width: 1
-        height: btStyle.uiFontPointSize * 2;
+        height: btStyle.uiFontPointSize * 3;
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.top: parent.top
@@ -67,7 +67,11 @@ Rectangle {
                 border.width: 1
                 border.color: ListView.isCurrentItem ? "#c0c0c0" : "#a0a0a0"
                 width: parent.width
-                height: btStyle.uiFontPointSize * 4;
+                height: {
+                    var pixel = btStyle.pixelsPerMillimeterY * 7;
+                    var uiFont = btStyle.uiFontPointSize * 5;
+                    return Math.max(pixel, uiFont);
+                }
 
                 Image {
                     id: installedCheckmark
@@ -96,6 +100,7 @@ Rectangle {
                     anchors.leftMargin: 5
                     anchors.rightMargin: 10
                     anchors.topMargin: 5
+                    verticalAlignment: Text.AlignVCenter
                     text: title
                     font.pointSize: btStyle.uiFontPointSize
                 }

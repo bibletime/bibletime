@@ -87,8 +87,8 @@ void BtStyle::setStyle(int style) {
         setMenuText(QColor(0,0,0));
         setMenuHeight(40);
 
-        setToolbarColor(QColor(237,237,237));
-        setToolbarButton(QColor(237,237,237));
+        setToolbarColor(QColor(200,200,200));
+        setToolbarButton(QColor(255,255,255));
         setToolbarButtonText(QColor(0,0,0));
         setToolbarTextPointSize(10);
     }
@@ -114,7 +114,7 @@ void BtStyle::setStyle(int style) {
         setMenuText(QColor(0,0,0));
         setMenuHeight(34);
 
-        setToolbarColor(QColor(120,120,120));
+        setToolbarColor(QColor(100,100,180));
         setToolbarButton(QColor(255,210,0));
         setToolbarButtonText(QColor(0,0,0));
         setToolbarTextPointSize(10);

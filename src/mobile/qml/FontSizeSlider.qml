@@ -5,8 +5,8 @@ Rectangle {
     id: fontPointSize
 
     property string title: ""
-    property int min: 10
-    property int max: 40
+    property int min: 8
+    property int max: 25
     property int current: 20
     property int previous: 20
 

@@ -6,18 +6,18 @@ Rectangle {
 
     signal buttonClicked
 
-    color: "black"
+    color: "#a0d0ff"
 
     BtStyle {
         id: btStyle
     }
 
     Column {
-        spacing:8
+        spacing:height/5
 
-        Rectangle { color: "white"; width:5; height:5 }
-        Rectangle { color: "white"; width:5; height:5 }
-        Rectangle { color: "white"; width:5; height:5 }
+        Rectangle { color: "black"; width:menuButton.height/10; height:menuButton.height/10 }
+        Rectangle { color: "black"; width:menuButton.height/10; height:menuButton.height/10 }
+        Rectangle { color: "black"; width:menuButton.height/10; height:menuButton.height/10 }
 
         anchors.centerIn: parent
     }

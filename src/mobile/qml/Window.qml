@@ -30,7 +30,7 @@ Rectangle {
         property string title: btWindowInterface.moduleName + " (" + btWindowInterface.reference + ")"
 
         width: parent.width
-        height: btStyle.pixelsPerMillimeterY * 6
+        height: btStyle.pixelsPerMillimeterY * 8
         color: btStyle.toolbarColor
         border.width: 1
         border.color: "black"
@@ -38,14 +38,14 @@ Rectangle {
         Rectangle {
             id: moduleDisplay
 
-            width: text.width +10
+            width: text.width +15
             radius:btStyle.buttonRadius
             anchors.left: parent.left
             anchors.top: parent.top
             anchors.bottom: parent.bottom
-            anchors.topMargin: 4
-            anchors.leftMargin: 5
-            anchors.bottomMargin: 4
+            anchors.topMargin: btStyle.pixelsPerMillimeterY * 0.7
+            anchors.leftMargin: 10
+            anchors.bottomMargin: btStyle.pixelsPerMillimeterY * 0.7
             color: btStyle.toolbarButton
             border.color: btStyle.buttonBorder
             border.width: 1
@@ -77,18 +77,18 @@ Rectangle {
             id: referenceDisplay
 
             width: {
-                var w1 = 300
-                var w2 = toolbar.width - moduleDisplay.width;
+                var w1 = 1100
+                var w2 = toolbar.width - moduleDisplay.width - 30;
                 var w = Math.min(w1,w2);
-                return w - 15;
+                return w;
             }
             radius: btStyle.buttonRadius
             anchors.left: moduleDisplay.right
             anchors.top: parent.top
             anchors.bottom: parent.bottom
-            anchors.topMargin: 4
-            anchors.bottomMargin: 4
-            anchors.leftMargin: 5
+            anchors.topMargin: btStyle.pixelsPerMillimeterY * 0.7
+            anchors.bottomMargin: btStyle.pixelsPerMillimeterY * 0.7
+            anchors.leftMargin: 10
             color: btStyle.toolbarButton
             border.color: btStyle.buttonBorder
             border.width: 1
@@ -96,7 +96,7 @@ Rectangle {
             Text {
                 id: referenceText
                 anchors.centerIn: parent
-                anchors.leftMargin: 6
+                anchors.leftMargin: 25
                 anchors.rightMargin: 4
                 width: referenceDisplay.width - 4
                 font.pointSize: btStyle.uiFontPointSize

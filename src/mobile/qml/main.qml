@@ -18,10 +18,15 @@ Rectangle {
         installManager.openChooser();
     }
 
-//    width: 1280 // Nexus 7 (2012)
-//    height: 800
+    Keys.onReleased: {
+        if (event.key == Qt.Key_Back) {
+//            console.log("Back button captured - wunderbar !");
+            event.accepted = true
+            Qt.quit();
+        }
+    }
 
-    width:  480   // Phone
+    width:  480
     height: 800
 
     rotation: 0
@@ -32,7 +37,7 @@ Rectangle {
         anchors.left: parent.left
         anchors.top: parent.top
         anchors.right: parent.right
-        height: btStyle.pixelsPerMillimeterY * 6
+        height: btStyle.pixelsPerMillimeterY * 8
         onButtonClicked: {
             mainMenus.visible = ! mainMenus.visible;
         }
@@ -91,7 +96,7 @@ Rectangle {
         id: treeChooser
 
         objectName: "treeChooser"
-        width:480
+        width:parent.width
         height: parent.height
         anchors.top: parent.top
         anchors.horizontalCenter: parent.horizontalCenter
