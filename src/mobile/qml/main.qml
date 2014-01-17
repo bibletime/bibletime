@@ -128,7 +128,7 @@ Rectangle {
         minimumValue: 0
         maximumValue: 1
         width:550
-        height: 200
+        height: 300
         anchors.centerIn: parent
         anchors.top: parent.top
         visible: false
@@ -139,8 +139,9 @@ Rectangle {
 
         ListElement { title: QT_TR_NOOP("New Window");              action: "newWindow" }
         ListElement { title: QT_TR_NOOP("View Window");             action: "windows" }
-        ListElement { title: QT_TR_NOOP("Text Font Size");          action: "textFontSize"}
-        ListElement { title: QT_TR_NOOP("User Interface Font Size");action: "uiFontSize"}
+        ListElement { title: QT_TR_NOOP("Text Font Size");          action: "textFontSize" }
+        ListElement { title: QT_TR_NOOP("User Interface Font Size");action: "uiFontSize" }
+        ListElement { title: QT_TR_NOOP("Window Arrangement");      action: "windowArrangement" }
 
         //ListElement { title: QT_TR_NOOP("Settings");                action: "settings" }
         ListElement { title: QT_TR_NOOP("Bookshelf Manager");       action: "install" }
@@ -178,6 +179,9 @@ Rectangle {
             }
             else if (action == "uiFontSize") {
                 uiFontPointSize.visible = true;
+            }
+            else if (action == "windowArrangement") {
+                windowArrangementMenus.visible = true;
             }
 
         }
