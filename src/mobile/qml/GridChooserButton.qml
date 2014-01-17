@@ -18,8 +18,8 @@ Rectangle {
     height: buttonHeight
     gradient: Gradient {
         GradientStop { position: 0.0;  color: btStyle.buttonGradient0 }
-        GradientStop { position: 0.15; color: btStyle.buttonGradient1 }
-        GradientStop { position: 0.85; color: btStyle.buttonGradient2 }
+        GradientStop { position: 0.30; color: btStyle.buttonGradient1 }
+        GradientStop { position: 0.70; color: btStyle.buttonGradient2 }
         GradientStop { position: 1.0;  color: btStyle.buttonGradient3 }
     }
     smooth: true

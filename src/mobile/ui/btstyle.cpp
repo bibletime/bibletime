@@ -72,10 +72,10 @@ void BtStyle::setStyle(int style) {
         setButtonHighlightedText(QColor(0,0,255));
         setButtonBorder(QColor(80,80,0));
         setButtonRadius(3);
-        setButtonGradient0(QColor(200,200,200));
-        setButtonGradient1(QColor(246,246,246));
-        setButtonGradient2(QColor(246,246,246));
-        setButtonGradient3(QColor(200,200,200));
+        setButtonGradient0(QColor(180,180,255));
+        setButtonGradient1(QColor(255,255,255));
+        setButtonGradient2(QColor(255,255,255));
+        setButtonGradient3(QColor(180,180,255));
 
         setWindowTab(QColor(206,206,206));
         setWindowTabSelected(QColor(255,255,255));
