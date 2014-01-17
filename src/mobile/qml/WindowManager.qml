@@ -221,11 +221,10 @@ Rectangle {
                     }
 
                     visible: tabbedWindows.tabVisible
-                    //width: (tabbedWindows.width) / tabbedWindowsStack.children.length;
                     width: {
                         calculateTabWidth()
                     }
-                    height: 36
+                    height: btStyle.pixelsPerMillimeterY * 6
 
                     Rectangle {
                         id: tabBorder
@@ -245,7 +244,7 @@ Rectangle {
                                 return btStyle.windowTab
                         }
                         border.color: btStyle.windowTab
-                        border.width: 2
+                        border.width: 3
 
                         Text {
                             id: tabText
