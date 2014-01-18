@@ -21,7 +21,7 @@ class BtWindowInterface : public QObject {
     Q_OBJECT
 
     Q_PROPERTY(QString moduleName READ getModuleName WRITE setModuleName NOTIFY moduleChanged)
-    Q_PROPERTY(QString reference READ getReference NOTIFY referenceChange)
+    Q_PROPERTY(QString reference READ getReference WRITE setReference NOTIFY referenceChange)
     Q_PROPERTY(int fontSize READ getFontSize WRITE setFontSize NOTIFY textChanged)
     Q_PROPERTY(QVariant textModel READ getTextModel NOTIFY textModelChanged)
     Q_PROPERTY(int currentModelIndex READ getCurrentModelIndex NOTIFY currentModelIndexChanged)
@@ -36,6 +36,7 @@ public:
 
     QString getModuleName() const;
     void setModuleName(const QString& moduleName);
+    void setReference(const QString& key);
 
     QString getReference() const;
 

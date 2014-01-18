@@ -67,7 +67,7 @@ void BtWindowInterface::updateModel() {
     QString moduleName= getModuleName();
     QStringList moduleList = QStringList() << moduleName;
     QList<const CSwordModuleInfo*> modules =
-        CSwordBackend::instance()->getConstPointerList(moduleList);
+            CSwordBackend::instance()->getConstPointerList(moduleList);
     QString keyText = getKeyText(m_key);
 
     m_textModel->clear();
@@ -103,6 +103,13 @@ QString BtWindowInterface::getModuleName() const {
     if (m_key)
         moduleName = m_key->module()->name();
     return moduleName;
+}
+
+void BtWindowInterface::setReference(const QString& key) {
+    if (m_key) {
+        m_key->setKey(key);
+        referenceChanged();
+    }
 }
 
 void BtWindowInterface::setModuleName(const QString& moduleName) {
@@ -162,7 +169,6 @@ static void parseKey(CSwordTreeKey* currentKey, QStringList* keyPath, QStringLis
         localKey.firstChild();
         oldKey = localKey.key();
     }
-//    const int oldOffset = localKey.getOffset(); //backup key position
 
     QStringList siblings; //split up key
     if (!oldKey.isEmpty()) {

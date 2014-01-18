@@ -460,6 +460,11 @@ SET(bibletime_SRC_MOBILE_MODEL_SOURCES
     src/mobile/models/roleitemmodel.h
 )
 
+SET(bibletime_SRC_MOBILE_SESSIONMANAGER_SOURCES
+    src/mobile/sessionmanager/sessionmanager.cpp
+    src/mobile/sessionmanager/sessionmanager.h
+)
+
 SET(bibletime_SRC_MOBILE_UTIL_SOURCES
     src/mobile/util/findqmlobject.cpp
     src/mobile/util/findqmlobject.h
@@ -497,14 +502,15 @@ SET(bibletime_SRC_MOBILE_UI_SOURCES
 )
 
 SET(bibletime_SRC_MOBILE_MOCABLE_HEADERS
+    src/mobile/bibletime.h
+    src/mobile/bibletimeapp.h
     src/mobile/bookshelfmanager/installmanager.h
     src/mobile/bookshelfmanager/installprogress.h
     src/mobile/bookshelfmanager/installsourcesmanager.h
     src/mobile/bookshelfmanager/installsources.h
     src/mobile/keychooser/bookkeychooser.h
     src/mobile/keychooser/versechooser.h
-    src/mobile/bibletime.h
-    src/mobile/bibletimeapp.h
+    src/mobile/sessionmanager/sessionmanager.h
     src/mobile/ui/btstyle.h
     src/mobile/ui/btwindowinterface.h
     src/mobile/ui/modulechooser.h
@@ -547,6 +553,7 @@ SET(bibletime_FRONTEND_MOBILE_SOURCES
     ${bibletime_SRC_MOBILE_SOURCES}
     ${bibletime_SRC_MOBILE_MOCABLE_HEADERS}
     ${bibletime_SRC_MOBILE_MODEL_SOURCES}
+    ${bibletime_SRC_MOBILE_SESSIONMANAGER_SOURCES}
     ${bibletime_SRC_MOBILE_UI_SOURCES}
     ${bibletime_SRC_MOBILE_UTIL_SOURCES}
 )

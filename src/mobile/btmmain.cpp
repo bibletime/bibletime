@@ -15,6 +15,7 @@
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "mobile/bibletimeapp.h"
 #include "mobile/bookshelfmanager/installmanager.h"
+#include "mobile/sessionmanager/sessionmanager.h"
 #include "mobile/ui/btstyle.h"
 #include "mobile/ui/btwindowinterface.h"
 #include "mobile/ui/moduleinterface.h"
@@ -31,6 +32,7 @@
 #include "util/directory.h"
 
 btm::ViewManager* mgr = 0;
+btm::SessionManager* sessionMgr = 0;
 
 void register_gml_classes() {
     QQmlDebuggingEnabler enabler;
@@ -91,16 +93,15 @@ int main(int argc, char *argv[]) {
     BibleTimeTranslator.load( QString("bibletime_ui_").append(QLocale::system().name()), DU::getLocaleDir().canonicalPath());
     app.installTranslator(&BibleTimeTranslator);
 
-//    // a new BibleTime version was installed (maybe a completely new installation)
-//    if (btConfig().value<QString>("bibletimeVersion", BT_VERSION) != BT_VERSION) {
-//        btConfig().setValue("bibletimeVersion", QString(BT_VERSION));
-//        mainWindow->saveConfigSettings();
-//    }
-
     register_gml_classes();
+
     mgr = new btm::ViewManager;
     mgr->show();
+
     btm::BibleTime btm;
+
+    sessionMgr = new btm::SessionManager();
+    sessionMgr->loadDefaultSession();
 
     return app.exec();
 }

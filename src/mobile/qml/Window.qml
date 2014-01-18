@@ -10,6 +10,10 @@ Rectangle {
         btWindowInterface.moduleName = module;
     }
 
+    function setKey(key) {
+        btWindowInterface.reference = key;
+    }
+
     function contextMenus() {
 //        contextMenu.visible = true;
     }

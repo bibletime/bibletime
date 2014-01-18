@@ -3,15 +3,20 @@ import BibleTime 1.0
 
 
 Rectangle {
-    id: windowArea
+    id: windowManager
+
+    objectName: "WindowManager"
 
     property var windows: []
-    property int single: 0
-    property int tabLayout: 1
-    property int autoTile: 2
-    property int autoTileHor: 3
-    property int autoTileVer: 4
-    property int windowLayout: single
+
+    property int autoTileVer: 1
+    property int autoTileHor: 2
+    property int single: 3  // Tile in Desktop
+    // 4 is Manual in Desktop
+    property int autoTile: 5
+    property int tabLayout: 6
+
+    property int windowArrangement: single
 
     function setCurrentTabbedWindow(index) {
         tabbedWindows.current = index;
@@ -20,7 +25,7 @@ Rectangle {
     function setWindowArrangement(arrangement) {
         if (arrangement < single || arrangement > autoTileVer)
             return;
-        windowLayout = arrangement;
+        windowArrangement = arrangement;
         layoutWindows();
     }
 
@@ -44,10 +49,10 @@ Rectangle {
 
     function openWindowSlot() {
         moduleChooser.moduleSelected.disconnect(openWindowSlot);
-        openWindow(moduleChooser.selectedCategory, moduleChooser.selectedModule)
+        openWindow(moduleChooser.selectedCategory, moduleChooser.selectedModule, "")
     }
 
-    function openWindow(category, module) {
+    function openWindow(category, module, key) {
         if (category == "Bibles")
             component = Qt.createComponent("Window.qml");
         else if (category == "Commentaries")
@@ -72,6 +77,8 @@ Rectangle {
             var curWindow = windows.length -1;
             selectWindow(curWindow);
         }
+        if (key !== "")
+            window.setKey(key);
     }
 
     function layoutTiles(rows, columns)
@@ -116,17 +123,17 @@ Rectangle {
         var rows = 1;
         var count = windows.length;
 
-        if (windowLayout == autoTile) {
+        if (windowArrangement == autoTile) {
             if (count > 1) {
                 columns = 2
                 rows = Math.floor((count+1)/2);
             }
         }
-        else if (windowLayout == autoTileHor)
+        else if (windowArrangement == autoTileHor)
         {
             rows = count;
         }
-        else if (windowLayout == autoTileVer)
+        else if (windowArrangement == autoTileVer)
         {
             columns = count;
         }
@@ -137,10 +144,10 @@ Rectangle {
         tabbedWindows.z = -2;
         gridWindows.z = -3;
 
-        if (windowLayout == single) {
+        if (windowArrangement == single) {
             arrangeSingleWindow();
         }
-        else if (windowLayout == tabLayout) {
+        else if (windowArrangement == tabLayout) {
             arrangeTabbedWindows();
         }
         else {
@@ -149,7 +156,7 @@ Rectangle {
     }
 
     function selectWindow(n) {
-        if (windowLayout == tabLayout || windowLayout == single) {
+        if (windowArrangement == tabLayout || windowArrangement == single) {
             tabbedWindows.current = n;
         }
     }

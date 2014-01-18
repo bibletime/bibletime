@@ -17,6 +17,7 @@ SOURCES += \
     ../../../src/mobile/models/bibletextmodelbuilder.cpp \
     ../../../src/mobile/models/booktextmodelbuilder.cpp \
     ../../../src/mobile/models/roleitemmodel.cpp \
+    ../../../src/mobile/sessionmanager/sessionmanager.cpp \
     ../../../src/mobile/ui/btstyle.cpp \
     ../../../src/mobile/ui/btwindowinterface.cpp \
     ../../../src/mobile/ui/gridchooser.cpp \
@@ -41,6 +42,7 @@ HEADERS += \
     ../../../src/mobile/models/bibletextmodelbuilder.h \
     ../../../src/mobile/models/booktextmodelbuilder.h \
     ../../../src/mobile/models/roleitemmodel.h \
+    ../../../src/mobile/sessionmanager/sessionmanager.h \
     ../../../src/mobile/ui/btstyle.h \
     ../../../src/mobile/ui/btwindowinterface.h \
     ../../../src/mobile/ui/gridchooser.h \
