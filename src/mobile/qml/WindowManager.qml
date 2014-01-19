@@ -37,16 +37,16 @@ Rectangle {
         windowArrangement = arrangement;
     }
 
-    function createWindowMenus() {
-        windowsModel.clear();
+    function createViewWindowMenus() {
+        viewWindowsModel.clear();
         for (var i=0; i<windows.length; ++i) {
             var window = windows[i];
-            windowsModel.append (
+            viewWindowsModel.append (
                         { title: window.title, action: i.toString() }
                         )
         }
-        windowTitlesMenus.model = windowsModel
-        windowTitlesMenus.visible = true;
+        viewWindowsMenus.model = viewWindowsModel
+        viewWindowsMenus.visible = true;
     }
 
 

@@ -9,7 +9,7 @@ Rectangle {
     property Item window: null;
 
     ListModel {
-        id: windowsModel
+        id: viewWindowsModel
 
         ListElement { title: ""; action: "" }
     }
@@ -138,13 +138,13 @@ Rectangle {
         id: mainMenusModel
 
         ListElement { title: QT_TR_NOOP("New Window");              action: "newWindow" }
-        ListElement { title: QT_TR_NOOP("View Window");             action: "windows" }
+        ListElement { title: QT_TR_NOOP("View Window");             action: "view window" }
         ListElement { title: QT_TR_NOOP("Text Font Size");          action: "textFontSize" }
         ListElement { title: QT_TR_NOOP("User Interface Font Size");action: "uiFontSize" }
         ListElement { title: QT_TR_NOOP("Window Arrangement");      action: "windowArrangement" }
+        ListElement { title: QT_TR_NOOP("Bookshelf Manager");       action: "install" }
 
         //ListElement { title: QT_TR_NOOP("Settings");                action: "settings" }
-        ListElement { title: QT_TR_NOOP("Bookshelf Manager");       action: "install" }
         //            ListElement { title: QT_TR_NOOP("Gnome Style");             action: "gnomeStyle" }
         //            ListElement { title: QT_TR_NOOP("Android Style");           action: "androidStyle" }
     }
@@ -159,8 +159,8 @@ Rectangle {
             if (action == "newWindow") {
                 windowManager.newWindow();
             }
-            else if (action == "windows") {
-                windowManager.createWindowMenus();
+            else if (action == "view window") {
+                windowManager.createViewWindowMenus();
             }
             else if (action == "gnomeStyle") {
                 btStyle.setStyle(1)
@@ -228,14 +228,14 @@ Rectangle {
     }
 
     Menus {
-        id: windowTitlesMenus
+        id: viewWindowsMenus
 
-        model: windowsModel
+        model: viewWindowsModel
         visible: false
-        Component.onCompleted: menuSelected.connect(windowTitlesMenus.doAction)
+        Component.onCompleted: menuSelected.connect(viewWindowsMenus.doAction)
 
         function doAction(action) {
-            windowTitlesMenus.visible = false;
+            viewWindowsMenus.visible = false;
             var index = Number(action)
             windowManager.setCurrentTabbedWindow(index);
         }
