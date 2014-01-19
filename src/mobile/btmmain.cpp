@@ -103,5 +103,7 @@ int main(int argc, char *argv[]) {
     sessionMgr = new btm::SessionManager();
     sessionMgr->loadDefaultSession();
 
-    return app.exec();
+    int rtn = app.exec();
+    sessionMgr->saveDefaultSession();
+    return rtn;
 }

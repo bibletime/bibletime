@@ -15,6 +15,7 @@
 #include "backend/config/btconfig.h"
 #include "backend/managers/cswordbackend.h"
 #include "mobile/util/findqmlobject.h"
+#include <QGenericReturnArgument>
 #include <QMetaObject>
 #include <QQuickItem>
 
@@ -27,10 +28,10 @@ SessionManager::SessionManager(QObject* parent)
 }
 
 void SessionManager::loadDefaultSession() {
+    loadWindows();
+
     int windowArrangementMode = getWindowArrangementMode();
     m_windowMgr->setProperty("windowArrangement", windowArrangementMode);
-
-    loadWindows();
 }
 
 void SessionManager::loadWindows() {
@@ -74,4 +75,36 @@ int SessionManager::getWindowArrangementMode() {
     return conf.sessionValue<int>("MainWindow/MDIArrangementMode");
 }
 
+void SessionManager::saveDefaultSession() {
+
+    BtConfig & conf = btConfig();
+    int windowArrangementMode = m_windowMgr->property("windowArrangement").toInt();
+    conf.setSessionValue("MainWindow/MDIArrangementMode", windowArrangementMode);
+
+
+    int windowCount = getWindowCount();
+    QStringList windowsList;
+    for (int windowIndex = 0; windowIndex < windowCount; ++windowIndex)
+    {
+        windowsList.append(QString::number(windowIndex));
+        saveWindowStateToConfig(windowIndex);
+    }
+    conf.setSessionValue("windowsList", windowsList);
+}
+
+int SessionManager::getWindowCount() {
+    QVariant windowCountV;
+    QMetaObject::invokeMethod(m_windowMgr, "getWindowCount", Q_RETURN_ARG(QVariant, windowCountV));
+
+    int windowCount = 0;
+    if (windowCountV.canConvert(QMetaType::Int))
+            windowCount = windowCountV.toInt();
+    return windowCount;
+}
+
+void SessionManager::saveWindowStateToConfig(int windowIndex) {
+
+    QMetaObject::invokeMethod(m_windowMgr, "saveWindowStateToConfig",
+                              Q_ARG(QVariant, windowIndex));
+}
 }

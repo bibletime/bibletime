@@ -210,6 +210,20 @@ static void parseKey(CSwordTreeKey* currentKey, QStringList* keyPath, QStringLis
     }
 }
 
+void BtWindowInterface::saveWindowStateToConfig(int windowIndex) {
+    const QString windowKey = QString::number(windowIndex);
+    const QString windowGroup = "window/" + windowKey + '/';
+
+    BtConfig & conf = btConfig();
+    conf.beginGroup(windowGroup);
+    conf.setSessionValue("key", m_key->key());
+    QStringList modules;
+    QString moduleName = getModuleName();
+    modules.append(moduleName);
+    conf.setSessionValue("modules", modules);
+    conf.endGroup();
+}
+
 void BtWindowInterface::changeReference() {
     CSwordVerseKey* verseKey = dynamic_cast<CSwordVerseKey*>(m_key);
     if (verseKey != 0) {

@@ -29,6 +29,7 @@ class BtWindowInterface : public QObject {
 public:
     Q_INVOKABLE void changeModule();
     Q_INVOKABLE void changeReference();
+    Q_INVOKABLE void saveWindowStateToConfig(int windowIndex);
 
     BtWindowInterface(QObject *parent = 0);
 

@@ -6,12 +6,24 @@ Rectangle {
 
     property string title: toolbar.title
 
+    function getModule() {
+        return btWindowInterface.moduleName;
+    }
+
+    function getReference() {
+        return btWindowInterface.reference;
+    }
+
     function setModule(module) {
         btWindowInterface.moduleName = module;
     }
 
     function setKey(key) {
         btWindowInterface.reference = key;
+    }
+
+    function saveWindowStateToConfig (index) {
+        btWindowInterface.saveWindowStateToConfig(index);
     }
 
     function contextMenus() {

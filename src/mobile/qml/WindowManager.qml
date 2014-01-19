@@ -18,15 +18,23 @@ Rectangle {
 
     property int windowArrangement: single
 
+    function getWindowCount() {
+        return windows.length;
+    }
+
+    function saveWindowStateToConfig(windowIndex) {
+        var window = windows[windowIndex];
+        window.saveWindowStateToConfig(windowIndex);
+    }
+
     function setCurrentTabbedWindow(index) {
         tabbedWindows.current = index;
     }
 
     function setWindowArrangement(arrangement) {
-        if (arrangement < single || arrangement > autoTileVer)
+        if (arrangement < autoTileVer || arrangement > tabLayout)
             return;
         windowArrangement = arrangement;
-        layoutWindows();
     }
 
     function createWindowMenus() {
@@ -160,6 +168,8 @@ Rectangle {
             tabbedWindows.current = n;
         }
     }
+
+    onWindowArrangementChanged: layoutWindows()
 
 //    anchors.top: spacer.bottom
 //    anchors.left: parent.left

@@ -26,12 +26,15 @@ class SessionManager : public QObject {
 public:
     SessionManager(QObject* parent = 0);
     void loadDefaultSession();
+    void saveDefaultSession();
 
 private:
     int getWindowArrangementMode();
+    int getWindowCount();
     void loadWindow(const QStringList& moduleNames, const QString& key);
     void loadWindows();
     void newWindow(const QString& category, const QString& moduleName, const QString& key);
+    void saveWindowStateToConfig(int windowIndex);
 
     QQuickItem* m_windowMgr;
 };
