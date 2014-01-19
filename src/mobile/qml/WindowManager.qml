@@ -31,24 +31,28 @@ Rectangle {
         tabbedWindows.current = index;
     }
 
+    function closeWindow(index) {
+        var window = windows[index];
+        windows.splice(index,1);
+        window.destroy();
+        layoutWindows();
+    }
+
     function setWindowArrangement(arrangement) {
         if (arrangement < autoTileVer || arrangement > tabLayout)
             return;
         windowArrangement = arrangement;
     }
 
-    function createViewWindowMenus() {
-        viewWindowsModel.clear();
+    function createWindowMenus(model) {
+        model.clear();
         for (var i=0; i<windows.length; ++i) {
             var window = windows[i];
-            viewWindowsModel.append (
+            model.append (
                         { title: window.title, action: i.toString() }
                         )
         }
-        viewWindowsMenus.model = viewWindowsModel
-        viewWindowsMenus.visible = true;
     }
-
 
     function newWindow() {
         moduleChooser.moduleSelected.connect(openWindowSlot);

@@ -14,6 +14,12 @@ Rectangle {
         ListElement { title: ""; action: "" }
     }
 
+    ListModel {
+        id: closeWindowsModel
+
+        ListElement { title: ""; action: "" }
+    }
+
     function installModules() {
         installManager.openChooser();
     }
@@ -139,6 +145,7 @@ Rectangle {
 
         ListElement { title: QT_TR_NOOP("New Window");              action: "newWindow" }
         ListElement { title: QT_TR_NOOP("View Window");             action: "view window" }
+        ListElement { title: QT_TR_NOOP("Close Window");            action: "close window" }
         ListElement { title: QT_TR_NOOP("Text Font Size");          action: "textFontSize" }
         ListElement { title: QT_TR_NOOP("User Interface Font Size");action: "uiFontSize" }
         ListElement { title: QT_TR_NOOP("Window Arrangement");      action: "windowArrangement" }
@@ -160,7 +167,12 @@ Rectangle {
                 windowManager.newWindow();
             }
             else if (action == "view window") {
-                windowManager.createViewWindowMenus();
+                windowManager.createWindowMenus(viewWindowsModel);
+                viewWindowsMenus.visible = true;
+            }
+            else if (action == "close window") {
+                windowManager.createWindowMenus(closeWindowsModel);
+                closeWindowsMenus.visible = true;
             }
             else if (action == "gnomeStyle") {
                 btStyle.setStyle(1)
@@ -238,6 +250,20 @@ Rectangle {
             viewWindowsMenus.visible = false;
             var index = Number(action)
             windowManager.setCurrentTabbedWindow(index);
+        }
+    }
+
+    Menus {
+        id: closeWindowsMenus
+
+        model: closeWindowsModel
+        visible: false
+        Component.onCompleted: menuSelected.connect(closeWindowsMenus.doAction)
+
+        function doAction(action) {
+            closeWindowsMenus.visible = false;
+            var index = Number(action)
+            windowManager.closeWindow(index);
         }
     }
 
