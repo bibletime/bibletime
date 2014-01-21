@@ -53,319 +53,172 @@
 
 #define CURRENT_SYNTAX_VERSION 1
 
-class BookmarkItemBase {
-
-public: /* Methods: */
-
-    inline BookmarkItemBase(BookmarkItemBase * parent = 0)
-        : m_parent(parent) {
-        if(m_parent) {
-            Q_ASSERT(!m_parent->m_children.contains(this));
-            m_parent->m_children.append(this);
-        }
-    }
-    BookmarkItemBase(const BookmarkItemBase & other)
-        : m_flags(other.m_flags)
-        , m_icon(other.m_icon)
-        , m_parent(other.m_parent)
-        , m_text(other.m_text)
-        , m_tooltip(other.m_tooltip) {;}
-    virtual ~BookmarkItemBase() {
-        qDeleteAll(m_children);
-    }
-
-    /** Children routines. */
-    inline void addChild(BookmarkItemBase * child) {
-        child->setParent(this);
-        Q_ASSERT(!m_children.contains(child));
-        m_children.append(child);
-    }
-
-    inline int childCount() const { return m_children.size(); }
-
-    inline BookmarkItemBase * child(int index) const {
-        return m_children[index];
-    }
-
-    inline QList<BookmarkItemBase *> & children() {
-        return m_children;
-    }
-
-    inline void insertChild(int index, BookmarkItemBase * child) {
-        child->setParent(this);
-        Q_ASSERT(!m_children.contains(child));
-        m_children.insert(index, child);
-    }
-
-    inline void insertChildren(int index, QList<BookmarkItemBase *> children) {
-        foreach(BookmarkItemBase *c, children)
-            insertChild(index++, c);
-    }
-
-    inline void removeChild(int index) {
-        delete m_children[index];
-        m_children.removeAt(index);
-    }
-
-
-    inline void setText(const QString & text) { m_text = text; }
-
-    inline const QString & text() const { return m_text; }
-
-    inline void setToolTip(const QString & tooltip) { m_tooltip = tooltip; }
-
-    virtual QString toolTip() const { return m_tooltip; }
-
-    inline void setFlags(Qt::ItemFlags flags) { m_flags = flags; }
-
-    inline Qt::ItemFlags flags() const { return m_flags; }
-
-    inline void setIcon(const QIcon & icon) { m_icon = icon; }
-
-    inline QIcon icon() const { return m_icon; }
-
-    inline void setParent(BookmarkItemBase * parent) {
-        m_parent = parent;
-    }
-
-    inline BookmarkItemBase * parent() const { return m_parent; }
-
-    /**
-      \returns index of this item in parent's child array.
-     */
-    inline int index() const {
-        Q_CHECK_PTR(parent());
-        for(int i = 0; i < parent()->childCount(); ++i)
-            if(parent()->child(i) == this)
-                return i;
-        return -1;
-    }
-
-private:
-
-    QList<BookmarkItemBase *> m_children;
-    Qt::ItemFlags m_flags;
-    QIcon m_icon;
-    BookmarkItemBase * m_parent;
-    QString m_text;
-    QString m_tooltip;
-
-};
-
-class BookmarkItem : public BookmarkItemBase {
-public:
-    friend class BookmarkLoader;
-
-    BookmarkItem(BookmarkItemBase * parent);
-
-    /** Creates a bookmark with module, key and description. */
-    BookmarkItem(const CSwordModuleInfo * module, const QString & key,
-                   const QString & description, const QString & title);
-
-    /** Creates a copy. */
-    BookmarkItem(const BookmarkItem & other);
-
-    /** Returns the used module, 0 if there is no such module. */
-    CSwordModuleInfo * module() const;
-
-    /** Returns the used key. */
-    QString key() const;
-
-    inline void setKey(const QString & key) { m_key = key; }
-
-    /** Returns the used description. */
-    inline const QString &description() const { return m_description; }
-
-    inline void setDescription(const QString & description) { m_description = description; }
-
-    /** Returns a tooltip for this bookmark. */
-    QString toolTip() const;
-
-    /** Returns the english key.*/
-    inline const QString & englishKey() const { return m_key; }
-
-    inline void setModule(const QString & moduleName) { m_moduleName = moduleName; }
-
-    inline const QString & moduleName() const { return m_moduleName; }
-
-private:
-    QString m_key;
-    QString m_description;
-    QString m_moduleName;
-
-};
-
-class BookmarkFolder : public BookmarkItemBase {
-public:
-
-    BookmarkFolder(const QString & name, BookmarkItemBase * parent = 0);
-
-    /** Returns a list of direct childs of this item. */
-    QList<BookmarkItemBase *> getChildList() const;
-
-    /** Returns true if the given item is this or a direct or indirect subitem of this. */
-    bool hasDescendant(BookmarkItemBase * item) const;
-
-    /** Creates a deep copy of this item. */
-    BookmarkFolder * deepCopy();
-
-};
-
-BookmarkFolder::BookmarkFolder(const QString & name, BookmarkItemBase * parent)
-        : BookmarkItemBase(parent) {
-    setText(name);
-    setFlags(Qt::ItemIsEditable | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled | Qt::ItemIsEnabled);
-    setIcon(util::getIcon(CResMgr::mainIndex::closedFolder::icon));
-}
-
-QList<BookmarkItemBase*> BookmarkFolder::getChildList() const {
-    QList<BookmarkItemBase*> list;
-    for (int i = 0; i < childCount(); i++) {
-        list.append(child(i));
-    }
-    return list;
-}
-
-bool BookmarkFolder::hasDescendant(BookmarkItemBase* item) const {
-    if (this == item) {
-        return true;
-    }
-    if (getChildList().indexOf(item) > -1) {
-        return true;
-    }
-    foreach(BookmarkItemBase* childItem, getChildList()) {
-        bool subresult = false;
-        BookmarkFolder* folder = 0;
-        if ( (folder = dynamic_cast<BookmarkFolder*>(childItem)) ) {
-            subresult = folder->hasDescendant(childItem);
-        }
-
-        if (subresult == true) {
-            return true;
-        }
-    }
-    return false;
-}
-
-BookmarkFolder* BookmarkFolder::deepCopy() {
-    BookmarkFolder* newFolder = new BookmarkFolder(this->text());
-    foreach(BookmarkItemBase* subitem, getChildList()) {
-        if (BookmarkItem* bmItem = dynamic_cast<BookmarkItem*>(subitem)) {
-            newFolder->addChild(new BookmarkItem(*bmItem));
-        }
-        else {
-            if (BookmarkFolder* bmFolder = dynamic_cast<BookmarkFolder*>(subitem)) {
-                newFolder->addChild(bmFolder->deepCopy());
-            }
-        }
-    }
-    return newFolder;
-}
-
-BookmarkItem::BookmarkItem(const CSwordModuleInfo * module,
-                               const QString & key,
-                               const QString & description,
-                               const QString & title)
-        : m_description(description)
-        , m_moduleName(module ? module->name() : QString::null)
-{
-    Q_UNUSED(title);
-
-    if (((module && (module->type() == CSwordModuleInfo::Bible)) || (module->type() == CSwordModuleInfo::Commentary))  ) {
-        CSwordVerseKey vk(0);
-        vk.setKey(key);
-        vk.setLocale("en");
-        m_key = vk.key(); //the m_key member is always the english key!
-    }
-    else {
-        m_key = key;
-    };
-
-    setIcon(util::getIcon(CResMgr::mainIndex::bookmark::icon));
-    setText(QString::fromLatin1("%1 (%2)").arg(key).arg(module ? module->name() : QObject::tr("unknown")));
-    setFlags(Qt::ItemIsSelectable /*| Qt::ItemIsEditable*/ | Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled | Qt::ItemIsEnabled);
-}
-
-BookmarkItem::BookmarkItem(BookmarkItemBase * parent)
-        : BookmarkItemBase(parent) {
-    setFlags(Qt::ItemIsSelectable /*| Qt::ItemIsEditable*/ | Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled | Qt::ItemIsEnabled);
-    setIcon(util::getIcon(CResMgr::mainIndex::bookmark::icon));
-    setText(QString::fromLatin1("%1 (%2)").arg(key()).arg(module() ? module()->name() : QObject::tr("unknown")));
-}
-
-BookmarkItem::BookmarkItem(const BookmarkItem & other)
-        : BookmarkItemBase(other)
-        , m_key(other.m_key)
-        , m_description(other.m_description)
-        , m_moduleName(other.m_moduleName)
-{
-    setIcon(util::getIcon(CResMgr::mainIndex::bookmark::icon));
-    setText(QString::fromLatin1("%1 (%2)").arg(key()).arg(module() ? module()->name() : QObject::tr("unknown")));
-}
-
-CSwordModuleInfo *BookmarkItem::module() const {
-    return CSwordBackend::instance()->findModuleByName(m_moduleName);
-}
-
-QString BookmarkItem::key() const {
-    const QString englishKeyName = englishKey();
-    if (!module()) {
-        return englishKeyName;
-    }
-
-    QString returnKeyName = englishKeyName;
-    if ((module()->type() == CSwordModuleInfo::Bible) || (module()->type() == CSwordModuleInfo::Commentary)) {
-        CSwordVerseKey vk(0);
-        vk.setKey(englishKeyName);
-        vk.setLocale(CSwordBackend::instance()->booknameLanguage().toLatin1() );
-
-        returnKeyName = vk.key(); //the returned key is always in the currently set bookname language
-    }
-
-    return returnKeyName;
-}
-
-QString BookmarkItem::toolTip() const {
-    if (!module()) {
-        return QString::null;
-    }
-
-    FilterOptions filterOptions = btConfig().getFilterOptions();
-    filterOptions.footnotes = false;
-    filterOptions.scriptureReferences = false;
-    CSwordBackend::instance()->setFilterOptions(filterOptions);
-
-    QString ret;
-    QSharedPointer<CSwordKey> k( CSwordKey::createInstance(module()) );
-    k->setKey(key());
-
-    // const CLanguageMgr::Language* lang = module()->language();
-    // BtConfig::FontSettingsPair fontPair = getBtConfig().getFontForLanguage(lang);
-
-    Q_ASSERT(k.data());
-    QString header = QString::fromLatin1("%1 (%2)")
-              .arg(key())
-              .arg(module()->name());
-    if (text() != header) {
-        ret = QString::fromLatin1("<b>%1</b><br>%2<hr>%3")
-              .arg(header)
-              .arg(text())
-              .arg(description())
-              ;
-    }
-    else {
-        ret = QString::fromLatin1("<b>%1</b><hr>%2")
-              .arg(header)
-              .arg(description())
-              ;
-    }
-
-    return ret;
-}
-
 
 class BtBookmarksModelPrivate {
-public:
+
+public: /* Tyepes */
+
+    class BookmarkItemBase {
+
+    public: /* Methods: */
+
+        inline BookmarkItemBase(BookmarkItemBase * parent = 0)
+            : m_parent(parent) {
+            if(m_parent) {
+                Q_ASSERT(!m_parent->m_children.contains(this));
+                m_parent->m_children.append(this);
+            }
+        }
+        BookmarkItemBase(const BookmarkItemBase & other)
+            : m_flags(other.m_flags)
+            , m_icon(other.m_icon)
+            , m_parent(other.m_parent)
+            , m_text(other.m_text)
+            , m_tooltip(other.m_tooltip) {;}
+        virtual ~BookmarkItemBase() {
+            qDeleteAll(m_children);
+        }
+
+        /** Children routines. */
+        inline void addChild(BookmarkItemBase * child) {
+            child->setParent(this);
+            Q_ASSERT(!m_children.contains(child));
+            m_children.append(child);
+        }
+
+        inline int childCount() const { return m_children.size(); }
+
+        inline BookmarkItemBase * child(int index) const {
+            return m_children[index];
+        }
+
+        inline QList<BookmarkItemBase *> & children() {
+            return m_children;
+        }
+
+        inline void insertChild(int index, BookmarkItemBase * child) {
+            child->setParent(this);
+            Q_ASSERT(!m_children.contains(child));
+            m_children.insert(index, child);
+        }
+
+        inline void insertChildren(int index, QList<BookmarkItemBase *> children) {
+            foreach(BookmarkItemBase *c, children)
+                insertChild(index++, c);
+        }
+
+        inline void removeChild(int index) {
+            delete m_children[index];
+            m_children.removeAt(index);
+        }
+
+
+        inline void setText(const QString & text) { m_text = text; }
+
+        inline const QString & text() const { return m_text; }
+
+        inline void setToolTip(const QString & tooltip) { m_tooltip = tooltip; }
+
+        virtual QString toolTip() const { return m_tooltip; }
+
+        inline void setFlags(Qt::ItemFlags flags) { m_flags = flags; }
+
+        inline Qt::ItemFlags flags() const { return m_flags; }
+
+        inline void setIcon(const QIcon & icon) { m_icon = icon; }
+
+        inline QIcon icon() const { return m_icon; }
+
+        inline void setParent(BookmarkItemBase * parent) {
+            m_parent = parent;
+        }
+
+        inline BookmarkItemBase * parent() const { return m_parent; }
+
+        /**
+          \returns index of this item in parent's child array.
+         */
+        inline int index() const {
+            Q_CHECK_PTR(parent());
+            for(int i = 0; i < parent()->childCount(); ++i)
+                if(parent()->child(i) == this)
+                    return i;
+            return -1;
+        }
+
+    private:
+
+        QList<BookmarkItemBase *> m_children;
+        Qt::ItemFlags m_flags;
+        QIcon m_icon;
+        BookmarkItemBase * m_parent;
+        QString m_text;
+        QString m_tooltip;
+
+    };
+
+    class BookmarkItem : public BookmarkItemBase {
+    public:
+        friend class BookmarkLoader;
+
+        BookmarkItem(BookmarkItemBase * parent);
+
+        /** Creates a bookmark with module, key and description. */
+        BookmarkItem(const CSwordModuleInfo * module, const QString & key,
+                       const QString & description, const QString & title);
+
+        /** Creates a copy. */
+        BookmarkItem(const BookmarkItem & other);
+
+        /** Returns the used module, 0 if there is no such module. */
+        CSwordModuleInfo * module() const;
+
+        /** Returns the used key. */
+        QString key() const;
+
+        inline void setKey(const QString & key) { m_key = key; }
+
+        /** Returns the used description. */
+        inline const QString &description() const { return m_description; }
+
+        inline void setDescription(const QString & description) { m_description = description; }
+
+        /** Returns a tooltip for this bookmark. */
+        QString toolTip() const;
+
+        /** Returns the english key.*/
+        inline const QString & englishKey() const { return m_key; }
+
+        inline void setModule(const QString & moduleName) { m_moduleName = moduleName; }
+
+        inline const QString & moduleName() const { return m_moduleName; }
+
+    private:
+        QString m_key;
+        QString m_description;
+        QString m_moduleName;
+
+    };
+
+    class BookmarkFolder : public BookmarkItemBase {
+    public:
+
+        BookmarkFolder(const QString & name, BookmarkItemBase * parent = 0);
+
+        /** Returns a list of direct childs of this item. */
+        QList<BookmarkItemBase *> getChildList() const;
+
+        /** Returns true if the given item is this or a direct or indirect subitem of this. */
+        bool hasDescendant(BookmarkItemBase * item) const;
+
+        /** Creates a deep copy of this item. */
+        BookmarkFolder * deepCopy();
+
+    };
+
+
+public: /* Methods */
+
     BtBookmarksModelPrivate(BtBookmarksModel * parent)
         : m_rootItem(new BookmarkFolder("Root"))
         , q_ptr(parent)
@@ -419,7 +272,6 @@ public:
     }
 
     void needSave(){
-        qDebug() << "needSave" << this;
         if(m_defaultModel == q_ptr){
             if(!m_saveTimer.isActive())
                 m_saveTimer.start();
@@ -590,6 +442,164 @@ public: /* Fields */
 };
 
 BtBookmarksModel * BtBookmarksModelPrivate::m_defaultModel = 0;
+
+typedef BtBookmarksModelPrivate::BookmarkItemBase BookmarkItemBase;
+typedef BtBookmarksModelPrivate::BookmarkItem BookmarkItem;
+typedef BtBookmarksModelPrivate::BookmarkFolder BookmarkFolder;
+
+
+BookmarkFolder::BookmarkFolder(const QString & name, BookmarkItemBase * parent)
+        : BookmarkItemBase(parent) {
+    setText(name);
+    setFlags(Qt::ItemIsEditable | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled | Qt::ItemIsEnabled);
+    setIcon(util::getIcon(CResMgr::mainIndex::closedFolder::icon));
+}
+
+QList<BookmarkItemBase*> BookmarkFolder::getChildList() const {
+    QList<BookmarkItemBase*> list;
+    for (int i = 0; i < childCount(); i++) {
+        list.append(child(i));
+    }
+    return list;
+}
+
+bool BookmarkFolder::hasDescendant(BookmarkItemBase* item) const {
+    if (this == item) {
+        return true;
+    }
+    if (getChildList().indexOf(item) > -1) {
+        return true;
+    }
+    foreach(BookmarkItemBase* childItem, getChildList()) {
+        bool subresult = false;
+        BookmarkFolder* folder = 0;
+        if ( (folder = dynamic_cast<BookmarkFolder*>(childItem)) ) {
+            subresult = folder->hasDescendant(childItem);
+        }
+
+        if (subresult == true) {
+            return true;
+        }
+    }
+    return false;
+}
+
+BookmarkFolder* BookmarkFolder::deepCopy() {
+    BookmarkFolder* newFolder = new BookmarkFolder(this->text());
+    foreach(BookmarkItemBase* subitem, getChildList()) {
+        if (BookmarkItem* bmItem = dynamic_cast<BookmarkItem*>(subitem)) {
+            newFolder->addChild(new BookmarkItem(*bmItem));
+        }
+        else {
+            if (BookmarkFolder* bmFolder = dynamic_cast<BookmarkFolder*>(subitem)) {
+                newFolder->addChild(bmFolder->deepCopy());
+            }
+        }
+    }
+    return newFolder;
+}
+
+BookmarkItem::BookmarkItem(const CSwordModuleInfo * module,
+                               const QString & key,
+                               const QString & description,
+                               const QString & title)
+        : m_description(description)
+        , m_moduleName(module ? module->name() : QString::null)
+{
+    Q_UNUSED(title);
+
+    if (((module && (module->type() == CSwordModuleInfo::Bible)) || (module->type() == CSwordModuleInfo::Commentary))  ) {
+        CSwordVerseKey vk(0);
+        vk.setKey(key);
+        vk.setLocale("en");
+        m_key = vk.key(); //the m_key member is always the english key!
+    }
+    else {
+        m_key = key;
+    };
+
+    setIcon(util::getIcon(CResMgr::mainIndex::bookmark::icon));
+    setText(QString::fromLatin1("%1 (%2)").arg(key).arg(module ? module->name() : QObject::tr("unknown")));
+    setFlags(Qt::ItemIsSelectable /*| Qt::ItemIsEditable*/ | Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled | Qt::ItemIsEnabled);
+}
+
+BookmarkItem::BookmarkItem(BookmarkItemBase * parent)
+        : BookmarkItemBase(parent) {
+    setFlags(Qt::ItemIsSelectable /*| Qt::ItemIsEditable*/ | Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled | Qt::ItemIsEnabled);
+    setIcon(util::getIcon(CResMgr::mainIndex::bookmark::icon));
+    setText(QString::fromLatin1("%1 (%2)").arg(key()).arg(module() ? module()->name() : QObject::tr("unknown")));
+}
+
+BookmarkItem::BookmarkItem(const BookmarkItem & other)
+        : BookmarkItemBase(other)
+        , m_key(other.m_key)
+        , m_description(other.m_description)
+        , m_moduleName(other.m_moduleName)
+{
+    setIcon(util::getIcon(CResMgr::mainIndex::bookmark::icon));
+    setText(QString::fromLatin1("%1 (%2)").arg(key()).arg(module() ? module()->name() : QObject::tr("unknown")));
+}
+
+CSwordModuleInfo *BookmarkItem::module() const {
+    return CSwordBackend::instance()->findModuleByName(m_moduleName);
+}
+
+QString BookmarkItem::key() const {
+    const QString englishKeyName = englishKey();
+    if (!module()) {
+        return englishKeyName;
+    }
+
+    QString returnKeyName = englishKeyName;
+    if ((module()->type() == CSwordModuleInfo::Bible) || (module()->type() == CSwordModuleInfo::Commentary)) {
+        CSwordVerseKey vk(0);
+        vk.setKey(englishKeyName);
+        vk.setLocale(CSwordBackend::instance()->booknameLanguage().toLatin1() );
+
+        returnKeyName = vk.key(); //the returned key is always in the currently set bookname language
+    }
+
+    return returnKeyName;
+}
+
+QString BookmarkItem::toolTip() const {
+    if (!module()) {
+        return QString::null;
+    }
+
+    FilterOptions filterOptions = btConfig().getFilterOptions();
+    filterOptions.footnotes = false;
+    filterOptions.scriptureReferences = false;
+    CSwordBackend::instance()->setFilterOptions(filterOptions);
+
+    QString ret;
+    QSharedPointer<CSwordKey> k( CSwordKey::createInstance(module()) );
+    k->setKey(key());
+
+    // const CLanguageMgr::Language* lang = module()->language();
+    // BtConfig::FontSettingsPair fontPair = getBtConfig().getFontForLanguage(lang);
+
+    Q_ASSERT(k.data());
+    QString header = QString::fromLatin1("%1 (%2)")
+              .arg(key())
+              .arg(module()->name());
+    if (text() != header) {
+        ret = QString::fromLatin1("<b>%1</b><br>%2<hr>%3")
+              .arg(header)
+              .arg(text())
+              .arg(description())
+              ;
+    }
+    else {
+        ret = QString::fromLatin1("<b>%1</b><hr>%2")
+              .arg(header)
+              .arg(description())
+              ;
+    }
+
+    return ret;
+}
+
 
 BtBookmarksModel::BtBookmarksModel(QObject * parent)
     : QAbstractItemModel(parent)
