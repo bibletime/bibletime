@@ -613,6 +613,8 @@ BtBookmarksModel::BtBookmarksModel(const QString & fileName, const QString & roo
     , d_ptr(new BtBookmarksModelPrivate(this))
 {
     /// \todo take into account rootFolder
+    Q_ASSERT(rootFolder.isEmpty() && "specifying root folder for bookmarks is not supported at moment");
+
     load(fileName);
 }
 
