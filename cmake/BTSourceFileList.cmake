@@ -20,6 +20,7 @@ SET(bibletime_SRC_BACKEND
     src/backend/btinstallbackend.cpp
     src/backend/btinstallmgr.cpp
     src/backend/btinstallthread.cpp
+    src/backend/btbookmarksmodel.cpp
 )
 
 SOURCE_GROUP("src\\backend" FILES ${bibletime_SRC_BACKEND})
@@ -177,9 +178,6 @@ SOURCE_GROUP("src\\frontend\\bookshelfmanager\\removepage" FILES ${bibletime_SRC
 
 SET(bibletime_SRC_FRONTEND_BOOKMARKS
     # Bookshelf/Bookmarks widget in main window:
-    src/frontend/bookmarks/btbookmarkfolder.cpp
-    src/frontend/bookmarks/btbookmarkitem.cpp
-    src/frontend/bookmarks/btbookmarkloader.cpp
     src/frontend/bookmarks/bteditbookmarkdialog.cpp
     src/frontend/bookmarks/cbookmarkindex.cpp
 )
@@ -313,6 +311,7 @@ SET(bibletime_COMMON_MOCABLE_HEADERS
     src/util/btsignal.h
     src/backend/btinstallmgr.h
     src/backend/btinstallthread.h
+    src/backend/btbookmarksmodel.h
 )
 
 IF(BT_Use_DBus)

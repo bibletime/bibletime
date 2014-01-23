@@ -1,0 +1,152 @@
+/*********
+*
+* In the name of the Father, and of the Son, and of the Holy Spirit.
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2014 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License
+* version 2.0.
+*
+**********/
+
+#ifndef BTBOOKMARKSMODEL_H
+#define BTBOOKMARKSMODEL_H
+
+#include <QAbstractItemModel>
+
+
+class BtBookmarksModelPrivate;
+class CSwordModuleInfo;
+
+/**
+  Model to load and display bookmarks. It is saved periodically if it was loaded
+  from default bookmarks file. No more one such model allowed at time.
+*/
+class BtBookmarksModel: public QAbstractItemModel {
+
+    Q_OBJECT
+
+
+public: /* Methods: */
+
+    /**
+      \brief Constructor/destructor for new bookmarks model, data is loaded on first
+          constructor call and unloaded on last destructor call.
+
+      \param[in] fileName loads a list of items (with subitem trees) from a named file
+          or from the default bookmarks file if empty.
+      \param[in] rootFolder would be used if you need only to display particular
+          bookmarks folder.
+    */
+    BtBookmarksModel(QObject * parent = 0);
+    BtBookmarksModel(const QString & fileName = QString(),
+                     const QString & rootFolder = QString(), QObject * parent = 0);
+    ~BtBookmarksModel();
+
+    /** Reimplemented from QAbstractItemModel */
+    int rowCount(const QModelIndex & parent = QModelIndex()) const;
+    int columnCount(const QModelIndex & parent = QModelIndex()) const;
+    bool hasChildren(const QModelIndex & parent = QModelIndex()) const;
+    QModelIndex index(int row, int column, const QModelIndex & parent = QModelIndex()) const;
+    QModelIndex parent(const QModelIndex & index) const;
+    QVariant data(const QModelIndex & index, int role = Qt::DisplayRole) const;
+    Qt::ItemFlags flags(const QModelIndex & index) const;
+    QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const;
+    bool setData(const QModelIndex & index, const QVariant & value, int role = Qt::EditRole);
+    bool removeRows(int row, int count, const QModelIndex & parent = QModelIndex());
+    bool insertRows(int row, int count, const QModelIndex &parent = QModelIndex());
+
+    /**
+      \brief add new item with given parameters
+    */
+    QModelIndex addBookmark(int row, const QModelIndex & parent, const CSwordModuleInfo * module,
+                        const QString & key, const QString & description = QString(), const QString & title = QString());
+
+    /**
+      \brief add new folder.
+    */
+    QModelIndex addFolder(int row, const QModelIndex & parent, const QString & name = QString());
+
+    /**
+      \brief Copies item to target position.
+
+      \param[in] row new item will occupy given row.
+      \param[in] parent if invalid new item will be placed on top level.
+      \param[in] toCopy item to copy.
+      \returns newly created itemS that are copy of toCopy.
+    */
+    QModelIndexList copyItems(int row, const QModelIndex & parent, const QModelIndexList & toCopy);
+
+    /**
+      \returns whether item of index is a folder.
+     */
+    bool isFolder(const QModelIndex & index) const;
+
+    /**
+      \returns whether item of index is a bookmark.
+     */
+    bool isBookmark(const QModelIndex & index) const;
+
+    /**
+      \returns true if the testIndex is baseIndex or a direct or indirect subitem of baseIndex.
+    */
+    bool hasDescendant(const QModelIndex & baseIndex, const QModelIndex & testIndex) const;
+
+    /**
+      \returns description for specified index if have.
+     */
+    QString description(const QModelIndex & index) const;
+
+    /**
+      \brief set descritpion for index.
+     */
+    void setDescription(const QModelIndex & index, const QString & description);
+
+    /**
+      \returns sword module for specified index if have.
+     */
+    CSwordModuleInfo * module(const QModelIndex & index) const;
+
+    /**
+      \returns key for specified index if have.
+     */
+    QString key(const QModelIndex & index) const;
+
+
+public slots:
+
+    /**
+      \brief Save bookmarks or specified branch to file.
+
+      \param[in] fileName use file or save to the default bookmarks file if it is empty,
+          file will be overwriten if it exists.
+      \param[in] rootItem is used to save specified branch of bookmark items or save all
+          bookmarks if it is empty.
+      \returns true if success.
+    */
+    bool save(QString fileName = QString(), const QModelIndex & rootItem = QModelIndex());
+
+    /**
+      \brief Import bookmarks from file.
+
+      \param[in] fileName file to load bookmarks.
+      \param[in] rootItem bookmarks will be loaded under specified item, if empty, items
+          will be loaded on top level. Items will be placed in append mode.
+      \returns true if success.
+    */
+    bool load(QString fileName = QString(), const QModelIndex & rootItem = QModelIndex());
+
+    /**
+      \param[in] parent sort items under specified index, if invalid sort all items.
+    */
+    void sort(const QModelIndex & parent = QModelIndex(), Qt::SortOrder order = Qt::AscendingOrder);
+
+
+private: /* Fields: */
+    Q_DECLARE_PRIVATE(BtBookmarksModel)
+    BtBookmarksModelPrivate * const d_ptr;
+
+};
+
+#endif // BTBOOKMARKSMODEL_H
