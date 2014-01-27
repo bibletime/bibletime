@@ -99,6 +99,8 @@
     <qresource prefix="/">
     </qresource>
     <qresource prefix="/share/bibletime/display-templates">
+        <file alias="Basic.tmpl">../../src/display-templates/Basic-mobile.tmpl</file>
+        <file alias="Simple.css">../../src/display-templates/Simple.css</file>
         <file alias="Blue.css">../../src/display-templates/Blue.css</file>
     </qresource>
 </RCC>

@@ -150,7 +150,12 @@ Rectangle {
             anchors.leftMargin: 8
             anchors.rightMargin: 8
             model: btWindowInterface.textModel
+            highlightFollowsCurrentItem: true
             currentIndex: btWindowInterface.currentModelIndex
+            onCurrentIndexChanged: {
+                positionViewAtIndex(currentIndex,listView.Beginning)
+            }
+
             delegate: Text {
                 text: "<font color=\"blue\">" + ref + "</font> " + line
                 width: parent.width

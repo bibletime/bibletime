@@ -3,10 +3,12 @@
 
 #include "backend/config/btconfig.h"
 #include "backend/drivers/cswordbiblemoduleinfo.h"
+#include "backend/drivers/cswordbookmoduleinfo.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/keys/cswordkey.h"
 #include "backend/keys/cswordtreekey.h"
 #include "backend/managers/cswordbackend.h"
+#include "backend/models/btmoduletextmodel.h"
 #include "backend/rendering/centrydisplay.h"
 #include "backend/rendering/cdisplayrendering.h"
 #include "mobile/btmmain.h"
@@ -29,6 +31,7 @@ BtWindowInterface::BtWindowInterface(QObject* parent)
     : QObject(parent),
       m_key(0),
       m_textModel(new RoleItemModel()),
+      m_moduleTextModel(new BtModuleTextModel(this)),
       m_bookKeyChooser(0),
       m_verseKeyChooser(0),
       m_bibleTextModelBuilder(m_textModel),
@@ -79,8 +82,11 @@ void BtWindowInterface::updateModel() {
     emit currentModelIndexChanged();
 }
 
-int BtWindowInterface::getCurrentModelIndex() const {
-    return m_bibleTextModelBuilder.getCurrentModelIndex();
+static bool moduleIsBook(const CSwordModuleInfo* module) {
+    CSwordModuleInfo::Category category = module->category();
+    if (category == CSwordModuleInfo::Books)
+        return true;
+    return false;
 }
 
 static bool moduleIsBibleOrCommentary(const CSwordModuleInfo* module) {
@@ -91,11 +97,25 @@ static bool moduleIsBibleOrCommentary(const CSwordModuleInfo* module) {
     return false;
 }
 
-static bool moduleIsBook(const CSwordModuleInfo* module) {
-    CSwordModuleInfo::Category category = module->category();
-    if (category == CSwordModuleInfo::Books)
-        return true;
-    return false;
+int BtWindowInterface::getCurrentModelIndex() const {
+    if (m_key == 0)
+        return 0;
+    if (moduleIsBibleOrCommentary(module())) {
+        CSwordVerseKey* verseKey = dynamic_cast<CSwordVerseKey*>(m_key);
+        int index = m_moduleTextModel->verseKeyToIndex(*verseKey);
+        return index;
+    }
+    else if (moduleIsBook(module())) {
+        const CSwordBookModuleInfo *m = qobject_cast<const CSwordBookModuleInfo*>(module());
+        CSwordTreeKey key(m->tree(), m);
+        QString keyName = m_key->key();
+        key.setKey(keyName);
+        CSwordTreeKey p(key);
+        p.root();
+        if(p != key)
+            return key.getIndex()/4;
+    }
+    return 0;
 }
 
 QString BtWindowInterface::getModuleName() const {
@@ -137,6 +157,10 @@ void BtWindowInterface::setModuleName(const QString& moduleName) {
     CSwordTreeKey* treeKey = dynamic_cast<CSwordTreeKey*>(m_key);
     if (treeKey)
         treeKey->firstChild();
+
+    QStringList moduleNames;
+    moduleNames.append(moduleName);
+    m_moduleTextModel->setModules(moduleNames);
 
     emit moduleChanged();
     emit referenceChange();
@@ -270,7 +294,8 @@ void BtWindowInterface::setFontSize(int size) {
 
 QVariant BtWindowInterface::getTextModel() {
     QVariant var;
-    var.setValue(m_textModel);
+    var.setValue(m_moduleTextModel);
+    //    var.setValue(m_textModel);
     return var;
 }
 

@@ -10,6 +10,7 @@
 class CSwordKey;
 class CSwordVerseKey;
 class CSwordModuleInfo;
+class BtModuleTextModel;
 
 namespace btm {
 
@@ -64,6 +65,7 @@ private:
 
     CSwordKey* m_key;
     RoleItemModel* m_textModel;
+    BtModuleTextModel* m_moduleTextModel;
     BookKeyChooser* m_bookKeyChooser;
     VerseChooser* m_verseKeyChooser;
     BibleTextModelBuilder m_bibleTextModelBuilder;

@@ -39,6 +39,8 @@ BibleTimeApp::~BibleTimeApp() {
     btConfig().setValue("state/crashedLastTime", false);
     btConfig().setValue("state/crashedTwoTimes", false);
 
+    delete CDisplayTemplateMgr::instance();
+
     CLanguageMgr::destroyInstance();
     CSwordBackend::destroyInstance();
     util::clearIconCache();

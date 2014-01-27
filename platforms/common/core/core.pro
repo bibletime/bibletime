@@ -18,6 +18,7 @@ SOURCES += \
     ../../../src/backend/config/btconfig.cpp \
     ../../../src/backend/config/btconfigcore.cpp \
     ../../../src/backend/bookshelfmodel/btbookshelftreemodel.cpp \
+    ../../../src/backend/btbookmarksmodel.cpp \
     ../../../src/backend/btinstallmgr.cpp \
     ../../../src/backend/keys/cswordversekey.cpp \
     ../../../src/backend/keys/cswordldkey.cpp \
@@ -51,7 +52,8 @@ SOURCES += \
     ../../../src/backend/keys/cswordtreekey.cpp \
     ../../../src/backend/filters/btosismorphsegmentation.cpp \
     ../../../src/backend/bookshelfmodel/btbookshelffiltermodel.cpp \
-    ../../../src/backend/rendering/cplaintextexportrendering.cpp
+    ../../../src/backend/rendering/cplaintextexportrendering.cpp \
+    ../../../src/backend/models/btmoduletextmodel.cpp
 
 	
 HEADERS += \
@@ -68,6 +70,7 @@ HEADERS += \
     ../../../src/backend/config/btconfig.h \
     ../../../src/backend/config/btconfigcore.h \
     ../../../src/backend/bookshelfmodel/btbookshelftreemodel.h \
+    ../../../src/backend/btbookmarksmodel.h \
     ../../../src/backend/btinstallmgr.h \
     ../../../src/backend/btinstallthread.h \
     ../../../src/backend/keys/cswordversekey.h \
@@ -102,7 +105,8 @@ HEADERS += \
     ../../../src/backend/bookshelfmodel/indexingitem.h \
     ../../../src/backend/keys/cswordtreekey.h \
     ../../../src/backend/filters/btosismorphsegmentation.h \
-    ../../../src/backend/bookshelfmodel/btbookshelffiltermodel.h
+    ../../../src/backend/bookshelfmodel/btbookshelffiltermodel.h \
+    ../../../src/backend/models/btmoduletextmodel.h
 	
 
 # Translation
