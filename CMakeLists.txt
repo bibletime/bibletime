@@ -172,7 +172,7 @@ IF(Qt5Core_FOUND)
   )
 
   IF(${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
-    qt5_use_modules("bibletime" Widgets Qml Quick Network)
+    qt5_use_modules("bibletime" Widgets Qml Quick Xml Network)
   ELSE()
     IF(BT_Use_DBus)
       qt5_use_modules("bibletime" DBus Widgets WebKit WebKitWidgets Xml Network)
