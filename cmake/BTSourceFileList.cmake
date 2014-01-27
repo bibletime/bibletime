@@ -105,6 +105,12 @@ SET(bibletime_SRC_BACKEND_MANAGERS
 
 SOURCE_GROUP("src\\backend\\managers" FILES ${bibletime_SRC_BACKEND_MANAGERS})
 
+SET(bibletime_SRC_BACKEND_MODELS
+    src/backend/models/btmoduletextmodel.cpp
+)
+
+SOURCE_GROUP("src\\backend\\models" FILES ${bibletime_SRC_BACKEND_MODELS})
+
 SET(bibletime_SRC_UTIL
     # Utilities:
     src/util/cresmgr.cpp
@@ -308,6 +314,7 @@ SET(bibletime_COMMON_MOCABLE_HEADERS
     src/backend/drivers/cswordlexiconmoduleinfo.h
     src/backend/drivers/cswordmoduleinfo.h
     src/backend/managers/cswordbackend.h
+    src/backend/models/btmoduletextmodel.h
     src/util/btsignal.h
     src/backend/btinstallmgr.h
     src/backend/btinstallthread.h
@@ -421,6 +428,7 @@ SET(bibletime_COMMON_SOURCES
     ${bibletime_SRC_BACKEND_KEYS}
     ${bibletime_SRC_BACKEND_RENDERING}
     ${bibletime_SRC_BACKEND_MANAGERS}
+    ${bibletime_SRC_BACKEND_MODELS}
     ${bibletime_SRC_UTIL})
 
 SET(bibletime_FRONTEND_DESKTOP_SOURCES
