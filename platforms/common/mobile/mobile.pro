@@ -14,8 +14,6 @@ SOURCES += \
     ../../../src/mobile/btmmain.cpp \
     ../../../src/mobile/keychooser/bookkeychooser.cpp \
     ../../../src/mobile/keychooser/versechooser.cpp \
-    ../../../src/mobile/models/bibletextmodelbuilder.cpp \
-    ../../../src/mobile/models/booktextmodelbuilder.cpp \
     ../../../src/mobile/models/roleitemmodel.cpp \
     ../../../src/mobile/sessionmanager/sessionmanager.cpp \
     ../../../src/mobile/ui/btstyle.cpp \
@@ -39,8 +37,6 @@ HEADERS += \
     ../../../src/mobile/btmmain.h \
     ../../../src/mobile/keychooser/bookkeychooser.h \
     ../../../src/mobile/keychooser/versechooser.h \
-    ../../../src/mobile/models/bibletextmodelbuilder.h \
-    ../../../src/mobile/models/booktextmodelbuilder.h \
     ../../../src/mobile/models/roleitemmodel.h \
     ../../../src/mobile/sessionmanager/sessionmanager.h \
     ../../../src/mobile/ui/btstyle.h \

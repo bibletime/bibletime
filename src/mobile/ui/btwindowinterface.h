@@ -4,8 +4,6 @@
 #include <QObject>
 #include <QString>
 #include "mobile/models/roleitemmodel.h"
-#include "mobile/models/bibletextmodelbuilder.h"
-#include "mobile/models/booktextmodelbuilder.h"
 
 class CSwordKey;
 class CSwordVerseKey;
@@ -68,8 +66,6 @@ private:
     BtModuleTextModel* m_moduleTextModel;
     BookKeyChooser* m_bookKeyChooser;
     VerseChooser* m_verseKeyChooser;
-    BibleTextModelBuilder m_bibleTextModelBuilder;
-    BookTextModelBuilder m_bookTextModelBuilder;
 };
 
 } // end namespace

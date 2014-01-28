@@ -33,9 +33,7 @@ BtWindowInterface::BtWindowInterface(QObject* parent)
       m_textModel(new RoleItemModel()),
       m_moduleTextModel(new BtModuleTextModel(this)),
       m_bookKeyChooser(0),
-      m_verseKeyChooser(0),
-      m_bibleTextModelBuilder(m_textModel),
-      m_bookTextModelBuilder(m_textModel){
+      m_verseKeyChooser(0) {
 
     QtQuick2ApplicationViewer* viewer = getViewManager()->getViewer();
     m_verseKeyChooser = new VerseChooser(viewer, this);
@@ -72,12 +70,6 @@ void BtWindowInterface::updateModel() {
     QList<const CSwordModuleInfo*> modules =
             CSwordBackend::instance()->getConstPointerList(moduleList);
     QString keyText = getKeyText(m_key);
-
-    m_textModel->clear();
-    if (modules.at(0)->type() == CSwordModuleInfo::Bible)
-        m_bibleTextModelBuilder.updateModel(modules, keyText);
-    else if (modules.at(0)->type() == CSwordModuleInfo::GenericBook)
-        m_bookTextModelBuilder.updateModel(modules, keyText);
 
     emit currentModelIndexChanged();
 }
