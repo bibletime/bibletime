@@ -5,7 +5,7 @@ IF("${CMAKE_CURRENT_BINARY_DIR}" STREQUAL "${CMAKE_CURRENT_SOURCE_DIR}")
   MESSAGE(FATAL_ERROR "You probably didn't mean to run CMake from this directory. Now you have all messed up! You'd better delete CMakeFiles/ and CMakeCache.txt or things will break!")
 ENDIF()
 
-SET(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+SET(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH};${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 
 ################################################################################
@@ -176,8 +176,11 @@ IF(Qt5Core_FOUND)
   ELSE()
     IF(BT_Use_DBus)
       qt5_use_modules("bibletime" DBus Widgets WebKit WebKitWidgets Xml Network)
+      MESSAGE(STATUS "Using DBUS")
     ELSE()
       qt5_use_modules("bibletime" Widgets WebKit WebKitWidgets Xml Network)
+      MESSAGE(STATUS "No DBUS found")
+      ADD_DEFINITIONS("-DNO_DBUS")
     ENDIF()
   ENDIF()
 ELSE()
