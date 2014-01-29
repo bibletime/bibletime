@@ -105,7 +105,8 @@ QVariant BtModuleTextModel::bookData(const QModelIndex & index, int role) const 
 }
 
 QVariant BtModuleTextModel::verseData(const QModelIndex & index, int role) const {
-    CSwordVerseKey key = indexToVerseKey(index);
+    int row = index.row();
+    CSwordVerseKey key = indexToVerseKey(row);
     int verse = key.getVerse();
     if (role == ModuleEntry::TextRole) {
         if (verse == 0)
@@ -170,13 +171,37 @@ int BtModuleTextModel::verseKeyToIndex(const CSwordVerseKey& key) const {
     return index;
 }
 
-CSwordVerseKey BtModuleTextModel::indexToVerseKey(const QModelIndex &index) const
+CSwordVerseKey BtModuleTextModel::indexToVerseKey(int index) const
 {
     const CSwordModuleInfo* module = m_moduleInfoList.at(0);
     CSwordVerseKey key(module);
 
     key.setIntros(true);
-    key.setIndex(index.row() + m_firstEntry);
+    key.setIndex(index + m_firstEntry);
     return key;
+}
+
+CSwordTreeKey BtModuleTextModel::indexToBookKey(int index) const
+{
+    const CSwordModuleInfo* module = m_moduleInfoList.at(0);
+    const CSwordBookModuleInfo *bookModule = qobject_cast<const CSwordBookModuleInfo*>(module);
+    CSwordTreeKey key(bookModule->tree(), bookModule);
+    int bookIndex = index * 4;
+    key.setIndex(bookIndex);
+    QString keyName = key.key();
+    return key;
+}
+
+QString BtModuleTextModel::indexToKeyName(int index) const {
+    QString keyName;
+    if (isBible() || isCommentary()) {
+        CSwordVerseKey key = indexToVerseKey(index);
+        keyName = key.key();
+    }
+    else if (isBook()) {
+        CSwordTreeKey key = indexToBookKey(index);
+        keyName = key.key();
+    }
+    return keyName;
 }
 

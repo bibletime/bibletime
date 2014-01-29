@@ -16,6 +16,7 @@
 #include <QAbstractListModel>
 #include "btglobal.h"
 #include "backend/keys/cswordversekey.h"
+#include "backend/keys/cswordtreekey.h"
 
 class CSwordModuleInfo;
 
@@ -50,9 +51,16 @@ public:
     /** Specifies one or more module names for use by the model */
     void setModules(const QStringList& modules);
 
-    /** functions to convert from verse key to row index and back */
-    CSwordVerseKey indexToVerseKey(const QModelIndex &index) const;
+    bool isBible() const;
+    bool isBook() const;
+    bool isCommentary() const;
+    bool isLexicon() const;
+
+    /** functions to convert from book or verse key to row index and back */
+    CSwordTreeKey indexToBookKey(int index) const;
+    CSwordVerseKey indexToVerseKey(int index) const;
     int verseKeyToIndex(const CSwordVerseKey& key) const;
+    QString indexToKeyName(int index) const;
 
     /** Reimplemented from QAbstractItemModel. */
     int columnCount(const QModelIndex & parent = QModelIndex()) const;
@@ -66,11 +74,6 @@ private:
     /** returns text string for each model index */
     QVariant bookData(const QModelIndex & index, int role = Qt::DisplayRole) const;
     QVariant verseData(const QModelIndex & index, int role = Qt::DisplayRole) const;
-
-    bool isBible() const;
-    bool isBook() const;
-    bool isCommentary() const;
-    bool isLexicon() const;
 
     QList<const CSwordModuleInfo*> m_moduleInfoList;
     QHash<int, QByteArray> m_roleNames;

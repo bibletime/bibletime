@@ -20,6 +20,7 @@ Rectangle {
 
     function setKey(key) {
         btWindowInterface.reference = key;
+        btWindowInterface.updateCurrentModelIndex();
     }
 
     function saveWindowStateToConfig (index) {
@@ -154,6 +155,10 @@ Rectangle {
             currentIndex: btWindowInterface.currentModelIndex
             onCurrentIndexChanged: {
                 positionViewAtIndex(currentIndex,listView.Beginning)
+            }
+            onMovementEnded: {
+                var index = indexAt(contentX,contentY+30);
+                btWindowInterface.updateKeyText(index);
             }
 
             delegate: Text {

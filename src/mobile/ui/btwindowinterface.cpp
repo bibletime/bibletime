@@ -37,11 +37,11 @@ BtWindowInterface::BtWindowInterface(QObject* parent)
 
     QtQuick2ApplicationViewer* viewer = getViewManager()->getViewer();
     m_verseKeyChooser = new VerseChooser(viewer, this);
-    bool ok = connect(m_verseKeyChooser, SIGNAL(referenceChanged()), this, SLOT(referenceChanged()));
+    bool ok = connect(m_verseKeyChooser, SIGNAL(referenceChanged()), this, SLOT(referenceChosen()));
     Q_ASSERT(ok);
 
     m_bookKeyChooser = new BookKeyChooser(viewer, this);
-    ok = connect(m_bookKeyChooser, SIGNAL(referenceChanged()), this, SLOT(referenceChanged()));
+    ok = connect(m_bookKeyChooser, SIGNAL(referenceChanged()), this, SLOT(referenceChosen()));
     Q_ASSERT(ok);
 }
 
@@ -69,9 +69,6 @@ void BtWindowInterface::updateModel() {
     QStringList moduleList = QStringList() << moduleName;
     QList<const CSwordModuleInfo*> modules =
             CSwordBackend::instance()->getConstPointerList(moduleList);
-    QString keyText = getKeyText(m_key);
-
-    emit currentModelIndexChanged();
 }
 
 static bool moduleIsBook(const CSwordModuleInfo* module) {
@@ -172,6 +169,10 @@ void BtWindowInterface::changeModule() {
     dlg->open();
 }
 
+void BtWindowInterface::updateCurrentModelIndex() {
+    emit currentModelIndexChanged();
+}
+
 static void parseKey(CSwordTreeKey* currentKey, QStringList* keyPath, QStringList* children)
 {
     if (currentKey == 0)
@@ -257,7 +258,12 @@ void BtWindowInterface::changeReference() {
 
 void BtWindowInterface::referenceChanged() {
     emit referenceChange();
+}
+
+void BtWindowInterface::referenceChosen() {
+    emit referenceChange();
     updateModel();
+    emit currentModelIndexChanged();
 }
 
 const CSwordModuleInfo* BtWindowInterface::module() const {
@@ -287,8 +293,12 @@ void BtWindowInterface::setFontSize(int size) {
 QVariant BtWindowInterface::getTextModel() {
     QVariant var;
     var.setValue(m_moduleTextModel);
-    //    var.setValue(m_textModel);
     return var;
+}
+
+void BtWindowInterface::updateKeyText(int index) {
+    QString keyName = m_moduleTextModel->indexToKeyName(index);
+        setReference(keyName);
 }
 
 } // end namespace

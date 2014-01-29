@@ -29,6 +29,8 @@ public:
     Q_INVOKABLE void changeModule();
     Q_INVOKABLE void changeReference();
     Q_INVOKABLE void saveWindowStateToConfig(int windowIndex);
+    Q_INVOKABLE void updateKeyText(int modelIndex);
+    Q_INVOKABLE void updateCurrentModelIndex();
 
     BtWindowInterface(QObject *parent = 0);
 
@@ -56,6 +58,7 @@ signals:
 
 private slots:
     void referenceChanged();
+    void referenceChosen();
 
 private:
     const CSwordModuleInfo* module() const;
