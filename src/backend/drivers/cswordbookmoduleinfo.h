@@ -48,10 +48,11 @@ class CSwordBookModuleInfo: public CSwordModuleInfo {
         sword::TreeKeyIdx *tree() const;
 
     private: /* Methods: */
+
         /**
         * A recursive helper function to help computng the module depth!
         */
-        void computeDepth(sword::TreeKeyIdx *key, int level = 0);
+        void computeDepth(sword::TreeKeyIdx * const key, const int level = 0);
 
     private: /* Fields: */
         int m_depth;
