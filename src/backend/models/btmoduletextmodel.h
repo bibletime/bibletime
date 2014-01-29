@@ -14,6 +14,7 @@
 #define BTMODULETEXTMODEL_H
 
 #include <QAbstractListModel>
+#include <QStringList>
 #include "btglobal.h"
 #include "backend/keys/cswordversekey.h"
 #include "backend/keys/cswordtreekey.h"
