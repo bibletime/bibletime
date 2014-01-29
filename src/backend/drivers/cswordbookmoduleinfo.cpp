@@ -28,22 +28,21 @@ CSwordBookModuleInfo::CSwordBookModuleInfo(sword::SWModule * module,
     }
 }
 
-void CSwordBookModuleInfo::computeDepth(sword::TreeKeyIdx *key, int level) {
-    QByteArray savedKey(key->getText());
-
-    if (level > m_depth) {
+void CSwordBookModuleInfo::computeDepth(sword::TreeKeyIdx * const key,
+                                        const int level)
+{
+    const QByteArray savedKey(key->getText());
+    if (level > m_depth)
         m_depth = level;
-    }
 
     if (key->hasChildren()) {
         key->firstChild();
-        computeDepth(key, level + 1);
-        key->setText(savedKey.constData());//return to the initial value
+        computeDepth(key, level + 1u);
+        key->setText(savedKey.constData()); // Return to the initial value
     }
 
-    if (key->nextSibling()) {
+    if (key->nextSibling())
         computeDepth(key, level);
-    }
 }
 
 /** Returns a treekey filled with the structure of this module */
