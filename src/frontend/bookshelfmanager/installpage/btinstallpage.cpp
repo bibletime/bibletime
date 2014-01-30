@@ -405,7 +405,11 @@ void BtInstallPage::slotSourceDelete() {
 }
 
 void BtInstallPage::slotSourceIndexChanged(int index) {
-    if (index < 0) index = 0;
+    if (index < 0) {
+        if(!m_sourceComboBox->count())
+            return;
+        index = 0;
+    }
 
     /// \todo use pointers instead of text
     QString moduleName = m_sourceComboBox->itemText(index);
