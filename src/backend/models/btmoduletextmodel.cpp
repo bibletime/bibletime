@@ -18,6 +18,7 @@
 #include "backend/drivers/cswordlexiconmoduleinfo.h"
 #include "backend/keys/cswordtreekey.h"
 #include "backend/managers/cswordbackend.h"
+#include "backend/rendering/ctextrendering.h"
 
 BtModuleTextModel::BtModuleTextModel(QObject *parent)
     : QAbstractListModel(parent), m_firstEntry(0), m_maxEntries(0) {
@@ -96,9 +97,12 @@ QVariant BtModuleTextModel::bookData(const QModelIndex & index, int role) const 
         CSwordTreeKey key(bookModule->tree(), bookModule);
         int bookIndex = index.row() * 4;
         key.setIndex(bookIndex);
-        QString keyName = key.key();
-        Rendering::CEntryDisplay ed;
-        QString text = ed.text(QList<const CSwordModuleInfo*>() << bookModule, key.key(), m_displayOptions, m_filterOptions);
+        Rendering::CEntryDisplay entryDisplay;
+        QList<const CSwordModuleInfo*> moduleList;
+        moduleList << bookModule;
+        QString text = entryDisplay.textKeyRendering(moduleList, key.key(),
+                                                     m_displayOptions, m_filterOptions,
+                                                     Rendering::CTextRendering::KeyTreeItem::Settings::SimpleKey);
         return text;
     }
     return QString();
@@ -112,11 +116,17 @@ QVariant BtModuleTextModel::verseData(const QModelIndex & index, int role) const
         if (verse == 0)
             return QString();
         QString text;
-        if (verse == 1)
-            text += "<center><b><font size='+1'\">"
-                    + key.book() + " " + QString::number(key.getChapter()) + "</font></b></center><br>";
-
-        text += Rendering::CEntryDisplay().text(m_moduleInfoList, key.key(), m_displayOptions, m_filterOptions);
+        text += "<style type=\"text/css\">";
+        text += ".title { font-weight: bold; font-size: x-large; }";
+        text += ".sectiontitle { font-weight: bold; font-size: medium; }";
+        text += ".jesuswords { color:#9C2323; }";
+        text += "</style>";
+        if (verse == 1) {
+            text += "<center><div class=\"title\">" + key.book() + " " + QString::number(key.getChapter()) + "</div></center>";
+        }
+        text += Rendering::CEntryDisplay().textKeyRendering(m_moduleInfoList,
+            key.key(), m_displayOptions, m_filterOptions,
+            Rendering::CTextRendering::KeyTreeItem::Settings::SimpleKey);
         return text;
     }
     return QString();

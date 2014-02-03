@@ -162,7 +162,8 @@ Rectangle {
             }
 
             delegate: Text {
-                text: "<font color=\"blue\">" + ref + "</font> " + line
+                text: line
+                textFormat: Text.RichText
                 width: parent.width
                 color: "black"
                 font.pointSize: btStyle.textFontPointSize
