@@ -17,6 +17,7 @@
 // Sword includes:
 #include <swdisp.h>
 #include <swmodule.h>
+#include "ctextrendering.h"
 
 class CSwordModuleInfo;
 struct DisplayOptions;
@@ -36,6 +37,12 @@ class CEntryDisplay: public sword::SWDisplay {
                                    const QString &key,
                                    const DisplayOptions &displayOptions,
                                    const FilterOptions &filterOptions);
+
+    const QString textKeyRendering(const QList<const CSwordModuleInfo*> &modules,
+                               const QString &key,
+                               const DisplayOptions &displayOptions,
+                               const FilterOptions &filterOptions,
+                               CTextRendering::KeyTreeItem::Settings::KeyRenderingFace keyRendering);
 
         virtual char display(sword::SWModule& mod) { (void)mod; return 'c';}
 

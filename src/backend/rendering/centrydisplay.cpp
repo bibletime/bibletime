@@ -27,12 +27,25 @@ const QString CEntryDisplay::text(
         const QList<const CSwordModuleInfo*> &modules,
         const QString &keyName,
         const DisplayOptions &displayOptions,
-        const FilterOptions &filterOptions)
-{
+        const FilterOptions &filterOptions) {
+    return textKeyRendering(modules, keyName, displayOptions, filterOptions,
+                     CTextRendering::KeyTreeItem::Settings::CompleteShort);
+}
+
+const QString CEntryDisplay::textKeyRendering(
+        const QList<const CSwordModuleInfo*> &modules,
+        const QString &keyName,
+        const DisplayOptions &displayOptions,
+        const FilterOptions &filterOptions,
+        CTextRendering::KeyTreeItem::Settings::KeyRenderingFace keyRendering) {
+
+    if (keyName.isEmpty())
+        return QString("x");
+
     CDisplayRendering render(displayOptions, filterOptions);
 
     //no highlighted key and no extra key link in the text
-    CTextRendering::KeyTreeItem::Settings normal_settings(false, CTextRendering::KeyTreeItem::Settings::CompleteShort);
+    CTextRendering::KeyTreeItem::Settings normal_settings(false, keyRendering);
     const CSwordModuleInfo *module = modules.first();
 
     Rendering::CTextRendering::KeyTree tree;
