@@ -32,7 +32,11 @@ class InstallManager :public QObject {
 public:
     InstallManager(QObject* parent = 0);
 
+    Q_PROPERTY(int installedModuleCount READ getInstalledModuleCount)
+
     Q_INVOKABLE void openChooser();
+
+    int getInstalledModuleCount() const;
 
 private slots:
     void cancel();
@@ -41,6 +45,7 @@ private slots:
     void languageIndexChanged(int index);
     void refreshLists();
     void sourceIndexChanged(int index);
+    void updateModels();
     void workSelected(int index);
 
 private:

@@ -82,6 +82,10 @@ static void setupWorksModel(const QStringList& titleList,
 InstallManager::InstallManager(QObject* /* parent */)
     : m_installManagerChooserObject(0),
       m_btInstallMgr(0) {
+
+    bool ok = connect(&m_installSourcesManager, SIGNAL(sourcesUpdated()),
+                      this, SLOT(updateModels()));
+    Q_ASSERT(ok);
 }
 
 void InstallManager::openChooser() {
@@ -94,6 +98,11 @@ void InstallManager::openChooser() {
     setupSourceModel();
     makeConnections();
     setProperties();
+    sourceIndexChanged(0);
+}
+
+void InstallManager::updateModels() {
+    setupSourceModel();
     sourceIndexChanged(0);
 }
 
@@ -368,4 +377,7 @@ void InstallManager::refreshLists() {
     m_installSourcesManager.refreshSources();
 }
 
+int InstallManager::getInstalledModuleCount() const {
+    return 0;
+}
 } // end namespace

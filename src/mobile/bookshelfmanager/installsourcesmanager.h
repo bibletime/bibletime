@@ -29,6 +29,9 @@ public:
 
     void refreshSources();
 
+signals:
+    void sourcesUpdated();
+
 private slots:
     void cancel();
     void percentComplete(int percent, const QString& title);

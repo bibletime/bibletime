@@ -69,8 +69,10 @@ void InstallSourcesManager::runThread() {
 void InstallSourcesManager::percentComplete(int percent, const QString& title) {
     m_progressObject->setProperty("value", percent);
     m_progressObject->setProperty("text", title);
-    if (percent == 100)
+    if (percent == 100) {
         m_progressObject->setProperty("visible", false);
+        emit sourcesUpdated();
+    }
 }
 
 void InstallSourcesManager::findProgressObject() {
