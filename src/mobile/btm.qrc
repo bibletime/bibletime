@@ -19,6 +19,7 @@
         <file>qml/Progress.qml</file>
         <file>qml/rightarrow.svg</file>
         <file>qml/Settings.qml</file>
+        <file>qml/StartupBookshelfManager.qml</file>
         <file>qml/tab.png</file>
         <file>qml/TreeChooser.qml</file>
         <file>qml/WindowManager.qml</file>

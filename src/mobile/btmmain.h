@@ -19,5 +19,7 @@ namespace btm {
 
 btm::ViewManager* getViewManager();
 
+void openBookshelfManager();
+
 #endif
 

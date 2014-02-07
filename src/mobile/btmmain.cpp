@@ -12,6 +12,7 @@
 
 #include "bibletime.h"
 #include "backend/config/btconfig.h"
+#include "backend/managers/cswordbackend.h"
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "mobile/bibletimeapp.h"
 #include "mobile/bookshelfmanager/installmanager.h"
@@ -21,6 +22,7 @@
 #include "mobile/ui/moduleinterface.h"
 #include "mobile/ui/qtquick2applicationviewer.h"
 #include "mobile/ui/viewmanager.h"
+#include "util/findqmlobject.h"
 #include <QBrush>
 #include <QColor>
 #include <QGuiApplication>
@@ -45,6 +47,16 @@ void register_gml_classes() {
 
 btm::ViewManager* getViewManager() {
     return mgr;
+}
+
+void openBookshelfManager() {
+    QQuickItem* item = btm::findQmlObject("startupBookshelfManager");
+    Q_ASSERT(item != 0);
+    if (item == 0)
+        return;
+
+    item->setProperty("visible", true);
+
 }
 
 /*******************************************************************************
@@ -107,7 +119,13 @@ int main(int argc, char *argv[]) {
     btm::BibleTime btm;
 
     sessionMgr = new btm::SessionManager();
-    sessionMgr->loadDefaultSession();
+    int installedModules = CSwordBackend::instance()->moduleList().count();
+    if (installedModules == 0) {
+        openBookshelfManager();
+    }
+    else {
+        sessionMgr->loadDefaultSession();
+    }
 
     int rtn = app.exec();
     sessionMgr->saveDefaultSession();

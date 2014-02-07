@@ -43,7 +43,7 @@ Rectangle {
         anchors.left: parent.left
         anchors.top: parent.top
         anchors.right: parent.right
-        height: btStyle.pixelsPerMillimeterY * 8
+        height: btStyle.pixelsPerMillimeterY * 7
         onButtonClicked: {
             mainMenus.visible = ! mainMenus.visible;
         }
@@ -109,6 +109,21 @@ Rectangle {
         path: ""
         visible: false
         z: 100
+    }
+
+    StartupBookshelfManager {
+        id: startupBookshelfManager
+
+        objectName: "startupBookshelfManager"
+        visible: false
+        width: parent.width - 20
+        border.width: 2
+        border.color: "black"
+        radius: 20
+        anchors.centerIn: parent
+        onBookshelfRequested: {
+            installModules();
+        }
     }
 
     InstallManager {

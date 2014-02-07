@@ -73,6 +73,7 @@ OTHER_FILES += \
     ../../../src/mobile/qml/rightarrow.svg \
     ../../../src/mobile/qml/ListTextView.qml \
     ../../../src/mobile/qml/WindowManager.qml \
+    ../../../src/mobile/qml/StartupBookshelfManager.qml \
     ../../../src/mobile/qml/MainToolbar.qml \
     ../../../src/mobile/qml/TreeChooser.qml
 
