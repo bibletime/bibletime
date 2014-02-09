@@ -10,10 +10,10 @@ Rectangle {
     property alias sourceIndex: sourceView.currentIndex
     property alias categoryIndex: categoryView.currentIndex
     property alias languageIndex: languageView.currentIndex
-    property int spacing: 8
+    property int spacing: 12
 
     objectName: "installManager"
-    color: "lightgray"
+    color: "#a0d0ff"
     border.color: "black"
     border.width: 2
 
@@ -85,14 +85,14 @@ Rectangle {
     }
 
     Rectangle {
-        id: "refreshButton"
+        id: refreshButton
         width: installManager.width * 3.4 / 10;
-        height: btStyle.pixelsPerMillimeterY * 5
+        height: btStyle.pixelsPerMillimeterY * 8
         anchors.bottom: parent.bottom
         anchors.bottomMargin: 10
         anchors.right: installRemoveButton.left
         anchors.rightMargin: 10
-        border.width: 1
+        border.width: 4
         border.color: "black"
 
         Text {
@@ -108,14 +108,14 @@ Rectangle {
     }
 
     Rectangle {
-        id: "installRemoveButton"
+        id: installRemoveButton
         width: installManager.width * 3.8 / 10;
-        height: refreshButton.height
+        height: btStyle.pixelsPerMillimeterY * 8
         anchors.bottom: parent.bottom
         anchors.bottomMargin: 10
         anchors.right: cancelButton.left
         anchors.rightMargin: 10
-        border.width: 1
+        border.width: 4
         border.color: "black"
 
         Text {
@@ -131,14 +131,14 @@ Rectangle {
     }
 
     Rectangle {
-        id: "cancelButton"
+        id: cancelButton
         width: installManager.width * 2.4 / 12;
-        height: installRemoveButton.height
+        height: btStyle.pixelsPerMillimeterY * 8
         anchors.bottom: parent.bottom
         anchors.bottomMargin: 10
         anchors.right: parent.right
-        anchors.rightMargin: 10
-        border.width: 1
+        anchors.rightMargin: installManager.width * 0.4 / 10;
+        border.width: 4
         border.color: "black"
 
         Text {
