@@ -55,13 +55,13 @@ Rectangle {
         Rectangle {
             id: moduleDisplay
 
-            width: text.width +15
+            width: text.width + 30
             radius:btStyle.buttonRadius
             anchors.left: parent.left
             anchors.top: parent.top
             anchors.bottom: parent.bottom
             anchors.topMargin: btStyle.pixelsPerMillimeterY * 0.7
-            anchors.leftMargin: 10
+            anchors.leftMargin: 15
             anchors.bottomMargin: btStyle.pixelsPerMillimeterY * 0.7
             color: btStyle.toolbarButton
             border.color: btStyle.buttonBorder
@@ -112,10 +112,11 @@ Rectangle {
 
             Text {
                 id: referenceText
-                anchors.centerIn: parent
-                anchors.leftMargin: 25
+                anchors.fill: parent
+                anchors.leftMargin: 15
                 anchors.rightMargin: 4
-                width: referenceDisplay.width - 4
+                horizontalAlignment: Text.AlignLeft
+                verticalAlignment: Text.AlignVCenter
                 font.pointSize: btStyle.uiFontPointSize
                 elide: Text.ElideMiddle
                 color: btStyle.toolbarButtonText
