@@ -13,11 +13,26 @@ Rectangle {
     }
 
     Column {
-        spacing:height/5
+        id: column
+        property real ppmy: btStyle.pixelsPerMillimeterY
 
-        Rectangle { color: "black"; width:menuButton.height/10; height:menuButton.height/10 }
-        Rectangle { color: "black"; width:menuButton.height/10; height:menuButton.height/10 }
-        Rectangle { color: "black"; width:menuButton.height/10; height:menuButton.height/10 }
+        spacing: column.ppmy * 0.3
+
+        Rectangle {
+            color: "black";
+            width: column.ppmy * 0.7
+            height:column.ppmy * 0.7
+        }
+        Rectangle {
+            color: "black";
+            width:column.ppmy * 0.7
+            height:column.ppmy * 0.7
+        }
+        Rectangle {
+            color: "black";
+            width:column.ppmy * 0.7
+            height:column.ppmy * 0.7
+        }
 
         anchors.centerIn: parent
     }
