@@ -6,19 +6,20 @@ Rectangle {
 
     signal bookshelfRequested()
 
-    height:btStyle.pixelsPerMillimeterY * 48
+    color: "white"
 
     Text {
+        width: parent.width
         anchors.fill: parent
         text: "There are currently no works installed. Please click" +
               " on the Ok button below to use the Bookshelf Manager to" +
               " install new works."
-        verticalAlignment: Text.verticalAlignment
-        horizontalAlignment: Text.horizontalAlignment
+        verticalAlignment: Text.AlignVCenter
+        horizontalAlignment: Text.AlignHCenter
+        wrapMode: Text.WordWrap
         font.pointSize: btStyle.uiFontPointSize
         anchors.margins: 30
-        wrapMode: Text.WordWrap
-    }
+     }
 
     Grid {
         id: buttons
@@ -27,13 +28,13 @@ Rectangle {
         columns: 2
         anchors.bottom: startupBookshelfManager.bottom
         anchors.horizontalCenter: parent.horizontalCenter
-        anchors.bottomMargin: 10
+        anchors.bottomMargin: 50
 
         Rectangle {
             height: btStyle.pixelsPerMillimeterY * 7
             width: btStyle.pixelsPerMillimeterY * 25
             border.color: "black"
-            border.width: 1
+            border.width: 4
 
             Text {
                 text: "Ok"
@@ -54,7 +55,7 @@ Rectangle {
             height: btStyle.pixelsPerMillimeterY * 7
             width: btStyle.pixelsPerMillimeterY * 25
             border.color: "black"
-            border.width: 1
+            border.width: 4
 
             Text {
                 text: "Cancel"

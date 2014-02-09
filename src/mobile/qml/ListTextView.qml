@@ -78,8 +78,8 @@ Rectangle {
                 border.color: "darkgray"
                 width: parent.width
                 height: {
-                    var pixel = btStyle.pixelsPerMillimeterY * 7;
-                    var uiFont = btStyle.uiFontPointSize * 3;
+                    var pixel = btStyle.pixelsPerMillimeterY * 8;
+                    var uiFont = btStyle.uiFontPointSize * 3.5;
                     return Math.max(pixel, uiFont);
                 }
 

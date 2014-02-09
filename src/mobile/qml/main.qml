@@ -116,11 +116,9 @@ Rectangle {
 
         objectName: "startupBookshelfManager"
         visible: false
-        width: parent.width - 20
-        border.width: 2
-        border.color: "black"
-        radius: 20
-        anchors.centerIn: parent
+        width: windowManager.width
+        height: windowManager.height
+        anchors.centerIn: windowManager
         onBookshelfRequested: {
             installModules();
         }
@@ -134,7 +132,7 @@ Rectangle {
         id: installManagerChooser
 
         objectName: "installManagerChooser"
-        width: Math.min(parent.height, parent.width);
+        width: parent.width;
         height: parent.height
         anchors.centerIn: parent
         anchors.top: parent.top
@@ -148,8 +146,8 @@ Rectangle {
         value: 0.25
         minimumValue: 0
         maximumValue: 1
-        width:550
-        height: 300
+        width:parent.width * 0.85
+        height: btStyle.pixelsPerMillimeterY * 30
         anchors.centerIn: parent
         anchors.top: parent.top
         visible: false

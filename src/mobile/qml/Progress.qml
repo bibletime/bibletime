@@ -26,7 +26,7 @@ Rectangle {
 
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: progressBar.top
-        anchors.bottomMargin: 20
+        anchors.bottomMargin: parent.height / 8
         font.pointSize: btStyle.uiFontPointSize
     }
 
@@ -35,17 +35,17 @@ Rectangle {
 
         anchors.centerIn: parent
         width: parent.width - 100
-        height: 16
+        height: parent.height /10
     }
 
     Rectangle {
         color: "white"
         border.color: "black"
-        border.width: 1
+        border.width: 3
         width: btStyle.pixelsPerMillimeterX * 25
         height: btStyle.pixelsPerMillimeterY * 7
         anchors.top: progressBar.bottom
-        anchors.topMargin: 20
+        anchors.topMargin: parent.height / 8
         anchors.horizontalCenter: parent.horizontalCenter
 
         Text {
