@@ -25,6 +25,7 @@ void ModuleChooser::open() {
         return;
 
     item->setProperty("visible", true);
+    disconnect(item, SIGNAL(moduleSelected()), 0, 0);
     bool ok = connect(item, SIGNAL(moduleSelected()), this, SLOT(moduleSelectedSlot()));
     Q_ASSERT(ok);
 }
