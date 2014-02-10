@@ -122,6 +122,8 @@ void BtWindowInterface::setReference(const QString& key) {
 }
 
 void BtWindowInterface::setModuleName(const QString& moduleName) {
+    if (moduleName.isEmpty())
+        return;
     CSwordModuleInfo* m = CSwordBackend::instance()->findModuleByName(moduleName);
     if (!m_key) {
         m_key = CSwordKey::createInstance(m);
