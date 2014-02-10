@@ -175,12 +175,6 @@ Rectangle {
 
     onWindowArrangementChanged: layoutWindows()
 
-//    anchors.top: spacer.bottom
-//    anchors.left: parent.left
-//    anchors.right: parent.right
-//    anchors.bottom: parent.bottom
-//    color: "#646464"
-
     Grid {
         id: gridWindows
 
@@ -189,6 +183,12 @@ Rectangle {
         columns: 2
         spacing: 2
         z: 2
+        onWidthChanged: {
+            layoutWindows();
+        }
+        onHeightChanged: {
+            layoutWindows();
+        }
     }
 
     Item {
