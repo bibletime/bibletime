@@ -169,6 +169,7 @@ Rectangle {
                 color: "black"
                 font.pointSize: btStyle.textFontPointSize
                 wrapMode: Text.WordWrap
+                onWidthChanged: doLayout()
             }
 
             MouseArea {
