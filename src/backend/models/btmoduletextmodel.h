@@ -18,6 +18,7 @@
 #include "btglobal.h"
 #include "backend/keys/cswordversekey.h"
 #include "backend/keys/cswordtreekey.h"
+#include "backend/keys/cswordldkey.h"
 
 class CSwordModuleInfo;
 
@@ -60,6 +61,7 @@ public:
     /** functions to convert from book or verse key to row index and back */
     CSwordTreeKey indexToBookKey(int index) const;
     CSwordVerseKey indexToVerseKey(int index) const;
+
     int verseKeyToIndex(const CSwordVerseKey& key) const;
     QString indexToKeyName(int index) const;
 
@@ -75,6 +77,7 @@ private:
     /** returns text string for each model index */
     QVariant bookData(const QModelIndex & index, int role = Qt::DisplayRole) const;
     QVariant verseData(const QModelIndex & index, int role = Qt::DisplayRole) const;
+    QVariant lexiconData(const QModelIndex & index, int role = Qt::DisplayRole) const;
 
     QList<const CSwordModuleInfo*> m_moduleInfoList;
     QHash<int, QByteArray> m_roleNames;

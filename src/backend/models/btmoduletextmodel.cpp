@@ -17,13 +17,14 @@
 #include "backend/drivers/cswordbookmoduleinfo.h"
 #include "backend/drivers/cswordlexiconmoduleinfo.h"
 #include "backend/keys/cswordtreekey.h"
+#include "backend/keys/cswordldkey.h"
 #include "backend/managers/cswordbackend.h"
 #include "backend/rendering/ctextrendering.h"
 
 BtModuleTextModel::BtModuleTextModel(QObject *parent)
     : QAbstractListModel(parent), m_firstEntry(0), m_maxEntries(0) {
     QHash<int, QByteArray> roleNames;
-    roleNames[ModuleEntry::ReferenceRole] =  "ref";
+    roleNames[ModuleEntry::ReferenceRole] =  "keyName";
     roleNames[ModuleEntry::TextRole] = "line";
     setRoleNames(roleNames);
     m_displayOptions.verseNumbers = 0;
@@ -86,9 +87,31 @@ QVariant BtModuleTextModel::data(const QModelIndex & index, int role) const {
 
     if (isBible() || isCommentary())
         return verseData(index, role);
-    else if(isBook())
+    else if (isBook())
         return bookData(index, role);
+    else if (isLexicon())
+        return lexiconData(index, role);
     return QVariant("invalid");
+}
+
+QVariant BtModuleTextModel::lexiconData(const QModelIndex & index, int role) const {
+    int row = index.row();
+
+    const CSwordLexiconModuleInfo *lexiconModule = qobject_cast<const CSwordLexiconModuleInfo*>(m_moduleInfoList.at(0));
+    QList<const CSwordModuleInfo*> moduleList;
+    moduleList << lexiconModule;
+    QString keyName = lexiconModule->entries()[row];
+
+    if (role == ModuleEntry::TextRole) {
+        Rendering::CEntryDisplay entryDisplay;
+        QString text = entryDisplay.text(moduleList, keyName,
+            m_displayOptions, m_filterOptions);
+        return text;
+    }
+    else if (role == ModuleEntry::ReferenceRole){
+        return keyName;
+    }
+    return QString();
 }
 
 QVariant BtModuleTextModel::bookData(const QModelIndex & index, int role) const {
@@ -198,12 +221,11 @@ CSwordTreeKey BtModuleTextModel::indexToBookKey(int index) const
     CSwordTreeKey key(bookModule->tree(), bookModule);
     int bookIndex = index * 4;
     key.setIndex(bookIndex);
-    QString keyName = key.key();
     return key;
 }
 
 QString BtModuleTextModel::indexToKeyName(int index) const {
-    QString keyName;
+    QString keyName = "???";
     if (isBible() || isCommentary()) {
         CSwordVerseKey key = indexToVerseKey(index);
         keyName = key.key();
@@ -211,6 +233,10 @@ QString BtModuleTextModel::indexToKeyName(int index) const {
     else if (isBook()) {
         CSwordTreeKey key = indexToBookKey(index);
         keyName = key.key();
+    }
+    else if (isLexicon()) {
+        const CSwordLexiconModuleInfo *lexiconModule = qobject_cast<const CSwordLexiconModuleInfo*>(m_moduleInfoList.at(0));
+        keyName = lexiconModule->entries()[index];
     }
     return keyName;
 }
