@@ -111,6 +111,16 @@ Rectangle {
         z: 100
     }
 
+    KeyNameChooser {
+        id: keyNameChooser
+
+        objectName: "keyNameChooser"
+        width: parent.width
+        height: parent.height
+        anchors.top: parent.top
+        visible: false
+    }
+
     StartupBookshelfManager {
         id: startupBookshelfManager
 

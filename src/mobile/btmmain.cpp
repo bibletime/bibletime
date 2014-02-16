@@ -16,6 +16,7 @@
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "mobile/bibletimeapp.h"
 #include "mobile/bookshelfmanager/installmanager.h"
+#include "mobile/models/searchmodel.h"
 #include "mobile/sessionmanager/sessionmanager.h"
 #include "mobile/ui/btstyle.h"
 #include "mobile/ui/btwindowinterface.h"
@@ -43,6 +44,7 @@ void register_gml_classes() {
     qmlRegisterType<btm::BtStyle>("BibleTime", 1, 0, "BtStyle");
     qmlRegisterType<btm::InstallManager>("BibleTime", 1, 0, "InstallManager");
     qmlRegisterType<btm::ModuleInterface>("BibleTime", 1, 0, "ModuleInterface");
+    qmlRegisterType<btm::SearchModel>("BibleTime", 1, 0, "SearchModel");
 }
 
 btm::ViewManager* getViewManager() {

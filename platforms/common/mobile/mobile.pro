@@ -13,8 +13,10 @@ SOURCES += \
     ../../../src/mobile/bookshelfmanager/installsourcesmanager.cpp \
     ../../../src/mobile/btmmain.cpp \
     ../../../src/mobile/keychooser/bookkeychooser.cpp \
+    ../../../src/mobile/keychooser/keynamechooser.cpp \
     ../../../src/mobile/keychooser/versechooser.cpp \
     ../../../src/mobile/models/roleitemmodel.cpp \
+    ../../../src/mobile/models/searchmodel.cpp \
     ../../../src/mobile/sessionmanager/sessionmanager.cpp \
     ../../../src/mobile/ui/btstyle.cpp \
     ../../../src/mobile/ui/btwindowinterface.cpp \
@@ -36,8 +38,10 @@ HEADERS += \
     ../../../src/mobile/bookshelfmanager/installsourcesmanager.h \
     ../../../src/mobile/btmmain.h \
     ../../../src/mobile/keychooser/bookkeychooser.h \
+    ../../../src/mobile/keychooser/keynamechooser.h \
     ../../../src/mobile/keychooser/versechooser.h \
     ../../../src/mobile/models/roleitemmodel.h \
+    ../../../src/mobile/models/searchmodel.h \
     ../../../src/mobile/sessionmanager/sessionmanager.h \
     ../../../src/mobile/ui/btstyle.h \
     ../../../src/mobile/ui/btwindowinterface.h \
@@ -57,6 +61,7 @@ OTHER_FILES += \
     ../../../src/mobile/qml/ListWorksView.qml \
     ../../../src/mobile/qml/FontSizeSlider.qml \
     ../../../src/mobile/qml/InstallManagerChooser.qml \
+    ../../../src/mobile/qml/KeyNameChooser.qml \
     ../../../src/mobile/qml/MenuView.qml \
     ../../../src/mobile/qml/Settings.qml \
     ../../../src/mobile/qml/Menus.qml \

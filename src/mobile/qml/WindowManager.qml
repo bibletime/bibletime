@@ -71,6 +71,8 @@ Rectangle {
             component = Qt.createComponent("Window.qml");
         else if (category == "Books")
             component = Qt.createComponent("Window.qml");
+        else if (category == "Lexicons and Dictionaries")
+            component = Qt.createComponent("Window.qml");
         else {
             console.log(category, " are not yet supported.");
             return;

@@ -13,6 +13,7 @@ class BtModuleTextModel;
 namespace btm {
 
 class BookKeyChooser;
+class KeyNameChooser;
 class VerseChooser;
 
 class BtWindowInterface : public QObject {
@@ -59,6 +60,7 @@ signals:
 private slots:
     void referenceChanged();
     void referenceChosen();
+    void referenceChosen(int index);
 
 private:
     const CSwordModuleInfo* module() const;
@@ -68,6 +70,7 @@ private:
     RoleItemModel* m_textModel;
     BtModuleTextModel* m_moduleTextModel;
     BookKeyChooser* m_bookKeyChooser;
+    KeyNameChooser* m_keyNameChooser;
     VerseChooser* m_verseKeyChooser;
 };
 

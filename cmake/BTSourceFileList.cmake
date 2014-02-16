@@ -461,6 +461,8 @@ SET(bibletime_SRC_MOBILE_SOURCES
 SET(bibletime_SRC_MOBILE_MODEL_SOURCES
     src/mobile/models/roleitemmodel.cpp
     src/mobile/models/roleitemmodel.h
+    src/mobile/models/searchmodel.cpp
+    src/mobile/models/searchmodel.h
 )
 
 SET(bibletime_SRC_MOBILE_SESSIONMANAGER_SOURCES
@@ -533,6 +535,7 @@ SET(bibletime_MOBILE_QML_FILES
     src/mobile/qml/GridChooser.qml
     src/mobile/qml/ImageButton.qml
     src/mobile/qml/InstallManagerChooser.qml
+    src/mobile/qml/KeyNameChooser.qml
     src/mobile/qml/ListTextView.qml
     src/mobile/qml/ListWorksView.qml
     src/mobile/qml/main.qml

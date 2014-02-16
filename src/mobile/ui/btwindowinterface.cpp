@@ -4,6 +4,7 @@
 #include "backend/config/btconfig.h"
 #include "backend/drivers/cswordbiblemoduleinfo.h"
 #include "backend/drivers/cswordbookmoduleinfo.h"
+#include "backend/drivers/cswordlexiconmoduleinfo.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/keys/cswordkey.h"
 #include "backend/keys/cswordtreekey.h"
@@ -12,8 +13,9 @@
 #include "backend/rendering/centrydisplay.h"
 #include "backend/rendering/cdisplayrendering.h"
 #include "mobile/btmmain.h"
-#include "mobile/keychooser/versechooser.h"
 #include "mobile/keychooser/bookkeychooser.h"
+#include "mobile/keychooser/keynamechooser.h"
+#include "mobile/keychooser/versechooser.h"
 #include "mobile/ui/modulechooser.h"
 #include "mobile/ui/viewmanager.h"
 #include <QDebug>
@@ -33,6 +35,7 @@ BtWindowInterface::BtWindowInterface(QObject* parent)
       m_textModel(new RoleItemModel()),
       m_moduleTextModel(new BtModuleTextModel(this)),
       m_bookKeyChooser(0),
+      m_keyNameChooser(0),
       m_verseKeyChooser(0) {
 
     QtQuick2ApplicationViewer* viewer = getViewManager()->getViewer();
@@ -43,25 +46,10 @@ BtWindowInterface::BtWindowInterface(QObject* parent)
     m_bookKeyChooser = new BookKeyChooser(viewer, this);
     ok = connect(m_bookKeyChooser, SIGNAL(referenceChanged()), this, SLOT(referenceChosen()));
     Q_ASSERT(ok);
-}
 
-static QString getKeyText(CSwordKey* key) {
-    QString keyText;
-    if ( ! key)
-        return keyText;
-
-    CSwordVerseKey* verseKey = dynamic_cast<CSwordVerseKey*>(key);
-    if (verseKey) {
-        keyText = verseKey->key();
-        return keyText;
-    }
-
-    CSwordTreeKey* treeKey = dynamic_cast<CSwordTreeKey*>(key);
-    if (treeKey) {
-        keyText = treeKey->key();
-        return keyText;
-    }
-    return keyText;
+    m_keyNameChooser = new KeyNameChooser(viewer, this);
+    ok = connect(m_keyNameChooser, SIGNAL(referenceChanged(int)), this, SLOT(referenceChosen(int)));
+    Q_ASSERT(ok);
 }
 
 void BtWindowInterface::updateModel() {
@@ -74,6 +62,13 @@ void BtWindowInterface::updateModel() {
 static bool moduleIsBook(const CSwordModuleInfo* module) {
     CSwordModuleInfo::Category category = module->category();
     if (category == CSwordModuleInfo::Books)
+        return true;
+    return false;
+}
+
+static bool moduleIsLexicon(const CSwordModuleInfo* module) {
+    CSwordModuleInfo::Category category = module->category();
+    if (category == CSwordModuleInfo::Lexicons)
         return true;
     return false;
 }
@@ -104,6 +99,10 @@ int BtWindowInterface::getCurrentModelIndex() const {
         if(p != key)
             return key.getIndex()/4;
     }
+    else if (moduleIsLexicon(module())){        const CSwordLexiconModuleInfo *li = qobject_cast<const CSwordLexiconModuleInfo*>(m_key->module());
+        int index = li->entries().indexOf(m_key->key());
+        return index;
+    }
     return 0;
 }
 
@@ -118,6 +117,7 @@ void BtWindowInterface::setReference(const QString& key) {
     if (m_key) {
         m_key->setKey(key);
         referenceChanged();
+        qDebug() << "setRef";
     }
 }
 
@@ -256,6 +256,10 @@ void BtWindowInterface::changeReference() {
         parseKey(treeKey, &keyPath, &children);
         m_bookKeyChooser->open();
     }
+    CSwordLDKey* lexiconKey = dynamic_cast<CSwordLDKey*>(m_key);
+    if (lexiconKey != 0) {
+        m_keyNameChooser->open(m_moduleTextModel);
+    }
 }
 
 void BtWindowInterface::referenceChanged() {
@@ -265,6 +269,14 @@ void BtWindowInterface::referenceChanged() {
 void BtWindowInterface::referenceChosen() {
     emit referenceChange();
     updateModel();
+    emit currentModelIndexChanged();
+}
+
+void BtWindowInterface::referenceChosen(int index) {
+    updateKeyText(index);
+    QString keyName = m_moduleTextModel->indexToKeyName(index);
+    m_key->setKey(keyName);
+    setReference(keyName);
     emit currentModelIndexChanged();
 }
 
@@ -300,7 +312,7 @@ QVariant BtWindowInterface::getTextModel() {
 
 void BtWindowInterface::updateKeyText(int index) {
     QString keyName = m_moduleTextModel->indexToKeyName(index);
-        setReference(keyName);
+    setReference(keyName);
 }
 
 } // end namespace

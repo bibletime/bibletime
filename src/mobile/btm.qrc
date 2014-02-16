@@ -7,6 +7,7 @@
         <file>qml/GridChooser.qml</file>
         <file>qml/ImageButton.qml</file>
         <file>qml/InstallManagerChooser.qml</file>
+        <file>qml/KeyNameChooser.qml</file>
         <file>qml/leftarrow.svg</file>
         <file>qml/ListTextView.qml</file>
         <file>qml/ListWorksView.qml</file>
