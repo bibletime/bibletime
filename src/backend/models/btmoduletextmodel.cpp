@@ -106,6 +106,7 @@ QVariant BtModuleTextModel::lexiconData(const QModelIndex & index, int role) con
         Rendering::CEntryDisplay entryDisplay;
         QString text = entryDisplay.text(moduleList, keyName,
             m_displayOptions, m_filterOptions);
+        text.replace("#CHAPTERTITLE#", "");
         return text;
     }
     else if (role == ModuleEntry::ReferenceRole){
@@ -126,6 +127,7 @@ QVariant BtModuleTextModel::bookData(const QModelIndex & index, int role) const 
         QString text = entryDisplay.textKeyRendering(moduleList, key.key(),
                                                      m_displayOptions, m_filterOptions,
                                                      Rendering::CTextRendering::KeyTreeItem::Settings::SimpleKey);
+        text.replace("#CHAPTERTITLE#", "");
         return text;
     }
     return QString();
@@ -139,17 +141,15 @@ QVariant BtModuleTextModel::verseData(const QModelIndex & index, int role) const
         if (verse == 0)
             return QString();
         QString text;
-        text += "<style type=\"text/css\">";
-        text += ".title { font-weight: bold; font-size: x-large; }";
-        text += ".sectiontitle { font-weight: bold; font-size: medium; }";
-        text += ".jesuswords { color:#9C2323; }";
-        text += "</style>";
-        if (verse == 1) {
-            text += "<center><div class=\"title\">" + key.book() + " " + QString::number(key.getChapter()) + "</div></center>";
-        }
+
+        QString chapterTitle;
+        if (verse == 1)
+            chapterTitle = key.book() + " " + QString::number(key.getChapter());
+
         text += Rendering::CEntryDisplay().textKeyRendering(m_moduleInfoList,
             key.key(), m_displayOptions, m_filterOptions,
             Rendering::CTextRendering::KeyTreeItem::Settings::SimpleKey);
+        text.replace("#CHAPTERTITLE#", chapterTitle);
         return text;
     }
     return QString();
