@@ -117,7 +117,6 @@ void BtWindowInterface::setReference(const QString& key) {
     if (m_key) {
         m_key->setKey(key);
         referenceChanged();
-        qDebug() << "setRef";
     }
 }
 

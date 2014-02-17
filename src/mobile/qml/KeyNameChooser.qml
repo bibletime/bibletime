@@ -41,7 +41,7 @@ Rectangle {
 
             Text {
                 text: "Search "
-                height: sbtStyle.pixelsPerMillimeterY * 6
+                height: btStyle.pixelsPerMillimeterY * 6
                 verticalAlignment: TextEdit.AlignVCenter
                 font.pointSize: btStyle.uiFontPointSize
                 color: "black"

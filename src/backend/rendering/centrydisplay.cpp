@@ -40,7 +40,7 @@ const QString CEntryDisplay::textKeyRendering(
         CTextRendering::KeyTreeItem::Settings::KeyRenderingFace keyRendering) {
 
     if (keyName.isEmpty())
-        return QString("x");
+        return QString("");
 
     CDisplayRendering render(displayOptions, filterOptions);
 
