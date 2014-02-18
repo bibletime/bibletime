@@ -87,7 +87,7 @@ void BtStyle::setStyle(int style) {
         setMenuText(QColor(0,0,0));
         setMenuHeight(40);
 
-        setToolbarColor(QColor(200,200,200));
+        setToolbarColor(QColor(210,235,255));
         setToolbarButton(QColor(255,255,255));
         setToolbarButtonText(QColor(0,0,0));
         setToolbarTextPointSize(10);

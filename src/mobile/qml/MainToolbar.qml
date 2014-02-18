@@ -4,7 +4,7 @@ import BibleTime 1.0
 Rectangle {
     id: toolbar
 
-    color: "#a0d0ff"
+    color: btStyle.toolbarColor
     z:0
 
     signal buttonClicked

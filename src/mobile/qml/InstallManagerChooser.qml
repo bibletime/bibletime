@@ -13,7 +13,7 @@ Rectangle {
     property int spacing: 12
 
     objectName: "installManager"
-    color: "#a0d0ff"
+    color: btStyle.toolbarColor
     border.color: "black"
     border.width: 2
 

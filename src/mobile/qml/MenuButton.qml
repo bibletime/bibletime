@@ -6,7 +6,7 @@ Rectangle {
 
     signal buttonClicked
 
-    color: "#a0d0ff"
+    color: btStyle.toolbarColor
 
     BtStyle {
         id: btStyle
