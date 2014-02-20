@@ -10,8 +10,8 @@ Rectangle {
     property int buttonHeight: 30
     property int topMargin: 10
     property int leftMargin: 10
-    property int titleHeight: 20
-    property int space:5
+    property int titleHeight: 10
+    property int space: 8
     property string selected: ""
     property string titleText: ""
     property int maxLength: 0
@@ -102,13 +102,8 @@ Rectangle {
                 textHeight: btStyle.uiFontPointSize
                 buttonWidth: gridChooser.buttonWidth
                 buttonHeight: gridChooser.buttonHeight
-                textColor: {
-                    if (text == gridChooser.selected)
-                        return btStyle.buttonHighlightedText
-                    else
-                        return btStyle.buttonTextColor
-                }
-                buttonColor: btStyle.buttonColor
+                textColor: btStyle.buttonTextColor
+                buttonColor: (text == gridChooser.selected) ? btStyle.buttonBackground : "white"
                 activeButtonColor: btStyle.buttonTextColor
                 onClicked: gridChooser.accept(text)
             }

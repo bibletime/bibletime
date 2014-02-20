@@ -67,7 +67,7 @@ static void emitChanged() {
 void BtStyle::setStyle(int style) {
     if (style == BtStyle::gnome) {
         setButtonColor(QColor(0,0,0));
-        setButtonBackground(QColor(237, 237, 237));
+        setButtonBackground(QColor(190,220,255));
         setButtonTextColor(QColor(0,0,0));
         setButtonHighlightedText(QColor(0,0,255));
         setButtonBorder(QColor(80,80,0));
@@ -87,7 +87,7 @@ void BtStyle::setStyle(int style) {
         setMenuText(QColor(0,0,0));
         setMenuHeight(40);
 
-        setToolbarColor(QColor(210,235,255));
+        setToolbarColor(QColor(190,220,255));
         setToolbarButton(QColor(255,255,255));
         setToolbarButtonText(QColor(0,0,0));
         setToolbarTextPointSize(10);

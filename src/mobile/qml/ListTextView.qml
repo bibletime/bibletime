@@ -73,8 +73,9 @@ Rectangle {
 
                 property bool selected: ListView.isCurrentItem ? true : false
                 objectName: "entry"
+
                 color: (highlight && ListView.isCurrentItem) ? "#ffeeaa" : "white"
-                border.width: 1
+                border.width: buttonMouseArea.pressed ? 5 :1
                 border.color: "darkgray"
                 width: parent.width
                 height: {
@@ -102,7 +103,13 @@ Rectangle {
         }
 
         MouseArea {
+            id: buttonMouseArea
+
             anchors.fill: listView
+            onPressed: {
+
+            }
+
             onClicked: itemSelected()
 
             function itemSelected() {
