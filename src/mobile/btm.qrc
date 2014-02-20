@@ -18,6 +18,7 @@
         <file>qml/MenuView.qml</file>
         <file>qml/ModuleChooser.qml</file>
         <file>qml/Progress.qml</file>
+        <file>qml/QuitQuestion.qml</file>
         <file>qml/rightarrow.svg</file>
         <file>qml/Settings.qml</file>
         <file>qml/StartupBookshelfManager.qml</file>

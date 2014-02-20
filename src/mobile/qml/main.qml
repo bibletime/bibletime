@@ -26,9 +26,8 @@ Rectangle {
 
     Keys.onReleased: {
         if (event.key == Qt.Key_Back) {
-//            console.log("Back button captured - wunderbar !");
-            event.accepted = true
-            Qt.quit();
+            event.accepted = true;
+            quitQuestion.visible = true;
         }
     }
 
@@ -324,5 +323,9 @@ Rectangle {
         onAccepted: {
             btStyle.textFontPointSize = pointSize;
         }
+    }
+
+    QuitQuestion {
+        id: quitQuestion
     }
 }

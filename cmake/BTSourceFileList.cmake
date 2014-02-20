@@ -549,6 +549,7 @@ SET(bibletime_MOBILE_QML_FILES
     src/mobile/qml/MenuView.qml
     src/mobile/qml/ModuleChooser.qml
     src/mobile/qml/Progress.qml
+    src/mobile/qml/QuitQuestion.qml
     src/mobile/qml/Settings.qml
     src/mobile/qml/StartupBookshelfManager.qml
     src/mobile/qml/FontSizeSlider.qml

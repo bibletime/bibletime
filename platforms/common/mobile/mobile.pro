@@ -68,6 +68,7 @@ OTHER_FILES += \
     ../../../src/mobile/qml/GridChooser.qml \
     ../../../src/mobile/qml/ModuleChooser.qml \
     ../../../src/mobile/qml/Progress.qml \
+    ../../../src/mobile/qml/QuitQuestion.qml \
     ../../../src/mobile/qml/GridChooserButton.qml \
     ../../../src/mobile/qml/ContextMenu.qml \
     ../../../src/mobile/qml/ImageButton.qml \
