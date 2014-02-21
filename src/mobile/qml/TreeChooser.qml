@@ -16,6 +16,13 @@ Rectangle {
     signal next(string childText)
     signal select(string childText)
 
+    Keys.onReleased: {
+        if (event.key == Qt.Key_Back) {
+            event.accepted = true;
+            treeChooser.visible = false;
+        }
+    }
+
     Rectangle {
         id: pathArea
 

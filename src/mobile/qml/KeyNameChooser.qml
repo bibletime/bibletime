@@ -14,6 +14,13 @@ Rectangle {
 
     signal itemSelected(int index)
 
+    Keys.onReleased: {
+        if (event.key == Qt.Key_Back) {
+            event.accepted = true;
+            top.visible = false;
+        }
+    }
+
     BtStyle {
         id: btStyle
     }

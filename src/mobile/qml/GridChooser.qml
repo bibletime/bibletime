@@ -17,7 +17,15 @@ Rectangle {
     property int maxLength: 0
 
     signal accepted(string choosenText);
-    signal canceled();
+    signal backup();
+
+    Keys.onReleased: {
+        if (event.key == Qt.Key_Back) {
+            event.accepted = true;
+            gridChooser.visible = false;
+            backup();
+        }
+    }
 
     onVisibleChanged: {
 

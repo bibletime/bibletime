@@ -24,6 +24,18 @@ Rectangle {
         installManager.openChooser();
     }
 
+    Keys.forwardTo: [
+        gridChooser,
+        moduleChooser,
+        mainMenus,
+        windowArrangementMenus,
+        viewWindowsMenus,
+        closeWindowsMenus,
+        installManagerChooser,
+        keyNameChooser,
+        treeChooser
+    ]
+
     Keys.onReleased: {
         if (event.key == Qt.Key_Back) {
             event.accepted = true;

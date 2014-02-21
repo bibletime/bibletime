@@ -16,6 +16,13 @@ Rectangle {
 
     signal menuSelected(string action)
 
+    Keys.onReleased: {
+        if (event.key == Qt.Key_Back) {
+            event.accepted = true;
+            menu.visible = false;
+        }
+    }
+
     visible: false
     anchors.fill: parent
     color: "#f0f0f0"

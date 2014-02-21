@@ -21,6 +21,13 @@ Rectangle {
     border.color: "black"
     border.width: 2
 
+    Keys.onReleased: {
+        if (event.key == Qt.Key_Back) {
+            event.accepted = true;
+            moduleChooser.visible = false;
+        }
+    }
+
     onVisibleChanged: {
         if (visible == true) {
             moduleInterface.updateCategoryAndLanguageModels();
