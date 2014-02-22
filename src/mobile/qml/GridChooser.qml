@@ -32,7 +32,7 @@ Rectangle {
     signal backup();
 
     Keys.onReleased: {
-        if (event.key == Qt.Key_Back) {
+        if (event.key == Qt.Key_Back && gridChooser.visible == true) {
             event.accepted = true;
             gridChooser.visible = false;
             backup();

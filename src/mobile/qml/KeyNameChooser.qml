@@ -27,7 +27,7 @@ Rectangle {
     signal itemSelected(int index)
 
     Keys.onReleased: {
-        if (event.key == Qt.Key_Back) {
+        if (event.key == Qt.Key_Back && top.visible == true) {
             event.accepted = true;
             top.visible = false;
         }

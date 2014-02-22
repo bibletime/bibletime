@@ -29,7 +29,7 @@ Rectangle {
     signal select(string childText)
 
     Keys.onReleased: {
-        if (event.key == Qt.Key_Back) {
+        if (event.key == Qt.Key_Back && treeChooser.visible == true) {
             event.accepted = true;
             treeChooser.visible = false;
         }

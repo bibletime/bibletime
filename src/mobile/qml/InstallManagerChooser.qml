@@ -38,7 +38,7 @@ Rectangle {
     signal refreshLists();
 
     Keys.onReleased: {
-        if (event.key == Qt.Key_Back) {
+        if (event.key == Qt.Key_Back && installManager.visible == true) {
             event.accepted = true;
             installManager.visible = false;
         }
