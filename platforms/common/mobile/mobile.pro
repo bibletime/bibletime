@@ -83,6 +83,10 @@ OTHER_FILES += \
     ../../../src/mobile/qml/MainToolbar.qml \
     ../../../src/mobile/qml/TreeChooser.qml
 
+lupdate_only {
+    SOURCES = ../../../src/mobile/qml/*.qml
+}
+
 RESOURCES += \
     ../../../src/mobile/btm.qrc \
 
