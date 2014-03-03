@@ -54,7 +54,7 @@ Rectangle {
             border.width: 2
 
             Text {
-                text: title
+                text: qsTranslate("main", title)
                 font.pointSize: btStyle.uiFontPointSize
                 color: "black"
                 anchors.fill: parent

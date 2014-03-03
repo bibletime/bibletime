@@ -23,9 +23,7 @@ Rectangle {
     Text {
         width: parent.width
         anchors.fill: parent
-        text: "There are currently no works installed. Please click" +
-              " on the Ok button below to use the Bookshelf Manager to" +
-              " install new works."
+        text: qsTr("There are currently no works installed. Please click on the Ok button below to use the Bookshelf Manager to install new works.")
         verticalAlignment: Text.AlignVCenter
         horizontalAlignment: Text.AlignHCenter
         wrapMode: Text.WordWrap
@@ -49,7 +47,7 @@ Rectangle {
             border.width: 4
 
             Text {
-                text: "Ok"
+                text: qsTr("Ok")
                 anchors.centerIn: parent
                 font.pointSize: btStyle.uiFontPointSize
             }
@@ -70,7 +68,7 @@ Rectangle {
             border.width: 4
 
             Text {
-                text: "Cancel"
+                text: qsTr("Cancel")
                 anchors.centerIn: parent
                 font.pointSize: btStyle.uiFontPointSize
             }

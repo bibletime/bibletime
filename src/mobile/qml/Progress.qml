@@ -62,7 +62,7 @@ Rectangle {
 
         Text {
             anchors.centerIn: parent
-            text: "Cancel"
+            text: qsTranslate("Progress", "Cancel")
             font.pointSize: btStyle.uiFontPointSize
 
         }

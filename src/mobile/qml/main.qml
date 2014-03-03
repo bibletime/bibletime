@@ -316,7 +316,7 @@ Rectangle {
     FontSizeSlider {
         id: uiFontPointSize
         visible: false
-        title: "User Interface Font Size"
+        title: QT_TR_NOOP("User Interface Font Size")
 
         onVisibleChanged: {
             if (visible)
@@ -334,7 +334,7 @@ Rectangle {
     FontSizeSlider {
         id: textFontPointSize
         visible: false
-        title: "Text Font Size"
+        title: QT_TR_NOOP("Text Font Size")
 
         onVisibleChanged: {
             if (visible)

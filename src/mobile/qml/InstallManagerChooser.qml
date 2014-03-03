@@ -61,7 +61,7 @@ Rectangle {
                 sourceChanged(currentIndex)
             }
 
-            title: "Source"
+            title: qsTranslate("InstallManagerChooser","Source")
             width: parent.width/3 - grid.spacing
             height: installManager.height/3
         }
@@ -69,7 +69,7 @@ Rectangle {
         ListTextView {
             id: categoryView
 
-            title: "Category"
+            title: qsTranslate("InstallManagerChooser","Category")
             width: parent.width/3 - grid.spacing
             height: installManager.height/3
             onItemSelected: {
@@ -80,7 +80,7 @@ Rectangle {
         ListTextView {
             id: languageView
 
-            title: "Language"
+            title: qsTranslate("InstallManagerChooser","Language")
             width: parent.width/3 - grid.spacing
             height: installManager.height/3
             onItemSelected: {
@@ -92,7 +92,7 @@ Rectangle {
     ListWorksView {
         id: worksView
 
-        title: "Work"
+        title: qsTranslate("InstallManagerChooser","Work")
         width: parent.width - 2 * installManager.spacing
         anchors.top: grid.bottom
         anchors.left: parent.left
@@ -115,7 +115,7 @@ Rectangle {
         border.color: "black"
 
         Text {
-            text: "Refresh Lists"
+            text: qsTranslate("InstallManagerChooser", "Refresh Lists")
             anchors.centerIn: parent
             font.pointSize: btStyle.uiFontPointSize
         }
@@ -138,7 +138,7 @@ Rectangle {
         border.color: "black"
 
         Text {
-            text: "Install / Remove"
+            text: qsTranslate("InstallManagerChooser", "Install / Remove")
             anchors.centerIn: parent
             font.pointSize: btStyle.uiFontPointSize
         }
@@ -161,7 +161,7 @@ Rectangle {
         border.color: "black"
 
         Text {
-            text: "Cancel"
+            text: qsTranslate("InstallManagerChooser", "Cancel")
             anchors.centerIn: parent
             font.pointSize: btStyle.uiFontPointSize
         }

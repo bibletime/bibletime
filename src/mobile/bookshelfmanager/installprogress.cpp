@@ -93,13 +93,13 @@ QString InstallProgress::getModuleName(int moduleIndex) {
 void InstallProgress::slotInstallStarted(int moduleIndex) {
     Q_ASSERT(moduleIndex == m_nextInstallIndex);
     m_nextInstallIndex++;
-    QString message = "Installing " + getModuleName(moduleIndex);
+    QString message = tr("Installing") + " " + getModuleName(moduleIndex);
     m_progressObject->setProperty("text", message);
 }
 
 void InstallProgress::slotDownloadStarted(int moduleIndex) {
     m_progressObject->setProperty("value", 0);
-    QString message = "Downloading " + getModuleName(moduleIndex);
+    QString message = tr("Downloading")+ " " + getModuleName(moduleIndex);
     m_progressObject->setProperty("text", message);
 }
 

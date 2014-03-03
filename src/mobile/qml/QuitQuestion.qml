@@ -26,7 +26,7 @@ Rectangle {
         height: contentHeight
         width: parent.width
         anchors.centerIn: parent
-        text: "Are you sure you want to quit?"
+        text: QT_TR_NOOP("Are you sure you want to quit?")
         verticalAlignment: Text.AlignVCenter
         horizontalAlignment: Text.AlignHCenter
         wrapMode: Text.WordWrap
@@ -51,7 +51,7 @@ Rectangle {
             border.width: 4
 
             Text {
-                text: "Yes"
+                text: QT_TR_NOOP("Yes")
                 anchors.centerIn: parent
                 font.pointSize: btStyle.uiFontPointSize
             }
@@ -72,7 +72,7 @@ Rectangle {
             border.width: 4
 
             Text {
-                text: "No"
+                text: QT_TR_NOOP("No")
                 anchors.centerIn: parent
                 font.pointSize: btStyle.uiFontPointSize
             }

@@ -32,7 +32,7 @@ Rectangle {
     height: btStyle.pixelsPerMillimeterY * 24
 
     Text {
-        text: title
+        text: qsTranslate("main", title)
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: parent.top
         anchors.topMargin: 10
@@ -113,7 +113,7 @@ Rectangle {
             border.width: 1
 
             Text {
-                text: "Ok"
+                text: qsTr("Ok")
                 anchors.centerIn: parent
                 font.pointSize: btStyle.uiFontPointSize
             }
@@ -133,7 +133,7 @@ Rectangle {
             border.width: 1
 
             Text {
-                text: "Cancel"
+                text: qsTr("Cancel")
                 anchors.centerIn: parent
                 font.pointSize: btStyle.uiFontPointSize
             }

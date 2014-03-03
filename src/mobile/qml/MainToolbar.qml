@@ -47,7 +47,7 @@ Rectangle {
         anchors.bottom: parent.bottom
         anchors.leftMargin: 20
         verticalAlignment: Text.AlignVCenter
-        text: "BibleTime Mobile"
+        text: qsTranslate("MainToolbar", "BibleTime Mobile")
     }
 
     MenuButton {

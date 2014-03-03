@@ -82,7 +82,7 @@ Rectangle {
         ListTextView {
             id: categoryView
 
-            title: "Category"
+            title: qsTranslate("ModuleChooser", "Category")
             width: grid.width/2 - grid.spacing
             height: grid.height
             onItemSelected: {
@@ -93,7 +93,7 @@ Rectangle {
         ListTextView {
             id: languageView
 
-            title: "Language"
+            title: qsTranslate("ModuleChooser", "Language")
             width: grid.width/2 - grid.spacing
             height: grid.height
             onItemSelected: {
@@ -105,7 +105,7 @@ Rectangle {
     ListTextView {
         id: worksView
 
-        title: "Work"
+        title: qsTranslate("ModuleChooser", "Work")
         width: parent.width - 2 * parent.spacing
         anchors.top: grid.bottom
         anchors.left: parent.left

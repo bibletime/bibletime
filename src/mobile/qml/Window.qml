@@ -202,7 +202,7 @@ Rectangle {
     ListModel {
         id: contextMenuModel
 
-        ListElement { title: "Text Font Size"; action: "textSize" }
+        ListElement { title: QT_TR_NOOP("Text Font Size"); action: "textSize" }
     }
 
     ContextMenu {

@@ -40,8 +40,8 @@ Rectangle {
     ListModel {
         id: settingsModel
 
-        ListElement { title: "Ui Font Size";   action: "uiSize" }
-        ListElement { title: "Window Arrangement";   action: "arrangement" }
+        ListElement { title: QT_TR_NOOP("Ui Font Size");   action: "uiSize" }
+        ListElement { title: QT_TR_NOOP("Window Arrangement");   action: "arrangement" }
     }
 
     ListView {
