@@ -38,6 +38,24 @@
     </qresource>
     <qresource prefix="/share/bibletime/locale">
         <file>qml/tab.png</file>
+        <file alias="mobile_ui_ar.qm">../../i18n/messages/mobile_ui_ar.qm</file>
+        <file alias="mobile_ui_cs.qm">../../i18n/messages/mobile_ui_cs.qm</file>
+        <file alias="mobile_ui_da.qm">../../i18n/messages/mobile_ui_da.qm</file>
+        <file alias="mobile_ui_de.qm">../../i18n/messages/mobile_ui_de.qm</file>
+        <file alias="mobile_ui_en_GB.qm">../../i18n/messages/mobile_ui_en_GB.qm</file>
+        <file alias="mobile_ui_es.qm">../../i18n/messages/mobile_ui_es.qm</file>
+        <file alias="mobile_ui_et.qm">../../i18n/messages/mobile_ui_et.qm</file>
+        <file alias="mobile_ui_fi.qm">../../i18n/messages/mobile_ui_fi.qm</file>
+        <file alias="mobile_ui_hu.qm">../../i18n/messages/mobile_ui_hu.qm</file>
+        <file alias="mobile_ui_it.qm">../../i18n/messages/mobile_ui_it.qm</file>
+        <file alias="mobile_ui_pl.qm">../../i18n/messages/mobile_ui_pl.qm</file>
+        <file alias="mobile_ui_pt_BR.qm">../../i18n/messages/mobile_ui_pt_BR.qm</file>
+        <file alias="mobile_ui_pt.qm">../../i18n/messages/mobile_ui_pt.qm</file>
+        <file alias="mobile_ui_ru.qm">../../i18n/messages/mobile_ui_ru.qm</file>
+        <file alias="mobile_ui_sk.qm">../../i18n/messages/mobile_ui_sk.qm</file>
+        <file alias="mobile_ui.qm">../../i18n/messages/mobile_ui.qm</file>
+        <file alias="mobile_ui_zh_TW.qm">../../i18n/messages/mobile_ui_zh_TW.qm</file>
+        <file alias="mobile_ui_C.qm">../../i18n/messages/mobile_ui_C.qm</file>
     </qresource>
     <qresource prefix="/share/bibletime/docs/handbook/en">
         <file>qml/tab.png</file>
@@ -99,16 +117,10 @@
         <file alias="sync.svg">../../pics/icons/sync.svg</file>
         <file alias="unlock.svg">../../pics/icons/unlock.svg</file>
     </qresource>
-    <qresource prefix="/">
-    </qresource>
+    <qresource prefix="/"/>
     <qresource prefix="/share/bibletime/display-templates">
-        <file alias="Basic.tmpl">../../src/display-templates/Basic-mobile.tmpl</file>
-        <file alias="Simple.css">../../src/display-templates/Simple.css</file>
-        <file alias="Blue.css">../../src/display-templates/Blue.css</file>
+        <file alias="Basic.tmpl">../display-templates/Basic-mobile.tmpl</file>
+        <file alias="Simple.css">../display-templates/Simple.css</file>
+        <file alias="Blue.css">../display-templates/Blue.css</file>
     </qresource>
 </RCC>
-
-
-
-
-
