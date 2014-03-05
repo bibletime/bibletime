@@ -17,6 +17,7 @@
 #include <QFileInfo>
 #include <QSettings>
 #include <QSharedPointer>
+#include <QTextDocument>
 #include "backend/config/btconfig.h"
 #include "backend/drivers/cswordlexiconmoduleinfo.h"
 #include "backend/keys/cswordkey.h"
@@ -860,8 +861,8 @@ QString CSwordModuleInfo::aboutText() const {
     for (ListConfigEntry::iterator it(entries.begin()); it != entries.end(); ++it)
         if (!config(*it).isEmpty())
             text += QString("<tr><td><b>%1</b></td><td>%2</td></tr>")
-                    .arg(entryMap[*it])
-                    .arg(config(*it));
+                    .arg(Qt::escape(entryMap[*it]))
+                    .arg(Qt::escape(config(*it)));
 
     text += "</table></font>";
 
