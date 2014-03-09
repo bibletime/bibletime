@@ -79,7 +79,8 @@ static bool moduleIsBook(const CSwordModuleInfo* module) {
 
 static bool moduleIsLexicon(const CSwordModuleInfo* module) {
     CSwordModuleInfo::Category category = module->category();
-    if (category == CSwordModuleInfo::Lexicons)
+    if (category == CSwordModuleInfo::Lexicons ||
+        category == CSwordModuleInfo::DailyDevotional)
         return true;
     return false;
 }
@@ -87,6 +88,7 @@ static bool moduleIsLexicon(const CSwordModuleInfo* module) {
 static bool moduleIsBibleOrCommentary(const CSwordModuleInfo* module) {
     CSwordModuleInfo::Category category = module->category();
     if (category == CSwordModuleInfo::Bibles ||
+            category == CSwordModuleInfo::Cult ||
             category == CSwordModuleInfo::Commentaries)
         return true;
     return false;

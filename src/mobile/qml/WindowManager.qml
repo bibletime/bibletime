@@ -77,13 +77,12 @@ Rectangle {
     }
 
     function openWindow(category, module, key) {
-        if (category == "Bibles")
-            component = Qt.createComponent("Window.qml");
-        else if (category == "Commentaries")
-            component = Qt.createComponent("Window.qml");
-        else if (category == "Books")
-            component = Qt.createComponent("Window.qml");
-        else if (category == "Lexicons and Dictionaries")
+        if (category == "Bibles"||
+            category == "Cults/Unorthodox" ||
+            category == "Commentaries" ||
+            category == "Books" ||
+            category == "Lexicons and Dictionaries" ||
+            category == "Daily Devotionals")
             component = Qt.createComponent("Window.qml");
         else {
             console.log(category, " are not yet supported.");
