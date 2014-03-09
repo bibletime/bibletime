@@ -15,6 +15,7 @@
 #include <QDebug>
 #include <QDir>
 #include <QFileInfo>
+#include <QRegExp>
 #include <QSettings>
 #include <QSharedPointer>
 #include <QTextDocument>
@@ -861,8 +862,8 @@ QString CSwordModuleInfo::aboutText() const {
     for (ListConfigEntry::iterator it(entries.begin()); it != entries.end(); ++it)
         if (!config(*it).isEmpty())
             text += QString("<tr><td><b>%1</b></td><td>%2</td></tr>")
-                    .arg(Qt::escape(entryMap[*it]))
-                    .arg(Qt::escape(config(*it)));
+                    .arg(QRegExp::escape(entryMap[*it]))
+                    .arg(QRegExp::escape(config(*it)));
 
     text += "</table></font>";
 
