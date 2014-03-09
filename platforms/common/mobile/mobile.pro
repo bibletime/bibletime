@@ -89,4 +89,5 @@ lupdate_only {
 
 RESOURCES += \
     ../../../src/mobile/btm.qrc \
+    ../../../i18n/messages/btm_translate.qrc
 
