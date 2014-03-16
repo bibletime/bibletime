@@ -144,6 +144,14 @@ INCLUDE_DIRECTORIES(
     ${CLucene_LIBRARY_DIR}            #CLucene/clucene-config.h
     ${Sword_INCLUDE_DIRS}
 )
+# Macros used by BTUITranslationLink.cmake amd BTUITranslation.cmake
+include("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTTranslationMacros.cmake")
+
+# Define rules to generate translation files and link them to
+# the executable using a qrc file.
+IF (${bibletime_LINK_TRANSLATION_FILES})
+    INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTUITranslationLink.cmake")
+ENDIF()
 
 #This must come before the target definition!
 LINK_DIRECTORIES(${CLucene_LIBRARY_DIR})
@@ -162,8 +170,10 @@ ELSE()
   SET_TARGET_PROPERTIES("bibletime" PROPERTIES OUTPUT_NAME "bibletime")
 ENDIF()
 
-# Define rules to generate ${bibletime_UI_translations} files
-INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTUITranslation.cmake")
+# Define rules to generate and install translation files
+IF (NOT ${bibletime_LINK_TRANSLATION_FILES})
+    INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTUITranslation.cmake")
+ENDIF()
 
 IF(Qt5Core_FOUND)
   TARGET_LINK_LIBRARIES("bibletime"

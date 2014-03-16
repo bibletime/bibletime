@@ -119,6 +119,7 @@ TRANSLATIONS += \
     ../../../i18n/messages/mobile_ui_es.ts \
     ../../../i18n/messages/mobile_ui_et.ts \
     ../../../i18n/messages/mobile_ui_fi.ts \
+    ../../../i18n/messages/mobile_ui_fr.ts \
     ../../../i18n/messages/mobile_ui_hu.ts \
     ../../../i18n/messages/mobile_ui_it.ts \
     ../../../i18n/messages/mobile_ui_pl.ts \

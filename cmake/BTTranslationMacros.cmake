@@ -12,10 +12,11 @@ endfunction()
 
 
 #bt_get_translation_executables(QT_LUPDATE_EXECUTABLE QT_LRELEASE_EXECUTABLE)
-function(BT_GET_TRANSLATION_EXECUTABLES lupdate lrelease)
+function(BT_GET_TRANSLATION_EXECUTABLES lupdate lrelease rcc)
     IF (Qt5Core_FOUND)
         SET(QT_LUPDATE_EXECUTABLE  ${Qt5_LUPDATE_EXECUTABLE})
         SET(QT_LRELEASE_EXECUTABLE ${Qt5_LRELEASE_EXECUTABLE})
+        SET(QT_RESOURCE_EXECUTABLE ${Qt5Core_RCC_EXECUTABLE})
     ELSE (Qt5Core_FOUND)
         FIND_PROGRAM(QT_LUPDATE_EXECUTABLE
             NAMES lupdate-qt4 lupdate
@@ -31,6 +32,7 @@ function(BT_GET_TRANSLATION_EXECUTABLES lupdate lrelease)
     ENDIF (Qt5Core_FOUND)
     SET(${lupdate}  ${QT_LUPDATE_EXECUTABLE}  PARENT_SCOPE)
     SET(${lrelease} ${QT_LRELEASE_EXECUTABLE} PARENT_SCOPE)
+    SET(${rcc} ${QT_RESOURCE_EXECUTABLE} PARENT_SCOPE)
 endfunction()
 
 # get a list of the ts files with full path and a list
@@ -43,7 +45,7 @@ function(BT_GET_TRANSLATION_FILELISTS
 )
     FILE(GLOB TS_FILES "${TS_DIR}/${TS_PREFIX}*.ts")
     FOREACH(TS_FILE_FULLPATH ${TS_FILES})
-        STRING(REGEX REPLACE "${TS_DIR}/bibletime_ui_(..(_..)?).ts" "\\1"
+        STRING(REGEX REPLACE "${TS_DIR}/${TS_PREFIX}(.+(_..)?).ts" "\\1"
                TS_LANG "${TS_FILE_FULLPATH}")
         SET(TS_LANGS ${TS_LANGS} ${TS_LANG})
         SET(QM_FILE "${TS_PREFIX}${TS_LANG}.qm")
@@ -55,21 +57,32 @@ endfunction()
 
 
 # creates the qm files in the build directory from the ts files in the source directory
-function(BT_CREATE_QM_FILES TS_FILES QM_FILES)
-    BT_GET_TRANSLATION_EXECUTABLES( Qt5_LUPDATE_EXECUTABLE QT_LRELEASE_EXECUTABLE )
+function(BT_CREATE_QM_FILES TS_FILES QM_FILES bibletime_LINK_TRANSLATION_FILES)
+    BT_GET_TRANSLATION_EXECUTABLES( QT_LUPDATE_EXECUTABLE QT_LRELEASE_EXECUTABLE QT_RCC_EXECUTABLE)
     list(LENGTH QM_FILES QM_Length)
     math(EXPR stop "${QM_Length}-1")
     FOREACH(Index RANGE 0 ${stop})
         LIST(GET TS_FILES ${Index} TS_FILE)
         LIST(GET QM_FILES ${Index} QM_FILE)
-        ADD_CUSTOM_COMMAND(
-            TARGET "bibletime"
-            POST_BUILD
-            COMMAND ${QT_LRELEASE_EXECUTABLE} "${TS_FILE}" -qm "${QM_FILE}"
-            WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
-            COMMENT "Updating UI translation for ${QM_FILE}"
-            VERBATIM
-        )
+        IF(${bibletime_LINK_TRANSLATION_FILES})
+            ADD_CUSTOM_COMMAND(
+                OUTPUT ${QM_FILE}
+                POST_BUILD
+                COMMAND ${QT_LRELEASE_EXECUTABLE} "${TS_FILE}" -qm "${QM_FILE}"
+                WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+                COMMENT "Updating UI translation for ${QM_FILE}"
+                VERBATIM
+            )
+        ELSE()
+            ADD_CUSTOM_COMMAND(
+                TARGET "bibletime"
+                POST_BUILD
+                COMMAND ${QT_LRELEASE_EXECUTABLE} "${TS_FILE}" -qm "${QM_FILE}"
+                WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+                COMMENT "Updating UI translation for ${QM_FILE}"
+                VERBATIM
+            )
+        ENDIF()
     ENDFOREACH()
 endfunction()
 
@@ -103,3 +116,26 @@ function(BT_UPDATE_TS_FILES)
     ADD_DEPENDENCIES(messages "messages_default")
 endfunction()
 
+    # copy translation qrc file to build dir
+function(BT_COPY_QRC_TO_BUILD_DIR QRC_FILE QRC_COPIED_FILE)
+    ADD_CUSTOM_COMMAND(
+        OUTPUT ${QRC_COPIED_FILE}
+        COMMAND ${CMAKE_COMMAND} -E copy ${QRC_FILE} ${QRC_COPIED_FILE}
+        MAIN_DEPENDENCY ${QRC_FILE}
+        COMMENT "Copying translation resource file: ${QRC_FILE}"
+        VERBATIM
+    )
+endfunction()
+
+    # run resource compiler on translation qrc file
+function(BT_RUN_RESOURCE_COMPILER QM_FILES QRC_COPIED_FILE QRC_CPP_FILE)
+    BT_GET_TRANSLATION_EXECUTABLES( QT_LUPDATE_EXECUTABLE QT_LRELEASE_EXECUTABLE QT_RCC_EXECUTABLE)
+    ADD_CUSTOM_COMMAND(
+        OUTPUT ${QRC_CPP_FILE}
+        COMMAND ${QT_RCC_EXECUTABLE}
+        ARGS ${rcc_options} ${QRC_COPIED_FILE} -o ${QRC_CPP_FILE}
+        MAIN_DEPENDENCY ${QM_COPIED_FILE}
+        DEPENDS ${QM_FILES} ${QRC_COPIED_FILE}
+        COMMENT "Compiling resource file: ${QRC_COPIED_FILE}"
+    )
+endfunction()
