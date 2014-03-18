@@ -757,7 +757,7 @@ QString CSwordModuleInfo::aboutText() const {
     QString text;
     text += "<table>";
 
-    text += QString("<tr><td><b>%1</b></td><td>%2</td><tr>")
+    text += QString("<tr><td><b>%1</b></td><td>%2</td></tr>")
             .arg(tr("Version"))
             .arg(m_cachedHasVersion
                  ? htmlEscape(config(CSwordModuleInfo::ModuleVersion))
