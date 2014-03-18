@@ -18,6 +18,7 @@
 #include "frontend/searchdialog/analysis/csearchanalysisitem.h"
 #include "frontend/searchdialog/analysis/csearchanalysislegenditem.h"
 #include "frontend/searchdialog/csearchdialog.h"
+#include "util/htmlescape.h"
 #include "util/tool.h"
 
 
@@ -223,6 +224,8 @@ unsigned int CSearchAnalysisScene::getCount(const QString &book,
 }
 
 void CSearchAnalysisScene::saveAsHTML() {
+    using util::tool::htmlEscape;
+
     typedef CSwordModuleSearch::Results::const_iterator RCI;
 
     const QString fileName = QFileDialog::getSaveFileName(0,
@@ -255,7 +258,7 @@ void CSearchAnalysisScene::saveAsHTML() {
     text += "</h1><p><span style=\"font-weight:bold\">";
     text += tr("Search text:");
     text += "</span>&nbsp;";
-    text += QRegExp::escape(CSearchDialog::getSearchDialog()->searchText());
+    text += htmlEscape(CSearchDialog::getSearchDialog()->searchText());
     text += "</p><table><caption>";
     text += tr("Results by work and book");
     text += "</caption><tr><th>";
@@ -264,7 +267,7 @@ void CSearchAnalysisScene::saveAsHTML() {
 
     for (RCI it = m_results.begin(); it != m_results.end(); ++it) {
         text += "<th>";
-        text += QRegExp::escape(it.key()->name());
+        text += htmlEscape(it.key()->name());
         text += "</th>";
     }
     text += "</tr>";
@@ -275,7 +278,7 @@ void CSearchAnalysisScene::saveAsHTML() {
     do {
         text += "<tr><td>";
         const QString keyBook(key.book());
-        text += QRegExp::escape(keyBook);
+        text += htmlEscape(keyBook);
         text += "</td>";
 
         int mi = 0; // Module index
