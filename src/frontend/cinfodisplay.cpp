@@ -29,6 +29,7 @@
 #include "bibletime.h"
 #include "frontend/crossrefrendering.h"
 #include "frontend/display/bthtmlreaddisplay.h"
+#include "util/htmlescape.h"
 
 // Sword includes:
 #include <listkey.h>
@@ -171,11 +172,13 @@ void CInfoDisplay::setInfo(const ListInfoData& list) {
 }
 
 void CInfoDisplay::setInfo(CSwordModuleInfo *module) {
+    using util::htmlEscape;
+
     if (module) {
         setInfo(tr("<div class=\"moduleinfo\"><h3>%1</h3><p>%2</p><p>Version: %3</p></div>")
-                .arg(module->name())
-                .arg(module->config(CSwordModuleInfo::Description))
-                .arg(module->config(CSwordModuleInfo::ModuleVersion)));
+                .arg(htmlEscape(module->name()))
+                .arg(htmlEscape(module->config(CSwordModuleInfo::Description)))
+                .arg(htmlEscape(module->config(CSwordModuleInfo::ModuleVersion))));
     } else {
         unsetInfo();
     }
@@ -194,7 +197,7 @@ const QString CInfoDisplay::decodeAbbreviation( const QString& data ) {
         QString("<div class=\"abbreviation\"><h3>%1: %2</h3><p>%3</p></div>")
         .arg(tr("Abbreviation"))
         .arg("text")
-        .arg(text));
+        .arg(util::htmlEscape(text)));
 
     return ret;
 }
@@ -307,7 +310,7 @@ const QString CInfoDisplay::decodeCrossReference( const QString& data ) {
            .arg(lang)
            .arg(tr("Cross references"))
            .arg(module ? ((module->textDirection() == CSwordModuleInfo::LeftToRight) ? "ltr" : "rtl") : "")
-                   .arg(RenderedText);
+                   .arg(util::htmlEscape(RenderedText));
 }
 
 /*!
@@ -362,7 +365,7 @@ const QString CInfoDisplay::decodeFootnote( const QString& data ) {
     return QString("<div class=\"footnoteinfo\" lang=\"%1\"><h3>%2</h3><p>%3</p></div>")
            .arg(module->language()->abbrev())
            .arg(tr("Footnote"))
-           .arg(text);
+           .arg(util::htmlEscape(text));
 }
 
 const QString CInfoDisplay::decodeStrongs( const QString& data ) {
@@ -393,8 +396,8 @@ const QString CInfoDisplay::decodeStrongs( const QString& data ) {
             QString("<div class=\"strongsinfo\" lang=\"%1\"><h3>%2: %3</h3><p>%4</p></div>")
             .arg(lang)
             .arg(tr("Strongs"))
-            .arg(*it)
-            .arg(text)
+            .arg(util::htmlEscape(*it))
+            .arg(util::htmlEscape(text))
         );
     }
 
@@ -471,8 +474,8 @@ const QString CInfoDisplay::decodeMorph( const QString& data ) {
         ret.append( QString("<div class=\"morphinfo\" lang=\"%1\"><h3>%2: %3</h3><p>%4</p></div>")
                     .arg(lang)
                     .arg(tr("Morphology"))
-                    .arg(value)
-                    .arg(text)
+                    .arg(util::htmlEscape(value))
+                    .arg(util::htmlEscape(text))
                   );
     }
 
@@ -494,8 +497,8 @@ const QString CInfoDisplay::getWordTranslation( const QString& data ) {
     QString ret = QString("<div class=\"translationinfo\" lang=\"%1\"><h3>%2: %3</h3><p>%4</p></div>")
                   .arg(module->language()->abbrev())
                   .arg(tr("Word lookup"))
-                  .arg(data)
-                  .arg(key->renderedText());
+                  .arg(util::htmlEscape(data))
+                  .arg(util::htmlEscape(key->renderedText()));
 
     return ret;
 }
