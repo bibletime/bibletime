@@ -19,7 +19,6 @@
 
 
 namespace util {
-namespace tool {
 
 inline QString htmlEscape(const QString & str) {
 #if QT_VERSION < 0x050000
@@ -29,7 +28,6 @@ inline QString htmlEscape(const QString & str) {
 #endif
 }
 
-} /* namespace tool { */
 } /* namespace util { */
 
 #endif /* UTIL_HTMLESCAPE_H */

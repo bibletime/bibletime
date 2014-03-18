@@ -752,7 +752,7 @@ Rendering::CEntryDisplay * CSwordModuleInfo::getDisplay() const {
 }
 
 QString CSwordModuleInfo::aboutText() const {
-    using util::tool::htmlEscape;
+    using util::htmlEscape;
 
     static const QString row("<tr><td><b>%1</b></td><td>%2</td></tr>");
 

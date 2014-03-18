@@ -224,7 +224,7 @@ unsigned int CSearchAnalysisScene::getCount(const QString &book,
 }
 
 void CSearchAnalysisScene::saveAsHTML() {
-    using util::tool::htmlEscape;
+    using util::htmlEscape;
 
     typedef CSwordModuleSearch::Results::const_iterator RCI;
 
