@@ -142,22 +142,26 @@ const QString CSearchAnalysisItem::getToolTip() {
     /// \todo Fix that loop
     int i = 0;
     for (RCI it = m_results.begin(); it != m_results.end(); ++it) {
-        const CSwordModuleInfo *info = it.key();
-        const QColor c = CSearchAnalysisScene::getColor(i);
+        const CSwordModuleInfo * const info = it.key();
 
-        toolTipString.append(
-            QString("<tr bgcolor=\"white\"><td><b><font color=\"%1\">%2</font></b></td><td>%3 (%4%)</td></tr>")
-            .arg(c.name())
-            .arg(info ? info->name() : QString::null)
-            .arg( m_resultCountArray[i] )
-            .arg( (info && m_resultCountArray[i]) ? ((double)m_resultCountArray[i] / (double)it.value().getCount())*(double)100 : 0.0, 0, 'g', 2)
-        );
+        const int count = it.value().getCount();
+        const double percent = (info && count)
+                             ? ((static_cast<double>(m_resultCountArray.at(i))
+                                 * static_cast<double>(100.0))
+                                / static_cast<double>(count))
+                             : 0.0;
+        toolTipString.append("<tr bgcolor=\"white\"><td><b><font color=\"")
+                     .append(CSearchAnalysisScene::getColor(i).name()).append("\">")
+                     .append(info ? info->name() : QString::null)
+                     .append("</font></b></td><td>")
+                     .append(m_resultCountArray.at(i))
+                     .append(" (")
+                     .append(QString::number(percent, 'g', 2))
+                     .append("%)</td></tr>");
         ++i;
     }
 
-    toolTipString += "</table>";
-
-    return toolTipString;
+    return toolTipString.append("</table>");
 }
 
 }
