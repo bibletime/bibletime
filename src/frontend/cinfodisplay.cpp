@@ -40,33 +40,36 @@ using namespace sword;
 
 namespace InfoDisplay {
 
-CInfoDisplay::CInfoDisplay(BibleTime *parent) : QWidget(parent), m_mainWindow(parent) {
-    QVBoxLayout* layout = new QVBoxLayout(this);
+CInfoDisplay::CInfoDisplay(BibleTime * parent)
+        : QWidget(parent)
+        , m_mainWindow(parent)
+{
+    QVBoxLayout * const layout = new QVBoxLayout(this);
     layout->setContentsMargins(2, 2, 2, 2); // Leave small border
     setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 
     m_htmlPart = new BtHtmlReadDisplay(0, this);
-    m_htmlPart->setMouseTracking(false); //we don't want strong/lemma/note mouse infos
+    m_htmlPart->setMouseTracking(false); // We don't want strong/lemma/note mouse infos
     m_htmlPart->view()->setAcceptDrops(false);
 
-    QAction* selectAllAction = new QAction(QIcon(), tr("Select all"), this);
+    QAction * const selectAllAction = new QAction(QIcon(), tr("Select all"), this);
     selectAllAction->setShortcut(QKeySequence::SelectAll);
-    QObject::connect(selectAllAction, SIGNAL(triggered()), this, SLOT(selectAll()) );
+    QObject::connect(selectAllAction, SIGNAL(triggered()),
+                     this,            SLOT(selectAll()));
 
-    QAction* copyAction = new QAction(tr("Copy"), this);
-    copyAction->setShortcut( QKeySequence(Qt::CTRL + Qt::Key_C) );
-    QObject::connect(copyAction, SIGNAL(triggered()), m_htmlPart->connectionsProxy(), SLOT(copySelection()) );
+    QAction * const copyAction = new QAction(tr("Copy"), this);
+    copyAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_C));
+    QObject::connect(copyAction,                     SIGNAL(triggered()),
+                     m_htmlPart->connectionsProxy(), SLOT(copySelection()));
 
-    QMenu* menu = new QMenu(this);
+    QMenu * const menu = new QMenu(this);
     menu->addAction(selectAllAction);
     menu->addAction(copyAction);
     m_htmlPart->installPopup(menu);
 
-    connect(
-        m_htmlPart->connectionsProxy(),
-        SIGNAL(referenceClicked(const QString&, const QString&)),
-        SLOT(lookupInfo(const QString&, const QString&))
-    );
+    QObject::connect(m_htmlPart->connectionsProxy(),
+                     SIGNAL(referenceClicked(const QString &, const QString &)),
+                     SLOT(lookupInfo(const QString &, const QString &)));
 
     layout->addWidget(m_htmlPart->view());
 
@@ -81,19 +84,17 @@ void CInfoDisplay::unsetInfo() {
                "moving the mouse.</small>"));
 }
 
-void CInfoDisplay::setInfo(const QString &data, const QString &lang) {
-    CDisplayTemplateMgr *mgr = CDisplayTemplateMgr::instance();
+void CInfoDisplay::setInfo(const QString & data, const QString & lang) {
+    CDisplayTemplateMgr * const mgr = CDisplayTemplateMgr::instance();
     Q_ASSERT(mgr != 0);
 
     CDisplayTemplateMgr::Settings settings;
     settings.pageCSS_ID = "infodisplay";
 
     QString div = "<div class=\"infodisplay\"";
-    if (!lang.isEmpty()) {
-        div.append(" lang=\"");
-        div.append(lang);
-        div.append("\"");
-    }
+    if (!lang.isEmpty())
+        div.append(" lang=\"").append(lang).append("\"");
+
     div.append(">");
 
     QString content(mgr->fillTemplate(CDisplayTemplateMgr::activeTemplateName(),
@@ -102,32 +103,32 @@ void CInfoDisplay::setInfo(const QString &data, const QString &lang) {
     m_htmlPart->setText(content);
 }
 
-void CInfoDisplay::lookupInfo(const QString &mod_name, const QString &key_text) {
+void CInfoDisplay::lookupInfo(const QString & mod_name,
+                              const QString & key_text)
+{
     qDebug() << "CInfoDisplay::lookup";
     qDebug() <<  mod_name <<  key_text;
-    CSwordModuleInfo* m = CSwordBackend::instance()->findModuleByName(mod_name);
+    CSwordModuleInfo * const m = CSwordBackend::instance()->findModuleByName(mod_name);
     Q_ASSERT(m);
     if (!m)
         return;
-    QSharedPointer<CSwordKey> key( CSwordKey::createInstance(m) );
+    QSharedPointer<CSwordKey> key(CSwordKey::createInstance(m));
     key->setKey(key_text);
 
     setInfo(key->renderedText(), m->language()->abbrev());
 }
 
-void CInfoDisplay::setInfo(const InfoType type, const QString& data) {
+void CInfoDisplay::setInfo(const InfoType type, const QString & data) {
     ListInfoData list;
-    list.append( qMakePair(type, data) );
-
+    list.append(qMakePair(type, data));
     setInfo(list);
 }
 
 
-void CInfoDisplay::setInfo(const ListInfoData& list) {
-    //if the widget is hidden it would be inefficient to render and display the data
-    if (!isVisible()) {
+void CInfoDisplay::setInfo(const ListInfoData & list) {
+    // If the widget is hidden it would be inefficient to render and display the data
+    if (!isVisible())
         return;
-    }
 
     if (list.isEmpty()) {
         m_htmlPart->setText("<html></html>");
@@ -138,40 +139,39 @@ void CInfoDisplay::setInfo(const ListInfoData& list) {
 
     ListInfoData::const_iterator end = list.end();
     for (ListInfoData::const_iterator it = list.begin(); it != end; ++it) {
-        switch ( (*it).first ) {
+        switch ((*it).first) {
             case Lemma:
-                text.append( decodeStrongs( (*it).second ) );
+                text.append(decodeStrongs((*it).second));
                 continue;
             case Morph:
-                text.append( decodeMorph( (*it).second ) );
+                text.append(decodeMorph((*it).second));
                 continue;
             case CrossReference:
-                text.append( decodeCrossReference( (*it).second ) );
+                text.append(decodeCrossReference((*it).second));
                 continue;
             case Footnote:
-                text.append( decodeFootnote( (*it).second ) );
+                text.append(decodeFootnote((*it).second));
                 continue;
             case WordTranslation:
-                text.append( getWordTranslation( (*it).second ) );
+                text.append(getWordTranslation((*it).second));
                 continue;
             case WordGloss:
-                //text.append( getWordTranslation( (*it).second ) );
+                //text.append(getWordTranslation((*it).second));
                 continue;
             case Abbreviation:
-                text.append( decodeAbbreviation( (*it).second ) );
+                text.append(decodeAbbreviation((*it).second));
                 continue;
             case Text:
-                text.append( (*it).second );
+                text.append((*it).second);
                 continue;
             default:
                 continue;
         };
     }
-
     setInfo(text);
 }
 
-void CInfoDisplay::setInfo(CSwordModuleInfo *module) {
+void CInfoDisplay::setInfo(CSwordModuleInfo * const module) {
     using util::htmlEscape;
 
     if (module) {
@@ -188,28 +188,21 @@ void CInfoDisplay::selectAll() {
     m_htmlPart->selectAll();
 }
 
-const QString CInfoDisplay::decodeAbbreviation( const QString& data ) {
-    //  QStringList strongs = QStringList::split("|", data);
-    QString ret;
-    QString text = data;
-
-    ret.append(
-        QString("<div class=\"abbreviation\"><h3>%1: %2</h3><p>%3</p></div>")
+const QString CInfoDisplay::decodeAbbreviation(const QString & data) {
+    // QStringList strongs = QStringList::split("|", data);
+    return QString("<div class=\"abbreviation\"><h3>%1: %2</h3><p>%3</p></div>")
         .arg(tr("Abbreviation"))
         .arg("text")
-        .arg(util::htmlEscape(text)));
-
-    return ret;
+        .arg(util::htmlEscape(data));
 }
 
-const QString CInfoDisplay::decodeCrossReference( const QString& data ) {
+const QString CInfoDisplay::decodeCrossReference(const QString & data) {
     Q_ASSERT(!data.isEmpty());
-    if (data.isEmpty()) {
+    if (data.isEmpty())
         return QString("<div class=\"crossrefinfo\"><h3>%1</h3></div>")
                .arg(tr("Cross references"));
-    }
 
-    //  qWarning("setting crossref %s", data.latin1());
+    // qWarning("setting crossref %s", data.latin1());
 
     DisplayOptions dispOpts;
     dispOpts.lineBreaks  = false;
@@ -226,83 +219,71 @@ const QString CInfoDisplay::decodeCrossReference( const QString& data ) {
     CrossRefRendering renderer(dispOpts, filterOpts);
     CTextRendering::KeyTree tree;
 
-    //  const bool isBible = true;
-    const CSwordModuleInfo* module = btConfig().getDefaultSwordModuleByType("standardBible");
-    if (!module) {
+    // const bool isBible = true;
+    const CSwordModuleInfo * module = btConfig().getDefaultSwordModuleByType("standardBible");
+    if (!module)
         module = m_mainWindow->getCurrentModule();
-    }
 
-    //a prefixed module gives the module to look into
+    // a prefixed module gives the module to look into
     QRegExp re("^[^ ]+:");
-    //  re.setMinimal(true);
+    // re.setMinimal(true);
     int pos = re.indexIn(data);
-    if (pos != -1) {
+    if (pos != -1)
         pos += re.matchedLength() - 1;
-    }
 
     if (pos > 0) {
         const QString moduleName = data.left(pos);
-        //     qWarning("found module %s", moduleName.latin1());
+        // qWarning("found module %s", moduleName.latin1());
         module = CSwordBackend::instance()->findModuleByName(moduleName);
-        if (!module) {
+        if (!module)
             module = btConfig().getDefaultSwordModuleByType("standardBible");
-        }
-        //   Q_ASSERT(module);
+        // Q_ASSERT(module);
     }
 
-    //Q_ASSERT(module); //why? the existense of the module is tested later
-    CTextRendering::KeyTreeItem::Settings settings (
+    // Q_ASSERT(module); // why? the existense of the module is tested later
+    CTextRendering::KeyTreeItem::Settings settings(
         false,
         CTextRendering::KeyTreeItem::Settings::CompleteShort
     );
 
     if (module && (module->type() == CSwordModuleInfo::Bible)) {
         VerseKey vk;
-        sword::ListKey refs = vk.parseVerseList((const char*)data.mid((pos == -1) ? 0 : pos + 1).toUtf8(), "Gen 1:1", true);
+        sword::ListKey refs = vk.parseVerseList((const char*) data.mid((pos == -1) ? 0 : pos + 1).toUtf8(), "Gen 1:1", true);
 
         for (int i = 0; i < refs.getCount(); i++) {
-            SWKey* key = refs.getElement(i);
+            SWKey * const key = refs.getElement(i);
             Q_ASSERT(key);
-            VerseKey* vk = dynamic_cast<VerseKey*>(key);
+            VerseKey * const vk = dynamic_cast<VerseKey*>(key);
 
-            CTextRendering::KeyTreeItem* itm = (CTextRendering::KeyTreeItem*)0; //explicit conversion for MS VS
-            if (vk && vk->isBoundSet()) { //render a range of keys
-                itm = new CTextRendering::KeyTreeItem(
+            if (vk && vk->isBoundSet()) { // render a range of keys
+                tree.append(new CTextRendering::KeyTreeItem(
                     QString::fromUtf8(vk->getLowerBound().getText()),
                     QString::fromUtf8(vk->getUpperBound().getText()),
                     module,
                     settings
-                );
-            }
-            else {
-                itm = new CTextRendering::KeyTreeItem(
+                ));
+            } else {
+                tree.append(new CTextRendering::KeyTreeItem(
                     QString::fromUtf8(key->getText()),
                     QString::fromUtf8(key->getText()),
                     module,
                     settings
-                );
+                ));
             }
-
-            Q_ASSERT(itm);
-
-            tree.append( itm );
         }
-    }
-    else if (module) {
-        CTextRendering::KeyTreeItem* itm = new CTextRendering::KeyTreeItem(
-            data.mid((pos == -1) ? 0 : pos + 1),
-            module,
-            settings
-        );
-        tree.append( itm );
+    } else if (module) {
+        tree.append(new CTextRendering::KeyTreeItem(data.mid((pos == -1)
+                                                             ? 0
+                                                             : pos + 1),
+                                                    module,
+                                                    settings));
     }
 
-    //  qWarning("rendered the tree: %s", renderer.renderKeyTree(tree).latin1());
-    //spanns containing rtl text need dir=rtl on their parent tag to be aligned properly
+    // qWarning("rendered the tree: %s", renderer.renderKeyTree(tree).latin1());
+    // spanns containing rtl text need dir=rtl on their parent tag to be aligned properly
     QString lang = "en";  // default english
-    if (module) {
+    if (module)
         lang = module->language()->abbrev();
-    }
 
     const QString RenderedText = renderer.renderKeyTree(tree);
 
@@ -314,14 +295,13 @@ const QString CInfoDisplay::decodeCrossReference( const QString& data ) {
 }
 
 /*!
-    \fn CInfoDisplay::decodeFootnote( const QString& data )
+    \fn CInfoDisplay::decodeFootnote(const QString & data)
     */
-const QString CInfoDisplay::decodeFootnote( const QString& data ) {
+const QString CInfoDisplay::decodeFootnote(const QString & data) {
     QStringList list = data.split("/");
     Q_ASSERT(list.count() >= 3);
-    if (!list.count()) {
+    if (!list.count())
         return QString::null;
-    }
 
     FilterOptions filterOpts;
     filterOpts.headings    = false;
@@ -342,25 +322,23 @@ const QString CInfoDisplay::decodeFootnote( const QString& data ) {
     list.pop_front();
     const QString keyname = list.join("/");
 
-    CSwordModuleInfo* module = CSwordBackend::instance()->findModuleByName(modulename);
-    if (!module) {
+    CSwordModuleInfo * const module = CSwordBackend::instance()->findModuleByName(modulename);
+    if (!module)
         return QString::null;
-    }
 
-    QSharedPointer<CSwordKey> key( CSwordKey::createInstance(module) );
+    QSharedPointer<CSwordKey> key(CSwordKey::createInstance(module));
     key->setKey(keyname);
-    key->renderedText(CSwordKey::ProcessEntryAttributesOnly); //force entryAttributes
+    key->renderedText(CSwordKey::ProcessEntryAttributesOnly); // force entryAttributes
 
-    const char* note =
+    const char * const note =
         module->module()->getEntryAttributes()
         ["Footnote"][swordFootnote.toLatin1().data()]["body"].c_str();
 
     QString text = module->isUnicode() ? QString::fromUtf8(note) : QString(note);
     text = QString::fromUtf8(module->module()->renderText(
                                  module->isUnicode()
-                                 ? (const char*)text.toUtf8()
-                                 : (const char*)text.toLatin1()
-                             ));
+                                 ? static_cast<const char *>(text.toUtf8())
+                                 : static_cast<const char *>(text.toLatin1())));
 
     return QString("<div class=\"footnoteinfo\" lang=\"%1\"><h3>%2</h3><p>%3</p></div>")
            .arg(module->language()->abbrev())
@@ -368,13 +346,13 @@ const QString CInfoDisplay::decodeFootnote( const QString& data ) {
            .arg(util::htmlEscape(text));
 }
 
-const QString CInfoDisplay::decodeStrongs( const QString& data ) {
+const QString CInfoDisplay::decodeStrongs(const QString & data) {
     QStringList strongs = data.split("|");
     QString ret;
 
     QStringList::const_iterator end = strongs.end();
     for (QStringList::const_iterator it = strongs.begin(); it != end; ++it) {
-        CSwordModuleInfo* const module = btConfig().getDefaultSwordModuleByType
+        CSwordModuleInfo * const module = btConfig().getDefaultSwordModuleByType
                                          (
                                              ((*it).left(1) == QString("H")) ?
                                              "standardHebrewStrongsLexicon" :
@@ -383,7 +361,7 @@ const QString CInfoDisplay::decodeStrongs( const QString& data ) {
 
         QString text;
         if (module) {
-            QSharedPointer<CSwordKey> key( CSwordKey::createInstance(module) );
+            QSharedPointer<CSwordKey> key(CSwordKey::createInstance(module));
             key->setKey((*it).mid(1)); // skip H or G (language sign), will have to change later if we have better modules
             text = key->renderedText();
         }
@@ -404,13 +382,13 @@ const QString CInfoDisplay::decodeStrongs( const QString& data ) {
     return ret;
 }
 
-const QString CInfoDisplay::decodeMorph( const QString& data ) {
+const QString CInfoDisplay::decodeMorph(const QString & data) {
     QStringList morphs = data.split("|");
     QString ret;
 
-    foreach(QString morph, morphs) {
+    Q_FOREACH (QString morph, morphs) {
         //qDebug() << "CInfoDisplay::decodeMorph, morph: " << morph;
-        CSwordModuleInfo* module = 0;
+        CSwordModuleInfo * module = 0;
         bool skipFirstChar = false;
         QString value = "";
         QString valueClass = "";
@@ -418,8 +396,8 @@ const QString CInfoDisplay::decodeMorph( const QString& data ) {
         int valStart = morph.indexOf(':');
         if (valStart > -1) {
             valueClass = morph.mid(0, valStart);
-            //qDebug() << "valueClass: " << valueClass;
-            module = CSwordBackend::instance()->findModuleByName( valueClass );
+            // qDebug() << "valueClass: " << valueClass;
+            module = CSwordBackend::instance()->findModuleByName(valueClass);
         }
         value = morph.mid(valStart + 1); //works for prepended module and without (-1 +1 == 0).
 
@@ -446,20 +424,19 @@ const QString CInfoDisplay::decodeMorph( const QString& data ) {
                 }
             }
             //if it is still not set use the default
-            if (!module) {
+            if (!module)
                 module = btConfig().getDefaultSwordModuleByType("standardGreekMorphLexicon");
-            }
         }
 
         QString text;
-        //Q_ASSERT(module);
+        // Q_ASSERT(module);
         if (module) {
-            QSharedPointer<CSwordKey> key( CSwordKey::createInstance(module) );
+            QSharedPointer<CSwordKey> key(CSwordKey::createInstance(module));
 
-            //skip H or G (language sign) if we have to skip it
+            // skip H or G (language sign) if we have to skip it
             const bool isOk = key->setKey(skipFirstChar ? value.mid(1) : value);
-            //Q_ASSERT(isOk);
-            if (!isOk) { //try to use the other morph lexicon, because this one failed with the current morph code
+            // Q_ASSERT(isOk);
+            if (!isOk) { // try to use the other morph lexicon, because this one failed with the current morph code
                 key->setModule(btConfig().getDefaultSwordModuleByType("standardHebrewMorphLexicon")); /// \todo: what if the module doesn't exist?
                 key->setKey(skipFirstChar ? value.mid(1) : value);
             }
@@ -467,11 +444,11 @@ const QString CInfoDisplay::decodeMorph( const QString& data ) {
             text = key->renderedText();
         }
 
-        //if the module wasn't found just display an empty morph info
+        // if the module wasn't found just display an empty morph info
         QString lang = "en";  // default to english
         if (module)
             lang = module->language()->abbrev();
-        ret.append( QString("<div class=\"morphinfo\" lang=\"%1\"><h3>%2: %3</h3><p>%4</p></div>")
+        ret.append(QString("<div class=\"morphinfo\" lang=\"%1\"><h3>%2: %3</h3><p>%4</p></div>")
                     .arg(lang)
                     .arg(tr("Morphology"))
                     .arg(util::htmlEscape(value))
@@ -482,25 +459,21 @@ const QString CInfoDisplay::decodeMorph( const QString& data ) {
     return ret;
 }
 
-const QString CInfoDisplay::getWordTranslation( const QString& data ) {
-    CSwordModuleInfo* const module = btConfig().getDefaultSwordModuleByType("standardLexicon");
-    if (!module) {
+const QString CInfoDisplay::getWordTranslation(const QString & data) {
+    CSwordModuleInfo * const module = btConfig().getDefaultSwordModuleByType("standardLexicon");
+    if (!module)
         return QString::null;
-    }
 
-    QSharedPointer<CSwordKey> key( CSwordKey::createInstance(module) );
+    QSharedPointer<CSwordKey> key(CSwordKey::createInstance(module));
     key->setKey(data);
-    if (key->key().toUpper() != data.toUpper()) { //key not present in the lexicon
+    if (key->key().toUpper() != data.toUpper()) //key not present in the lexicon
         return QString::null;
-    }
 
-    QString ret = QString("<div class=\"translationinfo\" lang=\"%1\"><h3>%2: %3</h3><p>%4</p></div>")
+    return QString("<div class=\"translationinfo\" lang=\"%1\"><h3>%2: %3</h3><p>%4</p></div>")
                   .arg(module->language()->abbrev())
                   .arg(tr("Word lookup"))
                   .arg(util::htmlEscape(data))
                   .arg(util::htmlEscape(key->renderedText()));
-
-    return ret;
 }
 
 QSize CInfoDisplay::sizeHint() const {

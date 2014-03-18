@@ -24,51 +24,62 @@ class QAction;
 class QSize;
 class BibleTime;
 
+
 namespace InfoDisplay {
 
-class CInfoDisplay : public QWidget {
-        Q_OBJECT
-    public:
-        enum InfoType {
-            Abbreviation,
-            CrossReference,
-            Footnote,
-            Lemma,
-            Morph,
-            WordTranslation,
-            WordGloss,
-            Text
-        };
+class CInfoDisplay: public QWidget {
 
-        typedef QPair<InfoType, QString> InfoData;
-        typedef QList<InfoData> ListInfoData;
+    Q_OBJECT
 
-        CInfoDisplay(BibleTime *parent = 0);
+public: /* Types: */
 
-        void unsetInfo();
-        void setInfo(const QString &data, const QString &lang = QString());
-        void setInfo(const InfoType, const QString& data);
-        void setInfo(const ListInfoData&);
-        QSize sizeHint() const;
+    enum InfoType {
+        Abbreviation,
+        CrossReference,
+        Footnote,
+        Lemma,
+        Morph,
+        WordTranslation,
+        WordGloss,
+        Text
+    };
 
-    public slots:
-        void setInfo(CSwordModuleInfo *module);
+    typedef QPair<InfoType, QString> InfoData;
+    typedef QList<InfoData> ListInfoData;
 
-    protected:
-        const QString decodeAbbreviation( const QString& data );
-        const QString decodeCrossReference( const QString& data );
-        const QString decodeFootnote( const QString& data );
-        const QString decodeStrongs( const QString& data );
-        const QString decodeMorph( const QString& data );
-        const QString getWordTranslation( const QString& data );
+public: /* Methods: */
 
-    protected slots:
-        void lookupInfo(const QString &, const QString &);
-        void selectAll();
+    CInfoDisplay(BibleTime * parent = NULL);
 
-    private:
-        CReadDisplay* m_htmlPart;
-        BibleTime* m_mainWindow;
+    void unsetInfo();
+    void setInfo(const QString & data, const QString & lang = QString());
+    void setInfo(const InfoType, const QString & data);
+    void setInfo(const ListInfoData &);
+    QSize sizeHint() const;
+
+public slots:
+
+    void setInfo(CSwordModuleInfo * module);
+
+private: /* Methods: */
+
+    const QString decodeAbbreviation(const QString & data);
+    const QString decodeCrossReference(const QString & data);
+    const QString decodeFootnote(const QString & data);
+    const QString decodeStrongs(const QString & data);
+    const QString decodeMorph(const QString & data);
+    const QString getWordTranslation(const QString & data);
+
+private slots:
+
+    void lookupInfo(const QString &, const QString &);
+    void selectAll();
+
+private: /* Fields: */
+
+    CReadDisplay * m_htmlPart;
+    BibleTime * m_mainWindow;
+
 };
 
 } //end of InfoDisplay namespace
