@@ -32,6 +32,7 @@
 #include "util/directory.h"
 #include "util/exceptions.h"
 #include "util/geticon.h"
+#include "util/htmlescape.h"
 
 // Sword includes:
 #include <listkey.h>
@@ -751,38 +752,43 @@ Rendering::CEntryDisplay * CSwordModuleInfo::getDisplay() const {
 }
 
 QString CSwordModuleInfo::aboutText() const {
+    using util::tool::htmlEscape;
+
     QString text;
     text += "<table>";
 
     text += QString("<tr><td><b>%1</b></td><td>%2</td><tr>")
             .arg(tr("Version"))
             .arg(m_cachedHasVersion
-                 ? config(CSwordModuleInfo::ModuleVersion)
+                 ? htmlEscape(config(CSwordModuleInfo::ModuleVersion))
                  : tr("unknown"));
 
-    text += QString("<tr><td><b>%1</b></td><td>%2</td></tr>")
-            .arg(tr("Markup"))
-            .arg(!QString(m_module->getConfigEntry("SourceType")).isEmpty()
-                 ? QString(m_module->getConfigEntry("SourceType"))
-                 : tr("unknown"));
+    {
+        const QString sourceType(m_module->getConfigEntry("SourceType"));
+        text += QString("<tr><td><b>%1</b></td><td>%2</td></tr>")
+                .arg(tr("Markup"))
+                .arg(!sourceType.isEmpty()
+                     ? htmlEscape(sourceType)
+                     : tr("unknown"));
+    }
 
     text += QString("<tr><td><b>%1</b></td><td>%2</td></tr>")
             .arg(tr("Location"))
-            .arg(config(CSwordModuleInfo::AbsoluteDataPath));
+            .arg(htmlEscape(config(CSwordModuleInfo::AbsoluteDataPath)));
 
     text += QString("<tr><td><b>%1</b></td><td>%2</td></tr>")
             .arg(tr("Language"))
-            .arg(m_cachedLanguage->translatedName());
+            .arg(htmlEscape(m_cachedLanguage->translatedName()));
 
     if (m_module->getConfigEntry("Category"))
         text += QString("<tr><td><b>%1</b></td><td>%2</td></tr>")
                 .arg(tr("Category"))
-                .arg(m_module->getConfigEntry("Category"));
+                .arg(htmlEscape(m_module->getConfigEntry("Category")));
 
     if (m_module->getConfigEntry("LCSH"))
         text += QString("<tr><td><b>%1</b></td><td>%2</td></tr>")
                 .arg(tr("LCSH"))
-                .arg(m_module->getConfigEntry("LCSH"));
+                .arg(htmlEscape(m_module->getConfigEntry("LCSH")));
 
     text += QString("<tr><td><b>%1</b></td><td>%2</td></tr>")
             .arg(tr("Writable"))
@@ -791,7 +797,7 @@ QString CSwordModuleInfo::aboutText() const {
     if (isEncrypted())
         text += QString("<tr><td><b>%1</b></td><td>%2</td></tr>")
                 .arg(tr("Unlock key"))
-                .arg(config(CSwordModuleInfo::CipherKey));
+                .arg(htmlEscape(config(CSwordModuleInfo::CipherKey)));
 
     QString options;
 
@@ -812,7 +818,7 @@ QString CSwordModuleInfo::aboutText() const {
     if (!options.isEmpty())
         text += QString("<tr><td><b>%1</b></td><td>%2</td></tr>")
                 .arg(tr("Features"))
-                .arg(options);
+                .arg(htmlEscape(options));
 
     text += "</table><hr>";
 
@@ -824,7 +830,7 @@ QString CSwordModuleInfo::aboutText() const {
 
     text += QString("<b>%1:</b><br/>%2</font>")
             .arg(tr("About"))
-            .arg(config(AboutInformation));
+            .arg(htmlEscape(config(AboutInformation)));
 
     typedef QList<CSwordModuleInfo::ConfigEntry> ListConfigEntry;
 
@@ -861,8 +867,8 @@ QString CSwordModuleInfo::aboutText() const {
     for (ListConfigEntry::iterator it(entries.begin()); it != entries.end(); ++it)
         if (!config(*it).isEmpty())
             text += QString("<tr><td><b>%1</b></td><td>%2</td></tr>")
-                    .arg(Qt::escape(entryMap[*it]))
-                    .arg(Qt::escape(config(*it)));
+                    .arg(htmlEscape(entryMap[*it]))
+                    .arg(htmlEscape(config(*it)));
 
     text += "</table></font>";
 
