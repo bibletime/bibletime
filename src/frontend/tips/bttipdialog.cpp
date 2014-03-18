@@ -54,7 +54,7 @@ inline QString make_icon(const QString &icon) {
     namespace DU = util::directory;
     QString fileName = DU::getIconDir().filePath(icon);
     QString iconUrl = QUrl::fromLocalFile(fileName).toString();
-    return "<img src=\"" + util::tool::htmlEscape(iconUrl) + "\" width=\"32\" />";
+    return "<img src=\"" + util::htmlEscape(iconUrl) + "\" width=\"32\" />";
 }
 
 const QString LastTipNumberKey = "GUI/lastTipNumber";

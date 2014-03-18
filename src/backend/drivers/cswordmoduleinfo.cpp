@@ -752,7 +752,7 @@ Rendering::CEntryDisplay * CSwordModuleInfo::getDisplay() const {
 }
 
 QString CSwordModuleInfo::aboutText() const {
-    using util::tool::htmlEscape;
+    using util::htmlEscape;
 
     QString text;
     text += "<table>";
