@@ -17,6 +17,7 @@
 #include <QRect>
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "frontend/searchdialog/analysis/csearchanalysisscene.h"
+#include "util/htmlescape.h"
 
 
 namespace Search {
@@ -131,9 +132,12 @@ int CSearchAnalysisItem::width() {
 /** Returns the tooltip for this item. */
 const QString CSearchAnalysisItem::getToolTip() {
     typedef CSwordModuleSearch::Results::const_iterator RCI;
+    using util::tool::htmlEscape;
 
-    QString toolTipString = QString("<center><b>%1</b></center><hr/>").arg(m_bookName);
-    toolTipString += "<table cellspacing=\"0\" cellpadding=\"3\" width=\"100%\" height=\"100%\" align=\"center\">";
+    QString toolTipString("<center><b>");
+    toolTipString.append(htmlEscape(m_bookName)).append("</b></center><hr/>")
+                 .append("<table cellspacing=\"0\" cellpadding=\"3\" width=\"10"
+                         "0%\" height=\"100%\" align=\"center\">");
 
     /// \todo Fix that loop
     int i = 0;
