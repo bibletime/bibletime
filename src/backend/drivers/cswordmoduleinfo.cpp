@@ -754,10 +754,12 @@ Rendering::CEntryDisplay * CSwordModuleInfo::getDisplay() const {
 QString CSwordModuleInfo::aboutText() const {
     using util::htmlEscape;
 
+    static const QString row("<tr><td><b>%1</b></td><td>%2</td></tr>");
+
     QString text;
     text += "<table>";
 
-    text += QString("<tr><td><b>%1</b></td><td>%2</td></tr>")
+    text += row
             .arg(tr("Version"))
             .arg(m_cachedHasVersion
                  ? htmlEscape(config(CSwordModuleInfo::ModuleVersion))
@@ -765,37 +767,37 @@ QString CSwordModuleInfo::aboutText() const {
 
     {
         const QString sourceType(m_module->getConfigEntry("SourceType"));
-        text += QString("<tr><td><b>%1</b></td><td>%2</td></tr>")
+        text += row
                 .arg(tr("Markup"))
                 .arg(!sourceType.isEmpty()
                      ? htmlEscape(sourceType)
                      : tr("unknown"));
     }
 
-    text += QString("<tr><td><b>%1</b></td><td>%2</td></tr>")
+    text += row
             .arg(tr("Location"))
             .arg(htmlEscape(config(CSwordModuleInfo::AbsoluteDataPath)));
 
-    text += QString("<tr><td><b>%1</b></td><td>%2</td></tr>")
+    text += row
             .arg(tr("Language"))
             .arg(htmlEscape(m_cachedLanguage->translatedName()));
 
     if (m_module->getConfigEntry("Category"))
-        text += QString("<tr><td><b>%1</b></td><td>%2</td></tr>")
+        text += row
                 .arg(tr("Category"))
                 .arg(htmlEscape(m_module->getConfigEntry("Category")));
 
     if (m_module->getConfigEntry("LCSH"))
-        text += QString("<tr><td><b>%1</b></td><td>%2</td></tr>")
+        text += row
                 .arg(tr("LCSH"))
                 .arg(htmlEscape(m_module->getConfigEntry("LCSH")));
 
-    text += QString("<tr><td><b>%1</b></td><td>%2</td></tr>")
+    text += row
             .arg(tr("Writable"))
             .arg(isWritable() ? tr("yes") : tr("no"));
 
     if (isEncrypted())
-        text += QString("<tr><td><b>%1</b></td><td>%2</td></tr>")
+        text += row
                 .arg(tr("Unlock key"))
                 .arg(htmlEscape(config(CSwordModuleInfo::CipherKey)));
 
@@ -816,7 +818,7 @@ QString CSwordModuleInfo::aboutText() const {
     }
 
     if (!options.isEmpty())
-        text += QString("<tr><td><b>%1</b></td><td>%2</td></tr>")
+        text += row
                 .arg(tr("Features"))
                 .arg(htmlEscape(options));
 
@@ -866,7 +868,7 @@ QString CSwordModuleInfo::aboutText() const {
 
     for (ListConfigEntry::iterator it(entries.begin()); it != entries.end(); ++it)
         if (!config(*it).isEmpty())
-            text += QString("<tr><td><b>%1</b></td><td>%2</td></tr>")
+            text += row
                     .arg(htmlEscape(entryMap[*it]))
                     .arg(htmlEscape(config(*it)));
 
