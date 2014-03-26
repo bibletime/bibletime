@@ -52,7 +52,8 @@ public: /* Methods: */
     CInfoDisplay(BibleTime * parent = NULL);
 
     void unsetInfo();
-    void setInfo(const QString & data, const QString & lang = QString());
+    void setInfo(const QString & renderedData,
+                 const QString & lang = QString());
     void setInfo(const InfoType, const QString & data);
     void setInfo(const ListInfoData &);
     QSize sizeHint() const;
