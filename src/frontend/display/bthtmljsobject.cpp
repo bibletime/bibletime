@@ -113,40 +113,32 @@ void BtHtmlJsObject::mouseMoveEvent(const QString& attributes, const int& x, con
 }
 
 // called from javascript timerEvent() in bthtml.js
-void BtHtmlJsObject::timeOutEvent(const QString& attributes) {
+void BtHtmlJsObject::timeOutEvent(const QString & attributes) {
     if (m_prev_attributes != attributes)
         return;
 
     m_prev_attributes = "";
     CInfoDisplay::ListInfoData infoList;
-    QStringList attrList = attributes.split("||");
+    const QStringList attrList = attributes.split("||");
     for (int i = 0; i < attrList.count(); i++) {
-        QString attrPair = attrList[i];
-        QStringList attr = attrPair.split("=");
+        const QStringList attr(attrList[i].split('='));
         if (attr.count() == 2) {
-            QString attrName = attr[0];
-            QString attrValue = attr[1];
-            if (attrName == "note") {
-                infoList.append( qMakePair(CInfoDisplay::Footnote, attrValue));
-            }
-            if (attrName == "lemma") {
-                infoList.append( qMakePair(CInfoDisplay::Lemma, attrValue));
-            }
-            if (attrName == "morph") {
-                infoList.append( qMakePair(CInfoDisplay::Morph, attrValue));
-            }
-            if (attrName == "expansion") {
-                infoList.append( qMakePair(CInfoDisplay::Abbreviation, attrValue));
-            }
-            if (attrName == "crossrefs") {
-                infoList.append( qMakePair(CInfoDisplay::CrossReference, attrValue));
+            if (attr[0] == "note") {
+                infoList.append(qMakePair(CInfoDisplay::Footnote, attr[1]));
+            } else if (attr[0] == "lemma") {
+                infoList.append(qMakePair(CInfoDisplay::Lemma, attr[1]));
+            } else if (attr[0] == "morph") {
+                infoList.append(qMakePair(CInfoDisplay::Morph, attr[1]));
+            } else if (attr[0] == "expansion") {
+                infoList.append(qMakePair(CInfoDisplay::Abbreviation, attr[1]));
+            } else if (attr[0] == "crossrefs") {
+                infoList.append(qMakePair(CInfoDisplay::CrossReference, attr[1]));
             }
         }
     }
     // Update the mag if valid attributes were found
-    if (!(infoList.isEmpty())) {
+    if (!(infoList.isEmpty()))
         BibleTime::instance()->infoDisplay()->setInfo(infoList);
-    }
 }
 
 // clearing the previous attribute effectively stops any time out event
