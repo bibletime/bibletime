@@ -84,7 +84,7 @@ void CInfoDisplay::unsetInfo() {
                "moving the mouse.</small>"));
 }
 
-void CInfoDisplay::setInfo(const QString & data, const QString & lang) {
+void CInfoDisplay::setInfo(const QString & renderedData, const QString & lang) {
     CDisplayTemplateMgr * const mgr = CDisplayTemplateMgr::instance();
     Q_ASSERT(mgr != 0);
 
@@ -98,7 +98,7 @@ void CInfoDisplay::setInfo(const QString & data, const QString & lang) {
     div.append(">");
 
     QString content(mgr->fillTemplate(CDisplayTemplateMgr::activeTemplateName(),
-                                      div + data + "</div>",
+                                      div + renderedData + "</div>",
                                       settings));
     m_htmlPart->setText(content);
 }
@@ -135,40 +135,40 @@ void CInfoDisplay::setInfo(const ListInfoData & list) {
         return;
     }
 
-    QString text;
+    QString renderedText;
 
     ListInfoData::const_iterator end = list.end();
     for (ListInfoData::const_iterator it = list.begin(); it != end; ++it) {
         switch ((*it).first) {
             case Lemma:
-                text.append(decodeStrongs((*it).second));
+                renderedText.append(decodeStrongs((*it).second));
                 continue;
             case Morph:
-                text.append(decodeMorph((*it).second));
+                renderedText.append(decodeMorph((*it).second));
                 continue;
             case CrossReference:
-                text.append(decodeCrossReference((*it).second));
+                renderedText.append(decodeCrossReference((*it).second));
                 continue;
             case Footnote:
-                text.append(decodeFootnote((*it).second));
+                renderedText.append(decodeFootnote((*it).second));
                 continue;
             case WordTranslation:
-                text.append(getWordTranslation((*it).second));
+                renderedText.append(getWordTranslation((*it).second));
                 continue;
             case WordGloss:
                 //text.append(getWordTranslation((*it).second));
                 continue;
             case Abbreviation:
-                text.append(decodeAbbreviation((*it).second));
+                renderedText.append(decodeAbbreviation((*it).second));
                 continue;
             case Text:
-                text.append((*it).second);
+                renderedText.append((*it).second);
                 continue;
             default:
                 continue;
         };
     }
-    setInfo(text);
+    setInfo(renderedText);
 }
 
 void CInfoDisplay::setInfo(CSwordModuleInfo * const module) {
@@ -193,7 +193,7 @@ const QString CInfoDisplay::decodeAbbreviation(const QString & data) {
     return QString("<div class=\"abbreviation\"><h3>%1: %2</h3><p>%3</p></div>")
         .arg(tr("Abbreviation"))
         .arg("text")
-        .arg(util::htmlEscape(data));
+        .arg(data);
 }
 
 const QString CInfoDisplay::decodeCrossReference(const QString & data) {
@@ -285,13 +285,11 @@ const QString CInfoDisplay::decodeCrossReference(const QString & data) {
     if (module)
         lang = module->language()->abbrev();
 
-    const QString RenderedText = renderer.renderKeyTree(tree);
-
     return QString("<div class=\"crossrefinfo\" lang=\"%1\"><h3>%2</h3><div class=\"para\" dir=\"%3\">%4</div></div>")
            .arg(lang)
            .arg(tr("Cross references"))
            .arg(module ? ((module->textDirection() == CSwordModuleInfo::LeftToRight) ? "ltr" : "rtl") : "")
-                   .arg(util::htmlEscape(RenderedText));
+           .arg(renderer.renderKeyTree(tree));
 }
 
 /*!
@@ -343,7 +341,7 @@ const QString CInfoDisplay::decodeFootnote(const QString & data) {
     return QString("<div class=\"footnoteinfo\" lang=\"%1\"><h3>%2</h3><p>%3</p></div>")
            .arg(module->language()->abbrev())
            .arg(tr("Footnote"))
-           .arg(util::htmlEscape(text));
+           .arg(text);
 }
 
 const QString CInfoDisplay::decodeStrongs(const QString & data) {
@@ -374,8 +372,8 @@ const QString CInfoDisplay::decodeStrongs(const QString & data) {
             QString("<div class=\"strongsinfo\" lang=\"%1\"><h3>%2: %3</h3><p>%4</p></div>")
             .arg(lang)
             .arg(tr("Strongs"))
-            .arg(util::htmlEscape(*it))
-            .arg(util::htmlEscape(text))
+            .arg(*it)
+            .arg(text)
         );
     }
 
@@ -451,8 +449,8 @@ const QString CInfoDisplay::decodeMorph(const QString & data) {
         ret.append(QString("<div class=\"morphinfo\" lang=\"%1\"><h3>%2: %3</h3><p>%4</p></div>")
                     .arg(lang)
                     .arg(tr("Morphology"))
-                    .arg(util::htmlEscape(value))
-                    .arg(util::htmlEscape(text))
+                    .arg(value)
+                    .arg(text)
                   );
     }
 
@@ -472,8 +470,8 @@ const QString CInfoDisplay::getWordTranslation(const QString & data) {
     return QString("<div class=\"translationinfo\" lang=\"%1\"><h3>%2: %3</h3><p>%4</p></div>")
                   .arg(module->language()->abbrev())
                   .arg(tr("Word lookup"))
-                  .arg(util::htmlEscape(data))
-                  .arg(util::htmlEscape(key->renderedText()));
+                  .arg(data)
+                  .arg(key->renderedText());
 }
 
 QSize CInfoDisplay::sizeHint() const {
