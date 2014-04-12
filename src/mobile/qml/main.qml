@@ -43,13 +43,15 @@ Rectangle {
         windowArrangementMenus,
         viewWindowsMenus,
         closeWindowsMenus,
+        searchResults,
+        search,
         installManagerChooser,
         keyNameChooser,
         treeChooser
     ]
 
     Keys.onReleased: {
-        if (event.key == Qt.Key_Back) {
+        if (event.key == Qt.Key_Back || event.key == Qt.Key_Escape) {
             event.accepted = true;
             quitQuestion.visible = true;
         }
@@ -157,6 +159,67 @@ Rectangle {
         }
     }
 
+    Search {
+        id: search
+
+        moduleChoices: searchModel
+        onSearchRequest: {
+            searchResults.searchText = search.searchText;
+            searchResults.findChoice = search.findChoice;
+            searchResults.moduleList = search.moduleList;
+            search.visible = false;
+            searchResults.visible = true;
+        }
+
+    }
+
+    ListModel {
+        id:searchModel
+
+        function appendModuleChoices(choices) {
+            searchModel.clear();
+            var firstChoice = "";
+            for (var j=0; j<choices.length; ++j) {
+                var choice = choices[j];
+                if (j>0)
+                    firstChoice += ", ";
+                firstChoice += choice;
+            }
+            searchModel.append({"text": firstChoice , "value": firstChoice})
+
+            for (var j=0; j<choices.length; ++j) {
+                var choice = choices[j];
+                searchModel.append({"text": choice , "value": choice})
+            }
+        }
+        ListElement { text: "ESV"; value: "ESV" }
+    }
+
+    SearchResults {
+        id: searchResults
+        z:2
+        modulesModel: searchResultsModel
+
+
+        onVisibleChanged: {
+            if ( ! visible) {
+                search.visible = true;
+            }
+        }
+    }
+
+    ListModel {
+        id:searchResultsModel
+
+        function appendModuleNames(moduleNames) {
+            searchResultsModel.clear();
+            for (var j=0; j<moduleNames.length; ++j) {
+                var name = moduleNames[j];
+                searchResultsModel.append({text: name , value: name})
+            }
+        }
+    }
+
     InstallManager {
         id: installManager
     }
@@ -192,6 +255,7 @@ Rectangle {
         ListElement { title: QT_TR_NOOP("New Window");              action: "newWindow" }
         ListElement { title: QT_TR_NOOP("View Window");             action: "view window" }
         ListElement { title: QT_TR_NOOP("Close Window");            action: "close window" }
+        ListElement { title: QT_TR_NOOP("Search");                  action: "search" }
         ListElement { title: QT_TR_NOOP("Text Font Size");          action: "textFontSize" }
         ListElement { title: QT_TR_NOOP("User Interface Font Size");action: "uiFontSize" }
         ListElement { title: QT_TR_NOOP("Window Arrangement");      action: "windowArrangement" }
@@ -219,6 +283,12 @@ Rectangle {
             else if (action == "close window") {
                 windowManager.createWindowMenus(closeWindowsModel);
                 closeWindowsMenus.visible = true;
+            }
+            else if (action == "search") {
+                var moduleNames = windowManager.getUniqueModuleNames();
+                searchResultsModel.appendModuleNames(moduleNames);
+                searchModel.appendModuleChoices(moduleNames);
+                search.visible = true;
             }
             else if (action == "gnomeStyle") {
                 btStyle.setStyle(1)

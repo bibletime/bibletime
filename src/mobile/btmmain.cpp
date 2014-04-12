@@ -19,6 +19,7 @@
 #include "mobile/models/searchmodel.h"
 #include "mobile/sessionmanager/sessionmanager.h"
 #include "mobile/ui/btstyle.h"
+#include "mobile/ui/btsearchinterface.h"
 #include "mobile/ui/btwindowinterface.h"
 #include "mobile/ui/moduleinterface.h"
 #include "mobile/ui/qtquick2applicationviewer.h"
@@ -45,6 +46,7 @@ void register_gml_classes() {
     qmlRegisterType<btm::InstallManager>("BibleTime", 1, 0, "InstallManager");
     qmlRegisterType<btm::ModuleInterface>("BibleTime", 1, 0, "ModuleInterface");
     qmlRegisterType<btm::SearchModel>("BibleTime", 1, 0, "SearchModel");
+    qmlRegisterType<btm::BtSearchInterface>("BibleTime", 1, 0, "BtSearchInterface");
 }
 
 btm::ViewManager* getViewManager() {

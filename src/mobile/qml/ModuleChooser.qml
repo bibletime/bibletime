@@ -34,7 +34,7 @@ Rectangle {
     border.width: 2
 
     Keys.onReleased: {
-        if (event.key == Qt.Key_Back && moduleChooser.visible == true) {
+        if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape) && moduleChooser.visible == true) {
             event.accepted = true;
             moduleChooser.visible = false;
         }

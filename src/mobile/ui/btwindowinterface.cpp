@@ -49,7 +49,10 @@ BtWindowInterface::BtWindowInterface(QObject* parent)
       m_keyNameChooser(0),
       m_verseKeyChooser(0) {
 
-    QtQuick2ApplicationViewer* viewer = getViewManager()->getViewer();
+    ViewManager* viewManager = getViewManager();
+    if (viewManager == 0)
+        return;
+    QtQuick2ApplicationViewer* viewer = viewManager->getViewer();
     m_verseKeyChooser = new VerseChooser(viewer, this);
     bool ok = connect(m_verseKeyChooser, SIGNAL(referenceChanged()), this, SLOT(referenceChosen()));
     Q_ASSERT(ok);

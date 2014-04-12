@@ -18,6 +18,7 @@ SOURCES += \
     ../../../src/mobile/models/roleitemmodel.cpp \
     ../../../src/mobile/models/searchmodel.cpp \
     ../../../src/mobile/sessionmanager/sessionmanager.cpp \
+    ../../../src/mobile/ui/btsearchinterface.cpp \
     ../../../src/mobile/ui/btstyle.cpp \
     ../../../src/mobile/ui/btwindowinterface.cpp \
     ../../../src/mobile/ui/gridchooser.cpp \
@@ -43,6 +44,7 @@ HEADERS += \
     ../../../src/mobile/models/roleitemmodel.h \
     ../../../src/mobile/models/searchmodel.h \
     ../../../src/mobile/sessionmanager/sessionmanager.h \
+    ../../../src/mobile/ui/btsearchinterface.h \
     ../../../src/mobile/ui/btstyle.h \
     ../../../src/mobile/ui/btwindowinterface.h \
     ../../../src/mobile/ui/gridchooser.h \
@@ -57,31 +59,36 @@ HEADERS += \
 OTHER_FILES += \
     ../../../src/mobile/qml \
     ../../../src/mobile/qml/checkmark.svg \
+    ../../../src/mobile/qml/leftarrow.svg \
+    ../../../src/mobile/qml/rightarrow.svg \
+    ../../../src/mobile/qml/tab.png \
     ../../../src/mobile/qml/main.qml \
-    ../../../src/mobile/qml/ListWorksView.qml \
+    ../../../src/mobile/qml/ContextMenu.qml \
     ../../../src/mobile/qml/FontSizeSlider.qml \
+    ../../../src/mobile/qml/GridChooser.qml \
+    ../../../src/mobile/qml/GridChooserButton.qml \
+    ../../../src/mobile/qml/ImageButton.qml \
     ../../../src/mobile/qml/InstallManagerChooser.qml \
     ../../../src/mobile/qml/KeyNameChooser.qml \
-    ../../../src/mobile/qml/MenuView.qml \
-    ../../../src/mobile/qml/Settings.qml \
+    ../../../src/mobile/qml/ListSelectView.qml \
+    ../../../src/mobile/qml/ListTextView.qml \
+    ../../../src/mobile/qml/ListWorksView.qml \
+    ../../../src/mobile/qml/MainToolbar.qml \
     ../../../src/mobile/qml/Menus.qml \
-    ../../../src/mobile/qml/GridChooser.qml \
+    ../../../src/mobile/qml/MenuButton.qml \
+    ../../../src/mobile/qml/MenuView.qml \
     ../../../src/mobile/qml/ModuleChooser.qml \
     ../../../src/mobile/qml/Progress.qml \
     ../../../src/mobile/qml/QuitQuestion.qml \
-    ../../../src/mobile/qml/GridChooserButton.qml \
-    ../../../src/mobile/qml/ContextMenu.qml \
-    ../../../src/mobile/qml/ImageButton.qml \
-    ../../../src/mobile/qml/tab.png \
-    ../../../src/mobile/qml/Window.qml \
-    ../../../src/mobile/qml/MenuButton.qml \
-    ../../../src/mobile/qml/leftarrow.svg \
-    ../../../src/mobile/qml/rightarrow.svg \
-    ../../../src/mobile/qml/ListTextView.qml \
-    ../../../src/mobile/qml/WindowManager.qml \
+    ../../../src/mobile/qml/Search.qml \
+    ../../../src/mobile/qml/SearchResults.qml \
+    ../../../src/mobile/qml/Settings.qml \
+    ../../../src/mobile/qml/SimpleComboBox.qml \
     ../../../src/mobile/qml/StartupBookshelfManager.qml \
-    ../../../src/mobile/qml/MainToolbar.qml \
-    ../../../src/mobile/qml/TreeChooser.qml
+    ../../../src/mobile/qml/TitleColorBar.qml \
+    ../../../src/mobile/qml/TreeChooser.qml \
+    ../../../src/mobile/qml/Window.qml \
+    ../../../src/mobile/qml/WindowManager.qml \
 
 lupdate_only {
     SOURCES = ../../../src/mobile/qml/*.qml

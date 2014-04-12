@@ -39,6 +39,29 @@ Rectangle {
         window.saveWindowStateToConfig(windowIndex);
     }
 
+    function getModuleNames() {
+        var names = [];
+        for (var i=0; i<windows.length; ++i) {
+            var window = windows[i];
+            var name = window.getModule();
+            names.push(name);
+        }
+        return names;
+    }
+
+    function getUniqueModuleNames() {
+        var moduleNames = getModuleNames();
+        var uniqueNames = [];
+        for (var i=0; i<moduleNames.length; ++i) {
+            var name = moduleNames[i];
+            var index = uniqueNames.indexOf(name);
+            if (index < 0) {
+                uniqueNames.push(name);
+            }
+        }
+        return uniqueNames;
+    }
+
     function setCurrentTabbedWindow(index) {
         tabbedWindows.current = index;
     }
