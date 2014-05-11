@@ -24,7 +24,7 @@ Rectangle {
     property alias moduleIndex: worksView.currentIndex
     property int lastCategoryIndex: 0
     property int lastLanguageIndex: 0
-    property int spacing: 5
+    property int spacing: 4
     property string selectedModule: ""
     property string selectedCategory: ""
 

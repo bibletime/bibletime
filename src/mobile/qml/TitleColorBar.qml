@@ -18,8 +18,8 @@ Rectangle {
 
     property string title: ""
     property int barHeight: {
-        var pixel = btStyle.pixelsPerMillimeterY * 4.5;
-        var uiFont = btStyle.uiFontPointSize * 3.0;
+        var pixel = btStyle.pixelsPerMillimeterY * 6;
+        var uiFont = btStyle.uiFontPointSize * 2;
         return Math.max(pixel, uiFont);
     }
 

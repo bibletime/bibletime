@@ -498,6 +498,8 @@ SET(bibletime_SRC_MOBILE_UI_SOURCES
     src/mobile/ui/btsearchinterface.h
     src/mobile/ui/btwindowinterface.cpp
     src/mobile/ui/btwindowinterface.h
+    src/mobile/ui/indexthread.cpp
+    src/mobile/ui/indexthread.h
     src/mobile/ui/modulechooser.cpp
     src/mobile/ui/modulechooser.h
     src/mobile/ui/moduleinterface.cpp
@@ -525,6 +527,7 @@ SET(bibletime_SRC_MOBILE_MOCABLE_HEADERS
     src/mobile/ui/btstyle.h
     src/mobile/ui/btsearchinterface.h
     src/mobile/ui/btwindowinterface.h
+    src/mobile/ui/indexthread.h
     src/mobile/ui/modulechooser.h
     src/mobile/ui/moduleinterface.h
     src/mobile/ui/qtquick2applicationviewer.h
@@ -553,7 +556,7 @@ SET(bibletime_MOBILE_QML_FILES
     src/mobile/qml/MenuView.qml
     src/mobile/qml/ModuleChooser.qml
     src/mobile/qml/Progress.qml
-    src/mobile/qml/QuitQuestion.qml
+    src/mobile/qml/Question.qml
     src/mobile/qml/Search.qml
     src/mobile/qml/SearchResults.qml
     src/mobile/qml/Settings.qml

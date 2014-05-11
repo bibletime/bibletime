@@ -20,9 +20,9 @@ Rectangle {
     property int rows: 5
     property int buttonWidth: 100
     property int buttonHeight: 30
-    property int topMargin: 10
-    property int leftMargin: 10
-    property int titleHeight: 10
+    property int topMargin: 6
+    property int leftMargin: 4
+    property int titleHeight: 4
     property int space: 8
     property string selected: ""
     property string titleText: ""
@@ -47,11 +47,8 @@ Rectangle {
 
         calculateColumns(count);
 
-        buttonWidth = (width-50)/columns;
-        buttonHeight = Math.floor((height-(rows*5))/rows);
-
-        topMargin = (height - rows*(buttonHeight+space) + space)/2 +titleHeight;
-        leftMargin = (width - columns*(buttonWidth+space) + space)/2;
+        buttonWidth = (width/columns) - space;
+        buttonHeight = Math.floor((height-(rows*space))/rows) ;
     }
 
     function calculateColumns(count) {

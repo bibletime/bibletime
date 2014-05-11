@@ -27,30 +27,38 @@ FocusScope {
 
     signal searchRequest();
 
-    function performSearch() {
+    function setupSearch() {
+        InputMethod.hide = true; // hide keyboard
         searchText = textInput.text;
         if (radioAny.checked)
-            findChoice = "any";
+            findChoice = "or";
         if (radioAll.checked)
-            findChoice = "all";
+            findChoice = "and";
         if (radioPhrase.checked)
-            findChoice = "phrase";
+            findChoice = "regexpr";
         moduleList = searchComboBox.currentText;
         searchRequest();
     }
     anchors.fill: parent
     visible: false
+    onVisibleChanged: {
+        if (visible) {
+            textInput.text = searchText;
+        }
+    }
 
     Rectangle{
 
         anchors.fill: parent
-        color: "white"
+        color: "lightgray"
 
         Rectangle {
             id: searchTitleBar
             color: btStyle.toolbarColor
             width: parent.width
             height: btStyle.pixelsPerMillimeterY * 7
+            border.color: "black"
+            border.width: 1
 
             Text {
                 id: title
@@ -78,28 +86,26 @@ FocusScope {
 
                 spacing: btStyle.pixelsPerMillimeterY
 
-                TextInput {
-                    id: textInput
-
+                Rectangle {
+                    color: "white"
                     width: search.width -searchButton.width - search.spacing * 3
                     height: textInput.contentHeight
-                    font.pointSize: btStyle.uiFontPointSize
-                    verticalAlignment: Text.AlignVCenter
-                    cursorVisible: true
-                    inputMethodHints: Qt.ImhNoAutoUppercase
-                    color: "black"
-                    focus: true
-                    text: ""
-                }
 
-                Rectangle {
-                    id: underline
+                    TextInput {
+                        id: textInput
 
-                    width: textInput.width
-                    height: btStyle.pixelsPerMillimeterY/2
-                    color: btStyle.toolbarColor
-                    border.color: btStyle.toolbarColor
-                    border.width: height/2
+                        anchors.fill: parent
+                        font.pointSize: btStyle.uiFontPointSize
+                        verticalAlignment: Text.AlignVCenter
+                        cursorVisible: true
+                        inputMethodHints: Qt.ImhNoAutoUppercase
+                        color: "black"
+                        focus: true
+                        text: ""
+                        onAccepted: {
+                            search.setupSearch();
+                        }
+                    }
                 }
             }
 
@@ -117,7 +123,7 @@ FocusScope {
                     }
                 }
                 onClicked: {
-                    search.performSearch();
+                    search.setupSearch();
                 }
             }
         }
@@ -177,7 +183,7 @@ FocusScope {
                 RadioButton {
                     id: radioPhrase
 
-                    text: qsTr("Phrase")
+                    text: qsTr("Regular Expression")
                     exclusiveGroup: group
                     style: RadioButtonStyle {
 

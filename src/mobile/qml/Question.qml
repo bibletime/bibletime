@@ -14,24 +14,29 @@ import QtQuick 2.1
 import BibleTime 1.0
 
 Rectangle {
-    id: quitQuestion
+    id: question
+
+    property alias text: questionText.text
+    property bool answer
+    property color background
+
+    signal finished();
 
     anchors.fill: parent
-    color: "white"
+    color: background
     visible: false
     width: parent.width
 
     Text {
-        id: text
+        id: questionText
         height: contentHeight
         width: parent.width
         anchors.centerIn: parent
-        text: QT_TR_NOOP("Are you sure you want to quit?")
         verticalAlignment: Text.AlignVCenter
         horizontalAlignment: Text.AlignHCenter
         wrapMode: Text.WordWrap
         font.pointSize: btStyle.uiFontPointSize
-        anchors.margins: 30
+        anchors.margins: 60
     }
 
     Grid {
@@ -39,7 +44,7 @@ Rectangle {
 
         spacing: btStyle.pixelsPerMillimeterY * 4
         columns: 2
-        anchors.top: text.bottom
+        anchors.top: questionText.bottom
         anchors.topMargin: 50
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottomMargin: 50
@@ -59,8 +64,9 @@ Rectangle {
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    quitQuestion.visible = false;
-                    Qt.quit();
+                    question.visible = false;
+                    answer = true;
+                    finished();
                 }
             }
         }
@@ -80,7 +86,9 @@ Rectangle {
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    quitQuestion.visible = false;
+                    answer = false;
+                    question.visible = false;
+                    finished();
                 }
             }
         }

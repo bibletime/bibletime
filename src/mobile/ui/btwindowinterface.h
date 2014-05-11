@@ -15,6 +15,7 @@
 
 #include <QObject>
 #include <QString>
+#include "backend/managers/cswordbackend.h"
 #include "mobile/models/roleitemmodel.h"
 
 class CSwordKey;
@@ -32,47 +33,47 @@ class BtWindowInterface : public QObject {
 
     Q_OBJECT
 
-    Q_PROPERTY(QString moduleName READ getModuleName WRITE setModuleName NOTIFY moduleChanged)
-    Q_PROPERTY(QString reference READ getReference WRITE setReference NOTIFY referenceChange)
-    Q_PROPERTY(int fontSize READ getFontSize WRITE setFontSize NOTIFY textChanged)
-    Q_PROPERTY(QVariant textModel READ getTextModel NOTIFY textModelChanged)
-    Q_PROPERTY(int currentModelIndex READ getCurrentModelIndex NOTIFY currentModelIndexChanged)
+    Q_PROPERTY(int      currentModelIndex   READ getCurrentModelIndex NOTIFY currentModelIndexChanged)
+    Q_PROPERTY(int      fontSize   READ getFontSize WRITE setFontSize NOTIFY textChanged)
+    Q_PROPERTY(QString  highlightWords   READ getHighlightWords WRITE setHighlightWords)
+    Q_PROPERTY(QString  moduleName   READ getModuleName WRITE setModuleName NOTIFY moduleChanged)
+    Q_PROPERTY(QString  reference   READ getReference WRITE setReference NOTIFY referenceChange)
+    Q_PROPERTY(QVariant textModel   READ getTextModel NOTIFY textModelChanged)
 
 public:
     Q_INVOKABLE void changeModule();
     Q_INVOKABLE void changeReference();
     Q_INVOKABLE void saveWindowStateToConfig(int windowIndex);
-    Q_INVOKABLE void updateKeyText(int modelIndex);
     Q_INVOKABLE void updateCurrentModelIndex();
+    Q_INVOKABLE void updateKeyText(int modelIndex);
 
     BtWindowInterface(QObject *parent = 0);
 
+    int getCurrentModelIndex() const;
+    int getFontSize() const;
+    QString getHighlightWords() const;
     CSwordKey* getKey() const;
-
     QString getModuleName() const;
+    QString getReference() const;
+    QVariant getTextModel();
+
+    void setFontSize(int size);
+    void setHighlightWords(const QString& words);
     void setModuleName(const QString& moduleName);
     void setReference(const QString& key);
 
-    QString getReference() const;
-
-    int getCurrentModelIndex() const;
-
-    int getFontSize() const;
-    void setFontSize(int size);
-
-    QVariant getTextModel();
-
 signals:
-    void referenceChange();
+    void currentModelIndexChanged();
     void moduleChanged();
+    void referenceChange();
     void textChanged();
     void textModelChanged();
-    void currentModelIndexChanged();
 
 private slots:
     void referenceChanged();
     void referenceChosen();
     void referenceChosen(int index);
+    void reloadModules(CSwordBackend::SetupChangedReason reason);
 
 private:
     const CSwordModuleInfo* module() const;
@@ -84,6 +85,8 @@ private:
     BookKeyChooser* m_bookKeyChooser;
     KeyNameChooser* m_keyNameChooser;
     VerseChooser* m_verseKeyChooser;
+    QString m_highlightWords;
+    QString m_moduleName;
 };
 
 } // end namespace

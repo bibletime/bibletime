@@ -167,7 +167,7 @@ Rectangle {
             highlightFollowsCurrentItem: true
             currentIndex: btWindowInterface.currentModelIndex
             onCurrentIndexChanged: {
-                positionViewAtIndex(currentIndex,listView.Beginning)
+                positionViewAtIndex(currentIndex,ListView.Beginning)
             }
             onMovementEnded: {
                 var index = indexAt(contentX,contentY+30);

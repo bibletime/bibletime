@@ -77,7 +77,6 @@ Rectangle {
                     else if (action == "uiSize") {
                         uiFontPointSize.visible = true;
                         settings.visible = false;
-                        console.log("y")
                     }
                 }
             }

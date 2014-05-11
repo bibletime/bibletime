@@ -166,7 +166,6 @@ Rectangle {
 
             function itemSelected() {
                 listView.selectItem(mouseX, mouseY);
-                console.log(listView.currentIndex);
                 top.visible = false;
             }
         }

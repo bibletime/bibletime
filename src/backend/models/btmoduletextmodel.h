@@ -71,6 +71,7 @@ public:
     int rowCount(const QModelIndex & parent = QModelIndex()) const;
     QHash<int, QByteArray> roleNames() const;
     void setRoleNames(const QHash<int, QByteArray> &roleNames);
+    void setHighlightWords(const QString& highlightWords);
 
 private:
 
@@ -82,6 +83,7 @@ private:
     QList<const CSwordModuleInfo*> m_moduleInfoList;
     QHash<int, QByteArray> m_roleNames;
     QStringList m_modules;
+    QString m_highlightWords;
 
     int m_firstEntry;
     int m_maxEntries;

@@ -77,10 +77,18 @@ QString CSwordModuleSearch::highlightSearchedText(const QString& content, const 
 
     // Highlighting constants -
     // \todo We need to make the highlight color configurable.
+
+    // Work around Qt5 QML bug
+    // QTBUG-36837 "background-color" css style in QML TextEdit does not work on most tags
+#ifdef BT_MOBILE
+    const QString rep1("<span class=\"highlightwords\">");
+    const QString rep3("class=\"highlightwords\" ");
+#else
     const QString rep1("<span style=\"background-color:#FFFF66;\">");
+    const QString rep3("style=\"background-color:#FFFF66;\" ");
+#endif
     const QString rep2("</span>");
     const unsigned int repLength = rep1.length() + rep1.length();
-    const QString rep3("style=\"background-color:#FFFF66;\" ");
     const unsigned int rep3Length = rep3.length();
 
 

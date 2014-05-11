@@ -20,6 +20,7 @@ Rectangle {
     z:0
 
     signal buttonClicked
+    signal searchClicked
 
     BtStyle {
         id: btStyle
@@ -28,8 +29,8 @@ Rectangle {
     Image {
         id: logo
 
-        width: parent.height - 10
-        height: parent.height - 10
+        width: parent.height
+        height: parent.height
         anchors.left: parent.left
         anchors.top: parent.top
         anchors.topMargin: 5
@@ -59,6 +60,26 @@ Rectangle {
         anchors.top: parent.top
         onButtonClicked: {
             toolbar.buttonClicked()
+        }
+    }
+
+    Image {
+        id: searchIcon
+
+        width: parent.height
+        height: parent.height
+        anchors.right: menuButton.left
+        anchors.top: parent.top
+        anchors.topMargin: 5
+        anchors.bottomMargin: 5
+        anchors.rightMargin: 10
+        source: "search.svg"
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                toolbar.searchClicked()
+            }
         }
     }
 }

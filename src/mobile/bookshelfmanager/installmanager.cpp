@@ -222,7 +222,6 @@ void InstallManager::installRemove() {
         ++it) {
         CSwordModuleInfo* moduleInfo = it.key();
         bool install = it.value();
-        QString name = moduleInfo->name();
         if (moduleInstalled(*moduleInfo) && install == false) {
             m_modulesToRemove.append(moduleInfo);
         }

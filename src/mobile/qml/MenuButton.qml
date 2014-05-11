@@ -28,12 +28,12 @@ Rectangle {
         id: column
         property real ppmy: btStyle.pixelsPerMillimeterY
 
-        spacing: column.ppmy * 0.3
+        spacing: column.ppmy * 0.6
 
         Rectangle {
             color: "black";
-            width: column.ppmy * 0.7
-            height:column.ppmy * 0.7
+            width: column.ppmy * 0.8
+            height:column.ppmy * 0.8
         }
         Rectangle {
             color: "black";

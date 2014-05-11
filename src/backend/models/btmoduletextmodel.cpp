@@ -16,6 +16,7 @@
 #include "backend/drivers/cswordbiblemoduleinfo.h"
 #include "backend/drivers/cswordbookmoduleinfo.h"
 #include "backend/drivers/cswordlexiconmoduleinfo.h"
+#include "backend/cswordmodulesearch.h"
 #include "backend/keys/cswordtreekey.h"
 #include "backend/keys/cswordldkey.h"
 #include "backend/managers/cswordbackend.h"
@@ -150,7 +151,7 @@ QVariant BtModuleTextModel::verseData(const QModelIndex & index, int role) const
             key.key(), m_displayOptions, m_filterOptions,
             Rendering::CTextRendering::KeyTreeItem::Settings::SimpleKey);
         text.replace("#CHAPTERTITLE#", chapterTitle);
-        return text;
+        return CSwordModuleSearch::highlightSearchedText(text, m_highlightWords);
     }
     return QString();
 }
@@ -239,5 +240,11 @@ QString BtModuleTextModel::indexToKeyName(int index) const {
         keyName = lexiconModule->entries()[index];
     }
     return keyName;
+}
+
+void BtModuleTextModel::setHighlightWords(const QString& highlightWords) {
+    beginResetModel();
+    m_highlightWords = highlightWords;
+    endResetModel();
 }
 

@@ -22,6 +22,7 @@ SOURCES += \
     ../../../src/mobile/ui/btstyle.cpp \
     ../../../src/mobile/ui/btwindowinterface.cpp \
     ../../../src/mobile/ui/gridchooser.cpp \
+    ../../../src/mobile/ui/indexthread.cpp \
     ../../../src/mobile/ui/modulechooser.cpp \
     ../../../src/mobile/ui/moduleinterface.cpp \
     ../../../src/mobile/ui/qtquick2applicationviewer.cpp \
@@ -39,6 +40,7 @@ HEADERS += \
     ../../../src/mobile/bookshelfmanager/installsourcesmanager.h \
     ../../../src/mobile/btmmain.h \
     ../../../src/mobile/keychooser/bookkeychooser.h \
+    ../../../src/mobile/ui/indexthread.h \
     ../../../src/mobile/keychooser/keynamechooser.h \
     ../../../src/mobile/keychooser/versechooser.h \
     ../../../src/mobile/models/roleitemmodel.h \
@@ -79,7 +81,7 @@ OTHER_FILES += \
     ../../../src/mobile/qml/MenuView.qml \
     ../../../src/mobile/qml/ModuleChooser.qml \
     ../../../src/mobile/qml/Progress.qml \
-    ../../../src/mobile/qml/QuitQuestion.qml \
+    ../../../src/mobile/qml/Question.qml \
     ../../../src/mobile/qml/Search.qml \
     ../../../src/mobile/qml/SearchResults.qml \
     ../../../src/mobile/qml/Settings.qml \

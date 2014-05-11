@@ -11,6 +11,7 @@
 **********/
 
 import QtQuick 2.1
+import QtQml 2.2
 import BibleTime 1.0
 
 Rectangle {
@@ -34,6 +35,13 @@ Rectangle {
 
     function installModules() {
         installManager.openChooser();
+    }
+
+    function startSearch() {
+        var moduleNames = windowManager.getUniqueModuleNames();
+        searchModel.appendModuleChoices(moduleNames);
+        search.searchText = "";
+        search.visible = true;
     }
 
     Keys.forwardTo: [
@@ -71,6 +79,9 @@ Rectangle {
         height: btStyle.pixelsPerMillimeterY * 7
         onButtonClicked: {
             mainMenus.visible = ! mainMenus.visible;
+        }
+        onSearchClicked: {
+            startSearch();
         }
     }
 
@@ -164,13 +175,76 @@ Rectangle {
 
         moduleChoices: searchModel
         onSearchRequest: {
+            searchResults.moduleList = search.moduleList;
+            if ( ! searchResults.modulesAreIndexed()) {
+                search.visible = false;
+                indexQuestion.visible = true;
+                return;
+            }
+            openSearchResults();
+        }
+
+        function openSearchResults() {
+//            console.log("open search results")
             searchResults.searchText = search.searchText;
             searchResults.findChoice = search.findChoice;
             searchResults.moduleList = search.moduleList;
             search.visible = false;
+            searchResults.performSearch();
             searchResults.visible = true;
         }
+    }
 
+    SearchResults {
+        id: searchResults
+        z:2
+
+        onVisibleChanged: {
+            if ( ! visible) {
+                search.visible = true;
+            }
+        }
+        onIndexingFinishedChanged: {
+//            console.log("indexing finished")
+            indexProgress.visible = false;
+            search.openSearchResults();
+        }
+    }
+
+    Question {
+        id: indexQuestion
+        background: btStyle.toolbarColor
+        text: QT_TR_NOOP("Some of the modules you want to search need to be indexed. Do you want to index them now?")
+        onFinished: {
+            indexQuestion.visible = false;
+
+            if (answer == true) {
+//                console.log("open progress dialog")
+                indexProgress.visible = true;
+            } else {
+                search.visible = false;
+            }
+        }
+    }
+
+    Progress {
+        id: indexProgress
+
+        objectName: "indexProgress"
+        value: 0
+        minimumValue: 0
+        maximumValue: 100
+        width:parent.width * 0.85
+        height: btStyle.pixelsPerMillimeterY * 30
+        anchors.centerIn: parent
+        anchors.top: parent.top
+        visible: false
+        onVisibleChanged: {
+            if (visible == true) {
+//                console.log("index modules")
+                searchResults.indexModules();
+            }
+        }
     }
 
     ListModel {
@@ -193,31 +267,6 @@ Rectangle {
             }
         }
         ListElement { text: "ESV"; value: "ESV" }
-    }
-
-    SearchResults {
-        id: searchResults
-        z:2
-        modulesModel: searchResultsModel
-
-
-        onVisibleChanged: {
-            if ( ! visible) {
-                search.visible = true;
-            }
-        }
-    }
-
-    ListModel {
-        id:searchResultsModel
-
-        function appendModuleNames(moduleNames) {
-            searchResultsModel.clear();
-            for (var j=0; j<moduleNames.length; ++j) {
-                var name = moduleNames[j];
-                searchResultsModel.append({text: name , value: name})
-            }
-        }
     }
 
     InstallManager {
@@ -255,15 +304,10 @@ Rectangle {
         ListElement { title: QT_TR_NOOP("New Window");              action: "newWindow" }
         ListElement { title: QT_TR_NOOP("View Window");             action: "view window" }
         ListElement { title: QT_TR_NOOP("Close Window");            action: "close window" }
-        ListElement { title: QT_TR_NOOP("Search");                  action: "search" }
         ListElement { title: QT_TR_NOOP("Text Font Size");          action: "textFontSize" }
         ListElement { title: QT_TR_NOOP("User Interface Font Size");action: "uiFontSize" }
         ListElement { title: QT_TR_NOOP("Window Arrangement");      action: "windowArrangement" }
         ListElement { title: QT_TR_NOOP("Bookshelf Manager");       action: "install" }
-
-        //ListElement { title: QT_TR_NOOP("Settings");                action: "settings" }
-        //            ListElement { title: QT_TR_NOOP("Gnome Style");             action: "gnomeStyle" }
-        //            ListElement { title: QT_TR_NOOP("Android Style");           action: "androidStyle" }
     }
 
     Menus {
@@ -283,12 +327,6 @@ Rectangle {
             else if (action == "close window") {
                 windowManager.createWindowMenus(closeWindowsModel);
                 closeWindowsMenus.visible = true;
-            }
-            else if (action == "search") {
-                var moduleNames = windowManager.getUniqueModuleNames();
-                searchResultsModel.appendModuleNames(moduleNames);
-                searchModel.appendModuleChoices(moduleNames);
-                search.visible = true;
             }
             else if (action == "gnomeStyle") {
                 btStyle.setStyle(1)
@@ -419,7 +457,13 @@ Rectangle {
         }
     }
 
-    QuitQuestion {
+    Question {
         id: quitQuestion
+        background: btStyle.toolbarColor
+        text: QT_TR_NOOP("Are you sure you want to quit?")
+        onFinished: {
+            if (answer == true)
+                Qt.quit();
+        }
     }
 }

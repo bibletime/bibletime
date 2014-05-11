@@ -19,42 +19,66 @@ import BibleTime 1.0
 SplitView {
     id: searchResults
 
-//    property string searchText: ""
-//    property string findChoice: ""
-//    property string moduleList: ""
-
     property alias searchText: btSearchInterface.searchText
     property alias findChoice: btSearchInterface.findChoice
     property alias moduleList: btSearchInterface.moduleList
+    property alias indexingFinished: btSearchInterface.indexingFinished
 
     property real leftRightSplit: 0.35
-    property real topBottomSplit: 0.35
-    property real handleWidth: btStyle.pixelsPerMillimeterX *1.5
-    property alias modulesModel: modulesView.model
+    property real topBottomSplit: 0.45
+    property real handleWidth: btStyle.pixelsPerMillimeterX * 3
 
     orientation: Qt.Vertical
-    handleDelegate: Rectangle { width: 1; height: handleWidth; color: "gray" }
-    anchors.fill: parent
-    visible: false
-    onWidthChanged: {
-        if ( ! visible)
-            return;
-    }
+    handleDelegate: Rectangle {
+        width: 1;
+        height: {
+            var pixel = btStyle.pixelsPerMillimeterY * 6;
+            var uiFont = btStyle.uiFontPointSize * 2.0;
+            return Math.max(pixel, uiFont);
+        }
 
-    onVisibleChanged: {
-        if (visible) {
-            console.log("search:", searchText, findChoice, moduleList);
-            btWindowInterface.moduleName = "ESV";
-            btWindowInterface.reference = "Genesis 1:1";
-            btSearchInterface.performSearch();
+        color: btStyle.toolbarColor
+        border.color: "black"
+        border.width: 2
+
+        Text {
+            id: title
+            text: {
+                return btWindowInterface.moduleName + "   " +  btWindowInterface.reference;
+            }
+            color: "black"
+            font.pointSize: btStyle.uiFontPointSize
+            anchors.fill: parent
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
         }
     }
+
+    anchors.fill: parent
+    visible: false
 
     Keys.onReleased: {
         if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape) && searchResults.visible == true) {
             searchResults.visible = false;
             event.accepted = true;
         }
+    }
+
+    function modulesAreIndexed() {
+        return btSearchInterface.modulesAreIndexed();
+    }
+
+    function indexModules() {
+        return btSearchInterface.indexModules();
+    }
+
+    function performSearch() {
+        btWindowInterface.highlightWords = btSearchInterface.searchText;
+        btSearchInterface.performSearch();
+        modulesView.currentIndex = 0;
+        referencesView.currentIndex = 0;
+        referencesView.updateTextDisplay();
+        Qt.inputMethod.hide();
     }
 
     Rectangle {
@@ -65,9 +89,16 @@ SplitView {
 
         SplitView {
             id: topSplitter
+
             orientation: Qt.Horizontal
             anchors.fill: parent
-            handleDelegate: Rectangle { width: handleWidth; height: 2; color: "gray" }
+            handleDelegate: Rectangle {
+                width: handleWidth;
+                height: 2;
+                color: btStyle.toolbarColor
+                border.color: "black"
+                border.width: 2
+            }
 
             Rectangle {
                 id: modules
@@ -77,11 +108,10 @@ SplitView {
                 anchors.top: parent.top
                 width: parent.width * searchResults.leftRightSplit
                 height: parent.height
-                border.color: "black"
-                border.width: 1
 
                 TitleColorBar {
                     id: titleBar1
+
                     title: "Works"
                     width: parent.width
                     anchors.left: parent.left
@@ -91,11 +121,16 @@ SplitView {
                 ListSelectView {
                     id: modulesView
 
+                    model: btSearchInterface.modulesModel
                     anchors.top: titleBar1.bottom
                     anchors.bottom: parent.bottom
                     anchors.left: parent.left
                     anchors.right: parent.right
                     leftTextMargin: 30
+
+                    onItemSelected: {
+                        btSearchInterface.selectReferences(currentIndex);
+                    }
                 }
             }
 
@@ -103,11 +138,8 @@ SplitView {
                 id: references
 
                 color: "white"
-                anchors.left: modules.right
                 anchors.top: parent.top
                 Layout.fillWidth: true
-                border.color: "black"
-                border.width: 1
 
                 TitleColorBar {
                     id: titleBar2
@@ -115,19 +147,27 @@ SplitView {
                     width: parent.width
                 }
 
-                ListView {
+                ListSelectView {
                     id: referencesView
 
+                    model: btSearchInterface.referencesModel
                     anchors.top: titleBar2.bottom
                     anchors.bottom: parent.bottom
                     anchors.left: parent.left
                     anchors.right: parent.right
-                    anchors.leftMargin: 3
-                    anchors.rightMargin: 3
-                    anchors.bottomMargin: 3
-                    clip: true
-                    highlightFollowsCurrentItem: true
-                    currentIndex: 2
+                    leftTextMargin: 30
+
+                    onItemSelected: {
+                        updateTextDisplay()
+                    }
+
+                    function updateTextDisplay() {
+                        var moduleName = btSearchInterface.getModuleName(modulesView.currentIndex);
+                        var reference = btSearchInterface.getReference(referencesView.currentIndex);
+                        btWindowInterface.moduleName = moduleName;
+                        btWindowInterface.reference = reference;
+                        btWindowInterface.updateCurrentModelIndex();
+                    }
                 }
             }
         }
@@ -141,20 +181,12 @@ SplitView {
         anchors.bottom: parent.bottom
         width: parent.width
         Layout.fillWidth: true
-        border.color: "black"
-        border.width: 1
-
-        TitleColorBar {
-            id: titleBar3
-            title: "Text"
-            width: parent.width
-        }
 
         ListView {
             id: listView
 
             clip: true
-            anchors.top: titleBar3.bottom
+            anchors.top: parent.top
             anchors.bottom: parent.bottom
             anchors.left: parent.left
             anchors.right: parent.right
@@ -164,7 +196,11 @@ SplitView {
             highlightFollowsCurrentItem: true
             currentIndex: btWindowInterface.currentModelIndex
             onCurrentIndexChanged: {
-                positionViewAtIndex(currentIndex,listView.Beginning)
+                positionViewAtIndex(currentIndex,ListView.Beginning)
+            }
+            onMovementEnded: {
+                var index = indexAt(contentX,contentY+30);
+                btWindowInterface.updateKeyText(index);
             }
 
             delegate: Text {

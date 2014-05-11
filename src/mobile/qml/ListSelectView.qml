@@ -56,7 +56,7 @@ Rectangle {
                 property bool selected: ListView.isCurrentItem ? true : false
                 objectName: "entry"
 
-                color: (highlight && ListView.isCurrentItem) ? "#ffeeaa" : "white"
+                color: (highlight && ListView.isCurrentItem) ? "#ffeedd" : "white"
                 border.width: buttonMouseArea.pressed ? 5 :1
                 border.color: "darkgray"
                 width: parent.width
@@ -93,9 +93,7 @@ Rectangle {
 
             function itemWasSelected() {
                 listView.selectItem(mouseX, mouseY);
-                var moduleName = listView.model.get(listView.currentIndex).value;
-                console.log(currentIndex, moduleName);
-                itemSelected(currentIndex, moduleName);
+                itemSelected(currentIndex);
             }
         }
     }

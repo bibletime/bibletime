@@ -64,6 +64,25 @@ BtWindowInterface::BtWindowInterface(QObject* parent)
     m_keyNameChooser = new KeyNameChooser(viewer, this);
     ok = connect(m_keyNameChooser, SIGNAL(referenceChanged(int)), this, SLOT(referenceChosen(int)));
     Q_ASSERT(ok);
+
+    ok = connect(CSwordBackend::instance(),
+            SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)),
+                 this,
+            SLOT(reloadModules(CSwordBackend::SetupChangedReason)));
+    Q_ASSERT(ok);
+}
+
+void BtWindowInterface::reloadModules(CSwordBackend::SetupChangedReason /* reason */ ) {
+    //first make sure all used Sword modules are still present
+
+    if (CSwordBackend::instance()->findModuleByName(m_moduleName)) {
+        QString moduleName = m_moduleName;
+        m_moduleName = "";
+        setModuleName(moduleName);
+        ;
+    } else {
+        // close window ?
+    }
 }
 
 void BtWindowInterface::updateModel() {
@@ -130,6 +149,8 @@ QString BtWindowInterface::getModuleName() const {
 }
 
 void BtWindowInterface::setReference(const QString& key) {
+    if (m_key && m_key->key() == key)
+        return;
     if (m_key) {
         m_key->setKey(key);
         referenceChanged();
@@ -137,8 +158,11 @@ void BtWindowInterface::setReference(const QString& key) {
 }
 
 void BtWindowInterface::setModuleName(const QString& moduleName) {
+    if (m_key && m_moduleName == moduleName)
+        return;
     if (moduleName.isEmpty())
         return;
+    m_moduleName = moduleName;
     CSwordModuleInfo* m = CSwordBackend::instance()->findModuleByName(moduleName);
     if (!m_key) {
         m_key = CSwordKey::createInstance(m);
@@ -328,6 +352,15 @@ QVariant BtWindowInterface::getTextModel() {
 void BtWindowInterface::updateKeyText(int index) {
     QString keyName = m_moduleTextModel->indexToKeyName(index);
     setReference(keyName);
+}
+
+QString BtWindowInterface::getHighlightWords() const {
+    return m_highlightWords;
+}
+
+void BtWindowInterface::setHighlightWords(const QString& words) {
+    m_highlightWords = words;
+    m_moduleTextModel->setHighlightWords(words);
 }
 
 } // end namespace
