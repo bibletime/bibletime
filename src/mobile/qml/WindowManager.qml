@@ -281,14 +281,8 @@ Rectangle {
                     width: {
                         calculateTabWidth()
                     }
-                    height: btStyle.pixelsPerMillimeterY * 6
-
-                    Rectangle {
-                        id: tabBorder
-                        width: parent.width; height: 1
-                        anchors { bottom: parent.bottom; bottomMargin: 1 }
-                        color: "#acb2c2"
-                    }
+                    height: btStyle.pixelsPerMillimeterY * 7
+                    color: "lightgray"
 
                     Rectangle {
                         id: tabImage
@@ -300,8 +294,15 @@ Rectangle {
                             else
                                 return btStyle.windowTab
                         }
-                        border.color: btStyle.windowTab
-                        border.width: 3
+                        radius: height/2
+
+                        Rectangle {
+                            color: tabImage.color
+                            height: tabImage.height/2
+                            width: tabImage.width
+                            anchors.left: tabImage.left
+                            anchors.bottom: tabImage.bottom
+                        }
 
                         Text {
                             id: tabText
@@ -309,8 +310,8 @@ Rectangle {
                             horizontalAlignment: Qt.AlignHCenter;
                             verticalAlignment: Qt.AlignVCenter
                             anchors.fill: parent
-                            anchors.topMargin: 6
-                            font.pointSize: btStyle.uiFontPointSize -3
+                            anchors.topMargin: 4
+                            font.pointSize: btStyle.uiFontPointSize -1
                             text: tabbedWindowsStack.children[index].title
                             elide: Text.ElideLeft
                             color: {
