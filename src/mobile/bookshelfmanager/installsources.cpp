@@ -54,7 +54,6 @@ void InstallSources::refreshWorks(const QStringList& sourceNames) {
         int percent = 10 + 90 *((double)i/sourceCount);
         QString title = "Refreshing " + sourceName;
         emit percentComplete(percent, title);
-        qDebug() << title << percent;
         sword::InstallSource source = BtInstallBackend::source(sourceName);
         bool result = (m_iMgr->refreshRemoteSource(&source) == 0);
         if (result) {
@@ -69,7 +68,6 @@ void InstallSources::refreshWorks(const QStringList& sourceNames) {
 
 void InstallSources::cancel() {
     m_canceled = true;
-    qDebug() << "IS canceled";
 }
 
 }

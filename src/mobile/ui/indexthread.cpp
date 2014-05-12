@@ -28,17 +28,14 @@ IndexThread::IndexThread(const QList<CSwordModuleInfo*>& modules, QObject* const
 void IndexThread::run() {
     m_stopRequestedMutex.lock();
     try {
-//        qDebug() << "modules.size "  << m_modules.size();
         for (m_currentModuleIndex = 0;
              !m_stopRequested && (m_currentModuleIndex < m_modules.size());
              m_currentModuleIndex++)
         {
             m_stopRequestedMutex.unlock();
             indexModule();
-//            qDebug() << "indexModule function finished";
             m_stopRequestedMutex.lock();
         }
-//        qDebug() << "emit indexingFinished";
         emit indexingFinished();
     } catch (...) {
         m_stopRequestedMutex.unlock();
@@ -50,6 +47,8 @@ void IndexThread::run() {
 void IndexThread::stopIndex() {
     const QMutexLocker lock(&m_stopRequestedMutex);
     m_stopRequested = true;
+    CSwordModuleInfo* module = m_modules.at(m_currentModuleIndex);
+    module->cancelIndexing();
 }
 
 void IndexThread::indexModule() {
@@ -58,9 +57,7 @@ void IndexThread::indexModule() {
     emit beginIndexingModule(moduleName);
     bool ok = connect(module, SIGNAL(indexingProgress(int)), this, SLOT(slotModuleProgress(int)));
     Q_ASSERT(ok);
-//    qDebug() << "indexModule " << moduleName;
     bool success = module->buildIndex();
-//    qDebug() << "indexModule " << moduleName << " finished";
     emit endIndexingModule(moduleName, success);
 }
 

@@ -23,7 +23,7 @@ namespace btm {
 typedef QList<const CSwordModuleInfo*> CSMI;
 
 BtSearchInterface::BtSearchInterface(QObject* parent)
-    : QObject(parent), m_searchType(AndType), m_progressObject(0) {
+    : QObject(parent), m_searchType(AndType), m_progressObject(0), m_wasCancelled(false) {
 }
 
 BtSearchInterface::~BtSearchInterface() {
@@ -62,8 +62,13 @@ void BtSearchInterface::slotIndexingFinished() {
     emit indexingFinished();
 }
 
+void BtSearchInterface::cancel() {
+    m_thread->stopIndex();
+    m_wasCancelled = true;
+}
+
 bool BtSearchInterface::wasCanceled() {
-    return false;
+    return m_wasCancelled;
 }
 
 enum TextRoles {
@@ -75,6 +80,7 @@ bool BtSearchInterface::indexModules() {
     QStringList moduleList =  m_moduleList.split(", ");
     CSMI modules = CSwordBackend::instance()->getConstPointerList(moduleList);
     bool success = true;
+    m_wasCancelled = false;
 
     if (m_progressObject == 0)
         m_progressObject = findQmlObject("indexProgress");
@@ -97,7 +103,6 @@ bool BtSearchInterface::indexModules() {
                  this, SLOT(slotIndexingFinished()));
     Q_ASSERT(ok);
 
-//    qDebug() << "index thread started";
     m_thread->start();
     return success;
 }

@@ -27,6 +27,16 @@ SplitView {
     property real leftRightSplit: 0.35
     property real topBottomSplit: 0.45
     property real handleWidth: btStyle.pixelsPerMillimeterX * 3
+    property bool indexingCancelled;
+
+    function cancel() {
+        btSearchInterface.cancel();
+        indexingCancelled = true;
+    }
+
+    function indexingWasCancelled() {
+        return indexingCancelled;
+    }
 
     orientation: Qt.Vertical
     handleDelegate: Rectangle {
@@ -69,6 +79,7 @@ SplitView {
     }
 
     function indexModules() {
+        indexingCancelled = false;
         return btSearchInterface.indexModules();
     }
 

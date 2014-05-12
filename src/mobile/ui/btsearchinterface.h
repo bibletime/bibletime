@@ -57,6 +57,7 @@ public:
     Q_INVOKABLE void selectReferences(int moduleIndex);
     Q_INVOKABLE QString getModuleName(int index);
     Q_INVOKABLE QString getReference(int index);
+    Q_INVOKABLE void cancel();
 
     BtSearchInterface(QObject *parent = 0);
     ~BtSearchInterface();
@@ -102,6 +103,7 @@ private:
     int m_searchType;
     QQuickItem* m_progressObject;
     IndexThread* m_thread;
+    bool m_wasCancelled;
     QString m_searchText;
     QString m_findChoice;
     QString m_moduleList;

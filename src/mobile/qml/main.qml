@@ -185,7 +185,6 @@ Rectangle {
         }
 
         function openSearchResults() {
-//            console.log("open search results")
             searchResults.searchText = search.searchText;
             searchResults.findChoice = search.findChoice;
             searchResults.moduleList = search.moduleList;
@@ -205,9 +204,10 @@ Rectangle {
             }
         }
         onIndexingFinishedChanged: {
-//            console.log("indexing finished")
             indexProgress.visible = false;
-            search.openSearchResults();
+            if ( ! searchResults.indexingWasCancelled()) {
+                search.openSearchResults();
+            }
         }
     }
 
@@ -219,7 +219,6 @@ Rectangle {
             indexQuestion.visible = false;
 
             if (answer == true) {
-//                console.log("open progress dialog")
                 indexProgress.visible = true;
             } else {
                 search.visible = false;
@@ -241,9 +240,11 @@ Rectangle {
         visible: false
         onVisibleChanged: {
             if (visible == true) {
-//                console.log("index modules")
                 searchResults.indexModules();
             }
+        }
+        onCancel: {
+            searchResults.cancel();
         }
     }
 
