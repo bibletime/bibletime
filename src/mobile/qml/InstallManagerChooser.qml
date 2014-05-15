@@ -96,79 +96,58 @@ Rectangle {
         width: parent.width - 2 * installManager.spacing
         anchors.top: grid.bottom
         anchors.left: parent.left
-        anchors.bottom: installRemoveButton.top
+        anchors.bottom: buttonRow.top
         anchors.margins: installManager.spacing
         onItemSelected: {
             workSelected(index)
         }
     }
 
-    Rectangle {
-        id: refreshButton
-        width: installManager.width * 3.4 / 10;
-        height: btStyle.pixelsPerMillimeterY * 8
+    Row {
+        id: buttonRow
+
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: 10
-        anchors.right: installRemoveButton.left
-        anchors.rightMargin: 10
-        border.width: 4
-        border.color: "black"
+        anchors.left: parent.left
+        anchors.bottomMargin: 20
+        spacing: (parent.width - refreshButton.width - installRemoveButton.width) / 3
+        anchors.leftMargin: (parent.width - refreshButton.width - installRemoveButton.width) / 3
 
-        Text {
-            text: qsTranslate("InstallManagerChooser", "Refresh Lists")
-            anchors.centerIn: parent
-            font.pointSize: btStyle.uiFontPointSize
+        Rectangle {
+            id: refreshButton
+            width: installManager.width * 4.8 / 10;
+            height: btStyle.pixelsPerMillimeterY * 7
+            border.width: 4
+            border.color: "black"
+
+            Text {
+                text: qsTranslate("InstallManagerChooser", "Refresh Lists")
+                anchors.centerIn: parent
+                font.pointSize: btStyle.uiFontPointSize
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: installManager.refreshLists()
+            }
         }
 
-        MouseArea {
-            anchors.fill: parent
-            onClicked: installManager.refreshLists()
-        }
-    }
+        Rectangle {
+            id: installRemoveButton
+            width: installManager.width * 4.8 / 10;
+            height: btStyle.pixelsPerMillimeterY * 7
+            border.width: 4
+            border.color: "black"
 
-    Rectangle {
-        id: installRemoveButton
-        width: installManager.width * 3.8 / 10;
-        height: btStyle.pixelsPerMillimeterY * 8
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: 10
-        anchors.right: cancelButton.left
-        anchors.rightMargin: 10
-        border.width: 4
-        border.color: "black"
+            Text {
+                text: qsTranslate("InstallManagerChooser", "Install / Remove")
+                anchors.centerIn: parent
+                font.pointSize: btStyle.uiFontPointSize
+            }
 
-        Text {
-            text: qsTranslate("InstallManagerChooser", "Install / Remove")
-            anchors.centerIn: parent
-            font.pointSize: btStyle.uiFontPointSize
-        }
-
-        MouseArea {
-            anchors.fill: parent
-            onClicked: installManager.installRemove()
-        }
-    }
-
-    Rectangle {
-        id: cancelButton
-        width: installManager.width * 2.4 / 12;
-        height: btStyle.pixelsPerMillimeterY * 8
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: 10
-        anchors.right: parent.right
-        anchors.rightMargin: installManager.width * 0.4 / 10;
-        border.width: 4
-        border.color: "black"
-
-        Text {
-            text: qsTranslate("InstallManagerChooser", "Cancel")
-            anchors.centerIn: parent
-            font.pointSize: btStyle.uiFontPointSize
-        }
-
-        MouseArea {
-            anchors.fill: parent
-            onClicked: installManager.cancel();
+            MouseArea {
+                anchors.fill: parent
+                onClicked: installManager.installRemove()
+            }
         }
     }
 
