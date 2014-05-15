@@ -356,5 +356,23 @@ int BtStyle::pixelsPerMillimeterY() const {
     return dpm;
 }
 
+QString BtStyle::getAppVersion() const {
+    return  "prerelease";
+}
+
+QString BtStyle::getGitVersion() const {
+    return  APP_VERSION;
+}
+
+QString BtStyle::getQtVersion() const {
+    QString version =  qVersion();
+        return  version;
+}
+
+QString BtStyle::getSwordVersion() const {
+    QString version(sword::SWVersion::currentVersion.getText());
+    return  version;
+}
+
 } // end namespace
 

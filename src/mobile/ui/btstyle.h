@@ -55,6 +55,11 @@ class BtStyle : public QObject {
     Q_PROPERTY(double pixelsPerMillimeterX   READ pixelsPerMillimeterX NOTIFY changed);
     Q_PROPERTY(double pixelsPerMillimeterY   READ pixelsPerMillimeterY NOTIFY changed);
 
+    Q_PROPERTY(QString appVersion            READ getAppVersion        NOTIFY versionChanged);
+    Q_PROPERTY(QString gitVersion            READ getGitVersion        NOTIFY versionChanged);
+    Q_PROPERTY(QString qtVersion             READ getQtVersion         NOTIFY versionChanged);
+    Q_PROPERTY(QString swordVersion          READ getSwordVersion      NOTIFY versionChanged);
+
 
 public:
     Q_INVOKABLE void setStyle(int style);
@@ -142,8 +147,14 @@ public:
     int pixelsPerMillimeterX() const;
     int pixelsPerMillimeterY() const;
 
+    QString getAppVersion() const;
+    QString getGitVersion() const;
+    QString getQtVersion() const;
+    QString getSwordVersion() const;
+
 signals:
     void changed();
+    void versionChanged();
 };
 
 } // end namespace

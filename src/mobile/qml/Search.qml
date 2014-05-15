@@ -89,17 +89,15 @@ FocusScope {
                 Rectangle {
                     color: "white"
                     width: search.width -searchButton.width - search.spacing * 3
-                    height: textInput.contentHeight
+                    height:searchButton.height
 
-                    TextInput {
+                    TextField {
                         id: textInput
 
                         anchors.fill: parent
                         font.pointSize: btStyle.uiFontPointSize
                         verticalAlignment: Text.AlignVCenter
-                        cursorVisible: true
                         inputMethodHints: Qt.ImhNoAutoUppercase
-                        color: "black"
                         focus: true
                         text: ""
                         onAccepted: {

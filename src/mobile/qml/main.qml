@@ -55,7 +55,8 @@ Rectangle {
         search,
         installManagerChooser,
         keyNameChooser,
-        treeChooser
+        treeChooser,
+        aboutDialog
     ]
 
     Keys.onReleased: {
@@ -309,6 +310,7 @@ Rectangle {
         ListElement { title: QT_TR_NOOP("User Interface Font Size");action: "uiFontSize" }
         ListElement { title: QT_TR_NOOP("Window Arrangement");      action: "windowArrangement" }
         ListElement { title: QT_TR_NOOP("Bookshelf Manager");       action: "install" }
+        ListElement { title: QT_TR_NOOP("About");                   action: "about" }
     }
 
     Menus {
@@ -337,6 +339,9 @@ Rectangle {
             }
             else if (action == "install") {
                 installModules();
+            }
+            else if (action == "about") {
+                aboutDialog.visible = true;
             }
             else if (action == "settings") {
                 settings.visible = true;
@@ -466,5 +471,10 @@ Rectangle {
             if (answer == true)
                 Qt.quit();
         }
+    }
+
+    About {
+        id: aboutDialog
+        visible: false
     }
 }

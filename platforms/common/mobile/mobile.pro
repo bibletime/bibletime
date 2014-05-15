@@ -1,6 +1,7 @@
 CONFIG += clucene svg xml mobile qml quick
 
 DEFINES += BT_MOBILE
+QMAKE_CXXFLAGS += -DAPP_VERSION=\\\"`git rev-parse HEAD`\\\"
 
 include(../../common/core/core.pro)
 
@@ -65,6 +66,7 @@ OTHER_FILES += \
     ../../../src/mobile/qml/rightarrow.svg \
     ../../../src/mobile/qml/tab.png \
     ../../../src/mobile/qml/main.qml \
+    ../../../src/mobile/qml/About.qml \
     ../../../src/mobile/qml/ContextMenu.qml \
     ../../../src/mobile/qml/FontSizeSlider.qml \
     ../../../src/mobile/qml/GridChooser.qml \
