@@ -983,20 +983,21 @@ QString CSwordModuleInfo::getSimpleConfigEntry(const QString & name) const {
 
 /// \note See http://www.crosswire.org/wiki/DevTools:conf_Files#Localization
 QString CSwordModuleInfo::getFormattedConfigEntry(const QString & name) const {
-    sword::SWBuf RTF_Buffer;
-    QStringList localeNames(QLocale(CSwordBackend::instance()->booknameLanguage()).uiLanguages());
-    for(int i = localeNames.size() - 1; i >= -1; --i) {
-        QString field(i >= 0 ? name + "_" + localeNames[i] : name);
-        if((RTF_Buffer = m_module->getConfigEntry((field.toUtf8().constData()))).length() > 0)
-            break;
+    const QStringList localeNames(QLocale(CSwordBackend::instance()->booknameLanguage()).uiLanguages());
+    for (int i = localeNames.size() - 1; i >= -1; --i) {
+        sword::SWBuf RTF_Buffer =
+                m_module->getConfigEntry(
+                    QString(i >= 0 ? name + "_" + localeNames[i] : name)
+                        .toUtf8().constData());
+        if (RTF_Buffer.length() > 0) {
+            sword::RTFHTML RTF_Filter;
+            RTF_Filter.processText(RTF_Buffer, 0, 0);
+            return isUnicode()
+                   ? QString::fromUtf8(RTF_Buffer.c_str())
+                   : QString::fromLatin1(RTF_Buffer.c_str());
+        }
     }
-    sword::RTFHTML RTF_Filter;
-    RTF_Filter.processText(RTF_Buffer, 0, 0);
-    const QString ret = isUnicode()
-                        ? QString::fromUtf8(RTF_Buffer.c_str())
-                        : QString::fromLatin1(RTF_Buffer.c_str());
-
-    return ret.isEmpty() ? QString::null : ret;
+    return QString::null;
 }
 
 bool CSwordModuleInfo::setHidden(bool hide) {
