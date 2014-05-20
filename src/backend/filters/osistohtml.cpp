@@ -65,23 +65,21 @@ bool Filters::OsisToHtml::handleToken(sword::SWBuf &buf, const char *token, swor
 
         // <div> tag
         if (!strcmp(tag.getName(), "div")) {
-            //handle intro
-
-            if ((!tag.isEmpty()) && (!tag.isEndTag())) { //start tag
+            if (tag.isEndTag()) {
+                buf.append("</div>");
+            } else {
                 sword::SWBuf type( tag.getAttribute("type") );
-
                 if (type == "introduction") {
-                    buf.append("<div class=\"introduction\">");
-                }
-                else if (type == "chapter") {
-                    buf.append("<div class=\"chapter\" ></div>"); //don't open a div here, that would lead to a broken XML structure
-                }
-                else {
+                    if (!tag.isEmpty())
+                        buf.append("<div class=\"introduction\">");
+                } else if (type == "chapter") {
+                    if (!tag.isEmpty())
+                        buf.append("<div class=\"chapter\" ></div>"); //don't open a div here, that would lead to a broken XML structure
+                } else if (type == "x-p") {
+                    buf.append("<br/>");
+                } else {
                     buf.append("<div>");
                 }
-            }
-            else if (tag.isEndTag()) { //end tag
-                buf.append("</div>");
             }
         }
         else if (!strcmp(tag.getName(), "w")) {
