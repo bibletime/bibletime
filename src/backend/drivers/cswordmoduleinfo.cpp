@@ -832,7 +832,7 @@ QString CSwordModuleInfo::aboutText() const {
 
     text += QString("<b>%1:</b><br/>%2</font>")
             .arg(tr("About"))
-            .arg(htmlEscape(config(AboutInformation)));
+            .arg(config(AboutInformation)); // May contain HTML, don't escape
 
     typedef QList<CSwordModuleInfo::ConfigEntry> ListConfigEntry;
 
