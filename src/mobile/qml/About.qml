@@ -29,6 +29,7 @@ Rectangle {
         anchors.right: parent.right
         anchors.top: parent.top
         anchors.bottom: parent.bottom
+        anchors.topMargin: btStyle.pixelsPerMillimeterY * 2
         contentWidth: width
         contentHeight: column.height * 1.1
 
@@ -51,54 +52,48 @@ Rectangle {
                 id: titleText
 
                 text: "BibleTime Mobile"
-                font.pointSize: btStyle.uiFontPointSize + 2
-            }
-
-            Text {
-                id: urlText
-
-                wrapMode: Text.Wrap
-                width: parent.width
+                width: aboutDialog.width
                 horizontalAlignment: Text.AlignHCenter
-                text: "Brought to you by the <a href=\"http://www.bibletime.info\">BibleTime Team</a>."
-                font.pointSize: btStyle.uiFontPointSize
-                onLinkActivated: {
-                    console.log(link)
-                    Qt.openUrlExternally(link);
-                }
+                font.pointSize: btStyle.uiFontPointSize + 4
             }
 
             Text {
                 id: versionText
 
                 wrapMode: Text.WordWrap
+                width: aboutDialog.width
                 horizontalAlignment: Text.AlignHCenter
-                width: parent.width
-                text: formatVersion();
+                text: formatText();
                 font.pointSize: btStyle.uiFontPointSize
+                onLinkActivated: {
+                    Qt.openUrlExternally(link);
+                }
 
-                function formatVersion(version) {
-                    var appstr = "Version\n"
+                function formatText() {
+                    var btstr = "Brought to you by the <a href=\"http://www.bibletime.info\">BibleTime Team</a><br><br>";
+                    var appstr = "Version<br>"
                     appstr += btStyle.appVersion;
-                    appstr += "\n\n";
+                    appstr += "<br><br>";
 
-                    var gitstr = "Git version\n";
+                    var qtstr = "Qt version<br>"
+                    qtstr += btStyle.qtVersion;
+                    qtstr += "<br><br>";
+
+                    var swordstr = "Sword version<br>"
+                    swordstr += btStyle.swordVersion;
+                    swordstr += "<br><br>";
+
+                    var gplstr = "Licensed Under the<br><a href=\"http://www.gnu.org/licenses/gpl-2.0.html\">GNU General Public License Version 2</a><br><br>"
+
+                    var gitstr = "<a href=\"http://gitorious.org/bibletime/bibletime\">Git version</a><br>";
                     var gitversion = btStyle.gitVersion;
                     var len = gitversion.length;
                     gitstr += gitversion.substring(0, len/2-1);
-                    gitstr += "\n";
+                    gitstr += "<br>";
                     gitstr += gitversion.substring(len/2, len);
-                    gitstr += "\n\n";
+                    gitstr += "<br><br>";
 
-                    var qtstr = "Qt version\n"
-                    qtstr += btStyle.qtVersion;
-                    qtstr += "\n\n";
-
-                    var swordstr = "Sword version\n"
-                    swordstr += btStyle.swordVersion;
-                    swordstr += "\n\n";
-
-                    return appstr + gitstr + qtstr + swordstr;
+                    return  btstr + appstr + qtstr + swordstr + gplstr + gitstr;
                 }
             }
         }
