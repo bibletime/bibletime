@@ -361,7 +361,11 @@ QString BtStyle::getAppVersion() const {
 }
 
 QString BtStyle::getGitVersion() const {
-    return  APP_VERSION;
+#ifdef BT_GIT_VERSION
+    return  BT_GIT_VERSION;
+#else
+    return "";
+#endif
 }
 
 QString BtStyle::getQtVersion() const {

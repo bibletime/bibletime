@@ -1,7 +1,7 @@
 CONFIG += clucene svg xml mobile qml quick
 
 DEFINES += BT_MOBILE
-QMAKE_CXXFLAGS += -DAPP_VERSION=\\\"`git rev-parse HEAD`\\\"
+QMAKE_CXXFLAGS += -DBT_GIT_VERSION=\\\"`git rev-parse HEAD`\\\"
 
 include(../../common/core/core.pro)
 

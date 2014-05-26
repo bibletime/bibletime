@@ -85,13 +85,16 @@ Rectangle {
 
                     var gplstr = "Licensed Under the<br><a href=\"http://www.gnu.org/licenses/gpl-2.0.html\">GNU General Public License Version 2</a><br><br>"
 
-                    var gitstr = "<a href=\"http://gitorious.org/bibletime/bibletime\">Git version</a><br>";
+                    var gitstr = "";
                     var gitversion = btStyle.gitVersion;
                     var len = gitversion.length;
-                    gitstr += gitversion.substring(0, len/2-1);
-                    gitstr += "<br>";
-                    gitstr += gitversion.substring(len/2, len);
-                    gitstr += "<br><br>";
+                    if (len != 0) {
+                        gitstr = "<a href=\"http://gitorious.org/bibletime/bibletime\">Git version</a><br>";
+                        gitstr += gitversion.substring(0, len/2-1);
+                        gitstr += "<br>";
+                        gitstr += gitversion.substring(len/2, len);
+                        gitstr += "<br><br>";
+                    }
 
                     return  btstr + appstr + qtstr + swordstr + gplstr + gitstr;
                 }
