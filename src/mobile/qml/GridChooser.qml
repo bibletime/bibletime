@@ -20,16 +20,17 @@ Rectangle {
     property int rows: 5
     property int buttonWidth: 100
     property int buttonHeight: 30
-    property int topMargin: 6
-    property int leftMargin: 4
-    property int titleHeight: 4
-    property int space: 8
+    property int space: 10
     property string selected: ""
     property string titleText: ""
     property int maxLength: 0
 
     signal accepted(string choosenText);
     signal backup();
+
+    color: btStyle.toolbarColor
+    height: parent.height
+    width: parent.width
 
     Keys.onReleased: {
         if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape) && gridChooser.visible == true) {
@@ -40,15 +41,17 @@ Rectangle {
     }
 
     onVisibleChanged: {
-
+        if ( ! visible)
+            return;
         var count = gridChooserModel.length
         if (count < 36)
             count = 36;
 
         calculateColumns(count);
-
-        buttonWidth = (width/columns) - space;
-        buttonHeight = Math.floor((height-(rows*space))/rows) ;
+        buttonWidth = (width - ((columns +1) *space))/columns
+        var buttonH = Math.floor((height-(rows*space))/rows) ;
+        buttonHeight = Math.max(btStyle.pixelsPerMillimeterY*6, buttonH);
+        flick.contentY = 0;
     }
 
     function calculateColumns(count) {
@@ -63,66 +66,55 @@ Rectangle {
         gridChooser.accepted(value);
     }
 
-    Text {
-        id: title
-
-        text: titleText
-        font.pointSize: btStyle.uiFontPointSize
-        height: titleHeight
-        anchors.top: parent.top
-        anchors.horizontalCenter: parent.horizontalCenter
-    }
-
     BtStyle {
         id: btStyle
     }
 
-    MouseArea {
-        id: mouseArea
+    TitleColorBar {
+        id: title
 
-        anchors.fill: parent
-        enabled: gridChooser.opacity
+        title: titleText
+        anchors.top: parent.top
+        anchors.horizontalCenter: parent.horizontalCenter
     }
 
-    Rectangle {
-        anchors.fill: parent
-        color: btStyle.buttonBackground
-    }
+    Flickable {
+        id: flick
 
-    Rectangle {
-        id: topSpace
+        anchors.top: title.bottom
+        anchors.left: parent.left
+        anchors.leftMargin: space
+        width: parent.width
+        height: parent.height
+        contentHeight: (rows+1)*(buttonHeight+space);
+        contentWidth: width
+        clip: true
 
-        width: leftMargin
-        height: topMargin
-        color: btStyle.buttonBackground
-    }
+        Grid {
+            id: grid
 
-    Grid {
-        id: grid
+            width: parent.width
+            height: parent.contentHeight
+            columns: gridChooser.columns
+            spacing: gridChooser.space
 
-        anchors.top: topSpace.bottom
-        anchors.bottom: bottom.top
-        anchors.left: topSpace.right
-        anchors.right: parent.right
-        columns: gridChooser.columns
-        spacing: gridChooser.space
+            Repeater {
+                id: repeater
 
-        Repeater {
-            id: repeater
+                model: gridChooserModel
 
-            model: gridChooserModel
+                GridChooserButton {
+                    id: button
 
-            GridChooserButton {
-                id: buttonX
-
-                text: modelData
-                textHeight: btStyle.uiFontPointSize
-                buttonWidth: gridChooser.buttonWidth
-                buttonHeight: gridChooser.buttonHeight
-                textColor: btStyle.buttonTextColor
-                buttonColor: (text == gridChooser.selected) ? btStyle.buttonBackground : "white"
-                activeButtonColor: btStyle.buttonTextColor
-                onClicked: gridChooser.accept(text)
+                    text: modelData
+                    textHeight: btStyle.uiFontPointSize
+                    buttonWidth: gridChooser.buttonWidth
+                    buttonHeight: gridChooser.buttonHeight
+                    textColor: btStyle.buttonTextColor
+                    buttonColor: (text == gridChooser.selected) ? btStyle.buttonBackground : "white"
+                    activeButtonColor: btStyle.buttonTextColor
+                    onClicked: gridChooser.accept(text)
+                }
             }
         }
     }
