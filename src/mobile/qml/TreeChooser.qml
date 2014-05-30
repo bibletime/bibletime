@@ -119,8 +119,7 @@ Rectangle {
         width: pathArea.width
         model: treeChooser.model
 
-        delegate:
-            Rectangle {
+        delegate: Rectangle {
             id: entry
 
             property string action: ""

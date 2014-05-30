@@ -49,35 +49,33 @@ Rectangle {
             visible: listView.visibleArea.heightRatio < 0.99
         }
 
-        delegate {
-            Rectangle {
-                id: entry
+        delegate: Rectangle {
+            id: entry
 
-                property bool selected: ListView.isCurrentItem ? true : false
-                objectName: "entry"
+            property bool selected: ListView.isCurrentItem ? true : false
+            objectName: "entry"
 
-                color: (highlight && ListView.isCurrentItem) ? "#ffeedd" : "white"
-                border.width: buttonMouseArea.pressed ? 5 :1
-                border.color: "darkgray"
-                width: parent.width
-                height: {
-                    var pixel = btStyle.pixelsPerMillimeterY * 7;
-                    var uiFont = btStyle.uiFontPointSize * 3.5;
-                    return Math.max(pixel, uiFont);
-                }
+            color: (highlight && ListView.isCurrentItem) ? "#ffeedd" : "white"
+            border.width: buttonMouseArea.pressed ? 5 :1
+            border.color: "darkgray"
+            width: parent.width
+            height: {
+                var pixel = btStyle.pixelsPerMillimeterY * 7;
+                var uiFont = btStyle.uiFontPointSize * 3.5;
+                return Math.max(pixel, uiFont);
+            }
 
-                Text {
-                    id: entryText
+            Text {
+                id: entryText
 
-                    anchors.fill: parent
-                    anchors.leftMargin: leftTextMargin
-                    anchors.rightMargin: 10
-                    anchors.topMargin: 10
-                    verticalAlignment: Text.AlignVCenter
-                    text: model.text
-                    font.pointSize: btStyle.uiFontPointSize
-                    font.bold: highlight && entry.selected
-                }
+                anchors.fill: parent
+                anchors.leftMargin: leftTextMargin
+                anchors.rightMargin: 10
+                anchors.topMargin: 10
+                verticalAlignment: Text.AlignVCenter
+                text: model.text
+                font.pointSize: btStyle.uiFontPointSize
+                font.bold: highlight && entry.selected
             }
         }
 

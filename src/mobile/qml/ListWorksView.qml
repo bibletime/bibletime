@@ -71,65 +71,63 @@ Rectangle {
             visible: listView.visibleArea.heightRatio < 0.99
         }
 
-        delegate {
-            Rectangle {
-                id: entry
+        delegate: Rectangle {
+            id: entry
 
-                color: "white"
-                border.width: 1
-                border.color: ListView.isCurrentItem ? "#c0c0c0" : "#a0a0a0"
+            color: "white"
+            border.width: 1
+            border.color: ListView.isCurrentItem ? "#c0c0c0" : "#a0a0a0"
+            width: parent.width
+            height: {
+                var pixel = btStyle.pixelsPerMillimeterY * 7;
+                var uiFont = btStyle.uiFontPointSize * 5;
+                return Math.max(pixel, uiFont);
+            }
+
+            Image {
+                id: installedCheckmark
+
+                source: "checkmark.svg"
+                height: entry.height - 15
+                width:  entry.height -15
+                anchors.left: parent.left
+                anchors.top: parent.top
+                anchors.leftMargin: 5
+                anchors.topMargin: 5
+                visible: installed == 1
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {listView.itemSelected(index)}
+            }
+
+            Text {
+                anchors.top: entry.top
+                anchors.left: installedCheckmark.right
+                anchors.right: entry.right
                 width: parent.width
-                height: {
-                    var pixel = btStyle.pixelsPerMillimeterY * 7;
-                    var uiFont = btStyle.uiFontPointSize * 5;
-                    return Math.max(pixel, uiFont);
-                }
+                height: parent.height/2 -4
+                anchors.leftMargin: 5
+                anchors.rightMargin: 10
+                anchors.topMargin: 5
+                verticalAlignment: Text.AlignVCenter
+                text: title
+                font.pointSize: btStyle.uiFontPointSize
+            }
 
-                Image {
-                    id: installedCheckmark
-
-                    source: "checkmark.svg"
-                    height: entry.height - 15
-                    width:  entry.height -15
-                    anchors.left: parent.left
-                    anchors.top: parent.top
-                    anchors.leftMargin: 5
-                    anchors.topMargin: 5
-                    visible: installed == 1
-                }
-
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: {listView.itemSelected(index)}
-                }
-
-                Text {
-                    anchors.top: entry.top
-                    anchors.left: installedCheckmark.right
-                    anchors.right: entry.right
-                    width: parent.width
-                    height: parent.height/2 -4
-                    anchors.leftMargin: 5
-                    anchors.rightMargin: 10
-                    anchors.topMargin: 5
-                    verticalAlignment: Text.AlignVCenter
-                    text: title
-                    font.pointSize: btStyle.uiFontPointSize
-                }
-
-                Text {
-                    anchors.bottom: entry.bottom
-                    anchors.left: installedCheckmark.right
-                    anchors.right: entry.right
-                    width: parent.width
-                    height: parent.height/2 -4
-                    anchors.leftMargin: 15
-                    anchors.rightMargin: 10
-                    anchors.bottomMargin: 5
-                    text: desc
-                    elide: Text.ElideMiddle
-                    font.pointSize: btStyle.uiFontPointSize- 2
-                }
+            Text {
+                anchors.bottom: entry.bottom
+                anchors.left: installedCheckmark.right
+                anchors.right: entry.right
+                width: parent.width
+                height: parent.height/2 -4
+                anchors.leftMargin: 15
+                anchors.rightMargin: 10
+                anchors.bottomMargin: 5
+                text: desc
+                elide: Text.ElideMiddle
+                font.pointSize: btStyle.uiFontPointSize- 2
             }
         }
 

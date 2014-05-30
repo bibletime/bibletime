@@ -79,38 +79,36 @@ Rectangle {
             visible: listView.visibleArea.heightRatio < 0.99
         }
 
-        delegate {
-            Rectangle {
-                id: entry
+        delegate: Rectangle {
+            id: entry
 
-                property bool selected: ListView.isCurrentItem ? true : false
-                objectName: "entry"
+            property bool selected: ListView.isCurrentItem ? true : false
+            objectName: "entry"
 
-                color: (highlight && ListView.isCurrentItem) ? "#ffeeaa" : "white"
-                border.width: buttonMouseArea.pressed ? 5 :1
-                border.color: "darkgray"
+            color: (highlight && ListView.isCurrentItem) ? "#ffeeaa" : "white"
+            border.width: buttonMouseArea.pressed ? 5 :1
+            border.color: "darkgray"
+            width: parent.width
+            height: {
+                var pixel = btStyle.pixelsPerMillimeterY * 8;
+                var uiFont = btStyle.uiFontPointSize * 3.5;
+                return Math.max(pixel, uiFont);
+            }
+
+            Text {
+                id: entryText
+
+                anchors.top: entry.top
+                anchors.left: entry.left
+                anchors.right: entry.right
                 width: parent.width
-                height: {
-                    var pixel = btStyle.pixelsPerMillimeterY * 8;
-                    var uiFont = btStyle.uiFontPointSize * 3.5;
-                    return Math.max(pixel, uiFont);
-                }
-
-                Text {
-                    id: entryText
-
-                    anchors.top: entry.top
-                    anchors.left: entry.left
-                    anchors.right: entry.right
-                    width: parent.width
-                    anchors.leftMargin: 10
-                    anchors.rightMargin: 10
-                    anchors.topMargin: 10
-                    verticalAlignment: Text.AlignVCenter
-                    text: modelText
-                    font.pointSize: btStyle.uiFontPointSize
-                    font.bold: highlight && entry.selected
-                }
+                anchors.leftMargin: 10
+                anchors.rightMargin: 10
+                anchors.topMargin: 10
+                verticalAlignment: Text.AlignVCenter
+                text: modelText
+                font.pointSize: btStyle.uiFontPointSize
+                font.bold: highlight && entry.selected
             }
         }
 
