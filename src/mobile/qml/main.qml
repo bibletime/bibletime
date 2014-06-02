@@ -10,13 +10,15 @@
 *
 **********/
 
-import QtQuick 2.1
+import QtQuick 2.2
 import QtQml 2.2
+import QtQuick.Window 2.1
 import BibleTime 1.0
 
 Rectangle {
     id: root
 
+    color: "blue"
     property int opacitypopup: 0
     property QtObject component: null;
     property Item window: null;
