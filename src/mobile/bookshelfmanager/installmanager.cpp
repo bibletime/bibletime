@@ -81,7 +81,8 @@ static void setupWorksModel(const QStringList& titleList,
 
 InstallManager::InstallManager(QObject* /* parent */)
     : m_installManagerChooserObject(0),
-      m_btInstallMgr(0) {
+      m_btInstallMgr(0),
+      m_backend(0) {
 
     bool ok = connect(&m_installSourcesManager, SIGNAL(sourcesUpdated()),
                       this, SLOT(updateModels()));
@@ -173,11 +174,18 @@ void InstallManager::setProperties() {
     m_installManagerChooserObject->setProperty("visible", true);
 }
 
+void InstallManager::updateSwordBackend() {
+    QString sourceName = getCurrentListItem("sourceIndex", m_sourceList);
+    sword::InstallSource source = BtInstallBackend::source(sourceName);
+    m_backend = BtInstallBackend::backend(source);
+}
+
 void InstallManager::sourceIndexChanged(int index)
 {
     if (index < 0 || index >= m_sourceList.count())
         return;
 
+    updateSwordBackend();
     updateCategoryAndLanguageModels();
     updateWorksModel();
 }
@@ -235,10 +243,9 @@ void InstallManager::installRemove() {
 
 void InstallManager::updateCategoryAndLanguageModels()
 {
-    QString sourceName = getCurrentListItem("sourceIndex", m_sourceList);
-    sword::InstallSource source = BtInstallBackend::source(sourceName);
-    CSwordBackend* backend = BtInstallBackend::backend(source);
-    const QList<CSwordModuleInfo*> modules = backend->moduleList();
+    if (m_backend == 0)
+        return;
+    const QList<CSwordModuleInfo*> modules = m_backend->moduleList();
 
     QSet<QString> categories;
     QSet<QString> languages;
@@ -293,14 +300,15 @@ void InstallManager::updateWorksModel()
     QString categoryName = getCurrentListItem("categoryIndex", m_categoryList);
     QString languageName = getCurrentListItem("languageIndex", m_languageList);
 
-    sword::InstallSource source = BtInstallBackend::source(sourceName);
-    CSwordBackend* backend = BtInstallBackend::backend(source);
-    const QList<CSwordModuleInfo*> modules = backend->moduleList();
+    if (m_backend == 0)
+        return;
+    const QList<CSwordModuleInfo*> modules = m_backend->moduleList();
 
     m_worksTitleList.clear();
     m_worksDescList.clear();
     m_worksList.clear();
     m_worksInstalledList.clear();
+
     for (int moduleIndex=0; moduleIndex<modules.count(); ++moduleIndex) {
         CSwordModuleInfo* module = modules.at(moduleIndex);
         module->setProperty("installSourceName", sourceName);

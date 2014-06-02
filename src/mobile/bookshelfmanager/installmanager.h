@@ -22,6 +22,7 @@
 
 class QQuickItem;
 class CSwordModuleInfo;
+class CSwordBackend;
 class BtInstallMgr;
 
 namespace btm {
@@ -62,12 +63,15 @@ private:
                             const QStringList& list,
                             const QString& itemName);
     void updateCategoryAndLanguageModels();
+    void updateSwordBackend();
     void updateWorksModel();
 
     QQuickItem* m_installManagerChooserObject;
     QQuickItem* m_progressObject;
     BtInstallMgr* m_btInstallMgr;
     InstallSourcesManager m_installSourcesManager;
+    CSwordBackend* m_backend;
+
 
     InstallProgress m_installProgress;
     QStringList m_sourceList;
