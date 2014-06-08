@@ -93,7 +93,7 @@ Rectangle {
     ListWorksView {
         id: worksView
 
-        title: qsTranslate("InstallManagerChooser","Work")
+        title: qsTranslate("InstallManagerChooser","Document")
         width: parent.width - 2 * installManager.spacing
         anchors.top: grid.bottom
         anchors.left: parent.left

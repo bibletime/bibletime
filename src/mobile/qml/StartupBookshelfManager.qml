@@ -23,7 +23,7 @@ Rectangle {
     Text {
         width: parent.width
         anchors.fill: parent
-        text: qsTr("There are currently no works installed. Please click on the Ok button below to use the Bookshelf Manager to install new works.")
+        text: qsTr("There are currently no documents installed. Please click on the Ok button below to install new documentss.")
         verticalAlignment: Text.AlignVCenter
         horizontalAlignment: Text.AlignHCenter
         wrapMode: Text.WordWrap

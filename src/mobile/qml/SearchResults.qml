@@ -123,7 +123,7 @@ SplitView {
                 TitleColorBar {
                     id: titleBar1
 
-                    title: "Works"
+                    title: "Documents"
                     width: parent.width
                     anchors.left: parent.left
                     anchors.top: parent.top

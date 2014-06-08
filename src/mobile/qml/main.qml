@@ -305,14 +305,14 @@ Rectangle {
     ListModel {
         id: mainMenusModel
 
-        ListElement { title: QT_TR_NOOP("New Window");              action: "newWindow" }
-        ListElement { title: QT_TR_NOOP("View Window");             action: "view window" }
-        ListElement { title: QT_TR_NOOP("Close Window");            action: "close window" }
-        ListElement { title: QT_TR_NOOP("Text Font Size");          action: "textFontSize" }
-        ListElement { title: QT_TR_NOOP("User Interface Font Size");action: "uiFontSize" }
-        ListElement { title: QT_TR_NOOP("Window Arrangement");      action: "windowArrangement" }
-        ListElement { title: QT_TR_NOOP("Bookshelf Manager");       action: "install" }
-        ListElement { title: QT_TR_NOOP("About");                   action: "about" }
+        ListElement { title: QT_TR_NOOP("New Window");                action: "newWindow" }
+        ListElement { title: QT_TR_NOOP("View Window");               action: "view window" }
+        ListElement { title: QT_TR_NOOP("Close Window");              action: "close window" }
+        ListElement { title: QT_TR_NOOP("Text Font Size");            action: "textFontSize" }
+        ListElement { title: QT_TR_NOOP("User Interface Font Size");  action: "uiFontSize" }
+        ListElement { title: QT_TR_NOOP("Window Arrangement");        action: "windowArrangement" }
+        ListElement { title: QT_TR_NOOP("Manage Installed Documents");action: "install" }
+        ListElement { title: QT_TR_NOOP("About");                     action: "about" }
     }
 
     Menus {
