@@ -2,6 +2,7 @@
     <qresource prefix="/share/bibletime">
         <file>qml/checkmark.svg</file>
         <file>qml/About.qml</file>
+        <file>qml/BtButtonStyle.qml</file>
         <file>qml/ContextMenu.qml</file>
         <file>qml/FontSizeSlider.qml</file>
         <file>qml/GridChooserButton.qml</file>

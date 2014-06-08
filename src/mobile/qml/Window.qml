@@ -68,7 +68,7 @@ Rectangle {
             id: moduleDisplay
 
             width: text.width + 30
-            radius:btStyle.buttonRadius
+            radius:btStyle.pixelsPerMillimeterX
             anchors.left: parent.left
             anchors.top: parent.top
             anchors.bottom: parent.bottom
@@ -107,11 +107,11 @@ Rectangle {
 
             width: {
                 var w1 = 1100
-                var w2 = toolbar.width - moduleDisplay.width - 30;
+                var w2 = toolbar.width - moduleDisplay.width - 40;
                 var w = Math.min(w1,w2);
                 return w;
             }
-            radius: btStyle.buttonRadius
+            radius: btStyle.pixelsPerMillimeterX
             anchors.left: moduleDisplay.right
             anchors.top: parent.top
             anchors.bottom: parent.bottom

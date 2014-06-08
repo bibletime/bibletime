@@ -12,6 +12,7 @@
 
 import QtQuick 2.2
 import BibleTime 1.0
+import QtQuick.Controls 1.2
 
 Rectangle {
     id: fontPointSize
@@ -28,8 +29,8 @@ Rectangle {
     border.color: "black"
     border.width: 1
     anchors.centerIn: parent
-    width: parent.width * 0.85
-    height: btStyle.pixelsPerMillimeterY * 24
+    width: parent.width * 0.95
+    height: btStyle.pixelsPerMillimeterY * 18 + 50
 
     Text {
         text: qsTranslate("main", title)
@@ -44,7 +45,7 @@ Rectangle {
         id: bar
 
         color: "blue"
-        width: parent.width *.80
+        width: parent.width *.90
         height: 3
         anchors.centerIn: parent
     }
@@ -52,8 +53,8 @@ Rectangle {
     Rectangle {
         id: indicator
 
-        width: 18
-        height: 18
+        width: btStyle.pixelsPerMillimeterX * 3
+        height: width
         color: "red"
         y: bar.y - height / 2
         x: {
@@ -99,53 +100,46 @@ Rectangle {
     Grid {
         id: buttons
 
-        spacing: btStyle.pixelsPerMillimeterY * 4
+        spacing: btStyle.pixelsPerMillimeterY * 5
         columns: 2
-        anchors.right: parent.right
+        anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: parent.bottom
-        anchors.rightMargin: 10
-        anchors.bottomMargin: 10
+        anchors.bottomMargin: 15
+        anchors.topMargin: 45
 
-        Rectangle {
-            height: btStyle.pixelsPerMillimeterY * 5
-            width: btStyle.pixelsPerMillimeterY * 18
-            border.color: "black"
-            border.width: 1
-
-            Text {
-                text: qsTr("Ok")
-                anchors.centerIn: parent
-                font.pointSize: btStyle.uiFontPointSize
-            }
-
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    fontPointSize.visible = false;
-                }
+        Action {
+            id: okAction
+            text: qsTr("Ok")
+            onTriggered: {
+                fontPointSize.visible = false;
             }
         }
 
-        Rectangle {
-            height: btStyle.pixelsPerMillimeterY * 5
+        Button {
+            id: okButton
+            height: btStyle.pixelsPerMillimeterY * 6
             width: btStyle.pixelsPerMillimeterY * 18
-            border.color: "black"
-            border.width: 1
-
-            Text {
-                text: qsTr("Cancel")
-                anchors.centerIn: parent
-                font.pointSize: btStyle.uiFontPointSize
+            action: okAction
+            style: BtButtonStyle {
             }
+        }
 
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    accepted(previous);
-                    fontPointSize.visible = false;
-                }
+        Action {
+            id: cancelAction
+            text: qsTr("Cancel")
+            onTriggered: {
+                accepted(previous);
+                fontPointSize.visible = false;
+            }
+        }
+
+        Button {
+            id: cancelButton
+            height: btStyle.pixelsPerMillimeterY * 6
+            width: btStyle.pixelsPerMillimeterY * 18
+            action: cancelAction
+            style: BtButtonStyle {
             }
         }
     }
-
 }

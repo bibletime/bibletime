@@ -11,6 +11,7 @@
 **********/
 
 import QtQuick 2.2
+import QtQuick.Controls 1.2
 import BibleTime 1.0
 
 Rectangle {
@@ -49,49 +50,87 @@ Rectangle {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottomMargin: 50
 
-        Rectangle {
-            height: btStyle.pixelsPerMillimeterY * 7
-            width: btStyle.pixelsPerMillimeterY * 25
-            border.color: "black"
-            border.width: 4
-
-            Text {
-                text: QT_TR_NOOP("Yes")
-                anchors.centerIn: parent
-                font.pointSize: btStyle.uiFontPointSize
-            }
-
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    question.visible = false;
-                    answer = true;
-                    finished();
-                }
+        Action {
+            id: yesAction
+            text: QT_TR_NOOP("Yes")
+            onTriggered: {
+                question.visible = false;
+                answer = true;
+                finished();
             }
         }
 
-        Rectangle {
+        Button {
+            id: yesButton
             height: btStyle.pixelsPerMillimeterY * 7
             width: btStyle.pixelsPerMillimeterY * 25
-            border.color: "black"
-            border.width: 4
-
-            Text {
-                text: QT_TR_NOOP("No")
-                anchors.centerIn: parent
-                font.pointSize: btStyle.uiFontPointSize
-            }
-
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    answer = false;
-                    question.visible = false;
-                    finished();
-                }
+            action: yesAction
+            style: BtButtonStyle {
             }
         }
+
+//        Rectangle {
+//            height: btStyle.pixelsPerMillimeterY * 7
+//            width: btStyle.pixelsPerMillimeterY * 25
+//            border.color: "black"
+//            border.width: 4
+
+//            Text {
+//                text: QT_TR_NOOP("Yes")
+//                anchors.centerIn: parent
+//                font.pointSize: btStyle.uiFontPointSize
+//            }
+
+//            MouseArea {
+//                anchors.fill: parent
+//                onClicked: {
+//                    question.visible = false;
+//                    answer = true;
+//                    finished();
+//                }
+//            }
+//        }
+
+        Action {
+            id: noAction
+            text: QT_TR_NOOP("No")
+            onTriggered: {
+                question.visible = false;
+                answer = false;
+                finished();
+            }
+        }
+
+        Button {
+            id: noButton
+            height: btStyle.pixelsPerMillimeterY * 7
+            width: btStyle.pixelsPerMillimeterY * 25
+            action: noAction
+            style: BtButtonStyle {
+            }
+        }
+
+//        Rectangle {
+//            height: btStyle.pixelsPerMillimeterY * 7
+//            width: btStyle.pixelsPerMillimeterY * 25
+//            border.color: "black"
+//            border.width: 4
+
+//            Text {
+//                text: QT_TR_NOOP("No")
+//                anchors.centerIn: parent
+//                font.pointSize: btStyle.uiFontPointSize
+//            }
+
+//            MouseArea {
+//                anchors.fill: parent
+//                onClicked: {
+//                    answer = false;
+//                    question.visible = false;
+//                    finished();
+//                }
+//            }
+//        }
     }
 
 }

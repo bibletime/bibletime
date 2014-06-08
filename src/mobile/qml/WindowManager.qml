@@ -274,6 +274,7 @@ Rectangle {
 
                     function calculateTabWidth() {
                         var tabWidth = (tabbedWindows.width) / tabbedWindowsStack.children.length;
+                        tabWidth = Math.min(tabbedWindows.width/2, tabWidth)
                         return tabWidth;
                     }
 
@@ -282,7 +283,7 @@ Rectangle {
                         calculateTabWidth()
                     }
                     height: btStyle.pixelsPerMillimeterY * 7
-                    color: "lightgray"
+                    color: btStyle.toolbarColor
 
                     Rectangle {
                         id: tabImage

@@ -541,6 +541,7 @@ SET(bibletime_MOBILE_RESOURCE_FILES
 
 SET(bibletime_MOBILE_QML_FILES
     src/mobile/qml/About.qml
+    src/mobile/qml/BtButtonStyle.qml
     src/mobile/qml/ContextMenu.qml
     src/mobile/qml/GridChooserButton.qml
     src/mobile/qml/GridChooser.qml

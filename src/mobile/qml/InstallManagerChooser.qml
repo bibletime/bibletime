@@ -11,6 +11,7 @@
 **********/
 
 import QtQuick 2.2
+import QtQuick.Controls 1.2
 
 Rectangle {
     id: installManager
@@ -22,7 +23,7 @@ Rectangle {
     property alias sourceIndex: sourceView.currentIndex
     property alias categoryIndex: categoryView.currentIndex
     property alias languageIndex: languageView.currentIndex
-    property int spacing: 12
+    property int spacing: btStyle.pixelsPerMillimeterX
 
     objectName: "installManager"
     color: btStyle.toolbarColor
@@ -112,43 +113,38 @@ Rectangle {
         spacing: (parent.width - refreshButton.width - installRemoveButton.width) / 3
         anchors.leftMargin: (parent.width - refreshButton.width - installRemoveButton.width) / 3
 
-        Rectangle {
-            id: refreshButton
-            width: installManager.width * 4.8 / 10;
-            height: btStyle.pixelsPerMillimeterY * 7
-            border.width: 4
-            border.color: "black"
-
-            Text {
-                text: qsTranslate("InstallManagerChooser", "Refresh Lists")
-                anchors.centerIn: parent
-                font.pointSize: btStyle.uiFontPointSize
-            }
-
-            MouseArea {
-                anchors.fill: parent
-                onClicked: installManager.refreshLists()
+        Action {
+            id: refreshAction
+            text: qsTranslate("InstallManagerChooser", "Refresh Lists")
+            onTriggered: {
+                installManager.refreshLists();
             }
         }
 
-        Rectangle {
-            id: installRemoveButton
-            width: installManager.width * 4.8 / 10;
+        Button {
+            id: refreshButton
             height: btStyle.pixelsPerMillimeterY * 7
-            border.width: 4
-            border.color: "black"
-
-            Text {
-                text: qsTranslate("InstallManagerChooser", "Install / Remove")
-                anchors.centerIn: parent
-                font.pointSize: btStyle.uiFontPointSize
+            width: installManager.width * 4.8 / 10;
+            action: refreshAction
+            style: BtButtonStyle {
             }
+        }
 
-            MouseArea {
-                anchors.fill: parent
-                onClicked: installManager.installRemove()
+        Action {
+            id: installRemoveAction
+            text: qsTranslate("InstallManagerChooser", "Install / Remove")
+            onTriggered: {
+                installManager.installRemove();
+            }
+        }
+
+        Button {
+            id: installRemoveButton
+            height: btStyle.pixelsPerMillimeterY * 7
+            width: installManager.width * 4.8 / 10;
+            action: installRemoveAction
+            style: BtButtonStyle {
             }
         }
     }
-
 }

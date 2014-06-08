@@ -67,6 +67,7 @@ OTHER_FILES += \
     ../../../src/mobile/qml/tab.png \
     ../../../src/mobile/qml/main.qml \
     ../../../src/mobile/qml/About.qml \
+    ../../../src/mobile/qml/BtButtonStyle.qml \
     ../../../src/mobile/qml/ContextMenu.qml \
     ../../../src/mobile/qml/FontSizeSlider.qml \
     ../../../src/mobile/qml/GridChooser.qml \

@@ -104,7 +104,7 @@ Rectangle {
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.bottom: parent.bottom
-        color: "#646464"
+        color: btStyle.toolbarColor
 
     }
 
