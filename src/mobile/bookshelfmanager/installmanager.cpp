@@ -31,7 +31,8 @@ enum TextRoles {
 enum WorksRoles {
     TitleRole = Qt::UserRole + 1,
     DescriptionRole = Qt::UserRole + 2,
-    InstalledRole = Qt::UserRole + 3
+    SelectedRole = Qt::UserRole + 3,
+    InstalledRole = Qt::UserRole + 4
 };
 
 static bool moduleInstalled(const CSwordModuleInfo& moduleInfo) {
@@ -63,6 +64,7 @@ static void setupWorksModel(const QStringList& titleList,
     QHash<int, QByteArray> roleNames;
     roleNames[TitleRole] =  "title";
     roleNames[DescriptionRole] = "desc";
+    roleNames[SelectedRole] = "selected";
     roleNames[InstalledRole] = "installed";
     model->setRoleNames(roleNames);
 
@@ -75,6 +77,7 @@ static void setupWorksModel(const QStringList& titleList,
         item->setData(description, DescriptionRole);
         int installed = installedList.at(i);
         item->setData(installed, InstalledRole);
+        item->setData(0, SelectedRole);
         model->appendRow(item);
     }
 }
@@ -206,13 +209,13 @@ void InstallManager::languageIndexChanged(int index)
 
 void InstallManager::workSelected(int index) {
     QStandardItem* item = m_worksModel.item(index,0);
-    QVariant vInstalled = item->data(InstalledRole);
-    int installed = vInstalled.toInt();
-    installed = installed == 0 ? 1 : 0;
-    item->setData(installed, InstalledRole);
+    QVariant vSelected = item->data(SelectedRole);
+    int selected = vSelected.toInt();
+    selected = selected == 0 ? 1 : 0;
+    item->setData(selected, SelectedRole);
 
     CSwordModuleInfo* moduleInfo = m_worksList.at(index);
-    m_modulesToInstallRemove[moduleInfo] = installed == 1;
+    m_modulesToInstallRemove[moduleInfo] = selected == 1;
 }
 
 void InstallManager::cancel() {
@@ -229,11 +232,13 @@ void InstallManager::installRemove() {
         it!=m_modulesToInstallRemove.constEnd();
         ++it) {
         CSwordModuleInfo* moduleInfo = it.key();
-        bool install = it.value();
-        if (moduleInstalled(*moduleInfo) && install == false) {
+        bool selected = it.value();
+        if ( ! selected)
+            continue;
+        if (moduleInstalled(*moduleInfo)) {
             m_modulesToRemove.append(moduleInfo);
         }
-        else if ( ! moduleInstalled(*moduleInfo) && install == true) {
+        else if ( ! moduleInstalled(*moduleInfo)) {
             m_modulesToInstall.append(moduleInfo);
         }
     }

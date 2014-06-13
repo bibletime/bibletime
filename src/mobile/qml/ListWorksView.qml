@@ -11,6 +11,8 @@
 **********/
 
 import QtQuick 2.2
+import QtQuick.Controls 1.1
+import QtQuick.Controls.Styles 1.1
 import BibleTime 1.0
 
 Rectangle {
@@ -80,51 +82,120 @@ Rectangle {
             width: parent.width
             height: {
                 var pixel = btStyle.pixelsPerMillimeterY * 7;
-                var uiFont = btStyle.uiFontPointSize * 5;
-                return Math.max(pixel, uiFont);
+                var uiFont1 = titleText.contentHeight;
+                var uiFont2 = descriptionText.contentHeight;
+                var uiFont = Math.max(uiFont1, uiFont2);
+                var uiHeight = Math.max(pixel, uiFont);
+                return uiHeight * 1.05;
             }
 
-            Image {
-                id: installedCheckmark
+            Action {
+                id: manageAction
+                text: {
+                 if (installed)
+                    return QT_TR_NOOP("Remove");
+                 else
+                     return QT_TR_NOOP("Install");
+                }
+                onTriggered: {
+                    listView.itemSelected(index);
+                    manageButton.checked = ! manageButton.checked;
+                    manageButton.chooseGradient();
+                }
+            }
 
-                source: "checkmark.svg"
-                height: entry.height - 15
-                width:  entry.height -15
+            Gradient {
+                id: gradient1
+                GradientStop { position: 0 ; color: manageButton.pressed ? "#ccc" : "#eee" }
+                GradientStop { position: 1 ; color: manageButton.pressed ? "#aaa" : "#ccc" }
+            }
+
+            Gradient {
+                id: gradient2
+                GradientStop { position: 0 ; color: manageButton.pressed ? "#dbb" : "#fdd" }
+                GradientStop { position: 1 ; color: manageButton.pressed ? "#b99" : "#dbb" }
+            }
+
+            Gradient {
+                id: gradient3
+                GradientStop { position: 0 ; color: manageButton.pressed ? "#bdb" : "#dfd" }
+                GradientStop { position: 1 ; color: manageButton.pressed ? "#9b9" : "#bdb" }
+            }
+
+            Button{
+                id: manageButton
+
+                property Gradient buttonGradient : gradient1
+
+                function chooseGradient() {
+                    if (manageButton.checked) {
+                        if (installed)
+                            buttonGradient = gradient2;
+                        else
+                            buttonGradient = gradient3;
+                    }
+                    else {
+                        buttonGradient = gradient1;
+                    }
+                }
+
+                action: manageAction
+                anchors.verticalCenter: parent.verticalCenter
                 anchors.left: parent.left
-                anchors.top: parent.top
-                anchors.leftMargin: 5
-                anchors.topMargin: 5
-                visible: installed == 1
-            }
+                anchors.leftMargin: 10
+                width: btStyle.uiFontPointSize * 13
+                height: btStyle.uiFontPointSize * 6
 
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {listView.itemSelected(index)}
+                checkable: true;
+                style: ButtonStyle {
+                    id: buttonStyle
+
+                    background: Rectangle {
+                        implicitWidth: 100
+                        implicitHeight: 25
+                        border.width: manageButton.checked ? 7 : 1
+                        border.color: manageButton.checked ? "black" : "#777"
+                        radius: 4
+
+                        gradient: manageButton.buttonGradient
+                    }
+                    label: Text {
+                        anchors.centerIn: parent
+                        verticalAlignment: Text.AlignVCenter
+                        horizontalAlignment: Text.AlignHCenter
+                        font.pointSize: btStyle.uiFontPointSize -1
+                        color: "black"
+                        text: control.text
+                    }
+                }
             }
 
             Text {
-                anchors.top: entry.top
-                anchors.left: installedCheckmark.right
-                anchors.right: entry.right
-                width: parent.width
-                height: parent.height/2 -4
-                anchors.leftMargin: 5
+                id: titleText
+
+                anchors.verticalCenter: entry.verticalCenter
+                anchors.left: manageButton.right
+                width: btStyle.uiFontPointSize * 16
+                height: parent.height/3 -4
+                anchors.leftMargin: btStyle.pixelsPerMillimeterX
                 anchors.rightMargin: 10
                 anchors.topMargin: 5
                 verticalAlignment: Text.AlignVCenter
                 text: title
-                font.pointSize: btStyle.uiFontPointSize
+                font.pointSize: btStyle.uiFontPointSize - 1
             }
 
             Text {
-                anchors.bottom: entry.bottom
-                anchors.left: installedCheckmark.right
+                id: descriptionText
+
+                anchors.left: titleText.right
                 anchors.right: entry.right
+                anchors.verticalCenter: entry.verticalCenter
                 width: parent.width
-                height: parent.height/2 -4
-                anchors.leftMargin: 15
-                anchors.rightMargin: 10
-                anchors.bottomMargin: 5
+                wrapMode: Text.WordWrap
+                anchors.leftMargin: btStyle.pixelsPerMillimeterX
+                anchors.rightMargin: 0
+                anchors.bottomMargin: 0
                 text: desc
                 elide: Text.ElideMiddle
                 font.pointSize: btStyle.uiFontPointSize- 2

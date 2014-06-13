@@ -69,7 +69,9 @@ void BtInstallThread::installModule() {
 
     const CSwordModuleInfo * const module = m_modules.at(m_currentModuleIndex);
 
-    sword::InstallSource installSource = BtInstallBackend::source(module->property("installSourceName").toString());
+    QVariant vModuleName = module->property("installSourceName");
+    QString moduleName = vModuleName.toString();
+    sword::InstallSource installSource = BtInstallBackend::source(moduleName);
     QScopedPointer<CSwordBackend> backendForSource(BtInstallBackend::backend(installSource));
 
     // Check whether it's an update. If yes, remove existing module first:

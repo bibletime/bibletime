@@ -98,16 +98,14 @@ Rectangle {
             Text {
                 id: entryText
 
-                anchors.top: entry.top
-                anchors.left: entry.left
-                anchors.right: entry.right
+                anchors.fill: entry
                 width: parent.width
                 anchors.leftMargin: 10
                 anchors.rightMargin: 10
                 anchors.topMargin: 10
                 verticalAlignment: Text.AlignVCenter
                 text: modelText
-                font.pointSize: btStyle.uiFontPointSize
+                font.pointSize: btStyle.uiFontPointSize - 1
                 font.bold: highlight && entry.selected
             }
         }

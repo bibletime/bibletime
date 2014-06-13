@@ -123,7 +123,7 @@ Rectangle {
 
         Button {
             id: refreshButton
-            height: btStyle.pixelsPerMillimeterY * 7
+            height: btStyle.pixelsPerMillimeterY * 6
             width: installManager.width * 4.8 / 10;
             action: refreshAction
             style: BtButtonStyle {
@@ -140,7 +140,7 @@ Rectangle {
 
         Button {
             id: installRemoveButton
-            height: btStyle.pixelsPerMillimeterY * 7
+            height: btStyle.pixelsPerMillimeterY * 6
             width: installManager.width * 4.8 / 10;
             action: installRemoveAction
             style: BtButtonStyle {
