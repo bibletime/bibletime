@@ -527,8 +527,8 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>&amp;Lizenz</translation>
     </message>
     <message>
-        <source>(c)1999-2013, The BibleTime Team</source>
-        <translation type="obsolete">(c)1999-2013, das BibleTime Team</translation>
+        <source>(c)1999-2014, The BibleTime Team</source>
+        <translation type="unfinished">(c)1999-2014, das BibleTime Team</translation>
     </message>
     <message>
         <source>&amp;SWORD</source>
@@ -541,10 +541,6 @@ This file is distributed under the same license as the Bibetime package.</transl
     <message>
         <source>(c)1999-2011, The BibleTime Team</source>
         <translation type="obsolete">(c)1999-2011, das BibleTime Team</translation>
-    </message>
-    <message>
-        <source>(c)1999-2014, The BibleTime Team</source>
-        <translation type="unfinished">(c)1999-2011, das BibleTime Team {1999-2014,?}</translation>
     </message>
 </context>
 <context>

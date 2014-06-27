@@ -524,7 +524,7 @@ This file is distributed under the same license as the Bibetime package.</transl
     </message>
     <message>
         <source>(c)1999-2011, The BibleTime Team</source>
-        <translation type="obsolete">(c)1999-2013, The BibleTime Team  {1999-2011,?}</translation>
+        <translation type="obsolete">(c)1999-2014, The BibleTime Team  {1999-2011,?}</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="137"/>
@@ -577,8 +577,9 @@ This file is distributed under the same license as the Bibetime package.</transl
         <translation>tervező</translation>
     </message>
     <message>
-        <source>(c)1999-2013, The BibleTime Team</source>
-        <translation type="obsolete">(c)1999-2013, The BibleTime Team </translation>
+        <location filename="../../src/frontend/btaboutdialog.cpp" line="130"/>
+        <source>(c)1999-2014, The BibleTime Team</source>
+        <translation type="unfinished">(c)1999-2014, The BibleTime Team </translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="139"/>
@@ -614,11 +615,6 @@ This file is distributed under the same license as the Bibetime package.</transl
         <location filename="../../src/frontend/btaboutdialog.cpp" line="141"/>
         <source>artist</source>
         <translation>művész</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/btaboutdialog.cpp" line="130"/>
-        <source>(c)1999-2014, The BibleTime Team</source>
-        <translation type="unfinished">(c)1999-2013, The BibleTime Team  {1999-2014,?}</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btaboutdialog.cpp" line="173"/>
@@ -1885,87 +1881,87 @@ shortcut</source>
 <context>
     <name>BtTipDialog</name>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="68"/>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="69"/>
         <source>Tip Of The Day</source>
         <translation>A nap tippje</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="82"/>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="83"/>
         <source>Show tips at startup</source>
         <translation>Tippek mutatása indításkor</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="93"/>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="94"/>
         <source>Next Tip</source>
         <translation>Következő</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="125"/>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="126"/>
         <source>To add multiple Bible works in parallel in your active Bible window select this icon and choose another Bible work.</source>
         <translation>További Bibliák hozzáadásához párhuzamosan az aktív ablakban válassza ki ezt az ikont, és jelöljön ki egy másik Bibliát.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="129"/>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="130"/>
         <source>To add multiple commentary works in parallel in your active commentary window select this icon and choose another commentary work.</source>
         <translation>További kommentárok hozzáadásához párhuzamosan az aktív ablakban válassza ki ezt az ikont, és jelöljön ki egy másik kommentárt.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="133"/>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="134"/>
         <source>To learn more about the BibleTime project please go to our web site.</source>
         <translation>Hogy többet megtudjon a BibleTime projektről, kérem látogassa meg a weboldalunkat.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="136"/>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="137"/>
         <source>To synchronize a commentary window with the active Bible window, activate the commentary window and select this icon.</source>
         <translation>A kommentár bibliával szinkronizálásához aktiválja a kommentár ablakot, majd válassza ki ezt az ikont.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="139"/>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="140"/>
         <source>Select the icon again to stop the synchronization.</source>
         <translation>Kattintson ismét erre az ikonra a szinkron üzemmód kikapcsolásához.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="141"/>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="142"/>
         <source>To create a bookmark drag any verse reference from a Bible or commentary work into the Bookmarks window. An arrow will indicate the position that the bookmark will go when you release the cursor. Other works will have a reference in the upper left corner that can be used to create a bookmark.</source>
         <translation>Könyvjelző készítéséhez húzza a vers hivatkozását a Bibliából, vagy a kommentárból a könyvjelző ablakba. Nyíl fogja jelölni azt a pozíciót, ahova a könyvjelző kerül. Egyéb dokumentumtípus bal felső sarkában található a könyvjelzőzhető hivatkozás.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="146"/>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="147"/>
         <source>To change a bookmark title or description, right click on the bookmark and select the Edit Bookmark menu. After finishing the edit the description can be seen by hovering over the bookmark.</source>
         <translation>Könyvjelző címének vagy leírásának megváltoztatásához jobb egérgombbal kattintson a könyvjelzőre, válassza ki a könyvjelző szerkesztése menüpontot. A szerkesztés befejezése után láthatóvá válik a megjegyzés az egérmutató könyvjelző fölé vitelével.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="150"/>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="151"/>
         <source>To load multiple installation sources for works, go to the Bookshelf Manager, select the Add button, and then the Get List button.</source>
         <translation>Ha több telepítési forrást szeretne használni, használja a Könyvespolc menedzser Hozzáadás gombját, majd a lista lekérése gombot.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="153"/>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="154"/>
         <source>To find more information about a work, go the the Bookshelf window, right click on the work, and select the About menu.</source>
         <translation>Ha több információt szeretne megtudni egy dokumentumról, használja a Könyvespolc ablakot, jobb egérgombbal kattintson a dokumentumra, majd válassza a névjegy menüt.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="156"/>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="157"/>
         <source>The Bookshelf, Bookmark, and Mag windows can be moved to new locations by dragging them from the title at the top of each window. They can be placed to the left, right, above, or below the works windows. They can be placed on top of each other and tabs will appear so each window can be selected. They can be resized by dragging the border between the window and another window.</source>
         <translation>A Könyvespolc, Könyvjelző és Nagyító ablakok áthelyezhetők az ablakok címsorának elhúzásával. Az új helyeik lehetnek balra, jobbra felette vagy alatta a munkaablaknak. Lehet egyszerre mind felül vagy alul, ekkor fülekkel lehet választani az éppen használandót. Az ablakok átméretezése a keretük mozgatásával lehetséges.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="162"/>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="163"/>
         <source>You can search for Strong&apos;s numbers in a work. Start with a work that has Strong&apos;s numbers and hover over a word. Right click the word and use the Strong&apos;s Search menu. A search dialog will appear that allows you to see the use of the same Strong&apos;s number in other locations of the work.</source>
         <translation>Lehetséges Strong számokra is keresni. Válasszon egy olyan dokumentumot, ami rendelkezik Strong számokkal, vigye az egérmutatót a kívánt szó fölé, majd jobb egérgombbal kattintva válassza a Strong keresés menüt. A párbeszédablak ekkor előhozza az azonos Strong számokkal jelzett előfordulásokat a dokumentumból.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="167"/>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="168"/>
         <source>You can save personal notes for specific verses references. You must install the Personal commentary. Open the Bookshelf Manager, choose Crosswire as the source and look under Commentary and English. Once installed, use the Bookshelf window and right click the Personal commentary. Use either the Edit Plain Text menu or the Edit HTML menu to open the work in write mode.</source>
         <translation>Személyes megjegyzéseket készíthet kívánt vers hivatkozásokhoz. A lehetőség használatához először telepíteni kell a Személyes kommentár dokumentumot. Ez a könyvespolc menedzser Crosswire forrásából, az Angol nyelvű dokumentumok közül a Personal Commentary. Használja az Egyszerű szöveg szerkesztése, vagy a HTML szerkesztése menüt hogy a kommentárt szerkeszthető módban nyissa meg.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="173"/>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="174"/>
         <source>You can view Strong&apos;s number information in the MAG window by hovering over a word in a Bible work that has Strong&apos;s numbers. You should have the StrongsGreek and StrongsHebrew lexicons from Crosswire installed.</source>
         <translation>Megtekintheti A Strong szótári információját egy szónak a Nagyító ablakban az egérmutató szó fölé vitelével egy Strong&apos;s képes dokumentumban. A funkcióhoz telepíteni kell a Strong&apos;s héber és görög szótárat a Crosswire forrásból.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="177"/>
+        <location filename="../../src/frontend/tips/bttipdialog.cpp" line="178"/>
         <source>You can save your open windows in a session. Such a session can easily be restored later on. You can save as many sessions as you like. The session feature can be accessed under the Window menu entry.</source>
         <translation>Elmentheti a megnyitott ablakai állapotás munkafolyamatként is. Az állapot így később bármikor helyreállítható. Annyi folyamatot menthet így el, amennyit kíván. Ez a lehetőség az Ablak menüből érhető el.</translation>
     </message>
@@ -2654,7 +2650,7 @@ shortcut</source>
 <context>
     <name>CSearchAnalysisScene</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="229"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="232"/>
         <source>Save Search Analysis</source>
         <translation>Keresési analízis mentése</translation>
     </message>
@@ -2663,7 +2659,7 @@ shortcut</source>
         <translation type="obsolete">HTML fájlok (*.html;*.HTML;*.HTM;*.htm)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="240"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="243"/>
         <source>BibleTime Search Analysis</source>
         <translation>Bibletime keresés elemzése</translation>
     </message>
@@ -2672,32 +2668,32 @@ shortcut</source>
         <translation type="obsolete">Keresett szöveg:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="231"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="234"/>
         <source>XHTML files (*.html *.HTML *.HTM *.htm);;All files (*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="256"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="259"/>
         <source>Search text:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="260"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="263"/>
         <source>Results by work and book</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="262"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="265"/>
         <source>Book</source>
         <translation>Könyv</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="290"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="293"/>
         <source>Total hits</source>
         <translation>Összes találat</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="300"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="303"/>
         <source>Created by &lt;a href=&quot;http://www.bibletime.info/&quot;&gt;BibleTime&lt;/a&gt;</source>
         <translation>Készült a &lt;a href=&quot;http://www.bibletime.info/&quot;&gt;BibleTime&lt;/a&gt; segítségével</translation>
     </message>
@@ -2705,168 +2701,168 @@ shortcut</source>
 <context>
     <name>CSwordModuleInfo</name>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="757"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="763"/>
         <source>Version</source>
         <translation>Verzió</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="760"/>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="766"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="774"/>
         <source>unknown</source>
         <translation>ismeretlen</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="763"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="771"/>
         <source>Markup</source>
         <translation>Jelzés</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="769"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="778"/>
         <source>Location</source>
         <translation>Hely</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="773"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="782"/>
         <source>Language</source>
         <translation>Nyelv</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="778"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="787"/>
         <source>Category</source>
         <translation>Kategória</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="783"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="792"/>
         <source>LCSH</source>
         <translation>LCSH</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="787"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="796"/>
         <source>Writable</source>
         <translation>Írható</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="788"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="797"/>
         <source>yes</source>
         <translation>igen</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="788"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="797"/>
         <source>no</source>
         <translation>nem</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="792"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="801"/>
         <source>Unlock key</source>
         <translation>Feloldó kulcs</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="813"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="822"/>
         <source>Features</source>
         <translation>Lehetőségek</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="821"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="830"/>
         <source>Take care, this work contains cult / questionable material!</source>
         <translation>Legyen óvatos, a dokumentum kultikus / megkérdőjelezhető anyagot tartalmaz!</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="825"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="834"/>
         <source>About</source>
         <translation>Leírás</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="847"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="856"/>
         <source>Distribution license</source>
         <translation>Disztribúciós Licensz</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="848"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="857"/>
         <source>Distribution source</source>
         <translation>Disztribúció forrása</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="849"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="858"/>
         <source>Distribution notes</source>
         <translation>Disztribúció megjegyzései</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="850"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="859"/>
         <source>Text source</source>
         <translation>Szöveg forrás</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="851"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="860"/>
         <source>Copyright notes</source>
         <translation>Szerzői jogi megjegyzések</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="852"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="861"/>
         <source>Copyright holder</source>
         <translation>Szerzői jog tulajdonosa</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="853"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="862"/>
         <source>Copyright date</source>
         <translation>Szerzői jogvédelem dátuma</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="854"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="863"/>
         <source>Copyright contact name</source>
         <translation>Szerzői jogi kapcsolattartó neve</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="855"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="864"/>
         <source>Copyright contact address</source>
         <translation>Szerzői jogi kapcsolattartó címe</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="856"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="865"/>
         <source>Copyright contact email</source>
         <translation>Szerzői jogi kapcsolattartó emailcíme</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="947"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="956"/>
         <source>Bibles</source>
         <translation>Bibliák</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="949"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="958"/>
         <source>Commentaries</source>
         <translation>Kommentárok</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="951"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="960"/>
         <source>Books</source>
         <translation>Könyvek</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="953"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="962"/>
         <source>Cults/Unorthodox</source>
         <translation>Kultikus/Unortodox</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="955"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="964"/>
         <source>Maps and Images</source>
         <translation>Térképek és képek</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="957"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="966"/>
         <source>Daily Devotionals</source>
         <translation>Napi áhitatok</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="959"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="968"/>
         <source>Lexicons and Dictionaries</source>
         <translation>Lexikonok és szótárak</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="961"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="970"/>
         <source>Glossaries</source>
         <translation>Szójegyzékek</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="963"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="972"/>
         <source>Unknown</source>
         <translation>IsmeretlenEgyéb</translation>
     </message>
@@ -3014,53 +3010,53 @@ Folytatja?</translation>
 <context>
     <name>InfoDisplay::CInfoDisplay</name>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="175"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="178"/>
         <source>&lt;div class=&quot;moduleinfo&quot;&gt;&lt;h3&gt;%1&lt;/h3&gt;&lt;p&gt;%2&lt;/p&gt;&lt;p&gt;Version: %3&lt;/p&gt;&lt;/div&gt;</source>
         <translation>&lt;div class=&quot;moduleinfo&quot;&gt;&lt;h3&gt;%1&lt;/h3&gt;&lt;p&gt;%2&lt;/p&gt;&lt;p&gt;Verzió: %3&lt;/p&gt;&lt;/div&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="195"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="194"/>
         <source>Abbreviation</source>
         <translation>Rövidítés</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="206"/>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="308"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="203"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="290"/>
         <source>Cross references</source>
         <translation>Kereszthivatkozás</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="364"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="343"/>
         <source>Footnote</source>
         <translation>Lábjegyzet</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="395"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="374"/>
         <source>Strongs</source>
         <translation>Strong számok</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="473"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="451"/>
         <source>Morphology</source>
         <translation>Morfológia</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="496"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="472"/>
         <source>Word lookup</source>
         <translation>Szó keresés</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="55"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="60"/>
         <source>Copy</source>
         <translation>Másolás</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="51"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="55"/>
         <source>Select all</source>
         <translation>Összes kijelölése</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="76"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="80"/>
         <source>&lt;small&gt;This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.&lt;/small&gt;</source>
         <translation>&lt;small&gt;Ez a &quot;Nagyító&quot; ablak. Ha az egeret elhúzza hivatkozások, vagy más adatot tartalmazó elemek fölött, azok tartalma kis késleltetéssel megjelenik itt. Mozgassa az egeret ide gyorsan, vagy rögzítse a tartalmát a Shift gomb nyomvatartásával.&lt;/small&gt;</translation>
     </message>
@@ -3068,28 +3064,28 @@ Folytatja?</translation>
 <context>
     <name>QCoreApplication</name>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="410"/>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="420"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="412"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="422"/>
         <source>Indexing aborted</source>
         <translation>Indexelés megszakítva</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="411"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="413"/>
         <source>An internal error occurred while building the index: %1</source>
         <translation>Egy belső hiba történt a(z) %1 indexének készítése közben.</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="421"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="423"/>
         <source>An internal error occurred while building the index.</source>
         <translation>Belső hiba történt az indexelés közben.</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="520"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="522"/>
         <source>Search aborted</source>
         <translation>Keresésé megszakítva</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="521"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="523"/>
         <source>An internal error occurred while executing your search.</source>
         <translation>Keresés közben belső hiba történt.</translation>
     </message>
@@ -3147,7 +3143,7 @@ Folytatja?</translation>
         <translation>Könyvek</translation>
     </message>
     <message>
-        <location filename="../../src/backend/filters/osistohtml.cpp" line="392"/>
+        <location filename="../../src/backend/filters/osistohtml.cpp" line="390"/>
         <source>Added text</source>
         <translation>Hozzáadott szövegek</translation>
     </message>
@@ -4296,7 +4292,7 @@ Language name ppk</extracomment>
         <translation>Yoryba</translation>
     </message>
     <message>
-        <location filename="../../src/backend/filters/osistohtml.cpp" line="409"/>
+        <location filename="../../src/backend/filters/osistohtml.cpp" line="407"/>
         <source>Verb tense changed</source>
         <translation>Igeidő változtatva</translation>
     </message>
