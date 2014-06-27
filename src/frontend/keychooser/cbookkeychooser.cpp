@@ -170,7 +170,7 @@ void CBookKeyChooser::setModules(const QList<const CSwordModuleInfo *> & modules
             connect(w, SIGNAL(focusOut(int)), SLOT(keyChooserChanged(int)));
 
             m_layout->addWidget(w);
-            w->setProperty(ID_PROPERTY_NAME, i);
+            w->setProperty(ID_PROPERTY_NAME, i+1);
             w->show();
         }
 
