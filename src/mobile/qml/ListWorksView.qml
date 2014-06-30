@@ -82,11 +82,9 @@ Rectangle {
             width: parent.width
             height: {
                 var pixel = btStyle.pixelsPerMillimeterY * 7;
-                var uiFont1 = titleText.contentHeight;
-                var uiFont2 = descriptionText.contentHeight;
-                var uiFont = Math.max(uiFont1, uiFont2);
+                var uiFont = titleText.contentHeight;
                 var uiHeight = Math.max(pixel, uiFont);
-                return uiHeight * 1.05;
+                return uiHeight * 1.1;
             }
 
             Action {
@@ -143,8 +141,8 @@ Rectangle {
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.left: parent.left
                 anchors.leftMargin: 10
-                width: btStyle.uiFontPointSize * 13
-                height: btStyle.uiFontPointSize * 6
+                width: btStyle.uiFontPointSize * 11
+                height: entry.height * 0.8
 
                 checkable: true;
                 style: ButtonStyle {
@@ -175,30 +173,15 @@ Rectangle {
 
                 anchors.verticalCenter: entry.verticalCenter
                 anchors.left: manageButton.right
-                width: btStyle.uiFontPointSize * 16
-                height: parent.height/3 -4
+                anchors.right: entry.right
+                height: entry.height
+                wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                 anchors.leftMargin: btStyle.pixelsPerMillimeterX
                 anchors.rightMargin: 10
                 anchors.topMargin: 5
                 verticalAlignment: Text.AlignVCenter
-                text: title
-                font.pointSize: btStyle.uiFontPointSize - 1
-            }
-
-            Text {
-                id: descriptionText
-
-                anchors.left: titleText.right
-                anchors.right: entry.right
-                anchors.verticalCenter: entry.verticalCenter
-                width: parent.width
-                wrapMode: Text.WordWrap
-                anchors.leftMargin: btStyle.pixelsPerMillimeterX
-                anchors.rightMargin: 0
-                anchors.bottomMargin: 0
-                text: desc
-                elide: Text.ElideMiddle
-                font.pointSize: btStyle.uiFontPointSize- 2
+                text: "<b>" + title + "</b> - " + desc
+                font.pointSize: btStyle.uiFontPointSize
             }
         }
 
