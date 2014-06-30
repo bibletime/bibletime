@@ -16,6 +16,7 @@
 
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "backend/managers/cswordbackend.h"
+#include "backend/keys/cswordversekey.h"
 #include "mobile/util/findqmlobject.h"
 #include <cmath>
 #include <QQuickItem>
@@ -193,6 +194,35 @@ QString ModuleInterface::module(int index) {
     if (module == 0)
         return "";
     return module->name();
+}
+
+bool ModuleInterface::isLocked(const QString& moduleName) {
+    CSwordModuleInfo* module = CSwordBackend::instance()->findModuleByName(moduleName);
+    if (module) {
+
+        // Verse intros must be false for checking lock
+        if (module->type() == CSwordModuleInfo::Bible ||
+                module->type() == CSwordModuleInfo::Commentary) {
+                ((sword::VerseKey*)(module->module()->getKey()))->setIntros(false);
+        }
+
+        bool locked = module->isLocked();
+        return locked;
+    }
+    return false;
+}
+
+void ModuleInterface::unlock(const QString& moduleName, const QString& unlockKey) {
+    CSwordModuleInfo* module = CSwordBackend::instance()->findModuleByName(moduleName);
+    if (module) {
+        module->unlock(unlockKey);
+
+        // Re-initialize module pointers:
+        CSwordBackend *backend = CSwordBackend::instance();
+        backend->reloadModules(CSwordBackend::OtherChange);
+        module = CSwordBackend::instance()->findModuleByName(moduleName);
+        updateWorksModel();
+    }
 }
 
 } // end namespace

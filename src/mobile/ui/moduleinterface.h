@@ -39,6 +39,8 @@ public:
     Q_INVOKABLE QString category(int index);
     Q_INVOKABLE QString language(int index);
     Q_INVOKABLE QString module(int index);
+    Q_INVOKABLE bool isLocked(const QString& moduleName);
+    Q_INVOKABLE void unlock(const QString& moduleName, const QString& unlockKey);
 
 private:
     void getCategoriesAndLanguages();

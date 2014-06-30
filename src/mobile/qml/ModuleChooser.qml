@@ -11,6 +11,7 @@
 **********/
 
 import QtQuick 2.2
+import QtQuick.Controls 1.1
 import BibleTime 1.0
 
 Rectangle {
@@ -29,6 +30,11 @@ Rectangle {
     property string selectedCategory: ""
 
     objectName: "moduleChooser"
+
+    function requestModuleUnlockKey() {
+        unlockDlg.visible = true;
+    }
+
     color: "lightgray"
     border.color: "black"
     border.width: 2
@@ -37,6 +43,7 @@ Rectangle {
         if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape) && moduleChooser.visible == true) {
             event.accepted = true;
             moduleChooser.visible = false;
+            unlockDlg.visible = false;
         }
     }
 
@@ -64,8 +71,74 @@ Rectangle {
     signal languageChanged(int index);
     signal moduleSelected();
 
+    Rectangle {
+        id: unlockDlg
+
+        z: 100
+        visible: false
+        color: "lightBlue"
+        anchors.fill: parent
+
+        signal finished(string unlockKey);
+
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.left: parent.left
+        anchors.right: parent.right
+        Text {
+            id: message
+            text: "This document is locked.\nYou must enter the unlock key."
+            horizontalAlignment: Text.AlignHCenter
+            anchors.verticalCenter: parent.verticalCenter
+            font.pointSize: btStyle.uiFontPointSize
+            width: parent.width
+            height: contentHeight * 1.1
+        }
+
+        TextField {
+            id: input
+
+            anchors.top: message.bottom
+            anchors.horizontalCenter: parent.horizontalCenter
+            width: parent.width/2
+            font.pointSize: btStyle.uiFontPointSize
+        }
+
+        Action {
+            id: unlockAction
+            text: QT_TR_NOOP("Unlock")
+            onTriggered: {
+                unlockDlg.visible = false;
+                console.log(input.text);
+                moduleInterface.unlock(selectedModule, input.text);
+                if (moduleInterface.isLocked(selectedModule)) {
+                    console.log("module did not unlock");
+                    return;
+                }
+                moduleSelected();
+                moduleChooser.visible = false;
+            }
+        }
+
+        Button {
+            id: unlockButton
+            anchors.top: input.bottom
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.topMargin: btStyle.pixelsPerMillimeterY * 3
+            height: btStyle.pixelsPerMillimeterY * 7
+            width: btStyle.pixelsPerMillimeterY * 25
+            action: unlockAction
+            style: BtButtonStyle {
+            }
+        }
+    }
+
+
     ModuleInterface {
         id: moduleInterface
+    }
+
+    BtStyle {
+        id: beStyle
     }
 
     Grid {
@@ -115,14 +188,13 @@ Rectangle {
         onItemSelected: {
             selectedModule = moduleInterface.module(index);
             selectedCategory = moduleInterface.category(index);
+            if (moduleInterface.isLocked(selectedModule)) {
+                requestModuleUnlockKey();
+                return;
+            }
             moduleSelected();
             moduleChooser.visible = false;
         }
     }
-
-//    MouseArea {
-//        anchors.fill: parent
-//        onClicked: moduleChooser.cancel();
-//    }
 }
 
