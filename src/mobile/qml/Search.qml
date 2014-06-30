@@ -115,6 +115,8 @@ FocusScope {
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.horizontalCenter: parent.horizontalCenter
                         anchors.right: background.right
+                        verticalAlignment: Text.AlignVCenter
+                        horizontalAlignment: Text.AlignHCenter
                         font.pointSize: btStyle.uiFontPointSize
                         color: "black"
                         text: control.text
