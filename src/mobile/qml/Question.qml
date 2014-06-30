@@ -69,28 +69,6 @@ Rectangle {
             }
         }
 
-//        Rectangle {
-//            height: btStyle.pixelsPerMillimeterY * 7
-//            width: btStyle.pixelsPerMillimeterY * 25
-//            border.color: "black"
-//            border.width: 4
-
-//            Text {
-//                text: QT_TR_NOOP("Yes")
-//                anchors.centerIn: parent
-//                font.pointSize: btStyle.uiFontPointSize
-//            }
-
-//            MouseArea {
-//                anchors.fill: parent
-//                onClicked: {
-//                    question.visible = false;
-//                    answer = true;
-//                    finished();
-//                }
-//            }
-//        }
-
         Action {
             id: noAction
             text: QT_TR_NOOP("No")
@@ -110,27 +88,6 @@ Rectangle {
             }
         }
 
-//        Rectangle {
-//            height: btStyle.pixelsPerMillimeterY * 7
-//            width: btStyle.pixelsPerMillimeterY * 25
-//            border.color: "black"
-//            border.width: 4
-
-//            Text {
-//                text: QT_TR_NOOP("No")
-//                anchors.centerIn: parent
-//                font.pointSize: btStyle.uiFontPointSize
-//            }
-
-//            MouseArea {
-//                anchors.fill: parent
-//                onClicked: {
-//                    answer = false;
-//                    question.visible = false;
-//                    finished();
-//                }
-//            }
-//        }
     }
 
 }

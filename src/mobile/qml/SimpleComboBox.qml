@@ -111,16 +111,12 @@ Rectangle {
 
         anchors.fill: parent
         anchors.leftMargin: 8
-//        anchors.rightMargin: __style.drowDownButtonWidth
 
         verticalAlignment: Text.AlignVCenter
 
         renderType: Text.NativeRendering
         selectByMouse: true
-//        color: __style.__syspal.text
         color: "red"
-//        selectionColor: __style.__syspal.highlight
-//        selectedTextColor: __style.__syspal.highlightedText
         onAccepted: {
             var idx = input.find(editText, Qt.MatchFixedString)
             if (idx > -1) {

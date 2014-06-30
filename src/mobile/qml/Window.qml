@@ -117,7 +117,7 @@ Rectangle {
             anchors.bottom: parent.bottom
             anchors.topMargin: btStyle.pixelsPerMillimeterY * 0.7
             anchors.bottomMargin: btStyle.pixelsPerMillimeterY * 0.7
-            anchors.leftMargin: 10
+            anchors.leftMargin:  btStyle.pixelsPerMillimeterX *1.5
             color: btStyle.toolbarButton
             border.color: btStyle.buttonBorder
             border.width: 1
@@ -125,7 +125,7 @@ Rectangle {
             Text {
                 id: referenceText
                 anchors.fill: parent
-                anchors.leftMargin: 15
+                anchors.leftMargin: btStyle.pixelsPerMillimeterX *4.5
                 anchors.rightMargin: 4
                 horizontalAlignment: Text.AlignLeft
                 verticalAlignment: Text.AlignVCenter
