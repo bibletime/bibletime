@@ -72,8 +72,9 @@ void BtTextFiltersTab::save() {
 void BtTextFiltersTab::retranslateUi() {
     util::tool::initExplanationLabel(m_explanationLabel, "",
           tr("Filters control the appearance of text. Here you can specify "
-             "default settings for all filters. You can override these "
-             "settings in each display window."));
+             "default settings for all filters. These settings apply to newly "
+             "opened display windows only. You can override these settings in "
+             "each display window."));
 
     m_lineBreaksCheck->setText(tr("Insert line break after each verse"));
     m_verseNumbersCheck->setText(tr("Show verse numbers"));
