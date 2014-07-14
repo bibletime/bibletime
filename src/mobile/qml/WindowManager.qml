@@ -66,6 +66,20 @@ Rectangle {
         tabbedWindows.current = index;
     }
 
+    function setNextWindow() {
+        var index = tabbedWindows.current + 1;
+        if (index >= windows.length)
+            index = 0;
+        setCurrentTabbedWindow(index);
+    }
+
+    function setPreviousWindow() {
+        var index = tabbedWindows.current - 1;
+        if (index < 0)
+            index = windows.length - 1;
+        setCurrentTabbedWindow(index);
+    }
+
     function closeWindow(index) {
         var window = windows[index];
         windows.splice(index,1);
@@ -114,6 +128,9 @@ Rectangle {
 
         window = component.createObject(null, {"width": 250, "height": 200});
         window.setModule(module);
+        window.swipeLeft.connect(windowManager,setPreviousWindow)
+        window.swipeRight.connect(windowManager,setNextWindow)
+
 
         if (window == null) {
             // Error Handling

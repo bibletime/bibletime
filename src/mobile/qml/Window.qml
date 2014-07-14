@@ -18,6 +18,9 @@ Rectangle {
 
     property string title: toolbar.title
 
+    signal swipeLeft
+    signal swipeRight
+
     function getModule() {
         return btWindowInterface.moduleName;
     }
@@ -187,6 +190,7 @@ Rectangle {
             MouseArea {
 
                 anchors.fill: parent
+                enabled: false
                 onDoubleClicked: {
                     windowView.contextMenus();
                 }
@@ -194,6 +198,53 @@ Rectangle {
                 onPressAndHold: {
                     windowView.contextMenus();
 
+                }
+            }
+
+            MultiPointTouchArea {
+                id: globalTouchArea
+
+                property bool activeGesture: false
+                property int firstX
+                property int firstY
+
+                anchors.fill: parent
+                enabled: false
+                minimumTouchPoints: 1
+                maximumTouchPoints: 1
+                z:0
+                touchPoints: [
+                    TouchPoint { id: touch1 }
+                ]
+
+                onPressed: {
+                    firstX = touch1.x
+                    firstY = touch1.y
+                }
+
+                onGestureStarted: {
+                    if (!activeGesture) {
+                        var dx = touch1.x - firstX
+                        var dy = touch1.y - firstY
+                        if (Math.abs(dx) > dy * 3  &&  Math.abs(dx) > 0.05 * width) {
+                            activeGesture = true;
+                            gesture.grab()
+                        }
+                    }
+                }
+
+                onReleased: {
+                    if (activeGesture) {
+                        var dx = touch1.x - firstX;
+                        var dy = touch1.y - firstY;
+                        if (dx < 0) {
+                            windowView.swipeLeft()
+                        }
+                        else {
+                            windowView.swipeRight()
+                        }
+                    }
+                    activeGesture = false;
                 }
             }
         }
