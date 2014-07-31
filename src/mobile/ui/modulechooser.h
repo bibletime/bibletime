@@ -39,7 +39,7 @@ private:
     void setProperties(const QStringList& list);
 
     QtQuick2ApplicationViewer* viewer_;
-    BtWindowInterface* bibleVerse_;
+    BtWindowInterface* windowInterface_;
 };
 
 } // end namespace

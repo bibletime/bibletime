@@ -36,6 +36,7 @@
 #include <QQmlEngine>
 #include <QQuickItem>
 #include <QStringList>
+#include <swkey.h>
 
 
 namespace btm {
@@ -47,13 +48,15 @@ BtWindowInterface::BtWindowInterface(QObject* parent)
       m_moduleTextModel(new BtModuleTextModel(this)),
       m_bookKeyChooser(0),
       m_keyNameChooser(0),
-      m_verseKeyChooser(0) {
+      m_verseKeyChooser(0),
+      m_historyIndex(-1) {
 
     ViewManager* viewManager = getViewManager();
     if (viewManager == 0)
         return;
     QtQuick2ApplicationViewer* viewer = viewManager->getViewer();
     m_verseKeyChooser = new VerseChooser(viewer, this);
+
     bool ok = connect(m_verseKeyChooser, SIGNAL(referenceChanged()), this, SLOT(referenceChosen()));
     Q_ASSERT(ok);
 
@@ -154,6 +157,19 @@ void BtWindowInterface::setReference(const QString& key) {
     if (m_key) {
         m_key->setKey(key);
         referenceChanged();
+    }
+}
+
+void BtWindowInterface::moduleNameChanged(const QString& moduleName)
+{
+    setModuleName(moduleName);
+    setHistoryPoint();
+}
+
+void BtWindowInterface::setModuleToBeginning() {
+    if (moduleIsBibleOrCommentary(m_key->module())) {
+         CSwordVerseKey* verseKey = dynamic_cast<CSwordVerseKey*>(m_key);
+         verseKey->setPosition(sword::TOP);
     }
 }
 
@@ -309,6 +325,7 @@ void BtWindowInterface::referenceChosen() {
     emit referenceChange();
     updateModel();
     emit currentModelIndexChanged();
+    setHistoryPoint();
 }
 
 void BtWindowInterface::referenceChosen(int index) {
@@ -361,6 +378,47 @@ QString BtWindowInterface::getHighlightWords() const {
 void BtWindowInterface::setHighlightWords(const QString& words) {
     m_highlightWords = words;
     m_moduleTextModel->setHighlightWords(words);
+}
+
+void BtWindowInterface::setHistoryPoint() {
+    History history;
+    while (  m_history.count()>0  &&  (m_historyIndex<m_history.count()-1)  )
+        m_history.pop_back();
+    history.moduleName = getModuleName();
+    history.reference = getReference();
+    m_history.append(history);
+    m_historyIndex = m_history.count() - 1;
+    emit historyChanged();
+}
+
+bool BtWindowInterface::getHistoryForwardVisible() const {
+    return m_historyIndex < (m_history.count() - 1);
+}
+
+bool BtWindowInterface::getHistoryBackwardVisible() const {
+    return (m_historyIndex > 0) && (m_history.count() > 1);
+}
+
+void BtWindowInterface::moveHistoryBackward() {
+    if ( ! getHistoryBackwardVisible())
+        return;
+    m_historyIndex--;
+    History history = m_history.at(m_historyIndex);
+    setModuleName(history.moduleName);
+    setReference(history.reference);
+    emit currentModelIndexChanged();
+    emit historyChanged();
+}
+
+void BtWindowInterface::moveHistoryForward() {
+    if ( ! getHistoryForwardVisible())
+        return;
+    m_historyIndex++;
+    History history = m_history.at(m_historyIndex);
+    setModuleName(history.moduleName);
+    setReference(history.reference);
+    emit currentModelIndexChanged();
+    emit historyChanged();
 }
 
 } // end namespace

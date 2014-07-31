@@ -24,9 +24,9 @@
 
 namespace btm {
 
-ModuleChooser::ModuleChooser(QtQuick2ApplicationViewer* viewer, BtWindowInterface* bibleVerse)
+ModuleChooser::ModuleChooser(QtQuick2ApplicationViewer* viewer, BtWindowInterface* windowInterface)
     : viewer_(viewer),
-      bibleVerse_(bibleVerse) {
+      windowInterface_(windowInterface) {
 }
 
 void ModuleChooser::open() {
@@ -50,7 +50,7 @@ void ModuleChooser::moduleSelectedSlot() {
     item->setProperty("visible", false);
     QVariant v = item->property("selectedModule");
     QString moduleName = v.toString();
-    bibleVerse_->setModuleName(moduleName);
+    windowInterface_->moduleNameChanged(moduleName);
 }
 
 } // end namespace

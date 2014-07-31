@@ -42,6 +42,14 @@ Rectangle {
         btWindowInterface.saveWindowStateToConfig(index);
     }
 
+    function setHistoryPoint() {
+        btWindowInterface.setHistoryPoint();
+    }
+
+    function setModuleToBeginning() {
+        btWindowInterface.setModuleToBeginning();
+    }
+
     function contextMenus() {
 //        contextMenu.visible = true;
     }
@@ -67,12 +75,54 @@ Rectangle {
         border.width: 1
         border.color: "black"
 
+        Image {
+            id: backHistory
+
+            width: parent.height * 0.80
+            height: parent.height * 0.80
+            anchors.left: parent.left
+            anchors.top: parent.top
+            anchors.margins: parent.height * 0.1;
+            source: "qrc:/share/bibletime/icons/back.svg"
+            opacity: btWindowInterface.historyBackwardVisible? 1 : 0.4
+
+            MouseArea {
+                anchors.fill: parent
+
+                onClicked: {
+                    if (backHistory.opacity > 0.9)
+                        btWindowInterface.moveHistoryBackward();
+                }
+            }
+        }
+
+        Image {
+            id: forwardHistory
+
+            width: parent.height * 0.8
+            height: parent.height * 0.8
+            anchors.left: backHistory.right
+            anchors.top: parent.top
+            anchors.margins: parent.height * 0.1;
+            source: "qrc:/share/bibletime/icons/forward.svg"
+            opacity: btWindowInterface.historyForwardVisible? 1 : 0.4
+
+            MouseArea {
+                anchors.fill: parent
+
+                onClicked: {
+                    if (forwardHistory.opacity > 0.9)
+                        btWindowInterface.moveHistoryForward();
+                }
+            }
+        }
+
         Rectangle {
             id: moduleDisplay
 
             width: text.width + 30
             radius:btStyle.pixelsPerMillimeterX
-            anchors.left: parent.left
+            anchors.left: forwardHistory.right
             anchors.top: parent.top
             anchors.bottom: parent.bottom
             anchors.topMargin: btStyle.pixelsPerMillimeterY * 0.7

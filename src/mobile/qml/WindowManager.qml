@@ -127,23 +127,24 @@ Rectangle {
         }
 
         window = component.createObject(null, {"width": 250, "height": 200});
-        window.setModule(module);
-        window.swipeLeft.connect(windowManager,setPreviousWindow)
-        window.swipeRight.connect(windowManager,setNextWindow)
-
 
         if (window == null) {
             // Error Handling
             console.log("Error creating object");
         }
         else {
+            window.setModule(module);
+            window.swipeLeft.connect(windowManager,setPreviousWindow)
+            window.swipeRight.connect(windowManager,setNextWindow)
             windows.push(window)
             layoutWindows();
             var curWindow = windows.length -1;
             selectWindow(curWindow);
+            window.setModuleToBeginning();
+            if (key !== "")
+                window.setKey(key);
+            window.setHistoryPoint();
         }
-        if (key !== "")
-            window.setKey(key);
     }
 
     function layoutTiles(rows, columns)

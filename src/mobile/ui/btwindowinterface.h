@@ -13,6 +13,7 @@
 #ifndef BT_WINDOW_INTERFACE_H
 #define BT_WINDOW_INTERFACE_H
 
+#include <QList>
 #include <QObject>
 #include <QString>
 #include "backend/managers/cswordbackend.h"
@@ -29,6 +30,12 @@ class BookKeyChooser;
 class KeyNameChooser;
 class VerseChooser;
 
+struct History
+{
+    QString moduleName;
+    QString reference;
+};
+
 class BtWindowInterface : public QObject {
 
     Q_OBJECT
@@ -39,6 +46,8 @@ class BtWindowInterface : public QObject {
     Q_PROPERTY(QString  moduleName   READ getModuleName WRITE setModuleName NOTIFY moduleChanged)
     Q_PROPERTY(QString  reference   READ getReference WRITE setReference NOTIFY referenceChange)
     Q_PROPERTY(QVariant textModel   READ getTextModel NOTIFY textModelChanged)
+    Q_PROPERTY(bool     historyBackwardVisible READ getHistoryBackwardVisible NOTIFY historyChanged)
+    Q_PROPERTY(bool     historyForwardVisible READ getHistoryForwardVisible NOTIFY historyChanged)
 
 public:
     Q_INVOKABLE void changeModule();
@@ -46,6 +55,10 @@ public:
     Q_INVOKABLE void saveWindowStateToConfig(int windowIndex);
     Q_INVOKABLE void updateCurrentModelIndex();
     Q_INVOKABLE void updateKeyText(int modelIndex);
+    Q_INVOKABLE void moveHistoryBackward();
+    Q_INVOKABLE void moveHistoryForward();
+    Q_INVOKABLE void setHistoryPoint();
+    Q_INVOKABLE void setModuleToBeginning();
 
     BtWindowInterface(QObject *parent = 0);
 
@@ -57,13 +70,18 @@ public:
     QString getReference() const;
     QVariant getTextModel();
 
+    void moduleNameChanged(const QString& moduleName);
     void setFontSize(int size);
     void setHighlightWords(const QString& words);
     void setModuleName(const QString& moduleName);
     void setReference(const QString& key);
 
+    bool getHistoryBackwardVisible() const;
+    bool getHistoryForwardVisible() const;
+
 signals:
     void currentModelIndexChanged();
+    void historyChanged();
     void moduleChanged();
     void referenceChange();
     void textChanged();
@@ -87,6 +105,9 @@ private:
     VerseChooser* m_verseKeyChooser;
     QString m_highlightWords;
     QString m_moduleName;
+    QList<History> m_history;
+    int m_historyIndex;
+
 };
 
 } // end namespace
