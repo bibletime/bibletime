@@ -334,6 +334,7 @@ void BtWindowInterface::referenceChosen(int index) {
     m_key->setKey(keyName);
     setReference(keyName);
     emit currentModelIndexChanged();
+    setHistoryPoint();
 }
 
 const CSwordModuleInfo* BtWindowInterface::module() const {
