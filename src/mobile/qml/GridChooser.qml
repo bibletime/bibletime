@@ -50,7 +50,7 @@ Rectangle {
         calculateColumns(count);
         buttonWidth = (width - ((columns +1) *space))/columns
         var buttonH = Math.floor((height-(rows*space))/rows) ;
-        buttonHeight = Math.max(btStyle.pixelsPerMillimeterY*6, buttonH);
+        buttonHeight = Math.max(btStyle.pixelsPerMillimeterY*7.5, buttonH);
         flick.contentY = 0;
     }
 
