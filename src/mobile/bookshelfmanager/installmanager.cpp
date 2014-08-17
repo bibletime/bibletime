@@ -99,6 +99,7 @@ void InstallManager::openChooser() {
     if (m_installManagerChooserObject == 0)
         return;
 
+    m_modulesToInstallRemove.clear();
     setupSourceModel();
     makeConnections();
     setProperties();
@@ -242,8 +243,8 @@ void InstallManager::installRemove() {
             m_modulesToInstall.append(moduleInfo);
         }
     }
-    removeModules(m_modulesToRemove);
     installModules(m_modulesToInstall);
+    removeModules(m_modulesToRemove);
 }
 
 void InstallManager::updateCategoryAndLanguageModels()
@@ -346,6 +347,7 @@ void InstallManager::removeModules(const QList<CSwordModuleInfo*>& modules) {
     }
     // Update the module list before really removing. Remember deleting the pointers later.
     QList<CSwordModuleInfo*> toBeDeleted = CSwordBackend::instance()->takeModulesFromList(moduleNames);
+    Q_ASSERT(toBeDeleted.size() == moduleNames.size());
 
     sword::InstallMgr installMgr;
     QMap<QString, sword::SWMgr*> mgrDict; //maps config paths to SWMgr objects
@@ -375,7 +377,7 @@ void InstallManager::removeModules(const QList<CSwordModuleInfo*>& modules) {
         installMgr.removeModule(mgr, mInfo->module()->getName());
     }
     //delete the removed moduleinfo pointers
-    qDeleteAll(modules);
+    qDeleteAll(toBeDeleted);
     //delete all mgrs which were created above
     qDeleteAll(mgrDict);
     mgrDict.clear();
