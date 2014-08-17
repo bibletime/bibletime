@@ -50,6 +50,10 @@ QScopedPointer<QDir> cachedSharedSwordDir;
 QScopedPointer<QDir> cachedSwordLocalesDir;
 #endif
 
+#ifdef Q_OS_ANDROID
+QScopedPointer<QDir> cachedSharedSwordDir;  // Directory that AndBible uses
+#endif
+
 #if defined Q_OS_WIN || defined Q_OS_SYMBIAN
 static const char BIBLETIME[] = "Bibletime";
 static const char SWORD_DIR[] = "Sword";
@@ -77,6 +81,12 @@ bool initDirectoryCache() {
             return false;
         }
     }
+
+#ifdef Q_OS_ANDROID
+    cachedSharedSwordDir.reset(new QDir());
+    cachedSharedSwordDir->cd("/storage/sdcard0/Android/data/net.bible.android.activity/files");
+#endif
+
 
 #ifdef Q_OS_WIN
     cachedApplicationSwordDir.reset(new QDir(wDir)); // application sword dir for Windows only
@@ -371,7 +381,9 @@ QString convertDirSeparators(const QString& path) {
 const QDir &getApplicationSwordDir() {
     return *cachedApplicationSwordDir;
 }
+#endif
 
+#if defined Q_OS_WIN || defined Q_OS_ANDROID
 const QDir &getSharedSwordDir() {
     return *cachedSharedSwordDir;
 }
