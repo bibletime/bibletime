@@ -95,6 +95,15 @@ int main(int argc, char *argv[]) {
         return EXIT_FAILURE;
     }
 
+#if defined(Q_OS_WIN) || defined(Q_OS_ANDROID)
+    // change directory to the Sword or .sword directory in the $HOME dir so that
+    // the sword.conf is found. It points to the sword/locales.d directory
+    // This is also needed for the AugmentPath or DataPath to work
+    QString homeSwordDir = util::directory::getUserHomeSwordDir().absolutePath();
+    QDir dir;
+    dir.setCurrent(homeSwordDir);
+#endif
+
     app.startInit();
     if (!app.initBtConfig()) {
         return EXIT_FAILURE;

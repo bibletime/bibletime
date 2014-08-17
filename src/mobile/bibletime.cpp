@@ -16,7 +16,9 @@
 #include "backend/managers/btstringmgr.h"
 #include "backend/managers/clanguagemgr.h"
 #include "backend/managers/cswordbackend.h"
+#include "util/directory.h"
 #include <QLocale>
+#include <QTextStream>
 #include <stringmgr.h>
 #include <swlog.h>
 
@@ -76,6 +78,24 @@ void BibleTime::initSwordConfigFile() {
     out << "[Install]\n";
     out << "DataPath="   << util::directory::convertDirSeparators( util::directory::getSharedSwordDir().absolutePath()) << "\n";
     out << "LocalePath=" << util::directory::convertDirSeparators(util::directory::getApplicationSwordDir().absolutePath()) << "\n";
+    out << "\n";
+    file.close();
+#endif
+
+#ifdef Q_OS_ANDROID
+    QString configFile = util::directory::getUserHomeSwordDir().filePath("sword.conf");
+    QFile file(configFile);
+    if (file.exists()) {
+        return;
+    }
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        return;
+    }
+    QTextStream out(&file);
+    out << "\n";
+    out << "[Install]\n";
+    out << "DataPath="   << util::directory::convertDirSeparators( util::directory::getUserHomeSwordDir().absolutePath()) << "\n";
+    out << "AugmentPath="   << util::directory::convertDirSeparators( util::directory::getSharedSwordDir().absolutePath()) << "\n";
     out << "\n";
     file.close();
 #endif
