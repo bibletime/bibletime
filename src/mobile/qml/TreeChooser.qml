@@ -128,7 +128,11 @@ Rectangle {
             border.color: "#eeeeee"
             border.width: 1
             width: parent.width
-            height: btStyle.uiFontPointSize * 5;
+            height: {
+                var pixel = btStyle.pixelsPerMillimeterY * 7;
+                var uiFont = btStyle.uiFontPointSize * 4.5;
+                return Math.max(pixel, uiFont);
+            }
 
             Text {
                 id: entryText
@@ -149,8 +153,8 @@ Rectangle {
                 id: imageButton
                 icon: "rightarrow.svg"
 
-                height: btStyle.uiFontPointSize * 4;
-                width:  btStyle.uiFontPointSize * 4;
+                height: entry.height;
+                width:  entry.height;
                 anchors.right: parent.right
                 anchors.top: parent.top
                 anchors.topMargin: 2
