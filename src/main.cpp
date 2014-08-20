@@ -168,14 +168,14 @@ void myMessageOutput(
             debugStream->write("(BibleTime " BT_VERSION ") CRITICAL: ");
             debugStream->write(msg);
             debugStream->write("\nPlease report this bug at "
-                               "http://bugs.bibletime.info/");
+                               "https://github.com/bibletime/bibletime/issues");
             debugStream->flush();
             break;
         case QtFatalMsg:
             debugStream->write("(BibleTime " BT_VERSION ") FATAL: ");
             debugStream->write(msg);
             debugStream->write("\nPlease report this bug at "
-                               "http://bugs.bibletime.info/");
+                               "https://github.com/bibletime/bibletime/issues");
 
             // Dump core on purpose (see qInstallMsgHandler documentation):
             debugStream->close();
