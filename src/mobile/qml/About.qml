@@ -63,6 +63,7 @@ Rectangle {
                 wrapMode: Text.WordWrap
                 width: aboutDialog.width
                 horizontalAlignment: Text.AlignHCenter
+                textFormat: Text.RichText
                 text: formatText();
                 font.pointSize: btStyle.uiFontPointSize
                 onLinkActivated: {
@@ -89,7 +90,7 @@ Rectangle {
                     var gitversion = btStyle.gitVersion;
                     var len = gitversion.length;
                     if (len != 0) {
-                        gitstr = "<a href=\"http://gitorious.org/bibletime/bibletime\">Git version</a><br>";
+                        gitstr = "<a href=\"https://github.com/bibletime\">Git version</a><br>";
                         gitstr += gitversion.substring(0, len/2-1);
                         gitstr += "<br>";
                         gitstr += gitversion.substring(len/2, len);
