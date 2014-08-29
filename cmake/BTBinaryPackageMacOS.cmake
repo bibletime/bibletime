@@ -1,24 +1,31 @@
 IF(APPLE)
     # Qt Plugins
     IF(Qt5Core_FOUND)
-        GET_TARGET_PROPERTY(ICON_PLUGIN Qt5::QICOPlugin  LOCATION)
-        GET_TARGET_PROPERTY(GIF_PLUGIN  Qt5::QGifPlugin  LOCATION)
-        GET_TARGET_PROPERTY(JPG_PLUGIN  Qt5::QJpegPlugin LOCATION)
-        GET_TARGET_PROPERTY(SVG_PLUGIN  Qt5::QSvgPlugin  LOCATION)
-        GET_TARGET_PROPERTY(TIFF_PLUGIN Qt5::QTiffPlugin LOCATION)
-        GET_TARGET_PROPERTY(BMP_PLUGIN  Qt5::QWbmpPlugin LOCATION)
-        GET_TARGET_PROPERTY(MNG_PLUGIN  Qt5::QMngPlugin  LOCATION)
-        INSTALL(
-            FILES
-                "${ICON_PLUGIN}"
-                "${GIF_PLUGIN}"
-                "${JPG_PLUGIN}"
-                "${SVG_PLUGIN}"
-                "${TIFF_PLUGIN}"
-                "${BMP_PLUGIN}"
-                "${MNG_PLUGIN}"
-            DESTINATION "${BT_DESTINATION}/plugins"
-        )
+
+        MACRO(InstallPlugin _QtTarget)
+            GET_TARGET_PROPERTY(_QtLocation ${_QtTarget} LOCATION)
+            STRING(REGEX MATCH ".*/plugins/"    _QtPluginBase ${_QtLocation})
+            STRING(REGEX MATCH "plugins/[^/]+/" _QtPluginPath ${_QtLocation})
+            #MESSAGE("INSTALL ${_QtLocation} DESTINATION ${BT_DESTINATION}/${_QtPluginPath}" )
+            INSTALL(FILES ${_QtLocation} DESTINATION "${BT_DESTINATION}/${_QtPluginPath}")
+        ENDMACRO(InstallPlugin)
+
+        FOREACH(Plugin ${Qt5Gui_PLUGINS})
+            InstallPlugin(${Plugin})
+        ENDFOREACH()
+        FOREACH(Plugin ${Qt5Widget_PLUGINS})
+            InstallPlugin(${Plugin})
+        ENDFOREACH()
+        # This does not work in Qt <= 5.3.1, see
+        # https://bugreports.qt-project.org/browse/QTBUG-39171?page=com.atlassian.jira.plugin.system.issuetabpanels:changehistory-tabpanel
+        #FOREACH(Plugin ${Qt5Svg_PLUGINS})
+        #    InstallPlugin(${Plugin})
+        #ENDFOREACH()
+
+        # So we'll use a hack here
+        INSTALL(FILES "${_QtPluginBase}/imageformats/libqsvg.dylib" DESTINATION "${BT_DESTINATION}/plugins/imageformats")
+        INSTALL(FILES "${_QtPluginBase}/iconengines/libqsvgicon.dylib" DESTINATION "${BT_DESTINATION}/plugins/iconengines")
+
     ELSE(Qt5Core_FOUND)
         INSTALL(
             DIRECTORY "${QT_PLUGINS_DIR}/iconengines" "${QT_PLUGINS_DIR}/imageformats"
