@@ -4,6 +4,7 @@ IF(APPLE)
 
         MACRO(InstallPlugin _QtTarget)
             GET_TARGET_PROPERTY(_QtLocation ${_QtTarget} LOCATION)
+            # Get the Qt plugin directory for our SVG hack below...
             STRING(REGEX MATCH ".*/plugins/"    _QtPluginBase ${_QtLocation})
             STRING(REGEX MATCH "plugins/[^/]+/" _QtPluginPath ${_QtLocation})
             #MESSAGE("INSTALL ${_QtLocation} DESTINATION ${BT_DESTINATION}/${_QtPluginPath}" )
