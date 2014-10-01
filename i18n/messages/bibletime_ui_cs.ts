@@ -1471,7 +1471,7 @@ shortcut</source>
     <name>BtTextFiltersTab</name>
     <message>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
-        <translation type="unfinished">Filtry kontrolují vzhled textu. Zde můžete nastavit výchozí hodnoty pro všechny filtry. Toto nastavení můžete v každém zobrazeném okně anulovat.</translation>
+        <translation type="obsolete">Filtry kontrolují vzhled textu. Zde můžete nastavit výchozí hodnoty pro všechny filtry. Toto nastavení můžete v každém zobrazeném okně anulovat.</translation>
     </message>
     <message>
         <source>Insert line break after each verse</source>
@@ -1508,6 +1508,10 @@ shortcut</source>
     <message>
         <source>Use textual variants</source>
         <translation type="unfinished">Použít textové varianty</translation>
+    </message>
+    <message>
+        <source>Filters control the appearance of text. Here you can specify default settings for all filters. These settings apply to newly opened display windows only. You can override these settings in each display window.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2441,6 +2445,17 @@ Do you want to continue?</source>
     </message>
 </context>
 <context>
+    <name>FontSizeSlider</name>
+    <message>
+        <source>Ok</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>InfoDisplay::CInfoDisplay</name>
     <message>
         <source>Abbreviation</source>
@@ -2480,6 +2495,77 @@ Do you want to continue?</source>
     </message>
     <message>
         <source>&lt;div class=&quot;moduleinfo&quot;&gt;&lt;h3&gt;%1&lt;/h3&gt;&lt;p&gt;%2&lt;/p&gt;&lt;p&gt;Version: %3&lt;/p&gt;&lt;/div&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>InstallManagerChooser</name>
+    <message>
+        <source>Source</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation type="unfinished">Kategorie</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished">Jazyk</translation>
+    </message>
+    <message>
+        <source>Document</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refresh Lists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Install / Remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ListWorksView</name>
+    <message>
+        <source>Remove</source>
+        <translation type="unfinished">Odstranit</translation>
+    </message>
+    <message>
+        <source>Install</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MainToolbar</name>
+    <message>
+        <source>BibleTime Mobile</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ModuleChooser</name>
+    <message>
+        <source>Unlock</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation type="unfinished">Kategorie</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished">Jazyk</translation>
+    </message>
+    <message>
+        <source>Work</source>
+        <translation type="unfinished">Dílo</translation>
+    </message>
+</context>
+<context>
+    <name>Progress</name>
+    <message>
+        <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3657,6 +3743,40 @@ Language name ppk</extracomment>
     </message>
 </context>
 <context>
+    <name>Question</name>
+    <message>
+        <source>Yes</source>
+        <translation type="unfinished">Ano</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation type="unfinished">Ne</translation>
+    </message>
+</context>
+<context>
+    <name>Search</name>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished">Hledat</translation>
+    </message>
+    <message>
+        <source>Find</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All Words</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Any Word</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Regular Expression</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Search::BtSearchOptionsArea</name>
     <message>
         <source>Search for:</source>
@@ -4131,6 +4251,17 @@ Language name ppk</extracomment>
     </message>
 </context>
 <context>
+    <name>Settings</name>
+    <message>
+        <source>Ui Font Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Window Arrangement</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>StandardWorksTab</name>
     <message>
         <source>Bible:</source>
@@ -4202,6 +4333,21 @@ Language name ppk</extracomment>
     </message>
 </context>
 <context>
+    <name>StartupBookshelfManager</name>
+    <message>
+        <source>There are currently no documents installed. Please click on the Ok button below to install new documentss.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>TextFiltersTab</name>
     <message>
         <source>Insert line break after each verse</source>
@@ -4249,6 +4395,13 @@ Language name ppk</extracomment>
     </message>
 </context>
 <context>
+    <name>Window</name>
+    <message>
+        <source>Text Font Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>btm::InstallProgress</name>
     <message>
         <source>Failed</source>
@@ -4261,6 +4414,14 @@ Language name ppk</extracomment>
     <message>
         <source>Cancelled</source>
         <translation type="obsolete">Zrušeno</translation>
+    </message>
+    <message>
+        <source>Installing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Downloading</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4328,7 +4489,7 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Bookshelf Manager</source>
-        <translation type="unfinished">Správce knihovny</translation>
+        <translation type="obsolete">Správce knihovny</translation>
     </message>
     <message>
         <source>Single</source>
@@ -4360,6 +4521,30 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>User Interface Font Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Some of the modules you want to search need to be indexed. Do you want to index them now?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Window Arrangement</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manage Installed Documents</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Are you sure you want to quit?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
