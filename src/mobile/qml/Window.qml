@@ -21,6 +21,14 @@ Rectangle {
     signal swipeLeft
     signal swipeRight
 
+    function getModuleLanguage() {
+        return btWindowInterface.moduleLanguage
+    }
+
+    function updateTextFonts() {
+        btWindowInterface.updateTextFonts();
+    }
+
     function getModule() {
         return btWindowInterface.moduleName;
     }
@@ -51,7 +59,7 @@ Rectangle {
     }
 
     function contextMenus() {
-//        contextMenu.visible = true;
+        contextMenu.visible = true;
     }
 
     color: "black"
@@ -232,23 +240,10 @@ Rectangle {
                 textFormat: Text.RichText
                 width: parent.width
                 color: "black"
-                font.pointSize: btStyle.textFontPointSize
+                font.family: btWindowInterface.fontName
+                font.pointSize: btWindowInterface.fontSize
                 wrapMode: Text.WordWrap
                 onWidthChanged: doLayout()
-            }
-
-            MouseArea {
-
-                anchors.fill: parent
-                enabled: false
-                onDoubleClicked: {
-                    windowView.contextMenus();
-                }
-
-                onPressAndHold: {
-                    windowView.contextMenus();
-
-                }
             }
 
             MultiPointTouchArea {

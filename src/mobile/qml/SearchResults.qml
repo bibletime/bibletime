@@ -219,7 +219,8 @@ SplitView {
                 textFormat: Text.RichText
                 width: parent.width
                 color: "black"
-                font.pointSize: btStyle.textFontPointSize
+                font.family: btWindowInterface.fontName
+                font.pointSize: btWindowInterface.fontSize
                 wrapMode: Text.WordWrap
                 onWidthChanged: doLayout()
             }

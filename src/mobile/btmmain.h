@@ -21,5 +21,7 @@ btm::ViewManager* getViewManager();
 
 void openBookshelfManager();
 
+QFont getDefaultFont();
+
 #endif
 

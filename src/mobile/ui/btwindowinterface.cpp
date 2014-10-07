@@ -144,6 +144,13 @@ int BtWindowInterface::getCurrentModelIndex() const {
     return 0;
 }
 
+QString BtWindowInterface::getModuleLanguage() const {
+    QString language;
+    if (m_key)
+        language = m_key->module()->language()->englishName();
+    return language;
+}
+
 QString BtWindowInterface::getModuleName() const {
     QString moduleName;
     if (m_key)
@@ -228,6 +235,10 @@ void BtWindowInterface::changeModule() {
 
 void BtWindowInterface::updateCurrentModelIndex() {
     emit currentModelIndexChanged();
+}
+
+void BtWindowInterface::updateTextFonts() {
+    emit textChanged();
 }
 
 static void parseKey(CSwordTreeKey* currentKey, QStringList* keyPath, QStringList* children)
@@ -346,11 +357,29 @@ CSwordKey* BtWindowInterface::getKey() const {
     return m_key;
 }
 
+QString BtWindowInterface::getFontName() const {
+    const CLanguageMgr::Language* lang = module()->language();
+    BtConfig::FontSettingsPair fontPair = btConfig().getFontForLanguage(*lang);
+    if (fontPair.first) {
+        QFont font = fontPair.second;
+        QString fontName = font.family();
+        return fontName;
+    }
+    QFont font = getDefaultFont();
+    QString fontName = font.family();
+    return fontName;
+}
+
 int BtWindowInterface::getFontSize() const {
     const CLanguageMgr::Language* lang = module()->language();
     BtConfig::FontSettingsPair fontPair = btConfig().getFontForLanguage(*lang);
-    QFont font = fontPair.second;
-    return font.pointSize();
+    if (fontPair.first) {
+        QFont font = fontPair.second;
+        int fontPointSize = font.pointSize();
+        return fontPointSize;
+    }
+    int fontPointSize = btConfig().value<int>("ui/textFontSize",22);
+    return fontPointSize;
 }
 
 void BtWindowInterface::setFontSize(int size) {

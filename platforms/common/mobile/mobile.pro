@@ -87,6 +87,7 @@ OTHER_FILES += \
     ../../../src/mobile/qml/Question.qml \
     ../../../src/mobile/qml/Search.qml \
     ../../../src/mobile/qml/SearchResults.qml \
+    ../../../src/mobile/qml/SetFont.qml \
     ../../../src/mobile/qml/Settings.qml \
     ../../../src/mobile/qml/SimpleComboBox.qml \
     ../../../src/mobile/qml/StartupBookshelfManager.qml \

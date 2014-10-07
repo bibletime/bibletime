@@ -23,12 +23,33 @@ Rectangle {
 
     property int autoTileVer: 1
     property int autoTileHor: 2
-    property int single: 3  // Tile in Desktop
-    // 4 is Manual in Desktop
-    property int autoTile: 5
-    property int tabLayout: 6
+    property int single:      3  // Tile in Desktop
+    //                        4 is Manual in Desktop
+    property int autoTile:    5
+    property int tabLayout:   6
 
     property int windowArrangement: single
+
+    signal setFontForLanguage(string language)
+
+    function getTopWindowIndex() {
+        if (windowArrangement == single || windowArrangement == tabLayout)
+            return tabbedWindows.current;
+        return 0;
+    }
+
+    function getLanguageForWindow(index) {
+        if (index < 0 || index >= windows.length)
+            return "";
+        return windows[index].getModuleLanguage();
+    }
+
+    function updateTextFont() {
+        for (var i=0; i<windows.length; ++i) {
+            var window = windows[i];
+            var name = window.updateTextFonts();
+        }
+    }
 
     function getWindowCount() {
         return windows.length;
@@ -145,6 +166,10 @@ Rectangle {
                 window.setKey(key);
             window.setHistoryPoint();
         }
+    }
+
+    function setFont(lang) {
+        windowManager.setFontForLanguage(lang)
     }
 
     function layoutTiles(rows, columns)

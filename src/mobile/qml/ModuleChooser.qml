@@ -108,7 +108,6 @@ Rectangle {
             text: QT_TR_NOOP("Unlock")
             onTriggered: {
                 unlockDlg.visible = false;
-                console.log(input.text);
                 moduleInterface.unlock(selectedModule, input.text);
                 if (moduleInterface.isLocked(selectedModule)) {
                     console.log("module did not unlock");

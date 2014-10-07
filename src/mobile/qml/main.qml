@@ -23,6 +23,10 @@ Rectangle {
     property QtObject component: null;
     property Item window: null;
 
+    Component.onCompleted: {
+        setFontDialog.textFontChanged.connect(windowManager.updateTextFont)
+    }
+
     ListModel {
         id: viewWindowsModel
 
@@ -58,7 +62,8 @@ Rectangle {
         installManagerChooser,
         keyNameChooser,
         treeChooser,
-        aboutDialog
+        aboutDialog,
+        setFontDialog
     ]
 
     Keys.onReleased: {
@@ -308,7 +313,7 @@ Rectangle {
         ListElement { title: QT_TR_NOOP("New Window");                action: "newWindow" }
         ListElement { title: QT_TR_NOOP("View Window");               action: "view window" }
         ListElement { title: QT_TR_NOOP("Close Window");              action: "close window" }
-        ListElement { title: QT_TR_NOOP("Text Font Size");            action: "textFontSize" }
+        ListElement { title: QT_TR_NOOP("Text Font");                 action: "textFontSize" }
         ListElement { title: QT_TR_NOOP("User Interface Font Size");  action: "uiFontSize" }
         ListElement { title: QT_TR_NOOP("Window Arrangement");        action: "windowArrangement" }
         ListElement { title: QT_TR_NOOP("Manage Installed Documents");action: "install" }
@@ -349,7 +354,7 @@ Rectangle {
                 settings.visible = true;
             }
             else if (action == "textFontSize") {
-                textFontPointSize.visible = true;
+                setFontDialog.open();
             }
             else if (action == "uiFontSize") {
                 uiFontPointSize.visible = true;
@@ -447,24 +452,6 @@ Rectangle {
         }
     }
 
-    FontSizeSlider {
-        id: textFontPointSize
-        visible: false
-        title: QT_TR_NOOP("Text Font Size")
-
-        onVisibleChanged: {
-            if (visible)
-            {
-                textFontPointSize.current = btStyle.textFontPointSize;
-                textFontPointSize.previous = btStyle.textFontPointSize;
-            }
-        }
-
-        onAccepted: {
-            btStyle.textFontPointSize = pointSize;
-        }
-    }
-
     Question {
         id: quitQuestion
         background: btStyle.toolbarColor
@@ -478,5 +465,20 @@ Rectangle {
     About {
         id: aboutDialog
         visible: false
+    }
+
+    SetFont {
+        id:setFontDialog
+
+        visible: false
+        onVisibleChanged: {
+            mainToolbar.enabled = ! setFontDialog.visible
+        }
+
+        function open() {
+            var index = windowManager.getTopWindowIndex();
+            language = windowManager.getLanguageForWindow(index);
+            setFontDialog.visible = true;
+        }
     }
 }

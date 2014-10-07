@@ -18,6 +18,10 @@ Rectangle {
 
     color: btStyle.toolbarColor
     z:0
+    onEnabledChanged: {
+        menuButton.visible = toolbar.enabled
+        searchIcon.visible = toolbar.enabled
+    }
 
     signal buttonClicked
     signal searchClicked

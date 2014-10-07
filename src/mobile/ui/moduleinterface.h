@@ -41,6 +41,12 @@ public:
     Q_INVOKABLE QString module(int index);
     Q_INVOKABLE bool isLocked(const QString& moduleName);
     Q_INVOKABLE void unlock(const QString& moduleName, const QString& unlockKey);
+    Q_INVOKABLE QStringList installedModuleLanguages();
+    Q_INVOKABLE QString getFontNameForLanguage(const QString& language);
+    Q_INVOKABLE qreal getFontSizeForLanguage(const QString& language);
+    Q_INVOKABLE void setFontForLanguage(const QString& language, const QString& fontName, qreal fontSize);
+    Q_INVOKABLE void saveCurrentFonts();
+    Q_INVOKABLE void restoreSavedFonts();
 
 private:
     void getCategoriesAndLanguages();

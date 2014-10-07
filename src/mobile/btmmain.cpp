@@ -37,6 +37,7 @@
 
 btm::ViewManager* mgr = 0;
 btm::SessionManager* sessionMgr = 0;
+static QFont defaultFont;
 
 void register_gml_classes() {
     QQmlDebuggingEnabler enabler;
@@ -51,6 +52,10 @@ void register_gml_classes() {
 
 btm::ViewManager* getViewManager() {
     return mgr;
+}
+
+QFont getDefaultFont() {
+    return defaultFont;
 }
 
 void openBookshelfManager() {
@@ -89,6 +94,8 @@ int main(int argc, char *argv[]) {
     BibleTimeApp app(argc, argv); //for QApplication
 
     registerMetaTypes();
+
+    defaultFont = app.font();
 
     if (!DU::initDirectoryCache()) {
         qFatal("Error initializing directory cache!");

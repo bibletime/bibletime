@@ -14,10 +14,12 @@
 
 #include "qtquick2applicationviewer.h"
 
+#include "backend/config/btconfig.h"
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "backend/managers/cswordbackend.h"
 #include "backend/keys/cswordversekey.h"
 #include "mobile/util/findqmlobject.h"
+#include "mobile/btmmain.h"
 #include <cmath>
 #include <QQuickItem>
 #include <QQmlProperty>
@@ -29,6 +31,14 @@
 #include "gridchooser.h"
 
 namespace btm {
+
+struct FontSettings {
+    QString language;
+    QString fontName;
+    qreal fontSize;
+};
+
+static QList<FontSettings> savedFontSettings;
 
 ModuleInterface::ModuleInterface() {
 }
@@ -103,6 +113,16 @@ void ModuleInterface::getCategoriesAndLanguages() {
         m_languages.insert(languageName);
     }
 }
+
+QStringList ModuleInterface::installedModuleLanguages() {
+    QStringList languages;
+    CLanguageMgr::LangMap langMap = CLanguageMgr::instance()->availableLanguages();
+    for (auto lang: langMap) {
+        languages << lang->englishName();
+    }
+    return languages;
+}
+
 
 void ModuleInterface::updateWorksModel() {
     m_worksModel.clear();
@@ -222,6 +242,83 @@ void ModuleInterface::unlock(const QString& moduleName, const QString& unlockKey
         backend->reloadModules(CSwordBackend::OtherChange);
         module = CSwordBackend::instance()->findModuleByName(moduleName);
         updateWorksModel();
+    }
+}
+
+static const CLanguageMgr::Language* getLanguageFromEnglishName(const QString& name) {
+    CLanguageMgr::LangMap langMap = CLanguageMgr::instance()->availableLanguages();
+    for (auto l: langMap) {
+        if (l->englishName() == name)
+            return l;
+    }
+    return nullptr;
+ }
+
+QString ModuleInterface::getFontNameForLanguage(const QString& language)
+{
+    auto lang = getLanguageFromEnglishName(language);
+    if (lang) {
+        BtConfig::FontSettingsPair fontPair = btConfig().getFontForLanguage(*lang);
+        if (fontPair.first) {
+            QFont font = fontPair.second;
+            QString fontFamily = font.family();
+            return fontFamily;
+        }
+    }
+    QString fontFamily = getDefaultFont().family();
+    return fontFamily;
+}
+
+qreal ModuleInterface::getFontSizeForLanguage(const QString& language)
+{
+    auto lang = getLanguageFromEnglishName(language);
+    if (lang) {
+        BtConfig::FontSettingsPair fontPair = btConfig().getFontForLanguage(*lang);
+        if (fontPair.first) {
+            QFont font = fontPair.second;
+            int fontPointSize = font.pointSize();
+            return fontPointSize;
+        }
+    }
+    qreal pointSize = getDefaultFont().pointSizeF();
+    return pointSize;
+}
+
+void ModuleInterface::setFontForLanguage(const QString& language, const QString& fontName, qreal fontSize) {
+    if (CLanguageMgr::instance() == nullptr)
+        return;
+    auto lang = getLanguageFromEnglishName(language);
+    if (lang) {
+
+        QFont font;
+        font.setFamily(fontName);
+        font.setPointSizeF(fontSize);
+        BtConfig::FontSettingsPair fontPair;
+        fontPair.first = true;
+        fontPair.second = font;
+        btConfig().setFontForLanguage(*lang, fontPair);
+    }
+}
+
+void ModuleInterface::saveCurrentFonts() {
+    savedFontSettings.clear();
+    CLanguageMgr::LangMap langMap = CLanguageMgr::instance()->availableLanguages();
+    for (auto lang: langMap) {
+        BtConfig::FontSettingsPair fontPair = btConfig().getFontForLanguage(*lang);
+        if (fontPair.first) {
+            FontSettings fontSettings;
+            QFont font = fontPair.second;
+            fontSettings.language = lang->englishName();
+            fontSettings.fontName = font.family();
+            fontSettings.fontSize = font.pointSize();
+            savedFontSettings.append(fontSettings);
+        }
+    }
+}
+
+void ModuleInterface::restoreSavedFonts() {
+    for (auto fontSettings : savedFontSettings) {
+        setFontForLanguage(fontSettings.language, fontSettings.fontName, fontSettings.fontSize);
     }
 }
 

@@ -28,6 +28,7 @@
         <file>qml/SearchResults.qml</file>
         <file>qml/Settings.qml</file>
         <file>qml/StartupBookshelfManager.qml</file>
+        <file>qml/SetFont.qml</file>
         <file>qml/TitleColorBar.qml</file>
         <file>qml/tab.png</file>
         <file>qml/SimpleComboBox.qml</file>

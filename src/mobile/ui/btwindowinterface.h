@@ -42,7 +42,9 @@ class BtWindowInterface : public QObject {
 
     Q_PROPERTY(int      currentModelIndex   READ getCurrentModelIndex NOTIFY currentModelIndexChanged)
     Q_PROPERTY(int      fontSize   READ getFontSize WRITE setFontSize NOTIFY textChanged)
+    Q_PROPERTY(QString  fontName   READ getFontName NOTIFY textChanged)
     Q_PROPERTY(QString  highlightWords   READ getHighlightWords WRITE setHighlightWords)
+    Q_PROPERTY(QString  moduleLanguage  READ getModuleLanguage)
     Q_PROPERTY(QString  moduleName   READ getModuleName WRITE setModuleName NOTIFY moduleChanged)
     Q_PROPERTY(QString  reference   READ getReference WRITE setReference NOTIFY referenceChange)
     Q_PROPERTY(QVariant textModel   READ getTextModel NOTIFY textModelChanged)
@@ -54,6 +56,7 @@ public:
     Q_INVOKABLE void changeReference();
     Q_INVOKABLE void saveWindowStateToConfig(int windowIndex);
     Q_INVOKABLE void updateCurrentModelIndex();
+    Q_INVOKABLE void updateTextFonts();
     Q_INVOKABLE void updateKeyText(int modelIndex);
     Q_INVOKABLE void moveHistoryBackward();
     Q_INVOKABLE void moveHistoryForward();
@@ -64,8 +67,10 @@ public:
 
     int getCurrentModelIndex() const;
     int getFontSize() const;
+    QString getFontName() const;
     QString getHighlightWords() const;
     CSwordKey* getKey() const;
+    QString getModuleLanguage() const;
     QString getModuleName() const;
     QString getReference() const;
     QVariant getTextModel();
