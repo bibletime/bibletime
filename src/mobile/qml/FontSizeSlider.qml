@@ -22,90 +22,79 @@ Rectangle {
     property int max: 30
     property int current: 20
     property int previous: 20
+    property bool ready: false
 
     signal accepted(int pointSize);
 
     color: "#f8f8f8"
     border.color: "black"
-    border.width: 1
-    anchors.centerIn: parent
-    width: parent.width * 0.95
-    height: btStyle.pixelsPerMillimeterY * 18 + 50
+    border.width: 3
+    anchors.right: parent.right
+    anchors.bottom: parent.bottom
+    anchors.topMargin: 20
+    anchors.bottomMargin: btStyle.pixelsPerMillimeterX * 2
+    anchors.rightMargin: btStyle.pixelsPerMillimeterX * 2
+    height: {
+        var height = titleText.contentHeight + slider.height * 1.3 + buttons.height;
+        height = height + titleText.anchors.topMargin;
+        height = height + buttons.anchors.bottomMargin + buttons.anchors.topMargin;
+        return height;
+    }
+    width: {
+        var width = Math.min(parent.width, parent.height);
+        width = width - 2 * anchors.rightMargin
+        return width;
+    }
+    onVisibleChanged: {
+        fontPointSize.ready = false;
+        if (visible) {
+            var uiTextSize = btStyle.uiFontPointSize;
+            slider.value = uiTextSize;
+            fontPointSize.ready = true;
+        }
+    }
+    Keys.onReleased: {
+        if ((event.key == Qt.Key_Back || event.key == Qt.Key_Escape) && fontPointSize.visible == true) {
+            accepted(previous);
+            fontPointSize.visible = false;
+            event.accepted = true;
+        }
+    }
 
     Text {
+        id: titleText
+
         text: qsTranslate("main", title)
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: parent.top
-        anchors.topMargin: 10
-        height: btStyle.pixelsPerMillimeterY * 7
+        anchors.topMargin: 20
         font.pointSize: btStyle.uiFontPointSize
     }
 
-    Rectangle {
-        id: bar
+    Slider {
+        id: slider
 
-        color: "blue"
-        width: parent.width *.90
-        height: 3
-        anchors.centerIn: parent
-    }
-
-    Rectangle {
-        id: indicator
-
-        width: btStyle.pixelsPerMillimeterX * 3
-        height: width
-        color: "red"
-        y: bar.y - height / 2
-        x: {
-            var range = fontPointSize.max - fontPointSize.min;
-            var xpos = bar.width *
-                    (fontPointSize.current - fontPointSize.min) / range;
-            xpos = xpos + bar.x
-            return xpos
+        anchors.top: titleText.bottom
+        anchors.horizontalCenter: parent.horizontalCenter
+        width: parent.width - 50
+        anchors.topMargin: 10
+        minimumValue: fontPointSize.min
+        maximumValue: fontPointSize.max
+        onValueChanged: {
+            if (fontPointSize.ready)
+                 accepted(slider.value);
         }
-    }
-
-    MouseArea {
-        property bool active: false
-        width: bar.width
-        anchors.left: bar.left
-        height: btStyle.pixelsPerMillimeterY * 7
-        anchors.verticalCenter: bar.verticalCenter
-
-        onPressed: {
-            active = true;
-        }
-
-        onReleased: {
-            active = false;
-        }
-
-        onMouseXChanged: {
-            if ( ! active)
-                return;
-            var range = fontPointSize.max - fontPointSize.min;
-            var currentF = mouse.x / bar.width * range  + fontPointSize.min;
-            var value = Math.round(currentF);
-            if (value < fontPointSize.min)
-                value = min;
-            if (value > fontPointSize.max)
-                value = max;
-            fontPointSize.current = value;
-            accepted(value);
-        }
-
     }
 
     Grid {
         id: buttons
 
-        spacing: btStyle.pixelsPerMillimeterY * 5
+        spacing: btStyle.pixelsPerMillimeterY * 4
         columns: 2
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: 15
-        anchors.topMargin: 45
+        anchors.bottomMargin: 20
+        anchors.topMargin: 30
 
         Action {
             id: okAction
@@ -117,7 +106,7 @@ Rectangle {
 
         Button {
             id: okButton
-            height: btStyle.pixelsPerMillimeterY * 6
+            height: btStyle.pixelsPerMillimeterY * 5
             width: btStyle.pixelsPerMillimeterY * 18
             action: okAction
             style: BtButtonStyle {
@@ -135,7 +124,7 @@ Rectangle {
 
         Button {
             id: cancelButton
-            height: btStyle.pixelsPerMillimeterY * 6
+            height: btStyle.pixelsPerMillimeterY * 5
             width: btStyle.pixelsPerMillimeterY * 18
             action: cancelAction
             style: BtButtonStyle {

@@ -35,7 +35,7 @@ Rectangle {
     border.color: "black"
     anchors.right: parent.right
     anchors.bottom: parent.bottom
-    anchors.bottomMargin: btStyle.pixelsPerMillimeterX
+    anchors.bottomMargin: btStyle.pixelsPerMillimeterX * 2
     anchors.rightMargin: btStyle.pixelsPerMillimeterX * 2
 
     onVisibleChanged: {

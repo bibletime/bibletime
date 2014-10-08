@@ -63,6 +63,7 @@ Rectangle {
         keyNameChooser,
         treeChooser,
         aboutDialog,
+        uiFontPointSize,
         setFontDialog
     ]
 
@@ -436,10 +437,12 @@ Rectangle {
 
     FontSizeSlider {
         id: uiFontPointSize
+
         visible: false
         title: QT_TR_NOOP("User Interface Font Size")
 
         onVisibleChanged: {
+            mainToolbar.enabled = ! uiFontPointSize.visible
             if (visible)
             {
                 uiFontPointSize.current = btStyle.uiFontPointSize;
