@@ -183,13 +183,16 @@ IF(Qt5Core_FOUND)
   )
 
   IF(${BIBLETIME_FRONTEND} STREQUAL "MOBILE")
-    qt5_use_modules("bibletime" Widgets Qml Quick Xml Network)
+    qt5_use_modules("bibletime" Widgets Qml Quick Xml Network
+                    PrintSupport)
   ELSE()
     IF(BT_Use_DBus)
-      qt5_use_modules("bibletime" DBus Widgets WebKit WebKitWidgets Xml Network)
+      qt5_use_modules("bibletime" DBus Widgets WebKit WebKitWidgets Xml
+                      Network PrintSupport)
       MESSAGE(STATUS "Using DBUS")
     ELSE()
-      qt5_use_modules("bibletime" Widgets WebKit WebKitWidgets Xml Network)
+      qt5_use_modules("bibletime" Widgets WebKit WebKitWidgets Xml Network
+                      PrintSupport)
       MESSAGE(STATUS "No DBUS found")
       ADD_DEFINITIONS("-DNO_DBUS")
     ENDIF()
