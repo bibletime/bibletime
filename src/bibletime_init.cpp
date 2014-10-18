@@ -343,6 +343,8 @@ void BibleTime::createCentralWidget()
     m_findWidget->setVisible(false);
 
     QVBoxLayout* layout = new QVBoxLayout();
+    QMargins margins(0, 0, 0, 0);
+    layout->setContentsMargins(margins);
     layout->addWidget(m_mdi);
     layout->addWidget(m_findWidget);
 
