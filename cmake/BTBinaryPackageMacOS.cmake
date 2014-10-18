@@ -17,15 +17,14 @@ IF(APPLE)
         FOREACH(Plugin ${Qt5Widget_PLUGINS})
             InstallPlugin(${Plugin})
         ENDFOREACH()
-        # This does not work in Qt <= 5.3.1, see
+        # SVG plugin handling was buggy before QT 5.3.1, see
         # https://bugreports.qt-project.org/browse/QTBUG-39171?page=com.atlassian.jira.plugin.system.issuetabpanels:changehistory-tabpanel
-        #FOREACH(Plugin ${Qt5Svg_PLUGINS})
-        #    InstallPlugin(${Plugin})
-        #ENDFOREACH()
-
-        # So we'll use a hack here
-        INSTALL(FILES "${_QtPluginBase}/imageformats/libqsvg.dylib" DESTINATION "${BT_DESTINATION}/plugins/imageformats")
-        INSTALL(FILES "${_QtPluginBase}/iconengines/libqsvgicon.dylib" DESTINATION "${BT_DESTINATION}/plugins/iconengines")
+        FOREACH(Plugin ${Qt5Svg_PLUGINS})
+            InstallPlugin(${Plugin})
+        ENDFOREACH()
+        # With this workaround it works with earlier QT versions
+        #INSTALL(FILES "${_QtPluginBase}/imageformats/libqsvg.dylib" DESTINATION "${BT_DESTINATION}/plugins/imageformats")
+        #INSTALL(FILES "${_QtPluginBase}/iconengines/libqsvgicon.dylib" DESTINATION "${BT_DESTINATION}/plugins/iconengines")
 
     ELSE(Qt5Core_FOUND)
         INSTALL(
