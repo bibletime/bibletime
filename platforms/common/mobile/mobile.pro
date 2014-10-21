@@ -1,4 +1,4 @@
-CONFIG += clucene svg xml mobile qml quick
+CONFIG += clucene svg xml mobile qml quick c++11
 
 DEFINES += BT_MOBILE
 QMAKE_CXXFLAGS += -DBT_GIT_VERSION=\\\"`git rev-parse HEAD`\\\"
