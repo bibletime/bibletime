@@ -88,8 +88,8 @@ void BtStyle::setStyle(int style) {
         setButtonGradient2(QColor(255,255,255));
         setButtonGradient3(QColor(180,180,255));
 
-        setWindowTab(QColor(255,245,210));
-        setWindowTabSelected(QColor(255,225,128));
+        setWindowTab(QColor(245,245,245));
+        setWindowTabSelected(QColor(255,255,180));
         setWindowTabText(QColor(0,0,0));
         setWindowTabTextSelected(QColor(0,0,0));
 

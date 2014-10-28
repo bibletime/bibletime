@@ -325,7 +325,7 @@ Rectangle {
                     width: {
                         calculateTabWidth()
                     }
-                    height: btStyle.pixelsPerMillimeterY * 7
+                    height: btStyle.pixelsPerMillimeterY * 6
                     color: btStyle.toolbarColor
 
                     Rectangle {

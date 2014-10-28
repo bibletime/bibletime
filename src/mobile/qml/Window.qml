@@ -78,7 +78,7 @@ Rectangle {
         property string title: btWindowInterface.moduleName + " (" + btWindowInterface.reference + ")"
 
         width: parent.width
-        height: btStyle.pixelsPerMillimeterY * 8
+        height: btStyle.pixelsPerMillimeterY * 7
         color: btStyle.toolbarColor
         border.width: 1
         border.color: "black"
@@ -134,7 +134,7 @@ Rectangle {
             anchors.top: parent.top
             anchors.bottom: parent.bottom
             anchors.topMargin: btStyle.pixelsPerMillimeterY * 0.7
-            anchors.leftMargin: 15
+            anchors.leftMargin: parent.height * 0.1
             anchors.bottomMargin: btStyle.pixelsPerMillimeterY * 0.7
             color: btStyle.toolbarButton
             border.color: btStyle.buttonBorder
@@ -167,10 +167,11 @@ Rectangle {
             id: referenceDisplay
 
             width: {
-                var w1 = 1100
-                var w2 = toolbar.width - moduleDisplay.width - 40;
-                var w = Math.min(w1,w2);
-                return w;
+                var w2 = toolbar.width - backHistory.width -backHistory.anchors.margins*2;
+                w2 = w2 - forwardHistory.width -forwardHistory.anchors.margins*2;
+                w2 = w2 - moduleDisplay.width - moduleDisplay.anchors.leftMargin - moduleDisplay.anchors.rightMargin;
+                w2 - w2 - parent.height * 0.2;
+                return w2;
             }
             radius: btStyle.pixelsPerMillimeterX
             anchors.left: moduleDisplay.right
@@ -178,7 +179,7 @@ Rectangle {
             anchors.bottom: parent.bottom
             anchors.topMargin: btStyle.pixelsPerMillimeterY * 0.7
             anchors.bottomMargin: btStyle.pixelsPerMillimeterY * 0.7
-            anchors.leftMargin:  btStyle.pixelsPerMillimeterX *1.5
+            anchors.leftMargin:  parent.height * 0.1
             color: btStyle.toolbarButton
             border.color: btStyle.buttonBorder
             border.width: 1
