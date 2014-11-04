@@ -85,7 +85,12 @@ Rectangle {
         anchors.left: parent.left
         anchors.top: parent.top
         anchors.right: parent.right
-        height: btStyle.pixelsPerMillimeterY * 6
+        height: {
+            var pixel = btStyle.pixelsPerMillimeterY * 7.5;
+            var uiFont = btStyle.uiFontPointSize * 4.4;
+            var mix = pixel * 0.7 + uiFont * 0.3;
+            return Math.max(pixel, mix);
+        }
         onButtonClicked: {
             mainMenus.visible = ! mainMenus.visible;
         }

@@ -78,7 +78,14 @@ Rectangle {
         property string title: btWindowInterface.moduleName + " (" + btWindowInterface.reference + ")"
 
         width: parent.width
-        height: btStyle.pixelsPerMillimeterY * 7
+        height: {
+            var pixel = btStyle.pixelsPerMillimeterY * 7.5;
+            var uiFont = btStyle.uiFontPointSize * 4.4;
+            var mix = pixel * 0.7 + uiFont * 0.3;
+            return Math.max(pixel, mix);
+        }
+
+
         color: btStyle.toolbarColor
         border.width: 1
         border.color: "black"
