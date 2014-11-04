@@ -35,7 +35,7 @@ Rectangle {
     anchors.bottomMargin: btStyle.pixelsPerMillimeterX * 2
     anchors.rightMargin: btStyle.pixelsPerMillimeterX * 2
     height: {
-        var height = titleText.contentHeight + slider.height * 1.3 + buttons.height;
+        var height = titleText.contentHeight + slider.height * 1.4 + buttons.height;
         height = height + titleText.anchors.topMargin;
         height = height + buttons.anchors.bottomMargin + buttons.anchors.topMargin;
         return height;
@@ -76,8 +76,8 @@ Rectangle {
 
         anchors.top: titleText.bottom
         anchors.horizontalCenter: parent.horizontalCenter
-        width: parent.width - 50
-        anchors.topMargin: 10
+        width: parent.width - 60
+        anchors.topMargin: 20
         minimumValue: fontPointSize.min
         maximumValue: fontPointSize.max
         onValueChanged: {
