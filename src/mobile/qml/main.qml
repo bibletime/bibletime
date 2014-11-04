@@ -74,6 +74,11 @@ Rectangle {
         }
     }
 
+    Keys.onMenuPressed: {
+        event.accepted = true;
+        mainMenus.visible = ! mainMenus.visible
+    }
+
     width:  480
     height: 800
 
