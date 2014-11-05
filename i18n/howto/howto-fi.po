@@ -1,26 +1,25 @@
-# Bibletime Howto translation
-# Copyright (C) 2010 The Bibletime Team, http://www.bibletime.info
-# This file is distributed under the same license as the Bibetime package.
-#
-# Ilpo Kantonen <ilpo@iki.fi>, 2005, 2009.
-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR The BibleTime Team, http://www.bibletime.info
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Ilpo Kantonen <ilpo@iki.fi>, 2005,2009
 msgid ""
 msgstr ""
-"Project-Id-Version: howto-fi\n"
+"Project-Id-Version: BibleTime\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
-"POT-Creation-Date: 2014-01-04 00:55-0500\n"
-"PO-Revision-Date: 2009-02-23 20:32+0200\n"
-"Last-Translator: Ilpo Kantonen <ilpo@iki.fi>\n"
-"Language-Team: Finnish <fi@li.org>\n"
-"Language: fi\n"
+"POT-Creation-Date: 2010-11-22 23:08-0500\n"
+"PO-Revision-Date: 2014-11-05 19:47+0000\n"
+"Last-Translator: Martin Gruner <martin.gruner@otrs.com>\n"
+"Language-Team: Finnish (http://www.transifex.com/projects/p/bibletime/language/fi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.10.1\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"Language: fi\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. type: Content of: <chapter><title>
-#: docs/howto/en/docbook/howto-basics.docbook:2
+#: docs/howto/en/docbook/howto-basics.docbook:1
 msgid "Bible Study Basics"
 msgstr "Raamatun tutkimisen perusasiat"
 
@@ -30,699 +29,526 @@ msgid "Our Purpose as we Approach the Bible"
 msgstr "Tarkoituksemme kuinka lähestymme Raamattua"
 
 #. type: Content of: <chapter><sect1><para><blockquote><attribution>
-#: docs/howto/en/docbook/howto-basics.docbook:7
+#: docs/howto/en/docbook/howto-basics.docbook:6
 msgid "Jn.5:39-40"
 msgstr "Joh 5:39-40"
 
 #. type: Content of: <chapter><sect1><para><blockquote><para>
-#: docs/howto/en/docbook/howto-basics.docbook:8
+#: docs/howto/en/docbook/howto-basics.docbook:6
 msgid ""
 "You search the Scriptures, because you think that in them you have eternal "
-"life; and it is these that bear witness of Me; and you are unwilling to come "
-"to Me, that you may have life."
-msgstr ""
-"Te kyllä tutkitte kirjoituksia, koska luulette niistä löytävänne ikuisen "
-"elämän -- ja nehän juuri todistavat minusta. Mutta te ette tahdo tulla minun "
-"luokseni, että saisitte elämän."
+"life; and it is these that bear witness of Me; and you are unwilling to come"
+" to Me, that you may have life."
+msgstr "Te kyllä tutkitte kirjoituksia, koska luulette niistä löytävänne ikuisen elämän -- ja nehän juuri todistavat minusta. Mutta te ette tahdo tulla minun luokseni, että saisitte elämän."
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-basics.docbook:14
+#: docs/howto/en/docbook/howto-basics.docbook:12
 msgid ""
 "The chief purpose of the book is to bring us to the Person.  Martin Luther "
 "said <quote>we go to the cradle only for the sake of the baby</quote>; just "
-"so in Bible study, we do it not for its own sake but for fellowship with God."
-msgstr ""
-"Kirjan päätarkoitus on tuoda meille Martti Lutherin sanat <quote>Menemme "
-"kehdon luo vauvan takia</quote>; juuri kuten Raamatun tutkimisessa, emme tee "
-"sitä sen itsensä takia mutta Jumalan työtoveruuden tähden."
+"so in Bible study, we do it not for its own sake but for fellowship with "
+"God."
+msgstr "Kirjan päätarkoitus on tuoda meille Martti Lutherin sanat <quote>Menemme kehdon luo vauvan takia</quote>; juuri kuten Raamatun tutkimisessa, emme tee sitä sen itsensä takia mutta Jumalan työtoveruuden tähden."
 
 #. type: Content of: <chapter><sect1><blockquote><attribution>
-#: docs/howto/en/docbook/howto-basics.docbook:20
+#: docs/howto/en/docbook/howto-basics.docbook:17
 msgid ""
 "John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, "
 "InterVarsity Press 1978, pp.97, 104."
-msgstr ""
-"John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, "
-"InterVarsity Press 1978, s. 97, 104."
+msgstr "John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, InterVarsity Press 1978, s. 97, 104."
 
 #. type: Content of: <chapter><sect1><blockquote><para>
-#: docs/howto/en/docbook/howto-basics.docbook:23
-#, fuzzy
-#| msgid ""
-#| "The Jews to whom Jesus spoke [...] imagined that to possess Scripture was "
-#| "tantamount to possessing life. Hillel used to say, &quot;He who has "
-#| "gotten to himself words of Torah has gotten to himself the life of the "
-#| "world to come.&quot; Their study was an end in itself.  In this they were "
-#| "grievously deceived. [...]"
+#: docs/howto/en/docbook/howto-basics.docbook:19
 msgid ""
 "The Jews to whom Jesus spoke [...] imagined that to possess Scripture was "
-"tantamount to possessing life. Hillel used to say, \"He who has gotten to "
-"himself words of Torah has gotten to himself the life of the world to come."
-"\" Their study was an end in itself. In this they were grievously deceived. "
-"[...]"
+"tantamount to possessing life. Hillel used to say, &quot;He who has gotten "
+"to himself words of Torah has gotten to himself the life of the world to "
+"come.&quot; Their study was an end in itself.  In this they were grievously "
+"deceived. [...]"
 msgstr ""
-"Juutalaiset, joille Jeesus puhui [...] kuvittelivat, että kirjoitusten "
-"omistaminen oli yhtä hyvä asia kuin elämän omistaminen. Hillel piti tapana "
-"sanoa, &quot;Hän, kuka on ymmärtänyt Torahin sanat, hänellä on tulevan "
-"maailman elämä itsellään.&quot; Heidän tutkiminen oli lopussa. Tässä he "
-"olivat kauheasti petkutettuja. [...]"
 
 #. type: Content of: <chapter><sect1><blockquote><para>
-#: docs/howto/en/docbook/howto-basics.docbook:28
+#: docs/howto/en/docbook/howto-basics.docbook:24
 msgid ""
 "There is neither merit nor profit in the reading of Scripture for its own "
-"sake, but only if it effectively introduces us to Jesus Christ. Whenever the "
-"Bible is read, what is needed is an eager expectation that through it we may "
-"meet Christ."
-msgstr ""
-"Kirjoitusten lukemisessa ei ole ansiota eikä hyötyä itsensä takia, mutta "
-"vain jos se tehokkaasti tuo esiin Jeesus Kristusta. Milloin tahansa "
-"Raamattua luetaan, tarvitaan innostunutta odotusta, että sen kautta tapaamme "
-"Kristuksen."
+"sake, but only if it effectively introduces us to Jesus Christ. Whenever the"
+" Bible is read, what is needed is an eager expectation that through it we "
+"may meet Christ."
+msgstr "Kirjoitusten lukemisessa ei ole ansiota eikä hyötyä itsensä takia, mutta vain jos se tehokkaasti tuo esiin Jeesus Kristusta. Milloin tahansa Raamattua luetaan, tarvitaan innostunutta odotusta, että sen kautta tapaamme Kristuksen."
 
 #. type: Content of: <chapter><sect1><title>
-#: docs/howto/en/docbook/howto-basics.docbook:35
+#: docs/howto/en/docbook/howto-basics.docbook:31
 msgid "Approaches to God's Word"
 msgstr "Lähestyminen Jumalan Sanaan"
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-basics.docbook:36
-#, fuzzy
-#| msgid ""
-#| "Hearing and reading provide a telescopic view of the scripture while "
-#| "study and memorization provide a microscopic view of scripture.  "
-#| "Meditating on the scriptures brings hearing, reading, studying and "
-#| "memorization together and cements the word in our minds."
+#: docs/howto/en/docbook/howto-basics.docbook:32
 msgid ""
 "Hearing and reading provide a telescopic view of the scripture while study "
-"and memorization provide a microscopic view of scripture. Meditating on the "
-"scriptures brings hearing, reading, studying and memorization together and "
+"and memorization provide a microscopic view of scripture.  Meditating on the"
+" scriptures brings hearing, reading, studying and memorization together and "
 "cements the word in our minds."
 msgstr ""
-"Kuuleminen ja lukeminen tarjoavat kaukonäköisen kuvan kirjoituksista. "
-"Tutkiminen ja muistiinpaneminen tarjoavat mikroskooppisen kuvan "
-"kirjoituksista. Kirjoitusten mietiskely liittää kuulemisen, lukemisen, "
-"tutkimisen ja muistiinpanemisen yhteen ja kiinnittää Sanan meidän mieliimme."
 
 #. type: Content of: <chapter><sect1><sect2><title>
-#: docs/howto/en/docbook/howto-basics.docbook:42
+#: docs/howto/en/docbook/howto-basics.docbook:37
 msgid "Hear"
 msgstr "Kuuntele"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-#: docs/howto/en/docbook/howto-basics.docbook:43
+#: docs/howto/en/docbook/howto-basics.docbook:38
 msgid ""
-"Lk.11:28 <quote>blessed are those who hear the word of God, and observe it.</"
-"quote>"
-msgstr ""
-"Lk.11:28 <quote>Siunattuja ovat he, ketkä kuulevat Jumalan Sanan, ja "
-"seuraavat sitä.</quote>"
+"Lk.11:28 <quote>blessed are those who hear the word of God, and observe "
+"it.</quote>"
+msgstr "Lk.11:28 <quote>Siunattuja ovat he, ketkä kuulevat Jumalan Sanan, ja seuraavat sitä.</quote>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
-#: docs/howto/en/docbook/howto-basics.docbook:48
+#: docs/howto/en/docbook/howto-basics.docbook:42
 msgid "Read"
 msgstr "Lue"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-#: docs/howto/en/docbook/howto-basics.docbook:49
+#: docs/howto/en/docbook/howto-basics.docbook:43
 msgid ""
 "Rev.1:3 <quote>Blessed is he who reads and those who hear the words of this "
 "prophecy [...]</quote>"
-msgstr ""
-"Rev.1:3 <quote>Autuas se, joka tämän toisille lukee, autuaat ne, jotka "
-"kuulevat nämä ennussanat [...]</quote>"
+msgstr "Rev.1:3 <quote>Autuas se, joka tämän toisille lukee, autuaat ne, jotka kuulevat nämä ennussanat [...]</quote>"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-#: docs/howto/en/docbook/howto-basics.docbook:52
+#: docs/howto/en/docbook/howto-basics.docbook:45
 msgid ""
-"1 Tim.4:13 <quote>give attention to the public reading of Scripture [...]</"
-"quote>"
+"1 Tim.4:13 <quote>give attention to the public reading of Scripture "
+"[...]</quote>"
 msgstr "1 Tim.4:13 <quote>Lue seurakunnalle pyhiä kirjoituksia [...]</quote>"
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
-#: docs/howto/en/docbook/howto-basics.docbook:57
-#: docs/howto/en/docbook/index.docbook:53
+#: docs/howto/en/docbook/howto-basics.docbook:49
+#: docs/howto/en/docbook/index.docbook:65
 msgid "Study"
 msgstr "Tutki"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-#: docs/howto/en/docbook/howto-basics.docbook:58
+#: docs/howto/en/docbook/howto-basics.docbook:50
 msgid ""
 "Acts 17:11 <quote>Now these were more noble-minded than those in "
-"Thessalonica, for they received the word with great eagerness, examining the "
-"Scriptures daily, to see whether these things were so.</quote>"
-msgstr ""
-"Apt. 17:11 <quote>Juutalaiset olivat täällä avarakatseisempia kuin "
-"Tessalonikassa. He ottivat sanan halukkaasti vastaan ja tutkivat päivittäin "
-"kirjoituksista, pitikö kaikki paikkansa.</quote>"
+"Thessalonica, for they received the word with great eagerness, examining the"
+" Scriptures daily, to see whether these things were so.</quote>"
+msgstr "Apt. 17:11 <quote>Juutalaiset olivat täällä avarakatseisempia kuin Tessalonikassa. He ottivat sanan halukkaasti vastaan ja tutkivat päivittäin kirjoituksista, pitikö kaikki paikkansa.</quote>"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-#: docs/howto/en/docbook/howto-basics.docbook:63
+#: docs/howto/en/docbook/howto-basics.docbook:54
 msgid ""
 "2 Tim.2:15 <quote>Be diligent [KJV `Study'] to present yourself approved to "
 "God as a workman who does not need to be ashamed, handling accurately the "
 "word of truth.</quote>"
-msgstr ""
-"2 Tim.2:15 <quote>Pyri kaikin voimin osoittautumaan Jumalan silmissä "
-"luotettavaksi työntekijäksi, joka ei häpeä työtään ja joka opettaa totuuden "
-"sanaa oikein.</quote>"
+msgstr "2 Tim.2:15 <quote>Pyri kaikin voimin osoittautumaan Jumalan silmissä luotettavaksi työntekijäksi, joka ei häpeä työtään ja joka opettaa totuuden sanaa oikein.</quote>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
-#: docs/howto/en/docbook/howto-basics.docbook:69
+#: docs/howto/en/docbook/howto-basics.docbook:59
 msgid "Memorize"
 msgstr "Paina mieleen"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-#: docs/howto/en/docbook/howto-basics.docbook:70
+#: docs/howto/en/docbook/howto-basics.docbook:60
 msgid ""
-"Ps.119:11 <quote>Thy word I have hid in my heart, that I may not sin against "
-"Thee.</quote>"
-msgstr ""
-"Ps.119:11 <quote>Minä talletan kaikki ohjeesi sydämeeni, etten rikkoisi "
-"sinua vastaan.</quote>"
+"Ps.119:11 <quote>Thy word I have hid in my heart, that I may not sin against"
+" Thee.</quote>"
+msgstr "Ps.119:11 <quote>Minä talletan kaikki ohjeesi sydämeeni, etten rikkoisi sinua vastaan.</quote>"
 
 #. type: Content of: <chapter><sect1><sect2><title>
-#: docs/howto/en/docbook/howto-basics.docbook:75
+#: docs/howto/en/docbook/howto-basics.docbook:64
 msgid "Meditate"
 msgstr "Mietiskele"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-#: docs/howto/en/docbook/howto-basics.docbook:76
+#: docs/howto/en/docbook/howto-basics.docbook:65
 msgid ""
-"Ps.1:2-3 <quote>But his delight is in the law of the Lord, And in His law he "
-"meditates day and night. And he will be like a tree firmly planted by "
+"Ps.1:2-3 <quote>But his delight is in the law of the Lord, And in His law he"
+" meditates day and night. And he will be like a tree firmly planted by "
 "streams of water, Which yields its fruit in its season, And its leaf does "
 "not wither; And in whatever he does, he prospers.</quote>"
-msgstr ""
-"Ps.1:2-3 <quote>Vaan löytää ilonsa Herran laista, tutkii sitä päivin ja öin. "
-"Hän on kuin puu, vetten äärelle istutettu: se antaa hedelmän ajallaan, "
-"eivätkä sen lehdet lakastu. Hän menestyy kaikissa toimissaan.</quote>"
+msgstr "Ps.1:2-3 <quote>Vaan löytää ilonsa Herran laista, tutkii sitä päivin ja öin. Hän on kuin puu, vetten äärelle istutettu: se antaa hedelmän ajallaan, eivätkä sen lehdet lakastu. Hän menestyy kaikissa toimissaan.</quote>"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-#: docs/howto/en/docbook/howto-basics.docbook:82
-#, fuzzy
-#| msgid ""
-#| "The Navigators illustrate this by saying that as the thumb can touch all "
-#| "the fingers, we can meditate on the Word as we do any of the first four.  "
-#| "Meditation is a key to revelation. A new Christian needs to hear and read "
-#| "the Bible more than they need to study and memorize it. This is so that "
-#| "they become familiar with the overall message of the Bible."
+#: docs/howto/en/docbook/howto-basics.docbook:71
 msgid ""
-"The Navigators illustrate this by saying that as the thumb can touch all the "
-"fingers, we can meditate on the Word as we do any of the first four. "
+"The Navigators illustrate this by saying that as the thumb can touch all the"
+" fingers, we can meditate on the Word as we do any of the first four.  "
 "Meditation is a key to revelation. A new Christian needs to hear and read "
-"the Bible more than they need to study and memorize it. This is so that they "
-"become familiar with the overall message of the Bible."
+"the Bible more than they need to study and memorize it. This is so that they"
+" become familiar with the overall message of the Bible."
 msgstr ""
-"Navigaattorit kuvaavat tätä sanomalla, että peukalo voi koskettaa kaikkia "
-"sormia. Me voimme mietiskellä Sanaa kuten neljää ensimmäistä: mietiskely on "
-"avain ilmestykseen. Uuden kristityn tarvitsee kuulla ja lukea Raamattua "
-"enemmän kuin opetella ja muistaa sitä. Tämä sen tähden, että he tulevat "
-"tutuiksi Raamatun yleiselle sanomalle."
 
 #. type: Content of: <chapter><sect1><title>
-#: docs/howto/en/docbook/howto-basics.docbook:91
+#: docs/howto/en/docbook/howto-basics.docbook:79
 msgid "Types of Bible Studies"
 msgstr "Raamatuntutkimisen tavat"
 
 #. type: Content of: <chapter><sect1><sect2><title>
-#: docs/howto/en/docbook/howto-basics.docbook:93
+#: docs/howto/en/docbook/howto-basics.docbook:80
 msgid "Topical Study"
 msgstr "Aiheenmukainen tutkiminen"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-#: docs/howto/en/docbook/howto-basics.docbook:94
+#: docs/howto/en/docbook/howto-basics.docbook:81
 msgid ""
 "Pick out a certain topic and follow it through, using cross-references or a "
 "concordance."
-msgstr ""
-"Ota jokin yksittäinen aihe ja seuraa sitä käyttäen viittauksia tai "
-"sanahakemistoa."
+msgstr "Ota jokin yksittäinen aihe ja seuraa sitä käyttäen viittauksia tai sanahakemistoa."
 
 #. type: Content of: <chapter><sect1><sect2><title>
-#: docs/howto/en/docbook/howto-basics.docbook:98
+#: docs/howto/en/docbook/howto-basics.docbook:85
 msgid "Character Study"
 msgstr "Henkilöiden tutkiminen"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-#: docs/howto/en/docbook/howto-basics.docbook:99
+#: docs/howto/en/docbook/howto-basics.docbook:86
 msgid ""
 "Studying the life of a Bible character, e.g. Joseph's life in Gen.37-50."
-msgstr ""
-"Raamatun henkilön elämän tutkiminen, esim. Joosefin elämä 1. Moos 37-50."
+msgstr "Raamatun henkilön elämän tutkiminen, esim. Joosefin elämä 1. Moos 37-50."
 
 #. type: Content of: <chapter><sect1><sect2><title>
-#: docs/howto/en/docbook/howto-basics.docbook:103
+#: docs/howto/en/docbook/howto-basics.docbook:90
 msgid "Expository Study"
 msgstr "Selittävä tutkiminen"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-#: docs/howto/en/docbook/howto-basics.docbook:104
+#: docs/howto/en/docbook/howto-basics.docbook:91
 msgid "Studying a certain passage: paragraph, chapter, or book."
-msgstr ""
-"Yksittäisen Raamatunkohdan tutkiminen, jakeen, luvun tai kirjan tutkiminen."
+msgstr "Yksittäisen Raamatunkohdan tutkiminen, jakeen, luvun tai kirjan tutkiminen."
 
 #. type: Content of: <chapter><sect1><title>
-#: docs/howto/en/docbook/howto-basics.docbook:109
+#: docs/howto/en/docbook/howto-basics.docbook:95
 msgid "Basics of Correct Interpretation"
 msgstr "Oikean tulkinnan perusteet"
 
 #. type: Content of: <chapter><sect1><sect2><title>
-#: docs/howto/en/docbook/howto-basics.docbook:111
+#: docs/howto/en/docbook/howto-basics.docbook:97
 msgid "Content"
 msgstr "Sisältö"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-#: docs/howto/en/docbook/howto-basics.docbook:112
+#: docs/howto/en/docbook/howto-basics.docbook:98
 msgid ""
-"What does it say? What does it say in the original language? Be careful with "
-"definitions. Don't read into it what it doesn't say."
-msgstr ""
-"Mitä se sanoo? Mitä se sanoo alkuperäiskielellä? Ole tarkka määrittelyissä. "
-"Älä lue sitä, mitä se ei sano."
+"What does it say? What does it say in the original language? Be careful with"
+" definitions. Don't read into it what it doesn't say."
+msgstr "Mitä se sanoo? Mitä se sanoo alkuperäiskielellä? Ole tarkka määrittelyissä. Älä lue sitä, mitä se ei sano."
 
 #. type: Content of: <chapter><sect1><sect2><title>
-#: docs/howto/en/docbook/howto-basics.docbook:117
+#: docs/howto/en/docbook/howto-basics.docbook:102
 msgid "Context"
 msgstr "Asiayhteys"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-#: docs/howto/en/docbook/howto-basics.docbook:118
-#, fuzzy
-#| msgid ""
-#| "What do the verses around it say? &quot;Context is king&quot; is the rule "
-#| "-- the passage must make sense within the structure of the entire passage "
-#| "and book."
+#: docs/howto/en/docbook/howto-basics.docbook:103
 msgid ""
-"What do the verses around it say? \"Context is king\" is the rule -- the "
-"passage must make sense within the structure of the entire passage and book."
+"What do the verses around it say? &quot;Context is king&quot; is the rule --"
+" the passage must make sense within the structure of the entire passage and "
+"book."
 msgstr ""
-"Mitä jakeet sanovat? &quot;Asiayhteys on tärkein&quot; on sääntö - "
-"tekstikohdan tulee olla sopusoinnussa koko tekstin rakenteen ja kirjan "
-"kanssa."
 
-#. type: Content of: <chapter><section><orderedlist><listitem><formalpara><title>
-#: docs/howto/en/docbook/howto-basics.docbook:123
-#: docs/howto/en/docbook/howto-interpretation.docbook:37
+#. type: Content of:
+#. <chapter><section><orderedlist><listitem><formalpara><title>
+#: docs/howto/en/docbook/howto-basics.docbook:107
+#: docs/howto/en/docbook/howto-interpretation.docbook:26
 msgid "Cross-reference"
 msgstr "Ristiinviittaukset"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-#: docs/howto/en/docbook/howto-basics.docbook:124
+#: docs/howto/en/docbook/howto-basics.docbook:108
 msgid ""
 "What do other verses about this subject say through the rest of the Bible? "
 "God doesn't contradict Himself, so our interpretation needs to stand the "
 "test of other scriptures."
-msgstr ""
-"Mitä muut jakeet sanovat tästä aiheesta muualla Raamatussa? Jumala ei ole "
-"itseään vastaan, tulkintamme tulee perustua kirjoitusten vertailulla muihin "
-"kirjoituksiin."
+msgstr "Mitä muut jakeet sanovat tästä aiheesta muualla Raamatussa? Jumala ei ole itseään vastaan, tulkintamme tulee perustua kirjoitusten vertailulla muihin kirjoituksiin."
 
 #. type: Content of: <chapter><sect1><title>
-#: docs/howto/en/docbook/howto-basics.docbook:131
+#: docs/howto/en/docbook/howto-basics.docbook:113
 msgid "An Expository Study of Matthew 6:1-18"
 msgstr "Matt. 6:1-18 selittävä tutkiminen"
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-basics.docbook:132
-#, fuzzy
-#| msgid ""
-#| "Let's study together Mt.6:1-18.  Read it to yourself, first looking for "
-#| "the key verse, the verse that sums up the whole passage.  Think you have "
-#| "it? Test it by picking different places in the passage and asking "
-#| "yourself if they relate to the thought of the key verse.  Once you find "
-#| "it, write it as Roman numeral One of your outline:"
+#: docs/howto/en/docbook/howto-basics.docbook:114
 msgid ""
-"Let's study together Mt.6:1-18. Read it to yourself, first looking for the "
-"key verse, the verse that sums up the whole passage. Think you have it? Test "
-"it by picking different places in the passage and asking yourself if they "
-"relate to the thought of the key verse. Once you find it, write it as Roman "
-"numeral One of your outline:"
+"Let's study together Mt.6:1-18.  Read it to yourself, first looking for the "
+"key verse, the verse that sums up the whole passage.  Think you have it? "
+"Test it by picking different places in the passage and asking yourself if "
+"they relate to the thought of the key verse.  Once you find it, write it as "
+"Roman numeral One of your outline:"
 msgstr ""
-"Tutkikaamme yhdessä Matt 6:1-18. Lue jakeet itseksesi. Tarkastele ensin "
-"avainjaetta, joka kokoaa koko tekstinkohdan. Oletko ymmärtänyt sen? Tarkista "
-"jae ottamalla erilaisia kohtia tekstistä ja kysymällä itseltäsi, sopivatko "
-"ne avainjakeen kanssa yhteen. Kun löydät avainjakeen, kirjoita se "
-"roomalaisin numeroin Yksi paperillesi:"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:140
+#: docs/howto/en/docbook/howto-basics.docbook:119
 msgid "Beware of practicing your righteousness before men to be noticed"
 msgstr "Varokaa tuomasta hurskaita tekojanne ihmisten katseltavaksi"
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-basics.docbook:144
-#, fuzzy
-#| msgid ""
-#| "What does <quote>practicing your righteousness</quote> mean? Does the "
-#| "passage give any examples? What area of our lives is being addressed? "
-#| "<emphasis>Our motives!</emphasis> What sub-headings develop this thought?"
+#: docs/howto/en/docbook/howto-basics.docbook:122
 msgid ""
-"What does <quote>practicing your righteousness</quote>mean? Does the passage "
-"give any examples? What area of our lives is being addressed? <emphasis>Our "
-"motives!</emphasis> What sub-headings develop this thought?"
+"What does <quote>practicing your righteousness</quote> mean? Does the "
+"passage give any examples? What area of our lives is being addressed? "
+"<emphasis>Our motives!</emphasis> What sub-headings develop this thought?"
 msgstr ""
-"Mitä tarkoittaa <quote>hurskaiden tekojen esilletuominen</quote>? Antaako "
-"tekstikohta yhtään esimerkkiä? Mihin elämämme alueisiin se kohdistuu? "
-"<emphasis>Motiivimme!</emphasis> Mihin osa-alueisiin tämä vie?"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:151
+#: docs/howto/en/docbook/howto-basics.docbook:126
 msgid "When you give"
 msgstr "Kun annat"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:154
+#: docs/howto/en/docbook/howto-basics.docbook:127
 msgid "When you fast"
 msgstr "Kun paastoat"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:157
+#: docs/howto/en/docbook/howto-basics.docbook:128
 msgid "When you pray"
 msgstr "Kun rukoilet"
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-basics.docbook:160
+#: docs/howto/en/docbook/howto-basics.docbook:131
 msgid ""
 "Now fill in the outline with specific instructions of how to avoid wrong "
 "ways of practicing our righteousness:"
-msgstr ""
-"Täytä nyt määrätyillä toimenpiteillä kuinka välttää väärät tavat harjoittaa "
-"hurskauttamme:"
+msgstr "Täytä nyt määrätyillä toimenpiteillä kuinka välttää väärät tavat harjoittaa hurskauttamme:"
 
-#. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:167
-#, fuzzy
-#| msgid ""
-#| "don't sound a trumpet.  (how might someone <quote>sound a trumpet</quote> "
-#| "today?)"
+#. type: Content of:
+#. <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
+#: docs/howto/en/docbook/howto-basics.docbook:137
 msgid ""
-"don't sound a trumpet. (how might someone <quote>sound a trumpet</"
-"quote>today?)"
+"don't sound a trumpet.  (how might someone <quote>sound a trumpet</quote> "
+"today?)"
 msgstr ""
-"älä ole äänekäs trumpetti. (kuinka joku voikaan <quote>kuulostaa "
-"trumpetilta</quote> tänäpäivänä?)"
 
-#. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:171
+#. type: Content of:
+#. <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
+#: docs/howto/en/docbook/howto-basics.docbook:138
 msgid "do it secretly."
 msgstr "tee se salaisesti."
 
-#. type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:174
+#. type: Content of:
+#. <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
+#: docs/howto/en/docbook/howto-basics.docbook:139
 msgid "etc."
 msgstr "jne."
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:164
+#: docs/howto/en/docbook/howto-basics.docbook:135
 msgid "When you give <placeholder type=\"orderedlist\" id=\"0\"/>"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><title>
-#: docs/howto/en/docbook/howto-basics.docbook:181
+#: docs/howto/en/docbook/howto-basics.docbook:145
 msgid "Worksheet: How to Use a Concordance"
 msgstr "Tehtävä: Kuinka käytän sanahakemistoa"
 
 #. type: Content of: <chapter><sect1><sect2><title>
-#: docs/howto/en/docbook/howto-basics.docbook:183
+#: docs/howto/en/docbook/howto-basics.docbook:147
 msgid "To Find a Particular Verse"
 msgstr "Löydä erityinen jae"
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:186
+#: docs/howto/en/docbook/howto-basics.docbook:149
 msgid "Pick out a key word or most-unusual word of the verse."
 msgstr "Ota jakeen avainsana tai epätavallisin sana."
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:190
+#: docs/howto/en/docbook/howto-basics.docbook:150
 msgid "Turn to this word alphabetically."
 msgstr "Käänny tähän sanaan kirjaimellisesti."
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:193
+#: docs/howto/en/docbook/howto-basics.docbook:151
 msgid "Go down the column of listings until you find your verse."
 msgstr "Etene listausta alaspäin kunnes löydät jakeesi."
 
-#. type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:201
+#. type: Content of:
+#. <chapter><sect1><sect2><para><orderedlist><listitem><para>
+#: docs/howto/en/docbook/howto-basics.docbook:156
 msgid "<quote>Faithful are the wounds of a friend</quote>"
 msgstr "<quote>Rakastavan lyöntikin on rakkautta</quote>"
 
-#. type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:206
+#. type: Content of:
+#. <chapter><sect1><sect2><para><orderedlist><listitem><para>
+#: docs/howto/en/docbook/howto-basics.docbook:157
 msgid "<quote>We are ambassadors of Christ.</quote>"
 msgstr "<quote>Olemme Kristuksen lähettiläitä</quote>"
 
-#. type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:210
+#. type: Content of:
+#. <chapter><sect1><sect2><para><orderedlist><listitem><para>
+#: docs/howto/en/docbook/howto-basics.docbook:158
 msgid "The story of the rich man and Lazarus."
 msgstr "Kertomus rikkaasta miehestä ja Lasaruksesta."
 
 #. type: Content of: <chapter><sect1><sect2><para>
-#: docs/howto/en/docbook/howto-basics.docbook:197
+#: docs/howto/en/docbook/howto-basics.docbook:154
 msgid "Find these verses: <placeholder type=\"orderedlist\" id=\"0\"/>"
 msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><title>
-#: docs/howto/en/docbook/howto-basics.docbook:215
+#: docs/howto/en/docbook/howto-basics.docbook:163
 msgid "To Do a Topical Study"
 msgstr "Tee aiheen tutkiminen"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-#: docs/howto/en/docbook/howto-basics.docbook:216
-#, fuzzy
-#| msgid ""
-#| "Let's say you wanted to do a study of the word &quot;redemption.&quot; "
-#| "First you would look up that word in the concordance and look up "
-#| "references listed for it.  Then you could look up related words and "
-#| "references listed for them, e.g.  &quot;redeem, redeemed, ransom,&quot; "
-#| "even &quot;buy&quot; or &quot;bought.&quot;"
+#: docs/howto/en/docbook/howto-basics.docbook:164
 msgid ""
-"Let's say you wanted to do a study of the word \"redemption.\" First you "
-"would look up that word in the concordance and look up references listed for "
-"it. Then you could look up related words and references listed for them, e."
-"g.  \"redeem, redeemed, ransom,\" even \"buy\" or \"bought.\""
+"Let's say you wanted to do a study of the word &quot;redemption.&quot; First"
+" you would look up that word in the concordance and look up references "
+"listed for it.  Then you could look up related words and references listed "
+"for them, e.g.  &quot;redeem, redeemed, ransom,&quot; even &quot;buy&quot; "
+"or &quot;bought.&quot;"
 msgstr ""
-"Sanokaamme, että haluat tutkia sanaa &quot;lunastus.&quot; Ensiksi sinun "
-"tulisi katsoa sanaa sanaluettelosta ja katsoa siinä luetellut viittaukset. "
-"Sitten sinun tulisi katsoa liittyvät sanat ja niiden viittaukset. Esim. "
-"&quot;lunastus, lunastettu, lunnaat,&quot; jopa &quot;ostaa&quot; tai &quot; "
-"ostettu.&quot;"
 
 #. type: Content of: <chapter><sect1><sect2><title>
-#: docs/howto/en/docbook/howto-basics.docbook:223
+#: docs/howto/en/docbook/howto-basics.docbook:170
 msgid "To Clarify Word Meanings in the Greek and Hebrew"
 msgstr "Kreikkalaisten ja heprealaisten sanojen merkityksen selvittäminen"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-#: docs/howto/en/docbook/howto-basics.docbook:224
-#, fuzzy
-#| msgid ""
-#| "What if you noticed a contradiction in the KJV between Mt.7:1 "
-#| "<quote>Judge not lest you be judged</quote> and 1 Cor.2:15 <quote>He that "
-#| "is spiritual judgeth all things.</quote> Maybe there are two different "
-#| "Greek words here, both being translated &quot;judge&quot; in English? "
-#| "(We're using Strong's from here out.)"
+#: docs/howto/en/docbook/howto-basics.docbook:171
 msgid ""
 "What if you noticed a contradiction in the KJV between Mt.7:1 <quote>Judge "
-"not lest you be judged</quote>and 1 Cor.2:15 <quote>He that is spiritual "
-"judgeth all things.</quote>Maybe there are two different Greek words here, "
-"both being translated \"judge\" in English? (We're using Strong's from here "
-"out.)"
+"not lest you be judged</quote> and 1 Cor.2:15 <quote>He that is spiritual "
+"judgeth all things.</quote> Maybe there are two different Greek words here, "
+"both being translated &quot;judge&quot; in English? (We're using Strong's "
+"from here out.)"
 msgstr ""
-"Entä jos huomasit ristiriidan KJV:n jakeessa Matt. 7:1 <quote>Älkää "
-"tuomitko, ettei teitä tuomittaisi</quote> ja 1 Kor.2:15 <quote>Hengellinen "
-"ihminen sen sijaan pystyy tutkimaan kaikkea, mutta häntä itseään ei kukaan "
-"voi tutkia.</quote> Siellä on ehkä kaksi eri kreikankielistä sanaa, kumpikin "
-"käännetty &quot;tuomita&quot; suomeksi?"
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:232
-#, fuzzy
-#| msgid "Look up &quot;judge&quot;."
-msgid "Look up \"judge\"."
-msgstr "Katso &quot;tuomio&quot;."
+#: docs/howto/en/docbook/howto-basics.docbook:175
+msgid "Look up &quot;judge&quot;."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:235
-#, fuzzy
-#| msgid ""
-#| "Go down the column of entries to Mt.7:1.  To the right is a number, "
-#| "2919.  This refers to the Greek word used.  Write it down."
+#: docs/howto/en/docbook/howto-basics.docbook:176
 msgid ""
-"Go down the column of entries to Mt.7:1. To the right is a number, 2919. "
-"This refers to the Greek word used. Write it down."
+"Go down the column of entries to Mt.7:1.  To the right is a number, 2919.  "
+"This refers to the Greek word used.  Write it down."
 msgstr ""
-"Etene lukua alas jakeen Matt.7:1 kohdalle. Oikealla on luku, 2919. Tämä luku "
-"viittaa käytettyyn kreikkalaiseen sanaan. Kirjoita se ylös."
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:240
-#, fuzzy
-#| msgid "Now look up &quot;judgeth&quot;."
-msgid "Now look up \"judgeth\"."
-msgstr "Nyt katso &quot;tuomio&quot;."
+#: docs/howto/en/docbook/howto-basics.docbook:178
+msgid "Now look up &quot;judgeth&quot;."
+msgstr ""
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:243
+#: docs/howto/en/docbook/howto-basics.docbook:179
 msgid "Go down the column to 1 Cor.2:15 . . . . . 350."
 msgstr "Siirry alas saraketta pitkin 1 Kor. 2:15 . . . . . 350."
 
 #. type: Content of: <chapter><sect1><sect2><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:246
-#, fuzzy
-#| msgid ""
-#| "Turn in the back to the Greek dictionary.  (Remember, you're in the NT so "
-#| "the language is Greek, while the OT is Hebrew.)  Compare the meaning of "
-#| "2919 with the meaning of 350 and you have your answer!"
+#: docs/howto/en/docbook/howto-basics.docbook:180
 msgid ""
-"Turn in the back to the Greek dictionary. (Remember, you're in the NT so the "
-"language is Greek, while the OT is Hebrew.) Compare the meaning of 2919 with "
-"the meaning of 350 and you have your answer!"
+"Turn in the back to the Greek dictionary.  (Remember, you're in the NT so "
+"the language is Greek, while the OT is Hebrew.)  Compare the meaning of 2919"
+" with the meaning of 350 and you have your answer!"
 msgstr ""
-"Palaa kreikankieliseen sanakirjaan. (Muista, että olet Uudessa "
-"Testamentissa. Kieli on Kreikka kun taas Vanha Testamentti on hepreaa.) "
-"Vertaile 2919:n merkitystä ja 350:n merkitystä ja saat vastauksen!"
 
 #. type: Content of: <chapter><sect1><sect2><title>
-#: docs/howto/en/docbook/howto-basics.docbook:254
+#: docs/howto/en/docbook/howto-basics.docbook:185
 msgid "To Find Meanings of Names"
 msgstr "Etsi nimien merkityksiä"
 
 #. type: Content of: <chapter><sect1><sect2><para>
-#: docs/howto/en/docbook/howto-basics.docbook:255
+#: docs/howto/en/docbook/howto-basics.docbook:186
 msgid ""
-"By the same process we can find the meaning of a name in the Greek or Hebrew."
-msgstr ""
-"Samalla menetelmällä voimme löytää kreikkalaisten ja heprealaisten nimien "
-"merkityksiä."
+"By the same process we can find the meaning of a name in the Greek or "
+"Hebrew."
+msgstr "Samalla menetelmällä voimme löytää kreikkalaisten ja heprealaisten nimien merkityksiä."
 
 #. type: Content of: <chapter><sect1><sect2><para>
-#: docs/howto/en/docbook/howto-basics.docbook:257
+#: docs/howto/en/docbook/howto-basics.docbook:187
 msgid "Look up these names and write down their meaning:"
 msgstr "Katso näitä nimiä ja kirjoita ylös niiden merkitykset:"
 
 #. type: Content of: <chapter><sect1><sect2><itemizedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:260
+#: docs/howto/en/docbook/howto-basics.docbook:189
 msgid "Nabal"
 msgstr "Nabal"
 
 #. type: Content of: <chapter><sect1><sect2><itemizedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:263
+#: docs/howto/en/docbook/howto-basics.docbook:190
 msgid "Abigail"
 msgstr "Abigail"
 
 #. type: Content of: <chapter><sect1><sect2><itemizedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:266
+#: docs/howto/en/docbook/howto-basics.docbook:191
 msgid "Joshua"
 msgstr "Joosua"
 
 #. type: Content of: <chapter><sect1><sect2><itemizedlist><listitem><para>
-#: docs/howto/en/docbook/howto-basics.docbook:269
+#: docs/howto/en/docbook/howto-basics.docbook:192
 msgid "Barnabus"
 msgstr "Barnabas"
 
 #. type: Content of: <chapter><title>
-#: docs/howto/en/docbook/howto-importance.docbook:2
+#: docs/howto/en/docbook/howto-importance.docbook:1
 msgid "Importance of God's Word"
 msgstr "Jumalan Sanan tärkeys"
 
 #. type: Content of: <chapter><para>
-#: docs/howto/en/docbook/howto-importance.docbook:3
-#, fuzzy
-#| msgid ""
-#| "Understanding God's word is of great importance to all who call on God's "
-#| "name.  Study of the Bible is one of the primary ways that we learn to "
-#| "communicate with God."
+#: docs/howto/en/docbook/howto-importance.docbook:2
 msgid ""
 "Understanding God's word is of great importance to all who call on God's "
-"name. Study of the Bible is one of the primary ways that we learn to "
+"name.  Study of the Bible is one of the primary ways that we learn to "
 "communicate with God."
 msgstr ""
-"Jumalan Sanan ymmärtäminen on erittäin tärkeää kaikille niille, jotka "
-"kutsuvat Jumalan nimeä. Raamatun tutkiminen on yksi ensisijaisista tavoista "
-"oppia keskustelemaan Jumalan kanssa."
 
 #. type: Content of: <chapter><sect1><title>
-#: docs/howto/en/docbook/howto-importance.docbook:7
+#: docs/howto/en/docbook/howto-importance.docbook:6
 msgid "A Book that is Unique"
 msgstr "Ainutlaatuinen kirja"
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-importance.docbook:8
-#, fuzzy
-#| msgid "The Bible stands alone in many ways.  It is unique in:"
-msgid "The Bible stands alone in many ways. It is unique in:"
+#: docs/howto/en/docbook/howto-importance.docbook:7
+msgid "The Bible stands alone in many ways.  It is unique in:"
 msgstr ""
-"Raamatulla on oma perustansa monessa suhteessa. Se on ainutlaatuinen "
-"seuraavissa asioissa:"
 
 #. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
-#: docs/howto/en/docbook/howto-importance.docbook:11
-#, fuzzy
-#| msgid ""
-#| "popularity.  Bible sales in North America: more than $500 million per "
-#| "year. The Bible is both the the all-time and year-to-year best seller!"
+#: docs/howto/en/docbook/howto-importance.docbook:12
 msgid ""
-"popularity. Bible sales in North America: more than $500 million per year. "
-"The Bible is both the all-time and year-to-year best seller!"
+"popularity.  Bible sales in North America: more than $500 million per year. "
+"The Bible is both the the all-time and year-to-year best seller!"
 msgstr ""
-"suosittu. Raamattuja myydään Pohjois-Amerikassa enemmän kuin 500 miljoonalla "
-"dollarilla vuodessa. Raamattu on sekä kaikkien aikojen ja jokavuotinen best "
-"seller!"
 
 #. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
-#: docs/howto/en/docbook/howto-importance.docbook:16
-#, fuzzy
-#| msgid ""
-#| "authorship.  It was written over a period of 1600 years by 40 different "
-#| "authors from different backgrounds, yet reads as if written by one."
+#: docs/howto/en/docbook/howto-importance.docbook:18
 msgid ""
-"authorship. It was written over a period of 1600 years by 40 different "
+"authorship.  It was written over a period of 1600 years by 40 different "
 "authors from different backgrounds, yet reads as if written by one."
 msgstr ""
-"tekijät. Sen ovat kirjoittaneet 40 erilaisista ympäristöistä peräisin "
-"ollutta kirjoittajaa 1600 vuoden aikana, silti luetaan kuin sen olisi "
-"kirjoittanut yksi kirjoittaja."
 
 #. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
-#: docs/howto/en/docbook/howto-importance.docbook:21
-#, fuzzy
-#| msgid ""
-#| "preservation.  F. F. Bruce in <emphasis>Are New Testament Documents "
-#| "Reliable?</emphasis> compares New Testament manuscripts with other "
-#| "ancient texts:"
+#: docs/howto/en/docbook/howto-importance.docbook:24
 msgid ""
-"preservation. F. F. Bruce in <emphasis>Are New Testament Documents Reliable?"
-"</emphasis> compares New Testament manuscripts with other ancient texts:"
+"preservation.  F. F. Bruce in <emphasis>Are New Testament Documents "
+"Reliable?</emphasis> compares New Testament manuscripts with other ancient "
+"texts:"
 msgstr ""
-"säilyttäminen. F. F. Bruce in <emphasis>Ovatko Uuden Testamentin asiakirjat "
-"luotettavia?</emphasis> vertailee Uuden Testamentin käsikirjoitusta muiden "
-"muinaisten tekstien kanssa:"
 
 #. type: Content of: <chapter><sect1><table><title>
-#: docs/howto/en/docbook/howto-importance.docbook:28
+#: docs/howto/en/docbook/howto-importance.docbook:30
 msgid "Comparison of New Testament manuscripts with other ancient texts."
-msgstr ""
-"Uuden Testamentin käsikirjoituksen ja muiden muinaisten tekstien vertailu."
+msgstr "Uuden Testamentin käsikirjoituksen ja muiden muinaisten tekstien vertailu."
 
 #. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:33
+#: docs/howto/en/docbook/howto-importance.docbook:34
 msgid "Work"
 msgstr "Työ"
 
 #. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:34
+#: docs/howto/en/docbook/howto-importance.docbook:35
 msgid "When Written"
 msgstr "Milloin kirjoitettu"
 
 #. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:35
+#: docs/howto/en/docbook/howto-importance.docbook:36
 msgid "Earliest Copy"
 msgstr "Varhaisin kopio"
 
 #. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:36
+#: docs/howto/en/docbook/howto-importance.docbook:37
 msgid "Time Lapse"
 msgstr "Aikaväli"
 
@@ -732,1585 +558,1078 @@ msgid "Number of Copies"
 msgstr "Kopioiden lukumäärä"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:42
+#: docs/howto/en/docbook/howto-importance.docbook:41
 msgid "Herodotus"
 msgstr "Herodotus"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:43
+#: docs/howto/en/docbook/howto-importance.docbook:42
 msgid "448-428 B.C."
 msgstr "448-428 eKr."
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:44
-#: docs/howto/en/docbook/howto-importance.docbook:59
-#: docs/howto/en/docbook/howto-importance.docbook:67
+#: docs/howto/en/docbook/howto-importance.docbook:42
+#: docs/howto/en/docbook/howto-importance.docbook:52
+#: docs/howto/en/docbook/howto-importance.docbook:57
 msgid "900 A.D."
 msgstr "900 jKr."
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:45
+#: docs/howto/en/docbook/howto-importance.docbook:43
 msgid "1300 years"
 msgstr "1300 vuotta"
 
-# type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:46
+#: docs/howto/en/docbook/howto-importance.docbook:43
 msgid "8"
 msgstr "8"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:49
+#: docs/howto/en/docbook/howto-importance.docbook:46
 msgid "Tacitus"
 msgstr "Tacitus"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:50
+#: docs/howto/en/docbook/howto-importance.docbook:47
 msgid "100 A.D."
 msgstr "100 jKr."
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:51
+#: docs/howto/en/docbook/howto-importance.docbook:47
 msgid "1100 A.D."
 msgstr "1100 jKr."
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:52
+#: docs/howto/en/docbook/howto-importance.docbook:48
 msgid "1000 years"
 msgstr "1000 vuotta"
 
-# type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:53
-#: docs/howto/en/docbook/howto-importance.docbook:69
+#: docs/howto/en/docbook/howto-importance.docbook:48
+#: docs/howto/en/docbook/howto-importance.docbook:58
 msgid "20"
 msgstr "20"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:56
+#: docs/howto/en/docbook/howto-importance.docbook:51
 msgid "Caesar's <emphasis>Gallic War</emphasis>"
 msgstr "Caesarin <emphasis>Gallialainen sota</emphasis>"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:58
+#: docs/howto/en/docbook/howto-importance.docbook:52
 msgid "50-58 B.C."
 msgstr "50-58 eKr."
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:60
+#: docs/howto/en/docbook/howto-importance.docbook:53
 msgid "950 years"
 msgstr "950 vuotta"
 
-# type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:61
+#: docs/howto/en/docbook/howto-importance.docbook:53
 msgid "10"
 msgstr "10"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:64
+#: docs/howto/en/docbook/howto-importance.docbook:56
 msgid "Livy's <emphasis>Roman History</emphasis>"
 msgstr "Livyn <emphasis>Rooman historia</emphasis>"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:66
+#: docs/howto/en/docbook/howto-importance.docbook:57
 msgid "59 B.C. - 17 A.D."
 msgstr "59 eKr. - 17 jKr."
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:68
+#: docs/howto/en/docbook/howto-importance.docbook:58
 msgid "900 years"
 msgstr "900 vuotta"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:72
+#: docs/howto/en/docbook/howto-importance.docbook:61
 msgid "New Testament"
 msgstr "Uusi Testamentti"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:73
+#: docs/howto/en/docbook/howto-importance.docbook:62
 msgid "40 A.D. - 100 A.D."
 msgstr "40 jKr. - 100 jKr."
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:74
+#: docs/howto/en/docbook/howto-importance.docbook:62
 msgid "130 A.D. Partial manuscripts 350 A.D. Full manuscripts"
 msgstr "130 jKr. osittaiset käsikirjoitukset 350 jKr. täydet käsikirjoitukset"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:76
+#: docs/howto/en/docbook/howto-importance.docbook:63
 msgid "30 - 310 years"
 msgstr "30 - 310 vuotta"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:77
+#: docs/howto/en/docbook/howto-importance.docbook:63
 msgid "5000 Greek &amp; 10,000 Latin"
 msgstr "5000 kreikkaa &amp; 10,000 latinaa"
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-importance.docbook:82
-#, fuzzy
-#| msgid ""
-#| "Ten copies of Caesar's <emphasis>Gallic War</emphasis> exist, the "
-#| "earliest of which was copied 900 years after Caesar wrote the original, "
-#| "etc.  For the New Testament we have full manuscripts dating to 350 A. D., "
-#| "papyri containing most of the New Testament from the 200s, and a fragment "
-#| "of John's gospel from 130 A. D.  How many manuscripts do we have to "
-#| "compare to each other? 5,000 in Greek and 10,000 in Latin!"
+#: docs/howto/en/docbook/howto-importance.docbook:66
 msgid ""
 "Ten copies of Caesar's <emphasis>Gallic War</emphasis> exist, the earliest "
-"of which was copied 900 years after Caesar wrote the original, etc. For the "
-"New Testament we have full manuscripts dating to 350 A. D., papyri "
-"containing most of the New Testament from the 200s, and a fragment of John's "
-"gospel from 130 A. D. How many manuscripts do we have to compare to each "
+"of which was copied 900 years after Caesar wrote the original, etc.  For the"
+" New Testament we have full manuscripts dating to 350 A. D., papyri "
+"containing most of the New Testament from the 200s, and a fragment of John's"
+" gospel from 130 A. D.  How many manuscripts do we have to compare to each "
 "other? 5,000 in Greek and 10,000 in Latin!"
 msgstr ""
-"On olemassa kymmenen kopiota teoksesta Caesarin <emphasis>Gallialainen sota</"
-"emphasis>, Vanhin kopioitiin 900 vuotta alkuperäisen kirjoittamisen jälkeen, "
-"jne. Meillä on Uuden Testamentin täydellinen käsikirjoitus vuodelta 350 jKr, "
-"papyrus-kääröjä sisältäen suurimman osan Uutta Testamenttia vuodesta 200 "
-"lähtien, ja katkelma Johanneksen Ilmestyksestä vuodelta 130 jKr. Kuinka "
-"monta käsikirjoitusta meillä on vertaillaksemme niitä keskenään? 5000 "
-"kreikankielistä ja 10000 latinankielistä!"
 
 #. type: Content of: <chapter><sect1><blockquote><attribution>
-#: docs/howto/en/docbook/howto-importance.docbook:90
-#, fuzzy
-#| msgid ""
-#| "Textual critic F. J. A. Hort, \"The New Testament in the Original Greek"
-#| "\", vol. 1 p561, Macmillan Co., quoted in <emphasis>Questions of Life</"
-#| "emphasis> p.  25-26"
+#: docs/howto/en/docbook/howto-importance.docbook:72
 msgid ""
 "Textual critic F. J. A. Hort, \"The New Testament in the Original Greek\", "
-"vol. 1 p561, Macmillan Co., quoted in <emphasis>Questions of Life</"
-"emphasis>p. 25-26"
+"vol. 1 p561, Macmillan Co., quoted in <emphasis>Questions of Life</emphasis>"
+" p.  25-26"
 msgstr ""
-"Tekstikritiikki F. J. A. Hort, \"The New Testament in the Original Greek\", "
-"vol. 1 p561, Macmillan Co., lainattiin kirjassa <emphasis>Questions of Life</"
-"emphasis> s. 25-26"
 
 #. type: Content of: <chapter><sect1><blockquote><para>
-#: docs/howto/en/docbook/howto-importance.docbook:93
+#: docs/howto/en/docbook/howto-importance.docbook:74
 msgid ""
 "\"In the verity and fullness of the evidence on which it rests, the text of "
 "the New Testament stands absolutely and unapproachably alone among other "
 "ancient prose writings.\""
-msgstr ""
-"\"Todisteiden totuudellisuuteen ja täydellisyyteen nojaten Uuden Testamentin "
-"tekstit ovat abosluuttisesti ja kansantajuissesti yksin muiden muinaisten "
-"proosatekstien joukossa.\""
+msgstr "\"Todisteiden totuudellisuuteen ja täydellisyyteen nojaten Uuden Testamentin tekstit ovat abosluuttisesti ja kansantajuissesti yksin muiden muinaisten proosatekstien joukossa.\""
 
 #. type: Content of: <chapter><sect1><title>
-#: docs/howto/en/docbook/howto-importance.docbook:99
+#: docs/howto/en/docbook/howto-importance.docbook:79
 msgid "A Book that God Breathed"
 msgstr "Kirja, johon Jumala puhalsi Hengen"
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-importance.docbook:101
-#, fuzzy
-#| msgid ""
-#| "<emphasis>Heb.4:12 </emphasis>\"<emphasis>For the word of God is living "
-#| "and active...  </emphasis>\" Jesus said <emphasis>(Mt.4:4),</emphasis> "
-#| "\"<emphasis>It is written, Man shall not live on bread alone, but on "
-#| "every word that proceeds [lit., is proceeding] from the mouth of God.</"
-#| "emphasis>\" As we read the Bible, God's Spirit is there to speak it to "
-#| "our hearts in a continually-fresh way."
+#: docs/howto/en/docbook/howto-importance.docbook:80
 msgid ""
-"<emphasis>Heb.4:12</emphasis> \"<emphasis>For the word of God is living and "
-"active...</emphasis>\" Jesus said <emphasis>(Mt.4:4),</emphasis>\" "
-"<emphasis>It is written, Man shall not live on bread alone, but on every "
-"word that proceeds [lit., is proceeding] from the mouth of God.</emphasis>\" "
-"As we read the Bible, God's Spirit is there to speak it to our hearts in a "
+"<emphasis>Heb.4:12 </emphasis>\"<emphasis>For the word of God is living and "
+"active...  </emphasis>\" Jesus said <emphasis>(Mt.4:4),</emphasis> "
+"\"<emphasis>It is written, Man shall not live on bread alone, but on every "
+"word that proceeds [lit., is proceeding] from the mouth of God.</emphasis>\""
+" As we read the Bible, God's Spirit is there to speak it to our hearts in a "
 "continually-fresh way."
 msgstr ""
-"<emphasis>Heb.4:12 </emphasis>\"<emphasis>Sanojen mukaan Jumala elää ja "
-"toimii... </emphasis>\" Jeesus sanoi <emphasis>(Matt.4:4),</emphasis> "
-"\"<emphasis>On kirjoitettu,Ei ihminen elä ainoastaan leivästä, vaan "
-"jokaisesta sanasta, joka lähtee Jumalan suusta.</emphasis>\" Kun luemme "
-"Raamattua, Jumalan Henki puhuu sydämeemme jatkuvasti tuoreella tavalla."
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-importance.docbook:109
-#, fuzzy
-#| msgid ""
-#| "2 Tim.3:16 declares, \"<emphasis>All scripture is inspired by God [lit., "
-#| "God-breathed].</emphasis>\" Do you believe this? Before you answer, "
-#| "consider Jesus' attitude toward the Scriptures."
+#: docs/howto/en/docbook/howto-importance.docbook:86
 msgid ""
-"2 Tim.3:16 declares, \" <emphasis>All scripture is inspired by God [lit., "
-"God-breathed].</emphasis>\" Do you believe this? Before you answer, consider "
-"Jesus' attitude toward the Scriptures."
+"2 Tim.3:16 declares, \"<emphasis>All scripture is inspired by God [lit., "
+"God-breathed].</emphasis>\" Do you believe this? Before you answer, consider"
+" Jesus' attitude toward the Scriptures."
 msgstr ""
-"2 Tim.3:16 declares, \"<emphasis>Jokainen pyhä, Jumalan Hengestä syntynyt "
-"kirjoitus on hyödyllinen opetukseksi, nuhteeksi, ojennukseksi ja "
-"kasvatukseksi Jumalan tahdon mukaiseen elämään.</emphasis>\" Uskotko sinä "
-"tämän? Ennenkuin vastaat, punnitse Jeesuksen suhtautumista kirjoituksiin."
 
 #. type: Content of: <chapter><sect1><blockquote><attribution>
-#: docs/howto/en/docbook/howto-importance.docbook:114
+#: docs/howto/en/docbook/howto-importance.docbook:89
 msgid ""
 "John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, "
 "InterVarsity Press 1978, pp.93-95"
-msgstr ""
-"John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, "
-"InterVarsity Press 1978, s.93-95"
+msgstr "John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, InterVarsity Press 1978, s.93-95"
 
 #. type: Content of: <chapter><sect1><blockquote><para>
-#: docs/howto/en/docbook/howto-importance.docbook:117
+#: docs/howto/en/docbook/howto-importance.docbook:90
 msgid ""
 "He referred to the human authors, but took it for granted that behind them "
-"all was a single divine Author. He could equally say 'Moses said' or 'God "
-"said' (Mk.7:10). He could quote a comment of the narrator in Genesis 2:24 as "
-"an utterance of the Creator Himself (Mt.19:4-5). Similarly He said, 'Well "
+"all was a single divine Author.  He could equally say 'Moses said' or 'God "
+"said' (Mk.7:10). He could quote a comment of the narrator in Genesis 2:24 as"
+" an utterance of the Creator Himself (Mt.19:4-5).  Similarly He said, 'Well "
 "did Isaiah prophesy of you hypocrites, as it is written', when what He went "
-"on to quote is the direct speech of the Lord God (Mk.7:6 &amp; Is.29:13). It "
-"is from Jesus Himself that the New Testament authors have gained their "
-"conviction of the dual authorship of Scripture. For them it was just as true "
-"to say that 'God spoke of old to our fathers by the prophets' (Heb.1:1) as "
-"it was to say that 'men moved by the Holy Spirit spoke from God' (2 "
+"on to quote is the direct speech of the Lord God (Mk.7:6 &amp; Is.29:13).  "
+"It is from Jesus Himself that the New Testament authors have gained their "
+"conviction of the dual authorship of Scripture.  For them it was just as "
+"true to say that 'God spoke of old to our fathers by the prophets' (Heb.1:1)"
+" as it was to say that 'men moved by the Holy Spirit spoke from God' (2 "
 "Pe.1:21).  God did not speak in such a way as to obliterate the personality "
-"of the human authors, nor did men speak in such a way as to corrupt the Word "
-"of the divine Author. God spoke. Men spoke.  Neither truth must be allowed "
-"to detract from the other.  ..."
+"of the human authors, nor did men speak in such a way as to corrupt the Word"
+" of the divine Author.  God spoke.  Men spoke.  Neither truth must be "
+"allowed to detract from the other. ..."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><blockquote><para>
-#: docs/howto/en/docbook/howto-importance.docbook:134
-#, fuzzy
-#| msgid ""
-#| "This, then, was Christ's view of the Scriptures.  Their witness was God's "
-#| "witness. The testimony of the Bible is the testimony of God.  And the "
-#| "chief reason why the Christian believes in the divine origin of the Bible "
-#| "is that Jesus Christ Himself taught it."
+#: docs/howto/en/docbook/howto-importance.docbook:105
 msgid ""
-"This, then, was Christ's view of the Scriptures. Their witness was God's "
-"witness. The testimony of the Bible is the testimony of God. And the chief "
+"This, then, was Christ's view of the Scriptures.  Their witness was God's "
+"witness. The testimony of the Bible is the testimony of God.  And the chief "
 "reason why the Christian believes in the divine origin of the Bible is that "
 "Jesus Christ Himself taught it."
 msgstr ""
-"Tämä oli Kristuksen näkemys kirjoituksiin. Niiden todistus oli Jumalan "
-"todistus. Raamatun todistus on Jumalan todistus. Ja pääsyy, miksi kristityt "
-"uskovat Raamatun olevan jumalallista alkuperää, on se, että Jeesus Kristus "
-"itse opetti niin."
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-importance.docbook:140
-#, fuzzy
-#| msgid ""
-#| "2 Tim.3:16 goes on, \"<emphasis>and profitable for teaching, for "
-#| "correction, for training in righteousness, that the man of God may be "
-#| "adequate, equipped for every good work.</emphasis>\" If we accept that "
-#| "the Bible really is God speaking to us, it follows that it will be our "
-#| "authority in all matters of faith and conduct."
+#: docs/howto/en/docbook/howto-importance.docbook:110
 msgid ""
-"2 Tim.3:16 goes on, \" <emphasis>and profitable for teaching, for "
-"correction, for training in righteousness, that the man of God may be "
-"adequate, equipped for every good work.</emphasis>\" If we accept that the "
-"Bible really is God speaking to us, it follows that it will be our authority "
-"in all matters of faith and conduct."
+"2 Tim.3:16 goes on, \"<emphasis>and profitable for teaching, for correction,"
+" for training in righteousness, that the man of God may be adequate, "
+"equipped for every good work.</emphasis>\" If we accept that the Bible "
+"really is God speaking to us, it follows that it will be our authority in "
+"all matters of faith and conduct."
 msgstr ""
-"2 Tim.3:16 mukaan, \"<emphasis>...ja hyödyllinen opetukseksi, nuhteeksi, "
-"ojennukseksi ja kasvatukseksi Jumalan tahdon mukaiseen elämään. Näin Jumalan "
-"ihmisestä tulee täydellinen ja kaikkeen hyvään kykenevä.</emphasis>\" Jos "
-"hyväksymme, että Raamattu on todella Jumalan puhetta meille, siitä seuraa, "
-"että se on auktoriteettimme uskossa ja käyttäytymisessämme."
 
 #. type: Content of: <chapter><sect1><title>
-#: docs/howto/en/docbook/howto-importance.docbook:148
+#: docs/howto/en/docbook/howto-importance.docbook:117
 msgid "A Book that Works"
 msgstr "Kirja, joka toimii"
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-importance.docbook:149
-#, fuzzy
-#| msgid ""
-#| "What will studying the Bible do for you? 1 Thess.2:13 says that the Bible "
-#| "\"<emphasis>performs its work in you who believe.</emphasis>\" Beside "
-#| "each scripture, write down the work the Word performs."
+#: docs/howto/en/docbook/howto-importance.docbook:119
 msgid ""
-"What will studying the Bible do for you? 1 Thess.2:13 says that the Bible \" "
-"<emphasis>performs its work in you who believe.</emphasis>\" Beside each "
+"What will studying the Bible do for you? 1 Thess.2:13 says that the Bible "
+"\"<emphasis>performs its work in you who believe.</emphasis>\" Beside each "
 "scripture, write down the work the Word performs."
 msgstr ""
-"Mitä Raamatun tutkiminen tekee sinulle? 1 Tess.2:13 sanoo, että Raamattu "
-"\"<emphasis>vaikuttaa teissä, jotka uskotte.</emphasis>\" Beside each "
-"scripture, write down the work the Word performs. Jokaisen kirjoituksen "
-"rinnalla merkitse muistiin työ, jonka Sana vaikuttaa."
 
 #. type: Content of: <chapter><sect1><table><title>
-#: docs/howto/en/docbook/howto-importance.docbook:154
+#: docs/howto/en/docbook/howto-importance.docbook:125
 msgid "What does Bible study do for Christians?"
 msgstr "Mitä Raamatun tutkiminen tekee kristitylle?"
 
 #. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:158
+#: docs/howto/en/docbook/howto-importance.docbook:129
 msgid "Reference"
 msgstr "Viittaus"
 
 #. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:159
+#: docs/howto/en/docbook/howto-importance.docbook:130
 msgid "Action"
 msgstr "Toiminta"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:164
+#: docs/howto/en/docbook/howto-importance.docbook:135
 msgid "Eph. 5:26"
 msgstr "Ef. 5:26"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:165
+#: docs/howto/en/docbook/howto-importance.docbook:137
 msgid ""
-"cleanses -- \"...having cleansed her by the washing of water with the word.\""
+"cleanses -- \"...having cleansed her by the washing of water with the "
+"word.\""
 msgstr "puhdistaa -- \"...pesi sen puhtaaksi vedellä ja sanalla.\""
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:169
+#: docs/howto/en/docbook/howto-importance.docbook:142
 msgid "Acts 20:32"
 msgstr "Apt 20:32"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:170
-#, fuzzy
-#| msgid ""
-#| "builds up -- \" ...the word of His grace, which is able to build you up "
-#| "and to give you the inheritance among all those who are sanctified.  \""
+#: docs/howto/en/docbook/howto-importance.docbook:145
 msgid ""
 "builds up -- \" ...the word of His grace, which is able to build you up and "
-"to give you the inheritance among all those who are sanctified. \""
+"to give you the inheritance among all those who are sanctified.  \""
 msgstr ""
-"rakentaa -- \" ...Hänen armonsa sanat, jotka rakentavat meitä ja antavat "
-"meille perinnön pyhitettyjen joukossa. \""
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:175
+#: docs/howto/en/docbook/howto-importance.docbook:154
 msgid "Rom. 15:4"
 msgstr "Room. 15:4"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:176
+#: docs/howto/en/docbook/howto-importance.docbook:157
 msgid ""
 "encourages -- \"that through perseverance and the encouragement of the "
 "Scriptures we might have hope.\""
-msgstr ""
-"rohkaisee -- \"että meillä toivo olisit pitkäjänteisyyden ja kirjoitusten "
-"rohkaisuun kautta.\""
+msgstr "rohkaisee -- \"että meillä toivo olisit pitkäjänteisyyden ja kirjoitusten rohkaisuun kautta.\""
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:181
+#: docs/howto/en/docbook/howto-importance.docbook:164
 msgid "Rom. 10:17"
 msgstr "Room. 10:17"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:182
+#: docs/howto/en/docbook/howto-importance.docbook:167
 msgid ""
 "gives faith -- \"So faith comes from hearing, and hearing by the word of "
 "Christ.\""
-msgstr ""
-"antaa uskon -- \"Niin tulee usko kuulosta ja kuulo Jumalan Sanan kautta.\""
+msgstr "antaa uskon -- \"Niin tulee usko kuulosta ja kuulo Jumalan Sanan kautta.\""
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:186
+#: docs/howto/en/docbook/howto-importance.docbook:175
 msgid "1 Cor. 10:11"
 msgstr "1 Kor. 10:11"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:187
+#: docs/howto/en/docbook/howto-importance.docbook:178
 msgid ""
 "instructs -- \"Now these things happened to them for an example, and they "
 "were written for our instruction\""
-msgstr ""
-"opetus -- \"Nyt nämä asiat tapahtuivat heille esimerkiksi, ja ne ovat "
-"kirjoitettu meidän opetukseksemme\""
+msgstr "opetus -- \"Nyt nämä asiat tapahtuivat heille esimerkiksi, ja ne ovat kirjoitettu meidän opetukseksemme\""
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:192
+#: docs/howto/en/docbook/howto-importance.docbook:186
 msgid "Mt. 4:4"
 msgstr "Matt. 4:4"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:193
+#: docs/howto/en/docbook/howto-importance.docbook:189
 msgid ""
 "nourishment -- \"But He answered and said, 'It is written, Man shall not "
 "live on bread alone, but on every word that proceeds out of the mouth of "
 "God.'\""
-msgstr ""
-"ravitsemus -- \"Mutta Hän vastasi ja sanoi, 'On kirjoitettu, Ihminen ei elä "
-"ainoastaan leivästä, mutta jokaisesta sanasta, joka tulee Jumalan suusta.'\""
+msgstr "ravitsemus -- \"Mutta Hän vastasi ja sanoi, 'On kirjoitettu, Ihminen ei elä ainoastaan leivästä, mutta jokaisesta sanasta, joka tulee Jumalan suusta.'\""
 
 #. type: Content of: <chapter><sect1><title>
-#: docs/howto/en/docbook/howto-importance.docbook:202
+#: docs/howto/en/docbook/howto-importance.docbook:200
 msgid "A Book that Liberates"
 msgstr "Kirja, joka vapahtaa"
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-importance.docbook:203
-#, fuzzy
-#| msgid ""
-#| "Jn.8:32 \"<emphasis>and you shall know the truth, and the truth shall "
-#| "make you free.</emphasis>\"This is usually quoted by itself.  Is this a "
-#| "conditional or unconditional promise? Would it apply to all kinds of "
-#| "knowledge? Find the answers by examining the first half of the sentence, "
-#| "in v.31. \"<emphasis>If you abide in My word, then you are truly "
-#| "disciples of Mine... </emphasis>\""
+#: docs/howto/en/docbook/howto-importance.docbook:202
 msgid ""
-"Jn.8:32 \" <emphasis>and you shall know the truth, and the truth shall make "
-"you free.</emphasis>\"This is usually quoted by itself. Is this a "
+"Jn.8:32 \"<emphasis>and you shall know the truth, and the truth shall make "
+"you free.</emphasis>\"This is usually quoted by itself.  Is this a "
 "conditional or unconditional promise? Would it apply to all kinds of "
 "knowledge? Find the answers by examining the first half of the sentence, in "
-"v.31. \" <emphasis>If you abide in My word, then you are truly disciples of "
-"Mine...</emphasis>\""
+"v.31. \"<emphasis>If you abide in My word, then you are truly disciples of "
+"Mine... </emphasis>\""
 msgstr ""
-"Joh.8:32 \"<emphasis>Te opitte tuntemaan totuuden, ja totuus tekee teistä "
-"vapaita.</emphasis>\"Tämä on noteerattu itsessään. Onko tämä ehdollinen vai "
-"ehdoton lupaus? Toimiiko se kaikenlaisille tiedoille? Löydä vastaukset "
-"lauseen ensimmäisestä puolikkaasta, jakeessa 31. \"<emphasis>Jos te pysytte "
-"uskollisina minun sanalleni, te olette todella opetuslapsiani... </emphasis>"
-"\""
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-importance.docbook:211
-#, fuzzy
-#| msgid ""
-#| "We see that this is a conditional promice, specifically speaking of the "
-#| "truth of God's word."
+#: docs/howto/en/docbook/howto-importance.docbook:208
 msgid ""
-"We see that this is a conditional promise, specifically speaking of the "
+"We see that this is a conditional promice, specifically speaking of the "
 "truth of God's word."
 msgstr ""
-"Näemme, että tämä on ehdollinen lupaus, erityisesti puhuen Jumalan Sanan "
-"totuudesta."
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-importance.docbook:213
-#, fuzzy
-#| msgid ""
-#| "The Greek word for \"wind\" used in Eph.4:14 means a <emphasis>violent "
-#| "wind.</emphasis> \"<emphasis>As a result, we are no longer to be "
-#| "children, tossed here and there by waves, and carried about by every wind "
-#| "of doctrine...</emphasis>\"One thing studying the Bible does for us is to "
-#| "ground us in the truth, with the result that we won't be easily \"blown "
-#| "away.\""
+#: docs/howto/en/docbook/howto-importance.docbook:210
 msgid ""
-"The Greek word for \"wind\" used in Eph.4:14 means a <emphasis>violent wind."
-"</emphasis>\" <emphasis>As a result, we are no longer to be children, tossed "
-"here and there by waves, and carried about by every wind of doctrine...</"
-"emphasis>\"One thing studying the Bible does for us is to ground us in the "
-"truth, with the result that we won't be easily \"blown away.\""
+"The Greek word for \"wind\" used in Eph.4:14 means a <emphasis>violent "
+"wind.</emphasis> \"<emphasis>As a result, we are no longer to be children, "
+"tossed here and there by waves, and carried about by every wind of "
+"doctrine...</emphasis>\"One thing studying the Bible does for us is to "
+"ground us in the truth, with the result that we won't be easily \"blown "
+"away.\""
 msgstr ""
-"Kreikankielinen sana \"tuulelle\" käytettynä Ef.4:14 tarkoittaa "
-"<emphasis>rajuilmaa.</emphasis> \"<emphasis>silloin emme enää ole "
-"alaikäisiä, jotka ajelehtivat kaikenlaisten opin tuulten heiteltävinä ja "
-"ovat kavalien ja petollisten ihmisten pelinappuloita...</emphasis>\"Yksi "
-"asia, minkä Raamatuntutkiminen tekee meille on, että se perustaa meitä "
-"totuuteen sillä seurauksella, ettemme ole helposti \"tuulen vietäviä.\""
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-importance.docbook:221
-#, fuzzy
-#| msgid ""
-#| "<emphasis>But Jesus answered and said to them, </emphasis>\"<emphasis>You "
-#| "are mistaken [KJV Ye do err], not understanding the Scriptures, or the "
-#| "power of God.</emphasis>\"Mt.22:29"
+#: docs/howto/en/docbook/howto-importance.docbook:216
 msgid ""
-"<emphasis>But Jesus answered and said to them,</emphasis>\" <emphasis>You "
-"are mistaken [KJV Ye do err], not understanding the Scriptures, or the power "
-"of God.</emphasis>\" Mt.22:29"
+"<emphasis>But Jesus answered and said to them, </emphasis>\"<emphasis>You "
+"are mistaken [KJV Ye do err], not understanding the Scriptures, or the power"
+" of God.</emphasis>\"Mt.22:29"
 msgstr ""
-"<emphasis>Mutta Jeesus vastasi ja sanoi heille, </emphasis>\"<emphasis>Te "
-"kuljette eksyksissä, koska ette tunne pyhiä kirjoituksia ettekä Jumalan "
-"voimaa.</emphasis>\"Matt.22:29"
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-importance.docbook:224
+#: docs/howto/en/docbook/howto-importance.docbook:218
 msgid "What 2 things do we need to know to be kept from error?"
 msgstr "Mitkä kaksi asiaa meidän tulee tietää välttääksemme virheen?"
 
 #. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
-#: docs/howto/en/docbook/howto-importance.docbook:228
+#: docs/howto/en/docbook/howto-importance.docbook:220
 msgid "God's word"
 msgstr "Jumalan sana"
 
 #. type: Content of: <chapter><sect1><itemizedlist><listitem><para>
-#: docs/howto/en/docbook/howto-importance.docbook:231
+#: docs/howto/en/docbook/howto-importance.docbook:221
 msgid "God's power"
 msgstr "Jumalan voima"
 
 #. type: Content of: <chapter><sect1><title>
-#: docs/howto/en/docbook/howto-importance.docbook:236
+#: docs/howto/en/docbook/howto-importance.docbook:225
 msgid "A Book that Wars"
 msgstr "Kirja, joka sotii"
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-importance.docbook:237
+#: docs/howto/en/docbook/howto-importance.docbook:227
 msgid "Eph.6:10-18 is one picture of our spiritual armament."
 msgstr "Ef.6:10-18 on yksi kuva meidän hengellisistä aseistuksestamme."
 
 #. type: Content of: <chapter><sect1><table><title>
-#: docs/howto/en/docbook/howto-importance.docbook:239
+#: docs/howto/en/docbook/howto-importance.docbook:229
 msgid "Spiritual Armor"
 msgstr "Hengellinen sotavaruste"
 
 #. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:243
+#: docs/howto/en/docbook/howto-importance.docbook:233
 msgid "Question"
 msgstr "Kysymys"
 
 #. type: Content of: <chapter><sect1><table><tgroup><thead><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:244
+#: docs/howto/en/docbook/howto-importance.docbook:234
 msgid "Answer"
 msgstr "Vastaus"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:249
+#: docs/howto/en/docbook/howto-importance.docbook:237
 msgid "How many of the weapons listed here are defensive weapons?"
 msgstr "Kuinka monta asetta luetteloidaan tässä puolustusaseiksi?"
 
-# type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:251
+#: docs/howto/en/docbook/howto-importance.docbook:237
 msgid "5"
 msgstr "5"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:254
+#: docs/howto/en/docbook/howto-importance.docbook:238
 msgid "How many are offensive?"
 msgstr "Kuinka monta on pahennusta herättävää?"
 
-# type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:255
+#: docs/howto/en/docbook/howto-importance.docbook:238
 msgid "One"
 msgstr "Yksi"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:258
+#: docs/howto/en/docbook/howto-importance.docbook:239
 msgid "Which one(s)?"
 msgstr "Mikä niistä?"
 
 #. type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/en/docbook/howto-importance.docbook:259
+#: docs/howto/en/docbook/howto-importance.docbook:239
 msgid "the word - <foreignphrase>rhema</foreignphrase>"
 msgstr "sana - <foreignphrase>rhema</foreignphrase>"
 
 #. type: Content of: <chapter><sect1><title>
-#: docs/howto/en/docbook/howto-importance.docbook:267
+#: docs/howto/en/docbook/howto-importance.docbook:243
 msgid "Exhortations"
 msgstr "Kehotus"
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-importance.docbook:268
-#, fuzzy
-#| msgid ""
-#| "2 Tim.2:15 (KJV) \"<emphasis>Study to show thyself approved unto God, a "
-#| "workman that needeth not to be ashamed, rightly dividing the word of "
-#| "truth.</emphasis>\""
+#: docs/howto/en/docbook/howto-importance.docbook:245
 msgid ""
-"2 Tim.2:15 (KJV) \" <emphasis>Study to show thyself approved unto God, a "
-"workman that needeth not to be ashamed, rightly dividing the word of truth.</"
-"emphasis>\""
+"2 Tim.2:15 (KJV) \"<emphasis>Study to show thyself approved unto God, a "
+"workman that needeth not to be ashamed, rightly dividing the word of "
+"truth.</emphasis>\""
 msgstr ""
-"2 Tim.2:15 \"<emphasis>Pyri kaikin voimin osoittautumaan Jumalan silmissä "
-"luotettavaksi työntekijäksi, joka ei häpeä työtään ja joka opettaa totuuden "
-"sanaa oikein.</emphasis>\""
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-importance.docbook:272
-#, fuzzy
-#| msgid ""
-#| "Col.3:16 \"<emphasis>Let the word of Christ richly dwell within you; with "
-#| "all wisdom teaching and admonishing one another with psalms and hymns and "
-#| "spiritual songs, singing with thankfulness in your hearts to God.</"
-#| "emphasis>\""
+#: docs/howto/en/docbook/howto-importance.docbook:249
 msgid ""
-"Col.3:16 \" <emphasis>Let the word of Christ richly dwell within you; with "
+"Col.3:16 \"<emphasis>Let the word of Christ richly dwell within you; with "
 "all wisdom teaching and admonishing one another with psalms and hymns and "
-"spiritual songs, singing with thankfulness in your hearts to God.</emphasis>"
-"\""
+"spiritual songs, singing with thankfulness in your hearts to "
+"God.</emphasis>\""
 msgstr ""
-"Kol.3:16 \"<emphasis>Antakaa Kristuksen sanan asua runsaana keskuudessanne. "
-"Opettakaa ja neuvokaa toisianne kaikella viisaudella ja laulakaa kiitollisin "
-"mielin Jumalalle psalmeja, ylistysvirsiä ja hengellisiä lauluja.</emphasis>\""
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-importance.docbook:277
+#: docs/howto/en/docbook/howto-importance.docbook:253
 msgid "If you're rich in something, how much of it do you have?"
 msgstr "Jos olet rikas jossain asiassa, kuinka paljon sitä omistat?"
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-importance.docbook:279
+#: docs/howto/en/docbook/howto-importance.docbook:256
 msgid "Not a little!"
 msgstr "Ei pieni!"
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-importance.docbook:280
-#, fuzzy
-#| msgid ""
-#| "Eccl.12:11-12 \"<emphasis>The words of wise men are like goads, and "
-#| "masters of these collections are like well-driven nails; they are given "
-#| "by one Shepherd.  But beyond this, my son, be warned: the writing of many "
-#| "books is endless, and excessive devotion to books is wearying to the body."
-#| "</emphasis>\""
+#: docs/howto/en/docbook/howto-importance.docbook:259
 msgid ""
-"Eccl.12:11-12 \" <emphasis>The words of wise men are like goads, and masters "
+"Eccl.12:11-12 \"<emphasis>The words of wise men are like goads, and masters "
 "of these collections are like well-driven nails; they are given by one "
-"Shepherd. But beyond this, my son, be warned: the writing of many books is "
-"endless, and excessive devotion to books is wearying to the body.</emphasis>"
-"\""
+"Shepherd.  But beyond this, my son, be warned: the writing of many books is "
+"endless, and excessive devotion to books is wearying to the "
+"body.</emphasis>\""
 msgstr ""
-"Saarn.12:11-12 \"<emphasis>Viisaiden sanat ovat teräviä kuin häränajajan "
-"piikki, mietelauselmat kuin lujia nauloja. Nämä sanat ovat kaikki saman "
-"paimenen antamia. Ja vielä: Poikani, paina varoitus mieleesi. Paljolla "
-"kirjojen tekemisellä ei ole loppua, ja alituinen tutkistelu väsyttää ruumiin."
-"</emphasis>\""
 
 #. type: Content of: <chapter><sect1><title>
-#: docs/howto/en/docbook/howto-importance.docbook:288
+#: docs/howto/en/docbook/howto-importance.docbook:265
 msgid "Appendix: \"Once for All\""
 msgstr "Liite: \"Kerran kaikille\""
 
 #. type: Content of: <chapter><sect1><blockquote><attribution>
-#: docs/howto/en/docbook/howto-importance.docbook:290
-#, fuzzy
-#| msgid ""
-#| "John R. W. Stott, <emphasis>Christ the Controversialist,</emphasis> "
-#| "InterVarsity Press 1978, pp.106-107"
+#: docs/howto/en/docbook/howto-importance.docbook:268
 msgid ""
-"John R. W. Stott, <emphasis>Christ the Controversialist,</"
-"emphasis>InterVarsity Press 1978, pp.106-107"
-msgstr ""
 "John R. W. Stott, <emphasis>Christ the Controversialist,</emphasis> "
-"InterVarsity Press 1978, s.106-107"
+"InterVarsity Press 1978, pp.106-107"
+msgstr ""
 
 #. type: Content of: <chapter><sect1><blockquote><para>
-#: docs/howto/en/docbook/howto-importance.docbook:293
+#: docs/howto/en/docbook/howto-importance.docbook:269
 msgid ""
 "The truth regarding the finality of God's initiative in Christ is conveyed "
-"by one word of the Greek Testament, namely the adverb <foreignphrase>hapax</"
-"foreignphrase>and <foreignphrase>ephapax</foreignphrase>. It is usually "
-"translated in the Authorized Version once, meaning once for all. It is used "
-"of what is so done as to be of perpetual validity and never need repetition, "
-"and is applied in the NT to both revelation and redemption. Thus, Jude "
-"refers to the faith which was once for all delivered to the saints (Jude 3), "
-"and Romans says, \" <emphasis>Christ also died for sins once for all</"
-"emphasis>\" (Rom.6:10, see also 1 Pe.3:18; Heb.9:26-28)."
+"by one word of the Greek Testament, namely the adverb "
+"<foreignphrase>hapax</foreignphrase> and "
+"<foreignphrase>ephapax</foreignphrase>. It is usually translated in the "
+"Authorized Version once, meaning once for all. It is used of what is so done"
+" as to be of perpetual validity and never need repetition, and is applied in"
+" the NT to both revelation and redemption.  Thus, Jude refers to the faith "
+"which was once for all delivered to the saints (Jude 3), and Romans says, "
+"\"<emphasis>Christ also died for sins once for all</emphasis>\" (Rom.6:10, "
+"see also 1 Pe.3:18; Heb.9:26-28)."
 msgstr ""
 
 #. type: Content of: <chapter><sect1><blockquote><para>
-#: docs/howto/en/docbook/howto-importance.docbook:305
-#, fuzzy
-#| msgid ""
-#| "Thus we may say that God has spoken once for all and Christ has suffered "
-#| "once for all.  This means that the Christian revelation and the Christian "
-#| "redemption are both alike in Christ complete.  Nothing can be added to "
-#| "either without being derogatory to Christ...  These are the two rocks on "
-#| "which the Protestant Reformation was built -- Gods revealed word without "
-#| "the addition of human traditions and Christ's finished work without the "
-#| "addition of human merits.  The Reformers great watchwords were "
-#| "<foreignphrase>sola scriptura</foreignphrase> for our authority and "
-#| "<foreignphrase>sola gratia</foreignphrase> for our salvation."
+#: docs/howto/en/docbook/howto-importance.docbook:279
 msgid ""
 "Thus we may say that God has spoken once for all and Christ has suffered "
-"once for all. This means that the Christian revelation and the Christian "
-"redemption are both alike in Christ complete. Nothing can be added to either "
-"without being derogatory to Christ... These are the two rocks on which the "
-"Protestant Reformation was built -- Gods revealed word without the addition "
-"of human traditions and Christ's finished work without the addition of human "
-"merits. The Reformers great watchwords were <foreignphrase>sola scriptura</"
-"foreignphrase>for our authority and <foreignphrase>sola gratia</"
-"foreignphrase>for our salvation."
+"once for all.  This means that the Christian revelation and the Christian "
+"redemption are both alike in Christ complete.  Nothing can be added to "
+"either without being derogatory to Christ...  These are the two rocks on "
+"which the Protestant Reformation was built -- Gods revealed word without the"
+" addition of human traditions and Christ's finished work without the "
+"addition of human merits.  The Reformers great watchwords were "
+"<foreignphrase>sola scriptura</foreignphrase> for our authority and "
+"<foreignphrase>sola gratia</foreignphrase> for our salvation."
 msgstr ""
-"Edelleen sanoisimme, että Jumala on puhunut kerran kaikille ja Kristus on "
-"kärsinyt kerran kaikkien puolesta. Tämä merkitsee sitä, että Kristuksen "
-"lunastus ja kristityn lunastus ovat samanlaisia Kristuksen täydellisyydessä. "
-"Mitään ei voi lisätä eikä ottaa pois olematta halventava Kristukselle... "
-"Nämä ovat kaksi peruskiveä, joille protestanttinen reformaatio pohjautuu -- "
-"Jumalan ilmoittamat sanat ilman ihmistraditioiden lisäyksiä ja Kristuksen "
-"loppuunsuoritettu työ ilman ihmisansioiden lisäystä. Reformistien suuri "
-"sanonta oli <foreignphrase>sola scriptura</foreignphrase> auktoriteetiksemme "
-"ja <foreignphrase>sola gratia</foreignphrase> pelastukseksemme."
 
 #. type: Content of: <chapter><sect1><title>
-#: docs/howto/en/docbook/howto-importance.docbook:320
+#: docs/howto/en/docbook/howto-importance.docbook:290
 msgid "Supplement: Bible Reading Programs"
 msgstr "Liite: Raamatunlukuohjelmat"
 
 #. type: Content of: <chapter><sect1><para>
-#: docs/howto/en/docbook/howto-importance.docbook:321
-#, fuzzy
-#| msgid ""
-#| "Here are some easy programs to systematically read your Bible.  You can "
-#| "do more than one at a time if you like, for instance #1 with #4, or #2 "
-#| "with #5.  Vary the program from year to year to keep it fresh!"
+#: docs/howto/en/docbook/howto-importance.docbook:291
 msgid ""
-"Here are some easy programs to systematically read your Bible. You can do "
-"more than one at a time if you like, for instance #1 with #4, or #2 with #5. "
-"Vary the program from year to year to keep it fresh!"
+"Here are some easy programs to systematically read your Bible.  You can do "
+"more than one at a time if you like, for instance #1 with #4, or #2 with #5."
+"  Vary the program from year to year to keep it fresh!"
 msgstr ""
-"Tässä on muutama helppo ohjelma, joilla voit lukea systemaattisesti "
-"Raamattuasi. Voit lukea enemmän kuin yhden kerrallaan, jos tahdot, "
-"esimerkiksi #1 ja #4, tai #2 ja #5. Vaihda ohjelmaa vuosi vuodelta "
-"pitääksesi sen tuoreena!"
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-importance.docbook:327
+#: docs/howto/en/docbook/howto-importance.docbook:296
 msgid "New Testament in a Year: read one chapter each day, 5 days a week."
-msgstr ""
-"Uusi Testamentti vuodessa: lue yksi luku joka päivä, 5 päivää viikossa."
+msgstr "Uusi Testamentti vuodessa: lue yksi luku joka päivä, 5 päivää viikossa."
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-importance.docbook:331
+#: docs/howto/en/docbook/howto-importance.docbook:298
 msgid ""
-"Proverbs in a Month: read one chapter of Proverbs each day, corresponding to "
-"the day of the month."
-msgstr ""
-"Sananlaskut kuukaudessa: Lue yksi luku Sananlaskuja joka päivä vastatem "
-"kuukaudenpäivää."
+"Proverbs in a Month: read one chapter of Proverbs each day, corresponding to"
+" the day of the month."
+msgstr "Sananlaskut kuukaudessa: Lue yksi luku Sananlaskuja joka päivä vastatem kuukaudenpäivää."
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-importance.docbook:335
+#: docs/howto/en/docbook/howto-importance.docbook:300
 msgid ""
 "Psalms in a Month: read 5 Psalms at intervals of 30 each day, for instance "
 "on the 20th you read Ps.20, 50, 80, 110, &amp; 140."
-msgstr ""
-"Psalmit yhdessä kuukaudessa: Lue 5 Psalmia 30:n päivän aikana, 20. kerralla "
-"luet Psalmit 20, 50, 80, 110, &amp; 140."
+msgstr "Psalmit yhdessä kuukaudessa: Lue 5 Psalmia 30:n päivän aikana, 20. kerralla luet Psalmit 20, 50, 80, 110, &amp; 140."
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-importance.docbook:340
+#: docs/howto/en/docbook/howto-importance.docbook:302
 msgid ""
 "Psalms &amp; Proverbs in 6 months: read through Psalms and Proverbs one "
 "chapter per day."
-msgstr ""
-"Psalmit &amp; Sananlaskut 6 kuukaudessa: Lue Psalmit ja Sananlaskut läpi "
-"yksi luku päivässä."
+msgstr "Psalmit &amp; Sananlaskut 6 kuukaudessa: Lue Psalmit ja Sananlaskut läpi yksi luku päivässä."
 
 #. type: Content of: <chapter><sect1><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-importance.docbook:344
+#: docs/howto/en/docbook/howto-importance.docbook:304
 msgid ""
 "Old Testament without Psalms &amp; Proverbs in 2 years: if you read one "
-"chapter a day of the Old Testament, skipping over Psalms &amp; Proverbs, you "
-"will read the Old Testament in 2 years and 2 weeks."
-msgstr ""
-"Vanha Testamentti ilman Psalmeja &amp; Sananlaskuja kahdessa vuodessa: Jos "
-"luet yhden kappaleen päivässä Vanhaa Testamenttia ohittaen Psalmit &amp; "
-"Sananlaskut, luet Vanhan Testamentin 2 vuodessa ja 2 viikossa.."
+"chapter a day of the Old Testament, skipping over Psalms &amp; Proverbs, you"
+" will read the Old Testament in 2 years and 2 weeks."
+msgstr "Vanha Testamentti ilman Psalmeja &amp; Sananlaskuja kahdessa vuodessa: Jos luet yhden kappaleen päivässä Vanhaa Testamenttia ohittaen Psalmit &amp; Sananlaskut, luet Vanhan Testamentin 2 vuodessa ja 2 viikossa.."
 
 #. type: Content of: <chapter><title>
-#: docs/howto/en/docbook/howto-interpretation.docbook:2
+#: docs/howto/en/docbook/howto-interpretation.docbook:1
 msgid "Rules of Bible Interpretation (Hermeneutics)"
 msgstr "Raamatuntulkinnan säännöt (hermeneutiikka)"
 
 #. type: Content of: <chapter><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:3
+#: docs/howto/en/docbook/howto-interpretation.docbook:2
 msgid ""
-"We already learned about the \"3 Cs\": content, context, cross-reference. We "
-"want to expand that now by delving briefly into biblical hermeneutics, whose "
-"goal is to discover the meaning intended by the original author (and "
-"Author!). While many applications of a passage are valid, only one "
+"We already learned about the \"3 Cs\": content, context, cross-reference.  "
+"We want to expand that now by delving briefly into biblical hermeneutics, "
+"whose goal is to discover the meaning intended by the original author (and "
+"Author!).  While many applications of a passage are valid, only one "
 "interpretation is valid. The scripture itself says this by saying that no "
 "scripture is of any private interpretation (2 Pe.1:20 KJV <quote>Knowing "
-"this first, that no prophesy of scripture is of any private interpretation.</"
-"quote>). Certain rules are helps toward discovering the correct meaning; by "
-"ignoring these rules people have brought much trouble on themselves and "
-"their followers. 2 Pe.3:16 <quote>...in which are some things hard to "
-"understand, which the untaught and unstable distort, as they do also the "
-"rest of the Scriptures, to their own destruction.</quote>"
+"this first, that no prophesy of scripture is of any private "
+"interpretation.</quote>). Certain rules are helps toward discovering the "
+"correct meaning; by ignoring these rules people have brought much trouble on"
+" themselves and their followers.  2 Pe.3:16 <quote>...in which are some "
+"things hard to understand, which the untaught and unstable distort, as they "
+"do also the rest of the Scriptures, to their own destruction.</quote>"
 msgstr ""
 
 #. type: Content of: <chapter><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:17
-#, fuzzy
-#| msgid ""
-#| "How do we go about discovering the intended meaning of a passage? Let's "
-#| "say your attention has been drawn to a particular verse whose meaning is "
-#| "not clear to you.  How do you study it out? Keep these rules in mind:"
+#: docs/howto/en/docbook/howto-interpretation.docbook:11
 msgid ""
 "How do we go about discovering the intended meaning of a passage? Let's say "
 "your attention has been drawn to a particular verse whose meaning is not "
-"clear to you. How do you study it out? Keep these rules in mind:"
+"clear to you.  How do you study it out? Keep these rules in mind:"
 msgstr ""
-"Kuinka etsimme tekstikohdan tarkoitettua merkitystä? Sanokaamme, että "
-"huomiomme on kohdistettu jakeen osaan, jonka merkitys ei ole meille selvä. "
-"Kuinka tutkimme sitä? Pidä kolme sääntöä muistissa:"
 
 #. type: Content of: <chapter><section><title>
-#: docs/howto/en/docbook/howto-interpretation.docbook:22
+#: docs/howto/en/docbook/howto-interpretation.docbook:14
 msgid "Rule 1 - Interpret according to the exact meaning of the words."
 msgstr "Sääntö 1 - Tulkitse sanojen täsmällisten merkitysten mukaan."
 
 #. type: Content of: <chapter><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:24
-#, fuzzy
-#| msgid ""
-#| "The more precise we can be with the exact, original meaning of the words "
-#| "the better our interpretation will be.  Try to find the exact meaning of "
-#| "the key words by following these steps:"
+#: docs/howto/en/docbook/howto-interpretation.docbook:15
 msgid ""
-"The more precise we can be with the exact, original meaning of the words the "
-"better our interpretation will be. Try to find the exact meaning of the key "
-"words by following these steps:"
+"The more precise we can be with the exact, original meaning of the words the"
+" better our interpretation will be.  Try to find the exact meaning of the "
+"key words by following these steps:"
 msgstr ""
-"Mitä tarkempia voimme olla sanojen todellisen, alkuperäisen merkityksen "
-"kanssa, sitä parempi tulkintamme on. Yritä löytää avainsanojen todellinen "
-"merkitys näillä askelilla:"
 
-#. type: Content of: <chapter><section><orderedlist><listitem><formalpara><title>
-#: docs/howto/en/docbook/howto-interpretation.docbook:30
+#. type: Content of:
+#. <chapter><section><orderedlist><listitem><formalpara><title>
+#: docs/howto/en/docbook/howto-interpretation.docbook:20
 msgid "Definition"
 msgstr "Määrittely"
 
-#. type: Content of: <chapter><section><orderedlist><listitem><formalpara><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:31
+#. type: Content of:
+#. <chapter><section><orderedlist><listitem><formalpara><para>
+#: docs/howto/en/docbook/howto-interpretation.docbook:21
 msgid ""
-"Look up the definition in a Greek or Hebrew dictionary.  For verbs, the verb "
-"tense is also crucial."
-msgstr ""
-"Katso määreitelmää kreikkalaisesta tai heprealaisesta sanakirjasta  "
-"Verbeille verbin aikamuoto on myös ratkaiseva."
+"Look up the definition in a Greek or Hebrew dictionary.  For verbs, the verb"
+" tense is also crucial."
+msgstr "Katso määreitelmää kreikkalaisesta tai heprealaisesta sanakirjasta  Verbeille verbin aikamuoto on myös ratkaiseva."
 
-#. type: Content of: <chapter><section><orderedlist><listitem><formalpara><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:38
-#, fuzzy
-#| msgid ""
-#| "Compare scripture with scripture.  Seeing how the same Greek or Hebrew "
-#| "word (not the English word) is used in scripture may clarify or throw new "
-#| "light on the definition.  How does the same author use this word "
-#| "elsewhere? Other authors? Your reference tools may give you uses of the "
-#| "word in non-biblical documents, as well.  Why do we have to go to the "
-#| "original languages; why isn't the English word good enough? "
-#| "<emphasis>Because more than one greek word may be translated into the "
-#| "same english word, and the greek words may have different shades of "
-#| "meaning.</emphasis>"
+#. type: Content of:
+#. <chapter><section><orderedlist><listitem><formalpara><para>
+#: docs/howto/en/docbook/howto-interpretation.docbook:27
 msgid ""
-"Compare scripture with scripture. Seeing how the same Greek or Hebrew word "
+"Compare scripture with scripture.  Seeing how the same Greek or Hebrew word "
 "(not the English word) is used in scripture may clarify or throw new light "
 "on the definition.  How does the same author use this word elsewhere? Other "
 "authors? Your reference tools may give you uses of the word in non-biblical "
-"documents, as well. Why do we have to go to the original languages; why "
-"isn't the English word good enough? <emphasis>Because more than one Greek "
-"word may be translated into the same English word, and the Greek words may "
+"documents, as well.  Why do we have to go to the original languages; why "
+"isn't the English word good enough? <emphasis>Because more than one greek "
+"word may be translated into the same english word, and the greek words may "
 "have different shades of meaning.</emphasis>"
 msgstr ""
-"Vertaa tekstejä tekstien kanssa. Näe, kuinka sama kreikankielinen tai "
-"hepreankielinen sana (ei englanninkielinen sana) on käytetty tekstissä, "
-"selvittää tai antaa uutta valaistusta määritelmään.  Kuinka sama kirjoittaja "
-"käyttää tätä sanaa muualla? Muut kirjoittajat? Referenssityökalusi antavat "
-"sinulle yhtä hyvin esimerkkejä sanan käytöstä muissa asiakirjoissa kuin "
-"Raamattussa. Miksi meidän pitää mennä alkukieleen, miksi englantilainen sana "
-"ei ole tarpeeksi hyvä? <emphasis>Koska useampi kreikankielinen sana voidaan "
-"kääntää samaksi englanninkieliseksi sanaksi, ja kreikankielisillä sanoilla "
-"voi olla erilainen merkityksen vivahde.</emphasis>"
 
 #. type: Content of: <chapter><section><section><title>
-#: docs/howto/en/docbook/howto-interpretation.docbook:53
+#: docs/howto/en/docbook/howto-interpretation.docbook:37
 msgid "Example 1A"
 msgstr "Esimerkki 1A"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:54
-#, fuzzy
-#| msgid ""
-#| "Jn.20:17 <emphasis>\"Touch me not\"</emphasis> (KJV) sounds harsh, "
-#| "doesn't it? Sounds like Jesus doesn't want to be touched now that He is "
-#| "risen, that He is too holy or something.  But that doesn't seem right, so "
-#| "let's look it up in Spiros Zodhiates' <emphasis>The Complete Word Study "
-#| "New Testament</emphasis> (AMG Publishers, 1991)."
+#: docs/howto/en/docbook/howto-interpretation.docbook:38
 msgid ""
 "Jn.20:17 <emphasis>\"Touch me not\"</emphasis> (KJV) sounds harsh, doesn't "
 "it? Sounds like Jesus doesn't want to be touched now that He is risen, that "
-"He is too holy or something. But that doesn't seem right, so let's look it "
-"up in Spiros Zodhiates' <emphasis>The Complete Word Study New Testament</"
-"emphasis> (AMG Publishers, 1991)."
+"He is too holy or something.  But that doesn't seem right, so let's look it "
+"up in Spiros Zodhiates' <emphasis>The Complete Word Study New "
+"Testament</emphasis> (AMG Publishers, 1991)."
 msgstr ""
-"Joh.20:17 <emphasis>\"Älä koske minuun\"</emphasis> (KJV) kuulostaa "
-"karkealta, eikö vain? Kuulostaa siltä, että Jeesus ei halunnut tulla "
-"kosketetuksi nyt kun hän on Hengessä, että Hän on pyhä tai jotain sellaista. "
-"Mutta tämä ei näytä oikealta. Niinpä lue se Spiros Zodhiatesin "
-"kirjoittamasta kirjasta' <emphasis>The Complete Word Study New Testament</"
-"emphasis> (AMG Publishers, 1991)."
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:61
+#: docs/howto/en/docbook/howto-interpretation.docbook:42
 msgid ""
-"Definition: Turning to John 20:17, above the word \"Touch\" we see \"pim680."
-"\" The letters give us a code for the part of speech, and the number refers "
-"to Strong's dictionary reference.  Let's look up the definition (p. 879). "
-"\"680. Haptomai; from hapto (681), touch. Refers to such handling of an "
-"object as to exert a modifying influence upon it... Distinguished from "
-"pselaphao (5584), which actually only means to touch the surface of "
-"something. \" Now look up \"pim.\" The grammar codes in Zodhiates come right "
-"after Revelation; on p. 849 we see that pim stands for \"present imperative "
-"active (80)\". On p.857, \"Present Imperative.  In the active voice, it may "
-"indicate a command to do something in the future which involves continuous "
-"or repeated action or, when it is negated, a command to stop doing "
-"something. \" This is a negative command, so it is to stop doing something "
-"that is already occurring. So, what have we found?"
+"Definition: Turning to John 20:17, above the word \"Touch\" we see "
+"\"pim680.\" The letters give us a code for the part of speech, and the "
+"number refers to Strong's dictionary reference.  Let's look up the "
+"definition (p. 879).  \"680.  Haptomai; from hapto (681), touch.  Refers to "
+"such handling of an object as to exert a modifying influence upon it... "
+"Distinguished from pselaphao (5584), which actually only means to touch the "
+"surface of something. \" Now look up \"pim.\" The grammar codes in Zodhiates"
+" come right after Revelation; on p. 849 we see that pim stands for \"present"
+" imperative active (80)\".  On p.857, \"Present Imperative.  In the active "
+"voice, it may indicate a command to do something in the future which "
+"involves continuous or repeated action or, when it is negated, a command to "
+"stop doing something. \" This is a negative command, so it is to stop doing "
+"something that is already occuring.  So, what have we found?"
 msgstr ""
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:77
+#: docs/howto/en/docbook/howto-interpretation.docbook:50
 msgid ""
 "<emphasis>Mary is already clinging to Jesus, and he is saying to stop "
 "holding him!</emphasis>"
 msgstr ""
 
 #. type: Content of: <chapter><section><section><title>
-#: docs/howto/en/docbook/howto-interpretation.docbook:82
+#: docs/howto/en/docbook/howto-interpretation.docbook:53
 msgid "Example 1B"
 msgstr "Esimerkki 1B"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:83
-#, fuzzy
-#| msgid ""
-#| "In James 5:14, <emphasis>Elders are told to pray and anoint someone who "
-#| "is sick</emphasis>.  What is this anointing?"
+#: docs/howto/en/docbook/howto-interpretation.docbook:54
 msgid ""
 "In James 5:14, <emphasis>Elders are told to pray and anoint someone who is "
-"sick</emphasis>. What is this anointing?"
+"sick</emphasis>.  What is this anointing?"
 msgstr ""
-"Jaak. 5:14, <emphasis>Vanhimmatvoidelkoot hänet öljyllä Herran nimessä ja "
-"rukoilkoot hänen puolestaan</emphasis>. Mitä on tämä voitelu?"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:86
+#: docs/howto/en/docbook/howto-interpretation.docbook:55
 msgid ""
 "Definition of aleipho (218) - \"to oil\" (Strong's); but we also have "
 "another Greek word translated \"anoint\", chrio (5548) - \"to smear or rub "
-"with oil, i.e. to consecrate to an office or religious service\" (Strong's). "
-"Since it's a verb, consider the tense also, \"apta\" aorist participle "
-"active. \"The aorist participle expresses simple action, as opposed to "
-"continuous action...When its relationship to the main verb is temporal, it "
+"with oil, i.e. to consecrate to an office or religious service\" (Strong's)."
+"  Since it's a verb, consider the tense also, \"apta\" aorist participle "
+"active.  \"The aorist participle expresses simple action, as opposed to "
+"continuous action...When its relaitonship to the main verb is temporal, it "
 "usually signifies action prior to that of the main verb.\" (Zodhiates p.851)"
 msgstr ""
 
-#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:100
+#. type: Content of:
+#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#: docs/howto/en/docbook/howto-interpretation.docbook:64
 msgid "Mt.6:17 But you, when you fast, anoint your head"
 msgstr "Matt.6:17 Kun sinä paastoat, voitele hiuksesi"
 
-#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:104
-msgid "Mk.16:1 [the women] brought spices that they might come and anoint Him."
+#. type: Content of:
+#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#: docs/howto/en/docbook/howto-interpretation.docbook:65
+msgid ""
+"Mk.16:1 [the women] brought spices that they might come and anoint Him."
 msgstr "Mk.16:1 [naiset] ostivat tuoksuöljyä mennäkseen voitelemaan Hänet."
 
-#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:108
+#. type: Content of:
+#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#: docs/howto/en/docbook/howto-interpretation.docbook:66
 msgid ""
-"Mk.6:13 And they were...anointing with oil many sick people and healing them."
+"Mk.6:13 And they were...anointing with oil many sick people and healing "
+"them."
 msgstr "Mk.6:13 Ja he...voitelivat monta sairasta ja paransivat heidät."
 
-#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:112
+#. type: Content of:
+#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#: docs/howto/en/docbook/howto-interpretation.docbook:67
 msgid "Lk.7:38 [...] kissing His feet and anointing them with the perfume"
 msgstr "Lk.7:38 [...] suuteli Hänen jalkojaan ja voiteli ne tuoksuöljyllä"
 
-#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:116
+#. type: Content of:
+#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#: docs/howto/en/docbook/howto-interpretation.docbook:68
 msgid ""
 "Jn.12:3 Mary [...] anointed the feet of Jesus, and wiped them with her hair"
-msgstr ""
-"Joh.12:3 Maria [...] voiteli Jeesuksen jalat, ja kuivasi ne hiuksillaan"
+msgstr "Joh.12:3 Maria [...] voiteli Jeesuksen jalat, ja kuivasi ne hiuksillaan"
 
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:97
-msgid ""
-"Cross-references for aleipho: <placeholder type=\"orderedlist\" id=\"0\"/>"
+#: docs/howto/en/docbook/howto-interpretation.docbook:62
+msgid "Cross-references for aleipho: <placeholder type=\"orderedlist\" id=\"0\"/>"
 msgstr ""
 
-#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:125
+#. type: Content of:
+#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#: docs/howto/en/docbook/howto-interpretation.docbook:74
 msgid ""
-"Lk.4:18 <quote>The Spirit of the Lord is upon me, because He has anointed me "
-"to preach [...]</quote>"
-msgstr ""
-"Lk.4:18 <quote>Herran Henki on minun ylläni, sillä hän on voidelut minut "
-"julistamaan [...]</quote>"
+"Lk.4:18 <quote>The Spirit of the Lord is upon me, because He has anointed me"
+" to preach [...]</quote>"
+msgstr "Lk.4:18 <quote>Herran Henki on minun ylläni, sillä hän on voidelut minut julistamaan [...]</quote>"
 
-#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:130
+#. type: Content of:
+#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#: docs/howto/en/docbook/howto-interpretation.docbook:75
 msgid "Acts 4:27 Jesus, whom Thou hast anointed"
 msgstr "Acts 4:27 Jeesus, jonka Sinä olit voidellut"
 
-#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:133
+#. type: Content of:
+#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#: docs/howto/en/docbook/howto-interpretation.docbook:76
 msgid "Acts 10:38 God anointed Jesus with the Holy Ghost and power"
 msgstr "Apt 10:38 Jumala voiteli Jeesuksen Pyhällä Hengellä ja voimalla"
 
-#. type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:137
+#. type: Content of:
+#. <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
+#: docs/howto/en/docbook/howto-interpretation.docbook:77
 msgid "2 Cor.1:21 Now He who...anointed us is God"
 msgstr "2 Cor.1:21 Nyt Hän, kuka.... voitelee meitä, on Jumala"
 
 #. type: Content of: <chapter><section><section><itemizedlist><listitem><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:122
+#: docs/howto/en/docbook/howto-interpretation.docbook:72
 msgid "Cross-references of chrio: <placeholder type=\"orderedlist\" id=\"0\"/>"
 msgstr ""
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:142
-#, fuzzy
-#| msgid ""
-#| "So what's the difference between aleipho and chrio? Look back over the "
-#| "cross-references and the definitions, and sum up the difference: "
-#| "<emphasis>&quot;aleipho&quot; is a practical use of oil and &quot;"
-#| "chrio&quot; is a spiritual</emphasis>"
+#: docs/howto/en/docbook/howto-interpretation.docbook:82
 msgid ""
-"So what's the difference between aleipho and chrio? Look back over the cross-"
-"references and the definitions, and sum up the difference: <emphasis>"
-"\"aleipho\" is a practical use of oil and \"chrio\" is a spiritual</emphasis>"
+"So what's the difference between aleipho and chrio? Look back over the "
+"cross-references and the definitions, and sum up the difference: "
+"<emphasis>&quot;aleipho&quot; is a practical use of oil and "
+"&quot;chrio&quot; is a spiritual</emphasis>"
 msgstr ""
-"Mikä ero on sanoilla aleipho ja chrio? Katso jälleen ristiviittausta ja "
-"määritelmää, ja selvitä ero: <emphasis>&quot;aleipho&quot; on öljyn "
-"jokapäiväinen käyttö ja &quot;chrio&quot; on hengellinen</emphasis>"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:147
-#, fuzzy
-#| msgid ""
-#| "As an illustration (although the word is not used) of the practical use "
-#| "of oil at that time, when the good Samaritan cared for the man beat up by "
-#| "robbers he poured oil and wine in the wound.  So oil had a medicinal use "
-#| "in Jesus' day."
+#: docs/howto/en/docbook/howto-interpretation.docbook:85
 msgid ""
 "As an illustration (although the word is not used) of the practical use of "
 "oil at that time, when the good Samaritan cared for the man beat up by "
-"robbers he poured oil and wine in the wound. So oil had a medicinal use in "
+"robbers he poured oil and wine in the wound.  So oil had a medicinal use in "
 "Jesus' day."
 msgstr ""
-"Öljyn jokapäiväisen käytön kuvaus (joskin sanaa ei käytetä) siihen aikaan "
-"kun laupias samarialainen huolehti ryöstäjien lyömän miehen hän kaatoi öljyä "
-"ja viiniä haavaan. Öljyllä oli siis lääketieteellinen käyttö Jeesuksen "
-"päivinä."
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:151
-#, fuzzy
-#| msgid ""
-#| "Now let's apply what we just learned by this word study to James 5:14 "
-#| "<emphasis>\"Is any among you sick? Let him call for the elders of the "
-#| "church; and let them pray over him, anointing him with oil in the name of "
-#| "the Lord.\"</emphasis> Is \"anointing\" spiritual or practical? Practical!"
+#: docs/howto/en/docbook/howto-interpretation.docbook:89
 msgid ""
 "Now let's apply what we just learned by this word study to James 5:14 "
 "<emphasis>\"Is any among you sick? Let him call for the elders of the "
 "church; and let them pray over him, anointing him with oil in the name of "
-"the Lord.\"</emphasis>Is \"anointing\" spiritual or practical? Practical!"
+"the Lord.\"</emphasis> Is \"anointing\" spiritual or practical? Practical!"
 msgstr ""
-"Lisää nyt juurioppimamme tähän Jaak. 5:14 sanantutkimiseen <emphasis>\"Jos "
-"joku teistä on sairaana, kutsukoon hän luokseen seurakunnan vanhimmat. Nämä "
-"voidelkoot hänet öljyllä Herran nimessä ja rukoilkoot hänen puolestaan "
-"Herran nimeen.\"</emphasis> Onko \"voitelu\" hengellistä vai jokapäiväistä? "
-"Jokapäiväistä!"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:157
+#: docs/howto/en/docbook/howto-interpretation.docbook:93
 msgid ""
 "And the tense in Greek, the aorist participle, would be better translated "
 "\"having anointed,\" so the order is the anointing first, then the prayer "
-"(\"in the name of the Lord\"refers to the prayer, not the anointing). James "
-"5 is saying that the elders should give the sick person medicine and pray "
-"for him in the name of the Lord. Doesn't that express a beautiful balance of "
-"practical and spiritual in our God!"
+"(\"in the name of the Lord\"refers to the prayer, not the anointing).  James"
+" 5 is saying that the elders should give the sick person medicine and pray "
+"for him in the name of the Lord.  Doesn't that express a beautiful balance "
+"of practical and spiritual in our God!"
 msgstr ""
 
 #. type: Content of: <chapter><section><title>
-#: docs/howto/en/docbook/howto-interpretation.docbook:167
+#: docs/howto/en/docbook/howto-interpretation.docbook:103
 msgid "Rule 2 - Interpret within the biblical context"
 msgstr "Sääntö 2 - Tulkitse raamatullisia yhteyksiä"
 
 #. type: Content of: <chapter><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:168
-#, fuzzy
-#| msgid ""
-#| "Interpret scripture in harmony with other scripture.  What do the verses "
-#| "on each side say? What is the theme of the chapter? the book? Does your "
-#| "interpretation fit with these? If not, it is flawed.  Usually, the "
-#| "context supplies what we need to correctly interpret the passage.  "
-#| "Context is key.  If confusion remains as to the meaning after we have "
-#| "interpreted the text within its context, we have to look further."
+#: docs/howto/en/docbook/howto-interpretation.docbook:105
 msgid ""
-"Interpret scripture in harmony with other scripture. What do the verses on "
-"each side say? What is the theme of the chapter? The book? Does your "
-"interpretation fit with these? If not, it is flawed. Usually, the context "
-"supplies what we need to correctly interpret the passage. Context is key. If "
-"confusion remains as to the meaning after we have interpreted the text "
+"Interpret scripture in harmony with other scripture.  What do the verses on "
+"each side say? What is the theme of the chapter? the book? Does your "
+"interpretation fit with these? If not, it is flawed.  Usually, the context "
+"supplies what we need to correctly interpret the passage.  Context is key.  "
+"If confusion remains as to the meaning after we have interpreted the text "
 "within its context, we have to look further."
 msgstr ""
-"Tekstin tulkinta sopusoinnussa muiden tekstien kanssa. Mitä kukin jae sanoo? "
-"Mikä on luvun teema? Kirjan teema? Sopiiko tulkintasi näihin? Jos ei, se on "
-"virheelinen. Tavallisesti asiayhteys varustaa meidät tulkitsemaan "
-"tekstinkohdan oikein. Asiayhteys on avain. Jos tekstinkohdan tulkinnan "
-"jälkeen jää vielä sekavuutta, meidän on katsottava eteenpäin."
 
 #. type: Content of: <chapter><section><section><title>
-#: docs/howto/en/docbook/howto-interpretation.docbook:176
+#: docs/howto/en/docbook/howto-interpretation.docbook:110
 msgid "Example 2A"
 msgstr "Esimerkki 2A"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:177
-#, fuzzy
-#| msgid ""
-#| "In a previous lesson we considered Jn.3:5 <emphasis>\"born of water and "
-#| "the Spirit.\"</emphasis> In context, what is the water under discussion "
-#| "here?"
+#: docs/howto/en/docbook/howto-interpretation.docbook:111
 msgid ""
 "In a previous lesson we considered Jn.3:5 <emphasis>\"born of water and the "
-"Spirit.\"</emphasis>In context, what is the water under discussion here?"
+"Spirit.\"</emphasis> In context, what is the water under discussion here?"
 msgstr ""
-"Edellisellä tunnilla ajattelimme Joh.3:5 <emphasis>\"syntynyt vedestä ja "
-"Hengestä.\"</emphasis> Mitä on keskustelussa oleva vesi tässä "
-"asiayhteydessään?"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:180
-#, fuzzy
-#| msgid ""
-#| "Water baptism is not under discussion here, which would be a big switch "
-#| "from the subject being discussed by Jesus and Nicodemus.  Watch out for a "
-#| "sudden change of topic, it may be a clue that your interpretation has "
-#| "been derailed! The water is the amniotic fluid, \"born of water\" = "
-#| "natural birth."
+#: docs/howto/en/docbook/howto-interpretation.docbook:113
 msgid ""
-"Water baptism is not under discussion here, which would be a big switch from "
-"the subject being discussed by Jesus and Nicodemus. Watch out for a sudden "
-"change of topic, it may be a clue that your interpretation has been "
-"derailed! The water is the amniotic fluid, \"born of water\" = natural birth."
+"Water baptism is not under discussion here, which would be a big switch from"
+" the subject being discussed by Jesus and Nicodemus.  Watch out for a sudden"
+" change of topic, it may be a clue that your interpretation has been "
+"derailed! The water is the amniotic fluid, \"born of water\" = natural "
+"birth."
 msgstr ""
-"Vesikasteesta ei keskustella tässä, mikä on suuri muutos Juuesuksen ja "
-"Nikodeemuksen keskustelun aiheeseen. Tarkastele aiheen äkillistä muutosta. "
-"Johtolanka tulkinnastasi on suistunut raiteiltaan! Vesi on näytevettä, "
-"\"syntynyt vedestä\" = luonnollinen syntymä."
 
 #. type: Content of: <chapter><section><section><title>
-#: docs/howto/en/docbook/howto-interpretation.docbook:187
+#: docs/howto/en/docbook/howto-interpretation.docbook:117
 msgid "Example 2B"
 msgstr "Esimerkki 2B"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:188
-#, fuzzy
-#| msgid ""
-#| "1 Cor.14:34 <quote>Let the women keep silent in the churches</quote> has "
-#| "to be taken within the biblical context of 1 Cor.11:5 <quote>every woman "
-#| "[...] while praying or prophesying [...]</quote>"
+#: docs/howto/en/docbook/howto-interpretation.docbook:118
 msgid ""
-"1 Cor.14:34 <quote>Let the women keep silent in the churches</quote>has to "
+"1 Cor.14:34 <quote>Let the women keep silent in the churches</quote> has to "
 "be taken within the biblical context of 1 Cor.11:5 <quote>every woman [...] "
 "while praying or prophesying [...]</quote>"
 msgstr ""
-"1 Kor.14:34 <quote>Nainen vaietkoon seurakunnassa</quote> on otettu "
-"raamatulliseen yhteyteen 1 Kor.11:5 <quote>jokainen nainen [...] "
-"rukoillessaan tai profetoidessaan [...]</quote>"
 
 #. type: Content of: <chapter><section><section><title>
-#: docs/howto/en/docbook/howto-interpretation.docbook:195
+#: docs/howto/en/docbook/howto-interpretation.docbook:121
 msgid "Example 2C"
 msgstr "Esimerkki 2C"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:196
-#, fuzzy
-#| msgid ""
-#| "Acts 2:38 <quote>And Peter said to them, &quot;Repent, and let each of "
-#| "you be baptized in the name of Jesus Christ for the forgiveness of your "
-#| "sins [...]&quot;</quote>.  Is this teaching baptismal regeneration? If "
-#| "this was the only verse of scripture we had, we would have to conclude "
-#| "that.  But in the light of the clear teaching elsewhere that regeneration "
-#| "happens by faith in Christ, we have to interpret it otherwise.  Peter is "
-#| "urging baptism as a way for his hearers to respond to the gospel.  If "
-#| "baptism were the pathway to being born again, how could Paul write 1 "
-#| "Cor.1:17 <emphasis>\"For Christ did not send me to baptize, but to preach "
-#| "the gospel\"</emphasis>?"
+#: docs/howto/en/docbook/howto-interpretation.docbook:122
 msgid ""
-"Acts 2:38 <quote>And Peter said to them, \"Repent, and let each of you be "
-"baptized in the name of Jesus Christ for the forgiveness of your sins "
-"[...]\"</quote>. Is this teaching baptismal regeneration? If this was the "
-"only verse of scripture we had, we would have to conclude that. But in the "
-"light of the clear teaching elsewhere that regeneration happens by faith in "
-"Christ, we have to interpret it otherwise. Peter is urging baptism as a way "
-"for his hearers to respond to the gospel. If baptism were the pathway to "
-"being born again, how could Paul write 1 Cor.1:17 <emphasis>\"For Christ did "
-"not send me to baptize, but to preach the gospel\"</emphasis>?"
+"Acts 2:38 <quote>And Peter said to them, &quot;Repent, and let each of you "
+"be baptized in the name of Jesus Christ for the forgiveness of your sins "
+"[...]&quot;</quote>.  Is this teaching baptismal regeneration? If this was "
+"the only verse of scripture we had, we would have to conclude that.  But in "
+"the light of the clear teaching elsewhere that regeneration happens by faith"
+" in Christ, we have to interpret it otherwise.  Peter is urging baptism as a"
+" way for his hearers to respond to the gospel.  If baptism were the pathway "
+"to being born again, how could Paul write 1 Cor.1:17 <emphasis>\"For Christ "
+"did not send me to baptize, but to preach the gospel\"</emphasis>?"
 msgstr ""
-"Apt. 2:38 <quote>Pietari vastasi: &quot;Kääntykää ja ottakaa itse kukin "
-"kaste Jeesuksen Kristuksen nimeen, jotta syntinne annettaisiin anteeksi "
-"[...] &quot; </quote>. Onko tämä opetus kasteesta uudestisyntymiselle? Jos "
-"tämä olisi ainoa meillä oleva tekstien jae, me päättelisimme näin. Mutta "
-"selvän opetuksen valossa uudestisyntyminen tapahtuu uskolla Kristukseen. "
-"Meidän tulee tulkita se toisin. Pietari kehottaa hänen kuulijoitaan ottamaan "
-"kasteen evankeliumin vaikuttamana. Jos kaste olisi tie uudelleensyntymiseen, "
-"kuinka Pietari kirjoittaisi 1 Kor.1:17 <emphasis>\"Eihän Kristus lähettänyt "
-"minua kastamaan vaan julistamaan evankeliumia\"</emphasis>?"
 
 #. type: Content of: <chapter><section><title>
-#: docs/howto/en/docbook/howto-interpretation.docbook:211
+#: docs/howto/en/docbook/howto-interpretation.docbook:134
 msgid "Rule 3 - Interpret within the historical and cultural context"
 msgstr "Rule 3 - Tulkitse historiallisia ja kultturellisia yhteyksiä"
 
 #. type: Content of: <chapter><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:213
-#, fuzzy
-#| msgid ""
-#| "At first we are not asking <quote>What does it mean to me?</quote> but "
-#| "<quote>What did it mean to the original readers?</quote>; later we can "
-#| "ask, <quote>What does it mean to me?</quote>.  We have to take into "
-#| "account the historical and cultural background of the author and the "
-#| "recipients."
+#: docs/howto/en/docbook/howto-interpretation.docbook:136
 msgid ""
-"At first we are not asking <quote>What does it mean to me?</quote>but "
+"At first we are not asking <quote>What does it mean to me?</quote> but "
 "<quote>What did it mean to the original readers?</quote>; later we can ask, "
-"<quote>What does it mean to me?</quote>. We have to take into account the "
+"<quote>What does it mean to me?</quote>.  We have to take into account the "
 "historical and cultural background of the author and the recipients."
 msgstr ""
-"Emme kysy ensiksi <quote>Mitä se merkitsee minulle?</quote> vaan <quote>Mitä "
-"se merkitsi alkuperäisille lukijoille?</quote>; myöhemmin voimme kysyä, "
-"<quote>Mitä se merkitsee minulle?</quote>. Meidän tulee ottaa huomioon "
-"kirjoittajan ja saajien historiallinen ja kuturellinen tausta."
 
 #. type: Content of: <chapter><section><section><title>
-#: docs/howto/en/docbook/howto-interpretation.docbook:221
+#: docs/howto/en/docbook/howto-interpretation.docbook:139
 msgid "Example 3A"
 msgstr "Esimerkki 3A"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:223
-#, fuzzy
-#| msgid ""
-#| "<quote>3 days &amp; 3 nights</quote> (Mt.12:40) have led some to come up "
-#| "with a \"Wednesday crucifixion theory,\" esp. the cult of Armstrongism.  "
-#| "How could Jesus die on Friday afternoon and rise Sunday morning yet \"be "
-#| "raised on the third day\" (Mt.16:21)? Exact meanings of \"three\" or "
-#| "\"days\" won't help explain the apparent contradiction."
+#: docs/howto/en/docbook/howto-interpretation.docbook:139
 msgid ""
-"<quote>3 days &amp; 3 nights</quote>(Mt.12:40) have led some to come up with "
-"a \"Wednesday crucifixion theory,\" esp. the cult of Armstrongism. How could "
-"Jesus die on Friday afternoon and rise Sunday morning yet \"be raised on the "
-"third day\" (Mt.16:21)? Exact meanings of \"three\" or \"days\" won't help "
-"explain the apparent contradiction."
+"<quote>3 days &amp; 3 nights</quote> (Mt.12:40) have led some to come up "
+"with a \"Wednesday crucifixion theory,\" esp. the cult of Armstrongism.  How"
+" could Jesus die on Friday afternoon and rise Sunday morning yet \"be raised"
+" on the third day\" (Mt.16:21)? Exact meanings of \"three\" or \"days\" "
+"won't help explain the apparent contradiction."
 msgstr ""
-"<quote>3 päivää &amp; 3 yötä</quote> (Matt.12:40) on johdattanut muutamia "
-"\"Keskiviikon ristiinnaulitsemisen teoriaan,\" erityisesti Armstrongismin "
-"kultissa. Kuinka Jeesus kuoli perjantaina iltapäivällä ja nousi ylös "
-"sunnuntaiaamuna kuten sanotaan \"nousi ylös kolmantena päivänä"
-"\" (Matt.16:21)? Sanojen \"kolme\" or \"päivää\" täsmällinen merkitys ei "
-"auta selittämään silmiinpistävää ristiriitaa."
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:229
-#, fuzzy
-#| msgid ""
-#| "We need an historical tidbit: Jews counted any part of a day as a full "
-#| "day, as we would count buckets of water (if there were six and one-half "
-#| "buckets of water, we would say there were 7 buckets of water even if one "
-#| "was only partly full).  So to the Jewish mind, any part of a day counted "
-#| "as a full day, and days started at 6 p.m. and ended at 6 p.m.  Friday "
-#| "from 3 p.m. to 6 p.m. = day 1.  Friday 6 p.m. to Saturday 6 p.m. = day "
-#| "2.  Saturday 6 p.m. to Sunday 5 or so a.m. = day 3.  Interpreting within "
-#| "the cultural context keeps us out of trouble."
+#: docs/howto/en/docbook/howto-interpretation.docbook:144
 msgid ""
 "We need an historical tidbit: Jews counted any part of a day as a full day, "
 "as we would count buckets of water (if there were six and one-half buckets "
 "of water, we would say there were 7 buckets of water even if one was only "
-"partly full). So to the Jewish mind, any part of a day counted as a full "
-"day, and days started at 6 p.m. and ended at 6 p.m. Friday from 3 p.m. to 6 "
-"p.m. = day 1. Friday 6 p.m. to Saturday 6 p.m. = day 2. Saturday 6 p.m. to "
-"Sunday 5 or so a.m. = day 3. Interpreting within the cultural context keeps "
-"us out of trouble."
+"partly full).  So to the Jewish mind, any part of a day counted as a full "
+"day, and days started at 6 p.m. and ended at 6 p.m.  Friday from 3 p.m. to 6"
+" p.m. = day 1.  Friday 6 p.m. to Saturday 6 p.m. = day 2.  Saturday 6 p.m. "
+"to Sunday 5 or so a.m. = day 3.  Interpreting within the cultural context "
+"keeps us out of trouble."
 msgstr ""
-"Tarvitsemme historiallisen makupalan: Juutalaiset laskivat kaikki päivän "
-"osat yhdeksi päiväksi, kuten me laskemme ämpärillistä vettä (jos on kuusi ja "
-"puoli ämpärillistä vettä, voimme sanoa, että on 7 ämpärillistä vettä jopa, "
-"vaikka yksi olisi vain osittain täysi). Siten juutalaisessa ajattelussa mikä "
-"tahansa päivän osa lasketaan koko päiväksi. Päivät alkaen klo 6 i.p. ja "
-"päättyen klo 6 i.p. Perjantaista klo 3 i.p. klo 6 i.p. = päivä 1. Perjantai "
-"klo 6 i.p. lauantaihin klo 6 i.p. = toinen päivä. Lauantaista klo 6 i.p. "
-"sunnuntaihin klo 5 i.p. on kolmas päivä. Kulttuurisidonnainen tulkinta "
-"poistaa ongelman."
 
 #. type: Content of: <chapter><section><section><title>
-#: docs/howto/en/docbook/howto-interpretation.docbook:240
+#: docs/howto/en/docbook/howto-interpretation.docbook:151
 msgid "Example 3B"
 msgstr "Esimerkki 3B"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:241
-#, fuzzy
-#| msgid ""
-#| "Gen.15:7-21.  The historical context is that cutting animals in two and "
-#| "then walking between the pieces was the normal way of entering a contract "
-#| "in Abraham's day.  Both parties walked between, taking the pledge that "
-#| "dismemberment would happen to them if they didn't live up to their part "
-#| "of the contract.  But in this case only God goes thru, making it a "
-#| "unilateral covenant."
+#: docs/howto/en/docbook/howto-interpretation.docbook:151
 msgid ""
-"Gen.15:7-21. The historical context is that cutting animals in two and then "
-"walking between the pieces was the normal way of entering a contract in "
-"Abraham's day. Both parties walked between, taking the pledge that "
+"Gen.15:7-21.  The historical context is that cutting animals in two and then"
+" walking between the pieces was the normal way of entering a contract in "
+"Abraham's day.  Both parties walked between, taking the pledge that "
 "dismemberment would happen to them if they didn't live up to their part of "
-"the contract. But in this case only God goes thru, making it a unilateral "
+"the contract.  But in this case only God goes thru, making it a unilateral "
 "covenant."
 msgstr ""
-"Moos.15:7-21. Historiallinen asiayhteys on että  Aabrahamin päivinä tehtiin "
-"sopimuksia halkaisemalla eläimet kahdeksi kappaleeksi ja sitten kävelemällä "
-"palojen välissä. Kumpikin osapuoli käveli välissä ottaen pantin. Pantin "
-"rikkipaloitteleminen tapahtuu niille, jos he eivät elä sopimuksen mukaan. "
-"Mutta tässä tapauksessa vain Jumala toteuttaa sen yksipuolisella "
-"sopimuksella."
 
 #. type: Content of: <chapter><section><title>
-#: docs/howto/en/docbook/howto-interpretation.docbook:251
+#: docs/howto/en/docbook/howto-interpretation.docbook:159
 msgid "Rule 4 - Interpret according to the normal usage of words in language"
 msgstr "Sääntö 4 - Tulkitse kielen sanojen normaalikäytön mukaan"
 
 #. type: Content of: <chapter><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:253
-#, fuzzy
-#| msgid ""
-#| "Let literal language be literal and figurative language be figurative.  "
-#| "And watch out for idioms, which have special meanings."
+#: docs/howto/en/docbook/howto-interpretation.docbook:160
 msgid ""
-"Let literal language be literal and figurative language be figurative. And "
+"Let literal language be literal and figurative language be figurative.  And "
 "watch out for idioms, which have special meanings."
 msgstr ""
-"Antakaamme kirjaimellisen kielen olla kirjaimellista ja kuvaavan kielen olla "
-"kuvaavaa. Ja katso sanontoja, joilla on erityinen merkitys."
 
 #. type: Content of: <chapter><section><section><title>
-#: docs/howto/en/docbook/howto-interpretation.docbook:257
+#: docs/howto/en/docbook/howto-interpretation.docbook:163
 msgid "Example 4A"
 msgstr "Esimerkki 4A"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:259
-#, fuzzy
-#| msgid "<quote>evil eye</quote> in Mt.6:23."
-msgid "<quote>evil eye</quote>in Mt.6:23."
-msgstr "<quote>paha silmä</quote> Mt.6:23."
-
-#. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:260
-#, fuzzy
-#| msgid ""
-#| "Rule 1, definition of \"evil\" and \"eye\" - no help here.  Rule 2, "
-#| "context: seems to confuse us even more.  It doesn't seem to fit with what "
-#| "goes before and after! This should tip us off that we aren't "
-#| "understanding it rightly!!"
-msgid ""
-"Rule 1, definition of \"evil\" and \"eye\" - no help here. Rule 2, context: "
-"seems to confuse us even more. It doesn't seem to fit with what goes before "
-"and after! This should tip us off that we aren't understanding it rightly!!"
+#: docs/howto/en/docbook/howto-interpretation.docbook:164
+msgid "<quote>evil eye</quote> in Mt.6:23."
 msgstr ""
-"Sääntö 1, sanojen \"evil\" ja \"eye\" määritelmät - ei opastusta tässä. "
-"Sääntö 2, asiayhteys: sekoittaa meitä yhä enemmän. Ei näytä sopivan aiempaan "
-"ja jäljempään tekstiin! Tämän pitäisi näyttää meille, että emme ymmärrä "
-"oikein!!"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:264
-#, fuzzy
-#| msgid ""
-#| "What we have here is a Hebrew idiom, <quote>evil eye</quote>.  Let's look "
-#| "up other uses of this idiom: Mt.20:15 \"<emphasis>Is it not lawful for me "
-#| "to do what I wish with what is my own? Or is your eye envious [lit.\"evil"
-#| "\"] because I am generous [lit. \"good\"]?</emphasis>\" We find that "
-#| "having an \"evil eye\" is a Hebrew idiom for being stingy or envious.  "
-#| "Now go back to Mt.6 and notice how this understanding ties in so "
-#| "perfectly to the context."
+#: docs/howto/en/docbook/howto-interpretation.docbook:165
 msgid ""
-"What we have here is a Hebrew idiom, <quote>evil eye</quote>. Let's look up "
-"other uses of this idiom: Mt.20:15 \" <emphasis>Is it not lawful for me to "
+"Rule 1, definition of \"evil\" and \"eye\" - no help here.  Rule 2, context:"
+" seems to confuse us even more.  It doesn't seem to fit with what goes "
+"before and after! This should tip us off that we aren't understanding it "
+"rightly!!"
+msgstr ""
+
+#. type: Content of: <chapter><section><section><para>
+#: docs/howto/en/docbook/howto-interpretation.docbook:168
+msgid ""
+"What we have here is a Hebrew idiom, <quote>evil eye</quote>.  Let's look up"
+" other uses of this idiom: Mt.20:15 \"<emphasis>Is it not lawful for me to "
 "do what I wish with what is my own? Or is your eye envious [lit.\"evil\"] "
 "because I am generous [lit. \"good\"]?</emphasis>\" We find that having an "
-"\"evil eye\" is a Hebrew idiom for being stingy or envious. Now go back to "
+"\"evil eye\" is a Hebrew idiom for being stingy or envious.  Now go back to "
 "Mt.6 and notice how this understanding ties in so perfectly to the context."
 msgstr ""
-"Meillä on tässä heprealainen sanonta, <quote>evil eye</quote>. "
-"Tarkastellaanpa tämän sanonnan muita merkityksiä: Mt.20:15 \"<emphasis>ja "
-"kai minä saan omallani tehdä mitä haluan? Katsotko sinä karsaasti [lit.\"evil"
-"\"] sitä, että minä olen hyvä [lit. \"jalo\"]?</emphasis>\" Huomaamme, että "
-"\"evil eye\" on heprealainen sanonta olla kitsas tai kateellinen. Palaa nyt "
-"takaisin  Matteuksen 6. lukuun ja huomaa kuinka tämä ymmärtäminen sitoutuu "
-"niin täydellisesti yhteen asiayhteyden kanssa."
 
 #. type: Content of: <chapter><section><section><title>
-#: docs/howto/en/docbook/howto-interpretation.docbook:275
+#: docs/howto/en/docbook/howto-interpretation.docbook:174
 msgid "Example 4B"
 msgstr "Esimerkki 4B"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:276
+#: docs/howto/en/docbook/howto-interpretation.docbook:175
 msgid "Is.59:1 <quote>The Lord's hand is not short;</quote>"
 msgstr "Is.59:1 <quote>Herran käsi ei ole lyhennetty;</quote>"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:278
+#: docs/howto/en/docbook/howto-interpretation.docbook:176
 msgid "Deut.33:27 <quote>Underneath are the everlasting arms.</quote>"
-msgstr ""
-"5. Moos. 33:27 <quote>Sinun turvasi on ikiaikojen Jumala, sinua kantavat "
-"ikuiset käsivarret. Hän karkotti tieltäsi viholliset ja käski sinun hävittää "
-"heidät.</quote>"
+msgstr "5. Moos. 33:27 <quote>Sinun turvasi on ikiaikojen Jumala, sinua kantavat ikuiset käsivarret. Hän karkotti tieltäsi viholliset ja käski sinun hävittää heidät.</quote>"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:280
-#, fuzzy
-#| msgid ""
-#| "References to body parts of God are used by Latter-Day Saints to prove "
-#| "that God was once a man just as we are.  Once they convince people of "
-#| "that, they go on to teach that we can become God just like He is! At a "
-#| "lecture he was giving, a group of Mormon elders challenged Walter Martin "
-#| "(author of <emphasis>Kingdom of the Cults</emphasis>)  with an "
-#| "enumeration of verses like these.  Dr. Martin then asked the Mormons to "
-#| "read one more scripture: Ps.91:4 <quote>He will cover you with His "
-#| "feathers; And under His wings shalt thou trust</quote>.  W.M. said, "
-#| "<quote>By the same rules of interpretation that you just proved God to be "
-#| "a man, you just proved that He is a bird</quote>.  The Mormons had to "
-#| "laugh as they realised the ridiculousness of their position."
+#: docs/howto/en/docbook/howto-interpretation.docbook:178
 msgid ""
 "References to body parts of God are used by Latter-Day Saints to prove that "
-"God was once a man just as we are. Once they convince people of that, they "
+"God was once a man just as we are.  Once they convince people of that, they "
 "go on to teach that we can become God just like He is! At a lecture he was "
 "giving, a group of Mormon elders challenged Walter Martin (author of "
-"<emphasis>Kingdom of the Cults</emphasis>) with an enumeration of verses "
-"like these. Dr. Martin then asked the Mormons to read one more scripture: "
+"<emphasis>Kingdom of the Cults</emphasis>)  with an enumeration of verses "
+"like these.  Dr. Martin then asked the Mormons to read one more scripture: "
 "Ps.91:4 <quote>He will cover you with His feathers; And under His wings "
-"shalt thou trust</quote>. W.M. said, <quote>By the same rules of "
-"interpretation that you just proved God to be a man, you just proved that He "
-"is a bird</quote>. The Mormons had to laugh as they realised the "
+"shalt thou trust</quote>.  W.M. said, <quote>By the same rules of "
+"interpretation that you just proved God to be a man, you just proved that He"
+" is a bird</quote>.  The Mormons had to laugh as they realised the "
 "ridiculousness of their position."
 msgstr ""
-"Viittaamalla Jumalan ruumiinosiin mormonit todistavat, että Jumala oli "
-"kerran mies kuten me. Kun he ovat vakuuttaneet ihmiset siitä, he jatkavat "
-"opettamista, että me voimme tulla Jumaliksi juuri kuten Hän on! Hänen "
-"antamalla luennolla ryhmä vanhempia mormoneja haastoi Walter Martinin "
-"(<emphasis>Kulttien kuningaskunnan</emphasis> tekijä) riitaan lukuisalla "
-"joukolla samanlaisia jakeita. Tohtori Martin pyysi mormoneja lukemaan yhden "
-"tekstin lisää. Ps. 91:4 <quote>Hän levittää siipensä yllesi, ja sinä olet "
-"turvassa niiden alla. Hänen uskollisuutensa on sinulle muuri ja kilpi.</"
-"quote>. W.M. sanoi, <quote>Samalla tulkinnalla, jolla todistitte Jumalan "
-"ihmiseksi, te todistitte, että hän on lintu.</quote>. Mormonien oli "
-"naurettava huomatessaan heidän paikaknsa."
 
 #. type: Content of: <chapter><section><title>
-#: docs/howto/en/docbook/howto-interpretation.docbook:297
+#: docs/howto/en/docbook/howto-interpretation.docbook:189
 msgid ""
 "Rule 5 - Understand the purpose of parables and the difference between a "
 "parable and an allegory"
-msgstr ""
-"Sääntö 5 - Ymmärrä kertomusten opetus ja ero opetuksen ja vertauskuvan "
-"välillä"
+msgstr "Sääntö 5 - Ymmärrä kertomusten opetus ja ero opetuksen ja vertauskuvan välillä"
 
 #. type: Content of: <chapter><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:299
+#: docs/howto/en/docbook/howto-interpretation.docbook:190
 msgid ""
-"An allegory is: <emphasis>A story where each element has a meaning.</"
-"emphasis>"
-msgstr ""
-"Vertauskuva on: <emphasis>Kertomus, jossa kullakin osalla on merkitys.</"
-"emphasis>"
+"An allegory is: <emphasis>A story where each element has a "
+"meaning.</emphasis>"
+msgstr "Vertauskuva on: <emphasis>Kertomus, jossa kullakin osalla on merkitys.</emphasis>"
 
 #. type: Content of: <chapter><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:302
+#: docs/howto/en/docbook/howto-interpretation.docbook:191
 msgid "Every parable is an allegory, true or false?"
 msgstr "Jokainen kertomus on vertauskuva, tosi vai epätosi?"
 
-# type: Content of: <chapter><section><para>
 #. type: Content of: <chapter><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:303
-#, fuzzy
-#| msgid ""
-#| "Some parables are allegories, for instance, the parable of the sower is "
-#| "an allegory: the seed is the word of God, the thorns are worries and "
-#| "greed, etc.  But most parables are not allegories but simply stories to "
-#| "illustrate one point.  It's dangerous to get our doctrine from parables; "
-#| "they can be twisted to say all sorts of things.  We need to get our "
-#| "doctrine from clear scriptures that lay it out; then if a parable "
-#| "illustrates that, fine."
+#: docs/howto/en/docbook/howto-interpretation.docbook:193
 msgid ""
 "Some parables are allegories, for instance, the parable of the sower is an "
 "allegory: the seed is the word of God, the thorns are worries and greed, "
-"etc. But most parables are not allegories but simply stories to illustrate "
-"one point. It's dangerous to get our doctrine from parables; they can be "
-"twisted to say all sorts of things. We need to get our doctrine from clear "
+"etc.  But most parables are not allegories but simply stories to illustrate "
+"one point.  It's dangerous to get our doctrine from parables; they can be "
+"twisted to say all sorts of things.  We need to get our doctrine from clear "
 "scriptures that lay it out; then if a parable illustrates that, fine."
 msgstr ""
-"Jotkut vertaukset ovat vertauskuvia. Esimerkiksi vertaus riidankylväjästä on "
-"vertauskuva. Siemen on Jumalan Sana. Orjantappurat ovat huolia ja ahneutta, "
-"jne. Mutta suurin osa vertauksista ei ole vertauskuvia, mutta yksinkertaisia "
-"kertomuksia valaisemaan yhden näkökulman.  On vaarallista tehdä "
-"opinkappaletta vertauksesta. Ne voivat olla monimutkaisia kaikkien asioiden "
-"sanomiseen. Meidän tulee  selvittää opinkappale selvistä kirjoituksista, "
-"jotka tuovat opin esille. Jos sen jälkeen vertaus havainnollistaa sen, hyvä."
 
 #. type: Content of: <chapter><section><section><title>
-#: docs/howto/en/docbook/howto-interpretation.docbook:311
+#: docs/howto/en/docbook/howto-interpretation.docbook:198
 msgid "Example 5A"
 msgstr "Esimerkki 5A"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:312
+#: docs/howto/en/docbook/howto-interpretation.docbook:199
 msgid ""
-"The parable of the widow with the unrighteous judge in Lk.18:1-8. This story "
-"illustrates one lesson: boldness in prayer.  If we draw it into an allegory, "
-"what do we have?"
-msgstr ""
-"Kertomus leskestä ja väärämielisestä tuomarista Luuk.18:1-8. Tämä kertomus "
-"valaisee yhden läksyn: lannistumaton rukoilu. Jos me sijoitamme sen "
-"vertauskuvaan, mitä meillä on?"
+"The parable of the widow with the unrighteous judge in Lk.18:1-8. This story"
+" illustrates one lesson: boldness in prayer.  If we draw it into an "
+"allegory, what do we have?"
+msgstr "Kertomus leskestä ja väärämielisestä tuomarista Luuk.18:1-8. Tämä kertomus valaisee yhden läksyn: lannistumaton rukoilu. Jos me sijoitamme sen vertauskuvaan, mitä meillä on?"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:315
+#: docs/howto/en/docbook/howto-interpretation.docbook:201
 msgid ""
 "All sorts of violence happens to the meanings: God is reluctant to protect "
 "the rights of widows, prayer \"bothers\" Him, etc."
-msgstr ""
-"Kaikenlaisia vääryyksiä tapahtuu merkityksille. Jumala on halutun "
-"puolustamaan leskiä, rukoilijat \"kiusaavat\" Häntä, jne."
+msgstr "Kaikenlaisia vääryyksiä tapahtuu merkityksille. Jumala on halutun puolustamaan leskiä, rukoilijat \"kiusaavat\" Häntä, jne."
 
 #. type: Content of: <chapter><section><section><title>
-#: docs/howto/en/docbook/howto-interpretation.docbook:320
+#: docs/howto/en/docbook/howto-interpretation.docbook:204
 msgid "Example 5B"
 msgstr "Esimerkki 5B"
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:321
-#, fuzzy
-#| msgid ""
-#| "The parable of the unrighteous steward in Lk.16:1-9.  What is the point "
-#| "of the parable? Is it an allegory?"
+#: docs/howto/en/docbook/howto-interpretation.docbook:205
 msgid ""
-"The parable of the unrighteous steward in Lk.16:1-9. What is the point of "
+"The parable of the unrighteous steward in Lk.16:1-9.  What is the point of "
 "the parable? Is it an allegory?"
 msgstr ""
-"Kertomus väärästä huoneenhaltijasta Luuk 16:1-9. Mikä on kertomuksen "
-"merkitys? Onko se vertauskuva? "
 
 #. type: Content of: <chapter><section><section><para>
-#: docs/howto/en/docbook/howto-interpretation.docbook:323
-#, fuzzy
-#| msgid ""
-#| "The steward is commended for only one thing, his shrewdness in using what "
-#| "he had to prepare for a time when he wouldn't have it.  But he is not "
-#| "commended for his unethical behavior in cheating his master."
+#: docs/howto/en/docbook/howto-interpretation.docbook:207
 msgid ""
-"The steward is commended for only one thing, his shrewdness in using what he "
-"had to prepare for a time when he wouldn't have it. But he is not commended "
-"for his unethical behavior in cheating his master."
+"The steward is commended for only one thing, his shrewdness in using what he"
+" had to prepare for a time when he wouldn't have it.  But he is not "
+"commended for his unethical behavior in cheating his master."
 msgstr ""
-"Huoneenhaltijaa kunnioitetaan vain yhden asian tähden, hänen viekkautensa "
-"valmistautuessaan virasta erottamisen jälkeiseen aikaan. Mutta häntä ei "
-"kunnioiteta hänen epäeettisen käytöksen takia mestarinsa petkuttamisesta."
 
-# type: Content of the bibletime entity
 #. type: Content of the bibletime entity
-#: docs/howto/en/docbook/index.docbook:5
+#: docs/howto/en/docbook/index.docbook:3
 msgid "<application>BibleTime</application>"
 msgstr "<application>BibleTime</application>"
 
-# type: Content of the kapp entity
 #. type: Content of the kapp entity
-#: docs/howto/en/docbook/index.docbook:6
+#: docs/howto/en/docbook/index.docbook:4
 msgid "&bibletimehandbook;"
 msgstr "&bibletimehandbook;"
 
@@ -2320,94 +1639,72 @@ msgid "The Biblestudy HowTo"
 msgstr "Raamatuntutkimisen HowTo"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><firstname>
-#: docs/howto/en/docbook/index.docbook:17
+#: docs/howto/en/docbook/index.docbook:18
 msgid "Bob"
 msgstr ""
 
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
-#: docs/howto/en/docbook/index.docbook:18
+#: docs/howto/en/docbook/index.docbook:19
 msgid "Harman"
 msgstr ""
 
 #. type: Content of: <book><bookinfo><authorgroup><author><surname>
-#: docs/howto/en/docbook/index.docbook:22
-msgid "The BibleTime Team"
+#: docs/howto/en/docbook/index.docbook:23
+msgid "The BibleTime team"
 msgstr ""
 
-#.  TRANS:ROLES_OF_TRANSLATORS 
+#.  TRANS:ROLES_OF_TRANSLATORS
 #. type: Content of: <book><bookinfo>
-#: docs/howto/en/docbook/index.docbook:26
+#: docs/howto/en/docbook/index.docbook:29
 msgid ""
-"<copyright> <year>1999-2014</year> <holder>The &bibletime; Team (bt-"
-"devel@crosswire.org)</holder> </copyright>"
+"<copyright> <year>2001-2009</year> <holder>The team of &bibletime; "
+"(info@bibletime.info)</holder> </copyright>"
 msgstr ""
 
-# type: Content of: <book><bookinfo><legalnotice><para>
 #. type: Content of: <book><bookinfo><legalnotice><para>
-#: docs/howto/en/docbook/index.docbook:31
-#, fuzzy
-#| msgid ""
-#| "This document was originally created by Mr. Bob Harman and is licensed "
-#| "under the terms of the license <link url=\"http://creativecommons.org/"
-#| "licenses/by-sa/3.0/\"> \"Creative Commons Attribution-Share Alike\"</"
-#| "link>."
+#: docs/howto/en/docbook/index.docbook:36
 msgid ""
-"This document was originally created by Mr. Bob Harman and is licensed under "
-"the terms of the license <ulink url=\"http://creativecommons.org/licenses/by-"
-"sa/3.0/\"> \"Creative Commons Attribution-Share Alike\"</ulink>."
+"This document was originally created by Mr. Bob Harman and is licensed under"
+" the terms of the license <link url=\"http://creativecommons.org/licenses"
+"/by-sa/3.0/\"> \"Creative Commons Attribution-Share Alike\"</link>."
 msgstr ""
-"Tämän asiakirjan alkuperäinen kirjoittaja on Mr. Bob Harman ja se on "
-"lisensioitu  <link url=\"http://creativecommons.org/licenses/by-sa/3.0/\"> "
-"\"Creative Commons Attribution-Share Alike\"</link> -lisenssillä."
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
-#: docs/howto/en/docbook/index.docbook:35
+#: docs/howto/en/docbook/index.docbook:42
 msgid ""
 "Scripture quotes are from the New American Standard Bible unless otherwise "
 "indicated."
-msgstr ""
-"Tekstien lainausmerkit ovat peräisin uudesta amerikkalaisesta standardi-"
-"Raamatusta, jos ei muuta ole sanottu"
+msgstr "Tekstien lainausmerkit ovat peräisin uudesta amerikkalaisesta standardi-Raamatusta, jos ei muuta ole sanottu"
 
 #. type: Content of: <book><bookinfo><abstract><title>
-#: docs/howto/en/docbook/index.docbook:39
+#: docs/howto/en/docbook/index.docbook:47
 msgid "Abstract"
 msgstr "Abstrakti"
 
 #. type: Content of: <book><bookinfo><abstract><para>
-#: docs/howto/en/docbook/index.docbook:40
-#, fuzzy
+#: docs/howto/en/docbook/index.docbook:50
 msgid ""
 "The <application>Biblestudy HowTo</application> is a guide for studying the "
 "Bible."
 msgstr ""
-"<application>Raamatuntutkimisen HowTo</application> on opas Raamatun "
-"tutkimiseen."
 
 #. type: Content of: <book><bookinfo><abstract><para>
-#: docs/howto/en/docbook/index.docbook:43
-#, fuzzy
+#: docs/howto/en/docbook/index.docbook:53
 msgid ""
 "It is the hope of the &bibletime; team that this HowTo will provoke the "
-"readers to study the scriptures to see what they say. This particular study "
-"guide has been chosen as it takes care not to advocate any particular "
-"denominational doctrine. We recommend you to read and study the scriptures "
-"to understand what they say. If you start with the attitude that you want to "
-"have the Lord sow his word in your heart He will not disappoint you."
+"readers to study the scriptures to see what they say.  This particular study"
+" guide has been chosen as it takes care not to advocate any particular "
+"denominational doctrine.  We recommend you to read and study the scriptures "
+"to understand what they say. If you start with the attitude that you want to"
+" have the Lord sow his word in your heart He will not disappoint you."
 msgstr ""
-"&bibletime;-työryhmän toiveena on, että tämä HowTo johdattaisi lukijoita "
-"oppimaan näkemään kirjoituksista, mitä ne sanovat. Tämä yksityiskohtainen "
-"opiskeluopas on valittu sen perusteella, ettei se johdattaisi mihinkään "
-"oppirakennelmaan. Oletamme, että luet ja opiskelet tekstejä ymmärtääksesi, "
-"mitä ne sanovat. Jos aloitat asenteella, että haluat Herran kylvävän Hänen "
-"sanojaan sydämeesi, Hän ei tuota sinulle pettymystä."
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
-#: docs/howto/en/docbook/index.docbook:52
+#: docs/howto/en/docbook/index.docbook:64
 msgid "Bible"
 msgstr ""
 
 #. type: Content of: <book><bookinfo><keywordset><keyword>
-#: docs/howto/en/docbook/index.docbook:54
+#: docs/howto/en/docbook/index.docbook:66
 msgid "HowTo"
 msgstr ""

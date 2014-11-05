@@ -9,7 +9,8 @@ msgstr ""
 "POT-Creation-Date: 2014-01-04 00:55-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 #. type: Content of: <chapter><title>
 #: docs/howto/en/docbook/howto-basics.docbook:2
@@ -2092,7 +2093,7 @@ msgstr ""
 msgid "The BibleTime Team"
 msgstr ""
 
-#.  TRANS:ROLES_OF_TRANSLATORS 
+#.  TRANS:ROLES_OF_TRANSLATORS
 #. type: Content of: <book><bookinfo>
 #: docs/howto/en/docbook/index.docbook:26
 msgid ""
